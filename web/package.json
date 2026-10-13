@@ -1,0 +1,15 @@
+{
+  "name": "chenyuan-wendao-web",
+  "private": true,
+  "version": "0.1.0-playable.1",
+  "type": "module",
+  "engines": {"node": ">=22.16.0"},
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {"vue": "3.5.22", "pinia": "3.0.3"},
+  "devDependencies": {"@vitejs/plugin-vue": "6.0.1", "vite": "7.1.9", "typescript": "5.8.3", "vue-tsc": "3.1.1", "@playwright/test": "1.56.1"}
+}

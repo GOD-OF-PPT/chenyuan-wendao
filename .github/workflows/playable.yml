@@ -1,0 +1,57 @@
+name: Playable web checks
+on:
+  push:
+    branches: ['feat/m1-playable-web']
+  pull_request:
+    paths: ['web/**', 'src/**', 'tests/**', '.github/workflows/playable.yml']
+permissions:
+  contents: read
+concurrency:
+  group: playable-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  playable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.16.0'
+      - name: Core checks
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run typecheck
+          npm test
+          npm run replay
+          python3 scripts/check_docs.py
+      - name: Install web dependencies
+        run: npm --prefix web install --ignore-scripts --no-audit --no-fund
+      - name: Export dependency lock for review
+        run: node -e "console.log('LOCK_BROTLI_BASE64='+require('node:zlib').brotliCompressSync(require('node:fs').readFileSync('web/package-lock.json')).toString('base64'))"
+      - name: Build production website
+        run: npm --prefix web run build
+      - name: Install test browser
+        working-directory: web
+        run: |
+          npx playwright install --with-deps chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Browser integration tests
+        run: npm --prefix web run test:e2e
+      - name: Upload runnable build
+        if: success()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: chenyuan-playable-dist
+          path: web/dist
+          retention-days: 14
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: playable-test-evidence
+          path: |
+            web/playwright-report
+            web/test-results
+            web/package-lock.json
+          retention-days: 14
