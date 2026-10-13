@@ -1,0 +1,40 @@
+name: Prepare dependency lock
+on:
+  push:
+    branches: [feat/full-demo-g1-g5]
+    paths: [.github/workflows/prepare-lock.yml]
+permissions:
+  contents: read
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.16.0
+      - run: npm --prefix web install --package-lock-only --ignore-scripts --no-audit --no-fund
+      - name: Emit generated lock as reviewable JSON
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          const lock=JSON.parse(fs.readFileSync('web/package-lock.json','utf8'));
+          const pkg=JSON.parse(fs.readFileSync('web/package.json','utf8'));
+          for(const key of ['dependencies','devDependencies']) if(JSON.stringify(lock.packages[''][key])!==JSON.stringify(pkg[key])) {
+            const a=Object.entries(lock.packages[''][key]).sort(); const b=Object.entries(pkg[key]).sort();
+            if(JSON.stringify(a)!==JSON.stringify(b)) throw new Error('Dependency changes detected');
+          }
+          const json=JSON.stringify(lock);
+          console.log('LOCK_SHA256='+crypto.createHash('sha256').update(json+'\n').digest('hex'));
+          console.log('LOCK_HEADER='+JSON.stringify(Object.fromEntries(Object.entries(lock).filter(([k])=>k!=='packages'))));
+          for(const [name,value] of Object.entries(lock.packages))console.log('LOCK_PACKAGE='+JSON.stringify({[name]:value}));
+          JS
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: generated-web-lock
+          path: web/package-lock.json
+          retention-days: 14
