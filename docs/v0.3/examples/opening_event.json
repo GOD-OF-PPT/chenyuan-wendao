@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "event_m01_temple_encounter",
+  "locationId": "loc_wilderness",
+  "chapterId": "chapter_mortal",
+  "once": true,
+  "requires": {"all": [{"type": "chapterIs", "chapterId": "chapter_mortal"}, {"type": "flagNotEquals", "key": "openingResolved", "value": true}]},
+  "title": "破庙遇缘",
+  "text": "山雨未歇，青衣旅人倚在残破的神龛前，掌心攥着一枚玉简。她自称沈清禾，问你可有疗伤之物。你摸了摸行囊，里面还有临行时带上的回春丹。",
+  "choices": [
+    {
+      "id": "help", "label": "赠丹相助",
+      "preview": {"knownCost": "回春丹 ×1", "knownBenefit": "结下一段相助之缘", "risk": "眼下可用的疗伤物资减少"},
+      "requires": {"all": [{"type": "itemCountAtLeast", "itemId": "item_huichun_pill", "count": 1}]},
+      "costs": [{"type": "item", "itemId": "item_huichun_pill", "count": 1}],
+      "effects": [
+        {"type": "setFlag", "key": "templeChoice", "value": "helped"},
+        {"type": "setFlag", "key": "openingResolved", "value": true},
+        {"type": "setNpcState", "npcId": "npc_shen_qinghe", "value": "相助"}
+      ],
+      "resultText": "丹药入口，她的呼吸渐渐平稳。沈清禾记下了你的道号：“此恩，来日当报。”",
+      "nextEventId": "event_m02_first_breath"
+    },
+    {
+      "id": "trade", "label": "以丹换取玉简",
+      "preview": {"knownCost": "回春丹 ×1", "knownBenefit": "提前掌握惊鸿剑诀", "risk": "双方约定两清，不留下赠药之恩"},
+      "requires": {"all": [{"type": "itemCountAtLeast", "itemId": "item_huichun_pill", "count": 1}]},
+      "costs": [{"type": "item", "itemId": "item_huichun_pill", "count": 1}],
+      "effects": [
+        {"type": "setFlag", "key": "templeChoice", "value": "traded"},
+        {"type": "setFlag", "key": "openingResolved", "value": true},
+        {"type": "learnSkill", "skillId": "skill_jinghong_slash"},
+        {"type": "setNpcState", "npcId": "npc_shen_qinghe", "value": "相识"}
+      ],
+      "resultText": "她将玉简递来，你记下其中剑诀。丹药换功法，彼此两清；至于今后的仙途，仍要各自去走。",
+      "nextEventId": "event_m02_first_breath"
+    },
+    {
+      "id": "leave", "label": "保留丹药，告辞离去",
+      "preview": {"knownCost": "无", "knownBenefit": "保留当前物资", "risk": "不建立这段相助之缘"},
+      "requires": {"all": []}, "costs": [],
+      "effects": [
+        {"type": "setFlag", "key": "templeChoice", "value": "left"},
+        {"type": "setFlag", "key": "openingResolved", "value": true},
+        {"type": "setNpcState", "npcId": "npc_shen_qinghe", "value": "擦肩"}
+      ],
+      "resultText": "你收紧行囊，走入渐歇的山雨。前方古道上，一方残碑在雨水中显出几行淡金文字。",
+      "nextEventId": "event_m02_first_breath"
+    }
+  ]
+}

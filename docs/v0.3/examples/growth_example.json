@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "exampleOnly": true,
+  "balanceVersion": "0.3-example-unbalanced",
+  "notes": [
+    "局部关系示例，非完整经济配置或可执行游戏",
+    "来源、物价、战斗和其他境界仍待配置；不能据此判定完整可达性",
+    "现实会话时长不参与规则"
+  ],
+  "realm": {
+    "id": "realm_qi",
+    "xpCap": 1000,
+    "targetRealmId": "realm_foundation",
+    "baseCultivationYield": 50,
+    "bonusCap": 1.0,
+    "breakthrough": {
+      "costs": {"item_foundation_pill": 1},
+      "xpAfterBreakthrough": 0,
+      "successWhenConditionsMet": true
+    }
+  },
+  "items": [
+    {"id": "item_qi_herb", "name": "凝气草", "kind": "material"},
+    {"id": "item_spirit_dew", "name": "灵露", "kind": "material"},
+    {"id": "item_beast_core", "name": "妖核", "kind": "material"},
+    {"id": "item_foundation_pill", "name": "筑基丹", "kind": "breakthrough_consumable"}
+  ],
+  "recipe": {
+    "id": "recipe_foundation_pill",
+    "inputs": {"item_qi_herb": 8, "item_spirit_dew": 2, "item_beast_core": 1},
+    "spiritStonesCost": 20,
+    "output": {"item_foundation_pill": 1},
+    "requiresRealmId": "realm_qi"
+  },
+  "cultivationActions": [
+    {"id": "cultivate_natural", "bonus": 0, "spiritStonesCost": 0, "gameMonthsCost": 1, "xpYield": 50},
+    {"id": "cultivate_assisted", "bonus": 1.0, "spiritStonesCost": 20, "gameMonthsCost": 1, "xpYield": 100}
+  ],
+  "snapshot": {
+    "realmId": "realm_qi", "xp": 700, "spiritStones": 80,
+    "inventory": {"item_qi_herb": 6, "item_spirit_dew": 1, "item_beast_core": 0, "item_foundation_pill": 0}
+  },
+  "analysisScope": {"includeOnlyCultivation": true, "excludeOtherActivityXp": true, "excludeHealingAndEvents": true},
+  "expectedCultivationOnlyComparison": {
+    "xpGap": 300,
+    "natural": {"actions": 6, "spiritStones": 0, "gameMonths": 6},
+    "assisted": {"actions": 3, "spiritStones": 60, "gameMonths": 3}
+  },
+  "expectedRecipeShortfall": {"item_qi_herb": 2, "item_spirit_dew": 1, "item_beast_core": 1}
+}
