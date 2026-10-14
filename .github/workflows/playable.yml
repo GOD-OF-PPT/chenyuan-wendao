@@ -1,7 +1,7 @@
 name: Playable web checks
 on:
   push:
-    branches: ['feat/m1-playable-web', 'feat/full-demo-g1-g5']
+    branches: ['feat/m1-playable-web', 'feat/full-demo-g1-g5', 'feat/g1-locked-playable']
   pull_request:
     paths: ['web/**', 'src/**', 'tests/**', 'scripts/**', '.github/workflows/playable.yml']
 permissions:
