@@ -1,6 +1,6 @@
 # 尘缘问道 · 可运行测试版本
 
-M1 可玩范围：凡人 → 炼气 → 筑基。含两种修法、四个地点、交易炼丹、真实浏览器存档。不是完整飞升 Demo。
+G1 锁定分支继承 M1 可玩范围：凡人 → 炼气 → 筑基。含两种修法、四个地点、交易炼丹、真实浏览器存档。不是完整飞升 Demo。
 
 约 30 分钟仅是基本玩法理解目标，不固定筑基或通关时间。所有数值为未平衡初值；游戏内年月随行动立即结算，阅读与离线不耗寿元。
 
@@ -10,7 +10,7 @@ M1 可玩范围：凡人 → 炼气 → 筑基。含两种修法、四个地点�
 
 ```sh
 npm ci
-npm --prefix web install
+npm --prefix web ci
 npm --prefix web run dev
 ```
 
@@ -18,7 +18,7 @@ npm --prefix web run dev
 
 ## 运行已构建版本
 
-[已验证的 Actions 运行](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38349966408) 内提供 `chenyuan-playable-dist` 附件。下载解压后，在含 `index.html` 的目录执行：
+[已验证的 Actions 运行](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38367640849) 内提供 `chenyuan-playable-dist` 附件。下载解压后，在含 `index.html` 的目录执行：
 
 ```sh
 python -m http.server 8080 --bind 127.0.0.1
@@ -42,7 +42,7 @@ npm run test:e2e
 
 Linux 缺少系统库时使用 `npx playwright install --with-deps chromium`。测试自动启动生产预览服务器 4173，不需要另开 dev。
 
-已完成 83 条规则测试及 17 条 Chromium 测试，详见根目录 README 和实施记录。前端依赖首次由 npm install 解析；同次运行生成的锁文件随 `playable-test-evidence` 附件保留，尚未提交入 Git。需要完全复现依赖时，将附件的 package-lock.json 放入 web，再执行 `npm --prefix web ci`。
+已完成 83 条规则测试及 17 条 Chromium 测试，详见根目录 README 和实施记录。G1 锁文件已提交入 Git，已验证从锁文件干净安装、构建和 Chromium 测试。
 
 ## 首轮试玩路径
 

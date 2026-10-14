@@ -1,6 +1,6 @@
 # 工程任务
 
-以 docs/v0.3 为完整设计基线。约 30 分钟仅观察基本玩法理解，不限定通关时长。以下状态对应 feat/m1-playable-web；尚未自动合并到 main。
+以 docs/v0.3 为完整设计基线。约 30 分钟仅观察基本玩法理解，不限定通关时长。M1 玩法状态以 G1 分支 `feat/g1-locked-playable` 为准，继承 `feat/m1-playable-web`，未合并到 main。另一个分支有 `src/full` 规则但网页尚未接入。
 
 | ID | 任务 | 状态与剩余边界 |
 | --- | --- | --- |
@@ -17,9 +17,9 @@
 | M1-08 | 开场与首境界整合 | 3 开场 × 2 修法 UI 路线含战斗/炼丹/筑基通过；另有不战斗采购路线 |
 | QA-01 | 自动化 | 83 规则测试 + 17 Chromium 测试通过；Safari/Firefox、真人测试待执行 |
 | BUILD-01 | 构建与交付 | 已生成静态运行包和测试附件，无公开部署 |
-| BUILD-02 | 前端传递依赖锁定 | 锁文件在测试附件，尚未入 Git；合并前需补充并改用 npm ci |
-| M2 | 后续境界、法宝、人物回响、渡劫飞升 | 未实现 |
+| BUILD-02 / #4 | 前端传递依赖锁定 | 已入 Git 且采用前端 npm ci；同 SHA CI 已通过，PR 评审待完成 |
+| M2 / #5—#6 | 后续境界、法宝、人物回响、渡劫飞升 | 另有 `src/full` 引擎规则但未接入网页，不能视为完整 Demo |
 
 运行入口：[web/README.md](../../web/README.md)。测试证据与明确边界：[可玩版记录](../implementation/M1-playable-web.md)。
 
-代码提交 1bfdf41cf0e94aede71ee8a5ad4438154dd5109e 的 [Actions](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38349966408) 已实际成功。不要把通过自动测试写成完整数值、艺术或用户体验验收通过。
+G1 锁定提交 `d6b1f75aefee3ea1ecb75138385bb318538ef75d` 的 [core CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38367640840) 与 [web CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38367640849) 已成功。后续新提交的 CI 应单独核对。不要把通过自动测试写成完整数值、艺术或用户体验验收通过。
