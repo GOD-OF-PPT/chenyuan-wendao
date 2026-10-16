@@ -3,6 +3,8 @@ dist/
 coverage/
 playwright-report/
 test-results/
+persistence-report/
+persistence-results/
 .vite/
 .DS_Store
 .env

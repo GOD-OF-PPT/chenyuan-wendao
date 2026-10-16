@@ -1,0 +1,47 @@
+# Full IndexedDB适配器
+
+日期：2026-10-16。Goal 1 / T04实现。正式Store仍未切换到本模块。
+
+## 数据库与原件保留
+
+`web/src/full-persistence.ts`使用原数据库名`chenyuan-playable-v1`，数据库版本升级到2，新增full-state、full-receipts、full-backups三个store，原state/receipts保留且不改写。名称中的v1是历史来源名，不是当前数据库版本。
+
+v1→v2在同一个versionchange事务中读取最新旧记录，调用已知格式解析，验证当前档、上一成功档与突破前检查点，保留原件和迁移身份，再写full数据。任何转换/写入失败均abort，数据库版本仍1，原旧store仍可读取。拒绝过的blocked请求在阻塞解除后也会abort，不会偷偷迁移。
+
+已存在v2数据库时，open会检查full内容版本。已知full-demo.1按运行契约转换：当前、previous与检查点一起校验、备份并写入；未知版本或不一致检查点拒绝，原记录不变。已是当前版本的档不重复迁移或更换身份。
+
+主档缺失但仍有上一档/检查点或不可用记录时明确拒绝，保留原件并提示恢复/导出；不能把这类异常当作新空档。
+
+迁移当前档产生新runId/revision=0，使旧连接/指令失效；角色、物品、游戏时间、未决事件与战斗保持。旧事件实例按真实event.id重建，不硬编码temple。previous和检查点保留其源快照身份，恢复前必须再次验证。迁移备份包含原始current/previous/checkpoint与内部MIGRATE身份，不上传、不提交Git。
+
+已知旧格式在替换人生时会清除检查点，因此迁移时旧检查点必须属于原current的run；不把另一人生的准备快照混入当前档。迁移后的新current身份与归档源身份分开保留。
+
+## API与写入身份
+
+| API | 语义 |
+| --- | --- |
+| FullSaveRepository.open(name?) | 默认使用上述数据库；可指定测试命名空间。完成升级/内容迁移后才交回连接，存储不可用不建立临时游戏 |
+| load / loadPrevious / loadCheckpoint | 原生readonly事务读取并验证；不存在返回null，坏记录拒绝，不清空重开 |
+| archives | readonly读取迁移原件，便于后续备份界面导出；不是云存储 |
+| create(name, mutation) | 显式创建新局或替换当前局；无自动赠境界，等待事务complete |
+| importText(raw, mutation) | 先限体积/解析/验证，再在事务内CAS替换；同时保存上一好档，清理旧回执/活动检查点 |
+| execute(command) | 读取最新状态、检查回执、resolve，再原子写状态/previous/回执/必要准备检查点 |
+| close | 关闭连接；versionchange自动关闭，旧连接再用明确拒绝 |
+
+普通动作使用T03的Command，校验commandId/runId/expectedRevision。create/import使用`SaveMutation {commandId, runId, expectedRunId, expectedRevision}`：runId是新目标人生，expectedRunId/revision指明被替换的当前档；空库只接受expectedRunId=null、expectedRevision=0。新目标不得等于当前或被导入的原人生。一次意图重试保留相同身份和内容。
+
+所有输入在异步写入前复制，页面随后改动原对象不会改变已提交的意图。自动迁移在独占/读写事务中生成内部MIGRATE身份，绑定原run/revision并归档。数据读写的CAS在事务内完成，不靠按钮禁用或BroadcastChannel作为最终约束。
+
+## 原子提交与回执
+
+事务回调不等待网络或其他外部Promise。只有transaction.complete才返回成功；请求put成功仍可能整次abort。当前状态、上一成功档、回执和必要检查点任一失败都回滚，调用者必须保留“本次未保存”的错误，不能用重读旧档冒充成功。
+
+已提交普通指令的重试返回原ActionResult与最新Game，避免重复奖励和界面倒退；同编号不同请求拒绝。T04包含必要的基础幂等与旧参数隔离；T05还要补全重复/损坏回执、并发/失败语义矩阵和可重复恢复API，不把本轮少量基础用例当作该阶段完成。
+
+BREAKTHROUGH/START_TRIAL使用T03返回的检查点用途，在同一事务保存完整行动前快照。检查点验证格式、源身份、版本及该用途的准备动作确实可执行。本轮支持保存、读取和验证；restoreCheckpoint由T05实现，正式渡劫页面由T13—T15接线。
+
+## 测试边界
+
+`npm --prefix web run test:persistence`启动独立本机Vite测试页，在Chromium真实IndexedDB中执行，没有fake-indexeddb。测试使用隔离浏览器上下文/测试数据库名和明确的故障注入；正常网页路线验收不调用这些测试操作。
+
+测试页、动态测试模块和原始存档不进入生产dist；正常生产入口仍是旧Store。测试涵盖真实旧引擎9阶段×6组合、实际旧Repository连接、M1原始快照、full内容升级、非temple事件、未决战斗、坏档/未来版本、blocked/配额/abort及准备检查点。仅Chromium模块测试，未宣称三浏览器、网页飞升、真人或永久落盘保障。

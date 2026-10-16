@@ -8,6 +8,8 @@ T02在`codex/goal-1-full-rules`接续`a49c0b4`全境界规则，增加配置审�
 
 T03在`codex/goal-1-contracts-queries`落实 [运行契约](../contracts/full-runtime.md)，纯结算/预览使用共享成本门槛，明确full v1转换与结束语义，支持机制复用扩展；[CHECK-01本地记录](../implementation/goal-1-contracts-queries.md)为202规则/24 full回放/17现有浏览器及构建通过。正式数据库迁移、Store和网页切换仍未实施，由T04—T06承接。
 
+T04在`codex/goal-1-full-persistence`实现独立full事务库与已知旧档迁移，真实IDB验证及边界见 [T04记录](../implementation/goal-1-full-persistence.md)。正式Store、恢复API和三浏览器完整矩阵仍由T05/T06承接，不因模块通过提前关闭网页验收。
+
 | ID | 任务 | 状态与剩余边界 |
 | --- | --- | --- |
 | SETUP-01 | 仓库接入 | 已完成，保持原 public 可见性 |
