@@ -10,9 +10,14 @@ concurrency:
   group: playable-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  playable:
+  browser:
+    name: browser (${{ matrix.browser }})
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -36,31 +41,53 @@ jobs:
         run: npm --prefix web ci --ignore-scripts --no-audit --no-fund
       - name: Build production website
         run: npm --prefix web run build
-      - name: Install test browsers
+      - name: Install test browser and fonts
+        timeout-minutes: 5
         working-directory: web
         run: |
-          npx playwright install --with-deps chromium firefox webkit
-          sudo apt-get install -y fonts-noto-cjk
+          npx playwright install --with-deps ${{ matrix.browser }}
+          sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=60 -o Acquire::https::Timeout=60 install -y fonts-noto-cjk
       - name: Browser integration tests
-        run: npm --prefix web run test:e2e
+        run: npm --prefix web run test:e2e -- --project=${{ matrix.browser }}
       - name: Full persistence module tests
-        run: npm --prefix web run test:persistence
-      - name: Upload runnable build
-        if: success()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: chenyuan-playable-dist
-          path: web/dist
-          retention-days: 90
-          if-no-files-found: error
+        run: npm --prefix web run test:persistence -- --project=${{ matrix.browser }}
       - name: Upload test evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: playable-test-evidence
+          name: playable-test-evidence-${{ matrix.browser }}-attempt-${{ github.run_attempt }}
           path: |
             web/playwright-report
             web/test-results
             web/persistence-report
             web/persistence-results
           retention-days: 90
+  playable:
+    needs: browser
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require every browser matrix to succeed
+        env:
+          BROWSER_RESULT: ${{ needs.browser.result }}
+        run: test "$BROWSER_RESULT" = success
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.16.0'
+      - name: Verify lock and reproduce final build
+        run: |
+          node scripts/check_lock.mjs
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm --prefix web ci --ignore-scripts --no-audit --no-fund
+          npm --prefix web run build
+      - name: Upload runnable build after all browsers pass
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: chenyuan-playable-dist
+          path: web/dist
+          retention-days: 90
+          if-no-files-found: error

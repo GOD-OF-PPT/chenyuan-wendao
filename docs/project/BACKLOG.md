@@ -18,6 +18,8 @@ T07在`codex/goal-1-goal-guidance`接入可替换目标、缺口/来源逐层导
 
 T08在`codex/goal-1-build-equipment`接通12功法/4法宝的真实研习、逐槽装备、炼制与替换，并以正常新档覆盖双修法×双筹备至金丹、刷新恢复及失败重试。[T08记录](../implementation/goal-1-build-equipment.md)单独绑定本阶段实际证据，元婴以后和CHECK-03继续由T09承担。
 
+T09在`codex/goal-1-growth-to-spirit`补上本境突破物/关键材料的真实筹备信息，复用确定/替代/采购来源，并用正常新档跨金丹、元婴至化神，配装与刷新/恢复保留；[T09/CHECK-03记录](../implementation/goal-1-growth-to-spirit.md)绑定实际检查。经济优化、因果、渡劫结尾、生产视觉/性能与真人仍在后续。
+
 | ID | 任务 | 状态与剩余边界 |
 | --- | --- | --- |
 | SETUP-01 | 仓库接入 | 已完成，保持原 public 可见性 |
