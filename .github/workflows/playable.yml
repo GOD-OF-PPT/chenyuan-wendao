@@ -1,0 +1,60 @@
+name: Playable web checks
+on:
+  push:
+    branches: ['feat/m1-playable-web', 'feat/full-demo-g1-g5', 'feat/g1-locked-playable', 'codex/**']
+  pull_request:
+    paths: ['web/**', 'src/**', 'tests/**', 'scripts/**', '.github/workflows/playable.yml', 'docs/v0.4/**']
+permissions:
+  contents: read
+concurrency:
+  group: playable-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  playable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.16.0'
+      - name: Verify reviewed dependency lock
+        run: node scripts/check_lock.mjs
+      - name: Core checks
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run typecheck
+          npm test
+          npm run replay
+          python3 scripts/check_docs.py
+          python3 docs/v0.4/tools/check_documents.py
+      - name: Install locked web dependencies
+        run: npm --prefix web ci --ignore-scripts --no-audit --no-fund
+      - name: Build production website
+        run: npm --prefix web run build
+      - name: Install test browsers
+        working-directory: web
+        run: |
+          npx playwright install --with-deps chromium firefox webkit
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Browser integration tests
+        run: npm --prefix web run test:e2e
+      - name: Upload runnable build
+        if: success()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: chenyuan-playable-dist
+          path: web/dist
+          retention-days: 90
+          if-no-files-found: error
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: playable-test-evidence
+          path: |
+            web/playwright-report
+            web/test-results
+          retention-days: 90

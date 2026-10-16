@@ -1,0 +1,221 @@
+{
+  "schema": "documentation-economy-subset.1",
+  "provenance": {
+    "repository": "GOD-OF-PPT/chenyuan-wendao",
+    "commit": "a49c0b4d0671a75f25c7781e4613de109c232899",
+    "path": "src/full/content.ts",
+    "blob": "991680637321500ddfcb0f9407e87d10cbe6671a",
+    "method": "Manually transcribed subset of the file read via GitHub plugin; not the runtime content module."
+  },
+  "limitations": [
+    "Each realm starts with zero XP, zero stones and empty material inventory.",
+    "No combat, events, mind/relic bonuses, cross-realm carryover or real-world wait time.",
+    "Three fixed preparation strategies; not a global path optimizer.",
+    "The document script calculates arithmetic; it does not execute the game engine."
+  ],
+  "cultivation": {
+    "months": 1,
+    "assistedCost": 20,
+    "assistedMultiplier": 2
+  },
+  "realms": [
+    {
+      "id": "qi",
+      "name": "炼气",
+      "xpCap": 1000,
+      "baseYield": 50,
+      "work": {
+        "stones": 20,
+        "months": 1,
+        "xp": 0
+      },
+      "recipe": "foundation"
+    },
+    {
+      "id": "foundation",
+      "name": "筑基",
+      "xpCap": 3000,
+      "baseYield": 120,
+      "work": {
+        "stones": 60,
+        "months": 2,
+        "xp": 20
+      },
+      "recipe": "golden"
+    },
+    {
+      "id": "golden",
+      "name": "金丹",
+      "xpCap": 7200,
+      "baseYield": 240,
+      "work": {
+        "stones": 130,
+        "months": 3,
+        "xp": 40
+      },
+      "recipe": "nascent"
+    },
+    {
+      "id": "nascent",
+      "name": "元婴",
+      "xpCap": 15000,
+      "baseYield": 420,
+      "work": {
+        "stones": 230,
+        "months": 4,
+        "xp": 70
+      },
+      "recipe": "spirit_seed"
+    },
+    {
+      "id": "spirit",
+      "name": "化神",
+      "xpCap": 28000,
+      "baseYield": 700,
+      "work": {
+        "stones": 360,
+        "months": 5,
+        "xp": 100
+      },
+      "recipe": "ascension"
+    }
+  ],
+  "materials": {
+    "herb": {
+      "name": "凝气草",
+      "min": "qi",
+      "buy": 5,
+      "sell": 2,
+      "source": {
+        "units": 2,
+        "months": 1,
+        "xp": 5
+      }
+    },
+    "dew": {
+      "name": "灵露",
+      "min": "qi",
+      "buy": 10,
+      "sell": 4,
+      "source": {
+        "units": 1,
+        "months": 1,
+        "xp": 5
+      }
+    },
+    "core": {
+      "name": "妖核",
+      "min": "qi",
+      "buy": 50,
+      "sell": 15,
+      "source": {
+        "units": 1,
+        "months": 4,
+        "xp": 20
+      }
+    },
+    "jade": {
+      "name": "地脉灵玉",
+      "min": "foundation",
+      "buy": 45,
+      "sell": 12,
+      "source": {
+        "units": 2,
+        "months": 2,
+        "xp": 30
+      }
+    },
+    "lotus": {
+      "name": "月华莲",
+      "min": "golden",
+      "buy": 65,
+      "sell": 18,
+      "source": {
+        "units": 2,
+        "months": 3,
+        "xp": 60
+      }
+    },
+    "soul": {
+      "name": "凝魂晶",
+      "min": "nascent",
+      "buy": 90,
+      "sell": 25,
+      "source": {
+        "units": 2,
+        "months": 4,
+        "xp": 100
+      }
+    },
+    "dao": {
+      "name": "道蕴砂",
+      "min": "spirit",
+      "buy": 120,
+      "sell": 32,
+      "source": {
+        "units": 2,
+        "months": 5,
+        "xp": 180
+      }
+    }
+  },
+  "recipes": {
+    "foundation": {
+      "output": "foundation_pill",
+      "buy": 160,
+      "fee": 20,
+      "months": 1,
+      "inputs": {
+        "herb": 8,
+        "dew": 2,
+        "core": 1
+      }
+    },
+    "golden": {
+      "output": "golden_pill",
+      "buy": 380,
+      "fee": 60,
+      "months": 2,
+      "inputs": {
+        "herb": 6,
+        "dew": 3,
+        "core": 2,
+        "jade": 4
+      }
+    },
+    "nascent": {
+      "output": "nascent_pill",
+      "buy": 700,
+      "fee": 110,
+      "months": 3,
+      "inputs": {
+        "herb": 8,
+        "dew": 4,
+        "jade": 2,
+        "lotus": 5
+      }
+    },
+    "spirit_seed": {
+      "output": "spirit_seed",
+      "buy": 1100,
+      "fee": 180,
+      "months": 4,
+      "inputs": {
+        "dew": 6,
+        "lotus": 3,
+        "soul": 6
+      }
+    },
+    "ascension": {
+      "output": "ascension_seal",
+      "buy": 1500,
+      "fee": 240,
+      "months": 5,
+      "inputs": {
+        "core": 3,
+        "soul": 4,
+        "dao": 6
+      }
+    }
+  }
+}

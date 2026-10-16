@@ -1,47 +1,82 @@
 # 尘缘问道
 
-古风文字修仙网页 Demo · 从凡人修士到飞升。
+古风文字修仙网页 Demo。**约30分钟了解基本玩法，不限定通关时长；成长由物品、修为、功法与选择控制，不按现实分钟发放境界。**
 
-**约 30 分钟了解基本玩法，不限定通关时长。成长由物品、数值、功法搭配与选择决定，不按现实分钟赠送境界。**
+## 当前实施与可运行范围
 
-## 当前状态
+当前实施分支为 `codex/goal-1-reproducible-baseline`，整合已验证的 G1 网页基线与 v0.4 研究文档。网页可玩范围仍为 **凡人 → 炼气 → 筑基**：开场三选一、两种固定修法、四地点、采集/委托、交易炼丹、战斗及 IndexedDB 存档。
 
-本提交是 GitHub 设计基线，尚无可玩游戏。工程从独立规则、首境界经济闭环开始，开发工作通过功能分支和 PR 管理。下列设计表中的任务是计划，不是完成声明。
+完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01整合基线已通过本地与远端验证，交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)；下一项T02接续full规则。全境界网页接线、功法法宝、条件因果、渡劫飞升与正式美术保持未完成。数值为未平衡初值。
 
-仓库：`GOD-OF-PPT/chenyuan-wendao`。仓库由项目负责人创建；接入时为 public，未修改可见性。未复制参考项目代码，未附带字体、凭据或聊天全文，也未擅自添加开源许可证。
+`main` 仍是设计资料基线。当前分支继承 [PR #1：经济规则](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/1) 和依赖它的 [PR #2：首境界网页](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/2)，并整合 [PR #9：研究与实施修订](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/9)；旧PR均保留，未自动合并或关闭。另一分支 `feat/full-demo-g1-g5` 已有全境界规则，尚未接入本网页，不代表网页已经可以飞升。
 
-## 开发入口
+## 设计资料
 
-| 文档 | 用途 |
-| --- | --- |
-| [成长与数值修订](docs/v0.3/05_成长与数值系统修订.md) | 最高优先级成长约束与六张控制表 |
-| [设计规格](docs/v0.3/01_设计规格.md) | 玩法、内容预算、界面与规则 |
-| [实施计划](docs/v0.3/02_实施计划.md) | 阶段、依赖与任务 |
-| [数据契约](docs/v0.3/03_数据与状态契约.md) | Command、状态、原子结算和存档 |
-| [验收清单](docs/v0.3/04_验收清单.md) | 尚待执行的完整 Demo 验收 |
-| [当前任务](docs/project/BACKLOG.md) | 工程阶段与实施边界 |
-| [美术基准](art/README.md) | 选定风格与已认可主界面预览 |
-| [接入记录](docs/decisions/0002-github-onboarding.md) | 本次入库范围与未入库项目 |
+[v0.4 研究与实施细化](docs/v0.4/README.md)包含竞品、目标筹备、构筑、因果、交互和验收建议；[仓库差距审计](docs/v0.4/07-repository-audit.md)是2026-10-13固定提交的历史快照。v0.3原文保留；用户已确认约束优先，研究假设不等同于已实施或已验收。
+
+## 从源码启动
+
+工程声明 Node.js ≥22.16.0；历史 G1 CI 使用 Node.js 22.16.0 / npm 10.9.2。当前任务的实际环境和检查结果单独记录于 [T01实施记录](docs/implementation/goal-1-baseline.md)。不顺带升级依赖，根与前端均从已提交锁文件安装。
+
+```sh
+git clone --branch codex/goal-1-reproducible-baseline --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+cd chenyuan-wendao
+npm ci --ignore-scripts
+node scripts/check_lock.mjs
+npm --prefix web ci --ignore-scripts
+npm --prefix web run dev
+```
+
+打开 `http://127.0.0.1:5173`。默认仅监听本机，不需要模型API、账号或服务端。构建包通过本地HTTP服务运行，不使用 `file://` 双击，也不将 Vite preview 当作生产托管服务。
+
+## 验证
+
+```sh
+npm run typecheck
+npm test
+npm run replay
+python3 scripts/check_docs.py
+python3 docs/v0.4/tools/check_documents.py
+npm --prefix web run build
+cd web
+npx playwright install chromium
+npm run test:e2e
+```
+
+测试自动启动本机4173端口的生产预览服务器；先构建再测试。Linux缺系统库时使用 `npx playwright install --with-deps chromium`。当前Playwright配置只执行Chromium，三引擎项目和全境界网页路线属于后续任务。
+
+历史 G1 提交 `738d8e985ca468d08cb5fd877e6cf09164b074cd` 的 [网页CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38492172390) 和 [规则CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38492172375)通过83条规则、6条经济路线、构建及17条Chromium测试。这是源基线证据；本整合版本的实际结果以T01实施记录和本提交CI为准。
+
+本次整合实现提交 `4907e1d67f03ca9603b32f6cbf575c96ee6be03e` 已重新通过本地83规则/6经济路线/17 Chromium及构建；同SHA的[规则CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455654)与[网页CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455542)也通过。首轮浏览器launch失败与安装超时、启动预检和完整重跑均保留记录。
+
+浏览器用例覆盖三开场×两修法至筑基、采购替代路线、事件/战斗刷新、事务回滚、双击、多标签页、坏档、导入导出、检查点、两尺寸和图片失败。未覆盖完整飞升、三浏览器、真人平衡或最终视觉验收。
 
 ## 已认可美术
 
-第三方案：新国风半写实、青黛与旧金、暖纸阅读面板。以下是低分辨率预览，不是运行界面，也不能替代生产资产。
+第三方案：新国风半写实、青黛旧金、暖纸面板。以下是低分辨率参考预览，当前网页采用预览背景与印记头像；生产素材和最终视觉仍待实现。
 
 ![第三方案预览](art/approved/style-preview.webp)
 
 ![主界面预览](docs/v0.3/reference/approved_main_ui.webp)
 
-## 开发约束
+原件的历史核验见 [美术规格](docs/v0.4/05-art-ux.md)，当前仓库尚未归档高清PNG，不能据历史记录推断原件当前可访问。来源见 [PROVENANCE](art/PROVENANCE.md)。
 
-- 正常存档支持持续游玩；阅读和离线不消耗游戏时间。
-- 普通突破检查修为并真实消耗物品；关键物资必须有确定来源及可达替代路线。
-- 不依赖随机稀有掉落才能通关。批量行动必须能被资源不足、修为满等边界中断。
-- 规则计算、内容、持久化与 UI 分层。动态文字、按钮和数值是网页元素，不能整图铺热区。
-- 先完成入道至筑基资源闭环，再扩展后续境界；M1 不等于完整 Demo。
-- 不强推、不覆盖他人提交、不自动合并未验证代码、不部署公开试玩站点。
+## 文档入口
 
-## 资料范围
+| 文档 | 用途 |
+| --- | --- |
+| [Goal 1计划](goal-1/plan.md) / [任务记录](goal-1/tasks.md) | 当前执行顺序、检查门槛和实际进度 |
+| [T01基线实施记录](docs/implementation/goal-1-baseline.md) | 来源、冲突取舍、验证和剩余边界 |
+| [试玩与运行说明](web/README.md) | 当前首境界的操作、战斗和本地存档 |
+| [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
+| [资料目录](docs/README.md) | v0.3与v0.4关系 |
+| [成长与数值修订](docs/v0.3/05_成长与数值系统修订.md) | 用户认可的成长约束和控制表 |
+| [设计规格](docs/v0.3/01_设计规格.md) / [原实施计划](docs/v0.3/02_实施计划.md) | 历史设计基线与阶段 |
+| [数据契约](docs/v0.3/03_数据与状态契约.md) / [完整验收](docs/v0.3/04_验收清单.md) | 原子结算、存档和完整Demo要求 |
+| [M1可玩记录](docs/implementation/M1-playable-web.md) / [经济原型记录](docs/implementation/M1-economy-core.md) | 历史实现和当时验证范围 |
 
-v0.3 五份核心文档和两个数据样例在仓库中可读。v0.2 已废止要求仅作历史说明。本次未上传原始 12.6 MB Git bundle、高清 PNG 和全部历史原件；原件仍在本会话资料包中，完整文件哈希见 [素材来源](art/PROVENANCE.md)。部分原文仍引用高清 PNG 路径，当前请使用上面的 WebP 预览；不得把预览宣称为原件归档完成。
+## 开发与交付约定
 
-资料校验：`python3 scripts/check_docs.py`。该检查不是游戏功能、平衡或真人试玩验收。
+所有资源变更经commandId/runId/expectedRevision校验，先原子保存再展示成功。普通突破真实检查修为和消耗物，关键物有当前境界可达的确定来源和替代路线。阅读和离线不耗寿元。规则、内容、持久化与UI分层，动态文字与按钮保持网页元素。
+
+本地存档不等于云档，应导出备份；清理浏览器数据可能丢失进度。新功能通过独立分支与PR，不强推、不自动合并、不公开部署、不修改仓库可见性，不提交凭据、个人存档、字体或未授权素材，不复制参考仓库代码。未擅自增加开源许可证。

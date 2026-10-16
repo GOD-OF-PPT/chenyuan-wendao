@@ -1,0 +1,23 @@
+name: M1 core checks
+on:
+  push:
+    branches: [main, 'feat/**', 'fix/**', 'codex/**']
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run replay
+      - run: python3 scripts/check_docs.py
+      - run: python3 docs/v0.4/tools/check_documents.py
