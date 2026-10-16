@@ -11,6 +11,7 @@ export const useGame = defineStore('game', () => {
   const lastResult = shallowRef<ActionResult | null>(null), lastReplayed = ref(false), canRetry = ref(false);
   let repository: FullSaveRepository | undefined, channel: BroadcastChannel | undefined;
   let pending: (() => Promise<CommitOutcome | ControlOutcome>) | null = null;
+  let pendingCommandId: string | undefined;
   let failedIntent = false, refreshQueued = false, disposed = false;
   const message = (value: unknown) => value instanceof Error ? value.message : String(value);
   const codeOf = (value: unknown) => value && typeof value === 'object' && 'code' in value ? String(value.code) : '';
@@ -37,7 +38,7 @@ export const useGame = defineStore('game', () => {
     if (busy.value) return;
     busy.value = true; ready.value = false; available.value = false; error.value = ''; warning.value = '';
     repository?.close(); channel?.close(); repository = undefined; channel = undefined;
-    pending = null; canRetry.value = false;
+    pending = null; pendingCommandId = undefined; canRetry.value = false;
     try {
       const opened = await FullSaveRepository.open();
       if (disposed) { opened.close(); return; }
@@ -59,14 +60,14 @@ export const useGame = defineStore('game', () => {
       repository?.close(); repository = undefined;
     } finally { ready.value = true; busy.value = false; }
   }
-  async function write(operation: () => Promise<CommitOutcome | ControlOutcome>) {
+  async function write(operation: () => Promise<CommitOutcome | ControlOutcome>, commandId?: string) {
     if (busy.value || !repository) return;
-    busy.value = true; error.value = ''; saved.value = false; canRetry.value = false; pending = operation;
+    busy.value = true; error.value = ''; saved.value = false; canRetry.value = false; pending = operation; pendingCommandId = commandId;
     try {
       const outcome = await operation();
       if (disposed) return;
       game.value = outcome.state; lastResult.value = 'result' in outcome ? outcome.result : null; lastReplayed.value = outcome.replayed;
-      failedIntent = false; pending = null; saved.value = true;
+      failedIntent = false; pending = null; pendingCommandId = undefined; saved.value = true;
       await checkpointInfo();
       try { channel?.postMessage({ runId: outcome.state.core.runId, revision: outcome.state.core.revision }); }
       catch { warning.value = '进度已保存，其他页面暂未收到同步提示'; }
@@ -75,7 +76,7 @@ export const useGame = defineStore('game', () => {
       const code = codeOf(value);
       if (code === 'STORAGE_CLOSED') available.value = false;
       canRetry.value = ['STORAGE_QUOTA', 'STORAGE_ABORTED', 'STORAGE_DENIED'].includes(code);
-      if (!canRetry.value) pending = null;
+      if (!canRetry.value) { pending = null; pendingCommandId = undefined; }
       try { await refresh(); } catch (readError) { warning.value = '原进度暂时无法重读：' + message(readError); }
     } finally {
       busy.value = false;
@@ -83,16 +84,24 @@ export const useGame = defineStore('game', () => {
     }
   }
   function validationError(text: string) {
-    failedIntent = true; error.value = text; saved.value = false; canRetry.value = false; pending = null;
+    failedIntent = true; error.value = text; saved.value = false; canRetry.value = false; pending = null; pendingCommandId = undefined;
   }
   async function start(name: string) {
     if (!repository || game.value) return;
     const intent = mutation(); await write(() => repository!.create(name.trim(), intent));
   }
+  function prepareAction(action: Action): Command | null {
+    if (!game.value || !repository || !available.value || busy.value) return null;
+    return structuredClone({ ...action, commandId: crypto.randomUUID(), runId: game.value.core.runId, expectedRevision: game.value.core.revision });
+  }
+  async function actPrepared(input: Command) {
+    if (!repository) return;
+    const command = structuredClone({ ...input });
+    await write(() => repository!.execute(command), command.commandId);
+  }
   async function act(action: Action) {
-    if (!game.value || !repository) return;
-    const command: Command = { ...action, commandId: crypto.randomUUID(), runId: game.value.core.runId, expectedRevision: game.value.core.revision };
-    await write(() => repository!.execute(command));
+    const command = prepareAction(action);
+    if (command) await actPrepared(command);
   }
   async function importText(raw: string) {
     if (!repository) return;
@@ -106,12 +115,16 @@ export const useGame = defineStore('game', () => {
     if (!repository || !game.value) return;
     const intent = mutation(); await write(() => repository!.restoreCheckpoint(intent));
   }
-  async function retry() { if (pending && canRetry.value) await write(pending); }
+  async function retry() { if (pending && canRetry.value) await write(pending, pendingCommandId); }
+  function discardRetryFor(commandId: string) {
+    if (pendingCommandId !== commandId) return;
+    pending = null; pendingCommandId = undefined; canRetry.value = false;
+  }
   async function rawText(): Promise<string | null> {
     const backup = await FullSaveRepository.exportRaw(); return backup ? rawBackupText(backup) : null;
   }
   const saveLabel = computed(() => !ready.value ? '读取中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
   onScopeDispose(() => { disposed = true; repository?.close(); channel?.close(); });
   return { game, busy, ready, available, error, warning, saved, hasCheckpoint, canRetry, lastResult, lastReplayed, saveLabel,
-    init, refresh, start, act, importText, restart, checkpoint, retry, rawText, validationError };
+    init, refresh, start, act, prepareAction, actPrepared, discardRetryFor, importText, restart, checkpoint, retry, rawText, validationError };
 });

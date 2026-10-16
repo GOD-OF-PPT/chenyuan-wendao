@@ -1,5 +1,6 @@
 import * as C from './content.ts';
 import { stories } from './events.ts';
+import { buildLifeRecord, lifeOverview, lifeRecordText } from './life-record.ts';
 import { conditionMatches, storyView, relationshipViews, causalAid } from './story-context.ts';
 import { resolve, validateCommand, validateGame } from './engine.ts';
 import { RuleError, fail } from './errors.ts';
@@ -185,3 +186,8 @@ export function getStoryContext(game: Game, id: string) {
 }
 export function getRelationships(game: Game) { validateGame(game); return structuredClone(relationshipViews(game)); }
 export function getCausalAid(game: Game) { validateGame(game); return causalAid(game); }
+
+
+export function getLifeOverview(game: Game) { validateGame(game); return lifeOverview(game); }
+export function getLifeRecord(game: Game) { validateGame(game); return buildLifeRecord(game); }
+export function exportLifeText(game: Game) { validateGame(game); return lifeRecordText(buildLifeRecord(game)); }
