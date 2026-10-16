@@ -121,6 +121,7 @@ test('missing purchase funds guide a bounded income batch without buying or over
   expect(after.core.player.stones).toBe(160); expect(after.core.inventory.foundation_pill).toBe(0);
   await expect(page.getByTestId('executed-steps')).toHaveText('实际执行 6 / 6 次');
   await expect(page.getByTestId('source-work')).toBeDisabled();
+  await expect(page.getByTestId('preview-宗门杂务')).toContainText('灵石目标已经备齐');
   await page.getByTestId('source-back').click(); await expect(page.getByTestId('need-stones')).toHaveCount(0);
 });
 

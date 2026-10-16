@@ -14,3 +14,14 @@ test('export and import restore progression with fresh run identity',async({page
 test('breakthrough checkpoint can be restored',async({page})=>{await start(page);await page.getByRole('button',{name:'设置',exact:true}).click();page.once('dialog',d=>d.accept());await page.getByRole('button',{name:'恢复突破前检查点'}).click();await expect(page.getByTestId('realm')).toHaveText('凡人');expect((await snapshot(page)).core.player.xp).toBe(10);});
 for(const viewport of [{width:1440,height:1000},{width:390,height:844}])test(`layout ${viewport.width} fits and is interactive`,async({page},info)=>{await page.setViewportSize(viewport);await start(page);await action(page,'school-sword');await expect(page.getByTestId('tab-0')).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();await page.screenshot({path:info.outputPath(`main-${viewport.width}.png`),fullPage:true});await page.getByRole('button',{name:'设置',exact:true}).click();await page.getByLabel('放大正文').check();await page.getByRole('button',{name:'关闭设置'}).click();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();});
 test('missing art cannot block the opening',async({page})=>{await page.route('**/art/**',route=>route.abort());await start(page);await expect(page.getByTestId('realm')).toHaveText('炼气');});
+
+
+test('available scene resolves from the document base and decodes as an image', async ({ page }) => {
+ await start(page);
+ const background = await page.locator('.scene').evaluate(element => getComputedStyle(element).backgroundImage);
+ const url = background.match(/url\((["']?)(.*?)\1\)/)?.[2];
+ expect(url).toBe(new URL('art/scene.webp', page.url()).href);
+ const response = await page.request.get(url!); expect(response.status()).toBe(200);
+ expect(response.headers()['content-type']).toContain('image/webp');
+ expect(await page.evaluate(async url => { const image = new Image(); image.src = url; await image.decode(); return image.naturalWidth > 0; }, url!)).toBe(true);
+});

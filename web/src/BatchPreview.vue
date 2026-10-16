@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ActionPreview } from '../../src/full/queries.ts';
 import { formatCosts, formatDelta } from './presentation';
-defineProps<{ label: string; preview: ActionPreview | null }>();
+defineProps<{ label: string; preview: ActionPreview | null; reason?: string }>();
 </script>
 <template>
   <div class="batch-preview" :data-testid="`preview-${label}`">
@@ -13,6 +13,6 @@ defineProps<{ label: string; preview: ActionPreview | null }>();
       <small v-if="preview.stopReason">预计停止：{{preview.stopReason.message}}</small>
       <small v-if="preview.failure">{{preview.failure.message}}；不会提交或扣费。</small>
     </template>
-    <small v-else>先从目标来源选取所需物资，再使用达到目标模式。</small>
+    <small v-else>{{reason || '先从目标来源选取所需物资，再使用达到目标模式。'}}</small>
   </div>
 </template>

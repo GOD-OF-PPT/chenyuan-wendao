@@ -38,7 +38,7 @@ npm run test:e2e
 npm run test:persistence
 ```
 
-Linux缺系统库时使用 `npx playwright install --with-deps chromium firefox webkit`。网页测试自动启动生产预览4173，原生IndexedDB模块测试另用开发服务器4174；两端口须空闲，不复用已有服务。两个配置均有三个实际浏览器project，0重试。单引擎排查可追加 `-- --project=chromium`，不把单引擎结果算作全矩阵。
+Linux缺系统库时使用 `npx playwright install --with-deps chromium firefox webkit`。网页测试自动启动生产预览4173，原生IndexedDB模块测试另用开发服务器4174；两端口须空闲，不复用已有服务。两个配置均有三个实际浏览器project，0重试；Firefox测试实例为本机服务显式直连，不改系统代理。单引擎排查可追加 `-- --project=chromium`，不把单引擎结果算作全矩阵。
 
 T06/CHECK-02的历史结果见[正式接线记录](../docs/implementation/goal-1-full-ui-cutover.md)。T07新增后本地214项规则、六条M1与24条完整纯引擎回放通过，实际三浏览器结果单独见[T07记录](../docs/implementation/goal-1-goal-guidance.md)。完整24组飞升网页路线属于T22；纯引擎24组不能替代它。
 
