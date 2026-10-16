@@ -89,7 +89,9 @@ test('live tabs synchronize committed progression and replacement run before the
   await start(page); const other = await context.newPage(); await other.goto('/');
   await expect(other.getByTestId('realm')).toHaveText('炼气');
   await action(page, 'cultivate'); await expect(other.getByTestId('xp')).toHaveText('50 / 1000');
+  await expect(page.getByTestId('action-receipt')).toBeVisible();
   await action(other, 'cultivate'); await expect(page.getByTestId('xp')).toHaveText('100 / 1000');
+  await expect(page.getByTestId('action-receipt')).toHaveCount(0);
   const before = await snapshot(page);
   await page.getByRole('button', { name: '设置', exact: true }).click(); page.once('dialog', dialog => dialog.accept());
   await page.getByTestId('restart').click(); await expect(page.getByTestId('help')).toBeVisible();

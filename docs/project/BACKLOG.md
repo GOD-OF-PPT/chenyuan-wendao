@@ -14,6 +14,8 @@ T05在`codex/goal-1-recovery-idempotency`补齐恢复API、回执/幂等/并发/
 
 T06在`codex/goal-1-full-ui-cutover`把正式Store和最小页面切换至full，接入失败显示/原意图重试、旧档迁移与重复恢复。三浏览器首境界/原生IDB及CHECK-02结果见 [T06记录](../implementation/goal-1-full-ui-cutover.md)；高级构筑、完整飞升网页、正式视觉和真人验证仍由后续任务承担。下表M1项保留历史范围，当前结果不能只读旧行。
 
+T07在`codex/goal-1-goal-guidance`接入可替换目标、缺口/来源逐层导航、偏好与取材批次、预算和真实回执；[T07记录](../implementation/goal-1-goal-guidance.md)单独绑定本阶段证据。正常网页范围仍以六条至筑基为当前完整验证，高级功法/法宝/逐境操作由T08以后完成，CHECK-03仍待T09后执行。
+
 | ID | 任务 | 状态与剩余边界 |
 | --- | --- | --- |
 | SETUP-01 | 仓库接入 | 已完成，保持原 public 可见性 |
