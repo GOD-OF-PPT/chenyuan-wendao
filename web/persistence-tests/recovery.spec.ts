@@ -221,6 +221,22 @@ test('raw backup reads failed and future databases without migration, and missin
   expect(result.rejectedImport.code).toBe('SAVE_VERSION'); expect(result.kept).toEqual(result.good);
 });
 
+test('raw backup refuses unavailable enumeration without opening an absent database', async ({ page }) => {
+  const result = await page.evaluate(async () => {
+    const h = (globalThis as any).h, original = indexedDB.databases.bind(indexedDB);
+    Object.defineProperty(indexedDB, 'databases', { value: undefined, configurable: true });
+    const unsupported = await h.attempt(() => h.FullSaveRepository.exportRaw('unsupported-backup'));
+    Object.defineProperty(indexedDB, 'databases', { value: () => Promise.reject(new DOMException('denied', 'SecurityError')), configurable: true });
+    const denied = await h.attempt(() => h.FullSaveRepository.exportRaw('denied-backup'));
+    Object.defineProperty(indexedDB, 'databases', { value: original, configurable: true });
+    const first = await h.FullSaveRepository.exportRaw('absent-backup'), second = await h.FullSaveRepository.exportRaw('absent-backup');
+    return { unsupported, denied, first, second, names: await indexedDB.databases() };
+  });
+  expect(result.unsupported.code).toBe('RAW_BACKUP_UNSUPPORTED'); expect(result.denied.code).toBe('STORAGE_DENIED');
+  expect(result.first).toBeNull(); expect(result.second).toBeNull();
+  for (const name of ['unsupported-backup', 'denied-backup', 'absent-backup']) expect(result.names.some(database => database.name === name)).toBe(false);
+});
+
 test('raw export preserves an undefined entry explicitly and refuses lossy structured values', async ({ page }) => {
   const result = await page.evaluate(async () => {
     const h = (globalThis as any).h; await h.seed('raw-undefined', undefined, h.legacySamples()[3]);

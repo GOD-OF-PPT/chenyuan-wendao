@@ -4,9 +4,9 @@
 
 ## 当前实施与可运行范围
 
-当前实施分支为 `codex/goal-1-recovery-idempotency`，在T04事务库上完善回执、并发、失败与可重复恢复，数据库版本为3，尚未切换正式Store。网页可玩范围仍为 **凡人 → 炼气 → 筑基**：开场三选一、两种固定修法、四地点、采集/委托、交易炼丹、战斗及 IndexedDB 存档。
+当前实施分支为 `codex/goal-1-full-ui-cutover`，正式Store和页面已使用full规则与数据库v3，动作在事务完成后才显示成功。当前已验证的正常网页路线为 **凡人 → 炼气 → 筑基**：开场三选一、两种修法、采集/委托、交易炼丹、战斗、旧档迁移与可重复检查点恢复。
 
-完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，尚未接入正式网页；条件因果、存档适配与正式美术仍待完成。数值为未平衡初值。
+完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，页面接通共用地点/物品/事件操作；高级构筑、完整成长/因果/渡劫网页路线、正式美术和真人验证仍按后续任务逐项完成。数值为未平衡初值。
 
 `main` 仍是设计资料基线。当前分支继承 [PR #1：经济规则](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/1)、[PR #2：首境界网页](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/2)、[PR #9：研究与实施修订](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/9)及PR #10，并以普通merge接续`feat/full-demo-g1-g5@a49c0b4`。旧PR均保留，未自动合并或关闭。规则存在与纯引擎路线通过，不代表网页已经可以飞升。
 
@@ -19,7 +19,7 @@
 工程声明 Node.js ≥22.16.0；历史 G1 CI 使用 Node.js 22.16.0 / npm 10.9.2。当前任务的实际环境和检查结果单独记录于 [T01实施记录](docs/implementation/goal-1-baseline.md)。不顺带升级依赖，根与前端均从已提交锁文件安装。
 
 ```sh
-git clone --branch codex/goal-1-recovery-idempotency --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+git clone --branch codex/goal-1-full-ui-cutover --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
 cd chenyuan-wendao
 npm ci --ignore-scripts
 node scripts/check_lock.mjs
@@ -41,24 +41,24 @@ python3 scripts/check_docs.py
 python3 docs/v0.4/tools/check_documents.py
 npm --prefix web run build
 cd web
-npx playwright install chromium
+npx playwright install chromium firefox webkit
 npm run test:e2e
 npm run test:persistence
 ```
 
-测试自动启动本机4173端口的生产预览服务器；先构建再测试。Linux缺系统库时使用 `npx playwright install --with-deps chromium`。当前Playwright配置只执行Chromium，三引擎项目和全境界网页路线属于后续任务。
+测试自动启动本机4173端口的生产预览服务器，存储模块使用独立4174端口；先构建再测试，两端口均须空闲。Linux缺系统库时使用 `npx playwright install --with-deps chromium firefox webkit`。两份Playwright配置均实际执行Chromium/Firefox/WebKit；WebKit自动化不等于Safari真机验收，完整飞升网页路线仍属后续任务。
 
 历史 G1 提交 `738d8e985ca468d08cb5fd877e6cf09164b074cd` 的 [网页CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38492172390) 和 [规则CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38492172375)通过83条规则、6条经济路线、构建及17条Chromium测试。这是源基线证据；本整合版本的实际结果以T01实施记录和本提交CI为准。
 
 本次整合实现提交 `4907e1d67f03ca9603b32f6cbf575c96ee6be03e` 已重新通过本地83规则/6经济路线/17 Chromium及构建；同SHA的[规则CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455654)与[网页CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455542)也通过。首轮浏览器launch失败与安装超时、启动预检和完整重跑均保留记录。
 
-浏览器用例覆盖三开场×两修法至筑基、采购替代路线、事件/战斗刷新、事务回滚、双击、多标签页、坏档、导入导出、检查点、两尺寸和图片失败。未覆盖完整飞升、三浏览器、真人平衡或最终视觉验收。
+生产网页用例覆盖三开场×两修法至筑基、采购替代路线、事件/战斗刷新、事务回滚、双击、多标签页、坏档、导入导出、旧档迁移、原件备份、失败重试、重复检查点、两尺寸和图片失败。三浏览器本阶段结果见T06记录；完整飞升、真人平衡与最终视觉尚未验收。
 
 T02新增的`check:content`校验实际来源与引用、当前境界炼制/采购路径及连锁交易获利；`replay:full`执行24组正常纯引擎指令，输出版本与行动序列摘要。规则测试补充12功法/4法宝效果、逐境缺口/恢复和真实旧档转换；这些均不替代正式网页/数据库全流程验收。
 
 T03的[运行契约](docs/contracts/full-runtime.md)规定full-demo.2 / full-unbalanced.1、已知旧档纯转换、退休/寿尽、结构化结果、检查点用途与共享成本/来源查询。CHECK-01本地202规则、24 full回放、17首境界浏览器及构建通过；正常路线账本与T02完全相同，网页产物与T01相同。该阶段的纯转换不代替下述T04真实数据库验证。
 
-T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)，T05进一步完成[幂等与可重复恢复](docs/implementation/goal-1-recovery-idempotency.md)：数据库v3关闭旧连接，按full权威进度升级；坏回执拒绝、恢复整次回滚、检查点可重复使用，打开失败可只读导出原件。本地206规则、42原生IDB、17旧网页及构建通过，测试页不进入dist；正式Store仍未切换。
+T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)，T05进一步完成[幂等与可重复恢复](docs/implementation/goal-1-recovery-idempotency.md)。T06的[正式接线与CHECK-02](docs/implementation/goal-1-full-ui-cutover.md)切换Store/页面：失败重读保持“本次未保存”，原意图可重试，未知新版本只读导出原件；检查点重复恢复完整快照。详细结果绑定本阶段提交，不沿用父PR绿灯。
 
 ## 已认可美术
 
@@ -80,6 +80,7 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 | [正式运行契约](docs/contracts/full-runtime.md) / [T03与CHECK-01](docs/implementation/goal-1-contracts-queries.md) | 状态/版本、提交结果、查询和首组三任务全面验证 |
 | [full数据库契约](docs/contracts/full-persistence.md) / [T04记录](docs/implementation/goal-1-full-persistence.md) | 原子事务、旧档/内容迁移与真实IDB模块验证 |
 | [T05幂等与恢复](docs/implementation/goal-1-recovery-idempotency.md) | 并发、坏回执、重复恢复、v3升级与只读备份 |
+| [T06正式接线与CHECK-02](docs/implementation/goal-1-full-ui-cutover.md) | full Store/最小页面、旧档、失败显示、三浏览器与阶段检查 |
 | [试玩与运行说明](web/README.md) | 当前首境界的操作、战斗和本地存档 |
 | [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
 | [资料目录](docs/README.md) | v0.3与v0.4关系 |
