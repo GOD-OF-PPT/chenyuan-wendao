@@ -50,9 +50,16 @@ export async function nextRealm(page: Page, strategy: 'craft' | 'purchase') {
     if (strategy === 'purchase') await buy(page, realm.pill, 1);
     else await craft(page, Object.keys(C.recipes).find(id => C.recipes[id].output === realm.pill)!);
   }
+  if (realm.pill && C.rank(before.core.player.realm) >= C.rank('foundation')) {
+    await page.getByTestId('tab-0').click(); const ready = await snapshot(page);
+    await expect(page.getByTestId('growth-pill-ready')).toBeVisible();
+    expect(await snapshot(page)).toEqual(ready);
+    if (ready.core.player.xp < realm.xpCap) await expect(page.getByTestId('breakthrough')).toBeDisabled();
+  }
   await meditate(page); const prepared = await snapshot(page); await action(page, 'breakthrough');
   await expect(page.getByTestId('realm')).toHaveText(C.realms[realm.next!].name);
   if (realm.pill) expect((await snapshot(page)).core.inventory[realm.pill]).toBe(prepared.core.inventory[realm.pill] - 1);
+  return prepared;
 }
 export async function foundation(page: Page, school: C.School, strategy: 'craft' | 'purchase', choice = 'leave') {
   await start(page, choice); await action(page, `school-${school}`); await nextRealm(page, strategy);

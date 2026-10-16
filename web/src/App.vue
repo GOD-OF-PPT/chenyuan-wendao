@@ -17,6 +17,7 @@ import GoalPanel from './GoalPanel.vue';
 import BatchPreview from './BatchPreview.vue';
 import ActionFeedback from './ActionFeedback.vue';
 import EquipmentPanel from './EquipmentPanel.vue';
+import GrowthPanel from './GrowthPanel.vue';
 
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
@@ -244,6 +245,7 @@ onMounted(() => store.init());
             <h3>修行手记</h3><ol class="journal"><li v-for="(line,index) in [...game.journal].reverse()" :key="index">{{line}}</li></ol>
           </template>
         </div>
+        <GrowthPanel v-if="tab==='修行' && phase==='idle' && C.rank(core.player.realm)>=C.rank('foundation')" :game="game" :enabled="store.available && !store.busy" @navigate="navigate" @track="tracking.select"/>
         <EquipmentPanel v-if="tab==='修行' && phase!=='opening'" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" :consumption="consumption" @act="act" @track="tracking.select"/>
         <div class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><ActionFeedback v-if="store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/></div>
       </section>

@@ -106,28 +106,32 @@ function sourcePlan(game: Game, source: Omit<ItemSource, 'navigation' | 'steps' 
 }
 
 /** One configured acquisition at a time. Battle rewards require a future win. */
-export function getItemSources(game: Game, item: string, purchaseQuantity = 1): ItemSource[] {
+export function getItemSources(game: Game, item: string, purchaseQuantity = 1, kinds?: readonly ItemSource['kind'][]): ItemSource[] {
   validateGame(game);
   if (!Object.hasOwn(C.items, item) || !Number.isSafeInteger(purchaseQuantity) || purchaseQuantity < 1 || purchaseQuantity > C.maxQuantity) fail('INVALID_QUERY', '物品或采购数量无效');
+  const allKinds: ItemSource['kind'][] = ['source', 'recipe', 'purchase', 'battle', 'event'];
+  if (kinds !== undefined && (!Array.isArray(kinds) || kinds.some(kind => !allKinds.includes(kind)))) fail('INVALID_QUERY', '来源类别无效');
+  const selected = new Set(kinds ?? allKinds);
   const result: ItemSource[] = [];
   for (const [id, source] of Object.entries(C.sources)) {
-    if (!source.items[item]) continue;
+    if (!selected.has('source') || !source.items[item]) continue;
     result.push(sourcePlan(game, { resource: { kind: 'item', id: item }, kind: 'source', id, label: source.name, location: source.location,
       rewardCount: source.items[item], repeatable: true, conditionalOnVictory: false }, [{ type: 'SOURCE', sourceId: id }]));
   }
   for (const [id, recipe] of Object.entries(C.recipes)) {
-    if (recipe.output !== item) continue;
+    if (!selected.has('recipe') || recipe.output !== item) continue;
     result.push(sourcePlan(game, { resource: { kind: 'item', id: item }, kind: 'recipe', id, label: recipe.name, location: 'cave',
       rewardCount: 1, repeatable: true, conditionalOnVictory: false }, [{ type: 'CRAFT', recipeId: id }]));
   }
-  result.push(sourcePlan(game, { resource: { kind: 'item', id: item }, kind: 'purchase', id: item, label: `购买${C.items[item].name}`, location: 'market',
+  if (selected.has('purchase')) result.push(sourcePlan(game, { resource: { kind: 'item', id: item }, kind: 'purchase', id: item, label: `购买${C.items[item].name}`, location: 'market',
     rewardCount: purchaseQuantity, repeatable: true, conditionalOnVictory: false }, [{ type: 'BUY', item, quantity: purchaseQuantity }]));
   for (const [id, enemy] of Object.entries(C.enemies)) {
-    if (!enemy.loot[item] || enemy.trial) continue;
+    if (!selected.has('battle') || !enemy.loot[item] || enemy.trial) continue;
     result.push(sourcePlan(game, { resource: { kind: 'item', id: item }, kind: 'battle', id, label: enemy.name, location: enemy.location,
       rewardCount: enemy.loot[item], repeatable: true, conditionalOnVictory: true }, [{ type: 'ENCOUNTER', enemy: id }]));
   }
   for (const [id, story] of Object.entries(stories)) {
+    if (!selected.has('event')) continue;
     for (const option of story.options) {
       const rewardCount = option.gain?.[item];
       if (!rewardCount) continue;
