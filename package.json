@@ -9,7 +9,9 @@
   },
   "scripts": {
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "check:content": "node --experimental-strip-types scripts/check-full-content.mjs",
     "replay": "node --experimental-strip-types scripts/replay.mjs",
+    "replay:full": "node --experimental-strip-types scripts/replay-full.mjs",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
