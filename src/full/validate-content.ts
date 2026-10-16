@@ -1,12 +1,13 @@
 import * as C from './content.ts';
 import { stories } from './events.ts';
+import { skillMechanisms, relicMechanisms } from './mechanisms.ts';
 
 /** Build-time audit of this finite catalog, not a save parser or balance proof. */
 export const fullCatalog = Object.freeze({
   realmIds: C.realmIds, realms: C.realms, locations: C.locations, items: C.items,
   sources: C.sources, recipes: C.recipes, skills: C.skills, relics: C.relics,
   enemies: C.enemies, cultivation: C.cultivation, maxBatch: C.maxBatch,
-  maxQuantity: C.maxQuantity, stories,
+  maxQuantity: C.maxQuantity, actionDurations: C.actionDurations, startingLoadouts: C.startingLoadouts, stories,
 });
 export type ContentCatalog = typeof fullCatalog;
 
@@ -19,24 +20,7 @@ export class ContentError extends Error {
   }
 }
 
-// The current resolver selects these finite mechanisms by ID. New mechanisms
-// require resolver changes and behavior tests, not merely another effect string.
-const skillBindings: Record<string, { effect: string; school: C.School; slot: C.SkillSlot }> = {
-  sword_mind: { effect: 'sword', school: 'sword', slot: 'mind' },
-  sword_still: { effect: 'still', school: 'sword', slot: 'mind' },
-  sword_build: { effect: 'build', school: 'sword', slot: 'builder' },
-  sword_guard: { effect: 'sword_ward', school: 'sword', slot: 'builder' },
-  sword_release: { effect: 'release', school: 'sword', slot: 'finisher' },
-  sword_echo: { effect: 'echo', school: 'sword', slot: 'finisher' },
-  talisman_mind: { effect: 'talisman', school: 'talisman', slot: 'mind' },
-  talisman_calm: { effect: 'calm', school: 'talisman', slot: 'mind' },
-  talisman_build: { effect: 'mark', school: 'talisman', slot: 'builder' },
-  talisman_frost: { effect: 'frost', school: 'talisman', slot: 'builder' },
-  talisman_release: { effect: 'detonate', school: 'talisman', slot: 'finisher' },
-  talisman_return: { effect: 'return', school: 'talisman', slot: 'finisher' },
-};
 const trialIds = ['trial_heart', 'trial_thunder', 'trial_gate'];
-const relicIds = ['frost_sword', 'jade_seal', 'soul_lamp', 'cloud_mirror'];
 
 export function validateContent(c: ContentCatalog = fullCatalog) {
   const fail = (code: string, path: string, detail: string): never => {
@@ -60,6 +44,7 @@ export function validateContent(c: ContentCatalog = fullCatalog) {
     for (const [id, quantity] of Object.entries(values)) {
       reference(c.items, id, path, 'ITEM_REFERENCE');
       number(quantity, `${path}.${id}`, 1);
+      if (quantity > c.maxQuantity) fail('CONTENT_NUMBER', path, 'material requirement exceeds inventory capacity');
     }
   };
   const atRealm = (minimum: C.RealmId, current: C.RealmId) => rank(minimum) <= rank(current);
@@ -129,12 +114,13 @@ export function validateContent(c: ContentCatalog = fullCatalog) {
     if (!['sword', 'talisman'].includes(skill.school) || !['mind', 'builder', 'finisher'].includes(skill.slot)) {
       fail('SKILL_SLOT', id, 'invalid school or slot');
     }
-    if (!Object.hasOwn(skillBindings, id) || skillBindings[id].effect !== skill.effect) fail('SKILL_EFFECT', id, 'resolver does not support this identity/effect');
-    if (skillBindings[id].school !== skill.school || skillBindings[id].slot !== skill.slot) fail('SKILL_SLOT', id, 'resolver expects a different school or slot');
+    if (!Object.hasOwn(skillMechanisms, skill.effect)) fail('SKILL_EFFECT', id, 'resolver does not support this mechanism');
+    const binding = skillMechanisms[skill.effect];
+    if (binding.school !== skill.school || binding.slot !== skill.slot) fail('SKILL_SLOT', id, 'mechanism expects a different school or slot');
   }
   for (const school of ['sword', 'talisman'] as const) {
-    for (const [suffix, slot] of [['mind', 'mind'], ['build', 'builder'], ['release', 'finisher']] as const) {
-      const id = `${school}_${suffix}`, skill = c.skills[id];
+    for (const slot of ['mind', 'builder', 'finisher'] as const) {
+      const id = c.startingLoadouts[school][slot], skill = c.skills[id];
       if (!Object.hasOwn(c.skills, id) || skill.school !== school || skill.slot !== slot || !atRealm(skill.min, 'qi') || skill.price !== 0) {
         fail('DEFAULT_SKILL', id, 'SCHOOL needs its complete starting loadout');
       }
@@ -142,7 +128,7 @@ export function validateContent(c: ContentCatalog = fullCatalog) {
   }
   for (const [id, relic] of Object.entries(c.relics)) {
     materials(relic.inputs, `relics.${id}.inputs`); number(relic.stones, `relics.${id}.stones`);
-    if (!relicIds.includes(id) || relic.effect !== id) fail('RELIC_EFFECT', id, 'resolver does not support this identity/effect');
+    if (!Object.hasOwn(relicMechanisms, relic.effect)) fail('RELIC_EFFECT', id, 'resolver does not support this mechanism');
   }
   for (const [id, enemy] of Object.entries(c.enemies)) {
     realm(enemy.min, `enemies.${id}.min`); location(enemy.location, `enemies.${id}.location`);
@@ -157,6 +143,7 @@ export function validateContent(c: ContentCatalog = fullCatalog) {
       fail('TRIAL_STAGE', id, 'three-stage resolver needs this trial encounter');
     }
   }
+  for (const [id, months] of Object.entries(c.actionDurations)) number(months, `actionDurations.${id}`, 1);
   for (const [id, action] of Object.entries(c.cultivation)) {
     number(action.months, `cultivation.${id}.months`, 1);
     number(action.stones, `cultivation.${id}.stones`); number(action.bonus, `cultivation.${id}.bonus`);
