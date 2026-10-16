@@ -1,3 +1,4 @@
+import { ASCENSION_ENDINGS, type AscensionEnding } from './ascension.ts';
 import * as C from './content.ts';
 import { stories } from './events.ts';
 import { buildLifeRecord, lifeOverview, lifeRecordText } from './life-record.ts';
@@ -269,5 +270,17 @@ export function getTrialRecovery(game: Game, previous: Game | null, checkpoint: 
       return quantity > 0 ? [{ id, name: C.items[id].name, quantity }] : [];
     }) : [],
     inventory: ['ascension_seal', 'healing_pill', 'spirit_pill'].map(id => ({ id, name: C.items[id].name, quantity: game.core.inventory[id] })),
+  };
+}
+
+
+/** Review is factual preparation data; only the shared END preview grants eligibility. */
+export function getAscensionChoices(game: Game) {
+  validateGame(game);
+  const record = buildLifeRecord(game);
+  return { identity: { runId: game.core.runId, revision: game.core.revision },
+    record,
+    choices: (Object.keys(ASCENSION_ENDINGS) as AscensionEnding[]).map(ending => ({ ending,
+      ...ASCENSION_ENDINGS[ending], preview: previewAction(game, { type: 'END', ending }) })),
   };
 }

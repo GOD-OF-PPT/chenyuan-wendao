@@ -64,8 +64,49 @@ jobs:
             web/persistence-report
             web/persistence-results
           retention-days: 90
+  journey:
+    name: journey (${{ matrix.browser }}, shard ${{ matrix.shard }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        browser: [chromium, firefox, webkit]
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.16.0'
+      - name: Verify lock and prepare production build
+        run: |
+          node scripts/check_lock.mjs
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm --prefix web ci --ignore-scripts --no-audit --no-fund
+          npm --prefix web run build
+      - name: Install journey browser and fonts
+        timeout-minutes: 5
+        working-directory: web
+        run: |
+          npx playwright install --with-deps ${{ matrix.browser }}
+          sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=60 -o Acquire::https::Timeout=60 install -y fonts-noto-cjk
+      - name: Normal new-game journey tests
+        run: npm --prefix web run test:journeys -- --project=${{ matrix.browser }} --shard=${{ matrix.shard }}/4
+      - name: Upload journey evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: journey-test-evidence-${{ matrix.browser }}-shard-${{ matrix.shard }}-attempt-${{ github.run_attempt }}
+          path: |
+            web/journey-report
+            web/journey-results
+          retention-days: 90
   playable:
-    needs: browser
+    needs: [browser, journey]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -73,13 +114,24 @@ jobs:
       - name: Require every browser matrix to succeed
         env:
           BROWSER_RESULT: ${{ needs.browser.result }}
-        run: test "$BROWSER_RESULT" = success
+          JOURNEY_RESULT: ${{ needs.journey.result }}
+        run: |
+          test "$BROWSER_RESULT" = success
+          test "$JOURNEY_RESULT" = success
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '22.16.0'
+      - name: Download current journey shard reports
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: journey-test-evidence-*-attempt-${{ github.run_attempt }}
+          path: journey-evidence
+          merge-multiple: false
+      - name: Verify actual normal route coverage
+        run: node scripts/check-journey-coverage.mjs journey-evidence
       - name: Verify lock and reproduce final build
         run: |
           node scripts/check_lock.mjs

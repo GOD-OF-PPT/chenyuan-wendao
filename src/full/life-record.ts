@@ -1,3 +1,4 @@
+import { ASCENSION_ENDINGS } from './ascension.ts';
 import * as C from './content.ts';
 import { stories } from './events.ts';
 import { relationshipViews, causalAid } from './story-context.ts';
@@ -12,11 +13,11 @@ export function lifeOverview(game: Game) {
   const limitMonths = game.status === 'ascended' ? null : C.realms[p.realm].lifespanMonths;
   const reason = game.ending;
   const title = game.status === 'active' ? '此生仍在继续' : reason === 'retired' ? '尘世留名 · 主动归隐' :
-    reason === 'lifespan' ? '尘世留名 · 寿元已尽' : reason === 'transmit' ? '飞升 · 留道传承' : '飞升 · 独赴上界';
+    reason === 'lifespan' ? '尘世留名 · 寿元已尽' : ASCENSION_ENDINGS[reason === 'transmit' ? 'transmit' : 'depart'].title;
   const conclusion = game.status === 'active' ? '以下是当前已保存的来路，尚未作出此生的结束选择。' :
     reason === 'retired' ? '你主动收起行囊，此生未飞升。余下的岁月仍未耗尽，这是一场由你决定的作别。' :
     reason === 'lifespan' ? '你确认度过了最后一个游戏月，年龄达到当前境界的寿限，此生收卷。' :
-    reason === 'transmit' ? '你选择把道法留在人间，而后踏入天门。' : '你选择独赴上界，来路收于此卷。';
+    ASCENSION_ENDINGS[reason === 'transmit' ? 'transmit' : 'depart'].conclusion;
   return { name: p.name, status: game.status, reason, title, conclusion,
     realm: p.realm, realmName: C.realms[p.realm].name, elapsedMonths: game.core.world.elapsedMonths,
     startAgeMonths: p.startAgeMonths, ageMonths, ageLabel: formatAgeMonths(ageMonths),

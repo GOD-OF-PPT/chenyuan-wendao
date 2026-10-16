@@ -1,3 +1,4 @@
+import { ASCENSION_ENDINGS } from './ascension.ts';
 import { TRIAL_STAGES, TRIAL_ANSWERS } from './trial-rules.ts';
 import * as C from './content.ts';
 import {stories} from './events.ts';
@@ -170,7 +171,7 @@ function one(g:Game,a:Action){
  if(g.core.mode==='event')fail('PENDING_EVENT','先处理当前遭遇；查看资料不会消耗时间');
  if(a.type==='BATTLE'){if(!g.battle)fail('NO_BATTLE','当前没有战斗');battleTurn(g,a.move);return;}
  if(g.battle)fail('IN_BATTLE','战斗中只能使用战斗面板，或选择撤退');
- if(a.type==='END'){if(g.trial?.stage!==4)fail('TRIAL_REQUIRED','先通过天劫三关');g.trial=null;g.status='ascended';g.ending=a.ending;g.core.player.realm='ascended';g.core.player.xp=0;g.milestones.ascended=g.core.world.elapsedMonths;log(g,a.ending==='transmit'?'你将道法留在人间，而后踏入天门。此后万山之间，仍有人传诵你的来路。':'你选择独赴上界。云海合拢，新的故事不在这部旧卷之中。');return;}
+ if(a.type==='END'){if(g.trial?.stage!==4)fail('TRIAL_REQUIRED','先通过天劫三关');g.trial=null;g.status='ascended';g.ending=a.ending;g.core.player.realm='ascended';g.core.player.xp=0;g.milestones.ascended=g.core.world.elapsedMonths;log(g,ASCENSION_ENDINGS[a.ending].record);return;}
  if(g.trial)fail('IN_TRIAL','天劫尚未结束，不能离开筹备或重复启动');
  switch(a.type){
   case 'TRAVEL':needRealm(g,requirements.minRealm!);if(g.core.world.location===a.location)fail('NO_CHANGE','已在此地');g.core.world.location=a.location;log(g,`你抵达${C.locations[a.location].name}。`);break;
