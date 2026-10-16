@@ -3,6 +3,8 @@ import * as C from '../../src/full/content.ts';
 import { action, snapshot, start } from './support';
 import { foundation, nextRealm, learn, go, prepareRelic } from './progression';
 
+// These journeys cross several realms; keep each UI interaction bounded separately.
+test.use({ actionTimeout: 8000, navigationTimeout: 15000 });
 const errors = new WeakMap<Page, string[]>();
 test.beforeEach(async ({ page }) => { const list: string[] = []; errors.set(page, list); page.on('pageerror', error => list.push(error.message)); });
 test.afterEach(async ({ page }) => expect(errors.get(page)).toEqual([]));
@@ -13,6 +15,7 @@ const combinations = [
  { school: 'talisman', strategy: 'purchase', choice: 'help', relic: 'cloud_mirror' },
 ] as const;
 for (const route of combinations) test(`${route.school}/${route.strategy}: normal new game learns, replaces slots, reaches golden and equips ${route.relic}`, async ({ page }) => {
+  test.slow();
   await foundation(page, route.school, route.strategy, route.choice);
   await page.getByLabel('行动次数').selectOption('1'); await expect(page.getByTestId('preview-自然吐纳')).toContainText('修为 +120');
   const mind = route.school === 'sword' ? 'sword_still' : 'talisman_calm', builder = route.school === 'sword' ? 'sword_guard' : 'talisman_frost';
@@ -60,6 +63,7 @@ for (const route of combinations) test(`${route.school}/${route.strategy}: norma
 });
 
 test('forge failure retries one complete payment and battle rejects a DOM-unlocked equipment action', async ({ page }) => {
+  test.slow();
   await foundation(page, 'sword', 'purchase'); await learn(page, 'sword_guard'); await nextRealm(page, 'purchase');
   await prepareRelic(page, 'jade_seal'); const before = await snapshot(page);
   await page.evaluate(() => { const original = IDBObjectStore.prototype.put;
