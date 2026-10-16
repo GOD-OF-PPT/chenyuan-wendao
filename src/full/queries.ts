@@ -7,7 +7,8 @@ import { RuleError, fail } from './errors.ts';
 import { costsForAction, multiplyCosts, requirementsForAction, remainingMonths } from './costs.ts';
 import type { ActionRequirements } from './costs.ts';
 import { gamePhase } from './contracts.ts';
-import type { ActionCosts, RuleFailure, StateDelta } from './contracts.ts';
+import { TRIAL_STAGES, TRIAL_ANSWERS } from './trial-rules.ts';
+import type { ActionCosts, RuleFailure, StateDelta, SaveCheckpoint } from './contracts.ts';
 import type { Action, Command, Game } from './types.ts';
 
 const previewCommand = (game: Game, action: Action): Command => ({
@@ -219,5 +220,54 @@ export function getTrialPreparation(game: Game) {
       learned: game.learned.map(id => C.skills[id].name), relics: game.ownedRelics.map(id => C.relics[id].name),
       inventory: Object.entries(game.core.inventory).filter(([,n]) => n > 0).map(([id,n]) => ({ id, name: C.items[id].name, quantity: n })),
       choiceCount: Object.keys(game.choices).length, school: game.school },
+  };
+}
+
+
+export function getTrialJourney(game: Game) {
+  validateGame(game);
+  if (!game.trial) return null;
+  const stage = game.trial.stage, answer = game.trial.answer;
+  const opening = {
+    help: '雨夜里，你赠出回春丹相助；这一选择仍是来路的一部分。',
+    trade: '雨夜里，你以丹换简，彼此两清；问心不会将交易改写成赠药。',
+    leave: '雨夜里，你保留丹药，各自离开；今日的问心不会补写未曾发生的救助。',
+  };
+  return { stage, completed: Math.max(0, stage - 1), answer,
+    answerLabel: answer ? TRIAL_ANSWERS[answer].label : null,
+    effect: answer ? TRIAL_ANSWERS[answer].record : null,
+    title: stage === 0 ? '入场已保存 · 待答问心' : stage === 4 ? '三关已过 · 待择结尾' : C.enemies[TRIAL_STAGES[stage - 1]].name,
+    steps: [{ id: 'question', name: '问心选择', status: stage === 0 ? 'current' : 'complete' },
+      ...TRIAL_STAGES.map((id, index) => ({ id, name: C.enemies[id].name,
+        status: stage > index + 1 ? 'complete' : stage === index + 1 ? 'current' : 'pending' }))],
+    openingMemory: game.core.openingChoice ? opening[game.core.openingChoice] : '',
+    memories: relationshipViews(game).flatMap(person => person.facts.map(fact => ({ person: person.name, id: fact.id, title: fact.title, text: fact.text }))),
+    answers: (Object.keys(TRIAL_ANSWERS) as Array<keyof typeof TRIAL_ANSWERS>).map(id => ({ id,
+      ...TRIAL_ANSWERS[id], preview: previewAction(game, { type: 'ANSWER_TRIAL', answer: id }) })),
+  };
+}
+
+/** Only an adjacent, same-run persisted transition proves a just-ended trial. */
+export function getTrialRecovery(game: Game, previous: Game | null, checkpoint: SaveCheckpoint | null) {
+  validateGame(game);
+  if (!previous) return null;
+  validateGame(previous);
+  if (game.status !== 'active' || game.trial || game.battle || game.core.mode !== 'idle' || game.core.player.realm !== 'spirit' ||
+      game.core.world.location !== 'cave' || !previous.trial || !previous.battle || previous.trial.stage < 1 || previous.trial.stage > 3 ||
+      game.core.runId !== previous.core.runId || game.core.revision !== previous.core.revision + 1) return null;
+  const prepared = checkpoint?.kind === 'trial' && checkpoint.sourceRunId === game.core.runId &&
+    checkpoint.sourceRevision === checkpoint.snapshot.core.revision && checkpoint.sourceRunId === checkpoint.snapshot.core.runId &&
+    checkpoint.sourceRevision < previous.core.revision ? checkpoint.snapshot : null;
+  if (prepared) validateGame(prepared);
+  // Trials have no loot and cannot buy, sell or craft. If this invariant is not evidenced, do not infer consumption.
+  const known = !!prepared && prepared.core.world.elapsedMonths === game.core.world.elapsedMonths &&
+    Object.keys(C.items).every(id => prepared.core.inventory[id] >= game.core.inventory[id]);
+  return { stage: previous.trial.stage, stageName: C.enemies[previous.battle.enemy].name,
+    answer: previous.trial.answer, reason: game.journal.at(-1) ?? '', consumptionKnown: known,
+    consumed: known ? Object.keys(C.items).flatMap(id => {
+      const quantity = prepared!.core.inventory[id] - game.core.inventory[id];
+      return quantity > 0 ? [{ id, name: C.items[id].name, quantity }] : [];
+    }) : [],
+    inventory: ['ascension_seal', 'healing_pill', 'spirit_pill'].map(id => ({ id, name: C.items[id].name, quantity: game.core.inventory[id] })),
   };
 }

@@ -86,3 +86,10 @@ RETIRE、END_LIFE通过现有execute，将当前/previous/回执同事务提交�
 Store只暴露loadCheckpoint实际校验后的kind/sourceRunId/sourceRevision/versions概要；读取失败显示警告与未知，不虚构可恢复状态。准备页分别标明已有突破/渡劫检查点；确认入场前说“将保存”，成功后的问心页只有验证到trial检查点才显示可恢复。导入Game清除独立检查点，没有附带快照的问心档明确说明。页面不自行写checkpoint。
 
 新增原生IDB测试从真实元婴前缀导入后重放其余合法行动，以权威事务生成原好突破检查点；入场配额/owner/回执失败及put后abort保留它。逐字段比较完整准备、原意图重试、重复启动、跨连接与两次完整恢复；夹具与正常新档UI路线分别计数。DB3/外层2/schema2/content3/balance3保持不变。
+
+
+## T14：固定完整恢复与失败证据
+
+Store的prepareCheckpoint固定SaveMutation，restorePrepared保留commandId及expectedRunId/revision送交原restoreCheckpoint；不是新写入协议。专用确认窗捕获目标检查点概要，跨页推进/换人生后不能重新绑定另一份进度。恢复失败保留原current/previous/checkpoint/owner/回执，同ID重试仅恢复一次；取消只丢弃匹配ID的意图，不能从全局入口误重放已取消恢复。
+
+Store从已验证CP派生目标概要，并只读loadPrevious给即时失败查询；上一行动无法校验时不伪造失败，但已验证检查点仍独立可用。异步读回若页面权威Game已换，不发布该旧查询结果。失败查询不写数据库，不扫描/重建另一份战斗历史；后续行动覆盖previous后只保留原手记，不声称永久累计账本。导入的进行中Game没有独立CP时，仍继续真实回合并明确缺少累计耗物依据。
