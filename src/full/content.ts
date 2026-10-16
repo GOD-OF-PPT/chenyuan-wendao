@@ -1,9 +1,10 @@
 /** Full-demo content. All numbers are initial tuning values, not a retention promise. */
-export const VERSION = 'full-demo.1';
+import type { School, SkillSlot, SkillEffect, RelicEffect } from './mechanisms.ts';
+export type { School, SkillSlot } from './mechanisms.ts';
+export const VERSION = 'full-demo.2';
 export const BALANCE = 'full-unbalanced.1';
 export const realmIds = ['mortal','qi','foundation','golden','nascent','spirit','ascended'] as const;
 export type RealmId = typeof realmIds[number];
-export type School = 'sword' | 'talisman';
 export type LocationId = 'wilderness'|'cave'|'sect'|'market'|'secret'|'terrace';
 export interface Realm { name:string; xpCap:number; baseYield:number; maxHp:number; maxMp:number; lifespanMonths:number; power:number; next:RealmId|null; pill:string|null; }
 export const realms:Record<RealmId,Realm> = {
@@ -70,8 +71,7 @@ export const recipes:Record<string,Recipe>={
  spirit_seed:{name:'炼制化神丹',min:'nascent',inputs:{dew:6,lotus:3,soul:6},stones:180,months:4,output:'spirit_seed'},
  ascension:{name:'炼制渡劫引',min:'spirit',inputs:{core:3,soul:4,dao:6},stones:240,months:5,output:'ascension_seal'}
 };
-export type SkillSlot='mind'|'builder'|'finisher';
-export interface Skill {name:string;school:School;slot:SkillSlot;min:RealmId;price:number;description:string;effect:string;}
+export interface Skill {name:string;school:School;slot:SkillSlot;min:RealmId;price:number;description:string;effect:SkillEffect;}
 export const skills:Record<string,Skill>={
  sword_mind:{name:'青锋心诀',school:'sword',slot:'mind',min:'qi',price:0,description:'基础剑诀：积蓄剑意，满三层可打断重击。',effect:'sword'},
  sword_still:{name:'止水剑心',school:'sword',slot:'mind',min:'foundation',price:100,description:'静修收益 +25%；战斗护体额外减伤 6。',effect:'still'},
@@ -86,7 +86,7 @@ export const skills:Record<string,Skill>={
  talisman_release:{name:'燃符诀',school:'talisman',slot:'finisher',min:'qi',price:0,description:'消耗 10 灵力，结算全部符印余下伤害。',effect:'detonate'},
  talisman_return:{name:'归元符',school:'talisman',slot:'finisher',min:'golden',price:160,description:'消耗 10 灵力，收割符印，同时恢复灵力。',effect:'return'}
 };
-export interface Relic {name:string;description:string;stones:number;inputs:Record<string,number>;effect:string;}
+export interface Relic {name:string;description:string;stones:number;inputs:Record<string,number>;effect:RelicEffect;}
 export const relics:Record<string,Relic>={
  frost_sword:{name:'青霜剑',description:'剑意终结后保留 1 层；所有直接攻击 +5。',stones:140,inputs:{jade:3,core:1},effect:'frost_sword'},
  jade_seal:{name:'玄玉印',description:'每次承受伤害减 8，适合稳健渡劫。',stones:140,inputs:{jade:4},effect:'jade_seal'},
@@ -108,5 +108,10 @@ export const enemies:Record<string,Enemy>={
 export const maxBatch=50;
 export const maxQuantity=1_000_000;
 export const cultivation={natural:{months:1,stones:0,bonus:0},assisted:{months:1,stones:20,bonus:100}};
+export const actionDurations={rest:1,forge:2,encounter:1,endLife:1};
+export const startingLoadouts={
+ sword:{mind:'sword_mind',builder:'sword_build',finisher:'sword_release'},
+ talisman:{mind:'talisman_mind',builder:'talisman_build',finisher:'talisman_release'}
+};
 function freeze(v:object){for(const x of Object.values(v))if(x&&typeof x==='object')freeze(x);Object.freeze(v);}
-for(const v of [realmIds,realms,locations,items,sources,recipes,skills,relics,enemies,cultivation])freeze(v);
+for(const v of [realmIds,realms,locations,items,sources,recipes,skills,relics,enemies,cultivation,actionDurations,startingLoadouts])freeze(v);

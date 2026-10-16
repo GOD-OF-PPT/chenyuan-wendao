@@ -40,5 +40,5 @@ export function fullRoute(choice='leave',school='sword',strategy='craft',allies=
  d.buy('healing_pill',12);d.buy('spirit_pill',4);d.meditate();d.rest();d.go('terrace');
  d.checkpoints.trial=structuredClone(d.game);d.doAction({type:'START_TRIAL'});d.doAction({type:'ANSWER_TRIAL',answer:trialAnswer});d.fight();
  if(d.game.trial?.stage!==4)throw new Error('Trial failed '+JSON.stringify({choice,school,strategy,allies,hp:d.game.core.player.hp,journal:d.game.journal.slice(-5)}));
- d.doAction({type:'END',ending});return d;
+ d.checkpoints.ending=structuredClone(d.game);d.doAction({type:'END',ending});return d;
 }

@@ -4,9 +4,9 @@
 
 ## 当前实施与可运行范围
 
-当前实施分支为 `codex/goal-1-full-rules`，在T01整合基线上接续已有full规则并补充配置与行为验证。网页可玩范围仍为 **凡人 → 炼气 → 筑基**：开场三选一、两种固定修法、四地点、采集/委托、交易炼丹、战斗及 IndexedDB 存档。
+当前实施分支为 `codex/goal-1-contracts-queries`，在T02规则基线上统一状态/版本、结构化结果与共享查询。网页可玩范围仍为 **凡人 → 炼气 → 筑基**：开场三选一、两种固定修法、四地点、采集/委托、交易炼丹、战斗及 IndexedDB 存档。
 
-完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)；T02的规则/配置工作见 [实施记录](docs/implementation/goal-1-full-rules.md)。full已含各境界、功法法宝与终局规则，尚未接入正式网页；条件因果、存档适配与正式美术仍待完成。数值为未平衡初值。
+完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，尚未接入正式网页；条件因果、存档适配与正式美术仍待完成。数值为未平衡初值。
 
 `main` 仍是设计资料基线。当前分支继承 [PR #1：经济规则](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/1)、[PR #2：首境界网页](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/2)、[PR #9：研究与实施修订](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/9)及PR #10，并以普通merge接续`feat/full-demo-g1-g5@a49c0b4`。旧PR均保留，未自动合并或关闭。规则存在与纯引擎路线通过，不代表网页已经可以飞升。
 
@@ -19,7 +19,7 @@
 工程声明 Node.js ≥22.16.0；历史 G1 CI 使用 Node.js 22.16.0 / npm 10.9.2。当前任务的实际环境和检查结果单独记录于 [T01实施记录](docs/implementation/goal-1-baseline.md)。不顺带升级依赖，根与前端均从已提交锁文件安装。
 
 ```sh
-git clone --branch codex/goal-1-full-rules --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+git clone --branch codex/goal-1-contracts-queries --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
 cd chenyuan-wendao
 npm ci --ignore-scripts
 node scripts/check_lock.mjs
@@ -55,6 +55,8 @@ npm run test:e2e
 
 T02新增的`check:content`校验实际来源与引用、当前境界炼制/采购路径及连锁交易获利；`replay:full`执行24组正常纯引擎指令，输出版本与行动序列摘要。规则测试补充12功法/4法宝效果、逐境缺口/恢复和真实旧档转换；这些均不替代正式网页/数据库全流程验收。
 
+T03的[运行契约](docs/contracts/full-runtime.md)规定full-demo.2 / full-unbalanced.1、已知旧档纯转换、退休/寿尽、结构化结果、检查点用途与共享成本/来源查询。CHECK-01本地202规则、24 full回放、17首境界浏览器及构建通过；正常路线账本与T02完全相同，网页产物与T01相同。实际数据库迁移/事务仍由下一阶段实现。
+
 ## 已认可美术
 
 第三方案：新国风半写实、青黛旧金、暖纸面板。以下是低分辨率参考预览，当前网页采用预览背景与印记头像；生产素材和最终视觉仍待实现。
@@ -72,6 +74,7 @@ T02新增的`check:content`校验实际来源与引用、当前境界炼制/采�
 | [Goal 1计划](goal-1/plan.md) / [任务记录](goal-1/tasks.md) | 当前执行顺序、检查门槛和实际进度 |
 | [T01基线实施记录](docs/implementation/goal-1-baseline.md) | 来源、冲突取舍、验证和剩余边界 |
 | [T02全境界规则核验](docs/implementation/goal-1-full-rules.md) | 实际配置/行为检查、纯引擎回放与待接线缺口 |
+| [正式运行契约](docs/contracts/full-runtime.md) / [T03与CHECK-01](docs/implementation/goal-1-contracts-queries.md) | 状态/版本、提交结果、查询和首组三任务全面验证 |
 | [试玩与运行说明](web/README.md) | 当前首境界的操作、战斗和本地存档 |
 | [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
 | [资料目录](docs/README.md) | v0.3与v0.4关系 |
