@@ -12,7 +12,7 @@ test('known old balance imports without resource rescaling and each high realm s
   await page.goto('/');
   for (const realm of ['foundation', 'golden', 'nascent', 'spirit'] as const) {
     const r = runner(options, origin.checkpoints[realm]); r.funds(C.assistedCosts[realm] * 2); r.go('cave');
-    const legacy = r.ledger.game; legacy.core.balanceVersion = 'full-unbalanced.1';
+    const legacy = r.ledger.game; legacy.core.contentVersion = 'full-demo.2'; legacy.core.balanceVersion = 'full-unbalanced.1';
     await page.getByRole('button', { name: '设置', exact: true }).click();
     if (realm !== 'foundation') page.once('dialog', dialog => dialog.accept());
     await page.getByTestId('import').setInputFiles({ name: 'historical-balance.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(legacy)) });
@@ -20,7 +20,7 @@ test('known old balance imports without resource rescaling and each high realm s
     await page.getByRole('button', { name: '关闭设置' }).click(); await page.getByTestId('tab-0').click();
     const imported = await snapshot(page);
     expect(imported.core.player).toEqual(legacy.core.player); expect(imported.core.inventory).toEqual(legacy.core.inventory); expect(imported.core.world).toEqual(legacy.core.world);
-    expect(imported.core.balanceVersion).toBe('full-unbalanced.2'); expect(imported.core.runId).not.toBe(legacy.core.runId);
+    expect(imported.core.balanceVersion).toBe(C.BALANCE); expect(imported.core.runId).not.toBe(legacy.core.runId);
     await page.getByLabel('行动次数').selectOption('1');
     await expect(page.getByTestId('preview-灵石辅助')).toContainText(`预计扣费：灵石 ${C.assistedCosts[realm]}`);
     await action(page, 'cultivate-assisted'); const after = await snapshot(page);

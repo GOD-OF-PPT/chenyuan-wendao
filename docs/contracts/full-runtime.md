@@ -4,7 +4,7 @@
 
 ## 版本与来源
 
-统一常量位于`src/full/versions.ts`：format=`chenyuan-full`，外层version=2，schemaVersion=2，contentVersion=`full-demo.2`，balanceVersion=`full-unbalanced.2`。存储结构仍为原Game字段；没有为显示阶段、目标偏好或检查点向Game添加副本。数值初值保持未平衡。
+统一常量位于`src/full/versions.ts`：format=`chenyuan-full`，外层version=2，schemaVersion=2，contentVersion=`full-demo.3`，balanceVersion=`full-unbalanced.3`。存储结构仍为原Game字段；没有为显示阶段、目标偏好或检查点向Game添加副本。数值初值保持未平衡。
 
 content版本更新记录本轮结束语义与机制分派变化。数值版本未变；根/web依赖锁也未变。未知format/version/schema/content/balance明确拒绝，不能清空重开。输入先限1000000个UTF-8字节，再解析与验证；字符数不能代替字节上限。
 
@@ -105,3 +105,17 @@ GrowthPanel自筑基起渐进展示这些信息，不自动替换玩家置顶目
 EngineLedger只封装真实resolve，逐次记录指令身份、实际毛扣费/净变化/毛获得及期初期末；毛获得=净变化+实际消耗，不再次叠加配置奖励。突破清零修为另记xpReset，护体回灵与消耗分别记账；HP仅记录净变化，不能用净变化冒充总承伤。失败指令另列，不记成功资源流。完整存档回滚建立新的账本段，不把恢复快照当作收入。账本不表示事务已保存。
 
 `npm run audit:economy`重新执行120组正常引擎路线并逐字校验版本、源码摘要、分境账本、对照/转换/战斗/失败恢复报告。它不证明完整网页飞升、全局最优策略、真人平衡或真实分钟时长，范围及剩余风险见[T10记录](../implementation/goal-1-economy-ledger.md)。
+
+
+## T11：选择条件、人物事实与后学剑简
+
+`Story.requires`仅表示前置节点已经选择（包括作别）；`Option.condition`表示开场/祖先节点实际选项必须匹配。条件只引用声明的因果祖先，文本变体互斥，不能让后来的选择改写先前事实。UI、资源来源、预览与DECIDE使用同一个条件与文本投影；不匹配的新指令在扣费前拒绝OPTION_CONDITION。每节点必须保留无条件、无资源效果的退出选项。感悟选项requireXpRoom在修为圆满时拒绝，不消耗灵材。
+
+沈清禾：赠丹者收药叙旧；交易者另付药价；自保者付草新结信任。药庐作别者可在元婴以新的药物重新立约。裴照：山门同行/竞争/作别，对应古境不同交易与文字；古境独行者可在化神另付灵材建立护阵之约。护阵效果写在已选Option.aid中，causalAid汇总后用于真实战斗；约定与实际命中不是同一事实。四人物记录只从openingChoice和choices派生，不另存关系分，不虚构年月；收卷后不再推荐未发生的会面。
+
+`STUDY {manual:'jinghong'}`在青云宗、筑基起可付80灵石（未平衡）研读既有惊鸿剑简，剑修终结术法同样获得既有+4，符修当前不获此伤害加成。交易开场保留提前取得的资格，不重复付费。仍使用既有core.learnedSkills，最多一个稳定ID，不新增功法槽或第十三个配装功法；当前内容允许非交易者在筑基后取得，旧M1/full版本仍按旧限制验证，禁止伪造当时不存在的后学记录。所有研读写入仍走标准身份/回执/原子事务。
+
+新增分支成本与后学途径使content/balance均升.3；外层version2、schema2和DB3不变。精确已知full-demo.1 / full-unbalanced.1及full-demo.2 / full-unbalanced.1、.2验证后转为.3/.3，保留资源、选择、已研读资格与未决事件ID。历史上合法的选项不以新增条件追溯否定，不补收费、不补物；未决事件新确认按当前分支显示，迁移刷新run防止旧意图误提交。不存在的跨版本组合明确拒绝。
+
+
+旧full1/full2的选择ID按冻结的HISTORICAL_FULL_OPTIONS校验，不能借用当前选项超集接受当时不存在的选择。该清单已与精确旧源逐项比较，full1/full2事件定义原件逐字相同。当前新引入选项必须满足不可变的前置选择；已在旧版本存在的选项保留历史合法路径，不追溯套用新门槛。关系事实中的旧选项使用中性描述，不能把曾经独行后的首次结约说成延续多年盟约。

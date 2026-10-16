@@ -37,6 +37,6 @@ export async function seedLegacy(page: Page, fixture: ReturnType<typeof legacyFi
   }, fixture);
 }
 export function npcFixture() {
-  const d = driver(); d.realm(); d.go('sect'); d.doAction({ type: 'EVENT', event: 'shen_return' });
+  const d = driver(); d.realm(); d.resource('herb', 2); d.go('sect'); d.doAction({ type: 'EVENT', event: 'shen_return' });
   return d.game;
 }

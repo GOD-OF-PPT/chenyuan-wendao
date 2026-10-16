@@ -20,6 +20,7 @@ export function requirementsForAction(game: Game, action: Action): ActionRequire
     case 'CRAFT': return { location: 'cave', minRealm: C.recipes[action.recipeId].min };
     case 'REST': return { location: 'cave' };
     case 'BREAKTHROUGH': return { location: 'cave', xp: C.realms[game.core.player.realm].xpCap };
+    case 'STUDY': return { location: 'sect', minRealm: C.swordManual.min };
     case 'LEARN': return { location: 'sect', minRealm: C.skills[action.skill].min };
     case 'FORGE': return { location: 'cave', minRealm: 'golden' };
     case 'ENCOUNTER': return { location: C.enemies[action.enemy].location, minRealm: C.enemies[action.enemy].min, hp: 30, schoolRequired: true };
@@ -51,6 +52,7 @@ export function costsForAction(game: Game, action: Action): ActionCosts {
       if (pill) cost.items[pill] = 1;
       break;
     }
+    case 'STUDY': cost.stones = C.swordManual.price; break;
     case 'LEARN': cost.stones = C.skills[action.skill].price; break;
     case 'FORGE': Object.assign(cost, { stones: C.relics[action.relic].stones, items: { ...C.relics[action.relic].inputs }, months: C.actionDurations.forge }); break;
     case 'ENCOUNTER': cost.months = C.actionDurations.encounter; break;

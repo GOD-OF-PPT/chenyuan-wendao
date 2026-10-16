@@ -63,3 +63,10 @@ BREAKTHROUGH/START_TRIAL使用T03返回的检查点用途，在同一事务保�
 DB继续v3，Game schema继续2。已知full-demo.2 / full-unbalanced.1和更早已知full v1按运行契约升为full-unbalanced.2；current、previous、checkpoint、owner在同一readwrite事务内验证并备份原件。原回执逐条保留原值和原键（包括顶层undefined），再清空活跃回执并写入MIGRATE；current换runId/revision0，使旧指令不能重放。checkpoint仍可重复恢复完整准备状态。没有差额补收、物品补发或游戏年月补算。
 
 归档游标、状态、检查点、owner、新回执任一步失败都回滚，包括归档配额错误；重开当前版本不再迁移。未知数值版本保留原档并拒绝。DB未增版的理由是T09旧full客户端每次写入都读取并validateGame/resolve校验数值版本；它会拒绝balance2，不能把旧缓存写回。T10以精确旧引擎做只读兼容核验，并在三个真实IDB引擎上验证迁移/失败/旧指令与两次恢复，不声称执行了旧版整站跨标签自动化。
+
+
+## T11内容与数值.3
+
+复用T10同事务迁移与逐条原件/回执归档，将已知历史full组合转为full-demo.3 / full-unbalanced.3；schema2/DB3不增。新增STUDY通过相同execute处理，不增加旁路存储。研读资格、费用、previous与回执同事务，失败整次回滚，同ID重试不再收费。
+
+测试从本仓库精确T10提交d3f48ef生成六开场/修法的已决与未决人物状态及合法旧回执，夹具只在测试内存/临时目录产生，不提交Game存档。实际三浏览器验证原件/回执/检查点/归属、迁移身份、旧命令拒绝、重开、两次完整恢复、配额错误回滚和新分支扣费/重试。旧引擎的拒写核验与旧整站跨标签运行分开，后者不冒充已执行。

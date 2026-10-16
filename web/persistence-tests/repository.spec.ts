@@ -244,12 +244,12 @@ test('existing full v1 content, previous snapshot and checkpoint migrate atomica
     const again = await h.FullSaveRepository.open(name), loadedAgain = await again.load(), archivesAgain = await again.archives(); again.close();
     return { raw, previous, cp, current, prior, checkpoint, archives, loadedAgain, archivesAgain };
   });
-  expect(result.current.core.contentVersion).toBe('full-demo.2');
+  expect(result.current.core.contentVersion).toBe('full-demo.3');
   expect(result.current.core.runId).not.toBe(result.raw.core.runId);
   expect(result.current.core.player).toEqual(result.raw.core.player);
   expect(result.prior.core.player).toEqual(result.previous.core.player);
-  expect(result.prior.core.contentVersion).toBe('full-demo.2');
-  expect(result.checkpoint.snapshot.core.contentVersion).toBe('full-demo.2');
+  expect(result.prior.core.contentVersion).toBe('full-demo.3');
+  expect(result.checkpoint.snapshot.core.contentVersion).toBe('full-demo.3');
   for (const raw of [result.raw, result.previous, result.cp]) expect(result.archives.some((x: any) => JSON.stringify(x.value) === JSON.stringify(raw))).toBe(true);
   expect(result.loadedAgain).toEqual(result.current);
   expect(result.archivesAgain).toEqual(result.archives);

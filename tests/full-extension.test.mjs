@@ -22,7 +22,7 @@ test('data-only event, recipe, skill and existing-effect relic additions work th
       assert.ok(content.includes(anchor), anchor);
       content = content.replace(anchor, anchor + '\n' + value);
     };
-    content = content.replace("'full-demo.2'", "'full-demo.extension-test'");
+    content = content.replace("'full-demo.3'", "'full-demo.extension-test'");
     insert('export const items:Record<string,Item>={',
       " spare_heal:{name:'试验回春丸',min:'qi',buy:18,sell:5,kind:'medicine',description:'复用恢复效果',hp:35},");
     insert('export const recipes:Record<string,Recipe>={',
@@ -35,7 +35,7 @@ test('data-only event, recipe, skill and existing-effect relic additions work th
     let events = readFileSync(join(temp, 'src/full/events.ts'), 'utf8');
     const anchor = 'export const stories:Record<string,Story>={';
     assert.ok(events.includes(anchor));
-    events = events.replace(anchor, anchor + "\n extension_meet:{id:'extension_meet',name:'试验机缘',npc:'行者',min:'qi',location:'sect',body:'一个已有机制的分支。',options:[{id:'ask',label:'交换',detail:'1灵石换丸',stones:1,gain:{spare_heal:1},result:'交换完成。'}]},");
+    events = events.replace(anchor, anchor + "\n extension_meet:{id:'extension_meet',name:'试验机缘',npc:'行者',min:'qi',location:'sect',body:'一个已有机制的分支。',options:[{id:'ask',label:'交换',detail:'1灵石换丸',stones:1,gain:{spare_heal:1},result:'交换完成。'},{id:'leave',label:'作别',detail:'不消耗物资',result:'你作别离开。'}]},");
     writeFileSync(join(temp, 'src/full/events.ts'), events);
     writeFileSync(join(temp, 'scenario.mjs'), `
 import assert from 'node:assert/strict';
