@@ -16,6 +16,8 @@ T06在`codex/goal-1-full-ui-cutover`把正式Store和最小页面切换至full�
 
 T07在`codex/goal-1-goal-guidance`接入可替换目标、缺口/来源逐层导航、偏好与取材批次、预算和真实回执；[T07记录](../implementation/goal-1-goal-guidance.md)单独绑定本阶段证据。正常网页范围仍以六条至筑基为当前完整验证，高级功法/法宝/逐境操作由T08以后完成，CHECK-03仍待T09后执行。
 
+T08在`codex/goal-1-build-equipment`接通12功法/4法宝的真实研习、逐槽装备、炼制与替换，并以正常新档覆盖双修法×双筹备至金丹、刷新恢复及失败重试。[T08记录](../implementation/goal-1-build-equipment.md)单独绑定本阶段实际证据，元婴以后和CHECK-03继续由T09承担。
+
 | ID | 任务 | 状态与剩余边界 |
 | --- | --- | --- |
 | SETUP-01 | 仓库接入 | 已完成，保持原 public 可见性 |
@@ -32,7 +34,7 @@ T07在`codex/goal-1-goal-guidance`接入可替换目标、缺口/来源逐层导
 | QA-01 | 自动化 | 历史83规则/17 Chromium；当前214规则、111三引擎生产网页/129原生IDB见T07，完整飞升矩阵、真机/真人待执行 |
 | BUILD-01 | 构建与交付 | 已生成静态运行包和测试附件，无公开部署 |
 | BUILD-02 / #4 | 前端传递依赖锁定 | 已入 Git 且采用前端 npm ci；同 SHA CI 已通过，PR 评审待完成 |
-| M2 / #5—#6 | 后续境界、法宝、人物回响、渡劫飞升 | 规则已接入正式Store/最小页面；完整逐境操作、构筑、因果和终局网页验收未完成 |
+| M2 / #5—#6 | 后续境界、法宝、人物回响、渡劫飞升 | 规则已接入正式Store；T08接通至金丹与功法法宝操作，后续逐境、因果和终局网页验收未完成 |
 
 运行入口：[web/README.md](../../web/README.md)。测试证据与明确边界：[可玩版记录](../implementation/M1-playable-web.md)。
 

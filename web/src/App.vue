@@ -16,6 +16,7 @@ import type { NavigationRequest } from './navigation';
 import GoalPanel from './GoalPanel.vue';
 import BatchPreview from './BatchPreview.vue';
 import ActionFeedback from './ActionFeedback.vue';
+import EquipmentPanel from './EquipmentPanel.vue';
 
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
@@ -170,7 +171,7 @@ onMounted(() => store.init());
           <div class="stat"><label>修为 <b data-testid="xp">{{core.player.xp}} / {{realm.xpCap}}</b></label><progress class="cultivation" :value="core.player.xp" :max="realm.xpCap || 1" aria-label="修为"></progress></div>
           <div class="stat-pair"><span>年龄 / 寿限</span><b>{{age}} / {{realm.lifespanMonths/12}} 岁</b></div><div class="stat-pair"><span>灵石</span><b class="gold" data-testid="stones">{{core.player.stones}}</b></div>
         </div><div class="divider"></div><h3>当前修法</h3><div class="skill-row"><span class="skill-icon">诀</span><div><strong>{{schoolName}}</strong><small>{{game.loadout.mind ? C.skills[game.loadout.mind].name : '引气入体后选择'}}</small></div></div>
-        <p class="small muted">本命法宝 · {{game.loadout.relic ? C.relics[game.loadout.relic].name : '金丹后可炼制装备'}}</p>
+        <p class="small muted">起手 · {{game.loadout.builder ? C.skills[game.loadout.builder].name : '尚未装备'}}<br>终结 · {{game.loadout.finisher ? C.skills[game.loadout.finisher].name : '尚未装备'}}<br>本命法宝 · {{game.loadout.relic ? C.relics[game.loadout.relic].name : '金丹后可炼制装备'}}</p>
       </aside>
       <section class="center-column">
         <div class="scene" :class="{fighting: game.battle}"><div class="scene-vignette"></div><div class="scene-copy">
@@ -223,7 +224,6 @@ onMounted(() => store.init());
             <button v-else class="primary" data-testid="return-cave" @click="travel('cave')" :disabled="!can({type:'TRAVEL',location:'cave'})">返回洞府修行 →</button>
             <div v-if="core.world.location==='cave'" class="batch-previews"><BatchPreview label="自然吐纳" :preview="quote(natural)"/><BatchPreview label="灵石辅助" :preview="quote(assisted)"/></div>
             <div class="breakthrough"><div><strong>{{goal?.title}}</strong><small>{{why(breakthrough) || '准备已经齐全'}}</small></div><button class="primary" data-testid="breakthrough" @click="act(breakthrough)" :disabled="!can(breakthrough)">{{core.player.realm === 'mortal' ? '引气入体' : core.player.realm === 'spirit' ? '开始渡劫' : '确认突破'}}</button></div>
-            <div class="school-picker"><h3>选择修法 <small>战斗外切换</small></h3><div class="choices two"><button v-for="school in ['sword','talisman'] as const" :key="school" :data-testid="`school-${school}`" :class="{selected:game.school===school}" @click="act({type:'SCHOOL',school})" :disabled="!can({type:'SCHOOL',school})"><strong>{{school==='sword'?'剑修 · 青锋剑诀':'符修 · 镇灵符诀'}}</strong><small>{{why({type:'SCHOOL',school})}}</small></button></div></div>
           </template>
           <template v-else-if="tab === '历练'">
             <div class="section-label">历练</div><p class="story">{{location.description}}</p>
@@ -244,6 +244,7 @@ onMounted(() => store.init());
             <h3>修行手记</h3><ol class="journal"><li v-for="(line,index) in [...game.journal].reverse()" :key="index">{{line}}</li></ol>
           </template>
         </div>
+        <EquipmentPanel v-if="tab==='修行' && phase!=='opening'" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" :consumption="consumption" @act="act" @track="tracking.select"/>
         <div class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><ActionFeedback v-if="store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/></div>
       </section>
       <aside class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="tracking.select" @navigate="navigate" @preparation="preparation=$event"/><section class="paper fate-summary"><div class="section-label">仙缘因果</div><h3>{{fate[0]}}</h3><p class="small">{{fate[1]}}</p><button class="text-button" @click="tab='仙缘'">展开仙缘 →</button></section>
