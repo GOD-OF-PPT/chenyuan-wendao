@@ -77,3 +77,12 @@ DB继续v3，Game schema继续2。已知full-demo.2 / full-unbalanced.1和更早
 RETIRE、END_LIFE通过现有execute，将当前/previous/回执同事务提交；原准备检查点保留，恢复仍完整替换并刷新run。生平不新增旁路存储。页面prepareAction固定预览时的完整指令，actPrepared送交同一权威事务；跨页revision或run变化拒绝，不结束另一份进度。额度失败或put成功后abort均保持活动人生/最后一月，重试同ID只结算一次。
 
 收卷失败后取消，只丢弃匹配指令ID的重试，不误删其他失败动作的意图；取消查看本身不写Game。没有准备检查点则明确说明，不能从生平文本或推测历史补造可恢复快照。生平文本与完整JSON存档是不同文件，导入派生记录拒绝且保留好档。
+
+
+## T13：正式入场与已验证检查点
+
+正式START_TRIAL复用execute：最新有效准备快照、previous、扣引后的问心状态、checkpoint/owner与回执同一readwrite事务，complete后才显示成功。失败保持原准备与原好检查点，不能只保存扣引或只保存问心。同ID同请求重试返回原结果和最新状态，不回退已回答问心后的战斗；不同ID再次启动被当前阶段拒绝。恢复完整快照产生新run，检查点可再次使用，物品不累加。
+
+Store只暴露loadCheckpoint实际校验后的kind/sourceRunId/sourceRevision/versions概要；读取失败显示警告与未知，不虚构可恢复状态。准备页分别标明已有突破/渡劫检查点；确认入场前说“将保存”，成功后的问心页只有验证到trial检查点才显示可恢复。导入Game清除独立检查点，没有附带快照的问心档明确说明。页面不自行写checkpoint。
+
+新增原生IDB测试从真实元婴前缀导入后重放其余合法行动，以权威事务生成原好突破检查点；入场配额/owner/回执失败及put后abort保留它。逐字段比较完整准备、原意图重试、重复启动、跨连接与两次完整恢复；夹具与正常新档UI路线分别计数。DB3/外层2/schema2/content3/balance3保持不变。

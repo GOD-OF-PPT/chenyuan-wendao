@@ -128,3 +128,10 @@ EngineLedger只封装真实resolve，逐次记录指令身份、实际毛扣费/
 归隐与寿尽仍使用既有RETIRE/END_LIFE：归隐不推进游戏月，最后一月寿尽只消耗1月，不能在未决事件/战斗/试炼中绕过锁。普通耗时行动留出最后一月，余寿显示精确整数月；查看、导出和现实等待不推进。新增确认固定review时的commandId/runId/revision，不在确认时重新取另一个人生的身份。事务完成前不发布结束；失败可同意图重试，取消失败的收卷则丢弃该重试意图。
 
 T12不增加Game字段、不调整游戏初值/目录/数值版本，schema2/外层2/content3/balance3/DB3继续使用。新增的是派生记录格式与展示；完整代码身份由提交与审计源码摘要绑定。历史版本经济报告保留，`audit:economy`改校验独立`docs/economy/current-report.json`，不覆写T11的.3报告。
+
+
+## T13：渡劫准备查询与入场确认
+
+`getTrialPreparation`从有效Game派生清单，`previewAction(START_TRIAL)`是资格与失败原因的唯一权威，必需资源取共享requirements/costs，不在UI复制气血阈值或材料费用。当前境界、修为、修法/合法槽位、气血、地点和空闲状态逐项列出；丹药、灵力、法宝与causalAid只给准备建议，不转为硬门槛。快照概览只陈述当前事实，不承诺战胜三关。查看/取消不写Game，前往只提交普通旅行。
+
+页面先prepareAction固定commandId/runId/expectedRevision和预览信息，确认通过actPrepared执行；不同进度不自动重新绑定，后端同样校验。确认窗重试必须与自己的commandId匹配，不能重放之前另一行动的失败意图；取消只丢弃匹配的重试。完整START_TRIAL检查点仍由既有事务写入，不新增保存旁路或Game字段，不调整content/balance/schema/DB版本和数值。

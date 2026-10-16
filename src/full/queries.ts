@@ -2,7 +2,7 @@ import * as C from './content.ts';
 import { stories } from './events.ts';
 import { buildLifeRecord, lifeOverview, lifeRecordText } from './life-record.ts';
 import { conditionMatches, storyView, relationshipViews, causalAid } from './story-context.ts';
-import { resolve, validateCommand, validateGame } from './engine.ts';
+import { resolve, validateCommand, validateGame, stats } from './engine.ts';
 import { RuleError, fail } from './errors.ts';
 import { costsForAction, multiplyCosts, requirementsForAction, remainingMonths } from './costs.ts';
 import type { ActionRequirements } from './costs.ts';
@@ -191,3 +191,33 @@ export function getCausalAid(game: Game) { validateGame(game); return causalAid(
 export function getLifeOverview(game: Game) { validateGame(game); return lifeOverview(game); }
 export function getLifeRecord(game: Game) { validateGame(game); return buildLifeRecord(game); }
 export function exportLifeText(game: Game) { validateGame(game); return lifeRecordText(buildLifeRecord(game)); }
+
+
+/** Shared START_TRIAL quote is the sole eligibility authority; recommendations never become gates. */
+export function getTrialPreparation(game: Game) {
+  validateGame(game);
+  const preview = previewAction(game, { type: 'START_TRIAL' }), requirements = preview.requirements;
+  const costs = preview.costs!, player = game.core.player, currentStats = stats(game), phase = gamePhase(game);
+  const loadout = (['mind','builder','finisher'] as const).map(slot => ({ slot, id: game.loadout[slot], name: game.loadout[slot] ? C.skills[game.loadout[slot]!].name : '未装备' }));
+  const items = Object.entries(costs.items).map(([id, quantity]) => ({ id, name: C.items[id].name, have: game.core.inventory[id], quantity, ready: game.core.inventory[id] >= quantity }));
+  const mandatory = [
+    { id: 'realm', label: '境界', ready: player.realm === requirements.minRealm, value: C.realms[player.realm].name, need: C.realms[requirements.minRealm!].name },
+    { id: 'xp', label: '修为', ready: player.xp >= requirements.xp!, value: String(player.xp), need: String(requirements.xp) },
+    { id: 'school', label: '合法修法与功法槽', ready: !!game.school && loadout.every(slot => !!slot.id), value: game.school === 'sword' ? '剑修' : game.school === 'talisman' ? '符修' : '尚未择法', need: '已选择修法并具备合法配装' },
+    { id: 'hp', label: '入场气血', ready: player.hp >= requirements.hp!, value: String(player.hp), need: String(requirements.hp) },
+    { id: 'location', label: '地点', ready: game.core.world.location === requirements.location, value: C.locations[game.core.world.location].name, need: C.locations[requirements.location!].name },
+    { id: 'phase', label: '当前状态', ready: phase === 'idle', value: phase === 'idle' ? '可自行行动' : '先处理当前遭遇或结局', need: '没有未决事件、战斗或进行中的天劫' },
+  ];
+  return { identity: { runId: game.core.runId, revision: game.core.revision }, preview, mandatory, items, costs,
+    canEnter: preview.allowed, failure: preview.failure, entryLocation: requirements.location!,
+    preparation: { loadout, school: game.school, relic: game.loadout.relic ? C.relics[game.loadout.relic].name : '未装备法宝',
+      hp: player.hp, maxHp: currentStats.maxHp, mp: player.mp, maxMp: currentStats.maxMp,
+      medicine: ['healing_pill','spirit_pill'].map(id => ({ id, name: C.items[id].name, quantity: game.core.inventory[id] })),
+      aid: causalAid(game), guard: currentStats.guard, manualDamageBonus: currentStats.manualDamageBonus, markDamage: currentStats.markDamage },
+    snapshotSummary: { realm: C.realms[player.realm].name, name: player.name, elapsedMonths: game.core.world.elapsedMonths, stones: player.stones,
+      ageMonths: player.startAgeMonths + game.core.world.elapsedMonths, manualOwned: !!game.core.learnedSkills.length, milestoneCount: Object.keys(game.milestones).length,
+      learned: game.learned.map(id => C.skills[id].name), relics: game.ownedRelics.map(id => C.relics[id].name),
+      inventory: Object.entries(game.core.inventory).filter(([,n]) => n > 0).map(([id,n]) => ({ id, name: C.items[id].name, quantity: n })),
+      choiceCount: Object.keys(game.choices).length, school: game.school },
+  };
+}

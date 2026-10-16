@@ -4,9 +4,9 @@
 
 ## 当前实施与可运行范围
 
-当前实施分支为 `codex/goal-1-life-record`，正式页面使用full规则与数据库v3，事务完成后才显示成功。T08验证四条正常新档至金丹及12功法/4法宝操作；T09已用四条正常新档路线验证双修法/双筹备至化神，并完成本境筹备信息与CHECK-03；完整结果见独立记录。T10建立120组真实经济回放并保护旧档；T11接通沈/裴选项因果、可补救护阵、四人物事实记录和后学剑简，T12补上真实生平、查看/文本导出、归隐/寿尽确认与恢复入口；数值仍未平衡。六条三开场×两修法至筑基旧路线保留。目标/来源引导、批量反馈、战斗、旧档迁移与完整检查点恢复均保留。
+当前实施分支为 `codex/goal-1-trial-preparation`，正式页面使用full规则与数据库v3，事务完成后才显示成功。T08验证四条正常新档至金丹及12功法/4法宝操作；T09已用四条正常新档路线验证双修法/双筹备至化神，并完成本境筹备信息与CHECK-03；完整结果见独立记录。T10建立120组真实经济回放并保护旧档；T11接通沈/裴选项因果、可补救护阵、四人物事实记录和后学剑简，T12补上真实生平、查看/文本导出、归隐/寿尽确认与恢复入口；T13接入渡劫准备清单、固定身份确认与原子入场检查点，两条正常新档路线已到问心。数值仍未平衡。六条三开场×两修法至筑基旧路线保留。目标/来源引导、批量反馈、战斗、旧档迁移与完整检查点恢复均保留。
 
-完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，页面接通共用地点/物品/事件操作；T08功法/法宝与至金丹网页结果见下方记录；T09的元婴/化神成长闭环见独立记录；因果/渡劫、正式美术、性能和真人验证仍按后续任务逐项完成。数值为未平衡初值。
+完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，页面接通共用地点/物品/事件操作；T08功法/法宝与至金丹网页结果见下方记录；T09的元婴/化神成长闭环见独立记录；问心/三关与两结尾的专用流程、正式美术、性能和真人验证仍按后续任务逐项完成。数值为未平衡初值。
 
 `main` 仍是设计资料基线。当前分支继承 [PR #1：经济规则](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/1)、[PR #2：首境界网页](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/2)、[PR #9：研究与实施修订](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/9)及PR #10，并以普通merge接续`feat/full-demo-g1-g5@a49c0b4`。旧PR均保留，未自动合并或关闭。规则存在与纯引擎路线通过，不代表网页已经可以飞升。
 
@@ -19,7 +19,7 @@
 工程声明 Node.js ≥22.16.0；历史 G1 CI 使用 Node.js 22.16.0 / npm 10.9.2。当前任务的实际环境和检查结果单独记录于 [T01实施记录](docs/implementation/goal-1-baseline.md)。不顺带升级依赖，根与前端均从已提交锁文件安装。
 
 ```sh
-git clone --branch codex/goal-1-growth-to-spirit --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+git clone --branch codex/goal-1-trial-preparation --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
 cd chenyuan-wendao
 npm ci --ignore-scripts
 node scripts/check_lock.mjs
@@ -88,6 +88,7 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 | [T10经济账本与版本迁移](docs/implementation/goal-1-economy-ledger.md) | 真实毛收支、120策略路线、修炼取舍、套利/战斗/恢复与未平衡边界 |
 | [T11选择因果与人物事实](docs/implementation/goal-1-choice-causality.md) | 三开场回响、同行/竞争/修复、真实护阵、后学剑简与旧档兼容 |
 | [T12生平与CHECK-04](docs/implementation/goal-1-life-record.md) | 只列已存事实、精确余寿、预览身份、收卷/重试/恢复及阶段全面检查 |
+| [T13渡劫准备与入场](docs/implementation/goal-1-trial-preparation.md) | 必需/可选清单、固定入场意图、完整准备检查点与失败/重复/恢复 |
 | [试玩与运行说明](web/README.md) | 当前首境界的操作、战斗和本地存档 |
 | [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
 | [资料目录](docs/README.md) | v0.3与v0.4关系 |
