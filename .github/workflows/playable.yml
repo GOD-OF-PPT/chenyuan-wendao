@@ -26,8 +26,10 @@ jobs:
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
           npm run typecheck
+          npm run check:content
           npm test
           npm run replay
+          npm run replay:full
           python3 scripts/check_docs.py
           python3 docs/v0.4/tools/check_documents.py
       - name: Install locked web dependencies

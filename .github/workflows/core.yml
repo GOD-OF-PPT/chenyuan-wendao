@@ -17,7 +17,9 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npm run typecheck
+      - run: npm run check:content
       - run: npm test
       - run: npm run replay
+      - run: npm run replay:full
       - run: python3 scripts/check_docs.py
       - run: python3 docs/v0.4/tools/check_documents.py

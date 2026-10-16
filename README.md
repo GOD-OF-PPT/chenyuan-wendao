@@ -4,11 +4,11 @@
 
 ## 当前实施与可运行范围
 
-当前实施分支为 `codex/goal-1-reproducible-baseline`，整合已验证的 G1 网页基线与 v0.4 研究文档。网页可玩范围仍为 **凡人 → 炼气 → 筑基**：开场三选一、两种固定修法、四地点、采集/委托、交易炼丹、战斗及 IndexedDB 存档。
+当前实施分支为 `codex/goal-1-full-rules`，在T01整合基线上接续已有full规则并补充配置与行为验证。网页可玩范围仍为 **凡人 → 炼气 → 筑基**：开场三选一、两种固定修法、四地点、采集/委托、交易炼丹、战斗及 IndexedDB 存档。
 
-完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01整合基线已通过本地与远端验证，交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)；下一项T02接续full规则。全境界网页接线、功法法宝、条件因果、渡劫飞升与正式美术保持未完成。数值为未平衡初值。
+完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)；T02的规则/配置工作见 [实施记录](docs/implementation/goal-1-full-rules.md)。full已含各境界、功法法宝与终局规则，尚未接入正式网页；条件因果、存档适配与正式美术仍待完成。数值为未平衡初值。
 
-`main` 仍是设计资料基线。当前分支继承 [PR #1：经济规则](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/1) 和依赖它的 [PR #2：首境界网页](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/2)，并整合 [PR #9：研究与实施修订](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/9)；旧PR均保留，未自动合并或关闭。另一分支 `feat/full-demo-g1-g5` 已有全境界规则，尚未接入本网页，不代表网页已经可以飞升。
+`main` 仍是设计资料基线。当前分支继承 [PR #1：经济规则](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/1)、[PR #2：首境界网页](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/2)、[PR #9：研究与实施修订](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/9)及PR #10，并以普通merge接续`feat/full-demo-g1-g5@a49c0b4`。旧PR均保留，未自动合并或关闭。规则存在与纯引擎路线通过，不代表网页已经可以飞升。
 
 ## 设计资料
 
@@ -19,7 +19,7 @@
 工程声明 Node.js ≥22.16.0；历史 G1 CI 使用 Node.js 22.16.0 / npm 10.9.2。当前任务的实际环境和检查结果单独记录于 [T01实施记录](docs/implementation/goal-1-baseline.md)。不顺带升级依赖，根与前端均从已提交锁文件安装。
 
 ```sh
-git clone --branch codex/goal-1-reproducible-baseline --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+git clone --branch codex/goal-1-full-rules --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
 cd chenyuan-wendao
 npm ci --ignore-scripts
 node scripts/check_lock.mjs
@@ -33,8 +33,10 @@ npm --prefix web run dev
 
 ```sh
 npm run typecheck
+npm run check:content
 npm test
 npm run replay
+npm run replay:full
 python3 scripts/check_docs.py
 python3 docs/v0.4/tools/check_documents.py
 npm --prefix web run build
@@ -50,6 +52,8 @@ npm run test:e2e
 本次整合实现提交 `4907e1d67f03ca9603b32f6cbf575c96ee6be03e` 已重新通过本地83规则/6经济路线/17 Chromium及构建；同SHA的[规则CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455654)与[网页CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455542)也通过。首轮浏览器launch失败与安装超时、启动预检和完整重跑均保留记录。
 
 浏览器用例覆盖三开场×两修法至筑基、采购替代路线、事件/战斗刷新、事务回滚、双击、多标签页、坏档、导入导出、检查点、两尺寸和图片失败。未覆盖完整飞升、三浏览器、真人平衡或最终视觉验收。
+
+T02新增的`check:content`校验实际来源与引用、当前境界炼制/采购路径及连锁交易获利；`replay:full`执行24组正常纯引擎指令，输出版本与行动序列摘要。规则测试补充12功法/4法宝效果、逐境缺口/恢复和真实旧档转换；这些均不替代正式网页/数据库全流程验收。
 
 ## 已认可美术
 
@@ -67,6 +71,7 @@ npm run test:e2e
 | --- | --- |
 | [Goal 1计划](goal-1/plan.md) / [任务记录](goal-1/tasks.md) | 当前执行顺序、检查门槛和实际进度 |
 | [T01基线实施记录](docs/implementation/goal-1-baseline.md) | 来源、冲突取舍、验证和剩余边界 |
+| [T02全境界规则核验](docs/implementation/goal-1-full-rules.md) | 实际配置/行为检查、纯引擎回放与待接线缺口 |
 | [试玩与运行说明](web/README.md) | 当前首境界的操作、战斗和本地存档 |
 | [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
 | [资料目录](docs/README.md) | v0.3与v0.4关系 |
