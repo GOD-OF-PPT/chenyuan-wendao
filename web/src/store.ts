@@ -1,13 +1,16 @@
 import { defineStore } from 'pinia';
 import { computed, onScopeDispose, ref, shallowRef } from 'vue';
 import type { Action, Command, Game } from '../../src/full/types.ts';
-import type { ActionResult, CommitOutcome } from '../../src/full/contracts.ts';
+import type { ActionResult, CommitOutcome, SaveCheckpoint } from '../../src/full/contracts.ts';
 import { FullSaveRepository, rawBackupText } from './full-persistence';
 import type { ControlOutcome, SaveMutation } from './full-persistence';
+
+export type CheckpointSummary = Pick<SaveCheckpoint, 'kind' | 'sourceRunId' | 'sourceRevision' | 'versions'>;
 
 export const useGame = defineStore('game', () => {
   const game = shallowRef<Game | null>(null), busy = ref(false), ready = ref(false), available = ref(false);
   const error = ref(''), warning = ref(''), saved = ref(false), hasCheckpoint = ref(false);
+  const checkpointSummary = shallowRef<CheckpointSummary | null>(null);
   const lastResult = shallowRef<ActionResult | null>(null), lastReplayed = ref(false), canRetry = ref(false);
   let repository: FullSaveRepository | undefined, channel: BroadcastChannel | undefined;
   let pending: (() => Promise<CommitOutcome | ControlOutcome>) | null = null;
@@ -19,9 +22,12 @@ export const useGame = defineStore('game', () => {
     expectedRunId: game.value?.core.runId ?? null, expectedRevision: game.value?.core.revision ?? 0 });
 
   async function checkpointInfo() {
-    if (!repository || !game.value) { hasCheckpoint.value = false; return; }
-    try { hasCheckpoint.value = !!await repository.loadCheckpoint(); warning.value = ''; }
-    catch (value) { hasCheckpoint.value = false; warning.value = '检查点无法读取：' + message(value); }
+    if (!repository || !game.value) { hasCheckpoint.value = false; checkpointSummary.value = null; return; }
+    try {
+      const cp = await repository.loadCheckpoint(); hasCheckpoint.value = !!cp;
+      checkpointSummary.value = cp ? { kind: cp.kind, sourceRunId: cp.sourceRunId, sourceRevision: cp.sourceRevision, versions: { ...cp.versions } } : null;
+      warning.value = '';
+    } catch (value) { hasCheckpoint.value = false; checkpointSummary.value = null; warning.value = '检查点无法读取：' + message(value); }
   }
   async function refresh() {
     if (!repository) return;
@@ -116,6 +122,8 @@ export const useGame = defineStore('game', () => {
     const intent = mutation(); await write(() => repository!.restoreCheckpoint(intent));
   }
   async function retry() { if (pending && canRetry.value) await write(pending, pendingCommandId); }
+  function canRetryFor(commandId: string) { return canRetry.value && pendingCommandId === commandId; }
+  async function retryFor(commandId: string) { if (canRetryFor(commandId)) await retry(); }
   function discardRetryFor(commandId: string) {
     if (pendingCommandId !== commandId) return;
     pending = null; pendingCommandId = undefined; canRetry.value = false;
@@ -125,6 +133,6 @@ export const useGame = defineStore('game', () => {
   }
   const saveLabel = computed(() => !ready.value ? '读取中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
   onScopeDispose(() => { disposed = true; repository?.close(); channel?.close(); });
-  return { game, busy, ready, available, error, warning, saved, hasCheckpoint, canRetry, lastResult, lastReplayed, saveLabel,
-    init, refresh, start, act, prepareAction, actPrepared, discardRetryFor, importText, restart, checkpoint, retry, rawText, validationError };
+  return { game, busy, ready, available, error, warning, saved, hasCheckpoint, checkpointSummary, canRetry, lastResult, lastReplayed, saveLabel,
+    init, refresh, start, act, prepareAction, actPrepared, discardRetryFor, importText, restart, checkpoint, retry, canRetryFor, retryFor, rawText, validationError };
 });
