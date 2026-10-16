@@ -19,12 +19,12 @@ export function newGame(name:string,runId:string):Game{
  const g:Game={format:SAVE_FORMAT,version:SAVE_VERSION,core:{schemaVersion:SCHEMA_VERSION,contentVersion:C.VERSION,balanceVersion:C.BALANCE,runId,revision:0,mode:'event',player:{name,realm:'mortal',xp:0,hp:60,mp:20,stones:40,startAgeMonths:216},world:{location:'wilderness',elapsedMonths:0},inventory:{...emptyItems(),healing_pill:1},openingChoice:null,learnedSkills:[],activeEvent:{id:'temple',instanceId:runId+':temple'}},school:null,loadout:{mind:null,builder:null,finisher:null,relic:null},learned:[],ownedRelics:[],battle:null,journal:['你带着一枚回春丹，在山雨中走进破庙。'],wins:0,choices:{},milestones:{mortal:0},trial:null,status:'active',ending:null};
  validateGame(g);return g;
 }
-function validateSnapshot(value:unknown,legacy=false):asserts value is Game{
+function validateSnapshot(value:unknown,legacy=false,balance=legacy?LEGACY_FULL_BALANCE:C.BALANCE):asserts value is Game{
  shape(value,['format','version','core','school','loadout','learned','ownedRelics','battle','journal','wins','choices','milestones','trial','status','ending']);
  if(value.format!==SAVE_FORMAT||value.version!==SAVE_VERSION)fail('SAVE_VERSION','不支持的完整存档版本');
  shape(value.core,['schemaVersion','contentVersion','balanceVersion','runId','revision','mode','player','world','inventory','openingChoice','learnedSkills','activeEvent']);
  const c=value.core;
- if(c.schemaVersion!==SCHEMA_VERSION||c.contentVersion!==(legacy?LEGACY_FULL_CONTENT:C.VERSION)||c.balanceVersion!==(legacy?LEGACY_FULL_BALANCE:C.BALANCE))fail('SAVE_VERSION','内容或数值版本不匹配，请保留原存档');
+ if(c.schemaVersion!==SCHEMA_VERSION||c.contentVersion!==(legacy?LEGACY_FULL_CONTENT:C.VERSION)||c.balanceVersion!==balance)fail('SAVE_VERSION','内容或数值版本不匹配，请保留原存档');
  if(!text(c.runId)||!integer(c.revision,0,Number.MAX_SAFE_INTEGER)||!['event','idle'].includes(String(c.mode)))fail('SAVE_ID','存档身份无效');
  shape(c.player,['name','realm','xp','hp','mp','stones','startAgeMonths']);shape(c.world,['location','elapsedMonths']);
  const p=c.player,w=c.world;
@@ -213,8 +213,12 @@ export function parseGame(raw:string):Game{
  if(typeof raw!=='string'||raw.length>MAX_SAVE_BYTES||new TextEncoder().encode(raw).byteLength>MAX_SAVE_BYTES)fail('SAVE_SIZE','存档过大');let v:unknown;try{v=JSON.parse(raw);}catch{fail('SAVE_JSON','文件不是有效 JSON');}
  if(object(v)&&v.format===SAVE_FORMAT){
   if(object(v.core)&&v.core.contentVersion===LEGACY_FULL_CONTENT){
-   validateSnapshot(v,true);const migrated=structuredClone(v);migrated.core.contentVersion=C.VERSION;
+   validateSnapshot(v,true);const migrated=structuredClone(v);migrated.core.contentVersion=C.VERSION;migrated.core.balanceVersion=C.BALANCE;
    if(migrated.status==='ended'&&migrated.ending==='lifespan')migrated.ending='retired';
+   validateGame(migrated);return migrated;
+  }
+  if(object(v.core)&&v.core.contentVersion===C.VERSION&&v.core.balanceVersion===LEGACY_FULL_BALANCE){
+   validateSnapshot(v,false,LEGACY_FULL_BALANCE);const migrated=structuredClone(v);migrated.core.balanceVersion=C.BALANCE;
    validateGame(migrated);return migrated;
   }
   validateGame(v);return structuredClone(v);

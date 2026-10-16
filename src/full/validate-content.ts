@@ -6,7 +6,7 @@ import { skillMechanisms, relicMechanisms } from './mechanisms.ts';
 export const fullCatalog = Object.freeze({
   realmIds: C.realmIds, realms: C.realms, locations: C.locations, items: C.items,
   sources: C.sources, recipes: C.recipes, skills: C.skills, relics: C.relics,
-  enemies: C.enemies, cultivation: C.cultivation, maxBatch: C.maxBatch,
+  enemies: C.enemies, cultivation: C.cultivation, assistedCosts: C.assistedCosts, maxBatch: C.maxBatch,
   maxQuantity: C.maxQuantity, actionDurations: C.actionDurations, startingLoadouts: C.startingLoadouts, stories,
 });
 export type ContentCatalog = typeof fullCatalog;
@@ -149,6 +149,10 @@ export function validateContent(c: ContentCatalog = fullCatalog) {
     number(action.stones, `cultivation.${id}.stones`); number(action.bonus, `cultivation.${id}.bonus`);
   }
   if (c.cultivation.natural.stones !== 0) fail('ZERO_RESOURCE_CULTIVATION', 'natural', 'basic cultivation must remain possible without currency');
+  if (Object.keys(c.assistedCosts).length !== c.realmIds.length || c.realmIds.some(id => !Object.hasOwn(c.assistedCosts, id))) fail('ASSISTED_COSTS', 'assistedCosts', 'every realm requires an explicit quote');
+  for (const [id, cost] of Object.entries(c.assistedCosts)) { realm(id as C.RealmId, 'assistedCosts.' + id); number(cost, 'assistedCosts.' + id, 1); }
+  if (c.assistedCosts.qi !== c.cultivation.assisted.stones) fail('ASSISTED_COSTS', 'assistedCosts.qi', 'base fee and qi fee must agree');
+
 
   for (const [id, story] of Object.entries(c.stories)) {
     if (story.id !== id) fail('STORY_ID', id, 'story identity differs from lookup key');

@@ -35,7 +35,7 @@ export function costsForAction(game: Game, action: Action): ActionCosts {
   const cost: ActionCosts = { stones: 0, mp: 0, months: 0, items: {} };
   switch (action.type) {
     case 'CHOOSE': if (action.choice !== 'leave') cost.items.healing_pill = 1; break;
-    case 'CULTIVATE': Object.assign(cost, { stones: C.cultivation[action.method].stones, months: C.cultivation[action.method].months }); break;
+    case 'CULTIVATE': Object.assign(cost, { stones: action.method === 'assisted' ? C.assistedCosts[game.core.player.realm] : C.cultivation.natural.stones, months: C.cultivation[action.method].months }); break;
     case 'SOURCE': cost.months = C.sources[action.sourceId].months; break;
     case 'BUY': cost.stones = C.items[action.item].buy * action.quantity; break;
     case 'SELL': cost.items[action.item] = action.quantity; break;

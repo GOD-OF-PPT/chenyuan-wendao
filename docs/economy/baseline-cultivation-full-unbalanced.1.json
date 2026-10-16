@@ -1,0 +1,1894 @@
+{
+  "schema": "chenyuan-economy-baseline-cultivation.1",
+  "rulesCommit": "d26c8c43a2096b08efbe227922c196b2b3bf13b1",
+  "ledgerCommit": "a143f05482e8da13a97ee774e9b59194a946bbe1",
+  "scope": "Pure exact historical engine commands; not saves or browser acceptance.",
+  "balanceVersion": "full-unbalanced.1",
+  "probes": [
+    {
+      "realm": "qi",
+      "cultivation": "natural",
+      "initial": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "qi",
+        "location": "cave",
+        "revision": 5,
+        "months": 2,
+        "stones": 40,
+        "xp": 0,
+        "hp": 100,
+        "mp": 60,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "closing": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "qi",
+        "location": "cave",
+        "revision": 6,
+        "months": 22,
+        "stones": 40,
+        "xp": 1000,
+        "hp": 100,
+        "mp": 60,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "totals": {
+        "commands": 1,
+        "executedSteps": 20,
+        "costs": {
+          "stones": 0,
+          "mp": 0,
+          "months": 20,
+          "items": {}
+        },
+        "received": {
+          "stones": 0,
+          "mp": 0,
+          "items": {}
+        },
+        "xpGained": 1000,
+        "xpReset": 0,
+        "battleTurns": 0,
+        "restMonths": 0,
+        "stops": {
+          "XP_CAP": 1
+        },
+        "commandTypes": {
+          "CULTIVATE": 1
+        },
+        "sourceSteps": {}
+      },
+      "realms": [
+        {
+          "realm": "qi",
+          "opening": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "qi",
+            "location": "cave",
+            "revision": 5,
+            "months": 2,
+            "stones": 40,
+            "xp": 0,
+            "hp": 100,
+            "mp": 60,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "closing": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "qi",
+            "location": "cave",
+            "revision": 6,
+            "months": 22,
+            "stones": 40,
+            "xp": 1000,
+            "hp": 100,
+            "mp": 60,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "commands": 1,
+          "executedSteps": 20,
+          "costs": {
+            "stones": 0,
+            "mp": 0,
+            "months": 20,
+            "items": {}
+          },
+          "received": {
+            "stones": 0,
+            "mp": 0,
+            "items": {}
+          },
+          "xpGained": 1000,
+          "xpReset": 0,
+          "battleTurns": 0,
+          "restMonths": 0,
+          "stops": {
+            "XP_CAP": 1
+          },
+          "commandTypes": {
+            "CULTIVATE": 1
+          },
+          "sourceSteps": {}
+        }
+      ],
+      "failures": []
+    },
+    {
+      "realm": "qi",
+      "cultivation": "assisted",
+      "initial": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "qi",
+        "location": "cave",
+        "revision": 5,
+        "months": 2,
+        "stones": 40,
+        "xp": 0,
+        "hp": 100,
+        "mp": 60,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "closing": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "qi",
+        "location": "cave",
+        "revision": 9,
+        "months": 20,
+        "stones": 0,
+        "xp": 1000,
+        "hp": 100,
+        "mp": 60,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "totals": {
+        "commands": 4,
+        "executedSteps": 20,
+        "costs": {
+          "stones": 200,
+          "mp": 0,
+          "months": 18,
+          "items": {}
+        },
+        "received": {
+          "stones": 160,
+          "mp": 0,
+          "items": {}
+        },
+        "xpGained": 1000,
+        "xpReset": 0,
+        "battleTurns": 0,
+        "restMonths": 0,
+        "stops": {
+          "XP_CAP": 1
+        },
+        "commandTypes": {
+          "TRAVEL": 2,
+          "SOURCE": 1,
+          "CULTIVATE": 1
+        },
+        "sourceSteps": {
+          "work": 8
+        }
+      },
+      "realms": [
+        {
+          "realm": "qi",
+          "opening": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "qi",
+            "location": "cave",
+            "revision": 5,
+            "months": 2,
+            "stones": 40,
+            "xp": 0,
+            "hp": 100,
+            "mp": 60,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "closing": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "qi",
+            "location": "cave",
+            "revision": 9,
+            "months": 20,
+            "stones": 0,
+            "xp": 1000,
+            "hp": 100,
+            "mp": 60,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "commands": 4,
+          "executedSteps": 20,
+          "costs": {
+            "stones": 200,
+            "mp": 0,
+            "months": 18,
+            "items": {}
+          },
+          "received": {
+            "stones": 160,
+            "mp": 0,
+            "items": {}
+          },
+          "xpGained": 1000,
+          "xpReset": 0,
+          "battleTurns": 0,
+          "restMonths": 0,
+          "stops": {
+            "XP_CAP": 1
+          },
+          "commandTypes": {
+            "TRAVEL": 2,
+            "SOURCE": 1,
+            "CULTIVATE": 1
+          },
+          "sourceSteps": {
+            "work": 8
+          }
+        }
+      ],
+      "failures": []
+    },
+    {
+      "realm": "foundation",
+      "cultivation": "natural",
+      "initial": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "foundation",
+        "location": "cave",
+        "revision": 14,
+        "months": 32,
+        "stones": 20,
+        "xp": 0,
+        "hp": 170,
+        "mp": 100,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "closing": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "foundation",
+        "location": "cave",
+        "revision": 15,
+        "months": 57,
+        "stones": 20,
+        "xp": 3000,
+        "hp": 170,
+        "mp": 100,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "totals": {
+        "commands": 1,
+        "executedSteps": 25,
+        "costs": {
+          "stones": 0,
+          "mp": 0,
+          "months": 25,
+          "items": {}
+        },
+        "received": {
+          "stones": 0,
+          "mp": 0,
+          "items": {}
+        },
+        "xpGained": 3000,
+        "xpReset": 0,
+        "battleTurns": 0,
+        "restMonths": 0,
+        "stops": {
+          "XP_CAP": 1
+        },
+        "commandTypes": {
+          "CULTIVATE": 1
+        },
+        "sourceSteps": {}
+      },
+      "realms": [
+        {
+          "realm": "foundation",
+          "opening": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "foundation",
+            "location": "cave",
+            "revision": 14,
+            "months": 32,
+            "stones": 20,
+            "xp": 0,
+            "hp": 170,
+            "mp": 100,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "closing": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "foundation",
+            "location": "cave",
+            "revision": 15,
+            "months": 57,
+            "stones": 20,
+            "xp": 3000,
+            "hp": 170,
+            "mp": 100,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "commands": 1,
+          "executedSteps": 25,
+          "costs": {
+            "stones": 0,
+            "mp": 0,
+            "months": 25,
+            "items": {}
+          },
+          "received": {
+            "stones": 0,
+            "mp": 0,
+            "items": {}
+          },
+          "xpGained": 3000,
+          "xpReset": 0,
+          "battleTurns": 0,
+          "restMonths": 0,
+          "stops": {
+            "XP_CAP": 1
+          },
+          "commandTypes": {
+            "CULTIVATE": 1
+          },
+          "sourceSteps": {}
+        }
+      ],
+      "failures": []
+    },
+    {
+      "realm": "foundation",
+      "cultivation": "assisted",
+      "initial": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "foundation",
+        "location": "cave",
+        "revision": 14,
+        "months": 32,
+        "stones": 20,
+        "xp": 0,
+        "hp": 170,
+        "mp": 100,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "closing": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "foundation",
+        "location": "cave",
+        "revision": 18,
+        "months": 53,
+        "stones": 0,
+        "xp": 3000,
+        "hp": 170,
+        "mp": 100,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "totals": {
+        "commands": 4,
+        "executedSteps": 19,
+        "costs": {
+          "stones": 260,
+          "mp": 0,
+          "months": 21,
+          "items": {}
+        },
+        "received": {
+          "stones": 240,
+          "mp": 0,
+          "items": {}
+        },
+        "xpGained": 3000,
+        "xpReset": 0,
+        "battleTurns": 0,
+        "restMonths": 0,
+        "stops": {
+          "XP_CAP": 1
+        },
+        "commandTypes": {
+          "TRAVEL": 2,
+          "SOURCE": 1,
+          "CULTIVATE": 1
+        },
+        "sourceSteps": {
+          "work_foundation": 4
+        }
+      },
+      "realms": [
+        {
+          "realm": "foundation",
+          "opening": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "foundation",
+            "location": "cave",
+            "revision": 14,
+            "months": 32,
+            "stones": 20,
+            "xp": 0,
+            "hp": 170,
+            "mp": 100,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "closing": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "foundation",
+            "location": "cave",
+            "revision": 18,
+            "months": 53,
+            "stones": 0,
+            "xp": 3000,
+            "hp": 170,
+            "mp": 100,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "commands": 4,
+          "executedSteps": 19,
+          "costs": {
+            "stones": 260,
+            "mp": 0,
+            "months": 21,
+            "items": {}
+          },
+          "received": {
+            "stones": 240,
+            "mp": 0,
+            "items": {}
+          },
+          "xpGained": 3000,
+          "xpReset": 0,
+          "battleTurns": 0,
+          "restMonths": 0,
+          "stops": {
+            "XP_CAP": 1
+          },
+          "commandTypes": {
+            "TRAVEL": 2,
+            "SOURCE": 1,
+            "CULTIVATE": 1
+          },
+          "sourceSteps": {
+            "work_foundation": 4
+          }
+        }
+      ],
+      "failures": []
+    },
+    {
+      "realm": "golden",
+      "cultivation": "natural",
+      "initial": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "golden",
+        "location": "cave",
+        "revision": 27,
+        "months": 78,
+        "stones": 20,
+        "xp": 0,
+        "hp": 270,
+        "mp": 150,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "closing": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "golden",
+        "location": "cave",
+        "revision": 28,
+        "months": 108,
+        "stones": 20,
+        "xp": 7200,
+        "hp": 270,
+        "mp": 150,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "totals": {
+        "commands": 1,
+        "executedSteps": 30,
+        "costs": {
+          "stones": 0,
+          "mp": 0,
+          "months": 30,
+          "items": {}
+        },
+        "received": {
+          "stones": 0,
+          "mp": 0,
+          "items": {}
+        },
+        "xpGained": 7200,
+        "xpReset": 0,
+        "battleTurns": 0,
+        "restMonths": 0,
+        "stops": {
+          "XP_CAP": 1
+        },
+        "commandTypes": {
+          "CULTIVATE": 1
+        },
+        "sourceSteps": {}
+      },
+      "realms": [
+        {
+          "realm": "golden",
+          "opening": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "golden",
+            "location": "cave",
+            "revision": 27,
+            "months": 78,
+            "stones": 20,
+            "xp": 0,
+            "hp": 270,
+            "mp": 150,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "closing": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "golden",
+            "location": "cave",
+            "revision": 28,
+            "months": 108,
+            "stones": 20,
+            "xp": 7200,
+            "hp": 270,
+            "mp": 150,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "commands": 1,
+          "executedSteps": 30,
+          "costs": {
+            "stones": 0,
+            "mp": 0,
+            "months": 30,
+            "items": {}
+          },
+          "received": {
+            "stones": 0,
+            "mp": 0,
+            "items": {}
+          },
+          "xpGained": 7200,
+          "xpReset": 0,
+          "battleTurns": 0,
+          "restMonths": 0,
+          "stops": {
+            "XP_CAP": 1
+          },
+          "commandTypes": {
+            "CULTIVATE": 1
+          },
+          "sourceSteps": {}
+        }
+      ],
+      "failures": []
+    },
+    {
+      "realm": "golden",
+      "cultivation": "assisted",
+      "initial": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "golden",
+        "location": "cave",
+        "revision": 27,
+        "months": 78,
+        "stones": 20,
+        "xp": 0,
+        "hp": 270,
+        "mp": 150,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "closing": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "golden",
+        "location": "cave",
+        "revision": 31,
+        "months": 102,
+        "stones": 110,
+        "xp": 7200,
+        "hp": 270,
+        "mp": 150,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "totals": {
+        "commands": 4,
+        "executedSteps": 20,
+        "costs": {
+          "stones": 300,
+          "mp": 0,
+          "months": 24,
+          "items": {}
+        },
+        "received": {
+          "stones": 390,
+          "mp": 0,
+          "items": {}
+        },
+        "xpGained": 7200,
+        "xpReset": 0,
+        "battleTurns": 0,
+        "restMonths": 0,
+        "stops": {
+          "XP_CAP": 1
+        },
+        "commandTypes": {
+          "TRAVEL": 2,
+          "SOURCE": 1,
+          "CULTIVATE": 1
+        },
+        "sourceSteps": {
+          "work_golden": 3
+        }
+      },
+      "realms": [
+        {
+          "realm": "golden",
+          "opening": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "golden",
+            "location": "cave",
+            "revision": 27,
+            "months": 78,
+            "stones": 20,
+            "xp": 0,
+            "hp": 270,
+            "mp": 150,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "closing": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "golden",
+            "location": "cave",
+            "revision": 31,
+            "months": 102,
+            "stones": 110,
+            "xp": 7200,
+            "hp": 270,
+            "mp": 150,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "commands": 4,
+          "executedSteps": 20,
+          "costs": {
+            "stones": 300,
+            "mp": 0,
+            "months": 24,
+            "items": {}
+          },
+          "received": {
+            "stones": 390,
+            "mp": 0,
+            "items": {}
+          },
+          "xpGained": 7200,
+          "xpReset": 0,
+          "battleTurns": 0,
+          "restMonths": 0,
+          "stops": {
+            "XP_CAP": 1
+          },
+          "commandTypes": {
+            "TRAVEL": 2,
+            "SOURCE": 1,
+            "CULTIVATE": 1
+          },
+          "sourceSteps": {
+            "work_golden": 3
+          }
+        }
+      ],
+      "failures": []
+    },
+    {
+      "realm": "nascent",
+      "cultivation": "natural",
+      "initial": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "nascent",
+        "location": "cave",
+        "revision": 39,
+        "months": 132,
+        "stones": 40,
+        "xp": 0,
+        "hp": 410,
+        "mp": 210,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 1,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "closing": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "nascent",
+        "location": "cave",
+        "revision": 40,
+        "months": 168,
+        "stones": 40,
+        "xp": 15000,
+        "hp": 410,
+        "mp": 210,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 1,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "totals": {
+        "commands": 1,
+        "executedSteps": 36,
+        "costs": {
+          "stones": 0,
+          "mp": 0,
+          "months": 36,
+          "items": {}
+        },
+        "received": {
+          "stones": 0,
+          "mp": 0,
+          "items": {}
+        },
+        "xpGained": 15000,
+        "xpReset": 0,
+        "battleTurns": 0,
+        "restMonths": 0,
+        "stops": {
+          "XP_CAP": 1
+        },
+        "commandTypes": {
+          "CULTIVATE": 1
+        },
+        "sourceSteps": {}
+      },
+      "realms": [
+        {
+          "realm": "nascent",
+          "opening": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "nascent",
+            "location": "cave",
+            "revision": 39,
+            "months": 132,
+            "stones": 40,
+            "xp": 0,
+            "hp": 410,
+            "mp": 210,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 1,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "closing": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "nascent",
+            "location": "cave",
+            "revision": 40,
+            "months": 168,
+            "stones": 40,
+            "xp": 15000,
+            "hp": 410,
+            "mp": 210,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 1,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "commands": 1,
+          "executedSteps": 36,
+          "costs": {
+            "stones": 0,
+            "mp": 0,
+            "months": 36,
+            "items": {}
+          },
+          "received": {
+            "stones": 0,
+            "mp": 0,
+            "items": {}
+          },
+          "xpGained": 15000,
+          "xpReset": 0,
+          "battleTurns": 0,
+          "restMonths": 0,
+          "stops": {
+            "XP_CAP": 1
+          },
+          "commandTypes": {
+            "CULTIVATE": 1
+          },
+          "sourceSteps": {}
+        }
+      ],
+      "failures": []
+    },
+    {
+      "realm": "nascent",
+      "cultivation": "assisted",
+      "initial": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "nascent",
+        "location": "cave",
+        "revision": 39,
+        "months": 132,
+        "stones": 40,
+        "xp": 0,
+        "hp": 410,
+        "mp": 210,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 1,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "closing": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "nascent",
+        "location": "cave",
+        "revision": 43,
+        "months": 158,
+        "stones": 140,
+        "xp": 15000,
+        "hp": 410,
+        "mp": 210,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 1,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "totals": {
+        "commands": 4,
+        "executedSteps": 22,
+        "costs": {
+          "stones": 360,
+          "mp": 0,
+          "months": 26,
+          "items": {}
+        },
+        "received": {
+          "stones": 460,
+          "mp": 0,
+          "items": {}
+        },
+        "xpGained": 15000,
+        "xpReset": 0,
+        "battleTurns": 0,
+        "restMonths": 0,
+        "stops": {
+          "XP_CAP": 1
+        },
+        "commandTypes": {
+          "TRAVEL": 2,
+          "SOURCE": 1,
+          "CULTIVATE": 1
+        },
+        "sourceSteps": {
+          "work_nascent": 2
+        }
+      },
+      "realms": [
+        {
+          "realm": "nascent",
+          "opening": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "nascent",
+            "location": "cave",
+            "revision": 39,
+            "months": 132,
+            "stones": 40,
+            "xp": 0,
+            "hp": 410,
+            "mp": 210,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 1,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "closing": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "nascent",
+            "location": "cave",
+            "revision": 43,
+            "months": 158,
+            "stones": 140,
+            "xp": 15000,
+            "hp": 410,
+            "mp": 210,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 1,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "commands": 4,
+          "executedSteps": 22,
+          "costs": {
+            "stones": 360,
+            "mp": 0,
+            "months": 26,
+            "items": {}
+          },
+          "received": {
+            "stones": 460,
+            "mp": 0,
+            "items": {}
+          },
+          "xpGained": 15000,
+          "xpReset": 0,
+          "battleTurns": 0,
+          "restMonths": 0,
+          "stops": {
+            "XP_CAP": 1
+          },
+          "commandTypes": {
+            "TRAVEL": 2,
+            "SOURCE": 1,
+            "CULTIVATE": 1
+          },
+          "sourceSteps": {
+            "work_nascent": 2
+          }
+        }
+      ],
+      "failures": []
+    },
+    {
+      "realm": "spirit",
+      "cultivation": "natural",
+      "initial": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "spirit",
+        "location": "cave",
+        "revision": 50,
+        "months": 196,
+        "stones": 90,
+        "xp": 0,
+        "hp": 600,
+        "mp": 290,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "closing": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "spirit",
+        "location": "cave",
+        "revision": 51,
+        "months": 236,
+        "stones": 90,
+        "xp": 28000,
+        "hp": 600,
+        "mp": 290,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "totals": {
+        "commands": 1,
+        "executedSteps": 40,
+        "costs": {
+          "stones": 0,
+          "mp": 0,
+          "months": 40,
+          "items": {}
+        },
+        "received": {
+          "stones": 0,
+          "mp": 0,
+          "items": {}
+        },
+        "xpGained": 28000,
+        "xpReset": 0,
+        "battleTurns": 0,
+        "restMonths": 0,
+        "stops": {
+          "XP_CAP": 1
+        },
+        "commandTypes": {
+          "CULTIVATE": 1
+        },
+        "sourceSteps": {}
+      },
+      "realms": [
+        {
+          "realm": "spirit",
+          "opening": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "spirit",
+            "location": "cave",
+            "revision": 50,
+            "months": 196,
+            "stones": 90,
+            "xp": 0,
+            "hp": 600,
+            "mp": 290,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "closing": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "spirit",
+            "location": "cave",
+            "revision": 51,
+            "months": 236,
+            "stones": 90,
+            "xp": 28000,
+            "hp": 600,
+            "mp": 290,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "commands": 1,
+          "executedSteps": 40,
+          "costs": {
+            "stones": 0,
+            "mp": 0,
+            "months": 40,
+            "items": {}
+          },
+          "received": {
+            "stones": 0,
+            "mp": 0,
+            "items": {}
+          },
+          "xpGained": 28000,
+          "xpReset": 0,
+          "battleTurns": 0,
+          "restMonths": 0,
+          "stops": {
+            "XP_CAP": 1
+          },
+          "commandTypes": {
+            "CULTIVATE": 1
+          },
+          "sourceSteps": {}
+        }
+      ],
+      "failures": []
+    },
+    {
+      "realm": "spirit",
+      "cultivation": "assisted",
+      "initial": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "spirit",
+        "location": "cave",
+        "revision": 50,
+        "months": 196,
+        "stones": 90,
+        "xp": 0,
+        "hp": 600,
+        "mp": 290,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "closing": {
+        "runId": "economy-leave-sword-gather-natural-base",
+        "contentVersion": "full-demo.2",
+        "balanceVersion": "full-unbalanced.1",
+        "realm": "spirit",
+        "location": "cave",
+        "revision": 54,
+        "months": 221,
+        "stones": 50,
+        "xp": 28000,
+        "hp": 600,
+        "mp": 290,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        },
+        "wins": 0,
+        "status": "active"
+      },
+      "totals": {
+        "commands": 4,
+        "executedSteps": 23,
+        "costs": {
+          "stones": 400,
+          "mp": 0,
+          "months": 25,
+          "items": {}
+        },
+        "received": {
+          "stones": 360,
+          "mp": 0,
+          "items": {}
+        },
+        "xpGained": 28000,
+        "xpReset": 0,
+        "battleTurns": 0,
+        "restMonths": 0,
+        "stops": {
+          "XP_CAP": 1
+        },
+        "commandTypes": {
+          "TRAVEL": 2,
+          "SOURCE": 1,
+          "CULTIVATE": 1
+        },
+        "sourceSteps": {
+          "work_spirit": 1
+        }
+      },
+      "realms": [
+        {
+          "realm": "spirit",
+          "opening": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "spirit",
+            "location": "cave",
+            "revision": 50,
+            "months": 196,
+            "stones": 90,
+            "xp": 0,
+            "hp": 600,
+            "mp": 290,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "closing": {
+            "runId": "economy-leave-sword-gather-natural-base",
+            "contentVersion": "full-demo.2",
+            "balanceVersion": "full-unbalanced.1",
+            "realm": "spirit",
+            "location": "cave",
+            "revision": 54,
+            "months": 221,
+            "stones": 50,
+            "xp": 28000,
+            "hp": 600,
+            "mp": 290,
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "wins": 0,
+            "status": "active"
+          },
+          "commands": 4,
+          "executedSteps": 23,
+          "costs": {
+            "stones": 400,
+            "mp": 0,
+            "months": 25,
+            "items": {}
+          },
+          "received": {
+            "stones": 360,
+            "mp": 0,
+            "items": {}
+          },
+          "xpGained": 28000,
+          "xpReset": 0,
+          "battleTurns": 0,
+          "restMonths": 0,
+          "stops": {
+            "XP_CAP": 1
+          },
+          "commandTypes": {
+            "TRAVEL": 2,
+            "SOURCE": 1,
+            "CULTIVATE": 1
+          },
+          "sourceSteps": {
+            "work_spirit": 1
+          }
+        }
+      ],
+      "failures": []
+    }
+  ],
+  "oldWriterProtection": {
+    "inputBalance": "full-unbalanced.2",
+    "rejection": "SAVE_VERSION",
+    "inputUnchanged": true
+  }
+}

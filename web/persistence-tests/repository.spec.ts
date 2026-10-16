@@ -147,7 +147,7 @@ test('imports reidentify the actual NPC event and preserve an unfinished battle'
   const result = await page.evaluate(async () => {
     const h = (globalThis as any).h, d = h.routes.driver(); d.realm(); d.go('sect'); d.doAction({ type: 'EVENT', event: 'shen_return' });
     const event = d.game, battle = h.routes.driver(); battle.go('wilderness'); battle.doAction({ type: 'ENCOUNTER', enemy: 'wolf' }); battle.doAction({ type: 'BATTLE', move: 'attack' });
-    event.core.contentVersion = 'full-demo.1'; battle.game.core.contentVersion = 'full-demo.1';
+    for (const g of [event, battle.game]) { g.core.contentVersion = 'full-demo.1'; g.core.balanceVersion = 'full-unbalanced.1'; }
     const repo = await h.FullSaveRepository.open('imports'), created = await repo.create('原档', h.mutation());
     const eventImported = await repo.importText(JSON.stringify(event), h.mutation(created.state));
     const battleImported = await repo.importText(JSON.stringify(battle.game), h.mutation(eventImported.state));
@@ -225,7 +225,7 @@ test('existing full v1 content, previous snapshot and checkpoint migrate atomica
     const h = (globalThis as any).h, name = 'content-version', repo = await h.FullSaveRepository.open(name); repo.close();
     const route = h.routes.fullRoute(), raw = structuredClone(route.checkpoints.qi), previous = structuredClone(h.routes.driver().game);
     const cpSnapshot = structuredClone(route.checkpoints.mortal);
-    for (const g of [raw, previous, cpSnapshot]) g.core.contentVersion = 'full-demo.1';
+    for (const g of [raw, previous, cpSnapshot]) { g.core.contentVersion = 'full-demo.1'; g.core.balanceVersion = 'full-unbalanced.1'; }
     const cp = { format: 'chenyuan-checkpoint', version: 1, kind: 'breakthrough',
       sourceRunId: cpSnapshot.core.runId, sourceRevision: cpSnapshot.core.revision,
       versions: { format: cpSnapshot.format, version: cpSnapshot.version, schemaVersion: cpSnapshot.core.schemaVersion,
@@ -261,7 +261,7 @@ test('unknown full content and inconsistent checkpoint metadata never overwrite 
     for (const bad of ['future-content', 'checkpoint-version']) {
       const repo = await h.FullSaveRepository.open(bad); repo.close();
       const fixture = h.routes.fullRoute().checkpoints.qi;
-      const raw = structuredClone(fixture); raw.core.contentVersion = bad === 'future-content' ? 'full-demo.999' : 'full-demo.1';
+      const raw = structuredClone(fixture); raw.core.contentVersion = bad === 'future-content' ? 'full-demo.999' : 'full-demo.1'; raw.core.balanceVersion = 'full-unbalanced.1';
       const cp = { format: 'chenyuan-checkpoint', version: 1, kind: 'breakthrough', sourceRunId: fixture.core.runId,
         sourceRevision: fixture.core.revision, versions: { format: fixture.format, version: fixture.version,
           schemaVersion: fixture.core.schemaVersion, contentVersion: 'full-demo.999', balanceVersion: fixture.core.balanceVersion }, snapshot: fixture };
