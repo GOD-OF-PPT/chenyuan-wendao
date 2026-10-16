@@ -4,7 +4,7 @@
 
 ## 当前实施与可运行范围
 
-当前实施分支为 `codex/goal-1-full-persistence`，在T03契约上实现full事务适配与旧档迁移，尚未切换正式Store。网页可玩范围仍为 **凡人 → 炼气 → 筑基**：开场三选一、两种固定修法、四地点、采集/委托、交易炼丹、战斗及 IndexedDB 存档。
+当前实施分支为 `codex/goal-1-recovery-idempotency`，在T04事务库上完善回执、并发、失败与可重复恢复，数据库版本为3，尚未切换正式Store。网页可玩范围仍为 **凡人 → 炼气 → 筑基**：开场三选一、两种固定修法、四地点、采集/委托、交易炼丹、战斗及 IndexedDB 存档。
 
 完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，尚未接入正式网页；条件因果、存档适配与正式美术仍待完成。数值为未平衡初值。
 
@@ -19,7 +19,7 @@
 工程声明 Node.js ≥22.16.0；历史 G1 CI 使用 Node.js 22.16.0 / npm 10.9.2。当前任务的实际环境和检查结果单独记录于 [T01实施记录](docs/implementation/goal-1-baseline.md)。不顺带升级依赖，根与前端均从已提交锁文件安装。
 
 ```sh
-git clone --branch codex/goal-1-full-persistence --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+git clone --branch codex/goal-1-recovery-idempotency --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
 cd chenyuan-wendao
 npm ci --ignore-scripts
 node scripts/check_lock.mjs
@@ -58,7 +58,7 @@ T02新增的`check:content`校验实际来源与引用、当前境界炼制/采�
 
 T03的[运行契约](docs/contracts/full-runtime.md)规定full-demo.2 / full-unbalanced.1、已知旧档纯转换、退休/寿尽、结构化结果、检查点用途与共享成本/来源查询。CHECK-01本地202规则、24 full回放、17首境界浏览器及构建通过；正常路线账本与T02完全相同，网页产物与T01相同。该阶段的纯转换不代替下述T04真实数据库验证。
 
-T04的[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)已在独立真实IndexedDB测试页验证，数据库升级/失败保留、导入和状态/回执/检查点原子写入由[数据库契约](docs/contracts/full-persistence.md)说明。测试页不进入dist；正式Store仍未切换。检查点回退与完整幂等/并发矩阵由T05继续完成。
+T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)，T05进一步完成[幂等与可重复恢复](docs/implementation/goal-1-recovery-idempotency.md)：数据库v3关闭旧连接，按full权威进度升级；坏回执拒绝、恢复整次回滚、检查点可重复使用，打开失败可只读导出原件。本地206规则、42原生IDB、17旧网页及构建通过，测试页不进入dist；正式Store仍未切换。
 
 ## 已认可美术
 
@@ -79,6 +79,7 @@ T04的[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)已
 | [T02全境界规则核验](docs/implementation/goal-1-full-rules.md) | 实际配置/行为检查、纯引擎回放与待接线缺口 |
 | [正式运行契约](docs/contracts/full-runtime.md) / [T03与CHECK-01](docs/implementation/goal-1-contracts-queries.md) | 状态/版本、提交结果、查询和首组三任务全面验证 |
 | [full数据库契约](docs/contracts/full-persistence.md) / [T04记录](docs/implementation/goal-1-full-persistence.md) | 原子事务、旧档/内容迁移与真实IDB模块验证 |
+| [T05幂等与恢复](docs/implementation/goal-1-recovery-idempotency.md) | 并发、坏回执、重复恢复、v3升级与只读备份 |
 | [试玩与运行说明](web/README.md) | 当前首境界的操作、战斗和本地存档 |
 | [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
 | [资料目录](docs/README.md) | v0.3与v0.4关系 |

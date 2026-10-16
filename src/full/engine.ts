@@ -3,7 +3,7 @@ import {stories} from './events.ts';
 import type {Game,Command,Action,Choice,Battle,Move} from './types.ts';
 import {RuleError,fail} from './errors.ts';
 import {costsForAction,multiplyCosts,requirementsForAction,remainingMonths} from './costs.ts';
-import {gamePhase} from './contracts.ts';
+import {gamePhase,BATCH_STOP_CODES} from './contracts.ts';
 import type {ActionCosts,Resolution,RuleFailure} from './contracts.ts';
 import {SAVE_FORMAT,SAVE_VERSION,SCHEMA_VERSION,MAX_SAVE_BYTES,LEGACY_FULL_CONTENT,LEGACY_FULL_BALANCE,currentVersions} from './versions.ts';
 export type {Game,Command,Action,Battle} from './types.ts';
@@ -186,7 +186,7 @@ export function resolve(game:Game,command:Command):Resolution{
  if(command.expectedRevision!==game.core.revision)fail('STALE_REVISION','另一页面已经推进，请重新读取进度');
  let g=structuredClone(game),steps=0,stopReason:RuleFailure|null=null,unitCosts:ActionCosts|undefined;
  const count=command.type==='CULTIVATE'||command.type==='SOURCE'?command.count??1:1;
- for(let i=0;i<count;i++){const candidate=structuredClone(g);try{one(candidate,command);validateGame(candidate);unitCosts??=costsForAction(g,command);g=candidate;steps++;}catch(e){if(steps&&e instanceof RuleError&&['XP_CAP','AGE_LIMIT','TARGET_MET','INSUFFICIENT_STONES','INSUFFICIENT_ITEM','CAPACITY'].includes(e.code)){stopReason={code:e.code,message:e.message};break;}throw e;}}
+ for(let i=0;i<count;i++){const candidate=structuredClone(g);try{one(candidate,command);validateGame(candidate);unitCosts??=costsForAction(g,command);g=candidate;steps++;}catch(e){if(steps&&e instanceof RuleError&&BATCH_STOP_CODES.includes(e.code)){stopReason={code:e.code,message:e.message};break;}throw e;}}
  g.core.revision++;
  if(['CULTIVATE','SOURCE','BUY','SELL','CRAFT','REST','USE'].includes(command.type)){
   const p=g.core.player,before=game.core.player;const parts:string[]=[];

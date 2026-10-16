@@ -1,12 +1,14 @@
 # Full IndexedDB适配器
 
-日期：2026-10-16。Goal 1 / T04实现。正式Store仍未切换到本模块。
+日期：2026-10-16。Goal 1 / T04实现基础事务，T05补齐幂等与恢复。正式Store仍未切换到本模块。
 
 ## 数据库与原件保留
 
-`web/src/full-persistence.ts`使用原数据库名`chenyuan-playable-v1`，数据库版本升级到2，新增full-state、full-receipts、full-backups三个store，原state/receipts保留且不改写。名称中的v1是历史来源名，不是当前数据库版本。
+`web/src/full-persistence.ts`使用原数据库名`chenyuan-playable-v1`，当前数据库版本3。T04的v2新增full-state、full-receipts、full-backups三个store，T05的v3增加检查点归属协议；原state/receipts保留且不改写。名称中的v1是历史来源名，不是当前数据库版本。
 
-v1→v2在同一个versionchange事务中读取最新旧记录，调用已知格式解析，验证当前档、上一成功档与突破前检查点，保留原件和迁移身份，再写full数据。任何转换/写入失败均abort，数据库版本仍1，原旧store仍可读取。拒绝过的blocked请求在阻塞解除后也会abort，不会偷偷迁移。
+v1可直接升级v3：在同一个versionchange事务中读取最新旧记录，调用已知格式解析，验证当前档、上一成功档与突破前检查点，保留原件和迁移身份，再写full数据。任何转换/写入失败均abort，数据库版本仍1，原旧store仍可读取。拒绝过的blocked请求在阻塞解除后也会abort，不会偷偷迁移。
+
+v2→v3只处理已经权威的full记录，绝不再把保留的v1旧进度套回来。归属补齐和内容转换在升级事务中完成，失败时版本仍2；成功升级触发旧连接versionchange关闭，避免旧适配器继续写入而破坏新归属协议。已知版本缺少应有stores或full为空但旧记录仍在时拒绝，不自动补成新空档。
 
 已存在v2数据库时，open会检查full内容版本。已知full-demo.1按运行契约转换：当前、previous与检查点一起校验、备份并写入；未知版本或不一致检查点拒绝，原记录不变。已是当前版本的档不重复迁移或更换身份。
 
@@ -21,11 +23,14 @@ v1→v2在同一个versionchange事务中读取最新旧记录，调用已知格
 | API | 语义 |
 | --- | --- |
 | FullSaveRepository.open(name?) | 默认使用上述数据库；可指定测试命名空间。完成升级/内容迁移后才交回连接，存储不可用不建立临时游戏 |
-| load / loadPrevious / loadCheckpoint | 原生readonly事务读取并验证；不存在返回null，坏记录拒绝，不清空重开 |
+| load / loadPrevious / loadCheckpoint | 原生readonly事务读取并验证；不存在返回null，坏记录或归属不一致拒绝，不清空重开 |
 | archives | readonly读取迁移原件，便于后续备份界面导出；不是云存储 |
 | create(name, mutation) | 显式创建新局或替换当前局；无自动赠境界，等待事务complete |
 | importText(raw, mutation) | 先限体积/解析/验证，再在事务内CAS替换；同时保存上一好档，清理旧回执/活动检查点 |
 | execute(command) | 读取最新状态、检查回执、resolve，再原子写状态/previous/回执/必要准备检查点 |
+| restoreCheckpoint(mutation) | 在同一事务检查当前身份和准备快照，替换完整状态、刷新runId、保存previous、清理旧回执并保留检查点 |
+| FullSaveRepository.exportRaw(name?) | 不指定版本、不迁移的readonly读取；可读取无法由当前版本打开的旧/新库；不存在返回null且不留下空库 |
+| rawBackupText(backup) | 将当前JSON原件编码为独立备份格式；undefined记录有显式标记，不能无损编码的结构化值明确拒绝 |
 | close | 关闭连接；versionchange自动关闭，旧连接再用明确拒绝 |
 
 普通动作使用T03的Command，校验commandId/runId/expectedRevision。create/import使用`SaveMutation {commandId, runId, expectedRunId, expectedRevision}`：runId是新目标人生，expectedRunId/revision指明被替换的当前档；空库只接受expectedRunId=null、expectedRevision=0。新目标不得等于当前或被导入的原人生。一次意图重试保留相同身份和内容。
@@ -36,9 +41,15 @@ v1→v2在同一个versionchange事务中读取最新旧记录，调用已知格
 
 事务回调不等待网络或其他外部Promise。只有transaction.complete才返回成功；请求put成功仍可能整次abort。当前状态、上一成功档、回执和必要检查点任一失败都回滚，调用者必须保留“本次未保存”的错误，不能用重读旧档冒充成功。
 
-已提交普通指令的重试返回原ActionResult与最新Game，避免重复奖励和界面倒退；同编号不同请求拒绝。T04包含必要的基础幂等与旧参数隔离；T05还要补全重复/损坏回执、并发/失败语义矩阵和可重复恢复API，不把本轮少量基础用例当作该阶段完成。
+已提交普通指令的重试返回原ActionResult与最新Game，避免重复奖励和界面倒退；同编号不同请求拒绝。回执先于过期revision判断，但必须验证自身命令/指纹、版本、身份、前后revision、步数/停止原因、阶段、毛成本、净变化及已提交历史界限。null/undefined等坏记录不当作“无回执”重新执行。
 
-BREAKTHROUGH/START_TRIAL使用T03返回的检查点用途，在同一事务保存完整行动前快照。检查点验证格式、源身份、版本及该用途的准备动作确实可执行。本轮支持保存、读取和验证；restoreCheckpoint由T05实现，正式渡劫页面由T13—T15接线。
+create/import/restore控制回执也校验格式、原意图和参数。重复请求只返回最新状态，不再次创建/导入/回退。所有异步写入入口用Promise拒绝；存储访问被拒绝、连接关闭、配额不足与事务abort明确失败，不转入内存游戏。重读上一好档不是本次写入成功。
+
+BREAKTHROUGH/START_TRIAL使用T03返回的检查点用途，在同一事务保存完整行动前快照。检查点验证格式、源身份、版本及该用途的准备动作确实可执行。checkpoint-owner独立记录当前人生与源快照的关系；T04旧格式缺归属时只接受同run或可由归档原件证明的迁移关系，不能未经证明接入另一人生的检查点。
+
+恢复替换完整Game而不单独返还物品，新的runId/revision=0隔离旧标签页；同事务保留完整准备快照、更新其归属并清理旧回执。恢复后的正常行动可以继续，重复旧恢复意图返回最新进度；新的恢复意图仍可再次使用同一个检查点，直到它被新准备检查点替换。多次渡劫失败不会失去准备恢复路径。
+
+原始备份不是可玩存档，不能通过普通importText误导入。导出不升级数据库、改写记录或解释未知格式；不支持无损JSON表示的数据明确报错，原件仍在。本轮提供读取/编码API；下载按钮和正式恢复页面由T06/T12—T15接线。
 
 ## 测试边界
 

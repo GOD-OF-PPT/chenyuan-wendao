@@ -10,6 +10,8 @@ T03在`codex/goal-1-contracts-queries`落实 [运行契约](../contracts/full-ru
 
 T04在`codex/goal-1-full-persistence`实现独立full事务库与已知旧档迁移，真实IDB验证及边界见 [T04记录](../implementation/goal-1-full-persistence.md)。正式Store、恢复API和三浏览器完整矩阵仍由T05/T06承接，不因模块通过提前关闭网页验收。
 
+T05在`codex/goal-1-recovery-idempotency`补齐恢复API、回执/幂等/并发/失败语义与原件只读备份，数据库升级v3并保护full权威进度。[T05记录](../implementation/goal-1-recovery-idempotency.md)为206规则、42原生IDB与17原网页回归通过。正式Store/页面切换与CHECK-02三浏览器关键路径留在T06，不把模块验证写成网页飞升。
+
 | ID | 任务 | 状态与剩余边界 |
 | --- | --- | --- |
 | SETUP-01 | 仓库接入 | 已完成，保持原 public 可见性 |
