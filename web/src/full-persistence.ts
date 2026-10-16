@@ -334,6 +334,13 @@ export class FullSaveRepository {
   /** Read without choosing a database version or running any migration. */
   static async exportRaw(name = FULL_DB_NAME): Promise<RawDatabaseBackup | null> {
     if (!globalThis.indexedDB) throw new RuleError('STORAGE_UNAVAILABLE', '浏览器未提供本地存储');
+    // Opening an absent name can leave a version-0 catalog entry in WebKit even
+    // when its upgrade aborts. Enumerate first so backup never probes empty names.
+    if (typeof indexedDB.databases !== 'function') throw new RuleError('RAW_BACKUP_UNSUPPORTED', '浏览器不支持只读数据库查询，请保留数据并使用支持的浏览器导出');
+    let databases: IDBDatabaseInfo[];
+    try { databases = await indexedDB.databases(); }
+    catch (error) { throw storageFailure(error); }
+    if (!databases.some(database => database.name === name)) return null;
     return new Promise<RawDatabaseBackup | null>((accept, reject) => {
       let absent = false, abandoned = false;
       const request = indexedDB.open(name);

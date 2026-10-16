@@ -1,6 +1,6 @@
 # Full IndexedDB适配器
 
-日期：2026-10-16。Goal 1 / T04实现基础事务，T05补齐幂等与恢复。正式Store仍未切换到本模块。
+日期：2026-10-16。Goal 1 / T04实现基础事务，T05补齐幂等与恢复，T06正式Store与最小页面已接入本模块。
 
 ## 数据库与原件保留
 
@@ -29,7 +29,7 @@ v2→v3只处理已经权威的full记录，绝不再把保留的v1旧进度套�
 | importText(raw, mutation) | 先限体积/解析/验证，再在事务内CAS替换；同时保存上一好档，清理旧回执/活动检查点 |
 | execute(command) | 读取最新状态、检查回执、resolve，再原子写状态/previous/回执/必要准备检查点 |
 | restoreCheckpoint(mutation) | 在同一事务检查当前身份和准备快照，替换完整状态、刷新runId、保存previous、清理旧回执并保留检查点 |
-| FullSaveRepository.exportRaw(name?) | 不指定版本、不迁移的readonly读取；可读取无法由当前版本打开的旧/新库；不存在返回null且不留下空库 |
+| FullSaveRepository.exportRaw(name?) | 先只读枚举数据库，不存在返回null而不open；已存在库不指定版本、不迁移地读取；不支持枚举时明确拒绝，避免留下空库 |
 | rawBackupText(backup) | 将当前JSON原件编码为独立备份格式；undefined记录有显式标记，不能无损编码的结构化值明确拒绝 |
 | close | 关闭连接；versionchange自动关闭，旧连接再用明确拒绝 |
 
@@ -49,10 +49,10 @@ BREAKTHROUGH/START_TRIAL使用T03返回的检查点用途，在同一事务保�
 
 恢复替换完整Game而不单独返还物品，新的runId/revision=0隔离旧标签页；同事务保留完整准备快照、更新其归属并清理旧回执。恢复后的正常行动可以继续，重复旧恢复意图返回最新进度；新的恢复意图仍可再次使用同一个检查点，直到它被新准备检查点替换。多次渡劫失败不会失去准备恢复路径。
 
-原始备份不是可玩存档，不能通过普通importText误导入。导出不升级数据库、改写记录或解释未知格式；不支持无损JSON表示的数据明确报错，原件仍在。本轮提供读取/编码API；下载按钮和正式恢复页面由T06/T12—T15接线。
+原始备份不是可玩存档，不能通过普通importText误导入。导出不升级数据库、改写记录或解释未知格式；不支持无损JSON表示的数据明确报错，原件仍在。T06接入下载、通用恢复按钮与失败提示；渡劫专用准备/恢复交互继续在T13—T15完善。
 
 ## 测试边界
 
-`npm --prefix web run test:persistence`启动独立本机Vite测试页，在Chromium真实IndexedDB中执行，没有fake-indexeddb。测试使用隔离浏览器上下文/测试数据库名和明确的故障注入；正常网页路线验收不调用这些测试操作。
+`npm --prefix web run test:persistence`启动独立本机Vite测试页，在Chromium/Firefox/WebKit真实IndexedDB中执行，没有fake-indexeddb。测试使用隔离浏览器上下文/测试数据库名和明确的故障注入；正常网页路线验收不调用这些测试操作。
 
-测试页、动态测试模块和原始存档不进入生产dist；正常生产入口仍是旧Store。测试涵盖真实旧引擎9阶段×6组合、实际旧Repository连接、M1原始快照、full内容升级、非temple事件、未决战斗、坏档/未来版本、blocked/配额/abort及准备检查点。仅Chromium模块测试，未宣称三浏览器、网页飞升、真人或永久落盘保障。
+测试页、动态测试模块和原始存档不进入生产dist；正常生产入口仅使用full Store。测试涵盖真实旧引擎9阶段×6组合、实际旧Repository连接、M1原始快照、full内容升级、非temple事件、未决战斗、坏档/未来版本、blocked/配额/abort及准备检查点。各阶段实际结果见T04—T06实施记录；三引擎存储通过不等于网页飞升、真人或永久落盘保障。
