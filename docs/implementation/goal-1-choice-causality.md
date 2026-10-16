@@ -1,6 +1,6 @@
 # Goal 1 / T11：选择因果与人物事实
 
-日期：2026-10-17。状态：本地T11验证完成，最终同HEAD远端检查收尾核对。分支`codex/goal-1-choice-causality`基于T10最终`d3f48ef7df6269133c2875d9b6ca035c0a30ca41`，通过独立PR叠加T10；main与旧PR不合并。CHECK-04仍在T12后执行。
+日期：2026-10-17。状态：本地T11验证完成，已交付[PR #20](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/20)，未合并；最终同HEAD远端检查收尾核对。分支`codex/goal-1-choice-causality`基于T10最终`d3f48ef7df6269133c2875d9b6ca035c0a30ca41`，实现提交`729ad6af7d89891c79caf80070dc8d53193a9960`，叠加PR #19；main与旧PR不合并。CHECK-04仍在T12后执行。
 
 ## 依据与最终行为
 
