@@ -4,9 +4,9 @@
 
 ## 当前实施与可运行范围
 
-当前实施分支为 `codex/goal-1-goal-guidance`，正式Store和页面使用full规则与数据库v3，动作在事务完成后才显示成功；T07接入可替换的追踪目标、缺口/来源导航与批量预览/回执。当前已验证的正常网页路线为 **凡人 → 炼气 → 筑基**：开场三选一、两种修法、采集/委托、交易炼丹、战斗、旧档迁移与可重复检查点恢复。
+当前实施分支为 `codex/goal-1-build-equipment`，正式页面使用full规则与数据库v3，事务完成后才显示成功。T08已用四条正常新档路线验证 **凡人 → 金丹** 的双修法/双筹备流程，并接通12功法、4法宝的研习/炼制/装备；六条三开场×两修法至筑基旧路线继续通过。目标/来源引导、批量反馈、战斗、旧档迁移与完整检查点恢复均保留。
 
-完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，页面接通共用地点/物品/事件操作；高级构筑、完整成长/因果/渡劫网页路线、正式美术和真人验证仍按后续任务逐项完成。数值为未平衡初值。
+完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，页面接通共用地点/物品/事件操作；T08功法/法宝与至金丹网页结果见下方记录；元婴以后的完整成长、因果/渡劫、正式美术和真人验证仍按后续任务逐项完成。数值为未平衡初值。
 
 `main` 仍是设计资料基线。当前分支继承 [PR #1：经济规则](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/1)、[PR #2：首境界网页](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/2)、[PR #9：研究与实施修订](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/9)及PR #10，并以普通merge接续`feat/full-demo-g1-g5@a49c0b4`。旧PR均保留，未自动合并或关闭。规则存在与纯引擎路线通过，不代表网页已经可以飞升。
 
@@ -19,7 +19,7 @@
 工程声明 Node.js ≥22.16.0；历史 G1 CI 使用 Node.js 22.16.0 / npm 10.9.2。当前任务的实际环境和检查结果单独记录于 [T01实施记录](docs/implementation/goal-1-baseline.md)。不顺带升级依赖，根与前端均从已提交锁文件安装。
 
 ```sh
-git clone --branch codex/goal-1-goal-guidance --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+git clone --branch codex/goal-1-build-equipment --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
 cd chenyuan-wendao
 npm ci --ignore-scripts
 node scripts/check_lock.mjs
@@ -82,6 +82,7 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 | [T05幂等与恢复](docs/implementation/goal-1-recovery-idempotency.md) | 并发、坏回执、重复恢复、v3升级与只读备份 |
 | [T06正式接线与CHECK-02](docs/implementation/goal-1-full-ui-cutover.md) | full Store/最小页面、旧档、失败显示、三浏览器与阶段检查 |
 | [T07目标/来源与批量反馈](docs/implementation/goal-1-goal-guidance.md) | 显示偏好、共享缺口、导航不采购、按目标收集与实际回执 |
+| [T08功法、法宝与至金丹流程](docs/implementation/goal-1-build-equipment.md) | 双修法/双筹备、学习与配装、真实效果/刷新及失败回滚 |
 | [试玩与运行说明](web/README.md) | 当前首境界的操作、战斗和本地存档 |
 | [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
 | [资料目录](docs/README.md) | v0.3与v0.4关系 |

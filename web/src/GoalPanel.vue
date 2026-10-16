@@ -70,7 +70,7 @@ function goalLocation() {
   const action = focus.value?.kind === 'action' ? focus.value.action : goal.value.action;
   const location = (action ? previewAction(props.game, action).requirements.location : null);
   if (location) emit('navigate', { location, tab: action?.type === 'CRAFT' ? '行囊' : action?.type === 'EVENT' ? '仙缘' : '修行',
-    ...(action?.type === 'CRAFT' ? { focusId: `craft-${action.recipeId}` } : {}) });
+    ...(action?.type === 'CRAFT' ? { focusId: `craft-${action.recipeId}` } : action?.type === 'LEARN' ? { focusId: `learn-${action.skill}` } : action?.type === 'FORGE' ? { focusId: `forge-${action.relic}` } : {}) });
 }
 </script>
 
