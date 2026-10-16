@@ -1,70 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { fileURLToPath } from 'node:url';
-
-const root = fileURLToPath(new URL('../../', import.meta.url));
-
-test.beforeEach(async ({ page }) => {
-  await page.goto('/persistence-tests/harness.html');
-  await page.evaluate(async (root) => {
-    const persistence = await import('/src/full-persistence.ts');
-    const engine = await import(`/@fs${root}src/full/engine.ts`);
-    const legacy = await import(`/@fs${root}src/game/adventure.ts`);
-    const routes = await import(`/@fs${root}tests/full-route.mjs`);
-    const seed = async (name: string, current: unknown, previous?: unknown, checkpoint?: unknown) => {
-      await new Promise<void>((resolve, reject) => {
-        const req = indexedDB.open(name, 1);
-        req.onupgradeneeded = () => { req.result.createObjectStore('state'); req.result.createObjectStore('receipts'); };
-        req.onerror = () => reject(req.error);
-        req.onsuccess = () => {
-          const db = req.result, tx = db.transaction(['state', 'receipts'], 'readwrite');
-          tx.objectStore('state').put(current, 'current');
-          if (previous !== undefined) tx.objectStore('state').put(previous, 'previous');
-          if (checkpoint !== undefined) tx.objectStore('state').put(checkpoint, 'checkpoint');
-          tx.objectStore('receipts').put({ original: true }, 'old-receipt');
-          tx.oncomplete = () => { db.close(); resolve(); };
-          tx.onabort = () => { db.close(); reject(tx.error); };
-        };
-      });
-    };
-    const inspect = async (name: string) => new Promise<any>((resolve, reject) => {
-      const req = indexedDB.open(name);
-      req.onerror = () => reject(req.error);
-      req.onsuccess = () => {
-        const db = req.result, names = Array.from(db.objectStoreNames), tx = db.transaction(names, 'readonly');
-        const result: any = { version: db.version, stores: names };
-        for (const name of names) {
-          const cursor = tx.objectStore(name).openCursor(), records: any[] = [];
-          result[name] = records;
-          cursor.onsuccess = () => { if (cursor.result) { records.push({ key: cursor.result.key, value: cursor.result.value }); cursor.result.continue(); } };
-        }
-        tx.oncomplete = () => { db.close(); resolve(result); };
-        tx.onabort = () => { db.close(); reject(tx.error); };
-      };
-    });
-    const legacySamples = (choice = 'leave', school = 'sword') => {
-      let game = legacy.createAdventure('旧档测试', `legacy-${choice}-${school}`);
-      const samples = [game];
-      for (const payload of [
-        { type: 'CHOOSE', choice }, { type: 'TRAVEL', location: 'cave' },
-        { type: 'CULTIVATE', method: 'natural', count: 5 }, { type: 'BREAKTHROUGH' },
-        { type: 'SCHOOL', school }, { type: 'TRAVEL', location: 'wilderness' },
-        { type: 'ENCOUNTER', enemy: 'wolf' }, { type: 'BATTLE', move: 'technique' },
-      ]) {
-        game = legacy.advance(game, { ...payload, commandId: `legacy-${game.core.revision}`, runId: game.core.runId, expectedRevision: game.core.revision });
-        samples.push(game);
-      }
-      return samples;
-    };
-    const mutation = (current: any = null) => ({ commandId: crypto.randomUUID(), runId: crypto.randomUUID(),
-      expectedRunId: current?.core.runId ?? null, expectedRevision: current?.core.revision ?? 0 });
-    const command = (game: any, action: any) => ({ ...action, commandId: crypto.randomUUID(), runId: game.core.runId, expectedRevision: game.core.revision });
-    const attempt = async (operation: () => any) => {
-      try { return { ok: true, value: await operation() }; }
-      catch (error: any) { return { ok: false, code: error.code, name: error.name, message: error.message }; }
-    };
-    (globalThis as any).h = { ...persistence, engine, routes, legacy, seed, inspect, legacySamples, mutation, command, attempt };
-  }, root);
-});
+import { setupPersistence } from './support';
+test.beforeEach(async ({ page }) => setupPersistence(page));
 
 test('fresh storage waits for explicit creation and survives close/reopen', async ({ page }) => {
   const result = await page.evaluate(async () => {
@@ -78,7 +14,7 @@ test('fresh storage waits for explicit creation and survives close/reopen', asyn
   expect(result.created.replayed).toBe(false);
   expect(result.created.state).toEqual(result.stored);
   expect(result.loaded).toEqual(result.stored);
-  expect(result.raw.version).toBe(2);
+  expect(result.raw.version).toBe(3);
   expect(result.raw['full-state'].find((x: any) => x.key === 'current').value).toEqual(result.loaded);
 });
 
@@ -371,14 +307,17 @@ test('newer database versions close stale repositories and remain intact when ol
     const h = (globalThis as any).h, repo = await h.FullSaveRepository.open('future-db');
     const original = (await repo.create('版本', h.mutation())).state;
     await new Promise<void>((resolve, reject) => {
-      const req = indexedDB.open('future-db', 3); req.onsuccess = () => { req.result.close(); resolve(); }; req.onerror = () => reject(req.error);
+      const req = indexedDB.open('future-db', 4); req.onupgradeneeded = () => req.result.createObjectStore('future-data').put({ version: 999, data: 'preserved' }, 'future'); req.onsuccess = () => { req.result.close(); resolve(); }; req.onerror = () => reject(req.error);
     });
     const closed = await h.attempt(() => repo.load()), older = await h.attempt(() => h.FullSaveRepository.open('future-db'));
-    return { original, closed, older, raw: await h.inspect('future-db') };
+    const backup = await h.FullSaveRepository.exportRaw('future-db');
+    return { original, closed, older, backup, raw: await h.inspect('future-db') };
   });
   expect(result.closed.code).toBe('STORAGE_CLOSED');
   expect(result.older.code).toBe('DB_VERSION');
-  expect(result.raw.version).toBe(3);
+  expect(result.backup.database.version).toBe(4);
+  expect(result.backup.stores.find((s: any) => s.name === 'future-data').entries[0].value).toEqual({ version: 999, data: 'preserved' });
+  expect(result.raw.version).toBe(4);
   expect(result.raw['full-state'].find((x: any) => x.key === 'current').value).toEqual(result.original);
 });
 

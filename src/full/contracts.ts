@@ -2,8 +2,9 @@ import type { Game, Action, Command } from './types.ts';
 import type { RealmId } from './content.ts';
 import type { SaveVersions } from './versions.ts';
 
-export type GamePhase = 'opening' | 'event' | 'idle' | 'battle' |
-  'trial-question' | 'trial-battle' | 'trial-ending' | 'ascended' | 'ended';
+export const GAME_PHASES = Object.freeze(['opening', 'event', 'idle', 'battle', 'trial-question', 'trial-battle', 'trial-ending', 'ascended', 'ended'] as const);
+export type GamePhase = typeof GAME_PHASES[number];
+export const BATCH_STOP_CODES: readonly string[] = Object.freeze(['XP_CAP', 'AGE_LIMIT', 'TARGET_MET', 'INSUFFICIENT_STONES', 'INSUFFICIENT_ITEM', 'CAPACITY']);
 export function gamePhase(game: Game): GamePhase {
   if (game.status !== 'active') return game.status;
   if (game.trial) return game.trial.stage === 0 ? 'trial-question' : game.trial.stage === 4 ? 'trial-ending' : 'trial-battle';
