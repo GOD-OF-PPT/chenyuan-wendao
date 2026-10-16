@@ -4,7 +4,7 @@ import { useGame } from './store';
 import * as C from '../../src/full/content.ts';
 import { availableEvents, intent } from '../../src/full/engine.ts';
 import { gamePhase } from '../../src/full/contracts.ts';
-import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships, getLifeOverview, getLifeRecord, exportLifeText, getTrialPreparation } from '../../src/full/queries.ts';
+import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships, getLifeOverview, getLifeRecord, exportLifeText, getTrialPreparation, getTrialJourney } from '../../src/full/queries.ts';
 import type { ActionPreview } from '../../src/full/queries.ts';
 import type { Action, Move, Command } from '../../src/full/types.ts';
 import { stories } from '../../src/full/events.ts';
@@ -23,6 +23,9 @@ import LifePanel from './LifePanel.vue';
 import type { LifeRecord } from '../../src/full/life-record.ts';
 import { formatAgeMonths } from '../../src/full/life-record.ts';
 import TrialPreparationPanel from './TrialPreparationPanel.vue';
+import TrialProgressPanel from './TrialProgressPanel.vue';
+import type { SaveMutation } from './full-persistence';
+import type { CheckpointSummary } from './store';
 
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
@@ -36,6 +39,7 @@ const realm = computed(() => C.realms[core.value?.player.realm ?? 'mortal']);
 const location = computed(() => C.locations[core.value?.world.location ?? 'wilderness']);
 const phase = computed(() => game.value ? gamePhase(game.value) : null);
 const goal = computed(() => game.value ? getBreakthroughGoal(game.value) : null);
+const journey = computed(() => game.value ? getTrialJourney(game.value) : null);
 const overview = computed(() => game.value ? getLifeOverview(game.value) : null);
 const age = computed(() => overview.value?.ageLabel ?? '');
 const lifeOpen = ref(false), lifeSection = ref<HTMLDetailsElement>(), lifeDialog = ref<HTMLDialogElement>();
@@ -157,7 +161,8 @@ async function confirmEnd() {
   if (!store.error) { lifeDialog.value?.close(); tab.value = '仙缘'; }
 }
 async function retryEnd() {
-  await store.retry(); if (!store.error) { lifeDialog.value?.close(); tab.value = '仙缘'; }
+  const review = lifeIntent.value; if (!review || lifeStale.value || !store.canRetryFor(review.command.commandId)) return;
+  await store.retryFor(review.command.commandId); if (!store.error) { lifeDialog.value?.close(); tab.value = '仙缘'; }
 }
 function cancelLife(event: Event) { if (store.busy) event.preventDefault(); }
 function closeLifeReview() {
@@ -186,6 +191,26 @@ async function confirmTrial() {
 }
 async function retryTrial() { const intent = trialIntent.value; if (!intent || trialStale.value || !store.canRetryFor(intent.command.commandId)) return; await store.retryFor(intent.command.commandId); if (!store.error) { trialDialog.value?.close(); tab.value = '修行'; } }
 function closeTrialReview() { if (trialIntent.value) store.discardRetryFor(trialIntent.value.command.commandId); trialIntent.value = null; }
+const trialRestoreDialog = ref<HTMLDialogElement>();
+const trialRestoreIntent = shallowRef<{ command: SaveMutation; checkpoint: CheckpointSummary } | null>(null);
+const trialRestoreStale = computed(() => !!trialRestoreIntent.value && (!game.value || game.value.core.runId !== trialRestoreIntent.value.command.expectedRunId || game.value.core.revision !== trialRestoreIntent.value.command.expectedRevision));
+function requestTrialRestore() {
+  if (store.checkpointSummary?.kind !== 'trial') return;
+  const command = store.prepareCheckpoint(); if (!command) return;
+  trialRestoreIntent.value = { command, checkpoint: structuredClone(store.checkpointSummary) };
+  trialRestoreDialog.value?.showModal();
+}
+async function confirmTrialRestore() {
+  const review = trialRestoreIntent.value; if (!review || store.busy || trialRestoreStale.value) return;
+  await store.restorePrepared(review.command);
+  if (!store.error) { trialRestoreDialog.value?.close(); await showTrialPreparation(); }
+}
+async function retryTrialRestore() {
+  const review = trialRestoreIntent.value; if (!review || trialRestoreStale.value || !store.canRetryFor(review.command.commandId)) return;
+  await store.retryFor(review.command.commandId);
+  if (!store.error) { trialRestoreDialog.value?.close(); await showTrialPreparation(); }
+}
+function closeTrialRestore() { if (trialRestoreIntent.value) store.discardRetryFor(trialRestoreIntent.value.command.commandId); trialRestoreIntent.value = null; }
 onMounted(() => store.init());
 </script>
 
@@ -233,6 +258,7 @@ onMounted(() => store.init());
           <h2>{{phase === 'opening' ? '雨中故人' : game.battle ? C.enemies[game.battle.enemy].name : activeStory?.name ?? location.name}}</h2>
           <p>{{game.battle ? '先辨来势，再决进退。' : '山海不言，修行自有回响。'}}</p>
         </div><span class="scene-seal">问<br>道</span></div>
+        <TrialProgressPanel v-if="journey || store.trialRecovery" :journey="journey" :recovery="store.trialRecovery" :checkpoint="store.checkpointSummary" :enabled="store.available && !store.busy" @restore="requestTrialRestore" @export="exportSave" @prepare="showTrialPreparation"/>
         <div class="paper content-panel">
           <template v-if="phase === 'opening'">
             <div class="section-label">当前遭遇 <span>壹 · 破庙</span></div><h2>一丹，一念。</h2>
@@ -244,9 +270,10 @@ onMounted(() => store.init());
               </button>
             </div>
           </template>
-          <template v-else-if="phase === 'trial-question'">
-            <p v-if="store.checkpointSummary?.kind==='trial'" class="small" data-testid="trial-checkpoint-committed">已验证本局可用的渡劫前完整准备检查点；恢复会回退入场前的物品、配装、年月与人物记录。</p><p v-else class="small" data-testid="trial-checkpoint-unavailable">本局未找到可用的渡劫准备检查点；可先导出当前进度，不能从未记录的状态补造快照。</p><div class="section-label">渡劫 · 问心</div><h2>你愿如何面对来路？</h2><p class="story">接纳旧我，稳住心神；或放下旧念，以进攻开路。两条道路皆可向前。</p>
-            <div class="choices two"><button data-testid="answer-accept" @click="act({type:'ANSWER_TRIAL',answer:'accept'})" :disabled="!can({type:'ANSWER_TRIAL',answer:'accept'})">接纳旧我 · 承受更稳</button><button data-testid="answer-release" @click="act({type:'ANSWER_TRIAL',answer:'release'})" :disabled="!can({type:'ANSWER_TRIAL',answer:'release'})">放下旧念 · 进攻更强</button></div>
+          <template v-else-if="phase === 'trial-question' && journey">
+            <div class="section-label">渡劫 · 问心</div><h2>你愿如何面对来路？</h2><p class="story" data-testid="trial-question-memory">{{journey.openingMemory}}</p><p class="story">接纳旧我，稳住心神；或放下旧念，以进攻开路。两条道路皆可向前，不另判善恶成败。</p>
+            <details class="trial-memories"><summary>回望已记录的选择</summary><p v-for="memory in journey.memories" :key="memory.id" class="small">{{memory.person}} · {{memory.title}}：{{memory.text}}</p></details>
+            <div class="choices two"><button v-for="answer in journey.answers" :key="answer.id" :data-testid="`answer-${answer.id}`" @click="act({type:'ANSWER_TRIAL',answer:answer.id})" :disabled="!can({type:'ANSWER_TRIAL',answer:answer.id})"><strong>{{answer.label}} · {{answer.id==='accept'?'承受更稳':'进攻更强'}}</strong><small>{{answer.record}}</small><small>{{answer.preview.failure?.message}}</small></button></div>
           </template>
           <template v-else-if="activeStory">
             <div class="section-label">当前遭遇 · {{activeStory.npc}}</div><h2 data-testid="event-title">{{activeStory.name}}</h2><p class="story" data-testid="event-body">{{activeStory.body}}</p>
@@ -262,7 +289,8 @@ onMounted(() => store.init());
             <div class="battle-actions"><button v-for="move in ['attack','guard','technique','release'] as const" :key="move" :data-testid="move" @click="battle(move)" :disabled="!can({type:'BATTLE',move})">
               <strong>{{move === 'attack' ? '普通攻击' : move === 'guard' ? '凝神护体' : spells[move]}}</strong><small>{{cost({type:'BATTLE',move})}}</small><small>{{why({type:'BATTLE',move})}}</small>
             </button></div>
-            <div class="inline-actions"><button @click="battle('heal')" :disabled="!can({type:'BATTLE',move:'heal'})">回春丹 ×{{core.inventory.healing_pill}}</button><button @click="battle('restore')" :disabled="!can({type:'BATTLE',move:'restore'})">回灵丹 ×{{core.inventory.spirit_pill}}</button><button data-testid="flee" @click="battle('flee')" :disabled="!can({type:'BATTLE',move:'flee'})">撤回洞府</button></div>
+            <p v-if="journey" class="small" data-testid="trial-battle-guidance">观察敌方意图再行动。普通攻击与护体可回灵；丹药占用一个回合，退离将结束本轮渡劫。</p>
+            <div class="inline-actions"><button data-testid="battle-heal" @click="battle('heal')" :disabled="!can({type:'BATTLE',move:'heal'})">回春丹 ×{{core.inventory.healing_pill}}</button><button data-testid="battle-restore" @click="battle('restore')" :disabled="!can({type:'BATTLE',move:'restore'})">回灵丹 ×{{core.inventory.spirit_pill}}</button><button data-testid="flee" @click="battle('flee')" :disabled="!can({type:'BATTLE',move:'flee'})">撤回洞府</button></div>
           </template>
           <template v-else-if="phase === 'trial-ending'">
             <div class="section-label">天门已开</div><h2>此生，留下些什么？</h2><div class="choices two"><button data-testid="ending-transmit" @click="act({type:'END',ending:'transmit'})" :disabled="!can({type:'END',ending:'transmit'})">将道法留在人间</button><button data-testid="ending-depart" @click="act({type:'END',ending:'depart'})" :disabled="!can({type:'END',ending:'depart'})">挥别故人，独赴上界</button></div>
@@ -326,9 +354,22 @@ onMounted(() => store.init());
         <p>当前存档与人物记录保留，可导出；恢复检查点会回退完整准备状态。此确认不会开启新的人生。</p>
         <p v-if="lifeStale" role="alert" data-testid="life-stale">进度已更新，请取消后重新查看与确认。此处不会结束另一份进度。</p>
         <p v-if="store.error" role="alert" data-testid="life-error">{{store.error}}</p>
-        <button v-if="store.canRetry" data-testid="life-retry" @click="retryEnd" :disabled="store.busy || lifeStale">重试同一次收卷</button>
+        <button v-if="store.canRetryFor(lifeIntent.command.commandId)" data-testid="life-retry" @click="retryEnd" :disabled="store.busy || lifeStale">重试同一次收卷</button>
         <button data-testid="life-cancel" @click="lifeDialog?.close()" :disabled="store.busy">继续此生</button>
         <button data-testid="life-confirm-end" @click="confirmEnd" :disabled="store.busy || !store.available || lifeStale">{{store.busy?'正在保存…':lifeIntent.command.type==='RETIRE'?'确认归隐':'确认寿尽'}}</button>
+      </template>
+    </dialog>
+    <dialog ref="trialRestoreDialog" class="paper life-confirm" data-testid="trial-restore-confirmation" aria-labelledby="trial-restore-title" @cancel="cancelLife" @close="closeTrialRestore">
+      <template v-if="trialRestoreIntent">
+        <h2 id="trial-restore-title">恢复完整入场准备</h2>
+        <p data-testid="trial-restore-target">{{trialRestoreIntent.checkpoint.target.name}} · {{C.realms[trialRestoreIntent.checkpoint.target.realm].name}} · 行道{{trialRestoreIntent.checkpoint.target.months}}游戏月</p>
+        <p>将放弃本轮及入场后的进展，物品、气血灵力、配装、人物选择、里程碑和年月一同回到该准备快照。不会单独补发渡劫引；恢复成功后，仍可再次使用这个检查点。</p>
+        <p>准备气血 {{trialRestoreIntent.checkpoint.target.hp}} · 灵力 {{trialRestoreIntent.checkpoint.target.mp}} · 渡劫引 {{trialRestoreIntent.checkpoint.target.inventory.ascension_seal}}</p>
+        <p v-if="trialRestoreStale" role="alert" data-testid="trial-restore-stale">进度已更新，请关闭后重新核对；此处不会回退另一份进度。</p>
+        <p v-if="store.error" role="alert" data-testid="trial-restore-error">{{store.error}}</p>
+        <button v-if="store.canRetryFor(trialRestoreIntent.command.commandId)" data-testid="trial-restore-retry" @click="retryTrialRestore" :disabled="store.busy || trialRestoreStale">重试同一次完整恢复</button>
+        <button data-testid="trial-restore-cancel" @click="trialRestoreDialog?.close()" :disabled="store.busy">保留当前进度</button>
+        <button data-testid="trial-restore-confirm" class="primary" @click="confirmTrialRestore" :disabled="store.busy || !store.available || trialRestoreStale">{{store.busy?'正在保存…':'确认恢复完整准备'}}</button>
       </template>
     </dialog>
     <dialog ref="trialDialog" class="paper life-confirm" data-testid="trial-entry-confirmation" aria-labelledby="trial-entry-title" @cancel="cancelLife" @close="closeTrialReview">

@@ -1,3 +1,4 @@
+import { TRIAL_STAGES, TRIAL_ANSWERS } from './trial-rules.ts';
 import * as C from './content.ts';
 import {stories} from './events.ts';
 import {buildLifeRecord,lifeRecordLines} from './life-record.ts';
@@ -73,7 +74,7 @@ function validateSnapshot(value:unknown,legacy=false,balance:string=legacy?LEGAC
   if(!value.school||c.mode!=='idle'||value.status!=='active'||w.location!==e.location||C.rank(p.realm as C.RealmId)<C.rank(e.min))fail('SAVE_BATTLE','战斗与当前状态不一致');
   if(value.school==='sword'&&b.marks.length||value.school==='talisman'&&b.sword)fail('SAVE_BATTLE','战斗资源与修法不符');
   if(Boolean(e.trial)!==Boolean(value.trial))fail('SAVE_TRIAL','天劫和普通战斗不能混用');
-  if(value.trial&&['trial_heart','trial_thunder','trial_gate'][(value.trial.stage as number)-1]!==b.enemy)fail('SAVE_TRIAL','天劫阶段不一致');
+  if(value.trial&&TRIAL_STAGES[(value.trial.stage as number)-1]!==b.enemy)fail('SAVE_TRIAL','天劫阶段不一致');
  }
  if(value.trial&&[1,2,3].includes(value.trial.stage as number)&&value.battle===null)fail('SAVE_TRIAL','天劫缺少战斗');
  if(value.trial?.stage===0&&(c.mode!=='event'||!object(c.activeEvent)||c.activeEvent.id!=='trial_question'))fail('SAVE_TRIAL','问心事件丢失');
@@ -125,7 +126,7 @@ function battleTurn(g:Game,move:Move){
  const b=g.battle!,e=C.enemies[b.enemy],p=g.core.player,r=stats(g),forecast=intent(b);let damage=0,block=0,interrupt=false;const lines:string[]=[];
  const mana=(n:number)=>{if(p.mp<n)fail('MP_REQUIRED','灵力不足，普通攻击或护体可以回灵');p.mp-=n;};
  const costs=costsForAction(g,{type:'BATTLE',move});
- const extra=relicEffect(g)==='frost_sword'?5:0,releaseBonus=g.trial?.answer==='release'?8:0;
+ const extra=relicEffect(g)==='frost_sword'?5:0,releaseBonus=g.trial?.answer?TRIAL_ANSWERS[g.trial.answer].attackBonus:0;
  if(move==='flee'){p.hp=Math.max(1,p.hp-8);loseBattle(g,'你主动退离战场，本次不获战利品');return;}
  if(move==='attack'){damage=13+r.power+extra;p.mp=Math.min(r.maxMp,p.mp+6+(skillEffect(g,'mind')==='calm'?4:0));if(g.school==='sword')b.sword=Math.min(3,b.sword+1);lines.push(`基础攻击 ${damage}，凝聚灵力`);}
  if(move==='guard'){block=r.guard;p.mp=Math.min(r.maxMp,p.mp+5);lines.push(`护体减伤 ${block}，回灵 5`);}
@@ -141,11 +142,11 @@ function battleTurn(g:Game,move:Move){
  const tick=b.marks.length*r.markDamage;if(tick)lines.push(`符印灼伤 ${tick}`);damage+=tick+(damage>0?releaseBonus:0);b.marks=b.marks.map(n=>n-1).filter(n=>n>0);b.hp-=damage;
  if(relicEffect(g)==='cloud_mirror'){p.hp=Math.min(r.maxHp,p.hp+4);if(move==='attack'||move==='guard')p.mp=Math.min(r.maxMp,p.mp+6);}
  if(b.hp<=0){g.wins++;log(g,lines.join(' · ')+`。击败${e.name}。`);
-  if(g.trial){g.trial.stage++;if(g.trial.stage===4){g.battle=null;g.milestones.trial_completed=g.core.world.elapsedMonths;log(g,'雷云散尽，天门已开。最后一步，由你决定留下些什么。');}else{g.battle=freshBattle(['trial_heart','trial_thunder','trial_gate'][g.trial.stage-1]);log(g,`下一关：${C.enemies[g.battle.enemy].name}。气血与消耗持续保留。`);}}
+  if(g.trial){g.trial.stage++;if(g.trial.stage===4){g.battle=null;g.milestones.trial_completed=g.core.world.elapsedMonths;log(g,'雷云散尽，天门已开。最后一步，由你决定留下些什么。');}else{g.battle=freshBattle(TRIAL_STAGES[g.trial.stage-1]);log(g,`下一关：${C.enemies[g.battle.enemy].name}。气血与消耗持续保留。`);}}
   else{gain(g,e.loot);p.stones+=e.stones;xp(g,e.xp);g.battle=null;log(g,`战利品：${Object.entries(e.loot).map(([id,n])=>C.items[id].name+' ×'+n).join('、')}；灵石 +${e.stones}，修为 +${e.xp}（不超过上限）。`);}return;
  }
  let armor=relicEffect(g)==='jade_seal'?8:0;
- if(g.trial){const aid=causalAid(g);if(g.trial.answer==='accept')armor+=10;armor+=aid.allDamageReduction;if(b.enemy==='trial_thunder')armor+=aid.thunderDamageReduction;}
+ if(g.trial){const aid=causalAid(g);if(g.trial.answer)armor+=TRIAL_ANSWERS[g.trial.answer].damageReduction;armor+=aid.allDamageReduction;if(b.enemy==='trial_thunder')armor+=aid.thunderDamageReduction;}
  const loss=interrupt?0:Math.max(0,forecast.damage-block-armor);p.hp-=loss;lines.push(forecast.kind==='prepare'?'敌人正在蓄势':`承受伤害 ${loss}`);b.round++;b.log=[...b.log,...lines].slice(-8);log(g,lines.join(' · '));
  if(p.hp<=0||b.round>=40)loseBattle(g,p.hp<=0?'你未能抵住这一击':'缠斗过久，你被护山阵送回');
 }
@@ -164,7 +165,7 @@ function one(g:Game,a:Action){
   log(g,a.type==='RETIRE'?'你主动收起行囊，将这一生写成旧卷。此生未飞升，但走过的路并未消失。':'寿元走到尽头，你将这一生写成旧卷。此生未飞升，来路仍值得记取。');return;
  }
  if(a.type==='CHOOSE'){if(g.core.activeEvent?.id!=='temple')fail('EVENT_RESOLVED','破庙因果已经结算');pay();g.core.openingChoice=a.choice;g.core.learnedSkills=a.choice==='trade'?['skill_jinghong_slash']:[];g.core.activeEvent=null;g.core.mode='idle';log(g,a.choice==='help'?'你赠丹相助，结下赠药之缘。':a.choice==='trade'?'你以丹换来惊鸿剑简，彼此两清。':'你留下回春丹，谨慎地走出破庙。');return;}
- if(a.type==='ANSWER_TRIAL'){if(g.core.activeEvent?.id!=='trial_question'||g.trial?.stage!==0)fail('NO_QUESTION','此刻没有待答的问心');g.trial.answer=a.answer;g.trial.stage=1;g.core.mode='idle';g.core.activeEvent=null;g.battle=freshBattle('trial_heart');log(g,a.answer==='accept'?'你接纳曾经的自己，天劫每击减伤 10。':'你放下旧念，天劫直接攻击额外伤害 8。');return;}
+ if(a.type==='ANSWER_TRIAL'){if(g.core.activeEvent?.id!=='trial_question'||g.trial?.stage!==0)fail('NO_QUESTION','此刻没有待答的问心');g.trial.answer=a.answer;g.trial.stage=1;g.core.mode='idle';g.core.activeEvent=null;g.battle=freshBattle(TRIAL_STAGES[0]);log(g,TRIAL_ANSWERS[a.answer].record);return;}
  if(a.type==='DECIDE'){const id=g.core.activeEvent?.id;if(!id||!own(stories,id)||own(g.choices,id))fail('NO_EVENT','没有待处理的机缘');const story=stories[id],raw=story.options.find(x=>x.id===a.option);if(!raw)fail('INVALID_OPTION','选项无效');if(!conditionMatches(g,raw.condition))fail('OPTION_CONDITION','这项选择不符合此前经历，请按当前可用选项继续');const o=storyView(g,story).options.find(x=>x.id===a.option)!;if(o.requireXpRoom&&g.core.player.xp===C.realms[g.core.player.realm].xpCap)fail('XP_CAP','修为已满，这次不必消耗灵材换取感悟');pay();gain(g,o.gain??{});g.core.player.stones+=o.reward??0;xp(g,o.xp??0);g.choices[id]=o.id;g.core.mode='idle';g.core.activeEvent=null;log(g,`${story.npc} · ${story.name}：${o.result}`);return;}
  if(g.core.mode==='event')fail('PENDING_EVENT','先处理当前遭遇；查看资料不会消耗时间');
  if(a.type==='BATTLE'){if(!g.battle)fail('NO_BATTLE','当前没有战斗');battleTurn(g,a.move);return;}

@@ -7,6 +7,7 @@ export async function setupPersistence(page: Page) {
   await page.evaluate(async (root) => {
     const persistence = await import('/src/full-persistence.ts');
     const engine = await import(`/@fs${root}src/full/engine.ts`);
+    const queries = await import(`/@fs${root}src/full/queries.ts`);
     const legacy = await import(`/@fs${root}src/game/adventure.ts`);
     const routes = await import(`/@fs${root}tests/full-route.mjs`);
     const seed = async (name: string, current: unknown, previous?: unknown, checkpoint?: unknown) => {
@@ -69,6 +70,6 @@ export async function setupPersistence(page: Page) {
         tx.oncomplete = () => { db.close(); resolve(); }; tx.onabort = () => { db.close(); reject(tx.error); };
       };
     });
-    (globalThis as any).h = { ...persistence, engine, routes, legacy, seed, inspect, put, legacySamples, mutation, command, attempt };
+    (globalThis as any).h = { ...persistence, engine, queries, routes, legacy, seed, inspect, put, legacySamples, mutation, command, attempt };
   }, root);
 }
