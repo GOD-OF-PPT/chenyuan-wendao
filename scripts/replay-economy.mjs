@@ -7,7 +7,7 @@ import { validateContent } from '../src/full/validate-content.ts';
 import { matrix, cultivationProbes, conversionProbes, sourceRates, combatProbes, failureRecoveryProbe, comparisons } from './economy/analysis.mjs';
 const root = new URL('../', import.meta.url), sha = text => createHash('sha256').update(text).digest('hex');
 const baselinePath = new URL('docs/economy/baseline-full-unbalanced.1.json', root);
-const target = new URL('docs/economy/report-full-unbalanced.2.json', root);
+const target = new URL(`docs/economy/report-${BALANCE}.json`, root);
 const baselineText = readFileSync(baselinePath, 'utf8'), baseline = JSON.parse(baselineText);
 const oldCultivationFile = 'docs/economy/baseline-cultivation-full-unbalanced.1.json';
 const oldCultivationText = readFileSync(new URL(oldCultivationFile, root), 'utf8');

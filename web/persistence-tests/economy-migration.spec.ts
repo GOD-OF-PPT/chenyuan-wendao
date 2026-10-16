@@ -12,12 +12,12 @@ async function seedBalanceOne(page: any, name: string) {
     await repo.execute(oldCommand); repo.close();
     const raw = await h.inspect(name), state = raw[h.FULL_STATE_STORE];
     for (const entry of state) {
-      if (['current', 'previous'].includes(entry.key)) entry.value.core.balanceVersion = 'full-unbalanced.1';
-      if (entry.key === 'checkpoint') { entry.value.snapshot.core.balanceVersion = 'full-unbalanced.1'; entry.value.versions.balanceVersion = 'full-unbalanced.1'; }
+      if (['current', 'previous'].includes(entry.key)) { entry.value.core.contentVersion = 'full-demo.2'; entry.value.core.balanceVersion = 'full-unbalanced.1'; }
+      if (entry.key === 'checkpoint') { entry.value.snapshot.core.contentVersion = 'full-demo.2'; entry.value.snapshot.core.balanceVersion = 'full-unbalanced.1'; entry.value.versions.contentVersion = 'full-demo.2'; entry.value.versions.balanceVersion = 'full-unbalanced.1'; }
       await h.put(name, h.FULL_STATE_STORE, entry.key, entry.value);
     }
     for (const entry of raw[h.FULL_RECEIPT_STORE]) {
-      if (entry.value.result) entry.value.result.versions.balanceVersion = 'full-unbalanced.1';
+      if (entry.value.result) { entry.value.result.versions.contentVersion = 'full-demo.2'; entry.value.result.versions.balanceVersion = 'full-unbalanced.1'; }
       await h.put(name, h.FULL_RECEIPT_STORE, entry.key, entry.value);
     }
     await h.put(name, h.FULL_RECEIPT_STORE, 'raw-undefined', undefined);
@@ -40,11 +40,11 @@ test('balance migration preserves snapshots and all raw receipts, creates a new 
   }, { name: 'economy-migrate', oldCommand: seeded.oldCommand });
   const original = seeded.before['full-state'].find((row: any) => row.key === 'current').value;
   const prior = seeded.before['full-state'].find((row: any) => row.key === 'previous').value;
-  expect(result.current.core.balanceVersion).toBe('full-unbalanced.2');
+  expect(result.current.core.balanceVersion).toBe('full-unbalanced.3');
   expect(result.current.core.runId).not.toBe(original.core.runId); expect(result.current.core.revision).toBe(0);
   for (const key of ['player', 'world', 'inventory']) { expect(result.current.core[key]).toEqual(original.core[key]); expect(result.previous.core[key]).toEqual(prior.core[key]); }
   expect(result.current.choices).toEqual(original.choices); expect(result.current.loadout).toEqual(original.loadout);
-  expect(result.cp.snapshot.core.balanceVersion).toBe('full-unbalanced.2');
+  expect(result.cp.snapshot.core.balanceVersion).toBe('full-unbalanced.3');
   expect(result.cp.snapshot.core.player).toEqual(prior.core.player);
   for (const row of seeded.before['full-state']) expect(result.archives.some((a: any) => JSON.stringify(a.value) === JSON.stringify(row.value))).toBe(true);
   for (const row of seeded.before['full-receipts']) expect(result.archives.some((a: any) => /\/receipts\//.test(a.key) && JSON.stringify(a.value) === JSON.stringify(row.value))).toBe(true);
@@ -52,7 +52,7 @@ test('balance migration preserves snapshots and all raw receipts, creates a new 
   expect(result.again).toEqual(result.current); expect(result.second).toEqual(result.first);
   for (const restored of [result.restored, result.restoredAgain]) {
     expect(restored.core.player).toEqual(result.cp.snapshot.core.player); expect(restored.core.inventory).toEqual(result.cp.snapshot.core.inventory);
-    expect(restored.core.world).toEqual(result.cp.snapshot.core.world); expect(restored.core.balanceVersion).toBe('full-unbalanced.2');
+    expect(restored.core.world).toEqual(result.cp.snapshot.core.world); expect(restored.core.balanceVersion).toBe('full-unbalanced.3');
   }
   expect(result.restoredAgain.core.runId).not.toBe(result.restored.core.runId);
   expect(result.first['full-receipts']).toHaveLength(1); expect(result.first['full-receipts'][0].value.kind).toBe('MIGRATE');
@@ -73,7 +73,7 @@ test('quota failure while archiving a receipt aborts the whole balance migration
     const retried = await repo.load(); repo.close(); return { failed, afterFailure, retried };
   });
   expect(result.failed.code).toBe('STORAGE_QUOTA'); expect(result.afterFailure).toEqual(seeded.before);
-  expect(result.retried.core.balanceVersion).toBe('full-unbalanced.2');
+  expect(result.retried.core.balanceVersion).toBe('full-unbalanced.3');
 });
 
 test('unknown balance cannot migrate, mutate or discard the original', async ({ page }) => {

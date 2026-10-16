@@ -8,7 +8,7 @@ for (const stage of ['opening', 'battle', 'foundation'] as const) {
     const fixture = legacyFixture(stage); await seedLegacy(page, fixture); await page.goto('/');
     await expect(page.getByTestId('realm')).toHaveText(stage === 'foundation' ? '筑基' : stage === 'battle' ? '炼气' : '凡人');
     const current = await snapshot(page);
-    expect(current.format).toBe('chenyuan-full'); expect(current.core.contentVersion).toBe('full-demo.2');
+    expect(current.format).toBe('chenyuan-full'); expect(current.core.contentVersion).toBe('full-demo.3');
     expect(current.core.player).toEqual(fixture.current.core.player);
     expect(current.core.world).toEqual(fixture.current.core.world);
     expect(current.core.runId).not.toBe(fixture.current.core.runId);
@@ -65,7 +65,7 @@ test('imported non-temple event refreshes and resolves through its real option',
   await expect(page.getByTestId('event-title')).toHaveText('药香故人');
   const pending = await snapshot(page); expect(pending.core.activeEvent.instanceId).toBe(pending.core.runId + ':shen_return');
   await page.reload(); await expect(page.getByTestId('event-title')).toHaveText('药香故人');
-  await action(page, 'decide-accept'); expect((await snapshot(page)).choices.shen_return).toBe('accept');
+  await action(page, 'decide-assist'); expect((await snapshot(page)).choices.shen_return).toBe('assist');
 });
 
 test('unreadable future database disables new-game writes but offers a readonly original backup', async ({ page }) => {

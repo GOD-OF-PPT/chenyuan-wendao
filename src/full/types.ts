@@ -21,7 +21,7 @@ export type Action=
  |{type:'SOURCE';sourceId:string;count?:number;target?:{item:string;quantity:number}}
  |{type:'BUY'|'SELL';item:string;quantity:number}|{type:'CRAFT';recipeId:string}|{type:'USE';item:string}
  |{type:'REST'}|{type:'BREAKTHROUGH'}|{type:'SCHOOL';school:School}
- |{type:'LEARN';skill:string}|{type:'EQUIP';skill:string}|{type:'FORGE';relic:string}|{type:'EQUIP_RELIC';relic:string}
+ |{type:'STUDY';manual:'jinghong'}|{type:'LEARN';skill:string}|{type:'EQUIP';skill:string}|{type:'FORGE';relic:string}|{type:'EQUIP_RELIC';relic:string}
  |{type:'ENCOUNTER';enemy:string}|{type:'BATTLE';move:Move}|{type:'EVENT';event:string}|{type:'DECIDE';option:string}
  |{type:'START_TRIAL'}|{type:'ANSWER_TRIAL';answer:'accept'|'release'}|{type:'END';ending:'transmit'|'depart'}|{type:'RETIRE'}|{type:'END_LIFE'};
 export type Command=Action&{commandId:string;runId:string;expectedRevision:number};

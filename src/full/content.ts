@@ -1,8 +1,8 @@
 /** Full-demo content. All numbers are initial tuning values, not a retention promise. */
 import type { School, SkillSlot, SkillEffect, RelicEffect } from './mechanisms.ts';
 export type { School, SkillSlot } from './mechanisms.ts';
-export const VERSION = 'full-demo.2';
-export const BALANCE = 'full-unbalanced.2';
+export const VERSION = 'full-demo.3';
+export const BALANCE = 'full-unbalanced.3';
 export const realmIds = ['mortal','qi','foundation','golden','nascent','spirit','ascended'] as const;
 export type RealmId = typeof realmIds[number];
 export type LocationId = 'wilderness'|'cave'|'sect'|'market'|'secret'|'terrace';
@@ -105,6 +105,8 @@ export const enemies:Record<string,Enemy>={
  trial_thunder:{name:'九霄雷劫',min:'spirit',location:'terrace',hp:390,attack:62,heavy:185,xp:0,stones:0,loot:{},trial:true},
  trial_gate:{name:'天门道影',min:'spirit',location:'terrace',hp:460,attack:68,heavy:195,xp:0,stones:0,loot:{},trial:true}
 };
+/** Existing opening sword-scroll insight; later study is available to every opening. Unbalanced price. */
+export const swordManual:{id:string;name:string;min:RealmId;price:number;damageBonus:number}={id:'skill_jinghong_slash',name:'惊鸿剑简',min:'foundation',price:80,damageBonus:4};
 export const maxBatch=50;
 export const maxQuantity=1_000_000;
 export const cultivation={natural:{months:1,stones:0,bonus:0},assisted:{months:1,stones:20,bonus:100}};
@@ -116,4 +118,4 @@ export const startingLoadouts={
  talisman:{mind:'talisman_mind',builder:'talisman_build',finisher:'talisman_release'}
 };
 function freeze(v:object){for(const x of Object.values(v))if(x&&typeof x==='object')freeze(x);Object.freeze(v);}
-for(const v of [realmIds,realms,locations,items,sources,recipes,skills,relics,enemies,cultivation,assistedCosts,actionDurations,startingLoadouts])freeze(v);
+for(const v of [realmIds,realms,locations,items,sources,recipes,skills,relics,enemies,cultivation,assistedCosts,swordManual,actionDurations,startingLoadouts])freeze(v);

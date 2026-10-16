@@ -27,7 +27,7 @@ export function fullRoute(choice='leave',school='sword',strategy='craft',allies=
  // Normal, real battle is part of every replay, not a debug reward.
  d.go('wilderness');d.doAction({type:'ENCOUNTER',enemy:'wolf'});d.fight();if(d.game.wins!==1)throw new Error('Opening battle lost');
  d.realm(strategy);
- if(allies){d.event('shen_return','accept');d.funds(15);d.event('pei_meet','cooperate');}
+ if(allies){if(choice==='trade')d.funds(18);if(choice==='leave')d.resource('herb',2);d.event('shen_return',choice==='help'?'accept':choice==='trade'?'bargain':'assist');d.funds(15);d.event('pei_meet','cooperate');}
  d.realm(strategy);
  // Relic optional but actually purchased and equipped, without directly mutating snapshots.
  d.resource('jade',4);d.funds(140);d.go('cave');d.doAction({type:'FORGE',relic:'jade_seal'});d.doAction({type:'EQUIP_RELIC',relic:'jade_seal'});
@@ -36,9 +36,15 @@ export function fullRoute(choice='leave',school='sword',strategy='craft',allies=
  if(allies){d.buy('healing_pill',2);d.event('shen_pact','lend');}
  d.realm(strategy);
  if(allies){d.resource('dao',1);d.event('pei_pact','ally');}
+ finishTrial(d,strategy,ending,trialAnswer);return d;
+}
+export function prepareTrial(d,strategy='craft',trialAnswer='accept'){
  if(strategy==='purchase')d.buy('ascension_seal',1);else d.craft('ascension');
  d.buy('healing_pill',12);d.buy('spirit_pill',4);d.meditate();d.rest();d.go('terrace');
- d.checkpoints.trial=structuredClone(d.game);d.doAction({type:'START_TRIAL'});d.doAction({type:'ANSWER_TRIAL',answer:trialAnswer});d.fight();
- if(d.game.trial?.stage!==4)throw new Error('Trial failed '+JSON.stringify({choice,school,strategy,allies,hp:d.game.core.player.hp,journal:d.game.journal.slice(-5)}));
+ d.checkpoints.trial=structuredClone(d.game);d.doAction({type:'START_TRIAL'});d.doAction({type:'ANSWER_TRIAL',answer:trialAnswer});return d;
+}
+export function finishTrial(d,strategy='craft',ending='transmit',trialAnswer='accept'){
+ prepareTrial(d,strategy,trialAnswer);d.fight();
+ if(d.game.trial?.stage!==4)throw new Error('Trial failed '+JSON.stringify({strategy,hp:d.game.core.player.hp,journal:d.game.journal.slice(-5)}));
  d.checkpoints.ending=structuredClone(d.game);d.doAction({type:'END',ending});return d;
 }

@@ -1,5 +1,6 @@
 import * as C from './content.ts';
 import { stories } from './events.ts';
+import { conditionMatches, storyView, relationshipViews, causalAid } from './story-context.ts';
 import { resolve, validateCommand, validateGame } from './engine.ts';
 import { RuleError, fail } from './errors.ts';
 import { costsForAction, multiplyCosts, requirementsForAction, remainingMonths } from './costs.ts';
@@ -133,6 +134,7 @@ export function getItemSources(game: Game, item: string, purchaseQuantity = 1, k
   for (const [id, story] of Object.entries(stories)) {
     if (!selected.has('event')) continue;
     for (const option of story.options) {
+      if (!conditionMatches(game, option.condition)) continue;
       const rewardCount = option.gain?.[item];
       if (!rewardCount) continue;
       const actions: Action[] = game.core.activeEvent?.id === id ? [] : [{ type: 'EVENT', event: id }];
@@ -174,3 +176,12 @@ export function getBreakthroughGoal(game: Game) {
     action, preview, deficits: preview.deficits,
     sources: realm.pill ? getItemSources(game, realm.pill) : [], targetRealm: realm.next ?? 'ascended' };
 }
+
+
+export function getStoryContext(game: Game, id: string) {
+  validateGame(game);
+  if (!Object.hasOwn(stories, id)) fail('INVALID_QUERY', '未知人物事件');
+  return structuredClone(storyView(game, stories[id]));
+}
+export function getRelationships(game: Game) { validateGame(game); return structuredClone(relationshipViews(game)); }
+export function getCausalAid(game: Game) { validateGame(game); return causalAid(game); }

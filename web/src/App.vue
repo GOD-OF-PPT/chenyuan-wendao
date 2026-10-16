@@ -4,7 +4,7 @@ import { useGame } from './store';
 import * as C from '../../src/full/content.ts';
 import { availableEvents, biography, intent } from '../../src/full/engine.ts';
 import { gamePhase } from '../../src/full/contracts.ts';
-import { getBreakthroughGoal, previewAction } from '../../src/full/queries.ts';
+import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships } from '../../src/full/queries.ts';
 import type { ActionPreview } from '../../src/full/queries.ts';
 import type { Action, Move } from '../../src/full/types.ts';
 import { stories } from '../../src/full/events.ts';
@@ -18,6 +18,7 @@ import BatchPreview from './BatchPreview.vue';
 import ActionFeedback from './ActionFeedback.vue';
 import EquipmentPanel from './EquipmentPanel.vue';
 import GrowthPanel from './GrowthPanel.vue';
+import RelationshipPanel from './RelationshipPanel.vue';
 
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
@@ -58,7 +59,8 @@ const natural = computed<Action>(() => ({ type: 'CULTIVATE', method: 'natural', 
 const assisted = computed<Action>(() => ({ type: 'CULTIVATE', method: 'assisted', count: batch.value === 'target' ? C.maxBatch : batch.value }));
 const breakthrough = computed<Action>(() => ({ type: core.value?.player.realm === 'spirit' ? 'START_TRIAL' : 'BREAKTHROUGH' }));
 const forecast = computed(() => game.value?.battle ? intent(game.value.battle) : null);
-const activeStory = computed(() => core.value?.activeEvent ? stories[core.value.activeEvent.id] : null);
+const activeStory = computed(() => game.value && core.value?.activeEvent && stories[core.value.activeEvent.id] ? getStoryContext(game.value, core.value.activeEvent.id) : null);
+const relationships = computed(() => game.value ? getRelationships(game.value) : []);
 const events = computed(() => game.value ? availableEvents(game.value) : []);
 const life = computed(() => game.value ? biography(game.value) : []);
 const activeEnemies = computed(() => Object.entries(C.enemies).filter(([, e]) => !e.trial && e.location === core.value?.world.location));
@@ -102,9 +104,6 @@ const spells = computed(() => ({
   technique: game.value?.loadout.builder ? C.skills[game.value.loadout.builder].name : '术法',
   release: game.value?.loadout.finisher ? C.skills[game.value.loadout.finisher].name : '终结术法',
 }));
-const fate = computed(() => core.value?.openingChoice === 'help' ? ['赠药之缘', '山雨中赠出回春丹，这次选择已留入来路。'] :
-  core.value?.openingChoice === 'trade' ? ['两清之约', '以丹换取剑简，保留一份交易之缘。'] :
-    core.value?.openingChoice === 'leave' ? ['擦肩而过', '你保留补给，选择先照顾自己的修行。'] : ['因果未定', '一念之差，皆由你自己决定。']);
 function battle(move: Move) { return act({ type: 'BATTLE', move }); }
 function download(text: string, filename: string) {
   const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
@@ -184,6 +183,7 @@ onMounted(() => store.init());
           <template v-if="phase === 'opening'">
             <div class="section-label">当前遭遇 <span>壹 · 破庙</span></div><h2>一丹，一念。</h2>
             <p class="story">山雨将歇，青衣药修沈清禾向你求药，而你的行囊中只剩一枚回春丹。庙柱上的引气之法人人可习，要不要介入这段因果，由你决定。</p>
+            <p class="small">惊鸿剑简用于剑修终结术法，伤害 +{{C.swordManual.damageBonus}}；三种开场均可在筑基后到青云宗付费研读同简。</p>
             <div class="choices">
               <button v-for="choice in [{id:'help',name:'赠丹相助'},{id:'trade',name:'以丹换简'},{id:'leave',name:'保留丹药'}] as const" :key="choice.id" :data-testid="choice.id" @click="act({type:'CHOOSE',choice:choice.id})" :disabled="!can({type:'CHOOSE',choice:choice.id})">
                 <strong>{{choice.name}}</strong><small>{{cost({type:'CHOOSE',choice:choice.id})}}</small><small>{{why({type:'CHOOSE',choice:choice.id})}}</small>
@@ -195,8 +195,8 @@ onMounted(() => store.init());
             <div class="choices two"><button data-testid="answer-accept" @click="act({type:'ANSWER_TRIAL',answer:'accept'})" :disabled="!can({type:'ANSWER_TRIAL',answer:'accept'})">接纳旧我 · 承受更稳</button><button data-testid="answer-release" @click="act({type:'ANSWER_TRIAL',answer:'release'})" :disabled="!can({type:'ANSWER_TRIAL',answer:'release'})">放下旧念 · 进攻更强</button></div>
           </template>
           <template v-else-if="activeStory">
-            <div class="section-label">当前遭遇 · {{activeStory.npc}}</div><h2 data-testid="event-title">{{activeStory.name}}</h2><p class="story">{{activeStory.body}}</p>
-            <div class="choices"><button v-for="option in activeStory.options" :key="option.id" :data-testid="`decide-${option.id}`" @click="act({type:'DECIDE',option:option.id})" :disabled="!can({type:'DECIDE',option:option.id})"><strong>{{option.label}}</strong><small>{{option.detail}}</small><small>{{cost({type:'DECIDE',option:option.id})}}</small><small>{{why({type:'DECIDE',option:option.id})}}</small></button></div>
+            <div class="section-label">当前遭遇 · {{activeStory.npc}}</div><h2 data-testid="event-title">{{activeStory.name}}</h2><p class="story" data-testid="event-body">{{activeStory.body}}</p>
+            <div class="choices"><button v-for="option in activeStory.options" :key="option.id" :data-testid="`decide-${option.id}`" @click="act({type:'DECIDE',option:option.id})" :disabled="!can({type:'DECIDE',option:option.id})"><strong>{{option.label}}</strong><small>{{option.detail}}</small><small>{{cost({type:'DECIDE',option:option.id})}}</small><small>{{why({type:'DECIDE',option:option.id})}}</small><small>{{consumption({type:'DECIDE',option:option.id})}}</small></button></div>
           </template>
           <template v-else-if="game.battle">
             <div class="section-label">斗法 <span data-testid="round">第 {{game.battle.round+1}} 回合</span></div>
@@ -240,16 +240,17 @@ onMounted(() => store.init());
             <div class="recipe" v-for="[id,recipe] in localRecipes" :key="id"><div><strong>{{recipe.name}}</strong><small>{{cost({type:'CRAFT',recipeId:id})}}</small><small>{{why({type:'CRAFT',recipeId:id})}}</small><small>{{consumption({type:'CRAFT',recipeId:id})}}</small></div><button :data-testid="`craft-${id}`" :class="{highlight:highlight===`craft-${id}`}" @click="act({type:'CRAFT',recipeId:id})" :disabled="!can({type:'CRAFT',recipeId:id})">炼制</button></div>
           </template>
           <template v-else>
-            <div class="section-label">仙缘</div><article class="fate-card"><span class="npc-seal">禾</span><div><h2>山雨之缘</h2><strong class="gold">{{fate[0]}}</strong><p class="story">{{fate[1]}}</p></div></article>
+            <div class="section-label">仙缘</div><RelationshipPanel :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
             <div class="choices"><button v-for="event in events" :key="event.id" :data-testid="`event-${event.id}`" :class="{highlight:highlight===`event-${event.id}`}" @click="act({type:'EVENT',event:event.id})" :disabled="!can({type:'EVENT',event:event.id})">{{event.name}} · {{event.npc}}</button></div>
             <h3>修行手记</h3><ol class="journal"><li v-for="(line,index) in [...game.journal].reverse()" :key="index">{{line}}</li></ol>
           </template>
         </div>
+        <RelationshipPanel v-if="tab==='仙缘' && phase!=='idle' && phase!=='opening'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
         <GrowthPanel v-if="tab==='修行' && phase==='idle' && C.rank(core.player.realm)>=C.rank('foundation')" :game="game" :enabled="store.available && !store.busy" @navigate="navigate" @track="tracking.select"/>
-        <EquipmentPanel v-if="tab==='修行' && phase!=='opening'" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" :consumption="consumption" @act="act" @track="tracking.select"/>
+        <EquipmentPanel v-if="tab==='修行' && phase!=='opening'" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" :consumption="consumption" @act="act" @track="tracking.select" @navigate="navigate"/>
         <div class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><ActionFeedback v-if="store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/></div>
       </section>
-      <aside class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="tracking.select" @navigate="navigate" @preparation="preparation=$event"/><section class="paper fate-summary"><div class="section-label">仙缘因果</div><h3>{{fate[0]}}</h3><p class="small">{{fate[1]}}</p><button class="text-button" @click="tab='仙缘'">展开仙缘 →</button></section>
+      <aside class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="tracking.select" @navigate="navigate" @preparation="preparation=$event"/><section class="paper fate-summary"><div class="section-label">仙缘因果</div><div v-for="person in relationships.slice(0,2)" :key="person.id" :data-testid="`fate-summary-${person.id}`"><h3>{{person.name}} · {{person.label}}</h3><p class="small">{{person.summary}}</p></div><button class="text-button" @click="tab='仙缘'">展开仙缘 →</button></section>
       <section class="note"><span>此地机缘</span><p>{{location.description}}</p><small>试玩版本 · 数值未平衡<br>约30分钟理解玩法，不限定通关时间</small></section></aside>
     </main>
     <nav v-if="game" class="bottom-nav" aria-label="主要页面"><button v-for="(label,index) in ['修行','历练','行囊','仙缘']" :key="label" :data-testid="`tab-${index}`" :class="{active:tab===label}" :aria-current="tab===label?'page':undefined" @click="tab=label"><span class="nav-icon">{{['◈','山','囊','缘'][index]}}</span>{{label}}<small>{{['CULTIVATE','EXPLORE','INVENTORY','KARMA'][index]}}</small></button></nav>

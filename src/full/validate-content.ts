@@ -1,12 +1,13 @@
 import * as C from './content.ts';
 import { stories } from './events.ts';
+import type { StoryCondition } from './events.ts';
 import { skillMechanisms, relicMechanisms } from './mechanisms.ts';
 
 /** Build-time audit of this finite catalog, not a save parser or balance proof. */
 export const fullCatalog = Object.freeze({
   realmIds: C.realmIds, realms: C.realms, locations: C.locations, items: C.items,
   sources: C.sources, recipes: C.recipes, skills: C.skills, relics: C.relics,
-  enemies: C.enemies, cultivation: C.cultivation, assistedCosts: C.assistedCosts, maxBatch: C.maxBatch,
+  enemies: C.enemies, swordManual: C.swordManual, cultivation: C.cultivation, assistedCosts: C.assistedCosts, maxBatch: C.maxBatch,
   maxQuantity: C.maxQuantity, actionDurations: C.actionDurations, startingLoadouts: C.startingLoadouts, stories,
 });
 export type ContentCatalog = typeof fullCatalog;
@@ -50,6 +51,8 @@ export function validateContent(c: ContentCatalog = fullCatalog) {
   const atRealm = (minimum: C.RealmId, current: C.RealmId) => rank(minimum) <= rank(current);
   const locationOpen = (id: C.LocationId, current: C.RealmId) => atRealm(c.locations[id].min, current);
 
+  label(c.swordManual.name, 'swordManual.name'); number(c.swordManual.price, 'swordManual.price', 1); number(c.swordManual.damageBonus, 'swordManual.damageBonus', 1);
+  if(c.swordManual.id!=='skill_jinghong_slash'||c.swordManual.min!=='foundation')fail('MANUAL_CONTRACT','swordManual','stable legacy insight must have a foundation study route');
   number(c.maxQuantity, 'maxQuantity', 1);
   number(c.maxBatch, 'maxBatch', 1);
   if (c.maxBatch > c.maxQuantity) fail('CONTENT_NUMBER', 'maxBatch', 'exceeds resource safety limit');
@@ -160,14 +163,28 @@ export function validateContent(c: ContentCatalog = fullCatalog) {
     if (!locationOpen(story.location, story.min)) fail('STORY_LOCATION_GATE', id, 'location unlocks after story');
     if (story.requires) reference(c.stories, story.requires, `stories.${id}.requires`, 'STORY_REFERENCE');
     if (!story.options.length) fail('OPTION_ID', id, 'event needs an option');
+    label(story.body, `${id}.body`); label(story.name, `${id}.name`); label(story.npc, `${id}.npc`);
     const ids = new Set<string>();
     for (const option of story.options) {
       if (!option.id || ids.has(option.id)) fail('OPTION_ID', id, 'duplicate or empty option identity');
       ids.add(option.id);
       label(option.label, `${id}.${option.id}.label`); label(option.result, `${id}.${option.id}.result`);
+      if (`${story.npc} · ${story.name}：${option.result}`.length > 600) fail('STORY_TEXT_LIMIT', `${id}.${option.id}`, 'result exceeds journal bound');
       materials(option.cost ?? {}, `${id}.${option.id}.cost`); materials(option.gain ?? {}, `${id}.${option.id}.gain`);
       for (const field of ['stones', 'reward', 'xp'] as const) if (option[field] !== undefined) number(option[field], `${id}.${option.id}.${field}`);
+      for (const item of [...Object.keys(option.cost ?? {}), ...Object.keys(option.gain ?? {})]) {
+        if (!atRealm(c.items[item].min, story.min)) fail('STORY_ITEM_GATE', `${id}.${option.id}`, 'item unlocks after event');
+      }
+      if (option.memory !== undefined) label(option.memory, `${id}.${option.id}.memory`);
+      if (option.relationship !== undefined) label(option.relationship, `${id}.${option.id}.relationship`);
+      if (option.requireXpRoom !== undefined && (typeof option.requireXpRoom !== 'boolean' || !option.xp)) fail('OPTION_XP', `${id}.${option.id}`, 'xp-room condition needs positive insight');
+      if (option.aid !== undefined) {
+        if (!option.aid || typeof option.aid !== 'object' || Array.isArray(option.aid)) fail('OPTION_AID', `${id}.${option.id}`, 'invalid aid object');
+        if (!Object.keys(option.aid).length || Object.keys(option.aid).some(key => !['allDamageReduction', 'thunderDamageReduction'].includes(key))) fail('OPTION_AID', `${id}.${option.id}`, 'unknown aid mechanism');
+        for (const [key, value] of Object.entries(option.aid)) number(value, `${id}.${option.id}.aid.${key}`, 1);
+      }
     }
+    if (!story.options.some(option => !option.condition && !option.requireXpRoom && !option.stones && !option.reward && !option.xp && !option.aid && !Object.keys(option.cost ?? {}).length && !Object.keys(option.gain ?? {}).length)) fail('STORY_EXIT', id, 'event needs an unconditional resource-neutral exit');
   }
   const visited = new Set<string>(), visiting = new Set<string>();
   const visit = (id: string) => {
@@ -182,6 +199,37 @@ export function validateContent(c: ContentCatalog = fullCatalog) {
   for (const story of Object.values(c.stories)) {
     if (story.requires && !atRealm(c.stories[story.requires].min, story.min)) {
       fail('STORY_REALM_GATE', story.id, 'prerequisite requires a later realm');
+    }
+    const ancestors = new Set<string>();
+    for (let previous = story.requires; previous; previous = c.stories[previous].requires) ancestors.add(previous);
+    const condition = (value: StoryCondition, path: string) => {
+      if (!value || typeof value !== 'object' || Array.isArray(value) || !Object.keys(value).length || Object.keys(value).some(key => !['opening', 'choices'].includes(key))) fail('STORY_CONDITION', path, 'unsupported or empty condition');
+      if (value.opening !== undefined && (!Array.isArray(value.opening) || !value.opening.length || new Set(value.opening).size !== value.opening.length || value.opening.some(id => !['help', 'trade', 'leave'].includes(id)))) fail('STORY_CONDITION', path, 'unknown opening choice');
+      if (value.choices !== undefined) {
+        if (!value.choices || typeof value.choices !== 'object' || Array.isArray(value.choices) || !Object.keys(value.choices).length) fail('STORY_CONDITION', path, 'empty predecessor conditions');
+        for (const [id, values] of Object.entries(value.choices)) {
+          if (!ancestors.has(id)) fail('STORY_CONDITION_ORDER', path, 'conditions must name declared causal ancestors');
+          if (!Array.isArray(values) || !values.length || new Set(values).size !== values.length || values.some(value => !c.stories[id].options.some(option => option.id === value))) fail('STORY_CONDITION', path, 'unknown predecessor option');
+        }
+      }
+    };
+    for (const option of story.options) if (option.condition !== undefined) condition(option.condition, `${story.id}.${option.id}.condition`);
+    for (const variant of story.variants ?? []) {
+      condition(variant.when, `${story.id}.variant`); label(variant.body, `${story.id}.variant.body`);
+      for (const [id, result] of Object.entries(variant.results ?? {})) {
+        if (!story.options.some(option => option.id === id)) fail('STORY_VARIANT', story.id, 'result override names an unknown option');
+        label(result, `${story.id}.variant.result`);
+        if (`${story.npc} · ${story.name}：${result}`.length > 600) fail('STORY_TEXT_LIMIT', story.id, 'variant exceeds journal bound');
+      }
+    }
+    const overlaps = (a: StoryCondition, b: StoryCondition) => {
+      if (a.opening && b.opening && !a.opening.some(id => b.opening!.includes(id))) return false;
+      for (const [id, options] of Object.entries(a.choices ?? {})) if (b.choices?.[id] && !options.some(value => b.choices![id].includes(value))) return false;
+      return true;
+    };
+    const variants = story.variants ?? [];
+    for (let first = 0; first < variants.length; first++) for (let second = first + 1; second < variants.length; second++) {
+      if (overlaps(variants[first].when, variants[second].when)) fail('STORY_VARIANT_OVERLAP', story.id, 'text variants must be mutually exclusive');
     }
   }
 

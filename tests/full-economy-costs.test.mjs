@@ -15,7 +15,7 @@ test('every active realm quotes and charges its versioned actual assisted fee', 
     const quote = previewAction(r.ledger.game, { type: 'CULTIVATE', method: 'assisted', count: 1 });
     const result = r.act({ type: 'CULTIVATE', method: 'assisted', count: 1 });
     assert.equal(result.costs.stones, C.assistedCosts[realm]); assert.equal(quote.actualCosts.stones, result.costs.stones);
-    assert.equal(result.versions.balanceVersion, 'full-unbalanced.2');
+    assert.equal(result.versions.balanceVersion, C.BALANCE);
   }
 });
 test('assisted schedule rejects missing, negative, fractional and unknown realm fees', () => {
@@ -28,10 +28,10 @@ test('assisted schedule rejects missing, negative, fractional and unknown realm 
 test('known previous balance migrates all real resources and context without retroactive charges', () => {
   const r = runner(options); r.grow('spirit');
   for (const game of Object.values(r.checkpoints)) {
-    const old = structuredClone(game); old.core.balanceVersion = 'full-unbalanced.1';
+    const old = structuredClone(game); old.core.contentVersion = 'full-demo.2'; old.core.balanceVersion = 'full-unbalanced.1';
     const raw = JSON.stringify(old), current = parseGame(raw);
     assert.throws(() => validateGame(old), error => error.code === 'SAVE_VERSION');
-    assert.deepEqual(current, { ...old, core: { ...old.core, balanceVersion: 'full-unbalanced.2' } });
+    assert.deepEqual(current, { ...old, core: { ...old.core, contentVersion: C.VERSION, balanceVersion: C.BALANCE } });
     assert.equal(JSON.stringify(old), raw); assert.deepEqual(parseGame(JSON.stringify(current)), current);
     old.core.balanceVersion = 'full-unbalanced.999'; assert.throws(() => parseGame(JSON.stringify(old)), error => error.code === 'SAVE_VERSION');
   }
