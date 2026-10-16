@@ -1,6 +1,6 @@
 # Goal 1 / T12：真实生平、归隐、寿尽与CHECK-04
 
-日期：2026-10-17。状态：T12/CHECK-04本地通过，最终同HEAD远端检查与日志收尾核对。分支`codex/goal-1-life-record`基于T11最终`04376922eca6c006315748e6dbe37f9d566f5534`，独立叠加PR，不合并main或旧PR。
+日期：2026-10-17。状态：T12/CHECK-04本地通过，已交付[PR #21](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/21)，未合并；最终同HEAD远端检查与日志收尾核对。分支`codex/goal-1-life-record`基于T11最终`04376922eca6c006315748e6dbe37f9d566f5534`，实现提交`9337a3d38498a1568cecc316aef61c0a0c911cff`，叠加PR #20，不合并main或旧PR。
 
 ## 事实范围
 
