@@ -1,7 +1,7 @@
 name: M1 core checks
 on:
   push:
-    branches: [main, 'feat/**', 'fix/**']
+    branches: [main, 'feat/**', 'fix/**', 'codex/**']
   pull_request:
 permissions:
   contents: read
@@ -20,3 +20,4 @@ jobs:
       - run: npm test
       - run: npm run replay
       - run: python3 scripts/check_docs.py
+      - run: python3 docs/v0.4/tools/check_documents.py

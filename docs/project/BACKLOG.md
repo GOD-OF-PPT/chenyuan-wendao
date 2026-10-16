@@ -2,6 +2,8 @@
 
 以 docs/v0.3 为完整设计基线。约 30 分钟仅观察基本玩法理解，不限定通关时长。M1 玩法状态以 G1 分支 `feat/g1-locked-playable` 为准，继承 `feat/m1-playable-web`，未合并到 main。另一个分支有 `src/full` 规则但网页尚未接入。
 
+2026-10-16开始 [Goal 1](../../goal-1/plan.md)，分支 `codex/goal-1-reproducible-baseline`。当前T01归拢G1与研究文档，并为新整合版本重新验证；任务和证据见 [tasks.md](../../goal-1/tasks.md) 与 [基线实施记录](../implementation/goal-1-baseline.md)。原有任务的历史测试不代替本次验证，后续全境界、存档切换与正式美术保持未完成。
+
 | ID | 任务 | 状态与剩余边界 |
 | --- | --- | --- |
 | SETUP-01 | 仓库接入 | 已完成，保持原 public 可见性 |

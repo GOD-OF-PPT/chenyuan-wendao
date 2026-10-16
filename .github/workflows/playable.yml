@@ -1,9 +1,9 @@
 name: Playable web checks
 on:
   push:
-    branches: ['feat/m1-playable-web', 'feat/full-demo-g1-g5', 'feat/g1-locked-playable']
+    branches: ['feat/m1-playable-web', 'feat/full-demo-g1-g5', 'feat/g1-locked-playable', 'codex/**']
   pull_request:
-    paths: ['web/**', 'src/**', 'tests/**', 'scripts/**', '.github/workflows/playable.yml']
+    paths: ['web/**', 'src/**', 'tests/**', 'scripts/**', '.github/workflows/playable.yml', 'docs/v0.4/**']
 permissions:
   contents: read
 concurrency:
@@ -29,6 +29,7 @@ jobs:
           npm test
           npm run replay
           python3 scripts/check_docs.py
+          python3 docs/v0.4/tools/check_documents.py
       - name: Install locked web dependencies
         run: npm --prefix web ci --ignore-scripts --no-audit --no-fund
       - name: Build production website
