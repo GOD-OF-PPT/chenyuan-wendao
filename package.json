@@ -12,7 +12,8 @@
     "check:content": "node --experimental-strip-types scripts/check-full-content.mjs",
     "replay": "node --experimental-strip-types scripts/replay.mjs",
     "replay:full": "node --experimental-strip-types scripts/replay-full.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "audit:economy": "node --experimental-strip-types scripts/replay-economy.mjs --check"
   },
   "devDependencies": {
     "typescript": "5.8.3"

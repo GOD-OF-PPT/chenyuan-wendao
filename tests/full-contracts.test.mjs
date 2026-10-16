@@ -108,7 +108,7 @@ test('current saves cannot falsely label a young retiree as lifespan-ended', () 
 
 test('explicit full v1 conversion corrects its known RETIRE label and preserves all resources', () => {
   const d = driver('trade'), old = advance(d.game, command(d.game, { type: 'RETIRE' }));
-  old.core.contentVersion = 'full-demo.1'; old.ending = 'lifespan';
+  old.core.contentVersion = 'full-demo.1'; old.core.balanceVersion = 'full-unbalanced.1'; old.ending = 'lifespan';
   const raw = JSON.stringify(old), converted = parseGame(raw);
   assert.equal(converted.core.contentVersion, C.VERSION);
   assert.equal(converted.ending, 'retired');
@@ -124,7 +124,7 @@ test('full v1 active events and battles convert without reselecting their contex
   const d = driver('leave', 'talisman'); d.go('wilderness');
   d.doAction({ type: 'ENCOUNTER', enemy: 'wolf' }); d.doAction({ type: 'BATTLE', move: 'technique' });
   for (const sample of [opening, d.game]) {
-    const old = structuredClone(sample); old.core.contentVersion = 'full-demo.1';
+    const old = structuredClone(sample); old.core.contentVersion = 'full-demo.1'; old.core.balanceVersion = 'full-unbalanced.1';
     const converted = parseGame(JSON.stringify(old));
     assert.deepEqual(converted.battle, old.battle);
     assert.deepEqual(converted.core.activeEvent, old.core.activeEvent);

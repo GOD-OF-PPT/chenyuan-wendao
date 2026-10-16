@@ -2,7 +2,7 @@
 import type { School, SkillSlot, SkillEffect, RelicEffect } from './mechanisms.ts';
 export type { School, SkillSlot } from './mechanisms.ts';
 export const VERSION = 'full-demo.2';
-export const BALANCE = 'full-unbalanced.1';
+export const BALANCE = 'full-unbalanced.2';
 export const realmIds = ['mortal','qi','foundation','golden','nascent','spirit','ascended'] as const;
 export type RealmId = typeof realmIds[number];
 export type LocationId = 'wilderness'|'cave'|'sect'|'market'|'secret'|'terrace';
@@ -108,10 +108,12 @@ export const enemies:Record<string,Enemy>={
 export const maxBatch=50;
 export const maxQuantity=1_000_000;
 export const cultivation={natural:{months:1,stones:0,bonus:0},assisted:{months:1,stones:20,bonus:100}};
+/** One stable-income game month per assisted step (rounded up), still unbalanced. */
+export const assistedCosts:Record<RealmId,number>={mortal:20,qi:20,foundation:30,golden:44,nascent:58,spirit:72,ascended:72};
 export const actionDurations={rest:1,forge:2,encounter:1,endLife:1};
 export const startingLoadouts={
  sword:{mind:'sword_mind',builder:'sword_build',finisher:'sword_release'},
  talisman:{mind:'talisman_mind',builder:'talisman_build',finisher:'talisman_release'}
 };
 function freeze(v:object){for(const x of Object.values(v))if(x&&typeof x==='object')freeze(x);Object.freeze(v);}
-for(const v of [realmIds,realms,locations,items,sources,recipes,skills,relics,enemies,cultivation,actionDurations,startingLoadouts])freeze(v);
+for(const v of [realmIds,realms,locations,items,sources,recipes,skills,relics,enemies,cultivation,assistedCosts,actionDurations,startingLoadouts])freeze(v);

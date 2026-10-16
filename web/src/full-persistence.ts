@@ -240,8 +240,21 @@ function migrateTransaction(tx: IDBTransaction, complete: (value: void) => void,
               if (convertedCheckpoint) { state.put(convertedCheckpoint, 'checkpoint'); state.put(checkpointScope(convertedCheckpoint, mutation.runId), 'checkpoint-owner'); }
               else if (oldOwner !== undefined) throw new RuleError('CHECKPOINT_INVALID', '旧归属记录缺少检查点');
               const receipt: ControlReceipt = { format: 'chenyuan-control-receipt', version: 1, kind: 'MIGRATE', mutation, fingerprint: fingerprint(raw) };
-              const receipts = tx.objectStore(FULL_RECEIPT_STORE); receipts.clear(); receipts.put(receipt, mutation.runId + ':' + mutation.commandId);
-              complete(undefined);
+              const receipts = tx.objectStore(FULL_RECEIPT_STORE), cursor = receipts.openCursor();
+              let receiptIndex = 0;
+              cursor.onsuccess = () => {
+                try {
+                  if (cursor.result) {
+                    const index = receiptIndex++;
+                    backup.put(cursor.result.value, prefix + '/receipts/' + index);
+                    backup.put(cursor.result.key, prefix + '/receipt-keys/' + index);
+                    cursor.result.continue();
+                  } else {
+                    receipts.clear(); receipts.put(receipt, mutation.runId + ':' + mutation.commandId);
+                    complete(undefined);
+                  }
+                } catch (error) { abort(error); }
+              };
             } catch (error) { abort(error); }
           };
         } catch (error) { abort(error); }

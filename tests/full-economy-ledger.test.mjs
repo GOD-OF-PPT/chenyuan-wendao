@@ -45,6 +45,10 @@ test('reconciliation rejects repeated commands, altered credits and a different 
   assert.throws(() => reconcileLedger(report.initial, credit, report.closing), error => error.code === 'LEDGER_FLOW');
   const run = structuredClone(report.entries); run[0].command.runId = 'unrelated';
   assert.throws(() => reconcileLedger(report.initial, run, report.closing), error => error.code === 'LEDGER_SEQUENCE');
+  const sequence = structuredClone(report.entries); sequence[0].sequence = 9;
+  assert.throws(() => reconcileLedger(report.initial, sequence, report.closing), error => error.code === 'LEDGER_SEQUENCE');
+  const version = structuredClone(report.entries); version[0].result.versions.balanceVersion = 'unrelated';
+  assert.throws(() => reconcileLedger(report.initial, version, report.closing), error => error.code === 'LEDGER_SEQUENCE');
 });
 test('mana income is separate from gross spell cost even when a spell restores mana', () => {
   const r = runner({ ...options, school: 'talisman' }); r.grow('golden');

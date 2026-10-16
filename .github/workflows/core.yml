@@ -21,5 +21,6 @@ jobs:
       - run: npm test
       - run: npm run replay
       - run: npm run replay:full
+      - run: npm run audit:economy
       - run: python3 scripts/check_docs.py
       - run: python3 docs/v0.4/tools/check_documents.py

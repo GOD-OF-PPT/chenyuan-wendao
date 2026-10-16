@@ -20,6 +20,8 @@ T08在`codex/goal-1-build-equipment`接通12功法/4法宝的真实研习、逐�
 
 T09在`codex/goal-1-growth-to-spirit`补上本境突破物/关键材料的真实筹备信息，复用确定/替代/采购来源，并用正常新档跨金丹、元婴至化神，配装与刷新/恢复保留；[T09/CHECK-03记录](../implementation/goal-1-growth-to-spirit.md)绑定实际检查。经济优化、因果、渡劫结尾、生产视觉/性能与真人仍在后续。
 
+T10在`codex/goal-1-economy-ledger`记录真实毛收支、120组策略和同起点修炼/转换/战斗/失败恢复；修正固定20费用造成的中高境双优风险，数值升级full-unbalanced.2，旧档原件与资源保留。范围及实际验证见[T10记录](../implementation/goal-1-economy-ledger.md)，全局平衡、完整网页飞升和真人未完成。
+
 | ID | 任务 | 状态与剩余边界 |
 | --- | --- | --- |
 | SETUP-01 | 仓库接入 | 已完成，保持原 public 可见性 |

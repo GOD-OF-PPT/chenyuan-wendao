@@ -35,6 +35,7 @@ jobs:
           npm test
           npm run replay
           npm run replay:full
+          npm run audit:economy
           python3 scripts/check_docs.py
           python3 docs/v0.4/tools/check_documents.py
       - name: Install locked web dependencies

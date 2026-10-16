@@ -1,6 +1,6 @@
 # 尘缘问道 · 可运行测试版本
 
-T06已把正式Store、页面和存储切换到full规则，T07接入目标/来源引导与批量反馈。T07已验证凡人 → 炼气 → 筑基的三开场/两修法；T08接入至金丹的双修法/双筹备和全部功法法宝操作，实际结果见[装备实施记录](../docs/implementation/goal-1-build-equipment.md)。T09接入本境筹备信息并验证至化神，详见[成长与CHECK-03记录](../docs/implementation/goal-1-growth-to-spirit.md)。因果、渡劫飞升、正式美术和真人继续依照[Goal 1任务](../goal-1/tasks.md)，不因共用按钮提前完成。
+T06已把正式Store、页面和存储切换到full规则，T07接入目标/来源引导与批量反馈。T07已验证凡人 → 炼气 → 筑基的三开场/两修法；T08接入至金丹的双修法/双筹备和全部功法法宝操作，实际结果见[装备实施记录](../docs/implementation/goal-1-build-equipment.md)。T09接入本境筹备信息并验证至化神，详见[成长与CHECK-03记录](../docs/implementation/goal-1-growth-to-spirit.md)。T10的经济账本、按境界辅助修炼费和旧数值迁移见[经济记录](../docs/implementation/goal-1-economy-ledger.md)，仍未平衡。因果、渡劫飞升、正式美术和真人继续依照[Goal 1任务](../goal-1/tasks.md)，不因共用按钮提前完成。
 
 约30分钟仅是基本玩法理解目标，不固定筑基或通关时间。所有数值为未平衡初值；游戏内年月随行动立即结算，阅读与离线不耗寿元。
 
@@ -29,6 +29,7 @@ npm run check:content
 npm test
 npm run replay
 npm run replay:full
+npm run audit:economy
 python3 scripts/check_docs.py
 python3 docs/v0.4/tools/check_documents.py
 npm --prefix web run build

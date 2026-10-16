@@ -38,7 +38,7 @@ export function runner(options, checkpoint) {
       if (policy !== 'reckless') {
         if (game.core.player.hp < C.realms[game.core.player.realm].maxHp / 2 && available('heal')) move = 'heal';
         else if (game.battle.round % 3 === 2) move = 'guard';
-        else if (available('release')) move = 'release';
+        else if (policy !== 'ongoing' && available('release')) move = 'release';
         else if (available('technique')) move = 'technique';
       }
       act({ type: 'BATTLE', move }, purpose);

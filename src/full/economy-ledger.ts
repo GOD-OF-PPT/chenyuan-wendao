@@ -39,13 +39,16 @@ export function summarizeEntries(entries: readonly LedgerEntry[]) {
     battleTurns, restMonths, stops, commandTypes: types, sourceSteps: sources };
 }
 
-export function reconcileLedger(initial: EconomicSnapshot, entries: readonly LedgerEntry[], closing: EconomicSnapshot) {
+export function reconcileLedger(initial: EconomicSnapshot, entries: readonly LedgerEntry[], closing: EconomicSnapshot, firstSequence = 1) {
   const totals = summarizeEntries(entries), ids = new Set<string>();
   let prior = initial;
-  for (const entry of entries) {
+  for (const [index, entry] of entries.entries()) {
     if (ids.has(entry.command.commandId)) fail('LEDGER_DUPLICATE', '账本重复记入同一指令');
     ids.add(entry.command.commandId);
-    if (canonicalFingerprint(entry.before) !== canonicalFingerprint(prior) || entry.command.expectedRevision !== prior.revision ||
+    if (entry.sequence !== firstSequence + index || !Number.isSafeInteger(entry.sequence) || entry.sequence < 1 ||
+        entry.after.runId !== prior.runId || entry.after.contentVersion !== prior.contentVersion || entry.after.balanceVersion !== prior.balanceVersion ||
+        entry.result.versions.contentVersion !== prior.contentVersion || entry.result.versions.balanceVersion !== prior.balanceVersion ||
+        canonicalFingerprint(entry.before) !== canonicalFingerprint(prior) || entry.command.expectedRevision !== prior.revision ||
         entry.command.runId !== prior.runId || entry.result.commandId !== entry.command.commandId || entry.result.runId !== prior.runId ||
         entry.result.type !== entry.command.type || entry.result.revisionBefore !== prior.revision || entry.after.revision !== prior.revision + 1 ||
         entry.result.revisionAfter !== entry.after.revision) fail('LEDGER_SEQUENCE', '账本指令与状态顺序不一致');
@@ -97,7 +100,7 @@ export class EngineLedger {
       const entry: LedgerEntry = { sequence: this.#entries.length + 1, purpose, command, result,
         before, after: economicSnapshot(resolution.nextState), received: received as LedgerEntry['received'] };
       // Validate a new row against its immediate real before/after, without O(n²) replaying the journal.
-      reconcileLedger(before, [entry], entry.after);
+      reconcileLedger(before, [entry], entry.after, entry.sequence);
       this.#entries.push(structuredClone(entry)); this.#game = resolution.nextState;
       return structuredClone(result);
     } catch (error) {

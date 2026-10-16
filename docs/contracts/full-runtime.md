@@ -4,11 +4,11 @@
 
 ## 版本与来源
 
-统一常量位于`src/full/versions.ts`：format=`chenyuan-full`，外层version=2，schemaVersion=2，contentVersion=`full-demo.2`，balanceVersion=`full-unbalanced.1`。存储结构仍为原Game字段；没有为显示阶段、目标偏好或检查点向Game添加副本。数值初值保持未平衡。
+统一常量位于`src/full/versions.ts`：format=`chenyuan-full`，外层version=2，schemaVersion=2，contentVersion=`full-demo.2`，balanceVersion=`full-unbalanced.2`。存储结构仍为原Game字段；没有为显示阶段、目标偏好或检查点向Game添加副本。数值初值保持未平衡。
 
 content版本更新记录本轮结束语义与机制分派变化。数值版本未变；根/web依赖锁也未变。未知format/version/schema/content/balance明确拒绝，不能清空重开。输入先限1000000个UTF-8字节，再解析与验证；字符数不能代替字节上限。
 
-`parseGame`纯转换支持已知M1/Adventure和full-demo.1。原v1合法RETIRE唯一写出ended/lifespan，年龄仍小于寿限；转换时保留年龄、资源、事件/战斗与历史文本，将该已知错误标签改为retired。当前full-demo.2只有实际达到寿限的终态才能标lifespan。不推测未知版本、数值兼容或旧档没有的经历。数据库层必须保留原档后在副本上调用此函数，成功验证后再提交；纯函数通过不等于数据库迁移完成。
+`parseGame`纯转换支持已知M1/Adventure、full-demo.1 / full-unbalanced.1，以及full-demo.2 / full-unbalanced.1。T10将这些已知格式升级到full-unbalanced.2；保留物资、游戏年月、境界、配装及选择，不追补费用或奖励。其他版本组合拒绝。原v1合法RETIRE唯一写出ended/lifespan，年龄仍小于寿限；转换时保留年龄、资源、事件/战斗与历史文本，将该已知错误标签改为retired。当前full-demo.2只有实际达到寿限的终态才能标lifespan。不推测未知版本、数值兼容或旧档没有的经历。数据库层必须保留原档后在副本上调用此函数，成功验证后再提交；纯函数通过不等于数据库迁移完成。
 
 ## 一个状态与派生阶段
 
@@ -96,3 +96,12 @@ GrowthPanel自筑基起渐进展示这些信息，不自动替换玩家置顶目
 5. 恢复完整准备快照时生成新runId、重建真实event.id实例、清理旧回执；准备检查点保留可重复使用。存在检查点是仓库会话数据，不从Game虚构。
 
 真实数据库事务与正式Store已由T04—T06实施，详见[持久化契约](full-persistence.md)和[T06/CHECK-02](../implementation/goal-1-full-ui-cutover.md)。类型、纯解析或预览不能代替真实事务/页面故障测试。
+
+
+## 经济审计与数值版本（T10）
+
+灵石辅助每次仍耗1游戏月，炼气20、筑基30、金丹44、元婴58、化神72灵石；以共享costs/getActionCosts为唯一行动费用，UI预算/预览/实际扣费同步。数字仍是未平衡初值。自然吐纳、基础产量、物价、配方、战斗和寿元未因现实时间改奖。
+
+EngineLedger只封装真实resolve，逐次记录指令身份、实际毛扣费/净变化/毛获得及期初期末；毛获得=净变化+实际消耗，不再次叠加配置奖励。突破清零修为另记xpReset，护体回灵与消耗分别记账；HP仅记录净变化，不能用净变化冒充总承伤。失败指令另列，不记成功资源流。完整存档回滚建立新的账本段，不把恢复快照当作收入。账本不表示事务已保存。
+
+`npm run audit:economy`重新执行120组正常引擎路线并逐字校验版本、源码摘要、分境账本、对照/转换/战斗/失败恢复报告。它不证明完整网页飞升、全局最优策略、真人平衡或真实分钟时长，范围及剩余风险见[T10记录](../implementation/goal-1-economy-ledger.md)。

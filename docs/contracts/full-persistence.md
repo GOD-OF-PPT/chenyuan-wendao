@@ -56,3 +56,10 @@ BREAKTHROUGH/START_TRIAL使用T03返回的检查点用途，在同一事务保�
 `npm --prefix web run test:persistence`启动独立本机Vite测试页，在Chromium/Firefox/WebKit真实IndexedDB中执行，没有fake-indexeddb。测试使用隔离浏览器上下文/测试数据库名和明确的故障注入；正常网页路线验收不调用这些测试操作。
 
 测试页、动态测试模块和原始存档不进入生产dist；正常生产入口仅使用full Store。测试涵盖真实旧引擎9阶段×6组合、实际旧Repository连接、M1原始快照、full内容升级、非temple事件、未决战斗、坏档/未来版本、blocked/配额/abort及准备检查点。各阶段实际结果见T04—T06实施记录；三引擎存储通过不等于网页飞升、真人或永久落盘保障。
+
+
+## T10数值版本迁移
+
+DB继续v3，Game schema继续2。已知full-demo.2 / full-unbalanced.1和更早已知full v1按运行契约升为full-unbalanced.2；current、previous、checkpoint、owner在同一readwrite事务内验证并备份原件。原回执逐条保留原值和原键（包括顶层undefined），再清空活跃回执并写入MIGRATE；current换runId/revision0，使旧指令不能重放。checkpoint仍可重复恢复完整准备状态。没有差额补收、物品补发或游戏年月补算。
+
+归档游标、状态、检查点、owner、新回执任一步失败都回滚，包括归档配额错误；重开当前版本不再迁移。未知数值版本保留原档并拒绝。DB未增版的理由是T09旧full客户端每次写入都读取并validateGame/resolve校验数值版本；它会拒绝balance2，不能把旧缓存写回。T10以精确旧引擎做只读兼容核验，并在三个真实IDB引擎上验证迁移/失败/旧指令与两次恢复，不声称执行了旧版整站跨标签自动化。
