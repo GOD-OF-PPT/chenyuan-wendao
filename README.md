@@ -4,7 +4,7 @@
 
 ## 当前实施与可运行范围
 
-当前实施分支为 `codex/goal-1-full-ui-cutover`，正式Store和页面已使用full规则与数据库v3，动作在事务完成后才显示成功。当前已验证的正常网页路线为 **凡人 → 炼气 → 筑基**：开场三选一、两种修法、采集/委托、交易炼丹、战斗、旧档迁移与可重复检查点恢复。
+当前实施分支为 `codex/goal-1-goal-guidance`，正式Store和页面使用full规则与数据库v3，动作在事务完成后才显示成功；T07接入可替换的追踪目标、缺口/来源导航与批量预览/回执。当前已验证的正常网页路线为 **凡人 → 炼气 → 筑基**：开场三选一、两种修法、采集/委托、交易炼丹、战斗、旧档迁移与可重复检查点恢复。
 
 完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，页面接通共用地点/物品/事件操作；高级构筑、完整成长/因果/渡劫网页路线、正式美术和真人验证仍按后续任务逐项完成。数值为未平衡初值。
 
@@ -19,7 +19,7 @@
 工程声明 Node.js ≥22.16.0；历史 G1 CI 使用 Node.js 22.16.0 / npm 10.9.2。当前任务的实际环境和检查结果单独记录于 [T01实施记录](docs/implementation/goal-1-baseline.md)。不顺带升级依赖，根与前端均从已提交锁文件安装。
 
 ```sh
-git clone --branch codex/goal-1-full-ui-cutover --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+git clone --branch codex/goal-1-goal-guidance --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
 cd chenyuan-wendao
 npm ci --ignore-scripts
 node scripts/check_lock.mjs
@@ -52,7 +52,7 @@ npm run test:persistence
 
 本次整合实现提交 `4907e1d67f03ca9603b32f6cbf575c96ee6be03e` 已重新通过本地83规则/6经济路线/17 Chromium及构建；同SHA的[规则CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455654)与[网页CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455542)也通过。首轮浏览器launch失败与安装超时、启动预检和完整重跑均保留记录。
 
-生产网页用例覆盖三开场×两修法至筑基、采购替代路线、事件/战斗刷新、事务回滚、双击、多标签页、坏档、导入导出、旧档迁移、原件备份、失败重试、重复检查点、两尺寸和图片失败。三浏览器本阶段结果见T06记录；完整飞升、真人平衡与最终视觉尚未验收。
+生产网页用例覆盖三开场×两修法至筑基、采购替代路线、事件/战斗刷新、事务回滚、双击、多标签页、坏档、导入导出、旧档迁移、原件备份、失败重试、重复检查点、两尺寸和图片失败。三浏览器本阶段结果见T06记录；完整飞升、真人平衡与最终视觉尚未验收。T07新增目标→配方→材料→来源→返回的真实流程、按目标取材、部分批次扣费、追踪偏好/坏偏好与移动端专项，结果见[T07记录](docs/implementation/goal-1-goal-guidance.md)。
 
 T02新增的`check:content`校验实际来源与引用、当前境界炼制/采购路径及连锁交易获利；`replay:full`执行24组正常纯引擎指令，输出版本与行动序列摘要。规则测试补充12功法/4法宝效果、逐境缺口/恢复和真实旧档转换；这些均不替代正式网页/数据库全流程验收。
 
@@ -81,6 +81,7 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 | [full数据库契约](docs/contracts/full-persistence.md) / [T04记录](docs/implementation/goal-1-full-persistence.md) | 原子事务、旧档/内容迁移与真实IDB模块验证 |
 | [T05幂等与恢复](docs/implementation/goal-1-recovery-idempotency.md) | 并发、坏回执、重复恢复、v3升级与只读备份 |
 | [T06正式接线与CHECK-02](docs/implementation/goal-1-full-ui-cutover.md) | full Store/最小页面、旧档、失败显示、三浏览器与阶段检查 |
+| [T07目标/来源与批量反馈](docs/implementation/goal-1-goal-guidance.md) | 显示偏好、共享缺口、导航不采购、按目标收集与实际回执 |
 | [试玩与运行说明](web/README.md) | 当前首境界的操作、战斗和本地存档 |
 | [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
 | [资料目录](docs/README.md) | v0.3与v0.4关系 |

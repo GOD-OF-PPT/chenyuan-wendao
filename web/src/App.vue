@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
+import { computed, nextTick, onMounted, ref, shallowRef, watch } from 'vue';
 import { useGame } from './store';
 import * as C from '../../src/full/content.ts';
 import { availableEvents, biography, intent } from '../../src/full/engine.ts';
@@ -9,16 +9,28 @@ import type { ActionPreview } from '../../src/full/queries.ts';
 import type { Action, Move } from '../../src/full/types.ts';
 import { stories } from '../../src/full/events.ts';
 import { MAX_SAVE_BYTES } from '../../src/full/versions.ts';
+import { planCollection, preparationConsumption, trackingConsumption, type CollectionTarget } from '../../src/full/goals.ts';
+import { useTracking } from './use-tracking';
+import { formatCosts } from './presentation';
+import type { NavigationRequest } from './navigation';
+import GoalPanel from './GoalPanel.vue';
+import BatchPreview from './BatchPreview.vue';
+import ActionFeedback from './ActionFeedback.vue';
 
-const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref(1), quantity = ref(1);
+const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
+const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
+const preparation = shallowRef<Action | null>(null);
 const large = ref(false), settings = ref<HTMLDialogElement>(), exportError = ref('');
 const game = computed(() => store.game), core = computed(() => game.value?.core);
+const tracking = useTracking(game);
+watch([() => tracking.target.value, () => game.value?.core.runId], () => { collectionTarget.value = null; highlight.value = ''; });
+watch(() => game.value?.core.player.realm, () => { if (tracking.target.value.kind === 'breakthrough') { collectionTarget.value = null; highlight.value = ''; } });
 const realm = computed(() => C.realms[core.value?.player.realm ?? 'mortal']);
 const location = computed(() => C.locations[core.value?.world.location ?? 'wilderness']);
 const phase = computed(() => game.value ? gamePhase(game.value) : null);
 const goal = computed(() => game.value ? getBreakthroughGoal(game.value) : null);
 const age = computed(() => core.value ? Math.floor((core.value.player.startAgeMonths + core.value.world.elapsedMonths) / 12) : 18);
-const scene = `${import.meta.env.BASE_URL}art/scene.webp`;
+const scene = new URL(`${import.meta.env.BASE_URL}art/scene.webp`, document.baseURI).href;
 const context = computed(() => ({ state: game.value, cache: new Map<string, ActionPreview>() }));
 function quote(action: Action) {
   const current = context.value;
@@ -32,9 +44,7 @@ const why = (action: Action) => !store.available ? '存储尚未就绪，请重�
 function cost(action: Action) {
   const preview = quote(action), c = preview?.costs;
   if (!c) return '';
-  const text = [c.stones ? `灵石 ${c.stones}` : '', c.mp ? `灵力 ${c.mp}` : '',
-    ...Object.entries(c.items).map(([id, n]) => `${C.items[id].name} ×${n}`),
-    c.months ? `${c.months} 游戏月` : ''].filter(Boolean).join(' · ') || '不消耗物资';
+  const text = formatCosts(c);
   return preview && preview.requestedSteps > 1 ? '每次 ' + text : text;
 }
 function act(action: Action) { return store.act(action); }
@@ -42,8 +52,8 @@ async function travel(id: C.LocationId) {
   await act({ type: 'TRAVEL', location: id });
   if (!store.error) tab.value = id === 'cave' ? '修行' : '历练';
 }
-const natural = computed<Action>(() => ({ type: 'CULTIVATE', method: 'natural', count: batch.value }));
-const assisted = computed<Action>(() => ({ type: 'CULTIVATE', method: 'assisted', count: batch.value }));
+const natural = computed<Action>(() => ({ type: 'CULTIVATE', method: 'natural', count: batch.value === 'target' ? C.maxBatch : batch.value }));
+const assisted = computed<Action>(() => ({ type: 'CULTIVATE', method: 'assisted', count: batch.value === 'target' ? C.maxBatch : batch.value }));
 const breakthrough = computed<Action>(() => ({ type: core.value?.player.realm === 'spirit' ? 'START_TRIAL' : 'BREAKTHROUGH' }));
 const forecast = computed(() => game.value?.battle ? intent(game.value.battle) : null);
 const activeStory = computed(() => core.value?.activeEvent ? stories[core.value.activeEvent.id] : null);
@@ -51,6 +61,38 @@ const events = computed(() => game.value ? availableEvents(game.value) : []);
 const life = computed(() => game.value ? biography(game.value) : []);
 const activeEnemies = computed(() => Object.entries(C.enemies).filter(([, e]) => !e.trial && e.location === core.value?.world.location));
 const localSources = computed(() => Object.entries(C.sources).filter(([, s]) => s.location === core.value?.world.location));
+const sourceActions = computed(() => Object.fromEntries(localSources.value.map(([id]) => [id, batch.value === 'target' ?
+  (game.value && collectionTarget.value ? planCollection(game.value, id, collectionTarget.value) : null) : { type: 'SOURCE', sourceId: id, count: batch.value } as Action])));
+function sourceReason(id: string) {
+  const action = sourceActions.value[id];
+  if (action) return why(action);
+  if (!collectionTarget.value) return '先从目标来源选取所需物资，或选择固定次数行动。';
+  return collectionTarget.value.kind === 'stones' && C.sources[id].stones > 0 ?
+    '灵石目标已经备齐，无需重复委托；可替换目标或选择固定次数。' :
+    '此处不产当前目标物资，可切换来源或选择固定次数。';
+}
+async function navigate(request: NavigationRequest) {
+  if (!game.value || store.busy || !store.available) return;
+  if (game.value.core.world.location !== request.location) {
+    const action: Action = { type: 'TRAVEL', location: request.location };
+    if (!can(action)) return;
+    await act(action); if (store.error) return;
+  }
+  tab.value = request.tab; highlight.value = request.focusId ?? '';
+  if (request.quantity) quantity.value = request.quantity;
+  if (request.collection) collectionTarget.value = request.collection;
+  await nextTick();
+  const element = request.focusId ? document.querySelector<HTMLElement>(`[data-testid="${request.focusId}"]`) : null;
+  element?.scrollIntoView({ block: 'center' }); element?.focus({ preventScroll: true });
+}
+function consumption(action: Action) {
+  if (!game.value) return '';
+  const gaps = [...trackingConsumption(game.value, tracking.target.value, action),
+    ...(preparation.value ? preparationConsumption(game.value, preparation.value, action) : [])]
+    .filter((gap, index, all) => all.findIndex(other => other.id === gap.id) === index);
+  return gaps.length ? '会消耗追踪物资：' + gaps.map(gap => `${C.items[gap.id!].name}将缺${gap.missing}`).join('、') + '；材料未被预留。' : '';
+}
+const collectionLabel = computed(() => collectionTarget.value ? `${collectionTarget.value.kind === 'item' ? C.items[collectionTarget.value.id].name : '灵石'}库存达到 ${collectionTarget.value.quantity}` : '从目标来源选取所需物资');
 const knownItems = computed(() => Object.entries(C.items).filter(([id, item]) => !core.value || C.rank(item.min) <= C.rank(core.value.player.realm) || core.value.inventory[id] > 0));
 const localRecipes = computed(() => Object.entries(C.recipes).filter(([, recipe]) => !core.value || C.rank(recipe.min) <= C.rank(core.value.player.realm)));
 const schoolName = computed(() => game.value?.school === 'sword' ? '剑修' : game.value?.school === 'talisman' ? '符修' : '尚未择法');
@@ -94,7 +136,7 @@ onMounted(() => store.init());
 </script>
 
 <template>
-  <div class="app-shell" :class="{'large-text': large}" :style="{'--scene': `url(${scene})`}">
+  <div class="app-shell" :class="{'large-text': large}" :style="{'--scene': `url('${scene}')`}">
     <header class="topbar">
       <div class="brand"><span class="seal">尘<br>缘</span><div><h1>尘缘问道</h1><p>一念尘缘起 · 千山共问道</p></div></div>
       <div v-if="core" class="where"><span class="diamond">◇</span> 云岚州 · {{location.name}} <small>修行第 {{core.world.elapsedMonths}} 月</small></div>
@@ -175,37 +217,36 @@ onMounted(() => store.init());
           <template v-else-if="tab === '修行'">
             <div class="section-label">修行 <span>积跬步，以至千里</span></div><h2>静守灵台，凝气归元。</h2><p class="story">{{location.description}}</p>
             <template v-if="core.world.location === 'cave'">
-              <div class="action-options"><label>连续行动 <select v-model.number="batch" aria-label="行动次数"><option :value="1">1 次</option><option :value="5">5 次</option><option :value="20">20 次</option></select></label><small>成本与停止原因按真实行动结算。</small></div>
+              <div class="action-options"><label>连续行动 <select v-model.number="batch" aria-label="行动次数"><option :value="1">1 次</option><option :value="5">5 次</option><option :value="20">20 次</option><option :value="50">50 次</option><option value="target">达到目标（单批至多50次）</option></select></label><small>成本与停止原因按真实行动结算。</small></div>
               <div class="choices"><button data-testid="cultivate" @click="act(natural)" :disabled="!can(natural)"><strong>自然吐纳</strong><small>{{cost(natural)}}</small><small>{{why(natural)}}</small></button><button data-testid="cultivate-assisted" @click="act(assisted)" :disabled="!can(assisted)"><strong>灵石辅助</strong><small>{{cost(assisted)}}</small><small>{{why(assisted)}}</small></button><button data-testid="rest" @click="act({type:'REST'})" :disabled="!can({type:'REST'})"><strong>洞府疗养</strong><small>{{cost({type:'REST'})}}</small><small>{{why({type:'REST'})}}</small></button></div>
             </template>
             <button v-else class="primary" data-testid="return-cave" @click="travel('cave')" :disabled="!can({type:'TRAVEL',location:'cave'})">返回洞府修行 →</button>
+            <div v-if="core.world.location==='cave'" class="batch-previews"><BatchPreview label="自然吐纳" :preview="quote(natural)"/><BatchPreview label="灵石辅助" :preview="quote(assisted)"/></div>
             <div class="breakthrough"><div><strong>{{goal?.title}}</strong><small>{{why(breakthrough) || '准备已经齐全'}}</small></div><button class="primary" data-testid="breakthrough" @click="act(breakthrough)" :disabled="!can(breakthrough)">{{core.player.realm === 'mortal' ? '引气入体' : core.player.realm === 'spirit' ? '开始渡劫' : '确认突破'}}</button></div>
             <div class="school-picker"><h3>选择修法 <small>战斗外切换</small></h3><div class="choices two"><button v-for="school in ['sword','talisman'] as const" :key="school" :data-testid="`school-${school}`" :class="{selected:game.school===school}" @click="act({type:'SCHOOL',school})" :disabled="!can({type:'SCHOOL',school})"><strong>{{school==='sword'?'剑修 · 青锋剑诀':'符修 · 镇灵符诀'}}</strong><small>{{why({type:'SCHOOL',school})}}</small></button></div></div>
           </template>
           <template v-else-if="tab === '历练'">
             <div class="section-label">历练</div><p class="story">{{location.description}}</p>
             <div class="locations"><button v-for="(place,id) in C.locations" :key="id" :data-testid="`travel-${id}`" :class="{selected:core.world.location===id}" @click="travel(id)" :disabled="!can({type:'TRAVEL',location:id})">{{place.name}}<small>{{why({type:'TRAVEL',location:id})}}</small></button></div>
-            <div class="source-grid"><button v-for="[id,source] in localSources" :key="id" :data-testid="`source-${id}`" @click="act({type:'SOURCE',sourceId:id})" :disabled="!can({type:'SOURCE',sourceId:id})"><strong>{{source.name}}</strong><small>{{cost({type:'SOURCE',sourceId:id})}}</small><small v-if="source.stones">灵石 +{{source.stones}}</small><small v-for="(n,item) in source.items" :key="item">{{C.items[item].name}} +{{n}}</small><small>{{why({type:'SOURCE',sourceId:id})}}</small></button></div>
-            <div v-if="activeEnemies.length" class="encounters"><h3>此地挑战</h3><div class="choices two"><button v-for="[id,enemy] in activeEnemies" :key="id" :data-testid="`encounter-${id}`" @click="act({type:'ENCOUNTER',enemy:id})" :disabled="!can({type:'ENCOUNTER',enemy:id})"><strong>{{enemy.name}}</strong><small>气血 {{enemy.hp}} · 胜利后取得奖励</small><small>{{why({type:'ENCOUNTER',enemy:id})}}</small></button></div></div>
-            <div v-if="core.world.location==='market'" class="market"><label>每次采购数量 <input type="number" min="1" max="20" v-model.number="quantity" aria-label="采购数量"></label><div class="market-row" v-for="[id,item] in knownItems" :key="id"><div><strong>{{item.name}}</strong><small>{{item.description}}</small></div><button :data-testid="`buy-${id}`" @click="act({type:'BUY',item:id,quantity})" :disabled="!can({type:'BUY',item:id,quantity}) || quantity>20">购入 · {{cost({type:'BUY',item:id,quantity})}}<small>{{why({type:'BUY',item:id,quantity})}}</small></button></div></div>
+            <div class="action-options"><label>连续采集/委托 <select v-model="batch" aria-label="取材次数"><option :value="1">1 次</option><option :value="5">5 次</option><option :value="20">20 次</option><option :value="50">50 次</option><option value="target">达到目标（单批至多50次）</option></select></label><small v-if="batch==='target'" data-testid="collection-target">{{collectionLabel}}</small></div>
+            <div class="source-grid"><div v-for="[id,source] in localSources" :key="id"><button :data-testid="`source-${id}`" :class="{highlight:highlight===`source-${id}`}" @click="sourceActions[id] && act(sourceActions[id]!)" :disabled="!sourceActions[id] || !can(sourceActions[id]!)"><strong>{{source.name}}</strong><small>{{sourceActions[id] ? cost(sourceActions[id]!) : '本批不会执行'}}</small><small v-if="source.stones">灵石 +{{source.stones}}</small><small v-for="(n,item) in source.items" :key="item">{{C.items[item].name}} +{{n}}</small><small>{{sourceReason(id)}}</small></button><BatchPreview :label="source.name" :preview="sourceActions[id] ? quote(sourceActions[id]!) : null" :reason="sourceReason(id)"/></div></div>
+            <div v-if="activeEnemies.length" class="encounters"><h3>此地挑战</h3><div class="choices two"><button v-for="[id,enemy] in activeEnemies" :key="id" :data-testid="`encounter-${id}`" :class="{highlight:highlight===`encounter-${id}`}" @click="act({type:'ENCOUNTER',enemy:id})" :disabled="!can({type:'ENCOUNTER',enemy:id})"><strong>{{enemy.name}}</strong><small>气血 {{enemy.hp}} · 胜利后取得奖励</small><small>{{why({type:'ENCOUNTER',enemy:id})}}</small></button></div></div>
+            <div v-if="core.world.location==='market'" class="market"><label>每次采购数量 <input type="number" min="1" :max="C.maxQuantity" v-model.number="quantity" aria-label="采购数量"></label><div class="market-row" v-for="[id,item] in knownItems" :key="id"><div><strong>{{item.name}}</strong><small>{{item.description}}</small></div><button :data-testid="`buy-${id}`" :class="{highlight:highlight===`buy-${id}`}" @click="act({type:'BUY',item:id,quantity})" :disabled="!can({type:'BUY',item:id,quantity})">购入 · {{cost({type:'BUY',item:id,quantity})}}<small>{{why({type:'BUY',item:id,quantity})}}</small></button></div></div>
           </template>
           <template v-else-if="tab === '行囊'">
-            <div class="section-label">行囊 <span>一草一石，皆有其用</span></div><div class="inventory"><article v-for="[id,item] in knownItems" :key="id"><div class="item-glyph">{{item.name.slice(-1)}}</div><div><strong>{{item.name}} <b :data-testid="`item-${id}`">×{{core.inventory[id]}}</b></strong><small>{{item.description}}</small></div><button v-if="item.hp || item.mp" @click="act({type:'USE',item:id})" :disabled="!can({type:'USE',item:id})">服用</button><button v-else-if="item.sell!==null && core.world.location==='market'" @click="act({type:'SELL',item:id,quantity:1})" :disabled="!can({type:'SELL',item:id,quantity:1})">售出 · {{item.sell}}</button></article></div>
+            <div class="section-label">行囊 <span>一草一石，皆有其用</span></div><div class="inventory"><article v-for="[id,item] in knownItems" :key="id"><div class="item-glyph">{{item.name.slice(-1)}}</div><div><strong>{{item.name}} <b :data-testid="`item-${id}`">×{{core.inventory[id]}}</b></strong><small>{{item.description}}</small><small v-if="item.hp || item.mp">{{consumption({type:'USE',item:id})}}</small><small v-else-if="item.sell!==null">{{consumption({type:'SELL',item:id,quantity:1})}}</small><button class="text-button" :data-testid="`track-${id}`" @click="tracking.select({kind:'item',id,quantity:1})">追踪此物资 →</button></div><button v-if="item.hp || item.mp" @click="act({type:'USE',item:id})" :disabled="!can({type:'USE',item:id})">服用</button><button v-else-if="item.sell!==null && core.world.location==='market'" @click="act({type:'SELL',item:id,quantity:1})" :disabled="!can({type:'SELL',item:id,quantity:1})">售出 · {{item.sell}}</button></article></div>
             <h3 class="recipes-title">丹炉 · 固定配方</h3><p v-if="core.world.location!=='cave'" class="small">需在洞府炼丹。<button @click="travel('cave')" :disabled="!can({type:'TRAVEL',location:'cave'})">前往洞府</button></p>
-            <div class="recipe" v-for="[id,recipe] in localRecipes" :key="id"><div><strong>{{recipe.name}}</strong><small>{{cost({type:'CRAFT',recipeId:id})}}</small><small>{{why({type:'CRAFT',recipeId:id})}}</small></div><button :data-testid="`craft-${id}`" @click="act({type:'CRAFT',recipeId:id})" :disabled="!can({type:'CRAFT',recipeId:id})">炼制</button></div>
+            <div class="recipe" v-for="[id,recipe] in localRecipes" :key="id"><div><strong>{{recipe.name}}</strong><small>{{cost({type:'CRAFT',recipeId:id})}}</small><small>{{why({type:'CRAFT',recipeId:id})}}</small><small>{{consumption({type:'CRAFT',recipeId:id})}}</small></div><button :data-testid="`craft-${id}`" :class="{highlight:highlight===`craft-${id}`}" @click="act({type:'CRAFT',recipeId:id})" :disabled="!can({type:'CRAFT',recipeId:id})">炼制</button></div>
           </template>
           <template v-else>
             <div class="section-label">仙缘</div><article class="fate-card"><span class="npc-seal">禾</span><div><h2>山雨之缘</h2><strong class="gold">{{fate[0]}}</strong><p class="story">{{fate[1]}}</p></div></article>
-            <div class="choices"><button v-for="event in events" :key="event.id" :data-testid="`event-${event.id}`" @click="act({type:'EVENT',event:event.id})" :disabled="!can({type:'EVENT',event:event.id})">{{event.name}} · {{event.npc}}</button></div>
+            <div class="choices"><button v-for="event in events" :key="event.id" :data-testid="`event-${event.id}`" :class="{highlight:highlight===`event-${event.id}`}" @click="act({type:'EVENT',event:event.id})" :disabled="!can({type:'EVENT',event:event.id})">{{event.name}} · {{event.npc}}</button></div>
             <h3>修行手记</h3><ol class="journal"><li v-for="(line,index) in [...game.journal].reverse()" :key="index">{{line}}</li></ol>
           </template>
         </div>
-        <div class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><small v-if="store.lastResult && store.lastResult.requestedSteps>1">实际执行 {{store.lastResult.executedSteps}} / {{store.lastResult.requestedSteps}} 次{{store.lastResult.stopReason ? ' · '+store.lastResult.stopReason.message : ''}}</small></div>
+        <div class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><ActionFeedback v-if="store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/></div>
       </section>
-      <aside class="right-column"><section class="paper goals"><div class="section-label">当前目标</div><h3 data-testid="target">{{goal?.title}}</h3><p class="small muted">境界来自准备，不来自等待。</p>
-        <div v-for="(gap,index) in goal?.deficits" :key="index" class="goal-line"><span>○</span><div>{{gap.kind==='item' && gap.id ? C.items[gap.id].name : gap.kind==='xp'?'修为':gap.kind==='hp'?'气血':gap.kind==='stones'?'灵石':gap.kind==='months'?'可用游戏月':'灵力'}}<small>{{gap.have}} / {{gap.required}} · 尚缺 {{gap.missing}}</small></div></div>
-        <p v-if="!goal?.deficits.length" class="small">{{phase==='idle' ? '按当前状态与地点选择下一步。' : '先处理眼前的遭遇。'}}</p>
-      </section><section class="paper fate-summary"><div class="section-label">仙缘因果</div><h3>{{fate[0]}}</h3><p class="small">{{fate[1]}}</p><button class="text-button" @click="tab='仙缘'">展开仙缘 →</button></section>
+      <aside class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="tracking.select" @navigate="navigate" @preparation="preparation=$event"/><section class="paper fate-summary"><div class="section-label">仙缘因果</div><h3>{{fate[0]}}</h3><p class="small">{{fate[1]}}</p><button class="text-button" @click="tab='仙缘'">展开仙缘 →</button></section>
       <section class="note"><span>此地机缘</span><p>{{location.description}}</p><small>试玩版本 · 数值未平衡<br>约30分钟理解玩法，不限定通关时间</small></section></aside>
     </main>
     <nav v-if="game" class="bottom-nav" aria-label="主要页面"><button v-for="(label,index) in ['修行','历练','行囊','仙缘']" :key="label" :data-testid="`tab-${index}`" :class="{active:tab===label}" :aria-current="tab===label?'page':undefined" @click="tab=label"><span class="nav-icon">{{['◈','山','囊','缘'][index]}}</span>{{label}}<small>{{['CULTIVATE','EXPLORE','INVENTORY','KARMA'][index]}}</small></button></nav>

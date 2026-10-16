@@ -8,7 +8,7 @@ import type { ControlOutcome, SaveMutation } from './full-persistence';
 export const useGame = defineStore('game', () => {
   const game = shallowRef<Game | null>(null), busy = ref(false), ready = ref(false), available = ref(false);
   const error = ref(''), warning = ref(''), saved = ref(false), hasCheckpoint = ref(false);
-  const lastResult = shallowRef<ActionResult | null>(null), canRetry = ref(false);
+  const lastResult = shallowRef<ActionResult | null>(null), lastReplayed = ref(false), canRetry = ref(false);
   let repository: FullSaveRepository | undefined, channel: BroadcastChannel | undefined;
   let pending: (() => Promise<CommitOutcome | ControlOutcome>) | null = null;
   let failedIntent = false, refreshQueued = false, disposed = false;
@@ -26,6 +26,9 @@ export const useGame = defineStore('game', () => {
     if (!repository) return;
     const current = await repository.load();
     if (disposed) return;
+    if (current?.core.runId !== game.value?.core.runId || current?.core.revision !== game.value?.core.revision) {
+      lastResult.value = null; lastReplayed.value = false;
+    }
     game.value = current;
     await checkpointInfo();
     if (!failedIntent && !busy.value) saved.value = !!current;
@@ -62,7 +65,7 @@ export const useGame = defineStore('game', () => {
     try {
       const outcome = await operation();
       if (disposed) return;
-      game.value = outcome.state; lastResult.value = 'result' in outcome ? outcome.result : null;
+      game.value = outcome.state; lastResult.value = 'result' in outcome ? outcome.result : null; lastReplayed.value = outcome.replayed;
       failedIntent = false; pending = null; saved.value = true;
       await checkpointInfo();
       try { channel?.postMessage({ runId: outcome.state.core.runId, revision: outcome.state.core.revision }); }
@@ -109,6 +112,6 @@ export const useGame = defineStore('game', () => {
   }
   const saveLabel = computed(() => !ready.value ? '读取中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
   onScopeDispose(() => { disposed = true; repository?.close(); channel?.close(); });
-  return { game, busy, ready, available, error, warning, saved, hasCheckpoint, canRetry, lastResult, saveLabel,
+  return { game, busy, ready, available, error, warning, saved, hasCheckpoint, canRetry, lastResult, lastReplayed, saveLabel,
     init, refresh, start, act, importText, restart, checkpoint, retry, rawText, validationError };
 });
