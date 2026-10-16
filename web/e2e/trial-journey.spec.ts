@@ -31,7 +31,7 @@ for(const [school,answer] of [['sword','accept'],['talisman','release']] as cons
  await expect(page.getByTestId('trial-step-trial_gate')).toContainText('已完成');await expect(page.getByTestId('ending-transmit')).toBeVisible();
 });
 
-test('two actual lethal failures retain exact consumption across reload and restore the whole preparation on mobile',async({page})=>{
+test('two actual lethal failures retain exact consumption across reload and restore the whole preparation on mobile',async({page},info)=>{
  test.setTimeout(300000);await page.setViewportSize({width:390,height:844});await imported(page,trialJourneyScenario().prepared);const prepared=await snapshot(page);
  for(let attempt=0;attempt<2;attempt++){
   await enter(page);await playTo(page,2);await action(page,'battle-heal');
@@ -39,7 +39,7 @@ test('two actual lethal failures retain exact consumption across reload and rest
   await expect(page.getByTestId('trial-failure-title')).toBeVisible();await expect(page.getByTestId('trial-failure-reason')).toContainText('未能抵住');await expect(page.getByTestId('trial-consumed')).toContainText('渡劫引 ×1');await expect(page.getByTestId('trial-consumed')).toContainText('回春丹 ×1');const failed=await snapshot(page);expect(failed.core.player.hp).toBe(1);
   await page.reload();await expect(page.getByTestId('trial-consumed')).toContainText('回春丹 ×1');expect(await snapshot(page)).toEqual(failed);
   await page.getByTestId('trial-prepare-again').click();await expect(page.getByTestId('trial-preparation-title')).toBeFocused();expect(await snapshot(page)).toEqual(failed);
-  await restoreReview(page);await page.getByTestId('trial-restore-cancel').click();expect(await snapshot(page)).toEqual(failed);await restoreReview(page);await page.getByTestId('trial-restore-confirm').click();await expect(page.getByTestId('trial-preparation-title')).toBeFocused();expect(normalizeTrialGame(await snapshot(page))).toEqual(normalizeTrialGame(prepared));
+  await page.getByTestId('trial-progress').screenshot({path:info.outputPath('trial-loss-mobile.png')});await restoreReview(page);if(attempt===0)await page.getByTestId('trial-restore-confirmation').screenshot({path:info.outputPath('trial-restore-mobile.png')});await page.getByTestId('trial-restore-cancel').click();expect(await snapshot(page)).toEqual(failed);await restoreReview(page);await page.getByTestId('trial-restore-confirm').click();await expect(page.getByTestId('trial-preparation-title')).toBeFocused();expect(normalizeTrialGame(await snapshot(page))).toEqual(normalizeTrialGame(prepared));
  }
 });
 

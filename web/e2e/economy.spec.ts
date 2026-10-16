@@ -15,6 +15,7 @@ test('known old balance imports without resource rescaling and each high realm s
     const legacy = r.ledger.game; legacy.core.contentVersion = 'full-demo.2'; legacy.core.balanceVersion = 'full-unbalanced.1';
     await page.getByRole('button', { name: '设置', exact: true }).click();
     if (realm !== 'foundation') page.once('dialog', dialog => dialog.accept());
+    await expect(page.getByTestId('import')).toBeEnabled();
     await page.getByTestId('import').setInputFiles({ name: 'historical-balance.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(legacy)) });
     await expect(page.getByTestId('realm')).toHaveText(C.realms[realm].name);
     await page.getByRole('button', { name: '关闭设置' }).click(); await page.getByTestId('tab-0').click();
