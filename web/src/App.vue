@@ -2,11 +2,11 @@
 import { computed, nextTick, onMounted, ref, shallowRef, watch } from 'vue';
 import { useGame } from './store';
 import * as C from '../../src/full/content.ts';
-import { availableEvents, biography, intent } from '../../src/full/engine.ts';
+import { availableEvents, intent } from '../../src/full/engine.ts';
 import { gamePhase } from '../../src/full/contracts.ts';
-import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships } from '../../src/full/queries.ts';
+import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships, getLifeOverview, getLifeRecord, exportLifeText } from '../../src/full/queries.ts';
 import type { ActionPreview } from '../../src/full/queries.ts';
-import type { Action, Move } from '../../src/full/types.ts';
+import type { Action, Move, Command } from '../../src/full/types.ts';
 import { stories } from '../../src/full/events.ts';
 import { MAX_SAVE_BYTES } from '../../src/full/versions.ts';
 import { planCollection, preparationConsumption, trackingConsumption, type CollectionTarget } from '../../src/full/goals.ts';
@@ -19,6 +19,8 @@ import ActionFeedback from './ActionFeedback.vue';
 import EquipmentPanel from './EquipmentPanel.vue';
 import GrowthPanel from './GrowthPanel.vue';
 import RelationshipPanel from './RelationshipPanel.vue';
+import LifePanel from './LifePanel.vue';
+import type { LifeRecord } from '../../src/full/life-record.ts';
 
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
@@ -32,7 +34,11 @@ const realm = computed(() => C.realms[core.value?.player.realm ?? 'mortal']);
 const location = computed(() => C.locations[core.value?.world.location ?? 'wilderness']);
 const phase = computed(() => game.value ? gamePhase(game.value) : null);
 const goal = computed(() => game.value ? getBreakthroughGoal(game.value) : null);
-const age = computed(() => core.value ? Math.floor((core.value.player.startAgeMonths + core.value.world.elapsedMonths) / 12) : 18);
+const overview = computed(() => game.value ? getLifeOverview(game.value) : null);
+const age = computed(() => overview.value?.ageLabel ?? '');
+const lifeOpen = ref(false), lifeSection = ref<HTMLDetailsElement>(), lifeDialog = ref<HTMLDialogElement>();
+const lifeIntent = shallowRef<{ command: Command; record: LifeRecord } | null>(null);
+const lifeStale = computed(() => !!lifeIntent.value && (!game.value || game.value.core.runId !== lifeIntent.value.command.runId || game.value.core.revision !== lifeIntent.value.command.expectedRevision));
 const scene = new URL(`${import.meta.env.BASE_URL}art/scene.webp`, document.baseURI).href;
 const context = computed(() => ({ state: game.value, cache: new Map<string, ActionPreview>() }));
 function quote(action: Action) {
@@ -62,7 +68,6 @@ const forecast = computed(() => game.value?.battle ? intent(game.value.battle) :
 const activeStory = computed(() => game.value && core.value?.activeEvent && stories[core.value.activeEvent.id] ? getStoryContext(game.value, core.value.activeEvent.id) : null);
 const relationships = computed(() => game.value ? getRelationships(game.value) : []);
 const events = computed(() => game.value ? availableEvents(game.value) : []);
-const life = computed(() => game.value ? biography(game.value) : []);
 const activeEnemies = computed(() => Object.entries(C.enemies).filter(([, e]) => !e.trial && e.location === core.value?.world.location));
 const localSources = computed(() => Object.entries(C.sources).filter(([, s]) => s.location === core.value?.world.location));
 const sourceActions = computed(() => Object.fromEntries(localSources.value.map(([id]) => [id, batch.value === 'target' ?
@@ -105,8 +110,8 @@ const spells = computed(() => ({
   release: game.value?.loadout.finisher ? C.skills[game.value.loadout.finisher].name : '终结术法',
 }));
 function battle(move: Move) { return act({ type: 'BATTLE', move }); }
-function download(text: string, filename: string) {
-  const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+function download(text: string, filename: string, mime = 'application/json') {
+  const url = URL.createObjectURL(new Blob([text], { type: mime }));
   const a = document.createElement('a'); a.href = url; a.download = filename; a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
@@ -133,6 +138,30 @@ async function restore() {
     await store.checkpoint(); if (!store.error) { tab.value = '修行'; settings.value?.close(); }
   }
 }
+function exportLife() { if (game.value) download(exportLifeText(game.value), '尘缘问道-生平.txt', 'text/plain;charset=utf-8'); }
+async function showLife() {
+  settings.value?.close(); tab.value = '仙缘'; lifeOpen.value = true;
+  await nextTick(); lifeSection.value?.scrollIntoView({ block: 'start' });
+}
+function requestEnd(type: 'RETIRE' | 'END_LIFE') {
+  if (!game.value || !can({type})) return;
+  const command = store.prepareAction({type}); if (!command) return;
+  lifeIntent.value = { command, record: getLifeRecord(game.value) };
+  settings.value?.close(); lifeDialog.value?.showModal();
+}
+async function confirmEnd() {
+  const intent = lifeIntent.value; if (!intent || store.busy || lifeStale.value) return;
+  await store.actPrepared(intent.command);
+  if (!store.error) { lifeDialog.value?.close(); tab.value = '仙缘'; }
+}
+async function retryEnd() {
+  await store.retry(); if (!store.error) { lifeDialog.value?.close(); tab.value = '仙缘'; }
+}
+function cancelLife(event: Event) { if (store.busy) event.preventDefault(); }
+function closeLifeReview() {
+  if (lifeIntent.value) store.discardRetryFor(lifeIntent.value.command.commandId);
+  lifeIntent.value = null;
+}
 onMounted(() => store.init());
 </script>
 
@@ -151,6 +180,7 @@ onMounted(() => store.init());
     </div>
     <div v-if="store.warning" class="error-banner" role="status">{{store.warning}}</div>
     <div v-if="exportError" class="error-banner" role="alert">{{exportError}}</div>
+    <section v-if="game && overview?.status==='active' && overview.remainingMonths!==null && overview.remainingMonths<=12" class="paper lifespan-warning" role="status" data-testid="lifespan-warning"><strong>余寿 {{overview.remainingMonths}} 游戏月 · {{overview.ageLabel}}</strong><p>{{overview.remainingMonths===1?'耗时行动将停止。若修为与突破物已备齐，仍可核对突破条件；也可恢复准备检查点，或确认度过最后1游戏月后收卷。':'游戏时间由行动消耗，阅读与离线不会扣减余寿。请核对当前准备与检查点。'}}</p><button data-testid="lifespan-open-life" @click="showLife">查看生平与收卷选择</button></section>
     <main v-if="store.ready && !game" class="welcome">
       <div class="welcome-art"><span class="eyebrow">尘缘问道 · 试玩版</span><h2>凡心未改，<br>仙途已在眼前。</h2><p>不计片刻，不赶境界。<br>采一味灵草，结一段因果，修属于自己的长生路。</p></div>
       <form class="paper welcome-form" @submit.prevent="store.start(name)">
@@ -169,7 +199,7 @@ onMounted(() => store.init());
           <div class="stat"><label>气血 <b data-testid="hp">{{core.player.hp}} / {{realm.maxHp}}</b></label><progress class="health" :value="core.player.hp" :max="realm.maxHp" aria-label="气血"></progress></div>
           <div class="stat"><label>灵力 <b>{{core.player.mp}} / {{realm.maxMp}}</b></label><progress :value="core.player.mp" :max="realm.maxMp" aria-label="灵力"></progress></div>
           <div class="stat"><label>修为 <b data-testid="xp">{{core.player.xp}} / {{realm.xpCap}}</b></label><progress class="cultivation" :value="core.player.xp" :max="realm.xpCap || 1" aria-label="修为"></progress></div>
-          <div class="stat-pair"><span>年龄 / 寿限</span><b>{{age}} / {{realm.lifespanMonths/12}} 岁</b></div><div class="stat-pair"><span>灵石</span><b class="gold" data-testid="stones">{{core.player.stones}}</b></div>
+          <div class="stat-pair"><span>年龄 / 寿限</span><b data-testid="age-limit">{{age}} / {{overview?.limitLabel}}</b></div><div class="stat-pair"><span>灵石</span><b class="gold" data-testid="stones">{{core.player.stones}}</b></div>
         </div><div class="divider"></div><h3>当前修法</h3><div class="skill-row"><span class="skill-icon">诀</span><div><strong>{{schoolName}}</strong><small>{{game.loadout.mind ? C.skills[game.loadout.mind].name : '引气入体后选择'}}</small></div></div>
         <p class="small muted">起手 · {{game.loadout.builder ? C.skills[game.loadout.builder].name : '尚未装备'}}<br>终结 · {{game.loadout.finisher ? C.skills[game.loadout.finisher].name : '尚未装备'}}<br>本命法宝 · {{game.loadout.relic ? C.relics[game.loadout.relic].name : '金丹后可炼制装备'}}</p>
       </aside>
@@ -214,7 +244,7 @@ onMounted(() => store.init());
             <div class="section-label">天门已开</div><h2>此生，留下些什么？</h2><div class="choices two"><button data-testid="ending-transmit" @click="act({type:'END',ending:'transmit'})" :disabled="!can({type:'END',ending:'transmit'})">将道法留在人间</button><button data-testid="ending-depart" @click="act({type:'END',ending:'depart'})" :disabled="!can({type:'END',ending:'depart'})">挥别故人，独赴上界</button></div>
           </template>
           <template v-else-if="game.status !== 'active'">
-            <div class="section-label">此生收卷</div><h2>{{goal?.title}}</h2><ol class="journal"><li v-for="line in life" :key="line">{{line}}</li></ol><button @click="exportSave">导出此生存档</button><button @click="reset" :disabled="store.busy">开启新的人生</button>
+            <LifePanel :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @export="exportLife" @restore="restore" @restart="reset"/>
           </template>
           <template v-else-if="tab === '修行'">
             <div class="section-label">修行 <span>积跬步，以至千里</span></div><h2>静守灵台，凝气归元。</h2><p class="story">{{location.description}}</p>
@@ -240,12 +270,13 @@ onMounted(() => store.init());
             <div class="recipe" v-for="[id,recipe] in localRecipes" :key="id"><div><strong>{{recipe.name}}</strong><small>{{cost({type:'CRAFT',recipeId:id})}}</small><small>{{why({type:'CRAFT',recipeId:id})}}</small><small>{{consumption({type:'CRAFT',recipeId:id})}}</small></div><button :data-testid="`craft-${id}`" :class="{highlight:highlight===`craft-${id}`}" @click="act({type:'CRAFT',recipeId:id})" :disabled="!can({type:'CRAFT',recipeId:id})">炼制</button></div>
           </template>
           <template v-else>
-            <div class="section-label">仙缘</div><RelationshipPanel :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
+            <div class="section-label">仙缘</div><button class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><RelationshipPanel :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
             <div class="choices"><button v-for="event in events" :key="event.id" :data-testid="`event-${event.id}`" :class="{highlight:highlight===`event-${event.id}`}" @click="act({type:'EVENT',event:event.id})" :disabled="!can({type:'EVENT',event:event.id})">{{event.name}} · {{event.npc}}</button></div>
-            <h3>修行手记</h3><ol class="journal"><li v-for="(line,index) in [...game.journal].reverse()" :key="index">{{line}}</li></ol>
+            <h3>近期手记</h3><p class="small">仅保留最近100条；完整已选事实请查看修仙生平。</p><ol class="journal"><li v-for="(line,index) in [...game.journal].reverse()" :key="index">{{line}}</li></ol>
           </template>
         </div>
         <RelationshipPanel v-if="tab==='仙缘' && phase!=='idle' && phase!=='opening'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
+        <details v-if="tab==='仙缘' && game.status==='active'" ref="lifeSection" class="paper life-section" :open="lifeOpen" @toggle="lifeOpen=($event.target as HTMLDetailsElement).open" data-testid="life-section"><summary>修仙生平 · 查看、导出与收卷</summary><LifePanel v-if="lifeOpen" :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset"/></details>
         <GrowthPanel v-if="tab==='修行' && phase==='idle' && C.rank(core.player.realm)>=C.rank('foundation')" :game="game" :enabled="store.available && !store.busy" @navigate="navigate" @track="tracking.select"/>
         <EquipmentPanel v-if="tab==='修行' && phase!=='opening'" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" :consumption="consumption" @act="act" @track="tracking.select" @navigate="navigate"/>
         <div class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><ActionFeedback v-if="store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/></div>
@@ -258,8 +289,22 @@ onMounted(() => store.init());
       <p>进度仅保存在当前浏览器。导出备份可用于迁移；清理浏览器数据可能丢失进度。</p><label class="setting-row"><span>放大正文</span><input type="checkbox" v-model="large"></label>
       <label class="file-button">导入存档<input data-testid="import" type="file" accept=".json,application/json" @change="importFile" :disabled="store.busy || !store.available"></label>
       <button v-if="game" @click="exportSave">导出当前进度</button><button data-testid="raw-backup" @click="exportRaw" :disabled="store.busy">导出原件备份</button>
-      <button v-if="game" data-testid="restore-checkpoint" @click="restore" :disabled="store.busy || !store.available || !store.hasCheckpoint">恢复突破前检查点</button>
+      <button v-if="game" data-testid="settings-life" @click="showLife">查看修仙生平</button><button v-if="game?.status==='active'" data-testid="settings-retire" @click="requestEnd('RETIRE')" :disabled="store.busy || !can({type:'RETIRE'})">主动归隐</button>
+      <button v-if="game" data-testid="restore-checkpoint" @click="restore" :disabled="store.busy || !store.available || !store.hasCheckpoint">恢复完整准备检查点</button>
       <button v-if="game" class="danger" data-testid="restart" @click="reset" :disabled="store.busy || !store.available">重新开始</button>
+    </dialog>
+    <dialog ref="lifeDialog" class="paper life-confirm" data-testid="life-confirmation" aria-labelledby="life-confirm-title" @cancel="cancelLife" @close="closeLifeReview">
+      <template v-if="lifeIntent">
+        <header><h2 id="life-confirm-title">{{lifeIntent.command.type==='RETIRE'?'确认主动归隐':'确认度过最后一月'}}</h2></header>
+        <p data-testid="life-review">{{lifeIntent.record.overview.name}} · {{lifeIntent.record.overview.ageLabel}} · {{lifeIntent.record.overview.realmName}} · 行道{{lifeIntent.record.overview.elapsedMonths}}游戏月</p>
+        <p>{{lifeIntent.command.type==='RETIRE'?'确认后以主动归隐收卷，不消耗剩余游戏月，不写作寿尽。':'确认后将消耗最后1游戏月，达到当前境界寿限，以寿尽收卷。'}}</p>
+        <p>当前存档与人物记录保留，可导出；恢复检查点会回退完整准备状态。此确认不会开启新的人生。</p>
+        <p v-if="lifeStale" role="alert" data-testid="life-stale">进度已更新，请取消后重新查看与确认。此处不会结束另一份进度。</p>
+        <p v-if="store.error" role="alert" data-testid="life-error">{{store.error}}</p>
+        <button v-if="store.canRetry" data-testid="life-retry" @click="retryEnd" :disabled="store.busy || lifeStale">重试同一次收卷</button>
+        <button data-testid="life-cancel" @click="lifeDialog?.close()" :disabled="store.busy">继续此生</button>
+        <button data-testid="life-confirm-end" @click="confirmEnd" :disabled="store.busy || !store.available || lifeStale">{{store.busy?'正在保存…':lifeIntent.command.type==='RETIRE'?'确认归隐':'确认寿尽'}}</button>
+      </template>
     </dialog>
   </div>
 </template>

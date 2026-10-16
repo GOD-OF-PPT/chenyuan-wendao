@@ -4,7 +4,7 @@
 
 ## 当前实施与可运行范围
 
-当前实施分支为 `codex/goal-1-choice-causality`，正式页面使用full规则与数据库v3，事务完成后才显示成功。T08验证四条正常新档至金丹及12功法/4法宝操作；T09已用四条正常新档路线验证双修法/双筹备至化神，并完成本境筹备信息与CHECK-03；完整结果见独立记录。T10建立120组真实经济回放并保护旧档；T11接通沈/裴选项因果、可补救护阵、四人物事实记录和后学剑简，数值仍未平衡。六条三开场×两修法至筑基旧路线保留。目标/来源引导、批量反馈、战斗、旧档迁移与完整检查点恢复均保留。
+当前实施分支为 `codex/goal-1-life-record`，正式页面使用full规则与数据库v3，事务完成后才显示成功。T08验证四条正常新档至金丹及12功法/4法宝操作；T09已用四条正常新档路线验证双修法/双筹备至化神，并完成本境筹备信息与CHECK-03；完整结果见独立记录。T10建立120组真实经济回放并保护旧档；T11接通沈/裴选项因果、可补救护阵、四人物事实记录和后学剑简，T12补上真实生平、查看/文本导出、归隐/寿尽确认与恢复入口；数值仍未平衡。六条三开场×两修法至筑基旧路线保留。目标/来源引导、批量反馈、战斗、旧档迁移与完整检查点恢复均保留。
 
 完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，页面接通共用地点/物品/事件操作；T08功法/法宝与至金丹网页结果见下方记录；T09的元婴/化神成长闭环见独立记录；因果/渡劫、正式美术、性能和真人验证仍按后续任务逐项完成。数值为未平衡初值。
 
@@ -87,6 +87,7 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 | [T09至化神与CHECK-03](docs/implementation/goal-1-growth-to-spirit.md) | 本境材料、确定/替代路线、分境刷新/恢复与综合回归 |
 | [T10经济账本与版本迁移](docs/implementation/goal-1-economy-ledger.md) | 真实毛收支、120策略路线、修炼取舍、套利/战斗/恢复与未平衡边界 |
 | [T11选择因果与人物事实](docs/implementation/goal-1-choice-causality.md) | 三开场回响、同行/竞争/修复、真实护阵、后学剑简与旧档兼容 |
+| [T12生平与CHECK-04](docs/implementation/goal-1-life-record.md) | 只列已存事实、精确余寿、预览身份、收卷/重试/恢复及阶段全面检查 |
 | [试玩与运行说明](web/README.md) | 当前首境界的操作、战斗和本地存档 |
 | [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
 | [资料目录](docs/README.md) | v0.3与v0.4关系 |
@@ -102,4 +103,4 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 本地存档不等于云档，应导出备份；清理浏览器数据可能丢失进度。新功能通过独立分支与PR，不强推、不自动合并、不公开部署、不修改仓库可见性，不提交凭据、个人存档、字体或未授权素材，不复制参考仓库代码。未擅自增加开源许可证。
 
 
-开发回归需要Git和系统tar及完整仓库历史：历史兼容夹具会在临时目录执行固定旧提交源码，测试后清理，不提交存档。CI测试作业已采用fetch-depth:0；浅克隆可先执行`git fetch --unshallow`。静态网页运行包不依赖Git。数值版本更新的经济报告按实际BALANCE命名，旧.1基线与.2报告保留，当前审计目标为.3。
+开发回归需要Git和系统tar及完整仓库历史：历史兼容夹具会在临时目录执行固定旧提交源码，测试后清理，不提交存档。CI测试作业已采用fetch-depth:0；浅克隆可先执行`git fetch --unshallow`。静态网页运行包不依赖Git。数值版本更新的经济报告按实际BALANCE命名，旧.1基线与.2报告保留，当前审计写入独立current-report.json，已交付.3报告同样保留。

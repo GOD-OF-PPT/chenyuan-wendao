@@ -10,7 +10,9 @@ export async function historicalFullRuntime() {
   const root = fileURLToPath(new URL('../', import.meta.url)), folder = mkdtempSync(join(tmpdir(), 'chenyuan-historical-full-'));
   try {
     const archive = execFileSync('git', ['archive', '--format=tar', historicalRulesCommit, 'src', 'tests/full-route.mjs'], { cwd: root, maxBuffer: 5_000_000, timeout: 30000 });
-    execFileSync('tar', ['-x', '-C', folder], { input: archive, timeout: 30000 });
+    const archivePath = join(folder, 'source.tar');
+    writeFileSync(archivePath, archive);
+    execFileSync('tar', ['-xf', archivePath, '-C', folder], { timeout: 30000 });
     writeFileSync(join(folder, 'package.json'), '{"type":"module"}');
     const engine = await import(pathToFileURL(join(folder, 'src/full/engine.ts')).href);
     const routes = await import(pathToFileURL(join(folder, 'tests/full-route.mjs')).href);

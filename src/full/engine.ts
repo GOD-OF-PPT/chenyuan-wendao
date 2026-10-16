@@ -1,5 +1,6 @@
 import * as C from './content.ts';
 import {stories} from './events.ts';
+import {buildLifeRecord,lifeRecordLines} from './life-record.ts';
 import {conditionMatches,choiceConditionMatches,storyView,causalAid} from './story-context.ts';
 import type {Game,Command,Action,Choice,Battle,Move} from './types.ts';
 import {RuleError,fail} from './errors.ts';
@@ -59,6 +60,9 @@ function validateSnapshot(value:unknown,legacy=false,balance:string=legacy?LEGAC
   if(content===C.VERSION&&!historical?.includes(String(choice))&&!choiceConditionMatches(c.openingChoice,value.choices,option.condition))fail('SAVE_STORIES','新因果记录与实际前置选项不一致');
  }
  if(!object(value.milestones)||Object.entries(value.milestones).some(([id,n])=>![...C.realmIds,'trial_completed'].includes(id as C.RealmId)||!integer(n,0,w.elapsedMonths as number)||(id!=='trial_completed'&&C.rank(id as C.RealmId)>C.rank(p.realm as C.RealmId))))fail('SAVE_MILESTONE','生平里程碑无效');
+  let priorMonth=0;
+  for(const id of C.realmIds){if(!own(value.milestones,id))continue;const month=value.milestones[id] as number;if(month<priorMonth)fail('SAVE_MILESTONE','境界记录年月前后矛盾');priorMonth=month;}
+  if(own(value.milestones,'trial_completed')&&((value.milestones.trial_completed as number)<(Number(value.milestones.spirit)||0)||(own(value.milestones,'ascended')&&(value.milestones.trial_completed as number)>(value.milestones.ascended as number))))fail('SAVE_MILESTONE','渡劫与飞升记录年月矛盾');
  if(!['active','ascended','ended'].includes(String(value.status))||!(legacy?[null,'transmit','depart','lifespan']:[null,'transmit','depart','retired','lifespan']).includes(value.ending as null))fail('SAVE_ENDING','结局无效');
  if(value.status==='active'&&(value.ending!==null||p.realm==='ascended'))fail('SAVE_ENDING','未完成的结局状态');
  if(value.status==='ascended'&&(p.realm!=='ascended'||!['transmit','depart'].includes(String(value.ending))||!own(value.milestones,'trial_completed')))fail('SAVE_ENDING','飞升缺少实际渡劫记录');
@@ -165,7 +169,7 @@ function one(g:Game,a:Action){
  if(g.core.mode==='event')fail('PENDING_EVENT','先处理当前遭遇；查看资料不会消耗时间');
  if(a.type==='BATTLE'){if(!g.battle)fail('NO_BATTLE','当前没有战斗');battleTurn(g,a.move);return;}
  if(g.battle)fail('IN_BATTLE','战斗中只能使用战斗面板，或选择撤退');
- if(a.type==='END'){if(g.trial?.stage!==4)fail('TRIAL_REQUIRED','先通过天劫三关');g.trial=null;g.status='ascended';g.ending=a.ending;g.core.player.realm='ascended';g.core.player.xp=0;g.milestones.ascended=g.core.world.elapsedMonths;log(g,a.ending==='transmit'?'你将道法留在人间，而后踏入天门。此后万山之间，仍有人传诵你的来路。':'你向旧友挥别，独赴上界。云海合拢，新的故事不在这部旧卷之中。');return;}
+ if(a.type==='END'){if(g.trial?.stage!==4)fail('TRIAL_REQUIRED','先通过天劫三关');g.trial=null;g.status='ascended';g.ending=a.ending;g.core.player.realm='ascended';g.core.player.xp=0;g.milestones.ascended=g.core.world.elapsedMonths;log(g,a.ending==='transmit'?'你将道法留在人间，而后踏入天门。此后万山之间，仍有人传诵你的来路。':'你选择独赴上界。云海合拢，新的故事不在这部旧卷之中。');return;}
  if(g.trial)fail('IN_TRIAL','天劫尚未结束，不能离开筹备或重复启动');
  switch(a.type){
   case 'TRAVEL':needRealm(g,requirements.minRealm!);if(g.core.world.location===a.location)fail('NO_CHANGE','已在此地');g.core.world.location=a.location;log(g,`你抵达${C.locations[a.location].name}。`);break;
@@ -247,17 +251,4 @@ export function parseGame(raw:string):Game{
  if(g.school&&['sword','talisman'].includes(g.school)){const d=C.startingLoadouts[g.school];g.learned=Object.values(d);g.loadout={...d,relic:null};}
  g.milestones={mortal:0,[g.core.player.realm]:g.core.world.elapsedMonths};validateGame(g);return structuredClone(g);
 }
-export function biography(g:Game):string[]{
- const p=g.core.player;const lines=[`${p.name}，${Math.floor((p.startAgeMonths+g.core.world.elapsedMonths)/12)}岁，${C.realms[p.realm].name}。`,g.core.openingChoice==='help'?'初入山雨，曾赠出唯一的回春丹。':g.core.openingChoice==='trade'?'初入山雨，以一枚丹药换得剑简。':g.core.openingChoice==='leave'?'初入山雨，选择留住自己的丹药。':'此生刚刚开始，破庙之缘尚未决定。'];
- for(const id of C.realmIds)if(id!=='mortal'&&own(g.milestones,id))lines.push(`行道第${g.milestones[id]}个月，踏入${C.realms[id].name}。`);
- if(g.school)lines.push(`当前修法：${g.school==='sword'?'剑修':'符修'}。胜过${g.wins}场挑战。`);
- if(g.choices.shen_return)lines.push(stories.shen_return.options.find(o=>o.id===g.choices.shen_return)?.memory??'你与沈清禾在药庐有过一次来往。');
- if(['lend','rebuild'].includes(g.choices.shen_pact))lines.push('你曾借出药物，与沈清禾约定以药阵护持雷劫。');
- if(g.choices.pei_meet)lines.push(g.choices.pei_meet==='cooperate'?'裴照曾与你相约同行。':g.choices.pei_meet==='rival'?'你与裴照各凭本事，亦未曾相轻。':'你曾婉拒裴照的邀约。');
- if(g.choices.pei_echo)lines.push(stories.pei_echo.options.find(o=>o.id===g.choices.pei_echo)?.memory??'你与裴照在古境有过一次来往。');
- if(['ally','renew'].includes(g.choices.pei_pact))lines.push('你与裴照约定在云台合力布阵。');
- if(g.choices.lu_teach==='teach')lines.push('你曾回到山门，向后辈传授自己所学。');
- if(g.choices.yan_mirror==='accept')lines.push('照影古境里，你接纳了曾经弱小的自己。');
- if(g.ending)lines.push(g.ending==='transmit'?'道法留在人间，你由此飞升。':g.ending==='depart'?'你挥别故人，独赴上界。':g.ending==='retired'?'你主动归隐，此生收卷，未渡天门。':'寿元已尽，此生收卷。来路仍值得记取。');
- return lines;
-}
+export function biography(g:Game):string[]{validateGame(g);return lifeRecordLines(buildLifeRecord(g));}
