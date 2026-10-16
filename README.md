@@ -6,7 +6,7 @@
 
 当前实施分支为 `codex/goal-1-reproducible-baseline`，整合已验证的 G1 网页基线与 v0.4 研究文档。网页可玩范围仍为 **凡人 → 炼气 → 筑基**：开场三选一、两种固定修法、四地点、采集/委托、交易炼丹、战斗及 IndexedDB 存档。
 
-完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。当前执行 T01；后续全境界接线、功法法宝、条件因果、渡劫飞升与正式美术保持未完成。数值为未平衡初值。
+完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01整合基线已通过本地与远端验证，交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)；下一项T02接续full规则。全境界网页接线、功法法宝、条件因果、渡劫飞升与正式美术保持未完成。数值为未平衡初值。
 
 `main` 仍是设计资料基线。当前分支继承 [PR #1：经济规则](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/1) 和依赖它的 [PR #2：首境界网页](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/2)，并整合 [PR #9：研究与实施修订](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/9)；旧PR均保留，未自动合并或关闭。另一分支 `feat/full-demo-g1-g5` 已有全境界规则，尚未接入本网页，不代表网页已经可以飞升。
 
@@ -46,6 +46,8 @@ npm run test:e2e
 测试自动启动本机4173端口的生产预览服务器；先构建再测试。Linux缺系统库时使用 `npx playwright install --with-deps chromium`。当前Playwright配置只执行Chromium，三引擎项目和全境界网页路线属于后续任务。
 
 历史 G1 提交 `738d8e985ca468d08cb5fd877e6cf09164b074cd` 的 [网页CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38492172390) 和 [规则CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38492172375)通过83条规则、6条经济路线、构建及17条Chromium测试。这是源基线证据；本整合版本的实际结果以T01实施记录和本提交CI为准。
+
+本次整合实现提交 `4907e1d67f03ca9603b32f6cbf575c96ee6be03e` 已重新通过本地83规则/6经济路线/17 Chromium及构建；同SHA的[规则CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455654)与[网页CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455542)也通过。首轮浏览器launch失败与安装超时、启动预检和完整重跑均保留记录。
 
 浏览器用例覆盖三开场×两修法至筑基、采购替代路线、事件/战斗刷新、事务回滚、双击、多标签页、坏档、导入导出、检查点、两尺寸和图片失败。未覆盖完整飞升、三浏览器、真人平衡或最终视觉验收。
 

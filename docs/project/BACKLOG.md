@@ -2,7 +2,7 @@
 
 以 docs/v0.3 为完整设计基线。约 30 分钟仅观察基本玩法理解，不限定通关时长。M1 玩法状态以 G1 分支 `feat/g1-locked-playable` 为准，继承 `feat/m1-playable-web`，未合并到 main。另一个分支有 `src/full` 规则但网页尚未接入。
 
-2026-10-16开始 [Goal 1](../../goal-1/plan.md)，分支 `codex/goal-1-reproducible-baseline`。当前T01归拢G1与研究文档，并为新整合版本重新验证；任务和证据见 [tasks.md](../../goal-1/tasks.md) 与 [基线实施记录](../implementation/goal-1-baseline.md)。原有任务的历史测试不代替本次验证，后续全境界、存档切换与正式美术保持未完成。
+2026-10-16开始 [Goal 1](../../goal-1/plan.md)，分支 `codex/goal-1-reproducible-baseline`。T01归拢G1与研究文档，整合实现`4907e1d`已重新通过本地与同SHA远端83规则/17 Chromium、经济回放、类型与构建，交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，未合并。下一项T02接续full规则；任务和证据见 [tasks.md](../../goal-1/tasks.md) 与 [基线实施记录](../implementation/goal-1-baseline.md)。后续全境界网页、存档切换与正式美术保持未完成。
 
 | ID | 任务 | 状态与剩余边界 |
 | --- | --- | --- |

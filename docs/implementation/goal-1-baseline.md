@@ -1,6 +1,6 @@
 # Goal 1 / T01：可复现整合基线
 
-日期：2026-10-16。状态：验证中；不代表完整Demo。
+日期：2026-10-16。状态：T01已完成，已提交PR #10；未合并，不代表完整Demo。
 
 ## 来源与提交关系
 
@@ -33,11 +33,22 @@ v0.3正文、历史实施记录和已认可预览不修改；研究目录保留�
 | python3 scripts/check_docs.py | 5份核心文档、2样例、2预览校验通过 |
 | python3 docs/v0.4/tools/check_documents.py | 9文档、47内部链接、30静态算例通过；未重新核验外链 |
 | npm --prefix web run build | Vue类型与Vite构建通过；4个输出文件共143263字节，仅为当前预览版 |
-| npm --prefix web run test:e2e | 待浏览器安装完成后重新执行，尚未通过 |
+| npm --prefix web run test:e2e | Chromium141.0.7390.37下17/17通过，0重试，31.6秒；CI=true，不复用现有服务器 |
 
-首次浏览器尝试提前于安装完成，17项均在launch阶段因缺少chromium_headless_shell-1194而失败；未进入游戏断言。保留首次失败日志，安装完成后先验证可执行文件和启动，再进行完整新尝试；不修改或跳过用例。
+首次浏览器尝试提前于安装完成，17项均在launch阶段因缺少chromium_headless_shell-1194而失败；未进入游戏断言。完整Chromium下载完成后安装任务达180秒超时；补装同版本Headless Shell，保留共享缓存。保留首次失败日志，安装完成后先验证可执行文件、实际启动及版本，再完整重跑17项全部通过；没有修改或跳过用例。
 
 已核对相对G1：src、web、package.json、两个锁、tsconfig和scripts均无差异；相对main的整个docs/v0.3无差异。冲突标记、当前新增文档的本地链接与git diff --check通过。
+
+## 固定提交与远端证据
+
+计划文件先行提交：`f21b2c4c2ea27f0180673ad7c50275e5c3507614`。整合实现提交：`4907e1d67f03ca9603b32f6cbf575c96ee6be03e`；其祖先包含完整G1与研究父线。其后的证据记录只修改文档，不改变被测试的游戏或工作流代码。
+
+[PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)以main为base，覆盖已有PR #1/#2/#9的来源，保留其开放状态。`4907e1d`的[规则CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455654)与[网页CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455542)均success，实际日志核对83/83规则、17/17 Chromium、锁校验、生产构建及文档检查。网页job为`116912188593`，Node22.16.0，与本地环境分开记录；安装三个浏览器不表示执行了三个项目。
+
+- [该提交运行包](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455542/artifacts/12038520112)：ZIP 57954字节，平台提供的SHA-256为`d7dc87a2152ae0212419527d4574ab81000631ca93b8156dee3f383a544dfaae`。
+- [该提交测试证据](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38882455542/artifacts/12038007901)：ZIP 1709707字节，平台提供的SHA-256为`ccb894a10728fb570affbfce05dc2671f239785f25ba6912da36e5e90615ed46`。
+
+上述digest来自GitHub元数据，未冒充本地下载重算。附件配置保留90天，属于阶段证据；最终长期交付由T23处理，不把临时附件当作永久发行。
 
 ## 剩余边界
 
