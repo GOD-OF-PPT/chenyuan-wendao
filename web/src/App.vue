@@ -4,7 +4,7 @@ import { useGame } from './store';
 import * as C from '../../src/full/content.ts';
 import { availableEvents, intent } from '../../src/full/engine.ts';
 import { gamePhase } from '../../src/full/contracts.ts';
-import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships, getLifeOverview, getLifeRecord, exportLifeText, getTrialPreparation, getTrialJourney } from '../../src/full/queries.ts';
+import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships, getLifeOverview, getLifeRecord, exportLifeText, getTrialPreparation, getTrialJourney, getAscensionChoices } from '../../src/full/queries.ts';
 import type { ActionPreview } from '../../src/full/queries.ts';
 import type { Action, Move, Command } from '../../src/full/types.ts';
 import { stories } from '../../src/full/events.ts';
@@ -24,11 +24,14 @@ import type { LifeRecord } from '../../src/full/life-record.ts';
 import { formatAgeMonths } from '../../src/full/life-record.ts';
 import TrialPreparationPanel from './TrialPreparationPanel.vue';
 import TrialProgressPanel from './TrialProgressPanel.vue';
+import type { AscensionEnding } from '../../src/full/ascension.ts';
 import type { SaveMutation } from './full-persistence';
 import type { CheckpointSummary } from './store';
 
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
+let navigationRevision = 0;
+function selectTab(next: string) { navigationRevision++; tab.value = next; return navigationRevision; }
 const preparation = shallowRef<Action | null>(null);
 const large = ref(false), settings = ref<HTMLDialogElement>(), exportError = ref('');
 const game = computed(() => store.game), core = computed(() => game.value?.core);
@@ -62,10 +65,11 @@ function cost(action: Action) {
   const text = formatCosts(c);
   return preview && preview.requestedSteps > 1 ? '每次 ' + text : text;
 }
-function act(action: Action) { return action.type === 'START_TRIAL' ? showTrialPreparation() : store.act(action); }
+function act(action: Action) { if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); return store.act(action); }
 async function travel(id: C.LocationId) {
+  const navigation = ++navigationRevision;
   await act({ type: 'TRAVEL', location: id });
-  if (!store.error) tab.value = id === 'cave' ? '修行' : '历练';
+  if (!store.error && navigation === navigationRevision) selectTab(id === 'cave' ? '修行' : '历练');
 }
 const natural = computed<Action>(() => ({ type: 'CULTIVATE', method: 'natural', count: batch.value === 'target' ? C.maxBatch : batch.value }));
 const assisted = computed<Action>(() => ({ type: 'CULTIVATE', method: 'assisted', count: batch.value === 'target' ? C.maxBatch : batch.value }));
@@ -88,15 +92,18 @@ function sourceReason(id: string) {
 }
 async function navigate(request: NavigationRequest) {
   if (!game.value || store.busy || !store.available) return;
+  const navigation = ++navigationRevision;
   if (game.value.core.world.location !== request.location) {
     const action: Action = { type: 'TRAVEL', location: request.location };
     if (!can(action)) return;
     await act(action); if (store.error) return;
   }
-  tab.value = request.tab; highlight.value = request.focusId ?? '';
+  if (navigation !== navigationRevision) return;
+  const focusRevision = selectTab(request.tab); highlight.value = request.focusId ?? '';
   if (request.quantity) quantity.value = request.quantity;
   if (request.collection) collectionTarget.value = request.collection;
   await nextTick();
+  if (navigationRevision !== focusRevision) return;
   const element = request.focusId ? document.querySelector<HTMLElement>(`[data-testid="${request.focusId}"]`) : null;
   element?.scrollIntoView({ block: 'center' }); element?.focus({ preventScroll: true });
 }
@@ -136,17 +143,17 @@ async function importFile(event: Event) {
 }
 async function reset() {
   if (confirm('重新开始会替换当前进度，确定已导出需要保留的存档？')) {
-    await store.restart(core.value?.player.name ?? name.value); if (!store.error) { tab.value = '修行'; settings.value?.close(); }
+    await store.restart(core.value?.player.name ?? name.value); if (!store.error) { selectTab('修行'); settings.value?.close(); }
   }
 }
 async function restore() {
   if (confirm('回到最近的完整准备检查点，当前进度将被替换，是否继续？')) {
-    await store.checkpoint(); if (!store.error) { tab.value = '修行'; settings.value?.close(); }
+    await store.checkpoint(); if (!store.error) { selectTab('修行'); settings.value?.close(); }
   }
 }
 function exportLife() { if (game.value) download(exportLifeText(game.value), '尘缘问道-生平.txt', 'text/plain;charset=utf-8'); }
 async function showLife() {
-  settings.value?.close(); tab.value = '仙缘'; lifeOpen.value = true;
+  settings.value?.close(); selectTab('仙缘'); lifeOpen.value = true;
   await nextTick(); lifeSection.value?.scrollIntoView({ block: 'start' });
 }
 function requestEnd(type: 'RETIRE' | 'END_LIFE') {
@@ -158,11 +165,11 @@ function requestEnd(type: 'RETIRE' | 'END_LIFE') {
 async function confirmEnd() {
   const intent = lifeIntent.value; if (!intent || store.busy || lifeStale.value) return;
   await store.actPrepared(intent.command);
-  if (!store.error) { lifeDialog.value?.close(); tab.value = '仙缘'; }
+  if (!store.error) { lifeDialog.value?.close(); selectTab('仙缘'); }
 }
 async function retryEnd() {
   const review = lifeIntent.value; if (!review || lifeStale.value || !store.canRetryFor(review.command.commandId)) return;
-  await store.retryFor(review.command.commandId); if (!store.error) { lifeDialog.value?.close(); tab.value = '仙缘'; }
+  await store.retryFor(review.command.commandId); if (!store.error) { lifeDialog.value?.close(); selectTab('仙缘'); }
 }
 function cancelLife(event: Event) { if (store.busy) event.preventDefault(); }
 function closeLifeReview() {
@@ -174,7 +181,7 @@ const trialIntent = shallowRef<{ command: Command; view: ReturnType<typeof getTr
 const trialStale = computed(() => !!trialIntent.value && (!game.value || game.value.core.runId !== trialIntent.value.command.runId || game.value.core.revision !== trialIntent.value.command.expectedRevision));
 async function showTrialPreparation() {
   if (core.value?.player.realm !== 'spirit') return;
-  tab.value = '修行'; await nextTick();
+  selectTab('修行'); await nextTick();
   const heading = document.querySelector<HTMLElement>('[data-testid="trial-preparation-title"]');
   heading?.scrollIntoView({block:'start'}); heading?.focus({preventScroll:true});
 }
@@ -187,9 +194,9 @@ function reviewTrial() {
 async function confirmTrial() {
   const intent = trialIntent.value; if (!intent || store.busy || trialStale.value) return;
   await store.actPrepared(intent.command);
-  if (!store.error) { trialDialog.value?.close(); tab.value = '修行'; }
+  if (!store.error) { trialDialog.value?.close(); selectTab('修行'); }
 }
-async function retryTrial() { const intent = trialIntent.value; if (!intent || trialStale.value || !store.canRetryFor(intent.command.commandId)) return; await store.retryFor(intent.command.commandId); if (!store.error) { trialDialog.value?.close(); tab.value = '修行'; } }
+async function retryTrial() { const intent = trialIntent.value; if (!intent || trialStale.value || !store.canRetryFor(intent.command.commandId)) return; await store.retryFor(intent.command.commandId); if (!store.error) { trialDialog.value?.close(); selectTab('修行'); } }
 function closeTrialReview() { if (trialIntent.value) store.discardRetryFor(trialIntent.value.command.commandId); trialIntent.value = null; }
 const trialRestoreDialog = ref<HTMLDialogElement>();
 const trialRestoreIntent = shallowRef<{ command: SaveMutation; checkpoint: CheckpointSummary } | null>(null);
@@ -211,6 +218,31 @@ async function retryTrialRestore() {
   if (!store.error) { trialRestoreDialog.value?.close(); await showTrialPreparation(); }
 }
 function closeTrialRestore() { if (trialRestoreIntent.value) store.discardRetryFor(trialRestoreIntent.value.command.commandId); trialRestoreIntent.value = null; }
+const ascensionDialog = ref<HTMLDialogElement>();
+const ascension = computed(() => game.value ? getAscensionChoices(game.value) : null);
+const ascensionIntent = shallowRef<{ command: Command; view: ReturnType<typeof getAscensionChoices>; choice: ReturnType<typeof getAscensionChoices>['choices'][number]; ending: AscensionEnding } | null>(null);
+const ascensionStale = computed(() => !!ascensionIntent.value && (!game.value || game.value.core.runId !== ascensionIntent.value.command.runId || game.value.core.revision !== ascensionIntent.value.command.expectedRevision));
+function reviewAscension(ending: AscensionEnding) {
+  if (!game.value || !can({type:'END',ending})) return;
+  const command = store.prepareAction({type:'END',ending}); if (!command) return;
+  const view = getAscensionChoices(game.value);
+  ascensionIntent.value = { command, view, choice: view.choices.find(choice => choice.ending === ending)!, ending };
+  ascensionDialog.value?.showModal();
+}
+async function showAscendedLife() {
+  ascensionDialog.value?.close(); selectTab('仙缘'); await nextTick();
+  const title = document.querySelector<HTMLElement>('[data-testid="life-title"]');
+  title?.scrollIntoView({block:'start'}); title?.focus({preventScroll:true});
+}
+async function confirmAscension() {
+  const review = ascensionIntent.value; if (!review || store.busy || ascensionStale.value) return;
+  await store.actPrepared(review.command); if (!store.error) await showAscendedLife();
+}
+async function retryAscension() {
+  const review = ascensionIntent.value; if (!review || ascensionStale.value || !store.canRetryFor(review.command.commandId)) return;
+  await store.retryFor(review.command.commandId); if (!store.error) await showAscendedLife();
+}
+function closeAscension() { if (ascensionIntent.value) store.discardRetryFor(ascensionIntent.value.command.commandId); ascensionIntent.value = null; }
 onMounted(() => store.init());
 </script>
 
@@ -244,7 +276,8 @@ onMounted(() => store.init());
       <aside class="paper character">
         <div class="section-label">道者 · 个人志</div><div class="portrait"><div class="portrait-ring">道</div><span class="portrait-caption">心向长生</span></div>
         <h2>{{core.player.name}}</h2><span class="realm-badge" data-testid="realm">{{realm.name}}</span><p class="small muted">清风为伴，明月同途。</p>
-        <div class="stats">
+        <div v-if="game.status==='ascended'" class="stats" data-testid="ascension-sealed-stats"><p class="small">此生已封卷。本卷不继续上界修行，以下保留封卷时的实际状态。</p><div class="stat-pair"><span>封卷气血</span><b data-testid="hp">{{core.player.hp}}</b></div><div class="stat-pair"><span>封卷灵力</span><b>{{core.player.mp}}</b></div><div class="stat-pair"><span>封卷年龄</span><b data-testid="age-limit">{{age}}</b></div><div class="stat-pair"><span>封卷灵石</span><b data-testid="stones">{{core.player.stones}}</b></div></div>
+        <div v-else class="stats">
           <div class="stat"><label>气血 <b data-testid="hp">{{core.player.hp}} / {{realm.maxHp}}</b></label><progress class="health" :value="core.player.hp" :max="realm.maxHp" aria-label="气血"></progress></div>
           <div class="stat"><label>灵力 <b>{{core.player.mp}} / {{realm.maxMp}}</b></label><progress :value="core.player.mp" :max="realm.maxMp" aria-label="灵力"></progress></div>
           <div class="stat"><label>修为 <b data-testid="xp">{{core.player.xp}} / {{realm.xpCap}}</b></label><progress class="cultivation" :value="core.player.xp" :max="realm.xpCap || 1" aria-label="修为"></progress></div>
@@ -255,8 +288,8 @@ onMounted(() => store.init());
       <section class="center-column">
         <div class="scene" :class="{fighting: game.battle}"><div class="scene-vignette"></div><div class="scene-copy">
           <span class="eyebrow">{{phase === 'opening' ? '初遇 / 山雨破庙' : location.subtitle}}</span>
-          <h2>{{phase === 'opening' ? '雨中故人' : game.battle ? C.enemies[game.battle.enemy].name : activeStory?.name ?? location.name}}</h2>
-          <p>{{game.battle ? '先辨来势，再决进退。' : '山海不言，修行自有回响。'}}</p>
+          <h2>{{phase === 'opening' ? '雨中故人' : game.status==='ascended' ? overview?.title : game.battle ? C.enemies[game.battle.enemy].name : activeStory?.name ?? location.name}}</h2>
+          <p>{{game.status==='ascended' ? '此卷已收，来路犹存。' : game.battle ? '先辨来势，再决进退。' : '山海不言，修行自有回响。'}}</p>
         </div><span class="scene-seal">问<br>道</span></div>
         <TrialProgressPanel v-if="journey || store.trialRecovery" :journey="journey" :recovery="store.trialRecovery" :checkpoint="store.checkpointSummary" :enabled="store.available && !store.busy" @restore="requestTrialRestore" @export="exportSave" @prepare="showTrialPreparation"/>
         <div class="paper content-panel">
@@ -292,8 +325,10 @@ onMounted(() => store.init());
             <p v-if="journey" class="small" data-testid="trial-battle-guidance">观察敌方意图再行动。普通攻击与护体可回灵；丹药占用一个回合，退离将结束本轮渡劫。</p>
             <div class="inline-actions"><button data-testid="battle-heal" @click="battle('heal')" :disabled="!can({type:'BATTLE',move:'heal'})">回春丹 ×{{core.inventory.healing_pill}}</button><button data-testid="battle-restore" @click="battle('restore')" :disabled="!can({type:'BATTLE',move:'restore'})">回灵丹 ×{{core.inventory.spirit_pill}}</button><button data-testid="flee" @click="battle('flee')" :disabled="!can({type:'BATTLE',move:'flee'})">撤回洞府</button></div>
           </template>
-          <template v-else-if="phase === 'trial-ending'">
-            <div class="section-label">天门已开</div><h2>此生，留下些什么？</h2><div class="choices two"><button data-testid="ending-transmit" @click="act({type:'END',ending:'transmit'})" :disabled="!can({type:'END',ending:'transmit'})">将道法留在人间</button><button data-testid="ending-depart" @click="act({type:'END',ending:'depart'})" :disabled="!can({type:'END',ending:'depart'})">挥别故人，独赴上界</button></div>
+          <template v-else-if="phase === 'trial-ending' && ascension">
+            <div class="section-label">天门已开 <span>三关已过，等待你的收束</span></div><h2>此生，留下些什么？</h2><p class="story">{{ascension.record.opening.text}} {{ascension.record.training.school}}的来路已经留在记录中。两种选择都以飞升成功收卷，没有善恶高低。</p>
+            <p class="small">{{ascension.record.battle.trial}} 选择前可查看生平；取消不改变进度，确认保存后才封卷。</p>
+            <div class="choices two"><button v-for="choice in ascension.choices" :key="choice.ending" :data-testid="`ending-${choice.ending}`" @click="act({type:'END',ending:choice.ending})" :disabled="!can({type:'END',ending:choice.ending})"><strong>{{choice.label}}</strong><small>{{choice.description}}</small><small>{{choice.preview.failure?.message}}</small></button></div>
           </template>
           <template v-else-if="game.status !== 'active'">
             <LifePanel :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @export="exportLife" @restore="restore" @restart="reset"/>
@@ -331,13 +366,13 @@ onMounted(() => store.init());
         <details v-if="tab==='仙缘' && game.status==='active'" ref="lifeSection" class="paper life-section" :open="lifeOpen" @toggle="lifeOpen=($event.target as HTMLDetailsElement).open" data-testid="life-section"><summary>修仙生平 · 查看、导出与收卷</summary><LifePanel v-if="lifeOpen" :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset"/></details>
         <GrowthPanel v-if="tab==='修行' && phase==='idle' && C.rank(core.player.realm)>=C.rank('foundation') && core.player.realm!=='spirit'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate" @track="tracking.select"/>
         <TrialPreparationPanel v-if="tab==='修行' && phase==='idle' && core.player.realm==='spirit'" :game="game" :enabled="store.available && !store.busy" :checkpoint="store.checkpointSummary" @navigate="navigate" @track="tracking.select" @review="reviewTrial" @restore="restore"/>
-        <EquipmentPanel v-if="tab==='修行' && phase!=='opening'" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" :consumption="consumption" @act="act" @track="tracking.select" @navigate="navigate"/>
+        <EquipmentPanel v-if="tab==='修行' && phase!=='opening' && game.status==='active'" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" :consumption="consumption" @act="act" @track="tracking.select" @navigate="navigate"/>
         <div class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><ActionFeedback v-if="store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/></div>
       </section>
-      <aside class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="tracking.select" @navigate="navigate" @preparation="preparation=$event"/><section class="paper fate-summary"><div class="section-label">仙缘因果</div><div v-for="person in relationships.slice(0,2)" :key="person.id" :data-testid="`fate-summary-${person.id}`"><h3>{{person.name}} · {{person.label}}</h3><p class="small">{{person.summary}}</p></div><button class="text-button" @click="tab='仙缘'">展开仙缘 →</button></section>
+      <aside class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="tracking.select" @navigate="navigate" @preparation="preparation=$event"/><section class="paper fate-summary"><div class="section-label">仙缘因果</div><div v-for="person in relationships.slice(0,2)" :key="person.id" :data-testid="`fate-summary-${person.id}`"><h3>{{person.name}} · {{person.label}}</h3><p class="small">{{person.summary}}</p></div><button class="text-button" @click="selectTab('仙缘')">展开仙缘 →</button></section>
       <section class="note"><span>此地机缘</span><p>{{location.description}}</p><small>试玩版本 · 数值未平衡<br>约30分钟理解玩法，不限定通关时间</small></section></aside>
     </main>
-    <nav v-if="game" class="bottom-nav" aria-label="主要页面"><button v-for="(label,index) in ['修行','历练','行囊','仙缘']" :key="label" :data-testid="`tab-${index}`" :class="{active:tab===label}" :aria-current="tab===label?'page':undefined" @click="tab=label"><span class="nav-icon">{{['◈','山','囊','缘'][index]}}</span>{{label}}<small>{{['CULTIVATE','EXPLORE','INVENTORY','KARMA'][index]}}</small></button></nav>
+    <nav v-if="game && game.status==='active'" class="bottom-nav" aria-label="主要页面"><button v-for="(label,index) in ['修行','历练','行囊','仙缘']" :key="label" :data-testid="`tab-${index}`" :class="{active:tab===label}" :aria-current="tab===label?'page':undefined" @click="selectTab(label)"><span class="nav-icon">{{['◈','山','囊','缘'][index]}}</span>{{label}}<small>{{['CULTIVATE','EXPLORE','INVENTORY','KARMA'][index]}}</small></button></nav>
     <dialog ref="settings" class="paper settings"><header><h2>行旅设置</h2><button @click="settings?.close()" aria-label="关闭设置">×</button></header>
       <p>进度仅保存在当前浏览器。导出备份可用于迁移；清理浏览器数据可能丢失进度。</p><label class="setting-row"><span>放大正文</span><input type="checkbox" v-model="large"></label>
       <label class="file-button">导入存档<input data-testid="import" type="file" accept=".json,application/json" @change="importFile" :disabled="store.busy || !store.available"></label>
@@ -357,6 +392,20 @@ onMounted(() => store.init());
         <button v-if="store.canRetryFor(lifeIntent.command.commandId)" data-testid="life-retry" @click="retryEnd" :disabled="store.busy || lifeStale">重试同一次收卷</button>
         <button data-testid="life-cancel" @click="lifeDialog?.close()" :disabled="store.busy">继续此生</button>
         <button data-testid="life-confirm-end" @click="confirmEnd" :disabled="store.busy || !store.available || lifeStale">{{store.busy?'正在保存…':lifeIntent.command.type==='RETIRE'?'确认归隐':'确认寿尽'}}</button>
+      </template>
+    </dialog>
+    <dialog ref="ascensionDialog" class="paper life-confirm" data-testid="ascension-confirmation" aria-labelledby="ascension-title" @cancel="cancelLife" @close="closeAscension">
+      <template v-if="ascensionIntent">
+        <h2 id="ascension-title">确认{{ascensionIntent.choice.label}}</h2>
+        <p data-testid="ascension-review-identity">{{ascensionIntent.view.record.overview.name}} · {{ascensionIntent.view.record.overview.ageLabel}} · 行道{{ascensionIntent.view.record.overview.elapsedMonths}}游戏月</p>
+        <p data-testid="ascension-review-description">{{ascensionIntent.choice.description}}</p>
+        <p>确认保存后，以所选结尾封卷。不再继续本卷的修炼或战斗；当前物品、配装与人物记录保留，不新增道具奖励或上界玩法。</p>
+        <details><summary>此生实际来路</summary><p>{{ascensionIntent.view.record.opening.text}}</p><p>{{ascensionIntent.view.record.training.school}} · {{ascensionIntent.view.record.training.loadout.map(slot=>slot.name).join(' / ')}} · {{ascensionIntent.view.record.training.equippedRelic}}</p><p v-for="decision in ascensionIntent.view.record.decisions" :key="decision.id">{{decision.npc}} · {{decision.text}}</p><p v-if="!ascensionIntent.view.record.decisions.length">没有其他已选事件记录，不补写故人或盟约。</p><p>{{ascensionIntent.view.record.pledges.text}}</p></details>
+        <p v-if="ascensionStale" data-testid="ascension-stale" role="alert">进度已更新，请取消后重新核对；此处不会替另一份进度选择结尾。</p>
+        <p v-if="store.error" data-testid="ascension-error" role="alert">{{store.error}}</p>
+        <button v-if="store.canRetryFor(ascensionIntent.command.commandId)" data-testid="ascension-retry" @click="retryAscension" :disabled="store.busy || ascensionStale">重试同一次封卷</button>
+        <button data-testid="ascension-cancel" @click="ascensionDialog?.close()" :disabled="store.busy">继续核对</button>
+        <button class="primary" data-testid="ascension-confirm" @click="confirmAscension" :disabled="store.busy || !store.available || ascensionStale">{{store.busy?'正在保存…':'确认飞升并封卷'}}</button>
       </template>
     </dialog>
     <dialog ref="trialRestoreDialog" class="paper life-confirm" data-testid="trial-restore-confirmation" aria-labelledby="trial-restore-title" @cancel="cancelLife" @close="closeTrialRestore">

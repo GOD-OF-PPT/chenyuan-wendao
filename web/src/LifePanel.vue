@@ -11,18 +11,19 @@ const lifespan = computed(() => previewAction(props.game, { type: 'END_LIFE' }))
 <template>
   <section class="paper life-panel" aria-label="修仙生平" data-testid="life-panel">
     <div class="section-label">修仙生平 <span>{{game.status==='active'?'当前记录':'此生收卷'}}</span></div>
-    <h2 data-testid="life-title">{{record.overview.title}}</h2>
+    <h2 tabindex="-1" data-testid="life-title">{{record.overview.title}}</h2>
     <p class="story" data-testid="life-conclusion">{{record.overview.conclusion}}</p>
     <p class="life-summary" data-testid="life-age">{{record.overview.name}} · {{record.overview.ageLabel}} · {{record.overview.realmName}} · 行道{{record.overview.elapsedMonths}}游戏月</p>
     <p v-if="record.overview.remainingMonths!==null" class="small">{{game.status==='active'?'当前':'封卷时'}}寿限{{record.overview.limitLabel}}，余寿{{record.overview.remainingMonths}}游戏月。</p>
     <p v-else class="small">{{record.overview.limitLabel}}。</p>
     <h3>开卷之念</h3><p data-testid="life-opening">{{record.opening.text}}</p>
     <h3>境界记录</h3><ol class="life-list" data-testid="life-realms"><li v-for="realm in record.realms" :key="realm.id">{{realm.text}}</li></ol>
-    <h3>当前所学与配装</h3>
-    <p>当前修法：{{record.training.school}}。{{record.training.manual}}</p>
+    <h3>{{game.status==='active'?'当前':'封卷'}}所学与配装</h3>
+    <p>{{game.status==='active'?'当前':'封卷'}}修法：{{record.training.school}}。{{record.training.manual}}</p>
     <p data-testid="life-skills">已掌握功法：{{record.training.learned.map(skill=>skill.name).join('、') || '尚无记录'}}。</p>
     <p data-testid="life-loadout">当前功法槽：{{record.training.loadout.map(slot=>slot.name).join(' / ')}}。</p>
     <p data-testid="life-relics">已拥有法宝：{{record.training.relics.map(relic=>relic.name).join('、') || '尚无记录'}}。当前装备：{{record.training.equippedRelic}}。</p>
+    <template v-if="game.status!=='active'"><h3>封卷行囊</h3><p data-testid="life-inventory">{{record.snapshot.inventory.map(item=>item.name+' ×'+item.quantity).join(' · ') || '行囊无存物'}}。只列封卷库存，不推断累计获得。</p></template>
     <h3>实际选择</h3>
     <ol v-if="record.decisions.length" class="life-list" data-testid="life-decisions"><li v-for="decision in record.decisions" :key="decision.id"><strong>{{decision.npc}} · {{decision.title}}</strong><p>{{decision.text}}</p></li></ol>
     <p v-else data-testid="life-no-decisions">存档尚无其他事件选择记录，不补写交情或来往。</p>

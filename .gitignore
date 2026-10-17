@@ -16,3 +16,7 @@ __pycache__/
 *.pyc
 saves/
 *.bundle
+
+# Normal new-game journey evidence
+web/journey-report/
+web/journey-results/

@@ -93,3 +93,10 @@ Store只暴露loadCheckpoint实际校验后的kind/sourceRunId/sourceRevision/ve
 Store的prepareCheckpoint固定SaveMutation，restorePrepared保留commandId及expectedRunId/revision送交原restoreCheckpoint；不是新写入协议。专用确认窗捕获目标检查点概要，跨页推进/换人生后不能重新绑定另一份进度。恢复失败保留原current/previous/checkpoint/owner/回执，同ID重试仅恢复一次；取消只丢弃匹配ID的意图，不能从全局入口误重放已取消恢复。
 
 Store从已验证CP派生目标概要，并只读loadPrevious给即时失败查询；上一行动无法校验时不伪造失败，但已验证检查点仍独立可用。异步读回若页面权威Game已换，不发布该旧查询结果。失败查询不写数据库，不扫描/重建另一份战斗历史；后续行动覆盖previous后只保留原手记，不声称永久累计账本。导入的进行中Game没有独立CP时，仍继续真实回合并明确缺少累计耗物依据。
+
+
+## T15：END原子封卷
+
+END沿用execute的身份、回执与原子写入：current/previous/回执同事务，原trial检查点与owner保留。任一步配额/abort不改变三关完成态；同ID同请求返回原结果和最新状态，同ID异结尾拒绝，新ID不能结束已经封卷的此生。两连接竞争不同结尾仅一份CAS成功，另一份过期；恢复完整准备产生新run后，旧END不能作用于新进度。
+
+确认窗保留预览时commandId/runId/revision，重试只匹配这一次END。跨页/换人生后不重新绑定，取消失败确认只清自己的重试；不误重放其他失败的完整恢复。没有CP的导入档仍能在已合法三关完成时封卷，但不虚构恢复入口。两种结尾后的完整准备恢复都保留CP，可重新按真实成本进入/回答/三关和选择新结尾。
