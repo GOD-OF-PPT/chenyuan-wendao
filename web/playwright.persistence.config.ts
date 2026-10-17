@@ -1,6 +1,8 @@
+import {sourceIdentity} from '../scripts/source-identity.mjs';
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
+  metadata:{chenyuan:sourceIdentity()},
   testDir: './persistence-tests', timeout: 60000, fullyParallel: true,
   workers: 2, retries: 0, reporter: [['list'], ['json',{outputFile:'recovery-report/persistence.json'}], ['html', { outputFolder: 'persistence-report', open: 'never' }]],
   outputDir: 'persistence-results',

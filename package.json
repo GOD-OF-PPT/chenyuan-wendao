@@ -3,7 +3,7 @@
   "version": "0.1.0-m1-core.1",
   "private": true,
   "type": "module",
-  "description": "尘缘问道：首境界经济规则原型，尚无可玩 UI",
+  "description": "尘缘问道：有限文字修仙 Demo 的正式规则与交付工具",
   "engines": {
     "node": ">=22.16.0"
   },
@@ -13,7 +13,12 @@
     "replay": "node --experimental-strip-types scripts/replay.mjs",
     "replay:full": "node --experimental-strip-types scripts/replay-full.mjs",
     "typecheck": "tsc --noEmit",
-    "audit:economy": "node --experimental-strip-types scripts/replay-economy.mjs --check"
+    "audit:economy": "node --experimental-strip-types scripts/replay-economy.mjs --check",
+    "validate:core": "node scripts/validate-core.mjs",
+    "candidate:package": "python3 scripts/package-candidate.py --browsers recovery-evidence --journeys journey-evidence",
+    "candidate:reproduce": "python3 scripts/reproduce-candidate.py",
+    "candidate:receipt": "node --experimental-strip-types scripts/candidate-receipt.mjs",
+    "demo:generate": "node --experimental-strip-types scripts/demo-nodes.mjs"
   },
   "devDependencies": {
     "typescript": "5.8.3"

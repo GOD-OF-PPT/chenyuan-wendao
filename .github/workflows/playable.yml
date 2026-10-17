@@ -4,6 +4,8 @@ on:
     branches: ['feat/m1-playable-web', 'feat/full-demo-g1-g5', 'feat/g1-locked-playable', 'codex/**']
   pull_request:
     paths: ['web/**', 'src/**', 'tests/**', 'scripts/**', '.github/workflows/playable.yml', 'docs/v0.4/**']
+env:
+  CANDIDATE_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
 permissions:
   contents: read
 concurrency:
@@ -28,17 +30,8 @@ jobs:
           node-version: '22.16.0'
       - name: Verify reviewed dependency lock
         run: node scripts/check_lock.mjs
-      - name: Core checks
-        run: |
-          npm ci --ignore-scripts --no-audit --no-fund
-          npm run typecheck
-          npm run check:content
-          npm test
-          npm run replay
-          npm run replay:full
-          npm run audit:economy
-          python3 scripts/check_docs.py
-          python3 docs/v0.4/tools/check_documents.py
+      - name: Core checks with actual validation records
+        run: npm run validate:core
       - name: Install locked web dependencies
         run: npm --prefix web ci --ignore-scripts --no-audit --no-fund
       - name: Build production website
@@ -71,6 +64,8 @@ jobs:
             web/persistence-report
             web/persistence-results
             web/recovery-report
+            web/core-report
+            web/build-report
             web/performance-report
             web/performance-results
           retention-days: 90
@@ -119,7 +114,7 @@ jobs:
     needs: [browser, journey]
     if: always()
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - name: Require every browser matrix to succeed
         env:
@@ -130,6 +125,7 @@ jobs:
           test "$JOURNEY_RESULT" = success
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
+          fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
@@ -161,5 +157,34 @@ jobs:
         with:
           name: chenyuan-playable-dist
           path: web/dist
+          include-hidden-files: true
+          retention-days: 90
+          if-no-files-found: error
+      - name: Assemble exact-source engineering candidate
+        run: python3 scripts/package-candidate.py --browsers recovery-evidence --journeys journey-evidence
+      - name: Restore source bundle, reinstall locks and reproduce payload
+        run: python3 scripts/reproduce-candidate.py
+      - name: Install candidate smoke browsers
+        timeout-minutes: 5
+        working-directory: web
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Run the extracted candidate through every browser
+        run: npm --prefix web run test:candidate
+      - name: Bind clean-source and packaged runtime proofs to the archive
+        run: npm run candidate:receipt
+      - name: Upload immutable candidate and delivery receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: chenyuan-engineering-candidate
+          path: |
+            artifacts/candidates/*/candidate.zip
+            artifacts/candidates/*/candidate.json
+            artifacts/candidates/*/delivery.json
+            artifacts/candidates/*/reproduction.json
+            artifacts/candidates/*/packaged-smoke.json
+            artifacts/candidates/*/reproduction-logs
+            web/candidate-report
+            web/candidate-results
           retention-days: 90
           if-no-files-found: error

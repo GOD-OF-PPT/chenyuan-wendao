@@ -1,5 +1,9 @@
+import {assertWebBuild} from '../scripts/assert-web-build.mjs';
+import {sourceIdentity} from '../scripts/source-identity.mjs';
 import { defineConfig } from '@playwright/test';
+assertWebBuild();
 export default defineConfig({
+  metadata:{chenyuan:sourceIdentity()},
   testDir: './e2e', timeout: 60000, expect: { timeout: 8000 },
   fullyParallel: true, workers: 2, retries: 0,
   reporter: [['list'], ['json',{outputFile:'recovery-report/ui.json'}], ['html', { open: 'never' }]],

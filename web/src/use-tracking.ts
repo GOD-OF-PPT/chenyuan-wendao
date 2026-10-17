@@ -1,9 +1,10 @@
 import { computed, ref, watch, type ComputedRef } from 'vue';
+import {useSession} from './session';
 import { getTrackedGoal, parseTrackingTarget, type TrackingTarget } from '../../src/full/goals.ts';
 import type { Game } from '../../src/full/types.ts';
 
-const key = 'chenyuan-tracked-goal-v1';
 export function useTracking(game: ComputedRef<Game | null>) {
+  const key=useSession().trackingKey;
   const target = ref<TrackingTarget>({ kind: 'breakthrough' }), notice = ref('');
   watch(() => game.value?.core.runId, runId => {
     target.value = { kind: 'breakthrough' }; notice.value = '';

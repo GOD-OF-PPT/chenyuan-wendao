@@ -4,7 +4,7 @@
 
 ## 当前实施与可运行范围
 
-当前实施分支为 `codex/goal-1-recovery-matrix`，正式页面使用full规则与数据库v3，事务完成后才显示成功。T08验证四条正常新档至金丹及12功法/4法宝操作；T09已用四条正常新档路线验证双修法/双筹备至化神，并完成本境筹备信息与CHECK-03；完整结果见独立记录。T10建立120组真实经济回放并保护旧档；T11接通沈/裴选项因果、可补救护阵、四人物事实记录和后学剑简，T12补上真实生平、查看/文本导出、归隐/寿尽确认与恢复入口；T13接入渡劫准备清单、固定身份确认与原子入场检查点，两条正常新档路线已到问心；T14接入问心事实回响、三关进度、中断说明和失败耗物/完整恢复确认，结果见独立记录。T15接入两结尾固定确认与飞升封卷，正常24路线×三浏览器与CHECK-05已通过，详见T15记录。数值仍未平衡。T16资产清单已核验；T17三栏/角色/场景/导航和移动阅读顺序已实现并交PR #26；T18已交4场景/5肖像、统一符号与回执表现；T19全界面缩放/键盘/四尺寸与最终同HEAD CI/包校验已交PR #28；CHECK-06已通过。T20已交PR #29与最终四CI/性能/包证据；T21/CHECK-07已交PR #30，最终同HEAD四CI/34检查、354规则/471页面/267 IDB/正常72/30性能与运行包已核对。T22补齐提交后结果交付中断、替换写入失败、清站点再导入，新增20项恢复要求与实际报告门禁；本轮完整结果见独立记录。真实玩家反馈仍未执行。六条三开场×两修法至筑基旧路线保留。目标/来源引导、批量反馈、战斗、旧档迁移与完整检查点恢复均保留。
+当前实施分支为 `codex/goal-1-candidate-delivery`，正式页面使用full规则与数据库v3，事务完成后才显示成功。T08验证四条正常新档至金丹及12功法/4法宝操作；T09已用四条正常新档路线验证双修法/双筹备至化神，并完成本境筹备信息与CHECK-03；完整结果见独立记录。T10建立120组真实经济回放并保护旧档；T11接通沈/裴选项因果、可补救护阵、四人物事实记录和后学剑简，T12补上真实生平、查看/文本导出、归隐/寿尽确认与恢复入口；T13接入渡劫准备清单、固定身份确认与原子入场检查点，两条正常新档路线已到问心；T14接入问心事实回响、三关进度、中断说明和失败耗物/完整恢复确认，结果见独立记录。T15接入两结尾固定确认与飞升封卷，正常24路线×三浏览器与CHECK-05已通过，详见T15记录。数值仍未平衡。T16资产清单已核验；T17三栏/角色/场景/导航和移动阅读顺序已实现并交PR #26；T18已交4场景/5肖像、统一符号与回执表现；T19全界面缩放/键盘/四尺寸与最终同HEAD CI/包校验已交PR #28；CHECK-06已通过。T20已交PR #29与最终四CI/性能/包证据；T21/CHECK-07已交PR #30，最终同HEAD四CI/34检查、354规则/471页面/267 IDB/正常72/30性能与运行包已核对。T22已交PR #31及最终94fac41四CI/34检查、474页面/300 IDB/72路线/30性能和运行包证据。T23已接入9个合法演示节点、隔离入口与可复现候选包；首个候选完成源码干净重建、25文件校验与9包运行烟测，完整同HEAD交付证据见独立记录及PR #32；T24总审与真人反馈仍为后续。真实玩家反馈仍未执行。六条三开场×两修法至筑基旧路线保留。目标/来源引导、批量反馈、战斗、旧档迁移与完整检查点恢复均保留。
 
 完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，页面接通共用地点/物品/事件操作；T08功法/法宝与至金丹网页结果见下方记录；T09的元婴/化神成长闭环见独立记录；问心/三关结果见T14独立记录；两结尾与24路线验收见T15记录；正式美术与性能结果见T18/T20记录，真人验证仍为T25；数值为未平衡初值。
 
@@ -19,7 +19,7 @@
 工程声明 Node.js ≥22.16.0；历史 G1 CI 使用 Node.js 22.16.0 / npm 10.9.2。当前任务的实际环境和检查结果单独记录于 [T01实施记录](docs/implementation/goal-1-baseline.md)。不顺带升级依赖，根与前端均从已提交锁文件安装。
 
 ```sh
-git clone --branch codex/goal-1-recovery-matrix --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+git clone --branch codex/goal-1-candidate-delivery --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
 cd chenyuan-wendao
 npm ci --ignore-scripts
 node scripts/check_lock.mjs
@@ -32,6 +32,8 @@ npm --prefix web run dev
 ## 验证
 
 ```sh
+npm run validate:core
+# 或分别执行下面的检查
 npm run typecheck
 npm run check:content
 npm test
@@ -102,6 +104,7 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 | [T20生产性能](docs/implementation/goal-1-performance.md) | 固定网络/CPU/冷缓存、真实后期档、预算与查询性能修复 |
 | [T21本地记录与CHECK-07](docs/implementation/goal-1-local-playtest.md) | 本地记录/脱敏/显示设置、导出快照与阶段综合检查 |
 | [T22最终路线与恢复矩阵](docs/implementation/goal-1-recovery-matrix.md) | 20项恢复要求、真实JSON覆盖门禁与正常24路线×三浏览器复验 |
+| [T23可复现候选交付](docs/implementation/goal-1-candidate-delivery.md) | 合法节点/隔离菜单、源代码历史、清单/校验、干净重建与实际解包运行 |
 | [试玩与运行说明](web/README.md) | 当前玩法、战斗、存档与本地试玩记录 |
 | [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
 | [资料目录](docs/README.md) | v0.3与v0.4关系 |
@@ -118,3 +121,22 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 
 
 开发回归需要Git和系统tar及完整仓库历史：历史兼容夹具会在临时目录执行固定旧提交源码，测试后清理，不提交存档。CI测试作业已采用fetch-depth:0；浅克隆可先执行`git fetch --unshallow`。静态网页运行包不依赖Git。数值版本更新的经济报告按实际BALANCE命名，旧.1基线与.2报告保留，当前审计写入独立current-report.json，已交付.3报告同样保留。
+
+## 工程候选包与演示入口
+
+正常入口仍从新档开始。欢迎页或行旅设置中的“演示节点”可进入9个由正式指令完整回放生成的演示存档；剑/符实战、两类开场因果、渡劫准备和结尾前均可选择。演示页始终显示标记，进度/记录/偏好按演示运行版本和节点隔离；可继续、重载并返回正常进度。演示封装不能直接导入正常档，演示不计入正常路线验收。
+
+`npm --prefix web run build`必经节点生成、类型、Vite与构建来源记录；生产测试检查当前源码与产物，旧/缺失/篡改dist不会被当作新构建。生成JSON和候选包在忽略目录，不提交Git。`npm run demo:generate`可单独重新回放生成节点。
+
+候选装配需要当前完整三浏览器报告和12份正常路线原始JSON，命令为：
+
+```sh
+npm run candidate:package
+# 将候选ID替换为装配命令实际输出的值
+chenyuan_candidate="artifacts/candidates/<候选ID>"
+npm run candidate:reproduce -- "$chenyuan_candidate"
+CANDIDATE_DIRECTORY="$PWD/$chenyuan_candidate/runtime" npm --prefix web run test:candidate
+npm run candidate:receipt -- "$chenyuan_candidate"
+```
+
+完整输入与实际命令见T23记录和CI。单次过滤测试、脏工作区、旧提交结果不能用于认证候选；没有交付回执的assembly不等于验证通过。CI在原有全成功门禁之后生成zip，回执绑定归档SHA、源码包干净恢复/重建与实际解包三浏览器运行。候选包包含网页、合法节点、原始证据/截图、校验与选定源码历史的Git bundle；使用Python本机HTTP运行，无需在玩家机器安装npm依赖。不公开部署或自动发Release，Actions之外保留本地副本。数值与真人/展示验收仍单列。

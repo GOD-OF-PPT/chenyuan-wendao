@@ -7,13 +7,14 @@
     "node": ">=22.16.0"
   },
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "vue-tsc --noEmit && vite build",
+    "dev": "node --experimental-strip-types ../scripts/dev-web.mjs",
+    "build": "node --experimental-strip-types ../scripts/build-web.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "test:e2e": "playwright test",
     "test:persistence": "playwright test --config playwright.persistence.config.ts",
     "test:journeys": "playwright test --config playwright.journeys.config.ts",
-    "test:performance": "playwright test --config playwright.performance.config.ts"
+    "test:performance": "playwright test --config playwright.performance.config.ts",
+    "test:candidate": "playwright test --config playwright.candidate.config.ts"
   },
   "dependencies": {
     "vue": "3.5.22",
