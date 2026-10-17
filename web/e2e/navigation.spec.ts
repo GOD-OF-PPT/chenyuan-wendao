@@ -11,7 +11,7 @@ test('a completed travel cannot overwrite a newer tab choice while save metadata
  });
  try{
   await page.getByTestId('tab-1').click();await page.getByTestId('travel-cave').click();await expect.poll(()=>page.evaluate(()=>(globalThis as any).navHoldStarted)).toBe(true);await expect(page.getByTestId('save-status')).toHaveText('保存中');
-  await page.getByTestId('tab-2').click();await expect(page.getByTestId('tab-2')).toHaveAttribute('aria-current','page');await page.evaluate(()=>(globalThis as any).releaseNavHold());await expect(page.getByTestId('save-status')).toHaveText('已保存');await expect(page.getByTestId('tab-2')).toHaveAttribute('aria-current','page');
-  const expected=advance(before,{type:'TRAVEL',location:'cave',commandId:'expected-nav',runId:before.core.runId,expectedRevision:before.core.revision});expect(await snapshot(page)).toEqual(expected);
+  await page.getByTestId('tab-2').focus();await page.keyboard.press('Enter');await expect(page.getByTestId('tab-2')).toBeFocused();await expect(page.getByTestId('tab-2')).toHaveAttribute('aria-current','page');await page.evaluate(()=>(globalThis as any).releaseNavHold());await expect(page.getByTestId('save-status')).toHaveText('已保存');await expect(page.getByTestId('tab-2')).toHaveAttribute('aria-current','page');
+  await expect(page.getByTestId('tab-2')).toBeFocused();const expected=advance(before,{type:'TRAVEL',location:'cave',commandId:'expected-nav',runId:before.core.runId,expectedRevision:before.core.revision});expect(await snapshot(page)).toEqual(expected);
  }finally{await page.evaluate(()=>(globalThis as any).releaseNavHold?.());}
 });

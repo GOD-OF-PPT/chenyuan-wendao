@@ -77,7 +77,7 @@ function goalLocation() {
 </script>
 
 <template>
-  <section class="paper goals" data-testid="goal-panel">
+  <section id="goal-panel" tabindex="-1" class="paper goals" data-testid="goal-panel">
     <div class="section-label">当前目标 <button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p><h3 data-testid="target">{{goal.title}}</h3>
     <label class="goal-picker">替换追踪目标<select :value="selected" @change="select" data-testid="goal-select" aria-label="追踪目标">
       <option value="breakthrough">下一突破</option>
