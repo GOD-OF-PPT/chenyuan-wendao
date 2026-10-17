@@ -104,7 +104,7 @@ test('decision receipt failure keeps the pending branch and retries its actual c
 test('relationships stay readable during a real battle without advancing or allowing travel', async ({ page }) => {
   const route = causalRoute({ returnVisit: false, meet: 'rival', echo: 'solo', finish: false }); prepareTrial(route.driver); const fixture = route.driver.game;
   await page.goto('/'); await page.getByRole('button', { name: '设置', exact: true }).click();
-  await page.getByTestId('import').setInputFiles({ name: 'legal-trial-state.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(fixture)) });
+  await expect(page.getByTestId('import')).toBeEnabled(); await page.getByTestId('import').setInputFiles({ name: 'legal-trial-state.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(fixture)) });
   await page.getByRole('button', { name: '关闭设置' }).click(); await expect(page.locator('.enemy-row').getByRole('heading', { name: '往昔心魔', exact: true })).toBeVisible();
   const before = await snapshot(page); await page.getByTestId('tab-3').click(); await page.getByTestId('relationship-record-pei').locator('summary').click();
   await expect(page.getByTestId('relationship-label-pei')).toHaveText('相约护阵'); expect(await snapshot(page)).toEqual(before);
