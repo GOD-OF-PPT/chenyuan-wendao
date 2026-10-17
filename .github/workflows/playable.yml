@@ -157,6 +157,7 @@ jobs:
         with:
           name: chenyuan-playable-dist
           path: web/dist
+          include-hidden-files: true
           retention-days: 90
           if-no-files-found: error
       - name: Assemble exact-source engineering candidate

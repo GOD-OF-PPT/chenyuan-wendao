@@ -130,6 +130,45 @@ Game/schema/content/balance：{json.dumps(versions, ensure_ascii=False)}。
 
 T22首次Firefox第8页创建中断未复现、根因未定；原trace与5次原场景/100次空白生命周期、最终复验记录保留。原生进程日志继续采集，不将未知归为已修复。IndexedDB事务检查不承诺所有硬件断电情形永久落盘。
 ''')
+        (stage / 'CHANGELOG.md').write_text('''# 当前工程候选变更
+
+本候选承接凡人至飞升的正式full规则、三开场/双修法/两筹备、12功法/4法宝、选择因果、生平/归隐/寿尽、问心三关与双结尾。原子存档、已知旧档迁移、重复回执/多标签/失败恢复，以及生产美术、四尺寸/字号/键盘、性能与本地记录均有独立版本证据。
+
+本轮新增9个正式指令回放演示节点、持续演示标记、正常与演示数据隔离、专用导入导出；构建/公开资源来源守卫、完整源码历史bundle、可复现装配、干净锁定重建和实际解包测试回执。普通游戏规则、数值、Game/schema/content/balance及依赖锁未因演示入口改写；数值仍未平衡。
+
+历史源SHA、实际测试/产物/截图见manifest和evidence；候选交付不是公开Release或真人/展示验收。
+''')
+        (stage / 'PLAYTEST_FORM.md').write_text(f'''# 真人观察表 · 空白模板，尚未执行
+
+源码提交 `{source['source']}`。本表没有参与者、观察数据或结论。建议约30分钟观察基础理解，不规定到达任何境界，也不按现实分钟发奖励。开始前征得记录同意，只用匿名编号，不收姓名、聊天全文或无关个人数据。
+
+| 项目 | 待真实填写 |
+| --- | --- |
+| 匿名编号 / 是否熟悉题材 / 记录同意 | |
+| 模式与节点：正常新档 / 独立演示 | |
+| 试玩起止与明确暂停；当前源码SHA | |
+| 玩家自行选择的目标；主持人提示/代操作 | |
+| 首次找不到下一步的位置；无新信息重复点击 | |
+| 一次战斗选择与玩家给出的理由 | |
+| 记住的选择因果；继续玩的具体目标 | |
+
+约30分钟时，原话记录：修为怎样获得、材料用途、当前突破缺口、一次资源取舍、两种战斗选择为何不同。没有进入战斗可从菜单给独立合法演示节点观察操作，但须标明演示段，不能算正常新档通关。研究中的样本比例不是已确认业务结论；没有数据不判通过。
+
+| 时点/游戏位置 | 真实观察或玩家原话 | 主持人提示 | 设计解释（与观察分栏） | 后续修复/复验责任 |
+| --- | --- | --- | --- | --- |
+| | | | | |
+
+实际反馈由T25承接。自动化日志、脚本可达、截图生成、此空表都不是真人反馈或美术认可。
+''')
+        shutil.copy2(ROOT / 'art/asset-manifest.json', stage / 'asset-manifest.json')
+        (stage / 'ASSET_SOURCES.md').write_text('''# 素材来源与许可边界
+
+附带的asset-manifest.json逐项记录来源、原件/派生hash、规格、用途、状态及使用依据；其中路径指源码仓库位置，完整资料可从source.bundle恢复。网页运行资源位于web/art，生产文件hash另以本包manifest.runtime为准。原图、运行图与参考预览分开，不把预览放大伪称生产原件。
+
+当前4场景/5肖像为本项目授权生成并接入的素材，40符号与4类表现为项目原生代码。两组历史高清原件仍未取得可回读文件，相关historical/reported状态不当作当前存在。production表示项目内有据使用，不新增发行授权、开源许可证或用户最终美术认可。
+
+不分发本机字体；界面使用用户系统可用字体。无已授权音乐则不加入音乐。截图中字体像素不是字体文件；本候选不附个人存档/密钥/node_modules。发行许可与最终展示决定仍需用户依据现有权利确认，本包与CI不擅自授予新许可。
+''')
         inventory = [file_info(file, file.relative_to(stage).as_posix()) for file in sorted(stage.rglob('*')) if file.is_file()]
         manifest = {'format': 'chenyuan-candidate', 'version': 1, 'source': {'commit': source['source'], 'buildCommit': source['head'], 'tree': source['tree'], 'requiredHistory': ['d3f48ef7df6269133c2875d9b6ca035c0a30ca41'], 'runtimeDigest': inputs['build']['sourceDigest']}, 'versions': versions, 'tools': {'node': inputs['build']['source']['node'], 'npm': inputs['build']['source']['npm'], 'assemblyNode': source['node'], 'assemblyNpm': source['npm'], 'python': platform.python_version(), 'git': run('git', '--version'), 'platform': platform.system() + '/' + platform.machine()}, 'locks': inputs['build']['locks'], 'validation': inputs['summary'], 'runtime': {'files': inputs['build']['files'], 'bytes': inputs['build']['bytes']}, 'inventory': inventory}
         manifest_bytes = (json.dumps(manifest, ensure_ascii=False, indent=2) + '\n').encode()

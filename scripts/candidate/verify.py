@@ -68,7 +68,7 @@ def verify_archive(filename, extract=None):
         for name, item in runtime.items():
             if item['sha256'] != web[name]['sha256'] or item['bytes'] != web[name]['bytes']:
                 raise ValueError('Runtime descriptor differs')
-        required = {'web/index.html', 'source.bundle', 'README.md', 'KNOWN_ISSUES.md', 'SAVE_COMPATIBILITY.md', 'serve.py', 'verify.py'}
+        required = {'web/index.html', 'source.bundle', 'README.md', 'KNOWN_ISSUES.md', 'SAVE_COMPATIBILITY.md', 'CHANGELOG.md', 'PLAYTEST_FORM.md', 'ASSET_SOURCES.md', 'asset-manifest.json', 'serve.py', 'verify.py'}
         if not required <= set(expected):
             raise ValueError('Incomplete delivery contents')
         if extract is not None:
