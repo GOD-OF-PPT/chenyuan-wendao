@@ -255,7 +255,7 @@
 - 分支 / 基线 / 提交：`codex/goal-1-accessibility`，base `fe70599b3529e33766866ef6b20106ece7375b14`；实现`93c069b2e70b7262d2e2c410235624b8699d3888`，后续证据文档提交见本任务PR历史。
 - 验证命令、环境与结果：macOS26.6.2/x86_64、Node24.19.0/npm8.11.0、Playwright1.56.1，Chromium141.0.7390.37/Firefox142.0.1/WebKit26.0。根/web干净ci、锁/类型/目录/构建、328规则、18资源保护、六M1/24full、120经济/72修炼/21转换/8战斗/21月恢复、文档/diff通过；完整420网页（三引擎各140，默认2 worker/25.3分钟）全过，0跳过/用例重试。新增每引擎22项含4尺寸×3字号×8状态（96次状态视图/引擎），实际焦点矩形/命中/44目标、模态/文件选择器、真实命令/只读不写档与颜色对比；不是只测宽度。正常72与213存储在本PR最终同HEAD CI重新执行后核对，不引用父PR绿灯。
 - 自审/debug：基线实测正文18→27、标签仍17/费用14；leave底844.45超导航顶763；设置无名称/错误只在inert背景。首Chromium17项13过/4失败，修手机新档设置被first-of-type隐藏及模态Tab边界；200%再发现采集select超宽/场景绝对定位裁切，修后21/21过。三引擎66项58过/8 WebKit失败，隔离最小HTML证实Mac默认Tab/OptionTab差异，按官方平台快捷方式保留相同断言；事件轨迹另证实pointerdown聚焦父区块→补偿滚动→pointerup落点变，真实SCHOOL/TRAVEL未提交，修后2项WebKit绿。原日志/trace/截图保留，不加重试或放宽15/8/8秒预算。
-- PR / 远端证据：叠加PR #27，推送并附当前任务后，以本任务实际最终HEAD四CI/34检查、正常72身份/16制品为交付门禁；不合并main/旧PR。详见[实施记录](../docs/implementation/goal-1-accessibility.md)。
+- PR / 远端证据：[PR #28](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/28)，叠加PR #27，已推送并附当前任务，以本任务实际最终HEAD四CI/34检查、正常72身份/16制品为交付门禁；不合并main/旧PR。详见[实施记录](../docs/implementation/goal-1-accessibility.md)。
 - 边界：Mac WebKit使用已实际验证且Apple说明的Option+Tab，Linux等用Tab；同样Enter/Space/Escape/顺序/焦点/命令断言，没有skip/xfail/系统偏好修改。原生文件选择器按键触发有事件实证，原生确认取消有存档实证；不是Safari/辅助技术真机或完整WCAG认证。T20性能、T21偏好/试玩记录、T22最终矩阵、T23包、T24/25工程/真人继续后续；数值未平衡。
 - [杠精审查] 本地通过：没有缩小150%要求或仅放正文，没有隐藏正文/禁缩放/跳过WebKit；真实鼠标缺陷修复而非用键盘绕开，四尺寸100—200%与原有业务完整复验。Game/引擎/Store/事务库/数值/版本、PNG/WebP/SVG像素、输入/plan/v0.3/锁/经济报告不变；原生代码hash更新保留T18审阅历史。最终远端门禁通过后只放行T20，完整目标保持active。
 - 重复流程：复用既有资产导出/核验、浏览器与交付门禁，扩展四尺寸/字号/焦点用例；不新增全局skill、子agent或调度。
