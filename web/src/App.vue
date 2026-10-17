@@ -10,7 +10,7 @@ import type { ActionPreview } from '../../src/full/queries.ts';
 import type { Action, Move, Command } from '../../src/full/types.ts';
 import { stories } from '../../src/full/events.ts';
 import { MAX_SAVE_BYTES } from '../../src/full/versions.ts';
-import { planCollection, preparationConsumption, trackingConsumption, type CollectionTarget } from '../../src/full/goals.ts';
+import { planCollection, createConsumptionPreview, type CollectionTarget } from '../../src/full/goals.ts';
 import { useTracking } from './use-tracking';
 import { formatCosts } from './presentation';
 import type { NavigationRequest } from './navigation';
@@ -119,11 +119,9 @@ async function navigate(request: NavigationRequest) {
   const element = request.focusId ? document.querySelector<HTMLElement>(`[data-testid="${request.focusId}"]`) : null;
   element?.scrollIntoView({ block: 'center' }); element?.focus({ preventScroll: true });
 }
+const consumptionPreview = computed(() => game.value ? createConsumptionPreview(game.value, tracking.target.value, preparation.value) : null);
 function consumption(action: Action) {
-  if (!game.value) return '';
-  const gaps = [...trackingConsumption(game.value, tracking.target.value, action),
-    ...(preparation.value ? preparationConsumption(game.value, preparation.value, action) : [])]
-    .filter((gap, index, all) => all.findIndex(other => other.id === gap.id) === index);
+  const gaps = consumptionPreview.value?.(action) ?? [];
   return gaps.length ? '会消耗追踪物资：' + gaps.map(gap => `${C.items[gap.id!].name}将缺${gap.missing}`).join('、') + '；材料未被预留。' : '';
 }
 const collectionLabel = computed(() => collectionTarget.value ? `${collectionTarget.value.kind === 'item' ? C.items[collectionTarget.value.id].name : '灵石'}库存达到 ${collectionTarget.value.quantity}` : '从目标来源选取所需物资');
