@@ -95,5 +95,5 @@ test('a completed real-rule journey displays its actual ending and choices, and 
 
 test('a life-record document is refused as a save without replacing a good game',async({page})=>{
   await start(page);const before=await snapshot(page),record=getLifeRecord(before);await page.getByRole('button',{name:'设置',exact:true}).click();page.once('dialog',d=>d.accept());
-  await page.getByTestId('import').setInputFiles({name:'record-only.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(record))});await expect(page.getByTestId('error')).toContainText('未知旧档版本');expect(await snapshot(page)).toEqual(before);
+  await expect(page.getByTestId('import')).toBeEnabled(); await page.getByTestId('import').setInputFiles({name:'record-only.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(record))});await expect(page.getByTestId('error')).toContainText('未知旧档版本');expect(await snapshot(page)).toEqual(before);
 });

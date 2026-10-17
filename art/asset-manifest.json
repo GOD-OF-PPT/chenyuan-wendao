@@ -1,0 +1,945 @@
+{
+  "format": "chenyuan-art-inventory",
+  "version": 1,
+  "auditDate": "2026-10-17",
+  "baseCommit": "7d3d2d8976523ef6d7b068834b49935f6daad141",
+  "approvalReferences": [
+    "docs/decisions/0001-approved-baseline.md",
+    "docs/decisions/0003-competitive-research.md"
+  ],
+  "scope": "文件事实、历史线索与制作计划分开；technical reviewed不等于用户验收或授予发行许可。",
+  "budget": {
+    "sceneMasters": 4,
+    "portraits": 5,
+    "uiKits": 1,
+    "fxKits": 1,
+    "fxGroups": 4
+  },
+  "checkedOriginalScope": {
+    "knownFilenames": [
+      "03-new-guofeng.png",
+      "云海问道_青云登仙.png",
+      "approved_main_ui.png",
+      "尘缘问道_青云宗试炼.png",
+      "chenyuan-docs-v0.3.bundle"
+    ],
+    "checks": [
+      {
+        "scope": "当前仓库与所有Git引用的图片/字体/资料包路径",
+        "result": "仅三份WebP；未跟踪高清PNG/bundle/font/audio"
+      },
+      {
+        "scope": "本仓库已知历史本地commit eb0678268706e5063f3c1c93b60f23be90719c3a",
+        "result": "当前Git对象不可读"
+      },
+      {
+        "scope": "Spotlight精确文件名索引",
+        "result": "已知五个文件名未命中；索引不是全文件系统存在性证明"
+      },
+      {
+        "scope": "/Users/gordon/Documents/Codex 与 /Users/gordon/Downloads 精确已知文件名",
+        "result": "未命中，未读取无关个人文件内容"
+      },
+      {
+        "scope": "当前Codex项目已保存附件列表",
+        "result": "仅PR附件，无可回读原图或bundle引用"
+      }
+    ],
+    "limits": "没有访问未知云端会话资料包，不声称原件在所有位置均不存在。"
+  },
+  "fontPolicy": {
+    "mode": "system_font_fallback",
+    "filesDistributed": false,
+    "familiesObserved": [
+      "Noto Serif CJK SC",
+      "Songti SC",
+      "SimSun",
+      "serif"
+    ],
+    "sourceReference": "web/src/style.css",
+    "licenseClaim": "仅记录CSS现状，不将本机字体文件复制/分发；不据名称声明跨平台或发行许可。"
+  },
+  "audioPolicy": {
+    "filesDistributed": false,
+    "status": "not_included_no_verified_source"
+  },
+  "assets": [
+    {
+      "id": "ref-style",
+      "category": "reference",
+      "sourceType": "historical_project_preview",
+      "originalHash": null,
+      "sourceReference": [
+        "art/PROVENANCE.md",
+        "docs/v0.4/05-art-ux.md"
+      ],
+      "purpose": "第三风格方向索引",
+      "exportedPath": "art/approved/style-preview.webp",
+      "dimensions": {
+        "width": 320,
+        "height": 240
+      },
+      "bytes": 6438,
+      "sha256": "8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc",
+      "format": "webp",
+      "alpha": false,
+      "status": "reference",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "reference_only",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "visualReview": {
+        "date": "2026-10-17",
+        "type": "assistant_reference_inspection",
+        "notes": "已实际查看；含概念图文字/界面，不能作为无字生产场景。"
+      },
+      "productionRestrictions": [
+        "不可放大后宣称高清原件",
+        "不从320预览切出正式头像/场景",
+        "动态文字、数值和按钮必须由DOM渲染"
+      ]
+    },
+    {
+      "id": "ref-main-ui",
+      "category": "reference",
+      "sourceType": "historical_project_preview",
+      "originalHash": null,
+      "sourceReference": [
+        "art/PROVENANCE.md",
+        "docs/v0.4/05-art-ux.md"
+      ],
+      "purpose": "已认可三栏主界面索引；不是组件与生产UI",
+      "exportedPath": "docs/v0.3/reference/approved_main_ui.webp",
+      "dimensions": {
+        "width": 320,
+        "height": 180
+      },
+      "bytes": 5900,
+      "sha256": "8569f0463d3bdd3a5605e41059630bb0d5540c3a8c08effe48e176d0b7f7e030",
+      "format": "webp",
+      "alpha": false,
+      "status": "reference",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "reference_only",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "visualReview": {
+        "date": "2026-10-17",
+        "type": "assistant_reference_inspection",
+        "notes": "已实际查看；含概念图文字/界面，不能作为无字生产场景。"
+      },
+      "productionRestrictions": [
+        "不可放大后宣称高清原件",
+        "不从320预览切出正式头像/场景",
+        "动态文字、数值和按钮必须由DOM渲染"
+      ]
+    },
+    {
+      "id": "runtime-scene-placeholder",
+      "category": "runtime_placeholder",
+      "sourceType": "byte_identical_reference_copy",
+      "originalHash": "8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc",
+      "sourceReference": [
+        "art/PROVENANCE.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/approved/style-preview.webp"
+      ],
+      "purpose": "当前场景/全局淡化背景占位，待按地点与阶段替换",
+      "exportedPath": "web/public/art/scene.webp",
+      "dimensions": {
+        "width": 320,
+        "height": 240
+      },
+      "bytes": 6438,
+      "sha256": "8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc",
+      "format": "webp",
+      "alpha": false,
+      "status": "placeholder",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "temporary_runtime_placeholder",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "visualReview": {
+        "date": "2026-10-17",
+        "type": "assistant_reference_inspection",
+        "notes": "已实际查看；含概念图文字/界面，不能作为无字生产场景。"
+      },
+      "productionRestrictions": [
+        "不可放大后宣称高清原件",
+        "不从320预览切出正式头像/场景",
+        "动态文字、数值和按钮必须由DOM渲染"
+      ]
+    },
+    {
+      "id": "original-style",
+      "category": "source_original",
+      "sourceType": "historical_session_original_report",
+      "originalHash": null,
+      "sourceReference": [
+        "art/PROVENANCE.md",
+        "docs/v0.4/05-art-ux.md"
+      ],
+      "purpose": "历史认可原件回取线索；当前不能回读或用于导出",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "missing",
+      "availability": "not_located_in_checked_scope",
+      "rights": {
+        "intendedUse": "historical_reference_only",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "reportedMetadata": {
+        "aliases": [
+          "03-new-guofeng.png",
+          "云海问道_青云登仙.png"
+        ],
+        "dimensions": {
+          "width": 1448,
+          "height": 1086
+        },
+        "bytes": 3065190,
+        "sha256": "94d3fec4115b35556a4f80abc69c07dd5c5eb928839c030afe16a99d8bab38bf",
+        "evidence": "历史资料记录，非2026-10-17文件核验"
+      },
+      "owner": "T18：取得后核对原件；否则新制并保留独立来源，不能改称原件。"
+    },
+    {
+      "id": "original-main-ui",
+      "category": "source_original",
+      "sourceType": "historical_session_original_report",
+      "originalHash": null,
+      "sourceReference": [
+        "art/PROVENANCE.md",
+        "docs/v0.4/05-art-ux.md"
+      ],
+      "purpose": "历史认可原件回取线索；当前不能回读或用于导出",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "missing",
+      "availability": "not_located_in_checked_scope",
+      "rights": {
+        "intendedUse": "historical_reference_only",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "reportedMetadata": {
+        "aliases": [
+          "approved_main_ui.png",
+          "尘缘问道_青云宗试炼.png"
+        ],
+        "dimensions": {
+          "width": 1672,
+          "height": 941
+        },
+        "bytes": 3059902,
+        "sha256": "09009d24789b499114f1733bfae0533784d462121c3d57bf19166fff71cea670",
+        "evidence": "历史资料记录，非2026-10-17文件核验"
+      },
+      "owner": "T18：取得后核对原件；否则新制并保留独立来源，不能改称原件。"
+    },
+    {
+      "id": "scene-wilderness",
+      "category": "scene",
+      "sourceType": "planned_project_production",
+      "originalHash": null,
+      "sourceReference": [
+        "docs/decisions/0001-approved-baseline.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/PRODUCTION_BRIEF.md"
+      ],
+      "purpose": "山野雨夜",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "planned",
+      "availability": "not_produced",
+      "rights": {
+        "intendedUse": "future_internal_project_asset",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "targetSpec": {
+        "master": {
+          "format": "png",
+          "width": 2560,
+          "height": 1440,
+          "alpha": false
+        },
+        "runtime": {
+          "format": "webp",
+          "width": 1920,
+          "height": 1080,
+          "candidateMaxBytes": 500000
+        },
+        "plannedMasterPath": "art/production/scenes/wilderness.png",
+        "plannedRuntimePath": "web/public/art/scenes/wilderness.webp",
+        "text": "无文字/数值/UI烘焙，主体留出可裁切安全区",
+        "review": "建议制作规格，不表示文件已存在或性能已达标"
+      },
+      "bindings": {
+        "locationIds": [
+          "wilderness"
+        ]
+      },
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+    },
+    {
+      "id": "scene-settlement",
+      "category": "scene",
+      "sourceType": "planned_project_production",
+      "originalHash": null,
+      "sourceReference": [
+        "docs/decisions/0001-approved-baseline.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/PRODUCTION_BRIEF.md"
+      ],
+      "purpose": "云山聚落",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "planned",
+      "availability": "not_produced",
+      "rights": {
+        "intendedUse": "future_internal_project_asset",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "targetSpec": {
+        "master": {
+          "format": "png",
+          "width": 2560,
+          "height": 1440,
+          "alpha": false
+        },
+        "runtime": {
+          "format": "webp",
+          "width": 1920,
+          "height": 1080,
+          "candidateMaxBytes": 500000
+        },
+        "plannedMasterPath": "art/production/scenes/settlement.png",
+        "plannedRuntimePath": "web/public/art/scenes/settlement.webp",
+        "text": "无文字/数值/UI烘焙，主体留出可裁切安全区",
+        "review": "建议制作规格，不表示文件已存在或性能已达标"
+      },
+      "bindings": {
+        "locationIds": [
+          "cave",
+          "sect",
+          "market"
+        ]
+      },
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+    },
+    {
+      "id": "scene-secret",
+      "category": "scene",
+      "sourceType": "planned_project_production",
+      "originalHash": null,
+      "sourceReference": [
+        "docs/decisions/0001-approved-baseline.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/PRODUCTION_BRIEF.md"
+      ],
+      "purpose": "古境遗迹",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "planned",
+      "availability": "not_produced",
+      "rights": {
+        "intendedUse": "future_internal_project_asset",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "targetSpec": {
+        "master": {
+          "format": "png",
+          "width": 2560,
+          "height": 1440,
+          "alpha": false
+        },
+        "runtime": {
+          "format": "webp",
+          "width": 1920,
+          "height": 1080,
+          "candidateMaxBytes": 500000
+        },
+        "plannedMasterPath": "art/production/scenes/secret.png",
+        "plannedRuntimePath": "web/public/art/scenes/secret.webp",
+        "text": "无文字/数值/UI烘焙，主体留出可裁切安全区",
+        "review": "建议制作规格，不表示文件已存在或性能已达标"
+      },
+      "bindings": {
+        "locationIds": [
+          "secret"
+        ]
+      },
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+    },
+    {
+      "id": "scene-terrace",
+      "category": "scene",
+      "sourceType": "planned_project_production",
+      "originalHash": null,
+      "sourceReference": [
+        "docs/decisions/0001-approved-baseline.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/PRODUCTION_BRIEF.md"
+      ],
+      "purpose": "登仙台/雷劫天门",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "planned",
+      "availability": "not_produced",
+      "rights": {
+        "intendedUse": "future_internal_project_asset",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "targetSpec": {
+        "master": {
+          "format": "png",
+          "width": 2560,
+          "height": 1440,
+          "alpha": false
+        },
+        "runtime": {
+          "format": "webp",
+          "width": 1920,
+          "height": 1080,
+          "candidateMaxBytes": 500000
+        },
+        "plannedMasterPath": "art/production/scenes/terrace-closed.png",
+        "plannedRuntimePath": "web/public/art/scenes/terrace-closed.webp",
+        "text": "无文字/数值/UI烘焙，主体留出可裁切安全区",
+        "review": "建议制作规格，不表示文件已存在或性能已达标",
+        "phaseContract": "底图不显示已经打开的天门；storm/opened以本母版加原生叠层区分，opened仅trial-ending/ascended，不能提前奖励。"
+      },
+      "bindings": {
+        "locationIds": [
+          "terrace"
+        ]
+      },
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+    },
+    {
+      "id": "portrait-player",
+      "category": "portrait",
+      "sourceType": "planned_project_production",
+      "originalHash": null,
+      "sourceReference": [
+        "docs/decisions/0001-approved-baseline.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/PRODUCTION_BRIEF.md"
+      ],
+      "purpose": "玩家：固定主角肖像，不做捏脸；外形不锁死剑/符修法",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "planned",
+      "availability": "not_produced",
+      "rights": {
+        "intendedUse": "future_internal_project_asset",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "targetSpec": {
+        "master": {
+          "format": "png",
+          "width": 1024,
+          "height": 1024,
+          "alpha": true
+        },
+        "runtime": {
+          "format": "webp",
+          "width": 512,
+          "height": 512,
+          "alpha": true,
+          "candidateMaxBytes": 80000
+        },
+        "plannedMasterPath": "art/production/portraits/player.png",
+        "plannedRuntimePath": "web/public/art/portraits/player.webp",
+        "crop": "正方形/圆角框可用，头肩不被裁；不含姓名/数值/关系标签",
+        "appearance": "外貌/服饰是后续制作提案，不从角色职责推断未记录的年龄或经历。"
+      },
+      "bindings": {
+        "personId": "player",
+        "name": "玩家",
+        "sourceRole": "固定主角肖像，不做捏脸；外形不锁死剑/符修法"
+      },
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+    },
+    {
+      "id": "portrait-shen",
+      "category": "portrait",
+      "sourceType": "planned_project_production",
+      "originalHash": null,
+      "sourceReference": [
+        "docs/decisions/0001-approved-baseline.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/PRODUCTION_BRIEF.md"
+      ],
+      "purpose": "沈清禾：破庙伤者/药修",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "planned",
+      "availability": "not_produced",
+      "rights": {
+        "intendedUse": "future_internal_project_asset",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "targetSpec": {
+        "master": {
+          "format": "png",
+          "width": 1024,
+          "height": 1024,
+          "alpha": true
+        },
+        "runtime": {
+          "format": "webp",
+          "width": 512,
+          "height": 512,
+          "alpha": true,
+          "candidateMaxBytes": 80000
+        },
+        "plannedMasterPath": "art/production/portraits/shen.png",
+        "plannedRuntimePath": "web/public/art/portraits/shen.webp",
+        "crop": "正方形/圆角框可用，头肩不被裁；不含姓名/数值/关系标签",
+        "appearance": "外貌/服饰是后续制作提案，不从角色职责推断未记录的年龄或经历。"
+      },
+      "bindings": {
+        "personId": "shen",
+        "name": "沈清禾",
+        "sourceRole": "破庙伤者/药修"
+      },
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+    },
+    {
+      "id": "portrait-lu",
+      "category": "portrait",
+      "sourceType": "planned_project_production",
+      "originalHash": null,
+      "sourceReference": [
+        "docs/decisions/0001-approved-baseline.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/PRODUCTION_BRIEF.md"
+      ],
+      "purpose": "陆玄松：宗门引路人",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "planned",
+      "availability": "not_produced",
+      "rights": {
+        "intendedUse": "future_internal_project_asset",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "targetSpec": {
+        "master": {
+          "format": "png",
+          "width": 1024,
+          "height": 1024,
+          "alpha": true
+        },
+        "runtime": {
+          "format": "webp",
+          "width": 512,
+          "height": 512,
+          "alpha": true,
+          "candidateMaxBytes": 80000
+        },
+        "plannedMasterPath": "art/production/portraits/lu.png",
+        "plannedRuntimePath": "web/public/art/portraits/lu.webp",
+        "crop": "正方形/圆角框可用，头肩不被裁；不含姓名/数值/关系标签",
+        "appearance": "外貌/服饰是后续制作提案，不从角色职责推断未记录的年龄或经历。"
+      },
+      "bindings": {
+        "personId": "lu",
+        "name": "陆玄松",
+        "sourceRole": "宗门引路人"
+      },
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+    },
+    {
+      "id": "portrait-pei",
+      "category": "portrait",
+      "sourceType": "planned_project_production",
+      "originalHash": null,
+      "sourceReference": [
+        "docs/decisions/0001-approved-baseline.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/PRODUCTION_BRIEF.md"
+      ],
+      "purpose": "裴照：同辈竞争者",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "planned",
+      "availability": "not_produced",
+      "rights": {
+        "intendedUse": "future_internal_project_asset",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "targetSpec": {
+        "master": {
+          "format": "png",
+          "width": 1024,
+          "height": 1024,
+          "alpha": true
+        },
+        "runtime": {
+          "format": "webp",
+          "width": 512,
+          "height": 512,
+          "alpha": true,
+          "candidateMaxBytes": 80000
+        },
+        "plannedMasterPath": "art/production/portraits/pei.png",
+        "plannedRuntimePath": "web/public/art/portraits/pei.webp",
+        "crop": "正方形/圆角框可用，头肩不被裁；不含姓名/数值/关系标签",
+        "appearance": "外貌/服饰是后续制作提案，不从角色职责推断未记录的年龄或经历。"
+      },
+      "bindings": {
+        "personId": "pei",
+        "name": "裴照",
+        "sourceRole": "同辈竞争者"
+      },
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+    },
+    {
+      "id": "portrait-yan",
+      "category": "portrait",
+      "sourceType": "planned_project_production",
+      "originalHash": null,
+      "sourceReference": [
+        "docs/decisions/0001-approved-baseline.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/PRODUCTION_BRIEF.md"
+      ],
+      "purpose": "砚尘：秘境守碑人",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "planned",
+      "availability": "not_produced",
+      "rights": {
+        "intendedUse": "future_internal_project_asset",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "targetSpec": {
+        "master": {
+          "format": "png",
+          "width": 1024,
+          "height": 1024,
+          "alpha": true
+        },
+        "runtime": {
+          "format": "webp",
+          "width": 512,
+          "height": 512,
+          "alpha": true,
+          "candidateMaxBytes": 80000
+        },
+        "plannedMasterPath": "art/production/portraits/yan.png",
+        "plannedRuntimePath": "web/public/art/portraits/yan.webp",
+        "crop": "正方形/圆角框可用，头肩不被裁；不含姓名/数值/关系标签",
+        "appearance": "外貌/服饰是后续制作提案，不从角色职责推断未记录的年龄或经历。"
+      },
+      "bindings": {
+        "personId": "yan",
+        "name": "砚尘",
+        "sourceRole": "秘境守碑人"
+      },
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+    },
+    {
+      "id": "native-ui-kit",
+      "category": "ui_kit",
+      "sourceType": "planned_project_production",
+      "originalHash": null,
+      "sourceReference": [
+        "docs/decisions/0001-approved-baseline.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/PRODUCTION_BRIEF.md"
+      ],
+      "purpose": "一套一致的物品/功法/法宝/导航图标、面板与边角",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "planned",
+      "availability": "not_produced",
+      "rights": {
+        "intendedUse": "future_internal_project_asset",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "targetSpec": {
+        "rendering": "DOM/CSS/SVG优先，不需字体文件或从预览切片",
+        "maxSymbols": 40,
+        "symbolViewBox": "0 0 24 24",
+        "numbersAndText": "名称/数量/费用/状态全部DOM",
+        "panelStates": [
+          "default",
+          "hover",
+          "focus",
+          "pressed",
+          "disabled",
+          "saving"
+        ],
+        "candidateMaxBytes": 80000
+      },
+      "bindings": {
+        "itemIds": [
+          "herb",
+          "dew",
+          "core",
+          "jade",
+          "lotus",
+          "soul",
+          "dao",
+          "healing_pill",
+          "spirit_pill",
+          "foundation_pill",
+          "golden_pill",
+          "nascent_pill",
+          "spirit_seed",
+          "ascension_seal"
+        ],
+        "skillIds": [
+          "sword_mind",
+          "sword_still",
+          "sword_build",
+          "sword_guard",
+          "sword_release",
+          "sword_echo",
+          "talisman_mind",
+          "talisman_calm",
+          "talisman_build",
+          "talisman_frost",
+          "talisman_release",
+          "talisman_return"
+        ],
+        "relicIds": [
+          "frost_sword",
+          "jade_seal",
+          "soul_lamp",
+          "cloud_mirror"
+        ],
+        "navigation": [
+          "修行",
+          "历练",
+          "行囊",
+          "仙缘"
+        ],
+        "sharedAffordances": [
+          "保存",
+          "帮助",
+          "关闭",
+          "返回",
+          "恢复",
+          "导出"
+        ]
+      },
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+    },
+    {
+      "id": "native-fx-kit",
+      "category": "fx_kit",
+      "sourceType": "planned_project_production",
+      "originalHash": null,
+      "sourceReference": [
+        "docs/decisions/0001-approved-baseline.md",
+        "docs/v0.4/05-art-ux.md",
+        "art/PRODUCTION_BRIEF.md"
+      ],
+      "purpose": "四组可跳过/降低动效反馈",
+      "exportedPath": null,
+      "dimensions": null,
+      "bytes": null,
+      "sha256": null,
+      "format": null,
+      "alpha": null,
+      "status": "planned",
+      "availability": "not_produced",
+      "rights": {
+        "intendedUse": "future_internal_project_asset",
+        "productionUseApproved": false,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "docs/decisions/0001-approved-baseline.md",
+          "art/PROVENANCE.md"
+        ],
+        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+      },
+      "targetSpec": {
+        "rendering": "DOM/CSS/SVG短反馈，不做持续粒子/视频",
+        "maxGroups": 4,
+        "stateAuthority": "只消费已提交的实际结果，不由动画回调结算或授予境界",
+        "reducedMotion": "禁用/跳过只改变表现，不改变Game或确认顺序"
+      },
+      "bindings": {
+        "groups": [
+          "入道",
+          "突破",
+          "剑符反馈",
+          "渡劫"
+        ]
+      },
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+    }
+  ],
+  "openGaps": [
+    {
+      "id": "ART-01",
+      "fact": "两张高清原件当前不可回读，仅历史元数据。",
+      "owner": "T18原件回取或独立新制；T25最终认可"
+    },
+    {
+      "id": "ART-02",
+      "fact": "运行scene.webp与带字/天门的320风格预览字节相同，不能作生产图。",
+      "owner": "T17资产键与阶段接线，T18无字生产图"
+    },
+    {
+      "id": "ART-03",
+      "fact": "当前一图用于六地点/全局背景，没有地点或天门开放阶段区分。",
+      "owner": "T17/T18"
+    },
+    {
+      "id": "ART-04",
+      "fact": "五肖像与统一图标/面板/动效套件尚无生产文件。",
+      "owner": "T17原生组件，T18素材与降级"
+    },
+    {
+      "id": "ART-05",
+      "fact": "认可记录支持参照，不是新开源/发行许可；当前无独立授权附件。",
+      "owner": "T18逐资产来源证据，T23打包清单"
+    }
+  ]
+}

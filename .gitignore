@@ -20,3 +20,7 @@ saves/
 # Normal new-game journey evidence
 web/journey-report/
 web/journey-results/
+
+# Asset inventory tooling cache
+__pycache__/
+*.py[cod]

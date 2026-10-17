@@ -60,7 +60,7 @@ test('checkpoint restore stays available for a second complete restore in the re
 test('imported non-temple event refreshes and resolves through its real option', async ({ page }) => {
   await start(page); const fixture = npcFixture();
   await page.getByRole('button', { name: '设置', exact: true }).click(); page.once('dialog', dialog => dialog.accept());
-  await page.getByTestId('import').setInputFiles({ name: 'npc.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(fixture)) });
+  await expect(page.getByTestId('import')).toBeEnabled(); await page.getByTestId('import').setInputFiles({ name: 'npc.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(fixture)) });
   await page.getByRole('button', { name: '关闭设置' }).click();
   await expect(page.getByTestId('event-title')).toHaveText('药香故人');
   const pending = await snapshot(page); expect(pending.core.activeEvent.instanceId).toBe(pending.core.runId + ':shen_return');

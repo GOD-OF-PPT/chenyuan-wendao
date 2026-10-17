@@ -93,7 +93,7 @@ test('legally generated lifespan boundary save stops a batch without charging un
   const limit = C.realms.qi.lifespanMonths - d.game.core.player.startAgeMonths;
   while (limit - d.game.core.world.elapsedMonths > 51) d.doAction({ type: 'SOURCE', sourceId: 'work', count: 50 });
   await page.goto('/'); await page.getByRole('button', { name: '设置', exact: true }).click();
-  await page.getByTestId('import').setInputFiles({ name: 'boundary.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(d.game)) });
+  await expect(page.getByTestId('import')).toBeEnabled(); await page.getByTestId('import').setInputFiles({ name: 'boundary.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(d.game)) });
   await page.getByRole('button', { name: '关闭设置' }).click(); await expect(page.getByTestId('realm')).toHaveText('炼气');
   await page.getByTestId('tab-1').click(); await page.getByLabel('取材次数').selectOption('50'); const before = await snapshot(page);
   const steps = limit - before.core.world.elapsedMonths - 1; expect(steps).toBeGreaterThan(0); expect(steps).toBeLessThan(50);
@@ -106,7 +106,7 @@ test('legally generated lifespan boundary save stops a batch without charging un
 test('legally generated nascent save with full cultivation still refuses a missing breakthrough item', async ({ page }) => {
   const d = driver(); d.realm(); d.realm(); d.realm(); d.meditate();
   await page.goto('/'); await page.getByRole('button', { name: '设置', exact: true }).click();
-  await page.getByTestId('import').setInputFiles({ name: 'missing-pill.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(d.game)) });
+  await expect(page.getByTestId('import')).toBeEnabled(); await page.getByTestId('import').setInputFiles({ name: 'missing-pill.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(d.game)) });
   await page.getByRole('button', { name: '关闭设置' }).click(); await expect(page.getByTestId('realm')).toHaveText('元婴');
   await expect(page.getByTestId('xp')).toHaveText('15000 / 15000'); await expect(page.getByTestId('breakthrough')).toBeDisabled();
   await expect(page.getByTestId('growth-pill')).toContainText('化神丹 0 / 1'); const before = await snapshot(page);
