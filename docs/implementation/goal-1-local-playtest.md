@@ -64,3 +64,5 @@
 [杠精审查] 本地通过：没有仅记按钮点击或伪造真人反馈；必要字段来自真实已提交结果，种子/旧回执时间/脱敏标识未知均明示；记录错误不冒充存档错误，关闭/清空/迟到导出与跨页偏好有真IDB与页面证据。实际性能和视觉/键盘问题均有原失败与修后验证，原预算/0重试保留。最终CI门禁通过后仅放行T22，CHECK-08/真人与完整目标不提前关闭。
 
 重复流程：复用Playwright、独立IDB测试、共享规则与既有性能/交付核验；扩展项目本地数据能力，不创建重叠全局skill、子agent或调度。测试时钟采用[Playwright Clock](https://playwright.dev/docs/clock)，本地事务以[complete事件](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction)后发布结果，均不把浏览器模拟/complete等同永久落盘或真人验收。
+
+远端交付：[PR #30](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/30)，叠加PR #29，已推送并附当前任务；最终同HEAD完整465/267/72/30及四CI/34检查与实际日志/制品收尾后转可评审，不合并main或旧PR。
