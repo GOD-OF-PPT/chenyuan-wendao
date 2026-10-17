@@ -10,7 +10,7 @@
 | --- | --- | --- | --- |
 | approved/style-preview.webp | 320×240 / 6,438 | `8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc` | reference，有损、无alpha；含标题/画内文字与已开启天门 |
 | ../docs/v0.3/reference/approved_main_ui.webp | 320×180 / 5,900 | `8569f0463d3bdd3a5605e41059630bb0d5540c3a8c08effe48e176d0b7f7e030` | reference，有损、无alpha；整张三栏概念UI，非生产组件 |
-| ../web/public/art/scene.webp | 320×240 / 6,438 | `8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc` | placeholder，与风格预览字节相同；当前六地点/全局背景共用，待替换 |
+| ../web/public/art/scene.webp | 320×240 / 6,438 | `8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc` | placeholder，与风格预览字节相同；T17起不再加载，保留来源核对 |
 
 两张认可预览的像素内容不得改变来伪造高清来源。运行副本是占位，不因网页可加载就成为production；不能从带字缩略图切场景/头像。所有游戏文字/数字/按钮仍由DOM/CSS实现。
 
@@ -31,5 +31,5 @@
 
 - reference/placeholder只提供当前方向/占位；历史原件缺失、生产槽位planned和已核验文件分别登记。所有规划规格是目标，不是完成或性能通过。
 - 无字体文件、音乐或新增未知第三方素材入库。CSS当前系统字体族只记录现状，不据名称宣布发行许可；不复制运行环境字体。
-- T17接地点/阶段/动态DOM；T18补无字4母版、5肖像、原生套件与真实来源/使用证据。天门opened只在真实trial-ending/ascended，不在早期世界提前表现。
+- T17已接地点/阶段/动态DOM，并停止加载带字预览；原生云山/门势由本仓库独立编写，属于呈现降级而非半写实生产图。T18补无字4母版、5肖像、原生套件与真实来源/使用证据。天门opened只在真实trial-ending/ascended，不在早期世界提前表现。
 - T19/T20分别验证可访问性/性能；T23打包来源与许可清单；T25保留用户最终展示认可。技术reviewed不等于用户认可，不自动新增开源或发行授权。

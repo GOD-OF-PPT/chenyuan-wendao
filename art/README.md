@@ -11,6 +11,6 @@
 正式交付需要无字场景、头像、透明装饰和独立图标，不把概念图铺成整屏背景再叠透明热区。
 
 
-当前文件事实/缺口见[PROVENANCE](PROVENANCE.md)与[asset-manifest.json](asset-manifest.json)，四场景/五肖像/原生UI与表现制作约定见[PRODUCTION_BRIEF](PRODUCTION_BRIEF.md)。运行scene.webp仍是带字风格图的相同占位副本，T17/T18需按地点与真实阶段替换。没有新增字体、音乐或发行许可。
+当前文件事实/缺口见[PROVENANCE](PROVENANCE.md)与[asset-manifest.json](asset-manifest.json)，四场景/五肖像/原生UI与表现制作约定见[PRODUCTION_BRIEF](PRODUCTION_BRIEF.md)。历史scene.webp仍是带字风格图的相同副本；T17已停止加载，改由真实地点/阶段控制原生云山与门势，T18再接无字生产素材。没有新增字体、音乐或发行许可。
 
 执行 `python3 art/tools/check_inventory.py` 核对文件hash/字节/像素头、状态/来源引用和禁止文件；它不代替完整图片解码、人工审阅或许可判断。

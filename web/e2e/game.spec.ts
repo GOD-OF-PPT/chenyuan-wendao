@@ -16,12 +16,12 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}])test(`la
 test('missing art cannot block the opening',async({page})=>{await page.route('**/art/**',route=>route.abort());await start(page);await expect(page.getByTestId('realm')).toHaveText('炼气');});
 
 
-test('available scene resolves from the document base and decodes as an image', async ({ page }) => {
+test('native scene stays readable without fetching the baked reference image', async ({ page }) => {
+ const images:string[]=[];await page.route('**/art/**',route=>{images.push(route.request().url());return route.abort();});
  await start(page);
- const background = await page.locator('.scene').evaluate(element => getComputedStyle(element).backgroundImage);
- const url = background.match(/url\((["']?)(.*?)\1\)/)?.[2];
- expect(url).toBe(new URL('art/scene.webp', page.url()).href);
- const response = await page.request.get(url!); expect(response.status()).toBe(200);
- expect(response.headers()['content-type']).toContain('image/webp');
- expect(await page.evaluate(async url => { const image = new Image(); image.src = url; await image.decode(); return image.naturalWidth > 0; }, url!)).toBe(true);
+ await expect(page.getByTestId('scene')).toHaveAttribute('data-location','cave');
+ await expect(page.getByTestId('scene')).toHaveAttribute('data-gate','none');
+ await expect(page.getByTestId('scene').locator('h2')).toHaveText('听雨洞府');
+ expect(await page.locator('.scene').evaluate(element=>getComputedStyle(element).backgroundImage)).toBe('none');
+ await action(page,'cultivate');expect(images).toEqual([]);
 });
