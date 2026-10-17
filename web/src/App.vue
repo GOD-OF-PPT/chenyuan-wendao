@@ -30,6 +30,8 @@ import type { CheckpointSummary } from './store';
 
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
+let navigationRevision = 0;
+function selectTab(next: string) { navigationRevision++; tab.value = next; return navigationRevision; }
 const preparation = shallowRef<Action | null>(null);
 const large = ref(false), settings = ref<HTMLDialogElement>(), exportError = ref('');
 const game = computed(() => store.game), core = computed(() => game.value?.core);
@@ -65,8 +67,9 @@ function cost(action: Action) {
 }
 function act(action: Action) { if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); return store.act(action); }
 async function travel(id: C.LocationId) {
+  const navigation = ++navigationRevision;
   await act({ type: 'TRAVEL', location: id });
-  if (!store.error) tab.value = id === 'cave' ? '修行' : '历练';
+  if (!store.error && navigation === navigationRevision) selectTab(id === 'cave' ? '修行' : '历练');
 }
 const natural = computed<Action>(() => ({ type: 'CULTIVATE', method: 'natural', count: batch.value === 'target' ? C.maxBatch : batch.value }));
 const assisted = computed<Action>(() => ({ type: 'CULTIVATE', method: 'assisted', count: batch.value === 'target' ? C.maxBatch : batch.value }));
@@ -89,15 +92,18 @@ function sourceReason(id: string) {
 }
 async function navigate(request: NavigationRequest) {
   if (!game.value || store.busy || !store.available) return;
+  const navigation = ++navigationRevision;
   if (game.value.core.world.location !== request.location) {
     const action: Action = { type: 'TRAVEL', location: request.location };
     if (!can(action)) return;
     await act(action); if (store.error) return;
   }
-  tab.value = request.tab; highlight.value = request.focusId ?? '';
+  if (navigation !== navigationRevision) return;
+  const focusRevision = selectTab(request.tab); highlight.value = request.focusId ?? '';
   if (request.quantity) quantity.value = request.quantity;
   if (request.collection) collectionTarget.value = request.collection;
   await nextTick();
+  if (navigationRevision !== focusRevision) return;
   const element = request.focusId ? document.querySelector<HTMLElement>(`[data-testid="${request.focusId}"]`) : null;
   element?.scrollIntoView({ block: 'center' }); element?.focus({ preventScroll: true });
 }
@@ -137,17 +143,17 @@ async function importFile(event: Event) {
 }
 async function reset() {
   if (confirm('重新开始会替换当前进度，确定已导出需要保留的存档？')) {
-    await store.restart(core.value?.player.name ?? name.value); if (!store.error) { tab.value = '修行'; settings.value?.close(); }
+    await store.restart(core.value?.player.name ?? name.value); if (!store.error) { selectTab('修行'); settings.value?.close(); }
   }
 }
 async function restore() {
   if (confirm('回到最近的完整准备检查点，当前进度将被替换，是否继续？')) {
-    await store.checkpoint(); if (!store.error) { tab.value = '修行'; settings.value?.close(); }
+    await store.checkpoint(); if (!store.error) { selectTab('修行'); settings.value?.close(); }
   }
 }
 function exportLife() { if (game.value) download(exportLifeText(game.value), '尘缘问道-生平.txt', 'text/plain;charset=utf-8'); }
 async function showLife() {
-  settings.value?.close(); tab.value = '仙缘'; lifeOpen.value = true;
+  settings.value?.close(); selectTab('仙缘'); lifeOpen.value = true;
   await nextTick(); lifeSection.value?.scrollIntoView({ block: 'start' });
 }
 function requestEnd(type: 'RETIRE' | 'END_LIFE') {
@@ -159,11 +165,11 @@ function requestEnd(type: 'RETIRE' | 'END_LIFE') {
 async function confirmEnd() {
   const intent = lifeIntent.value; if (!intent || store.busy || lifeStale.value) return;
   await store.actPrepared(intent.command);
-  if (!store.error) { lifeDialog.value?.close(); tab.value = '仙缘'; }
+  if (!store.error) { lifeDialog.value?.close(); selectTab('仙缘'); }
 }
 async function retryEnd() {
   const review = lifeIntent.value; if (!review || lifeStale.value || !store.canRetryFor(review.command.commandId)) return;
-  await store.retryFor(review.command.commandId); if (!store.error) { lifeDialog.value?.close(); tab.value = '仙缘'; }
+  await store.retryFor(review.command.commandId); if (!store.error) { lifeDialog.value?.close(); selectTab('仙缘'); }
 }
 function cancelLife(event: Event) { if (store.busy) event.preventDefault(); }
 function closeLifeReview() {
@@ -175,7 +181,7 @@ const trialIntent = shallowRef<{ command: Command; view: ReturnType<typeof getTr
 const trialStale = computed(() => !!trialIntent.value && (!game.value || game.value.core.runId !== trialIntent.value.command.runId || game.value.core.revision !== trialIntent.value.command.expectedRevision));
 async function showTrialPreparation() {
   if (core.value?.player.realm !== 'spirit') return;
-  tab.value = '修行'; await nextTick();
+  selectTab('修行'); await nextTick();
   const heading = document.querySelector<HTMLElement>('[data-testid="trial-preparation-title"]');
   heading?.scrollIntoView({block:'start'}); heading?.focus({preventScroll:true});
 }
@@ -188,9 +194,9 @@ function reviewTrial() {
 async function confirmTrial() {
   const intent = trialIntent.value; if (!intent || store.busy || trialStale.value) return;
   await store.actPrepared(intent.command);
-  if (!store.error) { trialDialog.value?.close(); tab.value = '修行'; }
+  if (!store.error) { trialDialog.value?.close(); selectTab('修行'); }
 }
-async function retryTrial() { const intent = trialIntent.value; if (!intent || trialStale.value || !store.canRetryFor(intent.command.commandId)) return; await store.retryFor(intent.command.commandId); if (!store.error) { trialDialog.value?.close(); tab.value = '修行'; } }
+async function retryTrial() { const intent = trialIntent.value; if (!intent || trialStale.value || !store.canRetryFor(intent.command.commandId)) return; await store.retryFor(intent.command.commandId); if (!store.error) { trialDialog.value?.close(); selectTab('修行'); } }
 function closeTrialReview() { if (trialIntent.value) store.discardRetryFor(trialIntent.value.command.commandId); trialIntent.value = null; }
 const trialRestoreDialog = ref<HTMLDialogElement>();
 const trialRestoreIntent = shallowRef<{ command: SaveMutation; checkpoint: CheckpointSummary } | null>(null);
@@ -224,7 +230,7 @@ function reviewAscension(ending: AscensionEnding) {
   ascensionDialog.value?.showModal();
 }
 async function showAscendedLife() {
-  ascensionDialog.value?.close(); tab.value = '仙缘'; await nextTick();
+  ascensionDialog.value?.close(); selectTab('仙缘'); await nextTick();
   const title = document.querySelector<HTMLElement>('[data-testid="life-title"]');
   title?.scrollIntoView({block:'start'}); title?.focus({preventScroll:true});
 }
@@ -363,10 +369,10 @@ onMounted(() => store.init());
         <EquipmentPanel v-if="tab==='修行' && phase!=='opening' && game.status==='active'" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" :consumption="consumption" @act="act" @track="tracking.select" @navigate="navigate"/>
         <div class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><ActionFeedback v-if="store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/></div>
       </section>
-      <aside class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="tracking.select" @navigate="navigate" @preparation="preparation=$event"/><section class="paper fate-summary"><div class="section-label">仙缘因果</div><div v-for="person in relationships.slice(0,2)" :key="person.id" :data-testid="`fate-summary-${person.id}`"><h3>{{person.name}} · {{person.label}}</h3><p class="small">{{person.summary}}</p></div><button class="text-button" @click="tab='仙缘'">展开仙缘 →</button></section>
+      <aside class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="tracking.select" @navigate="navigate" @preparation="preparation=$event"/><section class="paper fate-summary"><div class="section-label">仙缘因果</div><div v-for="person in relationships.slice(0,2)" :key="person.id" :data-testid="`fate-summary-${person.id}`"><h3>{{person.name}} · {{person.label}}</h3><p class="small">{{person.summary}}</p></div><button class="text-button" @click="selectTab('仙缘')">展开仙缘 →</button></section>
       <section class="note"><span>此地机缘</span><p>{{location.description}}</p><small>试玩版本 · 数值未平衡<br>约30分钟理解玩法，不限定通关时间</small></section></aside>
     </main>
-    <nav v-if="game && game.status==='active'" class="bottom-nav" aria-label="主要页面"><button v-for="(label,index) in ['修行','历练','行囊','仙缘']" :key="label" :data-testid="`tab-${index}`" :class="{active:tab===label}" :aria-current="tab===label?'page':undefined" @click="tab=label"><span class="nav-icon">{{['◈','山','囊','缘'][index]}}</span>{{label}}<small>{{['CULTIVATE','EXPLORE','INVENTORY','KARMA'][index]}}</small></button></nav>
+    <nav v-if="game && game.status==='active'" class="bottom-nav" aria-label="主要页面"><button v-for="(label,index) in ['修行','历练','行囊','仙缘']" :key="label" :data-testid="`tab-${index}`" :class="{active:tab===label}" :aria-current="tab===label?'page':undefined" @click="selectTab(label)"><span class="nav-icon">{{['◈','山','囊','缘'][index]}}</span>{{label}}<small>{{['CULTIVATE','EXPLORE','INVENTORY','KARMA'][index]}}</small></button></nav>
     <dialog ref="settings" class="paper settings"><header><h2>行旅设置</h2><button @click="settings?.close()" aria-label="关闭设置">×</button></header>
       <p>进度仅保存在当前浏览器。导出备份可用于迁移；清理浏览器数据可能丢失进度。</p><label class="setting-row"><span>放大正文</span><input type="checkbox" v-model="large"></label>
       <label class="file-button">导入存档<input data-testid="import" type="file" accept=".json,application/json" @change="importFile" :disabled="store.busy || !store.available"></label>
