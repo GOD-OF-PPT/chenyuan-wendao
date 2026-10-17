@@ -1,6 +1,6 @@
 # Goal 1 / T17：真实界面组件
 
-日期：2026-10-17，Asia/Shanghai。基线：`codex/goal-1-art-inventory@c69643eb1141e5858caae81eeb1795fe53c5e477`；分支：`codex/goal-1-interface-components`，叠加T16，不合并main。任务范围与顺序见[goal](../../goal-1/tasks.md)。
+日期：2026-10-17，Asia/Shanghai。基线：`codex/goal-1-art-inventory@c69643eb1141e5858caae81eeb1795fe53c5e477`；分支：`codex/goal-1-interface-components`，[PR #26](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/26)，叠加T16，不合并main。任务范围与顺序见[goal](../../goal-1/tasks.md)。
 
 ## 实现
 
