@@ -15,3 +15,5 @@
 ## 使用与许可记录
 
 本次仅登记用户目标内的项目制作/使用依据和实际生成来源。`productionUseApproved`表示本项目内制作使用有据；`distributionLicense`保持null，不据生成或参照认可新增独立开源/发行许可，也不声称已完成法律权属审查。原生UI/表现代码为本仓库独立编写，没有复制外部套件。后续来源清单由T23带入候选包，用户展示认可仍属T25。
+
+T19只调整作者字号/焦点和只读表现；当前UI/FX专用代码hash以机器清单为准，T18 REVIEW.md保留其当时hash快照。PNG与WebP像素未改，T19可访问性检查另见[实施记录](../../docs/implementation/goal-1-accessibility.md)，不自动提升为T25认可。

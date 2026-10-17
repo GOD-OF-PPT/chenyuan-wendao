@@ -4,7 +4,7 @@
 
 ## 当前实施与可运行范围
 
-当前实施分支为 `codex/goal-1-production-art`，正式页面使用full规则与数据库v3，事务完成后才显示成功。T08验证四条正常新档至金丹及12功法/4法宝操作；T09已用四条正常新档路线验证双修法/双筹备至化神，并完成本境筹备信息与CHECK-03；完整结果见独立记录。T10建立120组真实经济回放并保护旧档；T11接通沈/裴选项因果、可补救护阵、四人物事实记录和后学剑简，T12补上真实生平、查看/文本导出、归隐/寿尽确认与恢复入口；T13接入渡劫准备清单、固定身份确认与原子入场检查点，两条正常新档路线已到问心；T14接入问心事实回响、三关进度、中断说明和失败耗物/完整恢复确认，结果见独立记录。T15接入两结尾固定确认与飞升封卷，正常24路线×三浏览器与CHECK-05已通过，详见T15记录。数值仍未平衡。T16资产清单已核验；T17三栏/角色/场景/导航和移动阅读顺序已实现并交PR #26；T18已制作4场景/5肖像、统一符号与回执表现，本地CHECK-06已通过，最终同HEAD远端证据见本轮PR。六条三开场×两修法至筑基旧路线保留。目标/来源引导、批量反馈、战斗、旧档迁移与完整检查点恢复均保留。
+当前实施分支为 `codex/goal-1-accessibility`，正式页面使用full规则与数据库v3，事务完成后才显示成功。T08验证四条正常新档至金丹及12功法/4法宝操作；T09已用四条正常新档路线验证双修法/双筹备至化神，并完成本境筹备信息与CHECK-03；完整结果见独立记录。T10建立120组真实经济回放并保护旧档；T11接通沈/裴选项因果、可补救护阵、四人物事实记录和后学剑简，T12补上真实生平、查看/文本导出、归隐/寿尽确认与恢复入口；T13接入渡劫准备清单、固定身份确认与原子入场检查点，两条正常新档路线已到问心；T14接入问心事实回响、三关进度、中断说明和失败耗物/完整恢复确认，结果见独立记录。T15接入两结尾固定确认与飞升封卷，正常24路线×三浏览器与CHECK-05已通过，详见T15记录。数值仍未平衡。T16资产清单已核验；T17三栏/角色/场景/导航和移动阅读顺序已实现并交PR #26；T18已交4场景/5肖像、统一符号与回执表现；T19全界面文字大小、键盘/焦点和四尺寸检查正在执行，本地CHECK-06已通过，最终同HEAD远端证据见本轮PR。六条三开场×两修法至筑基旧路线保留。目标/来源引导、批量反馈、战斗、旧档迁移与完整检查点恢复均保留。
 
 完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，页面接通共用地点/物品/事件操作；T08功法/法宝与至金丹网页结果见下方记录；T09的元婴/化神成长闭环见独立记录；问心/三关结果见T14独立记录；两结尾与24路线验收见T15记录；正式美术、性能和真人验证仍按后续任务逐项完成。数值为未平衡初值。
 
@@ -19,7 +19,7 @@
 工程声明 Node.js ≥22.16.0；历史 G1 CI 使用 Node.js 22.16.0 / npm 10.9.2。当前任务的实际环境和检查结果单独记录于 [T01实施记录](docs/implementation/goal-1-baseline.md)。不顺带升级依赖，根与前端均从已提交锁文件安装。
 
 ```sh
-git clone --branch codex/goal-1-production-art --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+git clone --branch codex/goal-1-accessibility --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
 cd chenyuan-wendao
 npm ci --ignore-scripts
 node scripts/check_lock.mjs
@@ -95,6 +95,7 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 | [T16原件与资产盘点](docs/implementation/goal-1-art-inventory.md) | 现物hash/规格、历史原件缺口、来源许可状态与生产制作约定 |
 | [T17真实界面组件](docs/implementation/goal-1-interface-components.md) | 三栏/手机顺序、动态场景/角色/导航、截图与功能回归 |
 | [T18生产资产与CHECK-06](docs/implementation/goal-1-production-art.md) | 独立原稿/来源/导出、实际加载降级、40符号/四表现及完整回归 |
+| [T19文字/键盘/焦点](docs/implementation/goal-1-accessibility.md) | 四尺寸和完整缩放、模态/文件控件/导航遮挡与同源验证 |
 | [试玩与运行说明](web/README.md) | 当前首境界的操作、战斗和本地存档 |
 | [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
 | [资料目录](docs/README.md) | v0.3与v0.4关系 |

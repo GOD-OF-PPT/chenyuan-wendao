@@ -993,13 +993,18 @@
         },
         {
           "path": "web/src/style.css",
-          "bytes": 17179,
-          "sha256": "a10192e7e1ba332f0fa56d454fba52d76be6e27dc4d9cbb882f1e4284a2a205b"
+          "bytes": 21308,
+          "sha256": "b9e40d4a35effed5d0e45d0b156f0a892d4957954eea15b8b92a5477ffc608c6"
         },
         {
           "path": "web/src/shell.css",
-          "bytes": 8895,
-          "sha256": "ef5bedf0d315b2505a0c1535beb53e7b90d22387a19f10eb1bdb39c322140b6f"
+          "bytes": 14968,
+          "sha256": "d48ca52c16e666c9b901a586f171ecc22706d597f37df91b063bd921adc6a391"
+        },
+        {
+          "path": "web/src/focus.ts",
+          "bytes": 4833,
+          "sha256": "682ff9d38cc9ef877d8e3708efefe1db8e2c4e0172f3278c0f42f82b204bf269"
         }
       ]
     },
@@ -1007,7 +1012,7 @@
       "id": "native-fx-kit",
       "category": "fx_kit",
       "sourceType": "project_authored_native",
-      "originalHash": "c7f3b0020e33d1e7966c82d7bc68d3dc9f0ae80b8bae9081e50a0e55743486a6",
+      "originalHash": "6dd8763cdf71de98870dd6954ed1a47566055a0ddfc1f01aa6ca6879e38b03a5",
       "sourceReference": [
         "art/production/README.md",
         "web/src/effects.ts",
@@ -1016,8 +1021,8 @@
       "purpose": "四组可跳过/降低动效反馈",
       "exportedPath": "web/src/ActionEffects.vue",
       "dimensions": null,
-      "bytes": 3588,
-      "sha256": "c7f3b0020e33d1e7966c82d7bc68d3dc9f0ae80b8bae9081e50a0e55743486a6",
+      "bytes": 4458,
+      "sha256": "6dd8763cdf71de98870dd6954ed1a47566055a0ddfc1f01aa6ca6879e38b03a5",
       "format": "vue",
       "alpha": null,
       "status": "production",
@@ -1056,8 +1061,8 @@
         },
         {
           "path": "web/src/ScenePanel.vue",
-          "bytes": 8504,
-          "sha256": "79baae70c7bf1b49e05f5a635f800014bb0b07519bf4eef74d5bf0fafb8ef141"
+          "bytes": 9112,
+          "sha256": "c3bc1960f1ffb2b0943e701ce5d8c1bfbe4ee06ccd3c8e869cf9893111a0c1a2"
         },
         {
           "path": "web/src/AssetImage.vue",
@@ -1070,6 +1075,40 @@
           "sha256": "0c836c2c877f53b40b4a6ca231c656b6da1facbbdec78daa1f052d937513868c"
         }
       ]
+    },
+    {
+      "id": "scene-terrace-base-input",
+      "category": "production_edit_input",
+      "sourceType": "built_in_image_gen_edit_input",
+      "originalHash": "115e3997cc4d6d69cb5e56f66c48a44ad7ec7d649bd7d0397c30670a200f521e",
+      "sourceReference": [
+        "art/production/receipts/terrace.json",
+        "art/production/README.md"
+      ],
+      "purpose": "登仙台编辑输入云台原稿；非额外活动母版或运行场景",
+      "status": "reference",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/terrace-v2.json"
+        ],
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
+      },
+      "exportedPath": "art/production/scenes/terrace-closed.png",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "bytes": 2717108,
+      "sha256": "115e3997cc4d6d69cb5e56f66c48a44ad7ec7d649bd7d0397c30670a200f521e",
+      "format": "png",
+      "alpha": false
     },
     {
       "inputAssets": [],
@@ -1410,40 +1449,6 @@
       "sha256": "1a62092be290d65e9b5faa1c674d90d7e50e92f1829a3a848e41f98689813dca",
       "format": "png",
       "alpha": true
-    },
-    {
-      "id": "scene-terrace-base-input",
-      "category": "production_edit_input",
-      "sourceType": "built_in_image_gen_edit_input",
-      "originalHash": "115e3997cc4d6d69cb5e56f66c48a44ad7ec7d649bd7d0397c30670a200f521e",
-      "sourceReference": [
-        "art/production/receipts/terrace.json",
-        "art/production/README.md"
-      ],
-      "purpose": "登仙台编辑输入云台原稿；非额外活动母版或运行场景",
-      "status": "reference",
-      "availability": "repo_file",
-      "rights": {
-        "intendedUse": "user_authorized_project_production",
-        "productionUseApproved": true,
-        "distributionLicense": null,
-        "evidenceReferences": [
-          "goal-1/input.md",
-          "goal-1/plan.md",
-          "art/production/README.md",
-          "art/production/receipts/terrace-v2.json"
-        ],
-        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
-      },
-      "exportedPath": "art/production/scenes/terrace-closed.png",
-      "dimensions": {
-        "width": 1672,
-        "height": 941
-      },
-      "bytes": 2717108,
-      "sha256": "115e3997cc4d6d69cb5e56f66c48a44ad7ec7d649bd7d0397c30670a200f521e",
-      "format": "png",
-      "alpha": false
     }
   ],
   "openGaps": [

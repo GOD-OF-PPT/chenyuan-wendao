@@ -44,5 +44,5 @@ const lifespan = computed(() => previewAction(props.game, { type: 'END_LIFE' }))
 </template>
 <style scoped>
 .life-panel{margin-top:20px;padding:24px}.life-panel p{overflow-wrap:anywhere;line-height:1.85;margin:8px 0}.life-panel h3{margin-top:20px;margin-bottom:8px}.life-panel h2{margin-bottom:10px}.life-list{padding-left:22px;line-height:1.8}.life-list li{margin:8px 0}.life-list p{margin:4px 0 12px}.life-actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.life-actions small{flex-basis:100%}.life-panel summary{cursor:pointer;padding:8px 0}.life-summary{font-weight:600}
-@media(max-width:720px){.life-panel{padding:18px}.life-panel h2{font-size:22px}}
+@media(max-width:720px){.life-panel{padding:18px}.life-panel h2{font-size:calc(1.2222222rem * var(--font-scale,1))}}
 </style>
