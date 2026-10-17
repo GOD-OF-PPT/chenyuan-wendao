@@ -116,6 +116,55 @@ def validate(root):
         result = subprocess.run(['git', '-C', str(root), 'ls-files', '-z'], check=True, capture_output=True)
         assert not any(Path(name).suffix.lower() in FORBIDDEN for name in result.stdout.decode().split('\0') if name), 'Tracked font/audio is forbidden by current inventory policy'
     by_id = {a['id']: a for a in manifest['assets']}
+    masters = [a for a in manifest['assets'] if a['category'] in {'scene_master', 'portrait_master'}]
+    if masters:
+        assert sum(a['category'] == 'scene_master' for a in masters) == 4, 'Exactly four scene masters required'
+        assert sum(a['category'] == 'portrait_master' for a in masters) == 5, 'Exactly five portrait masters required'
+    for asset in manifest['assets']:
+        aid = asset['id']
+        if asset['status'] not in {'production', 'reviewed'}:
+            continue
+        if asset.get('parentId'):
+            assert asset['parentId'] in by_id, aid + ': missing parent'
+            assert asset['parentId'] == aid + '-master', aid + ': derivative points to another role or scene'
+            parent = by_id[asset['parentId']]
+            source_receipt = json.loads((root / parent['generationReceipt']).read_text())
+            assert source_receipt['runtimePath'] == asset['exportedPath'] and source_receipt['runtimeSHA256'] == asset['sha256'], aid + ': source receipt does not identify this derivative'
+            assert asset['originalHash'] == parent['sha256'], aid + ': source hash does not match parent'
+            assert asset['dimensions']['width'] <= parent['dimensions']['width'] and asset['dimensions']['height'] <= parent['dimensions']['height'], aid + ': derivative silently upscaled'
+            assert asset['alpha'] == parent['alpha'], aid + ': alpha was lost or invented'
+        for component in asset.get('codeComponents', []):
+            code = (root / component['path']).read_bytes()
+            assert len(code) == component['bytes'] and hashlib.sha256(code).hexdigest() == component['sha256'], aid + ': native code component changed without its source record'
+        if asset['category'] in {'scene', 'portrait'}:
+            assert asset.get('parentId'), aid + ': runtime image has no original'
+            assert asset['bytes'] <= (500000 if asset['category'] == 'scene' else 80000), aid + ': runtime byte budget exceeded'
+        if asset['category'] in {'scene_master', 'portrait_master'}:
+            assert asset['sourceType'] == 'built_in_image_gen' and asset['originalHash'] == asset['sha256'], aid + ': original identity drift'
+            receipt = json.loads((root / asset['generationReceipt']).read_text())
+            assert receipt['tool'] == 'built-in image_gen' and receipt['copiedUnchanged'] is True, aid + ': original generation evidence missing'
+            assert receipt['sourceSHA256'] == asset['sha256'] and receipt['sourceDimensions'] == asset['dimensions'], aid + ': receipt does not identify this original'
+            assert asset.get('inputAssets', []) == receipt.get('inputAssets', []), aid + ': declared edit inputs do not match the generation receipt'
+            for original in receipt.get('inputAssets', []):
+                assert original['id'] in by_id and by_id[original['id']]['sha256'] == original['sha256'], aid + ': edit input identity changed'
+            prompt_file, key = receipt['promptReference'].split('#')
+            assert json.loads((root / prompt_file).read_text())['prompts'][key], aid + ': missing exact generation prompt'
+    kit = by_id['native-ui-kit']
+    if kit['status'] in {'production', 'reviewed'}:
+        assert kit['bytes'] + sum(c['bytes'] for c in kit.get('codeComponents', [])) <= 80000 and kit['targetSpec']['maxSymbols'] == 40, 'Native UI budget changed'
+        svg = ET.fromstring((root / kit['exportedPath']).read_bytes())
+        symbols = [node.get('id') for node in svg.iter() if node.tag.split('}')[-1] == 'symbol']
+        bindings = kit['bindings']
+        expected = {kind + '-' + key for kind, field in [('item', 'itemIds'), ('skill', 'skillIds'), ('relic', 'relicIds')] for key in bindings[field]}
+        expected |= {'nav-' + key for key in ['cultivate', 'explore', 'inventory', 'karma']}
+        expected |= {'action-' + key for key in ['save', 'help', 'close', 'back', 'restore', 'export']}
+        assert len(symbols) == 40 and set(symbols) == expected, 'Native symbols do not match the finite content budget'
+        for node in svg.iter():
+            assert node.tag.split('}')[-1] not in {'script', 'image', 'foreignObject', 'text'}, 'Unsafe or baked-text SVG content'
+            assert not any(key.lower().startswith('on') or key.split('}')[-1] == 'href' for key in node.attrib), 'External or executable SVG attribute'
+    fx = by_id['native-fx-kit']
+    if fx['status'] in {'production', 'reviewed'}:
+        assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
     return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 

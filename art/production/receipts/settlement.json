@@ -1,0 +1,24 @@
+{
+  "key": "settlement",
+  "path": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-516f230f-ed60-4555-8f35-0a64fc6c5528.png",
+  "outputHint": "Generated images are saved to /Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9 as /Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-516f230f-ed60-4555-8f35-0a64fc6c5528.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "promptReference": "art/production/receipts/prompts.json#settlement",
+  "asset": "scene-settlement",
+  "tool": "built-in image_gen",
+  "date": "2026-10-17",
+  "model": "not reported by tool",
+  "copiedUnchanged": true,
+  "sourceSHA256": "5c3e4d9f1e713f7c22e7fddb66ba788737d7e75b53c521f182354caf0a866bc7",
+  "sourceDimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "runtimePath": "web/public/art/scenes/settlement.webp",
+  "runtimeSHA256": "f317b1cee05a456eaf5c19d779aa446a9489cc90b78a937f5bbefa6c638328b2",
+  "runtimeDimensions": {
+    "width": 1536,
+    "height": 865
+  },
+  "encoding": "cwebp -q 84 -m 6 -resize 1536 0 -metadata none",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+}

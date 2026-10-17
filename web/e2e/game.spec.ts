@@ -16,12 +16,12 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}])test(`la
 test('missing art cannot block the opening',async({page})=>{await page.route('**/art/**',route=>route.abort());await start(page);await expect(page.getByTestId('realm')).toHaveText('炼气');});
 
 
-test('native scene stays readable without fetching the baked reference image', async ({ page }) => {
+test('failed production art keeps the native scene readable without fetching the baked reference', async ({ page }) => {
  const images:string[]=[];await page.route('**/art/**',route=>{images.push(route.request().url());return route.abort();});
  await start(page);
  await expect(page.getByTestId('scene')).toHaveAttribute('data-location','cave');
  await expect(page.getByTestId('scene')).toHaveAttribute('data-gate','none');
  await expect(page.getByTestId('scene').locator('h2')).toHaveText('听雨洞府');
  expect(await page.locator('.scene').evaluate(element=>getComputedStyle(element).backgroundImage)).toBe('none');
- await action(page,'cultivate');expect(images).toEqual([]);
+ await expect(page.locator('[data-asset-id="scene-settlement"]')).toHaveAttribute('data-art-state','failed');await action(page,'cultivate');expect(images.length).toBeGreaterThan(0);expect(images.some(url=>url.endsWith('/art/scene.webp'))).toBe(false);
 });

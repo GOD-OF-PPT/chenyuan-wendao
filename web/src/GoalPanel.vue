@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, shallowRef, watch } from 'vue';
+import { computed, ref, shallowRef, watch } from 'vue';
+import GameIcon from './GameIcon.vue';
 import * as C from '../../src/full/content.ts';
 import { availableEvents } from '../../src/full/engine.ts';
 import { stories } from '../../src/full/events.ts';
@@ -9,6 +10,7 @@ import type { Action, Game } from '../../src/full/types.ts';
 import type { NavigationRequest } from './navigation';
 import { formatCosts, resourceName } from './presentation';
 
+const helpOpen=ref(false);
 const props = defineProps<{ game: Game; target: TrackingTarget; enabled: boolean; notice: string }>();
 const emit = defineEmits<{ select: [TrackingTarget]; navigate: [NavigationRequest]; preparation: [Action | null] }>();
 type Focus = { kind: 'item'; id: string; quantity: number } | { kind: 'currency'; quantity: number } | { kind: 'action'; action: Action; title: string };
@@ -76,7 +78,7 @@ function goalLocation() {
 
 <template>
   <section class="paper goals" data-testid="goal-panel">
-    <div class="section-label">当前目标</div><h3 data-testid="target">{{goal.title}}</h3>
+    <div class="section-label">当前目标 <button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p><h3 data-testid="target">{{goal.title}}</h3>
     <label class="goal-picker">替换追踪目标<select :value="selected" @change="select" data-testid="goal-select" aria-label="追踪目标">
       <option value="breakthrough">下一突破</option>
       <optgroup label="物资"><option v-for="(item,id) in C.items" :key="id" :value="`item:${id}`">{{item.name}} · {{C.realms[item.min].name}}</option></optgroup>
@@ -90,7 +92,7 @@ function goalLocation() {
     <p v-else-if="goal.preview?.failure" class="small" data-testid="goal-blocker">{{goal.preview.failure.message}}</p>
     <button v-if="target.kind==='item'" class="text-button" data-testid="goal-item-sources" @click="stack=[{...target}]">查看获得方式 →</button>
     <div v-if="focus" class="source-details" data-testid="source-details">
-      <div class="source-breadcrumb"><button data-testid="source-back" @click="stack=stack.slice(0,-1)">← 返回{{stack.length>1?'上一层':'目标'}}</button><button @click="stack=[]">回到目标</button></div>
+      <div class="source-breadcrumb"><button data-testid="source-back" @click="stack=stack.slice(0,-1)"><GameIcon kind="action" id="back"/> 返回{{stack.length>1?'上一层':'目标'}}</button><button @click="stack=[]">回到目标</button></div>
       <h4 data-testid="source-title">{{focusTitle}}</h4>
       <p v-if="focus.kind==='item'" class="small">当前 {{game.core.inventory[focus.id]}} / {{focus.quantity}} <span v-if="itemView?.completed">· 已备齐，无需重复收集</span></p>
       <p v-if="focus.kind==='currency'" class="small">当前灵石 {{game.core.player.stones}} / {{focus.quantity}}</p>

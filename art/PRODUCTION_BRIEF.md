@@ -1,6 +1,6 @@
 # 生产美术清单与接线约定（T16）
 
-基线：用户已认可第三方案与三栏主界面，见[决定](../docs/decisions/0001-approved-baseline.md)。机器事实见[asset-manifest.json](asset-manifest.json)，当前来源状态见[PROVENANCE](PROVENANCE.md)。本清单是T17/T18制作合同，不是完成图、完整素材包或新的许可。
+基线：用户已认可第三方案与三栏主界面，见[决定](../docs/decisions/0001-approved-baseline.md)。机器事实见[asset-manifest.json](asset-manifest.json)，当前来源状态见[PROVENANCE](PROVENANCE.md)。本清单保留T16建议规格与T17/T18制作合同。T18实际制作/导出与检查见[production](production/README.md)，差异不回写成历史建议已原样实现；此文不新增许可。
 
 ## 当前可用与不可用
 
@@ -48,5 +48,5 @@ UI套件最多40符号：14物品、12功法、4法宝、4主导航、6共用动
 - reference：可识别风格方向；placeholder：临时运行占位；planned/missing：没有当前生产文件；production：文件、来源与使用证据已齐；reviewed：有绑定该hash的技术/视觉审阅。reviewed仍不等于T25用户认可，也不自动授予开源/发行许可。
 - 每个实物必须有实际路径/格式/尺寸/字节/hash、sourceReference和来源链；生成物保留实际生成记录/提示词/工具回执，派生物保留parentId/源hash与导出说明。禁止把reported历史元数据填成verified现物。
 - 不引入参考仓库代码/图片，不提交字体、密钥、个人存档或未核来源音乐。当前仅有项目参照认可记录，没有新增发行授权或独立开放许可；不得自行把许可字段改为公开授权。
-- T18逐图检查无字/无假数值、透明边缘、人物一致性与裁切；T17接真实状态/动态DOM；T19检查四尺寸/150%/键盘/降低动效；T20测首屏≤2.5MB候选预算及10Mbps/150ms条件；T23带来源清单打包；T25确认实际展示品质。当前均不冒充已完成。
+- T18逐图检查无字/无假数值、透明边缘、人物一致性与裁切；T17接真实状态/动态DOM；T19检查四尺寸/150%/键盘/降低动效；T20测首屏≤2.5MB候选预算及10Mbps/150ms条件；T23带来源清单打包；T25确认实际展示品质。各阶段状态按goal任务记录，不用生成或静态预算代替验收。
 - 找不到图片、许可未核或加载失败时先用可读原生面板/印记降级，玩法不依赖外部图片/字体。T17不得把plannedPath当作存在的资源强行加载。

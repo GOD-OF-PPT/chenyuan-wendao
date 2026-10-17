@@ -1,0 +1,24 @@
+{
+  "key": "pei",
+  "path": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-f53d6fdd-37ff-455e-ba12-17431875a982.png",
+  "outputHint": "Generated images are saved to /Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9 as /Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-f53d6fdd-37ff-455e-ba12-17431875a982.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "promptReference": "art/production/receipts/prompts.json#pei",
+  "asset": "portrait-pei",
+  "tool": "built-in image_gen",
+  "date": "2026-10-17",
+  "model": "not reported by tool",
+  "copiedUnchanged": true,
+  "sourceSHA256": "22583181d159d49dded331cf3af296b956172bdc9c89c28d96516c0892f2d98f",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "runtimePath": "web/public/art/portraits/pei.webp",
+  "runtimeSHA256": "0a1b64def5cd7200a291af8b98790d07048c190318bd4efbee1081bd6c284ad8",
+  "runtimeDimensions": {
+    "width": 512,
+    "height": 512
+  },
+  "encoding": "cwebp -q 84 -m 6 -resize 512 512 -metadata none",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+}

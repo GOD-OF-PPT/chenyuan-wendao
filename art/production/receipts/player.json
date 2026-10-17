@@ -1,0 +1,24 @@
+{
+  "key": "player",
+  "path": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-cd6c1274-cdf4-4988-a401-66279e5eb394.png",
+  "outputHint": "Generated images are saved to /Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9 as /Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-cd6c1274-cdf4-4988-a401-66279e5eb394.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "promptReference": "art/production/receipts/prompts.json#player",
+  "asset": "portrait-player",
+  "tool": "built-in image_gen",
+  "date": "2026-10-17",
+  "model": "not reported by tool",
+  "copiedUnchanged": true,
+  "sourceSHA256": "daec5e6347a757ca9a52077bb1fb96b32c03eb4abebc6bb549176b78f3f83cf2",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "runtimePath": "web/public/art/portraits/player.webp",
+  "runtimeSHA256": "0c2faca3fd95f303cc4ed0e22169f13be1806066a22f56880cc7bbd3e009f1e6",
+  "runtimeDimensions": {
+    "width": 512,
+    "height": 512
+  },
+  "encoding": "cwebp -q 84 -m 6 -resize 512 512 -metadata none",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+}
