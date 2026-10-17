@@ -2,6 +2,8 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import * as C from '../src/full/content.ts';
 import {driver} from './full-route.mjs';
+import {fullRoute} from './full-route.mjs';
+import {newGame,resolve} from '../src/full/engine.ts';
 import {createConsumptionPreview,trackingConsumption,preparationConsumption} from '../src/full/goals.ts';
 function fixture(){const d=driver();d.resource('herb',8);d.resource('dew',2);d.resource('core',1);d.funds(20);d.go('market');return d;}
 const merged=(game,target,preparation,action)=>[...trackingConsumption(game,target,action),...(preparation?preparationConsumption(game,preparation,action):[])].filter((gap,i,all)=>all.findIndex(other=>other.id===gap.id)===i);
@@ -20,3 +22,6 @@ test('a new committed revision or changed preparation gets a new read scope with
  d.go('cave');const original=structuredClone(d.game);const prep={type:'CRAFT',recipeId:'healing'};assert.deepEqual(createConsumptionPreview(d.game,{kind:'breakthrough'},prep)(prep),merged(d.game,{kind:'breakthrough'},prep,prep));assert.deepEqual(d.game,original);
 });
 test('malformed or future-version snapshots are rejected before a cached read scope is created',()=>{const d=fixture();const bad=structuredClone(d.game);bad.core.revision=-1;assert.throws(()=>createConsumptionPreview(bad,{kind:'breakthrough'}));const future=structuredClone(d.game);future.core.contentVersion='future';assert.throws(()=>createConsumptionPreview(future,{kind:'breakthrough'}));assert.throws(()=>createConsumptionPreview(d.game,{kind:'item',id:'unknown',quantity:1}));});
+test('metadata pruning matches the unchanged resolver-based warnings for every item across two complete real routes',()=>{
+ for(const school of ['sword','talisman']){let game=newGame('成本差分','diff-'+school);for(const action of fullRoute('help',school,'craft',true,'transmit').actions){for(const id of Object.keys(C.items)){const target={kind:'item',id,quantity:Math.max(1,game.core.inventory[id])};const expected=trackingConsumption(game,target,action);assert.deepEqual(createConsumptionPreview(game,target)(action),expected,school+':'+action.type+':'+id);}game=resolve(game,{...action,commandId:'diff-'+game.core.revision,runId:game.core.runId,expectedRevision:game.core.revision}).nextState;}}
+});
