@@ -53,6 +53,9 @@ jobs:
         run: npm --prefix web run test:e2e -- --project=${{ matrix.browser }}
       - name: Full persistence module tests
         run: npm --prefix web run test:persistence -- --project=${{ matrix.browser }}
+      - name: Production performance budgets
+        if: matrix.browser == 'chromium'
+        run: npm --prefix web run test:performance
       - name: Upload test evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -63,6 +66,8 @@ jobs:
             web/test-results
             web/persistence-report
             web/persistence-results
+            web/performance-report
+            web/performance-results
           retention-days: 90
   journey:
     name: journey (${{ matrix.browser }}, shard ${{ matrix.shard }})

@@ -21,6 +21,10 @@ saves/
 web/journey-report/
 web/journey-results/
 
+# Production performance measurements (no generated save fixtures in Git)
+web/performance-report/
+web/performance-results/
+
 # Asset inventory tooling cache
 __pycache__/
 *.py[cod]

@@ -78,6 +78,24 @@ export function preparationConsumption(game: Game, preparation: Action, action: 
   return consumptionDeficits(game, previewAction(game, preparation).costs?.items ?? {}, action);
 }
 
+/** One immutable read snapshot for a rendered panel; never reused for a command. */
+export function createConsumptionPreview(game: Game, target: TrackingTarget, preparation: Action | null = null) {
+  validateGame(game);
+  const state = structuredClone(game), goal = getTrackedGoal(state, target);
+  const preparedItems = preparation ? previewAction(state, preparation).costs?.items ?? {} : {};
+  const trackedAction = JSON.stringify(goal.action), preparedAction = JSON.stringify(preparation);
+  const cache = new Map<string, ReturnType<typeof costDeficits>>();
+  return (action: Action) => {
+    const key = JSON.stringify(action);
+    if (!cache.has(key)) {
+      const tracked = key !== trackedAction && Object.keys(goal.requiredItems).length ? consumptionDeficits(state, goal.requiredItems, action) : [];
+      const prepared = key !== preparedAction && Object.keys(preparedItems).length ? consumptionDeficits(state, preparedItems, action) : [];
+      cache.set(key, [...tracked, ...prepared].filter((gap, index, all) => all.findIndex(other => other.id === gap.id) === index));
+    }
+    return structuredClone(cache.get(key)!);
+  };
+}
+
 function consumptionDeficits(game: Game, requiredItems: Record<string, number>, action: Action) {
   try {
     const after = resolve(game, { ...action, commandId: 'tracking-preview', runId: game.core.runId, expectedRevision: game.core.revision }).nextState;

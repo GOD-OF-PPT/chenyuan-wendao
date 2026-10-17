@@ -1,0 +1,12 @@
+import {expect,type Page} from '@playwright/test';
+import {foundation,nextRealm,craft,buy,meditate,go} from '../e2e/progression';
+import {action} from '../e2e/support';
+
+export async function seedNormalLateSave(page:Page){
+ await foundation(page,'sword','craft','leave');for(let stage=0;stage<3;stage++)await nextRealm(page,'craft');await craft(page,'ascension');await buy(page,'healing_pill',12);await buy(page,'spirit_pill',4);await meditate(page);await go(page,'cave');await page.getByTestId('tab-0').click();if(await page.getByTestId('rest').isEnabled())await action(page,'rest');await go(page,'terrace');await page.getByTestId('tab-0').click();await page.getByTestId('trial-review-entry').click();await action(page,'trial-confirm-entry');await action(page,'answer-accept');await action(page,'flee');await expect(page.getByTestId('trial-restore-open')).toBeVisible();
+ return page.evaluate(async()=>{const request=indexedDB.open('chenyuan-playable-v1');const db=await new Promise<IDBDatabase>((resolve,reject)=>{request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});try{const result:Record<string,{records:number;jsonBytes:number;keys?:IDBValidKey[]}>={};for(const name of db.objectStoreNames){const rows=await new Promise<any[]>((resolve,reject)=>{const tx=db.transaction(name,'readonly'),read=tx.objectStore(name).getAll();read.onsuccess=()=>resolve(read.result);read.onerror=()=>reject(read.error);});result[name]={records:rows.length,jsonBytes:new TextEncoder().encode(JSON.stringify(rows)).length};if(name==='full-state')result[name].keys=await new Promise<IDBValidKey[]>((resolve,reject)=>{const read=db.transaction(name,'readonly').objectStore(name).getAllKeys();read.onsuccess=()=>resolve(read.result);read.onerror=()=>reject(read.error);});}return result;}finally{db.close();}});
+}
+export async function panelFeedback(page:Page,id:string){
+ await page.getByTestId(id).evaluate(el=>{(window as any).__panelFeedback=null;el.addEventListener('click',()=>{const start=performance.now();requestAnimationFrame(()=>requestAnimationFrame(()=>(window as any).__panelFeedback=performance.now()-start));},{once:true,capture:true});});
+ await page.getByTestId(id).click();await page.waitForFunction(()=>Number.isFinite((window as any).__panelFeedback));const ms=await page.evaluate(()=>(window as any).__panelFeedback as number);await expect(page.getByTestId(id)).toHaveAttribute('aria-current','page');return{id,ms};
+}
