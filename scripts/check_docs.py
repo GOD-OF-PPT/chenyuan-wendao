@@ -21,6 +21,8 @@ expected = {
 for name, sha in expected.items():
     assert hashlib.sha256((root / name).read_bytes()).hexdigest() == sha, name
 print('PASS: 5 core documents, 2 JSON examples, 2 preview checksums.')
-print('NOT CHECKED: original PNG files, full v0.2 archive, game code, gameplay or balance.')
+print('NOT CHECKED: historical concept PNG originals, full v0.2 archive, game code, gameplay or balance.')
 
 subprocess.run([sys.executable, str(root / "art/tools/check_inventory.py"), "--root", str(root)], check=True)
+
+subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", str(root / "art/tools"), "-p", "test_*.py"], check=True)

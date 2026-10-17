@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue';
+import GameIcon from './GameIcon.vue';
 import * as C from '../../src/full/content.ts';
 import { stats } from '../../src/full/engine.ts';
 import { previewAction, type ActionPreview } from '../../src/full/queries.ts';
@@ -66,7 +67,7 @@ watch(() => props.highlight, id => {
     <div class="equipment-options"><label>查看修法 <select v-model="filter" aria-label="功法流派"><option value="current">当前修法</option><option value="sword">剑修</option><option value="talisman">符修</option><option value="all">全部</option></select></label><label><input type="checkbox" v-model="future" aria-label="显示后续功法法宝"> 显示后续境界</label></div>
     <p v-if="!skills.length" class="small">引气入体后可选择修法；在青云宗研习功法，战斗外逐槽装备。</p>
     <article v-for="[id,skill] in skills" :key="id" class="equipment-card" :data-testid="`skill-${id}`">
-      <div><h3>{{skill.name}} <small>{{skill.school==='sword'?'剑修':'符修'}} · {{slots[skill.slot]}} · {{C.realms[skill.min].name}}</small></h3><p>{{skill.description}}</p>
+      <div><h3><GameIcon kind="skill" :id="id"/> {{skill.name}} <small>{{skill.school==='sword'?'剑修':'符修'}} · {{slots[skill.slot]}} · {{C.realms[skill.min].name}}</small></h3><p>{{skill.description}}</p>
         <small>研习成本：{{formatCosts(quote({type:'LEARN',skill:id}).costs)}} · 青云宗</small><small data-testid="learn-reason">{{why({type:'LEARN',skill:id})}}</small>
         <small v-if="game.learned.includes(id)">已掌握，保留在本次人生的研习记录中。</small>
       </div>
@@ -79,7 +80,7 @@ watch(() => props.highlight, id => {
     </article>
     <h3 class="relic-heading">本命法宝</h3><p v-if="!relics.length" class="small">金丹后可在洞府炼制；可展开后续境界，提前查看材料和来源。</p>
     <article v-for="[id,relic] in relics" :key="id" class="equipment-card" :data-testid="`relic-${id}`">
-      <div><h3>{{relic.name}}</h3><p>{{relic.description}}</p><small>炼制成本：{{formatCosts(quote({type:'FORGE',relic:id}).costs)}} · 洞府</small><small data-testid="forge-reason">{{why({type:'FORGE',relic:id})}}</small>
+      <div><h3><GameIcon kind="relic" :id="id"/> {{relic.name}}</h3><p>{{relic.description}}</p><small>炼制成本：{{formatCosts(quote({type:'FORGE',relic:id}).costs)}} · 洞府</small><small data-testid="forge-reason">{{why({type:'FORGE',relic:id})}}</small>
         <small>{{game.ownedRelics.includes(id)?'已炼成，替换装备不会销毁其他已拥有法宝。':'炼成后再装备，效果以实际配装参与结算。'}}</small>
         <small>{{consumption({type:'FORGE',relic:id})}}</small>
       </div>

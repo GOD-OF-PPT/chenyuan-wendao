@@ -1,0 +1,248 @@
+{
+  "date": "2026-10-17",
+  "scope": "Full raster decoding, actual alpha and generated-default byte identity; not user acceptance or a legal grant.",
+  "pillowVersion": "12.3.0",
+  "rows": [
+    {
+      "id": "scene-wilderness-master",
+      "sha256": "b0334ce39ae5aa0b922908d182ce85e2c3b09097b4407d90de1542d7546de5f9",
+      "sourceDefaultHashMatches": true,
+      "mode": "RGB",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "scene-settlement-master",
+      "sha256": "5c3e4d9f1e713f7c22e7fddb66ba788737d7e75b53c521f182354caf0a866bc7",
+      "sourceDefaultHashMatches": true,
+      "mode": "RGB",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "scene-secret-master",
+      "sha256": "c3921f48e2d87a9b3a6c1db7c1ccbee5aeb337f11a8ce030985786378be0c934",
+      "sourceDefaultHashMatches": true,
+      "mode": "RGB",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "scene-terrace-master",
+      "sha256": "7404105d35ece7a45ee080a1b37385d712c4066cd78729d907ae513e591d184d",
+      "sourceDefaultHashMatches": true,
+      "mode": "RGB",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "portrait-player-master",
+      "sha256": "daec5e6347a757ca9a52077bb1fb96b32c03eb4abebc6bb549176b78f3f83cf2",
+      "sourceDefaultHashMatches": true,
+      "mode": "RGBA",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "fullyTransparent": 631365,
+      "nearOpaque": 836655
+    },
+    {
+      "id": "portrait-shen-master",
+      "sha256": "d6a236262a00a2f2656a425a1b9aed7f36cf8cf9f11478ba7574f3c65795a641",
+      "sourceDefaultHashMatches": true,
+      "mode": "RGBA",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "fullyTransparent": 654117,
+      "nearOpaque": 777169
+    },
+    {
+      "id": "portrait-lu-master",
+      "sha256": "5e570cd3748273864263e52b01ee11144972cff7874c9ff845d7b81d94ae5a6a",
+      "sourceDefaultHashMatches": true,
+      "mode": "RGBA",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "fullyTransparent": 679780,
+      "nearOpaque": 816138
+    },
+    {
+      "id": "portrait-pei-master",
+      "sha256": "22583181d159d49dded331cf3af296b956172bdc9c89c28d96516c0892f2d98f",
+      "sourceDefaultHashMatches": true,
+      "mode": "RGBA",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "fullyTransparent": 599597,
+      "nearOpaque": 865359
+    },
+    {
+      "id": "portrait-yan-master",
+      "sha256": "1a62092be290d65e9b5faa1c674d90d7e50e92f1829a3a848e41f98689813dca",
+      "sourceDefaultHashMatches": true,
+      "mode": "RGBA",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "fullyTransparent": 648792,
+      "nearOpaque": 832483
+    },
+    {
+      "id": "scene-terrace-base-input",
+      "sha256": "115e3997cc4d6d69cb5e56f66c48a44ad7ec7d649bd7d0397c30670a200f521e",
+      "sourceDefaultHashMatches": true,
+      "mode": "RGB",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "scene-wilderness",
+      "sha256": "3d07a4455e766b67c0eeae6b54b8373a3a64242e6ab952f16f6234bbfc0aae35",
+      "mode": "RGB",
+      "dimensions": [
+        1536,
+        865
+      ]
+    },
+    {
+      "id": "scene-settlement",
+      "sha256": "f317b1cee05a456eaf5c19d779aa446a9489cc90b78a937f5bbefa6c638328b2",
+      "mode": "RGB",
+      "dimensions": [
+        1536,
+        865
+      ]
+    },
+    {
+      "id": "scene-secret",
+      "sha256": "375d61a2b3701de62085ad8d8697c813bfcb5038420d5a864a65f3dc1fb550b9",
+      "mode": "RGB",
+      "dimensions": [
+        1536,
+        865
+      ]
+    },
+    {
+      "id": "scene-terrace",
+      "sha256": "76bbc4ecff4469cfa5e01f7ba182074e6fc70836d9fc9c0b4545afc7208ef45d",
+      "mode": "RGB",
+      "dimensions": [
+        1536,
+        865
+      ]
+    },
+    {
+      "id": "portrait-player",
+      "sha256": "0c2faca3fd95f303cc4ed0e22169f13be1806066a22f56880cc7bbd3e009f1e6",
+      "mode": "RGBA",
+      "dimensions": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "fullyTransparent": 105085,
+      "nearOpaque": 139353
+    },
+    {
+      "id": "portrait-shen",
+      "sha256": "7fb1e08bec233fa3ba11f8f56dd645e3772738e80946990ddb0eb8f97b08ba52",
+      "mode": "RGBA",
+      "dimensions": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "fullyTransparent": 108676,
+      "nearOpaque": 129367
+    },
+    {
+      "id": "portrait-lu",
+      "sha256": "f3205ef5fc424896898efe8dca19e8871762636c7bb82c7136eea44fd638dff4",
+      "mode": "RGBA",
+      "dimensions": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "fullyTransparent": 112944,
+      "nearOpaque": 135673
+    },
+    {
+      "id": "portrait-pei",
+      "sha256": "0a1b64def5cd7200a291af8b98790d07048c190318bd4efbee1081bd6c284ad8",
+      "mode": "RGBA",
+      "dimensions": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "fullyTransparent": 99409,
+      "nearOpaque": 144058
+    },
+    {
+      "id": "portrait-yan",
+      "sha256": "0f68e57915cfa22ef10a88699171ab5aca3889d9e66f1d6d0c8d087f7a04bc52",
+      "mode": "RGBA",
+      "dimensions": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "fullyTransparent": 108202,
+      "nearOpaque": 138520
+    }
+  ]
+}

@@ -280,31 +280,37 @@
     {
       "id": "scene-wilderness",
       "category": "scene",
-      "sourceType": "planned_project_production",
-      "originalHash": null,
+      "sourceType": "webp_derivative",
+      "originalHash": "b0334ce39ae5aa0b922908d182ce85e2c3b09097b4407d90de1542d7546de5f9",
       "sourceReference": [
-        "docs/decisions/0001-approved-baseline.md",
-        "docs/v0.4/05-art-ux.md",
-        "art/PRODUCTION_BRIEF.md"
+        "art/production/scenes/wilderness.png",
+        "art/production/receipts/wilderness.json",
+        "art/tools/export_production.py",
+        "art/production/README.md"
       ],
       "purpose": "山野雨夜",
-      "exportedPath": null,
-      "dimensions": null,
-      "bytes": null,
-      "sha256": null,
-      "format": null,
-      "alpha": null,
-      "status": "planned",
-      "availability": "not_produced",
+      "exportedPath": "web/public/art/scenes/wilderness.webp",
+      "dimensions": {
+        "width": 1536,
+        "height": 865
+      },
+      "bytes": 254774,
+      "sha256": "3d07a4455e766b67c0eeae6b54b8373a3a64242e6ab952f16f6234bbfc0aae35",
+      "format": "webp",
+      "alpha": false,
+      "status": "production",
+      "availability": "repo_file",
       "rights": {
-        "intendedUse": "future_internal_project_asset",
-        "productionUseApproved": false,
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
         "distributionLicense": null,
         "evidenceReferences": [
-          "docs/decisions/0001-approved-baseline.md",
-          "art/PROVENANCE.md"
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/wilderness.json"
         ],
-        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
       },
       "targetSpec": {
         "master": {
@@ -329,36 +335,48 @@
           "wilderness"
         ]
       },
-      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认",
+      "parentId": "scene-wilderness-master",
+      "exportNotes": {
+        "encoding": "cwebp -q 84 -m 6 -resize 1536 0 -metadata none",
+        "resolutionDecision": "记录工具实际像素，仅缩小编码，不把放大图称作高分原件。",
+        "requestedSpecification": "targetSpec保留T16建议；当前实际尺寸见dimensions与父原稿。"
+      }
     },
     {
       "id": "scene-settlement",
       "category": "scene",
-      "sourceType": "planned_project_production",
-      "originalHash": null,
+      "sourceType": "webp_derivative",
+      "originalHash": "5c3e4d9f1e713f7c22e7fddb66ba788737d7e75b53c521f182354caf0a866bc7",
       "sourceReference": [
-        "docs/decisions/0001-approved-baseline.md",
-        "docs/v0.4/05-art-ux.md",
-        "art/PRODUCTION_BRIEF.md"
+        "art/production/scenes/settlement.png",
+        "art/production/receipts/settlement.json",
+        "art/tools/export_production.py",
+        "art/production/README.md"
       ],
       "purpose": "云山聚落",
-      "exportedPath": null,
-      "dimensions": null,
-      "bytes": null,
-      "sha256": null,
-      "format": null,
-      "alpha": null,
-      "status": "planned",
-      "availability": "not_produced",
+      "exportedPath": "web/public/art/scenes/settlement.webp",
+      "dimensions": {
+        "width": 1536,
+        "height": 865
+      },
+      "bytes": 253904,
+      "sha256": "f317b1cee05a456eaf5c19d779aa446a9489cc90b78a937f5bbefa6c638328b2",
+      "format": "webp",
+      "alpha": false,
+      "status": "production",
+      "availability": "repo_file",
       "rights": {
-        "intendedUse": "future_internal_project_asset",
-        "productionUseApproved": false,
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
         "distributionLicense": null,
         "evidenceReferences": [
-          "docs/decisions/0001-approved-baseline.md",
-          "art/PROVENANCE.md"
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/settlement.json"
         ],
-        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
       },
       "targetSpec": {
         "master": {
@@ -385,36 +403,48 @@
           "market"
         ]
       },
-      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认",
+      "parentId": "scene-settlement-master",
+      "exportNotes": {
+        "encoding": "cwebp -q 84 -m 6 -resize 1536 0 -metadata none",
+        "resolutionDecision": "记录工具实际像素，仅缩小编码，不把放大图称作高分原件。",
+        "requestedSpecification": "targetSpec保留T16建议；当前实际尺寸见dimensions与父原稿。"
+      }
     },
     {
       "id": "scene-secret",
       "category": "scene",
-      "sourceType": "planned_project_production",
-      "originalHash": null,
+      "sourceType": "webp_derivative",
+      "originalHash": "c3921f48e2d87a9b3a6c1db7c1ccbee5aeb337f11a8ce030985786378be0c934",
       "sourceReference": [
-        "docs/decisions/0001-approved-baseline.md",
-        "docs/v0.4/05-art-ux.md",
-        "art/PRODUCTION_BRIEF.md"
+        "art/production/scenes/secret.png",
+        "art/production/receipts/secret.json",
+        "art/tools/export_production.py",
+        "art/production/README.md"
       ],
       "purpose": "古境遗迹",
-      "exportedPath": null,
-      "dimensions": null,
-      "bytes": null,
-      "sha256": null,
-      "format": null,
-      "alpha": null,
-      "status": "planned",
-      "availability": "not_produced",
+      "exportedPath": "web/public/art/scenes/secret.webp",
+      "dimensions": {
+        "width": 1536,
+        "height": 865
+      },
+      "bytes": 279296,
+      "sha256": "375d61a2b3701de62085ad8d8697c813bfcb5038420d5a864a65f3dc1fb550b9",
+      "format": "webp",
+      "alpha": false,
+      "status": "production",
+      "availability": "repo_file",
       "rights": {
-        "intendedUse": "future_internal_project_asset",
-        "productionUseApproved": false,
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
         "distributionLicense": null,
         "evidenceReferences": [
-          "docs/decisions/0001-approved-baseline.md",
-          "art/PROVENANCE.md"
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/secret.json"
         ],
-        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
       },
       "targetSpec": {
         "master": {
@@ -439,36 +469,48 @@
           "secret"
         ]
       },
-      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认",
+      "parentId": "scene-secret-master",
+      "exportNotes": {
+        "encoding": "cwebp -q 84 -m 6 -resize 1536 0 -metadata none",
+        "resolutionDecision": "记录工具实际像素，仅缩小编码，不把放大图称作高分原件。",
+        "requestedSpecification": "targetSpec保留T16建议；当前实际尺寸见dimensions与父原稿。"
+      }
     },
     {
       "id": "scene-terrace",
       "category": "scene",
-      "sourceType": "planned_project_production",
-      "originalHash": null,
+      "sourceType": "webp_derivative",
+      "originalHash": "7404105d35ece7a45ee080a1b37385d712c4066cd78729d907ae513e591d184d",
       "sourceReference": [
-        "docs/decisions/0001-approved-baseline.md",
-        "docs/v0.4/05-art-ux.md",
-        "art/PRODUCTION_BRIEF.md"
+        "art/production/scenes/terrace-v2.png",
+        "art/production/receipts/terrace-v2.json",
+        "art/tools/export_production.py",
+        "art/production/README.md"
       ],
       "purpose": "登仙台/雷劫天门",
-      "exportedPath": null,
-      "dimensions": null,
-      "bytes": null,
-      "sha256": null,
-      "format": null,
-      "alpha": null,
-      "status": "planned",
-      "availability": "not_produced",
+      "exportedPath": "web/public/art/scenes/terrace-v2.webp",
+      "dimensions": {
+        "width": 1536,
+        "height": 865
+      },
+      "bytes": 182204,
+      "sha256": "76bbc4ecff4469cfa5e01f7ba182074e6fc70836d9fc9c0b4545afc7208ef45d",
+      "format": "webp",
+      "alpha": false,
+      "status": "production",
+      "availability": "repo_file",
       "rights": {
-        "intendedUse": "future_internal_project_asset",
-        "productionUseApproved": false,
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
         "distributionLicense": null,
         "evidenceReferences": [
-          "docs/decisions/0001-approved-baseline.md",
-          "art/PROVENANCE.md"
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/terrace-v2.json"
         ],
-        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
       },
       "targetSpec": {
         "master": {
@@ -494,36 +536,48 @@
           "terrace"
         ]
       },
-      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认",
+      "parentId": "scene-terrace-master",
+      "exportNotes": {
+        "encoding": "cwebp -q 84 -m 6 -resize 1536 0 -metadata none",
+        "resolutionDecision": "记录工具实际像素，仅缩小编码，不把放大图称作高分原件。",
+        "requestedSpecification": "targetSpec保留T16建议；当前实际尺寸见dimensions与父原稿。"
+      }
     },
     {
       "id": "portrait-player",
       "category": "portrait",
-      "sourceType": "planned_project_production",
-      "originalHash": null,
+      "sourceType": "webp_derivative",
+      "originalHash": "daec5e6347a757ca9a52077bb1fb96b32c03eb4abebc6bb549176b78f3f83cf2",
       "sourceReference": [
-        "docs/decisions/0001-approved-baseline.md",
-        "docs/v0.4/05-art-ux.md",
-        "art/PRODUCTION_BRIEF.md"
+        "art/production/portraits/player.png",
+        "art/production/receipts/player.json",
+        "art/tools/export_production.py",
+        "art/production/README.md"
       ],
       "purpose": "玩家：固定主角肖像，不做捏脸；外形不锁死剑/符修法",
-      "exportedPath": null,
-      "dimensions": null,
-      "bytes": null,
-      "sha256": null,
-      "format": null,
-      "alpha": null,
-      "status": "planned",
-      "availability": "not_produced",
+      "exportedPath": "web/public/art/portraits/player.webp",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "bytes": 62438,
+      "sha256": "0c2faca3fd95f303cc4ed0e22169f13be1806066a22f56880cc7bbd3e009f1e6",
+      "format": "webp",
+      "alpha": true,
+      "status": "production",
+      "availability": "repo_file",
       "rights": {
-        "intendedUse": "future_internal_project_asset",
-        "productionUseApproved": false,
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
         "distributionLicense": null,
         "evidenceReferences": [
-          "docs/decisions/0001-approved-baseline.md",
-          "art/PROVENANCE.md"
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/player.json"
         ],
-        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
       },
       "targetSpec": {
         "master": {
@@ -549,36 +603,48 @@
         "name": "玩家",
         "sourceRole": "固定主角肖像，不做捏脸；外形不锁死剑/符修法"
       },
-      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认",
+      "parentId": "portrait-player-master",
+      "exportNotes": {
+        "encoding": "cwebp -q 84 -m 6 -resize 512 512 -metadata none",
+        "resolutionDecision": "记录工具实际像素，仅缩小编码，不把放大图称作高分原件。",
+        "requestedSpecification": "targetSpec保留T16建议；当前实际尺寸见dimensions与父原稿。"
+      }
     },
     {
       "id": "portrait-shen",
       "category": "portrait",
-      "sourceType": "planned_project_production",
-      "originalHash": null,
+      "sourceType": "webp_derivative",
+      "originalHash": "d6a236262a00a2f2656a425a1b9aed7f36cf8cf9f11478ba7574f3c65795a641",
       "sourceReference": [
-        "docs/decisions/0001-approved-baseline.md",
-        "docs/v0.4/05-art-ux.md",
-        "art/PRODUCTION_BRIEF.md"
+        "art/production/portraits/shen.png",
+        "art/production/receipts/shen.json",
+        "art/tools/export_production.py",
+        "art/production/README.md"
       ],
       "purpose": "沈清禾：破庙伤者/药修",
-      "exportedPath": null,
-      "dimensions": null,
-      "bytes": null,
-      "sha256": null,
-      "format": null,
-      "alpha": null,
-      "status": "planned",
-      "availability": "not_produced",
+      "exportedPath": "web/public/art/portraits/shen.webp",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "bytes": 63360,
+      "sha256": "7fb1e08bec233fa3ba11f8f56dd645e3772738e80946990ddb0eb8f97b08ba52",
+      "format": "webp",
+      "alpha": true,
+      "status": "production",
+      "availability": "repo_file",
       "rights": {
-        "intendedUse": "future_internal_project_asset",
-        "productionUseApproved": false,
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
         "distributionLicense": null,
         "evidenceReferences": [
-          "docs/decisions/0001-approved-baseline.md",
-          "art/PROVENANCE.md"
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/shen.json"
         ],
-        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
       },
       "targetSpec": {
         "master": {
@@ -604,36 +670,48 @@
         "name": "沈清禾",
         "sourceRole": "破庙伤者/药修"
       },
-      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认",
+      "parentId": "portrait-shen-master",
+      "exportNotes": {
+        "encoding": "cwebp -q 84 -m 6 -resize 512 512 -metadata none",
+        "resolutionDecision": "记录工具实际像素，仅缩小编码，不把放大图称作高分原件。",
+        "requestedSpecification": "targetSpec保留T16建议；当前实际尺寸见dimensions与父原稿。"
+      }
     },
     {
       "id": "portrait-lu",
       "category": "portrait",
-      "sourceType": "planned_project_production",
-      "originalHash": null,
+      "sourceType": "webp_derivative",
+      "originalHash": "5e570cd3748273864263e52b01ee11144972cff7874c9ff845d7b81d94ae5a6a",
       "sourceReference": [
-        "docs/decisions/0001-approved-baseline.md",
-        "docs/v0.4/05-art-ux.md",
-        "art/PRODUCTION_BRIEF.md"
+        "art/production/portraits/lu.png",
+        "art/production/receipts/lu.json",
+        "art/tools/export_production.py",
+        "art/production/README.md"
       ],
       "purpose": "陆玄松：宗门引路人",
-      "exportedPath": null,
-      "dimensions": null,
-      "bytes": null,
-      "sha256": null,
-      "format": null,
-      "alpha": null,
-      "status": "planned",
-      "availability": "not_produced",
+      "exportedPath": "web/public/art/portraits/lu.webp",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "bytes": 60432,
+      "sha256": "f3205ef5fc424896898efe8dca19e8871762636c7bb82c7136eea44fd638dff4",
+      "format": "webp",
+      "alpha": true,
+      "status": "production",
+      "availability": "repo_file",
       "rights": {
-        "intendedUse": "future_internal_project_asset",
-        "productionUseApproved": false,
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
         "distributionLicense": null,
         "evidenceReferences": [
-          "docs/decisions/0001-approved-baseline.md",
-          "art/PROVENANCE.md"
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/lu.json"
         ],
-        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
       },
       "targetSpec": {
         "master": {
@@ -659,36 +737,48 @@
         "name": "陆玄松",
         "sourceRole": "宗门引路人"
       },
-      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认",
+      "parentId": "portrait-lu-master",
+      "exportNotes": {
+        "encoding": "cwebp -q 84 -m 6 -resize 512 512 -metadata none",
+        "resolutionDecision": "记录工具实际像素，仅缩小编码，不把放大图称作高分原件。",
+        "requestedSpecification": "targetSpec保留T16建议；当前实际尺寸见dimensions与父原稿。"
+      }
     },
     {
       "id": "portrait-pei",
       "category": "portrait",
-      "sourceType": "planned_project_production",
-      "originalHash": null,
+      "sourceType": "webp_derivative",
+      "originalHash": "22583181d159d49dded331cf3af296b956172bdc9c89c28d96516c0892f2d98f",
       "sourceReference": [
-        "docs/decisions/0001-approved-baseline.md",
-        "docs/v0.4/05-art-ux.md",
-        "art/PRODUCTION_BRIEF.md"
+        "art/production/portraits/pei.png",
+        "art/production/receipts/pei.json",
+        "art/tools/export_production.py",
+        "art/production/README.md"
       ],
       "purpose": "裴照：同辈竞争者",
-      "exportedPath": null,
-      "dimensions": null,
-      "bytes": null,
-      "sha256": null,
-      "format": null,
-      "alpha": null,
-      "status": "planned",
-      "availability": "not_produced",
+      "exportedPath": "web/public/art/portraits/pei.webp",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "bytes": 65460,
+      "sha256": "0a1b64def5cd7200a291af8b98790d07048c190318bd4efbee1081bd6c284ad8",
+      "format": "webp",
+      "alpha": true,
+      "status": "production",
+      "availability": "repo_file",
       "rights": {
-        "intendedUse": "future_internal_project_asset",
-        "productionUseApproved": false,
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
         "distributionLicense": null,
         "evidenceReferences": [
-          "docs/decisions/0001-approved-baseline.md",
-          "art/PROVENANCE.md"
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/pei.json"
         ],
-        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
       },
       "targetSpec": {
         "master": {
@@ -714,36 +804,48 @@
         "name": "裴照",
         "sourceRole": "同辈竞争者"
       },
-      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认",
+      "parentId": "portrait-pei-master",
+      "exportNotes": {
+        "encoding": "cwebp -q 84 -m 6 -resize 512 512 -metadata none",
+        "resolutionDecision": "记录工具实际像素，仅缩小编码，不把放大图称作高分原件。",
+        "requestedSpecification": "targetSpec保留T16建议；当前实际尺寸见dimensions与父原稿。"
+      }
     },
     {
       "id": "portrait-yan",
       "category": "portrait",
-      "sourceType": "planned_project_production",
-      "originalHash": null,
+      "sourceType": "webp_derivative",
+      "originalHash": "1a62092be290d65e9b5faa1c674d90d7e50e92f1829a3a848e41f98689813dca",
       "sourceReference": [
-        "docs/decisions/0001-approved-baseline.md",
-        "docs/v0.4/05-art-ux.md",
-        "art/PRODUCTION_BRIEF.md"
+        "art/production/portraits/yan.png",
+        "art/production/receipts/yan.json",
+        "art/tools/export_production.py",
+        "art/production/README.md"
       ],
       "purpose": "砚尘：秘境守碑人",
-      "exportedPath": null,
-      "dimensions": null,
-      "bytes": null,
-      "sha256": null,
-      "format": null,
-      "alpha": null,
-      "status": "planned",
-      "availability": "not_produced",
+      "exportedPath": "web/public/art/portraits/yan.webp",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "bytes": 62270,
+      "sha256": "0f68e57915cfa22ef10a88699171ab5aca3889d9e66f1d6d0c8d087f7a04bc52",
+      "format": "webp",
+      "alpha": true,
+      "status": "production",
+      "availability": "repo_file",
       "rights": {
-        "intendedUse": "future_internal_project_asset",
-        "productionUseApproved": false,
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
         "distributionLicense": null,
         "evidenceReferences": [
-          "docs/decisions/0001-approved-baseline.md",
-          "art/PROVENANCE.md"
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/yan.json"
         ],
-        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
       },
       "targetSpec": {
         "master": {
@@ -769,36 +871,46 @@
         "name": "砚尘",
         "sourceRole": "秘境守碑人"
       },
-      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认",
+      "parentId": "portrait-yan-master",
+      "exportNotes": {
+        "encoding": "cwebp -q 84 -m 6 -resize 512 512 -metadata none",
+        "resolutionDecision": "记录工具实际像素，仅缩小编码，不把放大图称作高分原件。",
+        "requestedSpecification": "targetSpec保留T16建议；当前实际尺寸见dimensions与父原稿。"
+      }
     },
     {
       "id": "native-ui-kit",
       "category": "ui_kit",
-      "sourceType": "planned_project_production",
-      "originalHash": null,
+      "sourceType": "project_authored_native",
+      "originalHash": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee",
       "sourceReference": [
-        "docs/decisions/0001-approved-baseline.md",
-        "docs/v0.4/05-art-ux.md",
-        "art/PRODUCTION_BRIEF.md"
+        "art/production/README.md",
+        "art/tools/build_native_ui.py",
+        "web/src/ui-icons.ts"
       ],
       "purpose": "一套一致的物品/功法/法宝/导航图标、面板与边角",
-      "exportedPath": null,
-      "dimensions": null,
-      "bytes": null,
-      "sha256": null,
-      "format": null,
-      "alpha": null,
-      "status": "planned",
-      "availability": "not_produced",
+      "exportedPath": "web/public/art/ui-kit.svg",
+      "dimensions": {
+        "width": 24,
+        "height": 24
+      },
+      "bytes": 9046,
+      "sha256": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee",
+      "format": "svg",
+      "alpha": true,
+      "status": "production",
+      "availability": "repo_file",
       "rights": {
-        "intendedUse": "future_internal_project_asset",
-        "productionUseApproved": false,
+        "intendedUse": "user_authorized_project_native_code",
+        "productionUseApproved": true,
         "distributionLicense": null,
         "evidenceReferences": [
-          "docs/decisions/0001-approved-baseline.md",
-          "art/PROVENANCE.md"
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md"
         ],
-        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+        "note": "本项目独立编写，未引入第三方素材；不新增独立发行许可。"
       },
       "targetSpec": {
         "rendering": "DOM/CSS/SVG优先，不需字体文件或从预览切片",
@@ -867,36 +979,59 @@
           "导出"
         ]
       },
-      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认",
+      "codeComponents": [
+        {
+          "path": "web/src/GameIcon.vue",
+          "bytes": 655,
+          "sha256": "bb3f16dcb5952299de409a6666e55901e044bb4890cf8e2ddb720f0122d3d061"
+        },
+        {
+          "path": "web/src/ui-icons.ts",
+          "bytes": 1551,
+          "sha256": "9691c0395014863388fd6c9c9d0529a66504a78cd95597c374cf387eaa7fdbf4"
+        },
+        {
+          "path": "web/src/style.css",
+          "bytes": 17179,
+          "sha256": "a10192e7e1ba332f0fa56d454fba52d76be6e27dc4d9cbb882f1e4284a2a205b"
+        },
+        {
+          "path": "web/src/shell.css",
+          "bytes": 8895,
+          "sha256": "ef5bedf0d315b2505a0c1535beb53e7b90d22387a19f10eb1bdb39c322140b6f"
+        }
+      ]
     },
     {
       "id": "native-fx-kit",
       "category": "fx_kit",
-      "sourceType": "planned_project_production",
-      "originalHash": null,
+      "sourceType": "project_authored_native",
+      "originalHash": "c7f3b0020e33d1e7966c82d7bc68d3dc9f0ae80b8bae9081e50a0e55743486a6",
       "sourceReference": [
-        "docs/decisions/0001-approved-baseline.md",
-        "docs/v0.4/05-art-ux.md",
-        "art/PRODUCTION_BRIEF.md"
+        "art/production/README.md",
+        "web/src/effects.ts",
+        "web/src/App.vue"
       ],
       "purpose": "四组可跳过/降低动效反馈",
-      "exportedPath": null,
+      "exportedPath": "web/src/ActionEffects.vue",
       "dimensions": null,
-      "bytes": null,
-      "sha256": null,
-      "format": null,
+      "bytes": 3588,
+      "sha256": "c7f3b0020e33d1e7966c82d7bc68d3dc9f0ae80b8bae9081e50a0e55743486a6",
+      "format": "vue",
       "alpha": null,
-      "status": "planned",
-      "availability": "not_produced",
+      "status": "production",
+      "availability": "code_native",
       "rights": {
-        "intendedUse": "future_internal_project_asset",
-        "productionUseApproved": false,
+        "intendedUse": "user_authorized_project_native_code",
+        "productionUseApproved": true,
         "distributionLicense": null,
         "evidenceReferences": [
-          "docs/decisions/0001-approved-baseline.md",
-          "art/PROVENANCE.md"
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md"
         ],
-        "note": "项目参照认可有记录；没有据此新增开源或发行许可。"
+        "note": "本项目独立编写，未引入第三方素材；不新增独立发行许可。"
       },
       "targetSpec": {
         "rendering": "DOM/CSS/SVG短反馈，不做持续粒子/视频",
@@ -912,7 +1047,403 @@
           "渡劫"
         ]
       },
-      "owner": "T18；T17接线，T20测预算，T25用户视觉确认"
+      "owner": "T18；T17接线，T20测预算，T25用户视觉确认",
+      "codeComponents": [
+        {
+          "path": "web/src/effects.ts",
+          "bytes": 1807,
+          "sha256": "03b6daa4cde24a2127d4fd20c42367a32a162996456bb7c32c82d7f4af3bc981"
+        },
+        {
+          "path": "web/src/ScenePanel.vue",
+          "bytes": 8504,
+          "sha256": "79baae70c7bf1b49e05f5a635f800014bb0b07519bf4eef74d5bf0fafb8ef141"
+        },
+        {
+          "path": "web/src/AssetImage.vue",
+          "bytes": 1865,
+          "sha256": "ecfc476d074c16c14b181abbf62863ebc6d5c014d9473d3118e761433115a8da"
+        },
+        {
+          "path": "web/src/assets.ts",
+          "bytes": 1724,
+          "sha256": "0c836c2c877f53b40b4a6ca231c656b6da1facbbdec78daa1f052d937513868c"
+        }
+      ]
+    },
+    {
+      "inputAssets": [],
+      "id": "scene-wilderness-master",
+      "category": "scene_master",
+      "sourceType": "built_in_image_gen",
+      "originalHash": "b0334ce39ae5aa0b922908d182ce85e2c3b09097b4407d90de1542d7546de5f9",
+      "sourceReference": [
+        "art/production/receipts/wilderness.json",
+        "art/production/receipts/prompts.json",
+        "art/production/README.md"
+      ],
+      "purpose": "山野雨夜 原生生成原稿（非历史原件）",
+      "status": "production",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/wilderness.json"
+        ],
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
+      },
+      "generationReceipt": "art/production/receipts/wilderness.json",
+      "exportedPath": "art/production/scenes/wilderness.png",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "bytes": 3095096,
+      "sha256": "b0334ce39ae5aa0b922908d182ce85e2c3b09097b4407d90de1542d7546de5f9",
+      "format": "png",
+      "alpha": false
+    },
+    {
+      "inputAssets": [],
+      "id": "scene-settlement-master",
+      "category": "scene_master",
+      "sourceType": "built_in_image_gen",
+      "originalHash": "5c3e4d9f1e713f7c22e7fddb66ba788737d7e75b53c521f182354caf0a866bc7",
+      "sourceReference": [
+        "art/production/receipts/settlement.json",
+        "art/production/receipts/prompts.json",
+        "art/production/README.md"
+      ],
+      "purpose": "云山聚落 原生生成原稿（非历史原件）",
+      "status": "production",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/settlement.json"
+        ],
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
+      },
+      "generationReceipt": "art/production/receipts/settlement.json",
+      "exportedPath": "art/production/scenes/settlement.png",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "bytes": 3048163,
+      "sha256": "5c3e4d9f1e713f7c22e7fddb66ba788737d7e75b53c521f182354caf0a866bc7",
+      "format": "png",
+      "alpha": false
+    },
+    {
+      "inputAssets": [],
+      "id": "scene-secret-master",
+      "category": "scene_master",
+      "sourceType": "built_in_image_gen",
+      "originalHash": "c3921f48e2d87a9b3a6c1db7c1ccbee5aeb337f11a8ce030985786378be0c934",
+      "sourceReference": [
+        "art/production/receipts/secret.json",
+        "art/production/receipts/prompts.json",
+        "art/production/README.md"
+      ],
+      "purpose": "古境遗迹 原生生成原稿（非历史原件）",
+      "status": "production",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/secret.json"
+        ],
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
+      },
+      "generationReceipt": "art/production/receipts/secret.json",
+      "exportedPath": "art/production/scenes/secret.png",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "bytes": 3210139,
+      "sha256": "c3921f48e2d87a9b3a6c1db7c1ccbee5aeb337f11a8ce030985786378be0c934",
+      "format": "png",
+      "alpha": false
+    },
+    {
+      "inputAssets": [
+        {
+          "id": "scene-terrace-base-input",
+          "path": "art/production/scenes/terrace-closed.png",
+          "sha256": "115e3997cc4d6d69cb5e56f66c48a44ad7ec7d649bd7d0397c30670a200f521e",
+          "role": "edit-target"
+        }
+      ],
+      "id": "scene-terrace-master",
+      "category": "scene_master",
+      "sourceType": "built_in_image_gen",
+      "originalHash": "7404105d35ece7a45ee080a1b37385d712c4066cd78729d907ae513e591d184d",
+      "sourceReference": [
+        "art/production/receipts/terrace-v2.json",
+        "art/production/receipts/prompts.json",
+        "art/production/README.md"
+      ],
+      "purpose": "登仙台/雷劫天门 原生生成原稿（非历史原件）",
+      "status": "production",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/terrace-v2.json"
+        ],
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
+      },
+      "generationReceipt": "art/production/receipts/terrace-v2.json",
+      "exportedPath": "art/production/scenes/terrace-v2.png",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "bytes": 2548246,
+      "sha256": "7404105d35ece7a45ee080a1b37385d712c4066cd78729d907ae513e591d184d",
+      "format": "png",
+      "alpha": false
+    },
+    {
+      "inputAssets": [],
+      "id": "portrait-player-master",
+      "category": "portrait_master",
+      "sourceType": "built_in_image_gen",
+      "originalHash": "daec5e6347a757ca9a52077bb1fb96b32c03eb4abebc6bb549176b78f3f83cf2",
+      "sourceReference": [
+        "art/production/receipts/player.json",
+        "art/production/receipts/prompts.json",
+        "art/production/README.md"
+      ],
+      "purpose": "玩家：固定主角肖像，不做捏脸；外形不锁死剑/符修法 原生生成原稿（非历史原件）",
+      "status": "production",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/player.json"
+        ],
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
+      },
+      "generationReceipt": "art/production/receipts/player.json",
+      "exportedPath": "art/production/portraits/player.png",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "bytes": 2366521,
+      "sha256": "daec5e6347a757ca9a52077bb1fb96b32c03eb4abebc6bb549176b78f3f83cf2",
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "inputAssets": [],
+      "id": "portrait-shen-master",
+      "category": "portrait_master",
+      "sourceType": "built_in_image_gen",
+      "originalHash": "d6a236262a00a2f2656a425a1b9aed7f36cf8cf9f11478ba7574f3c65795a641",
+      "sourceReference": [
+        "art/production/receipts/shen.json",
+        "art/production/receipts/prompts.json",
+        "art/production/README.md"
+      ],
+      "purpose": "沈清禾：破庙伤者/药修 原生生成原稿（非历史原件）",
+      "status": "production",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/shen.json"
+        ],
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
+      },
+      "generationReceipt": "art/production/receipts/shen.json",
+      "exportedPath": "art/production/portraits/shen.png",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "bytes": 2048820,
+      "sha256": "d6a236262a00a2f2656a425a1b9aed7f36cf8cf9f11478ba7574f3c65795a641",
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "inputAssets": [],
+      "id": "portrait-lu-master",
+      "category": "portrait_master",
+      "sourceType": "built_in_image_gen",
+      "originalHash": "5e570cd3748273864263e52b01ee11144972cff7874c9ff845d7b81d94ae5a6a",
+      "sourceReference": [
+        "art/production/receipts/lu.json",
+        "art/production/receipts/prompts.json",
+        "art/production/README.md"
+      ],
+      "purpose": "陆玄松：宗门引路人 原生生成原稿（非历史原件）",
+      "status": "production",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/lu.json"
+        ],
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
+      },
+      "generationReceipt": "art/production/receipts/lu.json",
+      "exportedPath": "art/production/portraits/lu.png",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "bytes": 2175758,
+      "sha256": "5e570cd3748273864263e52b01ee11144972cff7874c9ff845d7b81d94ae5a6a",
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "inputAssets": [],
+      "id": "portrait-pei-master",
+      "category": "portrait_master",
+      "sourceType": "built_in_image_gen",
+      "originalHash": "22583181d159d49dded331cf3af296b956172bdc9c89c28d96516c0892f2d98f",
+      "sourceReference": [
+        "art/production/receipts/pei.json",
+        "art/production/receipts/prompts.json",
+        "art/production/README.md"
+      ],
+      "purpose": "裴照：同辈竞争者 原生生成原稿（非历史原件）",
+      "status": "production",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/pei.json"
+        ],
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
+      },
+      "generationReceipt": "art/production/receipts/pei.json",
+      "exportedPath": "art/production/portraits/pei.png",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "bytes": 2255206,
+      "sha256": "22583181d159d49dded331cf3af296b956172bdc9c89c28d96516c0892f2d98f",
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "inputAssets": [],
+      "id": "portrait-yan-master",
+      "category": "portrait_master",
+      "sourceType": "built_in_image_gen",
+      "originalHash": "1a62092be290d65e9b5faa1c674d90d7e50e92f1829a3a848e41f98689813dca",
+      "sourceReference": [
+        "art/production/receipts/yan.json",
+        "art/production/receipts/prompts.json",
+        "art/production/README.md"
+      ],
+      "purpose": "砚尘：秘境守碑人 原生生成原稿（非历史原件）",
+      "status": "production",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/yan.json"
+        ],
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
+      },
+      "generationReceipt": "art/production/receipts/yan.json",
+      "exportedPath": "art/production/portraits/yan.png",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "bytes": 2488063,
+      "sha256": "1a62092be290d65e9b5faa1c674d90d7e50e92f1829a3a848e41f98689813dca",
+      "format": "png",
+      "alpha": true
+    },
+    {
+      "id": "scene-terrace-base-input",
+      "category": "production_edit_input",
+      "sourceType": "built_in_image_gen_edit_input",
+      "originalHash": "115e3997cc4d6d69cb5e56f66c48a44ad7ec7d649bd7d0397c30670a200f521e",
+      "sourceReference": [
+        "art/production/receipts/terrace.json",
+        "art/production/README.md"
+      ],
+      "purpose": "登仙台编辑输入云台原稿；非额外活动母版或运行场景",
+      "status": "reference",
+      "availability": "repo_file",
+      "rights": {
+        "intendedUse": "user_authorized_project_production",
+        "productionUseApproved": true,
+        "distributionLicense": null,
+        "evidenceReferences": [
+          "goal-1/input.md",
+          "goal-1/plan.md",
+          "art/production/README.md",
+          "art/production/receipts/terrace-v2.json"
+        ],
+        "note": "项目目标内制作使用有据；不是独立开放或发行许可，也不是法律权属结论。"
+      },
+      "exportedPath": "art/production/scenes/terrace-closed.png",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "bytes": 2717108,
+      "sha256": "115e3997cc4d6d69cb5e56f66c48a44ad7ec7d649bd7d0397c30670a200f521e",
+      "format": "png",
+      "alpha": false
     }
   ],
   "openGaps": [
@@ -923,13 +1454,13 @@
     },
     {
       "id": "ART-02",
-      "fact": "历史scene.webp仍是带字/已开天门的320预览副本，T17起不再加载；无字生产图仍待制作。",
-      "owner": "T18无字生产图"
+      "fact": "T18已独立生成并接入无字生产图；旧320副本不加载，CHECK-06结果独立记录。",
+      "owner": "T20实际性能；T25最终展示认可"
     },
     {
       "id": "ART-03",
-      "fact": "T17已用真实地点/阶段区分六地点与天门closed/storm/opened；当前原生呈现，T18仍待绑定无字生产图。",
-      "owner": "T18生产资源绑定",
+      "fact": "六地点/四活动母版与闭合/雷光/开启已由真实状态接线；登仙台中式母版含有据编辑与源像素绑定。",
+      "owner": "CHECK-06技术回归；T19完整响应式",
       "evidenceReferences": [
         "web/src/scene-presentation.ts",
         "web/src/ScenePanel.vue",
@@ -939,13 +1470,20 @@
     },
     {
       "id": "ART-04",
-      "fact": "五肖像与统一图标/面板/动效套件尚无生产文件。",
-      "owner": "T17原生组件，T18素材与降级"
+      "fact": "五肖像与40原生符号/四组回执表现已制作接入，坏图回退原生；不是T25用户认可。",
+      "owner": "CHECK-06；T19/T20与T25"
     },
     {
       "id": "ART-05",
-      "fact": "认可记录支持参照，不是新开源/发行许可；当前无独立授权附件。",
-      "owner": "T18逐资产来源证据，T23打包清单"
+      "fact": "本轮目标内制作/使用与逐资产工具来源有据；没有据此新增独立开放或发行许可。",
+      "owner": "T23来源清单；如需发行许可另行核实"
     }
-  ]
+  ],
+  "productionUpdate": {
+    "task": "T18",
+    "date": "2026-10-17",
+    "baseCommit": "6826f00bd0a8c87364b0f8909395388a2946a1aa",
+    "sources": "built-in image_gen, nine selected outputs plus one retained terrace edit input; native SVG/Vue/CSS authored in this repo",
+    "reviewBoundary": "Technical evidence separate from T25 user acceptance; no automatic visual-review promotion."
+  }
 }
