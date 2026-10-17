@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref, shallowRef, watch } from 'vue';
+import { computed, nextTick, onMounted, onScopeDispose, ref, shallowRef, watch } from 'vue';
 import { useGame } from './store';
 import {useFocus} from './focus';
 import * as C from '../../src/full/content.ts';
@@ -36,16 +36,24 @@ import TrialProgressPanel from './TrialProgressPanel.vue';
 import type { AscensionEnding } from '../../src/full/ascension.ts';
 import type { SaveMutation } from './full-persistence';
 import type { CheckpointSummary } from './store';
+import {useLocalExperience} from './use-local-experience';
+import LocalExperiencePanel from './LocalExperiencePanel.vue';
 
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
+const experience=useLocalExperience();let appActive=true;const stopObserving=store.observe(experience.record,experience.fault);onScopeDispose(()=>{appActive=false;stopObserving();});
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
 let navigationRevision = 0;
 function selectTab(next: string) { navigationRevision++; tab.value = next; return navigationRevision; }
 const preparation = shallowRef<Action | null>(null);
-const fontScale = ref(1), reduceMotion = ref(false), settings = ref<HTMLDialogElement>(), exportError = ref('');
+const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settings = ref<HTMLDialogElement>(), exportError = ref('');
 const settingsButton=ref<HTMLButtonElement>(),contentPanel=ref<HTMLElement>(),navHeight=ref(0);
 const focus=useFocus(()=>contentPanel.value??settingsButton.value??null);
-function focusContent(){focus.target(contentPanel.value??document.getElementById('welcome-content'));}
+let pendingContentFocus:{owner:number;opener:Element|null}|null=null;
+function focusContent(){const target=contentPanel.value??document.getElementById('welcome-content');if(target){pendingContentFocus=null;focus.target(target);}else pendingContentFocus={owner:navigationRevision,opener:document.activeElement};}
+function cancelPendingContentFocus(){pendingContentFocus=null;}
+onMounted(()=>{document.addEventListener('pointerdown',cancelPendingContentFocus,true);document.addEventListener('keydown',cancelPendingContentFocus,true);});
+onScopeDispose(()=>{document.removeEventListener('pointerdown',cancelPendingContentFocus,true);document.removeEventListener('keydown',cancelPendingContentFocus,true);pendingContentFocus=null;});
+watch([()=>store.ready,()=>contentPanel.value],async()=>{if(!pendingContentFocus)return;await nextTick();const request=pendingContentFocus,target=contentPanel.value??document.getElementById('welcome-content');if(!request||!target)return;pendingContentFocus=null;if(appActive&&request.owner===navigationRevision&&document.activeElement===request.opener)focus.target(target);},{flush:'post'});
 function showSettings(){focus.open(settings.value,settingsButton.value??null);}
 function focusRegion(id:string){focus.target(document.getElementById(id));}
 const game = computed(() => store.game), core = computed(() => game.value?.core);
@@ -59,6 +67,8 @@ const goal = computed(() => game.value ? getBreakthroughGoal(game.value) : null)
 const journey = computed(() => game.value ? getTrialJourney(game.value) : null);
 const overview = computed(() => game.value ? getLifeOverview(game.value) : null);
 const lifeOpen = ref(false), lifeSection = ref<HTMLDetailsElement>(), lifeDialog = ref<HTMLDialogElement>();
+const journalExpanded=ref(false),recentJournal=computed(()=>[...(game.value?.journal??[])].reverse()),visibleJournal=computed(()=>journalExpanded.value?recentJournal.value:recentJournal.value.slice(0,10));
+watch(()=>game.value?.core.runId,()=>journalExpanded.value=false);
 const lifeIntent = shallowRef<{ command: Command; record: LifeRecord } | null>(null);
 const lifeStale = computed(() => !!lifeIntent.value && (!game.value || game.value.core.runId !== lifeIntent.value.command.runId || game.value.core.revision !== lifeIntent.value.command.expectedRevision));
 const context = computed(() => ({ state: game.value, cache: new Map<string, ActionPreview>() }));
@@ -252,7 +262,7 @@ async function retryAscension() {
   await store.retryFor(review.command.commandId); if (!store.error) await showAscendedLife();
 }
 function closeAscension() { if (ascensionIntent.value) store.discardRetryFor(ascensionIntent.value.command.commandId); ascensionIntent.value = null; }
-onMounted(() => store.init());
+onMounted(async() => {await experience.init();if(appActive)await store.init();});
 </script>
 
 <template>
@@ -278,6 +288,7 @@ onMounted(() => store.init());
         <span class="eyebrow">第一章 / 凡心入道</span><h2>从此刻，问道。</h2><label for="name">你的道号</label>
         <input id="name" name="dao-name" spellcheck="false" v-model="name" maxlength="16" required autocomplete="off">
         <p>通过修炼、材料与选择筹备下一步。数值仍在调整，阅读和离线不会消耗寿元。</p>
+        <p class="small">必要试玩记录只保存在本机，不上传、不记录道号；可在设置关闭、清空或知情导出。</p>
         <button class="primary" type="submit" :disabled="store.busy || !store.available">踏入仙途 <span>→</span></button>
         <label class="file-button">导入已有存档<input type="file" name="save-import" accept=".json,application/json" @change="importFile" :disabled="store.busy || !store.available"></label>
       </form>
@@ -355,7 +366,7 @@ onMounted(() => store.init());
           <template v-else>
             <div class="section-label">仙缘</div><button class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><RelationshipPanel :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
             <div class="choices"><button v-for="event in events" :key="event.id" :data-testid="`event-${event.id}`" :class="{highlight:highlight===`event-${event.id}`}" @click="act({type:'EVENT',event:event.id})" :disabled="!can({type:'EVENT',event:event.id})">{{event.name}} · {{event.npc}}</button></div>
-            <h3>近期手记</h3><p class="small">仅保留最近100条；完整已选事实请查看修仙生平。</p><ol class="journal"><li v-for="(line,index) in [...game.journal].reverse()" :key="index">{{line}}</li></ol>
+            <h3>近期手记</h3><p class="small">仅保留最近100条；当前显示{{visibleJournal.length}}条，共{{recentJournal.length}}条。完整已选事实请查看修仙生平。</p><ol id="recent-journal" class="journal"><li v-for="(line,index) in visibleJournal" :key="index">{{line}}</li></ol><button v-if="recentJournal.length>10" type="button" class="text-button" data-testid="journal-toggle" :aria-expanded="journalExpanded" aria-controls="recent-journal" @click="journalExpanded=!journalExpanded">{{journalExpanded?'收起较早条目':`展开全部 ${recentJournal.length} 条近期手记`}}</button>
           </template>
         </section>
         <RelationshipPanel v-if="tab==='仙缘' && phase!=='idle' && phase!=='opening'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
@@ -371,8 +382,8 @@ onMounted(() => store.init());
     </main>
     <PrimaryNav v-if="game && game.status==='active'" :selected="tab" @select="selectTab" @height="navHeight=$event"/>
     <dialog ref="settings" class="paper settings" aria-labelledby="settings-title"><header><h2 id="settings-title" tabindex="-1" data-dialog-initial>行旅设置</h2><button @click="settings?.close()" aria-label="关闭设置"><GameIcon kind="action" id="close"/><span>关闭</span></button></header>
-      <p>进度仅保存在当前浏览器。导出备份可用于迁移；清理浏览器数据可能丢失进度。</p><label class="setting-row"><span>文字大小</span><select name="text-size" v-model.number="fontScale"><option :value="1">100%</option><option :value="1.5">150%</option><option :value="2">200%</option></select></label>
-      <label class="setting-row"><span>减少演出动效</span><input type="checkbox" v-model="reduceMotion" data-testid="reduce-effects"></label>
+      <p>进度仅保存在当前浏览器。导出备份可用于迁移；清理浏览器数据可能丢失进度。</p><label class="setting-row"><span>文字大小</span><select name="text-size" v-model.number="fontScale" :disabled="experience.busy.value||!experience.ready.value"><option :value="1">100%</option><option :value="1.5">150%</option><option :value="2">200%</option></select></label>
+      <label class="setting-row"><span>减少演出动效</span><input type="checkbox" v-model="reduceMotion" data-testid="reduce-effects" :disabled="experience.busy.value||!experience.ready.value"></label>
       <p class="small" role="status" data-testid="settings-save-status">{{store.saveLabel}}</p><p v-if="store.error||exportError" class="settings-error" role="alert" data-testid="settings-error">{{store.error||exportError}}</p>
       <label class="file-button">导入存档<input data-testid="import" name="save-import" type="file" accept=".json,application/json" @change="importFile" :disabled="store.busy || !store.available"></label>
       <button v-if="game" @click="exportSave">导出当前进度</button><button data-testid="raw-backup" @click="exportRaw" :disabled="store.busy">导出原件备份</button>
@@ -380,6 +391,7 @@ onMounted(() => store.init());
       <button v-if="game" data-testid="restore-checkpoint" :aria-describedby="!store.hasCheckpoint?'checkpoint-unavailable':undefined" @click="restore" :disabled="store.busy || !store.available || !store.hasCheckpoint"><GameIcon kind="action" id="restore"/> 恢复完整准备检查点</button>
       <p v-if="game&&!store.hasCheckpoint" id="checkpoint-unavailable" class="small">当前没有已验证的完整准备检查点。</p>
       <button v-if="game" class="danger" data-testid="restart" @click="reset" :disabled="store.busy || !store.available">重新开始</button>
+      <LocalExperiencePanel :experience="experience" :run-id="core?.runId??null" :target="tracking.target.value"/>
     </dialog>
     <dialog ref="lifeDialog" class="paper life-confirm" data-testid="life-confirmation" aria-labelledby="life-confirm-title" @cancel="cancelLife" @close="closeLifeReview">
       <template v-if="lifeIntent">

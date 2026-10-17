@@ -3,7 +3,7 @@ import * as C from './content.ts';
 import { stories } from './events.ts';
 import { buildLifeRecord, lifeOverview, lifeRecordText } from './life-record.ts';
 import { conditionMatches, storyView, relationshipViews, causalAid } from './story-context.ts';
-import { resolve, validateCommand, validateGame, stats } from './engine.ts';
+import { resolve, previewResolution, validateCommand, validateGame, stats } from './engine.ts';
 import { RuleError, fail } from './errors.ts';
 import { costsForAction, multiplyCosts, requirementsForAction, remainingMonths } from './costs.ts';
 import type { ActionRequirements } from './costs.ts';
@@ -23,19 +23,19 @@ export interface ActionPreview {
   requestedSteps: number; executedSteps: number; stopReason: RuleFailure | null;
 }
 export function previewAction(game: Game, action: Action): ActionPreview {
-  validateGame(game);
-  const command = previewCommand(game, action);
+  const attempt=previewResolution(game,action),command=attempt.command;
   let requirements: ActionRequirements = {}, costs: ActionCosts | null = null;
   let requestedSteps = 0;
   try {
-    const resolved = resolve(game, command);
+    if(!attempt.ok)throw attempt.error;
+    const resolved = attempt.value;
     requirements = requirementsForAction(game, action);
     costs = costsForAction(game, action);
     requestedSteps = resolved.result.requestedSteps;
     return { action: structuredClone(action), allowed: true, failure: null, requirements, costs,
       maximumCosts: multiplyCosts(costs, requestedSteps), actualCosts: resolved.result.costs,
       delta: resolved.result.delta, requestedSteps, executedSteps: resolved.result.executedSteps,
-      deficits: costDeficits(game, costs, requirements, action.type === 'END_LIFE'),
+      deficits: deficitsForValidGame(game, costs, requirements, action.type === 'END_LIFE'),
       stopReason: resolved.result.stopReason };
   } catch (error) {
     if (!(error instanceof RuleError)) throw error;
@@ -51,7 +51,7 @@ export function previewAction(game: Game, action: Action): ActionPreview {
     }
     return { action: structuredClone(action), allowed: false, failure: { code: error.code, message: error.message },
       requirements, costs, maximumCosts: costs ? multiplyCosts(costs, requestedSteps) : null,
-      actualCosts: null, delta: null, deficits: costs ? costDeficits(game, costs, requirements, action.type === 'END_LIFE') : [],
+      actualCosts: null, delta: null, deficits: costs ? deficitsForValidGame(game, costs, requirements, action.type === 'END_LIFE') : [],
       requestedSteps, executedSteps: 0, stopReason: null };
   }
 }
@@ -61,6 +61,9 @@ export interface ResourceDeficit {
 }
 export function costDeficits(game: Game, costs: ActionCosts, requirements: ActionRequirements = {}, endingLife = false): ResourceDeficit[] {
   validateGame(game);
+  return deficitsForValidGame(game,costs,requirements,endingLife);
+}
+function deficitsForValidGame(game:Game,costs:ActionCosts,requirements:ActionRequirements,endingLife:boolean):ResourceDeficit[]{
   const deficits: ResourceDeficit[] = [];
   const add = (kind: ResourceDeficit['kind'], required: number, have: number, id?: string) => {
     const missing = Math.max(0, required - have);

@@ -1,6 +1,7 @@
 import * as C from './content.ts';
 import { stories } from './events.ts';
-import { resolve, validateGame } from './engine.ts';
+import { resolve, validateGame, validateCommand } from './engine.ts';
+import {costsForAction} from './costs.ts';
 import { fail, RuleError } from './errors.ts';
 import { costDeficits, getActionResources, getBreakthroughGoal, getItemSources, previewAction } from './queries.ts';
 import type { Action, Game } from './types.ts';
@@ -88,8 +89,15 @@ export function createConsumptionPreview(game: Game, target: TrackingTarget, pre
   return (action: Action) => {
     const key = JSON.stringify(action);
     if (!cache.has(key)) {
-      const tracked = key !== trackedAction && Object.keys(goal.requiredItems).length ? consumptionDeficits(state, goal.requiredItems, action) : [];
-      const prepared = key !== preparedAction && Object.keys(preparedItems).length ? consumptionDeficits(state, preparedItems, action) : [];
+      let spent:Record<string,number>={};
+      if(Object.keys(goal.requiredItems).length||Object.keys(preparedItems).length){
+        try{validateCommand({...action,commandId:'consumption-metadata',runId:state.core.runId,expectedRevision:state.core.revision});spent=costsForAction(state,action).items;}
+        catch(error){if(!(error instanceof RuleError))throw error;cache.set(key,[]);return [];}
+      }
+      // Shared rule costs identify impossible inventory losses; relevant actions still use the full resolver.
+      const intersects=(items:Record<string,number>)=>Object.keys(items).some(id=>items[id]>0&&(spent[id]??0)>0);
+      const tracked = key !== trackedAction && intersects(goal.requiredItems) ? consumptionDeficits(state, goal.requiredItems, action) : [];
+      const prepared = key !== preparedAction && intersects(preparedItems) ? consumptionDeficits(state, preparedItems, action) : [];
       cache.set(key, [...tracked, ...prepared].filter((gap, index, all) => all.findIndex(other => other.id === gap.id) === index));
     }
     return structuredClone(cache.get(key)!);

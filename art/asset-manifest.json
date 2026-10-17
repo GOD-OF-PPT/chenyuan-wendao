@@ -1005,6 +1005,11 @@
           "path": "web/src/focus.ts",
           "bytes": 4833,
           "sha256": "682ff9d38cc9ef877d8e3708efefe1db8e2c4e0172f3278c0f42f82b204bf269"
+        },
+        {
+          "path": "web/src/LocalExperiencePanel.vue",
+          "bytes": 8360,
+          "sha256": "8a75359c38313c349146fd8cbb57d2ef16e295cbd7a7c0806741add452b994a9"
         }
       ]
     },

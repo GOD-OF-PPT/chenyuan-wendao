@@ -196,7 +196,15 @@ function one(g:Game,a:Action){
 }
 /** Deterministic command resolution. It never reads clocks, DOM, storage, or random APIs. */
 export function resolve(game:Game,command:Command):Resolution{
- validateGame(game);validateCommand(command);
+ validateGame(game);return resolveValidated(game,command);
+}
+/** A read-only preview validates its input once; no caller can bypass validation. */
+export function previewResolution(game:Game,action:Action):{ok:true;command:Command;value:Resolution}|{ok:false;command:Command;error:RuleError}{
+ validateGame(game);const command:Command={...action,commandId:'preview',runId:game.core.runId,expectedRevision:game.core.revision};
+ try{return{ok:true,command,value:resolveValidated(game,command)};}catch(error){if(error instanceof RuleError)return{ok:false,command,error};throw error;}
+}
+function resolveValidated(game:Game,command:Command):Resolution{
+ validateCommand(command);
  if(command.runId!==game.core.runId)fail('RUN_MISMATCH','已经切换存档，请读取最新进度');
  if(command.expectedRevision!==game.core.revision)fail('STALE_REVISION','另一页面已经推进，请重新读取进度');
  let g=structuredClone(game),steps=0,stopReason:RuleFailure|null=null,unitCosts:ActionCosts|undefined;
