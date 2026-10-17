@@ -74,7 +74,7 @@ watch(() => game.value?.core.player.realm, () => { if (tracking.target.value.kin
 const realm = computed(() => C.realms[core.value?.player.realm ?? 'mortal']);
 const location = computed(() => C.locations[core.value?.world.location ?? 'wilderness']);
 const phase = computed(() => game.value ? gamePhase(game.value) : null);
-const inspectingPending=computed(()=>game.value?.status==='active'&&phase.value!=='idle'&&['行囊','仙缘'].includes(tab.value));
+const inspectingInventory=computed(()=>game.value?.status==='active'&&phase.value!=='idle'&&tab.value==='行囊');
 async function resumeEncounter(){selectTab('修行');await nextTick();focusContent();}
 const gameplayHelp=ref<HTMLDialogElement>(),guidanceEnabled=ref(true),skippedGuides=ref<string[]>([]);
 const guidance=computed(()=>guidanceFor(game.value,store.lastReplayed?null:store.lastResult));
@@ -335,8 +335,8 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
         <TrialProgressPanel v-if="journey || store.trialRecovery" :journey="journey" :recovery="store.trialRecovery" :checkpoint="store.checkpointSummary" :enabled="store.available && !store.busy" @restore="requestTrialRestore" @export="exportSave" @prepare="showTrialPreparation"/>
         <section ref="contentPanel" id="game-content" tabindex="-1" aria-label="当前内容" class="paper content-panel">
           <GuidancePanel v-if="guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipGuidance" @help="showGameplayHelp"/>
-          <section v-if="inspectingPending" class="pending-inspection" data-testid="pending-inspection"><h3>当前遭遇待继续</h3><p>查看不会消耗游戏月，也不会改变当前事件、敌方意图或回合。物品使用、旅行与换装仍受当前遭遇限制。</p><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></section>
-          <template v-if="phase === 'opening' && !inspectingPending">
+          <section v-if="inspectingInventory" class="pending-inspection" data-testid="pending-inspection"><h3>当前遭遇待继续</h3><p>查看不会消耗游戏月，也不会改变当前事件、敌方意图或回合。物品使用、旅行与换装仍受当前遭遇限制。</p><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></section>
+          <template v-if="phase === 'opening' && !inspectingInventory">
             <div class="section-label">当前遭遇 <span>壹 · 破庙</span></div><div class="encounter-speaker"><PortraitImage class="speaker-portrait" id="shen" fallback="沈"/><span>沈清禾 · 药修</span></div><h2>一丹，一念。</h2>
             <p class="story">山雨将歇，青衣药修沈清禾向你求药，而你的行囊中只剩一枚回春丹。庙柱上的引气之法人人可习，要不要介入这段因果，由你决定。</p>
             <p class="small">惊鸿剑简用于剑修终结术法，伤害 +{{C.swordManual.damageBonus}}；三种开场均可在筑基后到青云宗付费研读同简。</p>
@@ -346,16 +346,16 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
               </button>
             </div>
           </template>
-          <template v-else-if="phase === 'trial-question' && journey && !inspectingPending">
+          <template v-else-if="phase === 'trial-question' && journey && !inspectingInventory">
             <div class="section-label">渡劫 · 问心</div><h2>你愿如何面对来路？</h2><p class="story" data-testid="trial-question-memory">{{journey.openingMemory}}</p><p class="story">接纳旧我，稳住心神；或放下旧念，以进攻开路。两条道路皆可向前，不另判善恶成败。</p>
             <details class="trial-memories"><summary>回望已记录的选择</summary><p v-for="memory in journey.memories" :key="memory.id" class="small">{{memory.person}} · {{memory.title}}：{{memory.text}}</p></details>
             <div class="choices two"><button v-for="answer in journey.answers" :key="answer.id" :data-testid="`answer-${answer.id}`" @click="act({type:'ANSWER_TRIAL',answer:answer.id})" :disabled="!can({type:'ANSWER_TRIAL',answer:answer.id})"><strong>{{answer.label}} · {{answer.id==='accept'?'承受更稳':'进攻更强'}}</strong><small>{{answer.record}}</small><small>{{answer.preview.failure?.message}}</small></button></div>
           </template>
-          <template v-else-if="activeStory && !inspectingPending">
+          <template v-else-if="activeStory && !inspectingInventory">
             <div class="section-label">当前遭遇 · {{activeStory.npc}}</div><div class="encounter-speaker"><PortraitImage class="speaker-portrait" :id="NPC_PORTRAITS[activeStory.npc]??''" :fallback="activeStory.npc.slice(0,1)"/><span>{{activeStory.npc}}</span></div><h2 data-testid="event-title">{{activeStory.name}}</h2><p class="story" data-testid="event-body">{{activeStory.body}}</p>
             <div class="choices"><button v-for="option in activeStory.options" :key="option.id" :data-testid="`decide-${option.id}`" @click="act({type:'DECIDE',option:option.id})" :disabled="!can({type:'DECIDE',option:option.id})"><strong>{{option.label}}</strong><small>{{option.detail}}</small><small>{{cost({type:'DECIDE',option:option.id})}}</small><small>{{why({type:'DECIDE',option:option.id})}}</small><small>{{consumption({type:'DECIDE',option:option.id})}}</small></button></div>
           </template>
-          <template v-else-if="game.battle && !inspectingPending">
+          <template v-else-if="game.battle && !inspectingInventory">
             <div class="section-label">斗法 <span data-testid="round">第 {{game.battle.round+1}} 回合</span></div>
             <div class="enemy-row"><h2>{{C.enemies[game.battle.enemy].name}}</h2><b data-testid="enemy-hp">{{game.battle.hp}} / {{C.enemies[game.battle.enemy].hp}} 气血</b></div>
             <progress class="enemy-health" :value="game.battle.hp" :max="C.enemies[game.battle.enemy].hp" aria-label="敌方气血"></progress>
@@ -369,7 +369,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
             <p v-if="journey" class="small" data-testid="trial-battle-guidance">观察敌方意图再行动。普通攻击与护体可回灵；丹药占用一个回合，退离将结束本轮渡劫。</p>
             <div class="inline-actions"><button data-testid="battle-heal" @click="battle('heal')" :disabled="!can({type:'BATTLE',move:'heal'})">回春丹 ×{{core.inventory.healing_pill}}<small>{{why({type:'BATTLE',move:'heal'})}}</small></button><button data-testid="battle-restore" @click="battle('restore')" :disabled="!can({type:'BATTLE',move:'restore'})">回灵丹 ×{{core.inventory.spirit_pill}}<small>{{why({type:'BATTLE',move:'restore'})}}</small></button><button data-testid="flee" @click="battle('flee')" :disabled="!can({type:'BATTLE',move:'flee'})">撤回洞府<small>{{why({type:'BATTLE',move:'flee'})}}</small></button></div>
           </template>
-          <template v-else-if="phase === 'trial-ending' && ascension && !inspectingPending">
+          <template v-else-if="phase === 'trial-ending' && ascension && !inspectingInventory">
             <div class="section-label">天门已开 <span>三关已过，等待你的收束</span></div><h2>此生，留下些什么？</h2><p class="story">{{ascension.record.opening.text}} {{ascension.record.training.school}}的来路已经留在记录中。两种选择都以飞升成功收卷，没有善恶高低。</p>
             <p class="small">{{ascension.record.battle.trial}} 选择前可查看生平；取消不改变进度，确认保存后才封卷。</p>
             <div class="choices two"><button v-for="choice in ascension.choices" :key="choice.ending" :data-testid="`ending-${choice.ending}`" @click="act({type:'END',ending:choice.ending})" :disabled="!can({type:'END',ending:choice.ending})"><strong>{{choice.label}}</strong><small>{{choice.description}}</small><small>{{choice.preview.failure?.message}}</small></button></div>
@@ -406,7 +406,8 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
             <h3>近期手记</h3><p class="small">仅保留最近100条；当前显示{{visibleJournal.length}}条，共{{recentJournal.length}}条。完整已选事实请查看修仙生平。</p><ol id="recent-journal" class="journal"><li v-for="(line,index) in visibleJournal" :key="index">{{line}}</li></ol><button v-if="recentJournal.length>10" type="button" class="text-button" data-testid="journal-toggle" :aria-expanded="journalExpanded" aria-controls="recent-journal" @click="journalExpanded=!journalExpanded">{{journalExpanded?'收起较早条目':`展开全部 ${recentJournal.length} 条近期手记`}}</button>
           </template>
         </section>
-        <RelationshipPanel v-if="tab==='仙缘' && !inspectingPending && phase!=='idle' && phase!=='opening'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
+        <div v-if="tab==='仙缘'&&phase!=='idle'&&game.status==='active'" class="paper inline-actions"><button type="button" class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></div>
+        <RelationshipPanel v-if="tab==='仙缘' && phase!=='idle'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
         <details v-if="tab==='仙缘' && game.status==='active'" ref="lifeSection" class="paper life-section" :open="lifeOpen" @toggle="lifeOpen=($event.target as HTMLDetailsElement).open" data-testid="life-section"><summary>修仙生平 · 查看、导出与收卷</summary><LifePanel v-if="lifeOpen" :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset"/></details>
         <GrowthPanel v-if="tab==='修行' && phase==='idle' && C.rank(core.player.realm)>=C.rank('foundation') && core.player.realm!=='spirit'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate" @track="tracking.select"/>
         <TrialPreparationPanel v-if="tab==='修行' && phase==='idle' && core.player.realm==='spirit'" :game="game" :enabled="store.available && !store.busy" :checkpoint="store.checkpointSummary" @navigate="navigate" @track="tracking.select" @review="reviewTrial" @restore="restore"/>

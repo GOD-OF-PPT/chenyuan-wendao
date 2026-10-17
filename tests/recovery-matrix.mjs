@@ -54,7 +54,8 @@ export const recoveryMatrix=[
   p('repository.spec.ts','imports reidentify the actual NPC event and preserve an unfinished battle'),
   u('cutover.spec.ts','imported non-temple event refreshes and resolves through its real option'),
   u('game.spec.ts','opening and battle survive reload without reroll'),
-  ...['opening','event','battle'].map(phase=>u('pending-inspection.spec.ts',`a pending ${phase} permits readonly inventory and relationships then resumes the exact state`))]),
+  ...['opening','event','battle'].map(phase=>u('pending-inspection.spec.ts',`a pending ${phase} permits readonly inventory and relationships then resumes the exact state`)),
+  u('pending-inspection.spec.ts','starting an event from relationships exposes its choices and keeps them available while reading people')]),
  row('FR12','question, gate transitions and committed rounds reopen without rerolls or duplicate settlement',[
   p('trial-journey.spec.ts','both schools preserve the whole question, every battle and three gate transitions across reopening and stable replays'),
   p('trial-journey.spec.ts','question and each gate roll back quota and put-success abort without changing progress, receipt or preparation'),
@@ -96,5 +97,6 @@ export const recoveryMatrix=[
   u('accessibility.spec.ts','a pending content skip never steals the focus from a newer settings choice after asynchronous startup'),
   u('guidance.spec.ts','guidance can be skipped and reviewed through keyboard help without changing the saved Game'),
   u('guidance.spec.ts','new-player guidance follows committed choices, materials and injury without granting resources'),
-  u('guidance.spec.ts','gameplay help remains readable at four viewports and150 percent with a complete focus return')])
+  u('guidance.spec.ts','gameplay help remains readable at four viewports and150 percent with a complete focus return'),
+  u('pending-inspection.spec.ts','a newer inventory selection survives event commit metadata without stealing focus or changing the event')])
 ];

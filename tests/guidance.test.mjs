@@ -22,3 +22,9 @@ test('a stale or different-run receipt cannot announce a current action in guida
  for(const patch of [{runId:'another-run'},{revisionAfter:game.core.revision-1},{phaseAfter:'opening'}])assert.equal(guidanceFor(game,{...result,...patch}).id,'cultivation');
  assert.equal(guidanceFor(null,result).id,'welcome');assert.ok(guideCatalog.some(g=>g.id==='save'&&g.body.includes('不是云档')));
 });
+test('causal rewards and battle loot teach material uses even when recovery is also needed',()=>{
+ const ready=()=>{const r=path();for(const a of [{type:'CHOOSE',choice:'leave'},{type:'TRAVEL',location:'cave'},{type:'CULTIVATE',method:'natural',count:5},{type:'BREAKTHROUGH'},{type:'SCHOOL',school:'sword'}])r.act(a);return r;};
+ const causal=ready();causal.act({type:'EVENT',event:'local_rain'});const paid=causal.act({type:'DECIDE',option:'exchange'}),copy=structuredClone(paid.game);assert.equal(paid.result.delta.inventory.herb,1);assert.equal(guidanceFor(paid.game,paid.result).id,'materials');assert.deepEqual(paid.game,copy);
+ const combat=ready();for(const a of [{type:'TRAVEL',location:'wilderness'},{type:'ENCOUNTER',enemy:'wolf'},{type:'BATTLE',move:'attack'},{type:'BATTLE',move:'technique'},{type:'BATTLE',move:'release'}])combat.act(a);
+ const loot=combat.current(),original=structuredClone(loot.game);assert.equal(loot.game.battle,null);assert.equal(loot.result.delta.inventory.core,1);assert.ok(loot.game.core.player.hp<100);assert.equal(guidanceFor(loot.game,loot.result).id,'materials');assert.deepEqual(loot.game,original);
+});
