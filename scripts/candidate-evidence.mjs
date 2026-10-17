@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
+import {execFileSync} from 'node:child_process';
 import {verifyRecoveryCoverage,flattenRecoveryReport} from './check-recovery-coverage.mjs';
 import {verifyJourneyCoverage} from './check-journey-coverage.mjs';
 import {assertPerformanceReport} from './performance-budget.mjs';
@@ -25,13 +26,31 @@ export function matchIdentity(value,source){assert.ok(value&&!value.dirty,'Dirty
 function findFiles(directory,name){const out=[];const walk=dir=>{for(const entry of fs.readdirSync(dir,{withFileTypes:true})){const f=path.join(dir,entry.name);assert.ok(!entry.isSymbolicLink(),'Evidence symlink');if(entry.isDirectory())walk(f);else if(entry.isFile()&&entry.name===name)out.push(f);}};walk(directory);return out.sort();}
 function exactDemoTests(tests,browser){for(const title of demoRequiredTitles)assert.equal(tests.filter(t=>t.projectName===browser&&t.file==='demo.spec.ts'&&t.title===title).length,1,browser+': missing/duplicate '+title);}
 function exactAccessibilityTests(tests,browser){for(const title of accessibilityRequiredTitles)assert.equal(tests.filter(t=>t.projectName===browser&&t.file==='accessibility.spec.ts'&&t.title===title).length,1,browser+': missing/duplicate layout '+title);}
+export function requireTestInventory(actual,declared){
+ const key=t=>JSON.stringify([t.projectName,t.suite,t.file,t.title]);
+ const expected=declared.map(key),observed=actual.map(key);
+ assert.ok(expected.length>0,'No current declared browser tests');
+ for(const browser of browsers)for(const suite of ['ui','persistence'])assert.ok(declared.some(t=>t.projectName===browser&&t.suite===suite),'Missing declared '+browser+'/'+suite);
+ assert.equal(new Set(expected).size,expected.length,'Duplicate declared test identity');
+ assert.equal(new Set(observed).size,observed.length,'Duplicate executed test identity');
+ assert.deepEqual(observed.sort(),expected.sort(),'Executed reports do not cover the complete current test inventory');
+}
+function currentTestInventory(){
+ const env={...process.env};for(const key of ['PLAYWRIGHT_JSON_OUTPUT_DIR','PLAYWRIGHT_JSON_OUTPUT_NAME','PLAYWRIGHT_JSON_OUTPUT_FILE'])delete env[key];
+ return ['playwright.config.ts','playwright.persistence.config.ts'].flatMap(config=>{
+  const raw=execFileSync(process.execPath,[path.join(root,'web/node_modules/@playwright/test/cli.js'),'test','--config',config,'--list','--forbid-only','--reporter=json'],{cwd:path.join(root,'web'),env,encoding:'utf8',maxBuffer:40_000_000});
+  return flattenRecoveryReport(JSON.parse(raw)).tests.map(({suite,file,title,projectName})=>({suite,file,title,projectName}));
+ });
+}
 export function candidateEvidence(browserDirectory,journeyDirectory){
  const source=sourceIdentity();assert.ok(!source.dirty,'Candidate certification requires a clean checkout');const files=[],add=(from,to)=>{assert.ok(!files.some(f=>f.to===to));const bytes=fs.readFileSync(from);files.push({from:path.resolve(from),to,bytes:bytes.length,sha256:sha(bytes)});};
- const recovery=verifyRecoveryCoverage(browserDirectory),journeys=verifyJourneyCoverage(journeyDirectory),totals={};
+ const recovery=verifyRecoveryCoverage(browserDirectory),journeys=verifyJourneyCoverage(journeyDirectory),totals={},executed=[];
  for(const kind of ['ui','persistence']){
   const reports=findFiles(browserDirectory,kind+'.json');assert.equal(reports.length,3,'Exactly one '+kind+' report per actual browser is required');
-  for(const filename of reports){const report=JSON.parse(fs.readFileSync(filename,'utf8'));matchIdentity(report.config?.metadata?.chenyuan,source);const flat=flattenRecoveryReport(report),names=[...new Set(flat.tests.map(t=>t.projectName))];assert.equal(names.length,1);const browser=names[0];assert.ok(browsers.includes(browser));totals[browser]??={};assert.equal(totals[browser][kind],undefined);totals[browser][kind]=flat.tests.length;if(kind==='ui'){exactDemoTests(flat.tests,browser);exactAccessibilityTests(flat.tests,browser);}add(filename,`evidence/${kind}-${browser}.json`);}
+  for(const filename of reports){const report=JSON.parse(fs.readFileSync(filename,'utf8'));matchIdentity(report.config?.metadata?.chenyuan,source);const flat=flattenRecoveryReport(report),names=[...new Set(flat.tests.map(t=>t.projectName))];assert.equal(names.length,1);const browser=names[0];assert.ok(browsers.includes(browser));totals[browser]??={};assert.equal(totals[browser][kind],undefined);totals[browser][kind]=flat.tests.length;executed.push(...flat.tests);if(kind==='ui'){exactDemoTests(flat.tests,browser);exactAccessibilityTests(flat.tests,browser);}add(filename,`evidence/${kind}-${browser}.json`);}
  }
+ const declared=currentTestInventory();requireTestInventory(executed,declared);
+ const inventoryPath=path.join(root,'web/build-report/test-inventory.json');fs.writeFileSync(inventoryPath,JSON.stringify({format:'chenyuan-test-inventory',version:1,source,tests:declared},null,2)+'\n');add(inventoryPath,'evidence/test-inventory.json');
  for(const filename of findFiles(journeyDirectory,'results.json')){const report=JSON.parse(fs.readFileSync(filename,'utf8'));matchIdentity(report.config?.metadata?.chenyuan,source);add(filename,`evidence/journeys/${String(files.filter(f=>f.to.startsWith('evidence/journeys/')).length+1).padStart(2,'0')}.json`);}
  const cores=findFiles(browserDirectory,'validation.json');assert.equal(cores.length,3,'Three actual core validation reports required');let coreCount;
  for(let index=0;index<cores.length;index++){

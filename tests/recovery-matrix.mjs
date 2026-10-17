@@ -17,7 +17,11 @@ export const recoveryMatrix=[
  row('FR04','stale revisions and replaced run identities cannot overwrite newer progress',[
   p('recovery.spec.ts','competing actions and competing new runs reject stale intents rather than overwrite'),
   p('recovery.spec.ts','stale/cross-run restore and commands cannot overwrite another tab progress'),
-  u('game.spec.ts','stale tab cannot overwrite a newer state')]),
+  u('game.spec.ts','stale tab cannot overwrite a newer state'),
+  ...['action','restart'].map(change=>u('import-reading.spec.ts',`a late file read cannot replace a newer ${change} on the same page`)),
+  u('import-reading.spec.ts','a later selected file owns the import even when the first file finishes last'),
+  u('import-reading.spec.ts','a file selected on an empty welcome screen cannot overwrite a subsequently created Game'),
+  u('import-reading.spec.ts','a delayed typed demo import cannot undo a newer scoped node reset or create normal data')]),
  row('FR05','malformed action and control receipts are rejected without rerunning an intent',[
   p('recovery.spec.ts','corrupt receipts including null and stored undefined never become new executable intentions'),
   p('recovery.spec.ts','bad control receipts reject without rerunning a new-game operation')]),
@@ -32,7 +36,9 @@ export const recoveryMatrix=[
  row('FR08','bad JSON, negative resources, unknown IDs and future schema/content cannot replace a good save',[
   p('repository.spec.ts','bad imports and stale replacement tokens preserve current state and receipt records'),
   p('fault-matrix.spec.ts','negative resources, unknown IDs and future schemas leave every good record and the active import UI intact'),
-  u('game.spec.ts','bad import never overwrites the current state')]),
+  u('game.spec.ts','bad import never overwrites the current state'),
+  u('import-reading.spec.ts','unreadable file errors stay in the import UI and preserve the saved Game'),
+  u('pending-inspection.spec.ts','imported name and journal markup remain inert text with no script or resource execution')]),
  row('FR09','known M1/Adventure/full migrations preserve lawful current, previous and checkpoint facts',[
   p('repository.spec.ts','plain M1 state migrates without inventing a school or losing the opening choice'),
   p('repository.spec.ts','actual legacy repository releases its connection on version change and cannot overwrite the migrated run'),
@@ -47,7 +53,9 @@ export const recoveryMatrix=[
  row('FR11','non-temple events and unfinished battles import and reload their real context',[
   p('repository.spec.ts','imports reidentify the actual NPC event and preserve an unfinished battle'),
   u('cutover.spec.ts','imported non-temple event refreshes and resolves through its real option'),
-  u('game.spec.ts','opening and battle survive reload without reroll')]),
+  u('game.spec.ts','opening and battle survive reload without reroll'),
+  ...['opening','event','battle'].map(phase=>u('pending-inspection.spec.ts',`a pending ${phase} permits readonly inventory and relationships then resumes the exact state`)),
+  u('pending-inspection.spec.ts','starting an event from relationships exposes its choices and keeps them available while reading people')]),
  row('FR12','question, gate transitions and committed rounds reopen without rerolls or duplicate settlement',[
   p('trial-journey.spec.ts','both schools preserve the whole question, every battle and three gate transitions across reopening and stable replays'),
   p('trial-journey.spec.ts','question and each gate roll back quota and put-success abort without changing progress, receipt or preparation'),
@@ -86,5 +94,9 @@ export const recoveryMatrix=[
   u('game.spec.ts','missing art cannot block the opening'),
   u('navigation.spec.ts','a completed travel cannot overwrite a newer tab choice while save metadata settles'),
   u('local-experience.spec.ts','reading, display choices and a day of real clock movement never grant resources or advance lifespan'),
-  u('accessibility.spec.ts','a pending content skip never steals the focus from a newer settings choice after asynchronous startup')])
+  u('accessibility.spec.ts','a pending content skip never steals the focus from a newer settings choice after asynchronous startup'),
+  u('guidance.spec.ts','guidance can be skipped and reviewed through keyboard help without changing the saved Game'),
+  u('guidance.spec.ts','new-player guidance follows committed choices, materials and injury without granting resources'),
+  u('guidance.spec.ts','gameplay help remains readable at four viewports and150 percent with a complete focus return'),
+  u('pending-inspection.spec.ts','a newer inventory selection survives event commit metadata without stealing focus or changing the event')])
 ];

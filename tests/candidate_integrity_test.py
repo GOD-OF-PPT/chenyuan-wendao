@@ -14,10 +14,14 @@ verify = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(verify)
 
 
-def fixture(path, change=lambda files: None):
+def fixture(path, change=lambda files: None, review_record=False):
     files = {name: b'fixture only, not a deliverable' for name in ['web/index.html', 'source.bundle', 'README.md', 'KNOWN_ISSUES.md', 'SAVE_COMPATIBILITY.md', 'CHANGELOG.md', 'PLAYTEST_FORM.md', 'ASSET_SOURCES.md', 'asset-manifest.json', 'serve.py', 'verify.py']}
+    if review_record:
+        files['ENGINEERING_REVIEW.md'] = b'agent review fixture only, not acceptance'
     inventory = [{'path': name, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()} for name, data in sorted(files.items())]
     manifest = {'format': 'chenyuan-candidate', 'version': 1, 'source': {'commit': 'a' * 40, 'buildCommit': 'a' * 40, 'tree': 'b' * 40}, 'inventory': inventory, 'runtime': {'files': [{'path': 'index.html', 'bytes': len(files['web/index.html']), 'sha256': hashlib.sha256(files['web/index.html']).hexdigest()}], 'bytes': len(files['web/index.html'])}, 'validation': {'fixtureOnly': True}}
+    if review_record:
+        manifest['reviewRecord'] = {'path': 'ENGINEERING_REVIEW.md', 'sha256': hashlib.sha256(files['ENGINEERING_REVIEW.md']).hexdigest(), 'scope': 'agent-engineering-review-record'}
     files['manifest.json'] = (json.dumps(manifest) + '\n').encode()
     checks = {name: hashlib.sha256(data).hexdigest() for name, data in files.items()}
     files['checksums.sha256'] = ''.join(checks[name] + '  ' + name + '\n' for name in sorted(checks)).encode()
@@ -48,6 +52,30 @@ class CandidateIntegrity(unittest.TestCase):
         for change in [lambda files: files.update({'web/index.html': b'changed'}), lambda files: files.pop('README.md'), lambda files: files.update({'private.txt': b'not listed'})]:
             fixture(self.archive, change)
             with self.assertRaises((ValueError, KeyError)):
+                verify.verify_archive(self.archive)
+
+    def test_optional_review_record_binds_registered_bytes_and_keeps_legacy_v1_valid(self):
+        fixture(self.archive)
+        verify.verify_archive(self.archive)
+        fixture(self.archive, review_record=True)
+        verify.verify_archive(self.archive)
+        for variant in ['missing', 'hash', 'path', 'scope']:
+            def change(files):
+                manifest = json.loads(files['manifest.json'])
+                if variant == 'missing':
+                    files.pop('ENGINEERING_REVIEW.md')
+                    manifest['inventory'] = [item for item in manifest['inventory'] if item['path'] != 'ENGINEERING_REVIEW.md']
+                elif variant == 'hash':
+                    manifest['reviewRecord']['sha256'] = '0' * 64
+                elif variant == 'path':
+                    manifest['reviewRecord']['path'] = 'README.md'
+                else:
+                    manifest['reviewRecord']['scope'] = 'human-approved'
+                files['manifest.json'] = (json.dumps(manifest) + '\n').encode()
+                checks = {name: hashlib.sha256(data).hexdigest() for name, data in files.items() if name != 'checksums.sha256'}
+                files['checksums.sha256'] = ''.join(checks[name] + '  ' + name + '\n' for name in sorted(checks)).encode()
+            fixture(self.archive, change, review_record=True)
+            with self.assertRaisesRegex(ValueError, 'review'):
                 verify.verify_archive(self.archive)
 
     def test_unsafe_paths_and_symlink_entries_fail(self):

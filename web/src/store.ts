@@ -91,7 +91,7 @@ export const useGame = defineStore('game', () => {
     } finally { ready.value = true; busy.value = false; }
   }
   async function write(operation: () => Promise<CommitOutcome | ControlOutcome>, commandId?: string, observation?:WriteObservationSource) {
-    if (busy.value || !repository) return;
+    if (disposed || busy.value || !repository) return;
     const before=game.value;
     busy.value = true; error.value = ''; saved.value = false; canRetry.value = false; pending = operation; pendingCommandId = commandId;
     pendingObservation=observation;
@@ -138,9 +138,17 @@ export const useGame = defineStore('game', () => {
     const command = prepareAction(action);
     if (command) await actPrepared(command);
   }
+  function prepareImport(): SaveMutation | null {
+    if (disposed || !repository || !available.value || busy.value) return null;
+    return structuredClone(mutation());
+  }
+  async function importPrepared(raw: string, input: SaveMutation) {
+    if (disposed || !repository || !available.value) return;
+    const intent = structuredClone(input);
+    await write(() => repository!.importText(raw, intent),intent.commandId,{kind:'import',commandId:intent.commandId,runId:intent.runId,sourceRunId:intent.expectedRunId,expectedRevision:intent.expectedRevision});
+  }
   async function importText(raw: string) {
-    if (!repository) return;
-    const intent = mutation(); await write(() => repository!.importText(raw, intent),intent.commandId,{kind:'import',commandId:intent.commandId,runId:intent.runId,sourceRunId:intent.expectedRunId,expectedRevision:intent.expectedRevision});
+    const intent = prepareImport(); if (intent) await importPrepared(raw, intent);
   }
   async function restart(name: string) {
     if (!repository || !game.value) return;
@@ -171,5 +179,5 @@ export const useGame = defineStore('game', () => {
   const saveLabel = computed(() => !ready.value ? '读取中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
   onScopeDispose(() => { disposed = true; repository?.close(); channel?.close();observers.clear(); });
   return { game, busy, ready, available, error, warning, saved, hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,
-    init, refresh, start, act, prepareAction, actPrepared, discardRetryFor, importText, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, rawText, validationError,observe };
+    init, refresh, start, act, prepareAction, actPrepared, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, rawText, validationError,observe };
 });

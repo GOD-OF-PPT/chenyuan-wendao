@@ -3,6 +3,7 @@ import {sourceIdentity} from '../scripts/source-identity.mjs';
 import {defineConfig} from '@playwright/test';
 assertWebBuild();
 export default defineConfig({
+  forbidOnly:!!process.env.CI,
   metadata:{chenyuan:sourceIdentity()},
   testDir:'./journey-tests',timeout:300000,expect:{timeout:8000},fullyParallel:true,workers:2,retries:0,
   reporter:[['list'],['json',{outputFile:'journey-report/results.json'}],['html',{outputFolder:'journey-report/html',open:'never'}]],
