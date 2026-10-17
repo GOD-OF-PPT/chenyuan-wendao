@@ -41,15 +41,18 @@ test('new-player guidance follows committed choices, materials and injury withou
   await guidedAction(page,'flee',{type:'BATTLE',move:'flee'},'recovery');
 });
 
-test('gameplay help remains readable at four viewports and150 percent with a complete focus return',async({page})=>{
+test('gameplay help remains readable at four viewports and150 percent with a complete focus return',async({page},info)=>{
   await start(page);const before=await snapshot(page);
   for(const [width,height]of [[1280,720],[1440,900],[1920,1080],[390,844]]){
     await page.setViewportSize({width,height});await page.getByRole('button',{name:'设置',exact:true}).click();
     await page.getByLabel('文字大小').selectOption('1.5');await expect(page.getByTestId('local-data-status')).toContainText('已保存');
+    expect((await page.getByTestId('gameplay-guide').boundingBox())!.height).toBeLessThanOrEqual(height*0.4);
     await page.getByTestId('gameplay-help-entry').click();const dialog=page.getByRole('dialog',{name:'玩法帮助'});
     expect(await dialog.evaluate(e=>e.scrollWidth<=e.clientWidth+1)).toBe(true);
     const button=dialog.getByRole('button',{name:'关闭玩法帮助'});await button.focus();await expect(button).toBeFocused();
     const box=await button.boundingBox();expect(box!.x).toBeGreaterThanOrEqual(0);expect(box!.y).toBeGreaterThanOrEqual(0);expect(box!.x+box!.width).toBeLessThanOrEqual(width);expect(box!.y+box!.height).toBeLessThanOrEqual(height);
+    await page.screenshot({path:info.outputPath('guidance-help-'+width+'.png')});
     await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'设置',exact:true})).toBeFocused();expect(await snapshot(page)).toEqual(before);
+    await page.screenshot({path:info.outputPath('guidance-main-'+width+'.png')});
   }
 });
