@@ -3,6 +3,8 @@ on:
   push:
     branches: [main, 'feat/**', 'fix/**', 'codex/**']
   pull_request:
+env:
+  CANDIDATE_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
 permissions:
   contents: read
 jobs:
@@ -18,12 +20,4 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-      - run: npm ci --ignore-scripts --no-audit --no-fund
-      - run: npm run typecheck
-      - run: npm run check:content
-      - run: npm test
-      - run: npm run replay
-      - run: npm run replay:full
-      - run: npm run audit:economy
-      - run: python3 scripts/check_docs.py
-      - run: python3 docs/v0.4/tools/check_documents.py
+      - run: npm run validate:core

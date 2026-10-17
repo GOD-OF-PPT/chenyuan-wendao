@@ -38,7 +38,12 @@ import type { SaveMutation } from './full-persistence';
 import type { CheckpointSummary } from './store';
 import {useLocalExperience} from './use-local-experience';
 import LocalExperiencePanel from './LocalExperiencePanel.vue';
+import {useSession} from './session';
+import {demoCatalog,demoSpec,demoSave,parseDemoSave} from '../../src/demo.ts';
+import {demoLink,normalLink} from './demo-loader';
 
+const session=useSession(),demoMenu=ref<HTMLDialogElement>();
+const demoNode=session.kind==='demo'?demoSpec(session.node!.nodeId):null;
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 const experience=useLocalExperience();let appActive=true;const stopObserving=store.observe(experience.record,experience.fault);onScopeDispose(()=>{appActive=false;stopObserving();});
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
@@ -55,6 +60,8 @@ onMounted(()=>{document.addEventListener('pointerdown',cancelPendingContentFocus
 onScopeDispose(()=>{document.removeEventListener('pointerdown',cancelPendingContentFocus,true);document.removeEventListener('keydown',cancelPendingContentFocus,true);pendingContentFocus=null;});
 watch([()=>store.ready,()=>contentPanel.value],async()=>{if(!pendingContentFocus)return;await nextTick();const request=pendingContentFocus,target=contentPanel.value??document.getElementById('welcome-content');if(!request||!target)return;pendingContentFocus=null;if(appActive&&request.owner===navigationRevision&&document.activeElement===request.opener)focus.target(target);},{flush:'post'});
 function showSettings(){focus.open(settings.value,settingsButton.value??null);}
+async function showDemoMenu(event?:Event){const opener=settings.value?.open?settingsButton.value??null:event?.currentTarget instanceof HTMLElement?event.currentTarget:focus.capture();settings.value?.close();await nextTick();focus.open(demoMenu.value,opener);}
+async function initialiseGame(){if(store.busy)return;await store.init();if(appActive&&session.kind==='demo'&&store.available&&!store.game&&!store.busy)await store.importText(JSON.stringify(session.node!.game));}
 function focusRegion(id:string){focus.target(document.getElementById(id));}
 const game = computed(() => store.game), core = computed(() => game.value?.core);
 const tracking = useTracking(game);
@@ -147,7 +154,7 @@ function download(text: string, filename: string, mime = 'application/json') {
   const a = document.createElement('a'); a.href = url; a.download = filename; a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-function exportSave() { if (game.value) download(JSON.stringify(game.value, null, 2), '尘缘问道-存档.json'); }
+function exportSave() { if (game.value) download(JSON.stringify(session.kind==='demo'?demoSave(session.node!.nodeId,session.node!.sourceDigest,game.value):game.value, null, 2), session.kind==='demo'?'尘缘问道-演示存档.json':'尘缘问道-存档.json'); }
 async function exportRaw() {
   exportError.value = '';
   try { const text = await store.rawText(); if (text) download(text, '尘缘问道-原始数据库备份.json'); else exportError.value = '当前没有可导出的数据库'; }
@@ -157,12 +164,14 @@ async function importFile(event: Event) {
   const input = event.target as HTMLInputElement, file = input.files?.[0];
   if (!file) return;
   if (file.size > MAX_SAVE_BYTES) { store.validationError('存档大于 1 MB，未导入'); input.value = ''; return; }
-  if (!game.value || confirm('导入将替换当前进度。建议先导出备份，是否继续？')) await store.importText(await file.text());
+  let raw=await file.text();
+  if(session.kind==='demo'){try{raw=JSON.stringify(parseDemoSave(raw,session.node!.nodeId,session.node!.sourceDigest));}catch(e){store.validationError(e instanceof Error?e.message:'演示存档无法核对。');input.value='';return;}}
+  if (!game.value || confirm(session.kind==='demo'?'导入将替换本节点的演示进度，正常存档保留。是否继续？':'导入将替换当前进度。建议先导出备份，是否继续？')) await store.importText(raw);
   input.value = '';
 }
 async function reset() {
-  if (confirm('重新开始会替换当前进度，确定已导出需要保留的存档？')) {
-    await store.restart(core.value?.player.name ?? name.value); if (!store.error) { selectTab('修行'); settings.value?.close(); }
+  if (confirm(session.kind==='demo'?'重新载入会替换本节点的演示进度，正常存档保留。是否继续？':'重新开始会替换当前进度，确定已导出需要保留的存档？')) {
+    if(session.kind==='demo')await store.importText(JSON.stringify(session.node!.game));else await store.restart(core.value?.player.name ?? name.value); if (!store.error) { selectTab('修行'); settings.value?.close(); }
   }
 }
 async function restore() {
@@ -262,27 +271,28 @@ async function retryAscension() {
   await store.retryFor(review.command.commandId); if (!store.error) await showAscendedLife();
 }
 function closeAscension() { if (ascensionIntent.value) store.discardRetryFor(ascensionIntent.value.command.commandId); ascensionIntent.value = null; }
-onMounted(async() => {await experience.init();if(appActive)await store.init();});
+onMounted(async() => {await experience.init();if(appActive)await initialiseGame();});
 </script>
 
 <template>
-  <div class="app-shell" :class="{'is-saving':store.busy,'text-enlarged':fontScale>1}" :data-font-scale="fontScale" :style="{'--font-scale':fontScale,'--nav-height':navHeight+'px'}">
+  <div class="app-shell" :class="{'is-saving':store.busy,'text-enlarged':fontScale>1}" :data-font-scale="fontScale" :data-session="session.kind" :style="{'--font-scale':fontScale,'--nav-height':navHeight+'px'}">
     <nav class="skip-links" aria-label="快捷定位"><a :href="game?'#game-content':'#welcome-content'" @click.prevent="focusContent">跳到当前内容</a><a v-if="game?.status==='active'" href="#primary-navigation" @click.prevent="focusRegion('primary-navigation')">跳到主导航</a><a v-if="game" href="#goal-panel" @click.prevent="focusRegion('goal-panel')">跳到当前目标</a></nav>
     <header class="topbar">
-      <div class="brand"><span class="seal">尘<br>缘</span><div><h1>尘缘问道</h1><p>一念尘缘起 · 千山共问道</p></div></div>
+      <div class="brand"><strong v-if="demoNode" class="demo-badge" data-testid="demo-badge">演示存档</strong><span class="seal">尘<br>缘</span><div><h1>尘缘问道</h1><p>一念尘缘起 · 千山共问道</p></div></div>
       <div v-if="core" class="where"><span class="diamond">◇</span> 云岚州 · {{location.name}} <small>修行第 {{core.world.elapsedMonths}} 月</small></div>
       <div class="top-actions"><span class="save-state" role="status" data-testid="save-status"><GameIcon kind="action" id="save"/>{{store.saveLabel}}</span><button v-if="game" class="top-export" @click="exportSave" :disabled="store.busy"><GameIcon kind="action" id="export"/> 导出存档</button><button ref="settingsButton" @click="showSettings">设置</button></div>
     </header>
+    <section v-if="demoNode" class="paper demo-banner" aria-label="演示存档说明"><strong>演示存档 · 从{{demoNode.label}}起步</strong><p>本版本每个节点的进度独立保存，使用相同修行规则；正常进度与显示设置不受影响。</p><div class="demo-actions"><a :href="normalLink()" data-testid="demo-return">返回正常游戏</a><button @click="showDemoMenu" :disabled="store.busy">切换演示节点</button><button data-testid="demo-reset" @click="reset" :disabled="store.busy||!store.available">重新载入本节点</button></div></section>
     <div v-if="!store.ready" class="loading">正在展开仙途……</div>
     <div v-if="store.error" class="error-banner" role="alert" data-testid="error">
       <p>{{store.error}}</p><button v-if="store.canRetry" data-testid="retry" @click="store.retry()" :disabled="store.busy">重试本次操作</button>
-      <button v-if="!store.available" data-testid="reload-storage" @click="store.init()" :disabled="store.busy">重新读取</button>
+      <button v-if="!store.available" data-testid="reload-storage" @click="initialiseGame()" :disabled="store.busy">重新读取</button>
       <button @click="exportRaw" :disabled="store.busy">导出原件备份</button>
     </div>
     <div v-if="store.warning" class="error-banner" role="status">{{store.warning}}</div>
     <div v-if="exportError" class="error-banner" role="alert">{{exportError}}</div>
     <section v-if="game && overview?.status==='active' && overview.remainingMonths!==null && overview.remainingMonths<=12" class="paper lifespan-warning" role="status" data-testid="lifespan-warning"><strong>余寿 {{overview.remainingMonths}} 游戏月 · {{overview.ageLabel}}</strong><p>{{overview.remainingMonths===1?'耗时行动将停止。若修为与突破物已备齐，仍可核对突破条件；也可恢复准备检查点，或确认度过最后1游戏月后收卷。':'游戏时间由行动消耗，阅读与离线不会扣减余寿。请核对当前准备与检查点。'}}</p><button data-testid="lifespan-open-life" @click="showLife">查看生平与收卷选择</button></section>
-    <main v-if="store.ready && !game" id="welcome-content" tabindex="-1" class="welcome">
+    <main v-if="store.ready && !game && !demoNode" id="welcome-content" tabindex="-1" class="welcome">
       <div class="welcome-art"><AssetImage class="welcome-backdrop" :path="SCENE_ASSETS.wilderness" asset-id="welcome-wilderness" eager/><span class="eyebrow">尘缘问道 · 试玩版</span><h2>凡心未改，<br>仙途已在眼前。</h2><p>不计片刻，不赶境界。<br>采一味灵草，结一段因果，修属于自己的长生路。</p></div>
       <form class="paper welcome-form" @submit.prevent="store.start(name)">
         <span class="eyebrow">第一章 / 凡心入道</span><h2>从此刻，问道。</h2><label for="name">你的道号</label>
@@ -290,9 +300,11 @@ onMounted(async() => {await experience.init();if(appActive)await store.init();})
         <p>通过修炼、材料与选择筹备下一步。数值仍在调整，阅读和离线不会消耗寿元。</p>
         <p class="small">必要试玩记录只保存在本机，不上传、不记录道号；可在设置关闭、清空或知情导出。</p>
         <button class="primary" type="submit" :disabled="store.busy || !store.available">踏入仙途 <span>→</span></button>
+        <button type="button" data-testid="demo-menu-welcome" @click="showDemoMenu" :disabled="store.busy">演示节点</button>
         <label class="file-button">导入已有存档<input type="file" name="save-import" accept=".json,application/json" @change="importFile" :disabled="store.busy || !store.available"></label>
       </form>
     </main>
+    <main v-if="store.ready&&!game&&demoNode" class="paper demo-banner"><h2>演示进度尚未就绪</h2><p>请核对上方错误后重试同次操作或重新读取；不会改动正常进度。</p><button @click="initialiseGame" :disabled="store.busy">重新读取演示进度</button></main>
     <main v-if="game && core" class="game-grid" :aria-busy="store.busy">
       <section class="center-column">
         <ScenePanel :game="game" :eyebrow="phase==='opening'?'初遇 / 山雨破庙':location.subtitle" :title="phase==='opening'?'雨中故人':game.status==='ascended'?overview!.title:game.battle?C.enemies[game.battle.enemy].name:activeStory?.name??location.name" :description="game.status==='ascended'?'此卷已收，来路犹存。':game.battle?'先辨来势，再决进退。':'山海不言，修行自有回响。'"/>
@@ -380,7 +392,7 @@ onMounted(async() => {await experience.init();if(appActive)await store.init();})
       <section class="note"><span>此地机缘</span><p>{{location.description}}</p><small>试玩版本 · 数值未平衡<br>约30分钟理解玩法，不限定通关时间</small></section></aside>
       <CharacterPanel :game="game"/>
     </main>
-    <PrimaryNav v-if="game && game.status==='active'" :selected="tab" @select="selectTab" @height="navHeight=$event"/>
+    <PrimaryNav v-if="game&&(game.status==='active'||demoNode)" :demo="!!demoNode" :normal-href="demoNode?normalLink():undefined" :sealed="game.status!=='active'" :selected="tab" @select="selectTab" @height="navHeight=$event"/>
     <dialog ref="settings" class="paper settings" aria-labelledby="settings-title"><header><h2 id="settings-title" tabindex="-1" data-dialog-initial>行旅设置</h2><button @click="settings?.close()" aria-label="关闭设置"><GameIcon kind="action" id="close"/><span>关闭</span></button></header>
       <p>进度仅保存在当前浏览器。导出备份可用于迁移；清理浏览器数据可能丢失进度。</p><label class="setting-row"><span>文字大小</span><select name="text-size" v-model.number="fontScale" :disabled="experience.busy.value||!experience.ready.value"><option :value="1">100%</option><option :value="1.5">150%</option><option :value="2">200%</option></select></label>
       <label class="setting-row"><span>减少演出动效</span><input type="checkbox" v-model="reduceMotion" data-testid="reduce-effects" :disabled="experience.busy.value||!experience.ready.value"></label>
@@ -391,8 +403,10 @@ onMounted(async() => {await experience.init();if(appActive)await store.init();})
       <button v-if="game" data-testid="restore-checkpoint" :aria-describedby="!store.hasCheckpoint?'checkpoint-unavailable':undefined" @click="restore" :disabled="store.busy || !store.available || !store.hasCheckpoint"><GameIcon kind="action" id="restore"/> 恢复完整准备检查点</button>
       <p v-if="game&&!store.hasCheckpoint" id="checkpoint-unavailable" class="small">当前没有已验证的完整准备检查点。</p>
       <button v-if="game" class="danger" data-testid="restart" @click="reset" :disabled="store.busy || !store.available">重新开始</button>
+      <button data-testid="demo-menu-open" @click="showDemoMenu" :disabled="store.busy">演示节点</button>
       <LocalExperiencePanel :experience="experience" :run-id="core?.runId??null" :target="tracking.target.value"/>
     </dialog>
+    <dialog ref="demoMenu" class="paper demo-menu" aria-labelledby="demo-menu-title"><header><h2 id="demo-menu-title" tabindex="-1" data-dialog-initial>演示节点</h2><button @click="demoMenu?.close()" aria-label="关闭演示节点">关闭</button></header><p>以下是由正式指令回放生成的演示存档。进入不会替换正常进度，演示不计入正常新档通关验证。</p><nav class="demo-list" aria-label="演示节点选择"><a v-for="node in demoCatalog" :key="node.id" :href="demoLink(node.id)" :data-testid="'demo-node-'+node.id"><strong>{{node.label}}</strong><span>{{node.description}}</span></a></nav></dialog>
     <dialog ref="lifeDialog" class="paper life-confirm" data-testid="life-confirmation" aria-labelledby="life-confirm-title" @cancel="cancelLife" @close="closeLifeReview">
       <template v-if="lifeIntent">
         <header><h2 id="life-confirm-title" tabindex="-1" data-dialog-initial>{{lifeIntent.command.type==='RETIRE'?'确认主动归隐':'确认度过最后一月'}}</h2></header>

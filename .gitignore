@@ -25,6 +25,16 @@ web/journey-results/
 web/performance-report/
 web/performance-results/
 web/recovery-report/
+web/.generated/
+web/.generated-demo-*/
+web/public/demo-nodes/
+web/core-report/
+web/build-report/
+web/candidate-report/
+web/candidate-results/
+artifacts/
+journey-evidence/
+recovery-evidence/
 
 # Asset inventory tooling cache
 __pycache__/

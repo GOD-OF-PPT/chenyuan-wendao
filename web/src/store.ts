@@ -6,10 +6,12 @@ import type { ActionResult, CommitOutcome, SaveCheckpoint } from '../../src/full
 import { FullSaveRepository, rawBackupText } from './full-persistence';
 import type { ControlOutcome, SaveMutation } from './full-persistence';
 import {loadedObservation,writeObservation,inputErrorObservation,storageErrorObservation,type Observation,type WriteObservationSource} from './local-events';
+import {useSession} from './session';
 
 export type CheckpointSummary = Pick<SaveCheckpoint, 'kind' | 'sourceRunId' | 'sourceRevision' | 'versions'> & { target: { name: string; realm: Game['core']['player']['realm']; months: number; hp: number; mp: number; inventory: Record<string, number> } };
 
 export const useGame = defineStore('game', () => {
+  const session=useSession();
   const game = shallowRef<Game | null>(null), busy = ref(false), ready = ref(false), available = ref(false);
   const error = ref(''), warning = ref(''), saved = ref(false), hasCheckpoint = ref(false);
   const checkpointSummary = shallowRef<CheckpointSummary | null>(null);
@@ -65,14 +67,14 @@ export const useGame = defineStore('game', () => {
     repository?.close(); channel?.close(); repository = undefined; channel = undefined;
     pending = null; pendingCommandId = undefined; pendingObservation=undefined; canRetry.value = false;
     try {
-      const opened = await FullSaveRepository.open();
+      const opened = await FullSaveRepository.open(session.gameDatabase);
       if (disposed) { opened.close(); return; }
       repository = opened; available.value = true;
       await refresh();
       saved.value = !!game.value && !failedIntent;
       if(game.value)emit(()=>loadedObservation(game.value!,'resume'));
       if ('BroadcastChannel' in globalThis) {
-        channel = new BroadcastChannel('chenyuan-full-progress');
+        channel = new BroadcastChannel(session.gameChannel);
         channel.onmessage = () => {
           if (busy.value) { refreshQueued = true; return; }
           refresh('sync').catch(value => {
@@ -164,7 +166,7 @@ export const useGame = defineStore('game', () => {
     pending = null; pendingCommandId = undefined; pendingObservation=undefined; canRetry.value = false;
   }
   async function rawText(): Promise<string | null> {
-    try{const backup = await FullSaveRepository.exportRaw(); return backup ? rawBackupText(backup) : null;}catch(value){emit(()=>storageErrorObservation(game.value,codeOf(value)));throw value;}
+    try{const backup = await FullSaveRepository.exportRaw(session.gameDatabase); return backup ? rawBackupText(backup) : null;}catch(value){emit(()=>storageErrorObservation(game.value,codeOf(value)));throw value;}
   }
   const saveLabel = computed(() => !ready.value ? '读取中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
   onScopeDispose(() => { disposed = true; repository?.close(); channel?.close();observers.clear(); });

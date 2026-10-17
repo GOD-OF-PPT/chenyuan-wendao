@@ -16,6 +16,7 @@
     "scripts/economy/scenarios.mjs": "7b82f06c10749a9d81e6cb8c3486c26d886a5ca30dd198471f68f9e67891ca9e",
     "scripts/replay-economy.mjs": "e0bbc6df817841d13f2fded8bd260546277a353781cdb38da234910c720fc13d",
     "src/content/m1.ts": "59698c8ad88139e768b674084f24daf258715cd5dbfcc70b6b4f70c3b8492aa3",
+    "src/demo.ts": "927e40ac1d792afd0e2f28c2cf7bdd55509af07713ef3db116a7a5019ac9307e",
     "src/full/ascension.ts": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
     "src/full/content.ts": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
     "src/full/contracts.ts": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
