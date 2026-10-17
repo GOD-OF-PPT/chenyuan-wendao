@@ -1,6 +1,6 @@
 # Goal 1 / T18：生产资产、降级加载与CHECK-06
 
-日期：2026-10-17。基线`codex/goal-1-interface-components@6826f00bd0a8c87364b0f8909395388a2946a1aa`；新分支`codex/goal-1-production-art`，只叠加T17，不合并main。上一轮已实交PR #26、最终四CI/34检查、318规则/306网页/72正常路线/213 IDB与16制品；本轮独立验证新资产和接线。
+日期：2026-10-17。基线`codex/goal-1-interface-components@6826f00bd0a8c87364b0f8909395388a2946a1aa`；新分支`codex/goal-1-production-art`，[PR #27](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/27)，只叠加T17，不合并main。上一轮已实交PR #26、最终四CI/34检查、318规则/306网页/72正常路线/213 IDB与16制品；本轮独立验证新资产和接线。
 
 ## 制作与来源
 
