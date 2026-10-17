@@ -14,6 +14,9 @@ import { useTracking } from './use-tracking';
 import { formatCosts } from './presentation';
 import type { NavigationRequest } from './navigation';
 import GoalPanel from './GoalPanel.vue';
+import CharacterPanel from './CharacterPanel.vue';
+import ScenePanel from './ScenePanel.vue';
+import PrimaryNav from './PrimaryNav.vue';
 import BatchPreview from './BatchPreview.vue';
 import ActionFeedback from './ActionFeedback.vue';
 import EquipmentPanel from './EquipmentPanel.vue';
@@ -44,11 +47,9 @@ const phase = computed(() => game.value ? gamePhase(game.value) : null);
 const goal = computed(() => game.value ? getBreakthroughGoal(game.value) : null);
 const journey = computed(() => game.value ? getTrialJourney(game.value) : null);
 const overview = computed(() => game.value ? getLifeOverview(game.value) : null);
-const age = computed(() => overview.value?.ageLabel ?? '');
 const lifeOpen = ref(false), lifeSection = ref<HTMLDetailsElement>(), lifeDialog = ref<HTMLDialogElement>();
 const lifeIntent = shallowRef<{ command: Command; record: LifeRecord } | null>(null);
 const lifeStale = computed(() => !!lifeIntent.value && (!game.value || game.value.core.runId !== lifeIntent.value.command.runId || game.value.core.revision !== lifeIntent.value.command.expectedRevision));
-const scene = new URL(`${import.meta.env.BASE_URL}art/scene.webp`, document.baseURI).href;
 const context = computed(() => ({ state: game.value, cache: new Map<string, ActionPreview>() }));
 function quote(action: Action) {
   const current = context.value;
@@ -117,7 +118,6 @@ function consumption(action: Action) {
 const collectionLabel = computed(() => collectionTarget.value ? `${collectionTarget.value.kind === 'item' ? C.items[collectionTarget.value.id].name : '灵石'}库存达到 ${collectionTarget.value.quantity}` : '从目标来源选取所需物资');
 const knownItems = computed(() => Object.entries(C.items).filter(([id, item]) => !core.value || C.rank(item.min) <= C.rank(core.value.player.realm) || core.value.inventory[id] > 0));
 const localRecipes = computed(() => Object.entries(C.recipes).filter(([, recipe]) => !core.value || C.rank(recipe.min) <= C.rank(core.value.player.realm)));
-const schoolName = computed(() => game.value?.school === 'sword' ? '剑修' : game.value?.school === 'talisman' ? '符修' : '尚未择法');
 const spells = computed(() => ({
   technique: game.value?.loadout.builder ? C.skills[game.value.loadout.builder].name : '术法',
   release: game.value?.loadout.finisher ? C.skills[game.value.loadout.finisher].name : '终结术法',
@@ -247,7 +247,7 @@ onMounted(() => store.init());
 </script>
 
 <template>
-  <div class="app-shell" :class="{'large-text': large}" :style="{'--scene': `url('${scene}')`}">
+  <div class="app-shell" :class="{'large-text': large}">
     <header class="topbar">
       <div class="brand"><span class="seal">尘<br>缘</span><div><h1>尘缘问道</h1><p>一念尘缘起 · 千山共问道</p></div></div>
       <div v-if="core" class="where"><span class="diamond">◇</span> 云岚州 · {{location.name}} <small>修行第 {{core.world.elapsedMonths}} 月</small></div>
@@ -273,24 +273,8 @@ onMounted(() => store.init());
       </form>
     </main>
     <main v-if="game && core" class="game-grid">
-      <aside class="paper character">
-        <div class="section-label">道者 · 个人志</div><div class="portrait"><div class="portrait-ring">道</div><span class="portrait-caption">心向长生</span></div>
-        <h2>{{core.player.name}}</h2><span class="realm-badge" data-testid="realm">{{realm.name}}</span><p class="small muted">清风为伴，明月同途。</p>
-        <div v-if="game.status==='ascended'" class="stats" data-testid="ascension-sealed-stats"><p class="small">此生已封卷。本卷不继续上界修行，以下保留封卷时的实际状态。</p><div class="stat-pair"><span>封卷气血</span><b data-testid="hp">{{core.player.hp}}</b></div><div class="stat-pair"><span>封卷灵力</span><b>{{core.player.mp}}</b></div><div class="stat-pair"><span>封卷年龄</span><b data-testid="age-limit">{{age}}</b></div><div class="stat-pair"><span>封卷灵石</span><b data-testid="stones">{{core.player.stones}}</b></div></div>
-        <div v-else class="stats">
-          <div class="stat"><label>气血 <b data-testid="hp">{{core.player.hp}} / {{realm.maxHp}}</b></label><progress class="health" :value="core.player.hp" :max="realm.maxHp" aria-label="气血"></progress></div>
-          <div class="stat"><label>灵力 <b>{{core.player.mp}} / {{realm.maxMp}}</b></label><progress :value="core.player.mp" :max="realm.maxMp" aria-label="灵力"></progress></div>
-          <div class="stat"><label>修为 <b data-testid="xp">{{core.player.xp}} / {{realm.xpCap}}</b></label><progress class="cultivation" :value="core.player.xp" :max="realm.xpCap || 1" aria-label="修为"></progress></div>
-          <div class="stat-pair"><span>年龄 / 寿限</span><b data-testid="age-limit">{{age}} / {{overview?.limitLabel}}</b></div><div class="stat-pair"><span>灵石</span><b class="gold" data-testid="stones">{{core.player.stones}}</b></div>
-        </div><div class="divider"></div><h3>当前修法</h3><div class="skill-row"><span class="skill-icon">诀</span><div><strong>{{schoolName}}</strong><small>{{game.loadout.mind ? C.skills[game.loadout.mind].name : '引气入体后选择'}}</small></div></div>
-        <p class="small muted">起手 · {{game.loadout.builder ? C.skills[game.loadout.builder].name : '尚未装备'}}<br>终结 · {{game.loadout.finisher ? C.skills[game.loadout.finisher].name : '尚未装备'}}<br>本命法宝 · {{game.loadout.relic ? C.relics[game.loadout.relic].name : '金丹后可炼制装备'}}</p>
-      </aside>
       <section class="center-column">
-        <div class="scene" :class="{fighting: game.battle}"><div class="scene-vignette"></div><div class="scene-copy">
-          <span class="eyebrow">{{phase === 'opening' ? '初遇 / 山雨破庙' : location.subtitle}}</span>
-          <h2>{{phase === 'opening' ? '雨中故人' : game.status==='ascended' ? overview?.title : game.battle ? C.enemies[game.battle.enemy].name : activeStory?.name ?? location.name}}</h2>
-          <p>{{game.status==='ascended' ? '此卷已收，来路犹存。' : game.battle ? '先辨来势，再决进退。' : '山海不言，修行自有回响。'}}</p>
-        </div><span class="scene-seal">问<br>道</span></div>
+        <ScenePanel :game="game" :eyebrow="phase==='opening'?'初遇 / 山雨破庙':location.subtitle" :title="phase==='opening'?'雨中故人':game.status==='ascended'?overview!.title:game.battle?C.enemies[game.battle.enemy].name:activeStory?.name??location.name" :description="game.status==='ascended'?'此卷已收，来路犹存。':game.battle?'先辨来势，再决进退。':'山海不言，修行自有回响。'"/>
         <TrialProgressPanel v-if="journey || store.trialRecovery" :journey="journey" :recovery="store.trialRecovery" :checkpoint="store.checkpointSummary" :enabled="store.available && !store.busy" @restore="requestTrialRestore" @export="exportSave" @prepare="showTrialPreparation"/>
         <div class="paper content-panel">
           <template v-if="phase === 'opening'">
@@ -318,7 +302,8 @@ onMounted(() => store.init());
             <progress class="enemy-health" :value="game.battle.hp" :max="C.enemies[game.battle.enemy].hp" aria-label="敌方气血"></progress>
             <div class="intent" data-testid="intent"><span>敌方意图</span><strong>{{forecast!.name}}</strong><b>预计伤害 {{forecast!.damage}}</b></div>
             <p class="battle-resource">{{game.school === 'sword' ? `剑意 ${game.battle.sword} / 3` : `符印 ${game.battle.marks.length} / 3`}}</p>
-            <div class="battle-log" aria-live="polite"><p v-for="(line,index) in game.battle.log" :key="index">{{line}}</p></div>
+            <div v-if="game.battle.log.length" class="battle-log" aria-live="polite"><p v-for="(line,index) in game.battle.log" :key="index">{{line}}</p></div>
+            <div class="battle-player" data-testid="battle-player"><span>己方气血 <b>{{core.player.hp}} / {{realm.maxHp}}</b></span><span>灵力 <b>{{core.player.mp}} / {{realm.maxMp}}</b></span></div>
             <div class="battle-actions"><button v-for="move in ['attack','guard','technique','release'] as const" :key="move" :data-testid="move" @click="battle(move)" :disabled="!can({type:'BATTLE',move})">
               <strong>{{move === 'attack' ? '普通攻击' : move === 'guard' ? '凝神护体' : spells[move]}}</strong><small>{{cost({type:'BATTLE',move})}}</small><small>{{why({type:'BATTLE',move})}}</small>
             </button></div>
@@ -371,8 +356,9 @@ onMounted(() => store.init());
       </section>
       <aside class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="tracking.select" @navigate="navigate" @preparation="preparation=$event"/><section class="paper fate-summary"><div class="section-label">仙缘因果</div><div v-for="person in relationships.slice(0,2)" :key="person.id" :data-testid="`fate-summary-${person.id}`"><h3>{{person.name}} · {{person.label}}</h3><p class="small">{{person.summary}}</p></div><button class="text-button" @click="selectTab('仙缘')">展开仙缘 →</button></section>
       <section class="note"><span>此地机缘</span><p>{{location.description}}</p><small>试玩版本 · 数值未平衡<br>约30分钟理解玩法，不限定通关时间</small></section></aside>
+      <CharacterPanel :game="game"/>
     </main>
-    <nav v-if="game && game.status==='active'" class="bottom-nav" aria-label="主要页面"><button v-for="(label,index) in ['修行','历练','行囊','仙缘']" :key="label" :data-testid="`tab-${index}`" :class="{active:tab===label}" :aria-current="tab===label?'page':undefined" @click="selectTab(label)"><span class="nav-icon">{{['◈','山','囊','缘'][index]}}</span>{{label}}<small>{{['CULTIVATE','EXPLORE','INVENTORY','KARMA'][index]}}</small></button></nav>
+    <PrimaryNav v-if="game && game.status==='active'" :selected="tab" @select="selectTab"/>
     <dialog ref="settings" class="paper settings"><header><h2>行旅设置</h2><button @click="settings?.close()" aria-label="关闭设置">×</button></header>
       <p>进度仅保存在当前浏览器。导出备份可用于迁移；清理浏览器数据可能丢失进度。</p><label class="setting-row"><span>放大正文</span><input type="checkbox" v-model="large"></label>
       <label class="file-button">导入存档<input data-testid="import" type="file" accept=".json,application/json" @change="importFile" :disabled="store.busy || !store.available"></label>

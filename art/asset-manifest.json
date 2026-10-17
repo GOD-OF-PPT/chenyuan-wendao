@@ -158,7 +158,7 @@
         "docs/v0.4/05-art-ux.md",
         "art/approved/style-preview.webp"
       ],
-      "purpose": "当前场景/全局淡化背景占位，待按地点与阶段替换",
+      "purpose": "历史运行占位副本，T17起不再被网页加载；保留原字节供来源核对",
       "exportedPath": "web/public/art/scene.webp",
       "dimensions": {
         "width": 320,
@@ -171,7 +171,7 @@
       "status": "placeholder",
       "availability": "repo_file",
       "rights": {
-        "intendedUse": "temporary_runtime_placeholder",
+        "intendedUse": "retained_historical_placeholder_not_loaded",
         "productionUseApproved": false,
         "distributionLicense": null,
         "evidenceReferences": [
@@ -923,13 +923,19 @@
     },
     {
       "id": "ART-02",
-      "fact": "运行scene.webp与带字/天门的320风格预览字节相同，不能作生产图。",
-      "owner": "T17资产键与阶段接线，T18无字生产图"
+      "fact": "历史scene.webp仍是带字/已开天门的320预览副本，T17起不再加载；无字生产图仍待制作。",
+      "owner": "T18无字生产图"
     },
     {
       "id": "ART-03",
-      "fact": "当前一图用于六地点/全局背景，没有地点或天门开放阶段区分。",
-      "owner": "T17/T18"
+      "fact": "T17已用真实地点/阶段区分六地点与天门closed/storm/opened；当前原生呈现，T18仍待绑定无字生产图。",
+      "owner": "T18生产资源绑定",
+      "evidenceReferences": [
+        "web/src/scene-presentation.ts",
+        "web/src/ScenePanel.vue",
+        "tests/ui-scene-presentation.test.mjs",
+        "web/e2e/interface.spec.ts"
+      ]
     },
     {
       "id": "ART-04",
