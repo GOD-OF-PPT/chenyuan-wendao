@@ -1,0 +1,12 @@
+import {test,expect} from '@playwright/test';
+import fs from 'node:fs';
+import {start,snapshot,fight,travel} from './support';
+
+test('export then clear all owned site data and import restores the complete Game without inventing a checkpoint',async({page})=>{
+ await start(page,'help');await fight(page,'sword');const before=await snapshot(page);expect(before.wins).toBe(1);const waiting=page.waitForEvent('download');await page.getByRole('button',{name:'导出存档',exact:true}).click();const download=await waiting,filename=(await download.path())!,raw=fs.readFileSync(filename,'utf8');expect(JSON.parse(raw)).toEqual(before);
+ await page.getByRole('button',{name:'设置',exact:true}).click();await expect(page.getByTestId('local-data-status')).not.toContainText('待处理');await page.getByRole('button',{name:'关闭设置'}).click();
+ await page.evaluate(async()=>{for(const name of ['chenyuan-playable-v1','chenyuan-local-experience-v1'])await new Promise<void>((resolve,reject)=>{const request=indexedDB.deleteDatabase(name);request.onsuccess=()=>resolve();request.onerror=()=>reject(request.error);request.onblocked=()=>reject(new Error('Owned test database did not release its connection'));});localStorage.clear();sessionStorage.clear();});
+ await page.reload();await expect(page.getByRole('button',{name:'踏入仙途'})).toBeEnabled();await expect(page.getByTestId('realm')).toHaveCount(0);await expect(page.getByLabel('导入已有存档',{exact:true})).toBeEnabled();await page.getByLabel('导入已有存档',{exact:true}).setInputFiles({name:'owned-export.json',mimeType:'application/json',buffer:Buffer.from(raw)});await expect(page.getByTestId('realm')).toHaveText('炼气');const restored=await snapshot(page);
+ expect(restored.core.runId).not.toBe(before.core.runId);expect(restored.core.revision).toBe(0);const normalized=(game:any)=>{const value=structuredClone(game);value.core.runId='<run>';value.core.revision=0;if(value.core.activeEvent)value.core.activeEvent.instanceId='<run>:'+value.core.activeEvent.id;return value;};expect(normalized(restored)).toEqual(normalized(before));
+ await page.getByRole('button',{name:'设置',exact:true}).click();await expect(page.getByTestId('restore-checkpoint')).toBeDisabled();await expect(page.locator('#checkpoint-unavailable')).toBeVisible();await page.getByRole('button',{name:'关闭设置'}).click();await page.reload();await expect(page.getByTestId('realm')).toHaveText('炼气');expect(await snapshot(page)).toEqual(restored);await travel(page,'cave');expect((await snapshot(page)).core.revision).toBe(restored.core.revision+1);
+});

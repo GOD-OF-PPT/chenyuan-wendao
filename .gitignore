@@ -24,6 +24,7 @@ web/journey-results/
 # Production performance measurements (no generated save fixtures in Git)
 web/performance-report/
 web/performance-results/
+web/recovery-report/
 
 # Asset inventory tooling cache
 __pycache__/

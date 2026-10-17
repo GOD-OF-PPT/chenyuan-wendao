@@ -4,7 +4,7 @@
 
 ## 当前实施与可运行范围
 
-当前实施分支为 `codex/goal-1-local-playtest`，正式页面使用full规则与数据库v3，事务完成后才显示成功。T08验证四条正常新档至金丹及12功法/4法宝操作；T09已用四条正常新档路线验证双修法/双筹备至化神，并完成本境筹备信息与CHECK-03；完整结果见独立记录。T10建立120组真实经济回放并保护旧档；T11接通沈/裴选项因果、可补救护阵、四人物事实记录和后学剑简，T12补上真实生平、查看/文本导出、归隐/寿尽确认与恢复入口；T13接入渡劫准备清单、固定身份确认与原子入场检查点，两条正常新档路线已到问心；T14接入问心事实回响、三关进度、中断说明和失败耗物/完整恢复确认，结果见独立记录。T15接入两结尾固定确认与飞升封卷，正常24路线×三浏览器与CHECK-05已通过，详见T15记录。数值仍未平衡。T16资产清单已核验；T17三栏/角色/场景/导航和移动阅读顺序已实现并交PR #26；T18已交4场景/5肖像、统一符号与回执表现；T19全界面缩放/键盘/四尺寸与最终同HEAD CI/包校验已交PR #28；CHECK-06已通过。T20已交PR #29与最终四CI/性能/包证据；T21本地记录/知情导出/显示偏好已实现，补正后354规则/启动与手记9项/30性能通过，既有267 IDB/111定向保留，最终同HEAD完整471等CI与CHECK-07收尾见本轮PR；真实玩家反馈仍未执行。六条三开场×两修法至筑基旧路线保留。目标/来源引导、批量反馈、战斗、旧档迁移与完整检查点恢复均保留。
+当前实施分支为 `codex/goal-1-recovery-matrix`，正式页面使用full规则与数据库v3，事务完成后才显示成功。T08验证四条正常新档至金丹及12功法/4法宝操作；T09已用四条正常新档路线验证双修法/双筹备至化神，并完成本境筹备信息与CHECK-03；完整结果见独立记录。T10建立120组真实经济回放并保护旧档；T11接通沈/裴选项因果、可补救护阵、四人物事实记录和后学剑简，T12补上真实生平、查看/文本导出、归隐/寿尽确认与恢复入口；T13接入渡劫准备清单、固定身份确认与原子入场检查点，两条正常新档路线已到问心；T14接入问心事实回响、三关进度、中断说明和失败耗物/完整恢复确认，结果见独立记录。T15接入两结尾固定确认与飞升封卷，正常24路线×三浏览器与CHECK-05已通过，详见T15记录。数值仍未平衡。T16资产清单已核验；T17三栏/角色/场景/导航和移动阅读顺序已实现并交PR #26；T18已交4场景/5肖像、统一符号与回执表现；T19全界面缩放/键盘/四尺寸与最终同HEAD CI/包校验已交PR #28；CHECK-06已通过。T20已交PR #29与最终四CI/性能/包证据；T21/CHECK-07已交PR #30，最终同HEAD四CI/34检查、354规则/471页面/267 IDB/正常72/30性能与运行包已核对。T22补齐提交后结果交付中断、替换写入失败、清站点再导入，新增20项恢复要求与实际报告门禁；本轮完整结果见独立记录。真实玩家反馈仍未执行。六条三开场×两修法至筑基旧路线保留。目标/来源引导、批量反馈、战斗、旧档迁移与完整检查点恢复均保留。
 
 完整目标和顺序见 [Goal 1 计划](goal-1/plan.md)，逐任务证据见 [任务记录](goal-1/tasks.md)。T01交付 [PR #10](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/10)，T02交付 [PR #11](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/11)；当前契约与CHECK-01见 [T03记录](docs/implementation/goal-1-contracts-queries.md)。full已含各境界、功法法宝与终局规则，页面接通共用地点/物品/事件操作；T08功法/法宝与至金丹网页结果见下方记录；T09的元婴/化神成长闭环见独立记录；问心/三关结果见T14独立记录；两结尾与24路线验收见T15记录；正式美术、性能和真人验证仍按后续任务逐项完成。数值为未平衡初值。
 
@@ -19,7 +19,7 @@
 工程声明 Node.js ≥22.16.0；历史 G1 CI 使用 Node.js 22.16.0 / npm 10.9.2。当前任务的实际环境和检查结果单独记录于 [T01实施记录](docs/implementation/goal-1-baseline.md)。不顺带升级依赖，根与前端均从已提交锁文件安装。
 
 ```sh
-git clone --branch codex/goal-1-local-playtest --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
+git clone --branch codex/goal-1-recovery-matrix --single-branch https://github.com/GOD-OF-PPT/chenyuan-wendao.git
 cd chenyuan-wendao
 npm ci --ignore-scripts
 node scripts/check_lock.mjs
@@ -46,9 +46,12 @@ npx playwright install chromium firefox webkit
 npm run test:e2e
 npm run test:persistence
 npm run test:journeys
+cd ..
+node scripts/check-recovery-coverage.mjs web/recovery-report
+node scripts/check-journey-coverage.mjs web/journey-report --complete
 ```
 
-测试自动启动本机4173端口的生产预览服务器，存储模块使用独立4174端口；先构建再测试，正常长路线另用4175，三端口均须空闲。Linux缺系统库时使用 `npx playwright install --with-deps chromium firefox webkit`。三份Playwright配置均实际执行Chromium/Firefox/WebKit；WebKit自动化不等于Safari真机验收，T15已跑正常24路线×三浏览器，最终视觉/偏好完成后T22仍须重跑。
+测试自动启动本机4173端口的生产预览服务器，存储模块使用独立4174端口；先构建再测试，正常长路线另用4175，三端口均须空闲。Linux缺系统库时使用 `npx playwright install --with-deps chromium firefox webkit`。三份Playwright配置均实际执行Chromium/Firefox/WebKit；WebKit自动化不等于Safari真机验收，T15已跑正常24路线×三浏览器，T22在最终视觉/偏好版本复验，实际结果见下方记录。
 
 历史 G1 提交 `738d8e985ca468d08cb5fd877e6cf09164b074cd` 的 [网页CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38492172390) 和 [规则CI](https://github.com/GOD-OF-PPT/chenyuan-wendao/actions/runs/38492172375)通过83条规则、6条经济路线、构建及17条Chromium测试。这是源基线证据；本整合版本的实际结果以T01实施记录和本提交CI为准。
 
@@ -98,6 +101,7 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 | [T19文字/键盘/焦点](docs/implementation/goal-1-accessibility.md) | 四尺寸和完整缩放、模态/文件控件/导航遮挡与同源验证 |
 | [T20生产性能](docs/implementation/goal-1-performance.md) | 固定网络/CPU/冷缓存、真实后期档、预算与查询性能修复 |
 | [T21本地记录与CHECK-07](docs/implementation/goal-1-local-playtest.md) | 本地记录/脱敏/显示设置、导出快照与阶段综合检查 |
+| [T22最终路线与恢复矩阵](docs/implementation/goal-1-recovery-matrix.md) | 20项恢复要求、真实JSON覆盖门禁与正常24路线×三浏览器复验 |
 | [试玩与运行说明](web/README.md) | 当前玩法、战斗、存档与本地试玩记录 |
 | [工程任务](docs/project/BACKLOG.md) | 已有实现与未完成范围 |
 | [资料目录](docs/README.md) | v0.3与v0.4关系 |
