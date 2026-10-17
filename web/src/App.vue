@@ -48,7 +48,12 @@ const preparation = shallowRef<Action | null>(null);
 const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settings = ref<HTMLDialogElement>(), exportError = ref('');
 const settingsButton=ref<HTMLButtonElement>(),contentPanel=ref<HTMLElement>(),navHeight=ref(0);
 const focus=useFocus(()=>contentPanel.value??settingsButton.value??null);
-function focusContent(){focus.target(contentPanel.value??document.getElementById('welcome-content'));}
+let pendingContentFocus:{owner:number;opener:Element|null}|null=null;
+function focusContent(){const target=contentPanel.value??document.getElementById('welcome-content');if(target){pendingContentFocus=null;focus.target(target);}else pendingContentFocus={owner:navigationRevision,opener:document.activeElement};}
+function cancelPendingContentFocus(){pendingContentFocus=null;}
+onMounted(()=>{document.addEventListener('pointerdown',cancelPendingContentFocus,true);document.addEventListener('keydown',cancelPendingContentFocus,true);});
+onScopeDispose(()=>{document.removeEventListener('pointerdown',cancelPendingContentFocus,true);document.removeEventListener('keydown',cancelPendingContentFocus,true);pendingContentFocus=null;});
+watch([()=>store.ready,()=>contentPanel.value],async()=>{if(!pendingContentFocus)return;await nextTick();const request=pendingContentFocus,target=contentPanel.value??document.getElementById('welcome-content');if(!request||!target)return;pendingContentFocus=null;if(appActive&&request.owner===navigationRevision&&document.activeElement===request.opener)focus.target(target);},{flush:'post'});
 function showSettings(){focus.open(settings.value,settingsButton.value??null);}
 function focusRegion(id:string){focus.target(document.getElementById(id));}
 const game = computed(() => store.game), core = computed(() => game.value?.core);
@@ -62,6 +67,8 @@ const goal = computed(() => game.value ? getBreakthroughGoal(game.value) : null)
 const journey = computed(() => game.value ? getTrialJourney(game.value) : null);
 const overview = computed(() => game.value ? getLifeOverview(game.value) : null);
 const lifeOpen = ref(false), lifeSection = ref<HTMLDetailsElement>(), lifeDialog = ref<HTMLDialogElement>();
+const journalExpanded=ref(false),recentJournal=computed(()=>[...(game.value?.journal??[])].reverse()),visibleJournal=computed(()=>journalExpanded.value?recentJournal.value:recentJournal.value.slice(0,10));
+watch(()=>game.value?.core.runId,()=>journalExpanded.value=false);
 const lifeIntent = shallowRef<{ command: Command; record: LifeRecord } | null>(null);
 const lifeStale = computed(() => !!lifeIntent.value && (!game.value || game.value.core.runId !== lifeIntent.value.command.runId || game.value.core.revision !== lifeIntent.value.command.expectedRevision));
 const context = computed(() => ({ state: game.value, cache: new Map<string, ActionPreview>() }));
@@ -359,7 +366,7 @@ onMounted(async() => {await experience.init();if(appActive)await store.init();})
           <template v-else>
             <div class="section-label">仙缘</div><button class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><RelationshipPanel :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
             <div class="choices"><button v-for="event in events" :key="event.id" :data-testid="`event-${event.id}`" :class="{highlight:highlight===`event-${event.id}`}" @click="act({type:'EVENT',event:event.id})" :disabled="!can({type:'EVENT',event:event.id})">{{event.name}} · {{event.npc}}</button></div>
-            <h3>近期手记</h3><p class="small">仅保留最近100条；完整已选事实请查看修仙生平。</p><ol class="journal"><li v-for="(line,index) in [...game.journal].reverse()" :key="index">{{line}}</li></ol>
+            <h3>近期手记</h3><p class="small">仅保留最近100条；当前显示{{visibleJournal.length}}条，共{{recentJournal.length}}条。完整已选事实请查看修仙生平。</p><ol id="recent-journal" class="journal"><li v-for="(line,index) in visibleJournal" :key="index">{{line}}</li></ol><button v-if="recentJournal.length>10" type="button" class="text-button" data-testid="journal-toggle" :aria-expanded="journalExpanded" aria-controls="recent-journal" @click="journalExpanded=!journalExpanded">{{journalExpanded?'收起较早条目':`展开全部 ${recentJournal.length} 条近期手记`}}</button>
           </template>
         </section>
         <RelationshipPanel v-if="tab==='仙缘' && phase!=='idle' && phase!=='opening'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
