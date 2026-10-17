@@ -3,6 +3,7 @@ import {sourceIdentity} from '../scripts/source-identity.mjs';
 import { defineConfig } from '@playwright/test';
 assertWebBuild();
 export default defineConfig({
+  forbidOnly:!!process.env.CI,
   metadata:{chenyuan:sourceIdentity()},
   testDir: './e2e', timeout: 60000, expect: { timeout: 8000 },
   fullyParallel: true, workers: 2, retries: 0,

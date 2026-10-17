@@ -3,6 +3,7 @@ import {sourceIdentity} from '../scripts/source-identity.mjs';
 import {defineConfig} from '@playwright/test';
 assertWebBuild();
 export default defineConfig({
+  forbidOnly:!!process.env.CI,
   metadata:{chenyuan:sourceIdentity()},
  testDir:'./performance-tests',timeout:300000,expect:{timeout:8000},fullyParallel:false,workers:1,retries:0,
  reporter:[['list'],['json',{outputFile:'performance-report/results.json'}],['html',{outputFolder:'performance-report/html',open:'never'}]],outputDir:'performance-results',
