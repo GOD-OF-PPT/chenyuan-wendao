@@ -71,6 +71,13 @@ def verify_archive(filename, extract=None):
         required = {'web/index.html', 'source.bundle', 'README.md', 'KNOWN_ISSUES.md', 'SAVE_COMPATIBILITY.md', 'CHANGELOG.md', 'PLAYTEST_FORM.md', 'ASSET_SOURCES.md', 'asset-manifest.json', 'serve.py', 'verify.py'}
         if not required <= set(expected):
             raise ValueError('Incomplete delivery contents')
+        review = manifest.get('reviewRecord')
+        if review is not None:
+            if not isinstance(review, dict) or set(review) != {'path', 'sha256', 'scope'} or review['path'] != 'ENGINEERING_REVIEW.md' or review['scope'] != 'agent-engineering-review-record' or not re.fullmatch('[a-f0-9]{64}', str(review['sha256'])):
+                raise ValueError('Invalid engineering review descriptor')
+            descriptor = expected.get(review['path'])
+            if descriptor is None or descriptor['sha256'] != review['sha256']:
+                raise ValueError('Missing or inconsistent engineering review record')
         if extract is not None:
             dest = Path(extract)
             if dest.exists() and (dest.is_symlink() or any(dest.iterdir())):

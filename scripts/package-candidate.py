@@ -99,6 +99,8 @@ def package(browser_evidence, journeys, output):
 
 需要 Python 3.10+，在本目录执行 `python3 serve.py`，打开 http://127.0.0.1:8000/ 。只监听本机，网页不需要账号、API或联网模型。用HTTP运行，不用file://；Vite preview不是生产托管。
 
+欢迎页、设置和当前提示可打开玩法帮助；跳过/关闭仅影响本页显示，不改变成长。当前工程审查的源记录见ENGINEERING_REVIEW.md，其源码路径以source.bundle恢复后的仓库根为准；机器回执不代替工程、真人或展示审查。
+
 普通入口从正常新档开始；主菜单“演示节点”进入由正式指令回放生成的9个演示存档。每个演示运行版本/节点拥有独立进度、记录和显示设置；演示页有显式标记，可继续、重载并返回正常游戏。演示不是正常通关证据，不能直接把演示封装导入正常档。清理站点数据会丢本地进度，正常档请明确导出备份。
 
 ## 核验与源码复现
@@ -124,7 +126,7 @@ Game/schema/content/balance：{json.dumps(versions, ensure_ascii=False)}。
 ''')
         (stage / 'KNOWN_ISSUES.md').write_text('''# 已知限制与后续责任
 
-数值未平衡；真人试玩、Safari/手机及辅助技术真机、最终展示/美术认可未执行。工程候选包与T24/CHECK-08最终总审、T25真人反馈分开；没有自动合并、公开部署或发Release。
+数值未平衡；真人试玩、Safari/手机及辅助技术真机、最终展示/美术认可未执行。工程审查记录及其来源范围见ENGINEERING_REVIEW.md；机器构建/包测试回执与真人/展示验收分开，附带记录不构成人工签名；没有自动合并、公开部署或发Release。
 
 历史高清美术原件仍有两组缺失；现生产素材来源/规格/发行许可边界见源码art清单，不新增授权或分发字体。WebKit自动化不等于Safari真机，模拟网络/CPU不等于公网或所有设备。
 
@@ -134,7 +136,9 @@ T22首次Firefox第8页创建中断未复现、根因未定；原trace与5次原
 
 本候选承接凡人至飞升的正式full规则、三开场/双修法/两筹备、12功法/4法宝、选择因果、生平/归隐/寿尽、问心三关与双结尾。原子存档、已知旧档迁移、重复回执/多标签/失败恢复，以及生产美术、四尺寸/字号/键盘、性能与本地记录均有独立版本证据。
 
-本轮新增9个正式指令回放演示节点、持续演示标记、正常与演示数据隔离、专用导入导出；构建/公开资源来源守卫、完整源码历史bundle、可复现装配、干净锁定重建和实际解包测试回执。普通游戏规则、数值、Game/schema/content/balance及依赖锁未因演示入口改写；数值仍未平衡。
+此前T23新增9个正式指令回放演示节点、持续演示标记、正常与演示数据隔离、专用导入导出；构建/公开资源来源守卫、完整源码历史bundle、可复现装配、干净锁定重建和实际解包测试回执。普通游戏规则、数值、Game/schema/content/balance及依赖锁未因演示入口改写；数值仍未平衡。
+
+T24修复文件读取期间的导入所有权和异常处理，补行为引导/帮助重看、未决行囊只读查看与仙缘遭遇/记录并列；提示保持简短，完整解释可重看。候选认证绑定当前全部UI/IDB用例清单。Vue精确更新3.5.44、Vite7.3.7及必需传递依赖；其余直接依赖与Game/数值/存档版本不变。详见ENGINEERING_REVIEW.md的具体证据与未执行范围。
 
 历史源SHA、实际测试/产物/截图见manifest和evidence；候选交付不是公开Release或真人/展示验收。
 ''')
@@ -169,8 +173,12 @@ T22首次Firefox第8页创建中断未复现、根因未定；原trace与5次原
 
 不分发本机字体；界面使用用户系统可用字体。无已授权音乐则不加入音乐。截图中字体像素不是字体文件；本候选不附个人存档/密钥/node_modules。发行许可与最终展示决定仍需用户依据现有权利确认，本包与CI不擅自授予新许可。
 ''')
+        review_path = ROOT / 'docs/implementation/goal-1-final-review.md'
+        shutil.copy2(review_path, stage / 'ENGINEERING_REVIEW.md')
         inventory = [file_info(file, file.relative_to(stage).as_posix()) for file in sorted(stage.rglob('*')) if file.is_file()]
         manifest = {'format': 'chenyuan-candidate', 'version': 1, 'source': {'commit': source['source'], 'buildCommit': source['head'], 'tree': source['tree'], 'requiredHistory': ['d3f48ef7df6269133c2875d9b6ca035c0a30ca41'], 'runtimeDigest': inputs['build']['sourceDigest']}, 'versions': versions, 'tools': {'node': inputs['build']['source']['node'], 'npm': inputs['build']['source']['npm'], 'assemblyNode': source['node'], 'assemblyNpm': source['npm'], 'python': platform.python_version(), 'git': run('git', '--version'), 'platform': platform.system() + '/' + platform.machine()}, 'locks': inputs['build']['locks'], 'validation': inputs['summary'], 'runtime': {'files': inputs['build']['files'], 'bytes': inputs['build']['bytes']}, 'inventory': inventory}
+        review_entry = next(item for item in inventory if item['path'] == 'ENGINEERING_REVIEW.md')
+        manifest['reviewRecord'] = {'path': review_entry['path'], 'sha256': review_entry['sha256'], 'scope': 'agent-engineering-review-record'}
         manifest_bytes = (json.dumps(manifest, ensure_ascii=False, indent=2) + '\n').encode()
         (stage / 'manifest.json').write_bytes(manifest_bytes)
         checks = {item['path']: item['sha256'] for item in inventory}
