@@ -11,3 +11,11 @@ test('coverage gate accepts only complete72 actual outcomes across12 balanced re
 test('coverage gate refuses duplicated, unknown or absent route identities',()=>{check((r,b,s)=>{if(b==='webkit'&&s===1)r.suites[0].specs[0].title='normal '+ascensionMatrix[0].id;});check((r,b,s)=>{if(b==='chromium'&&s===0)r.suites[0].specs.pop();});check((r,b,s)=>{if(b==='firefox'&&s===0)r.suites[0].specs[0].title='normal unknown';});});
 test('coverage gate rejects skipped, failed or retried cases even if a report claims success',()=>{for(const value of ['skipped','failed'])check((r,b,s)=>{if(b==='webkit'&&s===0)r.suites[0].specs[0].tests[0].results[0].status=value;});check((r,b,s)=>{if(b==='firefox'&&s===1)r.suites[0].specs[0].tests[0].results.push({status:'passed',retry:1});});});
 test('coverage gate refuses incorrect browser identity and reporter-level errors',()=>{check((r,b,s)=>{if(b==='webkit'&&s===3)for(const spec of r.suites[0].specs)spec.tests[0].projectName='firefox';});check((r,b,s)=>{if(b==='chromium'&&s===0)r.errors.push({message:'failed startup'});});});
+test('explicit complete local layout requires every one of the same72 identities and never weakens the default shard gate',()=>{
+ const dir=fixture();try{
+  const suites=[];for(const entry of fs.readdirSync(dir)){const sub=path.join(dir,entry);suites.push(...JSON.parse(fs.readFileSync(path.join(sub,'results.json'))).suites);fs.rmSync(sub,{recursive:true});}
+  const file=path.join(dir,'results.json'),report={errors:[],suites};fs.writeFileSync(file,JSON.stringify(report));assert.throws(()=>verifyJourneyCoverage(dir));assert.equal(verifyJourneyCoverage(dir,{layout:'complete'}).passed,72);
+  const spec=report.suites[0].specs[0];spec.tests[0].projectName='webkit';fs.writeFileSync(file,JSON.stringify(report));assert.throws(()=>verifyJourneyCoverage(dir,{layout:'complete'}));
+  spec.tests[0].projectName='chromium';spec.tests[0].results[0].retry=1;fs.writeFileSync(file,JSON.stringify(report));assert.throws(()=>verifyJourneyCoverage(dir,{layout:'complete'}));
+ }finally{fs.rmSync(dir,{recursive:true,force:true});}
+});
