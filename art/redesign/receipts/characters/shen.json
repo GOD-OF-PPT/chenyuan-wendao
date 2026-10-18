@@ -1,0 +1,74 @@
+{
+  "id": "shen",
+  "category": "characters",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-b404041b-4f9a-4b9f-849c-ffd4df095b83.png",
+  "savedPath": "art/redesign/characters/shen-v1.png",
+  "copiedUnchanged": true,
+  "sourceSHA256": "483d128d9e72dfa44cf3c902df0bab6721beafdb1032184502263f1d7e0cdf42",
+  "promptReference": "art/redesign/receipts/character-prompts.json#shen",
+  "referenceImages": [
+    {
+      "path": "art/production/portraits/shen.png",
+      "sha256": "d6a236262a00a2f2656a425a1b9aed7f36cf8cf9f11478ba7574f3c65795a641",
+      "role": "edit target; preserve existing character identity, face, age, hair and clothing"
+    },
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9",
+      "role": "style reference only; materials, palette and lighting, no scenery or objects"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "agent source inspection, not user art acceptance",
+    "observation": "Single existing character identity or configured enemy subject; no UI, readable text or watermark observed."
+  },
+  "requestedResolution": "native available square PNG",
+  "resolutionNote": "Actual tool output recorded, no upscaling or4K claim",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceBytes": 2443651,
+  "alphaProof": {
+    "transparentPixels": 604794,
+    "solidPixels": 864501,
+    "intermediatePixels": 103221,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 100305,
+    "solidPixels": 143824,
+    "intermediatePixels": 18015,
+    "min": 0,
+    "max": 254
+  },
+  "runtime": {
+    "path": "web/public/art/v2/characters/shen.webp",
+    "bytes": 67818,
+    "sha256": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+}

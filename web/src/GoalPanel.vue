@@ -78,7 +78,7 @@ function goalLocation() {
 
 <template>
   <section id="goal-panel" tabindex="-1" class="paper goals" data-testid="goal-panel">
-    <div class="section-label">当前目标 <button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p><h3 data-testid="target">{{goal.title}}</h3>
+    <div class="section-label">当前目标 <button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p><h3 data-testid="target">{{goal.title}}</h3><progress v-if="target.kind==='breakthrough'&&!focus&&game.status==='active'&&C.realms[game.core.player.realm].xpCap>0" class="goal-progress" :value="game.core.player.xp" :max="C.realms[game.core.player.realm].xpCap" aria-label="当前目标修为"/>
     <label class="goal-picker">替换追踪目标<select :value="selected" @change="select" data-testid="goal-select" aria-label="追踪目标">
       <option value="breakthrough">下一突破</option>
       <optgroup label="物资"><option v-for="(item,id) in C.items" :key="id" :value="`item:${id}`">{{item.name}} · {{C.realms[item.min].name}}</option></optgroup>

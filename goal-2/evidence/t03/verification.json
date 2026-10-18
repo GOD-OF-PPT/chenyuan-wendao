@@ -1,0 +1,238 @@
+{
+  "format": "goal2-t03-development-visual-evidence",
+  "date": "2026-10-19",
+  "sourceBase": "b38b3222c83e4d884b50eb0c8b24f3574d04bb9c",
+  "workingTree": true,
+  "runtimeFiles": 49,
+  "runtimeBytes": 6327433,
+  "scope": "Desktop reference foundation, five characters, nine enemy presentations, meditation variant and battle decisions",
+  "screenshots": [
+    {
+      "path": "goal-2/evidence/t03/battle-1440-150.png",
+      "source": "artifacts/goal-2/t03/full-chromium/screenshots/character-battle-art-1440--1321c-chable-with150-percent-text-chromium/battle-1440-150.png",
+      "bytes": 550336,
+      "sha256": "3c8b0110f274f6d26292a17b97d5bf9a14985198cff51fcf505a9036e1f69df0",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/battle-context-1440.png",
+      "source": "artifacts/goal-2/t03/full-chromium/screenshots/character-battle-art-deskt-34c88-jump-without-passive-writes-chromium/battle-context-1440.png",
+      "bytes": 1195265,
+      "sha256": "43eee691a676d55b1a0520ad85f18b70376646ef6c62b9d7edf7b2e3b6fabaad",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/battle-puppet.png",
+      "source": "artifacts/goal-2/t03/full-chromium/screenshots/character-battle-art-confi-de111-ound-without-passive-writes-chromium/battle-puppet.png",
+      "bytes": 469809,
+      "sha256": "a9035378489a66a7d4c57bf52ac019d3de8b1b77125acb0149fbedf2fb967926",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/battle-sentinel.png",
+      "source": "artifacts/goal-2/t03/full-chromium/screenshots/character-battle-art-confi-911c4-ound-without-passive-writes-chromium/battle-sentinel.png",
+      "bytes": 464426,
+      "sha256": "52755f8f43c0f1a0694e4af2f1eeba3df2be5d2af62327087384561ccbcdda87",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/battle-serpent.png",
+      "source": "artifacts/goal-2/t03/full-chromium/screenshots/character-battle-art-confi-27d1f-ound-without-passive-writes-chromium/battle-serpent.png",
+      "bytes": 475468,
+      "sha256": "d5464a72ec85e08c192a0463a262cb698615c6d2846621d68bd28bb1d8c1b628",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/battle-shadow.png",
+      "source": "artifacts/goal-2/t03/full-chromium/screenshots/character-battle-art-confi-5f001-ound-without-passive-writes-chromium/battle-shadow.png",
+      "bytes": 470016,
+      "sha256": "d2aeb98364dfeaf2edb577117fda30f41973bce12939b834e7d29bc6e3d1f312",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/battle-trial_gate.png",
+      "source": "artifacts/goal-2/t03/full-chromium/screenshots/character-battle-art-confi-b10bd-ound-without-passive-writes-chromium/battle-trial_gate.png",
+      "bytes": 460581,
+      "sha256": "1c207e4dd618f461634cf8892da7aea3e93111af40f74a7c50913ef4f99a2da5",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/battle-trial_heart.png",
+      "source": "artifacts/goal-2/t03/full-chromium/screenshots/character-battle-art-confi-e45b5-ound-without-passive-writes-chromium/battle-trial_heart.png",
+      "bytes": 462913,
+      "sha256": "378b01f9b0eed53d546dca40da1c76e53d1b67c6222db58171ee5b2ccf10e9ce",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/battle-trial_thunder.png",
+      "source": "artifacts/goal-2/t03/full-chromium/screenshots/character-battle-art-confi-413fe-ound-without-passive-writes-chromium/battle-trial_thunder.png",
+      "bytes": 457312,
+      "sha256": "9d26c6933634cbd880874031a697758277b22f6c97a078074e072b2379861421",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/battle-warden.png",
+      "source": "artifacts/goal-2/t03/full-chromium/screenshots/character-battle-art-confi-afe72-ound-without-passive-writes-chromium/battle-warden.png",
+      "bytes": 475102,
+      "sha256": "42b3b0f73a2331d2f03a404ec3ebd1a2e3036a990c473d25784ebcc5b089a374",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/battle-wolf.png",
+      "source": "artifacts/goal-2/t03/full-chromium/screenshots/character-battle-art-confi-5ea1c-ound-without-passive-writes-chromium/battle-wolf.png",
+      "bytes": 466488,
+      "sha256": "31879a48e70b6c2ecc16157b4687ab0946132048efc09d738b2846ce52e786fd",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/desktop-cave-initial-1280.png",
+      "source": "artifacts/goal-2/t03/nav-fixed-ui/screenshots/desktop-application-deskto-90645-on-drive-exact-saved-growth-chromium/desktop-cave-initial-1280.png",
+      "bytes": 997322,
+      "sha256": "2713c48d7835cc3afbd481cf6cfb8cbc7cee7dbb777018b59c00931541b63e4b",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/desktop-cave-initial-1440.png",
+      "source": "artifacts/goal-2/t03/nav-fixed-ui/screenshots/desktop-application-deskto-35330-on-drive-exact-saved-growth-chromium/desktop-cave-initial-1440.png",
+      "bytes": 1368082,
+      "sha256": "8fe1fdf3508e2ece8fa6ca737bcc89dfb29a565e52acece5d9e784f6fe5ad74c",
+      "reviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t03/desktop-cave-initial-1920.png",
+      "source": "artifacts/goal-2/t03/nav-fixed-ui/screenshots/desktop-application-deskto-d4b70-on-drive-exact-saved-growth-chromium/desktop-cave-initial-1920.png",
+      "bytes": 2040536,
+      "sha256": "f643ea12ca7abfefec020c0ab59eaee5bb354a729c142db44465644bce9c2135",
+      "reviewed": true
+    }
+  ],
+  "fullChromium": {
+    "declared": 306,
+    "passed": 305,
+    "failed": 1,
+    "failure": "strict text locator matched new recent-action and existing feedback; test corrected without runtime changes",
+    "reportSha256": "aafc4f2f40d35c66a313e76c4eb661cc581ff8b67b5f9a59cce80ddabc8fc0ec"
+  },
+  "correctedSecurityCase": {
+    "passed": 3,
+    "projects": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "reportSha256": "c6e32e158baf29aa9ccf5a8e04b1c11f5445c99b9546114863fd4133deb5b65c"
+  },
+  "remaining": [
+    "T04 desktop full navigation and saving/error clarity",
+    "T05 growth and materials",
+    "T06 events and endings",
+    "T07 desktop comprehensive validation",
+    "T08 mobile lowest priority",
+    "T09 final package",
+    "T10 actual user visual acceptance"
+  ],
+  "userAcceptance": false,
+  "previousVisualSourceDigest": "8f59de7d5400e3359876898aacee1ee8b74052cdb101c20b18a8db73f9db3574",
+  "previousSourceHashes": {
+    "web/src/ActionEffects.vue": "6dd8763cdf71de98870dd6954ed1a47566055a0ddfc1f01aa6ca6879e38b03a5",
+    "web/src/ActionFeedback.vue": "6c17e5134c3e195342a4711492e1798eee26065b2806de55c4b726aaf52f7833",
+    "web/src/App.vue": "8ac10c3fbd1df9f2f4e8c1f844d52a7a46e8053e5ca125ea3c7b93d534f8c2ae",
+    "web/src/AssetImage.vue": "ecfc476d074c16c14b181abbf62863ebc6d5c014d9473d3118e761433115a8da",
+    "web/src/BatchPreview.vue": "8bba4a7703a68b8eceb5441d4d0d1f8e738d53f41abb113b3a61f609a0a5022f",
+    "web/src/BattlePanel.vue": "161151f335e460689228e6d52368bc5403cd425bf847359376fad22eb252b4a6",
+    "web/src/CharacterPanel.vue": "db9ac6866da696ce8828d75357950b868a176cfbdebabc89e667245a1d634787",
+    "web/src/DemoFailure.vue": "c75a67ee2bbc77b416735f55899ae1d433fd963dee36543885547ecad73597d5",
+    "web/src/EquipmentPanel.vue": "56055e5a5668060e8843578e5c5a392d5a98cf62d82194dadc09917e615c81cc",
+    "web/src/GameIcon.vue": "bb3f16dcb5952299de409a6666e55901e044bb4890cf8e2ddb720f0122d3d061",
+    "web/src/GoalPanel.vue": "30e83abc514daec6fabaff91d3d5fd20cb695ece6c8e84a2e384b359713360f3",
+    "web/src/GrowthPanel.vue": "930ba00cbeca41e2c2133c34b8021af966664a7a4835d47ebfd5665e96924363",
+    "web/src/GuidancePanel.vue": "232049046802b3cc7a0876f5572a9ee103fcf82593f66a028a5c403caafe3aee",
+    "web/src/LifePanel.vue": "87b06384f033db43fb8f1be1b9d93d92ffdf74e13b412cabdd76699c43d4c268",
+    "web/src/LocalExperiencePanel.vue": "8a75359c38313c349146fd8cbb57d2ef16e295cbd7a7c0806741add452b994a9",
+    "web/src/PortraitImage.vue": "e7b4b55bdce38f13e38960327bf0d8d767e69058671dc7adf42ce1adf87d5208",
+    "web/src/PrimaryNav.vue": "aa09907c227b9f9ad4f73a97491870c553d7a4a813c4a021eecce1c34e34c286",
+    "web/src/RelationshipPanel.vue": "16adf055ec299b01cc7cc129bd0d2472c86e3dea78a2f4a0965079f9d25026cd",
+    "web/src/ScenePanel.vue": "3ce7f04ddf0902b9dffa62bd16e416b29d2d43a3f135c30180fdc34353fd44c7",
+    "web/src/TrialPreparationPanel.vue": "6dda6bccc2159a929a3379c39003ccd2bec14956f32fc906af619baeb63a7d74",
+    "web/src/TrialProgressPanel.vue": "b83d6b4d10d8ec42530d817342e99e30ba2cb268c83dad445f01bb593d7b7f06",
+    "web/src/assets.ts": "587283638b311e984fc2bc372d0c798603ccade71855bd14f37925bb5c6cb997",
+    "web/src/demo-loader.ts": "7e676c17d754b541c37a059846527c3090d72bb2baecbc3c4fae7ddc1474db8b",
+    "web/src/demo.css": "77a68ee6af0a07f7098e40fdb92b003872d4766f2d87fb036afc20ebe0b3f6d9",
+    "web/src/effects.ts": "03b6daa4cde24a2127d4fd20c42367a32a162996456bb7c32c82d7f4af3bc981",
+    "web/src/focus.ts": "682ff9d38cc9ef877d8e3708efefe1db8e2c4e0172f3278c0f42f82b204bf269",
+    "web/src/full-persistence.ts": "633081bb028a9c0127214476e36096d25b840473a542a1cfbcdd80617f93fa4b",
+    "web/src/guidance.ts": "c27a8e7b45b1e45912f1e27426ad42a204aabb866db369188ee8a71be83ca955",
+    "web/src/local-events.ts": "eb5081eb50651ea0b81bed50e8869689c542a984a344a9ea808cad398473ca58",
+    "web/src/local-experience.ts": "1d611e165c687753ddf4ecfa546a749be9ece54c3956890f42d69d13ff284fe1",
+    "web/src/main.ts": "c97c87d77e2367affd6f76f93426edc5e73b8dc3799bb67197e3ab67fa6e56aa",
+    "web/src/navigation.ts": "a56acc19b1397218a93c0f1175fa2ff8ea36e0b837feef8d209de3653deca947",
+    "web/src/persistence.ts": "c3a0aa6dbabd58dd2278db20b8422fcc2d63d73a1da9ae435bb9ecff142ea415",
+    "web/src/presentation.ts": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649",
+    "web/src/scene-presentation.ts": "0c350de82085006096e104b206e0ce7cd3875ac453fb6a95950980ebe44b8f65",
+    "web/src/session.ts": "76c6968b53c1ca990c4ee4ac4a921e549585338c04b10e31636ed9821f5263c0",
+    "web/src/shell.css": "a9f7091163f6c49539e6afa5a32ee0504b9830bf45ee180baddafcf64798ac44",
+    "web/src/store.ts": "f90b5f6febf9e3119a97b8832232daeb6f89031855456ca26a3f30c76d3c4bfa",
+    "web/src/style.css": "1f27c2409f9211392180516b51015a041e4edda8d5fcc557d94321b0458f71a8",
+    "web/src/ui-icons.ts": "9691c0395014863388fd6c9c9d0529a66504a78cd95597c374cf387eaa7fdbf4",
+    "web/src/use-local-experience.ts": "c007ebd23b486c3c922f581210b86d583966cea36bae2efbdf15f69e06d3108c",
+    "web/src/use-tracking.ts": "ef1ff1a6edd1f441441dfe6743696d8c7239e6b9f0be1c22e649049038501c86"
+  },
+  "runtimeSourceDigest": "b1cf282687c630e00ccf378f4f367ad4b9fbb3f113c2f4b574bac56a70d261bc",
+  "sourceHashes": {
+    "web/src/ActionEffects.vue": "6dd8763cdf71de98870dd6954ed1a47566055a0ddfc1f01aa6ca6879e38b03a5",
+    "web/src/ActionFeedback.vue": "6c17e5134c3e195342a4711492e1798eee26065b2806de55c4b726aaf52f7833",
+    "web/src/App.vue": "8ac10c3fbd1df9f2f4e8c1f844d52a7a46e8053e5ca125ea3c7b93d534f8c2ae",
+    "web/src/AssetImage.vue": "ecfc476d074c16c14b181abbf62863ebc6d5c014d9473d3118e761433115a8da",
+    "web/src/BatchPreview.vue": "8bba4a7703a68b8eceb5441d4d0d1f8e738d53f41abb113b3a61f609a0a5022f",
+    "web/src/BattlePanel.vue": "161151f335e460689228e6d52368bc5403cd425bf847359376fad22eb252b4a6",
+    "web/src/CharacterPanel.vue": "db9ac6866da696ce8828d75357950b868a176cfbdebabc89e667245a1d634787",
+    "web/src/DemoFailure.vue": "c75a67ee2bbc77b416735f55899ae1d433fd963dee36543885547ecad73597d5",
+    "web/src/EquipmentPanel.vue": "56055e5a5668060e8843578e5c5a392d5a98cf62d82194dadc09917e615c81cc",
+    "web/src/GameIcon.vue": "bb3f16dcb5952299de409a6666e55901e044bb4890cf8e2ddb720f0122d3d061",
+    "web/src/GoalPanel.vue": "30e83abc514daec6fabaff91d3d5fd20cb695ece6c8e84a2e384b359713360f3",
+    "web/src/GrowthPanel.vue": "930ba00cbeca41e2c2133c34b8021af966664a7a4835d47ebfd5665e96924363",
+    "web/src/GuidancePanel.vue": "232049046802b3cc7a0876f5572a9ee103fcf82593f66a028a5c403caafe3aee",
+    "web/src/LifePanel.vue": "87b06384f033db43fb8f1be1b9d93d92ffdf74e13b412cabdd76699c43d4c268",
+    "web/src/LocalExperiencePanel.vue": "8a75359c38313c349146fd8cbb57d2ef16e295cbd7a7c0806741add452b994a9",
+    "web/src/PortraitImage.vue": "e7b4b55bdce38f13e38960327bf0d8d767e69058671dc7adf42ce1adf87d5208",
+    "web/src/PrimaryNav.vue": "f4800df435afe4413a44e653ddcb65b27eca56d77c301c43824169ff3d99d5ad",
+    "web/src/RelationshipPanel.vue": "16adf055ec299b01cc7cc129bd0d2472c86e3dea78a2f4a0965079f9d25026cd",
+    "web/src/ScenePanel.vue": "3ce7f04ddf0902b9dffa62bd16e416b29d2d43a3f135c30180fdc34353fd44c7",
+    "web/src/TrialPreparationPanel.vue": "6dda6bccc2159a929a3379c39003ccd2bec14956f32fc906af619baeb63a7d74",
+    "web/src/TrialProgressPanel.vue": "b83d6b4d10d8ec42530d817342e99e30ba2cb268c83dad445f01bb593d7b7f06",
+    "web/src/assets.ts": "587283638b311e984fc2bc372d0c798603ccade71855bd14f37925bb5c6cb997",
+    "web/src/demo-loader.ts": "7e676c17d754b541c37a059846527c3090d72bb2baecbc3c4fae7ddc1474db8b",
+    "web/src/demo.css": "77a68ee6af0a07f7098e40fdb92b003872d4766f2d87fb036afc20ebe0b3f6d9",
+    "web/src/effects.ts": "03b6daa4cde24a2127d4fd20c42367a32a162996456bb7c32c82d7f4af3bc981",
+    "web/src/focus.ts": "682ff9d38cc9ef877d8e3708efefe1db8e2c4e0172f3278c0f42f82b204bf269",
+    "web/src/full-persistence.ts": "633081bb028a9c0127214476e36096d25b840473a542a1cfbcdd80617f93fa4b",
+    "web/src/guidance.ts": "c27a8e7b45b1e45912f1e27426ad42a204aabb866db369188ee8a71be83ca955",
+    "web/src/local-events.ts": "eb5081eb50651ea0b81bed50e8869689c542a984a344a9ea808cad398473ca58",
+    "web/src/local-experience.ts": "1d611e165c687753ddf4ecfa546a749be9ece54c3956890f42d69d13ff284fe1",
+    "web/src/main.ts": "c97c87d77e2367affd6f76f93426edc5e73b8dc3799bb67197e3ab67fa6e56aa",
+    "web/src/navigation.ts": "a56acc19b1397218a93c0f1175fa2ff8ea36e0b837feef8d209de3653deca947",
+    "web/src/persistence.ts": "c3a0aa6dbabd58dd2278db20b8422fcc2d63d73a1da9ae435bb9ecff142ea415",
+    "web/src/presentation.ts": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649",
+    "web/src/scene-presentation.ts": "0c350de82085006096e104b206e0ce7cd3875ac453fb6a95950980ebe44b8f65",
+    "web/src/session.ts": "76c6968b53c1ca990c4ee4ac4a921e549585338c04b10e31636ed9821f5263c0",
+    "web/src/shell.css": "a9f7091163f6c49539e6afa5a32ee0504b9830bf45ee180baddafcf64798ac44",
+    "web/src/store.ts": "f90b5f6febf9e3119a97b8832232daeb6f89031855456ca26a3f30c76d3c4bfa",
+    "web/src/style.css": "1f27c2409f9211392180516b51015a041e4edda8d5fcc557d94321b0458f71a8",
+    "web/src/ui-icons.ts": "9691c0395014863388fd6c9c9d0529a66504a78cd95597c374cf387eaa7fdbf4",
+    "web/src/use-local-experience.ts": "c007ebd23b486c3c922f581210b86d583966cea36bae2efbdf15f69e06d3108c",
+    "web/src/use-tracking.ts": "ef1ff1a6edd1f441441dfe6743696d8c7239e6b9f0be1c22e649049038501c86"
+  },
+  "navigationFix": {
+    "source": "web/src/PrimaryNav.vue",
+    "oldProductionReads": 4,
+    "newProductionReads": 0,
+    "actualBrowsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "targetedPassed": 12,
+    "reportSha256": "4a608a93548b66247d7e37a32c2fcbd454c809b78d250d8373885196fa2a3e84"
+  },
+  "battleScreenshotNote": "Battle screenshots precede navigation measurement-only correction; previous source hashes retained, latest runtime/source separately recorded."
+}

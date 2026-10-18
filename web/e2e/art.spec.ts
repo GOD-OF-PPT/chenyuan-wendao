@@ -3,7 +3,7 @@ import {readFile} from 'node:fs/promises';
 import {action,snapshot,start,travel} from './support';
 import {driver} from '../../tests/full-route.mjs';
 import {trialJourneyScenario} from '../../tests/trial-journey-route.mjs';
-import {SCENE_ASSETS,PORTRAIT_ASSETS,TERRACE_STATE_ASSETS} from '../src/assets';
+import {SCENE_ASSETS,PORTRAIT_ASSETS,TERRACE_STATE_ASSETS,CAVE_MEDITATION_ASSET} from '../src/assets';
 import {ICONS} from '../src/ui-icons';
 test.use({actionTimeout:8000,navigationTimeout:15000});
 const errors=new WeakMap<Page,string[]>();test.beforeEach(async({page})=>{const a:string[]=[];errors.set(page,a);page.on('pageerror',e=>a.push(e.message));});test.afterEach(async({page})=>expect(errors.get(page)).toEqual([]));
@@ -11,9 +11,9 @@ const art=(page:Page,id:string)=>page.locator(`[data-asset-id="${id}"]`);
 async function imported(page:Page){await page.goto('/');const input=page.getByLabel('导入已有存档',{exact:true});await expect(input).toBeEnabled();await input.setInputFiles({name:'legal-art-boundary.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(trialJourneyScenario().prepared))});await expect(page.getByTestId('realm')).toHaveText('化神');}
 async function mortalReady(page:Page){await page.goto('/');await page.getByRole('button',{name:'踏入仙途'}).click();await action(page,'leave');await action(page,'return-cave');await page.getByLabel('行动次数').selectOption('5');await action(page,'cultivate');}
 
-test('all fourteen production rasters decode at actual export sizes and portraits have real alpha',async({page})=>{
- await start(page);const before=await snapshot(page);const files=[...new Set([...Object.values(SCENE_ASSETS),...Object.values(TERRACE_STATE_ASSETS),...Object.values(PORTRAIT_ASSETS)])];expect(files).toHaveLength(14);
- const rows=await page.evaluate(async files=>{const rows=[];for(const file of files){const im=new Image();im.src=new URL(file,document.baseURI).href;await im.decode();const portrait=file.includes('/portraits/');let transparent=0,nearOpaque=0;if(portrait){const canvas=document.createElement('canvas');canvas.width=im.naturalWidth;canvas.height=im.naturalHeight;const c=canvas.getContext('2d')!;c.drawImage(im,0,0);const pixels=c.getImageData(0,0,canvas.width,canvas.height).data;for(let i=3;i<pixels.length;i+=4){if(pixels[i]===0)transparent++;if(pixels[i]>=250)nearOpaque++;}}rows.push({file,width:im.naturalWidth,height:im.naturalHeight,transparent,nearOpaque,portrait});}return rows;},files);
+test('all fifteen production rasters decode at actual export sizes and portraits have real alpha',async({page})=>{
+ await start(page);const before=await snapshot(page);const files=[...new Set([...Object.values(SCENE_ASSETS),...Object.values(TERRACE_STATE_ASSETS),...Object.values(PORTRAIT_ASSETS),CAVE_MEDITATION_ASSET])];expect(files).toHaveLength(15);
+ const rows=await page.evaluate(async files=>{const rows=[];for(const file of files){const im=new Image();im.src=new URL(file,document.baseURI).href;await im.decode();const portrait=file.includes('/portraits/')||file.includes('/characters/');let transparent=0,nearOpaque=0;if(portrait){const canvas=document.createElement('canvas');canvas.width=im.naturalWidth;canvas.height=im.naturalHeight;const c=canvas.getContext('2d')!;c.drawImage(im,0,0);const pixels=c.getImageData(0,0,canvas.width,canvas.height).data;for(let i=3;i<pixels.length;i+=4){if(pixels[i]===0)transparent++;if(pixels[i]>=250)nearOpaque++;}}rows.push({file,width:im.naturalWidth,height:im.naturalHeight,transparent,nearOpaque,portrait});}return rows;},files);
  for(const row of rows){expect(row.width).toBe(row.portrait?512:1536);expect(row.height).toBe(row.portrait?512:865);if(row.portrait){expect(row.transparent).toBeGreaterThan(10000);expect(row.nearOpaque).toBeGreaterThan(10000);}}
  expect(await snapshot(page)).toEqual(before);
 });
@@ -31,7 +31,7 @@ test('corrupt production images fall back to native scenes and marks while real 
 test('late old image completion or error cannot replace a newer loaded scene or alter resources',async({page})=>{
  const held:Route[]=[];await page.route('**/art/v2/scenes/opening.webp',route=>{held.push(route);});await page.goto('/',{waitUntil:'domcontentloaded'});await page.getByRole('button',{name:'踏入仙途'}).click();await expect(art(page,'scene-opening')).toHaveAttribute('data-art-state','loading');await page.evaluate(()=>{(globalThis as any).oldArt=document.querySelector('[data-asset-id="scene-opening"] img');});await action(page,'leave');await action(page,'return-cave');await expect(art(page,'scene-cave')).toHaveAttribute('data-art-state','ready');const before=await snapshot(page);expect(held.length).toBeGreaterThan(0);
  const body=await readFile(new URL('../public/art/v2/scenes/opening.webp',import.meta.url));for(const route of held)await route.fulfill({status:200,contentType:'image/webp',body}).catch(()=>{});
- await page.evaluate(()=>{(globalThis as any).oldArt?.dispatchEvent(new Event('load'));(globalThis as any).oldArt?.dispatchEvent(new Event('error'));});await expect(art(page,'scene-cave')).toHaveAttribute('data-art-state','ready');await expect(art(page,'scene-cave').locator('img')).toHaveAttribute('src',/cave\.webp$/);expect(await snapshot(page)).toEqual(before);
+ await page.evaluate(()=>{(globalThis as any).oldArt?.dispatchEvent(new Event('load'));(globalThis as any).oldArt?.dispatchEvent(new Event('error'));});await expect(art(page,'scene-cave')).toHaveAttribute('data-art-state','ready');await expect(art(page,'scene-cave').locator('img')).toHaveAttribute('src',/cave-meditation\.webp$/);expect(await snapshot(page)).toEqual(before);
 });
 
 test('the single external sprite renders all40 symbols with no game changes',async({page},info)=>{

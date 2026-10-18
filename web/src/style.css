@@ -290,3 +290,5 @@ progress.cultivation::-webkit-progress-value{background:#a0874f}
 .life-confirm{max-width:min(600px,calc(100vw - 32px));width:100%;box-sizing:border-box;max-height:calc(100dvh - 32px);overflow:auto}
 .life-confirm p{overflow-wrap:anywhere;line-height:1.8}
 .life-confirm button{margin:6px;max-width:100%;white-space:normal}
+
+.in-battle{display:flex;flex-direction:column}.in-battle>*{order:3}.in-battle>.scene{order:0}.in-battle>.content-panel{order:1}.in-battle>.trial-progress{order:2}.content-panel.battle-content{padding:14px 20px;min-height:0}.battle-guidance{margin-bottom:8px}.battle-guidance>summary{cursor:pointer;min-height:44px;line-height:1.7;font-size:calc(.77777778rem * var(--font-scale,1));padding-block:8px}

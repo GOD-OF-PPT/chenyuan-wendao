@@ -22,6 +22,7 @@ for(const [school,answer] of [['sword','accept'],['talisman','release']] as cons
  const prepared=await snapshot(page);await page.getByTestId('trial-review-entry').click();await action(page,'trial-confirm-entry');await expect(page.getByTestId('trial-question-memory')).toContainText('保留丹药');const question=await snapshot(page);await page.reload();await expect(page.getByTestId('answer-'+answer)).toBeVisible();expect(await snapshot(page)).toEqual(question);await action(page,'answer-'+answer);
  const resumed=new Set<number>();for(let turn=0;turn<120;turn++){
   const before=await snapshot(page);if(!before.battle)break;const stage=before.trial.stage;
+  await expect(page.getByTestId('battle-stage')).toHaveAttribute('data-enemy',before.battle.enemy);await expect(page.locator(`[data-asset-id="enemy-${before.battle.enemy}"]`)).toHaveAttribute('data-art-state','ready');
   if(!resumed.has(stage)&&before.battle.round>=1){const text=await page.getByTestId('intent').innerText();await page.reload();await expect(page.getByTestId('intent')).toHaveText(text,{useInnerText:true});expect(await snapshot(page)).toEqual(before);resumed.add(stage);}
   await expect(page.getByTestId('trial-selected-effect')).toContainText(answer==='accept'?'每击减伤 10':'直接攻击额外伤害 8');
   const move=nextTrialMove(before),expected=advance(before,{type:'BATTLE',move,commandId:'expected-ui',runId:before.core.runId,expectedRevision:before.core.revision});await action(page,moveId(move));const after=await snapshot(page);expect(after).toEqual(expected);

@@ -34,7 +34,7 @@ test('imported name and journal markup remain inert text with no script or resou
   await page.getByRole('button',{name:'设置',exact:true}).click();await expect(page.getByTestId('import')).toBeEnabled();page.once('dialog',d=>d.accept());
   await page.getByTestId('import').setInputFiles({name:'text.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(game))});
   await expect(page.getByTestId('character-panel').getByRole('heading',{name:'<b>道号</b>',exact:true})).toHaveCount(1);await page.getByRole('button',{name:'关闭设置'}).click();
-  await expect(page.getByText(payload,{exact:true})).toBeVisible();await expect(page.locator('img[src="/unsafe-marker"]')).toHaveCount(0);
+  await expect(page.getByText(payload,{exact:true})).toHaveCount(2);await expect(page.getByTestId('feedback').getByText(payload,{exact:true})).toBeVisible();await expect(page.locator('.recent-action').getByText(payload,{exact:true})).toBeVisible();await expect(page.locator('img[src="/unsafe-marker"]')).toHaveCount(0);
   expect(await page.evaluate(()=>(window as any).__unsafeRendered)).toBeUndefined();expect(unwanted).toEqual([]);expect(errors).toEqual([]);
 });
 

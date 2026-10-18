@@ -17,6 +17,10 @@ class InventoryTests(unittest.TestCase):
   if redesign.exists():
    current=json.loads(redesign.read_text())
    files.update(ROOT/ref for ref in current['sourceReferences']+current['rights']['evidenceReferences'])
+  character_battle=ROOT/'art/redesign/character-battle-manifest.json'
+  if character_battle.exists():
+   current=json.loads(character_battle.read_text())
+   files.update(ROOT/ref for ref in current['sourceReferences']+current['rights']['evidenceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -31,7 +35,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],38 if (self.root/'art/redesign/manifest.json').exists() else 20)
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0))
  def test_digest_corruption_is_rejected(self):self.asset('scene-secret')['sha256']='0'*64;self.rejected()
  def test_false_dimensions_are_rejected(self):self.asset('portrait-player')['dimensions']['width']=999;self.rejected()
  def test_parent_hash_cannot_be_relabelled(self):self.asset('scene-wilderness')['originalHash']='0'*64;self.rejected()
@@ -82,5 +86,35 @@ class InventoryTests(unittest.TestCase):
   m=self.current_redesign();file=m['bindingFile'];text=(self.root/file).read_text().replace('art/v2/scenes/cave.webp','art/v2/scenes/wrong.webp');self.write(file,text);self.check_redesign(m)
  def test_removing_new_ledger_does_not_allow_unregistered_new_images(self):
   (self.root/'art/redesign/manifest.json').unlink();self.rejected()
+
+ def current_character_battle(self):return json.loads((self.root/'art/redesign/character-battle-manifest.json').read_text())
+ def reject_character_battle(self,m):
+  from character_battle_inventory import validate_character_battle
+  from check_inventory import image_info
+  self.write('art/redesign/character-battle-manifest.json',m)
+  with self.assertRaises((AssertionError,KeyError,ValueError)):validate_character_battle(self.root,image_info)
+ def test_character_enemy_cannot_duplicate_a_subject(self):
+  m=self.current_character_battle();m['enemies'][1]['id']='wolf';self.reject_character_battle(m)
+ def test_character_enemy_source_hash_is_bound(self):
+  m=self.current_character_battle();m['characters'][0]['source']['sha256']='0'*64;self.reject_character_battle(m)
+ def test_character_enemy_alpha_header_is_required(self):
+  m=self.current_character_battle();m['enemies'][0]['runtime']['alpha']=False;self.reject_character_battle(m)
+ def test_character_enemy_budget_cannot_be_raised(self):
+  m=self.current_character_battle();m['budgets']['maxEnemyBytes']=130000;self.reject_character_battle(m)
+ def test_character_enemy_cannot_claim_user_acceptance(self):
+  m=self.current_character_battle();m['rights']['userAcceptance']=True;self.reject_character_battle(m)
+ def test_character_receipt_cannot_swap_identity_even_if_control_hash_recalculated(self):
+  m=self.current_character_battle();s=m['characters'][0];r=s['receipt'];data=json.loads((self.root/r['path']).read_text());data['referenceImages'][0]['path']='art/production/portraits/shen.png';data['referenceImages'][0]['sha256']=hashlib.sha256((self.root/data['referenceImages'][0]['path']).read_bytes()).hexdigest();self.write(r['path'],data);r['sha256']=hashlib.sha256((self.root/r['path']).read_bytes()).hexdigest();self.reject_character_battle(m)
+ def test_enemy_receipt_cannot_claim_opaque_background_as_alpha(self):
+  m=self.current_character_battle();r=m['enemies'][0]['receipt'];data=json.loads((self.root/r['path']).read_text());data['alphaProof']['min']=255;self.write(r['path'],data);r['sha256']=hashlib.sha256((self.root/r['path']).read_bytes()).hexdigest();self.reject_character_battle(m)
+ def test_enemy_binding_cannot_be_silently_removed(self):
+  m=self.current_character_battle();file=m['bindingFile'];self.write(file,(self.root/file).read_text().replace('art/v2/enemies/wolf.webp','art/v2/enemies/absent.webp'));self.reject_character_battle(m)
+ def test_removing_character_enemy_ledger_does_not_bypass_guard(self):
+  (self.root/'art/redesign/character-battle-manifest.json').unlink();self.rejected()
+
+ def test_meditation_variant_cannot_change_its_cave_parent(self):
+  m=self.current_character_battle();m['presentationVariants'][0]['sourceParentSHA256']='0'*64;self.reject_character_battle(m)
+ def test_meditation_variant_cannot_claim_a_transparent_runtime(self):
+  m=self.current_character_battle();m['presentationVariants'][0]['runtime']['alpha']=True;self.reject_character_battle(m)
 
 if __name__=='__main__':unittest.main()

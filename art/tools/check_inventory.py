@@ -102,6 +102,11 @@ def validate(root):
     if redesign_files:
         counts['production'] = counts.get('production', 0) + redesign_production
         counts['reference'] = counts.get('reference', 0) + redesign_references
+    from character_battle_inventory import validate_character_battle
+    character_battle_files, character_battle_production = validate_character_battle(root, image_info)
+    assert not recorded.intersection(character_battle_files), 'Character/battle paths overlap older ledgers'
+    recorded.update(character_battle_files)
+    counts['production'] = counts.get('production', 0) + character_battle_production
     budgets = manifest['budget']
     for category, key in [('scene', 'sceneMasters'), ('portrait', 'portraits'), ('ui_kit', 'uiKits'), ('fx_kit', 'fxKits')]:
         assert sum(a['category'] == category for a in manifest['assets']) == budgets[key], 'Budget slots drift: ' + category
@@ -174,7 +179,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

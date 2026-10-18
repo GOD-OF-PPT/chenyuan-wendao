@@ -993,13 +993,13 @@
         },
         {
           "path": "web/src/style.css",
-          "bytes": 21308,
-          "sha256": "b9e40d4a35effed5d0e45d0b156f0a892d4957954eea15b8b92a5477ffc608c6"
+          "bytes": 21709,
+          "sha256": "1f27c2409f9211392180516b51015a041e4edda8d5fcc557d94321b0458f71a8"
         },
         {
           "path": "web/src/shell.css",
-          "bytes": 14968,
-          "sha256": "d48ca52c16e666c9b901a586f171ecc22706d597f37df91b063bd921adc6a391"
+          "bytes": 23966,
+          "sha256": "a9f7091163f6c49539e6afa5a32ee0504b9830bf45ee180baddafcf64798ac44"
         },
         {
           "path": "web/src/focus.ts",
@@ -1010,6 +1010,11 @@
           "path": "web/src/LocalExperiencePanel.vue",
           "bytes": 8360,
           "sha256": "8a75359c38313c349146fd8cbb57d2ef16e295cbd7a7c0806741add452b994a9"
+        },
+        {
+          "path": "web/src/BattlePanel.vue",
+          "bytes": 9594,
+          "sha256": "161151f335e460689228e6d52368bc5403cd425bf847359376fad22eb252b4a6"
         }
       ]
     },
@@ -1066,8 +1071,8 @@
         },
         {
           "path": "web/src/ScenePanel.vue",
-          "bytes": 8929,
-          "sha256": "b3f5d0e4cd1a55586c8e0a3b13e366e81bbbe1396307fb1acdf6c3a5b1d28e66"
+          "bytes": 9333,
+          "sha256": "3ce7f04ddf0902b9dffa62bd16e416b29d2d43a3f135c30180fdc34353fd44c7"
         },
         {
           "path": "web/src/AssetImage.vue",
@@ -1076,8 +1081,8 @@
         },
         {
           "path": "web/src/assets.ts",
-          "bytes": 2106,
-          "sha256": "072632d02b82c317df8bc037b9fe21732d56ae32688f033a7f41f59c57d4db7f"
+          "bytes": 3030,
+          "sha256": "587283638b311e984fc2bc372d0c798603ccade71855bd14f37925bb5c6cb997"
         }
       ]
     },
