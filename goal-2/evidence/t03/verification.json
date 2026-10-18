@@ -267,5 +267,87 @@
         "browser": "firefox"
       }
     ]
+  },
+  "darkTextCorrection": {
+    "sourceBase": "1b34736835818d918d54506bc840a179e3aec287",
+    "workingTree": true,
+    "runtimeSourceDigest": "dff87a8864e2b3ab24f466be81d42c15bf30dec369dbd3ae28a02c523309c97e",
+    "runtimeBytes": 6327662,
+    "runtimeFiles": 49,
+    "beforeMinimumContrast": 1.2774422300318022,
+    "minimumRequired": 4.5,
+    "actualContrast": {
+      "chromium": [
+        {
+          "name": "location note",
+          "ratio": 4.884054462896895,
+          "text": "天门隐在层云之后。此处不会替你跳过修炼：道行、灵物和临劫的选择，将共同决定最后一步。"
+        },
+        {
+          "name": "game month",
+          "ratio": 5.855382667657765,
+          "text": "修行第 243 月"
+        },
+        {
+          "name": "sealed description",
+          "ratio": 5.852772389606577,
+          "text": "此生已封卷。本卷不继续上界修行，保留封卷时的实际状态。"
+        }
+      ],
+      "firefox": [
+        {
+          "name": "location note",
+          "ratio": 4.884054462896895,
+          "text": "天门隐在层云之后。此处不会替你跳过修炼：道行、灵物和临劫的选择，将共同决定最后一步。"
+        },
+        {
+          "name": "game month",
+          "ratio": 5.855382667657765,
+          "text": "修行第 243 月"
+        },
+        {
+          "name": "sealed description",
+          "ratio": 5.852772389606577,
+          "text": "此生已封卷。本卷不继续上界修行，保留封卷时的实际状态。"
+        }
+      ],
+      "webkit": [
+        {
+          "name": "location note",
+          "ratio": 4.884054462896895,
+          "text": "天门隐在层云之后。此处不会替你跳过修炼：道行、灵物和临劫的选择，将共同决定最后一步。"
+        },
+        {
+          "name": "game month",
+          "ratio": 5.855382667657765,
+          "text": "修行第 243 月"
+        },
+        {
+          "name": "sealed description",
+          "ratio": 5.852772389606577,
+          "text": "此生已封卷。本卷不继续上界修行，保留封卷时的实际状态。"
+        }
+      ]
+    },
+    "passed": 18,
+    "perBrowser": 6,
+    "noSkipOrRetry": true,
+    "reportSHA256": "b3e5588b16e82684dbd8268f27cae7840903c5eadba709c26a7dd9c3cd79513b",
+    "screenshots": [
+      {
+        "path": "goal-2/evidence/t03/dark-location-note-fixed.png",
+        "source": "artifacts/goal-2/t03/dark-text-green/screenshots/accessibility-desktop-dark-bb6ba-state-descriptions-readable-chromium/dark-location-note.png",
+        "sha256": "01dcf9501ff3c71b04b3a960a7e7bf67f5eaf9d7805541153e9b72c473ef61bd",
+        "bytes": 57233,
+        "reviewed": true
+      },
+      {
+        "path": "goal-2/evidence/t03/desktop-cave-current-1440.png",
+        "source": "artifacts/goal-2/t03/dark-text-green/screenshots/desktop-application-deskto-35330-on-drive-exact-saved-growth-chromium/desktop-cave-initial-1440.png",
+        "sha256": "0e5ec72903fb78c42ea801b629890a03d1625a7389b73e6c920c0b0246ed226c",
+        "bytes": 1318648,
+        "reviewed": true
+      }
+    ]
   }
 }

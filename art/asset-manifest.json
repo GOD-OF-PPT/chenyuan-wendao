@@ -998,8 +998,8 @@
         },
         {
           "path": "web/src/shell.css",
-          "bytes": 23966,
-          "sha256": "a9f7091163f6c49539e6afa5a32ee0504b9830bf45ee180baddafcf64798ac44"
+          "bytes": 24041,
+          "sha256": "03c6052fd9901bddfae4214b561a50d4ba114ed96be200c24802e571baa627d7"
         },
         {
           "path": "web/src/focus.ts",
