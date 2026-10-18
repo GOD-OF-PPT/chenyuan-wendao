@@ -1,17 +1,17 @@
 import { test, expect, type Page } from '@playwright/test';
-import { start, snapshot, action, travel } from './support';
+import {selectGoal,inspectNeed, start, snapshot, action, travel } from './support';
 const errors = new WeakMap<Page, string[]>();
 test.beforeEach(async ({ page }) => { const list: string[] = []; errors.set(page, list); page.on('pageerror', error => list.push(error.message)); });
 test.afterEach(async ({ page }) => { expect(errors.get(page)).toEqual([]); });
 
 test('goal to recipe to material keeps its context, navigates only, and collects until the real target', async ({ page }) => {
   await start(page); const before = await snapshot(page);
-  await page.getByTestId('inspect-foundation_pill').click();
+  await inspectNeed(page,'foundation_pill');
   await expect(page.getByTestId('route-recipe-foundation')).toBeVisible();
   await page.getByTestId('plan-recipe-foundation').click();
   await expect(page.getByTestId('need-herb')).toContainText('0 / 8');
   await expect(page.getByTestId('plan-cost')).toContainText('灵石 20');
-  await page.getByTestId('inspect-herb').click(); expect(await snapshot(page)).toEqual(before);
+  await inspectNeed(page,'herb'); expect(await snapshot(page)).toEqual(before);
   await page.getByTestId('go-source-herbs').click();
   await expect(page.getByTestId('source-herbs')).toBeFocused();
   const arrived = await snapshot(page); expect(arrived.core.world.location).toBe('wilderness');
@@ -31,7 +31,7 @@ test('goal to recipe to material keeps its context, navigates only, and collects
   await expect(page.getByTestId('source-title')).toHaveText('凝气草来源');
   await page.getByTestId('source-back').click(); await expect(page.getByTestId('need-herb')).toHaveCount(0);
   await expect(page.getByTestId('need-dew')).toContainText('尚缺 2');
-  await page.getByTestId('goal-panel').getByRole('button', { name: '前往听雨洞府' }).click();
+  await page.getByTestId('goal-location').click();
   const recipe = page.getByTestId('craft-healing').locator('..');
   await expect(recipe).toContainText('凝气草将缺2'); await expect(page.getByTestId('craft-healing')).toBeEnabled();
   await action(page, 'craft-healing'); await expect(page.getByTestId('need-herb')).toContainText('尚缺 2');
@@ -40,7 +40,7 @@ test('goal to recipe to material keeps its context, navigates only, and collects
 
 test('procurement navigation never buys automatically and the acquired pill removes the goal shortage', async ({ page }) => {
   await start(page); await travel(page, 'sect'); for (let i = 0; i < 6; i++) await action(page, 'source-work');
-  const before = await snapshot(page); await page.getByTestId('inspect-foundation_pill').click();
+  const before = await snapshot(page); await inspectNeed(page,'foundation_pill');
   await page.getByTestId('go-purchase-foundation_pill').click(); await expect(page.getByTestId('buy-foundation_pill')).toBeFocused();
   const arrived = await snapshot(page); expect(arrived.core.inventory).toEqual(before.core.inventory); expect(arrived.core.player.stones).toBe(160);
   expect(arrived.core.revision).toBe(before.core.revision + 1);
@@ -68,7 +68,7 @@ test('assisted and natural batches show maximum budget but charge only real step
 
 test('tracking preference survives reload without advancing the game and resets for a replacement run', async ({ page }) => {
   await start(page); const before = await snapshot(page);
-  await page.getByLabel('追踪目标', { exact: true }).selectOption('item:herb');
+  await selectGoal(page,'item:herb');
   await page.getByLabel('目标数量').fill('3'); await page.getByLabel('目标数量').blur();
   await expect(page.getByTestId('target')).toHaveText('筹备凝气草 ×3'); expect(await snapshot(page)).toEqual(before);
   await page.reload(); await expect(page.getByTestId('target')).toHaveText('筹备凝气草 ×3'); expect(await snapshot(page)).toEqual(before);
@@ -83,7 +83,7 @@ test('invalid tracking preferences and unavailable preference storage do not cha
   await page.evaluate(runId => localStorage.setItem('chenyuan-tracked-goal-v1', JSON.stringify({ version: 1, runId, target: { kind: 'item', id: '__proto__', quantity: 1 } })), before.core.runId);
   await page.reload(); await expect(page.getByTestId('goal-select')).toHaveValue('breakthrough');
   await page.evaluate(() => { Storage.prototype.setItem = () => { throw new DOMException('denied', 'SecurityError'); }; });
-  await page.getByLabel('追踪目标', { exact: true }).selectOption('item:herb');
+  await selectGoal(page,'item:herb');
   await expect(page.getByTestId('goal-panel')).toContainText('追踪选择仅在本页保留');
   await expect(page.getByTestId('save-status')).toHaveText('已保存'); expect(await snapshot(page)).toEqual(before);
   for (const quantity of ['0', '1.5']) {
@@ -95,15 +95,15 @@ test('invalid tracking preferences and unavailable preference storage do not cha
 
 test('future sources show true realm gates and do not invent a free reachable route', async ({ page }) => {
   await start(page); const before = await snapshot(page);
-  await page.getByLabel('追踪目标', { exact: true }).selectOption('item:jade'); await page.getByTestId('goal-item-sources').click();
+  await selectGoal(page,'item:jade'); await page.getByTestId('goal-item-sources').click();
   const route = page.getByTestId('route-source-jade'); await expect(route).toContainText('筑基');
   await expect(route).toContainText('条件满足后才能确认成本'); await expect(page.getByTestId('go-source-jade')).toBeDisabled();
   expect(await snapshot(page)).toEqual(before);
-  await page.getByLabel('追踪目标', { exact: true }).selectOption('skill:sword_still');
+  await selectGoal(page,'skill:sword_still');
   await expect(page.getByTestId('target')).toHaveText('研习止水剑心'); await expect(page.getByTestId('need-stones')).toContainText('尚缺 60');
-  await page.getByLabel('追踪目标', { exact: true }).selectOption('relic:jade_seal');
+  await selectGoal(page,'relic:jade_seal');
   await expect(page.getByTestId('need-jade')).toContainText('尚缺 4'); expect(await snapshot(page)).toEqual(before);
-  await travel(page, 'sect'); await page.getByLabel('追踪目标', { exact: true }).selectOption('event:lu_intro');
+  await travel(page, 'sect'); await selectGoal(page,'event:lu_intro');
   const title = await page.getByTestId('target').innerText(); await travel(page, 'wilderness');
   await expect(page.getByTestId('goal-select')).toHaveValue('event:lu_intro');
   await expect(page.getByTestId('target')).toHaveText(title); const visited = await snapshot(page);
@@ -113,9 +113,9 @@ test('future sources show true realm gates and do not invent a free reachable ro
 });
 
 test('missing purchase funds guide a bounded income batch without buying or overspending', async ({ page }) => {
-  await start(page); await page.getByTestId('inspect-foundation_pill').click();
+  await start(page); await inspectNeed(page,'foundation_pill');
   await page.getByTestId('plan-purchase-foundation_pill').click(); await expect(page.getByTestId('need-stones')).toContainText('尚缺 120');
-  await page.getByTestId('inspect-stones').click(); await page.getByTestId('go-source-work').click();
+  await inspectNeed(page,'stones'); await page.getByTestId('go-source-work').click();
   await page.getByLabel('取材次数').selectOption('target'); await expect(page.getByTestId('collection-target')).toContainText('灵石库存达到 160');
   await action(page, 'source-work'); const after = await snapshot(page);
   expect(after.core.player.stones).toBe(160); expect(after.core.inventory.foundation_pill).toBe(0);
@@ -127,7 +127,7 @@ test('missing purchase funds guide a bounded income batch without buying or over
 
 test('battle blocks source navigation while allowing safe target inspection with conditional rewards', async ({ page }) => {
   await start(page); await action(page, 'school-sword'); await travel(page, 'wilderness'); await action(page, 'encounter-wolf');
-  const before = await snapshot(page); await page.getByLabel('追踪目标', { exact: true }).selectOption('item:core');
+  const before = await snapshot(page); await selectGoal(page,'item:core');
   await page.getByTestId('goal-item-sources').click();
   await expect(page.getByTestId('route-battle-wolf')).toContainText('胜利后');
   await expect(page.getByTestId('go-source-core')).toBeDisabled(); expect(await snapshot(page)).toEqual(before);
@@ -147,11 +147,11 @@ test('tracked medicine is not reserved and a real use warns then exposes the new
 
 test('mobile goal materials and source navigation remain readable and operable', async ({ page }, info) => {
   await page.setViewportSize({ width: 390, height: 844 }); await start(page);
-  await page.getByTestId('inspect-foundation_pill').click(); await page.getByTestId('plan-recipe-foundation').click();
+  await inspectNeed(page,'foundation_pill'); await page.getByTestId('plan-recipe-foundation').click();
   await expect(page.getByTestId('need-herb')).toContainText('尚缺 8');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByTestId('goal-panel').screenshot({ path: info.outputPath('goal-mobile.png') });
-  await page.getByTestId('inspect-herb').click(); await page.getByTestId('go-source-herbs').click();
+  await inspectNeed(page,'herb'); await page.getByTestId('go-source-herbs').click();
   await expect(page.getByTestId('source-herbs')).toBeFocused();
   await page.getByLabel('取材次数').selectOption('target'); await expect(page.getByTestId('source-herbs')).toBeEnabled();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

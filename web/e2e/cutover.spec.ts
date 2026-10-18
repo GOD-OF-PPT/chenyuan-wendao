@@ -35,7 +35,7 @@ test('failed write remains visibly unsaved after reread and original intent retr
   });
   await page.getByTestId('cultivate').click();
   await expect(page.getByTestId('error')).toContainText('存储空间不足');
-  await expect(page.getByTestId('save-status')).toHaveText('本次未保存'); expect(await snapshot(page)).toEqual(before);
+  await expect(page.getByTestId('save-status')).toHaveText('保存待确认'); expect(await snapshot(page)).toEqual(before);
   await page.getByTestId('retry').click();
   await expect(page.getByTestId('save-status')).toHaveText('已保存');
   const after = await snapshot(page);
@@ -108,7 +108,7 @@ test('live database version change disables stale writes and provides a reload p
     request.onsuccess = () => { request.result.close(); resolve(); }; request.onerror = () => reject(request.error);
   }));
   await page.getByTestId('cultivate').click(); await expect(page.getByTestId('error')).toContainText('连接已更新或关闭');
-  await expect(page.getByTestId('save-status')).toHaveText('本次未保存');
+  await expect(page.getByTestId('save-status')).toHaveText('保存待确认');
   await expect(page.getByTestId('cultivate')).toBeDisabled(); expect(await snapshot(page)).toEqual(before);
   await page.getByTestId('reload-storage').click(); await expect(page.getByTestId('error')).toContainText('数据库版本较新');
   await expect(page.getByTestId('cultivate')).toBeDisabled(); expect(await snapshot(page)).toEqual(before);

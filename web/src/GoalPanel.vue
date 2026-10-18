@@ -7,10 +7,11 @@ import { stories } from '../../src/full/events.ts';
 import { getTrackedGoal, parseTrackingTarget, type TrackingTarget, type CollectionTarget } from '../../src/full/goals.ts';
 import { getActionResources, getCurrencySources, previewAction, type ItemSource, type ResourceDeficit } from '../../src/full/queries.ts';
 import type { Action, Game } from '../../src/full/types.ts';
+import {gamePhase} from '../../src/full/contracts.ts';
 import type { NavigationRequest } from './navigation';
 import { formatCosts, resourceName } from './presentation';
 
-const helpOpen=ref(false);
+const helpOpen=ref(false),managerOpen=ref(false),moreNeedsOpen=ref(false);
 const props = defineProps<{ game: Game; target: TrackingTarget; enabled: boolean; notice: string }>();
 const emit = defineEmits<{ select: [TrackingTarget]; navigate: [NavigationRequest]; preparation: [Action | null] }>();
 type Focus = { kind: 'item'; id: string; quantity: number } | { kind: 'currency'; quantity: number } | { kind: 'action'; action: Action; title: string };
@@ -18,7 +19,8 @@ const stack = shallowRef<Focus[]>([]), focus = computed(() => stack.value.at(-1)
 const preparation = computed(() => [...stack.value].reverse().find(entry => entry.kind === 'action')?.action ?? null);
 watch(preparation, action => emit('preparation', action));
 const goal = computed(() => getTrackedGoal(props.game, props.target));
-watch([() => props.target, () => props.game.core.runId], () => { stack.value = []; });
+watch([() => props.target, () => props.game.core.runId], () => { stack.value = []; moreNeedsOpen.value=false; });
+watch(()=>props.game.core.runId,()=>managerOpen.value=false);
 watch(() => props.game.core.player.realm, () => { if (props.target.kind === 'breakthrough') stack.value = []; });
 const selected = computed(() => props.target.kind === 'breakthrough' ? 'breakthrough' : `${props.target.kind}:${props.target.id}`);
 function select(event: Event) {
@@ -42,13 +44,22 @@ const knownEvents = computed(() => [...new Set([...availableEvents(props.game).m
 const itemView = computed(() => focus.value?.kind === 'item' ? getTrackedGoal(props.game, focus.value) : null);
 const actionView = computed(() => focus.value?.kind === 'action' ? getActionResources(props.game, focus.value.action) : null);
 const needs = computed(() => focus.value ? actionView.value?.preview.deficits ?? [] : goal.value.deficits);
+const primaryNeeds=computed(()=>focus.value?needs.value:needs.value.slice(0,1));
+const caveTravel=computed(()=>previewAction(props.game,{type:'TRAVEL',location:'cave'}));
+const resourceGap=(gap:ResourceDeficit)=>gap.kind==='item'||gap.kind==='stones';
+const canInspect=(gap:ResourceDeficit)=>resourceGap(gap)||props.enabled&&(props.game.core.world.location==='cave'||caveTravel.value.allowed);
+const inspectLabel=(gap:ResourceDeficit)=>resourceGap(gap)?'查看来源':props.game.core.world.location==='cave'?(gamePhase(props.game)==='idle'?'查看修行动作':'查看当前遭遇'):'前往洞府';
+const currentAction=computed(()=>focus.value?.kind==='action'?focus.value.action:goal.value.action);
+const destination=computed(()=>(actionView.value?.preview??goal.value.preview)?.requirements.location);
+const showLocation=computed(()=>!!destination.value&&(!focus.value||!!actionView.value)&&!(!focus.value&&destination.value==='cave'&&needs.value.some(gap=>['xp','hp','mp'].includes(gap.kind))));
+const locationLabel=computed(()=>destination.value&&destination.value!==props.game.core.world.location?`前往${C.locations[destination.value].name}`:({CRAFT:'查看炼制动作',LEARN:'查看研习动作',FORGE:'查看法宝炼制',EVENT:'查看当前仙缘',BREAKTHROUGH:'查看突破动作',START_TRIAL:'查看渡劫准备入口'}as Record<string,string>)[currentAction.value?.type??'']??'查看此地行动');
 const sources = computed(() => itemView.value?.sources ?? (focus.value?.kind === 'currency' ? getCurrencySources(props.game) : []));
 const focusTitle = computed(() => focus.value?.kind === 'item' ? `${C.items[focus.value.id].name}来源` : focus.value?.kind === 'currency' ? '灵石来源' : focus.value?.title);
 const kinds = { source: '稳定来源', recipe: '自行炼制', purchase: '坊市采购', battle: '斗法所得', event: '一次性机缘' };
 function inspect(gap: ResourceDeficit) {
   if (gap.kind === 'item' && gap.id) stack.value = [...stack.value, { kind: 'item', id: gap.id, quantity: gap.required }];
   else if (gap.kind === 'stones') stack.value = [...stack.value, { kind: 'currency', quantity: gap.required }];
-  else if (['xp', 'hp', 'mp'].includes(gap.kind)) emit('navigate', { location: 'cave', tab: '修行' });
+  else if (['xp', 'hp', 'mp'].includes(gap.kind)) emit('navigate', { location: 'cave', tab: '修行', ...(gamePhase(props.game)==='idle'?{focusId:'cultivation-actions'}:{}) });
 }
 function ingredients(source: ItemSource) {
   const action = source.steps.at(-1)!;
@@ -72,22 +83,14 @@ function goalLocation() {
   const action = focus.value?.kind === 'action' ? focus.value.action : goal.value.action;
   const location = (action ? previewAction(props.game, action).requirements.location : null);
   if (location) emit('navigate', { location, tab: action?.type === 'CRAFT' ? '行囊' : action?.type === 'EVENT' ? '仙缘' : '修行',
-    ...(action?.type === 'CRAFT' ? { focusId: `craft-${action.recipeId}` } : action?.type === 'LEARN' ? { focusId: `learn-${action.skill}` } : action?.type === 'FORGE' ? { focusId: `forge-${action.relic}` } : {}) });
+    ...(action?.type === 'CRAFT' ? { focusId: `craft-${action.recipeId}` } : action?.type === 'LEARN' ? { focusId: `learn-${action.skill}` } : action?.type === 'FORGE' ? { focusId: `forge-${action.relic}` } : action?.type==='BREAKTHROUGH'||action?.type==='START_TRIAL'?{focusId:'breakthrough'}:{}) });
 }
 </script>
 
 <template>
   <section id="goal-panel" tabindex="-1" class="paper goals" data-testid="goal-panel">
     <div class="section-label">当前目标 <button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p><h3 data-testid="target">{{goal.title}}</h3><progress v-if="target.kind==='breakthrough'&&!focus&&game.status==='active'&&C.realms[game.core.player.realm].xpCap>0" class="goal-progress" :value="game.core.player.xp" :max="C.realms[game.core.player.realm].xpCap" aria-label="当前目标修为"/>
-    <label class="goal-picker">替换追踪目标<select :value="selected" @change="select" data-testid="goal-select" aria-label="追踪目标">
-      <option value="breakthrough">下一突破</option>
-      <optgroup label="物资"><option v-for="(item,id) in C.items" :key="id" :value="`item:${id}`">{{item.name}} · {{C.realms[item.min].name}}</option></optgroup>
-      <optgroup label="功法"><option v-for="(skill,id) in C.skills" :key="id" :value="`skill:${id}`">{{skill.name}} · {{C.realms[skill.min].name}}</option></optgroup>
-      <optgroup label="法宝"><option v-for="(relic,id) in C.relics" :key="id" :value="`relic:${id}`">{{relic.name}} · 金丹</option></optgroup>
-      <optgroup v-if="knownEvents.length" label="已见仙缘"><option v-for="id in knownEvents" :key="id" :value="`event:${id}`">{{stories[id].name}}</option></optgroup>
-    </select></label>
-    <label v-if="target.kind==='item'" class="goal-quantity">目标库存 <input aria-label="目标数量" type="number" min="1" :max="C.maxQuantity" :value="target.quantity" @change="quantityChange"></label>
-    <p class="small muted">追踪不消耗游戏月，也不预留材料。</p><p v-if="notice" class="small" role="status">{{notice}}</p>
+    <p v-if="notice" class="small" role="status">{{notice}}</p>
     <p v-if="goal.completed" data-testid="goal-complete" class="small">目标已达成，可替换追踪目标。</p>
     <p v-else-if="goal.preview?.failure" class="small" data-testid="goal-blocker">{{goal.preview.failure.message}}</p>
     <button v-if="target.kind==='item'" class="text-button" data-testid="goal-item-sources" @click="stack=[{...target}]">查看获得方式 →</button>
@@ -99,9 +102,14 @@ function goalLocation() {
       <p v-if="actionView" class="small" data-testid="plan-cost">每次成本：{{formatCosts(actionView.preview.costs)}}</p>
       <p v-if="actionView?.preview.failure" class="small">{{actionView.preview.failure.message}}</p>
     </div>
-    <div v-for="gap in needs" :key="gap.kind+gap.id" class="goal-line" :data-testid="`need-${gap.id??gap.kind}`"><span>○</span><div>{{resourceName(gap)}}<small>{{gap.have}} / {{gap.required}} · 尚缺 {{gap.missing}}</small>
-      <button v-if="gap.kind!=='months'" class="text-button" :data-testid="`inspect-${gap.id??gap.kind}`" @click="inspect(gap)">{{gap.kind==='item'||gap.kind==='stones'?'查看来源':'前往洞府'}} →</button>
+    <div v-for="gap in primaryNeeds" :key="gap.kind+gap.id" class="goal-line" :data-testid="`need-${gap.id??gap.kind}`"><span>○</span><div>{{resourceName(gap)}}<small>{{gap.have}} / {{gap.required}} · 尚缺 {{gap.missing}}</small>
+      <button v-if="gap.kind!=='months'" class="text-button" :data-testid="`inspect-${gap.id??gap.kind}`" @click="inspect(gap)" :disabled="!canInspect(gap)">{{inspectLabel(gap)}} →</button>
+      <small v-if="!resourceGap(gap)&&gap.kind!=='months'&&game.core.world.location!=='cave'">{{formatCosts(caveTravel.costs)}}</small><small v-if="!canInspect(gap)">{{!enabled?'等待存档就绪':caveTravel.failure?.message}}</small>
     </div></div>
+    <details v-if="!focus&&needs.length>1" class="goal-remaining" data-testid="goal-remaining" :open="moreNeedsOpen" @toggle="moreNeedsOpen=($event.target as HTMLDetailsElement).open"><summary data-testid="goal-more-needs">其余 {{needs.length-1}} 项条件</summary><div v-for="gap in needs.slice(1)" :key="gap.kind+gap.id" class="goal-line" :data-testid="`need-${gap.id??gap.kind}`"><span>○</span><div>{{resourceName(gap)}}<small>{{gap.have}} / {{gap.required}} · 尚缺 {{gap.missing}}</small>
+      <button v-if="gap.kind!=='months'" class="text-button" :data-testid="`inspect-${gap.id??gap.kind}`" @click="inspect(gap)" :disabled="!canInspect(gap)">{{inspectLabel(gap)}} →</button>
+      <small v-if="!resourceGap(gap)&&gap.kind!=='months'&&game.core.world.location!=='cave'">{{formatCosts(caveTravel.costs)}}</small><small v-if="!canInspect(gap)">{{!enabled?'等待存档就绪':caveTravel.failure?.message}}</small>
+    </div></div></details>
     <div v-for="source in sources" :key="source.kind+source.id" class="source-card" :data-testid="`route-${source.kind}-${source.id}`">
       <strong>{{source.label}}</strong><small>{{kinds[source.kind]}} · {{C.locations[source.location].name}}</small>
       <small>每份{{source.conditionalOnVictory?'胜利后':''}}获得 {{source.rewardCount}} {{source.resource.kind==='item'?C.items[source.resource.id].name:'灵石'}}{{source.conditionalOnVictory?'；补给与战损另计':''}}</small>
@@ -112,8 +120,19 @@ function goalLocation() {
       <small v-if="goReason(source)">{{goReason(source)}}</small>
     </div>
     <p v-if="actionView && !needs.length" class="small">物资已齐；前往对应地点后另行确认行动。</p>
-    <button v-if="(actionView?.preview??goal.preview)?.requirements.location && (!focus||actionView)" class="text-button" @click="goalLocation" :disabled="!enabled || !!locationPreview && !locationPreview.allowed">前往{{C.locations[(actionView?.preview??goal.preview)!.requirements.location!].name}} →</button>
-    <small v-if="(!focus||actionView) && locationPreview?.failure">{{locationPreview.failure.message}}</small>
+    <button v-if="showLocation" class="text-button goal-location" data-testid="goal-location" :data-navigation-kind="locationPreview?'travel':'view'" @click="goalLocation" :disabled="!enabled || !!locationPreview && !locationPreview.allowed">{{locationLabel}} →<small v-if="locationPreview">{{formatCosts(locationPreview.costs)}}</small></button>
+    <small v-if="showLocation&&locationPreview?.failure">{{locationPreview.failure.message}}</small>
     <p v-if="!focus && !goal.deficits.length && !goal.completed" class="small">{{goal.preview?.allowed?'准备已齐，按当前页面确认行动。':'先处理眼前的遭遇，目标会随实际进度更新。'}}</p>
+    <details class="goal-management" data-testid="goal-management" :open="managerOpen" @toggle="managerOpen=($event.target as HTMLDetailsElement).open"><summary data-testid="goal-management-toggle">更换追踪目标</summary>
+    <label class="goal-picker">替换追踪目标<select :value="selected" @change="select" data-testid="goal-select" aria-label="追踪目标">
+      <option value="breakthrough">下一突破</option>
+      <optgroup label="物资"><option v-for="(item,id) in C.items" :key="id" :value="`item:${id}`">{{item.name}} · {{C.realms[item.min].name}}</option></optgroup>
+      <optgroup label="功法"><option v-for="(skill,id) in C.skills" :key="id" :value="`skill:${id}`">{{skill.name}} · {{C.realms[skill.min].name}}</option></optgroup>
+      <optgroup label="法宝"><option v-for="(relic,id) in C.relics" :key="id" :value="`relic:${id}`">{{relic.name}} · 金丹</option></optgroup>
+      <optgroup v-if="knownEvents.length" label="已见仙缘"><option v-for="id in knownEvents" :key="id" :value="`event:${id}`">{{stories[id].name}}</option></optgroup>
+    </select></label>
+    <label v-if="target.kind==='item'" class="goal-quantity">目标库存 <input aria-label="目标数量" type="number" min="1" :max="C.maxQuantity" :value="target.quantity" @change="quantityChange"></label>
+    <p class="small muted">追踪不消耗游戏月，也不预留材料。</p>
+    </details>
   </section>
 </template>

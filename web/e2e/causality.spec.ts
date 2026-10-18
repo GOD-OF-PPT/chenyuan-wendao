@@ -96,7 +96,7 @@ test('decision receipt failure keeps the pending branch and retries its actual c
     IDBObjectStore.prototype.put = function (value: any, key?: IDBValidKey) { if (this.name === 'full-receipts') throw new DOMException('causal quota', 'QuotaExceededError'); return original.call(this, value, key!); };
   });
   await page.getByTestId('decide-assist').click(); await expect(page.getByTestId('error')).toContainText('存储空间不足'); expect(await snapshot(page)).toEqual(before);
-  await expect(page.getByTestId('save-status')).toHaveText('本次未保存'); await expect(page.getByTestId('event-title')).toHaveText('药香故人');
+  await expect(page.getByTestId('save-status')).toHaveText('保存待确认'); await expect(page.getByTestId('event-title')).toHaveText('药香故人');
   await page.evaluate(() => (globalThis as any).restoreCausalPut()); await action(page, 'retry'); const after = await snapshot(page);
   expect(after.core.inventory.herb).toBe(before.core.inventory.herb - 2); expect(after.core.inventory.healing_pill).toBe(before.core.inventory.healing_pill + 1); expect(after.choices.shen_return).toBe('assist');
 });

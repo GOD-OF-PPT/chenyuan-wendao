@@ -57,7 +57,7 @@ test('a legally generated last-month save ends at the exact lifespan with a mobi
 test('failed lifespan persistence keeps an active last month and retries the fixed ending intent once',async({page})=>{
   const fixture=legalLifeBoundary('qi',1).ledger.game;await page.goto('/');await importLifeFixture(page,fixture);await openLife(page);await page.getByTestId('end-life').click();const before=await snapshot(page);
   await page.evaluate(()=>{const original=IDBObjectStore.prototype.put;(globalThis as any).restoreLifePut=()=>{IDBObjectStore.prototype.put=original;};IDBObjectStore.prototype.put=function(value:any,key?:IDBValidKey){if(this.name==='full-receipts')throw new DOMException('ending quota','QuotaExceededError');return original.call(this,value,key!);};});
-  await page.getByTestId('life-confirm-end').click();await expect(page.getByTestId('life-error')).toContainText('存储空间不足');expect(await snapshot(page)).toEqual(before);await expect(page.getByTestId('save-status')).toHaveText('本次未保存');
+  await page.getByTestId('life-confirm-end').click();await expect(page.getByTestId('life-error')).toContainText('存储空间不足');expect(await snapshot(page)).toEqual(before);await expect(page.getByTestId('save-status')).toHaveText('保存待确认');
   await expect(page.getByTestId('life-title')).toHaveText('此生仍在继续');
   await page.getByTestId('life-cancel').click();await expect(page.getByTestId('retry')).toHaveCount(0);expect(await snapshot(page)).toEqual(before);
   await page.getByTestId('end-life').click();await page.getByTestId('life-confirm-end').click();await expect(page.getByTestId('life-error')).toContainText('存储空间不足');

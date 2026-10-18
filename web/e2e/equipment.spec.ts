@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import * as C from '../../src/full/content.ts';
-import { action, snapshot, start } from './support';
+import { action, snapshot, start, openEquipment } from './support';
 import { foundation, nextRealm, learn, go, prepareRelic } from './progression';
 
 // These journeys cross several realms; keep each UI interaction bounded separately.
@@ -27,7 +27,7 @@ for (const route of combinations) test(`${route.school}/${route.strategy}: norma
   await expect(page.getByTestId('preview-自然吐纳')).toContainText('修为 +150');
   const beforeCultivation = await snapshot(page); await action(page, 'cultivate'); expect((await snapshot(page)).core.player.xp - beforeCultivation.core.player.xp).toBe(150);
   await learn(page, builder); await action(page, `equip-${builder}`);
-  await page.reload(); await expect(page.getByTestId('loadout-builder')).toHaveText(C.skills[builder].name);
+  await page.reload(); await expect(page.getByTestId('save-status')).toHaveText('已保存');await openEquipment(page);await expect(page.getByTestId('loadout-builder')).toHaveText(C.skills[builder].name);
   const foundationSave = await snapshot(page); expect(foundationSave.loadout.mind).toBe(mind);
   await nextRealm(page, route.strategy); await learn(page, finisher); await action(page, `equip-${finisher}`);
   await prepareRelic(page, route.relic); const prepared = await snapshot(page);
@@ -44,7 +44,7 @@ for (const route of combinations) test(`${route.school}/${route.strategy}: norma
   await action(page, `equip-relic-${route.relic}`); const equipped = await snapshot(page);
   expect(equipped.loadout).toEqual({ mind, builder, finisher, relic: route.relic });
   expect(equipped.core.player.stones).toBe(forged.core.player.stones); expect(equipped.core.world).toEqual(forged.core.world);
-  await page.reload(); await expect(page.getByTestId('loadout-relic')).toHaveText(C.relics[route.relic].name); expect(await snapshot(page)).toEqual(equipped);
+  await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');await openEquipment(page);await expect(page.getByTestId('loadout-relic')).toHaveText(C.relics[route.relic].name); expect(await snapshot(page)).toEqual(equipped);
   await go(page, 'secret'); await action(page, 'encounter-serpent'); await action(page, 'technique');
   const battle = await snapshot(page); expect(battle.battle).not.toBeNull();
   expect(battle.core.player.mp).toBe(150 - (route.school === 'sword' ? 8 : 10));
@@ -69,7 +69,7 @@ test('forge failure retries one complete payment and battle rejects a DOM-unlock
   await page.evaluate(() => { const original = IDBObjectStore.prototype.put;
     IDBObjectStore.prototype.put = function (value: any, key?: IDBValidKey) { if (this.name === 'full-state' && key === 'current') { IDBObjectStore.prototype.put = original; throw new DOMException('quota', 'QuotaExceededError'); } return original.call(this, value, key!); };
   });
-  await page.getByTestId('forge-jade_seal').click(); await expect(page.getByTestId('save-status')).toHaveText('本次未保存'); expect(await snapshot(page)).toEqual(before);
+  await page.getByTestId('forge-jade_seal').click(); await expect(page.getByTestId('save-status')).toHaveText('保存待确认'); expect(await snapshot(page)).toEqual(before);
   await page.getByTestId('retry').click(); await expect(page.getByTestId('loadout-relic')).toHaveText('尚未装备');
   await expect(page.getByTestId('forge-jade_seal')).toHaveText('已炼成'); const after = await snapshot(page);
   expect(after.core.revision).toBe(before.core.revision + 1); expect(after.core.player.stones).toBe(before.core.player.stones - 140);
@@ -86,7 +86,7 @@ test('mobile equipment target navigation reaches a real forge and keeps every op
   await page.setViewportSize({ width: 390, height: 844 }); await foundation(page, 'talisman', 'purchase'); await nextRealm(page, 'purchase');
   await prepareRelic(page, 'cloud_mirror'); await page.getByTestId('track-relic-cloud_mirror').click();
   await expect(page.getByTestId('target')).toHaveText('炼成流云镜');
-  await page.getByTestId('goal-panel').getByRole('button', { name: '前往听雨洞府' }).click();
+  await page.getByTestId('goal-location').click();
   await expect(page.getByTestId('forge-cloud_mirror')).toBeFocused(); await action(page, 'forge-cloud_mirror'); await action(page, 'equip-relic-cloud_mirror');
   await expect(page.getByTestId('loadout-relic')).toHaveText('流云镜'); expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByTestId('relic-cloud_mirror').screenshot({ path: info.outputPath('equipment-mobile.png') });
@@ -98,7 +98,7 @@ test('early equipment inspection reveals true realm gates without granting skill
   await page.getByLabel('显示后续功法法宝').check();
   await expect(page.getByTestId('forge-jade_seal')).toBeDisabled(); await expect(page.getByTestId('relic-jade_seal').getByTestId('forge-reason')).toContainText('金丹');
   expect(await snapshot(page)).toEqual(before);
-  await page.getByTestId('track-skill-sword_still').click(); await page.getByTestId('goal-panel').getByRole('button', { name: '前往青云宗' }).click();
+  await page.getByTestId('track-skill-sword_still').click(); await page.getByTestId('goal-location').click();
   await expect(page.getByTestId('learn-sword_still')).toBeDisabled(); await expect(page.getByTestId('skill-sword_still').getByTestId('learn-reason')).toContainText('筑基');
   const arrived = await snapshot(page); expect(arrived.core.revision).toBe(before.core.revision + 1);
   expect(arrived.core.player).toEqual(before.core.player); expect(arrived.core.inventory).toEqual(before.core.inventory);

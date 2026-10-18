@@ -40,7 +40,7 @@ watch(() => props.highlight, id => {
     const min = quote({ type: 'FORGE', relic: id.slice(6) }).requirements.minRealm;
     if (min && C.rank(min) > C.rank(props.game.core.player.realm)) future.value = true;
   }
-});
+},{immediate:true});
 </script>
 
 <template>
@@ -52,7 +52,7 @@ watch(() => props.highlight, id => {
     </div>
     <p class="small" data-testid="build-stats">静修加成 {{details.cultivationBonus}}% · 护体基础减伤 {{details.guard}}{{game.school==='talisman' ? ` · 每回合符印伤害 ${details.markDamage}` : ''}}</p>
     <div class="school-picker"><h3>选择修法 <small>战斗外切换；会采用该派基础组合，研习记录保留，可再逐槽装备。</small></h3><div class="choices two">
-      <button v-for="school in ['sword','talisman'] as const" :key="school" :data-testid="`school-${school}`" :class="{selected:game.school===school}" @click="emit('act',{type:'SCHOOL',school})" :disabled="!can({type:'SCHOOL',school})"><strong>{{school==='sword'?'剑修 · 青锋剑诀':'符修 · 镇灵符诀'}}</strong><small>{{why({type:'SCHOOL',school})}}</small></button>
+      <button v-for="school in ['sword','talisman'] as const" :key="school" :data-testid="`school-${school}`" :class="{selected:game.school===school}" :aria-pressed="game.school===school" @click="emit('act',{type:'SCHOOL',school})" :disabled="!can({type:'SCHOOL',school})"><strong>{{school==='sword'?'剑修 · 青锋剑诀':'符修 · 镇灵符诀'}}</strong><small>{{why({type:'SCHOOL',school})}}</small></button>
     </div></div>
     <article class="equipment-card" data-testid="sword-manual">
       <div><h3>{{C.swordManual.name}} <small>剑法启迪</small></h3>
@@ -73,7 +73,7 @@ watch(() => props.highlight, id => {
       </div>
       <div class="equipment-actions">
         <button :data-testid="`learn-${id}`" :class="{highlight:highlight===`learn-${id}`}" @click="emit('act',{type:'LEARN',skill:id})" :disabled="!can({type:'LEARN',skill:id})">{{game.learned.includes(id)?'已掌握':'研习'}}</button>
-        <button :data-testid="`equip-${id}`" :class="{selected:game.loadout[skill.slot]===id,highlight:highlight===`equip-${id}`}" @click="emit('act',{type:'EQUIP',skill:id})" :disabled="!can({type:'EQUIP',skill:id})">{{game.loadout[skill.slot]===id?'已装备':`装入${slots[skill.slot]}`}}</button>
+        <button :data-testid="`equip-${id}`" :class="{selected:game.loadout[skill.slot]===id,highlight:highlight===`equip-${id}`}" :aria-pressed="game.loadout[skill.slot]===id" @click="emit('act',{type:'EQUIP',skill:id})" :disabled="!can({type:'EQUIP',skill:id})">{{game.loadout[skill.slot]===id?'已装备':`装入${slots[skill.slot]}`}}</button>
         <small data-testid="equip-reason">{{why({type:'EQUIP',skill:id})}}</small>
         <button class="text-button" :data-testid="`track-skill-${id}`" @click="emit('track',{kind:'skill',id})">查看筹备 →</button>
       </div>
@@ -86,7 +86,7 @@ watch(() => props.highlight, id => {
       </div>
       <div class="equipment-actions">
         <button :data-testid="`forge-${id}`" :class="{highlight:highlight===`forge-${id}`}" @click="emit('act',{type:'FORGE',relic:id})" :disabled="!can({type:'FORGE',relic:id})">{{game.ownedRelics.includes(id)?'已炼成':'炼制法宝'}}</button>
-        <button :data-testid="`equip-relic-${id}`" :class="{selected:game.loadout.relic===id}" @click="emit('act',{type:'EQUIP_RELIC',relic:id})" :disabled="!can({type:'EQUIP_RELIC',relic:id})">{{game.loadout.relic===id?'已装备':'装备法宝'}}</button>
+        <button :data-testid="`equip-relic-${id}`" :class="{selected:game.loadout.relic===id}" :aria-pressed="game.loadout.relic===id" @click="emit('act',{type:'EQUIP_RELIC',relic:id})" :disabled="!can({type:'EQUIP_RELIC',relic:id})">{{game.loadout.relic===id?'已装备':'装备法宝'}}</button>
         <small data-testid="equip-relic-reason">{{why({type:'EQUIP_RELIC',relic:id})}}</small>
         <button class="text-button" :data-testid="`track-relic-${id}`" @click="emit('track',{kind:'relic',id})">查看筹备 →</button>
       </div>
