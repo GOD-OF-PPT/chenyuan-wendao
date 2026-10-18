@@ -1,0 +1,69 @@
+{
+  "id": "trial_heart",
+  "category": "enemies",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-b1f2fbc0-e088-4744-8dd4-91311d965d74.png",
+  "savedPath": "art/redesign/enemies/trial_heart-v1.png",
+  "copiedUnchanged": true,
+  "sourceSHA256": "87fbc213dab33af4f8381828ceb7e1a12a9a772bd995d995e74c4bfb2805ed81",
+  "promptReference": "art/redesign/receipts/enemy-prompts.json#trial_heart",
+  "referenceImages": [
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9",
+      "role": "style reference only; materials, palette and lighting, no scenery or objects"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "agent source inspection, not user art acceptance",
+    "observation": "Single existing character identity or configured enemy subject; no UI, readable text or watermark observed."
+  },
+  "requestedResolution": "native available square PNG",
+  "resolutionNote": "Actual tool output recorded, no upscaling or4K claim",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceBytes": 2186850,
+  "alphaProof": {
+    "transparentPixels": 760463,
+    "solidPixels": 535399,
+    "intermediatePixels": 276654,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 126194,
+    "solidPixels": 88770,
+    "intermediatePixels": 47180,
+    "min": 0,
+    "max": 253
+  },
+  "runtime": {
+    "path": "web/public/art/v2/enemies/trial_heart.webp",
+    "bytes": 90838,
+    "sha256": "d649dc3e9593790fe6e772344ed1bb202e4e495eecb4859d3c15a8be2a418044",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+}

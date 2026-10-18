@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue';
+import { computed, ref } from 'vue';
 import * as C from '../../src/full/content.ts';
 import { getLifeOverview } from '../../src/full/queries.ts';
 import type { Game } from '../../src/full/types.ts';
@@ -9,28 +9,24 @@ const player = computed(() => props.game.core.player), realm = computed(() => C.
 const life = computed(() => getLifeOverview(props.game));
 const sealed = computed(() => props.game.status==='ascended');
 const school = computed(() => props.game.school==='sword'?'剑修':props.game.school==='talisman'?'符修':'尚未择法');
-const expanded = ref(!window.matchMedia('(max-width:760px)').matches);
-const media = window.matchMedia('(max-width:760px)');
-function resize(){expanded.value=!media.matches;}
-onMounted(()=>media.addEventListener('change',resize));onUnmounted(()=>media.removeEventListener('change',resize));
+const expanded = ref(false);
 </script>
 <template>
   <aside class="paper character-sheet" data-testid="character-panel" aria-label="道者个人志">
-    <div class="character-heading"><span class="section-label">道者 · 个人志</span><h2>{{player.name}}</h2><span class="realm-badge" data-testid="realm">{{realm.name}}</span><div class="character-vitals" :data-testid="sealed?'ascension-sealed-stats':undefined">
+    <div class="character-portrait" aria-hidden="true"><PortraitImage id="player" fallback="道"/></div>
+    <div class="character-heading"><span class="section-label">道者 · 个人志</span><h2>{{player.name}}</h2><span class="realm-badge" data-testid="realm">{{realm.name}}</span></div>
+    <div class="character-vitals" :data-testid="sealed?'ascension-sealed-stats':undefined">
       <p v-if="sealed" class="small">此生已封卷。本卷不继续上界修行，保留封卷时的实际状态。</p>
       <div class="stat"><label>{{sealed?'封卷气血':'气血'}} <b data-testid="hp">{{player.hp}}<template v-if="!sealed"> / {{realm.maxHp}}</template></b></label><progress v-if="!sealed" class="health" :value="player.hp" :max="realm.maxHp" aria-label="气血"></progress></div>
       <div class="stat"><label>{{sealed?'封卷灵力':'灵力'}} <b>{{player.mp}}<template v-if="!sealed"> / {{realm.maxMp}}</template></b></label><progress v-if="!sealed" :value="player.mp" :max="realm.maxMp" aria-label="灵力"></progress></div>
-    </div>
+      <div v-if="!sealed" class="stat"><label>修为 <b data-testid="xp">{{player.xp}} / {{realm.xpCap}}</b></label><progress class="cultivation" :value="player.xp" :max="realm.xpCap||1" aria-label="修为"></progress></div>
+      <div class="character-pair character-currency"><span>{{sealed?'封卷灵石':'灵石'}}</span><b data-testid="stones">{{player.stones}}</b></div>
     </div>
     <details :open="expanded" @toggle="expanded=($event.target as HTMLDetailsElement).open">
-      <summary class="character-hint" data-testid="character-toggle">{{expanded?'收起详情':'展开修为、寿元与配装'}}</summary>
+      <summary class="character-hint" data-testid="character-toggle">{{expanded?'收起详情':'查看寿元与配装'}}</summary>
       <div class="character-details" data-testid="character-details">
-        <div class="character-portrait" aria-hidden="true"><PortraitImage id="player" fallback="道"/></div>
-        <p class="small muted">{{sealed?'此生已封卷，来路尽存。':'清风为伴，明月同途。'}}</p>
-        <div v-if="!sealed" class="stat"><label>修为 <b data-testid="xp">{{player.xp}} / {{realm.xpCap}}</b></label><progress class="cultivation" :value="player.xp" :max="realm.xpCap||1" aria-label="修为"></progress></div>
         <div class="character-pair"><span>{{sealed?'封卷年龄':'年龄 / 寿限'}}</span><b data-testid="age-limit">{{life.ageLabel}}<template v-if="!sealed"> / {{life.limitLabel}}</template></b></div>
-        <div class="character-pair"><span>{{sealed?'封卷灵石':'灵石'}}</span><b data-testid="stones">{{player.stones}}</b></div>
-        <div class="divider"></div><h3>当前修法 · {{school}}</h3>
+        <h3>当前修法 · {{school}}</h3>
         <dl class="character-loadout"><div><dt>心法</dt><dd>{{game.loadout.mind?C.skills[game.loadout.mind].name:'引气入体后选择'}}</dd></div><div><dt>起手</dt><dd>{{game.loadout.builder?C.skills[game.loadout.builder].name:'尚未装备'}}</dd></div><div><dt>终结</dt><dd>{{game.loadout.finisher?C.skills[game.loadout.finisher].name:'尚未装备'}}</dd></div><div><dt>本命法宝</dt><dd>{{game.loadout.relic?C.relics[game.loadout.relic].name:'金丹后可炼制装备'}}</dd></div></dl>
       </div>
     </details>

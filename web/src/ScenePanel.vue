@@ -3,19 +3,18 @@ import {computed,onMounted,onUnmounted,ref,watch} from 'vue';
 import type { Game } from '../../src/full/types.ts';
 import { scenePresentation } from './scene-presentation';
 import AssetImage from './AssetImage.vue';
-import {SCENE_ASSETS,SCENE_CROPS,TERRACE_STATE_ASSETS,TERRACE_ART,terraceViewport} from './assets';
-const props = defineProps<{ game: Game; eyebrow: string; title: string; description: string }>();
+import {SCENE_CROPS,TERRACE_ART,terraceViewport,sceneAssetPath} from './assets';
+const props = defineProps<{ game: Game; eyebrow: string; title: string; description: string; battleStage?:boolean; meditation?:boolean }>();
 const scene = computed(() => scenePresentation(props.game));
-const scenePath=computed(()=>scene.value.key==='terrace'&&scene.value.gate!=='none'?TERRACE_STATE_ASSETS[scene.value.gate]:SCENE_ASSETS[scene.value.artKey]);
+const scenePath=computed(()=>sceneAssetPath(scene.value,props.meditation));
 const root=ref<HTMLElement>(),artReady=ref(false),size=ref({width:0,height:0});let observer:ResizeObserver|undefined;
-function resized(){if(root.value){size.value={width:root.value.clientWidth,height:root.value.clientHeight};}}
-onMounted(()=>{resized();observer=new ResizeObserver(resized);if(root.value)observer.observe(root.value);});onUnmounted(()=>observer?.disconnect());
+onMounted(()=>{observer=new ResizeObserver(entries=>{const entry=entries.find(value=>value.target===root.value);if(!entry)return;const {width,height}=entry.contentRect;if(width!==size.value.width||height!==size.value.height)size.value={width,height};});if(root.value)observer.observe(root.value);});onUnmounted(()=>observer?.disconnect());
 watch(scenePath,()=>{artReady.value=false;},{flush:'sync'});
 function artState(value:{state:string;path:string}){if(value.path===scenePath.value)artReady.value=value.state==='ready';}
 const photoBox=computed(()=>{const box=terraceViewport(size.value.width,size.value.height);return`${box.x} ${box.y} ${box.width} ${box.height}`;});
 </script>
 <template>
-  <section ref="root" class="scene" :class="[scene.key, scene.location, {compact:scene.compact}]" data-testid="scene" :data-scene="scene.key" :data-scene-art="scene.artKey" :data-location="scene.location" :data-gate="scene.gate" aria-label="当前行旅">
+  <section ref="root" class="scene" :class="[scene.key, scene.location, {compact:scene.compact,'battle-location':battleStage}]" data-testid="scene" :data-scene="scene.key" :data-scene-art="scene.artKey" :data-location="scene.location" :data-gate="scene.gate" aria-label="当前行旅">
     <AssetImage class="scene-image" :path="scenePath" :asset-id="`scene-${scene.artKey}`" :position="SCENE_CROPS[scene.location]" :fit="scene.key==='terrace'?'contain':'cover'" eager @state="artState">
     <svg class="scene-landscape" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
       <circle class="scene-moon" cx="865" cy="96" r="43"/>
@@ -52,7 +51,7 @@ const photoBox=computed(()=>{const box=terraceViewport(size.value.width,size.val
       </g>
     </svg>
     <div class="scene-vignette" aria-hidden="true"></div>
-    <div class="scene-copy"><span class="eyebrow">{{eyebrow}}</span><h2>{{title}}</h2><p>{{description}}</p></div>
+    <div class="scene-copy"><span v-if="!battleStage&&!meditation" class="eyebrow">{{eyebrow}}</span><h2>{{title}}</h2><p v-if="!battleStage&&!meditation">{{description}}</p></div>
     <span class="scene-seal" aria-hidden="true">问<br>道</span>
   </section>
 </template>
@@ -66,4 +65,5 @@ const photoBox=computed(()=>{const box=terraceViewport(size.value.width,size.val
 @media(max-width:760px){.scene{min-height:232px}.scene.compact{min-height:154px}.scene-copy{margin:20px 56px 20px 22px;max-width:calc(100% - 78px);padding:10px 12px}.scene-copy h2{overflow-wrap:anywhere;font-size:calc(1.5rem * var(--font-scale,1));margin:6px 0}.scene-copy p{letter-spacing:normal;font-size:calc(0.77777778rem * var(--font-scale,1))}.scene-copy .eyebrow{font-size:calc(0.72222222rem * var(--font-scale,1))}.scene-seal{right:16px;top:16px;font-size:calc(0.72222222rem * var(--font-scale,1));padding:5px}}
 .scene.terrace{background:linear-gradient(100deg,#143438,#344f50)}.scene.terrace .scene-copy{max-width:38%;margin-right:auto}
 .photo-gate-state .scene-gate{fill:none;stroke:none}.photo-door-outline{fill:none!important;stroke:#b5985e!important;stroke-width:1;opacity:.15}.photo-gate-state .gate-light{opacity:1}.photo-lightning{fill:none;stroke:#fff4d4;stroke-width:3;filter:drop-shadow(0 0 3px #fff0c2)}
+.scene.battle-location{min-height:64px}.battle-location .scene-copy{margin:8px 64px 8px 16px;padding:6px 10px}.battle-location .scene-copy h2{font-size:calc(1.1111111rem * var(--font-scale,1));margin:0;letter-spacing:.06em}.battle-location .scene-seal{top:10px;right:16px;padding:4px}
 </style>

@@ -1,0 +1,58 @@
+{
+  "id": "cave-meditation",
+  "category": "presentationVariants",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-9dae1493-b232-4638-8c60-4e52ffc94e77.png",
+  "savedPath": "art/redesign/scenes/cave-meditation-v1.png",
+  "copiedUnchanged": true,
+  "sourceSHA256": "03de7ff446ac4462c575f4cef46051e143ca389d1394f54f606e39ddc2172ed7",
+  "promptReference": "art/redesign/receipts/meditation-prompts.json#cave-meditation",
+  "referenceImages": [
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "role": "edit target; preserve cave architecture, composition, lighting and existing mat",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9"
+    },
+    {
+      "path": "art/redesign/characters/player-v1.png",
+      "role": "identity and clothing reference; same player seated from behind",
+      "sha256": "0abde0fe4d767fa6832df7b35e7ac6b87f4c318b3e0312cf0e3d984e2e9e23e2"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "agent source inspection, not user art acceptance",
+    "observation": "Same cave composition and existing mat, one matching ivory/jade player seated from behind; no UI/text/watermark observed."
+  },
+  "requestedResolution": "native landscape, original framing",
+  "resolutionNote": "Actual dimensions retained, no upscaling or4K claim",
+  "sourceDimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "sourceBytes": 2950065,
+  "runtime": {
+    "path": "web/public/art/v2/scenes/cave-meditation.webp",
+    "bytes": 297424,
+    "sha256": "cc59bccfd3a42cdf688acdfd606ebe92d6e8d812eb08202207aaac1b145eeb9e",
+    "dimensions": {
+      "width": 1536,
+      "height": 865
+    },
+    "alpha": false,
+    "format": "webp"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "84",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+}

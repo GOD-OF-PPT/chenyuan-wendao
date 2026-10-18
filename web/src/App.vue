@@ -3,7 +3,7 @@ import { computed, nextTick, onMounted, onScopeDispose, ref, shallowRef, watch }
 import { useGame } from './store';
 import {useFocus} from './focus';
 import * as C from '../../src/full/content.ts';
-import { availableEvents, intent } from '../../src/full/engine.ts';
+import { availableEvents } from '../../src/full/engine.ts';
 import { gamePhase } from '../../src/full/contracts.ts';
 import { getBreakthroughGoal, previewAction, getStoryContext, getRelationships, getLifeOverview, getLifeRecord, exportLifeText, getTrialPreparation, getTrialJourney, getAscensionChoices } from '../../src/full/queries.ts';
 import type { ActionPreview } from '../../src/full/queries.ts';
@@ -12,17 +12,19 @@ import { stories } from '../../src/full/events.ts';
 import { MAX_SAVE_BYTES } from '../../src/full/versions.ts';
 import { planCollection, createConsumptionPreview, type CollectionTarget } from '../../src/full/goals.ts';
 import { useTracking } from './use-tracking';
-import { formatCosts } from './presentation';
+import { formatCosts, formatDelta } from './presentation';
 import type { NavigationRequest } from './navigation';
 import GoalPanel from './GoalPanel.vue';
 import CharacterPanel from './CharacterPanel.vue';
 import ScenePanel from './ScenePanel.vue';
+import BattlePanel from './BattlePanel.vue';
 import PrimaryNav from './PrimaryNav.vue';
 import AssetImage from './AssetImage.vue';
 import PortraitImage from './PortraitImage.vue';
 import GameIcon from './GameIcon.vue';
 import ActionEffects from './ActionEffects.vue';
-import {NPC_PORTRAITS,SCENE_ASSETS} from './assets';
+import {NPC_PORTRAITS,SCENE_ASSETS,sceneAssetPath} from './assets';
+import {scenePresentation} from './scene-presentation';
 import BatchPreview from './BatchPreview.vue';
 import ActionFeedback from './ActionFeedback.vue';
 import EquipmentPanel from './EquipmentPanel.vue';
@@ -113,8 +115,11 @@ async function travel(id: C.LocationId) {
 }
 const natural = computed<Action>(() => ({ type: 'CULTIVATE', method: 'natural', count: batch.value === 'target' ? C.maxBatch : batch.value }));
 const assisted = computed<Action>(() => ({ type: 'CULTIVATE', method: 'assisted', count: batch.value === 'target' ? C.maxBatch : batch.value }));
+const naturalPreview=computed(()=>quote(natural.value));
+const cultivationHome=computed(()=>!!game.value&&phase.value==='idle'&&tab.value==='修行'&&core.value?.world.location==='cave');
+const worldArt=computed(()=>game.value?sceneAssetPath(scenePresentation(game.value),cultivationHome.value):undefined);
+function focusCultivation(){focus.target(document.getElementById('cultivation-actions'));}
 const breakthrough = computed<Action>(() => ({ type: core.value?.player.realm === 'spirit' ? 'START_TRIAL' : 'BREAKTHROUGH' }));
-const forecast = computed(() => game.value?.battle ? intent(game.value.battle) : null);
 const activeStory = computed(() => game.value && core.value?.activeEvent && stories[core.value.activeEvent.id] ? getStoryContext(game.value, core.value.activeEvent.id) : null);
 const relationships = computed(() => game.value ? getRelationships(game.value) : []);
 const events = computed(() => game.value ? availableEvents(game.value) : []);
@@ -155,10 +160,6 @@ function consumption(action: Action) {
 const collectionLabel = computed(() => collectionTarget.value ? `${collectionTarget.value.kind === 'item' ? C.items[collectionTarget.value.id].name : '灵石'}库存达到 ${collectionTarget.value.quantity}` : '从目标来源选取所需物资');
 const knownItems = computed(() => Object.entries(C.items).filter(([id, item]) => !core.value || C.rank(item.min) <= C.rank(core.value.player.realm) || core.value.inventory[id] > 0));
 const localRecipes = computed(() => Object.entries(C.recipes).filter(([, recipe]) => !core.value || C.rank(recipe.min) <= C.rank(core.value.player.realm)));
-const spells = computed(() => ({
-  technique: game.value?.loadout.builder ? C.skills[game.value.loadout.builder].name : '术法',
-  release: game.value?.loadout.finisher ? C.skills[game.value.loadout.finisher].name : '终结术法',
-}));
 function battle(move: Move) { return act({ type: 'BATTLE', move }); }
 function download(text: string, filename: string, mime = 'application/json') {
   const url = URL.createObjectURL(new Blob([text], { type: mime }));
@@ -296,7 +297,8 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
 </script>
 
 <template>
-  <div class="app-shell" :class="{'is-saving':store.busy,'text-enlarged':fontScale>1}" :data-font-scale="fontScale" :data-session="session.kind" :style="{'--font-scale':fontScale,'--nav-height':navHeight+'px'}">
+  <div class="app-shell" :class="{'is-saving':store.busy,'text-enlarged':fontScale>1,'has-game':!!game,'cultivation-home':cultivationHome}" :data-font-scale="fontScale" :data-session="session.kind" :style="{'--font-scale':fontScale,'--nav-height':navHeight+'px'}">
+    <AssetImage v-if="game" class="world-ambience" :path="worldArt" asset-id="world-ambience" eager aria-hidden="true"/>
     <nav class="skip-links" aria-label="快捷定位"><a :href="game?'#game-content':'#welcome-content'" @click.prevent="focusContent">跳到当前内容</a><a v-if="game?.status==='active'" href="#primary-navigation" @click.prevent="focusRegion('primary-navigation')">跳到主导航</a><a v-if="game" href="#goal-panel" @click.prevent="focusRegion('goal-panel')">跳到当前目标</a></nav>
     <header class="topbar">
       <div class="brand"><strong v-if="demoNode" class="demo-badge" data-testid="demo-badge">演示存档</strong><span class="seal">尘<br>缘</span><div><h1>尘缘问道</h1><p>一念尘缘起 · 千山共问道</p></div></div>
@@ -329,12 +331,13 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
     </main>
     <main v-if="store.ready&&!game&&demoNode" class="paper demo-banner"><h2>演示进度尚未就绪</h2><p>请核对上方错误后重试同次操作或重新读取；不会改动正常进度。</p><button @click="initialiseGame" :disabled="store.busy">重新读取演示进度</button></main>
     <main v-if="game && core" class="game-grid" :aria-busy="store.busy">
-      <section class="center-column">
-        <ScenePanel :game="game" :eyebrow="phase==='opening'?'初遇 / 山雨破庙':location.subtitle" :title="phase==='opening'?'雨中故人':game.status==='ascended'?overview!.title:game.battle?C.enemies[game.battle.enemy].name:activeStory?.name??location.name" :description="game.status==='ascended'?'此卷已收，来路犹存。':game.battle?'先辨来势，再决进退。':'山海不言，修行自有回响。'"/>
+      <section class="center-column" :class="{'in-battle':game.battle&&!inspectingInventory}">
+        <ScenePanel :meditation="cultivationHome" :battle-stage="!!game.battle&&!inspectingInventory" :game="game" :eyebrow="phase==='opening'?'初遇 / 山雨破庙':location.subtitle" :title="phase==='opening'?'雨中故人':game.status==='ascended'?overview!.title:game.battle?location.name:activeStory?.name??location.name" :description="game.status==='ascended'?'此卷已收，来路犹存。':game.battle?'先辨来势，再决进退。':'山海不言，修行自有回响。'"/>
         <ActionEffects :result="store.lastResult" :replayed="store.lastReplayed" :run-id="core.runId" :revision="core.revision" :school="game.school" :reduce-motion="reduceMotion" @focus-fallback="focusContent" :busy="store.busy" :eligible="store.saved && store.available && !store.error"/>
         <TrialProgressPanel v-if="journey || store.trialRecovery" :journey="journey" :recovery="store.trialRecovery" :checkpoint="store.checkpointSummary" :enabled="store.available && !store.busy" @restore="requestTrialRestore" @export="exportSave" @prepare="showTrialPreparation"/>
-        <section ref="contentPanel" id="game-content" tabindex="-1" aria-label="当前内容" class="paper content-panel">
-          <GuidancePanel v-if="guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipGuidance" @help="showGameplayHelp"/>
+        <section ref="contentPanel" id="game-content" tabindex="-1" aria-label="当前内容" class="paper content-panel" :class="{'battle-content':game.battle&&!inspectingInventory}">
+          <details v-if="game.battle&&!inspectingInventory&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" class="battle-guidance"><summary>查看本场行道提示</summary><GuidancePanel :guide="guidance" @skip="skipGuidance" @help="showGameplayHelp"/></details>
+          <GuidancePanel v-else-if="!cultivationHome&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipGuidance" @help="showGameplayHelp"/>
           <section v-if="inspectingInventory" class="pending-inspection" data-testid="pending-inspection"><h3>当前遭遇待继续</h3><p>查看不会消耗游戏月，也不会改变当前事件、敌方意图或回合。物品使用、旅行与换装仍受当前遭遇限制。</p><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></section>
           <template v-if="phase === 'opening' && !inspectingInventory">
             <div class="section-label">当前遭遇 <span>壹 · 破庙</span></div><div class="encounter-speaker"><PortraitImage class="speaker-portrait" id="shen" fallback="沈"/><span>沈清禾 · 药修</span></div><h2>一丹，一念。</h2>
@@ -356,18 +359,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
             <div class="choices"><button v-for="option in activeStory.options" :key="option.id" :data-testid="`decide-${option.id}`" @click="act({type:'DECIDE',option:option.id})" :disabled="!can({type:'DECIDE',option:option.id})"><strong>{{option.label}}</strong><small>{{option.detail}}</small><small>{{cost({type:'DECIDE',option:option.id})}}</small><small>{{why({type:'DECIDE',option:option.id})}}</small><small>{{consumption({type:'DECIDE',option:option.id})}}</small></button></div>
           </template>
           <template v-else-if="game.battle && !inspectingInventory">
-            <div class="section-label">斗法 <span data-testid="round">第 {{game.battle.round+1}} 回合</span></div>
-            <div class="enemy-row"><h2>{{C.enemies[game.battle.enemy].name}}</h2><b data-testid="enemy-hp">{{game.battle.hp}} / {{C.enemies[game.battle.enemy].hp}} 气血</b></div>
-            <progress class="enemy-health" :value="game.battle.hp" :max="C.enemies[game.battle.enemy].hp" aria-label="敌方气血"></progress>
-            <div class="intent" data-testid="intent"><span>敌方意图</span><strong>{{forecast!.name}}</strong><b>预计伤害 {{forecast!.damage}}</b></div>
-            <p class="battle-resource">{{game.school === 'sword' ? `剑意 ${game.battle.sword} / 3` : `符印 ${game.battle.marks.length} / 3`}}</p>
-            <div v-if="game.battle.log.length" class="battle-log" aria-live="polite"><p v-for="(line,index) in game.battle.log" :key="index">{{line}}</p></div>
-            <div class="battle-player" data-testid="battle-player"><span>己方气血 <b>{{core.player.hp}} / {{realm.maxHp}}</b></span><span>灵力 <b>{{core.player.mp}} / {{realm.maxMp}}</b></span></div>
-            <div class="battle-actions"><button v-for="move in ['attack','guard','technique','release'] as const" :key="move" :data-testid="move" @click="battle(move)" :disabled="!can({type:'BATTLE',move})">
-              <strong>{{move === 'attack' ? '普通攻击' : move === 'guard' ? '凝神护体' : spells[move]}}</strong><small>{{cost({type:'BATTLE',move})}}</small><small>{{why({type:'BATTLE',move})}}</small>
-            </button></div>
-            <p v-if="journey" class="small" data-testid="trial-battle-guidance">观察敌方意图再行动。普通攻击与护体可回灵；丹药占用一个回合，退离将结束本轮渡劫。</p>
-            <div class="inline-actions"><button data-testid="battle-heal" @click="battle('heal')" :disabled="!can({type:'BATTLE',move:'heal'})">回春丹 ×{{core.inventory.healing_pill}}<small>{{why({type:'BATTLE',move:'heal'})}}</small></button><button data-testid="battle-restore" @click="battle('restore')" :disabled="!can({type:'BATTLE',move:'restore'})">回灵丹 ×{{core.inventory.spirit_pill}}<small>{{why({type:'BATTLE',move:'restore'})}}</small></button><button data-testid="flee" @click="battle('flee')" :disabled="!can({type:'BATTLE',move:'flee'})">撤回洞府<small>{{why({type:'BATTLE',move:'flee'})}}</small></button></div>
+            <BattlePanel :game="game" :can="can" :cost="cost" :why="why" @move="battle"/>
           </template>
           <template v-else-if="phase === 'trial-ending' && ascension && !inspectingInventory">
             <div class="section-label">天门已开 <span>三关已过，等待你的收束</span></div><h2>此生，留下些什么？</h2><p class="story">{{ascension.record.opening.text}} {{ascension.record.training.school}}的来路已经留在记录中。两种选择都以飞升成功收卷，没有善恶高低。</p>
@@ -378,14 +370,20 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
             <LifePanel :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @export="exportLife" @restore="restore" @restart="reset"/>
           </template>
           <template v-else-if="tab === '修行'">
-            <div class="section-label">修行 <span>积跬步，以至千里</span></div><h2>静守灵台，凝气归元。</h2><p class="story">{{location.description}}</p>
             <template v-if="core.world.location === 'cave'">
-              <div class="action-options"><label>连续行动 <select v-model.number="batch" aria-label="行动次数"><option :value="1">1 次</option><option :value="5">5 次</option><option :value="20">20 次</option><option :value="50">50 次</option><option value="target">达到目标</option></select></label><small>每批最多 {{C.maxBatch}} 次；成本与停止原因按真实行动结算。</small></div>
-              <div class="choices"><button data-testid="cultivate" @click="act(natural)" :disabled="!can(natural)"><strong>自然吐纳</strong><small>{{cost(natural)}}</small><small>{{why(natural)}}</small></button><button data-testid="cultivate-assisted" @click="act(assisted)" :disabled="!can(assisted)"><strong>灵石辅助</strong><small>{{cost(assisted)}}</small><small>{{why(assisted)}}</small></button><button data-testid="rest" @click="act({type:'REST'})" :disabled="!can({type:'REST'})"><strong>洞府疗养</strong><small>{{cost({type:'REST'})}}</small><small>{{why({type:'REST'})}}</small></button></div>
+              <div class="cultivation-topline"><span class="section-label">听雨修行 · 道行由此积累</span><button type="button" class="text-button" data-testid="cultivation-jump" @click="focusCultivation">前往修行动作 ↓</button></div>
+              <div class="cultivation-actions" id="cultivation-actions" tabindex="-1" data-testid="cultivation-actions">
+                <section class="natural-action"><GameIcon class="cultivation-emblem" kind="nav" id="cultivate"/><h2>自然吐纳</h2>
+                  <div class="cultivation-facts" data-testid="cultivation-facts"><span v-if="naturalPreview?.delta">预计修为 {{naturalPreview.delta.xp>0?'+':''}}{{naturalPreview.delta.xp}}</span><span v-if="naturalPreview?.allowed">实际可行 {{naturalPreview.executedSteps}} 次</span><span>{{naturalPreview?.actualCosts?formatCosts(naturalPreview.actualCosts):cost(natural)}}</span></div>
+                  <button class="primary cultivate-primary" data-testid="cultivate" @click="act(natural)" :disabled="!can(natural)">自然吐纳</button><p v-if="why(natural)" class="small action-reason">{{why(natural)}}</p>
+                  <label class="cultivation-batch">连续行动 <select v-model.number="batch" aria-label="行动次数"><option :value="1">1 次</option><option :value="5">5 次</option><option :value="20">20 次</option><option :value="50">50 次</option><option value="target">达到目标</option></select></label>
+                </section>
+                <div class="cultivation-alternatives"><button data-testid="cultivate-assisted" @click="act(assisted)" :disabled="!can(assisted)"><GameIcon kind="item" id="core"/><span><strong>灵石辅助</strong><small>{{cost(assisted)}}</small><small>{{why(assisted)}}</small></span></button><button data-testid="rest" @click="act({type:'REST'})" :disabled="!can({type:'REST'})"><GameIcon kind="item" id="healing_pill"/><span><strong>洞府疗养</strong><small>{{cost({type:'REST'})}}</small><small>{{why({type:'REST'})}}</small></span></button></div>
+              </div>
             </template>
-            <button v-else class="primary" data-testid="return-cave" @click="travel('cave')" :disabled="!can({type:'TRAVEL',location:'cave'})">返回洞府修行 →</button>
-            <div v-if="core.world.location==='cave'" class="batch-previews"><BatchPreview label="自然吐纳" :preview="quote(natural)"/><BatchPreview label="灵石辅助" :preview="quote(assisted)"/></div>
+            <template v-else><div class="section-label">修行</div><h2>静守灵台，凝气归元。</h2><p class="story">{{location.description}}</p><button class="primary" data-testid="return-cave" @click="travel('cave')" :disabled="!can({type:'TRAVEL',location:'cave'})">返回洞府修行 →</button></template>
             <div class="breakthrough"><div><strong>{{goal?.title}}</strong><small>{{why(breakthrough) || '准备已经齐全'}}</small></div><button class="primary" data-testid="breakthrough" @click="act(breakthrough)" :disabled="core.player.realm==='spirit' ? !store.available || store.busy : !can(breakthrough)">{{core.player.realm === 'mortal' ? '引气入体' : core.player.realm === 'spirit' ? '查看渡劫准备' : '确认突破'}}</button></div>
+            <details v-if="core.world.location==='cave'" class="cultivation-details"><summary>本批预算、预计结果与洞府见闻</summary><p class="story">{{location.description}}</p><p class="small">每批最多 {{C.maxBatch}} 次；成本与停止原因按真实行动结算。</p><div class="batch-previews"><BatchPreview label="自然吐纳" :preview="quote(natural)"/><BatchPreview label="灵石辅助" :preview="quote(assisted)"/></div></details>
           </template>
           <template v-else-if="tab === '历练'">
             <div class="section-label">历练</div><p class="story">{{location.description}}</p>
@@ -405,6 +403,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
             <div class="choices"><button v-for="event in events" :key="event.id" :data-testid="`event-${event.id}`" :class="{highlight:highlight===`event-${event.id}`}" @click="act({type:'EVENT',event:event.id})" :disabled="!can({type:'EVENT',event:event.id})">{{event.name}} · {{event.npc}}</button></div>
             <h3>近期手记</h3><p class="small">仅保留最近100条；当前显示{{visibleJournal.length}}条，共{{recentJournal.length}}条。完整已选事实请查看修仙生平。</p><ol id="recent-journal" class="journal"><li v-for="(line,index) in visibleJournal" :key="index">{{line}}</li></ol><button v-if="recentJournal.length>10" type="button" class="text-button" data-testid="journal-toggle" :aria-expanded="journalExpanded" aria-controls="recent-journal" @click="journalExpanded=!journalExpanded">{{journalExpanded?'收起较早条目':`展开全部 ${recentJournal.length} 条近期手记`}}</button>
           </template>
+          <GuidancePanel v-if="cultivationHome&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipGuidance" @help="showGameplayHelp"/>
         </section>
         <div v-if="tab==='仙缘'&&phase!=='idle'&&game.status==='active'" class="paper inline-actions"><button type="button" class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></div>
         <RelationshipPanel v-if="tab==='仙缘' && phase!=='idle'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
@@ -414,7 +413,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
         <EquipmentPanel v-if="tab==='修行' && phase!=='opening' && game.status==='active'" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" :consumption="consumption" @act="act" @track="tracking.select" @navigate="navigate"/>
         <div class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><ActionFeedback v-if="store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/></div>
       </section>
-      <aside class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="tracking.select" @navigate="navigate" @preparation="preparation=$event"/><section class="paper fate-summary"><div class="section-label">仙缘因果</div><div v-for="person in relationships.slice(0,2)" :key="person.id" :data-testid="`fate-summary-${person.id}`"><PortraitImage class="fate-portrait" :id="person.id" :fallback="person.seal"/><h3>{{person.name}} · {{person.label}}</h3><p class="small">{{person.summary}}</p></div><button class="text-button" @click="selectTab('仙缘')">展开仙缘 →</button></section>
+      <aside class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="tracking.select" @navigate="navigate" @preparation="preparation=$event"/><section class="paper recent-action"><div class="section-label">最近行动</div><p>{{game.journal.at(-1)}}</p><p v-if="store.lastResult" class="small">{{formatDelta(store.lastResult.delta)}}</p></section><section class="paper fate-summary"><div class="section-label">仙缘因果</div><div v-for="person in relationships.slice(0,2)" :key="person.id" :data-testid="`fate-summary-${person.id}`"><PortraitImage class="fate-portrait" :id="person.id" :fallback="person.seal"/><h3>{{person.name}} · {{person.label}}</h3><p class="small">{{person.summary}}</p></div><button class="text-button" @click="selectTab('仙缘')">展开仙缘 →</button></section>
       <section class="note"><span>此地机缘</span><p>{{location.description}}</p><small>试玩版本 · 数值未平衡<br>约30分钟理解玩法，不限定通关时间</small></section></aside>
       <CharacterPanel :game="game"/>
     </main>

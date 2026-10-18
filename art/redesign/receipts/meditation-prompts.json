@@ -1,0 +1,7 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "edit",
+  "prompts": {
+    "cave-meditation": "Use case: compositing. Asset type: production cave meditation scene variant for a Chinese cultivation game. Image 1 is the edit target: preserve its exact cave, architecture, woven meditation mat, landscape, waterfalls, weather, warm lanterns, cool light, perspective and framing. Image 2 is ONLY the player identity and clothing reference. Add one young male cultivator seated cross-legged naturally on the existing round woven mat in the middle-left foreground, seen mostly from behind looking out toward the mountains. Keep his long dark half-tied hair, simple wood hairpin and ivory/jade robes consistent with image 2; his robe folds rest on the mat with coherent contact shadow. Calm resting/meditation pose, not a spell or transformation. His size should fit the mat and the existing railing, not dwarf the environment. Change only the area necessary for the seated character and its contact shadow. Keep all other scene content and composition unchanged. No UI, buttons, border, text, inscription, watermark, extra people, glow aura, floating letters or new props. Landscape canvas, preserve original framing, native resolution, no upscaling."
+  }
+}

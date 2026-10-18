@@ -114,7 +114,7 @@ def package(browser_evidence, journeys, output):
 ## 版本与证据
 
 Game/schema/content/balance：{json.dumps(versions, ensure_ascii=False)}。
-锁、源码/构建环境、逐文件SHA、全部原始测试/性能记录和四尺寸代表截图见manifest、checksums及evidence/screenshots。规则与功能测试不等于平衡、趣味或美术认可；未执行范围见KNOWN_ISSUES。
+锁、源码/构建环境、逐文件SHA、全部原始测试/性能记录和四尺寸代表截图见manifest、checksums及screenshots。规则与功能测试不等于平衡、趣味或美术认可；未执行范围见KNOWN_ISSUES。
 ''')
         (stage / 'SAVE_COMPATIBILITY.md').write_text('''# 存档与演示兼容
 
@@ -126,9 +126,11 @@ Game/schema/content/balance：{json.dumps(versions, ensure_ascii=False)}。
 ''')
         (stage / 'KNOWN_ISSUES.md').write_text('''# 已知限制与后续责任
 
-数值未平衡；真人试玩、Safari/手机及辅助技术真机、最终展示/美术认可未执行。工程审查记录及其来源范围见ENGINEERING_REVIEW.md；机器构建/包测试回执与真人/展示验收分开，附带记录不构成人工签名；没有自动合并、公开部署或发Release。
+数值未平衡；当前候选尚未完成真人理解观察或最终美术复验，Safari/手机及辅助技术真机未执行。旧版已收到交互不清晰、画面效果不佳的真实负面验收，正按Goal2持续修缮；本候选的工程检查不能推翻该反馈或代表用户已认可。工程审查记录及其来源范围见ENGINEERING_REVIEW.md；机器构建/包测试回执与真人/展示验收分开，附带记录不构成人工签名；没有自动合并、公开部署或发Release。
 
 历史高清美术原件仍有两组缺失；现生产素材来源/规格/发行许可边界见源码art清单，不新增授权或分发字体。WebKit自动化不等于Safari真机，模拟网络/CPU不等于公网或所有设备。
+
+Goal2 T03独立CI按原预算通过；本机高负载下的冷启动/面板性能失败仍保留，全部原因尚未确定，T07继续在稳定本地环境复验。桌面后续流程与装饰细化由T04—T07接续，移动兼容最低优先级T08，最终候选和用户复验为T09/T10。
 
 T22首次Firefox第8页创建中断未复现、根因未定；原trace与5次原场景/100次空白生命周期、最终复验记录保留。原生进程日志继续采集，不将未知归为已修复。IndexedDB事务检查不承诺所有硬件断电情形永久落盘。
 ''')
@@ -139,6 +141,8 @@ T22首次Firefox第8页创建中断未复现、根因未定；原trace与5次原
 此前T23新增9个正式指令回放演示节点、持续演示标记、正常与演示数据隔离、专用导入导出；构建/公开资源来源守卫、完整源码历史bundle、可复现装配、干净锁定重建和实际解包测试回执。普通游戏规则、数值、Game/schema/content/balance及依赖锁未因演示入口改写；数值仍未平衡。
 
 T24修复文件读取期间的导入所有权和异常处理，补行为引导/帮助重看、未决行囊只读查看与仙缘遭遇/记录并列；提示保持简短，完整解释可重看。候选认证绑定当前全部UI/IDB用例清单。Vue精确更新3.5.44、Vite7.3.7及必需传递依赖；其余直接依赖与Game/数值/存档版本不变。详见ENGINEERING_REVIEW.md的具体证据与未执行范围。
+
+Goal2 T02接入七个专属场景和登仙台门势画作；T03实际应用桌面目标稿基础框架、洞府静修与主行动卡，更新五人物及九敌方，战斗决策集中展示意图、状态、动作与结果。具体当前范围及未完成优化见ART_REVIEW.md、CHARACTER_BATTLE_REVIEW.md与独立素材清单。
 
 历史源SHA、实际测试/产物/截图见manifest和evidence；候选交付不是公开Release或真人/展示验收。
 ''')
@@ -169,11 +173,15 @@ T24修复文件读取期间的导入所有权和异常处理，补行为引导/�
         if redesign.exists():
             shutil.copy2(redesign, stage / 'redesign-asset-manifest.json')
             shutil.copy2(ROOT / 'art/redesign/REVIEW.md', stage / 'ART_REVIEW.md')
+        character_battle = ROOT / 'art/redesign/character-battle-manifest.json'
+        if character_battle.exists():
+            shutil.copy2(character_battle, stage / 'character-battle-manifest.json')
+            shutil.copy2(ROOT / 'art/redesign/CHARACTER_BATTLE_REVIEW.md', stage / 'CHARACTER_BATTLE_REVIEW.md')
         (stage / 'ASSET_SOURCES.md').write_text('''# 素材来源与许可边界
 
 附带的asset-manifest.json逐项记录来源、原件/派生hash、规格、用途、状态及使用依据；其中路径指源码仓库位置，完整资料可从source.bundle恢复。网页运行资源位于web/art，生产文件hash另以本包manifest.runtime为准。原图、运行图与参考预览分开，不把预览放大伪称生产原件。
 
-历史基线包含4场景/5肖像，40符号与4类表现为项目原生代码。若本包附有redesign-asset-manifest.json，则当前另有7个专属场景与登仙台2个门势阶段变体，来源和实际路径以该表及ART_REVIEW.md为准；完整原稿、提示词与回执从source.bundle恢复。两组历史高清原件仍未取得可回读文件，相关historical/reported状态不当作当前存在。production表示项目内有据使用，不新增发行授权、开源许可证或用户最终美术认可。
+历史基线包含4场景/5肖像，40符号与4类表现为项目原生代码。若本包附有redesign-asset-manifest.json，则当前另有7个专属场景与登仙台2个门势阶段变体，来源和实际路径以该表及ART_REVIEW.md为准；完整原稿、提示词与回执从source.bundle恢复。若附有character-battle-manifest.json，则五人物、九敌方及洞府静修表现变体的新原稿/运行图与逐图来源由该表及CHARACTER_BATTLE_REVIEW.md记录，旧肖像历史保留。两组历史高清原件仍未取得可回读文件，相关historical/reported状态不当作当前存在。production表示项目内有据使用，不新增发行授权、开源许可证或用户最终美术认可。
 
 不分发本机字体；界面使用用户系统可用字体。无已授权音乐则不加入音乐。截图中字体像素不是字体文件；本候选不附个人存档/密钥/node_modules。发行许可与最终展示决定仍需用户依据现有权利确认，本包与CI不擅自授予新许可。
 ''')

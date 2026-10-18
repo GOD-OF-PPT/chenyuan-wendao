@@ -23,5 +23,5 @@ test('failed production art keeps the native scene readable without fetching the
  await expect(page.getByTestId('scene')).toHaveAttribute('data-gate','none');
  await expect(page.getByTestId('scene').locator('h2')).toHaveText('听雨洞府');
  expect(await page.locator('.scene').evaluate(element=>getComputedStyle(element).backgroundImage)).toBe('none');
- await expect(page.getByTestId('scene')).toHaveAttribute('data-scene-art','cave');const cave=page.locator('[data-asset-id="scene-cave"]');await expect(cave).toHaveCount(1);await expect(cave).toHaveAttribute('data-art-state','failed');await action(page,'cultivate');expect(images.length).toBeGreaterThan(0);expect(images.some(url=>url.endsWith('/art/v2/scenes/cave.webp'))).toBe(true);expect(images.some(url=>url.endsWith('/art/scene.webp'))).toBe(false);
+ await expect(page.getByTestId('scene')).toHaveAttribute('data-scene-art','cave');const cave=page.locator('[data-asset-id="scene-cave"]');await expect(cave).toHaveCount(1);await expect(cave).toHaveAttribute('data-art-state','failed');await action(page,'cultivate');expect(images.length).toBeGreaterThan(0);expect(images.some(url=>url.endsWith('/art/v2/scenes/cave-meditation.webp'))).toBe(true);expect(images.some(url=>url.endsWith('/art/scene.webp'))).toBe(false);
 });
