@@ -1,0 +1,236 @@
+{
+  "scope": "Local working-tree implementation evidence, before implementation commit; final clean-source CI/PR binds Git source separately",
+  "runtimeDigest": "57554991083566b202c38972002dac024f208af0d18c7cc024cad367cb658c1f",
+  "runtimeFiles": [
+    {
+      "path": ".vite/manifest.json",
+      "bytes": 185,
+      "sha256": "e6289a87931f393186ca6ddb1827ae580dc708d621996bff5507b0c7f1b8c32f"
+    },
+    {
+      "path": "art/portraits/lu.webp",
+      "bytes": 60432,
+      "sha256": "f3205ef5fc424896898efe8dca19e8871762636c7bb82c7136eea44fd638dff4"
+    },
+    {
+      "path": "art/portraits/pei.webp",
+      "bytes": 65460,
+      "sha256": "0a1b64def5cd7200a291af8b98790d07048c190318bd4efbee1081bd6c284ad8"
+    },
+    {
+      "path": "art/portraits/player.webp",
+      "bytes": 62438,
+      "sha256": "0c2faca3fd95f303cc4ed0e22169f13be1806066a22f56880cc7bbd3e009f1e6"
+    },
+    {
+      "path": "art/portraits/shen.webp",
+      "bytes": 63360,
+      "sha256": "7fb1e08bec233fa3ba11f8f56dd645e3772738e80946990ddb0eb8f97b08ba52"
+    },
+    {
+      "path": "art/portraits/yan.webp",
+      "bytes": 62270,
+      "sha256": "0f68e57915cfa22ef10a88699171ab5aca3889d9e66f1d6d0c8d087f7a04bc52"
+    },
+    {
+      "path": "art/scene.webp",
+      "bytes": 6438,
+      "sha256": "8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc"
+    },
+    {
+      "path": "art/scenes/secret.webp",
+      "bytes": 279296,
+      "sha256": "375d61a2b3701de62085ad8d8697c813bfcb5038420d5a864a65f3dc1fb550b9"
+    },
+    {
+      "path": "art/scenes/settlement.webp",
+      "bytes": 253904,
+      "sha256": "f317b1cee05a456eaf5c19d779aa446a9489cc90b78a937f5bbefa6c638328b2"
+    },
+    {
+      "path": "art/scenes/terrace-v2.webp",
+      "bytes": 182204,
+      "sha256": "76bbc4ecff4469cfa5e01f7ba182074e6fc70836d9fc9c0b4545afc7208ef45d"
+    },
+    {
+      "path": "art/scenes/wilderness.webp",
+      "bytes": 254774,
+      "sha256": "3d07a4455e766b67c0eeae6b54b8373a3a64242e6ab952f16f6234bbfc0aae35"
+    },
+    {
+      "path": "art/ui-kit.svg",
+      "bytes": 9046,
+      "sha256": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee"
+    },
+    {
+      "path": "art/v2/scenes/cave.webp",
+      "bytes": 351730,
+      "sha256": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd"
+    },
+    {
+      "path": "art/v2/scenes/market.webp",
+      "bytes": 362374,
+      "sha256": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15"
+    },
+    {
+      "path": "art/v2/scenes/opening.webp",
+      "bytes": 287184,
+      "sha256": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a"
+    },
+    {
+      "path": "art/v2/scenes/secret.webp",
+      "bytes": 359330,
+      "sha256": "bb9e1bda68dbd3ecd861446f7b19982051a9749c20b0cf82ec17f4e9586f997f"
+    },
+    {
+      "path": "art/v2/scenes/sect.webp",
+      "bytes": 357912,
+      "sha256": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6"
+    },
+    {
+      "path": "art/v2/scenes/terrace-opened.webp",
+      "bytes": 310812,
+      "sha256": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431"
+    },
+    {
+      "path": "art/v2/scenes/terrace-storm.webp",
+      "bytes": 302660,
+      "sha256": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1"
+    },
+    {
+      "path": "art/v2/scenes/terrace.webp",
+      "bytes": 311830,
+      "sha256": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9"
+    },
+    {
+      "path": "art/v2/scenes/wilderness.webp",
+      "bytes": 365578,
+      "sha256": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10"
+    },
+    {
+      "path": "assets/index-BD5w6DNu.js",
+      "bytes": 361153,
+      "sha256": "d526f4b1ac9b0872958cf947c334cbd2e0c23e79239f9594cf031fadbdf89f32"
+    },
+    {
+      "path": "assets/index-CKx4jL9j.css",
+      "bytes": 51145,
+      "sha256": "67a326d32f6707f9e830957e6b29954f1c01a0b29f92f86463c5a5fbb264f23c"
+    },
+    {
+      "path": "demo-nodes/battle-sword.json",
+      "bytes": 2568,
+      "sha256": "2b582c7f448bdc7abe3919f7f3bd2a6fa932373ff7587aa9c58283bbb75c3c09"
+    },
+    {
+      "path": "demo-nodes/battle-talisman.json",
+      "bytes": 2670,
+      "sha256": "6c7cddf9da770804dcfff2d8c472c885315549f46106c03f3acb17b8eea825aa"
+    },
+    {
+      "path": "demo-nodes/causal-help.json",
+      "bytes": 4863,
+      "sha256": "5a98a8b6e41f2bd652a5aef58e8b5a05563aef03b69be1e728210fe417bdc713"
+    },
+    {
+      "path": "demo-nodes/causal-trade.json",
+      "bytes": 5625,
+      "sha256": "0a22f42d05065c702132d458b251d25a639220d7391706bc36afa9b4a4d48259"
+    },
+    {
+      "path": "demo-nodes/ending-sword.json",
+      "bytes": 21314,
+      "sha256": "415eb980b7aef969784764c21dee786bbca06c004864fbf47b36e392829cbe9a"
+    },
+    {
+      "path": "demo-nodes/ending-talisman.json",
+      "bytes": 20891,
+      "sha256": "9720159916bcf6acb478d60c70da23352f817affaeacfabb1d81c2ac2cc6d5e2"
+    },
+    {
+      "path": "demo-nodes/manifest.json",
+      "bytes": 3522,
+      "sha256": "fbdc5c9bf6ca1b51bd61fb3b14ca37c806a947e6d82d19359bf74cd0caadbdff"
+    },
+    {
+      "path": "demo-nodes/opening.json",
+      "bytes": 1304,
+      "sha256": "d9fa0b763e0ba46f2f5badf6e5676149bf2fb2e6f0573d8f19503af45b70eb65"
+    },
+    {
+      "path": "demo-nodes/trial-sword.json",
+      "bytes": 18339,
+      "sha256": "ebfd0f995114dbecb1619549539ea0b2857c8e45cfeef027a52d005af8f5026e"
+    },
+    {
+      "path": "demo-nodes/trial-talisman.json",
+      "bytes": 15257,
+      "sha256": "ee3459c49abd67baba886d6e401940425ad0662cac64793cc4f9a2d6da639990"
+    },
+    {
+      "path": "index.html",
+      "bytes": 569,
+      "sha256": "2d485329f47d110edf5b87a418ea9a625bbd203370c5cc9d216384b4273698ee"
+    }
+  ],
+  "runtimeBytes": 4818437,
+  "corePassed": 377,
+  "assetGuardCases": 27,
+  "assets": {
+    "legacyFiles": 24,
+    "newFiles": 19,
+    "allFiles": 43,
+    "legacyProductionRecords": 20,
+    "newProductionRecords": 18,
+    "sceneMasters": 7,
+    "gateVariants": 2,
+    "retainedEditInputs": 1
+  },
+  "uiPassed": 96,
+  "uiPerBrowser": {
+    "chromium": 32,
+    "firefox": 32,
+    "webkit": 32
+  },
+  "uiNoSkipOrRetry": true,
+  "performance": {
+    "samples": 30,
+    "sourceHead": "ad8fd25da1fcbcffabd9c40c563426333fef0c37",
+    "sourceTree": "7cdb08629eca5e312fe8b930c09c20b27bdb6396",
+    "sourceDirty": true,
+    "maxFirstActionReadyMs": 2471.5,
+    "maxPanelFeedbackMs": 160.90000000037253,
+    "maxCriticalTransferBytes": 1049845,
+    "packageBytes": 4818437,
+    "productionFiles": 34,
+    "environment": {
+      "platform": "darwin 25.6.0 x64",
+      "cpu": "Intel(R) Core(TM) i5-1038NG7 CPU @ 2.00GHz",
+      "logicalCpus": 8,
+      "memoryBytes": 17179869184,
+      "node": "v24.19.0",
+      "browser": "141.0.7390.37",
+      "playwright": "1.56.1"
+    }
+  },
+  "actualDesktopScreenshotsReviewed": 10,
+  "userArtAcceptance": false,
+  "priorAttempt": {
+    "core": 376,
+    "ui": 96,
+    "supersededFor": "flat generated SVG gate lighting; selected real painted door/storm variants instead"
+  },
+  "issuesFixedBeforeCompletion": [
+    "Gate source inscription removed with imagegen edit",
+    "Actual edited source was1671px, geometry corrected and source identity test passed",
+    "Public input guard refused untracked images; selected exported files staged, no guard bypass"
+  ],
+  "remainingOwners": {
+    "charactersEnemies": "T03",
+    "desktopLayoutInteractions": "T04-T06",
+    "desktopFullPolish": "T07",
+    "mobileCompatibilityLowestPriority": "T08",
+    "finalCandidate": "T09",
+    "userAcceptanceAndFinal": "T10"
+  }
+}

@@ -165,11 +165,15 @@ T24修复文件读取期间的导入所有权和异常处理，补行为引导/�
 实际反馈由T25承接。自动化日志、脚本可达、截图生成、此空表都不是真人反馈或美术认可。
 ''')
         shutil.copy2(ROOT / 'art/asset-manifest.json', stage / 'asset-manifest.json')
+        redesign = ROOT / 'art/redesign/manifest.json'
+        if redesign.exists():
+            shutil.copy2(redesign, stage / 'redesign-asset-manifest.json')
+            shutil.copy2(ROOT / 'art/redesign/REVIEW.md', stage / 'ART_REVIEW.md')
         (stage / 'ASSET_SOURCES.md').write_text('''# 素材来源与许可边界
 
 附带的asset-manifest.json逐项记录来源、原件/派生hash、规格、用途、状态及使用依据；其中路径指源码仓库位置，完整资料可从source.bundle恢复。网页运行资源位于web/art，生产文件hash另以本包manifest.runtime为准。原图、运行图与参考预览分开，不把预览放大伪称生产原件。
 
-当前4场景/5肖像为本项目授权生成并接入的素材，40符号与4类表现为项目原生代码。两组历史高清原件仍未取得可回读文件，相关historical/reported状态不当作当前存在。production表示项目内有据使用，不新增发行授权、开源许可证或用户最终美术认可。
+历史基线包含4场景/5肖像，40符号与4类表现为项目原生代码。若本包附有redesign-asset-manifest.json，则当前另有7个专属场景与登仙台2个门势阶段变体，来源和实际路径以该表及ART_REVIEW.md为准；完整原稿、提示词与回执从source.bundle恢复。两组历史高清原件仍未取得可回读文件，相关historical/reported状态不当作当前存在。production表示项目内有据使用，不新增发行授权、开源许可证或用户最终美术认可。
 
 不分发本机字体；界面使用用户系统可用字体。无已授权音乐则不加入音乐。截图中字体像素不是字体文件；本候选不附个人存档/密钥/node_modules。发行许可与最终展示决定仍需用户依据现有权利确认，本包与CI不擅自授予新许可。
 ''')

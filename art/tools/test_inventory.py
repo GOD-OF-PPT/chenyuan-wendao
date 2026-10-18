@@ -13,6 +13,10 @@ class InventoryTests(unittest.TestCase):
    for ref in asset['sourceReference']+asset['rights']['evidenceReferences']:
     files.add(ROOT/ref)
    if asset.get('visualReview',{}).get('recordReference'):files.add(ROOT/asset['visualReview']['recordReference'])
+  redesign=ROOT/'art/redesign/manifest.json'
+  if redesign.exists():
+   current=json.loads(redesign.read_text())
+   files.update(ROOT/ref for ref in current['sourceReferences']+current['rights']['evidenceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -25,7 +29,9 @@ class InventoryTests(unittest.TestCase):
  def rejected(self):
   self.write('art/asset-manifest.json',self.manifest)
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
- def test_current_inventory_is_consistent(self):self.assertEqual(validate(self.root)['productionAssets'],20)
+ def test_current_inventory_is_consistent(self):
+  result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
+  self.assertEqual(result['productionAssets'],38 if (self.root/'art/redesign/manifest.json').exists() else 20)
  def test_digest_corruption_is_rejected(self):self.asset('scene-secret')['sha256']='0'*64;self.rejected()
  def test_false_dimensions_are_rejected(self):self.asset('portrait-player')['dimensions']['width']=999;self.rejected()
  def test_parent_hash_cannot_be_relabelled(self):self.asset('scene-wilderness')['originalHash']='0'*64;self.rejected()
@@ -52,5 +58,29 @@ class InventoryTests(unittest.TestCase):
  def test_edit_input_declaration_is_bound_to_the_actual_receipt(self):self.asset('scene-terrace-master')['inputAssets'][0]['sha256']='0'*64;self.rejected()
  def test_native_code_digest_is_bound_to_the_kit(self):self.asset('native-ui-kit')['codeComponents'][0]['sha256']='0'*64;self.rejected()
  def test_four_fx_groups_cannot_be_silently_expanded(self):self.asset('native-fx-kit')['bindings']['groups'].append('额外');self.rejected()
+ def current_redesign(self):return json.loads((self.root/'art/redesign/manifest.json').read_text())
+ def check_redesign(self,m):
+  from redesign_inventory import validate_redesign
+  from check_inventory import image_info
+  self.write('art/redesign/manifest.json',m)
+  with self.assertRaises((AssertionError,KeyError,ValueError)):validate_redesign(self.root,image_info)
+ def test_redesign_cannot_duplicate_or_omit_a_current_scene(self):
+  m=self.current_redesign();m['scenes'][-1]['id']='cave';self.check_redesign(m)
+ def test_redesign_cannot_claim_a_different_source_hash(self):
+  m=self.current_redesign();m['scenes'][0]['source']['sha256']='0'*64;self.check_redesign(m)
+ def test_redesign_rights_cannot_be_inferred_from_image_presence(self):
+  m=self.current_redesign();m['rights']['productionUseApproved']=False;self.check_redesign(m)
+ def test_redesign_cannot_claim_human_acceptance(self):
+  m=self.current_redesign();m['rights']['userAcceptance']=True;self.check_redesign(m)
+ def test_redesign_budget_cannot_be_silently_raised(self):
+  m=self.current_redesign();m['budgets']['maxSceneBytes']=600000;self.check_redesign(m)
+ def test_redesign_phase_variant_cannot_use_an_unrelated_master(self):
+  m=self.current_redesign();m['stageVariants'][0]['sourceParentSHA256']='0'*64;self.check_redesign(m)
+ def test_redesign_receipt_source_binding_survives_control_hash_recalculation(self):
+  m=self.current_redesign();s=m['scenes'][0];r=s['receipt'];data=json.loads((self.root/r['path']).read_text());data['sourceSHA256']='0'*64;self.write(r['path'],data);r['sha256']=hashlib.sha256((self.root/r['path']).read_bytes()).hexdigest();self.check_redesign(m)
+ def test_redesign_binding_must_include_every_runtime_scene(self):
+  m=self.current_redesign();file=m['bindingFile'];text=(self.root/file).read_text().replace('art/v2/scenes/cave.webp','art/v2/scenes/wrong.webp');self.write(file,text);self.check_redesign(m)
+ def test_removing_new_ledger_does_not_allow_unregistered_new_images(self):
+  (self.root/'art/redesign/manifest.json').unlink();self.rejected()
 
 if __name__=='__main__':unittest.main()

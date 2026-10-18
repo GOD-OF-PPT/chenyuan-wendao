@@ -1,0 +1,28 @@
+{
+  "id": "terrace",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-7c8a0b44-8e81-4047-b33a-b4e5896aa72a.png",
+  "savedPath": "art/redesign/scenes/terrace-v1.png",
+  "sourceSHA256": "830d361b7e77ec5b43b29b6574dabf8b293da59a39455a5d6aaf3c2557f2f08a",
+  "sourceDimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "sourceBytes": 3248712,
+  "copiedUnchanged": true,
+  "requestedResolution": "3840x2160 if available",
+  "resolutionNote": "Actual tool output recorded; no upscaling or4K claim",
+  "promptReference": "art/redesign/receipts/scene-prompts.json#terrace",
+  "referenceImages": [
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "role": "style only; distinct location requested",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9"
+    }
+  ],
+  "promptSuffix": "\nInput image1: the selected clean cave painting is a visual-style reference only. Create the different location described above, not another view of the cave. Match its rich rendering, material quality, light and atmospheric depth; do not copy its furniture into unrelated locations.",
+  "review": {
+    "actuallyViewed": false,
+    "status": "pending inspection"
+  }
+}

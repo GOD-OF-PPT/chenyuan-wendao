@@ -1,0 +1,57 @@
+{
+  "scope": "actual production browser screenshots; working tree before implementation commit, not concept images or user acceptance",
+  "browser": "chromium",
+  "images": [
+    {
+      "path": "goal-2/evidence/t02/scene-opening-1440.png",
+      "sha256": "35c66e80cce02d43c4f1e7c1d079b305b7c5afd123814de70da82f69145c53b7",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t02/scene-cave-1440.png",
+      "sha256": "1b5308fd966d6d1b1e4d51ce96690a9d7d218e3587fbbea1b674ca876c1843b3",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t02/scene-sect-1440.png",
+      "sha256": "6c44a9dda7b3b17f3748da3b9a784e37f4a25be7aaecc365c3d8f5902ba50c5a",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t02/scene-market-1440.png",
+      "sha256": "c6d332ee2d0cc21e491c3d914106b74d8fc9d7cc6ad9c65db58ac6c036c5ac45",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t02/scene-wilderness-1440.png",
+      "sha256": "1090fed0393226d4af9b4cfb6e4c447a1e49465ae584daf8f2b3845cebcbb940",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t02/scene-secret-1440.png",
+      "sha256": "85b0454a534206e236b05f46ba3f779dafa74cde4fb3d635c3246e29ce968163",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t02/scene-terrace-closed-1440.png",
+      "sha256": "b05aa71503dbb4684f9bf4373f199882edc0627b6f9b35ea516efbeb94997ca3",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t02/scene-terrace-storm-1440.png",
+      "sha256": "e28f19d413777c45d636832419e7bd7baa20d890404565bb936d3838bcf88ddd",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t02/scene-terrace-opened-1440.png",
+      "sha256": "937ac2e3283aa0edd3d7040ba35dafc95ef49101c5b472fd5079b80b6a149e8c",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t02/scene-cave-context-1440.png",
+      "sha256": "faeb4048dcf58953bdd4cd6f72f2f0894494a031c34c8f9cb3ddec713e9d8fd1",
+      "actuallyViewed": true
+    }
+  ],
+  "reviewBoundary": "Agent inspected actual desktop rendering. Whole art/layout and user acceptance remain pending; terrace letterbox is intentional to retain the complete painted gateway, desktop composition can continue inT04."
+}

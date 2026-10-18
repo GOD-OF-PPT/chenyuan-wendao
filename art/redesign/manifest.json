@@ -1,0 +1,327 @@
+{
+  "format": "chenyuan-redesign-scene-inventory",
+  "version": 1,
+  "task": "Goal2 T02",
+  "activeSceneIds": [
+    "opening",
+    "wilderness",
+    "cave",
+    "sect",
+    "market",
+    "secret",
+    "terrace"
+  ],
+  "scenes": [
+    {
+      "id": "opening",
+      "source": {
+        "path": "art/redesign/scenes/opening-v1.png",
+        "bytes": 2952822,
+        "sha256": "401ec7bb4503b0ce30c9910df3e5ff44ab8860a2ec2d160bdd0a24e4b92215d7",
+        "dimensions": {
+          "width": 1672,
+          "height": 941
+        },
+        "alpha": false,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/scenes/opening.webp",
+        "bytes": 287184,
+        "sha256": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a",
+        "dimensions": {
+          "width": 1536,
+          "height": 865
+        },
+        "alpha": false,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/opening.json",
+        "sha256": "043a3d8b608a565c20bf6503d86c45ef6cba87a29cd9ab1371e33e4803afdddd"
+      },
+      "reviewSourceHash": "401ec7bb4503b0ce30c9910df3e5ff44ab8860a2ec2d160bdd0a24e4b92215d7"
+    },
+    {
+      "id": "wilderness",
+      "source": {
+        "path": "art/redesign/scenes/wilderness-v1.png",
+        "bytes": 3455849,
+        "sha256": "f0d5e60602fe6ed0afe8dd7909b821d5ffef7749320dbb85d6eca087ed4451c0",
+        "dimensions": {
+          "width": 1672,
+          "height": 941
+        },
+        "alpha": false,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/scenes/wilderness.webp",
+        "bytes": 365578,
+        "sha256": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10",
+        "dimensions": {
+          "width": 1536,
+          "height": 865
+        },
+        "alpha": false,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/wilderness.json",
+        "sha256": "7844427ffbcb534df9b9290ee9972c5425c0945ce9611273569df1253502969d"
+      },
+      "reviewSourceHash": "f0d5e60602fe6ed0afe8dd7909b821d5ffef7749320dbb85d6eca087ed4451c0"
+    },
+    {
+      "id": "cave",
+      "source": {
+        "path": "art/redesign/scenes/cave-v1.png",
+        "bytes": 3354083,
+        "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9",
+        "dimensions": {
+          "width": 1672,
+          "height": 941
+        },
+        "alpha": false,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/scenes/cave.webp",
+        "bytes": 351730,
+        "sha256": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd",
+        "dimensions": {
+          "width": 1536,
+          "height": 865
+        },
+        "alpha": false,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/cave.json",
+        "sha256": "d54412a6b6f23a24b817b64516a437a4d6ce3da2a25faf7f362e68819d8c3bc6"
+      },
+      "reviewSourceHash": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9"
+    },
+    {
+      "id": "sect",
+      "source": {
+        "path": "art/redesign/scenes/sect-v1.png",
+        "bytes": 3369558,
+        "sha256": "2748a54477772b2a3dea57c7a6f31b9b6a055bddf78c9a7696ce5b1fa83e3478",
+        "dimensions": {
+          "width": 1672,
+          "height": 941
+        },
+        "alpha": false,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/scenes/sect.webp",
+        "bytes": 357912,
+        "sha256": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6",
+        "dimensions": {
+          "width": 1536,
+          "height": 865
+        },
+        "alpha": false,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/sect.json",
+        "sha256": "77ce59b006324bf8cd1c160e25d09326be27dfe5fccb32e037103a881467546e"
+      },
+      "reviewSourceHash": "2748a54477772b2a3dea57c7a6f31b9b6a055bddf78c9a7696ce5b1fa83e3478"
+    },
+    {
+      "id": "market",
+      "source": {
+        "path": "art/redesign/scenes/market-v1.png",
+        "bytes": 3277861,
+        "sha256": "1403656635d725808d9c0a3c40e4b7c7850bc6cb396341f49fdfa7521ac868de",
+        "dimensions": {
+          "width": 1672,
+          "height": 941
+        },
+        "alpha": false,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/scenes/market.webp",
+        "bytes": 362374,
+        "sha256": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15",
+        "dimensions": {
+          "width": 1536,
+          "height": 865
+        },
+        "alpha": false,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/market.json",
+        "sha256": "ed8873603508b59b8081d1eda2b1fedda453b34248962b1efec5513a0041cdf4"
+      },
+      "reviewSourceHash": "1403656635d725808d9c0a3c40e4b7c7850bc6cb396341f49fdfa7521ac868de"
+    },
+    {
+      "id": "secret",
+      "source": {
+        "path": "art/redesign/scenes/secret-v1.png",
+        "bytes": 3441311,
+        "sha256": "0fcc270cc69aa0a5ccad34b5932ac502dee8bd49917624f378f53f92bafb1b78",
+        "dimensions": {
+          "width": 1672,
+          "height": 941
+        },
+        "alpha": false,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/scenes/secret.webp",
+        "bytes": 359330,
+        "sha256": "bb9e1bda68dbd3ecd861446f7b19982051a9749c20b0cf82ec17f4e9586f997f",
+        "dimensions": {
+          "width": 1536,
+          "height": 865
+        },
+        "alpha": false,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/secret.json",
+        "sha256": "70def230e7692c50ada1e4c952e729f129966deb0d0b088a38bf417d2bbaa6b8"
+      },
+      "reviewSourceHash": "0fcc270cc69aa0a5ccad34b5932ac502dee8bd49917624f378f53f92bafb1b78"
+    },
+    {
+      "id": "terrace",
+      "source": {
+        "path": "art/redesign/scenes/terrace-v2.png",
+        "bytes": 3051158,
+        "sha256": "b6c458d7940b530fc1eb605227ae415ebf6851738f12f7e27237ec11aa8e226a",
+        "dimensions": {
+          "width": 1671,
+          "height": 941
+        },
+        "alpha": false,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/scenes/terrace.webp",
+        "bytes": 311830,
+        "sha256": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9",
+        "dimensions": {
+          "width": 1536,
+          "height": 865
+        },
+        "alpha": false,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/terrace.json",
+        "sha256": "2a4f2e8732511852105570e4aae2fc8f41d31373f19fbea0c7681b66b06b511b"
+      },
+      "reviewSourceHash": "b6c458d7940b530fc1eb605227ae415ebf6851738f12f7e27237ec11aa8e226a"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "art/redesign/scenes/terrace-v1.png",
+      "bytes": 3248712,
+      "sha256": "830d361b7e77ec5b43b29b6574dabf8b293da59a39455a5d6aaf3c2557f2f08a",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "alpha": false,
+      "format": "png",
+      "receipt": "art/redesign/receipts/terrace-v1-input.json",
+      "role": "retained edit input; accidental inscription rejected, never a runtime scene"
+    }
+  ],
+  "stageVariants": [
+    {
+      "gate": "storm",
+      "source": {
+        "path": "art/redesign/scenes/terrace-storm-v1.png",
+        "bytes": 3052592,
+        "sha256": "b036ee9a2d9ac4aa865daf0b74365a8e1f1bd8f5cd77e10a90411c44058d97b3",
+        "dimensions": {
+          "width": 1671,
+          "height": 941
+        },
+        "alpha": false,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/scenes/terrace-storm.webp",
+        "bytes": 302660,
+        "sha256": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1",
+        "dimensions": {
+          "width": 1536,
+          "height": 865
+        },
+        "alpha": false,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/terrace-storm.json",
+        "sha256": "1dacdcab44252c9ea66b14ebbad23b3419ab54564cec23e9a51556c9ca8c1c69"
+      },
+      "sourceParentSHA256": "b6c458d7940b530fc1eb605227ae415ebf6851738f12f7e27237ec11aa8e226a"
+    },
+    {
+      "gate": "opened",
+      "source": {
+        "path": "art/redesign/scenes/terrace-opened-v1.png",
+        "bytes": 2971730,
+        "sha256": "5fbb358c880bc200f565dea809723a46621c6afbe636c659aac2a635b6a9ca8f",
+        "dimensions": {
+          "width": 1671,
+          "height": 941
+        },
+        "alpha": false,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/scenes/terrace-opened.webp",
+        "bytes": 310812,
+        "sha256": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431",
+        "dimensions": {
+          "width": 1536,
+          "height": 865
+        },
+        "alpha": false,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/terrace-opened.json",
+        "sha256": "87ddad7ddd06e2bc7a56a230e5a9e1787bd19b2fd86744b8ae2a18c6817041ff"
+      },
+      "sourceParentSHA256": "b6c458d7940b530fc1eb605227ae415ebf6851738f12f7e27237ec11aa8e226a"
+    }
+  ],
+  "sourceReferences": [
+    "goal-2/input.md",
+    "goal-2/plan.md",
+    "goal-2/amendments/2026-10-18-art-first-mobile-last.md",
+    "goal-2/design/desktop-direction-v1.png",
+    "art/redesign/REVIEW.md"
+  ],
+  "bindingFile": "web/src/assets.ts",
+  "rights": {
+    "productionUseApproved": true,
+    "distributionLicense": null,
+    "userAcceptance": false,
+    "evidenceReferences": [
+      "goal-2/input.md",
+      "goal-2/plan.md",
+      "goal-2/amendments/2026-10-18-art-first-mobile-last.md"
+    ]
+  },
+  "budgets": {
+    "sceneMasters": 7,
+    "stageVariants": 2,
+    "maxSceneBytes": 500000
+  },
+  "proofScope": "Source, export and agent inspection facts; not user art acceptance or a new distribution license."
+}
