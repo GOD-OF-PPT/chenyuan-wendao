@@ -1,4 +1,4 @@
-import {test,expect,type Page} from '@playwright/test';
+import {test,expect,type Page,type Locator} from '@playwright/test';
 import {advance} from '../../src/full/engine.ts';
 import {action,snapshot,start,travel,selectGoal,inspectNeed} from './support';
 test.use({actionTimeout:8000,navigationTimeout:15000});
@@ -59,6 +59,30 @@ test('enabled and disabled cultivation alternatives keep readable costs without 
   });await info.attach(label+'-contrast.json',{body:Buffer.from(JSON.stringify(rows,null,2)),contentType:'application/json'});for(const row of rows)expect(row.ratio,row.text!).toBeGreaterThanOrEqual(4.5);expect(await snapshot(page)).toEqual(before);
  }
  await expect(page.getByTestId('cultivate-assisted')).toBeEnabled();await expect(page.getByTestId('rest')).toBeDisabled();await contrast('initial-qi');
+ await page.getByTestId('cultivate-assisted').hover();await page.getByTestId('cultivate-assisted').evaluate(el=>Promise.all(el.getAnimations().map(a=>a.finished)));await contrast('hovered-qi');const beforePress=await snapshot(page);await page.mouse.down();try{await expect.poll(()=>page.getByTestId('cultivate-assisted').evaluate(el=>el.matches(':active'))).toBe(true);await page.getByTestId('cultivate-assisted').evaluate(el=>Promise.all(el.getAnimations().map(a=>a.finished)));await contrast('pressed-qi');}finally{await page.mouse.move(0,0);await page.mouse.up();}expect(await snapshot(page)).toEqual(beforePress);
  await action(page,'school-sword');await travel(page,'wilderness');await action(page,'encounter-wolf');await action(page,'attack');await action(page,'flee');await page.getByTestId('tab-0').click();await expect(page.getByTestId('rest')).toBeEnabled();await contrast('injured');
  const before=await snapshot(page);await action(page,'rest');expect(await snapshot(page)).toEqual(advance(before,command(before,{type:'REST'})));await page.getByTestId('cultivation-actions').screenshot({path:info.outputPath('readable-cultivation-alternatives.png')});
+});
+
+test('dark navigation, resume and scene links preserve readable text through hover and press',async({page},info)=>{
+ await cave(page);await page.reload();await expect(page.getByTestId('resume-strip')).toBeVisible();const before=await snapshot(page),measurements:any[]=[];
+ async function readable(control:Locator,label:string){
+  for(const state of ['normal','hover','press']){
+   if(state==='hover')await control.hover();if(state==='press')await page.mouse.down();
+   try{
+    if(state!=='normal')await expect.poll(()=>control.evaluate((el,state)=>el.matches(state==='hover'?':hover':':active'),state)).toBe(true);
+    await control.evaluate(el=>Promise.all(el.getAnimations().map(a=>a.finished)));
+    const rows=await control.evaluate(button=>{
+     const rgb=(value:string)=>value.match(/[\d.]+/g)!.map(Number),opaque=(c:number[])=>c.slice(0,3).map(v=>v*(c[3]??1)+255*(1-(c[3]??1))),lum=(c:number[])=>c.slice(0,3).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
+     let surface:Element|null=button,backgrounds:number[][]=[];
+     while(surface){const style=getComputedStyle(surface),gradient=style.backgroundImage.match(/rgba?\([^)]+\)/g);if(gradient){backgrounds=gradient.map(v=>opaque(rgb(v)));break;}const color=rgb(style.backgroundColor);if((color[3]??1)>0){backgrounds=[opaque(color)];break;}surface=surface.parentElement;}
+     if(!backgrounds.length)backgrounds=[[255,255,255]];
+     return [button,...button.querySelectorAll('small')].map(text=>{const a=lum(rgb(getComputedStyle(text).color));return{text:text.textContent,ratios:backgrounds.map(c=>{const b=lum(c);return(Math.max(a,b)+.05)/(Math.min(a,b)+.05);})};});
+    });measurements.push({label,state,rows});for(const row of rows)expect(Math.min(...row.ratios),label+'/'+state+'/'+row.text).toBeGreaterThanOrEqual(4.5);
+   }finally{if(state==='press'){await page.mouse.move(0,0);await page.mouse.up();}}
+  }
+  expect(await snapshot(page)).toEqual(before);
+ }
+ await readable(page.getByTestId('tab-1'),'navigation');await readable(page.getByTestId('resume-strip').getByRole('button'),'resume');await page.getByTestId('tab-1').click();await readable(page.getByTestId('scene-action-jump'),'scene action');await page.getByRole('button',{name:'设置',exact:true}).click();await readable(page.getByRole('button',{name:'关闭设置'}),'paper button');await page.getByRole('button',{name:'关闭设置'}).click();
+ await info.attach('interactive-dark-contrast.json',{body:Buffer.from(JSON.stringify(measurements,null,2)),contentType:'application/json'});expect(await snapshot(page)).toEqual(before);
 });
