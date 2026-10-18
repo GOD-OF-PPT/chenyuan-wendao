@@ -49,3 +49,16 @@ test('desktop enlarged text retains explicit action jumps across the ordinary pa
  await page.setViewportSize({width:1440,height:900});await cave(page);const before=await snapshot(page);
  for(const scale of['1.5','2']){await page.getByRole('button',{name:'设置',exact:true}).click();await page.getByLabel('文字大小').selectOption(scale);await page.getByRole('button',{name:'关闭设置'}).click();for(const index of[1,2,3]){await page.getByTestId('tab-'+index).click();await page.evaluate(()=>window.scrollTo(0,0));await aboveNav(page,'scene-action-jump');await page.getByTestId('scene-action-jump').click();await expect(page.locator('#game-content [data-primary-region]')).toBeFocused();expect(await snapshot(page)).toEqual(before);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);}await page.screenshot({path:info.outputPath(`desktop-flow-${scale}.png`)});}
 });
+
+test('enabled and disabled cultivation alternatives keep readable costs without passive growth',async({page},info)=>{
+ await start(page);
+ async function contrast(label:string){
+  const before=await snapshot(page);const rows=await page.locator('.cultivation-alternatives button').evaluateAll(buttons=>{
+   const rgb=(value:string)=>value.match(/[\d.]+/g)!.map(Number),lum=(c:number[])=>c.slice(0,3).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
+   return buttons.flatMap(button=>{const style=getComputedStyle(button),colors=style.backgroundImage.match(/rgba?\([^)]+\)/g)??[style.backgroundColor];return [...button.querySelectorAll('small')].filter(e=>e.textContent!.trim()).map(text=>{const a=lum(rgb(getComputedStyle(text).color));return {text:text.textContent,disabled:(button as HTMLButtonElement).disabled,ratio:Math.min(...colors.map(color=>{const b=lum(rgb(color));return(Math.max(a,b)+.05)/(Math.min(a,b)+.05);} ))};});});
+  });await info.attach(label+'-contrast.json',{body:Buffer.from(JSON.stringify(rows,null,2)),contentType:'application/json'});for(const row of rows)expect(row.ratio,row.text!).toBeGreaterThanOrEqual(4.5);expect(await snapshot(page)).toEqual(before);
+ }
+ await expect(page.getByTestId('cultivate-assisted')).toBeEnabled();await expect(page.getByTestId('rest')).toBeDisabled();await contrast('initial-qi');
+ await action(page,'school-sword');await travel(page,'wilderness');await action(page,'encounter-wolf');await action(page,'attack');await action(page,'flee');await page.getByTestId('tab-0').click();await expect(page.getByTestId('rest')).toBeEnabled();await contrast('injured');
+ const before=await snapshot(page);await action(page,'rest');expect(await snapshot(page)).toEqual(advance(before,command(before,{type:'REST'})));await page.getByTestId('cultivation-actions').screenshot({path:info.outputPath('readable-cultivation-alternatives.png')});
+});

@@ -1,0 +1,122 @@
+{
+  "passed": 9,
+  "projects": {
+    "chromium": 3,
+    "firefox": 3,
+    "webkit": 3
+  },
+  "minimumRatio": 6.695564325861325,
+  "enabledMinimum": 8.241799119313555,
+  "rows": [
+    {
+      "browser": "chromium",
+      "stage": "initial-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "chromium",
+      "stage": "initial-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "chromium",
+      "stage": "initial-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "chromium",
+      "stage": "injured-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "chromium",
+      "stage": "injured-contrast.json",
+      "text": "1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "firefox",
+      "stage": "initial-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "firefox",
+      "stage": "initial-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "firefox",
+      "stage": "initial-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "firefox",
+      "stage": "injured-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "firefox",
+      "stage": "injured-contrast.json",
+      "text": "1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "webkit",
+      "stage": "initial-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "webkit",
+      "stage": "initial-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "webkit",
+      "stage": "initial-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "webkit",
+      "stage": "injured-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "webkit",
+      "stage": "injured-contrast.json",
+      "text": "1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    }
+  ],
+  "screenshot": {
+    "path": "goal-2/evidence/t04/readable-cultivation-alternatives.png",
+    "sha256": "374c63d6eff79d905ec43a034099c2992fe0bae92c19557f8c9066609037f343"
+  },
+  "scope": "agent contrast and UI checks, not user visual acceptance"
+}
