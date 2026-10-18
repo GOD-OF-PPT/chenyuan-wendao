@@ -1,0 +1,53 @@
+{
+  "id": "sect",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-6688f47b-0e66-4576-9da2-ff9d57d2109b.png",
+  "savedPath": "art/redesign/scenes/sect-v1.png",
+  "sourceSHA256": "2748a54477772b2a3dea57c7a6f31b9b6a055bddf78c9a7696ce5b1fa83e3478",
+  "sourceDimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "sourceBytes": 3369558,
+  "copiedUnchanged": true,
+  "requestedResolution": "3840x2160 if available",
+  "resolutionNote": "Actual tool output recorded; no upscaling or4K claim",
+  "promptReference": "art/redesign/receipts/scene-prompts.json#sect",
+  "referenceImages": [
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "role": "style only; distinct location requested",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9"
+    }
+  ],
+  "promptSuffix": "\nInput image1: the selected clean cave painting is a visual-style reference only. Create the different location described above, not another view of the cave. Match its rich rendering, material quality, light and atmospheric depth; do not copy its furniture into unrelated locations.",
+  "review": {
+    "actuallyViewed": true,
+    "status": "selected for scene integration",
+    "observations": "Distinct requested location, coherent semi-realistic lighting/material style, no UI/person/readable text observed in selected output."
+  },
+  "runtime": {
+    "path": "web/public/art/v2/scenes/sect.webp",
+    "bytes": 357912,
+    "sha256": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6",
+    "dimensions": {
+      "width": 1536,
+      "height": 865
+    },
+    "alpha": false,
+    "format": "webp"
+  },
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "encoding": [
+    "cwebp",
+    "-q",
+    "84",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ]
+}

@@ -3,19 +3,20 @@ import {computed,onMounted,onUnmounted,ref,watch} from 'vue';
 import type { Game } from '../../src/full/types.ts';
 import { scenePresentation } from './scene-presentation';
 import AssetImage from './AssetImage.vue';
-import {SCENE_ASSETS,SCENE_CROPS,TERRACE_ART,terraceViewport} from './assets';
+import {SCENE_ASSETS,SCENE_CROPS,TERRACE_STATE_ASSETS,TERRACE_ART,terraceViewport} from './assets';
 const props = defineProps<{ game: Game; eyebrow: string; title: string; description: string }>();
 const scene = computed(() => scenePresentation(props.game));
+const scenePath=computed(()=>scene.value.key==='terrace'&&scene.value.gate!=='none'?TERRACE_STATE_ASSETS[scene.value.gate]:SCENE_ASSETS[scene.value.artKey]);
 const root=ref<HTMLElement>(),artReady=ref(false),size=ref({width:0,height:0});let observer:ResizeObserver|undefined;
 function resized(){if(root.value){size.value={width:root.value.clientWidth,height:root.value.clientHeight};}}
 onMounted(()=>{resized();observer=new ResizeObserver(resized);if(root.value)observer.observe(root.value);});onUnmounted(()=>observer?.disconnect());
-watch(()=>scene.value.key,()=>{artReady.value=false;},{flush:'sync'});
-function artState(value:{state:string;path:string}){if(value.path===SCENE_ASSETS[scene.value.key])artReady.value=value.state==='ready';}
+watch(scenePath,()=>{artReady.value=false;},{flush:'sync'});
+function artState(value:{state:string;path:string}){if(value.path===scenePath.value)artReady.value=value.state==='ready';}
 const photoBox=computed(()=>{const box=terraceViewport(size.value.width,size.value.height);return`${box.x} ${box.y} ${box.width} ${box.height}`;});
 </script>
 <template>
-  <section ref="root" class="scene" :class="[scene.key, scene.location, {compact:scene.compact}]" data-testid="scene" :data-scene="scene.key" :data-location="scene.location" :data-gate="scene.gate" aria-label="当前行旅">
-    <AssetImage class="scene-image" :path="SCENE_ASSETS[scene.key]" :asset-id="`scene-${scene.key}`" :position="SCENE_CROPS[scene.location]" eager @state="artState">
+  <section ref="root" class="scene" :class="[scene.key, scene.location, {compact:scene.compact}]" data-testid="scene" :data-scene="scene.key" :data-scene-art="scene.artKey" :data-location="scene.location" :data-gate="scene.gate" aria-label="当前行旅">
+    <AssetImage class="scene-image" :path="scenePath" :asset-id="`scene-${scene.artKey}`" :position="SCENE_CROPS[scene.location]" :fit="scene.key==='terrace'?'contain':'cover'" eager @state="artState">
     <svg class="scene-landscape" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
       <circle class="scene-moon" cx="865" cy="96" r="43"/>
       <path class="mountain far" d="M0 330 95 224 150 273 275 87 370 240 438 193 562 310 698 153 760 241 878 72 968 203 1054 156 1200 300V500H0Z"/>
@@ -47,8 +48,7 @@ const photoBox=computed(()=>{const box=terraceViewport(size.value.width,size.val
       <g class="scene-gate" :class="scene.gate">
         <rect class="gate-bounds" :x="TERRACE_ART.bounds.x" :y="TERRACE_ART.bounds.y" :width="TERRACE_ART.bounds.width" :height="TERRACE_ART.bounds.height" fill="transparent" stroke="none"/>
         <path v-if="scene.gate!=='opened'" class="gate-doors photo-door-outline" :d="TERRACE_ART.doorPath"/>
-        <g v-else class="gate-light photo-portal"><ellipse cx="1201" cy="448" rx="80" ry="12" fill="#fce1a2" opacity=".35" filter="url(#gate-portal-bloom)"/><path :d="TERRACE_ART.doorPath" fill="#ffe2a0" opacity=".8" filter="url(#gate-portal-bloom)"/><path :d="TERRACE_ART.doorPath" fill="url(#gate-portal-light)" stroke="#ffe9b6" stroke-width="1.5"/><g clip-path="url(#gate-portal-clip)" fill="none" stroke="#fffef3" stroke-width="2" opacity=".55"><path d="M1147 397q26-15 53 0t56-2M1147 407q32-8 63 1t50-3M1170 433V358m25 77V345m25 87V353"/></g></g>
-        <path v-if="scene.gate==='storm'" class="photo-lightning" d="m1320 235-18 30 15-4-27 39m-216-36-19 25 13-4-19 25"/>
+        <g v-else class="gate-light photo-portal"><ellipse :cx="TERRACE_ART.doorFoot.x" :cy="TERRACE_ART.doorFoot.y" rx="116" ry="18" fill="#fce1a2" opacity=".12" filter="url(#gate-portal-bloom)"/></g>
       </g>
     </svg>
     <div class="scene-vignette" aria-hidden="true"></div>
@@ -61,8 +61,9 @@ const photoBox=computed(()=>{const box=terraceViewport(size.value.width,size.val
 .scene.wilderness{background:#728c89}.scene.secret{background:#859497}.scene.terrace{background:#a1b3b2}.scene.compact{min-height:206px}
 .scene-image{position:absolute;inset:0}.scene-state-layer{z-index:1;pointer-events:none;filter:drop-shadow(0 5px 5px #182b2b77)}.scene-landscape{position:absolute;inset:0;width:100%;height:100%;fill:none}.scene-moon{fill:#f4dfac;opacity:.7}.mountain.far{fill:#667f79;opacity:.5}.mountain.middle{fill:#466762;opacity:.6}.scene-mist{fill:#d8e0ce;opacity:.6}.mountain.near{fill:#2f5350;opacity:.65}
 .settlement-roofs,.scene-ruins,.scene-pine{fill:#3a5550;stroke:#d6c79d;stroke-width:3;opacity:.85}.scene-pine{stroke-width:2}.scene-ruins{fill:#536761}.scene-gate{stroke:#b2a179;stroke-width:4;fill:url(#gate-stone)}.gate-doors{fill:url(#gate-door);stroke-width:3}.gate-light{fill:#f7e3ae;stroke:#f9edc9;opacity:.95}.gate-lightning{fill:none;stroke:#fff5d2;stroke-width:5}
-.scene-vignette{position:absolute;inset:0;background:linear-gradient(90deg,#102d32e6,#1a3c3f66 68%,#28434420),linear-gradient(0deg,#18353999,transparent 70%)}
+.scene-vignette{position:absolute;inset:0;background:linear-gradient(0deg,#102d3266,transparent 55%)}
 .scene-copy{z-index:2;position:relative;min-width:0;flex:0 1 auto;width:max-content;max-width:calc(100% - 112px);margin:30px 80px 30px 32px;padding:10px 14px;background:#1b3939f5;border-left:2px solid #b6a16b}.scene-copy .eyebrow{color:#f2deb2;font-size:calc(0.77777778rem * var(--font-scale,1))}.scene-copy h2{overflow-wrap:anywhere;font-size:calc(2rem * var(--font-scale,1));line-height:1.4;margin:10px 0;letter-spacing:.12em;color:inherit}.scene-copy p{letter-spacing:normal;font-size:calc(0.88888889rem * var(--font-scale,1));color:#fff1d7;line-height:1.7}.scene-seal{z-index:2;position:absolute;right:24px;top:24px;color:#f5dfb1;border:1px solid #e5d4aa;padding:7px;font-size:calc(0.88888889rem * var(--font-scale,1));line-height:1.4}
 @media(max-width:760px){.scene{min-height:232px}.scene.compact{min-height:154px}.scene-copy{margin:20px 56px 20px 22px;max-width:calc(100% - 78px);padding:10px 12px}.scene-copy h2{overflow-wrap:anywhere;font-size:calc(1.5rem * var(--font-scale,1));margin:6px 0}.scene-copy p{letter-spacing:normal;font-size:calc(0.77777778rem * var(--font-scale,1))}.scene-copy .eyebrow{font-size:calc(0.72222222rem * var(--font-scale,1))}.scene-seal{right:16px;top:16px;font-size:calc(0.72222222rem * var(--font-scale,1));padding:5px}}
-.photo-gate-state .scene-gate{fill:none;stroke:none}.photo-door-outline{fill:none!important;stroke:#b5985e!important;stroke-width:1;opacity:.15}.photo-gate-state .gate-light{opacity:1}.photo-lightning{fill:none;stroke:#fff4d4;stroke-width:2;filter:drop-shadow(0 0 3px #fff0c2)}
+.scene.terrace{background:linear-gradient(100deg,#143438,#344f50)}.scene.terrace .scene-copy{max-width:38%;margin-right:auto}
+.photo-gate-state .scene-gate{fill:none;stroke:none}.photo-door-outline{fill:none!important;stroke:#b5985e!important;stroke-width:1;opacity:.15}.photo-gate-state .gate-light{opacity:1}.photo-lightning{fill:none;stroke:#fff4d4;stroke-width:3;filter:drop-shadow(0 0 3px #fff0c2)}
 </style>

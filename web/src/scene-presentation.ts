@@ -10,9 +10,9 @@ const scenes = {
 /** Presentation only: no resource, time or progression calculation. */
 export function scenePresentation(game: Game) {
   const location = game.core.world.location, phase = gamePhase(game);
-  const gate = location !== 'terrace' ? 'none' :
+  const gate: 'none'|'closed'|'storm'|'opened' = location !== 'terrace' ? 'none' :
     phase === 'trial-ending' || phase === 'ascended' ? 'opened' :
     phase === 'trial-battle' ? 'storm' : 'closed';
-  return { key: scenes[location], location, phase, gate,
+  return { key: scenes[location], artKey: phase === 'opening' ? 'opening' as const : location, location, phase, gate,
     compact: phase === 'opening' || phase === 'event' || !!game.battle || phase === 'trial-question' };
 }

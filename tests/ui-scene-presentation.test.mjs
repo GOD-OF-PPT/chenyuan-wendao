@@ -8,9 +8,9 @@ import { trialJourneyScenario } from './trial-journey-route.mjs';
 test('early realms never display an open gate and each legal location uses its own motif',()=>{
  const d=driver();d.realm();
  for(const [location,key] of Object.entries({cave:'settlement',sect:'settlement',market:'settlement',secret:'secret',wilderness:'wilderness'})){
-  d.go(location);const before=JSON.stringify(d.game);assert.deepEqual(scenePresentation(d.game),{key,location,phase:'idle',gate:'none',compact:false});assert.equal(JSON.stringify(d.game),before);
+  d.go(location);const before=JSON.stringify(d.game);assert.deepEqual(scenePresentation(d.game),{key,artKey:location,location,phase:'idle',gate:'none',compact:false});assert.equal(JSON.stringify(d.game),before);
  }
- assert.equal(scenePresentation(newGame('初遇','scene-opening')).compact,true);
+ assert.equal(scenePresentation(newGame('初遇','scene-opening')).compact,true);assert.equal(scenePresentation(newGame('初遇','scene-opening-art')).artKey,'opening');
 });
 test('the real question and three gates stay closed or stormy until the trial ending',()=>{
  const r=trialJourneyScenario(),raw=JSON.stringify(r.states);

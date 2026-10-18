@@ -1,0 +1,52 @@
+{
+  "id": "cave",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-ec03bbfa-dbe4-4874-afa3-562e9cadec82.png",
+  "savedPath": "art/redesign/scenes/cave-v1.png",
+  "sourceSHA256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9",
+  "sourceDimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "sourceBytes": 3354083,
+  "copiedUnchanged": true,
+  "requestedResolution": "3840x2160 if available",
+  "resolutionNote": "Actual tool output recorded; no upscaling or4K claim",
+  "promptReference": "art/redesign/receipts/scene-prompts.json#cave",
+  "referenceImages": [
+    {
+      "path": "goal-2/design/desktop-direction-v1.png",
+      "role": "style only; omitted all UI/text/person",
+      "sha256": "ab34c2faff1a786c210e96310cf2cfc52cae71aa4880f37e37aa7821f4040b12"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "status": "selected for scene integration",
+    "observations": "Empty meditation/alchemy retreat, warm lanterns/cool mountains, no UI/text/person observed; dedicated environment rather than town crop."
+  },
+  "runtime": {
+    "path": "web/public/art/v2/scenes/cave.webp",
+    "bytes": 351730,
+    "sha256": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd",
+    "dimensions": {
+      "width": 1536,
+      "height": 865
+    },
+    "alpha": false,
+    "format": "webp"
+  },
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "encoding": [
+    "cwebp",
+    "-q",
+    "84",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ]
+}

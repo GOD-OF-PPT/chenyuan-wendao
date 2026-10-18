@@ -1,0 +1,53 @@
+{
+  "id": "market",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-410fd5ca-df33-4b22-bd19-85d45055e1c8.png",
+  "savedPath": "art/redesign/scenes/market-v1.png",
+  "sourceSHA256": "1403656635d725808d9c0a3c40e4b7c7850bc6cb396341f49fdfa7521ac868de",
+  "sourceDimensions": {
+    "width": 1672,
+    "height": 941
+  },
+  "sourceBytes": 3277861,
+  "copiedUnchanged": true,
+  "requestedResolution": "3840x2160 if available",
+  "resolutionNote": "Actual tool output recorded; no upscaling or4K claim",
+  "promptReference": "art/redesign/receipts/scene-prompts.json#market",
+  "referenceImages": [
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "role": "style only; distinct location requested",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9"
+    }
+  ],
+  "promptSuffix": "\nInput image1: the selected clean cave painting is a visual-style reference only. Create the different location described above, not another view of the cave. Match its rich rendering, material quality, light and atmospheric depth; do not copy its furniture into unrelated locations.",
+  "review": {
+    "actuallyViewed": true,
+    "status": "selected for scene integration",
+    "observations": "Distinct requested location, coherent semi-realistic lighting/material style, no UI/person/readable text observed in selected output."
+  },
+  "runtime": {
+    "path": "web/public/art/v2/scenes/market.webp",
+    "bytes": 362374,
+    "sha256": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15",
+    "dimensions": {
+      "width": 1536,
+      "height": 865
+    },
+    "alpha": false,
+    "format": "webp"
+  },
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "encoding": [
+    "cwebp",
+    "-q",
+    "84",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "terrace",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-e425e439-c9b9-45c7-bbfe-3b801b6c7059.png",
+  "savedPath": "art/redesign/scenes/terrace-v2.png",
+  "sourceSHA256": "b6c458d7940b530fc1eb605227ae415ebf6851738f12f7e27237ec11aa8e226a",
+  "sourceDimensions": {
+    "width": 1671,
+    "height": 941
+  },
+  "sourceBytes": 3051158,
+  "copiedUnchanged": true,
+  "requestedResolution": "3840x2160 if available",
+  "resolutionNote": "Actual tool output recorded; no upscaling or4K claim",
+  "promptReference": "art/redesign/receipts/scene-prompts.json#terrace-no-text-edit",
+  "referenceImages": [
+    {
+      "path": "art/redesign/scenes/terrace-v1.png",
+      "role": "edit target; remove inscription only",
+      "sha256": "830d361b7e77ec5b43b29b6574dabf8b293da59a39455a5d6aaf3c2557f2f08a"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "status": "selected for integration",
+    "observations": "Plaque inscription removed; blank central panel with non-letter cloud ornament, closed Chinese gate and composition retained."
+  },
+  "runtime": {
+    "path": "web/public/art/v2/scenes/terrace.webp",
+    "bytes": 311830,
+    "sha256": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9",
+    "dimensions": {
+      "width": 1536,
+      "height": 865
+    },
+    "alpha": false,
+    "format": "webp"
+  },
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "encoding": [
+    "cwebp",
+    "-q",
+    "84",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ]
+}

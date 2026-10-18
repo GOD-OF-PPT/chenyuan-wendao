@@ -1066,8 +1066,8 @@
         },
         {
           "path": "web/src/ScenePanel.vue",
-          "bytes": 9112,
-          "sha256": "c3bc1960f1ffb2b0943e701ce5d8c1bfbe4ee06ccd3c8e869cf9893111a0c1a2"
+          "bytes": 8929,
+          "sha256": "b3f5d0e4cd1a55586c8e0a3b13e366e81bbbe1396307fb1acdf6c3a5b1d28e66"
         },
         {
           "path": "web/src/AssetImage.vue",
@@ -1076,8 +1076,8 @@
         },
         {
           "path": "web/src/assets.ts",
-          "bytes": 1724,
-          "sha256": "0c836c2c877f53b40b4a6ca231c656b6da1facbbdec78daa1f052d937513868c"
+          "bytes": 2106,
+          "sha256": "072632d02b82c317df8bc037b9fe21732d56ae32688f033a7f41f59c57d4db7f"
         }
       ]
     },
@@ -1495,5 +1495,9 @@
     "baseCommit": "6826f00bd0a8c87364b0f8909395388a2946a1aa",
     "sources": "built-in image_gen, nine selected outputs plus one retained terrace edit input; native SVG/Vue/CSS authored in this repo",
     "reviewBoundary": "Technical evidence separate from T25 user acceptance; no automatic visual-review promotion."
+  },
+  "currentSharedCodeUpdate": {
+    "task": "Goal2 T02",
+    "note": "Legacy source images/receipts and finite budget retained; shared scene/runtime binding code hashes refreshed for seven-scene integration. Prior values remain in Git history."
   }
 }
