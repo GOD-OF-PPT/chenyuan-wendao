@@ -1,0 +1,32 @@
+{
+  "id": "mobile-direction-v1",
+  "tool": "built-in image_gen",
+  "role": "responsive UI concept reference; not runtime implementation or user acceptance",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-4818a18f-5144-44b3-abd7-d5f0a6fcfaf5.png",
+  "savedPath": "goal-2/design/mobile-direction-v1.png",
+  "copiedUnchanged": true,
+  "sha256": "d5633615a96dfe01869eafabf7f119523152bcbe3b29c2259e2313567ba19195",
+  "bytes": 3010459,
+  "dimensions": {
+    "width": 853,
+    "height": 1844
+  },
+  "promptReference": "goal-2/design/prompts.json#mobile-direction-v1",
+  "referenceImages": [
+    {
+      "path": "goal-2/design/desktop-direction-v1.png",
+      "role": "consistent desktop scene and visual style",
+      "sha256": "ab34c2faff1a786c210e96310cf2cfc52cae71aa4880f37e37aa7821f4040b12"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "acceptedFor": "direction exploration only",
+    "implementationCorrections": [
+      "Implement all controls and labels as responsive DOM, not a flattened image",
+      "Set actual 390px body and control type to readable CSS sizes; generated tiny resource labels are not a typography test",
+      "Use an empty fill at0/10 from actual committed Game; preserve 44px touch targets and keyboard behavior",
+      "Keep the primary action above the dock at100% and an accessible direct jump at150/200%; verify in browser"
+    ]
+  }
+}

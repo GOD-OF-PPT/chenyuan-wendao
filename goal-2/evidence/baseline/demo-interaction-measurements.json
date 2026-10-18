@@ -1,0 +1,128 @@
+[
+  {
+    "actions": [
+      {
+        "bottom": 1115.09375,
+        "label": "赠丹相助\n回春丹 ×1",
+        "top": 1020.296875
+      },
+      {
+        "bottom": 1115.09375,
+        "label": "以丹换简\n回春丹 ×1",
+        "top": 1020.296875
+      },
+      {
+        "bottom": 1115.09375,
+        "label": "保留丹药\n不消耗物资",
+        "top": 1020.296875
+      }
+    ],
+    "pageHeight": 1608,
+    "sceneImages": [
+      "http://127.0.0.1:55488/art/scenes/wilderness.webp"
+    ],
+    "scrollY": 0,
+    "url": "http://127.0.0.1:55488/?demo=opening",
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  {
+    "actions": [
+      {
+        "bottom": 1264.484375,
+        "label": "赠丹相助\n回春丹 ×1",
+        "top": 1177.6875
+      },
+      {
+        "bottom": 1360.28125,
+        "label": "以丹换简\n回春丹 ×1",
+        "top": 1273.484375
+      },
+      {
+        "bottom": 1456.078125,
+        "label": "保留丹药\n不消耗物资",
+        "top": 1369.28125
+      }
+    ],
+    "pageHeight": 3046,
+    "sceneImages": [
+      "http://127.0.0.1:55488/art/scenes/wilderness.webp"
+    ],
+    "scrollY": 0,
+    "url": "http://127.0.0.1:55488/?demo=opening",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "actions": [
+      {
+        "bottom": 1049.796875,
+        "label": "普通攻击\n不消耗物资",
+        "top": 971
+      },
+      {
+        "bottom": 1049.796875,
+        "label": "凝神护体\n不消耗物资",
+        "top": 971
+      },
+      {
+        "bottom": 1162.390625,
+        "label": "青锋起势\n灵力 8",
+        "top": 1059.796875
+      },
+      {
+        "bottom": 1162.390625,
+        "label": "惊鸿斩\n灵力 12\n请先积累剑意",
+        "top": 1059.796875
+      }
+    ],
+    "pageHeight": 3158,
+    "sceneImages": [
+      "http://127.0.0.1:55488/art/scenes/wilderness.webp"
+    ],
+    "scrollY": 0,
+    "url": "http://127.0.0.1:55488/?demo=battle-sword",
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  {
+    "actions": [
+      {
+        "bottom": 1121.390625,
+        "label": "普通攻击\n不消耗物资",
+        "top": 1039.59375
+      },
+      {
+        "bottom": 1121.390625,
+        "label": "凝神护体\n不消耗物资",
+        "top": 1039.59375
+      },
+      {
+        "bottom": 1236.984375,
+        "label": "青锋起势\n灵力 8",
+        "top": 1131.390625
+      },
+      {
+        "bottom": 1236.984375,
+        "label": "惊鸿斩\n灵力 12\n请先积累剑意",
+        "top": 1131.390625
+      }
+    ],
+    "pageHeight": 5418,
+    "sceneImages": [
+      "http://127.0.0.1:55488/art/scenes/wilderness.webp"
+    ],
+    "scrollY": 0,
+    "url": "http://127.0.0.1:55488/?demo=battle-sword",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  }
+]

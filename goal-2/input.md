@@ -1,0 +1,1 @@
+验收发现最大的问题在美术层面：1.交互不清晰；2.游戏画面效果不佳；这两个问题导致游戏的可玩性和吸引力大大降低，请设定目标使用 [$imagegen](/Users/gordon/.codex/skills/.system/imagegen/SKILL.md) 优化整体的交互和美术资源

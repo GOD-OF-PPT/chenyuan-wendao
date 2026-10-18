@@ -1,0 +1,204 @@
+- navigation "快捷定位":
+  - link "跳到当前内容":
+    - /url: "#game-content"
+  - link "跳到主导航":
+    - /url: "#primary-navigation"
+  - link "跳到当前目标":
+    - /url: "#goal-panel"
+- banner:
+  - text: 尘
+  - text: 缘
+  - heading "尘缘问道" [level=1]
+  - paragraph: 一念尘缘起 · 千山共问道
+  - text: ◇ 云岚州 · 听雨洞府
+  - generic: 修行第 0 月
+  - status:
+    - text: 已保存
+  - button "导出存档":
+    - text: 导出存档
+  - button "设置"
+- main:
+  - region "当前行旅":
+    - text: 一盏清茶 · 半卷道经
+    - heading "听雨洞府" [level=2]
+    - paragraph: 山海不言，修行自有回响。
+    - generic: 问 道
+  - region "当前内容":
+    - complementary "行道提示":
+      - heading "修为与游戏年月" [level=3]
+      - paragraph: 先到洞府自然吐纳。修为满后核对引气条件，再确认入道。
+      - button "跳过此类提示": 跳过提示
+      - button "玩法帮助与重看": 玩法帮助
+    - text: 修行
+    - generic: 积跬步，以至千里
+    - heading "静守灵台，凝气归元。" [level=2]
+    - paragraph: 石壁隔断尘嚣，檐雨敲响岁月。你在蒲团前摊开行囊：静修、炼丹，或为下一次远行作准备。
+    - text: 连续行动
+    - combobox "行动次数":
+      - option "1 次" [selected]
+      - option "5 次"
+      - option "20 次"
+      - option "50 次"
+      - option "达到目标"
+    - generic: 每批最多 50 次；成本与停止原因按真实行动结算。
+    - button "自然吐纳 1 游戏月":
+      - strong: 自然吐纳
+      - generic: 1 游戏月
+    - button "灵石辅助 灵石 20 · 1 游戏月 需要炼气境界" [disabled]:
+      - strong: 灵石辅助
+      - generic: 灵石 20 · 1 游戏月
+      - generic: 需要炼气境界
+    - button "洞府疗养 1 游戏月 气血灵力已经圆满" [disabled]:
+      - strong: 洞府疗养
+      - generic: 1 游戏月
+      - generic: 气血灵力已经圆满
+    - strong: 自然吐纳预览
+    - generic: 计划最多 1 次 · 预算上限：1 游戏月
+    - generic: 当前可执行 1 次 · 预计扣费：1 游戏月
+    - generic: 预计净变化：修为 +5 · 游戏月 +1
+    - strong: 灵石辅助预览
+    - generic: 计划最多 1 次 · 预算上限：灵石 20 · 1 游戏月
+    - generic: 需要炼气境界；不会提交或扣费。
+    - strong: 引气入体
+    - generic: 修为尚未圆满
+    - button "引气入体" [disabled]
+  - region "功法与法宝":
+    - text: 功法与法宝
+    - generic: 研习与装备分别确认
+    - generic: 心法 · 1槽
+    - strong: 尚未择法
+    - generic: 起手术法 · 1槽
+    - strong: 尚未择法
+    - generic: 终结术法 · 1槽
+    - strong: 尚未择法
+    - generic: 本命法宝 · 1槽
+    - strong: 尚未装备
+    - paragraph: 静修加成 0% · 护体基础减伤 24
+    - heading "选择修法 战斗外切换；会采用该派基础组合，研习记录保留，可再逐槽装备。" [level=3]:
+      - text: 选择修法
+      - generic: 战斗外切换；会采用该派基础组合，研习记录保留，可再逐槽装备。
+    - button "剑修 · 青锋剑诀 需要炼气境界" [disabled]:
+      - strong: 剑修 · 青锋剑诀
+      - generic: 需要炼气境界
+    - button "符修 · 镇灵符诀 需要炼气境界" [disabled]:
+      - strong: 符修 · 镇灵符诀
+      - generic: 需要炼气境界
+    - article:
+      - heading "惊鸿剑简 剑法启迪" [level=3]:
+        - text: 惊鸿剑简
+        - generic: 剑法启迪
+      - paragraph: 与破庙交易所得为同一份剑简。其他开场可在筑基后到青云宗研读，剑修终结术法伤害 +4；不改变当前配装。
+      - generic: 研读成本：灵石 80 · 价格未平衡
+      - generic: 当前剑简伤害加成 0
+      - generic: 请先前往青云宗
+      - button "付费研读" [disabled]
+      - button "前往青云宗 →" [disabled]
+    - text: 查看修法
+    - combobox "功法流派":
+      - option "当前修法" [selected]
+      - option "剑修"
+      - option "符修"
+      - option "全部"
+    - checkbox "显示后续功法法宝"
+    - text: 显示后续境界
+    - paragraph: 引气入体后可选择修法；在青云宗研习功法，战斗外逐槽装备。
+    - heading "本命法宝" [level=3]
+    - paragraph: 金丹后可在洞府炼制；可展开后续境界，提前查看材料和来源。
+  - generic: 手记
+  - paragraph: 你抵达听雨洞府。
+  - complementary:
+    - text: 当前目标
+    - button "目标追踪帮助":
+      - generic: 帮助
+    - heading "引气入体" [level=3]
+    - text: 替换追踪目标
+    - combobox "追踪目标":
+      - option "下一突破" [selected]
+      - option "凝气草 · 炼气"
+      - option "灵露 · 炼气"
+      - option "妖核 · 炼气"
+      - option "地脉灵玉 · 筑基"
+      - option "月华莲 · 金丹"
+      - option "凝魂晶 · 元婴"
+      - option "道蕴砂 · 化神"
+      - option "回春丹 · 凡人"
+      - option "回灵丹 · 炼气"
+      - option "筑基丹 · 炼气"
+      - option "凝金丹 · 筑基"
+      - option "结婴丹 · 金丹"
+      - option "化神丹 · 元婴"
+      - option "渡劫引 · 化神"
+      - option "青锋心诀 · 炼气"
+      - option "止水剑心 · 筑基"
+      - option "青锋起势 · 炼气"
+      - option "听雨剑势 · 筑基"
+      - option "惊鸿斩 · 炼气"
+      - option "回风归一 · 金丹"
+      - option "镇灵心诀 · 炼气"
+      - option "太清符心 · 筑基"
+      - option "镇灵符 · 炼气"
+      - option "寒霜符 · 筑基"
+      - option "燃符诀 · 炼气"
+      - option "归元符 · 金丹"
+      - option "青霜剑 · 金丹"
+      - option "玄玉印 · 金丹"
+      - option "照魂灯 · 金丹"
+      - option "流云镜 · 金丹"
+    - paragraph: 追踪不消耗游戏月，也不预留材料。
+    - paragraph: 修为尚未圆满
+    - generic: ○
+    - text: 修为
+    - generic: 0 / 10 · 尚缺 10
+    - button "前往洞府 →"
+    - button "前往听雨洞府 →"
+    - generic: 仙缘因果
+    - heading "沈清禾 · 未识" [level=3]
+    - paragraph: 你保留丹药，各自离开，尚未正式结识。
+    - heading "裴照 · 未识" [level=3]
+    - paragraph: 尚未会面，没有已发生的相助或约定。
+    - button "展开仙缘 →"
+    - text: 此地机缘
+    - paragraph: 石壁隔断尘嚣，檐雨敲响岁月。你在蒲团前摊开行囊：静修、炼丹，或为下一次远行作准备。
+    - text: 试玩版本 · 数值未平衡
+    - text: 约30分钟理解玩法，不限定通关时间
+  - complementary "道者个人志":
+    - generic: 道者 · 个人志
+    - heading "视觉复核" [level=2]
+    - generic: 凡人
+    - text: 气血
+    - generic: 60 / 60
+    - progressbar "气血"
+    - text: 灵力
+    - generic: 20 / 20
+    - progressbar "灵力"
+    - generic "收起详情"
+    - paragraph: 清风为伴，明月同途。
+    - text: 修为
+    - generic: 0 / 10
+    - progressbar "修为"
+    - generic: 年龄 / 寿限
+    - generic: 18岁 / 90岁
+    - generic: 灵石
+    - generic: "40"
+    - heading "当前修法 · 尚未择法" [level=3]
+    - term: 心法
+    - definition: 引气入体后选择
+    - term: 起手
+    - definition: 尚未装备
+    - term: 终结
+    - definition: 尚未装备
+    - term: 本命法宝
+    - definition: 金丹后可炼制装备
+- navigation "主要页面":
+  - button "修行 凝神养道":
+    - text: 修行
+    - generic: 凝神养道
+  - button "历练 行过山海":
+    - text: 历练
+    - generic: 行过山海
+  - button "行囊 一物一缘":
+    - text: 行囊
+    - generic: 一物一缘
+  - button "仙缘 来路犹存":
+    - text: 仙缘
+    - generic: 来路犹存
