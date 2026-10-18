@@ -1,0 +1,138 @@
+[
+  {
+    "buttons": [
+      {
+        "bottom": 922.09375,
+        "label": "赠丹相助\n回春丹 ×1",
+        "top": 827.296875
+      },
+      {
+        "bottom": 922.09375,
+        "label": "以丹换简\n回春丹 ×1",
+        "top": 827.296875
+      },
+      {
+        "bottom": 922.09375,
+        "label": "保留丹药\n不消耗物资",
+        "top": 827.296875
+      }
+    ],
+    "pageHeight": 1397,
+    "scene": {
+      "bottom": 298,
+      "height": 206,
+      "left": 302,
+      "right": 1106,
+      "top": 92,
+      "width": 804,
+      "x": 302,
+      "y": 92
+    },
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  {
+    "buttons": [
+      {
+        "bottom": 922.09375,
+        "label": "赠丹相助\n回春丹 ×1",
+        "top": 827.296875
+      },
+      {
+        "bottom": 922.09375,
+        "label": "以丹换简\n回春丹 ×1",
+        "top": 827.296875
+      },
+      {
+        "bottom": 922.09375,
+        "label": "保留丹药\n不消耗物资",
+        "top": 827.296875
+      }
+    ],
+    "pageHeight": 1397,
+    "scene": {
+      "bottom": 298,
+      "height": 206,
+      "left": 302,
+      "right": 946,
+      "top": 92,
+      "width": 644,
+      "x": 302,
+      "y": 92
+    },
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    }
+  },
+  {
+    "buttons": [
+      {
+        "bottom": 926.09375,
+        "label": "赠丹相助\n回春丹 ×1",
+        "top": 831.296875
+      },
+      {
+        "bottom": 926.09375,
+        "label": "以丹换简\n回春丹 ×1",
+        "top": 831.296875
+      },
+      {
+        "bottom": 926.09375,
+        "label": "保留丹药\n不消耗物资",
+        "top": 831.296875
+      }
+    ],
+    "pageHeight": 1370,
+    "scene": {
+      "bottom": 298,
+      "height": 206,
+      "left": 376,
+      "right": 1508,
+      "top": 92,
+      "width": 1132,
+      "x": 376,
+      "y": 92
+    },
+    "viewport": {
+      "height": 1080,
+      "width": 1920
+    }
+  },
+  {
+    "buttons": [
+      {
+        "bottom": 962.484375,
+        "label": "赠丹相助\n回春丹 ×1",
+        "top": 875.6875
+      },
+      {
+        "bottom": 1058.28125,
+        "label": "以丹换简\n回春丹 ×1",
+        "top": 971.484375
+      },
+      {
+        "bottom": 1154.078125,
+        "label": "保留丹药\n不消耗物资",
+        "top": 1067.28125
+      }
+    ],
+    "pageHeight": 2732,
+    "scene": {
+      "bottom": 246.59375,
+      "height": 160.59375,
+      "left": 12,
+      "right": 378,
+      "top": 86,
+      "width": 366,
+      "x": 12,
+      "y": 86
+    },
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  }
+]

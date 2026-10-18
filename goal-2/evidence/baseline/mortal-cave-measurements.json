@@ -1,0 +1,102 @@
+[
+  {
+    "documentHeight": 4483,
+    "primary": [
+      {
+        "bottom": 952.2890625,
+        "label": "自然吐纳\n1 游戏月",
+        "top": 865.4921875
+      }
+    ],
+    "scrollY": 0,
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "xp": {
+      "bottom": 4662.015625,
+      "height": 20,
+      "left": 323.296875,
+      "right": 357,
+      "top": 4642.015625,
+      "width": 33.703125,
+      "x": 323.296875,
+      "y": 4642.015625
+    }
+  },
+  {
+    "documentHeight": 2612,
+    "primary": [
+      {
+        "bottom": 1039.484375,
+        "label": "自然吐纳\n1 游戏月",
+        "top": 920.890625
+      }
+    ],
+    "scrollY": 0,
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    },
+    "xp": {
+      "bottom": 746.5,
+      "height": 20,
+      "left": 225.296875,
+      "right": 259,
+      "top": 726.5,
+      "width": 33.703125,
+      "x": 225.296875,
+      "y": 726.5
+    }
+  },
+  {
+    "documentHeight": 2612,
+    "primary": [
+      {
+        "bottom": 1039.484375,
+        "label": "自然吐纳\n1 游戏月",
+        "top": 920.890625
+      }
+    ],
+    "scrollY": 0,
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "xp": {
+      "bottom": 746.5,
+      "height": 20,
+      "left": 225.296875,
+      "right": 259,
+      "top": 726.5,
+      "width": 33.703125,
+      "x": 225.296875,
+      "y": 726.5
+    }
+  },
+  {
+    "documentHeight": 2385,
+    "primary": [
+      {
+        "bottom": 1011.0859375,
+        "label": "自然吐纳\n1 游戏月",
+        "top": 892.4921875
+      }
+    ],
+    "scrollY": 0,
+    "viewport": {
+      "height": 1080,
+      "width": 1920
+    },
+    "xp": {
+      "bottom": 746.5,
+      "height": 20,
+      "left": 295.296875,
+      "right": 329,
+      "top": 726.5,
+      "width": 33.703125,
+      "x": 295.296875,
+      "y": 726.5
+    }
+  }
+]

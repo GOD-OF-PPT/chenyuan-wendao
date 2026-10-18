@@ -1,0 +1,26 @@
+{
+  "baselineSource": "834cf7d217f9c55d62c1c29cf16419eee2f78528",
+  "screenshots": 14,
+  "allViewportDimensionsMatch": true,
+  "all14ActuallyViewed": true,
+  "fullDecodePassed": true,
+  "concepts": 2,
+  "referencesAndPromptBindingsPassed": true,
+  "runtimeSourceChanges": [],
+  "scope": "T01 observations and concepts only; no implemented redesign or user acceptance",
+  "captureCorrections": [
+    "Initial unstable opening captures excluded",
+    "1920 intended screenshot was1910px; recaptured natively with explicit1920x1080 clip, no image rescaling"
+  ],
+  "environment": "Bundled Python/Pillow full pixel decode; default system Python lacked Pillow, no installation or image edit performed",
+  "legacyDocsCheckPassed": true,
+  "legacyAssetGuardCases": 18,
+  "temporaryBrowserClosed": true,
+  "viewportReset": true,
+  "temporaryPreviewStoppedExit": 143,
+  "userPreviewUntouched": 58986,
+  "markdownLinksChecked": 83,
+  "jsonParsed": true,
+  "rawUserInputExact": true,
+  "gameAndLegacyArtAndV03Unchanged": true
+}

@@ -1,0 +1,258 @@
+[
+  {
+    "actions": [
+      {
+        "bottom": 2363.78125,
+        "label": "核对入场并保存准备 →",
+        "top": 2316.78125
+      },
+      {
+        "bottom": 4984.7578125,
+        "label": "炼制法宝",
+        "top": 4940.7578125
+      },
+      {
+        "bottom": 5426.3515625,
+        "label": "炼制法宝",
+        "top": 5382.3515625
+      },
+      {
+        "bottom": 5647.1484375,
+        "label": "炼制法宝",
+        "top": 5603.1484375
+      }
+    ],
+    "inventoryCount": 0,
+    "pageHeight": 6080,
+    "recipeCount": 0,
+    "sceneImages": [
+      "http://127.0.0.1:55488/art/scenes/terrace-v2.webp"
+    ],
+    "scrollY": 0,
+    "url": "http://127.0.0.1:55488/?demo=trial-sword",
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  {
+    "actions": [
+      {
+        "bottom": 2934.6640625,
+        "label": "核对入场并保存准备 →",
+        "top": 2887.6640625
+      },
+      {
+        "bottom": 6818.0625,
+        "label": "炼制法宝",
+        "top": 6774.0625
+      },
+      {
+        "bottom": 7565.671875,
+        "label": "炼制法宝",
+        "top": 7521.671875
+      },
+      {
+        "bottom": 7939.4765625,
+        "label": "炼制法宝",
+        "top": 7895.4765625
+      }
+    ],
+    "inventoryCount": 0,
+    "pageHeight": 9529,
+    "recipeCount": 0,
+    "sceneImages": [
+      "http://127.0.0.1:55488/art/scenes/terrace-v2.webp"
+    ],
+    "scrollY": 0,
+    "url": "http://127.0.0.1:55488/?demo=trial-sword",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "actions": [
+      {
+        "bottom": 2911.046875,
+        "label": "炼制",
+        "top": 2867.046875
+      },
+      {
+        "bottom": 3032.640625,
+        "label": "炼制",
+        "top": 2988.640625
+      },
+      {
+        "bottom": 3154.234375,
+        "label": "炼制",
+        "top": 3110.234375
+      },
+      {
+        "bottom": 3275.828125,
+        "label": "炼制",
+        "top": 3231.828125
+      },
+      {
+        "bottom": 3397.421875,
+        "label": "炼制",
+        "top": 3353.421875
+      },
+      {
+        "bottom": 3519.015625,
+        "label": "炼制",
+        "top": 3475.015625
+      },
+      {
+        "bottom": 3640.609375,
+        "label": "炼制",
+        "top": 3596.609375
+      }
+    ],
+    "inventoryCount": 14,
+    "pageHeight": 3960,
+    "recipeCount": 7,
+    "sceneImages": [
+      "http://127.0.0.1:55488/art/scenes/terrace-v2.webp"
+    ],
+    "scrollY": 0,
+    "url": "http://127.0.0.1:55488/?demo=trial-sword",
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  {
+    "actions": [
+      {
+        "bottom": 3079.140625,
+        "label": "炼制",
+        "top": 3035.140625
+      },
+      {
+        "bottom": 3301.328125,
+        "label": "炼制",
+        "top": 3257.328125
+      },
+      {
+        "bottom": 3500.71875,
+        "label": "炼制",
+        "top": 3456.71875
+      },
+      {
+        "bottom": 3700.109375,
+        "label": "炼制",
+        "top": 3656.109375
+      },
+      {
+        "bottom": 3899.5,
+        "label": "炼制",
+        "top": 3855.5
+      },
+      {
+        "bottom": 4098.890625,
+        "label": "炼制",
+        "top": 4054.890625
+      },
+      {
+        "bottom": 4298.28125,
+        "label": "炼制",
+        "top": 4254.28125
+      }
+    ],
+    "inventoryCount": 14,
+    "pageHeight": 5798,
+    "recipeCount": 7,
+    "sceneImages": [
+      "http://127.0.0.1:55488/art/scenes/terrace-v2.webp"
+    ],
+    "scrollY": 0,
+    "url": "http://127.0.0.1:55488/?demo=trial-sword",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "actions": [
+      {
+        "bottom": 1641.3828125,
+        "label": "留道传承\n将此生所学留在人间，而后踏入天门。传承记录来自你实际走过的路，不要求先结下人物盟约。",
+        "top": 1522.7890625
+      },
+      {
+        "bottom": 1641.3828125,
+        "label": "独赴上界\n独自踏入天门，将来路收于此卷。本卷到此结束，不开启新的地图或上界修炼。",
+        "top": 1522.7890625
+      },
+      {
+        "bottom": 4040.5078125,
+        "label": "炼制法宝",
+        "top": 3996.5078125
+      },
+      {
+        "bottom": 4529.6953125,
+        "label": "炼制法宝",
+        "top": 4485.6953125
+      },
+      {
+        "bottom": 4774.2890625,
+        "label": "炼制法宝",
+        "top": 4730.2890625
+      }
+    ],
+    "inventoryCount": 0,
+    "pageHeight": 5231,
+    "recipeCount": 0,
+    "sceneImages": [
+      "http://127.0.0.1:55488/art/scenes/terrace-v2.webp"
+    ],
+    "scrollY": 0,
+    "url": "http://127.0.0.1:55488/?demo=ending-sword",
+    "viewport": {
+      "height": 900,
+      "width": 1440
+    }
+  },
+  {
+    "actions": [
+      {
+        "bottom": 1927.828125,
+        "label": "留道传承\n将此生所学留在人间，而后踏入天门。传承记录来自你实际走过的路，不要求先结下人物盟约。",
+        "top": 1817.234375
+      },
+      {
+        "bottom": 2047.421875,
+        "label": "独赴上界\n独自踏入天门，将来路收于此卷。本卷到此结束，不开启新的地图或上界修炼。",
+        "top": 1936.828125
+      },
+      {
+        "bottom": 5557.6171875,
+        "label": "炼制法宝",
+        "top": 5513.6171875
+      },
+      {
+        "bottom": 6305.2265625,
+        "label": "炼制法宝",
+        "top": 6261.2265625
+      },
+      {
+        "bottom": 6679.03125,
+        "label": "炼制法宝",
+        "top": 6635.03125
+      }
+    ],
+    "inventoryCount": 0,
+    "pageHeight": 8273,
+    "recipeCount": 0,
+    "sceneImages": [
+      "http://127.0.0.1:55488/art/scenes/terrace-v2.webp"
+    ],
+    "scrollY": 0,
+    "url": "http://127.0.0.1:55488/?demo=ending-sword",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  }
+]

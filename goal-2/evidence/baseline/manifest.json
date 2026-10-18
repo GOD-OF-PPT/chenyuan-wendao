@@ -1,0 +1,183 @@
+{
+  "format": "chenyuan-goal2-baseline",
+  "source": "834cf7d217f9c55d62c1c29cf16419eee2f78528",
+  "runtimeDigest": "5f75b5ae1bd23ad7dd836958fc61160f0e54c4aa3f71042bc6af0e50889d0f01",
+  "actor": "agent",
+  "actualHumanAcceptance": false,
+  "screenshots": [
+    {
+      "path": "goal-2/evidence/baseline/demo-battle-sword-1440.jpg",
+      "bytes": 128270,
+      "sha256": "e4ea1e5ef3a2c95f304a7835ef7789c1f7fb7048f82b11f318c17591b821f591",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/demo-battle-sword-390.jpg",
+      "bytes": 56116,
+      "sha256": "f120e71353390630dd8b6e190a3f33ffbe239f2dbc84b021bfb5d86835f6d15b",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/demo-ending-1440.jpg",
+      "bytes": 128274,
+      "sha256": "c40c2721ed0e8af5b55decfdeae891db7ad604fcaf95cfc8c170a5eac01e87c5",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/demo-ending-390.jpg",
+      "bytes": 52013,
+      "sha256": "1e173f6ed04c5a8620e213c50fdc8b2d3b72167f39dc2c903c52333e190f3382",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/demo-inventory-1440.jpg",
+      "bytes": 129355,
+      "sha256": "badf7189c0f7bc1b8b1973d3088de7526fc6e440db1a256c801075b0abe49019",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/demo-inventory-390.jpg",
+      "bytes": 53080,
+      "sha256": "7c2843c6172447a970840cf33cb4617721eee60f0f340af3d3998e7bcdf8d28d",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/demo-opening-1440.jpg",
+      "bytes": 127283,
+      "sha256": "732583a2577bdb932c1241d2aa233a1b3ba0f851e0b45c3bf2ab81c4acf8801f",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/demo-opening-390.jpg",
+      "bytes": 54936,
+      "sha256": "784c78b3facf15546ae41ec870a7a351440f467d7aa0e100adb2fa1d0070f083",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/demo-trial-1440.jpg",
+      "bytes": 129290,
+      "sha256": "2c8bd3889fc28d51a3d2459752379d541642d95da8bb9538acb298fb6f2e99e9",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/demo-trial-390.jpg",
+      "bytes": 53090,
+      "sha256": "3a0c7257e03487b925118064213d74a14d57cfbfed61f6f30d7705164ee1c055",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/mortal-cave-1280.jpg",
+      "bytes": 101214,
+      "sha256": "aa92d1a386a3f1bc0eeda193e67d70ac992444d68727cb23f06bde94f82ede63",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/mortal-cave-1440.jpg",
+      "bytes": 137742,
+      "sha256": "ef0ceba4df6142cbdcdedd985c0f4f2e0c9b1786fa026bec8f56190bf3d99a48",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/mortal-cave-1920.jpg",
+      "bytes": 188190,
+      "sha256": "53001cb3ccc0659692e8cd82eb1c1871fccd93931e517d00bf8a018c941cada4",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/baseline/mortal-cave-390.jpg",
+      "bytes": 52824,
+      "sha256": "7de8dad1ebbcf0154dd0145b5bc6f91cf8bcf551f789aa0a0bb48e919682b004",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "origin": "cua_repl actual browser screenshot",
+      "status": "baseline-observation",
+      "actuallyViewed": true
+    }
+  ],
+  "excludedInitialCaptures": "goal-2/evidence/baseline/initial-capture",
+  "measurements": [
+    "mortal-cave-measurements.json",
+    "demo-interaction-measurements.json",
+    "later-interaction-measurements.json"
+  ]
+}

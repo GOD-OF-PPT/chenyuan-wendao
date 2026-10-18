@@ -1,0 +1,31 @@
+{
+  "id": "desktop-direction-v1",
+  "tool": "built-in image_gen",
+  "role": "UI concept reference; not runtime implementation or user acceptance",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-1897d7b2-8a87-4ad1-a774-4858409e0bb6.png",
+  "savedPath": "goal-2/design/desktop-direction-v1.png",
+  "copiedUnchanged": true,
+  "sha256": "ab34c2faff1a786c210e96310cf2cfc52cae71aa4880f37e37aa7821f4040b12",
+  "bytes": 3050410,
+  "dimensions": {
+    "width": 1586,
+    "height": 992
+  },
+  "promptReference": "goal-2/design/prompts.json#desktop-direction-v1",
+  "referenceImages": [
+    {
+      "path": "art/approved/style-preview.webp",
+      "role": "aesthetic only",
+      "sha256": "8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc"
+    }
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "acceptedFor": "direction exploration only",
+    "implementationCorrections": [
+      "0/10 progress must render exactly zero from Game, not the painted example fill",
+      "Do not introduce the red notification dot shown by the generator",
+      "Replace all labels, icons, buttons, progress bars and ornaments with accessible DOM/CSS/SVG; no image hot zones"
+    ]
+  }
+}
