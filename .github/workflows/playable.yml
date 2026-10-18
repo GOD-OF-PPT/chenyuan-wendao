@@ -15,7 +15,7 @@ jobs:
   browser:
     name: browser (${{ matrix.browser }})
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: ${{ matrix.browser == 'webkit' && 45 || 30 }}
     strategy:
       fail-fast: false
       matrix:

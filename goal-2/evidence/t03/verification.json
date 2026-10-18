@@ -234,5 +234,38 @@
     "targetedPassed": 12,
     "reportSha256": "4a608a93548b66247d7e37a32c2fcbd454c809b78d250d8373885196fa2a3e84"
   },
-  "battleScreenshotNote": "Battle screenshots precede navigation measurement-only correction; previous source hashes retained, latest runtime/source separately recorded."
+  "battleScreenshotNote": "Battle screenshots precede navigation measurement-only correction; previous source hashes retained, latest runtime/source separately recorded.",
+  "colorCorrection": {
+    "sourceBase": "581c1cc2c1d4cdf5577bbc2e19b235be607a51b8",
+    "workingTree": true,
+    "runtimeSourceDigest": "7924e36304a0dccb87fbed4314659f0a96e1351ad6e13969d4cd48d066ee6763",
+    "runtimeBytes": 6327587,
+    "runtimeFiles": 49,
+    "styleSHA256": "16ae6fdcd8fa4076f5aeb0a2f9e9baafcbf7c67f72cacdc87674e9a3168874ce",
+    "negative": {
+      "expected": "rgb(161, 95, 85)",
+      "received": "rgb(82, 121, 110)",
+      "reportSHA256": "55bc5996500b021ce8e0ac10ca81623a6563ec2a34c66ff2a144004dcce64354"
+    },
+    "passed": 66,
+    "perBrowser": 22,
+    "noSkipOrRetry": true,
+    "reportSHA256": "53b981113908d949dfcf4a9538afee1bfba978a7e9fd15204667cfdba31af08d",
+    "screenshots": [
+      {
+        "path": "goal-2/evidence/t03/desktop-cave-firefox-1440.png",
+        "bytes": 1471644,
+        "sha256": "cdf957af8ddb865e2fafc1515ed00af7fc93b36579e817363161f55708f1b990",
+        "reviewed": true,
+        "browser": "firefox"
+      },
+      {
+        "path": "goal-2/evidence/t03/battle-wolf-firefox.png",
+        "bytes": 501077,
+        "sha256": "d8d52f825df319ec664a2e97b053bed47d3a03e5ce9689d95a77a64967f33ec5",
+        "reviewed": true,
+        "browser": "firefox"
+      }
+    ]
+  }
 }

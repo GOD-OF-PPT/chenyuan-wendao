@@ -993,8 +993,8 @@
         },
         {
           "path": "web/src/style.css",
-          "bytes": 21709,
-          "sha256": "1f27c2409f9211392180516b51015a041e4edda8d5fcc557d94321b0458f71a8"
+          "bytes": 21865,
+          "sha256": "16ae6fdcd8fa4076f5aeb0a2f9e9baafcbf7c67f72cacdc87674e9a3168874ce"
         },
         {
           "path": "web/src/shell.css",
