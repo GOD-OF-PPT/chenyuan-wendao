@@ -75,7 +75,7 @@ const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('')
 const equipmentOpen=ref(false),resumeVisible=ref(false),hubView=ref('home');
 const hubEntries=[{id:'forge',label:'丹炉',kind:'item',icon:'healing_pill'},{id:'skills',label:'功法',kind:'skill',icon:'sword_mind'},{id:'relics',label:'法宝',kind:'relic',icon:'cloud_mirror'},{id:'life',label:'生平',kind:'action',icon:'export'},{id:'goal',label:'目标',kind:'action',icon:'save'},{id:'help',label:'帮助',kind:'action',icon:'help'}] as const;
 let navigationRevision = 0;
-function selectTab(next: string) { navigationRevision++; tab.value = next;hubView.value=({'修行':'home','历练':'explore','行囊':'inventory','仙缘':'fate'} as Record<string,string>)[next]??'home'; return navigationRevision; }
+function selectTab(next: string) { navigationRevision++; resumeVisible.value=false; tab.value = next;hubView.value=({'修行':'home','历练':'explore','行囊':'inventory','仙缘':'fate'} as Record<string,string>)[next]??'home'; return navigationRevision; }
 const preparation = shallowRef<Action | null>(null);
 const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settings = ref<HTMLDialogElement>(), exportError = ref('');
 const settingsButton=ref<HTMLButtonElement>(),contentPanel=ref<HTMLElement>(),navHeight=ref(0);
@@ -281,7 +281,7 @@ async function restore() {
 function exportLife() { if (game.value) download(exportLifeText(game.value), '尘缘问道-生平.txt', 'text/plain;charset=utf-8'); }
 async function showLife(event?:Event) {
   rememberHubOrigin(event);if(settings.value?.open){hubOpener=settingsButton.value??null;hubOpenerId=undefined;}settings.value?.close(); selectTab('仙缘');if(singleScreen.value)hubView.value='life';lifeOpen.value = true;
-  await nextTick();const title=lifeSection.value?.querySelector<HTMLElement>('[data-testid=life-title]');focus.target(title??lifeSection.value??null);
+  await nextTick();const title=document.querySelector<HTMLElement>('[data-testid=life-title]');focus.target(title??lifeSection.value??currentContent());
 }
 async function requestEnd(type: 'RETIRE' | 'END_LIFE') {
   if (!game.value || !can({type})) return;
