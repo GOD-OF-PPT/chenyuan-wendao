@@ -27,3 +27,5 @@
 最终本地：382核心、52资源正负例、7候选完整性、根/Vue类型、资料和生产构建通过。当前运行源42定向通过，新增敌名专项修正正常档准备后3/3通过，共45唯一通过（各浏览器15），0skip/retry；报告分开保留，不称同次45全绿。按钮状态最低对比4.940。七张最终截图完整解码/实际查看，当前53文件6538638B逐HTTP校验，冻结试玩http://127.0.0.1:56882/。sourceDigest244f4066fc6da8fb30874e3a2ab06a0215bac44deffc7096960d2c4cb14464ad；测试前工作树与最终Git身份在提交收尾分别绑定，不冒充完整同HEAD CI。
 
 [杠精审查] T04S/CHECK-02M范围通过：用户指定三块面板已经实际换材质并审图；没有删功能、放宽阈值或改规则存档。整体目标未完成；原生目标工具本轮只读返回blocked，未虚报active/complete。
+
+交付补记（T04S）：实现已提交8519d2ca2649cf92b33828f3f76a44fc47d45fa8并推送，[草稿PR39](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/39)叠加PR38且已附本任务。干净提交重新构建的53运行文件/全部runtimeSources逐hash等于本地测试与56882冻结HTTP预览，见artifacts/goal-2/t04s/local-delivery-proof.json。最终CI/候选与用户整体美术认可未声称完成；当前范围已复核，下一项T05、兼容最后T08。
