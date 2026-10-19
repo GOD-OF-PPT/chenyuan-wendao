@@ -32,7 +32,7 @@
 
 自审另发现战内服丹错误给敌方立绘受力：新增真实sword:heal回归在旧版稳定红，修为角色回元，双修法heal/restore都核验敌方无受击类。后台提交在requestAnimationFrame前记已消费，回前台不重播；初始化/重放的busy结束也不留pending。原失败、trace和前版冻结目录保留在artifacts/goal-2/t04u，修后结果单列，不把失败轮称全通过。
 
-最后同次186/186通过：三浏览器各62，129个新增动作/边界用例与57个主舞台/主题/只读交互回归，0缺失/重复/skip/flaky/retry，实际JSON逐项核对。覆盖25类行动、双修法七招式、真实事务锁保存中、配额失败/同意图重试、刷新/切页/隐藏/换人生/减少动效、三桌面入口命中与完整Game对照；全部普通入口及九演示阶段仍为青黛墨绿。精确命令为`npm run test:e2e --prefix web -- action-feedback.spec.ts single-screen.spec.ts immersive-ui.spec.ts`，Node24.19.0/npm8.11.0/Playwright1.56.1，macOS本机默认2worker/0retry，原8秒动作/15秒导航/8秒断言及60秒普通用例预算不变。详细原始JSON/日志与verified-ui-summary.json位于artifacts/goal-2/t04u。
+最后同次186/186通过：三浏览器各62，129个新增动作/边界用例与57个主舞台/主题/只读交互回归，0缺失/重复/skip/flaky/retry，实际JSON逐项核对。覆盖25类行动、双修法七招式、真实事务锁保存中、配额失败/同意图重试、刷新/切页/隐藏/换人生/减少动效、三桌面入口命中与完整Game对照；全部普通入口及九演示阶段仍为青黛墨绿。主命令为`npm run test:e2e --prefix web -- action-feedback.spec.ts single-screen.spec.ts immersive-ui.spec.ts`，Node24.19.0/npm8.11.0/Playwright1.56.1，macOS本机默认2worker/0retry，原8秒动作/15秒导航/8秒断言及60秒普通用例预算不变。详细原始JSON/日志与verified-ui-summary.json位于artifacts/goal-2/t04u。
 
 ## 试玩与验收边界
 
@@ -43,3 +43,5 @@
 完整UI/300 IDB/72正常路线/60恢复组合/30冷性能、最终源码克隆与包交付本轮未重跑，保留T09；现阶段只执行当前动作与主题/主舞台综合检查。T05物资与目录分页、T06剧情/终局分页、T07全局美术继续，全部兼容仍最低T08，T10用户真实复验未完成，Goal1 T25及整体美术目标保持未完成。
 
 [杠精审查] 当前实现范围通过：最后三浏览器原始JSON、实际帧、代码/资源预算已核对，提交后再核对干净构建等于已测payload及试玩。未使用概念图代替程序或动效代替结算，不删能力/降字或变相增加原预算；整体美术与用户复验未完成。重复工作继续复用项目已有资产守卫/Playwright/候选工具，未另建重叠skill、子agent或自动化。
+
+实现已提交并推送b39a2c1c7ba3076d54aff38c80f78ad8ac665c9d，[草稿PR41](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/41)叠加PR40并附本任务。干净实现重建全部runtimeSources/53运行文件6,583,917B与186项测试payload和56884冻结HTTP逐hash相同，来源摘要d00ea22b9e19fd212de568bc77b1c1867fd9a2fc2535472c163a270b1f41c354，见artifacts/goal-2/t04u/local-delivery-proof.json。资料收尾提交与实现SHA分开，完整CI/最终候选不继承旧结果。
