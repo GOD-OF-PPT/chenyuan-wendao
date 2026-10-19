@@ -31,6 +31,8 @@ class InventoryTests(unittest.TestCase):
   if panels.exists():files.update(ROOT/ref for ref in json.loads(panels.read_text())['sourceReferences'])
   immersive=ROOT/'art/redesign/immersive-ui.json'
   if immersive.exists():files.update(ROOT/ref for ref in json.loads(immersive.read_text())['sourceReferences'])
+  actions=ROOT/'art/redesign/action-feedback.json'
+  if actions.exists():files.update(ROOT/ref for ref in json.loads(actions.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -185,5 +187,18 @@ class InventoryTests(unittest.TestCase):
   p='web/src/main.ts';self.write(p,(self.root/p).read_text().replace("import './immersive-theme.css';",''));self.rejected()
  def test_global_theme_cannot_claim_user_acceptance(self):
   p='art/redesign/immersive-ui.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
+
+ def test_action_motion_cannot_drop_source_record(self):
+  (self.root/'art/redesign/action-feedback.json').unlink();self.rejected()
+ def test_action_motion_cannot_change_consumer_silently(self):
+  self.write('web/src/ActionFeedbackStage.vue','<template>wrong</template>');self.rejected()
+ def test_action_motion_cannot_raise_particle_or_byte_budgets(self):
+  p='art/redesign/action-feedback.json';original=json.loads((self.root/p).read_text())
+  for field in ['maxBytes','maxParticles','maxDurationMs']:
+   m=copy.deepcopy(original);m[field]+=1;self.write(p,m);self.rejected()
+ def test_action_motion_cannot_hide_an_old_major_family(self):
+  p='art/redesign/action-feedback.json';m=json.loads((self.root/p).read_text());m['oldFxFamiliesPreserved'].pop();self.write(p,m);self.rejected()
+ def test_action_motion_cannot_claim_user_acceptance(self):
+  p='art/redesign/action-feedback.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
 
 if __name__=='__main__':unittest.main()

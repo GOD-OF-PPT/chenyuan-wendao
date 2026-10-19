@@ -1,0 +1,92 @@
+/* Receipt-bound, short-lived effects. No layer receives input or changes layout. */
+.action-feedback-layer{position:fixed;inset:0;z-index:14;pointer-events:none}
+.app-shell.art-theme .interaction-press{filter:brightness(1.08);outline:1px solid #b5ddba;outline-offset:-3px}
+.app-shell.art-theme .command-pending{box-shadow:inset 0 0 0 2px #b9cb84,0 0 14px #a4c99466!important;animation:command-ink .85s ease-in-out infinite alternate}
+.app-shell.art-theme .command-success{animation:command-done .85s ease-out;outline:2px solid #acd9ac;outline-offset:2px}
+.app-shell.art-theme .command-error{animation:command-error .8s ease-out;outline:2px solid #e6ac92;outline-offset:2px}
+.app-shell.art-theme button:disabled:hover{cursor:not-allowed}
+.action-feedback-toast.hub-pulse{top:86px;left:50%;right:auto;width:min(520px,calc(100vw - 40px));padding:13px 20px;transform:translateX(-50%);border:1px solid #91af88;border-radius:10px 3px;background:linear-gradient(120deg,#214b49f5,#102d35f5);box-shadow:0 10px 28px #061c2688;animation:action-notice-in .18s ease-out both;z-index:16}
+.action-feedback-toast.hub-pulse::before{opacity:.25;inset:3px 14%;pointer-events:none}
+.action-feedback-toast.hub-pulse strong{font-size:var(--ui24);letter-spacing:.1em}
+.action-feedback-toast.hub-pulse span{font-size:var(--ui16);line-height:1.55;margin-top:5px}
+.action-feedback-toast.hub-pulse small{display:block;font-size:var(--ui14);line-height:1.4;margin-top:5px;color:#c5d5bf}
+.action-feedback-toast.hub-pulse.still{animation:none;transform:translateX(-50%)}
+.action-motion{position:fixed;transform:translate(-50%,-50%);width:220px;height:220px;pointer-events:none;isolation:isolate;--motion-color:#a8dfb9;animation:motion-life 1.3s ease-out both}
+.motion-ring{position:absolute;inset:20px;border:2px solid var(--motion-color);border-radius:50%;box-shadow:0 0 15px color-mix(in srgb,var(--motion-color) 45%,transparent),inset 0 0 12px #b4db9622;animation:motion-orbit 1.15s ease-out both}
+.motion-ring.ring-two{inset:45px;animation-delay:.1s;transform:rotateX(55deg);border-width:1px}
+.motion-sigil{position:absolute;inset:55px;display:grid;place-items:center;border-radius:50%;background:radial-gradient(ellipse,#163f3b99,transparent 72%);color:var(--motion-color);animation:motion-sigil .8s ease-out both;filter:drop-shadow(0 0 7px #bce2aa88)}
+.motion-sigil .game-icon{width:74px;height:74px}
+.motion-particles{position:absolute;inset:0}
+.motion-particles>i{position:absolute;left:50%;top:50%;width:5px;height:5px;border-radius:50%;background:var(--motion-color);box-shadow:0 0 8px var(--motion-color);animation:motion-spark .95s var(--delay) ease-out both}
+.motion-cultivation .motion-ring{transform:rotateX(60deg);animation-name:motion-breath}
+.motion-cultivation .motion-particles>i,.motion-recovery .motion-particles>i{animation-name:motion-gather}
+.motion-travel{width:300px;height:150px;--motion-color:#9bd7d3}
+.motion-travel .motion-ring{border-style:dashed;border-width:1px;animation-name:motion-travel}
+.motion-travel .motion-sigil{inset:30px 105px}
+.motion-travel .motion-particles>i{width:34px;height:2px;animation-name:motion-trail}
+.motion-harvest{--motion-color:#bbe2a1}
+.motion-harvest .motion-particles>i{width:7px;height:13px;border-radius:80% 5%;animation-name:motion-harvest}
+.motion-trade{--motion-color:#e8d195}
+.motion-trade .motion-particles>i{border-radius:1px;width:8px;height:11px;animation-name:motion-harvest}
+.motion-trade .motion-ring{border-style:dotted}
+.motion-craft{--motion-color:#f2c48d}.motion-forge{--motion-color:#d9d79b}
+.motion-craft .motion-ring,.motion-forge .motion-ring{border-radius:18%;animation-name:motion-forge}
+.motion-flame{position:absolute;inset:10px 65px 35px;width:90px;height:150px;fill:#f1b969;opacity:.72;filter:drop-shadow(0 0 12px #efa54b88);animation:motion-flame .9s ease-out both}
+.motion-forge .motion-flame{fill:#d6e7c6;transform:scale(.65)}
+.motion-learning{--motion-color:#d1e4a4}.motion-learning .motion-ring{border-radius:3px;transform:rotate(45deg);animation-name:motion-learn}
+.motion-equipment{--motion-color:#a3ddd2}.motion-equipment .motion-ring{border-radius:12%;animation-name:motion-lock}
+.motion-recovery{--motion-color:#b3e2b0}.motion-recovery .motion-ring{border-style:dotted;animation-name:motion-breath}
+.motion-dialogue{--motion-color:#d8c591}.motion-closure{--motion-color:#e6d6a3}
+.motion-dialogue .motion-ring,.motion-closure .motion-ring{border-radius:4px;animation-name:motion-stamp}
+.motion-seal{position:absolute;inset:35px;width:150px;height:150px;stroke:var(--motion-color);stroke-width:2;fill:#16373122;animation:motion-stamp 1s ease-out both}
+.motion-dialogue .motion-sigil,.motion-closure .motion-sigil{opacity:0;animation:none}
+.motion-closure .motion-ring.ring-two{inset:12px;animation-direction:reverse}
+.motion-breakthrough{width:300px;height:300px;--motion-color:#e7d59c}.motion-breakthrough .motion-ring{border-width:3px;animation-name:motion-ascend}
+.motion-trial{width:280px;height:280px;--motion-color:#bdcce7}.motion-trial .motion-ring{border-radius:20%;animation-name:motion-trial}
+.motion-trial .motion-particles>i{height:26px;width:2px;animation-name:motion-lightning}
+.motion-battle{--motion-color:#bbddd1}.motion-battle .motion-ring{border-radius:30%;animation-name:motion-impact}
+.motion-battle .motion-sigil{opacity:.6}
+.motion-slash{position:absolute;left:10%;top:50%;width:80%;height:4px;background:linear-gradient(90deg,transparent,#f5f2cc,var(--motion-color),transparent);box-shadow:0 0 12px #e2edbb99;transform:rotate(-38deg);animation:motion-slash .45s ease-out both}
+.motion-slash.slash-two{transform:rotate(32deg);animation-delay:.12s;opacity:.6}
+.motion-battle[data-variant*=talisman]{--motion-color:#e2ca91}.motion-battle[data-variant*=talisman] .motion-ring{border-radius:2%;border-style:dashed;animation-name:motion-stamp}
+.motion-battle[data-variant*=release]{width:280px;height:280px}.motion-battle[data-variant*=release] .motion-slash{height:7px}
+.motion-battle[data-variant*=guard] .motion-slash,.motion-battle[data-variant*=heal] .motion-slash,.motion-battle[data-variant*=restore] .motion-slash,.motion-battle[data-variant*=flee] .motion-slash,.motion-battle[data-variant=challenge] .motion-slash{display:none}
+.motion-battle[data-variant*=guard] .motion-ring{border-radius:45% 45% 35% 35%;animation-name:motion-lock}
+.motion-battle[data-variant*=heal],.motion-battle[data-variant*=restore]{--motion-color:#a9dfb5}.motion-battle[data-variant*=heal] .motion-particles>i,.motion-battle[data-variant*=restore] .motion-particles>i{animation-name:motion-gather}
+.motion-battle[data-variant*=flee] .motion-ring{animation-name:motion-travel;border-style:dotted}
+.action-number{position:fixed;z-index:17;transform:translate(-50%,-50%);font-family:'Kaiti SC',STKaiti,serif;font-size:var(--ui30);font-weight:700;color:#d5f0bf;text-shadow:0 2px 5px #0b2830,0 0 9px #16342c;pointer-events:none;animation:action-number 1.15s ease-out both}
+.action-number.damage{color:#ffd3bb}.action-number small{display:block;text-align:center;font-size:var(--ui14);font-weight:400;line-height:1.3;color:inherit}
+.action-failure-glow{position:fixed;inset:72px 5% 100px;border:1px solid #dba18b77;border-radius:14px;box-shadow:inset 0 0 28px #c57e6233;pointer-events:none;animation:failure-ink .9s ease-out both}
+.actor-impact{animation:actor-impact .32s ease-out}.actor-arrival{animation:actor-arrival .5s ease-out}.scene-arrival{animation:scene-arrival .55s ease-out}
+@keyframes command-ink{to{box-shadow:inset 0 0 0 2px #e2d193,0 0 19px #c2d98d88}}
+@keyframes command-done{from{filter:brightness(1.08)}to{filter:brightness(1)}}@keyframes command-error{30%{filter:brightness(1.08)}}
+@keyframes action-notice-in{from{opacity:0;margin-top:-5px}to{opacity:1;margin-top:0}}
+@keyframes motion-life{0%{opacity:0}12%,72%{opacity:1}100%{opacity:0}}
+@keyframes motion-orbit{from{transform:scale(.3) rotate(-40deg);opacity:0}35%{opacity:.9}to{transform:scale(1.2) rotate(70deg);opacity:0}}
+@keyframes motion-breath{from{transform:scale(.55) rotateX(55deg) rotate(-50deg)}to{transform:scale(1.3) rotateX(55deg) rotate(130deg);opacity:0}}
+@keyframes motion-sigil{from{transform:scale(.65);opacity:0}35%,75%{opacity:1}to{transform:scale(1.05);opacity:0}}
+@keyframes motion-spark{from{transform:rotate(var(--angle)) translateX(12px);opacity:1}to{transform:rotate(calc(var(--angle) + 35deg)) translateX(110px) scale(.1);opacity:0}}
+@keyframes motion-gather{from{transform:rotate(var(--angle)) translateX(var(--radius));opacity:0}35%{opacity:1}to{transform:rotate(calc(var(--angle) - 80deg)) translateX(4px) scale(.1);opacity:0}}
+@keyframes motion-harvest{from{transform:rotate(var(--angle)) translateX(var(--radius));opacity:0}30%{opacity:1}to{transform:translate(70px,90px) rotate(130deg) scale(.2);opacity:0}}
+@keyframes motion-travel{from{transform:translateX(-45px) scaleX(.3);opacity:0}35%{opacity:.8}to{transform:translateX(40px) scaleX(1.4);opacity:0}}
+@keyframes motion-trail{from{transform:translate(-100px,-20px) rotate(var(--angle));opacity:0}30%{opacity:.6}to{transform:translate(100px,35px);opacity:0}}
+@keyframes motion-forge{from{transform:rotate(-60deg) scale(.5)}to{transform:rotate(120deg) scale(1.1);opacity:0}}
+@keyframes motion-flame{from{transform:scale(.6) translateY(20px);opacity:0}40%{opacity:.8}to{transform:scale(1.05) translateY(-20px);opacity:0}}
+@keyframes motion-learn{from{transform:rotate(20deg) scale(.5);opacity:0}40%{opacity:.8}to{transform:rotate(95deg) scale(1.05);opacity:0}}
+@keyframes motion-lock{from{transform:scale(1.4);opacity:0}45%{transform:scale(.95);opacity:1}to{transform:scale(1);opacity:0}}
+@keyframes motion-stamp{from{transform:scale(1.5) rotate(-9deg);opacity:0}35%{transform:scale(1) rotate(0);opacity:.9}to{transform:scale(.98);opacity:0}}
+@keyframes motion-ascend{from{transform:scale(.25);opacity:0}35%{opacity:1}to{transform:scale(1.35) rotate(100deg);opacity:0}}
+@keyframes motion-trial{from{transform:rotate(45deg) scale(.3);opacity:0}25%,40%{opacity:1}to{transform:rotate(135deg) scale(1.15);opacity:0}}
+@keyframes motion-lightning{from{transform:rotate(var(--angle)) translateX(20px);opacity:0}25%{opacity:1}to{transform:rotate(var(--angle)) translateX(120px) scaleY(2);opacity:0}}
+@keyframes motion-impact{from{transform:scale(.2);opacity:1}to{transform:scale(1.1) rotate(60deg);opacity:0}}
+@keyframes motion-slash{from{clip-path:inset(0 100% 0 0);opacity:0}25%{opacity:1}to{clip-path:inset(0);opacity:0}}
+@keyframes action-number{from{opacity:0;margin-top:8px}15%,65%{opacity:1}to{opacity:0;margin-top:-45px}}
+@keyframes failure-ink{from{opacity:0}30%{opacity:1}to{opacity:0}}
+@keyframes actor-impact{25%{transform:translateX(4px);filter:brightness(1.18)}55%{transform:translateX(-3px)}to{transform:translateX(0)}}
+@keyframes actor-arrival{from{opacity:.4;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@keyframes scene-arrival{from{opacity:.65}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.action-motion,.action-number,.action-failure-glow{display:none!important}.action-feedback-toast.hub-pulse,.command-pending,.command-success,.command-error,.actor-impact,.actor-arrival,.scene-arrival{animation:none!important}}
+.hub-reduced :is(.action-motion,.action-number,.action-failure-glow){display:none!important}.hub-reduced :is(.action-feedback-toast,.command-pending,.command-success,.command-error,.actor-impact,.actor-arrival,.scene-arrival){animation:none!important}
+
+.motion-battle[data-variant=victory]{--motion-color:#e5d69c}.motion-battle[data-variant=victory] .motion-slash,.motion-battle[data-variant=defeat] .motion-slash{display:none}
+.motion-battle[data-variant=victory] .motion-ring{animation-name:motion-ascend}.motion-battle[data-variant=defeat] .motion-ring{border-style:dotted;animation-name:motion-travel}

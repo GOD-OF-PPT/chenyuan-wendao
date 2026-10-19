@@ -1,0 +1,84 @@
+{
+  "format": "chenyuan-action-feedback",
+  "version": 1,
+  "task": "Goal2 T04U",
+  "maxBytes": 34000,
+  "maxFamilies": 14,
+  "maxParticles": 12,
+  "maxDurationMs": 1600,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/action-feedback.ts",
+      "bytes": 10039,
+      "sha256": "36537f8c104dec27f65dc3ae002d352b8018edf49a609b4677ad476d78589b6a"
+    },
+    {
+      "path": "web/src/ActionFeedbackStage.vue",
+      "bytes": 10368,
+      "sha256": "bdb17a9ea18f108bacc5227b00b713c365f425bb86a56df5d4b1e7168ef85197"
+    },
+    {
+      "path": "web/src/action-motion.css",
+      "bytes": 11780,
+      "sha256": "e2a9936a23bc9c77ae7e705ca7d4db5d27497b200a15f5bf551bb8a1deb2023a"
+    }
+  ],
+  "consumer": "web/src/App.vue",
+  "styleConsumer": "web/src/main.ts",
+  "sourceReferences": [
+    "goal-2/amendments/2026-10-19-action-feedback.md",
+    "docs/implementation/goal-2-action-feedback.md"
+  ],
+  "oldFxFamiliesPreserved": [
+    "入道",
+    "突破",
+    "剑符反馈",
+    "渡劫"
+  ],
+  "coverage": {
+    "actionTypes": [
+      "CHOOSE",
+      "DECIDE",
+      "EVENT",
+      "TRAVEL",
+      "CULTIVATE",
+      "SOURCE",
+      "BUY",
+      "SELL",
+      "CRAFT",
+      "FORGE",
+      "SCHOOL",
+      "STUDY",
+      "LEARN",
+      "EQUIP",
+      "EQUIP_RELIC",
+      "USE",
+      "REST",
+      "ENCOUNTER",
+      "BATTLE",
+      "BREAKTHROUGH",
+      "START_TRIAL",
+      "ANSWER_TRIAL",
+      "END",
+      "RETIRE",
+      "END_LIFE"
+    ],
+    "moves": [
+      "attack",
+      "guard",
+      "technique",
+      "release",
+      "heal",
+      "restore",
+      "flee"
+    ],
+    "controls": [
+      "new_game",
+      "restart",
+      "import",
+      "restore"
+    ]
+  },
+  "scope": "Additional receipt-bound native motion; old four major effects and all original byte budgets retained. Replaces only the previous unbudgeted App six-action pulse consumer to avoid two central notices."
+}
