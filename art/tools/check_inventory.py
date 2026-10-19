@@ -173,6 +173,23 @@ def validate(root):
             assert all(fragment in (root / path).read_text() for fragment in fragments)
     else:
         assert not (root / 'web/src/play-flow.css').exists(), 'Unrecorded playable flow'
+    story_path = root / 'art/redesign/story-journey.json'
+    if story_path.exists():
+        story = json.loads(story_path.read_text())
+        assert story['format'] == 'chenyuan-story-journey' and story['version'] == 1
+        assert (story['maxNewBytes'], story['maxRowsPerPage']) == (48000, 4)
+        assert story['userAcceptance'] is False
+        assert [r['path'] for r in story['files']] == ['web/src/story-pages.ts', 'web/src/NarrativePanel.vue', 'web/src/FateCatalogue.vue', 'web/src/LifeCatalogue.vue', 'web/src/TrialCatalogue.vue', 'web/src/ReviewPages.vue', 'web/src/story-book.css']
+        for row in story['files']:
+            data = (root / row['path']).read_bytes()
+            assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], 'Story source identity changed'
+        assert sum(r['bytes'] for r in story['files']) <= 48000
+        for ref in story['sourceReferences']:
+            assert (root / ref).resolve().is_relative_to(root) and (root / ref).is_file()
+        for path, fragments in story['bindings'].items():
+            assert all(fragment in (root / path).read_text() for fragment in fragments)
+    else:
+        assert not (root / 'web/src/story-book.css').exists(), 'Unrecorded story journey'
     native_path = root / 'art/redesign/single-screen-native.json'
     native_bytes = 0
     if native_path.exists():

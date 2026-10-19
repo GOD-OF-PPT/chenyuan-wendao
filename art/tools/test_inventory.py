@@ -35,6 +35,8 @@ class InventoryTests(unittest.TestCase):
   if actions.exists():files.update(ROOT/ref for ref in json.loads(actions.read_text())['sourceReferences'])
   flow=ROOT/'art/redesign/playable-flow.json'
   if flow.exists():files.update(ROOT/ref for ref in json.loads(flow.read_text())['sourceReferences'])
+  story=ROOT/'art/redesign/story-journey.json'
+  if story.exists():files.update(ROOT/ref for ref in json.loads(story.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -215,5 +217,18 @@ class InventoryTests(unittest.TestCase):
   p='art/redesign/playable-flow.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
  def test_playable_flow_cannot_remove_actual_consumer(self):
   p='web/src/App.vue';self.write(p,(self.root/p).read_text().replace('<ExplorePanel ','<RemovedPanel '));self.rejected()
+
+ def test_story_cannot_drop_ledger(self):
+  (self.root/'art/redesign/story-journey.json').unlink();self.rejected()
+ def test_story_cannot_change_text_pages_silently(self):
+  self.write('web/src/story-pages.ts','wrong');self.rejected()
+ def test_story_cannot_raise_budgets(self):
+  p='art/redesign/story-journey.json';original=json.loads((self.root/p).read_text())
+  for field in ['maxNewBytes','maxRowsPerPage']:
+   m=copy.deepcopy(original);m[field]+=1;self.write(p,m);self.rejected()
+ def test_story_cannot_claim_user_acceptance(self):
+  p='art/redesign/story-journey.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
+ def test_story_cannot_drop_real_consumer(self):
+  p='web/src/App.vue';self.write(p,(self.root/p).read_text().replace('<LifeCatalogue ','<Removed '));self.rejected()
 
 if __name__=='__main__':unittest.main()

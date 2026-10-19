@@ -1,0 +1,195 @@
+{
+  "format": "chenyuan-story-journey-visual-review",
+  "runtimeSourceDigest": "22fb271a2b38596db150264824700f3ab0b7eb26d5c10f382db58c22357dacdc",
+  "images": [
+    {
+      "path": "goal-2/evidence/t06/fate-1280.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-fate-people--9d756-rds-stay-in-one-game-screen-chromium/fate.png",
+      "bytes": 609085,
+      "sha256": "0e52a78b96ff2d0048ce6b1c742c80e9d0660f0fd8830524b43660e91b7094c3",
+      "width": 1280,
+      "height": 720,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/journal-560.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-all-people-f-3bb2a-ies-remain-reachable-at-560-chromium/journal-560.png",
+      "bytes": 212593,
+      "sha256": "d2058172a2283194167353880a8f8f0e81220a1e628fa89b68c02fcc4d80ec1b",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/life-1440.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-all-life-cha-46f09-omplete-source-text-at-1440-chromium/life-1440.png",
+      "bytes": 828057,
+      "sha256": "c9cabada76fea21fc3349f958016235a6c6eab5c90e200d1329502c5ec8e9b92",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/life-560.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-all-life-cha-406d5-complete-source-text-at-560-chromium/life-560.png",
+      "bytes": 232238,
+      "sha256": "bd61cbfb852f7de8fd3527a93e458a04b0293a5fcf139036259492ab93d7b28f",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/trial-preparation-1280.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-the-trial-pr-cc433-entry-actions-on-one-screen-chromium/trial-preparation.png",
+      "bytes": 550870,
+      "sha256": "7d6c0de53bf93b73d500c6ee4957869700944aa9a338f28ad9dc459d647f5da4",
+      "width": 1280,
+      "height": 720,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/trial-560.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-all-required-848dc-oint-trial-pages-fit-at-560-chromium/trial-560.png",
+      "bytes": 243240,
+      "sha256": "d10f0cc1baeb7185a6a93d25c378e8f8ef60b219bfd78f477a877f50d8dbdb5c",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/story-event-560.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-all-DECIDE-n-fb93b-ad-only-before-confirmation-chromium/story-DECIDE.png",
+      "bytes": 218163,
+      "sha256": "e03f78a7883332d490bbef7aaad0fa3f3d0cfe741129bb6247016b227e9bd474",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/story-question-560.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-all-ANSWER-T-9c3dc-ad-only-before-confirmation-chromium/story-ANSWER_TRIAL.png",
+      "bytes": 222034,
+      "sha256": "ace4e3c5ebe21363463559f4a13c948974e4de611901fee16ef324fab2d12bc2",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/story-ending-560.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-all-END-narr-bb9ea-ad-only-before-confirmation-chromium/story-END.png",
+      "bytes": 225556,
+      "sha256": "72f7783410a7e98309ec478326ad9943918994ea9f6515c18628ded95232d947",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/entry-confirm-560.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-entry-and-re-c55e9-checkpoint-remains-reusable-chromium/entry-review-0.png",
+      "bytes": 157660,
+      "sha256": "21fe66790a3eca99fd7f9cf457da2f73c4753427abbdabe125af57a20458d787",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/life-confirm-560.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-the-complete-8d514-nd-reading-never-commits-it-chromium/confirmation-RETIRE.png",
+      "bytes": 149504,
+      "sha256": "519218ba677a633e26d35383c69eaf2448e277f019974cef32a72d202f119782",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/lifespan-confirm-560.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-the-complete-5a393-nd-reading-never-commits-it-chromium/confirmation-END_LIFE.png",
+      "bytes": 160080,
+      "sha256": "94b94e0188cb3a8627f7d4d137509d979c7a8a3fcb4faf19aa93ef9abc3a78d3",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/ending-confirm-560.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-the-complete-f4bdf-nd-reading-never-commits-it-chromium/confirmation-END.png",
+      "bytes": 183201,
+      "sha256": "99671799c907b6c004d15c49b48033f83851c736ca55bbec59b3d95fca1ff4cd",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/battle-details-560.png",
+      "source": "artifacts/goal-2/t06/compact-probe-results/story-journey-complete-ord-7bba8-ons-and-logs-stay-read-only-chromium/battle-record-ordinary.png",
+      "bytes": 209527,
+      "sha256": "1ed9db8b88b5534d31ec48c90afb6f6e43f20b87db94170b30781cc73bf1e0c8",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t06/trial-failure.png",
+      "source": "artifacts/goal-2/t06/extra-results/story-recovery-an-actual-t-59721-can-restore-all-preparation-chromium/trial-failure.png",
+      "bytes": 224774,
+      "sha256": "f12da330961347dd9dcba8d8927849e653d9e8c1b048a90d9d42d7b0f80e93c1",
+      "visuallyReviewed": true,
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true
+    },
+    {
+      "path": "goal-2/evidence/t06/trial-log.png",
+      "source": "artifacts/goal-2/t06/extra-results/story-recovery-a-real-tria-67c34-g-line-in-the-reading-pages-chromium/trial-log.png",
+      "bytes": 198992,
+      "sha256": "5ae18ee8b788e2ff993fca6a07719011f594eaf054d93a0eebd4248c85e1dbfc",
+      "visuallyReviewed": true,
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true
+    },
+    {
+      "path": "goal-2/evidence/t06/journal-100.png",
+      "source": "artifacts/goal-2/t06/extra-results/story-recovery-all-100-ret-a6557-ble-during-a-pending-ending-chromium/journal-100.png",
+      "bytes": 220510,
+      "sha256": "c8ec989043a03d306099c01db64105cbf5c0c73b8192baecc914b54754cd8a17",
+      "visuallyReviewed": true,
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true
+    }
+  ],
+  "visualReview": "Individually viewed original full-frame captures. Text and choices remain complete, controls fit the audited windows, and confirmation costs remain visible. Existing portrait/scenery assets are reused. Further composition and short-page whitespace review remains T07; this is not user acceptance. Supplementary factual retreat, real trial log and full 100-entry views were individually reviewed. Some supplementary captures include transition frames and the existing compact major effect; these are not static contrast samples. T08-C02 remains recorded.",
+  "userAcceptance": false
+}
