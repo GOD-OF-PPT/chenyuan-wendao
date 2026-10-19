@@ -1,7 +1,7 @@
 import {test,expect,type Page} from '@playwright/test';
 import {advance} from '../../src/full/engine.ts';
 import {demoCatalog} from '../../src/demo.ts';
-import {snapshot,action} from './support';
+import {snapshot,action,revealStoryChoice} from './support';
 test.use({actionTimeout:8000,navigationTimeout:15000});
 async function saved(page:Page){await expect(page.getByTestId('save-status')).toHaveText('已保存');}
 async function cave(page:Page){await page.goto('/');await page.getByRole('button',{name:'踏入仙途'}).click();await action(page,'leave');await action(page,'return-cave');await saved(page);}
@@ -12,9 +12,9 @@ async function palette(page:Page,label:string){
  for(const row of rows)for(const color of row.colors){const [r,g,b,a=1]=color.match(/[\d.]+/g)!.map(Number);if(a<.25)continue;expect(r>170&&g>140&&b<Math.min(r,g)*.96,label+'/'+row.label+'/'+row.text+' yellow '+color).toBe(false);}
  const textRows=await page.locator('h2,h3,p,dt,dd,small,li,span,label,b,strong,button').evaluateAll(elements=>{
   const rgb=(s:string)=>s.match(/[\d.]+/g)!.map(Number),lum=(v:number[])=>v.slice(0,3).map(c=>{c/=255;return c<=.04045?c/12.92:((c+.055)/1.055)**2.4;}).reduce((n,c,i)=>n+c*[.2126,.7152,.0722][i],0),opaque=(v:number[])=>v.slice(0,3).map(c=>c*(v[3]??1)+255*(1-(v[3]??1)));
-  return elements.filter(el=>el.getClientRects().length&&/[^\W_]|[\u3400-\u9fff]/u.test(el.textContent??'')&&!el.closest('[aria-hidden=true],dialog:not([open])')).map(el=>{let n:Element|null=el,backgrounds:number[][]=[];while(n){const s=getComputedStyle(n),colors=s.backgroundImage.match(/rgba?\([^)]+\)/g)?.map(rgb).filter(c=>(c[3]??1)>.25);if(colors?.length){backgrounds=colors.map(opaque);break;}const c=rgb(s.backgroundColor);if((c[3]??1)>.25){backgrounds=[opaque(c)];break;}n=n.parentElement;}const text=lum(rgb(getComputedStyle(el).color));return{text:el.textContent?.trim().slice(0,50),ratio:Math.min(...backgrounds.map(c=>{const b=lum(c);return(Math.max(text,b)+.05)/(Math.min(text,b)+.05);}))};});
+  return elements.filter(el=>el.getClientRects().length&&/[^\W_]|[\u3400-\u9fff]/u.test(el.textContent??'')&&!el.closest('[aria-hidden=true],dialog:not([open])')).map(el=>{let n:Element|null=el,backgrounds:number[][]=[];while(n){const s=getComputedStyle(n),colors=s.backgroundImage.match(/rgba?\([^)]+\)/g)?.map(rgb).filter(c=>(c[3]??1)>.25);if(colors?.length){backgrounds=colors.map(opaque);break;}const c=rgb(s.backgroundColor);if((c[3]??1)>.25){backgrounds=[opaque(c)];break;}n=n.parentElement;}const text=lum(rgb(getComputedStyle(el).color));return{foreground:getComputedStyle(el).color,backgrounds,text:el.textContent?.trim().slice(0,50),ratio:Math.min(...backgrounds.map(c=>{const b=lum(c);return(Math.max(text,b)+.05)/(Math.min(text,b)+.05);}))};});
  });
- for(const row of textRows)expect(row.ratio,label+'/'+row.text+' contrast').toBeGreaterThanOrEqual(4.5);
+ for(const row of textRows)expect(row.ratio,label+'/'+row.text+' contrast '+JSON.stringify({foreground:row.foreground,backgrounds:row.backgrounds})).toBeGreaterThanOrEqual(4.5);
  expect(rows.length,label+' actual inspected surfaces').toBeGreaterThan(5);return{label,rows,textRows};
 }
 test('all ordinary feature windows controls and help use the jade palette without passive game changes',async({page},info)=>{
@@ -28,7 +28,7 @@ test('all nine demo phases dialogue preparation ending confirmation and record r
  const records=[];await page.setViewportSize({width:1440,height:900});
  for(const node of demoCatalog){await page.goto('/?demo='+node.id);await saved(page);const before=await demoGame(page);records.push(await palette(page,node.id));if(node.phase==='causal'||node.phase==='ending')await page.getByRole('button',{name:'继续当前遭遇',exact:true}).click();if(node.phase==='trial')await page.getByTestId('breakthrough').click();records.push(await palette(page,node.id+' detail'));
   if(node.phase==='trial'){await page.getByTestId('trial-review-entry').click();await expect(page.getByTestId('trial-entry-confirmation')).toBeVisible();records.push(await palette(page,node.id+' confirmation'));await page.getByTestId('trial-entry-cancel').click();}
-  if(node.phase==='ending'){await page.getByTestId('ending-depart').click();await expect(page.getByTestId('ascension-confirmation')).toBeVisible();records.push(await palette(page,node.id+' confirmation'));await page.getByTestId('ascension-cancel').click();}
+  if(node.phase==='ending'){await revealStoryChoice(page,'ending-depart');await page.getByTestId('ending-depart').click();await expect(page.getByTestId('ascension-confirmation')).toBeVisible();records.push(await palette(page,node.id+' confirmation'));await page.getByTestId('ascension-cancel').click();}
   if(node.id==='causal-help')await page.screenshot({path:info.outputPath('jade-causal-1440.png')});expect(await demoGame(page)).toEqual(before);
  }
  expect(await page.evaluate(async()=>(await indexedDB.databases()).some(d=>d.name==='chenyuan-playable-v1'))).toBe(false);await info.attach('demo-palette.json',{body:Buffer.from(JSON.stringify(records)),contentType:'application/json'});
@@ -55,8 +55,8 @@ test('event question and ending inspections remain read-only before the original
  for(const id of ['causal-help','trial-sword','ending-sword']){
   await page.goto('/?demo='+id);await saved(page);let before=await demoGame(page);
   if(id==='trial-sword'){await page.getByTestId('breakthrough').click();await page.getByTestId('trial-review-entry').click();await page.getByTestId('trial-confirm-entry').click();await saved(page);await expect.poll(async()=>(await demoGame(page)).core.revision).toBe(before.core.revision+1);expect(await demoGame(page)).toEqual(next(before,{type:'START_TRIAL'}));before=await demoGame(page);}
-  const resume=page.getByRole('button',{name:'继续当前遭遇',exact:true});if(await resume.isVisible())await resume.click();const peek=page.locator('.choice-peek:visible').first();await peek.click();await expect(page.locator('.choice-inspection[open]')).toBeVisible();await palette(page,id+' inspection');expect(await demoGame(page)).toEqual(before);await page.keyboard.press('Escape');await expect(peek).toBeFocused();expect(await demoGame(page)).toEqual(before);
-  let expected;if(id==='causal-help'){const button=page.locator('.choice-act:enabled:visible').first(),option=(await button.getAttribute('data-testid'))!.replace('decide-','');expected=next(before,{type:'DECIDE',option});await button.click();}else if(id==='trial-sword'){expected=next(before,{type:'ANSWER_TRIAL',answer:'accept'});await page.getByTestId('answer-accept').click();}else{expected=next(before,{type:'END',ending:'transmit'});await page.getByTestId('ending-transmit').click();await page.getByTestId('ascension-confirm').click();}
+  const resume=page.getByRole('button',{name:'继续当前遭遇',exact:true});if(await resume.isVisible())await resume.click();if(await page.getByTestId('narrative-catalogue').isVisible())await page.getByTestId('story-mode-choices').click();const peek=page.locator('.choice-peek:visible').first();await peek.click();await expect(page.locator('.choice-inspection[open]')).toBeVisible();await palette(page,id+' inspection');expect(await demoGame(page)).toEqual(before);await page.keyboard.press('Escape');await expect(peek).toBeFocused();expect(await demoGame(page)).toEqual(before);
+  let expected;if(id==='causal-help'){const button=page.locator('.choice-act:enabled:visible').first(),option=(await button.getAttribute('data-testid'))!.replace('decide-','');expected=next(before,{type:'DECIDE',option});await button.click();}else if(id==='trial-sword'){expected=next(before,{type:'ANSWER_TRIAL',answer:'accept'});await page.getByTestId('answer-accept').click();}else{expected=next(before,{type:'END',ending:'transmit'});await revealStoryChoice(page,'ending-transmit');await page.getByTestId('ending-transmit').click();await page.getByTestId('ascension-confirm').click();}
   await saved(page);await expect.poll(()=>demoGame(page)).toEqual(expected);if(id==='ending-sword'){await expect(page.getByTestId('life-title')).toBeVisible();await palette(page,'sealed life');await page.screenshot({path:info.outputPath('jade-ending-1440.png')});}
  }
 });

@@ -1,0 +1,61 @@
+{
+  "format": "chenyuan-story-journey",
+  "version": 1,
+  "task": "Goal2 T06",
+  "maxNewBytes": 48000,
+  "maxRowsPerPage": 4,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/story-pages.ts",
+      "bytes": 5939,
+      "sha256": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7"
+    },
+    {
+      "path": "web/src/NarrativePanel.vue",
+      "bytes": 4695,
+      "sha256": "7ffa04854c42ed4f036bbb1a530ef535ff8da199549bfa057135acea9d852283"
+    },
+    {
+      "path": "web/src/FateCatalogue.vue",
+      "bytes": 6128,
+      "sha256": "f7231af16cb5d2dc855a3ce4988b0412d3b04248df82bf73e6a1eab9b9151f18"
+    },
+    {
+      "path": "web/src/LifeCatalogue.vue",
+      "bytes": 3104,
+      "sha256": "70cc3054a97b7eb6cabf50ad27f0bda45e588017e1d0363d938684e018f490ea"
+    },
+    {
+      "path": "web/src/TrialCatalogue.vue",
+      "bytes": 10123,
+      "sha256": "a6cc542a448514e08d16fbe62e56a5e482be280cccfc942d5a5191e74cfed80b"
+    },
+    {
+      "path": "web/src/ReviewPages.vue",
+      "bytes": 870,
+      "sha256": "174210329c8aa9af93839f2a54cac0d8d76c50362c862bbc79096ecfeb92e7e2"
+    },
+    {
+      "path": "web/src/story-book.css",
+      "bytes": 6785,
+      "sha256": "c1bd6f7979931c42f0db1972b3b9428071e62633dd0d33c57a29d6be22d8b6ac"
+    }
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "<NarrativePanel ",
+      "<FateCatalogue ",
+      "<LifeCatalogue ",
+      "<TrialCatalogue ",
+      "<ReviewPages "
+    ],
+    "web/src/main.ts": [
+      "import './story-book.css'"
+    ]
+  },
+  "sourceReferences": [
+    "goal-2/amendments/2026-10-20-continue-story-journey.md",
+    "docs/implementation/goal-2-story-journey.md"
+  ]
+}

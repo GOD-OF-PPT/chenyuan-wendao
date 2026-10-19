@@ -2,7 +2,7 @@ import {test,expect,type Page} from '@playwright/test';
 import {advance} from '../../src/full/engine.ts';
 import {feedbackExamples} from '../../tests/action-feedback-fixtures.mjs';
 import {ACTION_MOTIONS} from '../src/action-feedback';
-import {snapshot,openEquipment,revealAction,revealItem} from './support';
+import {snapshot,openEquipment,revealAction,revealItem,revealStoryChoice,revealLifeField} from './support';
 test.use({actionTimeout:8000,navigationTimeout:15000});
 const examples=feedbackExamples();
 async function motionFrame(page:Page){return page.getByTestId('action-motion').evaluate(el=>({operation:el.getAttribute('data-operation'),family:el.getAttribute('data-family'),variant:el.getAttribute('data-variant'),pointer:getComputedStyle(el).pointerEvents,particles:el.querySelectorAll('.motion-particles>i').length,visible:Number(getComputedStyle(el).opacity)>.45,enemyImpact:document.querySelector('.enemy-art')?.classList.contains('actor-impact')??false,numbers:[...document.querySelectorAll<HTMLElement>('[data-testid=action-number]')].map(n=>({target:n.dataset.target,text:n.textContent??'',visible:Number(getComputedStyle(n).opacity)>.45})),numbersVisible:[...document.querySelectorAll<HTMLElement>('[data-testid=action-number]')].every(n=>Number(getComputedStyle(n).opacity)>.45)}));}
@@ -21,8 +21,9 @@ async function prepare(page:Page,input:any){let a={...input};const type=a.type;
  if(type==='SOURCE'){a={type:'SOURCE',sourceId:a.sourceId,count:1};await page.getByLabel('取材次数',{exact:true}).selectOption('1');}
  if(type==='BUY')await page.getByLabel('采购数量').fill(String(a.quantity));
  if(type==='START_TRIAL'){await page.getByTestId('breakthrough').click();await page.getByTestId('trial-review-entry').click();}
- if(type==='END')await page.getByTestId('ending-'+a.ending).click();
- if(type==='RETIRE'||type==='END_LIFE'){await page.getByTestId('hub-life').click();await page.getByTestId(type==='RETIRE'?'retire':'end-life').click();}
+ if(type==='END'){await revealStoryChoice(page,'ending-'+a.ending);await page.getByTestId('ending-'+a.ending).click();}
+ if(type==='RETIRE'||type==='END_LIFE'){await page.getByTestId('hub-life').click();await revealLifeField(page,type==='RETIRE'?'retire':'end-life');await page.getByTestId(type==='RETIRE'?'retire':'end-life').click();}
+ if(type==='EVENT')await revealAction(page,'event-'+a.event);if(type==='DECIDE')await revealStoryChoice(page,'decide-'+a.option);if(type==='ANSWER_TRIAL')await revealStoryChoice(page,'answer-'+a.answer);if(type==='END')await revealStoryChoice(page,'ending-'+a.ending);if(type==='RETIRE'||type==='END_LIFE')await revealLifeField(page,type==='RETIRE'?'retire':'end-life');
  const ids:any={CHOOSE:a.choice,TRAVEL:'return-cave',CULTIVATE:'cultivate',SOURCE:'source-'+a.sourceId,BUY:'buy-'+a.item,CRAFT:'craft-'+a.recipeId,SCHOOL:'school-'+a.school,STUDY:'study-manual',LEARN:'learn-'+a.skill,EQUIP:'equip-'+a.skill,FORGE:'forge-'+a.relic,EQUIP_RELIC:'equip-relic-'+a.relic,REST:'rest',BREAKTHROUGH:'breakthrough',EVENT:'event-'+a.event,DECIDE:'decide-'+a.option,ENCOUNTER:'encounter-'+a.enemy,BATTLE:a.move==='heal'?'battle-heal':a.move==='restore'?'battle-restore':a.move,START_TRIAL:'trial-confirm-entry',ANSWER_TRIAL:'answer-'+a.answer,END:'ascension-confirm',RETIRE:'life-confirm-end',END_LIFE:'life-confirm-end'};
  const button=type==='USE'||type==='SELL'?page.getByTestId('item-'+a.item).locator('xpath=ancestor::article').getByRole('button',{name:type==='USE'?'服用':/^售出/}):page.getByTestId(ids[type]);await expect(button).toBeEnabled();return{action:a,button};
 }

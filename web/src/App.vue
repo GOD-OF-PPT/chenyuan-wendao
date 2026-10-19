@@ -31,6 +31,12 @@ import ExplorePanel from './ExplorePanel.vue';
 import GoodsPanel from './GoodsPanel.vue';
 import PreparationPanel from './PreparationPanel.vue';
 import CultivationPanel from './CultivationPanel.vue';
+import NarrativePanel from './NarrativePanel.vue';
+import FateCatalogue from './FateCatalogue.vue';
+import LifeCatalogue from './LifeCatalogue.vue';
+import TrialCatalogue from './TrialCatalogue.vue';
+import {narrativeFor,type Reading} from './story-pages';
+import ReviewPages from './ReviewPages.vue';
 import {nextStep} from './play-flow';
 import {actionSeconds} from './action-timing';
 import {NPC_PORTRAITS,SCENE_ASSETS,DESKTOP_UI_ASSETS,PANEL_MATERIAL_ASSETS,sceneAssetPath} from './assets';
@@ -69,7 +75,7 @@ const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('')
 const equipmentOpen=ref(false),resumeVisible=ref(false),hubView=ref('home');
 const hubEntries=[{id:'forge',label:'丹炉',kind:'item',icon:'healing_pill'},{id:'skills',label:'功法',kind:'skill',icon:'sword_mind'},{id:'relics',label:'法宝',kind:'relic',icon:'cloud_mirror'},{id:'life',label:'生平',kind:'action',icon:'export'},{id:'goal',label:'目标',kind:'action',icon:'save'},{id:'help',label:'帮助',kind:'action',icon:'help'}] as const;
 let navigationRevision = 0;
-function selectTab(next: string) { navigationRevision++; tab.value = next;hubView.value=({'修行':'home','历练':'explore','行囊':'inventory','仙缘':'fate'} as Record<string,string>)[next]??'home'; return navigationRevision; }
+function selectTab(next: string) { navigationRevision++; resumeVisible.value=false; tab.value = next;hubView.value=({'修行':'home','历练':'explore','行囊':'inventory','仙缘':'fate'} as Record<string,string>)[next]??'home'; return navigationRevision; }
 const preparation = shallowRef<Action | null>(null);
 const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settings = ref<HTMLDialogElement>(), exportError = ref('');
 const settingsButton=ref<HTMLButtonElement>(),contentPanel=ref<HTMLElement>(),navHeight=ref(0);
@@ -77,8 +83,9 @@ const desktopMedia=window.matchMedia('(min-width:480px)'),wideScreen=ref(desktop
 function desktopChanged(){wideScreen.value=desktopMedia.matches;}
 onMounted(()=>desktopMedia.addEventListener('change',desktopChanged));onScopeDispose(()=>desktopMedia.removeEventListener('change',desktopChanged));
 const singleScreen=computed(()=>wideScreen.value&&fontScale.value===1),hubMain=computed(()=>singleScreen.value&&hubView.value==='home');
-const catalogueView=computed(()=>singleScreen.value&&(['journey','explore','inventory','forge','skills','relics','goal'].includes(hubView.value)||hubView.value==='cultivation'&&game.value?.core.player.realm!=='spirit'));
-const hubTitle=computed(()=>({journey:'突破筹备 · 下一步',explore:'历练 · 云岚山海',inventory:'行囊 · 随身物资',forge:'丹炉 · 固定配方',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',life:'修仙生平',goal:'目标与筹备',fate:'仙缘 · 人物与手记',cultivation:'修行 · 预算与成长',current:'当前遭遇',battle:'术法说明与战报',receipt:'本次行动结算',character:'道者 · 寿元与配装'} as Record<string,string>)[hubView.value]??'行道详情');
+const storyView=computed(()=>singleScreen.value&&(['fate','life','trial','battle'].includes(hubView.value)||hubView.value==='current'&&phase.value!=='opening'||hubView.value==='cultivation'&&game.value?.core.player.realm==='spirit'));
+const catalogueView=computed(()=>storyView.value||singleScreen.value&&(['journey','explore','inventory','forge','skills','relics','goal'].includes(hubView.value)||hubView.value==='cultivation'&&game.value?.core.player.realm!=='spirit'));
+const hubTitle=computed(()=>({journey:'突破筹备 · 下一步',explore:'历练 · 云岚山海',inventory:'行囊 · 随身物资',forge:'丹炉 · 固定配方',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',life:'修仙生平',goal:'目标与筹备',fate:'仙缘 · 人物与手记',cultivation:'修行 · 预算与成长',current:'当前遭遇',trial:'渡劫行程与续行',battle:'术法说明与战报',receipt:'本次行动结算',character:'道者 · 寿元与配装'} as Record<string,string>)[hubView.value]??'行道详情');
 let hubOpener:HTMLElement|null=null,hubOpenerId:string|undefined;
 function rememberHubOrigin(event?:Event){
  hubOpener=event?.currentTarget instanceof HTMLElement?event.currentTarget:focus.capture();
@@ -172,7 +179,9 @@ function cost(action: Action) {
   return preview && preview.requestedSteps > 1 ? '每次 ' + text : text;
 }
 function act(action: Action) { resumeVisible.value=false;if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); const owner=navigationRevision; return focus.afterAction(async()=>{await store.act(action);if(singleScreen.value&&!store.error&&owner===navigationRevision&&action.type==='ENCOUNTER'&&game.value?.battle){tab.value='修行';hubView.value='home';}},()=>owner===navigationRevision); }
-function retryOperation(){const owner=navigationRevision;return focus.afterAction(()=>store.retry(),()=>owner===navigationRevision);}
+async function storyAct(action:Action){const owner=navigationRevision;await act(action);if(!singleScreen.value||store.error||owner!==navigationRevision)return;if(action.type==='EVENT'){tab.value='修行';hubView.value='current';}else if(action.type==='DECIDE'){selectTab(game.value?.battle?'修行':'仙缘');}else if(action.type==='ANSWER_TRIAL'){selectTab('修行');}}
+function trackTrialMaterial(target:Parameters<typeof selectTracking>[0]){selectTracking(target);void openHub('goal');}
+function retryOperation(){const owner=navigationRevision;return focus.afterAction(async()=>{await store.retry();if(singleScreen.value&&!store.error&&owner===navigationRevision&&hubView.value==='current'&&game.value&&!narrativeFor(game.value))selectTab(game.value.battle?'修行':'仙缘');},()=>owner===navigationRevision);}
 async function travel(id: C.LocationId) {
   const navigation = ++navigationRevision;
   await act({ type: 'TRAVEL', location: id });
@@ -272,7 +281,7 @@ async function restore() {
 function exportLife() { if (game.value) download(exportLifeText(game.value), '尘缘问道-生平.txt', 'text/plain;charset=utf-8'); }
 async function showLife(event?:Event) {
   rememberHubOrigin(event);if(settings.value?.open){hubOpener=settingsButton.value??null;hubOpenerId=undefined;}settings.value?.close(); selectTab('仙缘');if(singleScreen.value)hubView.value='life';lifeOpen.value = true;
-  await nextTick();const title=lifeSection.value?.querySelector<HTMLElement>('[data-testid=life-title]');focus.target(title??lifeSection.value??null);
+  await nextTick();const title=document.querySelector<HTMLElement>('[data-testid=life-title]');focus.target(title??lifeSection.value??currentContent());
 }
 async function requestEnd(type: 'RETIRE' | 'END_LIFE') {
   if (!game.value || !can({type})) return;
@@ -361,6 +370,13 @@ async function retryAscension() {
   await store.retryFor(review.command.commandId); if (!store.error) await showAscendedLife();
 }
 function closeAscension() { if (ascensionIntent.value) store.discardRetryFor(ascensionIntent.value.command.commandId); ascensionIntent.value = null; }
+function confirmationReadings(kind:string):Reading[]{
+ if(kind==='life'&&lifeIntent.value){const r=lifeIntent.value.record;return[{key:'identity',title:'当前人生',testId:'life-review',text:r.overview.name+' · '+r.overview.ageLabel+' · '+r.overview.realmName+' · 行道'+r.overview.elapsedMonths+'游戏月'},{key:'scope',title:'保留与恢复',text:'当前存档与人物记录保留，可导出；恢复检查点会回退完整准备状态。此确认不会开启新的人生。'}];}
+ if(kind==='ending'&&ascensionIntent.value){const r=ascensionIntent.value.view.record;return[{key:'identity',title:'当前人生',testId:'ascension-review-identity',text:r.overview.name+' · '+r.overview.ageLabel+' · 行道'+r.overview.elapsedMonths+'游戏月'},{key:'opening',title:'开卷',text:r.opening.text},{key:'training',title:'配装',text:r.training.school+' · '+r.training.loadout.map(s=>s.name).join(' / ')+' · '+r.training.equippedRelic},...r.decisions.map(d=>({key:d.id,title:d.npc,text:d.text})),{key:'pledges',title:'护阵',text:r.pledges.text}];}
+ if(kind==='restore'&&trialRestoreIntent.value){const r=trialRestoreIntent.value.checkpoint.target;return[{key:'identity',title:'恢复目标',testId:'trial-restore-target',text:r.name+' · '+C.realms[r.realm].name+' · 行道'+r.months+'游戏月'},{key:'supplies',title:'准备状态',text:'气血 '+r.hp+' · 灵力 '+r.mp+' · 渡劫引 '+r.inventory.ascension_seal}];}
+ if(kind==='entry'&&trialIntent.value){const r=trialIntent.value.view,p=r.preparation,m=r.snapshotSummary;return[{key:'identity',title:'正式入场',testId:'trial-review-identity',text:m.name+' · '+m.realm+' · '+formatAgeMonths(m.ageMonths)+' · 行道'+m.elapsedMonths+'游戏月'},{key:'stats',title:'气血灵力',text:'气血 '+p.hp+' / '+p.maxHp+' · 灵力 '+p.mp+' / '+p.maxMp+' · 灵石 '+m.stones},{key:'loadout',title:'配装',text:p.loadout.map(s=>s.name).join(' / ')+' · '+p.relic},{key:'scope',title:'完整准备范围',text:'包括全部已掌握与剑简资格、背包、装备/法宝、人物选择、里程碑与当前进度，不只保存境界。'},{key:'inventory',title:'准备物资',text:m.inventory.map(i=>i.name+' ×'+i.quantity).join(' · ')},{key:'records',title:'已掌握记录',text:'已掌握 '+m.learned.length+'项，已有法宝 '+m.relics.length+'件，已选事件 '+m.choiceCount+'项。'},{key:'journey',title:'入场之后',text:'开始后先回答问心，准备与消耗跨三关保留。此处只确认入场，不代表已经渡劫成功。'}];}
+ return[];
+}
 onMounted(async() => {await experience.init();if(appActive)await initialiseGame();});
 </script>
 
@@ -410,7 +426,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
           <BattlePanel v-else-if="game.battle" :game="game" :can="can" :cost="cost" :why="why" compact @move="battle" @details="openHub('battle',$event)"/>
           <template v-else-if="phase==='idle'&&game.status==='active'&&core.world.location==='cave'">
             <AssetImage class="hub-meditation-art" :path="DESKTOP_UI_ASSETS.meditation" asset-id="hub-meditation" fit="contain" eager aria-hidden="true"/>
-            <div class="hub-action-heading"><h2>{{needsPreparation?step?.title:primaryBreakthrough?goal?.title:'自然吐纳'}}</h2><button class="text-button" data-testid="hub-cultivation-details" @click="openHub('cultivation',$event)">预算与成长</button></div>
+            <div class="hub-action-heading"><h2>{{needsPreparation?step?.title:primaryBreakthrough?goal?.title:'自然吐纳'}}</h2><button v-if="store.trialRecovery" class="text-button" data-testid="hub-trial-result" @click="openHub('trial',$event)">查看渡劫结果</button><button v-else class="text-button" data-testid="hub-cultivation-details" @click="openHub('cultivation',$event)">预算与成长</button></div>
             <p class="journey-hint" data-testid="journey-hint"><strong>{{step?.title}}</strong><span>{{step?.detail}}</span></p>
 
             <div id="cultivation-actions" class="hub-cultivation" tabindex="-1" data-primary-region data-testid="cultivation-actions"><div class="hub-main-action" data-testid="cultivation-card" :data-primary-action="needsSchool?'school':needsPreparation?'prepare':primaryBreakthrough?'breakthrough':'cultivate'">
@@ -440,8 +456,12 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
         <PreparationPanel v-if="singleScreen&&hubView==='journey'" :game="game" :busy="store.busy" :available="store.available" @act="act" @navigate="navigate" @home="closeHub"/>
         <ExplorePanel v-if="singleScreen&&hubView==='explore'" :game="game" :busy="store.busy" :available="store.available" :highlight="highlight" :collection="collectionTarget" :purchase-quantity="quantity" @act="act" @travel="travel" @home="closeHub"/>
         <GoodsPanel v-if="singleScreen&&(hubView==='inventory'||hubView==='forge')" :mode="hubView==='forge'?'forge':'inventory'" :game="game" :busy="store.busy" :available="store.available" :highlight="highlight" :consumption="consumption" @act="act" @track="selectTracking" @travel="travel"/>
+        <FateCatalogue v-if="storyView&&(hubView==='fate'||hubView==='current'&&phase==='idle')&&game.status==='active'" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" @act="storyAct" @navigate="navigate" @life="showLife" @resume="resumeEncounter"/>
+        <LifeCatalogue v-if="storyView&&(hubView==='life'||hubView==='fate'&&game.status!=='active')" :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset"/>
+        <NarrativePanel v-if="storyView&&hubView==='current'&&narrativeFor(game)" :game="game" :enabled="store.available" :busy="store.busy" :consumption="consumption" @act="storyAct" @life="showLife" @progress="openHub('trial')"/>
+        <TrialCatalogue v-if="storyView&&(hubView==='cultivation'||['trial','battle'].includes(hubView)||hubView==='current'&&!narrativeFor(game)&&phase!=='idle')" :game="game" :kind="hubView==='cultivation'?'preparation':'progress'" :enabled="store.available" :busy="store.busy" :checkpoint="store.checkpointSummary" :recovery="store.trialRecovery" @review="reviewTrial" @restore="hubView==='cultivation'?restore():requestTrialRestore()" @export="exportSave" @prepare="showTrialPreparation" @resume="closeHub" @navigate="navigate" @track="trackTrialMaterial"/>
         <TrialProgressPanel v-if="!catalogueView&&(journey || store.trialRecovery)" :journey="journey" :recovery="store.trialRecovery" :checkpoint="store.checkpointSummary" :enabled="store.available && !store.busy" @restore="requestTrialRestore" @export="exportSave" @prepare="showTrialPreparation"/>
-        <section v-if="!singleScreen||(game.status!=='active'&&hubView==='life')||(['home','fate','current','battle'].includes(hubView)||hubView==='cultivation'&&core.player.realm==='spirit')" ref="contentPanel" id="game-content" tabindex="-1" aria-label="当前内容" class="paper content-panel" :class="{'battle-content':game.battle&&!inspectingInventory}">
+        <section v-if="!storyView&&(!singleScreen||(game.status!=='active'&&hubView==='life')||(['home','fate','current','battle'].includes(hubView)||hubView==='cultivation'&&core.player.realm==='spirit'))" ref="contentPanel" id="game-content" tabindex="-1" aria-label="当前内容" class="paper content-panel" :class="{'battle-content':game.battle&&!inspectingInventory}">
           <details v-if="game.battle&&!inspectingInventory&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" class="battle-guidance"><summary>查看本场行道提示</summary><GuidancePanel :guide="guidance" @skip="skipGuidance" @help="showGameplayHelp"/></details>
           <GuidancePanel v-else-if="!cultivationHome&&phase!=='opening'&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipGuidance" @help="showGameplayHelp"/>
           <section v-if="inspectingInventory" class="pending-inspection" data-testid="pending-inspection"><h3>当前遭遇待继续</h3><p>查看不会消耗游戏月，也不会改变当前事件、敌方意图或回合。物品使用、旅行与换装仍受当前遭遇限制。</p><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></section>
@@ -518,13 +538,13 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
           </template>
           <GuidancePanel v-if="(cultivationHome||phase==='opening')&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipGuidance" @help="showGameplayHelp"/>
         </section>
-        <div v-if="tab==='仙缘'&&phase!=='idle'&&game.status==='active'" class="paper inline-actions"><button type="button" class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></div>
-        <RelationshipPanel v-if="tab==='仙缘' && phase!=='idle'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
-        <details v-if="tab==='仙缘' && game.status==='active'&&(!singleScreen||hubView==='life')" ref="lifeSection" class="paper life-section" :open="lifeOpen" @toggle="lifeOpen=($event.target as HTMLDetailsElement).open" data-testid="life-section"><summary>修仙生平 · 查看、导出与收卷</summary><LifePanel v-if="lifeOpen" :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset"/></details>
+        <div v-if="!storyView&&tab==='仙缘'&&phase!=='idle'&&game.status==='active'" class="paper inline-actions"><button type="button" class="text-button" data-testid="show-life" @click="showLife">查看修仙生平 →</button><button type="button" data-testid="resume-encounter" @click="resumeEncounter">返回当前遭遇</button></div>
+        <RelationshipPanel v-if="!storyView&&tab==='仙缘' && phase!=='idle'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate"/>
+        <details v-if="!storyView&&tab==='仙缘' && game.status==='active'&&(!singleScreen||hubView==='life')" ref="lifeSection" class="paper life-section" :open="lifeOpen" @toggle="lifeOpen=($event.target as HTMLDetailsElement).open" data-testid="life-section"><summary>修仙生平 · 查看、导出与收卷</summary><LifePanel v-if="lifeOpen" :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset"/></details>
         <GrowthPanel v-if="!singleScreen&&tab==='修行' && phase==='idle' && C.rank(core.player.realm)>=C.rank('foundation') && core.player.realm!=='spirit'" :game="game" :enabled="store.available && !store.busy" @navigate="navigate" @track="selectTracking"/>
-        <TrialPreparationPanel v-if="(!singleScreen||hubView==='cultivation')&&tab==='修行' && phase==='idle' && core.player.realm==='spirit'" :game="game" :enabled="store.available && !store.busy" :checkpoint="store.checkpointSummary" @navigate="navigate" @track="selectTracking" @review="reviewTrial" @restore="restore"/>
+        <TrialPreparationPanel v-if="!storyView&&(!singleScreen||hubView==='cultivation')&&tab==='修行' && phase==='idle' && core.player.realm==='spirit'" :game="game" :enabled="store.available && !store.busy" :checkpoint="store.checkpointSummary" @navigate="navigate" @track="selectTracking" @review="reviewTrial" @restore="restore"/>
         <details v-if="tab==='修行' && (!singleScreen&&phase!=='opening'||singleScreen&&['skills','relics'].includes(hubView)) && game.status==='active'" class="equipment-disclosure" data-testid="equipment-section" :open="singleScreen||equipmentOpen" @toggle="equipmentOpen=($event.target as HTMLDetailsElement).open"><summary data-testid="equipment-toggle">功法与法宝 <span>{{game.school==='sword'?'当前剑修':game.school==='talisman'?'当前符修':'查看与选择修法'}} · {{equipmentOpen?'收起':'展开'}}</span></summary><EquipmentPanel v-if="equipmentOpen" :game="game" :enabled="store.available" :busy="store.busy" :highlight="highlight" :catalogue="hubView==='relics'?'relics':'skills'" :consumption="consumption" @act="act" @track="selectTracking" @navigate="navigate"/></details>
-        <div v-if="!singleScreen||!['receipt','character','journey','explore','inventory','forge','skills','relics','cultivation'].includes(hubView)" class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><ActionFeedback v-if="store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/></div>
+        <div v-if="!catalogueView&&(!singleScreen||!['receipt','character','journey','explore','inventory','forge','skills','relics','cultivation'].includes(hubView))" class="feedback paper" aria-live="polite" data-testid="feedback"><span>手记</span><p>{{game.journal.at(-1)}}</p><ActionFeedback v-if="store.lastResult" :result="store.lastResult" :replayed="store.lastReplayed"/></div>
       </section>
       <aside v-show="!singleScreen||hubView==='goal'" class="right-column"><GoalPanel :game="game" :target="tracking.target.value" :enabled="store.available && !store.busy" :notice="tracking.notice.value" @select="selectTracking" @navigate="navigate" @preparation="preparation=$event"/><section v-if="!singleScreen" class="paper recent-action"><div class="section-label">最近行动</div><p>{{game.journal.at(-1)}}</p><p v-if="store.lastResult" class="small">{{formatDelta(store.lastResult.delta)}}</p></section><section v-if="!singleScreen" class="paper fate-summary"><div class="section-label">仙缘因果</div><div v-for="person in relationships.slice(0,2)" :key="person.id" :data-testid="`fate-summary-${person.id}`"><PortraitImage class="fate-portrait" :id="person.id" :fallback="person.seal"/><h3>{{person.name}} · {{person.label}}</h3><p class="small">{{person.summary}}</p></div><button class="text-button" @click="selectTab('仙缘')">展开仙缘 →</button></section>
       <section v-if="!singleScreen" class="note"><span>此地机缘</span><p>{{location.description}}</p><small>试玩版本 · 数值未平衡<br>约30分钟理解玩法，不限定通关时间</small></section></aside>
@@ -551,57 +571,65 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
     <dialog ref="lifeDialog" class="paper life-confirm" data-testid="life-confirmation" aria-labelledby="life-confirm-title" @cancel="cancelLife" @close="closeLifeReview">
       <template v-if="lifeIntent">
         <header><h2 id="life-confirm-title" tabindex="-1" data-dialog-initial>{{lifeIntent.command.type==='RETIRE'?'确认主动归隐':'确认度过最后一月'}}</h2></header>
+        <template v-if="singleScreen"><p>{{lifeIntent.command.type==='RETIRE'?'确认后主动归隐，不消耗剩余游戏月，不写作寿尽。':'确认后消耗最后1游戏月，达到当前境界寿限，以寿尽收卷。'}}</p><ReviewPages :rows="confirmationReadings('life')" :identity="lifeIntent.command.commandId"/></template><template v-else>
         <p data-testid="life-review">{{lifeIntent.record.overview.name}} · {{lifeIntent.record.overview.ageLabel}} · {{lifeIntent.record.overview.realmName}} · 行道{{lifeIntent.record.overview.elapsedMonths}}游戏月</p>
         <p>{{lifeIntent.command.type==='RETIRE'?'确认后以主动归隐收卷，不消耗剩余游戏月，不写作寿尽。':'确认后将消耗最后1游戏月，达到当前境界寿限，以寿尽收卷。'}}</p>
         <p>当前存档与人物记录保留，可导出；恢复检查点会回退完整准备状态。此确认不会开启新的人生。</p>
+        </template>
         <p v-if="lifeStale" role="alert" data-testid="life-stale">进度已更新，请取消后重新查看与确认。此处不会结束另一份进度。</p>
         <p v-if="store.error" role="alert" data-testid="life-error">{{store.error}}</p>
         <button v-if="store.canRetryFor(lifeIntent.command.commandId)" data-testid="life-retry" @click="retryEnd" :disabled="store.busy || lifeStale">重试同一次收卷</button>
         <button data-testid="life-cancel" @click="lifeDialog?.close()" :disabled="store.busy">继续此生</button>
-        <button data-testid="life-confirm-end" @click="confirmEnd" :disabled="store.busy || !store.available || lifeStale">{{store.busy?'正在保存…':lifeIntent.command.type==='RETIRE'?'确认归隐':'确认寿尽'}}</button>
+        <button data-testid="life-confirm-end" @click="confirmEnd" :disabled="store.busy || !store.available || lifeStale">{{store.busy?store.saveLabel+'…':lifeIntent.command.type==='RETIRE'?'确认归隐':'确认寿尽'}}</button>
       </template>
     </dialog>
     <dialog ref="ascensionDialog" class="paper life-confirm" data-testid="ascension-confirmation" aria-labelledby="ascension-title" @cancel="cancelLife" @close="closeAscension">
       <template v-if="ascensionIntent">
         <h2 id="ascension-title" tabindex="-1" data-dialog-initial>确认{{ascensionIntent.choice.label}}</h2>
+        <template v-if="singleScreen"><p data-testid="ascension-review-description">{{ascensionIntent.choice.description}}</p><p>确认保存后以所选结尾封卷，不再继续本卷修炼或战斗。当前物品、配装与人物记录保留，不新增道具或上界玩法。</p><ReviewPages :rows="confirmationReadings('ending')" :identity="ascensionIntent.command.commandId"/></template><template v-else>
         <p data-testid="ascension-review-identity">{{ascensionIntent.view.record.overview.name}} · {{ascensionIntent.view.record.overview.ageLabel}} · 行道{{ascensionIntent.view.record.overview.elapsedMonths}}游戏月</p>
         <p data-testid="ascension-review-description">{{ascensionIntent.choice.description}}</p>
         <p>确认保存后，以所选结尾封卷。不再继续本卷的修炼或战斗；当前物品、配装与人物记录保留，不新增道具奖励或上界玩法。</p>
         <details><summary>此生实际来路</summary><p>{{ascensionIntent.view.record.opening.text}}</p><p>{{ascensionIntent.view.record.training.school}} · {{ascensionIntent.view.record.training.loadout.map(slot=>slot.name).join(' / ')}} · {{ascensionIntent.view.record.training.equippedRelic}}</p><p v-for="decision in ascensionIntent.view.record.decisions" :key="decision.id">{{decision.npc}} · {{decision.text}}</p><p v-if="!ascensionIntent.view.record.decisions.length">没有其他已选事件记录，不补写故人或盟约。</p><p>{{ascensionIntent.view.record.pledges.text}}</p></details>
+        </template>
         <p v-if="ascensionStale" data-testid="ascension-stale" role="alert">进度已更新，请取消后重新核对；此处不会替另一份进度选择结尾。</p>
         <p v-if="store.error" data-testid="ascension-error" role="alert">{{store.error}}</p>
         <button v-if="store.canRetryFor(ascensionIntent.command.commandId)" data-testid="ascension-retry" @click="retryAscension" :disabled="store.busy || ascensionStale">重试同一次封卷</button>
         <button data-testid="ascension-cancel" @click="ascensionDialog?.close()" :disabled="store.busy">继续核对</button>
-        <button class="primary" data-testid="ascension-confirm" @click="confirmAscension" :disabled="store.busy || !store.available || ascensionStale">{{store.busy?'正在保存…':'确认飞升并封卷'}}</button>
+        <button class="primary" data-testid="ascension-confirm" @click="confirmAscension" :disabled="store.busy || !store.available || ascensionStale">{{store.busy?store.saveLabel+'…':'确认飞升并封卷'}}</button>
       </template>
     </dialog>
     <dialog ref="trialRestoreDialog" class="paper life-confirm" data-testid="trial-restore-confirmation" aria-labelledby="trial-restore-title" @cancel="cancelLife" @close="closeTrialRestore">
       <template v-if="trialRestoreIntent">
         <h2 id="trial-restore-title" tabindex="-1" data-dialog-initial>恢复完整入场准备</h2>
+        <template v-if="singleScreen"><p>将放弃本轮及入场后的进展，物品、气血灵力、配装、人物选择、里程碑和年月一同回到准备快照。不会单独补发渡劫引，成功后仍可再次使用此检查点。</p><ReviewPages :rows="confirmationReadings('restore')" :identity="trialRestoreIntent.command.commandId"/></template><template v-else>
         <p data-testid="trial-restore-target">{{trialRestoreIntent.checkpoint.target.name}} · {{C.realms[trialRestoreIntent.checkpoint.target.realm].name}} · 行道{{trialRestoreIntent.checkpoint.target.months}}游戏月</p>
         <p>将放弃本轮及入场后的进展，物品、气血灵力、配装、人物选择、里程碑和年月一同回到该准备快照。不会单独补发渡劫引；恢复成功后，仍可再次使用这个检查点。</p>
         <p>准备气血 {{trialRestoreIntent.checkpoint.target.hp}} · 灵力 {{trialRestoreIntent.checkpoint.target.mp}} · 渡劫引 {{trialRestoreIntent.checkpoint.target.inventory.ascension_seal}}</p>
+        </template>
         <p v-if="trialRestoreStale" role="alert" data-testid="trial-restore-stale">进度已更新，请关闭后重新核对；此处不会回退另一份进度。</p>
         <p v-if="store.error" role="alert" data-testid="trial-restore-error">{{store.error}}</p>
         <button v-if="store.canRetryFor(trialRestoreIntent.command.commandId)" data-testid="trial-restore-retry" @click="retryTrialRestore" :disabled="store.busy || trialRestoreStale">重试同一次完整恢复</button>
         <button data-testid="trial-restore-cancel" @click="trialRestoreDialog?.close()" :disabled="store.busy">保留当前进度</button>
-        <button data-testid="trial-restore-confirm" class="primary" @click="confirmTrialRestore" :disabled="store.busy || !store.available || trialRestoreStale">{{store.busy?'正在保存…':'确认恢复完整准备'}}</button>
+        <button data-testid="trial-restore-confirm" class="primary" @click="confirmTrialRestore" :disabled="store.busy || !store.available || trialRestoreStale">{{store.busy?store.saveLabel+'…':'确认恢复完整准备'}}</button>
       </template>
     </dialog>
     <dialog ref="trialDialog" class="paper life-confirm" data-testid="trial-entry-confirmation" aria-labelledby="trial-entry-title" @cancel="cancelLife" @close="closeTrialReview">
       <template v-if="trialIntent">
         <header><h2 id="trial-entry-title" tabindex="-1" data-dialog-initial>核对正式入场</h2></header>
+        <template v-if="singleScreen"><p data-testid="trial-review-cost">确认后消耗：{{formatCosts(trialIntent.view.costs)}}。扣物、完整准备检查点与问心同次保存成功后才进入。</p><ReviewPages :rows="confirmationReadings('entry')" :identity="trialIntent.command.commandId"/></template><template v-else>
         <p data-testid="trial-review-identity">{{trialIntent.view.snapshotSummary.name}} · {{trialIntent.view.snapshotSummary.realm}} · {{formatAgeMonths(trialIntent.view.snapshotSummary.ageMonths)}} · 行道{{trialIntent.view.snapshotSummary.elapsedMonths}}游戏月</p>
         <p data-testid="trial-review-cost">确认后消耗：{{formatCosts(trialIntent.view.costs)}}。扣物、完整准备检查点与问心同次保存成功后才进入。</p>
         <p>气血 {{trialIntent.view.preparation.hp}} / {{trialIntent.view.preparation.maxHp}} · 灵力 {{trialIntent.view.preparation.mp}} / {{trialIntent.view.preparation.maxMp}} · 灵石 {{trialIntent.view.snapshotSummary.stones}}</p>
         <p>配装：{{trialIntent.view.preparation.loadout.map(slot=>slot.name).join(' / ')}} · {{trialIntent.view.preparation.relic}}</p>
         <details><summary>即将保存的完整准备范围</summary><p>包括全部已掌握与剑简资格、背包、装备/法宝、人物选择、里程碑与当前进度；不只保存境界。</p><p>{{trialIntent.view.snapshotSummary.inventory.map(item=>item.name+' ×'+item.quantity).join(' · ')}}</p><p>已掌握 {{trialIntent.view.snapshotSummary.learned.length}}项，已有法宝 {{trialIntent.view.snapshotSummary.relics.length}}件，已选事件 {{trialIntent.view.snapshotSummary.choiceCount}}项。</p></details>
         <p>开始后先回答问心，准备与消耗跨三关保留。此处只确认入场，不代表已经渡劫成功。</p>
+        </template>
         <p v-if="trialStale" role="alert" data-testid="trial-review-stale">进度已更新，请返回准备页重新核对；此处不会启动另一份进度。</p>
         <p v-if="store.error" role="alert" data-testid="trial-entry-error">{{store.error}}</p>
         <button v-if="store.canRetryFor(trialIntent.command.commandId)" data-testid="trial-entry-retry" @click="retryTrial" :disabled="store.busy || trialStale">重试同一次入场</button>
         <button data-testid="trial-entry-cancel" @click="trialDialog?.close()" :disabled="store.busy">返回准备</button>
-        <button class="primary" data-testid="trial-confirm-entry" @click="confirmTrial" :disabled="store.busy || !store.available || trialStale">{{store.busy?'正在保存…':'确认保存准备并入场'}}</button>
+        <button class="primary" data-testid="trial-confirm-entry" @click="confirmTrial" :disabled="store.busy || !store.available || trialStale">{{store.busy?store.saveLabel+'…':'确认保存准备并入场'}}</button>
       </template>
     </dialog>
   </div>

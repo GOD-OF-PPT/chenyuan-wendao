@@ -6,7 +6,20 @@ export async function useJourneyClock(page:Page){await page.clock.install();virt
 export async function finishJourneyClock(page:Page){if(virtualJourneys.has(page)){await expect(page.getByTestId('action-execution')).toBeVisible();await page.clock.fastForward(2500);}}
 export async function revealPaged(page:Page,id:string,panelId:string,label?:string){const target=page.getByTestId(id),panel=page.getByTestId(panelId);if(await target.isVisible()||!await panel.isVisible())return;const pager=label?panel.getByRole('navigation',{name:label+'翻页'}):panel.locator('.catalogue-pager').last();const prev=pager.getByTestId('catalogue-prev'),next=pager.getByTestId('catalogue-next');for(let i=0;i<30&&await prev.isEnabled();i++)await prev.click();for(let i=0;i<30&&!await target.isVisible()&&await next.isEnabled();i++)await next.click();await expect(target).toBeVisible();}
 export async function revealItem(page:Page,id:string){await revealPaged(page,'item-'+id,'inventory-catalogue');}
+export async function revealStoryChoice(page:Page,id:string){
+ if(await page.getByTestId(id).isVisible())return;
+ const resume=page.getByRole('button',{name:'继续当前遭遇',exact:true});if(await resume.isVisible())await resume.click();
+ if(await page.getByTestId('narrative-catalogue').isVisible()){await page.getByTestId('story-mode-choices').click();await revealPaged(page,id,'narrative-catalogue','剧情');}
+}
+export async function revealLifeField(page:Page,id:string){
+ if(await page.getByTestId(id).isVisible())return;
+ const mode=/^(retire|end-life|life-(restore|restart|inventory|recovery-note))/.test(id)?'seal':/^life-(skills|loadout|relics)/.test(id)?'training':/^life-(decisions|pledges|battles|no-decisions)/.test(id)?'decisions':'life';
+ const button=page.getByTestId('life-mode-'+mode);if(await button.isVisible()){await button.click();await revealPaged(page,id,'life-panel','生平');}
+}
 export async function revealAction(page:Page,id:string){
+ if(/^(decide-|answer-|ending-)/.test(id))await revealStoryChoice(page,id);
+ if(/^(retire$|end-life$|life-restore$|life-restart$)/.test(id))await revealLifeField(page,id);
+ if(id.startsWith('event-')&&await page.getByTestId('fate-catalogue').isVisible()){await page.getByTestId('fate-mode-events').click();await revealPaged(page,id,'fate-catalogue','仙缘');return;}
  if(/^(travel-|source-|encounter-|buy-)/.test(id)&&await page.locator('.single-screen').count()){
   if(!await page.getByTestId('explore-catalogue').isVisible())await page.getByTestId('tab-1').click();
   const mode=id.startsWith('travel-')?'travel':id.startsWith('source-')?'source':id.startsWith('encounter-')?'battle':'purchase';await page.getByTestId('explore-mode-'+mode).click();await revealPaged(page,id,'explore-catalogue');return;
