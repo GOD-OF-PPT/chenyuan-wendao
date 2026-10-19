@@ -1,6 +1,6 @@
 import { expect, type Page } from '@playwright/test';
 import * as C from '../../src/full/content.ts';
-import { action, snapshot, start, travel } from './support';
+import { action, snapshot, start, travel,openEquipment } from './support';
 
 export async function go(page: Page, location: C.LocationId) {
   if ((await snapshot(page)).core.world.location !== location) await travel(page, location);
@@ -52,6 +52,7 @@ export async function nextRealm(page: Page, strategy: 'craft' | 'purchase') {
   }
   if (realm.pill && C.rank(before.core.player.realm) >= C.rank('foundation')) {
     await page.getByTestId('tab-0').click(); const ready = await snapshot(page);
+    if(await page.getByTestId('hub-cultivation-details').isVisible())await page.getByTestId('hub-cultivation-details').click();
     await expect(page.getByTestId('growth-pill-ready')).toBeVisible();
     expect(await snapshot(page)).toEqual(ready);
     if (ready.core.player.xp < realm.xpCap) await expect(page.getByTestId('breakthrough')).toBeDisabled();
@@ -70,7 +71,7 @@ export async function prepareRelic(page: Page, id: string) {
 }
 export async function learn(page: Page, id: string) {
   await funds(page, C.skills[id].price); await go(page, 'sect'); await page.getByTestId('tab-0').click();
-  await page.getByTestId(`track-skill-${id}`).click(); const before = await snapshot(page);
+  await openEquipment(page);await page.getByTestId(`track-skill-${id}`).click();if(await page.getByTestId('feature-goal').isVisible())await page.getByTestId('feature-goal').click(); const before = await snapshot(page);
   await page.getByTestId('goal-location').click();
   await expect(page.getByTestId(`learn-${id}`)).toBeFocused(); expect(await snapshot(page)).toEqual(before);
   await action(page, `learn-${id}`); const after = await snapshot(page);

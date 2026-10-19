@@ -993,13 +993,13 @@
         },
         {
           "path": "web/src/style.css",
-          "bytes": 17629,
-          "sha256": "1baa2d7269ddbec88101a7a79dadc9de6f3c77d02006be7de9daab9147662fc8"
+          "bytes": 16526,
+          "sha256": "5f1c1bdd58ff91debf24606c039780af729957b013a320332f2dc02c73d932a9"
         },
         {
           "path": "web/src/shell.css",
-          "bytes": 28620,
-          "sha256": "4fb77d3d4e87d050282eca53145bc251aa5621ea41a9b42858483d16c7392ebb"
+          "bytes": 28472,
+          "sha256": "9399e3821fdc8b8acb5b92eb9dd948085b1a90e67595552a9a362e8332dcadc9"
         },
         {
           "path": "web/src/focus.ts",
@@ -1013,8 +1013,8 @@
         },
         {
           "path": "web/src/BattlePanel.vue",
-          "bytes": 9324,
-          "sha256": "ea1c4ad65f9a2f193e928d45dfb57aba662ac53da49969a23790839ca7aeeb68"
+          "bytes": 9504,
+          "sha256": "ef9f639802e61b851efd592a72c31f0da41844341da35f8bf11d230991cfd5b3"
         }
       ]
     },

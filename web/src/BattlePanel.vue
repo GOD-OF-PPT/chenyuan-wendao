@@ -6,8 +6,8 @@ import {intent} from '../../src/full/engine.ts';
 import AssetImage from './AssetImage.vue';
 import {ENEMY_ASSETS,sceneAssetPath} from './assets';
 import {scenePresentation} from './scene-presentation';
-const props=defineProps<{game:Game;can:(action:Action)=>boolean;cost:(action:Action)=>string;why:(action:Action)=>string}>();
-const emit=defineEmits<{move:[move:Move]}>();
+const props=defineProps<{game:Game;compact?:boolean;can:(action:Action)=>boolean;cost:(action:Action)=>string;why:(action:Action)=>string}>();
+const emit=defineEmits<{move:[move:Move];details:[event:MouseEvent]}>();
 const battle=computed(()=>props.game.battle!),enemy=computed(()=>C.enemies[battle.value.enemy]);
 const forecast=computed(()=>intent(battle.value)),player=computed(()=>props.game.core.player),realm=computed(()=>C.realms[player.value.realm]);
 const backdrop=computed(()=>sceneAssetPath(scenePresentation(props.game)));
@@ -24,7 +24,7 @@ function focusDecisions(){document.getElementById('battle-decisions')?.focus();}
 </script>
 <template>
  <section class="battle-stage" data-testid="battle-stage" :data-enemy="battle.enemy" aria-label="当前斗法">
-  <div class="battle-heading"><span class="section-label">斗法 · <span data-testid="round">第 {{battle.round+1}} 回合</span></span><button type="button" class="text-button battle-jump" @click="focusDecisions">前往本回合行动 ↓</button></div>
+  <div class="battle-heading"><span class="section-label">斗法 · <span data-testid="round">第 {{battle.round+1}} 回合</span></span><button v-if="compact" type="button" class="text-button" @click="emit('details',$event)">术法与战报</button><button v-else type="button" class="text-button battle-jump" @click="focusDecisions">前往本回合行动 ↓</button></div>
   <div class="battle-hero">
    <AssetImage class="battle-backdrop" :path="backdrop" asset-id="battle-environment" eager><span class="battle-backdrop-fallback"/></AssetImage>
    <div class="enemy-art" aria-hidden="true"><AssetImage :path="ENEMY_ASSETS[battle.enemy]" :asset-id="`enemy-${battle.enemy}`" fit="contain" eager><span class="enemy-fallback">{{enemy.trial?'劫':'敌'}}<small>{{enemy.name}}</small></span></AssetImage></div>
@@ -38,7 +38,7 @@ function focusDecisions(){document.getElementById('battle-decisions')?.focus();}
   <div class="battle-supplies"><span class="small">丹药占用一回合</span><div class="inline-actions"><button data-testid="battle-heal" :disabled="!can({type:'BATTLE',move:'heal'})" @click="emit('move','heal')">回春丹 ×{{game.core.inventory.healing_pill}}<small>{{why({type:'BATTLE',move:'heal'})}}</small></button><button data-testid="battle-restore" :disabled="!can({type:'BATTLE',move:'restore'})" @click="emit('move','restore')">回灵丹 ×{{game.core.inventory.spirit_pill}}<small>{{why({type:'BATTLE',move:'restore'})}}</small></button><button data-testid="flee" :disabled="!can({type:'BATTLE',move:'flee'})" @click="emit('move','flee')">撤回洞府<small>{{why({type:'BATTLE',move:'flee'})}}</small></button></div></div>
   <p v-if="enemy.trial" class="small" data-testid="trial-battle-guidance">观察敌方意图再行动。普通攻击与护体可回灵；丹药占用一个回合，退离将结束本轮渡劫。</p>
   <div v-if="battle.log.length" class="battle-latest" aria-live="polite" data-testid="battle-latest"><span>刚才的交锋</span><p>{{game.journal.at(-1)}}</p></div>
-  <details class="battle-details"><summary>术法说明与本场战报</summary><p v-for="move in ['technique','release'] as const" :key="move" class="small">{{label(move)}}：{{skill(move)?.description??'引气入体后选择修法。'}}</p><div v-if="battle.log.length" class="battle-log" tabindex="0" aria-label="本场战报"><p v-for="(line,index) in battle.log" :key="index">{{line}}</p></div><p v-else class="small">尚未行动。本回合结果会在保存后显示。</p></details>
+  <details v-if="!compact" class="battle-details"><summary>术法说明与本场战报</summary><p v-for="move in ['technique','release'] as const" :key="move" class="small">{{label(move)}}：{{skill(move)?.description??'引气入体后选择修法。'}}</p><div v-if="battle.log.length" class="battle-log" tabindex="0" aria-label="本场战报"><p v-for="(line,index) in battle.log" :key="index">{{line}}</p></div><p v-else class="small">尚未行动。本回合结果会在保存后显示。</p></details>
  </section>
 </template>
 <style scoped>
