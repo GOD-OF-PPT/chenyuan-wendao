@@ -3,11 +3,11 @@
   "sourceStage": "precommit working tree; exact runtimeSources and test-source hashes; no final-CI claim",
   "baseHead": "4f3e5a3edbbdbabb159e2a1e35928a4efbdbdeb1",
   "browsers": {
-    "chromium": 10,
-    "firefox": 10,
-    "webkit": 10
+    "chromium": 12,
+    "firefox": 12,
+    "webkit": 12
   },
-  "executed": 30,
+  "executed": 36,
   "skip": 0,
   "retry": 0,
   "tests": [
@@ -60,6 +60,14 @@
       "title": "returning after a different view or action removed the original opener focuses the current stage"
     },
     {
+      "project": "chromium",
+      "title": "late preparation entrance survives the stage and actual goal navigation without starting a trial"
+    },
+    {
+      "project": "chromium",
+      "title": "a sealed life opens its full record and export from the hub without inventing a checkpoint"
+    },
+    {
       "project": "firefox",
       "title": "opening and ordinary cultivation expose all entrances and real decisions within each desktop screen"
     },
@@ -96,6 +104,14 @@
       "title": "returning after a different view or action removed the original opener focuses the current stage"
     },
     {
+      "project": "firefox",
+      "title": "late preparation entrance survives the stage and actual goal navigation without starting a trial"
+    },
+    {
+      "project": "firefox",
+      "title": "a sealed life opens its full record and export from the hub without inventing a checkpoint"
+    },
+    {
       "project": "webkit",
       "title": "opening and ordinary cultivation expose all entrances and real decisions within each desktop screen"
     },
@@ -130,9 +146,17 @@
     {
       "project": "webkit",
       "title": "returning after a different view or action removed the original opener focuses the current stage"
+    },
+    {
+      "project": "webkit",
+      "title": "late preparation entrance survives the stage and actual goal navigation without starting a trial"
+    },
+    {
+      "project": "webkit",
+      "title": "a sealed life opens its full record and export from the hub without inventing a checkpoint"
     }
   ],
-  "reportSHA256": "4ff5076217a792b5cfc693d7741b614fb958aeed060bffa304355c30a71a6c1d",
+  "reportSHA256": "2fa24c26928f9ffa8044115c7e4630bf11848311e9d2a669daf36fe79e7d1589",
   "runtimeSources": {
     "package-lock.json": "d3f1aa6b6a4cca2c3d458a297b2e0320f0bdfa64d01913938c1f44038be143a2",
     "package.json": "0ffa0f4c2df0004f19cd55e04d310fd437da64e6c76833f5249ca203d46398c3",
@@ -209,7 +233,7 @@
     "web/public/art/v2/ui/meditation-ink.webp": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b",
     "web/src/ActionEffects.vue": "6dd8763cdf71de98870dd6954ed1a47566055a0ddfc1f01aa6ca6879e38b03a5",
     "web/src/ActionFeedback.vue": "6c17e5134c3e195342a4711492e1798eee26065b2806de55c4b726aaf52f7833",
-    "web/src/App.vue": "4d3c2dd75c3330a6c6920dd60b531b69464e1563446bf128839574d83d028383",
+    "web/src/App.vue": "d128f10f82638cd25e02635be08be6ef5a58c799999302220a0930f81df67a0b",
     "web/src/AssetImage.vue": "ecfc476d074c16c14b181abbf62863ebc6d5c014d9473d3118e761433115a8da",
     "web/src/BatchPreview.vue": "8bba4a7703a68b8eceb5441d4d0d1f8e738d53f41abb113b3a61f609a0a5022f",
     "web/src/BattlePanel.vue": "ef9f639802e61b851efd592a72c31f0da41844341da35f8bf11d230991cfd5b3",
@@ -234,7 +258,7 @@
     "web/src/effects.ts": "03b6daa4cde24a2127d4fd20c42367a32a162996456bb7c32c82d7f4af3bc981",
     "web/src/focus.ts": "682ff9d38cc9ef877d8e3708efefe1db8e2c4e0172f3278c0f42f82b204bf269",
     "web/src/full-persistence.ts": "633081bb028a9c0127214476e36096d25b840473a542a1cfbcdd80617f93fa4b",
-    "web/src/game-hub.css": "f1cc604a1e28c3672e5dec4ce35a70bb50879ef7efbbe10c1b1d93afc1144f0f",
+    "web/src/game-hub.css": "bdb861f2f338aa300dc7cd3a2763eea541be8567a07f4528dde8a678b10bb8e5",
     "web/src/guidance.ts": "c27a8e7b45b1e45912f1e27426ad42a204aabb866db369188ee8a71be83ca955",
     "web/src/local-events.ts": "eb5081eb50651ea0b81bed50e8869689c542a984a344a9ea808cad398473ca58",
     "web/src/local-experience.ts": "1d611e165c687753ddf4ecfa546a749be9ece54c3956890f42d69d13ff284fe1",
@@ -244,7 +268,7 @@
     "web/src/presentation.ts": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649",
     "web/src/scene-presentation.ts": "0c350de82085006096e104b206e0ce7cd3875ac453fb6a95950980ebe44b8f65",
     "web/src/session.ts": "76c6968b53c1ca990c4ee4ac4a921e549585338c04b10e31636ed9821f5263c0",
-    "web/src/shell.css": "dc8a0e6dad147c87de4ca2c667ab87cfce51de8d996389e299a324b8da61830d",
+    "web/src/shell.css": "9399e3821fdc8b8acb5b92eb9dd948085b1a90e67595552a9a362e8332dcadc9",
     "web/src/store.ts": "f90b5f6febf9e3119a97b8832232daeb6f89031855456ca26a3f30c76d3c4bfa",
     "web/src/style.css": "5f1c1bdd58ff91debf24606c039780af729957b013a320332f2dc02c73d932a9",
     "web/src/ui-icons.ts": "9691c0395014863388fd6c9c9d0529a66504a78cd95597c374cf387eaa7fdbf4",
@@ -257,7 +281,7 @@
     {
       "path": ".vite/manifest.json",
       "bytes": 185,
-      "sha256": "2896920fc3adc9421784bd399c745f624f36e5939f649bced55fec3d5882e111"
+      "sha256": "203513dcef39f02978162072231d260d80bbc76e38178abbd44934201f71b5df"
     },
     {
       "path": "art/portraits/lu.webp",
@@ -440,76 +464,77 @@
       "sha256": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b"
     },
     {
-      "path": "assets/index-CAVEyf85.js",
-      "bytes": 391722,
-      "sha256": "295a9d0557595ed772c8edee8ff3db0e9e40300390f3a6cd0c7c94c7782cac54"
+      "path": "assets/index-Cz9YjbqW.css",
+      "bytes": 74824,
+      "sha256": "365cc440a040c1aa80d19cf5a5c30dac2d06120821876f0253635ed9aef05f72"
     },
     {
-      "path": "assets/index-CCYARmZb.css",
-      "bytes": 74809,
-      "sha256": "973bf0d055db59747df8c57a8b65481e01cef9526920782576758f51896bb6fa"
+      "path": "assets/index-r9hT6a0_.js",
+      "bytes": 392093,
+      "sha256": "2b3834727d5fca1dcfc1862c77676d62ace9039c3a546825121a3ae58fbb9eab"
     },
     {
       "path": "demo-nodes/battle-sword.json",
       "bytes": 2568,
-      "sha256": "427bb33c9712c77b9fe1d9950d001670564ef93e67a92c4f7466efb4755dff4c"
+      "sha256": "dc5aff65efdc6afbffad7273e3a797028c7991e973d5471977b64d081de60fe4"
     },
     {
       "path": "demo-nodes/battle-talisman.json",
       "bytes": 2670,
-      "sha256": "3435d0219fb3c6d54b0acf1d50c1fc11208204716e42dae254fb06a453046666"
+      "sha256": "f6ead4e69c565c1f1689f707647dba4cce72a387cb2162cc98d3eb17e24555fa"
     },
     {
       "path": "demo-nodes/causal-help.json",
       "bytes": 4863,
-      "sha256": "53871f37377badf6c9d4f06fbb798fa90b56cfb1e1d3e77534dcca4907146cbe"
+      "sha256": "d204b707152fde847ff18c436692b7c9c0d3dd7a5e738949c8f285dec2c9d673"
     },
     {
       "path": "demo-nodes/causal-trade.json",
       "bytes": 5625,
-      "sha256": "747ac03ba69bb649713ceb2559d9196fda6c850b374ca9914b3b64dd1be64e58"
+      "sha256": "b4ab9f0c6cab6bc83922770c112df5e1a72cd54882c194c74cc9341d668ccb5e"
     },
     {
       "path": "demo-nodes/ending-sword.json",
       "bytes": 21314,
-      "sha256": "034a8eaa72157a38c1dfb5ebaa6c547f57a367e06d87235f8921c617ccee51f1"
+      "sha256": "ab2060190490416f91d06ad6cb8cfcad8e32def43cc842eab49d64eac04e872d"
     },
     {
       "path": "demo-nodes/ending-talisman.json",
       "bytes": 20891,
-      "sha256": "0cdac9dc85e847b62e00b0739d4a6dbf4c668afe18aa5646d2f555b6210fb47e"
+      "sha256": "cddbd1125ebacd7e69521344f537cf2c0084887106f995b7003dc11fea64b4f2"
     },
     {
       "path": "demo-nodes/manifest.json",
       "bytes": 3522,
-      "sha256": "69a1d798784e6e4a22e5ee9d2197b19f8591f4861a729541fcb0697da4cffdc6"
+      "sha256": "84da92facb84e8e708108987fc028c89f3df14c5eb03c10027cf52031d87d4c9"
     },
     {
       "path": "demo-nodes/opening.json",
       "bytes": 1304,
-      "sha256": "98db762d3398dfb0fe27f1ed8c6fe1f6afe08854f6108c52c058b309724d6451"
+      "sha256": "6bb669e06ab50e8c8bf2e3a9d809571df8ffe0f7ac7f8fef3aa55f76257577c5"
     },
     {
       "path": "demo-nodes/trial-sword.json",
       "bytes": 18339,
-      "sha256": "03ec7aa8ae80f50e246041903d91665dddfa634c69b09c5792468dd8708a2101"
+      "sha256": "fd23abc9b155d749796ce944359bd332322da3a52c7e7a81565d030b55286835"
     },
     {
       "path": "demo-nodes/trial-talisman.json",
       "bytes": 15257,
-      "sha256": "bc13e52535da677d170d88dde77e81515bd26892230162122aa9631a53863ec2"
+      "sha256": "a416cb25e2f5421f1d494efcdaabbb6e9f90b72986faf3e9dd849ce02bb07eb8"
     },
     {
       "path": "index.html",
       "bytes": 569,
-      "sha256": "ba88881b61fa306bf42df74c5799dc906861b3112a2b01e8836bc8725e5254ec"
+      "sha256": "63b071878d6a13e42b89e9a8efa92708700adb06961271895f6b51d3d2ecaf70"
     }
   ],
   "testSources": {
-    "web/e2e/single-screen.spec.ts": "0492944f1835a58dd4f09471b9d3f4f3a8ed5bdbe5160e412c2669378479341e",
+    "web/e2e/single-screen.spec.ts": "8f68859c21d15fc505c23ae0c19242497c1523d3577addfbec959d35426dcc01",
     "web/e2e/desktop-flow.spec.ts": "4bf124f8198a8a292f40873ae7896243a8735c07c6c262cb770b3db9f5d71f88",
     "web/e2e/support.ts": "ff0ea6a11baee0faec8b3c4b3a4b56176893054b0c27d8ac235c6729bd19767c",
-    "web/e2e/game.spec.ts": "3504f6bbc9c25de14414fc103f9ded02866cda19ac92f70e1d69807c27403972"
+    "web/e2e/game.spec.ts": "3504f6bbc9c25de14414fc103f9ded02866cda19ac92f70e1d69807c27403972",
+    "tests/trial-journey-route.mjs": "f57cabb60d5eb296bf94a7142d065f560ac0b073f8ffd1b7607c1522ff67f95a"
   },
   "screenshots": {
     "hub-cave-1280.png": {
@@ -558,8 +583,8 @@
       ]
     },
     "hub-demo-battle-1280.png": {
-      "sha256": "7992e658d841952484f163a129d67663bafe4e48f89dd36fc469d1b400ea3af7",
-      "bytes": 768371,
+      "sha256": "7352b37a3d601c48c5a7abcb9681be7396672657c208afb11f30e42c7dbf35b3",
+      "bytes": 768376,
       "sourceOutput": "web/test-results/single-screen-normal-size--63db3--isolated-persistent-labels-chromium/hub-demo-battle-1280.png",
       "dimensions": [
         1280,
@@ -569,7 +594,7 @@
   },
   "core": 382,
   "assetGuards": 47,
-  "runtimeBytes": 6457626,
+  "runtimeBytes": 6458012,
   "overallArtAcceptance": false,
   "notExecuted": [
     "full final UI and IDB suites",
@@ -587,6 +612,7 @@
   ],
   "finalFooterTextNonOverlapVerified": true,
   "screenshotsFullyDecoded": true,
-  "verifiedImplementationCommit": "1a3ad4da0535e5b8f62eb7f2eb43fcc8fabe93d9",
-  "followupScope": "Two trailing empty lines normalized after the verified implementation; post-commit generated-metadata/payload check recorded separately. No claim of inheriting old full CI."
+  "earlierVerifiedImplementation": "1a3ad4d (before late-entry preservation)",
+  "testWorktreeHead": "013bac68a4df4aac70ecc1f340adea85f31823b8",
+  "lateStageFixtures": "Lawful rule-generated trial and retired Games imported through actual UI; not normal web journey completion."
 }

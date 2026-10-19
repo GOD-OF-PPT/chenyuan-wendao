@@ -56,7 +56,7 @@
 .hub-current .opening-choices button{padding:9px;min-height:104px}
 .hub-current .opening-choices small{margin-top:4px;line-height:1.5}
 .hub-current>.text-button{padding:4px 0}
-.hub-idle-actions{display:flex;gap:12px}
+.hub-idle-actions{display:flex;gap:12px;flex-wrap:wrap}
 .hub-idle-actions small{display:block;color:inherit}
 .effects-stage{position:fixed;top:76px;left:30%;right:24%;z-index:12;pointer-events:none}
 .hub-pulse{position:fixed;z-index:12;top:22%;left:30%;right:25%;text-align:center;pointer-events:none;color:#fff2c8;text-shadow:0 2px 5px #10282b;background:radial-gradient(ellipse,#1c4b47ed,transparent 70%);padding:24px 10px;animation:hub-breath 1.6s ease-out both}

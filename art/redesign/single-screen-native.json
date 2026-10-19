@@ -10,8 +10,8 @@
   "files": [
     {
       "path": "web/src/game-hub.css",
-      "bytes": 9833,
-      "sha256": "f1cc604a1e28c3672e5dec4ce35a70bb50879ef7efbbe10c1b1d93afc1144f0f"
+      "bytes": 9848,
+      "sha256": "bdb861f2f338aa300dc7cd3a2763eea541be8567a07f4528dde8a678b10bb8e5"
     }
   ],
   "maxBytes": 12000,

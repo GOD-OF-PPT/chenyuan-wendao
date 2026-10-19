@@ -1,6 +1,8 @@
 import {test,expect,type Page} from '@playwright/test';
-import {advance} from '../../src/full/engine.ts';
+import {advance,newGame} from '../../src/full/engine.ts';
 import {snapshot} from './support';
+import {trialJourneyScenario} from '../../tests/trial-journey-route.mjs';
+test.use({actionTimeout:8000,navigationTimeout:15000});
 const sizes=[{width:1280,height:720},{width:1440,height:900},{width:1920,height:1080}];
 const expected=(g:any,a:any)=>advance(g,{...a,commandId:'expected-single-screen',runId:g.core.runId,expectedRevision:g.core.revision});
 async function saved(page:Page){await expect(page.getByTestId('save-status')).toHaveText('已保存');await expect(page.getByTestId('error')).toHaveCount(0);}
@@ -60,4 +62,15 @@ test('normal-size demo battle keeps the same stage entrances and isolated persis
 
 test('returning after a different view or action removed the original opener focuses the current stage',async({page})=>{
  await cave(page);await page.getByTestId('hub-cultivation-details').click();await page.getByTestId('tab-1').click();await action(page,'travel-wilderness');const before=await snapshot(page);await page.getByTestId('hub-close').click();await expect(page.getByTestId('hub-current')).toBeFocused();expect(await snapshot(page)).toEqual(before);await screen(page,['return-cave']);
+});
+
+
+async function importLegal(page:Page,game:any){await page.goto('/');await page.getByLabel('导入已有存档',{exact:true}).setInputFiles({name:'lawful-entry-fixture.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(game))});await saved(page);await expect(page.getByTestId('game-hub')).toBeVisible();}
+
+test('late preparation entrance survives the stage and actual goal navigation without starting a trial',async({page})=>{
+ const prepared=trialJourneyScenario().prepared;await importLegal(page,prepared);const initial=await snapshot(page);await expect(page.getByTestId('breakthrough')).toHaveText('查看渡劫准备');await page.getByTestId('breakthrough').click();await expect(page.getByTestId('trial-preparation-title')).toBeVisible();expect(await snapshot(page)).toEqual(initial);await page.getByTestId('trial-go-rest').click();await saved(page);await expect(page.getByTestId('game-hub')).toBeVisible();expect((await snapshot(page)).core.world.location).toBe('cave');await page.getByTestId('breakthrough').click();await expect(page.getByTestId('trial-preparation-title')).toBeVisible();const atCave=await snapshot(page);await page.getByTestId('trial-go-terrace').click();await saved(page);await expect(page.getByTestId('trial-preparation-title')).toBeFocused();const arrived=await snapshot(page);expect(arrived).toEqual(expected(atCave,{type:'TRAVEL',location:'terrace'}));await page.getByTestId('trial-review-entry').click();await expect(page.getByTestId('trial-confirm-entry')).toBeVisible();expect(await snapshot(page)).toEqual(arrived);await page.getByTestId('trial-entry-cancel').click();expect(await snapshot(page)).toEqual(arrived);
+});
+
+test('a sealed life opens its full record and export from the hub without inventing a checkpoint',async({page})=>{
+ let game=newGame('入口回归','t04r-sealed-life');game=advance(game,{type:'CHOOSE',choice:'leave',commandId:'opening',runId:game.core.runId,expectedRevision:game.core.revision});game=advance(game,{type:'RETIRE',commandId:'retire',runId:game.core.runId,expectedRevision:game.core.revision});await importLegal(page,game);const before=await snapshot(page);await page.getByRole('button',{name:'查看生平与收卷',exact:true}).click();await expect(page.getByTestId('life-panel')).toBeVisible();await expect(page.getByTestId('life-recovery-note')).toContainText('没有检查点');await expect(page.getByTestId('life-restore')).toBeDisabled();const download=page.waitForEvent('download');await page.getByTestId('export-life').click();expect(await(await download).path()).toBeTruthy();expect(await snapshot(page)).toEqual(before);page.once('dialog',dialog=>dialog.dismiss());await page.getByTestId('life-restart').click();expect(await snapshot(page)).toEqual(before);await page.getByTestId('hub-close').click();await expect(page.getByTestId('game-hub')).toBeVisible();expect(await snapshot(page)).toEqual(before);
 });
