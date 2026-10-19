@@ -33,6 +33,8 @@ class InventoryTests(unittest.TestCase):
   if immersive.exists():files.update(ROOT/ref for ref in json.loads(immersive.read_text())['sourceReferences'])
   actions=ROOT/'art/redesign/action-feedback.json'
   if actions.exists():files.update(ROOT/ref for ref in json.loads(actions.read_text())['sourceReferences'])
+  flow=ROOT/'art/redesign/playable-flow.json'
+  if flow.exists():files.update(ROOT/ref for ref in json.loads(flow.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -200,5 +202,18 @@ class InventoryTests(unittest.TestCase):
   p='art/redesign/action-feedback.json';m=json.loads((self.root/p).read_text());m['oldFxFamiliesPreserved'].pop();self.write(p,m);self.rejected()
  def test_action_motion_cannot_claim_user_acceptance(self):
   p='art/redesign/action-feedback.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
+
+ def test_playable_flow_cannot_drop_its_ledger(self):
+  (self.root/'art/redesign/playable-flow.json').unlink();self.rejected()
+ def test_playable_flow_cannot_change_clock_silently(self):
+  self.write('web/src/action-timing.ts','wrong');self.rejected()
+ def test_playable_flow_cannot_raise_budgets(self):
+  p='art/redesign/playable-flow.json';original=json.loads((self.root/p).read_text())
+  for field in ['maxNewBytes','maxActionMs','maxPageCards']:
+   m=copy.deepcopy(original);m[field]+=1;self.write(p,m);self.rejected()
+ def test_playable_flow_cannot_claim_user_acceptance(self):
+  p='art/redesign/playable-flow.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
+ def test_playable_flow_cannot_remove_actual_consumer(self):
+  p='web/src/App.vue';self.write(p,(self.root/p).read_text().replace('<ExplorePanel ','<RemovedPanel '));self.rejected()
 
 if __name__=='__main__':unittest.main()

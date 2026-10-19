@@ -1,0 +1,151 @@
+{
+  "format": "chenyuan-playable-flow-visual-review",
+  "runtimeSourceDigest": "0e0a637fa809190713751e00fe4b1ab599035df483f73e5912ec29532c06f83a",
+  "images": [
+    {
+      "path": "goal-2/evidence/t05/qi-cap-1440.png",
+      "source": "artifacts/goal-2/t05/final-ui-results/playable-flow-a-normal-new-ce336-oundation-preparation-entry-chromium/qi-cap.png",
+      "bytes": 1495145,
+      "sha256": "d942268eb352c2b39a5dbd4f970c92274361a522b13bbe7a9ba713bac6ef9692",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/explore-1280.png",
+      "source": "artifacts/goal-2/t05/final-ui-results/playable-flow-all-catalogu-52228-paginate-within-1280-screen-chromium/explore-1280.png",
+      "bytes": 570372,
+      "sha256": "2486b23486264522a54be2911192439c2b4cc4debad7af407481e6e08c0b28ea",
+      "width": 1280,
+      "height": 720,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/equipment-1440.png",
+      "source": "artifacts/goal-2/t05/final-ui-results/playable-flow-all-catalogu-7dcd9-paginate-within-1440-screen-chromium/equipment-1440.png",
+      "bytes": 938954,
+      "sha256": "541d797ec49ec0ff4a46e3496a110ff1e5121121c9ea2ff11fad1fda6e81206d",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/countdown-1440.png",
+      "source": "artifacts/goal-2/t05/final-ui-results/playable-flow-real-countdo-9757f-mpleted-save-creates-a-gain-chromium/real-countdown.png",
+      "bytes": 1691419,
+      "sha256": "36024f5b2bad7d56141ee474eaaf3768bb01835c997cb3b154c4541347104489",
+      "width": 1440,
+      "height": 1000,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/battle-sword-560.png",
+      "source": "artifacts/goal-2/t05/final-ui-results/playable-flow-a-real-sword-4f4ab-ts-the-embedded-game-window-chromium/embedded-sword-battle.png",
+      "bytes": 310321,
+      "sha256": "781d6eaab38a66dd9e59dea668680008ca4083392762a6bebd42fcf1d5f9fc0f",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/preparation-1440.png",
+      "source": "artifacts/goal-2/t05/final-foundation-results/foundation-guide-guided-foundation-help-sword-craft-chromium/preparation-needs.png",
+      "bytes": 852160,
+      "sha256": "d04cc73a0974a5a2b8e14fe70a7763cdd821cbef55d98da9361734cc1e9f6110",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/source-1440.png",
+      "source": "artifacts/goal-2/t05/final-foundation-results/foundation-guide-guided-foundation-help-sword-craft-chromium/preparation-source.png",
+      "bytes": 849981,
+      "sha256": "c9c2949aefdad29fd899e3ac98069ac2b603179a75b081dadfd7724a8f3f5780",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/foundation-1440.png",
+      "source": "artifacts/goal-2/t05/final-foundation-results/foundation-guide-guided-foundation-help-sword-craft-chromium/guided-foundation.png",
+      "bytes": 1516573,
+      "sha256": "a4c77269109be1a6b736bea14fded13751783529f3bfaa724dd829bb013ba6a2",
+      "width": 1440,
+      "height": 900,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/preparation-560.png",
+      "source": "artifacts/goal-2/t05/final-foundation-results/foundation-guide-guided-foundation-leave-sword-craft-chromium/preparation-needs.png",
+      "bytes": 232754,
+      "sha256": "8402853e0f111d3352560640a96758a5999cb0429d17e27c67c167d1c8a879dc",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/source-560.png",
+      "source": "artifacts/goal-2/t05/final-foundation-results/foundation-guide-guided-foundation-leave-sword-craft-chromium/preparation-source.png",
+      "bytes": 227747,
+      "sha256": "b556776f9a46cc6f928a4c9b236fc09e1b8004967824e041869f691cdc818bdb",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/foundation-560.png",
+      "source": "artifacts/goal-2/t05/final-foundation-results/foundation-guide-guided-foundation-leave-sword-craft-chromium/guided-foundation.png",
+      "bytes": 344077,
+      "sha256": "40ee16316509d98534d54ad41292f63523eb33fabf3fbe6ed02e191a0aa396e1",
+      "width": 560,
+      "height": 718,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/ending-transmit.png",
+      "source": "artifacts/goal-2/t05/final-journey-results/ascension-normal-leave-sword-craft-transmit-chromium/ascended.png",
+      "bytes": 1803193,
+      "sha256": "36822e414f1f3b836d947ac2b6221b097a366dc7e036379ebf72069a25dc24b4",
+      "width": 1440,
+      "height": 1000,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    },
+    {
+      "path": "goal-2/evidence/t05/ending-depart.png",
+      "source": "artifacts/goal-2/t05/final-journey-results/ascension-normal-trade-talisman-purchase-depart-chromium/ascended.png",
+      "bytes": 1804970,
+      "sha256": "c4468b681d096819cb1a4ae8d0f5e0e8f65f490e183efd3c0b285ce53f84965a",
+      "width": 1440,
+      "height": 1000,
+      "mode": "RGB",
+      "fullyDecoded": true,
+      "visuallyReviewed": true
+    }
+  ],
+  "visualReview": "Individually viewed original full-frame captures: readable preparation/source and countdown; finite controls; existing compact major-effect wrapping recorded as T08-C02. Transient animation frames are not settled progress baselines; market outside market shows a travel prompt. No user approval or global art completion inferred.",
+  "userAcceptance": false
+}

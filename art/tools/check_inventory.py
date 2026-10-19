@@ -156,6 +156,23 @@ def validate(root):
         assert action['coverage']['controls'] == ['new_game', 'restart', 'import', 'restore']
     else:
         assert not (root / 'web/src/action-motion.css').exists(), 'Unrecorded action feedback'
+    flow_path = root / 'art/redesign/playable-flow.json'
+    if flow_path.exists():
+        flow = json.loads(flow_path.read_text())
+        assert flow['format'] == 'chenyuan-playable-flow' and flow['version'] == 1
+        assert (flow['maxNewBytes'], flow['maxActionMs'], flow['maxPageCards']) == (60000, 2400, 4)
+        assert flow['userAcceptance'] is False
+        assert [r['path'] for r in flow['files']] == ['web/src/action-timing.ts', 'web/src/ActionExecution.vue', 'web/src/play-flow.ts', 'web/src/CataloguePager.vue', 'web/src/PreparationPanel.vue', 'web/src/ExplorePanel.vue', 'web/src/GoodsPanel.vue', 'web/src/CultivationPanel.vue', 'web/src/play-flow.css']
+        for row in flow['files']:
+            data = (root / row['path']).read_bytes()
+            assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], 'Playable flow source identity changed'
+        assert sum(r['bytes'] for r in flow['files']) <= 60000
+        for ref in flow['sourceReferences']:
+            assert (root / ref).resolve().is_relative_to(root) and (root / ref).is_file()
+        for path, fragments in flow['bindings'].items():
+            assert all(fragment in (root / path).read_text() for fragment in fragments)
+    else:
+        assert not (root / 'web/src/play-flow.css').exists(), 'Unrecorded playable flow'
     native_path = root / 'art/redesign/single-screen-native.json'
     native_bytes = 0
     if native_path.exists():

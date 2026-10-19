@@ -7,6 +7,7 @@ import { FullSaveRepository, rawBackupText } from './full-persistence';
 import type { ControlOutcome, SaveMutation } from './full-persistence';
 import {loadedObservation,writeObservation,inputErrorObservation,storageErrorObservation,type Observation,type WriteObservationSource} from './local-events';
 import {useSession} from './session';
+import {createActionClock,actionSeconds,actionLabel,type Execution} from './action-timing';
 
 export type CheckpointSummary = Pick<SaveCheckpoint, 'kind' | 'sourceRunId' | 'sourceRevision' | 'versions'> & { target: { name: string; realm: Game['core']['player']['realm']; months: number; hp: number; mp: number; inventory: Record<string, number> } };
 
@@ -17,6 +18,7 @@ export const useGame = defineStore('game', () => {
   const checkpointSummary = shallowRef<CheckpointSummary | null>(null);
   const trialRecovery = shallowRef<ReturnType<typeof getTrialRecovery>>(null);
   const lastResult = shallowRef<ActionResult | null>(null), lastReplayed = ref(false), canRetry = ref(false);
+  const execution=shallowRef<Execution|null>(null),actionClock=createActionClock();
   let repository: FullSaveRepository | undefined, channel: BroadcastChannel | undefined;
   let pending: (() => Promise<CommitOutcome | ControlOutcome>) | null = null;
   let pendingCommandId: string | undefined;
@@ -96,6 +98,13 @@ export const useGame = defineStore('game', () => {
     busy.value = true; error.value = ''; saved.value = false; canRetry.value = false; pending = operation; pendingCommandId = commandId;
     pendingObservation=observation;
     try {
+      const action=observation?.kind==='action'?observation.command:null;
+      const seconds=action?actionSeconds(action):.6,totalMs=Number.isFinite(seconds)?seconds*1000:0;
+      const label=action?actionLabel(action):observation?.kind==='restore'?'恢复准备':observation?.kind==='import'?'载入进度':'展开新的人生';
+      const initial:Execution={id:commandId??'',label,totalMs,remainingMs:totalMs,phase:'acting',batch:!!action&&('count'in action&&(action.count??1)>1||'quantity'in action&&action.quantity>1)};
+      const completed=await actionClock.wait(totalMs,remaining=>{execution.value={...initial,remainingMs:remaining};});
+      if(!completed||disposed)return;
+      execution.value={...initial,remainingMs:0,phase:'saving'};
       const outcome = await operation();
       if (disposed) return;
       game.value = outcome.state; lastResult.value = 'result' in outcome ? outcome.result : null; lastReplayed.value = outcome.replayed;
@@ -113,6 +122,7 @@ export const useGame = defineStore('game', () => {
       if (!canRetry.value) { pending = null; pendingCommandId = undefined; pendingObservation=undefined; }
       try { await refresh(); } catch (readError) { warning.value = '原进度暂时无法重读：' + message(readError); }
     } finally {
+      execution.value=null;
       busy.value = false;
       if (refreshQueued) { refreshQueued = false; refresh('sync').catch(value => { warning.value = message(value);emit(()=>storageErrorObservation(game.value,codeOf(value))); }); }
     }
@@ -176,8 +186,8 @@ export const useGame = defineStore('game', () => {
   async function rawText(): Promise<string | null> {
     try{const backup = await FullSaveRepository.exportRaw(session.gameDatabase); return backup ? rawBackupText(backup) : null;}catch(value){emit(()=>storageErrorObservation(game.value,codeOf(value)));throw value;}
   }
-  const saveLabel = computed(() => !ready.value ? '读取中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
-  onScopeDispose(() => { disposed = true; repository?.close(); channel?.close();observers.clear(); });
-  return { game, busy, ready, available, error, warning, saved, hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,
+  const saveLabel = computed(() => !ready.value ? '读取中' : execution.value?.phase==='acting' ? '行动中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
+  onScopeDispose(() => { disposed = true;actionClock.cancel();execution.value=null; repository?.close(); channel?.close();observers.clear(); });
+  return { game, busy, ready, available, error, warning, saved, hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,execution,
     init, refresh, start, act, prepareAction, actPrepared, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, rawText, validationError,observe };
 });
