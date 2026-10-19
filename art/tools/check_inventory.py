@@ -112,6 +112,24 @@ def validate(root):
     assert not recorded.intersection(desktop_ui_files), 'Desktop UI paths overlap older ledgers'
     recorded.update(desktop_ui_files)
     counts['production'] += desktop_ui_production
+    native_path = root / 'art/redesign/single-screen-native.json'
+    native_bytes = 0
+    if native_path.exists():
+        native = json.loads(native_path.read_text())
+        assert native['format'] == 'chenyuan-single-screen-native' and native['version'] == 1
+        assert native['maxBytes'] == 12000 and native['userAcceptance'] is False
+        assert [row['path'] for row in native['files']] == ['web/src/game-hub.css']
+        for reference in native['sourceReferences']:
+            file = (root / reference).resolve()
+            assert file.is_relative_to(root) and file.is_file(), 'Missing game-stage source reference'
+        assert native['consumer'] == 'web/src/main.ts' and "import './game-hub.css'" in (root / native['consumer']).read_text()
+        for row in native['files']:
+            data = (root / row['path']).read_bytes()
+            assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], 'Game-stage style identity changed'
+            native_bytes += len(data)
+        assert native_bytes <= 12000, 'Game-stage style budget exceeded'
+    else:
+        assert not (root / 'web/src/game-hub.css').exists(), 'Unrecorded game-stage stylesheet'
     budgets = manifest['budget']
     for category, key in [('scene', 'sceneMasters'), ('portrait', 'portraits'), ('ui_kit', 'uiKits'), ('fx_kit', 'fxKits')]:
         assert sum(a['category'] == category for a in manifest['assets']) == budgets[key], 'Budget slots drift: ' + category
@@ -184,7 +202,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

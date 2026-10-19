@@ -4,7 +4,8 @@ import * as C from '../../src/full/content.ts';
 import { getLifeOverview } from '../../src/full/queries.ts';
 import type { Game } from '../../src/full/types.ts';
 import PortraitImage from './PortraitImage.vue';
-const props = defineProps<{game:Game}>();
+const props = defineProps<{game:Game;compact?:boolean}>();
+const emit=defineEmits<{inspect:[event:MouseEvent]}>();
 const player = computed(() => props.game.core.player), realm = computed(() => C.realms[player.value.realm]);
 const life = computed(() => getLifeOverview(props.game));
 const sealed = computed(() => props.game.status==='ascended');
@@ -22,7 +23,8 @@ const expanded = ref(false);
       <div v-if="!sealed" class="stat"><label>修为 <b data-testid="xp">{{player.xp}} / {{realm.xpCap}}</b></label><progress class="cultivation" :value="player.xp" :max="realm.xpCap||1" aria-label="修为"></progress></div>
       <div class="character-pair character-currency"><span>{{sealed?'封卷灵石':'灵石'}}</span><b data-testid="stones">{{player.stones}}</b></div>
     </div>
-    <details :open="expanded" @toggle="expanded=($event.target as HTMLDetailsElement).open">
+    <button v-if="compact" class="text-button character-hint" @click="emit('inspect',$event)">寿元与配装 →</button>
+    <details v-else :open="expanded" @toggle="expanded=($event.target as HTMLDetailsElement).open">
       <summary class="character-hint" data-testid="character-toggle">{{expanded?'收起详情':'查看寿元与配装'}}</summary>
       <div class="character-details" data-testid="character-details">
         <div class="character-pair"><span>{{sealed?'封卷年龄':'年龄 / 寿限'}}</span><b data-testid="age-limit">{{life.ageLabel}}<template v-if="!sealed"> / {{life.limitLabel}}</template></b></div>

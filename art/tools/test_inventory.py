@@ -25,6 +25,8 @@ class InventoryTests(unittest.TestCase):
   if desktop_ui.exists():
    current=json.loads(desktop_ui.read_text())
    files.update(ROOT/ref for ref in current['sourceReferences']+current['rights']['evidenceReferences'])
+  native=ROOT/'art/redesign/single-screen-native.json'
+  if native.exists():files.update(ROOT/ref for ref in json.loads(native.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -140,4 +142,15 @@ class InventoryTests(unittest.TestCase):
  def test_removing_desktop_ui_ledger_does_not_bypass_guard(self):
   (self.root/'art/redesign/desktop-ui-manifest.json').unlink();self.rejected()
 
+ def test_game_stage_cannot_silently_change_bytes(self):
+  self.write('web/src/game-hub.css','body{display:none}')
+  self.rejected()
+ def test_game_stage_cannot_disappear_from_inventory(self):
+  (self.root/'art/redesign/single-screen-native.json').unlink()
+  self.rejected()
+ def test_game_stage_budget_cannot_be_raised(self):
+  path='art/redesign/single-screen-native.json';m=json.loads((self.root/path).read_text());m['maxBytes']=20000;self.write(path,m)
+  self.rejected()
+
 if __name__=='__main__':unittest.main()
+
