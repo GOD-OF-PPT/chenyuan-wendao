@@ -136,6 +136,26 @@ def validate(root):
             assert all(fragment in (root / path).read_text() for fragment in fragments)
     else:
         assert not (root / 'web/src/immersive-theme.css').exists(), 'Unrecorded global game theme'
+    action_path = root / 'art/redesign/action-feedback.json'
+    if action_path.exists():
+        action = json.loads(action_path.read_text())
+        assert action['format'] == 'chenyuan-action-feedback' and action['version'] == 1
+        assert (action['maxBytes'], action['maxFamilies'], action['maxParticles'], action['maxDurationMs']) == (34000, 14, 12, 1600)
+        assert action['userAcceptance'] is False and action['oldFxFamiliesPreserved'] == ['入道', '突破', '剑符反馈', '渡劫']
+        assert [r['path'] for r in action['files']] == ['web/src/action-feedback.ts', 'web/src/ActionFeedbackStage.vue', 'web/src/action-motion.css']
+        for row in action['files']:
+            data = (root / row['path']).read_bytes()
+            assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], 'Action feedback source changed without its record'
+        assert sum(r['bytes'] for r in action['files']) <= 34000
+        for ref in action['sourceReferences']:
+            assert (root / ref).resolve().is_relative_to(root) and (root / ref).is_file()
+        assert action['consumer'] == 'web/src/App.vue' and '<ActionFeedbackStage ' in (root / action['consumer']).read_text()
+        assert action['styleConsumer'] == 'web/src/main.ts' and "import './action-motion.css'" in (root / action['styleConsumer']).read_text()
+        assert len(action['coverage']['actionTypes']) == len(set(action['coverage']['actionTypes'])) == 25
+        assert set(action['coverage']['moves']) == {'attack', 'guard', 'technique', 'release', 'heal', 'restore', 'flee'}
+        assert action['coverage']['controls'] == ['new_game', 'restart', 'import', 'restore']
+    else:
+        assert not (root / 'web/src/action-motion.css').exists(), 'Unrecorded action feedback'
     native_path = root / 'art/redesign/single-screen-native.json'
     native_bytes = 0
     if native_path.exists():

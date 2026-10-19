@@ -193,11 +193,15 @@ Goal2 T02接入七个专属场景和登仙台门势画作；T03实际应用桌�
         if immersive_ui.exists():
             shutil.copy2(immersive_ui, stage / 'immersive-ui.json')
             shutil.copy2(ROOT / 'docs/implementation/goal-2-global-theme-feedback.md', stage / 'IMMERSIVE_UI_REVIEW.md')
+        action_feedback = ROOT / 'art/redesign/action-feedback.json'
+        if action_feedback.exists():
+            shutil.copy2(action_feedback, stage / 'action-feedback.json')
+            shutil.copy2(ROOT / 'docs/implementation/goal-2-action-feedback.md', stage / 'ACTION_FEEDBACK_REVIEW.md')
         (stage / 'ASSET_SOURCES.md').write_text('''# 素材来源与许可边界
 
 附带的asset-manifest.json逐项记录来源、原件/派生hash、规格、用途、状态及使用依据；其中路径指源码仓库位置，完整资料可从source.bundle恢复。网页运行资源位于web/art，生产文件hash另以本包manifest.runtime为准。原图、运行图与参考预览分开，不把预览放大伪称生产原件。
 
-历史基线包含4场景/5肖像，40符号与4类表现为项目原生代码。若本包附有redesign-asset-manifest.json，则当前另有7个专属场景与登仙台2个门势阶段变体，来源和实际路径以该表及ART_REVIEW.md为准；完整原稿、提示词与回执从source.bundle恢复。若附有character-battle-manifest.json，则五人物、九敌方及洞府静修表现变体的新原稿/运行图与逐图来源由该表及CHARACTER_BATTLE_REVIEW.md记录，旧肖像历史保留。若附有desktop-ui-manifest.json，则静修动作卡透明插画的原稿、运行导出和工具回执由该表及DESKTOP_UI_REVIEW.md记录，文字/数值和动作仍由DOM与原有命令驱动。若附有single-screen-native.json，则单屏游戏主舞台新增原生样式的来源/预算和实际范围见该表及SINGLE_SCREEN_REVIEW.md；它不表示物资/剧情等全部长内容已经完成分页。若附有panel-materials.json，当前主舞台的宣纸/水墨原稿、编辑输入、运行派生、原生样式与提示词/回执见该表及PANEL_MATERIALS_REVIEW.md；不表示整体美术通过。若附有immersive-ui.json，则当前全局青黛墨绿主题、对话/进度只读交互与提示展开的原生代码范围/预算和实际验证见该表及IMMERSIVE_UI_REVIEW.md，未新增图像或改规则存档。两组历史高清原件仍未取得可回读文件，相关historical/reported状态不当作当前存在。production表示项目内有据使用，不新增发行授权、开源许可证或用户最终美术认可。
+历史基线包含4场景/5肖像，40符号与4类表现为项目原生代码。若本包附有redesign-asset-manifest.json，则当前另有7个专属场景与登仙台2个门势阶段变体，来源和实际路径以该表及ART_REVIEW.md为准；完整原稿、提示词与回执从source.bundle恢复。若附有character-battle-manifest.json，则五人物、九敌方及洞府静修表现变体的新原稿/运行图与逐图来源由该表及CHARACTER_BATTLE_REVIEW.md记录，旧肖像历史保留。若附有desktop-ui-manifest.json，则静修动作卡透明插画的原稿、运行导出和工具回执由该表及DESKTOP_UI_REVIEW.md记录，文字/数值和动作仍由DOM与原有命令驱动。若附有single-screen-native.json，则单屏游戏主舞台新增原生样式的来源/预算和实际范围见该表及SINGLE_SCREEN_REVIEW.md；它不表示物资/剧情等全部长内容已经完成分页。若附有panel-materials.json，当前主舞台的宣纸/水墨原稿、编辑输入、运行派生、原生样式与提示词/回执见该表及PANEL_MATERIALS_REVIEW.md；不表示整体美术通过。若附有immersive-ui.json，则当前全局青黛墨绿主题、对话/进度只读交互与提示展开的原生代码范围/预算和实际验证见该表及IMMERSIVE_UI_REVIEW.md，未新增图像或改规则存档。若附有action-feedback.json，则逐动作原生交互/有界视觉效果与真实回执消费范围、预算/验证由该表及ACTION_FEEDBACK_REVIEW.md记录，不代表新增玩法或整体美术认可。两组历史高清原件仍未取得可回读文件，相关historical/reported状态不当作当前存在。production表示项目内有据使用，不新增发行授权、开源许可证或用户最终美术认可。
 
 不分发本机字体；界面使用用户系统可用字体。无已授权音乐则不加入音乐。截图中字体像素不是字体文件；本候选不附个人存档/密钥/node_modules。发行许可与最终展示决定仍需用户依据现有权利确认，本包与CI不擅自授予新许可。
 ''')

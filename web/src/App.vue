@@ -25,6 +25,7 @@ import GameIcon from './GameIcon.vue';
 import ProgressTrack from './ProgressTrack.vue';
 import ChoiceCard from './ChoiceCard.vue';
 import ActionEffects from './ActionEffects.vue';
+import ActionFeedbackStage from './ActionFeedbackStage.vue';
 import {NPC_PORTRAITS,SCENE_ASSETS,DESKTOP_UI_ASSETS,PANEL_MATERIAL_ASSETS,sceneAssetPath} from './assets';
 import {scenePresentation} from './scene-presentation';
 import BatchPreview from './BatchPreview.vue';
@@ -111,9 +112,6 @@ function focusPrimary(){navigationRevision++;focus.target(contentPanel.value?.qu
 const game = computed(() => store.game), core = computed(() => game.value?.core);
 const tracking = useTracking(game);
 const hubGoal=computed(()=>game.value?getTrackedGoal(game.value,tracking.target.value):null);
-const pulse=shallowRef<{key:string;label:string;detail:string}|null>(null),pulseSeen=new Set<string>();let pulseRun='',pulseTimer:ReturnType<typeof setTimeout>|undefined;
-watch(()=>[store.lastResult,store.busy,store.saved,store.available,store.error,core.value?.runId,core.value?.revision] as const,()=>{const result=store.lastResult,run=core.value?.runId;if(run!==pulseRun){pulseRun=run??'';pulseSeen.clear();pulse.value=null;}if(store.busy||store.error){if(pulseTimer)clearTimeout(pulseTimer);pulse.value=null;return;}if(!store.saved||!store.available||!result||result.runId!==run||result.revisionAfter!==core.value?.revision||result.revisionAfter<=result.revisionBefore||result.executedSteps<1)return;const key=result.runId+':'+result.commandId;if(pulseSeen.has(key))return;pulseSeen.add(key);if(pulseSeen.size>128)pulseSeen.delete(pulseSeen.values().next().value!);if(store.lastReplayed)return;const label=({CULTIVATE:'气息归元',SOURCE:'取材归囊',CRAFT:'丹成入囊',FORGE:'法宝炼成',BUY:'购入物资',REST:'静养回元'}as Record<string,string>)[result.type];if(!label)return;if(pulseTimer)clearTimeout(pulseTimer);pulse.value={key,label,detail:formatDelta(result.delta)};pulseTimer=setTimeout(()=>{pulse.value=null;},1600);});
-onScopeDispose(()=>{if(pulseTimer)clearTimeout(pulseTimer);});
 function selectTracking(target:Parameters<typeof tracking.select>[0]){navigationRevision++;tracking.select(target);}
 watch([() => tracking.target.value, () => game.value?.core.runId], () => { collectionTarget.value = null; highlight.value = ''; });
 watch(() => game.value?.core.player.realm, () => { if (tracking.target.value.kind === 'breakthrough') { collectionTarget.value = null; highlight.value = ''; } });
@@ -386,7 +384,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
     </main>
     <main v-if="store.ready&&!game&&demoNode" class="paper demo-banner"><h2>演示进度尚未就绪</h2><p>请核对上方错误后重试同次操作或重新读取；不会改动正常进度。</p><button @click="initialiseGame" :disabled="store.busy">重新读取演示进度</button></main>
     <div v-if="game&&core" class="effects-stage"><ActionEffects :result="store.lastResult" :replayed="store.lastReplayed" :run-id="core.runId" :revision="core.revision" :school="game.school" :reduce-motion="reduceMotion" @focus-fallback="focusContent" :busy="store.busy" :eligible="store.saved && store.available && !store.error"/></div>
-    <div v-if="pulse&&singleScreen" :key="pulse.key" class="hub-pulse" :class="{still:reduceMotion}" role="status" data-testid="hub-pulse" :data-receipt="pulse.key"><strong>{{pulse.label}}</strong><span>{{pulse.detail}}</span></div>
+    <ActionFeedbackStage :store="store" :reduce-motion="reduceMotion" :view-key="hubView+':'+tab"/>
     <main v-if="store.ready&&game&&core&&hubMain" class="game-hub" :aria-busy="store.busy" data-testid="game-hub">
       <CharacterPanel :game="game" compact @inspect="openHub('character',$event)"/>
       <section class="hub-stage" :class="{'hub-battle':!!game.battle,'hub-opening':phase==='opening'}" aria-label="游戏主舞台">
