@@ -1,0 +1,59 @@
+{
+  "format": "chenyuan-desktop-ui-inventory",
+  "version": 1,
+  "task": "Goal2 T04",
+  "assets": [
+    {
+      "id": "meditation-ink",
+      "purpose": "decorative existing-player cultivation vignette; no Game changes",
+      "source": {
+        "path": "art/redesign/desktop/meditation-ink-v1.png",
+        "bytes": 2627988,
+        "sha256": "f1cb70f5e69fe493da5fbe9ea705506e937a09b467d21c49ec4c14fd49c6b347",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/ui/meditation-ink.webp",
+        "bytes": 96402,
+        "sha256": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/meditation-ink.json",
+        "sha256": "2ffc832d9d0891c20094c6ca98a3538951db383e8f5059b2e96ee61ba9e2a2bc"
+      },
+      "reviewSourceHash": "f1cb70f5e69fe493da5fbe9ea705506e937a09b467d21c49ec4c14fd49c6b347"
+    }
+  ],
+  "budgets": {
+    "assets": 1,
+    "maxRuntimeBytes": 160000
+  },
+  "bindingFile": "web/src/assets.ts",
+  "sourceReferences": [
+    "goal-2/input.md",
+    "goal-2/plan.md",
+    "docs/implementation/goal-2-desktop-flow.md",
+    "art/redesign/DESKTOP_UI_REVIEW.md"
+  ],
+  "rights": {
+    "productionUseApproved": true,
+    "distributionLicense": null,
+    "userAcceptance": false,
+    "evidenceReferences": [
+      "goal-2/input.md",
+      "goal-2/plan.md"
+    ]
+  },
+  "proofScope": "source/export/alpha/agent inspection, not human approval"
+}

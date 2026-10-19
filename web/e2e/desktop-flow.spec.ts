@@ -1,0 +1,88 @@
+import {test,expect,type Page,type Locator} from '@playwright/test';
+import {advance} from '../../src/full/engine.ts';
+import {action,snapshot,start,travel,selectGoal,inspectNeed} from './support';
+test.use({actionTimeout:8000,navigationTimeout:15000});
+const sizes=[{width:1280,height:720},{width:1440,height:900},{width:1920,height:1080}];
+async function cave(page:Page){await page.goto('/');await page.getByRole('button',{name:'踏入仙途'}).click();await action(page,'leave');await action(page,'return-cave');await expect(page.getByTestId('save-status')).toHaveText('已保存');}
+const command=(g:any,action:any)=>({...action,commandId:'expected-desktop-flow',runId:g.core.runId,expectedRevision:g.core.revision});
+async function aboveNav(page:Page,id:string){const box=await page.getByTestId(id).boundingBox(),nav=await page.locator('#primary-navigation').boundingBox();expect(box!.y).toBeGreaterThanOrEqual(0);expect(box!.y+box!.height).toBeLessThanOrEqual(nav!.y);}
+
+test('normal opening exposes three equal choices and their actual consequences on every desktop',async({page},info)=>{
+ await page.goto('/');await page.getByRole('button',{name:'踏入仙途'}).click();await expect(page.locator('#opening-actions')).toBeFocused();const before=await snapshot(page);
+ for(const size of sizes){await page.setViewportSize(size);await page.evaluate(()=>window.scrollTo(0,0));for(const id of['help','trade','leave']){await aboveNav(page,id);await expect(page.getByTestId(id)).not.toHaveClass(/primary/);}await expect(page.getByTestId('trade')).toContainText('剑修终结伤害 +4');await page.screenshot({path:info.outputPath(`opening-desktop-${size.width}.png`)});}
+ expect(await snapshot(page)).toEqual(before);await action(page,'trade');expect(await snapshot(page)).toEqual(advance(before,command(before,{type:'CHOOSE',choice:'trade'})));
+});
+
+test('the primary cultivation card promotes one real breakthrough and then exposes school selection',async({page},info)=>{
+ await cave(page);const art=page.locator('[data-asset-id="meditation-ink"]');await expect(art).toHaveAttribute('data-art-state','ready');expect(await art.locator('img').evaluate((img:HTMLImageElement)=>[img.naturalWidth,img.naturalHeight])).toEqual([512,512]);
+ await expect(page.getByTestId('cultivation-card')).toHaveAttribute('data-primary-action','cultivate');await page.getByLabel('行动次数').selectOption('5');const before=await snapshot(page);await action(page,'cultivate');const ready=await snapshot(page);expect(ready).toEqual(advance(before,command(before,{type:'CULTIVATE',method:'natural',count:5})));
+ await expect(page.getByTestId('cultivation-card')).toHaveAttribute('data-primary-action','breakthrough');await expect(page.getByTestId('cultivation-card').getByTestId('breakthrough')).toBeEnabled();await expect(page.getByTestId('cultivation-facts')).toContainText('单次突破');
+ for(const size of sizes){await page.setViewportSize(size);await page.evaluate(()=>window.scrollTo(0,0));await aboveNav(page,'breakthrough');await page.screenshot({path:info.outputPath(`ready-breakthrough-${size.width}.png`)});}expect(await snapshot(page)).toEqual(ready);
+ await page.getByLabel('行动次数').selectOption('50');await action(page,'breakthrough');const entered=await snapshot(page);expect(entered).toEqual(advance(ready,command(ready,{type:'BREAKTHROUGH'})));await expect(page.getByTestId('equipment-panel')).toBeVisible();await page.getByTestId('choose-school').click();await expect(page.getByTestId('equipment-panel')).toBeFocused();expect(await snapshot(page)).toEqual(entered);await action(page,'school-talisman');await expect(page.getByTestId('school-talisman')).toHaveAttribute('aria-pressed','true');
+});
+
+test('goal management and remaining needs expand through real controls without travel or growth',async({page})=>{
+ await cave(page);const before=await snapshot(page);await expect(page.getByTestId('goal-select')).toBeHidden();await expect(page.getByTestId('goal-location')).toHaveCount(0);await expect(page.getByTestId('inspect-xp')).toHaveText('查看修行动作 →');await inspectNeed(page,'xp');await expect(page.getByTestId('cultivation-actions')).toBeFocused();expect(await snapshot(page)).toEqual(before);
+ await page.getByLabel('行动次数').selectOption('5');await action(page,'cultivate');await action(page,'breakthrough');const qi=await snapshot(page);await expect(page.getByTestId('need-foundation_pill')).toBeVisible();await expect(page.getByTestId('need-xp')).toBeHidden();await page.getByTestId('goal-more-needs').click();await expect(page.getByTestId('need-xp')).toBeVisible();expect(await snapshot(page)).toEqual(qi);await selectGoal(page,'item:herb');await expect(page.getByTestId('target')).toContainText('凝气草');expect(await snapshot(page)).toEqual(qi);
+});
+
+test('goal navigation opens a collapsed cross-school future skill and focuses its disabled explanation',async({page})=>{
+ await start(page);await action(page,'school-sword');await page.getByTestId('equipment-toggle').click();await expect(page.getByTestId('equipment-panel')).toHaveCount(0);await selectGoal(page,'skill:talisman_frost');const before=await snapshot(page);await expect(page.getByTestId('goal-location')).toHaveAttribute('data-navigation-kind','travel');await page.getByTestId('goal-location').click();await expect(page.getByTestId('save-status')).toHaveText('已保存');await expect(page.getByTestId('learn-talisman_frost')).toBeDisabled();await expect(page.getByTestId('skill-talisman_frost')).toBeFocused();await expect(page.getByTestId('skill-talisman_frost')).toContainText('筑基');const arrived=await snapshot(page);expect(arrived).toEqual(advance(before,command(before,{type:'TRAVEL',location:'sect'})));expect(arrived.learned).not.toContain('talisman_frost');
+ await selectGoal(page,'skill:sword_still');await expect(page.getByTestId('goal-location')).toHaveAttribute('data-navigation-kind','view');await expect(page.getByTestId('goal-location')).toContainText('查看研习动作');await page.getByTestId('goal-location').click();await expect(page.getByTestId('skill-sword_still')).toBeFocused();expect(await snapshot(page)).toEqual(arrived);
+});
+
+test('failure and same-intent retry have distinct save states and continuing remains read only',async({page})=>{
+ await cave(page);const before=await snapshot(page);await page.evaluate(()=>{const put=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(value:any,key?:IDBValidKey){if(this.name==='full-state'&&key==='current'){IDBObjectStore.prototype.put=put;throw new DOMException('desktop quota','QuotaExceededError');}return put.call(this,value,key!);};});await page.getByTestId('cultivate').click();await expect(page.getByTestId('save-status')).toHaveText('保存待确认');await expect(page.getByTestId('save-summary')).toHaveAttribute('data-save-state','problem');await expect(page.getByTestId('retry-policy')).toContainText('不会重复结算');expect(await snapshot(page)).toEqual(before);await page.getByTestId('retry').click();await expect(page.getByTestId('save-status')).toHaveText('已保存');await expect(page.getByTestId('save-summary')).toHaveAttribute('data-save-state','saved');const after=await snapshot(page);expect(after).toEqual(advance(before,command(before,{type:'CULTIVATE',method:'natural',count:1})));await page.reload();await expect(page.getByTestId('resume-strip')).toBeVisible();await page.getByRole('button',{name:'继续当前内容'}).click();await expect(page.getByTestId('cultivation-actions')).toBeFocused();expect(await snapshot(page)).toEqual(after);
+});
+
+test('a newer goal choice owns the view while an earlier travel finishes saving',async({page})=>{
+ await start(page);await travel(page,'market');await selectGoal(page,'breakthrough');const before=await snapshot(page);
+ await page.evaluate(async()=>{const req=indexedDB.open('chenyuan-playable-v1'),db=await new Promise<IDBDatabase>((resolve,reject)=>{req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});const put=IDBObjectStore.prototype.put;let armed=true,released=false;(window as any).__desktopHold=false;(window as any).__releaseDesktop=()=>{released=true;IDBObjectStore.prototype.put=put;};IDBObjectStore.prototype.put=function(value:any,key?:IDBValidKey){const result=put.call(this,value,key!);if(armed&&this.name==='full-state'&&key==='current'&&value.core.world.location==='cave'){armed=false;this.transaction.addEventListener('complete',()=>{const tx=db.transaction('full-state','readwrite'),store=tx.objectStore('full-state');(window as any).__desktopHold=true;const keep=()=>{const read=store.get('current');read.onsuccess=()=>{if(!released)keep();};};tx.oncomplete=()=>db.close();tx.onabort=()=>db.close();keep();});}return result;};});
+ try{await inspectNeed(page,'xp');await expect.poll(()=>page.evaluate(()=>(window as any).__desktopHold)).toBe(true);await expect(page.getByTestId('save-status')).toHaveText('保存中');await expect(page.getByTestId('save-summary')).toHaveAttribute('data-save-state','pending');await page.getByLabel('追踪目标',{exact:true}).focus();await selectGoal(page,'item:herb');await page.evaluate(()=>(window as any).__releaseDesktop());await expect(page.getByTestId('save-status')).toHaveText('已保存');await expect(page.getByTestId('tab-1')).toHaveAttribute('aria-current','page');await expect(page.getByTestId('goal-select')).toBeFocused();await expect(page.getByTestId('target')).toContainText('凝气草');expect(await snapshot(page)).toEqual(advance(before,command(before,{type:'TRAVEL',location:'cave'})));}finally{await page.evaluate(()=>(window as any).__releaseDesktop?.());}
+});
+
+test('a broken decorative vignette preserves the actual cultivation command and saved result',async({page})=>{
+ await page.route('**/art/v2/ui/meditation-ink.webp',route=>route.fulfill({status:200,contentType:'image/webp',body:'broken'}));await cave(page);await expect(page.locator('[data-asset-id="meditation-ink"]')).toHaveAttribute('data-art-state','failed');await expect(page.getByTestId('cultivate')).toBeEnabled();const before=await snapshot(page);await action(page,'cultivate');expect(await snapshot(page)).toEqual(advance(before,command(before,{type:'CULTIVATE',method:'natural',count:1})));
+});
+
+test('desktop enlarged text retains explicit action jumps across the ordinary pages',async({page},info)=>{
+ await page.setViewportSize({width:1440,height:900});await cave(page);const before=await snapshot(page);
+ for(const scale of['1.5','2']){await page.getByRole('button',{name:'设置',exact:true}).click();await page.getByLabel('文字大小').selectOption(scale);await page.getByRole('button',{name:'关闭设置'}).click();for(const index of[1,2,3]){await page.getByTestId('tab-'+index).click();await page.evaluate(()=>window.scrollTo(0,0));await aboveNav(page,'scene-action-jump');await page.getByTestId('scene-action-jump').click();await expect(page.locator('#game-content [data-primary-region]')).toBeFocused();expect(await snapshot(page)).toEqual(before);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);}await page.screenshot({path:info.outputPath(`desktop-flow-${scale}.png`)});}
+});
+
+test('enabled and disabled cultivation alternatives keep readable costs without passive growth',async({page},info)=>{
+ await start(page);
+ async function contrast(label:string){
+  const before=await snapshot(page);const rows=await page.locator('.cultivation-alternatives button').evaluateAll(buttons=>{
+   const rgb=(value:string)=>value.match(/[\d.]+/g)!.map(Number),lum=(c:number[])=>c.slice(0,3).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
+   return buttons.flatMap(button=>{const style=getComputedStyle(button),colors=style.backgroundImage.match(/rgba?\([^)]+\)/g)??[style.backgroundColor];return [...button.querySelectorAll('small')].filter(e=>e.textContent!.trim()).map(text=>{const a=lum(rgb(getComputedStyle(text).color));return {text:text.textContent,disabled:(button as HTMLButtonElement).disabled,ratio:Math.min(...colors.map(color=>{const b=lum(rgb(color));return(Math.max(a,b)+.05)/(Math.min(a,b)+.05);} ))};});});
+  });await info.attach(label+'-contrast.json',{body:Buffer.from(JSON.stringify(rows,null,2)),contentType:'application/json'});for(const row of rows)expect(row.ratio,row.text!).toBeGreaterThanOrEqual(4.5);expect(await snapshot(page)).toEqual(before);
+ }
+ await expect(page.getByTestId('cultivate-assisted')).toBeEnabled();await expect(page.getByTestId('rest')).toBeDisabled();await contrast('initial-qi');
+ await page.getByTestId('cultivate-assisted').hover();await page.getByTestId('cultivate-assisted').evaluate(el=>Promise.all(el.getAnimations().map(a=>a.finished)));await contrast('hovered-qi');const beforePress=await snapshot(page);await page.mouse.down();try{await expect.poll(()=>page.getByTestId('cultivate-assisted').evaluate(el=>el.matches(':active'))).toBe(true);await page.getByTestId('cultivate-assisted').evaluate(el=>Promise.all(el.getAnimations().map(a=>a.finished)));await contrast('pressed-qi');}finally{await page.mouse.move(0,0);await page.mouse.up();}expect(await snapshot(page)).toEqual(beforePress);
+ await action(page,'school-sword');await travel(page,'wilderness');await action(page,'encounter-wolf');await action(page,'attack');await action(page,'flee');await page.getByTestId('tab-0').click();await expect(page.getByTestId('rest')).toBeEnabled();await contrast('injured');
+ const before=await snapshot(page);await action(page,'rest');expect(await snapshot(page)).toEqual(advance(before,command(before,{type:'REST'})));await page.getByTestId('cultivation-actions').screenshot({path:info.outputPath('readable-cultivation-alternatives.png')});
+});
+
+test('dark navigation, resume and scene links preserve readable text through hover and press',async({page},info)=>{
+ await cave(page);await page.reload();await expect(page.getByTestId('resume-strip')).toBeVisible();const before=await snapshot(page),measurements:any[]=[];
+ async function readable(control:Locator,label:string){
+  for(const state of ['normal','hover','press']){
+   if(state==='hover')await control.hover();if(state==='press')await page.mouse.down();
+   try{
+    if(state!=='normal')await expect.poll(()=>control.evaluate((el,state)=>el.matches(state==='hover'?':hover':':active'),state)).toBe(true);
+    await control.evaluate(el=>Promise.all(el.getAnimations().map(a=>a.finished)));
+    const rows=await control.evaluate(button=>{
+     const rgb=(value:string)=>value.match(/[\d.]+/g)!.map(Number),opaque=(c:number[])=>c.slice(0,3).map(v=>v*(c[3]??1)+255*(1-(c[3]??1))),lum=(c:number[])=>c.slice(0,3).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
+     let surface:Element|null=button,backgrounds:number[][]=[];
+     while(surface){const style=getComputedStyle(surface),gradient=style.backgroundImage.match(/rgba?\([^)]+\)/g);if(gradient){backgrounds=gradient.map(v=>opaque(rgb(v)));break;}const color=rgb(style.backgroundColor);if((color[3]??1)>0){backgrounds=[opaque(color)];break;}surface=surface.parentElement;}
+     if(!backgrounds.length)backgrounds=[[255,255,255]];
+     return [button,...button.querySelectorAll('small')].map(text=>{const a=lum(rgb(getComputedStyle(text).color));return{text:text.textContent,ratios:backgrounds.map(c=>{const b=lum(c);return(Math.max(a,b)+.05)/(Math.min(a,b)+.05);})};});
+    });measurements.push({label,state,rows});for(const row of rows)expect(Math.min(...row.ratios),label+'/'+state+'/'+row.text).toBeGreaterThanOrEqual(4.5);
+   }finally{if(state==='press'){await page.mouse.move(0,0);await page.mouse.up();}}
+  }
+  expect(await snapshot(page)).toEqual(before);
+ }
+ await readable(page.getByTestId('tab-1'),'navigation');await readable(page.getByTestId('resume-strip').getByRole('button'),'resume');await page.getByTestId('tab-1').click();await readable(page.getByTestId('scene-action-jump'),'scene action');await page.getByRole('button',{name:'设置',exact:true}).click();await readable(page.getByRole('button',{name:'关闭设置'}),'paper button');await page.getByRole('button',{name:'关闭设置'}).click();
+ await info.attach('interactive-dark-contrast.json',{body:Buffer.from(JSON.stringify(measurements,null,2)),contentType:'application/json'});expect(await snapshot(page)).toEqual(before);
+});

@@ -13,8 +13,9 @@ for(const size of [{width:1280,height:720},{width:1440,height:900},{width:1920,h
 });
 
 test('navigation reserves its actual border-box height without synchronous mount or resize reads',async({page})=>{
- await page.addInitScript(()=>{(window as any).__navMountReads=0;const original=Element.prototype.getBoundingClientRect;Element.prototype.getBoundingClientRect=function(){if(this.id==='primary-navigation'&&new Error().stack?.includes('/assets/'))(window as any).__navMountReads++;return original.call(this);};});
  await page.goto('/');await page.getByRole('button',{name:'踏入仙途'}).click();await expect(page.getByTestId('save-status')).toHaveText('已保存');const before=await snapshot(page);
+ await page.addInitScript(()=>{(window as any).__navMountReads=0;const original=Element.prototype.getBoundingClientRect;Element.prototype.getBoundingClientRect=function(){if(this.id==='primary-navigation'&&new Error().stack?.includes('/assets/'))(window as any).__navMountReads++;return original.call(this);};});
+ await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');
  for(const size of [{width:1280,height:720},{width:1440,height:900},{width:390,height:844}]){await page.setViewportSize(size);await expect.poll(()=>page.locator('#primary-navigation').evaluate(el=>Math.abs(el.getBoundingClientRect().height-parseFloat(getComputedStyle(document.querySelector('.app-shell')!).getPropertyValue('--nav-height'))))).toBeLessThan(1);}
  expect(await page.evaluate(()=>(window as any).__navMountReads)).toBe(0);expect(await snapshot(page)).toEqual(before);
  await page.setViewportSize({width:1440,height:900});for(const value of ['1.5','2']){await page.getByRole('button',{name:'设置',exact:true}).click();await page.getByLabel('文字大小').selectOption(value);await page.getByRole('button',{name:'关闭设置'}).click();await expect.poll(()=>page.locator('#primary-navigation').evaluate(el=>Math.abs(el.getBoundingClientRect().height-parseFloat(getComputedStyle(document.querySelector('.app-shell')!).getPropertyValue('--nav-height'))))).toBeLessThan(1);expect(await snapshot(page)).toEqual(before);}

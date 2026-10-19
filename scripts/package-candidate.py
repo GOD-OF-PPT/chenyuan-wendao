@@ -142,7 +142,7 @@ T22首次Firefox第8页创建中断未复现、根因未定；原trace与5次原
 
 T24修复文件读取期间的导入所有权和异常处理，补行为引导/帮助重看、未决行囊只读查看与仙缘遭遇/记录并列；提示保持简短，完整解释可重看。候选认证绑定当前全部UI/IDB用例清单。Vue精确更新3.5.44、Vite7.3.7及必需传递依赖；其余直接依赖与Game/数值/存档版本不变。详见ENGINEERING_REVIEW.md的具体证据与未执行范围。
 
-Goal2 T02接入七个专属场景和登仙台门势画作；T03实际应用桌面目标稿基础框架、洞府静修与主行动卡，更新五人物及九敌方，战斗决策集中展示意图、状态、动作与结果。具体当前范围及未完成优化见ART_REVIEW.md、CHARACTER_BATTLE_REVIEW.md与独立素材清单。
+Goal2 T02接入七个专属场景和登仙台门势画作；T03实际应用桌面目标稿基础框架、洞府静修与主行动卡，更新五人物及九敌方，战斗决策集中展示意图、状态、动作与结果。T04继续将可执行突破提升为主动作、收拢目标和功法目录、明确本机存档/失败重试及新建/继续入口，并接入同一玩家的透明静修插画。具体当前范围及未完成优化见ART_REVIEW.md、CHARACTER_BATTLE_REVIEW.md、DESKTOP_UI_REVIEW.md与独立素材清单。
 
 历史源SHA、实际测试/产物/截图见manifest和evidence；候选交付不是公开Release或真人/展示验收。
 ''')
@@ -177,11 +177,15 @@ Goal2 T02接入七个专属场景和登仙台门势画作；T03实际应用桌�
         if character_battle.exists():
             shutil.copy2(character_battle, stage / 'character-battle-manifest.json')
             shutil.copy2(ROOT / 'art/redesign/CHARACTER_BATTLE_REVIEW.md', stage / 'CHARACTER_BATTLE_REVIEW.md')
+        desktop_ui = ROOT / 'art/redesign/desktop-ui-manifest.json'
+        if desktop_ui.exists():
+            shutil.copy2(desktop_ui, stage / 'desktop-ui-manifest.json')
+            shutil.copy2(ROOT / 'art/redesign/DESKTOP_UI_REVIEW.md', stage / 'DESKTOP_UI_REVIEW.md')
         (stage / 'ASSET_SOURCES.md').write_text('''# 素材来源与许可边界
 
 附带的asset-manifest.json逐项记录来源、原件/派生hash、规格、用途、状态及使用依据；其中路径指源码仓库位置，完整资料可从source.bundle恢复。网页运行资源位于web/art，生产文件hash另以本包manifest.runtime为准。原图、运行图与参考预览分开，不把预览放大伪称生产原件。
 
-历史基线包含4场景/5肖像，40符号与4类表现为项目原生代码。若本包附有redesign-asset-manifest.json，则当前另有7个专属场景与登仙台2个门势阶段变体，来源和实际路径以该表及ART_REVIEW.md为准；完整原稿、提示词与回执从source.bundle恢复。若附有character-battle-manifest.json，则五人物、九敌方及洞府静修表现变体的新原稿/运行图与逐图来源由该表及CHARACTER_BATTLE_REVIEW.md记录，旧肖像历史保留。两组历史高清原件仍未取得可回读文件，相关historical/reported状态不当作当前存在。production表示项目内有据使用，不新增发行授权、开源许可证或用户最终美术认可。
+历史基线包含4场景/5肖像，40符号与4类表现为项目原生代码。若本包附有redesign-asset-manifest.json，则当前另有7个专属场景与登仙台2个门势阶段变体，来源和实际路径以该表及ART_REVIEW.md为准；完整原稿、提示词与回执从source.bundle恢复。若附有character-battle-manifest.json，则五人物、九敌方及洞府静修表现变体的新原稿/运行图与逐图来源由该表及CHARACTER_BATTLE_REVIEW.md记录，旧肖像历史保留。若附有desktop-ui-manifest.json，则静修动作卡透明插画的原稿、运行导出和工具回执由该表及DESKTOP_UI_REVIEW.md记录，文字/数值和动作仍由DOM与原有命令驱动。两组历史高清原件仍未取得可回读文件，相关historical/reported状态不当作当前存在。production表示项目内有据使用，不新增发行授权、开源许可证或用户最终美术认可。
 
 不分发本机字体；界面使用用户系统可用字体。无已授权音乐则不加入音乐。截图中字体像素不是字体文件；本候选不附个人存档/密钥/node_modules。发行许可与最终展示决定仍需用户依据现有权利确认，本包与CI不擅自授予新许可。
 ''')

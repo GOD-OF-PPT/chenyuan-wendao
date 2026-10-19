@@ -1,0 +1,52 @@
+{
+  "source": "faaf1bd5639e082f226780ed0fa794b77f1461a1",
+  "archiveSha256": "0f156b74279b39c569bff2167ec092bfcf3bdb3b257d037867451e604eb22815",
+  "review": "agent actual screenshot inspection; not user acceptance",
+  "reviewed": [
+    {
+      "archivePath": "screenshots/demo-1280.png",
+      "sha256": "240b9acb1e35ec856a53ee9fd8520892501a432c8e75dcb7f8006902499d6848",
+      "bytes": 411361,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "archivePath": "screenshots/demo-1440.png",
+      "sha256": "6af6de5e0c018a1c80c4eed7cecc5ed5014c13cc0adad020eb4065cec08025d8",
+      "bytes": 850458,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "archivePath": "screenshots/demo-1920.png",
+      "sha256": "15791fc6842cb30dbce6c190026cd3cf628fb1bbfc2f3b38a06ce7e5e0bb5d82",
+      "bytes": 1162342,
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "archivePath": "screenshots/demo-390.png",
+      "sha256": "e13a3d6f6dd9fa8de587e74f491b495e4c219b34a5f224e7b36c66d133ea8380",
+      "bytes": 161253,
+      "dimensions": [
+        390,
+        844
+      ]
+    }
+  ],
+  "finding": {
+    "id": "T08-C01",
+    "status": "open_deferred_by_user_priority",
+    "observed": "demo navigation wraps into extra rows at150percent on1280/1440/1920; oversized footer",
+    "owner": "Goal2 T08",
+    "notVerified": "200percent demo navigation"
+  },
+  "overallArtAcceptance": false,
+  "priorityInput": "goal-2/amendments/2026-10-19-art-unfinished-compatibility-last.md"
+}

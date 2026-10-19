@@ -4,7 +4,7 @@ import type { Game } from '../../src/full/types.ts';
 import { scenePresentation } from './scene-presentation';
 import AssetImage from './AssetImage.vue';
 import {SCENE_CROPS,TERRACE_ART,terraceViewport,sceneAssetPath} from './assets';
-const props = defineProps<{ game: Game; eyebrow: string; title: string; description: string; battleStage?:boolean; meditation?:boolean }>();
+const props = defineProps<{ game: Game; eyebrow: string; title: string; description: string; battleStage?:boolean; meditation?:boolean; withAction?:boolean }>();
 const scene = computed(() => scenePresentation(props.game));
 const scenePath=computed(()=>sceneAssetPath(scene.value,props.meditation));
 const root=ref<HTMLElement>(),artReady=ref(false),size=ref({width:0,height:0});let observer:ResizeObserver|undefined;
@@ -14,7 +14,7 @@ function artState(value:{state:string;path:string}){if(value.path===scenePath.va
 const photoBox=computed(()=>{const box=terraceViewport(size.value.width,size.value.height);return`${box.x} ${box.y} ${box.width} ${box.height}`;});
 </script>
 <template>
-  <section ref="root" class="scene" :class="[scene.key, scene.location, {compact:scene.compact,'battle-location':battleStage}]" data-testid="scene" :data-scene="scene.key" :data-scene-art="scene.artKey" :data-location="scene.location" :data-gate="scene.gate" aria-label="当前行旅">
+  <section ref="root" class="scene" :class="[scene.key, scene.location, {compact:scene.compact,'battle-location':battleStage,'with-action':withAction}]" data-testid="scene" :data-scene="scene.key" :data-scene-art="scene.artKey" :data-location="scene.location" :data-gate="scene.gate" aria-label="当前行旅">
     <AssetImage class="scene-image" :path="scenePath" :asset-id="`scene-${scene.artKey}`" :position="SCENE_CROPS[scene.location]" :fit="scene.key==='terrace'?'contain':'cover'" eager @state="artState">
     <svg class="scene-landscape" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
       <circle class="scene-moon" cx="865" cy="96" r="43"/>
@@ -53,6 +53,7 @@ const photoBox=computed(()=>{const box=terraceViewport(size.value.width,size.val
     <div class="scene-vignette" aria-hidden="true"></div>
     <div class="scene-copy"><span v-if="!battleStage&&!meditation" class="eyebrow">{{eyebrow}}</span><h2>{{title}}</h2><p v-if="!battleStage&&!meditation">{{description}}</p></div>
     <span class="scene-seal" aria-hidden="true">问<br>道</span>
+    <slot/>
   </section>
 </template>
 <style scoped>

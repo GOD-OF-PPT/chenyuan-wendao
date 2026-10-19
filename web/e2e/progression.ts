@@ -71,7 +71,7 @@ export async function prepareRelic(page: Page, id: string) {
 export async function learn(page: Page, id: string) {
   await funds(page, C.skills[id].price); await go(page, 'sect'); await page.getByTestId('tab-0').click();
   await page.getByTestId(`track-skill-${id}`).click(); const before = await snapshot(page);
-  await page.getByTestId('goal-panel').getByRole('button', { name: '前往青云宗' }).click();
+  await page.getByTestId('goal-location').click();
   await expect(page.getByTestId(`learn-${id}`)).toBeFocused(); expect(await snapshot(page)).toEqual(before);
   await action(page, `learn-${id}`); const after = await snapshot(page);
   expect(after.learned).toContain(id); expect(after.loadout).toEqual(before.loadout);

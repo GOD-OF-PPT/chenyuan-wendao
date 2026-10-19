@@ -1,0 +1,77 @@
+{
+  "id": "meditation-ink",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-d107342a-7b28-442e-9847-f48f7b179c2e.png",
+  "savedPath": "art/redesign/desktop/meditation-ink-v1.png",
+  "copiedUnchanged": true,
+  "sourceSHA256": "f1cb70f5e69fe493da5fbe9ea705506e937a09b467d21c49ec4c14fd49c6b347",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceBytes": 2627988,
+  "promptReference": "art/redesign/receipts/desktop-ui-prompts.json#meditation-ink",
+  "referenceImages": [
+    {
+      "path": "art/redesign/characters/player-v1.png",
+      "role": "edit target; preserve existing adult player identity, hair and ivory-jade robe",
+      "sha256": "0abde0fe4d767fa6832df7b35e7ac6b87f4c318b3e0312cf0e3d984e2e9e23e2"
+    },
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "role": "style reference only; palette, lighting and painted materials",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9"
+    },
+    {
+      "path": "goal-2/design/desktop-direction-v1.png",
+      "role": "composition reference only; lower-left meditation vignette, no interface content",
+      "sha256": "ab34c2faff1a786c210e96310cf2cfc52cae71aa4880f37e37aa7821f4040b12"
+    }
+  ],
+  "transparentBackgroundRequested": true,
+  "alphaProof": {
+    "min": 0,
+    "max": 255,
+    "transparentPixels": 605646,
+    "solidPixels": 685361,
+    "intermediatePixels": 281509
+  },
+  "runtimeAlphaProof": {
+    "min": 0,
+    "max": 253,
+    "transparentPixels": 100935,
+    "solidPixels": 114163,
+    "intermediatePixels": 47046
+  },
+  "runtime": {
+    "path": "web/public/art/v2/ui/meditation-ink.webp",
+    "bytes": 96402,
+    "sha256": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "review": {
+    "actuallyViewed": true,
+    "scope": "agent source inspection, not user acceptance",
+    "observation": "Same adult player, ivory-jade robe and tied dark hair, seated rear three-quarter ink vignette on rock, restrained gold mist, complete silhouette and transparent edges; no text, UI, weapon, extra character or watermark observed."
+  }
+}

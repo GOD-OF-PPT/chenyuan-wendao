@@ -4,7 +4,7 @@ import {driver} from '../../tests/full-route.mjs';
 import {trialJourneyScenario} from '../../tests/trial-journey-route.mjs';
 import {advance} from '../../src/full/engine.ts';
 import * as C from '../../src/full/content.ts';
-import {action,start,travel,snapshot} from './support';
+import {action,start,travel,snapshot,openEquipment} from './support';
 test.use({actionTimeout:8000,navigationTimeout:15000});
 const errors=new WeakMap<Page,string[]>();test.beforeEach(async({page})=>{const list:string[]=[];errors.set(page,list);page.on('pageerror',e=>list.push(e.message));});test.afterEach(async({page})=>expect(errors.get(page)).toEqual([]));
 function enemyGame(id:string){if(C.enemies[id].trial)return trialJourneyScenario().states.find((g:any)=>g.battle?.enemy===id);const d=driver();while(C.rank(d.game.core.player.realm)<C.rank(C.enemies[id].min))d.realm('purchase');d.go(C.enemies[id].location);d.doAction({type:'ENCOUNTER',enemy:id});return d.game;}
@@ -40,10 +40,10 @@ test('failed battle persistence keeps old state and feedback; retry commits the 
 
 
 test('desktop full-page battle precedes equipment and exposes a real decision jump without passive writes',async({page},info)=>{
- await imported(page,enemyGame('wolf'));await ready(page,'wolf');const before=await snapshot(page);
+ await imported(page,enemyGame('wolf'));await ready(page,'wolf');const before=await snapshot(page);await openEquipment(page);expect(await snapshot(page)).toEqual(before);
  for(const size of [{width:1280,height:720},{width:1440,height:900},{width:1920,height:1080}]){
   await page.setViewportSize(size);await page.evaluate(()=>window.scrollTo(0,0));
-  const stage=await page.getByTestId('battle-stage').boundingBox(),equipment=await page.getByTestId('equipment-panel').boundingBox();expect(stage!.y).toBeLessThan(equipment!.y);
+  const stage=await page.getByTestId('battle-stage').boundingBox(),equipment=await page.getByTestId('equipment-panel').boundingBox(),summary=await page.getByTestId('equipment-section').boundingBox();expect(stage!.y).toBeLessThan(equipment!.y);expect(stage!.y).toBeLessThan(summary!.y);
   const jump=await page.getByTestId('battle-stage').getByRole('button',{name:'前往本回合行动'}).boundingBox(),nav=await page.locator('#primary-navigation').boundingBox();expect(jump!.y).toBeGreaterThanOrEqual(0);expect(jump!.y+jump!.height).toBeLessThanOrEqual(nav!.y);
   await page.screenshot({path:info.outputPath(`battle-context-${size.width}.png`)});expect(await snapshot(page)).toEqual(before);
  }

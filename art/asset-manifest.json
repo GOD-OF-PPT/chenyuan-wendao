@@ -993,13 +993,13 @@
         },
         {
           "path": "web/src/style.css",
-          "bytes": 21865,
-          "sha256": "16ae6fdcd8fa4076f5aeb0a2f9e9baafcbf7c67f72cacdc87674e9a3168874ce"
+          "bytes": 17629,
+          "sha256": "1baa2d7269ddbec88101a7a79dadc9de6f3c77d02006be7de9daab9147662fc8"
         },
         {
           "path": "web/src/shell.css",
-          "bytes": 24041,
-          "sha256": "03c6052fd9901bddfae4214b561a50d4ba114ed96be200c24802e571baa627d7"
+          "bytes": 28620,
+          "sha256": "4fb77d3d4e87d050282eca53145bc251aa5621ea41a9b42858483d16c7392ebb"
         },
         {
           "path": "web/src/focus.ts",
@@ -1008,13 +1008,13 @@
         },
         {
           "path": "web/src/LocalExperiencePanel.vue",
-          "bytes": 8360,
-          "sha256": "8a75359c38313c349146fd8cbb57d2ef16e295cbd7a7c0806741add452b994a9"
+          "bytes": 8331,
+          "sha256": "97ffa7bff3d6ff5b69e73c101d190b9271c0d2dae53d889c070913a36392ecbf"
         },
         {
           "path": "web/src/BattlePanel.vue",
-          "bytes": 9594,
-          "sha256": "161151f335e460689228e6d52368bc5403cd425bf847359376fad22eb252b4a6"
+          "bytes": 9324,
+          "sha256": "ea1c4ad65f9a2f193e928d45dfb57aba662ac53da49969a23790839ca7aeeb68"
         }
       ]
     },
@@ -1071,8 +1071,8 @@
         },
         {
           "path": "web/src/ScenePanel.vue",
-          "bytes": 9333,
-          "sha256": "3ce7f04ddf0902b9dffa62bd16e416b29d2d43a3f135c30180fdc34353fd44c7"
+          "bytes": 9391,
+          "sha256": "cbd69e166756900e6442988b99d30895bc8adcb6b59f5a8a4c376312a836a698"
         },
         {
           "path": "web/src/AssetImage.vue",
@@ -1081,8 +1081,8 @@
         },
         {
           "path": "web/src/assets.ts",
-          "bytes": 3030,
-          "sha256": "587283638b311e984fc2bc372d0c798603ccade71855bd14f37925bb5c6cb997"
+          "bytes": 3116,
+          "sha256": "70aa24ecb4ae77c9304e2adaa9e54d2601fe49093ba75b37d035c2c5977a0f41"
         }
       ]
     },

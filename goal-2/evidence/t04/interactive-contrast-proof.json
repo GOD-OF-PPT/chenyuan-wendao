@@ -1,0 +1,809 @@
+{
+  "scope": "agent actual UI states, not human approval",
+  "developmentBase": {
+    "head": "8a5d6910f391129444385328f4a4ba3b0d61cf37",
+    "source": "8a5d6910f391129444385328f4a4ba3b0d61cf37",
+    "tree": "6dc24d8a9d062c3c2af74a9827ad9767281cae6e",
+    "dirty": true,
+    "node": "v24.19.0",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "passed": 12,
+  "counts": {
+    "chromium": 4,
+    "firefox": 4,
+    "webkit": 4
+  },
+  "minimumInteractiveContrast": 5.809450998083451,
+  "minimumAlternativeContrast": 6.695564325861325,
+  "states": [
+    {
+      "browser": "chromium",
+      "label": "navigation",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "历练探索 · 取材",
+          "ratios": [
+            8.493369696943411,
+            10.816124641387413
+          ]
+        },
+        {
+          "text": "探索 · 取材",
+          "ratios": [
+            5.809450998083451,
+            7.398211585669748
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "label": "navigation",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "历练探索 · 取材",
+          "ratios": [
+            8.493369696943411,
+            10.816124641387413
+          ]
+        },
+        {
+          "text": "探索 · 取材",
+          "ratios": [
+            5.809450998083451,
+            7.398211585669748
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "label": "navigation",
+      "state": "press",
+      "rows": [
+        {
+          "text": "历练探索 · 取材",
+          "ratios": [
+            8.493369696943411,
+            10.816124641387413
+          ]
+        },
+        {
+          "text": "探索 · 取材",
+          "ratios": [
+            5.809450998083451,
+            7.398211585669748
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "label": "resume",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "继续当前内容 ↓",
+          "ratios": [
+            8.502385404246255
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "label": "resume",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "继续当前内容 ↓",
+          "ratios": [
+            8.502385404246255
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "label": "resume",
+      "state": "press",
+      "rows": [
+        {
+          "text": "继续当前内容 ↓",
+          "ratios": [
+            8.502385404246255
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "label": "scene action",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "前往当前操作 ↓",
+          "ratios": [
+            8.7706680491977
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "label": "scene action",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "前往当前操作 ↓",
+          "ratios": [
+            8.023626884403797
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "label": "scene action",
+      "state": "press",
+      "rows": [
+        {
+          "text": "前往当前操作 ↓",
+          "ratios": [
+            8.023626884403797
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "label": "paper button",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "关闭",
+          "ratios": [
+            18.339843321956053,
+            15.307309263984044
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "label": "paper button",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "关闭",
+          "ratios": [
+            18.339843321956053,
+            15.307309263984044
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "label": "paper button",
+      "state": "press",
+      "rows": [
+        {
+          "text": "关闭",
+          "ratios": [
+            18.339843321956053,
+            15.307309263984044
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "navigation",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "历练探索 · 取材",
+          "ratios": [
+            8.493369696943411,
+            10.816124641387413
+          ]
+        },
+        {
+          "text": "探索 · 取材",
+          "ratios": [
+            5.809450998083451,
+            7.398211585669748
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "navigation",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "历练探索 · 取材",
+          "ratios": [
+            8.493369696943411,
+            10.816124641387413
+          ]
+        },
+        {
+          "text": "探索 · 取材",
+          "ratios": [
+            5.809450998083451,
+            7.398211585669748
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "navigation",
+      "state": "press",
+      "rows": [
+        {
+          "text": "历练探索 · 取材",
+          "ratios": [
+            8.493369696943411,
+            10.816124641387413
+          ]
+        },
+        {
+          "text": "探索 · 取材",
+          "ratios": [
+            5.809450998083451,
+            7.398211585669748
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "resume",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "继续当前内容 ↓",
+          "ratios": [
+            8.502385404246255
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "resume",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "继续当前内容 ↓",
+          "ratios": [
+            8.502385404246255
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "resume",
+      "state": "press",
+      "rows": [
+        {
+          "text": "继续当前内容 ↓",
+          "ratios": [
+            8.502385404246255
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "scene action",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "前往当前操作 ↓",
+          "ratios": [
+            8.7706680491977
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "scene action",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "前往当前操作 ↓",
+          "ratios": [
+            8.023626884403797
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "scene action",
+      "state": "press",
+      "rows": [
+        {
+          "text": "前往当前操作 ↓",
+          "ratios": [
+            8.023626884403797
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "paper button",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "关闭",
+          "ratios": [
+            18.339843321956053,
+            15.307309263984044
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "paper button",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "关闭",
+          "ratios": [
+            18.339843321956053,
+            15.307309263984044
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "label": "paper button",
+      "state": "press",
+      "rows": [
+        {
+          "text": "关闭",
+          "ratios": [
+            18.339843321956053,
+            15.307309263984044
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "navigation",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "历练探索 · 取材",
+          "ratios": [
+            8.493369696943411,
+            10.816124641387413
+          ]
+        },
+        {
+          "text": "探索 · 取材",
+          "ratios": [
+            5.809450998083451,
+            7.398211585669748
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "navigation",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "历练探索 · 取材",
+          "ratios": [
+            8.493369696943411,
+            10.816124641387413
+          ]
+        },
+        {
+          "text": "探索 · 取材",
+          "ratios": [
+            5.809450998083451,
+            7.398211585669748
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "navigation",
+      "state": "press",
+      "rows": [
+        {
+          "text": "历练探索 · 取材",
+          "ratios": [
+            8.493369696943411,
+            10.816124641387413
+          ]
+        },
+        {
+          "text": "探索 · 取材",
+          "ratios": [
+            5.809450998083451,
+            7.398211585669748
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "resume",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "继续当前内容 ↓",
+          "ratios": [
+            8.502385404246255
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "resume",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "继续当前内容 ↓",
+          "ratios": [
+            8.502385404246255
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "resume",
+      "state": "press",
+      "rows": [
+        {
+          "text": "继续当前内容 ↓",
+          "ratios": [
+            8.502385404246255
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "scene action",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "前往当前操作 ↓",
+          "ratios": [
+            8.7706680491977
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "scene action",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "前往当前操作 ↓",
+          "ratios": [
+            8.023626884403797
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "scene action",
+      "state": "press",
+      "rows": [
+        {
+          "text": "前往当前操作 ↓",
+          "ratios": [
+            8.023626884403797
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "paper button",
+      "state": "normal",
+      "rows": [
+        {
+          "text": "关闭",
+          "ratios": [
+            18.339843321956053,
+            15.307309263984044
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "paper button",
+      "state": "hover",
+      "rows": [
+        {
+          "text": "关闭",
+          "ratios": [
+            18.339843321956053,
+            15.307309263984044
+          ]
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "label": "paper button",
+      "state": "press",
+      "rows": [
+        {
+          "text": "关闭",
+          "ratios": [
+            18.339843321956053,
+            15.307309263984044
+          ]
+        }
+      ]
+    }
+  ],
+  "alternatives": [
+    {
+      "browser": "chromium",
+      "stage": "initial-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "chromium",
+      "stage": "initial-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "chromium",
+      "stage": "initial-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "chromium",
+      "stage": "hovered-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "chromium",
+      "stage": "hovered-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "chromium",
+      "stage": "hovered-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "chromium",
+      "stage": "pressed-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "chromium",
+      "stage": "pressed-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "chromium",
+      "stage": "pressed-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "chromium",
+      "stage": "injured-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "chromium",
+      "stage": "injured-contrast.json",
+      "text": "1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "firefox",
+      "stage": "initial-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "firefox",
+      "stage": "initial-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "firefox",
+      "stage": "initial-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "firefox",
+      "stage": "hovered-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "firefox",
+      "stage": "hovered-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "firefox",
+      "stage": "hovered-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "firefox",
+      "stage": "pressed-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "firefox",
+      "stage": "pressed-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "firefox",
+      "stage": "pressed-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "firefox",
+      "stage": "injured-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "firefox",
+      "stage": "injured-contrast.json",
+      "text": "1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "webkit",
+      "stage": "initial-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "webkit",
+      "stage": "initial-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "webkit",
+      "stage": "initial-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "webkit",
+      "stage": "hovered-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "webkit",
+      "stage": "hovered-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "webkit",
+      "stage": "hovered-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "webkit",
+      "stage": "pressed-qi-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "webkit",
+      "stage": "pressed-qi-contrast.json",
+      "text": "1 游戏月",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "webkit",
+      "stage": "pressed-qi-contrast.json",
+      "text": "气血灵力已经圆满",
+      "disabled": true,
+      "ratio": 6.695564325861325
+    },
+    {
+      "browser": "webkit",
+      "stage": "injured-contrast.json",
+      "text": "灵石 20 · 1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    },
+    {
+      "browser": "webkit",
+      "stage": "injured-contrast.json",
+      "text": "1 游戏月",
+      "disabled": false,
+      "ratio": 8.241799119313555
+    }
+  ],
+  "sourceHashes": {
+    "web/src/style.css": "1baa2d7269ddbec88101a7a79dadc9de6f3c77d02006be7de9daab9147662fc8",
+    "web/src/shell.css": "4fb77d3d4e87d050282eca53145bc251aa5621ea41a9b42858483d16c7392ebb",
+    "web/e2e/desktop-flow.spec.ts": "4bf124f8198a8a292f40873ae7896243a8735c07c6c262cb770b3db9f5d71f88"
+  }
+}
