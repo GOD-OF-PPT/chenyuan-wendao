@@ -49,7 +49,7 @@ test('missing decorative materials leave truthful readable controls and the orig
  await page.route('**/art/v2/ui/*',route=>route.abort());await cave(page);const before=await snapshot(page);
  for(const id of ['hub-goal-mountains','hub-meditation'])await expect(page.locator(`[data-asset-id=${id}]`)).toHaveAttribute('data-art-state','failed');
  await expect(page.getByTestId('cultivate')).toBeEnabled();await expect(page.getByTestId('rest')).toBeDisabled();await expect(page.getByTestId('breakthrough')).toContainText('修为尚未圆满');
- const paper=await page.locator('.hub-current').evaluate(el=>getComputedStyle(el).backgroundColor);expect(paper).toBe('rgb(239, 238, 229)');
+ const paper=await page.locator('.hub-current').evaluate(el=>getComputedStyle(el).backgroundColor);expect(paper).toBe('rgb(23, 56, 61)');
  await action(page,'cultivate');const after=await snapshot(page);expect(after.core.revision).toBe(before.core.revision+1);expect(after.core.player.xp).toBe(before.core.player.xp+5);expect(after.core.world.elapsedMonths).toBe(before.core.world.elapsedMonths+1);
 });
 

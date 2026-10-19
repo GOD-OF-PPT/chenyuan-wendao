@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ProgressTrack from './ProgressTrack.vue';
 import {computed} from 'vue';
 import type {Action,Game,Move} from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
@@ -29,7 +30,7 @@ function focusDecisions(){document.getElementById('battle-decisions')?.focus();}
    <AssetImage class="battle-backdrop" :path="backdrop" asset-id="battle-environment" eager><span class="battle-backdrop-fallback"/></AssetImage>
    <div class="enemy-art" aria-hidden="true"><AssetImage :path="ENEMY_ASSETS[battle.enemy]" :asset-id="`enemy-${battle.enemy}`" fit="contain" eager><span class="enemy-fallback">{{enemy.trial?'劫':'敌'}}<small>{{enemy.name}}</small></span></AssetImage></div>
    <div class="enemy-status"><div class="enemy-row"><h2>{{enemy.name}}</h2><b data-testid="enemy-hp">{{battle.hp}} / {{enemy.hp}} 气血</b></div>
-    <progress class="enemy-health" :value="battle.hp" :max="enemy.hp" aria-label="敌方气血"></progress>
+    <ProgressTrack :value="battle.hp" :max="enemy.hp" label="敌方气血" tone="health" :identity="game.core.runId+battle.enemy+game.wins" hint="只有实际战斗行动才改变气血；先辨敌方意图，再选择攻守。"/>
     <div class="intent" data-testid="intent" :data-intent="forecast.kind"><span>敌方意图</span><strong>{{forecast.name}}</strong><b>预计伤害 {{forecast.damage}}</b></div>
    </div>
   </div>

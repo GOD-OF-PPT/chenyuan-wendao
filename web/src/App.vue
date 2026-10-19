@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, onScopeDispose, ref, shallowRef, watch } from 'vue';
+import { computed, nextTick, onMounted, onScopeDispose, provide, ref, shallowRef, watch } from 'vue';
 import { useGame } from './store';
-import {useFocus,visibleFocusTarget} from './focus';
+import {useFocus,visibleFocusTarget,gameFocusKey} from './focus';
 import * as C from '../../src/full/content.ts';
 import { availableEvents } from '../../src/full/engine.ts';
 import { gamePhase } from '../../src/full/contracts.ts';
@@ -22,6 +22,8 @@ import PrimaryNav from './PrimaryNav.vue';
 import AssetImage from './AssetImage.vue';
 import PortraitImage from './PortraitImage.vue';
 import GameIcon from './GameIcon.vue';
+import ProgressTrack from './ProgressTrack.vue';
+import ChoiceCard from './ChoiceCard.vue';
 import ActionEffects from './ActionEffects.vue';
 import {NPC_PORTRAITS,SCENE_ASSETS,DESKTOP_UI_ASSETS,PANEL_MATERIAL_ASSETS,sceneAssetPath} from './assets';
 import {scenePresentation} from './scene-presentation';
@@ -94,6 +96,7 @@ async function closeHub(){
 function featureKey(event:KeyboardEvent){if(event.key==='Escape'&&singleScreen.value&&hubView.value!=='home'&&!document.querySelector('dialog[open]')){event.preventDefault();void closeHub();}}
 onMounted(()=>document.addEventListener('keydown',featureKey));onScopeDispose(()=>document.removeEventListener('keydown',featureKey));
 const focus=useFocus(()=>contentPanel.value??settingsButton.value??null);
+provide(gameFocusKey,focus);
 let pendingContentFocus:{owner:number;opener:Element|null}|null=null;
 function focusContent(){const target=contentPanel.value??document.getElementById('welcome-content');if(target){pendingContentFocus=null;focus.target(target);}else pendingContentFocus={owner:navigationRevision,opener:document.activeElement};}
 function cancelPendingContentFocus(){pendingContentFocus=null;navigationRevision++;}
@@ -146,6 +149,7 @@ function quote(action: Action) {
   if (!current.cache.has(key)) current.cache.set(key, previewAction(current.state, action));
   return current.cache.get(key)!;
 }
+function choiceDetails(action:Action,detail:string){const p=quote(action);return [{label:'即刻代价',value:formatCosts(p?.actualCosts??p?.costs??null)},{label:'已知结果',value:detail},{label:'预计变化',value:p?.delta?formatDelta(p.delta):'条件未满足，当前不会执行'},{label:'当前条件',value:why(action)||'可选择；由你确认后执行'}];}
 const can = (action: Action) => store.available && !store.busy && !!quote(action)?.allowed;
 const why = (action: Action) => !store.available ? '存储尚未就绪，请重新读取或导出原件' : store.busy ? '正在保存，请稍候' : quote(action)?.failure?.message ?? '';
 function cost(action: Action) {
@@ -348,7 +352,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
 </script>
 
 <template>
-  <div class="app-shell art-theme" :class="{'is-saving':store.busy,'text-enlarged':fontScale>1,'has-game':!!game,'cultivation-home':cultivationHome,'is-opening':phase==='opening','single-screen':singleScreen&&!!game,'hub-visible':hubMain,'hub-reduced':reduceMotion}" :data-font-scale="fontScale" :data-session="session.kind" :style="{'--font-scale':fontScale,'--nav-height':navHeight+'px'}">
+  <div class="app-shell art-theme" data-theme="jade" :class="{'is-saving':store.busy,'text-enlarged':fontScale>1,'has-game':!!game,'cultivation-home':cultivationHome,'is-opening':phase==='opening','single-screen':singleScreen&&!!game,'hub-visible':hubMain,'hub-reduced':reduceMotion}" :data-font-scale="fontScale" :data-session="session.kind" :style="{'--font-scale':fontScale,'--nav-height':navHeight+'px'}">
     <AssetImage v-if="game" class="world-ambience" :path="worldArt" asset-id="world-ambience" eager aria-hidden="true"/>
     <nav class="skip-links" aria-label="快捷定位"><a :href="game?'#game-content':'#welcome-content'" @click.prevent="focusContent">跳到当前内容</a><a v-if="game?.status==='active'" href="#primary-navigation" @click.prevent="focusRegion('primary-navigation')">跳到主导航</a><a v-if="game" href="#goal-panel" @click.prevent="focusRegion('goal-panel')">跳到当前目标</a></nav>
     <header class="topbar">
@@ -388,7 +392,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
       <section class="hub-stage" :class="{'hub-battle':!!game.battle,'hub-opening':phase==='opening'}" aria-label="游戏主舞台">
         <ScenePanel v-if="!game.battle" :game="game" :meditation="cultivationHome" :battle-stage="!!game.battle" :eyebrow="phase==='opening'?'山雨破庙':location.subtitle" :title="phase==='opening'?'雨中故人':location.name" description="一念尘缘起，千山共问道。"/>
         <section ref="contentPanel" id="game-content" class="paper hub-current" :class="{'hub-cultivating':phase==='idle'&&game.status==='active'&&core.world.location==='cave'}" data-testid="hub-current" tabindex="-1" aria-label="当前内容">
-          <template v-if="phase==='opening'"><div class="hub-opening-title"><PortraitImage id="shen" fallback="沈"/><div><span>破庙初遇 · 沈清禾</span><h2>一丹，一念。</h2></div></div><p class="story">山雨将歇，沈清禾向你求药。随身回春丹 ×{{core.inventory.healing_pill}}，要不要介入这段因果，由你决定。</p><div id="opening-actions" class="choices opening-choices" tabindex="-1" data-primary-region role="group" aria-label="破庙抉择"><button v-for="choice in openingChoices" :key="choice.id" :data-testid="choice.id" @click="act({type:'CHOOSE',choice:choice.id})" :disabled="!can({type:'CHOOSE',choice:choice.id})"><strong>{{choice.name}}</strong><small>{{cost({type:'CHOOSE',choice:choice.id})}}</small><small>{{choice.detail}}</small><small v-if="why({type:'CHOOSE',choice:choice.id})">{{why({type:'CHOOSE',choice:choice.id})}}</small></button></div><button class="text-button" @click="openHub('current',$event)">查看三种选择与剑简说明</button></template>
+          <template v-if="phase==='opening'"><div class="hub-opening-title"><PortraitImage id="shen" fallback="沈"/><div><span>破庙初遇 · 沈清禾</span><h2>一丹，一念。</h2></div></div><p class="story">山雨将歇，沈清禾向你求药。随身回春丹 ×{{core.inventory.healing_pill}}，要不要介入这段因果，由你决定。</p><div id="opening-actions" class="choices opening-choices" tabindex="-1" data-primary-region role="group" aria-label="破庙抉择"><ChoiceCard v-for="choice in openingChoices" :key="choice.id" :choice-id="choice.id" :label="choice.name" :disabled="!can({type:'CHOOSE',choice:choice.id})" :identity="core.runId+core.revision" :details="choiceDetails({type:'CHOOSE',choice:choice.id},choice.detail)" @choose="act({type:'CHOOSE',choice:choice.id})"><strong>{{choice.name}}</strong><small>{{cost({type:'CHOOSE',choice:choice.id})}}</small><small>{{choice.detail}}</small><small v-if="why({type:'CHOOSE',choice:choice.id})">{{why({type:'CHOOSE',choice:choice.id})}}</small></ChoiceCard></div><button class="text-button" @click="openHub('current',$event)">查看三种选择与剑简说明</button></template>
           <BattlePanel v-else-if="game.battle" :game="game" :can="can" :cost="cost" :why="why" compact @move="battle" @details="openHub('battle',$event)"/>
           <template v-else-if="phase==='idle'&&game.status==='active'&&core.world.location==='cave'">
             <AssetImage class="hub-meditation-art" :path="DESKTOP_UI_ASSETS.meditation" asset-id="hub-meditation" fit="contain" eager aria-hidden="true"/>
@@ -405,7 +409,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
           <template v-else><h2>{{game.status==='active'?(activeStory?.name??(journey?'渡劫行程':'当前机缘')):overview?.title}}</h2><p class="story">{{game.status==='active'?'眼前的抉择尚待继续。查看资料不会推进游戏时间。':'此卷已收，来路犹存。'}}</p><div data-primary-region tabindex="-1"><button class="primary" @click="openHub(game.status==='active'?'current':'life',$event)">{{game.status==='active'?'继续当前遭遇':'查看生平与收卷'}}</button></div></template>
         </section>
       </section>
-      <aside class="hub-aside"><section class="paper hub-goal"><span class="section-label">当前目标</span><AssetImage class="hub-mountain-art" :path="PANEL_MATERIAL_ASSETS.mountains" asset-id="hub-goal-mountains" fit="contain" eager aria-hidden="true"/><h2 data-testid="hub-target">{{hubGoal?.title}}</h2><progress v-if="tracking.target.value.kind==='breakthrough'&&realm.xpCap" :value="core.player.xp" :max="realm.xpCap" aria-label="当前目标修为"/><p>{{hubGoal?.completed?'目标已达成':hubGoal?.preview?.failure?.message??'准备已齐，可核对当前行动。'}}</p><button data-testid="hub-goal-open" @click="openHub('goal',$event)">查看缺口与来源 →</button></section>
+      <aside class="hub-aside"><section class="paper hub-goal"><span class="section-label">当前目标</span><AssetImage class="hub-mountain-art" :path="PANEL_MATERIAL_ASSETS.mountains" asset-id="hub-goal-mountains" fit="contain" eager aria-hidden="true"/><h2 data-testid="hub-target">{{hubGoal?.title}}</h2><ProgressTrack v-if="tracking.target.value.kind==='breakthrough'&&realm.xpCap" :value="core.player.xp" :max="realm.xpCap" label="当前目标修为" :identity="core.runId+core.player.realm" hint="当前目标按已保存修为显示。进度满后，仍需核对突破材料和条件。"/><p>{{hubGoal?.completed?'目标已达成':hubGoal?.preview?.failure?.message??'准备已齐，可核对当前行动。'}}</p><button data-testid="hub-goal-open" @click="openHub('goal',$event)">查看缺口与来源 →</button></section>
       <nav class="hub-services" aria-label="修仙功能"><button v-for="entry in hubEntries" :key="entry.id" :data-testid="`hub-${entry.id}`" @click="openHub(entry.id,$event)"><GameIcon :kind="entry.kind" :id="entry.icon"/><span>{{entry.label}}</span></button></nav>
       <section class="paper hub-recent" aria-live="polite"><span class="section-label">行道回响</span><p>{{game.journal.at(-1)}}</p><small v-if="store.lastResult">实际 {{store.lastResult.executedSteps}} / {{store.lastResult.requestedSteps}} 次 · {{formatDelta(store.lastResult.delta)}}</small><button v-if="store.lastResult" class="text-button" data-testid="hub-receipt" @click="openHub('receipt',$event)">查看本次结算</button><div v-if="resumeVisible" class="hub-resume" data-testid="resume-strip"><span>已续上本机进度</span></div><button v-if="demoNode" class="text-button" @click="showDemoMenu">切换演示节点</button><button v-if="overview?.remainingMonths!==null&&overview?.remainingMonths!==undefined&&overview.remainingMonths<=12" class="text-button" @click="showLife">余寿 {{overview.remainingMonths}} 月 · 查看生平</button></section></aside>
     </main>
@@ -424,20 +428,20 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
             <div class="opening-heading"><PortraitImage class="speaker-portrait" id="shen" fallback="沈"/><div><span class="section-label">破庙初遇 · 沈清禾</span><h2>一丹，一念。</h2></div></div>
             <p class="story">山雨将歇，药修沈清禾向你求药。你随身带着回春丹 ×{{core.inventory.healing_pill}}，庙柱上的引气之法人人可习。要不要介入这段因果，由你决定。</p>
             <div id="opening-actions" class="choices opening-choices" tabindex="-1" data-primary-region role="group" aria-label="破庙抉择">
-              <button v-for="choice in openingChoices" :key="choice.id" :data-testid="choice.id" @click="act({type:'CHOOSE',choice:choice.id})" :disabled="!can({type:'CHOOSE',choice:choice.id})">
+              <ChoiceCard v-for="choice in openingChoices" :key="choice.id" :choice-id="choice.id" :label="choice.name" :disabled="!can({type:'CHOOSE',choice:choice.id})" :identity="core.runId+core.revision" :details="choiceDetails({type:'CHOOSE',choice:choice.id},choice.detail)" @choose="act({type:'CHOOSE',choice:choice.id})">
                 <strong>{{choice.name}}</strong><small>{{cost({type:'CHOOSE',choice:choice.id})}}</small><small>{{choice.detail}}</small><small v-if="why({type:'CHOOSE',choice:choice.id})">{{why({type:'CHOOSE',choice:choice.id})}}</small>
-              </button>
+              </ChoiceCard>
             </div>
             <details class="opening-details"><summary>三种选择与剑简说明</summary><p class="small">三种选择均可入道，剧情不会直接赋予境界。惊鸿剑简用于剑修终结术法，伤害 +{{C.swordManual.damageBonus}}；三种开场均可在筑基后到青云宗付费研读同简。</p></details>
           </template>
           <template v-else-if="phase === 'trial-question' && journey && !inspectingInventory">
             <div class="section-label">渡劫 · 问心</div><h2>你愿如何面对来路？</h2><p class="story" data-testid="trial-question-memory">{{journey.openingMemory}}</p><p class="story">接纳旧我，稳住心神；或放下旧念，以进攻开路。两条道路皆可向前，不另判善恶成败。</p>
             <details class="trial-memories"><summary>回望已记录的选择</summary><p v-for="memory in journey.memories" :key="memory.id" class="small">{{memory.person}} · {{memory.title}}：{{memory.text}}</p></details>
-            <div class="choices two" tabindex="-1" data-primary-region role="group" aria-label="问心选择"><button v-for="answer in journey.answers" :key="answer.id" :data-testid="`answer-${answer.id}`" @click="act({type:'ANSWER_TRIAL',answer:answer.id})" :disabled="!can({type:'ANSWER_TRIAL',answer:answer.id})"><strong>{{answer.label}} · {{answer.id==='accept'?'承受更稳':'进攻更强'}}</strong><small>{{answer.record}}</small><small>{{answer.preview.failure?.message}}</small></button></div>
+            <div class="choices two" tabindex="-1" data-primary-region role="group" aria-label="问心选择"><ChoiceCard v-for="answer in journey.answers" :key="answer.id" :choice-id="`answer-${answer.id}`" :label="answer.label" :disabled="!can({type:'ANSWER_TRIAL',answer:answer.id})" :identity="core.runId+core.revision" :details="choiceDetails({type:'ANSWER_TRIAL',answer:answer.id},answer.record)" @choose="act({type:'ANSWER_TRIAL',answer:answer.id})"><strong>{{answer.label}} · {{answer.id==='accept'?'承受更稳':'进攻更强'}}</strong><small>{{answer.record}}</small><small>{{answer.preview.failure?.message}}</small></ChoiceCard></div>
           </template>
           <template v-else-if="activeStory && !inspectingInventory">
             <div class="section-label">当前遭遇 · {{activeStory.npc}}</div><div class="encounter-speaker"><PortraitImage class="speaker-portrait" :id="NPC_PORTRAITS[activeStory.npc]??''" :fallback="activeStory.npc.slice(0,1)"/><span>{{activeStory.npc}}</span></div><h2 data-testid="event-title">{{activeStory.name}}</h2><p class="story" data-testid="event-body">{{activeStory.body}}</p>
-            <div class="choices" tabindex="-1" data-primary-region role="group" aria-label="当前遭遇选择"><button v-for="option in activeStory.options" :key="option.id" :data-testid="`decide-${option.id}`" @click="act({type:'DECIDE',option:option.id})" :disabled="!can({type:'DECIDE',option:option.id})"><strong>{{option.label}}</strong><small>{{option.detail}}</small><small>{{cost({type:'DECIDE',option:option.id})}}</small><small>{{why({type:'DECIDE',option:option.id})}}</small><small>{{consumption({type:'DECIDE',option:option.id})}}</small></button></div>
+            <div class="choices" tabindex="-1" data-primary-region role="group" aria-label="当前遭遇选择"><ChoiceCard v-for="option in activeStory.options" :key="option.id" :choice-id="`decide-${option.id}`" :label="option.label" :disabled="!can({type:'DECIDE',option:option.id})" :identity="core.runId+core.revision" :details="choiceDetails({type:'DECIDE',option:option.id},option.detail)" @choose="act({type:'DECIDE',option:option.id})"><strong>{{option.label}}</strong><small>{{option.detail}}</small><small>{{cost({type:'DECIDE',option:option.id})}}</small><small>{{why({type:'DECIDE',option:option.id})}}</small><small>{{consumption({type:'DECIDE',option:option.id})}}</small></ChoiceCard></div>
           </template>
           <template v-else-if="game.battle && !inspectingInventory">
             <BattlePanel :game="game" :can="can" :cost="cost" :why="why" @move="battle"/>
@@ -445,7 +449,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
           <template v-else-if="phase === 'trial-ending' && ascension && !inspectingInventory">
             <div class="section-label">天门已开 <span>三关已过，等待你的收束</span></div><h2>此生，留下些什么？</h2><p class="story">{{ascension.record.opening.text}} {{ascension.record.training.school}}的来路已经留在记录中。两种选择都以飞升成功收卷，没有善恶高低。</p>
             <p class="small">{{ascension.record.battle.trial}} 选择前可查看生平；取消不改变进度，确认保存后才封卷。</p>
-            <div class="choices two" tabindex="-1" data-primary-region role="group" aria-label="飞升收束选择"><button v-for="choice in ascension.choices" :key="choice.ending" :data-testid="`ending-${choice.ending}`" @click="act({type:'END',ending:choice.ending})" :disabled="!can({type:'END',ending:choice.ending})"><strong>{{choice.label}}</strong><small>{{choice.description}}</small><small>{{choice.preview.failure?.message}}</small></button></div>
+            <div class="choices two" tabindex="-1" data-primary-region role="group" aria-label="飞升收束选择"><ChoiceCard v-for="choice in ascension.choices" :key="choice.ending" :choice-id="`ending-${choice.ending}`" :label="choice.label" :disabled="!can({type:'END',ending:choice.ending})" :identity="core.runId+core.revision" :details="choiceDetails({type:'END',ending:choice.ending},choice.description)" @choose="act({type:'END',ending:choice.ending})"><strong>{{choice.label}}</strong><small>{{choice.description}}</small><small>{{choice.preview.failure?.message}}</small></ChoiceCard></div>
           </template>
           <template v-else-if="game.status !== 'active'">
             <LifePanel data-primary-region tabindex="-1" :game="game" :enabled="store.available" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @export="exportLife" @restore="restore" @restart="reset"/>

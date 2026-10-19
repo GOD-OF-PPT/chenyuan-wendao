@@ -4,6 +4,7 @@ import * as C from '../../src/full/content.ts';
 import { getLifeOverview } from '../../src/full/queries.ts';
 import type { Game } from '../../src/full/types.ts';
 import PortraitImage from './PortraitImage.vue';
+import ProgressTrack from './ProgressTrack.vue';
 const props = defineProps<{game:Game;compact?:boolean}>();
 const emit=defineEmits<{inspect:[event:MouseEvent]}>();
 const player = computed(() => props.game.core.player), realm = computed(() => C.realms[player.value.realm]);
@@ -18,9 +19,9 @@ const expanded = ref(false);
     <div class="character-heading"><span class="section-label">道者 · 个人志</span><h2>{{player.name}}</h2><span class="realm-badge" data-testid="realm">{{realm.name}}</span></div>
     <div class="character-vitals" :data-testid="sealed?'ascension-sealed-stats':undefined">
       <p v-if="sealed" class="small">此生已封卷。本卷不继续上界修行，保留封卷时的实际状态。</p>
-      <div class="stat"><label>{{sealed?'封卷气血':'气血'}} <b data-testid="hp">{{player.hp}}<template v-if="!sealed"> / {{realm.maxHp}}</template></b></label><progress v-if="!sealed" class="health" :value="player.hp" :max="realm.maxHp" aria-label="气血"></progress></div>
-      <div class="stat"><label>{{sealed?'封卷灵力':'灵力'}} <b>{{player.mp}}<template v-if="!sealed"> / {{realm.maxMp}}</template></b></label><progress v-if="!sealed" :value="player.mp" :max="realm.maxMp" aria-label="灵力"></progress></div>
-      <div v-if="!sealed" class="stat"><label>修为 <b data-testid="xp">{{player.xp}} / {{realm.xpCap}}</b></label><progress class="cultivation" :value="player.xp" :max="realm.xpCap||1" aria-label="修为"></progress></div>
+      <div class="stat"><label>{{sealed?'封卷气血':'气血'}} <b data-testid="hp">{{player.hp}}<template v-if="!sealed"> / {{realm.maxHp}}</template></b></label><ProgressTrack v-if="!sealed" :value="player.hp" :max="realm.maxHp" label="气血" tone="health" :identity="game.core.runId+player.realm" hint="气血会随真实行动变化；战中丹药占回合，战后可到洞府核对疗养。"/></div>
+      <div class="stat"><label>{{sealed?'封卷灵力':'灵力'}} <b>{{player.mp}}<template v-if="!sealed"> / {{realm.maxMp}}</template></b></label><ProgressTrack v-if="!sealed" :value="player.mp" :max="realm.maxMp" label="灵力" tone="spirit" :identity="game.core.runId+player.realm" hint="术法消耗灵力，基础攻击和护体可回灵；按行动旁的实际成本选择。"/></div>
+      <div v-if="!sealed" class="stat"><label>修为 <b data-testid="xp">{{player.xp}} / {{realm.xpCap}}</b></label><ProgressTrack :value="player.xp" :max="realm.xpCap||1" label="修为" :identity="game.core.runId+player.realm" hint="修为满后仍需核对突破条件和物品，再由你确认行动。"/></div>
       <div class="character-pair character-currency"><span>{{sealed?'封卷灵石':'灵石'}}</span><b data-testid="stones">{{player.stones}}</b></div>
     </div>
     <button v-if="compact" class="text-button character-hint" @click="emit('inspect',$event)">寿元与配装 →</button>

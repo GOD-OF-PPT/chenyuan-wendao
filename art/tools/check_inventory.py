@@ -118,6 +118,24 @@ def validate(root):
     recorded.update(panel_files)
     counts['production'] += panel_production
     counts['reference'] = counts.get('reference', 0) + len(panel_files) - panel_production
+    immersive_path = root / 'art/redesign/immersive-ui.json'
+    if immersive_path.exists():
+        ui = json.loads(immersive_path.read_text())
+        assert ui['format'] == 'chenyuan-immersive-ui' and ui['version'] == 1
+        assert ui['maxBytes'] == 26000 and ui['userAcceptance'] is False
+        assert [r['path'] for r in ui['files']] == ['web/src/immersive-theme.css', 'web/src/ProgressTrack.vue', 'web/src/ChoiceCard.vue', 'web/src/GuidancePanel.vue']
+        for ref in ui['sourceReferences']:
+            assert (root / ref).resolve().is_relative_to(root) and (root / ref).is_file()
+        for row in ui['files']:
+            data = (root / row['path']).read_bytes()
+            assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], 'Immersive UI source changed without its record'
+        assert sum(r['bytes'] for r in ui['files']) <= 26000
+        assert ui['consumer'] == 'web/src/main.ts' and "import './immersive-theme.css'" in (root / ui['consumer']).read_text()
+        assert set(ui['bindings']) == {'web/src/App.vue', 'web/src/CharacterPanel.vue', 'web/src/GoalPanel.vue', 'web/src/BattlePanel.vue'}
+        for path, fragments in ui['bindings'].items():
+            assert all(fragment in (root / path).read_text() for fragment in fragments)
+    else:
+        assert not (root / 'web/src/immersive-theme.css').exists(), 'Unrecorded global game theme'
     native_path = root / 'art/redesign/single-screen-native.json'
     native_bytes = 0
     if native_path.exists():

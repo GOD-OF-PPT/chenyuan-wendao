@@ -1,0 +1,107 @@
+/* User-selected jade theme. This layer owns palette and feedback, not layout or game rules. */
+.app-shell.art-theme{--game-base:#10282f;--game-panel:#17383d;--game-raised:#23494a;--game-line:#668d81;--game-ink:#f0ebdc;--game-muted:#c3cfc2;--game-jade:#9ed8c2;--game-gold:#d6bf86;color:var(--game-ink)}
+.app-shell.art-theme .paper{background:linear-gradient(135deg,#1a3c3ef5,#112c33fa),url('/art/v2/ui/xuan-paper-v2.webp')!important;background-size:auto,384px!important;background-color:var(--game-panel)!important;color:var(--game-ink)!important;border-color:#718976!important;box-shadow:inset 0 0 0 2px #112c33,0 8px 26px #04191c88!important}
+.app-shell.art-theme .paper::before{border-color:#80957a66!important;box-shadow:none!important}
+.app-shell.art-theme .paper::after{border-color:#8ba78b33!important}
+.app-shell.art-theme .character-sheet{background:linear-gradient(145deg,#18383bf5,#10272df5)!important}
+.app-shell.art-theme :is(h2,h3,h4,.story,.character-pair b,.character-loadout dd,.battle-player,.battle-resource,.encounter-speaker){color:var(--game-ink)!important;text-shadow:none!important}
+.app-shell.art-theme :is(.small,.note small,.character-hint,.character-loadout dt,.section-label span,.batch-costs,.resource-list,.trial-steps span,.battle-latest span,.battle-supplies>.small,.hub-opening-title span,.life-meta){color:var(--game-muted)!important}
+.app-shell.art-theme :is(.section-label,.goal-management>summary,.goal-remaining>summary,.item-glyph,.inventory b,.note>span,.recipes-title,.equipment-card h3>.game-icon){color:var(--game-jade)!important}
+.app-shell.art-theme :where(button,.file-button,.demo-list a){background:linear-gradient(135deg,#254c4b,#19393e)!important;border-color:var(--game-line)!important;color:var(--game-ink)!important;transition:background .16s,border-color .16s,box-shadow .16s,transform .16s}
+.app-shell.art-theme :where(button,.file-button,.demo-list a):hover:not(:disabled){background:linear-gradient(135deg,#31665a,#244e4b)!important;border-color:#afc8a3!important;box-shadow:0 0 0 1px #a3ceb136,0 4px 14px #071e2355}
+.app-shell.art-theme button:active:enabled{background:#173b3a!important;transform:translateY(1px);box-shadow:inset 0 2px 8px #061e2488!important}
+.app-shell.art-theme :is(button:disabled,.primary:disabled){background:#273c40!important;color:#bec9bf!important;border-color:#687c72!important;box-shadow:none!important;transform:none!important}
+.app-shell.art-theme button:disabled :is(small,strong){color:inherit!important}
+.app-shell.art-theme .primary{background:linear-gradient(#28675b,#18483f)!important;color:#fff4d8!important;border-color:#c0b37c!important;box-shadow:inset 0 0 0 2px #153a37,0 3px 10px #061c2566!important}
+.app-shell.art-theme .primary:hover:enabled{background:linear-gradient(#2b7061,#245c51)!important}
+.app-shell.art-theme .text-button{background:transparent!important;color:var(--game-jade)!important;box-shadow:none!important}
+.app-shell.art-theme .text-button:hover:enabled{background:#2a504a!important;color:#eff3d6!important}
+.app-shell.art-theme :is(input:not([type=checkbox]),select,textarea){background:#10282f!important;color:var(--game-ink)!important;border-color:#739184!important;accent-color:var(--game-jade)}
+.app-shell.art-theme option{background:#17383d;color:var(--game-ink)}
+.app-shell.art-theme input[type=checkbox]{accent-color:#82bfa9}
+.app-shell.art-theme :is(button,a,input,select,summary):focus-visible{outline:3px solid #b8dfbd!important;outline-offset:3px}
+.app-shell.art-theme :is(.source-card,.batch-preview,.growth-material,.loadout-summary>div,.item-glyph,.battle-log,.battle-latest,.gameplay-guidance,.pending-inspection,.natural-action,.cultivation-facts span,.school-prompt,.realm-badge,.trial-steps [aria-current],.action-receipt,.action-effect,.demo-nav-label,.demo-badge,.portrait-fallback,.enemy-fallback){background:#1a3c40!important;color:var(--game-ink)!important;border-color:#6d8c7d!important}
+.app-shell.art-theme :is(.source-card,.batch-preview,.growth-material,.action-receipt,.gameplay-guidance,.pending-inspection){box-shadow:inset 3px 0 #7fbba366}
+.app-shell.art-theme :is(.selected,.selected:disabled,[aria-current=step]){background:#28574c!important;border-color:#c8c28b!important;color:#f8f3d9!important}
+.app-shell.art-theme :is(.selected,[aria-current=step]) small{color:inherit!important}
+.app-shell.art-theme .trial-steps [aria-current]{box-shadow:0 0 16px #b4d8af22}
+.app-shell.art-theme .demo-nav-label a,.app-shell.art-theme .demo-actions a{color:#c3e5ca!important}
+.app-shell.art-theme .demo-badge{border-color:var(--game-gold)!important}
+.app-shell.art-theme :is(.error-banner,.settings-error,.lifespan-warning){background:#452d32!important;color:#ffe1cc!important;border-color:#b48072!important;box-shadow:inset 3px 0 #d29c78!important}
+.app-shell.art-theme .error-title{color:#ffe9d4!important}
+.app-shell.art-theme .error-banner button{background:#5a393c!important;color:#ffe9d4!important;border-color:#c9997d!important}
+.app-shell.art-theme .error-banner button:hover:enabled{background:#69483f!important}
+.app-shell.art-theme .error-banner .primary{background:#255449!important}
+.app-shell.art-theme .hub-resume{background:#1a3c40;color:var(--game-jade);border-color:#668773}
+.app-shell.art-theme .hub-recent{background-image:linear-gradient(#17383df2,#17383ded),url('/art/v2/ui/mountain-wash-v1.webp'),url('/art/v2/ui/xuan-paper-v2.webp')!important;background-size:auto,100% auto,384px!important;background-position:center,right bottom,center!important;background-repeat:no-repeat,no-repeat,repeat!important}
+.app-shell.art-theme .hub-mountain-art{opacity:.48;filter:saturate(.6);mix-blend-mode:screen}
+.app-shell.art-theme .hub-action-facts span{border-color:#8eb3a344}
+.app-shell.art-theme .hub-recent .section-label{border-color:#9abd9a55}
+.app-shell.art-theme .hub-action-options .text-button:disabled{background:#273c40!important}
+.app-shell.art-theme .cultivation-alternatives button{box-shadow:inset 0 0 0 3px #18363a,inset 0 0 0 4px #9caf8b55!important}
+.app-shell.art-theme .cultivate-primary{border-radius:30px;letter-spacing:.12em}
+.app-shell.art-theme .intent{background:#20464a!important;color:var(--game-ink)!important;border-color:var(--game-gold)!important}
+.app-shell.art-theme .intent :is(span,b){color:#e1dfbf!important}
+.app-shell.art-theme .intent[data-intent=heavy]{background:#4b2e34!important;border-color:#d5a48a!important}
+.app-shell.art-theme .intent[data-intent=heavy] :is(strong,span,b){color:#ffe3ca!important}
+.app-shell.art-theme :is(.move-reason,.action-reason){color:#dacba9!important}
+.app-shell.art-theme .progress-track{position:relative;height:9px;min-height:9px;width:100%;border-radius:12px;background:#0b242c;box-shadow:inset 0 0 0 1px #71958877;isolation:isolate}
+.app-shell.art-theme .progress-track progress{position:relative;display:block;opacity:0;width:100%;height:9px;margin:0}
+.progress-fill{position:absolute;inset:0 auto 0 0;border-radius:inherit;background:linear-gradient(90deg,#3c9486,#aed9b6);transition:width .4s ease-out;pointer-events:none}
+.progress-track.health .progress-fill{background:linear-gradient(90deg,#ae675c,#e4b29b)}
+.progress-track.spirit .progress-fill{background:linear-gradient(90deg,#3c8fa6,#a7d9de)}
+.app-shell.art-theme .progress-inspect{position:absolute;inset:-26px 0 -9px;width:100%;min-height:44px;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;opacity:0;z-index:2;transform:none!important;cursor:help}
+.app-shell.art-theme .progress-inspect:hover{background:transparent!important;transform:none!important}
+.app-shell.art-theme .progress-inspect:focus-visible{opacity:1;background:transparent!important;border-radius:5px}
+.progress-track:has(.progress-inspect:hover){box-shadow:0 0 10px #8ad6bd66!important}
+.progress-change{position:absolute;right:1px;top:-4px;z-index:3;padding:0 5px;border-radius:4px;background:#143a36;color:#d4f1d0;font-size:var(--ui12);line-height:18px;pointer-events:none}
+.progress-track[data-change=loss] .progress-change{background:#4a2f31;color:#ffe2cb}
+.progress-track[data-change=gain]{animation:progress-gain 1.4s ease-out}
+.progress-track[data-change=loss]{animation:progress-loss 1.4s ease-out}
+.app-shell.art-theme :is(.progress-dialog,.choice-inspection){position:fixed;inset:0;margin:auto;width:min(520px,calc(100vw - 40px));max-height:calc(100dvh - 40px);overflow:auto;padding:24px;border-radius:14px 4px;box-shadow:0 20px 80px #04171dc9!important}
+.app-shell.art-theme dialog::backdrop{background:#041c24c9;backdrop-filter:blur(4px)}
+:is(.progress-dialog,.choice-inspection) header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px}
+:is(.progress-dialog,.choice-inspection) header h2{font-size:var(--ui25);margin:0;letter-spacing:.12em}
+:is(.progress-dialog,.choice-inspection) p{line-height:1.75;margin-top:14px}
+.progress-emblem{margin:12px auto;width:140px;height:140px;display:grid;place-items:center;border-radius:50%;background:radial-gradient(closest-side,#153238 85%,transparent 86%),conic-gradient(#9acbb0 var(--progress-angle),#325356 0);box-shadow:0 0 20px #9cc39822}
+.progress-emblem strong{font-size:var(--ui30);text-align:center;color:#f1e5bd}
+.progress-emblem small{display:block;font-size:var(--ui16);font-weight:400;margin-top:4px}
+.progress-exact{text-align:center;color:#b8dac2;font-size:var(--ui20)}
+.choice-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 44px;min-width:0;border:1px solid #719781;border-radius:8px 3px;background:#193b40;box-shadow:0 3px 10px #061f2644}
+.app-shell.art-theme .choice-card button{border:0!important;border-radius:7px 0 0 2px;box-shadow:none!important}
+.app-shell.art-theme .choice-card .choice-act{text-align:left;padding:10px!important;width:100%}
+.app-shell.art-theme .choice-card .choice-peek{min-height:44px;padding:4px!important;display:flex;flex-direction:column;justify-content:center;align-items:center;border-left:1px solid #6e947966!important;background:#153238!important;color:#c4d6b9!important;font-size:var(--ui14);border-radius:0 3px 7px 0}
+.choice-peek>span{font-size:var(--ui20);line-height:1.4}
+.choice-card:has(.choice-act:hover:enabled),.choice-card:focus-within{border-color:#c9cc96;box-shadow:0 0 0 1px #99c8a944,0 6px 20px #061c2455}
+.app-shell.art-theme .choice-inspection button{min-height:44px}
+.choice-inspection dl{margin:0;display:grid;gap:12px}
+.choice-inspection dl>div{padding:12px 14px;background:#102b33;border-left:2px solid #8bb69b}
+.choice-inspection dt{font-size:var(--ui14);color:#a9d4bc;margin-bottom:6px}
+.choice-inspection dd{margin:0;font-size:var(--ui16);line-height:1.65}
+.app-shell.art-theme .choice-inspection>button{margin-top:16px}
+.guide-mark{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:8px;color:#bddaa7;border:1px solid #97b78366;border-radius:50%}
+.gameplay-guidance .guide-detail{padding:12px;border-top:1px solid #8aac7c55;background:#112c33;border-radius:4px}
+.app-shell.art-theme .gameplay-guidance{border-inline-start-color:#9dba8a!important;box-shadow:inset 0 0 18px #628e7522}
+.app-shell.art-theme .save-summary[data-save-state=pending] .save-state{color:#c9e1b1;animation:saving-ink 1s ease-in-out infinite alternate}
+.app-shell.art-theme .save-summary[data-save-state=problem] .save-state{color:#ffcdbd}
+.app-shell.art-theme .action-receipt{border-left:3px solid #94cba9;border-radius:8px 2px}
+.app-shell.art-theme .action-effect strong{color:#eef1d7!important}
+@keyframes progress-gain{30%{box-shadow:0 0 12px #b7e5a688}}
+@keyframes progress-loss{30%{box-shadow:0 0 12px #e6b99a99}}
+@keyframes saving-ink{to{opacity:.55}}
+@media(prefers-reduced-motion:reduce){.app-shell.art-theme :is(button,a,.progress-fill){transition:none!important;transform:none!important}.app-shell.art-theme :is(.progress-track,.save-state){animation:none!important}}
+.app-shell.hub-reduced :is(button,a,.progress-fill){transition:none!important;transform:none!important}.app-shell.hub-reduced :is(.progress-track,.save-state){animation:none!important}
+
+.app-shell.art-theme small{color:var(--game-muted)!important}.app-shell.art-theme button small{color:inherit!important}
+.app-shell.art-theme .bottom-nav button{background:transparent!important;border-color:transparent!important;box-shadow:none!important}
+.app-shell.art-theme .bottom-nav button:hover:enabled{background:radial-gradient(ellipse,#699d6d33,transparent 75%)!important}
+.app-shell.art-theme .bottom-nav button.active{background:radial-gradient(ellipse at center bottom,#acc37a26,transparent 72%)!important;box-shadow:inset 0 -2px #d6bf86!important}
+.app-shell.art-theme .hub-mountain-art{opacity:.12}@media(min-height:800px){.app-shell.art-theme .hub-mountain-art{opacity:.4}}
+
+.app-shell.art-theme :is(.muted,.feedback p,.feedback>span,.goal-line>span,.journal,.battle-resource span){color:var(--game-muted)!important}
+.app-shell.art-theme .goal-line .done{color:var(--game-jade)!important}.app-shell.art-theme .gold{color:var(--game-gold)!important}
+.app-shell.art-theme .danger{color:#ffd0bd!important}.app-shell.art-theme .npc-seal{background:#31584e;color:var(--game-ink)}
+
+.app-shell.art-theme .eyebrow{color:var(--game-muted)!important}
+
+.progress-emblem strong{display:grid;align-content:center;width:120px;height:120px;border-radius:50%;background:#153238}
