@@ -22,3 +22,27 @@
 .single-screen.catalogue-view:has(.story-book){display:flex;flex-direction:column;padding-bottom:calc(var(--nav-height,84px) + 8px)!important}.single-screen.catalogue-view:has(.story-book)>.topbar,.single-screen.catalogue-view:has(.story-book)>.demo-banner{flex:none}.single-screen.catalogue-view:has(.story-book) .hub-feature{height:auto;flex:1;width:100%;margin:8px auto 0}
 
 .app-shell.hub-reduced .story-book .reading-text{animation:none!important}.single-screen .story-book .catalogue-tabs button{transition:border-color .14s ease}
+
+/* T07: painted reading stages, with separate figure, copy and action safe areas. */
+.single-screen .book-canvas{position:relative;isolation:isolate;display:flex;align-items:stretch;flex:1;min-height:0;min-width:0;border:1px solid #779b8b88;background:#102d33;border-radius:12px 2px}
+.single-screen .book-canvas>.book-scenery{position:absolute;inset:0;z-index:-2;border-radius:inherit;pointer-events:none}
+.single-screen .book-canvas::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;background:linear-gradient(90deg,#102d33e6,#102d3333 55%,#102d3322)}
+.single-screen .book-canvas .reading-text{flex:1;align-self:center;margin:16px;background:#123139;border-color:#c2b783;border-radius:2px 8px 8px 2px}
+.single-screen .book-person{position:relative;flex:0 0 30%;min-width:0;min-height:0;margin:0;display:flex;flex-direction:column;align-items:center;padding:12px 6px 8px;background:linear-gradient(0deg,#102d33dd,transparent 60%)}
+.single-screen .book-person .narrative-portrait{flex:1;width:100%;height:0;min-height:0;max-height:none;aspect-ratio:auto;border:0;border-radius:0;background:none;filter:drop-shadow(0 3px 8px #061820)}
+.single-screen .book-person figcaption{flex:none;color:#f0e4c2;font-size:calc(22px * var(--font-scale,1));line-height:1.4;letter-spacing:.14em;margin-top:4px;text-shadow:0 2px 4px #061820}
+.single-screen .book-copy{flex:1;min-width:0;min-height:0}.single-screen .book-copy.reading-text{flex:1}
+.single-screen .narrative-choices.book-copy{padding:16px 16px 16px 0}.single-screen .narrative-choices .choice-act{box-shadow:inset 0 0 0 3px #102d3355}
+.single-screen .narrative-choices .choice-act:not(:disabled):hover{border-color:#d5e6b5;box-shadow:inset 0 0 0 3px #102d3355,0 0 16px #a2d4ad44}.single-screen .narrative-choices .choice-act:not(:disabled):active{transform:translateY(1px)}
+.single-screen .fate-body{display:flex;flex:1;min-height:0;gap:14px}.single-screen .fate-body .fate-people{flex-direction:column;flex:0 0 130px;gap:8px}.single-screen .fate-body .fate-people button{flex:1;font-size:calc(18px * var(--font-scale,1));border-radius:2px 12px 2px 12px}.single-screen .fate-body .fate-people button[aria-pressed=true]{background:#315e53;border-color:#d2c58e;box-shadow:inset 3px 0 #d2c58e}
+.single-screen .book-landscape>.reading-text{flex:0 1 62%;margin:20px;max-width:700px}.single-screen .book-landscape .reading-text p{margin:8px 0}.single-screen .book-caption{position:absolute;right:22px;bottom:20px;max-width:29%;padding:10px 14px;border-right:2px solid #baaa77;background:#102d33f5;pointer-events:none;text-align:right}.single-screen .book-caption>span{display:block;color:#f1e6c8;font:calc(25px * var(--font-scale,1))/1.5 'Kaiti SC',STKaiti,serif;letter-spacing:.12em}.single-screen .book-caption small{color:#d5dfc9}
+@media(min-width:1100px){
+ .single-screen.catalogue-view .feature-header{min-height:56px;padding:6px 14px}.single-screen.catalogue-view .feature-header h2{font-size:calc(20px * var(--font-scale,1));line-height:1.3;margin:2px 0}.single-screen.catalogue-view .feature-header button{min-width:0;min-height:44px;font-size:calc(16px * var(--font-scale,1));padding:7px 14px;gap:6px}.single-screen.catalogue-view .feature-header .game-icon{width:20px;height:20px}
+ .single-screen .story-book{padding:12px 16px;gap:8px}.single-screen .story-book>header small{line-height:1.4}.single-screen .story-book h2{margin:0}
+}
+@media(min-width:480px) and (max-width:1099px){
+ .single-screen .fate-body{flex-direction:column;gap:6px}.single-screen .fate-body .fate-people{flex-direction:row;flex:0 0 44px;gap:6px}.single-screen .fate-body .fate-people button{font-size:calc(15px * var(--font-scale,1));border-radius:3px}
+ .single-screen .book-person{flex-basis:82px;padding:6px 2px}.single-screen .book-person figcaption{font-size:calc(16px * var(--font-scale,1));letter-spacing:normal}.single-screen .book-canvas .reading-text{margin:6px;padding:8px 10px}.single-screen .narrative-choices.book-copy{padding:6px}.single-screen .narrative-choices .choice-act{padding:10px}.single-screen .book-landscape>.reading-text{flex:1;max-width:none}.single-screen .book-caption{display:none}
+}
+@media(prefers-reduced-motion:reduce){.single-screen .narrative-choices .choice-act{transform:none!important}}
+.hub-reduced.single-screen .narrative-choices .choice-act{transform:none!important}
