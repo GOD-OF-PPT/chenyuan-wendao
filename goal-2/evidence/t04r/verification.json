@@ -586,5 +586,7 @@
     "T09/T10finalcandidate/useracceptance"
   ],
   "finalFooterTextNonOverlapVerified": true,
-  "screenshotsFullyDecoded": true
+  "screenshotsFullyDecoded": true,
+  "verifiedImplementationCommit": "1a3ad4da0535e5b8f62eb7f2eb43fcc8fabe93d9",
+  "followupScope": "Two trailing empty lines normalized after the verified implementation; post-commit generated-metadata/payload check recorded separately. No claim of inheriting old full CI."
 }

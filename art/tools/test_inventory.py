@@ -153,4 +153,3 @@ class InventoryTests(unittest.TestCase):
   self.rejected()
 
 if __name__=='__main__':unittest.main()
-
