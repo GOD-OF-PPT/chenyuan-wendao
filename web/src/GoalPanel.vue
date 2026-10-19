@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import ProgressTrack from './ProgressTrack.vue';
-import { computed, ref, shallowRef, watch } from 'vue';
+import CataloguePager from './CataloguePager.vue';
+import {pageSlice} from './play-flow';
+import { computed, ref, shallowRef, watch,onMounted,onScopeDispose } from 'vue';
 import GameIcon from './GameIcon.vue';
 import * as C from '../../src/full/content.ts';
 import { availableEvents } from '../../src/full/engine.ts';
@@ -12,6 +14,8 @@ import {gamePhase} from '../../src/full/contracts.ts';
 import type { NavigationRequest } from './navigation';
 import { formatCosts, resourceName } from './presentation';
 
+const needIndex=ref(0),sourceIndex=ref(0),pagerMedia=window.matchMedia('(max-width:1099px)'),compact=ref(pagerMedia.matches);
+function resized(){compact.value=pagerMedia.matches;sourceIndex.value=0;}onMounted(()=>pagerMedia.addEventListener('change',resized));onScopeDispose(()=>pagerMedia.removeEventListener('change',resized));
 const helpOpen=ref(false),managerOpen=ref(false),moreNeedsOpen=ref(false);
 const props = defineProps<{ game: Game; target: TrackingTarget; enabled: boolean; notice: string }>();
 const emit = defineEmits<{ select: [TrackingTarget]; navigate: [NavigationRequest]; preparation: [Action | null] }>();
@@ -45,7 +49,9 @@ const knownEvents = computed(() => [...new Set([...availableEvents(props.game).m
 const itemView = computed(() => focus.value?.kind === 'item' ? getTrackedGoal(props.game, focus.value) : null);
 const actionView = computed(() => focus.value?.kind === 'action' ? getActionResources(props.game, focus.value.action) : null);
 const needs = computed(() => focus.value ? actionView.value?.preview.deficits ?? [] : goal.value.deficits);
-const primaryNeeds=computed(()=>focus.value?needs.value:needs.value.slice(0,1));
+const needPage=computed(()=>pageSlice(needs.value,needIndex.value,1));
+const primaryNeeds=computed(()=>needPage.value.rows);
+watch([()=>props.target,()=>props.game.core.runId,focus],()=>{needIndex.value=0;sourceIndex.value=0;});
 const caveTravel=computed(()=>previewAction(props.game,{type:'TRAVEL',location:'cave'}));
 const resourceGap=(gap:ResourceDeficit)=>gap.kind==='item'||gap.kind==='stones';
 const canInspect=(gap:ResourceDeficit)=>resourceGap(gap)||props.enabled&&(props.game.core.world.location==='cave'||caveTravel.value.allowed);
@@ -55,6 +61,7 @@ const destination=computed(()=>(actionView.value?.preview??goal.value.preview)?.
 const showLocation=computed(()=>!!destination.value&&(!focus.value||!!actionView.value)&&!(!focus.value&&destination.value==='cave'&&needs.value.some(gap=>['xp','hp','mp'].includes(gap.kind))));
 const locationLabel=computed(()=>destination.value&&destination.value!==props.game.core.world.location?`前往${C.locations[destination.value].name}`:({CRAFT:'查看炼制动作',LEARN:'查看研习动作',FORGE:'查看法宝炼制',EVENT:'查看当前仙缘',BREAKTHROUGH:'查看突破动作',START_TRIAL:'查看渡劫准备入口'}as Record<string,string>)[currentAction.value?.type??'']??'查看此地行动');
 const sources = computed(() => itemView.value?.sources ?? (focus.value?.kind === 'currency' ? getCurrencySources(props.game) : []));
+const sourcePage=computed(()=>pageSlice(sources.value,sourceIndex.value,compact.value?1:2));
 const focusTitle = computed(() => focus.value?.kind === 'item' ? `${C.items[focus.value.id].name}来源` : focus.value?.kind === 'currency' ? '灵石来源' : focus.value?.title);
 const kinds = { source: '稳定来源', recipe: '自行炼制', purchase: '坊市采购', battle: '斗法所得', event: '一次性机缘' };
 function inspect(gap: ResourceDeficit) {
@@ -89,12 +96,12 @@ function goalLocation() {
 </script>
 
 <template>
-  <section id="goal-panel" tabindex="-1" class="paper goals" data-testid="goal-panel">
-    <div class="section-label">当前目标 <button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p><h3 data-testid="target">{{goal.title}}</h3><ProgressTrack v-if="target.kind==='breakthrough'&&!focus&&game.status==='active'&&C.realms[game.core.player.realm].xpCap>0" class="goal-progress" :value="game.core.player.xp" :max="C.realms[game.core.player.realm].xpCap" label="当前目标修为" :identity="game.core.runId+game.core.player.realm" hint="修为圆满不代表准备齐全；查看目标缺口可找到当前境界的来源。"/>
+  <section id="goal-panel" tabindex="-1" class="paper goals play-catalogue" data-testid="goal-panel">
+    <div v-show="!focus" class="section-label">当前目标 <button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p><h3 v-show="!focus" data-testid="target">{{goal.title}}</h3><template v-if="!managerOpen"><ProgressTrack v-if="target.kind==='breakthrough'&&!focus&&game.status==='active'&&C.realms[game.core.player.realm].xpCap>0" class="goal-progress" :value="game.core.player.xp" :max="C.realms[game.core.player.realm].xpCap" label="当前目标修为" :identity="game.core.runId+game.core.player.realm" hint="修为圆满不代表准备齐全；查看目标缺口可找到当前境界的来源。"/>
     <p v-if="notice" class="small" role="status">{{notice}}</p>
     <p v-if="goal.completed" data-testid="goal-complete" class="small">目标已达成，可替换追踪目标。</p>
     <p v-else-if="goal.preview?.failure" class="small" data-testid="goal-blocker">{{goal.preview.failure.message}}</p>
-    <button v-if="target.kind==='item'" class="text-button" data-testid="goal-item-sources" @click="stack=[{...target}]">查看获得方式 →</button>
+    <button v-if="target.kind==='item'&&!focus" class="text-button" data-testid="goal-item-sources" @click="stack=[{...target}]">查看获得方式 →</button>
     <div v-if="focus" class="source-details" data-testid="source-details">
       <div class="source-breadcrumb"><button data-testid="source-back" @click="stack=stack.slice(0,-1)"><GameIcon kind="action" id="back"/> 返回{{stack.length>1?'上一层':'目标'}}</button><button @click="stack=[]">回到目标</button></div>
       <h4 data-testid="source-title">{{focusTitle}}</h4>
@@ -107,11 +114,9 @@ function goalLocation() {
       <button v-if="gap.kind!=='months'" class="text-button" :data-testid="`inspect-${gap.id??gap.kind}`" @click="inspect(gap)" :disabled="!canInspect(gap)">{{inspectLabel(gap)}} →</button>
       <small v-if="!resourceGap(gap)&&gap.kind!=='months'&&game.core.world.location!=='cave'">{{formatCosts(caveTravel.costs)}}</small><small v-if="!canInspect(gap)">{{!enabled?'等待存档就绪':caveTravel.failure?.message}}</small>
     </div></div>
-    <details v-if="!focus&&needs.length>1" class="goal-remaining" data-testid="goal-remaining" :open="moreNeedsOpen" @toggle="moreNeedsOpen=($event.target as HTMLDetailsElement).open"><summary data-testid="goal-more-needs">其余 {{needs.length-1}} 项条件</summary><div v-for="gap in needs.slice(1)" :key="gap.kind+gap.id" class="goal-line" :data-testid="`need-${gap.id??gap.kind}`"><span>○</span><div>{{resourceName(gap)}}<small>{{gap.have}} / {{gap.required}} · 尚缺 {{gap.missing}}</small>
-      <button v-if="gap.kind!=='months'" class="text-button" :data-testid="`inspect-${gap.id??gap.kind}`" @click="inspect(gap)" :disabled="!canInspect(gap)">{{inspectLabel(gap)}} →</button>
-      <small v-if="!resourceGap(gap)&&gap.kind!=='months'&&game.core.world.location!=='cave'">{{formatCosts(caveTravel.costs)}}</small><small v-if="!canInspect(gap)">{{!enabled?'等待存档就绪':caveTravel.failure?.message}}</small>
-    </div></div></details>
-    <div v-for="source in sources" :key="source.kind+source.id" class="source-card" :data-testid="`route-${source.kind}-${source.id}`">
+    <CataloguePager v-if="needPage.pages>1" :page="needPage.page" :pages="needPage.pages" :total="needPage.total" label="目标条件" @change="needIndex=$event"/>
+    <div class="goal-source-grid">
+    <div v-for="source in sourcePage.rows" :key="source.kind+source.id" class="source-card" :data-testid="`route-${source.kind}-${source.id}`">
       <strong>{{source.label}}</strong><small>{{kinds[source.kind]}} · {{C.locations[source.location].name}}</small>
       <small>每份{{source.conditionalOnVictory?'胜利后':''}}获得 {{source.rewardCount}} {{source.resource.kind==='item'?C.items[source.resource.id].name:'灵石'}}{{source.conditionalOnVictory?'；补给与战损另计':''}}</small>
       <small>准备与行动成本：{{formatCosts(source.costs)}}</small>
@@ -120,11 +125,12 @@ function goalLocation() {
       <button :data-testid="`go-${source.kind}-${source.id}`" @click="goSource(source)" :disabled="!canGo(source)">{{source.navigation?'前往':'查看此地行动'}}</button>
       <small v-if="goReason(source)">{{goReason(source)}}</small>
     </div>
+    </div><CataloguePager v-if="sources.length" :page="sourcePage.page" :pages="sourcePage.pages" :total="sourcePage.total" label="目标来源" @change="sourceIndex=$event"/>
     <p v-if="actionView && !needs.length" class="small">物资已齐；前往对应地点后另行确认行动。</p>
     <button v-if="showLocation" class="text-button goal-location" data-testid="goal-location" :data-navigation-kind="locationPreview?'travel':'view'" @click="goalLocation" :disabled="!enabled || !!locationPreview && !locationPreview.allowed">{{locationLabel}} →<small v-if="locationPreview">{{formatCosts(locationPreview.costs)}}</small></button>
     <small v-if="showLocation&&locationPreview?.failure">{{locationPreview.failure.message}}</small>
     <p v-if="!focus && !goal.deficits.length && !goal.completed" class="small">{{goal.preview?.allowed?'准备已齐，按当前页面确认行动。':'先处理眼前的遭遇，目标会随实际进度更新。'}}</p>
-    <details class="goal-management" data-testid="goal-management" :open="managerOpen" @toggle="managerOpen=($event.target as HTMLDetailsElement).open"><summary data-testid="goal-management-toggle">更换追踪目标</summary>
+    </template><details v-if="!focus" class="goal-management" data-testid="goal-management" :open="managerOpen" @toggle="managerOpen=($event.target as HTMLDetailsElement).open"><summary data-testid="goal-management-toggle">{{managerOpen?'完成编辑，返回目标':'更换追踪目标'}}</summary>
     <label class="goal-picker">替换追踪目标<select :value="selected" @change="select" data-testid="goal-select" aria-label="追踪目标">
       <option value="breakthrough">下一突破</option>
       <optgroup label="物资"><option v-for="(item,id) in C.items" :key="id" :value="`item:${id}`">{{item.name}} · {{C.realms[item.min].name}}</option></optgroup>

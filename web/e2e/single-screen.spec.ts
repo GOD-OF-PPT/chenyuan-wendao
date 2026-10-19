@@ -1,12 +1,12 @@
 import {test,expect,type Page} from '@playwright/test';
 import {advance,newGame} from '../../src/full/engine.ts';
-import {snapshot} from './support';
+import {snapshot,revealAction} from './support';
 import {trialJourneyScenario} from '../../tests/trial-journey-route.mjs';
 test.use({actionTimeout:8000,navigationTimeout:15000});
 const sizes=[{width:1280,height:720},{width:1440,height:900},{width:1920,height:1080}];
 const expected=(g:any,a:any)=>advance(g,{...a,commandId:'expected-single-screen',runId:g.core.runId,expectedRevision:g.core.revision});
 async function saved(page:Page){await expect(page.getByTestId('save-status')).toHaveText('已保存');await expect(page.getByTestId('error')).toHaveCount(0);}
-async function action(page:Page,id:string){const rev=(await snapshot(page)).core.revision;await page.getByTestId(id).click();await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(rev+1);await saved(page);}
+async function action(page:Page,id:string){await saved(page);await revealAction(page,id);const rev=(await snapshot(page)).core.revision;await page.getByTestId(id).click();await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(rev+1);await saved(page);}
 async function cave(page:Page){await page.goto('/');await page.getByRole('button',{name:'踏入仙途'}).click();await expect(page.getByTestId('game-hub')).toBeVisible();await action(page,'leave');await action(page,'return-cave');}
 async function screen(page:Page,ids:string[]){
  const metrics=await page.evaluate(()=>({height:innerHeight,width:innerWidth,scrollHeight:document.documentElement.scrollHeight,scrollWidth:document.documentElement.scrollWidth,scrollY}));expect(metrics.scrollHeight).toBeLessThanOrEqual(metrics.height+1);expect(metrics.scrollWidth).toBeLessThanOrEqual(metrics.width+1);expect(metrics.scrollY).toBe(0);
@@ -19,7 +19,7 @@ async function screen(page:Page,ids:string[]){
 }
 
 test('opening and ordinary cultivation expose all entrances and real decisions within each desktop screen',async({page},info)=>{
- await page.setViewportSize(sizes[0]);await page.goto('/');await page.getByRole('button',{name:'踏入仙途'}).click();const opening=await snapshot(page);
+ await page.setViewportSize(sizes[0]);await page.goto('/');await page.getByRole('button',{name:'踏入仙途'}).click();await saved(page);const opening=await snapshot(page);
  for(const size of sizes){await page.setViewportSize(size);await screen(page,['help','trade','leave']);await page.screenshot({path:info.outputPath(`hub-opening-${size.width}.png`)});}expect(await snapshot(page)).toEqual(opening);
  await action(page,'leave');await action(page,'return-cave');const before=await snapshot(page);
  for(const size of sizes){await page.setViewportSize(size);await screen(page,['cultivate','cultivate-assisted','rest','breakthrough']);const art=page.locator('[data-asset-id=scene-cave]');await expect(art).toHaveAttribute('data-art-state','ready');const zone=await art.locator('img').evaluate((img:HTMLImageElement)=>{const b=img.getBoundingClientRect(),scale=Math.max(b.width/img.naturalWidth,b.height/img.naturalHeight),position=getComputedStyle(img).objectPosition.split(' ').map(v=>parseFloat(v)/100),x=(b.width-img.naturalWidth*scale)*position[0],y=(b.height-img.naturalHeight*scale)*position[1];return{left:x+425*scale,right:x+860*scale,top:y+300*scale,bottom:y+690*scale,width:b.width,height:b.height,source:[img.naturalWidth,img.naturalHeight],position};});expect(zone.source).toEqual([1536,865]);expect(zone.left).toBeGreaterThanOrEqual(0);expect(zone.right).toBeLessThanOrEqual(zone.width);expect(zone.top).toBeGreaterThanOrEqual(0);expect(zone.bottom).toBeLessThanOrEqual(zone.height);await info.attach(`cave-character-safe-zone-${size.width}.json`,{body:Buffer.from(JSON.stringify(zone)),contentType:'application/json'});await page.screenshot({path:info.outputPath(`hub-cave-${size.width}.png`)});}expect(await snapshot(page)).toEqual(before);
@@ -47,7 +47,7 @@ for(const school of ['sword','talisman'])test('real '+school+' battle decision s
 });
 
 test('goal source breadcrumbs survive opening another feature and returning',async({page})=>{
- await cave(page);await page.getByTestId('hub-goal').click();await page.getByTestId('goal-management-toggle').click();await page.getByLabel('追踪目标',{exact:true}).selectOption('item:foundation_pill');await page.getByTestId('goal-item-sources').click();await expect(page.getByTestId('source-title')).toContainText('筑基丹');const source=await page.getByTestId('source-details').innerText(),before=await snapshot(page);await page.getByTestId('hub-close').click();await page.getByTestId('hub-skills').click();await page.keyboard.press('Escape');await page.getByTestId('hub-goal').click();await expect(page.getByTestId('source-details')).toHaveText(source,{useInnerText:true});expect(await snapshot(page)).toEqual(before);
+ await cave(page);await page.getByTestId('hub-goal').click();await page.getByTestId('goal-management-toggle').click();await page.getByLabel('追踪目标',{exact:true}).selectOption('item:foundation_pill');await page.getByTestId('goal-management-toggle').click();await page.getByTestId('goal-item-sources').click();await expect(page.getByTestId('source-title')).toContainText('筑基丹');const source=await page.getByTestId('source-details').innerText(),before=await snapshot(page);await page.getByTestId('hub-close').click();await page.getByTestId('hub-skills').click();await page.keyboard.press('Escape');await page.getByTestId('hub-goal').click();await expect(page.getByTestId('source-details')).toHaveText(source,{useInnerText:true});expect(await snapshot(page)).toEqual(before);
 });
 
 test('reduced motion keeps a static true result and opening views adds no game time',async({page})=>{
