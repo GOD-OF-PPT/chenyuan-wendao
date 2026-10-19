@@ -1,4 +1,5 @@
-import {nextTick,onMounted,onUnmounted} from 'vue';
+import {nextTick,onMounted,onUnmounted,type InjectionKey} from 'vue';
+export const gameFocusKey:InjectionKey<ReturnType<typeof useFocus>>=Symbol('game-focus');
 
 export function visibleFocusTarget(element:Element|null):element is HTMLElement{
  if(!(element instanceof HTMLElement)||!element.isConnected||element.closest('[inert]'))return false;
@@ -41,8 +42,9 @@ export function useFocus(fallback:()=>HTMLElement|null){
   }else record.opener=opener;
   dialog.showModal();target(dialog.querySelector<HTMLElement>('[data-dialog-initial]')??dialog);
  }
+ function release(dialog:HTMLDialogElement|undefined){if(!dialog)return;const r=listeners.get(dialog);if(!r)return;dialog.removeEventListener('close',r.close);dialog.removeEventListener('keydown',r.key);listeners.delete(dialog);if(dialog.open)dialog.close();}
  function onFocus(event:FocusEvent){if(pointerActive)return;const element=event.target;if(element instanceof HTMLElement)queueMicrotask(()=>{if(document.activeElement===element)revealFocus(element);});}
  onMounted(()=>{document.addEventListener('focusin',onFocus);document.addEventListener('pointerdown',pointerStart,true);document.addEventListener('pointerup',pointerEnd,true);document.addEventListener('pointercancel',pointerEnd,true);});onUnmounted(()=>{document.removeEventListener('focusin',onFocus);document.removeEventListener('pointerdown',pointerStart,true);document.removeEventListener('pointerup',pointerEnd,true);document.removeEventListener('pointercancel',pointerEnd,true);for(const [dialog,record]of listeners){dialog.removeEventListener('close',record.close);dialog.removeEventListener('keydown',record.key);}listeners.clear();});
  async function afterAction<T>(operation:()=>Promise<T>,stillOwns:()=>boolean){const opener=capture();const value=await operation();await nextTick();if(opener&&stillOwns()&&(document.activeElement===document.body||document.activeElement===opener&&!visibleFocusTarget(opener)))target(visibleFocusTarget(opener)?opener:fallback());return value;}
- return{target,capture,restore,open,afterAction};
+ return{target,capture,restore,open,release,afterAction};
 }

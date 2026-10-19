@@ -29,6 +29,8 @@ class InventoryTests(unittest.TestCase):
   if native.exists():files.update(ROOT/ref for ref in json.loads(native.read_text())['sourceReferences'])
   panels=ROOT/'art/redesign/panel-materials.json'
   if panels.exists():files.update(ROOT/ref for ref in json.loads(panels.read_text())['sourceReferences'])
+  immersive=ROOT/'art/redesign/immersive-ui.json'
+  if immersive.exists():files.update(ROOT/ref for ref in json.loads(immersive.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -172,5 +174,16 @@ class InventoryTests(unittest.TestCase):
  def test_paper_styles_cannot_change_without_identity_update(self):
   self.write('web/src/panel-materials.css','body{display:none}')
   self.rejected()
+
+ def test_global_theme_cannot_drop_its_record(self):
+  (self.root/'art/redesign/immersive-ui.json').unlink();self.rejected()
+ def test_global_theme_cannot_change_feedback_source_silently(self):
+  self.write('web/src/ProgressTrack.vue','<template>wrong</template>');self.rejected()
+ def test_global_theme_cannot_raise_budget(self):
+  p='art/redesign/immersive-ui.json';m=json.loads((self.root/p).read_text());m['maxBytes']=30000;self.write(p,m);self.rejected()
+ def test_global_theme_cannot_remove_its_actual_consumer(self):
+  p='web/src/main.ts';self.write(p,(self.root/p).read_text().replace("import './immersive-theme.css';",''));self.rejected()
+ def test_global_theme_cannot_claim_user_acceptance(self):
+  p='art/redesign/immersive-ui.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
 
 if __name__=='__main__':unittest.main()

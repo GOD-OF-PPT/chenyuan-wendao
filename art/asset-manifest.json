@@ -1003,8 +1003,8 @@
         },
         {
           "path": "web/src/focus.ts",
-          "bytes": 4833,
-          "sha256": "682ff9d38cc9ef877d8e3708efefe1db8e2c4e0172f3278c0f42f82b204bf269"
+          "bytes": 5209,
+          "sha256": "9048ea555e25f9ffb7b36ae62e29a415b4d84fd10507c01fe9846eb654b86a49"
         },
         {
           "path": "web/src/LocalExperiencePanel.vue",
@@ -1013,8 +1013,8 @@
         },
         {
           "path": "web/src/BattlePanel.vue",
-          "bytes": 9504,
-          "sha256": "ef9f639802e61b851efd592a72c31f0da41844341da35f8bf11d230991cfd5b3"
+          "bytes": 9676,
+          "sha256": "5c8bfd9fbdda640f219e38d1893efaa4fdeb3ae6dd8c59d47dec5771017ed41b"
         }
       ]
     },

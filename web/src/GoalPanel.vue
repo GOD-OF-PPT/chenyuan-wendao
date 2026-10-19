@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ProgressTrack from './ProgressTrack.vue';
 import { computed, ref, shallowRef, watch } from 'vue';
 import GameIcon from './GameIcon.vue';
 import * as C from '../../src/full/content.ts';
@@ -89,7 +90,7 @@ function goalLocation() {
 
 <template>
   <section id="goal-panel" tabindex="-1" class="paper goals" data-testid="goal-panel">
-    <div class="section-label">当前目标 <button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p><h3 data-testid="target">{{goal.title}}</h3><progress v-if="target.kind==='breakthrough'&&!focus&&game.status==='active'&&C.realms[game.core.player.realm].xpCap>0" class="goal-progress" :value="game.core.player.xp" :max="C.realms[game.core.player.realm].xpCap" aria-label="当前目标修为"/>
+    <div class="section-label">当前目标 <button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p><h3 data-testid="target">{{goal.title}}</h3><ProgressTrack v-if="target.kind==='breakthrough'&&!focus&&game.status==='active'&&C.realms[game.core.player.realm].xpCap>0" class="goal-progress" :value="game.core.player.xp" :max="C.realms[game.core.player.realm].xpCap" label="当前目标修为" :identity="game.core.runId+game.core.player.realm" hint="修为圆满不代表准备齐全；查看目标缺口可找到当前境界的来源。"/>
     <p v-if="notice" class="small" role="status">{{notice}}</p>
     <p v-if="goal.completed" data-testid="goal-complete" class="small">目标已达成，可替换追踪目标。</p>
     <p v-else-if="goal.preview?.failure" class="small" data-testid="goal-blocker">{{goal.preview.failure.message}}</p>
