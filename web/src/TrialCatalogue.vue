@@ -12,8 +12,12 @@ import type {CheckpointSummary} from './store';
 import type {NavigationRequest} from './navigation';
 import type {TrackingTarget} from '../../src/full/goals.ts';
 import CataloguePager from './CataloguePager.vue';
+import AssetImage from './AssetImage.vue';
+import {sceneAssetPath} from './assets';
+import {scenePresentation} from './scene-presentation';
 const props=defineProps<{game:Game;kind:'preparation'|'progress';enabled:boolean;busy:boolean;checkpoint:CheckpointSummary|null;recovery:ReturnType<typeof getTrialRecovery>}>(),emit=defineEmits<{review:[];restore:[];export:[];prepare:[];resume:[];navigate:[NavigationRequest];track:[TrackingTarget]}>();
 const mode=ref('required'),page=ref(0),prep=computed(()=>getTrialPreparation(props.game)),journey=computed(()=>getTrialJourney(props.game));
+const scene=computed(()=>scenePresentation(props.game));
 const tabs=computed(()=>props.kind==='preparation'?[['required','必需'],['items','渡劫引'],['optional','可选准备'],['checkpoint','检查点']]:[['required','行程'],['battle','术法战报'],['checkpoint','暂离与恢复']]);
 const rows=computed<Reading[]>(()=>{
  const p=prep.value,g=props.game,j=journey.value;
@@ -42,7 +46,7 @@ function go(location:C.LocationId,tab:NavigationRequest['tab'],focusId:string){e
 <template>
  <section class="paper play-catalogue story-book trial-book" :data-testid="kind==='preparation'?'trial-preparation':'trial-progress'" tabindex="-1"><header><div><small>登仙问道 · {{kind==='preparation'?'核对准备，不扣物资':'行程随实际行动保存'}}</small><h2 tabindex="-1" :data-testid="kind==='preparation'?'trial-preparation-title':'trial-progress-title'">{{kind==='preparation'?'渡劫准备':journey?'渡劫行程':recovery?'渡劫续行':'术法与战报'}}</h2></div><button v-if="kind==='progress'" data-testid="resume-encounter" @click="emit('resume')">{{game.battle||game.trial?'继续当前遭遇':'返回主舞台'}}</button></header>
   <nav class="catalogue-tabs" aria-label="渡劫篇章"><button v-for="[id,label] in tabs" :key="id" :data-testid="'trial-mode-'+id" :aria-pressed="mode===id" @click="select(id)">{{label}}</button></nav>
-  <article v-for="row in paged.rows" :key="row.key+row.part" class="reading-text" :data-page-key="row.key"><small>{{row.title}}<span v-if="row.parts>1"> · {{row.part}} / {{row.parts}}</span></small><p :data-testid="row.testId">{{row.text}}</p></article>
+  <div class="book-canvas book-landscape" :data-gate="scene.gate"><AssetImage class="book-scenery" :path="sceneAssetPath(scene)" :asset-id="'reading-scene-'+scene.artKey"/><article v-for="row in paged.rows" :key="row.key+row.part" class="reading-text" :data-page-key="row.key"><small>{{row.title}}<span v-if="row.parts>1"> · {{row.part}} / {{row.parts}}</span></small><p :data-testid="row.testId">{{row.text}}</p></article><aside class="book-caption" aria-label="所在场景"><span>{{C.locations[game.core.world.location].name}}</span><small>{{journey?journey.title:game.battle?'当前交锋':kind==='preparation'?'行前核对':'行道回响'}}</small></aside></div>
   <div v-if="mode==='items'&&kind==='preparation'" class="story-inline-actions"><button v-for="item in prep.items" :key="item.id" :data-testid="'trial-track-'+item.id" @click="emit('track',{kind:'item',id:item.id,quantity:item.quantity})">追踪{{item.name}}来源</button></div>
   <div v-if="mode==='optional'&&kind==='preparation'" class="story-inline-actions"><button data-testid="trial-go-rest" :disabled="!canGo('cave')" @click="go('cave','修行','rest')">洞府疗养</button><button data-testid="trial-go-equipment" :disabled="!canGo('sect')" @click="go('sect','修行','equipment-panel')">功法法宝</button><button data-testid="trial-go-medicine" :disabled="!canGo('market')" @click="go('market','历练','buy-healing_pill')">坊市丹药</button></div>
   <div v-if="mode==='checkpoint'" class="story-inline-actions"><button data-testid="trial-export-current" @click="emit('export')" :disabled="!enabled||busy">导出当前进度</button><button v-if="checkpoint" :data-testid="kind==='preparation'?'trial-restore-existing':'trial-restore-open'" @click="emit('restore')" :disabled="!enabled||busy">恢复完整准备</button></div>

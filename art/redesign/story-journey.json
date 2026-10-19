@@ -13,23 +13,23 @@
     },
     {
       "path": "web/src/NarrativePanel.vue",
-      "bytes": 4695,
-      "sha256": "7ffa04854c42ed4f036bbb1a530ef535ff8da199549bfa057135acea9d852283"
+      "bytes": 5204,
+      "sha256": "c461b72baf9c33d289600a90cd34534121dda01a828e1cdcc1383f8d43de36bf"
     },
     {
       "path": "web/src/FateCatalogue.vue",
-      "bytes": 6128,
-      "sha256": "f7231af16cb5d2dc855a3ce4988b0412d3b04248df82bf73e6a1eab9b9151f18"
+      "bytes": 6942,
+      "sha256": "5dd924efe8d29273a2adb25db526fc75fbce9d44936c5523698cdfa7d81d2622"
     },
     {
       "path": "web/src/LifeCatalogue.vue",
-      "bytes": 3104,
-      "sha256": "70cc3054a97b7eb6cabf50ad27f0bda45e588017e1d0363d938684e018f490ea"
+      "bytes": 3652,
+      "sha256": "041305ae2ee2b5160775a90ca0106595b58b1d74b4e4ecc53643e11b4e12b1b9"
     },
     {
       "path": "web/src/TrialCatalogue.vue",
-      "bytes": 10123,
-      "sha256": "a6cc542a448514e08d16fbe62e56a5e482be280cccfc942d5a5191e74cfed80b"
+      "bytes": 10735,
+      "sha256": "68929ce14343de944d43af62b71e44c6cffed5c2c624fb5032e1e95f051cf28d"
     },
     {
       "path": "web/src/ReviewPages.vue",
@@ -38,8 +38,8 @@
     },
     {
       "path": "web/src/story-book.css",
-      "bytes": 6785,
-      "sha256": "c1bd6f7979931c42f0db1972b3b9428071e62633dd0d33c57a29d6be22d8b6ac"
+      "bytes": 11166,
+      "sha256": "81a601910720e0cabecdf35f372fe375aaa9f15785ee3f67546374269d9a4793"
     }
   ],
   "bindings": {
@@ -56,6 +56,8 @@
   },
   "sourceReferences": [
     "goal-2/amendments/2026-10-20-continue-story-journey.md",
-    "docs/implementation/goal-2-story-journey.md"
+    "docs/implementation/goal-2-story-journey.md",
+    "goal-2/amendments/2026-10-20-continue-art-polish.md",
+    "docs/implementation/goal-2-art-polish.md"
   ]
 }
