@@ -1081,8 +1081,8 @@
         },
         {
           "path": "web/src/assets.ts",
-          "bytes": 3116,
-          "sha256": "70aa24ecb4ae77c9304e2adaa9e54d2601fe49093ba75b37d035c2c5977a0f41"
+          "bytes": 3207,
+          "sha256": "bde17b46113b60282650386d6cd1b76730e9c3a67b88cf8cfb60d0402a944210"
         }
       ]
     },
