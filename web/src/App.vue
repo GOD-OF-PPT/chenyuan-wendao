@@ -23,7 +23,7 @@ import AssetImage from './AssetImage.vue';
 import PortraitImage from './PortraitImage.vue';
 import GameIcon from './GameIcon.vue';
 import ActionEffects from './ActionEffects.vue';
-import {NPC_PORTRAITS,SCENE_ASSETS,DESKTOP_UI_ASSETS,sceneAssetPath} from './assets';
+import {NPC_PORTRAITS,SCENE_ASSETS,DESKTOP_UI_ASSETS,PANEL_MATERIAL_ASSETS,sceneAssetPath} from './assets';
 import {scenePresentation} from './scene-presentation';
 import BatchPreview from './BatchPreview.vue';
 import ActionFeedback from './ActionFeedback.vue';
@@ -387,10 +387,11 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
       <CharacterPanel :game="game" compact @inspect="openHub('character',$event)"/>
       <section class="hub-stage" :class="{'hub-battle':!!game.battle,'hub-opening':phase==='opening'}" aria-label="游戏主舞台">
         <ScenePanel v-if="!game.battle" :game="game" :meditation="cultivationHome" :battle-stage="!!game.battle" :eyebrow="phase==='opening'?'山雨破庙':location.subtitle" :title="phase==='opening'?'雨中故人':location.name" description="一念尘缘起，千山共问道。"/>
-        <section ref="contentPanel" id="game-content" class="paper hub-current" data-testid="hub-current" tabindex="-1" aria-label="当前内容">
+        <section ref="contentPanel" id="game-content" class="paper hub-current" :class="{'hub-cultivating':phase==='idle'&&game.status==='active'&&core.world.location==='cave'}" data-testid="hub-current" tabindex="-1" aria-label="当前内容">
           <template v-if="phase==='opening'"><div class="hub-opening-title"><PortraitImage id="shen" fallback="沈"/><div><span>破庙初遇 · 沈清禾</span><h2>一丹，一念。</h2></div></div><p class="story">山雨将歇，沈清禾向你求药。随身回春丹 ×{{core.inventory.healing_pill}}，要不要介入这段因果，由你决定。</p><div id="opening-actions" class="choices opening-choices" tabindex="-1" data-primary-region role="group" aria-label="破庙抉择"><button v-for="choice in openingChoices" :key="choice.id" :data-testid="choice.id" @click="act({type:'CHOOSE',choice:choice.id})" :disabled="!can({type:'CHOOSE',choice:choice.id})"><strong>{{choice.name}}</strong><small>{{cost({type:'CHOOSE',choice:choice.id})}}</small><small>{{choice.detail}}</small><small v-if="why({type:'CHOOSE',choice:choice.id})">{{why({type:'CHOOSE',choice:choice.id})}}</small></button></div><button class="text-button" @click="openHub('current',$event)">查看三种选择与剑简说明</button></template>
           <BattlePanel v-else-if="game.battle" :game="game" :can="can" :cost="cost" :why="why" compact @move="battle" @details="openHub('battle',$event)"/>
           <template v-else-if="phase==='idle'&&game.status==='active'&&core.world.location==='cave'">
+            <AssetImage class="hub-meditation-art" :path="DESKTOP_UI_ASSETS.meditation" asset-id="hub-meditation" fit="contain" eager aria-hidden="true"/>
             <div class="hub-action-heading"><h2>{{primaryBreakthrough?goal?.title:'自然吐纳'}}</h2><button class="text-button" data-testid="hub-cultivation-details" @click="openHub('cultivation',$event)">预算与成长</button></div>
             <p v-if="needsSchool" class="hub-school"><button data-testid="choose-school" @click="showEquipment">已入道 · 选择修法</button></p>
             <div id="cultivation-actions" class="hub-cultivation" tabindex="-1" data-primary-region data-testid="cultivation-actions"><div class="hub-main-action" data-testid="cultivation-card" :data-primary-action="primaryBreakthrough?'breakthrough':'cultivate'">
@@ -404,7 +405,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
           <template v-else><h2>{{game.status==='active'?(activeStory?.name??(journey?'渡劫行程':'当前机缘')):overview?.title}}</h2><p class="story">{{game.status==='active'?'眼前的抉择尚待继续。查看资料不会推进游戏时间。':'此卷已收，来路犹存。'}}</p><div data-primary-region tabindex="-1"><button class="primary" @click="openHub(game.status==='active'?'current':'life',$event)">{{game.status==='active'?'继续当前遭遇':'查看生平与收卷'}}</button></div></template>
         </section>
       </section>
-      <aside class="hub-aside"><section class="paper hub-goal"><span class="section-label">当前目标</span><h2 data-testid="hub-target">{{hubGoal?.title}}</h2><progress v-if="tracking.target.value.kind==='breakthrough'&&realm.xpCap" :value="core.player.xp" :max="realm.xpCap" aria-label="当前目标修为"/><p>{{hubGoal?.completed?'目标已达成':hubGoal?.preview?.failure?.message??'准备已齐，可核对当前行动。'}}</p><button data-testid="hub-goal-open" @click="openHub('goal',$event)">查看缺口与来源 →</button></section>
+      <aside class="hub-aside"><section class="paper hub-goal"><span class="section-label">当前目标</span><AssetImage class="hub-mountain-art" :path="PANEL_MATERIAL_ASSETS.mountains" asset-id="hub-goal-mountains" fit="contain" eager aria-hidden="true"/><h2 data-testid="hub-target">{{hubGoal?.title}}</h2><progress v-if="tracking.target.value.kind==='breakthrough'&&realm.xpCap" :value="core.player.xp" :max="realm.xpCap" aria-label="当前目标修为"/><p>{{hubGoal?.completed?'目标已达成':hubGoal?.preview?.failure?.message??'准备已齐，可核对当前行动。'}}</p><button data-testid="hub-goal-open" @click="openHub('goal',$event)">查看缺口与来源 →</button></section>
       <nav class="hub-services" aria-label="修仙功能"><button v-for="entry in hubEntries" :key="entry.id" :data-testid="`hub-${entry.id}`" @click="openHub(entry.id,$event)"><GameIcon :kind="entry.kind" :id="entry.icon"/><span>{{entry.label}}</span></button></nav>
       <section class="paper hub-recent" aria-live="polite"><span class="section-label">行道回响</span><p>{{game.journal.at(-1)}}</p><small v-if="store.lastResult">实际 {{store.lastResult.executedSteps}} / {{store.lastResult.requestedSteps}} 次 · {{formatDelta(store.lastResult.delta)}}</small><button v-if="store.lastResult" class="text-button" data-testid="hub-receipt" @click="openHub('receipt',$event)">查看本次结算</button><div v-if="resumeVisible" class="hub-resume" data-testid="resume-strip"><span>已续上本机进度</span></div><button v-if="demoNode" class="text-button" @click="showDemoMenu">切换演示节点</button><button v-if="overview?.remainingMonths!==null&&overview?.remainingMonths!==undefined&&overview.remainingMonths<=12" class="text-button" @click="showLife">余寿 {{overview.remainingMonths}} 月 · 查看生平</button></section></aside>
     </main>

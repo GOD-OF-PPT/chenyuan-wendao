@@ -1,0 +1,1701 @@
+{
+  "task": "Goal2 T04S / CHECK-02M",
+  "scope": "Current runtime: 42 targeted cases passed in title-corrected run; only new test setup fixed, then its 3 browser cases passed independently. 45 unique passes, not a single45-green run and not full CI/IDB/normal72/performance/human acceptance.",
+  "base": "4bcebb081efd5323290db44e079f2aeaecb3254d",
+  "source": {
+    "head": "4bcebb081efd5323290db44e079f2aeaecb3254d",
+    "source": "4bcebb081efd5323290db44e079f2aeaecb3254d",
+    "tree": "69c61c060fd003de1a2d7b7a5770d6a953a262d0",
+    "dirty": true,
+    "node": "v24.19.0",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "sourceDigest": "244f4066fc6da8fb30874e3a2ab06a0215bac44deffc7096960d2c4cb14464ad",
+  "runtimeSources": {
+    "package-lock.json": "d3f1aa6b6a4cca2c3d458a297b2e0320f0bdfa64d01913938c1f44038be143a2",
+    "package.json": "0ffa0f4c2df0004f19cd55e04d310fd437da64e6c76833f5249ca203d46398c3",
+    "scripts/build-web.mjs": "49b6abd19ac0a424b27ca86a69bc3601ea66cde2be720b232dae595ab31ec83e",
+    "scripts/demo-nodes.mjs": "8523f135c748f9240fb0d706e126213872dae91c09c398504a55d57918c52c97",
+    "scripts/dev-web.mjs": "29620dc250f281f3a37e029e49c66e49dc91a952c2e88b43c2294922ea23ae66",
+    "scripts/record-web-build.mjs": "d6f73b33df1feecf32172c3c012ce247242cf3622ae2503d55250af68b2f41db",
+    "scripts/source-identity.mjs": "a52e3e167b389aae6c4fa98d07b02a2ae52dbace1ec81d80a5e6f8254e6dcf24",
+    "src/content/m1.ts": "59698c8ad88139e768b674084f24daf258715cd5dbfcc70b6b4f70c3b8492aa3",
+    "src/demo.ts": "927e40ac1d792afd0e2f28c2cf7bdd55509af07713ef3db116a7a5019ac9307e",
+    "src/full/ascension.ts": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+    "src/full/content.ts": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+    "src/full/contracts.ts": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+    "src/full/costs.ts": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+    "src/full/economy-ledger.ts": "56e4a1440e4c6417a631ea7898b5797fa28085b2bb6ffeb8a04b8ce14d213a2e",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/errors.ts": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+    "src/full/events.ts": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+    "src/full/goals.ts": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+    "src/full/growth.ts": "42076ba5b572e519d64c3d85b570b223d36af1dac8510f4dedc928e137beaf26",
+    "src/full/life-record.ts": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+    "src/full/mechanisms.ts": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+    "src/full/queries.ts": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+    "src/full/receipts.ts": "93eea79d913bcdedffd3acad8a404a02608a5caf82d83f4aaab15e7178d58a59",
+    "src/full/story-context.ts": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+    "src/full/trial-rules.ts": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+    "src/full/types.ts": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+    "src/full/validate-content.ts": "72bd297d0f44036ba0b0b84d587f00a11d6b14b8fd2656f0381681d9fefb02d1",
+    "src/full/versions.ts": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+    "src/game/adventure.ts": "25097127132e6ddf8f121820b64b0ff40c68f5c746e4f8d11a74dbf6345f434c",
+    "src/game/engine.ts": "191fff654eb23d99aade8b7bc9ad04a9ba69e303430f164f4f2396c79ab93b7d",
+    "src/game/session.ts": "62151d580bc453b47008dc5251e8b8207fdf67bf0a609ca9e5088f2632ab6b9a",
+    "src/game/types.ts": "b34e4fb9876ff51ddf00e00e76e74073301d33e51c06b6ee8d2f26fe0406efab",
+    "tests/full-route.mjs": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321",
+    "tsconfig.json": "3991480c74bfa2182528cb3f071ab1801a5f72252a714b154cbc63785401e4e6",
+    "web/index.html": "bcc62fb91a1af690c269f7d547a0fec63cf690484cd2fc96a5a8fdb4065497d3",
+    "web/package-lock.json": "d011715fee1a25f0224e7d320a09d96848cab374a394c44062f711f098e21e6d",
+    "web/package.json": "9baf1104f5b183d2c40a92b8ae60325df2b0687fa82db440b7931eb2e7b76776",
+    "web/public/art/portraits/lu.webp": "f3205ef5fc424896898efe8dca19e8871762636c7bb82c7136eea44fd638dff4",
+    "web/public/art/portraits/pei.webp": "0a1b64def5cd7200a291af8b98790d07048c190318bd4efbee1081bd6c284ad8",
+    "web/public/art/portraits/player.webp": "0c2faca3fd95f303cc4ed0e22169f13be1806066a22f56880cc7bbd3e009f1e6",
+    "web/public/art/portraits/shen.webp": "7fb1e08bec233fa3ba11f8f56dd645e3772738e80946990ddb0eb8f97b08ba52",
+    "web/public/art/portraits/yan.webp": "0f68e57915cfa22ef10a88699171ab5aca3889d9e66f1d6d0c8d087f7a04bc52",
+    "web/public/art/scene.webp": "8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc",
+    "web/public/art/scenes/secret.webp": "375d61a2b3701de62085ad8d8697c813bfcb5038420d5a864a65f3dc1fb550b9",
+    "web/public/art/scenes/settlement.webp": "f317b1cee05a456eaf5c19d779aa446a9489cc90b78a937f5bbefa6c638328b2",
+    "web/public/art/scenes/terrace-v2.webp": "76bbc4ecff4469cfa5e01f7ba182074e6fc70836d9fc9c0b4545afc7208ef45d",
+    "web/public/art/scenes/wilderness.webp": "3d07a4455e766b67c0eeae6b54b8373a3a64242e6ab952f16f6234bbfc0aae35",
+    "web/public/art/ui-kit.svg": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee",
+    "web/public/art/v2/characters/lu.webp": "632438e9da240cd8b362d785d8b4a581544b79e6fc3d14edd54cc43cf7410ad4",
+    "web/public/art/v2/characters/pei.webp": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d",
+    "web/public/art/v2/characters/player.webp": "b8080cda6d7a8f4019a55a0a67808e7e6a88834dbc3ad3ba12167517a6c988c4",
+    "web/public/art/v2/characters/shen.webp": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1",
+    "web/public/art/v2/characters/yan.webp": "82cc6f98bded838b6b8a59d1d27ba123fdec70c1a0043dd4bf6ea236a65c2e2f",
+    "web/public/art/v2/enemies/puppet.webp": "8fabb419720ae44a19e9dedbda32861a0af42ba50dc11803b3bffc1135e6852b",
+    "web/public/art/v2/enemies/sentinel.webp": "a832fcb94f72651d3ccf0c19e89240932850e04fb89200d427be859c2f938602",
+    "web/public/art/v2/enemies/serpent.webp": "cd981a2a17c1c9399a1bd6efd0eeb4653e0ce7eeb268985803542defce4652a7",
+    "web/public/art/v2/enemies/shadow.webp": "8b8223af8135263b02658e6d995c672f227693b603df8d593fbd9da7bac244e2",
+    "web/public/art/v2/enemies/trial_gate.webp": "a588999c5f907885722d614796ce177911f880eda2cedf4dcd4f3ae263e184f5",
+    "web/public/art/v2/enemies/trial_heart.webp": "d649dc3e9593790fe6e772344ed1bb202e4e495eecb4859d3c15a8be2a418044",
+    "web/public/art/v2/enemies/trial_thunder.webp": "728b50ee566e7a7e92a2b729117c70330fd43b66faae6a0b23fa5c8862883686",
+    "web/public/art/v2/enemies/warden.webp": "6efee13b8ecd07ae9d3569645c9654b0d681e3fcc96fc52ed01d096d6813f351",
+    "web/public/art/v2/enemies/wolf.webp": "95ed2843e926bbce543da559a6a282d3e13f4c5c5ff2630a4402aaec7db9de58",
+    "web/public/art/v2/scenes/cave-meditation.webp": "cc59bccfd3a42cdf688acdfd606ebe92d6e8d812eb08202207aaac1b145eeb9e",
+    "web/public/art/v2/scenes/cave.webp": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd",
+    "web/public/art/v2/scenes/market.webp": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15",
+    "web/public/art/v2/scenes/opening.webp": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a",
+    "web/public/art/v2/scenes/secret.webp": "bb9e1bda68dbd3ecd861446f7b19982051a9749c20b0cf82ec17f4e9586f997f",
+    "web/public/art/v2/scenes/sect.webp": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6",
+    "web/public/art/v2/scenes/terrace-opened.webp": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431",
+    "web/public/art/v2/scenes/terrace-storm.webp": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1",
+    "web/public/art/v2/scenes/terrace.webp": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9",
+    "web/public/art/v2/scenes/wilderness.webp": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10",
+    "web/public/art/v2/ui/meditation-ink.webp": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b",
+    "web/public/art/v2/ui/mountain-wash-v1.webp": "2f30503f639d97ca657520cc8b762121a86bc5dc3971a9ce7b8afb65c0a82aa2",
+    "web/public/art/v2/ui/xuan-paper-v1.webp": "c86afbc2f9a330aa61b1f110a9afab0db9bc4f213383ec78d19b4f7d95055f05",
+    "web/public/art/v2/ui/xuan-paper-v2.webp": "20ec5b471788120a3eda6bfd7486d9f85dc8e8eacdcf67b40a3c2c263f02d6a0",
+    "web/src/ActionEffects.vue": "6dd8763cdf71de98870dd6954ed1a47566055a0ddfc1f01aa6ca6879e38b03a5",
+    "web/src/ActionFeedback.vue": "6c17e5134c3e195342a4711492e1798eee26065b2806de55c4b726aaf52f7833",
+    "web/src/App.vue": "55c51527dab837c7b7f3195741c7a22b8cab689813750680ae4ed0d9b40a34df",
+    "web/src/AssetImage.vue": "ecfc476d074c16c14b181abbf62863ebc6d5c014d9473d3118e761433115a8da",
+    "web/src/BatchPreview.vue": "8bba4a7703a68b8eceb5441d4d0d1f8e738d53f41abb113b3a61f609a0a5022f",
+    "web/src/BattlePanel.vue": "ef9f639802e61b851efd592a72c31f0da41844341da35f8bf11d230991cfd5b3",
+    "web/src/CharacterPanel.vue": "a43381d49c311f3ef64cc0c429a4112c467a9ad96f190cbf2cff6c2e2628e34a",
+    "web/src/DemoFailure.vue": "c75a67ee2bbc77b416735f55899ae1d433fd963dee36543885547ecad73597d5",
+    "web/src/EquipmentPanel.vue": "7996b91297fd9a6ed0831b45abfa99ed7d450e469a45e09722f383f67b11e9b0",
+    "web/src/GameIcon.vue": "bb3f16dcb5952299de409a6666e55901e044bb4890cf8e2ddb720f0122d3d061",
+    "web/src/GoalPanel.vue": "00bdeb66e6d2b99077a7229eb120af50f2a54aff6c7f72a998497764e1830d22",
+    "web/src/GrowthPanel.vue": "930ba00cbeca41e2c2133c34b8021af966664a7a4835d47ebfd5665e96924363",
+    "web/src/GuidancePanel.vue": "232049046802b3cc7a0876f5572a9ee103fcf82593f66a028a5c403caafe3aee",
+    "web/src/LifePanel.vue": "87b06384f033db43fb8f1be1b9d93d92ffdf74e13b412cabdd76699c43d4c268",
+    "web/src/LocalExperiencePanel.vue": "97ffa7bff3d6ff5b69e73c101d190b9271c0d2dae53d889c070913a36392ecbf",
+    "web/src/PortraitImage.vue": "e7b4b55bdce38f13e38960327bf0d8d767e69058671dc7adf42ce1adf87d5208",
+    "web/src/PrimaryNav.vue": "911f5329ae18cc26854915188db2f45cd78fe0b51d61378fe0960ba9c5eeb9d1",
+    "web/src/RelationshipPanel.vue": "16adf055ec299b01cc7cc129bd0d2472c86e3dea78a2f4a0965079f9d25026cd",
+    "web/src/ScenePanel.vue": "cbd69e166756900e6442988b99d30895bc8adcb6b59f5a8a4c376312a836a698",
+    "web/src/TrialPreparationPanel.vue": "6dda6bccc2159a929a3379c39003ccd2bec14956f32fc906af619baeb63a7d74",
+    "web/src/TrialProgressPanel.vue": "b83d6b4d10d8ec42530d817342e99e30ba2cb268c83dad445f01bb593d7b7f06",
+    "web/src/assets.ts": "bde17b46113b60282650386d6cd1b76730e9c3a67b88cf8cfb60d0402a944210",
+    "web/src/demo-loader.ts": "7e676c17d754b541c37a059846527c3090d72bb2baecbc3c4fae7ddc1474db8b",
+    "web/src/demo.css": "77a68ee6af0a07f7098e40fdb92b003872d4766f2d87fb036afc20ebe0b3f6d9",
+    "web/src/effects.ts": "03b6daa4cde24a2127d4fd20c42367a32a162996456bb7c32c82d7f4af3bc981",
+    "web/src/focus.ts": "682ff9d38cc9ef877d8e3708efefe1db8e2c4e0172f3278c0f42f82b204bf269",
+    "web/src/full-persistence.ts": "633081bb028a9c0127214476e36096d25b840473a542a1cfbcdd80617f93fa4b",
+    "web/src/game-hub.css": "bdb861f2f338aa300dc7cd3a2763eea541be8567a07f4528dde8a678b10bb8e5",
+    "web/src/guidance.ts": "c27a8e7b45b1e45912f1e27426ad42a204aabb866db369188ee8a71be83ca955",
+    "web/src/local-events.ts": "eb5081eb50651ea0b81bed50e8869689c542a984a344a9ea808cad398473ca58",
+    "web/src/local-experience.ts": "1d611e165c687753ddf4ecfa546a749be9ece54c3956890f42d69d13ff284fe1",
+    "web/src/main.ts": "b8ab1fdd9d14a28f697aeebc208fc9c8fad1820ca39f461682998c49cb927ff7",
+    "web/src/navigation.ts": "a56acc19b1397218a93c0f1175fa2ff8ea36e0b837feef8d209de3653deca947",
+    "web/src/panel-materials.css": "2e1505bb60b4e193f685577b00647b7537898edfecf967986437dd4adbf91183",
+    "web/src/persistence.ts": "c3a0aa6dbabd58dd2278db20b8422fcc2d63d73a1da9ae435bb9ecff142ea415",
+    "web/src/presentation.ts": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649",
+    "web/src/scene-presentation.ts": "0c350de82085006096e104b206e0ce7cd3875ac453fb6a95950980ebe44b8f65",
+    "web/src/session.ts": "76c6968b53c1ca990c4ee4ac4a921e549585338c04b10e31636ed9821f5263c0",
+    "web/src/shell.css": "9399e3821fdc8b8acb5b92eb9dd948085b1a90e67595552a9a362e8332dcadc9",
+    "web/src/store.ts": "f90b5f6febf9e3119a97b8832232daeb6f89031855456ca26a3f30c76d3c4bfa",
+    "web/src/style.css": "5f1c1bdd58ff91debf24606c039780af729957b013a320332f2dc02c73d932a9",
+    "web/src/ui-icons.ts": "9691c0395014863388fd6c9c9d0529a66504a78cd95597c374cf387eaa7fdbf4",
+    "web/src/use-local-experience.ts": "c007ebd23b486c3c922f581210b86d583966cea36bae2efbdf15f69e06d3108c",
+    "web/src/use-tracking.ts": "ef1ff1a6edd1f441441dfe6743696d8c7239e6b9f0be1c22e649049038501c86",
+    "web/tsconfig.json": "dd84312a03e3fbd8fe765b6b20731124cb0ef34363798aeb81d4ca8ae8cde7ae",
+    "web/vite.config.ts": "f850be6cda43ebf7efcdd54fc321bf2687450917dd6a0bc8a1beef9296f7edd9"
+  },
+  "files": [
+    {
+      "path": ".vite/manifest.json",
+      "bytes": 185,
+      "sha256": "690e6785d4df1e2c7606cd577f6df3b47205254619dbf6f6e828b3dedccc2637"
+    },
+    {
+      "path": "art/portraits/lu.webp",
+      "bytes": 60432,
+      "sha256": "f3205ef5fc424896898efe8dca19e8871762636c7bb82c7136eea44fd638dff4"
+    },
+    {
+      "path": "art/portraits/pei.webp",
+      "bytes": 65460,
+      "sha256": "0a1b64def5cd7200a291af8b98790d07048c190318bd4efbee1081bd6c284ad8"
+    },
+    {
+      "path": "art/portraits/player.webp",
+      "bytes": 62438,
+      "sha256": "0c2faca3fd95f303cc4ed0e22169f13be1806066a22f56880cc7bbd3e009f1e6"
+    },
+    {
+      "path": "art/portraits/shen.webp",
+      "bytes": 63360,
+      "sha256": "7fb1e08bec233fa3ba11f8f56dd645e3772738e80946990ddb0eb8f97b08ba52"
+    },
+    {
+      "path": "art/portraits/yan.webp",
+      "bytes": 62270,
+      "sha256": "0f68e57915cfa22ef10a88699171ab5aca3889d9e66f1d6d0c8d087f7a04bc52"
+    },
+    {
+      "path": "art/scene.webp",
+      "bytes": 6438,
+      "sha256": "8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc"
+    },
+    {
+      "path": "art/scenes/secret.webp",
+      "bytes": 279296,
+      "sha256": "375d61a2b3701de62085ad8d8697c813bfcb5038420d5a864a65f3dc1fb550b9"
+    },
+    {
+      "path": "art/scenes/settlement.webp",
+      "bytes": 253904,
+      "sha256": "f317b1cee05a456eaf5c19d779aa446a9489cc90b78a937f5bbefa6c638328b2"
+    },
+    {
+      "path": "art/scenes/terrace-v2.webp",
+      "bytes": 182204,
+      "sha256": "76bbc4ecff4469cfa5e01f7ba182074e6fc70836d9fc9c0b4545afc7208ef45d"
+    },
+    {
+      "path": "art/scenes/wilderness.webp",
+      "bytes": 254774,
+      "sha256": "3d07a4455e766b67c0eeae6b54b8373a3a64242e6ab952f16f6234bbfc0aae35"
+    },
+    {
+      "path": "art/ui-kit.svg",
+      "bytes": 9046,
+      "sha256": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee"
+    },
+    {
+      "path": "art/v2/characters/lu.webp",
+      "bytes": 64486,
+      "sha256": "632438e9da240cd8b362d785d8b4a581544b79e6fc3d14edd54cc43cf7410ad4"
+    },
+    {
+      "path": "art/v2/characters/pei.webp",
+      "bytes": 66310,
+      "sha256": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d"
+    },
+    {
+      "path": "art/v2/characters/player.webp",
+      "bytes": 67524,
+      "sha256": "b8080cda6d7a8f4019a55a0a67808e7e6a88834dbc3ad3ba12167517a6c988c4"
+    },
+    {
+      "path": "art/v2/characters/shen.webp",
+      "bytes": 67818,
+      "sha256": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1"
+    },
+    {
+      "path": "art/v2/characters/yan.webp",
+      "bytes": 69326,
+      "sha256": "82cc6f98bded838b6b8a59d1d27ba123fdec70c1a0043dd4bf6ea236a65c2e2f"
+    },
+    {
+      "path": "art/v2/enemies/puppet.webp",
+      "bytes": 81374,
+      "sha256": "8fabb419720ae44a19e9dedbda32861a0af42ba50dc11803b3bffc1135e6852b"
+    },
+    {
+      "path": "art/v2/enemies/sentinel.webp",
+      "bytes": 91306,
+      "sha256": "a832fcb94f72651d3ccf0c19e89240932850e04fb89200d427be859c2f938602"
+    },
+    {
+      "path": "art/v2/enemies/serpent.webp",
+      "bytes": 101624,
+      "sha256": "cd981a2a17c1c9399a1bd6efd0eeb4653e0ce7eeb268985803542defce4652a7"
+    },
+    {
+      "path": "art/v2/enemies/shadow.webp",
+      "bytes": 100854,
+      "sha256": "8b8223af8135263b02658e6d995c672f227693b603df8d593fbd9da7bac244e2"
+    },
+    {
+      "path": "art/v2/enemies/trial_gate.webp",
+      "bytes": 110472,
+      "sha256": "a588999c5f907885722d614796ce177911f880eda2cedf4dcd4f3ae263e184f5"
+    },
+    {
+      "path": "art/v2/enemies/trial_heart.webp",
+      "bytes": 90838,
+      "sha256": "d649dc3e9593790fe6e772344ed1bb202e4e495eecb4859d3c15a8be2a418044"
+    },
+    {
+      "path": "art/v2/enemies/trial_thunder.webp",
+      "bytes": 102712,
+      "sha256": "728b50ee566e7a7e92a2b729117c70330fd43b66faae6a0b23fa5c8862883686"
+    },
+    {
+      "path": "art/v2/enemies/warden.webp",
+      "bytes": 91860,
+      "sha256": "6efee13b8ecd07ae9d3569645c9654b0d681e3fcc96fc52ed01d096d6813f351"
+    },
+    {
+      "path": "art/v2/enemies/wolf.webp",
+      "bytes": 84626,
+      "sha256": "95ed2843e926bbce543da559a6a282d3e13f4c5c5ff2630a4402aaec7db9de58"
+    },
+    {
+      "path": "art/v2/scenes/cave-meditation.webp",
+      "bytes": 297424,
+      "sha256": "cc59bccfd3a42cdf688acdfd606ebe92d6e8d812eb08202207aaac1b145eeb9e"
+    },
+    {
+      "path": "art/v2/scenes/cave.webp",
+      "bytes": 351730,
+      "sha256": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd"
+    },
+    {
+      "path": "art/v2/scenes/market.webp",
+      "bytes": 362374,
+      "sha256": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15"
+    },
+    {
+      "path": "art/v2/scenes/opening.webp",
+      "bytes": 287184,
+      "sha256": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a"
+    },
+    {
+      "path": "art/v2/scenes/secret.webp",
+      "bytes": 359330,
+      "sha256": "bb9e1bda68dbd3ecd861446f7b19982051a9749c20b0cf82ec17f4e9586f997f"
+    },
+    {
+      "path": "art/v2/scenes/sect.webp",
+      "bytes": 357912,
+      "sha256": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6"
+    },
+    {
+      "path": "art/v2/scenes/terrace-opened.webp",
+      "bytes": 310812,
+      "sha256": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431"
+    },
+    {
+      "path": "art/v2/scenes/terrace-storm.webp",
+      "bytes": 302660,
+      "sha256": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1"
+    },
+    {
+      "path": "art/v2/scenes/terrace.webp",
+      "bytes": 311830,
+      "sha256": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9"
+    },
+    {
+      "path": "art/v2/scenes/wilderness.webp",
+      "bytes": 365578,
+      "sha256": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10"
+    },
+    {
+      "path": "art/v2/ui/meditation-ink.webp",
+      "bytes": 96402,
+      "sha256": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b"
+    },
+    {
+      "path": "art/v2/ui/mountain-wash-v1.webp",
+      "bytes": 56046,
+      "sha256": "2f30503f639d97ca657520cc8b762121a86bc5dc3971a9ce7b8afb65c0a82aa2"
+    },
+    {
+      "path": "art/v2/ui/xuan-paper-v1.webp",
+      "bytes": 9894,
+      "sha256": "c86afbc2f9a330aa61b1f110a9afab0db9bc4f213383ec78d19b4f7d95055f05"
+    },
+    {
+      "path": "art/v2/ui/xuan-paper-v2.webp",
+      "bytes": 8344,
+      "sha256": "20ec5b471788120a3eda6bfd7486d9f85dc8e8eacdcf67b40a3c2c263f02d6a0"
+    },
+    {
+      "path": "assets/index-CE9M25V3.js",
+      "bytes": 392657,
+      "sha256": "e3695b4013e227826effaa55b9abd53b23944edaf7238147aa88ae9c0cec6031"
+    },
+    {
+      "path": "assets/index-um4pMjb2.css",
+      "bytes": 80602,
+      "sha256": "a78061cba26e2f5252fd47c846ba35f81e94b92954afc5a235ee139c1459933c"
+    },
+    {
+      "path": "demo-nodes/battle-sword.json",
+      "bytes": 2568,
+      "sha256": "1040a5b1c5407f8f6683b5f9cc18f222304c05e5ef2a18147e6de64c5c4f5ef3"
+    },
+    {
+      "path": "demo-nodes/battle-talisman.json",
+      "bytes": 2670,
+      "sha256": "974ae588180eff4e4b9442d685e33ebc9c84e2b3726d23240464938347002890"
+    },
+    {
+      "path": "demo-nodes/causal-help.json",
+      "bytes": 4863,
+      "sha256": "fb05d5b9b179278d533ce7ad0722b5fcc80f4a46ded1b1156e92a4f9ebaf11d0"
+    },
+    {
+      "path": "demo-nodes/causal-trade.json",
+      "bytes": 5625,
+      "sha256": "b8ca272b798b228c5cbde73692904302f9a38bbb9ac4b32be6ebf2171c73fd1c"
+    },
+    {
+      "path": "demo-nodes/ending-sword.json",
+      "bytes": 21314,
+      "sha256": "ae97767582d47ce3aa2c3c38cb753a16589bf280b3d828cc9fa6cc10f1b6a356"
+    },
+    {
+      "path": "demo-nodes/ending-talisman.json",
+      "bytes": 20891,
+      "sha256": "c8d75cffbcffe94d58ab0fc63544e19fe387a84cbdd01edfc988ea0d587c19cd"
+    },
+    {
+      "path": "demo-nodes/manifest.json",
+      "bytes": 3522,
+      "sha256": "fd2449428103f0c353b8eee64e2428ab2145b67f83f145f80f81583173afaf16"
+    },
+    {
+      "path": "demo-nodes/opening.json",
+      "bytes": 1304,
+      "sha256": "eb4740eb43d814436d8431a412229ba1e51104225e268931e57deb782aa7e45e"
+    },
+    {
+      "path": "demo-nodes/trial-sword.json",
+      "bytes": 18339,
+      "sha256": "86777cbebdbb3f763f0d85eecd9b5c75e9c57ecb1ad6975728652063895d37b4"
+    },
+    {
+      "path": "demo-nodes/trial-talisman.json",
+      "bytes": 15257,
+      "sha256": "d8b2c4903aefbc127d05deac6d39ea8b188420d735976ae2d8492f437be1b80f"
+    },
+    {
+      "path": "index.html",
+      "bytes": 569,
+      "sha256": "c16fe98f0ca2b8d2e5a948b7d018a66e071fac72e89fe1b7ca67e352b15904b7"
+    }
+  ],
+  "bytes": 6538638,
+  "testSources": [
+    {
+      "path": "web/e2e/single-screen.spec.ts",
+      "sha256": "e396a8b62e03db41c73a9c1d1f4398a1ccf9058afd1a46ba00b840cf56c4a59d"
+    },
+    {
+      "path": "web/e2e/panel-materials.spec.ts",
+      "sha256": "bfa41bcb47cf0f08b8944b96de9aa23c8420b496006cb9311b72b598c684ec1f"
+    }
+  ],
+  "rawUI": [
+    {
+      "path": "artifacts/goal-2/t04s/title-corrected-ui.json",
+      "sha256": "4fdbf249e6ac896a57f6f94cb817e92649aa726ba3bddc60c9def3f4960f2aa7",
+      "stats": {
+        "startTime": "2026-10-19T04:24:24.224Z",
+        "duration": 217687.153,
+        "expected": 42,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      }
+    },
+    {
+      "path": "artifacts/goal-2/t04s/name-regression-ui.json",
+      "sha256": "477d249e5a4ae5f3808e54c20279883830dcf4f56a38d59a22d3fb810032d260",
+      "stats": {
+        "startTime": "2026-10-19T04:32:31.096Z",
+        "duration": 25035.434,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "browserResults": [
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "paper and ink resources actually load, stay decorative, and preserve the dark character surface",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 5071,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "paper controls keep readable normal hover pressed focused and disabled states without passive growth",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 4785,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "missing decorative materials leave truthful readable controls and the original cultivation command usable",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 1776,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "paper and ink resources actually load, stay decorative, and preserve the dark character surface",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 6838,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "paper controls keep readable normal hover pressed focused and disabled states without passive growth",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 7159,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "missing decorative materials leave truthful readable controls and the original cultivation command usable",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2973,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "paper and ink resources actually load, stay decorative, and preserve the dark character surface",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 6263,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "paper controls keep readable normal hover pressed focused and disabled states without passive growth",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 8238,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "missing decorative materials leave truthful readable controls and the original cultivation command usable",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2477,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "opening and ordinary cultivation expose all entrances and real decisions within each desktop screen",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 10833,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "every functional entrance opens the real feature and returns without changing the game",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 4109,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "saved-result feedback rejects quota failure and same-intent retry only advances once",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2163,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "real sword battle decision stage remains on screen and applies the existing engine result",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 8135,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "real talisman battle decision stage remains on screen and applies the existing engine result",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 7932,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "goal source breadcrumbs survive opening another feature and returning",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2296,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "reduced motion keeps a static true result and opening views adds no game time",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 1787,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "normal-size demo battle keeps the same stage entrances and isolated persistent labels",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2437,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "returning after a different view or action removed the original opener focuses the current stage",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 4040,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "late preparation entrance survives the stage and actual goal navigation without starting a trial",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2368,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "a sealed life opens its full record and export from the hub without inventing a checkpoint",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 1501,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "opening and ordinary cultivation expose all entrances and real decisions within each desktop screen",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 12671,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "every functional entrance opens the real feature and returns without changing the game",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 6500,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "saved-result feedback rejects quota failure and same-intent retry only advances once",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 3721,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "real sword battle decision stage remains on screen and applies the existing engine result",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 10231,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "real talisman battle decision stage remains on screen and applies the existing engine result",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 9996,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "goal source breadcrumbs survive opening another feature and returning",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2677,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "reduced motion keeps a static true result and opening views adds no game time",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2295,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "normal-size demo battle keeps the same stage entrances and isolated persistent labels",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2521,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "returning after a different view or action removed the original opener focuses the current stage",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 5031,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "late preparation entrance survives the stage and actual goal navigation without starting a trial",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2841,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "a sealed life opens its full record and export from the hub without inventing a checkpoint",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2074,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "opening and ordinary cultivation expose all entrances and real decisions within each desktop screen",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 17063,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "every functional entrance opens the real feature and returns without changing the game",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 7932,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "saved-result feedback rejects quota failure and same-intent retry only advances once",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2849,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "real sword battle decision stage remains on screen and applies the existing engine result",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 12015,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "real talisman battle decision stage remains on screen and applies the existing engine result",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 12286,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "goal source breadcrumbs survive opening another feature and returning",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 4483,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "reduced motion keeps a static true result and opening views adds no game time",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2387,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "normal-size demo battle keeps the same stage entrances and isolated persistent labels",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 3574,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "returning after a different view or action removed the original opener focuses the current stage",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 7699,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "late preparation entrance survives the stage and actual goal navigation without starting a trial",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2711,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "single-screen.spec.ts",
+      "title": "a sealed life opens its full record and export from the hub without inventing a checkpoint",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 2870,
+      "sourceReport": "title-corrected-ui.json"
+    },
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "enemy name retains a light readable heading over the illustrated stage when paper headings change",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "duration": 3314,
+      "sourceReport": "name-regression-ui.json"
+    },
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "enemy name retains a light readable heading over the illustrated stage when paper headings change",
+      "project": "firefox",
+      "status": "passed",
+      "retry": 0,
+      "duration": 7396,
+      "sourceReport": "name-regression-ui.json"
+    },
+    {
+      "file": "panel-materials.spec.ts",
+      "title": "enemy name retains a light readable heading over the illustrated stage when paper headings change",
+      "project": "webkit",
+      "status": "passed",
+      "retry": 0,
+      "duration": 5513,
+      "sourceReport": "name-regression-ui.json"
+    }
+  ],
+  "measurements": [
+    {
+      "name": "paper-pixels.json",
+      "project": "chromium",
+      "data": {
+        "width": 512,
+        "height": 512,
+        "mean": [
+          234.58746719360352,
+          233.25231170654297,
+          229.1511459350586
+        ],
+        "min": 171
+      }
+    },
+    {
+      "name": "paper-control-contrast.json",
+      "project": "chromium",
+      "data": [
+        {
+          "id": "cultivate",
+          "state": "normal",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 5.366507388823777
+            }
+          ]
+        },
+        {
+          "id": "cultivate",
+          "state": "hover",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 4.940160273378941
+            }
+          ]
+        },
+        {
+          "id": "cultivate",
+          "state": "press",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 6.450023525430993
+            }
+          ]
+        },
+        {
+          "id": "cultivate",
+          "state": "focus",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 5.366507388823777
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "normal",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 7.291144562070969
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "hover",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 8.328782344813938
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "press",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 7.018463044576899
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "focus",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 7.291144562070969
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "normal",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 6.167279815909526
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "hover",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 7.270071125100791
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "press",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 6.526054433568175
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "focus",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 6.167279815909526
+            }
+          ]
+        },
+        {
+          "id": "cultivate-assisted",
+          "state": "disabled",
+          "rows": [
+            {
+              "text": "灵石辅助灵石 20 · 1 游戏月需要炼气境界",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "灵石 20 · 1 游戏月",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "需要炼气境界",
+              "ratio": 7.609579185281661
+            }
+          ]
+        },
+        {
+          "id": "rest",
+          "state": "disabled",
+          "rows": [
+            {
+              "text": "洞府疗养1 游戏月气血灵力已经圆满",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "1 游戏月",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "气血灵力已经圆满",
+              "ratio": 7.609579185281661
+            }
+          ]
+        },
+        {
+          "id": "breakthrough",
+          "state": "disabled",
+          "rows": [
+            {
+              "text": "引气入体修为尚未圆满",
+              "ratio": 6.22455908277744
+            },
+            {
+              "text": "修为尚未圆满",
+              "ratio": 5.860940521557158
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "paper-pixels.json",
+      "project": "firefox",
+      "data": {
+        "width": 512,
+        "height": 512,
+        "mean": [
+          234.58746719360352,
+          233.25231170654297,
+          229.1511459350586
+        ],
+        "min": 171
+      }
+    },
+    {
+      "name": "paper-control-contrast.json",
+      "project": "firefox",
+      "data": [
+        {
+          "id": "cultivate",
+          "state": "normal",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 5.366507388823777
+            }
+          ]
+        },
+        {
+          "id": "cultivate",
+          "state": "hover",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 4.940160273378941
+            }
+          ]
+        },
+        {
+          "id": "cultivate",
+          "state": "press",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 6.450023525430993
+            }
+          ]
+        },
+        {
+          "id": "cultivate",
+          "state": "focus",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 5.366507388823777
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "normal",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 7.291144562070969
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "hover",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 8.328782344813938
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "press",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 7.018463044576899
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "focus",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 7.291144562070969
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "normal",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 6.167279815909526
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "hover",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 7.270071125100791
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "press",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 6.526054433568175
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "focus",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 6.167279815909526
+            }
+          ]
+        },
+        {
+          "id": "cultivate-assisted",
+          "state": "disabled",
+          "rows": [
+            {
+              "text": "灵石辅助灵石 20 · 1 游戏月需要炼气境界",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "灵石 20 · 1 游戏月",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "需要炼气境界",
+              "ratio": 7.609579185281661
+            }
+          ]
+        },
+        {
+          "id": "rest",
+          "state": "disabled",
+          "rows": [
+            {
+              "text": "洞府疗养1 游戏月气血灵力已经圆满",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "1 游戏月",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "气血灵力已经圆满",
+              "ratio": 7.609579185281661
+            }
+          ]
+        },
+        {
+          "id": "breakthrough",
+          "state": "disabled",
+          "rows": [
+            {
+              "text": "引气入体修为尚未圆满",
+              "ratio": 6.22455908277744
+            },
+            {
+              "text": "修为尚未圆满",
+              "ratio": 5.860940521557158
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "paper-pixels.json",
+      "project": "webkit",
+      "data": {
+        "width": 512,
+        "height": 512,
+        "mean": [
+          234.58746719360352,
+          233.25231170654297,
+          229.1511459350586
+        ],
+        "min": 171
+      }
+    },
+    {
+      "name": "paper-control-contrast.json",
+      "project": "webkit",
+      "data": [
+        {
+          "id": "cultivate",
+          "state": "normal",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 5.366507388823777
+            }
+          ]
+        },
+        {
+          "id": "cultivate",
+          "state": "hover",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 4.940160273378941
+            }
+          ]
+        },
+        {
+          "id": "cultivate",
+          "state": "press",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 6.450023525430993
+            }
+          ]
+        },
+        {
+          "id": "cultivate",
+          "state": "focus",
+          "rows": [
+            {
+              "text": "自然吐纳",
+              "ratio": 5.366507388823777
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "normal",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 7.291144562070969
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "hover",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 8.328782344813938
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "press",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 7.018463044576899
+            }
+          ]
+        },
+        {
+          "id": "hub-goal-open",
+          "state": "focus",
+          "rows": [
+            {
+              "text": "查看缺口与来源 →",
+              "ratio": 7.291144562070969
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "normal",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 6.167279815909526
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "hover",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 7.270071125100791
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "press",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 6.526054433568175
+            }
+          ]
+        },
+        {
+          "id": "hub-cultivation-details",
+          "state": "focus",
+          "rows": [
+            {
+              "text": "预算与成长",
+              "ratio": 6.167279815909526
+            }
+          ]
+        },
+        {
+          "id": "cultivate-assisted",
+          "state": "disabled",
+          "rows": [
+            {
+              "text": "灵石辅助灵石 20 · 1 游戏月需要炼气境界",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "灵石 20 · 1 游戏月",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "需要炼气境界",
+              "ratio": 7.609579185281661
+            }
+          ]
+        },
+        {
+          "id": "rest",
+          "state": "disabled",
+          "rows": [
+            {
+              "text": "洞府疗养1 游戏月气血灵力已经圆满",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "1 游戏月",
+              "ratio": 7.609579185281661
+            },
+            {
+              "text": "气血灵力已经圆满",
+              "ratio": 7.609579185281661
+            }
+          ]
+        },
+        {
+          "id": "breakthrough",
+          "state": "disabled",
+          "rows": [
+            {
+              "text": "引气入体修为尚未圆满",
+              "ratio": 6.22455908277744
+            },
+            {
+              "text": "修为尚未圆满",
+              "ratio": 5.860940521557158
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cave-character-safe-zone-1280.json",
+      "project": "chromium",
+      "data": {
+        "left": 216.37369791666669,
+        "right": 437.8385416666667,
+        "top": 41.3448567708333,
+        "bottom": 239.8995442708333,
+        "width": 782,
+        "height": 269.015625,
+        "source": [
+          1536,
+          865
+        ],
+        "position": [
+          0.5,
+          0.65
+        ]
+      }
+    },
+    {
+      "name": "cave-character-safe-zone-1440.json",
+      "project": "chromium",
+      "data": {
+        "left": 260.64453125,
+        "right": 527.421875,
+        "top": 131.0271484375,
+        "bottom": 370.2068359375,
+        "width": 942,
+        "height": 449.015625,
+        "source": [
+          1536,
+          865
+        ],
+        "position": [
+          0.5,
+          0.65
+        ]
+      }
+    },
+    {
+      "name": "cave-character-safe-zone-1920.json",
+      "project": "chromium",
+      "data": {
+        "left": 360.25390625,
+        "right": 728.984375,
+        "top": 186.5623046875,
+        "bottom": 517.1482421875,
+        "width": 1302,
+        "height": 629.015625,
+        "source": [
+          1536,
+          865
+        ],
+        "position": [
+          0.5,
+          0.65
+        ]
+      }
+    },
+    {
+      "name": "cave-character-safe-zone-1280.json",
+      "project": "firefox",
+      "data": {
+        "left": 216.37369791666669,
+        "right": 437.8385416666667,
+        "top": 38.08470052083331,
+        "bottom": 236.6393880208333,
+        "width": 782,
+        "height": 264,
+        "source": [
+          1536,
+          865
+        ],
+        "position": [
+          0.5,
+          0.65
+        ]
+      }
+    },
+    {
+      "name": "cave-character-safe-zone-1440.json",
+      "project": "firefox",
+      "data": {
+        "left": 260.64453125,
+        "right": 527.421875,
+        "top": 127.7669921875,
+        "bottom": 366.9466796875,
+        "width": 942,
+        "height": 444,
+        "source": [
+          1536,
+          865
+        ],
+        "position": [
+          0.5,
+          0.65
+        ]
+      }
+    },
+    {
+      "name": "cave-character-safe-zone-1920.json",
+      "project": "firefox",
+      "data": {
+        "left": 360.25390625,
+        "right": 728.984375,
+        "top": 183.3021484375,
+        "bottom": 513.8880859375,
+        "width": 1302,
+        "height": 624,
+        "source": [
+          1536,
+          865
+        ],
+        "position": [
+          0.5,
+          0.65
+        ]
+      }
+    },
+    {
+      "name": "cave-character-safe-zone-1280.json",
+      "project": "webkit",
+      "data": {
+        "left": 216.37369791666669,
+        "right": 437.8385416666667,
+        "top": 42.634700520833306,
+        "bottom": 241.1893880208333,
+        "width": 782,
+        "height": 271,
+        "source": [
+          1536,
+          865
+        ],
+        "position": [
+          0.5,
+          0.65
+        ]
+      }
+    },
+    {
+      "name": "cave-character-safe-zone-1440.json",
+      "project": "webkit",
+      "data": {
+        "left": 260.64453125,
+        "right": 527.421875,
+        "top": 132.3169921875,
+        "bottom": 371.4966796875,
+        "width": 942,
+        "height": 451,
+        "source": [
+          1536,
+          865
+        ],
+        "position": [
+          0.5,
+          0.65
+        ]
+      }
+    },
+    {
+      "name": "cave-character-safe-zone-1920.json",
+      "project": "webkit",
+      "data": {
+        "left": 360.25390625,
+        "right": 728.984375,
+        "top": 187.85214843749998,
+        "bottom": 518.4380859375,
+        "width": 1302,
+        "height": 631,
+        "source": [
+          1536,
+          865
+        ],
+        "position": [
+          0.5,
+          0.65
+        ]
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "goal-2/evidence/t04s/hub-cave-1440.png",
+      "sha256": "b0698cc921e59788f744e607c0309dff3733ed68486f00ca9970131f24818b2a",
+      "bytes": 1569000,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "agentActuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t04s/hub-cave-1280.png",
+      "sha256": "2c8cabad5817c31dd479f0c8e155a36b0e039e0ca766dd48526fed2f345393ab",
+      "bytes": 1043798,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "agentActuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t04s/hub-cave-1920.png",
+      "sha256": "2fa14237b3e033897af83d42fbfc7d4dd2b94e15b3d6ca7161f935f96de0d23f",
+      "bytes": 2451899,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "agentActuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t04s/hub-opening-1280.png",
+      "sha256": "463b5ae5e37712c2beec2bd21bb6209cb0ff3c5dda45be3add304768a71b5dfd",
+      "bytes": 896861,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "agentActuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t04s/hub-battle-sword-1280.png",
+      "sha256": "6906eecb89f498fe3a5dccf3caa57dbc822ab902daaae7df1698b156821dd39d",
+      "bytes": 772557,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "agentActuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t04s/hub-battle-talisman-1280.png",
+      "sha256": "9f5d4124f025fb26fa61c820c2432740a74b7fc70ff418cbb881fa0ca334ec14",
+      "bytes": 771778,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "agentActuallyViewed": true
+    },
+    {
+      "path": "goal-2/evidence/t04s/hub-demo-battle-1280.png",
+      "sha256": "8933bfeb4e5fe176f2635e905e982873c8a84f41ebc5690cf5d507fd319bc865",
+      "bytes": 779185,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "agentActuallyViewed": true
+    }
+  ],
+  "preview": {
+    "url": "http://127.0.0.1:56882/",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-2/t04s/preview-244f4066/web",
+    "independentOrigin": true,
+    "httpProofSHA256": "0747d2ba5f1ba6503a50b3edbbd8f0cad3527e9995477c8c83a3baed3d5c6130"
+  },
+  "failuresRetained": [
+    "artifacts/goal-2/t04s/first-screen-ui.json",
+    "artifacts/goal-2/t04s/material-check-ui.json",
+    "artifacts/goal-2/t04s/pre-title-fix-ui.json",
+    "artifacts/goal-2/t04s/title-corrected-ui.json"
+  ],
+  "userAcceptance": false,
+  "unchangedPassingTestPrefixSHA256": "9853645b1d19cde4a56c3e1eaccb72622de67fc500475aa70dd8baa6e763a5f4",
+  "core": {
+    "tests": 382,
+    "passed": 382,
+    "failed": 0,
+    "log": "artifacts/goal-2/t04s/core.log",
+    "sha256": "7bd0b2e080bd5f56c7460b225bb83ab02b84ec4e89e101d5f9f137a0fe0e9afb"
+  },
+  "resourceGuard": {
+    "tests": 52,
+    "passed": 52,
+    "log": "artifacts/goal-2/t04s/docs.log",
+    "sha256": "5bb88aca6f9b771cc35b5e96cbecb20804bd551b6441256b262e75253e13da02"
+  }
+}

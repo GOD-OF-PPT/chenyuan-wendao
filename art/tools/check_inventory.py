@@ -112,6 +112,12 @@ def validate(root):
     assert not recorded.intersection(desktop_ui_files), 'Desktop UI paths overlap older ledgers'
     recorded.update(desktop_ui_files)
     counts['production'] += desktop_ui_production
+    from panel_materials_inventory import validate_panel_materials
+    panel_files, panel_production = validate_panel_materials(root, image_info)
+    assert not recorded.intersection(panel_files), 'Panel material paths overlap older ledgers'
+    recorded.update(panel_files)
+    counts['production'] += panel_production
+    counts['reference'] = counts.get('reference', 0) + len(panel_files) - panel_production
     native_path = root / 'art/redesign/single-screen-native.json'
     native_bytes = 0
     if native_path.exists():

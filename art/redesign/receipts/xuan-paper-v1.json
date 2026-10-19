@@ -1,0 +1,74 @@
+{
+  "id": "xuan-paper",
+  "tool": "built-in image_gen",
+  "sourceDefaultPath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-d91d9aa1-9580-4068-aba5-439d66f68822.png",
+  "savedPath": "art/redesign/desktop/xuan-paper-v1.png",
+  "copiedUnchanged": true,
+  "source": {
+    "path": "art/redesign/desktop/xuan-paper-v1.png",
+    "bytes": 2825331,
+    "sha256": "c6e3d6e64d309165e1dafc96be58cd07f5217b360f73c3fa680c4b29e8d1b3bb",
+    "dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "alpha": false,
+    "format": "png"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/ui/xuan-paper-v1.webp",
+    "bytes": 9894,
+    "sha256": "c86afbc2f9a330aa61b1f110a9afab0db9bc4f213383ec78d19b4f7d95055f05",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": false,
+    "format": "webp"
+  },
+  "alphaProof": {
+    "min": 255,
+    "max": 255,
+    "transparentPixels": 0,
+    "solidPixels": 1572516,
+    "intermediatePixels": 0
+  },
+  "runtimeAlphaProof": {
+    "min": 255,
+    "max": 255,
+    "transparentPixels": 0,
+    "solidPixels": 262144,
+    "intermediatePixels": 0
+  },
+  "promptReference": "art/redesign/receipts/panel-material-prompts.json#xuan-paper",
+  "referenceImages": [
+    {
+      "path": "goal-2/design/desktop-direction-v1.png",
+      "role": "style reference only; not an edit target",
+      "sha256": "ab34c2faff1a786c210e96310cf2cfc52cae71aa4880f37e37aa7821f4040b12"
+    }
+  ],
+  "request": {
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/gordon/githome/chenyuan-wendao/goal-2/design/desktop-direction-v1.png"
+    ]
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "78",
+    "-m",
+    "6",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "generated original visually inspected; runtime decode verified; actual UI review follows",
+    "findings": "Neutral ivory fine fibres with subtle jade-grey clouds; no text or borders."
+  }
+}

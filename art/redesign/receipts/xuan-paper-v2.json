@@ -1,0 +1,84 @@
+{
+  "id": "xuan-paper",
+  "tool": "built-in image_gen",
+  "sourceDefaultPath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-279798ac-7f3a-4d86-b4a2-996719370a4e.png",
+  "savedPath": "art/redesign/desktop/xuan-paper-v2.png",
+  "copiedUnchanged": true,
+  "source": {
+    "path": "art/redesign/desktop/xuan-paper-v2.png",
+    "bytes": 2466811,
+    "sha256": "931c3842c1e7489fe0aad49a7fcca6020e00078aeaa45991a7f627cd0d419340",
+    "dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "alpha": false,
+    "format": "png"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/ui/xuan-paper-v2.webp",
+    "bytes": 8344,
+    "sha256": "20ec5b471788120a3eda6bfd7486d9f85dc8e8eacdcf67b40a3c2c263f02d6a0",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": false,
+    "format": "webp"
+  },
+  "alphaProof": {
+    "min": 255,
+    "max": 255,
+    "transparentPixels": 0,
+    "solidPixels": 1572516,
+    "intermediatePixels": 0
+  },
+  "runtimeAlphaProof": {
+    "min": 255,
+    "max": 255,
+    "transparentPixels": 0,
+    "solidPixels": 262144,
+    "intermediatePixels": 0
+  },
+  "promptReference": "art/redesign/receipts/panel-paper-v2-prompt.json#xuan-paper",
+  "referenceImages": [
+    {
+      "path": "art/redesign/desktop/xuan-paper-v1.png",
+      "sha256": "c6e3d6e64d309165e1dafc96be58cd07f5217b360f73c3fa680c4b29e8d1b3bb",
+      "role": "edit target; same texture, neutral colour correction"
+    }
+  ],
+  "request": {
+    "transparent_background": false,
+    "referenced_image_paths": [
+      "/Users/gordon/githome/chenyuan-wendao/art/redesign/desktop/xuan-paper-v1.png"
+    ]
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "78",
+    "-m",
+    "6",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "original viewed inline, runtime fully decoded",
+    "findings": "Neutral pearl-ivory xuan paper; reduced yellow cast and quieter texture.",
+    "sourceMeanRGB": [
+      234.19916426923479,
+      233.1974231104803,
+      229.36632250482666
+    ],
+    "runtimeMeanRGB": [
+      234.58746719360352,
+      233.25231170654297,
+      229.1511459350586
+    ]
+  }
+}

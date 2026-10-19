@@ -27,6 +27,8 @@ class InventoryTests(unittest.TestCase):
    files.update(ROOT/ref for ref in current['sourceReferences']+current['rights']['evidenceReferences'])
   native=ROOT/'art/redesign/single-screen-native.json'
   if native.exists():files.update(ROOT/ref for ref in json.loads(native.read_text())['sourceReferences'])
+  panels=ROOT/'art/redesign/panel-materials.json'
+  if panels.exists():files.update(ROOT/ref for ref in json.loads(panels.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -41,7 +43,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0))
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0))
  def test_digest_corruption_is_rejected(self):self.asset('scene-secret')['sha256']='0'*64;self.rejected()
  def test_false_dimensions_are_rejected(self):self.asset('portrait-player')['dimensions']['width']=999;self.rejected()
  def test_parent_hash_cannot_be_relabelled(self):self.asset('scene-wilderness')['originalHash']='0'*64;self.rejected()
@@ -150,6 +152,25 @@ class InventoryTests(unittest.TestCase):
   self.rejected()
  def test_game_stage_budget_cannot_be_raised(self):
   path='art/redesign/single-screen-native.json';m=json.loads((self.root/path).read_text());m['maxBytes']=20000;self.write(path,m)
+  self.rejected()
+
+ def test_paper_material_cannot_silently_change_pixels(self):
+  self.write('web/public/art/v2/ui/xuan-paper-v2.webp','invalid')
+  self.rejected()
+ def test_paper_material_cannot_drop_ledger(self):
+  (self.root/'art/redesign/panel-materials.json').unlink()
+  self.rejected()
+ def test_paper_material_cannot_raise_budget_or_claim_acceptance(self):
+  p='art/redesign/panel-materials.json';original=json.loads((self.root/p).read_text())
+  for field in ['budget','acceptance']:
+   m=copy.deepcopy(original)
+   if field=='budget':m['budgets']['maxRuntimeBytes']=300000
+   else:m['rights']['userAcceptance']=True
+   self.write(p,m);self.rejected()
+ def test_paper_material_cannot_invent_transparency_after_receipt_rehash(self):
+  p='art/redesign/panel-materials.json';m=json.loads((self.root/p).read_text());ref=m['assets'][1]['receipt'];r=json.loads((self.root/ref['path']).read_text());r['alphaProof']['min']=255;self.write(ref['path'],r);ref['sha256']=hashlib.sha256((self.root/ref['path']).read_bytes()).hexdigest();self.write(p,m);self.rejected()
+ def test_paper_styles_cannot_change_without_identity_update(self):
+  self.write('web/src/panel-materials.css','body{display:none}')
   self.rejected()
 
 if __name__=='__main__':unittest.main()

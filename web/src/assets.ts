@@ -7,6 +7,7 @@ export const SCENE_ASSETS = {
 export const TERRACE_STATE_ASSETS={closed:SCENE_ASSETS.terrace,storm:'art/v2/scenes/terrace-storm.webp',opened:'art/v2/scenes/terrace-opened.webp'} as const;
 export const CAVE_MEDITATION_ASSET='art/v2/scenes/cave-meditation.webp';
 export const DESKTOP_UI_ASSETS={meditation:'art/v2/ui/meditation-ink.webp'} as const;
+export const PANEL_MATERIAL_ASSETS={mountains:'art/v2/ui/mountain-wash-v1.webp'} as const;
 export function sceneAssetPath(scene:{key:string;gate:'none'|'closed'|'storm'|'opened';artKey:keyof typeof SCENE_ASSETS},meditation=false){if(meditation&&scene.artKey==='cave')return CAVE_MEDITATION_ASSET;return scene.key==='terrace'&&scene.gate!=='none'?TERRACE_STATE_ASSETS[scene.gate]:SCENE_ASSETS[scene.artKey];}
 export const SCENE_CROPS:Record<LocationId,string> = {wilderness:'50% 50%',cave:'50% 50%',sect:'50% 50%',market:'50% 55%',secret:'50% 58%',terrace:'100% 50%'};
 export const PORTRAIT_ASSETS:Record<string,string> = {
