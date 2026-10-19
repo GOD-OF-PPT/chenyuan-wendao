@@ -61,7 +61,7 @@ test('normal-size demo battle keeps the same stage entrances and isolated persis
 
 
 test('returning after a different view or action removed the original opener focuses the current stage',async({page})=>{
- await cave(page);await page.getByTestId('hub-cultivation-details').click();await page.getByTestId('tab-1').click();await action(page,'travel-wilderness');const before=await snapshot(page);await page.getByTestId('hub-close').click();await expect(page.getByTestId('hub-current')).toBeFocused();expect(await snapshot(page)).toEqual(before);await screen(page,['return-cave']);
+ await cave(page);await page.getByLabel('吐纳行动次数').selectOption('5');await action(page,'cultivate');await action(page,'breakthrough');await page.getByTestId('choose-school').click();await action(page,'school-sword');const chosen=await snapshot(page);await page.getByTestId('hub-close').click();await expect(page.getByTestId('choose-school')).toHaveCount(0);await expect(page.getByTestId('hub-current')).toBeFocused();expect(await snapshot(page)).toEqual(chosen);await screen(page,['cultivate']);await page.getByTestId('hub-cultivation-details').click();await page.getByTestId('tab-1').click();await action(page,'travel-wilderness');const before=await snapshot(page);await page.getByTestId('hub-close').click();await expect(page.getByTestId('hub-cultivation-details')).toBeFocused();expect(await snapshot(page)).toEqual(before);await screen(page,['return-cave']);
 });
 
 
