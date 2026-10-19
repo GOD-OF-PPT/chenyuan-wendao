@@ -23,3 +23,5 @@ ChoiceCard独立查看即刻成本、已知结果、共享预览变化与真实�
 当前新原生主题/组件19039/26000B，原UI79466/80000B、主舞台9848/12000B、T04S5920/6500B；未移出旧代码或提高预算。当前53运行文件6558400B，sourceDigest56682cabd3eba835d1a957a0cb21a1a43666e8f55c7c10474474f5aeb2dcf9bb，全部运行文件已逐HTTP hash核对。完整源/测试/原始报告/截图绑定见[verification.json](../../goal-2/evidence/t04t/verification.json)；这是提交前工作树的实际本地证据，最终提交清洁重建另行逐文件比对，不冒充完整CI。
 
 [杠精审查] T04T/CHECK-02N当前范围通过：全部网页模块统一主题，跨状态实际巡检及真实交互/持久化有据；修掉深色继承与返回焦点问题，没有删功能、代玩家选择、动画授资源或以机器验证代用户美术认可。T05/T06/T07长内容分类分页未完成，兼容仍T08最后，整体目标不标记完成。
+
+交付：实现37b46dee1abeead5a6146a7e368c6c398d7d7f00已推送，草稿[PR40](https://github.com/GOD-OF-PPT/chenyuan-wendao/pull/40)叠加PR39并附当前任务。干净实现重建全部runtimeSources及53运行文件与本轮69项实际验证/冻结HTTP预览一致；tasks已更新当前任务及CHECK-02N，完整目标未关闭。
