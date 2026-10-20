@@ -1,0 +1,106 @@
+{
+  "task": "Goal3 T02-U2-R",
+  "accessed": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "method": "Official documents, developer pages and read-only repository analysis; no competitor playtest or compatibility tests",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "受邀出席国风游戏论坛 国风仙侠手游《一念逍遥》的修仙之路",
+      "url": "https://www.g-bits.com/zh/news/841.html",
+      "publisher": "吉比特，发行负责人分享",
+      "date": "2021-12-17",
+      "verified": "修炼与神通等题材概念用放置玩法及克制美术表达",
+      "projectInference": "每个玩法围绕实际修仙行为组织交互",
+      "limit": "历史设计分享，不代表当前完整规则或本项目引入MMO"
+    },
+    {
+      "id": "S2",
+      "title": "Melvor Idle - About This Game",
+      "url": "https://store.steampowered.com/app/1267910/Melvor_Idle/?l=english",
+      "publisher": "Games by Malcs / Jagex 开发者商店说明",
+      "date": null,
+      "verified": "生产与战斗技能相互关联，具有离线成长",
+      "projectInference": "现有材料、丹药、功法与法宝联动，让积累服务后续选择",
+      "limit": "未试玩；不从商店说明推导具体时长、风险或本项目离线补发"
+    },
+    {
+      "id": "S3",
+      "title": "How to Play - Antimatter Dimensions",
+      "url": "https://ivark.github.io/howto.html",
+      "publisher": "Antimatter Dimensions 原版开发者站点",
+      "date": null,
+      "verified": "自动购买的优先级、数量、阈值与按解锁展示信息",
+      "projectInference": "目标、预算、停止阈值和渐进展示",
+      "limit": "经典原版历史手册，不声称是当前版本的完整行为或数值"
+    },
+    {
+      "id": "S4",
+      "title": "Trimps 5.10.1",
+      "url": "https://trimps.github.io/",
+      "publisher": "Trimps 官方游戏页面",
+      "date": null,
+      "verified": "静态UI中资源速率、队列、工作分配、自动战斗和重复开关",
+      "projectInference": "持续状态、产出、队列和明确停止控制要分清",
+      "limit": "未操作游戏，隐藏/未解锁按钮不代表新档当前可用；不复制密集布局"
+    },
+    {
+      "id": "S5",
+      "title": "NGU IDLE - About This Game",
+      "url": "https://store.steampowered.com/app/1147690/NGU_IDLE/?l=english",
+      "publisher": "4G 开发者商店说明",
+      "date": null,
+      "verified": "随成长展开功能，包含装备与主动/放置游玩",
+      "projectInference": "成长逐步引入有用途的决策，手动干预可选",
+      "limit": "不用于推导详细自动战斗或离线公式"
+    },
+    {
+      "id": "S6",
+      "title": "The Math of Idle Games, Part I",
+      "url": "https://www.kongregate.com/en/pages/the-math-of-idle-games-part-i",
+      "publisher": "Anthony Pecorella / Kongregate",
+      "date": null,
+      "verified": "产出、成本、升级之间的关系；支配选择和高频微操的问题",
+      "projectInference": "周期、收益、消耗与流派效率一起验证，阶段策略应有取舍",
+      "limit": "不移植指数曲线、重置机制或竞品数值"
+    },
+    {
+      "id": "S7",
+      "title": "Melvor Idle 2 Development Progress Update (June 2026)",
+      "url": "https://news.melvoridle.com/melvor-idle-2-development-progress-update-june-2026/",
+      "publisher": "Melvor Idle 开发者日志",
+      "date": "2026-06",
+      "verified": "武器多样性、系统联系与基于测试反馈调平衡",
+      "projectInference": "现有剑/符与功法法宝必须影响自动战策和活动选择",
+      "limit": "开发中版本，不把其规模或测试结论当作本项目证据"
+    },
+    {
+      "id": "S8",
+      "title": "Page Visibility API",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API",
+      "publisher": "MDN Web Docs",
+      "date": null,
+      "verified": "隐藏页面的定时器与渲染回调可能被节流",
+      "projectInference": "显式规定周期、后台/离线和重放边界，表现时钟不结算奖励",
+      "limit": "计时机制资料，未执行任何页面兼容或性能矩阵"
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://www.melvoridle.com/",
+      "reason": "本次403，首页正文未取得"
+    },
+    {
+      "url": "https://xian.leiting.com/news/632.html",
+      "reason": "相关减负内容仅搜索摘要命中，正文对应段落未稳定回读，不据此制定规则"
+    },
+    {
+      "kind": "community guides",
+      "reason": "可作为检索线索；本轮不作为详细规则的事实来源"
+    }
+  ],
+  "status": "research and proposed rules only; no idle mechanism implemented",
+  "compatibility": "development and tests paused",
+  "reviewedCommit": "1effd6789b64033c800a15b883362dabaad17f34",
+  "runtimeChangesThisTask": false
+}
