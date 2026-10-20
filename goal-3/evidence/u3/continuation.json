@@ -1,0 +1,14 @@
+{
+  "id": "automation-3",
+  "name": "尘缘问道目标持续推进",
+  "kind": "heartbeat",
+  "status": "ACTIVE",
+  "intervalMinutes": 10,
+  "targetThreadId": "01a15748-e9af-7902-913a-468e1f1be85d",
+  "promptSha256": "4064d108dd6e49a133327fb352602ef7f3974cff715b3675e8cf46ad735d0090",
+  "userAuthorization": "goal-3/amendments/2026-10-20-next-and-continuous.md",
+  "nativeGoalStatus": "blocked",
+  "nativeGoalResumed": false,
+  "scope": "Continue this same thread at idle, one authorized task per turn, no compatibility work; no duplicate project chat or broader permissions",
+  "officialDocumentationChecked": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex"
+}

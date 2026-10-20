@@ -11,7 +11,7 @@ import { activityReceipt, validateActivityReceipt, type ActivityReceiptInput } f
 export type { ActivityMutation, ActivityOutcome, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
 
 export const FULL_DB_NAME = 'chenyuan-playable-v1';
-export const FULL_DB_VERSION = 4;
+export const FULL_DB_VERSION = 5;
 export const FULL_STATE_STORE = 'full-state';
 export const FULL_RECEIPT_STORE = 'full-receipts';
 export const FULL_BACKUP_STORE = 'full-backups';
@@ -519,7 +519,7 @@ export class FullSaveRepository {
                 }
                 let next: Activity;
                 if (input.kind === 'START') {
-                  if (activity?.status === 'running') throw new RuleError('ACTIVITY_RUNNING', '先暂停当前活动，再安排新的修行');
+                  if (activity?.status === 'running') throw new RuleError('ACTIVITY_RUNNING', '先暂停当前活动，再安排新的活动');
                   next = createActivity(current, input.plan, { id: crypto.randomUUID(), ownerId: input.mutation.ownerId,
                     commandId: input.mutation.commandId, now: Date.now() });
                   if (activity) tx.objectStore(FULL_BACKUP_STORE).put(activity, 'activity/' + intent.runId + '/' + intent.commandId + '/previous');
@@ -529,7 +529,7 @@ export class FullSaveRepository {
                     if (activity.ownerId !== input.tick.ownerId || activity.generation !== input.tick.generation) throw new RuleError('ACTIVITY_OWNER', '该周期已由其他页面接管，旧回调未执行');
                     if (activity.status !== 'running' || !activity.nextCommand || activity.nextCommand.commandId !== input.tick.commandId) throw new RuleError('ACTIVITY_STALE', '当前周期已停止或变化');
                     const now = Date.now();
-                    if (activity.dueAt === null || now < activity.dueAt) throw new RuleError('ACTIVITY_NOT_DUE', '当前修炼周期尚未完成');
+                    if (activity.dueAt === null || now < activity.dueAt) throw new RuleError('ACTIVITY_NOT_DUE', '当前活动周期尚未完成');
                     const command = activity.nextCommand, outcome = resolve(current, command);
                     next = completeActivity(outcome.nextState, activity, outcome.result, { commandId: command.commandId, now });
                     state.put(current, 'previous'); state.put(outcome.nextState, 'current'); state.put(next, 'activity');
@@ -706,7 +706,7 @@ export class FullSaveRepository {
                 if (receipt.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一指令编号对应不同内容');
                 complete({ state: current, result: receipt.result, replayed: true }); return;
               }
-              if (command.type === 'CULTIVATE') throw new RuleError('ACTIVITY_REQUIRED', '请安排修炼活动，修为按完整周期逐次积累');
+              if (command.type === 'CULTIVATE' || command.type === 'SOURCE') throw new RuleError('ACTIVITY_REQUIRED', '请安排修炼或取材活动，按完整周期逐次积累');
               if (activity?.status === 'running') throw new RuleError('ACTIVITY_RUNNING', '先暂停当前活动，再执行其他行动');
               const outcome = resolve(current, command);
               state.put(current, 'previous'); state.put(outcome.nextState, 'current');

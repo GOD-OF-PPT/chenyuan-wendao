@@ -1,13 +1,14 @@
 import * as C from './content.ts';
 import type { RealmId } from './content.ts';
-import { costsForAction } from './costs.ts';
+import { costsForAction, remainingMonths } from './costs.ts';
 import { previewResolution, resolve, stats, validateCommand, validateGame } from './engine.ts';
 import { RuleError } from './errors.ts';
 import { canonicalFingerprint, validateCommandReceipt } from './receipts.ts';
 import type { ActionResult, RuleFailure } from './contracts.ts';
 import type { Command, Game } from './types.ts';
+import type { CollectionTarget } from './goals.ts';
 
-export interface ActivityPlan {
+export interface CultivationPlan {
   kind: 'cultivation';
   method: 'natural' | 'assisted';
   maxCycles: number;
@@ -15,14 +16,24 @@ export interface ActivityPlan {
   stoneBudget: number;
   stoneReserve: number;
 }
-export interface Activity {
-  format: 'chenyuan-activity'; version: 1; id: string; revision: number; generation: number;
+export interface SourcePlan {
+  kind: 'source'; sourceId: string; maxCycles: number; until: 'cycles' | 'target';
+  target: CollectionTarget | null; monthBudget: number; remainingMonthsReserve: number;
+}
+export type ActivityPlan = CultivationPlan | SourcePlan;
+interface ActivityBase {
+  format: 'chenyuan-activity'; id: string; revision: number; generation: number;
   ownerId: string; runId: string; realm: Exclude<RealmId, 'ascended'>; gameRevision: number;
-  plan: ActivityPlan; cycleMs: number; completedCycles: number; spentStones: number;
+  cycleMs: number; completedCycles: number; spentStones: number;
   gainedXp: number; spentMonths: number; status: 'running' | 'paused' | 'stopped';
   stopReason: RuleFailure | null; nextCommand: Command | null;
   startedAt: number | null; dueAt: number | null;
 }
+export interface CultivationActivity extends ActivityBase { version: 1; plan: CultivationPlan; }
+export interface SourceActivity extends ActivityBase {
+  version: 2; plan: SourcePlan; gainedItems: Record<string, number>; gainedStones: number;
+}
+export type Activity = CultivationActivity | SourceActivity;
 export interface ActivityMutation {
   commandId: string; runId: string; expectedRevision: number;
   expectedActivityId: string | null; expectedActivityRevision: number | null; ownerId: string;
@@ -40,6 +51,7 @@ export interface ActivityCompleteOptions { commandId: string; now: number; }
 export interface ActivityPreview {
   allowed: boolean; failure: RuleFailure | null; cycles: number; xp: number; stones: number;
   months: number; stopReason: RuleFailure | null; cycleMs: number;
+  items: Record<string, number>; earnedStones: number;
 }
 
 /** Initial pacing only; these values have not passed long-term balance or player acceptance. */
@@ -51,7 +63,7 @@ const integer = (value: unknown, minimum = 0, maximum = Number.MAX_SAFE_INTEGER)
   typeof value === 'number' && Number.isSafeInteger(value) && value >= minimum && value <= maximum;
 const identity = (value: unknown, maximum = 100): value is string => typeof value === 'string' &&
   value.length <= maximum && value.trim().length > 0;
-function invalid(message = '活动记录或指令无效，未执行修炼'): never { throw new RuleError('ACTIVITY_INVALID', message); }
+function invalid(message = '活动记录或指令无效，未执行活动'): never { throw new RuleError('ACTIVITY_INVALID', message); }
 function shape(value: unknown, fields: readonly string[]): asserts value is Record<string, unknown> {
   if (!object(value) || Object.keys(value).length !== fields.length || Object.keys(value).some(key => !fields.includes(key))) invalid();
 }
@@ -67,9 +79,12 @@ function at(now: unknown, cycleMs: number): asserts now is number {
   if (!integer(now, 0, Number.MAX_SAFE_INTEGER - cycleMs)) invalid('活动时间无效');
 }
 function cycleCommand(activity: Activity): Command {
-  return { type: 'CULTIVATE', method: activity.plan.method, count: 1,
-    commandId: `cycle:${activity.id}:${activity.generation}:${activity.completedCycles + 1}`,
+  const identity = { commandId: `cycle:${activity.id}:${activity.generation}:${activity.completedCycles + 1}`,
     runId: activity.runId, expectedRevision: activity.gameRevision };
+  const plan = activity.plan;
+  if (plan.kind === 'source') return { type: 'SOURCE', sourceId: plan.sourceId, count: 1,
+    ...(plan.target?.kind === 'item' ? { target: { item: plan.target.id, quantity: plan.target.quantity } } : {}), ...identity };
+  return { type: 'CULTIVATE', method: plan.method, count: 1, ...identity };
 }
 function resetCycle(activity: Activity, now: number): Activity {
   at(now, activity.cycleMs);
@@ -84,6 +99,27 @@ function stop(activity: Activity, reason: RuleFailure): Activity {
 }
 
 export function validateActivityPlan(value: unknown): asserts value is ActivityPlan {
+  if (object(value) && value.kind === 'source') {
+    shape(value, ['kind', 'sourceId', 'maxCycles', 'until', 'target', 'monthBudget', 'remainingMonthsReserve']);
+    if (!identity(value.sourceId) || !Object.hasOwn(C.sources, value.sourceId) || !integer(value.maxCycles, 1, C.maxBatch) ||
+        value.until !== 'cycles' && value.until !== 'target' || !integer(value.monthBudget) || !integer(value.remainingMonthsReserve))
+      invalid('取材安排须有来源、1至50轮、累计游戏月预算与余寿保留线');
+    if (value.until === 'cycles') { if (value.target !== null) invalid('按轮数安排不得携带隐含库存目标'); }
+    else {
+      const target = value.target, source = C.sources[value.sourceId];
+      if (!object(target)) invalid('须指定来源可产出的库存目标');
+      if (target.kind === 'item') {
+        shape(target, ['kind', 'id', 'quantity']);
+        if (!identity(target.id) || !Object.hasOwn(source.items, target.id) || !integer(target.quantity, 1, C.maxQuantity))
+          invalid('此来源不能达到该物资库存目标');
+      } else {
+        shape(target, ['kind', 'quantity']);
+        if (target.kind !== 'stones' || source.stones <= 0 || !integer(target.quantity, 1, C.maxQuantity))
+          invalid('此来源不能达到该灵石库存目标');
+      }
+    }
+    return;
+  }
   shape(value, ['kind', 'method', 'maxCycles', 'until', 'stoneBudget', 'stoneReserve']);
   if (value.kind !== 'cultivation' || value.method !== 'natural' && value.method !== 'assisted' ||
       !integer(value.maxCycles, 1, C.maxBatch) || value.until !== 'xp-cap' && value.until !== 'cycles' ||
@@ -102,28 +138,47 @@ export function validateActivityTick(value: unknown): asserts value is ActivityT
 }
 /** Exact schema and identity checks; this is not a substitute for the repository transaction guard. */
 export function validateActivity(value: unknown, game?: Game): asserts value is Activity {
+  const sourceVersion = object(value) && value.version === 2;
   shape(value, ['format', 'version', 'id', 'revision', 'generation', 'ownerId', 'runId', 'realm', 'gameRevision', 'plan',
-    'cycleMs', 'completedCycles', 'spentStones', 'gainedXp', 'spentMonths', 'status', 'stopReason', 'nextCommand', 'startedAt', 'dueAt']);
+    'cycleMs', 'completedCycles', 'spentStones', 'gainedXp', 'spentMonths', 'status', 'stopReason', 'nextCommand', 'startedAt', 'dueAt',
+    ...(sourceVersion ? ['gainedItems', 'gainedStones'] : [])]);
   validateActivityPlan(value.plan);
-  if (value.format !== 'chenyuan-activity' || value.version !== 1 || !identity(value.id, 64) ||
+  if (value.format !== 'chenyuan-activity' || (sourceVersion ? value.plan.kind !== 'source' : value.version !== 1 || value.plan.kind !== 'cultivation') || !identity(value.id, 64) ||
       !identity(value.ownerId) || !identity(value.runId) || !integer(value.revision) || !integer(value.generation) ||
       value.generation > value.revision || !integer(value.gameRevision) || typeof value.realm !== 'string' ||
       !Object.hasOwn(CULTIVATION_CYCLE_MS, value.realm) ||
       value.status !== 'running' && value.status !== 'paused' && value.status !== 'stopped') invalid();
   const realm = value.realm as Activity['realm'];
-  const unitStones = value.plan.method === 'assisted' ? C.assistedCosts[realm] : C.cultivation.natural.stones;
-  const largestCycleGain = Math.floor(C.realms[realm].baseYield * (125 + C.cultivation[value.plan.method].bonus) / 100);
-  if (value.cycleMs !== CULTIVATION_CYCLE_MS[realm] || !integer(value.completedCycles, 0, value.plan.maxCycles) ||
+  if (!integer(value.completedCycles, 0, value.plan.maxCycles) ||
       !integer(value.completedCycles + value.generation) || value.revision < value.completedCycles + value.generation ||
-      !integer(value.spentStones, 0, value.plan.stoneBudget) || value.spentStones !== value.completedCycles * unitStones ||
-      !integer(value.spentMonths) || value.spentMonths !== value.completedCycles * C.cultivation[value.plan.method].months ||
-      !integer(value.gainedXp, 0, C.realms[realm].xpCap) ||
-      value.gainedXp > value.completedCycles * largestCycleGain ||
-      (value.completedCycles === 0 ? value.gainedXp !== 0 : value.gainedXp < value.completedCycles)) invalid('活动累计成果或预算无效');
+      !integer(value.gainedXp, 0, C.realms[realm].xpCap)) invalid('活动累计成果或版本无效');
+  let unitStones = 0, cycleBudgetAvailable = true;
+  if (value.plan.kind === 'cultivation') {
+    const plan = value.plan;
+    unitStones = plan.method === 'assisted' ? C.assistedCosts[realm] : C.cultivation.natural.stones;
+    const largestCycleGain = Math.floor(C.realms[realm].baseYield * (125 + C.cultivation[plan.method].bonus) / 100);
+    if (value.cycleMs !== CULTIVATION_CYCLE_MS[realm] || !integer(value.spentStones, 0, plan.stoneBudget) ||
+        value.spentStones !== value.completedCycles * unitStones || !integer(value.spentMonths) ||
+        value.spentMonths !== value.completedCycles * C.cultivation[plan.method].months ||
+        value.gainedXp > value.completedCycles * largestCycleGain ||
+        (value.completedCycles === 0 ? value.gainedXp !== 0 : value.gainedXp < value.completedCycles)) invalid('活动累计成果或预算无效');
+    cycleBudgetAvailable = value.spentStones + unitStones <= plan.stoneBudget;
+  } else {
+    const plan = value.plan, source = C.sources[plan.sourceId], completed = value.completedCycles;
+    const expectedItems = completed === 0 ? {} : Object.fromEntries(Object.entries(source.items).map(([id, count]) => [id, count * completed]));
+    if (C.rank(realm) < C.rank(source.min) || value.cycleMs !== source.months * 30_000 || value.cycleMs > 180_000 ||
+        value.spentStones !== 0 || !integer(value.spentMonths, 0, plan.monthBudget) ||
+        value.spentMonths !== value.completedCycles * source.months ||
+        !integer(value.gainedStones) || value.gainedStones !== value.completedCycles * source.stones ||
+        !object(value.gainedItems) || ![Object.prototype, null].includes(Object.getPrototypeOf(value.gainedItems)) ||
+        canonicalFingerprint(value.gainedItems) !== canonicalFingerprint(expectedItems) ||
+        value.gainedXp > value.completedCycles * source.xp) invalid('来源活动累计物资、灵石或月预算无效');
+    cycleBudgetAvailable = value.spentMonths + source.months <= plan.monthBudget;
+  }
   if (value.stopReason !== null) failure(value.stopReason);
   if (value.status === 'running') {
     if (value.stopReason !== null || value.completedCycles >= value.plan.maxCycles ||
-        value.spentStones + unitStones > value.plan.stoneBudget || !integer(value.startedAt) ||
+        !cycleBudgetAvailable || !integer(value.startedAt) ||
         !integer(value.dueAt) || value.dueAt - value.startedAt !== value.cycleMs) invalid('进行中活动的周期无效');
     try { validateCommand(value.nextCommand); } catch { invalid('下一周期指令无效'); }
     const command = value.nextCommand;
@@ -145,7 +200,23 @@ export function activityStop(game: Game, activity: Activity): RuleFailure | null
   if (activity.runId !== game.core.runId) return { code: 'RUN_MISMATCH', message: '已经切换人生，此安排不再执行' };
   if (activity.realm !== game.core.player.realm || activity.gameRevision !== game.core.revision)
     return { code: 'STATE_CHANGED', message: '修行进度已变化，请重新安排活动' };
-  if (game.status !== 'active') return { code: 'ENDED', message: '此生已经结束，修炼停止' };
+  if (game.status !== 'active') return { code: 'ENDED', message: '此生已经结束，活动停止' };
+  if (activity.version === 2) {
+    const plan = activity.plan, source = C.sources[plan.sourceId], target = plan.target;
+    if (target && (target.kind === 'stones' ? game.core.player.stones : game.core.inventory[target.id]) >= target.quantity)
+      return { code: 'TARGET_MET', message: '当前库存已达到安排目标，取材停止' };
+    if (activity.completedCycles >= plan.maxCycles) return { code: 'CYCLES_COMPLETE', message: '已完成安排的取材轮数' };
+    if (activity.spentMonths + source.months > plan.monthBudget)
+      return { code: 'ACTIVITY_BUDGET', message: '累计游戏月预算不足以支持下一轮' };
+    if (remainingMonths(game) - source.months < plan.remainingMonthsReserve)
+      return { code: 'ACTIVITY_RESERVE', message: '下一轮会低于余寿保留线，取材停止' };
+    const preview = previewResolution(game, cycleCommand(activity));
+    if (!preview.ok) return { code: preview.error.code, message: preview.error.message };
+    const delta = preview.value.result.delta;
+    if (delta.xp <= 0 && delta.stones <= 0 && !Object.values(delta.inventory).some(count => count > 0))
+      return { code: 'NO_CHANGE', message: '本轮不会获得物资、灵石或修为，取材停止' };
+    return null;
+  }
   if (game.core.player.xp >= C.realms[activity.realm].xpCap) return { code: 'XP_CAP', message: '修为已圆满，停止修炼并筹备突破' };
   if (activity.completedCycles >= activity.plan.maxCycles) return { code: 'CYCLES_COMPLETE', message: '已完成安排的修炼周期' };
   const cost = costsForAction(game, { type: 'CULTIVATE', method: activity.plan.method, count: 1 });
@@ -169,10 +240,15 @@ export function createActivity(game: Game, plan: ActivityPlan, options: Activity
   if (!identity(options.id, 64) || !identity(options.ownerId) || !identity(options.commandId)) invalid('活动起始身份无效');
   const realm = game.core.player.realm;
   if (!Object.hasOwn(CULTIVATION_CYCLE_MS, realm)) throw new RuleError('ENDED', '飞升后不再安排修炼');
-  const activity: Activity = { format: 'chenyuan-activity', version: 1, id: options.id, revision: 0, generation: 0,
+  if (plan.kind === 'source' && C.rank(realm) < C.rank(C.sources[plan.sourceId].min))
+    throw new RuleError('REALM_REQUIRED', `此来源需要${C.realms[C.sources[plan.sourceId].min].name}境界`);
+  const base: ActivityBase = { format: 'chenyuan-activity', id: options.id, revision: 0, generation: 0,
     ownerId: options.ownerId, runId: game.core.runId, realm: realm as Activity['realm'], gameRevision: game.core.revision,
-    plan: { ...plan }, cycleMs: CULTIVATION_CYCLE_MS[realm as Activity['realm']], completedCycles: 0, spentStones: 0,
+    cycleMs: plan.kind === 'source' ? C.sources[plan.sourceId].months * 30_000 : CULTIVATION_CYCLE_MS[realm as Activity['realm']], completedCycles: 0, spentStones: 0,
     gainedXp: 0, spentMonths: 0, status: 'paused', stopReason: null, nextCommand: null, startedAt: null, dueAt: null };
+  const activity: Activity = plan.kind === 'source'
+    ? { ...base, version: 2, plan: structuredClone(plan), gainedItems: {}, gainedStones: 0 }
+    : { ...base, version: 1, plan: { ...plan } };
   at(options.now, activity.cycleMs);
   requireEligible(game, activity);
   return resetCycle({ ...activity, status: 'running' }, options.now);
@@ -208,25 +284,41 @@ export function completeActivity(gameAfter: Game, activity: Activity, result: Ac
     fingerprint: canonicalFingerprint(command), result }, gameAfter); } catch { invalid('周期回执与正式指令不一致'); }
   const cost = costsForAction(gameAfter, command), delta = result.delta;
   const beforeXp = gameAfter.core.player.xp - delta.xp;
-  const yieldXp = Math.floor(stats(gameAfter).baseYield * (100 + C.cultivation[activity.plan.method].bonus + stats(gameAfter).cultivationBonus) / 100);
+  const source = activity.version === 2 ? C.sources[activity.plan.sourceId] : null;
+  const yieldXp = source ? source.xp : activity.version === 1
+    ? Math.floor(stats(gameAfter).baseYield * (100 + C.cultivation[activity.plan.method].bonus + stats(gameAfter).cultivationBonus) / 100) : 0;
+  const expectedItems = source?.items ?? {}, expectedStones = source ? source.stones : -cost.stones;
+  const target = activity.version === 2 ? activity.plan.target : null;
+  const targetAlreadyMet = target && (target.kind === 'stones'
+    ? gameAfter.core.player.stones - delta.stones
+    : gameAfter.core.inventory[target.id] - (delta.inventory[target.id] ?? 0)) >= target.quantity;
   if (gameAfter.core.runId !== activity.runId || gameAfter.core.player.realm !== activity.realm ||
       gameAfter.core.revision !== activity.gameRevision + 1 || gameAfter.status !== 'active' ||
-      gameAfter.core.mode !== 'idle' || gameAfter.core.world.location !== 'cave' || result.type !== 'CULTIVATE' ||
+      gameAfter.core.mode !== 'idle' || gameAfter.core.world.location !== (source?.location ?? 'cave') || result.type !== (source ? 'SOURCE' : 'CULTIVATE') ||
       result.requestedSteps !== 1 || result.executedSteps !== 1 || result.stopReason !== null ||
-      canonicalFingerprint(result.costs) !== canonicalFingerprint(cost) || delta.stones !== -cost.stones ||
-      delta.months !== cost.months || delta.hp !== 0 || delta.mp !== 0 || delta.wins !== 0 || Object.keys(delta.inventory).length !== 0 ||
-      beforeXp < 0 || delta.xp <= 0 || delta.xp !== Math.min(yieldXp, C.realms[activity.realm].xpCap - beforeXp) ||
-      activity.spentStones + cost.stones > activity.plan.stoneBudget || gameAfter.core.player.stones < activity.plan.stoneReserve)
+      canonicalFingerprint(result.costs) !== canonicalFingerprint(cost) || delta.stones !== expectedStones ||
+      delta.months !== cost.months || delta.hp !== 0 || delta.mp !== 0 || delta.wins !== 0 ||
+      canonicalFingerprint(delta.inventory) !== canonicalFingerprint(expectedItems) ||
+      beforeXp < 0 || beforeXp > C.realms[activity.realm].xpCap || !source && delta.xp <= 0 ||
+      delta.xp !== Math.min(yieldXp, C.realms[activity.realm].xpCap - beforeXp) ||
+      targetAlreadyMet ||
+      (activity.version === 1 ? activity.spentStones + cost.stones > activity.plan.stoneBudget ||
+        gameAfter.core.player.stones < activity.plan.stoneReserve :
+        activity.spentMonths + cost.months > activity.plan.monthBudget || remainingMonths(gameAfter) < activity.plan.remainingMonthsReserve))
     invalid('周期回执的消耗、成果或进度无效');
   const next: Activity = { ...structuredClone(activity), revision: increment(activity.revision), gameRevision: gameAfter.core.revision,
     completedCycles: activity.completedCycles + 1, spentStones: activity.spentStones + result.costs.stones,
     gainedXp: activity.gainedXp + delta.xp, spentMonths: activity.spentMonths + result.costs.months,
+    ...(activity.version === 2 ? {
+      gainedStones: activity.gainedStones + delta.stones,
+      gainedItems: Object.fromEntries(Object.keys(expectedItems).map(id => [id, (activity.gainedItems[id] ?? 0) + delta.inventory[id]])),
+    } : {}),
     status: 'paused', nextCommand: null, startedAt: null, dueAt: null };
   // The just-completed cycle may have reached a limit; inspect it before validating a new running cycle.
   const reason = activityStopAfterCompletion(gameAfter, next);
   if (reason) return stop(next, reason);
   if (options.now > Number.MAX_SAFE_INTEGER - activity.cycleMs)
-    return stop(next, { code: 'ACTIVITY_TIME_LIMIT', message: '无法安全安排下一周期，已保存本次修炼成果' });
+    return stop(next, { code: 'ACTIVITY_TIME_LIMIT', message: '无法安全安排下一周期，已保存本次活动成果' });
   return resetCycle({ ...next, status: 'running' }, options.now);
 }
 function activityStopAfterCompletion(game: Game, activity: Activity): RuleFailure | null {
@@ -238,8 +330,9 @@ function activityStopAfterCompletion(game: Game, activity: Activity): RuleFailur
 /** Read-only projection through the same single-cycle rules, budgets and automatic stops as execution. */
 export function previewActivity(game: Game, plan: ActivityPlan): ActivityPreview {
   validateGame(game);
-  const cycleMs = Object.hasOwn(CULTIVATION_CYCLE_MS, game.core.player.realm)
-    ? CULTIVATION_CYCLE_MS[game.core.player.realm as Activity['realm']] : 0;
+  const cycleMs = plan?.kind === 'source' && Object.hasOwn(C.sources, plan.sourceId)
+    ? C.sources[plan.sourceId].months * 30_000 : Object.hasOwn(CULTIVATION_CYCLE_MS, game.core.player.realm)
+      ? CULTIVATION_CYCLE_MS[game.core.player.realm as Activity['realm']] : 0;
   try {
     let activity = createActivity(game, plan, { id: 'preview-activity', ownerId: 'preview-owner', commandId: 'preview-start', now: 0 });
     let current = game;
@@ -252,10 +345,11 @@ export function previewActivity(game: Game, plan: ActivityPlan): ActivityPreview
     }
     if (activity.status !== 'stopped') invalid('活动预览未达到安全停止边界');
     return { allowed: true, failure: null, cycles: activity.completedCycles, xp: activity.gainedXp,
-      stones: activity.spentStones, months: activity.spentMonths, stopReason: activity.stopReason, cycleMs: activity.cycleMs };
+      stones: activity.spentStones, months: activity.spentMonths, stopReason: activity.stopReason, cycleMs: activity.cycleMs,
+      items: activity.version === 2 ? { ...activity.gainedItems } : {}, earnedStones: activity.version === 2 ? activity.gainedStones : 0 };
   } catch (error) {
     if (!(error instanceof RuleError)) throw error;
     return { allowed: false, failure: { code: error.code, message: error.message }, cycles: 0, xp: 0,
-      stones: 0, months: 0, stopReason: null, cycleMs };
+      stones: 0, months: 0, stopReason: null, cycleMs, items: {}, earnedStones: 0 };
   }
 }

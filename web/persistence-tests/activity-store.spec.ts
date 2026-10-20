@@ -164,3 +164,66 @@ test('pause waits for a cycle already committed but not yet delivered and never 
   expect(after.ui.game).toEqual(paused.ui.game); expect(after.ui.activity).toEqual(paused.ui.activity);
   expect(after.persisted).toEqual(paused.persisted);
 });
+
+test('source Store replays a lost material-cycle delivery and a pause during commit delivery never schedules another payout', async ({ page }) => {
+  await page.evaluate(() => {
+    const h = (globalThis as any).h, d = h.routes.driver(); d.go('wilderness');
+    h.sourceSeeding = h.activityStore.store.importText(JSON.stringify(d.game));
+  });
+  await page.clock.runFor(700);
+  await expect.poll(() => page.evaluate(() => {
+    const f = (globalThis as any).h.activityStore;
+    return { busy: f.store.busy, error: f.store.error, location: f.store.game?.core.world.location };
+  })).toEqual({ busy: false, error: '', location: 'wilderness' });
+  const started = await page.evaluate(async () => {
+    const f = (globalThis as any).h.activityStore;
+    await f.store.startPlannedActivity({ kind: 'source', sourceId: 'herbs', maxCycles: 5, until: 'cycles', target: null,
+      monthBudget: 5, remainingMonthsReserve: 1 });
+    f.loseNextCycleDelivery(); return f.state();
+  });
+  expect(started.activity.version).toBe(2); expect(started.runtime.remainingMs).toBe(30_000);
+  await page.clock.runFor(30_000);
+  await expect.poll(() => page.evaluate(() => {
+    const f = (globalThis as any).h.activityStore;
+    return { busy: f.store.busy, canRetry: f.store.canRetry, runtime: f.store.activityRuntime };
+  })).toEqual({ busy: false, canRetry: true, runtime: null });
+  const failed = await page.evaluate(async () => {
+    const h = (globalThis as any).h, f = h.activityStore;
+    return { ui: f.state(), persisted: await f.persisted(), raw: await h.inspect(h.FULL_DB_NAME), delivery: f.delivered };
+  });
+  expect(failed.ui.lastResult).toBeNull(); expect(failed.ui.error).toContain('回复丢失');
+  expect(failed.persisted.activity.gainedItems).toEqual({ herb: 2 }); expect(failed.persisted.activity.spentMonths).toBe(1);
+  expect(failed.persisted.state.core.inventory.herb).toBe(started.game.core.inventory.herb + 2);
+  expect(failed.persisted.state).toEqual(failed.delivery.outcome.state);
+  await page.evaluate(() => (globalThis as any).h.activityStore.store.retry());
+  const retry = await page.evaluate(async () => {
+    const h = (globalThis as any).h, f = h.activityStore;
+    return { ui: f.state(), persisted: await f.persisted(), raw: await h.inspect(h.FULL_DB_NAME) };
+  });
+  expect(retry.ui.error).toBe(''); expect(retry.ui.lastReplayed).toBe(true); expect(retry.ui.lastFromActivity).toBe(true);
+  expect(retry.ui.lastResult).toEqual(failed.delivery.outcome.result); expect(retry.persisted).toEqual(failed.persisted);
+  expect(retry.raw).toEqual(failed.raw); expect(retry.ui.runtime.remainingMs).toBe(30_000);
+  await page.evaluate(() => (globalThis as any).h.activityStore.holdNextCycleDelivery());
+  await page.clock.runFor(30_000);
+  await expect.poll(() => page.evaluate(() => (globalThis as any).h.activityStore.holding)).toBe(true);
+  await page.evaluate(() => {
+    const h = (globalThis as any).h; h.sourcePausing = h.activityStore.store.pauseCultivation();
+  });
+  const waiting = await page.evaluate(async () => {
+    const f = (globalThis as any).h.activityStore;
+    return { ui: f.state(), persisted: await f.persisted(), delivery: f.delivered };
+  });
+  expect(waiting.ui.runtime).toBeNull(); expect(waiting.ui.pausing).toBe(true);
+  expect(waiting.ui.activity.completedCycles).toBe(1); expect(waiting.persisted.activity.completedCycles).toBe(2);
+  expect(waiting.persisted.activity.gainedItems).toEqual({ herb: 4 }); expect(waiting.persisted.activity.spentMonths).toBe(2);
+  await page.evaluate(async () => {
+    const h = (globalThis as any).h; h.activityStore.releaseHeldCycle(); await h.sourcePausing;
+  });
+  const paused = await page.evaluate(async () => {
+    const f = (globalThis as any).h.activityStore; return { ui: f.state(), persisted: await f.persisted() };
+  });
+  expect(paused.ui.activity.status).toBe('paused'); expect(paused.ui.runtime).toBeNull(); expect(paused.ui.activity.completedCycles).toBe(2);
+  expect(paused.ui.game).toEqual(waiting.delivery.outcome.state); expect(paused.persisted.activity).toEqual(paused.ui.activity);
+  await page.clock.runFor(86_400_000);
+  expect(await page.evaluate(() => (globalThis as any).h.activityStore.persisted())).toEqual(paused.persisted);
+});

@@ -9,7 +9,7 @@ import {loadedObservation,writeObservation,inputErrorObservation,storageErrorObs
 import {useSession} from './session';
 import {createActionClock,actionSeconds,actionLabel,type Execution} from './action-timing';
 import {createActivityClock} from './activity-clock';
-import type {Activity,ActivityPlan,ActivityMutation,ActivityTick,ActivityOutcome} from '../../src/full/activity.ts';
+import type {Activity,ActivityPlan,CultivationPlan,ActivityMutation,ActivityTick,ActivityOutcome} from '../../src/full/activity.ts';
 
 export type CheckpointSummary = Pick<SaveCheckpoint, 'kind' | 'sourceRunId' | 'sourceRevision' | 'versions'> & { target: { name: string; realm: Game['core']['player']['realm']; months: number; hp: number; mp: number; inventory: Record<string, number> } };
 
@@ -196,13 +196,13 @@ export const useGame = defineStore('game', () => {
   }
   function prepareAction(action: Action): Command | null {
     if (!game.value || !repository || !available.value || busy.value) return null;
-    if(activityRunning.value){activityNotice.value='修炼正在进行，请先暂停再行动。';return null;}
+    if(activityRunning.value){activityNotice.value='当前活动正在进行，请先暂停再行动。';return null;}
     return structuredClone({ ...action, commandId: crypto.randomUUID(), runId: game.value.core.runId, expectedRevision: game.value.core.revision });
   }
   async function actPrepared(input: Command) {
     if (!repository) return;
-    if(input.type==='CULTIVATE'){activityNotice.value='请在洞府安排修炼，按周期积累。';return;}
-    if(activityRunning.value){activityNotice.value='修炼正在进行，请先暂停再行动。';return;}
+    if(input.type==='CULTIVATE'||input.type==='SOURCE'){activityNotice.value='请安排活动，按周期积累。';return;}
+    if(activityRunning.value){activityNotice.value='当前活动正在进行，请先暂停再行动。';return;}
     const command = structuredClone({ ...input });
     await write(() => repository!.execute(command), command.commandId,{kind:'action',command});
   }
@@ -248,19 +248,20 @@ export const useGame = defineStore('game', () => {
   async function rawText(): Promise<string | null> {
     try{const backup = await FullSaveRepository.exportRaw(session.gameDatabase); return backup ? rawBackupText(backup) : null;}catch(value){emit(()=>storageErrorObservation(game.value,codeOf(value)));throw value;}
   }
-  async function startCultivation(plan:ActivityPlan){
+  async function startPlannedActivity(plan:ActivityPlan){
     if(disposed||busy.value||!repository)return;
-    if(activityRunning.value){activityNotice.value='请先暂停当前修炼，再重新安排。';return;}
+    if(activityRunning.value){activityNotice.value='请先暂停当前活动，再重新安排。';return;}
     const intent=activityMutation();if(!intent)return;const selected=structuredClone(plan);activityNotice.value='';stopActivityRuntime();
     await write(()=>repository!.startActivity(selected,intent),intent.commandId,undefined,true);
     if(!error.value)beginActivityRuntime();
   }
+  const startCultivation=(plan:CultivationPlan)=>startPlannedActivity(plan);
   async function pauseCultivation(){
     if(disposed||!repository||activityPausing.value||!activity.value)return;
     activityPausing.value=true;stopActivityRuntime();
     try{const writing=writeInFlight??activityInFlight;if(writing)await writing;const intent=activityMutation();if(!intent||!activity.value||activity.value.status!=='running')return;
       await write(()=>repository!.pauseActivity(intent),intent.commandId,undefined,true);
-      if(!error.value)activityNotice.value='修炼已暂停。未完成的这一轮在继续时重新计时。';
+      if(!error.value)activityNotice.value='活动已暂停。未完成的这一轮在继续时重新计时。';
     }finally{activityPausing.value=false;}
   }
   async function resumeCultivation(){
@@ -271,6 +272,6 @@ export const useGame = defineStore('game', () => {
   const saveLabel = computed(() => !ready.value ? '读取中' : execution.value?.phase==='acting' ? '行动中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
   onScopeDispose(() => { disposed = true;stopActivityRuntime();actionClock.cancel();execution.value=null; repository?.close(); channel?.close();observers.clear(); });
   return { game, busy, ready, available, error, warning, saved, hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,execution,
-    activity,activityRuntime,activityRunning,activityLocal,activityOwned,activityPausing,activityNotice,lastFromActivity,startCultivation,pauseCultivation,resumeCultivation,
+    activity,activityRuntime,activityRunning,activityLocal,activityOwned,activityPausing,activityNotice,lastFromActivity,startPlannedActivity,startCultivation,pauseCultivation,resumeCultivation,
     init, refresh, start, act, prepareAction, actPrepared, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, rawText, validationError,observe };
 });

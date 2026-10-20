@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed,ref} from 'vue';
 import type {Game,Action} from '../../src/full/types.ts';
-import type {ActivityPlan} from '../../src/full/activity.ts';
+import type {CultivationPlan} from '../../src/full/activity.ts';
 import {previewActivity} from '../../src/full/activity.ts';
 import {getBreakthroughGoal,previewAction} from '../../src/full/queries.ts';
 import {nextStep} from './play-flow';
@@ -9,10 +9,10 @@ import {actionSeconds} from './action-timing';
 import AssetImage from './AssetImage.vue';
 import {DESKTOP_UI_ASSETS} from './assets';
 const props=defineProps<{game:Game;busy:boolean;available:boolean;running:boolean}>();
-const emit=defineEmits<{start:[ActivityPlan];act:[Action];prepare:[];trial:[];school:[];cave:[]}>();
+const emit=defineEmits<{start:[CultivationPlan];act:[Action];prepare:[];trial:[];school:[];cave:[]}>();
 const method=ref<'natural'|'assisted'>('natural'),target=ref('xp-cap'),budget=ref(0),reserve=ref(0);
 const goal=computed(()=>getBreakthroughGoal(props.game)),step=computed(()=>nextStep(props.game));
-const plan=computed<ActivityPlan>(()=>({kind:'cultivation',method:method.value,maxCycles:target.value==='xp-cap'?50:Number(target.value),until:target.value==='xp-cap'?'xp-cap':'cycles',stoneBudget:method.value==='natural'?0:budget.value,stoneReserve:method.value==='natural'?0:reserve.value}));
+const plan=computed<CultivationPlan>(()=>({kind:'cultivation',method:method.value,maxCycles:target.value==='xp-cap'?50:Number(target.value),until:target.value==='xp-cap'?'xp-cap':'cycles',stoneBudget:method.value==='natural'?0:budget.value,stoneReserve:method.value==='natural'?0:reserve.value}));
 const quote=computed(()=>previewActivity(props.game,plan.value));
 const one=computed(()=>previewAction(props.game,{type:'CULTIVATE',method:method.value,count:1}));
 function selectMethod(value:'natural'|'assisted'){method.value=value;if(value==='assisted')budget.value=Math.min(props.game.core.player.stones,(one.value.costs?.stones??0)*50);}

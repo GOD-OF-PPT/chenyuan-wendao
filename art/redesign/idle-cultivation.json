@@ -12,13 +12,13 @@
     },
     {
       "path": "web/src/TrainingActivity.vue",
-      "bytes": 4536,
-      "sha256": "1f0036b366ccc806280496ef6ae0c8c47c3705016dd53f19935acbe31667a26a"
+      "bytes": 5896,
+      "sha256": "8a15e5a3c366b4d0296d39ce19f7cafa7a72b3a09241d4bce3cff70ee8cdf16b"
     },
     {
       "path": "web/src/TrainingPlanner.vue",
-      "bytes": 5354,
-      "sha256": "c75ec2ca6309ee5f36ca8407a9ad1a1b46672bb26685db7d627dcd9f14f7e28d"
+      "bytes": 5363,
+      "sha256": "1ffb3eb84c08e779398fc6dd0c964c9b02bb1d20ebe8f43a82875592670934ad"
     },
     {
       "path": "web/src/idle-activity.css",

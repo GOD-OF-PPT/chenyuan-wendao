@@ -4,6 +4,7 @@ import { RuleError } from '../../src/full/errors.ts';
 import type { Activity, ActivityMutation, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
 import type { ActionResult } from '../../src/full/contracts.ts';
 import type { Command, Game } from '../../src/full/types.ts';
+import * as C from '../../src/full/content.ts';
 
 export type ActivityReceiptInput =
   | { kind: 'START'; plan: ActivityPlan; mutation: ActivityMutation }
@@ -38,12 +39,31 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
     if (activity.runId !== current.core.runId || intent.runId !== current.core.runId || activity.gameRevision > current.core.revision) invalid();
     if (input.kind === 'TICK') {
       if (!value.command || !value.result) invalid();
-      validateCommandReceipt({ format: 'chenyuan-receipt', version: 1, command: value.command,
-        fingerprint: fingerprint(value.command), result: value.result }, current);
-      const command = value.command as Command;
-      if (command.commandId !== input.tick.commandId || command.runId !== input.tick.runId || command.expectedRevision !== input.tick.expectedRevision ||
-          command.type !== 'CULTIVATE' || command.count !== 1 || activity.id !== input.tick.activityId ||
+      const receipt = { format: 'chenyuan-receipt', version: 1, command: value.command,
+        fingerprint: fingerprint(value.command), result: value.result };
+      validateCommandReceipt(receipt, current);
+      const command = receipt.command;
+      const expected: Command = activity.version === 2 ? { type: 'SOURCE', sourceId: activity.plan.sourceId, count: 1,
+        ...(activity.plan.target?.kind === 'item' ? { target: { item: activity.plan.target.id, quantity: activity.plan.target.quantity } } : {}),
+        commandId: input.tick.commandId, runId: input.tick.runId, expectedRevision: input.tick.expectedRevision } :
+        { type: 'CULTIVATE', method: activity.plan.method, count: 1,
+          commandId: input.tick.commandId, runId: input.tick.runId, expectedRevision: input.tick.expectedRevision };
+      if (fingerprint(command) !== fingerprint(expected) || activity.id !== input.tick.activityId ||
+          activity.ownerId !== input.tick.ownerId || activity.generation !== input.tick.generation || activity.completedCycles < 1 ||
+          command.commandId !== `cycle:${activity.id}:${activity.generation}:${activity.completedCycles}` ||
           activity.revision !== input.tick.expectedActivityRevision + 1 || activity.gameRevision !== input.tick.expectedRevision + 1) invalid();
+      const result = receipt.result, delta = result.delta;
+      if (delta.realm.before !== activity.realm || delta.realm.after !== activity.realm || delta.hp !== 0 || delta.mp !== 0 || delta.wins !== 0) invalid();
+      if (activity.version === 2) {
+        const source = C.sources[activity.plan.sourceId];
+        if (fingerprint(result.costs) !== fingerprint({ stones: 0, mp: 0, months: source.months, items: {} }) ||
+            delta.stones !== source.stones || fingerprint(delta.inventory) !== fingerprint(source.items) ||
+            delta.xp < 0 || delta.xp > source.xp) invalid();
+      } else {
+        const stones = activity.plan.method === 'assisted' ? C.assistedCosts[activity.realm] : C.cultivation.natural.stones;
+        if (fingerprint(result.costs) !== fingerprint({ stones, mp: 0, months: C.cultivation[activity.plan.method].months, items: {} }) ||
+            delta.stones !== -stones || Object.keys(delta.inventory).length !== 0 || delta.xp < 1) invalid();
+      }
     } else {
       if (value.command !== null || value.result !== null || activity.gameRevision !== intent.expectedRevision || activity.ownerId !== input.mutation.ownerId) invalid();
       if (input.kind === 'START') {

@@ -1,0 +1,37 @@
+{
+  "format": "chenyuan-idle-sources",
+  "version": 1,
+  "task": "Goal3 U3",
+  "maxNativeBytes": 24000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/SourcePlanner.vue",
+      "bytes": 8177,
+      "sha256": "af84795336c9dd9d5679ed3371e9254d166f472bab916732cfd70b901a33c941"
+    },
+    {
+      "path": "web/src/idle-sources.css",
+      "bytes": 2654,
+      "sha256": "676e3b521c04ca6982726c4fb36c2c7e3a2685ded472e76d7a82274ddac339d7"
+    }
+  ],
+  "sourceReferences": [
+    "goal-3/amendments/2026-10-20-next-and-continuous.md",
+    "docs/decisions/0006-idle-gameplay-interaction-rules.md"
+  ],
+  "bindings": {
+    "web/src/ExplorePanel.vue": [
+      "<SourcePlanner ",
+      "@start=\"emit('start',$event)\""
+    ],
+    "web/src/App.vue": [
+      "@start=\"startSource\"",
+      ":running=\"store.activityRunning\""
+    ],
+    "web/src/main.ts": [
+      "import './idle-sources.css'"
+    ]
+  },
+  "scope": "Actual resource-point/commission interactions, finite online source plans; existing paintings reused. Old budgets and user acceptance unchanged."
+}

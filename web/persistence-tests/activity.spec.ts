@@ -260,10 +260,10 @@ test('v3 database upgrades retain real Game records and receipts while an old co
     });
     const before = await h.inspect(name); old.onversionchange = () => { closed = true; old.close(); };
     const repo = await h.FullSaveRepository.open(name);
-    try { return { before, after: await h.inspect(name), loaded: await repo.loadActivitySnapshot(), original, closed }; }
+    try { return { before, after: await h.inspect(name), loaded: await repo.loadActivitySnapshot(), original, closed, targetVersion: h.FULL_DB_VERSION }; }
     finally { repo.close(); old.close(); }
   });
-  expect(r.closed).toBe(true); expect(r.after.version).toBe(4);
+  expect(r.closed).toBe(true); expect(r.after.version).toBe(r.targetVersion);
   expect(r.after['full-state']).toEqual(r.before['full-state']); expect(r.after['full-receipts']).toEqual(r.before['full-receipts']);
   expect(r.loaded.state).toEqual(r.original); expect(r.loaded.activity).toBeNull();
 });
