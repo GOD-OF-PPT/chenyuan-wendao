@@ -4,7 +4,8 @@ import {newGame,resolve,reason} from '../src/full/engine.ts';
 import {getLifeOverview} from '../src/full/queries.ts';
 import {driver,fullRoute} from './full-route.mjs';
 import {writeObservation} from '../web/src/local-events.ts';
-import {ACTION_MOTIONS,MOVE_MOTIONS,createActionFeedbackTracker} from '../web/src/action-feedback.ts';
+import {ACTION_MOTIONS,MOVE_MOTIONS,activityFeedbackObservation,createActionFeedbackTracker} from '../web/src/action-feedback.ts';
+import {createActivity,completeActivity,defaultBattlePlan} from '../src/full/activity.ts';
 import {ICONS} from '../web/src/ui-icons.ts';
 const uuid=n=>'00000000-0000-4000-8000-'+n.toString(16).padStart(12,'0');
 function replay(actions,seed=1){let game=newGame('动作反馈',uuid(seed)),frames=[],tracker=createActionFeedbackTracker();for(const [index,action]of actions.entries()){const before=game,command={...action,commandId:uuid(index+100),runId:before.core.runId,expectedRevision:before.core.revision},resolution=resolve(before,command);game=resolution.nextState;const observation=writeObservation(before,game,{kind:'action',command},resolution.result,false),raw=JSON.stringify([before,resolution,observation]);const notice=tracker.consume(observation,game,resolution.result,false,true,before);assert.ok(notice,action.type);assert.equal(JSON.stringify([before,resolution,observation]),raw);assert.ok(ICONS[notice.icon.kind][notice.icon.id],JSON.stringify(notice.icon));assert.equal(tracker.consume(observation,game,resolution.result,false,true,before),null);frames.push({before,game,result:resolution.result,observation,notice,action});}return frames;}
@@ -33,4 +34,18 @@ test('damage is a snapshot difference, and vanished or replaced enemies never re
 });
 test('sprite selections remain in the existing forty symbols and all seven moves have distinct variants',()=>{
  for(const row of Object.values(ACTION_MOTIONS))assert.ok(ICONS[row.icon.kind][row.icon.id]);assert.equal(new Set(Object.values(MOVE_MOTIONS).map(x=>x.variant)).size,7);assert.equal(new Set(Object.values(ICONS).flatMap(Object.values)).size,40);
+});
+function activityFrame(){const d=driver();d.go('wilderness');d.doAction({type:'ENCOUNTER',enemy:'wolf'});const before=replay(d.actions).at(-1).game;
+ const a=createActivity(before,defaultBattlePlan(before),{id:uuid(5000),ownerId:'feedback-owner',commandId:uuid(5001),now:0});
+ const {nextState:game,result}=resolve(before,a.nextCommand),activity=completeActivity(game,a,result,{commandId:a.nextCommand.commandId,now:a.dueAt});
+ return{before,game,result,activity,observation:writeObservation(before,game,{kind:'action',command:a.nextCommand},result,false)};}
+test('a validated activity turn animates once while the public observation retains its redacted cycle identity',()=>{
+ const f=activityFrame(),raw=JSON.stringify(f.observation),t=createActionFeedbackTracker();assert.equal(f.observation.commandId,null);
+ const local=activityFeedbackObservation(f.observation,f.activity,f.result);assert.equal(local.commandId,f.result.commandId);assert.equal(JSON.stringify(f.observation),raw);
+ const notice=t.consume(local,f.game,f.result,false,true,f.before);assert.equal(notice.family,'battle');assert.equal(notice.numbers.find(n=>n.target==='enemy').value,f.game.battle.hp-f.before.battle.hp);assert.equal(t.consume(local,f.game,f.result,false,true,f.before),null);
+ assert.equal(createActionFeedbackTracker().consume({...local,kind:'replay',replayed:true},f.game,f.result,true,true,f.before),null);
+});
+test('activity presentation refuses foreign generations, later progress, altered costs and incomplete public results',()=>{
+ const f=activityFrame();for(const a of [{...f.activity,generation:f.activity.generation+1},{...f.activity,id:uuid(5009)},{...f.activity,gameRevision:f.activity.gameRevision+1}])assert.equal(activityFeedbackObservation(f.observation,a,f.result).commandId,null);
+ for(const patch of [{result:null},{result:{...f.observation.result,costs:{...f.observation.result.costs,mp:99}}},{sourceRunId:uuid(88)},{operation:'BUY'}])assert.equal(activityFeedbackObservation({...f.observation,...patch},f.activity,f.result).commandId,null);
 });

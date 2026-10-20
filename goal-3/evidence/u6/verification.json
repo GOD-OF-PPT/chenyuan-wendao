@@ -1,0 +1,440 @@
+{
+  "task": "Goal3 U6",
+  "date": "2026-10-21",
+  "status": "engineering verified; local commit and preview delivery pending",
+  "base": "c2c758af803203477f017ceec75959d3e63561d9",
+  "branch": "codex/goal-3-idle-adventure",
+  "runtimeDigest": "31df43c33aeb3983e6dea76f5454a502bf00ca2c3bd51a716f963dc3e71a03d6",
+  "runtimeFiles": 176,
+  "payloadFiles": 56,
+  "bytes": 7188022,
+  "reports": {
+    "ui": {
+      "raw": "artifacts/goal-3/u6/ui-final.json",
+      "sha256": "3cc46554716a3bff6170c54b50f46c357b2a20b467cbbb91b08c27de12b01847",
+      "passed": 66,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "retry": 0,
+      "durationMs": 357084.316,
+      "runtimeDigest": "31df43c33aeb3983e6dea76f5454a502bf00ca2c3bd51a716f963dc3e71a03d6"
+    },
+    "persistence": {
+      "raw": "artifacts/goal-3/u6/storage-delivery.json",
+      "sha256": "b073972816a3b2af186b8239f901dee3022fb280866269edec71d1caf43b0529",
+      "passed": 91,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "retry": 0,
+      "durationMs": 126150.903,
+      "runtimeDigest": "31df43c33aeb3983e6dea76f5454a502bf00ca2c3bd51a716f963dc3e71a03d6"
+    }
+  },
+  "uiCoverage": {
+    "unique": 66,
+    "matchesCurrentDeclaration": true,
+    "raw": "artifacts/goal-3/u6/ui-coverage.json"
+  },
+  "core": {
+    "passed": 502,
+    "files": 47,
+    "raw": "artifacts/goal-3/u6/core-final.tap",
+    "sha256": "c0a15b1890d42616c9e683fddcc294cb22471816f1e46c0b92752654115d8f68",
+    "excluded": [
+      {
+        "file": "tests/candidate-evidence.test.mjs",
+        "reason": "Four unchanged clean-candidate isolation cases remain a separate final-candidate task, outside U6. Historical measured peak 1145761190 bytes is retained as context, not a current disk blockage. No clean candidate or complete matrix acceptance claimed."
+      },
+      {
+        "file": "tests/ui-shards.test.mjs",
+        "reason": "Pre-existing untracked paused compatibility-matrix tooling, outside U4 authorization."
+      },
+      {
+        "file": "tests/validation-matrix.test.mjs",
+        "reason": "Pre-existing untracked paused compatibility-matrix tooling, outside U4 authorization."
+      }
+    ]
+  },
+  "assets": {
+    "passed": 100,
+    "raw": "artifacts/goal-3/u6/assets-negative-final.log",
+    "sha256": "f1fedf2130e46008e811d76a4342429795108e3a0a9336914e6355d0f603552c",
+    "inventory": "artifacts/goal-3/u6/assets-fourth.json",
+    "budgetsUnchanged": true,
+    "shared": 19615,
+    "sharedMax": 22000,
+    "source": 10839,
+    "sourceMax": 24000,
+    "production": 23094,
+    "productionMax": 26000,
+    "preparation": 45170,
+    "preparationMax": 60000,
+    "adventure": 44747,
+    "adventureMax": 45000,
+    "feedback": 33449,
+    "feedbackMax": 34000
+  },
+  "typecheck": {
+    "root": true,
+    "vueProductionBuild": true,
+    "rootRaw": "artifacts/goal-3/u6/root-types-delivery.log",
+    "buildRaw": "artifacts/goal-3/u6/build-fourth.log"
+  },
+  "db": {
+    "version": 8,
+    "oldVersionsV1ToV5AndDB7OriginalsPreserved": true,
+    "gameContentBalanceVersions": {
+      "format": "chenyuan-full",
+      "version": 2,
+      "schemaVersion": 2,
+      "contentVersion": "full-demo.3",
+      "balanceVersion": "full-unbalanced.3"
+    }
+  },
+  "actualActionScope": {
+    "newTimed": [
+      "TRAVEL",
+      "ENCOUNTER",
+      "BATTLE"
+    ],
+    "timed": [
+      "CULTIVATE",
+      "SOURCE",
+      "CRAFT",
+      "FORGE",
+      "LEARN",
+      "STUDY",
+      "BUY",
+      "SELL",
+      "USE",
+      "REST",
+      "TRAVEL",
+      "ENCOUNTER",
+      "BATTLE"
+    ],
+    "immediateConfirmed": [
+      "SCHOOL",
+      "EQUIP",
+      "EQUIP_RELIC"
+    ],
+    "adapted": 16,
+    "total": 25,
+    "remaining": 9
+  },
+  "realClock": "Current 66-case source includes real 6-second travel, 30-second encounter and separate 3-second battle command, no early effects and exact formal Game equality; original cultivation/source/production 30-second and medicine 6-second periods also rechecked. Virtual time only proves long rules, not growth pacing or fun.",
+  "screenshots": [
+    {
+      "path": "goal-3/evidence/u6/danger-paused.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-a-dangerous-2f65a-eachable-with-its-real-cost-chromium/danger-paused.png",
+      "sha256": "4674cdf413687e88c37d1fc94ee9cb91ab17488d6c0cb8336ccd9e70909a2ce9",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/travel-arrived.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-a-trip-sele-26f20-nds-before-one-free-arrival-chromium/travel-arrived.png",
+      "sha256": "6bb85549b443b58af3de7e6e9b7156aaf419b8bf0e8d1bd4566f199363ceeb28",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/travel-selection.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-a-trip-sele-26f20-nds-before-one-free-arrival-chromium/travel-selection.png",
+      "sha256": "285a8046d0ca2d4668726d4e7a60334bbbf7079afe45970e6c55ae11ab9c51f1",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/trial-current-gate-plan.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-an-existing-21759--awaiting-new-authorization-chromium/trial-current-gate-plan.png",
+      "sha256": "2a0f56b735930aef3bbc08373877e58d2fefb49026b60ee47d39087ec1d3e287",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/trial-gate-boundary.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-an-existing-21759--awaiting-new-authorization-chromium/trial-gate-boundary.png",
+      "sha256": "f4dffe91f47f20ef99bc5b532d922ca5238d98a4eee4c671d8629a799aebbef1",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/battle-original-arrangement.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-inspecting--d949b-limit-without-changing-Game-chromium/battle-original-arrangement.png",
+      "sha256": "3776f4f8b044bd5529cf30ef56242866d7d8cef011161a865b1e9fa91e648f39",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/manual-takeover.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-manual-take-f086b-retreat-alone-pays-eight-HP-chromium/manual-takeover.png",
+      "sha256": "0ec372bf9e6de4c681caf09740497b54a763f052abed3fcd88a6ec74dd462104",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/retreat-result.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-manual-take-f086b-retreat-alone-pays-eight-HP-chromium/retreat-result.png",
+      "sha256": "fb1ea8eda0097240e0662b889507dd3c8a44911fb99169ebf2a3b4879cf9a4c8",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/battle-real-automatic-feedback.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-one-real-en-ebf0a-ts-a-separate-three-seconds-chromium/battle-real-automatic-feedback.png",
+      "sha256": "59c014e90a24cc9534418c8741fe3b6c0eda108b02b0e14a77e1f612246f98ff",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/battle-real-turn-paused.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-one-real-en-ebf0a-ts-a-separate-three-seconds-chromium/battle-real-turn-paused.png",
+      "sha256": "14d0021148cb3fb1c7ca2df32c42a657a26a2232946cda8a04d4850a8d70e381",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/history-reading-during-turn.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-reading-a-l-384dc-xt-authorized-turn-is-saved-chromium/history-reading-during-turn.png",
+      "sha256": "80df987500ece48262c86fab2ded437316367fb11c22d3345da227cbd606c264",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/sword-battle.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-battle.png",
+      "sha256": "0b961b1d7f7247a4a033510dd3b005ff592205e28e29b0096bce081b37d936a0",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/sword-medicine.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-medicine.png",
+      "sha256": "2d21318816e69aab17fa562f908de92f8d0ecdd6331b697696f71e82431855b2",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/sword-priority.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-priority.png",
+      "sha256": "b2ce389b5d6e51c76b3439fa8c6a37fedd7ccfcfad882b183f583a9d11bb8ae9",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/sword-receipts.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-receipts.png",
+      "sha256": "c7016f692b2aa9c78212ea70a1d5b37504772629c6ea02847216a29397ac1e95",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/sword-risk.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-risk.png",
+      "sha256": "34657cb1314625065ac19f15e572c6ae2a21f8ef965eaa66a7e14834a7d1c547",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/talisman-battle.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-battle.png",
+      "sha256": "787811d08fc15bf94ab25ead1d05e1a06f74655cf538d6885f945acfc8610572",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/talisman-medicine.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-medicine.png",
+      "sha256": "290a575940ba45e3426ffef31c968984590404520b91012cfa432b7e5273d8fa",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/talisman-priority.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-priority.png",
+      "sha256": "96d0211200b42f11e46e8ca77285f4034e32dadc1b0bb3f3f2d0a92a4ae4c98c",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/talisman-receipts.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-receipts.png",
+      "sha256": "fe202acbcad68a91056ca7807539470d11b0177aacb4dafbb38f7eafe01f102a",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u6/talisman-risk.png",
+      "original": "artifacts/goal-3/u6/ui-final-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-risk.png",
+      "sha256": "6507416711ea4a59fb5b3b3ba3afe7ae47a52ba8f0c6409bb795856a970e1af7",
+      "dimensions": [
+        1440,
+        900
+      ]
+    }
+  ],
+  "allScreenshotsDecoded": 70,
+  "allScreenshotsReviewedByTeam": 70,
+  "visualCoverage": "artifacts/goal-3/u6/visual-coverage-final.json",
+  "visualReports": [
+    {
+      "path": "artifacts/goal-3/u6/visual-root-final.json",
+      "sha256": "9c74be3ca879ecd2f067e0894e01be86b9ac1c8de17753c15f3ad0de2da39352",
+      "count": 13
+    },
+    {
+      "path": "artifacts/goal-3/u6/visual-preparation-final.json",
+      "sha256": "cefc59db06e818aa7d56e5dbde86cb81f62b8a1ad49df2d904c04c2c664bafcc",
+      "count": 19
+    },
+    {
+      "path": "artifacts/goal-3/u6/visual-production-source-final.json",
+      "sha256": "18eac5a0bca45b70879b1570d58bf4e1533cf671d6a2388827e1636c2f0df5b7",
+      "count": 17
+    },
+    {
+      "path": "artifacts/goal-3/u6/visual-adventure-final.json",
+      "sha256": "8b97f4e255efca56d5c8c1d2ac78d27369bc8991de0ef03f6817c9bab5b35d29",
+      "count": 21
+    }
+  ],
+  "imageEditingPerformed": false,
+  "failuresPreserved": [
+    {
+      "raw": "artifacts/goal-3/u6/build-first.log",
+      "reason": "Parallel runtime changes rejected by build identity guard; later builds locked."
+    },
+    {
+      "raw": "artifacts/goal-3/u6/core-first-observed.json",
+      "reason": "Initial 15/19 observed result only, not a raw same-source report; missing ENCOUNTER receipt phase fixed."
+    },
+    {
+      "raw": "artifacts/goal-3/u6/core-after-phase-first.tap",
+      "reason": "19/20: trial retreat wrongly classified as stage complete; real defeat/retreat tested and fixed."
+    },
+    {
+      "raw": "artifacts/goal-3/u6/storage-first.json",
+      "passed": 84,
+      "failed": 3,
+      "reason": "Old ordinary travel/STATE_CHANGED fixture assumptions adapted to explicit finite activity without weakening original Game assertions."
+    },
+    {
+      "raw": "artifacts/goal-3/u6/storage-second.json",
+      "passed": 91,
+      "reason": "Backend unchanged but three UI files moved during run; not used as final same-source evidence."
+    },
+    {
+      "raw": "artifacts/goal-3/u6/storage-final.json",
+      "passed": 91,
+      "reason": "Historical b87 source; final current source uses storage-delivery."
+    },
+    {
+      "raw": "artifacts/goal-3/u6/ui-first.json",
+      "passed": 5,
+      "failed": 2,
+      "reason": "History overflow and a wrong inventory locator."
+    },
+    {
+      "raw": "artifacts/goal-3/u6/ui-second.json",
+      "passed": 56,
+      "failed": 8,
+      "reason": "Actual missing cycle feedback and long active sidebar, async history reading plus five old travel/selection assumptions; individually corrected."
+    },
+    {
+      "raw": "artifacts/goal-3/u6/ui-pause-red.json",
+      "passed": 1,
+      "reason": "Initial pointer pause case passed due existing pointer-navigation guard; retained, not claimed red."
+    },
+    {
+      "raw": "artifacts/goal-3/u6/ui-pause-semantic-red.json",
+      "passed": 0,
+      "failed": 1,
+      "reason": "Actual semantic non-pointer pause during save allowed old arrival navigation; fixed by immediately invalidating intent on activityPausing."
+    },
+    {
+      "raw": "artifacts/goal-3/u6/ui-targeted-third.json",
+      "passed": 16,
+      "reason": "Intermediate deterministic U6 and updated travel cases; not final source."
+    },
+    {
+      "raw": "artifacts/goal-3/u6/ui-pause-green.json",
+      "passed": 2,
+      "reason": "Current source targeted danger and semantic pause regression passed before final 66."
+    }
+  ],
+  "independentReview": {
+    "modelRepositoryStore": "Two independent source reviews plus actual cycle privacy differential and real IndexedDB/Store; archived session reports and named tests, not full human acceptance.",
+    "testAdaptation": "Read-only review retained Game/cost/budget/loadout gates and actual finite write refusal; async read waits add readiness rather than weakening assertions.",
+    "visualProviderFailure": "Earlier visual reviewer hit upstream 413 after partial work; fresh reviewer independently viewed all 21 final adventure PNGs, no partial count reused."
+  },
+  "notDone": [
+    "U7 remaining nine finite narrative/realm/trial/closing actions",
+    "CHECK-IDLE-02 and U8 long-term balance/resource tradeoffs",
+    "Four final clean-candidate isolation cases and complete gameplay matrix",
+    "Overall art/gameplay human acceptance",
+    "All paused page compatibility and environment/performance matrices"
+  ],
+  "knownNonblockingArtGaps": [
+    "Locked alchemy page and some preparation pages retain large blank spaces/repeated hints for U8.",
+    "Actual trial victory toast slightly overlaps the tab upper edge for a short interval; text/actions remain readable and operable. Not declared perfect art.",
+    "Previously observed original IAB 1280x720 clipping remains untested/outside fixed-scope work; compatibility remains paused."
+  ],
+  "rollback": "Keep DB8 reader and originals. New commit to stop v6 scheduling or change UI; no DB downgrade or direct old DB7 program.",
+  "nativeGoal": "Previously blocked per supplied heartbeat; unchanged, no reset/recreate or active/complete claim.",
+  "continuation": "Existing automation-3; finish U6 only, next independent U7 and CHECK-IDLE-02 afterwards.",
+  "delivery": {
+    "implementation": null,
+    "previewUpdated": false,
+    "userGameActionsPerformed": false,
+    "pushed": false,
+    "newPullRequest": false,
+    "merged": false,
+    "publicDeployment": false,
+    "origin": "http://127.0.0.1:56884/",
+    "oldFrozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u5/preview-1a6b5130/web",
+    "cleanCandidateRebuild": false,
+    "testedBuildMetadata": "Generated before implementation commit at c2c758a with dirty=true; do not rewrite metadata as clean. Git-archive byte proof follows local commit."
+  }
+}

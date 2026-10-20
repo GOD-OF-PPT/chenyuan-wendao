@@ -1,10 +1,12 @@
 import type {Activity} from '../../src/full/activity.ts';
 import {preparationView} from './preparation-view';
+import {adventureView} from './adventure-view';
 import type {Game} from '../../src/full/types.ts';
 import {items,recipes,relics,sources} from '../../src/full/content.ts';
 const gains=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=>items[id].name+' +'+n).join(' · ');
 const quantities=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=>items[id].name+' ×'+n).join(' · ');
 export function activityView(a:Activity,game:Game|null){
+ if(a.version===6)return adventureView(a);
  if(a.version===5)return preparationView(a);
  const p=a.plan;
  if(a.version===1&&p.kind==='cultivation')return{name:p.method==='natural'?'自然吐纳':'灵石辅助',noun:'修炼',unit:'轮',type:'CULTIVATE',rows:[`累计修为 +${a.gainedXp}`,`灵石已用 ${a.spentStones} / ${p.stoneBudget}`,`游戏岁月 +${a.spentMonths} 月 · 保留灵石 ${p.stoneReserve}`],summary:[`完成 ${a.completedCycles} 轮 · 修为 +${a.gainedXp}`,`灵石消耗 ${a.spentStones} · 岁月 +${a.spentMonths} 月`],goal:p.until==='xp-cap'?'修为圆满即停':'完成所选轮数即停'};

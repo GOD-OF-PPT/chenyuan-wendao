@@ -3,7 +3,7 @@ import base from './playwright.persistence.config';
 // The real activity repository and Store use one fixed desktop browser.
 export default {
   ...base,
-  testMatch: ['activity.spec.ts', 'activity-store.spec.ts', 'source-activity.spec.ts', 'production-activity.spec.ts', 'mixed-activity.spec.ts', 'preparation-activity.spec.ts', 'configuration.spec.ts', 'configuration-store.spec.ts'],
+  testMatch: ['activity.spec.ts', 'activity-store.spec.ts', 'source-activity.spec.ts', 'production-activity.spec.ts', 'mixed-activity.spec.ts', 'preparation-activity.spec.ts', 'configuration.spec.ts', 'configuration-store.spec.ts', 'adventure.spec.ts', 'adventure-store.spec.ts', 'adventure-upgrade.spec.ts'],
   projects: [{ name: 'chromium', use: { browserName: 'chromium' as const } }],
   use: { ...base.use, viewport: { width: 1440, height: 900 } },
   outputDir: 'idle-persistence-results',

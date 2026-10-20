@@ -185,7 +185,7 @@ test('historical recovery and learning receipts remain readable after later lega
       now = a.activity.dueAt; const healed = await repo.settleActivity(tick);
       const rest = await repo.startActivity(h.preparationPlan('rest'), h.preparationMutation(healed)); now = rest.activity.dueAt;
       const rested = await repo.settleActivity(h.preparationTick(rest)), before = await h.inspect('preparation-history'), replay = await repo.settleActivity(tick), after = await h.inspect('preparation-history');
-      await repo.execute(h.command(rested.state, { type: 'TRAVEL', location: 'sect' }));
+      await h.finishAction(repo, { type: 'TRAVEL', location: 'sect' });
       const learning = await repo.startActivity(h.preparationPlan('learn', { skills: ['sword_still'], maxCycles: 1 }), h.preparationMutation(await repo.loadActivitySnapshot()));
       const learnTick = h.preparationTick(learning); now = learning.activity.dueAt; const learned = await repo.settleActivity(learnTick);
       const configured = await repo.configure({ command: h.command(learned.state, { type: 'EQUIP', skill: 'sword_still' }),
@@ -260,12 +260,12 @@ test('DB7 preserves every v6 legacy activity, real checkpoint and receipt byte-f
           d.realm(); d.resource('herb', 12); d.resource('jade', 7); d.resource('core', 4); d.funds(1000); d.buy('golden_pill', 1); d.meditate(); d.go('cave');
           const imported = await repo.importText(JSON.stringify(d.game), h.mutation());
           let current = await repo.execute(h.command(imported.state, { type: 'BREAKTHROUGH' }));
-          if (kind === 'source') current = await repo.execute(h.command(current.state, { type: 'TRAVEL', location: 'wilderness' }));
+          if (kind === 'source') current = await h.finishAction(repo, { type: 'TRAVEL', location: 'wilderness' });
           const plan = kind === 'cultivation' ? { kind, method: 'natural', maxCycles: 3, until: 'cycles', stoneBudget: 0, stoneReserve: 0 } :
             kind === 'source' ? { kind, sourceId: 'herbs', maxCycles: 3, until: 'cycles', target: null, monthBudget: 3, remainingMonthsReserve: 1 } :
             { kind, ...(kind === 'craft' ? { recipeId: 'healing', maxCycles: 3, until: 'cycles', targetQuantity: null } : { relicId: 'frost_sword', maxCycles: 1 }),
               stoneBudget: kind === 'craft' ? 6 : 140, stoneReserve: 0, monthBudget: kind === 'craft' ? 3 : 2, remainingMonthsReserve: 1, itemReserves: {} };
-          const started = await repo.startActivity(plan, h.preparationMutation({ state: current.state, activity: null })), tick = h.preparationTick(started); now = started.activity.dueAt;
+          const started = await repo.startActivity(plan, h.preparationMutation(await repo.loadActivitySnapshot())), tick = h.preparationTick(started); now = started.activity.dueAt;
           const completed = await repo.settleActivity(tick), checkpoint = await repo.loadCheckpoint(), original = await h.inspect(name + '-source'); repo.close();
           const old = await new Promise<IDBDatabase>((resolve, reject) => { const request = indexedDB.open(name, 6); request.onupgradeneeded = () => { for (const store of original.stores) request.result.createObjectStore(store); }; request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); });
           await new Promise<void>((resolve, reject) => { const tx = old.transaction(original.stores, 'readwrite'); for (const store of original.stores) for (const row of original[store]) tx.objectStore(store).put(row.value, row.key); tx.oncomplete = () => resolve(); tx.onabort = () => reject(tx.error); });
@@ -282,7 +282,7 @@ test('DB7 preserves every v6 legacy activity, real checkpoint and receipt byte-f
     } finally { Date.now = realNow; }
   });
   for (const row of rows) {
-    expect(row.closed).toBe(true); expect(row.after.version).toBe(7); expect(row.checkpoint).not.toBeNull();
+    expect(row.closed).toBe(true); expect(row.after.version).toBe(8); expect(row.checkpoint).not.toBeNull();
     for (const store of row.original.stores) expect(row.after[store]).toEqual(row.original[store]);
     expect(row.loaded).toEqual({ state: row.completed.state, activity: row.completed.activity }); expect(row.checkpointAfter).toEqual(row.checkpoint);
     expect(row.replay.replayed).toBe(true); expect(row.replay.state).toEqual(row.completed.state); expect(row.replay.activity).toEqual(row.completed.activity);

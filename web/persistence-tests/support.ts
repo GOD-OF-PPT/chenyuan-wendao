@@ -10,6 +10,7 @@ export async function setupPersistence(page: Page) {
     const queries = await import(`/@fs${root}src/full/queries.ts`);
     const legacy = await import(`/@fs${root}src/game/adventure.ts`);
     const routes = await import(`/@fs${root}tests/full-route.mjs`);
+    const adventure = await import(`/@fs${root}src/full/adventure.ts`);
     const seed = async (name: string, current: unknown, previous?: unknown, checkpoint?: unknown) => {
       await new Promise<void>((resolve, reject) => {
         const req = indexedDB.open(name, 1);
@@ -70,6 +71,25 @@ export async function setupPersistence(page: Page) {
         tx.oncomplete = () => { db.close(); resolve(); }; tx.onabort = () => { db.close(); reject(tx.error); };
       };
     });
-    (globalThis as any).h = { ...persistence, engine, queries, routes, legacy, seed, inspect, put, legacySamples, mutation, command, attempt };
+    // Explicit rule-time adapter for existing fixture travel/turns. UI wall-clock tests remain separate.
+    const finishAction = async (repo: any, action: any) => {
+      if (['commandId','runId','expectedRevision'].some(key => key in action)) throw new Error('fixture helper requires a pure action; stale identities must be tested directly');
+      const snapshot = await repo.loadActivitySnapshot(), game = snapshot.state;
+      const plan = action.type === 'TRAVEL' ? { kind: 'travel', location: action.location, maxCycles: 1 } :
+        action.type === 'ENCOUNTER' ? { ...adventure.defaultEncounterPlan(game, action.enemy), maxCycles: 1 } :
+        action.type === 'BATTLE' ? { kind: 'battle', enemy: game.battle.enemy, trialStage: game.trial?.stage ?? null,
+          mode: 'single', move: action.move, maxCycles: 1 } : null;
+      if (!plan) throw new Error('finishAction only accepts adventure actions');
+      const started = await repo.startActivity(plan, { commandId: crypto.randomUUID(), runId: game.core.runId,
+        expectedRevision: game.core.revision, expectedActivityId: snapshot.activity?.id ?? null,
+        expectedActivityRevision: snapshot.activity?.revision ?? null, ownerId: 'fixture-action' });
+      const a = started.activity, realNow = Date.now;
+      Date.now = () => a.dueAt;
+      try { return await repo.settleActivity({ commandId: a.nextCommand.commandId, runId: a.runId,
+        expectedRevision: a.gameRevision, activityId: a.id, expectedActivityRevision: a.revision,
+        ownerId: a.ownerId, generation: a.generation }); }
+      finally { Date.now = realNow; }
+    };
+    (globalThis as any).h = { ...persistence, engine, queries, routes, adventure, legacy, seed, inspect, put, legacySamples, mutation, command, attempt, finishAction };
   }, root);
 }

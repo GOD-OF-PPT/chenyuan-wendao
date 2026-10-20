@@ -13,6 +13,13 @@ import { PREPARATION_CYCLE_MS, isPreparationPlan, validatePreparationPlan, prepa
 import type { PreparationPlan, PreparationSnapshot, PreparationTotals } from './preparation.ts';
 export { PREPARATION_CYCLE_MS, preparationCycleAction, validatePreparationResult } from './preparation.ts';
 export type { LearnPlan, StudyPlan, BuyPlan, SellPlan, UsePlan, RestPlan, PreparationPlan } from './preparation.ts';
+import { isAdventurePlan, validateAdventurePlan, adventureCycleMs, adventureDecision, adventureMetadata,
+  validateAdventureTotals, validateAdventureStart, validateAdventureResult, completeAdventureMetadata, adventurePreview, ADVENTURE_PAUSE_CODES } from './adventure.ts';
+import type { AdventurePlan, AdventureActivity, AdventurePreview } from './adventure.ts';
+export { ADVENTURE_CYCLE_MS, ADVENTURE_MOVES, ADVENTURE_PAUSE_CODES, isAdventurePlan, validateAdventurePlan, adventureDecision,
+  defaultBattleStrategy, defaultEncounterPlan, defaultBattlePlan, singleBattlePlan, validateAdventureResult } from './adventure.ts';
+export type { AdventurePlan, AdventureActivity, AdventureDecision, AdventurePreview, BattleStrategy, PriorityMove, TravelPlan, EncounterPlan,
+  BattlePlan, AutoBattlePlan, SingleBattlePlan } from './adventure.ts';
 
 export interface CultivationPlan {
   kind: 'cultivation';
@@ -34,8 +41,8 @@ export interface CraftPlan extends ProductionLimits {
   kind: 'craft'; recipeId: string; maxCycles: number; until: 'cycles' | 'target'; targetQuantity: number | null;
 }
 export interface ForgePlan extends ProductionLimits { kind: 'forge'; relicId: string; maxCycles: 1; }
-export type ActivityPlan = CultivationPlan | SourcePlan | CraftPlan | ForgePlan | PreparationPlan;
-interface ActivityBase {
+export type ActivityPlan = CultivationPlan | SourcePlan | CraftPlan | ForgePlan | PreparationPlan | AdventurePlan;
+export interface ActivityBase {
   format: 'chenyuan-activity'; id: string; revision: number; generation: number;
   ownerId: string; runId: string; realm: Exclude<RealmId, 'ascended'>; gameRevision: number;
   cycleMs: number; completedCycles: number; spentStones: number;
@@ -53,7 +60,7 @@ interface ProductionTotals {
 export interface CraftActivity extends ActivityBase, ProductionTotals { version: 3; plan: CraftPlan; }
 export interface ForgeActivity extends ActivityBase, ProductionTotals { version: 4; plan: ForgePlan; relicBefore: string | null; }
 export interface PreparationActivity extends ActivityBase, PreparationSnapshot, PreparationTotals { version: 5; plan: PreparationPlan; }
-export type Activity = CultivationActivity | SourceActivity | CraftActivity | ForgeActivity | PreparationActivity;
+export type Activity = CultivationActivity | SourceActivity | CraftActivity | ForgeActivity | PreparationActivity | AdventureActivity;
 export interface ActivityMutation {
   commandId: string; runId: string; expectedRevision: number;
   expectedActivityId: string | null; expectedActivityRevision: number | null; ownerId: string;
@@ -73,6 +80,7 @@ export interface ActivityPreview {
   months: number; stopReason: RuleFailure | null; cycleMs: number;
   items: Record<string, number>; earnedStones: number; spentItems: Record<string, number>; relics: string[];
   hp: number; mp: number; skills: string[]; manuals: string[];
+  adventure: AdventurePreview | null;
 }
 
 /** Initial pacing only; these values have not passed long-term balance or player acceptance. */
@@ -109,6 +117,11 @@ function cycleCommand(activity: Activity): Command {
     ...(plan.target?.kind === 'item' ? { target: { item: plan.target.id, quantity: plan.target.quantity } } : {}), ...identity };
   if (plan.kind === 'craft') return { type: 'CRAFT', recipeId: plan.recipeId, ...identity };
   if (plan.kind === 'forge') return { type: 'FORGE', relic: plan.relicId, ...identity };
+  if (isAdventurePlan(plan)) {
+    const selected = adventureDecision(activity as AdventureActivity);
+    if (!selected.action) invalid('当前没有满足原战策的下一动作');
+    return { ...selected.action, ...identity };
+  }
   if (isPreparationPlan(plan)) return { ...preparationCycleAction(plan, activity.completedCycles), ...identity };
   return { type: 'CULTIVATE', method: plan.method, count: 1, ...identity };
 }
@@ -125,6 +138,7 @@ function stop(activity: Activity, reason: RuleFailure): Activity {
 }
 
 export function validateActivityPlan(value: unknown): asserts value is ActivityPlan {
+  if (isAdventurePlan(value)) { validateAdventurePlan(value); return; }
   if (isPreparationPlan(value)) { validatePreparationPlan(value); return; }
   if (object(value) && (value.kind === 'craft' || value.kind === 'forge')) {
     const craft = value.kind === 'craft';
@@ -185,15 +199,19 @@ export function validateActivity(value: unknown, game?: Game): asserts value is 
   const craftVersion = object(value) && value.version === 3, forgeVersion = object(value) && value.version === 4;
   const productionVersion = craftVersion || forgeVersion;
   const preparationVersion = object(value) && value.version === 5;
+  const adventureVersion = object(value) && value.version === 6;
   shape(value, ['format', 'version', 'id', 'revision', 'generation', 'ownerId', 'runId', 'realm', 'gameRevision', 'plan',
     'cycleMs', 'completedCycles', 'spentStones', 'gainedXp', 'spentMonths', 'status', 'stopReason', 'nextCommand', 'startedAt', 'dueAt',
     ...(sourceVersion ? ['gainedItems', 'gainedStones'] : []),
     ...(productionVersion ? ['spentItems', 'gainedItems', 'forgedRelics'] : []), ...(forgeVersion ? ['relicBefore'] : []),
     ...(preparationVersion ? ['spentItems', 'gainedItems', 'gainedStones', 'restoredHp', 'restoredMp', 'learnedSkills', 'studiedManuals',
-      'startingHp', 'startingMp', 'maxHp', 'maxMp', 'schoolBefore', 'loadoutBefore', 'learnedBefore', 'manualsBefore', 'relicsBefore'] : [])]);
+      'startingHp', 'startingMp', 'maxHp', 'maxMp', 'schoolBefore', 'loadoutBefore', 'learnedBefore', 'manualsBefore', 'relicsBefore'] : []),
+    ...(adventureVersion ? ['originGame', 'decisionGame', 'encountersStarted', 'battleTurns', 'victories', 'defeats', 'retreats', 'moves',
+      'spentMp', 'spentItems', 'gainedItems', 'gainedStones', 'hpChange', 'mpChange'] : [])]);
   validateActivityPlan(value.plan);
   if (value.format !== 'chenyuan-activity' || (sourceVersion ? value.plan.kind !== 'source' : craftVersion ? value.plan.kind !== 'craft' :
-      forgeVersion ? value.plan.kind !== 'forge' : preparationVersion ? !isPreparationPlan(value.plan) : value.version !== 1 || value.plan.kind !== 'cultivation') || !identity(value.id, 64) ||
+      forgeVersion ? value.plan.kind !== 'forge' : preparationVersion ? !isPreparationPlan(value.plan) : adventureVersion ? !isAdventurePlan(value.plan) :
+        value.version !== 1 || value.plan.kind !== 'cultivation') || !identity(value.id, 64) ||
       !identity(value.ownerId) || !identity(value.runId) || !integer(value.revision) || !integer(value.generation) ||
       value.generation > value.revision || !integer(value.gameRevision) || typeof value.realm !== 'string' ||
       !Object.hasOwn(CULTIVATION_CYCLE_MS, value.realm) ||
@@ -203,7 +221,9 @@ export function validateActivity(value: unknown, game?: Game): asserts value is 
       !integer(value.completedCycles + value.generation) || value.revision < value.completedCycles + value.generation ||
       !integer(value.gainedXp, 0, C.realms[realm].xpCap)) invalid('活动累计成果或版本无效');
   let unitStones = 0, cycleBudgetAvailable = true;
-  if (preparationVersion) {
+  if (adventureVersion) {
+    cycleBudgetAvailable = validateAdventureTotals(value as unknown as AdventureActivity);
+  } else if (preparationVersion) {
     cycleBudgetAvailable = validatePreparationTotals(value as unknown as PreparationActivity);
   } else if (value.plan.kind === 'cultivation') {
     const plan = value.plan;
@@ -258,7 +278,7 @@ export function validateActivity(value: unknown, game?: Game): asserts value is 
     const expected = cycleCommand(value as unknown as Activity);
     if (canonicalFingerprint(command) !== canonicalFingerprint(expected)) invalid('下一周期指令与活动身份不一致');
   } else if (value.nextCommand !== null || value.startedAt !== null || value.dueAt !== null ||
-      value.status === 'paused' && (value.stopReason !== null || value.completedCycles >= value.plan.maxCycles) ||
+      value.status === 'paused' && (value.stopReason !== null && !(adventureVersion && ADVENTURE_PAUSE_CODES.some(code => code === (value.stopReason as RuleFailure).code)) || value.completedCycles >= value.plan.maxCycles) ||
       value.status === 'stopped' && value.stopReason === null) invalid('暂停或停止状态与周期不一致');
   if (game) {
     validateGame(game);
@@ -270,6 +290,8 @@ export function validateActivity(value: unknown, game?: Game): asserts value is 
       invalid('炼器安排与当前法宝或配装不一致');
     if (preparationVersion && !invalidatedByLaterCommand && value.gameRevision === game.core.revision)
       validatePreparationSnapshot(game, value as unknown as PreparationActivity);
+    if (adventureVersion && !invalidatedByLaterCommand && value.gameRevision === game.core.revision &&
+        canonicalFingerprint((value as unknown as AdventureActivity).decisionGame) !== canonicalFingerprint(game)) invalid('当前Game与已保存决定快照不一致');
   }
 }
 
@@ -284,6 +306,10 @@ export function activityStop(game: Game, activity: Activity): RuleFailure | null
   if (activity.realm !== game.core.player.realm || activity.gameRevision !== game.core.revision)
     return { code: 'STATE_CHANGED', message: '修行进度已变化，请重新安排活动' };
   if (game.status !== 'active') return { code: 'ENDED', message: '此生已经结束，活动停止' };
+  if (activity.version === 6) {
+    if (canonicalFingerprint(game) !== canonicalFingerprint(activity.decisionGame)) return { code: 'STATE_CHANGED', message: '当前进度与原战策决定已变化，请重新安排' };
+    return adventureDecision(activity).failure;
+  }
   if (activity.version === 5) return preparationStop(game, activity);
   if (activity.version === 3 || activity.version === 4) {
     const plan = activity.plan, craft = plan.kind === 'craft';
@@ -352,6 +378,7 @@ export function createActivity(game: Game, plan: ActivityPlan, options: Activity
   validateGame(game); validateActivityPlan(plan);
   shape(options, ['id', 'ownerId', 'commandId', 'now']);
   if (!identity(options.id, 64) || !identity(options.ownerId) || !identity(options.commandId)) invalid('活动起始身份无效');
+  if (isAdventurePlan(plan)) validateAdventureStart(game, plan);
   const realm = game.core.player.realm;
   if (!Object.hasOwn(CULTIVATION_CYCLE_MS, realm)) throw new RuleError('ENDED', '飞升后不再安排修炼');
   if (plan.kind === 'source' && C.rank(realm) < C.rank(C.sources[plan.sourceId].min))
@@ -372,13 +399,14 @@ export function createActivity(game: Game, plan: ActivityPlan, options: Activity
   const base: ActivityBase = { format: 'chenyuan-activity', id: options.id, revision: 0, generation: 0,
     ownerId: options.ownerId, runId: game.core.runId, realm: realm as Activity['realm'], gameRevision: game.core.revision,
     cycleMs: plan.kind === 'source' ? C.sources[plan.sourceId].months * 30_000 : plan.kind === 'craft' ? C.recipes[plan.recipeId].months * 30_000 :
-      plan.kind === 'forge' ? C.actionDurations.forge * 30_000 : isPreparationPlan(plan) ? PREPARATION_CYCLE_MS[plan.kind] :
+      plan.kind === 'forge' ? C.actionDurations.forge * 30_000 : isAdventurePlan(plan) ? adventureCycleMs(plan, game) : isPreparationPlan(plan) ? PREPARATION_CYCLE_MS[plan.kind] :
         CULTIVATION_CYCLE_MS[realm as Activity['realm']], completedCycles: 0, spentStones: 0,
     gainedXp: 0, spentMonths: 0, status: 'paused', stopReason: null, nextCommand: null, startedAt: null, dueAt: null };
   const activity: Activity = plan.kind === 'source' ? { ...base, version: 2, plan: structuredClone(plan), gainedItems: {}, gainedStones: 0 } :
     plan.kind === 'craft' ? { ...base, version: 3, plan: structuredClone(plan), spentItems: {}, gainedItems: {}, forgedRelics: [] } :
       plan.kind === 'forge' ? { ...base, version: 4, plan: structuredClone(plan), spentItems: {}, gainedItems: {}, forgedRelics: [], relicBefore: game.loadout.relic } :
-        isPreparationPlan(plan) ? { ...base, version: 5, plan: structuredClone(plan), ...preparationSnapshot(game), ...emptyPreparationTotals() } :
+        isAdventurePlan(plan) ? { ...base, version: 6, plan: structuredClone(plan), ...adventureMetadata(game) } :
+          isPreparationPlan(plan) ? { ...base, version: 5, plan: structuredClone(plan), ...preparationSnapshot(game), ...emptyPreparationTotals() } :
           { ...base, version: 1, plan: { ...plan } };
   at(options.now, activity.cycleMs);
   requireEligible(game, activity);
@@ -400,7 +428,7 @@ export function resumeActivity(game: Game, activity: Activity, options: Activity
   at(options.now, activity.cycleMs);
   requireEligible(game, activity);
   return resetCycle({ ...structuredClone(activity), ownerId: options.ownerId, status: 'running',
-    revision: increment(activity.revision), generation: increment(activity.generation) }, options.now);
+    stopReason: null, revision: increment(activity.revision), generation: increment(activity.generation) }, options.now);
 }
 export function completeActivity(gameAfter: Game, activity: Activity, result: ActionResult, options: ActivityCompleteOptions): Activity {
   validateGame(gameAfter); validateActivity(activity);
@@ -415,6 +443,7 @@ export function completeActivity(gameAfter: Game, activity: Activity, result: Ac
     fingerprint: canonicalFingerprint(command), result }, gameAfter); } catch { invalid('周期回执与正式指令不一致'); }
   if (activity.version === 3 || activity.version === 4) return completeProduction(gameAfter, activity, result, options);
   if (activity.version === 5) return completePreparation(gameAfter, activity, result, options);
+  if (activity.version === 6) return completeAdventure(gameAfter, activity, result, options);
   const cost = costsForAction(gameAfter, command), delta = result.delta;
   const beforeXp = gameAfter.core.player.xp - delta.xp;
   const source = activity.version === 2 ? C.sources[activity.plan.sourceId] : null;
@@ -452,6 +481,26 @@ export function completeActivity(gameAfter: Game, activity: Activity, result: Ac
   if (reason) return stop(next, reason);
   if (options.now > Number.MAX_SAFE_INTEGER - activity.cycleMs)
     return stop(next, { code: 'ACTIVITY_TIME_LIMIT', message: '无法安全安排下一周期，已保存本次活动成果' });
+  return resetCycle({ ...next, status: 'running' }, options.now);
+}
+
+function completeAdventure(gameAfter: Game, activity: AdventureActivity, result: ActionResult, options: ActivityCompleteOptions): Activity {
+  validateAdventureResult(gameAfter, activity, result);
+  const next: AdventureActivity = { ...structuredClone(activity), ...completeAdventureMetadata(gameAfter, activity, result),
+    revision: increment(activity.revision), gameRevision: gameAfter.core.revision, completedCycles: activity.completedCycles + 1,
+    spentStones: activity.spentStones + result.costs.stones, spentMonths: activity.spentMonths + result.costs.months,
+    gainedXp: activity.gainedXp + result.delta.xp, cycleMs: adventureCycleMs(activity.plan, gameAfter),
+    status: 'paused', stopReason: null, nextCommand: null, startedAt: null, dueAt: null };
+  const decision = adventureDecision(next);
+  if (decision.failure) {
+    const strategy = next.plan.kind === 'encounter' ? next.plan.strategy : next.plan.kind === 'battle' && next.plan.mode === 'auto' ? next.plan.strategy : null;
+    if (strategy?.riskMode === 'pause' && ADVENTURE_PAUSE_CODES.some(code => code === decision.failure!.code)) {
+      const paused: AdventureActivity = { ...next, status: 'paused', stopReason: decision.failure };
+      validateActivity(paused, gameAfter); return paused;
+    }
+    return stop(next, decision.failure);
+  }
+  if (options.now > Number.MAX_SAFE_INTEGER - next.cycleMs) return stop(next, { code: 'ACTIVITY_TIME_LIMIT', message: '无法安全安排下一动作，已保存本次真实成果' });
   return resetCycle({ ...next, status: 'running' }, options.now);
 }
 
@@ -535,29 +584,32 @@ export function previewActivity(game: Game, plan: ActivityPlan): ActivityPreview
   const cycleMs = plan?.kind === 'source' && Object.hasOwn(C.sources, plan.sourceId)
     ? C.sources[plan.sourceId].months * 30_000 : plan?.kind === 'craft' && Object.hasOwn(C.recipes, plan.recipeId)
       ? C.recipes[plan.recipeId].months * 30_000 : plan?.kind === 'forge' && Object.hasOwn(C.relics, plan.relicId)
-        ? C.actionDurations.forge * 30_000 : isPreparationPlan(plan) ? PREPARATION_CYCLE_MS[plan.kind] : Object.hasOwn(CULTIVATION_CYCLE_MS, game.core.player.realm)
+        ? C.actionDurations.forge * 30_000 : isAdventurePlan(plan) ? adventureCycleMs(plan, game) : isPreparationPlan(plan) ? PREPARATION_CYCLE_MS[plan.kind] : Object.hasOwn(CULTIVATION_CYCLE_MS, game.core.player.realm)
       ? CULTIVATION_CYCLE_MS[game.core.player.realm as Activity['realm']] : 0;
   try {
     let activity = createActivity(game, plan, { id: 'preview-activity', ownerId: 'preview-owner', commandId: 'preview-start', now: 0 });
+    const initialAdventure = activity.version === 6 ? adventureDecision(activity) : null;
     let current = game;
-    for (let i = 0; i < C.maxBatch && activity.status === 'running'; i++) {
+    const limit = activity.version === 6 ? activity.plan.maxCycles : C.maxBatch;
+    for (let i = 0; i < limit && activity.status === 'running'; i++) {
       const command = activity.nextCommand!;
       const resolution = resolve(current, command);
       activity = completeActivity(resolution.nextState, activity, resolution.result,
         { commandId: command.commandId, now: activity.dueAt! });
       current = resolution.nextState;
     }
-    if (activity.status !== 'stopped') invalid('活动预览未达到安全停止边界');
+    if (activity.status !== 'stopped' && !(activity.version === 6 && activity.status === 'paused' && activity.stopReason)) invalid('活动预览未达到安全停止边界');
     return { allowed: true, failure: null, cycles: activity.completedCycles, xp: activity.gainedXp,
       stones: activity.spentStones, months: activity.spentMonths, stopReason: activity.stopReason, cycleMs: activity.cycleMs,
-      items: activity.version !== 1 ? { ...activity.gainedItems } : {}, earnedStones: activity.version === 2 || activity.version === 5 ? activity.gainedStones : 0,
-      spentItems: activity.version === 3 || activity.version === 4 || activity.version === 5 ? { ...activity.spentItems } : {},
+      items: activity.version !== 1 ? { ...activity.gainedItems } : {}, earnedStones: activity.version === 2 || activity.version === 5 || activity.version === 6 ? activity.gainedStones : 0,
+      spentItems: activity.version >= 3 ? { ...(activity as CraftActivity | ForgeActivity | PreparationActivity | AdventureActivity).spentItems } : {},
       relics: activity.version === 3 || activity.version === 4 ? [...activity.forgedRelics] : [],
       hp: activity.version === 5 ? activity.restoredHp : 0, mp: activity.version === 5 ? activity.restoredMp : 0,
-      skills: activity.version === 5 ? [...activity.learnedSkills] : [], manuals: activity.version === 5 ? [...activity.studiedManuals] : [] };
+      skills: activity.version === 5 ? [...activity.learnedSkills] : [], manuals: activity.version === 5 ? [...activity.studiedManuals] : [],
+      adventure: activity.version === 6 ? adventurePreview(activity, initialAdventure!) : null };
   } catch (error) {
     if (!(error instanceof RuleError)) throw error;
     return { allowed: false, failure: { code: error.code, message: error.message }, cycles: 0, xp: 0,
-      stones: 0, months: 0, stopReason: null, cycleMs, items: {}, earnedStones: 0, spentItems: {}, relics: [], hp: 0, mp: 0, skills: [], manuals: [] };
+      stones: 0, months: 0, stopReason: null, cycleMs, items: {}, earnedStones: 0, spentItems: {}, relics: [], hp: 0, mp: 0, skills: [], manuals: [], adventure: null };
   }
 }

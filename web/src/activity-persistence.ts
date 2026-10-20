@@ -48,30 +48,35 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
       validateCommandReceipt(receipt, current);
       const command = receipt.command;
       const identity = { commandId: input.tick.commandId, runId: input.tick.runId, expectedRevision: input.tick.expectedRevision };
-      const expected: Command = activity.version === 5 ? { ...preparationCycleAction(activity.plan, activity.completedCycles - 1), ...identity } :
+      let proof: { activityBefore: Activity; stateAfter: Game; resolvedAt: number } | null = null;
+      if (activity.version === 5 || activity.version === 6) {
+        if (!proven) invalid();
+        shape(value.proof, ['activityBefore', 'stateAfter', 'resolvedAt']);
+        validateActivity(value.proof.activityBefore); validateGame(value.proof.stateAfter);
+        if (value.proof.activityBefore.version !== activity.version || value.proof.activityBefore.id !== activity.id ||
+            value.proof.activityBefore.revision !== input.tick.expectedActivityRevision ||
+            value.proof.activityBefore.generation !== input.tick.generation || value.proof.activityBefore.ownerId !== input.tick.ownerId ||
+            value.proof.stateAfter.core.runId !== current.core.runId || value.proof.stateAfter.core.revision > current.core.revision ||
+            !Number.isSafeInteger(value.proof.resolvedAt) || Number(value.proof.resolvedAt) < 0) invalid();
+        proof = value.proof as unknown as NonNullable<ActivityReceipt['proof']>;
+      }
+      const expected: Command = activity.version === 6 ? proof!.activityBefore.nextCommand! :
+        activity.version === 5 ? { ...preparationCycleAction(activity.plan, activity.completedCycles - 1), ...identity } :
         activity.version === 1 ? { type: 'CULTIVATE', method: activity.plan.method, count: 1, ...identity } :
         activity.version === 2 ? { type: 'SOURCE', sourceId: activity.plan.sourceId, count: 1,
           ...(activity.plan.target?.kind === 'item' ? { target: { item: activity.plan.target.id, quantity: activity.plan.target.quantity } } : {}), ...identity } :
         activity.version === 3 ? { type: 'CRAFT', recipeId: activity.plan.recipeId, ...identity } :
           { type: 'FORGE', relic: activity.plan.relicId, ...identity };
-      if (fingerprint(command) !== fingerprint(expected) || activity.id !== input.tick.activityId ||
+      if (fingerprint(command) !== fingerprint(expected) || command.commandId !== identity.commandId || command.runId !== identity.runId ||
+          command.expectedRevision !== identity.expectedRevision || activity.id !== input.tick.activityId ||
           activity.ownerId !== input.tick.ownerId || activity.generation !== input.tick.generation || activity.completedCycles < 1 ||
           command.commandId !== `cycle:${activity.id}:${activity.generation}:${activity.completedCycles}` ||
           activity.revision !== input.tick.expectedActivityRevision + 1 || activity.gameRevision !== input.tick.expectedRevision + 1) invalid();
       const result = receipt.result, delta = result.delta;
-      if (delta.realm.before !== activity.realm || delta.realm.after !== activity.realm || delta.wins !== 0) invalid();
-      if (activity.version === 5) {
-        if (!proven) invalid();
-        shape(value.proof, ['activityBefore', 'stateAfter', 'resolvedAt']);
-        const proof = value.proof;
-        validateActivity(proof.activityBefore); validateGame(proof.stateAfter);
-        if (proof.activityBefore.version !== 5 || proof.activityBefore.id !== activity.id ||
-            proof.activityBefore.revision !== input.tick.expectedActivityRevision ||
-            proof.activityBefore.generation !== input.tick.generation || proof.activityBefore.ownerId !== input.tick.ownerId ||
-            proof.stateAfter.core.runId !== current.core.runId || proof.stateAfter.core.revision > current.core.revision ||
-            !Number.isSafeInteger(proof.resolvedAt) || Number(proof.resolvedAt) < 0) invalid();
+      if (delta.realm.before !== activity.realm || delta.realm.after !== activity.realm || activity.version !== 6 && delta.wins !== 0) invalid();
+      if (proof) {
         const completed = completeActivity(proof.stateAfter, proof.activityBefore, result,
-          { commandId: command.commandId, now: proof.resolvedAt as number });
+          { commandId: command.commandId, now: proof.resolvedAt });
         if (fingerprint(completed) !== fingerprint(activity)) invalid();
       } else if (proven || delta.hp !== 0 || delta.mp !== 0) invalid();
       else if (activity.version === 2) {
@@ -90,8 +95,10 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
           const output = C.recipes[activity.plan.recipeId].output;
           inventory[output] = (inventory[output] ?? 0) + 1;
           if (inventory[output] === 0) delete inventory[output];
-        } else if (!current.ownedRelics.includes(activity.plan.relicId) ||
-            activity.gameRevision === current.core.revision && current.loadout.relic !== activity.relicBefore) invalid();
+        } else if (activity.version === 4) {
+          if (!current.ownedRelics.includes(activity.plan.relicId) ||
+              activity.gameRevision === current.core.revision && current.loadout.relic !== activity.relicBefore) invalid();
+        } else invalid();
         if (fingerprint(result.costs) !== fingerprint(costs) || delta.stones !== -costs.stones || delta.xp !== 0 ||
             fingerprint(delta.inventory) !== fingerprint(inventory)) invalid();
       }

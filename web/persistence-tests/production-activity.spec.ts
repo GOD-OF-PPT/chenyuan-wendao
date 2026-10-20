@@ -267,10 +267,10 @@ test('v5 cultivation and source activities, complete resources, real checkpoint 
           let state = (await fixture.importText(JSON.stringify(d.checkpoints.mortal), h.mutation())).state;
           state = (await fixture.execute(h.command(state, { type: 'BREAKTHROUGH' }))).state;
           const location = kind === 'source' ? 'wilderness' : 'cave';
-          if (state.core.world.location !== location) state = (await fixture.execute(h.command(state, { type: 'TRAVEL', location }))).state;
+          if (state.core.world.location !== location) state = (await h.finishAction(fixture, { type: 'TRAVEL', location })).state;
           const plan = kind === 'cultivation' ? { kind, method: 'natural', maxCycles: 3, until: 'cycles', stoneBudget: 0, stoneReserve: 0 } :
             { kind, sourceId: 'herbs', maxCycles: 3, until: 'cycles', target: null, monthBudget: 3, remainingMonthsReserve: 1 };
-          const started = await fixture.startActivity(plan, h.activityMutation({ state, activity: null })), tick = h.activityTick(started);
+          const started = await fixture.startActivity(plan, h.activityMutation(await fixture.loadActivitySnapshot())), tick = h.activityTick(started);
           now = started.activity.dueAt; const completed = await fixture.settleActivity(tick), checkpoint = await fixture.loadCheckpoint(), original = await h.inspect(name + '-original');
           fixture.close();
           const old = await new Promise<IDBDatabase>((resolve, reject) => {
@@ -299,7 +299,7 @@ test('v5 cultivation and source activities, complete resources, real checkpoint 
     } finally { Date.now = realNow; }
   });
   for (const row of rows) {
-    expect(row.closed).toBe(true); expect(row.after.version).toBe(7); expect(row.checkpoint).not.toBeNull();
+    expect(row.closed).toBe(true); expect(row.after.version).toBe(8); expect(row.checkpoint).not.toBeNull();
     for (const store of row.original.stores) expect(row.after[store]).toEqual(row.original[store]);
     expect(row.loaded.activity.version).toBe(row.kind === 'cultivation' ? 1 : 2);
     expect(row.loaded).toEqual({ state: row.completed.state, activity: row.completed.activity }); expect(row.checkpointAfter).toEqual(row.checkpoint);

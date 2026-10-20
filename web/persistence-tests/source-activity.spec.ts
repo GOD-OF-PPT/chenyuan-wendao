@@ -182,7 +182,7 @@ test('source takeover and pause fence old owners and reopening never pays offlin
   expect(r.persisted).toEqual({ state: r.paused.state, activity: r.paused.activity });
 });
 
-test('ordinary SOURCE batches cannot bypass the activity and changing a paused location stops it without travel or payout', async ({ page }) => {
+test('ordinary SOURCE batches are blocked and explicit travel replaces a paused source without extra payout', async ({ page }) => {
   const r = await page.evaluate(async () => {
     const h = (globalThis as any).h, { repo, snapshot } = await h.sourceFixture('source-write-boundary');
     try {
@@ -190,19 +190,21 @@ test('ordinary SOURCE batches cannot bypass the activity and changing a paused l
       for (const count of [1, 50]) results.push(await h.attempt(() => repo.execute(h.command(snapshot.state, { type: 'SOURCE', sourceId: 'herbs', count }))));
       const started = await repo.startActivity(h.sourcePlan(), h.activityMutation(snapshot));
       const blocked = await h.attempt(() => repo.execute(h.command(started.state, { type: 'TRAVEL', location: 'sect' })));
+      const arrangedBlocked = await h.attempt(() => repo.startActivity({ kind: 'travel', location: 'sect', maxCycles: 1 }, h.activityMutation(started)));
       const paused = await repo.pauseActivity(h.activityMutation(started));
-      const travel = await repo.execute(h.command(paused.state, { type: 'TRAVEL', location: 'sect' }));
+      const travel = await h.finishAction(repo, { type: 'TRAVEL', location: 'sect' });
       const persisted = await repo.loadActivitySnapshot();
       const replacement = await repo.startActivity(h.sourcePlan('work'), h.activityMutation(persisted));
-      return { snapshot, results, blocked, travel, persisted, replacement, archives: await repo.archives() };
+      return { snapshot, results, blocked, arrangedBlocked, paused, travel, persisted, replacement, archives: await repo.archives() };
     } finally { repo.close(); }
   });
-  for (const result of r.results) expect(result.code).toBe('ACTIVITY_REQUIRED'); expect(r.blocked.code).toBe('ACTIVITY_RUNNING');
+  for (const result of r.results) expect(result.code).toBe('ACTIVITY_REQUIRED'); expect(r.blocked.code).toBe('ACTIVITY_REQUIRED'); expect(r.arrangedBlocked.code).toBe('ACTIVITY_RUNNING');
   expect(r.persisted.state).toEqual(r.travel.state); expect(r.persisted.activity.status).toBe('stopped');
-  expect(r.persisted.activity.stopReason.code).toBe('STATE_CHANGED'); expect(r.persisted.activity.gainedItems).toEqual({});
+  expect(r.persisted.activity.plan.kind).toBe('travel'); expect(r.persisted.activity.stopReason.code).toBe('CYCLES_COMPLETE'); expect(r.persisted.activity.gainedItems).toEqual({});
   expect(r.travel.state.core.inventory).toEqual(r.snapshot.state.core.inventory);
   expect(r.replacement.activity.plan.sourceId).toBe('work'); expect(r.replacement.activity.completedCycles).toBe(0);
   expect(r.archives.some((row: any) => row.value?.id === r.persisted.activity.id)).toBe(true);
+  expect(r.archives.find((row: any) => row.value?.id === r.paused.activity.id)?.value).toEqual(r.paused.activity);
 });
 
 test('source receipts reject a forged different source, target or owner instead of broadening activity authority', async ({ page }) => {
@@ -241,8 +243,8 @@ test('v4 cultivation activity, real breakthrough checkpoint and all receipts sur
     try {
       let state = (await fixture.create('旧版真实修士', h.mutation())).state;
       state = (await fixture.execute(h.command(state, { type: 'CHOOSE', choice: 'leave' }))).state;
-      state = (await fixture.execute(h.command(state, { type: 'TRAVEL', location: 'cave' }))).state;
-      let activity = await fixture.startActivity(plan, h.activityMutation({ state, activity: null }));
+      state = (await h.finishAction(fixture, { type: 'TRAVEL', location: 'cave' })).state;
+      let activity = await fixture.startActivity(plan, h.activityMutation(await fixture.loadActivitySnapshot()));
       while (activity.activity.status === 'running') { now = activity.activity.dueAt; activity = await fixture.settleActivity(h.activityTick(activity)); }
       state = (await fixture.execute(h.command(activity.state, { type: 'BREAKTHROUGH' }))).state;
       activity = await fixture.startActivity(plan, h.activityMutation(await fixture.loadActivitySnapshot()));

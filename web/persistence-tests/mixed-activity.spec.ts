@@ -116,21 +116,21 @@ test('source and furnace swaps use formal travel, invalidate the paused plans an
     const h = (globalThis as any).h, name = 'mixed-source-craft-source', { repo, snapshot } = await h.mixedFixture(name);
     const realNow = Date.now; let now = 1_700_000_000_000; Date.now = () => now;
     try {
-      const outward = await repo.execute(h.command(snapshot.state, { type: 'TRAVEL', location: 'wilderness' }));
+      const outward = await h.finishAction(repo, { type: 'TRAVEL', location: 'wilderness' });
       const planA = h.mixedPlan('source'), startA = h.mixedMutation(await repo.loadActivitySnapshot()), a0 = await repo.startActivity(planA, startA), tickA = h.mixedTick(a0);
       now = a0.activity.dueAt; const a1 = await repo.settleActivity(tickA), unsettledA = h.mixedTick(a1);
       const pauseA = h.mixedMutation(a1), pausedA = await repo.pauseActivity(pauseA);
-      const travelInCommand = h.command(pausedA.state, { type: 'TRAVEL', location: 'cave' }), travelIn = await repo.execute(travelInCommand), stoppedA = await repo.loadActivitySnapshot();
+      const travelInCommand = { type: 'TRAVEL', location: 'cave' }, travelIn = await h.finishAction(repo, travelInCommand), stoppedA = await repo.loadActivitySnapshot();
       const planB = h.mixedPlan('craft'), startB = h.mixedMutation(stoppedA), b0 = await repo.startActivity(planB, startB), tickB = h.mixedTick(b0);
       const beforeAReplays = await h.inspect(name), replayA = [await repo.startActivity(planA, startA), await repo.pauseActivity(pauseA), await repo.settleActivity(tickA)];
       const staleA = await h.attempt(() => repo.settleActivity(unsettledA)), afterAReplays = await h.inspect(name);
       now = b0.activity.dueAt; const b1 = await repo.settleActivity(tickB), unsettledB = h.mixedTick(b1);
       const pauseB = h.mixedMutation(b1), pausedB = await repo.pauseActivity(pauseB);
-      const travelOutCommand = h.command(pausedB.state, { type: 'TRAVEL', location: 'wilderness' }), travelOut = await repo.execute(travelOutCommand), stoppedB = await repo.loadActivitySnapshot();
+      const travelOutCommand = { type: 'TRAVEL', location: 'wilderness' }, travelOut = await h.finishAction(repo, travelOutCommand), stoppedB = await repo.loadActivitySnapshot();
       const c0 = await repo.startActivity(h.mixedPlan('source'), h.mixedMutation(stoppedB)), beforeBReplays = await h.inspect(name);
       const replayB = [await repo.startActivity(planB, startB), await repo.pauseActivity(pauseB), await repo.settleActivity(tickB)];
       const staleB = await h.attempt(() => repo.settleActivity(unsettledB));
-      return { snapshot, outward, a0, a1, stoppedA, travelInCommand, travelIn, b0, b1, stoppedB, travelOutCommand, travelOut, c0,
+      return { snapshot, outward, a0, a1, pausedA, stoppedA, travelInCommand, travelIn, b0, b1, pausedB, stoppedB, travelOutCommand, travelOut, c0,
         replayA, staleA, beforeAReplays, afterAReplays, replayB, staleB, beforeBReplays, afterBReplays: await h.inspect(name),
         persisted: await repo.loadActivitySnapshot(), archives: await repo.archives() };
     } finally { Date.now = realNow; repo.close(); }
@@ -138,7 +138,7 @@ test('source and furnace swaps use formal travel, invalidate the paused plans an
   expect(r.outward.state.core.world.location).toBe('wilderness'); expect(r.a0.state).toEqual(r.outward.state);
   expect(r.a1.activity.gainedItems).toEqual({ herb: 2 }); expect(r.a1.activity.completedCycles).toBe(1);
   for (const [stopped, traveled, beforeTravel] of [[r.stoppedA, r.travelIn, r.a1], [r.stoppedB, r.travelOut, r.b1]]) {
-    expect(stopped.state).toEqual(traveled.state); expect(stopped.activity.status).toBe('stopped'); expect(stopped.activity.stopReason.code).toBe('STATE_CHANGED');
+    expect(stopped.state).toEqual(traveled.state); expect(stopped.activity.status).toBe('stopped'); expect(stopped.activity.plan.kind).toBe('travel'); expect(stopped.activity.stopReason.code).toBe('CYCLES_COMPLETE');
     expect(traveled.state.core.player).toEqual(beforeTravel.state.core.player); expect(traveled.state.core.inventory).toEqual(beforeTravel.state.core.inventory);
     expect(traveled.state.core.world.elapsedMonths).toBe(beforeTravel.state.core.world.elapsedMonths);
     expect(traveled.state.core.revision).toBe(beforeTravel.state.core.revision + 1);
@@ -155,4 +155,5 @@ test('source and furnace swaps use formal travel, invalidate the paused plans an
   expect(r.afterAReplays).toEqual(r.beforeAReplays); expect(r.afterBReplays).toEqual(r.beforeBReplays);
   expect(r.persisted).toEqual({ state: r.c0.state, activity: r.c0.activity }); expect(r.c0.activity.completedCycles).toBe(0);
   for (const old of [r.stoppedA.activity, r.stoppedB.activity]) expect(r.archives.some((row: any) => JSON.stringify(row.value) === JSON.stringify(old))).toBe(true);
+  for (const old of [r.pausedA.activity, r.pausedB.activity]) expect(r.archives.find((row: any) => row.value?.id === old.id)?.value).toEqual(old);
 });

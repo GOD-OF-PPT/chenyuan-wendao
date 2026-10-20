@@ -3,7 +3,7 @@ import { RuleError } from '../../src/full/errors.ts';
 import { canonicalFingerprint as fingerprint, validateCommandReceipt } from '../../src/full/receipts.ts';
 import { currentVersions } from '../../src/full/versions.ts';
 import type { Command, Game } from '../../src/full/types.ts';
-import type { CommandReceipt, CommitOutcome, SaveCheckpoint } from '../../src/full/contracts.ts';
+import type { ActionResult, CommandReceipt, CommitOutcome, SaveCheckpoint } from '../../src/full/contracts.ts';
 import { createActivity, pauseActivity as pauseModelActivity, resumeActivity as resumeModelActivity, completeActivity,
   validateActivity, validateActivityMutation, validateActivityPlan, validateActivityTick } from '../../src/full/activity.ts';
 import type { Activity, ActivityMutation, ActivityOutcome, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
@@ -13,7 +13,7 @@ import { configurationReceipt, validateConfigurationReceipt } from './configurat
 export type { ActivityMutation, ActivityOutcome, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
 
 export const FULL_DB_NAME = 'chenyuan-playable-v1';
-export const FULL_DB_VERSION = 7;
+export const FULL_DB_VERSION = 8;
 export const FULL_STATE_STORE = 'full-state';
 export const FULL_RECEIPT_STORE = 'full-receipts';
 export const FULL_BACKUP_STORE = 'full-backups';
@@ -63,6 +63,10 @@ export interface SaveMutation {
   commandId: string; runId: string; expectedRunId: string | null; expectedRevision: number;
 }
 export interface ControlOutcome { state: Game; replayed: boolean; }
+export interface ActivityHistoryPage {
+  rows: Array<{ command: Command; result: ActionResult; activity: Activity }>;
+  page: number; pages: number; total: number;
+}
 interface ControlReceipt {
   format: 'chenyuan-control-receipt'; version: 1; kind: 'CREATE' | 'IMPORT' | 'MIGRATE' | 'RESTORE';
   mutation: SaveMutation; fingerprint: string;
@@ -481,6 +485,51 @@ export class FullSaveRepository {
       };
     });
   }
+  /** Complete per-command history for this activity in the current run; battle.log is only a recent excerpt. */
+  loadActivityHistory(activityId: string, page = 0, pageSize = 4): Promise<ActivityHistoryPage> {
+    if (typeof activityId !== 'string' || !activityId.trim() || activityId.length > 64 ||
+        !Number.isSafeInteger(page) || page < 0 || !Number.isSafeInteger(pageSize) || pageSize < 1 || pageSize > 20)
+      throw new RuleError('INVALID_QUERY', '活动记录分页参数无效');
+    return this.transaction('readonly', (tx, complete, abort) => {
+      const state = tx.objectStore(FULL_STATE_STORE), read = state.get('current');
+      read.onsuccess = () => {
+        try {
+          if (read.result === undefined) {
+            const count = state.count('current');
+            count.onsuccess = () => {
+              if (count.result) abort(new RuleError('SAVE_SHAPE', '主存档内容缺失，原记录保留'));
+              else complete({ rows: [], page: 0, pages: 1, total: 0 });
+            };
+            return;
+          }
+          validateGame(read.result); const current = read.result, rows: ActivityHistoryPage['rows'] = [];
+          const prefix = current.core.runId + ':cycle:' + activityId + ':';
+          const cursor = tx.objectStore(FULL_RECEIPT_STORE).openCursor(IDBKeyRange.bound(prefix, prefix + '\uffff'));
+          cursor.onsuccess = () => {
+            try {
+              const entry = cursor.result;
+              if (!entry) {
+                rows.sort((a, b) => a.result.revisionAfter - b.result.revisionAfter || a.command.commandId.localeCompare(b.command.commandId));
+                if (new Set(rows.map(row => row.result.revisionAfter)).size !== rows.length)
+                  throw new RuleError('RECEIPT_INVALID', '活动记录包含重复进度，未省略或合并原件');
+                const total = rows.length, pages = Math.max(1, Math.ceil(total / pageSize)), selected = Math.min(page, pages - 1);
+                complete({ rows: rows.slice(selected * pageSize, (selected + 1) * pageSize), page: selected, pages, total }); return;
+              }
+              if (typeof entry.key !== 'string' || !entry.key.startsWith(prefix)) throw new RuleError('RECEIPT_INVALID', '活动记录归属不符');
+              validateActivityReceipt(entry.value, current); const receipt = entry.value;
+              const intent = receipt.input.kind === 'TICK' ? receipt.input.tick : receipt.input.mutation;
+              if (entry.key !== intent.runId + ':' + intent.commandId) throw new RuleError('RECEIPT_INVALID', '活动记录键与回执身份不符');
+              if (receipt.input.kind === 'TICK' && receipt.activity.id === activityId) {
+                if (!receipt.command || !receipt.result) throw new RuleError('RECEIPT_INVALID', '活动周期缺少正式结果');
+                rows.push({ command: receipt.command, result: receipt.result, activity: receipt.activity });
+              }
+              entry.continue();
+            } catch (error) { abort(error); }
+          };
+        } catch (error) { abort(error); }
+      };
+    });
+  }
   startActivity(plan: ActivityPlan, mutation: ActivityMutation): Promise<ActivityOutcome> {
     validateActivityPlan(plan); validateActivityMutation(mutation);
     return this.writeActivity({ kind: 'START', plan: structuredClone(plan), mutation: structuredClone(mutation) });
@@ -544,7 +593,7 @@ export class FullSaveRepository {
                     const command = activity.nextCommand, outcome = resolve(current, command);
                     next = completeActivity(outcome.nextState, activity, outcome.result, { commandId: command.commandId, now });
                     state.put(current, 'previous'); state.put(outcome.nextState, 'current'); state.put(next, 'activity');
-                    receipts.put(activityReceipt(input, next, command, outcome.result, activity.version === 5
+                    receipts.put(activityReceipt(input, next, command, outcome.result, activity.version === 5 || activity.version === 6
                       ? { activityBefore: activity, stateAfter: outcome.nextState, resolvedAt: now } : undefined), intent.runId + ':' + intent.commandId);
                     complete({ state: outcome.nextState, activity: next, result: outcome.result, replayed: false }); return;
                   }
@@ -762,7 +811,7 @@ export class FullSaveRepository {
                 if (receipt.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一指令编号对应不同内容');
                 complete({ state: current, result: receipt.result, replayed: true }); return;
               }
-              if (['CULTIVATE', 'SOURCE', 'CRAFT', 'FORGE', 'BUY', 'SELL', 'USE', 'REST', 'LEARN', 'STUDY'].includes(command.type)) {
+              if (['CULTIVATE', 'SOURCE', 'CRAFT', 'FORGE', 'BUY', 'SELL', 'USE', 'REST', 'LEARN', 'STUDY', 'TRAVEL', 'ENCOUNTER', 'BATTLE'].includes(command.type)) {
                 throw new RuleError('ACTIVITY_REQUIRED', '请安排修炼、取材或生产活动，按完整周期逐次积累');
               }
               if (['SCHOOL', 'EQUIP', 'EQUIP_RELIC'].includes(command.type)) throw new RuleError('CONFIGURATION_REQUIRED', '请预选并确认本次修法或配装变化');

@@ -1,0 +1,54 @@
+{
+  "format": "chenyuan-idle-adventure",
+  "version": 1,
+  "task": "Goal3 U6",
+  "maxNativeBytes": 45000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/AdventurePlanner.vue",
+      "bytes": 12025,
+      "sha256": "9792566e67887f5cdb3a484be659d5fcc94860b15470633515ce4d4f13dcb3e7"
+    },
+    {
+      "path": "web/src/BattleStrategy.vue",
+      "bytes": 16782,
+      "sha256": "11394c8f9c2a28087a0a5f2a89630fa9930919bdfdfd8eb7916fd9d059d96c0b"
+    },
+    {
+      "path": "web/src/AdventureHistory.vue",
+      "bytes": 4137,
+      "sha256": "40d8eb49cdee409fbcb048849158037dec9fc54c6f4483282869a3ab7dae5e12"
+    },
+    {
+      "path": "web/src/adventure-view.ts",
+      "bytes": 1724,
+      "sha256": "3362f2731f7597a99810c263af143eff6468d87c2dc4f89f185c0add4a46d354"
+    },
+    {
+      "path": "web/src/idle-adventure.css",
+      "bytes": 10079,
+      "sha256": "dcc84501e16f4fc243ee0153438f150bd7dff97cfa744c726b0842616c67e08d"
+    }
+  ],
+  "sourceReferences": [
+    "goal-3/amendments/2026-10-21-heartbeat-u6.md",
+    "docs/decisions/0008-adventure-idle-contract.md"
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "<AdventureHistory ",
+      "@start=\"startAdventure\""
+    ],
+    "web/src/ExplorePanel.vue": [
+      "<AdventurePlanner "
+    ],
+    "web/src/BattlePanel.vue": [
+      "<BattleStrategy "
+    ],
+    "web/src/activity-view.ts": [
+      "adventureView(a)"
+    ]
+  },
+  "scope": "Finite travel and encounter choices, actual combat tactics, history and next move. Existing enemy/scene paintings reused; old budgets retained; no user acceptance."
+}

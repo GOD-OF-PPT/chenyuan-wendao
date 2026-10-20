@@ -10,18 +10,18 @@
   "files": [
     {
       "path": "web/src/action-feedback.ts",
-      "bytes": 10039,
-      "sha256": "36537f8c104dec27f65dc3ae002d352b8018edf49a609b4677ad476d78589b6a"
+      "bytes": 11148,
+      "sha256": "838c6be3d2d90a92beb51a9b0853eaeb06b4b7f4c1fa39e721e3303d2517f235"
     },
     {
       "path": "web/src/ActionFeedbackStage.vue",
-      "bytes": 10392,
-      "sha256": "2b90442728974eb3e0d465df136717030a51df802a48767a881680069c83b2dc"
+      "bytes": 10505,
+      "sha256": "c7ece24293a2f19abc19651e797a0285c27e8bdeed893fa55d5a5e9ee94b7aab"
     },
     {
       "path": "web/src/action-motion.css",
-      "bytes": 11780,
-      "sha256": "e2a9936a23bc9c77ae7e705ca7d4db5d27497b200a15f5bf551bb8a1deb2023a"
+      "bytes": 11796,
+      "sha256": "39b88fda0ef8d00ddf266e421bf4d0d7fafc7f4abf7cd7d97e71749863589a15"
     }
   ],
   "consumer": "web/src/App.vue",

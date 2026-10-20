@@ -30,7 +30,7 @@ const rows=computed<Reading[]>(()=>{
  if(mode.value==='battle'){
   const rows:Reading[]=[];
   for(const slot of ['builder','finisher']as const){const id=g.loadout[slot];if(id)rows.push({key:slot,title:C.skills[id].name,text:C.skills[id].description});}
-  if(g.battle){const forecast=intent(g.battle);rows.unshift({key:'intent',title:'当前意图',text:forecast.name+' · 预计伤害 '+forecast.damage});g.battle.log.forEach((text,i)=>rows.push({key:'battle-log-'+i,title:'本场战报 · '+(i+1),text}));}
+  if(g.battle){const forecast=intent(g.battle);rows.unshift({key:'intent',title:'当前意图',text:forecast.name+' · 敌方原始伤害 '+forecast.damage});g.battle.log.forEach((text,i)=>rows.push({key:'battle-log-'+i,title:'最近交锋记录 · '+(i+1),text}));}
   if(!g.battle?.log.length)rows.push({key:'no-log',title:'战报',text:'本场尚未行动，实际回合结果会在保存后记录。'});return rows;
  }
  if(j)return[{key:'trial-stage-summary',testId:'trial-stage-summary',title:j.title,text:`已过 ${j.completed} / 3 关。三关沿用当前配装，气血、灵力和已用丹药跨关保留；过关不会补满资源，也不领取普通战利品。`},...j.steps.map(s=>({key:s.id,title:s.name,testId:'trial-step-'+s.id,text:s.status==='complete'?'已完成':s.status==='current'?'当前':'尚未开始'})),...(j.effect?[{key:'trial-selected-effect',testId:'trial-selected-effect',title:'问心之选',text:j.effect+'。本轮贯穿三关，不能在关间改选。'}]:[])];

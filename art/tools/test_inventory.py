@@ -47,6 +47,8 @@ class InventoryTests(unittest.TestCase):
   if production_ui.exists():files.update(ROOT/ref for ref in json.loads(production_ui.read_text())['sourceReferences'])
   preparation=ROOT/'art/redesign/idle-preparation.json'
   if preparation.exists():files.update(ROOT/ref for ref in json.loads(preparation.read_text())['sourceReferences'])
+  adventure=ROOT/'art/redesign/idle-adventure.json'
+  if adventure.exists():files.update(ROOT/ref for ref in json.loads(adventure.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -291,5 +293,14 @@ class InventoryTests(unittest.TestCase):
   p='web/src/GoodsPanel.vue';self.write(p,(self.root/p).read_text().replace('<CatalogueArt ','<RemovedArt '));self.rejected()
  def test_catalogue_art_receipt_must_match_runtime(self):
   p='art/redesign/catalogue-art/manifest.json';m=json.loads((self.root/p).read_text());a=m['assets'][0];ref=a['receipt']['path'];r=json.loads((self.root/ref).read_text());r['runtime']['sha256']='0'*64;self.write(ref,r);a['receipt']['sha256']=hashlib.sha256((self.root/ref).read_bytes()).hexdigest();self.write(p,m);self.rejected()
+
+ def test_adventure_ui_requires_ledger(self):
+  (self.root/'art/redesign/idle-adventure.json').unlink();self.rejected()
+ def test_adventure_ui_binds_source_and_consumer(self):
+  self.write('web/src/AdventurePlanner.vue','wrong');self.rejected()
+ def test_adventure_ui_cannot_raise_budget(self):
+  p='art/redesign/idle-adventure.json';m=json.loads((self.root/p).read_text());m['maxNativeBytes']+=1;self.write(p,m);self.rejected()
+ def test_adventure_ui_cannot_claim_player_acceptance(self):
+  p='art/redesign/idle-adventure.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
 
 if __name__=='__main__':unittest.main()

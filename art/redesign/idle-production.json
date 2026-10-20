@@ -17,8 +17,8 @@
     },
     {
       "path": "web/src/activity-view.ts",
-      "bytes": 3144,
-      "sha256": "1c0cbea1950911afda4050845711ea274767914613010f17adae438038348032"
+      "bytes": 3235,
+      "sha256": "bec22dc48a6bdf32b84e34d876ab9bc6c89c18167bc315d33d655d79cd7d4a01"
     }
   ],
   "sourceReferences": [

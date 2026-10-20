@@ -93,19 +93,21 @@ test('the repository blocks short cultivation batches and other writes until pau
       const batch = await h.attempt(() => repo.execute(h.command(snapshot.state, { type: 'CULTIVATE', method: 'natural', count: 50 })));
       const started = await repo.startActivity(h.plan(), h.activityMutation(snapshot));
       const changed = await h.attempt(() => repo.execute(h.command(started.state, { type: 'TRAVEL', location: 'sect' })));
+      const arrangedBlocked = await h.attempt(() => repo.startActivity({ kind: 'travel', location: 'sect', maxCycles: 1 }, h.activityMutation(started)));
       const replaced = await h.attempt(() => repo.startActivity(h.plan(), h.activityMutation(started)));
       const paused = await repo.pauseActivity(h.activityMutation(started));
-      const moved = await repo.execute(h.command(paused.state, { type: 'TRAVEL', location: 'sect' }));
+      const moved = await h.finishAction(repo, { type: 'TRAVEL', location: 'sect' });
       const after = await repo.loadActivitySnapshot();
       const oldResume = await h.attempt(() => repo.resumeActivity(h.activityMutation(paused)));
-      return { snapshot, one, batch, started, changed, replaced, paused, moved, after, oldResume };
+      return { snapshot, one, batch, started, changed, arrangedBlocked, replaced, paused, moved, after, oldResume, archives: await repo.archives() };
     } finally { repo.close(); }
   });
   expect(r.one.code).toBe('ACTIVITY_REQUIRED'); expect(r.batch.code).toBe('ACTIVITY_REQUIRED');
-  expect(r.changed.code).toBe('ACTIVITY_RUNNING'); expect(r.replaced.code).toBe('ACTIVITY_RUNNING');
+  expect(r.changed.code).toBe('ACTIVITY_REQUIRED'); expect(r.arrangedBlocked.code).toBe('ACTIVITY_RUNNING'); expect(r.replaced.code).toBe('ACTIVITY_RUNNING');
   expect(r.after.state).toEqual(r.moved.state); expect(r.after.activity.status).toBe('stopped');
-  expect(r.after.activity.stopReason.code).toBe('STATE_CHANGED'); expect(r.oldResume.code).toBe('STALE_REVISION');
-  expect(r.after.activity.completedCycles).toBe(0); expect(r.after.state.core.player.xp).toBe(r.snapshot.state.core.player.xp);
+  expect(r.after.activity.plan.kind).toBe('travel'); expect(r.after.activity.stopReason.code).toBe('CYCLES_COMPLETE'); expect(r.oldResume.code).toBe('STALE_REVISION');
+  expect(r.after.activity.completedCycles).toBe(1); expect(r.after.activity.gainedXp).toBe(0); expect(r.after.state.core.player.xp).toBe(r.snapshot.state.core.player.xp);
+  expect(r.archives.find((row: any) => row.value?.id === r.paused.activity.id)?.value).toEqual(r.paused.activity);
 });
 
 for (const mode of ['quota', 'abort']) test(`cycle ${mode} rolls back Game, previous, activity and receipt; the original command retries once`, async ({ page }) => {
@@ -302,8 +304,8 @@ test('cycle and cultivation-cap limits stop in the same saved transaction withou
         try {
           let current = (await repo.create('目标停止', h.mutation())).state;
           current = (await repo.execute(h.command(current, { type: 'CHOOSE', choice: 'leave' }))).state;
-          current = (await repo.execute(h.command(current, { type: 'TRAVEL', location: 'cave' }))).state;
-          let outcome = await repo.startActivity(h.plan(maxCycles), h.activityMutation({ state: current, activity: null }));
+          current = (await h.finishAction(repo, { type: 'TRAVEL', location: 'cave' })).state;
+          let outcome = await repo.startActivity(h.plan(maxCycles), h.activityMutation(await repo.loadActivitySnapshot()));
           while (outcome.activity.status === 'running') { now = outcome.activity.dueAt; outcome = await repo.settleActivity(h.activityTick(outcome)); }
           rows.push({ maxCycles, outcome, loaded: await repo.loadActivitySnapshot() });
         } finally { repo.close(); }

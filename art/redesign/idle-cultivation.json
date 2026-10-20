@@ -12,8 +12,8 @@
     },
     {
       "path": "web/src/TrainingActivity.vue",
-      "bytes": 4422,
-      "sha256": "52acc4b7aeba52332309ab62ec317b0b905cc95cbac086ebc3ea69d36542d8d2"
+      "bytes": 6020,
+      "sha256": "5e4a49d4771c8a2597c0bd617b4193a86476a45dd8784ede8e24ecd374080fef"
     },
     {
       "path": "web/src/TrainingPlanner.vue",

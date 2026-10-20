@@ -64,6 +64,7 @@ export function validateCommandReceipt(value: unknown, current: Game): asserts v
     START_TRIAL: [['idle'], ['trial-question']], ANSWER_TRIAL: [['trial-question'], ['trial-battle']],
     END: [['trial-ending'], ['ascended']], RETIRE: [['idle'], ['ended']], END_LIFE: [['idle'], ['ended']],
     BATTLE: [['battle', 'trial-battle'], ['battle', 'trial-battle', 'trial-ending', 'idle']],
+    ENCOUNTER: [['idle'], ['battle']],
   };
   const phases = expected[command.type] ?? [['idle'], ['idle']];
   if (!phases[0].includes(String(before)) || !phases[1].includes(String(after)) || before === 'battle' && ['trial-battle', 'trial-ending'].includes(String(after))) invalid();

@@ -34,8 +34,8 @@
     },
     {
       "path": "web/src/ExplorePanel.vue",
-      "bytes": 10428,
-      "sha256": "f09fae21fb04dc25f17f4bb0bcd05aab1937df16bb7ac8eb845d58f6a80f6b27"
+      "bytes": 11209,
+      "sha256": "7899e3b0395e41c129bd71eb50d73f34d12f378ba453ff80bffc7e72c6e8e8d1"
     },
     {
       "path": "web/src/GoodsPanel.vue",

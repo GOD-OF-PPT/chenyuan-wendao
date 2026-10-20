@@ -1013,8 +1013,8 @@
         },
         {
           "path": "web/src/BattlePanel.vue",
-          "bytes": 9676,
-          "sha256": "5c8bfd9fbdda640f219e38d1893efaa4fdeb3ae6dd8c59d47dec5771017ed41b"
+          "bytes": 7626,
+          "sha256": "d34fe46c22c52e9db72493aebcea143c2b92d3763956e898a5505fc042d4d752"
         }
       ]
     },

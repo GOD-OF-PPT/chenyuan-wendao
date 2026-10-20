@@ -4,6 +4,19 @@ import type {Observation} from './local-events.ts';
 import * as C from '../../src/full/content.ts';
 import {formatCosts,formatDelta} from './presentation.ts';
 import {ICONS} from './ui-icons.ts';
+import {publicId} from './local-events.ts';
+import type {Activity} from '../../src/full/activity.ts';
+/** Presentation-only identity. Public records keep the original redaction unchanged. */
+export function activityFeedbackObservation(o:Observation|null,a:Activity|null,r:ActionResult|null):Observation|null{
+ if(!o||o.commandId!==null||a?.version!==6||!r||!publicId(a.id)||!['BATTLE','ENCOUNTER'].includes(r.type))return o;
+ const id=`cycle:${a.id}:${a.generation}:${a.completedCycles}`,p=o.result;
+ if(r.requestedSteps!==1||r.executedSteps!==1||!a.completedCycles||r.commandId!==id||r.runId!==a.runId||r.revisionAfter!==a.gameRevision||
+ o.runId!==a.runId||o.sourceRunId!==a.runId||o.observedRevision!==a.gameRevision||o.operation!==r.type||!p||
+ p.revisionBefore!==r.revisionBefore||p.revisionAfter!==r.revisionAfter||p.requestedSteps!==1||p.executedSteps!==1||
+ p.phaseBefore!==r.phaseBefore||p.phaseAfter!==r.phaseAfter||p.stopCode!==null||r.stopReason!==null||
+ JSON.stringify(p.costs)!==JSON.stringify(r.costs)||JSON.stringify(p.delta)!==JSON.stringify(r.delta))return o;
+ return{...o,commandId:id};
+}
 export type MotionFamily='cultivation'|'travel'|'harvest'|'trade'|'craft'|'forge'|'learning'|'equipment'|'recovery'|'dialogue'|'battle'|'breakthrough'|'trial'|'closure';
 type Icon={kind:keyof typeof ICONS;id:string};
 type Motion={family:MotionFamily;label:string;icon:Icon;variant:string};

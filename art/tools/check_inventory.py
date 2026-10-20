@@ -343,6 +343,24 @@ def validate(root):
                 assert original['id'] in by_id and by_id[original['id']]['sha256'] == original['sha256'], aid + ': edit input identity changed'
             prompt_file, key = receipt['promptReference'].split('#')
             assert json.loads((root / prompt_file).read_text())['prompts'][key], aid + ': missing exact generation prompt'
+    adventure_path = root / 'art/redesign/idle-adventure.json'
+    adventure_bytes = 0
+    if adventure_path.exists():
+        adventure = json.loads(adventure_path.read_text())
+        assert adventure['format'] == 'chenyuan-idle-adventure' and adventure['version'] == 1
+        assert adventure['maxNativeBytes'] == 45000 and adventure['userAcceptance'] is False
+        assert [r['path'] for r in adventure['files']] == ['web/src/AdventurePlanner.vue', 'web/src/BattleStrategy.vue', 'web/src/AdventureHistory.vue', 'web/src/adventure-view.ts', 'web/src/idle-adventure.css']
+        for row in adventure['files']:
+            raw = (root / row['path']).read_bytes()
+            assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Adventure UI identity changed'
+            adventure_bytes += len(raw)
+        assert adventure_bytes <= 45000, 'Adventure UI budget exceeded'
+        for ref in adventure['sourceReferences']:
+            assert (root / ref).resolve().is_relative_to(root) and (root / ref).is_file()
+        for path, fragments in adventure['bindings'].items():
+            assert all(fragment in (root / path).read_text() for fragment in fragments), 'Adventure consumer missing'
+    else:
+        assert not (root / 'web/src/idle-adventure.css').exists(), 'Unrecorded adventure UI'
     kit = by_id['native-ui-kit']
     if kit['status'] in {'production', 'reviewed'}:
         assert kit['bytes'] + sum(c['bytes'] for c in kit.get('codeComponents', [])) <= 80000 and kit['targetSpec']['maxSymbols'] == 40, 'Native UI budget changed'
@@ -360,7 +378,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

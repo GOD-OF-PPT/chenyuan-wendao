@@ -3,14 +3,14 @@ import {computed,nextTick,onMounted,onScopeDispose,ref,shallowRef,watch} from 'v
 import type {useGame} from './store';
 import type {Game} from '../../src/full/types.ts';
 import type {Observation} from './local-events';
-import {createActionFeedbackTracker,type ActionNotice} from './action-feedback';
+import {activityFeedbackObservation,createActionFeedbackTracker,type ActionNotice} from './action-feedback';
 import GameIcon from './GameIcon.vue';
-const props=defineProps<{store:ReturnType<typeof useGame>;reduceMotion:boolean;viewKey:string}>();
+const props=defineProps<{store:ReturnType<typeof useGame>;reduceMotion:boolean;viewKey:string;playfieldActive:boolean}>();
 const root=ref<HTMLElement>(),notice=shallowRef<ActionNotice|null>(null),observation=shallowRef<Observation|null>(null),before=shallowRef<Game|null>(null),state=ref('idle');
 const media=window.matchMedia('(prefers-reduced-motion: reduce)'),systemReduced=ref(media.matches),reduced=computed(()=>props.reduceMotion||systemReduced.value),tracker=createActionFeedbackTracker();
 const point=ref({x:innerWidth/2,y:innerHeight/2}),floats=ref<{x:number;y:number;value:number;label:string;target:'player'|'enemy'}[]>([]),showMotion=ref(false);
 type Activation={element:HTMLElement;at:number;epoch:number;run:string;revision:number;enemy:{x:number;y:number}|null};
-let last:Activation|null=null,pending:Activation|null=null,epoch=0,generation=0,timer:ReturnType<typeof setTimeout>|undefined,stop=()=>{},lastFailure='',noticeEpoch=0;
+let last:Activation|null=null,pending:Activation|null=null,epoch=0,generation=0,timer:ReturnType<typeof setTimeout>|undefined,stop=()=>{},lastFailure='';
 const marks=new Map<HTMLElement,{timer:ReturnType<typeof setTimeout>|undefined;className:string}>();
 function center(element:Element|null){if(!element)return null;const r=element.getBoundingClientRect();return r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight?{x:r.x+r.width/2,y:r.y+r.height/2}:null;}
 function visible(selector:string){return [...document.querySelectorAll(selector)].find(e=>center(e))??null;}
@@ -29,9 +29,9 @@ watch(()=>[observation.value,props.store.busy,props.store.saved,props.store.avai
  const store=props.store;if(store.busy)return;
  unmarkPending();
  if(store.error){const key=JSON.stringify([observation.value?.commandId,store.error]);if(key!==lastFailure){clear();lastFailure=key;state.value='error';mark(pending?.element??null,'command-error');timer=setTimeout(()=>{state.value='idle';},1400);}return;}
- const next=tracker.consume(observation.value,store.game,store.lastResult,store.lastReplayed,store.saved&&store.available,before.value);if(!next){if(state.value==='pending')state.value='idle';return;}if(store.lastFromActivity||document.hidden){state.value='idle';return;}
+ const next=tracker.consume(activityFeedbackObservation(observation.value,store.activity,store.lastResult),store.game,store.lastResult,store.lastReplayed,store.saved&&store.available,before.value);if(!next){if(state.value==='pending')state.value='idle';return;}if(store.lastFromActivity&&(!props.playfieldActive||next.family!=='battle')||document.hidden){state.value='idle';return;}
  const owner=++generation,origin=pending;await nextTick();await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));if(owner!==generation||store.busy||store.error||document.hidden)return;
- notice.value=next;noticeEpoch=epoch;state.value='success';mark(origin?.element??null,'command-success');
+ notice.value=next;state.value='success';mark(origin?.element??null,'command-success');
  const blocked=!!document.querySelector('dialog[open]'),fresh=!origin||origin.epoch===epoch;
  const selector=next.family==='battle'&&!next.terminal?(next.variant.endsWith('guard')||next.variant.endsWith('heal')||next.variant.endsWith('restore')?'.character-portrait':'.enemy-art'):next.family==='equipment'?'.character-portrait':next.family==='recovery'?'.character-portrait':'.hub-stage,.center-column .scene,[data-primary-region]';
  const at=center(visible(selector))??center(origin?.element??null)??{x:innerWidth/2,y:innerHeight*.38};point.value={x:Math.max(110,Math.min(innerWidth-110,at.x)),y:Math.max(150,Math.min(innerHeight-150,at.y))};
@@ -41,7 +41,7 @@ watch(()=>[observation.value,props.store.busy,props.store.saved,props.store.avai
  if(showMotion.value&&next.family==='travel'){const scene=visible('.scene-image');if(scene instanceof HTMLElement)mark(scene,'scene-arrival',650);}
  if(timer)clearTimeout(timer);timer=setTimeout(()=>{notice.value=null;showMotion.value=false;floats.value=[];state.value='idle';},1600);
 });
-watch(()=>props.viewKey,()=>{if(notice.value&&epoch!==noticeEpoch)clear();});
+watch([()=>props.viewKey,()=>props.playfieldActive],clear);
 watch(reduced,value=>{if(value){showMotion.value=false;floats.value=[];}});
 onMounted(()=>{stop=props.store.observe(value=>observation.value=value);document.addEventListener('pointerdown',pointer,true);document.addEventListener('click',click,true);document.addEventListener('visibilitychange',hidden);document.addEventListener('keydown',keyIntent,true);media.addEventListener('change',mediaChange);});
 onScopeDispose(()=>{clear();stop();document.removeEventListener('pointerdown',pointer,true);document.removeEventListener('click',click,true);document.removeEventListener('visibilitychange',hidden);document.removeEventListener('keydown',keyIntent,true);media.removeEventListener('change',mediaChange);for(const [element,item]of marks){clearTimeout(item.timer);element.classList.remove(item.className);element.removeAttribute('data-command-state');}marks.clear();});

@@ -1,5 +1,5 @@
 /* Receipt-bound, short-lived effects. No layer receives input or changes layout. */
-.action-feedback-layer{position:fixed;inset:0;z-index:14;pointer-events:none}
+.action-feedback-layer{position:fixed;inset:0;z-index:14;pointer-events:none;overflow:hidden}
 .app-shell.art-theme .interaction-press{filter:brightness(1.08);outline:1px solid #b5ddba;outline-offset:-3px}
 .app-shell.art-theme .command-pending{box-shadow:inset 0 0 0 2px #b9cb84,0 0 14px #a4c99466!important;animation:command-ink .85s ease-in-out infinite alternate}
 .app-shell.art-theme .command-success{animation:command-done .85s ease-out;outline:2px solid #acd9ac;outline-offset:2px}
