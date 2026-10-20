@@ -1,7 +1,7 @@
 {
   "task": "Goal3 U2-I",
   "date": "2026-10-20",
-  "status": "local scoped checks passed; commit and preview binding pending",
+  "status": "local implementation committed, checked and served on original preview; human acceptance pending",
   "scope": "Online cultivation; fixed 1440x900 Chromium only. No compatibility, balance or human acceptance.",
   "runtimeDigest": "b26d8263cb806f615ccc51b01e334629738480e009a02a34c320c6d26b7a63ba",
   "runtimeFiles": 156,
@@ -134,9 +134,34 @@
     "mp": "20/20"
   },
   "delivery": {
-    "pending": true,
-    "oldFrozenDirectory": "artifacts/goal-3/u1/preview-d02a8325/web",
-    "origin": "http://127.0.0.1:56884/"
+    "implementation": "dec8e129105a728dda25bc3c7b0ee7d4e835c81f",
+    "runtimeDigest": "b26d8263cb806f615ccc51b01e334629738480e009a02a34c320c6d26b7a63ba",
+    "runtimeFiles": 156,
+    "payloadFiles": 56,
+    "bytes": 7009245,
+    "frozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u2-i/preview-b26d8263/web",
+    "committedSourcesMatchTestedBuild": true,
+    "distAndFrozenFilesMatch": true,
+    "cleanCandidateRebuild": false,
+    "previewPid": 98375,
+    "httpFilesMatch": true,
+    "origin": "http://127.0.0.1:56884/",
+    "oldFrozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u1/preview-d02a8325/web",
+    "userProgressAfter": {
+      "realm": "凡人",
+      "xp": "5/10",
+      "stones": 40,
+      "months": 1,
+      "hp": "60/60",
+      "mp": "20/20"
+    },
+    "userGameActionsPerformed": false,
+    "readOnlyUserScreenshot": {
+      "path": "artifacts/goal-3/u2-i/user-preview.png",
+      "sha256": "9b8125512a974775d5d58182b2b542951c9a00a4d4fe926adca577f8a6977952"
+    },
+    "pushed": false,
+    "newPullRequest": false
   },
   "rollback": "Retain v4 database readability and activity/raw archives. Do not downgrade database or switch upgraded storage to old v3 application."
 }
