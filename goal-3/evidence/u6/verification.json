@@ -1,7 +1,7 @@
 {
   "task": "Goal3 U6",
   "date": "2026-10-21",
-  "status": "engineering verified; local commit and preview delivery pending",
+  "status": "current independent U6 delivered locally; overall Goal, long-term balance and human/art acceptance pending",
   "base": "c2c758af803203477f017ceec75959d3e63561d9",
   "branch": "codex/goal-3-idle-adventure",
   "runtimeDigest": "31df43c33aeb3983e6dea76f5454a502bf00ca2c3bd51a716f963dc3e71a03d6",
@@ -425,8 +425,8 @@
   "nativeGoal": "Previously blocked per supplied heartbeat; unchanged, no reset/recreate or active/complete claim.",
   "continuation": "Existing automation-3; finish U6 only, next independent U7 and CHECK-IDLE-02 afterwards.",
   "delivery": {
-    "implementation": null,
-    "previewUpdated": false,
+    "implementation": "4b8cd67c78bee6fee64b766eb869ad87d92bf2c0",
+    "previewUpdated": true,
     "userGameActionsPerformed": false,
     "pushed": false,
     "newPullRequest": false,
@@ -435,6 +435,57 @@
     "origin": "http://127.0.0.1:56884/",
     "oldFrozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u5/preview-1a6b5130/web",
     "cleanCandidateRebuild": false,
-    "testedBuildMetadata": "Generated before implementation commit at c2c758a with dirty=true; do not rewrite metadata as clean. Git-archive byte proof follows local commit."
+    "testedBuildMetadata": "Generated before implementation commit at c2c758a with dirty=true; do not rewrite metadata as clean. Git-archive byte proof follows local commit.",
+    "runtimeDigest": "31df43c33aeb3983e6dea76f5454a502bf00ca2c3bd51a716f963dc3e71a03d6",
+    "runtimeFiles": 176,
+    "gitArchiveMatchesTestedSources": true,
+    "workingRuntimeUnchanged": true,
+    "payloadFiles": 56,
+    "bytes": 7188022,
+    "distAndFrozenMatch": true,
+    "frozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u6/preview-31df43c3/web",
+    "testedBuildMetadataPreserved": {
+      "head": "c2c758af803203477f017ceec75959d3e63561d9",
+      "source": "c2c758af803203477f017ceec75959d3e63561d9",
+      "tree": "ac5a9b45800ecf81a1d97d728235b13d3e4f2a3e",
+      "dirty": true,
+      "node": "v24.19.0",
+      "npm": "8.11.0",
+      "npmOnPath": "8.11.0"
+    },
+    "previewPid": 3864,
+    "oldPreviewPid": 80343,
+    "oldPreviewCommand": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python /Users/gordon/githome/chenyuan-wendao/scripts/candidate/serve.py --directory /Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u5/preview-1a6b5130/web --port 56884",
+    "httpFilesMatch": true,
+    "httpFiles": 56,
+    "userProgressBefore": {
+      "name": "顾长青",
+      "realm": "凡人",
+      "xp": "5/10",
+      "stones": 40,
+      "months": 1,
+      "hp": "60/60",
+      "mp": "20/20"
+    },
+    "userProgressAfterPending": false,
+    "userProgressAfter": {
+      "name": "顾长青",
+      "realm": "凡人",
+      "xp": "5/10",
+      "stones": 40,
+      "months": 1,
+      "hp": "60/60",
+      "mp": "20/20"
+    },
+    "visibleProgressComparison": "CUA accessibility snapshot before and after reload; no export/import/reset/restore/Game action, not a serialized full-save byte comparison",
+    "userBeforeScreenshot": "artifacts/goal-3/u6/user-before.png",
+    "userAfterScreenshot": "artifacts/goal-3/u6/user-after.png",
+    "userBeforeScreenshotSha256": "a0f061213754a84201c8a310f7b364eb57060cc273ad3f72a49b5652d6e6a7fe",
+    "userAfterScreenshotSha256": "807f19ec97076bed1383e7a437c315ca870ab9eef9df9c6ba1df650704610f48",
+    "committedSourcesMatchTestedBuild": true,
+    "deliveryProof": "artifacts/goal-3/u6/delivery-proof.json",
+    "deliveryProofSha256": "c2b5b9dd420dabdcc85fa8b0343e76d1347ea950098399545509feb2e1311fdb",
+    "httpVerificationPending": false,
+    "userVisibleProgressUnchanged": true
   }
 }
