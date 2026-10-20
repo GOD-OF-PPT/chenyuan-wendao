@@ -120,13 +120,13 @@
     },
     {
       "path": "web/src/StageOutcome.vue",
-      "bytes": 3320,
-      "sha256": "193862ae119aaf89ad6fc0ad651fa87fcf0662930859f5deef837bc680753f0b"
+      "bytes": 3492,
+      "sha256": "cd38dd23845202a40b4913b5b164de9312598d65f1d7b6fc5fda5fa9762b56af"
     },
     {
       "path": "web/src/catalogue-art.css",
-      "bytes": 7498,
-      "sha256": "e9e2ed19af29408401d8806d83aaeb730239d167daa31dbd2df2d26df30d903a"
+      "bytes": 9781,
+      "sha256": "0061f945b8596784db97caabee2fa1ed8a74f96e156081b2a7cfdd3774699fa5"
     }
   ],
   "bindings": {

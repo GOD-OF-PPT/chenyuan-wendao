@@ -31,3 +31,16 @@
 }
 
 @media(min-width:480px) and (max-width:1099px){.single-screen .hub-current .battle-supplies .inline-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}}
+
+/* The full budget is a readable action decision, shared with the main stage batch. */
+.cultivation-budget{grid-template-columns:minmax(0,1fr)}.cultivation-budget>article{gap:6px!important}.cultivation-budget .batch-preview{margin:0;padding:0;border:0;background:transparent!important}.cultivation-budget .batch-preview small{margin-top:3px}.cultivation-budget>article>button{margin-top:auto;min-height:44px}.cultivation-catalogue>.catalogue-tabs{flex:none}
+
+/* Native inputs keep their keyboard semantics and a real 44px hit area. */
+.app-shell.art-theme .play-catalogue :is(select,input[type=number]){color-scheme:dark;accent-color:#b8d9b3;border-color:#719a87!important;border-radius:8px 2px;box-shadow:inset 0 0 0 2px #0c293444}
+.app-shell.art-theme .play-catalogue label:has(input[type=checkbox]){display:inline-flex;align-items:center;gap:4px;min-height:44px;cursor:pointer;color:#d5e3ca;font-size:calc(14px * var(--font-scale,1))}
+.app-shell.art-theme .play-catalogue input[type=checkbox]{appearance:none;position:relative;display:inline-block;flex:none;width:44px;height:44px;min-height:44px;margin:0;padding:0;border:0!important;background:transparent!important;box-shadow:none;cursor:pointer}
+.app-shell.art-theme .play-catalogue input[type=checkbox]::before{content:'';position:absolute;inset:11px;border:1px solid #9cba94;border-radius:5px 1px;background:linear-gradient(145deg,#254e49,#12333b);box-shadow:inset 0 0 0 2px #12303a}
+.app-shell.art-theme .play-catalogue input[type=checkbox]::after{content:'';position:absolute;left:18px;top:13px;width:8px;height:14px;border-right:2px solid #d4edc6;border-bottom:2px solid #d4edc6;transform:rotate(45deg) scale(0)}
+.app-shell.art-theme .play-catalogue input[type=checkbox]:checked::after{transform:rotate(45deg) scale(1)}
+.app-shell.art-theme .play-catalogue input[type=checkbox]:hover::before{border-color:#d4dfb6;box-shadow:0 0 12px #9bd1ac44,inset 0 0 0 2px #12303a}
+@media(min-width:1100px){.single-screen .catalogue-gallery{background:linear-gradient(140deg,#173b3fe8,#102e35d9)!important}.single-screen .catalogue-gallery>.catalogue-grid{align-content:center}.single-screen .catalogue-gallery>.catalogue-art{top:88px}.single-screen .catalogue-art-halo{background:radial-gradient(ellipse,#79b29b33,transparent 68%)}}

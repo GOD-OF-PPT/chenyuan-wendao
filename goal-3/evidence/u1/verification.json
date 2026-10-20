@@ -1,0 +1,83 @@
+{
+  "task": "Goal3 T02-U1",
+  "status": "local implementation checked; user acceptance pending",
+  "scope": "Fixed 1440x900 Chromium functionality only; no compatibility or balance checks",
+  "runtimeDigest": "d02a8325f9b8df4a1e1ac055ec70ccbac4d1d350387ef5ca5c177a825e6cdc3d",
+  "files": 56,
+  "bytes": 6975340,
+  "functional": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "raw": "artifacts/goal-3/u1/accepted.json",
+    "sha256": "0f930d1301a497b6d650aba2f488ef1102fe57810cbe7cddef100337c8bbc048"
+  },
+  "ruleTests": 5,
+  "assetTests": 79,
+  "originalFailures": [
+    "artifacts/goal-3/u1/red.json",
+    "artifacts/goal-3/u1/recovery-title-red.json"
+  ],
+  "screenshots": [
+    {
+      "path": "goal-3/evidence/u1/spirit-preparation-primary.png",
+      "sha256": "7805fd0ed583a4a7426548ee76b2f4bef6c9630b4ac1bfe73a66ca767d17c63e",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u1/breakthrough-ready.png",
+      "sha256": "88e20faff4fe323322de8d5ce77b098ee67246d6ff73481587bca268beab1e4a",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u1/recovered.png",
+      "sha256": "0269640f17bc65b1f7eeacf8c03d87f2c978b54e79299f4eb0e979863dd9c901",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u1/cave.png",
+      "sha256": "f58a03494080a587269c6a693745882ef0989823f3f8fe26ec8ec2db066e6a54",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/u1/foundation-preparation.png",
+      "sha256": "50b87f53d7810acf470d4abb3ff2d10da2f8056a19483c13f5f52e1c6b1b9e56",
+      "dimensions": [
+        1440,
+        900
+      ]
+    }
+  ],
+  "notDone": [
+    "periodic idle gameplay",
+    "growth balancing",
+    "compatibility",
+    "complete matrix",
+    "clean candidate reproduction",
+    "user acceptance"
+  ],
+  "userPreviewBefore": {
+    "realm": "凡人",
+    "xp": "5/10",
+    "stones": 40,
+    "months": 1
+  },
+  "delivery": null,
+  "stillCheck": {
+    "passed": 1,
+    "raw": "artifacts/goal-3/u1/still.json",
+    "purpose": "Capture the settled scene after the normal short action effect"
+  }
+}
