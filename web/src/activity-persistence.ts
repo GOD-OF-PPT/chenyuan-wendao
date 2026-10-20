@@ -5,6 +5,7 @@ import type { Activity, ActivityMutation, ActivityPlan, ActivityTick } from '../
 import type { ActionResult } from '../../src/full/contracts.ts';
 import type { Command, Game } from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
+import { costsForAction } from '../../src/full/costs.ts';
 
 export type ActivityReceiptInput =
   | { kind: 'START'; plan: ActivityPlan; mutation: ActivityMutation }
@@ -43,11 +44,12 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
         fingerprint: fingerprint(value.command), result: value.result };
       validateCommandReceipt(receipt, current);
       const command = receipt.command;
-      const expected: Command = activity.version === 2 ? { type: 'SOURCE', sourceId: activity.plan.sourceId, count: 1,
-        ...(activity.plan.target?.kind === 'item' ? { target: { item: activity.plan.target.id, quantity: activity.plan.target.quantity } } : {}),
-        commandId: input.tick.commandId, runId: input.tick.runId, expectedRevision: input.tick.expectedRevision } :
-        { type: 'CULTIVATE', method: activity.plan.method, count: 1,
-          commandId: input.tick.commandId, runId: input.tick.runId, expectedRevision: input.tick.expectedRevision };
+      const identity = { commandId: input.tick.commandId, runId: input.tick.runId, expectedRevision: input.tick.expectedRevision };
+      const expected: Command = activity.version === 1 ? { type: 'CULTIVATE', method: activity.plan.method, count: 1, ...identity } :
+        activity.version === 2 ? { type: 'SOURCE', sourceId: activity.plan.sourceId, count: 1,
+          ...(activity.plan.target?.kind === 'item' ? { target: { item: activity.plan.target.id, quantity: activity.plan.target.quantity } } : {}), ...identity } :
+        activity.version === 3 ? { type: 'CRAFT', recipeId: activity.plan.recipeId, ...identity } :
+          { type: 'FORGE', relic: activity.plan.relicId, ...identity };
       if (fingerprint(command) !== fingerprint(expected) || activity.id !== input.tick.activityId ||
           activity.ownerId !== input.tick.ownerId || activity.generation !== input.tick.generation || activity.completedCycles < 1 ||
           command.commandId !== `cycle:${activity.id}:${activity.generation}:${activity.completedCycles}` ||
@@ -59,10 +61,21 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
         if (fingerprint(result.costs) !== fingerprint({ stones: 0, mp: 0, months: source.months, items: {} }) ||
             delta.stones !== source.stones || fingerprint(delta.inventory) !== fingerprint(source.items) ||
             delta.xp < 0 || delta.xp > source.xp) invalid();
-      } else {
+      } else if (activity.version === 1) {
         const stones = activity.plan.method === 'assisted' ? C.assistedCosts[activity.realm] : C.cultivation.natural.stones;
         if (fingerprint(result.costs) !== fingerprint({ stones, mp: 0, months: C.cultivation[activity.plan.method].months, items: {} }) ||
             delta.stones !== -stones || Object.keys(delta.inventory).length !== 0 || delta.xp < 1) invalid();
+      } else {
+        const costs = costsForAction(current, expected), inventory: Record<string, number> = {};
+        for (const [id, quantity] of Object.entries(costs.items)) inventory[id] = -quantity;
+        if (activity.version === 3) {
+          const output = C.recipes[activity.plan.recipeId].output;
+          inventory[output] = (inventory[output] ?? 0) + 1;
+          if (inventory[output] === 0) delete inventory[output];
+        } else if (!current.ownedRelics.includes(activity.plan.relicId) ||
+            activity.gameRevision === current.core.revision && current.loadout.relic !== activity.relicBefore) invalid();
+        if (fingerprint(result.costs) !== fingerprint(costs) || delta.stones !== -costs.stones || delta.xp !== 0 ||
+            fingerprint(delta.inventory) !== fingerprint(inventory)) invalid();
       }
     } else {
       if (value.command !== null || value.result !== null || activity.gameRevision !== intent.expectedRevision || activity.ownerId !== input.mutation.ownerId) invalid();

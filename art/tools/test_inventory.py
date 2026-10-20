@@ -43,6 +43,8 @@ class InventoryTests(unittest.TestCase):
   if idle.exists():files.update(ROOT/ref for ref in json.loads(idle.read_text())['sourceReferences'])
   source_ui=ROOT/'art/redesign/idle-sources.json'
   if source_ui.exists():files.update(ROOT/ref for ref in json.loads(source_ui.read_text())['sourceReferences'])
+  production_ui=ROOT/'art/redesign/idle-production.json'
+  if production_ui.exists():files.update(ROOT/ref for ref in json.loads(production_ui.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -74,6 +76,14 @@ class InventoryTests(unittest.TestCase):
   self.write('web/src/SourcePlanner.vue','');self.rejected()
  def test_source_ui_requires_live_consumer(self):
   p='web/src/ExplorePanel.vue';self.write(p,(self.root/p).read_text().replace('<SourcePlanner ','<RemovedPlanner '));self.rejected()
+ def test_production_ui_requires_ledger(self):
+  (self.root/'art/redesign/idle-production.json').unlink();self.rejected()
+ def test_production_ui_cannot_expand_cap(self):
+  p='art/redesign/idle-production.json';d=json.loads((self.root/p).read_text());d['maxNativeBytes']=26001;self.write(p,d);self.rejected()
+ def test_production_ui_rejects_modified_sources(self):
+  self.write('web/src/ProductionPlanner.vue','');self.rejected()
+ def test_production_ui_requires_actual_consumer(self):
+  p='web/src/GoodsPanel.vue';self.write(p,(self.root/p).read_text().replace('<ProductionPlanner ','<RemovedPlanner '));self.rejected()
  def test_digest_corruption_is_rejected(self):self.asset('scene-secret')['sha256']='0'*64;self.rejected()
  def test_false_dimensions_are_rejected(self):self.asset('portrait-player')['dimensions']['width']=999;self.rejected()
  def test_parent_hash_cannot_be_relabelled(self):self.asset('scene-wilderness')['originalHash']='0'*64;self.rejected()

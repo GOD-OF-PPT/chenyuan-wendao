@@ -250,6 +250,24 @@ def validate(root):
             assert all(fragment in (root / path).read_text() for fragment in fragments), 'Source UI consumer missing'
     else:
         assert not (root / 'web/src/idle-sources.css').exists(), 'Unrecorded source UI'
+    production_ui_path = root / 'art/redesign/idle-production.json'
+    production_ui_bytes = 0
+    if production_ui_path.exists():
+        production_ui = json.loads(production_ui_path.read_text())
+        assert production_ui['format'] == 'chenyuan-idle-production' and production_ui['version'] == 1
+        assert production_ui['maxNativeBytes'] == 26000 and production_ui['userAcceptance'] is False
+        assert [row['path'] for row in production_ui['files']] == ['web/src/ProductionPlanner.vue', 'web/src/idle-production.css', 'web/src/activity-view.ts']
+        for row in production_ui['files']:
+            raw = (root / row['path']).read_bytes()
+            assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Production UI identity changed'
+            production_ui_bytes += len(raw)
+        assert production_ui_bytes <= 26000, 'Production UI budget exceeded'
+        for ref in production_ui['sourceReferences']:
+            assert (root / ref).resolve().is_relative_to(root) and (root / ref).is_file()
+        for path, fragments in production_ui['bindings'].items():
+            assert all(fragment in (root / path).read_text() for fragment in fragments), 'Production UI consumer missing'
+    else:
+        assert not (root / 'web/src/idle-production.css').exists(), 'Unrecorded production UI'
     budgets = manifest['budget']
     for category, key in [('scene', 'sceneMasters'), ('portrait', 'portraits'), ('ui_kit', 'uiKits'), ('fx_kit', 'fxKits')]:
         assert sum(a['category'] == category for a in manifest['assets']) == budgets[key], 'Budget slots drift: ' + category
@@ -322,7 +340,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

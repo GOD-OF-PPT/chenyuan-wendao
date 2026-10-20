@@ -201,7 +201,7 @@ export const useGame = defineStore('game', () => {
   }
   async function actPrepared(input: Command) {
     if (!repository) return;
-    if(input.type==='CULTIVATE'||input.type==='SOURCE'){activityNotice.value='请安排活动，按周期积累。';return;}
+    if(input.type==='CULTIVATE'||input.type==='SOURCE'||input.type==='CRAFT'||input.type==='FORGE'){activityNotice.value='请安排活动，按周期积累。';return;}
     if(activityRunning.value){activityNotice.value='当前活动正在进行，请先暂停再行动。';return;}
     const command = structuredClone({ ...input });
     await write(() => repository!.execute(command), command.commandId,{kind:'action',command});

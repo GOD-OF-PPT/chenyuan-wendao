@@ -11,7 +11,7 @@ import { activityReceipt, validateActivityReceipt, type ActivityReceiptInput } f
 export type { ActivityMutation, ActivityOutcome, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
 
 export const FULL_DB_NAME = 'chenyuan-playable-v1';
-export const FULL_DB_VERSION = 5;
+export const FULL_DB_VERSION = 6;
 export const FULL_STATE_STORE = 'full-state';
 export const FULL_RECEIPT_STORE = 'full-receipts';
 export const FULL_BACKUP_STORE = 'full-backups';
@@ -706,7 +706,9 @@ export class FullSaveRepository {
                 if (receipt.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一指令编号对应不同内容');
                 complete({ state: current, result: receipt.result, replayed: true }); return;
               }
-              if (command.type === 'CULTIVATE' || command.type === 'SOURCE') throw new RuleError('ACTIVITY_REQUIRED', '请安排修炼或取材活动，按完整周期逐次积累');
+              if (command.type === 'CULTIVATE' || command.type === 'SOURCE' || command.type === 'CRAFT' || command.type === 'FORGE') {
+                throw new RuleError('ACTIVITY_REQUIRED', '请安排修炼、取材或生产活动，按完整周期逐次积累');
+              }
               if (activity?.status === 'running') throw new RuleError('ACTIVITY_RUNNING', '先暂停当前活动，再执行其他行动');
               const outcome = resolve(current, command);
               state.put(current, 'previous'); state.put(outcome.nextState, 'current');

@@ -3,6 +3,9 @@ import { computed, ref, watch } from 'vue';
 import GameIcon from './GameIcon.vue';
 import CataloguePager from './CataloguePager.vue';
 import CatalogueArt from './CatalogueArt.vue';
+import ProductionPlanner from './ProductionPlanner.vue';
+import type {Activity,CraftPlan,ForgePlan} from '../../src/full/activity.ts';
+import type {useGame} from './store';
 import {pageSlice} from './play-flow';
 import * as C from '../../src/full/content.ts';
 import { stats } from '../../src/full/engine.ts';
@@ -12,8 +15,8 @@ import type { TrackingTarget } from '../../src/full/goals.ts';
 import { formatCosts } from './presentation';
 import type { NavigationRequest } from './navigation';
 
-const props = defineProps<{ game: Game; enabled: boolean; busy: boolean; highlight: string; catalogue?:'skills'|'relics'; consumption: (action: Action) => string }>();
-const emit = defineEmits<{ act: [Action]; track: [TrackingTarget]; navigate: [NavigationRequest] }>();
+const props = defineProps<{ game: Game; enabled: boolean; busy: boolean; highlight: string; catalogue?:'skills'|'relics'; running:boolean; activity:Activity|null; runtime:ReturnType<typeof useGame>['activityRuntime']; savedProduction:CraftPlan|ForgePlan|null; consumption: (action: Action) => string }>();
+const emit = defineEmits<{ act: [Action]; track: [TrackingTarget]; navigate: [NavigationRequest]; start:[CraftPlan|ForgePlan]; move:[CraftPlan|ForgePlan] }>();
 const section=ref(props.catalogue==='relics'?'relics':props.game.school?'skills':'school'),page=ref(0);
 const filter = ref<'current' | 'all' | C.School>('current'), future = ref(false);
 const slots = { mind: '心法', builder: '起手术法', finisher: '终结术法' } as const;
@@ -23,17 +26,13 @@ function quote(action: Action) {
   if (!current.cache.has(key)) current.cache.set(key, previewAction(current.game, action));
   return current.cache.get(key)!;
 }
-const can = (action: Action) => props.enabled && !props.busy && quote(action).allowed;
-const why = (action: Action) => !props.enabled ? '存储尚未就绪，请先恢复存档连接' : props.busy ? '当前行动进行中，请稍候' : quote(action).failure?.message ?? '';
+const can = (action: Action) => props.enabled && !props.busy && !props.running && quote(action).allowed;
+const why = (action: Action) => !props.enabled ? '存储尚未就绪，请先恢复存档连接' : props.busy ? '当前行动进行中，请稍候' : props.running ? '当前活动进行中，请先暂停再行动' : quote(action).failure?.message ?? '';
 const details = computed(() => stats(props.game));
 const skills = computed(() => Object.entries(C.skills).filter(([id, skill]) =>
   (filter.value === 'all' || skill.school === (filter.value === 'current' ? props.game.school : filter.value) || filter.value === 'current' && !props.game.school) &&
   (future.value || props.game.learned.includes(id) || C.rank(skill.min) <= C.rank(props.game.core.player.realm))));
-const relics = computed(() => Object.entries(C.relics).filter(([id]) => {
-  const min = quote({ type: 'FORGE', relic: id }).requirements.minRealm;
-  return future.value || props.game.ownedRelics.includes(id) || !min || C.rank(min) <= C.rank(props.game.core.player.realm);
-}));
-const skillPage=computed(()=>pageSlice(skills.value,page.value,1)),relicPage=computed(()=>pageSlice(relics.value,page.value,1));
+const skillPage=computed(()=>pageSlice(skills.value,page.value,1));
 watch(section,()=>page.value=0,{flush:'sync'});watch([filter,future],()=>page.value=0,{flush:'sync'});
 watch(()=>props.catalogue,value=>{section.value=value==='relics'?'relics':props.game.school?'skills':'school';page.value=0;});
 watch(() => props.game.core.runId, () => { filter.value = 'current'; future.value = false;page.value=0;section.value=props.game.school?'skills':'school'; });
@@ -49,16 +48,15 @@ watch(() => props.highlight, id => {
     section.value='relics';const relicId=id.replace(/^(forge-|equip-relic-)/,'');
     const min = quote({ type: 'FORGE', relic: relicId }).requirements.minRealm;
     if (min && C.rank(min) > C.rank(props.game.core.player.realm)) future.value = true;
-    page.value=Math.max(0,relics.value.findIndex(([key])=>key===relicId));
   }
   if(id==='study-manual')section.value='manual';
 },{immediate:true});
 </script>
 
 <template>
-  <section class="paper equipment-panel play-catalogue equipment-catalogue catalogue-gallery" data-testid="equipment-panel" tabindex="-1" aria-label="功法与法宝">
-    <CatalogueArt kind="study"/>
-    <div class="section-label">功法与法宝 <span>研习与装备分别确认</span></div>
+  <section class="paper equipment-panel play-catalogue equipment-catalogue" :class="{'catalogue-gallery':section!=='relics'}" data-testid="equipment-panel" tabindex="-1" aria-label="功法与法宝">
+    <CatalogueArt v-if="section!=='relics'" kind="study"/>
+    <div v-if="section!=='relics'" class="section-label">功法与法宝 <span>研习与装备分别确认</span></div>
     <div v-show="section==='summary'" class="loadout-summary">
       <div v-for="(label,slot) in slots" :key="slot"><small>{{label}} · 1槽</small><strong :data-testid="`loadout-${slot}`">{{game.loadout[slot] ? C.skills[game.loadout[slot]!].name : '尚未择法'}}</strong></div>
       <div><small>本命法宝 · 1槽</small><strong data-testid="loadout-relic">{{game.loadout.relic ? C.relics[game.loadout.relic].name : '尚未装备'}}</strong></div>
@@ -78,7 +76,7 @@ watch(() => props.highlight, id => {
       </div>
       <div class="equipment-actions"><button data-testid="study-manual" :class="{highlight:highlight==='study-manual'}" @click="emit('act',{type:'STUDY',manual:'jinghong'})" :disabled="!can({type:'STUDY',manual:'jinghong'})">{{game.core.learnedSkills.includes(C.swordManual.id)?'已研读':'付费研读'}}</button><button v-if="game.core.world.location!=='sect' && !game.core.learnedSkills.includes(C.swordManual.id)" class="text-button" data-testid="go-study-manual" @click="emit('navigate',{location:'sect',tab:'修行',focusId:'study-manual'})" :disabled="!can({type:'TRAVEL',location:'sect'})">前往青云宗 →</button></div>
     </article>
-    <div v-if="section==='skills'||section==='relics'" class="equipment-options"><label>查看修法 <select v-model="filter" aria-label="功法流派"><option value="current">当前修法</option><option value="sword">剑修</option><option value="talisman">符修</option><option value="all">全部</option></select></label><label><input type="checkbox" v-model="future" aria-label="显示后续功法法宝"> 显示后续境界</label></div>
+    <div v-if="section==='skills'" class="equipment-options"><label>查看修法 <select v-model="filter" aria-label="功法流派"><option value="current">当前修法</option><option value="sword">剑修</option><option value="talisman">符修</option><option value="all">全部</option></select></label><label><input type="checkbox" v-model="future" aria-label="显示后续功法法宝"> 显示后续境界</label></div>
     <p v-if="section==='skills'&&!skills.length" class="small">引气入体后可选择修法；在青云宗研习功法，战斗外逐槽装备。</p>
     <article v-for="[id,skill] in (section==='skills'?skillPage.rows:[])" :key="id" class="equipment-card" :data-testid="`skill-${id}`">
       <div><h3><GameIcon kind="skill" :id="id"/> {{skill.name}} <small>{{skill.school==='sword'?'剑修':'符修'}} · {{slots[skill.slot]}} · {{C.realms[skill.min].name}}</small></h3><p>{{skill.description}}</p>
@@ -92,19 +90,6 @@ watch(() => props.highlight, id => {
         <button class="text-button" :data-testid="`track-skill-${id}`" @click="emit('track',{kind:'skill',id})">查看筹备 →</button>
       </div>
     </article>
-    <CataloguePager v-if="section==='skills'" :page="skillPage.page" :pages="skillPage.pages" :total="skillPage.total" label="功法" @change="page=$event"/><p v-if="section==='relics'&&!relics.length" class="small">金丹后可在洞府炼制；可展开后续境界，提前查看材料和来源。</p>
-    <article v-for="[id,relic] in (section==='relics'?relicPage.rows:[])" :key="id" class="equipment-card" :data-testid="`relic-${id}`">
-      <div><h3><GameIcon kind="relic" :id="id"/> {{relic.name}}</h3><p>{{relic.description}}</p><small>炼制成本：{{formatCosts(quote({type:'FORGE',relic:id}).costs)}} · 洞府</small><small data-testid="forge-reason">{{why({type:'FORGE',relic:id})}}</small>
-        <small>{{game.ownedRelics.includes(id)?'已炼成，替换装备不会销毁其他已拥有法宝。':'炼成后再装备，效果以实际配装参与结算。'}}</small>
-        <small>{{consumption({type:'FORGE',relic:id})}}</small>
-      </div>
-      <div class="equipment-actions">
-        <button :data-testid="`forge-${id}`" :class="{highlight:highlight===`forge-${id}`}" @click="emit('act',{type:'FORGE',relic:id})" :disabled="!can({type:'FORGE',relic:id})">{{game.ownedRelics.includes(id)?'已炼成':'炼制法宝'}}</button>
-        <button :data-testid="`equip-relic-${id}`" :class="{selected:game.loadout.relic===id}" :aria-pressed="game.loadout.relic===id" @click="emit('act',{type:'EQUIP_RELIC',relic:id})" :disabled="!can({type:'EQUIP_RELIC',relic:id})">{{game.loadout.relic===id?'已装备':'装备法宝'}}</button>
-        <small data-testid="equip-relic-reason">{{why({type:'EQUIP_RELIC',relic:id})}}</small>
-        <button class="text-button" :data-testid="`track-relic-${id}`" @click="emit('track',{kind:'relic',id})">查看筹备 →</button>
-      </div>
-    </article>
-    <CataloguePager v-if="section==='relics'" :page="relicPage.page" :pages="relicPage.pages" :total="relicPage.total" label="法宝" @change="page=$event"/>
+    <CataloguePager v-if="section==='skills'" :page="skillPage.page" :pages="skillPage.pages" :total="skillPage.total" label="功法" @change="page=$event"/><ProductionPlanner v-if="section==='relics'" embedded mode="forge" :game="game" :busy="busy" :available="enabled" :running="running" :highlight="highlight" :saved-plan="savedProduction" :consumption="consumption" :activity="activity" :runtime="runtime" @start="emit('start',$event)" @track="emit('track',$event)" @act="emit('act',$event)" @travel="emit('move',$event)"/>
   </section>
 </template>
