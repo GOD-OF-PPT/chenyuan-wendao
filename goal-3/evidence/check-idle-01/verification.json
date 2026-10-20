@@ -1,0 +1,165 @@
+{
+  "task": "Goal3 CHECK-IDLE-01",
+  "date": "2026-10-21",
+  "status": "checked; implementation commit and preview delivery pending",
+  "base": "79d036636a66c20d1511b857e1fd833e80a25a31",
+  "runtimeDigest": "706e6948315f58ac87389921c6da99ad527f75c0363e3cf668c58d9e6e9abe37",
+  "runtimeFiles": 161,
+  "payloadFiles": 56,
+  "bytes": 7056804,
+  "reports": {
+    "ui": {
+      "raw": "artifacts/goal-3/check-idle-01/ui-accepted.json",
+      "sha256": "74722746d792cb637ad296cf7a15bca38727a0f94d818ce9f14778f734fffe17",
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "durationMs": 200212.728,
+      "runtimeDigest": "706e6948315f58ac87389921c6da99ad527f75c0363e3cf668c58d9e6e9abe37"
+    },
+    "persistence": {
+      "raw": "artifacts/goal-3/check-idle-01/storage-accepted.json",
+      "sha256": "f420625bc424fab3a315c98c40c8dfb216dca2be6106a68c8b3bad4db1ffe354",
+      "passed": 51,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "durationMs": 99784.12999999999,
+      "runtimeDigest": "706e6948315f58ac87389921c6da99ad527f75c0363e3cf668c58d9e6e9abe37"
+    }
+  },
+  "core": {
+    "passed": 452,
+    "raw": "artifacts/goal-3/check-idle-01/final-core.tap",
+    "sha256": "7257edbddf8614fce2335157015e1c6375482798284fc2bdf8c5c0a6306ac103",
+    "manifest": "artifacts/goal-3/check-idle-01/final-core-files.json",
+    "excluded": [
+      "4 unchanged candidate evidence tests requiring ~1.146GB temporary isolation",
+      "2 pre-existing untracked paused matrix tool test files"
+    ]
+  },
+  "assets": {
+    "passed": 91,
+    "raw": "artifacts/goal-3/check-idle-01/final-assets.log",
+    "sha256": "feb88562842262e003a80d9fa7336b3d6a4a99f100fa4053788b1d89bdefd40a",
+    "inventory": "artifacts/goal-3/check-idle-01/final-inventory.json",
+    "sharedNativeBytes": 18034,
+    "sharedMax": 22000,
+    "sourceNativeBytes": 10839,
+    "sourceMax": 24000,
+    "productionNativeBytes": 22906,
+    "productionMax": 26000,
+    "oldBudgetsUnchanged": true
+  },
+  "typecheck": {
+    "root": true,
+    "raw": "artifacts/goal-3/check-idle-01/final-typecheck.log",
+    "vueProductionBuild": true
+  },
+  "db": {
+    "version": 6,
+    "unchangedThisTask": true,
+    "repositoryDueAtGuardUnchanged": true,
+    "gameContentBalanceFormatsUnchanged": true
+  },
+  "fixed": [
+    "Saved cultivation inspection retains all legal plan parameters and distinguishes a new draft",
+    "Period/save/pause Game snapshots no longer reset source or production drafts",
+    "Owned relic equip follows formal battle/event/storage/activity gates with a visible reason",
+    "Full monotonic cycle then cancellable wall deadline; a transaction NOT_DUE waits only remainder using same tick; real storage errors remain visible/retryable"
+  ],
+  "newCoverage": {
+    "ui": 7,
+    "mixedIdb": 4,
+    "storeClock": 8,
+    "pureClock": 3,
+    "normalNewLifeFlow": "UI cultivation -> school -> explicit travel -> herbs/dew/core -> cultivate -> one foundation pill -> separate player breakthrough; complete cycle Game equality. Virtual clock for long path, not pacing acceptance."
+  },
+  "realClock": "Fresh final build: cultivation/source/alchemy each have one real 30-second cycle; no early awards and complete Game/cost checks.",
+  "screenshots": [
+    {
+      "path": "goal-3/evidence/check-idle-01/equip-gate-battle.png",
+      "sha256": "88a8554866c98f7ec1714611d963369e913f43360e0ff5c41342144373b2aa10",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/check-idle-01/equip-gate-event.png",
+      "sha256": "a3b4bc4f6d57115eb3a06381f84962a2b4727eb39f232828b4ba2f08b3ddf0c1",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/check-idle-01/natural-saved-limits.png",
+      "sha256": "a20a1f51a4531793aedc26bd300690f9c42fa5f121f19383e1819f36515f2bd7",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/check-idle-01/normal-idle-foundation.png",
+      "sha256": "2a0c8a78bf8bc0ec9c39ab1fa8fb8cac67c4ffdd5125ad813780acc4889755f5",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/check-idle-01/production-draft-after-save.png",
+      "sha256": "588474524bb0b5f2ab4a320e7f65b6257c79d845deffa8a03d2cde22955a1111",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/check-idle-01/saved-cultivation.png",
+      "sha256": "62cb978f9571e5926c50e4eb7cd9f111c0ba970198b76a662b408460e3dce358",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "goal-3/evidence/check-idle-01/source-draft-after-save.png",
+      "sha256": "35c71a1efc4c92fd5bbc43dbf9425c746dd7a65a0d0335f9867fbfa0b7e8c013",
+      "dimensions": [
+        1440,
+        900
+      ]
+    }
+  ],
+  "failuresPreserved": [
+    {
+      "raw": "artifacts/goal-3/check-idle-01/ui-red.json",
+      "reason": "5/5 initial defect reproductions failed with actual wrong mode/values/enabled gates."
+    },
+    {
+      "raw": "artifacts/goal-3/check-idle-01/ui-first-full.json",
+      "reason": "32/33 passed; real alchemy was refused NOT_DUE and stalled, not a test timeout to relax."
+    },
+    {
+      "raw": "artifacts/goal-3/check-idle-01/storage-clock-red.json",
+      "reason": "6 of 7 controlled clock cases reproduced the same NOT_DUE failure; wall-forward guard already passed."
+    }
+  ],
+  "deadlineDiagnosis": "artifacts/goal-3/check-idle-01/deadline-diagnosis.json",
+  "clockFixProof": "artifacts/goal-3/check-idle-01/clock-fix-summary.json",
+  "oldEvidenceRetained": true,
+  "originalClockDifference": "Unknown exact offset; original error frame was 859ms after persisted dueAt. Controlled 1ms lag and transaction rewind tests establish the handshake defect and fix.",
+  "notDone": [
+    "Other 21 action adapters and U5/U6/U7",
+    "Long-term balancing and overall art/gameplay human acceptance",
+    "Complete gameplay matrix",
+    "4 candidate integrity tests and final clean candidate",
+    "All paused page compatibility and environment/performance matrices"
+  ],
+  "rollback": "Retain DB6 and original saves/archives; revert UI/scheduler by a new commit, no DB downgrade.",
+  "continuation": "Existing automation-3; next independent U5 after this check. Native Goal stays blocked, no new goal/chat/automation."
+}

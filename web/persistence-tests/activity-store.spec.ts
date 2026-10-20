@@ -45,6 +45,112 @@ async function arrange(page: import('@playwright/test').Page) {
   });
 }
 
+test('clock handshake waits the one missing wall-clock millisecond, saves once and starts a full next cycle', async ({ page }) => {
+  const started = await arrange(page);
+  await page.evaluate(() => (globalThis as any).h.activityStore.shiftWallClock(-1));
+  await page.clock.runFor(60_000);
+  const waiting = await page.evaluate(async () => { const f = (globalThis as any).h.activityStore; return { ui: f.state(), persisted: await f.persisted() }; });
+  expect(waiting.ui.error).toBe(''); expect(waiting.ui.busy).toBe(false); expect(waiting.ui.canRetry).toBe(false);
+  expect(waiting.ui.runtime.remainingMs).toBe(1); expect(waiting.ui.runtime.phase).toBe('running');
+  expect(waiting.persisted).toEqual({ state: started.game, activity: started.activity }); expect(waiting.ui.game).toEqual(started.game);
+  await page.clock.runFor(1);
+  await expect.poll(() => page.evaluate(() => (globalThis as any).h.activityStore.store.activity?.completedCycles)).toBe(1);
+  const first = await page.evaluate(() => (globalThis as any).h.activityStore.state());
+  expect(first.error).toBe(''); expect(first.lastResult.commandId).toBe(started.activity.nextCommand.commandId);
+  expect(first.game.core.player.stones).toBe(started.game.core.player.stones - 20); expect(first.runtime.remainingMs).toBe(60_000);
+  await page.clock.runFor(59_999); expect(await page.evaluate(() => (globalThis as any).h.activityStore.store.game)).toEqual(first.game);
+  await page.clock.runFor(1);
+  await expect.poll(() => page.evaluate(() => (globalThis as any).h.activityStore.store.activity?.completedCycles)).toBe(2);
+  const last = await page.evaluate(() => (globalThis as any).h.activityStore.state());
+  expect(last.error).toBe(''); expect(last.activity.status).toBe('stopped'); expect(last.activity.spentStones).toBe(40);
+  expect(last.game.core.player.stones).toBe(started.game.core.player.stones - 40);
+});
+
+test('clock handshake survives a rewind between its deadline check and the real transaction using the same tick', async ({ page }) => {
+  const started = await arrange(page);
+  await page.evaluate(() => (globalThis as any).h.activityStore.rewindBeforeNextCycle(2));
+  await page.clock.runFor(60_000);
+  await expect.poll(() => page.evaluate(() => (globalThis as any).h.activityStore.earlyRejected?.code)).toBe('ACTIVITY_NOT_DUE');
+  const waiting = await page.evaluate(async () => { const f = (globalThis as any).h.activityStore; return { ui: f.state(), rejected: f.earlyRejected, persisted: await f.persisted() }; });
+  expect(waiting.ui.error).toBe(''); expect(waiting.ui.busy).toBe(false); expect(waiting.ui.canRetry).toBe(false);
+  expect(waiting.ui.runtime.remainingMs).toBe(2); expect(waiting.rejected.tick.commandId).toBe(started.activity.nextCommand.commandId);
+  expect(waiting.persisted).toEqual({ state: started.game, activity: started.activity });
+  await page.clock.runFor(1); expect(await page.evaluate(() => (globalThis as any).h.activityStore.store.game)).toEqual(started.game);
+  await page.clock.runFor(1);
+  await expect.poll(() => page.evaluate(() => (globalThis as any).h.activityStore.store.activity?.completedCycles)).toBe(1);
+  const paid = await page.evaluate(() => (globalThis as any).h.activityStore.state());
+  expect(paid.error).toBe(''); expect(paid.canRetry).toBe(false); expect(paid.lastResult.commandId).toBe(waiting.rejected.tick.commandId);
+  expect(paid.game.core.player.stones).toBe(started.game.core.player.stones - 20); expect(paid.activity.completedCycles).toBe(1);
+  expect(paid.runtime.remainingMs).toBe(60_000);
+});
+
+for (const control of ['pause', 'reconnect', 'takeover', 'dispose']) test(`clock handshake ${control} cancels the wall-clock remainder without settling an abandoned cycle`, async ({ page }) => {
+  const started = await arrange(page);
+  await page.evaluate(() => (globalThis as any).h.activityStore.shiftWallClock(-1000));
+  await page.clock.runFor(60_000);
+  const waiting = await page.evaluate(() => (globalThis as any).h.activityStore.state());
+  expect(waiting.error).toBe(''); expect(waiting.runtime.remainingMs).toBe(1000); expect(waiting.busy).toBe(false);
+  await page.evaluate(async control => {
+    const h = (globalThis as any).h, f = h.activityStore;
+    if (control === 'pause') await f.store.pauseCultivation();
+    else if (control === 'reconnect') await f.store.init();
+    else if (control === 'dispose') f.dispose();
+    else {
+      const repo = await h.FullSaveRepository.open();
+      try {
+        const current = await repo.loadActivitySnapshot();
+        await repo.resumeActivity({ commandId: crypto.randomUUID(), runId: current.state.core.runId, expectedRevision: current.state.core.revision,
+          expectedActivityId: current.activity.id, expectedActivityRevision: current.activity.revision, ownerId: 'clock-other-page' });
+        await f.store.refresh('sync');
+      } finally { repo.close(); }
+    }
+  }, control);
+  await page.clock.runFor(120_000);
+  const after = await page.evaluate(async () => { const f = (globalThis as any).h.activityStore; return { ui: f.state(), persisted: await f.persisted() }; });
+  expect(after.persisted.state).toEqual(started.game); expect(after.persisted.activity.completedCycles).toBe(0);
+  expect(after.ui.runtime).toBeNull(); expect(after.ui.error).toBe('');
+  if (control === 'pause') expect(after.persisted.activity.status).toBe('paused');
+  if (control === 'takeover') expect(after.persisted.activity.ownerId).toBe('clock-other-page');
+});
+
+test('clock handshake a forward wall-clock jump cannot shorten the monotonic cycle or create catch-up rewards', async ({ page }) => {
+  const started = await arrange(page);
+  await page.evaluate(() => (globalThis as any).h.activityStore.shiftWallClock(86_400_000));
+  await page.clock.runFor(59_999); expect(await page.evaluate(() => (globalThis as any).h.activityStore.store.game)).toEqual(started.game);
+  await page.clock.runFor(1);
+  await expect.poll(() => page.evaluate(() => (globalThis as any).h.activityStore.store.activity?.completedCycles)).toBe(1);
+  const first = await page.evaluate(() => (globalThis as any).h.activityStore.state());
+  expect(first.error).toBe(''); expect(first.activity.completedCycles).toBe(1); expect(first.runtime.remainingMs).toBe(60_000);
+  expect(first.game.core.player.stones).toBe(started.game.core.player.stones - 20);
+  await page.clock.runFor(59_999); expect(await page.evaluate(() => (globalThis as any).h.activityStore.store.game)).toEqual(first.game);
+});
+
+test('clock handshake keeps a real quota failure visible and retries that same cycle after another wall-clock adjustment', async ({ page }) => {
+  const started = await arrange(page);
+  await page.evaluate(() => {
+    const put = IDBObjectStore.prototype.put;
+    IDBObjectStore.prototype.put = function(value: any, key?: IDBValidKey) {
+      if (this.name === 'full-state' && key === 'current') { IDBObjectStore.prototype.put = put; throw new DOMException('clock quota', 'QuotaExceededError'); }
+      return put.call(this, value, key!);
+    };
+  });
+  await page.clock.runFor(60_000);
+  await expect.poll(() => page.evaluate(() => (globalThis as any).h.activityStore.store.canRetry)).toBe(true);
+  const failed = await page.evaluate(async () => { const f = (globalThis as any).h.activityStore; return { ui: f.state(), persisted: await f.persisted() }; });
+  expect(failed.ui.error).toContain('存储空间不足'); expect(failed.ui.lastResult).toBeNull();
+  expect(failed.persisted).toEqual({ state: started.game, activity: started.activity });
+  await page.evaluate(() => { const h = (globalThis as any).h; h.activityStore.shiftWallClock(-2); h.clockRetry = h.activityStore.store.retry(); });
+  const waiting = await page.evaluate(() => (globalThis as any).h.activityStore.state());
+  expect(waiting.error).toBe(''); expect(waiting.runtime.remainingMs).toBe(2); expect(waiting.busy).toBe(false);
+  expect(waiting.game).toEqual(started.game); expect(waiting.canRetry).toBe(false);
+  await page.clock.runFor(2); await page.evaluate(() => (globalThis as any).h.clockRetry);
+  const completed = await page.evaluate(async () => { const f = (globalThis as any).h.activityStore; return { ui: f.state(), persisted: await f.persisted() }; });
+  expect(completed.ui.error).toBe(''); expect(completed.ui.activity.completedCycles).toBe(1);
+  expect(completed.ui.lastResult.commandId).toBe(started.activity.nextCommand.commandId); expect(completed.ui.lastReplayed).toBe(false);
+  expect(completed.ui.game.core.player.stones).toBe(started.game.core.player.stones - 20); expect(completed.ui.runtime.remainingMs).toBe(60_000);
+  expect(completed.persisted.state).toEqual(completed.ui.game); expect(completed.persisted.activity).toEqual(completed.ui.activity);
+});
+
 test('Store retry replays a committed cycle and pause/resume preserve its replay identity without more rewards', async ({ page }) => {
   const started = await arrange(page);
   expect(started.activity.status).toBe('running'); expect(started.runtime.remainingMs).toBe(60_000);

@@ -33,6 +33,7 @@ export const useGame = defineStore('game', () => {
   let repository: FullSaveRepository | undefined, channel: BroadcastChannel | undefined;
   let pending: (() => Promise<CommitOutcome | ControlOutcome | ActivityOutcome>) | null = null;
   let pendingInstant=false;
+  let pendingCycle:Activity|null=null;
   let pendingCommandId: string | undefined;
   let pendingObservation: WriteObservationSource | undefined;
   const observers=new Set<{next:(value:Observation)=>void;fault:()=>void}>();
@@ -55,6 +56,23 @@ export const useGame = defineStore('game', () => {
     return{commandId:crypto.randomUUID(),runId:game.value.core.runId,expectedRevision:game.value.core.revision,
       expectedActivityId:activity.value?.id??null,expectedActivityRevision:activity.value?.revision??null,ownerId:activityOwner};
   }
+  async function submitActivityWhenDue(current:Activity,operation:()=>Promise<ActivityOutcome>,commandId:string,
+    observation:WriteObservationSource,owner:number){
+    const base={id:current.id,generation:current.generation,totalMs:current.cycleMs};
+    while(!disposed&&owner===activityEpoch){
+      const due=await activityClock.waitUntil(current.dueAt!,remaining=>{
+        if(owner===activityEpoch&&!disposed)activityRuntime.value={...base,remainingMs:remaining,phase:'running'};
+      });
+      if(!due||disposed||owner!==activityEpoch)return;
+      activityRuntime.value={...base,remainingMs:0,phase:'saving'};
+      let notDue=false;
+      const saving=write(operation,commandId,observation,true,current,()=>{notDue=true;});
+      activityInFlight=saving;await saving;if(activityInFlight===saving)activityInFlight=null;
+      if(disposed||owner!==activityEpoch)return;
+      // Date.now can move between the gate and the transaction. Retain this exact command and only wait its remainder.
+      if(!notDue)return;
+    }
+  }
   function beginActivityRuntime(){
     const current=activity.value;
     if(disposed||!repository||!available.value||error.value||!current||current.status!=='running'||current.ownerId!==activityOwner||!current.nextCommand||activityPausing.value)return;
@@ -68,9 +86,7 @@ export const useGame = defineStore('game', () => {
         const command=current.nextCommand!;
         const tick:ActivityTick={commandId:command.commandId,runId:current.runId,expectedRevision:current.gameRevision,
           activityId:current.id,expectedActivityRevision:current.revision,ownerId:activityOwner,generation:current.generation};
-        activityRuntime.value={...base,remainingMs:0,phase:'saving'};
-        const saving=write(()=>repository!.settleActivity(tick),tick.commandId,{kind:'action',command},true);
-        activityInFlight=saving;await saving;if(activityInFlight===saving)activityInFlight=null;
+        await submitActivityWhenDue(current,()=>repository!.settleActivity(tick),tick.commandId,{kind:'action',command},owner);
         if(disposed||owner!==activityEpoch)return;
         activityRuntime.value=null;
         if(!error.value&&!activityPausing.value)beginActivityRuntime();
@@ -117,7 +133,7 @@ export const useGame = defineStore('game', () => {
     stopActivityRuntime();activityNotice.value='';
     busy.value = true; ready.value = false; available.value = false; error.value = ''; warning.value = '';
     repository?.close(); channel?.close(); repository = undefined; channel = undefined;
-    pending = null; pendingCommandId = undefined; pendingObservation=undefined; canRetry.value = false;
+    pending = null; pendingCommandId = undefined; pendingObservation=undefined; pendingCycle=null;canRetry.value = false;
     try {
       const opened = await FullSaveRepository.open(session.gameDatabase);
       if (disposed) { opened.close(); return; }
@@ -142,17 +158,18 @@ export const useGame = defineStore('game', () => {
       repository?.close(); repository = undefined;
     } finally { ready.value = true; busy.value = false; }
   }
-  function write(operation: () => Promise<CommitOutcome | ControlOutcome | ActivityOutcome>, commandId?: string, observation?:WriteObservationSource, instant=false):Promise<void>{
+  function write(operation: () => Promise<CommitOutcome | ControlOutcome | ActivityOutcome>, commandId?: string, observation?:WriteObservationSource, instant=false,cycle:Activity|null=null,onNotDue?:()=>void):Promise<void>{
     if(disposed||busy.value||!repository)return Promise.resolve();
-    const current=performWrite(operation,commandId,observation,instant);writeInFlight=current;
+    const current=performWrite(operation,commandId,observation,instant,cycle,onNotDue);writeInFlight=current;
     return current.finally(()=>{if(writeInFlight===current)writeInFlight=null;});
   }
-  async function performWrite(operation: () => Promise<CommitOutcome | ControlOutcome | ActivityOutcome>, commandId?: string, observation?:WriteObservationSource, instant=false) {
+  async function performWrite(operation: () => Promise<CommitOutcome | ControlOutcome | ActivityOutcome>, commandId?: string, observation?:WriteObservationSource, instant=false,cycle:Activity|null=null,onNotDue?:()=>void) {
     if (disposed || busy.value || !repository) return;
-    const before=game.value;
+    const before=game.value,wasSaved=saved.value,wasFailed=failedIntent;
     busy.value = true; error.value = ''; saved.value = false; canRetry.value = false; pending = operation; pendingCommandId = commandId;
     pendingObservation=observation;
     pendingInstant=instant;
+    pendingCycle=cycle;
     try {
       const action=observation?.kind==='action'?observation.command:null;
       const seconds=action?actionSeconds(action):.6,totalMs=Number.isFinite(seconds)?seconds*1000:0;
@@ -167,18 +184,22 @@ export const useGame = defineStore('game', () => {
       else{const snapshot=await repository!.loadActivitySnapshot();if(disposed)return;game.value=snapshot.state;acceptActivity(snapshot.activity);}
       if('result'in outcome&&outcome.result){lastResult.value=outcome.result;lastFromActivity.value=instant;lastReplayed.value=outcome.replayed;}
       else if(!instant){lastResult.value=null;lastFromActivity.value=false;lastReplayed.value=outcome.replayed;}
-      failedIntent = false; pending = null; pendingCommandId = undefined; pendingObservation=undefined; saved.value = true;
+      failedIntent = false; pending = null; pendingCommandId = undefined; pendingObservation=undefined; pendingCycle=null;saved.value = true;
       if(observation)emit(()=>writeObservation(before,outcome.state,observation,'result'in outcome?outcome.result:null,outcome.replayed));
       await checkpointInfo();
       try { channel?.postMessage({ runId: outcome.state.core.runId, revision: outcome.state.core.revision }); }
       catch { warning.value = '进度已保存，其他页面暂未收到同步提示'; }
     } catch (value) {
+      if(onNotDue&&codeOf(value)==='ACTIVITY_NOT_DUE'){
+        // Nothing committed. This is still the same running cycle, not a failed save or a new reward.
+        saved.value=wasSaved;failedIntent=wasFailed;onNotDue();return;
+      }
       failedIntent = true; error.value = message(value); saved.value = false; lastResult.value = null;
       const code = codeOf(value);
       if(observation)emit(()=>writeObservation(before,null,observation,null,false,code||'OTHER'));
       if (code === 'STORAGE_CLOSED') available.value = false;
       canRetry.value = ['STORAGE_QUOTA', 'STORAGE_ABORTED', 'STORAGE_DENIED'].includes(code);
-      if (!canRetry.value) { pending = null; pendingCommandId = undefined; pendingObservation=undefined; }
+      if (!canRetry.value) { pending = null; pendingCommandId = undefined; pendingObservation=undefined; pendingCycle=null; }
       try { await refresh(); } catch (readError) { warning.value = '原进度暂时无法重读：' + message(readError); }
     } finally {
       execution.value=null;
@@ -189,6 +210,7 @@ export const useGame = defineStore('game', () => {
   function validationError(text: string) {
     failedIntent = true; error.value = text; saved.value = false; canRetry.value = false; pending = null; pendingCommandId = undefined;
     pendingObservation=undefined;emit(()=>inputErrorObservation(game.value));
+    pendingCycle=null;
   }
   async function start(name: string) {
     if (!repository || game.value) return;
@@ -238,12 +260,22 @@ export const useGame = defineStore('game', () => {
   async function checkpoint() {
     const intent = prepareCheckpoint(); if (intent) await restorePrepared(intent);
   }
-  async function retry() { if (pending && canRetry.value){const instant=pendingInstant;await write(pending,pendingCommandId,pendingObservation,instant);if(instant&&!error.value)beginActivityRuntime();} }
+  async function retry() {
+    if(!pending||!canRetry.value||busy.value)return;
+    const operation=pending,commandId=pendingCommandId,observation=pendingObservation,instant=pendingInstant,cycle=pendingCycle;
+    if(cycle&&commandId&&observation){
+      canRetry.value=false;error.value='';stopActivityRuntime();const owner=activityEpoch;
+      try{await submitActivityWhenDue(cycle,operation as ()=>Promise<ActivityOutcome>,commandId,observation,owner);
+        if(owner!==activityEpoch||disposed)return;activityRuntime.value=null;
+      }catch(value){if(owner!==activityEpoch||disposed)return;stopActivityRuntime();activityNotice.value=message(value);return;}
+    }else await write(operation,commandId,observation,instant);
+    if(instant&&!error.value)beginActivityRuntime();
+  }
   function canRetryFor(commandId: string) { return canRetry.value && pendingCommandId === commandId; }
   async function retryFor(commandId: string) { if (canRetryFor(commandId)) await retry(); }
   function discardRetryFor(commandId: string) {
     if (pendingCommandId !== commandId) return;
-    pending = null; pendingCommandId = undefined; pendingObservation=undefined; canRetry.value = false;
+    pending = null; pendingCommandId = undefined; pendingObservation=undefined; pendingCycle=null;canRetry.value = false;
   }
   async function rawText(): Promise<string | null> {
     try{const backup = await FullSaveRepository.exportRaw(session.gameDatabase); return backup ? rawBackupText(backup) : null;}catch(value){emit(()=>storageErrorObservation(game.value,codeOf(value)));throw value;}

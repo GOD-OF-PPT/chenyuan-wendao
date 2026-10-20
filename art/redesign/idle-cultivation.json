@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "web/src/activity-clock.ts",
-      "bytes": 1613,
-      "sha256": "0658b685a8c05e6968f5dc242a36859b3cb9faed7b72c05f2314910b2ab8a392"
+      "bytes": 2416,
+      "sha256": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901"
     },
     {
       "path": "web/src/TrainingActivity.vue",
@@ -17,8 +17,8 @@
     },
     {
       "path": "web/src/TrainingPlanner.vue",
-      "bytes": 5363,
-      "sha256": "1ffb3eb84c08e779398fc6dd0c964c9b02bb1d20ebe8f43a82875592670934ad"
+      "bytes": 6876,
+      "sha256": "3765fc59cef71335faa7164a08a6acb0ffd334a3046dc0509aeb1cceedefb747"
     },
     {
       "path": "web/src/idle-activity.css",

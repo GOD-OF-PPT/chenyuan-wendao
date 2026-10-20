@@ -29,7 +29,7 @@ function gains(s:C.Source){return Object.entries(s.items).map(([id,n])=>C.items[
 function select(id:string){selectedId.value=id;targetId.value=resources.value[0]??'';targetCycleLimit.value=50;cycles.value=5;monthBudget.value=5*source.value.months;targetQuantity.value=stock(targetId.value)+(source.value.items[targetId.value]??source.value.stones)*5;applyCollection();loadSaved();}
 function applyCollection(){const c=props.collection;if(!c||!source.value)return;const id=c.kind==='stones'?'stones':c.id;if(!resources.value.includes(id))return;cycles.value='target';targetId.value=id;targetQuantity.value=c.quantity;monthBudget.value=50*source.value.months;}
 function locate(){const id=props.highlight.startsWith('source-')?props.highlight.slice(7):'';const index=rows.value.findIndex(([key])=>key===id);if(index>=0){page.value=Math.floor(index/4);select(id);}else if(!selected.value&&rows.value.length){page.value=0;select(rows.value[0][0]);}}
-watch(()=>[props.game.core.runId,props.game.core.world.location,props.highlight],locate,{immediate:true});
+watch([()=>props.game.core.runId,()=>props.game.core.world.location,()=>props.highlight],locate,{immediate:true});
 watch(()=>props.collection,applyCollection);
 function updateCycleBudget(){if(source.value)monthBudget.value=(cycles.value==='target'?targetCycleLimit.value:cycles.value)*source.value.months;}
 function loadSaved(){const p=props.savedPlan;if(!p||p.sourceId!==selectedId.value)return;cycles.value=p.until==='target'?'target':p.maxCycles;targetCycleLimit.value=p.maxCycles;targetId.value=p.target?.kind==='item'?p.target.id:p.target?'stones':resources.value[0]??'';targetQuantity.value=p.target?.quantity??targetQuantity.value;monthBudget.value=p.monthBudget;reserve.value=p.remainingMonthsReserve;}

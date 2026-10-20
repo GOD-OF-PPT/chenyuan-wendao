@@ -12,6 +12,29 @@ export function createActivityStoreHarness() {
   const restores: Array<() => void> = [];
   let delivered: { tick: ActivityTick; outcome: ActivityOutcome } | null = null;
   let release: (() => void) | null = null;
+  const originalDateNow = Date.now;
+  let wallOffset = 0, wallInstalled = false;
+  let earlyRejected: { tick: ActivityTick; code: string; now: number } | null = null;
+  function shiftWallClock(milliseconds: number) {
+    if (!Number.isSafeInteger(milliseconds)) throw new Error('invalid test clock offset');
+    wallOffset += milliseconds;
+    if (!wallInstalled) {
+      wallInstalled = true; Date.now = () => originalDateNow() + wallOffset;
+      restores.push(() => { Date.now = originalDateNow; });
+    }
+  }
+  function rewindBeforeNextCycle(milliseconds: number) {
+    const prototype = FullSaveRepository.prototype, original = prototype.settleActivity;
+    const restore = () => { prototype.settleActivity = original; }; restores.push(restore);
+    prototype.settleActivity = async function(tick: ActivityTick): Promise<ActivityOutcome> {
+      restore(); shiftWallClock(-milliseconds);
+      try { return await original.call(this, tick); }
+      catch (error) {
+        earlyRejected = { tick: structuredClone(tick), code: error instanceof RuleError ? error.code : 'OTHER', now: Date.now() };
+        throw error;
+      }
+    };
+  }
 
   function interceptNextCycle(mode: 'lost' | 'held') {
     const prototype = FullSaveRepository.prototype, original = prototype.settleActivity;
@@ -34,6 +57,9 @@ export function createActivityStoreHarness() {
     releaseHeldCycle() { const done = release; release = null; done?.(); },
     get delivered() { return delivered; },
     get holding() { return release !== null; },
+    shiftWallClock,
+    rewindBeforeNextCycle,
+    get earlyRejected() { return earlyRejected; },
     async persisted() {
       const repo = await FullSaveRepository.open();
       try { return await repo.loadActivitySnapshot(); }
