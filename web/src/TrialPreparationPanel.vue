@@ -9,7 +9,7 @@ import type { CheckpointSummary } from './store';
 import { formatCosts } from './presentation';
 import GrowthPanel from './GrowthPanel.vue';
 const props=defineProps<{game:Game;enabled:boolean;checkpoint:CheckpointSummary|null}>();
-const emit=defineEmits<{review:[];restore:[];navigate:[NavigationRequest];track:[TrackingTarget]}>();
+const emit=defineEmits<{review:[];restore:[];navigate:[NavigationRequest];track:[TrackingTarget];inspectEquipment:[]}>();
 const preparation=computed(()=>getTrialPreparation(props.game));
 const canGo=(location:C.LocationId)=>props.enabled && preparation.value.mandatory.find(row=>row.id==='phase')!.ready && (props.game.core.world.location===location || previewAction(props.game,{type:'TRAVEL',location}).allowed);
 </script>
@@ -32,7 +32,7 @@ const canGo=(location:C.LocationId)=>props.enabled && preparation.value.mandator
       <p data-testid="trial-loadout">当前配装：{{preparation.preparation.loadout.map(slot=>slot.name).join(' / ')}} · {{preparation.preparation.relic}}。法宝可选。</p>
       <p data-testid="trial-medicine">{{preparation.preparation.medicine.map(item=>item.name+' ×'+item.quantity).join(' · ')}}。战中服用占一回合，数量由你决定。</p>
       <p data-testid="trial-aid">已约定援助：天劫各击减伤 {{preparation.preparation.aid.allDamageReduction}}，雷击另减 {{preparation.preparation.aid.thunderDamageReduction}}。没有人物援助也可自行筹备入场。</p>
-      <div class="trial-navigation"><button data-testid="trial-go-rest" :disabled="!canGo('cave')" @click="emit('navigate',{location:'cave',tab:'修行',focusId:'rest'})">前往洞府查看疗养</button><button data-testid="trial-go-equipment" :disabled="!canGo('sect')" @click="emit('navigate',{location:'sect',tab:'修行',focusId:'equipment-panel'})">查看功法与法宝</button><button data-testid="trial-go-medicine" :disabled="!canGo('market')" @click="emit('navigate',{location:'market',tab:'历练',focusId:'buy-healing_pill',quantity:1})">前往坊市查看丹药</button></div>
+      <div class="trial-navigation"><button data-testid="trial-go-rest" :disabled="!canGo('cave')" @click="emit('navigate',{location:'cave',tab:'修行',focusId:'rest'})">前往洞府查看疗养</button><button data-testid="trial-go-equipment" :disabled="!enabled" @click="emit('inspectEquipment')">查看功法与法宝</button><button data-testid="trial-go-medicine" :disabled="!canGo('market')" @click="emit('navigate',{location:'market',tab:'历练',focusId:'buy-healing_pill',quantity:1})">前往坊市查看丹药</button></div>
       <h3>完整准备检查点</h3>
       <p>确认正式入场后，完整行动前状态将与扣除渡劫引、进入问心一起保存。恢复时物品、年月、装备与人物记录一同回退，不单独补发引。</p>
       <p v-if="checkpoint" class="small" data-testid="trial-existing-checkpoint">当前已有{{checkpoint.kind==='trial'?'渡劫':'突破'}}前检查点，来源进度 {{checkpoint.sourceRevision}}。<button class="text-button" data-testid="trial-restore-existing" @click="emit('restore')" :disabled="!enabled">恢复当前完整准备</button></p>

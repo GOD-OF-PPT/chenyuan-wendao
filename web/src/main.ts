@@ -21,3 +21,5 @@ import './catalogue-art.css';
 import './idle-activity.css'
 import './idle-sources.css'
 import './idle-production.css';
+
+import './idle-preparation.css';

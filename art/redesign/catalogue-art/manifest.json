@@ -120,8 +120,8 @@
     },
     {
       "path": "web/src/StageOutcome.vue",
-      "bytes": 3492,
-      "sha256": "cd38dd23845202a40b4913b5b164de9312598d65f1d7b6fc5fda5fa9762b56af"
+      "bytes": 3937,
+      "sha256": "18aa6024374cc33b4b29a67d9804503ef94ec26aa0d5d1f7907e9c91338591ea"
     },
     {
       "path": "web/src/catalogue-art.css",

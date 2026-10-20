@@ -1,3 +1,4 @@
+import type {ConfigurationAction,ConfigurationIntent} from '../../src/full/configuration.ts';
 import { defineStore } from 'pinia';
 import { computed, onScopeDispose, ref, shallowRef } from 'vue';
 import { getTrialRecovery } from '../../src/full/queries.ts';
@@ -182,7 +183,7 @@ export const useGame = defineStore('game', () => {
       game.value = outcome.state;
       if('activity'in outcome)acceptActivity(outcome.activity);
       else{const snapshot=await repository!.loadActivitySnapshot();if(disposed)return;game.value=snapshot.state;acceptActivity(snapshot.activity);}
-      if('result'in outcome&&outcome.result){lastResult.value=outcome.result;lastFromActivity.value=instant;lastReplayed.value=outcome.replayed;}
+      if('result'in outcome&&outcome.result){lastResult.value=outcome.result;lastFromActivity.value=cycle!==null;lastReplayed.value=outcome.replayed;}
       else if(!instant){lastResult.value=null;lastFromActivity.value=false;lastReplayed.value=outcome.replayed;}
       failedIntent = false; pending = null; pendingCommandId = undefined; pendingObservation=undefined; pendingCycle=null;saved.value = true;
       if(observation)emit(()=>writeObservation(before,outcome.state,observation,'result'in outcome?outcome.result:null,outcome.replayed));
@@ -223,7 +224,7 @@ export const useGame = defineStore('game', () => {
   }
   async function actPrepared(input: Command) {
     if (!repository) return;
-    if(input.type==='CULTIVATE'||input.type==='SOURCE'||input.type==='CRAFT'||input.type==='FORGE'){activityNotice.value='请安排活动，按周期积累。';return;}
+    if(['CULTIVATE','SOURCE','CRAFT','FORGE','BUY','SELL','USE','REST','LEARN','STUDY','SCHOOL','EQUIP','EQUIP_RELIC'].includes(input.type)){activityNotice.value='请安排活动，按周期积累。';return;}
     if(activityRunning.value){activityNotice.value='当前活动正在进行，请先暂停再行动。';return;}
     const command = structuredClone({ ...input });
     await write(() => repository!.execute(command), command.commandId,{kind:'action',command});
@@ -231,6 +232,18 @@ export const useGame = defineStore('game', () => {
   async function act(action: Action) {
     const command = prepareAction(action);
     if (command) await actPrepared(command);
+  }
+  function prepareConfiguration(action:ConfigurationAction):ConfigurationIntent|null{
+    if(disposed||!game.value||!repository||!available.value||busy.value)return null;
+    if(activityRunning.value){activityNotice.value='请先暂停当前活动，再核对配装。';return null;}
+    return structuredClone({command:{...action,commandId:crypto.randomUUID(),runId:game.value.core.runId,expectedRevision:game.value.core.revision},
+      expectedActivityId:activity.value?.id??null,expectedActivityRevision:activity.value?.revision??null});
+  }
+  async function applyConfiguration(input:ConfigurationIntent){
+    if(disposed||!repository||!available.value)return;
+    if(activityRunning.value){activityNotice.value='请先暂停当前活动，再确认配装。';return;}
+    const intent=structuredClone(input);
+    await write(()=>repository!.configure(intent),intent.command.commandId,{kind:'action',command:intent.command},true);
   }
   function prepareImport(): SaveMutation | null {
     if (disposed || !repository || !available.value || busy.value) return null;
@@ -305,5 +318,5 @@ export const useGame = defineStore('game', () => {
   onScopeDispose(() => { disposed = true;stopActivityRuntime();actionClock.cancel();execution.value=null; repository?.close(); channel?.close();observers.clear(); });
   return { game, busy, ready, available, error, warning, saved, hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,execution,
     activity,activityRuntime,activityRunning,activityLocal,activityOwned,activityPausing,activityNotice,lastFromActivity,startPlannedActivity,startCultivation,pauseCultivation,resumeCultivation,
-    init, refresh, start, act, prepareAction, actPrepared, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, rawText, validationError,observe };
+    init, refresh, start, act, prepareAction, actPrepared, prepareConfiguration, applyConfiguration, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, rawText, validationError,observe };
 });

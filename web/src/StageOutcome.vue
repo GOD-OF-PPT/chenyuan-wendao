@@ -6,7 +6,7 @@ import type {Execution} from './action-timing';
 import {ACTION_MOTIONS} from './action-feedback';
 import {formatDelta} from './presentation';
 import GameIcon from './GameIcon.vue';
-import {items,realms} from '../../src/full/content.ts';
+import {items,realms,skills,relics} from '../../src/full/content.ts';
 const props=withDefaults(defineProps<{game:Game;result:ActionResult|null;busy:boolean;saved:boolean;available:boolean;error:string;replayed:boolean;execution:Execution|null;next:string;followup?:boolean}>(),{followup:true});
 defineEmits<{next:[];details:[]}>();
 const receipt=computed(()=>props.saved&&props.available&&!props.busy&&!props.error&&!props.replayed&&props.result?.runId===props.game.core.runId&&props.result.revisionAfter===props.game.core.revision?props.result:null);
@@ -14,6 +14,9 @@ const state=computed(()=>props.error?'failed':props.execution?.phase??(props.bus
 const changes=computed(()=>{
  const d=receipt.value?.delta;if(!d)return{visible:[],extra:0};
  const important:string[]=[];
+ if(receipt.value&&['SCHOOL','EQUIP','EQUIP_RELIC'].includes(receipt.value.type)){
+  const g=props.game;return{visible:receipt.value.type==='EQUIP_RELIC'?[`本命法宝：${g.loadout.relic?relics[g.loadout.relic].name:'未装备'}`]:[`${g.school==='sword'?'剑修':g.school==='talisman'?'符修':'尚未择法'} · 配装已保存`,...Object.values(g.loadout).filter(id=>!!id&&!!skills[id]).map(id=>skills[id!].name)],extra:0};
+ }
  if(d.realm.before!==d.realm.after)important.push(`${realms[d.realm.before].name} → ${realms[d.realm.after].name}`);
  for(const [id,n]of Object.entries(d.inventory))if(n>0)important.push(`${items[id].name} +${n}`);
  for(const [name,n]of [['修为',d.xp],['气血',d.hp],['灵力',d.mp],['灵石',d.stones]]as const)if(n>0)important.push(`${name} +${n}`);

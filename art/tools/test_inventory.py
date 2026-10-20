@@ -45,6 +45,8 @@ class InventoryTests(unittest.TestCase):
   if source_ui.exists():files.update(ROOT/ref for ref in json.loads(source_ui.read_text())['sourceReferences'])
   production_ui=ROOT/'art/redesign/idle-production.json'
   if production_ui.exists():files.update(ROOT/ref for ref in json.loads(production_ui.read_text())['sourceReferences'])
+  preparation=ROOT/'art/redesign/idle-preparation.json'
+  if preparation.exists():files.update(ROOT/ref for ref in json.loads(preparation.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -84,6 +86,16 @@ class InventoryTests(unittest.TestCase):
   self.write('web/src/ProductionPlanner.vue','');self.rejected()
  def test_production_ui_requires_actual_consumer(self):
   p='web/src/GoodsPanel.vue';self.write(p,(self.root/p).read_text().replace('<ProductionPlanner ','<RemovedPlanner '));self.rejected()
+ def test_preparation_requires_ledger(self):
+  (self.root/'art/redesign/idle-preparation.json').unlink();self.rejected()
+ def test_preparation_cap_cannot_expand(self):
+  p='art/redesign/idle-preparation.json';d=json.loads((self.root/p).read_text());d['maxNativeBytes']=60001;self.write(p,d);self.rejected()
+ def test_preparation_source_identity(self):
+  self.write('web/src/MarketPlanner.vue','');self.rejected()
+ def test_preparation_requires_real_consumer(self):
+  p='web/src/App.vue';self.write(p,(self.root/p).read_text().replace('<ConfigurationDialog ','<RemovedDialog '));self.rejected()
+ def test_preparation_cannot_claim_user_acceptance(self):
+  p='art/redesign/idle-preparation.json';d=json.loads((self.root/p).read_text());d['userAcceptance']=True;self.write(p,d);self.rejected()
  def test_digest_corruption_is_rejected(self):self.asset('scene-secret')['sha256']='0'*64;self.rejected()
  def test_false_dimensions_are_rejected(self):self.asset('portrait-player')['dimensions']['width']=999;self.rejected()
  def test_parent_hash_cannot_be_relabelled(self):self.asset('scene-wilderness')['originalHash']='0'*64;self.rejected()

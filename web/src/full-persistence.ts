@@ -8,10 +8,12 @@ import { createActivity, pauseActivity as pauseModelActivity, resumeActivity as 
   validateActivity, validateActivityMutation, validateActivityPlan, validateActivityTick } from '../../src/full/activity.ts';
 import type { Activity, ActivityMutation, ActivityOutcome, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
 import { activityReceipt, validateActivityReceipt, type ActivityReceiptInput } from './activity-persistence';
+import { validateConfigurationIntent, type ConfigurationIntent } from '../../src/full/configuration.ts';
+import { configurationReceipt, validateConfigurationReceipt } from './configuration-persistence';
 export type { ActivityMutation, ActivityOutcome, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
 
 export const FULL_DB_NAME = 'chenyuan-playable-v1';
-export const FULL_DB_VERSION = 6;
+export const FULL_DB_VERSION = 7;
 export const FULL_STATE_STORE = 'full-state';
 export const FULL_RECEIPT_STORE = 'full-receipts';
 export const FULL_BACKUP_STORE = 'full-backups';
@@ -38,6 +40,12 @@ function readStoredActivity(tx: IDBTransaction, current: Game | undefined, use: 
 function archiveActivity(tx: IDBTransaction, activity: Activity | null, prefix: string): void {
   if (activity) tx.objectStore(FULL_BACKUP_STORE).put(structuredClone(activity), prefix + '/activity');
   tx.objectStore(FULL_STATE_STORE).delete('activity');
+}
+function invalidateActivity(activity: Activity, state: Game): Activity {
+  const stopped: Activity = { ...activity, revision: activity.revision + 1, generation: activity.generation + 1,
+    gameRevision: state.core.revision, status: 'stopped', nextCommand: null, startedAt: null, dueAt: null,
+    stopReason: { code: 'STATE_CHANGED', message: '进度已改变，请重新安排活动；已完成的积累保留' } };
+  validateActivity(stopped, state); return stopped;
 }
 function readReceipt(store: IDBObjectStore, key: string, use: (value: unknown) => void, abort: (error: unknown) => void): void {
   const request = store.get(key);
@@ -507,6 +515,9 @@ export class FullSaveRepository {
                   if (stored && typeof stored === 'object' && 'format' in stored && stored.format === 'chenyuan-control-receipt') {
                     validateControlReceipt(stored); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于存档操作');
                   }
+                  if (stored && typeof stored === 'object' && 'format' in stored && stored.format === 'chenyuan-configuration-receipt') {
+                    validateConfigurationReceipt(stored, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于配装确认');
+                  }
                   validateActivityReceipt(stored, current);
                   if (stored.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一活动编号对应不同意图');
                   complete({ state: current, activity, result: stored.result, replayed: true }); return;
@@ -533,7 +544,8 @@ export class FullSaveRepository {
                     const command = activity.nextCommand, outcome = resolve(current, command);
                     next = completeActivity(outcome.nextState, activity, outcome.result, { commandId: command.commandId, now });
                     state.put(current, 'previous'); state.put(outcome.nextState, 'current'); state.put(next, 'activity');
-                    receipts.put(activityReceipt(input, next, command, outcome.result), intent.runId + ':' + intent.commandId);
+                    receipts.put(activityReceipt(input, next, command, outcome.result, activity.version === 5
+                      ? { activityBefore: activity, stateAfter: outcome.nextState, resolvedAt: now } : undefined), intent.runId + ':' + intent.commandId);
                     complete({ state: outcome.nextState, activity: next, result: outcome.result, replayed: false }); return;
                   }
                   if (input.kind === 'PAUSE') {
@@ -544,6 +556,47 @@ export class FullSaveRepository {
                 validateActivity(next, current);
                 state.put(next, 'activity'); receipts.put(activityReceipt(input, next), intent.runId + ':' + intent.commandId);
                 complete({ state: current, activity: next, result: null, replayed: false });
+              } catch (error) { abort(error); }
+            }, abort);
+          }, abort);
+        } catch (error) { abort(error); }
+      };
+    });
+  }
+  async configure(input: ConfigurationIntent): Promise<ActivityOutcome> {
+    validateConfigurationIntent(input); const intent = structuredClone(input), command = intent.command, print = fingerprint(intent);
+    return this.transaction('readwrite', (tx, complete, abort) => {
+      const state = tx.objectStore(FULL_STATE_STORE), receipts = tx.objectStore(FULL_RECEIPT_STORE), read = state.get('current');
+      read.onsuccess = () => {
+        try {
+          const current = read.result; validateGame(current);
+          if (current.core.runId !== command.runId) throw new RuleError('RUN_MISMATCH', '确认所属人生已变化，请重新查看配装');
+          readStoredActivity(tx, current, activity => {
+            readReceipt(receipts, command.runId + ':' + command.commandId, stored => {
+              try {
+                if (stored !== undefined) {
+                  if (stored && typeof stored === 'object' && 'format' in stored && stored.format === 'chenyuan-receipt') {
+                    validateCommandReceipt(stored, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令');
+                  }
+                  if (stored && typeof stored === 'object' && 'format' in stored && stored.format === 'chenyuan-control-receipt') {
+                    validateControlReceipt(stored); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于存档操作');
+                  }
+                  if (stored && typeof stored === 'object' && 'format' in stored && stored.format === 'chenyuan-activity-receipt') {
+                    validateActivityReceipt(stored, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于活动安排或周期');
+                  }
+                  validateConfigurationReceipt(stored, current);
+                  if (stored.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一配装编号对应不同确认内容');
+                  complete({ state: current, activity, result: stored.result, replayed: true }); return;
+                }
+                if (current.core.revision !== command.expectedRevision) throw new RuleError('STALE_REVISION', '进度已变化，请重新核对本次配装');
+                if ((activity?.id ?? null) !== intent.expectedActivityId || (activity?.revision ?? null) !== intent.expectedActivityRevision)
+                  throw new RuleError('ACTIVITY_STALE', '活动安排已变化，旧配装确认未应用');
+                if (activity?.status === 'running') throw new RuleError('ACTIVITY_RUNNING', '请先明确暂停当前活动，再应用配装');
+                const outcome = resolve(current, command), nextActivity = activity ? invalidateActivity(activity, outcome.nextState) : null;
+                state.put(current, 'previous'); state.put(outcome.nextState, 'current');
+                if (nextActivity) state.put(nextActivity, 'activity');
+                receipts.put(configurationReceipt(intent, current, outcome.nextState, outcome.result), command.runId + ':' + command.commandId);
+                complete({ state: outcome.nextState, activity: nextActivity, result: outcome.result, replayed: false });
               } catch (error) { abort(error); }
             }, abort);
           }, abort);
@@ -610,6 +663,7 @@ export class FullSaveRepository {
               if (storedReceipt !== undefined) {
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-receipt') { validateCommandReceipt(storedReceipt, existing!); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令'); }
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-activity-receipt') { validateActivityReceipt(storedReceipt, existing!); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于活动安排'); }
+                if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-configuration-receipt') { validateConfigurationReceipt(storedReceipt, existing!); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于配装确认'); }
                 validateControlReceipt(storedReceipt);
                 if (storedReceipt.kind !== kind || storedReceipt.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一操作编号对应不同内容');
                 if (fingerprint(storedReceipt.mutation) !== fingerprint(mutation)) throw new RuleError('RECEIPT_INVALID', '存档操作回执身份损坏');
@@ -648,6 +702,7 @@ export class FullSaveRepository {
               if (storedReceipt !== undefined) {
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-receipt') { validateCommandReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令'); }
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-activity-receipt') { validateActivityReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于活动安排'); }
+                if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-configuration-receipt') { validateConfigurationReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于配装确认'); }
                 validateControlReceipt(storedReceipt);
                 if (storedReceipt.kind !== 'RESTORE' || storedReceipt.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一编号对应不同恢复意图');
                 if (fingerprint(storedReceipt.mutation) !== fingerprint(mutation)) throw new RuleError('RECEIPT_INVALID', '恢复回执身份损坏');
@@ -701,22 +756,21 @@ export class FullSaveRepository {
               if (storedReceipt !== undefined) {
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-control-receipt') { validateControlReceipt(storedReceipt); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于存档操作'); }
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-activity-receipt') { validateActivityReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于活动周期或安排'); }
+                if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-configuration-receipt') { validateConfigurationReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于配装确认'); }
                 validateCommandReceipt(storedReceipt, current);
                 const receipt = storedReceipt;
                 if (receipt.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一指令编号对应不同内容');
                 complete({ state: current, result: receipt.result, replayed: true }); return;
               }
-              if (command.type === 'CULTIVATE' || command.type === 'SOURCE' || command.type === 'CRAFT' || command.type === 'FORGE') {
+              if (['CULTIVATE', 'SOURCE', 'CRAFT', 'FORGE', 'BUY', 'SELL', 'USE', 'REST', 'LEARN', 'STUDY'].includes(command.type)) {
                 throw new RuleError('ACTIVITY_REQUIRED', '请安排修炼、取材或生产活动，按完整周期逐次积累');
               }
+              if (['SCHOOL', 'EQUIP', 'EQUIP_RELIC'].includes(command.type)) throw new RuleError('CONFIGURATION_REQUIRED', '请预选并确认本次修法或配装变化');
               if (activity?.status === 'running') throw new RuleError('ACTIVITY_RUNNING', '先暂停当前活动，再执行其他行动');
               const outcome = resolve(current, command);
               state.put(current, 'previous'); state.put(outcome.nextState, 'current');
               if (activity) {
-                const stopped: Activity = { ...activity, revision: activity.revision + 1, generation: activity.generation + 1,
-                  gameRevision: outcome.nextState.core.revision, status: 'stopped', nextCommand: null, startedAt: null, dueAt: null,
-                  stopReason: { code: 'STATE_CHANGED', message: '进度已改变，请重新安排活动；已完成的积累保留' } };
-                validateActivity(stopped, outcome.nextState); state.put(stopped, 'activity');
+                state.put(invalidateActivity(activity, outcome.nextState), 'activity');
               }
               if (outcome.checkpointKind) {
                 const prepared = checkpoint(current, outcome.checkpointKind);

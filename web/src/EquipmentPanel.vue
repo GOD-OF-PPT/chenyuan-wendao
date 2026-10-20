@@ -1,95 +1,40 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
-import GameIcon from './GameIcon.vue';
-import CataloguePager from './CataloguePager.vue';
+import {computed,ref,watch} from 'vue';
 import CatalogueArt from './CatalogueArt.vue';
 import ProductionPlanner from './ProductionPlanner.vue';
-import type {Activity,CraftPlan,ForgePlan} from '../../src/full/activity.ts';
+import LearningPlanner from './LearningPlanner.vue';
+import type {Activity,CraftPlan,ForgePlan,PreparationPlan} from '../../src/full/activity.ts';
 import type {useGame} from './store';
-import {pageSlice} from './play-flow';
 import * as C from '../../src/full/content.ts';
-import { stats } from '../../src/full/engine.ts';
-import { previewAction, type ActionPreview } from '../../src/full/queries.ts';
-import type { Action, Game } from '../../src/full/types.ts';
-import type { TrackingTarget } from '../../src/full/goals.ts';
-import { formatCosts } from './presentation';
-import type { NavigationRequest } from './navigation';
-
-const props = defineProps<{ game: Game; enabled: boolean; busy: boolean; highlight: string; catalogue?:'skills'|'relics'; running:boolean; activity:Activity|null; runtime:ReturnType<typeof useGame>['activityRuntime']; savedProduction:CraftPlan|ForgePlan|null; consumption: (action: Action) => string }>();
-const emit = defineEmits<{ act: [Action]; track: [TrackingTarget]; navigate: [NavigationRequest]; start:[CraftPlan|ForgePlan]; move:[CraftPlan|ForgePlan] }>();
-const section=ref(props.catalogue==='relics'?'relics':props.game.school?'skills':'school'),page=ref(0);
-const filter = ref<'current' | 'all' | C.School>('current'), future = ref(false);
-const slots = { mind: '心法', builder: '起手术法', finisher: '终结术法' } as const;
-const context = computed(() => ({ game: props.game, cache: new Map<string, ActionPreview>() }));
-function quote(action: Action) {
-  const current = context.value, key = JSON.stringify(action);
-  if (!current.cache.has(key)) current.cache.set(key, previewAction(current.game, action));
-  return current.cache.get(key)!;
-}
-const can = (action: Action) => props.enabled && !props.busy && !props.running && quote(action).allowed;
-const why = (action: Action) => !props.enabled ? '存储尚未就绪，请先恢复存档连接' : props.busy ? '当前行动进行中，请稍候' : props.running ? '当前活动进行中，请先暂停再行动' : quote(action).failure?.message ?? '';
-const details = computed(() => stats(props.game));
-const skills = computed(() => Object.entries(C.skills).filter(([id, skill]) =>
-  (filter.value === 'all' || skill.school === (filter.value === 'current' ? props.game.school : filter.value) || filter.value === 'current' && !props.game.school) &&
-  (future.value || props.game.learned.includes(id) || C.rank(skill.min) <= C.rank(props.game.core.player.realm))));
-const skillPage=computed(()=>pageSlice(skills.value,page.value,1));
-watch(section,()=>page.value=0,{flush:'sync'});watch([filter,future],()=>page.value=0,{flush:'sync'});
-watch(()=>props.catalogue,value=>{section.value=value==='relics'?'relics':props.game.school?'skills':'school';page.value=0;});
-watch(() => props.game.core.runId, () => { filter.value = 'current'; future.value = false;page.value=0;section.value=props.game.school?'skills':'school'; });
-watch(() => props.highlight, id => {
-  const skillId = id.startsWith('learn-') ? id.slice(6) : id.startsWith('equip-') ? id.slice(6) : null;
-  if (skillId && Object.hasOwn(C.skills, skillId)) {
-    section.value='skills';
-    filter.value = C.skills[skillId].school;
-    if (C.rank(C.skills[skillId].min) > C.rank(props.game.core.player.realm)) future.value = true;
-    page.value=Math.max(0,skills.value.findIndex(([id])=>id===skillId));
-  }
-  if ((id.startsWith('forge-')||id.startsWith('equip-relic-')) && Object.hasOwn(C.relics, id.replace(/^(forge-|equip-relic-)/,''))) {
-    section.value='relics';const relicId=id.replace(/^(forge-|equip-relic-)/,'');
-    const min = quote({ type: 'FORGE', relic: relicId }).requirements.minRealm;
-    if (min && C.rank(min) > C.rank(props.game.core.player.realm)) future.value = true;
-  }
-  if(id==='study-manual')section.value='manual';
-},{immediate:true});
+import {stats} from '../../src/full/engine.ts';
+import {previewAction,type ActionPreview} from '../../src/full/queries.ts';
+import type {Action,Game} from '../../src/full/types.ts';
+import type {TrackingTarget} from '../../src/full/goals.ts';
+import type {NavigationRequest} from './navigation';
+const props=defineProps<{game:Game;enabled:boolean;busy:boolean;highlight:string;catalogue?:'skills'|'relics';running:boolean;activity:Activity|null;runtime:ReturnType<typeof useGame>['activityRuntime'];savedProduction:CraftPlan|ForgePlan|null;savedPreparationPlan:PreparationPlan|null;preparationSaved:boolean;consumption:(action:Action)=>string}>();
+const emit=defineEmits<{act:[Action];track:[TrackingTarget];navigate:[NavigationRequest];start:[CraftPlan|ForgePlan|PreparationPlan];move:[CraftPlan|ForgePlan];travelPlan:[PreparationPlan]}>();
+const section=ref(props.catalogue==='relics'?'relics':props.game.school?'skills':'school'),learningFocus=ref('');
+const slots={mind:'心法',builder:'起手术法',finisher:'终结术法'} as const;
+const context=computed(()=>({game:props.game,cache:new Map<string,ActionPreview>()}));
+function quote(action:Action){const c=context.value,key=JSON.stringify(action);if(!c.cache.has(key))c.cache.set(key,previewAction(c.game,action));return c.cache.get(key)!;}
+const can=(action:Action)=>props.enabled&&!props.busy&&!props.running&&quote(action).allowed;
+const why=(action:Action)=>!props.enabled?'存储尚未就绪，请先恢复存档连接':props.busy?'当前行动保存中，请稍候':props.running?'当前活动进行中，请先暂停后调整配装':quote(action).failure?.message??'';
+const details=computed(()=>stats(props.game));
+const savedLearning=computed(()=>props.savedPreparationPlan?.kind==='learn'||props.savedPreparationPlan?.kind==='study'?props.savedPreparationPlan:null);
+function inspectSlot(id:string|null){section.value='skills';learningFocus.value=id?'equip-'+id:'';}
+watch(()=>props.catalogue,value=>{section.value=value==='relics'?'relics':props.game.school?'skills':'school';learningFocus.value='';});
+watch(()=>props.game.core.runId,()=>{section.value=props.catalogue==='relics'?'relics':props.game.school?'skills':'school';learningFocus.value='';});
+watch(()=>props.highlight,id=>{learningFocus.value='';if(/^(learn-|equip-)/.test(id)&&Object.hasOwn(C.skills,id.replace(/^(learn-|equip-)/,'')))section.value='skills';if(/^(forge-|equip-relic-)/.test(id)&&Object.hasOwn(C.relics,id.replace(/^(forge-|equip-relic-)/,'')))section.value='relics';if(id==='study-manual')section.value='manual';},{immediate:true});
+watch(savedLearning,p=>{if(p)section.value=p.kind==='study'?'manual':'skills';});
 </script>
-
 <template>
-  <section class="paper equipment-panel play-catalogue equipment-catalogue" :class="{'catalogue-gallery':section!=='relics'}" data-testid="equipment-panel" tabindex="-1" aria-label="功法与法宝">
-    <CatalogueArt v-if="section!=='relics'" kind="study"/>
-    <div v-if="section!=='relics'" class="section-label">功法与法宝 <span>研习与装备分别确认</span></div>
-    <div v-show="section==='summary'" class="loadout-summary">
-      <div v-for="(label,slot) in slots" :key="slot"><small>{{label}} · 1槽</small><strong :data-testid="`loadout-${slot}`">{{game.loadout[slot] ? C.skills[game.loadout[slot]!].name : '尚未择法'}}</strong></div>
-      <div><small>本命法宝 · 1槽</small><strong data-testid="loadout-relic">{{game.loadout.relic ? C.relics[game.loadout.relic].name : '尚未装备'}}</strong></div>
-    </div>
-    <p v-show="section==='summary'" class="small" data-testid="build-stats">静修加成 {{details.cultivationBonus}}% · 护体基础减伤 {{details.guard}}{{game.school==='talisman' ? ` · 每回合符印伤害 ${details.markDamage}` : ''}}</p>
-    <nav class="catalogue-tabs" aria-label="功法法宝分类"><button v-for="[id,label] in [['school','修法'],['skills','功法'],['relics','法宝'],['manual','剑简'],['summary','配装']]" :key="id" :aria-pressed="section===id" @click="section=id" :data-testid="'equipment-mode-'+id">{{label}}</button></nav>
-    <div v-if="section==='school'" class="school-picker"><h3>选择修法 <small>战斗外切换；会采用该派基础组合，研习记录保留，可再逐槽装备。</small></h3><div class="choices two">
-      <button v-for="school in ['sword','talisman'] as const" :key="school" :data-testid="`school-${school}`" :class="{selected:game.school===school}" :aria-pressed="game.school===school" @click="emit('act',{type:'SCHOOL',school})" :disabled="!can({type:'SCHOOL',school})"><strong>{{school==='sword'?'剑修 · 青锋剑诀':'符修 · 镇灵符诀'}}</strong><small>{{why({type:'SCHOOL',school})}}</small></button>
-    </div></div>
-    <article v-if="section==='manual'" class="equipment-card" data-testid="sword-manual">
-      <div><h3>{{C.swordManual.name}} <small>剑法启迪</small></h3>
-        <p>与破庙交易所得为同一份剑简。其他开场可在{{C.realms[C.swordManual.min].name}}后到青云宗研读，剑修终结术法伤害 +{{C.swordManual.damageBonus}}；不改变当前配装。</p>
-        <small>研读成本：{{formatCosts(quote({type:'STUDY',manual:'jinghong'}).costs)}} · 价格未平衡</small>
-        <small v-if="game.school==='talisman'">这项启迪只用于剑修终结术法，当前符修没有直接收益。</small>
-        <small data-testid="manual-effect">当前剑简伤害加成 {{details.manualDamageBonus}}</small>
-        <small>{{why({type:'STUDY',manual:'jinghong'})}}</small>
-      </div>
-      <div class="equipment-actions"><button data-testid="study-manual" :class="{highlight:highlight==='study-manual'}" @click="emit('act',{type:'STUDY',manual:'jinghong'})" :disabled="!can({type:'STUDY',manual:'jinghong'})">{{game.core.learnedSkills.includes(C.swordManual.id)?'已研读':'付费研读'}}</button><button v-if="game.core.world.location!=='sect' && !game.core.learnedSkills.includes(C.swordManual.id)" class="text-button" data-testid="go-study-manual" @click="emit('navigate',{location:'sect',tab:'修行',focusId:'study-manual'})" :disabled="!can({type:'TRAVEL',location:'sect'})">前往青云宗 →</button></div>
-    </article>
-    <div v-if="section==='skills'" class="equipment-options"><label>查看修法 <select v-model="filter" aria-label="功法流派"><option value="current">当前修法</option><option value="sword">剑修</option><option value="talisman">符修</option><option value="all">全部</option></select></label><label><input type="checkbox" v-model="future" aria-label="显示后续功法法宝"> 显示后续境界</label></div>
-    <p v-if="section==='skills'&&!skills.length" class="small">引气入体后可选择修法；在青云宗研习功法，战斗外逐槽装备。</p>
-    <article v-for="[id,skill] in (section==='skills'?skillPage.rows:[])" :key="id" class="equipment-card" :data-testid="`skill-${id}`">
-      <div><h3><GameIcon kind="skill" :id="id"/> {{skill.name}} <small>{{skill.school==='sword'?'剑修':'符修'}} · {{slots[skill.slot]}} · {{C.realms[skill.min].name}}</small></h3><p>{{skill.description}}</p>
-        <small>研习成本：{{formatCosts(quote({type:'LEARN',skill:id}).costs)}} · 青云宗</small><small data-testid="learn-reason">{{why({type:'LEARN',skill:id})}}</small>
-        <small v-if="game.learned.includes(id)">已掌握，保留在本次人生的研习记录中。</small>
-      </div>
-      <div class="equipment-actions">
-        <button :data-testid="`learn-${id}`" :class="{highlight:highlight===`learn-${id}`}" @click="emit('act',{type:'LEARN',skill:id})" :disabled="!can({type:'LEARN',skill:id})">{{game.learned.includes(id)?'已掌握':'研习'}}</button>
-        <button :data-testid="`equip-${id}`" :class="{selected:game.loadout[skill.slot]===id,highlight:highlight===`equip-${id}`}" :aria-pressed="game.loadout[skill.slot]===id" @click="emit('act',{type:'EQUIP',skill:id})" :disabled="!can({type:'EQUIP',skill:id})">{{game.loadout[skill.slot]===id?'已装备':`装入${slots[skill.slot]}`}}</button>
-        <small data-testid="equip-reason">{{why({type:'EQUIP',skill:id})}}</small>
-        <button class="text-button" :data-testid="`track-skill-${id}`" @click="emit('track',{kind:'skill',id})">查看筹备 →</button>
-      </div>
-    </article>
-    <CataloguePager v-if="section==='skills'" :page="skillPage.page" :pages="skillPage.pages" :total="skillPage.total" label="功法" @change="page=$event"/><ProductionPlanner v-if="section==='relics'" embedded mode="forge" :game="game" :busy="busy" :available="enabled" :running="running" :highlight="highlight" :saved-plan="savedProduction" :consumption="consumption" :activity="activity" :runtime="runtime" @start="emit('start',$event)" @track="emit('track',$event)" @act="emit('act',$event)" @travel="emit('move',$event)"/>
-  </section>
+ <section class="paper equipment-panel play-catalogue equipment-catalogue" :class="{'catalogue-gallery':section==='school'||section==='summary'}" data-testid="equipment-panel" tabindex="-1" aria-label="功法与法宝">
+  <CatalogueArt v-if="section==='school'||section==='summary'" kind="study"/>
+  <div v-if="section==='school'||section==='summary'" class="section-label">功法与法宝 <span>预览比较后确认，不自动替换</span></div>
+  <nav class="catalogue-tabs" aria-label="功法法宝分类"><button v-for="[id,label] in [['school','修法'],['skills','功法'],['relics','法宝'],['manual','剑简'],['summary','配装']]" :key="id" :aria-pressed="section===id" @click="section=id;learningFocus=''" :data-testid="'equipment-mode-'+id">{{label}}</button></nav>
+  <template v-if="section==='summary'"><div class="loadout-summary"><div v-for="(label,slot) in slots" :key="slot"><small>{{label}} · 1槽</small><strong :data-testid="'loadout-'+slot">{{game.loadout[slot]?C.skills[game.loadout[slot]!].name:'尚未择法'}}</strong><button @click="inspectSlot(game.loadout[slot])">比较此槽功法</button></div><div><small>本命法宝 · 1槽</small><strong data-testid="loadout-relic">{{game.loadout.relic?C.relics[game.loadout.relic].name:'尚未装备'}}</strong><button @click="section='relics'">查看已炼器物</button></div></div><p class="small" data-testid="build-stats">静修加成 {{details.cultivationBonus}}% · 护体基础减伤 {{details.guard}}{{game.school==='talisman'?' · 每回合符印伤害 '+details.markDamage:''}}</p></template>
+  <div v-if="section==='school'" class="school-picker"><h3>选择修法 <small>三基础槽会一起更换，研习记录与法宝保留；确认前可取消。</small></h3><div class="choices two"><button v-for="school in ['sword','talisman'] as const" :key="school" :data-testid="'school-'+school" :class="{selected:game.school===school}" :aria-pressed="game.school===school" @click="emit('act',{type:'SCHOOL',school})" :disabled="!can({type:'SCHOOL',school})"><strong>{{school==='sword'?'剑修 · 青锋剑诀':'符修 · 镇灵符诀'}}</strong><small>{{Object.values(C.startingLoadouts[school]).map(id=>C.skills[id].name).join(' / ')}}</small><small>{{why({type:'SCHOOL',school})||'比较基础组合后确认一次'}}</small></button></div></div>
+  <LearningPlanner v-if="section==='skills'||section==='manual'" embedded :mode="section==='manual'?'manual':'skills'" :game="game" :busy="busy" :available="enabled" :running="running" :highlight="learningFocus||highlight" :saved-plan="savedLearning" :plan-saved="preparationSaved" @start="emit('start',$event)" @act="emit('act',$event)" @track="emit('track',$event)" @travel="emit('travelPlan',$event)"/>
+  <ProductionPlanner v-if="section==='relics'" embedded mode="forge" :game="game" :busy="busy" :available="enabled" :running="running" :highlight="highlight" :saved-plan="savedProduction" :consumption="consumption" :activity="activity" :runtime="runtime" @start="emit('start',$event)" @track="emit('track',$event)" @act="emit('act',$event)" @travel="emit('move',$event)"/>
+ </section>
 </template>

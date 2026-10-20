@@ -1,0 +1,67 @@
+{
+  "format": "chenyuan-idle-preparation",
+  "version": 1,
+  "task": "Goal3 U5",
+  "maxNativeBytes": 60000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/LearningPlanner.vue",
+      "bytes": 11882,
+      "sha256": "c280cbf5e86bb72c67eb1fab277e15fe24793e949120257bb93de7fd6001b83c"
+    },
+    {
+      "path": "web/src/MarketPlanner.vue",
+      "bytes": 8942,
+      "sha256": "8ae12713adf1b8ed4ae86fd43169f30e7e98c536c7263810d0f11f31c780bce0"
+    },
+    {
+      "path": "web/src/RecoveryPlanner.vue",
+      "bytes": 7083,
+      "sha256": "455cd293d1b7027989cd55a0c9ef98aceaf6194e0afc9a481804280bda92f717"
+    },
+    {
+      "path": "web/src/ConfigurationDialog.vue",
+      "bytes": 5045,
+      "sha256": "1ff56c63eea1b38a62e226df2029d0c8856cc43760863b3aff81a93c97260156"
+    },
+    {
+      "path": "web/src/preparation-view.ts",
+      "bytes": 1668,
+      "sha256": "ac0732396ef435359325262ada51dda53b3e28308e2d2add3dc729a8b0375420"
+    },
+    {
+      "path": "web/src/idle-preparation.css",
+      "bytes": 10550,
+      "sha256": "952da4a6bd40cf48603200253fe39c23fdd17cf45e31fa6b11d81247d11af09b"
+    }
+  ],
+  "sourceReferences": [
+    "goal-3/amendments/2026-10-21-heartbeat-u5.md",
+    "docs/decisions/0007-preparation-idle-contract.md"
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "<ConfigurationDialog ",
+      "<MarketPlanner ",
+      "<RecoveryPlanner ",
+      "@travel-plan=\"movePreparation\""
+    ],
+    "web/src/EquipmentPanel.vue": [
+      "<LearningPlanner "
+    ],
+    "web/src/ExplorePanel.vue": [
+      "<MarketPlanner "
+    ],
+    "web/src/GoodsPanel.vue": [
+      "inspect-use-"
+    ],
+    "web/src/activity-view.ts": [
+      "preparationView(a)"
+    ],
+    "web/src/main.ts": [
+      "import './idle-preparation.css'"
+    ]
+  },
+  "scope": "Six finite online activities and three immediate compared configurations; approved art reused; no balance or player acceptance."
+}

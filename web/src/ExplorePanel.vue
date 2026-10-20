@@ -2,15 +2,17 @@
 import {computed,ref,watch,onMounted,onScopeDispose} from 'vue';
 import type {Action,Game} from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
-import {planCollection,type CollectionTarget} from '../../src/full/goals.ts';
+import {planCollection,type CollectionTarget,type TrackingTarget} from '../../src/full/goals.ts';
 import {previewAction} from '../../src/full/queries.ts';
 import {formatCosts,formatDelta} from './presentation';
 import {pageSlice} from './play-flow';
 import {actionSeconds} from './action-timing';
 import CataloguePager from './CataloguePager.vue';
 import SourcePlanner from './SourcePlanner.vue';
-import type {SourcePlan} from '../../src/full/activity.ts';
-const props=defineProps<{game:Game;busy:boolean;available:boolean;highlight:string;collection:CollectionTarget|null;purchaseQuantity:number;running:boolean;savedSourcePlan:SourcePlan|null}>(),emit=defineEmits<{act:[Action];travel:[C.LocationId];home:[];start:[SourcePlan]}>();
+import MarketPlanner from './MarketPlanner.vue';
+import type {SourcePlan,PreparationPlan} from '../../src/full/activity.ts';
+const props=defineProps<{game:Game;busy:boolean;available:boolean;highlight:string;collection:CollectionTarget|null;purchaseQuantity:number;running:boolean;savedSourcePlan:SourcePlan|null;savedPreparationPlan:PreparationPlan|null;preparationSaved:boolean;consumption:(action:Action)=>string}>(),emit=defineEmits<{act:[Action];travel:[C.LocationId];home:[];start:[SourcePlan|PreparationPlan];travelPlan:[PreparationPlan];track:[TrackingTarget]}>();
+const savedMarket=computed(()=>props.savedPreparationPlan?.kind==='buy'||props.savedPreparationPlan?.kind==='sell'?props.savedPreparationPlan:null);
 const mode=ref('travel'),page=ref(0),count=ref<number|'target'>(1),quantity=ref(1),inspect=ref<string|null>(null);
 const pagerMedia=window.matchMedia('(max-width:1099px)'),compact=ref(pagerMedia.matches),capacity=computed(()=>compact.value?2:4);
 function resized(){compact.value=pagerMedia.matches;page.value=0;locate();}onMounted(()=>pagerMedia.addEventListener('change',resized));onScopeDispose(()=>pagerMedia.removeEventListener('change',resized));
@@ -26,7 +28,7 @@ function sourceAction(id:string):Action|null{return count.value==='target'?(prop
 function rowAction(id:string):Action|null{return mode.value==='travel'?{type:'TRAVEL',location:id as C.LocationId}:mode.value==='source'?sourceAction(id):mode.value==='battle'?{type:'ENCOUNTER',enemy:id}:{type:'BUY',item:id,quantity:quantity.value};}
 function go(id:string){const action=rowAction(id);if(!action)return;if(action.type==='TRAVEL')emit('travel',action.location);else emit('act',action);}
 function selectMode(value:string){mode.value=value;page.value=0;inspect.value=null;}
-function locate(){const m=/^(source|buy|encounter|travel)-(.+)$/.exec(props.highlight);if(!m)return;mode.value=({source:'source',buy:'purchase',encounter:'battle',travel:'travel'}as Record<string,string>)[m[1]];page.value=Math.max(0,Math.floor(rows.value.findIndex(([id])=>id===m[2])/capacity.value));inspect.value=null;}
+function locate(){const m=/^(source|buy|sell|encounter|travel)-(.+)$/.exec(props.highlight);if(!m)return;mode.value=({source:'source',buy:'purchase',sell:'purchase',encounter:'battle',travel:'travel'}as Record<string,string>)[m[1]];page.value=Math.max(0,Math.floor(rows.value.findIndex(([id])=>id===m[2])/capacity.value));inspect.value=null;}
 watch(()=>props.highlight,locate,{immediate:true});watch(()=>props.purchaseQuantity,value=>quantity.value=value,{immediate:true});
 watch(()=>props.collection,value=>{if(value)count.value='target';},{immediate:true});
 watch(()=>props.game.core.runId,()=>{mode.value='travel';page.value=0;inspect.value=null;count.value=1;quantity.value=1;});
@@ -38,9 +40,10 @@ function description(id:string){return mode.value==='travel'?C.locations[id as C
 </script>
 <template>
  <section class="paper play-catalogue explore-catalogue" data-testid="explore-catalogue" tabindex="-1">
-  <header v-if="mode!=='source'"><div><small>历练 · 当前地点</small><h2>{{C.locations[game.core.world.location].name}}</h2></div><span>前往地点 → 采集 / 挑战 → 回府筹备</span></header>
+  <header v-if="mode!=='source'&&mode!=='purchase'"><div><small>历练 · 当前地点</small><h2>{{C.locations[game.core.world.location].name}}</h2></div><span>前往地点 → 采集 / 挑战 → 回府筹备</span></header>
   <nav class="catalogue-tabs" aria-label="历练分类"><button v-for="[id,label] in modes" :key="id" :data-testid="'explore-mode-'+id" :aria-pressed="mode===id" @click="selectMode(id)">{{label}}</button></nav>
   <SourcePlanner v-if="mode==='source'" :game="game" :busy="busy" :available="available" :running="running" :highlight="highlight" :collection="collection" :saved-plan="savedSourcePlan" @start="emit('start',$event)" @locations="selectMode('travel')" @home="emit('home')"/>
+  <MarketPlanner v-else-if="mode==='purchase'" embedded :game="game" :busy="busy" :available="available" :running="running" :highlight="highlight" :saved-plan="savedMarket" :plan-saved="preparationSaved" :consumption="consumption" @start="emit('start',$event)" @act="emit('act',$event)" @track="emit('track',$event)" @travel="emit('travelPlan',$event)"/>
   <template v-else-if="inspect"><div class="catalogue-back"><button @click="inspect=null">← 返回目录</button><strong>{{name(inspect)}} · 完整说明</strong></div><article class="catalogue-detail"><p>{{description(inspect)}}</p><p>{{detailQuote?.delta?formatDelta(detailQuote.delta):''}}</p><p>代价：{{formatCosts(detailQuote?.actualCosts??detailQuote?.costs??null)}}</p><p>{{detailAction?reason(detailAction):''}}</p></article></template>
   <template v-else>
    <div class="catalogue-options"><template v-if="game.core.player.realm==='mortal'"><span>引气入体后才可采集和挑战，先回洞府修炼。</span><button data-testid="explore-return-cultivation" @click="game.core.world.location==='cave'?emit('home'):emit('travel','cave')" :disabled="busy||!available||(game.core.world.location!=='cave'&&!can({type:'TRAVEL',location:'cave'}))">返回修炼</button></template><label v-else-if="mode==='source'">连续采集/委托 <select v-model="count" aria-label="取材次数"><option :value="1">1 次</option><option :value="5">5 次</option><option :value="20">20 次</option><option :value="50">50 次</option><option value="target">达到筹备目标</option></select></label><label v-else-if="mode==='purchase'&&game.core.world.location==='market'">采购数量 <input v-model.number="quantity" aria-label="采购数量" type="number" min="1" :max="C.maxQuantity"></label><span v-else>{{mode==='travel'?'选择目的地，不会自动采集或挑战。':mode==='battle'?'挑战有战损；材料也可从委托或坊市取得。':'先前往云岚坊市，才可购买。'}}</span><small v-if="collection&&mode==='source'">目标：{{collection.kind==='item'?C.items[collection.id].name:'灵石'}}达到 {{collection.quantity}}</small></div>

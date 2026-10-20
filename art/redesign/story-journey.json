@@ -28,8 +28,8 @@
     },
     {
       "path": "web/src/TrialCatalogue.vue",
-      "bytes": 10735,
-      "sha256": "68929ce14343de944d43af62b71e44c6cffed5c2c624fb5032e1e95f051cf28d"
+      "bytes": 10775,
+      "sha256": "8bec0f63761bf37397c9366e63b1c20eaa61d03411d7880d9a22e15ff0ba61dc"
     },
     {
       "path": "web/src/ReviewPages.vue",

@@ -29,18 +29,18 @@
     },
     {
       "path": "web/src/PreparationPanel.vue",
-      "bytes": 7350,
-      "sha256": "7f2818f6c802f09523a09558da3a7ccf5199f078a45d6c14f74648cc37afab83"
+      "bytes": 7335,
+      "sha256": "9d75fbd6232b623b84ef17084622f457d65e9860ee3d94f4130c3af9d7dc168c"
     },
     {
       "path": "web/src/ExplorePanel.vue",
-      "bytes": 9628,
-      "sha256": "e8a3f4e6285bfb7be9d71391cf76af9e8f49e1358da9bf47ad182238c9e7ea1a"
+      "bytes": 10428,
+      "sha256": "f09fae21fb04dc25f17f4bb0bcd05aab1937df16bb7ac8eb845d58f6a80f6b27"
     },
     {
       "path": "web/src/GoodsPanel.vue",
-      "bytes": 4702,
-      "sha256": "a145fbd025be9884d09d95d2dd33dec8e8b16b6fc909f50bc2a503c4d3d4c1b7"
+      "bytes": 4786,
+      "sha256": "8b5d2bfa4210a4b7c381a601c5fb3a1835e8c7a1649d7ef988d9fd975124036d"
     },
     {
       "path": "web/src/CultivationPanel.vue",

@@ -26,7 +26,7 @@
       "@start=\"emit('start',$event)\""
     ],
     "web/src/App.vue": [
-      "@start=\"startSource\"",
+      "startSource(plan)",
       ":running=\"store.activityRunning\""
     ],
     "web/src/main.ts": [

@@ -1,4 +1,4 @@
-import { validateActivity, validateActivityMutation, validateActivityPlan, validateActivityTick } from '../../src/full/activity.ts';
+import { validateActivity, validateActivityMutation, validateActivityPlan, validateActivityTick, completeActivity, preparationCycleAction } from '../../src/full/activity.ts';
 import { canonicalFingerprint as fingerprint, validateCommandReceipt } from '../../src/full/receipts.ts';
 import { RuleError } from '../../src/full/errors.ts';
 import type { Activity, ActivityMutation, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
@@ -6,14 +6,16 @@ import type { ActionResult } from '../../src/full/contracts.ts';
 import type { Command, Game } from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
 import { costsForAction } from '../../src/full/costs.ts';
+import { validateGame } from '../../src/full/engine.ts';
 
 export type ActivityReceiptInput =
   | { kind: 'START'; plan: ActivityPlan; mutation: ActivityMutation }
   | { kind: 'PAUSE' | 'RESUME'; mutation: ActivityMutation }
   | { kind: 'TICK'; tick: ActivityTick };
 export interface ActivityReceipt {
-  format: 'chenyuan-activity-receipt'; version: 1; input: ActivityReceiptInput; fingerprint: string;
+  format: 'chenyuan-activity-receipt'; version: 1 | 2; input: ActivityReceiptInput; fingerprint: string;
   activity: Activity; command: Command | null; result: ActionResult | null;
+  proof?: { activityBefore: Activity; stateAfter: Game; resolvedAt: number };
 }
 function invalid(): never { throw new RuleError('RECEIPT_INVALID', '活动回执损坏，未重复执行或覆盖原记录'); }
 function shape(value: unknown, fields: string[]): asserts value is Record<string, unknown> {
@@ -23,8 +25,9 @@ function shape(value: unknown, fields: string[]): asserts value is Record<string
 /** Historical activity snapshots are checked structurally; replay returns the current snapshot. */
 export function validateActivityReceipt(value: unknown, current: Game): asserts value is ActivityReceipt {
   try {
-    shape(value, ['format', 'version', 'input', 'fingerprint', 'activity', 'command', 'result']);
-    if (value.format !== 'chenyuan-activity-receipt' || value.version !== 1) invalid();
+    const proven = !!value && typeof value === 'object' && 'version' in value && value.version === 2;
+    shape(value, ['format', 'version', 'input', 'fingerprint', 'activity', 'command', 'result', ...(proven ? ['proof'] : [])]);
+    if (value.format !== 'chenyuan-activity-receipt' || value.version !== 1 && value.version !== 2) invalid();
     const input = value.input as ActivityReceiptInput;
     if (!input || typeof input !== 'object' || !('kind' in input)) invalid();
     if (input.kind === 'START') {
@@ -45,7 +48,8 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
       validateCommandReceipt(receipt, current);
       const command = receipt.command;
       const identity = { commandId: input.tick.commandId, runId: input.tick.runId, expectedRevision: input.tick.expectedRevision };
-      const expected: Command = activity.version === 1 ? { type: 'CULTIVATE', method: activity.plan.method, count: 1, ...identity } :
+      const expected: Command = activity.version === 5 ? { ...preparationCycleAction(activity.plan, activity.completedCycles - 1), ...identity } :
+        activity.version === 1 ? { type: 'CULTIVATE', method: activity.plan.method, count: 1, ...identity } :
         activity.version === 2 ? { type: 'SOURCE', sourceId: activity.plan.sourceId, count: 1,
           ...(activity.plan.target?.kind === 'item' ? { target: { item: activity.plan.target.id, quantity: activity.plan.target.quantity } } : {}), ...identity } :
         activity.version === 3 ? { type: 'CRAFT', recipeId: activity.plan.recipeId, ...identity } :
@@ -55,8 +59,22 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
           command.commandId !== `cycle:${activity.id}:${activity.generation}:${activity.completedCycles}` ||
           activity.revision !== input.tick.expectedActivityRevision + 1 || activity.gameRevision !== input.tick.expectedRevision + 1) invalid();
       const result = receipt.result, delta = result.delta;
-      if (delta.realm.before !== activity.realm || delta.realm.after !== activity.realm || delta.hp !== 0 || delta.mp !== 0 || delta.wins !== 0) invalid();
-      if (activity.version === 2) {
+      if (delta.realm.before !== activity.realm || delta.realm.after !== activity.realm || delta.wins !== 0) invalid();
+      if (activity.version === 5) {
+        if (!proven) invalid();
+        shape(value.proof, ['activityBefore', 'stateAfter', 'resolvedAt']);
+        const proof = value.proof;
+        validateActivity(proof.activityBefore); validateGame(proof.stateAfter);
+        if (proof.activityBefore.version !== 5 || proof.activityBefore.id !== activity.id ||
+            proof.activityBefore.revision !== input.tick.expectedActivityRevision ||
+            proof.activityBefore.generation !== input.tick.generation || proof.activityBefore.ownerId !== input.tick.ownerId ||
+            proof.stateAfter.core.runId !== current.core.runId || proof.stateAfter.core.revision > current.core.revision ||
+            !Number.isSafeInteger(proof.resolvedAt) || Number(proof.resolvedAt) < 0) invalid();
+        const completed = completeActivity(proof.stateAfter, proof.activityBefore, result,
+          { commandId: command.commandId, now: proof.resolvedAt as number });
+        if (fingerprint(completed) !== fingerprint(activity)) invalid();
+      } else if (proven || delta.hp !== 0 || delta.mp !== 0) invalid();
+      else if (activity.version === 2) {
         const source = C.sources[activity.plan.sourceId];
         if (fingerprint(result.costs) !== fingerprint({ stones: 0, mp: 0, months: source.months, items: {} }) ||
             delta.stones !== source.stones || fingerprint(delta.inventory) !== fingerprint(source.items) ||
@@ -78,6 +96,7 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
             fingerprint(delta.inventory) !== fingerprint(inventory)) invalid();
       }
     } else {
+      if (proven) invalid();
       if (value.command !== null || value.result !== null || activity.gameRevision !== intent.expectedRevision || activity.ownerId !== input.mutation.ownerId) invalid();
       if (input.kind === 'START') {
         if (activity.status !== 'running' || activity.revision !== 0 || activity.generation !== 0 || activity.completedCycles !== 0 ||
@@ -88,7 +107,9 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
     }
   } catch { invalid(); }
 }
-export function activityReceipt(input: ActivityReceiptInput, activity: Activity, command: Command | null = null, result: ActionResult | null = null): ActivityReceipt {
-  return { format: 'chenyuan-activity-receipt', version: 1, input: structuredClone(input), fingerprint: fingerprint(input),
-    activity: structuredClone(activity), command: command ? structuredClone(command) : null, result: result ? structuredClone(result) : null };
+export function activityReceipt(input: ActivityReceiptInput, activity: Activity, command: Command | null = null, result: ActionResult | null = null,
+  proof?: ActivityReceipt['proof']): ActivityReceipt {
+  return { format: 'chenyuan-activity-receipt', version: proof ? 2 : 1, input: structuredClone(input), fingerprint: fingerprint(input),
+    activity: structuredClone(activity), command: command ? structuredClone(command) : null, result: result ? structuredClone(result) : null,
+    ...(proof ? { proof: structuredClone(proof) } : {}) };
 }

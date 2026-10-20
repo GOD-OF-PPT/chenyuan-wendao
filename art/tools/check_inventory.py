@@ -268,6 +268,26 @@ def validate(root):
             assert all(fragment in (root / path).read_text() for fragment in fragments), 'Production UI consumer missing'
     else:
         assert not (root / 'web/src/idle-production.css').exists(), 'Unrecorded production UI'
+    preparation_path = root / 'art/redesign/idle-preparation.json'
+    preparation_bytes = 0
+    if preparation_path.exists():
+        preparation = json.loads(preparation_path.read_text())
+        assert preparation['format'] == 'chenyuan-idle-preparation' and preparation['version'] == 1
+        assert preparation['maxNativeBytes'] == 60000 and preparation['userAcceptance'] is False
+        assert [r['path'] for r in preparation['files']] == ['web/src/LearningPlanner.vue', 'web/src/MarketPlanner.vue', 'web/src/RecoveryPlanner.vue', 'web/src/ConfigurationDialog.vue', 'web/src/preparation-view.ts', 'web/src/idle-preparation.css']
+        total = 0
+        for row in preparation['files']:
+            raw = (root / row['path']).read_bytes()
+            assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Preparation UI identity changed'
+            total += len(raw)
+        preparation_bytes = total
+        assert total <= 60000, 'Preparation UI budget exceeded'
+        for ref in preparation['sourceReferences']:
+            assert (root / ref).resolve().is_relative_to(root) and (root / ref).is_file()
+        for path, fragments in preparation['bindings'].items():
+            assert all(fragment in (root / path).read_text() for fragment in fragments), 'Preparation UI consumer missing'
+    else:
+        assert not (root / 'web/src/idle-preparation.css').exists(), 'Unrecorded preparation UI'
     budgets = manifest['budget']
     for category, key in [('scene', 'sceneMasters'), ('portrait', 'portraits'), ('ui_kit', 'uiKits'), ('fx_kit', 'fxKits')]:
         assert sum(a['category'] == category for a in manifest['assets']) == budgets[key], 'Budget slots drift: ' + category
@@ -340,7 +360,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

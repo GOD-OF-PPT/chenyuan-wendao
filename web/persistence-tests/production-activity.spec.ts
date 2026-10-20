@@ -194,7 +194,8 @@ test('production pause, explicit takeover, refresh and new-life archive fence ol
         const foreignPause = await h.attempt(() => reopened.pauseActivity(h.activityMutation(resumed)));
         const early = await h.attempt(() => reopened.settleActivity(h.activityTick(resumed))); now = resumed.activity.dueAt;
         const completed = await reopened.settleActivity(h.activityTick(resumed));
-        const equipped = await reopened.execute(h.command(completed.state, { type: 'EQUIP_RELIC', relic: 'frost_sword' }));
+        const equipped = await reopened.configure({ command: h.command(completed.state, { type: 'EQUIP_RELIC', relic: 'frost_sword' }),
+          expectedActivityId: completed.activity.id, expectedActivityRevision: completed.activity.revision });
         const afterEquipment = await reopened.loadActivitySnapshot(), historicReplay = await reopened.settleActivity(h.activityTick(resumed));
         const replacement = await reopened.create('新的人生', h.mutation(equipped.state));
         const old = await h.attempt(() => reopened.settleActivity(h.activityTick(resumed)));
@@ -298,7 +299,7 @@ test('v5 cultivation and source activities, complete resources, real checkpoint 
     } finally { Date.now = realNow; }
   });
   for (const row of rows) {
-    expect(row.closed).toBe(true); expect(row.after.version).toBe(6); expect(row.checkpoint).not.toBeNull();
+    expect(row.closed).toBe(true); expect(row.after.version).toBe(7); expect(row.checkpoint).not.toBeNull();
     for (const store of row.original.stores) expect(row.after[store]).toEqual(row.original[store]);
     expect(row.loaded.activity.version).toBe(row.kind === 'cultivation' ? 1 : 2);
     expect(row.loaded).toEqual({ state: row.completed.state, activity: row.completed.activity }); expect(row.checkpointAfter).toEqual(row.checkpoint);
