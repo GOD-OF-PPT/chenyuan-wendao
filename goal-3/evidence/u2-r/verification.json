@@ -58,7 +58,7 @@
   ],
   "all25CoveredExactlyOnce": true,
   "sources": 8,
-  "localLinks": 141,
+  "localLinks": 145,
   "userAmendmentsExact": true,
   "originalInputsAndRuntimeUnchanged": true,
   "compatibility": "development and tests paused",
