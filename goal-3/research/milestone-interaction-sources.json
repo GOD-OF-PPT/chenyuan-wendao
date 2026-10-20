@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-21",
+  "task": "U7",
+  "scope": "Reuse prior idle-game research and re-read two primary design sources for the actual finite-choice and feedback gaps. No competitor playtest or compatibility claim.",
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/116",
+      "title": "Xbox Accessibility Guideline 116: Time limits",
+      "fact": "The guidance distinguishes non-core UI time limits from core gameplay timers; dialogue can persist until the player advances it.",
+      "inference": "This project's story and question remain untimed while reading. Only after an explicit selected action is confirmed does its online period start. Countdown expiry never chooses a new answer.",
+      "limitation": "This source does not prescribe idle-game action seconds, growth pacing, or resource budgets. Those are unbalanced project parameters in 0009."
+    },
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "title": "Clarity in League",
+      "published": "2021-03-12",
+      "fact": "Riot describes readable gameplay, importance-based visual hierarchy, and restrained visual noise.",
+      "inference": "Use existing character/scene imagery and distinct dialogue, breakthrough, trial and closure effects only for a newly persisted current action; keep the actual result readable after the short effect and avoid duplicate central overlays.",
+      "limitation": "Competitive combat examples are not this game's rules, art acceptance, or evidence that its current UI is clear to a human player."
+    }
+  ],
+  "priorIdleResearch": "goal-3/research/idle-interaction-sources.json",
+  "projectContract": "docs/decisions/0009-milestone-idle-contract.md",
+  "implementationAndHumanAcceptance": "Recorded separately after actual verification; research alone closes neither."
+}

@@ -231,8 +231,8 @@ test('restoring a real breakthrough checkpoint archives the old activity with th
     const h = (globalThis as any).h, repo = await h.FullSaveRepository.open('activity-restore');
     try {
       const d = h.routes.driver(), prepared = await repo.importText(JSON.stringify(d.checkpoints.mortal), h.mutation());
-      const advanced = await repo.execute(h.command(prepared.state, { type: 'BREAKTHROUGH' }));
-      const checkpoint = await repo.loadCheckpoint(), started = await repo.startActivity(h.plan(), h.activityMutation({ state: advanced.state, activity: null }));
+      const advanced = await h.finishAction(repo, { type: 'BREAKTHROUGH' });
+      const checkpoint = await repo.loadCheckpoint(), started = await repo.startActivity(h.plan(), h.activityMutation(await repo.loadActivitySnapshot()));
       const intent = h.mutation(started.state), restored = await repo.restoreCheckpoint(intent), loaded = await repo.loadActivitySnapshot();
       const replay = await repo.restoreCheckpoint(intent), old = await h.attempt(() => repo.settleActivity(h.activityTick(started)));
       return { checkpoint, started, restored, loaded, replay, old, checkpointAfter: await repo.loadCheckpoint(), archives: await repo.archives() };
@@ -303,7 +303,7 @@ test('cycle and cultivation-cap limits stop in the same saved transaction withou
         const repo = await h.FullSaveRepository.open('activity-target-' + maxCycles);
         try {
           let current = (await repo.create('目标停止', h.mutation())).state;
-          current = (await repo.execute(h.command(current, { type: 'CHOOSE', choice: 'leave' }))).state;
+          current = (await h.finishAction(repo, { type: 'CHOOSE', choice: 'leave' })).state;
           current = (await h.finishAction(repo, { type: 'TRAVEL', location: 'cave' })).state;
           let outcome = await repo.startActivity(h.plan(maxCycles), h.activityMutation(await repo.loadActivitySnapshot()));
           while (outcome.activity.status === 'running') { now = outcome.activity.dueAt; outcome = await repo.settleActivity(h.activityTick(outcome)); }

@@ -8,7 +8,7 @@ import {publicId} from './local-events.ts';
 import type {Activity} from '../../src/full/activity.ts';
 /** Presentation-only identity. Public records keep the original redaction unchanged. */
 export function activityFeedbackObservation(o:Observation|null,a:Activity|null,r:ActionResult|null):Observation|null{
- if(!o||o.commandId!==null||a?.version!==6||!r||!publicId(a.id)||!['BATTLE','ENCOUNTER'].includes(r.type))return o;
+ if(!o||o.commandId!==null||!a||!r||!publicId(a.id)||!(a.version===6?['BATTLE','ENCOUNTER'].includes(r.type):a.version===7&&a.plan.action.type===r.type))return o;
  const id=`cycle:${a.id}:${a.generation}:${a.completedCycles}`,p=o.result;
  if(r.requestedSteps!==1||r.executedSteps!==1||!a.completedCycles||r.commandId!==id||r.runId!==a.runId||r.revisionAfter!==a.gameRevision||
  o.runId!==a.runId||o.sourceRunId!==a.runId||o.observedRevision!==a.gameRevision||o.operation!==r.type||!p||

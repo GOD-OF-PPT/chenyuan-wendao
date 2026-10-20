@@ -221,7 +221,7 @@ test('a current trial gate uses real rounds and stops at the next gate without c
     let now = 1_700_000_000_000; Date.now = () => now;
     try {
       let state = (await repo.importText(JSON.stringify(route.checkpoints.trial), h.mutation())).state;
-      state = (await repo.execute(h.command(state, { type: 'START_TRIAL' }))).state; state = (await repo.execute(h.command(state, { type: 'ANSWER_TRIAL', answer: 'accept' }))).state;
+      state = (await h.finishAction(repo, { type: 'START_TRIAL' })).state; state = (await h.finishAction(repo, { type: 'ANSWER_TRIAL', answer: 'accept' })).state;
       const before = state, checkpoint = await repo.loadCheckpoint(), snapshot = await repo.loadActivitySnapshot();
       let out = await repo.startActivity(h.adventure.defaultBattlePlan(state), h.adventureMutation(snapshot)); const steps = [];
       for (let i = 0; out.activity.status === 'running' && i < 40; i++) { const command = out.activity.nextCommand, expected = h.engine.resolve(out.state, command); now = out.activity.dueAt; out = await repo.settleActivity(h.adventureTick(out)); steps.push({ expected, out }); }

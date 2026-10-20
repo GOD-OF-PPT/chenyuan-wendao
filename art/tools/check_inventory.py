@@ -361,6 +361,24 @@ def validate(root):
             assert all(fragment in (root / path).read_text() for fragment in fragments), 'Adventure consumer missing'
     else:
         assert not (root / 'web/src/idle-adventure.css').exists(), 'Unrecorded adventure UI'
+    milestone_path = root / 'art/redesign/idle-milestones.json'
+    milestone_bytes = 0
+    if milestone_path.exists():
+        milestone = json.loads(milestone_path.read_text())
+        assert milestone['format'] == 'chenyuan-idle-milestones' and milestone['version'] == 1
+        assert milestone['maxNativeBytes'] == 30000 and milestone['userAcceptance'] is False
+        assert [r['path'] for r in milestone['files']] == ['web/src/MilestoneReview.vue', 'web/src/milestone-view.ts', 'web/src/idle-milestones.css']
+        for row in milestone['files']:
+            raw = (root / row['path']).read_bytes()
+            assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Milestone UI identity changed'
+            milestone_bytes += len(raw)
+        assert milestone_bytes <= 30000, 'Milestone UI budget exceeded'
+        for ref in milestone['sourceReferences']:
+            assert (root / ref).resolve().is_relative_to(root) and (root / ref).is_file()
+        for path, fragments in milestone['bindings'].items():
+            assert all(fragment in (root / path).read_text() for fragment in fragments), 'Milestone UI consumer missing'
+    else:
+        assert not (root / 'web/src/idle-milestones.css').exists(), 'Unrecorded milestone UI'
     kit = by_id['native-ui-kit']
     if kit['status'] in {'production', 'reviewed'}:
         assert kit['bytes'] + sum(c['bytes'] for c in kit.get('codeComponents', [])) <= 80000 and kit['targetSpec']['maxSymbols'] == 40, 'Native UI budget changed'

@@ -1,11 +1,13 @@
 import type {Activity} from '../../src/full/activity.ts';
 import {preparationView} from './preparation-view';
 import {adventureView} from './adventure-view';
+import {milestoneView} from './milestone-view';
 import type {Game} from '../../src/full/types.ts';
 import {items,recipes,relics,sources} from '../../src/full/content.ts';
 const gains=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=>items[id].name+' +'+n).join(' · ');
 const quantities=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=>items[id].name+' ×'+n).join(' · ');
 export function activityView(a:Activity,game:Game|null){
+ if(a.version===7)return milestoneView(a);
  if(a.version===6)return adventureView(a);
  if(a.version===5)return preparationView(a);
  const p=a.plan;

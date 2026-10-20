@@ -11,6 +11,9 @@ import {useSession} from './session';
 import {createActionClock,actionSeconds,actionLabel,type Execution} from './action-timing';
 import {createActivityClock} from './activity-clock';
 import type {Activity,ActivityPlan,CultivationPlan,ActivityMutation,ActivityTick,ActivityOutcome} from '../../src/full/activity.ts';
+import {isMilestoneAction} from '../../src/full/milestones.ts';
+import type {MilestoneAction,MilestonePlan} from '../../src/full/milestones.ts';
+export interface MilestoneIntent { plan:MilestonePlan;mutation:ActivityMutation; }
 
 export type CheckpointSummary = Pick<SaveCheckpoint, 'kind' | 'sourceRunId' | 'sourceRevision' | 'versions'> & { target: { name: string; realm: Game['core']['player']['realm']; months: number; hp: number; mp: number; inventory: Record<string, number> } };
 
@@ -227,7 +230,8 @@ export const useGame = defineStore('game', () => {
   }
   async function actPrepared(input: Command) {
     if (!repository) return;
-    if(['CULTIVATE','SOURCE','CRAFT','FORGE','BUY','SELL','USE','REST','LEARN','STUDY','SCHOOL','EQUIP','EQUIP_RELIC','TRAVEL','ENCOUNTER','BATTLE'].includes(input.type)){activityNotice.value='请安排活动，按周期积累。';return;}
+    if(['CULTIVATE','SOURCE','CRAFT','FORGE','BUY','SELL','USE','REST','LEARN','STUDY','SCHOOL','EQUIP','EQUIP_RELIC','TRAVEL','ENCOUNTER','BATTLE',
+      'CHOOSE','EVENT','DECIDE','BREAKTHROUGH','START_TRIAL','ANSWER_TRIAL','END','RETIRE','END_LIFE'].includes(input.type)){activityNotice.value='请安排活动，按周期积累。';return;}
     if(activityRunning.value){activityNotice.value='当前活动正在进行，请先暂停再行动。';return;}
     const command = structuredClone({ ...input });
     await write(() => repository!.execute(command), command.commandId,{kind:'action',command});
@@ -303,6 +307,19 @@ export const useGame = defineStore('game', () => {
     await write(()=>repository!.startActivity(selected,intent),intent.commandId,undefined,true);
     if(!error.value)beginActivityRuntime();
   }
+  function prepareMilestone(action:MilestoneAction):MilestoneIntent|null{
+    if(disposed||busy.value||!repository||!available.value||!game.value)return null;
+    if(!isMilestoneAction(action)){validationError('本次安排必须是已明确选定的一项正式选择。');return null;}
+    if(activityRunning.value){activityNotice.value='请先暂停当前活动，再核对本次选择。';return null;}
+    const intent=activityMutation();if(!intent)return null;
+    return structuredClone({plan:{kind:'milestone',action,maxCycles:1},mutation:intent});
+  }
+  async function startPreparedMilestone(input:MilestoneIntent){
+    if(disposed||busy.value||!repository||!available.value)return;
+    const intent=structuredClone(input);activityNotice.value='';stopActivityRuntime();
+    await write(()=>repository!.startActivity(intent.plan,intent.mutation),intent.mutation.commandId,undefined,true);
+    if(!error.value)beginActivityRuntime();
+  }
   async function loadActivityHistory(id:string,page=0){
     if(disposed||!repository||!game.value)throw new Error('存档未就绪');
     return repository.loadActivityHistory(id,page,4);
@@ -324,6 +341,6 @@ export const useGame = defineStore('game', () => {
   const saveLabel = computed(() => !ready.value ? '读取中' : execution.value?.phase==='acting' ? '行动中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
   onScopeDispose(() => { disposed = true;stopActivityRuntime();actionClock.cancel();execution.value=null; repository?.close(); channel?.close();observers.clear(); });
   return { game, busy, ready, available, error, warning, saved, hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,execution,
-    activity,activityRuntime,activityRunning,activityLocal,activityOwned,activityPausing,activityNotice,lastFromActivity,syncEpoch,loadActivityHistory,startPlannedActivity,startCultivation,pauseCultivation,resumeCultivation,
+    activity,activityRuntime,activityRunning,activityLocal,activityOwned,activityPausing,activityNotice,lastFromActivity,syncEpoch,loadActivityHistory,startPlannedActivity,prepareMilestone,startPreparedMilestone,startCultivation,pauseCultivation,resumeCultivation,
     init, refresh, start, act, prepareAction, actPrepared, prepareConfiguration, applyConfiguration, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, rawText, validationError,observe };
 });

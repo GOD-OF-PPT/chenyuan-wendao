@@ -13,7 +13,7 @@ import { configurationReceipt, validateConfigurationReceipt } from './configurat
 export type { ActivityMutation, ActivityOutcome, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
 
 export const FULL_DB_NAME = 'chenyuan-playable-v1';
-export const FULL_DB_VERSION = 8;
+export const FULL_DB_VERSION = 9;
 export const FULL_STATE_STORE = 'full-state';
 export const FULL_RECEIPT_STORE = 'full-receipts';
 export const FULL_BACKUP_STORE = 'full-backups';
@@ -593,7 +593,11 @@ export class FullSaveRepository {
                     const command = activity.nextCommand, outcome = resolve(current, command);
                     next = completeActivity(outcome.nextState, activity, outcome.result, { commandId: command.commandId, now });
                     state.put(current, 'previous'); state.put(outcome.nextState, 'current'); state.put(next, 'activity');
-                    receipts.put(activityReceipt(input, next, command, outcome.result, activity.version === 5 || activity.version === 6
+                    if (outcome.checkpointKind) {
+                      const prepared = checkpoint(current, outcome.checkpointKind);
+                      state.put(prepared, 'checkpoint'); state.put(checkpointScope(prepared, current.core.runId), 'checkpoint-owner');
+                    }
+                    receipts.put(activityReceipt(input, next, command, outcome.result, activity.version === 5 || activity.version === 6 || activity.version === 7
                       ? { activityBefore: activity, stateAfter: outcome.nextState, resolvedAt: now } : undefined), intent.runId + ':' + intent.commandId);
                     complete({ state: outcome.nextState, activity: next, result: outcome.result, replayed: false }); return;
                   }
@@ -811,8 +815,9 @@ export class FullSaveRepository {
                 if (receipt.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一指令编号对应不同内容');
                 complete({ state: current, result: receipt.result, replayed: true }); return;
               }
-              if (['CULTIVATE', 'SOURCE', 'CRAFT', 'FORGE', 'BUY', 'SELL', 'USE', 'REST', 'LEARN', 'STUDY', 'TRAVEL', 'ENCOUNTER', 'BATTLE'].includes(command.type)) {
-                throw new RuleError('ACTIVITY_REQUIRED', '请安排修炼、取材或生产活动，按完整周期逐次积累');
+              if (['CULTIVATE', 'SOURCE', 'CRAFT', 'FORGE', 'BUY', 'SELL', 'USE', 'REST', 'LEARN', 'STUDY', 'TRAVEL', 'ENCOUNTER', 'BATTLE',
+                'CHOOSE', 'EVENT', 'DECIDE', 'BREAKTHROUGH', 'START_TRIAL', 'ANSWER_TRIAL', 'END', 'RETIRE', 'END_LIFE'].includes(command.type)) {
+                throw new RuleError('ACTIVITY_REQUIRED', '请先明确安排本次行动，按完整周期保存实际结果');
               }
               if (['SCHOOL', 'EQUIP', 'EQUIP_RELIC'].includes(command.type)) throw new RuleError('CONFIGURATION_REQUIRED', '请预选并确认本次修法或配装变化');
               if (activity?.status === 'running') throw new RuleError('ACTIVITY_RUNNING', '先暂停当前活动，再执行其他行动');

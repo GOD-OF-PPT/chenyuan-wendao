@@ -3,12 +3,15 @@ import * as C from '../../src/full/content.ts';
 const virtualJourneys=new WeakSet<Page>();
 /** Long-route tests advance the real browser timer; game commands and persistence remain unchanged. */
 export async function useJourneyClock(page:Page){await page.clock.install({time:new Date('2030-01-01T00:00:00Z')});await page.clock.pauseAt(new Date('2030-01-01T01:00:00Z'));virtualJourneys.add(page);}
-export async function finishJourneyClock(page:Page){if(virtualJourneys.has(page)){
+export async function finishJourneyClock(page:Page){
+  const milestone=page.getByTestId('milestone-confirm');
+  if(await milestone.isVisible()&&await milestone.isEnabled())await milestone.click();
+  if(virtualJourneys.has(page)){
   // Selection is read-only; fixture journeys explicitly confirm the finite adventure arrangement.
   const confirm=page.getByTestId('adventure-start');
   if(await confirm.isVisible()&&await confirm.isEnabled())await confirm.click();
   const a=await activitySnapshot(page);
-  if(a?.version===6&&a.status==='running'){
+  if((a?.version===6||a?.version===7)&&a.status==='running'){
     const before=a.completedCycles;await page.clock.fastForward(a.cycleMs);
     await expect.poll(async()=>(await activitySnapshot(page))?.completedCycles).toBe(before+1);return;
   }

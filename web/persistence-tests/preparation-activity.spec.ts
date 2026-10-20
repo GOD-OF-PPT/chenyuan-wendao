@@ -259,7 +259,7 @@ test('DB7 preserves every v6 legacy activity, real checkpoint and receipt byte-f
         try {
           d.realm(); d.resource('herb', 12); d.resource('jade', 7); d.resource('core', 4); d.funds(1000); d.buy('golden_pill', 1); d.meditate(); d.go('cave');
           const imported = await repo.importText(JSON.stringify(d.game), h.mutation());
-          let current = await repo.execute(h.command(imported.state, { type: 'BREAKTHROUGH' }));
+          let current = await h.finishAction(repo, { type: 'BREAKTHROUGH' });
           if (kind === 'source') current = await h.finishAction(repo, { type: 'TRAVEL', location: 'wilderness' });
           const plan = kind === 'cultivation' ? { kind, method: 'natural', maxCycles: 3, until: 'cycles', stoneBudget: 0, stoneReserve: 0 } :
             kind === 'source' ? { kind, sourceId: 'herbs', maxCycles: 3, until: 'cycles', target: null, monthBudget: 3, remainingMonthsReserve: 1 } :
@@ -282,7 +282,7 @@ test('DB7 preserves every v6 legacy activity, real checkpoint and receipt byte-f
     } finally { Date.now = realNow; }
   });
   for (const row of rows) {
-    expect(row.closed).toBe(true); expect(row.after.version).toBe(8); expect(row.checkpoint).not.toBeNull();
+    expect(row.closed).toBe(true); expect(row.after.version).toBe(9); expect(row.checkpoint).not.toBeNull();
     for (const store of row.original.stores) expect(row.after[store]).toEqual(row.original[store]);
     expect(row.loaded).toEqual({ state: row.completed.state, activity: row.completed.activity }); expect(row.checkpointAfter).toEqual(row.checkpoint);
     expect(row.replay.replayed).toBe(true); expect(row.replay.state).toEqual(row.completed.state); expect(row.replay.activity).toEqual(row.completed.activity);

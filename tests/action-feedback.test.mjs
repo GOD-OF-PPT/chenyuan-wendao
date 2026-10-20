@@ -49,3 +49,20 @@ test('activity presentation refuses foreign generations, later progress, altered
  const f=activityFrame();for(const a of [{...f.activity,generation:f.activity.generation+1},{...f.activity,id:uuid(5009)},{...f.activity,gameRevision:f.activity.gameRevision+1}])assert.equal(activityFeedbackObservation(f.observation,a,f.result).commandId,null);
  for(const patch of [{result:null},{result:{...f.observation.result,costs:{...f.observation.result.costs,mp:99}}},{sourceRunId:uuid(88)},{operation:'BUY'}])assert.equal(activityFeedbackObservation({...f.observation,...patch},f.activity,f.result).commandId,null);
 });
+test('finite milestone feedback binds the selected current cycle and preserves public redaction and replay fencing',()=>{
+ const samples=new Map();let game=newGame('有限因果',uuid(6000));
+ for(const [n,action]of fullRoute('help','sword','craft',true,'transmit').actions.entries()){
+  if(['CHOOSE','EVENT','DECIDE','BREAKTHROUGH','START_TRIAL','ANSWER_TRIAL','END'].includes(action.type)&&!samples.has(action.type))samples.set(action.type,{game,action});
+  game=resolve(game,{...action,commandId:uuid(6100+n),runId:game.core.runId,expectedRevision:game.core.revision}).nextState;
+ }
+ const life=driver();samples.set('RETIRE',{game:replay(life.actions,6001).at(-1).game,action:{type:'RETIRE'}});life.go('sect');while(getLifeOverview(life.game).remainingMonths>1)life.doAction({type:'SOURCE',sourceId:'work',count:Math.min(50,getLifeOverview(life.game).remainingMonths-1)});samples.set('END_LIFE',{game:replay(life.actions,6002).at(-1).game,action:{type:'END_LIFE'}});
+ assert.equal(samples.size,9);
+ for(const [type,{game:before,action}]of samples){
+  const a=createActivity(before,{kind:'milestone',action,maxCycles:1},{id:uuid(7000),ownerId:'milestone-fx',commandId:uuid(7001),now:0}),resolved=resolve(before,a.nextCommand),after=resolved.nextState,result=resolved.result;
+  const done=completeActivity(after,a,result,{commandId:a.nextCommand.commandId,now:a.dueAt}),publicObservation=writeObservation(before,after,{kind:'action',command:a.nextCommand},result,false),raw=JSON.stringify(publicObservation);
+  assert.equal(publicObservation.commandId,null,type);const local=activityFeedbackObservation(publicObservation,done,result),tracker=createActionFeedbackTracker();assert.equal(local.commandId,result.commandId,type);
+  assert.ok(tracker.consume(local,after,result,false,true,before),type);assert.equal(tracker.consume(local,after,result,false,true,before),null,type);assert.equal(JSON.stringify(publicObservation),raw,type);
+  assert.equal(activityFeedbackObservation(publicObservation,{...done,plan:{...done.plan,action:{type:'RETIRE'}}},result).commandId,type==='RETIRE'?result.commandId:null,type);
+  assert.equal(createActionFeedbackTracker().consume({...local,replayed:true,kind:'replay'},after,result,true,true,before),null,type);
+ }
+});

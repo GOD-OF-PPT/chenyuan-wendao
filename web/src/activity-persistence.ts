@@ -49,7 +49,7 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
       const command = receipt.command;
       const identity = { commandId: input.tick.commandId, runId: input.tick.runId, expectedRevision: input.tick.expectedRevision };
       let proof: { activityBefore: Activity; stateAfter: Game; resolvedAt: number } | null = null;
-      if (activity.version === 5 || activity.version === 6) {
+      if (activity.version === 5 || activity.version === 6 || activity.version === 7) {
         if (!proven) invalid();
         shape(value.proof, ['activityBefore', 'stateAfter', 'resolvedAt']);
         validateActivity(value.proof.activityBefore); validateGame(value.proof.stateAfter);
@@ -60,7 +60,7 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
             !Number.isSafeInteger(value.proof.resolvedAt) || Number(value.proof.resolvedAt) < 0) invalid();
         proof = value.proof as unknown as NonNullable<ActivityReceipt['proof']>;
       }
-      const expected: Command = activity.version === 6 ? proof!.activityBefore.nextCommand! :
+      const expected: Command = activity.version === 6 || activity.version === 7 ? proof!.activityBefore.nextCommand! :
         activity.version === 5 ? { ...preparationCycleAction(activity.plan, activity.completedCycles - 1), ...identity } :
         activity.version === 1 ? { type: 'CULTIVATE', method: activity.plan.method, count: 1, ...identity } :
         activity.version === 2 ? { type: 'SOURCE', sourceId: activity.plan.sourceId, count: 1,
@@ -73,7 +73,8 @@ export function validateActivityReceipt(value: unknown, current: Game): asserts 
           command.commandId !== `cycle:${activity.id}:${activity.generation}:${activity.completedCycles}` ||
           activity.revision !== input.tick.expectedActivityRevision + 1 || activity.gameRevision !== input.tick.expectedRevision + 1) invalid();
       const result = receipt.result, delta = result.delta;
-      if (delta.realm.before !== activity.realm || delta.realm.after !== activity.realm || activity.version !== 6 && delta.wins !== 0) invalid();
+      if (delta.realm.before !== activity.realm || activity.version !== 7 && delta.realm.after !== activity.realm ||
+          activity.version !== 6 && delta.wins !== 0) invalid();
       if (proof) {
         const completed = completeActivity(proof.stateAfter, proof.activityBefore, result,
           { commandId: command.commandId, now: proof.resolvedAt });

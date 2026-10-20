@@ -71,15 +71,17 @@ export async function setupPersistence(page: Page) {
         tx.oncomplete = () => { db.close(); resolve(); }; tx.onabort = () => { db.close(); reject(tx.error); };
       };
     });
-    // Explicit rule-time adapter for existing fixture travel/turns. UI wall-clock tests remain separate.
+    // Explicit rule-time adapter for authorized fixture actions. UI wall-clock tests remain separate.
     const finishAction = async (repo: any, action: any) => {
       if (['commandId','runId','expectedRevision'].some(key => key in action)) throw new Error('fixture helper requires a pure action; stale identities must be tested directly');
       const snapshot = await repo.loadActivitySnapshot(), game = snapshot.state;
-      const plan = action.type === 'TRAVEL' ? { kind: 'travel', location: action.location, maxCycles: 1 } :
+      const plan = ['CHOOSE','EVENT','DECIDE','BREAKTHROUGH','START_TRIAL','ANSWER_TRIAL','END','RETIRE','END_LIFE'].includes(action.type)
+        ? { kind: 'milestone', action: structuredClone(action), maxCycles: 1 } :
+        action.type === 'TRAVEL' ? { kind: 'travel', location: action.location, maxCycles: 1 } :
         action.type === 'ENCOUNTER' ? { ...adventure.defaultEncounterPlan(game, action.enemy), maxCycles: 1 } :
         action.type === 'BATTLE' ? { kind: 'battle', enemy: game.battle.enemy, trialStage: game.trial?.stage ?? null,
           mode: 'single', move: action.move, maxCycles: 1 } : null;
-      if (!plan) throw new Error('finishAction only accepts adventure actions');
+      if (!plan) throw new Error('finishAction only accepts adventure or milestone actions');
       const started = await repo.startActivity(plan, { commandId: crypto.randomUUID(), runId: game.core.runId,
         expectedRevision: game.core.revision, expectedActivityId: snapshot.activity?.id ?? null,
         expectedActivityRevision: snapshot.activity?.revision ?? null, ownerId: 'fixture-action' });

@@ -5,14 +5,14 @@ import {getTrialJourney,previewAction} from '../../src/full/queries.ts';
 import {narrativeFor,readingPages} from './story-pages';
 import {pageSlice} from './play-flow';
 import {formatCosts,formatDelta} from './presentation';
-import {actionSeconds} from './action-timing';
+import {isMilestoneAction,MILESTONE_CYCLE_MS} from '../../src/full/milestones.ts';
 import PortraitImage from './PortraitImage.vue';
 import ChoiceCard from './ChoiceCard.vue';
 import CataloguePager from './CataloguePager.vue';
 import AssetImage from './AssetImage.vue';
 import {sceneAssetPath} from './assets';
 import {scenePresentation} from './scene-presentation';
-const props=defineProps<{game:Game;enabled:boolean;busy:boolean;consumption:(a:Action)=>string}>(),emit=defineEmits<{act:[Action];life:[];progress:[]}>();
+const props=defineProps<{game:Game;enabled:boolean;busy:boolean;running:boolean;consumption:(a:Action)=>string}>(),emit=defineEmits<{act:[Action];life:[];progress:[]}>();
 const model=computed(()=>narrativeFor(props.game)),mode=ref('story'),page=ref(0),journey=computed(()=>getTrialJourney(props.game));
 const scene=computed(()=>scenePresentation(props.game));
 const rows=computed(()=>mode.value==='story'?readingPages([{key:'body',title:model.value?.speaker??'',text:model.value?.body??'',testId:model.value?.bodyTest}]):readingPages(model.value?.memories??[])),reading=computed(()=>pageSlice(rows.value,page.value,1)),choices=computed(()=>pageSlice(model.value?.choices??[],page.value,1));
@@ -20,7 +20,8 @@ function select(value:string){mode.value=value;page.value=0;}
 watch(()=>props.game.core.runId+':'+model.value?.key,()=>select('story'));
 const quotes=computed(()=>new Map<string,ReturnType<typeof previewAction>>());watch(()=>props.game,()=>quotes.value.clear());
 function quote(a:Action){const key=JSON.stringify(a);if(!quotes.value.has(key))quotes.value.set(key,previewAction(props.game,a));return quotes.value.get(key)!;}
-function details(a:Action,detail:string){const p=quote(a);return[{label:'即刻代价',value:formatCosts(p.actualCosts??p.costs)},{label:'已知结果',value:detail},{label:'预计变化',value:p.delta?formatDelta(p.delta):'条件未满足，当前不会执行'},{label:'当前条件',value:p.failure?.message??'由你确认后执行'}];}
+function details(a:Action,detail:string){const p=quote(a);return[{label:'即刻代价',value:formatCosts(p.actualCosts??p.costs)},{label:'已知结果',value:detail},{label:'预计变化',value:p.delta?formatDelta(p.delta):'条件未满足，当前不会执行'},{label:'当前条件',value:props.running?'当前活动进行中，请先暂停再安排。':p.failure?.message??'由你确认后执行'}];}
+const seconds=(a:Action)=>isMilestoneAction(a)?MILESTONE_CYCLE_MS[a.type]/1000:0;
 </script>
 <template>
  <section v-if="model" class="paper play-catalogue story-book narrative-book" data-testid="narrative-catalogue" tabindex="-1">
@@ -30,9 +31,9 @@ function details(a:Action,detail:string){const p=quote(a);return[{label:'即刻�
    <AssetImage class="book-scenery" :path="sceneAssetPath(scene)" :asset-id="'reading-scene-'+scene.artKey"/>
    <figure class="book-person"><PortraitImage class="narrative-portrait" :id="model.portrait" :fallback="model.speaker.slice(0,1)"/><figcaption>{{model.speaker}}</figcaption></figure>
    <div v-if="mode!=='choices'" class="narrative-reading book-copy"><article v-if="reading.rows[0]" class="reading-text"><small>{{reading.rows[0].title}}</small><p :data-testid="reading.rows[0].testId">{{reading.rows[0].text}}</p><small v-if="reading.rows[0].parts>1">本段 {{reading.rows[0].part}} / {{reading.rows[0].parts}}</small></article><article v-else class="reading-text"><p>尚无其他已记录选择；不会补写交情。</p></article></div>
-   <div v-else class="narrative-choices book-copy" aria-label="当前遭遇选择"><ChoiceCard v-for="choice in choices.rows" :key="choice.id" :choice-id="choice.id" :label="choice.label" :disabled="!enabled||busy||!quote(choice.action).allowed" :identity="game.core.runId+game.core.revision" :details="details(choice.action,choice.detail)" @choose="emit('act',choice.action)"><strong>{{choice.label}}</strong><small>{{choice.detail}}</small><small>{{formatCosts(quote(choice.action).actualCosts??quote(choice.action).costs)}} · {{actionSeconds(choice.action)}} 秒</small><small>{{quote(choice.action).failure?.message}}</small><small>{{consumption(choice.action)}}</small></ChoiceCard></div>
+   <div v-else class="narrative-choices book-copy" aria-label="当前遭遇选择"><ChoiceCard v-for="choice in choices.rows" :key="choice.id" :choice-id="choice.id" :label="choice.label" :disabled="!enabled||busy||running||!quote(choice.action).allowed" :identity="game.core.runId+game.core.revision" :details="details(choice.action,choice.detail)" @choose="emit('act',choice.action)"><strong>{{choice.label}}</strong><small>{{choice.detail}}</small><small>{{formatCosts(quote(choice.action).actualCosts??quote(choice.action).costs)}} · 安排后 {{seconds(choice.action)}} 秒</small><small data-testid="milestone-running-reason">{{running?'当前活动进行中，请先暂停再安排。':quote(choice.action).failure?.message}}</small><small>{{consumption(choice.action)}}</small></ChoiceCard></div>
   </div>
   <CataloguePager :page="mode==='choices'?choices.page:reading.page" :pages="mode==='choices'?choices.pages:reading.pages" :total="mode==='choices'?choices.total:reading.total" label="剧情" @change="page=$event"/>
-  <footer class="story-footer"><small v-if="journey" data-testid="trial-stage-summary">{{journey.title}} · 已过 {{journey.completed}} / 3 关</small><small v-else>浏览不行动；确认选择后读秒并保存。</small><button v-if="mode!=='choices'" class="primary" data-testid="story-show-choices" @click="select('choices')">查看{{model.choices.length}}种选择 →</button><button v-else @click="select('story')">重看来由</button></footer>
+  <footer class="story-footer"><small v-if="journey" data-testid="trial-stage-summary">{{journey.title}} · 已过 {{journey.completed}} / 3 关</small><small v-else>浏览不行动；选定内容后另行安排一次。</small><button v-if="mode!=='choices'" class="primary" data-testid="story-show-choices" @click="select('choices')">查看{{model.choices.length}}种选择 →</button><button v-else @click="select('story')">重看来由</button></footer>
  </section>
 </template>

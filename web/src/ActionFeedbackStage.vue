@@ -29,7 +29,7 @@ watch(()=>[observation.value,props.store.busy,props.store.saved,props.store.avai
  const store=props.store;if(store.busy)return;
  unmarkPending();
  if(store.error){const key=JSON.stringify([observation.value?.commandId,store.error]);if(key!==lastFailure){clear();lastFailure=key;state.value='error';mark(pending?.element??null,'command-error');timer=setTimeout(()=>{state.value='idle';},1400);}return;}
- const next=tracker.consume(activityFeedbackObservation(observation.value,store.activity,store.lastResult),store.game,store.lastResult,store.lastReplayed,store.saved&&store.available,before.value);if(!next){if(state.value==='pending')state.value='idle';return;}if(store.lastFromActivity&&(!props.playfieldActive||next.family!=='battle')||document.hidden){state.value='idle';return;}
+ const next=tracker.consume(activityFeedbackObservation(observation.value,store.activity,store.lastResult),store.game,store.lastResult,store.lastReplayed,store.saved&&store.available,before.value);if(!next){if(state.value==='pending')state.value='idle';return;}if(store.lastFromActivity&&(!props.playfieldActive||next.family!=='battle'&&store.activity?.version!==7)||document.hidden){state.value='idle';return;}
  const owner=++generation,origin=pending;await nextTick();await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));if(owner!==generation||store.busy||store.error||document.hidden)return;
  notice.value=next;state.value='success';mark(origin?.element??null,'command-success');
  const blocked=!!document.querySelector('dialog[open]'),fresh=!origin||origin.epoch===epoch;

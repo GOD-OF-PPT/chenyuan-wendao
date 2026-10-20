@@ -242,11 +242,11 @@ test('v4 cultivation activity, real breakthrough checkpoint and all receipts sur
     const plan = { kind: 'cultivation', method: 'natural', maxCycles: 3, until: 'xp-cap', stoneBudget: 0, stoneReserve: 0 };
     try {
       let state = (await fixture.create('旧版真实修士', h.mutation())).state;
-      state = (await fixture.execute(h.command(state, { type: 'CHOOSE', choice: 'leave' }))).state;
+      state = (await h.finishAction(fixture, { type: 'CHOOSE', choice: 'leave' })).state;
       state = (await h.finishAction(fixture, { type: 'TRAVEL', location: 'cave' })).state;
       let activity = await fixture.startActivity(plan, h.activityMutation(await fixture.loadActivitySnapshot()));
       while (activity.activity.status === 'running') { now = activity.activity.dueAt; activity = await fixture.settleActivity(h.activityTick(activity)); }
-      state = (await fixture.execute(h.command(activity.state, { type: 'BREAKTHROUGH' }))).state;
+      state = (await h.finishAction(fixture, { type: 'BREAKTHROUGH' })).state;
       activity = await fixture.startActivity(plan, h.activityMutation(await fixture.loadActivitySnapshot()));
       const tick = h.activityTick(activity); now = activity.activity.dueAt;
       const completed = await fixture.settleActivity(tick), checkpoint = await fixture.loadCheckpoint(), original = await h.inspect('source-v4-original');

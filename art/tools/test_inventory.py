@@ -49,6 +49,8 @@ class InventoryTests(unittest.TestCase):
   if preparation.exists():files.update(ROOT/ref for ref in json.loads(preparation.read_text())['sourceReferences'])
   adventure=ROOT/'art/redesign/idle-adventure.json'
   if adventure.exists():files.update(ROOT/ref for ref in json.loads(adventure.read_text())['sourceReferences'])
+  milestone=ROOT/'art/redesign/idle-milestones.json'
+  if milestone.exists():files.update(ROOT/ref for ref in json.loads(milestone.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -302,5 +304,14 @@ class InventoryTests(unittest.TestCase):
   p='art/redesign/idle-adventure.json';m=json.loads((self.root/p).read_text());m['maxNativeBytes']+=1;self.write(p,m);self.rejected()
  def test_adventure_ui_cannot_claim_player_acceptance(self):
   p='art/redesign/idle-adventure.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
+
+ def test_milestone_ui_requires_ledger(self):
+  (self.root/'art/redesign/idle-milestones.json').unlink();self.rejected()
+ def test_milestone_ui_binds_source(self):
+  self.write('web/src/MilestoneReview.vue','wrong');self.rejected()
+ def test_milestone_ui_cannot_raise_budget(self):
+  p='art/redesign/idle-milestones.json';m=json.loads((self.root/p).read_text());m['maxNativeBytes']+=1;self.write(p,m);self.rejected()
+ def test_milestone_ui_cannot_claim_player_acceptance(self):
+  p='art/redesign/idle-milestones.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
 
 if __name__=='__main__':unittest.main()
