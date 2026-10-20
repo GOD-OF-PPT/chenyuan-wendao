@@ -9,6 +9,7 @@ import {actionSeconds} from './action-timing';
 import {pageSlice} from './play-flow';
 import GameIcon from './GameIcon.vue';
 import CataloguePager from './CataloguePager.vue';
+import CatalogueArt from './CatalogueArt.vue';
 const props=defineProps<{game:Game;mode:'inventory'|'forge';busy:boolean;available:boolean;highlight:string;consumption:(action:Action)=>string}>(),emit=defineEmits<{act:[Action];track:[TrackingTarget];travel:[C.LocationId]}>();
 const page=ref(0),filter=ref('all'),future=ref(false);
 const rows=computed(()=>props.mode==='forge'?Object.entries(C.recipes).filter(([,r])=>future.value||C.rank(r.min)<=C.rank(props.game.core.player.realm)):Object.entries(C.items).filter(([id,i])=>(future.value||C.rank(i.min)<=C.rank(props.game.core.player.realm)||props.game.core.inventory[id]>0)&&(filter.value==='all'||i.kind===filter.value)));
@@ -20,7 +21,8 @@ function locate(){if(!props.highlight.startsWith('craft-'))return;const id=props
 watch(()=>props.highlight,locate,{immediate:true});watch([filter,future,()=>props.mode],()=>{page.value=0;},{flush:'sync'});watch(()=>props.game.core.runId,()=>{page.value=0;filter.value='all';future.value=false;});watch(()=>props.game.core.revision,()=>page.value=paged.value.page);
 </script>
 <template>
- <section class="paper play-catalogue goods-catalogue" :data-testid="mode==='forge'?'recipe-catalogue':'inventory-catalogue'" tabindex="-1">
+ <section class="paper play-catalogue goods-catalogue catalogue-gallery" :data-testid="mode==='forge'?'recipe-catalogue':'inventory-catalogue'" tabindex="-1">
+  <CatalogueArt :kind="mode==='forge'?'alchemy':'supplies'"/>
   <header><div><small>{{mode==='forge'?'按固定配方炼制，物资由实际行动消耗':'物资保存在当前人生，可追踪其来源'}}</small><h2>{{mode==='forge'?'丹炉':'行囊'}}</h2></div><label><input type="checkbox" v-model="future" aria-label="显示后续物资配方"> 后续境界</label></header>
   <nav v-if="mode==='inventory'" class="catalogue-tabs" aria-label="行囊分类"><button v-for="[id,label] in [['all','全部'],['material','灵材'],['medicine','丹药'],['breakthrough','突破物']]" :key="id" :aria-pressed="filter===id" @click="filter=id">{{label}}</button></nav>
   <p v-if="mode==='forge'&&game.core.world.location!=='cave'" class="catalogue-options">炼丹需在洞府。<button @click="emit('travel','cave')" :disabled="!can({type:'TRAVEL',location:'cave'})">前往洞府</button></p>

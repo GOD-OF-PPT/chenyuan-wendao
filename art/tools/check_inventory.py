@@ -118,6 +118,12 @@ def validate(root):
     recorded.update(panel_files)
     counts['production'] += panel_production
     counts['reference'] = counts.get('reference', 0) + len(panel_files) - panel_production
+    from catalogue_art_inventory import validate_catalogue_art
+    catalogue_files,catalogue_production=validate_catalogue_art(root,image_info)
+    assert not recorded.intersection(catalogue_files),'Catalogue paths overlap older ledgers'
+    recorded.update(catalogue_files)
+    counts['production']+=catalogue_production
+    counts['reference']+=len(catalogue_files)-catalogue_production
     immersive_path = root / 'art/redesign/immersive-ui.json'
     if immersive_path.exists():
         ui = json.loads(immersive_path.read_text())

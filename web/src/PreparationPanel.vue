@@ -7,6 +7,7 @@ import {formatCosts} from './presentation';
 import {preparationFor,resourceSources,sourceNavigation,pageSlice} from './play-flow';
 import type {NavigationRequest} from './navigation';
 import CataloguePager from './CataloguePager.vue';
+import CatalogueArt from './CatalogueArt.vue';
 const props=defineProps<{game:Game;busy:boolean;available:boolean}>(),emit=defineEmits<{act:[Action];navigate:[NavigationRequest];home:[]}>();
 const route=ref<'craft'|'purchase'>('craft'),focus=ref<{item:string|null;quantity:number}|null>(null),page=ref(0);
 const model=computed(()=>preparationFor(props.game)),action=computed(()=>route.value==='craft'?model.value.craft:model.value.buy),quote=computed(()=>action.value?previewAction(props.game,action.value):null);
@@ -23,7 +24,8 @@ function travelAllowed(source:ItemSource){return props.available&&!props.busy&&(
 function earn(source:ItemSource){const deficit=source.deficits.find(d=>d.kind==='stones');if(deficit)inspect(null,deficit.required);}
 </script>
 <template>
- <section class="paper play-catalogue preparation-catalogue" data-testid="preparation-catalogue" tabindex="-1">
+ <section class="paper play-catalogue preparation-catalogue catalogue-gallery" data-testid="preparation-catalogue" tabindex="-1">
+  <CatalogueArt kind="alchemy"/>
   <header><div><small>修炼 → 筹备 → 突破</small><h2>{{focus?(focus.item?C.items[focus.item].name:'灵石')+'来源':model.pill?'筹备'+C.items[model.pill].name:model.goal.title}}</h2></div><button v-if="focus" @click="focus=null;page=0" data-testid="prepare-back">← 返回材料清单</button><button v-else @click="emit('home')">返回修行</button></header>
   <p v-if="!model.pill">{{model.goal.preview?.failure?.message??'当前无需突破丹药。'}}<button @click="emit('home')">继续修行</button></p>
   <template v-else-if="game.core.inventory[model.pill]>0"><div class="preparation-ready"><strong>{{C.items[model.pill].name}}已备齐</strong><p>当前 {{game.core.inventory[model.pill]}} 枚。{{model.goal.preview?.failure?.message??'返回洞府即可确认下一步。'}}</p><button class="primary" @click="emit('home')">返回修行，核对突破</button></div></template>

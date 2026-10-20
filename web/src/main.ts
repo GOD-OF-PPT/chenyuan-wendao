@@ -17,3 +17,4 @@ void mount();
 import './play-flow.css';
 
 import './story-book.css';
+import './catalogue-art.css';

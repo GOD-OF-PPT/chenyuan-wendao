@@ -1,0 +1,710 @@
+{
+  "source": "02e8f3083e7b1082599c552765dfee9b48d48cfe",
+  "runId": 39344597999,
+  "jobId": 118374525292,
+  "browser": "chromium",
+  "result": "cancelled",
+  "annotation": "The job has exceeded the maximum execution time of 30m0s",
+  "rawLogSHA256": "f84c3d8631eede5ca7ff07da04037cc38501718dd781b3f57e1998608b7af95b",
+  "observed": {
+    "passed": 192,
+    "failed": 112
+  },
+  "failureCountsByFile": {
+    "accessibility.spec.ts": 31,
+    "art.spec.ts": 2,
+    "ascension.spec.ts": 7,
+    "causality.spec.ts": 7,
+    "character-battle-art.spec.ts": 15,
+    "cutover.spec.ts": 2,
+    "demo.spec.ts": 10,
+    "desktop-application.spec.ts": 3,
+    "desktop-flow.spec.ts": 7,
+    "desktop-spirit-action.spec.ts": 1,
+    "economy.spec.ts": 1,
+    "equipment.spec.ts": 7,
+    "game.spec.ts": 8,
+    "goals.spec.ts": 9,
+    "growth.spec.ts": 2
+  },
+  "failures": [
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1280x720/1 state matrix › 1280x720/1: event retains readable content, controls and save dialogs",
+      "duration": "10.2s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1280x720/1 state matrix › 1280x720/1: battle retains readable content, controls and save dialogs",
+      "duration": "9.7s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1280x720/1 state matrix › 1280x720/1: inventory retains readable content, controls and save dialogs",
+      "duration": "9.9s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1280x720/1 state matrix › 1280x720/1: question retains readable content, controls and save dialogs",
+      "duration": "9.7s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1280x720/1 state matrix › 1280x720/1: ending retains readable content, controls and save dialogs",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1280x720/1 state matrix › 1280x720/1: sealed retains readable content, controls and save dialogs",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1280x720/1.5 state matrix › 1280x720/1.5: event retains readable content, controls and save dialogs",
+      "duration": "1.8s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1280x720/1.5 state matrix › 1280x720/1.5: battle retains readable content, controls and save dialogs",
+      "duration": "2.0s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1280x720/2 state matrix › 1280x720/2: event retains readable content, controls and save dialogs",
+      "duration": "2.0s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1280x720/2 state matrix › 1280x720/2: battle retains readable content, controls and save dialogs",
+      "duration": "2.0s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1440x900/1 state matrix › 1440x900/1: event retains readable content, controls and save dialogs",
+      "duration": "10.0s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1440x900/1 state matrix › 1440x900/1: battle retains readable content, controls and save dialogs",
+      "duration": "10.0s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1440x900/1 state matrix › 1440x900/1: inventory retains readable content, controls and save dialogs",
+      "duration": "10.2s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1440x900/1 state matrix › 1440x900/1: question retains readable content, controls and save dialogs",
+      "duration": "9.9s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1440x900/1 state matrix › 1440x900/1: ending retains readable content, controls and save dialogs",
+      "duration": "9.9s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1440x900/1 state matrix › 1440x900/1: sealed retains readable content, controls and save dialogs",
+      "duration": "10.0s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1440x900/1.5 state matrix › 1440x900/1.5: event retains readable content, controls and save dialogs",
+      "duration": "1.9s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1440x900/1.5 state matrix › 1440x900/1.5: battle retains readable content, controls and save dialogs",
+      "duration": "2.2s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1440x900/2 state matrix › 1440x900/2: event retains readable content, controls and save dialogs",
+      "duration": "2.2s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1440x900/2 state matrix › 1440x900/2: battle retains readable content, controls and save dialogs",
+      "duration": "2.1s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1920x1080/1 state matrix › 1920x1080/1: event retains readable content, controls and save dialogs",
+      "duration": "10.3s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1920x1080/1 state matrix › 1920x1080/1: battle retains readable content, controls and save dialogs",
+      "duration": "10.2s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1920x1080/1 state matrix › 1920x1080/1: inventory retains readable content, controls and save dialogs",
+      "duration": "10.4s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1920x1080/1 state matrix › 1920x1080/1: question retains readable content, controls and save dialogs",
+      "duration": "10.1s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1920x1080/1 state matrix › 1920x1080/1: ending retains readable content, controls and save dialogs",
+      "duration": "10.2s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "1920x1080/1 state matrix › 1920x1080/1: sealed retains readable content, controls and save dialogs",
+      "duration": "10.3s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "150% scales action labels, costs, inputs and body together and reading the controls never writes progress",
+      "duration": "2.5s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "a complete restore dialog returns to its opener on Escape and its actual preparation after commit",
+      "duration": "9.9s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "essential text and focus tokens retain contrast across paper, disabled, modal and scene surfaces",
+      "duration": "819ms"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "ending cancellation preserves focus and a real keyboard seal focuses the factual life record",
+      "duration": "10.0s"
+    },
+    {
+      "status": "failed",
+      "file": "accessibility.spec.ts",
+      "title": "desktop dark surfaces keep location notes, month and sealed-state descriptions readable",
+      "duration": "2.0s"
+    },
+    {
+      "status": "failed",
+      "file": "art.spec.ts",
+      "title": "the single external sprite renders all40 symbols with no game changes",
+      "duration": "18.2s"
+    },
+    {
+      "status": "failed",
+      "file": "art.spec.ts",
+      "title": "actual trial entry consumes the receipt after persistence and keeps the gate closed",
+      "duration": "9.7s"
+    },
+    {
+      "status": "failed",
+      "file": "ascension.spec.ts",
+      "title": "transmit: cancel/Escape never end, successful fixed confirmation survives refresh and exports factual life",
+      "duration": "9.9s"
+    },
+    {
+      "status": "failed",
+      "file": "ascension.spec.ts",
+      "title": "transmit: failed closing keeps the completed gates and cancellation discards only its own retry",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "ascension.spec.ts",
+      "title": "depart: failed closing keeps the completed gates and cancellation discards only its own retry",
+      "duration": "10.0s"
+    },
+    {
+      "status": "failed",
+      "file": "ascension.spec.ts",
+      "title": "two live ending reviews cannot choose twice or end a replacement life",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "ascension.spec.ts",
+      "title": "both endings can fully restore the real entry checkpoint without accumulating their completed life",
+      "duration": "10.0s"
+    },
+    {
+      "status": "failed",
+      "file": "ascension.spec.ts",
+      "title": "a closing review never retries or discards an unrelated failed complete restore",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "ascension.spec.ts",
+      "title": "the closing review and sealed life show only the actual recorded NPC decisions, pact and equipped relic",
+      "duration": "10.0s"
+    },
+    {
+      "status": "failed",
+      "file": "causality.spec.ts",
+      "title": "trade/rival: normal new game makes a distinct reunion and golden-stage choice",
+      "duration": "36.3s"
+    },
+    {
+      "status": "failed",
+      "file": "causality.spec.ts",
+      "title": "help/cooperate: normal new game makes a distinct reunion and golden-stage choice",
+      "duration": "44.5s"
+    },
+    {
+      "status": "failed",
+      "file": "causality.spec.ts",
+      "title": "shen: a legally generated late boundary pays for a new pledge after prior refusals",
+      "duration": "9.1s"
+    },
+    {
+      "status": "failed",
+      "file": "causality.spec.ts",
+      "title": "decision receipt failure keeps the pending branch and retries its actual cost only once",
+      "duration": "8.9s"
+    },
+    {
+      "status": "failed",
+      "file": "causality.spec.ts",
+      "title": "relationships stay readable during a real battle without advancing or allowing travel",
+      "duration": "10.3s"
+    },
+    {
+      "status": "failed",
+      "file": "causality.spec.ts",
+      "title": "leave/decline: normal new game makes a distinct reunion and golden-stage choice",
+      "duration": "43.7s"
+    },
+    {
+      "status": "failed",
+      "file": "causality.spec.ts",
+      "title": "local insight at full cultivation refuses consumption while advice records a choice without a resource reward",
+      "duration": "9.0s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "configured wolf: actual enemy, decoded transparent art and intent remain bound without passive writes",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "configured warden: actual enemy, decoded transparent art and intent remain bound without passive writes",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "configured serpent: actual enemy, decoded transparent art and intent remain bound without passive writes",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "configured puppet: actual enemy, decoded transparent art and intent remain bound without passive writes",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "configured shadow: actual enemy, decoded transparent art and intent remain bound without passive writes",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "configured sentinel: actual enemy, decoded transparent art and intent remain bound without passive writes",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "configured trial_heart: actual enemy, decoded transparent art and intent remain bound without passive writes",
+      "duration": "9.9s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "configured trial_thunder: actual enemy, decoded transparent art and intent remain bound without passive writes",
+      "duration": "9.9s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "configured trial_gate: actual enemy, decoded transparent art and intent remain bound without passive writes",
+      "duration": "9.9s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "sword: a normal new life sees real battle choices, exact committed turns and reload",
+      "duration": "21.8s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "1280: desktop battle decision jump remains keyboard reachable with150 percent text",
+      "duration": "2.4s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "talisman: a normal new life sees real battle choices, exact committed turns and reload",
+      "duration": "22.0s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "1440: desktop battle decision jump remains keyboard reachable with150 percent text",
+      "duration": "2.9s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "failed battle persistence keeps old state and feedback; retry commits the original turn exactly once",
+      "duration": "10.8s"
+    },
+    {
+      "status": "failed",
+      "file": "character-battle-art.spec.ts",
+      "title": "desktop full-page battle precedes equipment and exposes a real decision jump without passive writes",
+      "duration": "9.7s"
+    },
+    {
+      "status": "failed",
+      "file": "cutover.spec.ts",
+      "title": "imported non-temple event refreshes and resolves through its real option",
+      "duration": "18.4s"
+    },
+    {
+      "status": "failed",
+      "file": "cutover.spec.ts",
+      "title": "live tabs synchronize committed progression and replacement run before the next action",
+      "duration": "21.5s"
+    },
+    {
+      "status": "failed",
+      "file": "demo.spec.ts",
+      "title": "demo node causal-help loads a lawful playable state in its own database",
+      "duration": "9.7s"
+    },
+    {
+      "status": "failed",
+      "file": "demo.spec.ts",
+      "title": "demo node causal-trade loads a lawful playable state in its own database",
+      "duration": "9.7s"
+    },
+    {
+      "status": "failed",
+      "file": "demo.spec.ts",
+      "title": "demo node trial-sword loads a lawful playable state in its own database",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "demo.spec.ts",
+      "title": "demo node trial-talisman loads a lawful playable state in its own database",
+      "duration": "9.9s"
+    },
+    {
+      "status": "failed",
+      "file": "demo.spec.ts",
+      "title": "demo node ending-sword loads a lawful playable state in its own database",
+      "duration": "9.8s"
+    },
+    {
+      "status": "failed",
+      "file": "demo.spec.ts",
+      "title": "demo node ending-talisman loads a lawful playable state in its own database",
+      "duration": "10.0s"
+    },
+    {
+      "status": "failed",
+      "file": "demo.spec.ts",
+      "title": "demo reload, reset and typed export/import stay separate from normal saves",
+      "duration": "11.6s"
+    },
+    {
+      "status": "failed",
+      "file": "demo.spec.ts",
+      "title": "a demo seed quota failure keeps the normal database intact and retries one stable import",
+      "duration": "20.0s"
+    },
+    {
+      "status": "failed",
+      "file": "demo.spec.ts",
+      "title": "demo trial entries create real repeatable complete checkpoints rather than importing invented ones",
+      "duration": "9.7s"
+    },
+    {
+      "status": "failed",
+      "file": "demo.spec.ts",
+      "title": "both demo endings commit through the real confirmation and a node reset never touches normal progress",
+      "duration": "9.9s"
+    },
+    {
+      "status": "failed",
+      "file": "desktop-application.spec.ts",
+      "title": "desktop reference 1280: real cave, visible status and first-screen action drive exact saved growth",
+      "duration": "12.9s"
+    },
+    {
+      "status": "failed",
+      "file": "desktop-application.spec.ts",
+      "title": "desktop reference 1440: real cave, visible status and first-screen action drive exact saved growth",
+      "duration": "13.1s"
+    },
+    {
+      "status": "failed",
+      "file": "desktop-application.spec.ts",
+      "title": "desktop reference 1920: real cave, visible status and first-screen action drive exact saved growth",
+      "duration": "13.7s"
+    },
+    {
+      "status": "failed",
+      "file": "desktop-flow.spec.ts",
+      "title": "the primary cultivation card promotes one real breakthrough and then exposes school selection",
+      "duration": "11.9s"
+    },
+    {
+      "status": "failed",
+      "file": "desktop-flow.spec.ts",
+      "title": "goal management and remaining needs expand through real controls without travel or growth",
+      "duration": "12.3s"
+    },
+    {
+      "status": "failed",
+      "file": "desktop-flow.spec.ts",
+      "title": "goal navigation opens a collapsed cross-school future skill and focuses its disabled explanation",
+      "duration": "19.2s"
+    },
+    {
+      "status": "failed",
+      "file": "desktop-flow.spec.ts",
+      "title": "failure and same-intent retry have distinct save states and continuing remains read only",
+      "duration": "16.8s"
+    },
+    {
+      "status": "failed",
+      "file": "desktop-flow.spec.ts",
+      "title": "a broken decorative vignette preserves the actual cultivation command and saved result",
+      "duration": "12.4s"
+    },
+    {
+      "status": "failed",
+      "file": "desktop-flow.spec.ts",
+      "title": "a newer goal choice owns the view while an earlier travel finishes saving",
+      "duration": "21.2s"
+    },
+    {
+      "status": "failed",
+      "file": "desktop-flow.spec.ts",
+      "title": "dark navigation, resume and scene links preserve readable text through hover and press",
+      "duration": "5.1s"
+    },
+    {
+      "status": "failed",
+      "file": "desktop-spirit-action.spec.ts",
+      "title": "a full spirit realm promotes preparation viewing without spending the missing entry item",
+      "duration": "9.9s"
+    },
+    {
+      "status": "failed",
+      "file": "economy.spec.ts",
+      "title": "known old balance imports without resource rescaling and each high realm shows and charges the actual fee",
+      "duration": "10.2s"
+    },
+    {
+      "status": "failed",
+      "file": "equipment.spec.ts",
+      "title": "sword/purchase: normal new game learns, replaces slots, reaches golden and equips jade_seal",
+      "duration": "36.2s"
+    },
+    {
+      "status": "failed",
+      "file": "equipment.spec.ts",
+      "title": "sword/craft: normal new game learns, replaces slots, reaches golden and equips frost_sword",
+      "duration": "50.7s"
+    },
+    {
+      "status": "failed",
+      "file": "equipment.spec.ts",
+      "title": "talisman/purchase: normal new game learns, replaces slots, reaches golden and equips cloud_mirror",
+      "duration": "36.2s"
+    },
+    {
+      "status": "failed",
+      "file": "equipment.spec.ts",
+      "title": "talisman/craft: normal new game learns, replaces slots, reaches golden and equips soul_lamp",
+      "duration": "51.3s"
+    },
+    {
+      "status": "failed",
+      "file": "equipment.spec.ts",
+      "title": "mobile equipment target navigation reaches a real forge and keeps every operation visible",
+      "duration": "1.0m"
+    },
+    {
+      "status": "failed",
+      "file": "equipment.spec.ts",
+      "title": "forge failure retries one complete payment and battle rejects a DOM-unlocked equipment action",
+      "duration": "1.2m"
+    },
+    {
+      "status": "failed",
+      "file": "equipment.spec.ts",
+      "title": "early equipment inspection reveals true realm gates without granting skills or relics",
+      "duration": "19.6s"
+    },
+    {
+      "status": "failed",
+      "file": "game.spec.ts",
+      "title": "help/sword: UI resource loop reaches foundation",
+      "duration": "48.3s"
+    },
+    {
+      "status": "failed",
+      "file": "game.spec.ts",
+      "title": "help/talisman: UI resource loop reaches foundation",
+      "duration": "51.0s"
+    },
+    {
+      "status": "failed",
+      "file": "game.spec.ts",
+      "title": "trade/sword: UI resource loop reaches foundation",
+      "duration": "48.3s"
+    },
+    {
+      "status": "failed",
+      "file": "game.spec.ts",
+      "title": "trade/talisman: UI resource loop reaches foundation",
+      "duration": "51.2s"
+    },
+    {
+      "status": "failed",
+      "file": "game.spec.ts",
+      "title": "leave/sword: UI resource loop reaches foundation",
+      "duration": "48.8s"
+    },
+    {
+      "status": "failed",
+      "file": "game.spec.ts",
+      "title": "leave/talisman: UI resource loop reaches foundation",
+      "duration": "50.9s"
+    },
+    {
+      "status": "failed",
+      "file": "game.spec.ts",
+      "title": "purchase route and resource gates work through UI",
+      "duration": "17.7s"
+    },
+    {
+      "status": "failed",
+      "file": "game.spec.ts",
+      "title": "layout 1440 fits and is interactive",
+      "duration": "12.4s"
+    },
+    {
+      "status": "failed",
+      "file": "goals.spec.ts",
+      "title": "goal to recipe to material keeps its context, navigates only, and collects until the real target",
+      "duration": "1.0m"
+    },
+    {
+      "status": "failed",
+      "file": "goals.spec.ts",
+      "title": "procurement navigation never buys automatically and the acquired pill removes the goal shortage",
+      "duration": "1.0m"
+    },
+    {
+      "status": "failed",
+      "file": "goals.spec.ts",
+      "title": "assisted and natural batches show maximum budget but charge only real steps and stop at gates",
+      "duration": "18.2s"
+    },
+    {
+      "status": "failed",
+      "file": "goals.spec.ts",
+      "title": "tracking preference survives reload without advancing the game and resets for a replacement run",
+      "duration": "1.0m"
+    },
+    {
+      "status": "failed",
+      "file": "goals.spec.ts",
+      "title": "invalid tracking preferences and unavailable preference storage do not change the good save",
+      "duration": "1.0m"
+    },
+    {
+      "status": "failed",
+      "file": "goals.spec.ts",
+      "title": "future sources show true realm gates and do not invent a free reachable route",
+      "duration": "18.4s"
+    },
+    {
+      "status": "failed",
+      "file": "goals.spec.ts",
+      "title": "battle blocks source navigation while allowing safe target inspection with conditional rewards",
+      "duration": "21.4s"
+    },
+    {
+      "status": "failed",
+      "file": "goals.spec.ts",
+      "title": "missing purchase funds guide a bounded income batch without buying or overspending",
+      "duration": "1.0m"
+    },
+    {
+      "status": "failed",
+      "file": "goals.spec.ts",
+      "title": "tracked medicine is not reserved and a real use warns then exposes the new shortage",
+      "duration": "1.0m"
+    },
+    {
+      "status": "failed",
+      "file": "growth.spec.ts",
+      "title": "sword/purchase: normal new game grows through nascent to spirit with current and alternate resources",
+      "duration": "1.4m"
+    },
+    {
+      "status": "failed",
+      "file": "growth.spec.ts",
+      "title": "sword/craft: normal new game grows through nascent to spirit with current and alternate resources",
+      "duration": "2.0m"
+    }
+  ],
+  "unexecutedAfterUi": [
+    "persistence",
+    "recovery coverage",
+    "performance"
+  ],
+  "completeMatrixPassed": false
+}

@@ -1,0 +1,469 @@
+{
+  "scope": "Preserved development iterations; interrupted/skipped/unexecuted are not passes. Runtime phase and fixes are explained in goal-2-art-coverage.md.",
+  "reports": [
+    {
+      "report": "artifacts/goal-2/t07r/gamefeel-ui.json",
+      "sha256": "a24934615718ad047cf0dc1da9283dd1a80796931994ede6e5abf2e99293920c",
+      "stats": {
+        "startTime": "2026-10-20T02:08:41.822Z",
+        "duration": 60070.187,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 4,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": [
+        {
+          "browser": "chromium",
+          "file": "gameplay-stage.spec.ts",
+          "title": "a real action remains readable after the short effect and next-step inspection does not spend resources",
+          "status": "unexpected"
+        },
+        {
+          "browser": "chromium",
+          "file": "gameplay-stage.spec.ts",
+          "title": "the cultivation stage keeps actual feedback and controls within 560",
+          "status": "unexpected"
+        },
+        {
+          "browser": "chromium",
+          "file": "gameplay-stage.spec.ts",
+          "title": "the cultivation stage keeps actual feedback and controls within 1280",
+          "status": "unexpected"
+        },
+        {
+          "browser": "chromium",
+          "file": "gameplay-stage.spec.ts",
+          "title": "a normal new player can follow the outcome into school choice and then foundation preparation",
+          "status": "unexpected"
+        }
+      ]
+    },
+    {
+      "report": "artifacts/goal-2/t07r/guidelines-ui.json",
+      "sha256": "cbb97c51a08b75555a30c4691f7e7e8d1dca1d0771eaa0b8c46333acd1c370f3",
+      "stats": {
+        "startTime": "2026-10-20T03:24:34.491Z",
+        "duration": 67931.047,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": [
+        {
+          "browser": "chromium",
+          "file": "gameplay-stage.spec.ts",
+          "title": "the cultivation stage keeps actual feedback and controls within 560",
+          "status": "unexpected"
+        },
+        {
+          "browser": "chromium",
+          "file": "gameplay-stage.spec.ts",
+          "title": "a normal new player can follow the outcome into school choice and then foundation preparation",
+          "status": "unexpected"
+        }
+      ]
+    },
+    {
+      "report": "artifacts/goal-2/t07r/stage-fit-ui.json",
+      "sha256": "785bb2eb275cec7ee73aef70cd2a8fa4d6e79c3e4778a450cad212624cea6431",
+      "stats": {
+        "startTime": "2026-10-20T03:30:45.891Z",
+        "duration": 46127.558000000005,
+        "expected": 10,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": []
+    },
+    {
+      "report": "artifacts/goal-2/t07r/current-ui.json",
+      "sha256": "af40e3853c6ed6ee6ce663c610bc0517066d56d6c53d9ec2ba57dc35fd23de7b",
+      "stats": {
+        "startTime": "2026-10-20T04:52:39.535Z",
+        "duration": 575995.2969999999,
+        "expected": 98,
+        "skipped": 105,
+        "unexpected": 4,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": [
+        {
+          "browser": "chromium",
+          "file": "gameplay-stage.spec.ts",
+          "title": "the cultivation stage keeps actual feedback and controls within 1280",
+          "status": "unexpected"
+        },
+        {
+          "browser": "chromium",
+          "file": "gameplay-stage.spec.ts",
+          "title": "a real crafted reward stays primary while its complete costs and other changes remain inspectable",
+          "status": "unexpected"
+        },
+        {
+          "browser": "firefox",
+          "file": "gameplay-stage.spec.ts",
+          "title": "a real crafted reward stays primary while its complete costs and other changes remain inspectable",
+          "status": "unexpected"
+        },
+        {
+          "browser": "chromium",
+          "file": "playable-flow.spec.ts",
+          "title": "a real sword expedition battle fits the embedded game window",
+          "status": "unexpected"
+        }
+      ]
+    },
+    {
+      "report": "artifacts/goal-2/t07r/fit2.json",
+      "sha256": "ad6dd707eee122f5e09974ff06078558068c3b96f4563875db22a2aeda7b9e75",
+      "stats": {
+        "startTime": "2026-10-20T05:03:42.593Z",
+        "duration": 139460.762,
+        "expected": 21,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": []
+    },
+    {
+      "report": "artifacts/goal-2/t07r/final-ui.json",
+      "sha256": "59181a9e8da11a818b5dba21c287109c98bbb1d05b22333e4361f53b0c6f4e9e",
+      "stats": {
+        "startTime": "2026-10-20T05:06:29.832Z",
+        "duration": 467927.56,
+        "expected": 69,
+        "skipped": 138,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": []
+    },
+    {
+      "report": "artifacts/goal-2/t07r/current-journeys.json",
+      "sha256": "12e395a9db62b0d3404a632dba4135d36ff2038a01a2f4ec4b7ac9c39ff7e7ee",
+      "stats": {
+        "startTime": "2026-10-20T05:07:45.748Z",
+        "duration": 436157.38300000003,
+        "expected": 8,
+        "skipped": 13,
+        "unexpected": 3,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": [
+        {
+          "browser": "firefox",
+          "file": "ascension.spec.ts",
+          "title": "normal trade/talisman/purchase/depart",
+          "status": "unexpected"
+        },
+        {
+          "browser": "firefox",
+          "file": "foundation-guide.spec.ts",
+          "title": "guided foundation help/sword/craft",
+          "status": "unexpected"
+        },
+        {
+          "browser": "firefox",
+          "file": "foundation-guide.spec.ts",
+          "title": "guided foundation trade/sword/purchase",
+          "status": "unexpected"
+        }
+      ]
+    },
+    {
+      "report": "artifacts/goal-2/t07r/clock-check.json",
+      "sha256": "47f9301e7faa87b3171c3ee0d49225922c2ee40ccdf8418253c7f388fa5df6bf",
+      "stats": {
+        "startTime": "2026-10-20T05:14:25.879Z",
+        "duration": 47503.649,
+        "expected": 1,
+        "skipped": 4,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": [
+        {
+          "browser": "chromium",
+          "file": "gameplay-stage.spec.ts",
+          "title": "the journey clock holds a real action until explicitly advanced even after slow inspection",
+          "status": "unexpected"
+        }
+      ]
+    },
+    {
+      "report": "artifacts/goal-2/t07r/clock-proof.json",
+      "sha256": "4e29f2682c35d9ddbf64ef142776637924c634ce4e40c6d8683c4d25e5d0f1d4",
+      "stats": {
+        "startTime": "2026-10-20T05:15:16.881Z",
+        "duration": 3429.4629999999997,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "suiteErrors": 1,
+      "failedOrInterruptedCases": []
+    },
+    {
+      "report": "artifacts/goal-2/t07r/clock-ready.json",
+      "sha256": "83efe0ffd325eb391f2f99a0be615d2e9526e53211b1d884fd1ceceaf7e5273f",
+      "stats": {
+        "startTime": "2026-10-20T05:16:22.432Z",
+        "duration": 105634.23,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": []
+    },
+    {
+      "report": "artifacts/goal-2/t07r/verified-ui.json",
+      "sha256": "03b7a5d4c8170b289d1ad48ff19e3f7de7e8e9197f437ed441a793142a0aca19",
+      "stats": {
+        "startTime": "2026-10-20T05:18:48.786Z",
+        "duration": 293597.29500000004,
+        "expected": 48,
+        "skipped": 162,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": []
+    },
+    {
+      "report": "artifacts/goal-2/t07r/verified-journeys.json",
+      "sha256": "dbc2fbc709e973e0fa4113219e3abd27288df2ec8870e10c2af1de78ca3723be",
+      "stats": {
+        "startTime": "2026-10-20T05:15:17.592Z",
+        "duration": 510617.494,
+        "expected": 16,
+        "skipped": 8,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": []
+    },
+    {
+      "report": "artifacts/goal-2/t07r/foundation-fit-red.json",
+      "sha256": "34712b38d3a1d83cd507623b2e9d1ead9812fe2ba40c8ba789271cc71180cc0b",
+      "stats": {
+        "startTime": "2026-10-20T05:23:49.211Z",
+        "duration": 15952.907,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": [
+        {
+          "browser": "chromium",
+          "file": "foundation-guide.spec.ts",
+          "title": "guided foundation leave/sword/craft",
+          "status": "unexpected"
+        }
+      ]
+    },
+    {
+      "report": "artifacts/goal-2/t07r/foundation-fit-green.json",
+      "sha256": "c83013061a3afcf0798739bc85e17ad2d019fb294a10c2e9e1c367f20dd32c6d",
+      "stats": {
+        "startTime": "2026-10-20T05:25:29.621Z",
+        "duration": 44533.882,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": [
+        {
+          "browser": "chromium",
+          "file": "foundation-guide.spec.ts",
+          "title": "guided foundation leave/sword/craft",
+          "status": "unexpected"
+        },
+        {
+          "browser": "firefox",
+          "file": "foundation-guide.spec.ts",
+          "title": "guided foundation leave/sword/craft",
+          "status": "unexpected"
+        }
+      ]
+    },
+    {
+      "report": "artifacts/goal-2/t07r/foundation-fit-ready.json",
+      "sha256": "6374bb3857701439e02c877c7bbf73d81e5b685307e1d7c0a1796772201ed1d8",
+      "stats": {
+        "startTime": "2026-10-20T05:27:25.214Z",
+        "duration": 37705.486,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": []
+    },
+    {
+      "report": "artifacts/goal-2/t07r/release-ui.json",
+      "sha256": "e9e54fc505f44190e4b8418698809c86904e8bdd240f92f35d394c1f3ea6f805",
+      "stats": {
+        "startTime": "2026-10-20T05:29:02.922Z",
+        "duration": 1629146.307,
+        "expected": 273,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": [
+        {
+          "browser": "firefox",
+          "file": "art-polish.spec.ts",
+          "title": "the painted choice still counts down and commits the original decision once",
+          "status": "unexpected"
+        },
+        {
+          "browser": "chromium",
+          "file": "immersive-ui.spec.ts",
+          "title": "all ordinary feature windows controls and help use the jade palette without passive game changes",
+          "status": "unexpected"
+        },
+        {
+          "browser": "webkit",
+          "file": "story-journey.spec.ts",
+          "title": "all life chapters preserve their complete source text at 560",
+          "status": "unexpected"
+        }
+      ]
+    },
+    {
+      "report": "artifacts/goal-2/t07r/release-journeys.json",
+      "sha256": "db1bccf321edea63dbbb5bc7641f05a847e883c3d45706eeb23764a7d80d4a6e",
+      "stats": {
+        "startTime": "2026-10-20T05:29:04.017Z",
+        "duration": 812178.0880000001,
+        "expected": 24,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": []
+    },
+    {
+      "report": "artifacts/goal-2/t07r/preconditions-repaired.json",
+      "sha256": "d6986463e76a443890c953f8b8892f340dcbf6b480b60d2505a1b654829da0ef",
+      "stats": {
+        "startTime": "2026-10-20T05:57:25.295Z",
+        "duration": 70785.234,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 6,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": [
+        {
+          "browser": "chromium",
+          "file": "art-polish.spec.ts",
+          "title": "the painted choice still counts down and commits the original decision once",
+          "status": "unexpected"
+        },
+        {
+          "browser": "firefox",
+          "file": "art-polish.spec.ts",
+          "title": "the painted choice still counts down and commits the original decision once",
+          "status": "unexpected"
+        },
+        {
+          "browser": "webkit",
+          "file": "art-polish.spec.ts",
+          "title": "the painted choice still counts down and commits the original decision once",
+          "status": "unexpected"
+        },
+        {
+          "browser": "chromium",
+          "file": "immersive-ui.spec.ts",
+          "title": "all ordinary feature windows controls and help use the jade palette without passive game changes",
+          "status": "unexpected"
+        },
+        {
+          "browser": "firefox",
+          "file": "immersive-ui.spec.ts",
+          "title": "all ordinary feature windows controls and help use the jade palette without passive game changes",
+          "status": "unexpected"
+        },
+        {
+          "browser": "webkit",
+          "file": "immersive-ui.spec.ts",
+          "title": "all ordinary feature windows controls and help use the jade palette without passive game changes",
+          "status": "unexpected"
+        }
+      ]
+    },
+    {
+      "report": "artifacts/goal-2/t07r/preconditions-ready.json",
+      "sha256": "322cfda0235ce363f20103092f59e31b7970708b39012786901279baeff07fe6",
+      "stats": {
+        "startTime": "2026-10-20T05:59:49.941Z",
+        "duration": 60000.225000000006,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": [
+        {
+          "browser": "chromium",
+          "file": "immersive-ui.spec.ts",
+          "title": "all ordinary feature windows controls and help use the jade palette without passive game changes",
+          "status": "unexpected"
+        },
+        {
+          "browser": "firefox",
+          "file": "immersive-ui.spec.ts",
+          "title": "all ordinary feature windows controls and help use the jade palette without passive game changes",
+          "status": "unexpected"
+        },
+        {
+          "browser": "webkit",
+          "file": "immersive-ui.spec.ts",
+          "title": "all ordinary feature windows controls and help use the jade palette without passive game changes",
+          "status": "unexpected"
+        }
+      ]
+    },
+    {
+      "report": "artifacts/goal-2/t07r/welcome-ready.json",
+      "sha256": "d6109f4b5c087379425e50be4dbd2aecfbcaba7fac32a0d76be5616363463871",
+      "stats": {
+        "startTime": "2026-10-20T06:03:32.839Z",
+        "duration": 64660.365,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "suiteErrors": 0,
+      "failedOrInterruptedCases": []
+    }
+  ]
+}
