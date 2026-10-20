@@ -1,7 +1,7 @@
 {
   "task": "Goal3 U3",
   "date": "2026-10-20",
-  "status": "local scoped checks passed; commit and preview binding pending",
+  "status": "local implementation committed, checked and served; human acceptance pending",
   "scope": "Two online activity kinds; fixed 1440x900 Chromium only. Compatibility, balancing and human acceptance pending.",
   "runtimeDigest": "1c32f0b744dc2484729a773ff88917fe34af02601ac22956c35a1462d0a41076",
   "runtimeFiles": 158,
@@ -158,9 +158,34 @@
     "mp": "20/20"
   },
   "delivery": {
-    "pending": true,
+    "implementation": "cd9dfc33824bc02a6fe9945369248d90fbddd6b4",
+    "runtimeDigest": "1c32f0b744dc2484729a773ff88917fe34af02601ac22956c35a1462d0a41076",
+    "runtimeFiles": 158,
+    "payloadFiles": 56,
+    "bytes": 7026742,
+    "frozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u3/preview-1c32f0b7/web",
+    "committedSourcesMatchTestedBuild": true,
+    "distAndFrozenFilesMatch": true,
+    "cleanCandidateRebuild": false,
     "origin": "http://127.0.0.1:56884/",
-    "oldFrozenDirectory": "artifacts/goal-3/u2-i/preview-b26d8263/web"
+    "oldFrozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u2-i/preview-b26d8263/web",
+    "previewPid": 18528,
+    "httpFilesMatch": true,
+    "userProgressAfter": {
+      "realm": "凡人",
+      "xp": "5/10",
+      "stones": 40,
+      "months": 1,
+      "hp": "60/60",
+      "mp": "20/20"
+    },
+    "userGameActionsPerformed": false,
+    "pushed": false,
+    "newPullRequest": false,
+    "readOnlyUserScreenshot": {
+      "path": "artifacts/goal-3/u3/user-preview.png",
+      "sha256": "22a4f19f87a2cfde2dceb76c498650365951aecf6b25025fe58062658e8b9551"
+    }
   },
   "rollback": "Retain DB5 readability and raw/activity archives. Do not downgrade or point upgraded storage at old DB4 application.",
   "imageReadyAssertions": true,
