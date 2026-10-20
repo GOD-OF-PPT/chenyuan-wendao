@@ -1,0 +1,150 @@
+{
+  "format": "chenyuan-catalogue-art",
+  "version": 1,
+  "task": "Goal2 T07R",
+  "budgets": {
+    "assets": 3,
+    "maxRuntimeBytesPerAsset": 120000,
+    "maxRuntimeBytes": 360000,
+    "maxNativeBytes": 18000
+  },
+  "rights": {
+    "productionUseApproved": true,
+    "userAcceptance": false,
+    "distributionLicense": null,
+    "evidenceReferences": [
+      "goal-2/amendments/2026-10-20-art-and-game-matrix-incomplete.md",
+      "docs/implementation/goal-2-art-coverage.md"
+    ]
+  },
+  "sourceReferences": [
+    "goal-2/amendments/2026-10-20-art-and-game-matrix-incomplete.md",
+    "docs/implementation/goal-2-art-coverage.md",
+    "art/redesign/catalogue-art/prompts.json",
+    "goal-2/amendments/2026-10-20-gamefeel-feedback-flow.md"
+  ],
+  "assets": [
+    {
+      "id": "supplies",
+      "source": {
+        "path": "art/redesign/catalogue-art/supplies-v1.png",
+        "bytes": 2317548,
+        "sha256": "75fc201312ef92b30bce08242da1f04bbd278fba12ed268856fc99259bb3bac6",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/catalogue/supplies-v1.webp",
+        "bytes": 85820,
+        "sha256": "eaff2eaf8338219503f40abc862374d701259efc3cdd602e99b27631543ab666",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/catalogue-art/receipts/supplies.json",
+        "sha256": "738ea98c72cd54a73bc838ea9b9b02ecdbb24ca5b4557d063f1dca44d4440172"
+      }
+    },
+    {
+      "id": "alchemy",
+      "source": {
+        "path": "art/redesign/catalogue-art/alchemy-v1.png",
+        "bytes": 2193538,
+        "sha256": "05d35197c80d770dcb4f5745ec683c4c7eca950b341ab54a50740bbdd23b1bfa",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/catalogue/alchemy-v1.webp",
+        "bytes": 84870,
+        "sha256": "f806772d13cd930dd80722c61d6ec53b5e5f882e9314f73c2ec5cb878f7e1528",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/catalogue-art/receipts/alchemy.json",
+        "sha256": "5a1178a30879aa9be5965241aa8495d9340090b81a5745222d9f874fb12c2862"
+      }
+    },
+    {
+      "id": "study",
+      "source": {
+        "path": "art/redesign/catalogue-art/study-v1.png",
+        "bytes": 2130171,
+        "sha256": "20f2fcbdbc395c58e45ee306daefd31defb4f427cd3012ce524c8bf0f475ff32",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/catalogue/study-v1.webp",
+        "bytes": 97256,
+        "sha256": "07c30a57cd627bb391f1bc76ea286bc3b88f584928eff7c5f6c603d91de75a4d",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/catalogue-art/receipts/study.json",
+        "sha256": "167e8eb79a6a7dc74904232d3ead3192392300945b84520333462856a428e0c8"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "web/src/CatalogueArt.vue",
+      "bytes": 703,
+      "sha256": "e1e8b7e6c5d2e18b90749b88c7d4d9dc1340f01b21cd41da012dbc931f326b54"
+    },
+    {
+      "path": "web/src/StageOutcome.vue",
+      "bytes": 3320,
+      "sha256": "193862ae119aaf89ad6fc0ad651fa87fcf0662930859f5deef837bc680753f0b"
+    },
+    {
+      "path": "web/src/catalogue-art.css",
+      "bytes": 7498,
+      "sha256": "e9e2ed19af29408401d8806d83aaeb730239d167daa31dbd2df2d26df30d903a"
+    }
+  ],
+  "bindings": {
+    "web/src/GoodsPanel.vue": [
+      "<CatalogueArt "
+    ],
+    "web/src/EquipmentPanel.vue": [
+      "<CatalogueArt "
+    ],
+    "web/src/PreparationPanel.vue": [
+      "<CatalogueArt "
+    ],
+    "web/src/main.ts": [
+      "import './catalogue-art.css'"
+    ],
+    "web/src/App.vue": [
+      "<StageOutcome ",
+      "data-testid=\"feature-state\""
+    ]
+  }
+}

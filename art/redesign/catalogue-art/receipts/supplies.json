@@ -1,0 +1,60 @@
+{
+  "id": "supplies",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/gordon/.codex/generated_images/01a143ff-24b7-70c2-8865-d1c80751ebf9/exec-624cad27-249c-464d-b877-9980e3b177fa.png",
+  "savedPath": "art/redesign/catalogue-art/supplies-v1.png",
+  "copiedUnchanged": true,
+  "sourceSHA256": "75fc201312ef92b30bce08242da1f04bbd278fba12ed268856fc99259bb3bac6",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceBytes": 2317548,
+  "promptReference": "art/redesign/catalogue-art/prompts.json#supplies",
+  "transparentBackgroundRequested": true,
+  "alphaProof": {
+    "min": 0,
+    "max": 255,
+    "transparentPixels": 769132,
+    "solidPixels": 588429,
+    "intermediatePixels": 214955
+  },
+  "runtimeAlphaProof": {
+    "min": 0,
+    "max": 254,
+    "transparentPixels": 127902,
+    "solidPixels": 97606,
+    "intermediatePixels": 36636
+  },
+  "runtime": {
+    "path": "web/public/art/v2/catalogue/supplies-v1.webp",
+    "bytes": 85820,
+    "sha256": "eaff2eaf8338219503f40abc862374d701259efc3cdd602e99b27631543ab666",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "review": {
+    "actuallyViewed": true,
+    "textBaked": false,
+    "userAcceptance": false
+  },
+  "promptSHA256": "77844ac2ddac3bd9308894cfa38ddba717ec840bbabef2c9756b8f8e6a16e100"
+}

@@ -37,6 +37,8 @@ class InventoryTests(unittest.TestCase):
   if flow.exists():files.update(ROOT/ref for ref in json.loads(flow.read_text())['sourceReferences'])
   story=ROOT/'art/redesign/story-journey.json'
   if story.exists():files.update(ROOT/ref for ref in json.loads(story.read_text())['sourceReferences'])
+  catalogue=ROOT/'art/redesign/catalogue-art/manifest.json'
+  if catalogue.exists():files.update(ROOT/ref for ref in json.loads(catalogue.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -51,7 +53,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0))
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0))
  def test_digest_corruption_is_rejected(self):self.asset('scene-secret')['sha256']='0'*64;self.rejected()
  def test_false_dimensions_are_rejected(self):self.asset('portrait-player')['dimensions']['width']=999;self.rejected()
  def test_parent_hash_cannot_be_relabelled(self):self.asset('scene-wilderness')['originalHash']='0'*64;self.rejected()
@@ -230,5 +232,22 @@ class InventoryTests(unittest.TestCase):
   p='art/redesign/story-journey.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
  def test_story_cannot_drop_real_consumer(self):
   p='web/src/App.vue';self.write(p,(self.root/p).read_text().replace('<LifeCatalogue ','<Removed '));self.rejected()
+
+ def test_catalogue_art_requires_its_ledger(self):
+  (self.root/'art/redesign/catalogue-art/manifest.json').unlink();self.rejected()
+ def test_catalogue_art_source_is_bound(self):
+  p='art/redesign/catalogue-art/manifest.json';m=json.loads((self.root/p).read_text());m['assets'][0]['source']['sha256']='0'*64;self.write(p,m);self.rejected()
+ def test_catalogue_art_budget_cannot_be_raised(self):
+  p='art/redesign/catalogue-art/manifest.json';original=json.loads((self.root/p).read_text())
+  for key in ['maxRuntimeBytesPerAsset','maxRuntimeBytes','maxNativeBytes']:
+   m=copy.deepcopy(original);m['budgets'][key]+=1;self.write(p,m);self.rejected()
+ def test_catalogue_art_cannot_claim_user_acceptance(self):
+  p='art/redesign/catalogue-art/manifest.json';m=json.loads((self.root/p).read_text());m['rights']['userAcceptance']=True;self.write(p,m);self.rejected()
+ def test_catalogue_art_prompt_cannot_be_relabelled(self):
+  p='art/redesign/catalogue-art/prompts.json';m=json.loads((self.root/p).read_text());m['assets'][0]['prompt']='other request';self.write(p,m);self.rejected()
+ def test_catalogue_art_needs_actual_consumers(self):
+  p='web/src/GoodsPanel.vue';self.write(p,(self.root/p).read_text().replace('<CatalogueArt ','<RemovedArt '));self.rejected()
+ def test_catalogue_art_receipt_must_match_runtime(self):
+  p='art/redesign/catalogue-art/manifest.json';m=json.loads((self.root/p).read_text());a=m['assets'][0];ref=a['receipt']['path'];r=json.loads((self.root/ref).read_text());r['runtime']['sha256']='0'*64;self.write(ref,r);a['receipt']['sha256']=hashlib.sha256((self.root/ref).read_bytes()).hexdigest();self.write(p,m);self.rejected()
 
 if __name__=='__main__':unittest.main()

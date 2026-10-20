@@ -2,6 +2,7 @@
 import { computed, ref, watch } from 'vue';
 import GameIcon from './GameIcon.vue';
 import CataloguePager from './CataloguePager.vue';
+import CatalogueArt from './CatalogueArt.vue';
 import {pageSlice} from './play-flow';
 import * as C from '../../src/full/content.ts';
 import { stats } from '../../src/full/engine.ts';
@@ -55,7 +56,8 @@ watch(() => props.highlight, id => {
 </script>
 
 <template>
-  <section class="paper equipment-panel play-catalogue equipment-catalogue" data-testid="equipment-panel" tabindex="-1" aria-label="功法与法宝">
+  <section class="paper equipment-panel play-catalogue equipment-catalogue catalogue-gallery" data-testid="equipment-panel" tabindex="-1" aria-label="功法与法宝">
+    <CatalogueArt kind="study"/>
     <div class="section-label">功法与法宝 <span>研习与装备分别确认</span></div>
     <div v-show="section==='summary'" class="loadout-summary">
       <div v-for="(label,slot) in slots" :key="slot"><small>{{label}} · 1槽</small><strong :data-testid="`loadout-${slot}`">{{game.loadout[slot] ? C.skills[game.loadout[slot]!].name : '尚未择法'}}</strong></div>

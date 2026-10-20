@@ -1,6 +1,6 @@
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {feedbackExamples} from '../../tests/action-feedback-fixtures.mjs';
-import {snapshot,revealStoryChoice} from './support';
+import {snapshot,revealStoryChoice,useJourneyClock,finishJourneyClock} from './support';
 import {getRelationships} from '../../src/full/queries.ts';
 import {advance} from '../../src/full/engine.ts';
 import {narrativeFor} from '../src/story-pages';
@@ -45,5 +45,5 @@ test('failed scene and portrait images retain complete text and usable choices',
  await page.setViewportSize({width:1280,height:720});await page.route('**/art/v2/characters/**',r=>r.abort());await page.route('**/art/v2/scenes/**',r=>r.abort());await load(page,examples.actions.get('DECIDE')!.before);const before=await snapshot(page);await page.getByRole('button',{name:'继续当前遭遇',exact:true}).click();await expect(page.locator('.book-scenery')).toHaveAttribute('data-art-state','failed');await expect(page.locator('.narrative-portrait')).toHaveAttribute('data-art-state','failed');await expect(page.getByTestId('event-body')).not.toBeEmpty();await page.getByTestId('story-show-choices').click();await expect(page.locator('.choice-act')).toBeEnabled();expect(await snapshot(page)).toEqual(before);
 });
 test('the painted choice still counts down and commits the original decision once',async({page})=>{
- await page.setViewportSize({width:1280,height:720});const example=examples.actions.get('DECIDE')!;await load(page,example.before);await revealStoryChoice(page,'decide-'+example.action.option);const before=await snapshot(page);await page.getByTestId('decide-'+example.action.option).click();await expect(page.getByTestId('action-execution')).toHaveAttribute('data-phase','acting');expect(await snapshot(page)).toEqual(before);await expect(page.getByTestId('save-status')).toHaveText('已保存');expect(await snapshot(page)).toEqual(advance(before,{...example.action,commandId:'expected-painted-decision',runId:before.core.runId,expectedRevision:before.core.revision}));
+ await page.setViewportSize({width:1280,height:720});const example=examples.actions.get('DECIDE')!;await load(page,example.before);await revealStoryChoice(page,'decide-'+example.action.option);await useJourneyClock(page);const before=await snapshot(page);await page.getByTestId('decide-'+example.action.option).click();await expect(page.getByTestId('action-execution')).toHaveAttribute('data-phase','acting');expect(await snapshot(page)).toEqual(before);await finishJourneyClock(page);await expect(page.getByTestId('save-status')).toHaveText('已保存');expect(await snapshot(page)).toEqual(advance(before,{...example.action,commandId:'expected-painted-decision',runId:before.core.runId,expectedRevision:before.core.revision}));
 });

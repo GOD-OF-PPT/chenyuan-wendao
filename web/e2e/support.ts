@@ -2,7 +2,7 @@ import {expect,type Page} from '@playwright/test';
 import * as C from '../../src/full/content.ts';
 const virtualJourneys=new WeakSet<Page>();
 /** Long-route tests advance the real browser timer; game commands and persistence remain unchanged. */
-export async function useJourneyClock(page:Page){await page.clock.install();virtualJourneys.add(page);}
+export async function useJourneyClock(page:Page){await page.clock.install({time:new Date('2030-01-01T00:00:00Z')});await page.clock.pauseAt(new Date('2030-01-01T01:00:00Z'));virtualJourneys.add(page);}
 export async function finishJourneyClock(page:Page){if(virtualJourneys.has(page)){await expect(page.getByTestId('action-execution')).toBeVisible();await page.clock.fastForward(2500);}}
 export async function revealPaged(page:Page,id:string,panelId:string,label?:string){const target=page.getByTestId(id),panel=page.getByTestId(panelId);if(await target.isVisible()||!await panel.isVisible())return;const pager=label?panel.getByRole('navigation',{name:label+'翻页'}):panel.locator('.catalogue-pager').last();const prev=pager.getByTestId('catalogue-prev'),next=pager.getByTestId('catalogue-next');for(let i=0;i<30&&await prev.isEnabled();i++)await prev.click();for(let i=0;i<30&&!await target.isVisible()&&await next.isEnabled();i++)await next.click();await expect(target).toBeVisible();}
 export async function revealItem(page:Page,id:string){await revealPaged(page,'item-'+id,'inventory-catalogue');}

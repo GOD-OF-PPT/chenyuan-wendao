@@ -27,6 +27,7 @@ import ChoiceCard from './ChoiceCard.vue';
 import ActionEffects from './ActionEffects.vue';
 import ActionFeedbackStage from './ActionFeedbackStage.vue';
 import ActionExecution from './ActionExecution.vue';
+import StageOutcome from './StageOutcome.vue';
 import ExplorePanel from './ExplorePanel.vue';
 import GoodsPanel from './GoodsPanel.vue';
 import PreparationPanel from './PreparationPanel.vue';
@@ -130,6 +131,17 @@ const tracking = useTracking(game);
 const step=computed(()=>game.value?nextStep(game.value):null);
 const needsPreparation=computed(()=>step.value?.kind==='prepare');
 function openPreparation(event?:Event){return openHub('journey',event);}
+async function inspectNext(event?:Event){
+ const kind=step.value?.kind;
+ if(kind==='prepare')return openPreparation(event);
+ if(kind==='school')return showEquipment(event);
+ if(kind==='record')return showLife();
+ if(kind==='encounter'&&!game.value?.battle&&phase.value!=='opening')return openHub('current',event);
+ const owner=navigationRevision;await closeHub();await nextTick();if(navigationRevision!==owner+1)return;
+ const stage=document.querySelector<HTMLElement>('[data-testid=hub-current]');
+ focus.target(stage?.querySelector<HTMLElement>('button.primary:not(:disabled),button.cultivate-primary:not(:disabled)')??stage);
+}
+
 const hubGoal=computed(()=>game.value?getTrackedGoal(game.value,tracking.target.value):null);
 function selectTracking(target:Parameters<typeof tracking.select>[0]){navigationRevision++;tracking.select(target);}
 watch([() => tracking.target.value, () => game.value?.core.runId], () => { collectionTarget.value = null; highlight.value = ''; });
@@ -444,8 +456,9 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
       </section>
       <aside class="hub-aside"><section class="paper hub-goal"><span class="section-label">当前目标</span><AssetImage class="hub-mountain-art" :path="PANEL_MATERIAL_ASSETS.mountains" asset-id="hub-goal-mountains" fit="contain" eager aria-hidden="true"/><h2 data-testid="hub-target">{{hubGoal?.title}}</h2><ProgressTrack v-if="tracking.target.value.kind==='breakthrough'&&realm.xpCap" :value="core.player.xp" :max="realm.xpCap" label="当前目标修为" :identity="core.runId+core.player.realm" hint="当前目标按已保存修为显示。进度满后，仍需核对突破材料和条件。"/><p>{{hubGoal?.completed?'目标已达成':hubGoal?.preview?.failure?.message??'准备已齐，可核对当前行动。'}}</p><button data-testid="hub-goal-open" @click="openHub('goal',$event)">查看缺口与来源 →</button></section>
       <nav class="hub-services" aria-label="修仙功能"><button v-for="entry in hubEntries" :key="entry.id" :data-testid="`hub-${entry.id}`" @click="openHub(entry.id,$event)"><GameIcon :kind="entry.kind" :id="entry.icon"/><span>{{entry.label}}</span></button></nav>
-      <section class="paper hub-recent" aria-live="polite"><span class="section-label">行道回响</span><p>{{game.journal.at(-1)}}</p><small v-if="store.lastResult">实际 {{store.lastResult.executedSteps}} / {{store.lastResult.requestedSteps}} 次 · {{formatDelta(store.lastResult.delta)}}</small><button v-if="store.lastResult" class="text-button" data-testid="hub-receipt" @click="openHub('receipt',$event)">查看本次结算</button><div v-if="resumeVisible" class="hub-resume" data-testid="resume-strip"><span>已续上本机进度</span></div><button v-if="demoNode" class="text-button" @click="showDemoMenu">切换演示节点</button><button v-if="overview?.remainingMonths!==null&&overview?.remainingMonths!==undefined&&overview.remainingMonths<=12" class="text-button" @click="showLife">余寿 {{overview.remainingMonths}} 月 · 查看生平</button></section></aside>
+      <section class="paper hub-recent" aria-live="polite"><span class="section-label">行道回响</span><StageOutcome :game="game" :result="store.lastResult" :busy="store.busy" :saved="store.saved" :available="store.available" :error="store.error" :replayed="store.lastReplayed" :execution="store.execution" :next="step?.title??'查看当前目标'" @next="inspectNext()" @details="openHub('receipt')"/><div v-if="resumeVisible" class="hub-resume" data-testid="resume-strip"><span>已续上本机进度</span></div><button v-if="demoNode" class="text-button" @click="showDemoMenu">切换演示节点</button><button v-if="overview?.remainingMonths!==null&&overview?.remainingMonths!==undefined&&overview.remainingMonths<=12" class="text-button" @click="showLife">余寿 {{overview.remainingMonths}} 月 · 查看生平</button></section></aside>
     </main>
+    <aside v-if="game&&game.status==='active'&&singleScreen&&!hubMain&&catalogueView" class="feature-state" data-testid="feature-state"><CharacterPanel :game="game" compact @inspect="openHub('character',$event)"/><StageOutcome :game="game" :result="store.lastResult" :busy="store.busy" :saved="store.saved" :available="store.available" :error="store.error" :replayed="store.lastReplayed" :execution="store.execution" :next="step?.title??'查看当前目标'" @next="inspectNext()" @details="openHub('receipt')"/></aside>
     <main v-if="store.ready&&game && core" v-show="!hubMain" class="game-grid" :class="{'hub-feature':singleScreen}" :aria-busy="store.busy">
       <header v-if="singleScreen" class="feature-header"><div><span>尘缘问道 · {{location.name}}</span><h2 id="feature-title" tabindex="-1">{{hubTitle}}</h2></div><div class="feature-actions"><button v-if="catalogueView&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" data-testid="guide-open" aria-label="玩法指引" @click="showCatalogueGuide"><GameIcon kind="action" id="help"/>指引</button><button v-if="hubView!=='journey'&&phase==='idle'&&realm.pill" data-testid="feature-prepare" @click="openPreparation($event)">突破筹备</button><button v-if="hubView!=='goal'" data-testid="feature-goal" aria-label="当前目标" @click="openHub('goal',$event)">目标</button><button data-testid="hub-close" aria-label="返回主舞台" @click="closeHub">返回舞台 <GameIcon kind="action" id="close"/></button></div></header>
       <section v-if="!hubMain&&(!singleScreen||hubView!=='goal')" class="center-column" :class="{'in-battle':game.battle&&!inspectingInventory}">
