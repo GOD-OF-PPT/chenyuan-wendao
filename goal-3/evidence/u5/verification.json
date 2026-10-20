@@ -1,7 +1,7 @@
 {
   "task": "Goal3 U5",
   "date": "2026-10-21",
-  "status": "current independent implementation validated; commit and preview delivery pending",
+  "status": "current independent U5 delivered locally; overall Goal, long-term balance and human acceptance pending",
   "base": "f906e9377c0aa9ae09ba4eff711cf92ed6686b9a",
   "branch": "codex/goal-3-idle-preparation",
   "runtimeDigest": "1a6b51306e58a9c69eb6cfd3f97fc2c0014060deee1cbf4c7261b67eb87c6dfd",
@@ -324,12 +324,75 @@
   "nativeGoal": "blocked unchanged",
   "continuation": "Existing automation-3. Finish delivery for U5 only; next independent U6.",
   "delivery": {
-    "implementation": null,
-    "previewUpdated": false,
+    "implementation": "c2745e1d2ae913af1b28c573c112a439eaadc2e0",
+    "previewUpdated": true,
     "userGameActionsPerformed": false,
     "pushed": false,
     "newPullRequest": false,
     "merged": false,
-    "publicDeployment": false
+    "publicDeployment": false,
+    "runtimeDigest": "1a6b51306e58a9c69eb6cfd3f97fc2c0014060deee1cbf4c7261b67eb87c6dfd",
+    "runtimeFiles": 170,
+    "payloadFiles": 56,
+    "bytes": 7121286,
+    "frozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u5/preview-1a6b5130/web",
+    "committedSourcesMatchTestedBuild": true,
+    "distAndFrozenFilesMatch": true,
+    "cleanCandidateRebuild": false,
+    "oldFrozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/check-idle-01/preview-706e6948/web",
+    "origin": "http://127.0.0.1:56884/",
+    "previewPid": 80343,
+    "oldPreviewPid": 58668,
+    "httpVerificationPending": false,
+    "httpFilesMatch": true,
+    "httpFiles": 56,
+    "userProgressBefore": {
+      "name": "顾长青",
+      "realm": "凡人",
+      "xp": "5/10",
+      "stones": 40,
+      "months": 1,
+      "hp": "60/60",
+      "mp": "20/20"
+    },
+    "userProgressAfter": {
+      "name": "顾长青",
+      "realm": "凡人",
+      "xp": "5/10",
+      "stones": 40,
+      "months": 1,
+      "hp": "60/60",
+      "mp": "20/20"
+    },
+    "readOnlyPreviewActions": [
+      "Reload validated frozen program",
+      "View inventory",
+      "View recovery arrangement without starting",
+      "Return to original stage"
+    ],
+    "userScreenshots": [
+      {
+        "path": "artifacts/goal-3/u5/user-stage.png",
+        "sha256": "6c4cdf2b0f51934a57aa5d0d1ae448424e68fc719ece0671be4d598b870ccda3",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "readOnly": true,
+        "compatibilityAcceptance": false
+      },
+      {
+        "path": "artifacts/goal-3/u5/user-recovery.png",
+        "sha256": "a95d6f28137b09a21b593a9fbebe57fc810c8e35c02d63db31d67a455514b061",
+        "dimensions": [
+          1280,
+          720
+        ],
+        "readOnly": true,
+        "compatibilityAcceptance": false
+      }
+    ],
+    "identityNote": "Raw reports retain precommit f906e93 dirty identity; all 170 source hashes matched implementation Git archive and all 56 tested/frozen/HTTP payload hashes matched. No clean final candidate rebuild claimed.",
+    "incidentalCompatibilityGap": "Existing IAB screenshot is 1280x720. Recovery bottom controls are clipped there; preserved as untested compatibility gap, not repaired or accepted. Only the authorized 1440x900 Chromium gameplay cases were tested."
   }
 }

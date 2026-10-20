@@ -1,6 +1,6 @@
 # 全玩法放置与游戏交互开发准则
 
-日期：2026-10-20，Asia/Shanghai。依据[用户逐玩法交互补充](../../goal-3/amendments/2026-10-20-every-gameplay-interaction.md)和[最新完整要求](../../goal-3/amendments/2026-10-20-every-gameplay-idle-research.md)。这是研究后形成的项目开发合同，覆盖旧方案中只做短批次、只优化修炼或以软件操作流程组织玩法的要求。研究时下列放置改造均未实施；随后U2-I接入共享活动与在线修炼，见[实际实施与验证](../implementation/goal-3-idle-cultivation.md)，U3随后接入16个来源的[周期采集/委托](../implementation/goal-3-idle-sources.md)，U4接入7配方/4法宝的[周期炼丹/一次炼器](../implementation/goal-3-idle-production.md)，其余21类动作适配仍待实施。U1完成洞府主舞台局部减负，用户仍认为整体凌乱、像软件，这一负面验收继续有效。
+日期：2026-10-20，Asia/Shanghai。依据[用户逐玩法交互补充](../../goal-3/amendments/2026-10-20-every-gameplay-interaction.md)和[最新完整要求](../../goal-3/amendments/2026-10-20-every-gameplay-idle-research.md)。这是研究后形成的项目开发合同，覆盖旧方案中只做短批次、只优化修炼或以软件操作流程组织玩法的要求。研究时下列放置改造均未实施；随后U2-I接入共享活动与在线修炼，见[实际实施与验证](../implementation/goal-3-idle-cultivation.md)，U3随后接入16个来源的[周期采集/委托](../implementation/goal-3-idle-sources.md)，U4接入7配方/4法宝的[周期炼丹/一次炼器](../implementation/goal-3-idle-production.md)，U5随后接入六类研习/补给周期与三种即时配装确认，见[研习与补给实施记录](../implementation/goal-3-idle-preparation.md)及[具体合同](0007-preparation-idle-contract.md)；其余12类动作适配仍待实施。U1完成洞府主舞台局部减负，用户仍认为整体凌乱、像软件，这一负面验收继续有效。
 
 ## 一手资料与采用边界
 
@@ -40,7 +40,7 @@
 
 ## 25类正式行动的放置与交互改造矩阵
 
-下表是全玩法开发合同：`CULTIVATE` 已由U2-I实施在线周期修炼，`SOURCE` 已由U3接入周期采集/委托，`CRAFT`/`FORGE` 已由U4接入逐炉炼丹/一次炼器，其余21类仍**待实施**。已有按钮、短读秒、预算与原子回执不等于活动机制已实现。每行的“安排”代表游戏内可直接操作的交互，具体实现状态以上述记录为准，不是交给玩家手写脚本或填写工作台表单。
+下表是全玩法开发合同：`CULTIVATE` 已由U2-I实施在线周期修炼，`SOURCE` 已由U3接入周期采集/委托，`CRAFT`/`FORGE` 已由U4接入逐炉炼丹/一次炼器，U5的LEARN/STUDY/BUY/SELL/USE/REST已接入有限单周期，SCHOOL/EQUIP/EQUIP_RELIC已接入比较后即时原子确认；其余12类仍**待实施**。已有按钮、短读秒、预算与原子回执不等于活动机制已实现。每行的“安排”代表游戏内可直接操作的交互，具体实现状态以上述记录为准，不是交给玩家手写脚本或填写工作台表单。
 
 | Action | 玩法与玩家安排 | 可放置执行与有意义的取舍 | 专属反馈与停止边界 |
 | --- | --- | --- | --- |
