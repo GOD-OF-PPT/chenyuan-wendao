@@ -4,13 +4,41 @@ import { canonicalFingerprint as fingerprint, validateCommandReceipt } from '../
 import { currentVersions } from '../../src/full/versions.ts';
 import type { Command, Game } from '../../src/full/types.ts';
 import type { CommandReceipt, CommitOutcome, SaveCheckpoint } from '../../src/full/contracts.ts';
+import { createActivity, pauseActivity as pauseModelActivity, resumeActivity as resumeModelActivity, completeActivity,
+  validateActivity, validateActivityMutation, validateActivityPlan, validateActivityTick } from '../../src/full/activity.ts';
+import type { Activity, ActivityMutation, ActivityOutcome, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
+import { activityReceipt, validateActivityReceipt, type ActivityReceiptInput } from './activity-persistence';
+export type { ActivityMutation, ActivityOutcome, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
 
 export const FULL_DB_NAME = 'chenyuan-playable-v1';
-export const FULL_DB_VERSION = 3;
+export const FULL_DB_VERSION = 4;
 export const FULL_STATE_STORE = 'full-state';
 export const FULL_RECEIPT_STORE = 'full-receipts';
 export const FULL_BACKUP_STORE = 'full-backups';
 const stores = [FULL_STATE_STORE, FULL_RECEIPT_STORE, FULL_BACKUP_STORE];
+function readStoredActivity(tx: IDBTransaction, current: Game | undefined, use: (activity: Activity | null) => void, abort: (error: unknown) => void): void {
+  const state = tx.objectStore(FULL_STATE_STORE), read = state.get('activity');
+  const deliver = (raw: unknown) => {
+    try {
+      if (!current) throw new RuleError('ACTIVITY_INVALID', '活动缺少所属人生，原记录保留');
+      validateActivity(raw, current); use(raw);
+    } catch (error) { abort(error); }
+  };
+  read.onsuccess = () => {
+    if (read.result !== undefined) { deliver(read.result); return; }
+    const count = state.count('activity');
+    count.onsuccess = () => {
+      try {
+        if (count.result) throw new RuleError('ACTIVITY_INVALID', '活动记录存在但内容缺失，原记录保留');
+        use(null);
+      } catch (error) { abort(error); }
+    };
+  };
+}
+function archiveActivity(tx: IDBTransaction, activity: Activity | null, prefix: string): void {
+  if (activity) tx.objectStore(FULL_BACKUP_STORE).put(structuredClone(activity), prefix + '/activity');
+  tx.objectStore(FULL_STATE_STORE).delete('activity');
+}
 function readReceipt(store: IDBObjectStore, key: string, use: (value: unknown) => void, abort: (error: unknown) => void): void {
   const request = store.get(key);
   const deliver = (value: unknown) => { try { use(value); } catch (error) { abort(error); } };
@@ -202,7 +230,7 @@ function migrateTransaction(tx: IDBTransaction, complete: (value: void) => void,
             return;
           }
           const raw = request.result;
-          try { validateGame(raw); ensureCheckpointScope(tx, raw, () => complete(undefined), abort); return; }
+          try { validateGame(raw); readStoredActivity(tx, raw, () => ensureCheckpointScope(tx, raw, () => complete(undefined), abort), abort); return; }
           catch (error) { if (!(error instanceof RuleError) || error.code !== 'SAVE_VERSION') throw error; }
           const migrated = parseGame(JSON.stringify(raw));
           const ownerRead = state.get('checkpoint-owner');
@@ -210,6 +238,9 @@ function migrateTransaction(tx: IDBTransaction, complete: (value: void) => void,
           const readPrevious = state.get('previous');
           let previousRaw: unknown;
           readPrevious.onsuccess = () => { previousRaw = readPrevious.result; };
+          const readActivity = state.get('activity');
+          let activityRaw: unknown;
+          readActivity.onsuccess = () => { activityRaw = readActivity.result; };
           const readCheckpoint = state.get('checkpoint');
           readCheckpoint.onsuccess = () => {
             try {
@@ -230,6 +261,17 @@ function migrateTransaction(tx: IDBTransaction, complete: (value: void) => void,
               const mutation: SaveMutation = { commandId: crypto.randomUUID(), runId: crypto.randomUUID(), expectedRunId: migrated.core.runId, expectedRevision: migrated.core.revision };
               validateMutation(mutation);
               const backup = tx.objectStore(FULL_BACKUP_STORE), prefix = 'migration/' + mutation.commandId;
+              // A running plan cannot survive a content migration or a new run identity.
+              if (activityRaw !== undefined) {
+                validateActivity(activityRaw);
+                if (activityRaw.runId !== migrated.core.runId) throw new RuleError('ACTIVITY_INVALID', '旧活动不属于迁移来源，原记录保留');
+                backup.put(activityRaw, prefix + '/activity');
+              }
+              const activityPresent = state.count('activity');
+              activityPresent.onsuccess = () => {
+                if (activityRaw === undefined && activityPresent.result) abort(new RuleError('ACTIVITY_INVALID', '旧活动记录内容缺失，迁移未提交'));
+              };
+              state.delete('activity');
               backup.put(raw, prefix + '/current');
               if (oldOwner !== undefined) backup.put(oldOwner, prefix + '/checkpoint-owner');
               if (previousRaw !== undefined) backup.put(previousRaw, prefix + '/previous');
@@ -410,6 +452,105 @@ export class FullSaveRepository {
     });
   }
   load(): Promise<Game | null> { return this.read<Game>('current', validateGame); }
+  loadActivitySnapshot(): Promise<{ state: Game | null; activity: Activity | null }> {
+    return this.transaction('readonly', (tx, complete, abort) => {
+      const state = tx.objectStore(FULL_STATE_STORE), read = state.get('current');
+      read.onsuccess = () => {
+        try {
+          if (read.result !== undefined) {
+            validateGame(read.result); const current = read.result;
+            readStoredActivity(tx, current, activity => complete({ state: current, activity }), abort);
+          } else {
+            const count = state.count('current');
+            count.onsuccess = () => {
+              try {
+                if (count.result) throw new RuleError('SAVE_SHAPE', '主存档记录内容缺失，原记录保留');
+                readStoredActivity(tx, undefined, activity => complete({ state: null, activity }), abort);
+              } catch (error) { abort(error); }
+            };
+          }
+        } catch (error) { abort(error); }
+      };
+    });
+  }
+  startActivity(plan: ActivityPlan, mutation: ActivityMutation): Promise<ActivityOutcome> {
+    validateActivityPlan(plan); validateActivityMutation(mutation);
+    return this.writeActivity({ kind: 'START', plan: structuredClone(plan), mutation: structuredClone(mutation) });
+  }
+  pauseActivity(mutation: ActivityMutation): Promise<ActivityOutcome> {
+    validateActivityMutation(mutation);
+    return this.writeActivity({ kind: 'PAUSE', mutation: structuredClone(mutation) });
+  }
+  resumeActivity(mutation: ActivityMutation): Promise<ActivityOutcome> {
+    validateActivityMutation(mutation);
+    return this.writeActivity({ kind: 'RESUME', mutation: structuredClone(mutation) });
+  }
+  settleActivity(tick: ActivityTick): Promise<ActivityOutcome> {
+    validateActivityTick(tick);
+    return this.writeActivity({ kind: 'TICK', tick: structuredClone(tick) });
+  }
+  private writeActivity(input: ActivityReceiptInput): Promise<ActivityOutcome> {
+    const intent = input.kind === 'TICK' ? input.tick : input.mutation, print = fingerprint(input);
+    return this.transaction('readwrite', (tx, complete, abort) => {
+      const state = tx.objectStore(FULL_STATE_STORE), receipts = tx.objectStore(FULL_RECEIPT_STORE), read = state.get('current');
+      read.onsuccess = () => {
+        try {
+          const current = read.result; validateGame(current);
+          if (current.core.runId !== intent.runId) throw new RuleError('RUN_MISMATCH', '活动所属人生已经切换，请读取最新进度');
+          readStoredActivity(tx, current, activity => {
+            readReceipt(receipts, intent.runId + ':' + intent.commandId, stored => {
+              try {
+                if (stored !== undefined) {
+                  if (stored && typeof stored === 'object' && 'format' in stored && stored.format === 'chenyuan-receipt') {
+                    validateCommandReceipt(stored, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令');
+                  }
+                  if (stored && typeof stored === 'object' && 'format' in stored && stored.format === 'chenyuan-control-receipt') {
+                    validateControlReceipt(stored); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于存档操作');
+                  }
+                  validateActivityReceipt(stored, current);
+                  if (stored.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一活动编号对应不同意图');
+                  complete({ state: current, activity, result: stored.result, replayed: true }); return;
+                }
+                if (current.core.revision !== intent.expectedRevision) throw new RuleError('STALE_REVISION', '进度已变化，请重新查看活动安排');
+                const expectedId = input.kind === 'TICK' ? input.tick.activityId : input.mutation.expectedActivityId;
+                const expectedActivityRevision = input.kind === 'TICK' ? input.tick.expectedActivityRevision : input.mutation.expectedActivityRevision;
+                if ((activity?.id ?? null) !== expectedId || (activity?.revision ?? null) !== expectedActivityRevision) {
+                  throw new RuleError('ACTIVITY_STALE', '活动已被暂停、继续或替换，请读取当前安排');
+                }
+                let next: Activity;
+                if (input.kind === 'START') {
+                  if (activity?.status === 'running') throw new RuleError('ACTIVITY_RUNNING', '先暂停当前活动，再安排新的修行');
+                  next = createActivity(current, input.plan, { id: crypto.randomUUID(), ownerId: input.mutation.ownerId,
+                    commandId: input.mutation.commandId, now: Date.now() });
+                  if (activity) tx.objectStore(FULL_BACKUP_STORE).put(activity, 'activity/' + intent.runId + '/' + intent.commandId + '/previous');
+                } else {
+                  if (!activity) throw new RuleError('ACTIVITY_REQUIRED', '尚无可以继续或暂停的活动');
+                  if (input.kind === 'TICK') {
+                    if (activity.ownerId !== input.tick.ownerId || activity.generation !== input.tick.generation) throw new RuleError('ACTIVITY_OWNER', '该周期已由其他页面接管，旧回调未执行');
+                    if (activity.status !== 'running' || !activity.nextCommand || activity.nextCommand.commandId !== input.tick.commandId) throw new RuleError('ACTIVITY_STALE', '当前周期已停止或变化');
+                    const now = Date.now();
+                    if (activity.dueAt === null || now < activity.dueAt) throw new RuleError('ACTIVITY_NOT_DUE', '当前修炼周期尚未完成');
+                    const command = activity.nextCommand, outcome = resolve(current, command);
+                    next = completeActivity(outcome.nextState, activity, outcome.result, { commandId: command.commandId, now });
+                    state.put(current, 'previous'); state.put(outcome.nextState, 'current'); state.put(next, 'activity');
+                    receipts.put(activityReceipt(input, next, command, outcome.result), intent.runId + ':' + intent.commandId);
+                    complete({ state: outcome.nextState, activity: next, result: outcome.result, replayed: false }); return;
+                  }
+                  if (input.kind === 'PAUSE') {
+                    if (activity.ownerId !== input.mutation.ownerId) throw new RuleError('ACTIVITY_OWNER', '请先继续并接管当前活动，再暂停');
+                    next = pauseModelActivity(activity);
+                  } else next = resumeModelActivity(current, activity, { ownerId: input.mutation.ownerId, commandId: input.mutation.commandId, now: Date.now() });
+                }
+                validateActivity(next, current);
+                state.put(next, 'activity'); receipts.put(activityReceipt(input, next), intent.runId + ':' + intent.commandId);
+                complete({ state: current, activity: next, result: null, replayed: false });
+              } catch (error) { abort(error); }
+            }, abort);
+          }, abort);
+        } catch (error) { abort(error); }
+      };
+    });
+  }
   loadCheckpoint(): Promise<SaveCheckpoint | null> {
     return this.transaction('readonly', (tx, complete, abort) => {
       const state = tx.objectStore(FULL_STATE_STORE), read = state.get('current');
@@ -463,10 +604,12 @@ export class FullSaveRepository {
         const existing: Game | undefined = read.result;
         try {
           if (existing !== undefined) validateGame(existing);
+          readStoredActivity(tx, existing, activity => {
           readReceipt(receipts, mutation.runId + ':' + mutation.commandId, (storedReceipt) => {
             try {
               if (storedReceipt !== undefined) {
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-receipt') { validateCommandReceipt(storedReceipt, existing!); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令'); }
+                if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-activity-receipt') { validateActivityReceipt(storedReceipt, existing!); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于活动安排'); }
                 validateControlReceipt(storedReceipt);
                 if (storedReceipt.kind !== kind || storedReceipt.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一操作编号对应不同内容');
                 if (fingerprint(storedReceipt.mutation) !== fingerprint(mutation)) throw new RuleError('RECEIPT_INVALID', '存档操作回执身份损坏');
@@ -477,12 +620,14 @@ export class FullSaveRepository {
                 throw new RuleError('STALE_REVISION', '当前存档已变化，请重新读取并确认');
               }
               if (existing?.core.runId === mutation.runId) throw new RuleError('NEW_RUN_REQUIRED', '替换存档必须使用新的人生编号');
+              archiveActivity(tx, activity, 'replacement/' + mutation.commandId);
               if (existing) state.put(existing, 'previous');
               state.put(candidate, 'current'); state.delete('checkpoint'); state.delete('checkpoint-owner'); receipts.clear();
               const receipt: ControlReceipt = { format: 'chenyuan-control-receipt', version: 1, kind, mutation: structuredClone(mutation), fingerprint: print };
               receipts.put(receipt, mutation.runId + ':' + mutation.commandId);
               complete({ state: candidate, replayed: false });
             } catch (error) { abort(error); }
+          }, abort);
           }, abort);
         } catch (error) { abort(error); }
       };
@@ -497,10 +642,12 @@ export class FullSaveRepository {
       currentRead.onsuccess = () => {
         try {
           const current = currentRead.result; validateGame(current);
+          readStoredActivity(tx, current, activity => {
           readReceipt(receipts, mutation.runId + ':' + mutation.commandId, (storedReceipt) => {
             try {
               if (storedReceipt !== undefined) {
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-receipt') { validateCommandReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令'); }
+                if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-activity-receipt') { validateActivityReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于活动安排'); }
                 validateControlReceipt(storedReceipt);
                 if (storedReceipt.kind !== 'RESTORE' || storedReceipt.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一编号对应不同恢复意图');
                 if (fingerprint(storedReceipt.mutation) !== fingerprint(mutation)) throw new RuleError('RECEIPT_INVALID', '恢复回执身份损坏');
@@ -519,6 +666,7 @@ export class FullSaveRepository {
                     try {
                       validateScope(owner.result, cp, current);
                       const restored = reidentify(cp.snapshot, mutation.runId);
+                      archiveActivity(tx, activity, 'restoration/' + mutation.commandId);
                       state.put(current, 'previous'); state.put(restored, 'current');
                       state.put(checkpointScope(cp, restored.core.runId), 'checkpoint-owner');
                       // The complete original checkpoint remains reusable.
@@ -531,6 +679,7 @@ export class FullSaveRepository {
                 } catch (error) { abort(error); }
               };
             } catch (error) { abort(error); }
+          }, abort);
           }, abort);
         } catch (error) { abort(error); }
       };
@@ -546,17 +695,27 @@ export class FullSaveRepository {
         try {
           const current = read.result; validateGame(current);
           if (current.core.runId !== command.runId) throw new RuleError('RUN_MISMATCH', '当前存档已经切换，请重新读取');
+          readStoredActivity(tx, current, activity => {
           readReceipt(receipts, command.runId + ':' + command.commandId, (storedReceipt) => {
             try {
               if (storedReceipt !== undefined) {
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-control-receipt') { validateControlReceipt(storedReceipt); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于存档操作'); }
+                if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-activity-receipt') { validateActivityReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于活动周期或安排'); }
                 validateCommandReceipt(storedReceipt, current);
                 const receipt = storedReceipt;
                 if (receipt.fingerprint !== print) throw new RuleError('COMMAND_ID_REUSED', '同一指令编号对应不同内容');
                 complete({ state: current, result: receipt.result, replayed: true }); return;
               }
+              if (command.type === 'CULTIVATE') throw new RuleError('ACTIVITY_REQUIRED', '请安排修炼活动，修为按完整周期逐次积累');
+              if (activity?.status === 'running') throw new RuleError('ACTIVITY_RUNNING', '先暂停当前活动，再执行其他行动');
               const outcome = resolve(current, command);
               state.put(current, 'previous'); state.put(outcome.nextState, 'current');
+              if (activity) {
+                const stopped: Activity = { ...activity, revision: activity.revision + 1, generation: activity.generation + 1,
+                  gameRevision: outcome.nextState.core.revision, status: 'stopped', nextCommand: null, startedAt: null, dueAt: null,
+                  stopReason: { code: 'STATE_CHANGED', message: '进度已改变，请重新安排活动；已完成的积累保留' } };
+                validateActivity(stopped, outcome.nextState); state.put(stopped, 'activity');
+              }
               if (outcome.checkpointKind) {
                 const prepared = checkpoint(current, outcome.checkpointKind);
                 state.put(prepared, 'checkpoint'); state.put(checkpointScope(prepared, current.core.runId), 'checkpoint-owner');
@@ -565,6 +724,7 @@ export class FullSaveRepository {
               receipts.put(receipt, command.runId + ':' + command.commandId);
               complete({ state: outcome.nextState, result: outcome.result, replayed: false });
             } catch (error) { abort(error); }
+          }, abort);
           }, abort);
         } catch (error) { abort(error); }
       };

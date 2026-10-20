@@ -8,6 +8,8 @@ import type { ControlOutcome, SaveMutation } from './full-persistence';
 import {loadedObservation,writeObservation,inputErrorObservation,storageErrorObservation,type Observation,type WriteObservationSource} from './local-events';
 import {useSession} from './session';
 import {createActionClock,actionSeconds,actionLabel,type Execution} from './action-timing';
+import {createActivityClock} from './activity-clock';
+import type {Activity,ActivityPlan,ActivityMutation,ActivityTick,ActivityOutcome} from '../../src/full/activity.ts';
 
 export type CheckpointSummary = Pick<SaveCheckpoint, 'kind' | 'sourceRunId' | 'sourceRevision' | 'versions'> & { target: { name: string; realm: Game['core']['player']['realm']; months: number; hp: number; mp: number; inventory: Record<string, number> } };
 
@@ -19,8 +21,18 @@ export const useGame = defineStore('game', () => {
   const trialRecovery = shallowRef<ReturnType<typeof getTrialRecovery>>(null);
   const lastResult = shallowRef<ActionResult | null>(null), lastReplayed = ref(false), canRetry = ref(false);
   const execution=shallowRef<Execution|null>(null),actionClock=createActionClock();
+  const activity=shallowRef<Activity|null>(null),activityNotice=ref(''),lastFromActivity=ref(false);
+  const activityRuntime=shallowRef<{id:string;generation:number;remainingMs:number;totalMs:number;phase:'running'|'saving'|'pausing'}|null>(null);
+  const activityOwner=crypto.randomUUID(),activityClock=createActivityClock();
+  const activityRunning=computed(()=>activity.value?.status==='running');
+  const activityLocal=computed(()=>!!activityRuntime.value&&activity.value?.ownerId===activityOwner);
+  const activityOwned=computed(()=>activity.value?.ownerId===activityOwner);
+  const activityPausing=ref(false);
+  let activityEpoch=0,activityInFlight:Promise<void>|null=null;
+  let writeInFlight:Promise<void>|null=null;
   let repository: FullSaveRepository | undefined, channel: BroadcastChannel | undefined;
-  let pending: (() => Promise<CommitOutcome | ControlOutcome>) | null = null;
+  let pending: (() => Promise<CommitOutcome | ControlOutcome | ActivityOutcome>) | null = null;
+  let pendingInstant=false;
   let pendingCommandId: string | undefined;
   let pendingObservation: WriteObservationSource | undefined;
   const observers=new Set<{next:(value:Observation)=>void;fault:()=>void}>();
@@ -31,6 +43,40 @@ export const useGame = defineStore('game', () => {
   const codeOf = (value: unknown) => value && typeof value === 'object' && 'code' in value ? String(value.code) : '';
   const mutation = (): SaveMutation => ({ commandId: crypto.randomUUID(), runId: crypto.randomUUID(),
     expectedRunId: game.value?.core.runId ?? null, expectedRevision: game.value?.core.revision ?? 0 });
+
+  function stopActivityRuntime(){activityEpoch++;activityClock.cancel();activityRuntime.value=null;}
+  function acceptActivity(next:Activity|null){
+    const runtime=activityRuntime.value;
+    if(runtime&&(!next||next.id!==runtime.id||next.generation!==runtime.generation||next.ownerId!==activityOwner||next.status!=='running'))stopActivityRuntime();
+    activity.value=next;
+  }
+  function activityMutation():ActivityMutation|null{
+    if(!game.value||!repository||!available.value)return null;
+    return{commandId:crypto.randomUUID(),runId:game.value.core.runId,expectedRevision:game.value.core.revision,
+      expectedActivityId:activity.value?.id??null,expectedActivityRevision:activity.value?.revision??null,ownerId:activityOwner};
+  }
+  function beginActivityRuntime(){
+    const current=activity.value;
+    if(disposed||!repository||!available.value||error.value||!current||current.status!=='running'||current.ownerId!==activityOwner||!current.nextCommand||activityPausing.value)return;
+    stopActivityRuntime();const owner=activityEpoch;
+    const base={id:current.id,generation:current.generation,totalMs:current.cycleMs};
+    activityRuntime.value={...base,remainingMs:current.cycleMs,phase:'running'};
+    void(async()=>{
+      try{
+        const due=await activityClock.wait(current.cycleMs,remaining=>{if(owner===activityEpoch&&!disposed)activityRuntime.value={...base,remainingMs:remaining,phase:'running'};});
+        if(!due||disposed||owner!==activityEpoch||activity.value?.revision!==current.revision)return;
+        const command=current.nextCommand!;
+        const tick:ActivityTick={commandId:command.commandId,runId:current.runId,expectedRevision:current.gameRevision,
+          activityId:current.id,expectedActivityRevision:current.revision,ownerId:activityOwner,generation:current.generation};
+        activityRuntime.value={...base,remainingMs:0,phase:'saving'};
+        const saving=write(()=>repository!.settleActivity(tick),tick.commandId,{kind:'action',command},true);
+        activityInFlight=saving;await saving;if(activityInFlight===saving)activityInFlight=null;
+        if(disposed||owner!==activityEpoch)return;
+        activityRuntime.value=null;
+        if(!error.value&&!activityPausing.value)beginActivityRuntime();
+      }catch(value){if(owner!==activityEpoch||disposed)return;stopActivityRuntime();activityNotice.value=message(value);}
+    })();
+  }
 
   async function checkpointInfo() {
     const current = game.value;
@@ -52,19 +98,23 @@ export const useGame = defineStore('game', () => {
   }
   async function refresh(reason?:'sync') {
     if (!repository) return;
-    const current = await repository.load();
+    const snapshot=await repository.loadActivitySnapshot(),current=snapshot.state;
     if (disposed) return;
     const changed=current?.core.runId !== game.value?.core.runId || current?.core.revision !== game.value?.core.revision;
+    const changedActivity=snapshot.activity?.id!==activity.value?.id||snapshot.activity?.revision!==activity.value?.revision;
+    if(changedActivity&&activityRuntime.value?.phase==='running')stopActivityRuntime();
     if (changed) {
-      lastResult.value = null; lastReplayed.value = false;
+      lastResult.value = null; lastReplayed.value = false;lastFromActivity.value=false;
     }
     game.value = current;
+    acceptActivity(snapshot.activity);
     await checkpointInfo();
     if (!failedIntent && !busy.value) saved.value = !!current;
     if(reason==='sync'&&changed&&current)emit(()=>loadedObservation(current,'sync'));
   }
   async function init() {
     if (busy.value) return;
+    stopActivityRuntime();activityNotice.value='';
     busy.value = true; ready.value = false; available.value = false; error.value = ''; warning.value = '';
     repository?.close(); channel?.close(); repository = undefined; channel = undefined;
     pending = null; pendingCommandId = undefined; pendingObservation=undefined; canRetry.value = false;
@@ -92,22 +142,31 @@ export const useGame = defineStore('game', () => {
       repository?.close(); repository = undefined;
     } finally { ready.value = true; busy.value = false; }
   }
-  async function write(operation: () => Promise<CommitOutcome | ControlOutcome>, commandId?: string, observation?:WriteObservationSource) {
+  function write(operation: () => Promise<CommitOutcome | ControlOutcome | ActivityOutcome>, commandId?: string, observation?:WriteObservationSource, instant=false):Promise<void>{
+    if(disposed||busy.value||!repository)return Promise.resolve();
+    const current=performWrite(operation,commandId,observation,instant);writeInFlight=current;
+    return current.finally(()=>{if(writeInFlight===current)writeInFlight=null;});
+  }
+  async function performWrite(operation: () => Promise<CommitOutcome | ControlOutcome | ActivityOutcome>, commandId?: string, observation?:WriteObservationSource, instant=false) {
     if (disposed || busy.value || !repository) return;
     const before=game.value;
     busy.value = true; error.value = ''; saved.value = false; canRetry.value = false; pending = operation; pendingCommandId = commandId;
     pendingObservation=observation;
+    pendingInstant=instant;
     try {
       const action=observation?.kind==='action'?observation.command:null;
       const seconds=action?actionSeconds(action):.6,totalMs=Number.isFinite(seconds)?seconds*1000:0;
       const label=action?actionLabel(action):observation?.kind==='restore'?'恢复准备':observation?.kind==='import'?'载入进度':'展开新的人生';
       const initial:Execution={id:commandId??'',label,totalMs,remainingMs:totalMs,phase:'acting',batch:!!action&&('count'in action&&(action.count??1)>1||'quantity'in action&&action.quantity>1)};
-      const completed=await actionClock.wait(totalMs,remaining=>{execution.value={...initial,remainingMs:remaining};});
-      if(!completed||disposed)return;
-      execution.value={...initial,remainingMs:0,phase:'saving'};
+      if(!instant){const completed=await actionClock.wait(totalMs,remaining=>{execution.value={...initial,remainingMs:remaining};});
+        if(!completed||disposed)return;execution.value={...initial,remainingMs:0,phase:'saving'};}
       const outcome = await operation();
       if (disposed) return;
-      game.value = outcome.state; lastResult.value = 'result' in outcome ? outcome.result : null; lastReplayed.value = outcome.replayed;
+      game.value = outcome.state;
+      if('activity'in outcome)acceptActivity(outcome.activity);
+      else{const snapshot=await repository!.loadActivitySnapshot();if(disposed)return;game.value=snapshot.state;acceptActivity(snapshot.activity);}
+      if('result'in outcome&&outcome.result){lastResult.value=outcome.result;lastFromActivity.value=instant;lastReplayed.value=outcome.replayed;}
+      else if(!instant){lastResult.value=null;lastFromActivity.value=false;lastReplayed.value=outcome.replayed;}
       failedIntent = false; pending = null; pendingCommandId = undefined; pendingObservation=undefined; saved.value = true;
       if(observation)emit(()=>writeObservation(before,outcome.state,observation,'result'in outcome?outcome.result:null,outcome.replayed));
       await checkpointInfo();
@@ -137,10 +196,13 @@ export const useGame = defineStore('game', () => {
   }
   function prepareAction(action: Action): Command | null {
     if (!game.value || !repository || !available.value || busy.value) return null;
+    if(activityRunning.value){activityNotice.value='修炼正在进行，请先暂停再行动。';return null;}
     return structuredClone({ ...action, commandId: crypto.randomUUID(), runId: game.value.core.runId, expectedRevision: game.value.core.revision });
   }
   async function actPrepared(input: Command) {
     if (!repository) return;
+    if(input.type==='CULTIVATE'){activityNotice.value='请在洞府安排修炼，按周期积累。';return;}
+    if(activityRunning.value){activityNotice.value='修炼正在进行，请先暂停再行动。';return;}
     const command = structuredClone({ ...input });
     await write(() => repository!.execute(command), command.commandId,{kind:'action',command});
   }
@@ -154,7 +216,7 @@ export const useGame = defineStore('game', () => {
   }
   async function importPrepared(raw: string, input: SaveMutation) {
     if (disposed || !repository || !available.value) return;
-    const intent = structuredClone(input);
+    stopActivityRuntime();const intent = structuredClone(input);
     await write(() => repository!.importText(raw, intent),intent.commandId,{kind:'import',commandId:intent.commandId,runId:intent.runId,sourceRunId:intent.expectedRunId,expectedRevision:intent.expectedRevision});
   }
   async function importText(raw: string) {
@@ -162,7 +224,7 @@ export const useGame = defineStore('game', () => {
   }
   async function restart(name: string) {
     if (!repository || !game.value) return;
-    const intent = mutation(); await write(() => repository!.create(name.trim(), intent),intent.commandId,{kind:'restart',commandId:intent.commandId,runId:intent.runId,sourceRunId:intent.expectedRunId,expectedRevision:intent.expectedRevision});
+    stopActivityRuntime();const intent = mutation(); await write(() => repository!.create(name.trim(), intent),intent.commandId,{kind:'restart',commandId:intent.commandId,runId:intent.runId,sourceRunId:intent.expectedRunId,expectedRevision:intent.expectedRevision});
   }
   function prepareCheckpoint(): SaveMutation | null {
     if (!repository || !game.value || !available.value || busy.value || !hasCheckpoint.value) return null;
@@ -170,13 +232,13 @@ export const useGame = defineStore('game', () => {
   }
   async function restorePrepared(input: SaveMutation) {
     if (!repository) return;
-    const intent = structuredClone(input);
+    stopActivityRuntime();const intent = structuredClone(input);
     await write(() => repository!.restoreCheckpoint(intent), intent.commandId,{kind:'restore',commandId:intent.commandId,runId:intent.runId,sourceRunId:intent.expectedRunId,expectedRevision:intent.expectedRevision});
   }
   async function checkpoint() {
     const intent = prepareCheckpoint(); if (intent) await restorePrepared(intent);
   }
-  async function retry() { if (pending && canRetry.value) await write(pending, pendingCommandId,pendingObservation); }
+  async function retry() { if (pending && canRetry.value){const instant=pendingInstant;await write(pending,pendingCommandId,pendingObservation,instant);if(instant&&!error.value)beginActivityRuntime();} }
   function canRetryFor(commandId: string) { return canRetry.value && pendingCommandId === commandId; }
   async function retryFor(commandId: string) { if (canRetryFor(commandId)) await retry(); }
   function discardRetryFor(commandId: string) {
@@ -186,8 +248,29 @@ export const useGame = defineStore('game', () => {
   async function rawText(): Promise<string | null> {
     try{const backup = await FullSaveRepository.exportRaw(session.gameDatabase); return backup ? rawBackupText(backup) : null;}catch(value){emit(()=>storageErrorObservation(game.value,codeOf(value)));throw value;}
   }
+  async function startCultivation(plan:ActivityPlan){
+    if(disposed||busy.value||!repository)return;
+    if(activityRunning.value){activityNotice.value='请先暂停当前修炼，再重新安排。';return;}
+    const intent=activityMutation();if(!intent)return;const selected=structuredClone(plan);activityNotice.value='';stopActivityRuntime();
+    await write(()=>repository!.startActivity(selected,intent),intent.commandId,undefined,true);
+    if(!error.value)beginActivityRuntime();
+  }
+  async function pauseCultivation(){
+    if(disposed||!repository||activityPausing.value||!activity.value)return;
+    activityPausing.value=true;stopActivityRuntime();
+    try{const writing=writeInFlight??activityInFlight;if(writing)await writing;const intent=activityMutation();if(!intent||!activity.value||activity.value.status!=='running')return;
+      await write(()=>repository!.pauseActivity(intent),intent.commandId,undefined,true);
+      if(!error.value)activityNotice.value='修炼已暂停。未完成的这一轮在继续时重新计时。';
+    }finally{activityPausing.value=false;}
+  }
+  async function resumeCultivation(){
+    if(disposed||busy.value||!repository)return;const intent=activityMutation();if(!intent)return;
+    activityNotice.value='';stopActivityRuntime();await write(()=>repository!.resumeActivity(intent),intent.commandId,undefined,true);
+    if(!error.value)beginActivityRuntime();
+  }
   const saveLabel = computed(() => !ready.value ? '读取中' : execution.value?.phase==='acting' ? '行动中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
-  onScopeDispose(() => { disposed = true;actionClock.cancel();execution.value=null; repository?.close(); channel?.close();observers.clear(); });
+  onScopeDispose(() => { disposed = true;stopActivityRuntime();actionClock.cancel();execution.value=null; repository?.close(); channel?.close();observers.clear(); });
   return { game, busy, ready, available, error, warning, saved, hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,execution,
+    activity,activityRuntime,activityRunning,activityLocal,activityOwned,activityPausing,activityNotice,lastFromActivity,startCultivation,pauseCultivation,resumeCultivation,
     init, refresh, start, act, prepareAction, actPrepared, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, rawText, validationError,observe };
 });

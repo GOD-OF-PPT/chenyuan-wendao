@@ -33,6 +33,9 @@ web/build-report/
 web/candidate-report/
 web/candidate-results/
 artifacts/
+web/idle-report/
+web/idle-results/
+web/idle-persistence-results/
 journey-evidence/
 recovery-evidence/
 

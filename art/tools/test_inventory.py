@@ -39,6 +39,8 @@ class InventoryTests(unittest.TestCase):
   if story.exists():files.update(ROOT/ref for ref in json.loads(story.read_text())['sourceReferences'])
   catalogue=ROOT/'art/redesign/catalogue-art/manifest.json'
   if catalogue.exists():files.update(ROOT/ref for ref in json.loads(catalogue.read_text())['sourceReferences'])
+  idle=ROOT/'art/redesign/idle-cultivation.json'
+  if idle.exists():files.update(ROOT/ref for ref in json.loads(idle.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -54,6 +56,14 @@ class InventoryTests(unittest.TestCase):
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
   self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0))
+ def test_idle_ui_requires_its_source_ledger(self):
+  (self.root/'art/redesign/idle-cultivation.json').unlink();self.rejected()
+ def test_idle_ui_budget_cannot_be_raised(self):
+  p='art/redesign/idle-cultivation.json';d=json.loads((self.root/p).read_text());d['maxNativeBytes']=22001;self.write(p,d);self.rejected()
+ def test_idle_ui_cannot_claim_player_acceptance(self):
+  p='art/redesign/idle-cultivation.json';d=json.loads((self.root/p).read_text());d['userAcceptance']=True;self.write(p,d);self.rejected()
+ def test_idle_ui_hash_and_real_consumer_are_required(self):
+  self.write('web/src/idle-activity.css','');self.rejected()
  def test_digest_corruption_is_rejected(self):self.asset('scene-secret')['sha256']='0'*64;self.rejected()
  def test_false_dimensions_are_rejected(self):self.asset('portrait-player')['dimensions']['width']=999;self.rejected()
  def test_parent_hash_cannot_be_relabelled(self):self.asset('scene-wilderness')['originalHash']='0'*64;self.rejected()

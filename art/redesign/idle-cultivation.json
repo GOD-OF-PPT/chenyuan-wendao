@@ -1,0 +1,47 @@
+{
+  "format": "chenyuan-idle-cultivation",
+  "version": 1,
+  "task": "Goal3 U2-I",
+  "maxNativeBytes": 22000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/activity-clock.ts",
+      "bytes": 1613,
+      "sha256": "0658b685a8c05e6968f5dc242a36859b3cb9faed7b72c05f2314910b2ab8a392"
+    },
+    {
+      "path": "web/src/TrainingActivity.vue",
+      "bytes": 4536,
+      "sha256": "1f0036b366ccc806280496ef6ae0c8c47c3705016dd53f19935acbe31667a26a"
+    },
+    {
+      "path": "web/src/TrainingPlanner.vue",
+      "bytes": 5354,
+      "sha256": "c75ec2ca6309ee5f36ca8407a9ad1a1b46672bb26685db7d627dcd9f14f7e28d"
+    },
+    {
+      "path": "web/src/idle-activity.css",
+      "bytes": 4320,
+      "sha256": "17ef27c763e8c2e5a7d57f11b5f24f1604cc4df97562abf6f4e4a909a30c13e6"
+    }
+  ],
+  "sourceReferences": [
+    "goal-3/amendments/2026-10-20-autonomous-u2-i.md",
+    "docs/decisions/0006-idle-gameplay-interaction-rules.md"
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "<TrainingPlanner ",
+      "<TrainingActivity "
+    ],
+    "web/src/store.ts": [
+      "activityClock.wait(current.cycleMs",
+      "repository!.settleActivity(tick)"
+    ],
+    "web/src/main.ts": [
+      "import './idle-activity.css'"
+    ]
+  },
+  "scope": "New online cultivation UI and coordinator only; old source budgets unchanged. No painting changes or player acceptance."
+}

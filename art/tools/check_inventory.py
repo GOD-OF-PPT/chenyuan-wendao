@@ -214,6 +214,24 @@ def validate(root):
         assert native_bytes <= 12000, 'Game-stage style budget exceeded'
     else:
         assert not (root / 'web/src/game-hub.css').exists(), 'Unrecorded game-stage stylesheet'
+    idle_path = root / 'art/redesign/idle-cultivation.json'
+    idle_bytes = 0
+    if idle_path.exists():
+        idle = json.loads(idle_path.read_text())
+        assert idle['format'] == 'chenyuan-idle-cultivation' and idle['version'] == 1
+        assert idle['maxNativeBytes'] == 22000 and idle['userAcceptance'] is False
+        assert [row['path'] for row in idle['files']] == ['web/src/activity-clock.ts', 'web/src/TrainingActivity.vue', 'web/src/TrainingPlanner.vue', 'web/src/idle-activity.css']
+        for row in idle['files']:
+            raw = (root / row['path']).read_bytes()
+            assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Idle UI source identity changed'
+            idle_bytes += len(raw)
+        assert idle_bytes <= 22000, 'Idle UI budget exceeded'
+        for ref in idle['sourceReferences']:
+            assert (root / ref).resolve().is_relative_to(root) and (root / ref).is_file()
+        for path, fragments in idle['bindings'].items():
+            assert all(fragment in (root / path).read_text() for fragment in fragments), 'Idle UI consumer missing'
+    else:
+        assert not (root / 'web/src/idle-activity.css').exists(), 'Unrecorded idle cultivation UI'
     budgets = manifest['budget']
     for category, key in [('scene', 'sceneMasters'), ('portrait', 'portraits'), ('ui_kit', 'uiKits'), ('fx_kit', 'fxKits')]:
         assert sum(a['category'] == category for a in manifest['assets']) == budgets[key], 'Budget slots drift: ' + category
@@ -286,7 +304,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

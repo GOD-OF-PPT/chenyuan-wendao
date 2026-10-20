@@ -18,3 +18,4 @@ import './play-flow.css';
 
 import './story-book.css';
 import './catalogue-art.css';
+import './idle-activity.css';

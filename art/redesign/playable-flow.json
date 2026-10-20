@@ -58,7 +58,7 @@
       "<ActionExecution ",
       "<ExplorePanel ",
       "<GoodsPanel ",
-      "<CultivationPanel ",
+      "<TrainingPlanner ",
       "<PreparationPanel "
     ],
     "web/src/store.ts": [
