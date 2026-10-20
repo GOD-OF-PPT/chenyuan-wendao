@@ -1,7 +1,7 @@
 {
   "task": "Goal3 U4",
   "date": "2026-10-20",
-  "status": "tested; local commit and frozen preview identity pending",
+  "status": "local implementation committed, checked and served; human acceptance pending",
   "scope": "4/25 online action adapters; fixed 1440x900 Chromium functional verification only",
   "runtimeDigest": "ca46426ebb04e526484ac4c10d2b8b848a79b7ed9b946ba6c5c4564892b04b2d",
   "runtimeFiles": 161,
@@ -193,5 +193,61 @@
     "mp": "20/20"
   },
   "rollback": "Keep DB6 readability and original/activity archives. Do not downgrade or use old DB5 application for upgraded storage.",
-  "continuation": "Existing automation-3; next independent CHECK-IDLE-01. Native goal remains blocked, not recreated/resumed/completed."
+  "continuation": "Existing automation-3; next independent CHECK-IDLE-01. Native goal remains blocked, not recreated/resumed/completed.",
+  "delivery": {
+    "implementation": "c72b77117f99ef820fd9bee33271107d38395871",
+    "runtimeDigest": "ca46426ebb04e526484ac4c10d2b8b848a79b7ed9b946ba6c5c4564892b04b2d",
+    "runtimeFiles": 161,
+    "payloadFiles": 56,
+    "bytes": 7053908,
+    "committedSourcesMatchTestedBuild": true,
+    "distAndFrozenFilesMatch": true,
+    "cleanCandidateRebuild": false,
+    "frozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u4/preview-ca46426e/web",
+    "oldFrozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u3/preview-1c32f0b7/web",
+    "origin": "http://127.0.0.1:56884/",
+    "pushed": false,
+    "newPullRequest": false,
+    "userGameActionsPerformed": false,
+    "previewPid": 39952,
+    "httpFilesMatch": true,
+    "userProgressAfter": {
+      "name": "顾长青",
+      "realm": "凡人",
+      "xp": "5/10",
+      "stones": 40,
+      "months": 1,
+      "hp": "60/60",
+      "mp": "20/20"
+    },
+    "readOnlyPreviewActions": [
+      "Reload validated local build",
+      "Open alchemy catalogue",
+      "View future recipes and select one without Game mutation",
+      "Return to original stage"
+    ],
+    "readOnlyUserScreenshot": {
+      "path": "artifacts/goal-3/u4/user-stage.png",
+      "sha256": "53b80750380214f97cdde2dcfbd138f27558067debba2e65e8ac898b8d9756e3"
+    },
+    "incidentalCatalogueScreenshot": {
+      "path": "artifacts/goal-3/u4/user-preview.png",
+      "sha256": "de12075bffacff3176e9dbec7d0dd219b29245f88f5c6677ed5381d393e441f4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "observation": "Existing IAB size incidentally shows condensed art/low note partly under navigation; retained as unaccepted compatibility gap. No resize, compatibility development or compatibility assertions performed."
+    }
+  },
+  "testedBuildIdentity": {
+    "head": "58b5501b4e19d2ddf01106059929211c34fc114f",
+    "source": "58b5501b4e19d2ddf01106059929211c34fc114f",
+    "tree": "6405237bdea02c6bb84c06c7e7c4f636318be096",
+    "dirty": true,
+    "node": "v24.19.0",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "identityNote": "Tests/build reports truthfully retain precommit 58b5501 dirty identity; all 161 exact runtime source hashes were matched to c72b771 Git archive, all 56 payload files to tested build/frozen/HTTP. No clean final candidate rebuild claimed."
 }
