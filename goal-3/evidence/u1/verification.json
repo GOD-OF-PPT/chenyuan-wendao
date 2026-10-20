@@ -72,12 +72,38 @@
     "realm": "凡人",
     "xp": "5/10",
     "stones": 40,
-    "months": 1
+    "months": 1,
+    "hp": "60/60",
+    "mp": "20/20"
   },
-  "delivery": null,
+  "delivery": {
+    "implementation": "eda9dbf61b072227d24d747c924eba8d15cd0ded",
+    "runtimeDigest": "d02a8325f9b8df4a1e1ac055ec70ccbac4d1d350387ef5ca5c177a825e6cdc3d",
+    "runtimeFiles": 150,
+    "payloadFiles": 56,
+    "bytes": 6975340,
+    "frozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u1/preview-d02a8325/web",
+    "committedSourcesMatchTestedBuild": true,
+    "distAndFrozenFilesMatch": true,
+    "cleanCandidateRebuild": false,
+    "previewPid": 73507,
+    "httpFilesMatch": true,
+    "origin": "http://127.0.0.1:56884/",
+    "oldFrozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-2/t07r/preview-03ab5d93/web",
+    "userProgressAfter": {
+      "realm": "凡人",
+      "xp": "5/10",
+      "hp": "60/60",
+      "mp": "20/20",
+      "stones": 40,
+      "months": 1
+    },
+    "userGameActionsPerformed": false
+  },
   "stillCheck": {
     "passed": 1,
     "raw": "artifacts/goal-3/u1/still.json",
     "purpose": "Capture the settled scene after the normal short action effect"
-  }
+  },
+  "visualReview": "Five fixed-desktop screenshots decoded and reviewed; no compatibility matrix"
 }
