@@ -1,7 +1,7 @@
 {
   "task": "Goal3 CHECK-IDLE-01",
   "date": "2026-10-21",
-  "status": "checked; implementation commit and preview delivery pending",
+  "status": "current authorized comprehensive check repaired, committed and preview updated; overall Goal/human acceptance pending",
   "base": "79d036636a66c20d1511b857e1fd833e80a25a31",
   "runtimeDigest": "706e6948315f58ac87389921c6da99ad527f75c0363e3cf668c58d9e6e9abe37",
   "runtimeFiles": 161,
@@ -161,5 +161,60 @@
     "All paused page compatibility and environment/performance matrices"
   ],
   "rollback": "Retain DB6 and original saves/archives; revert UI/scheduler by a new commit, no DB downgrade.",
-  "continuation": "Existing automation-3; next independent U5 after this check. Native Goal stays blocked, no new goal/chat/automation."
+  "continuation": "Existing automation-3; next independent U5 after this check. Native Goal stays blocked, no new goal/chat/automation.",
+  "delivery": {
+    "implementation": "2c84b365214e982d8f84d741b8ebfd41c3406d0e",
+    "runtimeDigest": "706e6948315f58ac87389921c6da99ad527f75c0363e3cf668c58d9e6e9abe37",
+    "runtimeFiles": 161,
+    "payloadFiles": 56,
+    "bytes": 7056804,
+    "frozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/check-idle-01/preview-706e6948/web",
+    "oldFrozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-3/u4/preview-ca46426e/web",
+    "committedSourcesMatchTestedBuild": true,
+    "distAndFrozenFilesMatch": true,
+    "cleanCandidateRebuild": false,
+    "origin": "http://127.0.0.1:56884/",
+    "pushed": false,
+    "newPullRequest": false,
+    "userGameActionsPerformed": false,
+    "previewPid": 58668,
+    "httpFilesMatch": true,
+    "userProgressBefore": {
+      "name": "顾长青",
+      "realm": "凡人",
+      "xp": "5/10",
+      "stones": 40,
+      "months": 1,
+      "hp": "60/60",
+      "mp": "20/20"
+    },
+    "previewLaunchNote": "Shell here-document could not create a temporary file after old server stopped; immediately launched validated frozen server via direct Python argv, then verified all HTTP payload hashes. No Game actions.",
+    "userProgressAfter": {
+      "name": "顾长青",
+      "realm": "凡人",
+      "xp": "5/10",
+      "stones": 40,
+      "months": 1,
+      "hp": "60/60",
+      "mp": "20/20"
+    },
+    "readOnlyUserScreenshot": {
+      "path": "artifacts/goal-3/check-idle-01/user-stage.png",
+      "sha256": "22a4f19f87a2cfde2dceb76c498650365951aecf6b25025fe58062658e8b9551"
+    },
+    "readOnlyPreviewActions": [
+      "Reload validated frozen program",
+      "Read original stage; no Game action"
+    ]
+  },
+  "testedBuildIdentity": {
+    "head": "79d036636a66c20d1511b857e1fd833e80a25a31",
+    "source": "79d036636a66c20d1511b857e1fd833e80a25a31",
+    "tree": "ee63ac00190f685fe57cf431fef6458b8134824c",
+    "dirty": true,
+    "node": "v24.19.0",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "identityNote": "Actual reports retain precommit 79d0366 dirty identity; all 161 exact runtime hashes matched implementation 2c84b36 Git archive, all 56 payload files matched tested build/frozen/HTTP. No final clean candidate rebuild claimed."
 }
