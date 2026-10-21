@@ -1,4 +1,5 @@
 import {expect,type Page} from '@playwright/test';
+import {revealPaged} from './support';
 // Follow the visible detail controls; retain every original cost and state assertion.
 export async function openProductionIntent(page:Page){
  const toggle=page.getByTestId('production-intent-toggle');
@@ -16,3 +17,7 @@ export async function openTrainingBudget(page:Page){const box=page.locator('.tra
 
 export async function openSourceSettings(page:Page,limits=false){const dialog=page.getByTestId('source-plan-dialog');if(!await dialog.isVisible())await page.getByTestId('source-plan-open').click();await expect(dialog).toBeVisible();const box=dialog.locator('.source-limits');if(limits&&!await box.evaluate(n=>(n as HTMLDetailsElement).open))await box.locator('summary').click();}
 export async function closeSourceSettings(page:Page){if(await page.getByTestId('source-plan-dialog').isVisible())await page.getByTestId('source-plan-close').click();}
+
+export async function openLearningSettings(page:Page){if(!await page.getByTestId('learning-plan-dialog').isVisible())await page.getByTestId('learning-plan-open').click();await expect(page.getByTestId('learning-plan-dialog')).toBeVisible();}
+export async function closeLearningSettings(page:Page){if(await page.getByTestId('learning-plan-dialog').isVisible())await page.getByTestId('learning-plan-close').click();}
+export async function selectLearningSkill(page:Page,id:string){await closeLearningSettings(page);await revealPaged(page,'skill-select-'+id,'learning-planner','功法');await page.getByTestId('skill-select-'+id).click();await expect(page.getByTestId('skill-'+id)).toBeVisible();}

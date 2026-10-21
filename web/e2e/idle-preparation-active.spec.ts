@@ -1,3 +1,4 @@
+import {selectLearningSkill} from './stage-support';
 import {test,expect,type Page} from '@playwright/test';
 import {snapshot,useJourneyClock,finishJourneyClock} from './support';
 import {driver} from '../../tests/full-route.mjs';
@@ -12,7 +13,7 @@ for(const [kind,ms,label] of [['learn',30000,'研习玉简'],['study',60000,'参
   if(kind==='learn'||kind==='study'){
    await page.getByTestId('hub-skills').click();
    if(kind==='study')await page.getByTestId('equipment-mode-manual').click();
-   else{for(let n=0;n<12&&!await page.getByTestId('learn-sword_still').count();n++)await page.getByRole('navigation',{name:'功法翻页',exact:true}).getByRole('button',{name:'下一页',exact:true}).click();await page.getByTestId('learn-sword_still').click();}
+   else{await selectLearningSkill(page,'sword_still');await page.getByTestId('learn-sword_still').click();}
   }else if(kind==='buy'||kind==='sell'){
    await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-purchase').click();await page.getByTestId('buy-healing_pill').click();if(kind==='sell')await page.getByTestId('market-mode-sell').click();
   }else{

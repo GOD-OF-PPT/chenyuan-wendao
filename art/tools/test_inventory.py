@@ -55,6 +55,8 @@ class InventoryTests(unittest.TestCase):
   if stage.exists():files.update(ROOT/ref for ref in json.loads(stage.read_text())['sourceReferences'])
   r2=ROOT/'art/redesign/stage-r2.json'
   if r2.exists():files.update(ROOT/ref for ref in json.loads(r2.read_text())['sourceReferences'])
+  r3=ROOT/'art/redesign/stage-r3.json'
+  if r3.exists():files.update(ROOT/ref for ref in json.loads(r3.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -75,6 +77,14 @@ class InventoryTests(unittest.TestCase):
   p='art/redesign/stage-r2.json';d=json.loads((self.root/p).read_text());d['files'][0]['sha256']='0'*64;self.write(p,d);self.rejected()
  def test_r2_machine_check_is_not_player_acceptance(self):
   p='art/redesign/stage-r2.json';d=json.loads((self.root/p).read_text());d['userAcceptance']=True;self.write(p,d);self.rejected()
+ def test_r3_manifest_is_required(self):
+  (self.root/'art/redesign/stage-r3.json').unlink();self.rejected()
+ def test_r3_budget_is_not_expandable(self):
+  p='art/redesign/stage-r3.json';d=json.loads((self.root/p).read_text());d['maxNativeBytes']=18001;self.write(p,d);self.rejected()
+ def test_r3_hash_is_bound(self):
+  p='art/redesign/stage-r3.json';d=json.loads((self.root/p).read_text());d['files'][0]['sha256']='0'*64;self.write(p,d);self.rejected()
+ def test_r3_machine_check_is_not_player_acceptance(self):
+  p='art/redesign/stage-r3.json';d=json.loads((self.root/p).read_text());d['userAcceptance']=True;self.write(p,d);self.rejected()
  def write(self,path,value):
   p=self.root/path;p.parent.mkdir(parents=True,exist_ok=True)
   if p.exists():p.unlink()

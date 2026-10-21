@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-stage-r3",
+  "version": 1,
+  "task": "Goal3 U8-A-R3 / Goal4 continuation",
+  "maxNativeBytes": 18000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/stage-r3.css",
+      "bytes": 16826,
+      "sha256": "be0355b981b2a2e631dc90770e9619b2521938056d3563bbed86de328e643d85"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0015-equipment-inventory-r3-contract.md",
+    "goal-4/amendments/2026-10-21-goal-continue-r3.md"
+  ],
+  "bindings": {
+    "web/src/main.ts": [
+      "import './stage-r3.css'"
+    ],
+    "web/src/LearningPlanner.vue": [
+      "learning-plan-dialog",
+      "learning-directory"
+    ],
+    "web/src/GoodsPanel.vue": [
+      "inventory-objects",
+      "inventory-object"
+    ],
+    "web/src/EquipmentPanel.vue": [
+      "<KeepAlive ",
+      ":data-section=\"section\""
+    ]
+  },
+  "scope": "Additional fixed-desktop object stages. Old caps and all rule/Store/DB/periods remain; no user acceptance."
+}

@@ -1,0 +1,22 @@
+{
+  "task": "Goal3 U8-A-R3 / Goal4 continuation",
+  "readAt": "2026-10-21",
+  "method": "Actual primary-source page read; no competitor full playtest or certification",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "title": "Clarity in League",
+      "published": "2021-03-12",
+      "used": "Priority matches visual emphasis; reduce unrelated noise",
+      "limit": "Competitive action-game presentation principles, not idle economy or layout constants"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "title": "Xbox Accessibility Guideline112: UI navigation",
+      "updated": "2026-03-04",
+      "used": "Consistent selection, order and return; categorized inventory browsing",
+      "limit": "Current task only fixed desktop; no compatibility or accessibility certification claim"
+    }
+  ],
+  "projectChoice": "Selected object and main decision; finite queue/budget details; life-scoped drafts; 4 objects per page are project choices, not source requirements"
+}
