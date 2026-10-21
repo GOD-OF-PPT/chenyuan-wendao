@@ -545,7 +545,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
     </header>
     <section v-if="demoNode&&!hubMain" class="paper demo-banner" aria-label="演示存档说明"><strong>演示存档 · {{demoNode.label}}</strong><div class="demo-actions"><a :href="normalLink()" data-testid="demo-return">返回正常游戏</a><button @click="showDemoMenu" :disabled="store.busy">切换演示节点</button><button data-testid="demo-reset" @click="reset" :disabled="store.busy||!store.available">重新载入本节点</button></div><details class="demo-explanation"><summary>演示说明</summary><p>本版本每个节点的进度独立保存，使用相同修行规则；正常进度与显示设置不受影响。</p></details></section>
     <section v-if="resumeVisible&&game&&store.ready&&!hubMain" class="resume-strip" data-testid="resume-strip"><span>已续上本机进度 · {{realm.name}} · {{location.name}}</span><button type="button" class="text-button" @click="resumeVisible=false;focusPrimary()">继续当前内容 ↓</button></section>
-    <div v-if="!store.ready" class="loading">正在展开仙途……</div>
+    <section v-if="!store.ready" class="loading loading-stage" aria-labelledby="loading-title"><AssetImage class="loading-landscape" :path="SCENE_ASSETS.wilderness" asset-id="loading-wilderness" eager aria-hidden="true"/><div class="loading-copy"><span class="eyebrow">尘缘将启</span><h2 id="loading-title">静候山门</h2><p role="status" data-testid="game-loading">{{experience.ready.value?'正在核对本机进度，尚未确认存档……':'正在读取本机显示设置，不会改变游戏进度……'}}</p></div></section>
     <div ref="noticeRegion" class="stage-alerts">
     <div v-if="store.error" class="error-banner" role="alert" data-testid="error">
       <strong class="error-title">{{store.available?'本次操作需要处理':'存档暂不可用'}}</strong><p>{{store.error}}</p><p v-if="store.canRetry" class="small" data-testid="retry-policy">保存结果尚未确认。重试会核对同一次操作，不会重复结算。</p><button v-if="store.canRetry" class="primary" data-testid="retry" @click="retryOperation" :disabled="store.busy">重试本次操作</button>
@@ -806,3 +806,4 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
     </dialog>
   </div>
 </template>
+

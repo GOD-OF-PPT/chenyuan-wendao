@@ -184,7 +184,12 @@ test('one normally earned twelve-skill four-relic life gives eight independent c
       'Only explicit finite Activity plans and formal configuration confirmations change audit clones.',
       'Durations are exact accumulated formal periods, not a live online wait or balance acceptance.',
       'No browser, repository, user save, compatibility or environment/performance test.']};
-  const output = path.join(root, 'artifacts/goal-4/u8-b/configuration-control.json');
-  fs.mkdirSync(path.dirname(output), {recursive: true});
-  fs.writeFileSync(output, JSON.stringify(report, null, 2) + '\n');
+  // Ordinary test runs must not overwrite an earlier task's immutable evidence.
+  const requested = process.env.CYW_CONFIGURATION_REPORT;
+  if (requested) {
+    const output = path.resolve(root, requested);
+    assert.ok(output.startsWith(path.join(root, 'artifacts') + path.sep), 'Report must stay under artifacts');
+    fs.mkdirSync(path.dirname(output), {recursive: true});
+    fs.writeFileSync(output, JSON.stringify(report, null, 2) + '\n');
+  }
 });

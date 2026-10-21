@@ -21,28 +21,40 @@ function parseMeta(value:unknown):LocalMeta{
 function command(value:LocalCommand){if(!value||Object.keys(value).sort().join(',')!=='commandId,expectedRevision,runId'||!publicId(value.commandId)||!publicId(value.runId)||!Number.isSafeInteger(value.expectedRevision)||value.expectedRevision<0)throw invalid();}
 function stored(value:unknown):StoredRecord{const v=value as StoredRecord;try{if(!v||Object.keys(v).sort().join(',')!=='bytes,data,id,sourceKey')throw invalid();validateRecord(v.data);if(v.id!==v.data.id||v.sourceKey!==recordKey(v.data)||v.bytes!==recordBytes(v.data))throw invalid();return v;}catch{throw invalid();}}
 function next(meta:LocalMeta){if(meta.revision===Number.MAX_SAFE_INTEGER)throw invalid();return{...meta,revision:meta.revision+1};}
+function cancelled(signal:AbortSignal){return signal.reason instanceof LocalDataError?signal.reason:new LocalDataError('LOCAL_ABORTED','本次本地设置读取已取消，旧数据保留。');}
 export class LocalExperienceRepository{
  private closed=false;
  private constructor(private db:IDBDatabase,private invalidated?:()=>void){db.onversionchange=()=>{this.close();this.invalidated?.();};}
- static open(name=LOCAL_DB_NAME,onInvalidated?:()=>void):Promise<LocalExperienceRepository>{return new Promise((resolve,reject)=>{
+ static open(name=LOCAL_DB_NAME,onInvalidated?:()=>void,signal?:AbortSignal):Promise<LocalExperienceRepository>{return new Promise((resolve,reject)=>{
+  if(signal?.aborted){reject(cancelled(signal));return;}
   let request:IDBOpenDBRequest,terminal=false;
   try{request=indexedDB.open(name,1);}catch(e){reject(failure(e));return;}
-  const stop=(e:unknown)=>{if(!terminal){terminal=true;reject(failure(e));}};
+  const cleanup=()=>signal?.removeEventListener('abort',abort);
+  const stop=(e:unknown)=>{if(!terminal){terminal=true;cleanup();reject(failure(e));}};
+  const abort=()=>{stop(cancelled(signal!));try{request.transaction?.abort();}catch{/* A terminal request is closed by onsuccess below. */}};
+  signal?.addEventListener('abort',abort,{once:true});
+  if(signal?.aborted)abort();
   request.onblocked=()=>stop(new LocalDataError('LOCAL_BLOCKED','另一页面占用本地记录库，游戏仍可继续。'));
   request.onerror=()=>stop(request.error);
   request.onupgradeneeded=()=>{try{if(terminal){request.transaction?.abort();return;}const db=request.result;db.createObjectStore(META).put(fresh(),'state');const events=db.createObjectStore(EVENTS,{autoIncrement:true});events.createIndex('id','id',{unique:true});events.createIndex('sourceKey','sourceKey',{unique:true});}catch(e){request.transaction?.abort();stop(e);}};
-  request.onsuccess=()=>{const db=request.result;try{if(terminal){db.close();return;}if(!db.objectStoreNames.contains(META)||!db.objectStoreNames.contains(EVENTS))throw invalid();const tx=db.transaction(EVENTS,'readonly');if(!tx.objectStore(EVENTS).indexNames.contains('id')||!tx.objectStore(EVENTS).indexNames.contains('sourceKey'))throw invalid();terminal=true;resolve(new LocalExperienceRepository(db,onInvalidated));}catch(e){db.close();stop(e);}};
+  request.onsuccess=()=>{const db=request.result;try{if(terminal||signal?.aborted){db.close();cleanup();return;}if(!db.objectStoreNames.contains(META)||!db.objectStoreNames.contains(EVENTS))throw invalid();const tx=db.transaction(EVENTS,'readonly');if(!tx.objectStore(EVENTS).indexNames.contains('id')||!tx.objectStore(EVENTS).indexNames.contains('sourceKey'))throw invalid();terminal=true;cleanup();resolve(new LocalExperienceRepository(db,onInvalidated));}catch(e){db.close();stop(e);}};
  });}
  close(){if(!this.closed){this.closed=true;this.db.close();}}
- private transaction<T>(mode:IDBTransactionMode,work:(tx:IDBTransaction,meta:LocalMeta,done:(value:T)=>void,abort:(error:unknown)=>void)=>void):Promise<T>{
+ private transaction<T>(mode:IDBTransactionMode,work:(tx:IDBTransaction,meta:LocalMeta,done:(value:T)=>void,abort:(error:unknown)=>void)=>void,signal?:AbortSignal):Promise<T>{
   if(this.closed)return Promise.reject(new LocalDataError('LOCAL_CLOSED','本地记录连接已关闭，原数据未覆盖。'));
-  return new Promise((resolve,reject)=>{let tx:IDBTransaction,value:T,ready=false,error:unknown;try{tx=this.db.transaction([META,EVENTS],mode);}catch(e){reject(failure(e));return;}
-   const abort=(e:unknown)=>{error=e;try{tx.abort();}catch{reject(failure(e));}};
-   tx.onerror=()=>{error??=tx.error;};tx.onabort=()=>reject(failure(error??tx.error??new DOMException('本地事务中断','AbortError')));tx.oncomplete=()=>ready?resolve(value):reject(invalid());
+  if(signal?.aborted)return Promise.reject(cancelled(signal));
+  return new Promise((resolve,reject)=>{let tx:IDBTransaction,value:T,ready=false,error:unknown,terminal=false;try{tx=this.db.transaction([META,EVENTS],mode);}catch(e){reject(failure(e));return;}
+   const cleanup=()=>{signal?.removeEventListener('abort',onCancel);tx.onerror=null;tx.onabort=null;tx.oncomplete=null;};
+   const finish=(ok:boolean,result:unknown)=>{if(terminal)return;terminal=true;cleanup();if(ok)resolve(result as T);else reject(failure(result));};
+   const abort=(e:unknown)=>{error=e;try{tx.abort();}catch{finish(false,e);}};
+   const onCancel=()=>abort(cancelled(signal!));
+   signal?.addEventListener('abort',onCancel,{once:true});
+   tx.onerror=()=>{error??=tx.error;};tx.onabort=()=>finish(false,error??tx.error??new DOMException('本地事务中断','AbortError'));tx.oncomplete=()=>signal?.aborted?finish(false,cancelled(signal)):ready?finish(true,value):finish(false,invalid());
+   if(signal?.aborted){onCancel();return;}
    const read=tx.objectStore(META).get('state');read.onsuccess=()=>{try{work(tx,parseMeta(read.result),v=>{value=v;ready=true;},abort);}catch(e){abort(e);}};
   });
  }
- readMeta(){return this.transaction<LocalMeta>('readonly',(_tx,meta,done)=>done(meta));}
+ readMeta(signal?:AbortSignal){return this.transaction<LocalMeta>('readonly',(_tx,meta,done)=>done(meta),signal);}
  append(input:LocalRecord,token:LocalCommand){const record=structuredClone(input),intent={...token};validateRecord(record);command(intent);if(intent.commandId!==record.id)throw invalid();
   return this.transaction<LocalMeta>('readwrite',(tx,meta,done,abort)=>{
    if(meta.epoch!==intent.runId||meta.controlRevision!==intent.expectedRevision)throw new LocalDataError('LOCAL_STALE','采集范围已改变，旧排队记录未重新写入。');

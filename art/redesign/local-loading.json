@@ -1,0 +1,38 @@
+{
+  "format": "chenyuan-local-loading",
+  "version": 1,
+  "task": "Goal4 U8-C",
+  "maxNativeBytes": 6000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/local-initialization.ts",
+      "bytes": 1142,
+      "sha256": "26e8355dd614be09111516ba714c65ae958b62a3a869720b23d1c4f246b69996"
+    },
+    {
+      "path": "web/src/local-loading.css",
+      "bytes": 683,
+      "sha256": "8855c1307ac39a386fa7f173d9076ca6999b45a0d0f1e4de5457562b7123d833"
+    }
+  ],
+  "bindings": {
+    "web/src/main.ts": [
+      "import './local-loading.css'"
+    ],
+    "web/src/App.vue": [
+      "loading loading-stage",
+      "asset-id=\"loading-wilderness\"",
+      "data-testid=\"game-loading\""
+    ],
+    "web/src/use-local-experience.ts": [
+      "from './local-initialization'",
+      "initializeLocal(owner.controller"
+    ]
+  },
+  "sourceReferences": [
+    "docs/decisions/0019-online-loading-recovery-contract.md",
+    "goal-4/research/u8-c-loading-sources.json"
+  ],
+  "scope": "Bounded optional-settings initialization and temporary existing-painted loading stage. No new bitmaps, fake progress, Game writes, compatibility or player acceptance."
+}

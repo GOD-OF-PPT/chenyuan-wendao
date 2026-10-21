@@ -62,6 +62,9 @@ class InventoryTests(unittest.TestCase):
   tradeoff=ROOT/'art/redesign/idle-tradeoffs.json'
   if tradeoff.exists():
    data=json.loads(tradeoff.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  loading=ROOT/'art/redesign/local-loading.json'
+  if loading.exists():
+   data=json.loads(loading.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -370,5 +373,16 @@ class InventoryTests(unittest.TestCase):
   p='art/redesign/idle-milestones.json';m=json.loads((self.root/p).read_text());m['maxNativeBytes']+=1;self.write(p,m);self.rejected()
  def test_milestone_ui_cannot_claim_player_acceptance(self):
   p='art/redesign/idle-milestones.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
+
+ def test_local_loading_requires_ledger(self):
+  (self.root/'art/redesign/local-loading.json').unlink();self.rejected()
+ def test_local_loading_keeps_its_budget(self):
+  p='art/redesign/local-loading.json';m=json.loads((self.root/p).read_text());m['maxNativeBytes']+=1;self.write(p,m);self.rejected()
+ def test_local_loading_needs_actual_consumer(self):
+  p='web/src/main.ts';self.write(p,(self.root/p).read_text().replace("import './local-loading.css';",''));self.rejected()
+ def test_local_loading_keeps_source_identity(self):
+  self.write('web/src/local-initialization.ts','unreviewed replacement');self.rejected()
+ def test_local_loading_cannot_claim_player_acceptance(self):
+  p='art/redesign/local-loading.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
 
 if __name__=='__main__':unittest.main()
