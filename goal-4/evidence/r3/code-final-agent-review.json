@@ -1,0 +1,109 @@
+{
+  "format": "chenyuan-r3-code-final-agent-review",
+  "version": 1,
+  "date": "2026-10-21",
+  "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+  "scope": "Static final followup only: Learning applyDraft/reconcile/pending and Goods lifecycle. No browser or UI execution, no compatibility/performance or user-save access, no source/test/Git mutation.",
+  "status": "pass-static-scope-no-new-blocking-findings",
+  "sourceFiles": {
+    "web/src/LearningPlanner.vue": "e24987730b449b91eef207bbfb25a9731aed7da66360e2015a3f4fe6b9eae714",
+    "web/src/GoodsPanel.vue": "30bf673f5100ad754d938e580108ea28d2ffa7ac107eb94e4d3611282d6d8749",
+    "web/src/EquipmentPanel.vue": "cedec95a62b723e85b09c871482343913470e443e3961b75a5b979d6fc20af8e",
+    "web/src/App.vue": "d95a0e21235fabd6d9288d40c24b67ca12863a298ead3542c7f471f4c3f37c41",
+    "web/src/ProductionPlanner.vue": "d5a6aab3ad00677c19bd9dbe4caa4130922438119944a32ea2d566d4e1155748",
+    "web/e2e/stage-r3-layout.spec.ts": "0a6a0b9ffc97c38be45908977d27432edbe6e8c64c2cbdb5772636e0c7caefaa",
+    "web/e2e/idle-preparation.spec.ts": "4a94dbd2a99f1c6d78e4114f68d8b2f477a75968269805ae8de2a9aee2ee58d1"
+  },
+  "closedFindings": [
+    {
+      "id": "R3-AUDIT-01",
+      "path": "web/src/GoodsPanel.vue:21",
+      "assessment": "Rows data changes reposition page by actual pick index or select a valid first object. Same-life realm growth inserting earlier items now retains visible selected slot and matching detail. User filter/future changes explicitly turn0; paging selects its first object. No Game mutation."
+    },
+    {
+      "id": "R3-AUDIT-02",
+      "path": "web/src/LearningPlanner.vue:44-45",
+      "assessment": "The named reconcile repairs invalid selected/page while skills is active; it never resets queue or budget. Current-school change can no longer retain false selected object through an observed rows update."
+    },
+    {
+      "id": "R3-AUDIT-03",
+      "path": "web/src/LearningPlanner.vue:38,44",
+      "assessment": "applyDraft now calls reconcile after restoring cached values. The previously skipped manual rows update no longer requires another rows invalidation before the restored skills selection is repaired. Mode draft queue/order/queuePage/edited budget/reserve remain restored as-is."
+    },
+    {
+      "id": "R3-POST-LEARN-PRIMARY",
+      "path": "web/src/LearningPlanner.vue:25,70-74",
+      "assessment": "pending derives from actual current Game.learned, not elapsed time, animation, optimistic state or queue mutation. All learned queue entries remain in original plan and detail; completed queue presents comparison/equipment as main meaningful action and removes redundant start/travel. It does not auto equip or create new authorization. Selecting another unknown object still allows explicit add; mixed known/unlearned queue retains formal preview rejection and original resume/clear-known behavior."
+    },
+    {
+      "id": "R3-CACHE-CHARACTER-LAYOUT",
+      "path": "web/src/App.vue:580,679,684",
+      "assessment": "Explicit character centre hiding remains intact; old :empty dependency removed from this view. Actual character sheet is separate. Static only, not a claim that pixel/scroll tests passed."
+    }
+  ],
+  "goodsLifecycleChecks": [
+    {
+      "boundary": "Initial render/empty rows",
+      "result": "Immediate rows watcher finds missing initial pick and turn0 selects first current row or empty string; item derives only from filtered rows, preventing phantom detail."
+    },
+    {
+      "boundary": "Same-object pick",
+      "result": "Click writes identical pick; does not reset Game, filtering, parameters or grants."
+    },
+    {
+      "boundary": "Filter/future toggle",
+      "result": "Explicit synchronous watch turns0; subsequent rows watch reconciles within actual new catalogue; complete14 definitions retained behind filters/future."
+    },
+    {
+      "boundary": "Explicit pagination",
+      "result": "turn uses pageSlice clamping to pick the visible page first row; no hidden action executes."
+    },
+    {
+      "boundary": "Same-life level or inventory update",
+      "result": "Selected object retained with actual page if still visible; newly unlocked earlier objects cannot separate detail from chosen directory slot."
+    },
+    {
+      "boundary": "Last positive later-realm object consumed/sold",
+      "result": "If it falls out of visibility, rows watcher selects a real current entry; no stale item metadata or Game effect."
+    },
+    {
+      "boundary": "Cross-life/import",
+      "result": "App Goods key includes runId plus view and component also resets filter/future/pick; parent inspection provenance clears separately. Local pick cannot hold accepted command or receipt."
+    },
+    {
+      "boundary": "Deactivation/return",
+      "result": "Goods has no own dialog or timer. Shared Production child closes its limits dialog on deactivation. KeepAlive preserves same-life bag choice and updates real Game props on return."
+    }
+  ],
+  "unchangedSafety": [
+    "All reviewed code is local presentation/navigation; no Store/model/Repository/DB/command or period changes.",
+    "Existing configuration CAS and frozen original-intent retry paths remain; reconcile does not clear or refresh accepted intents.",
+    "Learning saved-plan equality still compares original skills order and exact budgets; pending does not claim saved provenance.",
+    "Queue add/remove remain explicit and pagination assertion correction uses visible pager to inspect both preserved entries; retaining queue page is consistent with no unprompted reset.",
+    "Pills keep both read-only use and sale inspection, five breakthrough sales absent, source tracking only emits read-only target."
+  ],
+  "actualEvidenceRead": [
+    {
+      "path": "artifacts/goal-4/r3/ui-manual-phase-red.json",
+      "sha256": "0a48d4f60703b37b72eca9eb791655483808060983188f6b3eb9f55c9990465f",
+      "sourceDigest": "1c237f5babeb76fbdfe78c3e558f765143baf4d779d6ebb044c7edc2ce9282fc",
+      "expected": 0,
+      "unexpected": 2,
+      "skipped": 0
+    },
+    {
+      "path": "artifacts/goal-4/r3/ui-progress-red.json",
+      "sha256": "3c6b50da28dfc572fbcc1fbfda85d4209392e580f85ecd91bf7a277dda8a76d9",
+      "sourceDigest": "50aeeeea37e92af9cff335026c494a5fbb2bf075bcd617f4e42db8036379d42a",
+      "expected": 0,
+      "unexpected": 2,
+      "skipped": 0
+    }
+  ],
+  "limitations": [
+    "No independent UI pass or pixel review in this audit; root same-source final UI, rule/IDB provenance, dimensions/hit targets, artwork review and actual preview identity remain required.",
+    "Original ui-manual-phase-red and ui-progress-red failures remain as history; this report closes causes by code inspection, not by claiming unobserved green runs.",
+    "Existing mixed learned/unlearned fresh plan may formally reject already-known queue items; current explicit remove/resume behavior is preserved rather than silently altering authorized queue.",
+    "No overall art/gameplay/long-term balance/human acceptance claim."
+  ]
+}

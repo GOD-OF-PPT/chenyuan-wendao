@@ -1,0 +1,7 @@
+{
+  "pid": 37363,
+  "command": "node node_modules/@playwright/test/cli.js test --config playwright.idle.config.ts --workers=1 --output ../artifacts/goal-4/r3/ui-final-results --reporter=list,json",
+  "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+  "reason": "Pixel review found mastered-book location guidance contradicts the actual compare action. Cancel obsolete frozen-source run, retain all raw output, then verify corrected final source.",
+  "passClaim": false
+}

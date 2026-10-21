@@ -1,0 +1,414 @@
+{
+  "task": "R3 current object-stage pixel review",
+  "date": "2026-10-21",
+  "sourceDigestFromBuildReportAtReviewStart": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+  "scope": "Exactly13 selected frames at1440x900, single Chromium. At most2 images per view call; original-size JPEG quality68, no resizing. No web source, tests, Git or user-save edits.",
+  "status": "selected_frames_pass_visual_review",
+  "humanAcceptance": false,
+  "overallArtComplete": false,
+  "images": [
+    {
+      "name": "book-region-contained",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-the-actual-a79fb-er-overlaps-its-last-object-chromium/book-region-contained.png",
+      "originalSha256": "b4bfff1379677056cb6182ee6c0fd7a2e724e9be5c7c7fd75525e5b7d11e1f89",
+      "originalBytes": 1102392,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/book-region-contained.jpg",
+      "previewSha256": "2fac8fb0bbd3a5cfa44144d8b6b99306e5e7bc3d255f78fd2ac9a72fd356cdad",
+      "previewBytes": 102634,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Prior glyph/filter collision is absent. Study painting fills the central art width, icon and horizontal current-equipped label are contained.",
+        "Four readable catalogue objects and its separate pager fit; full selected effect,30-second price line and actual current slot are visible.",
+        "Selected object is already equipped and queue is empty; there is no false enabled start or working-state claim."
+      ]
+    },
+    {
+      "name": "relic-pager-separated",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-the-actual-a79fb-er-overlaps-its-last-object-chromium/relic-pager-separated.png",
+      "originalSha256": "b8bfe7673a7696156adf30837028d17eaa3e9b0dabdc167cd5827f69b9c479f8",
+      "originalBytes": 1117135,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/relic-pager-separated.jpg",
+      "previewSha256": "b753953d3e7c884f87d25d17881abbe8ff7b19b3ab6073fb6b8786b258038081",
+      "previewBytes": 105393,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Fourth relic card ends visibly above the directory page label. Previous/next controls now share one row and stay clear of bottom navigation.",
+        "Selected sword object, unowned state, current本命未装备, materials,140 stones/2 game months/60 seconds and insufficient-resource reason are all readable."
+      ]
+    },
+    {
+      "name": "inventory-selected-object",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-inventory-offers--b67bb-iption-without-writing-Game-chromium/inventory-selected-object.png",
+      "originalSha256": "2fa2994bd0695b9c14bb3e662886d650d77d356a9feabc52789affafd4508694",
+      "originalBytes": 1177625,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/inventory-selected-object.jpg",
+      "previewSha256": "3e28ecfa63edd4d22cf2387f83cef08c7dda2672be477f0c9f9b7550e4fb4788",
+      "previewBytes": 92772,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Four actual quantity tiles occupy a compact left directory; selected object has a large central glyph and inventory0 text.",
+        "Source-view action is visually primary; sell-arrangement button says查看 and gives actual per-item sale value. Description and complete14-item catalogue count are readable.",
+        "Supply painting is decorative while the actual0 quantity is stated twice, avoiding a possession claim from the background art."
+      ]
+    },
+    {
+      "name": "multi-scroll-draft-after-inspection",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-reading-an-79c16-ts-edited-cumulative-limits-chromium/multi-scroll-draft-after-inspection.png",
+      "originalSha256": "d48de6246f16fb857242368b19b76b56209d37623b0d297a2862b885aceffd2e",
+      "originalBytes": 258473,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/multi-scroll-draft-after-inspection.jpg",
+      "previewSha256": "edfd5ae3d24efa6d4e5724bb2d9ba64986f70ba118fafa1718e8282b2ce0de75",
+      "previewBytes": 46761,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Finite-arrangement modal shows2/12 selected scrolls, current second scroll, its80-stone price, page2/2 and remove action without clipping.",
+        "Custom cumulative budget777 and reserve9, draft-only explanation and explicit return are all visible.",
+        "This demonstrates readable populated/paged arrangement pixels; it alone does not prove lifecycle or persistence identity."
+      ]
+    },
+    {
+      "name": "book-paint-fallback",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-missing-ca-23624-hout-inventing-held-objects-chromium/book-paint-fallback.png",
+      "originalSha256": "908b8d36445ff8df4c4e25473857f846a5e8d0354e379f0bc8d92988db37161e",
+      "originalBytes": 1087948,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/book-paint-fallback.jpg",
+      "previewSha256": "7166ff6ae4c8dae95e5f49260771d9535f2f39feac09498148ff0d1dc97a1058",
+      "previewBytes": 99831,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Missing study bitmap leaves actual skill glyph, current-equipped text, object description,30-second cost and main controls visible.",
+        "Actual icon/status remain horizontally contained, unlike the rejected first implementation."
+      ]
+    },
+    {
+      "name": "bag-paint-fallback",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-missing-ca-23624-hout-inventing-held-objects-chromium/bag-paint-fallback.png",
+      "originalSha256": "97308baa8566c11289e1a921528c40b88ba7ad4c6dff47692c3e66a936e35316",
+      "originalBytes": 1093984,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/bag-paint-fallback.jpg",
+      "previewSha256": "34b1c878a32039d1392430b4c902bd7b0608be1efd829682d087527deb86870e",
+      "previewBytes": 82277,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Missing supply bitmap leaves selected herb glyph, quantity0, right description, source action, sell-arrangement action and catalogue pager visible.",
+        "Fallback does not invent stock or hide DOM functionality."
+      ]
+    },
+    {
+      "name": "manual-to-changed-school",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-manual-con-37fc2-id-current-school-selection-chromium/manual-to-changed-school.png",
+      "originalSha256": "46f21a3852fc04f4af159a311515127986516d243064d725d021839a9cddc98e",
+      "originalBytes": 1115858,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/manual-to-changed-school.jpg",
+      "previewSha256": "683cbcd8e4947ff712fd05bdf3fc2bd376ee7e0536b8bbdadbe1f7ebc64ebe11",
+      "previewBytes": 108370,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Current修法filter displays talisman skill objects, actual镇灵心诀 slot and proper talisman effects after the stated school change.",
+        "Retained2-scroll queue/custom777 budget/reserve9 summary remains visible; selected equipped skill is separated from queued learning.",
+        "Disabled learn action has visible insufficient-stones reason. The saved configuration receipt in HUD is separate from the unsaved arrangement label."
+      ]
+    },
+    {
+      "name": "school-selection-false",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/school-selection-false.png",
+      "originalSha256": "73aa8b3095095dc54f103ee156656aa93d57242c100de25c1a31e0e618c1558e",
+      "originalBytes": 1108340,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/school-selection-false.jpg",
+      "previewSha256": "995da280c618412ec8df45514e55b7989ac9a3c9a71914bca5285ed1f91f71af",
+      "previewBytes": 104304,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Existing full study illustration and two wide school choices form a clear scene/decision pair; there are no four equal square loadout cards.",
+        "Text explicitly explains three base slots change together and learned/relic records remain. Sword current state and talisman compare-before-confirm state are visible.",
+        "Five internal categories and eight global entries remain visible above the bottom safe region."
+      ]
+    },
+    {
+      "name": "school-selection-true",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/school-selection-true.png",
+      "originalSha256": "c7b423740ddd94479d89484fa7862ece190c30cdab0bbc8d7445b71ddff8a888",
+      "originalBytes": 1108593,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/school-selection-true.jpg",
+      "previewSha256": "675c4fd30f18688c7d498f6373102e18b0da1cf8727e86a05f3f009bb447103f",
+      "previewBytes": 104372,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Same school-choice structure stays readable with later lawful progress/ownership fixture. Full current school explanation and both choices fit.",
+        "No clipped control, painting/text collision or implicit configuration-success appearance is visible."
+      ]
+    },
+    {
+      "name": "four-slot-summary-false",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/four-slot-summary-false.png",
+      "originalSha256": "6b556be0eb6e867735224ba17ef677e326ee72efb2774241d2dbf4b3b7ca391b",
+      "originalBytes": 997932,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/four-slot-summary-false.jpg",
+      "previewSha256": "08076ea66cf2ba67735b36f4bfba6134aaa02e3b74c46d94b464fddb0d17ac2d",
+      "previewBytes": 103290,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Four actual slots are four horizontal rows beside the study painting; role/name/compare control align clearly.",
+        "Relic slot correctly says尚未装备; cultivation and guard statistics remain readable beneath all four rows.",
+        "No overlap/cropping or bottom-nav conflict is visible."
+      ]
+    },
+    {
+      "name": "four-slot-summary-true",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/four-slot-summary-true.png",
+      "originalSha256": "50fd14c9801c4ed5a73631d400bef932a845f3ce89579704de3360e258a72626",
+      "originalBytes": 998219,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/four-slot-summary-true.jpg",
+      "previewSha256": "99fa17f96844265ed2e6be0246e1af3265b53bb2f5654e5b296d92ac6cc4d8f0",
+      "previewBytes": 103405,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Four-slot rows remain readable with the later fixture; actual本命仍未装备 is accurately visible.",
+        "Owned relics are not implied to be equipped by the surrounding artwork or catalogue access. Statistics stay separate from comparison buttons."
+      ]
+    },
+    {
+      "name": "unowned-relic-soul_lamp",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/unowned-relic-soul_lamp.png",
+      "originalSha256": "c1398ef12b87e720d375764878da2da934df9deecf9adc3eee5e2cde7c40b94e",
+      "originalBytes": 1111537,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/unowned-relic-soul_lamp.jpg",
+      "previewSha256": "ae4e152626853f442ac8b150317e14ab9970f0de7bd8b1446968e9381f78802c",
+      "previewBytes": 107022,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Lamp glyph and actual effect differ visibly from the sword representative;器谱示意·尚未炼成 remains explicit.",
+        "Its160-stone/2-month/60-second one-piece cost, jade/lotus actual inventory and reserves, and disabled start reason fit without clipping.",
+        "Directory fourth-card and pager separation stays clear."
+      ]
+    },
+    {
+      "name": "owned-relic-comparison-cloud_mirror",
+      "generated": true,
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/owned-relic-comparison-cloud_mirror.png",
+      "originalSha256": "a62234fdace70d07a61a7f8a3d06391c61c699952d9eedbc2e4826d52130b029",
+      "originalBytes": 429379,
+      "previewJpeg": "artifacts/goal-4/r3/visual-objects-agent/owned-relic-comparison-cloud_mirror.jpg",
+      "previewSha256": "af5cc243784e3edfff5e53a0a3724a2507e409346d27fe8644d4aeac41ff7898",
+      "previewBytes": 63516,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image of original-size lossy JPEG68 copy, no resize; original PNG preserved",
+      "observations": [
+        "Comparison modal shows all four actual before/after slots, highlights relic change from未装备to流云镜, and gives its actual per-turn resource effect.",
+        "Costs and immediate atomic-save wording explicitly say no stones/pills/game months and no auto-resume. Cancel and confirm controls are readable.",
+        "This is a proposed configuration, not a success receipt or equipped-state claim."
+      ]
+    }
+  ],
+  "actuallyReviewed": 13,
+  "requestedNotGenerated": [],
+  "resolvedPreviousFindings": [
+    {
+      "id": "R3-V1",
+      "state": "visually_fixed_in_current_representative",
+      "evidence": "book-region-contained and book-paint-fallback",
+      "detail": "Theme art now has real width; glyph does not overlap filters; equipped-state label is horizontal and contained."
+    },
+    {
+      "id": "R3-V2",
+      "state": "visually_fixed_in_current_representatives",
+      "evidence": "relic-pager-separated and unowned-relic-soul_lamp",
+      "detail": "Fourth catalogue card and page label are separated; pager controls now share one row above main navigation."
+    }
+  ],
+  "newBlockingPixelFindings": [],
+  "notClaimed": [
+    "No whole UI or human art/game-feel acceptance.",
+    "Only the13 named images were actually viewed; other generated screenshots are unreviewed by this agent unless independently reviewed elsewhere.",
+    "Only one unowned relic and one owned comparison representative were selected in addition to the sword layout frame, not every relic pixel combination.",
+    "No active runtime/countdown/pause/saving/error/replayed-receipt frame was among these13; timestamps/cycle correctness require separate functional and real-time evidence.",
+    "No screenshot alone proves atomic persistence, read-only Game state, CAS/retry identity or long-term balance.",
+    "No compatibility, responsive/mobile/font-size/environment/performance check was run."
+  ],
+  "otherGeneratedImagesAtIndexTime": 52,
+  "otherGeneratedImagesUnreviewedByThisAgent": [
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-selecting-the-sam-d13eb-tion-without-a-Game-command-chromium/relic-selected-and-edited.png",
+    "artifacts/goal-4/r3/ui-objects-results/idle-preparation-finite-me-42589-ent-without-offline-rewards-chromium/medicine-recovery-plan.png",
+    "artifacts/goal-4/r3/ui-objects-results/idle-preparation-finite-me-42589-ent-without-offline-rewards-chromium/medicine-real-effect.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/owned-relic-comparison-soul_lamp.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/owned-relic-comparison-frost_sword.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/owned-relic-comparison-jade_seal.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-learning-keeps-th-efd67-ts-in-one-on-demand-surface-chromium/learning-selected-scroll.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-learning-keeps-th-efd67-ts-in-one-on-demand-surface-chromium/learning-complete-arrangement.png",
+    "artifacts/goal-4/r3/ui-objects-results/idle-preparation-changing--b2bdb-Game-and-activity-unchanged-chromium/school-comparison.png",
+    "artifacts/goal-4/r3/ui-objects-results/idle-preparation-manual-tr-a8c7a--until-separately-confirmed-chromium/manual-complete.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/unowned-relic-jade_seal.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/unowned-relic-cloud_mirror.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/unowned-relic-frost_sword.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-same-life--8317e-ked-materials-move-its-page-chromium/bag-selection-after-realm.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-a-fresh-mo-e420a-ut-a-phantom-selected-skill-chromium/mortal-empty-books.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-learning-queue-an-26a13-tion-and-another-main-entry-chromium/learning-draft-after-return.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-changing-s-2ee0f--book-of-the-current-school-chromium/current-school-after-configuration.png",
+    "artifacts/goal-4/r3/ui-objects-results/idle-preparation-trial-equ-b0171-ecovery-without-starting-it-chromium/trial-recovery-inspection.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-the-actual-a79fb-er-overlaps-its-last-object-chromium/book-region-before-assert.png",
+    "artifacts/goal-4/r3/ui-objects-results/idle-preparation-two-selec-6c659-explicit-compared-equipment-chromium/jade-learning-plan.png",
+    "artifacts/goal-4/r3/ui-objects-results/idle-preparation-two-selec-6c659-explicit-compared-equipment-chromium/equipment-comparison.png",
+    "artifacts/goal-4/r3/ui-objects-results/idle-preparation-cave-rest-b3fa9--month-and-full-restoration-chromium/rest-complete.png",
+    "artifacts/goal-4/r3/ui-objects-results/idle-preparation-cave-rest-b3fa9--month-and-full-restoration-chromium/rest-plan.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-a-replacement-lif-64134-previous-local-relic-budget-chromium/new-life-relic-defaults.png",
+    "artifacts/goal-4/r3/ui-objects-results/idle-preparation-market-pu-a977b--explicit-inventory-reserve-chromium/market-reserve-stop.png",
+    "artifacts/goal-4/r3/ui-objects-results/idle-preparation-market-pu-a977b--explicit-inventory-reserve-chromium/market-order.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_mind.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_build.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_release.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-dew.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_build.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-healing_pill.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_frost.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-soul.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_guard.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_release.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_mind.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_echo.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-dao.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-jade.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-core.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_still.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-ascension_seal.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-spirit_seed.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-herb.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-spirit_pill.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-foundation_pill.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-nascent_pill.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_return.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-lotus.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-golden_pill.png",
+    "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_calm.png"
+  ],
+  "testsRunByThisAgent": [],
+  "sourceFilesEditedByThisAgent": [],
+  "adversarialReview": "The first-source failures are preserved and current fixes were actually inspected. Selected current pixels have no new blocking defect observed. This does not close Goal1/U8-A/whole-art/user-acceptance obligations."
+}

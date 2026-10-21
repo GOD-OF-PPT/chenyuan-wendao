@@ -1,0 +1,213 @@
+{
+  "task": "R3 mastered-learning copy final targeted review",
+  "date": "2026-10-21",
+  "sourceDigest": "21634567ef99dbd15320dab50638ba975ff2bd1c922f2e5782fa0443b7b0b3a9",
+  "scope": "Four current-source targeted screenshots, actual pixels reviewed with full-size JPEG68 at most2 per call. Read-only: no source/test/Git/user-save changes.",
+  "status": "four_targeted_frames_pass_copy_and_pixel_review",
+  "humanAcceptance": false,
+  "overallArtComplete": false,
+  "followupFinding": {
+    "id": "R3-V3",
+    "kind": "real later product-copy defect",
+    "previousSourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+    "detail": "Parent actual review found that already mastered book displayed the LEARN failure请先前往青云宗, misleading a player who could compare/equip locally. The earlier13-frame visual agent review did not flag this semantic error. Its limited positive pixel report is not evidence this copy was correct.",
+    "preservation": "Original5dd report/images and later real red regression remain historical evidence; they are not rewritten as a success.",
+    "currentEvidence": "All relevant current images replace the misleading failure with已掌握，无需再次研习；可原地比较配装, and label old price/period/location首次研习. mastered-local-comparison visibly offers the appropriate local comparison action.",
+    "functionalBoundary": "The reported red/green regression and complete UI test state are owned by root; this agent did not run tests and does not turn the interrupted5dd suite into a whole pass."
+  },
+  "images": [
+    {
+      "name": "book-region-contained",
+      "originalPng": "artifacts/goal-4/r3/ui-copy-targeted-results/stage-r3-layout-the-actual-a79fb-er-overlaps-its-last-object-chromium/book-region-contained.png",
+      "originalSha256": "be9754d87a67303f5aaa14905c4c00da0e4d44d9b6b834e516d4373c79bec884",
+      "originalBytes": 1106080,
+      "previewJpeg": "artifacts/goal-4/r3/visual-final-copy/book-region-contained.jpg",
+      "previewSha256": "149e1843a479a56a2ac68025e810b9a882b7ee23715a4b53bfb58c5ddf78b78a",
+      "previewBytes": 103864,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "previousFrame": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-the-actual-a79fb-er-overlaps-its-last-object-chromium/book-region-contained.png",
+      "previousSha256": "b4bfff1379677056cb6182ee6c0fd7a2e724e9be5c7c7fd75525e5b7d11e1f89",
+      "byteIdenticalToPreviouslyReviewedFrame": false,
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image full-size JPEG68; original PNG retained, no resize",
+      "observations": [
+        "Object copy now says首次研习 for the historical30-second/sect cost.",
+        "Mastered selected skill explicitly says已掌握，无需再次研习；可原地比较配装. The previous请先前往青云宗 obstruction is absent.",
+        "Contained art/icon/status, full selected effect, directory and pager remain readable; no new clipping from longer copy."
+      ]
+    },
+    {
+      "name": "mastered-local-comparison",
+      "originalPng": "artifacts/goal-4/r3/ui-copy-targeted-results/stage-r3-layout-a-mastered-c6452-g-for-another-learning-trip-chromium/mastered-local-comparison.png",
+      "originalSha256": "f4b0ef9eb8972c2a2c0e9e08ba62ef7f89c1095a8d2f340f68702fa64b5622a2",
+      "originalBytes": 1108954,
+      "previewJpeg": "artifacts/goal-4/r3/visual-final-copy/mastered-local-comparison.jpg",
+      "previewSha256": "6cd2a0426b2cb398d9ed7fcad536eca30d28d669566d308157402ea083227279",
+      "previewBytes": 106565,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "previousFrame": null,
+      "previousSha256": null,
+      "byteIdenticalToPreviouslyReviewedFrame": false,
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image full-size JPEG68; original PNG retained, no resize",
+      "observations": [
+        "At cave with a mastered听雨剑势, the prominent action is比较后装入起手术法.",
+        "The object explicitly states no repeated learning and local comparison is possible; current青锋起势 and selected听雨剑势 are visible together.",
+        "Displayed first-learning80-stone/30-second/sect line is labelled首次, separated from current free comparison semantics.",
+        "Screenshot depicts post-cancel comparison entry; actual cancel/read-only/CAS results require the functional test evidence."
+      ]
+    },
+    {
+      "name": "book-paint-fallback",
+      "originalPng": "artifacts/goal-4/r3/ui-copy-targeted-results/stage-r3-layout-missing-ca-23624-hout-inventing-held-objects-chromium/book-paint-fallback.png",
+      "originalSha256": "d4a184023aca010b81ab269877ac1e4c5918cf5f5047acecd8d68e85d45fd199",
+      "originalBytes": 1091134,
+      "previewJpeg": "artifacts/goal-4/r3/visual-final-copy/book-paint-fallback.jpg",
+      "previewSha256": "34f5ddfbf1de4ef886c39f6f5e4802d9a6b201edcce8cea1a63635bd3692080f",
+      "previewBytes": 101244,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "previousFrame": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-missing-ca-23624-hout-inventing-held-objects-chromium/book-paint-fallback.png",
+      "previousSha256": "908b8d36445ff8df4c4e25473857f846a5e8d0354e379f0bc8d92988db37161e",
+      "byteIdenticalToPreviouslyReviewedFrame": false,
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image full-size JPEG68; original PNG retained, no resize",
+      "observations": [
+        "The same corrected mastered/local-comparison wording remains readable without the study bitmap.",
+        "Actual glyph/current-equipped label and all essential controls remain contained and visible."
+      ]
+    },
+    {
+      "name": "manual-to-changed-school",
+      "originalPng": "artifacts/goal-4/r3/ui-copy-targeted-results/stage-r3-layout-manual-con-37fc2-id-current-school-selection-chromium/manual-to-changed-school.png",
+      "originalSha256": "6ebc6e7fd375529f880a736d92e1feb14f0044dd6dcc49b7b91459de96824910",
+      "originalBytes": 1119700,
+      "previewJpeg": "artifacts/goal-4/r3/visual-final-copy/manual-to-changed-school.jpg",
+      "previewSha256": "897e1ebcda46b56358c1f6bb48e32e465286214e02689701e702b35467756d08",
+      "previewBytes": 109796,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "previousFrame": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-manual-con-37fc2-id-current-school-selection-chromium/manual-to-changed-school.png",
+      "previousSha256": "46f21a3852fc04f4af159a311515127986516d243064d725d021839a9cddc98e",
+      "byteIdenticalToPreviouslyReviewedFrame": false,
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image full-size JPEG68; original PNG retained, no resize",
+      "observations": [
+        "Changed school still shows current talisman objects and actual镇灵心诀 with retained custom2-scroll777/9 arrangement.",
+        "Mastered selected object has corrected local-comparison copy; no false宗门trip requirement is visible for its equipment.",
+        "The finite arrangement separately shows insufficient funds and a disabled start, appropriately distinct from current mastered-object status."
+      ]
+    }
+  ],
+  "actuallyReviewedCurrentFrames": 4,
+  "byteIdenticalInheritedFrames": 0,
+  "inheritancePolicy": "The3 matching-name current frames have different PNG hashes and were freshly reviewed. The fourth frame is new. No image is inherited on source similarity, unchanged dimensions or unchanged Vue dependency alone.",
+  "previous13FramesNotReproducedInThisTargetedRun": [
+    {
+      "name": "relic-pager-separated",
+      "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-the-actual-a79fb-er-overlaps-its-last-object-chromium/relic-pager-separated.png",
+      "originalSha256": "b8bfe7673a7696156adf30837028d17eaa3e9b0dabdc167cd5827f69b9c479f8",
+      "currentSourceInheritance": false
+    },
+    {
+      "name": "inventory-selected-object",
+      "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-inventory-offers--b67bb-iption-without-writing-Game-chromium/inventory-selected-object.png",
+      "originalSha256": "2fa2994bd0695b9c14bb3e662886d650d77d356a9feabc52789affafd4508694",
+      "currentSourceInheritance": false
+    },
+    {
+      "name": "multi-scroll-draft-after-inspection",
+      "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-reading-an-79c16-ts-edited-cumulative-limits-chromium/multi-scroll-draft-after-inspection.png",
+      "originalSha256": "d48de6246f16fb857242368b19b76b56209d37623b0d297a2862b885aceffd2e",
+      "currentSourceInheritance": false
+    },
+    {
+      "name": "bag-paint-fallback",
+      "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-missing-ca-23624-hout-inventing-held-objects-chromium/bag-paint-fallback.png",
+      "originalSha256": "97308baa8566c11289e1a921528c40b88ba7ad4c6dff47692c3e66a936e35316",
+      "currentSourceInheritance": false
+    },
+    {
+      "name": "school-selection-false",
+      "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/school-selection-false.png",
+      "originalSha256": "73aa8b3095095dc54f103ee156656aa93d57242c100de25c1a31e0e618c1558e",
+      "currentSourceInheritance": false
+    },
+    {
+      "name": "school-selection-true",
+      "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/school-selection-true.png",
+      "originalSha256": "c7b423740ddd94479d89484fa7862ece190c30cdab0bbc8d7445b71ddff8a888",
+      "currentSourceInheritance": false
+    },
+    {
+      "name": "four-slot-summary-false",
+      "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/four-slot-summary-false.png",
+      "originalSha256": "6b556be0eb6e867735224ba17ef677e326ee72efb2774241d2dbf4b3b7ca391b",
+      "currentSourceInheritance": false
+    },
+    {
+      "name": "four-slot-summary-true",
+      "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/four-slot-summary-true.png",
+      "originalSha256": "50fd14c9801c4ed5a73631d400bef932a845f3ce89579704de3360e258a72626",
+      "currentSourceInheritance": false
+    },
+    {
+      "name": "unowned-relic-soul_lamp",
+      "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/unowned-relic-soul_lamp.png",
+      "originalSha256": "c1398ef12b87e720d375764878da2da934df9deecf9adc3eee5e2cde7c40b94e",
+      "currentSourceInheritance": false
+    },
+    {
+      "name": "owned-relic-comparison-cloud_mirror",
+      "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
+      "originalPng": "artifacts/goal-4/r3/ui-objects-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/owned-relic-comparison-cloud_mirror.png",
+      "originalSha256": "a62234fdace70d07a61a7f8a3d06391c61c699952d9eedbc2e4826d52130b029",
+      "currentSourceInheritance": false
+    }
+  ],
+  "currentFullSuiteAndOnlineFrames": "Not reviewed/claimed here; await actual current131-suite and real-running/completion frames. Prior interrupted5dd full run remains incomplete.",
+  "notClaimed": [
+    "Current full UI matrix completion.",
+    "Current-source inheritance of previous13 frames not regenerated here.",
+    "Runtime/countdown/pause/saving/completion/error/replay pixels not among these4.",
+    "Atomic persistence and Game/CAS proof from screenshots.",
+    "Whole art, user approval, long-term balance or compatibility/environment/performance."
+  ],
+  "testsRunByThisAgent": [],
+  "sourceFilesEditedByThisAgent": []
+}

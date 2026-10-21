@@ -1,0 +1,55 @@
+{
+  "format": "chenyuan-r3-code-followup-agent-review",
+  "version": 1,
+  "date": "2026-10-21",
+  "sourceDigest": "1c237f5babeb76fbdfe78c3e558f765143baf4d779d6ebb044c7edc2ce9282fc",
+  "scope": "Read-only static followup of Goods/Learning reconciliation and App character-centre fix; no browser/UI/performance/compatibility/user save execution, no code/test/Git modification.",
+  "reviewedFiles": {
+    "web/src/GoodsPanel.vue": "30bf673f5100ad754d938e580108ea28d2ffa7ac107eb94e4d3611282d6d8749",
+    "web/src/LearningPlanner.vue": "7daaa3e0865dcef93e0da72008ac0a4eb51bd33008de29da3cca47aff62c1c5a",
+    "web/src/App.vue": "d95a0e21235fabd6d9288d40c24b67ca12863a298ead3542c7f471f4c3f37c41",
+    "web/e2e/stage-r3-layout.spec.ts": "4577a3ff0e79a023f437342fd03c815f2bfd491062aa676d4d35c6ec7a044631"
+  },
+  "priorRedEvidence": {
+    "path": "artifacts/goal-4/r3/ui-progress-red.json",
+    "sourceDigest": "50aeeeea37e92af9cff335026c494a5fbb2bf075bcd617f4e42db8036379d42a",
+    "expected": 0,
+    "unexpected": 2,
+    "skipped": 0,
+    "meaning": "Original two reported static risks now have actual root UI red reproduction on prior source; this agent did not run those cases."
+  },
+  "resolvedBySourceInspection": [
+    {
+      "id": "R3-AUDIT-01",
+      "path": "web/src/GoodsPanel.vue:21",
+      "assessment": "The rows watcher finds the actual current pick index, resets to a valid first object if absent, otherwise page=floor(index/4). This covers same-life realm insertion and keeps the selected amount object in its visible directory. It does not mutate Game or plans. Explicit pagination still picks its page first object; filter/future resets remain read-only."
+    },
+    {
+      "id": "R3-AUDIT-02-primary",
+      "path": "web/src/LearningPlanner.vue:44",
+      "assessment": "While skills mode is current, data-driven rows changes reconcile selected to a real row or empty, and reposition page to selected row. Queue, budget, reserve and editedLimits are untouched; same-life school change therefore no longer retains invalid current-school object in this active mode."
+    },
+    {
+      "id": "R3-CACHE-CHARACTER-LAYOUT",
+      "path": "web/src/App.vue:580,679,684",
+      "assessment": "Character detail explicitly hides center-column under singleScreen rather than relying on :empty. Equipment KeepAlive wrapper no longer creates a visible empty flex sibling. The separate actual CharacterPanel remains outside this centre section; normal non-singleScreen path unchanged. Actual pixel/scroll resolution belongs to root UI evidence, not this static review."
+    }
+  ],
+  "remainingFinding": {
+    "id": "R3-AUDIT-03",
+    "priority": "P2",
+    "classification": "static-derived-not-browser-reproduced",
+    "path": "web/src/LearningPlanner.vue:37,44,46",
+    "problem": "A cached skills Draft restored after manual mode can reintroduce invalid selected/page after a same-life school update was already observed in manual mode. rows watcher explicitly returns while mode=manual; mode watcher later applies cached Draft but does not revalidate it. If restored filter/future equal current values, rows does not change again, so watcher never repairs restored selected.",
+    "minimalFlow": "Open sword skills with filter=current/future=false; switch manual (cache sword selected). While manual stays active, another page legally confirms talisman and the first page synchronizes current Game. rows changes to talisman while mode=manual and reconciliation skips. Return skills: cached filter/future are still current/false, selected restored to sword; rows unchanged, skill null despite valid talisman rows.",
+    "impact": "No write/fee/CAS defect; cached navigation can show false empty object stage in a legitimate sync boundary. Original primary red case does not establish this variant closed.",
+    "recommendation": "Extract a read-only reconcile function and run after applying/defaulting a skills mode draft as well as rows changes; keep queue/budget/reserve/saved-plan ownership intact. Verify this actual sync scenario if practical, or document why its trigger is impossible from current Store observer."
+  },
+  "safetyReview": [
+    "New reconciliation touches page/selection only; no changes to model/Store/Repository/command/period/DB in reviewed diff.",
+    "R2 parent clearInspections and inspectionOwner remain; accepted configuration/recovery frozen intents and original receipt retry are not cleared by the new local view reconciliation.",
+    "Same-run tick/paused activity still does not wipe queue/budget; source row recomputation may reposition view only to the same actual selected object.",
+    "Cross-run isolation remains root Equipment key runId/max1 plus nested child keys; existing new-life case covers actual separate-life budget isolation.",
+    "No new pixel or complete-matrix claims here; root red/green and exact final runtime identity required."
+  ]
+}

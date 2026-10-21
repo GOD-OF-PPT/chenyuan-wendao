@@ -1,0 +1,54 @@
+{
+  "visibleSemanticAXUnchanged": true,
+  "indexNormalization": "AX node indices and focused node index only; initial comparison retained as index-only observation, no progress difference",
+  "visibleProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "school": "尚未择法",
+    "xp": "5/10",
+    "stones": 40,
+    "month": 1,
+    "hp": "60/60",
+    "mp": "20/20",
+    "location": "听雨洞府",
+    "activity": "待安排",
+    "saved": "已保存"
+  },
+  "actions": "Only existing tab reload and read-only visible AX/screenshots; no Game action/import/recovery/reset/save test",
+  "notClaimed": "Visible progress equality is not a raw user database hash or full save audit; incidental1280x720 is not compatibility acceptance",
+  "frames": [
+    {
+      "stage": "before",
+      "originalPng": "artifacts/goal-4/r3/user-before-update.png",
+      "originalSha256": "d5d55f760e4acc9419af05e153d93d13fbc1d50fe13dd80ca96fe032270369e5",
+      "previewJpeg": "goal-4/evidence/r3/user-before-update.jpg",
+      "previewSha256": "cc65e92b12e21e0e0e50cee664ef8d534f011da6aecf258e13affe0063c788ee",
+      "pixels": [
+        1280,
+        720
+      ],
+      "conversion": "JPEG68 lossy, original size, not resized",
+      "ax": "goal-4/evidence/r3/user-before-update.ax.txt",
+      "axSha256": "1adde82ef5aa0c39d5db6cf00de95aa38edb2b813a9de6170b851e3d6ea7e5a3"
+    },
+    {
+      "stage": "after",
+      "originalPng": "artifacts/goal-4/r3/user-after-update.png",
+      "originalSha256": "d5d55f760e4acc9419af05e153d93d13fbc1d50fe13dd80ca96fe032270369e5",
+      "previewJpeg": "goal-4/evidence/r3/user-after-update.jpg",
+      "previewSha256": "cc65e92b12e21e0e0e50cee664ef8d534f011da6aecf258e13affe0063c788ee",
+      "pixels": [
+        1280,
+        720
+      ],
+      "conversion": "JPEG68 lossy, original size, not resized",
+      "ax": "goal-4/evidence/r3/user-after-update.ax.txt",
+      "axSha256": "fcd481c62152ba9a249d171ccd639577cf175a3eeb29995cefcb452351ddbc80"
+    }
+  ],
+  "initialAfterReloadFrame": {
+    "png": "artifacts/goal-4/r3/user-after-reload-initial.png",
+    "sha256": "dc45f753d6c19da9d37b7ec6604c97006d6b74be8344b0243a99ada03123384f",
+    "observation": "Initial fallback art observed before asset settled; retained separately; final after screenshot captured without gameplay action"
+  }
+}
