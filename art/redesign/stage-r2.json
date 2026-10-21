@@ -1,0 +1,32 @@
+{
+  "format": "chenyuan-stage-r2",
+  "version": 1,
+  "task": "Goal3 U8-A-R2 / Goal4 continuation",
+  "maxNativeBytes": 14000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/stage-r2.css",
+      "bytes": 11718,
+      "sha256": "9560bb0913f89d28f97b789cfe49454d9110d0fd3d01ae6edefff61833dd2582"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0014-adventure-stage-r2-contract.md",
+    "goal-4/amendments/2026-10-21-goal-continue-r2.md"
+  ],
+  "bindings": {
+    "web/src/main.ts": [
+      "import './stage-r2.css'"
+    ],
+    "web/src/SourcePlanner.vue": [
+      "source-plan-dialog",
+      "source-work-state"
+    ],
+    "web/src/ExplorePanel.vue": [
+      "<KeepAlive ",
+      ":runtime=\"runtime\""
+    ]
+  },
+  "scope": "Additional fixed-desktop resource and battle stage styles. Existing component caps and all rules remain; no human acceptance."
+}

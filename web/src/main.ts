@@ -25,3 +25,5 @@ import './idle-production.css';
 import './idle-preparation.css';
 
 import './stage-r1.css';
+
+import './stage-r2.css';

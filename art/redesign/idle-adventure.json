@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "web/src/AdventurePlanner.vue",
-      "bytes": 12080,
-      "sha256": "c23ef867df2978e98e71e1b7f7c48759b734b874589fdcc8c206c690f28a1b5f"
+      "bytes": 12172,
+      "sha256": "5a602e9c0da01cc34715c10523106f15ee92523a3bf5785fa760e59030fe6246"
     },
     {
       "path": "web/src/BattleStrategy.vue",
