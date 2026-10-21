@@ -17,8 +17,8 @@ export function nextStep(game:Game){
  if(game.core.player.xp<realm.xpCap)return{kind:'cultivate',title:'修炼至'+realm.xpCap+'修为',detail:'修炼 → 筹备丹药 → 突破。也可以先历练收集材料。'};
  if(realm.pill&&!game.core.inventory[realm.pill])return{kind:'prepare',title:'筹备'+C.items[realm.pill].name,detail:'修为已满，接下来炼制或采购突破物；继续吐纳不会增加修为。'};
  if(goal.preview?.allowed)return{kind:'breakthrough',title:goal.title,detail:game.core.player.realm==='mortal'?'修为已圆满，确认引气入体；无需突破物。':'物资已齐，确认后消耗对应物品并突破。'};
- if(goal.preview?.requirements.location&&game.core.world.location!==goal.preview.requirements.location)return{kind:'return',title:'前往'+C.locations[goal.preview.requirements.location].name,detail:goal.preview.failure?.message??'物资已齐，前往对应地点确认下一步。'};
  if(goal.deficits.some(d=>d.kind==='hp'||d.kind==='mp'))return{kind:'recover',title:'先恢复气血灵力',detail:'到洞府疗养，或使用现有丹药，再继续当前筹备。'};
+ if(goal.preview?.requirements.location&&game.core.world.location!==goal.preview.requirements.location)return{kind:'return',title:'前往'+C.locations[goal.preview.requirements.location].name,detail:goal.preview.failure?.message??'物资已齐，前往对应地点确认下一步。'};
  return{kind:game.core.player.realm==='spirit'?'trial':'prepare',title:goal.title,detail:goal.preview?.failure?.message??'核对地点、修法和物资后继续。'};
 }
 export function resourceSources(game:Game,item:string|null,quantity:number){return item?getItemSources(game,item,Math.max(1,quantity)):getCurrencySources(game);}

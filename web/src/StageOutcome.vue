@@ -7,7 +7,7 @@ import {ACTION_MOTIONS} from './action-feedback';
 import {formatDelta} from './presentation';
 import GameIcon from './GameIcon.vue';
 import {items,realms,skills,relics} from '../../src/full/content.ts';
-const props=withDefaults(defineProps<{game:Game;result:ActionResult|null;busy:boolean;saved:boolean;available:boolean;error:string;replayed:boolean;execution:Execution|null;next:string;followup?:boolean}>(),{followup:true});
+const props=withDefaults(defineProps<{game:Game;result:ActionResult|null;busy:boolean;saved:boolean;available:boolean;error:string;replayed:boolean;execution:Execution|null;next:string;followup?:boolean;compact?:boolean}>(),{followup:true});
 defineEmits<{next:[];details:[]}>();
 const receipt=computed(()=>props.saved&&props.available&&!props.busy&&!props.error&&!props.replayed&&props.result?.runId===props.game.core.runId&&props.result.revisionAfter===props.game.core.revision?props.result:null);
 const state=computed(()=>props.error?'failed':props.execution?.phase??(props.busy?'saving':receipt.value?'settled':'idle'));
@@ -15,7 +15,7 @@ const changes=computed(()=>{
  const d=receipt.value?.delta;if(!d)return{visible:[],extra:0};
  const important:string[]=[];
  if(receipt.value&&['SCHOOL','EQUIP','EQUIP_RELIC'].includes(receipt.value.type)){
-  const g=props.game;return{visible:receipt.value.type==='EQUIP_RELIC'?[`本命法宝：${g.loadout.relic?relics[g.loadout.relic].name:'未装备'}`]:[`${g.school==='sword'?'剑修':g.school==='talisman'?'符修':'尚未择法'} · 配装已保存`,...Object.values(g.loadout).filter(id=>!!id&&!!skills[id]).map(id=>skills[id!].name)],extra:0};
+  const g=props.game,rows=receipt.value.type==='EQUIP_RELIC'?[`本命法宝：${g.loadout.relic?relics[g.loadout.relic].name:'未装备'}`]:[`${g.school==='sword'?'剑修':g.school==='talisman'?'符修':'尚未择法'} · 配装已保存`,...Object.values(g.loadout).filter(id=>!!id&&!!skills[id]).map(id=>skills[id!].name)];return{visible:props.compact?rows.slice(0,1):rows,extra:props.compact?rows.length-1:0};
  }
  if(d.realm.before!==d.realm.after)important.push(`${realms[d.realm.before].name} → ${realms[d.realm.after].name}`);
  for(const [id,n]of Object.entries(d.inventory))if(n>0)important.push(`${items[id].name} +${n}`);

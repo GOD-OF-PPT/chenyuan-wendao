@@ -15,13 +15,13 @@
     },
     {
       "path": "web/src/ActionFeedbackStage.vue",
-      "bytes": 10534,
-      "sha256": "837bbd44795bc36437b290b416df4e25f477878b5bbeb9b2533953a7abe405aa"
+      "bytes": 10845,
+      "sha256": "e6fb920344de541811ac4d510f640001e68f8bfbe45a2abfeb1cd79ace97f3dc"
     },
     {
       "path": "web/src/action-motion.css",
-      "bytes": 11796,
-      "sha256": "39b88fda0ef8d00ddf266e421bf4d0d7fafc7f4abf7cd7d97e71749863589a15"
+      "bytes": 11932,
+      "sha256": "d4bc5b6f1abba91534822536173537f9960f5a1c6dcbec199e4d6ccf779b96d0"
     }
   ],
   "consumer": "web/src/App.vue",

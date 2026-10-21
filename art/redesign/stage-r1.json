@@ -1,0 +1,33 @@
+{
+  "format": "chenyuan-stage-r1",
+  "version": 1,
+  "task": "Goal3 U8-A-R1 / Goal4 continuation",
+  "maxNativeBytes": 18000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/GameHud.vue",
+      "bytes": 2332,
+      "sha256": "43cde88a2e545bce6d475735783bc6d66f487a7ffb8643220ac8297b63a529c5"
+    },
+    {
+      "path": "web/src/stage-r1.css",
+      "bytes": 15585,
+      "sha256": "e00488e7ec8ae66be2e464c10c2634d7322bd44deb0fff93a2d5342797eee045"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0013-stage-r1-integration-contract.md",
+    "goal-4/input.md"
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "<GameHud ",
+      "rail compact"
+    ],
+    "web/src/main.ts": [
+      "import './stage-r1.css'"
+    ]
+  },
+  "scope": "New compact HUD and fixed-desktop stage presentation only; old component budgets remain unchanged. No human acceptance."
+}

@@ -379,6 +379,24 @@ def validate(root):
             assert all(fragment in (root / path).read_text() for fragment in fragments), 'Milestone UI consumer missing'
     else:
         assert not (root / 'web/src/idle-milestones.css').exists(), 'Unrecorded milestone UI'
+    stage_path = root / 'art/redesign/stage-r1.json'
+    stage_bytes = 0
+    if stage_path.exists():
+        stage = json.loads(stage_path.read_text())
+        assert stage['format'] == 'chenyuan-stage-r1' and stage['version'] == 1
+        assert stage['maxNativeBytes'] == 18000 and stage['userAcceptance'] is False
+        assert [r['path'] for r in stage['files']] == ['web/src/GameHud.vue', 'web/src/stage-r1.css']
+        for row in stage['files']:
+            data = (root / row['path']).read_bytes()
+            assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], 'Stage R1 identity changed'
+            stage_bytes += len(data)
+        assert stage_bytes <= 18000, 'Stage R1 budget exceeded'
+        for ref in stage['sourceReferences']:
+            assert (root / ref).resolve().is_relative_to(root) and (root / ref).is_file()
+        for path, fragments in stage['bindings'].items():
+            assert all(fragment in (root / path).read_text() for fragment in fragments), 'Stage R1 consumer missing'
+    else:
+        assert not (root / 'web/src/GameHud.vue').exists() and not (root / 'web/src/stage-r1.css').exists(), 'Unrecorded stage R1 UI'
     kit = by_id['native-ui-kit']
     if kit['status'] in {'production', 'reviewed'}:
         assert kit['bytes'] + sum(c['bytes'] for c in kit.get('codeComponents', [])) <= 80000 and kit['targetSpec']['maxSymbols'] == 40, 'Native UI budget changed'
@@ -396,7 +414,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

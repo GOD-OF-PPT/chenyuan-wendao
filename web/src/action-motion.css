@@ -1,15 +1,15 @@
 /* Receipt-bound, short-lived effects. No layer receives input or changes layout. */
-.action-feedback-layer{position:fixed;inset:0;z-index:14;pointer-events:none;overflow:hidden}
+.action-feedback-layer{position:fixed;inset:0;z-index:22;pointer-events:none;overflow:hidden}
 .app-shell.art-theme .interaction-press{filter:brightness(1.08);outline:1px solid #b5ddba;outline-offset:-3px}
 .app-shell.art-theme .command-pending{box-shadow:inset 0 0 0 2px #b9cb84,0 0 14px #a4c99466!important;animation:command-ink .85s ease-in-out infinite alternate}
 .app-shell.art-theme .command-success{animation:command-done .85s ease-out;outline:2px solid #acd9ac;outline-offset:2px}
 .app-shell.art-theme .command-error{animation:command-error .8s ease-out;outline:2px solid #e6ac92;outline-offset:2px}
 .app-shell.art-theme button:disabled:hover{cursor:not-allowed}
-.action-feedback-toast.hub-pulse{top:86px;left:50%;right:auto;width:min(520px,calc(100vw - 40px));padding:13px 20px;transform:translateX(-50%);border:1px solid #91af88;border-radius:10px 3px;background:linear-gradient(120deg,#214b49f5,#102d35f5);box-shadow:0 10px 28px #061c2688;animation:action-notice-in .18s ease-out both;z-index:16}
+.action-feedback-toast.hub-pulse{top:4px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 12px;align-items:center;left:50%;right:auto;width:min(520px,calc(100vw - 40px));padding:6px 18px;transform:translateX(-50%);border:1px solid #91af88;border-radius:10px 3px;background:linear-gradient(120deg,#214b49,#102d35);box-shadow:0 10px 28px #061c2688;animation:action-notice-in .18s ease-out both;z-index:16}
 .action-feedback-toast.hub-pulse::before{opacity:.25;inset:3px 14%;pointer-events:none}
-.action-feedback-toast.hub-pulse strong{font-size:var(--ui24);letter-spacing:.1em}
-.action-feedback-toast.hub-pulse span{font-size:var(--ui16);line-height:1.55;margin-top:5px}
-.action-feedback-toast.hub-pulse small{display:block;font-size:var(--ui14);line-height:1.4;margin-top:5px;color:#c5d5bf}
+.action-feedback-toast.hub-pulse strong{font-size:var(--ui24);line-height:1.2;letter-spacing:.1em}
+.action-feedback-toast.hub-pulse span{font-size:var(--ui16);line-height:1.4;margin:0}
+.action-feedback-toast.hub-pulse small{grid-column:1/-1;display:block;font-size:var(--ui14);line-height:1.3;margin:0;color:#c5d5bf}
 .action-feedback-toast.hub-pulse.still{animation:none;transform:translateX(-50%)}
 .action-motion{position:fixed;transform:translate(-50%,-50%);width:220px;height:220px;pointer-events:none;isolation:isolate;--motion-color:#a8dfb9;animation:motion-life 1.3s ease-out both}
 .motion-ring{position:absolute;inset:20px;border:2px solid var(--motion-color);border-radius:50%;box-shadow:0 0 15px color-mix(in srgb,var(--motion-color) 45%,transparent),inset 0 0 12px #b4db9622;animation:motion-orbit 1.15s ease-out both}
@@ -46,7 +46,7 @@
 .motion-trial .motion-particles>i{height:26px;width:2px;animation-name:motion-lightning}
 .motion-battle{--motion-color:#bbddd1}.motion-battle .motion-ring{border-radius:30%;animation-name:motion-impact}
 .motion-battle .motion-sigil{opacity:.6}
-.motion-slash{position:absolute;left:10%;top:50%;width:80%;height:4px;background:linear-gradient(90deg,transparent,#f5f2cc,var(--motion-color),transparent);box-shadow:0 0 12px #e2edbb99;transform:rotate(-38deg);animation:motion-slash .45s ease-out both}
+.motion-battle{width:160px;height:160px}.motion-slash{position:absolute;left:10%;top:50%;width:80%;height:4px;background:linear-gradient(90deg,transparent,#f5f2cc,var(--motion-color),transparent);box-shadow:0 0 12px #e2edbb99;transform:rotate(-38deg);animation:motion-slash .45s ease-out both}
 .motion-slash.slash-two{transform:rotate(32deg);animation-delay:.12s;opacity:.6}
 .motion-battle[data-variant*=talisman]{--motion-color:#e2ca91}.motion-battle[data-variant*=talisman] .motion-ring{border-radius:2%;border-style:dashed;animation-name:motion-stamp}
 .motion-battle[data-variant*=release]{width:280px;height:280px}.motion-battle[data-variant*=release] .motion-slash{height:7px}
@@ -60,7 +60,7 @@
 .actor-impact{animation:actor-impact .32s ease-out}.actor-arrival{animation:actor-arrival .5s ease-out}.scene-arrival{animation:scene-arrival .55s ease-out}
 @keyframes command-ink{to{box-shadow:inset 0 0 0 2px #e2d193,0 0 19px #c2d98d88}}
 @keyframes command-done{from{filter:brightness(1.08)}to{filter:brightness(1)}}@keyframes command-error{30%{filter:brightness(1.08)}}
-@keyframes action-notice-in{from{opacity:0;margin-top:-5px}to{opacity:1;margin-top:0}}
+@keyframes action-notice-in{from{filter:brightness(1.12)}to{filter:brightness(1)}}
 @keyframes motion-life{0%{opacity:0}12%,72%{opacity:1}100%{opacity:0}}
 @keyframes motion-orbit{from{transform:scale(.3) rotate(-40deg);opacity:0}35%{opacity:.9}to{transform:scale(1.2) rotate(70deg);opacity:0}}
 @keyframes motion-breath{from{transform:scale(.55) rotateX(55deg) rotate(-50deg)}to{transform:scale(1.3) rotateX(55deg) rotate(130deg);opacity:0}}

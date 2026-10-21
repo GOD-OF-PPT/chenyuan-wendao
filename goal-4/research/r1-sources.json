@@ -1,0 +1,9 @@
+{
+ "date":"2026-10-21",
+ "method":"Official Microsoft pages actually opened as text; no competitor playthrough or accessibility certification claimed.",
+ "sources":[
+  {"url":"https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112","title":"Xbox Accessibility Guideline 112: UI navigation","observed":"Consistent order, predictable focus and navigation across game menus.","projectInference":"Keep eight entry points stable and return ordinary details to their initiating context."},
+  {"url":"https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114","title":"Xbox Accessibility Guideline 114: UI context","observed":"Communicate purpose and expected effect before interaction; context changes should be player initiated or explained.","projectInference":"Distinguish view/draft/execute, keep the one current activity visible, and do not restart or replace it when inspecting another page."}
+ ],
+ "limits":"Layout, bytes, periods and one-screen scope are project decisions. Only fixed1440x900 Chromium functional verification in R1; no compatibility or environment matrix."
+}

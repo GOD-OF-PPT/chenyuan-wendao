@@ -1071,8 +1071,8 @@
         },
         {
           "path": "web/src/ScenePanel.vue",
-          "bytes": 9391,
-          "sha256": "cbd69e166756900e6442988b99d30895bc8adcb6b59f5a8a4c376312a836a698"
+          "bytes": 9410,
+          "sha256": "3bbb2c3e8777d0d7a5713a3125a0fbbb78542c33f4a9faeaea103f781db34ea1"
         },
         {
           "path": "web/src/AssetImage.vue",

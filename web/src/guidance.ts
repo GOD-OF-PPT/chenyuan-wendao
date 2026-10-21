@@ -32,10 +32,12 @@ export function guidanceFor(game:Game|null,result:ActionResult|null=null):Guide{
   if(game.trial)return guide('trial');
   if(phase==='event')return guide('causality');
   if(current&&['SCHOOL','LEARN','EQUIP','FORGE','EQUIP_RELIC'].includes(current.type))return guide('equipment');
-  if(current&&(['SOURCE','BUY','CRAFT'].includes(current.type)||Object.entries(current.delta.inventory).some(([id,n])=>n>0&&C.items[id]?.kind==='material')))return guide('materials');
+  const cycle=current&&['SOURCE','BUY','CRAFT'].includes(current.type);
+  if(current&&!cycle&&Object.entries(current.delta.inventory).some(([id,n])=>n>0&&C.items[id]?.kind==='material'))return guide('materials');
   const realm=C.realms[game.core.player.realm];
   if(game.core.player.hp<realm.maxHp||game.core.player.mp<realm.maxMp)return guide('recovery');
   if(game.core.player.xp===realm.xpCap)return guide(game.core.player.realm==='spirit'?'trial':'breakthrough');
+  if(cycle)return guide('materials');
   if(game.school===null&&C.rank(game.core.player.realm)>=C.rank('qi'))return guide('equipment');
   return game.core.player.realm==='mortal'?mortalCultivation:guide('cultivation');
 }

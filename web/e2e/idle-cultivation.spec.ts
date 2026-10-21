@@ -1,3 +1,4 @@
+import {expectActivityTotals} from './stage-support';
 import {test,expect,type Page} from '@playwright/test';
 import {snapshot,useJourneyClock,finishJourneyClock} from './support';
 import {advance} from '../../src/full/engine.ts';
@@ -32,7 +33,7 @@ test('assisted cultivation previews the budget and reserve and stops before anot
  await page.getByTestId('training-start').click();await expect.poll(async()=>(await savedActivity(page))?.status).toBe('running');await page.getByTestId('hub-close').click();await cycles(page,1,60000);const a=await savedActivity(page),after=await snapshot(page);expect(a.status).toBe('stopped');expect(a.spentStones).toBe(20);
   await expect(page.getByTestId('training-summary')).toBeVisible();
   await expect(page.getByTestId('training-stop')).toContainText(a.stopReason.message);
-  await expect(page.getByTestId('training-totals')).toContainText('灵石消耗 20');
+  await expectActivityTotals(page,'灵石已用 20 / 20');
   await expect(page.getByTestId('hub-receipt')).toBeVisible();
   await page.reload();
   await expect(page.getByTestId('training-stop')).toContainText(a.stopReason.message);

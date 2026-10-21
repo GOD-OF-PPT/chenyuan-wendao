@@ -5,7 +5,7 @@ import { getLifeOverview } from '../../src/full/queries.ts';
 import type { Game } from '../../src/full/types.ts';
 import PortraitImage from './PortraitImage.vue';
 import ProgressTrack from './ProgressTrack.vue';
-const props = defineProps<{game:Game;compact?:boolean}>();
+const props = defineProps<{game:Game;compact?:boolean;detailsOnly?:boolean}>();
 const emit=defineEmits<{inspect:[event:MouseEvent]}>();
 const player = computed(() => props.game.core.player), realm = computed(() => C.realms[player.value.realm]);
 const life = computed(() => getLifeOverview(props.game));
@@ -15,9 +15,9 @@ const expanded = ref(false);
 </script>
 <template>
   <aside class="paper character-sheet" data-testid="character-panel" aria-label="道者个人志">
-    <div class="character-portrait" aria-hidden="true"><PortraitImage id="player" fallback="道"/></div>
-    <div class="character-heading"><span class="section-label">道者 · 个人志</span><h2>{{player.name}}</h2><span class="realm-badge" data-testid="realm">{{realm.name}}</span></div>
-    <div class="character-vitals" :data-testid="sealed?'ascension-sealed-stats':undefined">
+    <div v-if="!detailsOnly" class="character-portrait" aria-hidden="true"><PortraitImage id="player" fallback="道"/></div>
+    <div v-if="!detailsOnly" class="character-heading"><span class="section-label">道者 · 个人志</span><h2>{{player.name}}</h2><span class="realm-badge" data-testid="realm">{{realm.name}}</span></div>
+    <div v-if="!detailsOnly" class="character-vitals" :data-testid="sealed?'ascension-sealed-stats':undefined">
       <p v-if="sealed" class="small">此生已封卷。本卷不继续上界修行，保留封卷时的实际状态。</p>
       <div class="stat"><label>{{sealed?'封卷气血':'气血'}} <b data-testid="hp">{{player.hp}}<template v-if="!sealed"> / {{realm.maxHp}}</template></b></label><ProgressTrack v-if="!sealed" :value="player.hp" :max="realm.maxHp" label="气血" tone="health" :identity="game.core.runId+player.realm" hint="气血会随真实行动变化；战中丹药占回合，战后可到洞府核对疗养。"/></div>
       <div class="stat"><label>{{sealed?'封卷灵力':'灵力'}} <b>{{player.mp}}<template v-if="!sealed"> / {{realm.maxMp}}</template></b></label><ProgressTrack v-if="!sealed" :value="player.mp" :max="realm.maxMp" label="灵力" tone="spirit" :identity="game.core.runId+player.realm" hint="术法消耗灵力，基础攻击和护体可回灵；按行动旁的实际成本选择。"/></div>
@@ -25,8 +25,8 @@ const expanded = ref(false);
       <div class="character-pair character-currency"><span>{{sealed?'封卷灵石':'灵石'}}</span><b data-testid="stones">{{player.stones}}</b></div>
     </div>
     <button v-if="compact" class="text-button character-hint" @click="emit('inspect',$event)">寿元与配装 →</button>
-    <details v-else :open="expanded" @toggle="expanded=($event.target as HTMLDetailsElement).open">
-      <summary class="character-hint" data-testid="character-toggle">{{expanded?'收起详情':'查看寿元与配装'}}</summary>
+    <details v-else :open="detailsOnly||expanded" @toggle="expanded=($event.target as HTMLDetailsElement).open">
+      <summary class="character-hint" data-testid="character-toggle">{{detailsOnly?'寿元与配装':expanded?'收起详情':'查看寿元与配装'}}</summary>
       <div class="character-details" data-testid="character-details">
         <div class="character-pair"><span>{{sealed?'封卷年龄':'年龄 / 寿限'}}</span><b data-testid="age-limit">{{life.ageLabel}}<template v-if="!sealed"> / {{life.limitLabel}}</template></b></div>
         <h3>当前修法 · {{school}}</h3>

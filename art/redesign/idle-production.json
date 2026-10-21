@@ -7,13 +7,13 @@
   "files": [
     {
       "path": "web/src/ProductionPlanner.vue",
-      "bytes": 14396,
-      "sha256": "fc25fa330b40afd05796dcc6ff25734ebb8e41476dd46a13167c83df4ead360a"
+      "bytes": 15467,
+      "sha256": "352e7752ac8d451e6092a96e6a78b38d18ce0643d41ac78a5f13666459490ebf"
     },
     {
       "path": "web/src/idle-production.css",
-      "bytes": 5463,
-      "sha256": "d6e6a1e566123b0c71a872673142a445594b3f5ce692c73190ef3977f7b3f272"
+      "bytes": 6309,
+      "sha256": "50a2df6a433f250ba47dbbfb2692fe6416edfa39414828d1e0d85a267b31d47e"
     },
     {
       "path": "web/src/activity-view.ts",

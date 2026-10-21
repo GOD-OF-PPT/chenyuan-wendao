@@ -13,7 +13,7 @@ import CatalogueArt from './CatalogueArt.vue';
 import ProductionPlanner from './ProductionPlanner.vue';
 import type {Activity,CraftPlan,ForgePlan,PreparationPlan} from '../../src/full/activity.ts';
 import type {useGame} from './store';
-const props=defineProps<{game:Game;mode:'inventory'|'forge';busy:boolean;available:boolean;highlight:string;consumption:(action:Action)=>string;running:boolean;activity:Activity|null;runtime:ReturnType<typeof useGame>['activityRuntime'];savedProduction:CraftPlan|ForgePlan|null;savedPreparationPlan:PreparationPlan|null}>(),emit=defineEmits<{act:[Action];track:[TrackingTarget];travel:[C.LocationId];start:[CraftPlan|ForgePlan|PreparationPlan];move:[CraftPlan|ForgePlan];travelPlan:[PreparationPlan]}>();
+const props=defineProps<{game:Game;mode:'inventory'|'forge';minimal?:boolean;busy:boolean;available:boolean;highlight:string;consumption:(action:Action)=>string;running:boolean;activity:Activity|null;runtime:ReturnType<typeof useGame>['activityRuntime'];savedProduction:CraftPlan|ForgePlan|null;savedPreparationPlan:PreparationPlan|null}>(),emit=defineEmits<{act:[Action];track:[TrackingTarget];travel:[C.LocationId];start:[CraftPlan|ForgePlan|PreparationPlan];move:[CraftPlan|ForgePlan];travelPlan:[PreparationPlan]}>();
 const page=ref(0),filter=ref('all'),future=ref(false);
 const rows=computed(()=>Object.entries(C.items).filter(([id,i])=>(future.value||C.rank(i.min)<=C.rank(props.game.core.player.realm)||props.game.core.inventory[id]>0)&&(filter.value==='all'||i.kind===filter.value)));
 const paged=computed(()=>pageSlice<[string,unknown]>(rows.value,page.value,2)),cache=computed(()=>({game:props.game,map:new Map<string,ReturnType<typeof previewAction>>() }));
@@ -23,7 +23,7 @@ function why(action:Action){return props.busy?'当前行动进行中':!props.ava
 watch([filter,future,()=>props.mode],()=>{page.value=0;},{flush:'sync'});watch(()=>props.game.core.runId,()=>{page.value=0;filter.value='all';future.value=false;});watch(()=>props.game.core.revision,()=>page.value=paged.value.page);
 </script>
 <template>
- <ProductionPlanner v-if="mode==='forge'" mode="craft" :game="game" :busy="busy" :available="available" :running="running" :highlight="highlight" :saved-plan="savedProduction" :consumption="consumption" :activity="activity" :runtime="runtime" @start="emit('start',$event)" @track="emit('track',$event)" @act="emit('act',$event)" @travel="emit('move',$event)"/>
+ <ProductionPlanner v-if="mode==='forge'" mode="craft" :minimal="minimal" :game="game" :busy="busy" :available="available" :running="running" :highlight="highlight" :saved-plan="savedProduction" :consumption="consumption" :activity="activity" :runtime="runtime" @start="emit('start',$event)" @track="emit('track',$event)" @act="emit('act',$event)" @travel="emit('move',$event)"/>
  <section v-else class="paper play-catalogue goods-catalogue catalogue-gallery" data-testid="inventory-catalogue" tabindex="-1">
   <CatalogueArt kind="supplies"/>
   <header><div><small>物资保存在当前人生，可追踪其来源</small></div><label><input type="checkbox" v-model="future" aria-label="显示后续物资配方"> 后续境界</label></header>
