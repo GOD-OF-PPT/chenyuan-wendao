@@ -1,0 +1,12 @@
+{
+  "path": ".vite/manifest.json",
+  "expected": {
+    "path": ".vite/manifest.json",
+    "bytes": 185,
+    "sha256": "f4aedfbe2e25a159f5372b3f51f35f8bad2b908645cd1a808c9cb11e7501c305"
+  },
+  "httpBytes": 185,
+  "httpSha256": "01b96b3615d4d8a3ff9d12fbbb2f4dbc781ec80ab8d0d8bbf241faef9f6e170f",
+  "frozenSha256": "01b96b3615d4d8a3ff9d12fbbb2f4dbc781ec80ab8d0d8bbf241faef9f6e170f",
+  "source": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815"
+}

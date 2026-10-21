@@ -1,0 +1,120 @@
+{
+  "format": "chenyuan-check-a-r-static-supply-audit",
+  "version": 1,
+  "date": "2026-10-21",
+  "baselineHead": "075bec55086752f090e664e649f746157653aead",
+  "scope": "CHECK-A-R only: read-only Market/Recovery and parent inspection/cache routing against existing contracts. No UI/browser run, image review, compatibility/performance tests, Game/user-save action, source/Git edits or R4/new-play work.",
+  "sourceFiles": {
+    "web/src/MarketPlanner.vue": "5364c9baf8593a0cc57c8aa519fe95f5b1e376d0883e554d3865f2ea1ba631a4",
+    "web/src/RecoveryPlanner.vue": "455cd293d1b7027989cd55a0c9ef98aceaf6194e0afc9a481804280bda92f717",
+    "web/src/App.vue": "d95a0e21235fabd6d9288d40c24b67ca12863a298ead3542c7f471f4c3f37c41",
+    "web/src/ExplorePanel.vue": "8462c978717e14face2aa777177842a3848adc0148b81b44511eeee66be7072f",
+    "web/src/GoodsPanel.vue": "30bf673f5100ad754d938e580108ea28d2ffa7ac107eb94e4d3611282d6d8749",
+    "docs/decisions/0007-preparation-idle-contract.md": "669646a385acae2ed255178c316eeaefefbf79bb6bb3db1c896e50831faf1593",
+    "docs/decisions/0013-stage-r1-integration-contract.md": "85dd69812cbf53461cb554e9f6e2745d8f3b3ba288bd2d813b79c9dbd45ebfd3",
+    "docs/decisions/0014-adventure-stage-r2-contract.md": "91552c59de10d88dfff30d36b3051da68a0622e125fa230212bcade0a1f8d8c6",
+    "docs/decisions/0015-equipment-inventory-r3-contract.md": "eb86b127f8f9eae55d83772d65e1c96c6c469fa3c6d52a884471792d1db3f517"
+  },
+  "classificationNote": "Confirmed-code-defect means the visible event binding unconditionally reaches the defective source assignment/routing. Browser reproduction and pixel consequences are not claimed; root should capture red cases before repair. Pure visual density observations are separate.",
+  "confirmedCodeDefects": [
+    {
+      "id": "CHECK-SUPPLY-01",
+      "priority": "P2",
+      "source": "web/src/MarketPlanner.vue:24,34",
+      "title": "Reselecting the current shelf object destroys its edited finite authorization draft",
+      "actualReachablePath": [
+        "Lawful qi character at market; 历练 -> 坊市 -> buy-herb.",
+        "Edit max7, until target, target17; expand original budget and set100/reserve11.",
+        "Click the already selected buy-herb object again."
+      ],
+      "actualByCode": "select has no same-id guard and unconditionally sets max1, cycles mode, target=currentStock+1, stone/item reserve0, editedLimits=false, then price*1 budget. For herb this makes budget5.",
+      "expectedContract": "Ordinary same-object viewing must not silently overwrite draft budget/reserve;0013#4 and0014#6 read-only contexts, global AGENTS same-object rule.",
+      "impact": "No immediate Game write; the next explicit start can use a newly weakened reserve/changed target after an innocuous object click. Viewed saved arrangement also loses its original values on reselection.",
+      "testRequirement": "Assert complete draft fields and Game/activity unchanged after same-id reselection in buy and sell; include edited saved-plan view and activity tick/pause, not only default count.",
+      "repairBoundary": "A same-id guard must not suppress explicit restore of a genuinely new saved plan. Buy/sell mode changes need an explicit default/own-draft policy; do not hide or lower finite limits."
+    },
+    {
+      "id": "CHECK-SUPPLY-02",
+      "priority": "P2",
+      "source": "web/src/MarketPlanner.vue:15-16,25,28,32,45",
+      "title": "Catalogue changes can leave a hidden selected market object or a selected object on another page",
+      "actualReachablePath": [
+        "At qi market, enable 显示后续坊市货物, page to 道蕴砂 and select buy-dao.",
+        "Turn off 后续境界. The handler only sets page=0."
+      ],
+      "actualByCode": "rows excludes dao, but item reads C.items[selected] independently of rows, and no future/rows watcher reconciles selected. The high-realm dao object stays in main detail while its shelf disappears. Pagination likewise changes page alone while preserving an off-page selected object. Same-life qi->foundation insertion can shift healing_pill index3->4 without page correction.",
+      "expectedContract": "Current object and actual directory selection must be clear; all current-world context/selected state from0012/0014 and R3 identity fixes establish this precedent.",
+      "impact": "False selection relationship and apparent hidden/phantom object despite correct formal disabled rules. No unauthorized reward/fee.",
+      "testRequirement": "Future-toggle after selecting a hidden high-realm object; normal same-life growth after selecting a boundary item; selected item removed by visibility should choose a real row or give an explicit off-page selection model.",
+      "repairBoundary": "Retain edited authorization for the same still-valid object; only reconcile local selected/page on changed visibility, never clear accepted commands or swap a stored activity."
+    },
+    {
+      "id": "CHECK-SUPPLY-03",
+      "priority": "P2",
+      "source": "web/src/App.vue:100,124-128,136-139,288-303; web/src/GoodsPanel.vue inspect-sell binding",
+      "title": "The bag sale-arrangement inspection has no return-to-bag context",
+      "actualReachablePath": [
+        "Lawful qi character: 行囊 -> select 回春丹 -> 查看出售安排.",
+        "This calls act(SELL), inspectPreparation, inspectPreparationPlan and openHub(market).",
+        "Close with hub-close."
+      ],
+      "actualByCode": "market is absent from detailViews. openHub treats it as independent navigation, calls selectTab and clears detailParent. closeHub consequently selects 修行/home, rather than restoring prior inventory object. Recovery inspection uses detailViews recovery and does keep the original bag context, so two read-only uses of the same bag object return differently.",
+      "expectedContract": "0013#4 one ordinary detail surface with return to original page/object/draft;0015#4 use/sale inspection is read-only, not a main-game context switch.",
+      "impact": "No resource effect, but breaks predictable return and requires explicitly re-opening the bag; its own KeepAlive may still preserve the selected object. Distinct root/nested Market instances mean returning to Explore/market is not equivalent to returning to the opened bag-sale view.",
+      "testRequirement": "Bag medicine -> recovery -> close and bag medicine -> sale -> close should both restore the original selected item/category/page with Game/activity unchanged; also check a sale source/goal detail and its return.",
+      "repairBoundary": "Classify market arrangement detail deliberately and test original Explore market path as well. Do not accidentally change actual travel or clear accepted configuration/retry state."
+    }
+  ],
+  "risksNeedingBrowserEvidence": [
+    {
+      "id": "CHECK-SUPPLY-R01",
+      "source": "web/src/MarketPlanner.vue:27",
+      "risk": "Switching buy->sell->buy invokes select and discards buy draft; switching shelf objects intentionally defaults all fields. A per-mode/per-object draft policy is not presently explicit in0007. Same-object is a definite defect above; broader draft caching should be decided from existing user contract rather than silently expanding implementation.",
+      "probe": "Custom buy target/budget/reserve -> sell inspection -> buy, compare draft and Game. Confirm intended behavior before treating different-object defaults as a bug."
+    },
+    {
+      "id": "CHECK-SUPPLY-R02",
+      "source": "web/src/RecoveryPlanner.vue:13,21",
+      "risk": "HP/MP medicines share target/count/reserve refs. Switching to the other medicine changes the object while inheriting all three values; rest monthsReserve is separate. This may be a valid shared recovery policy, or may overwrite an expected per-item draft, but no explicit independent-draft contract was found.",
+      "probe": "Edit healing target/max/reserve, inspect spirit/rest, return; distinguish semantic reuse from loss. Do not invent new storage or separate activities just to resolve a presentation preference."
+    },
+    {
+      "id": "CHECK-SUPPLY-R03",
+      "source": "web/src/App.vue:292; web/src/MarketPlanner.vue:25; web/src/RecoveryPlanner.vue:22",
+      "risk": "Parent inspection emits market-item-* and recovery-* highlights whereas children locate recognizes buy|sell-* and use-* or rest. Current savedPlan restore masks the mismatch for every standard inspectPreparation route; it is not an established user-visible defect.",
+      "probe": "If touching restoration/highlight routing, test both already-saved and first unsaved USE/REST/BUY/SELL plans, and source navigation paths. Avoid a speculative prefix-only fix that resets edited drafts."
+    }
+  ],
+  "pureVisualObservations": [
+    {
+      "source": "web/src/MarketPlanner.vue:32-42",
+      "observation": "Default surface simultaneously includes mode+money/future,4 shelf cards, object picture+description+source,2-3 always-visible numeric target controls, collapsed budget, estimate/stop and primary action. Existing budgets are finite and summary is visible, so this is information-density observation, not hidden authorization or proven overlap. Root pixels are needed to decide smallest hierarchy correction."
+    },
+    {
+      "source": "web/src/RecoveryPlanner.vue:28-34",
+      "observation": "Default surface includes dual body bars,3 choices, supply art, selected explanation, next exact effect/source, visible target%, collapsed dose/reserve, estimate and action. Dose/reserve and rest lifespan finite summaries are already visible. No clipping/illegibility assertion from static source; this audit viewed0 images."
+    }
+  ],
+  "identityAndRuleSafety": [
+    "Market/Recovery sameSaved compares full currently meaningful plan fields and requires parent planSaved for 已保存 label; editing values makes it unsaved.",
+    "App watches activity.id and syncEpoch to revoke preparationInspectionSaved, not every Game revision: same-activity cycle/pause preserves edited draft.",
+    "App inspectionOwner checks runId/navigation/sync and original activity id for saved views around awaits; callbacks do not rely on stale revision.",
+    "App clearInspections synchronously on runId change plus root Market/Recovery runId keys and nested Explore/Market runId key isolates lives. Child runId watchers alone are not complete resets, but key reconstruction supplies actual boundary.",
+    "StartPreparation clears readonly inspection but delegates actual plan to existing Store; no local timer, reward, optimistic Game write, direct use/sale or offline inference.",
+    "Travel uses explicit plan clone/arrangeTravel, then restored draft and separate start. No automatic supply acquisition or recovery.",
+    "Neither same-object selection nor filters/details call the formal Game engine. Original CAS, accepted command identity and retry paths untouched by readonly inspection clearing."
+  ],
+  "existingCoverageToKeep": [
+    "web/e2e/idle-preparation-drafts.spec.ts saved market target/budget survives real cycle/pause",
+    "web/e2e/idle-preparation-drafts.spec.ts saved dose/target/reserve survives real cycle/pause",
+    "web/e2e/idle-preparation.spec.ts BUY/SELL reserve,6s USE/30s REST,refresh/nooffline and trial explicit travel",
+    "web/persistence-tests/preparation-activity.spec.ts; configuration-store.spec.ts; store-reconnect.spec.ts original exact-intent,atomic,history contracts"
+  ],
+  "notPerformed": [
+    "Browser/UI reproduction",
+    "Pixel review",
+    "Compatibility/environment/performance work",
+    "Any code/test/Git/user-save mutation",
+    "R4 or new gameplay"
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "market-focused-default",
+    "png": "artifacts/goal-4/check-a-r/ui-release-results/stage-check-market-default-3b8fe-s-complete-limits-on-demand-chromium/market-focused-default.png",
+    "pngSha256": "5de6554c38d841c61aaff2b3816feedbb9e5c1b5147c95a4f25a958bbd228b6d",
+    "jpeg": "artifacts/goal-4/check-a-r/market-focused-default-root-release.jpg",
+    "jpegSha256": "f95cfa4690ed9e942dc53897ebea1e66939c88509b419f8f2cef487f3b1c8722",
+    "size": [
+      1440,
+      900
+    ],
+    "conversion": "JPEG68 original dimensions lossy",
+    "pixelReviewed": true,
+    "observations": "Actually viewed full1440x900 JPEG68; selected object, complete finite default, primary action and global entries readable; no observed crop/overlap. Does not prove whole-art acceptance or timing."
+  },
+  {
+    "name": "recovery-focused-default",
+    "png": "artifacts/goal-4/check-a-r/ui-release-results/stage-check-recovery-shows-7e120-ts-complete-finite-settings-chromium/recovery-focused-default.png",
+    "pngSha256": "a56efa9abf11be15ee9361df4b35ab523a1ec6daaa680b58b892d06e176aabef",
+    "jpeg": "artifacts/goal-4/check-a-r/recovery-focused-default-root-release.jpg",
+    "jpegSha256": "0df89082a1db5c6d7bd185f960e596c644bc74728406598c2a061cbdba2e3534",
+    "size": [
+      1440,
+      900
+    ],
+    "conversion": "JPEG68 original dimensions lossy",
+    "pixelReviewed": true,
+    "observations": "Actually viewed full1440x900 JPEG68; selected object, complete finite default, primary action and global entries readable; no observed crop/overlap. Does not prove whole-art acceptance or timing."
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "sourceDigest": "f1c6bc3aae7d3a5cc67af6cf401eb6835f80e23419a74c731453965204a71940",
+  "beforeSource": "21634567ef99dbd15320dab50638ba975ff2bd1c922f2e5782fa0443b7b0b3a9",
+  "afterSource": "f1c6bc3aae7d3a5cc67af6cf401eb6835f80e23419a74c731453965204a71940",
+  "renderedStateEqualAfterOnlyAXIndexNormalisation": true,
+  "visibleProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "school": "尚未择法",
+    "xp": "5 / 10",
+    "stones": 40,
+    "month": 1,
+    "hp": "60 / 60",
+    "mp": "20 / 20",
+    "location": "听雨洞府",
+    "activity": "待安排",
+    "persistence": "已保存"
+  },
+  "actions": [
+    "Read AX and screenshot",
+    "Reload same original user tab once after owned loopback resource switch",
+    "Read AX/screenshot and mark deliverable"
+  ],
+  "noGameActionImportRestoreResetOrUserSaveTesting": true,
+  "scope": "Visible DOM/AX progress only; no raw database inspection/hash proof. Incidental IAB dimensions are not compatibility acceptance.",
+  "images": [
+    {
+      "stage": "before",
+      "original": "artifacts/goal-4/check-a-r/preview-before.png",
+      "originalSha256": "d5d55f760e4acc9419af05e153d93d13fbc1d50fe13dd80ca96fe032270369e5",
+      "preview": "goal-4/evidence/check-a-r/preview-before.jpg",
+      "previewSha256": "132b1c081089fe2353d7c07331dde7e7b4f6bb9fe27e67213e1bd64476189eae",
+      "width": 1280,
+      "height": 720,
+      "format": "JPEG68 lossy original dimensions",
+      "pixelReviewed": true,
+      "pixelReview": "Exact originalPNG byte identity to current after image actually viewed by root."
+    },
+    {
+      "stage": "after",
+      "original": "artifacts/goal-4/check-a-r/preview-after.png",
+      "originalSha256": "d5d55f760e4acc9419af05e153d93d13fbc1d50fe13dd80ca96fe032270369e5",
+      "preview": "goal-4/evidence/check-a-r/preview-after.jpg",
+      "previewSha256": "132b1c081089fe2353d7c07331dde7e7b4f6bb9fe27e67213e1bd64476189eae",
+      "width": 1280,
+      "height": 720,
+      "format": "JPEG68 lossy original dimensions",
+      "pixelReviewed": true,
+      "pixelReview": "Actually viewed full-size JPEG68. Main artwork, current progress, idle decision and eight entries visible; incidental1280x720 is not compatibility verification."
+    }
+  ]
+}

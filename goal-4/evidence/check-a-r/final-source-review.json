@@ -1,0 +1,179 @@
+{
+  "format": "chenyuan-check-a-r-final-source-review",
+  "version": 1,
+  "date": "2026-10-21",
+  "scope": "Current F1 source/diff and existing release-evidence read-only review against0016, previous context/integration reports and20stage-check cases. No source/test/Git mutation, browser/test execution, image viewing, user-save action, compatibility/performance work or later task.",
+  "sourceDigest": "f1c6bc3aae7d3a5cc67af6cf401eb6835f80e23419a74c731453965204a71940",
+  "status": "pass-no-blocking-finding-in-reviewed-contract",
+  "findings": [],
+  "sourceFilesSha256": {
+    "web/src/App.vue": "3a754df16bc151691fe92f34060ee1001ec724bdd33319cfb946947de0757d74",
+    "web/src/BattleStrategy.vue": "7df0ff50fabf540bf406eda97f95e6627a08c60e08a193491f2d883b46b30461",
+    "web/src/BattlePanel.vue": "ae38553a60ab2ae055bba90b93c699bd1b2581daae45e6d38e5effaef66b7b66",
+    "web/src/AdventurePlanner.vue": "8ddf6559f83f02c79a3135f744487f4de710efa9c8070742a04707ca830a0bf1",
+    "web/src/RecoveryPlanner.vue": "f32b1fb4581293b785852631f2843ecf8958dce5bc78738697f9bd038af259d4",
+    "web/src/MarketPlanner.vue": "9f7da155c3ea91b289220436a42f95b0d694d06de1e802747a4ca9757cf02b75",
+    "web/src/ExplorePanel.vue": "1c2be3163e7238ba0376dc9b91415c4f911e0a3d3508061d97ed7255ded1a871",
+    "web/src/ProgressTrack.vue": "8ab670a30730e3f70038687eaf6be0994f2670651d62cddf71b6a541bd7f1b54",
+    "web/src/ActionFeedbackStage.vue": "d2a653e4a6ccf811dec311f63f2c80ce2eeb8c1f8d63ebf246c5e71319796210"
+  },
+  "sourceHashesMatchCurrentFrozenBuild": true,
+  "checks": [
+    {
+      "id": "F1-command-and-fee-boundary",
+      "verdict": "pass_source",
+      "detail": "本轮差异为本地草案、只读计算、文案及组件生命周期；未发现直接修改 Game、command 或回执。开始、出招和接管仍调用既有事件/Store 路径，正式默认计划、费用和有限字段保留；已检查的规则、Store、时钟及原子存储文件没有差异。"
+    },
+    {
+      "id": "F1-default-versus-exact",
+      "verdict": "pass_source",
+      "detail": "preparationInspectionExact 仅表示查看来源。默认查看传 false；原保存安排及完整行旅草案为 true。仅完整语义相同、当前 kind/item 相同且非精确/非已保存时才跳过默认回填；不同计划和显式原安排完整恢复。父层、Explore 和子组件接线一致，去重及草案按人生隔离。"
+    },
+    {
+      "id": "F1-budget-sync",
+      "verdict": "pass_source",
+      "detail": "Market 将延迟 blur/change 更新改为 count/until/target 的同步 watch。手改预算/保留量后 editedLimits 阻止覆盖；缓存和已保存计划最终恢复完整明确值。普通周期或收入不会重置字段，也不会补回累计支出预算。"
+    },
+    {
+      "id": "F1-navigation",
+      "verdict": "pass_source",
+      "detail": "openHub 只在没有既有父上下文且目标视图不同的时候记录返回处。行囊出售可返回原物品；来源直接进入的坊市也可作为目标/人物详情的返回处。仍是一层普通详情；主导航 selectTab 清上下文。只读操作不开始旅行或交易。"
+    },
+    {
+      "id": "F1-original-plan-reader",
+      "verdict": "pass_source",
+      "detail": "原安排页面只读取保存的 version 6 plan，完整展示敌方/关卡、动作上限、历练场次/月预算/余寿/库存目标、灵力、优先级/重击/层数、药物阈值/预算/保留与危险策略。手动单步计划只有身份、move、max1 字段，均已展示。历史招式使用固定通用名；分页身份为 runId+activityId，同周期不重置阅读页。敌人消失或地点变化时可只读回看，不执行旧活动。"
+    },
+    {
+      "id": "F1-ordinary-versus-trial",
+      "verdict": "pass_source",
+      "detail": "当前 BattlePanel 根据当前敌人的 trial 属性传给外层 BattleStrategy 与内层编辑器；新 prop 只生成撤退说明，不进入 Strategy、autoPlan、命令或 Game。普通历练编辑器保持 false，目录排除天劫敌人。历史说明依据保存的 plan.kind/trialStage，普通历练、普通交锋与天劫语义区分。此前重复句号已去掉。"
+    },
+    {
+      "id": "F1-hidden-lifecycle-and-effects",
+      "verdict": "pass_source",
+      "detail": "主舞台只在当前真实战局存在时保留挂载，离开主页通过 v-show 隐藏，隐藏内容不占 game-content 标识。ProgressTrack 隐藏时清短数字/计时器/对话，返回首帧不重放旧变化；不暂停或加速 Store 周期、不发收益。焦点只选可见面板。反馈清理不清受理命令或重试权，相关文件与既有综合审查哈希一致。"
+    },
+    {
+      "id": "F1-battle-authority",
+      "verdict": "pass_source",
+      "detail": "战策 sameSaved 比较敌方、关卡和完整参数；旧目标明确标为待确认草案，新开始仍按当前正式计划独立确认。原人生/敌方/关卡重置条件保留，不自动接新敌人、下一关、旅行或换装；七个手动动作和全部战策字段仍可达。"
+    },
+    {
+      "id": "F1-recovery-direction",
+      "verdict": "pass_source",
+      "detail": "疗养提示明确“不在洞府时先前往，抵达后另行确认”。只改表述，不改 30 秒/1 游戏月/余寿保留、6 秒服丹及其旅行/开始处理。"
+    },
+    {
+      "id": "F1-protected-and-budget",
+      "verdict": "pass_existing_evidence",
+      "detail": "原 13 文件哈希一致且未暂存。当前资产负向 release 日志为 116 项通过；未发现提高旧预算上限。真实费用、时钟与原子存储由同源正式检查证明，界面效果不参与结算。"
+    }
+  ],
+  "unchangedFormalFilesDiff": [],
+  "actualReleaseEvidence": {
+    "ui": {
+      "raw": "artifacts/goal-4/check-a-r/ui-release.json",
+      "sha256": "03030997d6e63bacb7bb3f56655759fd988e26a05b8be7c856eb46180478d1a3",
+      "sourceDigest": "f1c6bc3aae7d3a5cc67af6cf401eb6835f80e23419a74c731453965204a71940",
+      "actualCases": 151,
+      "declaration": "artifacts/goal-4/check-a-r/ui-release-declared.json",
+      "declaredCases": 151,
+      "caseMatch": true,
+      "nonPassedOrRetried": 0,
+      "stats": {
+        "startTime": "2026-10-21T15:05:26.900Z",
+        "duration": 907142.927,
+        "expected": 151,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "stageCheckCases": 20,
+      "stageCheckTitles": [
+        "reselecting the same market object preserves the complete unconfirmed finite authorization",
+        "market buy and sell inspection retain separate drafts and never turn navigation into authorization",
+        "closing future market goods reconciles the actual object and its selected visible shelf",
+        "inventory sale inspection returns to its original selected object without a transaction",
+        "an edited paused battle strategy survives ordinary goal and character inspection with the same activity",
+        "a completed battle retains its complete original strategy as read-only pages after the enemy is gone",
+        "market default shows the finite order and opens its complete limits on demand",
+        "recovery shows the body and real single-dose effect before its complete finite settings",
+        "a direct source-market context returns from ordinary details with its order draft intact",
+        "repeated inventory use inspection preserves its edited default-view draft",
+        "repeated inventory sell inspection preserves its edited default-view draft",
+        "leaving and returning after a saved hit removes old actor and progress short effects",
+        "a completed encounter original authorization stays readable after its explicit retreat changes location",
+        "real buy waits its full online period and atomically saves one formal outcome",
+        "real use waits its full online period and atomically saves one formal outcome",
+        "real rest waits its full online period and atomically saves one formal outcome",
+        "a turn saved while reading ordinary details does not replay hidden damage on return",
+        "a replacement life cannot inherit a supply default-view deduplication or edited market budget",
+        "retreat labels distinguish ordinary combat without changing the battle",
+        "retreat labels distinguish the actual trial without changing the battle"
+      ]
+    },
+    "storage": {
+      "raw": "artifacts/goal-4/check-a-r/storage-release.json",
+      "sha256": "d8ad08a9f64e42f926813937570e9193b898fe081a0cab7eefb6afba8db7dedd",
+      "sourceDigest": "f1c6bc3aae7d3a5cc67af6cf401eb6835f80e23419a74c731453965204a71940",
+      "actualCases": 115,
+      "declaration": "artifacts/goal-4/check-a-r/storage-release-declared.json",
+      "declaredCases": 115,
+      "caseMatch": true,
+      "nonPassedOrRetried": 0,
+      "stats": {
+        "startTime": "2026-10-21T15:05:25.065Z",
+        "duration": 260992.81800000003,
+        "expected": 115,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    "core": {
+      "raw": "artifacts/goal-4/check-a-r/core-release.log",
+      "sha256": "687d2c81ce4b0c0bdbfed933d23db3fc19c4208f932986b9d9462060429b2195",
+      "inputFile": "artifacts/goal-4/check-a-r/core-inputs-release.json",
+      "inputCount": 48,
+      "inputHashErrors": [],
+      "tail": "thout inventing further gameplay (81.738031ms)\n✔ retiring on a terrace never fakes a successful gate (63.182211ms)\nℹ tests 526\nℹ suites 0\nℹ pass 526\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 64876.694252\n"
+    }
+  },
+  "protected13": {
+    "hashErrors": [],
+    "stagedOverlap": [],
+    "count": 13
+  },
+  "priorReviewSources": [
+    {
+      "path": "artifacts/goal-4/check-a-r/context-wording-code-review.json",
+      "sha256": "f5764457ea1ae47d96789155e4f4e981e52c0dce440468c638208d8a3e4a4e15",
+      "sourceDigest": "30a6810b0c6fa5027021834f26fa7d1efbdd9b70c0437092896f7cb835baf51e",
+      "note": "保留旧报告原源身份；本报告重新阅读当前 F1，不将旧报告改标签。"
+    },
+    {
+      "path": "artifacts/goal-4/check-a-r/integration-final-review.json",
+      "sha256": "1a4977419cd2e3c984984c542641e461a60aa1dac3508f68fc2fa09d8e7bc3fd",
+      "sourceDigest": "3287f19db4a3466b5342459c52b16dc1d8d7ecf7d7a42d00aa116c44fab94d59",
+      "note": "保留旧报告原源身份；本报告重新阅读当前 F1，不将旧报告改标签。"
+    }
+  ],
+  "evidenceSelectionCorrection": "最初读到保留的 storage-final/core-final（3287 源）；随后已读取并核对 F1 实际重跑的 storage-release.json、core-release.log 和 core-inputs-release.json。本报告按当前 release 证据登记，不记成继承。",
+  "notClaimed": [
+    "本审查未重跑测试；读取实际 release 报告并核对 151 UI/115 IDB 声明、0 重试/跳过、526 规则/48 输入哈希及 116 资产日志。",
+    "本审查没有查看像素；最终 F1 美术需保留实际审阅链。",
+    "当前合同通过不等于完成整体矩阵、干净包或整个目标。",
+    "整体美术、长期放置平衡及真人验收仍未完成。",
+    "未开始 R4 或新玩法。"
+  ],
+  "humanAcceptance": false,
+  "wholeArtComplete": false,
+  "overallGoalComplete": false,
+  "assetGuardEvidence": {
+    "path": "artifacts/goal-4/check-a-r/assets-negative-release.log",
+    "sha256": "f570db8290b7852357090b353d21a44fb026e92fd65f2cfb875ca0fad170fd87",
+    "tail": ".............................\n----------------------------------------------------------------------\nRan 116 tests in 95.048s\n\nOK\n",
+    "runByThisAgent": false
+  }
+}

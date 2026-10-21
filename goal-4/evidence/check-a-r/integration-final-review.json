@@ -1,0 +1,189 @@
+{
+  "task": "CHECK-A-R final frozen-source integration review",
+  "date": "2026-10-21",
+  "sourceDigest": "3287f19db4a3466b5342459c52b16dc1d8d7ecf7d7a42d00aa116c44fab94d59",
+  "requiredFrozenDigest": "3287f19db4a3466b5342459c52b16dc1d8d7ecf7d7a42d00aa116c44fab94d59",
+  "scope": "Read-only final source/diff review; no browser/test execution, source edit, Git mutation or user-save access. Final pixels remain a separate original-PNG review.",
+  "reviewedFilesSha256": {
+    "web/src/ActionFeedbackStage.vue": "d2a653e4a6ccf811dec311f63f2c80ce2eeb8c1f8d63ebf246c5e71319796210",
+    "web/src/App.vue": "bfbdbdd271a49dcbe4e2ec41e92661f9390f0ba28625b94ceed8e01651ada704",
+    "web/src/BattlePanel.vue": "eb8e79783f4bf10e8a63ee35d19a2f26f5bcfba2fd0fced7bb03b48f2a5b859e",
+    "web/src/ProgressTrack.vue": "8ab670a30730e3f70038687eaf6be0994f2670651d62cddf71b6a541bd7f1b54",
+    "web/src/ReviewPages.vue": "174210329c8aa9af93839f2a54cac0d8d76c50362c862bbc79096ecfeb92e7e2",
+    "web/src/idle-preparation.css": "448951fdfde3aae156a36d26d385aca149a43f9ed1e29a7f285d099af27bfe0b"
+  },
+  "status": "source_review_passed_for_requested_integration_paths; full_final_runs_and_pixels_pending",
+  "checks": [
+    {
+      "id": "S3-bounded-unmark",
+      "verdict": "pass_source_review",
+      "detail": "New unmark helper clears the registered UI timer/class/data-command-state and removes that element entry. mark replacement/size eviction/unmarkPending/disposal share it. Deleting current Map entries during iteration is valid; cleanup remains bounded by the existing32 mark cap."
+    },
+    {
+      "id": "S3-context-cleanup",
+      "verdict": "pass_source_review",
+      "detail": "clear() selectively unmarks only actor-impact,actor-arrival,scene-arrival before its existing notice/motion/floats/generation reset. It does not unmark command-pending/success/error or interaction-press on a mere context change; it does not null pending activation, reset the receipt tracker, change Store activity or call any write/retry action."
+    },
+    {
+      "id": "S3-accepted-identity",
+      "verdict": "pass_source_review",
+      "detail": "Presentation generation cancellation still cancels stale awaited drawing only. Original pending write/command/receipt/retry authority remains in unchanged Store and ConfigurationIntent; on component disposal remaining DOM marks are removed without changing those authorities."
+    },
+    {
+      "id": "S1-local-progress",
+      "verdict": "unchanged_from_previous_source_review",
+      "detail": "BattlePanel still passes active=hubMain; ProgressTrack clears local delta/timer/opened dialog on hide and first return, and checks active before/after nextTick in inspect. Hidden battle main remains display:none with no duplicate game-content id; currentContent selects only visible targets."
+    },
+    {
+      "id": "S2-persisted-plan-and-pages",
+      "verdict": "unchanged_from_previous_source_review",
+      "detail": "Complete original single/auto/encounter plan parameters are read from saved plan. Fixed generic move labels avoid current-loadout historical renaming. runId+activityId identity excludes cycle revision and keeps the reading page stable across ordinary same-activity commits. Readonly rows contain no new authorization action."
+    },
+    {
+      "id": "C1-reading-body",
+      "verdict": "pass_source_review",
+      "detail": "idle-preparation.css now explicitly sets the fixed immersive activity detail to column/stretch, nav width100%, reading container flex1/full width, and local ReviewPages paragraph18px. The later scoped selector overrides inherited16px rule. Fresh final pixel evidence remains required; this source check is not a substituted image review."
+    },
+    {
+      "id": "C2-rest-unit",
+      "verdict": "pass_source_review",
+      "detail": "Rest setting visible label now includes（游戏月）while aria-label and remainingMonthsReserve rule stay unchanged."
+    },
+    {
+      "id": "original-confirmation-and-retry",
+      "verdict": "preserved",
+      "detail": "App configurationIntent/snapshot/stale/activity-CAS/retry functions are unchanged by the current diff. confirmConfiguration(retry=true) still uses retryFor(original commandId) instead of producing a fresh authorization; regular stale confirmation still requires recheck. No diff was present in src/full,Store,configuration-persistence,ReviewPages or focus.ts during this review."
+    }
+  ],
+  "observedExistingEvidence": [
+    {
+      "file": "artifacts/goal-4/check-a-r/ui-second.json",
+      "stats": {
+        "startTime": "2026-10-21T13:58:56.871Z",
+        "duration": 44472.700000000004,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "selectedCases": [
+        {
+          "title": "leaving and returning after a saved hit removes old actor and progress short effects",
+          "tests": [
+            {
+              "status": "unexpected",
+              "results": [
+                "failed"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "artifacts/goal-4/check-a-r/ui-targeted.json",
+      "stats": {
+        "startTime": "2026-10-21T14:03:32.909Z",
+        "duration": 244608.47400000002,
+        "expected": 45,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "selectedCases": [
+        {
+          "title": "an edited paused battle strategy survives ordinary goal and character inspection with the same activity",
+          "tests": [
+            {
+              "status": "expected",
+              "results": [
+                "passed"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "a completed battle retains its complete original strategy as read-only pages after the enemy is gone",
+          "tests": [
+            {
+              "status": "expected",
+              "results": [
+                "passed"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "leaving and returning after a saved hit removes old actor and progress short effects",
+          "tests": [
+            {
+              "status": "expected",
+              "results": [
+                "passed"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "a turn saved while reading ordinary details does not replay hidden damage on return",
+          "tests": [
+            {
+              "status": "expected",
+              "results": [
+                "passed"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "artifacts/goal-4/check-a-r/ui-reading-final.json",
+      "stats": {
+        "startTime": "2026-10-21T14:18:50.276Z",
+        "duration": 8968.312,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "selectedCases": [
+        {
+          "title": "a completed battle retains its complete original strategy as read-only pages after the enemy is gone",
+          "tests": [
+            {
+              "status": "expected",
+              "results": [
+                "passed"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "evidenceInterpretation": {
+    "actor": "Existing ui-second records the actual actor/progress failure. Later ui-targeted records that actor-return case and hidden-turn case passed. Old failure evidence remains retained.",
+    "battle": "Existing targeted paused-draft/detail and completed-original-plan cases passed. ui-reading-final has one passed completed-original-plan typography/layout case.",
+    "targetedLimit": "ui-targeted is45 expected/2 unexpected overall and is not represented as a whole pass. Parent owns diagnosis/final retest of its encounter/supply test failures.",
+    "finalPending": "The requested149 UI/115 IDB/526 core final runs are in progress per parent. This agent has not polled their process handles or asserted their final outcomes."
+  },
+  "newBlockingSourceFinding": null,
+  "remainingResponsibilities": [
+    "Terminal149 UI/115 IDB/526 core/build/assets and declared-vs-actual source evidence",
+    "Final selected originalPNG pixel review; only exact-byte prior frames may inherit",
+    "Current budget limits and protected13 unchanged evidence",
+    "Actual user whole-art/gameplay approval and all later Goal tasks"
+  ],
+  "notClaimed": [
+    "Current whole final matrix is passed.",
+    "A source/partial test report proves elapsed timing,CAS or atomic persistence.",
+    "All screenshots or final-source pixels were reviewed in this step.",
+    "Whole art, human acceptance,long-term balance,compatibility or performance completion."
+  ],
+  "adversarialReview": "Previously missed actor cleanup was actually reproduced in historical red evidence and now has bounded source cleanup plus targeted green evidence. The fix leaves accepted writes/receipts/retry authority untouched. Current review does not erase other targeted failures or substitute for the running final matrix and fresh final pixels.",
+  "testsRunByThisAgent": [],
+  "sourceFilesEditedByThisAgent": [],
+  "humanAcceptance": false,
+  "overallGoalComplete": false
+}

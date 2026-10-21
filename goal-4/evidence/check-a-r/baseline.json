@@ -1,0 +1,8 @@
+{
+  "previousGoalTurn": "progress: R3 implementation8701738 and delivery075bec5;131 UI;preview21634567",
+  "head": "075bec55086752f090e664e649f746157653aead",
+  "branchBefore": "codex/goal-4-stage-r3",
+  "testedBuild": "artifacts/goal-4/r3/tested-build-final.json",
+  "sourceDigest": "21634567ef99dbd15320dab50638ba975ff2bd1c922f2e5782fa0443b7b0b3a9",
+  "original13Unchanged": true
+}

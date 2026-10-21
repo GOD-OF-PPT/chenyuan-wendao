@@ -1,0 +1,79 @@
+{
+  "task": "CHECK-A-R context-specific retreat and recovery wording source review",
+  "date": "2026-10-21",
+  "sourceDigest": "30a6810b0c6fa5027021834f26fa7d1efbdd9b70c0437092896f7cb835baf51e",
+  "scope": "Read-only current source/diff review against prior integration review, not a browser/test run or fresh pixel review. No source/test/Git/user-save edits.",
+  "reviewedFilesSha256": {
+    "web/src/App.vue": "3ea1b7cb10e77a3b08adc9a25dc10ff06269ea806cef58604cf69248e975abeb",
+    "web/src/BattleStrategy.vue": "20c5c28c508a19c92c8654e02a3b0adb26dee0a583f1199498509b39e9a6bcc9",
+    "web/src/BattlePanel.vue": "ae38553a60ab2ae055bba90b93c699bd1b2581daae45e6d38e5effaef66b7b66",
+    "web/src/AdventurePlanner.vue": "8ddf6559f83f02c79a3135f744487f4de710efa9c8070742a04707ca830a0bf1",
+    "web/src/RecoveryPlanner.vue": "f32b1fb4581293b785852631f2843ecf8958dce5bc78738697f9bd038af259d4"
+  },
+  "status": "context_source_and_prop_flow_passed; runtime_and_pixels_not_claimed",
+  "checks": [
+    {
+      "id": "C3-history-source",
+      "verdict": "pass_source_review",
+      "source": "web/src/App.vue originalAdventureReadings risk row",
+      "detail": "The saved plan alone determines结束本段历练 for kind=encounter,结束本次交锋 for battle.trialStage=null, and结束本轮天劫 for a saved numbered trialStage. It does not infer historical context from current Game, location, loadout or enemy. Fixed historical generic move labels and activity runId+id ReviewPages identity remain."
+    },
+    {
+      "id": "C3-current-context",
+      "verdict": "pass_source_review",
+      "sources": [
+        "web/src/BattlePanel.vue:20",
+        "web/src/BattleStrategy.vue:12",
+        "web/src/BattleStrategy.vue:49",
+        "web/src/BattleStrategy.vue:61"
+      ],
+      "detail": "Actual current enemy.trial is passed into the outer battle strategy and forwarded into the nested editor. Optional undefined ordinary enemy flag resolves to false through withDefaults. Standalone AdventurePlanner editor receives defaultfalse and its selectable enemy catalogue explicitly excludes trial enemies. Thus ordinary planning is not accidentally labelled trial merely because current Game may contain a trial record."
+    },
+    {
+      "id": "C3-presentation-only-prop",
+      "verdict": "pass_source_review",
+      "detail": "New trial:boolean is consumed only by retreatEffect text. It is not copied into draft Strategy, autoPlan, command, Game, rule preview or Store. Existing reset watchers/stop thresholds/strategy counts remain unchanged."
+    },
+    {
+      "id": "C3-shared-current-effects",
+      "verdict": "pass_source_review",
+      "detail": "Risk option, manual retreat, pending authorization and the matching current saved authorization share retreatEffect; return-to-cave title is撤回洞府. Current saved authorization retains its existing version6/status/runId/gameRevision guards. Formal validated activity/Game context keeps its target consistent; historical/different-target plan is handled by the separate saved-plan-only reader."
+    },
+    {
+      "id": "C3-ordinary-encounter",
+      "verdict": "pass_source_review",
+      "source": "web/src/AdventurePlanner.vue adventure-preview",
+      "detail": "Ordinary Encounter summary now says撤回洞府，气血-8，本段即停 and does not refer to a trial. Full risk editor retains8HP/minimum1/no-drop information through the shared ordinary context text."
+    },
+    {
+      "id": "C4-recovery-direction",
+      "verdict": "pass_source_review",
+      "source": "web/src/RecoveryPlanner.vue recovery cabinet",
+      "detail": "Rest guidance now clearly says不在洞府时，先前往洞府；抵达后另行确认恢复安排. The explicit travel and separate rest action handlers and their original plan values are untouched by this wording change."
+    },
+    {
+      "id": "write-identity",
+      "verdict": "unchanged_by_current_source_diff",
+      "detail": "No diff in full rules,Store,configuration-persistence,ReviewPages or focus.ts. App configuration CAS, stale confirmation versus retryFor(original commandId), accepted inspection ownership guards and frozen write intent remain unchanged. Game/commands/costs/cycle timers were not altered by this context prop."
+    }
+  ],
+  "minorNonblockingPolish": {
+    "id": "C6-double-stop",
+    "source": "web/src/BattleStrategy.vue authorization/retreatEffect",
+    "observation": "retreatEffect includes a final。 and authorization also appends。, so an active risk=flee saved-authorization sentence can end in two full stops.",
+    "suggestion": "Optionally remove the helper final full stop and let the enclosing sentence add punctuation. This is not a Game/authorization defect and saves3 UTF8 bytes.",
+    "browserObserved": false
+  },
+  "budgetEvidenceBoundary": "Parent reports44985/45000 current adventure native bytes versus44951 prior; this agent did not run the asset validator or change any cap. tested-build-ninth.json source identity was read and retained.",
+  "oldImagesRemainOldSource": [
+    "artifacts/goal-4/check-a-r/visual-final-review.json remains source3287f19d with its actual20 fresh/5 exact-byte inherited evidence.",
+    "No old image/report is relabelled as30a6810b. New source pixels require actual new artifacts and only exact originalPNG byte/hash inheritance."
+  ],
+  "validationPending": "Parent reports four new context/real-rest checks currently executing. No final current wholeUI/storage/rule/pixel result is asserted here.",
+  "adversarialReview": "Resolved visible ordinary/trial wording and travel-direction findings at their actual source, without guessing context from current player state or changing formal outcomes. Nested editor propagation is explicit; independent ordinary editor stays ordinary. Only a nonblocking punctuation duplication remains noted, not promoted to a logic failure.",
+  "testsRunByThisAgent": [],
+  "sourceFilesEditedByThisAgent": [],
+  "humanAcceptance": false,
+  "wholeArtComplete": false,
+  "overallGoalComplete": false
+}

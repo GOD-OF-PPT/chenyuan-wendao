@@ -1,0 +1,241 @@
+{
+  "task": "CHECK-A-R early targeted pixel review",
+  "date": "2026-10-21",
+  "sourceDigest": "2673095822a4039d6b741486a97d39e39d08942873803cf1ea93c9fda5e567d0",
+  "scope": "Exactly the8 requested current targeted screenshots, full-size JPEG quality68 copies actually viewed, originals and both hashes retained. No runtime/test/Git/user-save edits and no compatibility/performance checks.",
+  "status": "eight_frames_reviewed; original_plan_body_typography_needs_adjustment",
+  "actualReviewed": 8,
+  "inherited": 0,
+  "requestedUnreviewed": 0,
+  "humanAcceptance": false,
+  "overallArtComplete": false,
+  "images": [
+    {
+      "name": "market-focused-default",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-targeted-results/stage-check-market-default-3b8fe-s-complete-limits-on-demand-chromium/market-focused-default.png",
+      "originalSha256": "49d99efc323d93deb9aad7b17cc0e05f7a45b23222eb82e41e7fd61f7ebf6f02",
+      "originalBytes": 1082479,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-early-agent/market-focused-default.jpg",
+      "previewSha256": "11f2e7f3af98b94051acd08abc57b937cc995f757309808850306f947e1dd60e",
+      "previewBytes": 108429,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actually viewed original1440x900 JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "Actual four shelf objects, quantities/prices, selected herb/use,15-second unit cost, finite1-piece/5-stone/reserve0 summary and one explicit purchase action are readable.",
+        "Catalogue pager and primary action remain separated from the bottom navigation. Default numeric forms are collapsed; store detail remains visible.",
+        "The image supports clear default presentation, not proof of no hidden Game writes or cumulative-budget calculation."
+      ]
+    },
+    {
+      "name": "market-complete-settings",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-targeted-results/stage-check-market-default-3b8fe-s-complete-limits-on-demand-chromium/market-complete-settings.png",
+      "originalSha256": "fb399fd6aa37ed700a2bfce72d9354551eae2413bc1ff96cb556eec688e7246b",
+      "originalBytes": 250952,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-early-agent/market-complete-settings.jpg",
+      "previewSha256": "2749bae5a80dab5d2fc8e7686ce4716aa5c70790b098472df1162a343aa37001",
+      "previewBytes": 38534,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actually viewed original1440x900 JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "Single modal shows max quantity1, cycle stop goal, cumulative budget5 and reserve0, plus draft-only/return explanation.",
+        "All labels/controls/return fit without clipping, overlap or nested scroll."
+      ]
+    },
+    {
+      "name": "market-edited-arrangement",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-targeted-results/stage-check-reselecting-th-5dd3b-firmed-finite-authorization-chromium/market-edited-arrangement.png",
+      "originalSha256": "c882d433bad0eae7d3ee25794e16714e99deefdac5bcfc7fb47701205cc97cd9",
+      "originalBytes": 247228,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-early-agent/market-edited-arrangement.jpg",
+      "previewSha256": "9b61c8fc683674f7673d248ba74a9fd6c649b10a8e1a58e46e1b475b7f6c9407",
+      "previewBytes": 41918,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actually viewed original1440x900 JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "Target arrangement visibly shows maximum7, target-stock17, cumulative budget123 and reserve9.",
+        "The additional stock-target field fits within the modal and return is readable; current image has123 rather than35123.",
+        "A screenshot alone does not establish blur/autobudget behavior or saved-plan identity."
+      ]
+    },
+    {
+      "name": "recovery-focused-default",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-targeted-results/stage-check-recovery-shows-7e120-ts-complete-finite-settings-chromium/recovery-focused-default.png",
+      "originalSha256": "a56efa9abf11be15ee9361df4b35ab523a1ec6daaa680b58b892d06e176aabef",
+      "originalBytes": 1045715,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-early-agent/recovery-focused-default.jpg",
+      "previewSha256": "cc02ed95a25042fd7657253275ad30d862d3f53f045a90d28b33969e36206623",
+      "previewBytes": 117351,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actually viewed original1440x900 JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "Scene remains visible beside an intentional right-side recovery surface. Actual HP79/100 and MP60/60 precede medication/rest choices.",
+        "Selected healing pill has stock6,6 seconds/pill, actual+21 HP/+0 MP, target100%, maximum3/reserve0 and projected1-pill effect. Main action explicitly uses the selected pill to target.",
+        "No overlapping controls or bottom-navigation clipping is visible; complete settings are not expanded by default."
+      ]
+    },
+    {
+      "name": "recovery-complete-settings",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-targeted-results/stage-check-recovery-shows-7e120-ts-complete-finite-settings-chromium/recovery-complete-settings.png",
+      "originalSha256": "c0ab68514ea222cd3e8675d9fbd32a3d954c7f26879a2fffb0716e6b27bf42f2",
+      "originalBytes": 239749,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-early-agent/recovery-complete-settings.jpg",
+      "previewSha256": "1885a99a638e4bd28425fd0cfde92a0613549c9bd56a12a1887e866000daed44",
+      "previewBytes": 33576,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actually viewed original1440x900 JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "One clear modal contains target100%, maximum3 pills and reserve0, with draft-only explanation and return.",
+        "No field/body/return overlaps are visible."
+      ]
+    },
+    {
+      "name": "rest-complete-settings",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-targeted-results/stage-check-recovery-shows-7e120-ts-complete-finite-settings-chromium/rest-complete-settings.png",
+      "originalSha256": "820a67ced02a0888542d35be5e2271baafaf59c9ed665db83b0c348da904f7b4",
+      "originalBytes": 240101,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-early-agent/rest-complete-settings.jpg",
+      "previewSha256": "649e1116e8d54023cb397938c3df0f666de3029a5c039768ceb4f21a7e571e49",
+      "previewBytes": 30996,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actually viewed original1440x900 JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "Rest has a separate finite-arrangement title and the single legitimate remaining-life reserve input1; no drug-only fields are shown.",
+        "The field label does not explicitly state game months, making the unit less clear in this modal than the default rest cost. See improvementC2."
+      ]
+    },
+    {
+      "name": "battle-draft-after-read-only-details",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-targeted-results/stage-check-an-edited-paus-b2bbc-tion-with-the-same-activity-chromium/battle-draft-after-read-only-details.png",
+      "originalSha256": "58b7cd5fe406e63a9868f732cf2f358c98abce2bc53da1eb320cd80307f9a4ea",
+      "originalBytes": 781702,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-early-agent/battle-draft-after-read-only-details.jpg",
+      "previewSha256": "f9e2bde8ab808b20a03a8740784ec8a474c4b231818076b39e965176b9edaf99",
+      "previewBytes": 108155,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actually viewed original1440x900 JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "Player-edited9-turn/77-MP, heal threshold73%, pill budget2/reserve1 appear in the strategy editor.",
+        "The persisted authorization is separately labelled original40/480, healing threshold50%/budget1/reserve0 on the right; new draft says待确认 and main action is explicit重新安排.",
+        "All fields, finite summary, primary confirmation and navigation fit. This supports visual separation, while test snapshots must prove the detail-return draft lifecycle."
+      ]
+    },
+    {
+      "name": "completed-battle-original-plan",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-targeted-results/stage-check-a-completed-ba-4270e-ges-after-the-enemy-is-gone-chromium/completed-battle-original-plan.png",
+      "originalSha256": "d6b62b753f990035dd1b95e8fcea5efdc2d498284940b32d3deabc2bf5932195",
+      "originalBytes": 965263,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-early-agent/completed-battle-original-plan.jpg",
+      "previewSha256": "282f7515be8ee0214a257e2bfe39e747f80f527c59dbf171a79551652f2a002c",
+      "previewBytes": 87345,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actually viewed original1440x900 JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "Original saved-plan page is visibly read-only with page5/5, danger20% and pause/no-leave explanation; no start or replay action appears.",
+        "The original-plan tab wraps只读 to a second line and the article uses only part of a large surface despite available width.",
+        "The new historical body inherits16px ReviewPages paragraph styling from story-book.css; this needs a local18px body override under the current contract. SeeC1.",
+        "Only the photographed last history page was actually seen here; other historical pages are not pixel-approved by this image."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "CHECK-A-R-C1",
+      "severity": "required_current_contract_fix",
+      "image": "completed-battle-original-plan",
+      "observation": "New historical plan body uses smaller ReviewPages text and an unnecessarily narrow centered surface;原战策·只读 wraps to two lines despite a wide empty panel.",
+      "sourceSupport": [
+        "web/src/story-book.css:20 .single-screen .review-pages p font-size calc(16px * --font-scale)",
+        "web/src/stage-r1.css:6 .activity-detail-surface align-items:center",
+        "web/src/App.vue:589 new original-plan nav and ReviewPages surface"
+      ],
+      "why": "Current contract requires main body18px, helper minimum14px. Reusing the generic confirmation paragraph rule did not automatically satisfy that current surface requirement.",
+      "suggestion": "Use the available width with explicit column/stretch on activity-detail-surface and a local review-pages paragraph18px override. Keep full saved rows/pages and existing budgets, without shrinking/cropping/scrolling. Add geometry/computed-font assertion and fresh image for the changed page.",
+      "evidenceBoundary": "Pixel observation plus actual matching source styles; this agent did not inspect computed browser styles or run a new test."
+    },
+    {
+      "id": "CHECK-A-R-C2",
+      "severity": "minor_clarity_improvement",
+      "image": "rest-complete-settings",
+      "observation": "疗养余寿保留量1 has no explicit unit inside this isolated settings modal.",
+      "suggestion": "State游戏月 beside or in the field label while retaining existing aria/test identity and numeric rule. This clarifies the budget without changing any value/limit or action.",
+      "evidenceBoundary": "Visible copy observation only; no rule or lifecycle defect is asserted."
+    }
+  ],
+  "noBlockingOverlapObservedInOtherFrames": true,
+  "notClaimed": [
+    "Current targeted or final complete test-suite terminal result.",
+    "Every generated screenshot or every original-plan page was seen.",
+    "Screenshots prove seconds elapsed, zero early debit/reward, Game/activity identity, atomic save, CAS or blur budgeting.",
+    "Current267 source passed the full60000B flow budget; parent has reported10B excess and plans a later unused-selector removal.",
+    "A later source may inherit these frames without exact originalPNG byte identity and explicit chain.",
+    "Whole game art/long-term balance/actual human approval, compatibility or performance completion."
+  ],
+  "budgetBoundary": "This review did not change the budget or remove CSS. Parent owns the reported10B original flow-budget failure and subsequent actual verification. Future source remains separate; only identical PNG bytes may inherit this real review.",
+  "adversarialReview": "Eight actual images were checked, not only geometry/hash. Default and full finite controls are preserved and readable. The new original-plan body is called out despite functional green because reusing16px confirmation copy is below the current main-body rule; minor missing unit is separately classified.",
+  "testsRunByThisAgent": [],
+  "sourceFilesEditedByThisAgent": []
+}

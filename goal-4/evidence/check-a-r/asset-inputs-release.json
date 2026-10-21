@@ -1,0 +1,23 @@
+{
+  "art/tools/check_inventory.py": "d1bca5a940385334fc688cd2c8c3954b4eb42a7761a088796e7715a8624e4904",
+  "art/tools/test_inventory.py": "b655685a3fe7cd22a2c7849a4cea617e3fd42b8728e36a0ade0c4434a8024cd2",
+  "art/asset-manifest.json": "b97fcd2e2b067527a762f891259d6583505e9f7a0172614f53f01f7801b251e8",
+  "art/redesign/action-feedback.json": "770fff544f66c3f0be1e87ab72168b99d997b2ab40d07001a43478d20db1058d",
+  "art/redesign/character-battle-manifest.json": "1c9ed96b15b37a043b4db2cff7f3e50ecae35d102d28918a59611be202699af3",
+  "art/redesign/desktop-ui-manifest.json": "ab0d778d6d35fd695eb56b2edc9e24e92a93d2e2c6c02cb4cb378dc11be7e2e4",
+  "art/redesign/idle-adventure.json": "5563c6ae1aa77443d03452bdbe910f2a28312246845db86d6f327a486cec1f0a",
+  "art/redesign/idle-cultivation.json": "0386f7f79b1a2f5cfd5d6768d135c20012403eb8c84f41abe617859648935fde",
+  "art/redesign/idle-milestones.json": "4c6ca3973d9080fa1b5fa5f6fddaebf2f6b233acf11d29a78bb366e429590766",
+  "art/redesign/idle-preparation.json": "87515dc62d10f7a9297a345a3cae5e44fb72afea90512cc63458d09b05f44c98",
+  "art/redesign/idle-production.json": "b9191ad1afdb2b1cdb317e56b22f96b3075c2c42a1a7e3bab30dc17694beaec5",
+  "art/redesign/idle-sources.json": "3bc1478577090c5a38d547502b67e414a00c6c4d239ef23efc51f76d6e75502b",
+  "art/redesign/immersive-ui.json": "8dcaccdb4515e73e9737d3d64a8b5ac3fdf93c008a149e546334a7015e07b2ed",
+  "art/redesign/manifest.json": "91f3b8d97b187d2e8d0ad8cb3f5494bf7d82994faa54b1afbeed27e0fe8944f7",
+  "art/redesign/panel-materials.json": "87f631ea9ef240bae4d6a38225fd30625c04716f6aa0a81a54131430611df34e",
+  "art/redesign/playable-flow.json": "26eb466a37b96522d8da966071dae91c625e3a1e2d14c527337f29877619913b",
+  "art/redesign/single-screen-native.json": "e976325f50529077b70893316fdbc8a7990b0be4c15b5b47d1b80da39382f7d6",
+  "art/redesign/stage-r1.json": "aa0fc2f5b5f3104666546be1f83279f27ea8223c5d63f3d0373547032d1ce0fa",
+  "art/redesign/stage-r2.json": "27f395ba40e4d7cda2f73f5c5e639a169828089d15be500bdc49407e175ba1df",
+  "art/redesign/stage-r3.json": "82fea4064a9d7947c6901130c0746b1e0b06a1f84730b65d29860ed9f6384358",
+  "art/redesign/story-journey.json": "dd05cc9f1ff062b8115e2094b83ebe8e374366002858cfd8a39d05f82313bf39"
+}

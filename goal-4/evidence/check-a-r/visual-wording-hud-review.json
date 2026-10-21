@@ -1,0 +1,178 @@
+{
+  "task": "CHECK-A-R current wording and trialHUD targeted pixel review",
+  "date": "2026-10-21",
+  "sourceDigest": "f1c6bc3aae7d3a5cc67af6cf401eb6835f80e23419a74c731453965204a71940",
+  "scope": "Exactly5 current named1440x900 single Chromium PNG artifacts, all freshly actually viewed as original-size lossy JPEG quality68 with originals/both hashes retained. No browser/test/source/Git/user-save action by this agent.",
+  "status": "five_targeted_frames_pass_visual_and_context_wording_review",
+  "freshCount": 5,
+  "inheritedCount": 0,
+  "requestedUnreviewed": [],
+  "images": [
+    {
+      "name": "retreated-encounter-original-plan",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-wording-hud-final-results/stage-check-a-completed-en-9ce36-it-retreat-changes-location-chromium/retreated-encounter-original-plan.png",
+      "originalSha256": "5ec05d3edb6110a0015c08984b79743eec50828c72b91851c8ee6f225071cc42",
+      "originalBytes": 894668,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-wording-hud-agent/retreated-encounter-original-plan.jpg",
+      "previewSha256": "b83471559b5d0992fa9914489f172318b15e3fbf34a864c7af6fcdd865587a8f",
+      "previewBytes": 83634,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image full-size JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "Read-only ordinary Encounter history now explicitly says结束本段历练 after回洞府/HP-8最低1. It no longer calls this ordinary plan a trial.",
+        "Full-width tabs, one-line原战策·只读 label, readable18px body and page5/5 controls remain clear. No restart or confirmation action appears."
+      ]
+    },
+    {
+      "name": "rest-real-countdown",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-wording-hud-final-results/stage-check-real-rest-wait-c3eb1-ly-saves-one-formal-outcome-chromium/rest-real-countdown.png",
+      "originalSha256": "6ca53e2c98914688ec8fe8d4420793a5cfe1a32633bbe5456ff04ecd1c2606f1",
+      "originalBytes": 1048428,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-wording-hud-agent/rest-real-countdown.jpg",
+      "previewSha256": "bd5105128d1a28a49e546b4971a2a9220989417911c86b2120014978228815f5",
+      "previewBytes": 119291,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image full-size JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "Visible direction text now says不在洞府时，先前往洞府；抵达后另行确认恢复安排. It clearly separates explicit travel from recovery.",
+        "Single activity rail shows29.4 seconds/每轮30秒/0 of1 and pause; actual79HP/52MP is separate from projected+21HP/+8MP and1-game-month cost. No new clipping from longer direction copy."
+      ]
+    },
+    {
+      "name": "rest-real-saved-outcome",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-wording-hud-final-results/stage-check-real-rest-wait-c3eb1-ly-saves-one-formal-outcome-chromium/rest-real-saved-outcome.png",
+      "originalSha256": "ccfc7ed30861e55cdaeaa748ae53a546309f5673bebb0319b1d35d147c37061d",
+      "originalBytes": 1046525,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-wording-hud-agent/rest-real-saved-outcome.jpg",
+      "previewSha256": "fff807b81c26b80c1666250c7abd4cce7ffb8b3491d509390bda52a856564fd4",
+      "previewBytes": 117969,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image full-size JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "Corrected direction text remains readable after completion; actualHP100/MP60/pillstock6, completed1/1 and disabled further rest are clear.",
+        "A still frame records completion presentation only; actual time/cost/atomicity must come from tests."
+      ]
+    },
+    {
+      "name": "ordinary-retreat-context",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-wording-hud-final-results/stage-check-retreat-labels-51504-without-changing-the-battle-chromium/ordinary-retreat-context.png",
+      "originalSha256": "9865be897bc3789ffc1d43a4d680c153595f91f524140dbc0aeb08de46c3a6f9",
+      "originalBytes": 850816,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-wording-hud-agent/ordinary-retreat-context.jpg",
+      "previewSha256": "71228d7a2f63bbe47b0caefc197254aa30d08d240af7b3fde3c568c3ef905de3",
+      "previewBytes": 89934,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image full-size JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "Risk option title is撤回洞府 and ordinary battle effect isHP-8/minimum1/no-drop/结束本次交锋. It does not mislabel the ordinary fight as a trial.",
+        "Danger/finite strategy/primary explicit auto-start and all global entries fit without overlap or crop."
+      ]
+    },
+    {
+      "name": "trial-retreat-context",
+      "originalPng": "artifacts/goal-4/check-a-r/ui-wording-hud-final-results/stage-check-retreat-labels-58cb1-without-changing-the-battle-chromium/trial-retreat-context.png",
+      "originalSha256": "b2350fadf675cf2721d732e052983f9c37bc912575dcffcfd12ebe56dbb3d531",
+      "originalBytes": 801664,
+      "previewJpeg": "artifacts/goal-4/check-a-r/visual-wording-hud-agent/trial-retreat-context.jpg",
+      "previewSha256": "5674e8ccb721d403cdc89e94786ef47026389d7f674d31b77a937249880b6228",
+      "previewBytes": 88071,
+      "width": 1440,
+      "height": 900,
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true,
+      "reviewMethod": "Actual view_image full-size JPEG68 copy, no resize; at most2 images per tool call",
+      "observations": [
+        "The same risk editor correctly says结束本轮天劫 for the actualtrial context and retains回洞府/HP-8/minimum1/no-drop effects.",
+        "HUD goal fully fits:渡过当前天劫 and shortened准备已齐，可核对行动 are readable beneath the current-goal label. No top clipping or overlap with nearby saved/help/settings is visible.",
+        "Full28000/28000 XP text uses two readable lines within HUD; no shrinking or hidden field is needed in this frame."
+      ]
+    }
+  ],
+  "findingsResolved": [
+    {
+      "id": "CHECK-A-R-C3",
+      "status": "actually_visible_current_context_correction",
+      "evidence": [
+        "retreated-encounter-original-plan",
+        "ordinary-retreat-context",
+        "trial-retreat-context"
+      ],
+      "detail": "Saved ordinary Encounter history ends本段历练; ordinary current battle ends本次交锋; actualtrial risk says结束本轮天劫. These contexts are visibly distinct."
+    },
+    {
+      "id": "CHECK-A-R-C4",
+      "status": "actually_visible_direction_correction",
+      "evidence": [
+        "rest-real-countdown",
+        "rest-real-saved-outcome"
+      ],
+      "detail": "不在洞府时先前往洞府 and separate confirmation accurately state travel direction without implying automatic rest."
+    },
+    {
+      "id": "CHECK-A-R-C5",
+      "status": "actually_visible_return_title_correction",
+      "evidence": [
+        "ordinary-retreat-context",
+        "trial-retreat-context"
+      ],
+      "detail": "The previously source-only risk-option title is now actually photographed as撤回洞府 in both ordinary andtrial contexts."
+    },
+    {
+      "id": "trialHUD-goal-overflow",
+      "status": "no_clipping_observed_in_current_frame",
+      "evidence": "trial-retreat-context",
+      "detail": "Shortened preparation hint and goal title fit fully in theHUD; actual numeric bounds belong to the separate passed geometry test."
+    }
+  ],
+  "newBlockingVisualOrWordingFindings": [],
+  "unchangedLimits": [
+    "Only5 images reviewed here, not the whole151 UI suite or all release frames.",
+    "A picture of a countdown or complete state does not prove real elapsed time,decrement,formal costs,rewards,CAS or atomic persistence.",
+    "No current successful whole-matrix result is asserted by this pixel report.",
+    "No overall user/game-art/long-term-balance acceptance or compatibility/performance result."
+  ],
+  "priorEvidencePreserved": "Old visual-final-review.json remains3287 source with its actual25-frame coverage and then-real C3/C4 findings. This report does not rewrite it; future release artifacts may inherit only exact originalPNG bytes with an explicit chain to a real review.",
+  "adversarialReview": "Read all5 targeted actual images after the copy changes instead of inferring success from source or earlier green checks. Ordinary/history/trial directions and trialHUD are now visibly consistent; no new blocked control or cropped text observed in these5.",
+  "testsRunByThisAgent": [],
+  "sourceFilesEditedByThisAgent": [],
+  "humanAcceptance": false,
+  "wholeArtComplete": false,
+  "overallGoalComplete": false
+}

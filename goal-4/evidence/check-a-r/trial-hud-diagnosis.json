@@ -1,0 +1,13 @@
+{
+  "source": "30a6810b",
+  "raw": "ui-trial-hud-red.json",
+  "actualBox": {
+    "top": -4.484375,
+    "bottom": 116.484375,
+    "height": 120.96875
+  },
+  "headerHeight": 112,
+  "cause": "Ready-state redundant gap text wrapped to a second line, enlarging the centered goal button outside header/viewport",
+  "fix": "Shorter same-meaning HUD ready summary; all real deficits and complete goal entry retained, no font/clipping/viewport changes",
+  "currentTrialTextPassedBeforeBoxFailure": true
+}
