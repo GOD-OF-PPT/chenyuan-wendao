@@ -1,0 +1,58 @@
+{
+  "task": "U8-A-R2 source/explore/adventure readonly code audit",
+  "scope": [
+    "web/src/SourcePlanner.vue",
+    "web/src/ExplorePanel.vue",
+    "web/src/AdventurePlanner.vue",
+    "web/src/BattlePanel.vue",
+    "web/src/BattleStrategy.vue",
+    "web/src/stage-r2.css",
+    "web/src/idle-sources.css",
+    "web/src/idle-adventure.css",
+    "web/e2e/stage-r2.spec.ts",
+    "web/e2e/idle-sources.spec.ts",
+    "web/e2e/idle-adventure.spec.ts",
+    "docs/decisions/0014-adventure-stage-r2-contract.md"
+  ],
+  "activity": "Read source, current diff, contract, and test assertions only. No tests, browser actions, user-save operations, source edits, or Git mutations performed.",
+  "excluded": "App inspection ownership repair is owned by parent; this report does not re-audit its concurrent changes.",
+  "findings": [
+    {
+      "id": "R2-RO-01",
+      "status": "requires verification and repair or explicit contract clarification",
+      "priority": "medium",
+      "file": "web/src/SourcePlanner.vue",
+      "symbol": "select / locate / reserve",
+      "problem": "The cached SourcePlanner reinitializes cycles, target fields, and monthBudget after a real location change, but leaves reserve from the previous location. The contract states actual location or life changes rebuild the context.",
+      "reproduction": "At wilderness set a source draft remaining-month reserve to 9, close settings, actually travel to a different location that has sources, reopen sources and arrangement. The new source count and month budget reset while reserve remains 9. Travel through an empty-source location and return has the same residue.",
+      "minimalFix": "Reset the complete source draft only on real runId/location change, including reserve; preserve same-object, category-only, normal tick, and pause drafts. If reserve is intentionally global policy, state that explicitly and verify it rather than asserting all parameters reset.",
+      "evidence": "SourcePlanner select initializes multiple fields but never reserve; the new KeepAlive preserves this component within one run."
+    },
+    {
+      "id": "R2-RO-02",
+      "status": "requires verification and repair",
+      "priority": "medium",
+      "file": "web/src/AdventurePlanner.vue",
+      "symbol": "select",
+      "problem": "Re-selecting the already selected encounter enemy unconditionally calls defaultEncounterPlan and discards edited finite limits and strategy, contrary to the general same-object draft rule in AGENTS R2.",
+      "reproduction": "Select wolf, set 2 encounters/82 actions/2 months and a nondefault medicine strategy, return to object tab, then click the already selected wolf. Limits and strategy revert to defaults without a new target.",
+      "minimalFix": "Treat same enemy selection as a no-op for the draft; keep actual enemy change initialization and initial unavailable-enemy fallback. Do not suppress explicit saved-plan restoration.",
+      "evidence": "AdventurePlanner select lacks the same-object guard added to SourcePlanner; current R2 tests cover this only for source objects."
+    }
+  ],
+  "preservedByInspectedDiff": [
+    "SourcePlan data fields still include maxCycles/until/target/monthBudget/remainingMonthsReserve. Default cycle/month values and one-cycle preview use the same formal functions.",
+    "Encounter form fields were moved from object details to limits, not deleted: count, target, target quantity, maxCycles, monthBudget, remainingMonthsReserve, mpBudget remain. Finite summary remains visible on the object page.",
+    "Battle strategy priorities, heavy-response, release threshold, both medicine thresholds/budgets/reserves, and danger/risk controls remain in BattleStrategy. Manual seven actions remain mapped to the original events.",
+    "Source current-working presentation checks activity version/source/run/Game revision plus runtime id/generation and does not add a clock or reward mutation.",
+    "New CSS is imported through main.ts and targets existing stage/component class bindings. KeepAlive emits no wrapper element that would invalidate direct-child CSS layout selectors.",
+    "Native dialog closes on SourcePlanner deactivation; category inspection keeps the draft without starting or committing Game."
+  ],
+  "limits": [
+    "No pixel review performed by this audit. CSS read and source/test coverage do not prove absence of overlap, legibility, or art acceptance.",
+    "No runtime reproduction performed. Findings are source-bound deterministic paths for the parent to verify with current-source UI checks.",
+    "The parent-reported rule/IDB/UI green results were not independently re-executed here.",
+    "No compatibility, environment, performance, full-route, numerical balance, or human acceptance claimed.",
+    "Concurrent parent edits may supersede source findings; this artifact is a review snapshot, not a final release gate."
+  ]
+}
