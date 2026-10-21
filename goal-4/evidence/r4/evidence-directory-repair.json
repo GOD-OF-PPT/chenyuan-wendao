@@ -1,0 +1,99 @@
+{
+  "problem": "Adapted recorder retained old evidence destination, caught before staging/commit; no runtime/user save affected",
+  "backup": "artifacts/goal-4/r4/evidence-directory-mapping-mistake",
+  "correctDirectory": "goal-4/evidence/r4",
+  "oldTrackedEvidenceRestoredExactlyFromHead": true,
+  "rows": [
+    {
+      "path": "goal-4/evidence/check-a-r/tested-build.json",
+      "wasTracked": true,
+      "mistakenDataSha256": "04fde6288441b0d430980efd7e38c639eaa74f7d6ff5ccd65991759576b6036f",
+      "correctDataSha256": "04fde6288441b0d430980efd7e38c639eaa74f7d6ff5ccd65991759576b6036f",
+      "originalRestoredFromHead": true
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/assets.json",
+      "wasTracked": true,
+      "mistakenDataSha256": "58b27a55069fd2afd746fe00126e1070947a2500171d10cee8c16d429b9978f5",
+      "correctDataSha256": "58b27a55069fd2afd746fe00126e1070947a2500171d10cee8c16d429b9978f5",
+      "originalRestoredFromHead": true
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/visual-space-fixed-review.json",
+      "wasTracked": false,
+      "mistakenDataSha256": "d83d9b26a1adea80b30839f3be4d70c58433bd3909c0f6faa6a3c52e1534d5c5",
+      "correctDataSha256": "d83d9b26a1adea80b30839f3be4d70c58433bd3909c0f6faa6a3c52e1534d5c5",
+      "originalRestoredFromHead": false
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/canvas-source-diff-proof.json",
+      "wasTracked": false,
+      "mistakenDataSha256": "3f1b92e7f88a9a82060d58f6ad273bbb1467ef9a8ba8d67164546bda722f249e",
+      "correctDataSha256": "3f1b92e7f88a9a82060d58f6ad273bbb1467ef9a8ba8d67164546bda722f249e",
+      "originalRestoredFromHead": false
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/motion-source-diff-proof.json",
+      "wasTracked": false,
+      "mistakenDataSha256": "492a2fa9ae2a564a70f694a5c691a51ec076f34cb8aa1e8d15f3c2c25f0c6727",
+      "correctDataSha256": "492a2fa9ae2a564a70f694a5c691a51ec076f34cb8aa1e8d15f3c2c25f0c6727",
+      "originalRestoredFromHead": false
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/question-query-diagnosis.json",
+      "wasTracked": false,
+      "mistakenDataSha256": "0dd23ffd278ecae78c009f6e7911eb3d41da8b5b5f27c06c3727e6be88900b3e",
+      "correctDataSha256": "0dd23ffd278ecae78c009f6e7911eb3d41da8b5b5f27c06c3727e6be88900b3e",
+      "originalRestoredFromHead": false
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/core-inputs-final.json",
+      "wasTracked": false,
+      "mistakenDataSha256": "8247b3b6328ed9eabd3c5d8b5c84564121b5da2d0161c99dddb81faa81df8bc1",
+      "correctDataSha256": "8247b3b6328ed9eabd3c5d8b5c84564121b5da2d0161c99dddb81faa81df8bc1",
+      "originalRestoredFromHead": false
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/ui-inputs-delivery.json",
+      "wasTracked": false,
+      "mistakenDataSha256": "b0e0f6a25787a12f2ab49eccfe5d9f7d28812868c7196f43a9c6c229f31806ff",
+      "correctDataSha256": "b0e0f6a25787a12f2ab49eccfe5d9f7d28812868c7196f43a9c6c229f31806ff",
+      "originalRestoredFromHead": false
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/asset-inputs-complete.json",
+      "wasTracked": false,
+      "mistakenDataSha256": "a2cab6b9ae301c9e038b3bb8193220fdb75dbea48b03b01ba974972f13fa06f9",
+      "correctDataSha256": "a2cab6b9ae301c9e038b3bb8193220fdb75dbea48b03b01ba974972f13fa06f9",
+      "originalRestoredFromHead": false
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/protected13-before.json",
+      "wasTracked": true,
+      "mistakenDataSha256": "981527882b98db6182f3b523bcf1e68b7ef37b09f2d6d9a4d4842091caa7718a",
+      "correctDataSha256": "981527882b98db6182f3b523bcf1e68b7ef37b09f2d6d9a4d4842091caa7718a",
+      "originalRestoredFromHead": true
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/final-source-review.json",
+      "wasTracked": true,
+      "mistakenDataSha256": "0b0cefcd37b06b8434a79c06c8501faf10e7fde5f50e84cba13389389eb8e100",
+      "correctDataSha256": "0b0cefcd37b06b8434a79c06c8501faf10e7fde5f50e84cba13389389eb8e100",
+      "originalRestoredFromHead": true
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/cases.json",
+      "wasTracked": true,
+      "mistakenDataSha256": "3df13b6d094c1d19896ddd6fdcf516746eec30aeb04a9795fdaa886dde067b89",
+      "correctDataSha256": "3df13b6d094c1d19896ddd6fdcf516746eec30aeb04a9795fdaa886dde067b89",
+      "originalRestoredFromHead": true
+    },
+    {
+      "path": "goal-4/evidence/check-a-r/verification.json",
+      "wasTracked": true,
+      "mistakenDataSha256": "780e8640ed5c6893274f7d0db99dfa8e530ae411b6b98dbe4ea1d73974bac5d3",
+      "correctDataSha256": "780e8640ed5c6893274f7d0db99dfa8e530ae411b6b98dbe4ea1d73974bac5d3",
+      "originalRestoredFromHead": true
+    }
+  ]
+}

@@ -1,0 +1,1189 @@
+{
+  "task": "U8-A-R4 source-bound final representative pixel review",
+  "date": "2026-10-22",
+  "status": "source2A six targeted frames freshly reviewed: V8 visible overlap corrected with matched geometry green; full release and human acceptance remain separate",
+  "scope": {
+    "viewport": [
+      1440,
+      900
+    ],
+    "browser": "single Chromium existing test output only",
+    "imagePolicy": "Each view call emitted at most 2 original-size JPEG quality68 derivatives; PNG originals preserved; no resizing",
+    "runtimeMutation": false,
+    "testsRunByThisAgent": false,
+    "browserOperatedByThisAgent": false,
+    "compatibilityOrPerformanceWork": false
+  },
+  "source22": {
+    "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+    "sourceFileCount": 187,
+    "resultDirectory": "artifacts/goal-4/r4/ui-third-results",
+    "requestedCount": 27,
+    "freshActualReview": 27,
+    "inherited": 0,
+    "missing": [],
+    "unreviewedRequested": [],
+    "images": [
+      {
+        "name": "person-shen-complete",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-all-four-people-p-e56dd-ng-character-without-acting-chromium/person-shen-complete.png",
+        "originalSha256": "d36cb54908ba5dfff0b1193993b104ddf80ba632347c109f021fecc8f450dcf4",
+        "originalBytes": 1205327,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/person-shen-complete.jpg",
+        "previewSha256": "d64e8bfb0522ccb55b3745e13667db6f92ae313c8d5d8d6f5c2c12db06fd5436",
+        "previewBytes": 104312,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "四人物短签与实际关系相约护阵可辨，沈清禾画像、来往已结束事实和5/5分页完整。",
+          "前往青云宗查看列出不消耗物资、6秒行旅、仅查看且拜访另行确认。无可见叠压。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "person-lu-complete",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-all-four-people-p-e56dd-ng-character-without-acting-chromium/person-lu-complete.png",
+        "originalSha256": "da8dc59a33bdff2d53fafdb7f52e38947e550fa0522274d2bd5399df36a3aa1c",
+        "originalBytes": 1204653,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/person-lu-complete.jpg",
+        "previewSha256": "7f51ed60f7f82725549b361df46fae12c62ec8ef2b3f22220aacc338d8cf4feb",
+        "previewBytes": 106237,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "陆玄松未识标签与画像相符；下次来往预览单独标注，未把预览写成已发生事实。",
+          "4/4分页与远行6秒/零物资/另行确认提示完整。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "person-pei-complete",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-all-four-people-p-e56dd-ng-character-without-acting-chromium/person-pei-complete.png",
+        "originalSha256": "3c30414564c8a3fe83cd290a571876f63e7aed29e47645746a0af9ebaa737435",
+        "originalBytes": 1206145,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/person-pei-complete.jpg",
+        "previewSha256": "6c594e666e0250b6895c40048fc3dc25275e52c12b9e6c6ac5a492f3b47fdc58",
+        "previewBytes": 105237,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "裴照相约护阵、已记来往/来往已结束与5/5分页可读，目录、画像、当前事实层级可辨。",
+          "前往照影古境查看仍明确6秒行旅和仅查看。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "person-yan-complete",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-all-four-people-p-e56dd-ng-character-without-acting-chromium/person-yan-complete.png",
+        "originalSha256": "866e87f24f9656ea671bf2b0850c3398c26df5e76c6e318343851b78ec67823c",
+        "originalBytes": 1203816,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/person-yan-complete.jpg",
+        "previewSha256": "300795777a87d797a4bdaf09c221a8d0db7d1dc6b141f97965022ef8c738bebd",
+        "previewBytes": 106031,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "砚尘未识与下次来往预览分组清楚，画像、当前说明及4/4分页可读。",
+          "没有用预览暗示关系已获得；底部实际远行提示完整。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "visit-pending-meeting",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/visit-pending-meeting.png",
+        "originalSha256": "aeb71ac4b7562b4c89d75b08767a5a933a798da565c9ac9b6645bba33fe026e7",
+        "originalBytes": 1221690,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/visit-pending-meeting.jpg",
+        "previewSha256": "28220e065108314bbe92444623aeb953bc9028b1c1ac197c2a23d4adc22323dd",
+        "previewBytes": 108040,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "已会面·待你回应、陆玄松·执事问道及已保存拜访文字可读；主要入口为查看陆玄松的对话。",
+          "真实可见的分页仍写1/1页 共0项，为V6原source22缺口，后续D188另有fresh复核。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "pending-meeting-dialogue",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/pending-meeting-dialogue.png",
+        "originalSha256": "7a9ebf06f8cbc6790f32ae8d936d52e565987f5f2aa1bd1aee7a610b1d1d872b",
+        "originalBytes": 1278924,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/pending-meeting-dialogue.jpg",
+        "previewSha256": "92c74b22559eca68cfb5a655ab741dc6c71d3e8e32c9d2edc5cdfa0c3ab22f35",
+        "previewBytes": 115128,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "陆玄松画像、执事问道来由和2种选择入口完整，拜访活动显示已结束1/1、本次6秒及回应另行确认。",
+          "场景、按钮、正文、分页与八入口没有可见交叠。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "DECIDE-option-decide-accept",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-DECIDE-shows-ever-f6cd5-ve-details-remain-read-only-chromium/DECIDE-option-decide-accept.png",
+        "originalSha256": "1738a1d398be47df8db5b5e14c9388b05eb6f2ef7916c1a895480f73b250397e",
+        "originalBytes": 1206404,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/DECIDE-option-decide-accept.jpg",
+        "previewSha256": "6d1fb17e31c6c9624e459d7d86df727db7f4b661c9e6aa99ec3845852aa7f5a1",
+        "previewBytes": 103729,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "药香故人两项选项同屏可比，均列不消耗物资·6秒。",
+          "当前收下赠丹对应玉色核对卡，回春丹×1写为待选内容，未显示为已获；无可见交叠。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "DECIDE-option-decide-decline",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-DECIDE-shows-ever-f6cd5-ve-details-remain-read-only-chromium/DECIDE-option-decide-decline.png",
+        "originalSha256": "f7036b68a12c6ef8ce3c537726c8d1397b564f8855fe484c3f06b9cb15924b54",
+        "originalBytes": 1205442,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/DECIDE-option-decide-decline.jpg",
+        "previewSha256": "ee2e24fee2e8b8e1d82dd127ab70749193ee2d366a032637bc5f3ac7207555f9",
+        "previewBytes": 103240,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "婉言作别与收下赠丹仍同屏可比；当前选择和核对内容相符。",
+          "所选核对卡玉色明显，详情入口与场景可见，未把预选写为保存成功。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "DECIDE-known-memory",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-DECIDE-shows-ever-f6cd5-ve-details-remain-read-only-chromium/DECIDE-known-memory.png",
+        "originalSha256": "d430a6d2418a17a325aa3f210416612a9dab20ae3ed7117ba170bd44052df12a",
+        "originalBytes": 1256004,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/DECIDE-known-memory.jpg",
+        "previewSha256": "604a6130093fac975b22fdcf2aff3fb86057617be0c6db02fe7038509818e3af",
+        "previewBytes": 107743,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "已记来路为真实山雨破庙赠丹事实，单段可读，未以未来选项替换已记事实。",
+          "画像、分页和查看2种选择入口可辨。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "ANSWER_TRIAL-option-answer-accept",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-ANSWER-TRIAL-show-e2714-ve-details-remain-read-only-chromium/ANSWER_TRIAL-option-answer-accept.png",
+        "originalSha256": "8112e20fd2fdbe0c7ea21322471b841e9ba47d7b3c2aeb886e3d3c18e54f882b",
+        "originalBytes": 1173795,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/ANSWER_TRIAL-option-answer-accept.jpg",
+        "previewSha256": "ac2e6a83e358a2fa691b1fda2e5347171d17e6c9b6b7794b85c5fe9eb2f77ec4",
+        "previewBytes": 103726,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "问心接纳旧我与放下旧念同屏，两者均列不消耗物资·6秒；所选接纳旧我说明每击减伤10。",
+          "HUD回答问心、准备提示与入场已保存待答状态可读，无可见顶端越界或叠压。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "ANSWER_TRIAL-option-answer-release",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-ANSWER-TRIAL-show-e2714-ve-details-remain-read-only-chromium/ANSWER_TRIAL-option-answer-release.png",
+        "originalSha256": "d7e87307b9cbbc387bebd93c12f4c7d4198d4e62acd0f7ee70cc482b64bad99d",
+        "originalBytes": 1173880,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/ANSWER_TRIAL-option-answer-release.jpg",
+        "previewSha256": "ede2da63e03b34607d7b11ff4b113b1bebed9ccc2fb9e97fc7951f1e14abb5a5",
+        "previewBytes": 103867,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "所选放下旧念的核对说明额外伤害8，与同屏接纳旧我可比较。",
+          "6秒/无物资、2/2分页、行程/生平/主导航均可见，无可见叠压。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "ANSWER_TRIAL-known-memory",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-ANSWER-TRIAL-show-e2714-ve-details-remain-read-only-chromium/ANSWER_TRIAL-known-memory.png",
+        "originalSha256": "bd8e822e546ff7576c7515ce603245a118dad5ed4d1d26b6f000efe25f010426",
+        "originalBytes": 1217561,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/ANSWER_TRIAL-known-memory.jpg",
+        "previewSha256": "31b3fbc7466e22a5702892917442f0c551ab9bce4d82a1377f24304612502afb",
+        "previewBytes": 106269,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "已记来路显示裴照云台相约与合力布阵事实，未把答题当已完成。",
+          "6/6分页、查看2种选择、待答问心状态可读。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "END-option-ending-transmit",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-END-shows-every-g-44144-ve-details-remain-read-only-chromium/END-option-ending-transmit.png",
+        "originalSha256": "1ce15ae30b89f5a00030f897a24f20ec11056274137d782cb0c47d76a2ffd211",
+        "originalBytes": 1185378,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/END-option-ending-transmit.jpg",
+        "previewSha256": "b5ade83f88e3ca6fa6f10ae8a2ecf035a775bebc786a01bd8b6cbc9de388e764",
+        "previewBytes": 108011,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "留道传承与独赴上界同屏可比，均为不消耗物资·12秒。",
+          "核对内容说明来自实际走过的路、不要求先结盟；当前待择结尾不等于已收卷。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "END-option-ending-depart",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-END-shows-every-g-44144-ve-details-remain-read-only-chromium/END-option-ending-depart.png",
+        "originalSha256": "522e1f21e77e68281bd7adc90c9db28b6321b4aa5f7493b26a5d649a98947d58",
+        "originalBytes": 1182211,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/END-option-ending-depart.jpg",
+        "previewSha256": "31617309493bd0372b90fcff2de36a726c64757998fb055dc63a184b346bd472",
+        "previewBytes": 107166,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "独赴上界的所选核对卡清楚说明本卷结束且不开新地图/上界修炼。",
+          "两选项、12秒、2/2分页与当前三关已过状态完整。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "END-known-memory",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-END-shows-every-g-44144-ve-details-remain-read-only-chromium/END-known-memory.png",
+        "originalSha256": "657458069c36cc4481d7ac23c713d192d0e57e28bb7a35972b5f80e434510340",
+        "originalBytes": 1218950,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/END-known-memory.jpg",
+        "previewSha256": "13525ecc22d85efbb6c5cf3b807e830cdc1500bc80da343e9c06719290059012",
+        "previewBytes": 107274,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "天门已开下已记来路仍是裴照云台相约真实事实，5/5分页可读。",
+          "可回看两种选择，无伪造结尾/领奖状态。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "life-life-complete",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-every-life-chapte-9c1cf-factual-life-stays-complete-chromium/life-life-complete.png",
+        "originalSha256": "82b1b72771d3cb52d765a39f78ab55934179c053fbbaae17aee273a03b731881",
+        "originalBytes": 1248156,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/life-life-complete.jpg",
+        "previewSha256": "05eba74199a8bdf214bc2800c0627e8b9596528c3ed683d430d7c04c6f11966d",
+        "previewBytes": 102393,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "四章常驻左侧，来路当前境界记录为第203游戏月已达化神；9/9页端点可读。",
+          "头部此生手记·查看不收卷与此生仍在继续语义分离，无重复同等标题或叠压。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "life-training-complete",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-every-life-chapte-9c1cf-factual-life-stays-complete-chromium/life-training-complete.png",
+        "originalSha256": "35b5a9f075be0c076a3a0601ed93fb33561dd6b64259d393002c18c649329272",
+        "originalBytes": 1245918,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/life-training-complete.jpg",
+        "previewSha256": "247b8d079a9de8b9179675b4f980f948642ec3cb095fad6635152262a449de97",
+        "previewBytes": 102148,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "修行章4/4页为实际法宝玄玉印及当前装备，正文和场景完整。",
+          "章节当前玉色边线和全篇分页可辨，没有通过裁字或内滚动压缩正文。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "life-decisions-complete",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-every-life-chapte-9c1cf-factual-life-stays-complete-chromium/life-decisions-complete.png",
+        "originalSha256": "779a4b4387b685a929e550b08697d71b497afd0d89f2bb8fa1c5cc3738bf0f11",
+        "originalBytes": 1250829,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/life-decisions-complete.jpg",
+        "previewSha256": "34fc5d2b3c9723a5894bc227c0368e86d69b4f93b314f567136f031da433236c",
+        "previewBytes": 104502,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "因果章11/11页明确砚尘未识、存档没有记录便不补写交情。",
+          "四章、正文、分页及生平主入口清楚，无可见交叠。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "life-seal-complete",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-every-life-chapte-9c1cf-factual-life-stays-complete-chromium/life-seal-complete.png",
+        "originalSha256": "c586783c60c0434ab6a5e7424c59c8d9b9b55d01d661a4b56b629f974db189e3",
+        "originalBytes": 1183763,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/life-seal-complete.jpg",
+        "previewSha256": "a284bd897eb1a8f8344e0063505350e45a176d9c4826b2908cf3b609d4cb8192",
+        "previewBytes": 106731,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "收卷章5/5页完整说明准备恢复回退范围、不保留后得、生平文本不含完整进度。",
+          "主动归隐禁用旁实际说明先处理当前事件或退出战斗，V2局部理由已可见。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "ending-real-countdown",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-the-selected-endi-49563-e-with-all-records-retained-chromium/ending-real-countdown.png",
+        "originalSha256": "97a51ee8e385a941e00a42a3200779b978fcf692b8b2f7ede12c8f68b5c56333",
+        "originalBytes": 1102537,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/ending-real-countdown.jpg",
+        "previewSha256": "d5401faf7d0510a37c1d06d6e6109beea733df7f8a227e7f51cfee0e07ca07d5",
+        "previewBytes": 111358,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "活动条显示留道传承11.4秒、本次12秒、0/1与暂停/原安排/本段详情。",
+          "剧情副标题已改当前安排进行中，可继续阅读；核对卡同步说明先暂停再安排。",
+          "下方待择结尾为尚未提交的正式Game阶段，未看成另一次新授权。截图本身不证明实际12秒时长或原子提交。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "ending-real-sealed",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-the-selected-endi-49563-e-with-all-records-retained-chromium/ending-real-sealed.png",
+        "originalSha256": "c3af6039ad3507dd349960dd276367f1541169b2eaee699096825c259b8e8e36",
+        "originalBytes": 1351778,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/ending-real-sealed.jpg",
+        "previewSha256": "2458cc4f284402aa94b8f94722f06be94b032fc0604c03ef695f43e791c42feb",
+        "previewBytes": 100932,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "已提交界面标题飞升·留道传承，首篇实际结尾事实为把道法留在人间而后踏入天门。",
+          "收卷印章位于正文右侧留白，此帧未压正文/导出/章节/分页；四章和1/10页可见。",
+          "封卷后的布局不是八入口游玩态；截图不能单独证明所有后续正文或新人生规则。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "same-person-reading",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-same-person-and-c-600e1-reading-and-ordinary-return-chromium/same-person-reading.png",
+        "originalSha256": "f02e6a146d71c4e04fd9e5d1c30410a1fb7163540d681ed0f2e8813cacd3a453",
+        "originalBytes": 1235129,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/same-person-reading.jpg",
+        "previewSha256": "a57bff386e177ac0a2949242f9fa3e7e62567c533e3e3d2f9b6d03bfec8f592a",
+        "previewBytes": 104964,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "沈清禾第2/3页保留未识·山雨破庙的实际事实。",
+          "禁用前往青云宗旁明确需筑基境界，并显示不消耗物资·6秒行旅·仅查看；V1局部缺口已可见修正。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "response-after-life-reading",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-a-story-can-inspe-5f8c0-s-same-unconfirmed-response-chromium/response-after-life-reading.png",
+        "originalSha256": "09eca89e7849b2141f9ccf6371f3db46de337c1f9c3d7cdc6ceeecf5ed419b09",
+        "originalBytes": 1208163,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/response-after-life-reading.jpg",
+        "previewSha256": "f2e93d24ffa278c3d8bb40072b3c7ee8714c218a33037c4e8e5395c5df8143e3",
+        "previewBytes": 104620,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "回看生平后回到陆玄松对话的婉言作别第2/2选项，当前核对对象和选择一致。",
+          "只读预选，确认后才安排提示可读，当前并未显示消耗/成功。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "ordinary-life-origin-return",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-opening-life-from-2cb1a-t-original-one-level-return-chromium/ordinary-life-origin-return.png",
+        "originalSha256": "f36728efd185f8eebf6a0feab225c4ebafaf262ad6a2f627c9ac842c68f8694a",
+        "originalBytes": 1208205,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/ordinary-life-origin-return.jpg",
+        "previewSha256": "8596c39b144f25a9b65af3c7d586d9115c8556e6431896cfc29b501081434f8f",
+        "previewBytes": 104671,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "普通详情返回后仍在陆玄松婉言作别第2/2页，完整核对文字和两选项可见。",
+          "不以焦点边线作为保存标记；主导航/正文/返回没有可见叠压。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "life-page-return",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-life-chapter-and--6a1d7-ction-without-a-Game-action-chromium/life-page-return.png",
+        "originalSha256": "28e00a405b4448f1df13dad8638b549781aac62c4fc507d14070974a1f016b78",
+        "originalBytes": 1285582,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/life-page-return.jpg",
+        "previewSha256": "cf4a920259089213248446a764368d848eab2e71fe4681663149759224244d23",
+        "previewBytes": 108267,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "生平返回保留因果第2/7页交锋记录，0场和未记录不补写的正文完整。",
+          "四章和返回/分页可辨；此帧只能证明当前阅读位置可见，不能独证缓存所有路径。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "response-real-countdown",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-one-response-wait-6072d-lected-outcome-exactly-once-chromium/response-real-countdown.png",
+        "originalSha256": "1758e477d61e6490a649e6d1fd75b73a70eb367d4822bc823e6691df81666960",
+        "originalBytes": 1151757,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/response-real-countdown.jpg",
+        "previewSha256": "2b3457d90f183fc967e55beae72978f80ce5d15d3e2fa32468794e9ee1d33572",
+        "previewBytes": 109295,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "坐下叙旧活动真实画面为5.4秒/本次6秒/0/1，暂停/原安排/本段详情常驻。",
+          "核对卡列当前活动进行中先暂停再安排；正文仍可阅读。",
+          "截图不单独证明六秒在线截止或先保存后反馈。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "response-real-saved",
+        "generated": true,
+        "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+        "originalPng": "artifacts/goal-4/r4/ui-third-results/stage-r4-one-response-wait-6072d-lected-outcome-exactly-once-chromium/response-real-saved.png",
+        "originalSha256": "47aef34004d5e736a9f7c1903ccca5bf9af376819bd690b9631d3327cc8113a3",
+        "originalBytes": 1246213,
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "width": 1440,
+        "height": 900,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/response-real-saved.jpg",
+        "previewSha256": "ce1aaec0d1425a005475fcfec91491832f32939c9c960decbeb1247b26258b96",
+        "previewBytes": 114543,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "observations": [
+          "活动条已结束1/1，结果摘要回春丹+1、实际1/1次、不消耗物资，人物关系相助与真实叙旧事实可读。",
+          "新V8真实像素问题：中央短印章约x628至813、y250至438，覆盖近期手记分类区域及文字，常用分类与短演出相交。正文未被遮，不能因此忽略入口被遮的艺术/交互问题。"
+        ],
+        "inheritedFrom": null
+      }
+    ],
+    "otherGeneratedPngCountAtRecord": 35,
+    "otherGeneratedPngsUnreviewedByThisAgent": [
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-END-LIFE-r-d2f7f--its-formal-game-month-cost-chromium/end_life-sealed.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-END-LIFE-r-d2f7f--its-formal-game-month-cost-chromium/end_life-selected.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-RETIRE-req-49341--its-formal-game-month-cost-chromium/retire-sealed.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-RETIRE-req-49341--its-formal-game-month-cost-chromium/retire-selected.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-a-failed-a-36078-ack-by-its-later-completion-chromium/choice-cross-page-result.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-a-paused-s-6c32c-nd-grants-no-offline-result-chromium/opening-original-arrangement.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-a-real-ope-67378-actly-its-one-medicine-cost-chromium/opening-real-result.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-a-real-ope-67378-actly-its-one-medicine-cost-chromium/opening-selected.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-a-real-pre-bac63--pill-and-reset-cultivation-chromium/breakthrough-real-result.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-a-real-pre-bac63--pill-and-reset-cultivation-chromium/breakthrough-selected.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-a-running--7f50d-lace-inspection-stay-usable-chromium/visit-paused-choice-available.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-a-running--89976--and-full-narrative-reading-chromium/question-paused-choice-available.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-running-re-7ef27-ble-without-ending-the-life-chromium/retirement-paused-choice-available.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-running-tr-3b676-nt-inspection-remain-usable-chromium/trial-running-equipment-reading.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-the-releas-0ce40-her-answer-or-starts-a-turn-chromium/question-release-selected.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-the-select-59e9f-fe-without-creating-another-chromium/ending-transmit-sealed.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-the-select-59e9f-fe-without-creating-another-chromium/ending-transmit-selected.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-the-select-d3d4c-fe-without-creating-another-chromium/ending-depart-sealed.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-the-select-d3d4c-fe-without-creating-another-chromium/ending-depart-selected.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-trial-entr-ca5be-ut-an-automatic-battle-turn-chromium/question-selected.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-trial-entr-ca5be-ut-an-automatic-battle-turn-chromium/trial-entry-selected.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-visiting-o-b953d-elected-response-saves-once-chromium/response-selected.png",
+      "artifacts/goal-4/r4/ui-third-results/idle-milestones-visiting-o-b953d-elected-response-saves-once-chromium/visit-selected.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-a-committed-respo-4728d-life-reader-to-another-fact-chromium/life-anchor-after-real-fact.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-a-committed-visit-96c5a-t-repeated-entry-being-read-chromium/journal-after-zero-log-visit.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-a-duplicate-journ-6be6b-ce-after-a-saved-commission-chromium/duplicate-journal.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-a-duplicate-journ-fe6ad-on-at-the-hundred-entry-cap-chromium/duplicate-journal-capped.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/visit-real-countdown.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-a-replacement-lif-b71dd-ter-or-unconfirmed-response-chromium/new-life-reading-state.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-a-saved-victory-w-900ae-ns-the-older-readable-entry-chromium/journal-after-victory.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-all-eight-main-en-bf95b-ving-the-same-pending-story-chromium/all-entry-reading-return.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-cancelled-choice--14b28-e-or-reopen-an-old-dialogue-chromium/cancelled-and-hidden-dialogue.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-entering-question-761cd-e-its-identical-semantic-id-chromium/test-failed-1.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-failed-scene-and--ff624--and-return-controls-usable-chromium/reading-art-fallback.png",
+      "artifacts/goal-4/r4/ui-third-results/stage-r4-the-complete-reta-61233-gh-its-actual-page-controls-chromium/complete-journal.png"
+    ]
+  },
+  "supplementD188": {
+    "sourceDigest": "d1884a79ca19ccab621ce4ef2acbcca626056b3b360339a444c9cc35228fe9df",
+    "sourceFileCount": 187,
+    "resultDirectory": "artifacts/goal-4/r4/ui-question-fate-fixed-results",
+    "freshActualReview": 3,
+    "inherited": 0,
+    "missing": [],
+    "images": [
+      {
+        "name": "visit-pending-meeting",
+        "sourceDigest": "d1884a79ca19ccab621ce4ef2acbcca626056b3b360339a444c9cc35228fe9df",
+        "originalPng": "artifacts/goal-4/r4/ui-question-fate-fixed-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/visit-pending-meeting.png",
+        "originalSha256": "2b0b6973ca6bd24414e4ba4c9758446b37343a98002f05e09b9939eb21db9a89",
+        "originalBytes": 1221606,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/d188/visit-pending-meeting.jpg",
+        "previewSha256": "97c0027e786a77f61c8d8d91614ef5d3873410704d620fa646dd5e8fa92c2e94",
+        "previewBytes": 108023,
+        "width": 1440,
+        "height": 900,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "pixelReviewed": true,
+        "reviewStatus": "fresh_actual_pixel_review",
+        "observations": [
+          "D188真实会面待回应页显示1/1页 共1项，V6在这帧已可见修正。",
+          "陆玄松已保存拜访、待你回应、主要查看对话入口清楚；未自动选回应，无可见交叠。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "pending-meeting-dialogue",
+        "sourceDigest": "d1884a79ca19ccab621ce4ef2acbcca626056b3b360339a444c9cc35228fe9df",
+        "originalPng": "artifacts/goal-4/r4/ui-question-fate-fixed-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/pending-meeting-dialogue.png",
+        "originalSha256": "7a9ebf06f8cbc6790f32ae8d936d52e565987f5f2aa1bd1aee7a610b1d1d872b",
+        "originalBytes": 1278924,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/d188/pending-meeting-dialogue.jpg",
+        "previewSha256": "92c74b22559eca68cfb5a655ab741dc6c71d3e8e32c9d2edc5cdfa0c3ab22f35",
+        "previewBytes": 115128,
+        "width": 1440,
+        "height": 900,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "pixelReviewed": true,
+        "reviewStatus": "fresh_actual_pixel_review",
+        "observations": [
+          "D188对话仍为陆玄松执事问道，正文、真实2种选择入口、已保存拜访条可读。",
+          "不因总数修正丢当前对话；此帧未见新的布局问题。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "question-local-fate-reading",
+        "sourceDigest": "d1884a79ca19ccab621ce4ef2acbcca626056b3b360339a444c9cc35228fe9df",
+        "originalPng": "artifacts/goal-4/r4/ui-question-fate-fixed-results/stage-r4-a-pending-trial-q-1fc8f-erying-it-as-a-person-event-chromium/question-local-fate-reading.png",
+        "originalSha256": "85c1fad2e9147fbbb74c121a52f28413f6c728ae460e0c963f7138e4149b23c6",
+        "originalBytes": 1198088,
+        "previewJpeg": "artifacts/goal-4/r4/visual-final-agent/d188/question-local-fate-reading.jpg",
+        "previewSha256": "e25d5eba8a4de3d97065836f73610b21d1353fb2e6b1e49275140eba6fe73d54",
+        "previewBytes": 100927,
+        "width": 1440,
+        "height": 900,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "pixelReviewed": true,
+        "reviewStatus": "fresh_actual_pixel_review",
+        "observations": [
+          "问心待答时此地机缘显示暂无可开启机缘，未把trial_question渲染成人物拜访/NPC。",
+          "HUD仍回答问心、底部继续当前遭遇入口可见，场景和空态说明完整；1/1页共0项此时符合暂无人物机缘。",
+          "只证明这次安全画面，不以单帧代替异常查询/返回链代码和测试证明。"
+        ],
+        "inheritedFrom": null
+      }
+    ],
+    "otherGeneratedPngsUnreviewedByThisAgent": [
+      "artifacts/goal-4/r4/ui-question-fate-fixed-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/visit-real-countdown.png"
+    ]
+  },
+  "sourceDC": {
+    "sourceDigest": "dc8005ae11eedb931dd71d47277e07d138b94c06ff827cb6d50f8ff975e16bce",
+    "imagesReviewedByThisAgent": 0,
+    "boundary": "Parent reported full UI voluntarily cancelled after 9 passes on discovery of V7. This report does not convert partial or cancelled DC results into a full pass."
+  },
+  "inheritanceCheck": {
+    "earlyReport": "artifacts/goal-4/r4/visual-early-review.json",
+    "earlySourceDigest": "7bf0d5ca9f414dd1e1d418f3c947b365fc2878c8f88e1fc08d0a7a09fb7ef628",
+    "method": "Original PNG SHA256 AND direct bytes equality against actually reviewed earlier frames",
+    "sameByteSelectedFrames": [],
+    "conclusion": "All selected source22 frames required fresh inspection; no old source relabelled."
+  },
+  "priorEarlyFindings": [
+    {
+      "id": "V1",
+      "statusInSource22": "visibly corrected in same-person-reading",
+      "observation": "Disabled travel now states real realm gate, zero resources and 6-second travel."
+    },
+    {
+      "id": "V2",
+      "statusInSource22": "visibly corrected in life-seal-complete",
+      "observation": "Disabled retirement now displays formal current event/battle reason."
+    },
+    {
+      "id": "V3",
+      "statusInSource22": "visibly improved",
+      "observation": "Selected comparison card has jade action hierarchy; all options remain available to compare."
+    },
+    {
+      "id": "V4",
+      "statusInSource22": "visibly corrected",
+      "observation": "Life supporting status and title now express distinct roles."
+    },
+    {
+      "id": "V5",
+      "statusInSource22": "visibly corrected in running frames",
+      "observation": "Narrative header explicitly says the current arrangement is running and reading can continue."
+    }
+  ],
+  "findings": [
+    {
+      "id": "V6",
+      "severity": "misleading count",
+      "evidenceType": "actual pixel observation by this agent",
+      "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+      "frame": "visit-pending-meeting",
+      "description": "Real pending meeting displayed but pager claimed total0.",
+      "laterStatus": "D188 fresh visit-pending-meeting correctly shows total1; original22 record preserved."
+    },
+    {
+      "id": "V7",
+      "severity": "domain/runtime blocker",
+      "evidenceType": "parent reported real reproduced red trace; not reproduced by this pixel-review agent",
+      "description": "Trial question pending entered NPC lookup when opening Fate local events.",
+      "laterStatus": "Parent reports D188 formal-event-only guard and 2/2 targeted tests; D188 question-local-fate-reading freshly shows safe empty local Fate and continue-current-encounter, but images do not prove query/CAS logic or full release pass."
+    },
+    {
+      "id": "V8",
+      "severity": "visible interaction/art blocker",
+      "evidenceType": "actual fresh pixel observation by this agent",
+      "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+      "frame": "response-real-saved",
+      "description": "Short saved-response stamp overlays the Recent Notes tab text/region.",
+      "approxStampRect": {
+        "left": 628,
+        "top": 250,
+        "right": 813,
+        "bottom": 438
+      },
+      "status": "historically reproduced on source22/D188; corrected and locally reverified on source2A targeted response frame plus matched geometry assertion",
+      "recommendation": "Keep this R4 short stamp inside verified blank scene space or remove only that temporary stamp; retain persistent actual result and all commands/retry identity. Add stamp-vs-three-catalogue-tabs nonintersection check.",
+      "originalObservationPreservedAt": "artifacts/goal-4/r4/visual-final-review-source22-d188-snapshot.json",
+      "realRedEvidence": {
+        "path": "artifacts/goal-4/r4/ui-dialogue-stamp-red.json",
+        "sha256": "d71a02a12067734857f17c83718254b61e4364a07f1a0b73d7e4a4264dff8107",
+        "runtimeDigest": "d1884a79ca19ccab621ce4ef2acbcca626056b3b360339a444c9cc35228fe9df",
+        "stats": {
+          "startTime": "2026-10-21T17:38:03.638Z",
+          "duration": 16699.845,
+          "expected": 0,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "actualFailure": "overlaps received [近期手记] instead of []"
+      },
+      "fixVerification": {
+        "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+        "freshFrame": "response-real-saved",
+        "matchedGeometryRun": "artifacts/goal-4/r4/ui-motion-fixed.json",
+        "conclusion": "V8 removed for the demonstrated response state; full release/overall artwork not implied."
+      }
+    }
+  ],
+  "adversarialReview": {
+    "confidenceScope": "36 source-bound actual fresh views across source22(27),D188(3),2A(6). Hashes rechecked; preserved pre-fix snapshot unchanged.",
+    "not100PercentProductConfidence": "No new visible blocker in six source2A targeted frames. Only actual selected states are pixel reviewed; full175 release is still outside this completed targeted review, as are all future body states, full C-side quality, long-term idle balance and user acceptance.",
+    "newSourceRule": "Future release evidence may inherit only original byte-identical PNGs from actually reviewed frames, retaining chain. Images do not prove duration/CAS by themselves."
+  },
+  "notClaimed": [
+    "DC or D188 full test completion",
+    "atomic transaction correctness from images",
+    "actual elapsed online cycle duration from still images",
+    "full 25-action gameplay",
+    "all generated PNG pixel approval",
+    "compatibility or environment/performance acceptance",
+    "long-term idle balance",
+    "user acceptance or overall art completion"
+  ],
+  "humanAcceptance": "pending; user negative whole-interface feedback remains valid",
+  "overallArtComplete": false,
+  "overallGoalComplete": false,
+  "preservedPreFixSnapshot": {
+    "path": "artifacts/goal-4/r4/visual-final-review-source22-d188-snapshot.json",
+    "sha256": "a744fa3959a317605d2292c5864f636158dbd9c517443ea13dd9899c9dbf825b",
+    "bytes": 48713,
+    "unchanged": true
+  },
+  "latestTargetedSource2A": {
+    "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+    "sourceFileCount": 187,
+    "builtFileCount": 56,
+    "builtBytes": 7300121,
+    "resultDirectory": "artifacts/goal-4/r4/ui-motion-fixed-results",
+    "freshActualReview": 6,
+    "inherited": 0,
+    "missing": [],
+    "unreviewedRequested": [],
+    "images": [
+      {
+        "name": "response-real-saved",
+        "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+        "originalPng": "artifacts/goal-4/r4/ui-motion-fixed-results/stage-r4-one-response-wait-6072d-lected-outcome-exactly-once-chromium/response-real-saved.png",
+        "originalSha256": "3a3caa4a6520099d3d87c2aa6aaecb180cd340fda3af5a40505d905320c73778",
+        "originalBytes": 1244736,
+        "previewJpeg": "artifacts/goal-4/r4/visual-motion-fixed-agent/response-real-saved.jpg",
+        "previewSha256": "aed1cdcbe5a775a7796440a51dd808f09cbee22fd6a6d2f4a1f7951582e392c6",
+        "previewBytes": 114689,
+        "width": 1440,
+        "height": 900,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "exactPreviousMatches": [],
+        "observations": [
+          "修后回应印章位于画布右侧留白，约x1110至1290/y378至559，未再盖住人物/此地机缘/近期手记三个分类。",
+          "真实叙旧正文、沈清禾画像/相助关系、主返回及底部查看入口都清楚，印章处在本帧正文右侧空白而非正文文字上。",
+          "持久结果条回春丹+1、实际1/1、不消耗物资与活动已结束可读；此帧并不独立证明回执CAS。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "visit-pending-meeting",
+        "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+        "originalPng": "artifacts/goal-4/r4/ui-motion-fixed-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/visit-pending-meeting.png",
+        "originalSha256": "05f53f3b06459f84dee0cb3c03e33d18e30c6c5feb20171b7ec1a53ded883372",
+        "originalBytes": 1221606,
+        "previewJpeg": "artifacts/goal-4/r4/visual-motion-fixed-agent/visit-pending-meeting.jpg",
+        "previewSha256": "7be1d1339966affc6c872ca1323fb32009bf0f8ceea214c2884ca2089d27fce4",
+        "previewBytes": 108031,
+        "width": 1440,
+        "height": 900,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "exactPreviousMatches": [],
+        "observations": [
+          "已会面待你回应、陆玄松执事问道和查看对话主要入口完整。",
+          "1/1页共1项正确，八入口/返回与真实已保存拜访状态无可见叠压。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "pending-meeting-dialogue",
+        "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+        "originalPng": "artifacts/goal-4/r4/ui-motion-fixed-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/pending-meeting-dialogue.png",
+        "originalSha256": "beccec70199e0484eafcbca72bc5d60e972568a95ae2fddec967fb6098917eb5",
+        "originalBytes": 1278922,
+        "previewJpeg": "artifacts/goal-4/r4/visual-motion-fixed-agent/pending-meeting-dialogue.jpg",
+        "previewSha256": "49cfd1b6145aa185c402ab08bd073c4990b62eb48b3171a13066194f472c12cf",
+        "previewBytes": 115132,
+        "width": 1440,
+        "height": 900,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "exactPreviousMatches": [],
+        "observations": [
+          "陆玄松来由正文、人物画像、两种选择入口及回看生平/返回完整。",
+          "当前仍是已保存拜访、回应单独确认，没有伪造已选择结果。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "ending-real-sealed",
+        "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+        "originalPng": "artifacts/goal-4/r4/ui-motion-fixed-results/stage-r4-the-selected-endi-49563-e-with-all-records-retained-chromium/ending-real-sealed.png",
+        "originalSha256": "c2ae5a1d027a3a967a2e162de937fb98b3cecd2b492a8e7985c6d862d87a01c2",
+        "originalBytes": 1351995,
+        "previewJpeg": "artifacts/goal-4/r4/visual-motion-fixed-agent/ending-real-sealed.jpg",
+        "previewSha256": "0d85a92e65cfb5aec88d81a897d3c88f9b8ed75e2d8179b5ff72fb3166c86459",
+        "previewBytes": 101351,
+        "width": 1440,
+        "height": 900,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "exactPreviousMatches": [],
+        "observations": [
+          "已封卷标题飞升·留道传承与真实结尾事实可读。",
+          "印章保留在正文右侧留白，未遮四章、正文文字、导出、返回及分页。",
+          "场景、正文与印章主次可辨；未因此声称全部结尾/新人生验收。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "ending-real-countdown",
+        "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+        "originalPng": "artifacts/goal-4/r4/ui-motion-fixed-results/stage-r4-the-selected-endi-49563-e-with-all-records-retained-chromium/ending-real-countdown.png",
+        "originalSha256": "d2900f02e79baae8ddd139b965cbae70e15d09d894ff3ed620a4570d5c8ce94d",
+        "originalBytes": 1102536,
+        "previewJpeg": "artifacts/goal-4/r4/visual-motion-fixed-agent/ending-real-countdown.jpg",
+        "previewSha256": "e73e9101624e25dbbe8c72c6a7577e75caa6ea9fb2a61754bba6807a602ee214",
+        "previewBytes": 111358,
+        "width": 1440,
+        "height": 900,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "exactPreviousMatches": [],
+        "observations": [
+          "留道传承11.4秒/本次12秒/0/1、暂停与原安排可读。",
+          "当前安排进行中可继续阅读与请先暂停再安排状态一致，选项与正文不被遮。",
+          "截图与实际6/12秒验证分开记录。"
+        ],
+        "inheritedFrom": null
+      },
+      {
+        "name": "question-local-fate-reading",
+        "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+        "originalPng": "artifacts/goal-4/r4/ui-motion-fixed-results/stage-r4-a-pending-trial-q-1fc8f-erying-it-as-a-person-event-chromium/question-local-fate-reading.png",
+        "originalSha256": "85c1fad2e9147fbbb74c121a52f28413f6c728ae460e0c963f7138e4149b23c6",
+        "originalBytes": 1198088,
+        "previewJpeg": "artifacts/goal-4/r4/visual-motion-fixed-agent/question-local-fate-reading.jpg",
+        "previewSha256": "e25d5eba8a4de3d97065836f73610b21d1353fb2e6b1e49275140eba6fe73d54",
+        "previewBytes": 100927,
+        "width": 1440,
+        "height": 900,
+        "conversion": {
+          "format": "JPEG",
+          "quality": 68,
+          "lossy": true,
+          "resized": false
+        },
+        "pixelReviewed": true,
+        "status": "fresh_actual_pixel_review",
+        "exactPreviousMatches": [
+          {
+            "report": "artifacts/goal-4/r4/visual-final-review-source22-d188-snapshot.json",
+            "sourceDigest": "d1884a79ca19ccab621ce4ef2acbcca626056b3b360339a444c9cc35228fe9df",
+            "originalPng": "artifacts/goal-4/r4/ui-question-fate-fixed-results/stage-r4-a-pending-trial-q-1fc8f-erying-it-as-a-person-event-chromium/question-local-fate-reading.png",
+            "originalSha256": "85c1fad2e9147fbbb74c121a52f28413f6c728ae460e0c963f7138e4149b23c6",
+            "bytesEqual": true
+          }
+        ],
+        "observations": [
+          "问心待答时本地机缘安全显示暂无可开启机缘，没有把trial_question写成人物/NPC。",
+          "HUD回答问心、继续当前遭遇与查看人物来往完整可辨；此时共0项符合空态。",
+          "虽与D188相同原PNG字节，本次仍重新实际看图，记为fresh而非只继承。"
+        ],
+        "inheritedFrom": null
+      }
+    ],
+    "byteComparison": "All six actual fresh views. question-local-fate-reading also exactly matches the previously actually reviewed D188 PNG by SHA256 and bytes, recorded in its exactPreviousMatches chain. Other five do not inherit prior evidence.",
+    "otherGeneratedPngCountAtRecord": 2,
+    "otherGeneratedPngsUnreviewedByThisAgent": [
+      "artifacts/goal-4/r4/ui-motion-fixed-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/visit-real-countdown.png",
+      "artifacts/goal-4/r4/ui-motion-fixed-results/stage-r4-one-response-wait-6072d-lected-outcome-exactly-once-chromium/response-real-countdown.png"
+    ],
+    "testEvidenceReadOnly": {
+      "path": "artifacts/goal-4/r4/ui-motion-fixed.json",
+      "sha256": "bca9b449fc2e82195b334d311b0d610345833f717a7bf9bee7f9807882e8ee4c",
+      "runtimeDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+      "stats": {
+        "startTime": "2026-10-21T17:40:16.065Z",
+        "duration": 46571.941,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "allFourResults": "passed retry0; actual run performed by parent, JSON inspected by this agent",
+      "noTestsRunByThisAgent": true
+    },
+    "geometryEvidence": {
+      "testSource": "web/e2e/stage-r4.spec.ts:65",
+      "check": "Actual action-motion rectangle expanded30px on all four sides must not intersect any visible .fate-book .catalogue-tabs button; expected overlaps=[]",
+      "passedMatchedRun": "artifacts/goal-4/r4/ui-motion-fixed.json",
+      "limitation": "This is the explicitly tested current response state, not all possible future layouts or screens."
+    },
+    "newVisibleBlockers": [],
+    "fullRelease175ClaimedCompleteByThisReport": false
+  }
+}

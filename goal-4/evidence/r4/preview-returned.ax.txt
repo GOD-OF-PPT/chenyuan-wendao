@@ -1,0 +1,53 @@
+Browser tab: 3, Title: "尘缘问道 · 文字修仙", URL: "http://127.0.0.1:56884/".
+1 AXWebArea 尘缘问道 · 文字修仙, URL: 127.0.0.1:56884/
+	2 container
+		3 container 快捷定位
+			4 link Description: 跳到当前内容, Value: 127.0.0.1:56884/#game-content
+			5 link Description: 跳到主导航, Value: 127.0.0.1:56884/#primary-navigation
+			6 link Description: 跳到当前目标, Value: 127.0.0.1:56884/#goal-panel
+		7 button 查看人物寿元与配装
+			8 text 顾长青
+			9 container
+				10 text 凡人  · 尚未择法
+		11 text 气血  60 / 60 灵力 20 / 20 修为
+		12 text 5 / 10
+		13 text 灵石
+		14 text 40
+		15 text 听雨洞府
+		16 text 修行第 1 月
+		17 button 当前目标 引气入体 尚缺修为 5 查看缺口与来源 ›
+			18 text 当前目标
+			19 text 引气入体
+			20 text 尚缺修为 5
+			21 text 查看缺口与来源 ›
+		22 text 已保存
+		23 button 帮助
+		24 button 设置
+		42 container 游戏主舞台
+			43 container 当前行旅
+				44 heading 听雨洞府, Value: 2
+					45 text 听雨洞府
+			46 container Description: 当前内容, ID: game-content
+				47 text 待安排
+				48 heading 静心修行, Value: 2
+					49 text 静心修行
+				50 button 修行设置
+				51 text 修炼 → 筹备丹药 → 突破。也可以先历练收集材料。
+				52 container cultivation-actions
+					53 text 每轮修为 +5 · 30 秒
+					54 text 1 游戏月
+					55 button 开始自然吐纳
+					56 text 修为圆满即停 · 预计 1 轮 · 灵石预算0 · 最多50轮
+		31 container Description: 主要页面, ID: primary-navigation
+			32 button 修行
+			33 button 历练
+			34 button 丹炉
+			35 button 功法
+			36 button 法宝
+			37 button 行囊
+			38 button 仙缘
+			39 button 生平
+			40 text 数值未平衡
+		41 button 行道手记 ›
+
+The focused UI element is 32 button 修行

@@ -1,0 +1,10 @@
+{
+  "sourceDigest": "dc8005ae11eedb931dd71d47277e07d138b94c06ff827cb6d50f8ff975e16bce",
+  "trace": "artifacts/goal-4/r4/ui-question-fate-red-actual-results/stage-r4-a-pending-trial-q-1fc8f-erying-it-as-a-person-event-chromium/trace.zip",
+  "traceSha256": "3f5dc1b4447f4a73c5240ccfef55a2a497a978eba332e34a89c7683ed14dc1e8",
+  "actualConsoleErrors": [
+    "RuleError: 未知人物事件\n    at ae (http://127.0.0.1:4173/assets/index-RNyX0kfr.js:4:402)\n    at js (http://127.0.0.1:4173/assets/index-RNyX0kfr.js:4:35208)\n    at Hf.fn (http://127.0.0.1:4173/assets/index-RNyX0kfr.js:5:7925)\n    at Mv (http://127.0.0.1:4173/assets/index-RNyX0kfr.js:1:8216)\n    at get value (http://127.0.0.1:4173/assets/index-RNyX0kfr.js:1:20209)\n    at Proxy.<anonymous> (http://127.0.0.1:4173/assets/index-RNyX0kfr.js:5:10624)\n    at hd (http://127.0.0.1:4173/assets/index-RNyX0kfr.js:1:44170)\n    at Sv.fe [as fn] (http://127.0.0.1:4173/assets/index-RNyX0kfr.js:1:54460)\n    at Sv.run (http://127.0.0.1:4173/assets/index-RNyX0kfr.js:1:6803)\n    at Sv.runIfDirty (http://127.0.0.1:4173/assets/index-RNyX0kfr.js:1:7113)"
+  ],
+  "failure": "Vue catches query error and removes fate component; browser visible assertion times out",
+  "startupRefusalNotProductRed": "ui-question-fate-red.log"
+}

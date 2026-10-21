@@ -1,0 +1,74 @@
+{
+  "format": "chenyuan-r4-final-source-review",
+  "version": 1,
+  "date": "2026-10-22",
+  "sourceDigest": "dc8005ae11eedb931dd71d47277e07d138b94c06ff827cb6d50f8ff975e16bce",
+  "scope": "DC冻结源的最终只读差异/身份复核；继承旧22源已有详细静态审查范围并保留原源身份。未运行浏览器/测试、未查看像素、未修改源码/测试/Git/用户档；只写本指定ignored报告。",
+  "status": "changes_requested_trial_question_domain_boundary",
+  "freezeIdentity": {
+    "buildRecord": "artifacts/goal-4/r4/tested-build-eighth.json",
+    "recordSha256": "1f44914cb8653ccc47592d1caab10288076e0a67586d4e1159938e56cd7b3dbd",
+    "buildSourceDigest": "dc8005ae11eedb931dd71d47277e07d138b94c06ff827cb6d50f8ff975e16bce",
+    "requiredSourceDigest": "dc8005ae11eedb931dd71d47277e07d138b94c06ff827cb6d50f8ff975e16bce",
+    "runtimeSourceCount": 187,
+    "freezeDirectory": "artifacts/goal-4/r4/source-dc8005ae",
+    "freezeHashErrors": [],
+    "priorFreezeDirectory": "artifacts/goal-4/r4/source-22f4152c",
+    "changedFrom22": [
+      "web/src/FateCatalogue.vue"
+    ],
+    "sameFrom22": 186
+  },
+  "minimalV6Assessment": {
+    "verdict": "pass_for_counter_correction_only",
+    "source": "web/src/FateCatalogue.vue CataloguePager total",
+    "detail": "实际NPC拜访已提交、待回应时availableEvents为空，但当前面板确有一项会面。total改为pending?1:eventPage.total与现有page0/pages1一致，只修计数，不改变Game、费用、读秒、命令或任何开始处理。"
+  },
+  "findings": [
+    {
+      "id": "R4-TRIAL-QUESTION-MEETING",
+      "priority": "P2",
+      "classification": "源码确认的可达非法查询；本审查未运行浏览器复现",
+      "source": "web/src/FateCatalogue.vue:20 pending; src/full/queries.ts:187-190 getStoryContext; src/full/contracts.ts gamePhase",
+      "problem": "pending只排除temple，未排除trial_question。问心待答时点击仙缘的此地机缘，模板求pending会调用getStoryContext(game,trial_question)，而该query只接受stories中的NPC事件，必抛INVALID_QUERY未知人物事件。",
+      "actualTrigger": [
+        "通过合法START_TRIAL进入stage0问心，保留尚未选择答案。",
+        "点击tab-3进入仙缘，再点击fate-mode-events。",
+        "Fate当前mode events的会面区与页数会读取pending，从而触发不合法NPC故事查询。"
+      ],
+      "impact": "只读入口发生渲染异常，无法按正常NPC机缘页继续浏览；不涉及Game写入，但违反R4全入口/问心期间阅读可用合同。",
+      "whyExistingTestsMiss": "all-eight-entry使用DECIDE普通人物故事夹具；问心选项与同run再入问心用例没有进入仙缘/此地机缘。V6真实6秒拜访只覆盖合法NPC EVENT。",
+      "minimalRecommendation": "仅在gamePhase(game)===event的正式NPC事件域查询getStoryContext，或使用既有stories成员资格校验；trial-question单独保留当前遭遇/问心入口，不伪造人物会面或代选答案。无需改变正式Game、Store、DB或周期。",
+      "requiredVerification": "新增固定1440×900问心待答→仙缘→此地机缘的真实可见入口红例，确认无pageerror/非法查询，Game/activity不变、继续当前遭遇仍回问心且选项完整。修后重新冻结来源，旧DC证据保留。"
+    }
+  ],
+  "priorDetailedStaticScope": {
+    "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+    "buildRecord": "artifacts/goal-4/r4/tested-build-seventh.json",
+    "evidenceKind": "本子代理前轮只读审查消息及source-22f4152c冻结源码；没有独立旧审查JSON，不能编造文件或把旧消息改为DC执行。",
+    "areas": [
+      "按人生/readingGeneration/真实status隔离的KeepAlive阅读组件；正常同活动周期不按revision清读页。",
+      "有限readingReturn.parent与普通detailParent组合，反序返回和回既有life防环，showLife await后核对run/context/navigation owner。",
+      "叙事真实语义进入代次撤销旧预选；同run再次问心的相同instanceId不沿用旧答案；隐藏ChoiceCard取消旧peek。",
+      "UI journal本地连续正式观察提示：EVENT0、胜利BATTLE2、其他当前行动1；连续revision、条数与保留文本均验证才复用，缺链明确回落。",
+      "reading-memory flush post等待同轮正式观察就绪；仅读页索引/令牌，不改Store时钟或原命令/回执重试。",
+      "全人物、生平全文及导出、DECIDE/问心/两结尾的选项预选与实际6/12秒确认分离；八主入口清临时阅读返回。"
+    ]
+  },
+  "testPremiseReview": {
+    "fourPeopleFullText": "已读取新增next正文与无next complete逐字断言，原summary/facts/options与完整Game/activity断言保留。新增断言应仅按实际加载并完成的报告登记。",
+    "sameLifeQuestion": "夹具先正常多炼一枚渡劫引，再通过实际回答/撤退/行旅/再次入劫进入同run同instanceId；目的地在实际第二页，显式翻页修正是可见入口前提，不降低业务断言。",
+    "U7Selection": "保留预选后，旧U7用例回到已预选release；明确点accept再验证暂停后可用，符合新合同，未删Game/活动/门禁断言。",
+    "coverageLimit": "阶段代表夹具与完整文本断言不能当作全部NPC逐分支正常路线、长期成长或真人美术验收；当前新增trial-question机缘域边界仍未覆盖。"
+  },
+  "currentRuns": "父代理已启动DC174UI/115IDB/542core/122guard；本审查未轮询进程或宣称终态。旧22/FD报告保留各自身份，不改标签成DC新执行。",
+  "notClaimed": [
+    "当前DC或将来修后源的全轮终态",
+    "所有截图已审或整体美术完成",
+    "长期放置平衡/完整最终矩阵/干净最终包/真人验收完成",
+    "UI阅读重定位或阅读授权等于任何新Game写授权"
+  ],
+  "humanAcceptance": false,
+  "wholeArtComplete": false,
+  "overallGoalComplete": false
+}

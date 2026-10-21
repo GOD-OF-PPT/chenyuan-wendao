@@ -1,0 +1,91 @@
+{
+  "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+  "url": "http://127.0.0.1:56884/",
+  "visibleAXBeforeAfterReloadIdenticalExceptNodeIndices": true,
+  "afterReadonlyFateNavigationAndReturnIdenticalExceptIndicesAndFocus": true,
+  "progress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "school": "尚未择法",
+    "cultivation": "5/10",
+    "stones": 40,
+    "month": 1,
+    "hp": "60/60",
+    "mp": "20/20",
+    "place": "听雨洞府",
+    "activity": "待安排",
+    "save": "已保存"
+  },
+  "noUserGameExecutionImportRestoreResetOrSaveTests": true,
+  "rawDBByteEqualityNotClaimed": true,
+  "images": [
+    {
+      "name": "preview-before",
+      "originalPng": "artifacts/goal-4/r4/preview-before.png",
+      "originalSha256": "d5d55f760e4acc9419af05e153d93d13fbc1d50fe13dd80ca96fe032270369e5",
+      "previewJpeg": "goal-4/evidence/r4/preview-before.jpg",
+      "previewSha256": "cc65e92b12e21e0e0e50cee664ef8d534f011da6aecf258e13affe0063c788ee",
+      "size": [
+        1280,
+        720
+      ],
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": false
+    },
+    {
+      "name": "preview-after",
+      "originalPng": "artifacts/goal-4/r4/preview-after.png",
+      "originalSha256": "d5d55f760e4acc9419af05e153d93d13fbc1d50fe13dd80ca96fe032270369e5",
+      "previewJpeg": "goal-4/evidence/r4/preview-after.jpg",
+      "previewSha256": "cc65e92b12e21e0e0e50cee664ef8d534f011da6aecf258e13affe0063c788ee",
+      "size": [
+        1280,
+        720
+      ],
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true
+    },
+    {
+      "name": "preview-fate",
+      "originalPng": "artifacts/goal-4/r4/preview-fate.png",
+      "originalSha256": "73ee4916243239fd74d0a13fb5083a2c621b0292ac1eb6d15422907327526afc",
+      "previewJpeg": "goal-4/evidence/r4/preview-fate.jpg",
+      "previewSha256": "171d0bc7e08ec4bc05f4dd040c6f9f96dc3218438e2990fb10d6b6520eac6393",
+      "size": [
+        1280,
+        720
+      ],
+      "conversion": {
+        "format": "JPEG",
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "pixelReviewed": true
+    }
+  ],
+  "scope": "Readonly original user tab progress and screenshot, incidental actual pane size only; not compatibility acceptance",
+  "incidentalPaneObservation": {
+    "id": "R4-OBS-720-01",
+    "size": [
+      1280,
+      720
+    ],
+    "image": "goal-4/evidence/r4/preview-fate.jpg",
+    "finding": "First person directory row overlaps the人物category at the incidental in-app small pane; current1440x900 acceptance does not cover it",
+    "owner": "MATRIX compatibility last, afterU8-B/C",
+    "fixed": false,
+    "compatibilityTestsRun": false,
+    "compatibilityDevelopmentPerformed": false
+  }
+}

@@ -1,0 +1,558 @@
+{
+  "format": "chenyuan-r4-final-source-review",
+  "version": 6,
+  "date": "2026-10-22",
+  "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+  "scope": "C103冻结源原子收卷后的虚拟绘制帧握手适配，只读核对新旧测试逐行diff、原真实周期/保存/几何/Game断言与已有实际5次重复终态；当前留白25/6与独立13帧像素另证按原身份记录。本代理未跑测试/浏览器、未改源码/测试/Git/用户档、未看像素。",
+  "status": "reviewed_static_scope_and_current_clearance_passed_frame_handshake_stable_final175_pending",
+  "blockingFindingsInReviewedScope": [],
+  "identity": {
+    "buildRecord": "artifacts/goal-4/r4/tested-build-eleventh.json",
+    "buildRecordSha256": "04fde6288441b0d430980efd7e38c639eaa74f7d6ff5ccd65991759576b6036f",
+    "freeze": "artifacts/goal-4/r4/source-c103c63d",
+    "runtimeSources": 187,
+    "runtimeFiles": 56,
+    "runtimeBytes": 7300132,
+    "currentSourceHashErrors": [],
+    "frozenSourceHashErrors": [],
+    "from2ASource": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+    "changedSources": [
+      "web/src/stage-r4.css"
+    ],
+    "unchangedSourceCount": 186
+  },
+  "priorDetailedStaticScope": {
+    "sourceDigest": "22f4152cc9dd91f372842f95a7f0c6ac598c0535b503617401da37da297fb474",
+    "buildRecord": "artifacts/goal-4/r4/tested-build-seventh.json",
+    "evidenceKind": "本子代理前轮只读审查消息及source-22f4152c冻结源码；没有独立旧审查JSON，不能编造文件或把旧消息改为DC执行。",
+    "areas": [
+      "按人生/readingGeneration/真实status隔离的KeepAlive阅读组件；正常同活动周期不按revision清读页。",
+      "有限readingReturn.parent与普通detailParent组合，反序返回和回既有life防环，showLife await后核对run/context/navigation owner。",
+      "叙事真实语义进入代次撤销旧预选；同run再次问心的相同instanceId不沿用旧答案；隐藏ChoiceCard取消旧peek。",
+      "UI journal本地连续正式观察提示：EVENT0、胜利BATTLE2、其他当前行动1；连续revision、条数与保留文本均验证才复用，缺链明确回落。",
+      "reading-memory flush post等待同轮正式观察就绪；仅读页索引/令牌，不改Store时钟或原命令/回执重试。",
+      "全人物、生平全文及导出、DECIDE/问心/两结尾的选项预选与实际6/12秒确认分离；八主入口清临时阅读返回。"
+    ]
+  },
+  "resolvedFindings": [
+    {
+      "id": "R4-TRIAL-QUESTION-MEETING",
+      "visualIssueId": "V7",
+      "status": "resolved_by_current_source_and_actual_targeted_execution",
+      "originalCause": "Fate.pending仅排除temple，trial_question进入getStoryContext非法NPC域；Vue捕获RuleError后移除仙缘组件。",
+      "currentSource": "web/src/FateCatalogue.vue:20，只有id存在且正式gamePhase(game)===event才调用getStoryContext。",
+      "domainAssessment": "正式event由Game校验证明为已知NPC故事；opening排除temple，trial-question独立排除；idle/battle/trial-battle/trial-ending/sealed没有此NPC查询。合法NPC待回应行为及已会面total1保持，问心不伪造人物会面、不代选。",
+      "originalProductRed": {
+        "path": "artifacts/goal-4/r4/ui-question-fate-red-actual.json",
+        "sha256": "96e0aa4ddc0adbd8c10405385b2581c2e3bde9422e21da3ddf5c4e653d930eaf",
+        "sourceDigest": "dc8005ae11eedb931dd71d47277e07d138b94c06ff827cb6d50f8ff975e16bce",
+        "failed": 1,
+        "diagnosis": "artifacts/goal-4/r4/question-query-diagnosis.json",
+        "diagnosisSha256": "0dd23ffd278ecae78c009f6e7911eb3d41da8b5b5f27c06c3727e6be88900b3e",
+        "trace": "artifacts/goal-4/r4/ui-question-fate-red-actual-results/stage-r4-a-pending-trial-q-1fc8f-erying-it-as-a-person-event-chromium/trace.zip",
+        "traceSha256": "3f5dc1b4447f4a73c5240ccfef55a2a497a978eba332e34a89c7683ed14dc1e8",
+        "queryErrorVerifiedInTrace": true
+      },
+      "startupFailureExcluded": "ui-question-fate-red.log",
+      "actualTargetedGreen": {
+        "path": "artifacts/goal-4/r4/ui-question-fate-fixed.json",
+        "sha256": "a3b08152f6f9f49e5ca675fd22c1c5c4549579e1d426003a531cf63216c7dbea",
+        "sourceDigest": "d1884a79ca19ccab621ce4ef2acbcca626056b3b360339a444c9cc35228fe9df",
+        "passed": 2,
+        "failed": 0,
+        "skipped": 0,
+        "retries": 0,
+        "cases": [
+          "a real six-second visit leaves a clear pending meeting and never silently chooses the response",
+          "a pending trial question can inspect local fate without querying it as a person event"
+        ],
+        "scope": "真实6秒NPC拜访待回应共1，以及合法问心→仙缘机缘→返回问心；具体代码保留Game/activity不变与console/pageerror空断言。"
+      },
+      "unchangedAuthorities": "仅限制读取查询的域；不更改Game、正式Action/命令/预算/费用/周期/DB、已受理写意图、原回执重试或用户授权。",
+      "currentSourceRecheck": {
+        "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+        "raw": "artifacts/goal-4/r4/ui-motion-fixed.json",
+        "sha256": "bca9b449fc2e82195b334d311b0d610345833f717a7bf9bee7f9807882e8ee4c",
+        "case": "a pending trial question can inspect local fate without querying it as a person event",
+        "note": "当前2A定向再次验证问心→仙缘/机缘→返回；原DC真实失败及D188两项定向身份继续保留。"
+      }
+    },
+    {
+      "id": "R4-DIALOGUE-STAMP-NAVIGATION",
+      "visualIssueId": "V8",
+      "status": "source_and_current_targeted_geometry_resolved_independent_pixels_pending",
+      "originalCause": "回应成功短印章原目标落在仙缘分类上方，与近期手记交叠。",
+      "originalRed": {
+        "path": "artifacts/goal-4/r4/ui-dialogue-stamp-red.json",
+        "sha256": "d71a02a12067734857f17c83718254b61e4364a07f1a0b73d7e4a4264dff8107",
+        "sourceDigest": "d1884a79ca19ccab621ce4ef2acbcca626056b3b360339a444c9cc35228fe9df",
+        "failed": 1,
+        "actualOverlap": [
+          "近期手记"
+        ]
+      },
+      "currentPatch": "ActionFeedbackStage仅对dialogue/closure优先取可见.book-canvas，使用原closure画布83%/40%位置；其余目标选择不变。",
+      "fallbackAssessment": "无book时仍完整使用原visible(selector)、原触发元素与默认点回退。closure有book时目标与83%/40%偏移等同原行为；无book时仍回退，不退化。",
+      "identityAssessment": "只改变短演出点与同一次短数字的fallback坐标；tracker.consume、receipt、pending、epoch/generation、保存门禁、1600ms清理、动画开关和正式Game/命令/回执/奖励都未修改。",
+      "actualTargetedGreen": {
+        "path": "artifacts/goal-4/r4/ui-motion-fixed.json",
+        "sha256": "bca9b449fc2e82195b334d311b0d610345833f717a7bf9bee7f9807882e8ee4c",
+        "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "retries": 0,
+        "cases": [
+          "a real six-second visit leaves a clear pending meeting and never silently chooses the response",
+          "one response waits six real seconds and persists its actual selected outcome exactly once",
+          "the selected ending waits twelve real seconds and seals only this life with all records retained",
+          "a pending trial question can inspect local fate without querying it as a person event"
+        ],
+        "geometry": "真实6秒回应案例读取实际action-motion包围盒，加30px外缘后与仙缘分类按钮无交叠；完整Game与正式advance相等。",
+        "scope": "其余3例为真实6秒拜访、真实12秒结尾及问心读域回归。不是全轮或独立像素认可。"
+      },
+      "budget": {
+        "manifest": "art/redesign/action-feedback.json",
+        "manifestSha256": "f818071261c5ec9023be5c0bbcce0dbee2b5407f262684b70de36555b325f4e2",
+        "actualBytes": 33947,
+        "originalMaxBytes": 34000,
+        "allDeclaredFileHashesAndBytesMatch": true,
+        "maxDurationMs": 1600,
+        "maxParticles": 12,
+        "maxFamilies": 14
+      }
+    },
+    {
+      "id": "R4-CLOSURE-READING-CLEARANCE",
+      "status": "resolved_for_current_c103_geometry_and_independent_representative_pixel_scope",
+      "originalRedSnapshot": "artifacts/goal-4/r4/final-source-review-2a98397d-closure-clearance-red.json",
+      "originalRedSnapshotSha256": "8884032fc964696f09c3d44d9ba40faecc7c773332f49bf2d66df3c677cf765f",
+      "actualGeometry": "artifacts/goal-4/r4/ui-space-fixed.json",
+      "actualPerPage": "artifacts/goal-4/r4/ui-space-text.json",
+      "independentPixels": {
+        "raw": "artifacts/goal-4/r4/visual-space-fixed-review.json",
+        "sha256": "d83d9b26a1adea80b30839f3be4d70c58433bd3909c0f6faa6a3c52e1534d5c5",
+        "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+        "freshActualReview": 13,
+        "inherited": 0,
+        "allReferencedPngAndPreviewHashesChecked": true,
+        "reviewedByThisAgent": false,
+        "scope": "独立像素代理实看13个当前代表帧，含closing/ending/response及生平四篇章/人物四项；本代理只核对该报告与hash，不代签全部像素或真人。"
+      },
+      "boundary": "修复的是2A正文卡片安全区；C103全轮另一个虚拟rAF等待失败按握手问题分别保留，不混为几何复发。"
+    }
+  ],
+  "minimalV6CounterAssessment": {
+    "verdict": "pass_for_counter_correction_only",
+    "source": "web/src/FateCatalogue.vue CataloguePager total",
+    "detail": "实际NPC拜访已提交、待回应时availableEvents为空，但当前面板确有一项会面。total改为pending?1:eventPage.total与现有page0/pages1一致，只修计数，不改变Game、费用、读秒、命令或任何开始处理。"
+  },
+  "testPremiseReview": {
+    "fourPeopleFullText": "已读取新增next正文与无next complete逐字断言，原summary/facts/options与完整Game/activity断言保留。新增断言应仅按实际加载并完成的报告登记。",
+    "sameLifeQuestion": "夹具先正常多炼一枚渡劫引，再通过实际回答/撤退/行旅/再次入劫进入同run同instanceId；目的地在实际第二页，显式翻页修正是可见入口前提，不降低业务断言。",
+    "U7Selection": "保留预选后，旧U7用例回到已预选release；明确点accept再验证暂停后可用，符合新合同，未删Game/活动/门禁断言。",
+    "coverageLimit": "代表阶段夹具与全文断言不等于全部NPC逐分支正常路线、长期成长或真人美术验收；问心→仙缘机缘域已由D188两项与当前2A四项中的专例覆盖，但不冒称全phase动态矩阵。"
+  },
+  "currentFullChecks": {
+    "state": "c103_previous_complete174_pass_1_frame_wait_failure_handshake_repeat5_passed_fresh_final175_pending",
+    "requestedUi": 175,
+    "requestedIdb": 115,
+    "requestedCore": 542,
+    "requestedGuards": 122,
+    "focused25": {
+      "raw": "artifacts/goal-4/r4/ui-space-fixed.json",
+      "sha256": "0c4aa7736148e75207e01a70a5232f55366de957906d3f03b05e5bb34a6e40a6",
+      "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+      "passed": 25,
+      "failed": 0,
+      "skipped": 0,
+      "retries": 0,
+      "cases": [
+        "the committed closing seal is anchored inside the life canvas and never crosses the reading tabs or actions",
+        "life chapter and exact page survive ordinary goal inspection without a Game action",
+        "same person and category selection preserve the current factual reading and ordinary return",
+        "a story can inspect life and ordinary details then return to its same unconfirmed response",
+        "opening life from settings inside an ordinary story detail preserves that original one-level return",
+        "a real six-second visit leaves a clear pending meeting and never silently chooses the response",
+        "all four people preserve every factual and known future-reading character without acting",
+        "the complete retained hundred-entry journal remains readable through its actual page controls",
+        "a duplicate journal entry keeps its own place after a saved commission",
+        "a duplicate journal entry keeps its own place after a saved commission at the hundred-entry cap",
+        "a committed visit that adds no journal text preserves the exact repeated entry being read",
+        "a saved victory with two actual journal entries retains the older readable entry",
+        "every life chapter retains its full source text and the exported factual life stays complete",
+        "DECIDE shows every genuine option while preselection and native details remain read-only",
+        "ANSWER_TRIAL shows every genuine option while preselection and native details remain read-only",
+        "END shows every genuine option while preselection and native details remain read-only",
+        "a committed response inserts facts without moving the life reader to another fact",
+        "one response waits six real seconds and persists its actual selected outcome exactly once",
+        "the selected ending waits twelve real seconds and seals only this life with all records retained",
+        "all eight main entries clear the temporary life-reading return while preserving the same pending story",
+        "a replacement life cannot inherit the previous factual chapter or unconfirmed response",
+        "entering question again in the same life resets the old response despite its identical semantic id",
+        "cancelled choice confirmation and a hidden pending peek cannot execute or reopen an old dialogue",
+        "failed scene and portrait resources keep all people, complete factual reading and return controls usable",
+        "a pending trial question can inspect local fate without querying it as a person event"
+      ]
+    },
+    "perPage6": {
+      "raw": "artifacts/goal-4/r4/ui-space-text.json",
+      "sha256": "e7258c961e1c1d57e598df1882e80484fc6be2a187041276c72f6cad170593af",
+      "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "retries": 0,
+      "cases": [
+        "all four people preserve every factual and known future-reading character without acting",
+        "the complete retained hundred-entry journal remains readable through its actual page controls",
+        "every life chapter retains its full source text and the exported factual life stays complete",
+        "DECIDE shows every genuine option while preselection and native details remain read-only",
+        "ANSWER_TRIAL shows every genuine option while preselection and native details remain read-only",
+        "END shows every genuine option while preselection and native details remain read-only"
+      ]
+    },
+    "original2AFull": {
+      "raw": "artifacts/goal-4/r4/ui-validated.json",
+      "sha256": "a62416d75376e9bbc5adcb0b6ac977e084d402a05434a6bbf6bc56551514eac4",
+      "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+      "passed": 174,
+      "failed": 1,
+      "skipped": 0
+    },
+    "original2AAdaptedSingle": {
+      "raw": "artifacts/goal-4/r4/ui-closure-adapted.json",
+      "sha256": "d4fc04b1658bc69572863cd4bb467aaf31f96c9527ae0c3347aef0f405f77bf4",
+      "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0
+    },
+    "newFull175": "本次未读取到握手适配后的新完整175终态；5次稳定性仅1业务用例，不与此前174项合成通过。",
+    "otherChecks": "本次仅核对当前资产清单13962/14000与匹配hash；各自完整IDB/core/guard/构建报告及输入同源仍由后续交付核对。",
+    "sourceC103PreviousComplete": {
+      "raw": "artifacts/goal-4/r4/ui-complete.json",
+      "sha256": "8c4f74cb55e923dedceb009371b6c791f5e7f61b6c5475e03f005ce897c55ecb",
+      "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+      "passed": 174,
+      "failed": 1,
+      "skipped": 0,
+      "failureKind": "missing_action_motion_awaiting_virtual_frame_not_reading_clearance"
+    },
+    "frameHandshakeRepeatedCase": {
+      "raw": "artifacts/goal-4/r4/ui-closure-frame.json",
+      "sha256": "db212909b50abe48471adf9079591b2e7709d897ca0305e1870d586a27b8feb0",
+      "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+      "projectRepeatEach": 5,
+      "configuredWorkers": 3,
+      "actualWorkers": 3,
+      "repeatedExecutionsPassed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "retries": 0,
+      "distinctBusinessCases": 1,
+      "notNewMatrixRows": true,
+      "note": "5次均同一closing业务用例的稳定性重复，不加入矩阵覆盖分母或与174旧绿合成。"
+    }
+  },
+  "remainingResponsibilities": [
+    "握手适配后更新测试输入封印，完整175 UI独立执行并核对终态；五次稳定性仅一个业务案例。",
+    "各自115真实IDB/542规则/122资产及类型构建的终态和输入/源码身份核对。",
+    "当前代表像素13帧与最终全轮图的真实继承/变化关系、提交/归档/冻结/HTTP及用户可见进度交付核对。",
+    "完整目标的长期放置平衡、全部后段矩阵、干净最终包、最大评审和真实用户/整体美术验收。"
+  ],
+  "adversarialReview": "旧2A正文几何红、C103旧完整174/1的虚拟帧等待红均保留。握手仅改测试在已保存之后如何推进rAF，原周期、全部几何及正式结果断言未动；同源5次真实绿仅表明1业务案例稳定性。当前13帧独立像素与25/6几何/全文证据可以解除限定安全区，但不能合成最终175或整体美术/真人通过。",
+  "humanAcceptance": false,
+  "wholeArtComplete": false,
+  "overallGoalComplete": false,
+  "testsRunByThisAgent": [],
+  "browserActionsByThisAgent": [],
+  "sourceFilesEditedByThisAgent": [],
+  "preservedPriorReports": [
+    {
+      "path": "artifacts/goal-4/r4/final-source-review-dc8005ae-blocked.json",
+      "sha256": "867fbff0116ca9752a2bda30084c0dc66c63d658850877c037725eedc23f8950",
+      "sourceDigest": "dc8005ae11eedb931dd71d47277e07d138b94c06ff827cb6d50f8ff975e16bce",
+      "statusAtThatTime": "changes_requested_trial_question_domain_boundary",
+      "unmodifiedSnapshot": true,
+      "note": "DC报告仍记有未解除缺陷，不覆写为当时已经通过。"
+    },
+    {
+      "path": "artifacts/goal-4/r4/final-source-review-d1884a79-v7-resolved.json",
+      "sha256": "733e13c963692fe477fc319ba7a7ead55aa99f750f58d3131ba50f3a2512cc3b",
+      "sourceDigest": "d1884a79ca19ccab621ce4ef2acbcca626056b3b360339a444c9cc35228fe9df",
+      "statusAtThatTime": "reviewed_static_scope_passed_v7_resolved_full_runs_pixels_human_pending",
+      "unmodifiedSnapshot": true,
+      "note": "保留D188解除V7时的原报告；不覆写为其V8像素已通过。"
+    },
+    {
+      "path": "artifacts/goal-4/r4/final-source-review-2a98397d-before-closure-adaptation.json",
+      "sha256": "993d949cd6d04dbdf45eaeee3132e98b3244f2ac7dbb4ffe9a6233c48af09149",
+      "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+      "statusAtThatTime": "reviewed_static_scope_passed_v7_rechecked_v8_targeted_geometry_passed_full_runs_pixels_human_pending",
+      "unmodifiedSnapshot": true,
+      "note": "保留2A四项定向与全轮尚在途时的version3报告；后续旧caption及新正文红例不倒写原记录。"
+    },
+    {
+      "path": "artifacts/goal-4/r4/final-source-review-2a98397d-closure-clearance-red.json",
+      "sha256": "8884032fc964696f09c3d44d9ba40faecc7c773332f49bf2d66df3c677cf765f",
+      "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+      "statusAtThatTime": "changes_requested_closing_seal_reading_clearance_failed",
+      "unmodifiedSnapshot": true,
+      "note": "保留2A旧整轮174/1及适配单例0/1的原缺陷报告，不倒写为当时已通过。"
+    },
+    {
+      "path": "artifacts/goal-4/r4/final-source-review-c103-before-frame-handshake.json",
+      "sha256": "1d7570417cb41e28685cc873e1b4c3def87da89b7dad556a70e980e586be86b3",
+      "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+      "statusAtThatTime": "static_scope_and_actual_geometry_passed_current_pixels_and_final_full_rerun_pending",
+      "unmodifiedSnapshot": true,
+      "note": "保留25/6绿而当前像素及完整175仍待核时的version5报告；不倒写原记录。"
+    }
+  ],
+  "preservation": {
+    "original13Baseline": "artifacts/goal-4/r4/protected13-before.json",
+    "original13Count": 13,
+    "hashErrors": [],
+    "stagedOverlap": [],
+    "formalRuleStoreClockRepositoryDiff": [],
+    "sourceFilesEditedByThisAgent": []
+  },
+  "notClaimed": [
+    "握手后的完整175UI已经通过。",
+    "5次重复是5个新玩法/矩阵项或可与旧174项合成完整通过。",
+    "本代理看过13帧像素；实际只核对独立报告与原图/预览hash。",
+    "当前几何/代表像素/稳定性等于整体美术、长期平衡、任意导入文案、兼容/环境性能、最终包或真人认可。"
+  ],
+  "closingSealTestAdaptation": {
+    "verdict": "selector_adaptation_preserves_business_requirements_but_current_retained_clearance_assertion_is_red",
+    "oldTest": {
+      "path": "artifacts/goal-4/r4/idle-stage-ui-before-caption-adaptation.ts",
+      "sha256": "49f9f26c4e95deaf0bbe5a323d39fa169e534c57bde58433a2bdc27b3f9f4d3f",
+      "bytes": 10985
+    },
+    "currentTestAtReview": {
+      "path": "web/e2e/idle-stage-ui.spec.ts",
+      "sha256": "899272d087f23f1d18e18602da4ba8706d209090c8badbfa9c97a6a184c6af0b",
+      "bytes": 11273
+    },
+    "changedLines": [
+      [
+        48,
+        48
+      ]
+    ],
+    "exactChange": "仅第48行将已删装饰.book-caption的底部避让目标替换为真实生平翻页navigation，并增加与四篇章按钮矩形无交叠检查。",
+    "setupLine47ByteEquivalent": true,
+    "businessLine49ByteEquivalent": true,
+    "preservedChecks": [
+      "合法境界/入劫/战斗驱动与既有seed前提未改",
+      "原选择transmit及ascension-confirm未改",
+      "实际cycleMs与stopped等待/20ms演出前提未改",
+      "画布四边界、正文右侧避让断言保留",
+      "完整Game与advance(before,a.nextCommand)相等，覆盖正式成本和结果",
+      "ascended、transmit、原runId不变、查看后Game/活动不变、stopped与completedCycles===1全部保留"
+    ],
+    "notRelaxed": [
+      "没有增加重试或超时",
+      "没有更改Game/正式奖励/费用/周期或前提",
+      "没有删除原业务断言或把不相交改为仅中心命中"
+    ],
+    "semanticTargetAssessment": "重复装饰caption删除后改用仍可操作的真实翻页属于合同内目标更新；新增四篇章按钮保护进一步覆盖当前功能入口。因目标位置改变，不宣称旧caption精确y界限在数学上仍相同。",
+    "oldFullFailureScope": {
+      "raw": "artifacts/goal-4/r4/ui-validated.json",
+      "sha256": "a62416d75376e9bbc5adcb0b6ac977e084d402a05434a6bbf6bc56551514eac4",
+      "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+      "passed": 174,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 0,
+      "error": "Timeout8000ms等待.book-caption",
+      "executedInFailingCase": "life-panel/标题/closure family以及画布四边界断言已走过。",
+      "notExecutedInFailingCase": "同一const中的caption await先超时，故其后的正文右侧避让、caption底部避让及第49行正式Game/封卷/run/单周期断言均未执行；不能把这些记为旧轮已通过。"
+    },
+    "adaptedSingleActual": {
+      "raw": "artifacts/goal-4/r4/ui-closure-adapted.json",
+      "sha256": "d4fc04b1658bc69572863cd4bb467aaf31f96c9527ae0c3347aef0f405f77bf4",
+      "sourceDigest": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2",
+      "stats": {
+        "startTime": "2026-10-21T17:55:00.050Z",
+        "duration": 8799.148,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0,
+      "retries": 0,
+      "failedAssertion": "motion.x >= reading.right，993.15625 < 1216",
+      "notExecutedAfterFailure": "翻页避让、四篇章新增不相交及第49行正式Game/封卷/run/单周期断言仍未由本单例执行证明。"
+    },
+    "runtimeSourceChangedByTestAdaptation": false,
+    "protected13ChangedByTestAdaptation": false,
+    "fullRerun": "待修复并独立重跑175项，不合成174项旧绿与任何新单例。",
+    "sourceDigestAtThatReview": "2a98397dbccc6a7b869b01d15404144a5715718f515e747db4263f7257482da2"
+  },
+  "pendingConfirmations": [],
+  "currentCssClearanceReview": {
+    "verdict": "minimal_presentation_only_change_with_preserved_clearance_assertions_current_real_geometry_green_pixels_pending",
+    "exactRules": [
+      {
+        "selector": ".single-screen .r4-fate .fate-reading",
+        "change": "只增加padding-right:28%，仅人物模式的画像+正文画布受此规则影响；events/journal的book-landscape不匹配。"
+      },
+      {
+        "selector": ".single-screen .r4-life .book-landscape>.life-reading",
+        "change": "width由calc(100% - 64px)改65%，margin由28px auto改28px 0 28px 28px；生平四篇章共用真实正文article，不修改数据/切页。"
+      }
+    ],
+    "unmodified": [
+      "18px正文及1.75行高",
+      "textPages按完整码点140字切页，全文不裁切",
+      "四人物/全部事实与已知来往选项、100手记、四生平篇和导出",
+      "原closing画布四边界+正文右侧+真实翻页+四篇章按钮避让",
+      "6/6/12秒及正式advance/Game/run/单周期/查看只读断言",
+      "Game/正式命令/Store/DB/CAS/收益/费用/回执重试"
+    ],
+    "budget": {
+      "manifest": "art/redesign/stage-r4.json",
+      "manifestSha256": "dbfeb5d7727f4a9280cb86f89505edbdbac99d9b2f44bc55a16558c3d98ed2a2",
+      "actualNativeBytes": 13962,
+      "originalMaxNativeBytes": 14000,
+      "allDeclaredHashesAndBytesMatch": true
+    },
+    "actualFocused25": {
+      "raw": "artifacts/goal-4/r4/ui-space-fixed.json",
+      "sha256": "0c4aa7736148e75207e01a70a5232f55366de957906d3f03b05e5bb34a6e40a6",
+      "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+      "passed": 25,
+      "failed": 0,
+      "skipped": 0,
+      "retries": 0,
+      "cases": [
+        "the committed closing seal is anchored inside the life canvas and never crosses the reading tabs or actions",
+        "life chapter and exact page survive ordinary goal inspection without a Game action",
+        "same person and category selection preserve the current factual reading and ordinary return",
+        "a story can inspect life and ordinary details then return to its same unconfirmed response",
+        "opening life from settings inside an ordinary story detail preserves that original one-level return",
+        "a real six-second visit leaves a clear pending meeting and never silently chooses the response",
+        "all four people preserve every factual and known future-reading character without acting",
+        "the complete retained hundred-entry journal remains readable through its actual page controls",
+        "a duplicate journal entry keeps its own place after a saved commission",
+        "a duplicate journal entry keeps its own place after a saved commission at the hundred-entry cap",
+        "a committed visit that adds no journal text preserves the exact repeated entry being read",
+        "a saved victory with two actual journal entries retains the older readable entry",
+        "every life chapter retains its full source text and the exported factual life stays complete",
+        "DECIDE shows every genuine option while preselection and native details remain read-only",
+        "ANSWER_TRIAL shows every genuine option while preselection and native details remain read-only",
+        "END shows every genuine option while preselection and native details remain read-only",
+        "a committed response inserts facts without moving the life reader to another fact",
+        "one response waits six real seconds and persists its actual selected outcome exactly once",
+        "the selected ending waits twelve real seconds and seals only this life with all records retained",
+        "all eight main entries clear the temporary life-reading return while preserving the same pending story",
+        "a replacement life cannot inherit the previous factual chapter or unconfirmed response",
+        "entering question again in the same life resets the old response despite its identical semantic id",
+        "cancelled choice confirmation and a hidden pending peek cannot execute or reopen an old dialogue",
+        "failed scene and portrait resources keep all people, complete factual reading and return controls usable",
+        "a pending trial question can inspect local fate without querying it as a person event"
+      ]
+    },
+    "actualPerPage6": {
+      "raw": "artifacts/goal-4/r4/ui-space-text.json",
+      "sha256": "e7258c961e1c1d57e598df1882e80484fc6be2a187041276c72f6cad170593af",
+      "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "retries": 0,
+      "cases": [
+        "all four people preserve every factual and known future-reading character without acting",
+        "the complete retained hundred-entry journal remains readable through its actual page controls",
+        "every life chapter retains its full source text and the exported factual life stays complete",
+        "DECIDE shows every genuine option while preselection and native details remain read-only",
+        "ANSWER_TRIAL shows every genuine option while preselection and native details remain read-only",
+        "END shows every genuine option while preselection and native details remain read-only"
+      ]
+    },
+    "perPageRiskReview": {
+      "originalRisk": "变窄会增加换行，原readAll仅拼接字符而frame只检末页，不能证明中间最长页不溢出。",
+      "testCorrection": "当前readAll逐页在不删除逐字拼接的前提下核对font>=18、p.bottom<=min(article.bottom,canvas.bottom)+1、article.top>=canvas.top-1。",
+      "actualResolutionScope": "新6项真实终态覆盖四人物全部实际事实/next/options、100保留手记、四生平篇全文以及3种抉择的既有完整阅读内容。",
+      "limit": "证明这些当前正式内容逐页通过，不冒称任意导入文本/未来文案/所有环境或真人可读性已验收。"
+    },
+    "pixelEvidenceAtReview": {
+      "currentC103": "read_independent_pixel_agent_report_and_verified_all_13_original_and_preview_hashes",
+      "raw": "artifacts/goal-4/r4/visual-space-fixed-review.json",
+      "sha256": "d83d9b26a1adea80b30839f3be4d70c58433bd3909c0f6faa6a3c52e1534d5c5",
+      "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+      "freshActualReview": 13,
+      "pixelViewedByThisAgent": false
+    }
+  },
+  "frameHandshakeReview": {
+    "verdict": "valid_virtual_clock_render_frame_handshake_not_a_game_cycle_or_reward_change",
+    "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+    "oldTest": {
+      "path": "artifacts/goal-4/r4/idle-stage-ui-before-frame-handshake.ts",
+      "sha256": "899272d087f23f1d18e18602da4ba8706d209090c8badbfa9c97a6a184c6af0b"
+    },
+    "newTestAtReview": {
+      "path": "web/e2e/idle-stage-ui.spec.ts",
+      "sha256": "00e22449bf07b9ec9fe095855e2ec1a3aaaf551f5b33d20a6d1b879f69e34f76"
+    },
+    "changedLine": 47,
+    "replacement": "把stopped后任意一次runFor20替换为先等save-status已保存，再在expect.poll的每次回调runFor16并即时evaluateAll读取action-motion的data-family；保持8000ms超时。",
+    "preserved": {
+      "allOtherLinesByteEquivalent": true,
+      "geometryLine48ByteEquivalent": true,
+      "formalGameLine49ByteEquivalent": true,
+      "actualCycle": "原a.cycleMs fastForward完整保留，未提前结算或改12秒周期；活动stopped后才等待演出帧。",
+      "formalAssertions": "完整advance(before,a.nextCommand)、ascended/transmit、runId不变、查看后Game/activity不变、stopped和completedCycles===1均保留。"
+    },
+    "sourceReason": "ActionFeedbackStage.vue:34 本就await nextTick再await requestAnimationFrame；存档/活动停止观察到后，后排rAF仍可能未在此前一次20ms内调度，暂停的测试时钟必须继续驱动绘制帧。运行源码不变。",
+    "failureStillDetected": "evaluateAll不等待元素；没有匹配motion则返回null并继续受8秒总超时约束。不会注入notice、回执或DOM，不调用正式行动，不改变view/owner/epoch或禁用保存门禁。原toHaveAttribute和所有几何/业务断言仍在握手后执行。",
+    "notClaimed": "此虚拟钟用例不是12秒真实在线体验证明；真实在线6/6/12秒另在已实际25项内独立验证。本改动不把任意生产缺帧自动判为测试问题，若始终无帧仍失败。",
+    "originalCurrentSourceFullFailure": {
+      "raw": "artifacts/goal-4/r4/ui-complete.json",
+      "sha256": "8c4f74cb55e923dedceb009371b6c791f5e7f61b6c5475e03f005ce897c55ecb",
+      "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+      "passed": 174,
+      "failed": 1,
+      "skipped": 0,
+      "flaky": 0,
+      "failure": "等action-motion data-family closure时元素未出现，8000ms超时；不是原2A正文右侧几何红例。",
+      "unexecutedAfterFailure": "本次失败未到达第48行后续几何及第49行正式Game断言，不能说这条失败案例已将这些走绿。",
+      "trace": "artifacts/goal-4/r4/ui-complete-results/idle-stage-ui-the-committe-f3965-the-reading-tabs-or-actions-chromium/trace.zip",
+      "traceSha256": "22662d0fe3a8e1a04d07e797fe212e94857a2df1e80fed7603e77092b1c970ac",
+      "traceReview": "独立读到trace先clockFastForward12000再单次clockRunFor20以及该motion等待超时；trace压缩快照不在本报告冒称已全量重建。",
+      "errorContext": "artifacts/goal-4/r4/ui-complete-results/idle-stage-ui-the-committe-f3965-the-reading-tabs-or-actions-chromium/error-context.md",
+      "errorContextSha256": "9eff11e56bd79011d0e2efd950f144a55c7711858119f627c1b08cefeb068378",
+      "errorContextActuallyContains": [
+        "已保存",
+        "此生收卷",
+        "飞升 · 留道传承"
+      ],
+      "parentAdditionalDiagnosis": "父代理报告Game已封卷且feedback仍pending/no consoleerror；本审查区分此诊断与自己实际读取的调用/AX。"
+    },
+    "actualStabilityRun": {
+      "raw": "artifacts/goal-4/r4/ui-closure-frame.json",
+      "sha256": "db212909b50abe48471adf9079591b2e7709d897ca0305e1870d586a27b8feb0",
+      "sourceDigest": "c103c63d249d64f9b572a3aa2e8fc937675feb45ce60759ca6ee57026c2d9782",
+      "projectRepeatEach": 5,
+      "configuredWorkers": 3,
+      "actualWorkers": 3,
+      "repeatedExecutionsPassed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "retries": 0,
+      "distinctBusinessCases": 1,
+      "notNewMatrixRows": true,
+      "note": "5次均同一closing业务用例的稳定性重复，不加入矩阵覆盖分母或与174旧绿合成。"
+    },
+    "remaining": "更新测试输入封印后完整175新轮独立执行与终态同源核对。"
+  }
+}
