@@ -1,0 +1,71 @@
+{
+  "purpose": "local layout prototype only; existing assets copied into isolated preview root",
+  "files": [
+    {
+      "path": "art/ui-kit.svg",
+      "source": "web/public/art/ui-kit.svg",
+      "bytes": 9046,
+      "sha256": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee"
+    },
+    {
+      "path": "art/v2/scenes/cave.webp",
+      "source": "web/public/art/v2/scenes/cave.webp",
+      "bytes": 351730,
+      "sha256": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd"
+    },
+    {
+      "path": "art/v2/scenes/cave-meditation.webp",
+      "source": "web/public/art/v2/scenes/cave-meditation.webp",
+      "bytes": 297424,
+      "sha256": "cc59bccfd3a42cdf688acdfd606ebe92d6e8d812eb08202207aaac1b145eeb9e"
+    },
+    {
+      "path": "art/v2/scenes/wilderness.webp",
+      "source": "web/public/art/v2/scenes/wilderness.webp",
+      "bytes": 365578,
+      "sha256": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10"
+    },
+    {
+      "path": "art/v2/scenes/sect.webp",
+      "source": "web/public/art/v2/scenes/sect.webp",
+      "bytes": 357912,
+      "sha256": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6"
+    },
+    {
+      "path": "art/v2/catalogue/alchemy-v1.webp",
+      "source": "web/public/art/v2/catalogue/alchemy-v1.webp",
+      "bytes": 84870,
+      "sha256": "f806772d13cd930dd80722c61d6ec53b5e5f882e9314f73c2ec5cb878f7e1528"
+    },
+    {
+      "path": "art/v2/catalogue/study-v1.webp",
+      "source": "web/public/art/v2/catalogue/study-v1.webp",
+      "bytes": 97256,
+      "sha256": "07c30a57cd627bb391f1bc76ea286bc3b88f584928eff7c5f6c603d91de75a4d"
+    },
+    {
+      "path": "art/v2/characters/player.webp",
+      "source": "web/public/art/v2/characters/player.webp",
+      "bytes": 67524,
+      "sha256": "b8080cda6d7a8f4019a55a0a67808e7e6a88834dbc3ad3ba12167517a6c988c4"
+    },
+    {
+      "path": "art/v2/characters/shen.webp",
+      "source": "web/public/art/v2/characters/shen.webp",
+      "bytes": 67818,
+      "sha256": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1"
+    },
+    {
+      "path": "art/v2/characters/lu.webp",
+      "source": "web/public/art/v2/characters/lu.webp",
+      "bytes": 64486,
+      "sha256": "632438e9da240cd8b362d785d8b4a581544b79e6fc3d14edd54cc43cf7410ad4"
+    },
+    {
+      "path": "art/v2/characters/pei.webp",
+      "source": "web/public/art/v2/characters/pei.webp",
+      "bytes": 66310,
+      "sha256": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d"
+    }
+  ]
+}

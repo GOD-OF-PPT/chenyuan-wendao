@@ -1,0 +1,122 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "browser": "single Chromium",
+  "pages": [
+    {
+      "name": "alchemy",
+      "visibleControls": 20,
+      "allInsideAndHit": true,
+      "atMostOnePrimary": true
+    },
+    {
+      "name": "cultivate",
+      "visibleControls": 16,
+      "allInsideAndHit": true,
+      "atMostOnePrimary": true
+    },
+    {
+      "name": "explore",
+      "visibleControls": 19,
+      "allInsideAndHit": true,
+      "atMostOnePrimary": true
+    },
+    {
+      "name": "study",
+      "visibleControls": 20,
+      "allInsideAndHit": true,
+      "atMostOnePrimary": true
+    },
+    {
+      "name": "relic",
+      "visibleControls": 20,
+      "allInsideAndHit": true,
+      "atMostOnePrimary": true
+    },
+    {
+      "name": "inventory",
+      "visibleControls": 29,
+      "allInsideAndHit": true,
+      "atMostOnePrimary": true
+    },
+    {
+      "name": "fate",
+      "visibleControls": 18,
+      "allInsideAndHit": true,
+      "atMostOnePrimary": true
+    },
+    {
+      "name": "life",
+      "visibleControls": 20,
+      "allInsideAndHit": true,
+      "atMostOnePrimary": true
+    }
+  ],
+  "errors": [],
+  "checks": [
+    "edit finite plan before starting",
+    "cross-page activity remains visible",
+    "pause freezes displayed timer",
+    "explicit stop only clears prototype activity",
+    "goal source navigation is read-only",
+    "one detail surface with reachable close"
+  ],
+  "gameSaveTouched": false,
+  "status": "passed",
+  "task": "U8-A-R design and interactive layout prototype only",
+  "date": "2026-10-21",
+  "wholeArtAccepted": false,
+  "productionPreviewUpdated": false,
+  "prototypeURL": "http://127.0.0.1:56885/",
+  "sourceFiles": {
+    "goal-3/design/stage-prototype/README.md": "b91fb8a3922582917e28a5bf7ae751e18b3962f3b1a08af49f11cea87934f301",
+    "goal-3/design/stage-prototype/asset-references.json": "6641af2c834fbd443839d5871cde4642a1e8f8cf8b4a5b0484b9b6997824f501",
+    "goal-3/design/stage-prototype/index.html": "de0f20e930bcb9d1adf04f5ccc0bf209dc9d1f9f1375abf66aa68434428dd6e3",
+    "goal-3/design/stage-prototype/stage.css": "4d7dca6d50c875ce3da1ccc367e173e1aaa9aeba161356f00cfeaa3a3fb94118",
+    "goal-3/design/stage-prototype/stage.js": "1a4074597d7560e7bb482b59dfe18df47c144673d42ca90b70f9ca2561d819dc",
+    "goal-3/design/stage-prototype/verify.cjs": "f5f45c3d68d1f8df50e8e9b9a81c80c3d3796d83e5b91f4c443d524ca21b4dd3"
+  },
+  "rawQA": "artifacts/goal-3/u8-a/hierarchy-prototype-qa/verification.json",
+  "rawQASHA256": "5357fc67ba23c10127e0c817c0c89e9708d7c7fb9ed5074ff1aa675812c2b0dd",
+  "firstQA": "first run reached all eight page checks then failed only on a text selector including an arrow; retained verification-first.json/failure-first.png; selector corrected, no geometry/timing threshold removed",
+  "boundaries": [
+    "No actual Game commands or receipts",
+    "No real save import/export/restore",
+    "No compatibility or environment/performance checks",
+    "Production U8-A remains in progress after negative user feedback"
+  ],
+  "next": "U8-A-R1: real HUD/activity/detail surface plus cultivation/alchemy integration",
+  "reviewedImages": [
+    {
+      "path": "goal-3/evidence/u8-a-r/alchemy.jpg",
+      "sha256": "ae4549577950ac7b46813019ba29f7ec33a10b58863250686256c3425282c303",
+      "method": "view_image of full1440x900 JPEG quality70 review copy; original PNG kept in QA artifact"
+    },
+    {
+      "path": "goal-3/evidence/u8-a-r/inventory.jpg",
+      "sha256": "6c84ca22631ed56338aba1f5aa279239f4baaf5ccc08a48f3ef8cf0ac2a3c21a",
+      "method": "view_image of full1440x900 JPEG quality70 review copy; original PNG kept in QA artifact"
+    }
+  ],
+  "HTTPSourceFilesMatch": true,
+  "incidentalPreview": {
+    "size": [
+      660,
+      718
+    ],
+    "observation": "Codex side panel compresses this desktop-only prototype and clips navigation; temporary tab closed and full1440x900 design image shown instead",
+    "evidence": "artifacts/goal-3/u8-a/hierarchy-prototype-qa/iab-narrow-preview.png",
+    "notCompatibilityAcceptance": true,
+    "compatibilityDevelopmentAndTestsRemainPaused": true
+  },
+  "productionRuntimeUnchangedDigest": "2e6e1672471f83ad25b93559d1db53e16c67aba365b934c384ba34fcc45eb2dd",
+  "preserved13HashesMatch": true,
+  "imagePanelRequest": "queued; complete fixed-desktop design image also provided in final response",
+  "officialPreviewReadonlyIndex": {
+    "matchesCheckIdle02": true,
+    "checkedOnlyIndex": true,
+    "noReloadOrGameAction": true
+  }
+}

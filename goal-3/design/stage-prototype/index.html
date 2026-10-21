@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>尘缘问道 · 界面重排原型</title><link rel="stylesheet" href="stage.css"></head>
+<body><div id="prototype">
+  <div class="prototype-note">交互布局原型 · 示例状态 · 不读写游戏存档</div>
+  <div class="world" id="world" aria-hidden="true"></div><div class="veil" aria-hidden="true"></div>
+  <header class="hud">
+    <button id="profile" class="identity" aria-label="查看人物与完整状态"><img src="art/v2/characters/player.webp" alt=""><span><b>顾长青</b><small>炼气 · 剑修</small></span><span class="vitals"><small>气血 100 / 100</small><span class="track"><i></i></span><small>灵力 60 / 60</small></span></button>
+    <div class="purse"><span>灵石 <b>80</b></span><span>修为 <b>600 / 1000</b></span></div>
+    <button id="goal" class="goal"><small>当前目标</small><b>筹备筑基 <span>›</span></b></button>
+    <div class="utilities"><button id="help">帮助</button><button id="settings">设置</button></div>
+  </header>
+  <section id="activity" class="activity" hidden aria-label="当前安排"><span class="activity-glyph">◈</span><div><strong id="activity-name"></strong><small id="activity-state"></small></div><div class="activity-time"><output id="countdown" aria-live="off"></output><span class="track"><i id="activity-fill"></i></span></div><button id="pause" class="jade">暂停</button><button id="activity-view" class="quiet">查看安排</button></section>
+  <main id="stage" aria-label="当前玩法"></main>
+  <footer class="dock"><button id="journal" class="journal">◇ 行道手记</button><nav id="navigation" aria-label="全部玩法入口"></nav><span class="brand">尘缘问道</span></footer>
+  <dialog id="detail" aria-labelledby="detail-title"><header><div><small>随时返回当前场景</small><h2 id="detail-title"></h2></div><button id="close-detail" aria-label="关闭详情">返回 ×</button></header><div id="detail-body"></div><footer id="detail-footer"></footer></dialog>
+  <p id="notice" class="notice" role="status" hidden></p>
+</div><script src="stage.js"></script></body></html>
