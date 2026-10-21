@@ -1,0 +1,262 @@
+{
+  "task": "U8-C",
+  "date": "2026-10-22",
+  "status": "Current engineering scope complete; CHECK-U8 and later matrices remain",
+  "implementationCommit": "46d6a58a15e8f842f36c9f76537e1ec720d27eb5",
+  "branch": "codex/goal-4-online-recovery",
+  "sourceDigest": "4a7949f3dfe2ef810a37ee24471151450ac2fd12e64a369162df4ef7ad220956",
+  "source": {
+    "head": "46d6a58a15e8f842f36c9f76537e1ec720d27eb5",
+    "source": "46d6a58a15e8f842f36c9f76537e1ec720d27eb5",
+    "tree": "dc63ef5f513303e3c9e4e38913dd5889b1b47b7c",
+    "dirty": true,
+    "node": "v24.19.0",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtimeSourceCount": 193,
+  "runtimeFileCount": 56,
+  "runtimeBytes": 7334340,
+  "buildReport": {
+    "path": "web/build-report/build.json",
+    "sha256": "277713d74b1b9d42c73f282c0b7f9dfc011da69b00735be9058f6e990c2587f3",
+    "source": {
+      "head": "46d6a58a15e8f842f36c9f76537e1ec720d27eb5",
+      "source": "46d6a58a15e8f842f36c9f76537e1ec720d27eb5",
+      "tree": "dc63ef5f513303e3c9e4e38913dd5889b1b47b7c",
+      "dirty": true,
+      "node": "v24.19.0",
+      "npm": "8.11.0",
+      "npmOnPath": "8.11.0"
+    }
+  },
+  "checks": {
+    "ui": {
+      "path": "artifacts/goal-4/u8-c/ui-final.json",
+      "bytes": 274554,
+      "sha256": "f6f4a35fed5a46f82f4be41d667d323fa443ffbf3de93eced67f8837cd66a502",
+      "runtimeDigest": "4a7949f3dfe2ef810a37ee24471151450ac2fd12e64a369162df4ef7ad220956",
+      "stats": {
+        "startTime": "2026-10-21T21:44:45.495Z",
+        "duration": 997193.067,
+        "expected": 203,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    "storage": {
+      "path": "artifacts/goal-4/u8-c/idb-final.json",
+      "bytes": 1430968,
+      "sha256": "6a494ab00dbdf60b4975df1c825e8a6b348ecff5d0781878266711e815717174",
+      "runtimeDigest": "4a7949f3dfe2ef810a37ee24471151450ac2fd12e64a369162df4ef7ad220956",
+      "stats": {
+        "startTime": "2026-10-21T21:44:44.814Z",
+        "duration": 312031.109,
+        "expected": 173,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    "online": {
+      "path": "artifacts/goal-4/u8-c/online-final-b.json",
+      "bytes": 10059,
+      "sha256": "d92aad3ba5f2310a40ce68a6a4c029bd8ea9324a8b024e96aaa800e0d462ec5d",
+      "runtimeDigest": "4a7949f3dfe2ef810a37ee24471151450ac2fd12e64a369162df4ef7ad220956",
+      "stats": {
+        "startTime": "2026-10-21T21:53:27.339Z",
+        "duration": 1811852.777,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    "startupOwnership": {
+      "path": "artifacts/goal-4/u8-c/startup-owned-final.json",
+      "bytes": 59176,
+      "sha256": "86a7ee4cd13738d4b72dff09f83577e0665e03872b6b865878b6e0e0bddcba45",
+      "runtimeDigest": "4a7949f3dfe2ef810a37ee24471151450ac2fd12e64a369162df4ef7ad220956",
+      "stats": {
+        "startTime": "2026-10-21T21:42:08.506Z",
+        "duration": 28071.964,
+        "expected": 48,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    "assets": {
+      "path": "artifacts/goal-4/u8-c/assets-final-b.json",
+      "sha256": "2937399487c6dfe3001c2ce0d52d16b1858a97daed54aa68d6da8a790f4c8003",
+      "verifiedFiles": 87,
+      "productionAssets": 77,
+      "localLoadingNativeBytes": 1825,
+      "negativeTests": {
+        "path": "artifacts/goal-4/u8-c/assets-negative-b.log",
+        "sha256": "9c02c39ad8f95444094cb9488ce25c89022afca3e23ae0984fc63a1116cac3b6",
+        "passed": 132,
+        "failed": 0
+      }
+    },
+    "core": {
+      "passed": 731,
+      "failed": 0,
+      "skipped": 0,
+      "raw": "artifacts/goal-4/u8-c/core-final.log",
+      "sha256": "8e5d8ee9a0f9adc9143ae18c3ca82a4314dda15fd6563317d29422a0e4af4e44"
+    }
+  },
+  "onlineObservation": {
+    "raw": "artifacts/goal-4/u8-c/online-observation.json",
+    "sha256": "62afdffcf49417f1b40a2df3e0c8faa97164200758c76736aa8e70dfad9a85be",
+    "complete": true,
+    "observedHostMs": 1802552.419576,
+    "intendedObservationMs": 1800000,
+    "commits": 40,
+    "clicks": 100,
+    "fieldEdits": 58,
+    "finalRealm": "qi",
+    "finalXp": 960,
+    "finalStones": 36,
+    "finalInventory": {
+      "healing_pill": 3,
+      "foundation_pill": 1
+    },
+    "failure": null,
+    "segments": [
+      [
+        "opening-leave",
+        1,
+        "stopped"
+      ],
+      [
+        "travel-cave",
+        1,
+        "stopped"
+      ],
+      [
+        "training-natural-2",
+        2,
+        "stopped"
+      ],
+      [
+        "explicit-qi-entry",
+        1,
+        "stopped"
+      ],
+      [
+        "travel-wilderness",
+        1,
+        "stopped"
+      ],
+      [
+        "herbs-six-automatic-cycles",
+        6,
+        "stopped"
+      ],
+      [
+        "dew-two-automatic-cycles",
+        2,
+        "stopped"
+      ],
+      [
+        "travel-sect",
+        1,
+        "stopped"
+      ],
+      [
+        "core-one-long-cycle",
+        1,
+        "stopped"
+      ],
+      [
+        "work-budget-stop",
+        2,
+        "stopped"
+      ],
+      [
+        "work-new-authorization",
+        2,
+        "stopped"
+      ],
+      [
+        "travel-cave",
+        1,
+        "stopped"
+      ],
+      [
+        "production-foundation",
+        1,
+        "stopped"
+      ],
+      [
+        "production-healing",
+        2,
+        "stopped"
+      ],
+      [
+        "training-natural-14",
+        5,
+        "stopped"
+      ],
+      [
+        "training-assisted-15",
+        3,
+        "stopped"
+      ],
+      [
+        "training-natural-16",
+        7,
+        "stopped"
+      ]
+    ]
+  },
+  "recovery": {
+    "review": "artifacts/goal-4/u8-c/online-recovery-review.json",
+    "reviewSha256": "eb8d3c637dfd6d7637d296a8fdc2a3b93b99064ef020d8d5126568cfe88280d7",
+    "cases": 4,
+    "passed": 4,
+    "retries": 0,
+    "firstSubmitMsRange": [
+      6013.099999964237,
+      6022.699999988079
+    ],
+    "scope": "2 visible retry controls + 2 same-Store reconnect seams; no positive-consumable fault coverage and no screenshot acceptance"
+  },
+  "visualEvidence": [
+    {
+      "path": "artifacts/goal-4/u8-c/online-results-b/idle-online-a-normal-new-l-516c2--work-and-recovery-controls-chromium/online-early-qi.png",
+      "sha256": "3825cca30be02192d9a70863598b37010fe2d95e1e52403932891166e1b37944",
+      "reviewedPixel": true,
+      "view": "Full resolution PNG viewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-c/online-results-b/idle-online-a-normal-new-l-516c2--work-and-recovery-controls-chromium/online-materials-and-production.png",
+      "sha256": "1b9e150cba79d57c355fa86b732c04ec9bade38ac15d1652f898629f46cad3a4",
+      "reviewedPixel": false,
+      "view": "Captured, not pixel-reviewed this turn"
+    },
+    {
+      "path": "artifacts/goal-4/u8-c/online-results-b/idle-online-a-normal-new-l-516c2--work-and-recovery-controls-chromium/online-paused-plan-reloaded.png",
+      "sha256": "46d0e9f052713c402319b496a7b8288daa5c43e16eb61836a96ea105241167b8",
+      "reviewedPixel": false,
+      "view": "Captured, not pixel-reviewed this turn"
+    },
+    {
+      "path": "artifacts/goal-4/u8-c/online-results-b/idle-online-a-normal-new-l-516c2--work-and-recovery-controls-chromium/online-closing-goal.png",
+      "sha256": "b2258e4aac8301588814a3195b166f3a53fb22c62bcef7c83a8636b831880d4b",
+      "reviewedPixel": true,
+      "view": "Full resolution PNG viewed"
+    }
+  ],
+  "userProgress": "goal-4/evidence/u8-c/user-progress-proof.json",
+  "httpProof": "artifacts/goal-4/u8-c/http-release-proof.json",
+  "limits": [
+    "Only fixed 1440x900 Chromium; compatibility/mobile/responsive/multi-resolution/font/environment-performance matrices remain paused",
+    "Original native historical startup delay cause remains unknown",
+    "Finite routes and 30-minute observation do not prove long-term balance, complete human gameability or full aesthetic acceptance",
+    "Old failures and protected13 dirty inputs preserved; no push/PR/merge/public deployment/permission changes"
+  ]
+}

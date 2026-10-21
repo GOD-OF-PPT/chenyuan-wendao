@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "readonly": true,
+  "beforeSha256": "6afff7025b9b0bf027ed22018d15f6e4044780e79d4fc128fb215900a7058e14",
+  "afterSha256": "3336ef75b7e8a1289b8c3345d536d1b10dae292bc572016cf7ae402fc05656d2",
+  "beforeAfterSemanticEqualIgnoringNodeIndexesAndFocus": true,
+  "beforeVisibleProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "school": "尚未择法",
+    "xp": "5 / 10",
+    "stones": 40,
+    "month": 1,
+    "hp": "60 / 60",
+    "mp": "20 / 20",
+    "location": "听雨洞府",
+    "activity": "待安排",
+    "save": "已保存"
+  },
+  "afterVisibleProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "school": "尚未择法",
+    "xp": "5 / 10",
+    "stones": 40,
+    "month": 1,
+    "hp": "60 / 60",
+    "mp": "20 / 20",
+    "location": "听雨洞府",
+    "activity": "待安排",
+    "save": "已保存"
+  },
+  "gameAction": false,
+  "importRestoreReset": false,
+  "scope": "Original user-visible tab only; no user save mutation"
+}
