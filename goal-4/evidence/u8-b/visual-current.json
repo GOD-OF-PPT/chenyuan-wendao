@@ -1,0 +1,2834 @@
+{
+  "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+  "representativeScenes": 12,
+  "freshReviewCaptures": 14,
+  "finalDeliveryFreshRereads": 2,
+  "scope": "Fixed1440x900 only. Four early F, eight final-F individual passed-case frames and two terminal-delivery rereads. Earlier F whole199/1 startup failure remains separately recorded; no report retagging.",
+  "selected": [
+    {
+      "original": "artifacts/goal-4/u8-b/ui-card-green-results/stage-u8-b-qi-preparation--de255-pagination-above-navigation-chromium/preparation-cards-qi.png",
+      "sha256": "916967956e7ada090940c067c795c9da9afbe09ade76186c808f8f333b3d4d93",
+      "bytes": 922300,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/early-f-preparation-cards-qi.jpg",
+      "viewSha256": "900c03a604c4553a5c29340f6aaa4ec859385ce477c7b1c96fdc853c048fde84",
+      "viewBytes": 105894,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-card-green-results/stage-u8-b-foundation-prep-82864-pagination-above-navigation-chromium/preparation-cards-foundation.png",
+      "sha256": "0c33d1cc6dd3b1fa496b5a8ef1d9f8927ab559bfefa990eb40e0e9a7f4faa81d",
+      "bytes": 885374,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/early-f-preparation-cards-foundation.jpg",
+      "viewSha256": "92fc323fff5226f7c9f3fba0478c80b07896bf6d7a68ab7004064e9b05e8d223",
+      "viewBytes": 102612,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-card-green-results/stage-u8-b-current-spirit--c82b5-h-no-write-or-hidden-travel-chromium/cultivation-spirit.png",
+      "sha256": "41794d5672dc697c7bf87113aae5a66838e0706670b8d20da991935d16b71d38",
+      "bytes": 794180,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/early-f-cultivation-spirit.jpg",
+      "viewSha256": "3d37a4d3006ec8bdc6bb1e33a1c2031f84b90ef793b8ab996d0613a138f01bd8",
+      "viewBytes": 107442,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-card-green-results/stage-u8-b-current-spirit--c82b5-h-no-write-or-hidden-travel-chromium/preparation-spirit.png",
+      "sha256": "d33bb3ad777f727bccc66283895cd5266f25a85fa67500b29a9ea5ff4a8c09e1",
+      "bytes": 798648,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/early-f-preparation-spirit.jpg",
+      "viewSha256": "80bd76b229c462daf4ddcaeb835cac45f98a644fc3981497d10c18265d5cb7eb",
+      "viewBytes": 106654,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-final-f-results/stage-u8-b-a-chosen-purcha-8be49--or-authorising-an-activity-chromium/purchase-preparation-return.png",
+      "sha256": "d678f12f94337afcc55ac3963b35d19e96069516e56770ebb04c55f88544c8fa",
+      "bytes": 868950,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/final-f-purchase-preparation-return.jpg",
+      "viewSha256": "3bba11b710cd551ace4e8eed5a4f09d890bd70e99624bebd77f251563fcc4556",
+      "viewBytes": 99661,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-final-f-results/stage-u8-b-talisman-jade-s-32ae3-d-cancel-authorizes-nothing-chromium/outlook-result-talisman-jade_seal.png",
+      "sha256": "8b5d3c57cbbf4cdb4189af0835380c8fa58f6f9dbfa8aacfe9a0d3bdff70cf77",
+      "bytes": 419768,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/final-f-outlook-result-talisman-jade_seal.jpg",
+      "viewSha256": "e851dc6bc7776cc296bd0b0bf87fc9332c283b7f95629c4fd913dab35b679be3",
+      "viewBytes": 70105,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-final-f-results/stage-u8-b-sword-frost-swo-0cb0c-d-cancel-authorizes-nothing-chromium/outlook-result-sword-frost_sword.png",
+      "sha256": "25df89b98ff3c2e0415bcfaf679d89d527778f022af70e96db3e78aa9ff9b8db",
+      "bytes": 422282,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/final-f-outlook-result-sword-frost_sword.jpg",
+      "viewSha256": "1b7fbe169899734e94175614db3792f345a99947c8a03c0b1e0ca513e8b0c483",
+      "viewBytes": 70268,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-final-f-results/stage-u8-b-current-qi-cult-9568b-h-no-write-or-hidden-travel-chromium/cultivation-qi.png",
+      "sha256": "407fa2821ffc0cc6efb4cc0cd8c1eeed1be5d844c020374801bcaacbffe5d871",
+      "bytes": 789688,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/final-f-cultivation-qi.jpg",
+      "viewSha256": "8f370be2a8111adadf22847e2e368900e8ffe2b3ab2588617647b6de508369ae",
+      "viewBytes": 104533,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-final-f-results/stage-u8-b-current-foundat-e23a2-h-no-write-or-hidden-travel-chromium/preparation-foundation.png",
+      "sha256": "213dc26f8b29672d09614e4ccf0da88f2c2392eb76d41acd314ea716fc041c0e",
+      "bytes": 791070,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/final-f-preparation-foundation.jpg",
+      "viewSha256": "fb00afb7e58f2c5a04d73849ecc102bd07401261f2d3e0f708f28f71973795ce",
+      "viewBytes": 104114,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-final-f-results/stage-u8-b-nascent-prepara-57e86-pagination-above-navigation-chromium/preparation-cards-nascent.png",
+      "sha256": "61817550d72de455fa6f6d92932bdf4907e251fd33ae5fa6f25e88971d848879",
+      "bytes": 922471,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/final-f-preparation-cards-nascent.jpg",
+      "viewSha256": "06bb9e8df9a3ca0f9af8c6272a01549beeec238d309a0810522b00ee01112f96",
+      "viewBytes": 108381,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-final-f-results/idle-full-route-a-normal-n-9c890-plicitly-selected-ascension-chromium/normal-idle-ascension.png",
+      "sha256": "b036fb626948b78eb445d0d248b023ef14ed27cb50f16aaffa2fb1daee436c48",
+      "bytes": 1390198,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/final-f-normal-idle-ascension.jpg",
+      "viewSha256": "083ba1d6700e40970607e0ec61c267ccdfddcfe6ce52dc46719541387369e935",
+      "viewBytes": 108127,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-final-f-results/stage-u8-b-tradeoff-contro-4479b-do-not-execute-a-projection-chromium/tradeoff-art-fallback.png",
+      "sha256": "2c360dceee1dfd05b2650331eb15d36ceead53ab7dbda5424de325fff09d855c",
+      "bytes": 562657,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/final-f-tradeoff-art-fallback.jpg",
+      "viewSha256": "92b68b41f0dffd3dd036503661113e41351cfd93ea64ad45c79b32c08709f21f",
+      "viewBytes": 98982,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-a-chosen-purcha-8be49--or-authorising-an-activity-chromium/purchase-preparation-return.png",
+      "sha256": "069b519e7521221683da3577846d1a5411ba2a3e153a8758a597d2b07b891b0d",
+      "bytes": 868908,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/delivery-purchase-preparation-return.jpg",
+      "viewSha256": "120fc4e7317249dea2fd0466493d3ed156d3d05a4a73283949e4fef0d37763a8",
+      "viewBytes": 99669,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-spirit--c82b5-h-no-write-or-hidden-travel-chromium/cultivation-spirit.png",
+      "sha256": "01333741ba3440803151f106d0b72c1793600009de7963f6bd30d3053c6286ee",
+      "bytes": 795100,
+      "size": [
+        1440,
+        900
+      ],
+      "viewCopy": "goal-4/evidence/u8-b/delivery-cultivation-spirit.jpg",
+      "viewSha256": "32530d105b480637761a96291b845107900ad8b40246eab4b132554570af28ad",
+      "viewBytes": 107315,
+      "viewFormat": "JPEG quality68 RGB original pixel dimensions; lossy",
+      "sourceDigest": "ee8b86ce760d3d0dbce6305274b479d0c6a49e52c62fc43dad9838545df965be",
+      "pixelReviewed": true,
+      "review": "Fresh actual frame viewed in batches of at most2. Readability/current object/primary action and non-overlap checked; not human art acceptance."
+    }
+  ],
+  "finalDelivery": {
+    "generated": 324,
+    "byteVerifiedReviewed": 6,
+    "notPixelReviewed": 318
+  },
+  "frames": [
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-a-dangerous-2f65a-eachable-with-its-real-cost-chromium/danger-paused.png",
+      "sha256": "3d067ddd70007d0c66bcb485e10557c36d817945af791bf2895e1a87e5c23281",
+      "bytes": 1537464,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-a-trip-sele-26f20-nds-before-one-free-arrival-chromium/travel-arrived.png",
+      "sha256": "44acf1f10b75215cae543d40a039a64beadac4b572015207f4b888f955e0d0a0",
+      "bytes": 1465619,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-a-trip-sele-26f20-nds-before-one-free-arrival-chromium/travel-selection.png",
+      "sha256": "f807b1f74972e2eb97aae621ef5ba8f97e0c7047a70488d16f37e8a6f46009a4",
+      "bytes": 1468129,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-an-existing-21759--awaiting-new-authorization-chromium/trial-current-gate-plan.png",
+      "sha256": "78b4dad0a2b075359556c075d1cd1bce20168fe0b676190a8f0b183e275ed4e0",
+      "bytes": 722341,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-an-existing-21759--awaiting-new-authorization-chromium/trial-gate-boundary.png",
+      "sha256": "7989649e69f2c35e56a038b4c8603f99088f4d869d26d459bee2a4de4c81ecf7",
+      "bytes": 1540327,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-inspecting--d949b-limit-without-changing-Game-chromium/battle-original-arrangement.png",
+      "sha256": "875480588398d33f90c923b4c0eeec4b6e948e5356a05ab7dc1a7551702f2f23",
+      "bytes": 782427,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-manual-take-f086b-retreat-alone-pays-eight-HP-chromium/manual-takeover.png",
+      "sha256": "93796ab33d5ca85ccccdf0582eaf14d9977b693f804997fec75d160ce0596ebc",
+      "bytes": 1448692,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-manual-take-f086b-retreat-alone-pays-eight-HP-chromium/retreat-result.png",
+      "sha256": "68cdd519ed1f78f9aa6fdf612f0a20949c8663ad94b0758883cbbaa64ac01470",
+      "bytes": 1721796,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-one-real-en-ebf0a-ts-a-separate-three-seconds-chromium/battle-real-turn-paused.png",
+      "sha256": "e1e3892f44b05cb3193336735e255b48690e605e70cc7001cdcd296f65e62f17",
+      "bytes": 1462903,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-reading-a-l-384dc-xt-authorized-turn-is-saved-chromium/history-reading-during-turn.png",
+      "sha256": "1e4588eee73868cfdb85552bd831757c27aa2282c392c4ca7f5da99cd92b8804",
+      "bytes": 1013797,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-battle.png",
+      "sha256": "d6b35b981d3ed8dba57d687bdff6abdc10068effddf8be9c7d39ee0e9bb5c6e9",
+      "bytes": 1530705,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-medicine.png",
+      "sha256": "6d6471dbf63de8552ceb2867688117dee81d94354aac86d3ff7630785eaa40ea",
+      "bytes": 905330,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-priority.png",
+      "sha256": "0c65835c6851bd0f56eaf63417b53b92219331274f93026ca8257201e8a13137",
+      "bytes": 949153,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-receipts.png",
+      "sha256": "87b0fd10dbc9977ecdd8a76580447f7062ccca70fd8ab53a2147e46c4c65c5d3",
+      "bytes": 991954,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-risk.png",
+      "sha256": "677dff03ede504a0d151b4569344182e024ddbd15e6fb6f5c647ddd16ce72993",
+      "bytes": 1008268,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-battle.png",
+      "sha256": "e00b53a325199213520f196cbeaf573b18766298aa5e860c004d4cb03a287e0d",
+      "bytes": 1529984,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-medicine.png",
+      "sha256": "ca505a67b0ba3677b338b1c9a3c6e6eccf8d170861c6d7d4b3fda9e69ad38c0d",
+      "bytes": 905429,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-priority.png",
+      "sha256": "7752324c7abe08a6e561965140c7f91f366059d86081619ddba45e84e274b8c2",
+      "bytes": 943527,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-receipts.png",
+      "sha256": "2bbd6a3e2235dbf0e5f0039b476bf142581c76bce81ac396240fc2a0f68a0748",
+      "bytes": 992847,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-risk.png",
+      "sha256": "3f29adbe228a742813bc9c88e275cf153745077f67c3f66da25ed7635cc16697",
+      "bytes": 1008416,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-cultivation-an-arrang-66577-s-until-the-cultivation-cap-chromium/active-cultivation.png",
+      "sha256": "c38180c5d56224dd09cbaa1bf1903f268cea6b2b266deea461d16bb8f2fc73c7",
+      "bytes": 1832727,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-cultivation-an-arrang-66577-s-until-the-cultivation-cap-chromium/cap-stopped.png",
+      "sha256": "c04098e99911f5f51b82e76e4fcf3b93829d52efc9e84b0e3284cad3b0c1ab42",
+      "bytes": 1768051,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-cultivation-assisted--15e10-stops-before-another-charge-chromium/assisted-plan.png",
+      "sha256": "eb413842f2fa494a65f58fb7645643a09b82b0a9a18a8ac805e20cfa6f52dcfa",
+      "bytes": 778062,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-cultivation-assisted--15e10-stops-before-another-charge-chromium/assisted-stopped.png",
+      "sha256": "a865222e4352afc3c52981b00d39d3b500f04187121c3388221dd0b6190c2dcc",
+      "bytes": 1752677,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-cultivation-one-produ-3e142-s-before-showing-the-reward-chromium/real-cycle-paused.png",
+      "sha256": "6c2c4527d3a03bcd503a48bab51f7e962098a741362af527a39a31739cd6825c",
+      "bytes": 1834038,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-cultivation-viewing-a-4a8bc-cancels-an-unfinished-cycle-chromium/activity-during-alchemy-view.png",
+      "sha256": "26380aa61e7cef3913f6001a19a80d2994809d726e4904d8349c00ee21d5824e",
+      "bytes": 1046350,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-full-route-a-normal-n-9c890-plicitly-selected-ascension-chromium/normal-idle-ascension.png",
+      "sha256": "2de29cb600f9ca0dd845e10f84eef368b3233b6eceb654b6c0f2f6137a5a36f0",
+      "bytes": 1390186,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-integration-a-normal--a0696-med-foundation-breakthrough-chromium/normal-idle-foundation.png",
+      "sha256": "d41885613c8354c4d830fe5b678a5828bca587cae01fc26970dd51a5a551ffd2",
+      "bytes": 1756758,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-integration-a-product-8b3b1-ginal-furnace-authorization-chromium/production-draft-after-save.png",
+      "sha256": "4ba171093e7f0bf4335c2a57072fbaaab0a0acec201b9804f45c451b635a8c16",
+      "bytes": 1163805,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-integration-a-source--75c75-g-the-running-authorization-chromium/source-draft-after-save.png",
+      "sha256": "2e2fbf3ece12f784d75617f99d4234beeda4274922566d34b05bc23b8dc1739e",
+      "bytes": 1410546,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-integration-natural-c-7c61f-d-refreshing-an-arrangement-chromium/natural-saved-limits.png",
+      "sha256": "179fe0e8ca519d52d7bbcebf0359751e5e6fdf359c453c3d5a042bb79e57b4c8",
+      "bytes": 790522,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-integration-owned-rel-a3f96--viewing-never-changes-Game-chromium/equip-gate-battle.png",
+      "sha256": "6ad231be59d4fceaec8768ab4e64eaa73188fc8480b023add7ab02cf95b9675a",
+      "bytes": 1120452,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-integration-owned-rel-ef2fc--viewing-never-changes-Game-chromium/equip-gate-event.png",
+      "sha256": "28cf022ba3a713f69bc2bc3fe02ec8129801834c78daad3c2ce9b4fcf878dc98",
+      "bytes": 1124779,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-integration-saved-ass-43015-me-the-real-new-arrangement-chromium/saved-cultivation.png",
+      "sha256": "32a66c4975d0532e4969d08e2745cdf3704ce46f5f55eaad52001170638595c4",
+      "bytes": 779838,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-END-LIFE-r-d2f7f--its-formal-game-month-cost-chromium/end_life-sealed.png",
+      "sha256": "28b19148fcdd7e5bf4932631974dd4b556d93dc9bbb4a78c4349da99b9c85c99",
+      "bytes": 1426563,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-END-LIFE-r-d2f7f--its-formal-game-month-cost-chromium/end_life-selected.png",
+      "sha256": "c8a66af581d2b6e8be8519b225cf55acc770673b1f2fd46fc03c71dc5a387925",
+      "bytes": 355941,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-RETIRE-req-49341--its-formal-game-month-cost-chromium/retire-sealed.png",
+      "sha256": "c3cf938b2dccdb9249e6cb0ad54bb9aa2ec8a116ecfbcb5fde3bca12cf3f0a0e",
+      "bytes": 1415983,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-RETIRE-req-49341--its-formal-game-month-cost-chromium/retire-selected.png",
+      "sha256": "5974264728a8d40441c0fa99f1627af3739333d6eb48ae0276ae99d5a6e8303f",
+      "bytes": 352289,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-a-failed-a-36078-ack-by-its-later-completion-chromium/choice-cross-page-result.png",
+      "sha256": "33cc9d477b5a5e4782aae48dd12f2edd02b562ce432cd64aef4b90296d133b07",
+      "bytes": 1180177,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-a-paused-s-6c32c-nd-grants-no-offline-result-chromium/opening-original-arrangement.png",
+      "sha256": "47f611c68c4f61a8238247ffe3351fd96cd0f5d1f5a98498c3340120be6a9d2f",
+      "bytes": 640063,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-a-real-ope-67378-actly-its-one-medicine-cost-chromium/opening-real-result.png",
+      "sha256": "9c1dad592c1e75d2be9a6ad61ef08d4d6f9d069da377891532f4a6b3a815f6a9",
+      "bytes": 1828006,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-a-real-ope-67378-actly-its-one-medicine-cost-chromium/opening-selected.png",
+      "sha256": "ea674189cc7a7c79c07aae2ce854a03efb2de8298647b913d03e15631ee09680",
+      "bytes": 614358,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-a-real-pre-bac63--pill-and-reset-cultivation-chromium/breakthrough-real-result.png",
+      "sha256": "55b6f74555c226d7505045f59def8a8c9df56ddafd294c8ede3a932009239b44",
+      "bytes": 1756550,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-a-real-pre-bac63--pill-and-reset-cultivation-chromium/breakthrough-selected.png",
+      "sha256": "e5366571b14a3ab1f6a8d777725b6e2b4dcd210f0cc1ac68e7a82a2a7d848a98",
+      "bytes": 707544,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-a-running--7f50d-lace-inspection-stay-usable-chromium/visit-paused-choice-available.png",
+      "sha256": "c2e168e0130c393975a86935435d71d4d19e0b5390c3ddc4039ed0c31ed7316a",
+      "bytes": 1213553,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-a-running--89976--and-full-narrative-reading-chromium/question-paused-choice-available.png",
+      "sha256": "7ee2f0f351c0fab06880955590696704c8006c4210905cb82d85713ec7502a08",
+      "bytes": 1186227,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-running-re-7ef27-ble-without-ending-the-life-chromium/retirement-paused-choice-available.png",
+      "sha256": "fb0833c541a0268a5ede3c276fcdb56b65c929f212b255447ef0aa43e85aee02",
+      "bytes": 1212380,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-running-tr-3b676-nt-inspection-remain-usable-chromium/trial-running-equipment-reading.png",
+      "sha256": "7fc854f0c8ebda728a27d2ee04af8a91759ac2fa2187784ea2d4c9478646edaf",
+      "bytes": 1121760,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-the-releas-0ce40-her-answer-or-starts-a-turn-chromium/question-release-selected.png",
+      "sha256": "21c440c8735ee5e0556ecbcf29e4054831cf2dc3435f95f9dfc671df8fea72ee",
+      "bytes": 559602,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-the-select-59e9f-fe-without-creating-another-chromium/ending-transmit-sealed.png",
+      "sha256": "a64a3bbf995489b7901c77f584fabdd6884455c5fb76cf485c58d25dccac34a0",
+      "bytes": 1392855,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-the-select-59e9f-fe-without-creating-another-chromium/ending-transmit-selected.png",
+      "sha256": "e42ef91a8ff6ff5457134e34b367f21a237aba1ed002b1b5f26e34b9449f345e",
+      "bytes": 390406,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-the-select-d3d4c-fe-without-creating-another-chromium/ending-depart-sealed.png",
+      "sha256": "fa8931c66d2fe9611d84ecd5e8978746cd2ef16554b60132ccdf36f52fd82e67",
+      "bytes": 1392190,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-the-select-d3d4c-fe-without-creating-another-chromium/ending-depart-selected.png",
+      "sha256": "47f49a42d01259f602698d154b51ea37df2d72385410ec209043e491f942b903",
+      "bytes": 386422,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-trial-entr-ca5be-ut-an-automatic-battle-turn-chromium/question-selected.png",
+      "sha256": "2b1bcfa1d2514ef5a6b2fe965798ec029e7000500ec369ac04eaa1d4408b896d",
+      "bytes": 567036,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-trial-entr-ca5be-ut-an-automatic-battle-turn-chromium/trial-entry-selected.png",
+      "sha256": "facc5f245ff1d8995f1c3b2fe2cb0a7e27b38e7f98bdd5debcd25ad4d67b115d",
+      "bytes": 351435,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-visiting-o-b953d-elected-response-saves-once-chromium/response-selected.png",
+      "sha256": "d7048ff0d5a8e88149626d8ddc2701e7e61d82ca6f85ea5c18be5004b90ab172",
+      "bytes": 597449,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-milestones-visiting-o-b953d-elected-response-saves-once-chromium/visit-selected.png",
+      "sha256": "8cb2901ff2ebcdbabc6960e3f42548a247bc84cf78decc71d28301de19333d86",
+      "bytes": 594326,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-a-medicin-22362-nd-commits-no-early-healing-chromium/medicine-real-six-seconds.png",
+      "sha256": "c766b9d432c58befe4c6690eb8213d87ba73450a16017d19deabfd86785785ce",
+      "bytes": 1055644,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-active-ac-670e8-before-any-persisted-effect-chromium/active-learn.png",
+      "sha256": "56859801a0f2328918adaa46edc821e5078b49c0cc4d5151d7fdaf5313e13ade",
+      "bytes": 1137404,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-active-ac-68758-before-any-persisted-effect-chromium/active-sell.png",
+      "sha256": "e70d820a58bcf41063004868a43cccee5d4206c2cd50a97d0f4340fd8e52739d",
+      "bytes": 1088344,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-active-ac-901d7-before-any-persisted-effect-chromium/active-study.png",
+      "sha256": "8695f6527433ca05efa9b7cfda14bd4060e6cdd580558f59350bed5e38409213",
+      "bytes": 1183380,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-active-ac-ad7e8-before-any-persisted-effect-chromium/active-use.png",
+      "sha256": "facddea6d39d5440e910cb4306539580091852118a68eebb74c0f52e8dcbc087",
+      "bytes": 1053342,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-active-ac-c73ee-before-any-persisted-effect-chromium/active-buy.png",
+      "sha256": "75b0c35463c3b9eb1e9ed7bba55cd8220c4b20c51066ae661a3d90098cf62525",
+      "bytes": 1085105,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-active-ac-eae8e-before-any-persisted-effect-chromium/active-rest.png",
+      "sha256": "09ab03d654a075ec24c53fa66b52f3ecaa565a9760307f7a9356198fb0c02995",
+      "bytes": 1048506,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-cave-rest-b3fa9--month-and-full-restoration-chromium/rest-complete.png",
+      "sha256": "c9c1cc1321798d90404ce843821fc8fa5f102ae68c032a9b87fc690f3e4f938a",
+      "bytes": 1029858,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-cave-rest-b3fa9--month-and-full-restoration-chromium/rest-plan.png",
+      "sha256": "c55902da59ee719cb34f25512beaf4b8f35e2d501361ca52f233d82c3acfe34a",
+      "bytes": 1023625,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-changing--b2bdb-Game-and-activity-unchanged-chromium/school-comparison.png",
+      "sha256": "9b04cd0cee24d16c061080dd3ce42fe65dfdeb2e9e026137f3711c4eb9a2e68e",
+      "bytes": 456567,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-drafts-fi-c8c76-is-labelled-as-a-prediction-chromium/first-use-draft.png",
+      "sha256": "4e8ef72a9072bf7ac2dbdb1940c6f33a92f0d00342c5adccd480829063030d95",
+      "bytes": 1045636,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-finite-me-42589-ent-without-offline-rewards-chromium/medicine-real-effect.png",
+      "sha256": "16a36dcc9fe5e0b633aa150df610159b29c04db2e268672693bdb356fb435c96",
+      "bytes": 1755330,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-finite-me-42589-ent-without-offline-rewards-chromium/medicine-recovery-plan.png",
+      "sha256": "a56efa9abf11be15ee9361df4b35ab523a1ec6daaa680b58b892d06e176aabef",
+      "bytes": 1045715,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-manual-tr-a8c7a--until-separately-confirmed-chromium/manual-complete.png",
+      "sha256": "56d846cab3d232f28c4cd05e02b4547353ac791320463a8fed15468a3b359daa",
+      "bytes": 1163979,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-market-pu-a977b--explicit-inventory-reserve-chromium/market-order.png",
+      "sha256": "624ca4f73b82c17e568e42432907dea1b880d78a24b3fdad6088d4b86ed57b23",
+      "bytes": 250189,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-market-pu-a977b--explicit-inventory-reserve-chromium/market-reserve-stop.png",
+      "sha256": "a8f7c5bc9deecc8a5dbb718d73f360b1e1825c0c8905666fe210ebc43772a98d",
+      "bytes": 1086158,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-trial-equ-b0171-ecovery-without-starting-it-chromium/trial-recovery-inspection.png",
+      "sha256": "d5c686c8f8a389bda6397a9094b66298303c04f2cd52911121db197c4c6b16f8",
+      "bytes": 1032550,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-two-selec-6c659-explicit-compared-equipment-chromium/equipment-comparison.png",
+      "sha256": "44d83187ec6e7a98cd9fe787770fbc1c48aa4ebc56b62f8284dacfbf91f393a3",
+      "bytes": 463555,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-preparation-two-selec-6c659-explicit-compared-equipment-chromium/jade-learning-plan.png",
+      "sha256": "919528fafb2b75a78525f70d01c7e39317d0cf8127d4550cb111b1f270787062",
+      "bytes": 1126664,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-production-alchemy-se-ac836-y-within-cumulative-budgets-chromium/alchemy-active.png",
+      "sha256": "13ba2fb5caf7542bce8d22da88a02eaa4c84417a84fa4dc2575a2a99fe75d865",
+      "bytes": 1896213,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-production-alchemy-se-ac836-y-within-cumulative-budgets-chromium/alchemy-plan.png",
+      "sha256": "c6461d8587591ff0241bdfc34e81f397f9702cbb224a5aeb9b73c52af59f4a31",
+      "bytes": 1148016,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-production-alchemy-se-ac836-y-within-cumulative-budgets-chromium/alchemy-stopped.png",
+      "sha256": "7287379e2554a979a5f7d883b2d4a3a8a71df0e6b78a115c2c44355fb79331e8",
+      "bytes": 1755447,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-production-all-seven--21524-rols-across-catalogue-pages-chromium/alchemy-final-recipe.png",
+      "sha256": "3febca9ef5564fbb936c6d3f726d9eec72861a5078bf28daa76e305516c0e6ce",
+      "bytes": 1107902,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-production-all-seven--21524-rols-across-catalogue-pages-chromium/alchemy-four-materials.png",
+      "sha256": "f7ad6657d27584c2e4018f7319fbb1e15874baddad0d86974ab96caeadd02679",
+      "bytes": 1101224,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-production-breakthrou-827b9-ugh-for-player-confirmation-chromium/foundation-pill-ready.png",
+      "sha256": "57345f10df57ccd307b3eb8c50b6b8d042bfc38a655280a31cad659bcf436995",
+      "bytes": 1771058,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-production-forging-ta-f7760-licit-separate-equip-action-chromium/forge-completed-unworn.png",
+      "sha256": "e66581268224c7186108a47590c30fff2df201f72d1f25a81dd7002e02331625",
+      "bytes": 1113431,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-production-forging-ta-f7760-licit-separate-equip-action-chromium/forge-plan.png",
+      "sha256": "5882a5dc405ddd8327eae0e45e7d6472b3cdb2ea3a0bc8e01dee7dd7c1774f6a",
+      "bytes": 1121329,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-production-one-alchem-90376-its-costs-and-pill-together-chromium/alchemy-real-cycle.png",
+      "sha256": "678739eb6ac1d4b9a5d40646fcf973c34e7686a71e32cd7f6874e2be18c9e79c",
+      "bytes": 1155573,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-production-the-furnac-57ace--tracked-for-a-breakthrough-chromium/alchemy-preparation-conflict.png",
+      "sha256": "33c05460c9fd10d0d75ffbc552324832c38f25a28f1a02cb215b57f15550c550",
+      "bytes": 1166344,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-a-committed-fu-fd4c2-y-database-record-unchanged-chromium/restore-committed-reply-lost.png",
+      "sha256": "153caeab8b57e33e3ea3041473c05116ec8d472f3fe407b92a85ce8676c7107e",
+      "bytes": 411908,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-a-committed-fu-fd4c2-y-database-record-unchanged-chromium/restore-original-receipt-replayed.png",
+      "sha256": "9d1a2e475caeaeca9210b06e14f4c23b349f9a005c339baec6d78f16a5bb3a0e",
+      "bytes": 1057591,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-a-current-tria-408c1-er-authorizes-the-next-gate-chromium/victory-toast-after-real-view-clicks.png",
+      "sha256": "0babd2a2a817d8254c7df5fd814658de4f02153b723b3192aa8e81b05eecb364",
+      "bytes": 1531935,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-a-current-tria-408c1-er-authorizes-the-next-gate-chromium/victory-toast-hit-targets.png",
+      "sha256": "a5f817c758c5bcac3ecdf556b80189cf5f613925fd6e1845ff7c145a22e33e4c",
+      "bytes": 1539581,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-a-fresh-stale--7e67f-battle-turn-without-writing-chromium/restore-new-stale-confirmation-rejected.png",
+      "sha256": "65f628b2589ba0fbc78a881d79e8221c32708a4cc82721cfffa8a94b1e5c58e3",
+      "bytes": 406481,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-a-travel-previ-32246-es-not-start-another-action-chromium/travel-stop-preview.png",
+      "sha256": "8a132b664fcdbc8410d2a225d19787ca6f6e338144e4e3cf6adebf2756437b81",
+      "bytes": 1467745,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-a-travel-previ-32246-es-not-start-another-action-chromium/travel-stop-saved.png",
+      "sha256": "c001636f8f3eced81bbf91b338709e1351c0d738aac87804513fac0748856ad6",
+      "bytes": 1464053,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-an-explicit-pr-41696-ops-for-the-player-question-chromium/preparation-draft-after-travel.png",
+      "sha256": "c9572e1847c8dde0d904ad3f6887a783588aca19e546cdef2e2108e7b91a00d8",
+      "bytes": 1062575,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-an-explicit-pr-41696-ops-for-the-player-question-chromium/preparation-travel-expanded-budgets.png",
+      "sha256": "149d12c4c6e1b52e039ff8eb8e1154bb6a7e8b04dec297160295eb54a9598b9f",
+      "bytes": 1047547,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-an-explicit-pr-41696-ops-for-the-player-question-chromium/prepared-trial-question-still-undecided.png",
+      "sha256": "75a103af72c5db089371b687499ce8e06bdd0e35f285eb95a2d36d909702d0ab",
+      "bytes": 1189955,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-manual-recover-640b8-an-empty-trailing-separator-chromium/manual-medicines-available.png",
+      "sha256": "ce74bec8ccce39655ca3d51d7f8bd24214781292c67f0f8aaa18b5c80c7b79c3",
+      "bytes": 1424657,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-manual-recover-95b34-an-empty-trailing-separator-chromium/manual-medicines-blocked.png",
+      "sha256": "4f04350bf3afe7433dd46e274b4c92771f0f5a3262829868e8713028994b6c87",
+      "bytes": 1422154,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-the-actual-sto-01004--or-grants-an-offline-cycle-chromium/reconnected-explicit-cycle-completed.png",
+      "sha256": "38f98a36b42b207d5a3fb9449938938ab4be31f21a2b3802bf8ed35ac530f8e9",
+      "bytes": 1836384,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-review-the-actual-sto-01004--or-grants-an-offline-cycle-chromium/reconnected-paused-saved-snapshot.png",
+      "sha256": "561a09ce3aa1552cd0219cf1f5efeff952dc0f2c28e2d267bfae11e7d1e626cc",
+      "bytes": 1740092,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-sources-a-normal-new--544fc-les-within-the-month-budget-chromium/source-active.png",
+      "sha256": "3d50c5aaabf96c6851cad493a58f65892f72975446c5c0634a2b4a48cb23fe02",
+      "bytes": 2021340,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-sources-a-normal-new--544fc-les-within-the-month-budget-chromium/source-plan.png",
+      "sha256": "0ed133111f1fe13befa949dfe417da6f52d6d52fee6a062ac43d76843f678621",
+      "bytes": 260745,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-sources-a-normal-new--544fc-les-within-the-month-budget-chromium/source-stopped.png",
+      "sha256": "ab4b570acb0ada798a1bef77ecf04b295ff5f1cc53403c21544059ca1eda72e4",
+      "bytes": 1898253,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-sources-commission-in-55887-t-while-cultivation-is-full-chromium/commission-stopped.png",
+      "sha256": "3b8a9f1d3051f1c2bae0b09fe7ab1ff1e17781160b412275b09532b937eb5866",
+      "bytes": 1875248,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-sources-commission-in-55887-t-while-cultivation-is-full-chromium/commission-target.png",
+      "sha256": "4ac4f50e87f376aa832afd008c2d8dc5f8ddb13871164f06365b453b50c1ec43",
+      "bytes": 274701,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-sources-one-source-cy-f68f8-ting-its-material-and-month-chromium/source-real-cycle.png",
+      "sha256": "e7122cf3af9af04b69a32ad856ad1030440745287d071bc437e79ac5c5cb2c66",
+      "bytes": 1399170,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-sources-source-pause--e485b-full-explicit-resumed-cycle-chromium/source-paused.png",
+      "sha256": "c941ee6d4b2404ef015011279d095fcdea77deec57dbcdfb6e3bd450d4277eb4",
+      "bytes": 2020428,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-a-locked-mor-4aff5--catalogue-remains-readonly-chromium/mortal-complete-recipe-preview.png",
+      "sha256": "0a8daf53ab96c19cfdc6bef4e26ac145b7a94848049feab4e1974b810a996b21",
+      "bytes": 1160738,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-a-locked-mor-4aff5--catalogue-remains-readonly-chromium/mortal-unlit-furnace.png",
+      "sha256": "c83e675692ce419b88e377a13030391d1f109708bb601a2235532ca73366e33e",
+      "bytes": 1053511,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-an-injured-p-44c22--and-inspection-is-readonly-chromium/injured-preparation-readonly.png",
+      "sha256": "93c135e22918df3f16553d02fc1a00bd21f34dad109b635b18210a5fd756ddec",
+      "bytes": 1025507,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-an-injured-p-44c22--and-inspection-is-readonly-chromium/injured-prepared-next-step.png",
+      "sha256": "2057ebce9b2a04bc42ea7cfd5cb179f3738ada2924cd6fef4dd6f36e93a922e4",
+      "bytes": 1762513,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-resource-poi-0fca8-emain-readable-and-readonly-chromium/resource-points-and-limits.png",
+      "sha256": "ed47792cf615acb65e9cba72e88883e0e23a18843a1756c8cd2ba4acba7bce8f",
+      "bytes": 254527,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-the-committe-f3965-the-reading-tabs-or-actions-chromium/closure-within-life-canvas.png",
+      "sha256": "414cfc8316a533bde07317c85250ef431af44a0cec149a03d8490ea7fd36a93f",
+      "bytes": 1392399,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-the-inventor-2e3fd-ory-pages-in-the-game-stage-chromium/inventory-final-page.png",
+      "sha256": "816b9b46accc85c6922d7fe5f729d6d5b621c6436c77c4d0ffe2ecf6a67f6c85",
+      "bytes": 1161293,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-the-inventor-2e3fd-ory-pages-in-the-game-stage-chromium/inventory-objects.png",
+      "sha256": "60215e457d55dbfd50207a1823b6c481fdce719c2b6b19080feb3b6573cd0e36",
+      "bytes": 1179036,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-the-selected-5c708-ble-through-equipment-views-chromium/equipped-slots-stage.png",
+      "sha256": "64dee5474746f8611116b4da6f9bc4d19ce3ca916632ceaabefd5443ca2e3fae",
+      "bytes": 1027608,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-the-selected-5c708-ble-through-equipment-views-chromium/jade-book-stage.png",
+      "sha256": "21049d31591fbc9fc35adb9ee9d0eadd85bdc1e63e3c16c205526af3fed2d9fd",
+      "bytes": 1130825,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-the-selected-8ebac-inct-from-its-equipped-slot-chromium/relic-object-cloud_mirror.png",
+      "sha256": "4a5d63d92120f312c9228f49fe784a378cc8ccc3b4ae6d1bf27f88c691c77e06",
+      "bytes": 1111932,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-the-selected-8ebac-inct-from-its-equipped-slot-chromium/relic-object-frost_sword.png",
+      "sha256": "891c30e8413b275f77d9a60d97267348ab0a938ca23612f147ba1722554a39f2",
+      "bytes": 1101906,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-the-selected-8ebac-inct-from-its-equipped-slot-chromium/relic-object-jade_seal.png",
+      "sha256": "615fd9bfdf738caadf34fa68a1cc6da81c1c04f52126206c0f4a79134c1a1f1c",
+      "bytes": 1106587,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/idle-stage-ui-the-selected-8ebac-inct-from-its-equipped-slot-chromium/relic-object-soul_lamp.png",
+      "sha256": "eee20081f6d17d9abc067cd59b9580260105c7c4e01f1d65841ad9cb65400754",
+      "bytes": 1112610,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-a-completed-ba-4270e-ges-after-the-enemy-is-gone-chromium/completed-battle-original-plan.png",
+      "sha256": "af5d1c7342b58f27e0ffeafb2298fc3d3e909366e80b9e9c82dafcc75fdab2f8",
+      "bytes": 957383,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-a-completed-en-9ce36-it-retreat-changes-location-chromium/retreated-encounter-original-plan.png",
+      "sha256": "5ec05d3edb6110a0015c08984b79743eec50828c72b91851c8ee6f225071cc42",
+      "bytes": 894668,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-a-direct-sourc-a7e90-with-its-order-draft-intact-chromium/direct-market-detail-return.png",
+      "sha256": "1be5d5bb92c3694409113a2bd28901763bb719e55e8945f14a5093425fef18c9",
+      "bytes": 1044251,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-a-replacement--3707d-ion-or-edited-market-budget-chromium/new-life-supply-defaults.png",
+      "sha256": "c2b42a5c8caa49ca04548d5e6c934842e895f2fd281bcfa25bec5c33e64eae9b",
+      "bytes": 1041578,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-a-turn-saved-w-aa5ef-lay-hidden-damage-on-return-chromium/hidden-turn-return-no-replay.png",
+      "sha256": "d134771070a03d5027ee552cae829f5b432a4b46f6d6ddecd0d7e43c4290c850",
+      "bytes": 1525541,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-an-edited-paus-b2bbc-tion-with-the-same-activity-chromium/battle-draft-after-read-only-details.png",
+      "sha256": "58b7cd5fe406e63a9868f732cf2f358c98abce2bc53da1eb320cd80307f9a4ea",
+      "bytes": 781702,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-closing-future-bc2cd--its-selected-visible-shelf-chromium/market-current-visible-object.png",
+      "sha256": "07aa63945d776149c5b0759cf3c78582ddd7a48d2ae3d8d245b94195f9374c82",
+      "bytes": 1073497,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-closing-future-bc2cd--its-selected-visible-shelf-chromium/market-directory-reconciled.png",
+      "sha256": "cd4bfab4971cc2f7669dffffcd4f04391c0e8d009c1f7a21e4a415ae42894b46",
+      "bytes": 1073569,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-inventory-sale-f6428-bject-without-a-transaction-chromium/sale-return-to-inventory.png",
+      "sha256": "ee6d5ee06d5da4f078a1e5f04e0401a5bdfdfeb3d52bf62515408cb81581ce47",
+      "bytes": 1175008,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-leaving-and-re-fcc96--and-progress-short-effects-chromium/battle-return-without-old-feedback.png",
+      "sha256": "c4dcb5d91ad251e74d8de85067b5b5b37a83c971e0922ffb31b787d5b333d0b6",
+      "bytes": 1526757,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-market-buy-and-1395e-vigation-into-authorization-chromium/sale-retained-limits.png",
+      "sha256": "35c95bd9a46cd356bdc7e9f87ab32940ef8bc8309dd927f4bb4fa7c981906a8d",
+      "bytes": 244625,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-market-default-3b8fe-s-complete-limits-on-demand-chromium/market-complete-settings.png",
+      "sha256": "fb399fd6aa37ed700a2bfce72d9354551eae2413bc1ff96cb556eec688e7246b",
+      "bytes": 250952,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-market-default-3b8fe-s-complete-limits-on-demand-chromium/market-focused-default.png",
+      "sha256": "49d99efc323d93deb9aad7b17cc0e05f7a45b23222eb82e41e7fd61f7ebf6f02",
+      "bytes": 1082479,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-real-buy-waits-afba4-ly-saves-one-formal-outcome-chromium/buy-real-countdown.png",
+      "sha256": "3bc13a1b6f10de69bfcb167f99b7999cef52635b1002c97d2d6d5269edc67da7",
+      "bytes": 1082843,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-real-buy-waits-afba4-ly-saves-one-formal-outcome-chromium/buy-real-saved-outcome.png",
+      "sha256": "805b8dda49a4266d57fd4563f84c419e0c4d4cd3c2336bf14868c18ef95de540",
+      "bytes": 1084683,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-real-rest-wait-c3eb1-ly-saves-one-formal-outcome-chromium/rest-real-countdown.png",
+      "sha256": "4387952a36d09e190eef0928c8b8426581b988f7fbec642c6ea0537a68e03f09",
+      "bytes": 1048423,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-real-rest-wait-c3eb1-ly-saves-one-formal-outcome-chromium/rest-real-saved-outcome.png",
+      "sha256": "ccfc7ed30861e55cdaeaa748ae53a546309f5673bebb0319b1d35d147c37061d",
+      "bytes": 1046525,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-real-use-waits-a9382-ly-saves-one-formal-outcome-chromium/use-real-countdown.png",
+      "sha256": "7f7c0317461048c06e9700fefa5103585e5fa3330a8144d8771296d2ea76b195",
+      "bytes": 1053022,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-real-use-waits-a9382-ly-saves-one-formal-outcome-chromium/use-real-saved-outcome.png",
+      "sha256": "8ec20ae336bf6eccada0739808af9d6081c76c98d296c8da02b4116a03fa7d6c",
+      "bytes": 1055834,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-recovery-shows-7e120-ts-complete-finite-settings-chromium/recovery-complete-settings.png",
+      "sha256": "c0ab68514ea222cd3e8675d9fbd32a3d954c7f26879a2fffb0716e6b27bf42f2",
+      "bytes": 239749,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-recovery-shows-7e120-ts-complete-finite-settings-chromium/recovery-focused-default.png",
+      "sha256": "a56efa9abf11be15ee9361df4b35ab523a1ec6daaa680b58b892d06e176aabef",
+      "bytes": 1045715,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-recovery-shows-7e120-ts-complete-finite-settings-chromium/rest-complete-settings.png",
+      "sha256": "57568579c1fbefda0dd271207f80387043b17563924ad19c9cc7e8fd5e105a87",
+      "bytes": 242269,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-repeated-inven-41684-s-edited-default-view-draft-chromium/repeated-sell-draft.png",
+      "sha256": "f4f5d6b1ed4e1b300619edbfd066d87697cb130899078bd724f72a71262f4f93",
+      "bytes": 232108,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-repeated-inven-fc6ee-s-edited-default-view-draft-chromium/repeated-use-draft.png",
+      "sha256": "e938ff548e7ba7888b026413bc0172530b83f8846f65c5b8970788a7171580e2",
+      "bytes": 239903,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-reselecting-th-5dd3b-firmed-finite-authorization-chromium/market-edited-arrangement.png",
+      "sha256": "c882d433bad0eae7d3ee25794e16714e99deefdac5bcfc7fb47701205cc97cd9",
+      "bytes": 247228,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-reselecting-th-5dd3b-firmed-finite-authorization-chromium/market-same-object-limits.png",
+      "sha256": "cee0fd3314b8ff2fdb92c462da27ebe4b1587184984d36b4f23bd3c098d71bbc",
+      "bytes": 247257,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-retreat-labels-51504-without-changing-the-battle-chromium/ordinary-retreat-context.png",
+      "sha256": "847200bddb2c4438a51b34bf04155f43415bd3949172a2260c682a2d62b6c911",
+      "bytes": 850828,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-check-retreat-labels-58cb1-without-changing-the-battle-chromium/trial-retreat-context.png",
+      "sha256": "b2350fadf675cf2721d732e052983f9c37bc912575dcffcfd12ebe56dbb3d531",
+      "bytes": 801664,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-a-confirmed-repla-cc570-e-alchemy-draft-or-activity-chromium/character-on-demand.png",
+      "sha256": "66783325756415d3409d45d99690d22b0206f5e1710409ea05d9bd3512574cab",
+      "bytes": 958647,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium/configuration-feedback-clear.png",
+      "sha256": "821ef83b23631d68f7cfe2796a15ca57474586ed37c4bec3ea8b53aefe50ab99",
+      "bytes": 1117075,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium/persistent-equipment-result.png",
+      "sha256": "9e5081c61d96238c6f8de2a2e1e3cbe114abcaa0f5a8754edb39f2fb93225f51",
+      "bytes": 1746954,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-alchemy-opens-fin-156cd--goal-with-its-draft-intact-chromium/alchemy-focused-decision.png",
+      "sha256": "203d8ba68b81e4cc14c2499d85ecd0f699f9ae9753f99c775d1ad1a96fa9a0a5",
+      "bytes": 1146180,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium/training-assisted-layout.png",
+      "sha256": "7b02c14db26f880b276420014fcba88165ad09ff5835410ddb5135dbf7114bc8",
+      "bytes": 778136,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium/training-natural-layout.png",
+      "sha256": "5d08478e52dd8d64de98d62d2ce47702b419adcbd413f4b47260a5284e8463f4",
+      "bytes": 787136,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/cross-page-activity.png",
+      "sha256": "913c38fad029e16a98adda33285862353a47259572dd1de4c85f74b1f4432bc6",
+      "bytes": 1152850,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/failed-cycle-controls.png",
+      "sha256": "3e18f9854a637e20066a194bce69e49d46b0162fadbbc7a82dd80761ac4b7268",
+      "bytes": 1058636,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/paused-activity.png",
+      "sha256": "07a851b6b34a4d324262cd29680bde929fb80f5e77e2e9e3eedcfd83ee7c44f7",
+      "bytes": 1154426,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-forge.png",
+      "sha256": "2c48ab00c9c80f2366f0339e9c826683fcf64861c72712a3249eec25e6f917da",
+      "bytes": 1148244,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-life.png",
+      "sha256": "ba25f28609f54a9e07aa304128b4606fc5e5c1fc19a2d2fc8b4c529c7d3e0678",
+      "bytes": 1293556,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-relics.png",
+      "sha256": "fd01e758196721e2af8f86b44bbdfc18ff1d0af36bbb6c2dd2bd6db5ad097c29",
+      "bytes": 1029612,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-skills.png",
+      "sha256": "06970642c07bd96a2f2259231b840ab491cff013942362d8c4b6dea4a4f14940",
+      "bytes": 1101726,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-1.png",
+      "sha256": "12d7f82ceb33ff746ae48da56f2d85e72386ac091e413dd7d97e2566e775a248",
+      "bytes": 1453549,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-2.png",
+      "sha256": "1a9d609ec9adc15d67d97cc6472044d654157e580cb28111651bb948d80349c8",
+      "bytes": 1178808,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-3.png",
+      "sha256": "4e6fb8a78ed580954ad3b47458195848ad3b164ae374e3768a23e1b39ab93e1d",
+      "bytes": 1272015,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/real-compact-stage.png",
+      "sha256": "66eea32db061dedecc37234622eff287657f059d6408d25bef8117172257a141",
+      "bytes": 1743697,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-a-confirmed-trip--64c0b-limits-for-the-new-location-chromium/source-new-location-defaults.png",
+      "sha256": "4a2c853a33dca1b8d5ce27bb3f5c656c0474b55af5e4a37b1f6b2cf4bf42d49f",
+      "bytes": 1410596,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-a-missing-enemy-p-b9cfe--a-saved-manual-turn-usable-chromium/battle-missing-paint.png",
+      "sha256": "68fa713324565fae76549140c3a57a226f3b40c591a13c238a2fb507a6959257",
+      "bytes": 1119686,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-a-real-trip-to-a--aaedc-t-without-granting-anything-chromium/no-source-after-actual-trip.png",
+      "sha256": "5e925fc1d93d0db5640ee124104582b148031326932db4e05359ce53bc0e9546",
+      "bytes": 1432115,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounter-limits-secret.png",
+      "sha256": "403a6209143bcd3bd600ffe1ebce0179943f1609db7b80506d9eb1fee583fdc5",
+      "bytes": 1020195,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounter-limits-terrace.png",
+      "sha256": "184ffedacf77c207c87f54827a356995568601647dc430c844b446e4ffecebbd",
+      "bytes": 978650,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounter-limits-wilderness.png",
+      "sha256": "0380cf5a804f2996783e66e0dffb609e2e5d26e455c6b1ef76db551a54585a0e",
+      "bytes": 1008596,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounters-secret.png",
+      "sha256": "23557a4af4472fa774b66594171af95db9661bdd795b633031fe1a75d3a4fa66",
+      "bytes": 1502596,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounters-terrace.png",
+      "sha256": "4d978a7355e26d5d6b6a57cd67e41747d1615abd31297c972a52d0e95f63234d",
+      "bytes": 1415307,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounters-wilderness.png",
+      "sha256": "dc6e584e73baf5bce49e702cd90732b48507bb76293d228e3244f4d3928e3971",
+      "bytes": 1462531,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-cave.png",
+      "sha256": "3d7987fdaa8a9cf346c456043c6c909dc2578b2cd12ac76b106082442b9c8077",
+      "bytes": 1432827,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-market.png",
+      "sha256": "89dea1a2f132acd3d52dc4f272add52cdb55d8c2b7ce4334b9bbc878dcfb5a94",
+      "bytes": 1449069,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-secret.png",
+      "sha256": "7b60d899c839a7bed698017c5cdefca49402d480c12ccc0d8c2be18684d9cd57",
+      "bytes": 1443537,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-sect.png",
+      "sha256": "91a2789bc6e3a95854bf5e3309afa208eac5ed16f3a06f5d062e3f07f470277e",
+      "bytes": 1397945,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-terrace.png",
+      "sha256": "f572575783206b15a1c4c6dc6c3a8f95cc7ac25bb45d442e93810d297a06afbf",
+      "bytes": 1337333,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-wilderness.png",
+      "sha256": "10d73650445f787695e9cbe8cc97322ef48a8e940f5dabf71a496695bcb0a2f4",
+      "bytes": 1404488,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-destination-previ-bc296-ble-without-implicit-travel-chromium/destination-preview.png",
+      "sha256": "4d77668cbaed01c90328c48bbb655a990dd9b8bbfe0fb3aec94bc2bea0e9ce41",
+      "bytes": 1467712,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-inspecting-a-save-f7db5-new-life-without-navigation-chromium/new-life-default-source-plan.png",
+      "sha256": "50e153d424ee15f230e272384fbe655641160ef42b0e35bc8c0fc43da252e650",
+      "bytes": 1390282,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-refresh-shows-the-cf57c-until-explicit-continuation-chromium/source-paused-real-stock.png",
+      "sha256": "67aeca35071c10a2803e599e3f14dc39fa7520af83e48f385977dce00ca9366c",
+      "bytes": 1399651,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-reselecting-the-c-141e4-in-the-full-encounter-draft-chromium/encounter-preserved-draft.png",
+      "sha256": "2a3f325a963251dd6f83c69f9fcc5d0961ce6d610b69e64e4d05d32f1f23f7ab",
+      "bytes": 1000943,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-resource-points-e-352f3-ect-and-category-inspection-chromium/resource-saved-target.png",
+      "sha256": "0e007f9a515f2b5f8db91625876fe817f83062eba122a39ec6ec433c715169b4",
+      "bytes": 1408505,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-resource-points-e-352f3-ect-and-category-inspection-chromium/resource-stage.png",
+      "sha256": "b923ca6da33bcea80208b5c9d42d3ebbf1a4658532ea3dc0bcc022bc5fd27aeb",
+      "bytes": 1390275,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-resource-points-e-352f3-ect-and-category-inspection-chromium/source-target-and-budget.png",
+      "sha256": "5ddb4b2300ba45b6b032725b743d6dcd6495e3afc3e36293370cda3be1fcf9b3",
+      "bytes": 261948,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-the-battle-scene--8ff94-resolve-through-saved-turns-chromium/battle-manual.png",
+      "sha256": "d760026d109f9e84de9d2292d52fbae94284ec01c700a9280edbfb80f1d23de6",
+      "bytes": 1459812,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-the-battle-scene--8ff94-resolve-through-saved-turns-chromium/battle-paused.png",
+      "sha256": "e750a1958dfe838ac48e180eb2a803e89c988f59ce558b764c3ed8729b02fa42",
+      "bytes": 1525738,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-the-battle-scene--8ff94-resolve-through-saved-turns-chromium/battle-stage-intent.png",
+      "sha256": "a1e7e2d6b7e5377647605eb1dc493bd05ab2c2cb5939768af0ff06d86bb1c122",
+      "bytes": 1550918,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r2-the-battle-scene--8ff94-resolve-through-saved-turns-chromium/battle-strategy.png",
+      "sha256": "3310720c658482a8e91546bc5576b39677aa70b4a27eecc9e5f821e3ef9de9e5",
+      "bytes": 821263,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-a-replacement-lif-64134-previous-local-relic-budget-chromium/new-life-relic-defaults.png",
+      "sha256": "588d5f1cc42bb2d9ca1c02b2ea56645ddd57dfe79ad13b308f3c9f02d0689c9b",
+      "bytes": 1114592,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-inventory-offers--b67bb-iption-without-writing-Game-chromium/inventory-selected-object.png",
+      "sha256": "fe4ece676dc632fece0c5e150acb610c33051df6cc62e27e232bc06fc70f5072",
+      "bytes": 1177625,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-a-fresh-mo-e420a-ut-a-phantom-selected-skill-chromium/mortal-empty-books.png",
+      "sha256": "d8a93f3ad0ad755cb04bf7630b55fc5e567c282ceb67c3a004ad63db6f87a9b1",
+      "bytes": 1200139,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-a-mastered-c6452-g-for-another-learning-trip-chromium/mastered-local-comparison.png",
+      "sha256": "3d970ea70e8debc5ae2a5ae02eecf0bdfb10d75a0f84e15523479854893dad8d",
+      "bytes": 1108955,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/four-slot-summary-false.png",
+      "sha256": "0d9503a2fae0ab9752c0a1e366b29a3d8374693d8c118328ef127e2feabdbf68",
+      "bytes": 997975,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/school-selection-false.png",
+      "sha256": "0ab6c29a2455136d1f6324029449dbd73cdc832cec8628c2d8b9ebfd8a3fcca0",
+      "bytes": 1108316,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/unowned-relic-cloud_mirror.png",
+      "sha256": "b5d5f98d69be6be34c31725e14135b2c5e6b93524dafb4229a4254720f46f513",
+      "bytes": 1110776,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/unowned-relic-frost_sword.png",
+      "sha256": "e58cdfd758d3422c568a9fe8574a012ce717317a21c6e208fabce047ddc87d72",
+      "bytes": 1114282,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/unowned-relic-jade_seal.png",
+      "sha256": "003c39fc4bb723337703a455be985f2a7c768ef0972f655512a76f6770403463",
+      "bytes": 1105410,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-1625c-ment-views-remain-read-only-chromium/unowned-relic-soul_lamp.png",
+      "sha256": "a7c067c605415ab9d0cfe2e45c0255d3477751419385d0c1378e5b59339bf6e8",
+      "bytes": 1111539,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/four-slot-summary-true.png",
+      "sha256": "48f963035dc6da5ce4f6318e7c499f6c77e14cf839b7d2a1df43748fdedab5ef",
+      "bytes": 998233,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/owned-relic-comparison-cloud_mirror.png",
+      "sha256": "910542b77ae8919633f12dad39470fd92b852b63a5ac7339c370767e16ed8a04",
+      "bytes": 452818,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/owned-relic-comparison-frost_sword.png",
+      "sha256": "9556db9c89a920a3bed9ade68edf577f56b2b0292430eb54b4013430468737bd",
+      "bytes": 450965,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/owned-relic-comparison-jade_seal.png",
+      "sha256": "50ba05cc24bb5c9883ecd0f3fb4f8b673ce2712c28dcf8b9b24931a8e85c5bf7",
+      "bytes": 450653,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/owned-relic-comparison-soul_lamp.png",
+      "sha256": "1de91b8189d7b543a5101537b058cf991b9bff7b9b8687e1569698e19a3283c2",
+      "bytes": 453951,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-four-r-bdce2-ment-views-remain-read-only-chromium/school-selection-true.png",
+      "sha256": "ab6dc9fe8866d3f17538fdd853da5933718c1481c9cc3880999c3834760e7155",
+      "bytes": 1108490,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-ascension_seal.png",
+      "sha256": "5cf8a5486a37c64a1b0a29e481d0ca670e2c22cbd1655fedcaf46862504988a8",
+      "bytes": 1161350,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-core.png",
+      "sha256": "3878419207a8996bb432788d953364abfa10a6294268bf9b69935f8f3a00fc1c",
+      "bytes": 1171746,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-dao.png",
+      "sha256": "0561f6840dfaf5ff03a60cce7034921e84f797e996062cd6dd91b24f06cb3063",
+      "bytes": 1173527,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-dew.png",
+      "sha256": "16a9d19b2af9be8999f4af25f2a8905ab2fca7975ce04ba0677fc6304cc0097f",
+      "bytes": 1173947,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-foundation_pill.png",
+      "sha256": "1492db8652fdb98e9b2922884da7ef7c0000ab39d81fba31cecf13c365835a9c",
+      "bytes": 1175666,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-golden_pill.png",
+      "sha256": "6f69f894c3df011f5202f898eb57c9248ea51f3294fe74320b4fd6b32642df5e",
+      "bytes": 1171039,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-healing_pill.png",
+      "sha256": "32d6bd22691411ff501b949ae38761eee110232fd034614e679e3e5a3f225ea6",
+      "bytes": 1176611,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-herb.png",
+      "sha256": "212ff2b40832a950a4a6353fc8fa8f1eb22337607cf020ad6b1813d02d39ce01",
+      "bytes": 1178665,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-jade.png",
+      "sha256": "75234841b855b6e0be4c6ae367b2366a3b8d636e1277f358f8e545cfa9c39703",
+      "bytes": 1173329,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-lotus.png",
+      "sha256": "66feb5b7da88247eb6ed99762e649af9cf5744315b23e6d1cfb7ca67c0ecd3b5",
+      "bytes": 1176931,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-nascent_pill.png",
+      "sha256": "ebd8614905dcbe96fdcf9222c0fa5a4caf2e963906fa3b5b7109ba81ac97b27a",
+      "bytes": 1170881,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-soul.png",
+      "sha256": "b2d4e8047eec5c185710e3bab1c76956ce7cc3b979a805e4fe3c19964227ea1d",
+      "bytes": 1178573,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-spirit_pill.png",
+      "sha256": "3351abea6229761ab3a9c8a409c1b5dfeb5def50f5c700d1f8ef87460844b29e",
+      "bytes": 1181615,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-spirit_seed.png",
+      "sha256": "47e7032fb903b613c68a1c3f3dbd75706566cafb73f52b42925d6a97c0bff638",
+      "bytes": 1161762,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_build.png",
+      "sha256": "8e481e797c2595bbab70afce47a1bc631cba33ea724ac453bd857d948bf93916",
+      "bytes": 1107191,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_echo.png",
+      "sha256": "578dc8f6b09bc0ca666043827a8130740486f2c366388c5dc5618a2daaa0d9f3",
+      "bytes": 1103355,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_guard.png",
+      "sha256": "7d6d35b3ac3fe6468b1ead1ed708320b3450b1154935aad8769894d00350f12e",
+      "bytes": 1104046,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_mind.png",
+      "sha256": "2ec7c0f4c495f7295ac95d108a39816ffda6a008bca0afc2dad95a7df734b358",
+      "bytes": 1104934,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_release.png",
+      "sha256": "9a70a7a0c7cba4270aeaf566eecba6b7a60373ee49d7b91519d039f5cb68b8ba",
+      "bytes": 1105796,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-sword_still.png",
+      "sha256": "0b1f5d9585338805d92f2b1ecb8d986e94962bb142cedc66117ff2aea2a42e98",
+      "bytes": 1099919,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_build.png",
+      "sha256": "b0e0ffd09b23267ffbad4c010ce8728e52140118506b45ac4c10e33db6453b3c",
+      "bytes": 1100070,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_calm.png",
+      "sha256": "48ddcace6363891f39446a648cf734d51d310eed12bd1ae20485edca655844ad",
+      "bytes": 1102453,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_frost.png",
+      "sha256": "010236a6d3840fb0324904c5a72a0d558b92d05ae214de6b02b38c9955d57e6f",
+      "bytes": 1103068,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_mind.png",
+      "sha256": "c8fc6c3763ff4c18c67853e998716c19354af3f1686b1ab3bef80a3fe850404c",
+      "bytes": 1102813,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_release.png",
+      "sha256": "4f238ee1f59d9458f2b4c96795e4816834302a85a55d1a58bab1d86fe6c8d0c0",
+      "bytes": 1101980,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/book-talisman_return.png",
+      "sha256": "f396e94f0713c022e5d6c8db47ccf057246d6f618f14a15c45307a8b998b08d0",
+      "bytes": 1099275,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-changing-s-2ee0f--book-of-the-current-school-chromium/current-school-after-configuration.png",
+      "sha256": "398a5409b05ba53fa51792ac58a0a49883b5b0022930e5fa15a418ef7025f18b",
+      "bytes": 1119848,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-manual-con-37fc2-id-current-school-selection-chromium/manual-to-changed-school.png",
+      "sha256": "66b53245464732bd34c35328d5fa1546eb44cdb56bcca1a3e03866152b7796ac",
+      "bytes": 1119703,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-missing-ca-23624-hout-inventing-held-objects-chromium/bag-paint-fallback.png",
+      "sha256": "e382a0ed42bbefbf34bdae1da28939526f092cfba108d67175c00f791091739d",
+      "bytes": 1093911,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-missing-ca-23624-hout-inventing-held-objects-chromium/book-paint-fallback.png",
+      "sha256": "3ff1f9c8f25079d16a962094eb70b02ab674d40c3d1bc816cf2c97e0de4328a8",
+      "bytes": 1091697,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-one-select-9f52b-ays-separate-from-equipment-chromium/relic-owned-not-auto-equipped.png",
+      "sha256": "47b3bb52e7e04935f771ef716f1810da3e1d3f1b818c7769b84c04bbdecf9d0e",
+      "bytes": 1113392,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-one-select-9f52b-ays-separate-from-equipment-chromium/relic-real-cycle-running.png",
+      "sha256": "9e810039d4f3beacdc8979eb94471d640aa28d02f10d00eb18b280d161768656",
+      "bytes": 1147029,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-one-select-a71b2-ost-before-becoming-learned-chromium/book-real-thirty-seconds.png",
+      "sha256": "4809e076bb2d46745926c0bc77ad4571d0fa85ea78befedc28638db2869434eb",
+      "bytes": 1143172,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-reading-an-79c16-ts-edited-cumulative-limits-chromium/multi-scroll-draft-after-inspection.png",
+      "sha256": "671aa8cc2e803a7876386b22097e8dfaf5017430bae618a6d677d0d27a52fbd5",
+      "bytes": 260579,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-same-life--8317e-ked-materials-move-its-page-chromium/bag-selection-after-realm.png",
+      "sha256": "6f21d85411832d9b1c6be656da4f71b1bcbd1b3e95c49e25efa693deecdaa776",
+      "bytes": 1194478,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-the-actual-a79fb-er-overlaps-its-last-object-chromium/book-region-before-assert.png",
+      "sha256": "723e24740452964913d96f7cc34cf64bee48cbe113b1d6cddac4dfc3f9398cae",
+      "bytes": 1104954,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-the-actual-a79fb-er-overlaps-its-last-object-chromium/book-region-contained.png",
+      "sha256": "be9754d87a67303f5aaa14905c4c00da0e4d44d9b6b834e516d4373c79bec884",
+      "bytes": 1106080,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-layout-the-actual-a79fb-er-overlaps-its-last-object-chromium/relic-pager-separated.png",
+      "sha256": "b8bfe7673a7696156adf30837028d17eaa3e9b0dabdc167cd5827f69b9c479f8",
+      "bytes": 1117135,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-learning-keeps-th-efd67-ts-in-one-on-demand-surface-chromium/learning-complete-arrangement.png",
+      "sha256": "acdd279590c5ed73abfbf4c78085adef0e333be93cce77c14e13c8fe5abdd2f0",
+      "bytes": 260197,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-learning-keeps-th-efd67-ts-in-one-on-demand-surface-chromium/learning-selected-scroll.png",
+      "sha256": "574a9cdf36c117eb53d573f2c7532d8f4284ae96975a1e19ae985d841cb3bfcd",
+      "bytes": 1100195,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-learning-queue-an-26a13-tion-and-another-main-entry-chromium/learning-draft-after-return.png",
+      "sha256": "bbf19d22dd103337362f01180cdf9e8f28019a837d8e986ee2f2989aaadbcc24",
+      "bytes": 1094710,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r3-selecting-the-sam-d13eb-tion-without-a-Game-command-chromium/relic-selected-and-edited.png",
+      "sha256": "da4e3160d8f1e245214f8b1b172ef15149669e54892eb150128d193b0d9b0255",
+      "bytes": 1114298,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-ANSWER-TRIAL-show-e2714-ve-details-remain-read-only-chromium/ANSWER_TRIAL-known-memory.png",
+      "sha256": "f8ce982584f1a78a695bfedb13c5378063e4ae31737bc9ed215c2e668d6734d4",
+      "bytes": 1217557,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-ANSWER-TRIAL-show-e2714-ve-details-remain-read-only-chromium/ANSWER_TRIAL-option-answer-accept.png",
+      "sha256": "8112e20fd2fdbe0c7ea21322471b841e9ba47d7b3c2aeb886e3d3c18e54f882b",
+      "bytes": 1173795,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-ANSWER-TRIAL-show-e2714-ve-details-remain-read-only-chromium/ANSWER_TRIAL-option-answer-release.png",
+      "sha256": "d7e87307b9cbbc387bebd93c12f4c7d4198d4e62acd0f7ee70cc482b64bad99d",
+      "bytes": 1173880,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-DECIDE-shows-ever-f6cd5-ve-details-remain-read-only-chromium/DECIDE-known-memory.png",
+      "sha256": "d430a6d2418a17a325aa3f210416612a9dab20ae3ed7117ba170bd44052df12a",
+      "bytes": 1256004,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-DECIDE-shows-ever-f6cd5-ve-details-remain-read-only-chromium/DECIDE-option-decide-accept.png",
+      "sha256": "d213a4f815b56015c7d85a012cc103417bec2e82b6ebdcdd2bfbf4828f1edd7e",
+      "bytes": 1206408,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-DECIDE-shows-ever-f6cd5-ve-details-remain-read-only-chromium/DECIDE-option-decide-decline.png",
+      "sha256": "f7036b68a12c6ef8ce3c537726c8d1397b564f8855fe484c3f06b9cb15924b54",
+      "bytes": 1205442,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-END-shows-every-g-44144-ve-details-remain-read-only-chromium/END-known-memory.png",
+      "sha256": "657458069c36cc4481d7ac23c713d192d0e57e28bb7a35972b5f80e434510340",
+      "bytes": 1218950,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-END-shows-every-g-44144-ve-details-remain-read-only-chromium/END-option-ending-depart.png",
+      "sha256": "5236dc9a6adc8456b573183f7349fa9ff7d4150234eb7c85db60f16f32e3a5b1",
+      "bytes": 1182206,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-END-shows-every-g-44144-ve-details-remain-read-only-chromium/END-option-ending-transmit.png",
+      "sha256": "1ce15ae30b89f5a00030f897a24f20ec11056274137d782cb0c47d76a2ffd211",
+      "bytes": 1185378,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-a-committed-respo-4728d-life-reader-to-another-fact-chromium/life-anchor-after-real-fact.png",
+      "sha256": "bcbd8524f3b07e9a85e76514552aec47cb7f4231ec30d62e9b7351dac7ce30a3",
+      "bytes": 1318962,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-a-committed-visit-96c5a-t-repeated-entry-being-read-chromium/journal-after-zero-log-visit.png",
+      "sha256": "da65188c14e3e9437535868560fc9ca10d7389f8075f35beb6d97811636558c7",
+      "bytes": 1278431,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-a-duplicate-journ-6be6b-ce-after-a-saved-commission-chromium/duplicate-journal.png",
+      "sha256": "e3906733ba4be34656ab1606a8fe336b6ba9bf6b6ccfc33779f13d711e158603",
+      "bytes": 1277950,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-a-duplicate-journ-fe6ad-on-at-the-hundred-entry-cap-chromium/duplicate-journal-capped.png",
+      "sha256": "73a4d2dc00359b8eeb98925f1e7056f0be8ebddafdb77636416b005b97852d02",
+      "bytes": 1278508,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-a-pending-trial-q-1fc8f-erying-it-as-a-person-event-chromium/question-local-fate-reading.png",
+      "sha256": "85c1fad2e9147fbbb74c121a52f28413f6c728ae460e0c963f7138e4149b23c6",
+      "bytes": 1198088,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/pending-meeting-dialogue.png",
+      "sha256": "881344ea8e4b32ec660812835d9aff1a8dc13ee6254bbe4cf4845af3faab1096",
+      "bytes": 1278924,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/visit-pending-meeting.png",
+      "sha256": "2b0b6973ca6bd24414e4ba4c9758446b37343a98002f05e09b9939eb21db9a89",
+      "bytes": 1221606,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-a-real-six-second-6eede-lently-chooses-the-response-chromium/visit-real-countdown.png",
+      "sha256": "d94c53de75e0f6ff4a6c86bff2d5625d8eb1937ac4634b08768c325ec5bc356e",
+      "bytes": 1207623,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-a-replacement-lif-b71dd-ter-or-unconfirmed-response-chromium/new-life-reading-state.png",
+      "sha256": "366641a06644676f7a73ce3ae818293e4f5871f7f392e39f85511f38f8e1d7f9",
+      "bytes": 1215430,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-a-saved-victory-w-900ae-ns-the-older-readable-entry-chromium/journal-after-victory.png",
+      "sha256": "4a4250b591c7b8df873e4cd2bc5f4bccf2601c7b7700174975d1c2b758779311",
+      "bytes": 1265106,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-a-story-can-inspe-5f8c0-s-same-unconfirmed-response-chromium/response-after-life-reading.png",
+      "sha256": "5d84ac0d326193e8f6894af3c56f9678117b96c89d7bf8041f63375df3f0bb0c",
+      "bytes": 1208133,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-all-eight-main-en-bf95b-ving-the-same-pending-story-chromium/all-entry-reading-return.png",
+      "sha256": "f6a6c9ef4d422bd37e81f645a8b0cf65676f18553f1d20f32f188424ba251164",
+      "bytes": 1875708,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-all-four-people-p-e56dd-ng-character-without-acting-chromium/person-lu-complete.png",
+      "sha256": "e885137f37cab912f1705fd8a30579e4e6e3e450a603d5a7b57ab4e1c67c555c",
+      "bytes": 1244504,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-all-four-people-p-e56dd-ng-character-without-acting-chromium/person-pei-complete.png",
+      "sha256": "473d130d555bf6118bb20034a038e7d4790883f182583f6b18e71016c5cb0fbe",
+      "bytes": 1247191,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-all-four-people-p-e56dd-ng-character-without-acting-chromium/person-shen-complete.png",
+      "sha256": "8e04f298983aa01d414adac62f357a23716ce9cc190903c742627206880196a9",
+      "bytes": 1246695,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-all-four-people-p-e56dd-ng-character-without-acting-chromium/person-yan-complete.png",
+      "sha256": "b5b6c16acd77fe25d2dbe4f227b67b667872eff11dfca5c53c00c7f1fb0f029f",
+      "bytes": 1242986,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-cancelled-choice--14b28-e-or-reopen-an-old-dialogue-chromium/cancelled-and-hidden-dialogue.png",
+      "sha256": "aaa5eb6cde19a76bb6da11f11f9bca3a54c76dea46588bcf8c5366ff4198ced4",
+      "bytes": 1219958,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-entering-question-761cd-e-its-identical-semantic-id-chromium/same-life-new-question.png",
+      "sha256": "1b14870bc8cc28250f5ec73297bd173f60cb936a76c87c0221ee59f4bccd6231",
+      "bytes": 1191821,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-every-life-chapte-9c1cf-factual-life-stays-complete-chromium/life-decisions-complete.png",
+      "sha256": "39f2053fb8e064f341758e107e0ae1d51ff28a199258069b214b6d4bb22fa791",
+      "bytes": 1270527,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-every-life-chapte-9c1cf-factual-life-stays-complete-chromium/life-life-complete.png",
+      "sha256": "976799079eb7b625fd9882c6ca2e626dd3274541bf863016364eb3963e00a962",
+      "bytes": 1268425,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-every-life-chapte-9c1cf-factual-life-stays-complete-chromium/life-seal-complete.png",
+      "sha256": "3dfd5829ed7b0a64eb52867d46a08d48e3110a0afb56a0f879a8b7e2801d091d",
+      "bytes": 1200161,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-every-life-chapte-9c1cf-factual-life-stays-complete-chromium/life-training-complete.png",
+      "sha256": "cd851d87155950c76f7989dfb03a70ed4a87dac99c0d32de79f99aa5dc4f47c1",
+      "bytes": 1265579,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-failed-scene-and--ff624--and-return-controls-usable-chromium/reading-art-fallback.png",
+      "sha256": "b5d32c2723458e7fb35188f60cbf4a634ebb9f0cb5bc795748cd677fe1550bb2",
+      "bytes": 444830,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-life-chapter-and--6a1d7-ction-without-a-Game-action-chromium/life-page-return.png",
+      "sha256": "771434236efd534e22965c0a8b110c2e2a3468cad409221331e58bd06ff3b7d0",
+      "bytes": 1305293,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-one-response-wait-6072d-lected-outcome-exactly-once-chromium/response-real-countdown.png",
+      "sha256": "97ad98b193a3e086633d0698d8df328edc2e235f4d9429b3e7a010bf183a58ec",
+      "bytes": 1151761,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-one-response-wait-6072d-lected-outcome-exactly-once-chromium/response-real-saved.png",
+      "sha256": "e5799c1628f2f7f795a42e05cbdcef3d396cec99c61bedf7ad91c4b8c53fe53f",
+      "bytes": 1283794,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-opening-life-from-2cb1a-t-original-one-level-return-chromium/ordinary-life-origin-return.png",
+      "sha256": "f36728efd185f8eebf6a0feab225c4ebafaf262ad6a2f627c9ac842c68f8694a",
+      "bytes": 1208205,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-same-person-and-c-600e1-reading-and-ordinary-return-chromium/same-person-reading.png",
+      "sha256": "a120dcd9c87e4c00bb48e09c05a38e991044692ac36360050450f546bb35a11c",
+      "bytes": 1275716,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-the-complete-reta-61233-gh-its-actual-page-controls-chromium/complete-journal.png",
+      "sha256": "8bd0c5f826e67f6f1e54c12cdb6cb74b3da854295ab56d761eb8e5b05c4f4bc8",
+      "bytes": 1218079,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-the-selected-endi-49563-e-with-all-records-retained-chromium/ending-real-countdown.png",
+      "sha256": "346dce43cb48341f8619bb6a01160227567fdf3b3c4b1d772575c47609cd28ec",
+      "bytes": 1102536,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-r4-the-selected-endi-49563-e-with-all-records-retained-chromium/ending-real-sealed.png",
+      "sha256": "726338281857dd569b4668ec6ec18eb88fab4649d310d333b9ee411f8871ca11",
+      "bytes": 1390053,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-a-chosen-purcha-8be49--or-authorising-an-activity-chromium/purchase-preparation-return.png",
+      "sha256": "069b519e7521221683da3577846d1a5411ba2a3e153a8758a597d2b07b891b0d",
+      "bytes": 868908,
+      "pixelReviewed": true,
+      "reviewOrigin": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-a-chosen-purcha-8be49--or-authorising-an-activity-chromium/purchase-preparation-return.png",
+      "basis": "Byte-exact PNG match to an actually viewed frame"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-foundat-e23a2-h-no-write-or-hidden-travel-chromium/cultivation-foundation.png",
+      "sha256": "56274b38b2f02f98e8cfd2e03ee6bc27fc6f474d8ab1082047012bda0a96588d",
+      "bytes": 794732,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-foundat-e23a2-h-no-write-or-hidden-travel-chromium/preparation-foundation.png",
+      "sha256": "213dc26f8b29672d09614e4ccf0da88f2c2392eb76d41acd314ea716fc041c0e",
+      "bytes": 791070,
+      "pixelReviewed": true,
+      "reviewOrigin": "artifacts/goal-4/u8-b/ui-final-f-results/stage-u8-b-current-foundat-e23a2-h-no-write-or-hidden-travel-chromium/preparation-foundation.png",
+      "basis": "Byte-exact PNG match to an actually viewed frame"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-golden--175e0-h-no-write-or-hidden-travel-chromium/cultivation-golden.png",
+      "sha256": "934fc87f7aec81a350db28bd4f69a892388c3a5dbef5dae43bdf9db9fabc7298",
+      "bytes": 792247,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-golden--175e0-h-no-write-or-hidden-travel-chromium/preparation-golden.png",
+      "sha256": "33f9bafd9985a81985f995bb79d9fa13179fc51ea9d997b7def2abdb96300a3c",
+      "bytes": 790988,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-mortal--2b1c0-h-no-write-or-hidden-travel-chromium/cultivation-mortal.png",
+      "sha256": "89452f7b6186345fb8e6824829ef0f02df2185b6ab33aac6e15778ed99861d51",
+      "bytes": 826838,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-nascent-e5836-h-no-write-or-hidden-travel-chromium/cultivation-nascent.png",
+      "sha256": "a88fe1649f5a5a1db0e4859b1f42bb0d2d1000e34ad3ab7309ec5f2c18452aa1",
+      "bytes": 793518,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-nascent-e5836-h-no-write-or-hidden-travel-chromium/preparation-nascent.png",
+      "sha256": "50313a33083633de2b431cce20cbb4454939b419e861b08a658caf1bc32b50c0",
+      "bytes": 790857,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-qi-cult-9568b-h-no-write-or-hidden-travel-chromium/cultivation-qi.png",
+      "sha256": "622be058a2d51429869253f3adec74df7e58884bc65c1fd0f47b2820dc9cad62",
+      "bytes": 789297,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-qi-cult-9568b-h-no-write-or-hidden-travel-chromium/preparation-qi.png",
+      "sha256": "1aef7b7d33732a8d0a9168d87c8b1270616409bff321ec2049acc816e8f6aab9",
+      "bytes": 787863,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-spirit--c82b5-h-no-write-or-hidden-travel-chromium/cultivation-spirit.png",
+      "sha256": "01333741ba3440803151f106d0b72c1793600009de7963f6bd30d3053c6286ee",
+      "bytes": 795100,
+      "pixelReviewed": true,
+      "reviewOrigin": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-spirit--c82b5-h-no-write-or-hidden-travel-chromium/cultivation-spirit.png",
+      "basis": "Byte-exact PNG match to an actually viewed frame"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-current-spirit--c82b5-h-no-write-or-hidden-travel-chromium/preparation-spirit.png",
+      "sha256": "de95a5a8a08969be25142e98c05ff716a3a6ee6e50b4410cf7679b1200aae73c",
+      "bytes": 798645,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-foundation-prep-82864-pagination-above-navigation-chromium/preparation-cards-foundation.png",
+      "sha256": "4316275022c87827cb58c5a892795de654099df7d3bc2f85683badc9909c0085",
+      "bytes": 885459,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-golden-preparat-9b8a4-pagination-above-navigation-chromium/preparation-cards-golden.png",
+      "sha256": "bd4aa1a0788d6284e40ad968bea141271eaf75307f80e122c8126f4f67618322",
+      "bytes": 885926,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-nascent-prepara-57e86-pagination-above-navigation-chromium/preparation-cards-nascent.png",
+      "sha256": "61817550d72de455fa6f6d92932bdf4907e251fd33ae5fa6f25e88971d848879",
+      "bytes": 922471,
+      "pixelReviewed": true,
+      "reviewOrigin": "artifacts/goal-4/u8-b/ui-final-f-results/stage-u8-b-nascent-prepara-57e86-pagination-above-navigation-chromium/preparation-cards-nascent.png",
+      "basis": "Byte-exact PNG match to an actually viewed frame"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-qi-preparation--de255-pagination-above-navigation-chromium/preparation-cards-qi.png",
+      "sha256": "916967956e7ada090940c067c795c9da9afbe09ade76186c808f8f333b3d4d93",
+      "bytes": 922300,
+      "pixelReviewed": true,
+      "reviewOrigin": "artifacts/goal-4/u8-b/ui-card-green-results/stage-u8-b-qi-preparation--de255-pagination-above-navigation-chromium/preparation-cards-qi.png",
+      "basis": "Byte-exact PNG match to an actually viewed frame"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-spirit-preparat-88c0f-pagination-above-navigation-chromium/preparation-cards-spirit.png",
+      "sha256": "a774c5b2ce8144919b039ca292b03dee62f9f5d8d7e9cc17aed73a3df7f169b9",
+      "bytes": 925021,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-sword-cloud-mir-f7725-d-cancel-authorizes-nothing-chromium/outlook-result-sword-cloud_mirror.png",
+      "sha256": "79a61b1d9add3c3c2ecba0b2feccbe8247ef09ef961cbb7ff57b3ced5bff9609",
+      "bytes": 423324,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-sword-cloud-mir-f7725-d-cancel-authorizes-nothing-chromium/outlook-sword-cloud_mirror.png",
+      "sha256": "c7705d0fc47d9d4f247c7efdf0aae5cd64b4fdd7d1186c3705a7711353d8b8d4",
+      "bytes": 410963,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-sword-frost-swo-0cb0c-d-cancel-authorizes-nothing-chromium/outlook-result-sword-frost_sword.png",
+      "sha256": "25df89b98ff3c2e0415bcfaf679d89d527778f022af70e96db3e78aa9ff9b8db",
+      "bytes": 422282,
+      "pixelReviewed": true,
+      "reviewOrigin": "artifacts/goal-4/u8-b/ui-final-f-results/stage-u8-b-sword-frost-swo-0cb0c-d-cancel-authorizes-nothing-chromium/outlook-result-sword-frost_sword.png",
+      "basis": "Byte-exact PNG match to an actually viewed frame"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-sword-frost-swo-0cb0c-d-cancel-authorizes-nothing-chromium/outlook-sword-frost_sword.png",
+      "sha256": "0b4e3c50189395c9add3f466b46699e92d2c16c6efaa5bddf42c7271884db719",
+      "bytes": 408600,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-sword-jade-seal-dbd0d-d-cancel-authorizes-nothing-chromium/outlook-result-sword-jade_seal.png",
+      "sha256": "b16dcc74a033ce7300f5883a9a3bd99622a51acc49c3767d93d792edd445fda6",
+      "bytes": 419928,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-sword-jade-seal-dbd0d-d-cancel-authorizes-nothing-chromium/outlook-sword-jade_seal.png",
+      "sha256": "7a8c8afe2d6bf5a14a8f79a6aa08cf02a9440d32680625fd3301f1ddde3d3de5",
+      "bytes": 405560,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-sword-soul-lamp-4cdcf-d-cancel-authorizes-nothing-chromium/outlook-result-sword-soul_lamp.png",
+      "sha256": "22bebfa25b23cd9ea291f93141d89f5100c35da174716bca4a7e3bea71342120",
+      "bytes": 423745,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-sword-soul-lamp-4cdcf-d-cancel-authorizes-nothing-chromium/outlook-sword-soul_lamp.png",
+      "sha256": "b99265a2d77c51d95e9b70ba7df060b826104aa658d595454df256d3306f2962",
+      "bytes": 409305,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-talisman-cloud--9282c-d-cancel-authorizes-nothing-chromium/outlook-result-talisman-cloud_mirror.png",
+      "sha256": "ba076d05889c0d1cd95ea24a78f65f69dbd3437791afe9dbcfd99ccd96cebb01",
+      "bytes": 423157,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-talisman-cloud--9282c-d-cancel-authorizes-nothing-chromium/outlook-talisman-cloud_mirror.png",
+      "sha256": "1152ac9d95360df9e56e2a8588b411a85ea2e15989d58e77c73babf6a3945226",
+      "bytes": 408913,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-talisman-frost--b5ff4-d-cancel-authorizes-nothing-chromium/outlook-result-talisman-frost_sword.png",
+      "sha256": "b4a2552ced55658025715a53be89f781d81ac16e95f6f1abe753e35e8f4e585b",
+      "bytes": 422287,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-talisman-frost--b5ff4-d-cancel-authorizes-nothing-chromium/outlook-talisman-frost_sword.png",
+      "sha256": "3b901b6a53c81711e9a0d2e4ac0ded46ac7f36f514ea405b71c8ed6e751b6a15",
+      "bytes": 408578,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-talisman-jade-s-32ae3-d-cancel-authorizes-nothing-chromium/outlook-result-talisman-jade_seal.png",
+      "sha256": "dd0155ef359c26361b7103a13c8c4579379d25c8dbb7b3ccc8f735797d39996d",
+      "bytes": 419768,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-talisman-jade-s-32ae3-d-cancel-authorizes-nothing-chromium/outlook-talisman-jade_seal.png",
+      "sha256": "1be5be28148c26434783d1da602b0b14e8ec459ce1626ce8e00d23b20c4df0b5",
+      "bytes": 407342,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-talisman-soul-l-73a67-d-cancel-authorizes-nothing-chromium/outlook-result-talisman-soul_lamp.png",
+      "sha256": "1542eeb1e5868878ff12470912b6fac50378457c2bcadc1a4bcabffc7efd7100",
+      "bytes": 420206,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-talisman-soul-l-73a67-d-cancel-authorizes-nothing-chromium/outlook-talisman-soul_lamp.png",
+      "sha256": "9cc4ee5ca936eb9f1c33a9aca0a777ca6cbfc3e618f06300cce30da91b57ca7b",
+      "bytes": 409291,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery-results/stage-u8-b-tradeoff-contro-4479b-do-not-execute-a-projection-chromium/tradeoff-art-fallback.png",
+      "sha256": "88521b86eea9f6aaa5eb258a36eba688b88d2e296cdd7acf3e13c4ce85868dd9",
+      "bytes": 562556,
+      "pixelReviewed": false,
+      "reviewOrigin": null,
+      "basis": "Generated final frame; not pixel-reviewed"
+    }
+  ],
+  "olderFailingPixelReview": "artifacts/goal-4/u8-b/visual-review/selected.json",
+  "humanAcceptance": false
+}

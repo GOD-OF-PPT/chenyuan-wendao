@@ -120,3 +120,5 @@ R4依[0017仙缘/生平合同](docs/decisions/0017-narrative-life-r4-contract.md
 
 
 U8-B依据[0018](docs/decisions/0018-idle-progression-tradeoffs-contract.md)和本轮实际回读[Pecorella经济文章](https://www.kongregate.com/en/pages/the-math-of-idle-games-part-i)、[Melvor开发者日志](https://news.melvoridle.com/melvor-idle-2-development-progress-update-june-2026/)处理完整整数周期/资金/材料/投资及配置差异：比较同一目标终点，计筹石/行旅与来源副产XP，预筹后重算，未花预算留期末；已有目标物不重复制作采购。自采、替代委托少干预、成丹购买各有边界，不能泛称某路最省；计划段数不等于用户点击次数。配装对照使用同一实际库存/体魄/默认战策，包含真实用药/回合/停止，永久研习升级不强造副作用。所有预测只读，下一段只查看/定位，预算/命令不变成新授权；未知剧情/胜负/入劫建议与正式门槛分开。具体30000B/分支/取舍均本项目推导，非来源数值或长期平衡/真人证明。当前费用/周期/DB9与旧proof不可直接改；正常整链须用正式Activity，不拿旧count50或虚拟时长充真人节奏。
+
+本地设置/存档初始读取须与导入或游戏行动受理分开验证：先等待公共就绪信号，再执行原动作时限与完整Game/读秒断言；超时保留阶段证据。U8C-BOOT-01目前只知experience.init未完成，native open/readMeta根因unknown；不能凭暂停钟或一次重跑绿灯宣称已修，更不能加sleep/推进游戏钟、删除断言或隐去旧失败。被动测试诊断不读存储值、不改实际Store/运行时，恢复原方法后才进入受测操作；不把就绪准备界限说成性能验收。

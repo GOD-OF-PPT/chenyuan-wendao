@@ -1,0 +1,80 @@
+Browser tab: 3, Title: "尘缘问道 · 文字修仙", URL: "http://127.0.0.1:56884/".
+1 AXWebArea 尘缘问道 · 文字修仙, URL: 127.0.0.1:56884/
+	2 container
+		3 container 快捷定位
+			4 link Description: 跳到当前内容, Value: 127.0.0.1:56884/#game-content
+			5 link Description: 跳到主导航, Value: 127.0.0.1:56884/#primary-navigation
+			6 link Description: 跳到当前目标, Value: 127.0.0.1:56884/#goal-panel
+		7 button 查看人物寿元与配装
+			8 text 顾长青
+			9 container
+				10 text 凡人  · 尚未择法
+		11 text 气血  60 / 60 灵力 20 / 20 修为
+		12 text 5 / 10
+		13 text 灵石
+		14 text 40
+		15 text 听雨洞府
+		16 text 修行第 1 月
+		17 button 当前目标 引气入体 尚缺修为 5 查看缺口与来源 ›
+			18 text 当前目标
+			19 text 引气入体
+			20 text 尚缺修为 5
+			21 text 查看缺口与来源 ›
+		22 text 已保存
+		23 button 帮助
+		24 button 设置
+		51 text 已续上本机进度 · 凡人 · 听雨洞府
+		52 button 继续当前内容 ↓
+		53 container
+			54 heading 凡人修行, Value: 2, ID: feature-title
+				55 text 凡人修行
+			56 button 玩法指引
+			57 button 当前目标
+			58 button 返回原玩法
+		59 container
+			60 heading 安排一段修行, Value: 3
+				61 text 安排一段修行
+			62 text 选定方式后持续吐纳，每轮自动保存；达到目标或预算边界即停。
+			63 text 待确认的新安排；点击开始后才保存。
+			64 button 比较修行取舍
+			65 container 修炼方式
+				66 checkbox 自然吐纳 · 节省灵石, Value: 1
+				67 checkbox 灵石辅助 · 加快积累, Value: 0
+			68 text 修行目标
+			69 pop up button (collapsed, settable) Description: 修行目标, Value: 修为圆满即停（最多50轮）, Secondary Actions: Expand
+				70 menu
+					71 (selected) 修为圆满即停（最多50轮）
+					72 1 轮后停
+					73 5 轮后停
+					74 20 轮后停
+					75 50 轮后停
+			76 text 最多
+			77 stepper (settable, integer) Description: 圆满最多轮数, Value: 50
+			78 text 轮
+			79 text 每轮 30 秒 · 修为 5 · 1 游戏月
+			80 button (collapsed) 灵石安排 · 上限 0 · 保留 0, Secondary Actions: Expand
+				81 text 灵石安排 · 上限 0 · 保留 0
+			82 text 预计可完成 1 轮
+			83 text 修为 +5 · 灵石消耗 0 · 1 游戏月
+			84 text 预计停止：修为已圆满，停止修炼并筹备突破
+			85 text 累计灵石上限 0 · 保留 0 · 最多 50 轮
+			86 button 开始自然吐纳
+			87 text 本次为在线修炼。关闭或刷新保留成果与安排，继续后本轮重新计时，不补发离线收益。
+			88 text 修为尚未圆满
+			89 button (disabled) 引气入体
+			90 button (disabled) 查看疗养安排 · 每次 30 秒 气血灵力已经圆满
+				91 text 查看疗养安排 · 每次 30 秒
+				92 text 气血灵力已经圆满
+		40 container Description: 主要页面, ID: primary-navigation
+			41 button 修行
+			42 button 历练
+			43 button 丹炉
+			44 button 功法
+			45 button 法宝
+			46 button 行囊
+			47 button 仙缘
+			48 button 生平
+			49 text 数值未平衡
+		50 button 行道手记 ›
+
+The focused UI element is 54 heading 凡人修行, Value: 2, ID: feature-title
