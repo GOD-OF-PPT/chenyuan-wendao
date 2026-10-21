@@ -135,6 +135,7 @@ export const useGame = defineStore('game', () => {
   }
   async function init() {
     if (busy.value) return;
+    const hadUnconfirmedIntent=failedIntent;
     stopActivityRuntime();activityNotice.value='';
     busy.value = true; ready.value = false; available.value = false; error.value = ''; warning.value = '';
     repository?.close(); channel?.close(); repository = undefined; channel = undefined;
@@ -144,7 +145,8 @@ export const useGame = defineStore('game', () => {
       if (disposed) { opened.close(); return; }
       repository = opened; available.value = true;
       await refresh();
-      saved.value = !!game.value && !failedIntent;
+      failedIntent=false;saved.value=!!game.value;
+      if(hadUnconfirmedIntent)warning.value=[warning.value,'已重新读取已保存进度；上次未确认的操作未自动重试，请核对当前成果后再安排。'].filter(Boolean).join(' ');
       if(game.value)emit(()=>loadedObservation(game.value!,'resume'));
       if ('BroadcastChannel' in globalThis) {
         channel = new BroadcastChannel(session.gameChannel);

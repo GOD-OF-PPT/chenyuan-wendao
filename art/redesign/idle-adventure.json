@@ -7,13 +7,13 @@
   "files": [
     {
       "path": "web/src/AdventurePlanner.vue",
-      "bytes": 12025,
-      "sha256": "9792566e67887f5cdb3a484be659d5fcc94860b15470633515ce4d4f13dcb3e7"
+      "bytes": 12080,
+      "sha256": "c23ef867df2978e98e71e1b7f7c48759b734b874589fdcc8c206c690f28a1b5f"
     },
     {
       "path": "web/src/BattleStrategy.vue",
-      "bytes": 16782,
-      "sha256": "11394c8f9c2a28087a0a5f2a89630fa9930919bdfdfd8eb7916fd9d059d96c0b"
+      "bytes": 16839,
+      "sha256": "385f37d6ea678b8d4e5a0be1ada613eb2465050a32eb1d1a56543e3108fa2b6f"
     },
     {
       "path": "web/src/AdventureHistory.vue",

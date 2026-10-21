@@ -436,7 +436,7 @@ async function confirmTrialRestore() {
   if (!store.error) { trialRestoreDialog.value?.close(); await showTrialPreparation(); }
 }
 async function retryTrialRestore() {
-  const review = trialRestoreIntent.value; if (!review || trialRestoreStale.value || !store.canRetryFor(review.command.commandId)) return;
+  const review = trialRestoreIntent.value; if (!review || store.busy || !store.canRetryFor(review.command.commandId)) return;
   await store.retryFor(review.command.commandId);
   if (!store.error) { trialRestoreDialog.value?.close(); await showTrialPreparation(); }
 }
@@ -710,9 +710,9 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
         <p>将放弃本轮及入场后的进展，物品、气血灵力、配装、人物选择、里程碑和年月一同回到该准备快照。不会单独补发渡劫引；恢复成功后，仍可再次使用这个检查点。</p>
         <p>准备气血 {{trialRestoreIntent.checkpoint.target.hp}} · 灵力 {{trialRestoreIntent.checkpoint.target.mp}} · 渡劫引 {{trialRestoreIntent.checkpoint.target.inventory.ascension_seal}}</p>
         </template>
-        <p v-if="trialRestoreStale" role="alert" data-testid="trial-restore-stale">进度已更新，请关闭后重新核对；此处不会回退另一份进度。</p>
-        <p v-if="store.error" role="alert" data-testid="trial-restore-error">{{store.error}}</p>
-        <button v-if="store.canRetryFor(trialRestoreIntent.command.commandId)" data-testid="trial-restore-retry" @click="retryTrialRestore" :disabled="store.busy || trialRestoreStale">重试同一次完整恢复</button>
+        <p v-if="trialRestoreStale" role="alert" data-testid="trial-restore-stale">{{store.canRetryFor(trialRestoreIntent.command.commandId)?'原恢复回复待核对，请重试同一次完整恢复；不会重复回退进度。':'进度已更新，请关闭后重新核对；此处不会回退另一份进度。'}}</p>
+        <p v-if="store.error" role="alert" data-testid="trial-restore-error">{{store.canRetryFor(trialRestoreIntent.command.commandId)&&game?.core.runId===trialRestoreIntent.command.runId?'恢复回复未能确认，请重试同一次恢复核对已保存进度。':store.error}}</p>
+        <button v-if="store.canRetryFor(trialRestoreIntent.command.commandId)" data-testid="trial-restore-retry" @click="retryTrialRestore" :disabled="store.busy">重试同一次完整恢复</button>
         <button data-testid="trial-restore-cancel" @click="trialRestoreDialog?.close()" :disabled="store.busy">保留当前进度</button>
         <button data-testid="trial-restore-confirm" class="primary" @click="confirmTrialRestore" :disabled="store.busy || !store.available || trialRestoreStale">{{store.busy?store.saveLabel+'…':'确认恢复完整准备'}}</button>
       </template>

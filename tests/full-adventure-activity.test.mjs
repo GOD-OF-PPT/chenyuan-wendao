@@ -53,6 +53,41 @@ test('all six destinations perform exactly one six-second zero-cost arrival with
   }
 });
 
+test('finite adventure previews match their persisted single-cycle completion and never mutate the input', () => {
+  const traveler = ready('qi'), fighter = combat('qi');
+  const cases = [
+    { game: traveler, plan: { kind: 'travel', location: 'cave', maxCycles: 1 } },
+    { game: traveler, plan: encounter(traveler, 'wolf', { maxCycles: 1 }) },
+    { game: fighter, plan: singleBattlePlan(fighter, 'attack') },
+  ];
+  for (const { game, plan } of cases) {
+    const before = structuredClone(game), preview = previewActivity(game, plan);
+    assert.equal(preview.allowed, true); assert.equal(preview.stopReason.code, 'CYCLES_COMPLETE');
+    assert.deepEqual(game, before);
+    const out = complete(game, createActivity(game, plan, options()));
+    assert.deepEqual(out.activity.stopReason, preview.stopReason);
+    assert.equal(out.activity.completedCycles, 1); assert.equal(out.activity.nextCommand, null);
+  }
+});
+
+test('saved v6 completion records retain the exact known historic message without accepting another reason or progress', () => {
+  const traveler = ready('qi'), fighter = combat('qi');
+  const plans = [
+    { game: traveler, plan: { kind: 'travel', location: 'cave', maxCycles: 1 } },
+    { game: traveler, plan: encounter(traveler, 'wolf', { maxCycles: 1 }) },
+    { game: fighter, plan: singleBattlePlan(fighter, 'attack') },
+  ];
+  for (const { game, plan } of plans) {
+    const out = complete(game, createActivity(game, plan, options())), historical = structuredClone(out.activity);
+    // This was the exact persisted CYCLES_COMPLETE reason before CHECK-IDLE-02; retain its original bytes.
+    historical.stopReason.message = '已完成本段授权动作数，不再自动出招';
+    const original = structuredClone(historical); validateActivity(historical, out.game); assert.deepEqual(historical, original);
+    for (const mutate of [a => { a.stopReason.message = '伪造完成'; }, a => { a.stopReason.code = 'VICTORY'; }, a => { a.completedCycles = 0; }]) {
+      const forged = structuredClone(historical); mutate(forged); rejects(() => validateActivity(forged, out.game));
+    }
+  }
+});
+
 test('all six normal enemies and both schools use a full encounter then separate actual rounds and deterministic loot', () => {
   const entries = Object.entries(C.enemies).filter(([, e]) => !e.trial); assert.equal(entries.length, 6);
   for (const school of ['sword', 'talisman']) for (const [enemy, e] of entries) {

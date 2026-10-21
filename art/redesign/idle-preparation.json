@@ -12,8 +12,8 @@
     },
     {
       "path": "web/src/MarketPlanner.vue",
-      "bytes": 8942,
-      "sha256": "8ae12713adf1b8ed4ae86fd43169f30e7e98c536c7263810d0f11f31c780bce0"
+      "bytes": 8993,
+      "sha256": "5364c9baf8593a0cc57c8aa519fe95f5b1e376d0883e554d3865f2ea1ba631a4"
     },
     {
       "path": "web/src/RecoveryPlanner.vue",
@@ -32,8 +32,8 @@
     },
     {
       "path": "web/src/idle-preparation.css",
-      "bytes": 10550,
-      "sha256": "952da4a6bd40cf48603200253fe39c23fdd17cf45e31fa6b11d81247d11af09b"
+      "bytes": 10712,
+      "sha256": "f4b507d2148b65566800c7ae2a9a49d19bcf40fa7329c69646bf90ba746ec368"
     }
   ],
   "sourceReferences": [

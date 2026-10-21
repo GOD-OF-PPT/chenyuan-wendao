@@ -1,4 +1,5 @@
-import type {Activity} from '../../src/full/activity.ts';
+import type {Activity,ActivityPlan} from '../../src/full/activity.ts';
+import type {RuleFailure} from '../../src/full/contracts.ts';
 import {preparationView} from './preparation-view';
 import {adventureView} from './adventure-view';
 import {milestoneView} from './milestone-view';
@@ -6,6 +7,15 @@ import type {Game} from '../../src/full/types.ts';
 import {items,recipes,relics,sources} from '../../src/full/content.ts';
 const gains=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=>items[id].name+' +'+n).join(' · ');
 const quantities=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=>items[id].name+' ×'+n).join(' · ');
+// Keep persisted v6 reasons and their exact receipt proofs unchanged.
+export function stopMessage(plan:ActivityPlan,reason:RuleFailure|null|undefined){
+ if(reason?.code==='CYCLES_COMPLETE'){
+  if(plan.kind==='travel')return'已抵达目的地，本次行旅结束';
+  if(plan.kind==='encounter')return'已完成本段历练动作上限，后续由你另行安排';
+  if(plan.kind==='battle')return'已完成本段斗法动作上限，不再自动出招';
+ }
+ return reason?.message??'';
+}
 export function activityView(a:Activity,game:Game|null){
  if(a.version===7)return milestoneView(a);
  if(a.version===6)return adventureView(a);

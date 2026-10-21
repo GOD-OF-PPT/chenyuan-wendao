@@ -2,11 +2,12 @@
 import {computed} from 'vue';
 import type {useGame} from './store';
 import {activityStop} from '../../src/full/activity.ts';
-import {activityView} from './activity-view';
+import {activityView,stopMessage} from './activity-view';
 const props=defineProps<{store:ReturnType<typeof useGame>;compact?:boolean;summary?:boolean}>();
 const emit=defineEmits<{settings:[];details:[]}>();
 const a=computed(()=>props.store.activity),runtime=computed(()=>props.store.activityRuntime);
 const view=computed(()=>a.value?activityView(a.value,props.store.game):null);
+const stopped=computed(()=>a.value?stopMessage(a.value.plan,a.value.stopReason):'');
 const lastCycle=computed(()=>a.value?.version===7&&a.value.completedCycles===1||props.store.lastResult?.type===view.value?.type&&props.store.lastResult?.runId===a.value?.runId&&props.store.lastResult?.revisionAfter===a.value?.gameRevision);
 const blocked=computed(()=>a.value&&props.store.game?activityStop(props.store.game,a.value):null);
 const status=computed(()=>props.store.activityPausing?'正在暂停':runtime.value?.phase==='saving'?'本轮保存中':runtime.value?(a.value?.version===1?'吐纳进行中':view.value?.noun+'进行中'):a.value?.status==='paused'?view.value?.noun+'已暂停':a.value?.status==='stopped'?'此段活动已结束':'已保存活动安排');
@@ -19,7 +20,7 @@ function compactV6(){return props.compact&&a.value?.version===6;}
 </script>
 <template>
  <section v-if="a&&view&&summary" class="training-stop-summary" data-testid="training-summary" aria-label="上段活动成果">
-  <strong>{{view.name}} · 已结束</strong><p data-testid="training-stop">{{a.version===7?(a.stopReason?.code==='WAITING_DECISION'?'已停 · 待决定':'已完成一次 · 即停'):a.stopReason?.message}}</p>
+  <strong>{{view.name}} · 已结束</strong><p data-testid="training-stop">{{a.version===7?(a.stopReason?.code==='WAITING_DECISION'?'已停 · 待决定':'已完成一次 · 即停'):stopped}}</p>
   <small data-testid="training-totals"><span v-for="(row,index) in view.summary" :key="index">{{row}}<br></span></small>
   <footer><button data-testid="training-review" @click="emit('settings')">{{a.version===7?'原安排':view.noun+'安排'}}</button><button v-if="lastCycle||a.version===6&&a.completedCycles>0" data-testid="hub-receipt" @click="emit('details')">{{a.version===7?'完整成果':a.version===6?'本段回执':'末轮结算'}}</button></footer>
  </section>
@@ -27,7 +28,7 @@ function compactV6(){return props.compact&&a.value?.version===6;}
   <header><span>{{status}}</span><strong>{{view.name}}</strong></header>
   <div v-if="runtime&&!store.activityPausing" class="training-cycle" data-testid="training-cycle"><output data-testid="training-countdown" aria-live="off">{{runtime.phase==='saving'?'保存中':seconds.toFixed(1)+' 秒'}}</output><div class="training-cycle-track" role="progressbar" :aria-valuenow="runtime.totalMs-runtime.remainingMs" :aria-valuemin="0" :aria-valuemax="runtime.totalMs" aria-label="本轮活动进度"><span :style="{width:Math.max(0,Math.min(100,100*(1-runtime.remainingMs/runtime.totalMs)))+'%'}"/></div><small v-if="compact&&a.version===6">下一步：{{nextMove}}</small><small v-else>第 {{a.completedCycles+1}} {{view.unit}} · 保存后计入成果</small></div>
   <p v-else-if="a.status!=='stopped'&&(!compactV6()||!notice&&!a.stopReason)" class="training-resume-note">{{store.activityPausing?'核对本轮结算后停止，不再开始下一轮。':'继续后本轮重新计时；关闭或刷新期间不补发收益。'}}</p>
-  <p v-if="a.stopReason" data-testid="training-stop">{{a.stopReason.message}}</p>
+  <p v-if="a.stopReason" data-testid="training-stop">{{stopped}}</p>
   <div class="training-totals" data-testid="training-totals"><span>已完成 {{a.completedCycles}} / {{a.plan.maxCycles}} {{view.unit}}</span><span v-for="(row,index) in compact&&a.version===6?brief:view.rows" :key="index">{{row}}</span></div>
   <p v-if="!compact" class="training-goal">{{view.goal}} · {{a.version===7?'本次在线':'每轮'}} {{a.cycleMs/1000}} 秒</p>
   <p v-if="notice" class="training-notice" role="status">{{notice}}</p><p v-if="!runtime&&a.status!=='stopped'&&blockMessage" class="training-notice">{{blockMessage}}</p>
