@@ -10,20 +10,20 @@ import {scenePresentation} from './scene-presentation';
 import BattleStrategy from './BattleStrategy.vue';
 import type {Activity} from '../../src/full/activity.ts';
 import type {AdventurePlan,BattlePlan} from '../../src/full/adventure.ts';
-const props=withDefaults(defineProps<{game:Game;compact?:boolean;can:(action:Action)=>boolean;cost:(action:Action)=>string;why:(action:Action)=>string;busy?:boolean;available?:boolean;running?:boolean;activity?:Activity|null;savedAdventurePlan?:AdventurePlan|null;planSaved?:boolean}>(),{busy:false,available:true,running:false,planSaved:false});
+const props=withDefaults(defineProps<{game:Game;active?:boolean;compact?:boolean;can:(action:Action)=>boolean;cost:(action:Action)=>string;why:(action:Action)=>string;busy?:boolean;available?:boolean;running?:boolean;activity?:Activity|null;savedAdventurePlan?:AdventurePlan|null;planSaved?:boolean}>(),{busy:false,available:true,running:false,planSaved:false,active:true});
 const emit=defineEmits<{move:[move:Move];details:[event:MouseEvent];start:[BattlePlan];takeover:[]}>();
 const battle=computed(()=>props.game.battle!),enemy=computed(()=>C.enemies[battle.value.enemy]);
 const forecast=computed(()=>intent(battle.value)),player=computed(()=>props.game.core.player),realm=computed(()=>C.realms[player.value.realm]);
 const backdrop=computed(()=>sceneAssetPath(scenePresentation(props.game)));
 </script>
 <template>
- <BattleStrategy variant="battle" :game="game" :compact="compact" :busy="busy" :available="available" :running="running" :activity="activity" :saved-plan="savedAdventurePlan" :plan-saved="planSaved" :can="can" :cost="cost" :why="why" @move="emit('move',$event)" @details="emit('details',$event)" @start="emit('start',$event)" @takeover="emit('takeover')">
+ <BattleStrategy :trial="enemy.trial" variant="battle" :game="game" :compact="compact" :busy="busy" :available="available" :running="running" :activity="activity" :saved-plan="savedAdventurePlan" :plan-saved="planSaved" :can="can" :cost="cost" :why="why" @move="emit('move',$event)" @details="emit('details',$event)" @start="emit('start',$event)" @takeover="emit('takeover')">
   <template #hero>
   <div class="battle-hero">
    <AssetImage class="battle-backdrop" :path="backdrop" asset-id="battle-environment" eager><span class="battle-backdrop-fallback"/></AssetImage>
    <div class="enemy-art" aria-hidden="true"><AssetImage :path="ENEMY_ASSETS[battle.enemy]" :asset-id="`enemy-${battle.enemy}`" fit="contain" eager><span class="enemy-fallback">{{enemy.trial?'劫':'敌'}}<small>{{enemy.name}}</small></span></AssetImage></div>
    <div class="enemy-status"><div class="enemy-row"><h2>{{enemy.name}}</h2><b data-testid="enemy-hp">{{battle.hp}} / {{enemy.hp}} 气血</b></div>
-    <ProgressTrack :value="battle.hp" :max="enemy.hp" label="敌方气血" tone="health" :identity="game.core.runId+battle.enemy+game.wins" hint="只有实际战斗行动才改变气血；先辨敌方意图，再选择攻守。"/>
+    <ProgressTrack :active="active" :value="battle.hp" :max="enemy.hp" label="敌方气血" tone="health" :identity="game.core.runId+battle.enemy+game.wins" hint="只有实际战斗行动才改变气血；先辨敌方意图，再选择攻守。"/>
     <div class="intent" data-testid="intent" :data-intent="forecast.kind"><span>敌方意图</span><strong>{{forecast.name}}</strong><b>敌方原始伤害 {{forecast.damage}}</b></div>
    </div>
   </div>

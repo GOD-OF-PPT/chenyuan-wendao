@@ -1,0 +1,21 @@
+{
+  "task": "CHECK-A-R",
+  "accessed": "2026-10-21",
+  "method": "Actual web open of two primary Xbox Game Dev guidelines; source statements kept distinct from project choices; no competitor full playtest or certification",
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "title": "Xbox Accessibility Guideline112: UI navigation",
+      "observed": "Consistent screen/component order, interaction mechanisms and predictable focus support clear game navigation.",
+      "application": "Use the same return semantics for read-only inventory sale and medicine inspection; retain local draft across ordinary details.",
+      "notPrescribed": "No mandated specific four-item grid, finite budget, timer or Vue lifecycle."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "title": "Xbox Accessibility Guideline114: UI context",
+      "observed": "Players should understand a screen and what a control will do; context and labels must explain changes and expected input.",
+      "application": "Expose finite order/dose limits before explicit start, distinguish editing/reading from execution, and provide full original strategy after an enemy is gone.",
+      "notPrescribed": "The project derives progressive disclosure and read-only strategy pages; the guideline is not approval of our timing, balance or final layout."
+    }
+  ]
+}

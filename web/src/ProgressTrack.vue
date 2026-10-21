@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import {computed,inject,nextTick,onScopeDispose,ref,useId,watch} from 'vue';
 import {gameFocusKey} from './focus';
-const props=withDefaults(defineProps<{value:number;max:number;label:string;identity:string;hint:string;tone?:'health'|'spirit'|'cultivation'}>(),{tone:'cultivation'});
+const props=withDefaults(defineProps<{value:number;max:number;active?:boolean;label:string;identity:string;hint:string;tone?:'health'|'spirit'|'cultivation'}>(),{tone:'cultivation',active:true});
 const focus=inject(gameFocusKey)!,dialog=ref<HTMLDialogElement>(),opener=ref<HTMLButtonElement>(),opened=ref(false),change=ref<number|null>(null),id=useId();
 const ratio=computed(()=>Math.max(0,Math.min(100,props.value/Math.max(1,props.max)*100)));
 let timer:ReturnType<typeof setTimeout>|undefined;
-watch(()=>[props.value,props.max,props.identity]as const,([value,max,identity],[before,oldMax,oldIdentity])=>{
+watch(()=>[props.value,props.max,props.identity,props.active]as const,([value,max,identity,active],[before,oldMax,oldIdentity,wasActive])=>{
  clearTimeout(timer);change.value=null;
- if(identity!==oldIdentity||max!==oldMax){dialog.value?.close();return;}
+ if(!active||!wasActive||identity!==oldIdentity||max!==oldMax){opened.value=false;dialog.value?.close();return;}
  if(value!==before){change.value=value-before;timer=setTimeout(()=>change.value=null,1400);}
 });
-async function inspect(){const identity=props.identity;opened.value=true;await nextTick();if(props.identity!==identity){opened.value=false;return;}focus.target(opener.value??null);focus.open(dialog.value,opener.value??null);}
+async function inspect(){if(!props.active)return;const identity=props.identity;opened.value=true;await nextTick();if(!props.active||props.identity!==identity){opened.value=false;return;}focus.target(opener.value??null);focus.open(dialog.value,opener.value??null);}
 onScopeDispose(()=>{clearTimeout(timer);focus.release(dialog.value);});
 </script>
 <template>

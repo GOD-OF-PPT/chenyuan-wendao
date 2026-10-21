@@ -21,3 +21,6 @@ export async function closeSourceSettings(page:Page){if(await page.getByTestId('
 export async function openLearningSettings(page:Page){if(!await page.getByTestId('learning-plan-dialog').isVisible())await page.getByTestId('learning-plan-open').click();await expect(page.getByTestId('learning-plan-dialog')).toBeVisible();}
 export async function closeLearningSettings(page:Page){if(await page.getByTestId('learning-plan-dialog').isVisible())await page.getByTestId('learning-plan-close').click();}
 export async function selectLearningSkill(page:Page,id:string){await closeLearningSettings(page);await revealPaged(page,'skill-select-'+id,'learning-planner','功法');await page.getByTestId('skill-select-'+id).click();await expect(page.getByTestId('skill-'+id)).toBeVisible();}
+
+export async function openSupplySettings(page:Page){for(const kind of ['market','recovery']){const open=page.getByTestId(kind+'-plan-open');if(await open.isVisible()){if(!await page.getByTestId(kind+'-plan-dialog').isVisible())await open.click();return kind;}}return null;}
+export async function closeSupplySettings(page:Page){for(const kind of ['market','recovery'])if(await page.getByTestId(kind+'-plan-dialog').isVisible())await page.getByTestId(kind+'-plan-close').click();}

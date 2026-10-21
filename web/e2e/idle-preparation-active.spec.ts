@@ -1,4 +1,4 @@
-import {selectLearningSkill} from './stage-support';
+import {openSupplySettings,closeSupplySettings,selectLearningSkill} from './stage-support';
 import {test,expect,type Page} from '@playwright/test';
 import {snapshot,useJourneyClock,finishJourneyClock} from './support';
 import {driver} from '../../tests/full-route.mjs';

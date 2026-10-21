@@ -34,8 +34,8 @@
     },
     {
       "path": "web/src/ExplorePanel.vue",
-      "bytes": 11613,
-      "sha256": "8462c978717e14face2aa777177842a3848adc0148b81b44511eeee66be7072f"
+      "bytes": 11676,
+      "sha256": "1c2be3163e7238ba0376dc9b91415c4f911e0a3d3508061d97ed7255ded1a871"
     },
     {
       "path": "web/src/GoodsPanel.vue",
@@ -49,8 +49,8 @@
     },
     {
       "path": "web/src/play-flow.css",
-      "bytes": 22509,
-      "sha256": "50d7159748e9140ca943ab2f31cc0635870139e205bc3ed63f7d870ae35ba148"
+      "bytes": 22421,
+      "sha256": "a77fc4532707b04a1f38409bee85f54bc1c68e51dc7698cae439903da98413ba"
     }
   ],
   "bindings": {

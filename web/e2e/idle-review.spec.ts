@@ -1,3 +1,4 @@
+import {openSupplySettings,closeSupplySettings} from './stage-support';
 import {test,expect,type Page,type TestInfo,type Locator} from '@playwright/test';
 import {snapshot,activitySnapshot as activity,useJourneyClock,finishJourneyClock,revealPaged} from './support';
 import {advance} from '../../src/full/engine.ts';
@@ -96,10 +97,10 @@ test('a current trial victory toast lets actual view buttons receive clicks and 
 });
 test('an explicit preparation purchase retains its travel draft then trial entry stops for the player question',async({page},info)=>{
  const d=preparedTrial(),before=await seed(page,d.checkpoints.trial);await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-purchase').click();await revealPaged(page,'buy-healing_pill','explore-catalogue');await page.getByTestId('buy-healing_pill').click();
- await page.getByLabel('交易最多件数').fill('2');await page.getByLabel('交易最多件数').blur();await page.locator('.preparation-limits summary').click();await page.getByLabel('累计采购灵石预算').fill('41');await page.getByLabel('采购灵石保留量').fill('3');
- expect(await snapshot(page)).toEqual(before);await shot(page,info,'preparation-travel-expanded-budgets');await page.getByTestId('preparation-travel').click();await tick(page);await expect(page.getByTestId('market-planner')).toBeVisible();await expect(page.getByTestId('preparation-plan-state')).toContainText('待确认');
- await expect(page.getByLabel('交易最多件数')).toHaveValue('2');await page.locator('.preparation-limits summary').click();await expect(page.getByLabel('累计采购灵石预算')).toHaveValue('41');await expect(page.getByLabel('采购灵石保留量')).toHaveValue('3');
- const arrived=await snapshot(page);expect(arrived.core.inventory).toEqual(before.core.inventory);await shot(page,info,'preparation-draft-after-travel');await page.getByTestId('preparation-start').click();await tick(page);await tick(page);
+ await openSupplySettings(page);await page.getByLabel('交易最多件数').fill('2');await page.getByLabel('交易最多件数').blur();await openSupplySettings(page);await page.getByLabel('累计采购灵石预算').fill('41');await page.getByLabel('采购灵石保留量').fill('3');
+ await closeSupplySettings(page);expect(await snapshot(page)).toEqual(before);await shot(page,info,'preparation-travel-expanded-budgets');await page.getByTestId('preparation-travel').click();await tick(page);await expect(page.getByTestId('market-planner')).toBeVisible();await expect(page.getByTestId('preparation-plan-state')).toContainText('待确认');
+ await openSupplySettings(page);await expect(page.getByLabel('交易最多件数')).toHaveValue('2');await openSupplySettings(page);await expect(page.getByLabel('累计采购灵石预算')).toHaveValue('41');await expect(page.getByLabel('采购灵石保留量')).toHaveValue('3');
+ await closeSupplySettings(page);const arrived=await snapshot(page);expect(arrived.core.inventory).toEqual(before.core.inventory);await shot(page,info,'preparation-draft-after-travel');await page.getByTestId('preparation-start').click();await tick(page);await tick(page);
  const bought=await snapshot(page);expect(bought.core.inventory.healing_pill).toBe(before.core.inventory.healing_pill+2);expect((await activity(page)).status).toBe('stopped');
  await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-travel').click();await revealPaged(page,'travel-terrace','explore-catalogue');await page.getByTestId('travel-terrace').click();expect(await snapshot(page)).toEqual(bought);await page.getByTestId('adventure-start').click();await tick(page);
  await page.getByTestId('hub-close').click();await page.getByTestId('breakthrough').click();await page.getByTestId('trial-review-entry').click();await page.getByTestId('trial-confirm-entry').click();await tick(page);
