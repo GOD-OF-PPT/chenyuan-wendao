@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import {inject,nextTick,onScopeDispose,ref,useId,watch} from 'vue';
+import {inject,nextTick,onActivated,onDeactivated,onScopeDispose,ref,useId,watch} from 'vue';
 import {gameFocusKey} from './focus';
 const props=defineProps<{choiceId:string;label:string;disabled:boolean;identity:string;details:{label:string;value:string}[]}>();
 const emit=defineEmits<{choose:[]}>(),focus=inject(gameFocusKey)!,dialog=ref<HTMLDialogElement>(),peek=ref<HTMLButtonElement>(),opened=ref(false),id=useId();
-async function inspect(){const identity=props.identity;opened.value=true;await nextTick();if(props.identity!==identity){opened.value=false;return;}focus.target(peek.value??null);focus.open(dialog.value,peek.value??null);}
+let active=true,epoch=0;
+onActivated(()=>active=true);onDeactivated(()=>{active=false;epoch++;opened.value=false;dialog.value?.close();});
+async function inspect(){if(!active)return;const identity=props.identity,owner=++epoch;opened.value=true;await nextTick();if(!active||owner!==epoch||props.identity!==identity){opened.value=false;return;}focus.target(peek.value??null);focus.open(dialog.value,peek.value??null);}
 watch(()=>props.identity,()=>dialog.value?.close());
-onScopeDispose(()=>focus.release(dialog.value));
+onScopeDispose(()=>{active=false;epoch++;focus.release(dialog.value);});
 </script>
 <template>
  <article class="choice-card">

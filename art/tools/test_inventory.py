@@ -57,6 +57,8 @@ class InventoryTests(unittest.TestCase):
   if r2.exists():files.update(ROOT/ref for ref in json.loads(r2.read_text())['sourceReferences'])
   r3=ROOT/'art/redesign/stage-r3.json'
   if r3.exists():files.update(ROOT/ref for ref in json.loads(r3.read_text())['sourceReferences'])
+  r4=ROOT/'art/redesign/stage-r4.json'
+  if r4.exists():files.update(ROOT/ref for ref in json.loads(r4.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -85,6 +87,18 @@ class InventoryTests(unittest.TestCase):
   p='art/redesign/stage-r3.json';d=json.loads((self.root/p).read_text());d['files'][0]['sha256']='0'*64;self.write(p,d);self.rejected()
  def test_r3_machine_check_is_not_player_acceptance(self):
   p='art/redesign/stage-r3.json';d=json.loads((self.root/p).read_text());d['userAcceptance']=True;self.write(p,d);self.rejected()
+ def test_r4_manifest_is_required(self):
+  (self.root/'art/redesign/stage-r4.json').unlink();self.rejected()
+ def test_r4_budget_is_not_expandable(self):
+  p='art/redesign/stage-r4.json';d=json.loads((self.root/p).read_text());d['maxNativeBytes']=14001;self.write(p,d);self.rejected()
+ def test_r4_hash_is_bound(self):
+  p='art/redesign/stage-r4.json';d=json.loads((self.root/p).read_text());d['files'][0]['sha256']='0'*64;self.write(p,d);self.rejected()
+ def test_r4_machine_check_is_not_player_acceptance(self):
+  p='art/redesign/stage-r4.json';d=json.loads((self.root/p).read_text());d['userAcceptance']=True;self.write(p,d);self.rejected()
+ def test_reading_memory_stays_in_original_story_budget(self):
+  p='art/redesign/story-journey.json';d=json.loads((self.root/p).read_text());d['files']=[r for r in d['files'] if r['path']!='web/src/reading-memory.ts'];self.write(p,d);self.rejected()
+ def test_visit_route_code_stays_in_stage_budget(self):
+  p='art/redesign/stage-r4.json';d=json.loads((self.root/p).read_text());d['files']=[r for r in d['files'] if r['path']!='web/src/navigation.ts'];self.write(p,d);self.rejected()
  def write(self,path,value):
   p=self.root/path;p.parent.mkdir(parents=True,exist_ok=True)
   if p.exists():p.unlink()

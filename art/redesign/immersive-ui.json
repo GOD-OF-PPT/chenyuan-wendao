@@ -17,8 +17,8 @@
     },
     {
       "path": "web/src/ChoiceCard.vue",
-      "bytes": 1826,
-      "sha256": "7d62098b82f129153596ae3fb9d95f38007a819df00f35036ee67105e472c9b8"
+      "bytes": 2071,
+      "sha256": "322961bb71234da9e284555aad7a568b14b2b4a88cff9736e43cc208d3103e64"
     },
     {
       "path": "web/src/GuidancePanel.vue",

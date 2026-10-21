@@ -1,0 +1,46 @@
+{
+  "format": "chenyuan-stage-r4",
+  "version": 1,
+  "task": "Goal4 U8-A-R4",
+  "maxNativeBytes": 14000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/stage-r4.css",
+      "bytes": 11198,
+      "sha256": "6d16b4e9ee9daabdaac11d5e05585c4c9049eca5d41f7365c2209e8d24d58b7d"
+    },
+    {
+      "path": "web/src/journal-anchors.ts",
+      "bytes": 1175,
+      "sha256": "fde853e92c68dd10ad9c14994c41a3157646c5245022b1f8061e4dd0e5aa2605"
+    },
+    {
+      "path": "web/src/navigation.ts",
+      "bytes": 1589,
+      "sha256": "f97fb271e8928fe48d981b4bcbeba7d655ed2a1b9036693a202a8cc433b558fc"
+    }
+  ],
+  "bindings": {
+    "web/src/main.ts": [
+      "import './stage-r4.css'"
+    ],
+    "web/src/FateCatalogue.vue": [
+      "stage-story r4-fate"
+    ],
+    "web/src/LifeCatalogue.vue": [
+      "stage-story r4-life"
+    ],
+    "web/src/NarrativePanel.vue": [
+      "stage-story r4-narrative"
+    ],
+    "web/src/App.vue": [
+      "from './journal-anchors'"
+    ]
+  },
+  "sourceReferences": [
+    "docs/decisions/0017-narrative-life-r4-contract.md",
+    "goal-4/amendments/2026-10-21-goal-continue-r4.md"
+  ],
+  "scope": "New local presentation only; old code/budgets retained, original story48000 includes new reading memory, no user acceptance or compatibility claim"
+}
