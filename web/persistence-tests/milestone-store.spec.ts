@@ -91,10 +91,20 @@ test('failed arrangement retries its original frozen command and all nine ordina
 test('lost ending delivery replays the exact committed life once, preserves readable results and never starts another cycle', async ({ page }) => {
   await page.evaluate(() => { const h = (globalThis as any).h; h.seedingEnding = h.milestoneStore.store.importText(JSON.stringify(h.milestoneSamples.find((r: any) => r.action.type === 'RETIRE').game)); });
   await page.clock.runFor(700);
+  const imported = await page.evaluate(async () => {
+    const h = (globalThis as any).h; await h.seedingEnding;
+    return { ui: h.milestoneStore.state(), sample: h.milestoneSamples.find((r: any) => r.action.type === 'RETIRE').game };
+  });
+  expect(imported.ui.busy).toBe(false); expect(imported.ui.error).toBe('');
+  expect(imported.ui.game).toEqual({ ...imported.sample, core: { ...imported.sample.core,
+    runId: imported.ui.game.core.runId, revision: 0 } });
   const started = await page.evaluate(async () => {
     const h = (globalThis as any).h, f = h.milestoneStore; await f.store.startPreparedMilestone(f.store.prepareMilestone({ type: 'RETIRE' }));
     f.loseNextCycleDelivery(); return f.state();
   });
+  expect(started.game).toEqual(imported.ui.game); expect(started.busy).toBe(false);
+  expect(started.activity.plan).toEqual({ kind: 'milestone', action: { type: 'RETIRE' }, maxCycles: 1 });
+  expect(started.activity.completedCycles).toBe(0); expect(started.activity.nextCommand.type).toBe('RETIRE');
   await page.clock.runFor(12_000);
   await expect.poll(() => page.evaluate(() => { const f = (globalThis as any).h.milestoneStore; return { busy: f.store.busy, retry: f.store.canRetry }; })).toEqual({ busy: false, retry: true });
   const lost = await page.evaluate(async () => { const h = (globalThis as any).h, f = h.milestoneStore; return { ui: f.state(), raw: await h.inspect(h.FULL_DB_NAME), persisted: await f.persisted(), delivered: f.delivered }; });

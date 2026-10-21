@@ -59,6 +59,9 @@ class InventoryTests(unittest.TestCase):
   if r3.exists():files.update(ROOT/ref for ref in json.loads(r3.read_text())['sourceReferences'])
   r4=ROOT/'art/redesign/stage-r4.json'
   if r4.exists():files.update(ROOT/ref for ref in json.loads(r4.read_text())['sourceReferences'])
+  tradeoff=ROOT/'art/redesign/idle-tradeoffs.json'
+  if tradeoff.exists():
+   data=json.loads(tradeoff.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -89,6 +92,16 @@ class InventoryTests(unittest.TestCase):
   p='art/redesign/stage-r3.json';d=json.loads((self.root/p).read_text());d['userAcceptance']=True;self.write(p,d);self.rejected()
  def test_r4_manifest_is_required(self):
   (self.root/'art/redesign/stage-r4.json').unlink();self.rejected()
+ def test_tradeoff_manifest_is_required(self):
+  (self.root/'art/redesign/idle-tradeoffs.json').unlink();self.rejected()
+ def test_tradeoff_budget_is_not_expandable(self):
+  p='art/redesign/idle-tradeoffs.json';d=json.loads((self.root/p).read_text());d['maxNativeBytes']=30001;self.write(p,d);self.rejected()
+ def test_tradeoff_hash_is_bound(self):
+  p='art/redesign/idle-tradeoffs.json';d=json.loads((self.root/p).read_text());d['files'][0]['sha256']='0'*64;self.write(p,d);self.rejected()
+ def test_tradeoff_machine_check_is_not_player_acceptance(self):
+  p='art/redesign/idle-tradeoffs.json';d=json.loads((self.root/p).read_text());d['userAcceptance']=True;self.write(p,d);self.rejected()
+ def test_tradeoff_core_stays_in_budget(self):
+  p='art/redesign/idle-tradeoffs.json';d=json.loads((self.root/p).read_text());d['files']=d['files'][1:];self.write(p,d);self.rejected()
  def test_r4_budget_is_not_expandable(self):
   p='art/redesign/stage-r4.json';d=json.loads((self.root/p).read_text());d['maxNativeBytes']=14001;self.write(p,d);self.rejected()
  def test_r4_hash_is_bound(self):

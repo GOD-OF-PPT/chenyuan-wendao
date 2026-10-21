@@ -1,4 +1,4 @@
-import { resolve, validateGame } from './engine.ts';
+import { resolve, validateCommand, validateGame } from './engine.ts';
 import { fail, RuleError } from './errors.ts';
 import { canonicalFingerprint } from './receipts.ts';
 import type { Action, Command, Game } from './types.ts';
@@ -83,16 +83,27 @@ export class EngineLedger {
   #initial: EconomicSnapshot;
   #entries: LedgerEntry[] = [];
   #attempts = 0;
+  #ids = new Set<string>();
   #failures: Array<{ purpose: string; action: Action; code: string; message: string; revision: number }> = [];
   constructor(game: Game) { validateGame(game); this.#game = structuredClone(game); this.#initial = economicSnapshot(game); }
   get game() { return structuredClone(this.#game); }
   get count() { return this.#entries.length; }
   get entries() { return structuredClone(this.#entries); }
+  get lastEntry() { return this.#entries.length ? structuredClone(this.#entries.at(-1)!) : null; }
   get failures() { return structuredClone(this.#failures); }
   apply(action: Action, purpose = 'progression') {
-    const command: Command = { ...action, commandId: `economy-${++this.#attempts}`, runId: this.#game.core.runId, expectedRevision: this.#game.core.revision };
+    let commandId: string;
+    do { commandId = `economy-${++this.#attempts}`; } while (this.#ids.has(commandId));
+    return this.#execute({ ...action, commandId, runId: this.#game.core.runId, expectedRevision: this.#game.core.revision }, purpose, action);
+  }
+  applyCommand(command: Command, purpose = 'progression') {
+    return this.#execute(structuredClone(command), purpose, command);
+  }
+  #execute(command: Command, purpose: string, action: Action) {
     const before = economicSnapshot(this.#game);
     try {
+      validateCommand(command);
+      if (this.#ids.has(command.commandId)) fail('LEDGER_DUPLICATE', '账本重复记入同一指令');
       const resolution = resolve(this.#game, command), result = resolution.result;
       const received = { stones: result.delta.stones + result.costs.stones, mp: result.delta.mp + result.costs.mp,
         items: Object.fromEntries(Object.keys(before.inventory).map(id => [id, (result.delta.inventory[id] ?? 0) + (result.costs.items[id] ?? 0)]).filter(([, n]) => Number(n) !== 0)) };
@@ -101,7 +112,7 @@ export class EngineLedger {
         before, after: economicSnapshot(resolution.nextState), received: received as LedgerEntry['received'] };
       // Validate a new row against its immediate real before/after, without O(n²) replaying the journal.
       reconcileLedger(before, [entry], entry.after, entry.sequence);
-      this.#entries.push(structuredClone(entry)); this.#game = resolution.nextState;
+      this.#entries.push(structuredClone(entry)); this.#ids.add(command.commandId); this.#game = resolution.nextState;
       return structuredClone(result);
     } catch (error) {
       if (error instanceof RuleError) this.#failures.push({ purpose, action: structuredClone(action), code: error.code, message: error.message, revision: before.revision });

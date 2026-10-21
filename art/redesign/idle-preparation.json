@@ -22,8 +22,8 @@
     },
     {
       "path": "web/src/ConfigurationDialog.vue",
-      "bytes": 5045,
-      "sha256": "1ff56c63eea1b38a62e226df2029d0c8856cc43760863b3aff81a93c97260156"
+      "bytes": 5617,
+      "sha256": "55bb14f266e4162bb0a75f5afdc70ce4a24a0344cb59d971d96a95b12e9a98ce"
     },
     {
       "path": "web/src/preparation-view.ts",

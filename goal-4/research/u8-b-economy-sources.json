@@ -1,0 +1,24 @@
+{
+  "task": "U8-B",
+  "accessed": "2026-10-22",
+  "method": "Primary pages actually opened this turn; no competitor playthrough",
+  "sources": [
+    {
+      "title": "The Math of Idle Games, Part I",
+      "url": "https://www.kongregate.com/en/pages/the-math-of-idle-games-part-i",
+      "author": "Anthony Pecorella",
+      "facts": "Production, costs and upgrades should be considered together; continuous-rate simplification can over-favor slow generators; a consistently dominant newest generator reduces useful choices.",
+      "projectInference": "Include complete integer online cycles, procurement/income time and current inventory before describing a path as cheaper/faster; report dominance rather than silently deleting alternatives.",
+      "limit": "Historical generic model; no exponent/prestige mechanic or numeric pacing imported"
+    },
+    {
+      "title": "Melvor Idle 2 Development Progress Update (June 2026)",
+      "url": "https://news.melvoridle.com/melvor-idle-2-development-progress-update-june-2026/",
+      "author": "Malcs / official developer",
+      "facts": "Skills and combat systems are linked; weapon choices affect outcomes; the developer revises balance and usability from player feedback.",
+      "projectInference": "Existing skills/relics must affect actual activity and battle outcomes; rule reachability and virtual durations do not prove human long-term balance.",
+      "limit": "Alpha development article, not a current competitor session or our game acceptance"
+    }
+  ],
+  "scope": "Research and project contract, not implementation/economic acceptance; compatibility/environment/performance not exercised"
+}

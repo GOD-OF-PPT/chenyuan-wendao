@@ -9,7 +9,7 @@ import {actionSeconds} from './action-timing';
 import AssetImage from './AssetImage.vue';
 import {DESKTOP_UI_ASSETS} from './assets';
 const props=defineProps<{game:Game;busy:boolean;available:boolean;running:boolean;savedPlan:CultivationPlan|null}>();
-const emit=defineEmits<{start:[CultivationPlan];act:[Action];prepare:[];trial:[];school:[];cave:[]}>();
+const emit=defineEmits<{start:[CultivationPlan];act:[Action];prepare:[];trial:[];school:[];cave:[];compare:['natural'|'assisted']}>();
 const method=ref<'natural'|'assisted'>('natural'),target=ref('xp-cap'),capCycles=ref(50),budget=ref(0),reserve=ref(0),budgetInitialized=ref(false);
 const goal=computed(()=>getBreakthroughGoal(props.game)),step=computed(()=>nextStep(props.game));
 const plan=computed<CultivationPlan>(()=>({kind:'cultivation',method:method.value,maxCycles:target.value==='xp-cap'?capCycles.value:Number(target.value),until:target.value==='xp-cap'?'xp-cap':'cycles',stoneBudget:budget.value,stoneReserve:reserve.value}));
@@ -23,7 +23,7 @@ const can=(action:Action)=>props.available&&!props.busy&&!props.running&&preview
 </script>
 <template>
  <section class="paper play-catalogue training-planner" data-testid="cultivation-catalogue" tabindex="-1">
-  <header><div><h3>{{matchesSaved?'已保存的修行安排':'安排一段修行'}}</h3><p>选定方式后持续吐纳，每轮自动保存；达到目标或预算边界即停。</p><small data-testid="training-plan-state">{{matchesSaved?'下方为已保存安排；修改后须重新确认。':savedPlan?'待确认的新安排；原活动尚未改变。':'待确认的新安排；点击开始后才保存。'}}</small></div></header>
+  <header><div><h3>{{matchesSaved?'已保存的修行安排':'安排一段修行'}}</h3><p>选定方式后持续吐纳，每轮自动保存；达到目标或预算边界即停。</p><small data-testid="training-plan-state">{{matchesSaved?'下方为已保存安排；修改后须重新确认。':savedPlan?'待确认的新安排；原活动尚未改变。':'待确认的新安排；点击开始后才保存。'}}</small></div><button data-testid="training-compare" @click="emit('compare',method)">比较修行取舍</button></header>
   <div v-if="game.core.world.location!=='cave'" class="catalogue-empty"><strong>返回听雨洞府修炼</strong><button class="primary" data-testid="return-cave" @click="emit('cave')" :disabled="!can({type:'TRAVEL',location:'cave'})">返回洞府</button></div>
   <template v-else>
    <div class="training-plan-art" aria-hidden="true"><AssetImage :path="DESKTOP_UI_ASSETS.meditation" asset-id="training-plan-meditation" fit="contain"/></div>
