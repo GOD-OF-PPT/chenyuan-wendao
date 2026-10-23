@@ -1,0 +1,102 @@
+{
+  "task": "Goal4 ART04",
+  "completedLocalDate": "2026-10-24",
+  "implementationCommit": "92aa57c9f99a5b7bc71eae2efebb959c27fde8b0",
+  "branch": "codex/goal-4-online-recovery",
+  "sourceDigest": "e5560974989cbb3dde7cb6b3d87226a5a43801676f7ba273e101f3fa8d6b8791",
+  "status": "local engineering task delivered; overall goal remains active",
+  "ui": {
+    "report": "artifacts/goal-4/art04/ui-final-86.json",
+    "singleIndependentExecution": true,
+    "passed": 86,
+    "new": 12,
+    "relatedOld": 74,
+    "files": 9,
+    "skipped": 0,
+    "retried": 0,
+    "flaky": 0,
+    "declaredAll": 269,
+    "notExecutedThisTask": 183,
+    "coverage": "ui-final-coverage.json"
+  },
+  "rules": {
+    "unique": 782,
+    "originalFullExecution": "artifacts/goal-4/art04/core-source3.log",
+    "inheritedUnchangedDependencies": 773,
+    "currentFullSourceBoundConfiguration9": "artifacts/goal-4/art04/configuration-source8.json",
+    "nineAlreadyIncluded": true,
+    "notClaimingNew782Run": true,
+    "proof": "source3-to8-inheritance.json"
+  },
+  "native": {
+    "passed": 32,
+    "report": "artifacts/goal-4/art04/native-source3.json",
+    "inheritance": "Unchanged formal rules/Store/repository/harness; changed three SFCs are not imported",
+    "full208NotRerun": true
+  },
+  "assets": {
+    "original210": "artifacts/goal-4/art04/assets-negative-3.log",
+    "currentSupply7": "artifacts/goal-4/art04/assets-supply-source8.log",
+    "currentPositive": "artifacts/goal-4/art04/assets-source8.json",
+    "nativeBytes": 32396,
+    "nativeCap": 40000,
+    "existingCapsNotRaised": true,
+    "newBitmaps": 0,
+    "verifiedImageFiles": 102,
+    "productionAssets": 82
+  },
+  "timing": {
+    "reference": "timing-observations.json",
+    "buyMs": 15622.7,
+    "useMs": 6046.4,
+    "restMs": 30697,
+    "dueAfterMs": [
+      31,
+      47,
+      28
+    ],
+    "scope": "Actual online period and whole atomic Game/cost/receipt verification, not long balance or performance acceptance"
+  },
+  "visual": {
+    "reviewedFresh": 8,
+    "generated": 201,
+    "notPixelReviewed": 193,
+    "reference": "visual-review.json"
+  },
+  "identity": {
+    "runtimeSources": 220,
+    "archiveAllEqual": true,
+    "payloadFiles": 61,
+    "payloadBytes": 7656112,
+    "postcommitRebuildEqual": true,
+    "actualHTTPAllEqual": true,
+    "reference": "identity-proof.json",
+    "http": "http-proof.json"
+  },
+  "userProgress": {
+    "reference": "user-progress-proof.json",
+    "fullVisibleAXNormalizedEqual": true,
+    "gameCommands": 0,
+    "importRestoreReset": 0,
+    "userSaveTests": 0
+  },
+  "protected13": "protected13.json",
+  "reviews": [
+    "review.md",
+    "independent-review.md",
+    "cross-review.md",
+    "test-review.md"
+  ],
+  "failuresRetained": "attempts.json",
+  "uncompleted": [
+    "ART05仙缘/生平",
+    "CHECK-ART-02",
+    "ART06修行/目标",
+    "原MATRIX-M02/M03及后段完整矩阵",
+    "性能/兼容最后",
+    "干净同源最终包",
+    "最大C端/代码/安全评审",
+    "整体游戏感/美术/长期平衡与真实用户复验"
+  ],
+  "scopeLimits": "Fixed1440x900 single Chromium only; no compatibility/environment/performance matrix, push/PR/merge/public deployment/permission changes. Engineering completion does not override negative overall art feedback or human acceptance."
+}

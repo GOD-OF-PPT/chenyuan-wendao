@@ -1,0 +1,137 @@
+{
+  "representatives": [
+    {
+      "name": "satchel-healing_pill",
+      "sourceDigest": "e5560974989cbb3dde7cb6b3d87226a5a43801676f7ba273e101f3fa8d6b8791",
+      "original": "artifacts/goal-4/art04/ui-final-86-results/inventory-objects-ART04-A1-21292-through-ownership-read-only-chromium/satchel-healing_pill.png",
+      "originalSHA256": "65f5ed34088e54ddfaf5571df74e4995806e6d5f914ea390bd7a6a2417167f87",
+      "viewCopy": "artifacts/goal-4/art04/visual/satchel-healing_pill-source8.jpg",
+      "viewSHA256": "548e717c7337e37051a687080e7c8161bd682fbc60ab98ab21576a7bbb3413ea",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyJPEGQuality": 68,
+      "actuallyViewedByRoot": true,
+      "fresh": true,
+      "userAcceptance": false
+    },
+    {
+      "name": "buy-real-saved",
+      "sourceDigest": "e5560974989cbb3dde7cb6b3d87226a5a43801676f7ba273e101f3fa8d6b8791",
+      "original": "artifacts/goal-4/art04/ui-final-86-results/inventory-objects-ART04-A4-79ae1--behind-its-actual-deadline-chromium/buy-real-saved.png",
+      "originalSHA256": "6306d3650b0628ae6fba726008cb58dc500ac95378ff3ddb678bc54c305bb663",
+      "viewCopy": "artifacts/goal-4/art04/visual/buy-real-saved-source8.jpg",
+      "viewSHA256": "9b0e3d5aad2f54208bdc6fda2f9142d5c7ff5d9a230e34e7ba2d07910004aa0e",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyJPEGQuality": 68,
+      "actuallyViewedByRoot": true,
+      "fresh": true,
+      "userAcceptance": false
+    },
+    {
+      "name": "use-real-saved",
+      "sourceDigest": "e5560974989cbb3dde7cb6b3d87226a5a43801676f7ba273e101f3fa8d6b8791",
+      "original": "artifacts/goal-4/art04/ui-final-86-results/inventory-objects-ART04-A5-e2f8a--behind-its-actual-deadline-chromium/use-real-saved.png",
+      "originalSHA256": "2345ed73949684bcacd37b6d10a362aaed155e2aa9c3c8960a16dd37c30f68bb",
+      "viewCopy": "artifacts/goal-4/art04/visual/use-real-saved-source8.jpg",
+      "viewSHA256": "1caaaef38e2f6cc2b060b10d10f0c20d6ab212202624d9322a24d34f1c504f64",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyJPEGQuality": 68,
+      "actuallyViewedByRoot": true,
+      "fresh": true,
+      "userAcceptance": false
+    },
+    {
+      "name": "buy-cycle-ordinary-sale-detail-error",
+      "sourceDigest": "e5560974989cbb3dde7cb6b3d87226a5a43801676f7ba273e101f3fa8d6b8791",
+      "original": "artifacts/goal-4/art04/ui-final-86-results/inventory-objects-ART04-A9-6985b--original-exact-intent-once-chromium/buy-cycle-ordinary-sale-detail-error.png",
+      "originalSHA256": "94ab70284e5b459cb64941646c71ef31de6929de19bf3be87806e19e4e355598",
+      "viewCopy": "artifacts/goal-4/art04/visual/buy-cycle-ordinary-sale-detail-error-source8.jpg",
+      "viewSHA256": "76ae55ae1379a98023b7f8485cd02cd42e3a67f340d7fb2ecc03957bf4e8f13f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyJPEGQuality": 68,
+      "actuallyViewedByRoot": true,
+      "fresh": true,
+      "userAcceptance": false
+    },
+    {
+      "name": "buy-cycle-owned-satchel-error",
+      "sourceDigest": "e5560974989cbb3dde7cb6b3d87226a5a43801676f7ba273e101f3fa8d6b8791",
+      "original": "artifacts/goal-4/art04/ui-final-86-results/inventory-objects-ART04-A9-6985b--original-exact-intent-once-chromium/buy-cycle-owned-satchel-error.png",
+      "originalSHA256": "2c78a74c33cdb56c1073612aaa23cb424f63c06bacb572a01a0737345cc76e97",
+      "viewCopy": "artifacts/goal-4/art04/visual/buy-cycle-owned-satchel-error-source8.jpg",
+      "viewSHA256": "9d59febcaacb02db3fe49235dfb544ad8143c3f1e0bc666bf842ccb4e5cf0394",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyJPEGQuality": 68,
+      "actuallyViewedByRoot": true,
+      "fresh": true,
+      "userAcceptance": false
+    },
+    {
+      "name": "rest-cycle-quota",
+      "sourceDigest": "e5560974989cbb3dde7cb6b3d87226a5a43801676f7ba273e101f3fa8d6b8791",
+      "original": "artifacts/goal-4/art04/ui-final-86-results/inventory-objects-ART04-A9-6985b--original-exact-intent-once-chromium/rest-cycle-quota.png",
+      "originalSHA256": "55c52ad29cfb95d35d2dd4d6e6612eab69eb7a8a295726d5933b0b6fff215830",
+      "viewCopy": "artifacts/goal-4/art04/visual/rest-cycle-quota-source8.jpg",
+      "viewSHA256": "3ffc67a3a4cf7b2787d5ac694e636d0b977a202bdce8325569e35690d282270f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyJPEGQuality": 68,
+      "actuallyViewedByRoot": true,
+      "fresh": true,
+      "userAcceptance": false
+    },
+    {
+      "name": "use-real-running",
+      "sourceDigest": "e5560974989cbb3dde7cb6b3d87226a5a43801676f7ba273e101f3fa8d6b8791",
+      "original": "artifacts/goal-4/art04/ui-final-86-results/inventory-objects-ART04-A5-e2f8a--behind-its-actual-deadline-chromium/use-real-running.png",
+      "originalSHA256": "94fd04a1fb7e3f979d8720c3dd0a790af7bad09ea9a4ca7c3a91ec60303fe780",
+      "viewCopy": "artifacts/goal-4/art04/visual/use-real-running-source8.jpg",
+      "viewSHA256": "a5569c15cc003d683222161b516c56cbf2377d008ba76859d3676e33c1cbccf1",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyJPEGQuality": 68,
+      "actuallyViewedByRoot": true,
+      "fresh": true,
+      "userAcceptance": false
+    },
+    {
+      "name": "market-complete-unsubmitted-limits",
+      "sourceDigest": "e5560974989cbb3dde7cb6b3d87226a5a43801676f7ba273e101f3fa8d6b8791",
+      "original": "artifacts/goal-4/art04/ui-final-86-results/inventory-objects-ART04-A2-4d900-ts-without-using-or-trading-chromium/market-complete-unsubmitted-limits.png",
+      "originalSHA256": "6e353a4cba15ea06a2e98d4cb8c07f46144046022948c9fa9e2cc44cf3439a76",
+      "viewCopy": "artifacts/goal-4/art04/visual/market-complete-unsubmitted-limits-source8.jpg",
+      "viewSHA256": "a208d9028eff4e1e35b6fbce349866f78a388adf5bc319c85d1d0320c6628a66",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyJPEGQuality": 68,
+      "actuallyViewedByRoot": true,
+      "fresh": true,
+      "userAcceptance": false
+    }
+  ],
+  "reviewed": 8,
+  "fresh": 8,
+  "generatedPNG": 201,
+  "otherGeneratedPNGNotPixelReviewed": 193,
+  "scope": "Eight current representative frames actually viewed, at most two per tool call; original PNG retained. Other generated frames are not claimed pixel reviewed; not overall art/human acceptance."
+}

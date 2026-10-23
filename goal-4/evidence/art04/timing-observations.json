@@ -1,0 +1,61 @@
+{
+  "runtimeDigest": "e5560974989cbb3dde7cb6b3d87226a5a43801676f7ba273e101f3fa8d6b8791",
+  "report": "ui-final-86.json",
+  "scope": "Actual online 15/6/30 second observation, complete formal Game/receipt and no current mutation before persisted deadline; not long-term balance or performance acceptance.",
+  "cases": [
+    {
+      "case": "ART04-A4 one real buy period keeps all formal costs and body changes behind its actual deadline",
+      "attachment": "real-buy-clock",
+      "cycleMs": 15000,
+      "elapsedMonoMs": 15622.700000047684,
+      "elapsedWallMs": 15622,
+      "observedAfterPersistedStartMs": 15686,
+      "observedAfterDueMs": 686,
+      "firstNativeCurrentWriteAfterDueMs": 31,
+      "nativeMatchingCurrentWrites": 1,
+      "nextCommand": {
+        "type": "BUY",
+        "item": "healing_pill",
+        "quantity": 1,
+        "commandId": "cycle:7878977c-35e1-47c3-9ff8-d830e6b112fb:0:1",
+        "runId": "5a2832a6-2c37-42b8-9655-a585a89ff515",
+        "expectedRevision": 0
+      }
+    },
+    {
+      "case": "ART04-A5 one real use period keeps all formal costs and body changes behind its actual deadline",
+      "attachment": "real-use-clock",
+      "cycleMs": 6000,
+      "elapsedMonoMs": 6046.400000035763,
+      "elapsedWallMs": 6046,
+      "observedAfterPersistedStartMs": 6124,
+      "observedAfterDueMs": 124,
+      "firstNativeCurrentWriteAfterDueMs": 47,
+      "nativeMatchingCurrentWrites": 1,
+      "nextCommand": {
+        "type": "USE",
+        "item": "healing_pill",
+        "commandId": "cycle:ea160a81-519b-4616-a9b2-ae63b7cce53f:0:1",
+        "runId": "c5e5e7a2-ea5b-484b-a19b-7ab6760bfdd1",
+        "expectedRevision": 0
+      }
+    },
+    {
+      "case": "ART04-A6 one real rest period keeps all formal costs and body changes behind its actual deadline",
+      "attachment": "real-rest-clock",
+      "cycleMs": 30000,
+      "elapsedMonoMs": 30697.0,
+      "elapsedWallMs": 30697,
+      "observedAfterPersistedStartMs": 30812,
+      "observedAfterDueMs": 812,
+      "firstNativeCurrentWriteAfterDueMs": 28,
+      "nativeMatchingCurrentWrites": 1,
+      "nextCommand": {
+        "type": "REST",
+        "commandId": "cycle:4dc27830-e14d-4249-a800-b89ab8d0f90e:0:1",
+        "runId": "091e3ed7-e0f2-4074-8ec6-c72ccc5be0fc",
+        "expectedRevision": 0
+      }
+    }
+  ]
+}

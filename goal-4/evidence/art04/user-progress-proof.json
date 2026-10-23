@@ -1,0 +1,29 @@
+{
+  "visibleProgressUnchanged": true,
+  "fullAXNormalizedEqual": true,
+  "normalization": "AX numeric ids,focus line,whitespace only",
+  "character": "顾长青",
+  "realm": "凡人",
+  "school": null,
+  "xp": "5/10",
+  "stones": 40,
+  "month": 1,
+  "hp": "60/60",
+  "mp": "20/20",
+  "location": "听雨洞府",
+  "activity": "待安排",
+  "saveLabel": "已保存",
+  "loadedResources": {
+    "scripts": [
+      "./assets/index-zcvuQPXd.js"
+    ],
+    "styles": [
+      "./assets/index-BQXtfKau.css"
+    ]
+  },
+  "loadedPathsMatchFrozen": true,
+  "userGameActions": 0,
+  "userImportRestoreReset": 0,
+  "userSaveTests": 0,
+  "scope": "Read-only visible progress/DOM and idle reload; no claim of full user-DB byte verification"
+}
