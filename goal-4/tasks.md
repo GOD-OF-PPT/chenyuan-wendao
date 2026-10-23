@@ -20,7 +20,7 @@
 - 状态：[x] 当前独立项已交付；实现46d6a58，codex/goal-4-online-recovery，2026-10-22。
 - 原话/计划/参数/验收/风险/回滚：amendments/2026-10-22-goal-continue-u8-c.md、本目录plan、0019合同已先保存；保护13hash/patch已核对，不改用户档。
 - 待交付：有限可选设置初始化/迟到归属与真实App红绿、约30分钟真新档在线/有限多段/暂停刷新恢复轨、相关原子故障/当前回归、同源运行包及只读试玩更新；不冒称原native原因、长期节奏或真人验收通过。
-- 完成/检查/提交/证据/杠精：待本轮实际执行后填写。
+- 完成/检查/提交/证据/杠精：已在下方“U8-C实际交付”记录。
 
 ## U8-B 已交付记录
 - 状态：[x] 本地独立固定桌面工程范围完成，2026-10-22；基线3ebefca，codex/goal-4-idle-tradeoffs。原生Goal active，整体未完成。
@@ -87,3 +87,11 @@
 - 证据：[goal-4/evidence/u8-c/verification.json](../goal-4/evidence/u8-c/verification.json)、review.md、startup-await-ownership、online-observation、online-recovery-review、http-release-proof；原失败/覆盖恢复证明和13 hash保留。
 - 限制/下一项：整体美术、长期平衡、原native根因、正耗材故障全矩阵、CHECK-U8、UI/存储/路线/恢复/性能逐格矩阵、兼容（最后）、干净候选包、最终C端/代码/安全审查和真人复验均未完成；下一独立项CHECK-U8。
 - [杠精审查] 通过（仅U8-C工程范围）：未把临时设置降级当Game成功，未用30分钟快速通关，未把虚拟路线/机器绿灯冒称长期或真人验收；原13/旧报告/失败与用户存档保护保持。
+
+## CHECK-U8 开工登记（2026-10-22）
+- 状态：[ ] 当前独立综合检查实施中；基线2da9a08/46d6a58，分支codex/goal-4-online-recovery。
+- 原话/合同/计划：amendments/2026-10-22-goal-check-u8.md、docs/decisions/0020-u8-check-contract.md、本目录plan已先保存；U8-C evidence 与保护13只读核对。
+- 范围：R4/B/C组合的当前对象/主要决定/唯一活动条、预览不写Game、读秒/暂停/恢复/回执/CAS、加载降级与资产/HTTP同源；固定1440×900单Chromium，兼容/环境性能后置。
+- 待交付：当前源203 UI/173 IDB/731规则/资产负例重验或明确同源继承，新增组合红例与最小修缮（如有），两张图逐张复核、用户进度只读、独立提交和下一矩阵责任记录。
+- 回滚：只回滚本轮新代码/测试，保留DB9/DB1、旧冻结、U8-C evidence、原13和所有失败报告。
+- 完成/检查/提交/证据/杠精：待本轮执行后填写。

@@ -1,0 +1,1205 @@
+{
+  "format": "chenyuan-check-u8-failure-ledger",
+  "version": 1,
+  "task": "CHECK-U8",
+  "recordedAtUtc": "2026-10-23T00:08:19.704336+00:00",
+  "auditMethod": "Read existing source, JSON reports, logs and file bytes only. No browser/test execution, user-preview access, production/test edit or report relabeling.",
+  "status": "interim_evidence_ledger_not_delivery_completion",
+  "earlierReports": [
+    {
+      "path": "artifacts/goal-4/check-u8/combination-prior-pass.json",
+      "bytes": 4559,
+      "sha256": "a7d0d770bdbb7679bde0b5b58373fdc9bb62291ca09be71e45bb5944106186b5",
+      "nature": "earlier_green_on_old_source",
+      "meaning": "Only the original one combination case passed on U8-C source. It predates the expanded history and geometry checks and is not the current comprehensive result.",
+      "recordedSource": {
+        "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+        "dirty": true,
+        "node": "v24.19.0",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigestAsRecorded": "4a7949f3dfe2ef810a37ee24471151450ac2fd12e64a369162df4ef7ad220956",
+      "actualStatsAsRecorded": {
+        "startTime": "2026-10-22T01:11:14.062Z",
+        "duration": 9254.190999999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reporterErrorCount": 0,
+      "actualCaseCount": 1,
+      "retryCount": 0,
+      "cases": [
+        {
+          "file": "check-u8.spec.ts",
+          "title": "R4 and B read surfaces keep one running activity and never turn inspection into a Game write",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-red.json",
+      "bytes": 3651,
+      "sha256": "6a83c0bcd36353aad5370c27b9fb6bb62e833a9a1f04c21212661c6dcfcf8264",
+      "nature": "execution_precondition_failure",
+      "meaning": "No tests matched the selection; zero business cases executed and one reporter error. This is not a product red case.",
+      "recordedSource": {
+        "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+        "dirty": true,
+        "node": "v24.19.0",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigestAsRecorded": "4a7949f3dfe2ef810a37ee24471151450ac2fd12e64a369162df4ef7ad220956",
+      "actualStatsAsRecorded": {
+        "startTime": "2026-10-22T23:29:40.383Z",
+        "duration": 2500.153,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reporterErrorCount": 1,
+      "actualCaseCount": 0,
+      "retryCount": 0,
+      "cases": []
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-red-actual.json",
+      "bytes": 22273,
+      "sha256": "3b3acbf4ab9c031b8e7e2c79c97223f78958c35ebc5028f11f91b70d529cdfb0",
+      "nature": "product_red",
+      "meaning": "Three v1 cultivation / v3 alchemy / v5 purchase cases completed their saved cycles, then failed because hub-receipt was absent after reload. Original failures are retained.",
+      "recordedSource": {
+        "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+        "dirty": true,
+        "node": "v24.19.0",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigestAsRecorded": "4a7949f3dfe2ef810a37ee24471151450ac2fd12e64a369162df4ef7ad220956",
+      "actualStatsAsRecorded": {
+        "startTime": "2026-10-22T23:30:39.409Z",
+        "duration": 51788.282,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      },
+      "reporterErrorCount": 0,
+      "actualCaseCount": 3,
+      "retryCount": 0,
+      "cases": [
+        {
+          "file": "check-u8.spec.ts",
+          "title": "five saved cultivation cycles retain every complete receipt after reload without replaying rewards",
+          "project": "chromium",
+          "outcome": "unexpected",
+          "results": [
+            {
+              "status": "failed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "check-u8.spec.ts",
+          "title": "five saved alchemy cycles retain material costs and net pills on every receipt page after reload",
+          "project": "chromium",
+          "outcome": "unexpected",
+          "results": [
+            {
+              "status": "failed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "check-u8.spec.ts",
+          "title": "five saved purchase cycles retain positive currency costs and exact inventory gains after reload",
+          "project": "chromium",
+          "outcome": "unexpected",
+          "results": [
+            {
+              "status": "failed",
+              "retry": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-idb-first.json",
+      "bytes": 18151,
+      "sha256": "c7c81eab74f7f7fa779a80de83f0fdd19927b16650f047bb05bfb297a22ce0fa",
+      "nature": "assertion_precondition_failure",
+      "meaning": "Two cases passed; one ownership case compared line-broken innerText with normalized toHaveText content. The error shows the same factual text, not evidence of a stale-delivery product mutation. The failure is retained.",
+      "recordedSource": {
+        "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+        "dirty": true,
+        "node": "v24.19.0",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigestAsRecorded": "9853389bb9a18a615011b311505b6b4b1660ad0ba564fac5e5d52b592382b73b",
+      "actualStatsAsRecorded": {
+        "startTime": "2026-10-22T23:46:42.811Z",
+        "duration": 17330.537,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "reporterErrorCount": 0,
+      "actualCaseCount": 3,
+      "retryCount": 0,
+      "cases": [
+        {
+          "file": "history-ui.spec.ts",
+          "title": "native history deliveries cannot restore stale rows or errors after unmount, activity/run replacement or synchronization",
+          "project": "chromium",
+          "outcome": "unexpected",
+          "results": [
+            {
+              "status": "failed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "history-ui.spec.ts",
+          "title": "a missing saved cycle is reported as incomplete and readonly recovery never invents a receipt or changes Game saved state",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "history-ui.spec.ts",
+          "title": "a failed native history delivery stays local and the visible retry performs only readonly queries",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-idb-second.json",
+      "bytes": 9518,
+      "sha256": "6945dc18665da9ac419686764889019e880f05c043bd95502a8845af173286b3",
+      "nature": "earlier_green_on_old_source",
+      "meaning": "The three native history cases passed after comparing the same text representation. This report remains on its recorded 9853389b source, before later geometry and one-cycle pagination changes.",
+      "recordedSource": {
+        "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+        "dirty": true,
+        "node": "v24.19.0",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigestAsRecorded": "9853389bb9a18a615011b311505b6b4b1660ad0ba564fac5e5d52b592382b73b",
+      "actualStatsAsRecorded": {
+        "startTime": "2026-10-22T23:50:08.018Z",
+        "duration": 11880.451,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reporterErrorCount": 0,
+      "actualCaseCount": 3,
+      "retryCount": 0,
+      "cases": [
+        {
+          "file": "history-ui.spec.ts",
+          "title": "native history deliveries cannot restore stale rows or errors after unmount, activity/run replacement or synchronization",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "history-ui.spec.ts",
+          "title": "a missing saved cycle is reported as incomplete and readonly recovery never invents a receipt or changes Game saved state",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "history-ui.spec.ts",
+          "title": "a failed native history delivery stays local and the visible retry performs only readonly queries",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-second.json",
+      "bytes": 22639,
+      "sha256": "64554ca514df63be8777de39b8c80ac38ab29fe744eac33e11b2c5b217e5be16",
+      "nature": "product_red",
+      "meaning": "Two cases passed; restored v1/v3/v5 history pages failed the one-screen document geometry assertion. This is not the final scope or source.",
+      "recordedSource": {
+        "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+        "dirty": true,
+        "node": "v24.19.0",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigestAsRecorded": "9853389bb9a18a615011b311505b6b4b1660ad0ba564fac5e5d52b592382b73b",
+      "actualStatsAsRecorded": {
+        "startTime": "2026-10-22T23:46:42.651Z",
+        "duration": 42685.602999999996,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      },
+      "reporterErrorCount": 0,
+      "actualCaseCount": 5,
+      "retryCount": 0,
+      "cases": [
+        {
+          "file": "check-u8.spec.ts",
+          "title": "R4 and B read surfaces keep one running activity and never turn inspection into a Game write",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "check-u8.spec.ts",
+          "title": "five saved cultivation cycles retain every complete receipt after reload without replaying rewards",
+          "project": "chromium",
+          "outcome": "unexpected",
+          "results": [
+            {
+              "status": "failed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "check-u8.spec.ts",
+          "title": "five saved alchemy cycles retain material costs and net pills on every receipt page after reload",
+          "project": "chromium",
+          "outcome": "unexpected",
+          "results": [
+            {
+              "status": "failed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "check-u8.spec.ts",
+          "title": "five saved purchase cycles retain positive currency costs and exact inventory gains after reload",
+          "project": "chromium",
+          "outcome": "unexpected",
+          "results": [
+            {
+              "status": "failed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "check-u8.spec.ts",
+          "title": "another page names its takeover and only its new full cycle can award once",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/geometry-diagnostic.json",
+      "bytes": 10853,
+      "sha256": "7aa858667e32eaeceb75630b73fc2236147af3ea4ec5753e3a6e9d7f9711b9c0",
+      "nature": "product_red_diagnostic",
+      "meaning": "The actual document height was 908px in a 1440x900 viewport; the root app began at y=8. This establishes the inherited resume-strip layout defect without weakening the one-screen assertion.",
+      "recordedSource": {
+        "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+        "dirty": true,
+        "node": "v24.19.0",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigestAsRecorded": "9853389bb9a18a615011b311505b6b4b1660ad0ba564fac5e5d52b592382b73b",
+      "actualStatsAsRecorded": {
+        "startTime": "2026-10-22T23:50:07.388Z",
+        "duration": 12206.604,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "reporterErrorCount": 0,
+      "actualCaseCount": 1,
+      "retryCount": 0,
+      "cases": [
+        {
+          "file": "check-u8.spec.ts",
+          "title": "five saved cultivation cycles retain every complete receipt after reload without replaying rewards",
+          "project": "chromium",
+          "outcome": "unexpected",
+          "results": [
+            {
+              "status": "failed",
+              "retry": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-third.json",
+      "bytes": 15005,
+      "sha256": "4eb1e605befb50b8b98173d7d1a616861a9f0ca38f471679580009dc88030f9d",
+      "nature": "product_red",
+      "meaning": "Five cases passed and the alchemy history case failed because the previous-page control was not hit at its center. Its four-row positive-material cost/net-change layout obstructed pagination. This is not completion.",
+      "recordedSource": {
+        "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+        "dirty": true,
+        "node": "v24.19.0",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigestAsRecorded": "95578e1e1a32eb75f0768d9a60b9e3a7f7638415e001118c4e9c7785e5e2627f",
+      "actualStatsAsRecorded": {
+        "startTime": "2026-10-22T23:52:33.624Z",
+        "duration": 57624.917,
+        "expected": 5,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "reporterErrorCount": 0,
+      "actualCaseCount": 6,
+      "retryCount": 0,
+      "cases": [
+        {
+          "file": "check-u8.spec.ts",
+          "title": "R4 and B read surfaces keep one running activity and never turn inspection into a Game write",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "check-u8.spec.ts",
+          "title": "five saved cultivation cycles retain every complete receipt after reload without replaying rewards",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "check-u8.spec.ts",
+          "title": "five saved alchemy cycles retain material costs and net pills on every receipt page after reload",
+          "project": "chromium",
+          "outcome": "unexpected",
+          "results": [
+            {
+              "status": "failed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "check-u8.spec.ts",
+          "title": "five saved purchase cycles retain positive currency costs and exact inventory gains after reload",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "check-u8.spec.ts",
+          "title": "another page names its takeover and only its new full cycle can award once",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        },
+        {
+          "file": "check-u8.spec.ts",
+          "title": "paused cultivation exposes saved cycles after reload and history reading preserves the exact resume boundary",
+          "project": "chromium",
+          "outcome": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "retry": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/idb-final.json",
+      "bytes": 1437038,
+      "sha256": "71a97888b53feb82cf5f5034c98b028f0e38e8ed23087bf849d201ef2a7bfcbe",
+      "nature": "earlier_green_on_old_source",
+      "meaning": "All 176 fixed-desktop native IDB/Store cases passed on 95578e1e. These results are preserved on their original source and do not claim execution on 59a7f098.",
+      "recordedSource": {
+        "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+        "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+        "dirty": true,
+        "node": "v24.19.0",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigestAsRecorded": "95578e1e1a32eb75f0768d9a60b9e3a7f7638415e001118c4e9c7785e5e2627f",
+      "actualStatsAsRecorded": {
+        "startTime": "2026-10-22T23:52:58.291Z",
+        "duration": 356888.816,
+        "expected": 176,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reporterErrorCount": 0,
+      "actualCaseCount": 176,
+      "retryCount": 0,
+      "caseDetailsReference": "The immutable raw report and exact declaration comparison retain all 176 case identities; this ledger records totals rather than copying the full case catalogue."
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-first.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nature": "execution_precondition_failure",
+      "meaning": "Execution stopped at the runtime-vs-build identity guard before business cases; ActivityHistory.vue changed after the build.",
+      "validJson": false,
+      "actualCaseCount": 0,
+      "businessResultClaim": null,
+      "recordedRuntimeDigest": null,
+      "log": {
+        "path": "artifacts/goal-4/check-u8/target-first.log",
+        "bytes": 2571,
+        "sha256": "d69fc815b41bb21fa6525b5af5453108ebbc97cfdd82851411e8cb5e8354c525"
+      }
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-single.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nature": "execution_precondition_failure",
+      "meaning": "Execution stopped while web/build-report/build.json was absent, before business cases. This is a build/readiness precondition failure, not a product failure.",
+      "validJson": false,
+      "actualCaseCount": 0,
+      "businessResultClaim": null,
+      "recordedRuntimeDigest": null,
+      "log": {
+        "path": "artifacts/goal-4/check-u8/target-single.log",
+        "bytes": 1300,
+        "sha256": "66d9d3ddf636795db32ac9c15c3b4e598d42cec48b6f6948d701412f32d0dab1"
+      }
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/core-final.log",
+      "bytes": 73919,
+      "sha256": "ffde8714f7e41b37d1dab020233fbf2bdede27b774519962d87b573b79e84d09",
+      "nature": "earlier_terminal_rule_green",
+      "actualNativeCounts": {
+        "tests": 731,
+        "pass": 731,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "meaning": "The terminal log contains 731 native tests including the one configuration parent and eight subtests; eight independent configuration combinations must not be counted again. The log itself has no runtimeDigest field or executed-file manifest, so its source is not relabeled as the current delivery source.",
+      "runtimeDigestEmbeddedInLog": null,
+      "sourceContextReport": {
+        "path": "artifacts/goal-4/check-u8/configuration-control.json",
+        "bytes": 1549630,
+        "sha256": "74a6931d5c9ef2e70d5e210d20b0bd373828a476377e5075dd53e174bcff2f8e"
+      }
+    }
+  ],
+  "earlierIdbDeclarationCheck": {
+    "declaration": {
+      "path": "artifacts/goal-4/check-u8/idb-declarations.json",
+      "bytes": 120789,
+      "sha256": "b62642b74711e3c124bb0260169c7918501d85ebf2432046ffce6c4650648bf8"
+    },
+    "actualReport": {
+      "path": "artifacts/goal-4/check-u8/idb-final.json",
+      "bytes": 1437038,
+      "sha256": "71a97888b53feb82cf5f5034c98b028f0e38e8ed23087bf849d201ef2a7bfcbe"
+    },
+    "declaredCases": 176,
+    "executedCases": 176,
+    "exactUniqueIdentityMatch": true,
+    "scope": "Earlier 95578e1e source only; declaration is not an additional passed run."
+  },
+  "protected13": {
+    "baseline": {
+      "path": "artifacts/goal-4/check-u8/protected13-before.json",
+      "bytes": 1353,
+      "sha256": "981527882b98db6182f3b523bcf1e68b7ef37b09f2d6d9a4d4842091caa7718a"
+    },
+    "actualChecked": 13,
+    "mismatchCount": 0,
+    "files": [
+      {
+        "path": "web/e2e/economy.spec.ts",
+        "expectedSha256": "74d9aa0f71351a890ddb75010aa7ee5eaed03a251cf435824afd836acc3d928a",
+        "actualSha256": "74d9aa0f71351a890ddb75010aa7ee5eaed03a251cf435824afd836acc3d928a",
+        "unchanged": true
+      },
+      {
+        "path": "web/e2e/growth.spec.ts",
+        "expectedSha256": "6a3ed492a841efe86af8c077b67629aa8aee9efa2ce583740913cebe4fd833b3",
+        "actualSha256": "6a3ed492a841efe86af8c077b67629aa8aee9efa2ce583740913cebe4fd833b3",
+        "unchanged": true
+      },
+      {
+        "path": "web/performance-tests/production.spec.ts",
+        "expectedSha256": "4fedce4841870b4d2b3c70744788ca8ed0d75868652ac6e96119febefafb71a9",
+        "actualSha256": "4fedce4841870b4d2b3c70744788ca8ed0d75868652ac6e96119febefafb71a9",
+        "unchanged": true
+      },
+      {
+        "path": "web/performance-tests/support.ts",
+        "expectedSha256": "5b292d27f4c15ebe74222d8b3e2754db27bd3fb906c489fa793ff02624f36053",
+        "actualSha256": "5b292d27f4c15ebe74222d8b3e2754db27bd3fb906c489fa793ff02624f36053",
+        "unchanged": true
+      },
+      {
+        "path": "web/playwright.config.ts",
+        "expectedSha256": "615e17d0d67d0b9bb168fd87287e9e427b2fa2b23a60d6e83cf00eba23c031f1",
+        "actualSha256": "615e17d0d67d0b9bb168fd87287e9e427b2fa2b23a60d6e83cf00eba23c031f1",
+        "unchanged": true
+      },
+      {
+        "path": "web/playwright.journeys.config.ts",
+        "expectedSha256": "244b1faecde4ddecd1290ef99d5fc7909e5b5947289d0cf9460d771ac22097f7",
+        "actualSha256": "244b1faecde4ddecd1290ef99d5fc7909e5b5947289d0cf9460d771ac22097f7",
+        "unchanged": true
+      },
+      {
+        "path": "web/playwright.performance.config.ts",
+        "expectedSha256": "8c083d55b7c3bd7bb538d719b098ba5213d95efc460980e9ff73c93ae5ece3a0",
+        "actualSha256": "8c083d55b7c3bd7bb538d719b098ba5213d95efc460980e9ff73c93ae5ece3a0",
+        "unchanged": true
+      },
+      {
+        "path": "web/playwright.persistence.config.ts",
+        "expectedSha256": "c6b4221c4a3c0964c89657afb2ea2718b7c3d87f0566c30d78f70900b08352f6",
+        "actualSha256": "c6b4221c4a3c0964c89657afb2ea2718b7c3d87f0566c30d78f70900b08352f6",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/collect-validation.mjs",
+        "expectedSha256": "7c93714fe6f505ffc4679ce507aac4090af6ef831e06f0bbc5b8d56033c864c8",
+        "actualSha256": "7c93714fe6f505ffc4679ce507aac4090af6ef831e06f0bbc5b8d56033c864c8",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/merge-ui-shards.mjs",
+        "expectedSha256": "5a5da98452b5440f24452e8b8b17c0b0e341efea37ecb9b7af09f94ec7194758",
+        "actualSha256": "5a5da98452b5440f24452e8b8b17c0b0e341efea37ecb9b7af09f94ec7194758",
+        "unchanged": true
+      },
+      {
+        "path": "scripts/validation-matrix.mjs",
+        "expectedSha256": "f911a45b46a052462dd195cd9518ce633f9c997d6946f4660867c087dbf9ad19",
+        "actualSha256": "f911a45b46a052462dd195cd9518ce633f9c997d6946f4660867c087dbf9ad19",
+        "unchanged": true
+      },
+      {
+        "path": "tests/ui-shards.test.mjs",
+        "expectedSha256": "4b8ff67bfa575f4dd5928c0b591ef590ca999ab5f28c303b85ecbe5c8fa1a07e",
+        "actualSha256": "4b8ff67bfa575f4dd5928c0b591ef590ca999ab5f28c303b85ecbe5c8fa1a07e",
+        "unchanged": true
+      },
+      {
+        "path": "tests/validation-matrix.test.mjs",
+        "expectedSha256": "4ea8b9736d3e5be6b0b4b8e81410e67fc3f16247aff06d3341fd277ccca334b5",
+        "actualSha256": "4ea8b9736d3e5be6b0b4b8e81410e67fc3f16247aff06d3341fd277ccca334b5",
+        "unchanged": true
+      }
+    ],
+    "olderBaselines": [
+      {
+        "path": "goal-4/evidence/u8-b/protected13-before.json",
+        "bytes": 1353,
+        "sha256": "981527882b98db6182f3b523bcf1e68b7ef37b09f2d6d9a4d4842091caa7718a",
+        "sameProtectedEntries": true
+      },
+      {
+        "path": "artifacts/goal-4/u8-c/protected13-before.json",
+        "bytes": 1353,
+        "sha256": "981527882b98db6182f3b523bcf1e68b7ef37b09f2d6d9a4d4842091caa7718a",
+        "sameProtectedEntries": true
+      }
+    ]
+  },
+  "olderTaskReportPreservation": [
+    {
+      "path": "artifacts/goal-4/u8-b/ui-delivery.json",
+      "bytes": 271048,
+      "sha256": "12f97b6fea62118d7f16203d0ff5843ba456f7688db8c135b2afe3fc3844f90d",
+      "expectedSha256FromSavedVerification": "12f97b6fea62118d7f16203d0ff5843ba456f7688db8c135b2afe3fc3844f90d",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-b/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/idb-final-b.json",
+      "bytes": 388648,
+      "sha256": "b2bd2fcbaa4ab93e6821ac4a320fed230fa14e8e09b8f035951a30645db3f4ce",
+      "expectedSha256FromSavedVerification": "b2bd2fcbaa4ab93e6821ac4a320fed230fa14e8e09b8f035951a30645db3f4ce",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-b/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/core-final-f.log",
+      "bytes": 73406,
+      "sha256": "93eb7621aa18f699671f86e81f45492a9c1d0c48a5bedec4308667e16f2d5837",
+      "expectedSha256FromSavedVerification": "93eb7621aa18f699671f86e81f45492a9c1d0c48a5bedec4308667e16f2d5837",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-b/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/configuration-control-test.log",
+      "bytes": 645,
+      "sha256": "53955a33c58afde85ef2a357f5ed1de1bc197629e02510a7f8443115e09b3f97",
+      "expectedSha256FromSavedVerification": "53955a33c58afde85ef2a357f5ed1de1bc197629e02510a7f8443115e09b3f97",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-b/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/assets-negative-f.log",
+      "bytes": 229,
+      "sha256": "c7398cd97871098e0ad0d047a7f7d205186fcd99fd9c8d139f91f3d6755eadb1",
+      "expectedSha256FromSavedVerification": "c7398cd97871098e0ad0d047a7f7d205186fcd99fd9c8d139f91f3d6755eadb1",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-b/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-c/ui-final.json",
+      "bytes": 274554,
+      "sha256": "f6f4a35fed5a46f82f4be41d667d323fa443ffbf3de93eced67f8837cd66a502",
+      "expectedSha256FromSavedVerification": "f6f4a35fed5a46f82f4be41d667d323fa443ffbf3de93eced67f8837cd66a502",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-c/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-c/idb-final.json",
+      "bytes": 1430968,
+      "sha256": "6a494ab00dbdf60b4975df1c825e8a6b348ecff5d0781878266711e815717174",
+      "expectedSha256FromSavedVerification": "6a494ab00dbdf60b4975df1c825e8a6b348ecff5d0781878266711e815717174",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-c/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-c/online-final-b.json",
+      "bytes": 10059,
+      "sha256": "d92aad3ba5f2310a40ce68a6a4c029bd8ea9324a8b024e96aaa800e0d462ec5d",
+      "expectedSha256FromSavedVerification": "d92aad3ba5f2310a40ce68a6a4c029bd8ea9324a8b024e96aaa800e0d462ec5d",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-c/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-c/startup-owned-final.json",
+      "bytes": 59176,
+      "sha256": "86a7ee4cd13738d4b72dff09f83577e0665e03872b6b865878b6e0e0bddcba45",
+      "expectedSha256FromSavedVerification": "86a7ee4cd13738d4b72dff09f83577e0665e03872b6b865878b6e0e0bddcba45",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-c/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-c/assets-final-b.json",
+      "bytes": 927,
+      "sha256": "2937399487c6dfe3001c2ce0d52d16b1858a97daed54aa68d6da8a790f4c8003",
+      "expectedSha256FromSavedVerification": "2937399487c6dfe3001c2ce0d52d16b1858a97daed54aa68d6da8a790f4c8003",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-c/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-c/assets-negative-b.log",
+      "bytes": 234,
+      "sha256": "9c02c39ad8f95444094cb9488ce25c89022afca3e23ae0984fc63a1116cac3b6",
+      "expectedSha256FromSavedVerification": "9c02c39ad8f95444094cb9488ce25c89022afca3e23ae0984fc63a1116cac3b6",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-c/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-c/core-final.log",
+      "bytes": 74171,
+      "sha256": "8e5d8ee9a0f9adc9143ae18c3ca82a4314dda15fd6563317d29422a0e4af4e44",
+      "expectedSha256FromSavedVerification": "8e5d8ee9a0f9adc9143ae18c3ca82a4314dda15fd6563317d29422a0e4af4e44",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-c/verification.json",
+      "scope": "Preservation check only; no current-source retest claim."
+    },
+    {
+      "path": "artifacts/goal-4/u8-b/configuration-control.json",
+      "bytes": 1549630,
+      "sha256": "3db6a1458b57e484135a29da74bbecd564f3febef68cbb96434184e6e0a4eee5",
+      "expectedSha256FromSavedVerification": "3db6a1458b57e484135a29da74bbecd564f3febef68cbb96434184e6e0a4eee5",
+      "unchanged": true,
+      "verificationAnchor": "goal-4/evidence/u8-b/configuration-summary.json",
+      "scope": "Older configuration side-effect report retained; new task reports use new paths."
+    }
+  ],
+  "retainedFailureAttachments": [
+    {
+      "path": "artifacts/goal-4/check-u8/history-red-actual-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/error-context.md",
+      "bytes": 3891,
+      "sha256": "d9e1089c2c91acf54205a39039856e00c5a62a09bcc837dbf65dc7f3617cfc61",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-red-actual-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/test-failed-1.png",
+      "bytes": 1751879,
+      "sha256": "297ac7cb68b085d8588bb5709b7e798573d9e6cf1cf1e63ce972ac90cb58fd53",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-red-actual-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/trace.zip",
+      "bytes": 8633134,
+      "sha256": "ef3b363e1f9a100aa2254dac862fe8545eb7a3ed8a66efcd29f77f1917dc5893",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-red-actual-results/check-u8-five-saved-cultiv-09bd1-d-without-replaying-rewards-chromium/error-context.md",
+      "bytes": 3889,
+      "sha256": "d8e87c997689cf42e8974ff016b161a8ab50d8d6a0e68a596c323f43040ae3ca",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-red-actual-results/check-u8-five-saved-cultiv-09bd1-d-without-replaying-rewards-chromium/test-failed-1.png",
+      "bytes": 1751451,
+      "sha256": "7c3a2be4ec354f373d08ee3cda84a6f8d6f72299d1a5978c69dfe15dba6bbe77",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-red-actual-results/check-u8-five-saved-cultiv-09bd1-d-without-replaying-rewards-chromium/trace.zip",
+      "bytes": 6944136,
+      "sha256": "01716e41afd625ec528b05e7e8b9e7059b972ac5b279fa065ee58980a42d80e4",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-red-actual-results/check-u8-five-saved-purcha-805dc-nventory-gains-after-reload-chromium/error-context.md",
+      "bytes": 3957,
+      "sha256": "77833ea237002627b9943fe09c54aa2a4578a765173f1e80ce897fbdc200c7ac",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-red-actual-results/check-u8-five-saved-purcha-805dc-nventory-gains-after-reload-chromium/test-failed-1.png",
+      "bytes": 1893288,
+      "sha256": "78cd3a4dc2ceda4320b13388cb7c002f211a22af776cd2098c24b3a8b71f76d4",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/history-red-actual-results/check-u8-five-saved-purcha-805dc-nventory-gains-after-reload-chromium/trace.zip",
+      "bytes": 8451877,
+      "sha256": "14583833d69b8743ce09174f9988ac8b75bab6585b1003c49d793954a642a95a",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/geometry-diagnostic-results/check-u8-five-saved-cultiv-09bd1-d-without-replaying-rewards-chromium/error-context.md",
+      "bytes": 5933,
+      "sha256": "becc4406a90fd295e5fc51aec77f2288c431b882cecfce3f47e0aa443b78ef88",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/geometry-diagnostic-results/check-u8-five-saved-cultiv-09bd1-d-without-replaying-rewards-chromium/test-failed-1.png",
+      "bytes": 900124,
+      "sha256": "b0b6fedf774ef283218ba9d5ab7049c469b1631ab19a3e0e8c6702dba8cf79a5",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/geometry-diagnostic-results/check-u8-five-saved-cultiv-09bd1-d-without-replaying-rewards-chromium/trace.zip",
+      "bytes": 6388487,
+      "sha256": "08fc59c929578e7c6c607fd26986d0db1242a40a6a037e14db337e151926a212",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-second-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/error-context.md",
+      "bytes": 6277,
+      "sha256": "9716242e4d9bb7b844e21b657e6ee64f7f248e244d0d16a50cd054a91ce3acd4",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-second-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/test-failed-1.png",
+      "bytes": 903029,
+      "sha256": "e2ebabc9c34ec9828ea880812d84b2410196cc13e9bc53409a7fbfa32adda457",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-second-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/trace.zip",
+      "bytes": 8489920,
+      "sha256": "bfd1280e21f478f5c84f53581d478922da3d8e4918622313f26415018e60a7c2",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-second-results/check-u8-five-saved-cultiv-09bd1-d-without-replaying-rewards-chromium/error-context.md",
+      "bytes": 5933,
+      "sha256": "becc4406a90fd295e5fc51aec77f2288c431b882cecfce3f47e0aa443b78ef88",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-second-results/check-u8-five-saved-cultiv-09bd1-d-without-replaying-rewards-chromium/test-failed-1.png",
+      "bytes": 900124,
+      "sha256": "b0b6fedf774ef283218ba9d5ab7049c469b1631ab19a3e0e8c6702dba8cf79a5",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-second-results/check-u8-five-saved-cultiv-09bd1-d-without-replaying-rewards-chromium/trace.zip",
+      "bytes": 6556374,
+      "sha256": "7f765550f6c78754e1873e16c8a51cc78137514f52c18265d18b0b2de3a89a6b",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-second-results/check-u8-five-saved-purcha-805dc-nventory-gains-after-reload-chromium/error-context.md",
+      "bytes": 6059,
+      "sha256": "9556392951e7fec907ffab728c3f728c65de296d1b766b9a8abb2361d9929ad0",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-second-results/check-u8-five-saved-purcha-805dc-nventory-gains-after-reload-chromium/test-failed-1.png",
+      "bytes": 936105,
+      "sha256": "74d1e16d7b5f7d39d53cc99ac621f76778495713042235eb0b2b0e1a62a470c9",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-second-results/check-u8-five-saved-purcha-805dc-nventory-gains-after-reload-chromium/trace.zip",
+      "bytes": 8068218,
+      "sha256": "ee4d37b2312fd22c4d33dbe1e49901e13183ca7ba6d2582bbcff3424aff7450c",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-third-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/error-context.md",
+      "bytes": 6278,
+      "sha256": "778a846037604597a5b783e59f9758efb09351100b121c067b254ef4d491edb1",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-third-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/test-failed-1.png",
+      "bytes": 889185,
+      "sha256": "a470fac969085c16b4f614504a4915d78075686668932c1c4d859c607dd11c3c",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-third-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/trace.zip",
+      "bytes": 7666077,
+      "sha256": "9223ffb5e4db1ef32af1f1fb4ae0c3307c9d5098a76f1e596c25b82f84f32508",
+      "retained": true,
+      "pixelReviewedByThisAudit": false
+    }
+  ],
+  "currentTargetedResult": {
+    "path": "artifacts/goal-4/check-u8/target-delivery.json",
+    "bytes": 10052,
+    "sha256": "59c4569729e092c5f3824fe45fade99365687f4a76fbdabb95509296f5d75b06",
+    "nature": "current_targeted_green",
+    "meaning": "Six fixed 1440x900 Chromium combination/reload/takeover/pause cases passed on the exact recorded 59a7f098 source. This is targeted gameplay/receipt evidence, not the complete UI/IDB/core delivery or user acceptance.",
+    "recordedSource": {
+      "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+      "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+      "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+      "dirty": true,
+      "node": "v24.19.0",
+      "npm": "8.11.0",
+      "npmOnPath": "8.11.0"
+    },
+    "runtimeDigestAsRecorded": "59a7f098d6e7b0d438cd9733570c7b323b12a39ba3e4c6c407f30a7a6c1374cf",
+    "actualStatsAsRecorded": {
+      "startTime": "2026-10-23T00:00:59.333Z",
+      "duration": 130021.99799999999,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "reporterErrorCount": 0,
+    "actualCaseCount": 6,
+    "retryCount": 0,
+    "cases": [
+      {
+        "file": "check-u8.spec.ts",
+        "title": "R4 and B read surfaces keep one running activity and never turn inspection into a Game write",
+        "project": "chromium",
+        "outcome": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0
+          }
+        ]
+      },
+      {
+        "file": "check-u8.spec.ts",
+        "title": "five saved cultivation cycles retain every complete receipt after reload without replaying rewards",
+        "project": "chromium",
+        "outcome": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0
+          }
+        ]
+      },
+      {
+        "file": "check-u8.spec.ts",
+        "title": "five saved alchemy cycles retain material costs and net pills on every receipt page after reload",
+        "project": "chromium",
+        "outcome": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0
+          }
+        ]
+      },
+      {
+        "file": "check-u8.spec.ts",
+        "title": "five saved purchase cycles retain positive currency costs and exact inventory gains after reload",
+        "project": "chromium",
+        "outcome": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0
+          }
+        ]
+      },
+      {
+        "file": "check-u8.spec.ts",
+        "title": "another page names its takeover and only its new full cycle can award once",
+        "project": "chromium",
+        "outcome": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0
+          }
+        ]
+      },
+      {
+        "file": "check-u8.spec.ts",
+        "title": "paused cultivation exposes saved cycles after reload and history reading preserves the exact resume boundary",
+        "project": "chromium",
+        "outcome": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0
+          }
+        ]
+      }
+    ]
+  },
+  "currentConfigurationSideEffect": {
+    "path": "artifacts/goal-4/check-u8/configuration-delivery.json",
+    "bytes": 1549630,
+    "sha256": "6d869a0ee0cd82709104afa76e680e02f2ef1326036998975143c3f24a2bfc8d",
+    "nature": "current_configuration_control_side_effect_report",
+    "recordedAt": "2026-10-23T00:02:03.389Z",
+    "runtimeDigestAsRecorded": "59a7f098d6e7b0d438cd9733570c7b323b12a39ba3e4c6c407f30a7a6c1374cf",
+    "nativeTestShape": "one parent with eight subtests",
+    "independentBusinessCombinations": 8,
+    "actualControlRows": 8,
+    "inputUnchanged": true,
+    "actualDifferences": true,
+    "recordedInputCount": 27,
+    "currentInputHashMismatches": [],
+    "priorTaskReportNotOverwritten": true,
+    "scope": "Eight configuration combinations are already children of the native test run; not eight additional test passes. Synthetic formal Activity periods, not real online or human balance acceptance."
+  },
+  "currentFrozenIdentityReference": {
+    "path": "artifacts/goal-4/check-u8/runtime-frozen.json",
+    "bytes": 29433,
+    "sha256": "090ba00ac592f16a08db71f196312cea1d5873988891296e1b17dc95a2b3b3bd",
+    "scope": "Recorded freeze identity only; no HTTP, Git-archive or complete delivery proof is inferred."
+  },
+  "laterBoundaryEvidence": [
+    {
+      "path": "artifacts/goal-4/check-u8/ui-delivery.json",
+      "sha256": "ec4afb09187132f3b240bd26b2c77a2fdc7e386fe7546bbb0ca88af1341936e9",
+      "stats": {
+        "startTime": "2026-10-23T00:04:09.760Z",
+        "duration": 405203.203,
+        "expected": 51,
+        "skipped": 157,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "runtimeDigest": "59a7f098d6e7b0d438cd9733570c7b323b12a39ba3e4c6c407f30a7a6c1374cf",
+      "nature": "Deliberately interrupted to reproduce and fix journal boundary; one original flow countdown failure also retained; not a complete green run"
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/journal-boundary-red.json",
+      "sha256": "c2e8fa7a1c1277a0f2aa6a2ba5f2c10d05f7be104be217692ad790b923a14fe2",
+      "stats": {
+        "startTime": "2026-10-23T00:12:13.704Z",
+        "duration": 17134.751,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "runtimeDigest": "59a7f098d6e7b0d438cd9733570c7b323b12a39ba3e4c6c407f30a7a6c1374cf",
+      "nature": "Product red: lawful v7 breakthrough then explicit school configuration invalidates milestone; after reload journal opens empty receipt"
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-boundary.json",
+      "sha256": "70dae6d3a1e8b06c8d71626faf8b7d12fde6f38334dae3511884597cab852585",
+      "stats": {
+        "startTime": "2026-10-23T00:15:29.802Z",
+        "duration": 98988.872,
+        "expected": 14,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "d256e124debf497cd913c7e8ec2aad56227d359746f92390266e2bc814eefad7",
+      "nature": "14 targeted cases passed after boundary fix and public runtime countdown readiness premise"
+    }
+  ],
+  "remainingAtEarlierSnapshot": [
+    {
+      "id": "CHECK-U8-FINAL-RUNS",
+      "requirement": "Close the actual final-source complete fixed-desktop UI, native IDB/Store, core and asset runs, compare exact case declarations and retain any new failures.",
+      "scope": "No count, status or hash is recorded here for unclosed ui-delivery/idb-delivery/core-delivery runs."
+    },
+    {
+      "id": "CHECK-U8-VISUAL",
+      "requirement": "Actually inspect current final-source representative PNGs one or two at a time, including long positive-material history and resumed/activity surfaces. Preserve originals, lightweight derivatives and reviewed/unreviewed distinction.",
+      "scope": "Geometry and screenshot capture do not alone prove visual acceptance."
+    },
+    {
+      "id": "CHECK-U8-IDENTITY",
+      "requirement": "Verify final runtime sources against tested build, implementation Git archive, frozen package and served HTTP files; only read user-visible preview progress before/after an owned update."
+    },
+    {
+      "id": "CHECK-U8-CLOSURE",
+      "requirement": "Independent implementation commit, tasks and adversarial review, evidence closure commit; keep protected13 and original failure evidence untouched."
+    },
+    {
+      "id": "MATRIX",
+      "requirement": "Complete the same-source UI/storage/normal-route/recovery/performance matrix one cell at a time; handle compatibility last in its own authorized stage. Current fixed-desktop checks do not close those matrices."
+    },
+    {
+      "id": "CANDIDATE-FINAL-HUMAN",
+      "requirement": "Clean rebuild/unpack runnable package, maximum C-end/code/security review, whole-game interaction/art/long-term balance and real user revalidation remain open."
+    },
+    {
+      "id": "KNOWN-RESIDUALS",
+      "requirement": "Retain original native startup delay cause as unknown, the deferred small-pane overlap and positive-consumable fault matrix gaps; a targeted green does not erase historical user-negative acceptance."
+    }
+  ],
+  "laterNote": "The original audit snapshot is preserved above; final checks and delivery are recorded separately in verification.json. Counts/source identities above have not been relabeled."
+}

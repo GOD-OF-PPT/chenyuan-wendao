@@ -65,6 +65,9 @@ class InventoryTests(unittest.TestCase):
   loading=ROOT/'art/redesign/local-loading.json'
   if loading.exists():
    data=json.loads(loading.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  history_ui=ROOT/'art/redesign/activity-history.json'
+  if history_ui.exists():
+   data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -384,5 +387,14 @@ class InventoryTests(unittest.TestCase):
   self.write('web/src/local-initialization.ts','unreviewed replacement');self.rejected()
  def test_local_loading_cannot_claim_player_acceptance(self):
   p='art/redesign/local-loading.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
+
+ def test_activity_history_requires_ledger(self):
+  (self.root/'art/redesign/activity-history.json').unlink();self.rejected()
+ def test_activity_history_budget_remains_fixed(self):
+  p='art/redesign/activity-history.json';m=json.loads((self.root/p).read_text());m['maxNativeBytes']+=1;self.write(p,m);self.rejected()
+ def test_activity_history_hash_is_bound(self):
+  self.write('web/src/ActivityHistory.vue','wrong source');self.rejected()
+ def test_activity_history_cannot_claim_player_acceptance(self):
+  p='art/redesign/activity-history.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
 
 if __name__=='__main__':unittest.main()

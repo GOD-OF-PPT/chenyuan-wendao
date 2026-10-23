@@ -1,0 +1,24 @@
+{
+  "protected13": {
+    "web/e2e/economy.spec.ts": "74d9aa0f71351a890ddb75010aa7ee5eaed03a251cf435824afd836acc3d928a",
+    "web/e2e/growth.spec.ts": "6a3ed492a841efe86af8c077b67629aa8aee9efa2ce583740913cebe4fd833b3",
+    "web/performance-tests/production.spec.ts": "4fedce4841870b4d2b3c70744788ca8ed0d75868652ac6e96119febefafb71a9",
+    "web/performance-tests/support.ts": "5b292d27f4c15ebe74222d8b3e2754db27bd3fb906c489fa793ff02624f36053",
+    "web/playwright.config.ts": "615e17d0d67d0b9bb168fd87287e9e427b2fa2b23a60d6e83cf00eba23c031f1",
+    "web/playwright.journeys.config.ts": "244b1faecde4ddecd1290ef99d5fc7909e5b5947289d0cf9460d771ac22097f7",
+    "web/playwright.performance.config.ts": "8c083d55b7c3bd7bb538d719b098ba5213d95efc460980e9ff73c93ae5ece3a0",
+    "web/playwright.persistence.config.ts": "c6b4221c4a3c0964c89657afb2ea2718b7c3d87f0566c30d78f70900b08352f6",
+    "scripts/collect-validation.mjs": "7c93714fe6f505ffc4679ce507aac4090af6ef831e06f0bbc5b8d56033c864c8",
+    "scripts/merge-ui-shards.mjs": "5a5da98452b5440f24452e8b8b17c0b0e341efea37ecb9b7af09f94ec7194758",
+    "scripts/validation-matrix.mjs": "f911a45b46a052462dd195cd9518ce633f9c997d6946f4660867c087dbf9ad19",
+    "tests/ui-shards.test.mjs": "4b8ff67bfa575f4dd5928c0b591ef590ca999ab5f28c303b85ecbe5c8fa1a07e",
+    "tests/validation-matrix.test.mjs": "4ea8b9736d3e5be6b0b4b8e81410e67fc3f16247aff06d3341fd277ccca334b5"
+  },
+  "protectedCount": 13,
+  "allProtectedUnchanged": true,
+  "checkInputsFile": "artifacts/goal-4/check-u8/check-inputs-boundary.json",
+  "checkInputCount": 165,
+  "checkInputsSha256": "470be4a730a3d0b335483d76b32ba2292ed1f148e55234130e7af5a26c4d0ddf",
+  "allCheckInputsUnchanged": true,
+  "scope": "Current read-only verification; final check repeated before local commits. No protected files staged."
+}

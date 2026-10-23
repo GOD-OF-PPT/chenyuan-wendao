@@ -322,9 +322,9 @@ export const useGame = defineStore('game', () => {
     await write(()=>repository!.startActivity(intent.plan,intent.mutation),intent.mutation.commandId,undefined,true);
     if(!error.value)beginActivityRuntime();
   }
-  async function loadActivityHistory(id:string,page=0){
+  async function loadActivityHistory(id:string,page=0,pageSize=4){
     if(disposed||!repository||!game.value)throw new Error('存档未就绪');
-    return repository.loadActivityHistory(id,page,4);
+    return repository.loadActivityHistory(id,page,pageSize);
   }
   const startCultivation=(plan:CultivationPlan)=>startPlannedActivity(plan);
   async function pauseCultivation(){

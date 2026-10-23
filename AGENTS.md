@@ -124,3 +124,9 @@ U8-B依据[0018](docs/decisions/0018-idle-progression-tradeoffs-contract.md)和�
 本地设置/存档初始读取须与导入或游戏行动受理分开验证：先等待公共就绪信号，再执行原动作时限与完整Game/读秒断言；超时保留阶段证据。U8C-BOOT-01目前只知experience.init未完成，native open/readMeta根因unknown；不能凭暂停钟或一次重跑绿灯宣称已修，更不能加sleep/推进游戏钟、删除断言或隐去旧失败。被动测试诊断不读存储值、不改实际Store/运行时，恢复原方法后才进入受测操作；不把就绪准备界限说成性能验收。
 
 U8-C在线/加载恢复遵循[0019合同](docs/decisions/0019-online-loading-recovery-contract.md)。本轮回读MDN blocked/close与XAG109：可选显示/试玩记录读取有有限出口，未读旧采集偏好时临时记录默认关闭；close不当作取消事务。迟到读取/旧广播/失效/销毁按连接与编辑归属隔离，不能覆盖新选择或误标保存。Game读取/CAS/原子成功仍严格，设置降级不创建替代空档。真实在线新档、虚拟规则可达、注入故障与原native未知分开；30分钟只记录实际积累/停手/明确继续，不要求境界或发时长奖励。具体5000ms等待边界为项目选择，非来源数值/性能或真人认证。
+
+
+CHECK-U8依据[0020综合合同](docs/decisions/0020-u8-check-contract.md)及本轮实际回读[XAG112导航](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112)、[XAG114上下文](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114)：已保存普通活动的完整回执在运行、暂停、停止与刷新后均可只读到达；本次结算与本段全部周期明确区分，分页等待保留原页和焦点，晚到读取不能覆盖新人生/活动/页或销毁视图。缺失回执只报告本地未能完整核对，不改Game保存状态、不补造奖励。跨页接管在确认前明确本页接管/整轮重计，原CAS/单周期不变。续读提示进入已测量提示区，不能因外边距把固定舞台移出屏幕或藏在HUD后。逐次分页、9000B新组件及具体布局是项目推导，非Xbox认证或整体美术/用户验收；兼容与环境性能仍后置。
+
+
+回执入口须按正式活动版本与有效状态划分：普通活动的已完成周期可读，v6沿原战报，v7沿有效有限成果；旧v7被后续明确行动标为STATE_CHANGED后，刷新手记回到生平，不能仅凭completedCycles打开空结算。虚拟钟整链测试先等当前generation的真实公开在线读秒，再推进原cycleMs；IDB已受理不等于本页运行时已开始。此就绪握手不加sleep、不额外推进时间、不改Game/周期或放宽完成与净变化断言；原一次超时仍保留原因未定，绿灯不证明native原因或实际长期节奏。

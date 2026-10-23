@@ -12,7 +12,12 @@ export async function finishJourneyClock(page:Page){
   if(await confirm.isVisible()&&await confirm.isEnabled())await confirm.click();
   const a=await activitySnapshot(page);
   if((a?.version===6||a?.version===7)&&a.status==='running'){
-    const before=a.completedCycles;await page.clock.fastForward(a.cycleMs);
+    const before=a.completedCycles;
+    // A persisted arrangement can be observed before the Store starts its online
+    // clock. Wait for the public current-generation countdown before advancing.
+    await expect(page.locator('[data-testid="training-activity"][data-generation="'+a.generation+'"][data-running="true"]')).toBeVisible();
+    await expect(page.getByTestId('training-countdown')).toHaveText((a.cycleMs/1000).toFixed(1)+' 秒');
+    await page.clock.fastForward(a.cycleMs);
     await expect.poll(async()=>(await activitySnapshot(page))?.completedCycles).toBe(before+1);return;
   }
   await expect(page.getByTestId('action-execution')).toBeVisible();await page.clock.fastForward(2500);

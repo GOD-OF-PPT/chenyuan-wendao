@@ -1,0 +1,167 @@
+{
+  "task": "CHECK-U8",
+  "date": "2026-10-23",
+  "status": "Checks passed; local implementation commit, archive and preview closure pending",
+  "branch": "codex/goal-4-online-recovery",
+  "implementationCommit": null,
+  "sourceDigest": "d256e124debf497cd913c7e8ec2aad56227d359746f92390266e2bc814eefad7",
+  "testedSource": {
+    "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+    "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+    "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+    "dirty": true,
+    "node": "v24.19.0",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtimeSourceCount": 194,
+  "runtimeFileCount": 56,
+  "runtimeBytes": 7342937,
+  "checks": {
+    "ui": {
+      "path": "artifacts/goal-4/check-u8/ui-boundary.json",
+      "sha256": "69dda3a5145c94267443ce7a71aa5fbf0137dd5dc2d0a75c4bcd03b6fb2c88df",
+      "stats": {
+        "startTime": "2026-10-23T00:17:46.842Z",
+        "duration": 833823.762,
+        "expected": 210,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "d256e124debf497cd913c7e8ec2aad56227d359746f92390266e2bc814eefad7"
+    },
+    "storage": {
+      "path": "artifacts/goal-4/check-u8/idb-boundary.json",
+      "sha256": "3c934d8112eb03e22c10f5cc190c5985d3e332977c62416b53cb560ad1adc8af",
+      "stats": {
+        "startTime": "2026-10-23T00:15:30.270Z",
+        "duration": 236537.324,
+        "expected": 176,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "d256e124debf497cd913c7e8ec2aad56227d359746f92390266e2bc814eefad7"
+    },
+    "targeted": {
+      "path": "artifacts/goal-4/check-u8/target-boundary.json",
+      "sha256": "70dae6d3a1e8b06c8d71626faf8b7d12fde6f38334dae3511884597cab852585",
+      "stats": {
+        "startTime": "2026-10-23T00:15:29.802Z",
+        "duration": 98988.872,
+        "expected": 14,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "d256e124debf497cd913c7e8ec2aad56227d359746f92390266e2bc814eefad7"
+    },
+    "core": {
+      "path": "artifacts/goal-4/check-u8/core-boundary.log",
+      "sha256": "0803353914d0a84b1eac2527dacf98e78b29232bad9f07ed6d023e0c2118c504",
+      "passed": 731,
+      "failed": 0
+    },
+    "assetNegative": {
+      "path": "artifacts/goal-4/check-u8/assets-negative-boundary.log",
+      "sha256": "a89ed6ef559ce7f0d07f4420d1e91abcf360ef56abbde789923523b73a0e9cd7",
+      "passed": 136,
+      "failed": 0
+    },
+    "assets": {
+      "path": "artifacts/goal-4/check-u8/assets-boundary.json",
+      "sha256": "01d875a950386266bb7e82f50a41d0781db10de2a89c7285e987e634162344ae",
+      "results": {
+        "format": "chenyuan-art-inventory",
+        "verifiedFiles": 87,
+        "legacyVerifiedFiles": 24,
+        "legacyProductionAssets": 20,
+        "redesignVerifiedFiles": 19,
+        "redesignProductionAssets": 18,
+        "characterBattleVerifiedFiles": 30,
+        "characterBattleProductionAssets": 30,
+        "desktopUIVerifiedFiles": 2,
+        "desktopUIProductionAssets": 2,
+        "statuses": {
+          "reference": 9,
+          "placeholder": 1,
+          "missing": 2,
+          "production": 77
+        },
+        "productionAssets": 77,
+        "singleScreenNativeBytes": 10876,
+        "idleNativeBytes": 21261,
+        "sourceNativeBytes": 13203,
+        "productionNativeBytes": 25715,
+        "preparationNativeBytes": 55167,
+        "adventureNativeBytes": 44982,
+        "stageR1NativeBytes": 17987,
+        "stageR2NativeBytes": 11718,
+        "stageR3NativeBytes": 16826,
+        "stageR4NativeBytes": 13962,
+        "idleTradeoffNativeBytes": 29756,
+        "localLoadingNativeBytes": 1825,
+        "activityHistoryNativeBytes": 7816,
+        "scope": "Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance."
+      }
+    }
+  },
+  "declarations": "210 UI and176 IDB exact case identities match current declarations, every result passed/retry0",
+  "visuals": [
+    {
+      "path": "artifacts/goal-4/check-u8/target-boundary-results/check-u8-R4-and-B-read-sur-ad166-nspection-into-a-Game-write-chromium/check-u8-life-reading.png",
+      "sha256": "82d8cf2b3da86ee5925d621970009a45a117794419e24ced1a02e697149f5ac2",
+      "view": "artifacts/goal-4/check-u8/views/current-life.jpg",
+      "viewSha256": "727f43635d4916b68112b2fdc9b8962469623ab1c83ca822a68c1878d823f5ee",
+      "size": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 original dimensions",
+      "reviewedPixel": true,
+      "runtimeDigest": "d256e124debf497cd913c7e8ec2aad56227d359746f92390266e2bc814eefad7",
+      "notes": "Actually viewed original1440x900 JPEG68: current activity/countdown and eight entries intact; full reading/action/return/pager visible with game scene. No overall art/user acceptance inferred."
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-boundary-results/check-u8-R4-and-B-read-sur-ad166-nspection-into-a-Game-write-chromium/check-u8-production-reading.png",
+      "sha256": "2864410f8205c897e9af4f155bfb22d25f2b972e3f3c4da6f23c96940befacd8",
+      "view": "artifacts/goal-4/check-u8/views/current-production.jpg",
+      "viewSha256": "4b8c415c1105375f3811ea0c46739ed7095ad3bed389cbc5b66e491b96fd7472",
+      "size": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 original dimensions",
+      "reviewedPixel": true,
+      "runtimeDigest": "d256e124debf497cd913c7e8ec2aad56227d359746f92390266e2bc814eefad7",
+      "notes": "Actually viewed original1440x900 JPEG68: current activity/countdown and eight entries intact; full reading/action/return/pager visible with game scene. No overall art/user acceptance inferred."
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-boundary-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/alchemy-restored-history-first.png",
+      "sha256": "43489cd4f8fed3a0a860cdef14e6692cf6d80085ffefb172eca911c1015c5d4b",
+      "reviewedPixel": true,
+      "inheritedFrom": "artifacts/goal-4/check-u8/target-delivery-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/alchemy-restored-history-first.png",
+      "inheritedFromSha256": "43489cd4f8fed3a0a860cdef14e6692cf6d80085ffefb172eca911c1015c5d4b",
+      "notes": "Exact original PNG bytes inherited from a frame actually viewed through original-size JPEG68"
+    },
+    {
+      "path": "artifacts/goal-4/check-u8/target-boundary-results/check-u8-paused-cultivatio-96b51-s-the-exact-resume-boundary-chromium/paused-history.png",
+      "sha256": "ac26e904ec7aacc0ebf4a4396b1196ab529967b112352ae434da4fb3878cfbab",
+      "reviewedPixel": true,
+      "inheritedFrom": "artifacts/goal-4/check-u8/target-delivery-results/check-u8-paused-cultivatio-96b51-s-the-exact-resume-boundary-chromium/paused-history.png",
+      "inheritedFromSha256": "ac26e904ec7aacc0ebf4a4396b1196ab529967b112352ae434da4fb3878cfbab",
+      "notes": "Exact original PNG bytes inherited from a frame actually viewed through original-size JPEG68"
+    }
+  ],
+  "finalGeneratedPngCount": 337,
+  "limits": [
+    "Fixed1440x900 singleChromium only; no compatibility or environment/performance matrix",
+    "Formal Game, DB9, costs, cycle durations and rewards unchanged",
+    "Legal imported fixtures/virtual clocks are combination and boundary tests, not new human or long-term balance evidence",
+    "U8-C original native startup root cause remains unknown",
+    "Full matrices, clean final candidate, final review and human art/gameability/balance acceptance remain"
+  ],
+  "failureLedger": "goal-4/evidence/check-u8/failure-ledger.json",
+  "protectedAndInputs": "goal-4/evidence/check-u8/protected-and-inputs.json"
+}
