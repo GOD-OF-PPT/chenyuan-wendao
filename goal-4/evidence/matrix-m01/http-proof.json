@@ -1,0 +1,346 @@
+{
+  "sourceDigest": "3fd9e7558e8e6e9b487dd6cde78ea8cd9a1ab292b7dae541dc46eb51d2b0d0c0",
+  "url": "http://127.0.0.1:56884/",
+  "method": "Actual HTTP GET every file checked against final dist/frozen web bytes",
+  "files": [
+    {
+      "path": ".vite/manifest.json",
+      "status": 200,
+      "bytes": 185,
+      "sha256": "29cfa81689cdd69fcf0d5923f8c62a0c64a81758caa494b2f7a6db04be5d8c2a"
+    },
+    {
+      "path": "art/portraits/lu.webp",
+      "status": 200,
+      "bytes": 60432,
+      "sha256": "f3205ef5fc424896898efe8dca19e8871762636c7bb82c7136eea44fd638dff4"
+    },
+    {
+      "path": "art/portraits/pei.webp",
+      "status": 200,
+      "bytes": 65460,
+      "sha256": "0a1b64def5cd7200a291af8b98790d07048c190318bd4efbee1081bd6c284ad8"
+    },
+    {
+      "path": "art/portraits/player.webp",
+      "status": 200,
+      "bytes": 62438,
+      "sha256": "0c2faca3fd95f303cc4ed0e22169f13be1806066a22f56880cc7bbd3e009f1e6"
+    },
+    {
+      "path": "art/portraits/shen.webp",
+      "status": 200,
+      "bytes": 63360,
+      "sha256": "7fb1e08bec233fa3ba11f8f56dd645e3772738e80946990ddb0eb8f97b08ba52"
+    },
+    {
+      "path": "art/portraits/yan.webp",
+      "status": 200,
+      "bytes": 62270,
+      "sha256": "0f68e57915cfa22ef10a88699171ab5aca3889d9e66f1d6d0c8d087f7a04bc52"
+    },
+    {
+      "path": "art/scene.webp",
+      "status": 200,
+      "bytes": 6438,
+      "sha256": "8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc"
+    },
+    {
+      "path": "art/scenes/secret.webp",
+      "status": 200,
+      "bytes": 279296,
+      "sha256": "375d61a2b3701de62085ad8d8697c813bfcb5038420d5a864a65f3dc1fb550b9"
+    },
+    {
+      "path": "art/scenes/settlement.webp",
+      "status": 200,
+      "bytes": 253904,
+      "sha256": "f317b1cee05a456eaf5c19d779aa446a9489cc90b78a937f5bbefa6c638328b2"
+    },
+    {
+      "path": "art/scenes/terrace-v2.webp",
+      "status": 200,
+      "bytes": 182204,
+      "sha256": "76bbc4ecff4469cfa5e01f7ba182074e6fc70836d9fc9c0b4545afc7208ef45d"
+    },
+    {
+      "path": "art/scenes/wilderness.webp",
+      "status": 200,
+      "bytes": 254774,
+      "sha256": "3d07a4455e766b67c0eeae6b54b8373a3a64242e6ab952f16f6234bbfc0aae35"
+    },
+    {
+      "path": "art/ui-kit.svg",
+      "status": 200,
+      "bytes": 9046,
+      "sha256": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee"
+    },
+    {
+      "path": "art/v2/catalogue/alchemy-v1.webp",
+      "status": 200,
+      "bytes": 84870,
+      "sha256": "f806772d13cd930dd80722c61d6ec53b5e5f882e9314f73c2ec5cb878f7e1528"
+    },
+    {
+      "path": "art/v2/catalogue/study-v1.webp",
+      "status": 200,
+      "bytes": 97256,
+      "sha256": "07c30a57cd627bb391f1bc76ea286bc3b88f584928eff7c5f6c603d91de75a4d"
+    },
+    {
+      "path": "art/v2/catalogue/supplies-v1.webp",
+      "status": 200,
+      "bytes": 85820,
+      "sha256": "eaff2eaf8338219503f40abc862374d701259efc3cdd602e99b27631543ab666"
+    },
+    {
+      "path": "art/v2/characters/lu.webp",
+      "status": 200,
+      "bytes": 64486,
+      "sha256": "632438e9da240cd8b362d785d8b4a581544b79e6fc3d14edd54cc43cf7410ad4"
+    },
+    {
+      "path": "art/v2/characters/pei.webp",
+      "status": 200,
+      "bytes": 66310,
+      "sha256": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d"
+    },
+    {
+      "path": "art/v2/characters/player.webp",
+      "status": 200,
+      "bytes": 67524,
+      "sha256": "b8080cda6d7a8f4019a55a0a67808e7e6a88834dbc3ad3ba12167517a6c988c4"
+    },
+    {
+      "path": "art/v2/characters/shen.webp",
+      "status": 200,
+      "bytes": 67818,
+      "sha256": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1"
+    },
+    {
+      "path": "art/v2/characters/yan.webp",
+      "status": 200,
+      "bytes": 69326,
+      "sha256": "82cc6f98bded838b6b8a59d1d27ba123fdec70c1a0043dd4bf6ea236a65c2e2f"
+    },
+    {
+      "path": "art/v2/enemies/puppet.webp",
+      "status": 200,
+      "bytes": 81374,
+      "sha256": "8fabb419720ae44a19e9dedbda32861a0af42ba50dc11803b3bffc1135e6852b"
+    },
+    {
+      "path": "art/v2/enemies/sentinel.webp",
+      "status": 200,
+      "bytes": 91306,
+      "sha256": "a832fcb94f72651d3ccf0c19e89240932850e04fb89200d427be859c2f938602"
+    },
+    {
+      "path": "art/v2/enemies/serpent.webp",
+      "status": 200,
+      "bytes": 101624,
+      "sha256": "cd981a2a17c1c9399a1bd6efd0eeb4653e0ce7eeb268985803542defce4652a7"
+    },
+    {
+      "path": "art/v2/enemies/shadow.webp",
+      "status": 200,
+      "bytes": 100854,
+      "sha256": "8b8223af8135263b02658e6d995c672f227693b603df8d593fbd9da7bac244e2"
+    },
+    {
+      "path": "art/v2/enemies/trial_gate.webp",
+      "status": 200,
+      "bytes": 110472,
+      "sha256": "a588999c5f907885722d614796ce177911f880eda2cedf4dcd4f3ae263e184f5"
+    },
+    {
+      "path": "art/v2/enemies/trial_heart.webp",
+      "status": 200,
+      "bytes": 90838,
+      "sha256": "d649dc3e9593790fe6e772344ed1bb202e4e495eecb4859d3c15a8be2a418044"
+    },
+    {
+      "path": "art/v2/enemies/trial_thunder.webp",
+      "status": 200,
+      "bytes": 102712,
+      "sha256": "728b50ee566e7a7e92a2b729117c70330fd43b66faae6a0b23fa5c8862883686"
+    },
+    {
+      "path": "art/v2/enemies/warden.webp",
+      "status": 200,
+      "bytes": 91860,
+      "sha256": "6efee13b8ecd07ae9d3569645c9654b0d681e3fcc96fc52ed01d096d6813f351"
+    },
+    {
+      "path": "art/v2/enemies/wolf.webp",
+      "status": 200,
+      "bytes": 84626,
+      "sha256": "95ed2843e926bbce543da559a6a282d3e13f4c5c5ff2630a4402aaec7db9de58"
+    },
+    {
+      "path": "art/v2/scenes/cave-meditation.webp",
+      "status": 200,
+      "bytes": 297424,
+      "sha256": "cc59bccfd3a42cdf688acdfd606ebe92d6e8d812eb08202207aaac1b145eeb9e"
+    },
+    {
+      "path": "art/v2/scenes/cave.webp",
+      "status": 200,
+      "bytes": 351730,
+      "sha256": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd"
+    },
+    {
+      "path": "art/v2/scenes/market.webp",
+      "status": 200,
+      "bytes": 362374,
+      "sha256": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15"
+    },
+    {
+      "path": "art/v2/scenes/opening.webp",
+      "status": 200,
+      "bytes": 287184,
+      "sha256": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a"
+    },
+    {
+      "path": "art/v2/scenes/secret.webp",
+      "status": 200,
+      "bytes": 359330,
+      "sha256": "bb9e1bda68dbd3ecd861446f7b19982051a9749c20b0cf82ec17f4e9586f997f"
+    },
+    {
+      "path": "art/v2/scenes/sect.webp",
+      "status": 200,
+      "bytes": 357912,
+      "sha256": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6"
+    },
+    {
+      "path": "art/v2/scenes/terrace-opened.webp",
+      "status": 200,
+      "bytes": 310812,
+      "sha256": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431"
+    },
+    {
+      "path": "art/v2/scenes/terrace-storm.webp",
+      "status": 200,
+      "bytes": 302660,
+      "sha256": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1"
+    },
+    {
+      "path": "art/v2/scenes/terrace.webp",
+      "status": 200,
+      "bytes": 311830,
+      "sha256": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9"
+    },
+    {
+      "path": "art/v2/scenes/wilderness.webp",
+      "status": 200,
+      "bytes": 365578,
+      "sha256": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10"
+    },
+    {
+      "path": "art/v2/ui/meditation-ink.webp",
+      "status": 200,
+      "bytes": 96402,
+      "sha256": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b"
+    },
+    {
+      "path": "art/v2/ui/mountain-wash-v1.webp",
+      "status": 200,
+      "bytes": 56046,
+      "sha256": "2f30503f639d97ca657520cc8b762121a86bc5dc3971a9ce7b8afb65c0a82aa2"
+    },
+    {
+      "path": "art/v2/ui/xuan-paper-v1.webp",
+      "status": 200,
+      "bytes": 9894,
+      "sha256": "c86afbc2f9a330aa61b1f110a9afab0db9bc4f213383ec78d19b4f7d95055f05"
+    },
+    {
+      "path": "art/v2/ui/xuan-paper-v2.webp",
+      "status": 200,
+      "bytes": 8344,
+      "sha256": "20ec5b471788120a3eda6bfd7486d9f85dc8e8eacdcf67b40a3c2c263f02d6a0"
+    },
+    {
+      "path": "assets/index-BDSbRU9i.css",
+      "status": 200,
+      "bytes": 250772,
+      "sha256": "c7f3e2d35dd8cbed073d672dc87e5460cd393b71d00e3507921b70bb7ddbb581"
+    },
+    {
+      "path": "assets/index-CoYoJ529.js",
+      "status": 200,
+      "bytes": 761010,
+      "sha256": "79259fbfac99659d82ade99bf1a1491d3704777528b6fc83b7399f7077447769"
+    },
+    {
+      "path": "demo-nodes/battle-sword.json",
+      "status": 200,
+      "bytes": 2568,
+      "sha256": "ec5be34b47848a121d0b050ce186e02d1185d39e1ae0622781404d8030757627"
+    },
+    {
+      "path": "demo-nodes/battle-talisman.json",
+      "status": 200,
+      "bytes": 2670,
+      "sha256": "b912a06d46db35b07dfae595666840ac0b751c0838323ef5e0d9817b13031c18"
+    },
+    {
+      "path": "demo-nodes/causal-help.json",
+      "status": 200,
+      "bytes": 4863,
+      "sha256": "b16f203435e53b04190c635edb9b4e59d65d937694ed45158f6d773eba80b539"
+    },
+    {
+      "path": "demo-nodes/causal-trade.json",
+      "status": 200,
+      "bytes": 5625,
+      "sha256": "07378941bff9a2f58da5e6a4029def8f57f76da622867a9f274071e8c32a2ffd"
+    },
+    {
+      "path": "demo-nodes/ending-sword.json",
+      "status": 200,
+      "bytes": 21314,
+      "sha256": "651f9b8f7f9e87fc8745d88a4e7cceab98f23489127f1150879a346031af8643"
+    },
+    {
+      "path": "demo-nodes/ending-talisman.json",
+      "status": 200,
+      "bytes": 20891,
+      "sha256": "c690d10dde22c77f91425d7a16bb5816b5fdc361ce0e6ee981aa0da823440a43"
+    },
+    {
+      "path": "demo-nodes/manifest.json",
+      "status": 200,
+      "bytes": 3522,
+      "sha256": "be41ed1ceb31316334a4d14cadd4e05250b20412c85fc68dc1c333d9a7444cd0"
+    },
+    {
+      "path": "demo-nodes/opening.json",
+      "status": 200,
+      "bytes": 1304,
+      "sha256": "c5a5978d7c6412af2e1d22cbd6bc06c287771ed7b7fe4415ddf6390f18ea7106"
+    },
+    {
+      "path": "demo-nodes/trial-sword.json",
+      "status": 200,
+      "bytes": 18339,
+      "sha256": "183e8e4a5bfd02c1a06bbbcd2bf7a28bb103d80997dbd8314b2b589584e4f230"
+    },
+    {
+      "path": "demo-nodes/trial-talisman.json",
+      "status": 200,
+      "bytes": 15257,
+      "sha256": "bd67e09ef562a7e0dd6ed7d32920b35d4780babbb06af36102085d72c61aa519"
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 569,
+      "sha256": "ca078ae10923ec7e36137569054d3f8bed541530e17d68bd4b16b92287fe0c14"
+    }
+  ],
+  "count": 56,
+  "bytes": 7345107,
+  "allMatch": true
+}

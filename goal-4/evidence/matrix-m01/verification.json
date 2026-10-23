@@ -1,8 +1,8 @@
 {
   "task": "MATRIX-M01",
   "date": "2026-10-23",
-  "status": "Checks complete; implementation commit/archive/preview closure pending",
-  "implementationCommit": null,
+  "status": "MATRIX-M01 current engineering cells locally delivered; full Matrix/Art/Goal remain incomplete",
+  "implementationCommit": "ef3357b948f51300a31fbbd6e97d58f936b41e58",
   "branch": "codex/goal-4-online-recovery",
   "sourceDigest": "3fd9e7558e8e6e9b487dd6cde78ea8cd9a1ab292b7dae541dc46eb51d2b0d0c0",
   "source": {
@@ -130,12 +130,17 @@
   ],
   "fullMatrixStillOpen": true,
   "latestFeedback": "All internal gameplay interactions/TA/motion still rejected as workbench-like. Original words and eight-page object direction saved; ART01 must be real alchemy implementation next, not more backend-first work or a mockup.",
-  "nextTask": "ART01 alchemy objects/interaction/TA on formal Game",
+  "nextTask": "ART01 formal alchemy interaction/TA per latest user feedback; no more backend-first M02 next",
   "cleanFinalCandidate": false,
   "limits": [
     "Fixed1440x900 Chromium only; no compatibility/performance/environment matrix",
     "Only M01 lifecycle cells completed,39 UI and9 IDB baseline files still outside current selected suite",
     "Original native historical startup cause remains unknown; these gates do not prove that cause",
     "No human/overall-art/long-term balance acceptance; final full matrices/candidate/security review remain"
-  ]
+  ],
+  "identityProof": "goal-4/evidence/matrix-m01/identity-proof.json",
+  "httpProof": "goal-4/evidence/matrix-m01/http-proof.json",
+  "userProgress": "goal-4/evidence/matrix-m01/user-progress-proof.json",
+  "preview": "http://127.0.0.1:56884/",
+  "adversarialReview": "Passed within0021 M01 lifecycle scope; full212/208 current selected scope at069 followed by final text-only proof and6focused checks. Not a claim of full matrix or game/art/user acceptance."
 }

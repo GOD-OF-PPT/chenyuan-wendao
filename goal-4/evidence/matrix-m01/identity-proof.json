@@ -1,0 +1,18 @@
+{
+  "implementationCommit": "ef3357b948f51300a31fbbd6e97d58f936b41e58",
+  "sourceDigest": "3fd9e7558e8e6e9b487dd6cde78ea8cd9a1ab292b7dae541dc46eb51d2b0d0c0",
+  "runtimeSources": 194,
+  "allArchiveBytesEqualFinalSources": true,
+  "archive": "artifacts/goal-4/matrix-m01/implementation-runtime-source.tar",
+  "archiveSha256": "329a63f6bb2faec5c2ecd49fb669e1adb6e49f672f52c63f5a710a3ff19bc039",
+  "buildMetadata": {
+    "head": "abc5ccc70ed41d215fcef7851f8d259bc4d0d006",
+    "source": "abc5ccc70ed41d215fcef7851f8d259bc4d0d006",
+    "tree": "82da27adbac5b585f3e1a4355fe46f24ee1857f8",
+    "dirty": true,
+    "node": "v24.19.0",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "cleanCandidate": false
+}

@@ -1,0 +1,10 @@
+{
+  "before": "artifacts/goal-4/matrix-m01/user-before-ax.txt",
+  "after": "artifacts/goal-4/matrix-m01/user-after-ready-ax.txt",
+  "beforeSha256": "8d42855f3a85d61fb39cb927b10836b7df9bc907c4fb34e131bb3bf9aaa0b0d4",
+  "afterSha256": "5a842bdd4fb08be74cf0e01a6c713976c214dd87f406f6f213e3cc8d91461b14",
+  "normalization": "Only numeric AX node IDs/indentation/focus footer",
+  "allVisibleSemanticsEqual": true,
+  "visibleProgress": "顾长青/凡人/尚未择法/5修为/40灵石/月1/60HP/20MP/听雨洞府/待安排/已保存",
+  "actions": "Read AX, intentional reload of updated static loopback while no active activity, read AX; no Game command/import/restore/reset/user-save tests. No compatibility/pixel acceptance from IAB."
+}
