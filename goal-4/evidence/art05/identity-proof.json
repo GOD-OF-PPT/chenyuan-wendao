@@ -1,0 +1,22 @@
+{
+  "implementationCommit": "6e04675b0a922cf668aaba819fd6f5fec38746ff",
+  "sourceDigest": "67ed71b9985f001fe959bb9932c7a2235cf94db58363a6226e9645e87fc9e4e5",
+  "runtimeFiles": 226,
+  "archive": "artifacts/goal-4/art05/runtime-6e04675.tar",
+  "archiveSHA256": "95abd2021ee5436b6add11e4468fc6ae211d5a820f2e1af4e5c3499ee84ee7ee",
+  "archiveMatchesTestedSource": true,
+  "postcommitBuildPending": false,
+  "postcommitSource": {
+    "head": "6e04675b0a922cf668aaba819fd6f5fec38746ff",
+    "source": "6e04675b0a922cf668aaba819fd6f5fec38746ff",
+    "tree": "79bc6042e731a8851b98935db41d170ebbae5f94",
+    "dirty": true,
+    "node": "v24.19.0",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "postcommitPayloadMatchesTested": true,
+  "payloadFiles": 61,
+  "payloadBytes": 7680104,
+  "frozen": "artifacts/goal-4/art05/frozen-source4/web"
+}

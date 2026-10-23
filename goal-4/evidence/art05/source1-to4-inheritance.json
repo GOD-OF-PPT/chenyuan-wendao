@@ -1,0 +1,39 @@
+{
+  "originalSource": "28477b1db4f291bc1f5fc8f032ac558bcc3c66130f4d0e93143a1a3ef07abaaa",
+  "currentSource": "67ed71b9985f001fe959bb9932c7a2235cf94db58363a6226e9645e87fc9e4e5",
+  "runtimeFiles": 226,
+  "unchanged": 223,
+  "changed": [
+    "web/src/EncounterTable.vue",
+    "web/src/ResponseTable.vue",
+    "web/src/narrative-objects.css"
+  ],
+  "all59CoreInputsUnchanged": true,
+  "coreActual": {
+    "source": "source1",
+    "file": "core-source1.log",
+    "count": 790
+  },
+  "coreCurrentUnique": 790,
+  "coreInheritedUnchangedDependencies": 781,
+  "currentConfiguration9AlreadyIncluded": {
+    "file": "configuration-source4.log",
+    "report": "configuration-source4.json"
+  },
+  "nativeActual": {
+    "file": "native-source1.json",
+    "topLevelCases": 10,
+    "scope": "milestone repository/Store/upgrade selected3 files; not full208"
+  },
+  "nativeHeadAndPostHashesExact": {
+    "web/persistence-tests/milestone.spec.ts": "2eb68f13d6a97dc335b2aa1dfd3c4949a42dfed17f059206ed3f8abdc694fc8e",
+    "web/persistence-tests/milestone-store.spec.ts": "6633d0fcace405dcfc7761b72f30b7743a7eb98d4e92fcda35c5da1e92db9f58",
+    "web/persistence-tests/milestone-upgrade.spec.ts": "90599bf879fff23faac79e388d90f027ecc2d0541648f8d75b32c37a10b34047",
+    "web/persistence-tests/milestone-support.ts": "b37002abfd5f0f39edffe12c31abf1eba3635f6bc31acbc40cfc89d41873051e",
+    "web/persistence-tests/support.ts": "e2963cdd695a0768211f9c8287564646f56802ccb70c4162445519a600210872",
+    "web/persistence-tests/harness.html": "b1d33612637f9f26e94f8982866e28620a57813db1f47e6c5d19a7bfd098b66b",
+    "web/persistence-tests/activity-store-harness.ts": "7e43ae62628d321f9b655c329f8a8e888bf0a7c0b228aec40a6806ff864a4e56"
+  },
+  "nativeEntry": "setupPersistence -> persistence-tests/harness.html -> full-persistence/engine/queries and activity-store-harness -> store; none of changed3 SFC/CSS imported",
+  "notClaimingCurrent790Or208Rerun": true
+}

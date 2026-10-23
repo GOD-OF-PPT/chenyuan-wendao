@@ -1,0 +1,88 @@
+{
+  "task": "Goal4 ART05",
+  "completedLocalDate": "2026-10-24",
+  "implementationCommit": "6e04675b0a922cf668aaba819fd6f5fec38746ff",
+  "branch": "codex/goal-4-online-recovery",
+  "sourceDigest": "67ed71b9985f001fe959bb9932c7a2235cf94db58363a6226e9645e87fc9e4e5",
+  "status": "local engineering scope delivered; overall goal active and human art acceptance open",
+  "ui": {
+    "unique": 83,
+    "new": 14,
+    "relatedOld": 69,
+    "files": 7,
+    "execution": "82 passed in source4 round plus current A13 leaf1 after exact locator correction; NOT one83-pass run",
+    "round": "artifacts/goal-4/art05/ui-final-2.json",
+    "leaf": "artifacts/goal-4/art05/ui-leaf-a13.json",
+    "coverage": "coverage-final.json",
+    "skipped": 0,
+    "retried": 0,
+    "flaky": 0,
+    "declaredAll": 283,
+    "notExecutedThisTask": 200
+  },
+  "rules": {
+    "unique": 790,
+    "originalFullActual": "artifacts/goal-4/art05/core-source1.log",
+    "files": 59,
+    "inheritedUnchangedDependencies": 781,
+    "currentConfiguration9AlreadyIncluded": "artifacts/goal-4/art05/configuration-source4.json",
+    "proof": "source1-to4-inheritance.json"
+  },
+  "native": {
+    "selected": 10,
+    "files": 3,
+    "report": "artifacts/goal-4/art05/native-source1.json",
+    "inheritance": "Unchanged chosen test/harness/Store/Repository rules; changed3 SFC/CSS not imported",
+    "full208NotRerun": true
+  },
+  "assets": {
+    "currentPositive": "artifacts/goal-4/art05/assets-source4-positive.log",
+    "currentNarrative20": "artifacts/goal-4/art05/assets-source4-narrative-tests.log",
+    "originalFull230": "artifacts/goal-4/art05/assets-source2-negative.log",
+    "source4Metadata": "artifacts/goal-4/art05/assets-source4-verification.json",
+    "inheritedOld210": 210,
+    "currentNew20": 20,
+    "currentNativeBytes": 27057,
+    "cap": 45000,
+    "newBitmaps": 0,
+    "verifiedImageFiles": 102,
+    "productionAssets": 82,
+    "notClaimingSource4Full230Run": true
+  },
+  "typeAndBuild": {
+    "rootTypecheck": "artifacts/goal-4/art05/root-typecheck.log",
+    "VueBuild": "artifacts/goal-4/art05/build-source4.log",
+    "postcommit": "artifacts/goal-4/art05/build-postcommit.log"
+  },
+  "timing": "timing-observations.json",
+  "visual": "visual-review.json",
+  "identity": {
+    "runtimeSources": 226,
+    "payloadFiles": 61,
+    "payloadBytes": 7680104,
+    "archiveEqual": true,
+    "postcommitEqual": true,
+    "actualHTTPAllEqual": true,
+    "proof": "identity-proof.json"
+  },
+  "userProgress": "user-progress-proof.json",
+  "protected13": "protected13.json",
+  "reviews": [
+    "review.md",
+    "final-code-review.md",
+    "final-art-review.md",
+    "test-review.md"
+  ],
+  "failuresRetained": "attempts.json",
+  "next": "CHECK-ART-02",
+  "uncompleted": [
+    "CHECK-ART-02",
+    "ART06修行/目标",
+    "原MATRIX-M02/M03及后段完整矩阵",
+    "性能/兼容最后",
+    "干净同源最终包",
+    "最大C端/代码/安全评审",
+    "整体游戏感/美术/长期平衡与真实用户复验"
+  ],
+  "scopeLimits": "Fixed1440x900 single Chromium. No compatibility/environment/performance matrix, push/PR/merge/public deploy/permission change. No user Game command/import/restore/reset/save tests."
+}

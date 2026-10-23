@@ -1,0 +1,87 @@
+{
+  "sourceDigest": "67ed71b9985f001fe959bb9932c7a2235cf94db58363a6226e9645e87fc9e4e5",
+  "reviewedFresh": 6,
+  "generated": 170,
+  "otherNotPixelReviewed": 164,
+  "images": [
+    {
+      "original": "artifacts/goal-4/art05/ui-final-2-results/narrative-objects-ART05-A4-bfcb9-s-the-exact-whole-Game-once-chromium/visit-real-saved.png",
+      "copy": "artifacts/goal-4/art05/visual/final-visit-saved.jpg",
+      "size": [
+        1440,
+        900
+      ],
+      "originalSHA256": "a92ef26efdcfbba83ba1fa523af33341e18fa004f3be575efde2afd48fbd0b6c",
+      "copySHA256": "6a53f1f7df83ccc2f3823e1118f56a50141c7ae03e0d4fa5b7688bf0f23d35e6",
+      "lossyQuality": 68,
+      "reviewed": true,
+      "reviewer": "root actual pixels"
+    },
+    {
+      "original": "artifacts/goal-4/art05/ui-final-2-results/stage-r4-one-response-wait-6072d-lected-outcome-exactly-once-chromium/response-real-saved.png",
+      "copy": "artifacts/goal-4/art05/visual/final-response-saved.jpg",
+      "size": [
+        1440,
+        900
+      ],
+      "originalSHA256": "73a7be8256862f34e9a831a800c84e33e99ecbf19f59cb5474c540a90dda156e",
+      "copySHA256": "6a3442f0489838b016fa28c390b853f5b1a267aff98f8d2f26ff1c2cfd6dbb6c",
+      "lossyQuality": 68,
+      "reviewed": true,
+      "reviewer": "root actual pixels"
+    },
+    {
+      "original": "artifacts/goal-4/art05/ui-final-2-results/narrative-objects-ART05-A1-3fd47-ir-first-actual-result-only-chromium/response-cycle-quota.png",
+      "copy": "artifacts/goal-4/art05/visual/final-response-save-error.jpg",
+      "size": [
+        1440,
+        900
+      ],
+      "originalSHA256": "6c16301c4481c3e90414d88eb8c95b0ace058315dc0f04b57fcb8d6b8a24f606",
+      "copySHA256": "aee616877f90c020c5d389a18fc63ad4b81e85a9fb3c26fb64a1881178d75b61",
+      "lossyQuality": 68,
+      "reviewed": true,
+      "reviewer": "root actual pixels"
+    },
+    {
+      "original": "artifacts/goal-4/art05/ui-final-2-results/narrative-objects-ART05-A9-e71d1-parately-confirmed-response-chromium/response-acceptance-quota-confirmation.png",
+      "copy": "artifacts/goal-4/art05/visual/final-original-intent-error.jpg",
+      "size": [
+        1440,
+        900
+      ],
+      "originalSHA256": "73cc61bdf5395963b96b688232b7bf604bb7f58120b1ca650a370b84d2d4a97a",
+      "copySHA256": "b9c84285a9355b1250b185236c22efa3bfbf1f672917158afe2843c3e1295331",
+      "lossyQuality": 68,
+      "reviewed": true,
+      "reviewer": "root actual pixels"
+    },
+    {
+      "original": "artifacts/goal-4/art05/ui-final-2-results/narrative-objects-ART05-A6-b2f55-s-the-exact-whole-Game-once-chromium/ending-real-saved.png",
+      "copy": "artifacts/goal-4/art05/visual/source4-ending-real-saved.jpg",
+      "originalSHA256": "281b394ebaa423eb201c86192277792bc44199d8ea6a712567f04d57931d165f",
+      "copySHA256": "3e7b53d9c097b4c6fad86df2eced9da69bcfacb2bfc3f2d8e1b6223276a23c57",
+      "size": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "reviewed": true,
+      "reviewer": "art02_battle actual pixels"
+    },
+    {
+      "original": "artifacts/goal-4/art05/ui-final-2-results/narrative-objects-ART05-A5-652eb-s-the-exact-whole-Game-once-chromium/response-real-running.png",
+      "copy": "artifacts/goal-4/art05/visual/source4-response-real-running.jpg",
+      "originalSHA256": "8647e73709fa0354bd162974080bd9e7f322de83e3cb5c16bf05c93def0acb9b",
+      "copySHA256": "620b358199e1c09df5b01a1b03cb65408ecb15bf86deab60357a0e20116ed0e9",
+      "size": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "reviewed": true,
+      "reviewer": "art02_battle actual pixels"
+    }
+  ],
+  "limits": "Only six current representatives actually viewed, originals preserved. Earlier source1/2 red/readonly views separately retained. No all-frame, full art, long balance or human acceptance claim; user-preview AX screenshots excluded from these six."
+}
