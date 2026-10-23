@@ -1,0 +1,44 @@
+{
+  "sourceDigest": "214415c13b30f8c0142005dd1668f675091ad6f0b581aba4097e78c002cefe86",
+  "freshFinalRepresentatives": 4,
+  "generatedFinalPNGs": 350,
+  "frames": [
+    {
+      "scenario": "refining",
+      "png": "artifacts/goal-4/art01/ui-final-results/alchemy-workshop-furnace-p-d567a-the-cumulative-budget-stops-chromium/alchemy-refining.png",
+      "pngSHA256": "724f7fdc9a65163a6b9c2e599eb3772182e0199e32672fda4288e8e13a2f5fcb",
+      "preview": "artifacts/goal-4/art01/views/refining.jpg",
+      "previewSHA256": "8b707627fb3ed4eb5e7e48c70b49b026298e85fcf05edbd659befc2b202801cc",
+      "previewFormat": "original-size 1440x900 JPEG quality68, lossy; PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "scenario": "settings",
+      "png": "artifacts/goal-4/art01/ui-final-results/alchemy-workshop-complete--c7f28-arting-travel-or-production-chromium/alchemy-complete-settings.png",
+      "pngSHA256": "67ce12dc56ea15477cb259850b74351cf7c1c56e308f1732df9cef503d05f8b1",
+      "preview": "artifacts/goal-4/art01/views/settings.jpg",
+      "previewSHA256": "577ba6691f98761a96c6e1e991a5025740a1b131670d472382411f57696b1bfd",
+      "previewFormat": "original-size 1440x900 JPEG quality68, lossy; PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "scenario": "saved",
+      "png": "artifacts/goal-4/art01/ui-final-results/alchemy-workshop-a-quota-f-aeeb6-s-one-pill-with-one-arrival-chromium/alchemy-retried-once.png",
+      "pngSHA256": "59fa05ee3aa6466701ebc450562166033ab37086b6c4de18c07a77abcd75f701",
+      "preview": "artifacts/goal-4/art01/views/saved.jpg",
+      "previewSHA256": "b909bbb99dcf7bfb19a1d8f73e8dc29803c2f62f1bf1317f4058e597925ad10f",
+      "previewFormat": "original-size 1440x900 JPEG quality68, lossy; PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "scenario": "error-four-materials",
+      "png": "artifacts/goal-4/art01/ui-final-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/failed-four-materials.png",
+      "pngSHA256": "a7ac150342a28e2c13d8615c015a6e1284ec9889717aab21058be4292efa79da",
+      "preview": "artifacts/goal-4/art01/views/error-four-materials.jpg",
+      "previewSHA256": "c45fbb3483703602655acd032eaf4ef0e202c607eb05617cf97d853f6ccc1115",
+      "previewFormat": "original-size 1440x900 JPEG quality68, lossy; PNG retained",
+      "actuallyViewed": true
+    }
+  ],
+  "scope": "Four representative final frames actually viewed. Remaining final generated PNGs are not pixel-reviewed; no overall player/art acceptance."
+}

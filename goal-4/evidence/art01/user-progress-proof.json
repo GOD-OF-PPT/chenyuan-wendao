@@ -1,0 +1,29 @@
+{
+  "semanticAXExactAfterNodeAndFocusNormalization": true,
+  "visibleProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "school": "尚未择法",
+    "xp": "5/10",
+    "stones": 40,
+    "months": 1,
+    "hp": "60/60",
+    "mp": "20/20",
+    "location": "听雨洞府",
+    "activity": "待安排",
+    "saved": true
+  },
+  "actions": [
+    "read-only AX before",
+    "read-only AX inactive before reload",
+    "reload same local URL after exact source update",
+    "read-only AX after"
+  ],
+  "noGameCommandImportRestoreResetOrUserSaveTesting": true,
+  "rawSHA256": {
+    "user-before.txt": "8d42855f3a85d61fb39cb927b10836b7df9bc907c4fb34e131bb3bf9aaa0b0d4",
+    "user-pre-reload.txt": "8d42855f3a85d61fb39cb927b10836b7df9bc907c4fb34e131bb3bf9aaa0b0d4",
+    "user-after.txt": "871e4933c5814b5238cc14297904ebcc6469aa078e30caa9791a8d6ca7f98de9"
+  },
+  "scope": "Visible progress and absence of agent Game operations only; not a byte comparison of the user database."
+}
