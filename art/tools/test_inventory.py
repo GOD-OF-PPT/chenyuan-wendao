@@ -1,6 +1,6 @@
 import copy,hashlib,json,os,shutil,tempfile,unittest
 from pathlib import Path
-from check_inventory import validate,SCOPES
+from check_inventory import validate,validate_alchemy_workshop,SCOPES
 ROOT=Path(__file__).resolve().parents[2]
 
 class InventoryTests(unittest.TestCase):
@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  workshop=ROOT/'art/redesign/alchemy-workshop.json'
+  if workshop.exists():
+   data=json.loads(workshop.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+data['rights']['evidenceReferences']);files.update(ROOT/row['path'] for row in data['files'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -128,7 +131,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0))
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0))
  def test_idle_ui_requires_its_source_ledger(self):
   (self.root/'art/redesign/idle-cultivation.json').unlink();self.rejected()
  def test_idle_ui_budget_cannot_be_raised(self):
@@ -396,5 +399,72 @@ class InventoryTests(unittest.TestCase):
   self.write('web/src/ActivityHistory.vue','wrong source');self.rejected()
  def test_activity_history_cannot_claim_player_acceptance(self):
   p='art/redesign/activity-history.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
+
+ def workshop(self):return json.loads((self.root/'art/redesign/alchemy-workshop.json').read_text())
+ def reject_workshop(self,manifest):
+  self.write('art/redesign/alchemy-workshop.json',manifest)
+  with self.assertRaises((AssertionError,KeyError,ValueError)):validate_alchemy_workshop(self.root)
+ def workshop_receipt(self,manifest,change):
+  ref=manifest['assets'][0]['receipt'];receipt=json.loads((self.root/ref['path']).read_text());change(receipt);self.write(ref['path'],receipt);ref['sha256']=hashlib.sha256((self.root/ref['path']).read_bytes()).hexdigest()
+ def workshop_image(self,manifest,data):
+  runtime=manifest['assets'][0]['runtime'];p=self.root/runtime['path'];p.unlink();p.write_bytes(data);runtime['bytes']=len(data);runtime['sha256']=hashlib.sha256(data).hexdigest()
+  self.workshop_receipt(manifest,lambda receipt:receipt.update(runtime=copy.deepcopy(runtime)))
+ def workshop_code(self,manifest,path,code):
+  self.write(path,code)
+  for row in manifest['files']:
+   if row['path']==path:row.update(bytes=len(code.encode()),sha256=hashlib.sha256(code.encode()).hexdigest())
+ def test_workshop_records_one_dormant_furnace_and_all_additive_code(self):
+  files,production,total=validate_alchemy_workshop(self.root);self.assertEqual(production,1);self.assertEqual(len(files),2);self.assertGreater(total,0);self.assertLessEqual(total,22000)
+ def test_workshop_manifest_cannot_be_removed(self):
+  (self.root/'art/redesign/alchemy-workshop.json').unlink()
+  with self.assertRaises(AssertionError):validate_alchemy_workshop(self.root)
+ def test_workshop_budgets_and_asset_slot_are_not_expandable(self):
+  original=self.workshop()
+  for key in ['assets','maxRuntimeBytes','runtimeWidth','runtimeHeight','maxNativeBytes']:
+   m=copy.deepcopy(original);m['budgets'][key]+=1;self.reject_workshop(m)
+ def test_workshop_extra_asset_or_omitted_helper_is_not_outside_the_budget(self):
+  m=self.workshop();m['assets'].append(copy.deepcopy(m['assets'][0]));self.reject_workshop(m)
+  m=self.workshop();m['assets']=m['assets'][:1];m['files']=m['files'][:-1];self.reject_workshop(m)
+ def test_workshop_cannot_claim_user_visual_acceptance(self):
+  m=self.workshop();m['userAcceptance']=True;self.reject_workshop(m)
+ def test_workshop_native_identity_cannot_silently_change(self):
+  m=self.workshop();self.write(m['files'][0]['path'],'unrecorded workshop');self.reject_workshop(m)
+ def test_workshop_actual_code_cap_survives_hash_recalculation(self):
+  m=self.workshop();path=m['files'][0]['path'];self.workshop_code(m,path,(self.root/path).read_text()+' '*22001);self.reject_workshop(m)
+ def test_workshop_original_hash_is_bound(self):
+  m=self.workshop();m['assets'][0]['source']['sha256']='0'*64;self.reject_workshop(m)
+ def test_workshop_pixel_bytes_cannot_change_behind_a_header(self):
+  m=self.workshop();p=self.root/m['assets'][0]['runtime']['path'];data=bytearray(p.read_bytes());data[-1]^=1;p.unlink();p.write_bytes(data);self.reject_workshop(m)
+ def test_workshop_opaque_runtime_cannot_be_claimed_transparent_after_rehash(self):
+  m=self.workshop();runtime=m['assets'][0]['runtime'];data=bytearray((self.root/runtime['path']).read_bytes());self.assertEqual(data[12:16],b'VP8X');data[20]&=~16;runtime['alpha']=False;self.workshop_image(m,data);self.reject_workshop(m)
+ def test_workshop_runtime_must_remain_exactly512_even_after_header_and_receipt_rehash(self):
+  m=self.workshop();runtime=m['assets'][0]['runtime'];data=bytearray((self.root/runtime['path']).read_bytes());self.assertEqual(data[12:16],b'VP8X');data[24:27]=(512).to_bytes(3,'little');runtime['dimensions']['width']=513;self.workshop_image(m,data);self.reject_workshop(m)
+ def test_workshop_actual_image_bytes_cannot_exceed_cap_after_rehash(self):
+  m=self.workshop();runtime=m['assets'][0]['runtime'];data=bytearray((self.root/runtime['path']).read_bytes());data.extend(b'\0'*(160001-len(data)));data[4:8]=(len(data)-8).to_bytes(4,'little');self.workshop_image(m,data);self.reject_workshop(m)
+ def test_workshop_receipt_cannot_bind_another_original_after_rehash(self):
+  m=self.workshop();self.workshop_receipt(m,lambda receipt:receipt.update(sourceSHA256='0'*64));self.reject_workshop(m)
+ def test_workshop_prompt_cannot_be_relabelled(self):
+  m=self.workshop();path='art/redesign/alchemy-workshop/prompts.json';prompt=json.loads((self.root/path).read_text());prompt['prompt']='different object';self.write(path,prompt);self.reject_workshop(m)
+ def test_workshop_receipt_identity_cannot_be_dropped(self):
+  m=self.workshop();m['assets'][0]['receipt']['sha256']='0'*64;self.reject_workshop(m)
+ def test_workshop_export_settings_are_fixed_even_after_receipt_rehash(self):
+  m=self.workshop();self.workshop_receipt(m,lambda receipt:receipt['encoding'].__setitem__(2,'99'));self.reject_workshop(m)
+ def test_workshop_deterministic_export_cannot_be_assumed(self):
+  m=self.workshop();self.workshop_receipt(m,lambda receipt:receipt['exportVerification'].update(verified=False));self.reject_workshop(m)
+ def test_workshop_reference_image_cannot_change_after_receipt_rehash(self):
+  m=self.workshop();self.workshop_receipt(m,lambda receipt:receipt['referenceImages'][0].update(sha256='0'*64));self.reject_workshop(m)
+ def test_workshop_alpha_proof_cannot_describe_a_fully_opaque_bitmap(self):
+  m=self.workshop();self.workshop_receipt(m,lambda receipt:receipt['runtimeAlphaProof'].update(min=255,transparentPixels=0));self.reject_workshop(m)
+ def test_workshop_alpha_proof_pixel_total_must_match_the_image(self):
+  m=self.workshop();self.workshop_receipt(m,lambda receipt:receipt['runtimeAlphaProof'].update(intermediatePixels=receipt['runtimeAlphaProof']['intermediatePixels']+1));self.reject_workshop(m)
+ def test_workshop_baked_effects_cannot_pass_the_dormant_object_receipt(self):
+  m=self.workshop();self.workshop_receipt(m,lambda receipt:receipt['review'].update(smokeBaked=True));self.reject_workshop(m)
+ def test_workshop_actual_ui_consumer_is_required(self):
+  m=self.workshop();path=m['consumer'];self.write(path,(self.root/path).read_text().replace('<AlchemyWorkshop ','<RemovedWorkshop '));self.reject_workshop(m)
+ def test_workshop_runtime_consumer_cannot_disappear_after_code_rehash(self):
+  m=self.workshop();path='web/src/AlchemyWorkshop.vue';text=(self.root/path).read_text().replace(m['assets'][0]['runtime']['path'].removeprefix('web/public/'),'art/not-the-furnace.webp');self.workshop_code(m,path,text);self.reject_workshop(m)
+ def test_workshop_style_and_source_references_cannot_be_unbound(self):
+  m=self.workshop();m['styleConsumer']='web/src/does-not-exist.ts';self.reject_workshop(m)
+  m=self.workshop();m['sourceReferences']=['../outside-contract.md'];self.reject_workshop(m)
 
 if __name__=='__main__':unittest.main()

@@ -47,6 +47,86 @@ def image_info(data, suffix):
     raise AssertionError('Unsupported recorded image format: ' + suffix)
 
 
+def validate_alchemy_workshop(root, image_reader=image_info):
+    """Bind ART01's one dormant furnace and its additive code to recorded facts."""
+    ledger = root / 'art/redesign/alchemy-workshop.json'
+    native = ['web/src/AlchemyWorkshop.vue', 'web/src/alchemy-workshop.css', 'web/src/alchemy-feedback.ts']
+    if not ledger.exists():
+        assert not any((root / path).exists() for path in native), 'Unrecorded alchemy workshop code'
+        return set(), 0, 0
+    manifest = json.loads(ledger.read_text())
+    assert manifest['format'] == 'chenyuan-alchemy-workshop' and manifest['version'] == 1
+    assert manifest['budgets'] == dict(assets=1, maxRuntimeBytes=160000, runtimeWidth=512, runtimeHeight=512, maxNativeBytes=22000), 'Alchemy workshop budget changed'
+    assert manifest['userAcceptance'] is False, 'Alchemy workshop is not user acceptance'
+    rights = manifest['rights']
+    assert rights['productionUseApproved'] is True and rights['userAcceptance'] is False and rights['distributionLicense'] is None
+
+    def local(path):
+        value = (root / path).resolve()
+        assert value.is_relative_to(root.resolve()) and value.is_file(), 'Missing or external alchemy workshop file'
+        return value
+
+    for path in manifest['sourceReferences'] + rights['evidenceReferences']:
+        local(path)
+    assert 'docs/decisions/0022-alchemy-object-art-contract.md' in manifest['sourceReferences']
+    assert [row['path'] for row in manifest['files']] == native, 'Alchemy workshop code inventory changed'
+    native_bytes = 0
+    for row in manifest['files']:
+        data = local(row['path']).read_bytes()
+        assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], 'Alchemy workshop code identity changed'
+        native_bytes += len(data)
+    assert native_bytes <= 22000, 'Alchemy workshop code budget exceeded'
+    assert len(manifest['assets']) == 1 and manifest['assets'][0]['id'] == 'dormant-furnace', 'Alchemy workshop asset slots changed'
+    asset = manifest['assets'][0]
+    source, runtime = asset['source'], asset['runtime']
+    assert source['path'] == 'art/redesign/alchemy-workshop/furnace-v1.png'
+    assert runtime['path'] == 'web/public/art/v2/workshop/furnace-v1.webp'
+    recorded = set()
+    for item in [source, runtime]:
+        path = local(item['path']); data = path.read_bytes()
+        assert len(data) == item['bytes'] and hashlib.sha256(data).hexdigest() == item['sha256'], 'Alchemy workshop image identity changed'
+        dimensions, alpha, fmt = image_reader(data, path.suffix)
+        assert dimensions == item['dimensions'] and alpha == item['alpha'] is True and fmt == item['format'], 'Alchemy workshop image metadata/alpha mismatch'
+        recorded.add(item['path'])
+    assert runtime['dimensions'] == dict(width=512, height=512), 'Alchemy workshop runtime must be exactly512 square'
+    assert runtime['bytes'] <= 160000, 'Alchemy workshop image budget exceeded'
+    assert source['format'] == 'png' and runtime['format'] == 'webp'
+    assert all(512 <= source['dimensions'][axis] <= 8192 for axis in ['width', 'height']), 'Alchemy workshop original dimensions invalid'
+    prompt_path = 'art/redesign/alchemy-workshop/prompts.json'
+    prompt = json.loads(local(prompt_path).read_text())
+    assert prompt['id'] == 'dormant-furnace' and prompt['transparent_background'] is True and isinstance(prompt['prompt'], str) and prompt['prompt'].strip(), 'Alchemy workshop exact prompt missing'
+    reference_path = 'web/public/art/v2/catalogue/alchemy-v1.webp'
+    references = [dict(path=reference_path, sha256=hashlib.sha256(local(reference_path).read_bytes()).hexdigest())]
+    assert prompt['referenceImages'] == references, 'Alchemy workshop reference image changed'
+    receipt_ref = asset['receipt']
+    assert receipt_ref['path'] == 'art/redesign/alchemy-workshop/receipt.json'
+    receipt_raw = local(receipt_ref['path']).read_bytes()
+    assert hashlib.sha256(receipt_raw).hexdigest() == receipt_ref['sha256'], 'Alchemy workshop receipt identity changed'
+    receipt = json.loads(receipt_raw)
+    assert receipt['id'] == asset['id'] and receipt['tool'] == 'built-in image_gen' and receipt['copiedUnchanged'] is True and receipt['transparentBackgroundRequested'] is True, 'Alchemy workshop generation evidence missing'
+    assert isinstance(receipt['originalToolPath'], str) and receipt['originalToolPath'].startswith('/'), 'Alchemy workshop original tool path missing'
+    assert receipt['savedPath'] == source['path'] and receipt['sourceSHA256'] == source['sha256'] and receipt['sourceBytes'] == source['bytes'] and receipt['sourceDimensions'] == source['dimensions'], 'Alchemy workshop receipt source binding changed'
+    assert receipt['runtime'] == runtime, 'Alchemy workshop receipt runtime binding changed'
+    assert receipt['referenceImages'] == references, 'Alchemy workshop receipt reference binding changed'
+    assert receipt['promptReference'] == prompt_path + '#dormant-furnace' and receipt['promptSHA256'] == hashlib.sha256(prompt['prompt'].encode()).hexdigest(), 'Alchemy workshop prompt binding changed'
+    assert receipt['encoding'] == ['cwebp', '-q', '82', '-m', '6', '-alpha_q', '100', '-resize', '512', '512', '-metadata', 'none'], 'Alchemy workshop deterministic export changed'
+    assert receipt['exportVerification'] == dict(verified=True, sourceUnchanged=True, secondSHA256=runtime['sha256'], encoder='cwebp 1.6.0'), 'Alchemy workshop deterministic export proof missing'
+    assert receipt['review'] == dict(actuallyViewed=True, textBaked=False, fireBaked=False, smokeBaked=False, pillsBaked=False, userAcceptance=False), 'Alchemy workshop dormant-object review missing'
+    for name, item in [('alphaProof', source), ('runtimeAlphaProof', runtime)]:
+        proof = receipt[name]
+        assert all(isinstance(proof[k], int) and not isinstance(proof[k], bool) for k in ['min', 'max', 'transparentPixels', 'solidPixels', 'intermediatePixels']), 'Alchemy workshop alpha proof must use exact pixel counts'
+        assert proof['min'] == 0 and 250 <= proof['max'] <= 255 and proof['transparentPixels'] > 10000 and proof['solidPixels'] > 10000 and proof['intermediatePixels'] >= 0, 'Alchemy workshop alpha pixels missing'
+        assert proof['transparentPixels'] + proof['solidPixels'] + proof['intermediatePixels'] == item['dimensions']['width'] * item['dimensions']['height'], 'Alchemy workshop alpha pixel total changed'
+    assert manifest['consumer'] == 'web/src/ProductionPlanner.vue' and '<AlchemyWorkshop ' in local(manifest['consumer']).read_text(), 'Alchemy workshop actual consumer missing'
+    component = local('web/src/AlchemyWorkshop.vue').read_text()
+    assert runtime['path'].removeprefix('web/public/') in component and '<AssetImage' in component and 'alchemy-feedback' in component and 'createAlchemyFeedbackTracker' in component, 'Alchemy workshop furnace/helper consumer missing'
+    assert manifest['styleConsumer'] in ['web/src/main.ts', 'web/src/AlchemyWorkshop.vue'] and 'alchemy-workshop.css' in local(manifest['styleConsumer']).read_text(), 'Alchemy workshop style consumer missing'
+    assert {'web/src/ProductionPlanner.vue', 'web/src/AlchemyWorkshop.vue', manifest['styleConsumer']} <= set(manifest['bindings']), 'Alchemy workshop bindings incomplete'
+    for path, fragments in manifest['bindings'].items():
+        assert fragments and all(fragment in local(path).read_text() for fragment in fragments), 'Alchemy workshop binding missing'
+    return recorded, 1, native_bytes
+
+
 def validate(root):
     root = root.resolve()
     manifest = json.loads((root / 'art/asset-manifest.json').read_text(encoding='utf-8'))
@@ -124,6 +204,11 @@ def validate(root):
     recorded.update(catalogue_files)
     counts['production']+=catalogue_production
     counts['reference']+=len(catalogue_files)-catalogue_production
+    workshop_files, workshop_production, workshop_bytes = validate_alchemy_workshop(root)
+    assert not recorded.intersection(workshop_files), 'Alchemy workshop paths overlap older ledgers'
+    recorded.update(workshop_files)
+    counts['production'] += workshop_production
+    counts['reference'] += len(workshop_files) - workshop_production
     immersive_path = root / 'art/redesign/immersive-ui.json'
     if immersive_path.exists():
         ui = json.loads(immersive_path.read_text())
@@ -522,7 +607,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

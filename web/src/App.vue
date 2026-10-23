@@ -85,6 +85,7 @@ const session=useSession(),demoMenu=ref<HTMLDialogElement>();
 const demoNode=session.kind==='demo'?demoSpec(session.node!.nodeId):null;
 const demoMenuNodes=demoCatalog.map(node=>({...node,href:demoLink(node.id)}));
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
+provide('alchemy-feedback',store);
 const {milestoneReview,milestoneStale,milestoneRetry,selectMilestone,inspectMilestone,closeMilestone,confirmMilestone}=useMilestoneReview(store);
 const saveTone=computed(()=>!store.ready||store.busy?'pending':store.error||!store.available?'problem':store.game&&store.saved?'saved':'idle');
 const saveDisplayLabel=computed(()=>store.saveLabel==='本次未保存'?'保存待确认':store.saveLabel);
@@ -130,7 +131,7 @@ const singleScreen=computed(()=>wideScreen.value&&fontScale.value===1),hubMain=c
 const immersive=computed(()=>singleScreen.value&&game.value?.status==='active');
 const storyView=computed(()=>singleScreen.value&&(['fate','life','trial','battle'].includes(hubView.value)||hubView.value==='current'&&phase.value!=='opening'||hubView.value==='trial-preparation'));
 const catalogueView=computed(()=>storyView.value||singleScreen.value&&(['journey','tradeoffs','explore','inventory','forge','skills','relics','goal','market','recovery','receipt','activity'].includes(hubView.value)||hubView.value==='cultivation'));
-const hubTitle=computed(()=>({tradeoffs:'行前取舍 · 当前一段',activity:'本段活动 · 成果与停止',market:'坊市 · 货架与取舍',recovery:'药匣 · 恢复与疗养',journey:'突破筹备 · 下一步',explore:'历练 · 云岚山海',inventory:'行囊 · 随身物资',forge:'丹炉 · 固定配方',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',life:'修仙生平',goal:'目标与筹备',fate:'仙缘 · 人物与手记',cultivation:C.realms[game.value?.core.player.realm??'mortal'].name+'修行','trial-preparation':'登仙 · 行前核对',current:'当前遭遇',trial:'渡劫行程与续行',battle:'术法说明与战报',receipt:'本次行动结算',character:'道者 · 寿元与配装'} as Record<string,string>)[hubView.value]??'行道详情');
+const hubTitle=computed(()=>({tradeoffs:'行前取舍 · 当前一段',activity:'本段活动 · 成果与停止',market:'坊市 · 货架与取舍',recovery:'药匣 · 恢复与疗养',journey:'突破筹备 · 下一步',explore:'历练 · 云岚山海',inventory:'行囊 · 随身物资',forge:'丹炉 · 择方温炉',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',life:'修仙生平',goal:'目标与筹备',fate:'仙缘 · 人物与手记',cultivation:C.realms[game.value?.core.player.realm??'mortal'].name+'修行','trial-preparation':'登仙 · 行前核对',current:'当前遭遇',trial:'渡劫行程与续行',battle:'术法说明与战报',receipt:'本次行动结算',character:'道者 · 寿元与配装'} as Record<string,string>)[hubView.value]??'行道详情');
 const receiptAll=ref(false);
 let hubOpener:HTMLElement|null=null,hubOpenerId:string|undefined;
 function rememberHubOrigin(event?:Event){

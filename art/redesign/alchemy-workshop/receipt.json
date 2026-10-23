@@ -1,0 +1,91 @@
+{
+  "id": "dormant-furnace",
+  "tool": "built-in image_gen",
+  "originalToolPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-a8a55579-b881-4528-ae53-0a70eb475272.png",
+  "savedPath": "art/redesign/alchemy-workshop/furnace-v1.png",
+  "copiedUnchanged": true,
+  "sourceSHA256": "7297913c0228ed94a6310b8e29126990f6833892327068a9152ae5c3f0b276f9",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceBytes": 1944971,
+  "promptReference": "art/redesign/alchemy-workshop/prompts.json#dormant-furnace",
+  "promptSHA256": "757c0b96b83dd1b3f398acc812ad8b2c135f8ea5aeb29b8a5851b59b3fc12a32",
+  "referenceImages": [
+    {
+      "path": "web/public/art/v2/catalogue/alchemy-v1.webp",
+      "sha256": "f806772d13cd930dd80722c61d6ec53b5e5f882e9314f73c2ec5cb878f7e1528"
+    }
+  ],
+  "transparentBackgroundRequested": true,
+  "alphaProof": {
+    "min": 0,
+    "max": 255,
+    "transparentPixels": 806026,
+    "solidPixels": 719544,
+    "intermediatePixels": 46946
+  },
+  "runtimeAlphaProof": {
+    "min": 0,
+    "max": 254,
+    "transparentPixels": 133495,
+    "solidPixels": 119309,
+    "intermediatePixels": 9340
+  },
+  "runtime": {
+    "path": "web/public/art/v2/workshop/furnace-v1.webp",
+    "bytes": 63588,
+    "sha256": "bd201f06af3c18342eb6dda9d5bb2abb96347b623fb32f1d213c4c2b86c25642",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "512",
+    "-metadata",
+    "none"
+  ],
+  "exportVerification": {
+    "verified": true,
+    "sourceUnchanged": true,
+    "secondSHA256": "bd201f06af3c18342eb6dda9d5bb2abb96347b623fb32f1d213c4c2b86c25642",
+    "encoder": "cwebp 1.6.0"
+  },
+  "decodeProof": {
+    "decoder": "Pillow",
+    "sourceRGBASHA256": "eb788e596d6283a2f5112227e0bd853d51547747d8d95d70265bc1d88be5c170",
+    "runtimeRGBASHA256": "b14dec2e6982f8cdf3e4515610d264ec790c9e60fed771487c18ff6fc420cdd2",
+    "alphaDefinitions": {
+      "transparentPixels": "alpha=0",
+      "solidPixels": "alpha>=250",
+      "intermediatePixels": "1<=alpha<250"
+    }
+  },
+  "review": {
+    "actuallyViewed": true,
+    "textBaked": false,
+    "fireBaked": false,
+    "smokeBaked": false,
+    "pillsBaked": false,
+    "userAcceptance": false
+  },
+  "reviewSource": {
+    "reviewer": "main agent",
+    "scope": "The main agent actually viewed this generated source and confirmed the cold furnace has no fire, smoke or pills. Pixel semantics are a human review, not inferred from the inventory guard.",
+    "sourceSHA256": "7297913c0228ed94a6310b8e29126990f6833892327068a9152ae5c3f0b276f9",
+    "userAcceptance": false
+  }
+}

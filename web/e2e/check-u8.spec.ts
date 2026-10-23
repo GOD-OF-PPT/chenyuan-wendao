@@ -1,6 +1,6 @@
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {snapshot,activitySnapshot,useJourneyClock,finishJourneyClock,revealPaged} from './support';
-import {openProductionIntent,openSupplySettings,closeSupplySettings} from './stage-support';
+import {openProductionIntent,closeProductionSettings,openSupplySettings,closeSupplySettings} from './stage-support';
 import {driver} from '../../tests/full-route.mjs';
 import {resolve} from '../../src/full/engine.ts';
 import {activityView} from '../src/activity-view';
@@ -46,8 +46,8 @@ async function stageGeometry(page:Page){
  for(const c of controls){expect(c.height,c.text??'control').toBeGreaterThanOrEqual(44);expect(c.hit,c.text??'control').toBe(true);
   expect(c.left,c.text??'control').toBeGreaterThanOrEqual(0);expect(c.right,c.text??'control').toBeLessThanOrEqual(1440);
   expect(c.top,c.text??'control').toBeGreaterThanOrEqual(c.contentTop-1);expect(c.bottom,c.text??'control').toBeLessThanOrEqual(c.contentBottom+1);}
- const texts=await page.locator('main .reading-text p:visible,main .production-object p:visible,[data-testid=activity-history-row] p:not(.history-note):visible').evaluateAll(nodes=>nodes.map(el=>{
-  const r=el.getBoundingClientRect(),surface=el.closest('.reading-text,.book-canvas,[data-testid=activity-history-row]')?.getBoundingClientRect(),nav=document.querySelector('#primary-navigation')!.getBoundingClientRect();
+ const texts=await page.locator('main .reading-text p:visible,main .production-object p:visible,main .alchemy-product-tray>p:visible,[data-testid=activity-history-row] p:not(.history-note):visible').evaluateAll(nodes=>nodes.map(el=>{
+  const r=el.getBoundingClientRect(),surface=el.closest('.reading-text,.book-canvas,.alchemy-product-tray,[data-testid=activity-history-row]')?.getBoundingClientRect(),nav=document.querySelector('#primary-navigation')!.getBoundingClientRect();
   return{text:el.textContent,font:parseFloat(getComputedStyle(el).fontSize),top:r.top,bottom:r.bottom,left:r.left,right:r.right,
    limit:Math.min(nav.top,surface?.bottom??nav.top),start:surface?.top??0};
  }));
@@ -133,7 +133,7 @@ test('R4 and B read surfaces keep one running activity and never turn inspection
  await page.getByTestId('training-settings').click();
  await expect(page.getByTestId('recipe-catalogue')).toBeVisible();
  await expect(page.getByTestId('production-limits')).toBeVisible();
- await expect(page.getByTestId('production-estimate')).toContainText('回春丹');
+ await openProductionIntent(page);await expect(page.getByTestId('production-estimate')).toContainText('回春丹');await closeProductionSettings(page);
  await expect(page.getByTestId('training-countdown')).toHaveText(readingCountdown);
  await stageGeometry(page);
  await page.screenshot({path:info.outputPath('check-u8-production-reading.png')});
@@ -148,7 +148,7 @@ test('R4 and B read surfaces keep one running activity and never turn inspection
  await page.getByTestId('training-settings').click();
  await expect(page.getByTestId('recipe-catalogue')).toBeVisible();
  await expect(page.getByTestId('production-limits')).toBeVisible();
- await expect(page.getByTestId('production-estimate')).toContainText('回春丹');
+ await openProductionIntent(page);await expect(page.getByTestId('production-estimate')).toContainText('回春丹');await closeProductionSettings(page);
  await assertReadOnlyStage(page,before,paused);expect(await gameStores(page)).toEqual(pausedStores);
  expect((await activitySnapshot(page))?.plan.recipeId).toBe('healing');
  await page.getByTestId('tab-1').click();await page.getByTestId('feature-prepare').click();

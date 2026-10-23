@@ -1,0 +1,14 @@
+{
+  "id": "dormant-furnace",
+  "task": "Goal4 ART01",
+  "mode": "built-in image_gen",
+  "transparent_background": true,
+  "referenceImages": [
+    {
+      "path": "web/public/art/v2/catalogue/alchemy-v1.webp",
+      "sha256": "f806772d13cd930dd80722c61d6ec53b5e5f882e9314f73c2ec5cb878f7e1528"
+    }
+  ],
+  "prompt": "Use case: precise-object-edit. Asset type: isolated transparent game prop for Chinese xianxia idle game. Input image 1 is edit target. Keep the central bronze and dark jade alchemy furnace including lid, twin sculpted handles, carved cloud/taiji motifs and three feet, its original painterly high quality antique material and three-quarter front view. Remove ALL smoke, flames, glowing embers, luminous vapour, sparks and coloured magical glow. Furnace is COLD and unlit: openings and front taiji aperture dark, no light inside. Remove the whole small dish and every pill/herb/leaf on the lower right. Keep ONLY the standalone cold furnace, centred and fully visible, near 8 percent transparent margin all around. True transparent alpha outside and through handle gaps, no checkerboard painted in. No text, no backdrop, no scene, no floor, no new objects. Production object will get live fire/smoke/pill layers in code, so absolutely no baked fire, smoke, pills or diffuse haze.",
+  "purpose": "A cold isolated furnace only; live fire, smoke and actual pills are separate DOM layers. No baked text, effects or inventory claim."
+}

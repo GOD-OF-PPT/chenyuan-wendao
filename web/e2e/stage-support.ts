@@ -1,10 +1,19 @@
 import {expect,type Page} from '@playwright/test';
 import {revealPaged} from './support';
 // Follow the visible detail controls; retain every original cost and state assertion.
+export async function openProductionSettings(page:Page){
+ const settings=page.getByTestId('alchemy-settings'),open=page.getByTestId('alchemy-settings-open');
+ if(await open.isVisible()&&!await settings.isVisible()){await open.click();await expect(settings).toBeVisible();}
+}
+export async function closeProductionSettings(page:Page){
+ const settings=page.getByTestId('alchemy-settings');
+ if(await settings.isVisible()){await page.getByTestId('alchemy-settings-close').click();await expect(settings).toBeHidden();}
+}
 export async function openProductionIntent(page:Page){
+ await openProductionSettings(page);
  const toggle=page.getByTestId('production-intent-toggle');
  await expect(toggle).toBeVisible();
- if(!await toggle.evaluate(n=>(n.parentElement as HTMLDetailsElement).open))await toggle.click();
+ if(!await page.getByLabel('炼丹炉次',{exact:true}).isVisible())await toggle.click();
 }
 export async function expectActivityTotals(page:Page,text:string){
  await page.getByTestId('activity-inspect').click();

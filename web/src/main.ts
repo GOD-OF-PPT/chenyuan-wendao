@@ -33,3 +33,5 @@ import './stage-r3.css';
 import './stage-r4.css';
 import './idle-tradeoffs.css';
 import './local-loading.css';
+
+import './alchemy-workshop.css';
