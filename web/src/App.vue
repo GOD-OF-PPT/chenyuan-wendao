@@ -85,7 +85,7 @@ const session=useSession(),demoMenu=ref<HTMLDialogElement>();
 const demoNode=session.kind==='demo'?demoSpec(session.node!.nodeId):null;
 const demoMenuNodes=demoCatalog.map(node=>({...node,href:demoLink(node.id)}));
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
-provide('alchemy-feedback',store);
+provide('game-scene',store);
 const {milestoneReview,milestoneStale,milestoneRetry,selectMilestone,inspectMilestone,closeMilestone,confirmMilestone}=useMilestoneReview(store);
 const saveTone=computed(()=>!store.ready||store.busy?'pending':store.error||!store.available?'problem':store.game&&store.saved?'saved':'idle');
 const saveDisplayLabel=computed(()=>store.saveLabel==='本次未保存'?'保存待确认':store.saveLabel);

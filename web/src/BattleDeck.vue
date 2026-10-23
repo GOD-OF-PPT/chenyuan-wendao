@@ -1,0 +1,10 @@
+<script setup lang="ts">
+import type {Game,Move} from '../../src/full/types';
+import GameIcon from './GameIcon.vue';
+import './art02-battle.css';
+defineProps<{game:Game;savedMove?:Move;canMove:(move:Move)=>boolean;label:(move:Move)=>string;purpose:(move:Move)=>string;reason:(move:Move)=>string;cost:(move:Move)=>string;retreatEffect:string}>();
+const emit=defineEmits<{move:[Move]}>();
+</script>
+<template>
+ <div class="battle-deck" data-testid="battle-deck"><div id="battle-decisions" class="battle-manual-actions" data-primary-region tabindex="-1" data-testid="battle-decisions" aria-label="手动单步行动"><button v-for="move in ['attack','guard','technique','release'] as const" :key="move" :data-testid="move" :data-move="move" :aria-pressed="savedMove===move" :disabled="!canMove(move)" @click="emit('move',move)"><GameIcon kind="skill" :id="move==='release'?(game.loadout.finisher??'sword_release'):move==='technique'?(game.loadout.builder??'sword_build'):move==='guard'?'sword_guard':'sword_build'"/><strong>{{label(move)}}</strong><small>{{purpose(move)}}</small><small>{{cost(move)}} · 3 秒 / 回合</small><small v-if="reason(move)">{{reason(move)}}</small></button></div><div class="battle-manual-supplies"><button data-testid="battle-heal" data-move="heal" :disabled="!canMove('heal')" @click="emit('move','heal')"><GameIcon kind="item" id="healing_pill"/><strong>回春丹 ×{{game.core.inventory.healing_pill}}</strong><small>占一回合{{reason('heal')?' · '+reason('heal'):''}}</small></button><button data-testid="battle-restore" data-move="restore" :disabled="!canMove('restore')" @click="emit('move','restore')"><GameIcon kind="item" id="spirit_pill"/><strong>回灵丹 ×{{game.core.inventory.spirit_pill}}</strong><small>占一回合{{reason('restore')?' · '+reason('restore'):''}}</small></button><button data-testid="flee" data-move="flee" :disabled="!canMove('flee')" @click="emit('move','flee')"><GameIcon kind="nav" id="explore"/><strong>撤回洞府</strong><small>{{retreatEffect}}</small></button></div></div>
+</template>

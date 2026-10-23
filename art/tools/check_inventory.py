@@ -127,8 +127,60 @@ def validate_alchemy_workshop(root, image_reader=image_info):
     return recorded, 1, native_bytes
 
 
+ART02_NATIVE = ['web/src/SourceField.vue', 'web/src/JourneyMap.vue', 'web/src/BattlePresence.vue', 'web/src/BattleDeck.vue', 'web/src/activity-effects.ts', 'web/src/use-activity-effect.ts', 'web/src/art02-source.css', 'web/src/art02-journey.css', 'web/src/art02-battle.css']
+
+
+def validate_adventure_objects(root):
+    """ART02 has no new bitmap slots; nine object/proof/style files stay additive."""
+    ledger = root / 'art/redesign/art02.json'
+    if not ledger.exists():
+        assert not any((root / path).exists() for path in ART02_NATIVE), 'Unrecorded adventure object code'
+        return 0
+    manifest = json.loads(ledger.read_text())
+    assert manifest['format'] == 'chenyuan-adventure-objects' and manifest['version'] == 1
+    assert manifest['maxNativeBytes'] == 45000 and manifest['maxNewRasterAssets'] == 0 and manifest['assets'] == [], 'Adventure object budget changed'
+    assert manifest['userAcceptance'] is False, 'Adventure object checks are not player acceptance'
+    assert manifest['task'] == 'Goal4 ART02'
+
+    def local(path):
+        value = (root / path).resolve()
+        assert value.is_relative_to(root.resolve()) and value.is_file(), 'Missing or external adventure object file'
+        return value
+
+    assert 'docs/decisions/0023-adventure-object-art-contract.md' in manifest['sourceReferences']
+    assert 'goal-4/amendments/2026-10-23-art02.md' in manifest['sourceReferences']
+    for ref in manifest['sourceReferences']:
+        local(ref)
+    assert [row['path'] for row in manifest['files']] == ART02_NATIVE, 'Adventure object inventory changed or proof migration omitted'
+    total = 0
+    for row in manifest['files']:
+        data = local(row['path']).read_bytes()
+        assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], 'Adventure object identity changed'
+        total += len(data)
+    assert total <= 45000, 'Adventure object native budget exceeded'
+    required = {
+        'web/src/SourcePlanner.vue': ['<SourceField'],
+        'web/src/AdventurePlanner.vue': ['<JourneyMap'],
+        'web/src/BattlePanel.vue': ['<BattlePresence '],
+        'web/src/BattleStrategy.vue': ['<BattleDeck'],
+        'web/src/alchemy-feedback.ts': ['activity-effects'],
+        'web/src/SourceField.vue': ['use-activity-effect', 'art02-source.css', 'source-work-state'],
+        'web/src/JourneyMap.vue': ['use-activity-effect', 'art02-journey.css'],
+        'web/src/BattlePresence.vue': ['art02-battle.css', '<ProgressTrack'],
+        'web/src/use-activity-effect.ts': ['activity-effects'],
+    }
+    assert set(required) <= set(manifest['bindings']), 'Adventure object bindings incomplete'
+    for path, fragments in required.items():
+        assert set(fragments) <= set(manifest['bindings'][path]), 'Adventure object required binding omitted'
+    for path, fragments in manifest['bindings'].items():
+        assert fragments and all(fragment in local(path).read_text() for fragment in fragments), 'Adventure object actual consumer missing'
+    assert manifest['scope'] and 'user' in manifest['scope'].lower()
+    return total
+
+
 def validate(root):
     root = root.resolve()
+    adventure_object_bytes = validate_adventure_objects(root)
     manifest = json.loads((root / 'art/asset-manifest.json').read_text(encoding='utf-8'))
     assert manifest['format'] == 'chenyuan-art-inventory' and manifest['version'] == 1
     required = {'id', 'category', 'sourceType', 'originalHash', 'sourceReference', 'purpose', 'exportedPath', 'dimensions', 'bytes', 'sha256', 'status', 'availability', 'rights'}
@@ -223,6 +275,9 @@ def validate(root):
         assert sum(r['bytes'] for r in ui['files']) <= 26000
         assert ui['consumer'] == 'web/src/main.ts' and "import './immersive-theme.css'" in (root / ui['consumer']).read_text()
         assert set(ui['bindings']) == {'web/src/App.vue', 'web/src/CharacterPanel.vue', 'web/src/GoalPanel.vue', 'web/src/BattlePanel.vue'}
+        if (root / 'web/src/BattlePresence.vue').exists():
+            assert ui['bindings']['web/src/BattlePanel.vue'] == ['<BattlePresence '], 'Immersive battle consumer must follow the real actor component'
+            assert '<ProgressTrack' in (root / 'web/src/BattlePresence.vue').read_text(), 'Immersive battle progress consumer missing'
         for path, fragments in ui['bindings'].items():
             assert all(fragment in (root / path).read_text() for fragment in fragments)
     else:
@@ -607,7 +662,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'adventureObjectNativeBytes':adventure_object_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

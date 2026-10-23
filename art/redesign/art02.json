@@ -1,0 +1,94 @@
+{
+  "format": "chenyuan-adventure-objects",
+  "version": 1,
+  "task": "Goal4 ART02",
+  "maxNativeBytes": 45000,
+  "maxNewRasterAssets": 0,
+  "assets": [],
+  "userAcceptance": false,
+  "sourceReferences": [
+    "goal-4/amendments/2026-10-23-art02.md",
+    "docs/decisions/0023-adventure-object-art-contract.md"
+  ],
+  "files": [
+    {
+      "path": "web/src/SourceField.vue",
+      "bytes": 5992,
+      "sha256": "9d84e23e9af537b81b5ce7a1611f048ac0b842192cd538cb316739b4072ab8ab"
+    },
+    {
+      "path": "web/src/JourneyMap.vue",
+      "bytes": 3692,
+      "sha256": "27ce17335307d904bb315ef7dcff3c3ff28f2de3c1dfd327a531b1f991d428be"
+    },
+    {
+      "path": "web/src/BattlePresence.vue",
+      "bytes": 6304,
+      "sha256": "19c5f229d27b529124ea1f703d158ea5b05ca5321c67782281c32b8d988a2aa4"
+    },
+    {
+      "path": "web/src/BattleDeck.vue",
+      "bytes": 2062,
+      "sha256": "a59782e330446f84218f9bea954b15663b7cc070777003c2a32408b617e61991"
+    },
+    {
+      "path": "web/src/activity-effects.ts",
+      "bytes": 2590,
+      "sha256": "ed2d224a725c0aeda910cfbb3c86fe52dd283c4ef441bc7144cf54659d644fac"
+    },
+    {
+      "path": "web/src/use-activity-effect.ts",
+      "bytes": 3119,
+      "sha256": "da28ee98d9a801428a7e52803c19fbc3b3060a955cec792caf1010a503db29d5"
+    },
+    {
+      "path": "web/src/art02-source.css",
+      "bytes": 8059,
+      "sha256": "dd51c0f3d5e4584b80195aaa016a5230279b7c693fa5e2bb1dfa7285fafb2cf8"
+    },
+    {
+      "path": "web/src/art02-journey.css",
+      "bytes": 4531,
+      "sha256": "9ba6c415cf36418563930b0dd2a64a34a0c9a00812d99a4ab03796106db82b11"
+    },
+    {
+      "path": "web/src/art02-battle.css",
+      "bytes": 8582,
+      "sha256": "6ad8988e44c4aae4dadd1e56e40040c241404e100267e5bda4a7767dd94d23ac"
+    }
+  ],
+  "bindings": {
+    "web/src/SourcePlanner.vue": [
+      "<SourceField"
+    ],
+    "web/src/AdventurePlanner.vue": [
+      "<JourneyMap"
+    ],
+    "web/src/BattleStrategy.vue": [
+      "<BattleDeck"
+    ],
+    "web/src/alchemy-feedback.ts": [
+      "activity-effects"
+    ],
+    "web/src/SourceField.vue": [
+      "use-activity-effect",
+      "art02-source.css",
+      "source-work-state"
+    ],
+    "web/src/JourneyMap.vue": [
+      "use-activity-effect",
+      "art02-journey.css"
+    ],
+    "web/src/BattlePresence.vue": [
+      "art02-battle.css",
+      "<ProgressTrack"
+    ],
+    "web/src/use-activity-effect.ts": [
+      "activity-effects"
+    ],
+    "web/src/BattlePanel.vue": [
+      "<BattlePresence "
+    ]
+  },
+  "scope": "Additive object interaction, shared complete formal-result proof and stage styles only; reused existing images. Hashes, code budget and consumer checks do not prove visual quality, balance, compatibility or user acceptance."
+}

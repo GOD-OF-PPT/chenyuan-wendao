@@ -44,7 +44,7 @@
       "ProgressTrack"
     ],
     "web/src/BattlePanel.vue": [
-      "ProgressTrack"
+      "<BattlePresence "
     ]
   },
   "scope": "Palette, read-only choice/progress inspection and committed-value presentation. Original code budgets remain, no old code moved out."

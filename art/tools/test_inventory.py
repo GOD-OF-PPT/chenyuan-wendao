@@ -1,6 +1,6 @@
 import copy,hashlib,json,os,shutil,tempfile,unittest
 from pathlib import Path
-from check_inventory import validate,validate_alchemy_workshop,SCOPES
+from check_inventory import validate,validate_alchemy_workshop,validate_adventure_objects,ART02_NATIVE,SCOPES
 ROOT=Path(__file__).resolve().parents[2]
 
 class InventoryTests(unittest.TestCase):
@@ -71,6 +71,9 @@ class InventoryTests(unittest.TestCase):
   workshop=ROOT/'art/redesign/alchemy-workshop.json'
   if workshop.exists():
    data=json.loads(workshop.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+data['rights']['evidenceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  objects=ROOT/'art/redesign/art02.json'
+  if objects.exists():
+   data=json.loads(objects.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -399,6 +402,51 @@ class InventoryTests(unittest.TestCase):
   self.write('web/src/ActivityHistory.vue','wrong source');self.rejected()
  def test_activity_history_cannot_claim_player_acceptance(self):
   p='art/redesign/activity-history.json';m=json.loads((self.root/p).read_text());m['userAcceptance']=True;self.write(p,m);self.rejected()
+
+ def objects(self):return json.loads((self.root/'art/redesign/art02.json').read_text())
+ def reject_objects(self,manifest):
+  self.write('art/redesign/art02.json',manifest)
+  with self.assertRaises((AssertionError,KeyError,ValueError)):validate_adventure_objects(self.root)
+ def test_adventure_objects_record_the_nine_bounded_files(self):
+  m=self.objects();self.assertEqual([r['path'] for r in m['files']],ART02_NATIVE);self.assertGreater(validate_adventure_objects(self.root),0);self.assertLessEqual(validate_adventure_objects(self.root),45000)
+ def test_adventure_objects_ledger_is_required(self):
+  (self.root/'art/redesign/art02.json').unlink()
+  with self.assertRaises(AssertionError):validate_adventure_objects(self.root)
+ def test_adventure_objects_native_budget_cannot_increase(self):
+  m=self.objects();m['maxNativeBytes']=45001;self.reject_objects(m)
+ def test_adventure_objects_bitmap_budget_cannot_increase(self):
+  m=self.objects();m['maxNewRasterAssets']=1;self.reject_objects(m)
+ def test_adventure_objects_cannot_add_an_unreviewed_bitmap(self):
+  m=self.objects();m['assets']=[{'path':'web/public/new.webp'}];self.reject_objects(m)
+ def test_adventure_objects_cannot_claim_user_acceptance(self):
+  m=self.objects();m['userAcceptance']=True;self.reject_objects(m)
+ def test_adventure_objects_hash_is_required(self):
+  m=self.objects();m['files'][0]['sha256']='0'*64;self.reject_objects(m)
+ def test_adventure_objects_size_is_bound(self):
+  m=self.objects();m['files'][0]['bytes']+=1;self.reject_objects(m)
+ def test_adventure_objects_migrated_proof_still_counts_in_budget(self):
+  m=self.objects();m['files']=[r for r in m['files'] if r['path']!='web/src/activity-effects.ts'];self.reject_objects(m)
+ def test_adventure_objects_cannot_substitute_an_external_file(self):
+  m=self.objects();m['files'][0]['path']='../outside.vue';self.reject_objects(m)
+ def test_adventure_objects_required_consumer_cannot_be_omitted(self):
+  m=self.objects();del m['bindings']['web/src/SourcePlanner.vue'];self.reject_objects(m)
+ def test_adventure_objects_cannot_weaken_a_required_binding(self):
+  m=self.objects();m['bindings']['web/src/SourceField.vue']=['use-activity-effect'];self.reject_objects(m)
+ def test_adventure_objects_actual_binding_must_exist(self):
+  m=self.objects();m['bindings']['web/src/SourceField.vue'].append('never-existing-production-consumer');self.reject_objects(m)
+ def test_adventure_objects_contract_cannot_be_omitted(self):
+  m=self.objects();m['sourceReferences'].remove('docs/decisions/0023-adventure-object-art-contract.md');self.reject_objects(m)
+ def test_adventure_objects_raw_input_cannot_be_omitted(self):
+  m=self.objects();m['sourceReferences'].remove('goal-4/amendments/2026-10-23-art02.md');self.reject_objects(m)
+ def test_adventure_objects_source_references_cannot_escape_workspace(self):
+  m=self.objects();m['sourceReferences'].append('../outside.md');self.reject_objects(m)
+ def test_adventure_objects_even_rehashed_overbudget_code_is_rejected(self):
+  m=self.objects();row=m['files'][0];data=('x'*45001).encode();self.write(row['path'],data.decode());row['bytes']=len(data);row['sha256']=hashlib.sha256(data).hexdigest();self.reject_objects(m)
+
+ def test_adventure_objects_battle_progress_real_consumer_cannot_be_removed(self):
+  m=self.objects();m['bindings']['web/src/BattlePresence.vue']=['art02-battle.css'];self.reject_objects(m)
+ def test_adventure_objects_immersive_battle_binding_follows_real_component(self):
+  p='art/redesign/immersive-ui.json';m=json.loads((self.root/p).read_text());m['bindings']['web/src/BattlePanel.vue']=['BattlePresence'];self.write(p,m);self.rejected()
 
  def workshop(self):return json.loads((self.root/'art/redesign/alchemy-workshop.json').read_text())
  def reject_workshop(self,manifest):

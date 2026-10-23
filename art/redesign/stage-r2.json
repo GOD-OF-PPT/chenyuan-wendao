@@ -21,11 +21,14 @@
     ],
     "web/src/SourcePlanner.vue": [
       "source-plan-dialog",
-      "source-work-state"
+      "<SourceField"
     ],
     "web/src/ExplorePanel.vue": [
       "<KeepAlive ",
       ":runtime=\"runtime\""
+    ],
+    "web/src/SourceField.vue": [
+      "source-work-state"
     ]
   },
   "scope": "Additional fixed-desktop resource and battle stage styles. Existing component caps and all rules remain; no human acceptance."

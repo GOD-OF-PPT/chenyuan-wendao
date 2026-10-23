@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import {computed,ref,watch} from 'vue';
+import {computed,ref,watch,inject} from 'vue';
+import type {useGame} from './store';
 import type {Action,Game,Move} from '../../src/full/types.ts';
 import type {Activity} from '../../src/full/activity.ts';
 import {previewActivity} from '../../src/full/activity.ts';
@@ -8,8 +9,10 @@ import {previewAction} from '../../src/full/queries.ts';
 import {costsForAction} from '../../src/full/costs.ts';
 import * as C from '../../src/full/content.ts';
 import GameIcon from './GameIcon.vue';
+import BattleDeck from './BattleDeck.vue';
 import './idle-adventure.css';
 const props=withDefaults(defineProps<{game:Game;modelValue?:Strategy;variant?:'editor'|'battle';compact?:boolean;busy?:boolean;available?:boolean;running?:boolean;activity?:Activity|null;savedPlan?:AdventurePlan|null;planSaved?:boolean;trial?:boolean;can?:(action:Action)=>boolean;cost?:(action:Action)=>string;why?:(action:Action)=>string}>(),{variant:'editor',compact:false,busy:false,available:true,running:false,planSaved:false,trial:false});
+const scene=inject<ReturnType<typeof useGame>>('game-scene');
 const emit=defineEmits<{'update:modelValue':[Strategy];start:[BattlePlan];move:[Move];details:[MouseEvent];takeover:[]}>();
 const draft=ref<Strategy>(defaultBattleStrategy(props.game)),page=ref<'priority'|'supplies'|'safety'>('priority'),view=ref<'battle'|'strategy'|'manual'>('battle');
 const limit=ref(props.game.battle?defaultBattlePlan(props.game).maxCycles:40),mpBudget=ref(props.game.battle?defaultBattlePlan(props.game).mpBudget:480);
@@ -29,7 +32,7 @@ const authorization=computed(()=>{
 const next=computed(()=>currentDecision.value?currentDecision.value.action:quote.value?.adventure?.initialAction??null);
 const explanation=computed(()=>currentDecision.value?.reason??quote.value?.adventure?.initialReason??quote.value?.failure?.message??'先核对战策，再安排当前这一关。');
 const nextPreview=computed(()=>next.value?previewAction(props.game,next.value):null);
-const blocked=computed(()=>!props.available?'存档未就绪':props.busy?'当前行动保存中，请稍候':props.running?'当前活动进行中，请先暂停后确认新战策':'');
+const blocked=computed(()=>scene?.error?'存档待核对，请先重试原操作':!props.available?'存档未就绪':props.busy?'当前行动保存中，请稍候':props.running?'当前活动进行中，请先暂停后确认新战策':'');
 const sameSaved=computed(()=>{const p=props.savedPlan,d=autoPlan.value;return !!d&&p?.kind==='battle'&&p.mode==='auto'&&p.enemy===d.enemy&&p.trialStage===d.trialStage&&p.maxCycles===d.maxCycles&&p.mpBudget===d.mpBudget&&JSON.stringify(p.strategy)===JSON.stringify(d.strategy);});
 const savedSingle=computed(()=>{const p=props.savedPlan;return props.planSaved&&p?.kind==='battle'&&p.mode==='single'?p:null;});
 const oldTarget=computed(()=>{const p=props.savedPlan;return p?.kind==='battle'&&p.mode==='auto'&&(p.enemy!==props.game.battle?.enemy||p.trialStage!==(props.game.trial?.stage??null))?C.enemies[p.enemy].name:null;});
@@ -38,7 +41,7 @@ function purpose(move:Move){if(move==='attack')return props.game.school==='sword
 function update<K extends keyof Strategy>(key:K,value:Strategy[K]){state.value={...state.value,[key]:value};}
 function numberField(key:keyof Strategy,event:Event){update(key,Number((event.target as HTMLInputElement).value) as never);}
 function shift(index:number,offset:number){const priority=[...state.value.priority],other=index+offset;if(other<0||other>=priority.length)return;[priority[index],priority[other]]=[priority[other],priority[index]];update('priority',priority as Strategy['priority']);}
-function manualCan(move:Move){const a:Action={type:'BATTLE',move};return !props.running&&!props.busy&&props.available&&(props.can?props.can(a):previewAction(props.game,a).allowed);}
+function manualCan(move:Move){const a:Action={type:'BATTLE',move};return !scene?.error&&!props.running&&!props.busy&&props.available&&(props.can?props.can(a):previewAction(props.game,a).allowed);}
 function manualReason(move:Move){return blocked.value||(props.why?props.why({type:'BATTLE',move}):previewAction(props.game,{type:'BATTLE',move}).failure?.message??'');}
 function manualCost(move:Move){return props.cost?props.cost({type:'BATTLE',move}):'灵力 '+costsForAction(props.game,{type:'BATTLE',move}).mp;}
 function takeover(){view.value='manual';if(props.running)emit('takeover');}
@@ -60,7 +63,7 @@ const signed=(n:number)=>n>0?'+'+n:String(n);
   <header class="battle-mode-heading"><span>斗法 · <b data-testid="round">第 {{(game.battle?.round??0)+1}} 回合</b></span><nav aria-label="斗法视图"><button :aria-pressed="view==='battle'" data-testid="battle-view-scene" @click="view='battle'">战局</button><button :aria-pressed="view==='strategy'" data-testid="battle-view-strategy" @click="view='strategy'">战策</button><button :aria-pressed="view==='manual'" data-testid="battle-manual-takeover" @click="takeover">手动接管</button><button @click="emit('details',$event)" data-testid="battle-recent">术法与最近8条</button></nav></header>
   <template v-if="view==='strategy'"><div class="battle-plan-state" data-testid="battle-plan-state">{{oldTarget?'原安排目标 '+oldTarget+' 已结束；此处为当前关待确认草案':sameSaved&&planSaved?'已保存战策；修改须另行确认':'待确认的新战策；不会改动当前活动'}}</div><div class="battle-plan-limits"><label>本关最多回合<input v-model.number="limit" type="number" min="1" max="40" aria-label="本关最多斗法回合"></label><label>累计灵力预算<input v-model.number="mpBudget" type="number" min="0" aria-label="斗法累计灵力预算"></label></div><BattleStrategy v-model="state" :trial="trial" variant="editor" :game="game"/></template>
   <template v-else><slot name="hero"/><div v-if="view==='battle'" class="battle-next" data-testid="battle-next"><strong>{{currentDecision?'下一招':'战策预估'}}：{{next?.type==='BATTLE'?label(next.move):next?.type==='ENCOUNTER'?'迎战':'待核对'}}</strong><span>{{explanation}}</span><small v-if="nextPreview?.allowed">拟本回合：气血 {{signed(nextPreview.delta?.hp??0)}} · 灵力 {{signed(nextPreview.delta?.mp??0)}}；实际结果以保存为准。</small><small v-if="activity?.version===6&&activity.status==='paused'">可手动接管，选择服丹或撤回洞府。</small></div></template>
-  <template v-if="view==='manual'"><p v-if="savedSingle" class="battle-plan-state" data-testid="battle-single-plan">原手动单步：{{C.enemies[savedSingle.enemy].name}}{{savedSingle.trialStage===null?'':' · 天劫第'+savedSingle.trialStage+'关'}} · {{label(savedSingle.move)}} · 仅1回合 / 3秒；查看不会再次执行。</p><div id="battle-decisions" class="battle-manual-actions" data-primary-region tabindex="-1" data-testid="battle-decisions" aria-label="手动单步行动"><button v-for="move in ['attack','guard','technique','release'] as const" :key="move" :data-testid="move" :aria-pressed="savedSingle?.move===move" :disabled="!manualCan(move)" @click="emit('move',move)"><strong>{{label(move)}}</strong><small>{{purpose(move)}}</small><small>{{manualCost(move)}} · 3 秒 / 回合</small><small v-if="manualReason(move)">{{manualReason(move)}}</small></button></div><div class="battle-manual-supplies"><button data-testid="battle-heal" :disabled="!manualCan('heal')" @click="emit('move','heal')">回春丹 ×{{game.core.inventory.healing_pill}}<small>占一回合{{manualReason('heal')?' · '+manualReason('heal'):''}}</small></button><button data-testid="battle-restore" :disabled="!manualCan('restore')" @click="emit('move','restore')">回灵丹 ×{{game.core.inventory.spirit_pill}}<small>占一回合{{manualReason('restore')?' · '+manualReason('restore'):''}}</small></button><button data-testid="flee" :disabled="!manualCan('flee')" @click="emit('move','flee')">撤回洞府<small>{{retreatEffect}}</small></button></div></template>
+  <template v-if="view==='manual'"><p v-if="savedSingle" class="battle-plan-state" data-testid="battle-single-plan">原手动单步：{{C.enemies[savedSingle.enemy].name}}{{savedSingle.trialStage===null?'':' · 天劫第'+savedSingle.trialStage+'关'}} · {{label(savedSingle.move)}} · 仅1回合 / 3秒；查看不会再次执行。</p><BattleDeck :game="game" :saved-move="savedSingle?.move" :can-move="manualCan" :label="label" :purpose="purpose" :reason="manualReason" :cost="manualCost" :retreat-effect="retreatEffect" @move="emit('move',$event)"/></template>
   <template v-else-if="view==='strategy'||!activity||activity.status==='stopped'"><div class="battle-authorization" data-testid="battle-authorization"><span>待确认战策：本关最多 {{limit}} 回合 · 灵力累计上限 {{mpBudget}}</span><span>回春最多 {{state.healingBudget}} / 保留 {{state.healingReserve}}（气血 {{state.healBelowPercent}}%）；回灵最多 {{state.spiritBudget}} / 保留 {{state.spiritReserve}}（灵力 {{state.restoreBelowPercent}}%）</span><span>危险线 {{state.retreatBelowPercent}}% · {{state.riskMode==='pause'?'暂停战策，不离场':retreatEffect}}</span></div><button class="primary battle-auto-start" data-testid="battle-auto-start" :disabled="!!blocked||!quote?.allowed||!autoPlan" @click="autoPlan&&emit('start',autoPlan)">{{running?'当前活动进行中，请先暂停':planSaved?'确认重新安排本关':'开始自动斗法'}}</button><small v-if="blocked" class="battle-action-reason">{{blocked}}</small><small v-else-if="quote?.failure" class="battle-action-reason">{{quote.failure.message}}</small></template>
   <div class="battle-current-activity"><p v-if="authorization" class="battle-current-authorization" data-testid="battle-current-authorization">{{authorization}}</p><slot name="activity"/></div>
  </section>

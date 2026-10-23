@@ -9,7 +9,7 @@ import AssetImage from './AssetImage.vue';
 import GameIcon from './GameIcon.vue';
 import CataloguePager from './CataloguePager.vue';
 const props=defineProps<{game:Game;plan:CraftPlan;activity:Activity|null;runtime:{id:string;generation:number;totalMs:number;remainingMs:number;phase:string}|null;busy:boolean;available:boolean;running:boolean;rows:{id:string;name:string;icon:string;min:C.RealmId}[];catalogue:{page:number;pages:number;total:number};future:boolean;consumptionWarning:string}>();
-const feedbackStore=inject<ReturnType<typeof useGame>>('alchemy-feedback');
+const feedbackStore=inject<ReturnType<typeof useGame>>('game-scene');
 const emit=defineEmits<{start:[];travel:[];source:[];limits:[boolean];select:[string];page:[number];future:[boolean];material:[string]}>();
 const settingsOpen=ref(false),settings=ref<HTMLDialogElement>(),visible=ref(true),hidden=ref(document.hidden),arrival=ref<{item:string;quantity:number;sequence:number}|null>(null);
 const tracker=createAlchemyFeedbackTracker();let stop=()=>{},timer:ReturnType<typeof setTimeout>|undefined,sequence=0;

@@ -59,8 +59,8 @@
   "files": [
     {
       "path": "web/src/AlchemyWorkshop.vue",
-      "bytes": 11391,
-      "sha256": "f67aea64a4636b3b56a4e9e809b6ceda946a1ddd07668755d5688db0aacb6dfd"
+      "bytes": 11385,
+      "sha256": "664bdb00893960017cdbc2e65cf0336e2aed1bec9e3e820d2801e11af5cafd64"
     },
     {
       "path": "web/src/alchemy-workshop.css",
@@ -69,8 +69,8 @@
     },
     {
       "path": "web/src/alchemy-feedback.ts",
-      "bytes": 2613,
-      "sha256": "940c9049c25458c8bed92051ea020662291026252f06fe574760e2ff1c466ee6"
+      "bytes": 674,
+      "sha256": "dfe2886f81b73788fc406e89f8631618ee5dadbdc24bab80db4dc5a8e4759899"
     }
   ],
   "consumer": "web/src/ProductionPlanner.vue",

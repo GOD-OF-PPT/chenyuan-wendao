@@ -1,0 +1,20 @@
+{
+  "task": "ART02",
+  "readDate": "2026-10-23",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "author": "Riot Games",
+      "title": "Clarity in League",
+      "published": "2021-03-12",
+      "applied": "当前敌意/下一招优先，敌我轮廓和动作方向清楚；强度随实际重要性，普通取材反馈克制。"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/109",
+      "author": "Microsoft Xbox",
+      "title": "Objective clarity",
+      "applied": "实际目标/库存/成果可回看；路线预览与真正安排分清，当前门槛和下一步不依赖记忆。"
+    }
+  ],
+  "scope": "实际回读一手公开正文；不是竞品试玩或认证。六路标/资源锚点/七招带及具体周期均为项目推导/原规则，未代用户整体美术与长期平衡验收。"
+}
