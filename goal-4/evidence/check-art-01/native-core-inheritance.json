@@ -1,0 +1,434 @@
+{
+  "actualSource": "3a5c1ba5c630859d9dd3bd51f131e952a8f1642c910b76d9660bdf92333fbec0",
+  "finalSource": "85a89c53caf4416355678d01d5e67d6f54399317a6258c5f2b5a27998a52a0db",
+  "unchangedRuntimeFiles": 206,
+  "totalRuntimeFiles": 207,
+  "onlyRuntimeDifference": [
+    "web/src/ProgressTrack.vue"
+  ],
+  "purePassed": 760,
+  "pureFiles": 56,
+  "nativePassed": 208,
+  "nativeFiles": 23,
+  "rawReports": [
+    "core-final.log",
+    "idb-final.json"
+  ],
+  "dependencyBoundary": "Node pure suites and native Store/IDB harness do not consume Vue ProgressTrack; all src/** and web/src other than ProgressTrack byte-identical. Native harness loads Store/full-persistence directly, not App. Reports retain actual source, no relabel.",
+  "unchangedChecks": [
+    {
+      "path": "tests/action-feedback.test.mjs",
+      "sha256": "bcbd3b23e629f914db1683ac354e23138740b9516cc926bf8937be050e9f3788",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/activity-clock.test.mjs",
+      "sha256": "b6c980bf58c8fa406d9779cb3d4419bd4d5e2903eabd109acd14ed02ff2a11e9",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/activity.test.mjs",
+      "sha256": "619fa5344f54f1278dd946a9270cc2ba1fb51ee08a6092542e162710d3e56e2a",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/adventure.test.mjs",
+      "sha256": "d749281b4080098cf5459ea2cdfb6d4614fe1fd4837475bc14d3d358039e9478",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/build-identity.test.mjs",
+      "sha256": "2d467c80387d3bf73a600de960d77f4e35a6955094e478cb5eb901c4f142e79a",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/configuration.test.mjs",
+      "sha256": "46f19744a6ba6f4cfc0a69909d45842af2a250f2718861c57c53f13dd6c90ade",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/core-validation.test.mjs",
+      "sha256": "903f0d9757946c822995d1b3ce3febbae7fb5f7d5d3dc66fb8924b5df626bb9a",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/demo-nodes.test.mjs",
+      "sha256": "907778909809bb952250be0148246116fcccb7f3beeace865e7bfc8129321fe7",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/engine.test.mjs",
+      "sha256": "3ea77319e4ef46ec47c764b4efaa34d36be1d69d6ef940e673de8dcb9f0f3d2b",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-adventure-activity.test.mjs",
+      "sha256": "8cd8dfe3d4fe1c4163af507e24e66ca626cf083cd60676ec3f133a677dcbae38",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-ascension.test.mjs",
+      "sha256": "23fc87205712c98cce42d2b4683ee86a80a1113753337dfa7d9f3a5d7b4faf27",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-causal-compatibility.test.mjs",
+      "sha256": "0df6a16d7a8d22274700ea3c96a0b97d01d060451d7b8124f87077e489431b6e",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-causality.test.mjs",
+      "sha256": "a67d1dbdc5c932897ee52e80c7933ea4af021066e17a5e641302d1fb7227d577",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-compatibility.test.mjs",
+      "sha256": "796c5540fe15a08c21eae3044872ea22f894d33a90e20dda95adcb41c753539f",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-consumption-preview.test.mjs",
+      "sha256": "16eb11ba86ae72ba8ceffdc254c5569cb6ee8d841784ea2a27f947953efe07db",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-content.test.mjs",
+      "sha256": "5d9308ab9f3f78fd7741bcbc68cccf255aff64dca5495b14388f709eb176b732",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-contracts.test.mjs",
+      "sha256": "85f6938370ff5f2136dac0cb7a40a758c21df23655241e9a5dc647c8a0849fda",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-economy-costs.test.mjs",
+      "sha256": "1304e19480fd6b2deaa1c7da7b2dbe1e13505c442fef840680fc4bba5105c9dd",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-economy-ledger.test.mjs",
+      "sha256": "cedcc01b2a5062371da906178315307be9dd445ccba0b650f988580c45f24b0b",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-equipment.test.mjs",
+      "sha256": "17241d38421f99fe18e0ab61c597b39e27b8b255495854996591a7ff49ed5de1",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-extension.test.mjs",
+      "sha256": "c3f6d6505e86eb2afe0f12079f1cb3623a50e685436e4c5574909456643600d3",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-goals.test.mjs",
+      "sha256": "2f15c2ea988ef446d1ceb1a579bc87ade54180bfa84779eb8fe1bc61532fa3b3",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-growth-stage.test.mjs",
+      "sha256": "9c9742cc1983d7d34f205b0c4eb462e35a6903b797361e439730010278e85bff",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-growth.test.mjs",
+      "sha256": "00b21d636754715fdde4d30510e0274262d354228ec15f273727d67c77f08eca",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-life-record.test.mjs",
+      "sha256": "186f5489b98407fe7f75727abd3cd87d06ca48a5afd80b36b3b4849270cd7016",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-preview-resolution.test.mjs",
+      "sha256": "30db2103683a804d26a00841e3b2f16c1b71f95cf69148d1ad7bef7115f3d5d8",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-queries.test.mjs",
+      "sha256": "fe3ad8b95d5a3c2ee662e277d69737da30a0e143844d4127f6221fb520c52f3e",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-receipts.test.mjs",
+      "sha256": "3552f4120d8ac210d4feee2f6cde82ac14fac567c20ca675ceba7c90d495021e",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-supporting-causal.test.mjs",
+      "sha256": "9a13d5ae59a0f5b8eada75029cbecbc43831d0d6a54bf665d204effa2b39b41f",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-sword-manual.test.mjs",
+      "sha256": "78cf5087e6085fc43b867cba1e9a3155b428870bfd6fe815d8d926079bc1ee21",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-trial-journey.test.mjs",
+      "sha256": "60ff27de1478a0b61ef8059f4f81c87b965dd060b24b282869fc32140f9a3cd2",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full-trial-preparation.test.mjs",
+      "sha256": "1b45e9fe355e9dc7f4d2df9fe1942617904611555bb3e1f2b0f244001e3f908a",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/full.test.mjs",
+      "sha256": "bf291b0c7fee16c6c81f978c601b92f2114e9a3125b3f3ae45051caf30280fda",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/guidance.test.mjs",
+      "sha256": "f55201db11543d247a6298d103cc241d7fa578674560edbc625dd7c45a8cb0ee",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/journal-anchors.test.mjs",
+      "sha256": "9d0df5d21c0ae391a4681eb906674ba3212b5fce394c4c34643b89673fab30d4",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/journey-coverage.test.mjs",
+      "sha256": "92fc287d5dd04a543257d6dc05505238df7f27c2d9d9cb03b948c3601d48b68f",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/local-events.test.mjs",
+      "sha256": "acc130c0f9b6b45114f3b5750a95f6305b3b426867feb3557559f78ef61f09e1",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/milestone-activity.test.mjs",
+      "sha256": "1bc035f2b089ab8f17736d86add640852604a27fda7901c4bdd85d53d9cb5057",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/performance-budget.test.mjs",
+      "sha256": "01e5f2e11235b1d0ffd913122b48d59637e85c269161b8018010b763b3a6365b",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/play-flow.test.mjs",
+      "sha256": "1d7e897ca283551bab7d53a80a4f83c4abb0f98d30b810a4eb8358f83fd5c8b9",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/preparation-activity.test.mjs",
+      "sha256": "d013f766b5dba0819f58d35172b870ea04757521d3119c05790b615dc9098f7e",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/production-activity.test.mjs",
+      "sha256": "848e412ce6a07733ad39a3f8bcf517156a6111d9e06a70c9de474edad8b71e2b",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/reading-memory.test.mjs",
+      "sha256": "10c2c63d7c52c61e1d91c82f7178467f26966b18c602ce92196c36b67afe59ee",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/recovery-coverage.test.mjs",
+      "sha256": "25635fb93015c1af826d07d1996f38bf5f387bdc847509fc14ce85d64b734ead",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/source-activity.test.mjs",
+      "sha256": "59399d2d5679b9dacd3d98e51ec901150f634989df996759eef25fa8b3864845",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/story-pages.test.mjs",
+      "sha256": "af680cf3efb598dd228d1b597a642f2cb9b6da8e0009102b5a47f975e81d23a9",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/ui-art-effects.test.mjs",
+      "sha256": "42499bccf9a6d1f48fbb6155700c06d40d8926efbaf9f508b757d7b41d8d1812",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/ui-character-battle-art.test.mjs",
+      "sha256": "df975e7218a38ec3eec2a7a32bb5adcce02c3d09c80a5eeda54eb5f12b34a75b",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/ui-desktop-art.test.mjs",
+      "sha256": "a74d8918b4704b50e402dcca24dc3c3a6ccd4ec07bd4e613d82235892a28a302",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/ui-scene-presentation.test.mjs",
+      "sha256": "0107622e31ce0c0015864e2783e1a7989c28ced288984ef7462f1c75929767e3",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/visit-route.test.mjs",
+      "sha256": "e730571e8dc0d0bc7a1bb678f93b1fa08283c214dce5f275c896779f2f746faa",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/idle-progression.test.mjs",
+      "sha256": "6ec0a727500b11754eee67c99059a008fdcb70de7b7f4c988f9d08ff101c6844",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/idle-progression-route.test.mjs",
+      "sha256": "ca377dedf9441562837fcab1626c61d094fd3f74bb618c43bc72397de626cb29",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/idle-configuration-tradeoffs.test.mjs",
+      "sha256": "26cedde5f5a3cb34d67fc7d893e6c6013a65d7d4b232dc202d0f5907eb12aade",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/alchemy-feedback.test.mjs",
+      "sha256": "44eb5415fb25a58343b9c52cee3f588ed8089b8a55824509fdb0799a4bf8f188",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "tests/activity-effects.test.mjs",
+      "sha256": "3e6c38b1d6d756c40cbeef2aa506a2494a244c48be2bc96c07bb31f41ed4bfb5",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/activity-store.spec.ts",
+      "sha256": "c51001a8abf90f0550c72050caf65a72aeb96a46309af5c42036b8afef9c1869",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/activity.spec.ts",
+      "sha256": "0fda75f6be8f03a3abc463fd60131b1fb3ed12da28d03f600577265874746b2b",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/adventure-store.spec.ts",
+      "sha256": "67f8f4693b0fa2736f53cd9d4f593f800eed7628307b42505304bc131d130626",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/adventure-upgrade.spec.ts",
+      "sha256": "31df8552ddfeb04d9f77d07c9c16cd8df0c371c93c910e747bf4ab226794ffe8",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/adventure.spec.ts",
+      "sha256": "6baba86a78196ee6e846b4cef12bb2ef22ef3795b447c7deebe9a12c790eccd8",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/configuration-store.spec.ts",
+      "sha256": "d79b55eb85c875f58a877418f134b9b3715f4b675aed40875021a1af0d68d423",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/configuration.spec.ts",
+      "sha256": "cdc8926daa4ba9ff5192f144bf653d56968e7e001cee94f25506bee0b7fc7f26",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/history-ui.spec.ts",
+      "sha256": "83697c5c3e63e1ef98e9246ae86715bbc009a8c91a206e255c7a356a4d309067",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/idle-progression-route.spec.ts",
+      "sha256": "afbdd6a10768e8b149a749a00637e9b343bdac3d220b43013450b610ca73c739",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/later-mixed-activity.spec.ts",
+      "sha256": "24de128c92f68421388a98949c8b10782104d6a2a5d011fdcfe87a7a4ac419cf",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/local-experience.spec.ts",
+      "sha256": "5eaf054aed8af7bf46dc37fc84c2d0fcf0e6ca311eb20ff520f91e7ebd5cc0e4",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/local-startup.spec.ts",
+      "sha256": "09289274f24679a5daf36f045370c5fbe8edead10663bf68036f722a09025769",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/milestone-store.spec.ts",
+      "sha256": "6633d0fcace405dcfc7761b72f30b7743a7eb98d4e92fcda35c5da1e92db9f58",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/milestone-upgrade.spec.ts",
+      "sha256": "90599bf879fff23faac79e388d90f027ecc2d0541648f8d75b32c37a10b34047",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/milestone.spec.ts",
+      "sha256": "2eb68f13d6a97dc335b2aa1dfd3c4949a42dfed17f059206ed3f8abdc694fc8e",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/mixed-activity.spec.ts",
+      "sha256": "78c310c1d10f133d27cb532296d46fc329af71110abedb1b33c6984b856a521d",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/online-recovery.spec.ts",
+      "sha256": "3ec5bc21938898e757bcdac4797b0bc7038242280d21843660c84355145c23b8",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/preparation-activity.spec.ts",
+      "sha256": "dc60f149dd22127c4e4809296ef7a5c9181a4cb01b04217ac040ce6a943528fb",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/production-activity.spec.ts",
+      "sha256": "5e3c3dd68aec762a9ef9676e469d7c5ac97158bd9283b8a28101b433846e7f98",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/source-activity.spec.ts",
+      "sha256": "1d7289fc51cf74d0a1b6c968385bb6363dff4d8931cc05b8e79239bd18d877a8",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/store-lifecycle.spec.ts",
+      "sha256": "7a01eba2bd25819aa714e3df02ba869f44b355d33907607bb78de535786e1e93",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/store-reconnect.spec.ts",
+      "sha256": "9c080b6b3c933f4dcd530597f2d4dc7da268cb592585220461a8dd3a33378bae",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/store-sync-queue.spec.ts",
+      "sha256": "ecb5ecb245189754dfd51f30bcfb1885b36f6aa17a0aa3958071964516a63d8d",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/persistence-tests/support.ts",
+      "sha256": "e2963cdd695a0768211f9c8287564646f56802ccb70c4162445519a600210872",
+      "unchangedFromBaseline81f0fa1": true
+    },
+    {
+      "path": "web/playwright.idle-persistence.config.ts",
+      "sha256": "5debf22381aedc033e0b10fe4b4d4ad09675c007dc703d1379e98cba4357a09d",
+      "unchangedFromBaseline81f0fa1": true
+    }
+  ],
+  "currentConfigurationControl": {
+    "raw": "configuration-current.log",
+    "report": "configuration-control-current.json",
+    "assertions": 9,
+    "businessConfigurations": 8,
+    "sourceDigest": "85a89c53caf4416355678d01d5e67d6f54399317a6258c5f2b5a27998a52a0db",
+    "reason": "Control binds all207 runtime hashes, so repeated on final runtime; included within760, not added."
+  },
+  "inheritedPureAssertions": 751
+}
