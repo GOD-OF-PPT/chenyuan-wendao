@@ -130,9 +130,6 @@
     }
   ],
   "bindings": {
-    "web/src/GoodsPanel.vue": [
-      "<CatalogueArt "
-    ],
     "web/src/PreparationPanel.vue": [
       "<CatalogueArt "
     ],

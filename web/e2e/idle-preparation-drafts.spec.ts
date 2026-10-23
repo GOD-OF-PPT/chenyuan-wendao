@@ -2,6 +2,7 @@ import {openSupplySettings,closeSupplySettings,selectLearningSkill,openLearningS
 import {test,expect,type Page} from '@playwright/test';
 import {snapshot,useJourneyClock,finishJourneyClock} from './support';
 import {advance} from '../../src/full/engine.ts';
+import * as C from '../../src/full/content.ts';
 import {driver} from '../../tests/full-route.mjs';
 
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
@@ -41,7 +42,7 @@ test('a saved medicine arrangement keeps edited dose limits and recovery target 
 });
 
 test('a middle shelf item stays visible after source navigation and reviewing its saved market plan',async({page})=>{
- const d=driver();d.realm();d.realm();d.funds(300);d.go('market');await seed(page,d);const before=await snapshot(page);await page.getByTestId('hub-goal').click();await page.getByTestId('goal-management-toggle').click();await page.getByLabel('追踪目标',{exact:true}).selectOption('item:lotus');await page.getByTestId('goal-management-toggle').click();await page.getByTestId('goal-item-sources').click();for(let n=0;n<8&&!await page.getByTestId('go-purchase-lotus').count();n++)await page.getByRole('navigation',{name:'目标来源翻页',exact:true}).getByRole('button',{name:'下一页',exact:true}).click();await page.getByTestId('go-purchase-lotus').click();await expect(page.getByTestId('buy-lotus')).toBeVisible();await expect(page.getByTestId('buy-lotus')).toHaveAttribute('aria-pressed','true');await expect(page.locator('.market-object h3')).toHaveText('月华莲');expect(await snapshot(page)).toEqual(before);expect(await activity(page)).toBeNull();
+ const d=driver();d.realm();d.realm();d.funds(300);d.go('market');await seed(page,d);const before=await snapshot(page);await page.getByTestId('hub-goal').click();await page.getByTestId('goal-management-toggle').click();await page.getByLabel('追踪目标',{exact:true}).selectOption('item:lotus');await page.getByTestId('goal-management-toggle').click();await page.getByTestId('goal-item-sources').click();for(let n=0;n<8&&!await page.getByTestId('go-purchase-lotus').count();n++)await page.getByRole('navigation',{name:'目标来源翻页',exact:true}).getByRole('button',{name:'下一页',exact:true}).click();await page.getByTestId('go-purchase-lotus').click();await expect(page.getByTestId('buy-lotus')).toBeVisible();await expect(page.getByTestId('buy-lotus')).toHaveAttribute('aria-pressed','true');await expect(page.locator('.market-object h3')).toHaveText(C.items.lotus.name+'需'+C.realms[C.items.lotus.min].name);await expect(page.locator('.market-object h3 .counter-realm')).toHaveText('需'+C.realms[C.items.lotus.min].name);expect(await snapshot(page)).toEqual(before);expect(await activity(page)).toBeNull();
  await start(page);const original=await activity(page);await review(page);await expect(page.getByTestId('buy-lotus')).toBeVisible();await expect(page.getByTestId('buy-lotus')).toHaveAttribute('aria-pressed','true');await expect(page.getByRole('navigation',{name:'坊市货物翻页',exact:true})).toContainText('2 /');expect((await activity(page)).plan).toEqual(original.plan);expect(await snapshot(page)).toEqual(before);await pause(page);
 });
 

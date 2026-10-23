@@ -12,13 +12,13 @@
     },
     {
       "path": "web/src/MarketPlanner.vue",
-      "bytes": 11214,
-      "sha256": "9f7da155c3ea91b289220436a42f95b0d694d06de1e802747a4ca9757cf02b75"
+      "bytes": 11294,
+      "sha256": "240bbd381dd0c0879edcf1fec1a35464d9ff437f9a3e4aa60d78a8cbfa64205e"
     },
     {
       "path": "web/src/RecoveryPlanner.vue",
-      "bytes": 8361,
-      "sha256": "f32b1fb4581293b785852631f2843ecf8958dce5bc78738697f9bd038af259d4"
+      "bytes": 7490,
+      "sha256": "53f0a3038baf13cd5432f20315734cf1015514ccecbfb38d21d1c70fdf1b3511"
     },
     {
       "path": "web/src/ConfigurationDialog.vue",
@@ -54,13 +54,18 @@
       "<MarketPlanner "
     ],
     "web/src/GoodsPanel.vue": [
-      "inspect-use-"
+      "<InventoryStage"
     ],
     "web/src/activity-view.ts": [
       "preparationView(a)"
     ],
     "web/src/main.ts": [
       "import './idle-preparation.css'"
+    ],
+    "web/src/InventoryStage.vue": [
+      "view('use')",
+      "'inspect-'+main+'-'+itemId",
+      "查看服丹安排"
     ]
   },
   "scope": "Six finite online activities and three immediate compared configurations; approved art reused; no balance or player acceptance."

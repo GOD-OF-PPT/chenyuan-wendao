@@ -7,7 +7,7 @@ import type {TrackingTarget} from '../../src/full/goals.ts';
 import {pageSlice} from './play-flow';
 import GameIcon from './GameIcon.vue';
 import CataloguePager from './CataloguePager.vue';
-import CatalogueArt from './CatalogueArt.vue';
+import InventoryStage from './InventoryStage.vue';
 import ProductionPlanner from './ProductionPlanner.vue';
 import type {Activity,CraftPlan,ForgePlan,PreparationPlan} from '../../src/full/activity.ts';
 import type {useGame} from './store';
@@ -26,9 +26,6 @@ watch([filter,future,()=>props.mode],()=>turn(0),{flush:'sync'});watch(()=>props
   <header><small>选择只查看，不消耗</small><label><input type="checkbox" v-model="future" aria-label="显示后续物资配方"> 后续境界</label></header>
   <nav class="catalogue-tabs" aria-label="行囊分类"><button v-for="[id,label] in [['all','全部'],['material','灵材'],['medicine','丹药'],['breakthrough','突破物']]" :key="id" :aria-pressed="filter===id" @click="filter=id">{{label}}</button></nav>
   <div v-if="!rows.length" class="catalogue-empty" data-testid="catalogue-empty">当前尚无可用物资条目。<button @click="future=true">查看后续目录</button></div>
-  <div v-else class="inventory-body"><div class="inventory-directory"><div class="inventory-objects"><button v-for="[id,i] in paged.rows" :key="id" :data-testid="'inventory-select-'+id" :aria-pressed="pick===id" :class="{'inventory-zero':!stock(id)}" @click="pick=id"><GameIcon kind="item" :id="id"/><strong>{{i.name}}</strong><b :data-testid="'item-'+id">×{{stock(id)}}</b></button></div><CataloguePager :page="paged.page" :pages="paged.pages" :total="paged.total" label="行囊" @change="turn"/></div>
-   <div v-if="item" class="inventory-pick"><CatalogueArt kind="supplies"/><div class="inventory-focus"><GameIcon kind="item" :id="pick"/><small>库存 {{stock(pick)}}</small></div></div>
-   <article v-if="item" class="inventory-object" data-testid="inventory-object"><h3>{{item.name}} <b>×{{stock(pick)}}</b></h3><p>{{item.description}}</p><template v-if="item.hp||item.mp"><small>{{why({type:'USE',item:pick})}}</small><small>{{consumption({type:'USE',item:pick})}}</small><button :class="{primary:stock(pick)>0}" :data-testid="'inspect-use-'+pick" @click="emit('act',{type:'USE',item:pick})" :disabled="!available">查看服丹安排 · 不立即用药</button></template><template v-if="item.sell!==null"><small>{{consumption({type:'SELL',item:pick,quantity:1})}}</small><button :class="{primary:!item.hp&&!item.mp&&stock(pick)>0}" :data-testid="'inspect-sell-'+pick" @click="emit('act',{type:'SELL',item:pick,quantity:1})" :disabled="!available">查看出售安排 · 每件 {{item.sell}} 灵石</button></template><small v-else>突破物不可出售。</small><button :class="{primary:!stock(pick)||item.sell===null}" :data-testid="'track-'+pick" @click="emit('track',{kind:'item',id:pick,quantity:1})">查看{{item.name}}来源 →</button></article>
-  </div>
+  <InventoryStage v-else-if="item" :game="game" :item-id="pick" :available="available" :reason="why({type:'USE',item:pick})" :consumption="consumption" @act="emit('act',$event)" @track="emit('track',$event)"><template #directory><div class="inventory-objects"><button v-for="[id,i] in paged.rows" :key="id" :data-testid="'inventory-select-'+id" :aria-pressed="pick===id" :class="{'inventory-zero':!stock(id)}" @click="pick=id"><GameIcon kind="item" :id="id"/><strong>{{i.name}}</strong><b :data-testid="'item-'+id">×{{stock(id)}}</b></button></div><CataloguePager :page="paged.page" :pages="paged.pages" :total="paged.total" label="行囊" @change="turn"/></template></InventoryStage>
  </section>
 </template>

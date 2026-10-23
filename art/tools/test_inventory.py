@@ -77,6 +77,8 @@ class InventoryTests(unittest.TestCase):
   equipment=ROOT/'art/redesign/art03.json'
   if equipment.exists():
    data=json.loads(equipment.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+data['rights']['evidenceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  supplies=ROOT/'art/redesign/art04.json'
+  if supplies.exists():files.update(ROOT/ref for ref in json.loads(supplies.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -364,7 +366,7 @@ class InventoryTests(unittest.TestCase):
  def test_catalogue_art_prompt_cannot_be_relabelled(self):
   p='art/redesign/catalogue-art/prompts.json';m=json.loads((self.root/p).read_text());m['assets'][0]['prompt']='other request';self.write(p,m);self.rejected()
  def test_catalogue_art_needs_actual_consumers(self):
-  p='web/src/GoodsPanel.vue';self.write(p,(self.root/p).read_text().replace('<CatalogueArt ','<RemovedArt '));self.rejected()
+  p='web/src/PreparationPanel.vue';self.write(p,(self.root/p).read_text().replace('<CatalogueArt ','<RemovedArt '));self.rejected()
  def test_catalogue_art_receipt_must_match_runtime(self):
   p='art/redesign/catalogue-art/manifest.json';m=json.loads((self.root/p).read_text());a=m['assets'][0];ref=a['receipt']['path'];r=json.loads((self.root/ref).read_text());r['runtime']['sha256']='0'*64;self.write(ref,r);a['receipt']['sha256']=hashlib.sha256((self.root/ref).read_bytes()).hexdigest();self.write(p,m);self.rejected()
 
@@ -587,5 +589,40 @@ class InventoryTests(unittest.TestCase):
   m=copy.deepcopy(original);p='web/src/activity-effects.ts';self.write(p,(self.root/p).read_text().replace('completeActivity(g,prior,r','detachedProof(g,prior,r'));self.reject_equipment(m)
  def test_equipment_catalogue_fallback_must_bind_the_actual_child(self):
   m=self.equipment();p='art/redesign/catalogue-art/manifest.json';catalogue=json.loads((self.root/p).read_text());catalogue['bindings'].pop('web/src/JadeStudyScene.vue');self.write(p,catalogue);self.reject_equipment(m)
+
+class SupplyObjectTests(unittest.TestCase):
+ def setUp(self):
+  from supply_object_inventory import NATIVE,REFS,BINDINGS
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-supply-negative-');self.root=Path(self.temp.name)
+  for p in set(NATIVE+REFS+list(BINDINGS)+['art/redesign/art04.json']):
+   out=self.root/p;out.parent.mkdir(parents=True,exist_ok=True);out.write_bytes((ROOT/p).read_bytes())
+ def tearDown(self):self.temp.cleanup()
+ def data(self):return json.loads((self.root/'art/redesign/art04.json').read_text())
+ def write(self,m):(self.root/'art/redesign/art04.json').write_text(json.dumps(m))
+ def check(self):
+  from supply_object_inventory import validate_supply_objects
+  return validate_supply_objects(self.root)
+ def reject(self,m):
+  self.write(m)
+  with self.assertRaises(AssertionError):self.check()
+ def test_supply_four_files_bound_and_budgeted(self):self.assertGreater(self.check(),0);self.assertLessEqual(self.check(),40000)
+ def test_supply_missing_ledger_rejected(self):
+  (self.root/'art/redesign/art04.json').unlink()
+  with self.assertRaises(AssertionError):self.check()
+ def test_supply_cannot_raise_cap_or_claim_acceptance(self):
+  for key,value in [('maxNativeBytes',40001),('newBitmapAssets',1),('newBitmapAssets',False),('userAcceptance',True)]:
+   m=self.data();m[key]=value;self.reject(m);self.write(json.loads((ROOT/'art/redesign/art04.json').read_text()))
+ def test_supply_hash_bytes_inventory_and_path_bound(self):
+  original=self.data()
+  for change in [lambda m:m['files'][0].update(sha256='0'*64),lambda m:m['files'][0].update(bytes=0),lambda m:m['files'].pop(),lambda m:m['files'][0].update(path='../outside')]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_supply_cannot_expand_code_even_with_updated_identity(self):
+  m=self.data();row=m['files'][0];raw=('x'*40001).encode();(self.root/row['path']).write_bytes(raw);row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.reject(m)
+ def test_supply_real_consumers_required(self):
+  p=self.root/'web/src/MarketPlanner.vue';p.write_text(p.read_text().replace('<MarketCounter','<DetachedCounter'))
+  with self.assertRaises(AssertionError):self.check()
+ def test_supply_source_reference_and_binding_contract_required(self):
+  m=self.data();m['sourceReferences']=[];self.reject(m)
+  m=json.loads((ROOT/'art/redesign/art04.json').read_text());m['bindings']={};self.reject(m)
 
 if __name__=='__main__':unittest.main()

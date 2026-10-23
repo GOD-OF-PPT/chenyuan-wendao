@@ -1,0 +1,65 @@
+{
+  "format": "chenyuan-supply-objects",
+  "version": 1,
+  "maxNativeBytes": 40000,
+  "newBitmapAssets": 0,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/InventoryStage.vue",
+      "bytes": 6910,
+      "sha256": "b6feafe64a9aef7152666633945c370c5a2bc3d01f2ecc9e0c00fe6a64d09a7e"
+    },
+    {
+      "path": "web/src/MarketCounter.vue",
+      "bytes": 11967,
+      "sha256": "0cf613bd5ebecc9f5300e5f7949ed9acd14d761902be8d9087990d09dfc232ca"
+    },
+    {
+      "path": "web/src/RecoveryRitual.vue",
+      "bytes": 11975,
+      "sha256": "7e7c13d9c7e345676c3bd7f70c84e472cf6ee03b0c48a16b7bf266732f7ce8cb"
+    },
+    {
+      "path": "web/src/supply-effects.ts",
+      "bytes": 1544,
+      "sha256": "6b11c6aab3e634831854d0c1723b76916bbb26fdbccf640e4adc6e043ee72a19"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0026-supplies-object-art-contract.md",
+    "goal-4/amendments/2026-10-23-art04.md",
+    "goal-4/research/art04-sources.json"
+  ],
+  "bindings": {
+    "web/src/GoodsPanel.vue": [
+      "import InventoryStage",
+      "<InventoryStage",
+      "#directory"
+    ],
+    "web/src/MarketPlanner.vue": [
+      "import MarketCounter",
+      "<MarketCounter",
+      "#decision"
+    ],
+    "web/src/RecoveryPlanner.vue": [
+      "import RecoveryRitual",
+      "<RecoveryRitual",
+      "#decision"
+    ],
+    "web/src/MarketCounter.vue": [
+      "useSupplyCycle",
+      "market-counter"
+    ],
+    "web/src/RecoveryRitual.vue": [
+      "useSupplyCycle",
+      "recovery-ritual"
+    ],
+    "web/src/supply-effects.ts": [
+      "useActivityPresentation",
+      "supplyActivityMatches",
+      "supplyCommandMatches",
+      "undefined,5"
+    ]
+  }
+}
