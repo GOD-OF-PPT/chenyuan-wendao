@@ -1,0 +1,203 @@
+{
+  "format": "chenyuan-art03-equipment-object-facts",
+  "version": 1,
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "frost_sword",
+      "source": {
+        "path": "art/redesign/art03-objects/frost_sword-v2.png",
+        "bytes": 265325,
+        "sha256": "cf7036014cf3bb96583ebfb83afd94ee8d0269dd82c72699336f203da8e31d85",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/frost_sword-v1.webp",
+        "bytes": 10960,
+        "sha256": "0054af06284f62b516d5be2802dbd69fecb4cb31ee8d56f0a7d895568df79943",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/art03-objects/receipts/frost_sword-v2.json",
+        "sha256": "bc355a2ea50f8fb0b361ce6fe0d0fd9ae3e2e07f937c76044fce5fd17fc564bd"
+      },
+      "prompt": {
+        "path": "art/redesign/art03-objects/frost_sword-v2-prompt.json",
+        "sha256": "0e3c53e175b7032027f8653ef01b3e697a7180527210d837989ff256b4ddc161"
+      },
+      "reviewSourceHash": "cf7036014cf3bb96583ebfb83afd94ee8d0269dd82c72699336f203da8e31d85",
+      "sourceBoundsAlpha16": {
+        "left": 314,
+        "top": 298,
+        "right": 982,
+        "bottom": 997
+      },
+      "runtimeBoundsAlpha16": {
+        "left": 128,
+        "top": 122,
+        "right": 401,
+        "bottom": 407
+      }
+    },
+    {
+      "id": "jade_seal",
+      "source": {
+        "path": "art/redesign/art03-objects/jade_seal-v1.png",
+        "bytes": 1985699,
+        "sha256": "7253c56040d0e2c4fd8888896e85c0c1999735479f4672fdf0ccfb4e2fd04b5c",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/jade_seal-v1.webp",
+        "bytes": 56116,
+        "sha256": "81aad3db8a19ad6a39b0e54a96254d6fcc94164bdcbbbb87bd0e3f48ef43c49c",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/art03-objects/receipts/jade_seal.json",
+        "sha256": "8d9cb2ac0398ad776cf96e6b564ada974a9004098bda1b675aeb8c3e6969b34f"
+      },
+      "prompt": {
+        "path": "art/redesign/art03-objects/jade_seal-prompt.json",
+        "sha256": "ba9bc533f15dd6cde3f418051d078e354bdcbca0ae21c971316f8888fbe08c8e"
+      },
+      "reviewSourceHash": "7253c56040d0e2c4fd8888896e85c0c1999735479f4672fdf0ccfb4e2fd04b5c",
+      "sourceBoundsAlpha16": {
+        "left": 161,
+        "top": 48,
+        "right": 1100,
+        "bottom": 1215
+      },
+      "runtimeBoundsAlpha16": {
+        "left": 66,
+        "top": 19,
+        "right": 449,
+        "bottom": 497
+      }
+    },
+    {
+      "id": "soul_lamp",
+      "source": {
+        "path": "art/redesign/art03-objects/soul_lamp-v1.png",
+        "bytes": 1359219,
+        "sha256": "57029fb4cda9e57050640e6d338056d92768506d7d6299d9e95d8ca4dfaf17fd",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/soul_lamp-v1.webp",
+        "bytes": 42144,
+        "sha256": "d0345b92c5c191f50b831ffdeec27a591785b1948398948daee06df799dff1cc",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/art03-objects/receipts/soul_lamp.json",
+        "sha256": "746b758177719de4cc46abe3c36ff00cb36c33a234c8de34b65dc257d9132136"
+      },
+      "prompt": {
+        "path": "art/redesign/art03-objects/soul_lamp-prompt.json",
+        "sha256": "cb54cd8de5b8b134c7ac3a9b867ee2e3938af32c9e4ef40420345df1f232b17a"
+      },
+      "reviewSourceHash": "57029fb4cda9e57050640e6d338056d92768506d7d6299d9e95d8ca4dfaf17fd",
+      "sourceBoundsAlpha16": {
+        "left": 243,
+        "top": 20,
+        "right": 1016,
+        "bottom": 1185
+      },
+      "runtimeBoundsAlpha16": {
+        "left": 99,
+        "top": 8,
+        "right": 415,
+        "bottom": 484
+      }
+    },
+    {
+      "id": "cloud_mirror",
+      "source": {
+        "path": "art/redesign/art03-objects/cloud_mirror-v1.png",
+        "bytes": 1055777,
+        "sha256": "a7249e6ebd5e69f910b3191dd3cc8085a383f180a4d7fcf8027d401d9704eb50",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/cloud_mirror-v1.webp",
+        "bytes": 27650,
+        "sha256": "8a8066224ee8487a226dd63ae27f8fd1760a08214cdf93826d8e8d8d7d77a008",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/art03-objects/receipts/cloud_mirror-v1.json",
+        "sha256": "ac8b6db0ca16f783f369b3a504ddf385a65dc441ba24354b7f66566a017a6dbc"
+      },
+      "prompt": {
+        "path": "art/redesign/art03-objects/cloud_mirror-v1-prompt.json",
+        "sha256": "86c3a7659fd39ebb04920a09237e37d79a5c85dc2e4b1cd9f46aff667a1b5f60"
+      },
+      "reviewSourceHash": "a7249e6ebd5e69f910b3191dd3cc8085a383f180a4d7fcf8027d401d9704eb50",
+      "sourceBoundsAlpha16": {
+        "left": 233,
+        "top": 71,
+        "right": 1016,
+        "bottom": 1198
+      },
+      "runtimeBoundsAlpha16": {
+        "left": 95,
+        "top": 29,
+        "right": 415,
+        "bottom": 489
+      }
+    }
+  ],
+  "runtimeTotalBytes": 136870,
+  "budgets": {
+    "count": 4,
+    "maxItemBytes": 160000,
+    "maxTotalBytes": 640000
+  },
+  "rights": {
+    "productionUseApproved": true,
+    "distributionLicense": null,
+    "userAcceptance": false
+  },
+  "scope": "Cold raster objects, true alpha and deterministic export verified. Agent inspected each runtime separately; no user or integrated-scene acceptance."
+}

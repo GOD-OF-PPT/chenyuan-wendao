@@ -1,0 +1,9 @@
+{
+  "id": "frost_sword",
+  "task": "Goal4 ART03",
+  "mode": "built-in image_gen",
+  "transparent_background": true,
+  "referenceImages": [],
+  "prompt": "Use case: stylized-concept. Asset type: one standalone transparent game equipment prop for the Chinese xianxia idle game Chen Yuan Wen Dao. Subject: a single Qing Shuang frost sword, an elegant long straight double-edged Chinese jian with pale cold-steel blade, restrained engraved frost/cloud patterns in the metal, aged bronze-gold guard and pommel, deep teal jade grip and one short dark teal silk tassel. Material is cold and unlit; pale steel reflections are solid surface reflections, not emitted magic. Style: detailed hand-painted Chinese fantasy prop illustration with refined painterly brush texture, convincing carved jade and worn antique bronze, fine readable silhouette, semi-realistic game inventory art. Composition: square canvas, whole sword completely visible, centered diagonally from blade tip lower left to pommel upper right, isolated with approximately 15 percent genuinely transparent margin at the outermost extent, balanced three-quarter front view. Soft neutral light from upper left, subtle controlled material highlights, palette teal jade, dark bronze, subdued old gold, silvery steel. Background: true transparent alpha outside the object and through guard gaps. No floor, no cast shadow on a surface, no pedestal, no scene, no people, no hands, no scabbard, no other objects, no text or symbols that read as text, no interface frame, no watermark. Absolutely no flame, smoke, glow halo, aura, light rays, particles or motion trails. This is a cold idle object; all active effects will be rendered separately by game code.",
+  "purpose": "Cold transparent equipment object. Runtime activity and saved ownership remain separate DOM/CSS and formal Game state."
+}

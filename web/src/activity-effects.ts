@@ -6,12 +6,12 @@ import type {ActionResult} from '../../src/full/contracts.ts';
 import type {Observation} from './local-events.ts';
 import {createActionFeedbackTracker} from './action-feedback.ts';
 
-export function createActivityEffectTracker(matches:(a:Activity)=>boolean){
+export function createActivityEffectTracker(matches:(a:Activity)=>boolean,extra:0|4|5=0){
  const feedback=createActionFeedbackTracker();let armed:Activity|null=null,before:Game|null=null;
  return {
   clear(){armed=null;before=null;},
   arm(a:Activity|null,g:Game,id:string,generation:number){
-   if(!a||![2,3,6].includes(a.version)||!matches(a)||a.status!=='running'||a.runId!==g.core.runId||a.id!==id||a.generation!==generation||!a.nextCommand)return;
+   if(!a||!([2,3,6].includes(a.version)||extra&&a.version===extra)||!matches(a)||a.status!=='running'||a.runId!==g.core.runId||a.id!==id||a.generation!==generation||!a.nextCommand)return;
    if(armed?.nextCommand?.commandId!==a.nextCommand.commandId){armed=structuredClone(a);before=structuredClone(g);}
   },
   consume(o:Observation,g:Game|null,a:Activity|null,r:ActionResult|null,replayed:boolean,eligible:boolean){

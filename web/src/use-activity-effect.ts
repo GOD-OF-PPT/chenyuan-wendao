@@ -3,11 +3,11 @@ import type {Activity} from '../../src/full/activity.ts';
 import type {ActionResult} from '../../src/full/contracts.ts';
 import type {useGame} from './store';
 import type {ActionNotice} from './action-feedback';
-import {createActivityEffectTracker} from './activity-effects';
+import {createActivityEffectTracker} from './activity-effects.ts';
 
-export function useActivityPresentation(matches:(a:Activity)=>boolean,key:()=>string,active:()=>boolean=()=>true){
+export function useActivityPresentation(matches:(a:Activity)=>boolean,key:()=>string,active:()=>boolean=()=>true,extra:0|4|5=0){
  const store=inject<ReturnType<typeof useGame>>('game-scene'),visible=ref(true),hidden=ref(document.hidden);
- const tracker=createActivityEffectTracker(matches),effect=shallowRef<{sequence:number;notice:ActionNotice;result:ActionResult}|null>(null);
+ const tracker=createActivityEffectTracker(matches,extra),effect=shallowRef<{sequence:number;notice:ActionNotice;result:ActionResult}|null>(null);
  let stop=()=>{},timer:ReturnType<typeof setTimeout>|undefined,sequence=0;
  const eligible=computed(()=>visible.value&&!hidden.value&&active()&&!store?.activityPausing&&!!store?.available&&!store.error);
  const activity=computed(()=>store?.game&&store.activity?.runId===store.game.core.runId&&matches(store.activity)?store.activity:null);

@@ -120,7 +120,7 @@ def validate_alchemy_workshop(root, image_reader=image_info):
     assert manifest['consumer'] == 'web/src/ProductionPlanner.vue' and '<AlchemyWorkshop ' in local(manifest['consumer']).read_text(), 'Alchemy workshop actual consumer missing'
     component = local('web/src/AlchemyWorkshop.vue').read_text()
     assert runtime['path'].removeprefix('web/public/') in component and '<AssetImage' in component and "from './use-activity-effect'" in component and 'useActivityPresentation(a=>a.version===3' in component, 'Alchemy workshop furnace/shared presentation consumer missing'
-    assert 'createActivityEffectTracker(matches)' in local('web/src/use-activity-effect.ts').read_text(), 'Alchemy workshop shared tracker binding missing'
+    assert 'createActivityEffectTracker(matches,extra)' in local('web/src/use-activity-effect.ts').read_text(), 'Alchemy workshop shared tracker binding missing'
     proof = local('web/src/activity-effects.ts').read_text()
     assert 'resolve(before,command)' in proof and 'completeActivity(g,prior,r' in proof, 'Alchemy workshop full Game and Activity proof missing'
     assert manifest['styleConsumer'] in ['web/src/main.ts', 'web/src/AlchemyWorkshop.vue'] and 'alchemy-workshop.css' in local(manifest['styleConsumer']).read_text(), 'Alchemy workshop style consumer missing'
@@ -179,6 +179,121 @@ def validate_adventure_objects(root):
         assert fragments and all(fragment in local(path).read_text() for fragment in fragments), 'Adventure object actual consumer missing'
     assert manifest['scope'] and 'user' in manifest['scope'].lower()
     return total
+
+
+ART03_NATIVE = ['web/src/JadeStudyScene.vue', 'web/src/RelicAtelier.vue', 'web/src/LoadoutConstellation.vue', 'web/src/equipment-effects.ts', 'web/src/art03-equipment.css']
+ART03_IDS = ['frost_sword', 'jade_seal', 'soul_lamp', 'cloud_mirror']
+
+
+def validate_equipment_objects(root, image_reader=image_info):
+    """Bind four cold object exports and real UI/proof consumers, not visual acceptance."""
+    ledger = root / 'art/redesign/art03.json'
+    if not ledger.exists():
+        assert not any((root / path).exists() for path in ART03_NATIVE), 'Unrecorded equipment object code'
+        return set(), 0, 0
+    manifest = json.loads(ledger.read_text())
+    assert manifest['format'] == 'chenyuan-equipment-objects' and type(manifest['version']) is int and manifest['version'] == 1
+    assert manifest['task'] == 'Goal4 ART03' and manifest['userAcceptance'] is False
+    assert all(manifest[key] == limit for key, limit in {'maxNativeBytes': 45000, 'maxNewRasterAssets': 4, 'maxRuntimeBytes': 160000, 'runtimeSize': 512, 'maxTotalRuntimeBytes': 640000}.items()), 'Equipment object budget changed'
+
+    def local(path):
+        file = (root / path).resolve()
+        assert file.is_relative_to(root.resolve()) and file.is_file(), 'Missing or external equipment object file'
+        return file
+
+    def identity(row):
+        file = local(row['path']); data = file.read_bytes()
+        assert hashlib.sha256(data).hexdigest() == row['sha256'], 'Equipment object hash changed'
+        if 'bytes' in row:
+            assert len(data) == row['bytes'], 'Equipment object byte count changed'
+        return file, data
+
+    required_refs = {'docs/decisions/0025-equipment-object-art-contract.md', 'goal-4/amendments/2026-10-23-art03.md', 'art/redesign/art03-objects/asset-facts.json', 'art/redesign/art03-objects/prompts.json'}
+    assert required_refs <= set(manifest['sourceReferences']), 'Equipment object source references incomplete'
+    rights = manifest['rights']
+    assert rights['productionUseApproved'] is True and rights['userAcceptance'] is False and rights['distributionLicense'] is None
+    assert rights['evidenceReferences'], 'Equipment object rights evidence missing'
+    for ref in manifest['sourceReferences'] + rights['evidenceReferences']:
+        local(ref)
+    assert [row['path'] for row in manifest['files']] == ART03_NATIVE, 'Equipment object code inventory changed'
+    total = sum(len(identity(row)[1]) for row in manifest['files'])
+    assert total <= 45000, 'Equipment object code budget exceeded'
+    facts = json.loads(local('art/redesign/art03-objects/asset-facts.json').read_text())
+    assert facts['format'] == 'chenyuan-art03-equipment-object-facts' and type(facts['version']) is int and facts['version'] == 1 and facts['tool'] == 'built-in image_gen'
+    assert facts['budgets'] == dict(count=4, maxItemBytes=160000, maxTotalBytes=640000)
+    assert facts['rights'] == dict(productionUseApproved=True, distributionLicense=None, userAcceptance=False)
+    assert [asset['id'] for asset in manifest['assets']] == ART03_IDS and manifest['assets'] == facts['assets'], 'Equipment object slots or facts changed'
+    prompts = json.loads(local('art/redesign/art03-objects/prompts.json').read_text())
+    assert prompts['mode'] == 'built-in image_gen' and [row['id'] for row in prompts['prompts']] == ART03_IDS
+    prompt_rows = {row['id']: row for row in prompts['prompts']}
+    recorded = set()
+    for asset in manifest['assets']:
+        aid = asset['id']; source, runtime = asset['source'], asset['runtime']
+        original = 'frost_sword-v2.png' if aid == 'frost_sword' else aid + '-v1.png'
+        assert source['path'] == 'art/redesign/art03-objects/' + original and runtime['path'] == f'web/public/art/v2/equipment/{aid}-v1.webp'
+        for row, fmt in [(source, 'png'), (runtime, 'webp')]:
+            file, data = identity(row); size, alpha, actual_format = image_reader(data, file.suffix)
+            assert size == row['dimensions'] and alpha == row['alpha'] is True and actual_format == row['format'] == fmt, 'Equipment object header or alpha mismatch'
+            recorded.add(row['path'])
+        assert all(type(source['dimensions'][axis]) is int and 512 <= source['dimensions'][axis] <= 8192 for axis in ['width', 'height'])
+        assert runtime['dimensions'] == dict(width=512, height=512) and runtime['bytes'] <= 160000, 'Equipment object runtime size/bytes changed'
+        assert asset['reviewSourceHash'] == source['sha256'], 'Equipment source review identity changed'
+        _, raw = identity(asset['receipt']); receipt = json.loads(raw)
+        assert receipt['id'] == aid and receipt['tool'] == 'built-in image_gen' and receipt['copiedUnchanged'] is True and receipt['transparentBackgroundRequested'] is True and receipt['runtimePending'] is False and receipt['userAcceptance'] is False
+        assert isinstance(receipt['originalToolPath'], str) and receipt['originalToolPath'].startswith('/')
+        assert receipt['savedPath'] == source['path'] and receipt['sourceSHA256'] == source['sha256'] and receipt['sourceBytes'] == source['bytes'] and receipt['sourceDimensions'] == source['dimensions'] and receipt['runtime'] == runtime, 'Equipment receipt source/runtime mismatch'
+        _, raw = identity(asset['prompt']); prompt = json.loads(raw)
+        assert prompt_rows[aid] == prompt and prompt['id'] == aid and prompt['mode'] == 'built-in image_gen' and prompt['transparent_background'] is True and isinstance(prompt['prompt'], str) and prompt['prompt'].strip(), 'Equipment exact prompt missing'
+        assert receipt['promptReference'] == asset['prompt']['path'] and receipt['promptSHA256'] == hashlib.sha256(prompt['prompt'].encode()).hexdigest(), 'Equipment prompt binding changed'
+        references = receipt['referenceImages']
+        assert prompt['referenceImages'] == [row['path'] for row in references], 'Equipment edit references changed'
+        for reference in references:
+            identity(reference); recorded.add(reference['path'])
+        assert receipt['encoding'] == ['cwebp', '-q', '82', '-m', '6', '-alpha_q', '100', '-resize', '512', '512', '-metadata', 'none'], 'Equipment export settings changed'
+        export = receipt['exportVerification']
+        assert export['verified'] is True and export['sourceUnchanged'] is True and export['secondSHA256'] == runtime['sha256'] and export['encoder'].startswith('cwebp 1.6.0'), 'Equipment deterministic export evidence missing'
+        assert export['secondPath'] == f'art/redesign/art03-objects/exports/{aid}-repeat.webp'
+        assert local(export['secondPath']).read_bytes() == local(runtime['path']).read_bytes(), 'Equipment repeated export differs'
+        recorded.add(export['secondPath'])
+        review = receipt['review']
+        assert review['actuallyViewed'] is True and review['reviewedRuntimeSHA256'] == runtime['sha256'] and all(review[field] is False for field in ['textBaked', 'fireBaked', 'smokeBaked', 'activeHaloBaked', 'userAcceptance']), 'Equipment cold-object review missing'
+        decode = receipt['decodeProof']
+        assert decode['decoder'] == 'Pillow' and all(re.fullmatch('[0-9a-f]{64}', decode[field]) for field in ['sourceRGBASHA256', 'runtimeRGBASHA256'])
+        assert decode['alphaDefinitions'] == dict(transparentPixels='alpha=0', solidPixels='alpha>=250', intermediatePixels='1<=alpha<250')
+        for name, item in [('alphaProof', source), ('runtimeAlphaProof', runtime)]:
+            alpha = receipt[name]
+            assert all(type(alpha[field]) is int for field in ['min', 'max', 'transparentPixels', 'solidPixels', 'intermediatePixels'])
+            assert alpha['min'] == 0 and 250 <= alpha['max'] <= 255 and alpha['transparentPixels'] > 1000 and alpha['solidPixels'] > 1000 and alpha['intermediatePixels'] >= 0, 'Equipment recorded alpha counts missing'
+            assert sum(alpha[field] for field in ['transparentPixels', 'solidPixels', 'intermediatePixels']) == item['dimensions']['width'] * item['dimensions']['height'], 'Equipment alpha total mismatch'
+        assert receipt['sourceBoundsAlpha16'] == asset['sourceBoundsAlpha16']
+        for name, item in [('sourceBoundsAlpha16', source), ('runtimeBoundsAlpha16', runtime)]:
+            bounds = asset[name]
+            assert set(bounds) == {'left', 'top', 'right', 'bottom'} and all(type(value) is int for value in bounds.values())
+            assert 0 <= bounds['left'] < bounds['right'] <= item['dimensions']['width'] and 0 <= bounds['top'] < bounds['bottom'] <= item['dimensions']['height'], 'Equipment recorded alpha bounds invalid'
+        for coordinate, axis in [('left', 'width'), ('right', 'width'), ('top', 'height'), ('bottom', 'height')]:
+            assert abs(asset['runtimeBoundsAlpha16'][coordinate] - asset['sourceBoundsAlpha16'][coordinate] * 512 / source['dimensions'][axis]) <= 2, 'Equipment bounds disagree with recorded resize'
+    assert facts['runtimeTotalBytes'] == sum(asset['runtime']['bytes'] for asset in manifest['assets']) <= 640000
+    required = {
+        'web/src/LearningPlanner.vue': ['<JadeStudyScene'],
+        'web/src/ProductionPlanner.vue': ['<RelicAtelier'],
+        'web/src/EquipmentPanel.vue': ['<LoadoutConstellation'],
+        'web/src/JadeStudyScene.vue': ['useEquipmentCycle', 'useConfigurationEcho', '<CatalogueArt kind="study"'],
+        'web/src/RelicAtelier.vue': ["useEquipmentCycle('forge'", 'useConfigurationEcho', 'art/v2/equipment/'],
+        'web/src/LoadoutConstellation.vue': ['useConfigurationEcho'],
+        'web/src/equipment-effects.ts': ['useActivityPresentation', 'equipmentActivityMatches', 'resolve(before,command)', 'createActionFeedbackTracker'],
+        'web/src/main.ts': ["import './art03-equipment.css'"],
+    }
+    assert set(required) <= set(manifest['bindings']), 'Equipment object binding inventory incomplete'
+    for path, tokens in required.items():
+        assert set(tokens) <= set(manifest['bindings'][path]), 'Equipment object required binding omitted'
+    for path, tokens in manifest['bindings'].items():
+        assert tokens and all(token in local(path).read_text() for token in tokens), 'Equipment object actual consumer missing'
+    hook, shared = local('web/src/use-activity-effect.ts').read_text(), local('web/src/activity-effects.ts').read_text()
+    assert 'createActivityEffectTracker(matches,extra)' in hook and 'extra:0|4|5=0' in hook
+    assert 'extra:0|4|5=0' in shared and 'extra&&a.version===extra' in shared and 'resolve(before,command)' in shared and 'completeActivity(g,prior,r' in shared, 'Equipment shared full proof or default gate detached'
+    catalogue = json.loads(local('art/redesign/catalogue-art/manifest.json').read_text())
+    assert '<CatalogueArt kind="study"' in catalogue['bindings'].get('web/src/JadeStudyScene.vue', []) and '藏经图鉴' in local('web/src/JadeStudyScene.vue').read_text(), 'Catalogue study fallback actual child unbound'
+    return recorded, 4, total
 
 
 def validate(root):
@@ -264,6 +379,11 @@ def validate(root):
     recorded.update(workshop_files)
     counts['production'] += workshop_production
     counts['reference'] += len(workshop_files) - workshop_production
+    equipment_files, equipment_production, equipment_bytes = validate_equipment_objects(root)
+    assert not recorded.intersection(equipment_files), 'Equipment object paths overlap older ledgers'
+    recorded.update(equipment_files)
+    counts['production'] += equipment_production
+    counts['reference'] += len(equipment_files) - equipment_production
     immersive_path = root / 'art/redesign/immersive-ui.json'
     if immersive_path.exists():
         ui = json.loads(immersive_path.read_text())
@@ -665,7 +785,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'adventureObjectNativeBytes':adventure_object_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'adventureObjectNativeBytes':adventure_object_bytes, 'equipmentObjectNativeBytes':equipment_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

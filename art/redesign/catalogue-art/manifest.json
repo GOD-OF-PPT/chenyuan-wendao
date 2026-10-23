@@ -133,9 +133,6 @@
     "web/src/GoodsPanel.vue": [
       "<CatalogueArt "
     ],
-    "web/src/EquipmentPanel.vue": [
-      "<CatalogueArt "
-    ],
     "web/src/PreparationPanel.vue": [
       "<CatalogueArt "
     ],
@@ -145,6 +142,9 @@
     "web/src/App.vue": [
       "<StageOutcome ",
       "data-testid=\"feature-state\""
+    ],
+    "web/src/JadeStudyScene.vue": [
+      "<CatalogueArt kind=\"study\""
     ]
   }
 }

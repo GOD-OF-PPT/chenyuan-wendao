@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed,ref,watch,onDeactivated} from 'vue';
+import {computed,inject,ref,watch,onDeactivated} from 'vue';
 import type {Action,Game} from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
 import {stats} from '../../src/full/engine.ts';
@@ -8,9 +8,11 @@ import {previewAction} from '../../src/full/queries.ts';
 import type {TrackingTarget} from '../../src/full/goals.ts';
 import {pageSlice} from './play-flow';
 import CataloguePager from './CataloguePager.vue';
-import CatalogueArt from './CatalogueArt.vue';
+import JadeStudyScene from './JadeStudyScene.vue';
+import type {useGame} from './store';
 import GameIcon from './GameIcon.vue';
 const props=withDefaults(defineProps<{game:Game;busy:boolean;available:boolean;running:boolean;highlight:string;savedPlan:LearnPlan|StudyPlan|null;planSaved?:boolean;embedded?:boolean;mode:'skills'|'manual'}>(),{planSaved:false});
+const scene=inject<ReturnType<typeof useGame>>('game-scene');
 const emit=defineEmits<{start:[PreparationPlan];act:[Action];track:[TrackingTarget];travel:[PreparationPlan]}>();
 const filter=ref('current'),future=ref(false),page=ref(0),queuePage=ref(0),selected=ref(''),queue=ref<string[]>([]),budget=ref(0),reserve=ref(0),editedLimits=ref(false);
 type Mode='skills'|'manual';
@@ -29,11 +31,12 @@ const sameSaved=computed(()=>{const p=props.savedPlan,d=plan.value;return !!p&&p
 const unit=computed(()=>props.mode==='manual'?previewAction(props.game,{type:'STUDY',manual:'jinghong'}):skill.value?previewAction(props.game,{type:'LEARN',skill:selected.value}):null);
 const equip=computed(()=>skill.value?previewAction(props.game,{type:'EQUIP',skill:selected.value}):null);
 const currentSlot=computed(()=>skill.value?props.game.loadout[skill.value.slot]:null);
-const conflict=computed(()=>!props.available?'存档未就绪':props.busy?'当前行动保存中，请稍候':props.running?'当前活动进行中，请先暂停后确认新安排':'');
+const conflict=computed(()=>scene?.error&&(scene.canRetry||scene.syncIssue)?'存档状态待核对，请先恢复或重试':!props.available?'存档未就绪':props.busy?'当前行动保存中，请稍候':props.running?'当前活动进行中，请先暂停后确认新安排':'');
 const move=computed(()=>previewAction(props.game,{type:'TRAVEL',location:'sect'}));
 function resetBudget(){if(!editedLimits.value)budget.value=props.mode==='manual'?C.swordManual.price:queue.value.reduce((n,id)=>n+C.skills[id].price,0);}
 function choose(id:string){selected.value=id;}
-function locate(){if(props.mode==='manual')return;const id=props.highlight.replace(/^(learn-|equip-)/,'');if(Object.hasOwn(C.skills,id)){filter.value=C.skills[id].school;future.value=C.rank(C.skills[id].min)>C.rank(props.game.core.player.realm);page.value=Math.max(0,Math.floor(rows.value.findIndex(([key])=>key===id)/4));choose(id);}else if(rows.value.length&&!rows.value.some(([id])=>id===selected.value)){page.value=0;choose(rows.value[0][0]);}}
+function focusSkill(id:string){if(!Object.hasOwn(C.skills,id))return;filter.value=C.skills[id].school;future.value=C.rank(C.skills[id].min)>C.rank(props.game.core.player.realm);page.value=Math.max(0,Math.floor(rows.value.findIndex(([key])=>key===id)/4));choose(id);}
+function locate(){if(props.mode==='manual')return;const id=props.highlight.replace(/^(learn-|equip-)/,'');if(Object.hasOwn(C.skills,id))focusSkill(id);else if(rows.value.length&&!rows.value.some(([id])=>id===selected.value)){page.value=0;choose(rows.value[0][0]);}}
 function restore(){const p=props.savedPlan;if(!p||p.kind!==(props.mode==='manual'?'study':'learn'))return;budget.value=p.stoneBudget;reserve.value=p.stoneReserve;editedLimits.value=true;if(p.kind==='learn'){queue.value=[...p.skills];queuePage.value=0;const id=p.skills[0];if(id){selected.value=id;filter.value=C.skills[id].school;future.value=true;page.value=Math.max(0,Math.floor(rows.value.findIndex(([key])=>key===id)/4));}}}
 function snapshotDraft():Draft{return{filter:filter.value,future:future.value,page:page.value,queuePage:queuePage.value,selected:selected.value,queue:[...queue.value],budget:budget.value,reserve:reserve.value,editedLimits:editedLimits.value};}
 function applyDraft(d:Draft){filter.value=d.filter;future.value=d.future;page.value=d.page;queuePage.value=d.queuePage;selected.value=d.selected;queue.value=[...d.queue];budget.value=d.budget;reserve.value=d.reserve;editedLimits.value=d.editedLimits;reconcile();}
@@ -52,19 +55,22 @@ defaults();
 </script>
 <template>
  <section class="idle-preparation learning-planner" :class="{'paper':!embedded,'play-catalogue':!embedded}" :data-mode="mode" data-testid="learning-planner" aria-label="玉简研习安排">
-  <header class="preparation-heading"><div><strong>{{mode==='manual'?'参悟惊鸿剑简':'传法玉简'}}</strong><small data-testid="preparation-plan-state">{{sameSaved&&planSaved?'已保存安排；修改后须重新确认':'待确认的新安排，确认后才开始'}}</small></div><small v-if="conflict" class="preparation-reason">{{conflict}}</small></header>
-  <div v-if="mode==='skills'" class="learning-filters"><label>流派 <select v-model="filter" @change="filterChanged" aria-label="功法流派"><option value="current">当前修法</option><option value="sword">剑修</option><option value="talisman">符修</option><option value="all">全部</option></select></label><label><input v-model="future" @change="filterChanged" type="checkbox" aria-label="显示后续功法法宝">后续境界</label></div>
+  <header v-if="mode==='manual'" class="preparation-heading"><small data-testid="preparation-plan-state">{{sameSaved&&planSaved?'已保存安排；修改后须重新确认':'待确认的新安排，确认后才开始'}}</small></header>
+  <div v-if="mode==='skills'" class="learning-filters"><label>流派 <select v-model="filter" @change="filterChanged" aria-label="功法流派"><option value="current">当前修法</option><option value="sword">剑修</option><option value="talisman">符修</option><option value="all">全部</option></select></label><label><input v-model="future" @change="filterChanged" type="checkbox" aria-label="显示后续功法法宝">后续境界</label><small data-testid="preparation-plan-state">{{sameSaved&&planSaved?'已保存安排；修改后须重新确认':'待确认的新安排，确认后才开始'}}</small></div>
   <div class="preparation-work learning-work">
    <div v-if="mode==='skills'" class="learning-directory" aria-label="玉简目录"><div class="learning-entries"><button v-for="[id,s] in paged.rows" :key="id" :data-testid="'skill-select-'+id" :aria-pressed="selected===id" @click="choose(id)"><GameIcon kind="skill" :id="id"/><strong>{{s.name}}</strong><small>{{slots[s.slot]}} · {{game.learned.includes(id)?game.loadout[s.slot]===id?'已装配':'已掌握':'待研习'}}</small></button></div><CataloguePager :page="paged.page" :pages="paged.pages" :total="paged.total" label="功法" @change="turn"/></div>
    <div class="learning-scroll">
-    <div class="preparation-art"><CatalogueArt kind="study"/><div v-if="skill&&mode==='skills'" class="learning-focus"><GameIcon kind="skill" :id="selected"/><small>{{game.learned.includes(selected)?currentSlot===selected?'当前已装配':'已掌握':'尚未掌握'}}</small></div></div>
+    <JadeStudyScene :key="mode" :game="game" :skill-id="selected" :manual="mode==='manual'" @inspect="focusSkill"><template #description>
     <article v-if="mode==='manual'" class="learning-object" data-testid="sword-manual"><h3>{{C.swordManual.name}}</h3><p>剑修终结术法伤害 +{{C.swordManual.damageBonus}}；不改变当前配装。</p><small>破庙交易已获得同一启迪时，不重复收费。</small><strong data-testid="manual-effect">当前伤害加成 {{stats(game).manualDamageBonus}}</strong><small v-if="game.school!=='sword'">当前{{game.school==='talisman'?'符修':'未择剑修'}}无此剑法直接收益；研读记录保留。</small><p>一次 {{C.swordManual.price}} 灵石 · 60 秒 · 青云宗 · 需{{C.realms[C.swordManual.min].name}}</p><small>{{unit?.failure?.message}}</small></article>
-    <article v-else-if="skill" class="learning-object" :data-testid="'skill-'+selected"><h3>{{skill.name}}</h3><small>{{skill.school==='sword'?'剑修':'符修'}} · {{slots[skill.slot]}} · 需{{C.realms[skill.min].name}}</small><p>{{skill.description}}</p><small>首次研习每卷 {{skill.price}} 灵石 · 30 秒 · 青云宗</small><small data-testid="learn-reason">{{game.learned.includes(selected)?'已掌握，无需再次研习；可原地比较配装':unit?.failure?.message}}</small><div class="learning-slot"><span>当前{{slots[skill.slot]}}：</span><strong>{{currentSlot?C.skills[currentSlot].name:'尚未装备'}}</strong><span>所选：{{skill.name}}</span></div></article>
+    <article v-else-if="skill" class="learning-object" :data-testid="'skill-'+selected"><h3>{{skill.name}}</h3><small>{{skill.school==='sword'?'剑修':'符修'}} · {{slots[skill.slot]}} · 需{{C.realms[skill.min].name}}</small><p>{{skill.description}}</p><div class="learning-facts"><small>首次研习每卷 {{skill.price}} 灵石 · 30 秒 · 青云宗</small><small data-testid="learn-reason">{{game.learned.includes(selected)?'已掌握，无需再次研习；可原地比较配装':unit?.failure?.message}}</small></div><div class="learning-slot"><span>当前{{slots[skill.slot]}}：</span><strong>{{currentSlot?C.skills[currentSlot].name:'尚未装备'}}</strong><span>所选：{{skill.name}}</span></div></article>
     <div v-else class="catalogue-empty">当前无此类经卷；可切换流派或查看后续境界。</div>
+    </template><template #action>
+    <template v-if="mode==='skills'&&skill"><div class="learning-candidate"><button v-if="!game.learned.includes(selected)" :data-testid="'learn-'+selected" :class="{primary:!pending&&!game.learned.includes(selected)}" :disabled="game.learned.includes(selected)||queue.includes(selected)" @click="add">{{game.learned.includes(selected)?'已掌握':queue.includes(selected)?'已列入清单':'列入待研卷轴'}}</button><button v-else :data-testid="'equip-'+selected" :class="{primary:!pending&&game.learned.includes(selected)}" :disabled="!!conflict||!equip?.allowed" @click="emit('act',{type:'EQUIP',skill:selected})">{{currentSlot===selected?'已装备':'比较后装入'+slots[skill.slot]}}</button><small v-if="game.learned.includes(selected)&&!conflict" data-testid="equip-reason">{{equip?.failure?.message}}</small><button class="text-button" :data-testid="'track-skill-'+selected" @click="emit('track',{kind:'skill',id:selected})">查看此法筹备</button></div></template>
+    </template></JadeStudyScene>
    </div>
    <div class="preparation-decision learning-decision">
-    <template v-if="mode==='skills'&&skill"><div class="learning-candidate"><button v-if="!game.learned.includes(selected)" :data-testid="'learn-'+selected" :class="{primary:!pending&&!game.learned.includes(selected)}" :disabled="game.learned.includes(selected)||queue.includes(selected)" @click="add">{{game.learned.includes(selected)?'已掌握':queue.includes(selected)?'已列入清单':'加入研习清单'}}</button><button v-else :data-testid="'equip-'+selected" :class="{primary:!pending&&game.learned.includes(selected)}" :disabled="!!conflict||!equip?.allowed" @click="emit('act',{type:'EQUIP',skill:selected})">{{currentSlot===selected?'已装备':'比较后装入'+slots[skill.slot]}}</button><small v-if="game.learned.includes(selected)" data-testid="equip-reason">{{conflict||equip?.failure?.message}}</small><button class="text-button" :data-testid="'track-skill-'+selected" @click="emit('track',{kind:'skill',id:selected})">查看此法筹备</button></div></template>
-    <button class="learning-plan-summary" data-testid="learning-plan-open" @click="settings?.showModal()"><strong>{{mode==='manual'?'仅参悟一次':queue.length&&!pending?'清单已掌握，可比较装配':'本段研习 '+queue.length+' 卷'}} · 调整安排</strong><small>累计灵石上限 {{budget}} · 保留 {{reserve}}</small></button>
+    <small v-if="conflict" class="preparation-reason" :data-testid="mode==='skills'&&game.learned.includes(selected)?'equip-reason':undefined" role="status">{{conflict}}</small>
+    <button class="learning-plan-summary" data-testid="learning-plan-open" @click="settings?.showModal()"><strong>{{mode==='manual'?'仅参悟一次':queue.length&&!pending?'清单已掌握，可比较装配':'待研卷轴 '+queue.length+' 卷'}} · 调整安排</strong><small>累计灵石上限 {{budget}} · 保留 {{reserve}}</small></button>
     <div class="preparation-estimate" data-testid="preparation-estimate"><strong>{{mode==='skills'&&queue.length&&!pending?'已掌握清单经卷；可比较装配':quote?'预计完成 '+quote.cycles+(mode==='manual'?' 次参悟':' 卷')+' · 消耗 '+quote.stones+' 灵石':'选择未掌握经卷加入清单'}}</strong><small>{{quote?.failure?.message??(quote?.stopReason?'预计停止：'+quote.stopReason.message:'所选费用、资格或已掌握状态变化时停止')}}</small><small>只研习已选内容；不自动换派、装配或前往宗门。</small></div>
     <button v-if="(mode==='manual'||pending)&&game.core.world.location!=='sect'" :class="{primary:mode==='manual'||pending>0}" data-testid="preparation-travel" @click="emit('travel',plan)" :disabled="!!conflict||!move.allowed||mode==='skills'&&!queue.length">前往青云宗 · 不自动研习</button><button v-else-if="mode==='manual'||pending" :class="{primary:mode==='manual'||pending>0}" data-testid="preparation-start" @click="emit('start',plan)" :disabled="!!conflict||!quote?.allowed">{{running?'当前活动进行中，请先暂停':mode==='manual'?'安排参悟一次':'开始这段研习'}}</button>
    </div>

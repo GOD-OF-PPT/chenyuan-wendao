@@ -13,8 +13,8 @@
   "files": [
     {
       "path": "web/src/SourceField.vue",
-      "bytes": 6072,
-      "sha256": "0bfa47e60ef522ad0beb310876af660a8b9394ddf82b20d0d1c343dc44a96b1f"
+      "bytes": 6039,
+      "sha256": "81d695fd95112be9d4316457e5096cdeaac7f900ce10abd9a8a0c3f51c913321"
     },
     {
       "path": "web/src/JourneyMap.vue",
@@ -23,8 +23,8 @@
     },
     {
       "path": "web/src/BattlePresence.vue",
-      "bytes": 6360,
-      "sha256": "bdf059bb2be705b716ccde54a8cdcc6d8dd785794ca150e5e1aac0388fc0b081"
+      "bytes": 6326,
+      "sha256": "945ee38b6fe8ae0b43ac880c1ded2a2fadffef8534e60d7bfdcbad570718bb2b"
     },
     {
       "path": "web/src/BattleDeck.vue",
@@ -33,13 +33,13 @@
     },
     {
       "path": "web/src/activity-effects.ts",
-      "bytes": 2590,
-      "sha256": "ed2d224a725c0aeda910cfbb3c86fe52dd283c4ef441bc7144cf54659d644fac"
+      "bytes": 2632,
+      "sha256": "343f294b3a70c7ded905f856a90b71596934087a131da7a2517989ac339efc0d"
     },
     {
       "path": "web/src/use-activity-effect.ts",
-      "bytes": 2995,
-      "sha256": "c7222eedf90053f85716b8b7139a775caf30c697615c3ce2932270dc91b3a020"
+      "bytes": 3018,
+      "sha256": "7945d768908d12361720bdf4afaab73f3e1479f950f0e7dbe8690ec888c548c7"
     },
     {
       "path": "web/src/art02-source.css",

@@ -1,6 +1,6 @@
 import copy,hashlib,json,os,shutil,tempfile,unittest
 from pathlib import Path
-from check_inventory import validate,validate_alchemy_workshop,validate_adventure_objects,ART02_NATIVE,SCOPES
+from check_inventory import validate,validate_alchemy_workshop,validate_adventure_objects,validate_equipment_objects,ART02_NATIVE,ART03_NATIVE,SCOPES
 ROOT=Path(__file__).resolve().parents[2]
 
 class InventoryTests(unittest.TestCase):
@@ -74,6 +74,9 @@ class InventoryTests(unittest.TestCase):
   objects=ROOT/'art/redesign/art02.json'
   if objects.exists():
    data=json.loads(objects.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  equipment=ROOT/'art/redesign/art03.json'
+  if equipment.exists():
+   data=json.loads(equipment.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+data['rights']['evidenceReferences']);files.update(ROOT/row['path'] for row in data['files'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -134,7 +137,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0))
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0))
  def test_idle_ui_requires_its_source_ledger(self):
   (self.root/'art/redesign/idle-cultivation.json').unlink();self.rejected()
  def test_idle_ui_budget_cannot_be_raised(self):
@@ -514,7 +517,7 @@ class InventoryTests(unittest.TestCase):
  def test_workshop_shared_presentation_cannot_be_detached_after_rehash(self):
   m=self.workshop();path='web/src/AlchemyWorkshop.vue';code=(self.root/path).read_text().replace('useActivityPresentation(a=>a.version===3','useDetachedPresentation(a=>a.version===3');self.workshop_code(m,path,code);m['bindings'][path]=['<AssetImage'];self.reject_workshop(m)
  def test_workshop_shared_tracker_cannot_be_detached_by_manifest(self):
-  m=self.workshop();path='web/src/use-activity-effect.ts';self.write(path,(self.root/path).read_text().replace('createActivityEffectTracker(matches)','createDetachedTracker(matches)'));m['bindings'].pop(path,None);self.reject_workshop(m)
+  m=self.workshop();path='web/src/use-activity-effect.ts';self.write(path,(self.root/path).read_text().replace('createActivityEffectTracker(matches,extra)','createDetachedTracker(matches,extra)'));m['bindings'].pop(path,None);self.reject_workshop(m)
  def test_workshop_formal_game_and_activity_proof_both_remain_required(self):
   path='web/src/activity-effects.ts';original=(self.root/path).read_text()
   for token in ['resolve(before,command)','completeActivity(g,prior,r']:
@@ -522,5 +525,67 @@ class InventoryTests(unittest.TestCase):
  def test_workshop_style_and_source_references_cannot_be_unbound(self):
   m=self.workshop();m['styleConsumer']='web/src/does-not-exist.ts';self.reject_workshop(m)
   m=self.workshop();m['sourceReferences']=['../outside-contract.md'];self.reject_workshop(m)
+
+ def equipment(self):return json.loads((self.root/'art/redesign/art03.json').read_text())
+ def equipment_facts(self,manifest):
+  p='art/redesign/art03-objects/asset-facts.json';facts=json.loads((self.root/p).read_text());facts['assets']=copy.deepcopy(manifest['assets']);facts['runtimeTotalBytes']=sum(a['runtime']['bytes'] for a in manifest['assets']);self.write(p,facts)
+ def reject_equipment(self,manifest,sync_facts=False):
+  self.write('art/redesign/art03.json',manifest)
+  if sync_facts:self.equipment_facts(manifest)
+  with self.assertRaises((AssertionError,KeyError,ValueError)):validate_equipment_objects(self.root)
+ def equipment_receipt(self,manifest,change):
+  ref=manifest['assets'][0]['receipt'];receipt=json.loads((self.root/ref['path']).read_text());change(receipt);self.write(ref['path'],receipt);ref['sha256']=hashlib.sha256((self.root/ref['path']).read_bytes()).hexdigest()
+ def equipment_image(self,manifest,data):
+  runtime=manifest['assets'][0]['runtime'];p=self.root/runtime['path'];p.unlink();p.write_bytes(data);runtime.update(bytes=len(data),sha256=hashlib.sha256(data).hexdigest());self.equipment_receipt(manifest,lambda r:r.update(runtime=copy.deepcopy(runtime)))
+ def test_equipment_records_four_production_objects_and_all_five_native_files(self):
+  files,count,size=validate_equipment_objects(self.root);self.assertEqual(count,4);self.assertEqual(len(files),13);self.assertGreater(size,0);self.assertLessEqual(size,45000);self.assertEqual([r['path'] for r in self.equipment()['files']],ART03_NATIVE)
+ def test_equipment_ledger_is_required(self):
+  (self.root/'art/redesign/art03.json').unlink()
+  with self.assertRaises(AssertionError):validate_equipment_objects(self.root)
+ def test_equipment_headers_and_all_original_caps_are_fixed(self):
+  original=self.equipment()
+  for key,value in [('format','other'),('version',True),('task','Other'),('maxNativeBytes',45001),('maxNewRasterAssets',5),('maxRuntimeBytes',160001),('runtimeSize',513),('maxTotalRuntimeBytes',640001)]:
+   m=copy.deepcopy(original);m[key]=value;self.reject_equipment(m)
+ def test_equipment_machine_checks_cannot_claim_user_acceptance(self):
+  m=self.equipment();m['userAcceptance']=True;self.reject_equipment(m)
+ def test_equipment_native_inventory_cannot_omit_the_shared_adapter(self):
+  m=self.equipment();m['files']=[r for r in m['files'] if r['path']!='web/src/equipment-effects.ts'];self.reject_equipment(m)
+ def test_equipment_code_identity_and_rehashed_byte_cap_are_both_enforced(self):
+  m=self.equipment();m['files'][0]['sha256']='0'*64;self.reject_equipment(m)
+  m=self.equipment();row=m['files'][0];code=(self.root/row['path']).read_text()+' '*45001;self.write(row['path'],code);row.update(bytes=len(code.encode()),sha256=hashlib.sha256(code.encode()).hexdigest());self.reject_equipment(m)
+ def test_equipment_exact_four_slots_cannot_be_replaced_or_duplicated(self):
+  m=self.equipment();m['assets'][0]['id']='another-object';self.reject_equipment(m,True)
+ def test_equipment_asset_facts_cannot_drift_from_the_manifest(self):
+  m=self.equipment();m['assets'][0]['reviewSourceHash']='0'*64;self.reject_equipment(m)
+ def test_equipment_source_and_receipt_hashes_remain_bound(self):
+  original=self.equipment()
+  for key in ['source','receipt']:
+   m=copy.deepcopy(original);m['assets'][0][key]['sha256']='0'*64;self.reject_equipment(m,True)
+ def test_equipment_runtime_header_size_is_checked_after_rehash(self):
+  m=self.equipment();r=m['assets'][0]['runtime'];data=bytearray((self.root/r['path']).read_bytes());self.assertEqual(data[12:16],b'VP8X');data[24:27]=(512).to_bytes(3,'little');r['dimensions']['width']=513;self.equipment_image(m,data);self.reject_equipment(m,True)
+ def test_equipment_runtime_alpha_cannot_be_invented_after_rehash(self):
+  m=self.equipment();r=m['assets'][0]['runtime'];data=bytearray((self.root/r['path']).read_bytes());self.assertEqual(data[12:16],b'VP8X');data[20]&=~16;r['alpha']=False;self.equipment_image(m,data);self.reject_equipment(m,True)
+ def test_equipment_runtime_byte_budget_survives_rehash(self):
+  m=self.equipment();r=m['assets'][0]['runtime'];data=bytearray((self.root/r['path']).read_bytes());data.extend(b'\0'*(160001-len(data)));data[4:8]=(len(data)-8).to_bytes(4,'little');self.equipment_image(m,data);self.reject_equipment(m,True)
+ def test_equipment_source_references_cannot_omit_contract_or_escape(self):
+  original=self.equipment();m=copy.deepcopy(original);m['sourceReferences'].remove('docs/decisions/0025-equipment-object-art-contract.md');self.reject_equipment(m)
+  m=copy.deepcopy(original);m['sourceReferences'].append('../outside.md');self.reject_equipment(m)
+ def test_equipment_export_settings_and_repeat_bytes_are_bound(self):
+  m=self.equipment();self.equipment_receipt(m,lambda r:r['encoding'].__setitem__(2,'99'));self.reject_equipment(m,True)
+ def test_equipment_deterministic_second_export_is_an_actual_file(self):
+  m=self.equipment();r=json.loads((self.root/m['assets'][0]['receipt']['path']).read_text());p=self.root/r['exportVerification']['secondPath'];data=bytearray(p.read_bytes());data[-1]^=1;p.unlink();p.write_bytes(data);self.reject_equipment(m)
+ def test_equipment_alpha_totals_and_bounds_are_checked(self):
+  m=self.equipment();self.equipment_receipt(m,lambda r:r['runtimeAlphaProof'].update(intermediatePixels=r['runtimeAlphaProof']['intermediatePixels']+1));self.reject_equipment(m,True)
+ def test_equipment_recorded_runtime_bounds_must_fit_actual_dimensions(self):
+  m=self.equipment();m['assets'][0]['runtimeBoundsAlpha16']['right']=513;self.reject_equipment(m,True)
+ def test_equipment_baked_active_effects_cannot_be_relabelled_cold(self):
+  m=self.equipment();self.equipment_receipt(m,lambda r:r['review'].update(activeHaloBaked=True));self.reject_equipment(m,True)
+ def test_equipment_exact_prompt_and_edit_input_cannot_be_relabelled(self):
+  m=self.equipment();self.equipment_receipt(m,lambda r:r.update(promptSHA256='0'*64));self.reject_equipment(m,True)
+ def test_equipment_actual_consumers_and_full_proof_cannot_be_detached(self):
+  original=self.equipment();m=copy.deepcopy(original);del m['bindings']['web/src/LearningPlanner.vue'];self.reject_equipment(m)
+  m=copy.deepcopy(original);p='web/src/activity-effects.ts';self.write(p,(self.root/p).read_text().replace('completeActivity(g,prior,r','detachedProof(g,prior,r'));self.reject_equipment(m)
+ def test_equipment_catalogue_fallback_must_bind_the_actual_child(self):
+  m=self.equipment();p='art/redesign/catalogue-art/manifest.json';catalogue=json.loads((self.root/p).read_text());catalogue['bindings'].pop('web/src/JadeStudyScene.vue');self.write(p,catalogue);self.reject_equipment(m)
 
 if __name__=='__main__':unittest.main()

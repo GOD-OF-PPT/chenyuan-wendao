@@ -89,7 +89,7 @@
       "import './alchemy-workshop.css'"
     ],
     "web/src/use-activity-effect.ts": [
-      "createActivityEffectTracker(matches)"
+      "createActivityEffectTracker(matches,extra)"
     ],
     "web/src/activity-effects.ts": [
       "resolve(before,command)",

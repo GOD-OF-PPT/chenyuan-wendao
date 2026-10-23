@@ -1,0 +1,9 @@
+{
+  "id": "soul_lamp",
+  "task": "Goal4 ART03",
+  "mode": "built-in image_gen",
+  "transparent_background": true,
+  "referenceImages": [],
+  "prompt": "Use case: stylized-concept. Asset type: one standalone transparent game equipment prop for the Chinese xianxia idle game Chen Yuan Wen Dao. Subject: a single Zhao Hun soul lamp, a CLOSED and COMPLETELY UNLIT antique ritual lantern in aged bronze, with a sculpted cloud-shaped crown lid, a small integral ring handle, four elegantly curved bronze ribs, dark jade-teal translucent window panels and an enclosed cold wick chamber. The lid is closed; the chamber has NO FLAME, no bright light source, no glowing interior. This lamp has its own compact integral feet, no separate pedestal or display stand. Style: detailed hand-painted Chinese fantasy inventory prop illustration, refined painterly brush texture, convincing worn antique bronze and carved jade, semi-realistic material rendering, a distinctive ornate vertical lantern silhouette. Composition: square canvas; balanced three-quarter front view; the entire object centered inside the middle 70 percent of the canvas, approximately 15 percent genuinely transparent margin on all four sides, nothing cropped. Neutral soft light from upper left; modest reflected surface highlights only. Palette dark bronze, deep teal jade, restrained old gold; the dark window glass must read as cold solid material, not emissive. True transparent alpha outside the object and through open metal gaps. No floor, no scene, no separate plinth, no people, no hands, no text, no lettering, no interface, no watermark. Absolutely no fire, smoke, lit wick, magic glow, aura, halo, particles, sparks, rays, or motion trails. The game code adds forging effects separately; do not bake any active effects into this dormant prop.",
+  "purpose": "Cold transparent equipment object. Runtime activity and saved ownership remain separate DOM/CSS and formal Game state."
+}

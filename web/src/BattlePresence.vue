@@ -19,7 +19,7 @@ const identity=computed(()=>props.game.core.runId+':'+battle.value.enemy+':'+(pr
 const activity=computed(()=>{const a=store?.activity;return a?.version===6&&a.status==='running'&&a.runId===props.game.core.runId&&a.gameRevision===props.game.core.revision&&a.plan.kind!=='travel'&&a.plan.enemy===battle.value.enemy&&!(a.plan.kind==='battle'&&a.plan.trialStage!==(props.game.trial?.stage??null))?a:null;});
 const visible=computed(()=>props.active&&mounted.value&&!hidden.value);
 const runtime=computed(()=>{const a=activity.value,r=store?.activityRuntime;return visible.value&&store?.available&&!store.error&&store.game?.core.runId===props.game.core.runId&&store.game.core.revision===props.game.core.revision&&a&&r?.id===a.id&&r.generation===a.generation?r:null;});
-const state=computed(()=>!visible.value?'inactive':store?.error||store&&!store.available?'failed':runtime.value?.phase==='running'?'charging':runtime.value?.phase==='saving'?'saving':runtime.value?.phase==='pausing'||store?.activity?.status==='paused'?'paused':'ready');
+const state=computed(()=>!visible.value?'inactive':store?.error||store&&!store.available?'failed':runtime.value?.phase==='running'?'charging':runtime.value?.phase==='saving'?'saving':store?.activity?.status==='paused'?'paused':'ready');
 const charge=computed(()=>state.value==='charging'&&runtime.value?Math.max(0,Math.min(100,(1-runtime.value.remainingMs/runtime.value.totalMs)*100)):0);
 const action=computed(()=>activity.value?adventureDecision(activity.value).action:null);
 const move=computed(()=>action.value?.type==='BATTLE'?action.value.move:null);
