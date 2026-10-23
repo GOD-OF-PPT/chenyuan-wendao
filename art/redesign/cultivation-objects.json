@@ -1,0 +1,162 @@
+{
+  "format": "chenyuan-cultivation-objects",
+  "version": 1,
+  "task": "Goal4 ART06",
+  "budgets": {
+    "nativeBytes": 45000,
+    "goalPanelBytes": 19000,
+    "newAssets": 1,
+    "runtimeWidth": 512,
+    "runtimeHeight": 512,
+    "maxRuntimeBytes": 160000
+  },
+  "files": [
+    {
+      "path": "web/src/CultivationStageHost.vue",
+      "bytes": 1703,
+      "sha256": "006210e41b1e542b948ac57d12775b93f836f4d158ca318b85f00bd440b51753"
+    },
+    {
+      "path": "web/src/CultivationSite.vue",
+      "bytes": 4200,
+      "sha256": "81ee9ea81513e7d9761d2b5596970803150e80e718bd054a0fa7c533d83ffe23"
+    },
+    {
+      "path": "web/src/MilestoneGate.vue",
+      "bytes": 4203,
+      "sha256": "ee38605d01f9bcae00b1f69fd2a536783d0c80b7287adb957180c72362237094"
+    },
+    {
+      "path": "web/src/GoalBoard.vue",
+      "bytes": 8480,
+      "sha256": "f9c6164d41fca71125a3ae63b592a8cc3e1c036c6c0e8e47fc2547a1b721d70e"
+    },
+    {
+      "path": "web/src/cultivation-effects.ts",
+      "bytes": 6316,
+      "sha256": "656c74686b1e1cee2f68c61074172d5c3c23f86cf12d5c3eed7205f215de409a"
+    },
+    {
+      "path": "web/src/cultivation-objects.css",
+      "bytes": 14757,
+      "sha256": "4c5a69418d55c61358ca7db4d048826eed2a09694ea43d790aeb9c48e71cf644"
+    },
+    {
+      "path": "web/src/milestone-objects.css",
+      "bytes": 5147,
+      "sha256": "e855263c5905f121a870749efcb335304fc5c5c5b56f311e0004fb4a6a023ec6"
+    }
+  ],
+  "goalPanel": {
+    "path": "web/src/GoalPanel.vue",
+    "bytes": 18181,
+    "sha256": "6af5c41d57e8e8a5972ac328437cbe346640bab58fedd488223a9b0326ee26d1"
+  },
+  "assets": [
+    {
+      "id": "player-seated-cold",
+      "source": {
+        "path": "art/redesign/characters/player-seated-cold-v1.png",
+        "bytes": 2251602,
+        "sha256": "7e24b71c4a9854a00e2b53ec2b97f81e5cf7f0e1c7509be527506139e9c1f356",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/characters/player-seated-cold.webp",
+        "bytes": 65978,
+        "sha256": "66ff79c01b418faa5c0abb0b3490e54b9d30a8568abb796d410a9559d0a36ace",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/player-seated-cold.json",
+        "sha256": "e81505cd2db058e33f23feca476d4298958076f6ba201a34f832235e7b63f379"
+      }
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0029-cultivation-object-art-contract.md",
+    "goal-4/amendments/2026-10-24-art06.md",
+    "goal-4/research/art06-sources.json",
+    "art/redesign/receipts/cultivation-prompts.json"
+  ],
+  "bindings": {
+    "web/src/App.vue": [
+      "import CultivationStageHost",
+      "<CultivationStageHost",
+      "</CultivationStageHost>",
+      "<CultivationSite",
+      "<MilestoneGate"
+    ],
+    "web/src/TrainingPlanner.vue": [
+      "import CultivationSite",
+      "<CultivationSite",
+      "#parameters"
+    ],
+    "web/src/GoalPanel.vue": [
+      "import GoalBoard",
+      "<GoalBoard",
+      "<ProgressTrack"
+    ],
+    "web/src/PreparationPanel.vue": [
+      "import GoalBoard",
+      "<GoalBoard",
+      "#conditions",
+      "#routes"
+    ],
+    "web/src/CultivationStageHost.vue": [
+      "useCultivationStage",
+      "provide(cultivationStageKey,stage)",
+      "<slot"
+    ],
+    "web/src/CultivationSite.vue": [
+      "useCultivationObject",
+      "import './cultivation-objects.css'",
+      "art/v2/characters/player-seated-cold.webp",
+      "data-testid=\"cultivation-site\""
+    ],
+    "web/src/MilestoneGate.vue": [
+      "useCultivationMilestone",
+      "import './milestone-objects.css'",
+      "data-testid=\"milestone-gate\""
+    ],
+    "web/src/GoalBoard.vue": [
+      "data-testid=\"goal-object-board\"",
+      "name=\"conditions\"",
+      "name=\"routes\""
+    ],
+    "web/src/cultivation-effects.ts": [
+      "useActivityPresentation",
+      "cultivationTarget",
+      "cultivationObjectMatches",
+      "cultivationGateMatches",
+      "milestone?7:1",
+      "command.count===1",
+      "command.method===a.plan.method",
+      "a.realm===game.core.player.realm",
+      "delivery!==sequence"
+    ],
+    "web/src/use-activity-effect.ts": [
+      "createActivityEffectTracker(matches,extra)",
+      "extra:0|1|4|5|7=0"
+    ],
+    "web/src/activity-effects.ts": [
+      "extra:0|1|4|5|7=0",
+      "a.version&&[2,3,6,extra].includes(a.version)",
+      "resolve(before,command)",
+      "completeActivity(g,prior,r,",
+      "proof(resolved.nextState)!==proof(g)",
+      "proof(expected)!==proof(a)"
+    ]
+  },
+  "userAcceptance": false
+}

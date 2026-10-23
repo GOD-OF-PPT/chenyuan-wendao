@@ -33,13 +33,13 @@
     },
     {
       "path": "web/src/activity-effects.ts",
-      "bytes": 2625,
-      "sha256": "d9f42af4d989633dec47deb79cecd12fa432d5786a76232e6bf63b5020a419c5"
+      "bytes": 2627,
+      "sha256": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b"
     },
     {
       "path": "web/src/use-activity-effect.ts",
-      "bytes": 3020,
-      "sha256": "ede24a7b9f28034f6e1762786a89ad2db9c0537f351f632a0d94b62d4bdad3ff"
+      "bytes": 3022,
+      "sha256": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163"
     },
     {
       "path": "web/src/art02-source.css",

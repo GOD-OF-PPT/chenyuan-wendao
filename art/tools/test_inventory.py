@@ -81,6 +81,8 @@ class InventoryTests(unittest.TestCase):
   if supplies.exists():files.update(ROOT/ref for ref in json.loads(supplies.read_text())['sourceReferences'])
   narrative=ROOT/'art/redesign/narrative-objects.json'
   if narrative.exists():files.update(ROOT/ref for ref in json.loads(narrative.read_text())['sourceReferences'])
+  cultivation=ROOT/'art/redesign/cultivation-objects.json'
+  if cultivation.exists():files.update(ROOT/ref for ref in json.loads(cultivation.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -141,7 +143,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0))
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0))
  def test_idle_ui_requires_its_source_ledger(self):
   (self.root/'art/redesign/idle-cultivation.json').unlink();self.rejected()
  def test_idle_ui_budget_cannot_be_raised(self):
@@ -368,7 +370,7 @@ class InventoryTests(unittest.TestCase):
  def test_catalogue_art_prompt_cannot_be_relabelled(self):
   p='art/redesign/catalogue-art/prompts.json';m=json.loads((self.root/p).read_text());m['assets'][0]['prompt']='other request';self.write(p,m);self.rejected()
  def test_catalogue_art_needs_actual_consumers(self):
-  p='web/src/PreparationPanel.vue';self.write(p,(self.root/p).read_text().replace('<CatalogueArt ','<RemovedArt '));self.rejected()
+  p='web/src/ProgressionChoices.vue';self.write(p,(self.root/p).read_text().replace('<CatalogueArt ','<RemovedArt '));self.rejected()
  def test_catalogue_art_receipt_must_match_runtime(self):
   p='art/redesign/catalogue-art/manifest.json';m=json.loads((self.root/p).read_text());a=m['assets'][0];ref=a['receipt']['path'];r=json.loads((self.root/ref).read_text());r['runtime']['sha256']='0'*64;self.write(ref,r);a['receipt']['sha256']=hashlib.sha256((self.root/ref).read_bytes()).hexdigest();self.write(p,m);self.rejected()
 
@@ -723,5 +725,129 @@ class NarrativeObjectTests(unittest.TestCase):
  def test_narrative_action_domain_cannot_expand_even_after_rehash(self):
   path='web/src/narrative-effects.ts';text=(self.root/path).read_text();changed=text.replace("'END_LIFE'];","'END_LIFE','CHOOSE'];",1);self.assertNotEqual(changed,text);self.changed_source(path,changed,self.data())
   with self.assertRaises(AssertionError):self.check()
+
+class CultivationObjectTests(unittest.TestCase):
+ def setUp(self):
+  from cultivation_object_inventory import NATIVE,REFS,DEPENDENCIES
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-cultivation-negative-');self.root=Path(self.temp.name)
+  for path in set(NATIVE+REFS+DEPENDENCIES+['art/redesign/cultivation-objects.json']):
+   target=self.root/path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((ROOT/path).read_bytes())
+ def tearDown(self):self.temp.cleanup()
+ def data(self):return json.loads((self.root/'art/redesign/cultivation-objects.json').read_text())
+ def write(self,m):(self.root/'art/redesign/cultivation-objects.json').write_text(json.dumps(m))
+ def check(self):
+  from cultivation_object_inventory import validate_cultivation_objects
+  from check_inventory import image_info
+  return validate_cultivation_objects(self.root,image_info)
+ def reject(self,m):
+  self.write(m)
+  with self.assertRaises(AssertionError):self.check()
+ def changed_source(self,path,text,m):
+  data=text.encode();(self.root/path).write_bytes(data)
+  row=m['goalPanel']if path==m['goalPanel']['path']else next((r for r in m['files']if r['path']==path),None)
+  if row is not None:row.update(bytes=len(data),sha256=hashlib.sha256(data).hexdigest())
+  self.write(m)
+ def changed_receipt(self,change):
+  m=self.data();ref=m['assets'][0]['receipt'];p=self.root/ref['path'];r=json.loads(p.read_text());change(r);p.write_text(json.dumps(r));ref['sha256']=hashlib.sha256(p.read_bytes()).hexdigest();self.write(m)
+ def test_cultivation_actual_seven_sources_one_painting_and_fixed_budgets(self):
+  files,production,total=self.check();self.assertEqual(len(files),2);self.assertEqual(production,1);self.assertGreater(total,0);self.assertLessEqual(total,45000)
+ def test_cultivation_missing_ledger_cannot_hide_present_sources(self):
+  (self.root/'art/redesign/cultivation-objects.json').unlink()
+  with self.assertRaises(AssertionError):self.check()
+ def test_cultivation_header_task_and_numeric_version_aliases_rejected(self):
+  original=self.data()
+  for key,value in [('format','other'),('task','Goal4 ART05'),('version',True),('version',1.0),('version',2)]:
+   with self.subTest(key=key,value=value):m=copy.deepcopy(original);m[key]=value;self.reject(m)
+ def test_cultivation_all_budget_caps_and_boolean_aliases_rejected(self):
+  original=self.data()
+  for key in original['budgets']:
+   for value in [original['budgets'][key]+1,True]:
+    with self.subTest(key=key,value=value):m=copy.deepcopy(original);m['budgets'][key]=value;self.reject(m)
+ def test_cultivation_cannot_claim_human_acceptance_or_extra_asset(self):
+  original=self.data()
+  for change in [lambda m:m.update(userAcceptance=True),lambda m:m.update(userAcceptance=0),lambda m:m['assets'].append(copy.deepcopy(m['assets'][0]))]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_cultivation_complete_ordered_inventory_and_strict_identity_rows_required(self):
+  original=self.data()
+  for change in [lambda m:m['files'].pop(),lambda m:m['files'].append(m['files'][0]),lambda m:m['files'][0].update(untracked=True),lambda m:m['files'][0].update(bytes=True),lambda m:m.update(goalPanel=False)]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_cultivation_bytes_and_hash_must_match_actual_file(self):
+  original=self.data()
+  for key,value in [('bytes',0),('sha256','0'*64)]:
+   with self.subTest(key=key):m=copy.deepcopy(original);m['files'][0][key]=value;self.reject(m)
+ def test_cultivation_absolute_traversal_and_symlink_paths_cannot_escape(self):
+  original=self.data()
+  for value in ['/tmp/cultivation.vue','../outside.vue']:
+   m=copy.deepcopy(original);m['files'][0]['path']=value;self.reject(m)
+  self.write(original)
+  for path in [self.root/original['files'][0]['path'],self.root/'art/redesign/cultivation-objects.json']:
+   raw=path.read_bytes()
+   with tempfile.TemporaryDirectory(prefix='chenyuan-cultivation-external-')as folder:
+    other=Path(folder)/path.name;other.write_bytes(raw);path.unlink();path.symlink_to(other)
+    with self.assertRaises(AssertionError):self.check()
+    path.unlink();path.write_bytes(raw)
+ def test_cultivation_actual_native_budget_checked_after_rehash(self):
+  m=self.data();self.changed_source(m['files'][0]['path'],'x'*45001,m)
+  with self.assertRaisesRegex(AssertionError,'code exceeds'):self.check()
+ def test_cultivation_goal_parent_whole_file_budget_checked_after_rehash(self):
+  m=self.data();p=m['goalPanel']['path'];self.changed_source(p,(self.root/p).read_text()+' '*(19001-(self.root/p).stat().st_size),m)
+  with self.assertRaisesRegex(AssertionError,'GoalPanel exceeds'):self.check()
+ def test_cultivation_references_and_exact_consumer_contract_required(self):
+  original=self.data()
+  for key,value in [('sourceReferences',[]),('bindings',{})]:
+   m=copy.deepcopy(original);m[key]=value;self.reject(m)
+  self.write(original);(self.root/original['sourceReferences'][0]).unlink()
+  with self.assertRaises(AssertionError):self.check()
+ def test_cultivation_goal_and_preparation_require_actual_goal_board(self):
+  original=self.data()
+  for path in ['web/src/GoalPanel.vue','web/src/PreparationPanel.vue']:
+   before=(self.root/path).read_text();self.changed_source(path,before.replace('<GoalBoard','<DetachedBoard'),copy.deepcopy(original))
+   with self.subTest(parent=path),self.assertRaisesRegex(AssertionError,'Missing cultivation consumer'):self.check()
+   self.changed_source(path,before,copy.deepcopy(original))
+ def test_cultivation_empty_app_host_token_cannot_fake_stable_ownership(self):
+  p=self.root/'web/src/App.vue';s=p.read_text().replace('<CultivationStageHost','<DetachedHost').replace('</CultivationStageHost>','</DetachedHost>');p.write_text(s+'<CultivationStageHost></CultivationStageHost>')
+  with self.assertRaisesRegex(AssertionError,'host is not stable'):self.check()
+ def test_cultivation_v1_single_cycle_method_realm_and_three_v7_domains_stay_narrow(self):
+  p='web/src/cultivation-effects.ts';text=(self.root/p).read_text();original=self.data()
+  for before,after in [("a.version===1&&a.plan.kind==='cultivation'","a.version<=1&&a.plan.kind==='cultivation'"),('command.count===1','command.count>=1'),('command.method===a.plan.method','true'),('a.realm===game.core.player.realm','true'),("['CHOOSE','BREAKTHROUGH','START_TRIAL']","['CHOOSE','BREAKTHROUGH','START_TRIAL','EVENT']")]:
+   self.assertIn(before,text);self.changed_source(p,text.replace(before,after),copy.deepcopy(original))
+   with self.subTest(fragment=before),self.assertRaises(AssertionError):self.check()
+   self.changed_source(p,text,copy.deepcopy(original))
+ def test_cultivation_default_domain_zero_guard_and_full_proof_not_optional(self):
+  for path,before,after in [('web/src/activity-effects.ts','extra:0|1|4|5|7=0','extra:0|1|4|5|7=1'),('web/src/activity-effects.ts','a.version&&[2,3,6,extra]','[2,3,6,extra]'),('web/src/activity-effects.ts','proof(resolved.nextState)!==proof(g)','false'),('web/src/activity-effects.ts','proof(expected)!==proof(a)','false')]:
+   p=self.root/path;s=p.read_text();self.assertIn(before,s);p.write_text(s.replace(before,after))
+   with self.subTest(fragment=before),self.assertRaises(AssertionError):self.check()
+   p.write_text(s)
+ def test_cultivation_runtime_objects_require_real_hooks_styles_and_asset_after_rehash(self):
+  original=self.data()
+  for path,token in [('web/src/CultivationSite.vue','useCultivationObject'),('web/src/MilestoneGate.vue',"import './milestone-objects.css'"),('web/src/CultivationSite.vue','art/v2/characters/player-seated-cold.webp')]:
+   s=(self.root/path).read_text();self.changed_source(path,s.replace(token,'Detached'),copy.deepcopy(original))
+   with self.subTest(token=token),self.assertRaises(AssertionError):self.check()
+   self.changed_source(path,s,copy.deepcopy(original))
+ def test_cultivation_raster_missing_original_header_and_identity_cannot_be_faked(self):
+  original=self.data();path=self.root/original['assets'][0]['source']['path'];raw=path.read_bytes();path.unlink()
+  with self.assertRaises(AssertionError):self.check()
+  path.write_bytes(raw);m=copy.deepcopy(original);m['assets'][0]['source']['sha256']='0'*64;self.reject(m)
+  self.write(original);path.write_bytes(b'INVALID!'+raw[8:]);m=copy.deepcopy(original);m['assets'][0]['source']['sha256']=hashlib.sha256(path.read_bytes()).hexdigest();self.write(m)
+  with self.assertRaisesRegex(AssertionError,'PNG header'):self.check()
+ def test_cultivation_runtime_actual_byte_cap_enforced_with_valid_riff_header(self):
+  m=self.data();row=m['assets'][0]['runtime'];p=self.root/row['path'];b=bytearray(p.read_bytes()+b'JUNK'+(100000).to_bytes(4,'little')+b'x'*100000);b[4:8]=(len(b)-8).to_bytes(4,'little');p.write_bytes(b);row.update(bytes=len(b),sha256=hashlib.sha256(b).hexdigest());self.write(m)
+  with self.assertRaisesRegex(AssertionError,'dimensions/bytes exceeded'):self.check()
+ def test_cultivation_alpha_counts_and_numeric_aliases_must_cover_real_pixels(self):
+  original=self.data();receipt=(self.root/original['assets'][0]['receipt']['path']).read_bytes()
+  for change in [lambda r:r['runtimeAlphaProof'].update(solidPixels=r['runtimeAlphaProof']['solidPixels']+1),lambda r:r['alphaProof'].update(min=False),lambda r:r['runtimeAlphaProof'].update(max=1),lambda r:r['decodeProof'].update(sourceRGBASHA256='not-a-digest')]:
+   self.write(copy.deepcopy(original));(self.root/original['assets'][0]['receipt']['path']).write_bytes(receipt);self.changed_receipt(change)
+   with self.assertRaises(AssertionError):self.check()
+ def test_cultivation_exact_prompt_identity_and_export_settings_must_match_receipt(self):
+  original=self.data();receipt=(self.root/original['assets'][0]['receipt']['path']).read_bytes()
+  for change in [lambda r:r.update(promptReference='art/redesign/receipts/other.json'),lambda r:r.update(promptSHA256='0'*64),lambda r:r['encoding'].__setitem__(2,'70'),lambda r:r['referenceImages'][0].update(sha256='0'*64)]:
+   self.write(copy.deepcopy(original));(self.root/original['assets'][0]['receipt']['path']).write_bytes(receipt);self.changed_receipt(change)
+   with self.assertRaises(AssertionError):self.check()
+ def test_cultivation_deterministic_export_proof_cannot_claim_wrong_payload(self):
+  self.changed_receipt(lambda r:r['exportProof'].update(reencodedSHA256='0'*64))
+  with self.assertRaisesRegex(AssertionError,'export proof'):self.check()
+ def test_cultivation_old_painting_binding_cannot_hide_a_fake_default_consumer(self):
+  p=self.root/'art/redesign/catalogue-art/manifest.json';m=json.loads(p.read_text());m['bindings'].pop('web/src/ProgressionChoices.vue');m['bindings']['web/src/PreparationPanel.vue']=['<GoalBoard '];p.write_text(json.dumps(m))
+  with self.assertRaisesRegex(AssertionError,'Old painting consumer'):self.check()
 
 if __name__=='__main__':unittest.main()

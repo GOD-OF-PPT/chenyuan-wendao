@@ -1,0 +1,13 @@
+{
+  "task": "ART06",
+  "tool": "built-in image_gen",
+  "prompt": "Use case: stylized-concept. Production isolated transparent 2D cultivation character for 尘缘问道, Chinese xianxia idle game. Reference image only for identity, costume, painterly realism and dark teal/ivory palette. Depict the same young adult Chinese male cultivator Gu Changqing, black half-up hair with wooden hairpin, ivory and muted dark teal traditional robes with restrained worn-gold embroidery. Full body seated cross-legged calmly, hands resting naturally on knees, eyes softly closed, three-quarter view turned slightly screen right. Entire hair, sleeves, crossed legs and lower robe visible, no cropped limbs. Same refined face and painterly game-art finish. Square canvas, single character roughly80 percent height,8 percent clear transparent margins. Grounded crossed-leg silhouette, no pedestal/floor/mat, true alpha. Slightly elevated game-scene camera. Soft neutral ambient light and subtle warm edge for rainy cave, cold resting state usable when paused. NO glowing aura, energy, magic circle, smoke, flame, particles, crystals, weapons, UI frame, writing, text, watermark, background, floor shadow or scenery. No triumphant/casting pose. Preserve reference identity/robe/hair. Only seated figure.",
+  "referenceImages": [
+    {
+      "path": "art/redesign/characters/player-v1.png",
+      "role": "identity and costume reference only"
+    }
+  ],
+  "generatedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-dbe74148-8114-483c-943b-ff9decbd9462.png",
+  "transparentBackground": true
+}

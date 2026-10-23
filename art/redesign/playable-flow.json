@@ -29,8 +29,8 @@
     },
     {
       "path": "web/src/PreparationPanel.vue",
-      "bytes": 7400,
-      "sha256": "7aa53840325399706b8edacc2666405fe130eb434d50aaec7ae0aa6eb06a25e9"
+      "bytes": 8416,
+      "sha256": "cc8e14c4d44401a5c1173273b1d287511866a3ff5595c6c76bc118f866689d5c"
     },
     {
       "path": "web/src/ExplorePanel.vue",

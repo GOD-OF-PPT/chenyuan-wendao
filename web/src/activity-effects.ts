@@ -6,7 +6,7 @@ import type {ActionResult} from '../../src/full/contracts.ts';
 import type {Observation} from './local-events.ts';
 import {createActionFeedbackTracker} from './action-feedback.ts';
 
-export function createActivityEffectTracker(matches:(a:Activity)=>boolean,extra:0|4|5|7=0){
+export function createActivityEffectTracker(matches:(a:Activity)=>boolean,extra:0|1|4|5|7=0){
  const feedback=createActionFeedbackTracker();let armed:Activity|null=null,before:Game|null=null;
  return {
   clear(){armed=null;before=null;},

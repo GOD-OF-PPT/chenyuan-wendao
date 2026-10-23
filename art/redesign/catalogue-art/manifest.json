@@ -130,8 +130,8 @@
     }
   ],
   "bindings": {
-    "web/src/PreparationPanel.vue": [
-      "<CatalogueArt "
+    "web/src/ProgressionChoices.vue": [
+      "<CatalogueArt :kind=\"kind==='cultivation'?'study':'alchemy'\""
     ],
     "web/src/main.ts": [
       "import './catalogue-art.css'"
