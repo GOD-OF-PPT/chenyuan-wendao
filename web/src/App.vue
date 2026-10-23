@@ -27,6 +27,7 @@ import ProgressTrack from './ProgressTrack.vue';
 import ChoiceCard from './ChoiceCard.vue';
 import ActionEffects from './ActionEffects.vue';
 import ActionFeedbackStage from './ActionFeedbackStage.vue';
+import NarrativeStageHost from './NarrativeStageHost.vue';
 import ActionExecution from './ActionExecution.vue';
 import StageOutcome from './StageOutcome.vue';
 import ExplorePanel from './ExplorePanel.vue';
@@ -87,6 +88,7 @@ const demoMenuNodes=demoCatalog.map(node=>({...node,href:demoLink(node.id)}));
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 provide('game-scene',store);
 const {milestoneReview,milestoneStale,milestoneRetry,selectMilestone,inspectMilestone,closeMilestone,confirmMilestone}=useMilestoneReview(store);
+const pendingStoryError=computed(()=>!!store.error&&(store.canRetry||store.syncIssue));
 const saveTone=computed(()=>!store.ready||store.busy?'pending':store.error||!store.available?'problem':store.game&&store.saved?'saved':'idle');
 const saveDisplayLabel=computed(()=>store.saveLabel==='本次未保存'?'保存待确认':store.saveLabel);
 const openingChoices=[{id:'help',name:'赠丹相助',detail:'结下赠药之缘'},{id:'trade',name:'以丹换简',detail:`获得剑简，剑修终结伤害 +${C.swordManual.damageBonus}`},{id:'leave',name:'保留丹药',detail:'保留回春丹，各自离开'}] as const;
@@ -266,7 +268,7 @@ function cost(action: Action) {
   return preview && preview.requestedSteps > 1 ? '每次 ' + text : text;
 }
 function act(action: Action) { resumeVisible.value=false;if(action.type==='TRAVEL')return travel(action.location);if(action.type==='BATTLE')return battle(action.move);if(action.type==='ENCOUNTER')return inspectAdventure(action.enemy);if(action.type==='CULTIVATE'){const n=action.count??1;return startTraining({kind:'cultivation',method:action.method,maxCycles:n,until:'cycles',stoneBudget:action.method==='natural'?0:Math.min(core.value?.player.stones??0,(quote({...action,count:1})?.costs?.stones??0)*n),stoneReserve:0});}if(action.type==='SOURCE'){const n=action.count??1,source=C.sources[action.sourceId],target=action.target?{kind:'item' as const,id:action.target.item,quantity:action.target.quantity}:batch.value==='target'?collectionTarget.value:null;return startSource({kind:'source',sourceId:action.sourceId,maxCycles:n,until:target?'target':'cycles',target,monthBudget:n*source.months,remainingMonthsReserve:1});}if(action.type==='CRAFT'||action.type==='FORGE')return inspectProduction(action);if(['BUY','SELL','USE','REST','LEARN','STUDY'].includes(action.type))return inspectPreparation(action);if(action.type==='SCHOOL'||action.type==='EQUIP'||action.type==='EQUIP_RELIC')return inspectConfiguration(action);if(store.activityRunning){store.activityNotice='当前活动进行中，请先暂停再行动。';return;}if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); if(isMilestoneAction(action))return selectMilestone(action); const owner=navigationRevision; return focus.afterAction(async()=>{await store.act(action);},()=>owner===navigationRevision); }
-function storyAct(action:Action){return act(action);}
+function storyAct(action:Action){if(!pendingStoryError.value)return act(action);}
 function trackTrialMaterial(target:Parameters<typeof selectTracking>[0]){selectTracking(target);void openHub('goal');}
 function retryOperation(){const owner=navigationRevision;return focus.afterAction(()=>store.retry(),()=>owner===navigationRevision);}
 // The viewing intent belongs to the accepted trip, not to a timer or a later unrelated save.
@@ -446,13 +448,13 @@ async function showLife(event?:Event) {
   await nextTick();if(!appActive||owner!==navigationRevision||run!==game.value?.core.runId||context!==narrativeContext.value)return;const title=document.querySelector<HTMLElement>('[data-testid=life-title]');focus.target(title??lifeSection.value??currentContent());
 }
 async function requestEnd(type: 'RETIRE' | 'END_LIFE') {
-  if (!game.value || !can({type})) return;
+  if (!game.value || pendingStoryError.value || !can({type})) return;
   const prepared=prepareMilestoneReview(store,{type});if(!prepared)return;
   lifeIntent.value={...prepared,record:getLifeRecord(game.value)};
   const opener=settings.value?.open?settingsButton.value??null:focus.capture();settings.value?.close();await nextTick();focus.open(lifeDialog.value,opener);
 }
 async function confirmEnd() {
-  const intent = lifeIntent.value; if (!intent || store.busy || lifeStale.value) return;
+  const intent = lifeIntent.value; if (!intent || store.busy || pendingStoryError.value || lifeStale.value) return;
   await store.startPreparedMilestone(intent.intent);
   if(!store.error)lifeDialog.value?.close();
 }
@@ -512,14 +514,14 @@ const ascension = computed(() => game.value ? getAscensionChoices(game.value) : 
 const ascensionIntent=shallowRef<(PreparedMilestone & {view:ReturnType<typeof getAscensionChoices>;choice:ReturnType<typeof getAscensionChoices>['choices'][number];ending:AscensionEnding})|null>(null);
 const ascensionStale=computed(()=>milestoneReviewStale(store,ascensionIntent.value));
 async function reviewAscension(ending: AscensionEnding) {
-  if (!game.value || !can({type:'END',ending})) return;
+  if (!game.value || pendingStoryError.value || !can({type:'END',ending})) return;
   const prepared=prepareMilestoneReview(store,{type:'END',ending});if(!prepared)return;
   const view = getAscensionChoices(game.value);
   ascensionIntent.value = { ...prepared, view, choice: view.choices.find(choice => choice.ending === ending)!, ending };
   const opener=document.querySelector<HTMLElement>(`[data-testid=ending-${ending}]`);await nextTick();focus.open(ascensionDialog.value,opener);
 }
 async function confirmAscension() {
-  const review = ascensionIntent.value; if (!review || store.busy || ascensionStale.value) return;
+  const review = ascensionIntent.value; if (!review || store.busy || pendingStoryError.value || ascensionStale.value) return;
   await store.startPreparedMilestone(review.intent);if(!store.error)ascensionDialog.value?.close();
 }
 async function retryAscension() {
@@ -631,9 +633,11 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
         <KeepAlive :max="1"><ProgressionChoices :key="game.core.runId+readingGeneration+game.core.player.realm+tradeoffKind" v-if="singleScreen&&hubView==='tradeoffs'" :game="game" :kind="tradeoffKind" :seed="tradeoffSeed" :entry="tradeoffEntry" :busy="store.busy" :available="store.available" @navigate="inspectTradeoffDestination" @inspect="openHub($event)"/></KeepAlive>
         <KeepAlive :max="2"><ExplorePanel :key="game.core.runId+'ExplorePanel'+hubView" v-if="singleScreen&&hubView==='explore'" :game="game" :busy="store.busy" :available="store.available" :highlight="highlight" :collection="collectionTarget" :purchase-quantity="quantity" :running="store.activityRunning" :saved-adventure-plan="adventureInspectionPlan" :plan-saved="adventureInspectionSaved" :activity="store.activity" :runtime="store.activityRuntime" :saved-source-plan="sourceInspectionPlan" :saved-preparation-plan="preparationInspectionPlan" :preparation-saved="preparationInspectionSaved" :preparation-exact="preparationInspectionExact" :consumption="consumption" @travel-plan="movePreparation" @track="trackProduction" @start="plan=>plan.kind==='source'?startSource(plan):isAdventurePlan(plan)?startAdventure(plan):startPreparation(plan)" @act="act" @travel="travel" @home="closeHub"/></KeepAlive>
         <KeepAlive :max="2"><GoodsPanel :key="game.core.runId+'GoodsPanel'+hubView" v-if="singleScreen&&(hubView==='inventory'||hubView==='forge')" :minimal="immersive&&hubView==='forge'" :mode="hubView==='forge'?'forge':'inventory'" :game="game" :busy="store.busy" :available="store.available" :highlight="highlight" :consumption="consumption" :running="store.activityRunning" :activity="store.activity" :runtime="store.activityRuntime" :saved-production="productionInspectionPlan" :saved-preparation-plan="preparationInspectionPlan" :preparation-saved="preparationInspectionSaved" @travel-plan="movePreparation" @start="startProduction" @move="moveProduction" @act="act" @track="trackProduction" @travel="travel"/></KeepAlive>
+        <NarrativeStageHost :active="storyView">
         <KeepAlive :max="1"><FateCatalogue :key="game.core.runId+readingGeneration+'FateCatalogue'" v-if="storyView&&(hubView==='fate'||hubView==='current'&&phase==='idle')&&game.status==='active'" :game="game" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :highlight="highlight" :journal-key="journalKey" @act="storyAct" @navigate="navigate" @life="showLife" @resume="resumeEncounter" @dialogue="openHub('current')"/></KeepAlive>
         <KeepAlive :max="1"><LifeCatalogue :key="game.core.runId+readingGeneration+game.status+'LifeCatalogue'" v-if="storyView&&(hubView==='life'||['fate','current'].includes(hubView)&&game.status!=='active')" :game="game" :end-reason="why({type:'RETIRE'})" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :has-checkpoint="store.hasCheckpoint" @end="requestEnd" @export="exportLife" @restore="restore" @restart="reset"/></KeepAlive>
         <KeepAlive :max="1"><NarrativePanel :key="game.core.runId+readingGeneration+'NarrativePanel'" v-if="storyView&&hubView==='current'&&narrativeFor(game)" :game="game" :context="narrativeContext" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :consumption="consumption" @act="storyAct" @life="showLife" @progress="openHub('trial')"/></KeepAlive>
+        </NarrativeStageHost>
         <TrialCatalogue v-if="storyView&&(hubView==='trial-preparation'||['trial','battle'].includes(hubView)||hubView==='current'&&game.status==='active'&&!narrativeFor(game)&&phase!=='idle')" :game="game" :kind="hubView==='trial-preparation'?'preparation':'progress'" :enabled="store.available" :running="store.activityRunning" :busy="store.busy" :checkpoint="store.checkpointSummary" :recovery="store.trialRecovery" @review="reviewTrial" @restore="hubView==='trial-preparation'?restore():requestTrialRestore()" @export="exportSave" @prepare="showTrialPreparation" @resume="closeHub" @navigate="navigate" @track="trackTrialMaterial" @inspect-equipment="openHub('skills')"/>
         <TrialProgressPanel v-if="!catalogueView&&(journey || store.trialRecovery)" :journey="journey" :recovery="store.trialRecovery" :checkpoint="store.checkpointSummary" :enabled="store.available && !store.busy" @restore="requestTrialRestore" @export="exportSave" @prepare="showTrialPreparation"/>
         <section v-if="!hubMain&&!storyView&&(!singleScreen||(game.status!=='active'&&hubView==='life')||(['home','fate','current','battle'].includes(hubView)||hubView==='trial-preparation'))" ref="contentPanel" id="game-content" tabindex="-1" aria-label="当前内容" class="paper content-panel" :class="{'battle-content':game.battle&&!inspectingInventory}">
@@ -727,7 +731,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
     </main>
     <PrimaryNav v-if="game&&(game.status==='active'||demoNode)" :demo="!!demoNode" :normal-href="demoNode?normalLink():undefined" :sealed="game.status!=='active'" :selected="tab" :expanded="immersive" :view="detailViews.has(hubView)&&detailParent?detailParent.view:hubView" @open="openHub" @select="selectTab" @height="navHeight=$event"/>
     <button v-if="immersive" class="stage-journal" data-testid="stage-details" @click="store.lastResult||store.activity?.version===6||store.activity&&store.activity.version<=5&&store.activity.completedCycles>0?viewReceipt():openHub('life',$event)">行道手记 ›</button>
-    <MilestoneReview v-if="milestoneReview" :key="milestoneReview.identity" :review="milestoneReview" :stale="milestoneStale" :retry="milestoneRetry" :busy="store.busy" :available="store.available" :error="store.error" @confirm="confirmMilestone()" @retry="confirmMilestone(true)" @close="closeMilestone"/>
+    <MilestoneReview v-if="milestoneReview" :key="milestoneReview.identity" :review="milestoneReview" :stale="milestoneStale" :retry="milestoneRetry" :busy="store.busy" :available="store.available" :error="store.error" :pending-error="pendingStoryError" @confirm="!pendingStoryError&&confirmMilestone()" @retry="confirmMilestone(true)" @close="closeMilestone"/>
     <ConfigurationDialog v-if="configurationIntent&&configurationSnapshot" :key="configurationIntent.command.commandId" :intent="configurationIntent" :snapshot="configurationSnapshot" :stale="configurationStale" :busy="store.busy" :available="store.available" :error="configurationError" :retry="configurationRetry" @confirm="confirmConfiguration()" @retry="confirmConfiguration(true)" @refresh="refreshConfiguration" @close="closeConfiguration"/>
   <dialog ref="catalogueGuide" class="paper catalogue-guide" aria-labelledby="catalogue-guide-title"><header><h2 id="catalogue-guide-title" tabindex="-1" data-dialog-initial>行道指引</h2><button aria-label="关闭行道指引" @click="catalogueGuide?.close()">关闭</button></header><GuidancePanel v-if="catalogueView&&guidanceEnabled&&!skippedGuides.includes(guidance.id)" :guide="guidance" @skip="skipCatalogueGuide" @help="showGameplayHelp"/></dialog>
     <dialog ref="settings" class="paper settings" aria-labelledby="settings-title"><header><h2 id="settings-title" tabindex="-1" data-dialog-initial>行旅设置</h2><button @click="settings?.close()" aria-label="关闭设置"><GameIcon kind="action" id="close"/><span>关闭</span></button></header>
@@ -759,7 +763,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
         <p v-if="store.error" role="alert" data-testid="life-error">{{store.error}}</p>
         <button v-if="store.canRetryFor(lifeIntent.command.commandId)" data-testid="life-retry" @click="retryEnd" :disabled="store.busy">重试同一次收卷</button>
         <button data-testid="life-cancel" @click="lifeDialog?.close()" :disabled="store.busy">继续此生</button>
-        <button data-testid="life-confirm-end" @click="confirmEnd" :disabled="store.busy || !store.available || lifeStale">{{store.busy?store.saveLabel+'…':lifeIntent.command.type==='RETIRE'?'安排归隐一次 · 12秒':'安排寿尽一次 · 12秒'}}</button>
+        <button data-testid="life-confirm-end" @click="confirmEnd" :disabled="store.busy || !store.available || lifeStale || pendingStoryError">{{store.busy?store.saveLabel+'…':lifeIntent.command.type==='RETIRE'?'安排归隐一次 · 12秒':'安排寿尽一次 · 12秒'}}</button>
       </template>
     </dialog>
     <dialog ref="ascensionDialog" class="paper life-confirm" data-testid="ascension-confirmation" aria-labelledby="ascension-title" @cancel="cancelLife" @close="closeAscension">
@@ -775,7 +779,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
         <p v-if="store.error" data-testid="ascension-error" role="alert">{{store.error}}</p>
         <button v-if="store.canRetryFor(ascensionIntent.command.commandId)" data-testid="ascension-retry" @click="retryAscension" :disabled="store.busy">重试同一次封卷</button>
         <button data-testid="ascension-cancel" @click="ascensionDialog?.close()" :disabled="store.busy">继续核对</button>
-        <button class="primary" data-testid="ascension-confirm" @click="confirmAscension" :disabled="store.busy || !store.available || ascensionStale">{{store.busy?store.saveLabel+'…':'安排飞升收卷一次 · 12秒'}}</button>
+        <button class="primary" data-testid="ascension-confirm" @click="confirmAscension" :disabled="store.busy || !store.available || ascensionStale || pendingStoryError">{{store.busy?store.saveLabel+'…':'安排飞升收卷一次 · 12秒'}}</button>
       </template>
     </dialog>
     <dialog ref="trialRestoreDialog" class="paper life-confirm" data-testid="trial-restore-confirmation" aria-labelledby="trial-restore-title" @cancel="cancelLife" @close="closeTrialRestore">

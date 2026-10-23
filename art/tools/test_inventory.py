@@ -79,6 +79,8 @@ class InventoryTests(unittest.TestCase):
    data=json.loads(equipment.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+data['rights']['evidenceReferences']);files.update(ROOT/row['path'] for row in data['files'])
   supplies=ROOT/'art/redesign/art04.json'
   if supplies.exists():files.update(ROOT/ref for ref in json.loads(supplies.read_text())['sourceReferences'])
+  narrative=ROOT/'art/redesign/narrative-objects.json'
+  if narrative.exists():files.update(ROOT/ref for ref in json.loads(narrative.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -624,5 +626,102 @@ class SupplyObjectTests(unittest.TestCase):
  def test_supply_source_reference_and_binding_contract_required(self):
   m=self.data();m['sourceReferences']=[];self.reject(m)
   m=json.loads((ROOT/'art/redesign/art04.json').read_text());m['bindings']={};self.reject(m)
+
+class NarrativeObjectTests(unittest.TestCase):
+ def setUp(self):
+  from narrative_object_inventory import NATIVE,REFS,BINDINGS
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-narrative-negative-');self.root=Path(self.temp.name)
+  for path in set(NATIVE+REFS+list(BINDINGS)+['art/redesign/narrative-objects.json']):
+   target=self.root/path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((ROOT/path).read_bytes())
+ def tearDown(self):self.temp.cleanup()
+ def data(self):return json.loads((self.root/'art/redesign/narrative-objects.json').read_text())
+ def write(self,m):(self.root/'art/redesign/narrative-objects.json').write_text(json.dumps(m))
+ def check(self):
+  from narrative_object_inventory import validate_narrative_objects
+  return validate_narrative_objects(self.root)
+ def reject(self,m):
+  self.write(m)
+  with self.assertRaises(AssertionError):self.check()
+ def changed_source(self,path,text,m):
+  data=text.encode();(self.root/path).write_bytes(data)
+  row=next(row for row in m['files'] if row['path']==path);row.update(bytes=len(data),sha256=hashlib.sha256(data).hexdigest());self.write(m)
+ def test_narrative_six_actual_sources_bound_and_budgeted(self):
+  from narrative_object_inventory import NATIVE
+  self.assertEqual([row['path'] for row in self.data()['files']],NATIVE);self.assertGreater(self.check(),0);self.assertLessEqual(self.check(),45000)
+ def test_narrative_missing_ledger_rejects_unrecorded_sources(self):
+  (self.root/'art/redesign/narrative-objects.json').unlink()
+  with self.assertRaises(AssertionError):self.check()
+ def test_narrative_header_format_and_task_cannot_change(self):
+  original=self.data()
+  for key,value in [('format','other'),('task','Goal4 ART04')]:
+   with self.subTest(key=key):m=copy.deepcopy(original);m[key]=value;self.reject(m)
+ def test_narrative_version_rejects_boolean_and_float_aliases(self):
+  original=self.data()
+  for value in [True,1.0,2]:
+   with self.subTest(value=value):m=copy.deepcopy(original);m['version']=value;self.reject(m)
+ def test_narrative_fixed_cap_rejects_raise_and_boolean(self):
+  original=self.data()
+  for value in [45001,True]:
+   with self.subTest(value=value):m=copy.deepcopy(original);m['maxNativeBytes']=value;self.reject(m)
+ def test_narrative_bitmap_zero_rejects_boolean_and_new_asset(self):
+  original=self.data()
+  for change in [lambda m:m.update(newBitmapAssets=False),lambda m:m.update(newBitmapAssets=1),lambda m:m.update(assets=[{'path':'new.webp'}])]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_narrative_cannot_claim_human_acceptance_or_numeric_alias(self):
+  original=self.data()
+  for value in [True,0]:
+   with self.subTest(value=value):m=copy.deepcopy(original);m['userAcceptance']=value;self.reject(m)
+ def test_narrative_complete_ordered_inventory_and_rows_required(self):
+  original=self.data()
+  for change in [lambda m:m['files'].pop(),lambda m:m['files'].append(m['files'][0]),lambda m:m['files'][0].update(untracked=True)]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_narrative_source_bytes_hash_and_boolean_size_rejected(self):
+  original=self.data()
+  for key,value in [('bytes',0),('bytes',True),('sha256','0'*64)]:
+   with self.subTest(key=key,value=value):m=copy.deepcopy(original);m['files'][0][key]=value;self.reject(m)
+ def test_narrative_absolute_and_traversal_paths_rejected(self):
+  original=self.data()
+  for value in ['/tmp/narrative-source.vue','../outside.vue']:
+   with self.subTest(path=value):m=copy.deepcopy(original);m['files'][0]['path']=value;self.reject(m)
+ def test_narrative_source_or_ledger_symlink_cannot_escape_repository(self):
+  for path in [self.root/self.data()['files'][0]['path'],self.root/'art/redesign/narrative-objects.json']:
+   original=path.read_bytes()
+   with tempfile.TemporaryDirectory(prefix='chenyuan-narrative-outside-') as folder:
+    outside=Path(folder)/path.name;outside.write_bytes(original);path.unlink();path.symlink_to(outside)
+    with self.subTest(path=path.name),self.assertRaises(AssertionError):self.check()
+    path.unlink();path.write_bytes(original)
+ def test_narrative_actual_budget_enforced_after_identity_update(self):
+  m=self.data();self.changed_source(m['files'][0]['path'],'x'*45001,m)
+  with self.assertRaises(AssertionError):self.check()
+ def test_narrative_required_sources_and_binding_contract_not_optional(self):
+  original=self.data()
+  for key,value in [('sourceReferences',[]),('bindings',{})]:
+   with self.subTest(key=key):m=copy.deepcopy(original);m[key]=value;self.reject(m)
+ def test_narrative_missing_reference_rejected(self):
+  (self.root/self.data()['sourceReferences'][0]).unlink()
+  with self.assertRaises(AssertionError):self.check()
+ def test_narrative_all_three_real_parent_consumers_required(self):
+  for path,tag in [('web/src/FateCatalogue.vue','EncounterTable'),('web/src/NarrativePanel.vue','ResponseTable'),('web/src/LifeCatalogue.vue','LifeScroll')]:
+   file=self.root/path;before=file.read_text();file.write_text(before.replace('<'+tag,'<DetachedObject'))
+   with self.subTest(parent=path),self.assertRaises(AssertionError):self.check()
+   file.write_text(before)
+ def test_narrative_app_host_must_wrap_original_keepalive_children(self):
+  path=self.root/'web/src/App.vue';text=path.read_text().replace('<NarrativeStageHost','<DetachedStageHost').replace('</NarrativeStageHost>','</DetachedStageHost>');path.write_text(text+'\n<NarrativeStageHost></NarrativeStageHost>\n')
+  with self.assertRaises(AssertionError):self.check()
+ def test_narrative_objects_require_hook_even_after_rehash(self):
+  path='web/src/EncounterTable.vue';m=self.data();self.changed_source(path,(self.root/path).read_text().replace('useNarrativeObject','useUnprovenObject'),m)
+  with self.assertRaises(AssertionError):self.check()
+ def test_narrative_shared_proof_consumer_required_after_rehash(self):
+  path='web/src/narrative-effects.ts';m=self.data();self.changed_source(path,(self.root/path).read_text().replace('useActivityPresentation','useUnprovenPresentation'),m)
+  with self.assertRaises(AssertionError):self.check()
+ def test_narrative_css_must_be_consumed_by_actual_objects(self):
+  original=self.data()
+  for path in ['web/src/EncounterTable.vue','web/src/ResponseTable.vue','web/src/LifeScroll.vue']:
+   text=(self.root/path).read_text();self.changed_source(path,text.replace("import './narrative-objects.css'",''),copy.deepcopy(original))
+   with self.subTest(object=path),self.assertRaises(AssertionError):self.check()
+   self.changed_source(path,text,copy.deepcopy(original))
+ def test_narrative_action_domain_cannot_expand_even_after_rehash(self):
+  path='web/src/narrative-effects.ts';text=(self.root/path).read_text();changed=text.replace("'END_LIFE'];","'END_LIFE','CHOOSE'];",1);self.assertNotEqual(changed,text);self.changed_source(path,changed,self.data())
+  with self.assertRaises(AssertionError):self.check()
 
 if __name__=='__main__':unittest.main()

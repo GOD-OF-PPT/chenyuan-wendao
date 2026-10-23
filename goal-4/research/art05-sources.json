@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-24",
+  "task": "Goal4 ART05",
+  "status": "primary-source design input applied to AGENTS and 0027; implementation and runtime verification pending",
+  "baseline": "291eed98695b1bbce9e61a1669ff9de752f27ee8",
+  "sources": [
+    {
+      "title": "Riot: Clarity in League",
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "published": "2021-03-12",
+      "read": true,
+      "type": "first-party game clarity article",
+      "sourcePrinciple": "可辨对象、玩法重要性对应表现层级，并控制额外视觉噪声。",
+      "projectInference": "当前人物、当前回应及实际卷册页优先；普通来往克制，真正收卷可更突出。人物轮廓与真实事实不靠统一光环识别，不给未来来往套已发生的成功印章。"
+    },
+    {
+      "title": "Xbox Accessibility Guideline 114: UI context",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "updated": "2026-03-04",
+      "read": true,
+      "type": "first-party game UI guideline",
+      "sourcePrinciple": "玩家应理解当前界面和控件作用，操作前知道会发生什么；非主动上下文变化需说明，标签与关联对象应靠近。",
+      "projectInference": "翻人物帖/预选回应/回看生平均明确只读；查看拜访安排、确认6秒回应与12秒封卷各用真实动词。保留当前正文、代价/门槛与有限返回上下文，不能以新对象场景重建阅读或让保存变化无提示切走。"
+    },
+      {
+      "title": "inkle: Writing with ink — Choices and Varying Choices",
+      "url": "https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md#2-choices",
+      "read": true,
+      "type": "first-party interactive narrative authoring manual",
+      "sourcePrinciple": "手册区分选择列表文本与实际输出文本，并明确一次性、可重复和按已见内容控制的选择是不同语义。",
+      "projectInference": "人物未来来往预览、玩家当前预选和已保存回应分别标识；完成只执行所选一次，不把阅读或预选当事实，不给已完成选择重复发奖。",
+      "limits": "这是作者工具的语义说明，不是对本游戏的UI认证或试玩。只作选择/结果区分的经验；不引入ink、不复制代码，也不采用其fallback自动选择、默认跳转或重复选项机制。"
+    }
+  ],
+  "projectRules": [
+    "正式Game、原v7 action/CAS与6/12秒、DB9/原意图重试保持；阅读与预选即时。",
+    "四人物及其全部事实/后续来往、100条手记、四生平篇、两结尾/归隐/寿尽/导出恢复完整保留。",
+    "保留140码点分页、row.key+part、post锚点核对、本地连续日志序列和有限readingReturn；缓存不含写命令。",
+    "新对象样式覆盖活跃与真正收卷态；结束后App不再有immersive-stage，不能只依赖该祖先。",
+    "待处理错误只阻断新执行，保留只读/预选与原命令重试；历史error不永久锁新授权。",
+    "专属TA须真实本地周期与完整v7 origin/outcome/result/Activity证明，旧回执/刷新/外页不补演，动画不发奖。"
+  ],
+  "implementationApplication": {
+    "contract": "docs/decisions/0027-narrative-object-art-contract.md",
+    "agentRule": "AGENTS.md: 会客案、回应签与生平命卷（ART05）",
+    "scope": "EncounterTable/ResponseTable/LifeScroll三个真实对象与稳定NarrativeStageHost；六新文件45000B、0新位图，旧全部cap保持。",
+    "proofBoundary": "显式v7仅六个本任务行动。默认2/3/6及显式4/5不变；共享准入去重仍显式拒version=0，并保留原恶意0不吞arm负例。完整Game/result/Activity与原重试不松。",
+    "notCompleted": "尚未形成当前运行/像素/原子故障证据，不代表ART05或整体用户验收完成。"
+  },
+  "limits": "本次为源码与一手文章/手册回读，未执行UI、规则测试、构建、像素或存档操作。具体布局、140码点、18/14/44、预算及6/12秒来自既有项目合同和未平衡初值，不是外部来源规定。兼容/环境性能、整体游戏感/长期平衡/真人均未验收。"
+}

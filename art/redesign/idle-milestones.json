@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "web/src/MilestoneReview.vue",
-      "bytes": 3688,
-      "sha256": "e174fc69689979e8a32972a7ec0827c95f90b1221688cd144d4501ae25e3a4f1"
+      "bytes": 3724,
+      "sha256": "8c3dd9bb9d382f102f3204195ced86b19321399b427440533e01ab6a575e3698"
     },
     {
       "path": "web/src/milestone-view.ts",

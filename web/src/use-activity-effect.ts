@@ -5,7 +5,7 @@ import type {useGame} from './store';
 import type {ActionNotice} from './action-feedback';
 import {createActivityEffectTracker} from './activity-effects.ts';
 
-export function useActivityPresentation(matches:(a:Activity)=>boolean,key:()=>string,active:()=>boolean=()=>true,extra:0|4|5=0){
+export function useActivityPresentation(matches:(a:Activity)=>boolean,key:()=>string,active:()=>boolean=()=>true,extra:0|4|5|7=0){
  const store=inject<ReturnType<typeof useGame>>('game-scene'),visible=ref(true),hidden=ref(document.hidden);
  const tracker=createActivityEffectTracker(matches,extra),effect=shallowRef<{sequence:number;notice:ActionNotice;result:ActionResult}|null>(null);
  let stop=()=>{},timer:ReturnType<typeof setTimeout>|undefined,sequence=0;
