@@ -1,0 +1,11 @@
+{
+  "passed": 238,
+  "declared": 238,
+  "exactDeclarationSet": true,
+  "skipped": 0,
+  "retries": 0,
+  "sourceDigest": "17712aa5e8062688d7cf31800b4b490f75fdfe82848514210dcded318c4a175d",
+  "raw": "artifacts/goal-4/art02/ui-release.json",
+  "rawSHA256": "200b8aea5688289901289b1bc6d0fab3d10c6fe6afb5a4354adf2bcb26b0f750",
+  "scope": "Complete currently authorized idle fixed1440x900 singleChromium suite; not the entire historical matrix or human acceptance."
+}

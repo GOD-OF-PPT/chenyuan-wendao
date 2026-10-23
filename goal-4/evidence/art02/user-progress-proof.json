@@ -1,0 +1,24 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "readOnlyAXBeforeAfterExactAfterRemovingNodeIndicesAndFocus": true,
+  "visibleProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "school": "尚未择法",
+    "xp": "5/10",
+    "stones": 40,
+    "month": 1,
+    "hp": "60/60",
+    "mp": "20/20",
+    "location": "听雨洞府",
+    "activity": "待安排",
+    "save": "已保存"
+  },
+  "noUserGameCommandsImportRestoreResetOrSaveTests": true,
+  "operations": "Only read AX, replace verified local static server, reload inactive user page, read AX; first postreload placeholder observed before settled final main.",
+  "raw": {
+    "user-before.ax.txt": "8d42855f3a85d61fb39cb927b10836b7df9bc907c4fb34e131bb3bf9aaa0b0d4",
+    "user-pre-switch.ax.txt": "8d42855f3a85d61fb39cb927b10836b7df9bc907c4fb34e131bb3bf9aaa0b0d4",
+    "user-after.ax.txt": "871e4933c5814b5238cc14297904ebcc6469aa078e30caa9791a8d6ca7f98de9"
+  }
+}

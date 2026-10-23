@@ -1,0 +1,12 @@
+{
+  "implementationCommit": "b2f1efbc834e3b2203d7dec8613862edd330ead1",
+  "runtimeSourceFiles": 207,
+  "runtimeSourceArchiveExact": true,
+  "sourceDigest": "17712aa5e8062688d7cf31800b4b490f75fdfe82848514210dcded318c4a175d",
+  "scope": "Exact implementation Git archive versus actually tested runtime files; protected13 excluded, dirty engineering baseline retained.",
+  "testedFiles": 57,
+  "testedBytes": 7457492,
+  "postcommitFilesExact": true,
+  "frozenFilesExact": true,
+  "dirtyMetadataPreserved": true
+}

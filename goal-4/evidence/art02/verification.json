@@ -1,0 +1,141 @@
+{
+  "task": "ART02",
+  "date": "2026-10-23",
+  "status": "local independent engineering delivered; whole game/art/human acceptance open",
+  "branch": "codex/goal-4-online-recovery",
+  "implementationCommit": "b2f1efbc834e3b2203d7dec8613862edd330ead1",
+  "contract": "docs/decisions/0023-adventure-object-art-contract.md",
+  "sourceDigest": "17712aa5e8062688d7cf31800b4b490f75fdfe82848514210dcded318c4a175d",
+  "checks": {
+    "ui": {
+      "passed": 238,
+      "declared": 238,
+      "exactDeclarationSet": true,
+      "skipped": 0,
+      "retries": 0,
+      "sourceDigest": "17712aa5e8062688d7cf31800b4b490f75fdfe82848514210dcded318c4a175d",
+      "raw": "artifacts/goal-4/art02/ui-release.json",
+      "rawSHA256": "200b8aea5688289901289b1bc6d0fab3d10c6fe6afb5a4354adf2bcb26b0f750",
+      "scope": "Complete currently authorized idle fixed1440x900 singleChromium suite; not the entire historical matrix or human acceptance."
+    },
+    "nativeIndexedDB": {
+      "passed": 36,
+      "actualSource": "source8",
+      "inheritance": "native-inheritance.json; 204/207 runtime files identical; only object DOM/coordinates and presentation CSS changed; Store/IDB dependencies unchanged",
+      "raw": "artifacts/goal-4/art02/idb-final.json"
+    },
+    "pureRules": {
+      "passed": 139,
+      "includesNewActivityEffectProof": 15,
+      "preservedAlchemyProofTests": 14,
+      "actualSource": "source8; unchanged pure dependencies",
+      "raw": "artifacts/goal-4/art02/core-final.log"
+    },
+    "assets": {
+      "negativePassed": 179,
+      "negativeActualSource": "source13; guard/test/asset unchanged with exact source14 anchor reverse witness",
+      "finalPositiveActualSource": "source14",
+      "raw": "artifacts/goal-4/art02/assets-negative-delivery.log",
+      "positive": "artifacts/goal-4/art02/assets-release.json",
+      "verifiedAssetFiles": 89,
+      "productionAssets": 78,
+      "newRasterAssets": 0,
+      "inheritance": "assets-inheritance.json"
+    },
+    "typeAndBuild": {
+      "passed": true,
+      "logs": [
+        "artifacts/goal-4/art02/build-14.log",
+        "artifacts/goal-4/art02/build-postcommit.log"
+      ],
+      "postcommitPayloadExact": true
+    },
+    "realCycles": {
+      "clock": "Actual native Chromium monotonic and wall; no virtual Playwright clock",
+      "sourceDigest": "17712aa5e8062688d7cf31800b4b490f75fdfe82848514210dcded318c4a175d",
+      "rows": [
+        {
+          "action": "TRAVEL",
+          "minimumMs": 6000,
+          "monotonicElapsedMs": 6751.899999976158,
+          "wallBeyondDueMs": 677
+        },
+        {
+          "action": "SOURCE",
+          "minimumMs": 30000,
+          "monotonicElapsedMs": 30284.399999976158,
+          "wallBeyondDueMs": 82
+        },
+        {
+          "action": "BATTLE guard",
+          "minimumMs": 3000,
+          "monotonicElapsedMs": 3722,
+          "wallBeyondDueMs": 634
+        }
+      ],
+      "rawReport": "artifacts/goal-4/art02/ui-release.json"
+    }
+  },
+  "budgets": {
+    "newNineFiles": [
+      44931,
+      45000
+    ],
+    "sourceParent": [
+      10748,
+      24000
+    ],
+    "adventureParent": [
+      43716,
+      45000
+    ],
+    "originalStageR2": [
+      11718,
+      14000
+    ],
+    "workshopAfterActualProofReuse": [
+      19918,
+      22000
+    ],
+    "oldCapsIncreased": false,
+    "scope": "Old2613B proof migration counted inside new group; no new Game rules, assets, fonts, audio or dependencies."
+  },
+  "identity": {
+    "implementationCommit": "b2f1efbc834e3b2203d7dec8613862edd330ead1",
+    "runtimeSourceFiles": 207,
+    "runtimeSourceArchiveExact": true,
+    "sourceDigest": "17712aa5e8062688d7cf31800b4b490f75fdfe82848514210dcded318c4a175d",
+    "scope": "Exact implementation Git archive versus actually tested runtime files; protected13 excluded, dirty engineering baseline retained.",
+    "testedFiles": 57,
+    "testedBytes": 7457492,
+    "postcommitFilesExact": true,
+    "frozenFilesExact": true,
+    "dirtyMetadataPreserved": true
+  },
+  "visual": {
+    "freshFinalRepresentativeCount": 8,
+    "generatedFinalPNGCount": 384,
+    "otherGeneratedPNGsPixelReviewed": false,
+    "manifest": "visual-review.json"
+  },
+  "preview": {
+    "url": "http://127.0.0.1:56884/",
+    "ownedPID": 51995,
+    "HTTP57Exact": true,
+    "visibleUserProgressPreserved": true,
+    "noUserGameCommandsImportRestoreResetOrSaveTests": true
+  },
+  "protected13": {
+    "unchanged": true,
+    "excludedFromImplementationCommit": true
+  },
+  "remaining": [
+    "CHECK-ART-01 M01/ART01/ART02 comprehensive authorized check",
+    "ART03/04/05/06 and overall game-feel/art user acceptance",
+    "long-term balance and full UI/storage/normal-route/recovery/performance matrix; compatibility last",
+    "clean candidate and maximum final C-end/code/security review, real user retest",
+    "historical native open/readMeta cause unknown",
+    "prior ART01 native CDP input latency cause unknown"
+  ],
+  "scope": "Fixed1440x900 singleChromium gameplay only; no compatibility/environment/performance matrix, push, PR, merge, public deployment or permission changes."
+}
