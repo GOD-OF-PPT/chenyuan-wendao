@@ -1,0 +1,2407 @@
+{
+  "format": "art06-existing-real-timing-evidence",
+  "version": 1,
+  "repositoryRoot": "/Users/gordon/githome/chenyuan-wendao",
+  "implementationCommit": "404fcc03a88ebf11ea301947eab596631b84eeb3",
+  "scope": {
+    "uniqueRealCycleScenarios": 5,
+    "originalSource7Executions": 5,
+    "source8AdditionalBreakthroughExecution": 1,
+    "totalRecordsShown": 6,
+    "additionalCoverageFromRepeatedExecution": 0,
+    "periodsMs": [
+      30000,
+      60000,
+      6000,
+      30000,
+      15000
+    ],
+    "noNewUIOrTestsExecutedToCreateThisFile": true,
+    "notHumanPacingOrLongTermBalanceAcceptance": true
+  },
+  "sources": {
+    "originalFiveTimingExtraction": {
+      "path": "artifacts/goal-4/art06/source7-full-real-timing.json",
+      "sha256": "933bf08c809653e33535794e9ad090215069cdd636b2962c14247c5364cb080e",
+      "originalReportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "rawReportStats": {
+        "startTime": "2026-10-23T22:31:42.576Z",
+        "duration": 554923.785,
+        "expected": 100,
+        "skipped": 0,
+        "unexpected": 12,
+        "flaky": 0
+      },
+      "note": "Original source7 whole related112 had100pass/12fail; each of these five new real-cycle declarations passed. Original labels and failures remain unchanged."
+    },
+    "currentSource8Report": {
+      "path": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "sha256": "ce89da541d899d6bfd86604f62ca9a637874a7db7ea0308c3fd7c0417c041eb8",
+      "sourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "rawReportStats": {
+        "startTime": "2026-10-23T22:47:37.625Z",
+        "duration": 220492.59399999998,
+        "expected": 61,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    "priorSource5Source6": "All earlier originals, including partial/failing first timing attempts, remain in artifacts/goal-4/art06 unchanged; they are not relabeled as final green."
+  },
+  "verificationSources": {
+    "receiptAndRealCycle": {
+      "frozenSpecSource7": "artifacts/goal-4/art06/source7-final-inputs/web/e2e/cultivation-objects.spec.ts",
+      "frozenSpecSource8": "artifacts/goal-4/art06/source8-affected-inputs/web/e2e/cultivation-objects.spec.ts",
+      "sha256Both": "e3e3a004c52bf9a7f750a67d65e333406bf1a01da451d7aac5569a0a8184400a",
+      "receiptFunctionLine": 31,
+      "receiptFunctionSource": "async function receipt(page:Page,a:any,before:Game){const rows=(await database(page)).rows['full-receipts'].filter((r:any)=>r.key===a.runId+':'+a.nextCommand.commandId);expect(rows).toHaveLength(1);const r=rows[0].value,formal=resolve(before,a.nextCommand);expect(r.command).toEqual(a.nextCommand);expect(r.result).toEqual(formal.result);expect(r.activity).toEqual(completeActivity(formal.nextState,a,formal.result,{commandId:a.nextCommand.commandId,now:r.proof?.resolvedAt??r.activity.startedAt??a.dueAt}));if(a.version===7){expect(r.proof.activityBefore).toEqual(a);expect(r.proof.stateAfter).toEqual(formal.nextState);expect(r.proof.resolvedAt).toBeGreaterThanOrEqual(a.dueAt);}else{expect(a.version).toBe(1);expect(r.version).toBe(1);expect(r.proof).toBeUndefined();}return rows[0];}",
+      "realCycleFunctionSource": "async function realCycle(page:Page,info:TestInfo,before:Game,a:any,result:string,name:string){const started=await page.evaluate(()=>({wall:Date.now(),mono:performance.now()})),first=parseFloat(await page.getByTestId('training-countdown').innerText());await expect(page.getByTestId(a.version===1?'cultivation-cycle-clock':'milestone-cycle-clock')).toBeVisible();await expect.poll(async()=>parseFloat(await page.getByTestId('training-countdown').innerText())).toBeLessThan(first);expect(await snapshot(page)).toEqual(before);await noEffect(page);await picture(page,info,name+'-real-running');await expect.poll(async()=>(await activity(page)).completedCycles,{timeout:a.cycleMs+5000}).toBe(1);const after=await snapshot(page),formal=resolve(before,a.nextCommand),writes=await page.evaluate(()=>(window as any).__art06Writes),committed=writes.filter((r:any)=>r.game.core.runId===before.core.runId&&r.game.core.revision===before.core.revision+1);expect(after).toEqual(formal.nextState);expect(committed).toHaveLength(1);expect(committed[0].wall).toBeGreaterThanOrEqual(a.dueAt);expect(committed[0].game).toEqual(after);expect(committed[0].committed).toBe(true);await receipt(page,a,before);await expect(page.getByTestId(result)).toBeVisible();await expect(page.locator(resultSelectors)).toHaveCount(1);await clearances(page,info,name);await picture(page,info,name+'-real-saved');await info.attach(name+'-real-cycle-proof',{body:JSON.stringify({started,ended:await page.evaluate(()=>({wall:Date.now(),mono:performance.now()})),activity:a,committed,after,formalResult:formal.result,effects:await effects(page)}),contentType:'application/json'});return after as Game;}",
+      "note": "These are the actual frozen test implementations, included to distinguish executed uniqueness/full-proof assertions from raw payload capture. They are not a new test run."
+    }
+  },
+  "originalFiveScenarios": [
+    {
+      "coverageScenarioId": "natural-cultivation",
+      "sourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "report": {
+        "path": "artifacts/goal-4/art06/ui-final-source7.json",
+        "sha256": "993837116b572a38c5ae115ca6f91e620686b365fe07bb5451727d2a6d55d418",
+        "test": {
+          "file": "cultivation-objects.spec.ts",
+          "title": "ART06-A4 one real thirty second natural cycle moves only the formal saved cultivation and preserves a static result without an automatic breakthrough",
+          "project": "chromium",
+          "status": "passed",
+          "retry": 0
+        },
+        "attachment": "natural-real-cycle-proof"
+      },
+      "timing": {
+        "periodMs": 30000,
+        "activityStartedAtWallMs": 1792794812927,
+        "activityDueAtWallMs": 1792794842927,
+        "firstNativeWriteAttemptAtWallMs": 1792794842964,
+        "firstNativeWriteAttemptElapsedMs": 30037,
+        "firstNativeWriteAttemptAfterDueMs": 37,
+        "commitConfirmedByNativeTransactionComplete": true,
+        "commitCompleteWallTimestampCaptured": false,
+        "note": "Native hook timestamps the full-state/current put attempt, then its real transaction complete event sets committed=true. No separate exact commit-complete wall timestamp was captured. Attempt at/after due also establishes no earlier commit."
+      },
+      "fullGameEvidence": {
+        "completeAfterGameCaptured": true,
+        "nativeWriteGameEqualsCompleteAfterGame": true,
+        "afterGameRevision": 1,
+        "originGameCapturedInActivity": false,
+        "note": "All full-Game comparisons and deadline-before-zero-change assertions were hard assertions in the referenced successful declaration. v1 timing attachments keep complete afterGame/nativeWriteGame and formal result; they do not separately serialize the full beforeGame."
+      },
+      "receiptEvidence": {
+        "expectedKey": "5f2355f6-e17f-4e10-8893-b5c1001a5733:cycle:ae70e003-9d7e-4f9b-9572-32f89e488953:0:1",
+        "exactNativeRecordCountHardAsserted": 1,
+        "status": "passed-hard-assertion-before-timing-attachment",
+        "completeCommandFormalResultAndCompleteActivityCompared": true,
+        "v7OriginProofAndDueValidated": false,
+        "v1StoredProofNotInvented": true,
+        "rawReceiptPayloadCapturedInTimingAttachment": false,
+        "sourceReference": "verificationSources.receiptAndRealCycle",
+        "note": "The actual native full-receipts query, exact key/count and full formal result/activity assertions executed and passed before this attachment. This extraction does not synthesize or claim a separately captured raw receipt payload."
+      },
+      "losslessOriginalProof": {
+        "started": {
+          "wall": 1792794813071,
+          "mono": 2320.5
+        },
+        "ended": {
+          "wall": 1792794844540,
+          "mono": 33788.90000003576
+        },
+        "activity": {
+          "format": "chenyuan-activity",
+          "id": "ae70e003-9d7e-4f9b-9572-32f89e488953",
+          "revision": 0,
+          "generation": 0,
+          "ownerId": "e82af7c1-597f-4a3f-8afe-9904f144fbc1",
+          "runId": "5f2355f6-e17f-4e10-8893-b5c1001a5733",
+          "realm": "mortal",
+          "gameRevision": 0,
+          "cycleMs": 30000,
+          "completedCycles": 0,
+          "spentStones": 0,
+          "gainedXp": 0,
+          "spentMonths": 0,
+          "status": "running",
+          "stopReason": null,
+          "nextCommand": {
+            "type": "CULTIVATE",
+            "method": "natural",
+            "count": 1,
+            "commandId": "cycle:ae70e003-9d7e-4f9b-9572-32f89e488953:0:1",
+            "runId": "5f2355f6-e17f-4e10-8893-b5c1001a5733",
+            "expectedRevision": 0
+          },
+          "startedAt": 1792794812927,
+          "dueAt": 1792794842927,
+          "version": 1,
+          "plan": {
+            "kind": "cultivation",
+            "method": "natural",
+            "maxCycles": 1,
+            "until": "cycles",
+            "stoneBudget": 0,
+            "stoneReserve": 0
+          }
+        },
+        "committed": [
+          {
+            "wall": 1792794842964,
+            "mono": 32213.700000047684,
+            "game": {
+              "format": "chenyuan-full",
+              "version": 2,
+              "core": {
+                "schemaVersion": 2,
+                "contentVersion": "full-demo.3",
+                "balanceVersion": "full-unbalanced.3",
+                "runId": "5f2355f6-e17f-4e10-8893-b5c1001a5733",
+                "revision": 1,
+                "mode": "idle",
+                "player": {
+                  "name": "潜修客",
+                  "realm": "mortal",
+                  "xp": 5,
+                  "hp": 60,
+                  "mp": 20,
+                  "stones": 40,
+                  "startAgeMonths": 216
+                },
+                "world": {
+                  "location": "cave",
+                  "elapsedMonths": 1
+                },
+                "inventory": {
+                  "herb": 0,
+                  "dew": 0,
+                  "core": 0,
+                  "jade": 0,
+                  "lotus": 0,
+                  "soul": 0,
+                  "dao": 0,
+                  "healing_pill": 1,
+                  "spirit_pill": 0,
+                  "foundation_pill": 0,
+                  "golden_pill": 0,
+                  "nascent_pill": 0,
+                  "spirit_seed": 0,
+                  "ascension_seal": 0
+                },
+                "openingChoice": "leave",
+                "learnedSkills": [],
+                "activeEvent": null
+              },
+              "school": null,
+              "loadout": {
+                "mind": null,
+                "builder": null,
+                "finisher": null,
+                "relic": null
+              },
+              "learned": [],
+              "ownedRelics": [],
+              "battle": null,
+              "journal": [
+                "你带着一枚回春丹，在山雨中走进破庙。",
+                "你留下回春丹，谨慎地走出破庙。",
+                "你抵达听雨洞府。",
+                "修为 +5 · 游戏岁月 +1月"
+              ],
+              "wins": 0,
+              "choices": {},
+              "milestones": {
+                "mortal": 0
+              },
+              "trial": null,
+              "status": "active",
+              "ending": null
+            },
+            "committed": true
+          }
+        ],
+        "after": {
+          "format": "chenyuan-full",
+          "version": 2,
+          "core": {
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3",
+            "runId": "5f2355f6-e17f-4e10-8893-b5c1001a5733",
+            "revision": 1,
+            "mode": "idle",
+            "player": {
+              "name": "潜修客",
+              "realm": "mortal",
+              "xp": 5,
+              "hp": 60,
+              "mp": 20,
+              "stones": 40,
+              "startAgeMonths": 216
+            },
+            "world": {
+              "location": "cave",
+              "elapsedMonths": 1
+            },
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "openingChoice": "leave",
+            "learnedSkills": [],
+            "activeEvent": null
+          },
+          "school": null,
+          "loadout": {
+            "mind": null,
+            "builder": null,
+            "finisher": null,
+            "relic": null
+          },
+          "learned": [],
+          "ownedRelics": [],
+          "battle": null,
+          "journal": [
+            "你带着一枚回春丹，在山雨中走进破庙。",
+            "你留下回春丹，谨慎地走出破庙。",
+            "你抵达听雨洞府。",
+            "修为 +5 · 游戏岁月 +1月"
+          ],
+          "wins": 0,
+          "choices": {},
+          "milestones": {
+            "mortal": 0
+          },
+          "trial": null,
+          "status": "active",
+          "ending": null
+        },
+        "formalResult": {
+          "commandId": "cycle:ae70e003-9d7e-4f9b-9572-32f89e488953:0:1",
+          "runId": "5f2355f6-e17f-4e10-8893-b5c1001a5733",
+          "type": "CULTIVATE",
+          "revisionBefore": 0,
+          "revisionAfter": 1,
+          "requestedSteps": 1,
+          "executedSteps": 1,
+          "stopReason": null,
+          "phaseBefore": "idle",
+          "phaseAfter": "idle",
+          "versions": {
+            "format": "chenyuan-full",
+            "version": 2,
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3"
+          },
+          "costs": {
+            "stones": 0,
+            "mp": 0,
+            "months": 1,
+            "items": {}
+          },
+          "delta": {
+            "stones": 0,
+            "xp": 5,
+            "hp": 0,
+            "mp": 0,
+            "months": 1,
+            "wins": 0,
+            "inventory": {},
+            "realm": {
+              "before": "mortal",
+              "after": "mortal"
+            }
+          }
+        },
+        "effects": [
+          {
+            "id": "cultivation-result",
+            "sequence": "1",
+            "text": "修为 +5 已存未耗灵石 · 1 游戏月",
+            "wall": 1792794842983
+          }
+        ]
+      }
+    },
+    {
+      "coverageScenarioId": "assisted-cultivation",
+      "sourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "report": {
+        "path": "artifacts/goal-4/art06/ui-final-source7.json",
+        "sha256": "993837116b572a38c5ae115ca6f91e620686b365fe07bb5451727d2a6d55d418",
+        "test": {
+          "file": "cultivation-objects.spec.ts",
+          "title": "ART06-A5 a lawful real sixty second assisted cycle charges one exact realm cost and stops before its cumulative budget or reserve can be crossed",
+          "project": "chromium",
+          "status": "passed",
+          "retry": 0
+        },
+        "attachment": "assisted-real-cycle-proof"
+      },
+      "timing": {
+        "periodMs": 60000,
+        "activityStartedAtWallMs": 1792794819626,
+        "activityDueAtWallMs": 1792794879626,
+        "firstNativeWriteAttemptAtWallMs": 1792794879668,
+        "firstNativeWriteAttemptElapsedMs": 60042,
+        "firstNativeWriteAttemptAfterDueMs": 42,
+        "commitConfirmedByNativeTransactionComplete": true,
+        "commitCompleteWallTimestampCaptured": false,
+        "note": "Native hook timestamps the full-state/current put attempt, then its real transaction complete event sets committed=true. No separate exact commit-complete wall timestamp was captured. Attempt at/after due also establishes no earlier commit."
+      },
+      "fullGameEvidence": {
+        "completeAfterGameCaptured": true,
+        "nativeWriteGameEqualsCompleteAfterGame": true,
+        "afterGameRevision": 1,
+        "originGameCapturedInActivity": false,
+        "note": "All full-Game comparisons and deadline-before-zero-change assertions were hard assertions in the referenced successful declaration. v1 timing attachments keep complete afterGame/nativeWriteGame and formal result; they do not separately serialize the full beforeGame."
+      },
+      "receiptEvidence": {
+        "expectedKey": "65ded9f0-9374-43cd-a5d8-8b011ca3fe55:cycle:4e00315c-aeaf-47e3-9ce4-90d5b0aae362:0:1",
+        "exactNativeRecordCountHardAsserted": 1,
+        "status": "passed-hard-assertion-before-timing-attachment",
+        "completeCommandFormalResultAndCompleteActivityCompared": true,
+        "v7OriginProofAndDueValidated": false,
+        "v1StoredProofNotInvented": true,
+        "rawReceiptPayloadCapturedInTimingAttachment": false,
+        "sourceReference": "verificationSources.receiptAndRealCycle",
+        "note": "The actual native full-receipts query, exact key/count and full formal result/activity assertions executed and passed before this attachment. This extraction does not synthesize or claim a separately captured raw receipt payload."
+      },
+      "losslessOriginalProof": {
+        "started": {
+          "wall": 1792794819799,
+          "mono": 2630.7000000476837
+        },
+        "ended": {
+          "wall": 1792794881682,
+          "mono": 64512.700000047684
+        },
+        "activity": {
+          "format": "chenyuan-activity",
+          "id": "4e00315c-aeaf-47e3-9ce4-90d5b0aae362",
+          "revision": 0,
+          "generation": 0,
+          "ownerId": "83e5d350-45d7-4bc5-a503-17ef1113dc89",
+          "runId": "65ded9f0-9374-43cd-a5d8-8b011ca3fe55",
+          "realm": "qi",
+          "gameRevision": 0,
+          "cycleMs": 60000,
+          "completedCycles": 0,
+          "spentStones": 0,
+          "gainedXp": 0,
+          "spentMonths": 0,
+          "status": "running",
+          "stopReason": null,
+          "nextCommand": {
+            "type": "CULTIVATE",
+            "method": "assisted",
+            "count": 1,
+            "commandId": "cycle:4e00315c-aeaf-47e3-9ce4-90d5b0aae362:0:1",
+            "runId": "65ded9f0-9374-43cd-a5d8-8b011ca3fe55",
+            "expectedRevision": 0
+          },
+          "startedAt": 1792794819626,
+          "dueAt": 1792794879626,
+          "version": 1,
+          "plan": {
+            "kind": "cultivation",
+            "method": "assisted",
+            "maxCycles": 5,
+            "until": "cycles",
+            "stoneBudget": 20,
+            "stoneReserve": 20
+          }
+        },
+        "committed": [
+          {
+            "wall": 1792794879668,
+            "mono": 62498.60000002384,
+            "game": {
+              "format": "chenyuan-full",
+              "version": 2,
+              "core": {
+                "schemaVersion": 2,
+                "contentVersion": "full-demo.3",
+                "balanceVersion": "full-unbalanced.3",
+                "runId": "65ded9f0-9374-43cd-a5d8-8b011ca3fe55",
+                "revision": 1,
+                "mode": "idle",
+                "player": {
+                  "name": "测试修士",
+                  "realm": "qi",
+                  "xp": 100,
+                  "hp": 100,
+                  "mp": 60,
+                  "stones": 20,
+                  "startAgeMonths": 216
+                },
+                "world": {
+                  "location": "cave",
+                  "elapsedMonths": 3
+                },
+                "inventory": {
+                  "herb": 0,
+                  "dew": 0,
+                  "core": 0,
+                  "jade": 0,
+                  "lotus": 0,
+                  "soul": 0,
+                  "dao": 0,
+                  "healing_pill": 1,
+                  "spirit_pill": 0,
+                  "foundation_pill": 0,
+                  "golden_pill": 0,
+                  "nascent_pill": 0,
+                  "spirit_seed": 0,
+                  "ascension_seal": 0
+                },
+                "openingChoice": "leave",
+                "learnedSkills": [],
+                "activeEvent": null
+              },
+              "school": "sword",
+              "loadout": {
+                "mind": "sword_mind",
+                "builder": "sword_build",
+                "finisher": "sword_release",
+                "relic": null
+              },
+              "learned": [
+                "sword_mind",
+                "sword_build",
+                "sword_release"
+              ],
+              "ownedRelics": [],
+              "battle": null,
+              "journal": [
+                "你带着一枚回春丹，在山雨中走进破庙。",
+                "你留下回春丹，谨慎地走出破庙。",
+                "你抵达听雨洞府。",
+                "结算 2 次：修为 +10 · 游戏岁月 +2月；自动停止：修为圆满，请筹备突破物",
+                "你踏入炼气。修行没有捷径，新的资源与机缘已向你开放。",
+                "你展开青锋剑诀。积蓄、破势，才是剑修的节奏。",
+                "修为 +100 · 灵石 -20 · 游戏岁月 +1月"
+              ],
+              "wins": 0,
+              "choices": {},
+              "milestones": {
+                "mortal": 0,
+                "qi": 2
+              },
+              "trial": null,
+              "status": "active",
+              "ending": null
+            },
+            "committed": true
+          }
+        ],
+        "after": {
+          "format": "chenyuan-full",
+          "version": 2,
+          "core": {
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3",
+            "runId": "65ded9f0-9374-43cd-a5d8-8b011ca3fe55",
+            "revision": 1,
+            "mode": "idle",
+            "player": {
+              "name": "测试修士",
+              "realm": "qi",
+              "xp": 100,
+              "hp": 100,
+              "mp": 60,
+              "stones": 20,
+              "startAgeMonths": 216
+            },
+            "world": {
+              "location": "cave",
+              "elapsedMonths": 3
+            },
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "openingChoice": "leave",
+            "learnedSkills": [],
+            "activeEvent": null
+          },
+          "school": "sword",
+          "loadout": {
+            "mind": "sword_mind",
+            "builder": "sword_build",
+            "finisher": "sword_release",
+            "relic": null
+          },
+          "learned": [
+            "sword_mind",
+            "sword_build",
+            "sword_release"
+          ],
+          "ownedRelics": [],
+          "battle": null,
+          "journal": [
+            "你带着一枚回春丹，在山雨中走进破庙。",
+            "你留下回春丹，谨慎地走出破庙。",
+            "你抵达听雨洞府。",
+            "结算 2 次：修为 +10 · 游戏岁月 +2月；自动停止：修为圆满，请筹备突破物",
+            "你踏入炼气。修行没有捷径，新的资源与机缘已向你开放。",
+            "你展开青锋剑诀。积蓄、破势，才是剑修的节奏。",
+            "修为 +100 · 灵石 -20 · 游戏岁月 +1月"
+          ],
+          "wins": 0,
+          "choices": {},
+          "milestones": {
+            "mortal": 0,
+            "qi": 2
+          },
+          "trial": null,
+          "status": "active",
+          "ending": null
+        },
+        "formalResult": {
+          "commandId": "cycle:4e00315c-aeaf-47e3-9ce4-90d5b0aae362:0:1",
+          "runId": "65ded9f0-9374-43cd-a5d8-8b011ca3fe55",
+          "type": "CULTIVATE",
+          "revisionBefore": 0,
+          "revisionAfter": 1,
+          "requestedSteps": 1,
+          "executedSteps": 1,
+          "stopReason": null,
+          "phaseBefore": "idle",
+          "phaseAfter": "idle",
+          "versions": {
+            "format": "chenyuan-full",
+            "version": 2,
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3"
+          },
+          "costs": {
+            "stones": 20,
+            "mp": 0,
+            "months": 1,
+            "items": {}
+          },
+          "delta": {
+            "stones": -20,
+            "xp": 100,
+            "hp": 0,
+            "mp": 0,
+            "months": 1,
+            "wins": 0,
+            "inventory": {},
+            "realm": {
+              "before": "qi",
+              "after": "qi"
+            }
+          }
+        },
+        "effects": [
+          {
+            "id": "cultivation-result",
+            "sequence": "1",
+            "text": "修为 +100 已存灵石 -20 · 1 游戏月",
+            "wall": 1792794879688
+          }
+        ]
+      }
+    },
+    {
+      "coverageScenarioId": "opening-choose",
+      "sourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "report": {
+        "path": "artifacts/goal-4/art06/ui-final-source7.json",
+        "sha256": "993837116b572a38c5ae115ca6f91e620686b365fe07bb5451727d2a6d55d418",
+        "test": {
+          "file": "cultivation-objects.spec.ts",
+          "title": "ART06-A12 real CHOOSE saves its complete selected 6000ms result once and never authorizes the next stage",
+          "project": "chromium",
+          "status": "passed",
+          "retry": 0
+        },
+        "attachment": "choose-real-cycle-proof"
+      },
+      "timing": {
+        "periodMs": 6000,
+        "activityStartedAtWallMs": 1792794885658,
+        "activityDueAtWallMs": 1792794891658,
+        "firstNativeWriteAttemptAtWallMs": 1792794891691,
+        "firstNativeWriteAttemptElapsedMs": 6033,
+        "firstNativeWriteAttemptAfterDueMs": 33,
+        "commitConfirmedByNativeTransactionComplete": true,
+        "commitCompleteWallTimestampCaptured": false,
+        "note": "Native hook timestamps the full-state/current put attempt, then its real transaction complete event sets committed=true. No separate exact commit-complete wall timestamp was captured. Attempt at/after due also establishes no earlier commit."
+      },
+      "fullGameEvidence": {
+        "completeAfterGameCaptured": true,
+        "nativeWriteGameEqualsCompleteAfterGame": true,
+        "afterGameRevision": 1,
+        "originGameCapturedInActivity": true,
+        "note": "All full-Game comparisons and deadline-before-zero-change assertions were hard assertions in the referenced successful declaration. v1 timing attachments keep complete afterGame/nativeWriteGame and formal result; they do not separately serialize the full beforeGame."
+      },
+      "receiptEvidence": {
+        "expectedKey": "18ef7fca-0a99-4e6c-aff7-00a2241619f0:cycle:33ab7f43-8272-4e81-8dbe-d6c66797ee2d:0:1",
+        "exactNativeRecordCountHardAsserted": 1,
+        "status": "passed-hard-assertion-before-timing-attachment",
+        "completeCommandFormalResultAndCompleteActivityCompared": true,
+        "v7OriginProofAndDueValidated": true,
+        "v1StoredProofNotInvented": false,
+        "rawReceiptPayloadCapturedInTimingAttachment": false,
+        "sourceReference": "verificationSources.receiptAndRealCycle",
+        "note": "The actual native full-receipts query, exact key/count and full formal result/activity assertions executed and passed before this attachment. This extraction does not synthesize or claim a separately captured raw receipt payload."
+      },
+      "losslessOriginalProof": {
+        "started": {
+          "wall": 1792794885772,
+          "mono": 2981.800000011921
+        },
+        "ended": {
+          "wall": 1792794892741,
+          "mono": 9949.899999976158
+        },
+        "activity": {
+          "format": "chenyuan-activity",
+          "id": "33ab7f43-8272-4e81-8dbe-d6c66797ee2d",
+          "revision": 0,
+          "generation": 0,
+          "ownerId": "df50a665-b730-43f7-8a4d-1190edc44bec",
+          "runId": "18ef7fca-0a99-4e6c-aff7-00a2241619f0",
+          "realm": "mortal",
+          "gameRevision": 0,
+          "cycleMs": 6000,
+          "completedCycles": 0,
+          "spentStones": 0,
+          "gainedXp": 0,
+          "spentMonths": 0,
+          "status": "running",
+          "stopReason": null,
+          "nextCommand": {
+            "type": "CHOOSE",
+            "choice": "help",
+            "commandId": "cycle:33ab7f43-8272-4e81-8dbe-d6c66797ee2d:0:1",
+            "runId": "18ef7fca-0a99-4e6c-aff7-00a2241619f0",
+            "expectedRevision": 0
+          },
+          "startedAt": 1792794885658,
+          "dueAt": 1792794891658,
+          "version": 7,
+          "plan": {
+            "kind": "milestone",
+            "action": {
+              "type": "CHOOSE",
+              "choice": "help"
+            },
+            "maxCycles": 1
+          },
+          "originGame": {
+            "format": "chenyuan-full",
+            "version": 2,
+            "core": {
+              "schemaVersion": 2,
+              "contentVersion": "full-demo.3",
+              "balanceVersion": "full-unbalanced.3",
+              "runId": "18ef7fca-0a99-4e6c-aff7-00a2241619f0",
+              "revision": 0,
+              "mode": "event",
+              "player": {
+                "name": "药匣客",
+                "realm": "mortal",
+                "xp": 0,
+                "hp": 60,
+                "mp": 20,
+                "stones": 40,
+                "startAgeMonths": 216
+              },
+              "world": {
+                "location": "wilderness",
+                "elapsedMonths": 0
+              },
+              "inventory": {
+                "herb": 0,
+                "dew": 0,
+                "core": 0,
+                "jade": 0,
+                "lotus": 0,
+                "soul": 0,
+                "dao": 0,
+                "healing_pill": 1,
+                "spirit_pill": 0,
+                "foundation_pill": 0,
+                "golden_pill": 0,
+                "nascent_pill": 0,
+                "spirit_seed": 0,
+                "ascension_seal": 0
+              },
+              "openingChoice": null,
+              "learnedSkills": [],
+              "activeEvent": {
+                "id": "temple",
+                "instanceId": "18ef7fca-0a99-4e6c-aff7-00a2241619f0:temple"
+              }
+            },
+            "school": null,
+            "loadout": {
+              "mind": null,
+              "builder": null,
+              "finisher": null,
+              "relic": null
+            },
+            "learned": [],
+            "ownedRelics": [],
+            "battle": null,
+            "journal": [
+              "你带着一枚回春丹，在山雨中走进破庙。"
+            ],
+            "wins": 0,
+            "choices": {},
+            "milestones": {
+              "mortal": 0
+            },
+            "trial": null,
+            "status": "active",
+            "ending": null
+          },
+          "outcomeGame": null,
+          "spentItems": {},
+          "gainedItems": {},
+          "gainedStones": 0,
+          "hpChange": 0,
+          "mpChange": 0,
+          "xpChange": 0
+        },
+        "committed": [
+          {
+            "wall": 1792794891691,
+            "mono": 8900,
+            "game": {
+              "format": "chenyuan-full",
+              "version": 2,
+              "core": {
+                "schemaVersion": 2,
+                "contentVersion": "full-demo.3",
+                "balanceVersion": "full-unbalanced.3",
+                "runId": "18ef7fca-0a99-4e6c-aff7-00a2241619f0",
+                "revision": 1,
+                "mode": "idle",
+                "player": {
+                  "name": "药匣客",
+                  "realm": "mortal",
+                  "xp": 0,
+                  "hp": 60,
+                  "mp": 20,
+                  "stones": 40,
+                  "startAgeMonths": 216
+                },
+                "world": {
+                  "location": "wilderness",
+                  "elapsedMonths": 0
+                },
+                "inventory": {
+                  "herb": 0,
+                  "dew": 0,
+                  "core": 0,
+                  "jade": 0,
+                  "lotus": 0,
+                  "soul": 0,
+                  "dao": 0,
+                  "healing_pill": 0,
+                  "spirit_pill": 0,
+                  "foundation_pill": 0,
+                  "golden_pill": 0,
+                  "nascent_pill": 0,
+                  "spirit_seed": 0,
+                  "ascension_seal": 0
+                },
+                "openingChoice": "help",
+                "learnedSkills": [],
+                "activeEvent": null
+              },
+              "school": null,
+              "loadout": {
+                "mind": null,
+                "builder": null,
+                "finisher": null,
+                "relic": null
+              },
+              "learned": [],
+              "ownedRelics": [],
+              "battle": null,
+              "journal": [
+                "你带着一枚回春丹，在山雨中走进破庙。",
+                "你赠丹相助，结下赠药之缘。"
+              ],
+              "wins": 0,
+              "choices": {},
+              "milestones": {
+                "mortal": 0
+              },
+              "trial": null,
+              "status": "active",
+              "ending": null
+            },
+            "committed": true
+          }
+        ],
+        "after": {
+          "format": "chenyuan-full",
+          "version": 2,
+          "core": {
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3",
+            "runId": "18ef7fca-0a99-4e6c-aff7-00a2241619f0",
+            "revision": 1,
+            "mode": "idle",
+            "player": {
+              "name": "药匣客",
+              "realm": "mortal",
+              "xp": 0,
+              "hp": 60,
+              "mp": 20,
+              "stones": 40,
+              "startAgeMonths": 216
+            },
+            "world": {
+              "location": "wilderness",
+              "elapsedMonths": 0
+            },
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 0,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "openingChoice": "help",
+            "learnedSkills": [],
+            "activeEvent": null
+          },
+          "school": null,
+          "loadout": {
+            "mind": null,
+            "builder": null,
+            "finisher": null,
+            "relic": null
+          },
+          "learned": [],
+          "ownedRelics": [],
+          "battle": null,
+          "journal": [
+            "你带着一枚回春丹，在山雨中走进破庙。",
+            "你赠丹相助，结下赠药之缘。"
+          ],
+          "wins": 0,
+          "choices": {},
+          "milestones": {
+            "mortal": 0
+          },
+          "trial": null,
+          "status": "active",
+          "ending": null
+        },
+        "formalResult": {
+          "commandId": "cycle:33ab7f43-8272-4e81-8dbe-d6c66797ee2d:0:1",
+          "runId": "18ef7fca-0a99-4e6c-aff7-00a2241619f0",
+          "type": "CHOOSE",
+          "revisionBefore": 0,
+          "revisionAfter": 1,
+          "requestedSteps": 1,
+          "executedSteps": 1,
+          "stopReason": null,
+          "phaseBefore": "opening",
+          "phaseAfter": "idle",
+          "versions": {
+            "format": "chenyuan-full",
+            "version": 2,
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3"
+          },
+          "costs": {
+            "stones": 0,
+            "mp": 0,
+            "months": 0,
+            "items": {
+              "healing_pill": 1
+            }
+          },
+          "delta": {
+            "stones": 0,
+            "xp": 0,
+            "hp": 0,
+            "mp": 0,
+            "months": 0,
+            "wins": 0,
+            "inventory": {
+              "healing_pill": -1
+            },
+            "realm": {
+              "before": "mortal",
+              "after": "mortal"
+            }
+          }
+        },
+        "effects": [
+          {
+            "id": "milestone-handoff",
+            "sequence": "1",
+            "text": "本次已保存 · 赠丹相助回春丹 -1 · 实际 1 / 1 次 · 回春丹 ×1 · 下一步仍由你另行安排。",
+            "wall": 1792794891704
+          }
+        ]
+      }
+    },
+    {
+      "coverageScenarioId": "ordinary-breakthrough",
+      "sourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "report": {
+        "path": "artifacts/goal-4/art06/ui-final-source7.json",
+        "sha256": "993837116b572a38c5ae115ca6f91e620686b365fe07bb5451727d2a6d55d418",
+        "test": {
+          "file": "cultivation-objects.spec.ts",
+          "title": "ART06-A13 real BREAKTHROUGH saves its complete selected 30000ms result once and never authorizes the next stage",
+          "project": "chromium",
+          "status": "passed",
+          "retry": 0
+        },
+        "attachment": "breakthrough-real-cycle-proof"
+      },
+      "timing": {
+        "periodMs": 30000,
+        "activityStartedAtWallMs": 1792794896606,
+        "activityDueAtWallMs": 1792794926606,
+        "firstNativeWriteAttemptAtWallMs": 1792794926639,
+        "firstNativeWriteAttemptElapsedMs": 30033,
+        "firstNativeWriteAttemptAfterDueMs": 33,
+        "commitConfirmedByNativeTransactionComplete": true,
+        "commitCompleteWallTimestampCaptured": false,
+        "note": "Native hook timestamps the full-state/current put attempt, then its real transaction complete event sets committed=true. No separate exact commit-complete wall timestamp was captured. Attempt at/after due also establishes no earlier commit."
+      },
+      "fullGameEvidence": {
+        "completeAfterGameCaptured": true,
+        "nativeWriteGameEqualsCompleteAfterGame": true,
+        "afterGameRevision": 1,
+        "originGameCapturedInActivity": true,
+        "note": "All full-Game comparisons and deadline-before-zero-change assertions were hard assertions in the referenced successful declaration. v1 timing attachments keep complete afterGame/nativeWriteGame and formal result; they do not separately serialize the full beforeGame."
+      },
+      "receiptEvidence": {
+        "expectedKey": "efbf523f-ab55-4a85-aa98-412078296d85:cycle:7b45fdc5-c381-407d-878d-b222cbd40c28:0:1",
+        "exactNativeRecordCountHardAsserted": 1,
+        "status": "passed-hard-assertion-before-timing-attachment",
+        "completeCommandFormalResultAndCompleteActivityCompared": true,
+        "v7OriginProofAndDueValidated": true,
+        "v1StoredProofNotInvented": false,
+        "rawReceiptPayloadCapturedInTimingAttachment": false,
+        "sourceReference": "verificationSources.receiptAndRealCycle",
+        "note": "The actual native full-receipts query, exact key/count and full formal result/activity assertions executed and passed before this attachment. This extraction does not synthesize or claim a separately captured raw receipt payload."
+      },
+      "losslessOriginalProof": {
+        "started": {
+          "wall": 1792794896762,
+          "mono": 2855.5
+        },
+        "ended": {
+          "wall": 1792794928224,
+          "mono": 34317.59999996424
+        },
+        "activity": {
+          "format": "chenyuan-activity",
+          "id": "7b45fdc5-c381-407d-878d-b222cbd40c28",
+          "revision": 0,
+          "generation": 0,
+          "ownerId": "32480072-00b4-4e7f-bb95-a805d0292dae",
+          "runId": "efbf523f-ab55-4a85-aa98-412078296d85",
+          "realm": "qi",
+          "gameRevision": 0,
+          "cycleMs": 30000,
+          "completedCycles": 0,
+          "spentStones": 0,
+          "gainedXp": 0,
+          "spentMonths": 0,
+          "status": "running",
+          "stopReason": null,
+          "nextCommand": {
+            "type": "BREAKTHROUGH",
+            "commandId": "cycle:7b45fdc5-c381-407d-878d-b222cbd40c28:0:1",
+            "runId": "efbf523f-ab55-4a85-aa98-412078296d85",
+            "expectedRevision": 0
+          },
+          "startedAt": 1792794896606,
+          "dueAt": 1792794926606,
+          "version": 7,
+          "plan": {
+            "kind": "milestone",
+            "action": {
+              "type": "BREAKTHROUGH"
+            },
+            "maxCycles": 1
+          },
+          "originGame": {
+            "format": "chenyuan-full",
+            "version": 2,
+            "core": {
+              "schemaVersion": 2,
+              "contentVersion": "full-demo.3",
+              "balanceVersion": "full-unbalanced.3",
+              "runId": "efbf523f-ab55-4a85-aa98-412078296d85",
+              "revision": 0,
+              "mode": "idle",
+              "player": {
+                "name": "测试修士",
+                "realm": "qi",
+                "xp": 1000,
+                "hp": 100,
+                "mp": 60,
+                "stones": 20,
+                "startAgeMonths": 216
+              },
+              "world": {
+                "location": "cave",
+                "elapsedMonths": 32
+              },
+              "inventory": {
+                "herb": 0,
+                "dew": 0,
+                "core": 0,
+                "jade": 0,
+                "lotus": 0,
+                "soul": 0,
+                "dao": 0,
+                "healing_pill": 1,
+                "spirit_pill": 0,
+                "foundation_pill": 1,
+                "golden_pill": 0,
+                "nascent_pill": 0,
+                "spirit_seed": 0,
+                "ascension_seal": 0
+              },
+              "openingChoice": "leave",
+              "learnedSkills": [],
+              "activeEvent": null
+            },
+            "school": "sword",
+            "loadout": {
+              "mind": "sword_mind",
+              "builder": "sword_build",
+              "finisher": "sword_release",
+              "relic": null
+            },
+            "learned": [
+              "sword_mind",
+              "sword_build",
+              "sword_release"
+            ],
+            "ownedRelics": [],
+            "battle": null,
+            "journal": [
+              "你带着一枚回春丹，在山雨中走进破庙。",
+              "你留下回春丹，谨慎地走出破庙。",
+              "你抵达听雨洞府。",
+              "结算 2 次：修为 +10 · 游戏岁月 +2月；自动停止：修为圆满，请筹备突破物",
+              "你踏入炼气。修行没有捷径，新的资源与机缘已向你开放。",
+              "你展开青锋剑诀。积蓄、破势，才是剑修的节奏。",
+              "你抵达青岚山野。",
+              "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+              "结算 2 次：修为 +10 · 灵露 +2 · 游戏岁月 +2月",
+              "你抵达青云宗。",
+              "修为 +20 · 妖核 +1 · 游戏岁月 +4月",
+              "你抵达听雨洞府。",
+              "灵石 -20 · 凝气草 -8 · 灵露 -2 · 妖核 -1 · 筑基丹 +1 · 游戏岁月 +1月",
+              "结算 19 次：修为 +950 · 游戏岁月 +19月；自动停止：修为圆满，请筹备突破物"
+            ],
+            "wins": 0,
+            "choices": {},
+            "milestones": {
+              "mortal": 0,
+              "qi": 2
+            },
+            "trial": null,
+            "status": "active",
+            "ending": null
+          },
+          "outcomeGame": null,
+          "spentItems": {},
+          "gainedItems": {},
+          "gainedStones": 0,
+          "hpChange": 0,
+          "mpChange": 0,
+          "xpChange": 0
+        },
+        "committed": [
+          {
+            "wall": 1792794926639,
+            "mono": 32732.099999964237,
+            "game": {
+              "format": "chenyuan-full",
+              "version": 2,
+              "core": {
+                "schemaVersion": 2,
+                "contentVersion": "full-demo.3",
+                "balanceVersion": "full-unbalanced.3",
+                "runId": "efbf523f-ab55-4a85-aa98-412078296d85",
+                "revision": 1,
+                "mode": "idle",
+                "player": {
+                  "name": "测试修士",
+                  "realm": "foundation",
+                  "xp": 0,
+                  "hp": 170,
+                  "mp": 100,
+                  "stones": 20,
+                  "startAgeMonths": 216
+                },
+                "world": {
+                  "location": "cave",
+                  "elapsedMonths": 32
+                },
+                "inventory": {
+                  "herb": 0,
+                  "dew": 0,
+                  "core": 0,
+                  "jade": 0,
+                  "lotus": 0,
+                  "soul": 0,
+                  "dao": 0,
+                  "healing_pill": 1,
+                  "spirit_pill": 0,
+                  "foundation_pill": 0,
+                  "golden_pill": 0,
+                  "nascent_pill": 0,
+                  "spirit_seed": 0,
+                  "ascension_seal": 0
+                },
+                "openingChoice": "leave",
+                "learnedSkills": [],
+                "activeEvent": null
+              },
+              "school": "sword",
+              "loadout": {
+                "mind": "sword_mind",
+                "builder": "sword_build",
+                "finisher": "sword_release",
+                "relic": null
+              },
+              "learned": [
+                "sword_mind",
+                "sword_build",
+                "sword_release"
+              ],
+              "ownedRelics": [],
+              "battle": null,
+              "journal": [
+                "你带着一枚回春丹，在山雨中走进破庙。",
+                "你留下回春丹，谨慎地走出破庙。",
+                "你抵达听雨洞府。",
+                "结算 2 次：修为 +10 · 游戏岁月 +2月；自动停止：修为圆满，请筹备突破物",
+                "你踏入炼气。修行没有捷径，新的资源与机缘已向你开放。",
+                "你展开青锋剑诀。积蓄、破势，才是剑修的节奏。",
+                "你抵达青岚山野。",
+                "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+                "结算 2 次：修为 +10 · 灵露 +2 · 游戏岁月 +2月",
+                "你抵达青云宗。",
+                "修为 +20 · 妖核 +1 · 游戏岁月 +4月",
+                "你抵达听雨洞府。",
+                "灵石 -20 · 凝气草 -8 · 灵露 -2 · 妖核 -1 · 筑基丹 +1 · 游戏岁月 +1月",
+                "结算 19 次：修为 +950 · 游戏岁月 +19月；自动停止：修为圆满，请筹备突破物",
+                "你踏入筑基。修行没有捷径，新的资源与机缘已向你开放。"
+              ],
+              "wins": 0,
+              "choices": {},
+              "milestones": {
+                "mortal": 0,
+                "qi": 2,
+                "foundation": 32
+              },
+              "trial": null,
+              "status": "active",
+              "ending": null
+            },
+            "committed": true
+          }
+        ],
+        "after": {
+          "format": "chenyuan-full",
+          "version": 2,
+          "core": {
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3",
+            "runId": "efbf523f-ab55-4a85-aa98-412078296d85",
+            "revision": 1,
+            "mode": "idle",
+            "player": {
+              "name": "测试修士",
+              "realm": "foundation",
+              "xp": 0,
+              "hp": 170,
+              "mp": 100,
+              "stones": 20,
+              "startAgeMonths": 216
+            },
+            "world": {
+              "location": "cave",
+              "elapsedMonths": 32
+            },
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "openingChoice": "leave",
+            "learnedSkills": [],
+            "activeEvent": null
+          },
+          "school": "sword",
+          "loadout": {
+            "mind": "sword_mind",
+            "builder": "sword_build",
+            "finisher": "sword_release",
+            "relic": null
+          },
+          "learned": [
+            "sword_mind",
+            "sword_build",
+            "sword_release"
+          ],
+          "ownedRelics": [],
+          "battle": null,
+          "journal": [
+            "你带着一枚回春丹，在山雨中走进破庙。",
+            "你留下回春丹，谨慎地走出破庙。",
+            "你抵达听雨洞府。",
+            "结算 2 次：修为 +10 · 游戏岁月 +2月；自动停止：修为圆满，请筹备突破物",
+            "你踏入炼气。修行没有捷径，新的资源与机缘已向你开放。",
+            "你展开青锋剑诀。积蓄、破势，才是剑修的节奏。",
+            "你抵达青岚山野。",
+            "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+            "结算 2 次：修为 +10 · 灵露 +2 · 游戏岁月 +2月",
+            "你抵达青云宗。",
+            "修为 +20 · 妖核 +1 · 游戏岁月 +4月",
+            "你抵达听雨洞府。",
+            "灵石 -20 · 凝气草 -8 · 灵露 -2 · 妖核 -1 · 筑基丹 +1 · 游戏岁月 +1月",
+            "结算 19 次：修为 +950 · 游戏岁月 +19月；自动停止：修为圆满，请筹备突破物",
+            "你踏入筑基。修行没有捷径，新的资源与机缘已向你开放。"
+          ],
+          "wins": 0,
+          "choices": {},
+          "milestones": {
+            "mortal": 0,
+            "qi": 2,
+            "foundation": 32
+          },
+          "trial": null,
+          "status": "active",
+          "ending": null
+        },
+        "formalResult": {
+          "commandId": "cycle:7b45fdc5-c381-407d-878d-b222cbd40c28:0:1",
+          "runId": "efbf523f-ab55-4a85-aa98-412078296d85",
+          "type": "BREAKTHROUGH",
+          "revisionBefore": 0,
+          "revisionAfter": 1,
+          "requestedSteps": 1,
+          "executedSteps": 1,
+          "stopReason": null,
+          "phaseBefore": "idle",
+          "phaseAfter": "idle",
+          "versions": {
+            "format": "chenyuan-full",
+            "version": 2,
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3"
+          },
+          "costs": {
+            "stones": 0,
+            "mp": 0,
+            "months": 0,
+            "items": {
+              "foundation_pill": 1
+            }
+          },
+          "delta": {
+            "stones": 0,
+            "xp": -1000,
+            "hp": 70,
+            "mp": 40,
+            "months": 0,
+            "wins": 0,
+            "inventory": {
+              "foundation_pill": -1
+            },
+            "realm": {
+              "before": "qi",
+              "after": "foundation"
+            }
+          }
+        },
+        "effects": [
+          {
+            "id": "milestone-handoff",
+            "sequence": "1",
+            "text": "本次已保存 · 炼气 → 筑基修为 -1000 · 气血 +70 · 灵力 +40 · 筑基丹 -1 · 炼气 → 筑基 · 实际 1 / 1 次 · 筑基丹 ×1 · 下一步仍由你另行安排。",
+            "wall": 1792794926675
+          }
+        ]
+      }
+    },
+    {
+      "coverageScenarioId": "trial-entry",
+      "sourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "report": {
+        "path": "artifacts/goal-4/art06/ui-final-source7.json",
+        "sha256": "993837116b572a38c5ae115ca6f91e620686b365fe07bb5451727d2a6d55d418",
+        "test": {
+          "file": "cultivation-objects.spec.ts",
+          "title": "ART06-A14 real START_TRIAL saves its complete selected 15000ms result once and never authorizes the next stage",
+          "project": "chromium",
+          "status": "passed",
+          "retry": 0
+        },
+        "attachment": "start_trial-real-cycle-proof"
+      },
+      "timing": {
+        "periodMs": 15000,
+        "activityStartedAtWallMs": 1792794900007,
+        "activityDueAtWallMs": 1792794915007,
+        "firstNativeWriteAttemptAtWallMs": 1792794915051,
+        "firstNativeWriteAttemptElapsedMs": 15044,
+        "firstNativeWriteAttemptAfterDueMs": 44,
+        "commitConfirmedByNativeTransactionComplete": true,
+        "commitCompleteWallTimestampCaptured": false,
+        "note": "Native hook timestamps the full-state/current put attempt, then its real transaction complete event sets committed=true. No separate exact commit-complete wall timestamp was captured. Attempt at/after due also establishes no earlier commit."
+      },
+      "fullGameEvidence": {
+        "completeAfterGameCaptured": true,
+        "nativeWriteGameEqualsCompleteAfterGame": true,
+        "afterGameRevision": 1,
+        "originGameCapturedInActivity": true,
+        "note": "All full-Game comparisons and deadline-before-zero-change assertions were hard assertions in the referenced successful declaration. v1 timing attachments keep complete afterGame/nativeWriteGame and formal result; they do not separately serialize the full beforeGame."
+      },
+      "receiptEvidence": {
+        "expectedKey": "e35b8631-dd38-49b3-9a47-90cb3598306b:cycle:0018a201-208f-42f4-a12c-ca9c08f25602:0:1",
+        "exactNativeRecordCountHardAsserted": 1,
+        "status": "passed-hard-assertion-before-timing-attachment",
+        "completeCommandFormalResultAndCompleteActivityCompared": true,
+        "v7OriginProofAndDueValidated": true,
+        "v1StoredProofNotInvented": false,
+        "rawReceiptPayloadCapturedInTimingAttachment": false,
+        "sourceReference": "verificationSources.receiptAndRealCycle",
+        "note": "The actual native full-receipts query, exact key/count and full formal result/activity assertions executed and passed before this attachment. This extraction does not synthesize or claim a separately captured raw receipt payload."
+      },
+      "losslessOriginalProof": {
+        "started": {
+          "wall": 1792794900164,
+          "mono": 2469.199999988079
+        },
+        "ended": {
+          "wall": 1792794916765,
+          "mono": 19069.5
+        },
+        "activity": {
+          "format": "chenyuan-activity",
+          "id": "0018a201-208f-42f4-a12c-ca9c08f25602",
+          "revision": 0,
+          "generation": 0,
+          "ownerId": "3c72cd5d-7617-4c09-b45b-93f883d90d77",
+          "runId": "e35b8631-dd38-49b3-9a47-90cb3598306b",
+          "realm": "spirit",
+          "gameRevision": 0,
+          "cycleMs": 15000,
+          "completedCycles": 0,
+          "spentStones": 0,
+          "gainedXp": 0,
+          "spentMonths": 0,
+          "status": "running",
+          "stopReason": null,
+          "nextCommand": {
+            "type": "START_TRIAL",
+            "commandId": "cycle:0018a201-208f-42f4-a12c-ca9c08f25602:0:1",
+            "runId": "e35b8631-dd38-49b3-9a47-90cb3598306b",
+            "expectedRevision": 0
+          },
+          "startedAt": 1792794900007,
+          "dueAt": 1792794915007,
+          "version": 7,
+          "plan": {
+            "kind": "milestone",
+            "action": {
+              "type": "START_TRIAL"
+            },
+            "maxCycles": 1
+          },
+          "originGame": {
+            "format": "chenyuan-full",
+            "version": 2,
+            "core": {
+              "schemaVersion": 2,
+              "contentVersion": "full-demo.3",
+              "balanceVersion": "full-unbalanced.3",
+              "runId": "e35b8631-dd38-49b3-9a47-90cb3598306b",
+              "revision": 0,
+              "mode": "idle",
+              "player": {
+                "name": "测试修士",
+                "realm": "spirit",
+                "xp": 28000,
+                "hp": 600,
+                "mp": 290,
+                "stones": 300,
+                "startAgeMonths": 216
+              },
+              "world": {
+                "location": "terrace",
+                "elapsedMonths": 285
+              },
+              "inventory": {
+                "herb": 0,
+                "dew": 0,
+                "core": 0,
+                "jade": 0,
+                "lotus": 0,
+                "soul": 0,
+                "dao": 0,
+                "healing_pill": 12,
+                "spirit_pill": 4,
+                "foundation_pill": 0,
+                "golden_pill": 0,
+                "nascent_pill": 0,
+                "spirit_seed": 0,
+                "ascension_seal": 1
+              },
+              "openingChoice": "leave",
+              "learnedSkills": [],
+              "activeEvent": null
+            },
+            "school": "sword",
+            "loadout": {
+              "mind": "sword_mind",
+              "builder": "sword_build",
+              "finisher": "sword_release",
+              "relic": null
+            },
+            "learned": [
+              "sword_mind",
+              "sword_build",
+              "sword_release"
+            ],
+            "ownedRelics": [],
+            "battle": null,
+            "journal": [
+              "你带着一枚回春丹，在山雨中走进破庙。",
+              "你留下回春丹，谨慎地走出破庙。",
+              "你抵达听雨洞府。",
+              "结算 2 次：修为 +10 · 游戏岁月 +2月；自动停止：修为圆满，请筹备突破物",
+              "你踏入炼气。修行没有捷径，新的资源与机缘已向你开放。",
+              "你展开青锋剑诀。积蓄、破势，才是剑修的节奏。",
+              "你抵达青岚山野。",
+              "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+              "结算 2 次：修为 +10 · 灵露 +2 · 游戏岁月 +2月",
+              "你抵达青云宗。",
+              "修为 +20 · 妖核 +1 · 游戏岁月 +4月",
+              "你抵达听雨洞府。",
+              "灵石 -20 · 凝气草 -8 · 灵露 -2 · 妖核 -1 · 筑基丹 +1 · 游戏岁月 +1月",
+              "结算 19 次：修为 +950 · 游戏岁月 +19月；自动停止：修为圆满，请筹备突破物",
+              "你踏入筑基。修行没有捷径，新的资源与机缘已向你开放。",
+              "你抵达青岚山野。",
+              "结算 3 次：修为 +15 · 凝气草 +6 · 游戏岁月 +3月",
+              "结算 3 次：修为 +15 · 灵露 +3 · 游戏岁月 +3月",
+              "你抵达青云宗。",
+              "结算 2 次：修为 +40 · 妖核 +2 · 游戏岁月 +8月",
+              "你抵达照影古境。",
+              "结算 2 次：修为 +60 · 地脉灵玉 +4 · 游戏岁月 +4月",
+              "你抵达青云宗。",
+              "修为 +20 · 灵石 +60 · 游戏岁月 +2月",
+              "你抵达听雨洞府。",
+              "灵石 -60 · 凝气草 -6 · 灵露 -3 · 妖核 -2 · 地脉灵玉 -4 · 凝金丹 +1 · 游戏岁月 +2月",
+              "结算 24 次：修为 +2850 · 游戏岁月 +24月；自动停止：修为圆满，请筹备突破物",
+              "你踏入金丹。金丹既成，本命法宝可以开始炼制。",
+              "你抵达青岚山野。",
+              "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+              "结算 4 次：修为 +20 · 灵露 +4 · 游戏岁月 +4月",
+              "你抵达照影古境。",
+              "修为 +30 · 地脉灵玉 +2 · 游戏岁月 +2月",
+              "结算 3 次：修为 +180 · 月华莲 +6 · 游戏岁月 +9月",
+              "你抵达青云宗。",
+              "修为 +40 · 灵石 +130 · 游戏岁月 +3月",
+              "你抵达听雨洞府。",
+              "灵石 -110 · 凝气草 -8 · 灵露 -4 · 地脉灵玉 -2 · 月华莲 -5 · 结婴丹 +1 · 游戏岁月 +3月",
+              "结算 29 次：修为 +6910 · 游戏岁月 +29月；自动停止：修为圆满，请筹备突破物",
+              "你踏入元婴。修行没有捷径，新的资源与机缘已向你开放。",
+              "你抵达青岚山野。",
+              "结算 6 次：修为 +30 · 灵露 +6 · 游戏岁月 +6月",
+              "你抵达照影古境。",
+              "修为 +60 · 月华莲 +2 · 游戏岁月 +3月",
+              "结算 3 次：修为 +300 · 凝魂晶 +6 · 游戏岁月 +12月",
+              "你抵达青云宗。",
+              "修为 +70 · 灵石 +230 · 游戏岁月 +4月",
+              "你抵达听雨洞府。",
+              "灵石 -180 · 灵露 -6 · 月华莲 -3 · 凝魂晶 -6 · 化神丹 +1 · 游戏岁月 +4月",
+              "结算 35 次：修为 +14540 · 游戏岁月 +35月；自动停止：修为圆满，请筹备突破物",
+              "你踏入化神。修行没有捷径，新的资源与机缘已向你开放。",
+              "你抵达青云宗。",
+              "结算 3 次：修为 +60 · 妖核 +3 · 游戏岁月 +12月",
+              "你抵达照影古境。",
+              "结算 2 次：修为 +200 · 凝魂晶 +4 · 游戏岁月 +8月",
+              "你抵达登仙台。",
+              "结算 3 次：修为 +540 · 道蕴砂 +6 · 游戏岁月 +15月",
+              "你抵达青云宗。",
+              "修为 +100 · 灵石 +360 · 游戏岁月 +5月",
+              "你抵达听雨洞府。",
+              "灵石 -240 · 妖核 -3 · 凝魂晶 -4 · 道蕴砂 -6 · 渡劫引 +1 · 游戏岁月 +5月",
+              "你抵达云岚坊市。",
+              "灵石 -198 · 回春丹 +11",
+              "你抵达青云宗。",
+              "修为 +100 · 灵石 +360 · 游戏岁月 +5月",
+              "你抵达云岚坊市。",
+              "灵石 -72 · 回灵丹 +4",
+              "你抵达听雨洞府。",
+              "结算 39 次：修为 +27000 · 游戏岁月 +39月；自动停止：修为圆满，请筹备突破物",
+              "你抵达登仙台。"
+            ],
+            "wins": 0,
+            "choices": {},
+            "milestones": {
+              "mortal": 0,
+              "qi": 2,
+              "foundation": 32,
+              "golden": 78,
+              "nascent": 132,
+              "spirit": 196
+            },
+            "trial": null,
+            "status": "active",
+            "ending": null
+          },
+          "outcomeGame": null,
+          "spentItems": {},
+          "gainedItems": {},
+          "gainedStones": 0,
+          "hpChange": 0,
+          "mpChange": 0,
+          "xpChange": 0
+        },
+        "committed": [
+          {
+            "wall": 1792794915051,
+            "mono": 17356,
+            "game": {
+              "format": "chenyuan-full",
+              "version": 2,
+              "core": {
+                "schemaVersion": 2,
+                "contentVersion": "full-demo.3",
+                "balanceVersion": "full-unbalanced.3",
+                "runId": "e35b8631-dd38-49b3-9a47-90cb3598306b",
+                "revision": 1,
+                "mode": "event",
+                "player": {
+                  "name": "测试修士",
+                  "realm": "spirit",
+                  "xp": 28000,
+                  "hp": 600,
+                  "mp": 290,
+                  "stones": 300,
+                  "startAgeMonths": 216
+                },
+                "world": {
+                  "location": "terrace",
+                  "elapsedMonths": 285
+                },
+                "inventory": {
+                  "herb": 0,
+                  "dew": 0,
+                  "core": 0,
+                  "jade": 0,
+                  "lotus": 0,
+                  "soul": 0,
+                  "dao": 0,
+                  "healing_pill": 12,
+                  "spirit_pill": 4,
+                  "foundation_pill": 0,
+                  "golden_pill": 0,
+                  "nascent_pill": 0,
+                  "spirit_seed": 0,
+                  "ascension_seal": 0
+                },
+                "openingChoice": "leave",
+                "learnedSkills": [],
+                "activeEvent": {
+                  "id": "trial_question",
+                  "instanceId": "e35b8631-dd38-49b3-9a47-90cb3598306b:trial_question"
+                }
+              },
+              "school": "sword",
+              "loadout": {
+                "mind": "sword_mind",
+                "builder": "sword_build",
+                "finisher": "sword_release",
+                "relic": null
+              },
+              "learned": [
+                "sword_mind",
+                "sword_build",
+                "sword_release"
+              ],
+              "ownedRelics": [],
+              "battle": null,
+              "journal": [
+                "你带着一枚回春丹，在山雨中走进破庙。",
+                "你留下回春丹，谨慎地走出破庙。",
+                "你抵达听雨洞府。",
+                "结算 2 次：修为 +10 · 游戏岁月 +2月；自动停止：修为圆满，请筹备突破物",
+                "你踏入炼气。修行没有捷径，新的资源与机缘已向你开放。",
+                "你展开青锋剑诀。积蓄、破势，才是剑修的节奏。",
+                "你抵达青岚山野。",
+                "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+                "结算 2 次：修为 +10 · 灵露 +2 · 游戏岁月 +2月",
+                "你抵达青云宗。",
+                "修为 +20 · 妖核 +1 · 游戏岁月 +4月",
+                "你抵达听雨洞府。",
+                "灵石 -20 · 凝气草 -8 · 灵露 -2 · 妖核 -1 · 筑基丹 +1 · 游戏岁月 +1月",
+                "结算 19 次：修为 +950 · 游戏岁月 +19月；自动停止：修为圆满，请筹备突破物",
+                "你踏入筑基。修行没有捷径，新的资源与机缘已向你开放。",
+                "你抵达青岚山野。",
+                "结算 3 次：修为 +15 · 凝气草 +6 · 游戏岁月 +3月",
+                "结算 3 次：修为 +15 · 灵露 +3 · 游戏岁月 +3月",
+                "你抵达青云宗。",
+                "结算 2 次：修为 +40 · 妖核 +2 · 游戏岁月 +8月",
+                "你抵达照影古境。",
+                "结算 2 次：修为 +60 · 地脉灵玉 +4 · 游戏岁月 +4月",
+                "你抵达青云宗。",
+                "修为 +20 · 灵石 +60 · 游戏岁月 +2月",
+                "你抵达听雨洞府。",
+                "灵石 -60 · 凝气草 -6 · 灵露 -3 · 妖核 -2 · 地脉灵玉 -4 · 凝金丹 +1 · 游戏岁月 +2月",
+                "结算 24 次：修为 +2850 · 游戏岁月 +24月；自动停止：修为圆满，请筹备突破物",
+                "你踏入金丹。金丹既成，本命法宝可以开始炼制。",
+                "你抵达青岚山野。",
+                "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+                "结算 4 次：修为 +20 · 灵露 +4 · 游戏岁月 +4月",
+                "你抵达照影古境。",
+                "修为 +30 · 地脉灵玉 +2 · 游戏岁月 +2月",
+                "结算 3 次：修为 +180 · 月华莲 +6 · 游戏岁月 +9月",
+                "你抵达青云宗。",
+                "修为 +40 · 灵石 +130 · 游戏岁月 +3月",
+                "你抵达听雨洞府。",
+                "灵石 -110 · 凝气草 -8 · 灵露 -4 · 地脉灵玉 -2 · 月华莲 -5 · 结婴丹 +1 · 游戏岁月 +3月",
+                "结算 29 次：修为 +6910 · 游戏岁月 +29月；自动停止：修为圆满，请筹备突破物",
+                "你踏入元婴。修行没有捷径，新的资源与机缘已向你开放。",
+                "你抵达青岚山野。",
+                "结算 6 次：修为 +30 · 灵露 +6 · 游戏岁月 +6月",
+                "你抵达照影古境。",
+                "修为 +60 · 月华莲 +2 · 游戏岁月 +3月",
+                "结算 3 次：修为 +300 · 凝魂晶 +6 · 游戏岁月 +12月",
+                "你抵达青云宗。",
+                "修为 +70 · 灵石 +230 · 游戏岁月 +4月",
+                "你抵达听雨洞府。",
+                "灵石 -180 · 灵露 -6 · 月华莲 -3 · 凝魂晶 -6 · 化神丹 +1 · 游戏岁月 +4月",
+                "结算 35 次：修为 +14540 · 游戏岁月 +35月；自动停止：修为圆满，请筹备突破物",
+                "你踏入化神。修行没有捷径，新的资源与机缘已向你开放。",
+                "你抵达青云宗。",
+                "结算 3 次：修为 +60 · 妖核 +3 · 游戏岁月 +12月",
+                "你抵达照影古境。",
+                "结算 2 次：修为 +200 · 凝魂晶 +4 · 游戏岁月 +8月",
+                "你抵达登仙台。",
+                "结算 3 次：修为 +540 · 道蕴砂 +6 · 游戏岁月 +15月",
+                "你抵达青云宗。",
+                "修为 +100 · 灵石 +360 · 游戏岁月 +5月",
+                "你抵达听雨洞府。",
+                "灵石 -240 · 妖核 -3 · 凝魂晶 -4 · 道蕴砂 -6 · 渡劫引 +1 · 游戏岁月 +5月",
+                "你抵达云岚坊市。",
+                "灵石 -198 · 回春丹 +11",
+                "你抵达青云宗。",
+                "修为 +100 · 灵石 +360 · 游戏岁月 +5月",
+                "你抵达云岚坊市。",
+                "灵石 -72 · 回灵丹 +4",
+                "你抵达听雨洞府。",
+                "结算 39 次：修为 +27000 · 游戏岁月 +39月；自动停止：修为圆满，请筹备突破物",
+                "你抵达登仙台。",
+                "渡劫引化作一道金光。问心之前，你回望自己真正走过的路。"
+              ],
+              "wins": 0,
+              "choices": {},
+              "milestones": {
+                "mortal": 0,
+                "qi": 2,
+                "foundation": 32,
+                "golden": 78,
+                "nascent": 132,
+                "spirit": 196
+              },
+              "trial": {
+                "stage": 0,
+                "answer": null
+              },
+              "status": "active",
+              "ending": null
+            },
+            "committed": true
+          }
+        ],
+        "after": {
+          "format": "chenyuan-full",
+          "version": 2,
+          "core": {
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3",
+            "runId": "e35b8631-dd38-49b3-9a47-90cb3598306b",
+            "revision": 1,
+            "mode": "event",
+            "player": {
+              "name": "测试修士",
+              "realm": "spirit",
+              "xp": 28000,
+              "hp": 600,
+              "mp": 290,
+              "stones": 300,
+              "startAgeMonths": 216
+            },
+            "world": {
+              "location": "terrace",
+              "elapsedMonths": 285
+            },
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 12,
+              "spirit_pill": 4,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "openingChoice": "leave",
+            "learnedSkills": [],
+            "activeEvent": {
+              "id": "trial_question",
+              "instanceId": "e35b8631-dd38-49b3-9a47-90cb3598306b:trial_question"
+            }
+          },
+          "school": "sword",
+          "loadout": {
+            "mind": "sword_mind",
+            "builder": "sword_build",
+            "finisher": "sword_release",
+            "relic": null
+          },
+          "learned": [
+            "sword_mind",
+            "sword_build",
+            "sword_release"
+          ],
+          "ownedRelics": [],
+          "battle": null,
+          "journal": [
+            "你带着一枚回春丹，在山雨中走进破庙。",
+            "你留下回春丹，谨慎地走出破庙。",
+            "你抵达听雨洞府。",
+            "结算 2 次：修为 +10 · 游戏岁月 +2月；自动停止：修为圆满，请筹备突破物",
+            "你踏入炼气。修行没有捷径，新的资源与机缘已向你开放。",
+            "你展开青锋剑诀。积蓄、破势，才是剑修的节奏。",
+            "你抵达青岚山野。",
+            "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+            "结算 2 次：修为 +10 · 灵露 +2 · 游戏岁月 +2月",
+            "你抵达青云宗。",
+            "修为 +20 · 妖核 +1 · 游戏岁月 +4月",
+            "你抵达听雨洞府。",
+            "灵石 -20 · 凝气草 -8 · 灵露 -2 · 妖核 -1 · 筑基丹 +1 · 游戏岁月 +1月",
+            "结算 19 次：修为 +950 · 游戏岁月 +19月；自动停止：修为圆满，请筹备突破物",
+            "你踏入筑基。修行没有捷径，新的资源与机缘已向你开放。",
+            "你抵达青岚山野。",
+            "结算 3 次：修为 +15 · 凝气草 +6 · 游戏岁月 +3月",
+            "结算 3 次：修为 +15 · 灵露 +3 · 游戏岁月 +3月",
+            "你抵达青云宗。",
+            "结算 2 次：修为 +40 · 妖核 +2 · 游戏岁月 +8月",
+            "你抵达照影古境。",
+            "结算 2 次：修为 +60 · 地脉灵玉 +4 · 游戏岁月 +4月",
+            "你抵达青云宗。",
+            "修为 +20 · 灵石 +60 · 游戏岁月 +2月",
+            "你抵达听雨洞府。",
+            "灵石 -60 · 凝气草 -6 · 灵露 -3 · 妖核 -2 · 地脉灵玉 -4 · 凝金丹 +1 · 游戏岁月 +2月",
+            "结算 24 次：修为 +2850 · 游戏岁月 +24月；自动停止：修为圆满，请筹备突破物",
+            "你踏入金丹。金丹既成，本命法宝可以开始炼制。",
+            "你抵达青岚山野。",
+            "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+            "结算 4 次：修为 +20 · 灵露 +4 · 游戏岁月 +4月",
+            "你抵达照影古境。",
+            "修为 +30 · 地脉灵玉 +2 · 游戏岁月 +2月",
+            "结算 3 次：修为 +180 · 月华莲 +6 · 游戏岁月 +9月",
+            "你抵达青云宗。",
+            "修为 +40 · 灵石 +130 · 游戏岁月 +3月",
+            "你抵达听雨洞府。",
+            "灵石 -110 · 凝气草 -8 · 灵露 -4 · 地脉灵玉 -2 · 月华莲 -5 · 结婴丹 +1 · 游戏岁月 +3月",
+            "结算 29 次：修为 +6910 · 游戏岁月 +29月；自动停止：修为圆满，请筹备突破物",
+            "你踏入元婴。修行没有捷径，新的资源与机缘已向你开放。",
+            "你抵达青岚山野。",
+            "结算 6 次：修为 +30 · 灵露 +6 · 游戏岁月 +6月",
+            "你抵达照影古境。",
+            "修为 +60 · 月华莲 +2 · 游戏岁月 +3月",
+            "结算 3 次：修为 +300 · 凝魂晶 +6 · 游戏岁月 +12月",
+            "你抵达青云宗。",
+            "修为 +70 · 灵石 +230 · 游戏岁月 +4月",
+            "你抵达听雨洞府。",
+            "灵石 -180 · 灵露 -6 · 月华莲 -3 · 凝魂晶 -6 · 化神丹 +1 · 游戏岁月 +4月",
+            "结算 35 次：修为 +14540 · 游戏岁月 +35月；自动停止：修为圆满，请筹备突破物",
+            "你踏入化神。修行没有捷径，新的资源与机缘已向你开放。",
+            "你抵达青云宗。",
+            "结算 3 次：修为 +60 · 妖核 +3 · 游戏岁月 +12月",
+            "你抵达照影古境。",
+            "结算 2 次：修为 +200 · 凝魂晶 +4 · 游戏岁月 +8月",
+            "你抵达登仙台。",
+            "结算 3 次：修为 +540 · 道蕴砂 +6 · 游戏岁月 +15月",
+            "你抵达青云宗。",
+            "修为 +100 · 灵石 +360 · 游戏岁月 +5月",
+            "你抵达听雨洞府。",
+            "灵石 -240 · 妖核 -3 · 凝魂晶 -4 · 道蕴砂 -6 · 渡劫引 +1 · 游戏岁月 +5月",
+            "你抵达云岚坊市。",
+            "灵石 -198 · 回春丹 +11",
+            "你抵达青云宗。",
+            "修为 +100 · 灵石 +360 · 游戏岁月 +5月",
+            "你抵达云岚坊市。",
+            "灵石 -72 · 回灵丹 +4",
+            "你抵达听雨洞府。",
+            "结算 39 次：修为 +27000 · 游戏岁月 +39月；自动停止：修为圆满，请筹备突破物",
+            "你抵达登仙台。",
+            "渡劫引化作一道金光。问心之前，你回望自己真正走过的路。"
+          ],
+          "wins": 0,
+          "choices": {},
+          "milestones": {
+            "mortal": 0,
+            "qi": 2,
+            "foundation": 32,
+            "golden": 78,
+            "nascent": 132,
+            "spirit": 196
+          },
+          "trial": {
+            "stage": 0,
+            "answer": null
+          },
+          "status": "active",
+          "ending": null
+        },
+        "formalResult": {
+          "commandId": "cycle:0018a201-208f-42f4-a12c-ca9c08f25602:0:1",
+          "runId": "e35b8631-dd38-49b3-9a47-90cb3598306b",
+          "type": "START_TRIAL",
+          "revisionBefore": 0,
+          "revisionAfter": 1,
+          "requestedSteps": 1,
+          "executedSteps": 1,
+          "stopReason": null,
+          "phaseBefore": "idle",
+          "phaseAfter": "trial-question",
+          "versions": {
+            "format": "chenyuan-full",
+            "version": 2,
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3"
+          },
+          "costs": {
+            "stones": 0,
+            "mp": 0,
+            "months": 0,
+            "items": {
+              "ascension_seal": 1
+            }
+          },
+          "delta": {
+            "stones": 0,
+            "xp": 0,
+            "hp": 0,
+            "mp": 0,
+            "months": 0,
+            "wins": 0,
+            "inventory": {
+              "ascension_seal": -1
+            },
+            "realm": {
+              "before": "spirit",
+              "after": "spirit"
+            }
+          }
+        },
+        "effects": [
+          {
+            "id": "milestone-handoff",
+            "sequence": "1",
+            "text": "本次已保存 · 入场完成，问心待决定渡劫引 -1 · 实际 1 / 1 次 · 渡劫引 ×1 · 下一步仍由你另行安排。",
+            "wall": 1792794915066
+          }
+        ]
+      }
+    }
+  ],
+  "sameScenarioAdditionalCurrentVerification": [
+    {
+      "coverageScenarioId": "ordinary-breakthrough",
+      "sourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "report": {
+        "path": "artifacts/goal-4/art06/ui-affected-source8.json",
+        "sha256": "ce89da541d899d6bfd86604f62ca9a637874a7db7ea0308c3fd7c0417c041eb8",
+        "test": {
+          "file": "cultivation-objects.spec.ts",
+          "title": "ART06-A13 real BREAKTHROUGH saves its complete selected 30000ms result once and never authorizes the next stage",
+          "project": "chromium",
+          "status": "passed",
+          "retry": 0
+        },
+        "attachment": "breakthrough-real-cycle-proof"
+      },
+      "timing": {
+        "periodMs": 30000,
+        "activityStartedAtWallMs": 1792795694554,
+        "activityDueAtWallMs": 1792795724554,
+        "firstNativeWriteAttemptAtWallMs": 1792795724595,
+        "firstNativeWriteAttemptElapsedMs": 30041,
+        "firstNativeWriteAttemptAfterDueMs": 41,
+        "commitConfirmedByNativeTransactionComplete": true,
+        "commitCompleteWallTimestampCaptured": false,
+        "note": "Native hook timestamps the full-state/current put attempt, then its real transaction complete event sets committed=true. No separate exact commit-complete wall timestamp was captured. Attempt at/after due also establishes no earlier commit."
+      },
+      "fullGameEvidence": {
+        "completeAfterGameCaptured": true,
+        "nativeWriteGameEqualsCompleteAfterGame": true,
+        "afterGameRevision": 1,
+        "originGameCapturedInActivity": true,
+        "note": "All full-Game comparisons and deadline-before-zero-change assertions were hard assertions in the referenced successful declaration. v1 timing attachments keep complete afterGame/nativeWriteGame and formal result; they do not separately serialize the full beforeGame."
+      },
+      "receiptEvidence": {
+        "expectedKey": "4930fd55-9a6e-4e4d-87c4-899ff86952e2:cycle:13d98a82-9678-454c-aecb-4f1cb1095e73:0:1",
+        "exactNativeRecordCountHardAsserted": 1,
+        "status": "passed-hard-assertion-before-timing-attachment",
+        "completeCommandFormalResultAndCompleteActivityCompared": true,
+        "v7OriginProofAndDueValidated": true,
+        "v1StoredProofNotInvented": false,
+        "rawReceiptPayloadCapturedInTimingAttachment": false,
+        "sourceReference": "verificationSources.receiptAndRealCycle",
+        "note": "The actual native full-receipts query, exact key/count and full formal result/activity assertions executed and passed before this attachment. This extraction does not synthesize or claim a separately captured raw receipt payload."
+      },
+      "losslessOriginalProof": {
+        "started": {
+          "wall": 1792795694722,
+          "mono": 3107.399999976158
+        },
+        "ended": {
+          "wall": 1792795726106,
+          "mono": 34491.39999997616
+        },
+        "activity": {
+          "format": "chenyuan-activity",
+          "id": "13d98a82-9678-454c-aecb-4f1cb1095e73",
+          "revision": 0,
+          "generation": 0,
+          "ownerId": "a10509a3-2263-4f61-9bb7-10769a5dbcd0",
+          "runId": "4930fd55-9a6e-4e4d-87c4-899ff86952e2",
+          "realm": "qi",
+          "gameRevision": 0,
+          "cycleMs": 30000,
+          "completedCycles": 0,
+          "spentStones": 0,
+          "gainedXp": 0,
+          "spentMonths": 0,
+          "status": "running",
+          "stopReason": null,
+          "nextCommand": {
+            "type": "BREAKTHROUGH",
+            "commandId": "cycle:13d98a82-9678-454c-aecb-4f1cb1095e73:0:1",
+            "runId": "4930fd55-9a6e-4e4d-87c4-899ff86952e2",
+            "expectedRevision": 0
+          },
+          "startedAt": 1792795694554,
+          "dueAt": 1792795724554,
+          "version": 7,
+          "plan": {
+            "kind": "milestone",
+            "action": {
+              "type": "BREAKTHROUGH"
+            },
+            "maxCycles": 1
+          },
+          "originGame": {
+            "format": "chenyuan-full",
+            "version": 2,
+            "core": {
+              "schemaVersion": 2,
+              "contentVersion": "full-demo.3",
+              "balanceVersion": "full-unbalanced.3",
+              "runId": "4930fd55-9a6e-4e4d-87c4-899ff86952e2",
+              "revision": 0,
+              "mode": "idle",
+              "player": {
+                "name": "测试修士",
+                "realm": "qi",
+                "xp": 1000,
+                "hp": 100,
+                "mp": 60,
+                "stones": 20,
+                "startAgeMonths": 216
+              },
+              "world": {
+                "location": "cave",
+                "elapsedMonths": 32
+              },
+              "inventory": {
+                "herb": 0,
+                "dew": 0,
+                "core": 0,
+                "jade": 0,
+                "lotus": 0,
+                "soul": 0,
+                "dao": 0,
+                "healing_pill": 1,
+                "spirit_pill": 0,
+                "foundation_pill": 1,
+                "golden_pill": 0,
+                "nascent_pill": 0,
+                "spirit_seed": 0,
+                "ascension_seal": 0
+              },
+              "openingChoice": "leave",
+              "learnedSkills": [],
+              "activeEvent": null
+            },
+            "school": "sword",
+            "loadout": {
+              "mind": "sword_mind",
+              "builder": "sword_build",
+              "finisher": "sword_release",
+              "relic": null
+            },
+            "learned": [
+              "sword_mind",
+              "sword_build",
+              "sword_release"
+            ],
+            "ownedRelics": [],
+            "battle": null,
+            "journal": [
+              "你带着一枚回春丹，在山雨中走进破庙。",
+              "你留下回春丹，谨慎地走出破庙。",
+              "你抵达听雨洞府。",
+              "结算 2 次：修为 +10 · 游戏岁月 +2月；自动停止：修为圆满，请筹备突破物",
+              "你踏入炼气。修行没有捷径，新的资源与机缘已向你开放。",
+              "你展开青锋剑诀。积蓄、破势，才是剑修的节奏。",
+              "你抵达青岚山野。",
+              "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+              "结算 2 次：修为 +10 · 灵露 +2 · 游戏岁月 +2月",
+              "你抵达青云宗。",
+              "修为 +20 · 妖核 +1 · 游戏岁月 +4月",
+              "你抵达听雨洞府。",
+              "灵石 -20 · 凝气草 -8 · 灵露 -2 · 妖核 -1 · 筑基丹 +1 · 游戏岁月 +1月",
+              "结算 19 次：修为 +950 · 游戏岁月 +19月；自动停止：修为圆满，请筹备突破物"
+            ],
+            "wins": 0,
+            "choices": {},
+            "milestones": {
+              "mortal": 0,
+              "qi": 2
+            },
+            "trial": null,
+            "status": "active",
+            "ending": null
+          },
+          "outcomeGame": null,
+          "spentItems": {},
+          "gainedItems": {},
+          "gainedStones": 0,
+          "hpChange": 0,
+          "mpChange": 0,
+          "xpChange": 0
+        },
+        "committed": [
+          {
+            "wall": 1792795724595,
+            "mono": 32980,
+            "game": {
+              "format": "chenyuan-full",
+              "version": 2,
+              "core": {
+                "schemaVersion": 2,
+                "contentVersion": "full-demo.3",
+                "balanceVersion": "full-unbalanced.3",
+                "runId": "4930fd55-9a6e-4e4d-87c4-899ff86952e2",
+                "revision": 1,
+                "mode": "idle",
+                "player": {
+                  "name": "测试修士",
+                  "realm": "foundation",
+                  "xp": 0,
+                  "hp": 170,
+                  "mp": 100,
+                  "stones": 20,
+                  "startAgeMonths": 216
+                },
+                "world": {
+                  "location": "cave",
+                  "elapsedMonths": 32
+                },
+                "inventory": {
+                  "herb": 0,
+                  "dew": 0,
+                  "core": 0,
+                  "jade": 0,
+                  "lotus": 0,
+                  "soul": 0,
+                  "dao": 0,
+                  "healing_pill": 1,
+                  "spirit_pill": 0,
+                  "foundation_pill": 0,
+                  "golden_pill": 0,
+                  "nascent_pill": 0,
+                  "spirit_seed": 0,
+                  "ascension_seal": 0
+                },
+                "openingChoice": "leave",
+                "learnedSkills": [],
+                "activeEvent": null
+              },
+              "school": "sword",
+              "loadout": {
+                "mind": "sword_mind",
+                "builder": "sword_build",
+                "finisher": "sword_release",
+                "relic": null
+              },
+              "learned": [
+                "sword_mind",
+                "sword_build",
+                "sword_release"
+              ],
+              "ownedRelics": [],
+              "battle": null,
+              "journal": [
+                "你带着一枚回春丹，在山雨中走进破庙。",
+                "你留下回春丹，谨慎地走出破庙。",
+                "你抵达听雨洞府。",
+                "结算 2 次：修为 +10 · 游戏岁月 +2月；自动停止：修为圆满，请筹备突破物",
+                "你踏入炼气。修行没有捷径，新的资源与机缘已向你开放。",
+                "你展开青锋剑诀。积蓄、破势，才是剑修的节奏。",
+                "你抵达青岚山野。",
+                "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+                "结算 2 次：修为 +10 · 灵露 +2 · 游戏岁月 +2月",
+                "你抵达青云宗。",
+                "修为 +20 · 妖核 +1 · 游戏岁月 +4月",
+                "你抵达听雨洞府。",
+                "灵石 -20 · 凝气草 -8 · 灵露 -2 · 妖核 -1 · 筑基丹 +1 · 游戏岁月 +1月",
+                "结算 19 次：修为 +950 · 游戏岁月 +19月；自动停止：修为圆满，请筹备突破物",
+                "你踏入筑基。修行没有捷径，新的资源与机缘已向你开放。"
+              ],
+              "wins": 0,
+              "choices": {},
+              "milestones": {
+                "mortal": 0,
+                "qi": 2,
+                "foundation": 32
+              },
+              "trial": null,
+              "status": "active",
+              "ending": null
+            },
+            "committed": true
+          }
+        ],
+        "after": {
+          "format": "chenyuan-full",
+          "version": 2,
+          "core": {
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3",
+            "runId": "4930fd55-9a6e-4e4d-87c4-899ff86952e2",
+            "revision": 1,
+            "mode": "idle",
+            "player": {
+              "name": "测试修士",
+              "realm": "foundation",
+              "xp": 0,
+              "hp": 170,
+              "mp": 100,
+              "stones": 20,
+              "startAgeMonths": 216
+            },
+            "world": {
+              "location": "cave",
+              "elapsedMonths": 32
+            },
+            "inventory": {
+              "herb": 0,
+              "dew": 0,
+              "core": 0,
+              "jade": 0,
+              "lotus": 0,
+              "soul": 0,
+              "dao": 0,
+              "healing_pill": 1,
+              "spirit_pill": 0,
+              "foundation_pill": 0,
+              "golden_pill": 0,
+              "nascent_pill": 0,
+              "spirit_seed": 0,
+              "ascension_seal": 0
+            },
+            "openingChoice": "leave",
+            "learnedSkills": [],
+            "activeEvent": null
+          },
+          "school": "sword",
+          "loadout": {
+            "mind": "sword_mind",
+            "builder": "sword_build",
+            "finisher": "sword_release",
+            "relic": null
+          },
+          "learned": [
+            "sword_mind",
+            "sword_build",
+            "sword_release"
+          ],
+          "ownedRelics": [],
+          "battle": null,
+          "journal": [
+            "你带着一枚回春丹，在山雨中走进破庙。",
+            "你留下回春丹，谨慎地走出破庙。",
+            "你抵达听雨洞府。",
+            "结算 2 次：修为 +10 · 游戏岁月 +2月；自动停止：修为圆满，请筹备突破物",
+            "你踏入炼气。修行没有捷径，新的资源与机缘已向你开放。",
+            "你展开青锋剑诀。积蓄、破势，才是剑修的节奏。",
+            "你抵达青岚山野。",
+            "结算 4 次：修为 +20 · 凝气草 +8 · 游戏岁月 +4月",
+            "结算 2 次：修为 +10 · 灵露 +2 · 游戏岁月 +2月",
+            "你抵达青云宗。",
+            "修为 +20 · 妖核 +1 · 游戏岁月 +4月",
+            "你抵达听雨洞府。",
+            "灵石 -20 · 凝气草 -8 · 灵露 -2 · 妖核 -1 · 筑基丹 +1 · 游戏岁月 +1月",
+            "结算 19 次：修为 +950 · 游戏岁月 +19月；自动停止：修为圆满，请筹备突破物",
+            "你踏入筑基。修行没有捷径，新的资源与机缘已向你开放。"
+          ],
+          "wins": 0,
+          "choices": {},
+          "milestones": {
+            "mortal": 0,
+            "qi": 2,
+            "foundation": 32
+          },
+          "trial": null,
+          "status": "active",
+          "ending": null
+        },
+        "formalResult": {
+          "commandId": "cycle:13d98a82-9678-454c-aecb-4f1cb1095e73:0:1",
+          "runId": "4930fd55-9a6e-4e4d-87c4-899ff86952e2",
+          "type": "BREAKTHROUGH",
+          "revisionBefore": 0,
+          "revisionAfter": 1,
+          "requestedSteps": 1,
+          "executedSteps": 1,
+          "stopReason": null,
+          "phaseBefore": "idle",
+          "phaseAfter": "idle",
+          "versions": {
+            "format": "chenyuan-full",
+            "version": 2,
+            "schemaVersion": 2,
+            "contentVersion": "full-demo.3",
+            "balanceVersion": "full-unbalanced.3"
+          },
+          "costs": {
+            "stones": 0,
+            "mp": 0,
+            "months": 0,
+            "items": {
+              "foundation_pill": 1
+            }
+          },
+          "delta": {
+            "stones": 0,
+            "xp": -1000,
+            "hp": 70,
+            "mp": 40,
+            "months": 0,
+            "wins": 0,
+            "inventory": {
+              "foundation_pill": -1
+            },
+            "realm": {
+              "before": "qi",
+              "after": "foundation"
+            }
+          }
+        },
+        "effects": [
+          {
+            "id": "milestone-handoff",
+            "sequence": "1",
+            "text": "本次已保存 · 炼气 → 筑基修为 -1000 · 气血 +70 · 灵力 +40 · 筑基丹 -1 · 炼气 → 筑基 · 实际 1 / 1 次 · 筑基丹 ×1 · 下一步仍由你另行安排。",
+            "wall": 1792795724627
+          }
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Six execution records still represent five unique cycle scenarios. No duplicate run is added as matrix coverage.",
+    "Exact transaction-complete timestamp and separately serialized raw receipt records are not present in these timing attachments; committed status and exact receipt/proof hard assertions are preserved truthfully.",
+    "Virtual-clock cases and these short actual periods do not prove long-term balance, game fun, compatibility or human acceptance."
+  ]
+}

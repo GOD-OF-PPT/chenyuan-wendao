@@ -1,0 +1,128 @@
+{
+  "task": "Goal4 ART06 cultivation and current goal",
+  "implementationCommit": "404fcc03a88ebf11ea301947eab596631b84eeb3",
+  "sourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+  "sourceFiles": 234,
+  "payloadFiles": 62,
+  "payloadBytes": 7799784,
+  "localEngineeringTaskComplete": true,
+  "overallGoalComplete": false,
+  "nativeGoalStatusObserved": "active",
+  "nativeGoalHistoricalNextR1IsNotCurrentTask": true,
+  "ui": {
+    "relatedUnique": 112,
+    "currentSource8": 61,
+    "inheritedSource7": 51,
+    "singleAllGreenRun": false,
+    "allIdleDeclared": 312,
+    "allIdleFiles": 30,
+    "notExecutedThisTask": 200,
+    "retries": 0,
+    "skips": 0,
+    "flaky": 0,
+    "proof": "goal-4/evidence/art06/coverage-final.json"
+  },
+  "rules": {
+    "unique": 802,
+    "source3Inherited": 781,
+    "source8CurrentConfiguration": 9,
+    "singleAllGreenRunOnSource8": false,
+    "proof": "goal-4/evidence/art06/source3-to8-inheritance.json",
+    "source8CurrentNewHelperTests": 12,
+    "inputOrderCorrection": "goal-4/evidence/art06/evidence-input-order-correction.json"
+  },
+  "native": {
+    "actualSource3": 81,
+    "files": 11,
+    "initialPlannedIncluded": 41,
+    "regexAdditional": 40,
+    "rerunOnSource8": false,
+    "all211MatrixRerun": false,
+    "proof": "goal-4/evidence/art06/source3-to8-inheritance.json"
+  },
+  "assets": {
+    "unique": 252,
+    "source5Inherited": 230,
+    "source8Actual": 22,
+    "source8Positive": true,
+    "source8Full252Run": false,
+    "newNativeBytes": 44806,
+    "nativeCap": 45000,
+    "newWebpBytes": 65978,
+    "webpCap": 160000,
+    "webpPixels": [
+      512,
+      512
+    ],
+    "sourceMode": "built-in imagegen",
+    "asset": "web/public/art/v2/characters/player-seated-cold.webp",
+    "exactPrompt": "art/redesign/receipts/cultivation-prompts.json",
+    "budgetProof": "goal-4/evidence/art06/budget-proof.json"
+  },
+  "typesAndBuild": {
+    "rootTypecheck": "source3 actual exit0, unchanged root dependencies",
+    "currentVueTypesAndBuild": "source8 and postcommit actual exit0",
+    "postcommitPayloadExactlyMatchesTested": true
+  },
+  "realTiming": {
+    "uniqueActionPeriods": 5,
+    "periodsMs": [
+      30000,
+      60000,
+      6000,
+      30000,
+      15000
+    ],
+    "proof": "goal-4/evidence/art06/timing-final.json",
+    "virtualClockIsNotBalanceProof": true
+  },
+  "visual": {
+    "currentRepresentatives": 5,
+    "fresh": 4,
+    "exactPngInherited": 1,
+    "formal1440Representatives": 4,
+    "existingUserTabDeliveryOnly": 1,
+    "proof": "goal-4/evidence/art06/visual-review.json",
+    "all290FramesViewed": false,
+    "humanAcceptance": false
+  },
+  "delivery": {
+    "frozen": "artifacts/goal-4/art06/frozen-source8/web",
+    "archiveMatchesRuntime": true,
+    "postcommitPayloadMatches": true,
+    "httpAll62ActualMatch": true,
+    "browserResourcesMatch": true,
+    "preview": "http://127.0.0.1:56884/",
+    "previewPID": 32143,
+    "identityProof": "goal-4/evidence/art06/identity-proof.json",
+    "documentationCommitRebuildRecord": "artifacts/goal-4/art06/postdocs-verification.json"
+  },
+  "userSave": {
+    "noGameActionOrStorageTest": true,
+    "normalizedHudEqual": true,
+    "visible": "顾长青/凡人/尚未择法/修为5/10/石40/月1/HP60/MP20/听雨洞府/静息待安排/已保存",
+    "proof": "goal-4/evidence/art06/user-progress-proof.json"
+  },
+  "protected13Unchanged": true,
+  "scope": {
+    "formalUI": "1440x900 single Chromium",
+    "compatibilityWorkOrTests": false,
+    "environmentPerformanceMatrix": false,
+    "push": false,
+    "merge": false,
+    "publicDeployment": false,
+    "permissionsChanged": false,
+    "newGoalOrChatOrAutomation": false
+  },
+  "nextIndependentTask": "MATRIX-M02",
+  "remaining": [
+    "MATRIX-M02 positive-consumable atomic failure/lost-delivery/original-intent/takeover cells",
+    "MATRIX-M03 full UI/25-action/feedback wiring and remaining200 idle declarations plus retained wider baseline",
+    "CHECK-MATRIX-01 after ART06/M02/M03",
+    "Normal route/recovery and full performance matrix; compatibility last",
+    "Clean same-source candidate/rebuild/unpack/final overall C-end code and security review",
+    "Human art/game-feel and long-term balance acceptance; original negative feedback remains valid",
+    "Historical native startup/environment causes and old compatibility observations remain documented"
+  ],
+  "rollback": "Revert this UI/helper/guard commit while preserving DB9/DB1 readability, all original saves/inputs/v0.3/old freezes/protected13 and failures. No reset or downgrade."
+}

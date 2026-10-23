@@ -1,0 +1,46 @@
+{
+  "implementationCommit": "404fcc03a88ebf11ea301947eab596631b84eeb3",
+  "sourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+  "runtimeFiles": 234,
+  "archive": "artifacts/goal-4/art06/runtime-404fcc0.tar",
+  "archiveSHA256": "0722aa98deffee80941d0dd94a6f6514dda005a8e4d5a07b49ef158fffe58301",
+  "archiveMatchesTestedSource": true,
+  "payloadFiles": 62,
+  "payloadBytes": 7799784,
+  "frozen": "artifacts/goal-4/art06/frozen-source8/web",
+  "frozenMatchesTested": true,
+  "postcommitBuildPending": false,
+  "postcommitSource": {
+    "head": "404fcc03a88ebf11ea301947eab596631b84eeb3",
+    "source": "404fcc03a88ebf11ea301947eab596631b84eeb3",
+    "tree": "9c1654cecf0eeffdba86cb56cbaaae0f4e9937dd",
+    "dirty": true,
+    "node": "v24.19.0",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "postcommitPayloadMatchesTested": true,
+  "actualHTTPAllEqual": true,
+  "HTTPProof": "artifacts/goal-4/art06/http-after.json",
+  "previewPID": 32143,
+  "actualBrowserResources": {
+    "navigation": [
+      "修行",
+      "历练",
+      "丹炉",
+      "功法",
+      "法宝",
+      "行囊",
+      "仙缘",
+      "生平"
+    ],
+    "ready": "complete",
+    "scripts": [
+      "./assets/index-Cl-xWZgS.js"
+    ],
+    "stage": "静息 · 选择潜修方式听雨洞府 · 潜修顾长青 · 凡人实际修为5 / 10自然吐纳引山间灵气 · 不耗灵石灵石辅助现有 40 灵石 · 炼气始可用修炼 → 筹备丹药 → 突破。也可以先历练收集材料。每轮修为 +5 · 30 秒1 游戏月开始自然吐纳修为圆满即停 · 预计 1 轮 · 灵石预算0 · 最多50轮查看完整修行安排比较两种积累方式",
+    "styles": [
+      "./assets/index-DzNkmB1p.css"
+    ]
+  }
+}

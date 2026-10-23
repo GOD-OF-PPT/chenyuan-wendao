@@ -1,0 +1,349 @@
+{
+  "format": "chenyuan-art06-budget-proof",
+  "version": 1,
+  "recordedAt": "2026-10-23T22:58:33.503126+00:00",
+  "sourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+  "build": {
+    "path": "artifacts/goal-4/art06/build-source8.json",
+    "bytes": 35020,
+    "sha256": "30ed62d1c9c8e7a42cfd965b914079e4b73b78b370e18fb17a2446b74282182a"
+  },
+  "buildSummary": {
+    "runtimeSources": 234,
+    "payloadFiles": 62,
+    "reportedPayloadBytes": 7799784,
+    "currentRuntimeHashesMatchBuild": true
+  },
+  "groups": [
+    {
+      "name": "newSeven",
+      "ledger": {
+        "path": "art/redesign/cultivation-objects.json",
+        "bytes": 4692,
+        "sha256": "6b7dcde3d2c1b9ee638621fd854d1d8d2777c86b9a3f087c6b6e0c73a55e1883"
+      },
+      "capField": "budgets.nativeBytes",
+      "cap": 45000,
+      "actualBytes": 44806,
+      "remainingBytes": 194,
+      "capAtBaseline": null,
+      "capNotRaised": true,
+      "files": [
+        {
+          "path": "web/src/CultivationStageHost.vue",
+          "bytes": 1703,
+          "sha256": "006210e41b1e542b948ac57d12775b93f836f4d158ca318b85f00bd440b51753",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/CultivationSite.vue",
+          "bytes": 4200,
+          "sha256": "81ee9ea81513e7d9761d2b5596970803150e80e718bd054a0fa7c533d83ffe23",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/MilestoneGate.vue",
+          "bytes": 4203,
+          "sha256": "ee38605d01f9bcae00b1f69fd2a536783d0c80b7287adb957180c72362237094",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/GoalBoard.vue",
+          "bytes": 8480,
+          "sha256": "f9c6164d41fca71125a3ae63b592a8cc3e1c036c6c0e8e47fc2547a1b721d70e",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/cultivation-effects.ts",
+          "bytes": 6316,
+          "sha256": "656c74686b1e1cee2f68c61074172d5c3c23f86cf12d5c3eed7205f215de409a",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/cultivation-objects.css",
+          "bytes": 14757,
+          "sha256": "4c5a69418d55c61358ca7db4d048826eed2a09694ea43d790aeb9c48e71cf644",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/milestone-objects.css",
+          "bytes": 5147,
+          "sha256": "e855263c5905f121a870749efcb335304fc5c5c5b56f311e0004fb4a6a023ec6",
+          "ledgerIdentityMatches": true
+        }
+      ]
+    },
+    {
+      "name": "playableFlow",
+      "ledger": {
+        "path": "art/redesign/playable-flow.json",
+        "bytes": 2353,
+        "sha256": "19f0be315ff66040b08ecdb964ba90926a2fd565fae0b16356d9b52d0a35456b"
+      },
+      "capField": "maxNewBytes",
+      "cap": 60000,
+      "actualBytes": 59921,
+      "remainingBytes": 79,
+      "capAtBaseline": 60000,
+      "capNotRaised": true,
+      "files": [
+        {
+          "path": "web/src/action-timing.ts",
+          "bytes": 3643,
+          "sha256": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/ActionExecution.vue",
+          "bytes": 1519,
+          "sha256": "f01edb8a65e07fd91c0b90519f3e542e9261644564f63bc72f27bc4acafbe5f9",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/play-flow.ts",
+          "bytes": 3739,
+          "sha256": "1e4acf6eece742658618251b60046d7f25f82da665ffe5a161da0f87ef7cd8e9",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/CataloguePager.vue",
+          "bytes": 558,
+          "sha256": "b5069cf0f229edb66c1e2779cd3542d98bc8a05e292a485c71c2627a652694c0",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/PreparationPanel.vue",
+          "bytes": 8416,
+          "sha256": "cc8e14c4d44401a5c1173273b1d287511866a3ff5595c6c76bc118f866689d5c",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/ExplorePanel.vue",
+          "bytes": 11676,
+          "sha256": "1c2be3163e7238ba0376dc9b91415c4f911e0a3d3508061d97ed7255ded1a871",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/GoodsPanel.vue",
+          "bytes": 4046,
+          "sha256": "60c92db3041bebc0052a74bcc45b69fc42b530996552691265897b12bc6eafb7",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/CultivationPanel.vue",
+          "bytes": 3903,
+          "sha256": "d88ad0d4562f5b2025b97131cbfa8d4e89e68f49e1a4e5d47ca78fd0bd2bc22d",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/play-flow.css",
+          "bytes": 22421,
+          "sha256": "a77fc4532707b04a1f38409bee85f54bc1c68e51dc7698cae439903da98413ba",
+          "ledgerIdentityMatches": true
+        }
+      ]
+    },
+    {
+      "name": "training",
+      "ledger": {
+        "path": "art/redesign/idle-cultivation.json",
+        "bytes": 1372,
+        "sha256": "f5dff45528750e75d41fd5ebd8d452705caba17bf581b37760eac5827a077b9d"
+      },
+      "capField": "maxNativeBytes",
+      "cap": 22000,
+      "actualBytes": 21251,
+      "remainingBytes": 749,
+      "capAtBaseline": 22000,
+      "capNotRaised": true,
+      "files": [
+        {
+          "path": "web/src/activity-clock.ts",
+          "bytes": 2416,
+          "sha256": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/TrainingActivity.vue",
+          "bytes": 7573,
+          "sha256": "5d9d38b60aed8e2cbcb151dd99046dcdc420caff6f844ae679cd3888896e5565",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/TrainingPlanner.vue",
+          "bytes": 6942,
+          "sha256": "d4c5e7b621134a2d7ccaa19828974bf7120654fcb297143cab1023675f60c9ef",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/idle-activity.css",
+          "bytes": 4320,
+          "sha256": "17ef27c763e8c2e5a7d57f11b5f24f1604cc4df97562abf6f4e4a909a30c13e6",
+          "ledgerIdentityMatches": true
+        }
+      ]
+    },
+    {
+      "name": "sharedArt02",
+      "ledger": {
+        "path": "art/redesign/art02.json",
+        "bytes": 2733,
+        "sha256": "01b3118e963d72568a8118f9730a003f1e3381cc2ef0233a419440f60469d043"
+      },
+      "capField": "maxNativeBytes",
+      "cap": 45000,
+      "actualBytes": 44996,
+      "remainingBytes": 4,
+      "capAtBaseline": 45000,
+      "capNotRaised": true,
+      "files": [
+        {
+          "path": "web/src/SourceField.vue",
+          "bytes": 6039,
+          "sha256": "81d695fd95112be9d4316457e5096cdeaac7f900ce10abd9a8a0c3f51c913321",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/JourneyMap.vue",
+          "bytes": 3748,
+          "sha256": "aef00e927bf9c49430b3b89b5e5d9012431fad43adc9cd348845cc06203e5277",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/BattlePresence.vue",
+          "bytes": 6326,
+          "sha256": "945ee38b6fe8ae0b43ac880c1ded2a2fadffef8534e60d7bfdcbad570718bb2b",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/BattleDeck.vue",
+          "bytes": 2062,
+          "sha256": "a59782e330446f84218f9bea954b15663b7cc070777003c2a32408b617e61991",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/activity-effects.ts",
+          "bytes": 2627,
+          "sha256": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/use-activity-effect.ts",
+          "bytes": 3022,
+          "sha256": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/art02-source.css",
+          "bytes": 8059,
+          "sha256": "dd51c0f3d5e4584b80195aaa016a5230279b7c693fa5e2bb1dfa7285fafb2cf8",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/art02-journey.css",
+          "bytes": 4531,
+          "sha256": "9ba6c415cf36418563930b0dd2a64a34a0c9a00812d99a4ab03796106db82b11",
+          "ledgerIdentityMatches": true
+        },
+        {
+          "path": "web/src/art02-battle.css",
+          "bytes": 8582,
+          "sha256": "6ad8988e44c4aae4dadd1e56e40040c241404e100267e5bda4a7767dd94d23ac",
+          "ledgerIdentityMatches": true
+        }
+      ]
+    }
+  ],
+  "goalPanel": {
+    "ledger": {
+      "path": "art/redesign/cultivation-objects.json",
+      "bytes": 4692,
+      "sha256": "6b7dcde3d2c1b9ee638621fd854d1d8d2777c86b9a3f087c6b6e0c73a55e1883"
+    },
+    "cap": 19000,
+    "actualBytes": 18181,
+    "remainingBytes": 819,
+    "capOrigin": "New whole-file limit in0029; not a raised historical cap.",
+    "file": {
+      "path": "web/src/GoalPanel.vue",
+      "bytes": 18181,
+      "sha256": "6af5c41d57e8e8a5972ac328437cbe346640bab58fedd488223a9b0326ee26d1",
+      "ledgerIdentityMatches": true
+    }
+  },
+  "oneAsset": {
+    "id": "player-seated-cold",
+    "actualRasterCount": 1,
+    "maxRasterCount": 1,
+    "runtime": {
+      "path": "web/public/art/v2/characters/player-seated-cold.webp",
+      "bytes": 65978,
+      "sha256": "66ff79c01b418faa5c0abb0b3490e54b9d30a8568abb796d410a9559d0a36ace",
+      "ledgerIdentityMatches": true
+    },
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alphaHeader": true,
+    "format": "webp",
+    "maxRuntimeBytes": 160000,
+    "remainingRuntimeBytes": 94022,
+    "receipt": {
+      "path": "art/redesign/receipts/player-seated-cold.json",
+      "bytes": 3001,
+      "sha256": "e81505cd2db058e33f23feca476d4298958076f6ba201a34f832235e7b63f379"
+    },
+    "exactExportProofRecorded": {
+      "sourceUnchanged": true,
+      "runtimeUnchanged": true,
+      "reencodedBytes": 65978,
+      "reencodedSHA256": "66ff79c01b418faa5c0abb0b3490e54b9d30a8568abb796d410a9559d0a36ace",
+      "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+    },
+    "decodeProofRecorded": {
+      "decoder": "Pillow",
+      "sourceRGBASHA256": "9807f8a4bdf0fd1739ff082164d0b4bcf8361759f746cda777597aa044be0c42",
+      "runtimeRGBASHA256": "aea1eecc8c3723baf833412a563c215a6f6b3a9114d8bd189de3c364070966be",
+      "alphaDefinitions": {
+        "transparentPixels": "alpha=0",
+        "solidPixels": "alpha>=250",
+        "intermediatePixels": "1<=alpha<250"
+      }
+    },
+    "newImageDecodeOrExportExecutedByThisAudit": false
+  },
+  "validationScope": "Current source8 exact file bytes/hash, ledger budgets and already-recorded unchanged image header/export/decode facts. No browser/build/test execution in this audit; not pixel, legal, user acceptance or HTTP delivery.",
+  "asset252RunResultIncluded": false,
+  "asset252Boundary": "Source5 actual full252/exit0 remains in its original report. Source8 actual22 and current positive have separate owner-confirmed exit0 logs; the inheritance evidence records230 inherited+22 current=252 unique, not a source8 full252 rerun.",
+  "userAcceptance": false,
+  "goalComplete": false,
+  "priorSource5Budget": {
+    "path": "goal-4/evidence/art06/budget-proof-source5.json",
+    "bytes": 11076,
+    "sha256": "4c2524eaa82ffe2f3d94c4abddc3ba7972ef9070aa64165dfcdf6045776be898"
+  },
+  "runtimeChangesSinceSource5": [
+    {
+      "path": "web/src/App.vue",
+      "source5Sha256": "3ab8a4e44a13218fb81b23675f02803d33af588fc031b2885179efdef5439f56",
+      "source8Sha256": "3aa932fe8c2c34eaeba714b5548414f4a6252036ed410c4146afe01ae9148265"
+    },
+    {
+      "path": "web/src/cultivation-objects.css",
+      "source5Sha256": "27115cb10f30932f45a1669c7b86bc929501bca04b6efe85a2f0f15af0139be6",
+      "source8Sha256": "4c5a69418d55c61358ca7db4d048826eed2a09694ea43d790aeb9c48e71cf644"
+    },
+    {
+      "path": "web/src/milestone-objects.css",
+      "source5Sha256": "18fe9cb5bd5db151743aff5ab60a8e17054284d3f347646770f5221929361153",
+      "source8Sha256": "e855263c5905f121a870749efcb335304fc5c5c5b56f311e0004fb4a6a023ec6"
+    }
+  ],
+  "runtimeChangeBoundary": "Source5→6 changed only two dedicated CSS selectors; source6→7 changed only App current own saved START_TRIAL handoff; source7→8 changed only App recovery display precedence/title. Original budgets do not increase; new group44806/45000. This budget audit does not relabel previous UI/rule/native/asset reports.",
+  "priorSource7Budget": {
+    "path": "goal-4/evidence/art06/budget-proof-source7.json",
+    "bytes": 12449,
+    "sha256": "0f5ae737cef1cc09b1225de8aaab49cf97fb21ab28b61398c60ac36b308e82fa"
+  }
+}

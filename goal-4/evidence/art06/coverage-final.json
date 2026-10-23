@@ -1,0 +1,1362 @@
+{
+  "schema": "art06-ui-evidence-v1",
+  "currentSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+  "currentRuntimeSources": 234,
+  "statement": "112 unique related declarations are covered by61 current-source8 executions and51 precise source7 inherited passes. This is not one all-green112 run. The original source7 whole112 raw remains100pass/12fail.",
+  "scope": {
+    "fixedViewport": [
+      1440,
+      900
+    ],
+    "browser": "Chromium",
+    "projects": [
+      "chromium"
+    ],
+    "relatedUnique": 112,
+    "relatedFiles": 10,
+    "currentExecuted": 61,
+    "currentExecutedFiles": 8,
+    "inherited": 51,
+    "inheritedByFile": {
+      "stage-u8-b.spec.ts": 24,
+      "check-art-02.spec.ts": 10,
+      "cultivation-objects.spec.ts": 17
+    },
+    "currentIdleDeclared": 312,
+    "currentIdleFiles": 30,
+    "otherCurrentIdleNotRunHere": 200,
+    "compatibilityOrEnvironmentPerformanceExecuted": false
+  },
+  "results": {
+    "originalWhole112": {
+      "startTime": "2026-10-23T22:31:42.576Z",
+      "duration": 554923.785,
+      "expected": 100,
+      "skipped": 0,
+      "unexpected": 12,
+      "flaky": 0
+    },
+    "currentAffected61": {
+      "startTime": "2026-10-23T22:47:37.625Z",
+      "duration": 220492.59399999998,
+      "expected": 61,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "currentSingleInjured": {
+      "startTime": "2026-10-23T22:45:01.132Z",
+      "duration": 10269.295,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "currentSkip": 0,
+    "currentRetry": 0,
+    "currentFlaky": 0
+  },
+  "reports": {
+    "originalWhole112": {
+      "path": "artifacts/goal-4/art06/ui-final-source7.json",
+      "sha256": "993837116b572a38c5ae115ca6f91e620686b365fe07bb5451727d2a6d55d418",
+      "sourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8"
+    },
+    "current61": {
+      "path": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "sha256": "ce89da541d899d6bfd86604f62ca9a637874a7db7ea0308c3fd7c0417c041eb8",
+      "sourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c"
+    },
+    "relatedDeclarations": {
+      "path": "artifacts/goal-4/art06/ui-declared-source7.json",
+      "sha256": "8e40461cbbb4e155281a42b6451f5eeaf109878b424d327766e173c49ce1d906",
+      "note": "Declaration file/title/project identities unchanged; actual same61 declaration list also saved."
+    },
+    "currentAllDeclarations": {
+      "path": "artifacts/goal-4/art06/ui-all-declared-source8.json",
+      "sha256": "9539bfa43395fe3c4b533f60c7b94f15f245052d5e38b2b273aa59421780a5bf"
+    }
+  },
+  "inputIsolation": {
+    "current61InputsBefore": "artifacts/goal-4/art06/source8-affected-inputs/inputs-before.json",
+    "current61InputsAfter": "artifacts/goal-4/art06/source8-affected-inputs/inputs-after.json",
+    "all14InputsUnchangedDuringCurrentRun": true,
+    "inheritedSpecFiles": [
+      {
+        "path": "web/e2e/check-art-02.spec.ts",
+        "source7Sha256": "625991bebb3a4c7be5773aa0f6df4cab531c494a0ad719b4161c153d94e747b4",
+        "source8Sha256": "625991bebb3a4c7be5773aa0f6df4cab531c494a0ad719b4161c153d94e747b4",
+        "same": true
+      },
+      {
+        "path": "web/e2e/cultivation-objects.spec.ts",
+        "source7Sha256": "e3e3a004c52bf9a7f750a67d65e333406bf1a01da451d7aac5569a0a8184400a",
+        "source8Sha256": "e3e3a004c52bf9a7f750a67d65e333406bf1a01da451d7aac5569a0a8184400a",
+        "same": true
+      },
+      {
+        "path": "web/e2e/stage-u8-b.spec.ts",
+        "source7Sha256": "eaed0a772d67cbe10d12fc38d5b9ad48801bb40ba7987c489b5c55acd548f8f7",
+        "source8Sha256": "eaed0a772d67cbe10d12fc38d5b9ad48801bb40ba7987c489b5c55acd548f8f7",
+        "same": true
+      }
+    ],
+    "oldPremiseRawDiffAndAST": "artifacts/goal-4/art06/test-premises/source7-old-ui",
+    "sharedHelperChangedOnly": "openTrainingBudget",
+    "sharedHelperCurrentCallers": "The two idle-integration cultivation declarations are included in current61. Inherited17 new tests define their own local helper; inherited check-art-02 imports other unchanged exports; stage-u8-b uses unchanged support.ts. Historical idle-full-route remains unexecuted in M03.",
+    "runtimeDifference": {
+      "paths": [
+        "web/src/App.vue"
+      ],
+      "unchangedRuntimeSources": 233,
+      "AppScope": "Two display/selection conditions only: ready MilestoneGate bypass for actual recover nextStep and using formal recovery title. Game/rules/Store/DB/period/CAS unchanged. Actual injured public rest/readonly check and current A1/A13 are included in61.",
+      "inheritedConsumerReason": "New17 inherited fixtures are healthy/cold/current unrelated scenes; stage-u8-b uses safe stage checkpoints and readonly comparison surfaces; CHECK2 injured fixtures are at sect and inspected non-cultivation surfaces. Neither changed cave recovery branch controls their asserted operations/frames. Source7 fullGame/time evidence keeps original source label.",
+      "rootIndependentReviewRequired": "Root owns exact App reverse/diff and final release identity proof."
+    }
+  },
+  "realTiming": {
+    "originalFiveCurrentTaskCycles": "artifacts/goal-4/art06/source7-full-real-timing.json",
+    "note": "Five actual online30/60/6/30/15 second cycles, complete Game and first native-write deadline tests passed in source7 all19. Current61 repeats real30-second BREAKTHROUGH and old natural30; virtual cycles are not long-term pacing/human proof."
+  },
+  "original13": "artifacts/goal-4/art06/protected13-after-ui.json",
+  "all13Unchanged": true,
+  "limitations": [
+    "This related112 is not full current312 UI or the39 historical UI/9native matrix.200 current idle declarations were not run for ART06.",
+    "No compatibility/mobile/resolution/font-scaling/crossbrowser/environment/performance validation was resumed.",
+    "Generated screenshots/geometry do not by themselves prove all pixels reviewed, overall game-art acceptance, long-term balance or human acceptance. Root owns representative actual pixel review."
+  ],
+  "mapping": [
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A1 separately authorized learning equip purchase medicine and personal response keep exact costs and independent game objects across one lawful route",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A2 medicine cycle quota blocks otherwise legal equipment and visits across domains while read pages export and original retry remain available",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A3 cancelling failed equipment or visit intent allows only a new explicitly confirmed action in the other domain",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A4 a committed configuration survives queued native snapshot abort and cross-domain reconnect never repeats that equipment or medicine",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A5 late native learning delivery cannot replace another page medicine activity or relight the previous learned scroll",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A6 unsubmitted learning and medicine drafts survive people life and ordinary detail returns while a later real use updates the anchored factual inventory",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A7 a paid personal response medicine is consumed exactly once and old factual readings cannot become a new recovery effect",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A8 relic local saved configuration never relights its old sequence after a foreign same-run A to B to A transition",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A8 skill local saved configuration never relights its old sequence after a foreign same-run A to B to A transition",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A9 a finite start already committed before a real native connection closure remains a saved readonly arrangement rather than a fresh unarranged choice",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "R4 and B read surfaces keep one running activity and never turn inspection into a Game write",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "another page names its takeover and only its new full cycle can award once",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved alchemy cycles retain material costs and net pills on every receipt page after reload",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved cultivation cycles retain every complete receipt after reload without replaying rewards",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved purchase cycles retain positive currency costs and exact inventory gains after reload",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "paused cultivation exposes saved cycles after reload and history reading preserves the exact resume boundary",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "the journal returns to life reading after an old milestone is invalidated by a later explicit configuration",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A1 home and exact training details expose a cultivation site mat and stone seat while both method previews and the goal board remain readonly",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A10 a same-id foreign takeover and a hidden later cycle never replay local aura and refresh requires a newly authorized full cycle",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A11 all real target families and complete source plans stay readonly and the exact lack of cultivation medicine or location controls the next decision",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A12 real CHOOSE saves its complete selected 6000ms result once and never authorizes the next stage",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A13 real BREAKTHROUGH saves its complete selected 30000ms result once and never authorizes the next stage",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A14 real START_TRIAL saves its complete selected 15000ms result once and never authorizes the next stage",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A15 missing practitioner art and both reduced-motion modes retain complete readable objects original gates and exact static saved cultivation",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A16 a pending unaccepted craft or source intent blocks otherwise legal goal travel and trial entry while their complete readonly preparation remains usable",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A17 opening through the ordinary current detail keeps the medicine case all three full choices and its one six second result then an actionable next step",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A18 the lawful training footer breakthrough has its own gate and full local period then one realm handoff without replay on return",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A19 a genuinely unaccepted craft start keeps purchase preparation and income sources readonly while their otherwise legal foreign travel cannot replace its original retry",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A2 three finite gate previews remain readonly and native cycle quota retains each exact one-shot command until its first successful retry",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A3 a genuinely unaccepted craft START quota keeps its original retry while home and detailed fresh cultivation stay blocked but reading remains usable",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A4 one real thirty second natural cycle moves only the formal saved cultivation and preserves a static result without an automatic breakthrough",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A5 a lawful real sixty second assisted cycle charges one exact realm cost and stops before its cumulative budget or reserve can be crossed",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A6 nondefault saved limits remain distinct from a changed draft across goal and comparison returns and normal period saves never rewrite that draft",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A7 native saving and a held pause keep cultivation cold and truthful until exactly one complete Game is committed then no next cycle starts",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A8 choosing the other method while one cycle runs or saves never borrows its aura clock or saved result and returning cannot claim a missed effect",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A9 native quota and put-success abort preserve the whole cultivation DB and the original exact cycle retries its first real outcome once",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "a failed cycle stops automatic progression and retry uses the same command exactly once",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "an arrangement persists without rewards and runs two real commands until the cultivation cap",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "an explicit second-page continuation fences the original page and does not double reward",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "assisted cultivation previews the budget and reserve and stops before another charge",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "one production cycle follows the real thirty-second wall clock and saves before showing the reward",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "pause requested while persistence is held finishes that atomic cycle and never starts the next",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "refresh preserves the plan and requires an explicit fresh cycle instead of offline catch-up",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "viewing another gameplay keeps progress visible and pause cancels an unfinished cycle",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a normal new life connects cultivation material gathering furnace planning and a separately confirmed foundation breakthrough",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a production cycle and pause keep an inspected unsubmitted draft separate from the original furnace authorization",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a source cycle and pause keep target and limits in the unsubmitted draft without changing the running authorization",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "natural cultivation retains a nondefault cap and reserve when inspecting and refreshing an arrangement",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "owned relic equip shows its formal gate during battle and viewing never changes Game",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "owned relic equip shows its formal gate during event and viewing never changes Game",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "saved assisted cultivation is inspected exactly and newly confirmed edits become the real new arrangement",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "END_LIFE requires its own explicit life confirmation and uses only its formal game-month cost",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "RETIRE requires its own explicit life confirmation and uses only its formal game-month cost",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a failed arrangement retries the same preview and a different page never gets pulled back by its later completion",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a paused selected opening survives refresh, has a read-only original arrangement and grants no offline result",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a real opening choice remains a preview, then waits six seconds and saves exactly its one medicine cost",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a real prepared breakthrough waits thirty seconds and stops at the next realm with its actual pill and reset cultivation",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a running answer disables all answer choices but preserves details and full narrative reading",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a running visit disables new visits while people, journal and same-place inspection stay usable",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "another page changing the activity makes the frozen choice stale without refreshing its authorization",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "running retirement disables another seal while life pages and export remain available without ending the life",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "running trial entry disables another entry and foreign travel while preparation pages and equipment inspection remain usable",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "the release answer shows its actual attack bonus and never substitutes the other answer or starts a turn",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "the selected depart ending waits for explicit arrangement and preserves the sealed life without creating another",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "the selected transmit ending waits for explicit arrangement and preserves the sealed life without creating another",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "trial entry and each answer stop at the next undecided boundary without an automatic battle turn",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "visiting opens only the selected current-place story and a separately selected response saves once",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a committed full restore with lost delivery keeps its original modal retry enabled and replay leaves every database record unchanged",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a current trial victory toast lets actual view buttons receive clicks and never authorizes the next gate",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a fresh stale full restore confirmation still rejects another page actual new battle turn without writing",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a travel preview and actual one-arrival stop use travel language and inspecting does not start another action",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "an explicit preparation purchase retains its travel draft then trial entry stops for the player question",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "manual recovery medicines available retain their reason without an empty trailing separator",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "manual recovery medicines unavailable retain their reason without an empty trailing separator",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "the actual storage reconnect reports the saved paused activity and never retries or grants an offline cycle",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "a locked mortal furnace has a readable unlit scene and its complete catalogue remains readonly",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "an injured prepared cultivator is told to recover before traveling to the trial and inspection is readonly",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "resource points and their pager form a group while expanded limits remain readable and readonly",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the committed closing seal is anchored inside the life canvas and never crosses the reading tabs or actions",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the inventory keeps all real item quantities and all readonly category pages in the game stage",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the selected forged relic is the visible object and ownership stays distinct from its equipped slot",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the selected jade book and its actual slot comparison remain readable through equipment views",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "current-executed",
+      "report": "artifacts/goal-4/art06/ui-affected-source8.json",
+      "reportSourceDigest": "bb2af667377ba9d08d0a7f1449c931ca908f75b31ceecd5b275d4eecb2ebd89c",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "a chosen purchase preparation survives ordinary goal inspection without changing Game or authorising an activity",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "a life inspection nested inside a preparation goal returns through each original reading surface",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current foundation cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current golden cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current mortal cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current nascent cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current qi cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current spirit cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "foundation preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "golden preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "nascent preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "preparation comparison and original purchase choice return safely and actual import clears the old draft",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "purchase preparation keeps the currency name and source action readable in its actual card",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "qi preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "spirit preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "tradeoff controls stay usable with failed drawings and do not execute a projection",
+      "project": "chromium",
+      "result": "passed",
+      "kind": "explicit-inheritance",
+      "report": "artifacts/goal-4/art06/ui-final-source7.json",
+      "reportSourceDigest": "fc6691679c565858e6884944094d6ba805288771f977f2b778fd5e5b129abfb8",
+      "retry": 0,
+      "skip": false
+    }
+  ]
+}

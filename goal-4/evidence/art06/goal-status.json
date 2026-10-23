@@ -1,0 +1,8 @@
+{
+  "status": "active",
+  "source": "Actual tools.get_goal during ART06 closure",
+  "historicalNativeNextR1": true,
+  "actualNextIndependentTask": "MATRIX-M02",
+  "newGoalCreated": false,
+  "overallComplete": false
+}
