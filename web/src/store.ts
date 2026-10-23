@@ -43,6 +43,9 @@ export const useGame = defineStore('game', () => {
   let pendingCycle:Activity|null=null;
   let pendingCommandId: string | undefined;
   let pendingObservation: WriteObservationSource | undefined;
+  // Local acknowledgement of the exact request, not proof of the current activity.
+  const confirmedCommands=new Map<string,string>();
+  function wasConfirmedFor(commandId:string,runId:string){return confirmedCommands.get(commandId)===runId;}
   const observers=new Set<{next:(value:Observation)=>void;fault:()=>void}>();
   function observe(next:(value:Observation)=>void,fault:()=>void=()=>{}){const observer={next,fault};observers.add(observer);return()=>observers.delete(observer);}
   function emit(make:()=>Observation){if(!observers.size)return;let value:Observation;try{value=make();}catch{for(const o of observers)try{o.fault();}catch{}return;}for(const o of observers)try{o.next(structuredClone(value));}catch{try{o.fault();}catch{}}}
@@ -223,6 +226,10 @@ export const useGame = defineStore('game', () => {
       const outcome = await operation();
       if (!owns()) return;
       confirmed=true;
+      if(commandId){
+        confirmedCommands.delete(commandId);confirmedCommands.set(commandId,outcome.state.core.runId);
+        if(confirmedCommands.size>128)confirmedCommands.delete(confirmedCommands.keys().next().value!);
+      }
       readEpoch++;
       game.value = outcome.state;
       if('activity'in outcome)acceptActivity(outcome.activity);
@@ -396,5 +403,5 @@ export const useGame = defineStore('game', () => {
   onScopeDispose(() => { disposed = true;connectionEpoch++;readEpoch++;refreshQueued=false;stopActivityRuntime();actionClock.cancel();execution.value=null; repository?.close(); channel?.close();repository=undefined;channel=undefined;ready.value=false;available.value=false;busy.value=false;observers.clear(); });
   return { game, busy, ready, available, error, warning, saved, syncIssue,hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,execution,
     activity,activityRuntime,activityRunning,activityLocal,activityOwned,activityPausing,activityNotice,lastFromActivity,syncEpoch,loadActivityHistory,startPlannedActivity,prepareMilestone,startPreparedMilestone,startCultivation,pauseCultivation,resumeCultivation,
-    init, refresh, start, act, prepareAction, actPrepared, prepareConfiguration, applyConfiguration, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, rawText, validationError,observe };
+    init, refresh, start, act, prepareAction, actPrepared, prepareConfiguration, applyConfiguration, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, wasConfirmedFor, rawText, validationError,observe };
 });

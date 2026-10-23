@@ -10,7 +10,7 @@ import type {useGame} from './store';
 import {useReadingMemory} from './reading-memory';
 const props=defineProps<{game:Game;enabled:boolean;busy:boolean;running:boolean;endReason:string;hasCheckpoint:boolean}>(),emit=defineEmits<{end:['RETIRE'|'END_LIFE'];export:[];restore:[];restart:[]}>();
 const mode=ref('life'),record=computed(()=>getLifeRecord(props.game));
-const store=inject<ReturnType<typeof useGame>>('game-scene'),pendingError=computed(()=>store?.error&&(store.canRetry||store.syncIssue)?'存档待核对，请先重试或取消原安排':'');
+const store=inject<ReturnType<typeof useGame>>('game-scene'),pendingError=computed(()=>store?.error?store.syncIssue?'请重新读取；已确认成果保留':store.canRetry?'存档待核对，请先重试或取消原安排':'':'');
 const rows=computed(()=>readingPages(lifeReadings(props.game).filter(r=>r.group===mode.value)));
 const {page,relocated}=useReadingMemory(()=>mode.value,()=>rows.value.map(r=>r.key+':'+r.part)),paged=computed(()=>pageSlice(rows.value,page.value,1));
 

@@ -32,8 +32,8 @@
     },
     {
       "path": "web/src/equipment-effects.ts",
-      "bytes": 4919,
-      "sha256": "1a521bff38ab41a79ae1841ea534acb11dd6308daf7e101cce8e16c4b800e161"
+      "bytes": 4872,
+      "sha256": "28c3c58a677ad562593f8d23f73c186b62a1d67f80298b2ef0165e7d08b5cc14"
     },
     {
       "path": "web/src/art03-equipment.css",

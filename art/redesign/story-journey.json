@@ -13,18 +13,18 @@
     },
     {
       "path": "web/src/NarrativePanel.vue",
-      "bytes": 6141,
-      "sha256": "dcf687e6439306e6c0bbddfc77469c9584e26025f7faf374389d73cb95ec75e6"
+      "bytes": 6182,
+      "sha256": "9658dca23ab65de3d21d77833685faf3b1d4c9f4cf55bb4917315b10dc707273"
     },
     {
       "path": "web/src/FateCatalogue.vue",
-      "bytes": 7986,
-      "sha256": "ff1dc84acd0d262547c1e06849b51623ed9c57772398f7d92dbeff8fcd6a1988"
+      "bytes": 8027,
+      "sha256": "3889575449542f4b79c653a45a47ba773e15ffa5e4afef4aa7edc044577ae4d1"
     },
     {
       "path": "web/src/LifeCatalogue.vue",
-      "bytes": 3758,
-      "sha256": "7bc89482c6653631ad4c05a6221083281d74e349a927a914ff8d5a84fb9210f2"
+      "bytes": 3799,
+      "sha256": "4c243e6f3a7d51814dee5a6966f95d5a88b7d891be04d9373eb13b30bb67f978"
     },
     {
       "path": "web/src/TrialCatalogue.vue",

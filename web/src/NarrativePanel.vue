@@ -13,7 +13,7 @@ import type {useGame} from './store';
 import {useReadingMemory} from './reading-memory';
 const props=defineProps<{game:Game;enabled:boolean;busy:boolean;running:boolean;context?:number;consumption:(a:Action)=>string}>(),emit=defineEmits<{act:[Action];life:[];progress:[]}>();
 const model=computed(()=>narrativeFor(props.game)),mode=ref('story'),journey=computed(()=>getTrialJourney(props.game));
-const store=inject<ReturnType<typeof useGame>>('game-scene'),pendingError=computed(()=>store?.error&&(store.canRetry||store.syncIssue)?'存档待核对，请先重试或取消原安排':'');
+const store=inject<ReturnType<typeof useGame>>('game-scene'),pendingError=computed(()=>store?.error?store.syncIssue?'请重新读取；已确认成果保留':store.canRetry?'存档待核对，请先重试或取消原安排':'':'');
 const rows=computed(()=>mode.value==='story'?readingPages([{key:'body',title:model.value?.speaker??'',text:model.value?.body??'',testId:model.value?.bodyTest}]):readingPages(model.value?.memories??[]));
 const {page,relocated,reset}=useReadingMemory(()=>mode.value,()=>mode.value==='choices'?(model.value?.choices??[]).map(c=>c.id):rows.value.map(r=>r.key+':'+r.part)),reading=computed(()=>pageSlice(rows.value,page.value,1)),choices=computed(()=>pageSlice(model.value?.choices??[],page.value,1));
 function select(value:string){mode.value=value;}

@@ -456,11 +456,11 @@ async function requestEnd(type: 'RETIRE' | 'END_LIFE') {
 async function confirmEnd() {
   const intent = lifeIntent.value; if (!intent || store.busy || pendingStoryError.value || lifeStale.value) return;
   await store.startPreparedMilestone(intent.intent);
-  if(!store.error)lifeDialog.value?.close();
+  if(lifeIntent.value===intent&&(!store.error||store.wasConfirmedFor(intent.command.commandId,intent.command.runId)))lifeDialog.value?.close();
 }
 async function retryEnd() {
   const review=lifeIntent.value;if(!review||!store.canRetryFor(review.command.commandId))return;
-  await store.retryFor(review.command.commandId);if(!store.error)lifeDialog.value?.close();
+  await store.retryFor(review.command.commandId);if(lifeIntent.value===review&&(!store.error||store.wasConfirmedFor(review.command.commandId,review.command.runId)))lifeDialog.value?.close();
 }
 function cancelLife(event: Event) { if (store.busy) event.preventDefault(); }
 function closeLifeReview() {
@@ -485,9 +485,9 @@ async function reviewTrial() {
 async function confirmTrial() {
   const intent = trialIntent.value; if (!intent || store.busy || trialStale.value) return;
   await store.startPreparedMilestone(intent.intent);
-  if(!store.error)trialDialog.value?.close();
+  if(trialIntent.value===intent&&(!store.error||store.wasConfirmedFor(intent.command.commandId,intent.command.runId)))trialDialog.value?.close();
 }
-async function retryTrial(){const intent=trialIntent.value;if(!intent||!store.canRetryFor(intent.command.commandId))return;await store.retryFor(intent.command.commandId);if(!store.error)trialDialog.value?.close();}
+async function retryTrial(){const intent=trialIntent.value;if(!intent||!store.canRetryFor(intent.command.commandId))return;await store.retryFor(intent.command.commandId);if(trialIntent.value===intent&&(!store.error||store.wasConfirmedFor(intent.command.commandId,intent.command.runId)))trialDialog.value?.close();}
 function closeTrialReview() { if (trialIntent.value) store.discardRetryFor(trialIntent.value.command.commandId); trialIntent.value = null; }
 const trialRestoreDialog = ref<HTMLDialogElement>();
 const trialRestoreIntent = shallowRef<{ command: SaveMutation; checkpoint: CheckpointSummary } | null>(null);
@@ -522,11 +522,11 @@ async function reviewAscension(ending: AscensionEnding) {
 }
 async function confirmAscension() {
   const review = ascensionIntent.value; if (!review || store.busy || pendingStoryError.value || ascensionStale.value) return;
-  await store.startPreparedMilestone(review.intent);if(!store.error)ascensionDialog.value?.close();
+  await store.startPreparedMilestone(review.intent);if(ascensionIntent.value===review&&(!store.error||store.wasConfirmedFor(review.command.commandId,review.command.runId)))ascensionDialog.value?.close();
 }
 async function retryAscension() {
   const review = ascensionIntent.value; if(!review||!store.canRetryFor(review.command.commandId))return;
-  await store.retryFor(review.command.commandId);if(!store.error)ascensionDialog.value?.close();
+  await store.retryFor(review.command.commandId);if(ascensionIntent.value===review&&(!store.error||store.wasConfirmedFor(review.command.commandId,review.command.runId)))ascensionDialog.value?.close();
 }
 function closeAscension() { if (ascensionIntent.value) store.discardRetryFor(ascensionIntent.value.command.commandId); ascensionIntent.value = null; }
 function confirmationReadings(kind:string):Reading[]{

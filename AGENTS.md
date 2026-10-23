@@ -203,3 +203,11 @@ ART04实拍补充：界面“运行中”“保存中”“需主动续接”互
 稳定叙事host跨DECIDE退场与Life.status切换保留当前本地周期见证；起笔/行墨只取原runtime，保存中不写成已落定，短成果须完整origin/原命令→正式resolve全部Game/result→completeActivity全部Activity证明。显式v7只接EVENT/DECIDE/ANSWER_TRIAL/END/RETIRE/END_LIFE；默认2/3/6及显式4/5保持。共享准入集合去重必须仍显式拒version=0，保留恶意0不吞当前arm的既有负例，不能凭TypeScript类型删运行时防线。换物/隐藏/暂停请求/接管/错误撤短效；真正未提交的原周期首次重试成功可反馈一次，历史/刷新/外页/重放不补演。局部克制墨迹与原全局短印章分工，不重复遮挡或由动画结算。当前实施/检查尚未完成，不用守卫或元数据代替实际像素、整体游戏感/长期平衡与真人验收；兼容/环境性能仍后置。
 
 ART05实查补充：名笺/回应签/卷签的选中位移须在自身容器预留外缘，不能仅因舞台和按钮中心仍内就忽略子对象越界。旧阅读包装的flex/auto宽度及确认正文16px须核实际祖先和computed字体，按本场景恢复全文18px，不裁切或泛改其它确认。暂停虚拟钟可能保留真实240ms按压标记，需按实际阶段辨别，不能误当所有书签永久选中。旧retry分支没有fresh确认、封卷刷新保留原home、已存档设置入口与初始入口不同，测试应走真实可见对象且保原约束；跨生平阅读锚点核exact paragraph字符和rowkey。源4的83为同源82＋叶子1，原失败/最小diff/实际6-6-12秒与六代表像素分层保留，不冒称单轮或整体真人验收。
+
+## 三项对象组合检查补充（CHECK-ART-02）
+
+依据[0028](docs/decisions/0028-art-02-cross-check-contract.md)及本轮实际回读[XAG114](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114)、[MDN transaction complete](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/complete_event)：提交成功与界面交付/后续读取分别核对。功法配装、补给和人物/生平之间切换时，原授权/实际费用/完整事实与阅读上下文保留；旧短效不能因外页同人生配置A→B→A而复亮，也不能将已保存原安排误写未安排。当前为待真实组合红绿的开发准则，不以静态推断代验收。
+
+配置语义与正常周期的表现失效边界分开，不用每revision无条件清掉正常或末轮真实成果。真实native已提交交付被持有时，持写与持完成须区分；核IDB最新状态之外也须经实际导出核本页内存Game，旧完整transition proof不代表仍属当前对象。必要修缮保持Game/DB/费用/周期/原CAS与重试，并守全部旧cap；允许实际重复逻辑复用原清理函数，不压格式或搬旧实现逃预算。当前仅固定桌面、无兼容/环境性能专项，整体艺术/长期平衡与真人仍待验。
+
+已受理有限START的确认窗口按原commandId/runId的本页实际返回见证关闭；随机Activity.id、当前plan或碰巧同一对象不能代证。见证只在真实operation返回且连接仍归本Store后记，私有有限FIFO，不入Game/DB/公共回执、不设saved或产生收益；丢回复未返回仍由原意图重试，销毁后的迟到回复不得记到替换Store。异步结束还须核同一review对象，不能关闭后来新开的确认。C9像素又锁出同步失败仍提示“重试或取消”的矛盾：syncIssue引导重新读取并保留已确认成果，真正未提交canRetry仍保原重试/取消。显示改进不修改历史证明或强行解锁活动。C5旧交付组合在原源实绿，未据静态猜想改动queued同步/写时序；后续只能按实际新红推进。

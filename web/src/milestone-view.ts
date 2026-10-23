@@ -29,7 +29,7 @@ export function useMilestoneReview(store:Store){
  function close(){const p=review.value?.prepared;if(p)store.discardRetryFor(p.command.commandId);review.value=null;}
  function select(action:MilestoneAction){const prepared=prepareMilestoneReview(store,action);if(!prepared||!store.game)return;review.value={plan:prepared.intent.plan,snapshot:structuredClone(store.game),identity:prepared.command.commandId,prepared,activity:null};}
  function inspect(a:MilestoneActivity){review.value={plan:structuredClone(a.plan),snapshot:structuredClone(a.originGame),identity:a.id,prepared:null,activity:structuredClone(a)};}
- async function confirm(retrying=false){const r=review.value;if(!r?.prepared||store.busy||!retrying&&stale.value)return;if(retrying)await store.retryFor(r.prepared.command.commandId);else await store.startPreparedMilestone(r.prepared.intent);if(!store.error&&review.value===r)close();}
+ async function confirm(retrying=false){const r=review.value;if(!r?.prepared||store.busy||!retrying&&stale.value)return;if(retrying)await store.retryFor(r.prepared.command.commandId);else await store.startPreparedMilestone(r.prepared.intent);if(review.value===r&&(!store.error||store.wasConfirmedFor(r.prepared.command.commandId,r.prepared.command.runId)))close();}
  return{milestoneReview:review,milestoneStale:stale,milestoneRetry:retry,selectMilestone:select,inspectMilestone:inspect,closeMilestone:close,confirmMilestone:confirm};
 }
 const opening={help:{label:'赠丹相助',text:'赠出回春丹，结下赠药之缘。'},trade:{label:'以丹换简',text:`以回春丹换得惊鸿剑简；剑修终结伤害增加 ${C.swordManual.damageBonus}。`},leave:{label:'保留丹药',text:'保留回春丹，各自离开。'}} as const;

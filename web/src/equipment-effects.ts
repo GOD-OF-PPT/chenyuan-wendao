@@ -49,8 +49,7 @@ export function useConfigurationEcho(key:()=>string,active:()=>boolean=()=>true)
  const eligible=computed(()=>visible.value&&!hidden.value&&active()&&!!store?.available&&!store.error&&!store.activityPausing);
  function clear(){effect.value=null;clearTimeout(timer);}
  watch(()=>store?.game,(_next,previous)=>{before=previous?structuredClone(previous):null;},{flush:'sync'});
- watch([key,visible,hidden,active,()=>store?.activity?.id,()=>store?.activity?.generation,()=>store?.activity?.ownerId,()=>store?.activityPausing],clear,{flush:'sync'});
- watch(eligible,value=>{if(!value)clear();},{flush:'sync'});
+ watch([key,eligible,()=>proof([store?.game?.school,store?.game?.loadout]),()=>store?.activity?.id,()=>store?.activity?.generation,()=>store?.activity?.ownerId],clear,{flush:'sync'});
  function visibility(){hidden.value=document.hidden;}
  onMounted(()=>{stop=store?.observe(o=>{if(!store)return;const next=tracker.consume(o,store.game,store.lastResult,store.lastReplayed,eligible.value&&store.saved,before);if(!next)return;clearTimeout(timer);effect.value={...next,sequence:++sequence};timer=setTimeout(clear,1400);})??(()=>{});document.addEventListener('visibilitychange',visibility);});
  onActivated(()=>visible.value=true);onDeactivated(()=>visible.value=false);

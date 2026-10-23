@@ -12,8 +12,8 @@
     },
     {
       "path": "web/src/milestone-view.ts",
-      "bytes": 9551,
-      "sha256": "5fba4c0ecc689658539f56384cf69348208a2eb7444c7195a6d81287c402be92"
+      "bytes": 9631,
+      "sha256": "c849797ee14366f00715ee9ab3999bcc3c293996251b4073c7cb4b504ca21022"
     },
     {
       "path": "web/src/idle-milestones.css",
