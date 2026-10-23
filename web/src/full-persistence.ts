@@ -398,6 +398,8 @@ export class FullSaveRepository {
     catch (error) { repository.close(); throw error; }
   }
   close(): void { if (!this.closed) { this.closed = true; this.db.close(); } }
+  /** Check this repository's lifecycle without opening or cancelling a transaction. */
+  ensureOpen(): void { this.assertOpen(); }
   /** Read without choosing a database version or running any migration. */
   static async exportRaw(name = FULL_DB_NAME): Promise<RawDatabaseBackup | null> {
     if (!globalThis.indexedDB) throw new RuleError('STORAGE_UNAVAILABLE', '浏览器未提供本地存储');

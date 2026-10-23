@@ -20,7 +20,7 @@ export type CheckpointSummary = Pick<SaveCheckpoint, 'kind' | 'sourceRunId' | 's
 export const useGame = defineStore('game', () => {
   const session=useSession();
   const game = shallowRef<Game | null>(null), busy = ref(false), ready = ref(false), available = ref(false);
-  const error = ref(''), warning = ref(''), saved = ref(false), hasCheckpoint = ref(false);
+  const error = ref(''), warning = ref(''), saved = ref(false), syncIssue=ref(false), hasCheckpoint = ref(false);
   const checkpointSummary = shallowRef<CheckpointSummary | null>(null);
   const trialRecovery = shallowRef<ReturnType<typeof getTrialRecovery>>(null);
   const lastResult = shallowRef<ActionResult | null>(null), lastReplayed = ref(false), canRetry = ref(false);
@@ -36,6 +36,8 @@ export const useGame = defineStore('game', () => {
   let activityEpoch=0,activityInFlight:Promise<void>|null=null;
   let writeInFlight:Promise<void>|null=null;
   let repository: FullSaveRepository | undefined, channel: BroadcastChannel | undefined;
+  let connectionEpoch=0,readEpoch=0;
+  const ownsConnection=(source:FullSaveRepository,epoch:number)=>!disposed&&repository===source&&connectionEpoch===epoch;
   let pending: (() => Promise<CommitOutcome | ControlOutcome | ActivityOutcome>) | null = null;
   let pendingInstant=false;
   let pendingCycle:Activity|null=null;
@@ -99,28 +101,36 @@ export const useGame = defineStore('game', () => {
     })();
   }
 
-  async function checkpointInfo() {
-    const current = game.value;
-    if (!repository || !current) { hasCheckpoint.value = false; checkpointSummary.value = null; trialRecovery.value = null; return; }
+  async function checkpointInfo(owns:()=>boolean=()=>!disposed) {
+    const current = game.value,source=repository;
+    const currentRead=()=>owns()&&repository===source&&game.value===current;
+    if(!currentRead())return;
+    if (!source || !current) { hasCheckpoint.value = false; checkpointSummary.value = null; trialRecovery.value = null; return; }
     let cp: SaveCheckpoint | null = null;
     try {
-      cp = await repository.loadCheckpoint();
-      if (game.value !== current) return;
+      cp = await source.loadCheckpoint();
+      if (!currentRead()) return;
+      source.ensureOpen();
       hasCheckpoint.value = !!cp;
       checkpointSummary.value = cp ? { kind: cp.kind, sourceRunId: cp.sourceRunId, sourceRevision: cp.sourceRevision, versions: { ...cp.versions },
         target: { name: cp.snapshot.core.player.name, realm: cp.snapshot.core.player.realm, months: cp.snapshot.core.world.elapsedMonths,
           hp: cp.snapshot.core.player.hp, mp: cp.snapshot.core.player.mp, inventory: { ...cp.snapshot.core.inventory } } } : null;
       warning.value = '';
-    } catch (value) { if (game.value !== current) return; hasCheckpoint.value = false; checkpointSummary.value = null; warning.value = '检查点无法读取：' + message(value); }
+    } catch (value) { if (!currentRead()) return;if(codeOf(value)==='STORAGE_CLOSED')throw value; hasCheckpoint.value = false; checkpointSummary.value = null; warning.value = '检查点无法读取：' + message(value); }
+    if(!currentRead())return;
     try {
-      const previous = await repository.loadPrevious();
-      if (game.value === current) trialRecovery.value = getTrialRecovery(current, previous, cp);
-    } catch (value) { if (game.value === current) { trialRecovery.value = null; warning.value += ' 上一行动无法核对：' + message(value); } }
+      const previous = await source.loadPrevious();
+      if (currentRead()) {source.ensureOpen();trialRecovery.value = getTrialRecovery(current, previous, cp);}
+    } catch (value) { if (currentRead()) {if(codeOf(value)==='STORAGE_CLOSED')throw value; trialRecovery.value = null; warning.value += ' 上一行动无法核对：' + message(value); } }
   }
   async function refresh(reason?:'sync') {
-    if (!repository) return;
-    const snapshot=await repository.loadActivitySnapshot(),current=snapshot.state;
-    if (disposed) return;
+    const source=repository,connection=connectionEpoch,read=++readEpoch;
+    if (!source||disposed) return false;
+    const owns=()=>ownsConnection(source,connection)&&readEpoch===read;
+    try{
+    const snapshot=await source.loadActivitySnapshot(),current=snapshot.state;
+    if (!owns()) return false;
+    source.ensureOpen();
     const changed=current?.core.runId !== game.value?.core.runId || current?.core.revision !== game.value?.core.revision;
     const changedActivity=snapshot.activity?.id!==activity.value?.id||snapshot.activity?.revision!==activity.value?.revision;
     if(changedActivity&&activityRuntime.value?.phase==='running')stopActivityRuntime();
@@ -129,56 +139,80 @@ export const useGame = defineStore('game', () => {
     }
     game.value = current;
     acceptActivity(snapshot.activity);
-    await checkpointInfo();
-    if (!failedIntent && !busy.value) saved.value = !!current;
+    await checkpointInfo(owns);
+    if(!owns())return false;
+    if (!failedIntent && !busy.value&&available.value) saved.value = !!current;
     if(reason==='sync'&&changed&&current)emit(()=>loadedObservation(current,'sync'));
+    return true;
+    }catch(value){if(owns())throw value;return false;}
+  }
+  function synchronizationFailed(value:unknown,source:FullSaveRepository,connection:number,read?:number){
+    if(!ownsConnection(source,connection)||read!==undefined&&readEpoch!==read)return;
+    stopActivityRuntime();readEpoch++;refreshQueued=false;
+    const reason=({STORAGE_ABORTED:'读取中断，最新进度尚未核对',STORAGE_QUOTA:'本机存储空间不足，暂时无法核对进度',STORAGE_DENIED:'浏览器未允许读取本机存档',STORAGE_BLOCKED:'存档正在被其他页面占用',STORAGE_UNAVAILABLE:'本机存档暂时无法读取',STORAGE_CLOSED:'存档连接已更新或关闭'} as Record<string,string>)[codeOf(value)]??message(value);
+    syncIssue.value=true;error.value='无法同步存档：'+reason+'；请重新读取当前进度，已确认的成果保留。';
+    saved.value=false;available.value=false;canRetry.value=false;
+    emit(()=>storageErrorObservation(game.value,codeOf(value)));
+  }
+  function synchronize(){
+    const source=repository,connection=connectionEpoch;
+    if(!source||!available.value||disposed)return;
+    const reading=refresh('sync'),read=readEpoch;
+    void reading.catch(value=>synchronizationFailed(value,source,connection,read));
   }
   async function init() {
-    if (busy.value) return;
+    if (disposed||busy.value) return;
+    const connection=++connectionEpoch;readEpoch++;refreshQueued=false;
+    const owns=()=>!disposed&&connectionEpoch===connection;
     const hadUnconfirmedIntent=failedIntent;
     stopActivityRuntime();activityNotice.value='';
-    busy.value = true; ready.value = false; available.value = false; error.value = ''; warning.value = '';
+    busy.value = true; ready.value = false; available.value = false; syncIssue.value=false;error.value = ''; warning.value = '';
     repository?.close(); channel?.close(); repository = undefined; channel = undefined;
+    lastResult.value=null;lastReplayed.value=false;lastFromActivity.value=false;
     pending = null; pendingCommandId = undefined; pendingObservation=undefined; pendingCycle=null;canRetry.value = false;
     try {
       const opened = await FullSaveRepository.open(session.gameDatabase);
-      if (disposed) { opened.close(); return; }
+      if (!owns()) { opened.close(); return; }
       repository = opened; available.value = true;
-      await refresh();
+      const applied=await refresh();
+      if(!owns()||!applied)return;
       failedIntent=false;saved.value=!!game.value;
       if(hadUnconfirmedIntent)warning.value=[warning.value,'已重新读取已保存进度；上次未确认的操作未自动重试，请核对当前成果后再安排。'].filter(Boolean).join(' ');
       if(game.value)emit(()=>loadedObservation(game.value!,'resume'));
+      if(!owns())return;
+      opened.ensureOpen();
       if ('BroadcastChannel' in globalThis) {
-        channel = new BroadcastChannel(session.gameChannel);
-        channel.onmessage = () => {
+        const connected = new BroadcastChannel(session.gameChannel);channel=connected;
+        connected.onmessage = () => {
+          if(!ownsConnection(opened,connection)||channel!==connected||!available.value)return;
           // Viewing intents must be invalidated immediately, even while a local write is finishing.
           syncEpoch.value++;
           if (busy.value) { refreshQueued = true; return; }
-          refresh('sync').catch(value => {
-            error.value = '无法同步存档：' + message(value); saved.value = false;
-            emit(()=>storageErrorObservation(game.value,codeOf(value)));
-            if (codeOf(value) === 'STORAGE_CLOSED') available.value = false;
-          });
+          synchronize();
         };
       }
     } catch (value) {
+      if(!owns())return;
       error.value = '无法读取存档：' + message(value); saved.value = false; available.value = false;
       emit(()=>storageErrorObservation(game.value,codeOf(value)));
       repository?.close(); repository = undefined;
-    } finally { ready.value = true; busy.value = false; }
+    } finally { if(owns()){ready.value = true; busy.value = false;} }
   }
   function write(operation: () => Promise<CommitOutcome | ControlOutcome | ActivityOutcome>, commandId?: string, observation?:WriteObservationSource, instant=false,cycle:Activity|null=null,onNotDue?:()=>void):Promise<void>{
-    if(disposed||busy.value||!repository)return Promise.resolve();
+    if(disposed||busy.value||!repository||!available.value)return Promise.resolve();
     const current=performWrite(operation,commandId,observation,instant,cycle,onNotDue);writeInFlight=current;
     return current.finally(()=>{if(writeInFlight===current)writeInFlight=null;});
   }
   async function performWrite(operation: () => Promise<CommitOutcome | ControlOutcome | ActivityOutcome>, commandId?: string, observation?:WriteObservationSource, instant=false,cycle:Activity|null=null,onNotDue?:()=>void) {
-    if (disposed || busy.value || !repository) return;
+    if (disposed || busy.value || !repository||!available.value) return;
+    const source=repository,connection=connectionEpoch,owns=()=>ownsConnection(source,connection);
+    readEpoch++;
     const before=game.value,wasSaved=saved.value,wasFailed=failedIntent;
-    busy.value = true; error.value = ''; saved.value = false; canRetry.value = false; pending = operation; pendingCommandId = commandId;
+    busy.value = true; syncIssue.value=false;error.value = ''; saved.value = false; canRetry.value = false; pending = operation; pendingCommandId = commandId;
     pendingObservation=observation;
     pendingInstant=instant;
     pendingCycle=cycle;
+    let confirmed=false;
     try {
       const action=observation?.kind==='action'?observation.command:null;
       const seconds=action?actionSeconds(action):.6,totalMs=Number.isFinite(seconds)?seconds*1000:0;
@@ -187,18 +221,34 @@ export const useGame = defineStore('game', () => {
       if(!instant){const completed=await actionClock.wait(totalMs,remaining=>{execution.value={...initial,remainingMs:remaining};});
         if(!completed||disposed)return;execution.value={...initial,remainingMs:0,phase:'saving'};}
       const outcome = await operation();
-      if (disposed) return;
+      if (!owns()) return;
+      confirmed=true;
+      readEpoch++;
       game.value = outcome.state;
       if('activity'in outcome)acceptActivity(outcome.activity);
-      else{const snapshot=await repository!.loadActivitySnapshot();if(disposed)return;game.value=snapshot.state;acceptActivity(snapshot.activity);}
+      else if(activity.value?.runId!==outcome.state.core.runId)acceptActivity(null);
       if('result'in outcome&&outcome.result){lastResult.value=outcome.result;lastFromActivity.value=cycle!==null;lastReplayed.value=outcome.replayed;}
       else if(!instant){lastResult.value=null;lastFromActivity.value=false;lastReplayed.value=outcome.replayed;}
       failedIntent = false; pending = null; pendingCommandId = undefined; pendingObservation=undefined; pendingCycle=null;saved.value = true;
       if(observation)emit(()=>writeObservation(before,outcome.state,observation,'result'in outcome?outcome.result:null,outcome.replayed));
-      await checkpointInfo();
+      if(!owns())return;
+      if(!('activity'in outcome)){
+        const read=++readEpoch;
+        try{
+          const snapshot=await source.loadActivitySnapshot();
+          if(!owns())return;
+          if(readEpoch===read){source.ensureOpen();game.value=snapshot.state;acceptActivity(snapshot.activity);}
+        }catch(value){if(!owns())return;if(readEpoch===read)throw value;}
+      }
+      await checkpointInfo(owns);
+      if(!owns())return;
       try { channel?.postMessage({ runId: outcome.state.core.runId, revision: outcome.state.core.revision }); }
       catch { warning.value = '进度已保存，其他页面暂未收到同步提示'; }
     } catch (value) {
+      if(!owns())return;
+      // The operation's successful reply is authoritative even if a later read
+      // loses the connection. Retain that result and require synchronization.
+      if(confirmed){synchronizationFailed(value,source,connection);return;}
       if(onNotDue&&codeOf(value)==='ACTIVITY_NOT_DUE'){
         // Nothing committed. This is still the same running cycle, not a failed save or a new reward.
         saved.value=wasSaved;failedIntent=wasFailed;onNotDue();return;
@@ -209,11 +259,13 @@ export const useGame = defineStore('game', () => {
       if (code === 'STORAGE_CLOSED') available.value = false;
       canRetry.value = ['STORAGE_QUOTA', 'STORAGE_ABORTED', 'STORAGE_DENIED'].includes(code);
       if (!canRetry.value) { pending = null; pendingCommandId = undefined; pendingObservation=undefined; pendingCycle=null; }
-      try { await refresh(); } catch (readError) { warning.value = '原进度暂时无法重读：' + message(readError); }
+      try { await refresh(); } catch (readError) { if(owns())warning.value = '原进度暂时无法重读：' + message(readError); }
     } finally {
-      execution.value=null;
-      busy.value = false;
-      if (refreshQueued) { refreshQueued = false; refresh('sync').catch(value => { warning.value = message(value);emit(()=>storageErrorObservation(game.value,codeOf(value))); }); }
+      if(owns()){
+        execution.value=null;
+        busy.value = false;
+        if (refreshQueued) { refreshQueued = false;synchronize(); }
+      }
     }
   }
   function validationError(text: string) {
@@ -340,9 +392,9 @@ export const useGame = defineStore('game', () => {
     activityNotice.value='';stopActivityRuntime();await write(()=>repository!.resumeActivity(intent),intent.commandId,undefined,true);
     if(!error.value)beginActivityRuntime();
   }
-  const saveLabel = computed(() => !ready.value ? '读取中' : execution.value?.phase==='acting' ? '行动中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
-  onScopeDispose(() => { disposed = true;stopActivityRuntime();actionClock.cancel();execution.value=null; repository?.close(); channel?.close();observers.clear(); });
-  return { game, busy, ready, available, error, warning, saved, hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,execution,
+  const saveLabel = computed(() => !ready.value ? '读取中' : syncIssue.value?'同步待核对':execution.value?.phase==='acting' ? '行动中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
+  onScopeDispose(() => { disposed = true;connectionEpoch++;readEpoch++;refreshQueued=false;stopActivityRuntime();actionClock.cancel();execution.value=null; repository?.close(); channel?.close();repository=undefined;channel=undefined;ready.value=false;available.value=false;busy.value=false;observers.clear(); });
+  return { game, busy, ready, available, error, warning, saved, syncIssue,hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,execution,
     activity,activityRuntime,activityRunning,activityLocal,activityOwned,activityPausing,activityNotice,lastFromActivity,syncEpoch,loadActivityHistory,startPlannedActivity,prepareMilestone,startPreparedMilestone,startCultivation,pauseCultivation,resumeCultivation,
     init, refresh, start, act, prepareAction, actPrepared, prepareConfiguration, applyConfiguration, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, rawText, validationError,observe };
 });

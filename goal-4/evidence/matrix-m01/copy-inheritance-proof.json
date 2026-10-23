@@ -1,0 +1,14 @@
+{
+  "priorDigest": "06945b461811795aa4a1e97ca554762aecaeb051da5681c14b2251c4a9e05d90",
+  "currentDigest": "3fd9e7558e8e6e9b487dd6cde78ea8cd9a1ab292b7dae541dc46eb51d2b0d0c0",
+  "changed": [
+    "web/src/store.ts"
+  ],
+  "identicalRuntimeSources": 193,
+  "sourceCount": 194,
+  "exactReverseDelta": true,
+  "deltaPath": "artifacts/goal-4/matrix-m01/copy-exact-delta.json",
+  "oldStoreSha256": "0f6d79828257ff3da2bd25d903085821a0925e426085baa04148217add92e75c",
+  "newStoreSha256": "313c1a04a9f307e2e98e0dbed98fa2b3777670bf3255d8f8623ff7224effc056",
+  "meaning": "Only owned sync error reason display changed; all state/connection/command/transaction/clock code and other193sources exactly unchanged. Prior full reports stay06945b46; current2UI+4native confirm corrected read copy and unchanged save/reconnect behavior."
+}

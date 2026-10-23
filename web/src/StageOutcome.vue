@@ -7,10 +7,10 @@ import {ACTION_MOTIONS} from './action-feedback';
 import {formatDelta} from './presentation';
 import GameIcon from './GameIcon.vue';
 import {items,realms,skills,relics} from '../../src/full/content.ts';
-const props=withDefaults(defineProps<{game:Game;result:ActionResult|null;busy:boolean;saved:boolean;available:boolean;error:string;replayed:boolean;execution:Execution|null;next:string;followup?:boolean;compact?:boolean}>(),{followup:true});
+const props=withDefaults(defineProps<{game:Game;result:ActionResult|null;busy:boolean;saved:boolean;available:boolean;error:string;replayed:boolean;execution:Execution|null;next:string;followup?:boolean;compact?:boolean;syncIssue?:boolean}>(),{followup:true,syncIssue:false});
 defineEmits<{next:[];details:[]}>();
 const receipt=computed(()=>props.saved&&props.available&&!props.busy&&!props.error&&!props.replayed&&props.result?.runId===props.game.core.runId&&props.result.revisionAfter===props.game.core.revision?props.result:null);
-const state=computed(()=>props.error?'failed':props.execution?.phase??(props.busy?'saving':receipt.value?'settled':'idle'));
+const state=computed(()=>props.syncIssue?'sync-error':props.error?'failed':props.execution?.phase??(props.busy?'saving':receipt.value?'settled':'idle'));
 const changes=computed(()=>{
  const d=receipt.value?.delta;if(!d)return{visible:[],extra:0};
  const important:string[]=[];
@@ -27,6 +27,7 @@ const changes=computed(()=>{
  <section class="stage-outcome" data-testid="stage-outcome" :data-state="state" :data-command="receipt?.commandId" aria-label="行动与下一步">
   <div :key="state==='settled'?receipt?.commandId:state" class="stage-result-body">
    <template v-if="execution"><strong>{{execution.label}}</strong><output data-testid="stage-time">{{execution.phase==='saving'?'保存中':(execution.remainingMs/1000).toFixed(1)+' 秒'}}</output><progress :value="execution.totalMs-execution.remainingMs" :max="execution.totalMs" :aria-label="execution.label+'阶段进度'"/><small>{{execution.phase==='saving'?'保存后显示本次结果':'正在行动，结束后核对结果'}}</small></template>
+   <template v-else-if="syncIssue"><strong class="stage-failure">进度同步待核对</strong><p>已确认的成果保留，请先重新读取当前进度。</p></template>
    <template v-else-if="error"><strong class="stage-failure">本次未保存</strong><p>进度未结算，请先处理上方原因并重试。</p></template>
    <template v-else-if="receipt"><strong class="stage-success"><GameIcon :kind="ACTION_MOTIONS[receipt.type].icon.kind" :id="ACTION_MOTIONS[receipt.type].icon.id"/>{{ACTION_MOTIONS[receipt.type].label}}</strong><p data-testid="stage-delta"><span v-for="row in changes.visible" :key="row">{{row}}</span></p><small v-if="changes.extra" data-testid="stage-more">另{{changes.extra}}项 · 结算详情</small><small v-if="receipt.stopReason">{{receipt.stopReason.message}}</small></template>
    <template v-else-if="followup"><strong>下一步</strong><p>{{next}}</p></template><template v-else><p>此处保留已保存的行动结果。</p></template>
