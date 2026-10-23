@@ -1,0 +1,167 @@
+{
+  "task": "ART03",
+  "date": "2026-10-23",
+  "status": "Local independent engineering delivered; overall game/art/long balance and human acceptance open",
+  "branch": "codex/goal-4-online-recovery",
+  "implementationCommit": "764c964d9e2c4650f97d25e93da712a5f78dcda6",
+  "sourceDigest": "8e0f4f6ae9138ed60858d7145a4b2b290db240863a68e00d4eb9240bfcf902ef",
+  "contract": "docs/decisions/0025-equipment-object-art-contract.md",
+  "checks": {
+    "ui": {
+      "uniqueDeclaredCases": 257,
+      "files": 26,
+      "directCurrentSourcePassed": 14,
+      "inheritedSource12Passed": 243,
+      "single257GreenRun": false,
+      "exactDeclarationUnion": true,
+      "skip": 0,
+      "retry": 0,
+      "currentRaw": "artifacts/goal-4/art03/ui-delivery-14.json",
+      "currentRawSHA256": "2947eef191866f8c93fe6dcd7c66e499d15c09d2339499c813368d082b51a583",
+      "currentDurationMs": 320081.253,
+      "originalFullSource12": {
+        "passed": 254,
+        "failed": 3,
+        "raw": "artifacts/goal-4/art03/ui-final-3.json",
+        "rawSHA256": "3cc07c3173fb4519b670898e27cf44447ca172c65fd6553c65e8fbcf7adddc04",
+        "relabeled": false
+      },
+      "proofs": [
+        "coverage.json",
+        "source14-boundary.json",
+        "test-review.md"
+      ]
+    },
+    "nativeIndexedDB": {
+      "passedRelated": 37,
+      "files": 4,
+      "actualSource": "d5ed5368b57f3ca5d34e311b310357d3d5b965968a2c7fdfaf858c90a03adf7a",
+      "raw": "artifacts/goal-4/art03/idb-related.json",
+      "inheritance": "native-core-inheritance.json; unchanged Store/full rules/persistence/native harness; no App/equipment presentation consumption",
+      "whole208Rerun": false
+    },
+    "pureRules": {
+      "passed": 775,
+      "files": 57,
+      "actualFullSource": "ec436efadda4b346349ab3965bc030d878b8de9357cb903a407e426815aebdf2",
+      "raw": "artifacts/goal-4/art03/core-final.log",
+      "inheritedAssertions": 766,
+      "currentAll216SourceConfigurationAssertions": 9,
+      "configurationBusinessCombinations": 8,
+      "currentReport": "artifacts/goal-4/art03/configuration-control-current-final.json",
+      "includedWithin775": true,
+      "proof": "native-core-inheritance.json"
+    },
+    "assets": {
+      "negativePassed": 203,
+      "negativeRaw": "artifacts/goal-4/art03/assets-negative-final-current.log",
+      "negativeSHA256": "95258d09689ee515eef7629c4602ec8aa451d5de0719a1b9b2fbd31ad3765a2a",
+      "positiveRaw": "artifacts/goal-4/art03/assets-positive-final-current.json",
+      "positiveSHA256": "8a538d155171a84375df3e784444acf29308f74848f1e6e3daaed0c749c5a95f",
+      "verifiedFiles": 102,
+      "productionAssets": 82,
+      "newRasterAssets": 4,
+      "newRuntimeAssetBytes": 136870,
+      "newNativeBytes": 44990,
+      "maxNewNativeBytes": 45000,
+      "oldCapsIncreased": false
+    },
+    "typeBuild": {
+      "passed": true,
+      "tested": "build-14.log",
+      "postcommit": "build-postcommit.log",
+      "rawDirectory": "artifacts/goal-4/art03"
+    },
+    "realCycles": [
+      {
+        "case": "ART03-A4 a real thirty-second jade study saves its formal fee before the slip becomes mastered",
+        "attachment": "real-jade-clock",
+        "elapsedMs": 30519.80000001192,
+        "wallElapsedMs": 30520,
+        "cycleMs": 30000,
+        "committedAfterDueMs": 295
+      },
+      {
+        "case": "ART03-A5 a real sixty-second sword manual commits one insight and never silently changes school or equipment",
+        "attachment": "real-manual-clock",
+        "elapsedMs": 61160.89999997616,
+        "wallElapsedMs": 61162,
+        "cycleMs": 60000,
+        "committedAfterDueMs": 1045
+      },
+      {
+        "case": "ART03-A6 a real sixty-second forge presents the selected artifact only after exact costs are saved",
+        "attachment": "real-relic-clock",
+        "elapsedMs": 61001.19999998808,
+        "wallElapsedMs": 61001,
+        "cycleMs": 60000,
+        "committedAfterDueMs": 911
+      }
+    ]
+  },
+  "budgets": {
+    "equipmentObjectNativeBytes": 44990,
+    "adventureObjectNativeBytes": 44997,
+    "alchemyWorkshopNativeBytes": 18626,
+    "preparationNativeBytes": 55623,
+    "productionNativeBytes": 20456
+  },
+  "identity": {
+    "implementationCommit": "764c964d9e2c4650f97d25e93da712a5f78dcda6",
+    "sourceDigest": "8e0f4f6ae9138ed60858d7145a4b2b290db240863a68e00d4eb9240bfcf902ef",
+    "runtimeArchiveSHA256": "f1be3bfe36eed26b6b7a82e31fe527295532079f6bde3a5f81c2d21d4dac3589",
+    "runtimeSourceFiles": 216,
+    "runtimeArchiveExact": true,
+    "archive": "artifacts/goal-4/art03/runtime-764c964d.tar",
+    "testedPostcommitFrozenFilesExact": true,
+    "files": 61,
+    "bytes": 7627394,
+    "frozenDirectory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/art03/preview-8e0f4f6a",
+    "postcommitMetadata": {
+      "head": "764c964d9e2c4650f97d25e93da712a5f78dcda6",
+      "source": "764c964d9e2c4650f97d25e93da712a5f78dcda6",
+      "tree": "c324519468dee54492dba12fc3b070f593e8884b",
+      "dirty": true,
+      "node": "v24.19.0",
+      "npm": "8.11.0",
+      "npmOnPath": "8.11.0"
+    },
+    "protected13Excluded": true,
+    "dirtyEngineeringMetadataRetained": true
+  },
+  "visual": {
+    "representatives": 9,
+    "fresh": 7,
+    "exactPNGInherited": 2,
+    "currentGenerated": 88,
+    "notClaimedCurrentPixelReviewed": 79,
+    "manifest": "visual-review.json"
+  },
+  "preview": {
+    "oldPID": 74556,
+    "oldCommandVerified": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python scripts/candidate/serve.py --directory /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-art-01/preview-85a89c53/web --port 56884",
+    "pid": 21754,
+    "url": "http://127.0.0.1:56884/",
+    "directory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/art03/preview-8e0f4f6a/web",
+    "sourceDigest": "8e0f4f6ae9138ed60858d7145a4b2b290db240863a68e00d4eb9240bfcf902ef",
+    "scope": "Previously owned loopback packaged-web server reused; no source/evidence directory exposure, Game commands or data writes. First ownership check expected generic http.server and safely rejected before mutation; actual packaged runner then verified."
+  },
+  "userProgress": {
+    "readOnlyAXPreserved": true,
+    "loadedScriptStyleExact": true,
+    "noUserGameImportRestoreResetOrSaveTest": true,
+    "proof": "user-progress-proof.json"
+  },
+  "protected13": {
+    "unchanged": true,
+    "excludedFromCommit": true,
+    "proof": "protected13.json"
+  },
+  "remaining": [
+    "ART04/ART05/CHECK-ART-02/ART06 and user overall game-feel/art acceptance",
+    "M02/M03 plus old39 UI/9 native and remaining normal-route/recovery/performance matrix; compatibility last",
+    "Clean candidate, maximum C-end/code/security review, long-term balance and real user retest",
+    "Historical native open/readMeta/CDP latency and reporter step-id warning causes unknown; old failures retained"
+  ],
+  "scope": "Fixed1440x900 singleChromium actual gameplay/interaction only. No compatibility/environment/performance matrix, push, PR, merge, public deployment, permission changes or memory updates."
+}

@@ -1,0 +1,31 @@
+{
+  "visibleProgressPreserved": true,
+  "normalizedAXEqual": true,
+  "normalization": "Remove AX numeric indices/focus identity and whitespace only; full semantic tree compared.",
+  "beforeSHA256": "cc80a7090ce6e5f9b1f1715d72cb2c01a9994ceac6aa8f2369d85d77e9f937ce",
+  "afterSHA256": "d7ef676de609b3b6aa914c0190fdb63cf4ac22abcc679906a1e77f888ec87469",
+  "loadedResources": {
+    "scripts": [
+      "./assets/index-ByHkgKeX.js"
+    ],
+    "styles": [
+      "./assets/index-w2coKwsN.css"
+    ]
+  },
+  "loadedResourcesInExactHTTPPayload": true,
+  "profile": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "school": "尚未择法",
+    "xp": "5/10",
+    "stones": 40,
+    "month": 1,
+    "hp": "60/60",
+    "mp": "20/20",
+    "location": "听雨洞府",
+    "activity": "待安排",
+    "save": "已保存"
+  },
+  "actions": "Read-only AX/DOM resources and idle reload only; no user Game command/import/restore/reset/save test.",
+  "newTab": "Previous tab2 no longer part of browser session and inventory empty; background tab3 opened original preview with same actual existing profile, not a new game."
+}

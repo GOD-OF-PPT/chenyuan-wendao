@@ -1,0 +1,9 @@
+{
+  "oldPID": 74556,
+  "oldCommandVerified": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python scripts/candidate/serve.py --directory /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-art-01/preview-85a89c53/web --port 56884",
+  "pid": 21754,
+  "url": "http://127.0.0.1:56884/",
+  "directory": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/art03/preview-8e0f4f6a/web",
+  "sourceDigest": "8e0f4f6ae9138ed60858d7145a4b2b290db240863a68e00d4eb9240bfcf902ef",
+  "scope": "Previously owned loopback packaged-web server reused; no source/evidence directory exposure, Game commands or data writes. First ownership check expected generic http.server and safely rejected before mutation; actual packaged runner then verified."
+}

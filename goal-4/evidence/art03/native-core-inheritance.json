@@ -1,0 +1,372 @@
+{
+  "task": "ART03",
+  "finalSource": "8e0f4f6ae9138ed60858d7145a4b2b290db240863a68e00d4eb9240bfcf902ef",
+  "pure": {
+    "actualFullSource": "ec436efadda4b346349ab3965bc030d878b8de9357cb903a407e426815aebdf2",
+    "raw": "artifacts/goal-4/art03/core-final.log",
+    "rawSHA256": "854b1fbfae4b937d9df24c8bea337bb71831c16c55ae0ca297c770a1b3922df7",
+    "passed": 775,
+    "files": 57,
+    "unchangedRuntimeFiles": 211,
+    "runtimeDifferences": [
+      "web/src/JadeStudyScene.vue",
+      "web/src/LearningPlanner.vue",
+      "web/src/LoadoutConstellation.vue",
+      "web/src/RelicAtelier.vue",
+      "web/src/art03-equipment.css"
+    ],
+    "inheritedAssertions": 766,
+    "boundary": "Only equipment Vue markup/local predicates/error copy and CSS changed after source9 actual57/775; all Node imports, read legacy assets and57 test inputs unchanged. All-source configuration9 separately executed on final216 source."
+  },
+  "currentConfiguration": {
+    "raw": "artifacts/goal-4/art03/configuration-current-final.log",
+    "report": "artifacts/goal-4/art03/configuration-control-current-final.json",
+    "reportSHA256": "c1c51ca0e0b4d6bf8f69353d2f2b0c580c0bef031b5c13f16442312d5066de85",
+    "assertions": 9,
+    "businessConfigurations": 8,
+    "includedWithin775": true,
+    "all216RuntimeFilesMatched": true,
+    "sourceDigest": "8e0f4f6ae9138ed60858d7145a4b2b290db240863a68e00d4eb9240bfcf902ef"
+  },
+  "native": {
+    "actualSource": "d5ed5368b57f3ca5d34e311b310357d3d5b965968a2c7fdfaf858c90a03adf7a",
+    "raw": "artifacts/goal-4/art03/idb-related.json",
+    "rawSHA256": "b68a5aa432e309d3baa933e594872eed05fefbd058354e56aadca728d13b438e",
+    "passed": 37,
+    "files": 4,
+    "unchangedRuntimeFiles": 209,
+    "runtimeDifferences": [
+      "web/src/EquipmentPanel.vue",
+      "web/src/JadeStudyScene.vue",
+      "web/src/LearningPlanner.vue",
+      "web/src/LoadoutConstellation.vue",
+      "web/src/RelicAtelier.vue",
+      "web/src/art03-equipment.css",
+      "web/src/equipment-effects.ts"
+    ],
+    "boundary": "Selected native harness imports repository/Store/full rules directly, not App, Vue equipment components or equipment-effects presentation helper. Full src/**, Store, persistence and harness unchanged. Config original dirty input preserved by protected13 proof.37 is related storage subset; old full208 and remaining matrix obligations not claimed rerun."
+  },
+  "testInputs": [
+    {
+      "path": "tests/action-feedback.test.mjs",
+      "sha256": "bcbd3b23e629f914db1683ac354e23138740b9516cc926bf8937be050e9f3788",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/activity-clock.test.mjs",
+      "sha256": "b6c980bf58c8fa406d9779cb3d4419bd4d5e2903eabd109acd14ed02ff2a11e9",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/activity.test.mjs",
+      "sha256": "619fa5344f54f1278dd946a9270cc2ba1fb51ee08a6092542e162710d3e56e2a",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/adventure.test.mjs",
+      "sha256": "d749281b4080098cf5459ea2cdfb6d4614fe1fd4837475bc14d3d358039e9478",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/build-identity.test.mjs",
+      "sha256": "2d467c80387d3bf73a600de960d77f4e35a6955094e478cb5eb901c4f142e79a",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/configuration.test.mjs",
+      "sha256": "46f19744a6ba6f4cfc0a69909d45842af2a250f2718861c57c53f13dd6c90ade",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/core-validation.test.mjs",
+      "sha256": "903f0d9757946c822995d1b3ce3febbae7fb5f7d5d3dc66fb8924b5df626bb9a",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/demo-nodes.test.mjs",
+      "sha256": "907778909809bb952250be0148246116fcccb7f3beeace865e7bfc8129321fe7",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/engine.test.mjs",
+      "sha256": "3ea77319e4ef46ec47c764b4efaa34d36be1d69d6ef940e673de8dcb9f0f3d2b",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-adventure-activity.test.mjs",
+      "sha256": "8cd8dfe3d4fe1c4163af507e24e66ca626cf083cd60676ec3f133a677dcbae38",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-ascension.test.mjs",
+      "sha256": "23fc87205712c98cce42d2b4683ee86a80a1113753337dfa7d9f3a5d7b4faf27",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-causal-compatibility.test.mjs",
+      "sha256": "0df6a16d7a8d22274700ea3c96a0b97d01d060451d7b8124f87077e489431b6e",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-causality.test.mjs",
+      "sha256": "a67d1dbdc5c932897ee52e80c7933ea4af021066e17a5e641302d1fb7227d577",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-compatibility.test.mjs",
+      "sha256": "796c5540fe15a08c21eae3044872ea22f894d33a90e20dda95adcb41c753539f",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-consumption-preview.test.mjs",
+      "sha256": "16eb11ba86ae72ba8ceffdc254c5569cb6ee8d841784ea2a27f947953efe07db",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-content.test.mjs",
+      "sha256": "5d9308ab9f3f78fd7741bcbc68cccf255aff64dca5495b14388f709eb176b732",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-contracts.test.mjs",
+      "sha256": "85f6938370ff5f2136dac0cb7a40a758c21df23655241e9a5dc647c8a0849fda",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-economy-costs.test.mjs",
+      "sha256": "1304e19480fd6b2deaa1c7da7b2dbe1e13505c442fef840680fc4bba5105c9dd",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-economy-ledger.test.mjs",
+      "sha256": "cedcc01b2a5062371da906178315307be9dd445ccba0b650f988580c45f24b0b",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-equipment.test.mjs",
+      "sha256": "17241d38421f99fe18e0ab61c597b39e27b8b255495854996591a7ff49ed5de1",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-extension.test.mjs",
+      "sha256": "c3f6d6505e86eb2afe0f12079f1cb3623a50e685436e4c5574909456643600d3",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-goals.test.mjs",
+      "sha256": "2f15c2ea988ef446d1ceb1a579bc87ade54180bfa84779eb8fe1bc61532fa3b3",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-growth-stage.test.mjs",
+      "sha256": "9c9742cc1983d7d34f205b0c4eb462e35a6903b797361e439730010278e85bff",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-growth.test.mjs",
+      "sha256": "00b21d636754715fdde4d30510e0274262d354228ec15f273727d67c77f08eca",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-life-record.test.mjs",
+      "sha256": "186f5489b98407fe7f75727abd3cd87d06ca48a5afd80b36b3b4849270cd7016",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-preview-resolution.test.mjs",
+      "sha256": "30db2103683a804d26a00841e3b2f16c1b71f95cf69148d1ad7bef7115f3d5d8",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-queries.test.mjs",
+      "sha256": "fe3ad8b95d5a3c2ee662e277d69737da30a0e143844d4127f6221fb520c52f3e",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-receipts.test.mjs",
+      "sha256": "3552f4120d8ac210d4feee2f6cde82ac14fac567c20ca675ceba7c90d495021e",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-supporting-causal.test.mjs",
+      "sha256": "9a13d5ae59a0f5b8eada75029cbecbc43831d0d6a54bf665d204effa2b39b41f",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-sword-manual.test.mjs",
+      "sha256": "78cf5087e6085fc43b867cba1e9a3155b428870bfd6fe815d8d926079bc1ee21",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-trial-journey.test.mjs",
+      "sha256": "60ff27de1478a0b61ef8059f4f81c87b965dd060b24b282869fc32140f9a3cd2",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full-trial-preparation.test.mjs",
+      "sha256": "1b45e9fe355e9dc7f4d2df9fe1942617904611555bb3e1f2b0f244001e3f908a",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/full.test.mjs",
+      "sha256": "bf291b0c7fee16c6c81f978c601b92f2114e9a3125b3f3ae45051caf30280fda",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/guidance.test.mjs",
+      "sha256": "f55201db11543d247a6298d103cc241d7fa578674560edbc625dd7c45a8cb0ee",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/journal-anchors.test.mjs",
+      "sha256": "9d0df5d21c0ae391a4681eb906674ba3212b5fce394c4c34643b89673fab30d4",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/journey-coverage.test.mjs",
+      "sha256": "92fc287d5dd04a543257d6dc05505238df7f27c2d9d9cb03b948c3601d48b68f",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/local-events.test.mjs",
+      "sha256": "acc130c0f9b6b45114f3b5750a95f6305b3b426867feb3557559f78ef61f09e1",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/milestone-activity.test.mjs",
+      "sha256": "1bc035f2b089ab8f17736d86add640852604a27fda7901c4bdd85d53d9cb5057",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/performance-budget.test.mjs",
+      "sha256": "01e5f2e11235b1d0ffd913122b48d59637e85c269161b8018010b763b3a6365b",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/play-flow.test.mjs",
+      "sha256": "1d7e897ca283551bab7d53a80a4f83c4abb0f98d30b810a4eb8358f83fd5c8b9",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/preparation-activity.test.mjs",
+      "sha256": "d013f766b5dba0819f58d35172b870ea04757521d3119c05790b615dc9098f7e",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/production-activity.test.mjs",
+      "sha256": "848e412ce6a07733ad39a3f8bcf517156a6111d9e06a70c9de474edad8b71e2b",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/reading-memory.test.mjs",
+      "sha256": "10c2c63d7c52c61e1d91c82f7178467f26966b18c602ce92196c36b67afe59ee",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/recovery-coverage.test.mjs",
+      "sha256": "25635fb93015c1af826d07d1996f38bf5f387bdc847509fc14ce85d64b734ead",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/source-activity.test.mjs",
+      "sha256": "59399d2d5679b9dacd3d98e51ec901150f634989df996759eef25fa8b3864845",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/story-pages.test.mjs",
+      "sha256": "af680cf3efb598dd228d1b597a642f2cb9b6da8e0009102b5a47f975e81d23a9",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/ui-art-effects.test.mjs",
+      "sha256": "42499bccf9a6d1f48fbb6155700c06d40d8926efbaf9f508b757d7b41d8d1812",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/ui-character-battle-art.test.mjs",
+      "sha256": "df975e7218a38ec3eec2a7a32bb5adcce02c3d09c80a5eeda54eb5f12b34a75b",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/ui-desktop-art.test.mjs",
+      "sha256": "a74d8918b4704b50e402dcca24dc3c3a6ccd4ec07bd4e613d82235892a28a302",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/ui-scene-presentation.test.mjs",
+      "sha256": "0107622e31ce0c0015864e2783e1a7989c28ced288984ef7462f1c75929767e3",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/visit-route.test.mjs",
+      "sha256": "e730571e8dc0d0bc7a1bb678f93b1fa08283c214dce5f275c896779f2f746faa",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/idle-progression.test.mjs",
+      "sha256": "6ec0a727500b11754eee67c99059a008fdcb70de7b7f4c988f9d08ff101c6844",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/idle-progression-route.test.mjs",
+      "sha256": "ca377dedf9441562837fcab1626c61d094fd3f74bb618c43bc72397de626cb29",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/idle-configuration-tradeoffs.test.mjs",
+      "sha256": "26cedde5f5a3cb34d67fc7d893e6c6013a65d7d4b232dc202d0f5907eb12aade",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/alchemy-feedback.test.mjs",
+      "sha256": "44eb5415fb25a58343b9c52cee3f588ed8089b8a55824509fdb0799a4bf8f188",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/activity-effects.test.mjs",
+      "sha256": "3e6c38b1d6d756c40cbeef2aa506a2494a244c48be2bc96c07bb31f41ed4bfb5",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "tests/equipment-effects.test.mjs",
+      "sha256": "7d67d645c39da68cf0bf0f1987d7ff092766f7f470433b38a23b0b614f5c1de1",
+      "baseline": "new ART03 input unchanged through source9 full run and final"
+    },
+    {
+      "path": "web/persistence-tests/configuration.spec.ts",
+      "sha256": "cdc8926daa4ba9ff5192f144bf653d56968e7e001cee94f25506bee0b7fc7f26",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "web/persistence-tests/configuration-store.spec.ts",
+      "sha256": "d79b55eb85c875f58a877418f134b9b3715f4b675aed40875021a1af0d68d423",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "web/persistence-tests/preparation-activity.spec.ts",
+      "sha256": "dc60f149dd22127c4e4809296ef7a5c9181a4cb01b04217ac040ce6a943528fb",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "web/persistence-tests/production-activity.spec.ts",
+      "sha256": "5e3c3dd68aec762a9ef9676e469d7c5ac97158bd9283b8a28101b433846e7f98",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "web/persistence-tests/support.ts",
+      "sha256": "e2963cdd695a0768211f9c8287564646f56802ccb70c4162445519a600210872",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "web/playwright.idle-persistence.config.ts",
+      "sha256": "5debf22381aedc033e0b10fe4b4d4ad09675c007dc703d1379e98cba4357a09d",
+      "baseline": "byte-identical c18 baseline tracked input"
+    },
+    {
+      "path": "web/playwright.persistence.config.ts",
+      "sha256": "c6b4221c4a3c0964c89657afb2ea2718b7c3d87f0566c30d78f70900b08352f6",
+      "baseline": "protected original dirty input"
+    }
+  ],
+  "reportsRelabeled": false
+}
