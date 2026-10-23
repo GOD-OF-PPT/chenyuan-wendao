@@ -1,0 +1,38 @@
+{
+  "task": "Goal4 CHECK-ART-02",
+  "status": "implementation frozen; complete UI round still in progress",
+  "sourceDigest": "285091be48b81cc103960e0d9088ef15de90472a96ab4a5e3671b9f671d27c4d",
+  "scope": "Fixed1440x900 Chromium gameplay only. No compatibility/environment/performance matrix.",
+  "actualFixes": [
+    "Configuration echoes/global marks invalidate on actual configuration semantics and activity ownership; same-run foreign A-B-A cannot revive old local feedback, normal cycle results not wiped every revision.",
+    "Private128-entry exact local request acknowledgement after real returned outcome/connection ownership closes only the original finite confirmation even if subsequent sync read fails; quota/lost reply/disposed ownership remain original retry/connection semantics.",
+    "Fate/Narrative/Life syncIssue tells player to reread with confirmed outcome retained; true unsubmitted canRetry still says retry/cancel."
+  ],
+  "notChanged": [
+    "Game/engine/economy/periods/DB9/receipt/CAS/rewards",
+    "C5 queued synchronization/write timing: original baseline combination actually passed",
+    "All old caps/bindings, full content/parameters/navigation, original13 unrelated changes/user save"
+  ],
+  "independentReviews": [
+    "final-code-review.md",
+    "final-art-review.md"
+  ],
+  "actualVerifiedSoFar": {
+    "nativeSource1": 211,
+    "nativeFiles": 24,
+    "rootRulesSource1": 790,
+    "rootRuleFiles": 59,
+    "currentConfiguration9AlreadyIncluded": 9,
+    "assetsCurrentSource2": 230,
+    "rootAndVueTypesBuild": true
+  },
+  "remainingBeforeClosing": [
+    "Full UI terminal/mapping and any actual failures repaired",
+    "C9 prior-to-layout observation readiness bounded proof and unchanged original geometry/click constraints",
+    "Final current visual scope record",
+    "Implementation commit/archive/rebuild/freeze/HTTP/readonly user progress",
+    "Closure tasks/GJ commit"
+  ],
+  "overallGoalComplete": false,
+  "nextAfterThisTask": "ART06, then original MATRIX/final package/final C-end-code-security review/human art and long-term balance"
+}

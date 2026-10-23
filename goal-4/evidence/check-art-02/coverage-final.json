@@ -1,0 +1,2844 @@
+{
+  "task": "CHECK-ART-02",
+  "runtimeDigest": "285091be48b81cc103960e0d9088ef15de90472a96ab4a5e3671b9f671d27c4d",
+  "execution": "292 actual passed in the complete source2 UI round plus1 C9 leaf after a readonly layout readiness handshake and additional real guide clicks. NOT one293-pass run.",
+  "uniqueCurrentPassed": 293,
+  "files": 29,
+  "newBusinessCases": 10,
+  "oldRegressions": 283,
+  "fullRound": {
+    "startTime": "2026-10-23T19:35:33.210Z",
+    "duration": 1323207.692,
+    "expected": 292,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "leaf": {
+    "startTime": "2026-10-23T20:00:24.135Z",
+    "duration": 11351.391,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "a quota failure freezes the resource object and same-command retry grants exactly one recorded bag arrival",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 10977,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "all six destinations are map objects and every sixteen source and six ordinary enemy remains an honest readonly choice",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 20286,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "journey progress cannot show a saved destination before 5999 plus one milliseconds and the atomic transaction",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5048,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "missing source and journey paintings retain native resource and destination objects plus legal saved work",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4167,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "one real three-second manual guard keeps the live battle unchanged until it is actually saved",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 7140,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "pause, hidden scene, refresh and old receipt pages never create a new resource reward effect",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6373,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "preference reduced effects retain real source progress and static committed results",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5099,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "real six-second journey and thirty-second gathering preserve game state until their actual deadlines",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 42120,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "rejected acceptance in all four adventure entrances blocks new intent but keeps readonly inspection and the original start receipt retry",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 17408,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "resource objects keep complete target and lifetime budgets as a draft through reselect, other category and source details",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6189,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "source progress is real and saved products enter the bag once per full cycle until its finite target",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6055,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "sword battle has opposed real actors and all seven manual moves with costs before one saved three-second turn",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4678,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "system reduced effects retain real source progress and static committed results",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4566,
+      "retries": 0
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "talisman battle has opposed real actors and all seven manual moves with costs before one saved three-second turn",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4920,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "a different native page may craft but cannot light this page furnace or replay its saved product arrival",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4924,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "a quota failure keeps the furnace cold and original-command retry saves one pill with one arrival",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4617,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "an invalid furnace image keeps real recipe, material and open-furnace controls playable",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3724,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "complete furnace settings and readonly material/product sources preserve a finite draft without starting travel or production",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5242,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "furnace phases follow the real cycle and only two atomic saved pills arrive once before the cumulative budget stops",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6093,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "hidden views, pause and a different selected recipe withdraw fire and cannot replay an already saved pill",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4210,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "one real thirty-second furnace saves actual inputs and product before presenting the completed pill",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 34660,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "preference reduced motion keeps the real furnace states and saved product without animated flame or smoke",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3293,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "refresh, explicit continuation and saved receipt pages never animate an old completed furnace as a new reward",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5257,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "system reduced motion keeps the real furnace states and saved product without animated flame or smoke",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3580,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "the forge retains its original one-cycle craft and explicit equip boundary outside the new alchemy workshop",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3401,
+      "retries": 0
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "the real alchemy objects keep all seven recipes, honest gates and complete material quantities in one fixed desktop stage",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6151,
+      "retries": 0
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A1 saving furnace finishes exactly once after pause intent and never performs a new pill effect",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4792,
+      "retries": 0
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A2 already saved furnace withdraws its short result while the native pause transaction is still pending",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5883,
+      "retries": 0
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A3 same furnace id taken by an already initialized page clears the original pill while its Game stays authoritative",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5872,
+      "retries": 0
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A4 a committed pill survives native queued snapshot abort and reconnect never repeats its inventory or result effect",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5158,
+      "retries": 0
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A5 same battle id takeover clears current motion numbers and actors before any other saved turn",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6568,
+      "retries": 0
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A6 material inspection explicit travel finite gathering and return preserve the original nondefault furnace draft",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 11376,
+      "retries": 0
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A7 a paused source and late native history delivery cannot replace another page craft progress or animate an old receipt",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 9788,
+      "retries": 0
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A1 separately authorized learning equip purchase medicine and personal response keep exact costs and independent game objects across one lawful route",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 18662,
+      "retries": 0
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A2 medicine cycle quota blocks otherwise legal equipment and visits across domains while read pages export and original retry remain available",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 13958,
+      "retries": 0
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A3 cancelling failed equipment or visit intent allows only a new explicitly confirmed action in the other domain",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 15634,
+      "retries": 0
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A4 a committed configuration survives queued native snapshot abort and cross-domain reconnect never repeats that equipment or medicine",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 13538,
+      "retries": 0
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A5 late native learning delivery cannot replace another page medicine activity or relight the previous learned scroll",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 10433,
+      "retries": 0
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A6 unsubmitted learning and medicine drafts survive people life and ordinary detail returns while a later real use updates the anchored factual inventory",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 11117,
+      "retries": 0
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A7 a paid personal response medicine is consumed exactly once and old factual readings cannot become a new recovery effect",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 11072,
+      "retries": 0
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A8 relic local saved configuration never relights its old sequence after a foreign same-run A to B to A transition",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 10795,
+      "retries": 0
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A8 skill local saved configuration never relights its old sequence after a foreign same-run A to B to A transition",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 10877,
+      "retries": 0
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A9 a finite start already committed before a real native connection closure remains a saved readonly arrangement rather than a fresh unarranged choice",
+      "project": "chromium",
+      "report": "ui-c9-layout-leaf.json",
+      "status": "passed",
+      "duration": 4691,
+      "retries": 0
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "R4 and B read surfaces keep one running activity and never turn inspection into a Game write",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 12165,
+      "retries": 0
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "another page names its takeover and only its new full cycle can award once",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2990,
+      "retries": 0
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved alchemy cycles retain material costs and net pills on every receipt page after reload",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 7609,
+      "retries": 0
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved cultivation cycles retain every complete receipt after reload without replaying rewards",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 7562,
+      "retries": 0
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved purchase cycles retain positive currency costs and exact inventory gains after reload",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 7792,
+      "retries": 0
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "paused cultivation exposes saved cycles after reload and history reading preserves the exact resume boundary",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4231,
+      "retries": 0
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "the journal returns to life reading after an old milestone is invalidated by a later explicit configuration",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3580,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A1 all twelve jade slips and real loadout slots stay read-only inside distinct game objects",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6984,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A10 learning pause and same-id takeover immediately withdraw old short effects without changing the authoritative learned record",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 9068,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A11 a foreign forge generation, hidden scene and historical receipt never light the old artifact or forge it twice",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5430,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 8266,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A2 one legal forge enters cold native saving before its exact sixty-second artifact is committed",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4970,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A3 two selected cross-school jade slips keep exact separate cycles and show only the selected credible completion",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 14887,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A4 a real thirty-second jade study saves its formal fee before the slip becomes mastered",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 35265,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A5 a real sixty-second sword manual commits one insight and never silently changes school or equipment",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 63680,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A6 a real sixty-second forge presents the selected artifact only after exact costs are saved",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 63857,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A7 all four distinct artifact objects retain full materials, owned and actual bound states without writes",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 13695,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A8 school skill and relic comparisons cancel without writes and explicit atomic confirmations retain their real scopes",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 26367,
+      "retries": 0
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A9 native acceptance and cycle quota failures keep learning and forging cold while the original exact intent remains retryable",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 54691,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "a dangerous turn pauses with the battle intact and leaves retreat reachable with its real cost",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4473,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "a trip selects without writing then really counts six seconds before one free arrival",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 11161,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "an existing trial can automate only its present gate and leaves the next gate awaiting new authorization",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4819,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "an external progress notification cancels the pending trip viewing intention immediately",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2073,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "inspecting the original paused battle arrangement restores every selected limit without changing Game",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3873,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "manual takeover cancels the pending turn and an explicit retreat alone pays eight HP",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4403,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "non-pointer pause while a trip is saving cancels its viewing intention even if that arrival commits",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2204,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "one real encounter waits thirty seconds and its first battle command waits a separate three seconds",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 38649,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "reading a later receipt page stays on that page while the next authorized turn is saved",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4936,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "sword finite strategy plays formal separate turns and its complete receipts remain after refresh",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 8464,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "talisman finite strategy plays formal separate turns and its complete receipts remain after refresh",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 8566,
+      "retries": 0
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "travel context never steals a later navigation and refreshing a trip grants no offline arrival",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2636,
+      "retries": 0
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "a failed cycle stops automatic progression and retry uses the same command exactly once",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2937,
+      "retries": 0
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "an arrangement persists without rewards and runs two real commands until the cultivation cap",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4187,
+      "retries": 0
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "an explicit second-page continuation fences the original page and does not double reward",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3851,
+      "retries": 0
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "assisted cultivation previews the budget and reserve and stops before another charge",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4317,
+      "retries": 0
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "one production cycle follows the real thirty-second wall clock and saves before showing the reward",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 47030,
+      "retries": 0
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "pause requested while persistence is held finishes that atomic cycle and never starts the next",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3209,
+      "retries": 0
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "refresh preserves the plan and requires an explicit fresh cycle instead of offline catch-up",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3366,
+      "retries": 0
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "viewing another gameplay keeps progress visible and pause cancels an unfinished cycle",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3555,
+      "retries": 0
+    },
+    {
+      "file": "idle-full-route.spec.ts",
+      "title": "a normal new life follows visible finite idle plans from the welcome through the explicitly selected ascension",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 127932,
+      "retries": 0
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a normal new life connects cultivation material gathering furnace planning and a separately confirmed foundation breakthrough",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 17862,
+      "retries": 0
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a production cycle and pause keep an inspected unsubmitted draft separate from the original furnace authorization",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5189,
+      "retries": 0
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a source cycle and pause keep target and limits in the unsubmitted draft without changing the running authorization",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4567,
+      "retries": 0
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "natural cultivation retains a nondefault cap and reserve when inspecting and refreshing an arrangement",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4067,
+      "retries": 0
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "owned relic equip shows its formal gate during battle and viewing never changes Game",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2994,
+      "retries": 0
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "owned relic equip shows its formal gate during event and viewing never changes Game",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2676,
+      "retries": 0
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "saved assisted cultivation is inspected exactly and newly confirmed edits become the real new arrangement",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3709,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "END_LIFE requires its own explicit life confirmation and uses only its formal game-month cost",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4398,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "RETIRE requires its own explicit life confirmation and uses only its formal game-month cost",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4249,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a failed arrangement retries the same preview and a different page never gets pulled back by its later completion",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3520,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a paused selected opening survives refresh, has a read-only original arrangement and grants no offline result",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 7122,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a real opening choice remains a preview, then waits six seconds and saves exactly its one medicine cost",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 14085,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a real prepared breakthrough waits thirty seconds and stops at the next realm with its actual pill and reset cultivation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 36289,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a running answer disables all answer choices but preserves details and full narrative reading",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4423,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a running visit disables new visits while people, journal and same-place inspection stay usable",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4203,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "another page changing the activity makes the frozen choice stale without refreshing its authorization",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3298,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "running retirement disables another seal while life pages and export remain available without ending the life",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3897,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "running trial entry disables another entry and foreign travel while preparation pages and equipment inspection remain usable",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3925,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "the release answer shows its actual attack bonus and never substitutes the other answer or starts a turn",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3525,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "the selected depart ending waits for explicit arrangement and preserves the sealed life without creating another",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4477,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "the selected transmit ending waits for explicit arrangement and preserves the sealed life without creating another",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4242,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "trial entry and each answer stop at the next undecided boundary without an automatic battle turn",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4870,
+      "retries": 0
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "visiting opens only the selected current-place story and a separately selected response saves once",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4665,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active buy shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3650,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active learn shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3383,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active rest shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3163,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active sell shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3899,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active study shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3105,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active use shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2901,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a middle shelf item stays visible after source navigation and reviewing its saved market plan",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4091,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a saved market order keeps an edited stock target and budgets across a real cycle commit and pause",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4559,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a saved medicine arrangement keeps edited dose limits and recovery target across its cycle and pause",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4069,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "first medicine inspection is an unsaved draft and its eventual stop is labelled as a prediction",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2893,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "viewing a saved free learning plan keeps manual defaults and each mode retains its own unsubmitted draft",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5197,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "viewing a saved manual plan starts a separate learning queue and does not inherit the manual budget",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4993,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "a medicine cycle really counts six seconds and commits no early healing",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 9858,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "cave rest uses one full thirty-second period for its original month and full restoration",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3297,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "changing school previews all three slots and cancel keeps Game and activity unchanged",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3436,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "configuration quota failure retains the original confirmation and a later cancelled failure does not block a new intent",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4151,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "finite medicine recovery saves real effects then refresh preserves the original arrangement without offline rewards",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4584,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "manual travel keeps exact finite budget and never studies until separately confirmed",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5027,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "market purchases one item per deadline and sells medicine only within explicit inventory reserve",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5280,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "trial equipment inspection keeps its location and explicit rest navigation opens recovery without starting it",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3455,
+      "retries": 0
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "two selected jade slips learn in full separate cycles then require explicit compared equipment",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5123,
+      "retries": 0
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "alchemy selects a real recipe and completes two timed furnaces atomically within cumulative budgets",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5949,
+      "retries": 0
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "all seven recipes and four relics retain their actual materials and fixed desktop controls across catalogue pages",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6398,
+      "retries": 0
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "breakthrough preparation opens one-pill planning then leaves the ordinary breakthrough for player confirmation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4265,
+      "retries": 0
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "forging takes one full cycle and retains an explicit separate equip action",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4634,
+      "retries": 0
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "one alchemy furnace follows thirty real seconds and saves its costs and pill together",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 34224,
+      "retries": 0
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "production quota failure rolls back materials and retries the same original furnace once",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3143,
+      "retries": 0
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "reopening a saved plan uses newly confirmed furnace count and target rather than the old authorization",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3651,
+      "retries": 0
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "saved alchemy limits and material reserves survive viewing pause refresh and explicit full-cycle continuation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4829,
+      "retries": 0
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "the furnace keeps the single-cycle warning when using materials tracked for a breakthrough",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2653,
+      "retries": 0
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "travelling to the cave retains the chosen recipe and explicitly drafted limits without starting it",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2986,
+      "retries": 0
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "travelling to the cave retains the nondefault relic and does not forge or equip it",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2177,
+      "retries": 0
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a committed full restore with lost delivery keeps its original modal retry enabled and replay leaves every database record unchanged",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6204,
+      "retries": 0
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a current trial victory toast lets actual view buttons receive clicks and never authorizes the next gate",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6316,
+      "retries": 0
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a fresh stale full restore confirmation still rejects another page actual new battle turn without writing",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6307,
+      "retries": 0
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a travel preview and actual one-arrival stop use travel language and inspecting does not start another action",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4003,
+      "retries": 0
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "an explicit preparation purchase retains its travel draft then trial entry stops for the player question",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 9281,
+      "retries": 0
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "manual recovery medicines available retain their reason without an empty trailing separator",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2759,
+      "retries": 0
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "manual recovery medicines unavailable retain their reason without an empty trailing separator",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3496,
+      "retries": 0
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "the actual storage reconnect reports the saved paused activity and never retries or grants an offline cycle",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4997,
+      "retries": 0
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "a normal new life reaches source planning and gathers two real cycles within the month budget",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 7258,
+      "retries": 0
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "commission income reaches a chosen stock target while cultivation is full",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5196,
+      "retries": 0
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "one source cycle waits thirty real seconds before committing its material and month",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 35295,
+      "retries": 0
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "preparation leads to an explicit trip then a material target without hidden gathering",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3257,
+      "retries": 0
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "reviewing a saved source arrangement keeps its limits and blocks conflicting expedition actions",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3819,
+      "retries": 0
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "source pause and refresh preserve intent and require a full explicit resumed cycle",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4490,
+      "retries": 0
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "source quota failure stops and retries the same single cycle without duplicated materials",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3238,
+      "retries": 0
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "a locked mortal furnace has a readable unlit scene and its complete catalogue remains readonly",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4486,
+      "retries": 0
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "an injured prepared cultivator is told to recover before traveling to the trial and inspection is readonly",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3326,
+      "retries": 0
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "resource points and their pager form a group while expanded limits remain readable and readonly",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2589,
+      "retries": 0
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the committed closing seal is anchored inside the life canvas and never crosses the reading tabs or actions",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4060,
+      "retries": 0
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the inventory keeps all real item quantities and all readonly category pages in the game stage",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5280,
+      "retries": 0
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the selected forged relic is the visible object and ownership stays distinct from its equipped slot",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 8323,
+      "retries": 0
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the selected jade book and its actual slot comparison remain readable through equipment views",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4619,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A1 every fourteen satchel objects keep real quantities full uses and protected breakthrough ownership read-only",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 19401,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A10 saved recovery short effects stop immediately for held pause and same-id external ownership without losing the real medicine outcome",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 8198,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A11 switching selected goods or buy sell mode and hidden views cannot borrow an active cycle or replay a foreign trade",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 8305,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A12 missing symbol images and both reduced-effect modes keep all three game objects and an actual medicine result readable and usable",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 12197,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A2 market counter and recovery ritual preserve their complete unsubmitted limits without using or trading",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6646,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A3 native medicine saving keeps the real body and medicine unchanged and never claims that an owned cycle needs takeover",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4329,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A4 one real buy period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 19688,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A5 one real use period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 11144,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A6 one real rest period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 34140,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A7 both medicine sales stop at the exact reserve and all five breakthrough offers stay explicitly forbidden",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 13718,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A8 native acceptance quota failures keep buy medicine and rest atomic and retry the original exact intent once",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 26732,
+      "retries": 0
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A9 native cycle quota failures keep buy medicine and rest atomic and retry the original exact intent once",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 32307,
+      "retries": 0
+    },
+    {
+      "file": "local-loading.spec.ts",
+      "title": "a manual settings reread stays reachable after a normal connection and does not execute a Game",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2273,
+      "retries": 0
+    },
+    {
+      "file": "local-loading.spec.ts",
+      "title": "delayed optional settings end with a truthful temporary choice and cannot overwrite it on late native success",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 8785,
+      "retries": 0
+    },
+    {
+      "file": "local-loading.spec.ts",
+      "title": "optional settings fallback never treats a denied Game database as a new usable save",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2142,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A1 all four factual people keep their complete known and future readings in a readonly encounter object",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 8091,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A10 visit response and closing native cycle failures stay atomic then retry the same command for their first actual result only",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 20735,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A11 changing the visited person or invitation and external same-id ownership never lends or later reclaims another objects ink",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 10663,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A12 all one hundred lawful journal rows and life-return anchors remain readable without advancing or borrowing a hidden visit",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 13958,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A13 missing portraits and scene art plus both reduced-effect modes preserve complete objects real clocks and a static saved life result",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 9845,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A14 an already open visit retirement or ascension review refuses fresh confirmation after a native sync failure until explicit reconnect and a new review",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 15660,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A2 complete responses question answers and both endings remain readonly preselected objects until their original confirmation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 17301,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A3 the factual life scroll keeps every character in all four chapters and exports without sealing or writing Game",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 8740,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A4 real visit waits its complete 6000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 10912,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A5 real response waits its complete 6000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 11239,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A6 real ending waits its complete 12000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 17827,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A7 the other ending retirement and lifespan seal only their selected factual life with no automatic new run",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 13662,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A8 preselecting another response never borrows the original running or held saving ink and pause preserves its one exact commit",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6809,
+      "retries": 0
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A9 failed acceptance keeps the original intent retryable and explicit cancellation permits only a fresh separately confirmed response",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 7099,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a completed battle retains its complete original strategy as read-only pages after the enemy is gone",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3524,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a completed encounter original authorization stays readable after its explicit retreat changes location",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4207,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a direct source-market context returns from ordinary details with its order draft intact",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4141,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a replacement life cannot inherit a supply default-view deduplication or edited market budget",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4839,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a turn saved while reading ordinary details does not replay hidden damage on return",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3206,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "an edited paused battle strategy survives ordinary goal and character inspection with the same activity",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3963,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "closing future market goods reconciles the actual object and its selected visible shelf",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4306,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "inventory sale inspection returns to its original selected object without a transaction",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3527,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "leaving and returning after a saved hit removes old actor and progress short effects",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3464,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "market buy and sell inspection retain separate drafts and never turn navigation into authorization",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4719,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "market default shows the finite order and opens its complete limits on demand",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4331,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real buy waits its full online period and atomically saves one formal outcome",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 19530,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real rest waits its full online period and atomically saves one formal outcome",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 34282,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real use waits its full online period and atomically saves one formal outcome",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 9681,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "recovery shows the body and real single-dose effect before its complete finite settings",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4496,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "repeated inventory sell inspection preserves its edited default-view draft",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3645,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "repeated inventory use inspection preserves its edited default-view draft",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3122,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "reselecting the same market object preserves the complete unconfirmed finite authorization",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3727,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "retreat labels distinguish ordinary combat without changing the battle",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3132,
+      "retries": 0
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "retreat labels distinguish the actual trial without changing the battle",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2927,
+      "retries": 0
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4446,
+      "retries": 0
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3883,
+      "retries": 0
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5218,
+      "retries": 0
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3056,
+      "retries": 0
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6027,
+      "retries": 0
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 8455,
+      "retries": 0
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "a confirmed trip rebuilds all source limits for the new location",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4285,
+      "retries": 0
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "a missing enemy painting leaves real intent and a saved manual turn usable",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2604,
+      "retries": 0
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "a real trip to a location without gathering removes the previous resource object without granting anything",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3260,
+      "retries": 0
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "all sixteen resource points and six ordinary enemies remain selectable across their real locations",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 20869,
+      "retries": 0
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "destination preview protects the scene and all six places remain reachable without implicit travel",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4642,
+      "retries": 0
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "inspecting a saved source plan cannot carry its limits into an imported new life without navigation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5687,
+      "retries": 0
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "refresh shows the saved source arrangement without a working effect until explicit continuation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3966,
+      "retries": 0
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "reselecting the current opponent and inspecting another category retain the full encounter draft",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3220,
+      "retries": 0
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "resource points expose a finite summary and retain an edited target through same-object and category inspection",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6651,
+      "retries": 0
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "the battle scene gives enemy intent room while original finite strategy and manual actions still resolve through saved turns",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5315,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "a fresh mortal has an explicit empty book catalogue without a phantom selected skill",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4706,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "a mastered book explains local comparison without asking for another learning trip",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3062,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all four relic objects compare owned effects without equipping and equipment views remain read-only",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 7055,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all four relic objects expose their real costs and ingredients and equipment views remain read-only",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6926,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all twelve books and all fourteen bag objects retain real text, quantities and complete read-only uses",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 26557,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "changing school keeps the finite learning draft and selects a real book of the current school",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4687,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "manual context receives a school change then restores the old queue with a valid current-school selection",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4942,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "missing catalogue paintings keep native jade and bag selection usable without inventing held objects",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3638,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "one selected book waits thirty real seconds and saves its actual cost before becoming learned",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 33783,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "one selected relic waits its full real forge cycle and stays separate from equipment",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 63871,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "reading another slot and book cannot replace a multi-book draft or its edited cumulative limits",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4240,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "same life realm growth keeps the selected bag item visible when newly unlocked materials move its page",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3345,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "the actual jade object and status stay inside the stage and relic paging never overlaps its last object",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4208,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "a replacement life of the same realm never receives the previous local relic budget",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4517,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "inventory offers compact quantity objects and one selected description without writing Game",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2653,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "learning keeps the finite queue and budgets in one on-demand surface",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3283,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "learning queue and nondefault limits survive loadout inspection and another main entry",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4793,
+      "retries": 0
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "selecting the same relic preserves its complete edited authorization without a Game command",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3986,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "ANSWER_TRIAL shows every genuine option while preselection and native details remain read-only",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 7019,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "DECIDE shows every genuine option while preselection and native details remain read-only",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6144,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "END shows every genuine option while preselection and native details remain read-only",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 6829,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a committed response inserts facts without moving the life reader to another fact",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3659,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a committed visit that adds no journal text preserves the exact repeated entry being read",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3481,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a duplicate journal entry keeps its own place after a saved commission",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3979,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a duplicate journal entry keeps its own place after a saved commission at the hundred-entry cap",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3822,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a pending trial question can inspect local fate without querying it as a person event",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3487,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a real six-second visit leaves a clear pending meeting and never silently chooses the response",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 10926,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a replacement life cannot inherit the previous factual chapter or unconfirmed response",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4549,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a saved victory with two actual journal entries retains the older readable entry",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3696,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a story can inspect life and ordinary details then return to its same unconfirmed response",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3298,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "all eight main entries clear the temporary life-reading return while preserving the same pending story",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 7113,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "all four people preserve every factual and known future-reading character without acting",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 8033,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "cancelled choice confirmation and a hidden pending peek cannot execute or reopen an old dialogue",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4687,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "entering question again in the same life resets the old response despite its identical semantic id",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5720,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "every life chapter retains its full source text and the exported factual life stays complete",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 9922,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "failed scene and portrait resources keep all people, complete factual reading and return controls usable",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2865,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "life chapter and exact page survive ordinary goal inspection without a Game action",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3183,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "one response waits six real seconds and persists its actual selected outcome exactly once",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 10898,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "opening life from settings inside an ordinary story detail preserves that original one-level return",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3457,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "same person and category selection preserve the current factual reading and ordinary return",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3304,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "the complete retained hundred-entry journal remains readable through its actual page controls",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 12825,
+      "retries": 0
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "the selected ending waits twelve real seconds and seals only this life with all records retained",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 16766,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "a chosen purchase preparation survives ordinary goal inspection without changing Game or authorising an activity",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2492,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "a life inspection nested inside a preparation goal returns through each original reading surface",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3262,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current foundation cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 13217,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current golden cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 14441,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current mortal cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 4349,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current nascent cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 14077,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current qi cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 9563,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current spirit cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 14225,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "foundation preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3091,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "golden preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2868,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "nascent preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2917,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "preparation comparison and original purchase choice return safely and actual import clears the old draft",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3749,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "purchase preparation keeps the currency name and source action readable in its actual card",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2083,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "qi preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2912,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "spirit preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2664,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5742,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5592,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5333,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5251,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5566,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5471,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5283,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 5390,
+      "retries": 0
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "tradeoff controls stay usable with failed drawings and do not execute a projection",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 2297,
+      "retries": 0
+    },
+    {
+      "file": "store-sync-status.spec.ts",
+      "title": "a confirmed configuration keeps its real result when queued sync closed fails and visible reconnect never reapplies it",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3614,
+      "retries": 0
+    },
+    {
+      "file": "store-sync-status.spec.ts",
+      "title": "a confirmed configuration keeps its real result when queued sync general fails and visible reconnect never reapplies it",
+      "project": "chromium",
+      "report": "ui-final.json",
+      "status": "passed",
+      "duration": 3891,
+      "retries": 0
+    }
+  ],
+  "byFile": {
+    "adventure-objects.spec.ts": 14,
+    "alchemy-workshop.spec.ts": 12,
+    "check-art-01.spec.ts": 7,
+    "check-art-02.spec.ts": 10,
+    "check-u8.spec.ts": 7,
+    "equipment-objects.spec.ts": 12,
+    "idle-adventure.spec.ts": 12,
+    "idle-cultivation.spec.ts": 8,
+    "idle-full-route.spec.ts": 1,
+    "idle-integration.spec.ts": 7,
+    "idle-milestones.spec.ts": 16,
+    "idle-preparation-active.spec.ts": 6,
+    "idle-preparation-drafts.spec.ts": 6,
+    "idle-preparation.spec.ts": 9,
+    "idle-production.spec.ts": 11,
+    "idle-review.spec.ts": 8,
+    "idle-sources.spec.ts": 7,
+    "idle-stage-ui.spec.ts": 7,
+    "inventory-objects.spec.ts": 12,
+    "local-loading.spec.ts": 3,
+    "narrative-objects.spec.ts": 14,
+    "stage-check.spec.ts": 20,
+    "stage-r1.spec.ts": 6,
+    "stage-r2.spec.ts": 10,
+    "stage-r3-layout.spec.ts": 13,
+    "stage-r3.spec.ts": 5,
+    "stage-r4.spec.ts": 24,
+    "stage-u8-b.spec.ts": 24,
+    "store-sync-status.spec.ts": 2
+  },
+  "zeroSkipRetryFlaky": true,
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "project": "chromium",
+  "testTimingPolicy": "New10 original60000ms test /8000ms expect /15000ms navigation unchanged; all pre-existing timeout values retained, including existing90000ms real60sec cases and rest case. No sleep/force/clock advance in C9 layout handshake.",
+  "inputProof": "c9-leaf-ast-isolation.json",
+  "originalInputSnapshot": "source2-full-inputs/inputs.json",
+  "currentTestInputHashes": {
+    "tests/action-feedback-fixtures.mjs": {
+      "sha256": "caae2948278f71852bab474874b32d3a7b6e2bd4b0a3b70bbc346337b6dc0f34",
+      "bytes": 2080
+    },
+    "tests/full-route.mjs": {
+      "sha256": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321",
+      "bytes": 5046
+    },
+    "web/e2e/adventure-objects.spec.ts": {
+      "sha256": "04a7851062b0fb4a0565ad841369cafc40c4f2bfc64b8d85246eaa86909dd9a8",
+      "bytes": 38762
+    },
+    "web/e2e/alchemy-workshop.spec.ts": {
+      "sha256": "a161211333862c75dcbdecc72213bf635ed54d80c5fd080d6d46dfe210c2faa4",
+      "bytes": 29184
+    },
+    "web/e2e/check-art-01.spec.ts": {
+      "sha256": "3b35744e5aa320e83e916c0279536f3b3f30387813d9faeb4f85b9b8005887a5",
+      "bytes": 27192
+    },
+    "web/e2e/check-art-02.spec.ts": {
+      "sha256": "625991bebb3a4c7be5773aa0f6df4cab531c494a0ad719b4161c153d94e747b4",
+      "bytes": 45689
+    },
+    "web/e2e/check-u8.spec.ts": {
+      "sha256": "ba772ae1cef0f273cf52ee67a67841db05e518735d66c603f41312db59af81ef",
+      "bytes": 25210
+    },
+    "web/e2e/equipment-objects.spec.ts": {
+      "sha256": "6b0e82dc05ca02a95fb385e7e031d4166c7bb9e0d992e744b7ec40d083023ae9",
+      "bytes": 62885
+    },
+    "web/e2e/idle-adventure.spec.ts": {
+      "sha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "bytes": 17393
+    },
+    "web/e2e/idle-cultivation.spec.ts": {
+      "sha256": "38200a0ac5101459dfd4c5ebfe7dd94bd7c3d91b709adf6b7ac925337c95b83a",
+      "bytes": 12574
+    },
+    "web/e2e/idle-full-route.spec.ts": {
+      "sha256": "48181c31f16c56bcc6d3cf40d6c6bd2f698d6dec9ffeb174b6405eb1d2852bc6",
+      "bytes": 18664
+    },
+    "web/e2e/idle-integration.spec.ts": {
+      "sha256": "6f0be3dfd2b086c188fea2173a310b4d81e209a7b693e493b4cc8266377c10b2",
+      "bytes": 15363
+    },
+    "web/e2e/idle-milestones.spec.ts": {
+      "sha256": "5896cce3a91226764743bcff855110af2f3953824a1ac8d2cc518a533e0cbc8b",
+      "bytes": 26836
+    },
+    "web/e2e/idle-preparation-active.spec.ts": {
+      "sha256": "848d023934dd8b59b549f1daaabe3aed59e78856be13f98d2f9e955c934e6afc",
+      "bytes": 3178
+    },
+    "web/e2e/idle-preparation-drafts.spec.ts": {
+      "sha256": "665a9ce859e93afd1684bcd14451cc16a8966ceb2bb253142eec996af8acf8d2",
+      "bytes": 12427
+    },
+    "web/e2e/idle-preparation.spec.ts": {
+      "sha256": "5f1a7c8c591c7611a1bcdddfcc69b86fa97c858381a4664d42b0351a1104da1f",
+      "bytes": 15048
+    },
+    "web/e2e/idle-production.spec.ts": {
+      "sha256": "6e1d97db85f441ec756fef3d5f8703e181e4943351541faf6eba0422a5ee2c2f",
+      "bytes": 19100
+    },
+    "web/e2e/idle-review.spec.ts": {
+      "sha256": "a01f43c5ebc9bd38d074eaf1aa9048fb072f2726b45fc0a1334c8b70b724b413",
+      "bytes": 19510
+    },
+    "web/e2e/idle-sources.spec.ts": {
+      "sha256": "3b8b38f986bd734fc854f32afb9890286adc644c357b7bcc57b18154d1590212",
+      "bytes": 12905
+    },
+    "web/e2e/idle-stage-ui.spec.ts": {
+      "sha256": "bef6800aa68903785cdb579d1537d0b79184456c8343b1c6fa61f1df08010ced",
+      "bytes": 11794
+    },
+    "web/e2e/inventory-objects.spec.ts": {
+      "sha256": "ddd1560e580f715a65202b6da5c35f7648182560858a2647697d4b767cba5c85",
+      "bytes": 39322
+    },
+    "web/e2e/local-loading.spec.ts": {
+      "sha256": "ed17480f40f22b0380d6510fd17c9796fe549f42618690cfb206ad079c12d21c",
+      "bytes": 5304
+    },
+    "web/e2e/narrative-objects.spec.ts": {
+      "sha256": "875175e351278d2af8de111a51e24dd9d5bd3a6467190849c6f0ab49e381b78a",
+      "bytes": 46781
+    },
+    "web/e2e/stage-check.spec.ts": {
+      "sha256": "eecc293534c806f483fd62e39d3d86feb50a7be86b597405b7ef0900e4605866",
+      "bytes": 26600
+    },
+    "web/e2e/stage-r1.spec.ts": {
+      "sha256": "160139b6c9e229ccb8cf94bb909b892f02eab52631bdfd59e3c290d744235e90",
+      "bytes": 12936
+    },
+    "web/e2e/stage-r2.spec.ts": {
+      "sha256": "099ac213d92b4b60f5ed7896bed47e96c92a417d0f59da368f6791b57cf68fdb",
+      "bytes": 18387
+    },
+    "web/e2e/stage-r3-layout.spec.ts": {
+      "sha256": "2538eaacb69df8ec68f59000ae7b0633ab91256690f01b0e65d99c2882ed0407",
+      "bytes": 23212
+    },
+    "web/e2e/stage-r3.spec.ts": {
+      "sha256": "f8f8b705f5ab8d2b95e791aeec83599bd3c7522efd396f55080be37ed5d59ea3",
+      "bytes": 8152
+    },
+    "web/e2e/stage-r4.spec.ts": {
+      "sha256": "ced8c6206c8d2e3fc63cade23bbf73363ed012f05d75d5375964e05d7c4a056a",
+      "bytes": 33309
+    },
+    "web/e2e/stage-support.ts": {
+      "sha256": "d6658eb0adb9f9294ddb0805dd1c1f3654361602c54ed8f6dd06f0246813f23c",
+      "bytes": 3262
+    },
+    "web/e2e/stage-u8-b.spec.ts": {
+      "sha256": "eaed0a772d67cbe10d12fc38d5b9ad48801bb40ba7987c489b5c55acd548f8f7",
+      "bytes": 13552
+    },
+    "web/e2e/store-sync-status.spec.ts": {
+      "sha256": "00481c92456afadf0a870d479f41632e8de2d610a5999f12442a7383e093f9b0",
+      "bytes": 8029
+    },
+    "web/e2e/support.ts": {
+      "sha256": "e8d4a73c75b84343fcdb2cfb7656dc93dd8ee65006a8a075b6a0f9ffad74370e",
+      "bytes": 11151
+    },
+    "web/playwright.idle.config.ts": {
+      "sha256": "8ec28f38869305db5b7c006e0ed2dfe5f7b5c8da450e58d423efeb5a8afb9f8e",
+      "bytes": 1161
+    }
+  },
+  "postcommitBuildNote": "The original tested build snapshot/report labels are retained. Root owns the later c758838 postcommit metadata/rebuild proof; a changed Git provenance label is not a new test execution.",
+  "excluded": "39 historical UI files/9 historical native files, remaining originalMATRIX normal-route/recovery/performance/compatibility-last responsibilities, overall art/long-term balance and human acceptance remain open. No compatibility or environment/performance matrix executed."
+}

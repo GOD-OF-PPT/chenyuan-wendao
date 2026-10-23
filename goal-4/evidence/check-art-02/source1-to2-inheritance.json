@@ -1,0 +1,36 @@
+{
+  "fromSource": "c5dac755a8e9aec198605eb31be33684ceecbc81b322f2f0234c233125664eea",
+  "toSource": "285091be48b81cc103960e0d9088ef15de90472a96ab4a5e3671b9f671d27c4d",
+  "sameRuntimeSources": 223,
+  "changedRuntimeSources": [
+    "web/src/FateCatalogue.vue",
+    "web/src/LifeCatalogue.vue",
+    "web/src/NarrativePanel.vue"
+  ],
+  "inverseExact": {
+    "web/src/FateCatalogue.vue": "ff1dc84acd0d262547c1e06849b51623ed9c57772398f7d92dbeff8fcd6a1988",
+    "web/src/LifeCatalogue.vue": "7bc89482c6653631ad4c05a6221083281d74e349a927a914ff8d5a84fb9210f2",
+    "web/src/NarrativePanel.vue": "dcf687e6439306e6c0bbddfc77469c9584e26025f7faf374389d73cb95ec75e6"
+  },
+  "changedCheckInput": [
+    "web/e2e/check-art-02.spec.ts"
+  ],
+  "native": {
+    "originalReport": "artifacts/goal-4/check-art-02/native-full-source1.json",
+    "passed": 211,
+    "files": 24,
+    "newWitnessStoreUnchanged": true,
+    "sameAllNativeInputs": true,
+    "dependency": "Fixed native harness imports Store/Repository and rule modules, not the three SFC consumers. No init/operation/delivery/clock/DB/command changes after native run.",
+    "claim": "source1 actual211 inherited by unchanged tested dependencies; not source2 rerun"
+  },
+  "rules": {
+    "originalReport": "artifacts/goal-4/check-art-02/core-source1.log",
+    "originalActual": 790,
+    "inherited": 781,
+    "currentAllSourceConfiguration9": "artifacts/goal-4/check-art-02/configuration-source2.json",
+    "alreadyIncludedIn790": true
+  },
+  "assets": "source2 current full230 actually passed; source1 original230 retained",
+  "ui": "source2 current293 unique=original complete round292 actual passed plus C9 leaf1, not one293-pass run; see coverage-final.json and c9-leaf-ast-isolation.json"
+}

@@ -1,0 +1,581 @@
+{
+  "runtimeDigest": "285091be48b81cc103960e0d9088ef15de90472a96ab4a5e3671b9f671d27c4d",
+  "beforeSHA256": "8293df91834f4f80b1a64cbda0e93c9dd00c783e8bd47dadf54d2ee7edee5023",
+  "afterSHA256": "625991bebb3a4c7be5773aa0f6df4cab531c494a0ad719b4161c153d94e747b4",
+  "statements": 54,
+  "changed": [
+    {
+      "index": 27,
+      "kind": "ExpressionStatement",
+      "title": "CHECK2-A9 a finite start already committed before a real native connection closure remains a saved readonly arrangement rather than a fresh unarranged choice",
+      "before": "46557abba1e0d3a91dd8de10a47e67a0d18cc533d6a943ffd638619fa5a7c695",
+      "after": "0a4f97fbf8a193baf67fed7329f90710a0f88d95fe97903b55effd722cc973ba",
+      "unchanged": false
+    }
+  ],
+  "unchanged": [
+    {
+      "index": 0,
+      "kind": "ImportDeclaration",
+      "title": null,
+      "before": "cae8e648016f64a454d66d95c4edf66eb849fca19059e8f66a10b4ea374141a1",
+      "after": "cae8e648016f64a454d66d95c4edf66eb849fca19059e8f66a10b4ea374141a1",
+      "unchanged": true
+    },
+    {
+      "index": 1,
+      "kind": "ImportDeclaration",
+      "title": null,
+      "before": "9cc9ab2ebd5f41a46714239d83f3de79219343381f548dedb3f54a43e14fc6a2",
+      "after": "9cc9ab2ebd5f41a46714239d83f3de79219343381f548dedb3f54a43e14fc6a2",
+      "unchanged": true
+    },
+    {
+      "index": 2,
+      "kind": "ImportDeclaration",
+      "title": null,
+      "before": "22470a3a10ffa2f12ee5d00a27f041791e3b3fe8ea90bceef673ffaffc5da327",
+      "after": "22470a3a10ffa2f12ee5d00a27f041791e3b3fe8ea90bceef673ffaffc5da327",
+      "unchanged": true
+    },
+    {
+      "index": 3,
+      "kind": "ImportDeclaration",
+      "title": null,
+      "before": "55e2f1d379a0b9ae47e6742d42d4836330a226df774a5e31c560ca4d2eb22e85",
+      "after": "55e2f1d379a0b9ae47e6742d42d4836330a226df774a5e31c560ca4d2eb22e85",
+      "unchanged": true
+    },
+    {
+      "index": 4,
+      "kind": "ImportDeclaration",
+      "title": null,
+      "before": "b396509d8fb205e666d92ecb7243af144e47d579df039cd83739cfbf66721e4e",
+      "after": "b396509d8fb205e666d92ecb7243af144e47d579df039cd83739cfbf66721e4e",
+      "unchanged": true
+    },
+    {
+      "index": 5,
+      "kind": "ImportDeclaration",
+      "title": null,
+      "before": "3fcd18e62711e2eb1cad64fc467c97b3fb2e054b01b47fde267947d5bc24dccd",
+      "after": "3fcd18e62711e2eb1cad64fc467c97b3fb2e054b01b47fde267947d5bc24dccd",
+      "unchanged": true
+    },
+    {
+      "index": 6,
+      "kind": "ImportDeclaration",
+      "title": null,
+      "before": "2a948911b8165023cdf9e3cfc311f2d0bdac25f44ecb437e79413e2ee940299b",
+      "after": "2a948911b8165023cdf9e3cfc311f2d0bdac25f44ecb437e79413e2ee940299b",
+      "unchanged": true
+    },
+    {
+      "index": 7,
+      "kind": "ImportDeclaration",
+      "title": null,
+      "before": "ab0b3a28d8c717054598952cd32622e913496629c686963dd5332caf5ca7498c",
+      "after": "ab0b3a28d8c717054598952cd32622e913496629c686963dd5332caf5ca7498c",
+      "unchanged": true
+    },
+    {
+      "index": 8,
+      "kind": "ImportDeclaration",
+      "title": null,
+      "before": "7f2327c5163d1b4847b035f5d97b99c0d2829bcdd1b6590b2fc2959a815e8aec",
+      "after": "7f2327c5163d1b4847b035f5d97b99c0d2829bcdd1b6590b2fc2959a815e8aec",
+      "unchanged": true
+    },
+    {
+      "index": 9,
+      "kind": "ExpressionStatement",
+      "title": null,
+      "before": "c42f1d4cb812158fc50717fbe60b10103c4e8b21c3d795b8ef5ac1bce25b33ae",
+      "after": "c42f1d4cb812158fc50717fbe60b10103c4e8b21c3d795b8ef5ac1bce25b33ae",
+      "unchanged": true
+    },
+    {
+      "index": 10,
+      "kind": "FirstStatement",
+      "title": null,
+      "before": "8d9330806eff5c041bb717dcb95237eba19bd1893e3bbb20e5235535617f3c33",
+      "after": "8d9330806eff5c041bb717dcb95237eba19bd1893e3bbb20e5235535617f3c33",
+      "unchanged": true
+    },
+    {
+      "index": 11,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "ca8af3097c827f070a8f251c80680180d353b356357e47101a2281069b2d49f1",
+      "after": "ca8af3097c827f070a8f251c80680180d353b356357e47101a2281069b2d49f1",
+      "unchanged": true
+    },
+    {
+      "index": 12,
+      "kind": "ExpressionStatement",
+      "title": null,
+      "before": "b267f12a1390e1b313e8b23e135de95355eee2a051eb55b68189977a600114af",
+      "after": "b267f12a1390e1b313e8b23e135de95355eee2a051eb55b68189977a600114af",
+      "unchanged": true
+    },
+    {
+      "index": 13,
+      "kind": "ExpressionStatement",
+      "title": null,
+      "before": "a7cbd1d42612bf35042dc7416f7bb5890eb66f3505492387a4c9ab6f7dc0d8e5",
+      "after": "a7cbd1d42612bf35042dc7416f7bb5890eb66f3505492387a4c9ab6f7dc0d8e5",
+      "unchanged": true
+    },
+    {
+      "index": 14,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "7b9a7b37d693d9c3c5298fc59e6c12cd978c9186e39333829dfb6ce8932fd5de",
+      "after": "7b9a7b37d693d9c3c5298fc59e6c12cd978c9186e39333829dfb6ce8932fd5de",
+      "unchanged": true
+    },
+    {
+      "index": 15,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "878dc16d99d108dc1f4392a3a7d4239c59fe71b56e7be1e65a82f6dbbc301648",
+      "after": "878dc16d99d108dc1f4392a3a7d4239c59fe71b56e7be1e65a82f6dbbc301648",
+      "unchanged": true
+    },
+    {
+      "index": 16,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "b70905d6e871d45727a65c9c14ab923344c638f5fc527277e403580ff5c52c03",
+      "after": "b70905d6e871d45727a65c9c14ab923344c638f5fc527277e403580ff5c52c03",
+      "unchanged": true
+    },
+    {
+      "index": 17,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "2e9df389388f7635a6db74d95e9e8092dd2a6026577eeb4c11f6ea845f3518d1",
+      "after": "2e9df389388f7635a6db74d95e9e8092dd2a6026577eeb4c11f6ea845f3518d1",
+      "unchanged": true
+    },
+    {
+      "index": 18,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "283aa948aa29bccbff24aad98e5858b025d19ac702448c8d2bf9dbd8d6cc1d47",
+      "after": "283aa948aa29bccbff24aad98e5858b025d19ac702448c8d2bf9dbd8d6cc1d47",
+      "unchanged": true
+    },
+    {
+      "index": 19,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "7bfae289200202cce57cb11fdfc0a5abd9858682da95c3e0ca7dc1d3ab866731",
+      "after": "7bfae289200202cce57cb11fdfc0a5abd9858682da95c3e0ca7dc1d3ab866731",
+      "unchanged": true
+    },
+    {
+      "index": 20,
+      "kind": "FirstStatement",
+      "title": null,
+      "before": "da9fea31152ec5247bd9fe5fc68e4382ecbf65c2a10c0e36dfa32727d06e6114",
+      "after": "da9fea31152ec5247bd9fe5fc68e4382ecbf65c2a10c0e36dfa32727d06e6114",
+      "unchanged": true
+    },
+    {
+      "index": 21,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "a4307cabccdeeab54ed728119d5510486f38cee15e51033cc4a0f4d95029d403",
+      "after": "a4307cabccdeeab54ed728119d5510486f38cee15e51033cc4a0f4d95029d403",
+      "unchanged": true
+    },
+    {
+      "index": 22,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "056da9de04a15545a942bdf05572899c7a858dd50f591d99e0ee3bc26b9fd212",
+      "after": "056da9de04a15545a942bdf05572899c7a858dd50f591d99e0ee3bc26b9fd212",
+      "unchanged": true
+    },
+    {
+      "index": 23,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "b4b86275df907258da24115ed3be64349621989c63a07668ccdb97bde45007df",
+      "after": "b4b86275df907258da24115ed3be64349621989c63a07668ccdb97bde45007df",
+      "unchanged": true
+    },
+    {
+      "index": 24,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "518acafcf8c025a2091f634153bcdf8848ca75bef21bfed465ab7f5d6a626d31",
+      "after": "518acafcf8c025a2091f634153bcdf8848ca75bef21bfed465ab7f5d6a626d31",
+      "unchanged": true
+    },
+    {
+      "index": 25,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "6c0d37b516bff5f76162d547a07c5fd69d486e392df1af84d2b1814108c071cf",
+      "after": "6c0d37b516bff5f76162d547a07c5fd69d486e392df1af84d2b1814108c071cf",
+      "unchanged": true
+    },
+    {
+      "index": 26,
+      "kind": "ForOfStatement",
+      "title": null,
+      "before": "be352c3310aaa43412e839b8aaa3dbb2c16887095308150534051f878244ffdb",
+      "after": "be352c3310aaa43412e839b8aaa3dbb2c16887095308150534051f878244ffdb",
+      "unchanged": true
+    },
+    {
+      "index": 28,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "1fc451dcff57fd75f96b5c63fd74ef64c225ede31a7fad97b2784fe3bb558235",
+      "after": "1fc451dcff57fd75f96b5c63fd74ef64c225ede31a7fad97b2784fe3bb558235",
+      "unchanged": true
+    },
+    {
+      "index": 29,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "7fd16ec4ed5dc55f7556ebbafd75467c7f2170eea23c7713347b119f19d5c953",
+      "after": "7fd16ec4ed5dc55f7556ebbafd75467c7f2170eea23c7713347b119f19d5c953",
+      "unchanged": true
+    },
+    {
+      "index": 30,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "53d9cd0bb24c762983e8e9181e62bae4ec12a54c59ec17273ff60da3255040f6",
+      "after": "53d9cd0bb24c762983e8e9181e62bae4ec12a54c59ec17273ff60da3255040f6",
+      "unchanged": true
+    },
+    {
+      "index": 31,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "fd6f0499ef2b91944600b7a2f07f47d1c01d7eb4f2c2abf507942e5dd84457d4",
+      "after": "fd6f0499ef2b91944600b7a2f07f47d1c01d7eb4f2c2abf507942e5dd84457d4",
+      "unchanged": true
+    },
+    {
+      "index": 32,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "7dfdeb2205fef008f5bdcba6883e9851c00b8a9f715ac3f6d55af9ccf2bf0899",
+      "after": "7dfdeb2205fef008f5bdcba6883e9851c00b8a9f715ac3f6d55af9ccf2bf0899",
+      "unchanged": true
+    },
+    {
+      "index": 33,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "d5b90ede1479d098a41949981f81c173a02ae6dfb232fa3c8c366595bf1f61bf",
+      "after": "d5b90ede1479d098a41949981f81c173a02ae6dfb232fa3c8c366595bf1f61bf",
+      "unchanged": true
+    },
+    {
+      "index": 34,
+      "kind": "ExpressionStatement",
+      "title": "CHECK2-A5 late native learning delivery cannot replace another page medicine activity or relight the previous learned scroll",
+      "before": "7f1e93320d6b97dbc0b1eeb23cb9898d5413756bef9c680b44d54bfc05977e76",
+      "after": "7f1e93320d6b97dbc0b1eeb23cb9898d5413756bef9c680b44d54bfc05977e76",
+      "unchanged": true
+    },
+    {
+      "index": 35,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "1e289ee9ed5e7bbc40edf7807af9c821b3415cc87a54cd304850d8f8d270b8fa",
+      "after": "1e289ee9ed5e7bbc40edf7807af9c821b3415cc87a54cd304850d8f8d270b8fa",
+      "unchanged": true
+    },
+    {
+      "index": 36,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "abaecf1a605c499451810edab5893075f400eff484b4743d90bbe9157b744a0c",
+      "after": "abaecf1a605c499451810edab5893075f400eff484b4743d90bbe9157b744a0c",
+      "unchanged": true
+    },
+    {
+      "index": 37,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "7aa1ade663cb047149d60e5d3d310c59f781097604f636683e00f66c6e0e4170",
+      "after": "7aa1ade663cb047149d60e5d3d310c59f781097604f636683e00f66c6e0e4170",
+      "unchanged": true
+    },
+    {
+      "index": 38,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "3ecd225099b03b4add8eb4ab41c48bc7f5ae2009531066cbce103f441ac27a90",
+      "after": "3ecd225099b03b4add8eb4ab41c48bc7f5ae2009531066cbce103f441ac27a90",
+      "unchanged": true
+    },
+    {
+      "index": 39,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "b698c0d89f25e62f01d041a9dea0c12abb65b7492a4ec58b31fd60a608b8ac02",
+      "after": "b698c0d89f25e62f01d041a9dea0c12abb65b7492a4ec58b31fd60a608b8ac02",
+      "unchanged": true
+    },
+    {
+      "index": 40,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "702fb189f88c0aa577abd42c8777ced0a72de319561a456a0d163a00a9093fb0",
+      "after": "702fb189f88c0aa577abd42c8777ced0a72de319561a456a0d163a00a9093fb0",
+      "unchanged": true
+    },
+    {
+      "index": 41,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "dbc8ac163bb8a3d110ca554e21fe7e4aece144a46b65c2a677a6ca10c21a4067",
+      "after": "dbc8ac163bb8a3d110ca554e21fe7e4aece144a46b65c2a677a6ca10c21a4067",
+      "unchanged": true
+    },
+    {
+      "index": 42,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "7f2af188c9f300349288f51153761d97a6c2d42055d4e502bb2101574e459385",
+      "after": "7f2af188c9f300349288f51153761d97a6c2d42055d4e502bb2101574e459385",
+      "unchanged": true
+    },
+    {
+      "index": 43,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "14fc069ee82940e8f787de2d9fa892db4afda1a59d130502655625526a5e29f9",
+      "after": "14fc069ee82940e8f787de2d9fa892db4afda1a59d130502655625526a5e29f9",
+      "unchanged": true
+    },
+    {
+      "index": 44,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "ac728ee60aaa712bf1931d034ac45401183235769f7ab347e5ca0f95d432d845",
+      "after": "ac728ee60aaa712bf1931d034ac45401183235769f7ab347e5ca0f95d432d845",
+      "unchanged": true
+    },
+    {
+      "index": 45,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "64b03498989120ce9a7b26ea766f8299ce597b260b34a890ca7ebe6e1911f780",
+      "after": "64b03498989120ce9a7b26ea766f8299ce597b260b34a890ca7ebe6e1911f780",
+      "unchanged": true
+    },
+    {
+      "index": 46,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "02dc318872ede628c7628fc4c82f1f4482b45fb5c0a2588785b1730c84f13a03",
+      "after": "02dc318872ede628c7628fc4c82f1f4482b45fb5c0a2588785b1730c84f13a03",
+      "unchanged": true
+    },
+    {
+      "index": 47,
+      "kind": "ExpressionStatement",
+      "title": "CHECK2-A1 separately authorized learning equip purchase medicine and personal response keep exact costs and independent game objects across one lawful route",
+      "before": "e4f48cda0849d7d7f6b1d91ec57e3b404dd8da671a59375753d6aad9c3286653",
+      "after": "e4f48cda0849d7d7f6b1d91ec57e3b404dd8da671a59375753d6aad9c3286653",
+      "unchanged": true
+    },
+    {
+      "index": 48,
+      "kind": "ExpressionStatement",
+      "title": "CHECK2-A2 medicine cycle quota blocks otherwise legal equipment and visits across domains while read pages export and original retry remain available",
+      "before": "6bcd647e3ea74b49c30915df0a0f95d2bf354f5bb237b35c64182f13f9115f8a",
+      "after": "6bcd647e3ea74b49c30915df0a0f95d2bf354f5bb237b35c64182f13f9115f8a",
+      "unchanged": true
+    },
+    {
+      "index": 49,
+      "kind": "ExpressionStatement",
+      "title": "CHECK2-A3 cancelling failed equipment or visit intent allows only a new explicitly confirmed action in the other domain",
+      "before": "da6ce0280388e06cc54b6e8adf7cdb591a5b876ada904a1ec63f8e481e595513",
+      "after": "da6ce0280388e06cc54b6e8adf7cdb591a5b876ada904a1ec63f8e481e595513",
+      "unchanged": true
+    },
+    {
+      "index": 50,
+      "kind": "FunctionDeclaration",
+      "title": null,
+      "before": "679d4a7f49d0ebabce8438c5f10049ecb2350b457449573c30083fe36e762f8b",
+      "after": "679d4a7f49d0ebabce8438c5f10049ecb2350b457449573c30083fe36e762f8b",
+      "unchanged": true
+    },
+    {
+      "index": 51,
+      "kind": "ExpressionStatement",
+      "title": "CHECK2-A4 a committed configuration survives queued native snapshot abort and cross-domain reconnect never repeats that equipment or medicine",
+      "before": "596dc300007d649f4ed084ec62c1c6b819c3e5860878445728f8ce66c581cb7f",
+      "after": "596dc300007d649f4ed084ec62c1c6b819c3e5860878445728f8ce66c581cb7f",
+      "unchanged": true
+    },
+    {
+      "index": 52,
+      "kind": "ExpressionStatement",
+      "title": "CHECK2-A6 unsubmitted learning and medicine drafts survive people life and ordinary detail returns while a later real use updates the anchored factual inventory",
+      "before": "342c82d413de8b18fb5a17927b54efe735117f3bb9b9b00d424db705abd03540",
+      "after": "342c82d413de8b18fb5a17927b54efe735117f3bb9b9b00d424db705abd03540",
+      "unchanged": true
+    },
+    {
+      "index": 53,
+      "kind": "ExpressionStatement",
+      "title": "CHECK2-A7 a paid personal response medicine is consumed exactly once and old factual readings cannot become a new recovery effect",
+      "before": "abc1a186ed07e7295808c3ef2f7f1e0366de4c524467a33e2c95c6d89116aae8",
+      "after": "abc1a186ed07e7295808c3ef2f7f1e0366de4c524467a33e2c95c6d89116aae8",
+      "unchanged": true
+    }
+  ],
+  "unchangedFiles": {
+    "tests/action-feedback-fixtures.mjs": {
+      "before": "caae2948278f71852bab474874b32d3a7b6e2bd4b0a3b70bbc346337b6dc0f34",
+      "after": "caae2948278f71852bab474874b32d3a7b6e2bd4b0a3b70bbc346337b6dc0f34"
+    },
+    "tests/full-route.mjs": {
+      "before": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321",
+      "after": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321"
+    },
+    "web/build-report/build.json": {
+      "before": "f5378709f5abe4451be4642b34a046211fe0513d5cdea3a2c054fcf58425ef9e",
+      "after": "f5378709f5abe4451be4642b34a046211fe0513d5cdea3a2c054fcf58425ef9e"
+    },
+    "web/e2e/adventure-objects.spec.ts": {
+      "before": "04a7851062b0fb4a0565ad841369cafc40c4f2bfc64b8d85246eaa86909dd9a8",
+      "after": "04a7851062b0fb4a0565ad841369cafc40c4f2bfc64b8d85246eaa86909dd9a8"
+    },
+    "web/e2e/alchemy-workshop.spec.ts": {
+      "before": "a161211333862c75dcbdecc72213bf635ed54d80c5fd080d6d46dfe210c2faa4",
+      "after": "a161211333862c75dcbdecc72213bf635ed54d80c5fd080d6d46dfe210c2faa4"
+    },
+    "web/e2e/check-art-01.spec.ts": {
+      "before": "3b35744e5aa320e83e916c0279536f3b3f30387813d9faeb4f85b9b8005887a5",
+      "after": "3b35744e5aa320e83e916c0279536f3b3f30387813d9faeb4f85b9b8005887a5"
+    },
+    "web/e2e/check-u8.spec.ts": {
+      "before": "ba772ae1cef0f273cf52ee67a67841db05e518735d66c603f41312db59af81ef",
+      "after": "ba772ae1cef0f273cf52ee67a67841db05e518735d66c603f41312db59af81ef"
+    },
+    "web/e2e/equipment-objects.spec.ts": {
+      "before": "6b0e82dc05ca02a95fb385e7e031d4166c7bb9e0d992e744b7ec40d083023ae9",
+      "after": "6b0e82dc05ca02a95fb385e7e031d4166c7bb9e0d992e744b7ec40d083023ae9"
+    },
+    "web/e2e/idle-adventure.spec.ts": {
+      "before": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "after": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7"
+    },
+    "web/e2e/idle-cultivation.spec.ts": {
+      "before": "38200a0ac5101459dfd4c5ebfe7dd94bd7c3d91b709adf6b7ac925337c95b83a",
+      "after": "38200a0ac5101459dfd4c5ebfe7dd94bd7c3d91b709adf6b7ac925337c95b83a"
+    },
+    "web/e2e/idle-full-route.spec.ts": {
+      "before": "48181c31f16c56bcc6d3cf40d6c6bd2f698d6dec9ffeb174b6405eb1d2852bc6",
+      "after": "48181c31f16c56bcc6d3cf40d6c6bd2f698d6dec9ffeb174b6405eb1d2852bc6"
+    },
+    "web/e2e/idle-integration.spec.ts": {
+      "before": "6f0be3dfd2b086c188fea2173a310b4d81e209a7b693e493b4cc8266377c10b2",
+      "after": "6f0be3dfd2b086c188fea2173a310b4d81e209a7b693e493b4cc8266377c10b2"
+    },
+    "web/e2e/idle-milestones.spec.ts": {
+      "before": "5896cce3a91226764743bcff855110af2f3953824a1ac8d2cc518a533e0cbc8b",
+      "after": "5896cce3a91226764743bcff855110af2f3953824a1ac8d2cc518a533e0cbc8b"
+    },
+    "web/e2e/idle-preparation-active.spec.ts": {
+      "before": "848d023934dd8b59b549f1daaabe3aed59e78856be13f98d2f9e955c934e6afc",
+      "after": "848d023934dd8b59b549f1daaabe3aed59e78856be13f98d2f9e955c934e6afc"
+    },
+    "web/e2e/idle-preparation-drafts.spec.ts": {
+      "before": "665a9ce859e93afd1684bcd14451cc16a8966ceb2bb253142eec996af8acf8d2",
+      "after": "665a9ce859e93afd1684bcd14451cc16a8966ceb2bb253142eec996af8acf8d2"
+    },
+    "web/e2e/idle-preparation.spec.ts": {
+      "before": "5f1a7c8c591c7611a1bcdddfcc69b86fa97c858381a4664d42b0351a1104da1f",
+      "after": "5f1a7c8c591c7611a1bcdddfcc69b86fa97c858381a4664d42b0351a1104da1f"
+    },
+    "web/e2e/idle-production.spec.ts": {
+      "before": "6e1d97db85f441ec756fef3d5f8703e181e4943351541faf6eba0422a5ee2c2f",
+      "after": "6e1d97db85f441ec756fef3d5f8703e181e4943351541faf6eba0422a5ee2c2f"
+    },
+    "web/e2e/idle-review.spec.ts": {
+      "before": "a01f43c5ebc9bd38d074eaf1aa9048fb072f2726b45fc0a1334c8b70b724b413",
+      "after": "a01f43c5ebc9bd38d074eaf1aa9048fb072f2726b45fc0a1334c8b70b724b413"
+    },
+    "web/e2e/idle-sources.spec.ts": {
+      "before": "3b8b38f986bd734fc854f32afb9890286adc644c357b7bcc57b18154d1590212",
+      "after": "3b8b38f986bd734fc854f32afb9890286adc644c357b7bcc57b18154d1590212"
+    },
+    "web/e2e/idle-stage-ui.spec.ts": {
+      "before": "bef6800aa68903785cdb579d1537d0b79184456c8343b1c6fa61f1df08010ced",
+      "after": "bef6800aa68903785cdb579d1537d0b79184456c8343b1c6fa61f1df08010ced"
+    },
+    "web/e2e/inventory-objects.spec.ts": {
+      "before": "ddd1560e580f715a65202b6da5c35f7648182560858a2647697d4b767cba5c85",
+      "after": "ddd1560e580f715a65202b6da5c35f7648182560858a2647697d4b767cba5c85"
+    },
+    "web/e2e/local-loading.spec.ts": {
+      "before": "ed17480f40f22b0380d6510fd17c9796fe549f42618690cfb206ad079c12d21c",
+      "after": "ed17480f40f22b0380d6510fd17c9796fe549f42618690cfb206ad079c12d21c"
+    },
+    "web/e2e/narrative-objects.spec.ts": {
+      "before": "875175e351278d2af8de111a51e24dd9d5bd3a6467190849c6f0ab49e381b78a",
+      "after": "875175e351278d2af8de111a51e24dd9d5bd3a6467190849c6f0ab49e381b78a"
+    },
+    "web/e2e/stage-check.spec.ts": {
+      "before": "eecc293534c806f483fd62e39d3d86feb50a7be86b597405b7ef0900e4605866",
+      "after": "eecc293534c806f483fd62e39d3d86feb50a7be86b597405b7ef0900e4605866"
+    },
+    "web/e2e/stage-r1.spec.ts": {
+      "before": "160139b6c9e229ccb8cf94bb909b892f02eab52631bdfd59e3c290d744235e90",
+      "after": "160139b6c9e229ccb8cf94bb909b892f02eab52631bdfd59e3c290d744235e90"
+    },
+    "web/e2e/stage-r2.spec.ts": {
+      "before": "099ac213d92b4b60f5ed7896bed47e96c92a417d0f59da368f6791b57cf68fdb",
+      "after": "099ac213d92b4b60f5ed7896bed47e96c92a417d0f59da368f6791b57cf68fdb"
+    },
+    "web/e2e/stage-r3-layout.spec.ts": {
+      "before": "2538eaacb69df8ec68f59000ae7b0633ab91256690f01b0e65d99c2882ed0407",
+      "after": "2538eaacb69df8ec68f59000ae7b0633ab91256690f01b0e65d99c2882ed0407"
+    },
+    "web/e2e/stage-r3.spec.ts": {
+      "before": "f8f8b705f5ab8d2b95e791aeec83599bd3c7522efd396f55080be37ed5d59ea3",
+      "after": "f8f8b705f5ab8d2b95e791aeec83599bd3c7522efd396f55080be37ed5d59ea3"
+    },
+    "web/e2e/stage-r4.spec.ts": {
+      "before": "ced8c6206c8d2e3fc63cade23bbf73363ed012f05d75d5375964e05d7c4a056a",
+      "after": "ced8c6206c8d2e3fc63cade23bbf73363ed012f05d75d5375964e05d7c4a056a"
+    },
+    "web/e2e/stage-support.ts": {
+      "before": "d6658eb0adb9f9294ddb0805dd1c1f3654361602c54ed8f6dd06f0246813f23c",
+      "after": "d6658eb0adb9f9294ddb0805dd1c1f3654361602c54ed8f6dd06f0246813f23c"
+    },
+    "web/e2e/stage-u8-b.spec.ts": {
+      "before": "eaed0a772d67cbe10d12fc38d5b9ad48801bb40ba7987c489b5c55acd548f8f7",
+      "after": "eaed0a772d67cbe10d12fc38d5b9ad48801bb40ba7987c489b5c55acd548f8f7"
+    },
+    "web/e2e/store-sync-status.spec.ts": {
+      "before": "00481c92456afadf0a870d479f41632e8de2d610a5999f12442a7383e093f9b0",
+      "after": "00481c92456afadf0a870d479f41632e8de2d610a5999f12442a7383e093f9b0"
+    },
+    "web/e2e/support.ts": {
+      "before": "e8d4a73c75b84343fcdb2cfb7656dc93dd8ee65006a8a075b6a0f9ffad74370e",
+      "after": "e8d4a73c75b84343fcdb2cfb7656dc93dd8ee65006a8a075b6a0f9ffad74370e"
+    },
+    "web/playwright.idle.config.ts": {
+      "before": "8ec28f38869305db5b7c006e0ed2dfe5f7b5c8da450e58d423efeb5a8afb9f8e",
+      "after": "8ec28f38869305db5b7c006e0ed2dfe5f7b5c8da450e58d423efeb5a8afb9f8e"
+    }
+  },
+  "proof": "Exactly the C9 body adds a readonly original8s production-notice measurement handshake plus an actual readonly guide open/close and complete Game/Activity/raw DB comparison. All imports, helpers, other test bodies and selected old files/config/build are byte-identical. No retry/sleep/clock advance/timeout or runtime changes."
+}

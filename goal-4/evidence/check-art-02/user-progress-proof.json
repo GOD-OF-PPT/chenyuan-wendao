@@ -1,0 +1,36 @@
+{
+  "sourceDigest": "285091be48b81cc103960e0d9088ef15de90472a96ab4a5e3671b9f671d27c4d",
+  "readonlyVisibleAXEqualAfterIndexFocusWhitespaceNormalization": true,
+  "visibleProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "school": "尚未择法",
+    "xp": "5/10",
+    "stones": 40,
+    "month": 1,
+    "hp": "60/60",
+    "mp": "20/20",
+    "place": "听雨洞府",
+    "activity": "待安排",
+    "save": "已保存"
+  },
+  "noUserGameCommandImportRestoreResetSaveTest": true,
+  "actualBrowserResources": {
+    "ready": "complete",
+    "scripts": [
+      "./assets/index-YBq878Jm.js"
+    ],
+    "styles": [
+      "./assets/index-B6bXSnKW.css"
+    ]
+  },
+  "before": {
+    "path": "artifacts/goal-4/check-art-02/user-progress-just-before-update.txt",
+    "sha256": "1adde82ef5aa0c39d5db6cf00de95aa38edb2b813a9de6170b851e3d6ea7e5a3"
+  },
+  "after": {
+    "path": "artifacts/goal-4/check-art-02/user-progress-after.txt",
+    "sha256": "fcd481c62152ba9a249d171ccd639577cf175a3eeb29995cefcb452351ddbc80"
+  },
+  "screenshot": "artifacts/goal-4/check-art-02/user-preview-after.png"
+}

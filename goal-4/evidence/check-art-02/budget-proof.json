@@ -1,0 +1,70 @@
+[
+  {
+    "ledger": "art/redesign/action-feedback.json",
+    "allCapsBindingsAndOtherFieldsUnchanged": true,
+    "beforeBytes": 33993,
+    "currentBytes": 33992,
+    "changedFileEntries": [
+      {
+        "path": "web/src/ActionFeedbackStage.vue",
+        "before": 10866,
+        "after": 10865,
+        "sha256": "1b5b53e9ce98cc2c13e2bb7b9f08948daeb58e7ededb3c89a4048aba434cae8c"
+      }
+    ]
+  },
+  {
+    "ledger": "art/redesign/art03.json",
+    "allCapsBindingsAndOtherFieldsUnchanged": true,
+    "beforeBytes": 44990,
+    "currentBytes": 44943,
+    "changedFileEntries": [
+      {
+        "path": "web/src/equipment-effects.ts",
+        "before": 4919,
+        "after": 4872,
+        "sha256": "28c3c58a677ad562593f8d23f73c186b62a1d67f80298b2ef0165e7d08b5cc14"
+      }
+    ]
+  },
+  {
+    "ledger": "art/redesign/idle-milestones.json",
+    "allCapsBindingsAndOtherFieldsUnchanged": true,
+    "beforeBytes": 15780,
+    "currentBytes": 15860,
+    "changedFileEntries": [
+      {
+        "path": "web/src/milestone-view.ts",
+        "before": 9551,
+        "after": 9631,
+        "sha256": "c849797ee14366f00715ee9ab3999bcc3c293996251b4073c7cb4b504ca21022"
+      }
+    ]
+  },
+  {
+    "ledger": "art/redesign/story-journey.json",
+    "allCapsBindingsAndOtherFieldsUnchanged": true,
+    "beforeBytes": 47808,
+    "currentBytes": 47931,
+    "changedFileEntries": [
+      {
+        "path": "web/src/NarrativePanel.vue",
+        "before": 6141,
+        "after": 6182,
+        "sha256": "9658dca23ab65de3d21d77833685faf3b1d4c9f4cf55bb4917315b10dc707273"
+      },
+      {
+        "path": "web/src/FateCatalogue.vue",
+        "before": 7986,
+        "after": 8027,
+        "sha256": "3889575449542f4b79c653a45a47ba773e15ffa5e4afef4aa7edc044577ae4d1"
+      },
+      {
+        "path": "web/src/LifeCatalogue.vue",
+        "before": 3758,
+        "after": 3799,
+        "sha256": "4c243e6f3a7d51814dee5a6966f95d5a88b7d891be04d9373eb13b30bb67f978"
+      }
+    ]
+  }
+]

@@ -206,7 +206,7 @@ ART05实查补充：名笺/回应签/卷签的选中位移须在自身容器预�
 
 ## 三项对象组合检查补充（CHECK-ART-02）
 
-依据[0028](docs/decisions/0028-art-02-cross-check-contract.md)及本轮实际回读[XAG114](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114)、[MDN transaction complete](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/complete_event)：提交成功与界面交付/后续读取分别核对。功法配装、补给和人物/生平之间切换时，原授权/实际费用/完整事实与阅读上下文保留；旧短效不能因外页同人生配置A→B→A而复亮，也不能将已保存原安排误写未安排。当前为待真实组合红绿的开发准则，不以静态推断代验收。
+依据[0028](docs/decisions/0028-art-02-cross-check-contract.md)及本轮实际回读[XAG114](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114)、[MDN transaction complete](https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/complete_event)：提交成功与界面交付/后续读取分别核对。功法配装、补给和人物/生平之间切换时，原授权/实际费用/完整事实与阅读上下文保留；旧短效不能因外页同人生配置A→B→A而复亮，也不能将已保存原安排误写未安排。本轮已按真实组合红绿落实，逐声明映射见goal-4/evidence/check-art-02；局部工程通过不代整体艺术或真人验收。
 
 配置语义与正常周期的表现失效边界分开，不用每revision无条件清掉正常或末轮真实成果。真实native已提交交付被持有时，持写与持完成须区分；核IDB最新状态之外也须经实际导出核本页内存Game，旧完整transition proof不代表仍属当前对象。必要修缮保持Game/DB/费用/周期/原CAS与重试，并守全部旧cap；允许实际重复逻辑复用原清理函数，不压格式或搬旧实现逃预算。当前仅固定桌面、无兼容/环境性能专项，整体艺术/长期平衡与真人仍待验。
 
