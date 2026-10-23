@@ -13,7 +13,7 @@ const points:Record<C.LocationId,[number,number]>={cave:[17,28],wilderness:[49,2
 const locations=Object.keys(C.locations) as C.LocationId[];
 const {store,activity,runtime,working,progress,phase,effect}=useActivityPresentation(a=>a.version===6&&a.plan.kind==='travel'&&a.plan.location===props.selected,()=>props.game.core.runId+':'+props.selected);
 const state=computed(()=>store?.error?'failed':runtime.value?phase.value:activity.value?.status??'idle');
-const status=computed(()=>state.value==='failed'?'存档待核对 · 已停步':phase.value==='saving'?'抵达保存中 · 尚未确认':working.value?'行路中':activity.value?.status==='paused'?'行路已暂停':props.selected===props.game.core.world.location?'当前所在 · 已抵达':'目的地预览 · 尚未抵达');
+const status=computed(()=>state.value==='failed'?'存档待核对 · 已停步':store?.activityPausing?'正在停手，保存后暂停':phase.value==='saving'?'抵达保存中 · 尚未确认':working.value?'行路中':activity.value?.status==='paused'?'行路已暂停':props.selected===props.game.core.world.location?'当前所在 · 已抵达':'目的地预览 · 尚未抵达');
 const marker=computed(()=>{const from=points[props.game.core.world.location],to=points[props.selected];return{left:(from[0]+(to[0]-from[0])*progress.value)+'%',top:(from[1]+(to[1]-from[1])*progress.value)+'%'};});
 const line=computed(()=>{const a=points[props.game.core.world.location],b=points[props.selected];return`M ${a[0]} ${a[1]} L ${b[0]} ${b[1]}`;});
 </script>

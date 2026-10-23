@@ -119,7 +119,10 @@ def validate_alchemy_workshop(root, image_reader=image_info):
         assert proof['transparentPixels'] + proof['solidPixels'] + proof['intermediatePixels'] == item['dimensions']['width'] * item['dimensions']['height'], 'Alchemy workshop alpha pixel total changed'
     assert manifest['consumer'] == 'web/src/ProductionPlanner.vue' and '<AlchemyWorkshop ' in local(manifest['consumer']).read_text(), 'Alchemy workshop actual consumer missing'
     component = local('web/src/AlchemyWorkshop.vue').read_text()
-    assert runtime['path'].removeprefix('web/public/') in component and '<AssetImage' in component and 'alchemy-feedback' in component and 'createAlchemyFeedbackTracker' in component, 'Alchemy workshop furnace/helper consumer missing'
+    assert runtime['path'].removeprefix('web/public/') in component and '<AssetImage' in component and "from './use-activity-effect'" in component and 'useActivityPresentation(a=>a.version===3' in component, 'Alchemy workshop furnace/shared presentation consumer missing'
+    assert 'createActivityEffectTracker(matches)' in local('web/src/use-activity-effect.ts').read_text(), 'Alchemy workshop shared tracker binding missing'
+    proof = local('web/src/activity-effects.ts').read_text()
+    assert 'resolve(before,command)' in proof and 'completeActivity(g,prior,r' in proof, 'Alchemy workshop full Game and Activity proof missing'
     assert manifest['styleConsumer'] in ['web/src/main.ts', 'web/src/AlchemyWorkshop.vue'] and 'alchemy-workshop.css' in local(manifest['styleConsumer']).read_text(), 'Alchemy workshop style consumer missing'
     assert {'web/src/ProductionPlanner.vue', 'web/src/AlchemyWorkshop.vue', manifest['styleConsumer']} <= set(manifest['bindings']), 'Alchemy workshop bindings incomplete'
     for path, fragments in manifest['bindings'].items():

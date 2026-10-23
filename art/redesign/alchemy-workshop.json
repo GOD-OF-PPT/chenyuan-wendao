@@ -59,8 +59,8 @@
   "files": [
     {
       "path": "web/src/AlchemyWorkshop.vue",
-      "bytes": 11385,
-      "sha256": "664bdb00893960017cdbc2e65cf0336e2aed1bec9e3e820d2801e11af5cafd64"
+      "bytes": 10093,
+      "sha256": "3d0f61726a780b2183bd1c63c48f5bfba1da409539f4059f96e3d1ebcc5c61ff"
     },
     {
       "path": "web/src/alchemy-workshop.css",
@@ -82,11 +82,18 @@
     "web/src/AlchemyWorkshop.vue": [
       "<AssetImage",
       "art/v2/workshop/furnace-v1.webp",
-      "from './alchemy-feedback'",
-      "createAlchemyFeedbackTracker"
+      "from './use-activity-effect'",
+      "useActivityPresentation(a=>a.version===3"
     ],
     "web/src/main.ts": [
       "import './alchemy-workshop.css'"
+    ],
+    "web/src/use-activity-effect.ts": [
+      "createActivityEffectTracker(matches)"
+    ],
+    "web/src/activity-effects.ts": [
+      "resolve(before,command)",
+      "completeActivity(g,prior,r"
     ]
   },
   "scope": "One generated cold-furnace bitmap and additive code provenance. Hash/header/receipt facts do not prove visual quality, game balance or user acceptance; all original assets and prior budgets remain."

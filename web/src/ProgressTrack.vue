@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import {computed,inject,nextTick,onScopeDispose,ref,useId,watch} from 'vue';
 import {gameFocusKey} from './focus';
+import type {useGame} from './store';
 const props=withDefaults(defineProps<{value:number;max:number;active?:boolean;label:string;identity:string;hint:string;tone?:'health'|'spirit'|'cultivation'}>(),{tone:'cultivation',active:true});
 const focus=inject(gameFocusKey)!,dialog=ref<HTMLDialogElement>(),opener=ref<HTMLButtonElement>(),opened=ref(false),change=ref<number|null>(null),id=useId();
+const store=inject<ReturnType<typeof useGame>>('game-scene');
 const ratio=computed(()=>Math.max(0,Math.min(100,props.value/Math.max(1,props.max)*100)));
 let timer:ReturnType<typeof setTimeout>|undefined;
 watch(()=>[props.value,props.max,props.identity,props.active]as const,([value,max,identity,active],[before,oldMax,oldIdentity,wasActive])=>{
@@ -10,6 +12,7 @@ watch(()=>[props.value,props.max,props.identity,props.active]as const,([value,ma
  if(!active||!wasActive||identity!==oldIdentity||max!==oldMax){opened.value=false;dialog.value?.close();return;}
  if(value!==before){change.value=value-before;timer=setTimeout(()=>change.value=null,1400);}
 });
+watch([()=>store?.activity?.id,()=>store?.activity?.generation,()=>store?.activity?.ownerId,()=>store?.activityPausing],()=>{clearTimeout(timer);change.value=null;},{flush:'sync'});
 async function inspect(){if(!props.active)return;const identity=props.identity;opened.value=true;await nextTick();if(!props.active||props.identity!==identity){opened.value=false;return;}focus.target(opener.value??null);focus.open(dialog.value,opener.value??null);}
 onScopeDispose(()=>{clearTimeout(timer);focus.release(dialog.value);});
 </script>

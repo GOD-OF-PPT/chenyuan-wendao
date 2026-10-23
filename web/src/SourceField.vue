@@ -22,7 +22,7 @@ const stock=(id:string)=>id==='stones'?props.game.core.player.stones:props.game.
 const icon=(s:C.Source)=>Object.keys(s.items)[0]??'inventory';
 const gains=(s:C.Source)=>Object.entries(s.items).map(([id,n])=>name(id)+' ×'+n).concat(s.stones?'灵石 +'+s.stones:[]).join(' · ');
 const state=computed(()=>!props.available||store?.error?'failed':runtime.value?phase.value==='saving'?'saving':phase.value==='pausing'?'paused':'working':activity.value?.status??'idle');
-const status=computed(()=>({failed:'存档待核对 · 已停手',saving:'本轮保存中 · 保存后入囊',paused:'此段已暂停',stopped:'此段已结束',running:'此段安排已保存',working:commission.value?'委托进行中':'取材进行中',idle:'待安排'})[state.value]);
+const status=computed(()=>store?.activityPausing&&state.value!=='failed'?'正在停手，保存后暂停':({failed:'存档待核对 · 已停手',saving:'本轮保存中 · 保存后入囊',paused:'此段已暂停',stopped:'此段已结束',running:'此段安排已保存',working:commission.value?'委托进行中':'取材进行中',idle:'待安排'})[state.value]);
 const total=(id:string)=>activity.value?.version===2?(id==='stones'?activity.value.gainedStones:activity.value.gainedItems[id]??0):0;
 const arrival=computed(()=>{const r=effect.value?.result;if(r?.type!=='SOURCE')return '';return Object.entries(r.delta.inventory).filter(([,n])=>n>0).map(([id,n])=>name(id)+' +'+n).concat(r.delta.stones>0?'灵石 +'+r.delta.stones:[]).join(' · ');});
 function point(index:number){const positions=commission.value?[[25,26],[70,26],[25,74],[70,74]]:props.rows.length===1?[[45,52]]:props.rows.length===2?[[27,69],[70,33]]:[[22,62],[52,33],[78,67]];const p=positions[index]??positions[0];return {'--point-x':p[0]+'%','--point-y':p[1]+'%'};}

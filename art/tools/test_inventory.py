@@ -511,6 +511,14 @@ class InventoryTests(unittest.TestCase):
   m=self.workshop();path=m['consumer'];self.write(path,(self.root/path).read_text().replace('<AlchemyWorkshop ','<RemovedWorkshop '));self.reject_workshop(m)
  def test_workshop_runtime_consumer_cannot_disappear_after_code_rehash(self):
   m=self.workshop();path='web/src/AlchemyWorkshop.vue';text=(self.root/path).read_text().replace(m['assets'][0]['runtime']['path'].removeprefix('web/public/'),'art/not-the-furnace.webp');self.workshop_code(m,path,text);self.reject_workshop(m)
+ def test_workshop_shared_presentation_cannot_be_detached_after_rehash(self):
+  m=self.workshop();path='web/src/AlchemyWorkshop.vue';code=(self.root/path).read_text().replace('useActivityPresentation(a=>a.version===3','useDetachedPresentation(a=>a.version===3');self.workshop_code(m,path,code);m['bindings'][path]=['<AssetImage'];self.reject_workshop(m)
+ def test_workshop_shared_tracker_cannot_be_detached_by_manifest(self):
+  m=self.workshop();path='web/src/use-activity-effect.ts';self.write(path,(self.root/path).read_text().replace('createActivityEffectTracker(matches)','createDetachedTracker(matches)'));m['bindings'].pop(path,None);self.reject_workshop(m)
+ def test_workshop_formal_game_and_activity_proof_both_remain_required(self):
+  path='web/src/activity-effects.ts';original=(self.root/path).read_text()
+  for token in ['resolve(before,command)','completeActivity(g,prior,r']:
+   m=self.workshop();self.write(path,original.replace(token,'detachedProof('));m['bindings'].pop(path,None);self.reject_workshop(m)
  def test_workshop_style_and_source_references_cannot_be_unbound(self):
   m=self.workshop();m['styleConsumer']='web/src/does-not-exist.ts';self.reject_workshop(m)
   m=self.workshop();m['sourceReferences']=['../outside-contract.md'];self.reject_workshop(m)

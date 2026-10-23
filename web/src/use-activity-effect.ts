@@ -20,12 +20,10 @@ export function useActivityPresentation(matches:(a:Activity)=>boolean,key:()=>st
  watch([()=>store?.activityRuntime?.id,()=>store?.activityRuntime?.generation,()=>store?.activityRuntime?.phase],arm,{immediate:true,flush:'sync'});
  watch([key,visible,hidden,active],()=>{clear();arm();},{flush:'sync'});
  watch(eligible,v=>{if(v)arm();else clearEffect();},{flush:'sync'});
- watch(()=>activity.value?.status,v=>{if(v==='paused')clear();},{flush:'sync'});
- watch(phase,v=>{if(v==='pausing')clear();},{flush:'sync'});
- watch([()=>activity.value?.id,()=>activity.value?.generation,()=>activity.value?.ownerId,()=>store?.activityPausing],()=>{clear();arm();},{flush:'sync'});
+ watch([()=>activity.value?.id,()=>activity.value?.generation,()=>activity.value?.ownerId,()=>activity.value?.status==='paused',()=>store?.activityPausing],()=>{clear();arm();},{flush:'sync'});
  function visibility(){hidden.value=document.hidden;}
- onMounted(()=>{stop=store?.observe(o=>{if(!store)return;const notice=tracker.consume(o,store.game,store.activity,store.lastResult,store.lastReplayed,eligible.value&&store.saved);if(!notice||!store.lastResult)return;clearTimeout(timer);effect.value={sequence:++sequence,notice,result:store.lastResult};timer=setTimeout(()=>effect.value=null,1400);})??(()=>{});document.addEventListener('visibilitychange',visibility);arm();});
- onActivated(()=>{visible.value=true;arm();});onDeactivated(()=>{visible.value=false;clear();});
+ onMounted(()=>{stop=store?.observe(o=>{if(!store)return;const notice=tracker.consume(o,store.game,store.activity,store.lastResult,store.lastReplayed,eligible.value&&store.saved);if(!notice||!store.lastResult)return;clearTimeout(timer);effect.value={sequence:++sequence,notice,result:store.lastResult};timer=setTimeout(()=>effect.value=null,1400);})??(()=>{});document.addEventListener('visibilitychange',visibility);});
+ onActivated(()=>{visible.value=true;});onDeactivated(()=>{visible.value=false;});
  onScopeDispose(()=>{clear();stop();document.removeEventListener('visibilitychange',visibility);});
  return {store,activity,runtime,working,progress,phase,effect,clear};
 }

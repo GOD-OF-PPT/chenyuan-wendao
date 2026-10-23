@@ -12,8 +12,8 @@
     },
     {
       "path": "web/src/ProgressTrack.vue",
-      "bytes": 2621,
-      "sha256": "8ab670a30730e3f70038687eaf6be0994f2670651d62cddf71b6a541bd7f1b54"
+      "bytes": 2903,
+      "sha256": "142f6f187ee7f2f326e4b63a1a080016139d5b18c9c90a05556c169b6dd2444e"
     },
     {
       "path": "web/src/ChoiceCard.vue",

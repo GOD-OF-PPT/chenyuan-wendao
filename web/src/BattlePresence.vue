@@ -24,7 +24,7 @@ const charge=computed(()=>state.value==='charging'&&runtime.value?Math.max(0,Mat
 const action=computed(()=>activity.value?adventureDecision(activity.value).action:null);
 const move=computed(()=>action.value?.type==='BATTLE'?action.value.move:null);
 const moves:Record<string,string>={attack:'普通攻击',guard:'凝神护体',technique:'起手术法',release:'终结术法',heal:'服用回春丹',restore:'服用回灵丹',flee:'撤回洞府'};
-const caption=computed(()=>state.value==='charging'?'本招蓄势 · '+(moves[move.value??'']??'按已存战策'):state.value==='saving'?'收势封存 · 保存后显示结果':state.value==='paused'?'战策已暂停 · 战局保留':state.value==='failed'?'存档待核对 · 已停手':'先辨敌意，再定攻守');
+const caption=computed(()=>state.value==='charging'?'本招蓄势 · '+(moves[move.value??'']??'按已存战策'):state.value==='saving'?'收势封存 · 保存后显示结果':state.value==='paused'?'战策已暂停 · 战局保留':state.value==='failed'?'存档待核对 · 已停手':store?.activityPausing?'正在停手，保存后暂停':'先辨敌意，再定攻守');
 const resource=computed(()=>props.game.school==='sword'?battle.value.sword:battle.value.marks.length);
 function visibility(){hidden.value=document.hidden;}
 onMounted(()=>document.addEventListener('visibilitychange',visibility));
