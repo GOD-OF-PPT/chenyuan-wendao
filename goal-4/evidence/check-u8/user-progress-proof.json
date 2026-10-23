@@ -1,0 +1,22 @@
+{
+  "before": "artifacts/goal-4/check-u8/user-immediate-before-ax.txt",
+  "beforeSha256": "7433e016c816ad93ea688110183231e8c5e961aab679d6bca46614909dee25b5",
+  "after": "artifacts/goal-4/check-u8/user-after-ready-ax.txt",
+  "afterSha256": "25753dc6205b624ad6cb0232d956947586863af423309446bda8a928545eb83d",
+  "normalization": "Only AX numeric node IDs, indentation and focused-element footer removed",
+  "allVisibleSemanticsEqual": true,
+  "visibleProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "school": "尚未择法",
+    "xp": "5/10",
+    "stones": 40,
+    "month": 1,
+    "hp": "60/60",
+    "mp": "20/20",
+    "location": "听雨洞府",
+    "activity": "待安排",
+    "save": "已保存"
+  },
+  "actions": "Read AX, intentional reload after loopback static preview update, read AX again. No Game command/import/restore/reset or user-save tests. First incomplete post-reload AX retained; ready state used for comparison. IAB checks visible text only; no compatibility/pixel acceptance."
+}

@@ -1,0 +1,19 @@
+{
+  "implementationCommit": "4363721dd0cedb42a3da33e0d7b1220bc5ca8cc4",
+  "testedSource": {
+    "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+    "source": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
+    "tree": "7fa427d3b0550b5fc33239f32fd514c3292cc3b5",
+    "dirty": true,
+    "node": "v24.19.0",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "sourceDigest": "d256e124debf497cd913c7e8ec2aad56227d359746f92390266e2bc814eefad7",
+  "runtimeSources": 194,
+  "allArchiveBytesEqualTestedSources": true,
+  "archive": "artifacts/goal-4/check-u8/implementation-runtime-source.tar",
+  "archiveBytes": 7710720,
+  "archiveSha256": "3fef3cd6ac1c4a84650199754121eea75f7f54d56e082363893ba8bc67bdad87",
+  "note": "Build/test metadata keeps the true prior HEAD and dirty status. This proves the194 compiled runtime source bytes are exactly the independent implementation commit; not a clean final candidate."
+}

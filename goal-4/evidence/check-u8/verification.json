@@ -1,9 +1,9 @@
 {
   "task": "CHECK-U8",
   "date": "2026-10-23",
-  "status": "Checks passed; local implementation commit, archive and preview closure pending",
+  "status": "Current independent engineering scope locally delivered; overall Goal remains active/incomplete",
   "branch": "codex/goal-4-online-recovery",
-  "implementationCommit": null,
+  "implementationCommit": "4363721dd0cedb42a3da33e0d7b1220bc5ca8cc4",
   "sourceDigest": "d256e124debf497cd913c7e8ec2aad56227d359746f92390266e2bc814eefad7",
   "testedSource": {
     "head": "2da9a08e5c774c9833ea70ab53213b2d616143d0",
@@ -105,6 +105,18 @@
         "activityHistoryNativeBytes": 7816,
         "scope": "Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance."
       }
+    },
+    "build": {
+      "path": "artifacts/goal-4/check-u8/build-boundary.log",
+      "sha256": "131f657a9c536279711ddb8d2df077d24742dd597f7bd7a66cff263821016e7e",
+      "typecheckAndBuildExit": 0,
+      "testedBuildRetained": "artifacts/goal-4/check-u8/preview-d256e124/build.json"
+    },
+    "configurationControl": {
+      "path": "artifacts/goal-4/check-u8/configuration-boundary.json",
+      "sha256": "2ca9b3d738c7b24fc9c6356f5a38254f346eaf96220c51928a383238254f8def",
+      "nativeCountIncludedIn731": 9,
+      "independentBusinessComparisons": 8
     }
   },
   "declarations": "210 UI and176 IDB exact case identities match current declarations, every result passed/retry0",
@@ -163,5 +175,17 @@
     "Full matrices, clean final candidate, final review and human art/gameability/balance acceptance remain"
   ],
   "failureLedger": "goal-4/evidence/check-u8/failure-ledger.json",
-  "protectedAndInputs": "goal-4/evidence/check-u8/protected-and-inputs.json"
+  "protectedAndInputs": "goal-4/evidence/check-u8/protected-and-inputs.json",
+  "identityProof": "goal-4/evidence/check-u8/identity-proof.json",
+  "httpProof": "goal-4/evidence/check-u8/http-proof.json",
+  "userProgress": "goal-4/evidence/check-u8/user-progress-proof.json",
+  "previewUrl": "http://127.0.0.1:56884/",
+  "nextTask": "MATRIX: full UI/storage/normal-route/recovery/performance cells; compatibility last, then clean candidate/final review/human acceptance",
+  "cleanFinalCandidate": false,
+  "finalPngExactReviewedMatches": [
+    "artifacts/goal-4/check-u8/ui-boundary-results/check-u8-paused-cultivatio-96b51-s-the-exact-resume-boundary-chromium/paused-history.png",
+    "artifacts/goal-4/check-u8/ui-boundary-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/alchemy-restored-history-first.png"
+  ],
+  "finalPngNotPixelReviewed": 335,
+  "adversarialReview": "Passed within0020 current engineering contract; actual red cases fixed and final full checks passed. Full game/human/art/balance and final security review remain open."
 }
