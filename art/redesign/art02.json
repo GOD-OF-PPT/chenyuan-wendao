@@ -23,13 +23,13 @@
     },
     {
       "path": "web/src/BattlePresence.vue",
-      "bytes": 6326,
-      "sha256": "945ee38b6fe8ae0b43ac880c1ded2a2fadffef8534e60d7bfdcbad570718bb2b"
+      "bytes": 6217,
+      "sha256": "70b1096daa0342836d12a6174ca41a63a87e5d34571cc7e96eb3c5c488d8f4e5"
     },
     {
       "path": "web/src/BattleDeck.vue",
-      "bytes": 1953,
-      "sha256": "77e054c4acb4e1a84d581fd1451e45c6a12ebbfd316bfe7f2f6dc1cebdbcc30c"
+      "bytes": 756,
+      "sha256": "cdab3a1aaa6eb40d0c8a943a5f2e466074b4e927844b7e2ac0191fa2e9da0ed9"
     },
     {
       "path": "web/src/activity-effects.ts",
@@ -53,8 +53,8 @@
     },
     {
       "path": "web/src/art02-battle.css",
-      "bytes": 8582,
-      "sha256": "3896c306d4985c69d0f2229fc3c879e2f573a47fe3585c85f32eb0db70822ed8"
+      "bytes": 6603,
+      "sha256": "bd45d576f400bda33d7164725644eca7be8d28c28541a10aba24801a6fe3ff99"
     }
   ],
   "bindings": {

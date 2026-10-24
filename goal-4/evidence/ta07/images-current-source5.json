@@ -1,0 +1,217 @@
+{
+  "recordedAt": "2026-10-24T13:51:09.199099+00:00",
+  "runtimeDigest": "4640894ed2590fb1c34f7911af238ac09dc2ba6437f1fae3cbe846cb7fd3f5c8",
+  "report": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+  "reportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+  "pre": "artifacts/goal-4/ta07/ui-current-source5-before.json",
+  "post": "artifacts/goal-4/ta07/ui-current-source5-after.json",
+  "strictInputCount": 740,
+  "prePostExact": true,
+  "spec": "web/e2e/battle-actors.spec.ts",
+  "specSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+  "PNGcount": 20,
+  "bytes": 31909287,
+  "images": [
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A1-four-2eec3-omplete-cold-standing-actor-chromium/readonly-four-strikes-and-secondary-kit.png",
+      "bytes": 1591247,
+      "sha256": "516899e7828b6807e95e7ad5e1bce8f6932b2f8148c65a9650aecc0766521d0a",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A1-four-2eec3-omplete-cold-standing-actor-chromium/ta07-initial-manual.png",
+      "bytes": 1601718,
+      "sha256": "a45c597969411e6045596580249851aa1e6954b8a5cd50b383befa5d2cf3a86f",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A2-atta-806cd-ne-formal-three-second-turn-chromium/move-attack-saved-scene.png",
+      "bytes": 1638547,
+      "sha256": "ebf57f4e4109580be6f64eb87d3d7d598ea88a510735536374c1b2243a7044c2",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A2-flee-f1f55-ne-formal-three-second-turn-chromium/move-flee-saved-scene.png",
+      "bytes": 1765006,
+      "sha256": "f0a60163fda355ed272a8fbe066c3237b64e34cdffaaa5dd49de4390b689e6da",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A2-guar-fb6e5-ne-formal-three-second-turn-chromium/move-guard-saved-scene.png",
+      "bytes": 1618419,
+      "sha256": "e06ea76a1d055fa459085fcc0f1b8b4ae79a4b49676cd6a39bee0b13bd2e930b",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A2-heal-5a345-ne-formal-three-second-turn-chromium/move-heal-saved-scene.png",
+      "bytes": 1667691,
+      "sha256": "83a94e9417935839b930e4d6831d18ae65a44fec81f395d58d22fec21972faa0",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A2-rele-28257-ne-formal-three-second-turn-chromium/move-release-saved-scene.png",
+      "bytes": 1651823,
+      "sha256": "246c57378287366c7dcbb1e53dbf742f2b95068acb1ff51a38aa69b82ec230f6",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A2-rest-286db-ne-formal-three-second-turn-chromium/move-restore-saved-scene.png",
+      "bytes": 1644160,
+      "sha256": "ee1a1b88635b3e5b8876d6393a1bf958efe9bc5fa9fe900ae74e2fa897c5372a",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A2-tech-c9825-ne-formal-three-second-turn-chromium/move-technique-saved-scene.png",
+      "bytes": 1671289,
+      "sha256": "bbfea4a91cac0e2494c4a83563af6ae1a5e0205c5c45c8f5d105730bbc57931f",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A3-a-na-f0579-result-respect-the-deadline-chromium/native-three-second-technique-saved.png",
+      "bytes": 1667907,
+      "sha256": "75976fa15c000cc25eec349cc07e2f22755532c15604779cfe2f895675631104",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A4-nati-f552a--command-and-cost-only-once-chromium/native-saving-cold-result.png",
+      "bytes": 1531966,
+      "sha256": "f1cb9a912b47f402ed4c232d7ce0185eb11fa72afca05e7554c43fce5d969ba2",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A4-nati-f552a--command-and-cost-only-once-chromium/quota-exact-original-retry-saved.png",
+      "bytes": 1696749,
+      "sha256": "fc5702f91e4da10a60266db9d834a755412a75adae20eb75f89c45f3e20a05af",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A4-nati-f552a--command-and-cost-only-once-chromium/quota-original-intent-all-seven-disabled.png",
+      "bytes": 1350579,
+      "sha256": "530c5f789ce1d97a9f088a3c66e25e1f224688254cd68299b7694f2c1b423b24",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A5-read-a615d-t-or-counting-a-second-turn-chromium/finite-original-draft-after-stop.png",
+      "bytes": 860689,
+      "sha256": "195d26ab5c7cf439e8e2689e9eb21595a94ad053a414ecb502bc6bbea7323719",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A5-read-a615d-t-or-counting-a-second-turn-chromium/pause-request-clears-actor-before-native-pause-commit.png",
+      "bytes": 1643018,
+      "sha256": "c9bcaa89a2907ffb3f42ced3ac15a41ebcaa60cdc85c67d5ec8400a393838efe",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A6-same-8e3fc--never-borrow-the-old-actor-chromium/same-id-old-receipt-is-only-readable.png",
+      "bytes": 1653459,
+      "sha256": "dba1f159d9ede433d3029b8c5dbc4b3a776b2838eae89b078cfb3b2a68415a94",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A7-a-sa-6f82a-ver-borrows-a-victory-actor-chromium/defeat-is-fact-not-victory-pose.png",
+      "bytes": 1767246,
+      "sha256": "3a08ab9a4a54786c208ca162e40777399514bc9f2fb6fac7b5810ad25d27e4d8",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A7-a-sa-6f82a-ver-borrows-a-victory-actor-chromium/terminal-heart-does-not-strike-new-thunder.png",
+      "bytes": 1651575,
+      "sha256": "76e6e24c1c2331893012e3c02434d3bb1decfe0068bb0f82c70889b663b39cf1",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A8-tali-6de44-and-readable-static-results-chromium/preference-reduced-sword-actual-saved.png",
+      "bytes": 1611317,
+      "sha256": "f476ce7de0851467bc856a92600d5a4e49e4db5bd3f121ffa95e7e293659845a",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    },
+    {
+      "path": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A8-tali-6de44-and-readable-static-results-chromium/talisman-fallback-and-system-reduced-static-result.png",
+      "bytes": 1624882,
+      "sha256": "f94d4dd8ddfc2861839a4fda41665faac2fc132c19e51020e6d8b8cb48a00f92",
+      "width": 1440,
+      "height": 900,
+      "pixelReviewedByInventory": false,
+      "exactMatchOfRootReviewedSource4LeafError": false,
+      "rootReviewedLeafOriginal": null
+    }
+  ],
+  "scope": "Original PNG header/hash inventory only; no pixel inspection by this collector. Root reviews current representative images separately. Do not infer counter motion in a still image without actually viewing it."
+}

@@ -1,0 +1,233 @@
+{
+  "recordedAt": "2026-10-24T13:49:16.846730+00:00",
+  "status": "declared/discovered only, no browser/test execution",
+  "declaredReport": "artifacts/goal-4/ta07/ui-related-source5-declared.json",
+  "reportSha256": "4f536d11efa0a98be80a657475f3fee40071e2da7fae24ab7f541b7a2ee0da50",
+  "count": 33,
+  "files": {
+    "adventure-objects.spec.ts": 4,
+    "check-art-01.spec.ts": 1,
+    "check-matrix-keyboard.spec.ts": 5,
+    "idle-adventure.spec.ts": 8,
+    "idle-stage-ui.spec.ts": 1,
+    "matrix-ui-cancel.spec.ts": 8,
+    "matrix-ui-enemy-asset.spec.ts": 1,
+    "matrix-ui-milestone-feedback.spec.ts": 3,
+    "stage-r2.spec.ts": 2
+  },
+  "cases": [
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "sword battle has opposed real actors and all seven manual moves with costs before one saved three-second turn",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "talisman battle has opposed real actors and all seven manual moves with costs before one saved three-second turn",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "one real three-second manual guard keeps the live battle unchanged until it is actually saved",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "rejected acceptance in all four adventure entrances blocks new intent but keeps readonly inspection and the original start receipt retry",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A5 same battle id takeover clears current motion numbers and actors before any other saved turn",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K7 actual mortal entry retains one explicit keyboard skip beyond its natural lifetime without changing its actual saved outcome",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K8 an ordinary pill-consuming breakthrough keeps its explicit keyboard prompt static and Enter returns current content without repeating the receipt",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K9 an actual battle turn keyboard prompt preserves focus and an old destroyed skip cannot dismiss the next turn while blur keeps the new target",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K10 trial entry has an explicit held keyboard skip and a restored separately arranged reduced-motion entry has no empty skip control",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K13 a saved guard while only the public strategy is visible keeps its original cycle and factual receipt without a viewport fallback or later borrowed actor",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "one real encounter waits thirty seconds and its first battle command waits a separate three seconds",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "sword finite strategy plays formal separate turns and its complete receipts remain after refresh",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "talisman finite strategy plays formal separate turns and its complete receipts remain after refresh",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "manual takeover cancels the pending turn and an explicit retreat alone pays eight HP",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "an existing trial can automate only its present gate and leaves the next gate awaiting new authorization",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "inspecting the original paused battle arrangement restores every selected limit without changing Game",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "reading a later receipt page stays on that page while the next authorized turn is saved",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "a dangerous turn pauses with the battle intact and leaves retreat reachable with its real cost",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the committed closing seal is anchored inside the life canvas and never crosses the reading tabs or actions",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-CANCEL a lawful battle restore confirmation can fail and be cancelled while a new manual turn keeps the current battle and checkpoint",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE attack exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE guard exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE technique exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE release exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE heal exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE restore exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE flee exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-enemy-asset.spec.ts",
+      "title": "M03-E1 a late previous-heart image response and stale load error callbacks cannot replace the real next enemy after one formal three-second finishing turn",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-milestone-feedback.spec.ts",
+      "title": "M03-MF1 the explicitly selected six-second answer saves once before its own trial feedback and leaves the real first enemy unacted",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-milestone-feedback.spec.ts",
+      "title": "M03-MF2 explicitly confirmed retirement preserves a real complete checkpoint and shows only its own saved life scroll once",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "matrix-ui-milestone-feedback.spec.ts",
+      "title": "M03-MF3 the lawful final-month closure saves its one month only at twelve seconds and never replays the sealed-life result",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "the battle scene gives enemy intent room while original finite strategy and manual actions still resolve through saved turns",
+      "project": "chromium",
+      "results": []
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "a missing enemy painting leaves real intent and a saved manual turn usable",
+      "project": "chromium",
+      "results": []
+    }
+  ],
+  "config": "artifacts/goal-4/ta07/playwright.related-source5.config.ts",
+  "parameters": {
+    "workers": 1,
+    "retries": 0,
+    "testMs": 60000,
+    "expectActionMs": 8000,
+    "navigationMs": 15000,
+    "viewport": [
+      1440,
+      900
+    ],
+    "fontScale": 1,
+    "browser": "Chromium"
+  },
+  "scope": "Current actual battle/feedback consumers only, excluding all compatibility/performance and unrelated old415 declarations. Original old specs unchanged."
+}

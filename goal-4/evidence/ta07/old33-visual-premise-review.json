@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-24T14:23:41.040240+00:00",
+  "classification": "Only3 already executed old visual premises, not production changes",
+  "originalReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+  "originalReportSHA256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+  "originalStatus": "30passed/3failed; all747 inputs unchanged",
+  "schoolCases": {
+    "originalFailure": "missing legacy .battle-ward opacity0.8/0 element",
+    "replacement": "Current battle-preparation guard/ward/school and actual prep-ward display/visible, exact0 progress/opacity.2, before2999ms progress>0<1 and opacity.2+progress*.55, post-save and paused opacity0/hidden. All original2999+1/Game/visibility/following auto/stop remain."
+  },
+  "takeoverCase": {
+    "originalFailure": "count1 actual2 before external takeover",
+    "nativeTraceGame": "revision0 HP100 MP60 wolf76 → revision1 HP87 MP52 wolf60; original complete Game===advance assertion passed",
+    "actualSnapshot": "after@call@548 has player-art.actor-impact roleplayer and enemy-art.actor-impact roleenemy, both technique/sword; enemy responseexchange",
+    "originalEvidenceBoundary": "No full all-store or after-takeover checks executed before original count failure; do not retrospectively call those passed.",
+    "replacement": "Both actual HP decrease, then one current impact per player/enemy matching original move/school and total2. Keep subsequent motion/numbers/actors/progress0 and original Game assertions; add all cast attribute cleanup0."
+  },
+  "isolation": {
+    "adventure-objects": {
+      "targetPrefix": "for(const school of",
+      "targetEndPrefix": "test('missing source and journey",
+      "outsideTargetBytesExact": true,
+      "diff": "artifacts/goal-4/ta07/old-ui-premises/adventure-objects.minimal.diff",
+      "parseDiagnostics": [],
+      "beforeSha256": "04a7851062b0fb4a0565ad841369cafc40c4f2bfc64b8d85246eaa86909dd9a8",
+      "afterSha256": "57b737d94dc25e42026c500736c295e390c4aff397dc2edbdfd96a00b42e3dea",
+      "topLevelSharedHelpersExact": true
+    },
+    "check-art-01": {
+      "targetPrefix": "test('CHECK-A5 ",
+      "targetEndPrefix": "test('CHECK-A6 ",
+      "outsideTargetBytesExact": true,
+      "diff": "artifacts/goal-4/ta07/old-ui-premises/check-art-01.minimal.diff",
+      "parseDiagnostics": [],
+      "beforeSha256": "3b35744e5aa320e83e916c0279536f3b3f30387813d9faeb4f85b9b8005887a5",
+      "afterSha256": "6c0ed6a9fce2933eed3eb81be2aa045bffe3aff8faa526e52506cb702e1a59b9",
+      "topLevelSharedHelpersExact": true
+    }
+  },
+  "status": "Three leaves pending fresh current source5 run; old30 may only be inherited by exact identities and unaffected-body/helper proof after actual leaf results."
+}

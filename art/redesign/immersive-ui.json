@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "web/src/immersive-theme.css",
-      "bytes": 13353,
-      "sha256": "12cc85e04b8dd388e60cc287957d88d4fa489c51a1a478121c321a48ea41436d"
+      "bytes": 13429,
+      "sha256": "6f55f39540dd49a1708dd585cee61e91ae114441e20fb1d1731f024501288197"
     },
     {
       "path": "web/src/ProgressTrack.vue",

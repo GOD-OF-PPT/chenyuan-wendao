@@ -1,0 +1,3477 @@
+{
+  "format": "chenyuan-ta07-current-ui-coverage",
+  "version": 1,
+  "recordedAt": "2026-10-24T14:28:30.291247+00:00",
+  "runtimeDigest": "4640894ed2590fb1c34f7911af238ac09dc2ba6437f1fae3cbe846cb7fd3f5c8",
+  "runtimeSourceCount": 242,
+  "status": "47 unique current declarations passed by explicit multi-run composition",
+  "singleTerminalRun": false,
+  "composition": {
+    "newCurrent": 14,
+    "originalPassing": 30,
+    "correctedLeaves": 3,
+    "uniquePassed": 47,
+    "old33Terminal": {
+      "passed": 30,
+      "failed": 3
+    },
+    "baselineOld415": 415,
+    "old415CurrentUnexecuted": 382,
+    "derivedCurrentDeclarations": 429,
+    "all429Executed": false
+  },
+  "runs": {
+    "new14": {
+      "report": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "reportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "stats": {
+        "startTime": "2026-10-24T13:42:22.020Z",
+        "duration": 100191.735,
+        "expected": 14,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "pre": "artifacts/goal-4/ta07/ui-current-source5-before.json",
+      "preSha256": "2ceaa85a5721c8f41d7fee900e9b190702f33bc2b76253ac51c3964202df37eb",
+      "post": "artifacts/goal-4/ta07/ui-current-source5-after.json",
+      "postSha256": "cf7c2abd26503bb362f7962d99c4fc124eb1090e75a33e27092ade0cf5239ad7",
+      "strictInputCount": 740,
+      "prePostExact": true
+    },
+    "old33": {
+      "report": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "reportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "stats": {
+        "startTime": "2026-10-24T14:08:50.221Z",
+        "duration": 290099.88800000004,
+        "expected": 30,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      },
+      "pre": "artifacts/goal-4/ta07/ui-related-source5-before.json",
+      "preSha256": "6a0c7d346eda10cb549a0ce4078c1703d25a849e59b4fcea49b2ace1319acf81",
+      "post": "artifacts/goal-4/ta07/ui-related-source5-after.json",
+      "postSha256": "19caeb8cbe20427f961c91f811636b11a5077cd812a870c2abb103ed26ace494",
+      "strictInputCount": 747,
+      "prePostExact": true
+    },
+    "threeLeaves": {
+      "report": "artifacts/goal-4/ta07/ui-related-leaf-source5-report.json",
+      "reportSha256": "d428ea53921fe1cce510f376de0740f6be65cedee632289befbc1791a580a717",
+      "stats": {
+        "startTime": "2026-10-24T14:23:44.289Z",
+        "duration": 18005.126,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "pre": "artifacts/goal-4/ta07/ui-related-leaf-source5-before.json",
+      "preSha256": "bd8f082e834fe58bd337d79740a61b34bd4fef3a15ea9ccbe9b614b0a278e9bb",
+      "post": "artifacts/goal-4/ta07/ui-related-leaf-source5-after.json",
+      "postSha256": "8cc6c3b5eacb131b04973b5c7db5012280b398c8cdf67fb01ff8a30f8dfd7087",
+      "strictInputCount": 758,
+      "prePostExact": true
+    }
+  },
+  "crossRunInputChanges": {
+    "new14ToOld33": [
+      "art/redesign/ta07.json",
+      "art/tools/ta07_inventory.py",
+      "art/tools/test_inventory.py"
+    ],
+    "old33ToLeaf3": [
+      "web/e2e/adventure-objects.spec.ts",
+      "web/e2e/check-art-01.spec.ts"
+    ],
+    "explanation": "Guard/ledger matching-token validation changes do not enter the frozen UI runtime or test callbacks. Later two old spec edits affect exactly three formerly failed callbacks, preserve shared helpers and literal passing sibling bodies; original reports keep their original input hashes. No cross-run all-input-equal claim."
+  },
+  "inheritanceProofs": [
+    "artifacts/goal-4/ta07/old-ui-premises/static-review.json",
+    "artifacts/goal-4/ta07/old-ui-premises/passed-sibling-ast-proof.json",
+    "goal-4/evidence/ta07/old33-visual-premise-review.json"
+  ],
+  "rows": [
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A1 four direct strike objects medicine kit and retreat lane have distinct physical hierarchy beside a complete cold standing actor",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 7145,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 attack has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 5874,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 guard has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 5726,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 technique has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4936,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 release has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4045,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 heal has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 5278,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 restore has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4672,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 flee has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4582,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A3 a native positive-MP technique really counts down three seconds and its first native write and sole whole-game result respect the deadline",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 8663,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A4 native saving and quota keep actors uncommitted while an explicit retry saves the exact original command and cost only once",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 11468,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A5 readonly strategy hidden scene and a pending native pause clear preparation without replacing the finite draft or counting a second turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 7203,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A6 same battle id foreign ownership and generation clear saved gestures while refresh and original history never borrow the old actor",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 7894,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A7 a saved terminal turn never paints the next enemy and a legal defeat never borrows a victory actor",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 7723,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A8 talisman preparation survives missing standing art and both reduction settings keep real actions and readable static results",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 11849,
+      "rawReport": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "rawReportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "inputSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "currentSpecSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+      "evidenceOrigin": "new14 current full run"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "one real three-second manual guard keeps the live battle unchanged until it is actually saved",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 6917,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "04a7851062b0fb4a0565ad841369cafc40c4f2bfc64b8d85246eaa86909dd9a8",
+      "currentSpecSha256": "57b737d94dc25e42026c500736c295e390c4aff397dc2edbdfd96a00b42e3dea",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "Two literal sibling callbacks AST-byte-exact and all shared helpers exact; only school guard callbacks changed. See passed-sibling-ast-proof and old-ui-premises/static-review."
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "rejected acceptance in all four adventure entrances blocks new intent but keeps readonly inspection and the original start receipt retry",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 18667,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "04a7851062b0fb4a0565ad841369cafc40c4f2bfc64b8d85246eaa86909dd9a8",
+      "currentSpecSha256": "57b737d94dc25e42026c500736c295e390c4aff397dc2edbdfd96a00b42e3dea",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "Two literal sibling callbacks AST-byte-exact and all shared helpers exact; only school guard callbacks changed. See passed-sibling-ast-proof and old-ui-premises/static-review."
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K7 actual mortal entry retains one explicit keyboard skip beyond its natural lifetime without changing its actual saved outcome",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 5233,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+      "currentSpecSha256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K8 an ordinary pill-consuming breakthrough keeps its explicit keyboard prompt static and Enter returns current content without repeating the receipt",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 3089,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+      "currentSpecSha256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K9 an actual battle turn keyboard prompt preserves focus and an old destroyed skip cannot dismiss the next turn while blur keeps the new target",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 8338,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+      "currentSpecSha256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K10 trial entry has an explicit held keyboard skip and a restored separately arranged reduced-motion entry has no empty skip control",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 9731,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+      "currentSpecSha256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K13 a saved guard while only the public strategy is visible keeps its original cycle and factual receipt without a viewport fallback or later borrowed actor",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 3877,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+      "currentSpecSha256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "one real encounter waits thirty seconds and its first battle command waits a separate three seconds",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 38543,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "currentSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "sword finite strategy plays formal separate turns and its complete receipts remain after refresh",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 9095,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "currentSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "talisman finite strategy plays formal separate turns and its complete receipts remain after refresh",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 11224,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "currentSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "manual takeover cancels the pending turn and an explicit retreat alone pays eight HP",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 5694,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "currentSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "an existing trial can automate only its present gate and leaves the next gate awaiting new authorization",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 5955,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "currentSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "inspecting the original paused battle arrangement restores every selected limit without changing Game",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4086,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "currentSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "reading a later receipt page stays on that page while the next authorized turn is saved",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4495,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "currentSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "a dangerous turn pauses with the battle intact and leaves retreat reachable with its real cost",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4363,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "currentSpecSha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the committed closing seal is anchored inside the life canvas and never crosses the reading tabs or actions",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 3861,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "bef6800aa68903785cdb579d1537d0b79184456c8343b1c6fa61f1df08010ced",
+      "currentSpecSha256": "bef6800aa68903785cdb579d1537d0b79184456c8343b1c6fa61f1df08010ced",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-CANCEL a lawful battle restore confirmation can fail and be cancelled while a new manual turn keeps the current battle and checkpoint",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 8995,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "currentSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE attack exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 6258,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "currentSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE guard exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 6262,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "currentSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE technique exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 6538,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "currentSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE release exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 9865,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "currentSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE heal exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 7044,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "currentSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE restore exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 6486,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "currentSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-MOVE flee exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 5767,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "currentSpecSha256": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-enemy-asset.spec.ts",
+      "title": "M03-E1 a late previous-heart image response and stale load error callbacks cannot replace the real next enemy after one formal three-second finishing turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 3691,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "e401bc4a8e4602a82423a28c4fe386b6eb72b2fc78f101472e114bbfeb51d19c",
+      "currentSpecSha256": "e401bc4a8e4602a82423a28c4fe386b6eb72b2fc78f101472e114bbfeb51d19c",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-milestone-feedback.spec.ts",
+      "title": "M03-MF1 the explicitly selected six-second answer saves once before its own trial feedback and leaves the real first enemy unacted",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 9074,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "1819c900b0e1d84bc6be14158094d53fdae37edf54cd998a88c01dba2c42517d",
+      "currentSpecSha256": "1819c900b0e1d84bc6be14158094d53fdae37edf54cd998a88c01dba2c42517d",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-milestone-feedback.spec.ts",
+      "title": "M03-MF2 explicitly confirmed retirement preserves a real complete checkpoint and shows only its own saved life scroll once",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 7458,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "1819c900b0e1d84bc6be14158094d53fdae37edf54cd998a88c01dba2c42517d",
+      "currentSpecSha256": "1819c900b0e1d84bc6be14158094d53fdae37edf54cd998a88c01dba2c42517d",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "matrix-ui-milestone-feedback.spec.ts",
+      "title": "M03-MF3 the lawful final-month closure saves its one month only at twelve seconds and never replays the sealed-life result",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 7268,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "1819c900b0e1d84bc6be14158094d53fdae37edf54cd998a88c01dba2c42517d",
+      "currentSpecSha256": "1819c900b0e1d84bc6be14158094d53fdae37edf54cd998a88c01dba2c42517d",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "the battle scene gives enemy intent room while original finite strategy and manual actions still resolve through saved turns",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 5551,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "099ac213d92b4b60f5ed7896bed47e96c92a417d0f59da368f6791b57cf68fdb",
+      "currentSpecSha256": "099ac213d92b4b60f5ed7896bed47e96c92a417d0f59da368f6791b57cf68fdb",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "a missing enemy painting leaves real intent and a saved manual turn usable",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 3297,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "099ac213d92b4b60f5ed7896bed47e96c92a417d0f59da368f6791b57cf68fdb",
+      "currentSpecSha256": "099ac213d92b4b60f5ed7896bed47e96c92a417d0f59da368f6791b57cf68fdb",
+      "evidenceOrigin": "unchanged passing declaration from old33 terminal report",
+      "inheritance": "callback and shared helpers identical; runtime242 exact"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "sword battle has opposed real actors and all seven manual moves with costs before one saved three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4743,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-leaf-source5-report.json",
+      "rawReportSha256": "d428ea53921fe1cce510f376de0740f6be65cedee632289befbc1791a580a717",
+      "inputSpecSha256": "57b737d94dc25e42026c500736c295e390c4aff397dc2edbdfd96a00b42e3dea",
+      "currentSpecSha256": "57b737d94dc25e42026c500736c295e390c4aff397dc2edbdfd96a00b42e3dea",
+      "evidenceOrigin": "three corrected old visual premises current leaf run"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "talisman battle has opposed real actors and all seven manual moves with costs before one saved three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4385,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-leaf-source5-report.json",
+      "rawReportSha256": "d428ea53921fe1cce510f376de0740f6be65cedee632289befbc1791a580a717",
+      "inputSpecSha256": "57b737d94dc25e42026c500736c295e390c4aff397dc2edbdfd96a00b42e3dea",
+      "currentSpecSha256": "57b737d94dc25e42026c500736c295e390c4aff397dc2edbdfd96a00b42e3dea",
+      "evidenceOrigin": "three corrected old visual premises current leaf run"
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A5 same battle id takeover clears current motion numbers and actors before any other saved turn",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 6366,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-leaf-source5-report.json",
+      "rawReportSha256": "d428ea53921fe1cce510f376de0740f6be65cedee632289befbc1791a580a717",
+      "inputSpecSha256": "6c0ed6a9fce2933eed3eb81be2aa045bffe3aff8faa526e52506cb702e1a59b9",
+      "currentSpecSha256": "6c0ed6a9fce2933eed3eb81be2aa045bffe3aff8faa526e52506cb702e1a59b9",
+      "evidenceOrigin": "three corrected old visual premises current leaf run"
+    }
+  ],
+  "originalThreeFailuresPreserved": [
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "sword battle has opposed real actors and all seven manual moves with costs before one saved three-second turn",
+      "project": "chromium",
+      "status": "failed",
+      "retry": 0,
+      "durationMs": 11896,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "04a7851062b0fb4a0565ad841369cafc40c4f2bfc64b8d85246eaa86909dd9a8",
+      "currentSpecSha256": "57b737d94dc25e42026c500736c295e390c4aff397dc2edbdfd96a00b42e3dea"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "talisman battle has opposed real actors and all seven manual moves with costs before one saved three-second turn",
+      "project": "chromium",
+      "status": "failed",
+      "retry": 0,
+      "durationMs": 11627,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "04a7851062b0fb4a0565ad841369cafc40c4f2bfc64b8d85246eaa86909dd9a8",
+      "currentSpecSha256": "57b737d94dc25e42026c500736c295e390c4aff397dc2edbdfd96a00b42e3dea"
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A5 same battle id takeover clears current motion numbers and actors before any other saved turn",
+      "project": "chromium",
+      "status": "failed",
+      "retry": 0,
+      "durationMs": 12848,
+      "rawReport": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "rawReportSha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "inputSpecSha256": "3b35744e5aa320e83e916c0279536f3b3f30387813d9faeb4f85b9b8005887a5",
+      "currentSpecSha256": "6c0ed6a9fce2933eed3eb81be2aa045bffe3aff8faa526e52506cb702e1a59b9"
+    }
+  ],
+  "unexecutedOriginal415": [
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "all six destinations are map objects and every sixteen source and six ordinary enemy remains an honest readonly choice",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "resource objects keep complete target and lifetime budgets as a draft through reselect, other category and source details",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "journey progress cannot show a saved destination before 5999 plus one milliseconds and the atomic transaction",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "source progress is real and saved products enter the bag once per full cycle until its finite target",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "pause, hidden scene, refresh and old receipt pages never create a new resource reward effect",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "a quota failure freezes the resource object and same-command retry grants exactly one recorded bag arrival",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "missing source and journey paintings retain native resource and destination objects plus legal saved work",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "system reduced effects retain real source progress and static committed results",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "preference reduced effects retain real source progress and static committed results",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "real six-second journey and thirty-second gathering preserve game state until their actual deadlines",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "the real alchemy objects keep all seven recipes, honest gates and complete material quantities in one fixed desktop stage",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "complete furnace settings and readonly material/product sources preserve a finite draft without starting travel or production",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "furnace phases follow the real cycle and only two atomic saved pills arrive once before the cumulative budget stops",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "hidden views, pause and a different selected recipe withdraw fire and cannot replay an already saved pill",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "a quota failure keeps the furnace cold and original-command retry saves one pill with one arrival",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "refresh, explicit continuation and saved receipt pages never animate an old completed furnace as a new reward",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "a different native page may craft but cannot light this page furnace or replay its saved product arrival",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "an invalid furnace image keeps real recipe, material and open-furnace controls playable",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "system reduced motion keeps the real furnace states and saved product without animated flame or smoke",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "preference reduced motion keeps the real furnace states and saved product without animated flame or smoke",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "one real thirty-second furnace saves actual inputs and product before presenting the completed pill",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "the forge retains its original one-cycle craft and explicit equip boundary outside the new alchemy workshop",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A1 saving furnace finishes exactly once after pause intent and never performs a new pill effect",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A2 already saved furnace withdraws its short result while the native pause transaction is still pending",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A3 same furnace id taken by an already initialized page clears the original pill while its Game stays authoritative",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A4 a committed pill survives native queued snapshot abort and reconnect never repeats its inventory or result effect",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A6 material inspection explicit travel finite gathering and return preserve the original nondefault furnace draft",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-01.spec.ts",
+      "title": "CHECK-A7 a paused source and late native history delivery cannot replace another page craft progress or animate an old receipt",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A8 skill local saved configuration never relights its old sequence after a foreign same-run A to B to A transition",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A8 relic local saved configuration never relights its old sequence after a foreign same-run A to B to A transition",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A9 a finite start already committed before a real native connection closure remains a saved readonly arrangement rather than a fresh unarranged choice",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A5 late native learning delivery cannot replace another page medicine activity or relight the previous learned scroll",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A1 separately authorized learning equip purchase medicine and personal response keep exact costs and independent game objects across one lawful route",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A2 medicine cycle quota blocks otherwise legal equipment and visits across domains while read pages export and original retry remain available",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A3 cancelling failed equipment or visit intent allows only a new explicitly confirmed action in the other domain",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A4 a committed configuration survives queued native snapshot abort and cross-domain reconnect never repeats that equipment or medicine",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A6 unsubmitted learning and medicine drafts survive people life and ordinary detail returns while a later real use updates the anchored factual inventory",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A7 a paid personal response medicine is consumed exactly once and old factual readings cannot become a new recovery effect",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G1 opening keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G2 cultivation keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G3 breakthrough keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G4 equipment with qi and no chosen school keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G6 ordinary battle keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G7 recovery after actual attack and retreat keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G8 causality awaiting an actual decision keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G9 trial preparation keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G10 actually sealed ending keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G11 trial battle has battle priority keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G12 third gate won but END still undecided has trial priority keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G5 actual finite SOURCE results suppress only materials and refreshing or reading its old receipt never fabricates a new contextual outcome",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K1 retirement keyboard cancellation returns its exact settings opener and one twelve-second seal focuses factual life",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K2 trial entry keyboard heading trap and cancellation retain the complete preparation before one fifteen-second question handoff",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K3 the actual custom restore keyboard dialog cancels to its battle opener then restores the whole checkpoint with one six-hundred-ms receipt",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K4 ending keyboard cancellation preserves its factual choice and a single twelve-second confirmation focuses the committed life record",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K5 a native pending startup content skip never steals the keyboard focus from a newer settings decision",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K6 pending startup without newer intent restores welcome focus and genuine keyboard creation choice and navigation keep their proper targets",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K11 an accepted trial entry cannot take focus from a newer keyboard settings decision after its actual saved handoff",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K12 an accepted trial entry cannot replace a newer keyboard exploration navigation or its focus when the original cycle commits",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K14 a real goal toggle delivered after typing preserves the exact pending quantity through blur readonly saving and reload",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-records.spec.ts",
+      "title": "CHECK-MATRIX-L1 a scoped-name formal breakthrough exports exactly its realm_changed observation with full costs and no private Game text",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-records.spec.ts",
+      "title": "CHECK-MATRIX-L2 a formal final wolf turn exports exactly battle_won after its one saved three-second outcome",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-records.spec.ts",
+      "title": "CHECK-MATRIX-L3 an explicit depart ending exports formal spirit to ascended realm change and ending without inventing a page-close failure",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-matrix-records.spec.ts",
+      "title": "CHECK-MATRIX-L4 one stopped formal cycle and both actual exports survive a same-session virtual day without Game Activity receipt or reward changes",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "R4 and B read surfaces keep one running activity and never turn inspection into a Game write",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved cultivation cycles retain every complete receipt after reload without replaying rewards",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved alchemy cycles retain material costs and net pills on every receipt page after reload",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved purchase cycles retain positive currency costs and exact inventory gains after reload",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "another page names its takeover and only its new full cycle can award once",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "paused cultivation exposes saved cycles after reload and history reading preserves the exact resume boundary",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "the journal returns to life reading after an old milestone is invalidated by a later explicit configuration",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A4 one real thirty second natural cycle moves only the formal saved cultivation and preserves a static result without an automatic breakthrough",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A5 a lawful real sixty second assisted cycle charges one exact realm cost and stops before its cumulative budget or reserve can be crossed",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A6 nondefault saved limits remain distinct from a changed draft across goal and comparison returns and normal period saves never rewrite that draft",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A7 native saving and a held pause keep cultivation cold and truthful until exactly one complete Game is committed then no next cycle starts",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A8 choosing the other method while one cycle runs or saves never borrows its aura clock or saved result and returning cannot claim a missed effect",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A9 native quota and put-success abort preserve the whole cultivation DB and the original exact cycle retries its first real outcome once",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A10 a same-id foreign takeover and a hidden later cycle never replay local aura and refresh requires a newly authorized full cycle",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A11 all real target families and complete source plans stay readonly and the exact lack of cultivation medicine or location controls the next decision",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A12 real CHOOSE saves its complete selected 6000ms result once and never authorizes the next stage",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A13 real BREAKTHROUGH saves its complete selected 30000ms result once and never authorizes the next stage",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A14 real START_TRIAL saves its complete selected 15000ms result once and never authorizes the next stage",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A15 missing practitioner art and both reduced-motion modes retain complete readable objects original gates and exact static saved cultivation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A16 a pending unaccepted craft or source intent blocks otherwise legal goal travel and trial entry while their complete readonly preparation remains usable",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A1 home and exact training details expose a cultivation site mat and stone seat while both method previews and the goal board remain readonly",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A2 three finite gate previews remain readonly and native cycle quota retains each exact one-shot command until its first successful retry",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A3 a genuinely unaccepted craft START quota keeps its original retry while home and detailed fresh cultivation stay blocked but reading remains usable",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A17 opening through the ordinary current detail keeps the medicine case all three full choices and its one six second result then an actionable next step",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A18 the lawful training footer breakthrough has its own gate and full local period then one realm handoff without replay on return",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A19 a genuinely unaccepted craft start keeps purchase preparation and income sources readonly while their otherwise legal foreign travel cannot replace its original retry",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo node opening loads a lawful playable state in its own database",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo node battle-sword loads a lawful playable state in its own database",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo node battle-talisman loads a lawful playable state in its own database",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo node causal-help loads a lawful playable state in its own database",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo node causal-trade loads a lawful playable state in its own database",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo node trial-sword loads a lawful playable state in its own database",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo node trial-talisman loads a lawful playable state in its own database",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo node ending-sword loads a lawful playable state in its own database",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo node ending-talisman loads a lawful playable state in its own database",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo menu, actions, settings and return preserve every normal Game, record and tracking value",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo reload, reset and typed export/import stay separate from normal saves",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "unknown, ambiguous, damaged and missing demo nodes never open a normal or demo save",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "a demo seed quota failure keeps the normal database intact and retries one stable import",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo storage denial offers an explicit scoped reread without falling back to the normal Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "two first-load demo tabs share one seed receipt and sync their own committed turn",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "demo trial entries create real repeatable complete checkpoints rather than importing invented ones",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "demo.spec.ts",
+      "title": "both demo endings commit through the real confirmation and a node reset never touches normal progress",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A1 all twelve jade slips and real loadout slots stay read-only inside distinct game objects",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A2 one legal forge enters cold native saving before its exact sixty-second artifact is committed",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A3 two selected cross-school jade slips keep exact separate cycles and show only the selected credible completion",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A4 a real thirty-second jade study saves its formal fee before the slip becomes mastered",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A5 a real sixty-second sword manual commits one insight and never silently changes school or equipment",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A6 a real sixty-second forge presents the selected artifact only after exact costs are saved",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A7 all four distinct artifact objects retain full materials, owned and actual bound states without writes",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A8 school skill and relic comparisons cancel without writes and explicit atomic confirmations retain their real scopes",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A10 learning pause and same-id takeover immediately withdraw old short effects without changing the authoritative learned record",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A11 a foreign forge generation, hidden scene and historical receipt never light the old artifact or forge it twice",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "a trip selects without writing then really counts six seconds before one free arrival",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "travel context never steals a later navigation and refreshing a trip grants no offline arrival",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "an external progress notification cancels the pending trip viewing intention immediately",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "non-pointer pause while a trip is saving cancels its viewing intention even if that arrival commits",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "an arrangement persists without rewards and runs two real commands until the cultivation cap",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "viewing another gameplay keeps progress visible and pause cancels an unfinished cycle",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "refresh preserves the plan and requires an explicit fresh cycle instead of offline catch-up",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "assisted cultivation previews the budget and reserve and stops before another charge",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "a failed cycle stops automatic progression and retry uses the same command exactly once",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "pause requested while persistence is held finishes that atomic cycle and never starts the next",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "an explicit second-page continuation fences the original page and does not double reward",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "one production cycle follows the real thirty-second wall clock and saves before showing the reward",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-full-route.spec.ts",
+      "title": "a normal new life follows visible finite idle plans from the welcome through the explicitly selected ascension",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "saved assisted cultivation is inspected exactly and newly confirmed edits become the real new arrangement",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a production cycle and pause keep an inspected unsubmitted draft separate from the original furnace authorization",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a source cycle and pause keep target and limits in the unsubmitted draft without changing the running authorization",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "owned relic equip shows its formal gate during battle and viewing never changes Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "owned relic equip shows its formal gate during event and viewing never changes Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "natural cultivation retains a nondefault cap and reserve when inspecting and refreshing an arrangement",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a normal new life connects cultivation material gathering furnace planning and a separately confirmed foundation breakthrough",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a real opening choice remains a preview, then waits six seconds and saves exactly its one medicine cost",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a real prepared breakthrough waits thirty seconds and stops at the next realm with its actual pill and reset cultivation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "visiting opens only the selected current-place story and a separately selected response saves once",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a paused selected opening survives refresh, has a read-only original arrangement and grants no offline result",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "trial entry and each answer stop at the next undecided boundary without an automatic battle turn",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "the release answer shows its actual attack bonus and never substitutes the other answer or starts a turn",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "the selected transmit ending waits for explicit arrangement and preserves the sealed life without creating another",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "the selected depart ending waits for explicit arrangement and preserves the sealed life without creating another",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "RETIRE requires its own explicit life confirmation and uses only its formal game-month cost",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "END_LIFE requires its own explicit life confirmation and uses only its formal game-month cost",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a failed arrangement retries the same preview and a different page never gets pulled back by its later completion",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "another page changing the activity makes the frozen choice stale without refreshing its authorization",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a running visit disables new visits while people, journal and same-place inspection stay usable",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "a running answer disables all answer choices but preserves details and full narrative reading",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "running retirement disables another seal while life pages and export remain available without ending the life",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "title": "running trial entry disables another entry and foreign travel while preparation pages and equipment inspection remain usable",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active learn shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active study shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active buy shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active sell shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active use shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active rest shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "viewing a saved free learning plan keeps manual defaults and each mode retains its own unsubmitted draft",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "viewing a saved manual plan starts a separate learning queue and does not inherit the manual budget",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a saved market order keeps an edited stock target and budgets across a real cycle commit and pause",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a saved medicine arrangement keeps edited dose limits and recovery target across its cycle and pause",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a middle shelf item stays visible after source navigation and reviewing its saved market plan",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "first medicine inspection is an unsaved draft and its eventual stop is labelled as a prediction",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "two selected jade slips learn in full separate cycles then require explicit compared equipment",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "manual travel keeps exact finite budget and never studies until separately confirmed",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "market purchases one item per deadline and sells medicine only within explicit inventory reserve",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "finite medicine recovery saves real effects then refresh preserves the original arrangement without offline rewards",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "changing school previews all three slots and cancel keeps Game and activity unchanged",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "a medicine cycle really counts six seconds and commits no early healing",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "configuration quota failure retains the original confirmation and a later cancelled failure does not block a new intent",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "cave rest uses one full thirty-second period for its original month and full restoration",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "trial equipment inspection keeps its location and explicit rest navigation opens recovery without starting it",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "alchemy selects a real recipe and completes two timed furnaces atomically within cumulative budgets",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "breakthrough preparation opens one-pill planning then leaves the ordinary breakthrough for player confirmation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "forging takes one full cycle and retains an explicit separate equip action",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "saved alchemy limits and material reserves survive viewing pause refresh and explicit full-cycle continuation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "production quota failure rolls back materials and retries the same original furnace once",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "one alchemy furnace follows thirty real seconds and saves its costs and pill together",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "travelling to the cave retains the chosen recipe and explicitly drafted limits without starting it",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "reopening a saved plan uses newly confirmed furnace count and target rather than the old authorization",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "the furnace keeps the single-cycle warning when using materials tracked for a breakthrough",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "travelling to the cave retains the nondefault relic and does not forge or equip it",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "all seven recipes and four relics retain their actual materials and fixed desktop controls across catalogue pages",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a committed full restore with lost delivery keeps its original modal retry enabled and replay leaves every database record unchanged",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a fresh stale full restore confirmation still rejects another page actual new battle turn without writing",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a travel preview and actual one-arrival stop use travel language and inspecting does not start another action",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "manual recovery medicines available retain their reason without an empty trailing separator",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "manual recovery medicines unavailable retain their reason without an empty trailing separator",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a current trial victory toast lets actual view buttons receive clicks and never authorizes the next gate",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "an explicit preparation purchase retains its travel draft then trial entry stops for the player question",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "the actual storage reconnect reports the saved paused activity and never retries or grants an offline cycle",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "a normal new life reaches source planning and gathers two real cycles within the month budget",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "commission income reaches a chosen stock target while cultivation is full",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "preparation leads to an explicit trip then a material target without hidden gathering",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "source pause and refresh preserve intent and require a full explicit resumed cycle",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "source quota failure stops and retries the same single cycle without duplicated materials",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "one source cycle waits thirty real seconds before committing its material and month",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-sources.spec.ts",
+      "title": "reviewing a saved source arrangement keeps its limits and blocks conflicting expedition actions",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "a locked mortal furnace has a readable unlit scene and its complete catalogue remains readonly",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the selected forged relic is the visible object and ownership stays distinct from its equipped slot",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the inventory keeps all real item quantities and all readonly category pages in the game stage",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "resource points and their pager form a group while expanded limits remain readable and readonly",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the selected jade book and its actual slot comparison remain readable through equipment views",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "an injured prepared cultivator is told to recover before traveling to the trial and inspection is readonly",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A1 every fourteen satchel objects keep real quantities full uses and protected breakthrough ownership read-only",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A2 market counter and recovery ritual preserve their complete unsubmitted limits without using or trading",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A3 native medicine saving keeps the real body and medicine unchanged and never claims that an owned cycle needs takeover",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A4 one real buy period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A5 one real use period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A6 one real rest period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A7 both medicine sales stop at the exact reserve and all five breakthrough offers stay explicitly forbidden",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A8 native acceptance quota failures keep buy medicine and rest atomic and retry the original exact intent once",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A9 native cycle quota failures keep buy medicine and rest atomic and retry the original exact intent once",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A10 saved recovery short effects stop immediately for held pause and same-id external ownership without losing the real medicine outcome",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A11 switching selected goods or buy sell mode and hidden views cannot borrow an active cycle or replay a foreign trade",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A12 missing symbol images and both reduced-effect modes keep all three game objects and an actual medicine result readable and usable",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "local-loading.spec.ts",
+      "title": "delayed optional settings end with a truthful temporary choice and cannot overwrite it on late native success",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "local-loading.spec.ts",
+      "title": "optional settings fallback never treats a denied Game database as a new usable save",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "local-loading.spec.ts",
+      "title": "a manual settings reread stays reachable after a normal connection and does not execute a Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-boundaries.spec.ts",
+      "title": "M03-B1 an exact tracked target survives reload and resets for a separately confirmed new life without readonly Game writes",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-boundaries.spec.ts",
+      "title": "M03-B2 corrupt and unavailable tracking preferences remain separate from the valid saved Game and readonly target editing",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-boundaries.spec.ts",
+      "title": "M03-B3 a tracked real medicine remains spendable and one exact six-second use exposes its new shortage",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-boundaries.spec.ts",
+      "title": "M03-B4 legal imported name and journal markup stay literal readable text without script or external requests",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-boundaries.spec.ts",
+      "title": "M03-B5 a late old image decode success delivery cannot replace the newer saved scene",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-boundaries.spec.ts",
+      "title": "M03-B6 a late old image decode error delivery cannot replace the newer saved scene",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-boundaries.spec.ts",
+      "title": "M03-B7 a future primary database disables new Game writes and exports only its unchanged raw original without downgrading",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-CANCEL craft keeps its original native failed confirmation until explicit cancel then accepts one fresh legal plan",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-CANCEL source keeps its original native failed confirmation until explicit cancel then accepts one fresh legal plan",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-CANCEL encounter keeps its original native failed confirmation until explicit cancel then accepts one fresh legal plan",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "title": "M03-PENDING a real source cycle quota keeps new work blocked without a modal and retries only the original command",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C1 new_game has its own explicit UI decision native saved identity and one control feedback without game rewards",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C2 restart has its own explicit UI decision native saved identity and one control feedback without game rewards",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C3 import has its own explicit UI decision native saved identity and one control feedback without game rewards",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C4 restore has its own explicit UI decision native saved identity and one control feedback without game rewards",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C5 local report preview cancellation and explicit download preserve the full Game and disclose a private non-save snapshot",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C6 recording disabled persists across refresh without backfilling and re-enabling captures only the next explicitly arranged action",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C7 keyboard help exposes every current guide and Escape returns focus to its exact public opener without writing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C8 the demo menu exposes all nine lawful node scopes while normal Game local records and tracking remain isolated",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C9 unreadable File text stays local and a later selected confirmed file owns import when an older read finishes last",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C10 an earlier welcome File text cannot overwrite a subsequently confirmed new Game or create an unauthorized import receipt",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C11 a same-run committed action invalidates the earlier file revision without a new import decision or receipt",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C12 an explicitly confirmed restart invalidates a prior file read and preserves the new native control receipt",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C13 a delayed typed demo file cannot undo a confirmed scoped node reset or create normal Game data",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-focus.spec.ts",
+      "title": "M03-F1 native Tab and Shift Tab stay within settings and paged help while Escape returns their exact public opener without writes",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-focus.spec.ts",
+      "title": "M03-F2 the actual file wrapper and keyboard chooser cancel safely and oversized input retains visible modal error focus and the entire Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-focus.spec.ts",
+      "title": "M03-F3 committed travel metadata settles without stealing a later keyboard tab or changing its exact complete native outcome",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-focus.spec.ts",
+      "title": "M03-F4 current critical copy primary controls disabled reasons and keyboard focus keep the original computed contrast thresholds",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-intent.spec.ts",
+      "title": "M03-I1 paused assisted cultivation makes original continuation primary and readonly rearrangement never replaces it",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-intent.spec.ts",
+      "title": "M03-I2 an edited paused plan remains a draft through reading and return until explicit replacement starts one finite cycle",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-intent.spec.ts",
+      "title": "M03-I3 idle and naturally stopped cultivation retain the original start entrance and never require a paused replacement intent",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-local-recovery.spec.ts",
+      "title": "M03-L1 local quota leaves the actual committed Game intact and exports only the failed new observation from memory",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-local-recovery.spec.ts",
+      "title": "M03-L2 Game quota records a safe failure and the original cycle command retry creates exactly one action and receipt",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-local-recovery.spec.ts",
+      "title": "M03-L3 a genuine future local database stays byte-for-byte intact while explicit temporary collection exports no private future data",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-local-recovery.spec.ts",
+      "title": "M03-L4 a native local readonly transaction exception has a truthful finite fallback and never hangs or replaces the Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-local-recovery.spec.ts",
+      "title": "M03-L5 main open denial is a safe recorded code and never turns unreadable progress into a usable empty save",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-local-recovery.spec.ts",
+      "title": "M03-L6 clear cancellation confirmation and cross-page preference epoch changes invalidate previews without changing either complete Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-local-recovery.spec.ts",
+      "title": "M03-L7 real legacy opening startup migrates the entire lawful state while preserving native originals and exact migration identity",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-local-recovery.spec.ts",
+      "title": "M03-L8 real legacy qi startup migrates the entire lawful state while preserving native originals and exact migration identity",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-local-recovery.spec.ts",
+      "title": "M03-L9 real legacy battle startup migrates the entire lawful state while preserving native originals and exact migration identity",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-local-recovery.spec.ts",
+      "title": "M03-L10 an actual native versionchange closes the stale connection and explicit reread preserves DB9 without silently retrying the failed arrangement",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-menus.spec.ts",
+      "title": "M03-M1 settings overview local overview loaded records and export preview each fit one complete readonly menu",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-menus.spec.ts",
+      "title": "M03-M2 all twelve help topics retain their exact complete prose and one-screen paging with Escape returning the public opener",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "matrix-ui-menus.spec.ts",
+      "title": "M03-M3 all nine demo node links descriptions and scope warnings fit one readonly menu and close to the original settings opener",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A1 all four factual people keep their complete known and future readings in a readonly encounter object",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A2 complete responses question answers and both endings remain readonly preselected objects until their original confirmation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A3 the factual life scroll keeps every character in all four chapters and exports without sealing or writing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A7 the other ending retirement and lifespan seal only their selected factual life with no automatic new run",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A8 preselecting another response never borrows the original running or held saving ink and pause preserves its one exact commit",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A9 failed acceptance keeps the original intent retryable and explicit cancellation permits only a fresh separately confirmed response",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A10 visit response and closing native cycle failures stay atomic then retry the same command for their first actual result only",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A11 changing the visited person or invitation and external same-id ownership never lends or later reclaims another objects ink",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A12 all one hundred lawful journal rows and life-return anchors remain readable without advancing or borrowing a hidden visit",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A13 missing portraits and scene art plus both reduced-effect modes preserve complete objects real clocks and a static saved life result",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A14 an already open visit retirement or ascension review refuses fresh confirmation after a native sync failure until explicit reconnect and a new review",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "reselecting the same market object preserves the complete unconfirmed finite authorization",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "market buy and sell inspection retain separate drafts and never turn navigation into authorization",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "closing future market goods reconciles the actual object and its selected visible shelf",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "inventory sale inspection returns to its original selected object without a transaction",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "an edited paused battle strategy survives ordinary goal and character inspection with the same activity",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a completed battle retains its complete original strategy as read-only pages after the enemy is gone",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "market default shows the finite order and opens its complete limits on demand",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "recovery shows the body and real single-dose effect before its complete finite settings",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a direct source-market context returns from ordinary details with its order draft intact",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "repeated inventory use inspection preserves its edited default-view draft",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "repeated inventory sell inspection preserves its edited default-view draft",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "leaving and returning after a saved hit removes old actor and progress short effects",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a completed encounter original authorization stays readable after its explicit retreat changes location",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real buy waits its full online period and atomically saves one formal outcome",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real use waits its full online period and atomically saves one formal outcome",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real rest waits its full online period and atomically saves one formal outcome",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a turn saved while reading ordinary details does not replay hidden damage on return",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a replacement life cannot inherit a supply default-view deduplication or edited market budget",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "retreat labels distinguish ordinary combat without changing the battle",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "retreat labels distinguish the actual trial without changing the battle",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "resource points expose a finite summary and retain an edited target through same-object and category inspection",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "destination preview protects the scene and all six places remain reachable without implicit travel",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "a real trip to a location without gathering removes the previous resource object without granting anything",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "refresh shows the saved source arrangement without a working effect until explicit continuation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "all sixteen resource points and six ordinary enemies remain selectable across their real locations",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "inspecting a saved source plan cannot carry its limits into an imported new life without navigation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "a confirmed trip rebuilds all source limits for the new location",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "reselecting the current opponent and inspecting another category retain the full encounter draft",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "the actual jade object and status stay inside the stage and relic paging never overlaps its last object",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all twelve books and all fourteen bag objects retain real text, quantities and complete read-only uses",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "reading another slot and book cannot replace a multi-book draft or its edited cumulative limits",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "a fresh mortal has an explicit empty book catalogue without a phantom selected skill",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "missing catalogue paintings keep native jade and bag selection usable without inventing held objects",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "one selected book waits thirty real seconds and saves its actual cost before becoming learned",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "one selected relic waits its full real forge cycle and stays separate from equipment",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "same life realm growth keeps the selected bag item visible when newly unlocked materials move its page",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "changing school keeps the finite learning draft and selects a real book of the current school",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "manual context receives a school change then restores the old queue with a valid current-school selection",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all four relic objects expose their real costs and ingredients and equipment views remain read-only",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all four relic objects compare owned effects without equipping and equipment views remain read-only",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "a mastered book explains local comparison without asking for another learning trip",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "inventory offers compact quantity objects and one selected description without writing Game",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "learning keeps the finite queue and budgets in one on-demand surface",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "learning queue and nondefault limits survive loadout inspection and another main entry",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "selecting the same relic preserves its complete edited authorization without a Game command",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "a replacement life of the same realm never receives the previous local relic budget",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "life chapter and exact page survive ordinary goal inspection without a Game action",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "same person and category selection preserve the current factual reading and ordinary return",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a story can inspect life and ordinary details then return to its same unconfirmed response",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "opening life from settings inside an ordinary story detail preserves that original one-level return",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a real six-second visit leaves a clear pending meeting and never silently chooses the response",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "all four people preserve every factual and known future-reading character without acting",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "the complete retained hundred-entry journal remains readable through its actual page controls",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a duplicate journal entry keeps its own place after a saved commission",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a duplicate journal entry keeps its own place after a saved commission at the hundred-entry cap",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a committed visit that adds no journal text preserves the exact repeated entry being read",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a saved victory with two actual journal entries retains the older readable entry",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "every life chapter retains its full source text and the exported factual life stays complete",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "DECIDE shows every genuine option while preselection and native details remain read-only",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "ANSWER_TRIAL shows every genuine option while preselection and native details remain read-only",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "END shows every genuine option while preselection and native details remain read-only",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a committed response inserts facts without moving the life reader to another fact",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "one response waits six real seconds and persists its actual selected outcome exactly once",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "the selected ending waits twelve real seconds and seals only this life with all records retained",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "all eight main entries clear the temporary life-reading return while preserving the same pending story",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a replacement life cannot inherit the previous factual chapter or unconfirmed response",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "entering question again in the same life resets the old response despite its identical semantic id",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "cancelled choice confirmation and a hidden pending peek cannot execute or reopen an old dialogue",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "failed scene and portrait resources keep all people, complete factual reading and return controls usable",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "title": "a pending trial question can inspect local fate without querying it as a person event",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "a chosen purchase preparation survives ordinary goal inspection without changing Game or authorising an activity",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current mortal cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current qi cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current foundation cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current golden cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current nascent cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current spirit cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "preparation comparison and original purchase choice return safely and actual import clears the old draft",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "tradeoff controls stay usable with failed drawings and do not execute a projection",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "a life inspection nested inside a preparation goal returns through each original reading surface",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "purchase preparation keeps the currency name and source action readable in its actual card",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "qi preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "foundation preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "golden preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "nascent preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "spirit preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "store-sync-status.spec.ts",
+      "title": "a confirmed configuration keeps its real result when queued sync general fails and visible reconnect never reapplies it",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "store-sync-status.spec.ts",
+      "title": "a confirmed configuration keeps its real result when queued sync closed fails and visible reconnect never reapplies it",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A4 real visit waits its complete 6000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A5 real response waits its complete 6000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A6 real ending waits its complete 12000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A9 native acceptance and cycle quota failures keep learning and forging cold while the original exact intent remains retryable",
+      "project": "chromium",
+      "status": "not executed in TA07 current-source checks",
+      "historicalSource": "CHECK-MATRIX-01 CD3; no source5 pass relabel"
+    }
+  ],
+  "baselineReference": {
+    "path": "goal-4/evidence/check-matrix-01/coverage-final-source8.json",
+    "sha256": "478c0a85db56d0d1ad1f6fa2282daa6661ec1f7626188a660c04e44ceb86823e"
+  },
+  "parameters": {
+    "viewport": [
+      1440,
+      900
+    ],
+    "fontScale": 1,
+    "browser": "Chromium",
+    "testMs": 60000,
+    "expectActionMs": 8000,
+    "navigationMs": 15000,
+    "workers": 1,
+    "retries": 0
+  },
+  "boundaries": [
+    "Not a single47 or full429 green run.",
+    "382 original declarations are not executed in this task; no old source labels are rewritten.",
+    "No compatibility/environment/performance matrices were restored.",
+    "Representative pixel reviews and all20 generated new14 frames are separate; no full art or user acceptance.",
+    "Overall ART/long-term balance/Goal1, M04 onward, clean candidate/final review/HUMAN remain open."
+  ]
+}

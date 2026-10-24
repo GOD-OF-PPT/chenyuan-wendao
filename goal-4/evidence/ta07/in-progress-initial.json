@@ -1,0 +1,49 @@
+{
+  "task": "TA07",
+  "at": "2026-10-24T11:31:08.630969+00:00",
+  "status": "implementation-in-progress-not-delivered",
+  "baselineCommit": "920edd278e6bab0fe5c937d73c951cac76a91b56",
+  "previousTurn": "verified-progress-CHECK-MATRIX-01",
+  "contract": "docs/decisions/0033-battle-actors-ta07-contract.md",
+  "baselineRed": {
+    "raw": "artifacts/goal-4/ta07/ui-baseline-red-report.json",
+    "actualCase": "TA07-A1",
+    "failures": "missing new physical groups and full standing actor; original seven-button costs/time/readonly/fullDB passed",
+    "inputsExact": 680,
+    "httpFilesExact": 62,
+    "runtime": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+    "notCurrentRuntimeGreen": true,
+    "selectionErrorPreserved": true
+  },
+  "newColdAsset": {
+    "source": "art/redesign/characters/player-standing-cold-v1.png",
+    "runtime": "web/public/art/v2/actors/player-standing-cold-v1.webp",
+    "bytes": 63634,
+    "receipt": "art/redesign/receipts/player-standing-cold-v1.json",
+    "rootSourceViewed": true,
+    "decodedAndReencodedExact": true,
+    "userAcceptance": false
+  },
+  "newCommands": {
+    "files": [
+      "web/src/BattleCommandConsole.vue",
+      "web/src/ta07-commands.css"
+    ],
+    "bytes": 9623,
+    "budget": 12000,
+    "earlyVueParseOnly": true,
+    "notTypeOrBrowserPassedYet": true
+  },
+  "pending": [
+    "actor/strict witness/Stage integration and pure boundary tests",
+    "final source and asset guards/manifest actual binding freeze",
+    "early A1 and representative actual pixels; real3second/fullGame and failure/lifetime verification",
+    "affected old UI/rules/native dependency proof; current types/build/asset guards",
+    "local independent implementation commit; archive/rebuild/frozenHTTP/user visible progress preservation",
+    "tasks and scoped GJ documentation closure"
+  ],
+  "goalActiveNotComplete": true,
+  "overallGameFeelArtLongBalanceHumanAccepted": false,
+  "compatibilityOrEnvironmentPerformanceExecuted": false,
+  "nextTaskAfterThis": "TA08"
+}

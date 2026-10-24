@@ -6,6 +6,7 @@ export const SCENE_ASSETS = {
 } as const;
 export const TERRACE_STATE_ASSETS={closed:SCENE_ASSETS.terrace,storm:'art/v2/scenes/terrace-storm.webp',opened:'art/v2/scenes/terrace-opened.webp'} as const;
 export const CAVE_MEDITATION_ASSET='art/v2/scenes/cave-meditation.webp';
+export const BATTLE_PLAYER_ASSET='art/v2/actors/player-standing-cold-v1.webp';
 export const DESKTOP_UI_ASSETS={meditation:'art/v2/ui/meditation-ink.webp'} as const;
 export const PANEL_MATERIAL_ASSETS={mountains:'art/v2/ui/mountain-wash-v1.webp'} as const;
 export function sceneAssetPath(scene:{key:string;gate:'none'|'closed'|'storm'|'opened';artKey:keyof typeof SCENE_ASSETS},meditation=false){if(meditation&&scene.artKey==='cave')return CAVE_MEDITATION_ASSET;return scene.key==='terrace'&&scene.gate!=='none'?TERRACE_STATE_ASSETS[scene.gate]:SCENE_ASSETS[scene.artKey];}

@@ -1,0 +1,125 @@
+{
+  "runtimeDigest": "4640894ed2590fb1c34f7911af238ac09dc2ba6437f1fae3cbe846cb7fd3f5c8",
+  "representatives": [
+    {
+      "key": "manual",
+      "sourcePNG": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A1-four-2eec3-omplete-cold-standing-actor-chromium/ta07-initial-manual.png",
+      "sourceSHA256": "a45c597969411e6045596580249851aa1e6954b8a5cd50b383befa5d2cf3a86f",
+      "viewed": "root actually viewed this original PNG individually",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "copy": "goal-4/evidence/ta07/visual-source5-manual.jpg",
+      "copySHA256": "8c7718a566dc18a87ffd3eb91cbd9a6ac0def089ad6369dbfd433b18bb62b839",
+      "copyFormat": "lossy JPEG quality68; original dimensions; original PNG preserved",
+      "observation": "四出招、两药匣、退路与全身角色；未裁切入口，保完整条件。"
+    },
+    {
+      "key": "guard",
+      "sourcePNG": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A2-guar-fb6e5-ne-formal-three-second-turn-chromium/move-guard-saved-scene.png",
+      "sourceSHA256": "e06ea76a1d055fa459085fcc0f1b8b4ae79a4b49676cd6a39bee0b13bd2e930b",
+      "viewed": "root actually viewed this original PNG individually",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "copy": "goal-4/evidence/ta07/visual-source5-guard.jpg",
+      "copySHA256": "db39893592e7080d9635d28d30ea4c7ba7f18f9709a4932389c6018a456c42ff",
+      "copyFormat": "lossy JPEG quality68; original dimensions; original PNG preserved",
+      "observation": "护体在自身下部，完整状态、敌意、主导航可读；短盾光较克制。"
+    },
+    {
+      "key": "technique",
+      "sourcePNG": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A3-a-na-f0579-result-respect-the-deadline-chromium/native-three-second-technique-saved.png",
+      "sourceSHA256": "75976fa15c000cc25eec349cc07e2f22755532c15604779cfe2f895675631104",
+      "viewed": "root actually viewed this original PNG individually",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "copy": "goal-4/evidence/ta07/visual-source5-technique.jpg",
+      "copySHA256": "c20e2483502976d5dddd871780024565c2ee1fbfdc6325ed3ad6d970c32c33e0",
+      "copyFormat": "lossy JPEG quality68; original dimensions; original PNG preserved",
+      "observation": "正式MP-8/HP-13与敌HP-16，角色及起手有据；反击关键帧另有原生观察。"
+    },
+    {
+      "key": "save-error",
+      "sourcePNG": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A4-nati-f552a--command-and-cost-only-once-chromium/quota-original-intent-all-seven-disabled.png",
+      "sourceSHA256": "530c5f789ce1d97a9f088a3c66e25e1f224688254cd68299b7694f2c1b423b24",
+      "viewed": "root actually viewed this original PNG individually",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "copy": "goal-4/evidence/ta07/visual-source5-save-error.jpg",
+      "copySHA256": "d7816cfd0dbac46686b204cb66f4434ea3c7555952addc5d626358e9aacdd543",
+      "copyFormat": "lossy JPEG quality68; original dimensions; original PNG preserved",
+      "observation": "错误横幅及完整原授权可读；220px错误舞台保留全部操作及足部。"
+    },
+    {
+      "key": "fallback",
+      "sourcePNG": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A8-tali-6de44-and-readable-static-results-chromium/talisman-fallback-and-system-reduced-static-result.png",
+      "sourceSHA256": "f94d4dd8ddfc2861839a4fda41665faac2fc132c19e51020e6d8b8cb48a00f92",
+      "viewed": "root actually viewed this original PNG individually",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "copy": "goal-4/evidence/ta07/visual-source5-fallback.jpg",
+      "copySHA256": "cfc66a1bce22e05ac416efa72d2700f121d4012b8ac83c85e18216e060727aea",
+      "copyFormat": "lossy JPEG quality68; original dimensions; original PNG preserved",
+      "observation": "站姿图失败时保人物替代、符形出招、静态真实成果和全部入口。"
+    },
+    {
+      "key": "retry",
+      "sourcePNG": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A4-nati-f552a--command-and-cost-only-once-chromium/quota-exact-original-retry-saved.png",
+      "sourceSHA256": "fc5702f91e4da10a60266db9d834a755412a75adae20eb75f89c45f3e20a05af",
+      "viewed": "root actually viewed this original PNG individually",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "copy": "goal-4/evidence/ta07/visual-source5-retry.jpg",
+      "copySHA256": "ad985171477b01664785479f512aa2b33441fc489fec6ed52001c4bb6e8e01fe",
+      "copyFormat": "lossy JPEG quality68; original dimensions; original PNG preserved",
+      "observation": "原意图首次成功后真实自动战场与护体，完整预算可读，不额外扣费。"
+    },
+    {
+      "key": "release",
+      "sourcePNG": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A2-rele-28257-ne-formal-three-second-turn-chromium/move-release-saved-scene.png",
+      "sourceSHA256": "246c57378287366c7dcbb1e53dbf742f2b95068acb1ff51a38aa69b82ec230f6",
+      "viewed": "root actually viewed this original PNG individually",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "copy": "goal-4/evidence/ta07/visual-source5-release.jpg",
+      "copySHA256": "330e985c718127df42e2ebb9ff4ed430e08e5254c98c146cf0366607f9e68ab3",
+      "copyFormat": "lossy JPEG quality68; original dimensions; original PNG preserved",
+      "observation": "敌方身侧剑锋分层可辨，费用/意图/导航不遮。"
+    },
+    {
+      "key": "heal",
+      "sourcePNG": "artifacts/goal-4/ta07/ui-current-source5-results/battle-actors-TA07-A2-heal-5a345-ne-formal-three-second-turn-chromium/move-heal-saved-scene.png",
+      "sourceSHA256": "83a94e9417935839b930e4d6831d18ae65a44fec81f395d58d22fec21972faa0",
+      "viewed": "root actually viewed this original PNG individually",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "copy": "goal-4/evidence/ta07/visual-source5-heal.jpg",
+      "copySHA256": "0671a71c29a624b895b9a0d942f258d0101a23f9c883b4676275486b41ec69b9",
+      "copyFormat": "lossy JPEG quality68; original dimensions; original PNG preserved",
+      "observation": "药息在己方下部，药物减一与真实净负HP明确，不假画正回复。"
+    }
+  ],
+  "currentGeneratedPNGs": 20,
+  "actuallyViewedOriginalPNGs": 8,
+  "unreviewedPNGs": 12,
+  "limits": [
+    "Single standing image plus code poses, not seven skeletal or frame animations",
+    "Counter only for formally confirmed negative net HP; medicine offset or fully blocked counters not inferred",
+    "Local TA07 screen review does not approve eight-page game feel, long balance or human acceptance"
+  ]
+}

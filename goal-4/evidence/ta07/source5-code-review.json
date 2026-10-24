@@ -1,0 +1,261 @@
+{
+  "format": "chenyuan-ta07-source-code-review",
+  "version": 1,
+  "recordedAt": "2026-10-24T14:01:24.360285+00:00",
+  "reviewer": "art02_sources independent source review",
+  "task": "Goal4 TA07",
+  "iteration": "source5",
+  "runtimeDigest": "4640894ed2590fb1c34f7911af238ac09dc2ba6437f1fae3cbe846cb7fd3f5c8",
+  "buildReference": "artifacts/goal-4/ta07/build-source5.json",
+  "decision": "No remaining code/security blocker found under0033 narrowed counter scope; final validation/pixels/user responsibilities remain separate.",
+  "scope": {
+    "diffBase": "920edd278e6bab0fe5c937d73c951cac76a91b56",
+    "trackedProductionChanges": 7,
+    "newProductionFiles": 5,
+    "sourceInputs": [
+      {
+        "path": "web/src/ActionFeedbackStage.vue",
+        "sha256": "f5d17de52070256328b2312087cbe6634edaa1c96420a7088fd62bcf25138c93",
+        "bytes": 10882,
+        "matchesSource5Build": true
+      },
+      {
+        "path": "web/src/BattleDeck.vue",
+        "sha256": "cdab3a1aaa6eb40d0c8a943a5f2e466074b4e927844b7e2ac0191fa2e9da0ed9",
+        "bytes": 756,
+        "matchesSource5Build": true
+      },
+      {
+        "path": "web/src/BattlePresence.vue",
+        "sha256": "70b1096daa0342836d12a6174ca41a63a87e5d34571cc7e96eb3c5c488d8f4e5",
+        "bytes": 6217,
+        "matchesSource5Build": true
+      },
+      {
+        "path": "web/src/BattleStrategy.vue",
+        "sha256": "6c5562c021ee432196c73b08e85db703837f0780a3e605e3c0e0e57671a74794",
+        "bytes": 16280,
+        "matchesSource5Build": true
+      },
+      {
+        "path": "web/src/art02-battle.css",
+        "sha256": "bd45d576f400bda33d7164725644eca7be8d28c28541a10aba24801a6fe3ff99",
+        "bytes": 6603,
+        "matchesSource5Build": true
+      },
+      {
+        "path": "web/src/assets.ts",
+        "sha256": "de5fb6c189b144680149d50f456d34269b4c60e670d8893c6d197315778e07b7",
+        "bytes": 3286,
+        "matchesSource5Build": true
+      },
+      {
+        "path": "web/src/immersive-theme.css",
+        "sha256": "6f55f39540dd49a1708dd585cee61e91ae114441e20fb1d1731f024501288197",
+        "bytes": 13429,
+        "matchesSource5Build": true
+      },
+      {
+        "path": "web/src/BattleCommandConsole.vue",
+        "sha256": "1bfab29a4db45765d502c1cbec2d637a0486621f690a1625e34bbc343761f41f",
+        "bytes": 4564,
+        "matchesSource5Build": true
+      },
+      {
+        "path": "web/src/BattleCast.vue",
+        "sha256": "e777a72538088e29a5b648dcb3a98a02bee51185c143c4b9f0ae724c603bc69d",
+        "bytes": 2424,
+        "matchesSource5Build": true
+      },
+      {
+        "path": "web/src/battle-choreography.ts",
+        "sha256": "b043e02ddcfeb6f2796cfa8a5fe1123ee70af40ef8998067785636192687c179",
+        "bytes": 9830,
+        "matchesSource5Build": true
+      },
+      {
+        "path": "web/src/ta07-commands.css",
+        "sha256": "54fb77b417ceb0aa333b9ec5d56245059f959b5afc1169d2728ed01daf0e0788",
+        "bytes": 6181,
+        "matchesSource5Build": true
+      },
+      {
+        "path": "web/src/ta07-cast.css",
+        "sha256": "05336c9c061713cfd8be1473bdc4b3c6e4a368036cc14ae9e81f420cefdd1ecd",
+        "bytes": 8084,
+        "matchesSource5Build": true
+      }
+    ],
+    "runtimeOrMetadataEdits": 0,
+    "browserOrImageViewerActions": 0,
+    "rulesOrAssetSuiteExecutions": 0,
+    "authorizedNative34Separate": "goal-4/evidence/ta07/native-verification-source5.json"
+  },
+  "findings": [
+    {
+      "id": "TA07-S5-BOUNDARY-01",
+      "severity": "Explicit presentation boundary, not blocker after contract clarification",
+      "evidence": [
+        "web/src/battle-choreography.ts:49",
+        "web/src/battle-choreography.ts:122",
+        "src/full/contracts.ts:17",
+        "docs/decisions/0033-battle-actors-ta07-contract.md:55"
+      ],
+      "concern": "Negative netHP does not identify every enemy counter; healing may offset damage or shields absorb it.",
+      "staticExampleNotRun": "Formal qi sword/no relic wolf: technique→guard→technique reaches player55/enemy44/round3; healing35 followed by enemy13 ends77/net+22. This is readonly rule derivation, not a reproduced UI red.",
+      "resolution": "Latest0033 explicitly depicts only negative netHP confirmed injury. ActionResult has no direct counter fact; do not copy enemyhit rules or parse unstable logs. No source change requested under clarified scope.",
+      "remaining": "Do not claim all enemy counters are represented; whole game-feel/user reacceptance stays open."
+    }
+  ],
+  "reviewed": [
+    {
+      "topic": "Complete saved proof/frozen move",
+      "sources": [
+        "battle-choreography.ts:18-30",
+        "battle-choreography.ts:35-52",
+        "ActionFeedbackStage.vue:38-54"
+      ],
+      "finding": "v6/BATTLE/currentrun/revision/runtimeid/gen/owner/enemy/trial frozen. Shared fullGame resolve/result/completeActivity proof retained. Exactkey/variant capture synchronous before deferred render/nextcycle. No loosened proof or award path found."
+    },
+    {
+      "topic": "Lifecycle/terminal",
+      "sources": [
+        "battle-choreography.ts:57-72",
+        "battle-choreography.ts:80-127",
+        "ActionFeedbackStage.vue:20-24",
+        "ActionFeedbackStage.vue:52-55"
+      ],
+      "finding": "view/active/run/activity/gen/owner/pause/hidden/error gate/clear witness and preparation. Original generation/timer/skip/hold retained; unmark clears move/school/role/response. Actorlookup exactrun/enemy/stage/resultrevision; terminal/flee/newenemy do not receive oldcast. No new blocker found statically."
+    },
+    {
+      "topic": "Actual game operations",
+      "sources": [
+        "BattleCommandConsole.vue:14-40",
+        "BattleDeck.vue",
+        "BattleStrategy.vue:64-69"
+      ],
+      "finding": "Fourattacks/twomedicines/flee, stock, fullcost/3s/reasons and originalmove emission retained. Proposedmove readonly; automatic finite strategy/fullbudget/originalsingleplan/CAS remain. Manualtakeover wording discloses pause. No new Game/Store/Repo/DB/fees/period mutation, percycle confirmation or claim."
+    },
+    {
+      "topic": "Security",
+      "sources": [
+        "BattleCommandConsole.vue",
+        "BattleCast.vue",
+        "battle-choreography.ts:75-78"
+      ],
+      "finding": "StaticSVG/path/shape map; variant exactly2parts/knownschool/own7move. No eval/Function/v-html/newremote service/dependency/font/audio. Privatecue remains local; publicObservation schema untouched. No new security blocker found within productiondelta."
+    },
+    {
+      "topic": "CSS/visual limits",
+      "sources": [
+        "ta07-commands.css",
+        "ta07-cast.css",
+        "BattlePresence.vue:32",
+        "battle-choreography.ts:86-113"
+      ],
+      "finding": "Preparation follows realprogress; saving applies no impact/delta. Error-onlymanual220px reserves completeauthorization; imagecontain/fallback retained. Safeplacement measures actualactor/scene/status/text obstacles. Reducedmotion gated. Source/geometry cannot certify allframes or aesthetics; reviewer viewed0images."
+    }
+  ],
+  "budgets": {
+    "newFiveBytes": 31083,
+    "cap": 36000,
+    "commandBytes": 10745,
+    "commandCap": 12000,
+    "castBytes": 20338,
+    "castCap": 24000,
+    "oldCaps": [
+      {
+        "ledger": "art/redesign/art02.json",
+        "cap": 45000,
+        "actualBytes": 41602
+      },
+      {
+        "ledger": "art/redesign/idle-adventure.json",
+        "cap": 45000,
+        "actualBytes": 43962
+      },
+      {
+        "ledger": "art/redesign/action-feedback.json",
+        "cap": 34000,
+        "actualBytes": 33973
+      }
+    ],
+    "raises": 0
+  },
+  "assetGuardFacts": {
+    "ledger": "art/redesign/ta07.json",
+    "source": {
+      "path": "art/redesign/characters/player-standing-cold-v1.png",
+      "bytes": 2062489,
+      "sha256": "6b1201d21c081fd6e15c60ae7093899d23e0375193cf046e9338bbd952620509",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "alpha": true,
+      "format": "png"
+    },
+    "runtime": {
+      "path": "web/public/art/v2/actors/player-standing-cold-v1.webp",
+      "bytes": 63634,
+      "sha256": "ead57061820734bd53f89f600795310cb2040b478f5e2bf61da2b946571ca2ef",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "alpha": true,
+      "format": "webp"
+    },
+    "receipt": "art/redesign/receipts/player-standing-cold-v1.json",
+    "receiptSHA256": "3c04603c3242571b73888d309104e0cb0f5f650180efc72f1b523d9936370672",
+    "originalMatchesCopy": true,
+    "promptLiteralMatches": true,
+    "promptDocumentMatches": true,
+    "decodeExport": "Root-owned actualPillow/cwebp proof is hashbound; not repeated by reviewer.",
+    "bbox": {
+      "source": [
+        0,
+        0,
+        1223,
+        1242
+      ],
+      "runtime": [
+        0,
+        0,
+        499,
+        507
+      ]
+    },
+    "marginBoundary": "Hair touches top; bbox0 real. Requested8%margin not claimed, scene padding requires actualpixels.",
+    "sourceReviewByRoot": {
+      "actuallyViewed": true,
+      "scope": "root generated source inspection only, not user acceptance",
+      "observation": "Full standing adult male, same face/ivory-teal robes, visible two hands and both feet; no weapon, spell aura, floor or UI. Some hair reaches top canvas edge; requested generous margin not fully met. Keep original and reserve scene padding instead of claiming source margin achieved. Single cold image plus code poses, not seven skeletal/frame animations."
+    },
+    "userAcceptance": false,
+    "guardCount": "29new+281old=310declared; not executed by thisreviewer; headers/identity/facts/staticconsumers do not certify art."
+  },
+  "actualEvidence": {
+    "native": "goal-4/evidence/ta07/native-verification-source5.json",
+    "nativeComposition": "34current +298M03 =332; NOT current singlerun332",
+    "rootOwned14UI": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+    "rootOwnedUIStats": {
+      "startTime": "2026-10-24T13:42:22.020Z",
+      "duration": 100191.735,
+      "expected": 14,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "uiRuntimeBoundary": "Raw UI report metadata only records actualWorkers; root owns frozen-source/HTTP/pre-post740 binding. Reviewer does not invent runtimeDigest inside raw UI metadata.",
+    "rulesAssetsTypesBuild": "Root-owned current results remain separate; review is not substitute execution."
+  },
+  "remaining": [
+    "Actual currentaffectedoldUI and final source/inputidentity checks.",
+    "Independent real source5pixels and sevenmove/ordinarycombat readability; no allframe view or overallart claim.",
+    "Netzero/positiveHPcounter deliberately not inferred; no full response fidelity claim.",
+    "Overallworkbench/gamefeel/art/long-term idle balance and realuser reacceptance stay open.",
+    "TA08/TA09/CHECK-TA-03,M04/M05/M06,cleanpackage/maximumreview remain. Compatibility/environmentperformance not resumed."
+  ],
+  "originalEvidence": "Source1/2/3/4 rawproductreds, premise corrections, original sources/PNGs remain unretagged."
+}

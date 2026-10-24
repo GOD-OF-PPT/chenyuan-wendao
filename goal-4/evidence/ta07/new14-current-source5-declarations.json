@@ -1,0 +1,150 @@
+{
+  "recordedAt": "2026-10-24T13:51:09.199099+00:00",
+  "runtimeDigest": "4640894ed2590fb1c34f7911af238ac09dc2ba6437f1fae3cbe846cb7fd3f5c8",
+  "report": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+  "reportSha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+  "pre": "artifacts/goal-4/ta07/ui-current-source5-before.json",
+  "post": "artifacts/goal-4/ta07/ui-current-source5-after.json",
+  "strictInputCount": 740,
+  "prePostExact": true,
+  "spec": "web/e2e/battle-actors.spec.ts",
+  "specSha256": "329da20aca8ffc8ed542374865113d1b4e318f1170131635826e85cf83c2b37f",
+  "count": 14,
+  "files": 1,
+  "cases": [
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A1 four direct strike objects medicine kit and retreat lane have distinct physical hierarchy beside a complete cold standing actor",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7145,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 attack has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5874,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 guard has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5726,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 technique has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4936,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 release has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4045,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 heal has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5278,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 restore has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4672,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 flee has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4582,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A3 a native positive-MP technique really counts down three seconds and its first native write and sole whole-game result respect the deadline",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 8663,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A4 native saving and quota keep actors uncommitted while an explicit retry saves the exact original command and cost only once",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 11468,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A5 readonly strategy hidden scene and a pending native pause clear preparation without replacing the finite draft or counting a second turn",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7203,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A6 same battle id foreign ownership and generation clear saved gestures while refresh and original history never borrow the old actor",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7894,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A7 a saved terminal turn never paints the next enemy and a legal defeat never borrows a victory actor",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7723,
+      "retry": 0
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A8 talisman preparation survives missing standing art and both reduction settings keep real actions and readable static results",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 11849,
+      "retry": 0
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-24T13:42:22.020Z",
+    "duration": 100191.735,
+    "expected": 14,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "parameters": {
+    "testMs": 60000,
+    "expectActionMs": 8000,
+    "navigationMs": 15000,
+    "workers": 1,
+    "retries": 0,
+    "viewport": [
+      1440,
+      900
+    ],
+    "fontScale": 1,
+    "browser": "Chromium"
+  },
+  "scope": "One current source5 run of all14 new TA07 cases. Old33 only declared, old415/full art/human acceptance not included."
+}

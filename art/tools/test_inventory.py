@@ -88,6 +88,8 @@ class InventoryTests(unittest.TestCase):
   feedback_skip=ROOT/'art/redesign/feedback-skip.json'
   if feedback_skip.exists():
    data=json.loads(feedback_skip.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.add(ROOT/data['provenance']['path'])
+   ta07=ROOT/'art/redesign/ta07.json'
+   if ta07.exists():files.update(ROOT/ref for ref in json.loads(ta07.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -167,7 +169,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0))
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0)+(1 if (self.root/'art/redesign/ta07.json').exists() else 0))
  def test_idle_ui_requires_its_source_ledger(self):
   (self.root/'art/redesign/idle-cultivation.json').unlink();self.rejected()
  def test_idle_ui_budget_cannot_be_raised(self):
@@ -979,5 +981,168 @@ class FeedbackSkipTests(unittest.TestCase):
   for text in [original.replace('<style scoped>','<style>'),original+'\n<img src="external.webp">']:
    self.changed_source(path,text,copy.deepcopy(manifest))
    with self.assertRaises(AssertionError):self.check()
+
+class TA07InventoryTests(unittest.TestCase):
+ def setUp(self):
+  from ta07_inventory import NATIVE,REFS,DEPENDENCIES,LEDGER
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-ta07-negative-');self.root=Path(self.temp.name)
+  self.original={name:(ROOT/name).read_bytes()for name in set(NATIVE+REFS+DEPENDENCIES+[LEDGER])}
+  self.restore()
+ def tearDown(self):self.temp.cleanup()
+ def restore(self):
+  for name,raw in self.original.items():
+   path=self.root/name;path.parent.mkdir(parents=True,exist_ok=True)
+   if path.is_symlink():path.unlink()
+   path.write_bytes(raw)
+ def data(self):return json.loads((self.root/'art/redesign/ta07.json').read_text())
+ def write(self,data):(self.root/'art/redesign/ta07.json').write_text(json.dumps(data))
+ def check(self):
+  from ta07_inventory import validate_ta07
+  from check_inventory import image_info
+  return validate_ta07(self.root,image_info)
+ def reject(self,data):
+  self.write(data)
+  with self.assertRaises(AssertionError):self.check()
+ def changed_source(self,path,text):
+  raw=text.encode();(self.root/path).write_bytes(raw);manifest=self.data()
+  for row in manifest['files']:
+   if row['path']==path:row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest())
+  self.write(manifest)
+ def changed_receipt(self,change):
+  manifest=self.data();ref=manifest['assets'][0]['receipt'];path=self.root/ref['path'];receipt=json.loads(path.read_text());change(receipt);path.write_text(json.dumps(receipt));ref['sha256']=hashlib.sha256(path.read_bytes()).hexdigest();self.write(manifest)
+ def test_ta07_actual_five_sources_three_fixed_budgets_and_one_raster(self):
+  from ta07_inventory import NATIVE,COMMAND_FILES,CAST_FILES
+  files,production,total=self.check();self.assertEqual(len(files),2);self.assertEqual(production,1)
+  self.assertEqual(total,sum((self.root/path).stat().st_size for path in NATIVE));self.assertLessEqual(total,36000)
+  self.assertLessEqual(sum((self.root/path).stat().st_size for path in COMMAND_FILES),12000)
+  self.assertLessEqual(sum((self.root/path).stat().st_size for path in CAST_FILES),24000)
+ def test_ta07_missing_ledger_cannot_hide_present_native_implementation(self):
+  (self.root/'art/redesign/ta07.json').unlink()
+  with self.assertRaisesRegex(AssertionError,'Unrecorded TA07'):self.check()
+ def test_ta07_missing_ledger_cannot_hide_raster_before_native_lands(self):
+  from ta07_inventory import NATIVE
+  (self.root/'art/redesign/ta07.json').unlink()
+  for name in NATIVE:(self.root/name).unlink()
+  with self.assertRaisesRegex(AssertionError,'Unrecorded TA07'):self.check()
+ def test_ta07_strict_manifest_shape_does_not_accept_missing_or_extra_fields(self):
+  original=self.data()
+  for change in [lambda m:m.pop('assets'),lambda m:m.update(extra=True)]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_ta07_header_task_and_numeric_version_aliases_rejected(self):
+  original=self.data()
+  for key,value in [('format','other'),('task','Goal4 ART02'),('version',True),('version',1.0),('version',2)]:
+   with self.subTest(key=key,value=value):m=copy.deepcopy(original);m[key]=value;self.reject(m)
+ def test_ta07_fixed_budget_caps_cannot_raise_or_use_boolean_float_aliases(self):
+  original=self.data()
+  for name,value in original['budgets'].items():
+   for invalid in [value+1,True,float(value)]:
+    with self.subTest(name=name,value=invalid):m=copy.deepcopy(original);m['budgets'][name]=invalid;self.reject(m)
+ def test_ta07_cannot_claim_human_acceptance_or_add_another_raster(self):
+  original=self.data()
+  for change in [lambda m:m.update(userAcceptance=True),lambda m:m.update(userAcceptance=0),lambda m:m['assets'].append(copy.deepcopy(m['assets'][0]))]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_ta07_complete_ordered_source_inventory_and_exact_rows_required(self):
+  original=self.data()
+  for change in [lambda m:m['files'].pop(),lambda m:m['files'].reverse(),lambda m:m['files'].append(copy.deepcopy(m['files'][0])),lambda m:m['files'][0].update(extra=True)]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_ta07_native_identity_must_match_bytes_hash_and_integer_size(self):
+  original=self.data()
+  for field,value in [('bytes',0),('bytes',True),('bytes',float(original['files'][0]['bytes'])),('sha256','0'*64),('sha256','not-a-digest')]:
+   with self.subTest(field=field):m=copy.deepcopy(original);m['files'][0][field]=value;self.reject(m)
+ def test_ta07_absolute_traversal_and_external_symlink_paths_rejected(self):
+  original=self.data()
+  for invalid in ['/tmp/actor.vue','../actor.vue','web\\src\\actor.vue']:
+   m=copy.deepcopy(original);m['files'][0]['path']=invalid;self.reject(m)
+  for name in ['art/redesign/ta07.json','web/src/BattleCast.vue','web/public/art/v2/actors/player-standing-cold-v1.webp']:
+   self.restore();path=self.root/name;raw=path.read_bytes()
+   with tempfile.TemporaryDirectory(prefix='chenyuan-ta07-external-')as folder:
+    outside=Path(folder)/path.name;outside.write_bytes(raw);path.unlink();path.symlink_to(outside)
+    with self.subTest(name=name),self.assertRaises(AssertionError):self.check()
+ def test_ta07_missing_actual_source_is_not_satisfied_by_its_identity_row(self):
+  (self.root/'web/src/BattleCast.vue').unlink()
+  with self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
+ def test_ta07_actual_command_and_cast_subbudgets_enforced_after_rehash(self):
+  from ta07_inventory import COMMAND_FILES,CAST_FILES
+  for group,cap,label in [(COMMAND_FILES,12000,'command group'),(CAST_FILES,24000,'cast group')]:
+   self.restore();total=sum((self.root/name).stat().st_size for name in group);path=group[-1]
+   self.changed_source(path,(self.root/path).read_text()+'\n'*(cap-total+1))
+   with self.subTest(group=label),self.assertRaisesRegex(AssertionError,label+' exceeds fixed budget'):self.check()
+ def test_ta07_exact_references_and_consumer_contract_cannot_be_omitted(self):
+  original=self.data()
+  for key,value in [('sourceReferences',[]),('bindings',{}),('bindings',{'web/src/App.vue':['fake']})]:
+   m=copy.deepcopy(original);m[key]=value;self.reject(m)
+ def test_ta07_contract_and_original_reference_files_must_exist(self):
+  from ta07_inventory import REFS,REFERENCE
+  for name in [REFS[0],REFERENCE]:
+   self.restore();(self.root/name).unlink()
+   with self.subTest(name=name),self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
+ def test_ta07_components_need_real_imports_not_a_name_in_a_comment(self):
+  for path,name in [('web/src/BattleDeck.vue','BattleCommandConsole'),('web/src/ActionFeedbackStage.vue','BattleCast')]:
+   self.restore();text=(self.root/path).read_text();changed=text.replace('import '+name,'//import '+name,1);self.assertNotEqual(changed,text);self.changed_source(path,changed)
+   with self.subTest(name=name),self.assertRaisesRegex(AssertionError,'component import is detached'):self.check()
+ def test_ta07_commented_out_render_tag_cannot_fake_a_live_consumer(self):
+  import re
+  for path,name in [('web/src/BattleDeck.vue','BattleCommandConsole'),('web/src/ActionFeedbackStage.vue','BattleCast')]:
+   self.restore();text=(self.root/path).read_text();changed,count=re.subn(r'(<'+name+r'\b[^>]*?/>)',r'<!--\1-->',text,count=1);self.assertEqual(count,1);self.changed_source(path,changed)
+   with self.subTest(name=name),self.assertRaises(AssertionError):self.check()
+ def test_ta07_saved_cast_must_remain_inside_the_original_trusted_motion_container(self):
+  path='web/src/ActionFeedbackStage.vue';text=(self.root/path).read_text();changed=text.replace('v-if="notice&&showMotion" :key="\'art-\'+notice.key"','v-if="notice" :key="\'art-\'+notice.key"',1);self.assertNotEqual(changed,text);self.changed_source(path,changed)
+  with self.assertRaisesRegex(AssertionError,'trusted motion container'):self.check()
+ def test_ta07_actor_constant_and_real_player_image_binding_cannot_be_detached(self):
+  for path,before,after in [('web/src/assets.ts','art/v2/actors/player-standing-cold-v1.webp','art/v2/characters/player.webp'),('web/src/BattlePresence.vue',':path="BATTLE_PLAYER_ASSET"',':path="PORTRAIT_ASSETS.player"')]:
+   self.restore();text=(self.root/path).read_text();self.assertIn(before,text);self.changed_source(path,text.replace(before,after,1))
+   with self.subTest(path=path),self.assertRaises(AssertionError):self.check()
+ def test_ta07_own_stylesheets_must_be_consumed_even_after_source_rehash(self):
+  for path,token in [('web/src/BattleCommandConsole.vue',"import './ta07-commands.css'"),('web/src/BattleCast.vue',"import './ta07-cast.css'")]:
+   self.restore();text=(self.root/path).read_text();self.assertIn(token,text);self.changed_source(path,text.replace(token,'',1))
+   with self.subTest(path=path),self.assertRaisesRegex(AssertionError,'Missing TA07 consumer'):self.check()
+ def test_ta07_battle_domain_command_identity_and_complete_shared_proof_remain_connected(self):
+  for path,token in [('web/src/battle-choreography.ts',"const matching=(a:Activity)=>a.version===6&&a.plan.kind!=='travel';"),('web/src/battle-choreography.ts',"a.nextCommand?.type!=='BATTLE'"),('web/src/battle-choreography.ts','r.generation!==a.generation'),('web/src/battle-choreography.ts','tracker.consume(o,g,a,result,replayed,eligible)'),('web/src/activity-effects.ts','resolve(before,command)'),('web/src/activity-effects.ts','proof(expected)!==proof(a)')]:
+   self.restore();text=(self.root/path).read_text();self.assertIn(token,text);self.changed_source(path,text.replace(token,'detached',1))
+   with self.subTest(path=path,token=token),self.assertRaisesRegex(AssertionError,'Missing TA07 consumer'):self.check()
+ def test_ta07_raster_hash_and_actual_headers_cannot_be_invented(self):
+  original=self.data();m=copy.deepcopy(original);m['assets'][0]['source']['sha256']='0'*64;self.reject(m)
+  for key in ['source','runtime']:
+   self.restore();m=self.data();row=m['assets'][0][key];path=self.root/row['path'];raw=b'INVALID!'+path.read_bytes()[8:];path.write_bytes(raw);row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write(m)
+   with self.subTest(key=key),self.assertRaises(AssertionError):self.check()
+ def test_ta07_opaque_image_header_cannot_borrow_true_alpha_metadata(self):
+  for key in ['source','runtime']:
+   self.restore();m=self.data();row=m['assets'][0][key];path=self.root/row['path'];raw=bytearray(path.read_bytes())
+   if key=='source':self.assertEqual(raw[25],6);raw[25]=2
+   else:self.assertEqual(raw[12:16],b'VP8X');self.assertTrue(raw[20]&16);raw[20]&=~16
+   path.write_bytes(raw);row.update(sha256=hashlib.sha256(raw).hexdigest());self.write(m)
+   with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'header/alpha'):self.check()
+ def test_ta07_runtime_byte_cap_enforced_with_a_valid_riff_length_after_rehash(self):
+  m=self.data();row=m['assets'][0]['runtime'];path=self.root/row['path'];raw=bytearray(path.read_bytes()+b'JUNK'+(160000).to_bytes(4,'little')+b'x'*160000);raw[4:8]=(len(raw)-8).to_bytes(4,'little');path.write_bytes(raw);row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write(m)
+  with self.assertRaisesRegex(AssertionError,'runtime dimensions/bytes exceeded'):self.check()
+ def test_ta07_real_alpha_counts_types_and_nonempty_transparency_are_bound(self):
+  for change in [lambda r:r['runtimeAlphaProof'].update(solidPixels=r['runtimeAlphaProof']['solidPixels']+1),lambda r:r['alphaProof'].update(min=False),lambda r:r['runtimeAlphaProof'].update(transparentPixels=0),lambda r:r['decodeProof'].update(sourceRGBASHA256='not-a-digest')]:
+   self.restore();self.changed_receipt(change)
+   with self.assertRaises(AssertionError):self.check()
+ def test_ta07_alpha_bbox_must_contain_real_nontransparent_pixels_without_false_margin_claim(self):
+  # A zero-edge bbox is valid: the actual source hair touches the canvas edge.
+  self.assertEqual(self.data()['assets'][0]['id'],'player-standing-cold-v1')
+  for value in [[0,0,1,1],[False,0,499,507],[-1,0,499,507],[0,0,513,507]]:
+   self.restore();self.changed_receipt(lambda r:r.update(runtimeAlphaBBox=value))
+   with self.subTest(value=value),self.assertRaisesRegex(AssertionError,'alpha bbox'):self.check()
+ def test_ta07_exact_tool_prompt_transparency_and_identity_reference_are_required(self):
+  from ta07_inventory import PROMPT
+  for change in [lambda p:p.update(prompt=''),lambda p:p.update(transparent_background=False),lambda p:p.update(referenceImage='../other.png'),lambda p:p.update(userAcceptance=True),lambda p:p.update(prompt=p['prompt']+' changed')]:
+   self.restore();path=self.root/PROMPT;prompt=json.loads(path.read_text());change(prompt);path.write_text(json.dumps(prompt))
+   with self.assertRaises(AssertionError):self.check()
+ def test_ta07_receipt_identity_reference_decode_and_reexport_facts_cannot_be_forged(self):
+  for change in [lambda r:r.update(copiedUnchanged=False),lambda r:r.update(userAcceptance=True),lambda r:r.update(promptSHA256='0'*64),lambda r:r['referenceImages'][0].update(sha256='0'*64),lambda r:r['encoding'].__setitem__(2,'70'),lambda r:r['exportProof'].update(reencodedSHA256='0'*64),lambda r:r['review'].update(actuallyViewed=False)]:
+   self.restore();self.changed_receipt(change)
+   with self.assertRaises(AssertionError):self.check()
+ def test_ta07_receipt_must_be_present_and_hash_bound(self):
+  m=self.data();ref=m['assets'][0]['receipt'];ref['sha256']='0'*64;self.reject(m)
+  self.restore();(self.root/self.data()['assets'][0]['receipt']['path']).unlink()
+  with self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
+ def test_ta07_prompt_document_digest_is_distinct_from_literal_prompt_digest(self):
+  from ta07_inventory import PROMPT
+  prompt=(self.root/PROMPT).read_bytes();literal=json.loads(prompt)['prompt'].encode()
+  self.assertNotEqual(hashlib.sha256(prompt).hexdigest(),hashlib.sha256(literal).hexdigest())
+  self.changed_receipt(lambda r:r.update(promptDocumentSHA256=hashlib.sha256(literal).hexdigest()))
+  with self.assertRaisesRegex(AssertionError,'prompt document identity'):self.check()
 
 if __name__=='__main__':unittest.main()

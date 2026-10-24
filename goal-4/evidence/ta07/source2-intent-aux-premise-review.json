@@ -1,0 +1,76 @@
+{
+  "recordedAt": "2026-10-24T12:17:23.940577+00:00",
+  "classification": "test text-role premise correction; no production change",
+  "evidence": {
+    "source": "web/src/art02-battle.css:24",
+    "rule": ".battle-presence .intent>b {font-size:14px;font-weight:400}",
+    "template": "BattlePresence .intent direct b labels enemy raw damage, distinct from the primary strong intent and actual saved net result",
+    "report": "artifacts/goal-4/ta07/ui-early-source2-report.json",
+    "reportSha256": "f665580b8e9d406ff12544614231761bc7dff9f488b6fd4880d6b51793effdf8",
+    "stats": {
+      "startTime": "2026-10-24T12:09:34.650Z",
+      "duration": 21379.429,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 3,
+      "flaky": 0
+    },
+    "frames": [
+      {
+        "case": "TA07-A1 four direct strike objects medicine kit and retreat lane have distinct physical hierarchy beside a complete cold standing actor",
+        "frame": "readonly-four-strikes-and-secondary-kit-geometry",
+        "fontFailures": [
+          {
+            "text": "敌方原始伤害 13",
+            "font": 14,
+            "minimum": 18
+          }
+        ],
+        "otherCopyFailures": [],
+        "copyRows": 25
+      },
+      {
+        "case": "TA07-A2 guard has its own physical preparation and saved gesture after exactly one formal three-second turn",
+        "frame": "move-guard-saved-scene-geometry",
+        "fontFailures": [
+          {
+            "text": "敌方原始伤害 0",
+            "font": 14,
+            "minimum": 18
+          }
+        ],
+        "otherCopyFailures": [],
+        "copyRows": 25
+      },
+      {
+        "case": "TA07-A2 technique has its own physical preparation and saved gesture after exactly one formal three-second turn",
+        "frame": "move-technique-saved-scene-geometry",
+        "fontFailures": [
+          {
+            "text": "敌方原始伤害 0",
+            "font": 14,
+            "minimum": 18
+          }
+        ],
+        "otherCopyFailures": [],
+        "copyRows": 22
+      }
+    ]
+  },
+  "change": {
+    "before": "artifacts/goal-4/ta07/battle-actors-source2.spec.ts.raw",
+    "beforeSha256": "b8fc7340ba35394315b5b973198c1370a1ef1bb8895e882ed9ff3f22b07f8b97",
+    "after": "web/e2e/battle-actors.spec.ts",
+    "afterSha256": "9fbed1b0cafe6c91e2d24d22e518b62427061f88b881762dd83b8f409b3b5e44",
+    "diff": "artifacts/goal-4/ta07/source2-intent-aux-premise.diff",
+    "onlyChangedClassification": ".intent>b added to existing auxiliary minimum14 selector list",
+    "inverseRestoresWholeOriginal": true,
+    "unchanged": [
+      "all other b and primary/cost text still18",
+      "Game/Activity/all stores/receipts/costs",
+      "actual shape/outer12px/conservative head band/geometry and hit",
+      "60s test/8s expect-action/15s navigation/no retry"
+    ]
+  },
+  "status": "not yet run after premise correction"
+}

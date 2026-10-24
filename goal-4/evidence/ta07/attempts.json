@@ -1,0 +1,162 @@
+{
+  "runtimeCurrent": "4640894ed2590fb1c34f7911af238ac09dc2ba6437f1fae3cbe846cb7fd3f5c8",
+  "rawPlaywrightAttempts": [
+    {
+      "report": "artifacts/goal-4/ta07/native-source5-report.json",
+      "sha256": "819abd256d317b3d8bf901f7d8bb7fb5fc866a5e2438db1a9734b3a184eef9b2",
+      "stats": {
+        "startTime": "2026-10-24T13:49:18.298Z",
+        "duration": 65299.805,
+        "expected": 34,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/goal-4/ta07/ui-baseline-red-report.json",
+      "sha256": "f2d9bff30a3ced19a87197158b211ac7789bfd4b027b7697c43621408b86735d",
+      "stats": {
+        "startTime": "2026-10-24T11:07:34.395Z",
+        "duration": 6049.499,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/goal-4/ta07/ui-counter-baseline-report.json",
+      "sha256": "4ec8d3ecd6c17dea9f90cedcfaed3f534fede3cb8a18793e230e7e90753ccd59",
+      "stats": {
+        "startTime": "2026-10-24T13:29:33.436Z",
+        "duration": 18785.597,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/goal-4/ta07/ui-current-source2-report.json",
+      "sha256": "cd55843225d8d03d5a34c832b4dcb5ab40f8bbaff6c52e694c08e687ca4c18e0",
+      "stats": {
+        "startTime": "2026-10-24T12:20:15.413Z",
+        "duration": 110352.298,
+        "expected": 10,
+        "skipped": 0,
+        "unexpected": 4,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/goal-4/ta07/ui-current-source3-report.json",
+      "sha256": "b589cb07f1d97999ed4ee1deac8c9a18fae72cdb508d837778b12285e17bced9",
+      "stats": {
+        "startTime": "2026-10-24T12:42:14.078Z",
+        "duration": 94421.29299999999,
+        "expected": 13,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/goal-4/ta07/ui-current-source4-report.json",
+      "sha256": "4623d6e365396ab8ff6112c81c746c34b7d5e6e251601dcf9fcdd797656f925e",
+      "stats": {
+        "startTime": "2026-10-24T13:03:12.708Z",
+        "duration": 99607.83,
+        "expected": 14,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/goal-4/ta07/ui-current-source5-report.json",
+      "sha256": "2cee69e3cf478f135f2ee155b3d6f86874bc68c775e8f3bc15b50330b9e840c4",
+      "stats": {
+        "startTime": "2026-10-24T13:42:22.020Z",
+        "duration": 100191.735,
+        "expected": 14,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/goal-4/ta07/ui-early-source1-report.json",
+      "sha256": "2e5eb6be6d4bbf17d6ae7d4b4096d2f2a151bed08a6feab17069b1e64f00d7ed",
+      "stats": {
+        "startTime": "2026-10-24T11:46:12.730Z",
+        "duration": 18277.955,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/goal-4/ta07/ui-early-source2-report.json",
+      "sha256": "f665580b8e9d406ff12544614231761bc7dff9f488b6fd4880d6b51793effdf8",
+      "stats": {
+        "startTime": "2026-10-24T12:09:34.650Z",
+        "duration": 21379.429,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/goal-4/ta07/ui-related-leaf-source5-report.json",
+      "sha256": "d428ea53921fe1cce510f376de0740f6be65cedee632289befbc1791a580a717",
+      "stats": {
+        "startTime": "2026-10-24T14:23:44.289Z",
+        "duration": 18005.126,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/goal-4/ta07/ui-related-source5-report.json",
+      "sha256": "d11135c8347887004111b6bb9e0d91062106e149c7be312845eb7e990d672496",
+      "stats": {
+        "startTime": "2026-10-24T14:08:50.221Z",
+        "duration": 290099.88800000004,
+        "expected": 30,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      }
+    },
+    {
+      "report": "artifacts/goal-4/ta07/ui-source4leaf-report.json",
+      "sha256": "f6b1b31bb8886294e72d9833435acf13ffb743ff83a499271944b283caa3af1e",
+      "stats": {
+        "startTime": "2026-10-24T12:57:03.250Z",
+        "duration": 11128.882,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "initialSelectionError": "ui-baseline-config-error: 0 tests, infrastructure error retained, not product red",
+  "otherRawFailures": [
+    "build-source1.log: staged public identity guard",
+    "build-source1-ready.log: strict nullable type errors",
+    "assets-guards-source5.log: 309/310, unique domain guard negative premise"
+  ],
+  "finalGuardActual": {
+    "tests": 310,
+    "passed": 310,
+    "seconds": 186.253,
+    "inputs": 744
+  },
+  "boundaries": "Historical sources/errors remain unchanged; repeated runs are not added business coverage."
+}

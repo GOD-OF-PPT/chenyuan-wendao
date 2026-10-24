@@ -91,6 +91,7 @@
 @keyframes saving-ink{to{opacity:.55}}
 @media(prefers-reduced-motion:reduce){.app-shell.art-theme :is(button,a,.progress-fill){transition:none!important;transform:none!important}.app-shell.art-theme :is(.progress-track,.save-state){animation:none!important}}
 .app-shell.hub-reduced :is(button,a,.progress-fill){transition:none!important;transform:none!important}.app-shell.hub-reduced :is(.progress-track,.save-state){animation:none!important}
+.app-shell .skip-links a:not(:focus){transform:translateY(-220%)!important}
 
 .app-shell.art-theme small{color:var(--game-muted)!important}.app-shell.art-theme button small{color:inherit!important}
 .app-shell.art-theme .bottom-nav button{background:transparent!important;border-color:transparent!important;box-shadow:none!important}
