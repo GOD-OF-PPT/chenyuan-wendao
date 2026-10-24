@@ -1,0 +1,200 @@
+{
+  "format": "chenyuan-matrix-m02-verification",
+  "recordedAt": "2026-10-24T00:15:29.826266+00:00",
+  "task": "MATRIX-M02",
+  "implementationCommit": "d6659cdcee508d609f7e68d8ad1a4bda9d1067c0",
+  "branch": "codex/goal-4-online-recovery",
+  "runtime": {
+    "sourceDigest": "f11dabf952e1d1ebdfe2689ca2c9795b7895eaeb76862e92b07304c017af2980",
+    "sourceFiles": 234,
+    "files": 62,
+    "bytes": 7800097,
+    "testedArchiveRebuiltFrozenHTTPExact": true,
+    "ownedServerPid": 42588,
+    "ownedExecSession": 94768,
+    "frozen": "artifacts/goal-4/matrix-m02/frozen-source5/web",
+    "archive": "artifacts/goal-4/matrix-m02/runtime-d6659cd.tar",
+    "dirtyBecauseProtected13": true,
+    "finalCleanCandidate": false
+  },
+  "checks": {
+    "native": {
+      "passed": 332,
+      "files": 26,
+      "old": 211,
+      "new": 121,
+      "repositoryBoundary": 90,
+      "storeLost": 18,
+      "storeHeld": 9,
+      "controls": 4,
+      "singleTerminalGreen": true
+    },
+    "ui": {
+      "passed": 28,
+      "files": 4,
+      "declarationsTotal": 312,
+      "notRunThisTask": 284,
+      "includesRealThirtySecondCycle": true,
+      "singleTerminalGreen": true
+    },
+    "rules": {
+      "passed": 802,
+      "files": 60,
+      "singleTerminalGreen": true,
+      "pureSaveCompatibilityAndBudgetParserTestsIncluded": true,
+      "browserCompatibilityOrEnvironmentPerformanceNotRun": true
+    },
+    "assets": {
+      "passed": 252,
+      "positivePassed": true,
+      "uniqueGuardCases": 252,
+      "allOldCapsUnchanged": true,
+      "newImages": 0,
+      "guardBindingUpdatedToActualAwait": true
+    },
+    "rootTypecheck": true,
+    "vueTypecheckAndBuild": true,
+    "skip": 0,
+    "retry": 0,
+    "flaky": 0,
+    "declarationsExact": "coverage-source5.json"
+  },
+  "actualFixes": [
+    "Delayed committed reply no longer replaces newer accepted full Game/Activity, including same Game revision and different activity",
+    "Matching readonly snapshot retains genuine first result and one initial action signal",
+    "Recheck failure preserves confirmed paid state and requires synchronization without a new payment"
+  ],
+  "failuresRetained": [
+    {
+      "source": "red-source1",
+      "kind": "product",
+      "description": "Same Game revision foreign activity overwritten by delayed cultivation reply"
+    },
+    {
+      "source": "control-source3",
+      "kind": "test declaration prerequisite",
+      "description": "Control accidentally nested inside another test; filtered invocation declared no tests; moved to top level without removing assertions"
+    },
+    {
+      "source": "control-source4",
+      "kind": "overbroad initial fix",
+      "description": "Matching committed breakthrough read incorrectly suppressed first result"
+    },
+    {
+      "source": "assets-source5",
+      "kind": "source binding guard",
+      "description": "Old exact await token no longer matched legitimate read-epoch capture; update explicit binding, preserve guard/budgets"
+    }
+  ],
+  "evidenceBoundary": {
+    "stageAttachments": "Repeated names converge on final aggregate JSON; not separate immutable stage attachments",
+    "confirmationRereadFailure": "Native read succeeds, injected consumer delivery Error follows; not native abort/CLOSED",
+    "positiveFixtures": "Formal rule routes; two ordinary medicine deficit fixtures are explicitly validated boundary inputs, not earned injuries or live pacing",
+    "storeMatchingHandoff": "First action signal only; not full App navigation/pixel certification",
+    "thirdReadDuringConfirmationReread": "No new dedicated cell; existing lifecycle/read-order regression retained",
+    "oldGoodCheckpointAfterRestoreFailure": "M04 still open",
+    "historical300": "Old100 declarations across three engines, not332 or211 compared arithmetically",
+    "pixels": "2 actual fixed1440x900 UI frames; other generated frames not claimed reviewed; normal existing1280x720 user delivery observation is not compatibility testing",
+    "humanArtAndLongTermBalance": false,
+    "goalComplete": false,
+    "compatibilityEnvironmentPerformance": false,
+    "userSaveTesting": false
+  },
+  "protected13UnchangedUnstaged": true,
+  "userProgress": "user-progress.json",
+  "visuals": "visual-review.json",
+  "rawEvidence": {
+    "red-source1-report.json": {
+      "path": "artifacts/goal-4/matrix-m02/red-source1-report.json",
+      "bytes": 43853,
+      "sha256": "84da3eced37dc50c8d9147901af46bfcbf054c9dd547569265f347c3dbfef8b9"
+    },
+    "control-source3-report.json": {
+      "path": "artifacts/goal-4/matrix-m02/control-source3-report.json",
+      "bytes": 4073,
+      "sha256": "46aab89cb660ba9a99ffa183295bb581e87b2f74a7601cc6f44f14fe8c4c1a0a"
+    },
+    "control-source4-report.json": {
+      "path": "artifacts/goal-4/matrix-m02/control-source4-report.json",
+      "bytes": 11545,
+      "sha256": "e0f784cb751c5416a6766a1ebc6a9d2d40fecb62aabab4455b32f1e1f174b6b2"
+    },
+    "green-source2-report.json": {
+      "path": "artifacts/goal-4/matrix-m02/green-source2-report.json",
+      "bytes": 184105,
+      "sha256": "e618eb79b961d0b43a3932b0d9efa8b346a533a1ea1b2f42a5cba1da5b1a541b"
+    },
+    "native-source5-report.json": {
+      "path": "artifacts/goal-4/matrix-m02/native-source5-report.json",
+      "bytes": 8863536,
+      "sha256": "d437fd244bbc2b30c773da5faa63b8af19e79390956bfa03271b42ae86cd74dc"
+    },
+    "ui-source5-report.json": {
+      "path": "artifacts/goal-4/matrix-m02/ui-source5-report.json",
+      "bytes": 535300,
+      "sha256": "2b1df54e7b2110a9fa74a5db863a25fe5f6ec1562fb96b8565d0cbaa28c255fd"
+    },
+    "rules-source5.tap": {
+      "path": "artifacts/goal-4/matrix-m02/rules-source5.tap",
+      "bytes": 193643,
+      "sha256": "b4b067f10f17abf0e5041f2f8338115d8549de79b73d5266a6c89c1002747382"
+    },
+    "assets-source6.log": {
+      "path": "artifacts/goal-4/matrix-m02/assets-source6.log",
+      "bytes": 354,
+      "sha256": "72862d1d314d0006a3aa8dbe1232c3b5f06d54e833526b2f543da4461733f7d2"
+    },
+    "assets-positive-source6.json": {
+      "path": "artifacts/goal-4/matrix-m02/assets-positive-source6.json",
+      "bytes": 1186,
+      "sha256": "031f9f6c8f3b63e730f483f850b7c7166e45e32c86600ca89568f9b22cb6ddb3"
+    },
+    "assets-positive-source5.stderr": {
+      "path": "artifacts/goal-4/matrix-m02/assets-positive-source5.stderr",
+      "bytes": 512,
+      "sha256": "63342580f5da82485a2289aac5be23a974425bcaddc091ad8a8eb044a08e1e28"
+    },
+    "final-source5-before.json": {
+      "path": "artifacts/goal-4/matrix-m02/final-source5-before.json",
+      "bytes": 43568,
+      "sha256": "7e68738a01004e96f4ecf2e1756f76592a91370f2934a007140de74ae7f7ded9"
+    },
+    "final-source5-after.json": {
+      "path": "artifacts/goal-4/matrix-m02/final-source5-after.json",
+      "bytes": 43546,
+      "sha256": "9e6ef2a4cdd1ae2b9a79f8c2a9dfb466a5ed17dff878df61b7fdd0358616eabe"
+    },
+    "assets-source6-before.json": {
+      "path": "artifacts/goal-4/matrix-m02/assets-source6-before.json",
+      "bytes": 1973,
+      "sha256": "075a43ef92d6c475f2ca804a75a4e102f2631cf8d09c9a7ce4a928851983d392"
+    },
+    "assets-source6-after.json": {
+      "path": "artifacts/goal-4/matrix-m02/assets-source6-after.json",
+      "bytes": 1951,
+      "sha256": "d730a9015537c4ca3e6c032c1579dcb1acc144776629053f88f71efa760d1bbf"
+    },
+    "build-postcommit.json": {
+      "path": "artifacts/goal-4/matrix-m02/build-postcommit.json",
+      "bytes": 35020,
+      "sha256": "c81dd4de24c646f2d2fc9615f0cb1f336aa12d1c105dd1f07aeff044f3c1d043"
+    },
+    "build-postcommit-assert.json": {
+      "path": "artifacts/goal-4/matrix-m02/build-postcommit-assert.json",
+      "bytes": 341,
+      "sha256": "96dabf24bedc25fde22deab4b535f75a9c1fda1ac0946dfbacbb54d575afa8e5"
+    },
+    "source5-commit-proof.json": {
+      "path": "artifacts/goal-4/matrix-m02/source5-commit-proof.json",
+      "bytes": 24430,
+      "sha256": "37ea870c50c7cc352251f0795a43134c6942f7db69852a38f15b65bc7acb53d8"
+    },
+    "http-postcommit.json": {
+      "path": "artifacts/goal-4/matrix-m02/http-postcommit.json",
+      "bytes": 11714,
+      "sha256": "a1208731df4aadfc31f45487226c301231782f21d153ff11ed76549cda12cc0d"
+    }
+  },
+  "nextTask": "MATRIX-M03 then CHECK-MATRIX-01 with ART06",
+  "noPushMergePublicDeployPermissionChange": true
+}

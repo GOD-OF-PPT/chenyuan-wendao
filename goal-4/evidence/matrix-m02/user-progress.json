@@ -1,0 +1,28 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "sourceDigest": "f11dabf952e1d1ebdfe2689ca2c9795b7895eaeb76862e92b07304c017af2980",
+  "before": "artifacts/goal-4/matrix-m02/user-before-reload.txt",
+  "after": "artifacts/goal-4/matrix-m02/user-after-ready.txt",
+  "normalizedAXExact": true,
+  "normalization": "remove AX indices and focused element line only",
+  "userGameActions": false,
+  "userImportRestoreReset": false,
+  "userSaveTesting": false,
+  "visibleState": "顾长青/凡人/尚未择法/5修为/40石/月1/60HP/20MP/听雨洞府/静息待安排/已保存",
+  "browserResources": [
+    "./assets/index-D05JH6-7.js",
+    "./assets/index-DzNkmB1p.css"
+  ],
+  "screenshot": {
+    "original": "artifacts/goal-4/matrix-m02/delivery.png",
+    "sha256": "ae46484f0d4e1e1449fd6e48173b4a13ebe692d89569065b607d1d8efcbd4564",
+    "pixels": [
+      1280,
+      720
+    ],
+    "viewCopy": "artifacts/goal-4/matrix-m02/delivery.jpg",
+    "viewSha256": "504c4b63e9217fbbed6335570e6b33f54f2781cda4be8bd019147cdec04d91a8",
+    "format": "original-dimension JPEG quality68"
+  },
+  "boundary": "normal existing user tab delivery observation only; not compatibility/resolution testing"
+}
