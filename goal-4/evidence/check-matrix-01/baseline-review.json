@@ -1,0 +1,65 @@
+{
+  "recordedAt": "2026-10-24T05:29:34.880375+00:00",
+  "runtime": "3daa6b703dd3e9fee84778e822fc0296b6d4bedee85a2ff6494884f70eecbb5c",
+  "original26": {
+    "pass": 15,
+    "failed": 11,
+    "same672Inputs": true
+  },
+  "correctedPremises7": {
+    "pass": 2,
+    "failed": 5,
+    "same672Inputs": true
+  },
+  "confirmedProductCases": [
+    "K1 missing ended-life handoff",
+    "K2 trial-question focus BODY",
+    "K3 restore visible paragraph16px",
+    "K4 committed ending focus BODY",
+    "K6 newgame opening focus BODY",
+    "K7–10 explicit current-feedback control absent (original26)"
+  ],
+  "premiseCorrections": [
+    "K1 Game.status ended / ending retired",
+    "K5/K6 exact one session append, not whole optional DB unchanged",
+    "L3 formal spirit→ascended with realm_changed and ending"
+  ],
+  "notClaimed": [
+    "all11 original failures are product defects",
+    "native unknown delay root cause fixed",
+    "UI TA or overall gamefeel accepted",
+    "new implementation green yet"
+  ],
+  "raw": {
+    "baseline-red-report.json": {
+      "path": "artifacts/goal-4/check-matrix-01/baseline-red-report.json",
+      "bytes": 4345556,
+      "sha256": "95780a811ada3d0fa57591f4504a6bca409607eb4fe5e9a7c2f80e65db6057e9"
+    },
+    "baseline-red-before.json": {
+      "path": "artifacts/goal-4/check-matrix-01/baseline-red-before.json",
+      "bytes": 73175,
+      "sha256": "f7017713b282d9986a3184b2f21ac479e3fcfda35da80e5c6db272ebfcd523c7"
+    },
+    "baseline-red-after.json": {
+      "path": "artifacts/goal-4/check-matrix-01/baseline-red-after.json",
+      "bytes": 73070,
+      "sha256": "f3887559bf6883f16c4f7054a9373928c91c737f67ce179776f8a77763de5956"
+    },
+    "premises-baseline-report.json": {
+      "path": "artifacts/goal-4/check-matrix-01/premises-baseline-report.json",
+      "bytes": 1816179,
+      "sha256": "a5a822d7ca81a0f6da1dc4cb5854eee21b44f39d6033c2f9e6661aff9f077204"
+    },
+    "premises-baseline-before.json": {
+      "path": "artifacts/goal-4/check-matrix-01/premises-baseline-before.json",
+      "bytes": 73185,
+      "sha256": "4af824a12d0a905381c539ca30abbe4904622b8860ef22be32a10adf1e07bead"
+    },
+    "premises-baseline-after.json": {
+      "path": "artifacts/goal-4/check-matrix-01/premises-baseline-after.json",
+      "bytes": 73066,
+      "sha256": "0f0abc4e935e07777514cc0e9c6eafa5ff52e5563a869fc60b153c2cbf26a3a8"
+    }
+  }
+}

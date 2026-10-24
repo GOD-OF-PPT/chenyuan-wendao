@@ -1,0 +1,225 @@
+{
+  "format": "chenyuan-b1-toggle-controlled-redgreen",
+  "version": 1,
+  "task": "CHECK-MATRIX-01",
+  "recordedAt": "2026-10-24T08:11:58.118330+00:00",
+  "status": "one_preexisting_UI_race_reproduced_and_minimally_fixed; only_originalB1_and_newK14_passed",
+  "contract": "docs/decisions/0032-matrix-check-01-contract.md",
+  "naturalFailure": {
+    "source": "source5",
+    "report": "artifacts/goal-4/check-matrix-01/full-source5-report.json",
+    "case": "M03-B1 an exact tracked target survives reload and resets for a separately confirmed new life without readonly Game writes",
+    "observed": "Native details.open true while reactive summary still closed; fill property3; late managerOpen render at blur returns input1; final×3 expectation receives×1.",
+    "diagnosis": "goal-management native toggle delivered after editable input appeared; delayed Vue managerOpen rerender reapplies uncommitted props target.quantity1.",
+    "newAppFocusPath": "B1 only imports and reads/edits tracking; no fresh local CREATE/CHOOSE/START_TRIAL/END focus arm.",
+    "originalStandaloneGreen": "b1-source5-report.json actual3567ms pass/retry0 did not establish a fix; original natural red retained."
+  },
+  "controlledRed": {
+    "phase": "k14-source6-red",
+    "runtimeDigest": "b8524269113e3a14f6a84778d9f9e50cdacbfe5cf10a6995ee59f628f946eb95",
+    "beforeRecordedAt": "2026-10-24T08:01:20.335Z",
+    "reportStartTime": "2026-10-24T08:01:39.266Z",
+    "afterRecordedAt": "2026-10-24T08:02:33.683Z",
+    "inputs": 675,
+    "strictHashesEqual": true,
+    "testSHA256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+    "GoalPanelSHA256": "fd51c86f2d79e76ce20dd92303facd91a742ba782b1d938a8d5ff1bbc59d8790",
+    "actualResult": "failed_expected_quantity3_received1",
+    "eventFacts": [
+      {
+        "delivery": "Call the captured original listener with the same actual native Event and target; no synthetic event dispatch or Game injection",
+        "delivered": {
+          "type": "toggle",
+          "isTrusted": true,
+          "sourceTrusted": true,
+          "sameEvent": true,
+          "sameTarget": true,
+          "target": "goal-management",
+          "open": true
+        },
+        "typedValue": "3",
+        "afterDeliveryValue": "1",
+        "afterBlurValue": "1"
+      }
+    ],
+    "testTimeouts": "original60s/8s/15s unchanged",
+    "productionUnchangedDuringRed": true,
+    "inputListenerRestoredInFinally": true
+  },
+  "controlledGreen": {
+    "phase": "k14-b1-source7",
+    "beforeRecordedAt": "2026-10-24T08:07:35.080Z",
+    "reportStartTime": "2026-10-24T08:07:53.009Z",
+    "afterRecordedAt": "2026-10-24T08:08:41.519Z",
+    "inputs": 675,
+    "strictHashesEqual": true,
+    "runtimeSources": 236,
+    "runtimeDigest": "1451a50fd963676adba12396c67985f81ae74bb71d648f1841443182d39e5815",
+    "buildFiles": 62,
+    "buildBytes": 7814366,
+    "buildReportSHA256": "17928b3ab65d7d223432669d06df414f569f6b9e46aba652b5867d6b4e07680f",
+    "GoalPanel": {
+      "bytes": 18259,
+      "cap": 19000,
+      "sha256": "7a99f25c92348175866ef8ef6f0ff02f0b0ebddcb944f89d1d7774e1716a4c77"
+    },
+    "keyboardTestSHA256": "49d6098565f0ab718809bb3b91cdec10f4c2b594374625f3a316aaca8a71c97e",
+    "unchangedB1TestSHA256": "5a26a34b6626d012ab0a23059374831e58caa645aa153059c22a4a095bcf6a73",
+    "redToGreenRuntimeChanges": [
+      "web/src/GoalPanel.vue"
+    ],
+    "redToGreenFrozenInputChanges": [
+      "art/redesign/cultivation-objects.json",
+      "web/build-report/build.json",
+      "web/src/GoalPanel.vue"
+    ],
+    "testInputSameRedGreen": true,
+    "immersiveLedgerUnchanged": true,
+    "onlyRealLedgerGoalRowUpdated": "art/redesign/cultivation-objects.json.goalPanel bytes/hash; all caps/bindings unchanged",
+    "actualCasesPassed": 2,
+    "skip": 0,
+    "retry": 0,
+    "flaky": 0,
+    "redPreserved": "k14-source6-red-report.json expected3 actual1 with same native Event; no synthetic redispatch",
+    "otherTestsExecuted": false,
+    "uiOwnershipReturnedToRoot": true
+  },
+  "actualGreenCases": [
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K14 a real goal toggle delivered after typing preserves the exact pending quantity through blur readonly saving and reload",
+      "project": "chromium",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 5903
+        }
+      ]
+    },
+    {
+      "file": "matrix-ui-boundaries.spec.ts",
+      "title": "M03-B1 an exact tracked target survives reload and resets for a separately confirmed new life without readonly Game writes",
+      "project": "chromium",
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 6346
+        }
+      ]
+    }
+  ],
+  "actualGreenNativeEventFacts": [
+    {
+      "delivery": "Call the captured original listener with the same actual native Event and target; no synthetic event dispatch or Game injection",
+      "delivered": {
+        "type": "toggle",
+        "isTrusted": true,
+        "sourceTrusted": true,
+        "sameEvent": true,
+        "sameTarget": true,
+        "target": "goal-management",
+        "open": true
+      },
+      "typedValue": "3",
+      "afterDeliveryValue": "3",
+      "afterBlurValue": "3"
+    }
+  ],
+  "injectionBoundary": {
+    "kind": "same-real-native-Event delayed original listener consumption",
+    "target": "actual mounted goal-management HTMLDetailsElement",
+    "how": "Isolated page addInitScript wraps only registration/removal of this element toggle listener; while explicitly armed, captures actual isTrusted Event and its original Vue listener. Public keyboard opens, fill3; directly invokes captured listener with same Event/this/target. No redispatch or constructed fake event.",
+    "eventIsTrustedPreserved": true,
+    "syntheticEventDispatch": false,
+    "gameOrStoreInjected": false,
+    "formalOrVirtualClockChangedForInjection": false,
+    "restoration": "Try/finally restores EventTarget add/remove prototypes and reconnects original listeners on live elements; restore before blur/reload and finally in reloaded document. Other test contexts are isolated.",
+    "timeouts": "Original60s test/8s action/assertion/15s navigation; no sleep/force/retry/extra timeout."
+  },
+  "implementation": {
+    "file": "web/src/GoalPanel.vue",
+    "onlyProductionChange": "summary @click.prevent=\"managerOpen=!managerOpen\"; existing :open/@toggle/@change/quantityChange/validation unchanged.",
+    "beforeSHA256": "fd51c86f2d79e76ce20dd92303facd91a742ba782b1d938a8d5ff1bbc59d8790",
+    "afterSHA256": "7a99f25c92348175866ef8ef6f0ff02f0b0ebddcb944f89d1d7774e1716a4c77",
+    "beforeBytes": 18217,
+    "afterBytes": 18259,
+    "maxBytes": 19000,
+    "effect": "Click including native keyboard activation updates model before :open displays the input; later native toggle assigns same value and does not re-render oldquantity over an in-progress edit.",
+    "GameActivityDBRulesChanged": false,
+    "manifest": "Only art/redesign/cultivation-objects.json.goalPanel bytes/hash updated; allcaps/bindings stay. immersive-ui has only GoalPanel binding/no identity so remains byte-identical."
+  },
+  "verificationMeaning": {
+    "K14": "Actual native event isTrusted=true/sourceTrusted=true/sameEvent/sameTarget. Red fill3→delivery1→blur1, green fill3→delivery3→blur3; exact×3/local preferencequantity3/reload and wholeGame/Activity/nativeDB readonly asserted.",
+    "B1": "Original file/test unchanged; quantity3 persists, reload keeps it, separately confirmed actual new life resets target while complete saved Game/control receipts remain formal.",
+    "notClaimed": "No full415, other tests, all possible draft races, native timing rootcause elsewhere, performance, compatibility, long-term game balance, overallART or HUMAN acceptance."
+  },
+  "scopeAndCount": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "fontScale": 1,
+    "browser": "Chromium",
+    "redCases": 1,
+    "greenCases": 2,
+    "newUniqueCase": "CHECK-K14 only; originalB1 already included",
+    "currentPlannedFull": "415/43 files; root owns new freeze and actual full execution.",
+    "old414Preflight": "Preserved as historical source5 expectation; not overwritten or retrospectively expanded."
+  },
+  "references": [
+    {
+      "path": "artifacts/goal-4/check-matrix-01/k14-source6-red-report.json",
+      "sha256": "67338cbcf73eb8b186d02eb86809547f29b34bd29af64eb7076d30ae313efbf1"
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/k14-source6-red-summary.json",
+      "sha256": "29248b66fa332c13cdba48d23876b6a577b31c5c914087f52d4f6b36b7aa66ef"
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/k14-source6-red-before.json",
+      "sha256": "842b861814a47111e9fefe3dcd337e0c41909dbb2b73059668d5d4e0fecf72cc"
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/k14-source6-red-after.json",
+      "sha256": "eeb4cad82537289b8ee6311179db87145a204cc208641f21cda9d8bbcaf804cd"
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/k14-b1-source7-report.json",
+      "sha256": "ff1a148cb79e1858f937d149d8b58403759913c26fc5039bfc97f9864fff8510"
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/k14-b1-source7-summary.json",
+      "sha256": "6b92df8d23e80873ceacc85d2cd365610ee5d533e305c417b9496fd49cd824af"
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/k14-b1-source7-before.json",
+      "sha256": "80efc54578e534a6bd1af70c94f47c1a9979db52c7c90c5eea33d2ddea35f203"
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/k14-b1-source7-after.json",
+      "sha256": "1d14eeb01454675a1d8d3186f06ef0b19639da911c5c10b75871fb0093efba9b"
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/build-source7.json",
+      "sha256": "17928b3ab65d7d223432669d06df414f569f6b9e46aba652b5867d6b4e07680f"
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/k14-source7-build-before.json",
+      "sha256": "3bdd4df62462c86144229752444943f2542430f74a69f1c2bc94ade7b5c4d07a"
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/k14-source7-build-after.json",
+      "sha256": "831eb8baeb6e10949a2057e468bf03ecf04201aeb0ac089f3fb0ae01b8d78e72"
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/k14-goal-summary-minimal.diff",
+      "sha256": "c047b0a90a672b854bfbc3331a92db22c53764d1312f208106a636ef9092d8d4"
+    },
+    {
+      "path": "goal-4/evidence/check-matrix-01/b1-source5-diagnosis.md",
+      "sha256": "7a4e9b70dc2a5c1eebe4308dd50da8ef48ac821a41890bc326df596a2ddc7ddd"
+    }
+  ]
+}

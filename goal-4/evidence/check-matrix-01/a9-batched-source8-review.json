@@ -1,0 +1,549 @@
+{
+  "format": "chenyuan-art03-a9-batched-static-assertion-review",
+  "version": 1,
+  "reviewedAt": "2026-10-24T10:01:56.971935+00:00",
+  "agent": "art02_battle",
+  "authorization": "0032 A9 staticassertion reuse amendment saved byroot beforeimplementation; onlylocalquotaFrame checker authorized",
+  "change": {
+    "beforeSHA256": "8856e63c9993c28986e0ffb2211400f13b5b6003b9652bbef0689bfe91862df0",
+    "afterSHA256": "c685d54928fcfec62afb3acf128bdbf94604b0331fdb68a0427a80cf5bb11d1b",
+    "beforeBytes": 64505,
+    "afterBytes": 65535,
+    "oldBlockSHA256": "2df6251b456bf74e37dea622828bed22de8baa2a1d71d5be48270292a579e5f3",
+    "newBlockSHA256": "5dd1fe1e037b723bea5858b6a7f2f1eeb6e535d423ea1bc4ea85889a97046c89",
+    "pureBlockSHA256": "48a39319095907f1e8ebd2f04e25e44ddef0944e38be760dc88edaff9153b0c0",
+    "newPredicateModuleSHA256": "3dcecff2bf2790ad32c807c37cb956090c26294316941fc8e4e5d0777fca9219",
+    "prefixUnchanged": true,
+    "suffixUnchanged": true,
+    "prefixSHA256": "cadb10085f9ce67c27f1a9a09bfe5a16c4d89071927355a48613671c530b7f5a",
+    "suffixSHA256": "4a520fdd1fdb71da4abcf90601fd5b8fffb17c68a82eb911d16b5887468b66c2",
+    "onlyChange": "A9 local quotaFrame staticgeometry matcher block; screenshots/geometry/asyncGameDB/retry/4contexts untouched",
+    "proof": "new-predicate-exact.ts contains verbatim typed pure block between source offsets, normally imported without eval/newFunction"
+  },
+  "offlineEquivalence": {
+    "beforeCandidate": "artifacts/goal-4/check-matrix-01/a9-assertion-reuse/equivalence-report.json",
+    "afterExactTypedBlock": "artifacts/goal-4/check-matrix-01/a9-assertion-reuse/equivalence-after-exact-report.json",
+    "reportSHA256": "89138ec1883ebd0cabdd8e31eed230cb97b74c73d670fe57acb5247fcf565ea0",
+    "actualGeometryFrames": 72,
+    "typeAndBoundaryCases": 175,
+    "totalCases": 247,
+    "actualLogicalChecks": 7400,
+    "passFailMismatches": 0,
+    "method": "Normal imported originalactualPlaywrightmatcherblock versus normalimportedexactnewtypedpureblock; no eval/newFunction/browser/testclock. Numericnumber/bigint andNaN/comparison semantics,strictbooleantrue/false preserved."
+  },
+  "execution": {
+    "processExitCode": 0,
+    "onlyCase": "ART03-A9 native acceptance and cycle quota failures keep learning and forging cold while the original exact intent remains retryable",
+    "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+    "runtimeFiles": 236,
+    "strictPrePostInputs": 675,
+    "strictPrePostEqual": true,
+    "pre": "artifacts/goal-4/check-matrix-01/a9-batched-source8-before.json",
+    "post": "artifacts/goal-4/check-matrix-01/a9-batched-source8-after.json",
+    "rawReport": "artifacts/goal-4/check-matrix-01/a9-batched-source8-report.json",
+    "rawReportSHA256": "eb0565e8698d7ebe8a0c7318fb93e0d2fb648c6a81457266d2062dff1385b2ee",
+    "log": "artifacts/goal-4/check-matrix-01/a9-batched-source8.log",
+    "resultStatus": "passed",
+    "caseDurationMs": 45426,
+    "wholeReporterDurationMs": 51634.28,
+    "timeoutMs": 60000,
+    "retry": 0,
+    "errors": [],
+    "reportStats": {
+      "startTime": "2026-10-24T09:55:20.497Z",
+      "duration": 51634.28,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "command": "Node24 PATH + PLAYWRIGHT_JSON_OUTPUT_FILE=<a9-batched-source8-report.json> node node_modules/playwright/cli.js test --config=playwright.idle.config.ts equipment-objects.spec.ts --grep=ART03-A9 native acceptance --output=../artifacts/goal-4/check-matrix-01/a9-batched-source8-results",
+    "configuration": "Originalworkers2/retries0, singleChromium1440x900, originaltrace retain-on-failure andPNG screenshots; no build/fullrun/newbrowserproject/timeout change."
+  },
+  "deltaFromOriginalFailedSource8LeafInputs": [
+    "docs/decisions/0032-matrix-check-01-contract.md",
+    "web/e2e/equipment-objects.spec.ts"
+  ],
+  "actualPreservedCoverage": {
+    "originalGeometryAttachments": 36,
+    "newPredicateTables": 36,
+    "allRowFieldAndOrderCountsExact": true,
+    "logicalConditions": 3700,
+    "byCondition": {
+      "<= 900": 36,
+      "<= 1440": 36,
+      ">= 18": 40,
+      "=== false": 40,
+      "=== true": 2384,
+      ">= 44": 1164
+    },
+    "perFrame": [
+      {
+        "name": "learn-acceptance-quota",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-owned-slip-error",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_mind",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_still",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_build",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_guard",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_release",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_echo",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_mind",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_calm",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_build",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_frost",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_release",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_return",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-acceptance-readonly-loadout",
+        "originalGeometry": true,
+        "expectedLogicCount": 71,
+        "actualLogicCount": 71,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-quota",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-owned-slip-error",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_mind",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_still",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_build",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_guard",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_release",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_echo",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_mind",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_calm",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_build",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_frost",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_release",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_return",
+        "originalGeometry": true,
+        "expectedLogicCount": 108,
+        "actualLogicCount": 108,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "learn-cycle-readonly-loadout",
+        "originalGeometry": true,
+        "expectedLogicCount": 71,
+        "actualLogicCount": 71,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "forge-acceptance-quota",
+        "originalGeometry": true,
+        "expectedLogicCount": 98,
+        "actualLogicCount": 98,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "forge-acceptance-owned-artifact-error",
+        "originalGeometry": true,
+        "expectedLogicCount": 98,
+        "actualLogicCount": 98,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "forge-acceptance-readonly-loadout",
+        "originalGeometry": true,
+        "expectedLogicCount": 71,
+        "actualLogicCount": 71,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "forge-cycle-quota",
+        "originalGeometry": true,
+        "expectedLogicCount": 98,
+        "actualLogicCount": 98,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "forge-cycle-owned-artifact-error",
+        "originalGeometry": true,
+        "expectedLogicCount": 98,
+        "actualLogicCount": 98,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      },
+      {
+        "name": "forge-cycle-readonly-loadout",
+        "originalGeometry": true,
+        "expectedLogicCount": 71,
+        "actualLogicCount": 71,
+        "allFieldsInOriginalOrder": true,
+        "failures": []
+      }
+    ],
+    "originalScreenshotCount": 36,
+    "expectedDistribution": "15+15+3+3",
+    "beforeCapturedVerifiedSameNamesAndOrder": true,
+    "PNGManifest": "artifacts/goal-4/check-matrix-01/a9-assertion-reuse/batched-original-screenshot-manifest.json",
+    "PNGCheckedForPresenceAndHashNotViewed": true,
+    "hostAttachments": [
+      {
+        "name": "equipment-a9-host-stages-learn-true",
+        "path": "artifacts/goal-4/check-matrix-01/a9-assertion-reuse/batched-raw/equipment-a9-host-stages-learn-true.json",
+        "sha256": "15bb2751432f9b0913d6a13a321d32e1816442ef23fb1632a168b22aaa0c09de"
+      },
+      {
+        "name": "equipment-a9-host-stages-learn-false",
+        "path": "artifacts/goal-4/check-matrix-01/a9-assertion-reuse/batched-raw/equipment-a9-host-stages-learn-false.json",
+        "sha256": "d89d5fd768ade0af54fe565f4ac09f395d90907c54b1395cb8d75de09582c328"
+      },
+      {
+        "name": "equipment-a9-host-stages-forge-true",
+        "path": "artifacts/goal-4/check-matrix-01/a9-assertion-reuse/batched-raw/equipment-a9-host-stages-forge-true.json",
+        "sha256": "326efcb02872a2b0fd946da6b4ad01288218c4d461857c24d79b780facd180c8"
+      },
+      {
+        "name": "equipment-a9-host-stages-forge-false",
+        "path": "artifacts/goal-4/check-matrix-01/a9-assertion-reuse/batched-raw/equipment-a9-host-stages-forge-false.json",
+        "sha256": "3a275fd0d08f87ad7d633f32e8f4a0f18c1c064c5a5cb22e36a060af36d4cfca"
+      },
+      {
+        "name": "four-native-error-contexts",
+        "path": "artifacts/goal-4/check-matrix-01/a9-assertion-reuse/batched-raw/four-native-error-contexts.json",
+        "sha256": "3e86c5d02e244aa21ebf83d723ebfa7b410febb00df54fa1ac367834823d78c3"
+      }
+    ],
+    "cumulativeHostPrefixesEqual": true,
+    "fourContextSummary": [
+      {
+        "kind": "learn",
+        "atStart": true,
+        "command": {
+          "type": "LEARN",
+          "skill": "sword_still",
+          "commandId": "cycle:2d8692e6-37f7-4c6f-9d08-d983f0f64e83:0:1",
+          "runId": "e6a10b49-b270-4971-a24c-46872ca728df",
+          "expectedRevision": 0
+        },
+        "errors": []
+      },
+      {
+        "kind": "learn",
+        "atStart": false,
+        "command": {
+          "type": "LEARN",
+          "skill": "sword_still",
+          "commandId": "cycle:8c6bb660-2ce6-4b9a-bbd3-f343bf3e4053:0:1",
+          "runId": "40d920b0-4b0c-4dbc-a575-be7aaf5bb745",
+          "expectedRevision": 0
+        },
+        "errors": []
+      },
+      {
+        "kind": "forge",
+        "atStart": true,
+        "command": {
+          "type": "FORGE",
+          "relic": "frost_sword",
+          "commandId": "cycle:6d34af19-d619-4efc-8a15-00655a3169f4:0:1",
+          "runId": "fb907efd-6846-4053-9c32-3783f4e94e11",
+          "expectedRevision": 0
+        },
+        "errors": []
+      },
+      {
+        "kind": "forge",
+        "atStart": false,
+        "command": {
+          "type": "FORGE",
+          "relic": "frost_sword",
+          "commandId": "cycle:5ce47cd7-9902-41f3-98dc-60237f934fd9:0:1",
+          "runId": "2c11675d-a805-48e7-b3cd-c271ce06c69a",
+          "expectedRevision": 0
+        },
+        "errors": []
+      }
+    ],
+    "cases": [
+      {
+        "kind": "learn",
+        "atStart": true,
+        "stages": {
+          "context-created": 158.87577900000042,
+          "load-ready": 1479.3617599999998,
+          "fault-verified": 3001.600267,
+          "retry-before": 15013.404494999999,
+          "retry-outcome-observed": 15515.025184999999,
+          "receipt-verified": 15535.90813,
+          "case-verified": 15593.744562,
+          "cleanup-after": 17290.037892
+        },
+        "readSkillBeforeCount": 12,
+        "readSkillAfterCount": 12,
+        "cleanupError": false
+      },
+      {
+        "kind": "learn",
+        "atStart": false,
+        "stages": {
+          "context-created": 17448.481373,
+          "load-ready": 18188.185568,
+          "fault-verified": 19552.898931,
+          "retry-before": 31374.168941000004,
+          "retry-outcome-observed": 31589.014161,
+          "receipt-verified": 31612.942828,
+          "case-verified": 31754.632684999997,
+          "cleanup-after": 33722.454273
+        },
+        "readSkillBeforeCount": 12,
+        "readSkillAfterCount": 12,
+        "cleanupError": false
+      },
+      {
+        "kind": "forge",
+        "atStart": true,
+        "stages": {
+          "context-created": 33874.852105,
+          "load-ready": 34607.741172,
+          "fault-verified": 35303.318782,
+          "retry-before": 37616.06073,
+          "retry-outcome-observed": 38041.528859,
+          "receipt-verified": 38061.268935,
+          "case-verified": 38131.678896,
+          "cleanup-after": 39085.370656
+        },
+        "readSkillBeforeCount": 0,
+        "readSkillAfterCount": 0,
+        "cleanupError": false
+      },
+      {
+        "kind": "forge",
+        "atStart": false,
+        "stages": {
+          "context-created": 39233.764716,
+          "load-ready": 39857.421603,
+          "fault-verified": 40928.125991,
+          "retry-before": 43691.537552,
+          "retry-outcome-observed": 43897.876264,
+          "receipt-verified": 43919.345112,
+          "case-verified": 43997.49654,
+          "cleanup-after": 45012.119413
+        },
+        "readSkillBeforeCount": 0,
+        "readSkillAfterCount": 0,
+        "cleanupError": false
+      }
+    ]
+  },
+  "costEvidence": {
+    "currentOriginalLeaf": "35pureblocks/3629expectsteps interval6567.089ms;matcherbefore-after561.258ms; trace/source files preserved",
+    "meaning": "Candidate removes repeatedPlaywrightexpecttrackingforalreadycollectedstaticrows; everylogicalconditionstillchecked andarchived. Not removalofgeometry/screenshots orsemanticcoverage.",
+    "extraBlankFixture": "Actual5thblankcontext remains unchanged. Its fixturecontext27.57ms/page342.589ms andnestedbeforeEach includesbrowserlaunch; no scopeexpansion toremoveit.",
+    "source5PassTrace": "Unavailable; source5pass rawhostframes cancomparephasewindows butnoinventedsource5per-APItrace."
+  },
+  "originalFailuresRetained": [
+    "artifacts/goal-4/check-matrix-01/full-source8-report.json",
+    "artifacts/goal-4/check-matrix-01/a9-source8-report.json",
+    "goal-4/evidence/check-matrix-01/a9-source8-terminal-diagnosis.json"
+  ],
+  "conclusion": "当前唯一原A9一次passed45426ms、四context/36原PNG/3700原逻辑条件/全部GameDB及原retry后验真实到达。仅局部静态断言追踪复用；原两次source8timeout及总体慢因UNKNOWN保留。不将此一叶子改称full415单轮通过或用户/性能验收。",
+  "ownership": "Explicit675 input writeownership returnedtoroot after finalinverse/4contexts/36PNG/3700condition/4summary/deadline audit. No further writes or UI byagent.",
+  "finalInverseAndDeadlineAudit": {
+    "checkedAt": "2026-10-24T10:04:15.301472+00:00",
+    "currentSpecSHA256": "c685d54928fcfec62afb3acf128bdbf94604b0331fdb68a0427a80cf5bb11d1b",
+    "inverseRestoresEntireOriginalByteExact": true,
+    "reconstructedOriginalSHA256": "8856e63c9993c28986e0ffb2211400f13b5b6003b9652bbef0689bfe91862df0",
+    "originalBeforeSHA256": "8856e63c9993c28986e0ffb2211400f13b5b6003b9652bbef0689bfe91862df0",
+    "prePost675Equal": true,
+    "currentSpecStillMatchesPost": true,
+    "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+    "periodAndDeadlinePreservation": "Entireprefix/suffixbyteexactincludesoriginalbegin/currentgeneration/wholecountdown,tick0<remaining<=cycleMs,remaining-1msGameunchanged,last1msformaladvance,cyclequota originalcommandretry,120000msnoextraGame/fullDB. Originaltest60000/action8000/nav15000configandfourcontextsetupunchanged. Actualpassedrawand4host/summaryproveallbranchesreached.",
+    "handoff": "UIended;all675inputwriteownershipreturnedtoroot;agentwillnoteditruntime/spec/config/contract/AGENTS/guardsorfurtherUI."
+  }
+}

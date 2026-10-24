@@ -1,0 +1,544 @@
+{
+  "historicalRawReports": [
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/a9-source5-report.json",
+      "sha256": "46c15f77c8b31f2e657211f0e91ddc5d5fb8146c286247ba5d8df7528dd877ab",
+      "runtimeDigest": "2ef1fcd1532f6815bdd5402cff363d9a8f24dedd6da115c65dbdd3c348c4b05d",
+      "stats": {
+        "startTime": "2026-10-24T07:42:54.667Z",
+        "duration": 56726.94,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 1
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/b1-source5-report.json",
+      "sha256": "ece359b6959e235e26766c63ae1650253525a3ee7ee91198f8ad0ec378aa2733",
+      "runtimeDigest": "2ef1fcd1532f6815bdd5402cff363d9a8f24dedd6da115c65dbdd3c348c4b05d",
+      "stats": {
+        "startTime": "2026-10-24T07:44:59.926Z",
+        "duration": 9876.51,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 1
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/baseline-red-report.json",
+      "sha256": "95780a811ada3d0fa57591f4504a6bca409607eb4fe5e9a7c2f80e65db6057e9",
+      "runtimeDigest": "3daa6b703dd3e9fee84778e822fc0296b6d4bedee85a2ff6494884f70eecbb5c",
+      "stats": {
+        "startTime": "2026-10-24T04:58:21.813Z",
+        "duration": 132741.036,
+        "expected": 15,
+        "skipped": 0,
+        "unexpected": 11,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 15,
+        "failed": 11
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/battle-clearance-red-report.json",
+      "sha256": "821feca8e1a159838c21688e1010d7ef7e5a27c458162afc43fbb35c4c4e0bc7",
+      "runtimeDigest": "0183655fe7530f8afe09536209802bd9b3ecefefec212af931b65f5943a2a9f8",
+      "stats": {
+        "startTime": "2026-10-24T06:31:00.229Z",
+        "duration": 10943.805,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "failed": 1
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/closure-source3-report.json",
+      "sha256": "1c40fe985bdfc24bf8cc78b2d485ea26dbe3293ffef3c2f66507f4017e798736",
+      "runtimeDigest": "0183655fe7530f8afe09536209802bd9b3ecefefec212af931b65f5943a2a9f8",
+      "stats": {
+        "startTime": "2026-10-24T06:33:20.493Z",
+        "duration": 17103.096,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "failed": 1
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/full-source2-report.json",
+      "sha256": "f6446b0ca99c4a6b9ac8386735b4eccc98a1db4264f25b70ab4da9b62dc15ced",
+      "runtimeDigest": "89449f2909e0b3162f7d900e21252c6b1725fceb2ecb46d893765997cac5e825",
+      "stats": {
+        "startTime": "2026-10-24T05:55:05.711Z",
+        "duration": 417703.044,
+        "expected": 76,
+        "skipped": 335,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 76,
+        "failed": 2,
+        "interrupted": 2
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/full-source5-report.json",
+      "sha256": "bc879a3431ceec969f8d1773758c83e9c0ffd0925bf900a88b826de9d6e32d51",
+      "runtimeDigest": "2ef1fcd1532f6815bdd5402cff363d9a8f24dedd6da115c65dbdd3c348c4b05d",
+      "stats": {
+        "startTime": "2026-10-24T07:06:42.759Z",
+        "duration": 2082092.384,
+        "expected": 411,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 411,
+        "timedOut": 1,
+        "failed": 2
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/late-close-red-report.json",
+      "sha256": "884954ab03ff40a337bd270342635e98f9bc1377e3ab6649b0572c5445f40748",
+      "runtimeDigest": "89449f2909e0b3162f7d900e21252c6b1725fceb2ecb46d893765997cac5e825",
+      "stats": {
+        "startTime": "2026-10-24T06:06:23.533Z",
+        "duration": 22537.774,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "failed": 2
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/native-source3-report.json",
+      "sha256": "a77251cf533ed4780c66c48a4b427c0995fef48621817ae4e84c95fb4481cb72",
+      "runtimeDigest": "0183655fe7530f8afe09536209802bd9b3ecefefec212af931b65f5943a2a9f8",
+      "stats": {
+        "startTime": "2026-10-24T06:16:56.186Z",
+        "duration": 65051.617,
+        "expected": 34,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 34
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/native-source5-report.json",
+      "sha256": "b700cae178a0d05838353e24ac38826f437f3afcb0ddefab2d59549811783c9f",
+      "runtimeDigest": "2ef1fcd1532f6815bdd5402cff363d9a8f24dedd6da115c65dbdd3c348c4b05d",
+      "stats": {
+        "startTime": "2026-10-24T07:04:17.143Z",
+        "duration": 64007.54000000001,
+        "expected": 34,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 34
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/no-scene-source4-report.json",
+      "sha256": "cee025c9c47fd39b7c1755a1a8794a5b2b01885dcbd8e999ff4ce59a6d606888",
+      "runtimeDigest": "cbf5ce8fd100836d6d64856b33e928ea47177d8ea18f05bb532eded28a12de2d",
+      "stats": {
+        "startTime": "2026-10-24T06:50:36.361Z",
+        "duration": 18897.930999999997,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "failed": 1
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/premises-baseline-report.json",
+      "sha256": "a5a822d7ca81a0f6da1dc4cb5854eee21b44f39d6033c2f9e6661aff9f077204",
+      "runtimeDigest": "3daa6b703dd3e9fee84778e822fc0296b6d4bedee85a2ff6494884f70eecbb5c",
+      "stats": {
+        "startTime": "2026-10-24T05:18:20.032Z",
+        "duration": 59621.43,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 5,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "failed": 5,
+        "passed": 2
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/target-source1-report.json",
+      "sha256": "a765276d82207cf204a13f83e0413c2f89511e12b6ba1f52a23439a0e17a7482",
+      "runtimeDigest": "e653919fccf6b9d3c6c2b46abe6397106bd686444f8f00cfcefe7f1f9f6d1061",
+      "stats": {
+        "startTime": "2026-10-24T05:43:36.253Z",
+        "duration": 130027.758,
+        "expected": 23,
+        "skipped": 0,
+        "unexpected": 5,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 23,
+        "failed": 5
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/target-source2-report.json",
+      "sha256": "acecc266c394ea04cfaa50e8ad3d65f4f6cff7fdb06f8375504d5f566919b929",
+      "runtimeDigest": "89449f2909e0b3162f7d900e21252c6b1725fceb2ecb46d893765997cac5e825",
+      "stats": {
+        "startTime": "2026-10-24T05:51:24.056Z",
+        "duration": 101666.669,
+        "expected": 28,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 28
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/target-source3-report.json",
+      "sha256": "2d030825e51bb7219637192ce29f41f53ab8f76dbc7a0d06264044553f0ad73c",
+      "runtimeDigest": "0183655fe7530f8afe09536209802bd9b3ecefefec212af931b65f5943a2a9f8",
+      "stats": {
+        "startTime": "2026-10-24T06:13:56.172Z",
+        "duration": 121690.14,
+        "expected": 28,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 28
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/target-source4-report.json",
+      "sha256": "b0993ac56a7c3f92be4e04ef91ef36de86b5ac7245fe1fb337809a4b338da861",
+      "runtimeDigest": "cbf5ce8fd100836d6d64856b33e928ea47177d8ea18f05bb532eded28a12de2d",
+      "stats": {
+        "startTime": "2026-10-24T06:39:38.353Z",
+        "duration": 133329.16,
+        "expected": 35,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 35
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/target-source5-report.json",
+      "sha256": "a0fbf6b3417bff7b6f858a8806df0ee5900aa09e49080c6757418335668188b3",
+      "runtimeDigest": "2ef1fcd1532f6815bdd5402cff363d9a8f24dedd6da115c65dbdd3c348c4b05d",
+      "stats": {
+        "startTime": "2026-10-24T06:55:20.593Z",
+        "duration": 126301.675,
+        "expected": 36,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 36
+      },
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/a9-batched-source8-report.json",
+      "sha256": "eb0565e8698d7ebe8a0c7318fb93e0d2fb648c6a81457266d2062dff1385b2ee",
+      "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/a9-batched-source8-before.json",
+      "stats": {
+        "startTime": "2026-10-24T09:55:20.497Z",
+        "duration": 51634.28,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 1
+      },
+      "errorsCount": 0,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": false,
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/a9-source8-report.json",
+      "sha256": "6a1564cdb3720da78196871534fea9bcab89db3654527f9a2527a2145415f8fc",
+      "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/a9-source8-before.json",
+      "stats": {
+        "startTime": "2026-10-24T09:32:18.265Z",
+        "duration": 75319.378,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "timedOut": 1
+      },
+      "errorsCount": 0,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": false,
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/full-source8-report.json",
+      "sha256": "1c9369aca4aa2e322380b2eb8e4de05286afac255a1f148c9714c808673839e3",
+      "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/full-source8-before.json",
+      "stats": {
+        "startTime": "2026-10-24T08:44:52.756Z",
+        "duration": 2015366.771,
+        "expected": 413,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 413,
+        "timedOut": 1,
+        "failed": 1
+      },
+      "errorsCount": 0,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": false,
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/k14-b1-source7-report.json",
+      "sha256": "ff1a148cb79e1858f937d149d8b58403759913c26fc5039bfc97f9864fff8510",
+      "runtimeDigest": "1451a50fd963676adba12396c67985f81ae74bb71d648f1841443182d39e5815",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/k14-b1-source7-before.json",
+      "stats": {
+        "startTime": "2026-10-24T08:07:53.009Z",
+        "duration": 13384.404999999999,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 2
+      },
+      "errorsCount": 0,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": false,
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/k14-source6-red-report.json",
+      "sha256": "67338cbcf73eb8b186d02eb86809547f29b34bd29af64eb7076d30ae313efbf1",
+      "runtimeDigest": "b8524269113e3a14f6a84778d9f9e50cdacbfe5cf10a6995ee59f628f946eb95",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/k14-source6-red-before.json",
+      "stats": {
+        "startTime": "2026-10-24T08:01:39.266Z",
+        "duration": 18669.294,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "failed": 1
+      },
+      "errorsCount": 0,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": false,
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/mf1-clearance-source7-red-report.json",
+      "sha256": "51073fc57233656a9daf08d9c209e38ac184038788ee93194378afd99b7037d0",
+      "runtimeDigest": "1451a50fd963676adba12396c67985f81ae74bb71d648f1841443182d39e5815",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/mf1-clearance-source7-red-before.json",
+      "stats": {
+        "startTime": "2026-10-24T08:32:57.391Z",
+        "duration": 13718.806,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "failed": 1
+      },
+      "errorsCount": 0,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": false,
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/native-real-source8-report.json",
+      "sha256": "5a941df94158104dad559952ea30977a34bd90037a93621ff353c209a4aa37d0",
+      "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/native-real-source8-before.json",
+      "stats": {
+        "startTime": "2026-10-24T09:27:51.733Z",
+        "duration": 44534.034,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 3
+      },
+      "errorsCount": 0,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": false,
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/native-real-source8-selection-error-report.json",
+      "sha256": "0267a025b97d073cfb1bd9800fc09150f9e2732b58a363d84604d4c27ce39830",
+      "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/native-real-source8-selection-error-before.json",
+      "stats": {
+        "startTime": "2026-10-24T09:25:19.227Z",
+        "duration": 2649.3439999999996,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {},
+      "errorsCount": 1,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": true,
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/native-source7-report.json",
+      "sha256": "c6e7c84049b884977e356e31171e7efc7ca5d38b36ec87ade606c2b747b9041d",
+      "runtimeDigest": "1451a50fd963676adba12396c67985f81ae74bb71d648f1841443182d39e5815",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/native-source7-before.json",
+      "stats": {
+        "startTime": "2026-10-24T08:15:03.262Z",
+        "duration": 61568.842,
+        "expected": 34,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 34
+      },
+      "errorsCount": 0,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": false,
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/native-source8-report.json",
+      "sha256": "cbed7f60ae3ff52103f67a4a2cf73c37bd8dc2e0d45269af388825ed8ff6418d",
+      "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/native-source8-before.json",
+      "stats": {
+        "startTime": "2026-10-24T08:40:16.321Z",
+        "duration": 79440.341,
+        "expected": 34,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 34
+      },
+      "errorsCount": 0,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": false,
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/target-source7-report.json",
+      "sha256": "ccfc99e903471aa789391e91edf93048def1e49061ed35aa33f03ff69aa3913b",
+      "runtimeDigest": "1451a50fd963676adba12396c67985f81ae74bb71d648f1841443182d39e5815",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/target-source7-before.json",
+      "stats": {
+        "startTime": "2026-10-24T08:10:49.557Z",
+        "duration": 23464.275,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 3
+      },
+      "errorsCount": 0,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": false,
+      "businessCoverageAdditive": false
+    },
+    {
+      "raw": "artifacts/goal-4/check-matrix-01/target-source8-report.json",
+      "sha256": "9d9bb9e980b525d9d14db43b2885eee616015be0efe382a74a2bd685d45eb432",
+      "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+      "runtimeIdentitySource": "artifacts/goal-4/check-matrix-01/target-source8-before.json",
+      "stats": {
+        "startTime": "2026-10-24T08:38:28.292Z",
+        "duration": 17444.222999999998,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualResultStatuses": {
+        "passed": 1
+      },
+      "errorsCount": 0,
+      "zeroResultsIsSelectionOrSetupErrorNotProductPass": false,
+      "businessCoverageAdditive": false
+    }
+  ],
+  "boundary": "Each raw report keeps its original identity/status. Repetition is not new coverage; final current-source composition is separately verified. Source2 target-before was prebuild: see target-source2-input-boundary.json. Synthetic oldclose is not native DB evidence; source5 full411+3unexpected is preserved.",
+  "recordedAt": "2026-10-24T10:40:09.822456+00:00",
+  "finalCoverage": "coverage-final-source8.json",
+  "singleTerminalGreen": false
+}

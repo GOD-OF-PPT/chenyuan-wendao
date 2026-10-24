@@ -1,0 +1,1419 @@
+{
+  "format": "chenyuan-art03-a9-source8-preterminal-diagnosis",
+  "version": 1,
+  "reviewedAt": "2026-10-24T09:09:00.335941+00:00",
+  "reviewer": "art02_battle",
+  "provisionalUntilFinalRawReport": true,
+  "rawExactStatus": "PENDING terminal full-source8-report.json; do not assign timedOut result duration solely fromlog/trace",
+  "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+  "frozenBeforeCount": 675,
+  "sourceAndHelpersUnchanged": {
+    "web/e2e/equipment-objects.spec.ts": {
+      "source8Frozen": "8856e63c9993c28986e0ffb2211400f13b5b6003b9652bbef0689bfe91862df0",
+      "source5LeafFrozen": "8856e63c9993c28986e0ffb2211400f13b5b6003b9652bbef0689bfe91862df0",
+      "current": "8856e63c9993c28986e0ffb2211400f13b5b6003b9652bbef0689bfe91862df0",
+      "equal": true
+    },
+    "web/e2e/stage-support.ts": {
+      "source8Frozen": "025bea6bd134a3bff0fc434b962f2482378f9de8b275dfe4b8445fdeeb9385a2",
+      "source5LeafFrozen": "025bea6bd134a3bff0fc434b962f2482378f9de8b275dfe4b8445fdeeb9385a2",
+      "current": "025bea6bd134a3bff0fc434b962f2482378f9de8b275dfe4b8445fdeeb9385a2",
+      "equal": true
+    },
+    "web/e2e/support.ts": {
+      "source8Frozen": "e8d4a73c75b84343fcdb2cfb7656dc93dd8ee65006a8a075b6a0f9ffad74370e",
+      "source5LeafFrozen": "e8d4a73c75b84343fcdb2cfb7656dc93dd8ee65006a8a075b6a0f9ffad74370e",
+      "current": "e8d4a73c75b84343fcdb2cfb7656dc93dd8ee65006a8a075b6a0f9ffad74370e",
+      "equal": true
+    }
+  },
+  "scope": "Offline current source8 trace/host/error-context only; source5 timing cause not inherited; no test/browser/build launched and no screenshot pixel inspection",
+  "trace": {
+    "path": "artifacts/goal-4/check-matrix-01/full-source8-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/trace.zip",
+    "sha256": "61dbe29d451ee1880479b6bbf42611bcb4a1478a110275bed7f77383ee35e7e4",
+    "bytes": 47349800,
+    "events": 8571,
+    "primaryError": "Test timeout of60000ms exceeded",
+    "errors": [
+      {
+        "type": "error",
+        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+        "stack": []
+      },
+      {
+        "type": "error",
+        "message": "Error: page.evaluate: Target page, context or browser has been closed",
+        "stack": [
+          {
+            "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/equipment-objects.spec.ts",
+            "line": 123,
+            "column": 220
+          }
+        ]
+      }
+    ],
+    "errorWindows": "artifacts/goal-4/check-matrix-01/a9-source8-preterminal/trace-error-windows.json"
+  },
+  "hostAttachments": [
+    {
+      "name": "equipment-a9-host-stages-learn-true",
+      "resource": "resources/eec92e8979b52b9b82e3d15e624a964635de6305",
+      "path": "artifacts/goal-4/check-matrix-01/a9-source8-preterminal/equipment-a9-host-stages-learn-true.json",
+      "sha256": "41063ac19469f09a6f1dab7f0831da58ba1b89b6da184360d1ed96136ac4d36e",
+      "stageCount": 86,
+      "lastStage": {
+        "stage": "cleanup-after",
+        "elapsedMs": 22566.04029100004,
+        "kind": "learn",
+        "atStart": true
+      }
+    },
+    {
+      "name": "equipment-a9-host-stages-learn-false",
+      "resource": "resources/ca512915aae1629f1754bd7f5659853ff56c2442",
+      "path": "artifacts/goal-4/check-matrix-01/a9-source8-preterminal/equipment-a9-host-stages-learn-false.json",
+      "sha256": "086bf82a9f868d02c97d32860e5136cdad507f5c29e5518018f9b8c3d0c5936b",
+      "stageCount": 170,
+      "lastStage": {
+        "stage": "cleanup-after",
+        "elapsedMs": 47532.319657000015,
+        "kind": "learn",
+        "atStart": false
+      }
+    },
+    {
+      "name": "equipment-a9-host-stages-forge-true",
+      "resource": "resources/00cfd38f8b4e11573b8937d45728e395d554bb44",
+      "path": "artifacts/goal-4/check-matrix-01/a9-source8-preterminal/equipment-a9-host-stages-forge-true.json",
+      "sha256": "a9643b0a4d77ad3cdf39c438599963f3ad7bc28ae077ebb931ebaed47a18a5ae",
+      "stageCount": 195,
+      "lastStage": {
+        "stage": "cleanup-after",
+        "elapsedMs": 57632.959723000065,
+        "kind": "forge",
+        "atStart": true
+      }
+    },
+    {
+      "name": "equipment-a9-host-stages-forge-false",
+      "resource": "resources/4f4960b31db668e77a0dee7a3c6d601beae65b01",
+      "path": "artifacts/goal-4/check-matrix-01/a9-source8-preterminal/equipment-a9-host-stages-forge-false.json",
+      "sha256": "03bc571d8955c3ee87ef9ef6289bea090e5b3aadbd6e1a29a554e026cc7f7d5f",
+      "stageCount": 207,
+      "lastStage": {
+        "stage": "cleanup-error",
+        "elapsedMs": 62459.281299000024,
+        "kind": "forge",
+        "atStart": false,
+        "error": "page.evaluate: Target page, context or browser has been closed"
+      }
+    }
+  ],
+  "hostCumulativePrefixesConsistent": true,
+  "latestHostStages": [
+    {
+      "stage": "test-enter",
+      "elapsedMs": 0.18906700005754828,
+      "timeoutMs": 60000,
+      "clock": "host monotonic; browser/game clock unchanged"
+    },
+    {
+      "stage": "case-before",
+      "elapsedMs": 0.2527460000710562,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "context-created",
+      "elapsedMs": 182.15737400006037,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "load-before",
+      "elapsedMs": 200.14429800002836,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "load-ready",
+      "elapsedMs": 1458.239310999983,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "fault-arm",
+      "elapsedMs": 2693.8338089999743,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "fault-visible",
+      "elapsedMs": 3017.034713000059,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "fault-verified",
+      "elapsedMs": 3135.2344029999804,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 3135.674556000042,
+      "name": "learn-acceptance-quota"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 3939.109400000074,
+      "name": "learn-acceptance-quota"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 4208.718068000046,
+      "name": "learn-acceptance-quota"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 4391.400109000038,
+      "name": "learn-acceptance-owned-slip-error"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 5111.198846000014,
+      "name": "learn-acceptance-owned-slip-error"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 5300.3479700000025,
+      "name": "learn-acceptance-owned-slip-error"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 5417.65076800005,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_mind"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 5555.953747999971,
+      "name": "learn-acceptance-error-readonly-sword_mind"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 6401.418291000067,
+      "name": "learn-acceptance-error-readonly-sword_mind"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 6514.176793000079,
+      "name": "learn-acceptance-error-readonly-sword_mind"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 6532.156849000021,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_mind"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 6532.168256000034,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_still"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 6702.57104900002,
+      "name": "learn-acceptance-error-readonly-sword_still"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 7323.245005000033,
+      "name": "learn-acceptance-error-readonly-sword_still"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 7526.144967,
+      "name": "learn-acceptance-error-readonly-sword_still"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 7544.9447860000655,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_still"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 7544.963580999989,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_build"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 7682.116939999978,
+      "name": "learn-acceptance-error-readonly-sword_build"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 8319.030095000053,
+      "name": "learn-acceptance-error-readonly-sword_build"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 8408.253831000067,
+      "name": "learn-acceptance-error-readonly-sword_build"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 8418.966626000009,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_build"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 8418.973179999972,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_guard"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 8520.257388000027,
+      "name": "learn-acceptance-error-readonly-sword_guard"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 9177.753062000033,
+      "name": "learn-acceptance-error-readonly-sword_guard"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 9375.61324700003,
+      "name": "learn-acceptance-error-readonly-sword_guard"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 9400.625992999994,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_guard"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 9400.634226000053,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_release"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 9740.907685999991,
+      "name": "learn-acceptance-error-readonly-sword_release"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 10498.008238999988,
+      "name": "learn-acceptance-error-readonly-sword_release"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 10725.098608999979,
+      "name": "learn-acceptance-error-readonly-sword_release"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 10743.543914000038,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_release"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 10743.557081000064,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_echo"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 10903.552748000016,
+      "name": "learn-acceptance-error-readonly-sword_echo"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 11600.417575999978,
+      "name": "learn-acceptance-error-readonly-sword_echo"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 11778.206892000046,
+      "name": "learn-acceptance-error-readonly-sword_echo"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 11794.54710700002,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "sword_echo"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 11794.569636999979,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_mind"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 11911.92563000007,
+      "name": "learn-acceptance-error-readonly-talisman_mind"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 12588.324901000015,
+      "name": "learn-acceptance-error-readonly-talisman_mind"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 12759.957196000032,
+      "name": "learn-acceptance-error-readonly-talisman_mind"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 12781.74929200008,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_mind"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 12781.764241000055,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_calm"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 12938.59172799997,
+      "name": "learn-acceptance-error-readonly-talisman_calm"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 13674.068824000075,
+      "name": "learn-acceptance-error-readonly-talisman_calm"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 13879.348827000009,
+      "name": "learn-acceptance-error-readonly-talisman_calm"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 13909.71531,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_calm"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 13909.746205999982,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_build"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 14530.26062299998,
+      "name": "learn-acceptance-error-readonly-talisman_build"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 15096.913205999997,
+      "name": "learn-acceptance-error-readonly-talisman_build"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 15326.07578100008,
+      "name": "learn-acceptance-error-readonly-talisman_build"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 15350.03556400002,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_build"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 15350.044318999979,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_frost"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 15456.976364000002,
+      "name": "learn-acceptance-error-readonly-talisman_frost"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 16004.78338899999,
+      "name": "learn-acceptance-error-readonly-talisman_frost"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 16085.289809999987,
+      "name": "learn-acceptance-error-readonly-talisman_frost"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 16102.139205000014,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_frost"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 16102.149805000052,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_release"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 16224.523062000051,
+      "name": "learn-acceptance-error-readonly-talisman_release"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 16868.020686000003,
+      "name": "learn-acceptance-error-readonly-talisman_release"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 17057.50944100006,
+      "name": "learn-acceptance-error-readonly-talisman_release"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 17074.88872799999,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_release"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 17074.901003999985,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_return"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 17252.417335000006,
+      "name": "learn-acceptance-error-readonly-talisman_return"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 18012.24658799998,
+      "name": "learn-acceptance-error-readonly-talisman_return"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 18229.803813999984,
+      "name": "learn-acceptance-error-readonly-talisman_return"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 18251.988756000064,
+      "kind": "learn",
+      "atStart": true,
+      "skillId": "talisman_return"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 18846.56872900005,
+      "name": "learn-acceptance-readonly-loadout"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 19454.494489000062,
+      "name": "learn-acceptance-readonly-loadout"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 19570.86291799997,
+      "name": "learn-acceptance-readonly-loadout"
+    },
+    {
+      "stage": "loadout-read",
+      "elapsedMs": 19570.893377,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "readonly-phase-complete",
+      "elapsedMs": 19813.92031800002,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "retry-before",
+      "elapsedMs": 19813.92619300005,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "retry-running",
+      "elapsedMs": 20043.101414000033,
+      "kind": "learn",
+      "atStart": true,
+      "activityId": "077b3685-1f3e-4e7b-882c-47bcb6428fa4",
+      "generation": 0
+    },
+    {
+      "stage": "retry-outcome-observed",
+      "elapsedMs": 20409.183350000065,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "receipt-verified",
+      "elapsedMs": 20439.205342,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "case-verified",
+      "elapsedMs": 20537.11936100002,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "cleanup-before",
+      "elapsedMs": 20537.121989000007,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "cleanup-after",
+      "elapsedMs": 22566.04029100004,
+      "kind": "learn",
+      "atStart": true
+    },
+    {
+      "stage": "case-before",
+      "elapsedMs": 22567.371572999982,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "context-created",
+      "elapsedMs": 22797.963676000014,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "load-before",
+      "elapsedMs": 22813.872167999973,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "load-ready",
+      "elapsedMs": 23806.59936900006,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "fault-arm",
+      "elapsedMs": 25234.146317000035,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "fault-visible",
+      "elapsedMs": 25361.607363000046,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "fault-verified",
+      "elapsedMs": 25507.719686000026,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 25507.726012,
+      "name": "learn-cycle-quota"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 26155.793181000045,
+      "name": "learn-cycle-quota"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 26475.702634999994,
+      "name": "learn-cycle-quota"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 26747.12315800006,
+      "name": "learn-cycle-owned-slip-error"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 27399.09002500004,
+      "name": "learn-cycle-owned-slip-error"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 27606.64743100002,
+      "name": "learn-cycle-owned-slip-error"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 27756.61206700001,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_mind"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 28056.033898000023,
+      "name": "learn-cycle-error-readonly-sword_mind"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 28681.215596000082,
+      "name": "learn-cycle-error-readonly-sword_mind"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 28967.689267000067,
+      "name": "learn-cycle-error-readonly-sword_mind"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 29032.96726200008,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_mind"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 29032.981703000027,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_still"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 29180.76241299999,
+      "name": "learn-cycle-error-readonly-sword_still"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 30029.054148999974,
+      "name": "learn-cycle-error-readonly-sword_still"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 30370.47667200002,
+      "name": "learn-cycle-error-readonly-sword_still"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 30401.76774000004,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_still"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 30401.783265999984,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_build"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 30562.991537000053,
+      "name": "learn-cycle-error-readonly-sword_build"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 31282.719936000067,
+      "name": "learn-cycle-error-readonly-sword_build"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 31569.552888000035,
+      "name": "learn-cycle-error-readonly-sword_build"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 31591.04656300007,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_build"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 31591.060243000044,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_guard"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 31761.18992699997,
+      "name": "learn-cycle-error-readonly-sword_guard"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 32520.78732900007,
+      "name": "learn-cycle-error-readonly-sword_guard"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 32859.55907399999,
+      "name": "learn-cycle-error-readonly-sword_guard"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 32893.67473900004,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_guard"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 32893.68960100005,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_release"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 33248.716992,
+      "name": "learn-cycle-error-readonly-sword_release"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 33842.96896900004,
+      "name": "learn-cycle-error-readonly-sword_release"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 34153.75934800005,
+      "name": "learn-cycle-error-readonly-sword_release"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 34179.63393500005,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_release"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 34179.64452500001,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_echo"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 34407.80376000004,
+      "name": "learn-cycle-error-readonly-sword_echo"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 35001.956943999976,
+      "name": "learn-cycle-error-readonly-sword_echo"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 35133.291908000014,
+      "name": "learn-cycle-error-readonly-sword_echo"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 35156.24227300007,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "sword_echo"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 35156.257179000066,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_mind"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 35275.001066000084,
+      "name": "learn-cycle-error-readonly-talisman_mind"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 36082.09062000003,
+      "name": "learn-cycle-error-readonly-talisman_mind"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 36416.07053400006,
+      "name": "learn-cycle-error-readonly-talisman_mind"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 36454.738896999974,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_mind"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 36454.74904100003,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_calm"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 36604.25674900005,
+      "name": "learn-cycle-error-readonly-talisman_calm"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 37431.318388000014,
+      "name": "learn-cycle-error-readonly-talisman_calm"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 37607.76181200007,
+      "name": "learn-cycle-error-readonly-talisman_calm"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 37629.83187900006,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_calm"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 37629.862343000015,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_build"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 38449.32409000001,
+      "name": "learn-cycle-error-readonly-talisman_build"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 39233.532930999994,
+      "name": "learn-cycle-error-readonly-talisman_build"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 39427.06539900007,
+      "name": "learn-cycle-error-readonly-talisman_build"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 39447.22056799999,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_build"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 39447.228026999976,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_frost"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 39557.84015599999,
+      "name": "learn-cycle-error-readonly-talisman_frost"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 40315.55402300006,
+      "name": "learn-cycle-error-readonly-talisman_frost"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 40554.707003000076,
+      "name": "learn-cycle-error-readonly-talisman_frost"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 40582.22805899999,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_frost"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 40582.24321800005,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_release"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 40709.94714000006,
+      "name": "learn-cycle-error-readonly-talisman_release"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 41233.95154300006,
+      "name": "learn-cycle-error-readonly-talisman_release"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 41503.75491300004,
+      "name": "learn-cycle-error-readonly-talisman_release"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 41526.28698099998,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_release"
+    },
+    {
+      "stage": "read-skill-before",
+      "elapsedMs": 41526.30128300004,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_return"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 41682.77398499998,
+      "name": "learn-cycle-error-readonly-talisman_return"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 42393.89164699998,
+      "name": "learn-cycle-error-readonly-talisman_return"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 42734.45038699999,
+      "name": "learn-cycle-error-readonly-talisman_return"
+    },
+    {
+      "stage": "read-skill-after",
+      "elapsedMs": 42755.603845000034,
+      "kind": "learn",
+      "atStart": false,
+      "skillId": "talisman_return"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 43372.193325,
+      "name": "learn-cycle-readonly-loadout"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 44071.06382000004,
+      "name": "learn-cycle-readonly-loadout"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 44225.23032700003,
+      "name": "learn-cycle-readonly-loadout"
+    },
+    {
+      "stage": "loadout-read",
+      "elapsedMs": 44225.25013499998,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "readonly-phase-complete",
+      "elapsedMs": 44511.97300400003,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "retry-before",
+      "elapsedMs": 44511.98001399997,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "retry-outcome-observed",
+      "elapsedMs": 44853.31829000008,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "receipt-verified",
+      "elapsedMs": 44887.87713400007,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "case-verified",
+      "elapsedMs": 45047.04668999999,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "cleanup-before",
+      "elapsedMs": 45047.05071400001,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "cleanup-after",
+      "elapsedMs": 47532.319657000015,
+      "kind": "learn",
+      "atStart": false
+    },
+    {
+      "stage": "case-before",
+      "elapsedMs": 47534.529978999984,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "context-created",
+      "elapsedMs": 47757.866796000046,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "load-before",
+      "elapsedMs": 47779.33162100008,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "load-ready",
+      "elapsedMs": 50051.05599600007,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "fault-arm",
+      "elapsedMs": 50669.416188,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "fault-visible",
+      "elapsedMs": 50906.08138800005,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "fault-verified",
+      "elapsedMs": 51048.95962400001,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 51048.96594500006,
+      "name": "forge-acceptance-quota"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 51947.59817200003,
+      "name": "forge-acceptance-quota"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 52328.227301000035,
+      "name": "forge-acceptance-quota"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 52445.761717000045,
+      "name": "forge-acceptance-owned-artifact-error"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 53166.720021000016,
+      "name": "forge-acceptance-owned-artifact-error"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 53606.453596999985,
+      "name": "forge-acceptance-owned-artifact-error"
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 53861.608609999996,
+      "name": "forge-acceptance-readonly-loadout"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 54865.28203400003,
+      "name": "forge-acceptance-readonly-loadout"
+    },
+    {
+      "stage": "frame-verified",
+      "elapsedMs": 55056.697948000045,
+      "name": "forge-acceptance-readonly-loadout"
+    },
+    {
+      "stage": "loadout-read",
+      "elapsedMs": 55056.73192000005,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "readonly-phase-complete",
+      "elapsedMs": 55387.13282300008,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "retry-before",
+      "elapsedMs": 55387.13927100005,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "retry-running",
+      "elapsedMs": 55662.30114200001,
+      "kind": "forge",
+      "atStart": true,
+      "activityId": "0011f273-0d23-4331-82bd-7f8f65d06391",
+      "generation": 0
+    },
+    {
+      "stage": "retry-outcome-observed",
+      "elapsedMs": 55903.26014000003,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "receipt-verified",
+      "elapsedMs": 55934.32709799998,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "case-verified",
+      "elapsedMs": 56021.44342100003,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "cleanup-before",
+      "elapsedMs": 56021.447311999975,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "cleanup-after",
+      "elapsedMs": 57632.959723000065,
+      "kind": "forge",
+      "atStart": true
+    },
+    {
+      "stage": "case-before",
+      "elapsedMs": 57638.16333999997,
+      "kind": "forge",
+      "atStart": false
+    },
+    {
+      "stage": "context-created",
+      "elapsedMs": 57827.32154799998,
+      "kind": "forge",
+      "atStart": false
+    },
+    {
+      "stage": "load-before",
+      "elapsedMs": 57839.74327800004,
+      "kind": "forge",
+      "atStart": false
+    },
+    {
+      "stage": "load-ready",
+      "elapsedMs": 59287.90606499999,
+      "kind": "forge",
+      "atStart": false
+    },
+    {
+      "stage": "fault-arm",
+      "elapsedMs": 61243.999523999984,
+      "kind": "forge",
+      "atStart": false
+    },
+    {
+      "stage": "fault-visible",
+      "elapsedMs": 61367.90933599998,
+      "kind": "forge",
+      "atStart": false
+    },
+    {
+      "stage": "fault-verified",
+      "elapsedMs": 61486.949179999996,
+      "kind": "forge",
+      "atStart": false
+    },
+    {
+      "stage": "frame-before",
+      "elapsedMs": 61486.957423000014,
+      "name": "forge-cycle-quota"
+    },
+    {
+      "stage": "frame-captured",
+      "elapsedMs": 62442.56995699997,
+      "name": "forge-cycle-quota"
+    },
+    {
+      "stage": "frame-error",
+      "elapsedMs": 62454.97104600002,
+      "name": "forge-cycle-quota",
+      "error": "locator.isVisible: Test ended.\nCall log:\n\u001b[2m    - checking visibility of getByTestId('relic-atelier')\u001b[22m\n"
+    },
+    {
+      "stage": "cleanup-before",
+      "elapsedMs": 62456.68382300006,
+      "kind": "forge",
+      "atStart": false
+    },
+    {
+      "stage": "cleanup-error",
+      "elapsedMs": 62459.281299000024,
+      "kind": "forge",
+      "atStart": false,
+      "error": "page.evaluate: Target page, context or browser has been closed"
+    }
+  ],
+  "cases": [
+    {
+      "kind": "learn",
+      "atStart": true,
+      "timesMs": {
+        "case-before": 0.2527460000710562,
+        "context-created": 182.15737400006037,
+        "load-ready": 1458.239310999983,
+        "fault-arm": 2693.8338089999743,
+        "fault-visible": 3017.034713000059,
+        "fault-verified": 3135.2344029999804,
+        "readonly-phase-complete": 19813.92031800002,
+        "retry-before": 19813.92619300005,
+        "retry-outcome-observed": 20409.183350000065,
+        "receipt-verified": 20439.205342,
+        "case-verified": 20537.11936100002,
+        "cleanup-before": 20537.121989000007,
+        "cleanup-after": 22566.04029100004,
+        "cleanup-error": null
+      },
+      "cleanupError": null,
+      "deadlineCaveat": null
+    },
+    {
+      "kind": "learn",
+      "atStart": false,
+      "timesMs": {
+        "case-before": 22567.371572999982,
+        "context-created": 22797.963676000014,
+        "load-ready": 23806.59936900006,
+        "fault-arm": 25234.146317000035,
+        "fault-visible": 25361.607363000046,
+        "fault-verified": 25507.719686000026,
+        "readonly-phase-complete": 44511.97300400003,
+        "retry-before": 44511.98001399997,
+        "retry-outcome-observed": 44853.31829000008,
+        "receipt-verified": 44887.87713400007,
+        "case-verified": 45047.04668999999,
+        "cleanup-before": 45047.05071400001,
+        "cleanup-after": 47532.319657000015,
+        "cleanup-error": null
+      },
+      "cleanupError": null,
+      "deadlineCaveat": null
+    },
+    {
+      "kind": "forge",
+      "atStart": true,
+      "timesMs": {
+        "case-before": 47534.529978999984,
+        "context-created": 47757.866796000046,
+        "load-ready": 50051.05599600007,
+        "fault-arm": 50669.416188,
+        "fault-visible": 50906.08138800005,
+        "fault-verified": 51048.95962400001,
+        "readonly-phase-complete": 55387.13282300008,
+        "retry-before": 55387.13927100005,
+        "retry-outcome-observed": 55903.26014000003,
+        "receipt-verified": 55934.32709799998,
+        "case-verified": 56021.44342100003,
+        "cleanup-before": 56021.447311999975,
+        "cleanup-after": 57632.959723000065,
+        "cleanup-error": null
+      },
+      "cleanupError": null,
+      "deadlineCaveat": null
+    },
+    {
+      "kind": "forge",
+      "atStart": false,
+      "timesMs": {
+        "case-before": 57638.16333999997,
+        "context-created": 57827.32154799998,
+        "load-ready": 59287.90606499999,
+        "fault-arm": 61243.999523999984,
+        "fault-visible": 61367.90933599998,
+        "fault-verified": 61486.949179999996,
+        "readonly-phase-complete": null,
+        "retry-before": null,
+        "retry-outcome-observed": null,
+        "receipt-verified": null,
+        "case-verified": null,
+        "cleanup-before": 62456.68382300006,
+        "cleanup-after": null,
+        "cleanup-error": 62459.281299000024
+      },
+      "cleanupError": "page.evaluate: Target page, context or browser has been closed",
+      "deadlineCaveat": "Fourth fault markers are after the primary timeout in trace order and >61s inhost; not deadline-valid completion evidence."
+    }
+  ],
+  "observations": {
+    "beforePrimaryTimeout": "First3 contexts have originalretry/result/receipt/case-verified at20.537/45.047/56.021host seconds. Their cleanup finishes22.566/47.532/57.633. Fourth context/fixture load is reached, load-ready59.288; timeout occurs during subsequent public hub-relics click. No failed businessassertion observed before timeout.",
+    "afterPrimaryTimeout": "Fourth continuation reaches fault-arm61.244/fault-visible61.368/fault-verified61.487 andforge-cycle-quota screenshot62.443. Originaltest function is still unwinding whilehooks run. These must not be counted as valid fourth combination completion beforedeadline.",
+    "frameError": "Fourth firstframe captured but not frame-verified; locator.isVisible:Test ended whencheckingrelic-atelier. Geometry artifact couldexist but fullframeassertions didnotfinish.",
+    "cleanupError": "Fourth finally records page.evaluate:Target page/context/browser closed at62.459. It follows the primary deadline and is a teardown secondaryerror, not evidence that Game persistence caused the timeout.",
+    "notReached": "Fourth readonly owned-artifact/loadout frames, originalretry/receipt/case-verified,cleanup-after andfinal four-native-error-contexts/rows.length4 not reached.",
+    "errorContext": "Snapshot shows intended fourth nativequota failure: fullreceipt0/1,保存待确认,存储空间不足 andoriginal retry available. It doesnot prove laterretry executed."
+  },
+  "screenshots": {
+    "plannedOriginal": 36,
+    "captured": 34,
+    "verified": 33,
+    "frameError": 1,
+    "manifest": "artifacts/goal-4/check-matrix-01/a9-source8-preterminal/actual-screenshot-manifest.json",
+    "meaning": "33 verified frames belong to first3contexts;34th captured posttimeout is not a full passedframe; final2 original fourthcontext frames remain absent."
+  },
+  "timingCause": "UNKNOWN. This trace proves original60s totaldeadline, current reached milestones and postdeadline continuation only; do not copy source5 causal guesses or call a futureleafgreen a fix.",
+  "limits": "Original4contexts/36screenshots/60s total/8s action/15s navigation preserved. Final rawreport exactstatus/duration/errors/attachment correspondence and current fullafter675 comparison await root terminal notification.",
+  "historicalComparison": "source5 full failed earlier atthirdcleanup/fourthpage creation;source8 reachedfourthload beforetimeout. They are separate observations, not interchangeable slowcause proof.",
+  "writes": "Only new a9-source8-preterminal-diagnosis.json/md and extractedcurrent rawhost/error/screenshot hashes outside675. No runtime/spec/config/contract/guard changes."
+}

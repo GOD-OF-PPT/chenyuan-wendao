@@ -1,0 +1,168 @@
+{
+  "status": "actual source2 cancel/reopen failure; synthetic deterministic control pending; production unchanged",
+  "fullAttempt": {
+    "passed": 76,
+    "failed": 2,
+    "interrupted": 2,
+    "notExecuted": 333,
+    "rawSkipped": 335,
+    "inputsBeforeAfterExact": 675
+  },
+  "notCompletionFailure": true,
+  "traces": [
+    {
+      "path": "artifacts/goal-4/check-matrix-01/full-source2-results/check-matrix-keyboard-CHEC-5255d-s-the-committed-life-record-chromium/trace.zip",
+      "sha256": "71e77085d5e26531352f8bdaad94f83de6fd2000b447aeb8e430d97b46df7211",
+      "failures": [
+        {
+          "call": "call@168",
+          "startTime": 323474.908,
+          "endTime": 331480.624,
+          "method": "expect",
+          "selector": "internal:testid=[data-testid=\"ascension-confirm\"s]",
+          "message": "Expect failed"
+        }
+      ],
+      "keyboard": [
+        {
+          "call": "call@124",
+          "time": 323059.508,
+          "key": "Shift+Tab"
+        },
+        {
+          "call": "call@132",
+          "time": 323131.894,
+          "key": "Shift+Tab"
+        },
+        {
+          "call": "call@140",
+          "time": 323186.973,
+          "key": "Shift+Tab"
+        },
+        {
+          "call": "call@150",
+          "time": 323294.342,
+          "key": "Escape"
+        },
+        {
+          "call": "call@166",
+          "time": 323438.797,
+          "key": "Enter"
+        }
+      ],
+      "reopenSnapshot": [
+        {
+          "time": 323471.456,
+          "snapshotName": "after@call@166",
+          "attributes": {
+            "__playwright_dialog_open_": "modal",
+            "__playwright_target__": "call@152",
+            "class": "paper life-confirm",
+            "data-testid": "ascension-confirmation",
+            "aria-labelledby": "ascension-title"
+          },
+          "serializedChildCount": 0
+        }
+      ]
+    },
+    {
+      "path": "artifacts/goal-4/check-matrix-01/full-source2-results/check-matrix-keyboard-CHEC-f814f-d-seal-focuses-factual-life-chromium/trace.zip",
+      "sha256": "da136d899fc1bc9beb9cad426b5ceb4e1055646a45fff564e35ad8078e3306cd",
+      "failures": [
+        {
+          "call": "call@7013",
+          "startTime": 300776.866,
+          "endTime": 308798.541,
+          "method": "focus",
+          "selector": "internal:testid=[data-testid=\"life-confirm-end\"s]",
+          "message": "Timeout 8000ms exceeded."
+        }
+      ],
+      "keyboard": [
+        {
+          "call": "call@6963",
+          "time": 300338.352,
+          "key": "Shift+Tab"
+        },
+        {
+          "call": "call@6971",
+          "time": 300401.608,
+          "key": "Shift+Tab"
+        },
+        {
+          "call": "call@6981",
+          "time": 300526.259,
+          "key": "Escape"
+        },
+        {
+          "call": "call@6997",
+          "time": 300653.313,
+          "key": "Enter"
+        },
+        {
+          "call": "call@7007",
+          "time": 300719.687,
+          "key": "Enter"
+        }
+      ],
+      "reopenSnapshot": [
+        {
+          "time": 300733.399,
+          "snapshotName": "after@call@7007",
+          "attributes": {
+            "__playwright_dialog_open_": "modal",
+            "__playwright_target__": "call@6983",
+            "class": "paper life-confirm",
+            "data-testid": "life-confirmation",
+            "aria-labelledby": "life-confirm-title"
+          },
+          "serializedChildCount": 10
+        },
+        {
+          "time": 300755.452,
+          "snapshotName": "after@call@7009",
+          "attributes": {
+            "__playwright_dialog_open_": "modal",
+            "__playwright_target__": "call@6983",
+            "class": "paper life-confirm",
+            "data-testid": "life-confirmation",
+            "aria-labelledby": "life-confirm-title"
+          },
+          "serializedChildCount": 10
+        },
+        {
+          "time": 300774.811,
+          "snapshotName": "after@call@7011",
+          "attributes": {
+            "__playwright_dialog_open_": "modal",
+            "__playwright_target__": "call@6983",
+            "class": "paper life-confirm",
+            "data-testid": "life-confirmation",
+            "aria-labelledby": "life-confirm-title"
+          },
+          "serializedChildCount": 10
+        }
+      ]
+    }
+  ],
+  "staticConsumerRisk": [
+    {
+      "handler": "closeLifeReview",
+      "dialog": "lifeDialog"
+    },
+    {
+      "handler": "closeTrialReview",
+      "dialog": "trialDialog"
+    },
+    {
+      "handler": "closeTrialRestore",
+      "dialog": "trialRestoreDialog"
+    },
+    {
+      "handler": "closeAscension",
+      "dialog": "ascensionDialog"
+    }
+  ],
+  "proposedFix": "match existing useFocus close listener: ignore close event when that dialog is open; real closed event keeps original discardRetryFor and clears intent",
+  "scope": "UI only; original Game/CAS/retry/fees/period/focus-ownership and limits unchanged"
+}

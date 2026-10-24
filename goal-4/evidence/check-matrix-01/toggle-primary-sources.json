@@ -1,0 +1,15 @@
+{
+  "readAt": "2026-10-24",
+  "sources": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details#events",
+      "fact": "toggle is dispatched after the details state changes; rapid changes may coalesce."
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element",
+      "fact": "open attribute changes queue a details toggle event task on the DOM manipulation task source."
+    }
+  ],
+  "projectInference": "Do not depend on delayed toggle delivery to establish the editable panel state. Synchronize the explicit summary activation, keep reading actual open for native events, and verify no pending input is overwritten. The sources do not prove this project race or a fix; natural trace and controlled UI red/green are separate.",
+  "scope": "No browser/environment compatibility or performance matrix."
+}

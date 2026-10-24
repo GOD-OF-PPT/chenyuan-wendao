@@ -1,0 +1,413 @@
+{
+  "format": "chenyuan-art03-a9-terminal-evidence-review",
+  "version": 1,
+  "reviewedAt": "2026-10-24T07:47:34.197503+00:00",
+  "reviewer": "art02_battle",
+  "scope": "Offline exact final rawreport/host attachment and original screenshot completeness review; no screenshot pixel inspection or test/browser/build run",
+  "same675InputMapsAcrossFullBeforeFullAfterLeafBeforeLeafAfter": true,
+  "runtimeDigest": "2ef1fcd1532f6815bdd5402cff363d9a8f24dedd6da115c65dbdd3c348c4b05d",
+  "runs": {
+    "full-source5": {
+      "report": "artifacts/goal-4/check-matrix-01/full-source5-report.json",
+      "reportSHA256": "bc879a3431ceec969f8d1773758c83e9c0ffd0925bf900a88b826de9d6e32d51",
+      "testTitle": "ART03-A9 native acceptance and cycle quota failures keep learning and forging cold while the original exact intent remains retryable",
+      "status": "timedOut",
+      "durationMs": 60713,
+      "timeoutMs": 60000,
+      "retry": 0,
+      "expectedStatus": "passed",
+      "reportStats": {
+        "startTime": "2026-10-24T07:06:42.759Z",
+        "duration": 2082092.384,
+        "expected": 411,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      },
+      "errors": [
+        {
+          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+          "location": null
+        },
+        {
+          "message": "Error: browserContext.newPage: Test ended.",
+          "location": {
+            "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/equipment-objects.spec.ts",
+            "column": 259,
+            "line": 118
+          }
+        }
+      ],
+      "runtimeDigest": "2ef1fcd1532f6815bdd5402cff363d9a8f24dedd6da115c65dbdd3c348c4b05d",
+      "inputCount": 675,
+      "strictBeforeAfterEqual": true,
+      "hostAttachments": [
+        {
+          "name": "equipment-a9-host-stages-learn-true",
+          "path": "artifacts/goal-4/check-matrix-01/a9-terminal-source5/full-source5-equipment-a9-host-stages-learn-true.json",
+          "sha256": "fc1c42bba0116d6b08594472f72eac6229c9df46b40e02d739e7c313d3d2cdf3",
+          "bytes": 9320,
+          "matchesPreliminaryZipExtraction": true
+        },
+        {
+          "name": "equipment-a9-host-stages-learn-false",
+          "path": "artifacts/goal-4/check-matrix-01/a9-terminal-source5/full-source5-equipment-a9-host-stages-learn-false.json",
+          "sha256": "89dd769b5badfe7b0791082bb09613324f6e1419807574d167892cac2ee5bf6a",
+          "bytes": 18041,
+          "matchesPreliminaryZipExtraction": true
+        },
+        {
+          "name": "equipment-a9-host-stages-forge-true",
+          "path": "artifacts/goal-4/check-matrix-01/a9-terminal-source5/full-source5-equipment-a9-host-stages-forge-true.json",
+          "sha256": "4b58cc9825e50cbbd8ea56477b7d88653555be667855a9617a2bdfe7ad596ac2",
+          "bytes": 20370,
+          "matchesPreliminaryZipExtraction": true
+        }
+      ],
+      "hostCumulativePrefixesConsistent": true,
+      "hostStageCount": 195,
+      "cases": [
+        {
+          "kind": "learn",
+          "atStart": true,
+          "contextCreated": true,
+          "faultVerified": true,
+          "readSkillBeforeCount": 12,
+          "readSkillAfterCount": 12,
+          "retryObserved": true,
+          "receiptVerified": true,
+          "caseVerified": true,
+          "cleanupAfter": true,
+          "cleanupError": false,
+          "screenshotCount": 15,
+          "timesMs": {
+            "case-before": 0.16483999998308718,
+            "load-ready": 1744.6896809999598,
+            "fault-verified": 3654.4284070000285,
+            "readonly-phase-complete": 21805.863681999967,
+            "retry-before": 21805.86930999998,
+            "retry-outcome-observed": 22343.81745900004,
+            "receipt-verified": 22374.43368799996,
+            "case-verified": 22466.12851099996,
+            "cleanup-before": 22466.132407000056,
+            "cleanup-after": 25056.718208999955
+          }
+        },
+        {
+          "kind": "learn",
+          "atStart": false,
+          "contextCreated": true,
+          "faultVerified": true,
+          "readSkillBeforeCount": 12,
+          "readSkillAfterCount": 12,
+          "retryObserved": true,
+          "receiptVerified": true,
+          "caseVerified": true,
+          "cleanupAfter": true,
+          "cleanupError": false,
+          "screenshotCount": 15,
+          "timesMs": {
+            "case-before": 25057.963340000017,
+            "load-ready": 26173.31305700005,
+            "fault-verified": 28266.802805999992,
+            "readonly-phase-complete": 49747.69707300002,
+            "retry-before": 49747.70320900006,
+            "retry-outcome-observed": 50041.50207299995,
+            "receipt-verified": 50123.97413400002,
+            "case-verified": 50322.74437500001,
+            "cleanup-before": 50322.74951700005,
+            "cleanup-after": 52846.933739
+          }
+        },
+        {
+          "kind": "forge",
+          "atStart": true,
+          "contextCreated": true,
+          "faultVerified": true,
+          "readSkillBeforeCount": 0,
+          "readSkillAfterCount": 0,
+          "retryObserved": true,
+          "receiptVerified": true,
+          "caseVerified": true,
+          "cleanupAfter": true,
+          "cleanupError": false,
+          "screenshotCount": 3,
+          "timesMs": {
+            "case-before": 52849.41009000002,
+            "load-ready": 53955.35010100005,
+            "fault-verified": 55056.09060200001,
+            "readonly-phase-complete": 58954.209919000044,
+            "retry-before": 58954.21414199995,
+            "retry-outcome-observed": 59362.16144100006,
+            "receipt-verified": 59386.04673299997,
+            "case-verified": 59465.75539599999,
+            "cleanup-before": 59465.759853000054,
+            "cleanup-after": 60463.66180500004
+          }
+        },
+        {
+          "kind": "forge",
+          "atStart": false,
+          "contextCreated": false,
+          "faultVerified": false,
+          "readSkillBeforeCount": 0,
+          "readSkillAfterCount": 0,
+          "retryObserved": false,
+          "receiptVerified": false,
+          "caseVerified": false,
+          "cleanupAfter": false,
+          "cleanupError": false,
+          "screenshotCount": 0,
+          "timesMs": {
+            "case-before": null,
+            "load-ready": null,
+            "fault-verified": null,
+            "readonly-phase-complete": null,
+            "retry-before": null,
+            "retry-outcome-observed": null,
+            "receipt-verified": null,
+            "case-verified": null,
+            "cleanup-before": null,
+            "cleanup-after": null
+          }
+        }
+      ],
+      "screenshotCount": 33,
+      "allFrameBeforeCapturedVerifiedNamesMatch": true,
+      "screenshotsManifest": "artifacts/goal-4/check-matrix-01/a9-terminal-source5/full-source5-original-screenshots.json",
+      "fourContextSummary": null,
+      "terminalFourRowAssertionReached": false
+    },
+    "a9-source5": {
+      "report": "artifacts/goal-4/check-matrix-01/a9-source5-report.json",
+      "reportSHA256": "46c15f77c8b31f2e657211f0e91ddc5d5fb8146c286247ba5d8df7528dd877ab",
+      "testTitle": "ART03-A9 native acceptance and cycle quota failures keep learning and forging cold while the original exact intent remains retryable",
+      "status": "passed",
+      "durationMs": 49606,
+      "timeoutMs": 60000,
+      "retry": 0,
+      "expectedStatus": "passed",
+      "reportStats": {
+        "startTime": "2026-10-24T07:42:54.667Z",
+        "duration": 56726.94,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "runtimeDigest": "2ef1fcd1532f6815bdd5402cff363d9a8f24dedd6da115c65dbdd3c348c4b05d",
+      "inputCount": 675,
+      "strictBeforeAfterEqual": true,
+      "hostAttachments": [
+        {
+          "name": "equipment-a9-host-stages-learn-true",
+          "path": "artifacts/goal-4/check-matrix-01/a9-terminal-source5/a9-source5-equipment-a9-host-stages-learn-true.json",
+          "sha256": "c7464be33792460a2247657ec3a0f0e82475adb102c57ced8c62e11372a00c7e",
+          "bytes": 9070,
+          "matchesPreliminaryZipExtraction": null
+        },
+        {
+          "name": "equipment-a9-host-stages-learn-false",
+          "path": "artifacts/goal-4/check-matrix-01/a9-terminal-source5/a9-source5-equipment-a9-host-stages-learn-false.json",
+          "sha256": "f74b82b7048f27072f65e929ebe680e7acc515d136fa66174214156442261c3c",
+          "bytes": 17567,
+          "matchesPreliminaryZipExtraction": null
+        },
+        {
+          "name": "equipment-a9-host-stages-forge-true",
+          "path": "artifacts/goal-4/check-matrix-01/a9-terminal-source5/a9-source5-equipment-a9-host-stages-forge-true.json",
+          "sha256": "4854375c85266d1846cedb6fee5ed26c6f77c880aec8de6a762655a231c9bc32",
+          "bytes": 19830,
+          "matchesPreliminaryZipExtraction": null
+        },
+        {
+          "name": "equipment-a9-host-stages-forge-false",
+          "path": "artifacts/goal-4/check-matrix-01/a9-terminal-source5/a9-source5-equipment-a9-host-stages-forge-false.json",
+          "sha256": "de1f399fd35c3a08f5e41312aac3105d871d29638f047a13cd829398fe9f33b5",
+          "bytes": 21913,
+          "matchesPreliminaryZipExtraction": null
+        },
+        {
+          "name": "four-native-error-contexts",
+          "path": "artifacts/goal-4/check-matrix-01/a9-terminal-source5/a9-source5-four-native-error-contexts.json",
+          "sha256": "6718ba7681aabfb242aaf98010c81e38a46d543f42d85dfa4a2a5ff629bdbbff",
+          "bytes": 891,
+          "matchesPreliminaryZipExtraction": null
+        }
+      ],
+      "hostCumulativePrefixesConsistent": true,
+      "hostStageCount": 219,
+      "cases": [
+        {
+          "kind": "learn",
+          "atStart": true,
+          "contextCreated": true,
+          "faultVerified": true,
+          "readSkillBeforeCount": 12,
+          "readSkillAfterCount": 12,
+          "retryObserved": true,
+          "receiptVerified": true,
+          "caseVerified": true,
+          "cleanupAfter": true,
+          "cleanupError": false,
+          "screenshotCount": 15,
+          "timesMs": {
+            "case-before": 0.1755170000005819,
+            "load-ready": 1521.5974510000005,
+            "fault-verified": 2898.4057190000003,
+            "readonly-phase-complete": 16747.399731999998,
+            "retry-before": 16747.404905,
+            "retry-outcome-observed": 17222.641773,
+            "receipt-verified": 17246.724262,
+            "case-verified": 17313.652297,
+            "cleanup-before": 17313.655351999998,
+            "cleanup-after": 19527.013077
+          }
+        },
+        {
+          "kind": "learn",
+          "atStart": false,
+          "contextCreated": true,
+          "faultVerified": true,
+          "readSkillBeforeCount": 12,
+          "readSkillAfterCount": 12,
+          "retryObserved": true,
+          "receiptVerified": true,
+          "caseVerified": true,
+          "cleanupAfter": true,
+          "cleanupError": false,
+          "screenshotCount": 15,
+          "timesMs": {
+            "case-before": 19527.860067999998,
+            "load-ready": 20278.744427999998,
+            "fault-verified": 21617.464253,
+            "readonly-phase-complete": 35274.405905,
+            "retry-before": 35274.412368000005,
+            "retry-outcome-observed": 35449.459820000004,
+            "receipt-verified": 35471.436631000004,
+            "case-verified": 35625.126385,
+            "cleanup-before": 35625.130185,
+            "cleanup-after": 37519.780596000004
+          }
+        },
+        {
+          "kind": "forge",
+          "atStart": true,
+          "contextCreated": true,
+          "faultVerified": true,
+          "readSkillBeforeCount": 0,
+          "readSkillAfterCount": 0,
+          "retryObserved": true,
+          "receiptVerified": true,
+          "caseVerified": true,
+          "cleanupAfter": true,
+          "cleanupError": false,
+          "screenshotCount": 3,
+          "timesMs": {
+            "case-before": 37521.234094,
+            "load-ready": 38630.967188,
+            "fault-verified": 39428.753404,
+            "readonly-phase-complete": 42219.237909,
+            "retry-before": 42219.250272000005,
+            "retry-outcome-observed": 42561.035464,
+            "receipt-verified": 42589.156042,
+            "case-verified": 42668.690179000005,
+            "cleanup-before": 42668.695282,
+            "cleanup-after": 43692.115246
+          }
+        },
+        {
+          "kind": "forge",
+          "atStart": false,
+          "contextCreated": true,
+          "faultVerified": true,
+          "readSkillBeforeCount": 0,
+          "readSkillAfterCount": 0,
+          "retryObserved": true,
+          "receiptVerified": true,
+          "caseVerified": true,
+          "cleanupAfter": true,
+          "cleanupError": false,
+          "screenshotCount": 3,
+          "timesMs": {
+            "case-before": 43695.707122,
+            "load-ready": 44578.450503,
+            "fault-verified": 45330.185404,
+            "readonly-phase-complete": 47925.963357,
+            "retry-before": 47925.968298,
+            "retry-outcome-observed": 48115.03154,
+            "receipt-verified": 48139.277953000004,
+            "case-verified": 48221.034914,
+            "cleanup-before": 48221.038331,
+            "cleanup-after": 49158.340646000004
+          }
+        }
+      ],
+      "screenshotCount": 36,
+      "allFrameBeforeCapturedVerifiedNamesMatch": true,
+      "screenshotsManifest": "artifacts/goal-4/check-matrix-01/a9-terminal-source5/a9-source5-original-screenshots.json",
+      "fourContextSummary": [
+        {
+          "kind": "learn",
+          "atStart": true,
+          "command": {
+            "type": "LEARN",
+            "skill": "sword_still",
+            "commandId": "cycle:64d08745-c38e-4879-afbd-fb33185d1b7e:0:1",
+            "runId": "3da6eb1a-bf66-4fe2-8af6-93d65ea44318",
+            "expectedRevision": 0
+          },
+          "errors": []
+        },
+        {
+          "kind": "learn",
+          "atStart": false,
+          "command": {
+            "type": "LEARN",
+            "skill": "sword_still",
+            "commandId": "cycle:2ddfbf56-18bb-4191-93fe-732fac445b76:0:1",
+            "runId": "74e17c99-f66e-4c61-b17f-b76aa03e5c2e",
+            "expectedRevision": 0
+          },
+          "errors": []
+        },
+        {
+          "kind": "forge",
+          "atStart": true,
+          "command": {
+            "type": "FORGE",
+            "relic": "frost_sword",
+            "commandId": "cycle:bee68da3-8360-4d0b-8e8d-4b99fde58eda:0:1",
+            "runId": "3f0c764c-c899-4c70-aa5b-b856fba3acc9",
+            "expectedRevision": 0
+          },
+          "errors": []
+        },
+        {
+          "kind": "forge",
+          "atStart": false,
+          "command": {
+            "type": "FORGE",
+            "relic": "frost_sword",
+            "commandId": "cycle:7a799bac-09cc-46b5-b972-1a98cdceb60a:0:1",
+            "runId": "cd525df4-ead6-47c7-af06-5450f761746d",
+            "expectedRevision": 0
+          },
+          "errors": []
+        }
+      ],
+      "terminalFourRowAssertionReached": true
+    }
+  },
+  "conclusion": "原full A9为timedOut60713ms（60000ms限额），已执行33张/前三上下文，第四业务未到；同675/同source5/同原60s无修改的唯一叶子passed49606ms，四组合及完整36张15+15+3+3、四host附件、四行汇总和原断言均实际到达。它提供该原例当前同源工程证明，但不消除原full失败，不是单轮414全绿。",
+  "causeStatus": "UNKNOWN. Same-input timing variation and later leaf green do not establish original timeout root cause fixed. No pager/screenshot/context/assertion/timeout change was applied.",
+  "coverage": "One unique A9 declaration; originalfailed attempt and one separatecurrent passedleaf are different execution identities, not two new coverage items. Full report still411expected/3unexpected; B1/MF1 handled separately by other reviewers.",
+  "historicalEvidencePreserved": [
+    "goal-4/evidence/check-matrix-01/a9-host-diagnosis.json",
+    "goal-4/evidence/check-matrix-01/a9-host-diagnosis.md",
+    "goal-4/evidence/check-matrix-01/a9-cost-review.json",
+    "goal-4/evidence/check-matrix-01/a9-cost-review.md"
+  ],
+  "writes": "Only new terminal evidence and raw attachment/screenshot hash manifests outside675 inputs; no production/spec/config/contract/guard or original records altered."
+}

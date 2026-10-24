@@ -1,0 +1,141 @@
+{
+  "format": "chenyuan-source8-a6-preterminal-diagnosis",
+  "version": 1,
+  "recordedAt": "2026-10-24T09:19:23.001082+00:00",
+  "status": "read-only failing-case diagnosis while root full415 continues; no final whole-run status asserted",
+  "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+  "spec": {
+    "path": "web/e2e/narrative-objects.spec.ts",
+    "sha256": "71e16be9fe46fe4d5db5d80233be6d0df8853553c142abfbda600f66b84f3001",
+    "unchangedSinceSource5FullBefore": true,
+    "firstFailSource": "begin(): initial countdown exact full period toHaveText"
+  },
+  "trace": {
+    "path": "artifacts/goal-4/check-matrix-01/full-source8-results/narrative-objects-ART05-A6-b2f55-s-the-exact-whole-Game-once-chromium/trace.zip",
+    "sha256": "0089c7b3bfecd2e32d847cea4715d2a19096cd7e2d52d1c8bf91abc667a6b773",
+    "errorContext": "artifacts/goal-4/check-matrix-01/full-source8-results/narrative-objects-ART05-A6-b2f55-s-the-exact-whole-Game-once-chromium/error-context.md",
+    "errorContextSha256": "edca04657489c0fb0b5d40ed2bfafe5478a604d7450f97e376fa32260b2cad45",
+    "firstFailure": {
+      "call": "call@34802",
+      "method": "expect",
+      "selector": "internal:testid=[data-testid=\"training-countdown\"s]",
+      "expected": "12.0 秒",
+      "traceStart": 1514140.452,
+      "traceEnd": 1522147.018,
+      "timeoutMs": 8000,
+      "observedDescendingValues": [
+        "11.9 秒",
+        "11.8 秒",
+        "11.6 秒",
+        "11.1 秒",
+        "10.1 秒",
+        "9.1 秒",
+        "8.1 秒",
+        "7.1 秒",
+        "6.1 秒",
+        "5.2 秒",
+        "4.1 秒"
+      ]
+    },
+    "acceptedActivitySnapshots": [
+      {
+        "call": "call@34796",
+        "traceStart": 1514058.493,
+        "traceEnd": 1514065.729,
+        "activity": {
+          "version": 7,
+          "id": "a6b8d983-40be-45f5-a3ba-08e872d90275",
+          "runId": "0168a4d0-02a1-4766-bc6b-b2c3b1d53cea",
+          "status": "running",
+          "startedAt": 1792833002052,
+          "dueAt": 1792833014052,
+          "cycleMs": 12000,
+          "completedCycles": 0,
+          "gameRevision": 0,
+          "generation": 0
+        }
+      },
+      {
+        "call": "call@34798",
+        "traceStart": 1514075.117,
+        "traceEnd": 1514085.174,
+        "activity": {
+          "version": 7,
+          "id": "a6b8d983-40be-45f5-a3ba-08e872d90275",
+          "runId": "0168a4d0-02a1-4766-bc6b-b2c3b1d53cea",
+          "status": "running",
+          "startedAt": 1792833002052,
+          "dueAt": 1792833014052,
+          "cycleMs": 12000,
+          "completedCycles": 0,
+          "gameRevision": 0,
+          "generation": 0
+        }
+      }
+    ],
+    "confirmClick": {
+      "call": "call@34794",
+      "traceStart": 1513927.396,
+      "traceEnd": 1514037.262,
+      "firstCountdownAssertAfterClickReturnMs": 103.18999999994412
+    },
+    "timeDomainNote": "Trace call timestamps compared only with each other; Activity startedAt/dueAt are separate browser wall-clock values. No wall/monotonic domains summed."
+  },
+  "actualPhase": {
+    "accepted": true,
+    "cycleMs": 12000,
+    "completedCyclesAtObservation": 0,
+    "phaseVisible": "END/留道传承 running; failure context training1.7秒 and response2/12秒",
+    "formalCommitProofReached": false,
+    "localClosureDeliveryAssertionReached": false,
+    "stageFocusAfterResultReached": false,
+    "laterTeardownCommit": "not inferred: case failed before completion verification; no claim whether unseen later transaction occurred"
+  },
+  "conclusion": "Initial native countdown already11.9 and then decreases normally. Exact12.0 was a transient observation assumption, not a requirement of a full12000ms cycle. The first failed assertion is before end/result proof, so this trace does not show Game saving or local closure loss or new StageFocus stealing. It is not labelled flaky and not extrapolated to performance.",
+  "historical": {
+    "report": "artifacts/goal-4/check-matrix-01/full-source5-report.json",
+    "sha256": "bc879a3431ceec969f8d1773758c83e9c0ffd0925bf900a88b826de9d6e32d51",
+    "sameNamedA6": [
+      {
+        "file": "narrative-objects.spec.ts",
+        "title": "ART05-A6 real ending waits its complete 12000ms cycle and saves the exact whole Game once",
+        "project": "chromium",
+        "results": [
+          {
+            "status": "passed",
+            "retry": 0,
+            "duration": 18466
+          }
+        ]
+      }
+    ],
+    "meaning": "Original source5 pass retained as history; same spec does not turn current failure into a pass."
+  },
+  "minimumTestOnlyProposal": {
+    "helper": "begin(page, confirm=milestone-confirm, native=false)",
+    "nativeOptIn": "Only existing three real visit/response/ending loop call passes native=true. All virtual call sites retain defaultfalse and original exact full-period text assertion.",
+    "nativeFirstAssertion": [
+      "Existing actual running generation visible and Activityversion7/completed0 remain.",
+      "Read actual first countdown string with one decimal seconds; assert0 < firstSeconds <= a.cycleMs/1000.",
+      "Then original real loop independently reads a later first and verifies actual countdown decreases.",
+      "Keep original full native cycle/write.wall>=dueAt/wholeGame/unique receipt/stop/expenses and all original60/8/15 limits."
+    ],
+    "doNot": [
+      "Do not wait for a missed instant12.0 to reappear.",
+      "No sleep, virtual-clock advance, runtime/Store/Game alteration, timeout increase or skip.",
+      "Do not edit defaultvirtual exact expectation or use retry to erase original real failure."
+    ],
+    "proposedEvidence": "Record native initial text/seconds/generation/period/start/due and the fact this is an observation after acceptance, not full-period re-counting."
+  },
+  "remainingValidation": [
+    "Root must retain complete full415 raw/post675 before any spec edit.",
+    "After explicit write authorization: preserve before/hash/minimaldiff; only native opt-in, then all three real cases under same runtime and existing limits.",
+    "WholeGame/unique receipt/first-write deadline/expenses/closure/geometry still must actually execute; this failing attempt did not reach them.",
+    "RuntimeCD3 unchanged; any test-only leaf mapping must preserve full original failure and disclose composition."
+  ],
+  "actions": {
+    "specOrProductionOrFrozenInputEdits": false,
+    "browserOrTests": false,
+    "newEvidenceOnly": true
+  }
+}

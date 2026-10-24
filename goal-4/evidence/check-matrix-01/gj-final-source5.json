@@ -1,0 +1,228 @@
+{
+  "format": "chenyuan-check-matrix-01-adversarial-review",
+  "version": 1,
+  "recordedAt": "2026-10-24T07:42:42.095018+00:00",
+  "scope": "0032 only; read-only final GJ while fullUI is still running",
+  "runtimeDigest": "2ef1fcd1532f6815bdd5402cff363d9a8f24dedd6da115c65dbdd3c348c4b05d",
+  "conclusion": "No additional explicit code/semantic blocker identified in current0032 focus/skip/close/target scope. Overall task closure remains pending full UI terminal/A9 handling and same-source delivery.",
+  "newRequiredCodeFixes": [],
+  "executionByReviewer": false,
+  "inputWritesByReviewer": false,
+  "newEvidenceOnly": true,
+  "sources": [
+    {
+      "path": "web/src/App.vue",
+      "sha256": "007bfc19736edcc707371abc918a61aca8d95d4664bc97cd0c4eadd14b52278d"
+    },
+    {
+      "path": "web/src/FeedbackSkip.vue",
+      "sha256": "4a6ff806b165a34558574ee71139769e1c2ab0abe9d762fe48b5e3010e88ba20"
+    },
+    {
+      "path": "web/src/ActionFeedbackStage.vue",
+      "sha256": "3c24db47cb31feb789b92f21714044a9042e080376221746998f29f6e19718f0"
+    },
+    {
+      "path": "web/src/action-feedback.ts",
+      "sha256": "e947bb62b1de54e51f172a2d412110ea662a01b599f0b97061e8c238f31a3606"
+    },
+    {
+      "path": "web/src/action-motion.css",
+      "sha256": "fb7d717829fdca981c9fd94050285bca0b23a9aff434f663dd3317d0c20b69d9"
+    },
+    {
+      "path": "web/src/narrative-objects.css",
+      "sha256": "b55fa5de92a6ad82600864c5ef648c4a0e489841688f089a2a5f2c8c4ec7ab9a"
+    },
+    {
+      "path": "web/src/store.ts",
+      "sha256": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7"
+    },
+    {
+      "path": "web/src/focus.ts",
+      "sha256": "8ae91e78a4db7a854c293fc4b1bc28f02dd0d542b3119cff383f9245b4944eea"
+    }
+  ],
+  "targetEvidence": {
+    "report": "artifacts/goal-4/check-matrix-01/target-source5-report.json",
+    "sha256": "a0fbf6b3417bff7b6f858a8806df0ee5900aa09e49080c6757418335668188b3",
+    "passed": 36,
+    "skip": 0,
+    "retry": 0,
+    "stats": {
+      "startTime": "2026-10-24T06:55:20.593Z",
+      "duration": 126301.675,
+      "expected": 36,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "inputsBeforeAfterExact": 675,
+    "before": "artifacts/goal-4/check-matrix-01/target-source5-before.json",
+    "after": "artifacts/goal-4/check-matrix-01/target-source5-after.json",
+    "scope": "13 keyboard+12 guidance+4 record cases and7 unchanged old idle-stage declarations"
+  },
+  "nativeEvidence": {
+    "path": "goal-4/evidence/check-matrix-01/native-verification.json",
+    "sha256": "5829c3f53cd422fdcbf07ee7b8bfbf55a358f5676924bdd4871792d832e9da5c",
+    "composition": "34 current source5+298 M03 source11 exact dependencies=332 unique26files; not current one-run332"
+  },
+  "otherChecks": {
+    "source": "current-scope-review.md and in-progress.json root-owned raw references",
+    "rules": 802,
+    "assets": 281,
+    "assetPositive": true,
+    "rootVueTypesBuild": true,
+    "doesNotProveFullUIOrHuman": true
+  },
+  "reviewsRead": [
+    {
+      "path": "goal-4/evidence/check-matrix-01/code-review-source5.md",
+      "sha256": "d65cec58e4c917b71a8e7879fd599f8bb48b471a1dd5c2a6127188c7f5e789ee"
+    },
+    {
+      "path": "goal-4/evidence/check-matrix-01/current-scope-review.md",
+      "sha256": "792fe9f5829845e47c82e116fe53c97dba420aac59c111f88486e88a30c09739"
+    },
+    {
+      "path": "goal-4/evidence/check-matrix-01/visual-final-independent.md",
+      "sha256": "ff15508cd4503f4d448c64a4ca2e73fc5fba0e4cfd84cddeb7d0359b7302d34e"
+    },
+    {
+      "path": "goal-4/evidence/check-matrix-01/visual-final-independent.json",
+      "sha256": "e7fb3faa89b058a485dc85865b766024da828df313442565e65f8c2852d6c61a"
+    }
+  ],
+  "adversarialQuestions": [
+    {
+      "id": "skip-lifetime",
+      "source": [
+        "web/src/FeedbackSkip.vue",
+        "web/src/ActionFeedbackStage.vue"
+      ],
+      "question": "是否用装饰/空按钮替代明确可操作能力，或持有后丢真实结果？",
+      "finding": "No current blocker identified",
+      "reason": "真实按钮Teleport到当前活动footer，文案/aria及44px/14px保留。聚焦clear原1600ms timer并静止motion/number；Enter dismiss及blur clear当前notice/number/actor标记，持久Game/Activity事实与完整回执仍保留。原动作及预算没有增加点击领取要求。",
+      "evidence": [
+        "K7",
+        "K8",
+        "K9",
+        "K10"
+      ]
+    },
+    {
+      "id": "old-node-and-new-focus",
+      "source": [
+        "web/src/FeedbackSkip.vue",
+        "web/src/focus.ts"
+      ],
+      "question": "旧销毁节点或迟到焦点恢复会影响新提示/新目标吗？",
+      "finding": "No current blocker identified",
+      "reason": "dismiss在alive=false返回；leave微任务同样核alive，且只有当前按钮仍拥有focus才请求恢复。nextTick后的focus.restore再次保留任何新的有效焦点。新提示按notice.key创建新实例；当前K9实际旧节点晚click、blur新导航、新人生后旧节点均已核。这里不声称任意外部脚本合成所有事件是安全边界。",
+      "evidence": [
+        "K9",
+        "K11",
+        "K12"
+      ]
+    },
+    {
+      "id": "reduced-and-cleanup",
+      "source": [
+        "web/src/FeedbackSkip.vue",
+        "web/src/ActionFeedbackStage.vue"
+      ],
+      "question": "持有提示是否因降低动效失去timer而永久留下？",
+      "finding": "No current blocker identified",
+      "reason": "系统/设置reduce合并computed，切为true调用clear撤notice/motion/number/slot；scope dispose清feedback-held并按当前真实焦点归属恢复。未来reduced新成果沿静态toast与原1600ms自然清理，不产生空skip。view/run/owner/gen/暂停/error/隐藏/销毁清理保持。",
+      "evidence": [
+        "K7",
+        "K9",
+        "K10"
+      ]
+    },
+    {
+      "id": "stage-focus-ownership",
+      "source": [
+        "web/src/App.vue"
+      ],
+      "question": "是否仅确认START就抢焦点，或未来保存/原retry借用旧授权？",
+      "finding": "No current blocker identified",
+      "reason": "arm只在精确原START实际返回见证+当前canonical plan/原run/rev/owner匹配后绑定本地活动id/gen/owner/nextCommand/nav/sync；完整非重放v7正式结果且rev+1/完成1才ready。busy读后saved/available且无error/pause才交付，nextTick前后重复归属，任意更新用户输入清token，新可见焦点/原dialog挡交接。retry函数不arm，之后重读不补旧焦点。tokens不入Game/CAS/DB。",
+      "evidence": [
+        "K1",
+        "K2",
+        "K4",
+        "K5",
+        "K6",
+        "K11",
+        "K12"
+      ]
+    },
+    {
+      "id": "close-reopen",
+      "source": [
+        "web/src/App.vue",
+        "web/src/focus.ts"
+      ],
+      "question": "修焦点是否清了新review，或通过删旧取消断言回避？",
+      "finding": "No current blocker identified",
+      "reason": "四持久dialog真正close仍沿原discardRetryFor+清intent。对应dialog已open时忽略晚close，与既有useFocus规则一致；原native取消重开实红、显式untrusted晚close实红均保留，K1—4原取消/焦点/完整Game及周期+合成反控现在同源实过。没有删旧断言或放宽时限。",
+      "evidence": [
+        "K1",
+        "K2",
+        "K3",
+        "K4"
+      ]
+    },
+    {
+      "id": "visible-life-and-visible-actor",
+      "source": [
+        "web/src/App.vue",
+        "web/src/ActionFeedbackStage.vue"
+      ],
+      "question": "是否为了新交接破坏旧seal或把护体移到空画面？",
+      "finding": "No current blocker identified",
+      "reason": "已有可见life-title时原位focus不改变viewKey，仅没有可见命卷才showLife。guard/heal/restore取实际battle-player-art并在0.6构图留位；无实际target时不渲染motion/number/skip/actor，tracker仍只消费本次正式结果，回来不重播。K9全VFX外缘/状态/七招/真实交锋Range、旧closure原例、K13无hero而原三秒保存/完整战报均已同源实过。",
+      "evidence": [
+        "K9",
+        "K13",
+        "idle-stage-ui committed closing seal"
+      ]
+    }
+  ],
+  "openAcceptance": [
+    {
+      "id": "full414",
+      "status": "running; not passed or closed by this reviewer",
+      "requirement": "Keep original full result/raw and675 post hashes. If leaf composition becomes necessary, exact declaration mapping and source/dependency proof must distinguish it from one-run green."
+    },
+    {
+      "id": "A9-total60",
+      "status": "root reported current fullA9 total60 timeout; root cause UNKNOWN",
+      "requirement": "Original four-context failed attempt retained. Any future same-source leaf pass is independent evidence and cannot be called timeout root-cause repair or performance acceptance."
+    },
+    {
+      "id": "visual-limits",
+      "status": "Four representative mapping only; no fullPNG review",
+      "requirement": "I read independent visual evidence, did not personally open images this review. Unseen frames, complete animation/full directory and long-term game feel remain unaccepted."
+    },
+    {
+      "id": "delivery",
+      "status": "pending root implementation commit/source archive/rebuild/frozen HTTP/user-progress readonly/tasks",
+      "requirement": "This review never authorizes push/merge/public deployment/permissions or userGame mutation."
+    },
+    {
+      "id": "overall-art-human",
+      "status": "open",
+      "requirement": "Original user negative workbench/TA feedback remains valid. TA07/08/09, all-eight-page review, M04 complete route/recovery, later performance/compatibility, clean candidate and real-human/long-term acceptance are not closed."
+    }
+  ],
+  "caps": {
+    "globalFeedbackBytes": 33999,
+    "globalFeedbackCap": 34000,
+    "FeedbackSkipBytes": 2263,
+    "FeedbackSkipCap": 4000,
+    "capsRaised": false
+  },
+  "gameBoundary": "4 modified UI files+1 new UI control; formal Game/Store/DB9/fees/period/CAS/public record schema unchanged. No new Goal/chat and no user56884Game action."
+}

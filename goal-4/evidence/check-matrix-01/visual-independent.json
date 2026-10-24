@@ -1,0 +1,429 @@
+{
+  "format": "chenyuan-check-matrix-01-independent-visual-review",
+  "version": 1,
+  "reviewedAt": "2026-10-24T05:59:37.071005+00:00",
+  "reviewer": "art02_battle",
+  "scope": "Actual pixel inspection of exactly two target-source2 PNG-derived original-size JPEG68 views; no browser/test/build launched by reviewer",
+  "runtimeDigest": "89449f2909e0b3162f7d900e21252c6b1725fceb2ecb46d893765997cac5e825",
+  "sourceIdentity": {
+    "build": "artifacts/goal-4/check-matrix-01/build-source2.json",
+    "report": "artifacts/goal-4/check-matrix-01/target-source2-report.json",
+    "targetStats": {
+      "startTime": "2026-10-24T05:51:24.056Z",
+      "duration": 101666.669,
+      "expected": 28,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "boundary": {
+      "phase": "source2 target completed28pass",
+      "snapshotTimingCorrection": "before snapshot was captured before build, not immediately after build before Playwright; original kept",
+      "runtime236AndOther674InputsUnchanged": true,
+      "expectedGeneratedDifference": [
+        "web/build-report/build.json"
+      ],
+      "beforeRuntime": "89449f2909e0b3162f7d900e21252c6b1725fceb2ecb46d893765997cac5e825",
+      "afterRuntime": "89449f2909e0b3162f7d900e21252c6b1725fceb2ecb46d893765997cac5e825",
+      "targetReportRuntime": "89449f2909e0b3162f7d900e21252c6b1725fceb2ecb46d893765997cac5e825",
+      "strictCurrentFullUIRequired": true
+    },
+    "boundaryNote": "Target before was prebuild. Only build-report generated metadata changed; runtime236 and other674 inputs stayed equal. Original snapshots retained. Full413 uses fresh postbuild675 snapshot and remains running at this review; this review does not sign its terminal status."
+  },
+  "images": [
+    {
+      "id": "custom-restore-keyboard",
+      "source": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-matrix-01/target-source2-results/check-matrix-keyboard-CHEC-93d0c--one-six-hundred-ms-receipt-chromium/custom-restore-keyboard.png",
+      "sourceBytes": 397507,
+      "sourceSha256": "a3e53c6503b850b0b7420329b43aa1bee2ffbd8f3fff74ee163987a13524f66c",
+      "size": [
+        1440,
+        900
+      ],
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-matrix-01/visual-independent-source2/custom-restore-keyboard.jpg",
+      "viewBytes": 48095,
+      "viewSha256": "42641206db3b9aef15ffeb94a7b9a72d276093002851732de7c4565f8c50a363",
+      "conversion": "Pillow RGB JPEG quality68 optimize=true subsampling2; original dimensions; lossy view only; PNG retained"
+    },
+    {
+      "id": "held-entry-prompt-keyboard",
+      "source": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-matrix-01/target-source2-results/check-matrix-keyboard-CHEC-e2001-ng-its-actual-saved-outcome-chromium/held-entry-prompt-keyboard.png",
+      "sourceBytes": 1825655,
+      "sourceSha256": "54c8057703a066601954d1a85e11af2a65fb943b0897e9648cf49813cd67e937",
+      "size": [
+        1440,
+        900
+      ],
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-matrix-01/visual-independent-source2/held-entry-prompt-keyboard.jpg",
+      "viewBytes": 197913,
+      "viewSha256": "b3d083e21a0819dd7083452e4d13f8cefded3860bc4a693cbb27f460adb141b4",
+      "conversion": "Pillow RGB JPEG quality68 optimize=true subsampling2; original dimensions; lossy view only; PNG retained"
+    }
+  ],
+  "findings": [
+    {
+      "id": "restore",
+      "severity": "none-observed-in-frame",
+      "pixelObserved": "青黛深色确认窗口与模糊背景分层明确。完整恢复后果和目标身份可读；第一页1/2、上一页禁用、下一页、保留当前进度及确认恢复完整准备均可见；焦点描边围绕确认按钮，未压正文或分页。",
+      "domEvidence": "Both visible paragraphs measured18px. Original actual keyboard walk records next100x48.390625, cancel142x54.390625, confirm178x54.390625 with center hits and viewport containment.",
+      "limits": "Only first page and this focused confirmation frame visually reviewed; second page, trap/cancel/result correctness rely on named original test evidence, not this image alone."
+    },
+    {
+      "id": "held-entry",
+      "severity": "none-observed-in-frame",
+      "pixelObserved": "提示按钮处在HUD活动操作行内，与原安排、完整回执、本段详情并列；当前内描边留在按钮内，四项文字完整。已保存/引气入体/此段活动已结束与下一步选择修法同时可读，人物、主要选择按钮和底部八入口未被按钮遮挡。入道圆环与气血+40为当前可信演出，不能据单帧推断动画质量或发奖。",
+      "domEvidence": "Footer(741,14)-(1048,58) lies in rail(426,10)-(1048,102.375). Four actual buttons54/70/70/104 by44, text14px and text ranges inside; skip outline3 offset-3 means no outward expansion. clashes empty. Original held2400 virtual ms and moving0 are separate automation evidence.",
+      "limits": "This is completed mortal-entry K7, not a battle toolbar or running/pause density picture. No claim all feedback frames, battle K9, static reduced frames or overall TA approved."
+    }
+  ],
+  "selectedOriginalDomEvidence": {
+    "custom-restore-keyboard-dialog": {
+      "case": "CHECK-K3 the actual custom restore keyboard dialog cancels to its battle opener then restores the whole checkpoint with one six-hundred-ms receipt",
+      "status": "passed",
+      "observation": {
+        "targets": [
+          "catalogue-next",
+          "trial-restore-cancel",
+          "trial-restore-confirm"
+        ],
+        "walk": [
+          {
+            "reverse": false,
+            "index": 0,
+            "tag": "BUTTON",
+            "id": "catalogue-next",
+            "inDialog": true,
+            "width": 100,
+            "height": 48.390625,
+            "inside": true,
+            "hit": true
+          },
+          {
+            "reverse": false,
+            "index": 1,
+            "tag": "BUTTON",
+            "id": "trial-restore-cancel",
+            "inDialog": true,
+            "width": 142,
+            "height": 54.390625,
+            "inside": true,
+            "hit": true
+          },
+          {
+            "reverse": false,
+            "index": 2,
+            "tag": "BUTTON",
+            "id": "trial-restore-confirm",
+            "inDialog": true,
+            "width": 178,
+            "height": 54.390625,
+            "inside": true,
+            "hit": true
+          },
+          {
+            "reverse": false,
+            "index": 0,
+            "tag": "BUTTON",
+            "id": "catalogue-next",
+            "inDialog": true,
+            "width": 100,
+            "height": 48.390625,
+            "inside": true,
+            "hit": true
+          },
+          {
+            "reverse": true,
+            "index": 2,
+            "tag": "BUTTON",
+            "id": "trial-restore-confirm",
+            "inDialog": true,
+            "width": 178,
+            "height": 54.390625,
+            "inside": true,
+            "hit": true
+          },
+          {
+            "reverse": true,
+            "index": 1,
+            "tag": "BUTTON",
+            "id": "trial-restore-cancel",
+            "inDialog": true,
+            "width": 142,
+            "height": 54.390625,
+            "inside": true,
+            "hit": true
+          },
+          {
+            "reverse": true,
+            "index": 0,
+            "tag": "BUTTON",
+            "id": "catalogue-next",
+            "inDialog": true,
+            "width": 100,
+            "height": 48.390625,
+            "inside": true,
+            "hit": true
+          },
+          {
+            "reverse": true,
+            "index": 2,
+            "tag": "BUTTON",
+            "id": "trial-restore-confirm",
+            "inDialog": true,
+            "width": 178,
+            "height": 54.390625,
+            "inside": true,
+            "hit": true
+          }
+        ],
+        "copy": [
+          {
+            "text": "将放弃本轮及入场后的进展，物品、气血灵力、配装、人物选择、里程碑和年月一同回到准备快照。不会单独补发渡劫引，成功后仍可再次使用此检查点。",
+            "font": 18
+          },
+          {
+            "text": "测试修士 · 化神 · 行道285游戏月",
+            "font": 18
+          }
+        ]
+      }
+    },
+    "entry-held-short-prompt": {
+      "case": "CHECK-K7 actual mortal entry retains one explicit keyboard skip beyond its natural lifetime without changing its actual saved outcome",
+      "status": "passed",
+      "observation": {
+        "key": "[\"a2b25128-10e4-4016-a6ca-7c7278d3c915\",\"cycle:ec193dc8-ae39-48e4-9906-a0a704c7be6c:0:1\"]",
+        "geometry": {
+          "footer": {
+            "left": 741,
+            "right": 1048,
+            "top": 14,
+            "bottom": 58,
+            "width": 307,
+            "height": 44
+          },
+          "rail": {
+            "left": 426,
+            "right": 1048,
+            "top": 10,
+            "bottom": 102.375,
+            "width": 622,
+            "height": 92.375
+          },
+          "owned": true,
+          "held": true,
+          "rows": [
+            {
+              "id": "training-review",
+              "text": "原安排",
+              "rect": {
+                "left": 741,
+                "right": 795,
+                "top": 14,
+                "bottom": 58,
+                "width": 54,
+                "height": 44
+              },
+              "visual": {
+                "left": 741,
+                "right": 795,
+                "top": 14,
+                "bottom": 58
+              },
+              "outline": 0,
+              "offset": 0,
+              "clips": [
+                {
+                  "id": "viewport",
+                  "rect": {
+                    "left": 0,
+                    "top": 0,
+                    "right": 1440,
+                    "bottom": 900
+                  }
+                }
+              ],
+              "lines": [
+                {
+                  "text": "原安排",
+                  "font": 14,
+                  "rect": {
+                    "left": 747,
+                    "right": 789,
+                    "top": 25.25,
+                    "bottom": 45.25,
+                    "width": 42,
+                    "height": 20
+                  },
+                  "inside": true
+                }
+              ],
+              "inside": true,
+              "hit": true,
+              "skip": false
+            },
+            {
+              "id": "hub-receipt",
+              "text": "完整回执",
+              "rect": {
+                "left": 798,
+                "right": 868,
+                "top": 14,
+                "bottom": 58,
+                "width": 70,
+                "height": 44
+              },
+              "visual": {
+                "left": 798,
+                "right": 868,
+                "top": 14,
+                "bottom": 58
+              },
+              "outline": 0,
+              "offset": 0,
+              "clips": [
+                {
+                  "id": "viewport",
+                  "rect": {
+                    "left": 0,
+                    "top": 0,
+                    "right": 1440,
+                    "bottom": 900
+                  }
+                }
+              ],
+              "lines": [
+                {
+                  "text": "完整回执",
+                  "font": 14,
+                  "rect": {
+                    "left": 805,
+                    "right": 861,
+                    "top": 25.25,
+                    "bottom": 45.25,
+                    "width": 56,
+                    "height": 20
+                  },
+                  "inside": true
+                }
+              ],
+              "inside": true,
+              "hit": true,
+              "skip": false
+            },
+            {
+              "id": "activity-inspect",
+              "text": "本段详情",
+              "rect": {
+                "left": 871,
+                "right": 941,
+                "top": 14,
+                "bottom": 58,
+                "width": 70,
+                "height": 44
+              },
+              "visual": {
+                "left": 871,
+                "right": 941,
+                "top": 14,
+                "bottom": 58
+              },
+              "outline": 0,
+              "offset": 0,
+              "clips": [
+                {
+                  "id": "viewport",
+                  "rect": {
+                    "left": 0,
+                    "top": 0,
+                    "right": 1440,
+                    "bottom": 900
+                  }
+                }
+              ],
+              "lines": [
+                {
+                  "text": "本段详情",
+                  "font": 14,
+                  "rect": {
+                    "left": 878,
+                    "right": 934,
+                    "top": 25.25,
+                    "bottom": 45.25,
+                    "width": 56,
+                    "height": 20
+                  },
+                  "inside": true
+                }
+              ],
+              "inside": true,
+              "hit": true,
+              "skip": false
+            },
+            {
+              "id": "fx-skip",
+              "text": "略过提示",
+              "rect": {
+                "left": 944,
+                "right": 1048,
+                "top": 14,
+                "bottom": 58,
+                "width": 104,
+                "height": 44
+              },
+              "visual": {
+                "left": 944,
+                "right": 1048,
+                "top": 14,
+                "bottom": 58
+              },
+              "outline": 3,
+              "offset": -3,
+              "clips": [
+                {
+                  "id": "viewport",
+                  "rect": {
+                    "left": 0,
+                    "top": 0,
+                    "right": 1440,
+                    "bottom": 900
+                  }
+                }
+              ],
+              "lines": [
+                {
+                  "text": "略过提示",
+                  "font": 14,
+                  "rect": {
+                    "left": 968,
+                    "right": 1024,
+                    "top": 25.203125,
+                    "bottom": 45.203125,
+                    "width": 56,
+                    "height": 20
+                  },
+                  "inside": true
+                }
+              ],
+              "inside": true,
+              "hit": true,
+              "skip": true
+            }
+          ],
+          "clashes": []
+        },
+        "heldVirtualMs": 2400,
+        "moving": 0
+      }
+    }
+  },
+  "conclusion": "两张当前source2代表帧未见本轮提示入口或恢复确认的视觉阻断。该结论不关闭用户对整体工作台感、交互/TA深度、长期平衡与整体美术的负面验收。",
+  "notClaimed": [
+    "Full413 terminal green",
+    "K9 battle pixel review",
+    "all pages/frames visually reviewed",
+    "human acceptance",
+    "compatibility or environment/performance validation"
+  ],
+  "writes": "Only new evidence JSON/MD and JPEG68 artifact views/map; no frozen production/contract/AGENTS/spec/guard inputs modified."
+}

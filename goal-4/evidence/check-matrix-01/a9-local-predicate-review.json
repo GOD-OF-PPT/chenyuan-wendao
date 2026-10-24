@@ -1,0 +1,422 @@
+{
+  "format": "chenyuan-a9-local-predicate-review",
+  "version": 1,
+  "reviewedAt": "2026-10-24T10:08:12.696685+00:00",
+  "scope": "Read-only independent audit of A9 local static matcher reuse and narrative native opt-in; no UI/test execution by reviewer",
+  "conclusion": "No weakening or additional required code/test-scope blocker identified for the actual plain serialized geometry seam. Current original A9 leaf passed within original60s; this does not prove root cause of original timeouts or product performance.",
+  "identities": {
+    "equipmentBefore": "8856e63c9993c28986e0ffb2211400f13b5b6003b9652bbef0689bfe91862df0",
+    "equipmentAfter": "c685d54928fcfec62afb3acf128bdbf94604b0331fdb68a0427a80cf5bb11d1b",
+    "narrativeCurrent": "caf962079fdc56d090e88255505be2396c34fa7cece8fe69d36c9b78bcb4d3d1",
+    "runtime": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10"
+  },
+  "exactDiff": {
+    "prefixByteIdentical": true,
+    "prefixSha256": "cadb10085f9ce67c27f1a9a09bfe5a16c4d89071927355a48613671c530b7f5a",
+    "suffixByteIdentical": true,
+    "suffixSha256": "4a520fdd1fdb71da4abcf90601fd5b8fffb17c68a82eb911d16b5887468b66c2",
+    "inverseOneLocalReplacementRecreatesCompleteOriginal": true,
+    "localOnly": "A9 quotaFrame static geometry checks; top-level frame helper/other cases unchanged. DOM measurement, attachment then screenshot order, artifactEdges,4contexts/fixture/async DB/clock/cost/retry/cleanup/timeouts preserved.",
+    "newPureModuleIsVerbatimCurrentBlock": true,
+    "normalEsmNoEval": true,
+    "oldActualPlaywrightMatchers": "old-matcher.mjs directly imports @playwright/test actualExpect; count-only facade preserves called matcher receiver/arguments. Offline catch returns failure solely for equivalence comparison, not in running test."
+  },
+  "conditionMapping": [
+    {
+      "field": "height",
+      "old": "toBeLessThanOrEqual(900)",
+      "new": "numeric(value) && value <= 900"
+    },
+    {
+      "field": "width",
+      "old": "toBeLessThanOrEqual(1440)",
+      "new": "numeric(value) && value <= 1440"
+    },
+    {
+      "field": "every body.font",
+      "old": "toBeGreaterThanOrEqual(18)",
+      "new": "numeric(value) && value >= 18"
+    },
+    {
+      "field": "every body.clipped",
+      "old": "toBe(false)",
+      "new": "value === false"
+    },
+    {
+      "field": "jade.contained when jade truthy",
+      "old": "toBe(true)",
+      "new": "value === true"
+    },
+    {
+      "field": "jade.beforeStatus when jade truthy",
+      "old": "toBe(true)",
+      "new": "value === true"
+    },
+    {
+      "field": "every controls.height",
+      "old": "toBeGreaterThanOrEqual(44)",
+      "new": "numeric(value) && value >= 44"
+    },
+    {
+      "field": "every controls.inside",
+      "old": "toBe(true)",
+      "new": "value === true"
+    },
+    {
+      "field": "every controls.hit",
+      "old": "toBe(true)",
+      "new": "value === true"
+    }
+  ],
+  "typeAndExceptionSemantics": {
+    "numeric": "typeof number OR bigint equals original matcher type domain; strings/booleans/null/undefined/boxed objects are not coerced. NaN passes type gate but relational comparison false, therefore stays a failure. Infinity and BigInt relational behavior retained, not silently changed to Number.isFinite.",
+    "boolean": "Original Object.is(actual,true/false) and ===true/false have identical pass/fail for these fixed Boolean expected values; truthy1/stringtrue/objects are rejected.",
+    "allRows": "Every actual body/control entry recorded with index, field, original label/value, comparator and boolean pass; jade guard truthiness same as old. Empty arrays retain old loop semantics; no new ||[]/zero/true fallback. Missing/wrong container shape throws and outer catch still rethrows.",
+    "noFailureSwallow": "filter(!pass) then one expect(failures).toEqual([]); no soft assertion, catch-to-success, pruning or Boolean coercion. Every scalar2 and per-body2/per-jade2/per-control3 covered.",
+    "domainLimit": "Actual geometry is a dense plain array/Boolean/number DTO built by unchanged DOM filter/map and Playwright serialization. This is not a claim of equivalent iteration for arbitrary exotic Maps/generators/getter objects, which the seam cannot return."
+  },
+  "existingEquivalenceEvidence": {
+    "path": "artifacts/goal-4/check-matrix-01/a9-assertion-reuse/equivalence-after-exact-report.json",
+    "sha256": "89138ec1883ebd0cabdd8e31eed230cb97b74c73d670fe57acb5247fcf565ea0",
+    "actualFrames": 72,
+    "boundaryCases": 175,
+    "totalCases": 247,
+    "actualLogicalChecks": 7400,
+    "zeroPassFailMismatchRowsIndependentlyRead": true,
+    "boundaryCoverage": "4numeric paths ×30 values (NaN/±Infinity/undefined/null/strings/arrays/objects/Boolean/BigInt and thresholds) +5Boolean paths ×11 values; no new replay run by reviewer."
+  },
+  "oldInstrumentationObservation": {
+    "groups": 35,
+    "oldExpectSteps": 3629,
+    "spanMs": 6567.089,
+    "matcherSelfDurationMs": 561.2579999996015
+  },
+  "currentActualLeaf": {
+    "report": "artifacts/goal-4/check-matrix-01/a9-batched-source8-report.json",
+    "sha256": "eb0565e8698d7ebe8a0c7318fb93e0d2fb648c6a81457266d2062dff1385b2ee",
+    "status": "passed",
+    "testDurationMs": 45426,
+    "reportStats": {
+      "startTime": "2026-10-24T09:55:20.497Z",
+      "duration": 51634.28,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "retry": 0,
+    "before": "artifacts/goal-4/check-matrix-01/a9-batched-source8-before.json",
+    "beforeSha256": "21f6b97191f9432536016e3d84bebc39a5434bc3db88318702ba387de5ffc9ed",
+    "after": "artifacts/goal-4/check-matrix-01/a9-batched-source8-after.json",
+    "afterSha256": "ce05ae117937725c725847411e8bea4a6824cf418dbf9d9e16566369266640ae",
+    "inputs675Exact": true,
+    "contexts": 4,
+    "pngFilesPresentNoImageViewed": 36,
+    "checkedFrames": 36,
+    "logicalPredicates": 3700,
+    "namedFailures": 0,
+    "all36FrameFieldsAndCountsMatched": [
+      {
+        "name": "learn-acceptance-quota-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-owned-slip-error-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_mind-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_still-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_build-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_guard-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_release-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-sword_echo-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_mind-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_calm-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_build-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_frost-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_release-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-error-readonly-talisman_return-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-acceptance-readonly-loadout-geometry-checks",
+        "bodyRows": 0,
+        "controlRows": 23,
+        "hasJade": false,
+        "predicateCount": 71,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-quota-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-owned-slip-error-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_mind-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_still-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_build-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_guard-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_release-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-sword_echo-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_mind-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_calm-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_build-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_frost-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_release-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-error-readonly-talisman_return-geometry-checks",
+        "bodyRows": 1,
+        "controlRows": 34,
+        "hasJade": true,
+        "predicateCount": 108,
+        "allTrue": true
+      },
+      {
+        "name": "learn-cycle-readonly-loadout-geometry-checks",
+        "bodyRows": 0,
+        "controlRows": 23,
+        "hasJade": false,
+        "predicateCount": 71,
+        "allTrue": true
+      },
+      {
+        "name": "forge-acceptance-quota-geometry-checks",
+        "bodyRows": 3,
+        "controlRows": 30,
+        "hasJade": false,
+        "predicateCount": 98,
+        "allTrue": true
+      },
+      {
+        "name": "forge-acceptance-owned-artifact-error-geometry-checks",
+        "bodyRows": 3,
+        "controlRows": 30,
+        "hasJade": false,
+        "predicateCount": 98,
+        "allTrue": true
+      },
+      {
+        "name": "forge-acceptance-readonly-loadout-geometry-checks",
+        "bodyRows": 0,
+        "controlRows": 23,
+        "hasJade": false,
+        "predicateCount": 71,
+        "allTrue": true
+      },
+      {
+        "name": "forge-cycle-quota-geometry-checks",
+        "bodyRows": 3,
+        "controlRows": 30,
+        "hasJade": false,
+        "predicateCount": 98,
+        "allTrue": true
+      },
+      {
+        "name": "forge-cycle-owned-artifact-error-geometry-checks",
+        "bodyRows": 3,
+        "controlRows": 30,
+        "hasJade": false,
+        "predicateCount": 98,
+        "allTrue": true
+      },
+      {
+        "name": "forge-cycle-readonly-loadout-geometry-checks",
+        "bodyRows": 0,
+        "controlRows": 23,
+        "hasJade": false,
+        "predicateCount": 71,
+        "allTrue": true
+      }
+    ]
+  },
+  "narrativeScopeSignoff": {
+    "path": "web/e2e/narrative-objects.spec.ts",
+    "sha256": "caf962079fdc56d090e88255505be2396c34fa7cece8fe69d36c9b78bcb4d3d1",
+    "proof": "native-real-source8-verification.json inverse2edits returns71e16be9; defaultvirtual exact preserved; only3real opt-in; actual3/3 passed same runtime with675exact.",
+    "noSharedHelperOrRuntimeEdit": true
+  },
+  "GJ": {
+    "codeAndTestScope": "No current explicit weakening/blocker found. Local instrumentation reuse keeps every condition while reducing expect trace wrappers.",
+    "oldTimeouts": "Original full/leaf60s timeouts remain UNKNOWN at full cause level; known wrapper span6.567s does not identify all elapsed waits or constitute product/performance repair.",
+    "coverage": "Root may precisely assemble411 original full passed keys +3current native +1currentA9 =415unique; not single-round415green. Independent source agent owns final exact mapping.",
+    "stillOpen": "Same-source commit/archive/rebuild/HTTP/userreadonly/tasks; TA07/08/09/fullART/M04/performance/compatibility last/human acceptance.",
+    "actions": "No frozen input edit/UI/test/build/image view performed by this reviewer."
+  }
+}

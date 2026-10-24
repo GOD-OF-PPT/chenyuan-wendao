@@ -1,0 +1,299 @@
+{
+  "format": "chenyuan-native-real-countdown-premise-result",
+  "version": 1,
+  "recordedAt": "2026-10-24T09:33:34.364526+00:00",
+  "runtimeDigest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+  "status": "Three existing real cycles actually passed after native-only first-observation premise correction; runtime unchanged",
+  "actualExecution": {
+    "ownedSession": 57027,
+    "exitCode": 0,
+    "report": "artifacts/goal-4/check-matrix-01/native-real-source8-report.json",
+    "sha256": "5a941df94158104dad559952ea30977a34bd90037a93621ff353c209a4aa37d0",
+    "stats": {
+      "startTime": "2026-10-24T09:27:51.733Z",
+      "duration": 44534.034,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "specSha256": "caf962079fdc56d090e88255505be2396c34fa7cece8fe69d36c9b78bcb4d3d1",
+    "before": "artifacts/goal-4/check-matrix-01/native-real-source8-before.json",
+    "beforeSha256": "58b95f067418838f4a4b89c47b50effd26b24158314b5641aba5ca800597bf6c",
+    "beforeTime": "2026-10-24T09:27:36.785804+00:00",
+    "after": "artifacts/goal-4/check-matrix-01/native-real-source8-after.json",
+    "afterSha256": "e40221cc8e48374e45284e2847ba77d5e8cec658436a88cf60711f9a60284425",
+    "afterTime": "2026-10-24T09:30:31.741244+00:00",
+    "frozen675Exact": true,
+    "runtime236MapsExact": true
+  },
+  "inverseScopeProof": {
+    "beforeFile": "artifacts/goal-4/check-matrix-01/native-real-countdown-premise/before-narrative-objects.spec.ts",
+    "beforeSha256": "71e16be9fe46fe4d5db5d80233be6d0df8853553c142abfbda600f66b84f3001",
+    "afterFile": "artifacts/goal-4/check-matrix-01/native-real-countdown-premise/after-narrative-objects.spec.ts",
+    "afterSha256": "caf962079fdc56d090e88255505be2396c34fa7cece8fe69d36c9b78bcb4d3d1",
+    "minimalDiff": "artifacts/goal-4/check-matrix-01/native-real-countdown-premise/minimal.diff",
+    "reverseTwoEditsExactlyRecreatesOriginalSha256": "71e16be9fe46fe4d5db5d80233be6d0df8853553c142abfbda600f66b84f3001",
+    "virtualDefault": "native=false; original exact total text assertion remains byte-identical in else. All other existing call sites pass only original arguments.",
+    "realOptIn": "One loop call site expressly true for existing visit/response/ending3 declarations only. Original bodies outside this boolean call argument unchanged.",
+    "noSleepClockAdvanceTimeoutOrProductionChange": true
+  },
+  "originalFailure": {
+    "diagnosis": "goal-4/evidence/check-matrix-01/source8-a6-preterminal.json",
+    "sha256": "faa54b83518fef5bcbdc4e66ec4ed12a542dc0c8d6d560f2aeb6a2d37ba59dcc",
+    "rawWholeRun": "artifacts/goal-4/check-matrix-01/full-source8-report.json",
+    "meaning": "Original first observed11.9 while exact12.0 expected, before completion checks. Preserved; current leaf does not erase it or prove a runtime/closure failure repair."
+  },
+  "selectionError": {
+    "session": 66969,
+    "exitCode": 1,
+    "executed": 0,
+    "pathPrefix": "artifacts/goal-4/check-matrix-01/native-real-source8-selection-error-",
+    "meaning": "Anchored grep did not match Playwright full title; code/runtime untouched, all675same. Not product failure or passed test. Current corrected command is one actual run of3 with zero retries."
+  },
+  "rows": [
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A4 real visit waits its complete 6000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "testDurationMs": 10760,
+      "nativeFirst": {
+        "first": "5.9 秒",
+        "remainingSeconds": 5.9,
+        "totalMs": 6000,
+        "activityId": "4ad1d390-53e3-4f43-b5c1-7ee87c46be0c",
+        "runId": "e11e6f13-9be2-4b7e-8b09-18713216578e",
+        "generation": 0,
+        "status": "running",
+        "startedAt": 1792834079965,
+        "dueAt": 1792834085965,
+        "boundary": "First actual running observation after acceptance; native clock keeps advancing."
+      },
+      "cycleMs": 6000,
+      "activityId": "4ad1d390-53e3-4f43-b5c1-7ee87c46be0c",
+      "command": {
+        "type": "EVENT",
+        "event": "lu_intro",
+        "commandId": "cycle:4ad1d390-53e3-4f43-b5c1-7ee87c46be0c:0:1",
+        "runId": "e11e6f13-9be2-4b7e-8b09-18713216578e",
+        "expectedRevision": 0
+      },
+      "startedAtWall": 1792834079965,
+      "dueAtWall": 1792834085965,
+      "firstCurrentStatePut": {
+        "wall": 1792834086004,
+        "mono": 8774.799999952316,
+        "afterDueMs": 39,
+        "wallSinceAcceptedStartMs": 6039,
+        "timestampMeaning": "IDBObjectStore.put interception, before native transaction complete; committed result proven separately by original fullDB/receipt assertions"
+      },
+      "final": {
+        "status": "active",
+        "ending": null,
+        "revision": 1,
+        "choice": {},
+        "activeEvent": {
+          "id": "lu_intro",
+          "instanceId": "e11e6f13-9be2-4b7e-8b09-18713216578e:lu_intro"
+        },
+        "stones": 40,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        }
+      },
+      "localEffects": [
+        {
+          "id": "encounter-result",
+          "sequence": "1",
+          "text": "本次已保存 · 机缘展开",
+          "person": "lu",
+          "wall": 1792834086022
+        }
+      ],
+      "uniqueEffectSequences": 1,
+      "originalWholeGameActivityReceiptCostsAndGeometryAssertionsReached": true,
+      "rawProofAttachment": "visit-real-cycle-proof",
+      "rawProofEncodedSha256": "7ef0909e9f90efc06927e81eecaf9c77914377deeb2000641a15ae3635e7bbb6"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A5 real response waits its complete 6000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "testDurationMs": 10993,
+      "nativeFirst": {
+        "first": "6.0 秒",
+        "remainingSeconds": 6,
+        "totalMs": 6000,
+        "activityId": "5d694285-dfeb-4473-b46f-98c2aa071c5e",
+        "runId": "a346a783-ba92-4272-8e06-a77820216f64",
+        "generation": 0,
+        "status": "running",
+        "startedAt": 1792834090820,
+        "dueAt": 1792834096820,
+        "boundary": "First actual running observation after acceptance; native clock keeps advancing."
+      },
+      "cycleMs": 6000,
+      "activityId": "5d694285-dfeb-4473-b46f-98c2aa071c5e",
+      "command": {
+        "type": "DECIDE",
+        "option": "bargain",
+        "commandId": "cycle:5d694285-dfeb-4473-b46f-98c2aa071c5e:0:1",
+        "runId": "a346a783-ba92-4272-8e06-a77820216f64",
+        "expectedRevision": 0
+      },
+      "startedAtWall": 1792834090820,
+      "dueAtWall": 1792834096820,
+      "firstCurrentStatePut": {
+        "wall": 1792834096880,
+        "mono": 9033.299999952316,
+        "afterDueMs": 60,
+        "wallSinceAcceptedStartMs": 6060,
+        "timestampMeaning": "IDBObjectStore.put interception, before native transaction complete; committed result proven separately by original fullDB/receipt assertions"
+      },
+      "final": {
+        "status": "active",
+        "ending": null,
+        "revision": 1,
+        "choice": {
+          "shen_return": "bargain"
+        },
+        "activeEvent": null,
+        "stones": 122,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 0,
+          "lotus": 0,
+          "soul": 0,
+          "dao": 0,
+          "healing_pill": 1,
+          "spirit_pill": 0,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        }
+      },
+      "localEffects": [
+        {
+          "id": "encounter-result",
+          "sequence": "1",
+          "text": "本次已保存 · 抉择落定",
+          "person": "shen",
+          "wall": 1792834096909
+        }
+      ],
+      "uniqueEffectSequences": 1,
+      "originalWholeGameActivityReceiptCostsAndGeometryAssertionsReached": true,
+      "rawProofAttachment": "response-real-cycle-proof",
+      "rawProofEncodedSha256": "8e1c25a75b1c3d9c6a66216045ae2130a34bd11f1ef955b2927c5847a84726c2"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A6 real ending waits its complete 12000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "status": "passed",
+      "retry": 0,
+      "testDurationMs": 17403,
+      "nativeFirst": {
+        "first": "12.0 秒",
+        "remainingSeconds": 12,
+        "totalMs": 12000,
+        "activityId": "36c43ad0-9f9e-4d29-ae10-fae44fe61177",
+        "runId": "0e050305-8a98-4f48-9a7a-0698a3a9a91e",
+        "generation": 0,
+        "status": "running",
+        "startedAt": 1792834102190,
+        "dueAt": 1792834114190,
+        "boundary": "First actual running observation after acceptance; native clock keeps advancing."
+      },
+      "cycleMs": 12000,
+      "activityId": "36c43ad0-9f9e-4d29-ae10-fae44fe61177",
+      "command": {
+        "type": "END",
+        "ending": "transmit",
+        "commandId": "cycle:36c43ad0-9f9e-4d29-ae10-fae44fe61177:0:1",
+        "runId": "0e050305-8a98-4f48-9a7a-0698a3a9a91e",
+        "expectedRevision": 0
+      },
+      "startedAtWall": 1792834102190,
+      "dueAtWall": 1792834114190,
+      "firstCurrentStatePut": {
+        "wall": 1792834114256,
+        "mono": 14877.200000047684,
+        "afterDueMs": 66,
+        "wallSinceAcceptedStartMs": 12066,
+        "timestampMeaning": "IDBObjectStore.put interception, before native transaction complete; committed result proven separately by original fullDB/receipt assertions"
+      },
+      "final": {
+        "status": "ascended",
+        "ending": "transmit",
+        "revision": 1,
+        "choice": {
+          "shen_return": "accept",
+          "pei_meet": "cooperate",
+          "pei_echo": "share",
+          "shen_pact": "lend",
+          "pei_pact": "ally"
+        },
+        "activeEvent": null,
+        "stones": 249,
+        "inventory": {
+          "herb": 0,
+          "dew": 0,
+          "core": 0,
+          "jade": 2,
+          "lotus": 1,
+          "soul": 0,
+          "dao": 1,
+          "healing_pill": 10,
+          "spirit_pill": 4,
+          "foundation_pill": 0,
+          "golden_pill": 0,
+          "nascent_pill": 0,
+          "spirit_seed": 0,
+          "ascension_seal": 0
+        }
+      },
+      "localEffects": [
+        {
+          "id": "life-scroll-result",
+          "sequence": "1",
+          "text": "本次已保存 · 此生封卷",
+          "wall": 1792834114279
+        }
+      ],
+      "uniqueEffectSequences": 1,
+      "originalWholeGameActivityReceiptCostsAndGeometryAssertionsReached": true,
+      "rawProofAttachment": "ending-real-cycle-proof",
+      "rawProofEncodedSha256": "c7c8b6cc3084dab117b60561b75dacb60a611c4ee958c42963942beb536d864b"
+    }
+  ],
+  "limits": [
+    "Native wall timestamps use actual browser clock; no Playwright clock or Date rewrite in the three real paths.",
+    "Recorded first write is put time, not transaction-complete time; original repository/result/receipt assertions separately verified atomic committed state.",
+    "These3 are existing functional declarations, not3 newly added coverage cells.",
+    "Remaining11 narrative declarations retain exact default virtual behavior; shared-file hash changed, so any inheritance must cite this inverse/default-branch proof, not claim the entire old spec bytes equal.",
+    "This is three leaves under unchanged runtimeCD3, not one full415 green. Root must independently assemble exact final declaration union and original A9 status.",
+    "Original whole-run failures, A9 unknown cause, protected/user saves and overall TA/human acceptance remain."
+  ]
+}

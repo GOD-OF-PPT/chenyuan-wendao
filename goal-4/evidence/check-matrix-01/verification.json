@@ -1,0 +1,120 @@
+{
+  "format": "chenyuan-check-matrix-01-verification",
+  "task": "CHECK-MATRIX-01",
+  "deliveryStatus": "local-engineering-task-delivered-overall-goal-active-not-human-accepted",
+  "branch": "codex/goal-4-online-recovery",
+  "implementationCommit": "0b1648d47551d182bd900b5517c359c9852a513a",
+  "runtime": {
+    "digest": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+    "sources": 236,
+    "files": 62,
+    "bytes": 7814335,
+    "testedHead": "c98882caa53a277c4fb6d21cbdd4c257e135278b",
+    "testedDirty": true
+  },
+  "checks": {
+    "UI": {
+      "unique": 415,
+      "files": 43,
+      "fullPassedSelected": 411,
+      "currentNativeRealCases": 3,
+      "currentA9BatchedOriginal": 1,
+      "singleTerminalGreen": false,
+      "originalFull": {
+        "passed": 413,
+        "timedOut": 1,
+        "failed": 1,
+        "raw": "artifacts/goal-4/check-matrix-01/full-source8-report.json"
+      },
+      "coverageProof": "coverage-final-source8.json",
+      "originalFailuresPreserved": true,
+      "withinEachRunInputs675Exact": true,
+      "changedTestOnlyScope": "Two spec oracles: real-clock first observation opt-in; A9 local static geometry matcher reuse with247/7400 equivalence. Runtime unchanged, exact virtual/default and other cases are inherited by inverse and branch proof.",
+      "coverageSHA256": "478c0a85db56d0d1ad1f6fa2282daa6661ec1f7626188a660c04e44ceb86823e"
+    },
+    "native": {
+      "unique": 332,
+      "currentActual": 34,
+      "exactDependencyInheritedM03": 298,
+      "sameRun332": false,
+      "proof": "native-verification-source8.json"
+    },
+    "rules": {
+      "actual": 802,
+      "files": 60,
+      "log": "artifacts/goal-4/check-matrix-01/rules-source8.log"
+    },
+    "assetGuardCases": 281,
+    "currentRootVueTypesBuildAssetPositive": true,
+    "checks675InputsExact": true,
+    "A9": {
+      "actualOriginalCases": 4,
+      "originalPNGs": 36,
+      "logicalGeometryChecks": 3700,
+      "failedConditions": 0,
+      "durationMs": 45426,
+      "timeoutMs": 60000,
+      "sameRuntime": "cd3f0d2437384d0fa6d4cef929e6ac963f9e6ef2c212fce5ed9021b4e6836c10",
+      "unknownHistoricalSlowCausePreserved": true,
+      "proof": "a9-batched-source8-review.json"
+    }
+  },
+  "actualFixes": [
+    "owned stage/create/CHOOSE focus handoff without taking later decisions",
+    "current trusted keyboard visual skip/held/blur/reduced/oldnode lifetime",
+    "restore confirmation18px",
+    "persistent dialogs ignore a late close after reopening",
+    "existing visible life record receives focus without navigating away from its own seal",
+    "self battle cue anchors to current actor and no actor suppresses battle decorations",
+    "goal edit synchronizes explicit summary activation before native toggle delivery",
+    "ANSWER_TRIAL feedback preserves its formal outcome and uses actual scene whitespace with a smaller cue and conservative visual clearance",
+    "A9 keeps all3700 logical checks/36 original PNGs/four contexts while removing repetitive trace wrapping; native6/6/12s first-read premise corrected, original formal after-commit checks retained"
+  ],
+  "scope": {
+    "formalGameStoreDB9CostsCyclesUnchanged": true,
+    "fixedDesktopOnly": "1440x900/font1/singleChromium",
+    "compatibilityOrEnvironmentPerformanceMatrix": false,
+    "overallArtGameFeelLongBalanceHumanAccepted": false,
+    "old39AllClosed": false,
+    "nextTask": "TA07",
+    "goalStatusActuallyRead": "active",
+    "noPushMergePublicDeployOrPermissionChange": true,
+    "currentCompatibilityAndEnvironmentPerformanceMatrixExecuted": false
+  },
+  "rawEvidenceBase": "artifacts/goal-4/check-matrix-01",
+  "preservedFailures": [
+    "source5full411pass+timedOutA9+failedB1/MF1",
+    "source6K14realnativeeventred",
+    "source7MF1visualandactualoutergeometryred",
+    "earlier source1/2/3/4 red/premise/interrupted attempts",
+    "source8full413pass+timedOutA9+failedA6",
+    "source8originalA9leafTimedOut",
+    "native-real-selection-error0tests-notProductFailure"
+  ],
+  "finalCommitArchiveFrozenHTTPUserProgressProof": {
+    "archive236": "implementation-archive-proof.json",
+    "payload62Exact": true,
+    "bytes": 7814335,
+    "httpOrigin": "http://127.0.0.1:56884/",
+    "ownedPID": 68317,
+    "ownedExecSession": 76627,
+    "userVisibleProgressAXExact": true,
+    "userGameOrImportRestoreResetActions": false,
+    "dirtyMetadataAndOriginal13Preserved": true,
+    "notFinalCleanCandidate": true
+  },
+  "visuals": {
+    "proof": "visual-summary-source8.json",
+    "representativeScenes": 5,
+    "fullPNGCount": 736,
+    "fullPNGStrictByteInheritance": 3,
+    "fullPNGFreshViewed": 1,
+    "remainingFullPNGsNotReviewed": 732,
+    "targetMF1FreshOutsideFullInventory": true,
+    "notClaimed": "All screenshots, full animation/all pages, overall art/TA or human approval."
+  },
+  "protected13UnchangedUnstaged": true,
+  "identityProof": "identity-proof.json",
+  "userProgressProof": "user-progress.json",
+  "recordedAt": "2026-10-24T10:40:09.822456+00:00"
+}
