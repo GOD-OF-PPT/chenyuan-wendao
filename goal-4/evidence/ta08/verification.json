@@ -1,0 +1,65 @@
+{
+  "task": "TA08",
+  "date": "2026-10-25",
+  "status": "local independent engineering unit delivered, overall art/human goal open",
+  "implementationCommit": "33f0dda413b27e2ef18fe51c3b50087814e38a27",
+  "runtimeDigest": "19f9f70ba11e1a450fb8f0f415fca60219240af4cde7872b6eba38925f51e644",
+  "runtimeSources": 253,
+  "payloadFiles": 69,
+  "payloadBytes": 8311235,
+  "ui": {
+    "unique": 42,
+    "composition": "12 current full +27 exact same-source unaffected +3 current legacy leaves",
+    "sameRun42": false,
+    "full441NotClaimed": true,
+    "evidence": "coverage-current-source6.json"
+  },
+  "native": {
+    "unique": 332,
+    "current": 34,
+    "exactInherited": 298,
+    "evidence": "native-verification-source6.json"
+  },
+  "core": {
+    "passed": 815,
+    "explicitFiles": 61,
+    "evidence": "checks-and-assets.json"
+  },
+  "assets": {
+    "passed": 339,
+    "currentFullRun": true,
+    "original338And1FailureRetained": true,
+    "unitNegativeOpeningTagPremiseRepair": "asset-negative-premise.json"
+  },
+  "typesAndBuild": "Root TypeScript and Vue/Vite current, post-commit rebuild payload exactly matches tested source6",
+  "visual": {
+    "currentNew12Frames": 40,
+    "actuallyReviewedRepresentativeFrames": 18,
+    "notPixelReviewed": 22,
+    "representation": "original-dimension JPEG68 lossy copies, originalPNG/hashes retained",
+    "humanAcceptance": false,
+    "deliveryUserTabObservationSeparatelyRecorded": true
+  },
+  "identity": "identity-proof.json",
+  "userProgress": "user-progress.json",
+  "protected13": "protected13.json",
+  "review": "review.md",
+  "rawLocalArtifacts": "artifacts/goal-4/ta08",
+  "paused": [
+    "compatibility development/tests",
+    "environment/performance matrices"
+  ],
+  "remaining": [
+    "TA09",
+    "CHECK-TA-03 all eight pages",
+    "M04 normal route and recovery",
+    "M05 performance",
+    "M06 compatibility last",
+    "clean same-source final runnable package",
+    "largest C-end/code/security review",
+    "overall art/idle balance/user acceptance"
+  ],
+  "goalStatusActuallyRead": "active",
+  "nextIndependentTask": "TA09",
+  "pushMergePublicDeployPermissionChanges": false
+}

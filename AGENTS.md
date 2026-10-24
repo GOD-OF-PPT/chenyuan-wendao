@@ -286,3 +286,7 @@ TA07最终补充：反击只消费完整正式结果中可确认的负净HP，�
 依据[0034](docs/decisions/0034-source-objects-ta08-contract.md)及[本轮实际一手回读](goal-4/research/ta08-design-sources.json)。六自然主体、十差事文书/器具、约定报酬与实际袋匣须可辨，绘画只表示资源地点，不表示持有；主体轮廓/工作部位与当前对象优先，不继续统一图标加圆环。Riot清晰度和Melvor开发者文支持降噪、系统联系与玩家反馈；具体对象、周期/预算/DOM/proof均为项目推导，未试玩Alpha或查看媒体。
 
 选点/开安排只读，原5轮/月预算/余寿1与目标50上限、门槛/全来源/返回保持；物件可开原安排，source-start才沿原有限确认执行，不增加每株点选、盖章领奖、矿脉枯竭或工具费用。真实runtime驱动接触/作业/收拢，saving停为封存；完整v2 proof首次成功才按实际delta一次入袋。纯筹石不造假物品，混合产出不漏灵石，XP按真实上限，不凭画面发奖。原共享1400ms/失效与原命令重试沿用，子组件无独立时钟或写API；暂停/隐藏/换源/新人生/接管/错误撤演出，实际库存/累计和完整回执持久可读。当前仅固定1440/font1/单Chromium，不恢复兼容/环境性能，不以局部工程或六画件代八页艺术/长期/真人认可。
+
+TA08实查补充：表现hook的完整transition证明与持久回执版本分开。SOURCE活动v2仍保存七字段ActivityReceipt v1，无持久proof；不能套用v5/6/7的v2回执结构而改DB／规则。验证按实际input.tick CAS／命令／fingerprint、完整resolve Game/result、validate／completeActivity全等与唯一回执；停止分支以due重构不冒真实resolvedAt，真实first put与complete>=due另核。
+
+Playwright虚拟收益钟与CSS原生动画时钟分开验证；虚拟推进400/450ms不能冒CSS中末帧。当前入囊用实际CSSAnimation.currentTime≥750/1000且<1100、alpha>0及原8s只读握手，不设currentTime／pause动画／sleep／改收益钟。工具／图形6px外带还须避开检视文字、库存／累计／真实结果和安排，早帧无交叠不代整条路径。普通／混合／保存错误／notice压缩均核完整事实。旧视觉测试改查真实工具和真实结果宿主，冷态须有实际消费者，不能对已删节点空循环称通过；静态none与有限identity矩阵按无位移语义核。负例必须修改真实唯一opening tag，兼容带slot/fallback的非自闭合语法，不只删除首个无关token；保实际guard拒绝、唯一性／rehash及原失败。

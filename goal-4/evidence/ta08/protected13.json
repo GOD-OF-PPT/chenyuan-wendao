@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "path": "web/e2e/economy.spec.ts",
+      "beforeSHA256": "74d9aa0f71351a890ddb75010aa7ee5eaed03a251cf435824afd836acc3d928a",
+      "afterSHA256": "74d9aa0f71351a890ddb75010aa7ee5eaed03a251cf435824afd836acc3d928a"
+    },
+    {
+      "path": "web/e2e/growth.spec.ts",
+      "beforeSHA256": "6a3ed492a841efe86af8c077b67629aa8aee9efa2ce583740913cebe4fd833b3",
+      "afterSHA256": "6a3ed492a841efe86af8c077b67629aa8aee9efa2ce583740913cebe4fd833b3"
+    },
+    {
+      "path": "web/performance-tests/production.spec.ts",
+      "beforeSHA256": "4fedce4841870b4d2b3c70744788ca8ed0d75868652ac6e96119febefafb71a9",
+      "afterSHA256": "4fedce4841870b4d2b3c70744788ca8ed0d75868652ac6e96119febefafb71a9"
+    },
+    {
+      "path": "web/performance-tests/support.ts",
+      "beforeSHA256": "5b292d27f4c15ebe74222d8b3e2754db27bd3fb906c489fa793ff02624f36053",
+      "afterSHA256": "5b292d27f4c15ebe74222d8b3e2754db27bd3fb906c489fa793ff02624f36053"
+    },
+    {
+      "path": "web/playwright.config.ts",
+      "beforeSHA256": "615e17d0d67d0b9bb168fd87287e9e427b2fa2b23a60d6e83cf00eba23c031f1",
+      "afterSHA256": "615e17d0d67d0b9bb168fd87287e9e427b2fa2b23a60d6e83cf00eba23c031f1"
+    },
+    {
+      "path": "web/playwright.journeys.config.ts",
+      "beforeSHA256": "244b1faecde4ddecd1290ef99d5fc7909e5b5947289d0cf9460d771ac22097f7",
+      "afterSHA256": "244b1faecde4ddecd1290ef99d5fc7909e5b5947289d0cf9460d771ac22097f7"
+    },
+    {
+      "path": "web/playwright.performance.config.ts",
+      "beforeSHA256": "8c083d55b7c3bd7bb538d719b098ba5213d95efc460980e9ff73c93ae5ece3a0",
+      "afterSHA256": "8c083d55b7c3bd7bb538d719b098ba5213d95efc460980e9ff73c93ae5ece3a0"
+    },
+    {
+      "path": "web/playwright.persistence.config.ts",
+      "beforeSHA256": "c6b4221c4a3c0964c89657afb2ea2718b7c3d87f0566c30d78f70900b08352f6",
+      "afterSHA256": "c6b4221c4a3c0964c89657afb2ea2718b7c3d87f0566c30d78f70900b08352f6"
+    },
+    {
+      "path": "scripts/collect-validation.mjs",
+      "beforeSHA256": "7c93714fe6f505ffc4679ce507aac4090af6ef831e06f0bbc5b8d56033c864c8",
+      "afterSHA256": "7c93714fe6f505ffc4679ce507aac4090af6ef831e06f0bbc5b8d56033c864c8"
+    },
+    {
+      "path": "scripts/merge-ui-shards.mjs",
+      "beforeSHA256": "5a5da98452b5440f24452e8b8b17c0b0e341efea37ecb9b7af09f94ec7194758",
+      "afterSHA256": "5a5da98452b5440f24452e8b8b17c0b0e341efea37ecb9b7af09f94ec7194758"
+    },
+    {
+      "path": "scripts/validation-matrix.mjs",
+      "beforeSHA256": "f911a45b46a052462dd195cd9518ce633f9c997d6946f4660867c087dbf9ad19",
+      "afterSHA256": "f911a45b46a052462dd195cd9518ce633f9c997d6946f4660867c087dbf9ad19"
+    },
+    {
+      "path": "tests/ui-shards.test.mjs",
+      "beforeSHA256": "4b8ff67bfa575f4dd5928c0b591ef590ca999ab5f28c303b85ecbe5c8fa1a07e",
+      "afterSHA256": "4b8ff67bfa575f4dd5928c0b591ef590ca999ab5f28c303b85ecbe5c8fa1a07e"
+    },
+    {
+      "path": "tests/validation-matrix.test.mjs",
+      "beforeSHA256": "4ea8b9736d3e5be6b0b4b8e81410e67fc3f16247aff06d3341fd277ccca334b5",
+      "afterSHA256": "4ea8b9736d3e5be6b0b4b8e81410e67fc3f16247aff06d3341fd277ccca334b5"
+    }
+  ],
+  "unchanged": true,
+  "stagedOrCommitted": false
+}
