@@ -1,0 +1,222 @@
+{
+  "format": "chenyuan-ta09-jade-visual-review",
+  "version": 1,
+  "recordedAt": "2026-10-24T21:05:30.328316+00:00",
+  "runtimeDigest": "29c2c79d0bd6de5e3ae3f798def01cd437f36b7328ed5ed435980a32bf42fc8f",
+  "scope": "SOURCE7 seven jade representatives: five strictly inherited original PNGs from actual SOURCE6 review plus two current fresh reviews. No relic or manual sword-scroll scene included.",
+  "counts": {
+    "scopedImages": 7,
+    "strictOriginalPNGInherited": 5,
+    "freshActualCurrentPixelReviews": 2
+  },
+  "comparison": {
+    "path": "artifacts/goal-4/ta09/visual-source7-inheritance-comparison.json",
+    "sha256": "435132ae5df56e17ae95691d65ef533cd7a5ff722d8ebb77bcbe9c57654cd472",
+    "bytes": 9679
+  },
+  "priorEvidence": {
+    "path": "artifacts/goal-4/ta09/visual-source6-jade-review.json",
+    "sha256": "a4d92f91b5cb746c92b2b5702bc86d11cf8634c531e810a997313725002b9108",
+    "bytes": 11745
+  },
+  "copiesManifest": {
+    "path": "artifacts/goal-4/ta09/visual-source7-jade-agent-copies.json",
+    "sha256": "695eb3c8c59fe14679cf2458b737237042044d622af67040ecb5fbd6d538c472",
+    "bytes": 1415
+  },
+  "images": [
+    {
+      "name": "sword_mind-actual-cold-object",
+      "original": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/sword_mind-actual-cold-object.png",
+      "originalSHA256": "c952c713838a62cc159d055978c5d994a20fe2a62ad7079062e28a958425a944",
+      "originalBytes": 1147899,
+      "reviewCopy": "artifacts/goal-4/ta09/visual-source7-jade-agent/sword_mind-actual-cold-object.jpg",
+      "reviewCopySHA256": "8e6dd32d5a505d915b0562f27586d50d4ef9d9746a879114db4866ff690a9fd5",
+      "reviewCopyBytes": 117446,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "lossy JPEG68 original1440x900, no resizing or content editing",
+      "viewedAtUTC": "2026-10-24T21:04:22Z",
+      "object": "青锋心诀 / sword heart",
+      "visibleState": "已装配、已掌握并展开只读卷面；原安排与下次草案均0卷",
+      "observations": [
+        "实际看到分层玉页、心诀刻纹与槽扣，物件区域与右侧完整正文分开；名称、基础剑诀作用、首次费用0石/30秒资料与无需重复研习说明可读。",
+        "当前心法和所选均为青锋心诀，已装备按钮为冷态，查看此法筹备作为另一入口可见；物件、刻纹、题名、当前槽说明和底部操作未见相交。",
+        "卷串为空时仍能辨认原安排0卷/下次草案0卷、定卷完整安排和目录分页，页脚八入口可见。本静态普通态不证明错误弹窗下的A8空间修复。"
+      ],
+      "reviewStatus": "fresh actual pixel review of the original-size JPEG68 copy, one image per tool call",
+      "freshlyViewedInSOURCE7": true,
+      "reviewer": "/root/art02_sources",
+      "notInferredFromDecodeOrDimensions": true,
+      "priorPNGDiffers": true,
+      "sameLossyJPEGHashAsPrior": true,
+      "sameLossyHashBoundary": "The JPEG output matches the prior copy, but original PNG hashes differ; both current copies were nevertheless freshly viewed. This is not used to assert original PNG or lossless pixel identity."
+    },
+    {
+      "name": "sword_build-actual-cold-object",
+      "original": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/sword_build-actual-cold-object.png",
+      "originalSHA256": "5bb3bdd021be83322608b08ee7c79eba546ca8b1d1207e0c5bbe311822795a6d",
+      "originalBytes": 1147442,
+      "reviewStatus": "inherited only by exact original PNG bytes from the prior actual SOURCE6 pixel review",
+      "priorEvidence": {
+        "path": "artifacts/goal-4/ta09/visual-source6-jade-review.json",
+        "sha256": "a4d92f91b5cb746c92b2b5702bc86d11cf8634c531e810a997313725002b9108",
+        "bytes": 11745
+      },
+      "priorImage": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/sword_build-actual-cold-object.png",
+      "priorOriginalSHA256": "5bb3bdd021be83322608b08ee7c79eba546ca8b1d1207e0c5bbe311822795a6d",
+      "priorActualViewedAtUTC": "2026-10-24T20:41:40Z",
+      "priorReviewCopy": "artifacts/goal-4/ta09/visual-source6-jade-agent/sword_build-actual-cold-object.jpg",
+      "priorReviewCopySHA256": "677307bcccb63a7f8279260037c2a8ea8dce5bb5347493fddda9e13cb2d3fb36",
+      "object": "青锋起势 / sword blade",
+      "visibleState": "已装配、展开卷面及剑形刻纹",
+      "inheritedObservations": [
+        "长刃轮廓/刻纹与心诀不同，但共享玉页材质；8灵力和2层剑意作用完整。",
+        "当前起手与所选相同可读，已装备按钮与筹备入口分离，没有被物件或刻线遮住。"
+      ],
+      "freshlyViewedInSOURCE7": false
+    },
+    {
+      "name": "sword_release-actual-cold-object",
+      "original": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/sword_release-actual-cold-object.png",
+      "originalSHA256": "f7d169a9e1ac54abcb21817c673817fd236e6b4904cf9a4fd97c8b4bb31b9118",
+      "originalBytes": 1145641,
+      "reviewStatus": "inherited only by exact original PNG bytes from the prior actual SOURCE6 pixel review",
+      "priorEvidence": {
+        "path": "artifacts/goal-4/ta09/visual-source6-jade-review.json",
+        "sha256": "a4d92f91b5cb746c92b2b5702bc86d11cf8634c531e810a997313725002b9108",
+        "bytes": 11745
+      },
+      "priorImage": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/sword_release-actual-cold-object.png",
+      "priorOriginalSHA256": "f7d169a9e1ac54abcb21817c673817fd236e6b4904cf9a4fd97c8b4bb31b9118",
+      "priorActualViewedAtUTC": "2026-10-24T20:42:13Z",
+      "priorReviewCopy": "artifacts/goal-4/ta09/visual-source6-jade-agent/sword_release-actual-cold-object.jpg",
+      "priorReviewCopySHA256": "ec98382f0eda047390d61abacbaa64a4d288c2ee2ad400b6ed23cd467052226f",
+      "object": "惊鸿斩 / sword scroll",
+      "visibleState": "已装配、展开卷面及终结刻纹",
+      "inheritedObservations": [
+        "卷壳/终结纹可见；12灵力/全部剑意/满层打断重击正文完整。",
+        "第二页目录、选中态、当前终结槽和底部入口未见裁切或相交。"
+      ],
+      "freshlyViewedInSOURCE7": false
+    },
+    {
+      "name": "talisman_mind-actual-cold-object",
+      "original": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/talisman_mind-actual-cold-object.png",
+      "originalSHA256": "f45f94794e266948f872133d0c23ccf9cd898ff7978caf246a96f5aa3daf2edc",
+      "originalBytes": 1149974,
+      "reviewStatus": "inherited only by exact original PNG bytes from the prior actual SOURCE6 pixel review",
+      "priorEvidence": {
+        "path": "artifacts/goal-4/ta09/visual-source6-jade-review.json",
+        "sha256": "a4d92f91b5cb746c92b2b5702bc86d11cf8634c531e810a997313725002b9108",
+        "bytes": 11745
+      },
+      "priorImage": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/talisman_mind-actual-cold-object.png",
+      "priorOriginalSHA256": "f45f94794e266948f872133d0c23ccf9cd898ff7978caf246a96f5aa3daf2edc",
+      "priorActualViewedAtUTC": "2026-10-24T20:42:48Z",
+      "priorReviewCopy": "artifacts/goal-4/ta09/visual-source6-jade-agent/talisman_mind-actual-cold-object.jpg",
+      "priorReviewCopySHA256": "1f57582866b3304f39d028e317ccd217d7a445e1549ef755e712ab258ae6ed1e",
+      "object": "镇灵心诀 / talisman knot",
+      "visibleState": "待研习、闭卷、展简只查看",
+      "inheritedObservations": [
+        "闭合的结形卷壳和绑绳与已掌握展开图有区别，没有已悟/已配标记。",
+        "符修心法属性、二回合符印及可提前引爆作用、0灵石/30秒资料均可读。",
+        "当前青锋心诀与所选镇灵心诀同时可辨，主操作明确列入待研卷轴。"
+      ],
+      "freshlyViewedInSOURCE7": false
+    },
+    {
+      "name": "talisman_build-actual-cold-object",
+      "original": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/talisman_build-actual-cold-object.png",
+      "originalSHA256": "04818fe700a4a3b208fdd0253c66751db60efe74d946d9de49191cb0787ebed2",
+      "originalBytes": 1143520,
+      "reviewStatus": "inherited only by exact original PNG bytes from the prior actual SOURCE6 pixel review",
+      "priorEvidence": {
+        "path": "artifacts/goal-4/ta09/visual-source6-jade-review.json",
+        "sha256": "a4d92f91b5cb746c92b2b5702bc86d11cf8634c531e810a997313725002b9108",
+        "bytes": 11745
+      },
+      "priorImage": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/talisman_build-actual-cold-object.png",
+      "priorOriginalSHA256": "04818fe700a4a3b208fdd0253c66751db60efe74d946d9de49191cb0787ebed2",
+      "priorActualViewedAtUTC": "2026-10-24T20:43:28Z",
+      "priorReviewCopy": "artifacts/goal-4/ta09/visual-source6-jade-agent/talisman_build-actual-cold-object.jpg",
+      "priorReviewCopySHA256": "bba106a72ad98df6b99e9027cffe420d9bfa98835396470fee4150e4675c7e18",
+      "object": "镇灵符 / talisman seal",
+      "visibleState": "待研习、长方封简、未刻成",
+      "inheritedObservations": [
+        "封印式窄长轮廓与心法卷壳可区分；8灵力/二回合符印/当前减伤12正文完整。",
+        "当前起手青锋起势与所选镇灵符分开显示，主要入串操作和只读筹备入口可见。"
+      ],
+      "freshlyViewedInSOURCE7": false
+    },
+    {
+      "name": "talisman_release-actual-cold-object",
+      "original": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/talisman_release-actual-cold-object.png",
+      "originalSHA256": "fc160f9e38d0b7290472ac3e9ed6335603f784c4998ac9cf505e64cda005674a",
+      "originalBytes": 1145072,
+      "reviewStatus": "inherited only by exact original PNG bytes from the prior actual SOURCE6 pixel review",
+      "priorEvidence": {
+        "path": "artifacts/goal-4/ta09/visual-source6-jade-review.json",
+        "sha256": "a4d92f91b5cb746c92b2b5702bc86d11cf8634c531e810a997313725002b9108",
+        "bytes": 11745
+      },
+      "priorImage": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/talisman_release-actual-cold-object.png",
+      "priorOriginalSHA256": "fc160f9e38d0b7290472ac3e9ed6335603f784c4998ac9cf505e64cda005674a",
+      "priorActualViewedAtUTC": "2026-10-24T20:44:01Z",
+      "priorReviewCopy": "artifacts/goal-4/ta09/visual-source6-jade-agent/talisman_release-actual-cold-object.jpg",
+      "priorReviewCopySHA256": "b0863109f99fafe5f5e64f8c0c35f1a98d8612fc089abd0ee0937738b10993af",
+      "object": "燃符诀 / talisman fan",
+      "visibleState": "待研习、扇形闭卷、无已掌握成果",
+      "inheritedObservations": [
+        "宽弧扇形外壳清楚，10灵力和结算全部符印余下伤害的说明完整。",
+        "当前惊鸿斩/所选燃符诀及第三页目录清楚，物件外缘未见压字或压操作。"
+      ],
+      "freshlyViewedInSOURCE7": false
+    },
+    {
+      "name": "first-real-jade-three-slot-view",
+      "original": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/first-real-jade-three-slot-view.png",
+      "originalSHA256": "4b014e9b9b7b8d655f51bafd041d0b757246aa39d450906bd2e05ef6d29aa2cc",
+      "originalBytes": 1113493,
+      "reviewCopy": "artifacts/goal-4/ta09/visual-source7-jade-agent/first-real-jade-three-slot-view.jpg",
+      "reviewCopySHA256": "51a2b5c382d1a7a19762b28b193f78036fb96d6a8f71b83a00797112d884a348",
+      "reviewCopyBytes": 118119,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "lossy JPEG68 original1440x900, no resizing or content editing",
+      "viewedAtUTC": "2026-10-24T21:04:36Z",
+      "object": "当前三槽 / 所选听雨剑势",
+      "visibleState": "当前三槽查看模式；未研听雨剑势的卷面手动展开，仅供查看",
+      "observations": [
+        "心法青锋心诀、起手青锋起势、终结惊鸿斩三槽各自可读，所选听雨剑势与当前起手明确分开，未显示已掌握或已装配所选卷的成果。",
+        "完整8灵力/少量伤害/1层剑意并护体、首次80石/30秒及需筑基资料可读；列入待研卷轴主操作和查看此法筹备入口均未被图形遮住。",
+        "物件、三槽行、作用/成本/当前槽正文、目录分页和主导航未见裁切或相交。图名first-real不代表已完成真实30秒，本帧没有运行读秒或保存成果宣告。"
+      ],
+      "reviewStatus": "fresh actual pixel review of the original-size JPEG68 copy, one image per tool call",
+      "freshlyViewedInSOURCE7": true,
+      "reviewer": "/root/art02_sources",
+      "notInferredFromDecodeOrDimensions": true,
+      "priorPNGDiffers": true,
+      "sameLossyJPEGHashAsPrior": true,
+      "sameLossyHashBoundary": "The JPEG output matches the prior copy, but original PNG hashes differ; both current copies were nevertheless freshly viewed. This is not used to assert original PNG or lossless pixel identity."
+    }
+  ],
+  "conclusion": "The two changed current images were actually viewed; no new concrete text/entry obstruction was observed in them. Five unchanged originals inherit the already recorded SOURCE6 observations only by exact PNG bytes. This limited set does not approve overall artwork or game feel.",
+  "blockingFindingsInThisSet": [],
+  "presentationNotes": [
+    "Heart/blade/scroll and knot/seal/fan representatives are covered through the seven-image mixed inheritance/fresh chain; actual selected versus current equipment and known versus unlearned states remain readable in this set.",
+    "The catalogue, object description and estimate column structure remains visible. Whether the whole page feels sufficiently like a game stays open to broader eight-page review and user playtest."
+  ],
+  "remaining": [
+    "Manual sword-scroll60s scene was not among these seven images and is not claimed reviewed.",
+    "These normal-state frames do not independently verify SOURCE7 EQUIP-quota A8 text geometry or the complete old42 execution; root/verify owns those results.",
+    "Live progress, actual CSS animation stages, saving/retry lifecycle, native deadlines, fullGame/Activity/DB and computed18/14/44 or hit testing require separate test evidence.",
+    "JPEG68 is lossy at the original1440x900 size; originals and all hashes are preserved. Fine ornament fidelity is not certified from decoding or dimensions.",
+    "No browser/save operations, source/guard/spec/ledger edits, compatibility or environment-performance checks were performed by this review.",
+    "All-eight-page artwork, overall game feel, long-term balance and human acceptance remain open."
+  ]
+}

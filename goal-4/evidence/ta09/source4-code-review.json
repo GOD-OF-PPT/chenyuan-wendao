@@ -1,0 +1,273 @@
+{
+  "format": "chenyuan-ta09-independent-code-review",
+  "version": 1,
+  "phase": "source4",
+  "recordedAt": "2026-10-24T19:57:59.031027+00:00",
+  "scope": "Read-only source4 final static code/security/function delta review; no tests, browser, build, images or user save access. New native metadata audit is separate.",
+  "runtimeDigest": "59fe821a5aa86f36a2bd6ebeb0c22e9cf992e915914f846b36dd7af71ea488fa",
+  "buildReference": {
+    "path": "artifacts/goal-4/ta09/build-source4.json",
+    "sha256": "604b35c053a38d677fdd0b0f5e86b3aa7b97fbc7c9f4407149fe297fb93e7397"
+  },
+  "priorReview": {
+    "path": "artifacts/goal-4/ta09/source3-code-review.json",
+    "sha256": "00ddcdde568deec6869d802909fa474e0b52470f0808c3898dc44559cac7c504"
+  },
+  "inputs": [
+    {
+      "path": "web/src/JadeEngraving.vue",
+      "bytes": 6403,
+      "sha256": "1c1b94c82d145c504fda7c8de43dffacedcdf1db87c9f9579fcefac3bec15c1a"
+    },
+    {
+      "path": "web/src/StudyQueueRail.vue",
+      "bytes": 4887,
+      "sha256": "2ee9119806fa68b31c97c28d754fe2589981ad58b832a8c1f43287e955c13997"
+    },
+    {
+      "path": "web/src/RelicInscription.vue",
+      "bytes": 8972,
+      "sha256": "d3c2c314e05751de3755d300f070ea7ed0424e5296b7e731372799dc46bbe700"
+    },
+    {
+      "path": "web/src/equipment-choreography.ts",
+      "bytes": 3109,
+      "sha256": "871e41e7555f640fecbc8f26706fac34a5249225a6acb5f1db9c63789a8011bb"
+    },
+    {
+      "path": "web/src/ta09-equipment.css",
+      "bytes": 6560,
+      "sha256": "b155327a35029bd4270e86b27aecfe190e6cd50ef8bbacf2e5a7ff5d927b4ae5"
+    },
+    {
+      "path": "web/src/JadeStudyScene.vue",
+      "bytes": 4782,
+      "sha256": "b4b448fd92b743b1232cb8f2251ac3173e705ebd1ff37a639fc187d302b4bed9"
+    },
+    {
+      "path": "web/src/LearningPlanner.vue",
+      "bytes": 15253,
+      "sha256": "db593c51bb282491386a631c26de74f97ee274fdb1d3bf91a65a38e8bb9801e2"
+    },
+    {
+      "path": "web/src/RelicAtelier.vue",
+      "bytes": 10268,
+      "sha256": "aca723c007210257bfdf1a99963d155488f08d8b3386c357ef2b53fba28bc6aa"
+    },
+    {
+      "path": "web/src/equipment-effects.ts",
+      "bytes": 4893,
+      "sha256": "0946c3b6b76e5ea39ebd80571175e2835ce49abe94fe6499f480b1635a934888"
+    },
+    {
+      "path": "web/src/art03-equipment.css",
+      "bytes": 18052,
+      "sha256": "888ced5d0d88025790ae19f34c75c0b3d9b4a8476321dba9c86d7cd98d57b499"
+    },
+    {
+      "path": "web/src/EquipmentPanel.vue",
+      "bytes": 4046,
+      "sha256": "664190648f48abcf3172388a10c7df7b509e6c4c6a66c7417cd62c7266e3968a"
+    },
+    {
+      "path": "web/src/ProductionPlanner.vue",
+      "bytes": 10256,
+      "sha256": "21f8e963a48f61ee0334c50eb60ba14717fcd2c8a22675bd1727e2ba5f44d1dd"
+    },
+    {
+      "path": "web/src/use-activity-effect.ts",
+      "bytes": 3022,
+      "sha256": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163"
+    },
+    {
+      "path": "web/src/activity-effects.ts",
+      "bytes": 2627,
+      "sha256": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b"
+    },
+    {
+      "path": "web/src/LoadoutConstellation.vue",
+      "bytes": 4689,
+      "sha256": "57a64e3efb5141447e6f042591e74589d87e2691e1b50186ab57d1ad3b69d336"
+    },
+    {
+      "path": "web/src/ConfigurationDialog.vue",
+      "bytes": 5617,
+      "sha256": "55bb14f266e4162bb0a75f5afdc70ce4a24a0344cb59d971d96a95b12e9a98ce"
+    },
+    {
+      "path": "docs/decisions/0035-equipment-ta09-contract.md",
+      "bytes": 14825,
+      "sha256": "c785985a943f382768dbb8f8605edbbbf3d26e1285ceb45abf83f6b2d14bc6bd"
+    }
+  ],
+  "source3To4Delta": [
+    {
+      "path": "web/src/JadeEngraving.vue",
+      "source3Sha256": "679751ac9a6f1f9c89509591378a3dee5a1520847eebe15b5255576cf92f4291",
+      "source4Sha256": "1c1b94c82d145c504fda7c8de43dffacedcdf1db87c9f9579fcefac3bec15c1a",
+      "source3Bytes": 6388,
+      "source4Bytes": 6403
+    },
+    {
+      "path": "web/src/RelicInscription.vue",
+      "source3Sha256": "1e419c7674a4f239d62f79a533802ddb6ffee21467108a464c358fe6fff4bcab",
+      "source4Sha256": "d3c2c314e05751de3755d300f070ea7ed0424e5296b7e731372799dc46bbe700",
+      "source3Bytes": 8972,
+      "source4Bytes": 8972
+    },
+    {
+      "path": "web/src/ta09-equipment.css",
+      "source3Sha256": "9f6898fad8dedc2794f39cd119a6e145a0d2366cf8303145e8502b2157a3a58f",
+      "source4Sha256": "b155327a35029bd4270e86b27aecfe190e6cd50ef8bbacf2e5a7ff5d927b4ae5",
+      "source3Bytes": 6522,
+      "source4Bytes": 6560
+    },
+    {
+      "path": "web/src/LearningPlanner.vue",
+      "source3Sha256": "4c71bbe30ec48c97cffc00de621918870447d046bbcd95236bceee7bb9aaf89d",
+      "source4Sha256": "db593c51bb282491386a631c26de74f97ee274fdb1d3bf91a65a38e8bb9801e2",
+      "source3Bytes": 15213,
+      "source4Bytes": 15253
+    },
+    {
+      "path": "web/src/art03-equipment.css",
+      "source3Sha256": "57f48e59eeb0f51f5a5fa53723dea5df33f620686e7b075312a4b6e1c30f75d8",
+      "source4Sha256": "888ced5d0d88025790ae19f34c75c0b3d9b4a8476321dba9c86d7cd98d57b499",
+      "source3Bytes": 17910,
+      "source4Bytes": 18052
+    },
+    {
+      "path": "docs/decisions/0035-equipment-ta09-contract.md",
+      "source3Sha256": "2dd1586420d32161ebb641a97339e69fce8378c2ee2cd67a4ac239707e63bed1",
+      "source4Sha256": "c785985a943f382768dbb8f8605edbbbf3d26e1285ceb45abf83f6b2d14bc6bd",
+      "source3Bytes": 13513,
+      "source4Bytes": 14825
+    }
+  ],
+  "verdict": "No new must-fix Game/Store/storage/proof/authority or static functional blocker found. Source3 reduced-scoping and aria issues are addressed in source4. Actual final UI/geometry and art review remain independent and unfinished.",
+  "findings": [],
+  "resolved": [
+    {
+      "id": "TA09-S3-N1",
+      "reference": "web/src/JadeEngraving.vue:23",
+      "fact": "During true automatic running/sealing aria-pressed is omitted; only available idle local opened is represented as a toggle. This removes the exact-zero reduced-mode mismatch without altering automatic state or action timing."
+    },
+    {
+      "id": "TA09-S3-REDUCED-SCOPE",
+      "reference": "web/src/RelicInscription.vue:74-75",
+      "fact": "The full descendant selector is now inside each :global(...), so Vue scoped compilation retains the actual descendants rather than reducing the rule to the ancestor alone. Dynamic tool/hood/frame transforms and animations/transitions are cancelled in preference mode; static outer SVG anchors remain unchanged. The original source3 input and minimal diff are preserved."
+    }
+  ],
+  "deltaReview": [
+    {
+      "topic": "Header baseline and error reading area",
+      "references": [
+        "web/src/LearningPlanner.vue:68",
+        "web/src/art03-equipment.css:21-24,31-32",
+        "web/src/ta09-equipment.css:33-35,43-45"
+      ],
+      "finding": "The new title wrapper keeps the complete name/school/slot/realm text and corresponding26/14px values, placing them on a wrapping baseline instead of deleting a line. Error queue entries reduce decorative height/padding while retaining44px controls,18px name and14px status; two text facts remain visible in the markup. The base original grid rows are retained rather than redundantly overridden. This is a plausible actual layout fix, not permission to weaken the prior reader/status geometry checks."
+    },
+    {
+      "topic": "Budget/estimate reuse",
+      "references": [
+        "web/src/LearningPlanner.vue:76-82",
+        "web/src/ta09-equipment.css:deleted ta09-plan-note block"
+      ],
+      "finding": "The read-only skills budget/count block now reuses preparation-estimate styling. Its complete count, ceiling and reserve values remain. The original detailed estimate, finite settings dialog, start/travel/equip emits and unchanged plan construction/gates remain separate. No new rule or authorization is introduced."
+    },
+    {
+      "topic": "Jade mastery/object watcher ordering",
+      "references": [
+        "web/src/JadeEngraving.vue:7,11-19,23",
+        "web/src/JadeStudyScene.vue:16-33"
+      ],
+      "finding": "Both local watchers consume the current final props. Unknown-book switch closes; known-book switch opens by default; actual first mastery opens once; stable mastery no longer overrides a later local close. True running/sealing retains precedence and a guarded disabled input. Effects continue to come from the filtered parent hook and do not set mastery."
+    },
+    {
+      "topic": "Saved result slot and lifecycle",
+      "references": [
+        "web/src/JadeEngraving.vue:62-63",
+        "web/src/JadeStudyScene.vue:30",
+        "web/src/ta09-equipment.css:3,18,35",
+        "web/src/art03-equipment.css:41"
+      ],
+      "finding": "The dedicated always-present result span receives only the original noninteractive saved badge. Original1400ms effect ownership and queue/scene lifetime are unchanged; no new timer, observer, claim or reward path exists. The40px band and74px total reserve are implementation intent; current physical extents and old error reader regression still require actual UI evidence."
+    },
+    {
+      "topic": "Relic owned versus saving and short effects",
+      "references": [
+        "web/src/RelicAtelier.vue:17-35,45-51",
+        "web/src/RelicInscription.vue:9-20,51-56,74-75",
+        "web/src/equipment-choreography.ts:23-26"
+      ],
+      "finding": "Current working/sealing continue to use the four physical blanks and withdraw the tool before saved reveal. Saving wins over owned; no finished-art slot is shown while sealing. Persistent owned/bound are actualGame facts and configured separately. The child emits only readonly limits inspection and adds no Store/API/timer."
+    },
+    {
+      "topic": "Queue four domains and new life",
+      "references": [
+        "web/src/StudyQueueRail.vue:9-23,28-43",
+        "web/src/LearningPlanner.vue:28-29,53-56,66",
+        "web/src/equipment-effects.ts:21-25"
+      ],
+      "finding": "Viewed book, raw saved order, pending draft and running-frozen command remain separate. QueueView retains only run/domain/pages/touched and no command/runtime/Game; owner and parent run checks plus actual keyed consumers isolate new life and late local callbacks. Normal cycles do not overwrite draft/reading state."
+    },
+    {
+      "topic": "Original authority/security boundary",
+      "references": [
+        "web/src/equipment-effects.ts:14-25,29-56",
+        "web/src/activity-effects.ts:14-28",
+        "web/src/use-activity-effect.ts:12-27"
+      ],
+      "finding": "The sole helper change still only exposes readonly frozen command. Complete Game/result/completeActivity equality, nonreplay tracking, narrow v4/v5 matching, hidden/pause/id-generation-owner/error clearing and original command retry remain unchanged. No full engine/Store/App/DB/CAS/period/ConfigurationDialog implementation is modified by this task. Vue escaping, finite maps and useId remain the object security boundary."
+    }
+  ],
+  "budgets": {
+    "newFive": 29931,
+    "newCap": 30000,
+    "oldGroups": {
+      "art03": {
+        "bytes": 42684,
+        "cap": 45000
+      },
+      "idle-preparation": {
+        "bytes": 55438,
+        "cap": 60000
+      },
+      "idle-production": {
+        "bytes": 20456,
+        "cap": 26000
+      },
+      "stage-r3": {
+        "bytes": 16826,
+        "cap": 18000
+      },
+      "playable-flow": {
+        "bytes": 59921,
+        "cap": 60000
+      },
+      "action-feedback": {
+        "bytes": 33973,
+        "cap": 34000
+      }
+    }
+  },
+  "actualEvidenceBoundary": {
+    "nativeMetadata": {
+      "path": "artifacts/goal-4/ta09/native-source4-verification.json",
+      "sha256": "9e0765bee00de597274f75230beb99d58e2837e4e64940a26686075ae8b94d69"
+    },
+    "currentNativeActual": 34,
+    "inheritedOriginalM03": 298,
+    "notOneCurrent332": true,
+    "rootReportedCurrentCore": 815,
+    "coreNotRunByReviewer": true,
+    "uiStatus": "Root reports currentA12 complete and A9 legal quota/learning retry reached; START candidate UUID comparison is a test-oracle boundary under review. Stage10/current completeUI remain unfinished. This static review neither relabels earlier failures as passes nor signs their current pixels.",
+    "priorActualGeometry": "The old source3 ART03-A8 article out of152px reader and overlap with status is preserved. Source4 changed actual layout; do not remove its original frame constraint."
+  },
+  "GJ": {
+    "status": "static scope pass; runtime/pixel/human obligations remain",
+    "noShortcut": "All names, descriptions, cost/budget/reserve/count/source/confirm/retry/return operations remain. New physical forms and no-replay proof are not replaced by staged words or a unified success glow.",
+    "noOverclaim": "No fresh source4 image has been viewed in this review. Whole eight-page game feel, long-term pace, clean final package and human acceptance remain open."
+  }
+}

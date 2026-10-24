@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "web/src/LearningPlanner.vue",
-      "bytes": 14647,
-      "sha256": "4ebe05223d9c7997a3957e289a3d6e29f7ea87d154d80a8b95513ac60de5215d"
+      "bytes": 15253,
+      "sha256": "db593c51bb282491386a631c26de74f97ee274fdb1d3bf91a65a38e8bb9801e2"
     },
     {
       "path": "web/src/MarketPlanner.vue",
@@ -33,7 +33,7 @@
     {
       "path": "web/src/idle-preparation.css",
       "bytes": 14116,
-      "sha256": "448951fdfde3aae156a36d26d385aca149a43f9ed1e29a7f285d099af27bfe0b"
+      "sha256": "a010f23ff070bd6d62c9fc57b6104e82aa76d6fc0c8a2da3995b92b450724fd3"
     }
   ],
   "sourceReferences": [

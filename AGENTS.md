@@ -290,3 +290,10 @@ TA07最终补充：反击只消费完整正式结果中可确认的负净HP，�
 TA08实查补充：表现hook的完整transition证明与持久回执版本分开。SOURCE活动v2仍保存七字段ActivityReceipt v1，无持久proof；不能套用v5/6/7的v2回执结构而改DB／规则。验证按实际input.tick CAS／命令／fingerprint、完整resolve Game/result、validate／completeActivity全等与唯一回执；停止分支以due重构不冒真实resolvedAt，真实first put与complete>=due另核。
 
 Playwright虚拟收益钟与CSS原生动画时钟分开验证；虚拟推进400/450ms不能冒CSS中末帧。当前入囊用实际CSSAnimation.currentTime≥750/1000且<1100、alpha>0及原8s只读握手，不设currentTime／pause动画／sleep／改收益钟。工具／图形6px外带还须避开检视文字、库存／累计／真实结果和安排，早帧无交叠不代整条路径。普通／混合／保存错误／notice压缩均核完整事实。旧视觉测试改查真实工具和真实结果宿主，冷态须有实际消费者，不能对已删节点空循环称通过；静态none与有限identity矩阵按无位移语义核。负例必须修改真实唯一opening tag，兼容带slot/fallback的非自闭合语法，不只删除首个无关token；保实际guard拒绝、唯一性／rehash及原失败。
+
+## 玉简卷串与四器铭纹（TA09开工）
+
+依据[0035](docs/decisions/0035-equipment-ta09-contract.md)及[本轮两一手实际回读](goal-4/research/ta09-design-sources.json)：主体轮廓／重要层级先于微光，心法／起手／终结／剑简可辨；所选卷、待确认草案、原安排与冻结实际周期分别说明。查看不入队，入队不执行，完整30/60秒／proof保存后才刻成／铸成；旧回执／外页不补演，不逐卷领奖或自动装配。四器冷画复用，运行以各自胚件／刻刀接触方向呈现，saving封纹，Game owned/bound与配置实际变槽分别表现。Riot清晰度和Melvor开发文支持降噪／系统联系，具体形态／预算／DOM／时钟／保存均为本项目推导，非来源规定或竞品试玩／整体艺术认可。兼容和环境性能当前仍不执行。
+
+
+TA09实查补充：CJK标题既核字号也核实际Range行框，完整article／facts／槽行须在真实祖先和状态条之前；空串、错误横幅、确认弹窗与取消后均核，不能只压装饰图或以弹窗覆盖为由豁免背景越界。两种减效须查看Vue实际编译CSS，完整后代选择器置于:global(...)，不把仅ancestor规则当生效。缺图也要有可辨主物件，结果提示独立留位；大图符只为替代，不能冒原画或持有。前→后配装是核心决定文字，保18px；原两行fixture引用补齐不删旧assert。未提交START的内部候选随机ID与玩家原命令分开，只有无活动/回执且原input/fingerprint/CAS/费用全同、正式重建全等才是测试候选差异，不放宽生产。TA09的当前工程检查与18代表图不关闭工作物件/原画细节差、既有面板感、剑简完成态留白及真人责任，下一CHECK-TA-03继续八页实查。

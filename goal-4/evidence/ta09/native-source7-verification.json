@@ -1,0 +1,1296 @@
+{
+  "format": "chenyuan-native-verification",
+  "version": 1,
+  "task": "TA09",
+  "phase": "source7",
+  "recordedAt": "2026-10-24T21:05:18.807830+00:00",
+  "status": "34 current source7 actual passed plus298 exact originalM03 inheritance; not one source7/native332 run",
+  "currentRuntimeDigest": "29c2c79d0bd6de5e3ae3f798def01cd437f36b7328ed5ed435980a32bf42fc8f",
+  "counts": {
+    "unique": 332,
+    "files": 26,
+    "current": 34,
+    "currentFiles": 2,
+    "inherited": 298,
+    "inheritedFiles": 24,
+    "skipped": 0,
+    "retried": 0,
+    "flaky": 0,
+    "missing": 0,
+    "duplicate": 0
+  },
+  "currentExecution": {
+    "report": {
+      "path": "artifacts/goal-4/ta09/native-source7-report.json",
+      "sha256": "f6164ce9ff67d827a418ddc3ee91332fbd251cbf1432cb44bfa3d08c6016a081"
+    },
+    "declarations": {
+      "path": "artifacts/goal-4/ta09/native-source3-declared.json",
+      "sha256": "6571fec64ea0d1f1dd59ff4fcb11d4284a0cd1ba15f7486f7e3e2771777c6979"
+    },
+    "declarationCapture": "unchanged26native specs/configs reuse source3 list; not a claimed source7 list command",
+    "terminal": {
+      "path": "artifacts/goal-4/ta09/native-source7-terminal.json",
+      "sha256": "d9e20589e2d6d6385ba15910048e8e3c45d463aad5746ce72c6cc279a23ce58e"
+    },
+    "before": {
+      "path": "artifacts/goal-4/ta09/native-source7-before.json",
+      "sha256": "931afd6fdfd780ee00c2fbd03db97b4f23b4dd4ff9d8217de97bf2664395be09"
+    },
+    "after": {
+      "path": "artifacts/goal-4/ta09/native-source7-after.json",
+      "sha256": "42588db2900b4ed658c2c881024c021332219d70991d17f9728cb3e14e322447"
+    },
+    "runConfiguration": {
+      "path": "artifacts/goal-4/ta09/native-source7-run.json",
+      "sha256": "3edb29cb321faa8e49db0313b938f67e39909666b49d10b7c596d23296140df8"
+    },
+    "runScript": {
+      "path": "artifacts/goal-4/ta09/run-native-source7.mjs",
+      "sha256": "f9983e1b5b9a5b2793dcb08974d0ff5b768859ebabbf1eae473097c3f5eb40ce"
+    },
+    "snapshotScript": {
+      "path": "artifacts/goal-4/ta09/snapshot.mjs",
+      "sha256": "b7b80f57d414ef3ce3052f31c688690a6b393192bc719c5629bf4db6eeecf199"
+    },
+    "actualInputList": {
+      "path": "artifacts/goal-4/ta09/native-source7-input-paths.json",
+      "sha256": "82357cb4158b8658f8114b1d73d015552840aa8adc4cfc0e5c5a84a49f71138d"
+    },
+    "stats": {
+      "startTime": "2026-10-24T20:53:29.664Z",
+      "duration": 77185.672,
+      "expected": 34,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "exit": 0,
+    "frozenInputs": 707,
+    "beforeAfterAllHashesExact": true,
+    "runtimeSourceFiles": 258,
+    "runtimeMapsExact": true,
+    "all707MatchFilesAtAudit": true,
+    "allRuntimeSourcesIncluded": true,
+    "baseInputListNamesActual707Cohort": true,
+    "actualFiles": {
+      "web/persistence-tests/local-startup.spec.ts": 30,
+      "web/persistence-tests/online-recovery.spec.ts": 4
+    },
+    "twoNonconsumerOldUISpecsOutsideCohort": true
+  },
+  "originalExecution": {
+    "report": {
+      "path": "artifacts/goal-4/matrix-m03/native-source11-report.json",
+      "sha256": "44b0a2df0a5243723cbb1d6974762c347ddc393fcf96ee39136d00f1b221741a"
+    },
+    "declarations": {
+      "path": "artifacts/goal-4/matrix-m03/native-declared-source11.json",
+      "sha256": "364495ec1b9f88d9527c215dbf235cb85294cc58675ad73b2d9638adee32dab8"
+    },
+    "before": {
+      "path": "artifacts/goal-4/matrix-m03/native-source11-before.json",
+      "sha256": "f7d96d8e4c7328930a700e38fe77409c5ed7df4216b24842098a94bafd836acb"
+    },
+    "after": {
+      "path": "artifacts/goal-4/matrix-m03/native-source11-after.json",
+      "sha256": "ea27a14d2107ab12464816b9200a825cb086d4d24e39cf396bb54cc8dfae2b52"
+    },
+    "runtimeDigest": "3daa6b703dd3e9fee84778e822fc0296b6d4bedee85a2ff6494884f70eecbb5c",
+    "actuallyRan": 332,
+    "files": 26,
+    "frozenInputs": 356,
+    "beforeAfterHashExact": true,
+    "rawDeclarationsExact": true,
+    "allRowsPassedOnceWithoutRetry": true,
+    "selectedForInheritance": 298,
+    "afterSchema": "Historical after repeats unchanged/hashes only, not runtimeSources/digest; no absent field is invented."
+  },
+  "exactDependencyProof": {
+    "priorIndependentProof": {
+      "path": "artifacts/goal-4/ta09/native-source6-verification.json",
+      "sha256": "2e680b071c85b3f427a0ee5d676f8062e41170b9676fcd9762ca857b578b8472"
+    },
+    "historicalASTGraph": {
+      "path": "goal-4/evidence/check-matrix-01/native-dependency-graph-draft.json",
+      "sha256": "6b9dcd800e30a573ddf65a8b63668d3f9b0e0ee5da1381c460c198ccdca94a28"
+    },
+    "repositoryNodes": 202,
+    "unresolved": [],
+    "inheritedClosure": 83,
+    "recomputedBFSFromOriginal24Specs": true,
+    "newTA09ModulesASTRescanned": false,
+    "files": [
+      {
+        "path": "scripts/economy/idle-scenarios.mjs",
+        "sha256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407",
+        "historicalCapture": "M03 enclosing full663 and original copy",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/content/m1.ts",
+        "sha256": "59698c8ad88139e768b674084f24daf258715cd5dbfcc70b6b4f70c3b8492aa3",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/demo.ts",
+        "sha256": "927e40ac1d792afd0e2f28c2cf7bdd55509af07713ef3db116a7a5019ac9307e",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/activity.ts",
+        "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/adventure.ts",
+        "sha256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/ascension.ts",
+        "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/configuration.ts",
+        "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/content.ts",
+        "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/contracts.ts",
+        "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/costs.ts",
+        "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/economy-ledger.ts",
+        "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/engine.ts",
+        "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/errors.ts",
+        "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/events.ts",
+        "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/goals.ts",
+        "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/life-record.ts",
+        "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/mechanisms.ts",
+        "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/milestones.ts",
+        "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/preparation.ts",
+        "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/progression.ts",
+        "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/queries.ts",
+        "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/receipts.ts",
+        "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/story-context.ts",
+        "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/trial-rules.ts",
+        "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/types.ts",
+        "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/full/versions.ts",
+        "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/game/adventure.ts",
+        "sha256": "25097127132e6ddf8f121820b64b0ff40c68f5c746e4f8d11a74dbf6345f434c",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/game/engine.ts",
+        "sha256": "191fff654eb23d99aade8b7bc9ad04a9ba69e303430f164f4f2396c79ab93b7d",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "src/game/types.ts",
+        "sha256": "b34e4fb9876ff51ddf00e00e76e74073301d33e51c06b6ee8d2f26fe0406efab",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "tests/full-route.mjs",
+        "sha256": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/activity-store-harness.ts",
+        "sha256": "7b31eb4d214bca8230e1a61dd1749cd695b68a0eec544241f1eaaf2baac98db7",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/activity-store.spec.ts",
+        "sha256": "c51001a8abf90f0550c72050caf65a72aeb96a46309af5c42036b8afef9c1869",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/activity.spec.ts",
+        "sha256": "0fda75f6be8f03a3abc463fd60131b1fb3ed12da28d03f600577265874746b2b",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/adventure-store.spec.ts",
+        "sha256": "67f8f4693b0fa2736f53cd9d4f593f800eed7628307b42505304bc131d130626",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/adventure-upgrade.spec.ts",
+        "sha256": "31df8552ddfeb04d9f77d07c9c16cd8df0c371c93c910e747bf4ab226794ffe8",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/adventure.spec.ts",
+        "sha256": "6baba86a78196ee6e846b4cef12bb2ef22ef3795b447c7deebe9a12c790eccd8",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/check-art-02-store.spec.ts",
+        "sha256": "89f457e739444a83bf5df5ed91f183018ec445d429dc8d71e45990b9c025d8a7",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/configuration-store.spec.ts",
+        "sha256": "d79b55eb85c875f58a877418f134b9b3715f4b675aed40875021a1af0d68d423",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/configuration.spec.ts",
+        "sha256": "cdc8926daa4ba9ff5192f144bf653d56968e7e001cee94f25506bee0b7fc7f26",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/harness.html",
+        "sha256": "b1d33612637f9f26e94f8982866e28620a57813db1f47e6c5d19a7bfd098b66b",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/history-ui.spec.ts",
+        "sha256": "83697c5c3e63e1ef98e9246ae86715bbc009a8c91a206e255c7a356a4d309067",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/idle-progression-route.spec.ts",
+        "sha256": "afbdd6a10768e8b149a749a00637e9b343bdac3d220b43013450b610ca73c739",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/idle-progression-support.ts",
+        "sha256": "05b9a4e6fb1a71683aa18adda77ea7ce4fef2d57ff4ce0642bd248b5bc60ad0e",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/later-mixed-activity.spec.ts",
+        "sha256": "24de128c92f68421388a98949c8b10782104d6a2a5d011fdcfe87a7a4ac419cf",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/later-mixed-support.ts",
+        "sha256": "20696a51f222400a87a1858489368a03f846fd3722f80b973e9b5ecc757b239e",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/local-experience.spec.ts",
+        "sha256": "5eaf054aed8af7bf46dc37fc84c2d0fcf0e6ca311eb20ff520f91e7ebd5cc0e4",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/milestone-store.spec.ts",
+        "sha256": "6633d0fcace405dcfc7761b72f30b7743a7eb98d4e92fcda35c5da1e92db9f58",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/milestone-support.ts",
+        "sha256": "b37002abfd5f0f39edffe12c31abf1eba3635f6bc31acbc40cfc89d41873051e",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/milestone-upgrade.spec.ts",
+        "sha256": "90599bf879fff23faac79e388d90f027ecc2d0541648f8d75b32c37a10b34047",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/milestone.spec.ts",
+        "sha256": "2eb68f13d6a97dc335b2aa1dfd3c4949a42dfed17f059206ed3f8abdc694fc8e",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/mixed-activity.spec.ts",
+        "sha256": "78c310c1d10f133d27cb532296d46fc329af71110abedb1b33c6984b856a521d",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/positive-cost-battle.ts",
+        "sha256": "ca0db5934289ccbc73c9dbc1c1f812db9d7392a8182cf4c2ea039284de45be0d",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/positive-cost-milestone.ts",
+        "sha256": "a0d9eb409096cb0d6642a99478b9b92c3e57c02ff019b6e9a275c05308b54d5a",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/positive-cost-preparation.ts",
+        "sha256": "4db2d26f5c4259fccbf47d77a2715eb882fdd047dfd602f471a320ca1adac5f4",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/positive-cost-store.spec.ts",
+        "sha256": "23c08d6470ced6ea60f06293c284a4285c36fc8d1751d0c6bc7506d1495518d1",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/positive-cost-support.ts",
+        "sha256": "5d23f5cac2fd56805499d49d987482bf96e2570d179b7944e5ea2d887ab066e2",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/positive-cost.spec.ts",
+        "sha256": "28242239e490fd0b4c47fb3bb3aac7b01bea8eb2e125b4b5e88edb1b9e74555a",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/preparation-activity.spec.ts",
+        "sha256": "dc60f149dd22127c4e4809296ef7a5c9181a4cb01b04217ac040ce6a943528fb",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/production-activity.spec.ts",
+        "sha256": "5e3c3dd68aec762a9ef9676e469d7c5ac97158bd9283b8a28101b433846e7f98",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/source-activity.spec.ts",
+        "sha256": "1d7289fc51cf74d0a1b6c968385bb6363dff4d8931cc05b8e79239bd18d877a8",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/store-lifecycle.spec.ts",
+        "sha256": "7a01eba2bd25819aa714e3df02ba869f44b355d33907607bb78de535786e1e93",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/store-reconnect.spec.ts",
+        "sha256": "9c080b6b3c933f4dcd530597f2d4dc7da268cb592585220461a8dd3a33378bae",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/store-sync-queue.spec.ts",
+        "sha256": "ecb5ecb245189754dfd51f30bcfb1885b36f6aa17a0aa3958071964516a63d8d",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/persistence-tests/support.ts",
+        "sha256": "e2963cdd695a0768211f9c8287564646f56802ccb70c4162445519a600210872",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/ActivityHistory.vue",
+        "sha256": "9ed8e4f3410289a33184b38182c23d2f55f71ca629a1ff0d7f5edec8a0b6e178",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/CataloguePager.vue",
+        "sha256": "b5069cf0f229edb66c1e2779cd3542d98bc8a05e292a485c71c2627a652694c0",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/action-timing.ts",
+        "sha256": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/activity-clock.ts",
+        "sha256": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/activity-persistence.ts",
+        "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/activity-view.ts",
+        "sha256": "8d08ccebf604e2e1d0285045a30bce54b86eaf71e80d1a31529fa8a46e52ace9",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/adventure-view.ts",
+        "sha256": "3362f2731f7597a99810c263af143eff6468d87c2dc4f89f185c0add4a46d354",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/configuration-persistence.ts",
+        "sha256": "a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/full-persistence.ts",
+        "sha256": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/local-events.ts",
+        "sha256": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/local-experience.ts",
+        "sha256": "65614c37cd5931b275208f78aa9bf06f40768ff402a908fb2d2cf28d16e3b9ed",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/local-initialization.ts",
+        "sha256": "26e8355dd614be09111516ba714c65ae958b62a3a869720b23d1c4f246b69996",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/milestone-view.ts",
+        "sha256": "c849797ee14366f00715ee9ab3999bcc3c293996251b4073c7cb4b504ca21022",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/preparation-view.ts",
+        "sha256": "ac0732396ef435359325262ada51dda53b3e28308e2d2add3dc729a8b0375420",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/presentation.ts",
+        "sha256": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/session.ts",
+        "sha256": "76c6968b53c1ca990c4ee4ac4a921e549585338c04b10e31636ed9821f5263c0",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/store.ts",
+        "sha256": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/story-pages.ts",
+        "sha256": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      },
+      {
+        "path": "web/src/use-local-experience.ts",
+        "sha256": "2517ee13410259589b97947e3e8f8bcd2bf890efce729ad78f6016fb7d41f85c",
+        "historicalCapture": "M03 native356",
+        "currentPrePostAndFileExact": true
+      }
+    ],
+    "commonInfrastructure": [
+      {
+        "path": "package.json",
+        "sha256": "0ffa0f4c2df0004f19cd55e04d310fd437da64e6c76833f5249ca203d46398c3",
+        "exact": true
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "d3f1aa6b6a4cca2c3d458a297b2e0320f0bdfa64d01913938c1f44038be143a2",
+        "exact": true
+      },
+      {
+        "path": "web/package.json",
+        "sha256": "9baf1104f5b183d2c40a92b8ae60325df2b0687fa82db440b7931eb2e7b76776",
+        "exact": true
+      },
+      {
+        "path": "web/package-lock.json",
+        "sha256": "d011715fee1a25f0224e7d320a09d96848cab374a394c44062f711f098e21e6d",
+        "exact": true
+      },
+      {
+        "path": "tsconfig.json",
+        "sha256": "3991480c74bfa2182528cb3f071ab1801a5f72252a714b154cbc63785401e4e6",
+        "exact": true
+      },
+      {
+        "path": "web/tsconfig.json",
+        "sha256": "dd84312a03e3fbd8fe765b6b20731124cb0ef34363798aeb81d4ca8ae8cde7ae",
+        "exact": true
+      },
+      {
+        "path": "web/vite.config.ts",
+        "sha256": "f850be6cda43ebf7efcdd54fc321bf2687450917dd6a0bc8a1beef9296f7edd9",
+        "exact": true
+      },
+      {
+        "path": "web/playwright.persistence.config.ts",
+        "sha256": "c6b4221c4a3c0964c89657afb2ea2718b7c3d87f0566c30d78f70900b08352f6",
+        "exact": true
+      },
+      {
+        "path": "web/playwright.idle-persistence.config.ts",
+        "sha256": "93fb050e23801dd601e7970d7a79bf40e983ef2da82ccb20ef7036ef4525648d",
+        "exact": true
+      },
+      {
+        "path": "scripts/dev-web.mjs",
+        "sha256": "29620dc250f281f3a37e029e49c66e49dc91a952c2e88b43c2294922ea23ae66",
+        "exact": true
+      },
+      {
+        "path": "scripts/demo-nodes.mjs",
+        "sha256": "8523f135c748f9240fb0d706e126213872dae91c09c398504a55d57918c52c97",
+        "exact": true
+      },
+      {
+        "path": "scripts/source-identity.mjs",
+        "sha256": "a52e3e167b389aae6c4fa98d07b02a2ae52dbace1ec81d80a5e6f8254e6dcf24",
+        "exact": true
+      },
+      {
+        "path": "web/persistence-tests/harness.html",
+        "sha256": "b1d33612637f9f26e94f8982866e28620a57813db1f47e6c5d19a7bfd098b66b",
+        "exact": true
+      }
+    ],
+    "criticalGameStoreDbClock": [
+      {
+        "path": "src/full/activity.ts",
+        "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+        "exact": true
+      },
+      {
+        "path": "src/full/adventure.ts",
+        "sha256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015",
+        "exact": true
+      },
+      {
+        "path": "src/full/ascension.ts",
+        "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+        "exact": true
+      },
+      {
+        "path": "src/full/configuration.ts",
+        "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+        "exact": true
+      },
+      {
+        "path": "src/full/content.ts",
+        "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+        "exact": true
+      },
+      {
+        "path": "src/full/contracts.ts",
+        "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+        "exact": true
+      },
+      {
+        "path": "src/full/costs.ts",
+        "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+        "exact": true
+      },
+      {
+        "path": "src/full/economy-ledger.ts",
+        "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+        "exact": true
+      },
+      {
+        "path": "src/full/engine.ts",
+        "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+        "exact": true
+      },
+      {
+        "path": "src/full/errors.ts",
+        "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+        "exact": true
+      },
+      {
+        "path": "src/full/events.ts",
+        "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+        "exact": true
+      },
+      {
+        "path": "src/full/goals.ts",
+        "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+        "exact": true
+      },
+      {
+        "path": "src/full/growth.ts",
+        "sha256": "42076ba5b572e519d64c3d85b570b223d36af1dac8510f4dedc928e137beaf26",
+        "exact": true
+      },
+      {
+        "path": "src/full/life-record.ts",
+        "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+        "exact": true
+      },
+      {
+        "path": "src/full/mechanisms.ts",
+        "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+        "exact": true
+      },
+      {
+        "path": "src/full/milestones.ts",
+        "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+        "exact": true
+      },
+      {
+        "path": "src/full/preparation.ts",
+        "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+        "exact": true
+      },
+      {
+        "path": "src/full/progression.ts",
+        "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+        "exact": true
+      },
+      {
+        "path": "src/full/queries.ts",
+        "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+        "exact": true
+      },
+      {
+        "path": "src/full/receipts.ts",
+        "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+        "exact": true
+      },
+      {
+        "path": "src/full/story-context.ts",
+        "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+        "exact": true
+      },
+      {
+        "path": "src/full/trial-rules.ts",
+        "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+        "exact": true
+      },
+      {
+        "path": "src/full/types.ts",
+        "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+        "exact": true
+      },
+      {
+        "path": "src/full/validate-content.ts",
+        "sha256": "72bd297d0f44036ba0b0b84d587f00a11d6b14b8fd2656f0381681d9fefb02d1",
+        "exact": true
+      },
+      {
+        "path": "src/full/versions.ts",
+        "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+        "exact": true
+      },
+      {
+        "path": "web/src/action-timing.ts",
+        "sha256": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897",
+        "exact": true
+      },
+      {
+        "path": "web/src/activity-clock.ts",
+        "sha256": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+        "exact": true
+      },
+      {
+        "path": "web/src/activity-persistence.ts",
+        "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+        "exact": true
+      },
+      {
+        "path": "web/src/full-persistence.ts",
+        "sha256": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+        "exact": true
+      },
+      {
+        "path": "web/src/store.ts",
+        "sha256": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+        "exact": true
+      }
+    ],
+    "harness": {
+      "path": "web/persistence-tests/harness.html",
+      "sha256": "b1d33612637f9f26e94f8982866e28620a57813db1f47e6c5d19a7bfd098b66b"
+    },
+    "stageR3Css": {
+      "current": {
+        "path": "web/src/stage-r3.css",
+        "sha256": "f324bdcca47acbc4f6934bb6c0b82a78a00bf5a9553220402bd99ac16bd81e6f"
+      },
+      "sameAsSource6": true,
+      "inHistorical83Closure": false,
+      "inCurrent258RuntimeAnd707Cohort": true,
+      "consumer": "ActualApp34 current source7; not inherited298"
+    },
+    "supplementaryHistoricalCapture": {
+      "file": "scripts/economy/idle-scenarios.mjs",
+      "sha256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407",
+      "absentFromOriginalNative356": true,
+      "fullBefore": {
+        "path": "artifacts/goal-4/matrix-m03/full-source11-before.json",
+        "sha256": "5f32dd194e2a1f38ad91559926d5b97c7c60526e22bbda2ea6c8269848565187"
+      },
+      "fullAfter": {
+        "path": "artifacts/goal-4/matrix-m03/full-source11-after.json",
+        "sha256": "d76fd6294b28333e16027d87d7f47500c88c825610a684478fb940d296643c86"
+      },
+      "fullCount": 663,
+      "fullHashesExact": true,
+      "enclosesOriginalNativeWindow": true,
+      "beforeRuntimeDigestMatches": true,
+      "originalCopy": {
+        "path": "artifacts/goal-4/matrix-m03/full-source11-inputs/scripts/economy/idle-scenarios.mjs",
+        "sha256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407"
+      },
+      "currentPrePostAndFileExact": true
+    },
+    "source6To7RuntimeDelta": {
+      "files": [
+        "web/src/art03-equipment.css"
+      ],
+      "changedCssOutsideInherited83": true,
+      "allOther257RuntimeFilesExact": true,
+      "allJsTsAndRuleStorageProofExact": true,
+      "currentApp34Reran": true
+    }
+  },
+  "mapping": {
+    "key": "file/title/project",
+    "inherited298Reference": {
+      "path": "artifacts/goal-4/ta09/native-source3-verification.json",
+      "sha256": "9b6556b6d38563fba141daabf8cb3331bc4bf01dffc01aeb38bc7ea97247db0d",
+      "jsonPointer": "/mapping/inherited298",
+      "allNamedKeysRecheckedAgainstOriginalM03Raw": true
+    },
+    "current34": [
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "open: optional local startup has one5000ms budget and cannot permanently block the actual Game App",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/0/tests/0",
+        "originalM03Pointer": "/suites/12/specs/0/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 8844
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "meta: optional local startup has one5000ms budget and cannot permanently block the actual Game App",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/1/tests/0",
+        "originalM03Pointer": "/suites/12/specs/1/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 8855
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "open and first read share the total budget, repeated init shares its Promise, late read cannot publish",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/2/tests/0",
+        "originalM03Pointer": "/suites/12/specs/2/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1583
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "open: edits during initial reading and before reconnect remain temporary until explicitly saved",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/3/tests/0",
+        "originalM03Pointer": "/suites/12/specs/3/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1559
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "meta: edits during initial reading and before reconnect remain temporary until explicitly saved",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/4/tests/0",
+        "originalM03Pointer": "/suites/12/specs/4/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1496
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "reconnect supersedes a held old init; newer edits survive the reconnect read and older completion closes only itself",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/5/tests/0",
+        "originalM03Pointer": "/suites/12/specs/5/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1449
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "open: disposing the scope prevents late preferences and channel resurrection",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/6/tests/0",
+        "originalM03Pointer": "/suites/12/specs/6/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1329
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "meta: disposing the scope prevents late preferences and channel resurrection",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/7/tests/0",
+        "originalM03Pointer": "/suites/12/specs/7/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1334
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "an old held observation queue cannot block reconnect or publish into its new owner",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/8/tests/0",
+        "originalM03Pointer": "/suites/12/specs/8/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1469
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "versionchange revokes owner before a held preference failure, old broadcast and invalidation cannot touch the new connection",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/9/tests/0",
+        "originalM03Pointer": "/suites/12/specs/9/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1398
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "a same-connection old broadcast read failure cannot overwrite a later saved preference result",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/10/tests/0",
+        "originalM03Pointer": "/suites/12/specs/10/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1277
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "cancelling an active native readonly transaction aborts it and cleans the abort listener without mutating metadata",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/11/tests/0",
+        "originalM03Pointer": "/suites/12/specs/11/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1289
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "open: late failed delivery after timeout cannot overwrite a new explicit temporary edit",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/12/tests/0",
+        "originalM03Pointer": "/suites/12/specs/12/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1333
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "meta: late failed delivery after timeout cannot overwrite a new explicit temporary edit",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/13/tests/0",
+        "originalM03Pointer": "/suites/12/specs/13/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1350
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "pre-aborted repository open and readonly calls never start a native operation",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/14/tests/0",
+        "originalM03Pointer": "/suites/12/specs/14/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1400
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "native open cancellation closes a held late success and does not deliver a repository",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/15/tests/0",
+        "originalM03Pointer": "/suites/12/specs/15/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1397
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "cancellation at native upgrade aborts the upgrade instead of committing fresh metadata",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/16/tests/0",
+        "originalM03Pointer": "/suites/12/specs/16/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1243
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "an old observation write failure cannot relabel newer saved preferences as temporary",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/17/tests/0",
+        "originalM03Pointer": "/suites/12/specs/17/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1206
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "clearing records after a reconnect preserves unconfirmed temporary display choices",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/18/tests/0",
+        "originalM03Pointer": "/suites/12/specs/18/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1269
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "a delayed settings success uses newer already-read foreign preferences rather than falsely marking old choices saved",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/19/tests/0",
+        "originalM03Pointer": "/suites/12/specs/19/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1271
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "a late record list failure cannot cover the result of a newer saved settings edit",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/20/tests/0",
+        "originalM03Pointer": "/suites/12/specs/20/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1300
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "a held old record list success cannot resurrect entries after an atomic clear",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/21/tests/0",
+        "originalM03Pointer": "/suites/12/specs/21/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1290
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "a held older broadcast failure cannot overwrite a newer same-edit read success",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/22/tests/0",
+        "originalM03Pointer": "/suites/12/specs/22/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1277
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "held export newer-preview: an obsolete read cannot replace or reopen the latest preview",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/23/tests/0",
+        "originalM03Pointer": "/suites/12/specs/23/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1188
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "held export cancel: an obsolete read cannot replace or reopen the latest preview",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/24/tests/0",
+        "originalM03Pointer": "/suites/12/specs/24/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1609
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "a delayed clear success applies newer read foreign preferences only when the display choices were saved",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/25/tests/0",
+        "originalM03Pointer": "/suites/12/specs/25/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1610
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "a held conflict reread cannot release the busy state or publish over a newer clear operation",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/26/tests/0",
+        "originalM03Pointer": "/suites/12/specs/26/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1434
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "clearing temporary observations invalidates a held conflict reread without replacing the clear feedback",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/27/tests/0",
+        "originalM03Pointer": "/suites/12/specs/27/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1399
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "a held settings-conflict recovery read cannot block explicit reconnect indefinitely",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/28/tests/0",
+        "originalM03Pointer": "/suites/12/specs/28/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1304
+      },
+      {
+        "file": "web/persistence-tests/local-startup.spec.ts",
+        "title": "a conflict recovery read shares metadata request ownership with newer successful broadcasts",
+        "project": "chromium",
+        "currentReportPointer": "/suites/0/specs/29/tests/0",
+        "originalM03Pointer": "/suites/12/specs/29/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1252
+      },
+      {
+        "file": "web/persistence-tests/online-recovery.spec.ts",
+        "title": "real online quota: retry preserves one finite command and its atomic snapshot",
+        "project": "chromium",
+        "currentReportPointer": "/suites/1/specs/0/tests/0",
+        "originalM03Pointer": "/suites/17/specs/0/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 11119
+      },
+      {
+        "file": "web/persistence-tests/online-recovery.spec.ts",
+        "title": "real online quota: reconnect preserves one finite command and its atomic snapshot",
+        "project": "chromium",
+        "currentReportPointer": "/suites/1/specs/1/tests/0",
+        "originalM03Pointer": "/suites/17/specs/1/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 17988
+      },
+      {
+        "file": "web/persistence-tests/online-recovery.spec.ts",
+        "title": "real online lost: retry preserves one finite command and its atomic snapshot",
+        "project": "chromium",
+        "currentReportPointer": "/suites/1/specs/2/tests/0",
+        "originalM03Pointer": "/suites/17/specs/2/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 10200
+      },
+      {
+        "file": "web/persistence-tests/online-recovery.spec.ts",
+        "title": "real online lost: reconnect preserves one finite command and its atomic snapshot",
+        "project": "chromium",
+        "currentReportPointer": "/suites/1/specs/3/tests/0",
+        "originalM03Pointer": "/suites/17/specs/3/tests/0",
+        "timeout": 60000,
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 17289
+      }
+    ],
+    "all332KeysExactAgainstOriginalM03": true,
+    "disjoint": true,
+    "all26NativeSpecSHAExactAgainstM03": true,
+    "allCurrentTimeoutsOriginal60000": true,
+    "sixInheritedIdleRouteTimeoutsOriginal180000": true
+  },
+  "currentBuild": {
+    "path": "artifacts/goal-4/ta09/build-source7.json",
+    "sha256": "5d86a42c27fd7068d23ec7fac5a13c1aba9a991baedc0c734d9ca91b89718640",
+    "runtimeDigest": "29c2c79d0bd6de5e3ae3f798def01cd437f36b7328ed5ed435980a32bf42fc8f",
+    "runtimeSources": 258,
+    "files": 69,
+    "bytes": 8339181,
+    "runtimeMapExactAgainstSource7NativePrePost": true
+  },
+  "boundaries": [
+    "Current34 uses actualsource7 raw/707prepost/29c2c79d identity and77185.672ms. Source6/5/4 raw is not relabelled as source7 execution.",
+    "OriginalM03 really ran332. Only named298/24 inherit through exact83/common13/harness and the enclosing663 idle-scenarios original copy.",
+    "The historical202-node graph was traversed for the24 inherited seeds, not AST rescanned for new TA09 modules. CurrentApp34 and separate new12UI own actual new visual consumers.",
+    "Source6-to7 changes only scoped oldart03 failed-empty-row minimum; it is outside inherited83 but inside current258runtime/707, and App34 source7 actually reran. stage-r3 is identical to source6.",
+    "Exact manifests/configs do not claim historical node_modules/Node/browser binary identity.",
+    "Current815/type/build/new12 and fullold42/pixels are independent evidence. This audit ran no browser/test/build and changed no producer,guard,spec,run or original raw."
+  ]
+}

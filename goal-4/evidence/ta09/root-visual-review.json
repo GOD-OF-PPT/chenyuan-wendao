@@ -1,0 +1,61 @@
+{
+  "recordedAt": "2026-10-24T21:14:59.284272+00:00",
+  "runtimeDigest": "29c2c79d0bd6de5e3ae3f798def01cd437f36b7328ed5ed435980a32bf42fc8f",
+  "images": [
+    {
+      "original": "artifacts/goal-4/ta09/ui-old-A8-source7-results/equipment-objects-ART03-A8-7c3a4-ns-retain-their-real-scopes-chromium/configuration-EQUIP-cancelled-failure.png",
+      "sha256": "04bbb18bb1c5ae597c1c0b6e3d0e4d42108b8dfce7269c13687546112aa25b23",
+      "reviewCopy": "artifacts/goal-4/ta09/visual-source7/configuration-EQUIP-cancelled-failure.jpg",
+      "copySha256": "280513c3891d1a1805babaa7a3da1b900c6def6e763e4591970408a800b2c321",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "format": "lossy JPEG68 original dimensions",
+      "reviewer": "root",
+      "actuallyViewed": true,
+      "reviewMethod": "tools.view_image of original-dimension JPEG68 before this record",
+      "observations": "Whole body/entry/navigation and result separation were read from actual pixels; not inferred from metadata."
+    },
+    {
+      "original": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A6-n-18d46--equipment-remain-unchanged-chromium/native-manual-insight-without-school-or-slot-change.png",
+      "originalSHA256": "62bd46a15ef677ca758d4f56aa0c111d670ef12d0c4f8d948e50032ac883a49a",
+      "reviewCopy": "artifacts/goal-4/ta09/visual-source7/native-manual-insight-without-school-or-slot-change.jpg",
+      "copySHA256": "92d77084a82f62344e93670babf2f0b18b0b498354a455fe73ff440ef47a8531",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "format": "lossy JPEG68 original dimensions",
+      "reviewer": "root",
+      "actuallyViewed": true,
+      "reviewMethod": "tools.view_image of original-dimension JPEG68 before this record",
+      "observations": "Whole body/entry/navigation and result separation were read from actual pixels; not inferred from metadata."
+    },
+    {
+      "original": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A12--1e306-nd-first-real-retry-results-chromium/preference-static-owned-failed-image-real-result.png",
+      "originalSHA256": "234f11caea98fe0d9316d13fa1c087bf6a39cbb15f7219001c132f1429cf3c79",
+      "reviewCopy": "artifacts/goal-4/ta09/visual-source7/preference-static-owned-failed-image-real-result.jpg",
+      "copySHA256": "44cd7c6422b3068d9a2ba7a87a58bc33b8f40ba110f9a5b5a9c3ed3d86b6b5a9",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "format": "lossy JPEG68 original dimensions",
+      "reviewer": "root",
+      "actuallyViewed": true,
+      "reviewMethod": "tools.view_image of original-dimension JPEG68 before this record",
+      "observations": "Whole body/entry/navigation and result separation were read from actual pixels; not inferred from metadata."
+    }
+  ],
+  "observations": [
+    "Cancelled EQUIP save error preserves the full known book/cost/current slot/actions with no body/status overlap.",
+    "Sword-manual saved fact is visible under the talisman school, actual benefit0 is explicit; no automatic school/slot change.",
+    "Failed artifact painting uses a large centered real glyph below the saved-result band."
+  ],
+  "residualArtIssues": [
+    "Existing multi-column panels and repeated summary text still require CHECK-TA-03 and human review.",
+    "Manual page completion leaves substantial unused stage space; prioritize its main decision and scene composition during eight-page review."
+  ],
+  "scope": "3 fresh representative scenes; these are included in18 total unique representative views, not all generated images."
+}

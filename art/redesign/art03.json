@@ -17,13 +17,13 @@
   "files": [
     {
       "path": "web/src/JadeStudyScene.vue",
-      "bytes": 4275,
-      "sha256": "b1c99c776752f7cde543ee62553ae8055c790db76a65838cea48541c9e2b15b5"
+      "bytes": 4782,
+      "sha256": "b4b448fd92b743b1232cb8f2251ac3173e705ebd1ff37a639fc187d302b4bed9"
     },
     {
       "path": "web/src/RelicAtelier.vue",
-      "bytes": 10090,
-      "sha256": "62c25d362b900f36b59ec44066c88655d6c43198d1b0ba4afde0b9abb6c02a99"
+      "bytes": 10268,
+      "sha256": "aca723c007210257bfdf1a99963d155488f08d8b3386c357ef2b53fba28bc6aa"
     },
     {
       "path": "web/src/LoadoutConstellation.vue",
@@ -32,13 +32,13 @@
     },
     {
       "path": "web/src/equipment-effects.ts",
-      "bytes": 4872,
-      "sha256": "28c3c58a677ad562593f8d23f73c186b62a1d67f80298b2ef0165e7d08b5cc14"
+      "bytes": 4893,
+      "sha256": "0946c3b6b76e5ea39ebd80571175e2835ce49abe94fe6499f480b1635a934888"
     },
     {
       "path": "web/src/art03-equipment.css",
-      "bytes": 21017,
-      "sha256": "26c28bc077fff4458c33becc2f8edad3cbf7a6edffb5cdaf4cf2d7f31b006174"
+      "bytes": 18365,
+      "sha256": "773def444d963c2336dc838e6f7b7c408c237e5a404a438b8933405fd640d279"
     }
   ],
   "assets": [

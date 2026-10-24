@@ -1,0 +1,17 @@
+{
+  "recordedAt": "2026-10-24T21:02:57.355935+00:00",
+  "runtimeDigest": "29c2c79d0bd6de5e3ae3f798def01cd437f36b7328ed5ed435980a32bf42fc8f",
+  "explicitFiles": 61,
+  "tests": 815,
+  "pass": 815,
+  "failed": 0,
+  "cancelled": 0,
+  "skipped": 0,
+  "runtimeSources": 258,
+  "inputs": 322,
+  "beforeAfterExact": true,
+  "report": "artifacts/goal-4/ta09/core-source7.log",
+  "sha256": "d207f9858a74b8583eed62a146165453f49a203916ee9d7cdf47b786ed539b53",
+  "rootTypescript": "root-ts-source7.log actual exit0",
+  "scope": "Explicit original61 only; no protected default/full compatibility/performance tests"
+}

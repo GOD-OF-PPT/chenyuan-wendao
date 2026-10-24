@@ -1,0 +1,12 @@
+{
+  "path": "goal-4/evidence/ta09/relic-carving-example.jpg",
+  "sha256": "1a7c118299ded3d41ee077561b911bea727299d74aec59a9460a4b92e94d0525",
+  "sourceReview": "goal-4/evidence/ta09/visual-source7-relic-review.json",
+  "originalPNG": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/jade_seal-distinct-half-inscribed-workpiece.png",
+  "caption": "Actual game rendering from a separate lawful test save at half of one60-second cycle; not user save or concept art.",
+  "lossyJPEG68": true,
+  "dimensions": [
+    1440,
+    900
+  ]
+}

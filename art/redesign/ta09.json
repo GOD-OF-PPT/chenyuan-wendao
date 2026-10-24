@@ -1,0 +1,173 @@
+{
+  "format": "chenyuan-equipment-ta09",
+  "version": 1,
+  "task": "Goal4 TA09",
+  "scope": "Read-only equipment objects and work presentation; no Game, rules, authority, DB or timing changes; not human acceptance.",
+  "budgets": {
+    "nativeBytes": 30000,
+    "newRasterAssets": 0
+  },
+  "files": [
+    {
+      "path": "web/src/JadeEngraving.vue",
+      "bytes": 6403,
+      "sha256": "1c1b94c82d145c504fda7c8de43dffacedcdf1db87c9f9579fcefac3bec15c1a"
+    },
+    {
+      "path": "web/src/StudyQueueRail.vue",
+      "bytes": 4887,
+      "sha256": "2ee9119806fa68b31c97c28d754fe2589981ad58b832a8c1f43287e955c13997"
+    },
+    {
+      "path": "web/src/RelicInscription.vue",
+      "bytes": 8972,
+      "sha256": "d3c2c314e05751de3755d300f070ea7ed0424e5296b7e731372799dc46bbe700"
+    },
+    {
+      "path": "web/src/equipment-choreography.ts",
+      "bytes": 3109,
+      "sha256": "871e41e7555f640fecbc8f26706fac34a5249225a6acb5f1db9c63789a8011bb"
+    },
+    {
+      "path": "web/src/ta09-equipment.css",
+      "bytes": 6560,
+      "sha256": "b155327a35029bd4270e86b27aecfe190e6cd50ef8bbacf2e5a7ff5d927b4ae5"
+    }
+  ],
+  "assets": [],
+  "reusedAssets": [
+    {
+      "id": "frost_sword",
+      "source": {
+        "path": "art/redesign/art03-objects/frost_sword-v2.png",
+        "bytes": 265325,
+        "sha256": "cf7036014cf3bb96583ebfb83afd94ee8d0269dd82c72699336f203da8e31d85"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/frost_sword-v1.webp",
+        "bytes": 10960,
+        "sha256": "0054af06284f62b516d5be2802dbd69fecb4cb31ee8d56f0a7d895568df79943"
+      }
+    },
+    {
+      "id": "jade_seal",
+      "source": {
+        "path": "art/redesign/art03-objects/jade_seal-v1.png",
+        "bytes": 1985699,
+        "sha256": "7253c56040d0e2c4fd8888896e85c0c1999735479f4672fdf0ccfb4e2fd04b5c"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/jade_seal-v1.webp",
+        "bytes": 56116,
+        "sha256": "81aad3db8a19ad6a39b0e54a96254d6fcc94164bdcbbbb87bd0e3f48ef43c49c"
+      }
+    },
+    {
+      "id": "soul_lamp",
+      "source": {
+        "path": "art/redesign/art03-objects/soul_lamp-v1.png",
+        "bytes": 1359219,
+        "sha256": "57029fb4cda9e57050640e6d338056d92768506d7d6299d9e95d8ca4dfaf17fd"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/soul_lamp-v1.webp",
+        "bytes": 42144,
+        "sha256": "d0345b92c5c191f50b831ffdeec27a591785b1948398948daee06df799dff1cc"
+      }
+    },
+    {
+      "id": "cloud_mirror",
+      "source": {
+        "path": "art/redesign/art03-objects/cloud_mirror-v1.png",
+        "bytes": 1055777,
+        "sha256": "a7249e6ebd5e69f910b3191dd3cc8085a383f180a4d7fcf8027d401d9704eb50"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/cloud_mirror-v1.webp",
+        "bytes": 27650,
+        "sha256": "8a8066224ee8487a226dd63ae27f8fd1760a08214cdf93826d8e8d8d7d77a008"
+      }
+    }
+  ],
+  "promptReferences": [],
+  "sourceReferences": [
+    "docs/decisions/0035-equipment-ta09-contract.md",
+    "goal-4/amendments/2026-10-25-ta09.md",
+    "goal-4/research/ta09-design-sources.json"
+  ],
+  "bindings": {
+    "web/src/equipment-effects.ts": [
+      "useActivityPresentation(a=>equipmentActivityMatches(kind,id(),a)",
+      "kind==='forge'?4:5",
+      "cycleCommand.value=p.activity.value?.nextCommand??null;",
+      "command:cycleCommand",
+      "return kind==='forge'?a.version===4&&a.plan.relicId===id:a.version===5&&a.plan.kind===kind",
+      "proof(resolved.nextState)!==proof(g)",
+      "proof(resolved.result)!==proof(r)"
+    ],
+    "web/src/activity-effects.ts": [
+      "extra:0|1|4|5|7=0",
+      "a.version&&[2,3,6,extra].includes(a.version)",
+      "resolve(before,command)",
+      "completeActivity(g,prior,r,",
+      "proof(expected)!==proof(a)"
+    ],
+    "web/src/use-activity-effect.ts": [
+      "extra:0|1|4|5|7=0",
+      "createActivityEffectTracker(matches,extra)",
+      "!store?.activityPausing",
+      "activity.value?.ownerId",
+      "timer=setTimeout(()=>effect.value=null,1400)"
+    ],
+    "web/src/JadeStudyScene.vue": [
+      "const {store,activity,runtime,progress,engaged,effect,command}=cycle;",
+      "useEquipmentCycle(kind.value,id)"
+    ],
+    "web/src/StudyQueueRail.vue": [
+      "projectStudyQueue(props.game,props.draft,props.activity,props.command",
+      "props.activity?.version===5&&props.activity.plan.kind==='learn'&&props.activity.runId===props.game.core.runId",
+      "all.value.slice(page.value*2,page.value*2+2)",
+      "emit('inspect',row.id)",
+      "emit('limits')",
+      "const ownerRun=props.game.core.runId,restored=props.view?.runId===ownerRun?props.view:null;",
+      "pages=ref(restored?{...restored.pages}:{draft:0,saved:0,slots:0})",
+      "if(ownerRun===props.game.core.runId)emit('remember',{runId:ownerRun,domain:domain.value,pages:{...pages.value,[domain.value]:page.value},touched:touched.value});",
+      "function choose(next:QueueDomain){touched.value=true;domain.value=next;remember();}",
+      "function turn(next:number){pages.value[domain.value]=next;remember();}",
+      "pages.value[domain.value]=page.value;remember();",
+      "watch(()=>props.game.core.runId,reset);"
+    ],
+    "web/src/JadeEngraving.vue": [
+      "JADE_FORMS[props.skillId]?.form",
+      "JADE_FORMS[props.skillId]?.variant",
+      "projectStudyForm(props.state,props.progress,props.mastered)",
+      "const locked=computed(()=>visual.value.working||visual.value.phase==='sealing');",
+      "visual.value.phase==='sealing'?0:visual.value.working?visual.value.spread:opened.value?1:0",
+      "visual.value.phase==='sealing'?0:"
+    ],
+    "web/src/RelicInscription.vue": [
+      "projectRelicForm(props.state,['preparing','engraving','forming'].includes(props.state),props.progress,props.owned,props.bound)",
+      "!form.value.working&&!sealed.value",
+      "<slot name=\"artifact\"/>"
+    ],
+    "web/src/equipment-choreography.ts": [
+      "Number.isFinite(n)",
+      "working=state==='reading'",
+      "activity?.version===5&&activity.plan.kind==='learn'&&activity.runId===game.core.runId",
+      "command.runId===game.core.runId",
+      "game.learned.includes(id)",
+      "export const JADE_FORMS",
+      "export const MANUAL_FORM",
+      "export const RELIC_FORMS",
+      "export function projectStudyForm",
+      "export function projectRelicForm",
+      "export function projectStudyQueue"
+    ],
+    "web/src/LearningPlanner.vue": [
+      "const queueView=ref<QueueView|null>(null);",
+      "if(view.runId===props.game.core.runId)queueView.value=view;",
+      "queueView.value=null;delete drafts.skills;delete drafts.manual;defaults();"
+    ]
+  },
+  "userAcceptance": false
+}

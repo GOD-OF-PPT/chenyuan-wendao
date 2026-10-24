@@ -22,7 +22,7 @@ export function useEquipmentCycle(kind:EquipmentKind,id:()=>string){
  watch(p.runtime,r=>{if(!r)cycleCommand.value=null;else if(r.phase==='running')cycleCommand.value=p.activity.value?.nextCommand??null;},{immediate:true,flush:'sync'});
  const engaged=computed(()=>{const c=cycleCommand.value;return !!p.runtime.value&&!!c&&(kind==='forge'?c.type==='FORGE'&&c.relic===id():kind==='learn'?c.type==='LEARN'&&c.skill===id():c.type==='STUDY'&&c.manual===id());});
  const effect=computed(()=>{const e=p.effect.value;return e&&(kind==='forge'?e.result.type==='FORGE'&&e.notice.icon.id===id():kind==='learn'?e.result.type==='LEARN'&&e.notice.icon.id===id():e.result.type==='STUDY'&&id()==='jinghong')?e:null;});
- return {...p,engaged,effect};
+ return {...p,engaged,effect,command:cycleCommand};
 }
 
 /** Private proof for one actual configuration; never changes a command or public record. */

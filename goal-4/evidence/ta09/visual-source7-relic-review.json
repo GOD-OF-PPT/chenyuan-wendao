@@ -1,0 +1,335 @@
+{
+  "format": "chenyuan-ta09-independent-relic-visual-review",
+  "version": 1,
+  "phase": "source7",
+  "recordedAt": "2026-10-24T21:09:48.832075+00:00",
+  "runtimeDigest": "29c2c79d0bd6de5e3ae3f798def01cd437f36b7328ed5ed435980a32bf42fc8f",
+  "build": {
+    "path": "artifacts/goal-4/ta09/build-source7.json",
+    "sha256": "5d86a42c27fd7068d23ec7fac5a13c1aba9a991baedc0c734d9ca91b89718640"
+  },
+  "currentUiBefore": {
+    "path": "artifacts/goal-4/ta09/ui-current-source7-before.json",
+    "sha256": "87433da38821de02d00e0af453d32ba85819dcb0b6372c25e363049cf2fb1450"
+  },
+  "priorActualVisualReview": {
+    "path": "artifacts/goal-4/ta09/visual-source6-relic-review.json",
+    "sha256": "5bd81361b3699d7571497cd5c6981d2ab0f475c68d9fede8fa0a976c619d7600"
+  },
+  "comparison": {
+    "path": "artifacts/goal-4/ta09/visual-source7-inheritance-comparison.json",
+    "sha256": "435132ae5df56e17ae95691d65ef533cd7a5ff722d8ebb77bcbe9c57654cd472"
+  },
+  "scope": "Five changed currentA7 original PNGs freshly viewed one at a time through original-size JPEG68; three unchanged original PNGs inherited only after byte hash verification against the actually reviewed source6 originals. No browser, source/spec/guard changes.",
+  "counts": {
+    "representativeFrames": 8,
+    "freshCurrentPNGViews": 5,
+    "strictOriginalPNGInheritedViews": 3,
+    "imagesPerCall": 1,
+    "claimsAll65": false,
+    "claimsWholeAnimationOrOverallArt": false
+  },
+  "images": [
+    {
+      "scene": "青霜剑半刻纹",
+      "source7PNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/frost_sword-distinct-half-inscribed-workpiece.png",
+        "sha256": "756094af1d24738ee8479abe2d480f911c0b3cb741f8823b0857ce136c9a05dc",
+        "bytes": 1081457,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "source6Original": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/frost_sword-distinct-half-inscribed-workpiece.png",
+        "sha256": "756094af1d24738ee8479abe2d480f911c0b3cb741f8823b0857ce136c9a05dc"
+      },
+      "originalPNGExact": true,
+      "reviewType": "strict original PNG identity inheritance",
+      "freshView": false,
+      "inheritedPriorActualView": true,
+      "priorEvidence": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic-review.json",
+        "sha256": "5bd81361b3699d7571497cd5c6981d2ab0f475c68d9fede8fa0a976c619d7600",
+        "viewOrder": 1
+      },
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic/frost_sword-distinct-half-inscribed-workpiece.jpg",
+        "sha256": "a1d26767930f11e6d69478672cf1da3168adead16badc69dd1899a50b7a891db",
+        "bytes": 116893,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "observations": "剑坯、导轨、柄及刃侧刻刀清楚，30/60秒与淬炼器纹可读；仍标尚未炼成，140灵石/3玉/1妖核、预算与余寿完整。"
+    },
+    {
+      "scene": "玄玉印半刻纹",
+      "source7PNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/jade_seal-distinct-half-inscribed-workpiece.png",
+        "sha256": "452704b84fc830512e6859ec287bce2276c70f0abc8d0ffe4f018356b08a6f32",
+        "bytes": 1091681,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "source6Original": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/jade_seal-distinct-half-inscribed-workpiece.png",
+        "sha256": "7d8bce2218d7ef169684904ff5782bafc435a6adc29037605dce077a6f960714"
+      },
+      "originalPNGExact": false,
+      "reviewType": "fresh current source7 original-size JPEG68 view",
+      "freshView": true,
+      "inheritedPriorActualView": false,
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source7-relic/jade_seal-distinct-half-inscribed-workpiece.jpg",
+        "sha256": "1a7c118299ded3d41ee077561b911bea727299d74aec59a9460a4b92e94d0525",
+        "bytes": 114276,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "observations": "本次fresh：厚方坯顶/双侧面与侧刻刀清楚，仍在淬炼器纹30/60秒、尚未炼成；140灵石/4玉、实际本命空、预算和主导航无可见遮挡。",
+      "jpegMayCoincideWithPriorDespiteDifferentPNG": true
+    },
+    {
+      "scene": "照魂灯半刻纹",
+      "source7PNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/soul_lamp-distinct-half-inscribed-workpiece.png",
+        "sha256": "f1b9a9e8c4300b38185a69ba3af9f0949f7309e0a98abaadfaa3bad0e09eb5e1",
+        "bytes": 1089614,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "source6Original": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/soul_lamp-distinct-half-inscribed-workpiece.png",
+        "sha256": "f1b9a9e8c4300b38185a69ba3af9f0949f7309e0a98abaadfaa3bad0e09eb5e1"
+      },
+      "originalPNGExact": true,
+      "reviewType": "strict original PNG identity inheritance",
+      "freshView": false,
+      "inheritedPriorActualView": true,
+      "priorEvidence": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic-review.json",
+        "sha256": "5bd81361b3699d7571497cd5c6981d2ab0f475c68d9fede8fa0a976c619d7600",
+        "viewOrder": 3
+      },
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic/soul_lamp-distinct-half-inscribed-workpiece.jpg",
+        "sha256": "d57659b19c96bd86abb74eeb92cde173bb94482798c08af6e05730924016ae68",
+        "bytes": 118978,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "observations": "灯座、分离罩肋和工具形态不同于其它三器；未点火，无假收益，两种材料/160灵石/2月/60秒与只铸一件完整。"
+    },
+    {
+      "scene": "流云镜半刻纹",
+      "source7PNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/cloud_mirror-distinct-half-inscribed-workpiece.png",
+        "sha256": "01119fb9e47a4a74621e8e0f3b20b3750f40f6060dd3b9de0ec67f424cfbf763",
+        "bytes": 1097203,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "source6Original": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/cloud_mirror-distinct-half-inscribed-workpiece.png",
+        "sha256": "2b0dec414f769c8ef93e5ba6dbaac27fdfdef73b3f12e25372b55af9bb447278"
+      },
+      "originalPNGExact": false,
+      "reviewType": "fresh current source7 original-size JPEG68 view",
+      "freshView": true,
+      "inheritedPriorActualView": false,
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source7-relic/cloud_mirror-distinct-half-inscribed-workpiece.jpg",
+        "sha256": "3df2011be72e3df1b56290d2ab44b98b81ecabd685f24a9004f5081e93e39d77",
+        "bytes": 119507,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "observations": "本次fresh：镜胚、分段边框及右侧工具可辨，未画成成品或镜中幻境；成本/来源/未装配状态与页内主要说明分开。",
+      "jpegMayCoincideWithPriorDespiteDifferentPNG": true
+    },
+    {
+      "scene": "青霜剑保存封纹",
+      "source7PNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/frost_sword-native-sealing-before-art-is-owned.png",
+        "sha256": "cd22261b3a10053e5c929b22ee238705eb033ad53c90ba37dffa7bed8b294074",
+        "bytes": 1082049,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "source6Original": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/frost_sword-native-sealing-before-art-is-owned.png",
+        "sha256": "1b2c1b6d991995a117d1ea43411ea7db324cca14f468bb91101bf9d3ccdc8a3d"
+      },
+      "originalPNGExact": false,
+      "reviewType": "fresh current source7 original-size JPEG68 view",
+      "freshView": true,
+      "inheritedPriorActualView": false,
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source7-relic/frost_sword-native-sealing-before-art-is-owned.jpg",
+        "sha256": "6c4035b8b7a4e209bb9f685af530040d5b05caf74c7c00a78e65814ebec84361",
+        "bytes": 117728,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "observations": "本次fresh：本轮保存中、完成0/1及0/60秒可读，刀具已退、封纹夹块/底扣出现；仍为工作坯，保存后炼成明确，没有冷成品提前揭示。",
+      "jpegMayCoincideWithPriorDespiteDifferentPNG": false
+    },
+    {
+      "scene": "照魂灯保存封纹",
+      "source7PNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/soul_lamp-native-sealing-before-art-is-owned.png",
+        "sha256": "114bb4c1a57b7de97a03594faa9f5b17501f5fc89325bddac261480b30ae17ff",
+        "bytes": 1088909,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "source6Original": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/soul_lamp-native-sealing-before-art-is-owned.png",
+        "sha256": "2e4abea2cff0ceacc53e37589ba3809eddbc83534af0b8bb64ae7f83a83ae260"
+      },
+      "originalPNGExact": false,
+      "reviewType": "fresh current source7 original-size JPEG68 view",
+      "freshView": true,
+      "inheritedPriorActualView": false,
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source7-relic/soul_lamp-native-sealing-before-art-is-owned.jpg",
+        "sha256": "fb20494b941a11f86e99a3247f0c5969a7e53deae51966b73da55ad3ab248dac",
+        "bytes": 119552,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "observations": "本次fresh：灯罩肋已收拢、刻刀撤下，封纹状态保无火；保存后炼成/尚未炼成与本命空一致，文字、材料、预算/导航没有被物件或封纹遮住。",
+      "jpegMayCoincideWithPriorDespiteDifferentPNG": false
+    },
+    {
+      "scene": "流云镜已炼成未认主",
+      "source7PNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/cloud_mirror-owned-not-automatically-bound.png",
+        "sha256": "796c3f0c01514676eac1270334cc0caab5b844f2afbf944857256892df3174a9",
+        "bytes": 1059830,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "source6Original": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/cloud_mirror-owned-not-automatically-bound.png",
+        "sha256": "0a4502862eddb298bdc6c0018dccf6253a3e9a3b80b58220b350400386de33fb"
+      },
+      "originalPNGExact": false,
+      "reviewType": "fresh current source7 original-size JPEG68 view",
+      "freshView": true,
+      "inheritedPriorActualView": false,
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source7-relic/cloud_mirror-owned-not-automatically-bound.jpg",
+        "sha256": "bbc248c9a4d70535fe356abfa51df1f4db6b917623a61b5e0c0547ea91405f01",
+        "bytes": 115740,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "observations": "本次fresh：冷态成品画及本次已保存条清楚分开；已炼成尚未装备、当前本命空及比较后装备按钮共同说明铸成没有自动认主；不重复炼制说明保留。",
+      "jpegMayCoincideWithPriorDespiteDifferentPNG": false
+    },
+    {
+      "scene": "玄玉印未铸器谱",
+      "source7PNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source7-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/jade_seal-cold-unowned-blueprint.png",
+        "sha256": "1d0f6cebd8ee39f545f40765a78344401dcd21c6f1695f1b1a0a13a8c46129af",
+        "bytes": 1122338,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "source6Original": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/jade_seal-cold-unowned-blueprint.png",
+        "sha256": "1d0f6cebd8ee39f545f40765a78344401dcd21c6f1695f1b1a0a13a8c46129af"
+      },
+      "originalPNGExact": true,
+      "reviewType": "strict original PNG identity inheritance",
+      "freshView": false,
+      "inheritedPriorActualView": true,
+      "priorEvidence": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic-review.json",
+        "sha256": "5bd81361b3699d7571497cd5c6981d2ab0f475c68d9fede8fa0a976c619d7600",
+        "viewOrder": 8
+      },
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic/jade_seal-cold-unowned-blueprint.jpg",
+        "sha256": "993e1e857e141afc8db49f46f1a640e3029deff31bb80a2e4a37d0fa9b45dabb",
+        "bytes": 113410,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "observations": "精细器物画明确标器谱示意尚未炼成；本命空、待铸造及安排铸造玄玉印为当前主要决定，完整材料与只铸一件/预算可读。"
+    }
+  ],
+  "verdict": "No new critical visual obstruction, premature finished-art reveal or automatic binding presentation found in these five fresh and three exact inherited representative frames. Workpiece silhouettes/tool contact, saving withdrawal and real owned-versus-bound presentation remain distinguishable.",
+  "limitations": [
+    "All original source7 PNGs are preserved with SHA256. Some JPEG68 copies happen to match prior lossy copies even when PNGs differ; those rows were freshly viewed and are never labelled original-PNG inheritance.",
+    "Eight representative A7 frames do not certify every transition, all65 captures, all pages/reduced/error/fallback states or fullold42.",
+    "Currentnew12 metadata passed separately; old42 was still active at assignment and is not signed by this image audit.",
+    "Work SVG detail/material remains simpler than the original cold paintings, and the outer multi-panel arrangement retains a workbench quality; the prior overall negative art/gamefeel acceptance remains valid for CHECK-TA-03/human review.",
+    "No compatibility, user-save, environment/performance, reward atomicity, actual hit testing or wholeGame/DB proof is inferred from images. Their original independent assertions and reports remain.",
+    "No source, ledger, guard, test, current save, period or Game was modified while reviewing images."
+  ]
+}

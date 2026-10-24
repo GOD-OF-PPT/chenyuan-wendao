@@ -93,6 +93,8 @@ class InventoryTests(unittest.TestCase):
    ta08=ROOT/'art/redesign/ta08.json'
    if ta08.exists():
     data=json.loads(ta08.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+data['promptReferences'])
+  ta09=ROOT/'art/redesign/ta09.json'
+  if ta09.exists():files.update(ROOT/ref for ref in json.loads(ta09.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -1321,5 +1323,196 @@ class TA08InventoryTests(unittest.TestCase):
   for change in [lambda r:r.update(promptReference='../prompts.json'),lambda r:r.update(referenceImages=[{'path':'/tmp/ref.png'}]),lambda r:r.update(sourcePath='not-original')]:
    self.restore();self.changed_receipt(change)
    with self.assertRaises(AssertionError):self.check()
+
+# TA09 object integrity cases; all earlier339 tests remain unchanged.
+class TA09InventoryTests(unittest.TestCase):
+ def setUp(self):
+  from ta09_inventory import NATIVE,REFS,DEPENDENCIES,LEDGER
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-ta09-negative-');self.root=Path(self.temp.name)
+  names=set(NATIVE+REFS+DEPENDENCIES+[LEDGER]);self.original={p:(ROOT/p).read_bytes()for p in names};self.restore()
+ def tearDown(self):self.temp.cleanup()
+ def restore(self):
+  for name,raw in self.original.items():
+   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True)
+   if p.is_symlink():p.unlink()
+   p.write_bytes(raw)
+ def data(self):return json.loads((self.root/'art/redesign/ta09.json').read_text())
+ def write(self,m):(self.root/'art/redesign/ta09.json').write_text(json.dumps(m))
+ def check(self):
+  from ta09_inventory import validate_ta09
+  from check_inventory import image_info
+  return validate_ta09(self.root,image_info)
+ def reject(self,m):
+  self.write(m)
+  with self.assertRaises(AssertionError):self.check()
+ def changed_source(self,path,text):
+  from ta09_inventory import OLD_CAPS,LEDGER
+  raw=text.encode();(self.root/path).write_bytes(raw)
+  for name in [LEDGER]+[x['ledger']for x in OLD_CAPS]:
+   m=json.loads((self.root/name).read_text());changed=False
+   for row in m['files']:
+    if row['path']==path:row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());changed=True
+   if changed:(self.root/name).write_text(json.dumps(m))
+ def opening(self,path,component):
+  import re
+  text=(self.root/path).read_text();tags=re.findall(r'<'+component+r'(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text)
+  self.assertEqual(len(tags),1);self.assertEqual(text.count(tags[0]),1);return text,tags[0]
+ def test_ta09_real_five_sources_zero_new_images_and_fixed_total(self):
+  from ta09_inventory import NATIVE,LEDGER
+  files,production,total=self.check();self.assertEqual(files,set(NATIVE)|{LEDGER});self.assertEqual(production,0);self.assertEqual(total,sum((self.root/p).stat().st_size for p in NATIVE));self.assertLessEqual(total,30000)
+ def test_ta09_missing_ledger_rejects_present_implementation(self):
+  (self.root/'art/redesign/ta09.json').unlink()
+  with self.assertRaisesRegex(AssertionError,'Unrecorded TA09'):self.check()
+ def test_ta09_header_and_human_boundary_cannot_be_aliases(self):
+  original=self.data()
+  for key,value in [('format','other'),('version',True),('version',1.0),('task','Goal4 ART03'),('scope','New rewards accepted'),('userAcceptance',True),('userAcceptance',0)]:
+   m=copy.deepcopy(original);m[key]=value;self.reject(m)
+ def test_ta09_shape_and_exact_refs_cannot_be_removed(self):
+  original=self.data()
+  for change in [lambda m:m.pop('reusedAssets'),lambda m:m.update(extra=True),lambda m:m.update(sourceReferences=[]),lambda m:m.update(bindings={})]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_ta09_all_budgets_are_fixed_integers(self):
+  original=self.data()
+  for key,value in original['budgets'].items():
+   for bad in [value+1,True,float(value)]:
+    m=copy.deepcopy(original);m['budgets'][key]=bad;self.reject(m)
+ def test_ta09_native_inventory_is_ordered_complete_and_unique(self):
+  original=self.data()
+  for change in [lambda m:m['files'].pop(),lambda m:m['files'].reverse(),lambda m:m['files'].append(copy.deepcopy(m['files'][0])),lambda m:m['files'].__setitem__(1,copy.deepcopy(m['files'][0]))]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_ta09_hash_bytes_and_boolean_aliases_rejected(self):
+  original=self.data()
+  for key,value in [('bytes',True),('bytes',0),('bytes',float(original['files'][0]['bytes'])),('sha256','invalid'),('sha256','0'*64)]:
+   m=copy.deepcopy(original);m['files'][0][key]=value;self.reject(m)
+ def test_ta09_missing_sources_and_refs_rejected(self):
+  from ta09_inventory import NATIVE,REFS
+  for name in [NATIVE[0],NATIVE[-1],REFS[0]]:
+   self.restore();(self.root/name).unlink()
+   with self.subTest(name=name),self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
+ def test_ta09_external_path_and_symlink_cannot_escape(self):
+  m=self.data();m['files'][0]['path']='../escape.vue';self.reject(m);self.restore();name=m['files'][0]['path']='web/src/JadeEngraving.vue'
+  with tempfile.TemporaryDirectory(prefix='ta09-outside-')as outer:
+   target=Path(outer)/'actor.vue';target.write_bytes(self.original[name]);(self.root/name).unlink();(self.root/name).symlink_to(target)
+   with self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
+ def test_ta09_aggregate_native_cap_survives_rehash(self):
+  m=self.data();path=m['files'][-1]['path'];total=sum(x['bytes']for x in m['files']);self.changed_source(path,(self.root/path).read_text()+'\n'*(30001-total))
+  with self.assertRaisesRegex(AssertionError,'native code exceeds fixed budget'):self.check()
+ def test_ta09_zero_new_raster_and_prompt_generation_is_enforced(self):
+  original=self.data()
+  for key,value in [('assets',[{'path':'new.webp'}]),('promptReferences',['fake-prompt.json'])]:
+   m=copy.deepcopy(original);m[key]=value;self.reject(m)
+ def test_ta09_four_reused_objects_cannot_change_order_ids_or_hashes(self):
+  original=self.data()
+  for change in [lambda m:m['reusedAssets'].pop(),lambda m:m['reusedAssets'].reverse(),lambda m:m['reusedAssets'][0].update(id='unknown'),lambda m:m['reusedAssets'][0]['runtime'].update(sha256='0'*64)]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_ta09_reused_runtime_and_source_bytes_are_real(self):
+  for role in ['source','runtime']:
+   self.restore();m=self.data();p=self.root/m['reusedAssets'][0][role]['path'];raw=p.read_bytes();p.write_bytes(b'INVALID!'+raw[8:])
+   with self.subTest(role=role),self.assertRaisesRegex(AssertionError,'hash changed'):self.check()
+ def test_ta09_old_caps_and_files_cannot_be_increased_or_moved(self):
+  from ta09_inventory import OLD_CAPS
+  for old in OLD_CAPS:
+   for mode in ['cap','files']:
+    self.restore();p=self.root/old['ledger'];m=json.loads(p.read_text())
+    if mode=='cap':m[old['key']]+=1
+    else:m['files'].pop()
+    p.write_text(json.dumps(m))
+    with self.subTest(ledger=old['ledger'],mode=mode),self.assertRaisesRegex(AssertionError,'old cap|moved old implementation'):self.check()
+ def test_ta09_commented_import_or_opening_tag_is_not_a_live_child(self):
+  from ta09_inventory import CONSUMERS
+  for row in CONSUMERS:
+   self.restore();path=row['host'];name=row['component'];text,tag=self.opening(path,name);self.changed_source(path,text.replace(tag,'<!--'+tag+'-->',1))
+   with self.subTest(component=name),self.assertRaises(AssertionError):self.check()
+ def test_ta09_trusted_props_and_readonly_events_are_real_attributes(self):
+  import re
+  from ta09_inventory import CONSUMERS
+  self.assertGreaterEqual(len(CONSUMERS),3)
+  for row in CONSUMERS:
+   for attr,expected in row['attrs'].items():
+    self.restore();path=row['host'];text,tag=self.opening(path,row['component']);pattern=re.escape(attr)+r'=("|\')(.*?)\1';matches=list(re.finditer(pattern,tag));self.assertEqual(len(matches),1);found=matches[0];self.assertEqual(found[2],expected)
+    replacement='undefined'if expected!='undefined'else'null';changed=tag[:found.start(2)]+replacement+tag[found.end(2):];self.assertNotEqual(changed,tag);self.changed_source(path,text.replace(tag,changed,1))
+    with self.subTest(component=row['component'],attr=attr),self.assertRaises(AssertionError):self.check()
+
+  from ta09_inventory import Tags
+  for row in CONSUMERS:
+   for slot in row.get('requiredSlots',[]):
+    for misplaced in [False,True]:
+     self.restore();path=row['host'];text=(self.root/path).read_text();openings=re.findall(r'<template(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text);tags=[tag for tag in openings if any(name=='template'and'#'+slot in attrs for name,attrs in Tags('<template>'+tag+'</template>').nodes)];self.assertEqual(len(tags),1);tag=tags[0];self.assertEqual(text.count(tag),1);changed=text.replace(tag,tag.replace('#'+slot,'#detached-'+slot,1),1)
+     if misplaced:
+      end=changed.rfind('</template>');self.assertGreater(end,0);changed=changed[:end]+tag+'<span>unrelated sibling</span></template>'+changed[end:]
+     else:changed+='\n<!--'+tag+'-->'
+     self.changed_source(path,changed)
+     with self.subTest(component=row['component'],slot=slot,misplaced=misplaced),self.assertRaisesRegex(AssertionError,'content slot|jade result'):self.check()
+  path='web/src/JadeEngraving.vue';token='<span class="ta09-jade-result"><slot name="result"/></span>'
+  for outside in [False,True]:
+   self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);changed='<span class="ta09-jade-result"></span><slot name="result"/>'if outside else'<span class="ta09-jade-result"><slot name="detached-result"/></span><!--<slot name="result"/>-->';self.changed_source(path,text.replace(token,changed,1))
+   with self.subTest(outside=outside),self.assertRaisesRegex(AssertionError,'jade result slot'):self.check()
+ def test_ta09_freeze_command_and_full_proof_cannot_be_detached(self):
+  from ta09_inventory import BINDINGS
+  for path,tokens in BINDINGS.items():
+   for token in tokens:
+    if path not in ['web/src/equipment-effects.ts','web/src/activity-effects.ts','web/src/use-activity-effect.ts']:continue
+    self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);self.changed_source(path,text.replace(token,'detached-proof',1))
+    with self.subTest(path=path,token=token),self.assertRaisesRegex(AssertionError,'formal proof or consumer'):self.check()
+ def test_ta09_children_and_projection_cannot_introduce_io_clocks_or_rewards(self):
+  from ta09_inventory import NATIVE
+  for path in NATIVE[:4]:
+   for expression in ['setTimeout(()=>{},1)','requestAnimationFrame(()=>{})','Date.now()','indexedDB.open("hidden")','resolve(before,command)','useEquipmentCycle("learn",()=>"sword_mind")','game.core.player.stones=999']:
+    self.restore();self.changed_source(path,(self.root/path).read_text()+'\n'+expression)
+    with self.subTest(path=path,expression=expression),self.assertRaisesRegex(AssertionError,'Store/IO|IO, clocks|mutates Game'):self.check()
+ def test_ta09_real_twelve_jade_map_and_four_relic_map_cannot_be_unused_literals(self):
+  from ta09_inventory import NATIVE
+  path=NATIVE[3]
+  for token in ['sword_mind','talisman_return','frost_sword','cloud_mirror']:
+   self.restore();text=(self.root/path).read_text();self.assertEqual(len(__import__('re').findall(r'\b'+token+r'\s*:',text)),1);changed=__import__('re').sub(r'\b'+token+r'(?=\s*:)',token+'_detached',text,count=1);self.changed_source(path,changed+'\n/* '+token+' */')
+   with self.subTest(token=token),self.assertRaisesRegex(AssertionError,'twelve jade|four distinct relic'):self.check()
+ def test_ta09_all_shape_branches_must_be_rendered_not_commented(self):
+  from ta09_inventory import FORM_CONSUMERS
+  self.assertTrue(FORM_CONSUMERS)
+  for row in FORM_CONSUMERS:
+   self.restore();path=row['source'];text=(self.root/path).read_text();tags=__import__('re').findall(r'<'+row['tag']+r'(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text);from ta09_inventory import Tags
+   matching=[tag for tag in tags if any(name==row['tag']and all(k in attrs and attrs[k]==v for k,v in row['attrs'].items())for name,attrs in Tags('<template>'+tag+'</template>').nodes)];self.assertEqual(len(matching),1);tag=matching[0];self.assertEqual(text.count(tag),1);self.changed_source(path,text.replace(tag,'<!--'+tag+'-->',1))
+   with self.subTest(form=row['form']),self.assertRaisesRegex(AssertionError,'real SVG shape'):self.check()
+ def test_ta09_stylesheet_import_must_be_a_real_consumer(self):
+  import re
+  from ta09_inventory import STYLESHEET_HOSTS
+  count=0
+  for path in STYLESHEET_HOSTS:
+   text=(self.root/path).read_text();changed,n=re.subn(r'import\s+[\'\"]\./ta09-equipment\.css[\'\"];?','',text);count+=n
+   if n:self.changed_source(path,changed)
+  self.assertGreater(count,0)
+  with self.assertRaisesRegex(AssertionError,'stylesheet is not actually consumed'):self.check()
+
+ def test_ta09_queue_view_cannot_cache_command_runtime_or_game(self):
+  path='web/src/equipment-choreography.ts';token='touched:boolean};'
+  for field in ["command:Activity['nextCommand']",'runtime:unknown','game:Game']:
+   self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);self.changed_source(path,text.replace(token,'touched:boolean;'+field+'};',1))
+   with self.subTest(field=field),self.assertRaisesRegex(AssertionError,'QueueView must contain only readonly'):self.check()
+ def test_ta09_queue_view_restore_owner_emit_reset_and_page_clamp_are_real(self):
+  from ta09_inventory import VIEW_BINDINGS
+  for path,tokens in VIEW_BINDINGS.items():
+   for token in tokens:
+    if path.endswith('JadeEngraving.vue'):continue
+    self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);self.changed_source(path,text.replace(token,'detached-view-owner',1))
+    with self.subTest(path=path,token=token),self.assertRaisesRegex(AssertionError,'formal proof or consumer'):self.check()
+ def test_ta09_sealing_wins_open_preference_and_real_queue_entry_pagers_remain(self):
+  from ta09_inventory import VIEW_BINDINGS,Tags
+  path='web/src/JadeEngraving.vue';token=VIEW_BINDINGS[path][0];text=(self.root/path).read_text();self.assertEqual(text.count(token),1);self.changed_source(path,text.replace(token,'',1))
+  with self.assertRaisesRegex(AssertionError,'formal proof or consumer'):self.check()
+  for tid in ['queue-prev','queue-next','learning-plan-open']:
+   self.restore();path='web/src/StudyQueueRail.vue'if tid!='learning-plan-open'else'web/src/LearningPlanner.vue';text=(self.root/path).read_text();element='div'if tid=='queue-next'else'button';openings=__import__('re').findall(r'<'+element+r'(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text)
+   tags=[tag for tag in openings if any(name==element and(attrs.get('class')=='ta09-queue-page'if tid=='queue-next'else attrs.get('data-testid')==tid)for name,attrs in Tags('<template>'+tag+'</template>').nodes)];self.assertEqual(len(tags),1);tag=tags[0];self.assertEqual(text.count(tag),1)
+   old='v-if="pageCount>1"'if tid!='learning-plan-open'else'v-if="mode===\'manual\'"';self.assertEqual(tag.count(old),1);changed=tag.replace(old,'v-if="true"',1);self.changed_source(path,text.replace(tag,changed,1))
+   with self.subTest(tid=tid),self.assertRaisesRegex(AssertionError,'pagination|real queue/manual'):self.check()
+
+  path='web/src/JadeEngraving.vue';self.restore();text=(self.root/path).read_text();token=':opened.value?1:0';self.assertEqual(text.count(token),1);self.changed_source(path,text.replace(token,':props.mastered||opened.value?1:0',1))
+  with self.assertRaisesRegex(AssertionError,'formal proof or consumer'):self.check()
+  self.restore();text,tag=self.opening(path,'button');self.assertIn('data-testid="jade-object-inspect"',tag);self.assertEqual(tag.count(':disabled="locked"'),1);self.changed_source(path,text.replace(tag,tag.replace(':disabled="locked"',':disabled="false"',1),1))
+  with self.assertRaisesRegex(AssertionError,'busy/open'):self.check()
+  from ta09_inventory import REDUCED_SPREAD_RULES,css_rules
+  path='web/src/ta09-equipment.css'
+  for expected in REDUCED_SPREAD_RULES:
+   self.restore();text=(self.root/path).read_text();rules=[rule for rule in css_rules(text)if rule['selector']==expected['selector']and rule['contexts']==expected['contexts']];self.assertEqual(len(rules),1);rule=rules[0];selector=text[rule['start']:rule['stop']];self.assertEqual(selector.count('[data-working=true]'),1);changed=text[:rule['start']]+selector.replace('[data-working=true]','',1)+text[rule['stop']:];self.changed_source(path,changed)
+   with self.subTest(selector=expected['selector'],contexts=expected['contexts']),self.assertRaisesRegex(AssertionError,'reduced-motion spread override'):self.check()
 
 if __name__=='__main__':unittest.main()

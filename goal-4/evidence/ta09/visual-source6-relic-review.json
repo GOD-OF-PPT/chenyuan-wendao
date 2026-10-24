@@ -1,0 +1,295 @@
+{
+  "format": "chenyuan-ta09-independent-relic-visual-review",
+  "version": 1,
+  "recordedAt": "2026-10-24T20:47:38.837494+00:00",
+  "phase": "source6",
+  "origin": {
+    "build": {
+      "path": "artifacts/goal-4/ta09/build-source6.json",
+      "sha256": "b3275f33322d3f3a54fc026ac06942518d05ba1834d0759bd0d4de35b1a42ad7",
+      "runtimeDigest": "893089e5db3f597db21d3b01d4223af8cce32fdba6464a4e93c688003d98ce76"
+    },
+    "resultsDirectory": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium",
+    "case": "TA09-A7 current source6",
+    "uiBefore": {
+      "path": "artifacts/goal-4/ta09/ui-current-source6-before.json",
+      "sha256": "66b75cad5a4a8977abda6f4f0ecb6cf9b6ed0f0ec05e05e814b9aa3cf5002ef0",
+      "runtimeDigest": "893089e5db3f597db21d3b01d4223af8cce32fdba6464a4e93c688003d98ce76",
+      "time": "2026-10-24T20:34:37.398Z"
+    }
+  },
+  "scope": "Eight explicitly authorized currentA7 PNGs were freshly viewed one by one through original-size JPEG68 copies. No browser/tests/source edits.",
+  "counts": {
+    "freshOriginalPNGsReviewedViaJPEG": 8,
+    "inheritedPNGReviews": 0,
+    "imagesPerCall": 1,
+    "claimsAll65": false,
+    "claimsWholeAnimation": false,
+    "claimsWholeArtOrHumanAcceptance": false
+  },
+  "images": [
+    {
+      "viewOrder": 1,
+      "scene": "青霜剑半刻纹",
+      "originalPNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/frost_sword-distinct-half-inscribed-workpiece.png",
+        "sha256": "756094af1d24738ee8479abe2d480f911c0b3cb741f8823b0857ce136c9a05dc",
+        "bytes": 1081457,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic/frost_sword-distinct-half-inscribed-workpiece.jpg",
+        "sha256": "a1d26767930f11e6d69478672cf1da3168adead16badc69dd1899a50b7a891db",
+        "bytes": 116893,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "actuallyViewed": true,
+      "viewMethod": "Fresh individual original-size JPEG68; one image per tool call, not a hash-only or bulk-image review.",
+      "observations": "剑坯、导轨、柄及刃侧刻刀清楚，30/60秒与淬炼器纹可读；仍标尚未炼成，140灵石/3玉/1妖核、预算与余寿完整。",
+      "collisionObservation": "This captured frame shows no workpiece/tool/result text covering the full description, actual slot, costs/materials, budget controls or eight-entry navigation. Visual observation does not replace hard geometry/hit/DB assertions."
+    },
+    {
+      "viewOrder": 2,
+      "scene": "玄玉印半刻纹",
+      "originalPNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/jade_seal-distinct-half-inscribed-workpiece.png",
+        "sha256": "7d8bce2218d7ef169684904ff5782bafc435a6adc29037605dce077a6f960714",
+        "bytes": 1091683,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic/jade_seal-distinct-half-inscribed-workpiece.jpg",
+        "sha256": "1a7c118299ded3d41ee077561b911bea727299d74aec59a9460a4b92e94d0525",
+        "bytes": 114276,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "actuallyViewed": true,
+      "viewMethod": "Fresh individual original-size JPEG68; one image per tool call, not a hash-only or bulk-image review.",
+      "observations": "厚方玉坯顶面及双侧面、局部刻纹与右侧刻刀可辨；140灵石/4玉明确，本命仍空。",
+      "collisionObservation": "This captured frame shows no workpiece/tool/result text covering the full description, actual slot, costs/materials, budget controls or eight-entry navigation. Visual observation does not replace hard geometry/hit/DB assertions."
+    },
+    {
+      "viewOrder": 3,
+      "scene": "照魂灯半刻纹",
+      "originalPNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/soul_lamp-distinct-half-inscribed-workpiece.png",
+        "sha256": "f1b9a9e8c4300b38185a69ba3af9f0949f7309e0a98abaadfaa3bad0e09eb5e1",
+        "bytes": 1089614,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic/soul_lamp-distinct-half-inscribed-workpiece.jpg",
+        "sha256": "d57659b19c96bd86abb74eeb92cde173bb94482798c08af6e05730924016ae68",
+        "bytes": 118978,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "actuallyViewed": true,
+      "viewMethod": "Fresh individual original-size JPEG68; one image per tool call, not a hash-only or bulk-image review.",
+      "observations": "灯座、分离罩肋和工具形态不同于其它三器；未点火，无假收益，两种材料/160灵石/2月/60秒与只铸一件完整。",
+      "collisionObservation": "This captured frame shows no workpiece/tool/result text covering the full description, actual slot, costs/materials, budget controls or eight-entry navigation. Visual observation does not replace hard geometry/hit/DB assertions."
+    },
+    {
+      "viewOrder": 4,
+      "scene": "流云镜半刻纹",
+      "originalPNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/cloud_mirror-distinct-half-inscribed-workpiece.png",
+        "sha256": "2b0dec414f769c8ef93e5ba6dbaac27fdfdef73b3f12e25372b55af9bb447278",
+        "bytes": 1097204,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic/cloud_mirror-distinct-half-inscribed-workpiece.jpg",
+        "sha256": "3df2011be72e3df1b56290d2ab44b98b81ecabd685f24a9004f5081e93e39d77",
+        "bytes": 119507,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "actuallyViewed": true,
+      "viewMethod": "Fresh individual original-size JPEG68; one image per tool call, not a hash-only or bulk-image review.",
+      "observations": "镜胚、分段铜框与右侧刻刀明确，无伪造镜中幻境；仍未炼成，费用、来源与预算可读。",
+      "collisionObservation": "This captured frame shows no workpiece/tool/result text covering the full description, actual slot, costs/materials, budget controls or eight-entry navigation. Visual observation does not replace hard geometry/hit/DB assertions."
+    },
+    {
+      "viewOrder": 5,
+      "scene": "青霜剑保存封纹",
+      "originalPNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/frost_sword-native-sealing-before-art-is-owned.png",
+        "sha256": "1b2c1b6d991995a117d1ea43411ea7db324cca14f468bb91101bf9d3ccdc8a3d",
+        "bytes": 1082053,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic/frost_sword-native-sealing-before-art-is-owned.jpg",
+        "sha256": "330fec8b59bbf40a5326e3398d5efd9dd41f9d6ed1d89b51087ae893d763f53d",
+        "bytes": 117754,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "actuallyViewed": true,
+      "viewMethod": "Fresh individual original-size JPEG68; one image per tool call, not a hash-only or bulk-image review.",
+      "observations": "顶部保存中且完成0/1，局部0/60秒并说明保存后炼成；刀具撤下，封纹夹块/底扣出现，仍为工作坯而非冷态成品画。",
+      "collisionObservation": "This captured frame shows no workpiece/tool/result text covering the full description, actual slot, costs/materials, budget controls or eight-entry navigation. Visual observation does not replace hard geometry/hit/DB assertions."
+    },
+    {
+      "viewOrder": 6,
+      "scene": "照魂灯保存封纹",
+      "originalPNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/soul_lamp-native-sealing-before-art-is-owned.png",
+        "sha256": "2e4abea2cff0ceacc53e37589ba3809eddbc83534af0b8bb64ae7f83a83ae260",
+        "bytes": 1088914,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic/soul_lamp-native-sealing-before-art-is-owned.jpg",
+        "sha256": "ecf90a9f6aa4595442134cdeb137e76e7c227cd9401b2b75a896c6cdfc941fbc",
+        "bytes": 119553,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "actuallyViewed": true,
+      "viewMethod": "Fresh individual original-size JPEG68; one image per tool call, not a hash-only or bulk-image review.",
+      "observations": "罩肋向灯座收拢、刻刀撤下、封纹件可辨，仍无火；保存后炼成与尚未炼成明确，没有提前显示精细成品画。",
+      "collisionObservation": "This captured frame shows no workpiece/tool/result text covering the full description, actual slot, costs/materials, budget controls or eight-entry navigation. Visual observation does not replace hard geometry/hit/DB assertions."
+    },
+    {
+      "viewOrder": 7,
+      "scene": "流云镜已炼成未认主",
+      "originalPNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/cloud_mirror-owned-not-automatically-bound.png",
+        "sha256": "0a4502862eddb298bdc6c0018dccf6253a3e9a3b80b58220b350400386de33fb",
+        "bytes": 1060263,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic/cloud_mirror-owned-not-automatically-bound.jpg",
+        "sha256": "a68cab4a8271b11cf1c24da994769e6b5e46f5a019bc8bd526d11fea76198359",
+        "bytes": 115968,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "actuallyViewed": true,
+      "viewMethod": "Fresh individual original-size JPEG68; one image per tool call, not a hash-only or bulk-image review.",
+      "observations": "冷态成品画已出现，保存条与器物/正文分开；已炼成尚未装备、实际本命仍空、比较后装备三者清楚，不重复炼制说明保留。",
+      "collisionObservation": "This captured frame shows no workpiece/tool/result text covering the full description, actual slot, costs/materials, budget controls or eight-entry navigation. Visual observation does not replace hard geometry/hit/DB assertions."
+    },
+    {
+      "viewOrder": 8,
+      "scene": "玄玉印未铸器谱",
+      "originalPNG": {
+        "path": "artifacts/goal-4/ta09/ui-current-source6-results/equipment-actors-TA09-A7-f-144dd--reveal-their-real-cold-art-chromium/jade_seal-cold-unowned-blueprint.png",
+        "sha256": "1d0f6cebd8ee39f545f40765a78344401dcd21c6f1695f1b1a0a13a8c46129af",
+        "bytes": 1122338,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "preserved": true
+      },
+      "viewedJPEG": {
+        "path": "artifacts/goal-4/ta09/visual-source6-relic/jade_seal-cold-unowned-blueprint.jpg",
+        "sha256": "993e1e857e141afc8db49f46f1a640e3029deff31bb80a2e4a37d0fa9b45dabb",
+        "bytes": 113410,
+        "dimensions": [
+          1440,
+          900
+        ],
+        "quality": 68,
+        "lossy": true,
+        "resized": false
+      },
+      "actuallyViewed": true,
+      "viewMethod": "Fresh individual original-size JPEG68; one image per tool call, not a hash-only or bulk-image review.",
+      "observations": "精细器物画明确标器谱示意尚未炼成；本命空、待铸造及安排铸造玄玉印为当前主要决定，完整材料与只铸一件/预算可读。",
+      "collisionObservation": "This captured frame shows no workpiece/tool/result text covering the full description, actual slot, costs/materials, budget controls or eight-entry navigation. Visual observation does not replace hard geometry/hit/DB assertions."
+    }
+  ],
+  "verdict": "No new critical obstruction or premature finished-art/binding visual was found in these eight captures. Four workpiece silhouettes, active tool positions, saving withdrawal and actual owned/not-bound presentation are distinguishable. This verdict is limited to the eight representative captured frames.",
+  "residualArtObservations": [
+    {
+      "blocking": false,
+      "finding": "原生工作物件的材质与雕刻细节明显简于原冷态绘画，工作/成品之间仍有细节密度和画风差异，不据八帧称美术一致性已获认可。"
+    },
+    {
+      "blocking": false,
+      "finding": "本组物件和文字可读，但外层仍以较重的矩形容器并列目录、主体、材料、配装与预算；不能以局部物件改善推翻用户此前“像工作台”的整体负面验收。CHECK-TA-03八页及真人反馈仍需继续判断。"
+    },
+    {
+      "blocking": false,
+      "finding": "刻刀与封纹件为简洁原生形态/阶段姿态，不冒称逐帧、骨骼或完整物理锻造动画。"
+    }
+  ],
+  "limits": [
+    "Only the selected four half-work pieces, two sealing captures, one owned/not-bound and one blueprint were viewed; all other frames/pages/error/reduced/fallback/animation times remain outside this visual review.",
+    "No claim of all65 PNGs, complete new12/old42 UI or overallart acceptance. Their raw final results are root-owned; pending at assignment.",
+    "Original PNGs are preserved. JPEG68 is a lossy viewing copy at1440x900 with no resize. Precise fonts/extents/hit/ancestors, completeGame/Activity/DB/receipts and deadlines retain separate assertions.",
+    "The shared fixed-desktop test fixture is not a user save, compatibility run or environment/performance test.",
+    "Images cannot prove atomic rewards/deductions or no replay; code/native/UI evidence owns those facts.",
+    "No source, ledger, guard, test, progress, period or Game was changed during image review."
+  ]
+}
