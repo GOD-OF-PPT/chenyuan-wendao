@@ -1,0 +1,100 @@
+{
+  "id": "jade-cold-v1",
+  "sourceId": "jade",
+  "promptKey": "jade",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-e89e4ccb-fa3c-47ab-b153-d22456aef8c2.png",
+  "savedPath": "art/redesign/ta08-resources/jade-cold-v1.png",
+  "sourceSHA256": "d8439189a2bc7fad4598252b8ce22f404d59744b7f042741d164284c037112ab",
+  "copiedUnchanged": true,
+  "source": {
+    "path": "art/redesign/ta08-resources/jade-cold-v1.png",
+    "bytes": 2400721,
+    "sha256": "d8439189a2bc7fad4598252b8ce22f404d59744b7f042741d164284c037112ab",
+    "dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "alpha": true,
+    "format": "png"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/sources/jade-cold-v1.webp",
+    "bytes": 64378,
+    "sha256": "decbbda3867443a679744416cc05387e19bb7bbb8e124029982af6e233462fdd",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "alphaProof": {
+    "transparentPixels": 739298,
+    "solidPixels": 803471,
+    "intermediatePixels": 29747,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 122896,
+    "solidPixels": 133542,
+    "intermediatePixels": 5706,
+    "min": 0,
+    "max": 254
+  },
+  "sourceAlphaBBox": [
+    0,
+    17,
+    1240,
+    1254
+  ],
+  "runtimeAlphaBBox": [
+    0,
+    8,
+    500,
+    508
+  ],
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "promptReference": "art/redesign/receipts/ta08-resource-prompts.json",
+  "promptSHA256": "d04c3949f42606e83e483d634c7d1e9c8b6cd3fd1b7c57ece3ebd864d7626c94",
+  "promptDocumentSHA256": "b8a939c8663aba88c1f24ddc8decdad4626d1427f379dfe87813363f17cdc671",
+  "referenceImages": [],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "root source pixel inspection, not user art acceptance",
+    "observation": "Rough dark stone with embedded pale jade seams/facets and moss, no tool or damage state. Root actually inspected generated source pixels in a batch of at most two. No text/UI/person/tool/motion reward or rectangular backdrop seen. Requested central72-percent margin was not fully achieved; original retained and actual bbox recorded, drawing containment must be checked in the real stage. Source art only, not human acceptance."
+  },
+  "exportProof": {
+    "sourceUnchanged": true,
+    "runtimeUnchanged": true,
+    "reencodedBytes": 64378,
+    "reencodedSHA256": "decbbda3867443a679744416cc05387e19bb7bbb8e124029982af6e233462fdd",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+  },
+  "decodeProof": {
+    "decoder": "Pillow",
+    "sourceRGBASHA256": "cc847d97db41a73f4ac9d26995194c7d32ccaff15f54bd525b083cfb774f2e3f",
+    "runtimeRGBASHA256": "a550ae5f80360d0578ebd2743a0b277eb412f812a3727255dce9f9978927ab96",
+    "alphaDefinitions": {
+      "transparentPixels": "alpha=0",
+      "solidPixels": "alpha>=250",
+      "intermediatePixels": "1<=alpha<250"
+    }
+  },
+  "userAcceptance": false
+}

@@ -1,0 +1,100 @@
+{
+  "id": "dao-cold-v1",
+  "sourceId": "dao",
+  "promptKey": "dao",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-e08a18f4-600c-4a03-8a54-8a62208c0288.png",
+  "savedPath": "art/redesign/ta08-resources/dao-cold-v1.png",
+  "sourceSHA256": "f2e9a9b0662b3a97476df3c16b99e5f99f7498de96783171e5f161641871cc72",
+  "copiedUnchanged": true,
+  "source": {
+    "path": "art/redesign/ta08-resources/dao-cold-v1.png",
+    "bytes": 2169595,
+    "sha256": "f2e9a9b0662b3a97476df3c16b99e5f99f7498de96783171e5f161641871cc72",
+    "dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "alpha": true,
+    "format": "png"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/sources/dao-cold-v1.webp",
+    "bytes": 60950,
+    "sha256": "62903f5b7056ba61b225d8294865fe9e8300334dec1b9ef5fca64946a6192edf",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "alphaProof": {
+    "transparentPixels": 828444,
+    "solidPixels": 692094,
+    "intermediatePixels": 51978,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 137770,
+    "solidPixels": 114930,
+    "intermediatePixels": 9444,
+    "min": 0,
+    "max": 254
+  },
+  "sourceAlphaBBox": [
+    0,
+    19,
+    1238,
+    1254
+  ],
+  "runtimeAlphaBBox": [
+    0,
+    15,
+    496,
+    512
+  ],
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "promptReference": "art/redesign/receipts/ta08-resource-prompts.json",
+  "promptSHA256": "b90c5e7f3b5b116a7dd7eecbf8c846ca7d8489ec3ed76eeb2d8bb6f6586fa1f2",
+  "promptDocumentSHA256": "b8a939c8663aba88c1f24ddc8decdad4626d1427f379dfe87813363f17cdc671",
+  "referenceImages": [],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "root source pixel inspection, not user art acceptance",
+    "observation": "Weathered contemplation basin/back stone with pale jade/old-gold grains; unlettered, no floating sand. Root actually inspected generated source pixels in a batch of at most two. No text/UI/person/tool/motion reward or rectangular backdrop seen. Requested central72-percent margin was not fully achieved; original retained and actual bbox recorded, drawing containment must be checked in the real stage. Source art only, not human acceptance."
+  },
+  "exportProof": {
+    "sourceUnchanged": true,
+    "runtimeUnchanged": true,
+    "reencodedBytes": 60950,
+    "reencodedSHA256": "62903f5b7056ba61b225d8294865fe9e8300334dec1b9ef5fca64946a6192edf",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+  },
+  "decodeProof": {
+    "decoder": "Pillow",
+    "sourceRGBASHA256": "325c337bef39fa24432515c09110cf56a62b5ba4e71c1031d095c9fe20267afe",
+    "runtimeRGBASHA256": "ba72edee595d99d15061c2e90f77b89f26243aec2dade93fc4c7a7ddc88a933d",
+    "alphaDefinitions": {
+      "transparentPixels": "alpha=0",
+      "solidPixels": "alpha>=250",
+      "intermediatePixels": "1<=alpha<250"
+    }
+  },
+  "userAcceptance": false
+}

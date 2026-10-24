@@ -1,0 +1,82 @@
+{
+  "format": "chenyuan-ta08-asset-negative-premise-repair",
+  "version": 1,
+  "function": "test_ta08_each_real_child_receives_trusted_props_and_readonly_arrange",
+  "file": "art/tools/test_inventory.py",
+  "beforeSHA256": "e823eb2e579a89d27baf7336e418fa0bfccb424fcea41c214fc5c931e8b3e474",
+  "afterSHA256": "3b78c1ce556fc43f25086bb67130a1e2b7c722961fadffa40c77439d0b580602",
+  "inverseSHA256": "e823eb2e579a89d27baf7336e418fa0bfccb424fcea41c214fc5c931e8b3e474",
+  "wholeFileInverseExact": true,
+  "changedLines": 1,
+  "preserved": "All five seams, unique opening count1, actual target attribute count1, whole-tag uniqueness1, changed_source rehash synchronization, and assertRaises remain unchanged. Only opening-tag syntax recognition changes to include real non-self-closing tags and quoted attributes.",
+  "old": "tags=re.findall(r'<'+component+r'\\b[^>]*?/>',text)",
+  "new": "tags=re.findall(r'<'+component+r'\\b(?:[^>\"\\']|\"[^\"]*\"|\\'[^\\']*\\')*>',text)",
+  "rootFailure": "Original339 run338pass1failure was a negative-fixture construction mismatch, not a production guard rejection or product failure. Original raw and full function preserved.",
+  "runs": [
+    {
+      "phase": "asset-opening-leaf-source6",
+      "args": [
+        "art/tools/test_inventory.py",
+        "TA08InventoryTests.test_ta08_each_real_child_receives_trusted_props_and_readonly_arrange"
+      ],
+      "began": "2026-10-24T17:50:43.904Z",
+      "ended": "2026-10-24T17:50:44.809Z",
+      "exit": 0,
+      "error": null,
+      "inputs": 723,
+      "inputsAndRuntimeStable": true,
+      "runtimeDigest": "19f9f70ba11e1a450fb8f0f415fca60219240af4cde7872b6eba38925f51e644",
+      "expectedTests": 1,
+      "actualTests": 1,
+      "durationSeconds": 0.271,
+      "unittestOK": true,
+      "log": "artifacts/goal-4/ta08/asset-opening-leaf-source6.log",
+      "logSHA256": "4e70127055e5c46295db82122a0ab018f60fd181ebfe2b405d36defaf52d820e",
+      "before": "artifacts/goal-4/ta08/asset-opening-leaf-source6-before.json",
+      "beforeSHA256": "8e21c010e2333058db0947ab959beff27e1e89d919fc2cf31956b71b33667746",
+      "after": "artifacts/goal-4/ta08/asset-opening-leaf-source6-after.json",
+      "afterSHA256": "e8862b1ca5214e6f453b1db9f527def2bc3ee18dce53d1aec386ab214efcec5d"
+    },
+    {
+      "phase": "asset-opening-full-source6",
+      "args": [
+        "art/tools/test_inventory.py"
+      ],
+      "began": "2026-10-24T17:50:45.178Z",
+      "ended": "2026-10-24T17:54:02.525Z",
+      "exit": 0,
+      "error": null,
+      "inputs": 723,
+      "inputsAndRuntimeStable": true,
+      "runtimeDigest": "19f9f70ba11e1a450fb8f0f415fca60219240af4cde7872b6eba38925f51e644",
+      "expectedTests": 339,
+      "actualTests": 339,
+      "durationSeconds": 196.684,
+      "unittestOK": true,
+      "log": "artifacts/goal-4/ta08/asset-opening-full-source6.log",
+      "logSHA256": "007d676e7838e99de1c7246d23421283cecf92eed1e6054de3c72e5c33723495",
+      "before": "artifacts/goal-4/ta08/asset-opening-full-source6-before.json",
+      "beforeSHA256": "69821b449dadc746bca857bb3cb747dffd2bbfa3317338d9b5262e44f3d2ec78",
+      "after": "artifacts/goal-4/ta08/asset-opening-full-source6-after.json",
+      "afterSHA256": "7ebed6014870014cf8d3873f3025b3b45a80c0600c3428058031d7c981011ac4"
+    }
+  ],
+  "finalStatus": "Leaf1 then full339 both actual passed once, each strict723 exact. Original338+1 log retained.",
+  "runtimeUnchanged": true,
+  "guardFilesUnchangedAgainstOriginal720": [
+    {
+      "path": "art/tools/check_inventory.py",
+      "sha256": "5c57e368b74d3bea3ca68abb17dbd8c66dad00ea0e9bad121f8be37ee80a51f0"
+    },
+    {
+      "path": "art/tools/ta08_inventory.py",
+      "sha256": "2d4e6cc59cbc82348e863c1c30c40d1ac98d2a9fde2d1a2422856a6e979df04a"
+    }
+  ],
+  "boundaries": [
+    "Only test_inventory.py one line changed. No production, shared validator, ta08 validator, budgets, counts or five mutation/assertion seams changed.",
+    "Native34/UI42/core815 are not rerun here; their own execution identity windows remain historical/current evidence as recorded.",
+    "Across phases testInventory intentionally changed e823 to3b78; only each phase input window is claimed exact.",
+    "The single leaf exercises five real opening tags, including slot/fallback non-self-closing children; it still requires exactly one tag and one target attribute and actual guard rejection after synchronized rehash."
+  ]
+}

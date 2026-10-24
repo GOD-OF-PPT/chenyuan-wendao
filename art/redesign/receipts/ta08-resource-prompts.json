@@ -1,0 +1,45 @@
+{
+  "format": "chenyuan-ta08-prompts",
+  "version": 1,
+  "task": "TA08",
+  "tool": "built-in image_gen",
+  "prompts": {
+    "herbs": {
+      "prompt": "Use case: stylized-concept. Asset type: one high-quality isolated cold-state resource painting for the Chinese xianxia idle game 尘缘问道. Hand-painted realistic fantasy material, subtle ink-wash edge detail, dense natural texture, believable soft directional lighting. Three-quarter frontal view, slightly looking down, centered single complete object on a square transparent canvas. Muted indigo, forest green and jade palette with restrained old-gold accents; readable over a dark mountain landscape. Entire object inside the central 72 percent with transparent margin on every side. Genuine alpha background. No people, hands, tools, text, letters, border, badge, UI, particles, floating reward, motion trail or magic aura. No white/black rectangle, no circular icon disk. This is a still resource-location illustration; operation effects will be separate code layers. Subject: a small living medicinal herb clump with several slender curved stems and layered serrated green leaves, grounded in a compact dark mossy root and stone tuft. Detailed veins and subtle silver-green leaf backs, fresh but calm. Keep every leaf tip and the whole root base visible.",
+      "transparent_background": true,
+      "generatedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-b28b4223-9247-46e1-8249-ca26e9c67a7d.png",
+      "referenceImages": []
+    },
+    "dew": {
+      "prompt": "Use case: stylized-concept. Asset type: one high-quality isolated cold-state resource painting for the Chinese xianxia idle game 尘缘问道. Hand-painted realistic fantasy material, subtle ink-wash edge detail, dense natural texture, believable soft directional lighting. Three-quarter frontal view, slightly looking down, centered single complete object on a square transparent canvas. Muted indigo, forest green and jade palette with restrained old-gold accents; readable over a dark mountain landscape. Entire object inside the central 72 percent with transparent margin on every side. Genuine alpha background. No people, hands, tools, text, letters, border, badge, UI, particles, floating reward, motion trail or magic aura. No white/black rectangle, no circular icon disk. This is a still resource-location illustration; operation effects will be separate code layers. Subject: a graceful low cluster of broad cupped green leaves holding a few clear still dew beads at their tips. One larger curled leaf acts as a natural collecting cup. Rich translucent leaf veins, calm clear droplets attached to the leaves; compact stems and a dark tiny root base.",
+      "transparent_background": true,
+      "generatedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-e6e000df-bba4-4353-9555-109eeef1ff6e.png",
+      "referenceImages": []
+    },
+    "jade": {
+      "prompt": "Use case: stylized-concept. Asset type: one high-quality isolated cold-state resource painting for the Chinese xianxia idle game 尘缘问道. Hand-painted realistic fantasy material, subtle ink-wash edge detail, dense natural texture, believable soft directional lighting. Three-quarter frontal view, slightly looking down, centered single complete object on a square transparent canvas. Muted indigo, forest green and jade palette with restrained old-gold accents; readable over a dark mountain landscape. Entire object inside the central 72 percent with transparent margin on every side. Genuine alpha background. No people, hands, tools, text, letters, border, badge, UI, particles, floating reward, motion trail or magic aura. No white/black rectangle, no circular icon disk. This is a still resource-location illustration; operation effects will be separate code layers. Subject: a compact rough weathered dark rock outcrop with pale green jade seams and a few translucent jade facets exposed in the stone, moss along its lower edges. Heavy uneven mineral silhouette, naturally embedded jade rather than polished jewelry.",
+      "transparent_background": true,
+      "generatedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-e89e4ccb-fa3c-47ab-b153-d22456aef8c2.png",
+      "referenceImages": []
+    },
+    "lotus": {
+      "prompt": "Use case: stylized-concept. Asset type: one high-quality isolated cold-state resource painting for the Chinese xianxia idle game 尘缘问道. Hand-painted realistic fantasy material, subtle ink-wash edge detail, dense natural texture, believable soft directional lighting. Three-quarter frontal view, slightly looking down, centered single complete object on a square transparent canvas. Muted indigo, forest green and jade palette with restrained old-gold accents; readable over a dark mountain landscape. Entire object inside the central 72 percent with transparent margin on every side. Genuine alpha background. No people, hands, tools, text, letters, border, badge, UI, particles, floating reward, motion trail or magic aura. No white/black rectangle, no circular icon disk. This is a still resource-location illustration; operation effects will be separate code layers. Subject: a compact cold mountain-pool lotus clump: one pale ivory-green lotus flower, one closed bud, broad round blue-green leaves and their curling stems growing from a small shallow irregular patch of dark still water and pebbles. Complete flower and leaf silhouette, calm water with no splash.",
+      "transparent_background": true,
+      "generatedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-496b6fce-7867-4797-9f52-26b94abcedee.png",
+      "referenceImages": []
+    },
+    "soul": {
+      "prompt": "Use case: stylized-concept. Asset type: one high-quality isolated cold-state resource painting for the Chinese xianxia idle game 尘缘问道. Hand-painted realistic fantasy material, subtle ink-wash edge detail, dense natural texture, believable soft directional lighting. Three-quarter frontal view, slightly looking down, centered single complete object on a square transparent canvas. Muted indigo, forest green and jade palette with restrained old-gold accents; readable over a dark mountain landscape. Entire object inside the central 72 percent with transparent margin on every side. Genuine alpha background. No people, hands, tools, text, letters, border, badge, UI, particles, floating reward, motion trail or magic aura. No white/black rectangle, no circular icon disk. This is a still resource-location illustration; operation effects will be separate code layers. Subject: a cluster of slender smoky blue-green spirit crystals emerging from a compact dark wet stone in a still deep-pool mineral formation. Layered translucent mineral faces, quiet matte highlights and subdued inner color. No glow halo, fog cloud, eyes or faces; clear asymmetrical crystal silhouette.",
+      "transparent_background": true,
+      "generatedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-9c8fedaa-4729-4265-8d3a-f51d1effe5ac.png",
+      "referenceImages": []
+    },
+    "dao": {
+      "prompt": "Use case: stylized-concept. Asset type: one high-quality isolated cold-state resource painting for the Chinese xianxia idle game 尘缘问道. Hand-painted realistic fantasy material, subtle ink-wash edge detail, dense natural texture, believable soft directional lighting. Three-quarter frontal view, slightly looking down, centered single complete object on a square transparent canvas. Muted indigo, forest green and jade palette with restrained old-gold accents; readable over a dark mountain landscape. Entire object inside the central 72 percent with transparent margin on every side. Genuine alpha background. No people, hands, tools, text, letters, border, badge, UI, particles, floating reward, motion trail or magic aura. No white/black rectangle, no circular icon disk. This is a still resource-location illustration; operation effects will be separate code layers. Subject: a low ancient weathered stone contemplation basin with a simple unlettered stone upright at its back and a shallow bed of pale jade and old-gold fine sand grains in the basin. Tactile worn stone, slight moss, serene asymmetrical silhouette. No runes, writing, symbols, glowing sand or airborne grains.",
+      "transparent_background": true,
+      "generatedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-e08a18f4-600c-4a03-8a54-8a62208c0288.png",
+      "referenceImages": []
+    }
+  },
+  "userAcceptance": false
+}

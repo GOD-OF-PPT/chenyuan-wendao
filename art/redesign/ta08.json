@@ -1,0 +1,301 @@
+{
+  "format": "chenyuan-source-objects",
+  "version": 1,
+  "task": "Goal4 TA08",
+  "scope": "Presentation only; no Game, rules, timing, DB or automatic authority changes; not human acceptance.",
+  "budgets": {
+    "nativeBytes": 42000,
+    "newAssets": 6,
+    "runtimeWidth": 512,
+    "runtimeHeight": 512,
+    "maxRuntimeBytes": 160000,
+    "maxTotalRuntimeBytes": 960000
+  },
+  "files": [
+    {
+      "path": "web/src/SourceObject.vue",
+      "bytes": 5413,
+      "sha256": "31adfb2ba5ff140f0b4f438a7b050f3842ba76c0730f9e2dc4df9fec228fa413"
+    },
+    {
+      "path": "web/src/SourceCommission.vue",
+      "bytes": 10276,
+      "sha256": "9d385a237a24f51277fa8dae9dd4c7cb7e81c563923370066c89efeea0702314"
+    },
+    {
+      "path": "web/src/SourceSatchel.vue",
+      "bytes": 5817,
+      "sha256": "cd93826c381eb6877e073b9eba885b5505fe1e9745de451511ce8ceac65010c4"
+    },
+    {
+      "path": "web/src/source-choreography.ts",
+      "bytes": 3592,
+      "sha256": "665cb8c1d7bf0537b992b628720ff3be2bf0206536b36f487799bf67fe1f96f2"
+    },
+    {
+      "path": "web/src/ta08-source.css",
+      "bytes": 16275,
+      "sha256": "0bcaa542dca4f1dc9bb862e63ead388dee2f996bf483507d77813710181f3522"
+    }
+  ],
+  "assets": [
+    {
+      "id": "herbs-cold-v1",
+      "sourceId": "herbs",
+      "source": {
+        "path": "art/redesign/ta08-resources/herbs-cold-v1.png",
+        "bytes": 1706858,
+        "sha256": "22e547c0b65458b66aebd78d49b7569e16f0aec73f230a92ea1fe33583aac311",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/sources/herbs-cold-v1.webp",
+        "bytes": 73050,
+        "sha256": "0d111845c05e076102a788c98ace1917a2c4e87a13a6f7021eea4851918aaa73",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/ta08-herbs-cold-v1.json",
+        "sha256": "71fb5cbae6c26313191795f8d355d637fdc78fa1bbf0764ed54d8a41a3d50459"
+      }
+    },
+    {
+      "id": "dew-cold-v1",
+      "sourceId": "dew",
+      "source": {
+        "path": "art/redesign/ta08-resources/dew-cold-v1.png",
+        "bytes": 1575410,
+        "sha256": "cfd573494d13846c9394d1fbfad16644025aad8d419b69c797c84d981bbe81df",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/sources/dew-cold-v1.webp",
+        "bytes": 57462,
+        "sha256": "5272fa6dbb7d5fdc901c3c27634b9749b230831b133eeba455ea315fc9e0da0e",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/ta08-dew-cold-v1.json",
+        "sha256": "096c887392dcd26212e0f71aaf0f19453d67571e4ea51ead54c616892a7872b4"
+      }
+    },
+    {
+      "id": "jade-cold-v1",
+      "sourceId": "jade",
+      "source": {
+        "path": "art/redesign/ta08-resources/jade-cold-v1.png",
+        "bytes": 2400721,
+        "sha256": "d8439189a2bc7fad4598252b8ce22f404d59744b7f042741d164284c037112ab",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/sources/jade-cold-v1.webp",
+        "bytes": 64378,
+        "sha256": "decbbda3867443a679744416cc05387e19bb7bbb8e124029982af6e233462fdd",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/ta08-jade-cold-v1.json",
+        "sha256": "170431eda74e62fe374838bb51c982cee22122ba6ac9187d11966b06f4642df6"
+      }
+    },
+    {
+      "id": "lotus-cold-v1",
+      "sourceId": "lotus",
+      "source": {
+        "path": "art/redesign/ta08-resources/lotus-cold-v1.png",
+        "bytes": 1961481,
+        "sha256": "238635054220ca90db51390bdc5ffd06051f84db9e33e68feede05384f8f7e9c",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/sources/lotus-cold-v1.webp",
+        "bytes": 63704,
+        "sha256": "45a77e2ad96c2af61ad6c474d3d0bad47dbf91a6a451e932e8ee867d8040e14b",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/ta08-lotus-cold-v1.json",
+        "sha256": "40e2245fe966fee431fbf871f29eba4141f1ee06cb28542e5dfa7ad5cb949941"
+      }
+    },
+    {
+      "id": "soul-cold-v1",
+      "sourceId": "soul",
+      "source": {
+        "path": "art/redesign/ta08-resources/soul-cold-v1.png",
+        "bytes": 1726706,
+        "sha256": "1d5eaf8d1db197c96141cd9fe3d448d515ea7c0686cfb7ecbb14929d67591f4f",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/sources/soul-cold-v1.webp",
+        "bytes": 52926,
+        "sha256": "714a6bbbd0cbff9beae1a223f2e550d970f58482bdc05ffc91cc716734f18814",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/ta08-soul-cold-v1.json",
+        "sha256": "67d8d6c3114c2816f472235bb0a00a0c781231db521cc3ee2329658e89e304a4"
+      }
+    },
+    {
+      "id": "dao-cold-v1",
+      "sourceId": "dao",
+      "source": {
+        "path": "art/redesign/ta08-resources/dao-cold-v1.png",
+        "bytes": 2169595,
+        "sha256": "f2e9a9b0662b3a97476df3c16b99e5f99f7498de96783171e5f161641871cc72",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "alpha": true,
+        "format": "png"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/sources/dao-cold-v1.webp",
+        "bytes": 60950,
+        "sha256": "62903f5b7056ba61b225d8294865fe9e8300334dec1b9ef5fca64946a6192edf",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "alpha": true,
+        "format": "webp"
+      },
+      "receipt": {
+        "path": "art/redesign/receipts/ta08-dao-cold-v1.json",
+        "sha256": "e774b032ca2c1405d0ae585394bfd4f695969e908f74eb8e1783bdc9f1a1c85c"
+      }
+    }
+  ],
+  "promptReferences": [
+    "art/redesign/receipts/ta08-resource-prompts.json"
+  ],
+  "sourceReferences": [
+    "docs/decisions/0034-source-objects-ta08-contract.md",
+    "goal-4/amendments/2026-10-24-ta08.md",
+    "goal-4/research/ta08-design-sources.json"
+  ],
+  "bindings": {
+    "web/src/SourceField.vue": [
+      "import SourceObject",
+      "<SourceObject",
+      "import SourceCommission",
+      "<SourceCommission",
+      "import SourceSatchel",
+      "<SourceSatchel",
+      "useActivityPresentation(a=>a.version===2&&a.plan.sourceId===props.plan.sourceId"
+    ],
+    "web/src/SourcePlanner.vue": [
+      "<SourceField",
+      "source-plan-open",
+      "source-start",
+      "@arrange=\"settings?.showModal()\""
+    ],
+    "web/src/SourceObject.vue": [
+      "SOURCE_ART[sourceId]",
+      "projectSourceWork(props.state,props.progress)",
+      "data-testid=\"source-physical-object\"",
+      "emit('arrange')"
+    ],
+    "web/src/SourceCommission.vue": [
+      "COMMISSION_OBJECTS[props.sourceId as keyof typeof COMMISSION_OBJECTS]",
+      "projectSourceWork(props.state,props.progress)",
+      "data-testid=\"source-commission-object\"",
+      "emit('arrange')"
+    ],
+    "web/src/SourceSatchel.vue": [
+      "sourceHoldings(props.game,props.sourceId)",
+      "sourcePeriodTotals(props.game,props.sourceId,props.activity)",
+      "savedSourceYield(props.game,props.sourceId,props.activity,props.result)",
+      "props.sequence>0?",
+      "data-testid=\"source-satchel\""
+    ],
+    "web/src/source-choreography.ts": [
+      "export const SOURCE_ART",
+      "export const COMMISSION_OBJECTS",
+      "quantity:item==='stones'?game.core.player.stones:game.core.inventory[item]",
+      "if(activity?.version!==2||activity.runId!==game.core.runId||activity.plan.sourceId!==id)return null;",
+      "result.type!=='SOURCE'||result.executedSteps!==1||result.requestedSteps!==1",
+      "result.runId!==game.core.runId||result.revisionAfter!==game.core.revision",
+      "activity.runId!==game.core.runId||activity.gameRevision!==result.revisionAfter",
+      "result.commandId!==`cycle:${activity.id}:${activity.generation}:${activity.completedCycles}`",
+      "Object.entries(result.delta.inventory)",
+      "if(result.delta.stones>0)items.push({id:'stones',name:'灵石',quantity:result.delta.stones});",
+      "Number.isFinite(value)",
+      "working=state==='working'",
+      "art/v2/sources/herbs-cold-v1.webp",
+      "art/v2/sources/dew-cold-v1.webp",
+      "art/v2/sources/jade-cold-v1.webp",
+      "art/v2/sources/lotus-cold-v1.webp",
+      "art/v2/sources/soul-cold-v1.webp",
+      "art/v2/sources/dao-cold-v1.webp"
+    ],
+    "web/src/use-activity-effect.ts": [
+      "createActivityEffectTracker(matches,extra)",
+      "!store?.activityPausing",
+      "activity.value?.ownerId",
+      "timer=setTimeout(()=>effect.value=null,1400)"
+    ],
+    "web/src/activity-effects.ts": [
+      "a.version&&[2,3,6,extra].includes(a.version)",
+      "resolve(before,command)",
+      "completeActivity(g,prior,r,",
+      "proof(resolved.nextState)!==proof(g)",
+      "proof(expected)!==proof(a)"
+    ]
+  },
+  "userAcceptance": false
+}

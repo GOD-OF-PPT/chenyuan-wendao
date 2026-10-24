@@ -1,0 +1,43 @@
+{
+  "runtimeDigest": "19f9f70ba11e1a450fb8f0f415fca60219240af4cde7872b6eba38925f51e644",
+  "core": {
+    "passed": 815,
+    "files": 61,
+    "list": "artifacts/goal-4/ta07/core-files-source5.json",
+    "listSHA256": "080216ae86c313b8d15b7b8dbbaa3cb7596ba297ed115dc1467346a708bfdef0",
+    "log": "artifacts/goal-4/ta08/core-source6.log",
+    "logSHA256": "d3f2a4e538b5a8b5eec2b33c4c99b1625ff2d76470fd577b81fa8a787e2e4245",
+    "actualExecuted": true
+  },
+  "rootTypes": {
+    "exit": 0,
+    "actualExecuted": true,
+    "log": "artifacts/goal-4/ta08/root-types-source6.log"
+  },
+  "originalStrictInputs": 720,
+  "originalInputsAndRuntimeStable": true,
+  "currentAssets": {
+    "phase": "asset-opening-full-source6",
+    "args": [
+      "art/tools/test_inventory.py"
+    ],
+    "began": "2026-10-24T17:50:45.178Z",
+    "ended": "2026-10-24T17:54:02.525Z",
+    "exit": 0,
+    "error": null,
+    "inputs": 723,
+    "inputsAndRuntimeStable": true,
+    "runtimeDigest": "19f9f70ba11e1a450fb8f0f415fca60219240af4cde7872b6eba38925f51e644",
+    "expectedTests": 339,
+    "actualTests": 339,
+    "durationSeconds": 196.684,
+    "unittestOK": true,
+    "log": "artifacts/goal-4/ta08/asset-opening-full-source6.log",
+    "logSHA256": "007d676e7838e99de1c7246d23421283cecf92eed1e6054de3c72e5c33723495"
+  },
+  "laterAuthorizedInputChanges": [
+    "art/tools/test_inventory.py"
+  ],
+  "inverseProof": "asset-negative-premise.json",
+  "scope": "Original815/rootTypes/native/UI executions retain their own fingerprints. Later only the negative fixture syntax changed; no runtime module, validator or old assertion/budget changed. Core explicit61 do not reference test_inventory.py. Full339 is the current final run, not a relabel of338+1."
+}

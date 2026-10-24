@@ -90,6 +90,9 @@ class InventoryTests(unittest.TestCase):
    data=json.loads(feedback_skip.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.add(ROOT/data['provenance']['path'])
    ta07=ROOT/'art/redesign/ta07.json'
    if ta07.exists():files.update(ROOT/ref for ref in json.loads(ta07.read_text())['sourceReferences'])
+   ta08=ROOT/'art/redesign/ta08.json'
+   if ta08.exists():
+    data=json.loads(ta08.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+data['promptReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -169,7 +172,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0)+(1 if (self.root/'art/redesign/ta07.json').exists() else 0))
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0)+(1 if (self.root/'art/redesign/ta07.json').exists() else 0)+(6 if (self.root/'art/redesign/ta08.json').exists() else 0))
  def test_idle_ui_requires_its_source_ledger(self):
   (self.root/'art/redesign/idle-cultivation.json').unlink();self.rejected()
  def test_idle_ui_budget_cannot_be_raised(self):
@@ -1144,5 +1147,179 @@ class TA07InventoryTests(unittest.TestCase):
   self.assertNotEqual(hashlib.sha256(prompt).hexdigest(),hashlib.sha256(literal).hexdigest())
   self.changed_receipt(lambda r:r.update(promptDocumentSHA256=hashlib.sha256(literal).hexdigest()))
   with self.assertRaisesRegex(AssertionError,'prompt document identity'):self.check()
+
+class TA08InventoryTests(unittest.TestCase):
+ def setUp(self):
+  from ta08_inventory import NATIVE,REFS,PROMPT_REFS,DEPENDENCIES,LEDGER
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-ta08-negative-');self.root=Path(self.temp.name)
+  self.original={name:(ROOT/name).read_bytes()for name in set(NATIVE+REFS+PROMPT_REFS+DEPENDENCIES+[LEDGER])};self.restore()
+ def tearDown(self):self.temp.cleanup()
+ def restore(self):
+  for name,raw in self.original.items():
+   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True)
+   if p.is_symlink():p.unlink()
+   p.write_bytes(raw)
+ def data(self):return json.loads((self.root/'art/redesign/ta08.json').read_text())
+ def write(self,m):(self.root/'art/redesign/ta08.json').write_text(json.dumps(m))
+ def check(self):
+  from ta08_inventory import validate_ta08
+  from check_inventory import image_info
+  return validate_ta08(self.root,image_info)
+ def reject(self,m):
+  self.write(m)
+  with self.assertRaises(AssertionError):self.check()
+ def changed_source(self,path,text):
+  raw=text.encode();(self.root/path).write_bytes(raw);m=self.data()
+  for row in m['files']:
+   if row['path']==path:row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest())
+  self.write(m)
+ def changed_receipt(self,change,index=0):
+  m=self.data();ref=m['assets'][index]['receipt'];p=self.root/ref['path'];r=json.loads(p.read_text());change(r);p.write_text(json.dumps(r));ref['sha256']=hashlib.sha256(p.read_bytes()).hexdigest();self.write(m)
+ def test_ta08_actual_five_sources_six_independent_paintings_and_fixed_total(self):
+  from ta08_inventory import NATIVE,SOURCE_IDS
+  files,production,total=self.check();m=self.data();self.assertEqual(len(files),12);self.assertEqual(production,6);self.assertEqual(total,sum((self.root/p).stat().st_size for p in NATIVE));self.assertLessEqual(total,42000);self.assertEqual([a['sourceId']for a in m['assets']],SOURCE_IDS);self.assertLessEqual(sum(a['runtime']['bytes']for a in m['assets']),960000)
+ def test_ta08_missing_ledger_rejects_present_native_implementation(self):
+  (self.root/'art/redesign/ta08.json').unlink()
+  with self.assertRaisesRegex(AssertionError,'Unrecorded TA08'):self.check()
+ def test_ta08_missing_ledger_rejects_paintings_before_source_lands(self):
+  from ta08_inventory import NATIVE
+  (self.root/'art/redesign/ta08.json').unlink()
+  for name in NATIVE:(self.root/name).unlink()
+  with self.assertRaisesRegex(AssertionError,'Unrecorded TA08'):self.check()
+ def test_ta08_manifest_requires_exact_shape(self):
+  original=self.data()
+  for change in [lambda m:m.pop('promptReferences'),lambda m:m.update(extra=True)]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_ta08_header_scope_and_human_acceptance_are_not_aliasable(self):
+  original=self.data()
+  for key,value in [('format','other'),('version',True),('version',1.0),('version',2),('task','Goal4 ART02'),('scope','New game rules accepted'),('userAcceptance',True),('userAcceptance',0)]:
+   with self.subTest(key=key,value=value):m=copy.deepcopy(original);m[key]=value;self.reject(m)
+ def test_ta08_all_native_single_and_combined_raster_caps_are_fixed_integers(self):
+  original=self.data()
+  for key,value in original['budgets'].items():
+   for invalid in [value+1,True,float(value)]:
+    with self.subTest(key=key,value=invalid):m=copy.deepcopy(original);m['budgets'][key]=invalid;self.reject(m)
+ def test_ta08_ordered_complete_source_inventory_and_identity_rows_required(self):
+  original=self.data()
+  for change in [lambda m:m['files'].pop(),lambda m:m['files'].reverse(),lambda m:m['files'].append(copy.deepcopy(m['files'][0])),lambda m:m['files'][0].update(extra=True)]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_ta08_source_bytes_hash_and_numeric_aliases_rejected(self):
+  original=self.data()
+  for key,value in [('bytes',0),('bytes',True),('bytes',float(original['files'][0]['bytes'])),('sha256','0'*64),('sha256','invalid')]:
+   m=copy.deepcopy(original);m['files'][0][key]=value;self.reject(m)
+ def test_ta08_local_source_asset_prompt_and_ledger_paths_cannot_escape(self):
+  original=self.data()
+  for value in ['/tmp/SourceObject.vue','../SourceObject.vue','web\\src\\SourceObject.vue']:
+   m=copy.deepcopy(original);m['files'][0]['path']=value;self.reject(m)
+  for name in ['art/redesign/ta08.json','web/src/SourceObject.vue','art/redesign/receipts/ta08-resource-prompts.json','web/public/art/v2/sources/herbs-cold-v1.webp']:
+   self.restore();p=self.root/name;raw=p.read_bytes()
+   with tempfile.TemporaryDirectory(prefix='chenyuan-ta08-outside-')as folder:
+    outside=Path(folder)/p.name;outside.write_bytes(raw);p.unlink();p.symlink_to(outside)
+    with self.subTest(name=name),self.assertRaises(AssertionError):self.check()
+ def test_ta08_required_actual_files_and_contract_cannot_be_missing(self):
+  from ta08_inventory import NATIVE,REFS,PROMPTS
+  for name in [NATIVE[0],REFS[0],PROMPTS]:
+   self.restore();(self.root/name).unlink()
+   with self.subTest(name=name),self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
+ def test_ta08_actual_whole_five_file_budget_enforced_after_rehash(self):
+  m=self.data();path=m['files'][-1]['path'];total=sum(row['bytes']for row in m['files']);self.changed_source(path,(self.root/path).read_text()+'\n'*(42001-total))
+  with self.assertRaisesRegex(AssertionError,'native code exceeds fixed budget'):self.check()
+ def test_ta08_reference_prompt_and_consumer_contract_must_stay_complete(self):
+  original=self.data()
+  for key,value in [('sourceReferences',[]),('promptReferences',[]),('bindings',{}),('bindings',{'web/src/App.vue':['fake']})]:
+   m=copy.deepcopy(original);m[key]=value;self.reject(m)
+ def test_ta08_commented_import_or_render_token_cannot_fake_objects(self):
+  import re
+  path='web/src/SourceField.vue'
+  for name in ['SourceObject','SourceCommission','SourceSatchel']:
+   for mutation in ['import','tag']:
+    self.restore();text=(self.root/path).read_text()
+    if mutation=='import':changed=text.replace('import '+name,'//import '+name,1)
+    else:changed,count=re.subn(r'(<'+name+r'\b[^>]*?/>)',r'<!--\1-->',text,count=1);self.assertEqual(count,1)
+    self.assertNotEqual(changed,text);self.changed_source(path,changed)
+    with self.subTest(name=name,mutation=mutation),self.assertRaises(AssertionError):self.check()
+ def test_ta08_children_cannot_add_a_clock_store_or_storage_after_rehash(self):
+  for expression in ['setTimeout(()=>{},1)','setInterval(()=>{},1)','Date.now()','indexedDB.open("private")','useActivityPresentation(()=>true,()=>"other")']:
+   self.restore();path='web/src/source-choreography.ts';self.changed_source(path,(self.root/path).read_text()+'\n'+expression)
+   with self.subTest(expression=expression),self.assertRaisesRegex(AssertionError,'Store/IO or its own clock'):self.check()
+ def test_ta08_real_object_stylesheet_import_must_remain_connected(self):
+  import re
+  from ta08_inventory import NATIVE
+  changed=0
+  for path in ['web/src/SourceField.vue']+NATIVE[:4]:
+   text=(self.root/path).read_text();next_text,count=re.subn(r'import\s+[\'\"]\./ta08-source\.css[\'\"];?','',text);changed+=count
+   if count:self.changed_source(path,next_text)
+  self.assertGreater(changed,0)
+  with self.assertRaisesRegex(AssertionError,'stylesheet is not consumed'):self.check()
+ def test_ta08_source_projection_chain_and_full_shared_proof_cannot_be_detached(self):
+  seams=[('web/src/SourceField.vue','a.version===2&&a.plan.sourceId===props.plan.sourceId'),('web/src/activity-effects.ts','resolve(before,command)'),('web/src/activity-effects.ts','proof(expected)!==proof(a)'),('web/src/use-activity-effect.ts','!store?.activityPausing'),('web/src/SourceSatchel.vue','sourceHoldings(props.game,props.sourceId)'),('web/src/SourceSatchel.vue','sourcePeriodTotals(props.game,props.sourceId,props.activity)'),('web/src/SourceSatchel.vue','savedSourceYield(props.game,props.sourceId,props.activity,props.result)'),('web/src/source-choreography.ts',"result.type!=='SOURCE'||result.executedSteps!==1||result.requestedSteps!==1"),('web/src/source-choreography.ts','result.runId!==game.core.runId||result.revisionAfter!==game.core.revision'),('web/src/source-choreography.ts','activity.runId!==game.core.runId||activity.gameRevision!==result.revisionAfter'),('web/src/source-choreography.ts','result.commandId!==`cycle:${activity.id}:${activity.generation}:${activity.completedCycles}`')]
+  for path,token in seams:
+   self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);self.changed_source(path,text.replace(token,'detached',1))
+   with self.subTest(path=path),self.assertRaisesRegex(AssertionError,'Missing TA08 consumer'):self.check()
+ def test_ta08_actual_mapping_requires_six_paintings_and_ten_distinct_drawings(self):
+  path='web/src/source-choreography.ts'
+  for before,after in [("herbs:'art/v2/sources/herbs-cold-v1.webp'","herbs:'art/v2/sources/dew-cold-v1.webp'"),("work:'sweep'","work:'escort'"),("work:'sweep'","unknown:'sweep'")]:
+   self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(before),1)
+   # Retain the literal in a comment: an unused token must not fake a live map.
+   self.changed_source(path,text.replace(before,after,1)+'\n/* '+before+' */')
+   with self.subTest(before=before),self.assertRaisesRegex(AssertionError,'six natural paintings|ten commission'):self.check()
+ def test_ta08_each_real_child_receives_trusted_props_and_readonly_arrange(self):
+  import re
+  cases=[('web/src/SourceField.vue','SourceObject',':sequence="effect?.sequence??0"',':sequence="999"'),('web/src/SourceField.vue','SourceCommission',':state="state"',':state="\'working\'"'),('web/src/SourceField.vue','SourceSatchel',':result="effect?.result??null"',':result="null"'),('web/src/SourcePlanner.vue','SourceField','@arrange="settings?.showModal()"','@arrange="undefined"'),('web/src/SourceObject.vue','AssetImage',':path="SOURCE_ART[sourceId]"',':path="\'unrelated.webp\'"')]
+  for path,component,before,after in cases:
+   self.restore();text=(self.root/path).read_text();tags=re.findall(r'<'+component+r'\b(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text);self.assertEqual(len(tags),1);tag=tags[0];self.assertEqual(tag.count(before),1);self.assertEqual(text.count(tag),1)
+   self.changed_source(path,text.replace(tag,tag.replace(before,after,1),1))
+   with self.subTest(component=component),self.assertRaises(AssertionError):self.check()
+ def test_ta08_exact_six_unique_asset_source_ids_order_and_paths_required(self):
+  original=self.data()
+  for change in [lambda m:m['assets'].pop(),lambda m:m['assets'].append(copy.deepcopy(m['assets'][0])),lambda m:m['assets'].reverse(),lambda m:m['assets'].__setitem__(1,copy.deepcopy(m['assets'][0])),lambda m:m['assets'][0].update(sourceId='herb'),lambda m:m['assets'][0]['runtime'].update(path='../herbs.webp')]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_ta08_painting_identity_and_actual_headers_cannot_be_invented(self):
+  m=self.data();m['assets'][0]['source']['sha256']='0'*64;self.reject(m)
+  for key in ['source','runtime']:
+   self.restore();m=self.data();row=m['assets'][0][key];p=self.root/row['path'];raw=b'INVALID!'+p.read_bytes()[8:];p.write_bytes(raw);row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write(m)
+   with self.subTest(key=key),self.assertRaises(AssertionError):self.check()
+ def test_ta08_opaque_actual_header_cannot_borrow_transparent_metadata(self):
+  for key in ['source','runtime']:
+   self.restore();m=self.data();row=m['assets'][0][key];p=self.root/row['path'];raw=bytearray(p.read_bytes())
+   if key=='source':self.assertEqual(raw[25],6);raw[25]=2
+   else:self.assertEqual(raw[12:16],b'VP8X');self.assertTrue(raw[20]&16);raw[20]&=~16
+   p.write_bytes(raw);row.update(sha256=hashlib.sha256(raw).hexdigest());self.write(m)
+   with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'header/alpha'):self.check()
+ def test_ta08_each_runtime_byte_cap_applies_even_to_last_asset_after_rehash(self):
+  m=self.data();row=m['assets'][-1]['runtime'];p=self.root/row['path'];raw=bytearray(p.read_bytes()+b'JUNK'+(160000).to_bytes(4,'little')+b'x'*160000);raw[4:8]=(len(raw)-8).to_bytes(4,'little');p.write_bytes(raw);row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write(m)
+  with self.assertRaisesRegex(AssertionError,'runtime dimensions/bytes exceeded'):self.check()
+ def test_ta08_image_dimensions_format_and_boolean_aliases_rejected(self):
+  original=self.data()
+  for change in [lambda m:m['assets'][0]['runtime']['dimensions'].update(width=512.0),lambda m:m['assets'][0]['runtime'].update(alpha=1),lambda m:m['assets'][0]['source'].update(format='webp')]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_ta08_alpha_pixel_counts_types_and_nonempty_transparency_required(self):
+  for change in [lambda r:r['runtimeAlphaProof'].update(solidPixels=r['runtimeAlphaProof']['solidPixels']+1),lambda r:r['alphaProof'].update(min=False),lambda r:r['runtimeAlphaProof'].update(transparentPixels=0),lambda r:r['decodeProof'].update(runtimeRGBASHA256='invalid')]:
+   self.restore();self.changed_receipt(change)
+   with self.assertRaises(AssertionError):self.check()
+ def test_ta08_alpha_bbox_must_be_typed_inbounds_and_cover_recorded_subject(self):
+  for box in [[0,0,1,1],[False,0,512,512],[-1,0,512,512],[0,0,513,512]]:
+   self.restore();self.changed_receipt(lambda r:r.update(runtimeAlphaBBox=box))
+   with self.subTest(box=box),self.assertRaisesRegex(AssertionError,'alpha bbox'):self.check()
+ def test_ta08_prompt_collection_requires_six_exact_real_tool_inputs(self):
+  from ta08_inventory import PROMPTS
+  for change in [lambda m:m['prompts'].pop('dao'),lambda m:m.update(version=True),lambda m:m.update(userAcceptance=True),lambda m:m['prompts']['herbs'].update(prompt=''),lambda m:m['prompts']['herbs'].update(transparent_background=False)]:
+   self.restore();p=self.root/PROMPTS;m=json.loads(p.read_text());change(m);p.write_text(json.dumps(m))
+   with self.assertRaises(AssertionError):self.check()
+ def test_ta08_literal_and_document_hashes_and_prompt_key_cannot_be_conflated(self):
+  from ta08_inventory import PROMPTS
+  raw=(self.root/PROMPTS).read_bytes();literal=json.loads(raw)['prompts']['herbs']['prompt'].encode();self.assertNotEqual(hashlib.sha256(raw).hexdigest(),hashlib.sha256(literal).hexdigest())
+  for change in [lambda r:r.update(promptSHA256=hashlib.sha256(raw).hexdigest()),lambda r:r.update(promptDocumentSHA256=hashlib.sha256(literal).hexdigest()),lambda r:r.update(promptKey='dew')]:
+   self.restore();self.changed_receipt(change)
+   with self.assertRaisesRegex(AssertionError,'literal/document prompt identity'):self.check()
+ def test_ta08_receipts_require_hash_bound_actual_provenance_and_reexport(self):
+  m=self.data();m['assets'][0]['receipt']['sha256']='0'*64;self.reject(m)
+  for change in [lambda r:r.update(copiedUnchanged=False),lambda r:r.update(sourceId='dew'),lambda r:r.update(userAcceptance=True),lambda r:r['encoding'].__setitem__(2,'70'),lambda r:r['exportProof'].update(reencodedSHA256='0'*64),lambda r:r['review'].update(actuallyViewed=False)]:
+   self.restore();self.changed_receipt(change)
+   with self.assertRaises(AssertionError):self.check()
+ def test_ta08_no_identity_reference_or_external_prompt_consumer_can_be_invented(self):
+  for change in [lambda r:r.update(promptReference='../prompts.json'),lambda r:r.update(referenceImages=[{'path':'/tmp/ref.png'}]),lambda r:r.update(sourcePath='not-original')]:
+   self.restore();self.changed_receipt(change)
+   with self.assertRaises(AssertionError):self.check()
 
 if __name__=='__main__':unittest.main()

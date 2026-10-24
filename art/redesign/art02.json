@@ -13,8 +13,8 @@
   "files": [
     {
       "path": "web/src/SourceField.vue",
-      "bytes": 6039,
-      "sha256": "81d695fd95112be9d4316457e5096cdeaac7f900ce10abd9a8a0c3f51c913321"
+      "bytes": 5147,
+      "sha256": "90a35092618c16ce845b5e84f22b8ad39131e25ffb151d8d78b24e13af5dbe29"
     },
     {
       "path": "web/src/JourneyMap.vue",
@@ -43,8 +43,8 @@
     },
     {
       "path": "web/src/art02-source.css",
-      "bytes": 8059,
-      "sha256": "dd51c0f3d5e4584b80195aaa016a5230279b7c693fa5e2bb1dfa7285fafb2cf8"
+      "bytes": 3060,
+      "sha256": "2bd4bc28ca07595b36764b245ef186a445f478ad53fa3585d7a5dea190e66466"
     },
     {
       "path": "web/src/art02-journey.css",

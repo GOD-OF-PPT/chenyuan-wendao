@@ -6,38 +6,9 @@
 .source-field-location{grid-column:1/-1;display:flex;align-items:baseline;gap:16px;padding:0;min-height:44px}
 .source-field-location>strong{font-family:'Kaiti SC',STKaiti,serif;font-size:28px;color:#f1edcf}.source-field-location>span{font-size:14px;background:#102e36db;padding:6px 10px}
 .immersive-stage .source-field .source-points{grid-area:2/1;display:flex;flex-direction:column;min-height:0;gap:0}
-.immersive-stage .source-field .source-point-grid{position:relative;display:block;flex:1;min-height:224px}
-.immersive-stage .source-field .source-point-grid>button{position:absolute;top:var(--point-y);left:var(--point-x);translate:-50% -50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:110px;width:220px;max-width:45%;padding:8px 10px;border:0;background:linear-gradient(transparent,#0c2c30e8 50%);text-align:center}
-.source-field .source-point-grid>button:is(:hover,:focus-visible){outline:1px solid #bed9ab;outline-offset:3px}
-.immersive-stage .source-field .source-point-grid>button[aria-pressed=true]{background:linear-gradient(transparent,#123c37f5);color:#e3f2d1}
-.source-field .source-point-grid .source-object-mark{position:relative;display:grid;place-items:center;isolation:isolate;width:54px;height:54px;flex:none;background:#123d38ee;border:1px solid #b4ce9d;border-radius:50%}
-.source-field .source-point-grid .game-icon{width:30px;height:30px;margin:0!important;color:#d2e6bb;filter:none}
-.source-object-progress{position:absolute;inset:-5px;z-index:-1;border-radius:50%;background:conic-gradient(#b4ebc5 var(--source-progress),#203e3b99 0);mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));opacity:0}
-.source-field[data-state=working] .source-point-grid [aria-pressed=true] .source-object-progress{opacity:1}
-.source-field .source-point-grid strong{font-size:20px;line-height:1.4}
-.immersive-stage .source-field .source-points>.catalogue-pager{flex:none;min-height:44px;display:flex;flex-wrap:nowrap;justify-content:center;gap:12px;margin:0;background:#0c2d32e8}
-.immersive-stage .source-field .source-points>.catalogue-pager>span{order:0;width:auto;font-size:14px}.immersive-stage .source-field .source-points>.catalogue-pager button{min-height:44px;padding:6px 14px}
-.source-field[data-kind=commission] .source-point-grid>button{align-items:flex-start;text-align:left;min-height:106px;padding:12px 18px;border-left:3px solid #b8bd88;border-radius:2px 8px 8px 2px;background:linear-gradient(105deg,#325348f5,#173c38f0);gap:4px}
-.source-field[data-kind=commission] .source-point-grid>button[aria-pressed=true]{background:linear-gradient(105deg,#456956fa,#204d42f5);border-left-color:#dce4ad}
-.source-field[data-kind=commission] .source-object-mark{position:absolute;right:12px;top:10px;width:36px;height:36px;background:transparent;border:0}.source-field[data-kind=commission] .source-object-mark>.game-icon{width:25px;height:25px;opacity:.65}.source-field[data-kind=commission] .source-point-grid strong{padding-right:28px}
 .immersive-stage .source-field .source-focus{grid-area:2/2;position:relative;inset:auto;display:flex;flex-direction:column;gap:12px;align-items:stretch;padding:4px 0 0 14px;background:linear-gradient(90deg,#0c2c30aa,transparent);border:0;border-left:1px solid #a5bda05e;transition:none;min-height:0}
-.immersive-stage .source-field .source-chosen{display:flex;flex-direction:column;gap:8px;align-items:flex-start}.immersive-stage .source-field .source-chosen strong{font-size:26px;line-height:1.4;color:#e0ebc7}.immersive-stage .source-field .source-chosen>span{font-size:14px;line-height:1.55}
 .source-cycle-state{display:flex;flex-wrap:wrap;gap:5px 10px;align-items:center}.source-cycle-state>strong{font-size:18px;color:#c9ebc8}.source-cycle-state>span{font-size:18px;font-variant-numeric:tabular-nums}.source-cycle-state>small{font-size:14px;line-height:1.5}
-.source-field-bag{position:relative;margin-top:auto;display:flex;flex-direction:column;gap:10px;padding:12px 14px;border:1px solid #a3b58b77;border-radius:4px 4px 18px 18px;background:linear-gradient(135deg,#234a41ed,#112f32f7)}.source-field-bag>strong{font-size:18px;color:#e0e8c8}.source-field-bag>div{display:flex;gap:10px;align-items:center}.source-field-bag .game-icon{width:32px;height:32px;color:#a8d5bc}.source-field-bag span{font-size:18px;line-height:1.5}.source-field-bag b{font-size:24px;color:#d5f0c7;margin-left:8px}.source-field-bag small{display:block;font-size:14px;color:#c2d2bc}
-.source-field .source-arrival{position:static;padding:8px 12px;font-size:18px;line-height:1.4;background:#214e44;color:#edf1d9;border:1px solid #bfce9c;border-radius:4px;animation:source-land-in-bag 1.4s ease-out both}
-@keyframes source-land-in-bag{from{filter:brightness(1.4)}to{filter:none}}
-.source-field-hint{font-size:14px;line-height:1.5;color:#c3d3c4}
 .source-field-empty{grid-area:2/1/3/3;align-self:center;justify-self:center;display:flex;flex-direction:column;align-items:center;gap:16px;padding:24px!important;background:#102e36ed!important;max-width:660px}.source-field-empty>strong{font-size:24px}.source-field-empty>p{font-size:18px;line-height:1.6;margin:0}.source-field-empty>button{min-height:44px;font-size:18px}
 .immersive-stage .source-object-planner .source-arrangement{display:grid;grid-template-columns:minmax(280px,1.1fr) minmax(260px,1fr) minmax(250px,.8fr);grid-template-rows:auto auto;grid-area:auto;gap:8px 18px;padding:10px 14px;background:#102f36ee;border-top:1px solid #8eb79c77;align-items:center}
 .source-object-planner .source-plan-summary{grid-column:1;grid-row:1/3;gap:5px;min-height:76px;padding:6px 0!important;border-bottom:0!important}.source-object-planner .source-plan-summary>span{font-size:18px;line-height:1.45}
 .immersive-stage .source-object-planner .source-estimate{grid-column:2;grid-row:1/3;font-size:14px;line-height:1.5}.immersive-stage .source-object-planner .source-estimate>small{font-size:14px;line-height:1.5;margin-top:4px}.immersive-stage .source-object-planner .source-start{grid-column:3;grid-row:1;font-size:21px!important;min-height:52px;border-radius:26px}.source-object-planner .source-rule{grid-column:3;grid-row:2;font-size:14px;line-height:1.45}
-.hub-reduced .source-field .source-arrival{animation:none}
-@media(prefers-reduced-motion:reduce){.source-field .source-arrival{animation:none}}
-.source-field[data-state=failed] .source-field-scene{grid-template-columns:minmax(0,1fr) 520px;grid-template-rows:44px minmax(0,1fr);padding:12px 16px}
-.source-field[data-state=failed] .source-field-location{grid-area:1/1}
-.immersive-stage .source-field[data-state=failed] .source-point-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;min-height:0}
-.immersive-stage .source-field[data-state=failed][data-kind=commission] .source-point-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-.immersive-stage .source-field[data-state=failed] .source-point-grid>button{position:static;translate:none;width:auto;max-width:none}
-.immersive-stage .source-field[data-state=failed] .source-focus{grid-area:1/2/3/3;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto;gap:8px 12px}
-.source-field[data-state=failed] .source-field-bag{grid-column:2;grid-row:1/3;margin:0}
-.source-field[data-state=failed] .source-field-hint{grid-column:1/-1}

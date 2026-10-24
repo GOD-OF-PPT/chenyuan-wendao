@@ -1,0 +1,382 @@
+{
+  "format": "chenyuan-ta08-scope-code-review",
+  "version": 1,
+  "iteration": "source6",
+  "runtimeDigest": "19f9f70ba11e1a450fb8f0f415fca60219240af4cde7872b6eba38925f51e644",
+  "status": "Current TA08 scope code review after actual same-run new12; related old30 running, visual queue not yet reviewed. Not final overall acceptance.",
+  "decision": "No unresolved Game/Store/storage/security blocker identified in the reviewed scope. The known late transfer issue is resolved by a narrow bounded displacement and actual visible middle/end evidence. Related old30, real pixels, delivery and user acceptance remain separate.",
+  "scope": {
+    "newFiles": [
+      "web/src/SourceObject.vue",
+      "web/src/SourceCommission.vue",
+      "web/src/SourceSatchel.vue",
+      "web/src/source-choreography.ts",
+      "web/src/ta08-source.css"
+    ],
+    "parents": [
+      "web/src/SourceField.vue",
+      "web/src/SourcePlanner.vue"
+    ],
+    "engineStoreDatabaseChanges": false,
+    "newFiveBytesAtRead": 41373,
+    "cap": 42000
+  },
+  "findings": [
+    {
+      "id": "TA08-S5-PATH-01",
+      "state": "resolved within current TA08 tested scope",
+      "currentEvidence": "artifacts/goal-4/ta08/source6-native-route-observations.json",
+      "evidenceSHA256": "4f909f365f73da44d3b56aeabc1ae2929c3484169d7f61e716ce2ad0d7361c20",
+      "observations": 6,
+      "pieces": 9,
+      "allObservedOpacityPositive": true,
+      "maximumPaintedRightIncluding6px": 1158.6124267578125,
+      "protectedInspectTextLeft": 1183,
+      "minimumHorizontalGap": 24.3875732421875,
+      "nativeCSSAnimationTimesMs": [
+        {
+          "name": "natural-first-bag-arrival-early-saved-route-clearance",
+          "items": [
+            {
+              "id": "herb",
+              "times": [
+                200.07000000923148
+              ],
+              "opacity": 0.983875
+            }
+          ]
+        },
+        {
+          "name": "natural-first-bag-arrival-middle-saved-route-clearance",
+          "items": [
+            {
+              "id": "herb",
+              "times": [
+                783.3800000092315
+              ],
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "name": "natural-first-bag-arrival-late-saved-route-clearance",
+          "items": [
+            {
+              "id": "herb",
+              "times": [
+                1033.3700000092315
+              ],
+              "opacity": 0.121124
+            }
+          ]
+        },
+        {
+          "name": "longest-commission-two-positive-objects-early-saved-route-clearance",
+          "items": [
+            {
+              "id": "dao",
+              "times": [
+                166.75599999050038
+              ],
+              "opacity": 0.879155
+            },
+            {
+              "id": "stones",
+              "times": [
+                166.75599999050038
+              ],
+              "opacity": 0.879155
+            }
+          ]
+        },
+        {
+          "name": "longest-commission-two-positive-objects-middle-saved-route-clearance",
+          "items": [
+            {
+              "id": "dao",
+              "times": [
+                783.3979999905006
+              ],
+              "opacity": 1
+            },
+            {
+              "id": "stones",
+              "times": [
+                783.3979999905006
+              ],
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "name": "longest-commission-two-positive-objects-late-saved-route-clearance",
+          "items": [
+            {
+              "id": "dao",
+              "times": [
+                1016.7219999905006
+              ],
+              "opacity": 0.190997
+            },
+            {
+              "id": "stones",
+              "times": [
+                1016.7219999905006
+              ],
+              "opacity": 0.190997
+            }
+          ]
+        }
+      ],
+      "actualTestingMethod": "Existing A3 and A6 await actual CSSAnimation.currentTime >=750 and >=1000ms with opacity>0 and time<1100; no animation seek/finish, callback change, new timer or period extension. Original complete Game/Activity/DB/due/proof and1400ms owner remain.",
+      "priorEvidence": {
+        "source5Original12": "passed, but only first-moment clearance",
+        "initialExtraObservationReport": "ui-lifetime-red-source5-report.json actually2passed; filename is not proof of a red and these observations did not establish the native late-frame failure",
+        "actualNativeCSSRedReport": "ui-native-lifetime-source5-report.json actual0passed/2failed retained",
+        "source5ConditionalReview": "artifacts/goal-4/ta08/source5-code-review.json retained unchanged"
+      },
+      "limits": "Three visible samples per selected natural/mixed case plus bounded current CSS displacement do not mean every animation frame or all pages were visually reviewed."
+    }
+  ],
+  "reviewed": [
+    {
+      "topic": "Single formal owner and finite authorization",
+      "evidence": [
+        "SourceField.vue:17",
+        "SourcePlanner.vue:20-43"
+      ],
+      "result": "SourceField remains the sole shared v2/sourceId effect owner. SourcePlanner owns plan/quote/default5/cumulative months/lifespan reserve/target cap and original start emission; object arrange only opens the existing dialog. Reading/selection/inspecting does not start or award."
+    },
+    {
+      "topic": "Complete proof and lifetime",
+      "evidence": [
+        "web/src/use-activity-effect.ts",
+        "web/src/activity-effects.ts",
+        "web/src/source-choreography.ts:29-34"
+      ],
+      "result": "Original full Game->resolve->ActionResult->completeActivity/nonreplay proof and1400ms lifecycle remain. savedSourceYield further matches source/run/revision/v2/activity cycle command. It is a read-only projection, not an alternative proof or reward system. Stable full proof is not loosened."
+    },
+    {
+      "topic": "Working/saving/cleanup",
+      "evidence": [
+        "SourceObject.vue:7-15",
+        "SourceCommission.vue:6-17",
+        "source-choreography.ts:14-20",
+        "SourceField.vue:23-24"
+      ],
+      "result": "Only explicit working state moves props-derived progress. Saving seals; paused/hidden/foreign ownership/error clear work/effect through the existing parent hook. No new timers, Store writes, IDB access or self-created results in the five modules. Old receipts/refresh cannot arm a completed result."
+    },
+    {
+      "topic": "Actual yields and durable facts",
+      "evidence": [
+        "source-choreography.ts:21-34",
+        "SourceSatchel.vue:13-18",
+        "SourceSatchel.vue:38-45"
+      ],
+      "result": "Holdings read actual Game; cumulative values read actual same-run source activity. Positive actual inventory and stones remain separate and mixed sources retain both. XP is actual delta/cumulative text and never a physical item. Bag open is local UI only; normal revisions preserve it, run/source/deactivation reset it."
+    },
+    {
+      "topic": "Security and image identity",
+      "evidence": [
+        "SourceObject.vue",
+        "SourceCommission.vue:8-9",
+        "SourceSatchel.vue:10-11",
+        "web/src/AssetImage.vue"
+      ],
+      "result": "Local static asset paths and inline SVG only; useId isolates gradient fragments across mounted copies. No eval/Function/v-html/network service/font/dependency or public proof/schema change. Existing current-node/current-src checks retain stale image callback fencing."
+    },
+    {
+      "topic": "Layout and evidence limits",
+      "evidence": [
+        "artifacts/goal-4/ta08/source4-result-layout-diagnostics.json",
+        "artifacts/goal-4/ta08/ui-full-source4-failures.json",
+        "web/src/ta08-source.css"
+      ],
+      "result": "Source4 real result/arrangement overlap, parent escape, notice/import catalogue pressure and modal h3 Range failure remain historical evidence. Source5 compact layout is under real test and not called solved here. No images were viewed by this reviewer in this review. Native artwork plus code work layers do not establish eight-page game feel, long balance or human acceptance."
+    }
+  ],
+  "unverified": [
+    "Selected old30 currently running; do not call them passed before terminal",
+    "Ten commission cold-object pixel review is queued and has not begun",
+    "Full representative natural/saved/error pixel review and unread frames must remain explicit",
+    "Final archive/rebuild/HTTP delivery",
+    "Whole eight-page game feel, long balance and human acceptance"
+  ],
+  "fileFacts": [
+    [
+      "web/src/SourceObject.vue",
+      5413,
+      "31adfb2ba5ff140f0b4f438a7b050f3842ba76c0730f9e2dc4df9fec228fa413"
+    ],
+    [
+      "web/src/SourceCommission.vue",
+      10276,
+      "9d385a237a24f51277fa8dae9dd4c7cb7e81c563923370066c89efeea0702314"
+    ],
+    [
+      "web/src/SourceSatchel.vue",
+      5817,
+      "cd93826c381eb6877e073b9eba885b5505fe1e9745de451511ce8ceac65010c4"
+    ],
+    [
+      "web/src/source-choreography.ts",
+      3592,
+      "665cb8c1d7bf0537b992b628720ff3be2bf0206536b36f487799bf67fe1f96f2"
+    ],
+    [
+      "web/src/ta08-source.css",
+      16275,
+      "0bcaa542dca4f1dc9bb862e63ead388dee2f996bf483507d77813710181f3522"
+    ],
+    [
+      "web/src/SourceField.vue",
+      5147,
+      "90a35092618c16ce845b5e84f22b8ad39131e25ffb151d8d78b24e13af5dbe29"
+    ],
+    [
+      "web/src/SourcePlanner.vue",
+      8338,
+      "c4286f9bbfeac6a1a757ad2aafc0a8e41ee14da14b7212cf23b3a6fb9b34fa49"
+    ]
+  ],
+  "validation": {
+    "runtimeDigest": "19f9f70ba11e1a450fb8f0f415fca60219240af4cde7872b6eba38925f51e644",
+    "runtimeSourceCount": 253,
+    "payloadCount": 69,
+    "payloadBytes": 8311235,
+    "new12Report": {
+      "path": "artifacts/goal-4/ta08/ui-full-source6-report.json",
+      "sha256": "5f41325724d1bd0001a88a74435a3a24d42c793561640ce4c171bc8e753be4a4"
+    },
+    "stats": {
+      "startTime": "2026-10-24T17:18:27.985Z",
+      "duration": 131906.918,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "strictInputCount": 714,
+    "inputsExact": true,
+    "runtimeSourcesExact": true,
+    "declarationsExactlyMatched": true,
+    "relatedOld30": "running under root ownership at time of review; no result inferred here",
+    "reviewerExecutedTests": false,
+    "reviewerOpenedBrowser": false
+  },
+  "commandsPrepared": {
+    "executed": false,
+    "workdir": "/Users/gordon/githome/chenyuan-wendao",
+    "node": "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "core815": {
+      "command": [
+        "--experimental-strip-types",
+        "artifacts/goal-4/ta07/run-rules-source5.mjs"
+      ],
+      "wrapper": "artifacts/goal-4/ta07/run-rules-source5.mjs",
+      "explicitList": "artifacts/goal-4/ta07/core-files-source5.json",
+      "fileCount": 61,
+      "listSHA256": "080216ae86c313b8d15b7b8dbbaa3cb7596ba297ed115dc1467346a708bfdef0",
+      "previousExpectedTests": 815,
+      "meaning": "Reusing the exact explicit61-file selection/runner, not claiming a current815 execution. demo-nodes.test writes only its own OS temp path."
+    },
+    "rootTypes": {
+      "command": [
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "configuration": "tsconfig.json",
+      "include": [
+        "src/**/*.ts"
+      ],
+      "meaning": "Root rules types only; does not replace web Vue semantic type/build checks."
+    }
+  },
+  "recordingBoundary": "Only this new ignored source6 review JSON written under explicit authorization while selected old30 runs. No source/spec/docs/guard/ledger inputs or source5 historical review altered.",
+  "source5To6": {
+    "changedRuntimePaths": [
+      "web/src/ta08-source.css"
+    ],
+    "codeMeaning": "Only ta08-source.css changes the75% translateX90->36 and final110->42; route top10 remains. No timing, keyframe duration, proof, lifecycle, Game, Store or action changes."
+  },
+  "budgets": {
+    "newFive": 41373,
+    "newCap": 42000,
+    "art02": 35711,
+    "art02Cap": 45000,
+    "SourcePlannerPlusIdleSources": 10995,
+    "sourceCap": 24000,
+    "stageR2CSS": 11718,
+    "stageR2Cap": 14000,
+    "ledgerHashesMatchedAtRead": true,
+    "capsRaised": false
+  },
+  "visualPreparation": {
+    "manifest": "artifacts/goal-4/ta08/source6-new12-verification.json",
+    "manifestContainsColdImages": 16,
+    "commissionQueue": [
+      {
+        "path": "artifacts/goal-4/ta08/ui-full-source6-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-core-cold.png",
+        "bytes": 1452571,
+        "sha256": "11be1214810f6110afe952c15ba22a79d1ecc1554d4b9c0d908a1ed3ade998d7",
+        "status": "queued only; no decode/conversion/view performed"
+      },
+      {
+        "path": "artifacts/goal-4/ta08/ui-full-source6-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-dao_task-cold.png",
+        "bytes": 1432674,
+        "sha256": "21788df3682f9a28f0ae514add341ce09176be772a327df856cd5c844c8a19d3",
+        "status": "queued only; no decode/conversion/view performed"
+      },
+      {
+        "path": "artifacts/goal-4/ta08/ui-full-source6-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-jade_task-cold.png",
+        "bytes": 1444042,
+        "sha256": "c51abaa251881650c8a9695255a02d6829fca0f014642f1cd3ef3e1d349ea942",
+        "status": "queued only; no decode/conversion/view performed"
+      },
+      {
+        "path": "artifacts/goal-4/ta08/ui-full-source6-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-lotus_task-cold.png",
+        "bytes": 1442770,
+        "sha256": "235dbaad2b8af51ee50677fe3c6048493214f7098d7a4f413f43a506362bbf28",
+        "status": "queued only; no decode/conversion/view performed"
+      },
+      {
+        "path": "artifacts/goal-4/ta08/ui-full-source6-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-soul_task-cold.png",
+        "bytes": 1450359,
+        "sha256": "e6196647d7ae69308c2f8fb54cb5bf2fe034705a0e126bc0fc7df9171c17f46a",
+        "status": "queued only; no decode/conversion/view performed"
+      },
+      {
+        "path": "artifacts/goal-4/ta08/ui-full-source6-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-work-cold.png",
+        "bytes": 1456251,
+        "sha256": "f2292b9fcae59f1e461efadcbc5a0c6cdc24eb8cf64b22498d9dd2c39e203468",
+        "status": "queued only; no decode/conversion/view performed"
+      },
+      {
+        "path": "artifacts/goal-4/ta08/ui-full-source6-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-work_foundation-cold.png",
+        "bytes": 1450272,
+        "sha256": "9fd31339fb43c90caaa4ac3b0713f157c7cda4dbe6738671437d206f097daa72",
+        "status": "queued only; no decode/conversion/view performed"
+      },
+      {
+        "path": "artifacts/goal-4/ta08/ui-full-source6-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-work_golden-cold.png",
+        "bytes": 1446686,
+        "sha256": "ccf03a2858a6782171fa0a3029f5b35062dbe8ec01acccfbf48bb793a02f5ddf",
+        "status": "queued only; no decode/conversion/view performed"
+      },
+      {
+        "path": "artifacts/goal-4/ta08/ui-full-source6-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-work_nascent-cold.png",
+        "bytes": 1447294,
+        "sha256": "3779371ea2c6d60ced7ad340edabaec852c44a6ad8350e914a27ea5a2db7988f",
+        "status": "queued only; no decode/conversion/view performed"
+      },
+      {
+        "path": "artifacts/goal-4/ta08/ui-full-source6-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-work_spirit-cold.png",
+        "bytes": 1430137,
+        "sha256": "caa18f86945234fb3beb2eaa5aa42561b7cca4426cc6080bfe508c5818d7b544",
+        "status": "queued only; no decode/conversion/view performed"
+      }
+    ],
+    "count": 10,
+    "instruction": "Wait for root after old30 real periods. Then convert and actually inspect at original dimensions at most2 per call, preferably one, retaining originalPNG/hash; metadata or file hashes are not pixel approval."
+  }
+}

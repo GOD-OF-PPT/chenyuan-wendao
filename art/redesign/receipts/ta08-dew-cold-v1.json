@@ -1,0 +1,100 @@
+{
+  "id": "dew-cold-v1",
+  "sourceId": "dew",
+  "promptKey": "dew",
+  "tool": "built-in image_gen",
+  "sourcePath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-e6e000df-bba4-4353-9555-109eeef1ff6e.png",
+  "savedPath": "art/redesign/ta08-resources/dew-cold-v1.png",
+  "sourceSHA256": "cfd573494d13846c9394d1fbfad16644025aad8d419b69c797c84d981bbe81df",
+  "copiedUnchanged": true,
+  "source": {
+    "path": "art/redesign/ta08-resources/dew-cold-v1.png",
+    "bytes": 1575410,
+    "sha256": "cfd573494d13846c9394d1fbfad16644025aad8d419b69c797c84d981bbe81df",
+    "dimensions": {
+      "width": 1254,
+      "height": 1254
+    },
+    "alpha": true,
+    "format": "png"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/sources/dew-cold-v1.webp",
+    "bytes": 57462,
+    "sha256": "5272fa6dbb7d5fdc901c3c27634b9749b230831b133eeba455ea315fc9e0da0e",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "alpha": true,
+    "format": "webp"
+  },
+  "alphaProof": {
+    "transparentPixels": 987113,
+    "solidPixels": 487118,
+    "intermediatePixels": 98285,
+    "min": 0,
+    "max": 255
+  },
+  "runtimeAlphaProof": {
+    "transparentPixels": 164209,
+    "solidPixels": 80605,
+    "intermediatePixels": 17330,
+    "min": 0,
+    "max": 254
+  },
+  "sourceAlphaBBox": [
+    0,
+    29,
+    1216,
+    1254
+  ],
+  "runtimeAlphaBBox": [
+    24,
+    37,
+    486,
+    490
+  ],
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "promptReference": "art/redesign/receipts/ta08-resource-prompts.json",
+  "promptSHA256": "8931ac2fca5e2c2783b7281698db82dbfe12a304835b67233ae4268689adcc42",
+  "promptDocumentSHA256": "b8a939c8663aba88c1f24ddc8decdad4626d1427f379dfe87813363f17cdc671",
+  "referenceImages": [],
+  "review": {
+    "actuallyViewed": true,
+    "scope": "root source pixel inspection, not user art acceptance",
+    "observation": "Broad cupped leaves with attached still dew beads and curled collecting leaf; no falling reward. Root actually inspected generated source pixels in a batch of at most two. No text/UI/person/tool/motion reward or rectangular backdrop seen. Requested central72-percent margin was not fully achieved; original retained and actual bbox recorded, drawing containment must be checked in the real stage. Source art only, not human acceptance."
+  },
+  "exportProof": {
+    "sourceUnchanged": true,
+    "runtimeUnchanged": true,
+    "reencodedBytes": 57462,
+    "reencodedSHA256": "5272fa6dbb7d5fdc901c3c27634b9749b230831b133eeba455ea315fc9e0da0e",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2"
+  },
+  "decodeProof": {
+    "decoder": "Pillow",
+    "sourceRGBASHA256": "af78bb983bcbb4a36f5589ba2cec4913d687a9dca7fd4991e863e08a0878e32c",
+    "runtimeRGBASHA256": "345a1d48d2ca47cc7f1ed70546554c3081e62449db3a6f12fc18282e2476ba83",
+    "alphaDefinitions": {
+      "transparentPixels": "alpha=0",
+      "solidPixels": "alpha>=250",
+      "intermediatePixels": "1<=alpha<250"
+    }
+  },
+  "userAcceptance": false
+}

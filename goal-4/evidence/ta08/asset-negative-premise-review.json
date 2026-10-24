@@ -1,0 +1,188 @@
+{
+  "format": "chenyuan-ta08-negative-fixture-repair-review",
+  "version": 1,
+  "recordedAt": "2026-10-24T17:55:46.559711+00:00",
+  "task": "TA08",
+  "status": "Authorized test-premise-only repair verified; no production or validator change.",
+  "originalFailure": {
+    "tests": 339,
+    "passed": 338,
+    "failed": 1,
+    "runtimeDigest": "19f9f70ba11e1a450fb8f0f415fca60219240af4cde7872b6eba38925f51e644",
+    "strictInputs": 720,
+    "beforeAfterExact": true,
+    "raw": {
+      "path": "artifacts/goal-4/ta08/assets-source6.log",
+      "sha256": "6a8538db90b52b38f5b5fbf4270e341e223b877ca5ded1e943aa7fa878be76b3",
+      "bytes": 1349
+    },
+    "preservedCopy": {
+      "path": "artifacts/goal-4/ta08/asset-opening-tag-premise/assets-source6.log",
+      "sha256": "6a8538db90b52b38f5b5fbf4270e341e223b877ca5ded1e943aa7fa878be76b3",
+      "bytes": 1349
+    },
+    "resultMetadata": {
+      "path": "artifacts/goal-4/ta08/checks-source6-results.json",
+      "sha256": "b5445aa2350792fcdcb21f30ce8691de3a9cab6867075e9063d7158ee75ad206",
+      "bytes": 2954
+    },
+    "cause": "The negative-fixture regex required a self-closing tag. Actual SourcePlanner SourceField has slots, and SourceObject AssetImage has fallback content, so their real opening tags are followed by bodies and closing tags. The count0 failure occurred before mutating these real consumers; it was not a production/validator failure."
+  },
+  "exactChange": {
+    "file": "art/tools/test_inventory.py",
+    "line": 1270,
+    "changedLines": 1,
+    "old": "tags=re.findall(r'<'+component+r'\\b[^>]*?/>',text)",
+    "new": "tags=re.findall(r'<'+component+r'\\b(?:[^>\"\\']|\"[^\"]*\"|\\'[^\\']*\\')*>',text)",
+    "beforeSHA256": "e823eb2e579a89d27baf7336e418fa0bfccb424fcea41c214fc5c931e8b3e474",
+    "afterSHA256": "3b78c1ce556fc43f25086bb67130a1e2b7c722961fadffa40c77439d0b580602",
+    "inverseSHA256": "e823eb2e579a89d27baf7336e418fa0bfccb424fcea41c214fc5c931e8b3e474",
+    "wholeFileInverseExact": true,
+    "originalFullFile": {
+      "path": "artifacts/goal-4/ta08/asset-opening-tag-premise/before-test_inventory.py",
+      "sha256": "e823eb2e579a89d27baf7336e418fa0bfccb424fcea41c214fc5c931e8b3e474",
+      "bytes": 111527
+    },
+    "originalFunction": {
+      "path": "artifacts/goal-4/ta08/asset-opening-tag-premise/before-function.py",
+      "sha256": "69fb2b1f38d08adb9ef941981890493596fb293ee91c54444632bbb70ee0edf0",
+      "bytes": 1013
+    },
+    "currentFunction": {
+      "path": "artifacts/goal-4/ta08/asset-opening-tag-premise/after-function.py",
+      "sha256": "13697ea0e38301c19192cbd8395e84fd5aea5b60f0e0b760164a7355d950ff99",
+      "bytes": 1037
+    },
+    "minimalPatch": {
+      "path": "artifacts/goal-4/ta08/asset-opening-tag-premise/minimal.patch",
+      "sha256": "24f2d3a31deda868bd39e4e02f359942147d1680407ecc726e297b9bbd897ac1",
+      "bytes": 1362
+    },
+    "preservedAssertions": [
+      "five existing real seams",
+      "exactly one matching real opening tag",
+      "exactly one actual target attribute",
+      "whole opening tag occurs exactly once",
+      "actual attribute mutation",
+      "changed_source rehash synchronization",
+      "with assertRaises guard rejection"
+    ]
+  },
+  "fiveNegativeSeams": [
+    {
+      "component": "SourceObject",
+      "path": "web/src/SourceField.vue",
+      "mutation": "sequence: current trusted sequence ->999",
+      "actualRejected": true,
+      "evidence": "The one successful leaf executed the unchanged five-entry loop and satisfied its assertRaises for this actual attribute mutation. These are five seams inside one existing declared test, not five additional cases."
+    },
+    {
+      "component": "SourceCommission",
+      "path": "web/src/SourceField.vue",
+      "mutation": "state: current state ->working literal",
+      "actualRejected": true,
+      "evidence": "The one successful leaf executed the unchanged five-entry loop and satisfied its assertRaises for this actual attribute mutation. These are five seams inside one existing declared test, not five additional cases."
+    },
+    {
+      "component": "SourceSatchel",
+      "path": "web/src/SourceField.vue",
+      "mutation": "result: trusted effect result ->null",
+      "actualRejected": true,
+      "evidence": "The one successful leaf executed the unchanged five-entry loop and satisfied its assertRaises for this actual attribute mutation. These are five seams inside one existing declared test, not five additional cases."
+    },
+    {
+      "component": "SourceField",
+      "path": "web/src/SourcePlanner.vue",
+      "mutation": "arrange: readonly original settings ->undefined",
+      "actualRejected": true,
+      "evidence": "The one successful leaf executed the unchanged five-entry loop and satisfied its assertRaises for this actual attribute mutation. These are five seams inside one existing declared test, not five additional cases."
+    },
+    {
+      "component": "AssetImage",
+      "path": "web/src/SourceObject.vue",
+      "mutation": "path: actual SOURCE_ART ->unrelated.webp",
+      "actualRejected": true,
+      "evidence": "The one successful leaf executed the unchanged five-entry loop and satisfied its assertRaises for this actual attribute mutation. These are five seams inside one existing declared test, not five additional cases."
+    }
+  ],
+  "actualExecutions": [
+    {
+      "phase": "asset-opening-leaf-source6",
+      "args": [
+        "art/tools/test_inventory.py",
+        "TA08InventoryTests.test_ta08_each_real_child_receives_trusted_props_and_readonly_arrange"
+      ],
+      "began": "2026-10-24T17:50:43.904Z",
+      "ended": "2026-10-24T17:50:44.809Z",
+      "exit": 0,
+      "error": null,
+      "inputs": 723,
+      "inputsAndRuntimeStable": true,
+      "runtimeDigest": "19f9f70ba11e1a450fb8f0f415fca60219240af4cde7872b6eba38925f51e644",
+      "expectedTests": 1,
+      "actualTests": 1,
+      "durationSeconds": 0.271,
+      "unittestOK": true,
+      "log": "artifacts/goal-4/ta08/asset-opening-leaf-source6.log",
+      "logSHA256": "4e70127055e5c46295db82122a0ab018f60fd181ebfe2b405d36defaf52d820e",
+      "before": "artifacts/goal-4/ta08/asset-opening-leaf-source6-before.json",
+      "beforeSHA256": "8e21c010e2333058db0947ab959beff27e1e89d919fc2cf31956b71b33667746",
+      "after": "artifacts/goal-4/ta08/asset-opening-leaf-source6-after.json",
+      "afterSHA256": "e8862b1ca5214e6f453b1db9f527def2bc3ee18dce53d1aec386ab214efcec5d"
+    },
+    {
+      "phase": "asset-opening-full-source6",
+      "args": [
+        "art/tools/test_inventory.py"
+      ],
+      "began": "2026-10-24T17:50:45.178Z",
+      "ended": "2026-10-24T17:54:02.525Z",
+      "exit": 0,
+      "error": null,
+      "inputs": 723,
+      "inputsAndRuntimeStable": true,
+      "runtimeDigest": "19f9f70ba11e1a450fb8f0f415fca60219240af4cde7872b6eba38925f51e644",
+      "expectedTests": 339,
+      "actualTests": 339,
+      "durationSeconds": 196.684,
+      "unittestOK": true,
+      "log": "artifacts/goal-4/ta08/asset-opening-full-source6.log",
+      "logSHA256": "007d676e7838e99de1c7246d23421283cecf92eed1e6054de3c72e5c33723495",
+      "before": "artifacts/goal-4/ta08/asset-opening-full-source6-before.json",
+      "beforeSHA256": "69821b449dadc746bca857bb3cb747dffd2bbfa3317338d9b5262e44f3d2ec78",
+      "after": "artifacts/goal-4/ta08/asset-opening-full-source6-after.json",
+      "afterSHA256": "7ebed6014870014cf8d3873f3025b3b45a80c0600c3428058031d7c981011ac4"
+    }
+  ],
+  "final": {
+    "leafTests": 1,
+    "fullTests": 339,
+    "allPassed": true,
+    "eachExecutedOnce": true,
+    "strictInputsEachPhase": 723,
+    "withinEachPhaseAllHashesAndRuntimeExact": true,
+    "runtimeDigest": "19f9f70ba11e1a450fb8f0f415fca60219240af4cde7872b6eba38925f51e644",
+    "runtimeSources": 253,
+    "zeroProductionChanges": true,
+    "zeroGuardOrBudgetChanges": true,
+    "guardHashes": [
+      {
+        "path": "art/tools/check_inventory.py",
+        "sha256": "5c57e368b74d3bea3ca68abb17dbd8c66dad00ea0e9bad121f8be37ee80a51f0"
+      },
+      {
+        "path": "art/tools/ta08_inventory.py",
+        "sha256": "2d4e6cc59cbc82348e863c1c30c40d1ac98d2a9fde2d1a2422856a6e979df04a"
+      }
+    ]
+  },
+  "boundaries": [
+    "Only test_inventory.py one line changed. No production, shared validator, ta08 validator, budgets, counts or five mutation/assertion seams changed.",
+    "Native34/UI42/core815 are not rerun here; their own execution identity windows remain historical/current evidence as recorded.",
+    "Across phases testInventory intentionally changed e823 to3b78; only each phase input window is claimed exact.",
+    "The single leaf exercises five real opening tags, including slot/fallback non-self-closing children; it still requires exactly one tag and one target attribute and actual guard rejection after synchronized rehash.",
+    "Original338pass/1fail evidence is retained and never relabelled as current339 pass.",
+    "This repair is not a new test declaration and does not increase339,815,34 or42 counts.",
+    "No further UI/core/native suite was started by this repair; only leaf1 followed by full339."
+  ]
+}
