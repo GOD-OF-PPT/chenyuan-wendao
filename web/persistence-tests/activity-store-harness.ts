@@ -4,6 +4,7 @@ import { useGame } from '../src/store';
 import { FullSaveRepository } from '../src/full-persistence';
 import { RuleError } from '../../src/full/errors.ts';
 import type { ActivityOutcome, ActivityTick } from '../../src/full/activity.ts';
+import { watch } from 'vue';
 
 export function createActivityStoreHarness() {
   const pinia = createPinia();
@@ -60,6 +61,15 @@ export function createActivityStoreHarness() {
     shiftWallClock,
     rewindBeforeNextCycle,
     get earlyRejected() { return earlyRejected; },
+    trace() {
+      const states: unknown[] = [], observations: unknown[] = [];
+      const stop = watch(() => [store.game, store.activity, store.activityRuntime, store.lastResult], () => {
+        states.push(structuredClone({ game: store.game, activity: store.activity, runtime: store.activityRuntime, result: store.lastResult }));
+      }, { flush: 'sync' });
+      const unobserve = store.observe(value => observations.push(structuredClone(value)));
+      restores.push(stop, unobserve);
+      return { states, observations };
+    },
     async persisted() {
       const repo = await FullSaveRepository.open();
       try { return await repo.loadActivitySnapshot(); }

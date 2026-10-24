@@ -273,3 +273,9 @@ ART03复核历史进展（source12、交付前）：source12 f4f31020冻结，�
 - [杠精审查] 通过，仅0029独立工程单元，无已知未修本项阻断；局部工程/像素不代整体游戏感、美术、长期平衡及真人。下一只MATRIX-M02，再M03并与ART06合三项检查；完整路线/恢复/性能、兼容最后、干净同源最终包/最大C端代码安全与真人继续。原生Goal本轮get_goal实际active，历史nextR1不重做；未push/PR/合并/公开部署/改权限。回滚仅独立revert本项并保DB9/DB1可读、原档/v0.3/输入/旧冻结/13及全部失败。
 
 证据：evidence/art06/verification.json、coverage-final.json、identity-proof.json、review.md及原始artifacts/goal-4/art06。
+
+## MATRIX-M02开工（2026-10-24）
+
+- 状态：[ ] 当前独立项，基线33cbd4506e932226983bd9e12971554a35f9616b，codex/goal-4-online-recovery；Goal实际active。
+- 原话/参数/计划/风险/验收/回滚：amendments/2026-10-24-continue-matrix-m02.md、0030及plan先保存。18个真实正消耗、每行Q/A/L/T/R与Store丢回复原retry，三代表hold回复/新活动及跨人生控制；全库与原始回执证据。每行正式合法/成本核对后才测。
+- 完成/实际检查/失败修缮/提交/同源/杠精：待本项真实交付填写。原13与全部旧证据保留；不以新矩阵计数顶旧100×3责任。仅固定桌面，不兼容/环境性能；下一M03，整体艺术/长期/真人仍开放。

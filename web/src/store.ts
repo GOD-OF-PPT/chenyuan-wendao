@@ -13,6 +13,7 @@ import {createActivityClock} from './activity-clock';
 import type {Activity,ActivityPlan,CultivationPlan,ActivityMutation,ActivityTick,ActivityOutcome} from '../../src/full/activity.ts';
 import {isMilestoneAction} from '../../src/full/milestones.ts';
 import type {MilestoneAction,MilestonePlan} from '../../src/full/milestones.ts';
+import {canonicalFingerprint} from '../../src/full/receipts.ts';
 export interface MilestoneIntent { plan:MilestonePlan;mutation:ActivityMutation; }
 
 export type CheckpointSummary = Pick<SaveCheckpoint, 'kind' | 'sourceRunId' | 'sourceRevision' | 'versions'> & { target: { name: string; realm: Game['core']['player']['realm']; months: number; hp: number; mp: number; inventory: Record<string, number> } };
@@ -223,23 +224,31 @@ export const useGame = defineStore('game', () => {
       const initial:Execution={id:commandId??'',label,totalMs,remainingMs:totalMs,phase:'acting',batch:!!action&&('count'in action&&(action.count??1)>1||'quantity'in action&&action.quantity>1)};
       if(!instant){const completed=await actionClock.wait(totalMs,remaining=>{execution.value={...initial,remainingMs:remaining};});
         if(!completed||disposed)return;execution.value={...initial,remainingMs:0,phase:'saving'};}
-      const outcome = await operation();
+      const operationRead=readEpoch,outcome = await operation();
       if (!owns()) return;
       confirmed=true;
       if(commandId){
         confirmedCommands.delete(commandId);confirmedCommands.set(commandId,outcome.state.core.runId);
         if(confirmedCommands.size>128)confirmedCommands.delete(confirmedCommands.keys().next().value!);
       }
-      readEpoch++;
-      game.value = outcome.state;
-      if('activity'in outcome)acceptActivity(outcome.activity);
-      else if(activity.value?.runId!==outcome.state.core.runId)acceptActivity(null);
-      if('result'in outcome&&outcome.result){lastResult.value=outcome.result;lastFromActivity.value=cycle!==null;lastReplayed.value=outcome.replayed;}
+      // A delayed reply can follow a newer read, including a new activity at the same Game revision.
+      const concurrentRead=operationRead!==readEpoch;
+      let replyCurrent=!concurrentRead;
+      if(concurrentRead){const applied=await refresh();if(!owns())return;if(!applied)refreshQueued=true;
+        replyCurrent=applied&&canonicalFingerprint(game.value)===canonicalFingerprint(outcome.state)&&
+          (!('activity'in outcome)||canonicalFingerprint(activity.value)===canonicalFingerprint(outcome.activity));}
+      else{
+        readEpoch++;game.value = outcome.state;
+        if('activity'in outcome)acceptActivity(outcome.activity);
+        else if(activity.value?.runId!==outcome.state.core.runId)acceptActivity(null);
+      }
+      if(!replyCurrent){lastResult.value=null;lastFromActivity.value=false;lastReplayed.value=true;}
+      else if('result'in outcome&&outcome.result){lastResult.value=outcome.result;lastFromActivity.value=cycle!==null;lastReplayed.value=outcome.replayed;}
       else if(!instant){lastResult.value=null;lastFromActivity.value=false;lastReplayed.value=outcome.replayed;}
-      failedIntent = false; pending = null; pendingCommandId = undefined; pendingObservation=undefined; pendingCycle=null;saved.value = true;
-      if(observation)emit(()=>writeObservation(before,outcome.state,observation,'result'in outcome?outcome.result:null,outcome.replayed));
+      failedIntent = false; pending = null; pendingCommandId = undefined; pendingObservation=undefined; pendingCycle=null;saved.value = available.value&&!refreshQueued&&!!game.value;
+      if(observation&&(!concurrentRead||game.value?.core.runId===outcome.state.core.runId))emit(()=>writeObservation(before,game.value,observation,'result'in outcome?outcome.result:null,!replyCurrent||outcome.replayed));
       if(!owns())return;
-      if(!('activity'in outcome)){
+      if(!concurrentRead&&!('activity'in outcome)){
         const read=++readEpoch;
         try{
           const snapshot=await source.loadActivitySnapshot();
@@ -249,7 +258,7 @@ export const useGame = defineStore('game', () => {
       }
       await checkpointInfo(owns);
       if(!owns())return;
-      try { channel?.postMessage({ runId: outcome.state.core.runId, revision: outcome.state.core.revision }); }
+      try { if(game.value)channel?.postMessage({ runId: game.value.core.runId, revision: game.value.core.revision }); }
       catch { warning.value = '进度已保存，其他页面暂未收到同步提示'; }
     } catch (value) {
       if(!owns())return;

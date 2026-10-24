@@ -63,7 +63,7 @@
     ],
     "web/src/store.ts": [
       "actionClock.wait(totalMs",
-      "const outcome = await operation();",
+      "const operationRead=readEpoch,outcome = await operation();",
       "execution.value=null;"
     ],
     "web/src/main.ts": [
