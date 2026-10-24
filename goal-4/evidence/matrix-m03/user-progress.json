@@ -1,0 +1,38 @@
+{
+  "onlyReadOnlyProgressAndIdleReload": true,
+  "noUserGameCommandImportRestoreRestartOrSaveTesting": true,
+  "normalizedAXEqual": true,
+  "before": {
+    "path": "artifacts/goal-4/matrix-m03/user-readonly-immediate-before-reload-ax.txt",
+    "sha256": "de3c09aacec93bc536a380e71d0eb915efb586ba5f10ac608ecbd3f38ba59888"
+  },
+  "after": {
+    "path": "artifacts/goal-4/matrix-m03/user-readonly-after-delivery-ax.txt",
+    "sha256": "59df926b8338aa509047619b69a4ad4d5d90c782bdcda4430af631a8883fd446"
+  },
+  "visibleProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "school": "尚未择法",
+    "hp": "60/60",
+    "mp": "20/20",
+    "xp": "5/10",
+    "stones": 40,
+    "month": 1,
+    "location": "听雨洞府",
+    "activity": "静息",
+    "save": "已保存"
+  },
+  "screenshot": {
+    "original": "artifacts/goal-4/matrix-m03/user-delivery.png",
+    "originalSHA256": "370ef0c7574c5e9bf6ee95e55856967464513a0418af1ce6b95c1cba95f0c68c",
+    "view": "artifacts/goal-4/matrix-m03/user-delivery.jpg",
+    "viewSHA256": "49e1c54b343fe8969bdb4dd6c4e637aea0d2f3815f9eb07e9d1cb6bfd3b19a64",
+    "pixels": [
+      1280,
+      720
+    ],
+    "lossy": "JPEG68 originaldimensions"
+  },
+  "ordinaryExistingUserTabObservationNotCompatibilityTest": true
+}

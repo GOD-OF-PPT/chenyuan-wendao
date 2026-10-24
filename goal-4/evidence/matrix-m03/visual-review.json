@@ -159,5 +159,13 @@
     "jadeandrelphasewords",
     "cultivationarrangementinformationweight"
   ],
-  "userDeliveryObservation": "pending-after-localcommit-not-part-of-fixeddesktopvalidation"
+  "userDeliveryObservation": {
+    "evidence": "user-progress.json",
+    "pixels": [
+      1280,
+      720
+    ],
+    "role": "normalexistinguserTabreadOnlydeliveryObservation,notCompatibilityTest",
+    "actualViewed": true
+  }
 }
