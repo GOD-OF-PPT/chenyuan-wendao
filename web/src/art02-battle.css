@@ -51,7 +51,7 @@
 .immersive-stage .hub-current .battle-deck>.battle-manual-supplies{display:grid;grid-column:2;grid-row:1;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .immersive-stage .hub-current .battle-deck button,.battle-deck button{display:grid;grid-template-columns:34px minmax(0,1fr);align-content:start;align-items:center;text-align:center;min-height:140px;padding:7px 6px;gap:3px;border:1px solid #86a48c88;border-top:2px solid #bfd5a2;background:linear-gradient(#2c5148ee,#102f36ed);}
 .battle-deck button>.game-icon{grid-area:1/1;width:34px;height:34px;color:#d3d8a2}
-.battle-deck button>strong{grid-area:1/2;font-size:18px;line-height:1.4}.battle-deck button>small{grid-column:1/-1;font-size:14px;line-height:1.4}
+.battle-deck button>strong{grid-area:1/2;font-size:18px;line-height:1.4}.battle-deck button>small{grid-column:1/-1;font-size:14px;line-height:1.6}
 .battle-deck button[data-move=flee]{border-top-color:#caaa82;background:linear-gradient(#424c3d,#142f36)}
 .battle-deck button:disabled{opacity:1;background:linear-gradient(#29413d,#132e34);border-color:#78938366;color:#bbc9b5}
 .battle-deck button:disabled>.game-icon{color:#96ab99}.battle-deck button:focus-visible{outline:3px solid #d4e5b4;outline-offset:2px}.battle-deck button:active:not(:disabled){transform:translateY(2px)}

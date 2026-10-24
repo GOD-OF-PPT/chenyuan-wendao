@@ -13,7 +13,7 @@ const realm=computed(()=>C.realms[props.game.core.player.realm]);
 const actual=computed(()=>{const a=p.store?.activity;return a?.version===1&&a.runId===props.game.core.runId&&a.status!=='stopped'?a.plan.method:null;});
 const state=computed(()=>p.store?.error?'needs-attention':p.phase.value);
 const name=(m:string)=>m==='assisted'?'灵石辅助':'自然吐纳';
-const stageLabel=computed(()=>p.phase.value==='saving'?'凝神 · 保存中':p.working.value?'入定 · '+name(props.method):p.store?.error?'停功 · 请先核对进度':actual.value?`当前${name(actual.value)}；此处预选${name(props.method)}`:'静息 · 选择潜修方式');
+const stageLabel=computed(()=>p.phase.value==='saving'?'凝神 · 保存中':p.working.value?'入定 · '+name(props.method):p.store?.error?p.store.unresolved?'停功 · 请先核对进度':'上次未完成 · 新安排需确认':actual.value?`当前${name(actual.value)}；此处预选${name(props.method)}`:'静息 · 选择潜修方式');
 </script>
 <template>
  <section class="art06-site" :class="{'art06-site-compact':compact}" data-testid="cultivation-site" :data-method="method" :data-state="state" :data-working="p.working.value" :data-engaged="p.engaged.value" :style="{'--cultivation-progress':p.progress.value}">

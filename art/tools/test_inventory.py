@@ -83,10 +83,31 @@ class InventoryTests(unittest.TestCase):
   if narrative.exists():files.update(ROOT/ref for ref in json.loads(narrative.read_text())['sourceReferences'])
   cultivation=ROOT/'art/redesign/cultivation-objects.json'
   if cultivation.exists():files.update(ROOT/ref for ref in json.loads(cultivation.read_text())['sourceReferences'])
+  menus=ROOT/'art/redesign/game-menu-matrix.json'
+  if menus.exists():files.update(ROOT/ref for ref in json.loads(menus.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
  def tearDown(self):self.temp.cleanup()
+ def test_game_menu_manifest_is_required(self):
+  (self.root/'art/redesign/game-menu-matrix.json').unlink();self.rejected()
+ def test_game_menu_budgets_are_not_expandable(self):
+  path='art/redesign/game-menu-matrix.json';data=json.loads((self.root/path).read_text())
+  for key in ['maxNativeBytes','maxStylesheetBytes']:
+   altered=copy.deepcopy(data);altered[key]+=1;self.write(path,altered);self.rejected()
+ def test_game_menu_source_hash_is_bound(self):
+  path='art/redesign/game-menu-matrix.json';data=json.loads((self.root/path).read_text());data['files'][0]['sha256']='0'*64;self.write(path,data);self.rejected()
+ def test_game_menu_actual_stylesheet_budget_is_enforced_with_an_updated_hash(self):
+  path='art/redesign/game-menu-matrix.json';data=json.loads((self.root/path).read_text());css=self.root/'web/src/game-menus.css';raw=css.read_bytes()+b'\n'*6001;css.unlink();css.write_bytes(raw)
+  row=data['files'][1];row['bytes']=len(raw);row['sha256']=hashlib.sha256(raw).hexdigest();self.write(path,data);self.rejected()
+ def test_game_menu_style_must_be_consumed(self):
+  path=self.root/'web/src/main.ts';text=path.read_text();path.unlink();path.write_text(text.replace("import './game-menus.css'",''));self.rejected()
+ def test_game_menu_machine_checks_do_not_claim_user_acceptance(self):
+  path='art/redesign/game-menu-matrix.json';data=json.loads((self.root/path).read_text());data['userAcceptance']=True;self.write(path,data);self.rejected()
+ def test_game_menu_contract_is_required(self):
+  path='art/redesign/game-menu-matrix.json';data=json.loads((self.root/path).read_text());data['sourceReferences']=[];self.write(path,data);self.rejected()
+ def test_game_menu_actual_bindings_cannot_be_omitted(self):
+  path='art/redesign/game-menu-matrix.json';data=json.loads((self.root/path).read_text());data['bindings']={};self.write(path,data);self.rejected()
  def test_stage_manifest_is_required(self):
   (self.root/'art/redesign/stage-r1.json').unlink();self.rejected()
  def test_stage_budget_is_not_expandable(self):

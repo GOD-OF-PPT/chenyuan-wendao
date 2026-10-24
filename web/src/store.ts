@@ -25,6 +25,7 @@ export const useGame = defineStore('game', () => {
   const checkpointSummary = shallowRef<CheckpointSummary | null>(null);
   const trialRecovery = shallowRef<ReturnType<typeof getTrialRecovery>>(null);
   const lastResult = shallowRef<ActionResult | null>(null), lastReplayed = ref(false), canRetry = ref(false);
+  const unresolved=computed(()=>!!error.value&&(canRetry.value||syncIssue.value));
   const execution=shallowRef<Execution|null>(null),actionClock=createActionClock();
   const activity=shallowRef<Activity|null>(null),activityNotice=ref(''),lastFromActivity=ref(false);
   const syncEpoch=ref(0);
@@ -410,7 +411,7 @@ export const useGame = defineStore('game', () => {
   }
   const saveLabel = computed(() => !ready.value ? '读取中' : syncIssue.value?'同步待核对':execution.value?.phase==='acting' ? '行动中' : busy.value ? '保存中' : saved.value ? '已保存' : failedIntent ? '本次未保存' : available.value ? '尚无存档' : '存储不可用');
   onScopeDispose(() => { disposed = true;connectionEpoch++;readEpoch++;refreshQueued=false;stopActivityRuntime();actionClock.cancel();execution.value=null; repository?.close(); channel?.close();repository=undefined;channel=undefined;ready.value=false;available.value=false;busy.value=false;observers.clear(); });
-  return { game, busy, ready, available, error, warning, saved, syncIssue,hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,execution,
+  return { game, busy, ready, available, error, warning, saved, syncIssue,unresolved,hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,execution,
     activity,activityRuntime,activityRunning,activityLocal,activityOwned,activityPausing,activityNotice,lastFromActivity,syncEpoch,loadActivityHistory,startPlannedActivity,prepareMilestone,startPreparedMilestone,startCultivation,pauseCultivation,resumeCultivation,
     init, refresh, start, act, prepareAction, actPrepared, prepareConfiguration, applyConfiguration, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, wasConfirmedFor, rawText, validationError,observe };
 });

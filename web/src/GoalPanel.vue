@@ -100,7 +100,17 @@ const boardReady=computed(()=>focus.value?.kind==='item'?!!itemView.value?.compl
 
 <template>
   <section id="goal-panel" tabindex="-1" class="goals play-catalogue" data-testid="goal-panel">
-    <div v-show="!focus" class="goal-board-tools"><button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p>
+    <div v-show="!focus" class="goal-board-tools">    <details v-if="!focus" class="goal-management" data-testid="goal-management" :open="managerOpen" @toggle="managerOpen=($event.target as HTMLDetailsElement).open"><summary data-testid="goal-management-toggle">{{managerOpen?'完成编辑，返回目标':'更换追踪目标'}}</summary>
+      <label class="goal-picker">替换追踪目标<select :value="selected" @change="select" data-testid="goal-select" aria-label="追踪目标">
+        <option value="breakthrough">下一突破</option>
+        <optgroup label="物资"><option v-for="(item,id) in C.items" :key="id" :value="`item:${id}`">{{item.name}} · {{C.realms[item.min].name}}</option></optgroup>
+        <optgroup label="功法"><option v-for="(skill,id) in C.skills" :key="id" :value="`skill:${id}`">{{skill.name}} · {{C.realms[skill.min].name}}</option></optgroup>
+        <optgroup label="法宝"><option v-for="(relic,id) in C.relics" :key="id" :value="`relic:${id}`">{{relic.name}} · 金丹</option></optgroup>
+        <optgroup v-if="knownEvents.length" label="已见仙缘"><option v-for="id in knownEvents" :key="id" :value="`event:${id}`">{{stories[id].name}}</option></optgroup>
+      </select></label>
+      <label v-if="target.kind==='item'" class="goal-quantity">目标库存 <input aria-label="目标数量" type="number" min="1" :max="C.maxQuantity" :value="target.quantity" @change="quantityChange"></label>
+      <p class="small muted">追踪不消耗游戏月，也不预留材料。</p>
+    </details><button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p>
     <GoalBoard v-if="!managerOpen" :title="focus?focusTitle??'筹备来源':goal.title" :kind="boardObject.kind" :id="boardObject.id" :detail="!focus&&target.kind==='breakthrough'&&boardObject.id?C.items[boardObject.id].name+' · 实有 '+game.core.inventory[boardObject.id]:undefined" :ready="boardReady" :title-test-id="focus?'source-title':'target'" :state="boardReady?'当前条件已具备':'按所缺逐项筹备'" :inspect-id="target.kind==='item'&&!focus?'goal-item-sources':undefined" inspect-label="查看获得方式" @inspect="target.kind==='item'&&(stack=[{...target}])">
       <template #context>
         <ProgressTrack v-if="target.kind==='breakthrough'&&!focus&&game.status==='active'&&C.realms[game.core.player.realm].xpCap>0" class="goal-progress" :value="game.core.player.xp" :max="C.realms[game.core.player.realm].xpCap" label="当前目标修为" :identity="game.core.runId+game.core.player.realm" hint="修为圆满不代表准备齐全；查看目标缺口可找到当前境界的来源。"/>
@@ -142,24 +152,14 @@ const boardReady=computed(()=>focus.value?.kind==='item'?!!itemView.value?.compl
         <p v-if="!focus && !goal.deficits.length && !goal.completed" class="small">{{goal.preview?.allowed?'准备已齐，按当前页面确认行动。':'先处理眼前的遭遇，目标会随实际进度更新。'}}</p>
       </template>
     </GoalBoard>
-    <details v-if="!focus" class="goal-management" data-testid="goal-management" :open="managerOpen" @toggle="managerOpen=($event.target as HTMLDetailsElement).open"><summary data-testid="goal-management-toggle">{{managerOpen?'完成编辑，返回目标':'更换追踪目标'}}</summary>
-      <label class="goal-picker">替换追踪目标<select :value="selected" @change="select" data-testid="goal-select" aria-label="追踪目标">
-        <option value="breakthrough">下一突破</option>
-        <optgroup label="物资"><option v-for="(item,id) in C.items" :key="id" :value="`item:${id}`">{{item.name}} · {{C.realms[item.min].name}}</option></optgroup>
-        <optgroup label="功法"><option v-for="(skill,id) in C.skills" :key="id" :value="`skill:${id}`">{{skill.name}} · {{C.realms[skill.min].name}}</option></optgroup>
-        <optgroup label="法宝"><option v-for="(relic,id) in C.relics" :key="id" :value="`relic:${id}`">{{relic.name}} · 金丹</option></optgroup>
-        <optgroup v-if="knownEvents.length" label="已见仙缘"><option v-for="id in knownEvents" :key="id" :value="`event:${id}`">{{stories[id].name}}</option></optgroup>
-      </select></label>
-      <label v-if="target.kind==='item'" class="goal-quantity">目标库存 <input aria-label="目标数量" type="number" min="1" :max="C.maxQuantity" :value="target.quantity" @change="quantityChange"></label>
-      <p class="small muted">追踪不消耗游戏月，也不预留材料。</p>
-    </details>
+
   </section>
 </template>
 <style scoped>
 #app #goal-panel{padding:8px 16px!important;border:0!important;background:none!important;box-shadow:none!important;gap:10px}
-#app #goal-panel .goal-board-tools{display:flex;justify-content:flex-end;min-height:44px}
+#app #goal-panel .goal-board-tools{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;min-height:44px}
 #app #goal-panel :deep(.goal-board){flex:none}
-#app #goal-panel .goal-management{margin-top:12px!important;border:0;border-top:1px solid #a7b57f55;background:none;padding:4px 0}
+#app #goal-panel .goal-management{flex:1;margin:0!important;border:0;border-bottom:1px solid #a7b57f55;background:none;padding:0}
 #app #goal-panel .goal-management>summary{min-height:44px;display:flex;align-items:center;font-size:18px}
 :global(.immersive-stage.stage-details .hub-feature:has(>.right-column:not([style*="display: none"]))){background:linear-gradient(90deg,#0e2e3477,#0c2832dd 62%,#0b2630c7)!important;border-color:transparent;box-shadow:none}
 </style>

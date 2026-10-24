@@ -59,8 +59,8 @@
   "files": [
     {
       "path": "web/src/AlchemyWorkshop.vue",
-      "bytes": 10093,
-      "sha256": "3d0f61726a780b2183bd1c63c48f5bfba1da409539f4059f96e3d1ebcc5c61ff"
+      "bytes": 10242,
+      "sha256": "8ade3eef1357b3fdcc49c81a1deacf218258f2144cda961f13642647962ba24a"
     },
     {
       "path": "web/src/alchemy-workshop.css",

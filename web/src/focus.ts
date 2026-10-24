@@ -4,6 +4,7 @@ export const gameFocusKey:InjectionKey<ReturnType<typeof useFocus>>=Symbol('game
 export function visibleFocusTarget(element:Element|null):element is HTMLElement{
  if(!(element instanceof HTMLElement)||!element.isConnected||element.closest('[inert]'))return false;
  if('disabled' in element&&(element as HTMLButtonElement).disabled)return false;
+ for(let parent=element.parentElement;parent;parent=parent.parentElement)if(parent instanceof HTMLDetailsElement&&!parent.open&&!parent.querySelector(':scope>summary')?.contains(element))return false;
  const style=getComputedStyle(element),box=element.getBoundingClientRect();
  return style.visibility!=='hidden'&&style.display!=='none'&&box.width>0&&box.height>0;
 }

@@ -1,0 +1,107 @@
+{
+  "readAt": "2026-10-24T03:35:14Z",
+  "task": "MATRIX-M03 followup TA design evidence only",
+  "scope": "Only two successfully read first-party Riot developer articles; no implementation, test execution, images or competitor playtest",
+  "successfulSourceCount": 2,
+  "sources": [
+    {
+      "id": "R1",
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "resolvedUrl": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "title": "Clarity in League",
+      "author": "bananaband1t / Riot Games developer publication",
+      "date": "2021-03-12",
+      "readWindowUtc": {
+        "startedAt": "2026-10-24T03:33:43Z",
+        "completedBefore": "2026-10-24T03:34:04Z"
+      },
+      "readMethod": "web open; article text, not embedded media",
+      "sectionsRead": ["The Unbreakable Vows", "Silhouettes", "Abilities", "Ability Considerations / Direction", "Transformations"],
+      "observed": "表现须让动作可辨；重要变化优先、装饰克制。主体轮廓、面向和投射方向承担识别，持续发光不应使状态含糊。",
+      "application": "七招有稳定轮廓/方向分工；采集与玉简用当前物件的可辨变化，普通周期与危险/终结分层。",
+      "limitations": "2021年竞争MOBA的角色/技能清晰度文章，不是本项目放置节奏、DOM布局、原子存档、减动效或具体数值的规范；没有实际试玩或观看文中动画。"
+    },
+    {
+      "id": "R2",
+      "url": "https://www.leagueoflegends.com/en-gb/news/dev/dev-behind-the-scenes-of-vfx-updates/",
+      "resolvedUrl": "https://www.leagueoflegends.com/en-gb/news/dev/dev-behind-the-scenes-of-vfx-updates/",
+      "title": "/Dev: Behind the Scenes of VFX Updates",
+      "author": "Riot Sirhaian, Riot Riru；正文介绍前者为资深VFX美术",
+      "date": "2022-04-25",
+      "readWindowUtc": {
+        "startedAt": "2026-10-24T03:34:23Z",
+        "completedBefore": "2026-10-24T03:35:14Z"
+      },
+      "readMethod": "web open; article text, not embedded before/after media",
+      "sectionsRead": ["VFX更新目标与范围", "更新步骤", "可行动的玩家反馈"],
+      "observed": "优先修正错误的视觉传达，再改善辨识和噪声，主题装饰随后；先建立基础表现，经测试与玩家反馈修订。",
+      "application": "先做可辨动作/资源/玉简样板，再扩正式目录；保存状态和真实后果优先于追加闪光。",
+      "limitations": "2022年League局部VFX更新流程，不证明只做VFX足以解决本项目工作台式交互；不采用其商业皮肤分级或多数玩家反馈作为否定本用户意见的规则。没有竞品试玩、视频或图片审阅。"
+    }
+  ],
+  "failedRetrievals": [
+    {
+      "url": "https://nexus.leagueoflegends.com/wp-content/uploads/2017/10/VFX_Styleguide_final_public_hidpjqwx7lqyx0pjj3ss.pdf",
+      "attemptedAtUtc": "2026-10-24T03:34:04Z",
+      "observedResolvedUrl": "https://www.leagueoflegends.com/id-id/",
+      "status": "Redirected to League home page; guide contents not read and not used",
+      "includedInSuccessfulSourceCount": false
+    }
+  ],
+  "projectInferences": [
+    {
+      "id": "TA-R1",
+      "sources": ["R1", "R2"],
+      "rule": "预备、保存等待和真实成果分别可辨。运行只取当前可见runtime；掉血、入囊、已悟/已炼成只在完整proof确认原子成功后出现。",
+      "sourceBoundary": "原子保存、command/run/generation和旧回执限制来自本项目合同，非Riot原文规定。",
+      "appliesTo": ["TA07 seven battle moves", "TA08 source cycles", "TA09 learning and forging"],
+      "verification": "截止前Game/全DB不变；saving不出成果；同意图首次真实重试可一次反馈；旧回执/刷新/外页不补演。"
+    },
+    {
+      "id": "TA-R2",
+      "sources": ["R1"],
+      "rule": "先用主体轮廓和方向区分动作，再用色彩增强。攻击朝对手、护体围己方、丹药回到自身；自然资源、委托签、玉简和器纹应有不同物件结构，不能只给共用斜线/图标/环换色。",
+      "sourceBoundary": "具体七招和物件分类为项目推导；仍保文字/DOM入口，不要求玩家只凭特效猜玩法。",
+      "verification": "静止帧及减动效下仍可辨当前对象/动作；新敌人不接收旧招光，全部原操作可用。"
+    },
+    {
+      "id": "TA-R3",
+      "sources": ["R1", "R2"],
+      "rule": "阶段变化落到所选物件，阶段字作辅助。取材的工作部位、玉简行纹、法宝器纹跟随原周期；暂停/错误时冷却，静态已持有/已掌握状态从Game取，不以常亮冒充正在工作。",
+      "sourceBoundary": "物件形态与阶段方案为后续设计要求，尚未实施；不新增热度、成功率、资源生命值或新收益。",
+      "verification": "working/saving/paused/failed/owned逐态核物件与文字；换对象和队列前移不能借用上一周期。"
+    },
+    {
+      "id": "TA-R4",
+      "sources": ["R1", "R2"],
+      "rule": "表现强度对应实际影响。普通放置周期克制，敌方重击/危险和真实阶段完成更突出；同一成果的局部物件与全局印章分工，避免两套强光同时争抢。",
+      "sourceBoundary": "具体强度/时长另在单项合同落实，不延长周期、不增加点击或改变费用。",
+      "verification": "并列场景实际看图和完整读秒/净变化核对；能找到危险、下一步和暂停入口。"
+    },
+    {
+      "id": "TA-R5",
+      "sources": ["R1", "R2"],
+      "rule": "效果留在真实安全区，不压正文、演员主轮廓、目录或返回；减动效保静态对象、真实读秒和持久成果。短演出结束后完整回执仍可达。",
+      "sourceBoundary": "减动效、18/14/44、一屏、原回执与安全区要求来自本项目既有约定；Riot仅支持层级/降噪原则。",
+      "verification": "实际可见子层/文字Range/外缘与命中同时核；减动效不开另一套结算或奖励路径。"
+    },
+    {
+      "id": "TA-R6",
+      "sources": ["R2"],
+      "rule": "先做一个正式可玩的基本表现样板，再扩七招/十六来源/十二法与四器，并逐态取得实际像素和用户反馈。数据测试用于守规则，不能替用户签收游戏感。",
+      "sourceBoundary": "目录数量、固定桌面、预算和TA07→TA08→TA09顺序均为本项目选择；本文不启动这些任务。",
+      "verification": "单项另立参数/资产与代码预算，真实周期/原子失败恢复与像素分层；明确保留未实施/未看图/未获认可。"
+    }
+  ],
+  "limitations": "本次只是当前M03收尾的后续设计依据，不是竞品试玩/官方认证、实现或验收。两篇旧文不能推导本游戏成长速度、费用、周期、引擎或页面布局。旧cap、原子proof、冻结输入和当前兼容/环境性能暂停均保持。",
+  "status": {
+    "rootAgentsEdited": false,
+    "frozenContractEdited": false,
+    "runtimeOrTestsEdited": false,
+    "ta07Ta08Ta09Started": false,
+    "imagesReviewed": 0,
+    "competitorPlaytest": false,
+    "wholeArtAccepted": false,
+    "humanAccepted": false
+  }
+}

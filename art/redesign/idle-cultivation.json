@@ -17,8 +17,8 @@
     },
     {
       "path": "web/src/TrainingPlanner.vue",
-      "bytes": 6942,
-      "sha256": "d4c5e7b621134a2d7ccaa19828974bf7120654fcb297143cab1023675f60c9ef"
+      "bytes": 7176,
+      "sha256": "46ce062d3f452aafdfa0126d5ea80c10b394a38ebb759bb4cf789cd2cea94d60"
     },
     {
       "path": "web/src/idle-activity.css",

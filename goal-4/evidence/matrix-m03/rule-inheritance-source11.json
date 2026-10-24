@@ -1,0 +1,1754 @@
+{
+  "task": "MATRIX-M03 source11 Node-rule inheritance review",
+  "decision": "Do not inherit793 as an undifferentiated pure-rule group. One further demo output leaf really reads runtime CSS. Rerun the whole5-case demo file; with current configuration9, coverage then becomes788 inherited +14 current =802, not a single source11 full802 execution.",
+  "scope": "Only this evidence JSON written. No source/test/contract edit, test/build/browser execution or image loaded.",
+  "source10": {
+    "runtimeDigest": "e30ef7714c56cfa47d02ef0122785a2299786e038f837265b9a4ae3d539d3fff",
+    "exact60FileList": "goal-4/evidence/art06/core-files.json",
+    "listSha256": "4a3f3976030fed8f049ea6f834219fada9078ddeb99d81765a2a0322c5a49eff",
+    "files": [
+      "tests/action-feedback.test.mjs",
+      "tests/activity-clock.test.mjs",
+      "tests/activity.test.mjs",
+      "tests/adventure.test.mjs",
+      "tests/build-identity.test.mjs",
+      "tests/configuration.test.mjs",
+      "tests/core-validation.test.mjs",
+      "tests/demo-nodes.test.mjs",
+      "tests/engine.test.mjs",
+      "tests/full-adventure-activity.test.mjs",
+      "tests/full-ascension.test.mjs",
+      "tests/full-causal-compatibility.test.mjs",
+      "tests/full-causality.test.mjs",
+      "tests/full-compatibility.test.mjs",
+      "tests/full-consumption-preview.test.mjs",
+      "tests/full-content.test.mjs",
+      "tests/full-contracts.test.mjs",
+      "tests/full-economy-costs.test.mjs",
+      "tests/full-economy-ledger.test.mjs",
+      "tests/full-equipment.test.mjs",
+      "tests/full-extension.test.mjs",
+      "tests/full-goals.test.mjs",
+      "tests/full-growth-stage.test.mjs",
+      "tests/full-growth.test.mjs",
+      "tests/full-life-record.test.mjs",
+      "tests/full-preview-resolution.test.mjs",
+      "tests/full-queries.test.mjs",
+      "tests/full-receipts.test.mjs",
+      "tests/full-supporting-causal.test.mjs",
+      "tests/full-sword-manual.test.mjs",
+      "tests/full-trial-journey.test.mjs",
+      "tests/full-trial-preparation.test.mjs",
+      "tests/full.test.mjs",
+      "tests/guidance.test.mjs",
+      "tests/journal-anchors.test.mjs",
+      "tests/journey-coverage.test.mjs",
+      "tests/local-events.test.mjs",
+      "tests/milestone-activity.test.mjs",
+      "tests/performance-budget.test.mjs",
+      "tests/play-flow.test.mjs",
+      "tests/preparation-activity.test.mjs",
+      "tests/production-activity.test.mjs",
+      "tests/reading-memory.test.mjs",
+      "tests/recovery-coverage.test.mjs",
+      "tests/source-activity.test.mjs",
+      "tests/story-pages.test.mjs",
+      "tests/ui-art-effects.test.mjs",
+      "tests/ui-character-battle-art.test.mjs",
+      "tests/ui-desktop-art.test.mjs",
+      "tests/ui-scene-presentation.test.mjs",
+      "tests/visit-route.test.mjs",
+      "tests/idle-progression.test.mjs",
+      "tests/idle-progression-route.test.mjs",
+      "tests/idle-configuration-tradeoffs.test.mjs",
+      "tests/alchemy-feedback.test.mjs",
+      "tests/activity-effects.test.mjs",
+      "tests/equipment-effects.test.mjs",
+      "tests/supply-effects.test.mjs",
+      "tests/narrative-effects.test.mjs",
+      "tests/cultivation-effects.test.mjs"
+    ],
+    "log": "artifacts/goal-4/matrix-m03/rules-source10.log",
+    "logSha256": "7f43664d56b82d1fbe34aedb0485a534d400e6eda2baf256516062c50c83ba08",
+    "actual": {
+      "files": 60,
+      "tests": 802,
+      "passed": 802,
+      "failed": 0,
+      "skipped": 0
+    },
+    "countShape": "794 top-level TAP identities and8 nested configuration controls. Current63-file glob is not this run: candidate-evidence and original13 ui-shards/validation-matrix are excluded."
+  },
+  "source11": {
+    "runtimeDigest": "3daa6b703dd3e9fee84778e822fc0296b6d4bedee85a2ff6494884f70eecbb5c",
+    "capturedInputDelta": [
+      {
+        "path": "art/redesign/cultivation-objects.json",
+        "source10": "61d427232d5e108cd9a1d3ef0947eaefe7b01f03d0a36f9815c69e756b046b7b",
+        "source11": "8983befac562bd52e551bb5b8a8867a14d26073bd12980450961144db5f28a2b"
+      },
+      {
+        "path": "docs/decisions/0031-game-ui-matrix-intent-contract.md",
+        "source10": "9764f395c42a7eb6e7403d3983455a98d89f20991eda2a4348b4114d15db3133",
+        "source11": "7542428dbfe278117f85ffd5a8374a5f48d25be952a9d665992c71ec3d317587"
+      },
+      {
+        "path": "web/build-report/build.json",
+        "source10": "bc719278da26eb19ae8b42ed2f7439558486052ec6898da2967a5595fc35987f",
+        "source11": "29c61f603500a8d58c7081589b0ce531fabf358eabdb08afe0b731cddff9a9d3"
+      },
+      {
+        "path": "web/e2e/idle-review.spec.ts",
+        "source10": "bbe9f9d18ae33d6596245b7a6c29d328cc5f432adea7359731b1a516b514efb4",
+        "source11": "40acac925db586e920a544c85ece95cdf1c57ebe47c8eb532765efa68a4069aa"
+      },
+      {
+        "path": "web/e2e/local-loading.spec.ts",
+        "source10": "ed17480f40f22b0380d6510fd17c9796fe549f42618690cfb206ad079c12d21c",
+        "source11": "14340152b65d08d8a9ae10d97c2397b07159aa74055f19280646d735bf3cfbef"
+      },
+      {
+        "path": "web/e2e/matrix-ui-cancel.spec.ts",
+        "source10": "80c2eccf9c51e9d61eb8f75fa1224ee663e02bcdd44f27235f39df4b497e0a2d",
+        "source11": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358"
+      },
+      {
+        "path": "web/src/cultivation-objects.css",
+        "source10": "4c5a69418d55c61358ca7db4d048826eed2a09694ea43d790aeb9c48e71cf644",
+        "source11": "7e56fa0d0d377965f7c2fe9f5a3fee1879f42c8f05462e53519d1a458b20de25"
+      }
+    ],
+    "alreadyCurrent": {
+      "file": "tests/idle-configuration-tradeoffs.test.mjs",
+      "tests": 9,
+      "passed": 9,
+      "log": "artifacts/goal-4/matrix-m03/configuration-rules-source11.log",
+      "logSha256": "5ea4a4727a034f0cd60388d823f5fdb103a0f2a9ddcfe2be26acab2ce65b57c1",
+      "binding": "sourceRecord lines25-40 and53/175 reads the actual build.json and hashes every runtime source before/after all8 controls, including new CSS. Current9 log is not relabelled source10."
+    }
+  },
+  "additionalMinimumRerun": {
+    "file": "tests/demo-nodes.test.mjs",
+    "wholeFileCases": 5,
+    "changedDependencyLeaf": "lawful output is deterministic, checksummed, and refuses unrelated files or symlinks",
+    "chain": [
+      "tests/demo-nodes.test.mjs:14 -> writeNodes(out)",
+      "scripts/demo-nodes.mjs:27 -> runtimeSources()",
+      "scripts/source-identity.mjs:19 -> reads/hashes web/src including cultivation-objects.css"
+    ],
+    "other4": "Use fixed a.repeat64 sourceDigest and unchanged rules, but whole-file5 avoids4 filtered skips and gives a clear complete-file result.",
+    "status": "Required; not run by this reviewer",
+    "writeSafety": "Every test writeNodes invocation explicitly passes an os.tmpdir output. Only that temp output and transient web/.generated-demo-* staging are written; staging is removed by finally. No no-argument writeNodes occurs, no web/public/demo-nodes or web/.generated/demo-meta.ts writes. Import does not satisfy the demo generator CLI main guard. Do not replace this test command with the no-argument CLI generator."
+  },
+  "remainingInherited": {
+    "files": [
+      "tests/action-feedback.test.mjs",
+      "tests/activity-clock.test.mjs",
+      "tests/activity.test.mjs",
+      "tests/adventure.test.mjs",
+      "tests/build-identity.test.mjs",
+      "tests/configuration.test.mjs",
+      "tests/core-validation.test.mjs",
+      "tests/engine.test.mjs",
+      "tests/full-adventure-activity.test.mjs",
+      "tests/full-ascension.test.mjs",
+      "tests/full-causal-compatibility.test.mjs",
+      "tests/full-causality.test.mjs",
+      "tests/full-compatibility.test.mjs",
+      "tests/full-consumption-preview.test.mjs",
+      "tests/full-content.test.mjs",
+      "tests/full-contracts.test.mjs",
+      "tests/full-economy-costs.test.mjs",
+      "tests/full-economy-ledger.test.mjs",
+      "tests/full-equipment.test.mjs",
+      "tests/full-extension.test.mjs",
+      "tests/full-goals.test.mjs",
+      "tests/full-growth-stage.test.mjs",
+      "tests/full-growth.test.mjs",
+      "tests/full-life-record.test.mjs",
+      "tests/full-preview-resolution.test.mjs",
+      "tests/full-queries.test.mjs",
+      "tests/full-receipts.test.mjs",
+      "tests/full-supporting-causal.test.mjs",
+      "tests/full-sword-manual.test.mjs",
+      "tests/full-trial-journey.test.mjs",
+      "tests/full-trial-preparation.test.mjs",
+      "tests/full.test.mjs",
+      "tests/guidance.test.mjs",
+      "tests/journal-anchors.test.mjs",
+      "tests/journey-coverage.test.mjs",
+      "tests/local-events.test.mjs",
+      "tests/milestone-activity.test.mjs",
+      "tests/performance-budget.test.mjs",
+      "tests/play-flow.test.mjs",
+      "tests/preparation-activity.test.mjs",
+      "tests/production-activity.test.mjs",
+      "tests/reading-memory.test.mjs",
+      "tests/recovery-coverage.test.mjs",
+      "tests/source-activity.test.mjs",
+      "tests/story-pages.test.mjs",
+      "tests/ui-art-effects.test.mjs",
+      "tests/ui-character-battle-art.test.mjs",
+      "tests/ui-desktop-art.test.mjs",
+      "tests/ui-scene-presentation.test.mjs",
+      "tests/visit-route.test.mjs",
+      "tests/idle-progression.test.mjs",
+      "tests/idle-progression-route.test.mjs",
+      "tests/alchemy-feedback.test.mjs",
+      "tests/activity-effects.test.mjs",
+      "tests/equipment-effects.test.mjs",
+      "tests/supply-effects.test.mjs",
+      "tests/narrative-effects.test.mjs",
+      "tests/cultivation-effects.test.mjs"
+    ],
+    "fileCount": 58,
+    "testCount": 788,
+    "projectStaticImportClosure": {
+      "files": 132,
+      "allCapturedHashesEqualAcrossSource10Source11Current": true,
+      "rows": [
+        {
+          "path": "scripts/assert-web-build.mjs",
+          "source10": "4d8b60c8aa870eeb892c6ad56d2f8c9ae03d97e6070f784744bb40fd01e55da9",
+          "source11": "4d8b60c8aa870eeb892c6ad56d2f8c9ae03d97e6070f784744bb40fd01e55da9",
+          "current": "4d8b60c8aa870eeb892c6ad56d2f8c9ae03d97e6070f784744bb40fd01e55da9"
+        },
+        {
+          "path": "scripts/check-journey-coverage.mjs",
+          "source10": "b0aa86a65b402db8c80e6ce83e572b3f316f2fea0329f87f733d83b7399e4265",
+          "source11": "b0aa86a65b402db8c80e6ce83e572b3f316f2fea0329f87f733d83b7399e4265",
+          "current": "b0aa86a65b402db8c80e6ce83e572b3f316f2fea0329f87f733d83b7399e4265"
+        },
+        {
+          "path": "scripts/check-recovery-coverage.mjs",
+          "source10": "d4cfd2012606494f73a157a3ded63d59209f9fc4e5a0faf815a72f58405b8bfa",
+          "source11": "d4cfd2012606494f73a157a3ded63d59209f9fc4e5a0faf815a72f58405b8bfa",
+          "current": "d4cfd2012606494f73a157a3ded63d59209f9fc4e5a0faf815a72f58405b8bfa"
+        },
+        {
+          "path": "scripts/demo-nodes.mjs",
+          "source10": "8523f135c748f9240fb0d706e126213872dae91c09c398504a55d57918c52c97",
+          "source11": "8523f135c748f9240fb0d706e126213872dae91c09c398504a55d57918c52c97",
+          "current": "8523f135c748f9240fb0d706e126213872dae91c09c398504a55d57918c52c97"
+        },
+        {
+          "path": "scripts/economy/analysis.mjs",
+          "source10": "814fc2d7ec7a71ad5de72a41e054a599e945c2a63c5bf5aac993cf93c6fbc75b",
+          "source11": "814fc2d7ec7a71ad5de72a41e054a599e945c2a63c5bf5aac993cf93c6fbc75b",
+          "current": "814fc2d7ec7a71ad5de72a41e054a599e945c2a63c5bf5aac993cf93c6fbc75b"
+        },
+        {
+          "path": "scripts/economy/idle-scenarios.mjs",
+          "source10": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407",
+          "source11": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407",
+          "current": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407"
+        },
+        {
+          "path": "scripts/economy/scenarios.mjs",
+          "source10": "7b82f06c10749a9d81e6cb8c3486c26d886a5ca30dd198471f68f9e67891ca9e",
+          "source11": "7b82f06c10749a9d81e6cb8c3486c26d886a5ca30dd198471f68f9e67891ca9e",
+          "current": "7b82f06c10749a9d81e6cb8c3486c26d886a5ca30dd198471f68f9e67891ca9e"
+        },
+        {
+          "path": "scripts/performance-budget.mjs",
+          "source10": "34e06f198ac94494c4bb0a2799dc6a274868dfce0b9198506136ab81d9ae54a9",
+          "source11": "34e06f198ac94494c4bb0a2799dc6a274868dfce0b9198506136ab81d9ae54a9",
+          "current": "34e06f198ac94494c4bb0a2799dc6a274868dfce0b9198506136ab81d9ae54a9"
+        },
+        {
+          "path": "scripts/source-identity.mjs",
+          "source10": "a52e3e167b389aae6c4fa98d07b02a2ae52dbace1ec81d80a5e6f8254e6dcf24",
+          "source11": "a52e3e167b389aae6c4fa98d07b02a2ae52dbace1ec81d80a5e6f8254e6dcf24",
+          "current": "a52e3e167b389aae6c4fa98d07b02a2ae52dbace1ec81d80a5e6f8254e6dcf24"
+        },
+        {
+          "path": "scripts/validate-core.mjs",
+          "source10": "825e815bbdde0e9cf10a4683d1fa6f72b588a8383f87f54a4ee45e6af32b5e5e",
+          "source11": "825e815bbdde0e9cf10a4683d1fa6f72b588a8383f87f54a4ee45e6af32b5e5e",
+          "current": "825e815bbdde0e9cf10a4683d1fa6f72b588a8383f87f54a4ee45e6af32b5e5e"
+        },
+        {
+          "path": "src/content/m1.ts",
+          "source10": "59698c8ad88139e768b674084f24daf258715cd5dbfcc70b6b4f70c3b8492aa3",
+          "source11": "59698c8ad88139e768b674084f24daf258715cd5dbfcc70b6b4f70c3b8492aa3",
+          "current": "59698c8ad88139e768b674084f24daf258715cd5dbfcc70b6b4f70c3b8492aa3"
+        },
+        {
+          "path": "src/demo.ts",
+          "source10": "927e40ac1d792afd0e2f28c2cf7bdd55509af07713ef3db116a7a5019ac9307e",
+          "source11": "927e40ac1d792afd0e2f28c2cf7bdd55509af07713ef3db116a7a5019ac9307e",
+          "current": "927e40ac1d792afd0e2f28c2cf7bdd55509af07713ef3db116a7a5019ac9307e"
+        },
+        {
+          "path": "src/full/activity.ts",
+          "source10": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+          "source11": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+          "current": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815"
+        },
+        {
+          "path": "src/full/adventure.ts",
+          "source10": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015",
+          "source11": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015",
+          "current": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015"
+        },
+        {
+          "path": "src/full/ascension.ts",
+          "source10": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+          "source11": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+          "current": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a"
+        },
+        {
+          "path": "src/full/configuration.ts",
+          "source10": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+          "source11": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+          "current": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520"
+        },
+        {
+          "path": "src/full/content.ts",
+          "source10": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+          "source11": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+          "current": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c"
+        },
+        {
+          "path": "src/full/contracts.ts",
+          "source10": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+          "source11": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+          "current": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa"
+        },
+        {
+          "path": "src/full/costs.ts",
+          "source10": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+          "source11": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+          "current": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb"
+        },
+        {
+          "path": "src/full/economy-ledger.ts",
+          "source10": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+          "source11": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+          "current": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0"
+        },
+        {
+          "path": "src/full/engine.ts",
+          "source10": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+          "source11": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+          "current": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+        },
+        {
+          "path": "src/full/errors.ts",
+          "source10": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+          "source11": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+          "current": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4"
+        },
+        {
+          "path": "src/full/events.ts",
+          "source10": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+          "source11": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+          "current": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d"
+        },
+        {
+          "path": "src/full/goals.ts",
+          "source10": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+          "source11": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+          "current": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883"
+        },
+        {
+          "path": "src/full/growth.ts",
+          "source10": "42076ba5b572e519d64c3d85b570b223d36af1dac8510f4dedc928e137beaf26",
+          "source11": "42076ba5b572e519d64c3d85b570b223d36af1dac8510f4dedc928e137beaf26",
+          "current": "42076ba5b572e519d64c3d85b570b223d36af1dac8510f4dedc928e137beaf26"
+        },
+        {
+          "path": "src/full/life-record.ts",
+          "source10": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+          "source11": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+          "current": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7"
+        },
+        {
+          "path": "src/full/mechanisms.ts",
+          "source10": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+          "source11": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+          "current": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221"
+        },
+        {
+          "path": "src/full/milestones.ts",
+          "source10": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+          "source11": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+          "current": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492"
+        },
+        {
+          "path": "src/full/preparation.ts",
+          "source10": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+          "source11": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+          "current": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a"
+        },
+        {
+          "path": "src/full/progression.ts",
+          "source10": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+          "source11": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+          "current": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406"
+        },
+        {
+          "path": "src/full/queries.ts",
+          "source10": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+          "source11": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+          "current": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48"
+        },
+        {
+          "path": "src/full/receipts.ts",
+          "source10": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+          "source11": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+          "current": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae"
+        },
+        {
+          "path": "src/full/story-context.ts",
+          "source10": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+          "source11": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+          "current": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950"
+        },
+        {
+          "path": "src/full/trial-rules.ts",
+          "source10": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+          "source11": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+          "current": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53"
+        },
+        {
+          "path": "src/full/types.ts",
+          "source10": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+          "source11": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+          "current": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064"
+        },
+        {
+          "path": "src/full/validate-content.ts",
+          "source10": "72bd297d0f44036ba0b0b84d587f00a11d6b14b8fd2656f0381681d9fefb02d1",
+          "source11": "72bd297d0f44036ba0b0b84d587f00a11d6b14b8fd2656f0381681d9fefb02d1",
+          "current": "72bd297d0f44036ba0b0b84d587f00a11d6b14b8fd2656f0381681d9fefb02d1"
+        },
+        {
+          "path": "src/full/versions.ts",
+          "source10": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+          "source11": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+          "current": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64"
+        },
+        {
+          "path": "src/game/adventure.ts",
+          "source10": "25097127132e6ddf8f121820b64b0ff40c68f5c746e4f8d11a74dbf6345f434c",
+          "source11": "25097127132e6ddf8f121820b64b0ff40c68f5c746e4f8d11a74dbf6345f434c",
+          "current": "25097127132e6ddf8f121820b64b0ff40c68f5c746e4f8d11a74dbf6345f434c"
+        },
+        {
+          "path": "src/game/engine.ts",
+          "source10": "191fff654eb23d99aade8b7bc9ad04a9ba69e303430f164f4f2396c79ab93b7d",
+          "source11": "191fff654eb23d99aade8b7bc9ad04a9ba69e303430f164f4f2396c79ab93b7d",
+          "current": "191fff654eb23d99aade8b7bc9ad04a9ba69e303430f164f4f2396c79ab93b7d"
+        },
+        {
+          "path": "src/game/session.ts",
+          "source10": "62151d580bc453b47008dc5251e8b8207fdf67bf0a609ca9e5088f2632ab6b9a",
+          "source11": "62151d580bc453b47008dc5251e8b8207fdf67bf0a609ca9e5088f2632ab6b9a",
+          "current": "62151d580bc453b47008dc5251e8b8207fdf67bf0a609ca9e5088f2632ab6b9a"
+        },
+        {
+          "path": "src/game/types.ts",
+          "source10": "b34e4fb9876ff51ddf00e00e76e74073301d33e51c06b6ee8d2f26fe0406efab",
+          "source11": "b34e4fb9876ff51ddf00e00e76e74073301d33e51c06b6ee8d2f26fe0406efab",
+          "current": "b34e4fb9876ff51ddf00e00e76e74073301d33e51c06b6ee8d2f26fe0406efab"
+        },
+        {
+          "path": "tests/action-feedback-fixtures.mjs",
+          "source10": "caae2948278f71852bab474874b32d3a7b6e2bd4b0a3b70bbc346337b6dc0f34",
+          "source11": "caae2948278f71852bab474874b32d3a7b6e2bd4b0a3b70bbc346337b6dc0f34",
+          "current": "caae2948278f71852bab474874b32d3a7b6e2bd4b0a3b70bbc346337b6dc0f34"
+        },
+        {
+          "path": "tests/action-feedback.test.mjs",
+          "source10": "bcbd3b23e629f914db1683ac354e23138740b9516cc926bf8937be050e9f3788",
+          "source11": "bcbd3b23e629f914db1683ac354e23138740b9516cc926bf8937be050e9f3788",
+          "current": "bcbd3b23e629f914db1683ac354e23138740b9516cc926bf8937be050e9f3788"
+        },
+        {
+          "path": "tests/activity-clock.test.mjs",
+          "source10": "b6c980bf58c8fa406d9779cb3d4419bd4d5e2903eabd109acd14ed02ff2a11e9",
+          "source11": "b6c980bf58c8fa406d9779cb3d4419bd4d5e2903eabd109acd14ed02ff2a11e9",
+          "current": "b6c980bf58c8fa406d9779cb3d4419bd4d5e2903eabd109acd14ed02ff2a11e9"
+        },
+        {
+          "path": "tests/activity-effects.test.mjs",
+          "source10": "3e6c38b1d6d756c40cbeef2aa506a2494a244c48be2bc96c07bb31f41ed4bfb5",
+          "source11": "3e6c38b1d6d756c40cbeef2aa506a2494a244c48be2bc96c07bb31f41ed4bfb5",
+          "current": "3e6c38b1d6d756c40cbeef2aa506a2494a244c48be2bc96c07bb31f41ed4bfb5"
+        },
+        {
+          "path": "tests/activity.test.mjs",
+          "source10": "619fa5344f54f1278dd946a9270cc2ba1fb51ee08a6092542e162710d3e56e2a",
+          "source11": "619fa5344f54f1278dd946a9270cc2ba1fb51ee08a6092542e162710d3e56e2a",
+          "current": "619fa5344f54f1278dd946a9270cc2ba1fb51ee08a6092542e162710d3e56e2a"
+        },
+        {
+          "path": "tests/adventure.test.mjs",
+          "source10": "d749281b4080098cf5459ea2cdfb6d4614fe1fd4837475bc14d3d358039e9478",
+          "source11": "d749281b4080098cf5459ea2cdfb6d4614fe1fd4837475bc14d3d358039e9478",
+          "current": "d749281b4080098cf5459ea2cdfb6d4614fe1fd4837475bc14d3d358039e9478"
+        },
+        {
+          "path": "tests/alchemy-feedback.test.mjs",
+          "source10": "44eb5415fb25a58343b9c52cee3f588ed8089b8a55824509fdb0799a4bf8f188",
+          "source11": "44eb5415fb25a58343b9c52cee3f588ed8089b8a55824509fdb0799a4bf8f188",
+          "current": "44eb5415fb25a58343b9c52cee3f588ed8089b8a55824509fdb0799a4bf8f188"
+        },
+        {
+          "path": "tests/ascension-matrix.mjs",
+          "source10": "bb7ac8bbf57c3e56daf13e3ed7460e0a7a17cacf67108a7d5aa9ad4bf6711b7b",
+          "source11": "bb7ac8bbf57c3e56daf13e3ed7460e0a7a17cacf67108a7d5aa9ad4bf6711b7b",
+          "current": "bb7ac8bbf57c3e56daf13e3ed7460e0a7a17cacf67108a7d5aa9ad4bf6711b7b"
+        },
+        {
+          "path": "tests/build-identity.test.mjs",
+          "source10": "2d467c80387d3bf73a600de960d77f4e35a6955094e478cb5eb901c4f142e79a",
+          "source11": "2d467c80387d3bf73a600de960d77f4e35a6955094e478cb5eb901c4f142e79a",
+          "current": "2d467c80387d3bf73a600de960d77f4e35a6955094e478cb5eb901c4f142e79a"
+        },
+        {
+          "path": "tests/causal-route.mjs",
+          "source10": "9987d0f04d5d0dddddf095d38dcabc30430cd77d63512fb18a09ed63c6bb584f",
+          "source11": "9987d0f04d5d0dddddf095d38dcabc30430cd77d63512fb18a09ed63c6bb584f",
+          "current": "9987d0f04d5d0dddddf095d38dcabc30430cd77d63512fb18a09ed63c6bb584f"
+        },
+        {
+          "path": "tests/configuration.test.mjs",
+          "source10": "46f19744a6ba6f4cfc0a69909d45842af2a250f2718861c57c53f13dd6c90ade",
+          "source11": "46f19744a6ba6f4cfc0a69909d45842af2a250f2718861c57c53f13dd6c90ade",
+          "current": "46f19744a6ba6f4cfc0a69909d45842af2a250f2718861c57c53f13dd6c90ade"
+        },
+        {
+          "path": "tests/core-validation.test.mjs",
+          "source10": "903f0d9757946c822995d1b3ce3febbae7fb5f7d5d3dc66fb8924b5df626bb9a",
+          "source11": "903f0d9757946c822995d1b3ce3febbae7fb5f7d5d3dc66fb8924b5df626bb9a",
+          "current": "903f0d9757946c822995d1b3ce3febbae7fb5f7d5d3dc66fb8924b5df626bb9a"
+        },
+        {
+          "path": "tests/cultivation-effects.test.mjs",
+          "source10": "293fbd4c06a4e9136cd604a54d1edd09dbaa2d9025f8466c6dafd4a03ace4361",
+          "source11": "293fbd4c06a4e9136cd604a54d1edd09dbaa2d9025f8466c6dafd4a03ace4361",
+          "current": "293fbd4c06a4e9136cd604a54d1edd09dbaa2d9025f8466c6dafd4a03ace4361"
+        },
+        {
+          "path": "tests/demo-nodes.test.mjs",
+          "source10": "907778909809bb952250be0148246116fcccb7f3beeace865e7bfc8129321fe7",
+          "source11": "907778909809bb952250be0148246116fcccb7f3beeace865e7bfc8129321fe7",
+          "current": "907778909809bb952250be0148246116fcccb7f3beeace865e7bfc8129321fe7"
+        },
+        {
+          "path": "tests/engine.test.mjs",
+          "source10": "3ea77319e4ef46ec47c764b4efaa34d36be1d69d6ef940e673de8dcb9f0f3d2b",
+          "source11": "3ea77319e4ef46ec47c764b4efaa34d36be1d69d6ef940e673de8dcb9f0f3d2b",
+          "current": "3ea77319e4ef46ec47c764b4efaa34d36be1d69d6ef940e673de8dcb9f0f3d2b"
+        },
+        {
+          "path": "tests/equipment-effects.test.mjs",
+          "source10": "7d67d645c39da68cf0bf0f1987d7ff092766f7f470433b38a23b0b614f5c1de1",
+          "source11": "7d67d645c39da68cf0bf0f1987d7ff092766f7f470433b38a23b0b614f5c1de1",
+          "current": "7d67d645c39da68cf0bf0f1987d7ff092766f7f470433b38a23b0b614f5c1de1"
+        },
+        {
+          "path": "tests/full-adventure-activity.test.mjs",
+          "source10": "8cd8dfe3d4fe1c4163af507e24e66ca626cf083cd60676ec3f133a677dcbae38",
+          "source11": "8cd8dfe3d4fe1c4163af507e24e66ca626cf083cd60676ec3f133a677dcbae38",
+          "current": "8cd8dfe3d4fe1c4163af507e24e66ca626cf083cd60676ec3f133a677dcbae38"
+        },
+        {
+          "path": "tests/full-ascension.test.mjs",
+          "source10": "23fc87205712c98cce42d2b4683ee86a80a1113753337dfa7d9f3a5d7b4faf27",
+          "source11": "23fc87205712c98cce42d2b4683ee86a80a1113753337dfa7d9f3a5d7b4faf27",
+          "current": "23fc87205712c98cce42d2b4683ee86a80a1113753337dfa7d9f3a5d7b4faf27"
+        },
+        {
+          "path": "tests/full-causal-compatibility.test.mjs",
+          "source10": "0df6a16d7a8d22274700ea3c96a0b97d01d060451d7b8124f87077e489431b6e",
+          "source11": "0df6a16d7a8d22274700ea3c96a0b97d01d060451d7b8124f87077e489431b6e",
+          "current": "0df6a16d7a8d22274700ea3c96a0b97d01d060451d7b8124f87077e489431b6e"
+        },
+        {
+          "path": "tests/full-causality.test.mjs",
+          "source10": "a67d1dbdc5c932897ee52e80c7933ea4af021066e17a5e641302d1fb7227d577",
+          "source11": "a67d1dbdc5c932897ee52e80c7933ea4af021066e17a5e641302d1fb7227d577",
+          "current": "a67d1dbdc5c932897ee52e80c7933ea4af021066e17a5e641302d1fb7227d577"
+        },
+        {
+          "path": "tests/full-compatibility.test.mjs",
+          "source10": "796c5540fe15a08c21eae3044872ea22f894d33a90e20dda95adcb41c753539f",
+          "source11": "796c5540fe15a08c21eae3044872ea22f894d33a90e20dda95adcb41c753539f",
+          "current": "796c5540fe15a08c21eae3044872ea22f894d33a90e20dda95adcb41c753539f"
+        },
+        {
+          "path": "tests/full-consumption-preview.test.mjs",
+          "source10": "16eb11ba86ae72ba8ceffdc254c5569cb6ee8d841784ea2a27f947953efe07db",
+          "source11": "16eb11ba86ae72ba8ceffdc254c5569cb6ee8d841784ea2a27f947953efe07db",
+          "current": "16eb11ba86ae72ba8ceffdc254c5569cb6ee8d841784ea2a27f947953efe07db"
+        },
+        {
+          "path": "tests/full-content.test.mjs",
+          "source10": "5d9308ab9f3f78fd7741bcbc68cccf255aff64dca5495b14388f709eb176b732",
+          "source11": "5d9308ab9f3f78fd7741bcbc68cccf255aff64dca5495b14388f709eb176b732",
+          "current": "5d9308ab9f3f78fd7741bcbc68cccf255aff64dca5495b14388f709eb176b732"
+        },
+        {
+          "path": "tests/full-contracts.test.mjs",
+          "source10": "85f6938370ff5f2136dac0cb7a40a758c21df23655241e9a5dc647c8a0849fda",
+          "source11": "85f6938370ff5f2136dac0cb7a40a758c21df23655241e9a5dc647c8a0849fda",
+          "current": "85f6938370ff5f2136dac0cb7a40a758c21df23655241e9a5dc647c8a0849fda"
+        },
+        {
+          "path": "tests/full-economy-costs.test.mjs",
+          "source10": "1304e19480fd6b2deaa1c7da7b2dbe1e13505c442fef840680fc4bba5105c9dd",
+          "source11": "1304e19480fd6b2deaa1c7da7b2dbe1e13505c442fef840680fc4bba5105c9dd",
+          "current": "1304e19480fd6b2deaa1c7da7b2dbe1e13505c442fef840680fc4bba5105c9dd"
+        },
+        {
+          "path": "tests/full-economy-ledger.test.mjs",
+          "source10": "cedcc01b2a5062371da906178315307be9dd445ccba0b650f988580c45f24b0b",
+          "source11": "cedcc01b2a5062371da906178315307be9dd445ccba0b650f988580c45f24b0b",
+          "current": "cedcc01b2a5062371da906178315307be9dd445ccba0b650f988580c45f24b0b"
+        },
+        {
+          "path": "tests/full-equipment.test.mjs",
+          "source10": "17241d38421f99fe18e0ab61c597b39e27b8b255495854996591a7ff49ed5de1",
+          "source11": "17241d38421f99fe18e0ab61c597b39e27b8b255495854996591a7ff49ed5de1",
+          "current": "17241d38421f99fe18e0ab61c597b39e27b8b255495854996591a7ff49ed5de1"
+        },
+        {
+          "path": "tests/full-extension.test.mjs",
+          "source10": "c3f6d6505e86eb2afe0f12079f1cb3623a50e685436e4c5574909456643600d3",
+          "source11": "c3f6d6505e86eb2afe0f12079f1cb3623a50e685436e4c5574909456643600d3",
+          "current": "c3f6d6505e86eb2afe0f12079f1cb3623a50e685436e4c5574909456643600d3"
+        },
+        {
+          "path": "tests/full-goals.test.mjs",
+          "source10": "2f15c2ea988ef446d1ceb1a579bc87ade54180bfa84779eb8fe1bc61532fa3b3",
+          "source11": "2f15c2ea988ef446d1ceb1a579bc87ade54180bfa84779eb8fe1bc61532fa3b3",
+          "current": "2f15c2ea988ef446d1ceb1a579bc87ade54180bfa84779eb8fe1bc61532fa3b3"
+        },
+        {
+          "path": "tests/full-growth-stage.test.mjs",
+          "source10": "9c9742cc1983d7d34f205b0c4eb462e35a6903b797361e439730010278e85bff",
+          "source11": "9c9742cc1983d7d34f205b0c4eb462e35a6903b797361e439730010278e85bff",
+          "current": "9c9742cc1983d7d34f205b0c4eb462e35a6903b797361e439730010278e85bff"
+        },
+        {
+          "path": "tests/full-growth.test.mjs",
+          "source10": "00b21d636754715fdde4d30510e0274262d354228ec15f273727d67c77f08eca",
+          "source11": "00b21d636754715fdde4d30510e0274262d354228ec15f273727d67c77f08eca",
+          "current": "00b21d636754715fdde4d30510e0274262d354228ec15f273727d67c77f08eca"
+        },
+        {
+          "path": "tests/full-life-record.test.mjs",
+          "source10": "186f5489b98407fe7f75727abd3cd87d06ca48a5afd80b36b3b4849270cd7016",
+          "source11": "186f5489b98407fe7f75727abd3cd87d06ca48a5afd80b36b3b4849270cd7016",
+          "current": "186f5489b98407fe7f75727abd3cd87d06ca48a5afd80b36b3b4849270cd7016"
+        },
+        {
+          "path": "tests/full-preview-resolution.test.mjs",
+          "source10": "30db2103683a804d26a00841e3b2f16c1b71f95cf69148d1ad7bef7115f3d5d8",
+          "source11": "30db2103683a804d26a00841e3b2f16c1b71f95cf69148d1ad7bef7115f3d5d8",
+          "current": "30db2103683a804d26a00841e3b2f16c1b71f95cf69148d1ad7bef7115f3d5d8"
+        },
+        {
+          "path": "tests/full-queries.test.mjs",
+          "source10": "fe3ad8b95d5a3c2ee662e277d69737da30a0e143844d4127f6221fb520c52f3e",
+          "source11": "fe3ad8b95d5a3c2ee662e277d69737da30a0e143844d4127f6221fb520c52f3e",
+          "current": "fe3ad8b95d5a3c2ee662e277d69737da30a0e143844d4127f6221fb520c52f3e"
+        },
+        {
+          "path": "tests/full-receipts.test.mjs",
+          "source10": "3552f4120d8ac210d4feee2f6cde82ac14fac567c20ca675ceba7c90d495021e",
+          "source11": "3552f4120d8ac210d4feee2f6cde82ac14fac567c20ca675ceba7c90d495021e",
+          "current": "3552f4120d8ac210d4feee2f6cde82ac14fac567c20ca675ceba7c90d495021e"
+        },
+        {
+          "path": "tests/full-route.mjs",
+          "source10": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321",
+          "source11": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321",
+          "current": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321"
+        },
+        {
+          "path": "tests/full-supporting-causal.test.mjs",
+          "source10": "9a13d5ae59a0f5b8eada75029cbecbc43831d0d6a54bf665d204effa2b39b41f",
+          "source11": "9a13d5ae59a0f5b8eada75029cbecbc43831d0d6a54bf665d204effa2b39b41f",
+          "current": "9a13d5ae59a0f5b8eada75029cbecbc43831d0d6a54bf665d204effa2b39b41f"
+        },
+        {
+          "path": "tests/full-sword-manual.test.mjs",
+          "source10": "78cf5087e6085fc43b867cba1e9a3155b428870bfd6fe815d8d926079bc1ee21",
+          "source11": "78cf5087e6085fc43b867cba1e9a3155b428870bfd6fe815d8d926079bc1ee21",
+          "current": "78cf5087e6085fc43b867cba1e9a3155b428870bfd6fe815d8d926079bc1ee21"
+        },
+        {
+          "path": "tests/full-trial-journey.test.mjs",
+          "source10": "60ff27de1478a0b61ef8059f4f81c87b965dd060b24b282869fc32140f9a3cd2",
+          "source11": "60ff27de1478a0b61ef8059f4f81c87b965dd060b24b282869fc32140f9a3cd2",
+          "current": "60ff27de1478a0b61ef8059f4f81c87b965dd060b24b282869fc32140f9a3cd2"
+        },
+        {
+          "path": "tests/full-trial-preparation.test.mjs",
+          "source10": "1b45e9fe355e9dc7f4d2df9fe1942617904611555bb3e1f2b0f244001e3f908a",
+          "source11": "1b45e9fe355e9dc7f4d2df9fe1942617904611555bb3e1f2b0f244001e3f908a",
+          "current": "1b45e9fe355e9dc7f4d2df9fe1942617904611555bb3e1f2b0f244001e3f908a"
+        },
+        {
+          "path": "tests/full.test.mjs",
+          "source10": "bf291b0c7fee16c6c81f978c601b92f2114e9a3125b3f3ae45051caf30280fda",
+          "source11": "bf291b0c7fee16c6c81f978c601b92f2114e9a3125b3f3ae45051caf30280fda",
+          "current": "bf291b0c7fee16c6c81f978c601b92f2114e9a3125b3f3ae45051caf30280fda"
+        },
+        {
+          "path": "tests/guidance.test.mjs",
+          "source10": "f55201db11543d247a6298d103cc241d7fa578674560edbc625dd7c45a8cb0ee",
+          "source11": "f55201db11543d247a6298d103cc241d7fa578674560edbc625dd7c45a8cb0ee",
+          "current": "f55201db11543d247a6298d103cc241d7fa578674560edbc625dd7c45a8cb0ee"
+        },
+        {
+          "path": "tests/historical-full-runtime.mjs",
+          "source10": "dce3c070f522d3202fa6b7a5051a9c8e24735d1b16e2b7fed95a4f8cf33ab50e",
+          "source11": "dce3c070f522d3202fa6b7a5051a9c8e24735d1b16e2b7fed95a4f8cf33ab50e",
+          "current": "dce3c070f522d3202fa6b7a5051a9c8e24735d1b16e2b7fed95a4f8cf33ab50e"
+        },
+        {
+          "path": "tests/idle-configuration-tradeoffs.test.mjs",
+          "source10": "26cedde5f5a3cb34d67fc7d893e6c6013a65d7d4b232dc202d0f5907eb12aade",
+          "source11": "26cedde5f5a3cb34d67fc7d893e6c6013a65d7d4b232dc202d0f5907eb12aade",
+          "current": "26cedde5f5a3cb34d67fc7d893e6c6013a65d7d4b232dc202d0f5907eb12aade"
+        },
+        {
+          "path": "tests/idle-progression-route.test.mjs",
+          "source10": "ca377dedf9441562837fcab1626c61d094fd3f74bb618c43bc72397de626cb29",
+          "source11": "ca377dedf9441562837fcab1626c61d094fd3f74bb618c43bc72397de626cb29",
+          "current": "ca377dedf9441562837fcab1626c61d094fd3f74bb618c43bc72397de626cb29"
+        },
+        {
+          "path": "tests/idle-progression.test.mjs",
+          "source10": "6ec0a727500b11754eee67c99059a008fdcb70de7b7f4c988f9d08ff101c6844",
+          "source11": "6ec0a727500b11754eee67c99059a008fdcb70de7b7f4c988f9d08ff101c6844",
+          "current": "6ec0a727500b11754eee67c99059a008fdcb70de7b7f4c988f9d08ff101c6844"
+        },
+        {
+          "path": "tests/journal-anchors.test.mjs",
+          "source10": "9d0df5d21c0ae391a4681eb906674ba3212b5fce394c4c34643b89673fab30d4",
+          "source11": "9d0df5d21c0ae391a4681eb906674ba3212b5fce394c4c34643b89673fab30d4",
+          "current": "9d0df5d21c0ae391a4681eb906674ba3212b5fce394c4c34643b89673fab30d4"
+        },
+        {
+          "path": "tests/journey-coverage.test.mjs",
+          "source10": "92fc287d5dd04a543257d6dc05505238df7f27c2d9d9cb03b948c3601d48b68f",
+          "source11": "92fc287d5dd04a543257d6dc05505238df7f27c2d9d9cb03b948c3601d48b68f",
+          "current": "92fc287d5dd04a543257d6dc05505238df7f27c2d9d9cb03b948c3601d48b68f"
+        },
+        {
+          "path": "tests/life-route.mjs",
+          "source10": "028c01fdadeda74140f3e98da3e98bddf01ed8a89d645991566da78b8d1f0a1e",
+          "source11": "028c01fdadeda74140f3e98da3e98bddf01ed8a89d645991566da78b8d1f0a1e",
+          "current": "028c01fdadeda74140f3e98da3e98bddf01ed8a89d645991566da78b8d1f0a1e"
+        },
+        {
+          "path": "tests/local-events.test.mjs",
+          "source10": "acc130c0f9b6b45114f3b5750a95f6305b3b426867feb3557559f78ef61f09e1",
+          "source11": "acc130c0f9b6b45114f3b5750a95f6305b3b426867feb3557559f78ef61f09e1",
+          "current": "acc130c0f9b6b45114f3b5750a95f6305b3b426867feb3557559f78ef61f09e1"
+        },
+        {
+          "path": "tests/milestone-activity.test.mjs",
+          "source10": "1bc035f2b089ab8f17736d86add640852604a27fda7901c4bdd85d53d9cb5057",
+          "source11": "1bc035f2b089ab8f17736d86add640852604a27fda7901c4bdd85d53d9cb5057",
+          "current": "1bc035f2b089ab8f17736d86add640852604a27fda7901c4bdd85d53d9cb5057"
+        },
+        {
+          "path": "tests/narrative-effects.test.mjs",
+          "source10": "6866aaf6478221dd21e38a99d2f8d9982428d40e6579b2aba08d551ac28fe438",
+          "source11": "6866aaf6478221dd21e38a99d2f8d9982428d40e6579b2aba08d551ac28fe438",
+          "current": "6866aaf6478221dd21e38a99d2f8d9982428d40e6579b2aba08d551ac28fe438"
+        },
+        {
+          "path": "tests/performance-budget.test.mjs",
+          "source10": "01e5f2e11235b1d0ffd913122b48d59637e85c269161b8018010b763b3a6365b",
+          "source11": "01e5f2e11235b1d0ffd913122b48d59637e85c269161b8018010b763b3a6365b",
+          "current": "01e5f2e11235b1d0ffd913122b48d59637e85c269161b8018010b763b3a6365b"
+        },
+        {
+          "path": "tests/play-flow.test.mjs",
+          "source10": "1d7e897ca283551bab7d53a80a4f83c4abb0f98d30b810a4eb8358f83fd5c8b9",
+          "source11": "1d7e897ca283551bab7d53a80a4f83c4abb0f98d30b810a4eb8358f83fd5c8b9",
+          "current": "1d7e897ca283551bab7d53a80a4f83c4abb0f98d30b810a4eb8358f83fd5c8b9"
+        },
+        {
+          "path": "tests/preparation-activity.test.mjs",
+          "source10": "d013f766b5dba0819f58d35172b870ea04757521d3119c05790b615dc9098f7e",
+          "source11": "d013f766b5dba0819f58d35172b870ea04757521d3119c05790b615dc9098f7e",
+          "current": "d013f766b5dba0819f58d35172b870ea04757521d3119c05790b615dc9098f7e"
+        },
+        {
+          "path": "tests/production-activity.test.mjs",
+          "source10": "848e412ce6a07733ad39a3f8bcf517156a6111d9e06a70c9de474edad8b71e2b",
+          "source11": "848e412ce6a07733ad39a3f8bcf517156a6111d9e06a70c9de474edad8b71e2b",
+          "current": "848e412ce6a07733ad39a3f8bcf517156a6111d9e06a70c9de474edad8b71e2b"
+        },
+        {
+          "path": "tests/reading-memory.test.mjs",
+          "source10": "10c2c63d7c52c61e1d91c82f7178467f26966b18c602ce92196c36b67afe59ee",
+          "source11": "10c2c63d7c52c61e1d91c82f7178467f26966b18c602ce92196c36b67afe59ee",
+          "current": "10c2c63d7c52c61e1d91c82f7178467f26966b18c602ce92196c36b67afe59ee"
+        },
+        {
+          "path": "tests/recovery-coverage.test.mjs",
+          "source10": "25635fb93015c1af826d07d1996f38bf5f387bdc847509fc14ce85d64b734ead",
+          "source11": "25635fb93015c1af826d07d1996f38bf5f387bdc847509fc14ce85d64b734ead",
+          "current": "25635fb93015c1af826d07d1996f38bf5f387bdc847509fc14ce85d64b734ead"
+        },
+        {
+          "path": "tests/recovery-matrix.mjs",
+          "source10": "97fbee7ef952a250c34821ae9409625f5157595e85c96fb873d37fe09e0f5d32",
+          "source11": "97fbee7ef952a250c34821ae9409625f5157595e85c96fb873d37fe09e0f5d32",
+          "current": "97fbee7ef952a250c34821ae9409625f5157595e85c96fb873d37fe09e0f5d32"
+        },
+        {
+          "path": "tests/source-activity.test.mjs",
+          "source10": "59399d2d5679b9dacd3d98e51ec901150f634989df996759eef25fa8b3864845",
+          "source11": "59399d2d5679b9dacd3d98e51ec901150f634989df996759eef25fa8b3864845",
+          "current": "59399d2d5679b9dacd3d98e51ec901150f634989df996759eef25fa8b3864845"
+        },
+        {
+          "path": "tests/story-pages.test.mjs",
+          "source10": "af680cf3efb598dd228d1b597a642f2cb9b6da8e0009102b5a47f975e81d23a9",
+          "source11": "af680cf3efb598dd228d1b597a642f2cb9b6da8e0009102b5a47f975e81d23a9",
+          "current": "af680cf3efb598dd228d1b597a642f2cb9b6da8e0009102b5a47f975e81d23a9"
+        },
+        {
+          "path": "tests/supply-effects.test.mjs",
+          "source10": "687bfeac665fdcf96edae661327adc7444102bd14ac8259d16b5cf0589026b23",
+          "source11": "687bfeac665fdcf96edae661327adc7444102bd14ac8259d16b5cf0589026b23",
+          "current": "687bfeac665fdcf96edae661327adc7444102bd14ac8259d16b5cf0589026b23"
+        },
+        {
+          "path": "tests/trial-journey-route.mjs",
+          "source10": "f57cabb60d5eb296bf94a7142d065f560ac0b073f8ffd1b7607c1522ff67f95a",
+          "source11": "f57cabb60d5eb296bf94a7142d065f560ac0b073f8ffd1b7607c1522ff67f95a",
+          "current": "f57cabb60d5eb296bf94a7142d065f560ac0b073f8ffd1b7607c1522ff67f95a"
+        },
+        {
+          "path": "tests/trial-preparation-route.mjs",
+          "source10": "08e44ef986c7bf69fa255c41bcb5247b5463a62269fe45dbf0755cefb98eb419",
+          "source11": "08e44ef986c7bf69fa255c41bcb5247b5463a62269fe45dbf0755cefb98eb419",
+          "current": "08e44ef986c7bf69fa255c41bcb5247b5463a62269fe45dbf0755cefb98eb419"
+        },
+        {
+          "path": "tests/ui-art-effects.test.mjs",
+          "source10": "42499bccf9a6d1f48fbb6155700c06d40d8926efbaf9f508b757d7b41d8d1812",
+          "source11": "42499bccf9a6d1f48fbb6155700c06d40d8926efbaf9f508b757d7b41d8d1812",
+          "current": "42499bccf9a6d1f48fbb6155700c06d40d8926efbaf9f508b757d7b41d8d1812"
+        },
+        {
+          "path": "tests/ui-character-battle-art.test.mjs",
+          "source10": "df975e7218a38ec3eec2a7a32bb5adcce02c3d09c80a5eeda54eb5f12b34a75b",
+          "source11": "df975e7218a38ec3eec2a7a32bb5adcce02c3d09c80a5eeda54eb5f12b34a75b",
+          "current": "df975e7218a38ec3eec2a7a32bb5adcce02c3d09c80a5eeda54eb5f12b34a75b"
+        },
+        {
+          "path": "tests/ui-desktop-art.test.mjs",
+          "source10": "a74d8918b4704b50e402dcca24dc3c3a6ccd4ec07bd4e613d82235892a28a302",
+          "source11": "a74d8918b4704b50e402dcca24dc3c3a6ccd4ec07bd4e613d82235892a28a302",
+          "current": "a74d8918b4704b50e402dcca24dc3c3a6ccd4ec07bd4e613d82235892a28a302"
+        },
+        {
+          "path": "tests/ui-scene-presentation.test.mjs",
+          "source10": "0107622e31ce0c0015864e2783e1a7989c28ced288984ef7462f1c75929767e3",
+          "source11": "0107622e31ce0c0015864e2783e1a7989c28ced288984ef7462f1c75929767e3",
+          "current": "0107622e31ce0c0015864e2783e1a7989c28ced288984ef7462f1c75929767e3"
+        },
+        {
+          "path": "tests/visit-route.test.mjs",
+          "source10": "e730571e8dc0d0bc7a1bb678f93b1fa08283c214dce5f275c896779f2f746faa",
+          "source11": "e730571e8dc0d0bc7a1bb678f93b1fa08283c214dce5f275c896779f2f746faa",
+          "current": "e730571e8dc0d0bc7a1bb678f93b1fa08283c214dce5f275c896779f2f746faa"
+        },
+        {
+          "path": "web/src/action-feedback.ts",
+          "source10": "e947bb62b1de54e51f172a2d412110ea662a01b599f0b97061e8c238f31a3606",
+          "source11": "e947bb62b1de54e51f172a2d412110ea662a01b599f0b97061e8c238f31a3606",
+          "current": "e947bb62b1de54e51f172a2d412110ea662a01b599f0b97061e8c238f31a3606"
+        },
+        {
+          "path": "web/src/action-timing.ts",
+          "source10": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897",
+          "source11": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897",
+          "current": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897"
+        },
+        {
+          "path": "web/src/activity-clock.ts",
+          "source10": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+          "source11": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+          "current": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901"
+        },
+        {
+          "path": "web/src/activity-effects.ts",
+          "source10": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b",
+          "source11": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b",
+          "current": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b"
+        },
+        {
+          "path": "web/src/alchemy-feedback.ts",
+          "source10": "dfe2886f81b73788fc406e89f8631618ee5dadbdc24bab80db4dc5a8e4759899",
+          "source11": "dfe2886f81b73788fc406e89f8631618ee5dadbdc24bab80db4dc5a8e4759899",
+          "current": "dfe2886f81b73788fc406e89f8631618ee5dadbdc24bab80db4dc5a8e4759899"
+        },
+        {
+          "path": "web/src/assets.ts",
+          "source10": "bde17b46113b60282650386d6cd1b76730e9c3a67b88cf8cfb60d0402a944210",
+          "source11": "bde17b46113b60282650386d6cd1b76730e9c3a67b88cf8cfb60d0402a944210",
+          "current": "bde17b46113b60282650386d6cd1b76730e9c3a67b88cf8cfb60d0402a944210"
+        },
+        {
+          "path": "web/src/cultivation-effects.ts",
+          "source10": "656c74686b1e1cee2f68c61074172d5c3c23f86cf12d5c3eed7205f215de409a",
+          "source11": "656c74686b1e1cee2f68c61074172d5c3c23f86cf12d5c3eed7205f215de409a",
+          "current": "656c74686b1e1cee2f68c61074172d5c3c23f86cf12d5c3eed7205f215de409a"
+        },
+        {
+          "path": "web/src/effects.ts",
+          "source10": "03b6daa4cde24a2127d4fd20c42367a32a162996456bb7c32c82d7f4af3bc981",
+          "source11": "03b6daa4cde24a2127d4fd20c42367a32a162996456bb7c32c82d7f4af3bc981",
+          "current": "03b6daa4cde24a2127d4fd20c42367a32a162996456bb7c32c82d7f4af3bc981"
+        },
+        {
+          "path": "web/src/equipment-effects.ts",
+          "source10": "28c3c58a677ad562593f8d23f73c186b62a1d67f80298b2ef0165e7d08b5cc14",
+          "source11": "28c3c58a677ad562593f8d23f73c186b62a1d67f80298b2ef0165e7d08b5cc14",
+          "current": "28c3c58a677ad562593f8d23f73c186b62a1d67f80298b2ef0165e7d08b5cc14"
+        },
+        {
+          "path": "web/src/guidance.ts",
+          "source10": "b75365e626d7a0331f5e2da68e11666c3d4372a1c6ddd37aeeebee63dea9ad5d",
+          "source11": "b75365e626d7a0331f5e2da68e11666c3d4372a1c6ddd37aeeebee63dea9ad5d",
+          "current": "b75365e626d7a0331f5e2da68e11666c3d4372a1c6ddd37aeeebee63dea9ad5d"
+        },
+        {
+          "path": "web/src/journal-anchors.ts",
+          "source10": "fde853e92c68dd10ad9c14994c41a3157646c5245022b1f8061e4dd0e5aa2605",
+          "source11": "fde853e92c68dd10ad9c14994c41a3157646c5245022b1f8061e4dd0e5aa2605",
+          "current": "fde853e92c68dd10ad9c14994c41a3157646c5245022b1f8061e4dd0e5aa2605"
+        },
+        {
+          "path": "web/src/local-events.ts",
+          "source10": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150",
+          "source11": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150",
+          "current": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150"
+        },
+        {
+          "path": "web/src/narrative-effects.ts",
+          "source10": "4e199ac596e33c89e3ab3f44a35d8c8fa56a11f09de7178f60210b114ee3905c",
+          "source11": "4e199ac596e33c89e3ab3f44a35d8c8fa56a11f09de7178f60210b114ee3905c",
+          "current": "4e199ac596e33c89e3ab3f44a35d8c8fa56a11f09de7178f60210b114ee3905c"
+        },
+        {
+          "path": "web/src/navigation.ts",
+          "source10": "f97fb271e8928fe48d981b4bcbeba7d655ed2a1b9036693a202a8cc433b558fc",
+          "source11": "f97fb271e8928fe48d981b4bcbeba7d655ed2a1b9036693a202a8cc433b558fc",
+          "current": "f97fb271e8928fe48d981b4bcbeba7d655ed2a1b9036693a202a8cc433b558fc"
+        },
+        {
+          "path": "web/src/play-flow.ts",
+          "source10": "1e4acf6eece742658618251b60046d7f25f82da665ffe5a161da0f87ef7cd8e9",
+          "source11": "1e4acf6eece742658618251b60046d7f25f82da665ffe5a161da0f87ef7cd8e9",
+          "current": "1e4acf6eece742658618251b60046d7f25f82da665ffe5a161da0f87ef7cd8e9"
+        },
+        {
+          "path": "web/src/presentation.ts",
+          "source10": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649",
+          "source11": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649",
+          "current": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649"
+        },
+        {
+          "path": "web/src/reading-memory.ts",
+          "source10": "8e7a0718edb07113e30f817df5ea98180455e1ea4a7f481a10c72b3657357808",
+          "source11": "8e7a0718edb07113e30f817df5ea98180455e1ea4a7f481a10c72b3657357808",
+          "current": "8e7a0718edb07113e30f817df5ea98180455e1ea4a7f481a10c72b3657357808"
+        },
+        {
+          "path": "web/src/scene-presentation.ts",
+          "source10": "0c350de82085006096e104b206e0ce7cd3875ac453fb6a95950980ebe44b8f65",
+          "source11": "0c350de82085006096e104b206e0ce7cd3875ac453fb6a95950980ebe44b8f65",
+          "current": "0c350de82085006096e104b206e0ce7cd3875ac453fb6a95950980ebe44b8f65"
+        },
+        {
+          "path": "web/src/story-pages.ts",
+          "source10": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7",
+          "source11": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7",
+          "current": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7"
+        },
+        {
+          "path": "web/src/supply-effects.ts",
+          "source10": "6b11c6aab3e634831854d0c1723b76916bbb26fdbccf640e4adc6e043ee72a19",
+          "source11": "6b11c6aab3e634831854d0c1723b76916bbb26fdbccf640e4adc6e043ee72a19",
+          "current": "6b11c6aab3e634831854d0c1723b76916bbb26fdbccf640e4adc6e043ee72a19"
+        },
+        {
+          "path": "web/src/ui-icons.ts",
+          "source10": "9691c0395014863388fd6c9c9d0529a66504a78cd95597c374cf387eaa7fdbf4",
+          "source11": "9691c0395014863388fd6c9c9d0529a66504a78cd95597c374cf387eaa7fdbf4",
+          "current": "9691c0395014863388fd6c9c9d0529a66504a78cd95597c374cf387eaa7fdbf4"
+        },
+        {
+          "path": "web/src/use-activity-effect.ts",
+          "source10": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163",
+          "source11": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163",
+          "current": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163"
+        }
+      ]
+    },
+    "packageBoundary": {
+      "locks": [
+        {
+          "path": "package-lock.json",
+          "source10": "d3f1aa6b6a4cca2c3d458a297b2e0320f0bdfa64d01913938c1f44038be143a2",
+          "source11": "d3f1aa6b6a4cca2c3d458a297b2e0320f0bdfa64d01913938c1f44038be143a2",
+          "current": "d3f1aa6b6a4cca2c3d458a297b2e0320f0bdfa64d01913938c1f44038be143a2"
+        },
+        {
+          "path": "web/package-lock.json",
+          "source10": "d011715fee1a25f0224e7d320a09d96848cab374a394c44062f711f098e21e6d",
+          "source11": "d011715fee1a25f0224e7d320a09d96848cab374a394c44062f711f098e21e6d",
+          "current": "d011715fee1a25f0224e7d320a09d96848cab374a394c44062f711f098e21e6d"
+        }
+      ],
+      "uncapturedLibraryEntrypoints": [
+        {
+          "path": "web/node_modules/vue/index.js",
+          "source10": null,
+          "source11": null,
+          "current": "a5287f6056bc5c2c569d318063ee043f55a0d323fa7262f64456d58fd574f928"
+        },
+        {
+          "path": "web/node_modules/vue/index.mjs",
+          "source10": null,
+          "source11": null,
+          "current": "be2f35590bee45e69850d0d8d48f0b8c8f5c0ef0ecf8a7265ab12fb7add6584d"
+        }
+      ],
+      "limit": "Two Vue package entry files are outside frozen project-source hashes. Their current hashes are recorded and lockfiles unchanged; no claim these two had separate source10 raw-byte snapshots. Inheritance retains the existing same installed dependency/runtime assumption, not a fabricated source hash proof."
+    },
+    "filesystemReaderReview": [
+      {
+        "file": "tests/build-identity.test.mjs",
+        "behavior": "Synthetic validateBuildRecord and validatePublicPaths arguments. No assertWebBuild/runtimeSources call; importing function definitions does not read the live build."
+      },
+      {
+        "file": "tests/core-validation.test.mjs",
+        "behavior": "parseTap and coreLogName synthetic strings only; no validateCore/readdir execution."
+      },
+      {
+        "file": "tests/full-extension.test.mjs",
+        "behavior": "Reads unchanged App.vue, copies unchanged src/full and full-route to temp; never reads new CSS or cultivation ledger."
+      },
+      {
+        "file": "tests/journey-coverage.test.mjs",
+        "behavior": "Synthetic reports under its temporary directory; no real browser/compatibility run."
+      },
+      {
+        "file": "tests/recovery-coverage.test.mjs",
+        "behavior": "Synthetic temporary reports and unchanged recovery-matrix."
+      },
+      {
+        "file": "tests/performance-budget.test.mjs",
+        "behavior": "Synthetic samples and inspectProduction(temp), not the real production package; no environment experiment."
+      },
+      {
+        "file": "tests/ui-art-effects.test.mjs",
+        "behavior": "Actual unchanged ui-kit.svg, scene/portrait files and manifest.json. CSS contain title is pure terraceViewport numeric math; it does not read any stylesheet."
+      },
+      {
+        "file": "tests/ui-character-battle-art.test.mjs",
+        "behavior": "Actual unchanged character-battle-manifest, declared source/runtime/receipt paths and cave parent PNG."
+      },
+      {
+        "file": "tests/ui-desktop-art.test.mjs",
+        "behavior": "Actual unchanged desktop-ui-manifest, its source/runtime/receipt. No cultivation-objects ledger or CSS read."
+      }
+    ],
+    "assetBindingProof": {
+      "assetManifests": [
+        "art/redesign/manifest.json",
+        "art/redesign/character-battle-manifest.json",
+        "art/redesign/desktop-ui-manifest.json"
+      ],
+      "rows": [
+        {
+          "path": "art/redesign/character-battle-manifest.json",
+          "current": "1c9ed96b15b37a043b4db2cff7f3e50ecae35d102d28918a59611be202699af3",
+          "source10Captured": "1c9ed96b15b37a043b4db2cff7f3e50ecae35d102d28918a59611be202699af3",
+          "source11Captured": "1c9ed96b15b37a043b4db2cff7f3e50ecae35d102d28918a59611be202699af3",
+          "manifestExpected": null,
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/characters/lu-v1.png",
+          "current": "67b7448c829ce827ce039ca73575740123abe7cd65353d5c0231074543910ed6",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "67b7448c829ce827ce039ca73575740123abe7cd65353d5c0231074543910ed6",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/characters/pei-v1.png",
+          "current": "3f0ed2c068100aad9e68623163de26d743b945b5f8f9252d58168d394c36c383",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "3f0ed2c068100aad9e68623163de26d743b945b5f8f9252d58168d394c36c383",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/characters/player-v1.png",
+          "current": "0abde0fe4d767fa6832df7b35e7ac6b87f4c318b3e0312cf0e3d984e2e9e23e2",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "0abde0fe4d767fa6832df7b35e7ac6b87f4c318b3e0312cf0e3d984e2e9e23e2",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/characters/shen-v1.png",
+          "current": "483d128d9e72dfa44cf3c902df0bab6721beafdb1032184502263f1d7e0cdf42",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "483d128d9e72dfa44cf3c902df0bab6721beafdb1032184502263f1d7e0cdf42",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/characters/yan-v1.png",
+          "current": "b488ffa8cbc9104e0e9652bf38fb922f9328c513e5e68152b5e78b3ab3841154",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "b488ffa8cbc9104e0e9652bf38fb922f9328c513e5e68152b5e78b3ab3841154",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/desktop-ui-manifest.json",
+          "current": "ab0d778d6d35fd695eb56b2edc9e24e92a93d2e2c6c02cb4cb378dc11be7e2e4",
+          "source10Captured": "ab0d778d6d35fd695eb56b2edc9e24e92a93d2e2c6c02cb4cb378dc11be7e2e4",
+          "source11Captured": "ab0d778d6d35fd695eb56b2edc9e24e92a93d2e2c6c02cb4cb378dc11be7e2e4",
+          "manifestExpected": null,
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/desktop/meditation-ink-v1.png",
+          "current": "f1cb70f5e69fe493da5fbe9ea705506e937a09b467d21c49ec4c14fd49c6b347",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "f1cb70f5e69fe493da5fbe9ea705506e937a09b467d21c49ec4c14fd49c6b347",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/enemies/puppet-v1.png",
+          "current": "d950df6f54bc192e42c137850088f7d4f2f3795196a77f310c7313ddd8865d37",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "d950df6f54bc192e42c137850088f7d4f2f3795196a77f310c7313ddd8865d37",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/enemies/sentinel-v1.png",
+          "current": "b875773f3a7a3a06a7dd7ed31b359f57c32dfdd5e29fea69320caa39955d2544",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "b875773f3a7a3a06a7dd7ed31b359f57c32dfdd5e29fea69320caa39955d2544",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/enemies/serpent-v1.png",
+          "current": "f626438ca50a420a40e9b313613372b65905f09ea5e794a20a581bd85ec59ad5",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "f626438ca50a420a40e9b313613372b65905f09ea5e794a20a581bd85ec59ad5",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/enemies/shadow-v1.png",
+          "current": "f686a691010084d8a55348787c780bb2984162eab3905cb9c7cd75f4e0505cb6",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "f686a691010084d8a55348787c780bb2984162eab3905cb9c7cd75f4e0505cb6",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/enemies/trial_gate-v1.png",
+          "current": "a49a8a217376ed8c5d1776e959e2a229907f434f8bde3deb919fb4c71962a250",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "a49a8a217376ed8c5d1776e959e2a229907f434f8bde3deb919fb4c71962a250",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/enemies/trial_heart-v1.png",
+          "current": "87fbc213dab33af4f8381828ceb7e1a12a9a772bd995d995e74c4bfb2805ed81",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "87fbc213dab33af4f8381828ceb7e1a12a9a772bd995d995e74c4bfb2805ed81",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/enemies/trial_thunder-v1.png",
+          "current": "523ac17532520a8feb1954c1ed12bff68dc039568dca6d9c44b10c4969e9f36e",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "523ac17532520a8feb1954c1ed12bff68dc039568dca6d9c44b10c4969e9f36e",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/enemies/warden-v1.png",
+          "current": "3c22963143eb7af7f1ace123923e89fddb47aec3c020a519e2848133660c0c58",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "3c22963143eb7af7f1ace123923e89fddb47aec3c020a519e2848133660c0c58",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/enemies/wolf-v1.png",
+          "current": "2e8360e708a212206428b794f811c1ea3a844a5f7b8cbc250c5e8ea2e819914a",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "2e8360e708a212206428b794f811c1ea3a844a5f7b8cbc250c5e8ea2e819914a",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/manifest.json",
+          "current": "91f3b8d97b187d2e8d0ad8cb3f5494bf7d82994faa54b1afbeed27e0fe8944f7",
+          "source10Captured": "91f3b8d97b187d2e8d0ad8cb3f5494bf7d82994faa54b1afbeed27e0fe8944f7",
+          "source11Captured": "91f3b8d97b187d2e8d0ad8cb3f5494bf7d82994faa54b1afbeed27e0fe8944f7",
+          "manifestExpected": null,
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/cave-meditation.json",
+          "current": "61b558fb88e98025a4ebda9af786bba272976130dbbdd92f6b8a2ba35d019477",
+          "source10Captured": "61b558fb88e98025a4ebda9af786bba272976130dbbdd92f6b8a2ba35d019477",
+          "source11Captured": "61b558fb88e98025a4ebda9af786bba272976130dbbdd92f6b8a2ba35d019477",
+          "manifestExpected": "61b558fb88e98025a4ebda9af786bba272976130dbbdd92f6b8a2ba35d019477",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/cave.json",
+          "current": "d54412a6b6f23a24b817b64516a437a4d6ce3da2a25faf7f362e68819d8c3bc6",
+          "source10Captured": "d54412a6b6f23a24b817b64516a437a4d6ce3da2a25faf7f362e68819d8c3bc6",
+          "source11Captured": "d54412a6b6f23a24b817b64516a437a4d6ce3da2a25faf7f362e68819d8c3bc6",
+          "manifestExpected": "d54412a6b6f23a24b817b64516a437a4d6ce3da2a25faf7f362e68819d8c3bc6",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/characters/lu.json",
+          "current": "ab0b4dcca08999f1eeb793ba0e4262dcd0f57c981c358de879f197d9a67d2992",
+          "source10Captured": "ab0b4dcca08999f1eeb793ba0e4262dcd0f57c981c358de879f197d9a67d2992",
+          "source11Captured": "ab0b4dcca08999f1eeb793ba0e4262dcd0f57c981c358de879f197d9a67d2992",
+          "manifestExpected": "ab0b4dcca08999f1eeb793ba0e4262dcd0f57c981c358de879f197d9a67d2992",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/characters/pei.json",
+          "current": "27817dd4f390545a57ab496d292dd8f60447695c71576908cddd62abcbc6d382",
+          "source10Captured": "27817dd4f390545a57ab496d292dd8f60447695c71576908cddd62abcbc6d382",
+          "source11Captured": "27817dd4f390545a57ab496d292dd8f60447695c71576908cddd62abcbc6d382",
+          "manifestExpected": "27817dd4f390545a57ab496d292dd8f60447695c71576908cddd62abcbc6d382",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/characters/player.json",
+          "current": "41134fab8cda62109f5ec2009b5df12157117fb7bb8c9c5518cf633e526245e7",
+          "source10Captured": "41134fab8cda62109f5ec2009b5df12157117fb7bb8c9c5518cf633e526245e7",
+          "source11Captured": "41134fab8cda62109f5ec2009b5df12157117fb7bb8c9c5518cf633e526245e7",
+          "manifestExpected": "41134fab8cda62109f5ec2009b5df12157117fb7bb8c9c5518cf633e526245e7",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/characters/shen.json",
+          "current": "095d902a1877e446d313433aec5800ae11cd0cf4d0b5240bc5b755decb973858",
+          "source10Captured": "095d902a1877e446d313433aec5800ae11cd0cf4d0b5240bc5b755decb973858",
+          "source11Captured": "095d902a1877e446d313433aec5800ae11cd0cf4d0b5240bc5b755decb973858",
+          "manifestExpected": "095d902a1877e446d313433aec5800ae11cd0cf4d0b5240bc5b755decb973858",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/characters/yan.json",
+          "current": "9055f5fee5d824738cedc951c3ebae108d6cc30ec4cc6e6632870a8cf1a0ba17",
+          "source10Captured": "9055f5fee5d824738cedc951c3ebae108d6cc30ec4cc6e6632870a8cf1a0ba17",
+          "source11Captured": "9055f5fee5d824738cedc951c3ebae108d6cc30ec4cc6e6632870a8cf1a0ba17",
+          "manifestExpected": "9055f5fee5d824738cedc951c3ebae108d6cc30ec4cc6e6632870a8cf1a0ba17",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/enemies/puppet.json",
+          "current": "a03bcb839ec59c88bf8dc99fa13708f3f89984b2d3ec327cc796e6759b986426",
+          "source10Captured": "a03bcb839ec59c88bf8dc99fa13708f3f89984b2d3ec327cc796e6759b986426",
+          "source11Captured": "a03bcb839ec59c88bf8dc99fa13708f3f89984b2d3ec327cc796e6759b986426",
+          "manifestExpected": "a03bcb839ec59c88bf8dc99fa13708f3f89984b2d3ec327cc796e6759b986426",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/enemies/sentinel.json",
+          "current": "e665aa70d131a9b1afaeef1969668f02a2a4d33168f8a4ddab592f610d7dbb69",
+          "source10Captured": "e665aa70d131a9b1afaeef1969668f02a2a4d33168f8a4ddab592f610d7dbb69",
+          "source11Captured": "e665aa70d131a9b1afaeef1969668f02a2a4d33168f8a4ddab592f610d7dbb69",
+          "manifestExpected": "e665aa70d131a9b1afaeef1969668f02a2a4d33168f8a4ddab592f610d7dbb69",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/enemies/serpent.json",
+          "current": "69f60058b118b77d9954bd94486af0f0045990e0a313892cfeb315f542a9945f",
+          "source10Captured": "69f60058b118b77d9954bd94486af0f0045990e0a313892cfeb315f542a9945f",
+          "source11Captured": "69f60058b118b77d9954bd94486af0f0045990e0a313892cfeb315f542a9945f",
+          "manifestExpected": "69f60058b118b77d9954bd94486af0f0045990e0a313892cfeb315f542a9945f",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/enemies/shadow.json",
+          "current": "04316eba82a2e8c0a988647a0fbb88216aa85172f392c1879c261eea512e6775",
+          "source10Captured": "04316eba82a2e8c0a988647a0fbb88216aa85172f392c1879c261eea512e6775",
+          "source11Captured": "04316eba82a2e8c0a988647a0fbb88216aa85172f392c1879c261eea512e6775",
+          "manifestExpected": "04316eba82a2e8c0a988647a0fbb88216aa85172f392c1879c261eea512e6775",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/enemies/trial_gate.json",
+          "current": "d89f38424df8b8eb6071eac0bd851e3aac29372847675ec9cecd26a935160a13",
+          "source10Captured": "d89f38424df8b8eb6071eac0bd851e3aac29372847675ec9cecd26a935160a13",
+          "source11Captured": "d89f38424df8b8eb6071eac0bd851e3aac29372847675ec9cecd26a935160a13",
+          "manifestExpected": "d89f38424df8b8eb6071eac0bd851e3aac29372847675ec9cecd26a935160a13",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/enemies/trial_heart.json",
+          "current": "30c8de11628c8a3ff21c7dfb8a2176cf85569d2b6775e9b563fa64fae6546a35",
+          "source10Captured": "30c8de11628c8a3ff21c7dfb8a2176cf85569d2b6775e9b563fa64fae6546a35",
+          "source11Captured": "30c8de11628c8a3ff21c7dfb8a2176cf85569d2b6775e9b563fa64fae6546a35",
+          "manifestExpected": "30c8de11628c8a3ff21c7dfb8a2176cf85569d2b6775e9b563fa64fae6546a35",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/enemies/trial_thunder.json",
+          "current": "bc1eaf97dbec8c3ffce67aaf300ef1319c313c58f3afa347f1fc197ee99aeabd",
+          "source10Captured": "bc1eaf97dbec8c3ffce67aaf300ef1319c313c58f3afa347f1fc197ee99aeabd",
+          "source11Captured": "bc1eaf97dbec8c3ffce67aaf300ef1319c313c58f3afa347f1fc197ee99aeabd",
+          "manifestExpected": "bc1eaf97dbec8c3ffce67aaf300ef1319c313c58f3afa347f1fc197ee99aeabd",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/enemies/warden.json",
+          "current": "83e86f9f39f6dbc98ce490c528186d3bcc65584b4023b0635014a1358f6ac53e",
+          "source10Captured": "83e86f9f39f6dbc98ce490c528186d3bcc65584b4023b0635014a1358f6ac53e",
+          "source11Captured": "83e86f9f39f6dbc98ce490c528186d3bcc65584b4023b0635014a1358f6ac53e",
+          "manifestExpected": "83e86f9f39f6dbc98ce490c528186d3bcc65584b4023b0635014a1358f6ac53e",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/enemies/wolf.json",
+          "current": "a75ff017374f23e16046099f49418a0535531a616e161613261c1c6245b79a14",
+          "source10Captured": "a75ff017374f23e16046099f49418a0535531a616e161613261c1c6245b79a14",
+          "source11Captured": "a75ff017374f23e16046099f49418a0535531a616e161613261c1c6245b79a14",
+          "manifestExpected": "a75ff017374f23e16046099f49418a0535531a616e161613261c1c6245b79a14",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/market.json",
+          "current": "ed8873603508b59b8081d1eda2b1fedda453b34248962b1efec5513a0041cdf4",
+          "source10Captured": "ed8873603508b59b8081d1eda2b1fedda453b34248962b1efec5513a0041cdf4",
+          "source11Captured": "ed8873603508b59b8081d1eda2b1fedda453b34248962b1efec5513a0041cdf4",
+          "manifestExpected": "ed8873603508b59b8081d1eda2b1fedda453b34248962b1efec5513a0041cdf4",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/meditation-ink.json",
+          "current": "2ffc832d9d0891c20094c6ca98a3538951db383e8f5059b2e96ee61ba9e2a2bc",
+          "source10Captured": "2ffc832d9d0891c20094c6ca98a3538951db383e8f5059b2e96ee61ba9e2a2bc",
+          "source11Captured": "2ffc832d9d0891c20094c6ca98a3538951db383e8f5059b2e96ee61ba9e2a2bc",
+          "manifestExpected": "2ffc832d9d0891c20094c6ca98a3538951db383e8f5059b2e96ee61ba9e2a2bc",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/opening.json",
+          "current": "043a3d8b608a565c20bf6503d86c45ef6cba87a29cd9ab1371e33e4803afdddd",
+          "source10Captured": "043a3d8b608a565c20bf6503d86c45ef6cba87a29cd9ab1371e33e4803afdddd",
+          "source11Captured": "043a3d8b608a565c20bf6503d86c45ef6cba87a29cd9ab1371e33e4803afdddd",
+          "manifestExpected": "043a3d8b608a565c20bf6503d86c45ef6cba87a29cd9ab1371e33e4803afdddd",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/secret.json",
+          "current": "70def230e7692c50ada1e4c952e729f129966deb0d0b088a38bf417d2bbaa6b8",
+          "source10Captured": "70def230e7692c50ada1e4c952e729f129966deb0d0b088a38bf417d2bbaa6b8",
+          "source11Captured": "70def230e7692c50ada1e4c952e729f129966deb0d0b088a38bf417d2bbaa6b8",
+          "manifestExpected": "70def230e7692c50ada1e4c952e729f129966deb0d0b088a38bf417d2bbaa6b8",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/sect.json",
+          "current": "77ce59b006324bf8cd1c160e25d09326be27dfe5fccb32e037103a881467546e",
+          "source10Captured": "77ce59b006324bf8cd1c160e25d09326be27dfe5fccb32e037103a881467546e",
+          "source11Captured": "77ce59b006324bf8cd1c160e25d09326be27dfe5fccb32e037103a881467546e",
+          "manifestExpected": "77ce59b006324bf8cd1c160e25d09326be27dfe5fccb32e037103a881467546e",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/terrace-opened.json",
+          "current": "87ddad7ddd06e2bc7a56a230e5a9e1787bd19b2fd86744b8ae2a18c6817041ff",
+          "source10Captured": "87ddad7ddd06e2bc7a56a230e5a9e1787bd19b2fd86744b8ae2a18c6817041ff",
+          "source11Captured": "87ddad7ddd06e2bc7a56a230e5a9e1787bd19b2fd86744b8ae2a18c6817041ff",
+          "manifestExpected": "87ddad7ddd06e2bc7a56a230e5a9e1787bd19b2fd86744b8ae2a18c6817041ff",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/terrace-storm.json",
+          "current": "1dacdcab44252c9ea66b14ebbad23b3419ab54564cec23e9a51556c9ca8c1c69",
+          "source10Captured": "1dacdcab44252c9ea66b14ebbad23b3419ab54564cec23e9a51556c9ca8c1c69",
+          "source11Captured": "1dacdcab44252c9ea66b14ebbad23b3419ab54564cec23e9a51556c9ca8c1c69",
+          "manifestExpected": "1dacdcab44252c9ea66b14ebbad23b3419ab54564cec23e9a51556c9ca8c1c69",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/terrace.json",
+          "current": "2a4f2e8732511852105570e4aae2fc8f41d31373f19fbea0c7681b66b06b511b",
+          "source10Captured": "2a4f2e8732511852105570e4aae2fc8f41d31373f19fbea0c7681b66b06b511b",
+          "source11Captured": "2a4f2e8732511852105570e4aae2fc8f41d31373f19fbea0c7681b66b06b511b",
+          "manifestExpected": "2a4f2e8732511852105570e4aae2fc8f41d31373f19fbea0c7681b66b06b511b",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/receipts/wilderness.json",
+          "current": "7844427ffbcb534df9b9290ee9972c5425c0945ce9611273569df1253502969d",
+          "source10Captured": "7844427ffbcb534df9b9290ee9972c5425c0945ce9611273569df1253502969d",
+          "source11Captured": "7844427ffbcb534df9b9290ee9972c5425c0945ce9611273569df1253502969d",
+          "manifestExpected": "7844427ffbcb534df9b9290ee9972c5425c0945ce9611273569df1253502969d",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "art/redesign/scenes/cave-meditation-v1.png",
+          "current": "03de7ff446ac4462c575f4cef46051e143ca389d1394f54f606e39ddc2172ed7",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "03de7ff446ac4462c575f4cef46051e143ca389d1394f54f606e39ddc2172ed7",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/scenes/cave-v1.png",
+          "current": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/scenes/market-v1.png",
+          "current": "1403656635d725808d9c0a3c40e4b7c7850bc6cb396341f49fdfa7521ac868de",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "1403656635d725808d9c0a3c40e4b7c7850bc6cb396341f49fdfa7521ac868de",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/scenes/opening-v1.png",
+          "current": "401ec7bb4503b0ce30c9910df3e5ff44ab8860a2ec2d160bdd0a24e4b92215d7",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "401ec7bb4503b0ce30c9910df3e5ff44ab8860a2ec2d160bdd0a24e4b92215d7",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/scenes/secret-v1.png",
+          "current": "0fcc270cc69aa0a5ccad34b5932ac502dee8bd49917624f378f53f92bafb1b78",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "0fcc270cc69aa0a5ccad34b5932ac502dee8bd49917624f378f53f92bafb1b78",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/scenes/sect-v1.png",
+          "current": "2748a54477772b2a3dea57c7a6f31b9b6a055bddf78c9a7696ce5b1fa83e3478",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "2748a54477772b2a3dea57c7a6f31b9b6a055bddf78c9a7696ce5b1fa83e3478",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/scenes/terrace-opened-v1.png",
+          "current": "5fbb358c880bc200f565dea809723a46621c6afbe636c659aac2a635b6a9ca8f",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "5fbb358c880bc200f565dea809723a46621c6afbe636c659aac2a635b6a9ca8f",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/scenes/terrace-storm-v1.png",
+          "current": "b036ee9a2d9ac4aa865daf0b74365a8e1f1bd8f5cd77e10a90411c44058d97b3",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "b036ee9a2d9ac4aa865daf0b74365a8e1f1bd8f5cd77e10a90411c44058d97b3",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/scenes/terrace-v1.png",
+          "current": "830d361b7e77ec5b43b29b6574dabf8b293da59a39455a5d6aaf3c2557f2f08a",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "830d361b7e77ec5b43b29b6574dabf8b293da59a39455a5d6aaf3c2557f2f08a",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/scenes/terrace-v2.png",
+          "current": "b6c458d7940b530fc1eb605227ae415ebf6851738f12f7e27237ec11aa8e226a",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "b6c458d7940b530fc1eb605227ae415ebf6851738f12f7e27237ec11aa8e226a",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "art/redesign/scenes/wilderness-v1.png",
+          "current": "f0d5e60602fe6ed0afe8dd7909b821d5ffef7749320dbb85d6eca087ed4451c0",
+          "source10Captured": null,
+          "source11Captured": null,
+          "manifestExpected": "f0d5e60602fe6ed0afe8dd7909b821d5ffef7749320dbb85d6eca087ed4451c0",
+          "proof": "source10 passed asset test + unchanged manifest expected hash = current recomputed original hash"
+        },
+        {
+          "path": "web/public/art/ui-kit.svg",
+          "current": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee",
+          "source10Captured": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee",
+          "source11Captured": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee",
+          "manifestExpected": null,
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/characters/lu.webp",
+          "current": "632438e9da240cd8b362d785d8b4a581544b79e6fc3d14edd54cc43cf7410ad4",
+          "source10Captured": "632438e9da240cd8b362d785d8b4a581544b79e6fc3d14edd54cc43cf7410ad4",
+          "source11Captured": "632438e9da240cd8b362d785d8b4a581544b79e6fc3d14edd54cc43cf7410ad4",
+          "manifestExpected": "632438e9da240cd8b362d785d8b4a581544b79e6fc3d14edd54cc43cf7410ad4",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/characters/pei.webp",
+          "current": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d",
+          "source10Captured": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d",
+          "source11Captured": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d",
+          "manifestExpected": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/characters/player.webp",
+          "current": "b8080cda6d7a8f4019a55a0a67808e7e6a88834dbc3ad3ba12167517a6c988c4",
+          "source10Captured": "b8080cda6d7a8f4019a55a0a67808e7e6a88834dbc3ad3ba12167517a6c988c4",
+          "source11Captured": "b8080cda6d7a8f4019a55a0a67808e7e6a88834dbc3ad3ba12167517a6c988c4",
+          "manifestExpected": "b8080cda6d7a8f4019a55a0a67808e7e6a88834dbc3ad3ba12167517a6c988c4",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/characters/shen.webp",
+          "current": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1",
+          "source10Captured": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1",
+          "source11Captured": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1",
+          "manifestExpected": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/characters/yan.webp",
+          "current": "82cc6f98bded838b6b8a59d1d27ba123fdec70c1a0043dd4bf6ea236a65c2e2f",
+          "source10Captured": "82cc6f98bded838b6b8a59d1d27ba123fdec70c1a0043dd4bf6ea236a65c2e2f",
+          "source11Captured": "82cc6f98bded838b6b8a59d1d27ba123fdec70c1a0043dd4bf6ea236a65c2e2f",
+          "manifestExpected": "82cc6f98bded838b6b8a59d1d27ba123fdec70c1a0043dd4bf6ea236a65c2e2f",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/enemies/puppet.webp",
+          "current": "8fabb419720ae44a19e9dedbda32861a0af42ba50dc11803b3bffc1135e6852b",
+          "source10Captured": "8fabb419720ae44a19e9dedbda32861a0af42ba50dc11803b3bffc1135e6852b",
+          "source11Captured": "8fabb419720ae44a19e9dedbda32861a0af42ba50dc11803b3bffc1135e6852b",
+          "manifestExpected": "8fabb419720ae44a19e9dedbda32861a0af42ba50dc11803b3bffc1135e6852b",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/enemies/sentinel.webp",
+          "current": "a832fcb94f72651d3ccf0c19e89240932850e04fb89200d427be859c2f938602",
+          "source10Captured": "a832fcb94f72651d3ccf0c19e89240932850e04fb89200d427be859c2f938602",
+          "source11Captured": "a832fcb94f72651d3ccf0c19e89240932850e04fb89200d427be859c2f938602",
+          "manifestExpected": "a832fcb94f72651d3ccf0c19e89240932850e04fb89200d427be859c2f938602",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/enemies/serpent.webp",
+          "current": "cd981a2a17c1c9399a1bd6efd0eeb4653e0ce7eeb268985803542defce4652a7",
+          "source10Captured": "cd981a2a17c1c9399a1bd6efd0eeb4653e0ce7eeb268985803542defce4652a7",
+          "source11Captured": "cd981a2a17c1c9399a1bd6efd0eeb4653e0ce7eeb268985803542defce4652a7",
+          "manifestExpected": "cd981a2a17c1c9399a1bd6efd0eeb4653e0ce7eeb268985803542defce4652a7",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/enemies/shadow.webp",
+          "current": "8b8223af8135263b02658e6d995c672f227693b603df8d593fbd9da7bac244e2",
+          "source10Captured": "8b8223af8135263b02658e6d995c672f227693b603df8d593fbd9da7bac244e2",
+          "source11Captured": "8b8223af8135263b02658e6d995c672f227693b603df8d593fbd9da7bac244e2",
+          "manifestExpected": "8b8223af8135263b02658e6d995c672f227693b603df8d593fbd9da7bac244e2",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/enemies/trial_gate.webp",
+          "current": "a588999c5f907885722d614796ce177911f880eda2cedf4dcd4f3ae263e184f5",
+          "source10Captured": "a588999c5f907885722d614796ce177911f880eda2cedf4dcd4f3ae263e184f5",
+          "source11Captured": "a588999c5f907885722d614796ce177911f880eda2cedf4dcd4f3ae263e184f5",
+          "manifestExpected": "a588999c5f907885722d614796ce177911f880eda2cedf4dcd4f3ae263e184f5",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/enemies/trial_heart.webp",
+          "current": "d649dc3e9593790fe6e772344ed1bb202e4e495eecb4859d3c15a8be2a418044",
+          "source10Captured": "d649dc3e9593790fe6e772344ed1bb202e4e495eecb4859d3c15a8be2a418044",
+          "source11Captured": "d649dc3e9593790fe6e772344ed1bb202e4e495eecb4859d3c15a8be2a418044",
+          "manifestExpected": "d649dc3e9593790fe6e772344ed1bb202e4e495eecb4859d3c15a8be2a418044",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/enemies/trial_thunder.webp",
+          "current": "728b50ee566e7a7e92a2b729117c70330fd43b66faae6a0b23fa5c8862883686",
+          "source10Captured": "728b50ee566e7a7e92a2b729117c70330fd43b66faae6a0b23fa5c8862883686",
+          "source11Captured": "728b50ee566e7a7e92a2b729117c70330fd43b66faae6a0b23fa5c8862883686",
+          "manifestExpected": "728b50ee566e7a7e92a2b729117c70330fd43b66faae6a0b23fa5c8862883686",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/enemies/warden.webp",
+          "current": "6efee13b8ecd07ae9d3569645c9654b0d681e3fcc96fc52ed01d096d6813f351",
+          "source10Captured": "6efee13b8ecd07ae9d3569645c9654b0d681e3fcc96fc52ed01d096d6813f351",
+          "source11Captured": "6efee13b8ecd07ae9d3569645c9654b0d681e3fcc96fc52ed01d096d6813f351",
+          "manifestExpected": "6efee13b8ecd07ae9d3569645c9654b0d681e3fcc96fc52ed01d096d6813f351",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/enemies/wolf.webp",
+          "current": "95ed2843e926bbce543da559a6a282d3e13f4c5c5ff2630a4402aaec7db9de58",
+          "source10Captured": "95ed2843e926bbce543da559a6a282d3e13f4c5c5ff2630a4402aaec7db9de58",
+          "source11Captured": "95ed2843e926bbce543da559a6a282d3e13f4c5c5ff2630a4402aaec7db9de58",
+          "manifestExpected": "95ed2843e926bbce543da559a6a282d3e13f4c5c5ff2630a4402aaec7db9de58",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/scenes/cave-meditation.webp",
+          "current": "cc59bccfd3a42cdf688acdfd606ebe92d6e8d812eb08202207aaac1b145eeb9e",
+          "source10Captured": "cc59bccfd3a42cdf688acdfd606ebe92d6e8d812eb08202207aaac1b145eeb9e",
+          "source11Captured": "cc59bccfd3a42cdf688acdfd606ebe92d6e8d812eb08202207aaac1b145eeb9e",
+          "manifestExpected": "cc59bccfd3a42cdf688acdfd606ebe92d6e8d812eb08202207aaac1b145eeb9e",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/scenes/cave.webp",
+          "current": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd",
+          "source10Captured": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd",
+          "source11Captured": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd",
+          "manifestExpected": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/scenes/market.webp",
+          "current": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15",
+          "source10Captured": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15",
+          "source11Captured": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15",
+          "manifestExpected": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/scenes/opening.webp",
+          "current": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a",
+          "source10Captured": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a",
+          "source11Captured": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a",
+          "manifestExpected": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/scenes/secret.webp",
+          "current": "bb9e1bda68dbd3ecd861446f7b19982051a9749c20b0cf82ec17f4e9586f997f",
+          "source10Captured": "bb9e1bda68dbd3ecd861446f7b19982051a9749c20b0cf82ec17f4e9586f997f",
+          "source11Captured": "bb9e1bda68dbd3ecd861446f7b19982051a9749c20b0cf82ec17f4e9586f997f",
+          "manifestExpected": "bb9e1bda68dbd3ecd861446f7b19982051a9749c20b0cf82ec17f4e9586f997f",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/scenes/sect.webp",
+          "current": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6",
+          "source10Captured": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6",
+          "source11Captured": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6",
+          "manifestExpected": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/scenes/terrace-opened.webp",
+          "current": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431",
+          "source10Captured": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431",
+          "source11Captured": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431",
+          "manifestExpected": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/scenes/terrace-storm.webp",
+          "current": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1",
+          "source10Captured": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1",
+          "source11Captured": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1",
+          "manifestExpected": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/scenes/terrace.webp",
+          "current": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9",
+          "source10Captured": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9",
+          "source11Captured": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9",
+          "manifestExpected": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/scenes/wilderness.webp",
+          "current": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10",
+          "source10Captured": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10",
+          "source11Captured": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10",
+          "manifestExpected": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10",
+          "proof": "captured exact bytes"
+        },
+        {
+          "path": "web/public/art/v2/ui/meditation-ink.webp",
+          "current": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b",
+          "source10Captured": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b",
+          "source11Captured": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b",
+          "manifestExpected": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b",
+          "proof": "captured exact bytes"
+        }
+      ],
+      "originalPngBoundary": "26 source PNGs are not in the663 input map. Their source10 passing tests bound them to manifest hashes; those manifest bytes are unchanged in source11, and current PNG hashes are recomputed equal to those exact constants. This transitive proof is distinguished from a direct captured original hash.",
+      "cultivationLedger": "None of the selected Node tests or132 project import dependencies reads art/redesign/cultivation-objects.json or art/asset-manifest.json. Its updated CSS binding/budget must be covered by current asset guards, not called tested by rule inheritance."
+    }
+  },
+  "verificationLimits": [
+    "Preserve source10 original802 TAP and runtime identity. Do not retag it as current source11.",
+    "Current configuration9 is actual; demo5 remains additional work until root executes and freezes its result.",
+    "Other793 cannot be called uniformly pure because static UI asset tests read real ledgers/PNG/SVG, and demo output reads all runtime CSS. Each dependency type is explicitly accounted for.",
+    "Source11 fullUI385/native332 are independent current runs and are not asserted complete here."
+  ],
+  "rootCurrentExecutionSupplement": {
+    "demoRules": {
+      "log": "artifacts/goal-4/matrix-m03/demo-rules-source11.log",
+      "sha256": "65e06da82cbde785f91b93bb6f0ebc20cdc9682c71322722ef22c863af63e156",
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "before": "artifacts/goal-4/matrix-m03/demo-rules-source11-before.json",
+      "after": "artifacts/goal-4/matrix-m03/demo-rules-source11-after.json",
+      "all663InputsUnchanged": true
+    },
+    "configurationRules": {
+      "log": "artifacts/goal-4/matrix-m03/configuration-rules-source11.log",
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0
+    },
+    "unique802Composition": {
+      "source10Inherited": 788,
+      "source11ActuallyExecuted": 14,
+      "sameSource11Complete802Run": false
+    }
+  }
+}

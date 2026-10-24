@@ -1,0 +1,803 @@
+{
+  "task": "MATRIX-M03 source11 cultivation caption CSS impact review",
+  "mode": "Independent static/read-only review; this document only, no runtime/test edit or execution/images",
+  "source10": {
+    "runtimeDigest": "e30ef7714c56cfa47d02ef0122785a2299786e038f837265b9a4ae3d539d3fff",
+    "fullUiReport": "artifacts/goal-4/matrix-m03/ui-source10-report.json",
+    "fullUiStats": {
+      "startTime": "2026-10-24T02:37:20.526Z",
+      "duration": 1649554.252,
+      "expected": 381,
+      "skipped": 0,
+      "unexpected": 4,
+      "flaky": 0
+    },
+    "leafRun": "Root reports14passed/1failed after the explicit15-leaf premise correction; original report and geometry retained"
+  },
+  "source11": {
+    "runtimeDigest": "3daa6b703dd3e9fee84778e822fc0296b6d4bedee85a2ff6494884f70eecbb5c",
+    "runtimeKeys": 235,
+    "runtimeDeltaFromSource10": [
+      {
+        "path": "web/src/cultivation-objects.css",
+        "before": "4c5a69418d55c61358ca7db4d048826eed2a09694ea43d790aeb9c48e71cf644",
+        "after": "7e56fa0d0d377965f7c2fe9f5a3fee1879f42c8f05462e53519d1a458b20de25"
+      }
+    ],
+    "cssBytesBefore": 14757,
+    "cssBytesAfter": 14757,
+    "cssSha256": "7e56fa0d0d377965f7c2fe9f5a3fee1879f42c8f05462e53519d1a458b20de25",
+    "exactOnlyChange": "In .art06-methods small line-height1.4 to1.6; font-size14px, color, strong18px, controls, all media branches and Game/Store/clock/rules unchanged"
+  },
+  "originalGeometry": {
+    "path": "artifacts/goal-4/matrix-m03/flee-leaf-source10-geometry.json",
+    "sha256": "4707dc600c447d32010565d3872dc2561ce05ea8b96eb1d30112ab2fa0ee893d",
+    "facts": [
+      {
+        "button": "cultivation-method-natural",
+        "text": "引山间灵气 · 不耗灵石",
+        "font": 14,
+        "ownLinebox": {
+          "left": 821.171875,
+          "right": 968.171875,
+          "top": 449.9375,
+          "bottom": 469.53125,
+          "width": 147,
+          "height": 19.59375
+        },
+        "rawRangeRects": [
+          {
+            "left": 821.171875,
+            "right": 968.171875,
+            "top": 448.9375,
+            "bottom": 468.9375,
+            "width": 147,
+            "height": 20
+          }
+        ],
+        "strongTextRects": [
+          {
+            "left": 821.171875,
+            "right": 893.171875,
+            "top": 424.75,
+            "bottom": 449.75,
+            "width": 72,
+            "height": 25
+          }
+        ],
+        "overlapY": 0.8125,
+        "linesInButton": true,
+        "clip": false,
+        "allParentsInside": true
+      },
+      {
+        "button": "cultivation-method-assisted",
+        "text": "现有 110 灵石 · 炼气始可用",
+        "font": 14,
+        "ownLinebox": {
+          "left": 1099.078125,
+          "right": 1272.78125,
+          "top": 449.9375,
+          "bottom": 469.53125,
+          "width": 173.703125,
+          "height": 19.59375
+        },
+        "rawRangeRects": [
+          {
+            "left": 1099.078125,
+            "right": 1272.78125,
+            "top": 448.9375,
+            "bottom": 468.9375,
+            "width": 173.703125,
+            "height": 20
+          }
+        ],
+        "strongTextRects": [
+          {
+            "left": 1099.078125,
+            "right": 1171.078125,
+            "top": 424.75,
+            "bottom": 449.75,
+            "width": 72,
+            "height": 25
+          }
+        ],
+        "overlapY": 0.8125,
+        "linesInButton": true,
+        "clip": false,
+        "allParentsInside": true
+      }
+    ],
+    "interpretation": "Actual two text Range rectangles overlap their own button strong text by0.8125px. Parent geometry and clip=false do not prove glyph separation; keep the stronger no-overlap assertion. Root viewed original-size image, this reviewer did not."
+  },
+  "fixAssessment": {
+    "decision": "Accept as the narrow real readability repair; not a tolerance/measurement relaxation",
+    "lineHeightPx": "14*1.4=19.6 to14*1.6=22.4, adding2.8px per caption line. Existing19.59375px linebox is slightly below the20px small Range, while the strong Range extends beyond its own linebox. Extra leading changes the actual text stack spacing.",
+    "limit": "No static assertion that the new rendered gap is sufficient. Recheck actual Range separation, own raw linebox, button-safe-area, clipping ancestors,14px text,44px controls, full costs, navigation and900px extent. Wrapped captions may increase compact planner height; folded/expanded and error layouts both need current verification."
+  },
+  "consumers": [
+    {
+      "path": "web/src/CultivationSite.vue:32",
+      "selector": "Only two actual natural/assisted method buttons and their small captions"
+    },
+    {
+      "path": "web/src/App.vue:605",
+      "context": "Normal home CultivationSite, including after ordinary flee/return and recovered preparations"
+    },
+    {
+      "path": "web/src/TrainingPlanner.vue:33",
+      "context": "Compact CultivationSite; original normal/expanded budget rules use different min-height/grid allocation, as do pause/error/recovery states"
+    }
+  ],
+  "minimumDirectCoverage": {
+    "files": {
+      "cultivation-objects.spec.ts": "home, both methods, folded/expanded planner, native saving, pause, error and stage returns",
+      "idle-cultivation.spec.ts": "ordinary/assisted multi-cycle, pause, refresh, save failure and second-page takeover",
+      "matrix-ui-intent.spec.ts": "paused original plan versus edited draft and ordinary idle/stopped start",
+      "matrix-ui-cancel.spec.ts": "all shared measurement consumers, especially the actual flee-to-cave frame and historical-error returns",
+      "stage-r1.spec.ts": "all entrances/home return and natural/assisted expanded-budget geometry",
+      "stage-u8-b.spec.ts": "mortal through spirit arrangement/comparison returns and complete finite budgets",
+      "idle-adventure.spec.ts": "normal retreat and dangerous-turn retreat really return to cave"
+    },
+    "declarations": 84,
+    "cases": [
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 696,
+        "column": 1,
+        "title": "ART06-A4 one real thirty second natural cycle moves only the formal saved cultivation and preserves a static result without an automatic breakthrough",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 719,
+        "column": 1,
+        "title": "ART06-A5 a lawful real sixty second assisted cycle charges one exact realm cost and stops before its cumulative budget or reserve can be crossed",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 751,
+        "column": 1,
+        "title": "ART06-A6 nondefault saved limits remain distinct from a changed draft across goal and comparison returns and normal period saves never rewrite that draft",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 816,
+        "column": 1,
+        "title": "ART06-A7 native saving and a held pause keep cultivation cold and truthful until exactly one complete Game is committed then no next cycle starts",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 859,
+        "column": 1,
+        "title": "ART06-A8 choosing the other method while one cycle runs or saves never borrows its aura clock or saved result and returning cannot claim a missed effect",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 882,
+        "column": 1,
+        "title": "ART06-A9 native quota and put-success abort preserve the whole cultivation DB and the original exact cycle retries its first real outcome once",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 944,
+        "column": 1,
+        "title": "ART06-A10 a same-id foreign takeover and a hidden later cycle never replay local aura and refresh requires a newly authorized full cycle",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1017,
+        "column": 1,
+        "title": "ART06-A11 all real target families and complete source plans stay readonly and the exact lack of cultivation medicine or location controls the next decision",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1114,
+        "column": 119,
+        "title": "ART06-A12 real CHOOSE saves its complete selected 6000ms result once and never authorizes the next stage",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1114,
+        "column": 119,
+        "title": "ART06-A13 real BREAKTHROUGH saves its complete selected 30000ms result once and never authorizes the next stage",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1114,
+        "column": 119,
+        "title": "ART06-A14 real START_TRIAL saves its complete selected 15000ms result once and never authorizes the next stage",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1187,
+        "column": 1,
+        "title": "ART06-A15 missing practitioner art and both reduced-motion modes retain complete readable objects original gates and exact static saved cultivation",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1247,
+        "column": 1,
+        "title": "ART06-A16 a pending unaccepted craft or source intent blocks otherwise legal goal travel and trial entry while their complete readonly preparation remains usable",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1347,
+        "column": 1,
+        "title": "ART06-A1 home and exact training details expose a cultivation site mat and stone seat while both method previews and the goal board remain readonly",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1388,
+        "column": 1,
+        "title": "ART06-A2 three finite gate previews remain readonly and native cycle quota retains each exact one-shot command until its first successful retry",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1456,
+        "column": 1,
+        "title": "ART06-A3 a genuinely unaccepted craft START quota keeps its original retry while home and detailed fresh cultivation stay blocked but reading remains usable",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1529,
+        "column": 1,
+        "title": "ART06-A17 opening through the ordinary current detail keeps the medicine case all three full choices and its one six second result then an actionable next step",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1579,
+        "column": 1,
+        "title": "ART06-A18 the lawful training footer breakthrough has its own gate and full local period then one realm handoff without replay on return",
+        "project": "chromium"
+      },
+      {
+        "file": "cultivation-objects.spec.ts",
+        "line": 1641,
+        "column": 1,
+        "title": "ART06-A19 a genuinely unaccepted craft start keeps purchase preparation and income sources readonly while their otherwise legal foreign travel cannot replace its original retry",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 55,
+        "column": 1,
+        "title": "a trip selects without writing then really counts six seconds before one free arrival",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 83,
+        "column": 1,
+        "title": "one real encounter waits thirty seconds and its first battle command waits a separate three seconds",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 121,
+        "column": 45,
+        "title": "sword finite strategy plays formal separate turns and its complete receipts remain after refresh",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 121,
+        "column": 45,
+        "title": "talisman finite strategy plays formal separate turns and its complete receipts remain after refresh",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 168,
+        "column": 1,
+        "title": "manual takeover cancels the pending turn and an explicit retreat alone pays eight HP",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 201,
+        "column": 1,
+        "title": "travel context never steals a later navigation and refreshing a trip grants no offline arrival",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 228,
+        "column": 1,
+        "title": "an existing trial can automate only its present gate and leaves the next gate awaiting new authorization",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 256,
+        "column": 1,
+        "title": "inspecting the original paused battle arrangement restores every selected limit without changing Game",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 295,
+        "column": 1,
+        "title": "reading a later receipt page stays on that page while the next authorized turn is saved",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 324,
+        "column": 1,
+        "title": "an external progress notification cancels the pending trip viewing intention immediately",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 350,
+        "column": 1,
+        "title": "a dangerous turn pauses with the battle intact and leaves retreat reachable with its real cost",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-adventure.spec.ts",
+        "line": 401,
+        "column": 1,
+        "title": "non-pointer pause while a trip is saving cancels its viewing intention even if that arrival commits",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-cultivation.spec.ts",
+        "line": 67,
+        "column": 1,
+        "title": "an arrangement persists without rewards and runs two real commands until the cultivation cap",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-cultivation.spec.ts",
+        "line": 98,
+        "column": 1,
+        "title": "viewing another gameplay keeps progress visible and pause cancels an unfinished cycle",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-cultivation.spec.ts",
+        "line": 121,
+        "column": 1,
+        "title": "refresh preserves the plan and requires an explicit fresh cycle instead of offline catch-up",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-cultivation.spec.ts",
+        "line": 142,
+        "column": 1,
+        "title": "assisted cultivation previews the budget and reserve and stops before another charge",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-cultivation.spec.ts",
+        "line": 202,
+        "column": 1,
+        "title": "a failed cycle stops automatic progression and retry uses the same command exactly once",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-cultivation.spec.ts",
+        "line": 233,
+        "column": 1,
+        "title": "pause requested while persistence is held finishes that atomic cycle and never starts the next",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-cultivation.spec.ts",
+        "line": 272,
+        "column": 1,
+        "title": "an explicit second-page continuation fences the original page and does not double reward",
+        "project": "chromium"
+      },
+      {
+        "file": "idle-cultivation.spec.ts",
+        "line": 333,
+        "column": 1,
+        "title": "one production cycle follows the real thirty-second wall clock and saves before showing the reward",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 476,
+        "column": 54,
+        "title": "M03-CANCEL craft keeps its original native failed confirmation until explicit cancel then accepts one fresh legal plan",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 476,
+        "column": 54,
+        "title": "M03-CANCEL source keeps its original native failed confirmation until explicit cancel then accepts one fresh legal plan",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 476,
+        "column": 54,
+        "title": "M03-CANCEL encounter keeps its original native failed confirmation until explicit cancel then accepts one fresh legal plan",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 510,
+        "column": 1,
+        "title": "M03-PENDING a real source cycle quota keeps new work blocked without a modal and retries only the original command",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 572,
+        "column": 1,
+        "title": "M03-CANCEL a lawful battle restore confirmation can fail and be cancelled while a new manual turn keeps the current battle and checkpoint",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 650,
+        "column": 92,
+        "title": "M03-MOVE attack exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 650,
+        "column": 92,
+        "title": "M03-MOVE guard exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 650,
+        "column": 92,
+        "title": "M03-MOVE technique exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 650,
+        "column": 92,
+        "title": "M03-MOVE release exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 650,
+        "column": 92,
+        "title": "M03-MOVE heal exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 650,
+        "column": 92,
+        "title": "M03-MOVE restore exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-cancel.spec.ts",
+        "line": 650,
+        "column": 92,
+        "title": "M03-MOVE flee exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-intent.spec.ts",
+        "line": 233,
+        "column": 1,
+        "title": "M03-I1 paused assisted cultivation makes original continuation primary and readonly rearrangement never replaces it",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-intent.spec.ts",
+        "line": 280,
+        "column": 1,
+        "title": "M03-I2 an edited paused plan remains a draft through reading and return until explicit replacement starts one finite cycle",
+        "project": "chromium"
+      },
+      {
+        "file": "matrix-ui-intent.spec.ts",
+        "line": 352,
+        "column": 1,
+        "title": "M03-I3 idle and naturally stopped cultivation retain the original start entrance and never require a paused replacement intent",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-r1.spec.ts",
+        "line": 64,
+        "column": 1,
+        "title": "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-r1.spec.ts",
+        "line": 84,
+        "column": 1,
+        "title": "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-r1.spec.ts",
+        "line": 122,
+        "column": 1,
+        "title": "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-r1.spec.ts",
+        "line": 182,
+        "column": 1,
+        "title": "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-r1.spec.ts",
+        "line": 219,
+        "column": 1,
+        "title": "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-r1.spec.ts",
+        "line": 263,
+        "column": 1,
+        "title": "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 4,
+        "column": 1,
+        "title": "a chosen purchase preparation survives ordinary goal inspection without changing Game or authorising an activity",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 110,
+        "column": 28,
+        "title": "current mortal cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 110,
+        "column": 28,
+        "title": "current qi cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 110,
+        "column": 28,
+        "title": "current foundation cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 110,
+        "column": 28,
+        "title": "current golden cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 110,
+        "column": 28,
+        "title": "current nascent cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 110,
+        "column": 28,
+        "title": "current spirit cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 167,
+        "column": 1,
+        "title": "preparation comparison and original purchase choice return safely and actual import clears the old draft",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 243,
+        "column": 88,
+        "title": "sword/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 243,
+        "column": 88,
+        "title": "sword/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 243,
+        "column": 88,
+        "title": "sword/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 243,
+        "column": 88,
+        "title": "sword/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 243,
+        "column": 88,
+        "title": "talisman/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 243,
+        "column": 88,
+        "title": "talisman/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 243,
+        "column": 88,
+        "title": "talisman/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 243,
+        "column": 88,
+        "title": "talisman/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 285,
+        "column": 1,
+        "title": "tradeoff controls stay usable with failed drawings and do not execute a projection",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 301,
+        "column": 1,
+        "title": "a life inspection nested inside a preparation goal returns through each original reading surface",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 324,
+        "column": 1,
+        "title": "purchase preparation keeps the currency name and source action readable in its actual card",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 335,
+        "column": 37,
+        "title": "qi preparation material cards keep full names, actions and pagination above navigation",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 335,
+        "column": 37,
+        "title": "foundation preparation material cards keep full names, actions and pagination above navigation",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 335,
+        "column": 37,
+        "title": "golden preparation material cards keep full names, actions and pagination above navigation",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 335,
+        "column": 37,
+        "title": "nascent preparation material cards keep full names, actions and pagination above navigation",
+        "project": "chromium"
+      },
+      {
+        "file": "stage-u8-b.spec.ts",
+        "line": 335,
+        "column": 37,
+        "title": "spirit preparation material cards keep full names, actions and pagination above navigation",
+        "project": "chromium"
+      }
+    ],
+    "coverageMeaning": "These7 whole files and84 unique original declarations directly cover requested home/planner folded+expanded/paused/error/returns. File-level rerun avoids presenting one revised flee leaf as all shared text layouts verified.",
+    "notExhaustive": true
+  },
+  "otherDeclarations": {
+    "count": 301,
+    "files": {
+      "adventure-objects.spec.ts": 14,
+      "alchemy-workshop.spec.ts": 12,
+      "check-art-01.spec.ts": 7,
+      "check-art-02.spec.ts": 10,
+      "check-u8.spec.ts": 7,
+      "demo.spec.ts": 17,
+      "equipment-objects.spec.ts": 12,
+      "idle-full-route.spec.ts": 1,
+      "idle-integration.spec.ts": 7,
+      "idle-milestones.spec.ts": 16,
+      "idle-preparation-active.spec.ts": 6,
+      "idle-preparation-drafts.spec.ts": 6,
+      "idle-preparation.spec.ts": 9,
+      "idle-production.spec.ts": 11,
+      "idle-review.spec.ts": 8,
+      "idle-sources.spec.ts": 7,
+      "idle-stage-ui.spec.ts": 7,
+      "inventory-objects.spec.ts": 12,
+      "local-loading.spec.ts": 3,
+      "matrix-ui-boundaries.spec.ts": 7,
+      "matrix-ui-controls.spec.ts": 13,
+      "matrix-ui-enemy-asset.spec.ts": 1,
+      "matrix-ui-focus.spec.ts": 4,
+      "matrix-ui-local-recovery.spec.ts": 10,
+      "matrix-ui-menus.spec.ts": 3,
+      "matrix-ui-milestone-feedback.spec.ts": 3,
+      "narrative-objects.spec.ts": 14,
+      "stage-check.spec.ts": 20,
+      "stage-r2.spec.ts": 10,
+      "stage-r3-layout.spec.ts": 13,
+      "stage-r3.spec.ts": 5,
+      "stage-r4.spec.ts": 24,
+      "store-sync-status.spec.ts": 2
+    },
+    "inheritance": "Do not unconditionally inherit these301 UI cases. All UI pages load the real App/CSS; many other fixtures start in or return through cave and some mounted views remain hidden. Each inherited case would need unchanged input plus an explicit proof the modified selector was absent/nonmatching for its relevant frames and interactions. No such per-case negative proof is asserted here."
+  },
+  "nativeImpact": {
+    "differentFromSource10GameMenusChange": true,
+    "directChain": [
+      "web/persistence-tests/local-startup.spec.ts -> fault-app.ts -> App.vue -> CultivationSite.vue -> cultivation-objects.css",
+      "web/persistence-tests/online-recovery.spec.ts -> fault-app.ts -> App.vue -> CultivationSite.vue -> cultivation-objects.css"
+    ],
+    "cssConsumingFiles": {
+      "local-startup.spec.ts": 30,
+      "online-recovery.spec.ts": 4
+    },
+    "limit": "These34 native cases import the changed CSS module; the previous no-native-consumer game-menus conclusion cannot justify all332 now. The other298 require exact unchanged dependency proof if inherited. Root chose to rerun all332."
+  },
+  "rootCurrentVerificationChoice": {
+    "reportedByRoot": true,
+    "ui": {
+      "declarations": 385,
+      "ownedHandle": 23913,
+      "log": "artifacts/goal-4/matrix-m03/ui-source11.log",
+      "status": "running, not passed"
+    },
+    "native": {
+      "declarations": 332,
+      "ownedHandle": 67366,
+      "log": "artifacts/goal-4/matrix-m03/native-source11.log",
+      "status": "running, not passed"
+    },
+    "reason": "Full current-source reruns resolve CSS-consumption ambiguity; no premature same-source all-green claim. Source10 original381/4 and leaf14/1 remain historical failures."
+  }
+}

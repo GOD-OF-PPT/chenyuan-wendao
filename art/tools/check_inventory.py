@@ -487,6 +487,31 @@ def validate(root):
         assert native_bytes <= 12000, 'Game-stage style budget exceeded'
     else:
         assert not (root / 'web/src/game-hub.css').exists(), 'Unrecorded game-stage stylesheet'
+    menu_path = root / 'art/redesign/game-menu-matrix.json'
+    menu_bytes = 0
+    if menu_path.exists():
+        menu = json.loads(menu_path.read_text())
+        assert menu['format'] == 'chenyuan-game-menu-matrix' and type(menu['version']) is int and menu['version'] == 1
+        assert menu['maxNativeBytes'] == 18000 and menu['maxStylesheetBytes'] == 6000 and menu['userAcceptance'] is False
+        assert [row['path'] for row in menu['files']] == ['web/src/LocalExperiencePanel.vue', 'web/src/game-menus.css']
+        for row in menu['files']:
+            raw = (root / row['path']).read_bytes()
+            assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Game menu source identity changed'
+            menu_bytes += len(raw)
+            if row['path'].endswith('.css'):
+                assert len(raw) <= 6000, 'Game menu stylesheet budget exceeded'
+        assert menu_bytes <= 18000, 'Game menu native budget exceeded'
+        assert {'docs/decisions/0031-game-ui-matrix-intent-contract.md', 'goal-4/amendments/2026-10-24-game-studio-recheck.md'} <= set(menu['sourceReferences']), 'Game menu source contract missing'
+        for ref in menu['sourceReferences']:
+            assert (root / ref).resolve().is_relative_to(root) and (root / ref).is_file()
+        required_menu_bindings = {'web/src/main.ts': ["import './game-menus.css'"], 'web/src/App.vue': ['class="paper settings game-settings"', 'class="settings-grid"', 'class="paper settings game-help"', 'label="帮助主题"', "'game-menus-desktop':singleScreen"], 'web/src/LocalExperiencePanel.vue': ['data-testid="local-view-overview"', 'label="最近记录"', 'validatedDownload()', 'data-testid="local-export-cancel"']}
+        for path, fragments in required_menu_bindings.items():
+            assert set(fragments) <= set(menu['bindings'].get(path, [])), 'Game menu required consumer omitted'
+        for path, fragments in menu['bindings'].items():
+            assert (root / path).resolve().is_relative_to(root) and (root / path).is_file() and fragments
+            assert all(fragment in (root / path).read_text() for fragment in fragments), 'Game menu consumer missing'
+    else:
+        assert not (root / 'web/src/game-menus.css').exists(), 'Unrecorded game menu stylesheet'
     idle_path = root / 'art/redesign/idle-cultivation.json'
     idle_bytes = 0
     if idle_path.exists():
@@ -795,7 +820,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'adventureObjectNativeBytes':adventure_object_bytes, 'equipmentObjectNativeBytes':equipment_bytes, 'supplyObjectNativeBytes':supply_bytes, 'narrativeObjectNativeBytes':narrative_object_bytes, 'cultivationObjectNativeBytes':cultivation_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'gameMenuNativeBytes':menu_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'adventureObjectNativeBytes':adventure_object_bytes, 'equipmentObjectNativeBytes':equipment_bytes, 'supplyObjectNativeBytes':supply_bytes, 'narrativeObjectNativeBytes':narrative_object_bytes, 'cultivationObjectNativeBytes':cultivation_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

@@ -30,7 +30,7 @@ const plan=computed<TravelPlan|EncounterPlan>(()=>props.mode==='travel'?{kind:'t
 const quote=computed(()=>rows.value.length?previewActivity(props.game,plan.value):null);
 const enemy=computed(()=>props.mode==='encounter'&&rows.value.includes(encounter.value.enemy)?C.enemies[encounter.value.enemy]:null);
 const location=computed(()=>props.mode==='travel'?trip.value.location:props.game.core.world.location);
-const conflict=computed(()=>scene?.error?'存档待核对，请先重试原操作':!props.available?'存档未就绪':props.busy?'当前行动保存中，请稍候':props.running?'已有活动进行中，请先暂停后确认新安排':'');
+const conflict=computed(()=>scene?.unresolved?scene.syncIssue?'存档待核对，请先重新读取':'请先重试或取消原操作':!props.available?'存档未就绪':props.busy?'当前行动保存中，请稍候':props.running?'已有活动进行中，请先暂停后确认新安排':'');
 const sameSaved=computed(()=>!!props.savedPlan&&JSON.stringify(props.savedPlan)===JSON.stringify(plan.value));
 const targetItem=computed({get:()=>encounter.value.target?.item??'',set:(item:string)=>{encounter.value={...encounter.value,target:item?{item,quantity:props.game.core.inventory[item]+1}:null};}});
 const strategy=computed({get:()=>encounter.value.strategy,set:(value:EncounterPlan['strategy'])=>{encounter.value={...encounter.value,strategy:{...value,priority:[...value.priority]}};}});

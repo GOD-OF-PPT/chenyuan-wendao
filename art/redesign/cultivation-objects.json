@@ -18,8 +18,8 @@
     },
     {
       "path": "web/src/CultivationSite.vue",
-      "bytes": 4200,
-      "sha256": "81ee9ea81513e7d9761d2b5596970803150e80e718bd054a0fa7c533d83ffe23"
+      "bytes": 4259,
+      "sha256": "01d7e4e927694032e2639273e33729cf4914f924773941e10c6dbadc85aef173"
     },
     {
       "path": "web/src/MilestoneGate.vue",
@@ -39,7 +39,7 @@
     {
       "path": "web/src/cultivation-objects.css",
       "bytes": 14757,
-      "sha256": "4c5a69418d55c61358ca7db4d048826eed2a09694ea43d790aeb9c48e71cf644"
+      "sha256": "7e56fa0d0d377965f7c2fe9f5a3fee1879f42c8f05462e53519d1a458b20de25"
     },
     {
       "path": "web/src/milestone-objects.css",
@@ -49,8 +49,8 @@
   ],
   "goalPanel": {
     "path": "web/src/GoalPanel.vue",
-    "bytes": 18181,
-    "sha256": "6af5c41d57e8e8a5972ac328437cbe346640bab58fedd488223a9b0326ee26d1"
+    "bytes": 18217,
+    "sha256": "fd51c86f2d79e76ce20dd92303facd91a742ba782b1d938a8d5ff1bbc59d8790"
   },
   "assets": [
     {

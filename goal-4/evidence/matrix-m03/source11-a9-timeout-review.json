@@ -1,0 +1,1918 @@
+{
+  "task": "MATRIX-M03",
+  "case": "ART03-A9 native acceptance and cycle quota failures keep learning and forging cold while the original exact intent remains retryable",
+  "status": "read_only_timeout_phase_audit_not_a_fix_or_rerun",
+  "runtimeDigest": "3daa6b703dd3e9fee84778e822fc0296b6d4bedee85a2ff6494884f70eecbb5c",
+  "provenance": {
+    "trace": "artifacts/goal-4/matrix-m03/ui-source11-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/trace.zip",
+    "traceSha256": "28f772e47fcc1f73cf45dff5432a93dcb569f3b494195494c47b7999ac11b92e",
+    "context": "artifacts/goal-4/matrix-m03/ui-source11-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/error-context.md",
+    "contextSha256": "eff06bd4b7eb396e75dc34c3a311ad5d129dc82c8ef4ab87930641bb84474e9d",
+    "spec": "web/e2e/equipment-objects.spec.ts",
+    "specSha256": "6b0e82dc05ca02a95fb385e7e031d4166c7bb9e0d992e744b7ec40d083023ae9",
+    "frozenInput": "artifacts/goal-4/matrix-m03/full-source11-inputs/web/e2e/equipment-objects.spec.ts",
+    "frozenInputSha256": "6b0e82dc05ca02a95fb385e7e031d4166c7bb9e0d992e744b7ec40d083023ae9",
+    "inputMatchesFrozen": true,
+    "imagesOpened": false,
+    "testExecutedByAuditor": false,
+    "productionOrSpecEdited": false
+  },
+  "limits": {
+    "wholeCaseTimeoutMs": 60000,
+    "actionTimeoutMs": 8000,
+    "navigationTimeoutMs": 15000,
+    "limitsChanged": false
+  },
+  "timeCoordinates": {
+    "unit": "trace monotonic milliseconds; wall spans are observed intervals, not game-cycle duration or performance acceptance",
+    "originMonotonicMs": 699527.178,
+    "originWallUnixMs": 1792812770563,
+    "firstBodyContextStartMs": 699679.517,
+    "afterHooksStartMs": 759543.687,
+    "observedFirstContextToAfterHooksMs": 59864.17,
+    "timeoutErrorHasOwnTimestamp": false,
+    "timeoutEventBound": {
+      "afterCallStartMs": 759540.485,
+      "beforeAfterHooksMs": 759543.687,
+      "widthMs": 3.202
+    }
+  },
+  "timeoutLocation": {
+    "primaryError": "Test timeout of 60000ms exceeded.",
+    "traceEventIndex": 8790,
+    "inflightCallAtPrimaryError": {
+      "callId": "pw:api@4419",
+      "startMs": 759540.485,
+      "endMs": 760136.266,
+      "completed": true,
+      "title": "Click getByTestId('forge-jade_seal')",
+      "sourceFunction": null,
+      "sourceLine": 115
+    },
+    "source": "web/e2e/equipment-objects.spec.ts:115 owned forge-jade_seal selection after first forge-cycle quota frame",
+    "screenshotLater": {
+      "callId": "pw:api@4432",
+      "startMs": 760255.272,
+      "endMs": null,
+      "completed": false,
+      "title": "Screenshot",
+      "sourceFunction": "quotaFrame",
+      "sourceLine": 110
+    },
+    "screenshotStartedAfterAfterHooksMs": 711.585,
+    "cleanupContextClose": {
+      "callId": "pw:api@4433",
+      "startMs": 760281.081,
+      "endMs": 760288.593,
+      "completed": true,
+      "title": "Close context",
+      "sourceFunction": null,
+      "sourceLine": null
+    },
+    "screenshotToCleanupCloseIntervalMs": 25.809,
+    "correction": "25.809ms is screenshot-start to cleanup-context-close, not remaining original60000ms test budget; the primary timeout was already emitted before After Hooks",
+    "lastLowLevelScreenshotLogs": [
+      "taking page screenshot",
+      "waiting for fonts to load...",
+      "fonts loaded"
+    ],
+    "noConclusionFromLogs": "These logs do not establish a font stall or browser/native root cause."
+  },
+  "contexts": [
+    {
+      "ordinal": 1,
+      "kind": "learn",
+      "failureBoundary": "acceptance_START",
+      "contextStart": {
+        "callId": "pw:api@31",
+        "startMs": 699679.517,
+        "endMs": 699683.134,
+        "completed": true,
+        "title": "Create context",
+        "sourceFunction": null,
+        "sourceLine": 114
+      },
+      "contextEndMs": 723056.837,
+      "elapsedToSuccessfulCloseOrTimeoutUpperBoundMs": 23377.32,
+      "completedWholeContextBeforeTimeout": true,
+      "phases": [
+        {
+          "name": "context_and_lawful_import_object_arrangement_before_quota_injection",
+          "fromMs": 699679.517,
+          "untilMs": 702020.769,
+          "elapsedMs": 2341.252
+        },
+        {
+          "name": "native_quota_failure_full_state_cold_guards_and_readonly_catalogue_inspection",
+          "fromMs": 702020.769,
+          "untilMs": 719289.058,
+          "elapsedMs": 17268.289
+        },
+        {
+          "name": "same_original_intent_retry_exact_result_receipt_and_virtual120000ms_no_repeat",
+          "fromMs": 719289.058,
+          "untilMs": 720080.538,
+          "elapsedMs": 791.48
+        },
+        {
+          "name": "finally_console_attachment_restore_put_and_native_context_close",
+          "fromMs": 720080.538,
+          "untilMs": 723056.837,
+          "elapsedMs": 2976.299
+        }
+      ],
+      "recordedExpectationSteps": {
+        "totalBeforeTimeout": 1721,
+        "completedWithoutMismatch": 1721,
+        "note": "trace step counts, including per-object/per-control assertions and poll steps; not extra business coverage"
+      },
+      "originalRetry": {
+        "callId": "pw:api@1910",
+        "startMs": 719289.058,
+        "endMs": 719461.008,
+        "completed": true,
+        "title": "Click getByTestId('retry')",
+        "sourceFunction": null,
+        "sourceLine": 116
+      },
+      "receiptAssertions": 2,
+      "hardBoundaryEvidence": [
+        {
+          "callId": "expect@65",
+          "startMs": 702226.317,
+          "endMs": 702345.116,
+          "completed": true,
+          "title": "Expect \"toContainText\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@67",
+          "startMs": 702363.951,
+          "endMs": 702364.305,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@69",
+          "startMs": 702384.166,
+          "endMs": 702384.555,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@75",
+          "startMs": 702460.016,
+          "endMs": 702474.781,
+          "completed": true,
+          "title": "Expect \"toBeDisabled\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@431",
+          "startMs": 705423.909,
+          "endMs": 705424.929,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@432",
+          "startMs": 705429.597,
+          "endMs": 705429.819,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@433",
+          "startMs": 705435.267,
+          "endMs": 705435.579,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@554",
+          "startMs": 706455.148,
+          "endMs": 706455.298,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@555",
+          "startMs": 706455.956,
+          "endMs": 706456.017,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@556",
+          "startMs": 706457.07,
+          "endMs": 706457.371,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@678",
+          "startMs": 707372.466,
+          "endMs": 707372.599,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@679",
+          "startMs": 707373.334,
+          "endMs": 707373.393,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@680",
+          "startMs": 707373.859,
+          "endMs": 707373.98,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@802",
+          "startMs": 708352.592,
+          "endMs": 708352.812,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@803",
+          "startMs": 708354.047,
+          "endMs": 708354.221,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@804",
+          "startMs": 708356.167,
+          "endMs": 708356.603,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@933",
+          "startMs": 709791.824,
+          "endMs": 709792.123,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@934",
+          "startMs": 709793.305,
+          "endMs": 709793.398,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@935",
+          "startMs": 709794.52,
+          "endMs": 709794.757,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1056",
+          "startMs": 710835.963,
+          "endMs": 710836.194,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1057",
+          "startMs": 710837.372,
+          "endMs": 710837.472,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1058",
+          "startMs": 710838.99,
+          "endMs": 710839.293,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1179",
+          "startMs": 711906.965,
+          "endMs": 711907.119,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1180",
+          "startMs": 711907.709,
+          "endMs": 711907.759,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1181",
+          "startMs": 711908.293,
+          "endMs": 711908.535,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1302",
+          "startMs": 712893.615,
+          "endMs": 712896.107,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1303",
+          "startMs": 712898.958,
+          "endMs": 712899.085,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1304",
+          "startMs": 712901.141,
+          "endMs": 712901.412,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1437",
+          "startMs": 714320.774,
+          "endMs": 714321.027,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1438",
+          "startMs": 714322.664,
+          "endMs": 714322.761,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1439",
+          "startMs": 714323.485,
+          "endMs": 714323.643,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1560",
+          "startMs": 715168.862,
+          "endMs": 715169.106,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1561",
+          "startMs": 715170.683,
+          "endMs": 715170.845,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1562",
+          "startMs": 715172.228,
+          "endMs": 715172.606,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1683",
+          "startMs": 716265.222,
+          "endMs": 716265.622,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1684",
+          "startMs": 716267.353,
+          "endMs": 716267.491,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1685",
+          "startMs": 716269.151,
+          "endMs": 716269.461,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1806",
+          "startMs": 717488.456,
+          "endMs": 717488.713,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1807",
+          "startMs": 717490.181,
+          "endMs": 717490.434,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1808",
+          "startMs": 717491.698,
+          "endMs": 717491.982,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@1911",
+          "startMs": 719471.235,
+          "endMs": 719576.696,
+          "completed": true,
+          "title": "Expect \"poll toBe\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@1913",
+          "startMs": 719576.548,
+          "endMs": 719576.671,
+          "completed": true,
+          "title": "Expect \"toBe\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@1915",
+          "startMs": 719615.593,
+          "endMs": 719615.758,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@1917",
+          "startMs": 719641.4,
+          "endMs": 719641.494,
+          "completed": true,
+          "title": "Expect \"toHaveLength\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@1918",
+          "startMs": 719642.781,
+          "endMs": 719642.912,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@1919",
+          "startMs": 719644.082,
+          "endMs": 719654.543,
+          "completed": true,
+          "title": "Expect \"toBeVisible\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@1920",
+          "startMs": 719656.012,
+          "endMs": 719664.968,
+          "completed": true,
+          "title": "Expect \"toHaveText\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@1922",
+          "startMs": 719674.994,
+          "endMs": 719675.092,
+          "completed": true,
+          "title": "Expect \"toBeGreaterThan\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@1923",
+          "startMs": 719676.418,
+          "endMs": 719676.571,
+          "completed": true,
+          "title": "Expect \"toBeLessThanOrEqual\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@1926",
+          "startMs": 719802.485,
+          "endMs": 719802.691,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@1928",
+          "startMs": 719812.147,
+          "endMs": 719867.373,
+          "completed": true,
+          "title": "Expect \"poll toBe\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@1930",
+          "startMs": 719867.203,
+          "endMs": 719867.346,
+          "completed": true,
+          "title": "Expect \"toBe\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@1932",
+          "startMs": 719901.345,
+          "endMs": 719901.596,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@1935",
+          "startMs": 719927.235,
+          "endMs": 719927.342,
+          "completed": true,
+          "title": "Expect \"toHaveLength\"",
+          "sourceFunction": "receipt",
+          "sourceLine": 26
+        },
+        {
+          "callId": "expect@1936",
+          "startMs": 719929.023,
+          "endMs": 719929.195,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "receipt",
+          "sourceLine": 26
+        },
+        {
+          "callId": "expect@1938",
+          "startMs": 719941.086,
+          "endMs": 719941.167,
+          "completed": true,
+          "title": "Expect \"toBe\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        },
+        {
+          "callId": "expect@1942",
+          "startMs": 720052.795,
+          "endMs": 720053.007,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        },
+        {
+          "callId": "expect@1944",
+          "startMs": 720077.289,
+          "endMs": 720077.972,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        },
+        {
+          "callId": "expect@1945",
+          "startMs": 720079.239,
+          "endMs": 720079.434,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        }
+      ],
+      "errorFrameGeometryAssertionsCompleted": 1583,
+      "screenshotCalls": [
+        {
+          "callId": "pw:api@78",
+          "name": "learn-acceptance-quota.png",
+          "startMs": 702510.324,
+          "endMs": 703204.156,
+          "elapsedMs": 693.832,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@198",
+          "name": "learn-acceptance-owned-slip-error.png",
+          "startMs": 703451.213,
+          "endMs": 704067.76,
+          "elapsedMs": 616.547,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@320",
+          "name": "learn-acceptance-error-readonly-sword_mind.png",
+          "startMs": 704571.774,
+          "endMs": 705173.236,
+          "elapsedMs": 601.462,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@443",
+          "name": "learn-acceptance-error-readonly-sword_still.png",
+          "startMs": 705658.527,
+          "endMs": 706307.29,
+          "elapsedMs": 648.763,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@567",
+          "name": "learn-acceptance-error-readonly-sword_build.png",
+          "startMs": 706604.599,
+          "endMs": 707219.272,
+          "elapsedMs": 614.673,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@691",
+          "name": "learn-acceptance-error-readonly-sword_guard.png",
+          "startMs": 707505.487,
+          "endMs": 708092.729,
+          "elapsedMs": 587.242,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@822",
+          "name": "learn-acceptance-error-readonly-sword_release.png",
+          "startMs": 708754.662,
+          "endMs": 709499.363,
+          "elapsedMs": 744.701,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@945",
+          "name": "learn-acceptance-error-readonly-sword_echo.png",
+          "startMs": 709959.274,
+          "endMs": 710613.734,
+          "elapsedMs": 654.46,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@1068",
+          "name": "learn-acceptance-error-readonly-talisman_mind.png",
+          "startMs": 710991.561,
+          "endMs": 711734.773,
+          "elapsedMs": 743.212,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@1191",
+          "name": "learn-acceptance-error-readonly-talisman_calm.png",
+          "startMs": 712052.304,
+          "endMs": 712624.415,
+          "elapsedMs": 572.111,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@1326",
+          "name": "learn-acceptance-error-readonly-talisman_build.png",
+          "startMs": 713506.177,
+          "endMs": 714137.656,
+          "elapsedMs": 631.479,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@1449",
+          "name": "learn-acceptance-error-readonly-talisman_frost.png",
+          "startMs": 714475.982,
+          "endMs": 715011.408,
+          "elapsedMs": 535.426,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@1572",
+          "name": "learn-acceptance-error-readonly-talisman_release.png",
+          "startMs": 715315.74,
+          "endMs": 716003.319,
+          "elapsedMs": 687.579,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@1695",
+          "name": "learn-acceptance-error-readonly-talisman_return.png",
+          "startMs": 716517.044,
+          "endMs": 717292.299,
+          "elapsedMs": 775.255,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@1828",
+          "name": "learn-acceptance-readonly-loadout.png",
+          "startMs": 718046.604,
+          "endMs": 718710.59,
+          "elapsedMs": 663.986,
+          "completedBeforeTimeout": true
+        }
+      ]
+    },
+    {
+      "ordinal": 2,
+      "kind": "learn",
+      "failureBoundary": "cycle_current_write",
+      "contextStart": {
+        "callId": "pw:api@1949",
+        "startMs": 723059.411,
+        "endMs": 723082.874,
+        "completed": true,
+        "title": "Create context",
+        "sourceFunction": null,
+        "sourceLine": 114
+      },
+      "contextEndMs": 748339.154,
+      "elapsedToSuccessfulCloseOrTimeoutUpperBoundMs": 25279.743,
+      "completedWholeContextBeforeTimeout": true,
+      "phases": [
+        {
+          "name": "context_and_lawful_import_object_arrangement_before_quota_injection",
+          "fromMs": 723059.411,
+          "untilMs": 725803.284,
+          "elapsedMs": 2743.873
+        },
+        {
+          "name": "native_quota_failure_full_state_cold_guards_and_readonly_catalogue_inspection",
+          "fromMs": 725803.284,
+          "untilMs": 745706.636,
+          "elapsedMs": 19903.352
+        },
+        {
+          "name": "same_original_intent_retry_exact_result_receipt_and_virtual120000ms_no_repeat",
+          "fromMs": 745706.636,
+          "untilMs": 746089.173,
+          "elapsedMs": 382.537
+        },
+        {
+          "name": "finally_console_attachment_restore_put_and_native_context_close",
+          "fromMs": 746089.173,
+          "untilMs": 748339.154,
+          "elapsedMs": 2249.981
+        }
+      ],
+      "recordedExpectationSteps": {
+        "totalBeforeTimeout": 1716,
+        "completedWithoutMismatch": 1716,
+        "note": "trace step counts, including per-object/per-control assertions and poll steps; not extra business coverage"
+      },
+      "originalRetry": {
+        "callId": "pw:api@3836",
+        "startMs": 745706.636,
+        "endMs": 745811.495,
+        "completed": true,
+        "title": "Click getByTestId('training-retry')",
+        "sourceFunction": null,
+        "sourceLine": 116
+      },
+      "receiptAssertions": 2,
+      "hardBoundaryEvidence": [
+        {
+          "callId": "expect@1990",
+          "startMs": 725821.021,
+          "endMs": 725890.724,
+          "completed": true,
+          "title": "Expect \"toContainText\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@1992",
+          "startMs": 725915.621,
+          "endMs": 725915.871,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@1994",
+          "startMs": 725945.914,
+          "endMs": 725946.23,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@2000",
+          "startMs": 726029.554,
+          "endMs": 726040.433,
+          "completed": true,
+          "title": "Expect \"toBeDisabled\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@2356",
+          "startMs": 729359.664,
+          "endMs": 729359.956,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2357",
+          "startMs": 729361.672,
+          "endMs": 729361.871,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2358",
+          "startMs": 729364.087,
+          "endMs": 729364.406,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2479",
+          "startMs": 730596.14,
+          "endMs": 730596.392,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2480",
+          "startMs": 730598.034,
+          "endMs": 730598.253,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2481",
+          "startMs": 730599.983,
+          "endMs": 730600.342,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2603",
+          "startMs": 732113.91,
+          "endMs": 732114.184,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2604",
+          "startMs": 732115.566,
+          "endMs": 732115.884,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2605",
+          "startMs": 732118.06,
+          "endMs": 732118.441,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2727",
+          "startMs": 733466.923,
+          "endMs": 733467.148,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2728",
+          "startMs": 733469.241,
+          "endMs": 733469.464,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2729",
+          "startMs": 733471.065,
+          "endMs": 733471.531,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2858",
+          "startMs": 734830.997,
+          "endMs": 734831.319,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2859",
+          "startMs": 734833.708,
+          "endMs": 734833.932,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2860",
+          "startMs": 734835.371,
+          "endMs": 734835.684,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2981",
+          "startMs": 735990.669,
+          "endMs": 735990.856,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2982",
+          "startMs": 735993.062,
+          "endMs": 735993.25,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@2983",
+          "startMs": 735994.761,
+          "endMs": 735995.14,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3104",
+          "startMs": 737252.895,
+          "endMs": 737253.117,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3105",
+          "startMs": 737255.288,
+          "endMs": 737255.606,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3106",
+          "startMs": 737258.147,
+          "endMs": 737258.769,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3227",
+          "startMs": 738553.643,
+          "endMs": 738553.842,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3228",
+          "startMs": 738556.249,
+          "endMs": 738556.423,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3229",
+          "startMs": 738559.013,
+          "endMs": 738559.469,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3362",
+          "startMs": 740485.41,
+          "endMs": 740486.141,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3363",
+          "startMs": 740491.429,
+          "endMs": 740491.731,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3364",
+          "startMs": 740496.101,
+          "endMs": 740496.799,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3485",
+          "startMs": 741523.764,
+          "endMs": 741524.044,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3486",
+          "startMs": 741526.412,
+          "endMs": 741526.716,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3487",
+          "startMs": 741530.413,
+          "endMs": 741530.867,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3608",
+          "startMs": 742752.16,
+          "endMs": 742752.436,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3609",
+          "startMs": 742753.631,
+          "endMs": 742753.835,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3610",
+          "startMs": 742754.888,
+          "endMs": 742755.171,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3731",
+          "startMs": 743959.749,
+          "endMs": 743959.925,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3732",
+          "startMs": 743961.755,
+          "endMs": 743961.972,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3733",
+          "startMs": 743963.311,
+          "endMs": 743963.919,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@3835",
+          "startMs": 745704.14,
+          "endMs": 745704.4,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@3837",
+          "startMs": 745813.216,
+          "endMs": 745865.228,
+          "completed": true,
+          "title": "Expect \"poll toBe\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@3839",
+          "startMs": 745865.053,
+          "endMs": 745865.2,
+          "completed": true,
+          "title": "Expect \"toBe\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@3841",
+          "startMs": 745899.597,
+          "endMs": 745899.794,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@3844",
+          "startMs": 745928.186,
+          "endMs": 745928.278,
+          "completed": true,
+          "title": "Expect \"toHaveLength\"",
+          "sourceFunction": "receipt",
+          "sourceLine": 26
+        },
+        {
+          "callId": "expect@3845",
+          "startMs": 745930.734,
+          "endMs": 745931.049,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "receipt",
+          "sourceLine": 26
+        },
+        {
+          "callId": "expect@3847",
+          "startMs": 745944.788,
+          "endMs": 745944.974,
+          "completed": true,
+          "title": "Expect \"toBe\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        },
+        {
+          "callId": "expect@3851",
+          "startMs": 746058.192,
+          "endMs": 746058.394,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        },
+        {
+          "callId": "expect@3853",
+          "startMs": 746082.464,
+          "endMs": 746083.192,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        },
+        {
+          "callId": "expect@3854",
+          "startMs": 746085.17,
+          "endMs": 746086.547,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        }
+      ],
+      "errorFrameGeometryAssertionsCompleted": 1583,
+      "screenshotCalls": [
+        {
+          "callId": "pw:api@2003",
+          "name": "learn-cycle-quota.png",
+          "startMs": 726061.726,
+          "endMs": 726786.955,
+          "elapsedMs": 725.229,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@2123",
+          "name": "learn-cycle-owned-slip-error.png",
+          "startMs": 727322.5,
+          "endMs": 727982.373,
+          "elapsedMs": 659.873,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@2245",
+          "name": "learn-cycle-error-readonly-sword_mind.png",
+          "startMs": 728461.113,
+          "endMs": 729114.922,
+          "elapsedMs": 653.809,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@2368",
+          "name": "learn-cycle-error-readonly-sword_still.png",
+          "startMs": 729551.058,
+          "endMs": 730299.695,
+          "elapsedMs": 748.637,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@2492",
+          "name": "learn-cycle-error-readonly-sword_build.png",
+          "startMs": 730814.373,
+          "endMs": 731617.366,
+          "elapsedMs": 802.993,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@2616",
+          "name": "learn-cycle-error-readonly-sword_guard.png",
+          "startMs": 732266.521,
+          "endMs": 733127.976,
+          "elapsedMs": 861.455,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@2747",
+          "name": "learn-cycle-error-readonly-sword_release.png",
+          "startMs": 733857.837,
+          "endMs": 734468.991,
+          "elapsedMs": 611.154,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@2870",
+          "name": "learn-cycle-error-readonly-sword_echo.png",
+          "startMs": 735046.376,
+          "endMs": 735713.036,
+          "elapsedMs": 666.66,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@2993",
+          "name": "learn-cycle-error-readonly-talisman_mind.png",
+          "startMs": 736187.533,
+          "endMs": 736955.494,
+          "elapsedMs": 767.961,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@3116",
+          "name": "learn-cycle-error-readonly-talisman_calm.png",
+          "startMs": 737407.232,
+          "endMs": 738282.946,
+          "elapsedMs": 875.714,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@3251",
+          "name": "learn-cycle-error-readonly-talisman_build.png",
+          "startMs": 739267.07,
+          "endMs": 740057.536,
+          "elapsedMs": 790.466,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@3374",
+          "name": "learn-cycle-error-readonly-talisman_frost.png",
+          "startMs": 740655.247,
+          "endMs": 741280.976,
+          "elapsedMs": 625.729,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@3497",
+          "name": "learn-cycle-error-readonly-talisman_release.png",
+          "startMs": 741788.027,
+          "endMs": 742489.17,
+          "elapsedMs": 701.143,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@3620",
+          "name": "learn-cycle-error-readonly-talisman_return.png",
+          "startMs": 742938.272,
+          "endMs": 743630.939,
+          "elapsedMs": 692.667,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@3753",
+          "name": "learn-cycle-readonly-loadout.png",
+          "startMs": 744582.631,
+          "endMs": 745232.983,
+          "elapsedMs": 650.352,
+          "completedBeforeTimeout": true
+        }
+      ]
+    },
+    {
+      "ordinal": 3,
+      "kind": "forge",
+      "failureBoundary": "acceptance_START",
+      "contextStart": {
+        "callId": "pw:api@3858",
+        "startMs": 748342.872,
+        "endMs": 748381.159,
+        "completed": true,
+        "title": "Create context",
+        "sourceFunction": null,
+        "sourceLine": 114
+      },
+      "contextEndMs": 756386.185,
+      "elapsedToSuccessfulCloseOrTimeoutUpperBoundMs": 8043.313,
+      "completedWholeContextBeforeTimeout": true,
+      "phases": [
+        {
+          "name": "context_and_lawful_import_object_arrangement_before_quota_injection",
+          "fromMs": 748342.872,
+          "untilMs": 749909.813,
+          "elapsedMs": 1566.941
+        },
+        {
+          "name": "native_quota_failure_full_state_cold_guards_and_readonly_catalogue_inspection",
+          "fromMs": 749909.813,
+          "untilMs": 754204.942,
+          "elapsedMs": 4295.129
+        },
+        {
+          "name": "same_original_intent_retry_exact_result_receipt_and_virtual120000ms_no_repeat",
+          "fromMs": 754204.942,
+          "untilMs": 754848.128,
+          "elapsedMs": 643.186
+        },
+        {
+          "name": "finally_console_attachment_restore_put_and_native_context_close",
+          "fromMs": 754848.128,
+          "untilMs": 756386.185,
+          "elapsedMs": 1538.057
+        }
+      ],
+      "recordedExpectationSteps": {
+        "totalBeforeTimeout": 338,
+        "completedWithoutMismatch": 338,
+        "note": "trace step counts, including per-object/per-control assertions and poll steps; not extra business coverage"
+      },
+      "originalRetry": {
+        "callId": "pw:api@4222",
+        "startMs": 754204.942,
+        "endMs": 754355.837,
+        "completed": true,
+        "title": "Click getByTestId('retry')",
+        "sourceFunction": null,
+        "sourceLine": 116
+      },
+      "receiptAssertions": 2,
+      "hardBoundaryEvidence": [
+        {
+          "callId": "expect@3880",
+          "startMs": 750048.715,
+          "endMs": 750179.917,
+          "completed": true,
+          "title": "Expect \"toContainText\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@3882",
+          "startMs": 750194.801,
+          "endMs": 750195.079,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@3884",
+          "startMs": 750213.31,
+          "endMs": 750213.557,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@3890",
+          "startMs": 750333.422,
+          "endMs": 750351.029,
+          "completed": true,
+          "title": "Expect \"toBeDisabled\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@4130",
+          "startMs": 752881.19,
+          "endMs": 752881.428,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@4131",
+          "startMs": 752883.277,
+          "endMs": 752883.37,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@4132",
+          "startMs": 752885.402,
+          "endMs": 752885.779,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "unchanged",
+          "sourceLine": 113
+        },
+        {
+          "callId": "expect@4223",
+          "startMs": 754358.106,
+          "endMs": 754372.623,
+          "completed": true,
+          "title": "Expect \"poll toBe\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@4225",
+          "startMs": 754372.492,
+          "endMs": 754372.596,
+          "completed": true,
+          "title": "Expect \"toBe\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@4227",
+          "startMs": 754401.503,
+          "endMs": 754401.677,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@4229",
+          "startMs": 754420.16,
+          "endMs": 754420.389,
+          "completed": true,
+          "title": "Expect \"toHaveLength\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@4230",
+          "startMs": 754422.402,
+          "endMs": 754422.587,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@4231",
+          "startMs": 754424.504,
+          "endMs": 754451.171,
+          "completed": true,
+          "title": "Expect \"toBeVisible\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@4232",
+          "startMs": 754452.718,
+          "endMs": 754464.207,
+          "completed": true,
+          "title": "Expect \"toHaveText\"",
+          "sourceFunction": null,
+          "sourceLine": 116
+        },
+        {
+          "callId": "expect@4234",
+          "startMs": 754479.719,
+          "endMs": 754479.869,
+          "completed": true,
+          "title": "Expect \"toBeGreaterThan\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@4235",
+          "startMs": 754482.204,
+          "endMs": 754482.338,
+          "completed": true,
+          "title": "Expect \"toBeLessThanOrEqual\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@4238",
+          "startMs": 754535.394,
+          "endMs": 754535.617,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@4240",
+          "startMs": 754582.648,
+          "endMs": 754678.684,
+          "completed": true,
+          "title": "Expect \"poll toBe\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@4242",
+          "startMs": 754678.557,
+          "endMs": 754678.659,
+          "completed": true,
+          "title": "Expect \"toBe\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@4244",
+          "startMs": 754711.718,
+          "endMs": 754712.021,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "tick",
+          "sourceLine": 25
+        },
+        {
+          "callId": "expect@4247",
+          "startMs": 754741.936,
+          "endMs": 754742.047,
+          "completed": true,
+          "title": "Expect \"toHaveLength\"",
+          "sourceFunction": "receipt",
+          "sourceLine": 26
+        },
+        {
+          "callId": "expect@4248",
+          "startMs": 754744.823,
+          "endMs": 754744.997,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": "receipt",
+          "sourceLine": 26
+        },
+        {
+          "callId": "expect@4250",
+          "startMs": 754756.715,
+          "endMs": 754756.819,
+          "completed": true,
+          "title": "Expect \"toBe\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        },
+        {
+          "callId": "expect@4254",
+          "startMs": 754823.804,
+          "endMs": 754824.094,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        },
+        {
+          "callId": "expect@4256",
+          "startMs": 754844.586,
+          "endMs": 754844.984,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        },
+        {
+          "callId": "expect@4257",
+          "startMs": 754846.414,
+          "endMs": 754846.525,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 117
+        }
+      ],
+      "errorFrameGeometryAssertionsCompleted": 267,
+      "screenshotCalls": [
+        {
+          "callId": "pw:api@3893",
+          "name": "forge-acceptance-quota.png",
+          "startMs": 750383.615,
+          "endMs": 751313.759,
+          "elapsedMs": 930.144,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@4015",
+          "name": "forge-acceptance-owned-artifact-error.png",
+          "startMs": 751912.539,
+          "endMs": 752581.899,
+          "elapsedMs": 669.36,
+          "completedBeforeTimeout": true
+        },
+        {
+          "callId": "pw:api@4140",
+          "name": "forge-acceptance-readonly-loadout.png",
+          "startMs": 753067.073,
+          "endMs": 753691.862,
+          "elapsedMs": 624.789,
+          "completedBeforeTimeout": true
+        }
+      ]
+    },
+    {
+      "ordinal": 4,
+      "kind": "forge",
+      "failureBoundary": "cycle_current_write",
+      "contextStart": {
+        "callId": "pw:api@4261",
+        "startMs": 756389.875,
+        "endMs": 756394.807,
+        "completed": true,
+        "title": "Create context",
+        "sourceFunction": null,
+        "sourceLine": 114
+      },
+      "contextEndMs": 759543.687,
+      "elapsedToSuccessfulCloseOrTimeoutUpperBoundMs": 3153.812,
+      "completedWholeContextBeforeTimeout": false,
+      "phases": [
+        {
+          "name": "context_and_lawful_import_object_arrangement_before_quota_injection",
+          "fromMs": 756389.875,
+          "untilMs": 758310.751,
+          "elapsedMs": 1920.876
+        },
+        {
+          "name": "native_quota_failure_first_error_frame_all_geometry_and_positive_owned_equip_preview",
+          "fromMs": 758310.751,
+          "untilMs": 759540.485,
+          "elapsedMs": 1229.734
+        },
+        {
+          "name": "owned_artifact_selection_inflight_until_afterhooks_timeout_upper_bound",
+          "fromMs": 759540.485,
+          "untilMs": 759543.687,
+          "elapsedMs": 3.202
+        }
+      ],
+      "recordedExpectationSteps": {
+        "totalBeforeTimeout": 128,
+        "completedWithoutMismatch": 128,
+        "note": "trace step counts, including per-object/per-control assertions and poll steps; not extra business coverage"
+      },
+      "originalRetry": null,
+      "receiptAssertions": 0,
+      "hardBoundaryEvidence": [
+        {
+          "callId": "expect@4290",
+          "startMs": 758334.374,
+          "endMs": 758380.886,
+          "completed": true,
+          "title": "Expect \"toContainText\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@4292",
+          "startMs": 758402.606,
+          "endMs": 758402.808,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@4294",
+          "startMs": 758430.506,
+          "endMs": 758430.865,
+          "completed": true,
+          "title": "Expect \"toEqual\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        },
+        {
+          "callId": "expect@4300",
+          "startMs": 758491.348,
+          "endMs": 758506.736,
+          "completed": true,
+          "title": "Expect \"toBeDisabled\"",
+          "sourceFunction": null,
+          "sourceLine": 114
+        }
+      ],
+      "errorFrameGeometryAssertionsCompleted": 98,
+      "screenshotCalls": [
+        {
+          "callId": "pw:api@4303",
+          "name": "forge-cycle-quota.png",
+          "startMs": 758541.767,
+          "endMs": 759170.895,
+          "elapsedMs": 629.128,
+          "completedBeforeTimeout": true
+        }
+      ]
+    }
+  ],
+  "passedHardSemantics": {
+    "firstThreeContexts": [
+      "Both learn acceptance/cycle sweeps inspected all12 skill objects with full text,costs,18px/44px/containment/hit and full Game/Activity/all stores unchanged on each read",
+      "Forge acceptance inspected owned-not-equipped relic with legal positive equip preview disabled by actual pending error,and readonly loadout/school",
+      "Original START retry kept exact rejected full input and sole acceptance receipt; cycle retry kept nextCommand; formal advance fullGame and unique exact result receipt were checked",
+      "No false result effects; subsequent virtual120000ms retained full Game/allDB; pageErrors[] asserted"
+    ],
+    "fourthBeforeTimeout": [
+      "Lawful forge cycle accepted and genuine native quota reached its current-write boundary",
+      "Storage-quota visible; complete original Game and allDB equality passed; all3 arrival effects absent; actual forge actor cold; start disabled",
+      "First forge-cycle-quota screenshot completed and its artifactEdges,18px body,44px controls,geometry/containment/hit assertions passed",
+      "Positive legal EQUIP_RELIC jade_seal preview assertion passed; owned-object selection started before timeout"
+    ],
+    "fourthAfterTimeoutOnly": [
+      "Owned state,disabled equip and pending reason expectation steps completed during timeout teardown; not counted as a completed fourth context",
+      "Owned-object geometry was evaluated and attached,then screenshot remained unpaired with an after event and context cleanup closed the page"
+    ],
+    "notReached": [
+      "Fourth owned-object frame post-screenshot artifactEdges/font/control assertions",
+      "Fourth readonly loadout/school/fullDB after all inspection",
+      "Fourth original cycle retry/formal fullGame/unique result receipt/virtual120000ms no-repeat",
+      "Final four-native-error-contexts aggregate attachment and rows length4 assertion"
+    ]
+  },
+  "lateContinuationExpectationSteps": [
+    {
+      "callId": "expect@4424",
+      "startMs": 760132.465,
+      "endMs": 760132.761,
+      "completed": true,
+      "title": "Expect \"toEqual\"",
+      "sourceFunction": null,
+      "sourceLine": 14
+    },
+    {
+      "callId": "expect@4427",
+      "startMs": 760138.158,
+      "endMs": 760164.866,
+      "completed": true,
+      "title": "Expect \"toContainText\"",
+      "sourceFunction": null,
+      "sourceLine": 115
+    },
+    {
+      "callId": "expect@4428",
+      "startMs": 760165.52,
+      "endMs": 760183.896,
+      "completed": true,
+      "title": "Expect \"toBeDisabled\"",
+      "sourceFunction": null,
+      "sourceLine": 115
+    },
+    {
+      "callId": "expect@4429",
+      "startMs": 760186.752,
+      "endMs": 760201.317,
+      "completed": true,
+      "title": "Expect \"toContainText\"",
+      "sourceFunction": null,
+      "sourceLine": 115
+    }
+  ],
+  "observedAssertionMismatchErrors": 0,
+  "secondaryCleanupError": {
+    "message": "page.evaluate: Target page, context or browser has been closed",
+    "source": "web/e2e/equipment-objects.spec.ts:118 finally restore injected put",
+    "classification": "after primary timeout/context cleanup, not independently evidenced Game/save failure"
+  },
+  "limitsOfInference": [
+    "Observed total budget exhaustion is real; per-operation/context timing does not identify contention,CDP,IDB or native scheduling as a cause",
+    "No failed expected-value assertion was recorded before the primary timeout; this does not turn the uncompleted fourth context into pass",
+    "A same-source standalone rerun,if root authorizes after the full run,retains this original failure; a later green alone will not prove the unknown cause fixed",
+    "No timeout increase,skip,force,compatibility or performance acceptance is proposed or executed"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "format": "chenyuan-game-menu-matrix",
+  "version": 1,
+  "task": "Goal4 MATRIX-M03",
+  "maxNativeBytes": 18000,
+  "maxStylesheetBytes": 6000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/LocalExperiencePanel.vue",
+      "bytes": 10670,
+      "sha256": "97f8583d89eabb2333aa2d98c0a61e7b0efa57207b4ada4497bcb0754bb51eca"
+    },
+    {
+      "path": "web/src/game-menus.css",
+      "bytes": 5479,
+      "sha256": "45247c5604dddcb05972b4ff847731546e9f203c3569460510bf0b696a42ca13"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0031-game-ui-matrix-intent-contract.md",
+    "goal-4/amendments/2026-10-24-game-studio-recheck.md",
+    "goal-4/research/m03-design-sources.json"
+  ],
+  "bindings": {
+    "web/src/main.ts": [
+      "import './game-menus.css'"
+    ],
+    "web/src/App.vue": [
+      "class=\"paper settings game-settings\"",
+      "class=\"settings-grid\"",
+      "class=\"paper settings game-help\"",
+      "label=\"帮助主题\"",
+      "'game-menus-desktop':singleScreen"
+    ],
+    "web/src/LocalExperiencePanel.vue": [
+      "data-testid=\"local-view-overview\"",
+      "label=\"最近记录\"",
+      "validatedDownload()",
+      "data-testid=\"local-export-cancel\""
+    ]
+  },
+  "scope": "Fixed desktop reading menus, stage tools, reserved demo navigation and transparent terrace backing; original Game, image fit/crop/gate coordinates and user art acceptance remain unchanged."
+}

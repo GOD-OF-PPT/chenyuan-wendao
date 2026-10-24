@@ -15,14 +15,14 @@ const {store:feedbackStore,activity:current,runtime,effect}=useActivityPresentat
 const arrival=computed(()=>{const e=effect.value,quantity=e?.result.delta.inventory[recipe.value.output]??0;return e?.notice.family==='craft'&&quantity>0?{item:recipe.value.output,quantity,sequence:e.sequence}:null;});
 const state=computed(()=>!props.available||feedbackStore?.error?'failed':feedbackStore?.activityPausing&&current.value?'pausing':runtime.value?runtime.value.phase==='saving'?'saving':runtime.value.remainingMs>runtime.value.totalMs*.8?'heating':runtime.value.remainingMs>runtime.value.totalMs*.2?'refining':'coalescing':current.value?.status==='paused'?'paused':'idle');
 const burning=computed(()=>['heating','refining','coalescing'].includes(state.value));
-const status=computed(()=>({failed:feedbackStore?.syncIssue?'存档待核对 · 炉火已歇':'当前活动保存未确认 · 请在活动条重试',saving:'封存成果 · 保存后入匣',paused:'炉火暂歇',pausing:'正在停手，保存后暂停',heating:'温炉',refining:'炼化药性',coalescing:'凝丹',idle:current.value?.status==='stopped'?current.value.completedCycles?'成果已保存':'安排已停止':'待启炉'})[state.value]);
+const status=computed(()=>({failed:!props.available||feedbackStore?.syncIssue?'存档待核对 · 炉火已歇':feedbackStore?.unresolved?'当前活动保存未确认 · 请在活动条重试':'上次操作未完成 · 可另行安排',saving:'封存成果 · 保存后入匣',paused:'炉火暂歇',pausing:'正在停手，保存后暂停',heating:'温炉',refining:'炼化药性',coalescing:'凝丹',idle:current.value?.status==='stopped'?current.value.completedCycles?'成果已保存':'安排已停止':'待启炉'})[state.value]);
 const atCave=computed(()=>props.game.core.world.location==='cave');
 const buttonLabel=computed(()=>!atCave.value?'前往洞府 · 不自动启炉':props.running?current.value?'炼制中 · 可在活动条暂停':'已有活动 · 请先暂停':'开炉 · '+recipe.value.name);
 const quote=computed(()=>previewActivity(props.game,props.plan));
 const finite=computed(()=>props.plan.until==='target'?'成品库存达到 '+props.plan.targetQuantity+' 即停 · 最多 '+props.plan.maxCycles+' 炉':props.plan.maxCycles+' 炉后停');
 const total=computed(()=>current.value?.version===3?current.value.gainedItems[recipe.value.output]??0:0);
-const blocked=computed(()=>!props.available||props.busy||props.running||!!feedbackStore?.error);
-const reason=computed(()=>!props.available?'存档未就绪':feedbackStore?.error?'当前活动保存未确认，请在活动条核对并重试':props.busy?'正在保存，请稍候':props.running?'已有活动进行中，请先暂停':quote.value.failure?.message??'');
+const blocked=computed(()=>!props.available||props.busy||props.running||feedbackStore?.unresolved);
+const reason=computed(()=>!props.available?'存档未就绪':feedbackStore?.unresolved?feedbackStore.syncIssue?'请先重新读取当前进度':'当前活动保存未确认，请重试或取消原安排':props.busy?'正在保存，请稍候':props.running?'已有活动进行中，请先暂停':quote.value.failure?.message??'');
 function close(){settings.value?.close();settingsOpen.value=false;}
 function open(){if(!visible.value)return;settingsOpen.value=true;settings.value?.showModal();}
 function start(){close();if(props.game.core.world.location==='cave')emit('start');else emit('travel');}

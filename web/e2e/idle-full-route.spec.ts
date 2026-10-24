@@ -53,9 +53,10 @@ async function selectPlan(page: Page, plan: any): Promise<{ control: Locator; ex
     case 'cultivation':
       await openHubFeature(page, 'cultivation-details');
       await page.getByTestId('cultivation-method-' + plan.method).click();
+      await openTrainingBudget(page);
       await page.getByLabel('修行目标', { exact: true }).selectOption(plan.until === 'xp-cap' ? 'xp-cap' : String(plan.maxCycles));
       if (plan.until === 'xp-cap') await field(page, '圆满最多轮数', plan.maxCycles);
-      await openTrainingBudget(page); await field(page, '累计灵石预算', plan.stoneBudget); await field(page, '灵石保留量', plan.stoneReserve);
+      await field(page, '累计灵石预算', plan.stoneBudget); await field(page, '灵石保留量', plan.stoneReserve);
       return { control: page.getByTestId('training-start'), expectedPlan: plan };
     case 'source':
       await page.getByTestId('tab-1').click(); await page.getByTestId('explore-mode-source').click();

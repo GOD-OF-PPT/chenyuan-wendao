@@ -23,8 +23,8 @@
     },
     {
       "path": "web/src/LifeCatalogue.vue",
-      "bytes": 3799,
-      "sha256": "4c243e6f3a7d51814dee5a6966f95d5a88b7d891be04d9373eb13b30bb67f978"
+      "bytes": 4042,
+      "sha256": "80459c978fa67471f650e298169305c6dbc1b3973921765a6ab191e52cb77d2c"
     },
     {
       "path": "web/src/TrialCatalogue.vue",
@@ -38,8 +38,8 @@
     },
     {
       "path": "web/src/story-book.css",
-      "bytes": 11166,
-      "sha256": "81a601910720e0cabecdf35f372fe375aaa9f15785ee3f67546374269d9a4793"
+      "bytes": 10911,
+      "sha256": "41281ee1e53f48e8cbfa3985dc6a127fd1b888be7edf4bd9a02ea6daf04035c0"
     },
     {
       "path": "web/src/reading-memory.ts",

@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "web/src/SourcePlanner.vue",
-      "bytes": 8091,
-      "sha256": "4b7a6f4d88216123efa087eb16ddb9d0181625a8c404c5f56ba1348a7e377128"
+      "bytes": 8221,
+      "sha256": "37365e1f60dad5ad07f4902d43e0a2593005eb61996610b2f4fb353b59227bb9"
     },
     {
       "path": "web/src/idle-sources.css",

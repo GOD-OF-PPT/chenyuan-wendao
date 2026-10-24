@@ -7,6 +7,7 @@ import {previewActivity} from '../../src/full/activity.ts';
 import {adventureDecision,defaultBattlePlan,defaultBattleStrategy,type AdventurePlan,type BattlePlan,type BattleStrategy as Strategy} from '../../src/full/adventure.ts';
 import {previewAction} from '../../src/full/queries.ts';
 import {costsForAction} from '../../src/full/costs.ts';
+import {formatCosts} from './presentation';
 import * as C from '../../src/full/content.ts';
 import GameIcon from './GameIcon.vue';
 import BattleDeck from './BattleDeck.vue';
@@ -32,7 +33,7 @@ const authorization=computed(()=>{
 const next=computed(()=>currentDecision.value?currentDecision.value.action:quote.value?.adventure?.initialAction??null);
 const explanation=computed(()=>currentDecision.value?.reason??quote.value?.adventure?.initialReason??quote.value?.failure?.message??'先核对战策，再安排当前这一关。');
 const nextPreview=computed(()=>next.value?previewAction(props.game,next.value):null);
-const blocked=computed(()=>scene?.error?'存档待核对，请先重试原操作':!props.available?'存档未就绪':props.busy?'当前行动保存中，请稍候':props.running?'当前活动进行中，请先暂停后确认新战策':'');
+const blocked=computed(()=>scene?.unresolved?scene.syncIssue?'存档待核对，请先重新读取':'请先重试或取消原操作':!props.available?'存档未就绪':props.busy?'当前行动保存中，请稍候':props.running?'当前活动进行中，请先暂停后确认新战策':'');
 const sameSaved=computed(()=>{const p=props.savedPlan,d=autoPlan.value;return !!d&&p?.kind==='battle'&&p.mode==='auto'&&p.enemy===d.enemy&&p.trialStage===d.trialStage&&p.maxCycles===d.maxCycles&&p.mpBudget===d.mpBudget&&JSON.stringify(p.strategy)===JSON.stringify(d.strategy);});
 const savedSingle=computed(()=>{const p=props.savedPlan;return props.planSaved&&p?.kind==='battle'&&p.mode==='single'?p:null;});
 const oldTarget=computed(()=>{const p=props.savedPlan;return p?.kind==='battle'&&p.mode==='auto'&&(p.enemy!==props.game.battle?.enemy||p.trialStage!==(props.game.trial?.stage??null))?C.enemies[p.enemy].name:null;});
@@ -41,9 +42,9 @@ function purpose(move:Move){if(move==='attack')return props.game.school==='sword
 function update<K extends keyof Strategy>(key:K,value:Strategy[K]){state.value={...state.value,[key]:value};}
 function numberField(key:keyof Strategy,event:Event){update(key,Number((event.target as HTMLInputElement).value) as never);}
 function shift(index:number,offset:number){const priority=[...state.value.priority],other=index+offset;if(other<0||other>=priority.length)return;[priority[index],priority[other]]=[priority[other],priority[index]];update('priority',priority as Strategy['priority']);}
-function manualCan(move:Move){const a:Action={type:'BATTLE',move};return !scene?.error&&!props.running&&!props.busy&&props.available&&(props.can?props.can(a):previewAction(props.game,a).allowed);}
+function manualCan(move:Move){const a:Action={type:'BATTLE',move};return !scene?.unresolved&&!props.running&&!props.busy&&props.available&&(props.can?props.can(a):previewAction(props.game,a).allowed);}
 function manualReason(move:Move){return blocked.value||(props.why?props.why({type:'BATTLE',move}):previewAction(props.game,{type:'BATTLE',move}).failure?.message??'');}
-function manualCost(move:Move){return props.cost?props.cost({type:'BATTLE',move}):'灵力 '+costsForAction(props.game,{type:'BATTLE',move}).mp;}
+function manualCost(move:Move){const a:Action={type:'BATTLE',move};return props.cost?props.cost(a):formatCosts(costsForAction(props.game,a));}
 function takeover(){view.value='manual';if(props.running)emit('takeover');}
 function restore(){const p=props.savedPlan;if(p?.kind!=='battle')return;if(p.mode==='auto'){draft.value=copyStrategy(p.strategy);limit.value=p.maxCycles;mpBudget.value=p.mpBudget;view.value='strategy';}else view.value='manual';}
 function reset(){draft.value=defaultBattleStrategy(props.game);if(props.game.battle){const p=defaultBattlePlan(props.game);limit.value=p.maxCycles;mpBudget.value=p.mpBudget;}page.value='priority';view.value='battle';restore();}

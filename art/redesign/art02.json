@@ -28,8 +28,8 @@
     },
     {
       "path": "web/src/BattleDeck.vue",
-      "bytes": 2062,
-      "sha256": "a59782e330446f84218f9bea954b15663b7cc070777003c2a32408b617e61991"
+      "bytes": 1953,
+      "sha256": "77e054c4acb4e1a84d581fd1451e45c6a12ebbfd316bfe7f2f6dc1cebdbcc30c"
     },
     {
       "path": "web/src/activity-effects.ts",
@@ -54,7 +54,7 @@
     {
       "path": "web/src/art02-battle.css",
       "bytes": 8582,
-      "sha256": "6ad8988e44c4aae4dadd1e56e40040c241404e100267e5bda4a7767dd94d23ac"
+      "sha256": "3896c306d4985c69d0f2229fc3c879e2f573a47fe3585c85f32eb0db70822ed8"
     }
   ],
   "bindings": {

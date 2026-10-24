@@ -1,0 +1,27 @@
+{
+  "scope": "MATRIX-M03 progress-inspect geometry premise only",
+  "source4Before": {
+    "path": "goal-4/evidence/matrix-m03/cancel-progress-geometry/source4-matrix-ui-cancel.spec.txt",
+    "bytes": 24999,
+    "sha256": "77dd2b99dd0cfaad9196c8a16a81faba7808b9b71475bacea358ad9f7979bfd2"
+  },
+  "current": {
+    "path": "web/e2e/matrix-ui-cancel.spec.ts",
+    "bytes": 26388,
+    "sha256": "80c2eccf9c51e9d61eb8f75fa1224ee663e02bcdd44f27235f39df4b497e0a2d"
+  },
+  "preserved": {
+    "allLogicFromMemoryGameThroughLastCaseByteIdentical": true,
+    "testDeclarations": 12,
+    "originalParentRectInsideAndOverflowFields": true,
+    "controls44x44CenterNavAndPageLimits": true,
+    "copy18And14FullTextAndAncestorChecks": true
+  },
+  "change": [
+    "Only button.progress-inspect inside battle-presence can expand beyond the visual .progress-track or .battle-player ancestor. The raw inside result remains recorded; both overflow axes must be visible.",
+    "Actual battle-own-status/enemy-status containment is asserted explicitly, and every other ancestor remains strict.",
+    "Every pair of visible progress-inspect targets now has a strict rectangle non-overlap assertion; original rectangles are attached."
+  ],
+  "classification": "Root reported source4 target run 9 passed / 9 failed, with 8 battle cases failing this new visual-parent premise. These 8 are test-premise failures, not evidence of product defects. Original source4 reports, inputs and this raw pre-correction spec are retained.",
+  "notRun": "This agent did not run tests, builds, browsers or modify production."
+}
