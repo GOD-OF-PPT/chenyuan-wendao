@@ -1,5 +1,5 @@
 {
-  "status": "checks-passed-awaiting-local-commit-and-preview-delivery",
+  "status": "local-engineering-unit-delivered",
   "runtimeDigest": "4640894ed2590fb1c34f7911af238ac09dc2ba6437f1fae3cbe846cb7fd3f5c8",
   "UIUnique": 47,
   "UIComposition": [
@@ -12,5 +12,8 @@
   "rules": 815,
   "assets": 310,
   "overallGoal": "active, incomplete",
-  "next": "TA08"
+  "next": "TA08",
+  "implementationCommit": "7f0feacf1e67feaeed64a69aef68c282d97b91d4",
+  "verification": "verification.json",
+  "previewUpdated": true
 }
