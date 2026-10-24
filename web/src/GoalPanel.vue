@@ -100,7 +100,7 @@ const boardReady=computed(()=>focus.value?.kind==='item'?!!itemView.value?.compl
 
 <template>
   <section id="goal-panel" tabindex="-1" class="goals play-catalogue" data-testid="goal-panel">
-    <div v-show="!focus" class="goal-board-tools">    <details v-if="!focus" class="goal-management" data-testid="goal-management" :open="managerOpen" @toggle="managerOpen=($event.target as HTMLDetailsElement).open"><summary data-testid="goal-management-toggle">{{managerOpen?'完成编辑，返回目标':'更换追踪目标'}}</summary>
+    <div v-show="!focus" class="goal-board-tools">    <details v-if="!focus" class="goal-management" data-testid="goal-management" :open="managerOpen" @toggle="managerOpen=($event.target as HTMLDetailsElement).open"><summary data-testid="goal-management-toggle" @click.prevent="managerOpen=!managerOpen">{{managerOpen?'完成编辑，返回目标':'更换追踪目标'}}</summary>
       <label class="goal-picker">替换追踪目标<select :value="selected" @change="select" data-testid="goal-select" aria-label="追踪目标">
         <option value="breakthrough">下一突破</option>
         <optgroup label="物资"><option v-for="(item,id) in C.items" :key="id" :value="`item:${id}`">{{item.name}} · {{C.realms[item.min].name}}</option></optgroup>

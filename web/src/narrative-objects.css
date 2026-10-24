@@ -1,5 +1,5 @@
 /* ART05 fixed desktop: real people, response slips and the readable life scroll. */
-#app :is([data-testid=life-confirmation],[data-testid=ascension-confirmation]) p{font-size:18px}
+#app :is([data-testid=life-confirmation],[data-testid=ascension-confirmation],[data-testid=trial-restore-confirmation]) p{font-size:18px}
 #app .story-book.art05-story{display:flex;flex-direction:column;flex:1;min-width:0;min-height:0;margin:0;padding:12px 18px;gap:8px;color:#e8edda;background:linear-gradient(105deg,#102f34ed,#143a3bc2)!important;border:0;box-shadow:none!important}
 #app .art05-story>header{min-height:44px;gap:16px;margin:0;padding:0;flex:none}
 #app .art05-story>header h2{font-size:26px;line-height:1.35;margin:0}

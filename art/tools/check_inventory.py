@@ -7,11 +7,76 @@ import re
 import struct
 import subprocess
 import xml.etree.ElementTree as ET
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 IMAGE_EXTENSIONS = {'.png', '.webp', '.svg', '.jpg', '.jpeg'}
 FORBIDDEN = {'.ttf', '.otf', '.woff', '.woff2', '.eot', '.mp3', '.ogg', '.wav', '.m4a', '.flac'}
 SCOPES = ('art', 'docs/v0.3/reference', 'web/public', 'web/src')
+
+FEEDBACK_SKIP_NATIVE = ['web/src/FeedbackSkip.vue']
+FEEDBACK_SKIP_REFS = [
+    'docs/decisions/0032-matrix-check-01-contract.md',
+    'goal-4/amendments/2026-10-24-check-matrix-01.md',
+    'goal-4/research/check-matrix-01-sources.json',
+]
+FEEDBACK_SKIP_CANDIDATE = 'art/redesign/feedback-skip/source-candidate.vue'
+FEEDBACK_SKIP_BINDINGS = {
+    'web/src/App.vue': ["import FeedbackSkip from './FeedbackSkip.vue'", '<ActionFeedbackStage ', '<FeedbackSkip ', '@hold="hold"', '@dismiss="dismiss"'],
+    'web/src/ActionFeedbackStage.vue': ['<slot v-if="notice&&showMotion" :key="notice.key" :dismiss="clear" :hold="holdMotion" :operation="notice.operation"/>', 'function holdMotion(){clearTimeout(timer);}'],
+    'web/src/FeedbackSkip.vue': ["from './focus'", 'inject(gameFocusKey)', 'data-testid="fx-skip"', '@focusin="hold"', '@focusout="leave"', '@click="dismiss"', '<Teleport v-if="target" :to="target">', '.game-hud .activity-rail>footer', 'feedback-held', 'min-height:44px'],
+}
+
+
+def validate_feedback_skip(root):
+    """Bound the additive keyboard control; source checks do not prove game feel."""
+    root = root.resolve()
+    ledger = root / 'art/redesign/feedback-skip.json'
+    if not ledger.exists():
+        assert not any((root / path).exists() for path in FEEDBACK_SKIP_NATIVE), 'Unrecorded feedback skip control'
+        return 0
+
+    def local(path):
+        assert type(path) is str and path and '\\' not in path and not PurePosixPath(path).is_absolute() and '..' not in PurePosixPath(path).parts, 'Invalid feedback skip relative path'
+        file = (root / path).resolve()
+        assert file.is_relative_to(root) and file.is_file(), 'Missing or external feedback skip file'
+        return file
+
+    assert ledger.resolve().is_relative_to(root) and ledger.is_file(), 'Feedback skip ledger escapes repository'
+    manifest = json.loads(ledger.read_text())
+    assert type(manifest) is dict and set(manifest) == {'format', 'version', 'task', 'maxNativeBytes', 'newBitmapAssets', 'assets', 'userAcceptance', 'files', 'sourceReferences', 'bindings', 'provenance'}, 'Feedback skip ledger shape changed'
+    assert manifest['format'] == 'chenyuan-feedback-skip' and type(manifest['version']) is int and manifest['version'] == 1 and manifest['task'] == 'Goal4 CHECK-MATRIX-01', 'Feedback skip header changed'
+    assert type(manifest['maxNativeBytes']) is int and manifest['maxNativeBytes'] == 4000, 'Feedback skip fixed budget changed'
+    assert type(manifest['newBitmapAssets']) is int and manifest['newBitmapAssets'] == 0 and manifest['assets'] == [], 'Feedback skip bitmap budget changed'
+    assert manifest['userAcceptance'] is False, 'Feedback skip checks cannot claim user acceptance'
+    assert manifest['sourceReferences'] == FEEDBACK_SKIP_REFS and manifest['bindings'] == FEEDBACK_SKIP_BINDINGS, 'Feedback skip references or consumer contract changed'
+    for reference in FEEDBACK_SKIP_REFS:
+        local(reference)
+    assert type(manifest['files']) is list and all(type(row) is dict and set(row) == {'path', 'bytes', 'sha256'} for row in manifest['files']), 'Feedback skip source identity shape changed'
+    assert [row['path'] for row in manifest['files']] == FEEDBACK_SKIP_NATIVE, 'Feedback skip single-file inventory changed'
+    total = 0
+    for row in manifest['files']:
+        data = local(row['path']).read_bytes()
+        assert type(row['bytes']) is int and row['bytes'] == len(data), 'Feedback skip source bytes changed'
+        assert type(row['sha256']) is str and re.fullmatch('[0-9a-f]{64}', row['sha256']) and row['sha256'] == hashlib.sha256(data).hexdigest(), 'Feedback skip source hash changed'
+        total += len(data)
+    assert total <= 4000, 'Feedback skip control exceeds fixed budget'
+    provenance = manifest['provenance']
+    assert type(provenance) is dict and set(provenance) == {'kind', 'path', 'bytes', 'sha256', 'scope'} and provenance['kind'] == 'authored-native-candidate' and provenance['path'] == FEEDBACK_SKIP_CANDIDATE, 'Feedback skip candidate provenance changed'
+    candidate = local(provenance['path']).read_bytes()
+    assert type(provenance['bytes']) is int and provenance['bytes'] == len(candidate) and type(provenance['sha256']) is str and re.fullmatch('[0-9a-f]{64}', provenance['sha256']) and provenance['sha256'] == hashlib.sha256(candidate).hexdigest(), 'Feedback skip candidate identity changed'
+    assert provenance['scope'] == 'Authored source candidate only; not runtime, pixel or user acceptance.', 'Feedback skip candidate cannot imply acceptance'
+    for path, fragments in FEEDBACK_SKIP_BINDINGS.items():
+        assert all(fragment in local(path).read_text() for fragment in fragments), 'Missing feedback skip consumer: ' + path
+    app = local('web/src/App.vue').read_text()
+    host = re.search(r'<ActionFeedbackStage\b[^>]*>(.*?)</ActionFeedbackStage>', app, re.S)
+    slot = re.search(r'<template\s+#default="\{operation,dismiss,hold\}">(.*?)</template>', host[1], re.S) if host else None
+    assert slot and re.search(r'<FeedbackSkip\s+[^>]*@hold="hold"[^>]*@dismiss="dismiss"\s*/>', slot[1]), 'Feedback skip is not consumed by the real stage scoped slot'
+    domain = re.search(r'<FeedbackSkip\s+v-if="\[([^\]]*)\]\.includes\(operation\)"', slot[1])
+    assert domain and re.findall(r"'([^']*)'", domain[1]) == ['BATTLE', 'BREAKTHROUGH', 'START_TRIAL'], 'Feedback skip operation domain changed'
+    component = local('web/src/FeedbackSkip.vue').read_text()
+    assert re.search(r'<style\s+scoped>.*?\.feedback-skip\b', component, re.S), 'Feedback skip inline control style missing'
+    assert not re.search(r'<(?:img|AssetImage|PortraitImage)\b', component), 'Feedback skip cannot introduce image consumers'
+    return total
 
 
 def image_info(data, suffix):
@@ -299,6 +364,7 @@ def validate_equipment_objects(root, image_reader=image_info):
 def validate(root):
     root = root.resolve()
     adventure_object_bytes = validate_adventure_objects(root)
+    feedback_skip_bytes = validate_feedback_skip(root)
     manifest = json.loads((root / 'art/asset-manifest.json').read_text(encoding='utf-8'))
     assert manifest['format'] == 'chenyuan-art-inventory' and manifest['version'] == 1
     required = {'id', 'category', 'sourceType', 'originalHash', 'sourceReference', 'purpose', 'exportedPath', 'dimensions', 'bytes', 'sha256', 'status', 'availability', 'rights'}
@@ -820,7 +886,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'gameMenuNativeBytes':menu_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'adventureObjectNativeBytes':adventure_object_bytes, 'equipmentObjectNativeBytes':equipment_bytes, 'supplyObjectNativeBytes':supply_bytes, 'narrativeObjectNativeBytes':narrative_object_bytes, 'cultivationObjectNativeBytes':cultivation_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'gameMenuNativeBytes':menu_bytes, 'feedbackSkipNativeBytes':feedback_skip_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'adventureObjectNativeBytes':adventure_object_bytes, 'equipmentObjectNativeBytes':equipment_bytes, 'supplyObjectNativeBytes':supply_bytes, 'narrativeObjectNativeBytes':narrative_object_bytes, 'cultivationObjectNativeBytes':cultivation_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

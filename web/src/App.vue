@@ -27,6 +27,7 @@ import ProgressTrack from './ProgressTrack.vue';
 import ChoiceCard from './ChoiceCard.vue';
 import ActionEffects from './ActionEffects.vue';
 import ActionFeedbackStage from './ActionFeedbackStage.vue';
+import FeedbackSkip from './FeedbackSkip.vue';
 import NarrativeStageHost from './NarrativeStageHost.vue';
 import CultivationStageHost from './CultivationStageHost.vue';
 import CultivationSite from './CultivationSite.vue';
@@ -92,13 +93,13 @@ const demoNode=session.kind==='demo'?demoSpec(session.node!.nodeId):null;
 const demoMenuNodes=demoCatalog.map(node=>({...node,href:demoLink(node.id)}));
 const store = useGame(), name = ref('顾长青'), tab = ref('修行'), batch = ref<number | 'target'>(1), quantity = ref(1);
 provide('game-scene',store);
-const {milestoneReview,milestoneStale,milestoneRetry,selectMilestone,inspectMilestone,closeMilestone,confirmMilestone}=useMilestoneReview(store);
+const {milestoneReview,milestoneStale,milestoneRetry,selectMilestone,inspectMilestone,closeMilestone,confirmMilestone:confirmMilestoneAction}=useMilestoneReview(store);
 const pendingStoryError=computed(()=>store.unresolved);
 const saveTone=computed(()=>!store.ready||store.busy?'pending':store.error||!store.available?'problem':store.game&&store.saved?'saved':'idle');
 const saveDisplayLabel=computed(()=>store.saveLabel==='本次未保存'?'保存待确认':store.saveLabel);
 const openingChoices=[{id:'help',name:'赠丹相助',detail:'结下赠药之缘'},{id:'trade',name:'以丹换简',detail:`获得剑简，剑修终结伤害 +${C.swordManual.damageBonus}`},{id:'leave',name:'保留丹药',detail:'保留回春丹，各自离开'}] as const;
 const importNotice=ref('');let importReadRevision=0;
-const experience=useLocalExperience();let appActive=true;const stopObserving=store.observe(value=>{if(['import','restore','restart','new_game'].includes(value.kind)){readingGeneration.value++;narrativeContext.value++;readingReturn.value=null;detailParent.value=null;clearFlowReturns();journalWrites.value=[];}if(value.kind==='action'&&value.result&&value.operation&&store.game?.core.revision===value.result.revisionAfter){const run=store.game.core.runId,revision=value.result.revisionAfter,added=value.operation==='EVENT'?0:value.operation==='BATTLE'&&value.flags.includes('battle_won')?2:1;journalWrites.value=[...journalWrites.value.filter(w=>w.run!==run||w.revision!==revision),{run,revision,added}].slice(-100);}if(value.kind==='action'&&value.result&&store.game&&!value.replayed&&store.lastFromActivity&&store.activityOwned&&store.activity?.version===7&&store.activity.plan.action.type===value.operation&&store.activity.runId===store.game?.core.runId&&value.result.revisionAfter===store.game.core.revision&&((hubView.value==='current'&&value.operation==='CHOOSE'&&value.result.phaseBefore==='opening'&&value.result.phaseAfter==='idle')||(hubView.value==='cultivation'&&value.operation==='BREAKTHROUGH'&&value.result.delta.realm.before!==value.result.delta.realm.after)||(hubView.value==='trial-preparation'&&value.operation==='START_TRIAL'&&value.result.phaseBefore==='idle'&&value.result.phaseAfter==='trial-question')))selectTab('修行');experience.record(value);},experience.fault);onScopeDispose(()=>{appActive=false;stopObserving();});
+const experience=useLocalExperience();let appActive=true;const stopObserving=store.observe(value=>{const observedNavigation=navigationRevision;if(['import','restore','restart','new_game'].includes(value.kind)){readingGeneration.value++;narrativeContext.value++;readingReturn.value=null;detailParent.value=null;clearFlowReturns();journalWrites.value=[];}if(value.kind==='action'&&value.result&&value.operation&&store.game?.core.revision===value.result.revisionAfter){const run=store.game.core.runId,revision=value.result.revisionAfter,added=value.operation==='EVENT'?0:value.operation==='BATTLE'&&value.flags.includes('battle_won')?2:1;journalWrites.value=[...journalWrites.value.filter(w=>w.run!==run||w.revision!==revision),{run,revision,added}].slice(-100);}if(value.kind==='action'&&value.result&&store.game&&!value.replayed&&store.lastFromActivity&&store.activityOwned&&store.activity?.version===7&&store.activity.plan.action.type===value.operation&&store.activity.runId===store.game?.core.runId&&value.result.revisionAfter===store.game.core.revision&&((hubView.value==='current'&&value.operation==='CHOOSE'&&value.result.phaseBefore==='opening'&&value.result.phaseAfter==='idle')||(hubView.value==='cultivation'&&value.operation==='BREAKTHROUGH'&&value.result.delta.realm.before!==value.result.delta.realm.after)||(hubView.value==='trial-preparation'&&value.operation==='START_TRIAL'&&value.result.phaseBefore==='idle'&&value.result.phaseAfter==='trial-question')))selectTab('修行');focusObserved(value,observedNavigation);experience.record(value);},experience.fault);onScopeDispose(()=>{appActive=false;stopObserving();});
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
 const trainingInspectionPlan=shallowRef<CultivationPlan|null>(null);
 const sourceInspectionPlan=shallowRef<SourcePlan|null>(null);
@@ -178,10 +179,38 @@ function currentContent(){return [...document.querySelectorAll<HTMLElement>('.ca
 const focus=useFocus(()=>currentContent()??settingsButton.value??null);
 provide(gameFocusKey,focus);
 let pendingContentFocus:{owner:number;opener:Element|null}|null=null;
+let beginningJourney:{owner:number;run:string;anchor:Element|null}|null=null;
+type StageFocus={owner:number;sync:number;id:string;run:string;generation:number;ownerId:string;command:string;revision:number;action:string;target:'stage'|'life';anchor:Element|null;ready:boolean};
+let pendingStageFocus:StageFocus|null=null;
+function focusStillOwned(anchor:Element|null){const active=document.activeElement;return active===document.body||active===anchor||!visibleFocusTarget(active);}
+function armStageFocus(review:PreparedMilestone,owner:number,sync:number,target:StageFocus['target']){
+ const a=store.activity,m=review.intent.mutation;
+ if(!appActive||owner!==navigationRevision||sync!==store.syncEpoch||store.error||!store.wasConfirmedFor(m.commandId,m.runId)||a?.version!==7||a.status!=='running'||a.runId!==m.runId||a.gameRevision!==m.expectedRevision||a.ownerId!==m.ownerId||!a.nextCommand||JSON.stringify(a.plan)!==JSON.stringify(review.intent.plan))return;
+ const request:StageFocus={owner,sync,id:a.id,run:a.runId,generation:a.generation,ownerId:a.ownerId,command:a.nextCommand.commandId,revision:a.gameRevision,action:a.plan.action.type,target,anchor:focus.capture(),ready:false};
+ pendingStageFocus=request;void nextTick(()=>{if(pendingStageFocus===request)request.anchor=focus.capture();});
+}
+async function confirmMilestone(retrying=false){const review=milestoneReview.value,owner=navigationRevision,sync=store.syncEpoch;await confirmMilestoneAction(retrying);if(!retrying&&review?.prepared&&review.plan.action.type==='CHOOSE'&&!milestoneReview.value)armStageFocus(review.prepared,owner,sync,'stage');}
+function focusObserved(value:Parameters<typeof experience.record>[0],navigation:number){
+ const create=beginningJourney,g=store.game,a=store.activity,r=store.lastResult,p=pendingStageFocus;
+ if(create&&create.owner===navigation&&value.kind==='new_game'&&!value.replayed&&value.commandId&&value.runId===g?.core.runId&&store.wasConfirmedFor(value.commandId,value.runId))create.run=value.runId;
+ if(p&&p.owner===navigation&&value.kind==='action'&&!value.replayed&&!store.lastReplayed&&store.lastFromActivity&&store.activityOwned&&a?.version===7&&a.id===p.id&&a.generation===p.generation&&a.ownerId===p.ownerId&&a.runId===p.run&&a.completedCycles===1&&a.status==='stopped'&&r?.commandId===p.command&&r.runId===p.run&&r.type===p.action&&value.operation===p.action&&r.revisionBefore===p.revision&&r.revisionAfter===g?.core.revision&&g.core.revision===p.revision+1){
+  p.ready=true;p.owner=navigationRevision;void deliverStageFocus();
+ }
+}
+function ownsStageFocus(p:StageFocus){const a=store.activity,g=store.game;return appActive&&!document.hidden&&p.owner===navigationRevision&&p.sync===store.syncEpoch&&g?.core.runId===p.run&&a?.id===p.id&&a.generation===p.generation&&a.ownerId===p.ownerId&&!store.error&&!store.lastReplayed&&!store.activityPausing&&a.status!=='paused'&&(!p.ready||g.core.revision===p.revision+1&&a.status==='stopped'&&a.completedCycles===1);}
+async function deliverStageFocus(){
+ const p=pendingStageFocus;if(!p)return;
+ if(!ownsStageFocus(p)){pendingStageFocus=null;return;}
+ if(!p.ready||store.busy||!store.saved||!store.available)return;
+ pendingStageFocus=null;await nextTick();
+ if(!ownsStageFocus(p)||store.busy||!store.saved||!store.available||document.querySelector('dialog[open]')||!focusStillOwned(p.anchor))return;
+ if(p.target==='life'){const title=[...document.querySelectorAll<HTMLElement>('[data-testid=life-title]')].find(visibleFocusTarget);if(title)focus.target(title);else await showLife();}else focusContent();
+}
+watch(()=>[store.activity,store.game,store.busy,store.error,store.syncEpoch,store.activityPausing,store.lastReplayed]as const,deliverStageFocus,{flush:'post'});
 function focusContent(){const target=currentContent()??document.getElementById('welcome-content');if(target){pendingContentFocus=null;focus.target(target);}else pendingContentFocus={owner:navigationRevision,opener:document.activeElement};}
-function cancelPendingContentFocus(){pendingContentFocus=null;navigationRevision++;}
+function cancelPendingContentFocus(){pendingContentFocus=null;pendingStageFocus=null;beginningJourney=null;navigationRevision++;}
 onMounted(()=>{document.addEventListener('pointerdown',cancelPendingContentFocus,true);document.addEventListener('keydown',cancelPendingContentFocus,true);});
-onScopeDispose(()=>{document.removeEventListener('pointerdown',cancelPendingContentFocus,true);document.removeEventListener('keydown',cancelPendingContentFocus,true);pendingContentFocus=null;});
+onScopeDispose(()=>{document.removeEventListener('pointerdown',cancelPendingContentFocus,true);document.removeEventListener('keydown',cancelPendingContentFocus,true);pendingContentFocus=null;pendingStageFocus=null;beginningJourney=null;});
 watch([()=>store.ready,()=>contentPanel.value],async()=>{if(!pendingContentFocus)return;await nextTick();const request=pendingContentFocus,target=currentContent()??document.getElementById('welcome-content');if(!request||!target)return;pendingContentFocus=null;if(appActive&&request.owner===navigationRevision&&document.activeElement===request.opener)focus.target(target);},{flush:'post'});
 function showSettings(event?:Event){const records=settings.value?.querySelector<HTMLDetailsElement>('[data-testid=local-records-panel]');if(records)records.open=false;focus.open(settings.value,event?.currentTarget instanceof HTMLElement?event.currentTarget:settingsButton.value??focus.capture());}
 async function showDemoMenu(event?:Event){const opener=settings.value?.open?settingsButton.value??null:event?.currentTarget instanceof HTMLElement?event.currentTarget:focus.capture();settings.value?.close();await nextTick();focus.open(demoMenu.value,opener);}
@@ -224,7 +253,7 @@ const phase = computed(() => game.value ? gamePhase(game.value) : null);
 watch([()=>game.value?.core.runId,()=>phase.value,()=>game.value?.core.activeEvent?.instanceId,()=>store.syncEpoch],()=>{narrativeContext.value++;readingReturn.value=null;},{flush:'sync'});
 const equipmentVisible=computed(()=>tab.value==='修行'&&(!singleScreen.value&&phase.value!=='opening'||singleScreen.value&&['skills','relics'].includes(hubView.value))&&game.value?.status==='active');
 const needsSchool=computed(()=>!!game.value&&phase.value==='idle'&&C.rank(game.value.core.player.realm)>=C.rank('qi')&&!game.value.school);
-watch(()=>game.value?.core.runId,()=>{navigationRevision++;clearFlowReturns();clearInspections();collectionTarget.value=null;highlight.value='';detailParent.value=null;equipmentOpen.value=needsSchool.value;resumeVisible.value=false;},{flush:'sync'});
+watch(()=>game.value?.core.runId,()=>{if(beginningJourney&&!beginningJourney.run&&beginningJourney.owner===navigationRevision)beginningJourney.owner++;pendingStageFocus=null;navigationRevision++;clearFlowReturns();clearInspections();collectionTarget.value=null;highlight.value='';detailParent.value=null;equipmentOpen.value=needsSchool.value;resumeVisible.value=false;},{flush:'sync'});
 watch(()=>store.syncEpoch,clearFlowReturns,{flush:'sync'});
 watch([()=>store.activity?.id,()=>store.syncEpoch],()=>{trainingInspectionPlan.value=null;sourceInspectionPlan.value=null;productionInspectionPlan.value=null;preparationInspectionSaved.value=false;adventureInspectionSaved.value=false;});
 // Read-only inspection belongs to a life/navigation, and to the selected activity when saved.
@@ -232,7 +261,12 @@ watch([()=>store.activity?.id,()=>store.syncEpoch],()=>{trainingInspectionPlan.v
 function inspectionOwner(activityId?:string){const runId=game.value?.core.runId,sync=store.syncEpoch;return(owner:number|null)=>owner!==null&&appActive&&navigationRevision===owner&&game.value?.core.runId===runId&&store.syncEpoch===sync&&(activityId===undefined||store.activity?.id===activityId);}
 
 watch(needsSchool,value=>{if(value)equipmentOpen.value=true;},{immediate:true});
-async function startJourney(){const owner=++navigationRevision;await store.start(name.value);if(store.error||!game.value||owner!==navigationRevision)return;await nextTick();if(owner===navigationRevision)focusRegion('opening-actions');}
+async function startJourney(){
+ const request={owner:++navigationRevision,run:'',anchor:focus.capture()};beginningJourney=request;await store.start(name.value);
+ if(beginningJourney!==request)return;beginningJourney=null;
+ if(store.error||!game.value||request.run!==game.value.core.runId||request.owner!==navigationRevision)return;
+ await nextTick();if(request.owner===navigationRevision&&!document.querySelector('dialog[open]')&&focusStillOwned(request.anchor))focusRegion('opening-actions');
+}
 async function showEquipment(event?:Event){rememberHubOrigin(event);const opener=hubOpener,owner=selectTab('修行');if(singleScreen.value)hubView.value='skills';equipmentOpen.value=true;await nextTick();if(owner===navigationRevision&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focus.target(document.querySelector<HTMLElement>('[data-testid="equipment-panel"]'));}
 async function showBreakthroughGoal(){captureStageReturn('goal');const opener=focus.capture();selectTracking({kind:'breakthrough'});if(singleScreen.value)hubView.value='goal';const owner=navigationRevision;await nextTick();if(owner===navigationRevision&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focusRegion('goal-panel');}
 const inspectingInventory=computed(()=>game.value?.status==='active'&&phase.value!=='idle'&&tab.value==='行囊');
@@ -466,8 +500,9 @@ async function requestEnd(type: 'RETIRE' | 'END_LIFE') {
 }
 async function confirmEnd() {
   const intent = lifeIntent.value; if (!intent || store.busy || pendingStoryError.value || lifeStale.value) return;
+  const owner=navigationRevision,sync=store.syncEpoch;
   await store.startPreparedMilestone(intent.intent);
-  if(lifeIntent.value===intent&&(!store.error||store.wasConfirmedFor(intent.command.commandId,intent.command.runId)))lifeDialog.value?.close();
+  if(lifeIntent.value===intent&&(!store.error||store.wasConfirmedFor(intent.command.commandId,intent.command.runId))){lifeDialog.value?.close();armStageFocus(intent,owner,sync,'life');}
 }
 async function retryEnd() {
   const review=lifeIntent.value;if(!review||!store.canRetryFor(review.command.commandId))return;
@@ -475,6 +510,7 @@ async function retryEnd() {
 }
 function cancelLife(event: Event) { if (store.busy) event.preventDefault(); }
 function closeLifeReview() {
+  if(lifeDialog.value?.open)return;
   if (lifeIntent.value) store.discardRetryFor(lifeIntent.value.command.commandId);
   lifeIntent.value = null;
 }
@@ -495,11 +531,12 @@ async function reviewTrial() {
 }
 async function confirmTrial() {
   const intent = trialIntent.value; if (!intent || store.busy || pendingStoryError.value || trialStale.value) return;
+  const owner=navigationRevision,sync=store.syncEpoch;
   await store.startPreparedMilestone(intent.intent);
-  if(trialIntent.value===intent&&(!store.error||store.wasConfirmedFor(intent.command.commandId,intent.command.runId)))trialDialog.value?.close();
+  if(trialIntent.value===intent&&(!store.error||store.wasConfirmedFor(intent.command.commandId,intent.command.runId))){trialDialog.value?.close();armStageFocus(intent,owner,sync,'stage');}
 }
 async function retryTrial(){const intent=trialIntent.value;if(!intent||!store.canRetryFor(intent.command.commandId))return;await store.retryFor(intent.command.commandId);if(trialIntent.value===intent&&(!store.error||store.wasConfirmedFor(intent.command.commandId,intent.command.runId)))trialDialog.value?.close();}
-function closeTrialReview() { if (trialIntent.value) store.discardRetryFor(trialIntent.value.command.commandId); trialIntent.value = null; }
+function closeTrialReview() { if(trialDialog.value?.open)return; if (trialIntent.value) store.discardRetryFor(trialIntent.value.command.commandId); trialIntent.value = null; }
 const trialRestoreDialog = ref<HTMLDialogElement>();
 const trialRestoreIntent = shallowRef<{ command: SaveMutation; checkpoint: CheckpointSummary } | null>(null);
 const trialRestoreStale = computed(() => !!trialRestoreIntent.value && (!game.value || game.value.core.runId !== trialRestoreIntent.value.command.expectedRunId || game.value.core.revision !== trialRestoreIntent.value.command.expectedRevision));
@@ -519,7 +556,7 @@ async function retryTrialRestore() {
   await store.retryFor(review.command.commandId);
   if (!store.error) { trialRestoreDialog.value?.close(); await showTrialPreparation(); }
 }
-function closeTrialRestore() { if (trialRestoreIntent.value) store.discardRetryFor(trialRestoreIntent.value.command.commandId); trialRestoreIntent.value = null; }
+function closeTrialRestore() { if(trialRestoreDialog.value?.open)return; if (trialRestoreIntent.value) store.discardRetryFor(trialRestoreIntent.value.command.commandId); trialRestoreIntent.value = null; }
 const ascensionDialog = ref<HTMLDialogElement>();
 const ascension = computed(() => game.value ? getAscensionChoices(game.value) : null);
 const ascensionIntent=shallowRef<(PreparedMilestone & {view:ReturnType<typeof getAscensionChoices>;choice:ReturnType<typeof getAscensionChoices>['choices'][number];ending:AscensionEnding})|null>(null);
@@ -533,13 +570,14 @@ async function reviewAscension(ending: AscensionEnding) {
 }
 async function confirmAscension() {
   const review = ascensionIntent.value; if (!review || store.busy || pendingStoryError.value || ascensionStale.value) return;
-  await store.startPreparedMilestone(review.intent);if(ascensionIntent.value===review&&(!store.error||store.wasConfirmedFor(review.command.commandId,review.command.runId)))ascensionDialog.value?.close();
+  const owner=navigationRevision,sync=store.syncEpoch;
+  await store.startPreparedMilestone(review.intent);if(ascensionIntent.value===review&&(!store.error||store.wasConfirmedFor(review.command.commandId,review.command.runId))){ascensionDialog.value?.close();armStageFocus(review,owner,sync,'life');}
 }
 async function retryAscension() {
   const review = ascensionIntent.value; if(!review||!store.canRetryFor(review.command.commandId))return;
   await store.retryFor(review.command.commandId);if(ascensionIntent.value===review&&(!store.error||store.wasConfirmedFor(review.command.commandId,review.command.runId)))ascensionDialog.value?.close();
 }
-function closeAscension() { if (ascensionIntent.value) store.discardRetryFor(ascensionIntent.value.command.commandId); ascensionIntent.value = null; }
+function closeAscension() { if(ascensionDialog.value?.open)return; if (ascensionIntent.value) store.discardRetryFor(ascensionIntent.value.command.commandId); ascensionIntent.value = null; }
 function confirmationReadings(kind:string):Reading[]{
  if(kind==='life'&&lifeIntent.value){const r=lifeIntent.value.record;return[{key:'identity',title:'当前人生',testId:'life-review',text:r.overview.name+' · '+r.overview.ageLabel+' · '+r.overview.realmName+' · 行道'+r.overview.elapsedMonths+'游戏月'},{key:'scope',title:'保留与恢复',text:'当前存档与人物记录保留，可导出；恢复检查点会回退完整准备状态。此确认不会开启新的人生。'}];}
  if(kind==='ending'&&ascensionIntent.value){const r=ascensionIntent.value.view.record;return[{key:'identity',title:'当前人生',testId:'ascension-review-identity',text:r.overview.name+' · '+r.overview.ageLabel+' · 行道'+r.overview.elapsedMonths+'游戏月'},{key:'opening',title:'开卷',text:r.opening.text},{key:'training',title:'配装',text:r.training.school+' · '+r.training.loadout.map(s=>s.name).join(' / ')+' · '+r.training.equippedRelic},...r.decisions.map(d=>({key:d.id,title:d.npc,text:d.text})),{key:'pledges',title:'护阵',text:r.pledges.text}];}
@@ -575,7 +613,9 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
     <div v-if="exportError" class="error-banner" role="alert">{{exportError}}</div>
     <div v-if="importNotice" class="error-banner" role="alert" data-testid="import-notice">{{importNotice}}</div>
     <section v-if="!hubMain && game && overview?.status==='active' && overview.remainingMonths!==null && overview.remainingMonths<=12" class="paper lifespan-warning" role="status" data-testid="lifespan-warning"><strong>余寿 {{overview.remainingMonths}} 游戏月 · {{overview.ageLabel}}</strong><p>{{overview.remainingMonths===1?'耗时行动将停止。若修为与突破物已备齐，仍可核对突破条件；也可恢复准备检查点，或确认度过最后1游戏月后收卷。':'游戏月在行动完成时消耗；在线修炼在切页后仍继续。暂停后阅读与离线不扣减余寿，请核对当前准备与检查点。'}}</p><button data-testid="lifespan-open-life" @click="showLife">查看生平与收卷选择</button></section>
-    <ActionFeedbackStage :store="store" :reduce-motion="reduceMotion" :view-key="hubView+':'+tab" :playfield-active="hubMain||hubView==='current'&&storyView"/>
+    <ActionFeedbackStage :store="store" :reduce-motion="reduceMotion" :view-key="hubView+':'+tab" :playfield-active="hubMain||hubView==='current'&&storyView">
+      <template #default="{operation,dismiss,hold}"><FeedbackSkip v-if="['BATTLE','BREAKTHROUGH','START_TRIAL'].includes(operation)" @hold="hold" @dismiss="dismiss"/></template>
+    </ActionFeedbackStage>
     </div>
     <main v-if="store.ready && !game && !demoNode" id="welcome-content" tabindex="-1" class="welcome">
       <div class="welcome-art"><AssetImage class="welcome-backdrop" :path="SCENE_ASSETS.wilderness" asset-id="welcome-wilderness" eager/><div class="welcome-copy"><span class="eyebrow">尘缘问道 · 试玩版</span><h2>凡心未改，<br>仙途已在眼前。</h2><p>不计片刻，不赶境界。<br>采一味灵草，结一段因果，修属于自己的长生路。</p></div></div>

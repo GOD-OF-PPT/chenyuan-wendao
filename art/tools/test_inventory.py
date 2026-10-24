@@ -85,6 +85,9 @@ class InventoryTests(unittest.TestCase):
   if cultivation.exists():files.update(ROOT/ref for ref in json.loads(cultivation.read_text())['sourceReferences'])
   menus=ROOT/'art/redesign/game-menu-matrix.json'
   if menus.exists():files.update(ROOT/ref for ref in json.loads(menus.read_text())['sourceReferences'])
+  feedback_skip=ROOT/'art/redesign/feedback-skip.json'
+  if feedback_skip.exists():
+   data=json.loads(feedback_skip.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.add(ROOT/data['provenance']['path'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -870,5 +873,111 @@ class CultivationObjectTests(unittest.TestCase):
  def test_cultivation_old_painting_binding_cannot_hide_a_fake_default_consumer(self):
   p=self.root/'art/redesign/catalogue-art/manifest.json';m=json.loads(p.read_text());m['bindings'].pop('web/src/ProgressionChoices.vue');m['bindings']['web/src/PreparationPanel.vue']=['<GoalBoard '];p.write_text(json.dumps(m))
   with self.assertRaisesRegex(AssertionError,'Old painting consumer'):self.check()
+
+class FeedbackSkipTests(unittest.TestCase):
+ def setUp(self):
+  from check_inventory import FEEDBACK_SKIP_NATIVE,FEEDBACK_SKIP_REFS,FEEDBACK_SKIP_BINDINGS,FEEDBACK_SKIP_CANDIDATE
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-feedback-skip-negative-');self.root=Path(self.temp.name)
+  for name in set(FEEDBACK_SKIP_NATIVE+FEEDBACK_SKIP_REFS+list(FEEDBACK_SKIP_BINDINGS)+[FEEDBACK_SKIP_CANDIDATE,'art/redesign/feedback-skip.json']):
+   target=self.root/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((ROOT/name).read_bytes())
+ def tearDown(self):self.temp.cleanup()
+ def data(self):return json.loads((self.root/'art/redesign/feedback-skip.json').read_text())
+ def write(self,m):(self.root/'art/redesign/feedback-skip.json').write_text(json.dumps(m))
+ def check(self):
+  from check_inventory import validate_feedback_skip
+  return validate_feedback_skip(self.root)
+ def reject(self,m):
+  self.write(m)
+  with self.assertRaises(AssertionError):self.check()
+ def changed_source(self,path,text,m):
+  data=text.encode();(self.root/path).write_bytes(data)
+  for row in m['files']:
+   if row['path']==path:row.update(bytes=len(data),sha256=hashlib.sha256(data).hexdigest())
+  self.write(m)
+ def test_feedback_skip_actual_control_and_additive_fixed_budget(self):
+  self.assertEqual(self.check(),(self.root/'web/src/FeedbackSkip.vue').stat().st_size);self.assertLessEqual(self.check(),4000)
+ def test_feedback_skip_missing_ledger_cannot_hide_present_control(self):
+  (self.root/'art/redesign/feedback-skip.json').unlink()
+  with self.assertRaises(AssertionError):self.check()
+ def test_feedback_skip_strict_manifest_shape_required(self):
+  original=self.data()
+  for change in [lambda m:m.pop('provenance'),lambda m:m.update(extra=True)]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_feedback_skip_header_rejects_other_task_and_numeric_aliases(self):
+  original=self.data()
+  for key,value in [('format','other'),('task','Goal4 TA07'),('version',True),('version',1.0),('version',2)]:
+   with self.subTest(key=key,value=value):m=copy.deepcopy(original);m[key]=value;self.reject(m)
+ def test_feedback_skip_fixed_cap_rejects_raise_boolean_and_float(self):
+  original=self.data()
+  for value in [4001,True,4000.0]:
+   with self.subTest(value=value):m=copy.deepcopy(original);m['maxNativeBytes']=value;self.reject(m)
+ def test_feedback_skip_bitmap_zero_rejects_alias_or_new_asset(self):
+  original=self.data()
+  for change in [lambda m:m.update(newBitmapAssets=False),lambda m:m.update(newBitmapAssets=0.0),lambda m:m.update(newBitmapAssets=1),lambda m:m.update(assets=[{'path':'new.webp'}])]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_feedback_skip_cannot_claim_user_acceptance_or_numeric_alias(self):
+  original=self.data()
+  for value in [True,0]:
+   m=copy.deepcopy(original);m['userAcceptance']=value;self.reject(m)
+ def test_feedback_skip_exact_single_file_and_strict_identity_rows_required(self):
+  original=self.data()
+  for change in [lambda m:m.update(files=[]),lambda m:m['files'].append(copy.deepcopy(m['files'][0])),lambda m:m['files'][0].update(untracked=True)]:
+   m=copy.deepcopy(original);change(m);self.reject(m)
+ def test_feedback_skip_bytes_hash_and_numeric_size_aliases_rejected(self):
+  original=self.data()
+  for key,value in [('bytes',0),('bytes',True),('bytes',float(original['files'][0]['bytes'])),('sha256','0'*64)]:
+   with self.subTest(key=key):m=copy.deepcopy(original);m['files'][0][key]=value;self.reject(m)
+ def test_feedback_skip_absolute_and_traversal_paths_rejected(self):
+  original=self.data()
+  for value in ['/tmp/FeedbackSkip.vue','../FeedbackSkip.vue']:
+   m=copy.deepcopy(original);m['files'][0]['path']=value;self.reject(m)
+ def test_feedback_skip_ledger_and_source_symlinks_cannot_escape(self):
+  for name in ['art/redesign/feedback-skip.json','web/src/FeedbackSkip.vue']:
+   path=self.root/name;raw=path.read_bytes()
+   with tempfile.TemporaryDirectory(prefix='chenyuan-feedback-skip-outside-') as folder:
+    external=Path(folder)/path.name;external.write_bytes(raw);path.unlink();path.symlink_to(external)
+    with self.subTest(path=name),self.assertRaises(AssertionError):self.check()
+    path.unlink();path.write_bytes(raw)
+ def test_feedback_skip_actual_budget_enforced_after_identity_update(self):
+  m=self.data();path='web/src/FeedbackSkip.vue';text=(self.root/path).read_text()+'\n'*4001;self.changed_source(path,text,m)
+  with self.assertRaisesRegex(AssertionError,'exceeds fixed budget'):self.check()
+ def test_feedback_skip_references_and_consumer_contract_cannot_be_omitted(self):
+  original=self.data()
+  for key,value in [('sourceReferences',[]),('bindings',{}),('bindings',{'web/src/App.vue':['fake']})]:
+   m=copy.deepcopy(original);m[key]=value;self.reject(m)
+ def test_feedback_skip_required_reference_must_exist(self):
+  (self.root/self.data()['sourceReferences'][0]).unlink()
+  with self.assertRaises(AssertionError):self.check()
+ def test_feedback_skip_candidate_identity_and_nonacceptance_scope_bound(self):
+  original=self.data()
+  for key,value in [('path','../outside.vue'),('bytes',True),('sha256','0'*64),('scope','User accepted'),('kind','approved-runtime')]:
+   with self.subTest(key=key):m=copy.deepcopy(original);m['provenance'][key]=value;self.reject(m)
+ def test_feedback_skip_app_must_import_the_actual_control(self):
+  path=self.root/'web/src/App.vue';path.write_text(path.read_text().replace("import FeedbackSkip from './FeedbackSkip.vue'",''))
+  with self.assertRaises(AssertionError):self.check()
+ def test_feedback_skip_fake_external_consumer_cannot_replace_scoped_slot(self):
+  path=self.root/'web/src/App.vue';text=path.read_text();outside='<FeedbackSkip v-if="[\'BATTLE\',\'BREAKTHROUGH\',\'START_TRIAL\'].includes(operation)" @hold="hold" @dismiss="dismiss"/>'
+  path.write_text(text.replace('<FeedbackSkip ','<DetachedSkip ',1)+'\n'+outside)
+  with self.assertRaisesRegex(AssertionError,'real stage scoped slot'):self.check()
+ def test_feedback_skip_stage_requires_current_notice_gate_key_and_callbacks(self):
+  path=self.root/'web/src/ActionFeedbackStage.vue';original=path.read_text()
+  for token in ['notice&&showMotion',':key="notice.key"',':dismiss="clear"',':hold="holdMotion"',':operation="notice.operation"']:
+   path.write_text(original.replace(token,'detached',1))
+   with self.subTest(token=token),self.assertRaises(AssertionError):self.check()
+  path.write_text(original)
+ def test_feedback_skip_operation_domain_cannot_expand(self):
+  path=self.root/'web/src/App.vue';path.write_text(path.read_text().replace("['BATTLE','BREAKTHROUGH','START_TRIAL'].includes(operation)","['BATTLE','BREAKTHROUGH','START_TRIAL','END'].includes(operation)",1))
+  with self.assertRaisesRegex(AssertionError,'operation domain'):self.check()
+ def test_feedback_skip_focus_and_hud_teleport_cannot_detach_after_rehash(self):
+  path='web/src/FeedbackSkip.vue';original=(self.root/path).read_text();manifest=self.data()
+  for token in ['inject(gameFocusKey)','<Teleport v-if="target" :to="target">','.game-hud .activity-rail>footer']:
+   self.changed_source(path,original.replace(token,'detached',1),copy.deepcopy(manifest))
+   with self.subTest(token=token),self.assertRaises(AssertionError):self.check()
+  self.changed_source(path,original,manifest)
+ def test_feedback_skip_inline_style_and_zero_image_consumers_bound_after_rehash(self):
+  path='web/src/FeedbackSkip.vue';original=(self.root/path).read_text();manifest=self.data()
+  for text in [original.replace('<style scoped>','<style>'),original+'\n<img src="external.webp">']:
+   self.changed_source(path,text,copy.deepcopy(manifest))
+   with self.assertRaises(AssertionError):self.check()
 
 if __name__=='__main__':unittest.main()

@@ -144,6 +144,39 @@ async function geometry(page: Page, info: TestInfo, name: string, resultId?: str
   await attach(info, name + '-geometry', data); if (picture) await page.screenshot({ path: info.outputPath(name + '.png') });
   expect(data.page.width).toBeLessThanOrEqual(1440); expect(data.page.height).toBeLessThanOrEqual(900); expect(data.violations).toEqual([]);
 }
+async function answerMotionClearance(page: Page, info: TestInfo, selector: string) {
+  const data = await page.locator(selector).evaluate(motion => {
+    const rect = (node: Element) => { const r = node.getBoundingClientRect(); return { left: r.left, right: r.right, top: r.top, bottom: r.bottom, width: r.width, height: r.height }; };
+    const visible = (node: Element) => { const s = getComputedStyle(node), r = rect(node); return !!node.getClientRects().length && s.visibility !== 'hidden' && s.display !== 'none' && r.width > 0 && r.height > 0; };
+    const inside = (a: ReturnType<typeof rect>, b: ReturnType<typeof rect>) => a.left >= b.left - .5 && a.right <= b.right + .5 && a.top >= b.top - .5 && a.bottom <= b.bottom + .5;
+    const overlap = (a: ReturnType<typeof rect>, b: ReturnType<typeof rect>) => Math.max(0, Math.min(a.right, b.right) - Math.max(a.left, b.left)) * Math.max(0, Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top));
+    const canvases = [...document.querySelectorAll<HTMLElement>('.trial-book .book-canvas')].filter(visible), canvas = canvases[0], book = canvas?.closest('.trial-book'), r = rect(motion), margin = 90;
+    const outer = { left: r.left - margin, right: r.right + margin, top: r.top - margin, bottom: r.bottom + margin, width: r.width + margin * 2, height: r.height + margin * 2 };
+    const obstacleNodes = new Set<Element>([
+      ...(book ? [...book.querySelectorAll(':scope>header,:scope>.catalogue-tabs,:scope>.catalogue-tabs>button,:scope>.catalogue-pager,:scope>.catalogue-pager button,:scope>.story-footer,:scope>.story-footer button,.reading-text,.book-caption')] : []),
+      ...document.querySelectorAll('.game-hud,#primary-navigation,.feature-header'),
+    ]);
+    const obstacles = [...obstacleNodes].filter(visible).map(node => ({ tag: node.tagName, id: node.getAttribute('data-testid') ?? node.id, class: node.className, text: node.textContent, r: rect(node) }));
+    const bounds = canvas ? rect(canvas) : null;
+    const nodes = [motion, ...motion.querySelectorAll('*')].map(node => {
+      const s = getComputedStyle(node), r = rect(node), animations = node.getAnimations().map(a => {
+        const timing = a.effect?.getTiming();
+        return { name: a instanceof CSSAnimation ? a.animationName : null, playState: a.playState, currentTime: typeof a.currentTime === 'number' ? a.currentTime : String(a.currentTime), delay: timing?.delay, duration: timing?.duration, iterations: timing?.iterations };
+      });
+      return { tag: node.tagName, class: node.getAttribute('class'), r, hasArea: r.width > 0 && r.height > 0, transform: s.transform, opacity: s.opacity, visibility: s.visibility, display: s.display, boxShadow: s.boxShadow, filter: s.filter, animations, insideCanvas: bounds ? inside(r, bounds) : false, insideConservativeOuter: inside(r, outer), clashes: obstacles.filter(o => overlap(r, o.r) > 0).map(o => ({ id: o.id, class: o.class, area: overlap(r, o.r) })) };
+    });
+    return { operation: motion.getAttribute('data-operation'), family: motion.getAttribute('data-family'), receipt: motion.getAttribute('data-receipt'), canvasCount: canvases.length, canvas: bounds, margin, actualMotion: r, conservativeOuter: outer, outerInsideCanvas: bounds ? inside(outer, bounds) : false, outerClashes: obstacles.filter(o => overlap(outer, o.r) > 0).map(o => ({ id: o.id, class: o.class, area: overlap(outer, o.r) })), tabs: book ? [...book.querySelectorAll(':scope>.catalogue-tabs>button')].filter(visible).map(node => ({ text: node.textContent, r: rect(node) })) : [], obstacles, nodes, wall: Date.now(), sampledPerformanceMs: performance.now() };
+  });
+  await attach(info, 'answer-trial-motion-conservative-clearance', data);
+  expect(data.canvasCount).toBe(1); expect(data.tabs).toHaveLength(3); expect(data.operation).toBe('ANSWER_TRIAL'); expect(data.margin).toBe(90);
+  expect(data.outerInsideCanvas, 'the actual answer motion plus its full90px conservative extent must remain inside the current trial canvas').toBe(true);
+  expect(data.outerClashes, 'the full decorative extent must not cross reading text/caption, tabs, header/footer/pager, HUD or navigation').toEqual([]);
+  for (const node of data.nodes.filter(node => node.hasArea)) {
+    expect(node.insideCanvas, node.tag + '.' + node.class + ' actual animated box remains inside the canvas').toBe(true);
+    expect(node.insideConservativeOuter, node.tag + '.' + node.class + ' is covered by the conservative outer bound').toBe(true);
+    expect(node.clashes, node.tag + '.' + node.class + ' must not overlap full content or controls even at transparent animation frames').toEqual([]);
+  }
+}
 async function readReceipt(page: Page, a: MilestoneActivity, after: Game, info: TestInfo, name: string) {
   await page.getByTestId(after.status === 'active' ? 'hub-receipt' : 'life-receipt').click(); const review = page.getByTestId('milestone-review'); await expect(review).toHaveAttribute('data-readonly', 'true'); await expect(page.getByTestId('milestone-confirm')).toHaveCount(0);
   const read: string[] = []; for (let i = 0; i < 100; i++) {
@@ -177,6 +210,7 @@ test('M03-MF1 the explicitly selected six-second answer saves once before its ow
   const motion = '[data-testid=action-motion][data-operation=ANSWER_TRIAL]'; await painted(page, motion); await expect(page.locator(motion)).toHaveAttribute('data-family', 'trial'); await expect(page.locator(motion)).toHaveAttribute('data-variant', 'answer'); await expect(page.locator(motion)).toHaveAttribute('data-receipt', JSON.stringify([a.runId, a.nextCommand!.commandId]));
   await expect(page.getByTestId('response-result')).toHaveCount(0); await expect(page.getByTestId('action-number')).toHaveCount(0); await expect(page.locator('.actor-impact,.actor-arrival')).toHaveCount(0);
   const shown = await effects(page); expect(shown).toHaveLength(1); expect(shown[0]).toMatchObject({ id: 'action-motion', operation: 'ANSWER_TRIAL', family: 'trial', visible: true });
+  await answerMotionClearance(page, info, motion);
   const observation = await publicObservation(page, a, result.formal); await expect(page.getByTestId('trial-progress')).toBeVisible(); await geometry(page, info, 'answer-saved-current-trial', undefined, true);
   const journey = getTrialJourney(result.after)!; await expect(page.getByTestId('trial-progress-title')).toHaveText('渡劫行程'); const panel = page.getByTestId('trial-progress'), next = panel.getByRole('button', { name: '下一页', exact: true });
   for (let i = 0; i < 12 && !await page.getByTestId('trial-selected-effect').isVisible(); i++) { expect(await next.isEnabled()).toBe(true); await next.click(); }
