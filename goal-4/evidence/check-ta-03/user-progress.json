@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-25T01:08:16.559617+00:00",
+  "visibleBodyExact": true,
+  "normalizedAXExact": true,
+  "normalization": "Only AX indices and focus line removed; full remaining tree compared.",
+  "beforeBodySHA256": "b4b0f3ceb58b68efa13fd632d6acfc3f713d2242869a9e59b5b1443a7994ede3",
+  "afterBodySHA256": "b4b0f3ceb58b68efa13fd632d6acfc3f713d2242869a9e59b5b1443a7994ede3",
+  "observedProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "xp": "5/10",
+    "stones": 40,
+    "month": 1,
+    "hp": "60/60",
+    "mp": "20/20",
+    "location": "听雨洞府",
+    "idle": true,
+    "saved": true
+  },
+  "actualScripts": [
+    "http://127.0.0.1:56884/assets/index-ox4REFXn.js"
+  ],
+  "actualStyles": [
+    "http://127.0.0.1:56884/assets/index-CWDGxgZB.css"
+  ],
+  "rawBefore": {
+    "path": "artifacts/goal-4/check-ta-03/preview-final-before-update.json",
+    "sha256": "72684795ac9a81debfca54cedbcfac6fe9c56fd088aa73ff35af0deb3d658a2b"
+  },
+  "rawAfter": {
+    "path": "artifacts/goal-4/check-ta-03/preview-final-after-update.json",
+    "sha256": "fa591a47cd23a72f91aaea60575f2c3e4da1c51caa50152c24ce7c081e270a11"
+  },
+  "userGameActions": false,
+  "userImportRestoreResetOrSaveTests": false,
+  "notWholeUserDatabaseByteComparison": true,
+  "isolatedDemoWasReadOnlyNavigation": true,
+  "previewOwnedSession": 14845
+}

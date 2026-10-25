@@ -1,0 +1,33 @@
+{
+  "copies": [
+    {
+      "original": "artifacts/goal-4/check-ta-03/preview-updated.png",
+      "originalSHA256": "dcf426b8209d704e94deefb58793ae8f075f519b4b1b17ca82d615c8777799d5",
+      "view": "artifacts/goal-4/check-ta-03/preview-updated.jpg",
+      "viewSHA256": "37fb15fdf95d4a70b9aef7b22079026b59629901580503f2782d02a81e639b77",
+      "size": [
+        1280,
+        720
+      ],
+      "lossy": true,
+      "jpegQuality": 68,
+      "resized": false
+    },
+    {
+      "original": "artifacts/goal-4/check-ta-03/delivered-manual-demo.png",
+      "originalSHA256": "3677251870e35647b3f850fe0fa91e9af2ab3bd83094669d3848e0581cc8928f",
+      "view": "artifacts/goal-4/check-ta-03/delivered-manual-demo.jpg",
+      "viewSHA256": "8f0c7f0cc57802f537a518cecbe55bcc144714cba35e4424c03af511190f7340",
+      "size": [
+        1280,
+        720
+      ],
+      "lossy": true,
+      "jpegQuality": 68,
+      "resized": false
+    }
+  ],
+  "originalPNGsKeptIgnored": true,
+  "contextImagesAtMostTwoPerCall": true,
+  "notCompatibilityAcceptance": true
+}

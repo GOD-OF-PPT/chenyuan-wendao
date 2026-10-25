@@ -1,0 +1,49 @@
+{
+  "recordedAt": "2026-10-25T00:58:47.111109+00:00",
+  "runtime": "df830bfbb87836ea9ab09fef64972ec2f2328ee80c930227421680b2c6f73a60",
+  "scope": "441 actualwhole-pass declarations outside changed stage-check file, same105 localimport/reexport/dynamic closure and actual FS/toolchain;20currentwholefile rerun replaces all20 oldsourcefile results.",
+  "sameRuntime258": true,
+  "closureFiles": 105,
+  "rootSpecs": 47,
+  "edges": 563,
+  "unresolvedImports": [],
+  "all105DependencyHashesEqualWholeAndCurrent": true,
+  "noOtherRootImportsChangedStageSpec": true,
+  "closureEvidence": "source5-inherited441-closure.json",
+  "closureSha256": "4e23d3e0973c41de4b023ef373f047b7b69b3f125cf39eeccd63747d039f22da",
+  "sharedPackagesAndLocksExact": true,
+  "actualPublic10PlusGeneratedMetaSame": true,
+  "sameCorrectCwdWebBothRuns": true,
+  "sameHttp69BothRuns": true,
+  "crossPhaseInputDifferences": [
+    {
+      "path": "docs/decisions/0036-ta-cross-check-contract.md",
+      "wholeSha256": "909f43f04e1da2ada12fdf83870b7b1d8bad6521cbf26ccf1b4e1d0ba8941a1a",
+      "leafSha256": "c04313009c3f5d68d516c6d55275c46009245f4f742509fb0dcd5d31c92631d2",
+      "category": "post-whole formal documentation, no test/runtime import"
+    },
+    {
+      "path": "goal-4/plan.md",
+      "wholeSha256": "03c91e5b5d568014c434b760eb638105795a764a647a5d32febfb6b2f30f91a8",
+      "leafSha256": "bcdcaa17646ba7296d66746da37eb16234b69cfa50209d6d4ec5293858c400b9",
+      "category": "post-whole formal documentation, no test/runtime import"
+    },
+    {
+      "path": "goal-4/tasks.md",
+      "wholeSha256": "7b9a0b2f2ae3361930318a91cac0fffcdb0edbf1f3bfb1eda63e261b8d258121",
+      "leafSha256": "13171c84841286a5ad0086b239d90f8d5cdfb1be9318c88fed931db643308c1c",
+      "category": "post-whole formal documentation, no test/runtime import"
+    },
+    {
+      "path": "web/e2e/stage-check.spec.ts",
+      "wholeSha256": "7ff6f7e27f1fe6781f3c93f6dc3a0f3d947f17629f57766b74386a9de240b088",
+      "leafSha256": "04cfeff854fe7567e54c557e1757fa6f179ac99d0b0190ed8271a97a74f73b74",
+      "category": "authorised single testcallback readiness correction"
+    }
+  ],
+  "withinWhole807Exact": true,
+  "withinLeaf816Exact": true,
+  "doNotClaimCrossPhaseAllInputsSame": true,
+  "testInverseProof": "stage-check-source5-readiness-inverse.json",
+  "boundary": "Originalcomplete461had460pass1failed. Original20withinfile are replaced, not added; no single-run461green or automaticflakyretry claim."
+}

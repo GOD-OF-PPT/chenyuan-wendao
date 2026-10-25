@@ -1,0 +1,448 @@
+{
+  "recordedAt": "2026-10-25T01:08:16.556184+00:00",
+  "runtime": "df830bfbb87836ea9ab09fef64972ec2f2328ee80c930227421680b2c6f73a60",
+  "sourceReviewSnapshot": {
+    "path": "artifacts/goal-4/check-ta-03/analysis/final-source5-review-candidate.json",
+    "sha256": "6d5506c7bb6af396b46917b1539a22529908b0aa423e5e34daf3e5116171cb59"
+  },
+  "counts": {
+    "uniqueRepresentativeOriginalPNGs": 20,
+    "wholeSelectedUnique": 11,
+    "wholeSelectedFresh": 5,
+    "wholeSelectedStrictInheritedActualPriorView": 6,
+    "additionalSource5NameRackFresh": 9,
+    "totalFresh": 14,
+    "totalStrictInherited": 6,
+    "rootRecheckingSameTightShenAdds": 0,
+    "addedBusinessCoverageFromImagesOrRepeatFocus": 0
+  },
+  "images": [
+    {
+      "name": "eight-current-cultivation.png",
+      "original": "artifacts/goal-4/check-ta-03/ui-full-source5-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-cultivation.png",
+      "originalSHA256": "133c2873cca07b53bec7abb073766c3b795a6338304b593e51f8fe92c25f6245",
+      "originalBytes": 1811201,
+      "reviewStatus": "strict originalPNG byte inheritance; current PNG not freshly loaded",
+      "source4ActualReviewChain": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source4-final-review.json",
+        "reviewSHA256": "7b51131cf5de414f8314a4047396bc87341bdd692c03b5be7a0030acbaa71ad5",
+        "original": "artifacts/goal-4/check-ta-03/ui-early-source4-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-cultivation.png",
+        "originalSHA256": "133c2873cca07b53bec7abb073766c3b795a6338304b593e51f8fe92c25f6245",
+        "sameOriginalPNG": true
+      },
+      "actualPriorView": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source2-eight-review.json",
+        "reviewSHA256": "5d536632f945bec4f0663246e8ffa7cdc1eac5638b119635d62496387a90fe7c",
+        "original": "artifacts/goal-4/check-ta-03/ui-collect-source2-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-cultivation.png",
+        "originalSHA256": "133c2873cca07b53bec7abb073766c3b795a6338304b593e51f8fe92c25f6245",
+        "viewedAtUTC": "2026-10-24T22:16:26Z",
+        "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source2-eight-visual/eight-current-cultivation.jpg",
+        "reviewCopySHA256": "b8f5d08217bc6fc2026983701fbad29829d9af725a655b5fdb5d2554f818a92a",
+        "method": "Original-size JPEG68 actually seen in original review; no decoding/hash-only substitute"
+      },
+      "finding": "保此页相对清楚的主决定，只在真实状态组合下整理重复身份/说明与观察反馈；不把潜修变成每轮确认/领取。"
+    },
+    {
+      "name": "eight-current-explore.png",
+      "original": "artifacts/goal-4/check-ta-03/ui-full-source5-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-explore.png",
+      "originalSHA256": "d3ff4fe077947a6ca3a633b5ae4fc4fa566b500603f108d5099e018eb4e1a14a",
+      "originalBytes": 1297394,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-eleven-visual/eight-current-explore.jpg",
+      "reviewCopySHA256": "b29e47392151bbcc613e411e32b4820a1fdfdfc6eb751c0df3fa2c938d8c10b1",
+      "reviewCopyBytes": 137304,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "lossy JPEG68 original dimensions; original PNG retained",
+      "reviewStatus": "fresh actual pixel review",
+      "actuallyViewedAtUTC": "2026-10-25T00:51:30Z",
+      "method": "tools.view_image(detail=original), one original-size JPEG68 per call",
+      "finding": "当前6地点路标和原当前→当前禁用旅行完整、右侧正式6秒/不自动后续说明可读，无新裁切。仍有等权路标/独立右资料和较多空带；这张仅行旅默认，不冒采集/斗法像素。"
+    },
+    {
+      "name": "eight-current-alchemy.png",
+      "original": "artifacts/goal-4/check-ta-03/ui-full-source5-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-alchemy.png",
+      "originalSHA256": "3dc44bb7f13450563b43c077d5d4d94ec67ddcef4b3cad286f4ed7f32b9a7647",
+      "originalBytes": 1089342,
+      "reviewStatus": "strict originalPNG byte inheritance; current PNG not freshly loaded",
+      "source4ActualReviewChain": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source4-final-review.json",
+        "reviewSHA256": "7b51131cf5de414f8314a4047396bc87341bdd692c03b5be7a0030acbaa71ad5",
+        "original": "artifacts/goal-4/check-ta-03/ui-early-source4-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-alchemy.png",
+        "originalSHA256": "3dc44bb7f13450563b43c077d5d4d94ec67ddcef4b3cad286f4ed7f32b9a7647",
+        "sameOriginalPNG": true
+      },
+      "actualPriorView": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source3-eight-review.json",
+        "reviewSHA256": "202e7fca8f0997a0149bb5c900f3552fa3226a6111045d9d689463bda558e34a",
+        "original": "artifacts/goal-4/check-ta-03/ui-early-source3-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-alchemy.png",
+        "originalSHA256": "3dc44bb7f13450563b43c077d5d4d94ec67ddcef4b3cad286f4ed7f32b9a7647",
+        "viewedAtUTC": "2026-10-24T22:33:00Z",
+        "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source3-eight-visual/eight-current-alchemy.jpg",
+        "reviewCopySHA256": "6bfa6a5b23f2303473bbe4091ce94dcc35aea19c62959c7572bc669aaea40bfc",
+        "method": "Original-size JPEG68 actually seen in original review; no decoding/hash-only substitute"
+      },
+      "finding": "保炉体，后续逐项处理缺料时的可读下一步/药匣材质；完整炉次/预算/保留与实际成品仍可达，不增加投药/领奖。"
+    },
+    {
+      "name": "eight-current-skills.png",
+      "original": "artifacts/goal-4/check-ta-03/ui-full-source5-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-skills.png",
+      "originalSHA256": "681b95289bb9dd091a20db5130d73b11315826c04aa6bf47116755855aab7f21",
+      "originalBytes": 1111017,
+      "reviewStatus": "strict originalPNG byte inheritance; current PNG not freshly loaded",
+      "source4ActualReviewChain": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source4-final-review.json",
+        "reviewSHA256": "7b51131cf5de414f8314a4047396bc87341bdd692c03b5be7a0030acbaa71ad5",
+        "original": "artifacts/goal-4/check-ta-03/ui-early-source4-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-skills.png",
+        "originalSHA256": "681b95289bb9dd091a20db5130d73b11315826c04aa6bf47116755855aab7f21",
+        "sameOriginalPNG": true
+      },
+      "actualPriorView": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source3-eight-review.json",
+        "reviewSHA256": "202e7fca8f0997a0149bb5c900f3552fa3226a6111045d9d689463bda558e34a",
+        "original": "artifacts/goal-4/check-ta-03/ui-early-source3-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-skills.png",
+        "originalSHA256": "681b95289bb9dd091a20db5130d73b11315826c04aa6bf47116755855aab7f21",
+        "viewedAtUTC": "2026-10-24T22:33:16Z",
+        "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source3-eight-visual/eight-current-skills.jpg",
+        "reviewCopySHA256": "4ae272f7de7c0244e57f892d3a4eecccd0ec00970a0bceeee68edc18029ed567",
+        "method": "Original-size JPEG68 actually seen in original review; no decoding/hash-only substitute"
+      },
+      "finding": "ART10继续功法常态/完成态的主要决定和对象阅读一体化，保完整12卷/清单/原草案/比较，不以自动入队或自动装备替代。"
+    },
+    {
+      "name": "eight-current-relics.png",
+      "original": "artifacts/goal-4/check-ta-03/ui-full-source5-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-relics.png",
+      "originalSHA256": "ddbedc6c5bca3f3da93b222623242f06813657aa63e7187f1950e5c82fd6a777",
+      "originalBytes": 1041636,
+      "reviewStatus": "strict originalPNG byte inheritance; current PNG not freshly loaded",
+      "source4ActualReviewChain": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source4-final-review.json",
+        "reviewSHA256": "7b51131cf5de414f8314a4047396bc87341bdd692c03b5be7a0030acbaa71ad5",
+        "original": "artifacts/goal-4/check-ta-03/ui-early-source4-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-relics.png",
+        "originalSHA256": "ddbedc6c5bca3f3da93b222623242f06813657aa63e7187f1950e5c82fd6a777",
+        "sameOriginalPNG": true
+      },
+      "actualPriorView": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source3-eight-review.json",
+        "reviewSHA256": "202e7fca8f0997a0149bb5c900f3552fa3226a6111045d9d689463bda558e34a",
+        "original": "artifacts/goal-4/check-ta-03/ui-early-source3-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-relics.png",
+        "originalSHA256": "ddbedc6c5bca3f3da93b222623242f06813657aa63e7187f1950e5c82fd6a777",
+        "viewedAtUTC": "2026-10-24T22:33:30Z",
+        "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source3-eight-visual/eight-current-relics.jpg",
+        "reviewCopySHA256": "8a1cc51543f70b02fb1b19cf7bf820634c4d52d84d63bc544de336e06905307d",
+        "method": "Original-size JPEG68 actually seen in original review; no decoding/hash-only substitute"
+      },
+      "finding": "ART10按未学/已学/未铸/已铸/已认主/缺材区别主要决定，并统一四器工作胚与冷画的轮廓/光向/材质。保所有材料来源与有限授权。"
+    },
+    {
+      "name": "eight-current-inventory.png",
+      "original": "artifacts/goal-4/check-ta-03/ui-full-source5-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-inventory.png",
+      "originalSHA256": "85026ff094928d5a8c08b77f1e2ebfd71a5589ae1afeddfa0e58c543befac5f0",
+      "originalBytes": 1093752,
+      "reviewStatus": "strict originalPNG byte inheritance; current PNG not freshly loaded",
+      "source4ActualReviewChain": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source4-final-review.json",
+        "reviewSHA256": "7b51131cf5de414f8314a4047396bc87341bdd692c03b5be7a0030acbaa71ad5",
+        "original": "artifacts/goal-4/check-ta-03/ui-early-source4-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-inventory.png",
+        "originalSHA256": "85026ff094928d5a8c08b77f1e2ebfd71a5589ae1afeddfa0e58c543befac5f0",
+        "sameOriginalPNG": true
+      },
+      "actualPriorView": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source2-eight-review.json",
+        "reviewSHA256": "5d536632f945bec4f0663246e8ffa7cdc1eac5638b119635d62496387a90fe7c",
+        "original": "artifacts/goal-4/check-ta-03/ui-collect-source2-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-inventory.png",
+        "originalSHA256": "85026ff094928d5a8c08b77f1e2ebfd71a5589ae1afeddfa0e58c543befac5f0",
+        "viewedAtUTC": "2026-10-24T22:13:53Z",
+        "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source2-eight-visual/eight-current-inventory.jpg",
+        "reviewCopySHA256": "1637e928337e70c5553eeb434759bbda34f6dd6ed252acf5e214c86503d3f11a",
+        "method": "Original-size JPEG68 actually seen in original review; no decoding/hash-only substitute"
+      },
+      "finding": "ART11用实存物/未持有图谱两态和用途为中心，来源优先，其他用途作为明确次入口，保完整14物与0库存资料。"
+    },
+    {
+      "name": "eight-current-fate.png",
+      "original": "artifacts/goal-4/check-ta-03/ui-full-source5-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-fate.png",
+      "originalSHA256": "f165cfe3067685a4252fc1b295741c014a9a8c36df14dd70feeb653b7242b156",
+      "originalBytes": 1310729,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-eleven-visual/eight-current-fate.jpg",
+      "reviewCopySHA256": "650ae717bc8cbbaffcc76477af0448489a3149fd3041f3047b236bb001269986",
+      "reviewCopyBytes": 114129,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "lossy JPEG68 original dimensions; original PNG retained",
+      "reviewStatus": "fresh actual pixel review",
+      "actuallyViewedAtUTC": "2026-10-25T00:51:44Z",
+      "method": "tools.view_image(detail=original), one original-size JPEG68 per call",
+      "finding": "四名笺/画像/未识真实事实/未来前往和原5页完整，无新遮挡。重复人物名与大矩形单段阅读仍明显，保ART12缘牍/实际会面分态与阅读材质责任。"
+    },
+    {
+      "name": "eight-current-life.png",
+      "original": "artifacts/goal-4/check-ta-03/ui-full-source5-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-life.png",
+      "originalSHA256": "e139ab5a4ff39fb7bac633fb0089f8d81b99f9998b986a56bfdd8be40e273e18",
+      "originalBytes": 1284141,
+      "reviewStatus": "strict originalPNG byte inheritance; current PNG not freshly loaded",
+      "source4ActualReviewChain": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source4-final-review.json",
+        "reviewSHA256": "7b51131cf5de414f8314a4047396bc87341bdd692c03b5be7a0030acbaa71ad5",
+        "original": "artifacts/goal-4/check-ta-03/ui-early-source4-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-life.png",
+        "originalSHA256": "e139ab5a4ff39fb7bac633fb0089f8d81b99f9998b986a56bfdd8be40e273e18",
+        "sameOriginalPNG": true
+      },
+      "actualPriorView": {
+        "review": "artifacts/goal-4/check-ta-03/analysis/visual-source3-eight-review.json",
+        "reviewSHA256": "202e7fca8f0997a0149bb5c900f3552fa3226a6111045d9d689463bda558e34a",
+        "original": "artifacts/goal-4/check-ta-03/ui-early-source3-results/stage-ta-review-CHECK-TA-C-fbb15-and-readonly-Game-databases-chromium/eight-current-life.png",
+        "originalSHA256": "e139ab5a4ff39fb7bac633fb0089f8d81b99f9998b986a56bfdd8be40e273e18",
+        "viewedAtUTC": "2026-10-24T22:34:00Z",
+        "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source3-eight-visual/eight-current-life.jpg",
+        "reviewCopySHA256": "704eee0b516e036566ecc745b808b09d93546ee6a01e786cfe07bfabc8c2af2d",
+        "method": "Original-size JPEG68 actually seen in original review; no decoding/hash-only substitute"
+      },
+      "finding": "ART12改善命卷首读和章节书签/纸页材质；完整140码点分页、rowKey锚点和全部事实不丢，结束/恢复仍各自确认。"
+    },
+    {
+      "name": "completed-study-original-90-12.png",
+      "original": "artifacts/goal-4/check-ta-03/ui-full-source5-results/stage-ta-review-CHECK-TA-C-703ca--or-borrowing-a-later-draft-chromium/completed-study-original-90-12.png",
+      "originalSHA256": "e564544444fdaf67f75f5136a01a10fe651657d24e08971b7be81f821203836e",
+      "originalBytes": 1468078,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-eleven-visual/completed-study-original-90-12.jpg",
+      "reviewCopySHA256": "542b2bacb9930ef834abf9df4e307434aa02697d699f4fc05cf462e70e8ea49d",
+      "reviewCopyBytes": 126706,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "lossy JPEG68 original dimensions; original PNG retained",
+      "reviewStatus": "fresh actual pixel review",
+      "actuallyViewedAtUTC": "2026-10-25T00:51:57Z",
+      "method": "tools.view_image(detail=original), one original-size JPEG68 per call",
+      "finding": "真实已悟+本次已存与原安排最多1次/每次60秒/累计90/保留12/实耗80均完整可读；主要按钮仅翻阅其他功法、说明不换修法/配装；首次条件作资料，无重复研习表单。"
+    },
+    {
+      "name": "refreshed-canonical-original-90-12.png",
+      "original": "artifacts/goal-4/check-ta-03/ui-full-source5-results/stage-ta-review-CHECK-TA-C-703ca--or-borrowing-a-later-draft-chromium/refreshed-canonical-original-90-12.png",
+      "originalSHA256": "03e3fb58c37e11e0170acb430a180e71f2ea99545ea4134a43c86c99f00336c3",
+      "originalBytes": 1472438,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-eleven-visual/refreshed-canonical-original-90-12.jpg",
+      "reviewCopySHA256": "4d034a9c80074a42fbd5c0cff1d203f7006a7b29fe18549c093ea25b3c78fa3d",
+      "reviewCopyBytes": 127137,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "lossy JPEG68 original dimensions; original PNG retained",
+      "reviewStatus": "fresh actual pixel review",
+      "actuallyViewedAtUTC": "2026-10-25T00:52:11Z",
+      "method": "tools.view_image(detail=original), one original-size JPEG68 per call",
+      "finding": "刷新后原安排1次/60秒/90/12/80仍完整，短已悟印章不补演，永久已悟和当前作用仍可读，翻阅入口/页签焦点外缘未遮字。"
+    },
+    {
+      "name": "learned-manual-with-real-cancelled-error.png",
+      "original": "artifacts/goal-4/check-ta-03/ui-full-source5-results/stage-ta-review-CHECK-TA-C-abeb4-pared-intent-changes-school-chromium/learned-manual-with-real-cancelled-error.png",
+      "originalSHA256": "bf7f16c47eda7f4018730d704c37c7cbc10070c6dfa2d7975b8137256659d9ca",
+      "originalBytes": 1266112,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-eleven-visual/learned-manual-with-real-cancelled-error.jpg",
+      "reviewCopySHA256": "077903a6a68c0670dac9010c489fb2da28a5a5ab302049cb1af3686374e0fb0c",
+      "reviewCopyBytes": 117192,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "lossy JPEG68 original dimensions; original PNG retained",
+      "reviewStatus": "fresh actual pixel review",
+      "actuallyViewedAtUTC": "2026-10-25T00:52:23Z",
+      "method": "tools.view_image(detail=original), one original-size JPEG68 per call",
+      "finding": "真实取消后的存储错误及保存待核对明确，已悟事实/当前加成不误抹，原意图解除后只读翻阅仍可用，无重复开始或伪已保存。错误横幅压缩下原文字/物件/入口与底部状态无裁切。"
+    },
+    {
+      "name": "ART05-A5-response-real-saved",
+      "original": "artifacts/goal-4/check-ta-03/ui-recovery-source5-results/narrative-objects-ART05-A5-652eb-s-the-exact-whole-Game-once-chromium/response-real-saved.png",
+      "originalSHA256": "4660a49a107afe9a4d902b4c21357eae09fbd26dc1dae71e1d3f41baa9a343ee",
+      "originalBytes": 1329031,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-name-visual/ART05-A5-response-real-saved.jpg",
+      "reviewCopySHA256": "eb44c710814b68c737ae5966d0546ab61c9ad221c8e8e6d38c7c9551956e6404",
+      "reviewCopyBytes": 127344,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "lossy JPEG68 original1440x900, no resizing or content editing",
+      "actuallyViewedAtUTC": "2026-10-25T00:06:06Z",
+      "method": "tools.view_image original detail, original1440x900 JPEG68 lossy viewing copy; originalPNG retained",
+      "state": "ordinary saved notice present; no focused-outline claim",
+      "finding": "当前普通保存态四名笺、完整正文、真实成本/成果及入口/分页完整，未见gap5新遮挡。"
+    },
+    {
+      "name": "ART05-A9-fresh-response-after-cancel",
+      "original": "artifacts/goal-4/check-ta-03/ui-recovery-source5-results/narrative-objects-ART05-A9-e71d1-parately-confirmed-response-chromium/fresh-response-after-cancel.png",
+      "originalSHA256": "3ad2ae38804de4e9fabfc87d444a46c4ed4b6ca407bb9b9068039b4cfa2239fe",
+      "originalBytes": 1336092,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-name-visual/ART05-A9-fresh-response-after-cancel.jpg",
+      "reviewCopySHA256": "2c6067eeec110b623519ebb6cfed554f16dd8d0f11e064fa01d28f90e4437c07",
+      "reviewCopyBytes": 129028,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "lossy JPEG68 original1440x900, no resizing or content editing",
+      "actuallyViewedAtUTC": "2026-10-25T00:06:17Z",
+      "method": "tools.view_image original detail, original1440x900 JPEG68 lossy viewing copy; originalPNG retained",
+      "state": "ordinary saved notice present; no focused-outline claim",
+      "finding": "当前普通保存态四名笺、完整正文、真实成本/成果及入口/分页完整，未见gap5新遮挡。"
+    },
+    {
+      "name": "ART05-A1-first-same-command-response",
+      "original": "artifacts/goal-4/check-ta-03/ui-recovery-source5-results/narrative-objects-ART05-A1-3fd47-ir-first-actual-result-only-chromium/response-same-command-first-saved.png",
+      "originalSHA256": "73ae2709cc3ffed3e4ccfda78539b0cb7d11aeffe2882516d24dd894fb57ed6c",
+      "originalBytes": 1331990,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-name-visual/ART05-A1-first-same-command-response.jpg",
+      "reviewCopySHA256": "9cad3c9eef66ac073d294a21f22b531a52aeeee0612110131513abf3c461e3ec",
+      "reviewCopyBytes": 128508,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "lossy JPEG68 original1440x900, no resizing or content editing",
+      "actuallyViewedAtUTC": "2026-10-25T00:06:30Z",
+      "method": "tools.view_image original detail, original1440x900 JPEG68 lossy viewing copy; originalPNG retained",
+      "state": "ordinary saved notice present; no focused-outline claim",
+      "finding": "当前普通保存态四名笺、完整正文、真实成本/成果及入口/分页完整，未见gap5新遮挡。"
+    },
+    {
+      "caseTitle": "ART05-A9 failed acceptance keeps the original intent retryable and explicit cancellation permits only a fresh separately confirmed response",
+      "name": "A9-tight-focus-first",
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ta-03/ui-focus-source5-results/narrative-objects-ART05-A9-e71d1-parately-confirmed-response-chromium/fresh-response-after-cancel-focus-fate-person-shen.png",
+      "originalSHA256": "5949ccb684eadfda97a430392a6a4ffb46caefd0f8d55d7fae5681b84289e9e4",
+      "originalBytes": 1328483,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-name-visual/A9-tight-focus-first.jpg",
+      "reviewCopySHA256": "4e1f3addb20ec4095a705645090abae9976d8c25ef1f07334c6d768df02e2729",
+      "reviewCopyBytes": 126942,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "JPEG68 original dimensions, lossy; original PNG retained",
+      "actuallyViewedAtUTC": "2026-10-25T00:09:42Z",
+      "method": "tools.view_image original detail, original1440x900 JPEG68 lossy viewing copy; originalPNG retained",
+      "state": "virtual A9/A10 notice present, rack289.03125/alerts62.984375, actual first or last focus outline",
+      "finding": "完整姓名/相识或未识/正文/已存事实与可用入口可读，焦点图实际完整外缘无裁切或遮住分类、相邻名笺文字、正文、分页或导航。"
+    },
+    {
+      "caseTitle": "ART05-A9 failed acceptance keeps the original intent retryable and explicit cancellation permits only a fresh separately confirmed response",
+      "name": "A9-tight-focus-last",
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ta-03/ui-focus-source5-results/narrative-objects-ART05-A9-e71d1-parately-confirmed-response-chromium/fresh-response-after-cancel-focus-fate-person-yan.png",
+      "originalSHA256": "99a3f4b11f4676b9707640e11ebccfa72439d2821a4f9c8b4c3c294365052e58",
+      "originalBytes": 1326508,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-name-visual/A9-tight-focus-last.jpg",
+      "reviewCopySHA256": "48f1ae4ab700abc778d6f6db867741e29fd001f7ef288660bcba19a1127d6672",
+      "reviewCopyBytes": 127067,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "JPEG68 original dimensions, lossy; original PNG retained",
+      "actuallyViewedAtUTC": "2026-10-25T00:09:51Z",
+      "method": "tools.view_image original detail, original1440x900 JPEG68 lossy viewing copy; originalPNG retained",
+      "state": "virtual A9/A10 notice present, rack289.03125/alerts62.984375, actual first or last focus outline",
+      "finding": "完整姓名/相识或未识/正文/已存事实与可用入口可读，焦点图实际完整外缘无裁切或遮住分类、相邻名笺文字、正文、分页或导航。"
+    },
+    {
+      "caseTitle": "ART05-A10 visit response and closing native cycle failures stay atomic then retry the same command for their first actual result only",
+      "name": "A10-tight-focus-first",
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ta-03/ui-focus-source5-results/narrative-objects-ART05-A1-3fd47-ir-first-actual-result-only-chromium/response-same-command-first-saved-focus-fate-person-shen.png",
+      "originalSHA256": "4224791eea1d5b94a10401f62642a9e13f3778c777924a12f12af42a527c9f71",
+      "originalBytes": 1334178,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-name-visual/A10-tight-focus-first.jpg",
+      "reviewCopySHA256": "ca97e8b5313451daad3e47c525dbeabaa7d9e8f33c455c034ca22ceb90335cc9",
+      "reviewCopyBytes": 127817,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "JPEG68 original dimensions, lossy; original PNG retained",
+      "actuallyViewedAtUTC": "2026-10-25T00:10:02Z",
+      "method": "tools.view_image original detail, original1440x900 JPEG68 lossy viewing copy; originalPNG retained",
+      "state": "virtual A9/A10 notice present, rack289.03125/alerts62.984375, actual first or last focus outline",
+      "finding": "完整姓名/相识或未识/正文/已存事实与可用入口可读，焦点图实际完整外缘无裁切或遮住分类、相邻名笺文字、正文、分页或导航。"
+    },
+    {
+      "caseTitle": "ART05-A10 visit response and closing native cycle failures stay atomic then retry the same command for their first actual result only",
+      "name": "A10-tight-focus-last",
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ta-03/ui-focus-source5-results/narrative-objects-ART05-A1-3fd47-ir-first-actual-result-only-chromium/response-same-command-first-saved-focus-fate-person-yan.png",
+      "originalSHA256": "098357f32fbb5e42337105a12aee99ab44979cf54c60e36f44aca529691ddd3b",
+      "originalBytes": 1325649,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-name-visual/A10-tight-focus-last.jpg",
+      "reviewCopySHA256": "5284e8348793c3a020ced8de72c2971b1c071463d29fa3550820386d888efd0b",
+      "reviewCopyBytes": 127934,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "JPEG68 original dimensions, lossy; original PNG retained",
+      "actuallyViewedAtUTC": "2026-10-25T00:10:12Z",
+      "method": "tools.view_image original detail, original1440x900 JPEG68 lossy viewing copy; originalPNG retained",
+      "state": "virtual A9/A10 notice present, rack289.03125/alerts62.984375, actual first or last focus outline",
+      "finding": "完整姓名/相识或未识/正文/已存事实与可用入口可读，焦点图实际完整外缘无裁切或遮住分类、相邻名笺文字、正文、分页或导航。"
+    },
+    {
+      "name": "A5-real-focus-first",
+      "original": "artifacts/goal-4/check-ta-03/ui-focus-tight-source5-results/narrative-objects-ART05-A5-652eb-s-the-exact-whole-Game-once-chromium/response-real-saved-focus-fate-person-shen.png",
+      "originalSHA256": "41a2e883cb889fb4140399e183352f56f27df82a7d3f68b82036697d6a742a5d",
+      "originalBytes": 1334611,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-name-visual/A5-real-focus-first.jpg",
+      "reviewCopySHA256": "0b069e4eddfed13f95cdc142a930702dc461b0ff025fe184014f8378e0b206db",
+      "reviewCopyBytes": 131133,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "JPEG68 original dimensions; PNG retained",
+      "actuallyViewedAtUTC": "2026-10-25T00:11:54Z",
+      "method": "tools.view_image original detail, original1440x900 JPEG68 lossy viewing copy; originalPNG retained",
+      "state": "real A5 first focus; screenshot before+after rack289.03125/alerts62.984375 with original -18/+1 notice",
+      "finding": "完整姓名/相识或未识/正文/已存事实与可用入口可读，焦点图实际完整外缘无裁切或遮住分类、相邻名笺文字、正文、分页或导航。"
+    },
+    {
+      "name": "A5-real-focus-last",
+      "original": "artifacts/goal-4/check-ta-03/ui-focus-tight-source5-results/narrative-objects-ART05-A5-652eb-s-the-exact-whole-Game-once-chromium/response-real-saved-focus-fate-person-yan.png",
+      "originalSHA256": "5edc676415fec253fb1284f250a39d0d8e64609f7dd2d02c8824be6de2eeaade",
+      "originalBytes": 1337589,
+      "reviewCopy": "artifacts/goal-4/check-ta-03/analysis/source5-name-visual/A5-real-focus-last.jpg",
+      "reviewCopySHA256": "ed41a140120fa2f23c496b8b79191bd062a2a11c2ec3410b7fd3ffa57a65169c",
+      "reviewCopyBytes": 123021,
+      "dimensions": [
+        1440,
+        900
+      ],
+      "conversion": "JPEG68 original dimensions; PNG retained",
+      "actuallyViewedAtUTC": "2026-10-25T00:12:05Z",
+      "method": "tools.view_image original detail, original1440x900 JPEG68 lossy viewing copy; originalPNG retained",
+      "state": "real A5 last focus; screenshot before+after rack360.015625/alerts0, explicitly wider natural transition state",
+      "finding": "完整姓名/相识或未识/正文/已存事实与可用入口可读，焦点图实际完整外缘无裁切或遮住分类、相邻名笺文字、正文、分页或导航。"
+    }
+  ],
+  "inheritanceCaveat": "The initial comparison8same meant currentSOURCE5whole versus SOURCE4whole, not8previously looked-at originals. Only6default originals match actual SOURCE4early→SOURCE3/2 reviewed hashes. Refreshedcanonical andC5 differ from actual early reviewed images, so both were freshly viewed here; other3changed originals also fresh. No perceptual/dimension substitute.",
+  "nameRackReviewBoundary": "Initial snapshot/navigation hypothesis is false by support snapshot readonly implementation and withdrawn. Earlier A5 width360 was consistent with real1600ms natural toast expiry and collection order; no unique timer-event cause asserted. New A5 first PNG is independently before/after289 with original notice. Pei before289/after360 is a transition, not claimed strict tight PNG. Last Lu/Yan360 are wide. Earlier A9/A10 eight measurements are all289.",
+  "wholeUnreviewedBoundary": {
+    "wholeResultOriginalPNGPathsAtCollection": 912,
+    "selectedCurrentWholePathsActuallyFreshOrStrictInherited": 11,
+    "otherWholePNGPathsNotClaimedReviewedByThisRecord": 901,
+    "extra9Location": "Source5 recovery/focus directories outsidewhole; nine actually reviewed uniquePNGs, not automatically applied to unviewed whole frames.",
+    "notClaimed": "No full912frame art or animation review, no overall game feel/human acceptance.",
+    "pathInventory": {
+      "path": "artifacts/goal-4/check-ta-03/analysis/source5-whole-unreviewed-paths.json",
+      "sha256": "2740f452b61ec11e09522c8d678d6f6cf7ecb076bdc8395ad6a5a135ea266c19",
+      "bytes": 146605
+    }
+  },
+  "deliveryObservationsNotCompatibilityTests": {
+    "normalPreview": "delivery-original-progress.jpg",
+    "isolatedDemo": "delivery-completed-manual.jpg",
+    "observation": "CHECK-TA-03-OBS-IAB-01: 原内置小窗演示实拍中，剑简底部状态与合简控件相交。只为交付观察；未调整尺寸或执行兼容测试，保原图，留M06最后。固定1440当前审阅与整体艺术认可分开。"
+  },
+  "overallArtAccepted": false,
+  "humanAccepted": false
+}

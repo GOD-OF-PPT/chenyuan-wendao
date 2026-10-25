@@ -1,0 +1,54 @@
+{
+  "format": "chenyuan-check-ta03-stage-check-readiness-independent-review",
+  "version": 1,
+  "recordedAt": "2026-10-25T00:56:57.036488+00:00",
+  "runtimeDigest": "df830bfbb87836ea9ab09fef64972ec2f2328ee80c930227421680b2c6f73a60",
+  "scope": "Read-only static review; no production/test edits or suite run by this reviewer",
+  "before": {
+    "path": "artifacts/goal-4/check-ta-03/ui-full-source5-stage-check.spec.ts.raw",
+    "bytes": 26913,
+    "sha256": "7ff6f7e27f1fe6781f3c93f6dc3a0f3d947f17629f57766b74386a9de240b088"
+  },
+  "after": {
+    "path": "web/e2e/stage-check.spec.ts",
+    "bytes": 27126,
+    "sha256": "04cfeff854fe7567e54c557e1757fa6f179ac99d0b0190ed8271a97a74f73b74"
+  },
+  "independentByteProof": {
+    "uniqueAddedSpanCount": 1,
+    "addedBytes": 213,
+    "strictInverseWholeFileByteExact": true,
+    "inverseSHA256": "7ff6f7e27f1fe6781f3c93f6dc3a0f3d947f17629f57766b74386a9de240b088"
+  },
+  "authorASTProofReviewed": {
+    "path": "artifacts/goal-4/check-ta-03/stage-check-source5-readiness-inverse.json",
+    "sha256": "f1bb3adf9973da7a4f9989363098633ef69d4c6d68c4949fc78c2ecb76d3ab32",
+    "parseDiagnostics": 0,
+    "onlyOneOriginalCallbackChanged": "'a completed battle retains its complete original strategy as read-only pages after the enemy is gone'",
+    "callbackExpressions": 16,
+    "allOtherCallbackTextsByteExact": true,
+    "meaning": "16 static callback expressions are not a new count of the20 expanded runtime declarations. Original whole-file inverse independently checked here; no AST suite or browser run by reviewer."
+  },
+  "reason": {
+    "actualTraceProof": "artifacts/goal-4/check-ta-03/source5-stage-check-runtime-ready-preterminal.json",
+    "sha256": "1fc382d867d1e1cea1b6860a66ad6b41dfd512a611c70e99c79f6995097e321b",
+    "observedBeforeOriginal3000": "Persisted status running but public data-running=false and no countdown.",
+    "observedAfterAdvance": "Only subsequently public same generation runtime true with3.0seconds/progress0; not evidence that an online3seconds ran without saving.",
+    "notClaimed": "No product/fee/clock/atomic/retry/performance fix or generic flaky label. Old full failure retained."
+  },
+  "judgment": "The two new public assertions repair the missing online-runtime readiness precondition of this one paused-virtual-clock test. They wait for original generation data-running=true and exact3.0seconds before the unchanged3000ms advance.",
+  "preserved": [
+    "original lawful driver/import fixture and beforeGame",
+    "original one explicit battle-auto-start and command/Activity",
+    "max9rounds and77MP authorisation",
+    "original3000ms plus stopped expectation",
+    "formal afterGame=advance(before,original.nextCommand) and enemy gone",
+    "all complete strategy pages/fulltext/18px/geometry/no-restart",
+    "all final Game/Activity read-only equality",
+    "original60/8/15 limits; no sleep/extra fastforward/helper change"
+  ],
+  "testRunStatus": "Current stage-check20 rerun owned by root still pending at review; do not label461 passed. Candidate441 unchanged full-pass plus20 current requires actual terminal raw and identity mapping.",
+  "mustFix": [],
+  "formalFilesChangedByReviewer": false,
+  "fullGameOrDBPayloadIncluded": false
+}
