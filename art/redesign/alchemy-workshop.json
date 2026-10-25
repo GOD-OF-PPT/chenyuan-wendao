@@ -64,8 +64,8 @@
     },
     {
       "path": "web/src/alchemy-workshop.css",
-      "bytes": 7859,
-      "sha256": "6576e6818c7f723e6a936b164c16a1b20f80c18d66968521bf77e825d443bb4e"
+      "bytes": 7860,
+      "sha256": "03f0762308d555a19518efab895633cad212c76003f6a719dfe6c0d15cfa2ace"
     },
     {
       "path": "web/src/alchemy-feedback.ts",

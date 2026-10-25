@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "web/src/LearningPlanner.vue",
-      "bytes": 15253,
-      "sha256": "db593c51bb282491386a631c26de74f97ee274fdb1d3bf91a65a38e8bb9801e2"
+      "bytes": 16843,
+      "sha256": "1e797a46c098ffae95134c52cf22cc0dc435eca6a1a669befaec651fd342d914"
     },
     {
       "path": "web/src/MarketPlanner.vue",

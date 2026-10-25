@@ -125,8 +125,8 @@
     },
     {
       "path": "web/src/catalogue-art.css",
-      "bytes": 11495,
-      "sha256": "c9e745660c2cc04e0b096d59a186ff5a10148fae2c01bdfb6166bece42f64aad"
+      "bytes": 11512,
+      "sha256": "f6eb5db42fcae9eca3f74e8599183bef52176e2beb48a76e461dc739e181b960"
     }
   ],
   "bindings": {

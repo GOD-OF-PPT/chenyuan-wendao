@@ -1,0 +1,27 @@
+{
+  "task": "CHECK-TA-03",
+  "readAt": "2026-10-25",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "title": "Clarity in League",
+      "published": "2021-03-12",
+      "read": "Main text on gameplay communication, hierarchy, visual noise, silhouettes and direction; embedded media not viewed.",
+      "application": "Completed manual states must communicate their actual status and current useful decision. Repeating the original start form and cost preview competes with that decision. Object recognition and animation still need actual pixel review.",
+      "limits": "Competitive-game design principles, not idle-game pacing, a prescribed UI layout, or user acceptance."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/109",
+      "title": "Xbox Accessibility Guideline 109: Objective clarity",
+      "read": "Goal, overview and implementation text on current objectives, progress and separate completed records; examples read as descriptions, media not played.",
+      "application": "Separate already learned insight from still actionable study plans. Show the actual present benefit and a clearly read-only route to other scrolls without silently travelling or executing.",
+      "limits": "Project-derived completion behavior; no certification, competitor playtest, timing or numerical recommendation."
+    }
+  ],
+  "reuse": [
+    {"workflow": "Game UI and pixel review", "evidence": "TA07/08/09 and this comprehensive check, 2026-10-24 to 25", "frequencyConfidence": "Repeated / high", "decision": "Reuse game-studio, game-ui-frontend and game-playtest; no duplicate skill or custom agent."},
+    {"workflow": "Source/frozen/HTTP identity and protected changes", "evidence": "Existing source-identity and candidate tools plus TA07/08/09", "frequencyConfidence": "Repeated / high", "decision": "Reuse and adapt task-local evidence runners; no duplicate automation."}
+  ],
+  "artAcceptance": false,
+  "humanAcceptance": false
+}

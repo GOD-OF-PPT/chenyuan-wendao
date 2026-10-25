@@ -17,8 +17,8 @@
   "files": [
     {
       "path": "web/src/JadeStudyScene.vue",
-      "bytes": 4782,
-      "sha256": "b4b448fd92b743b1232cb8f2251ac3173e705ebd1ff37a639fc187d302b4bed9"
+      "bytes": 4896,
+      "sha256": "4717b4da0358998eb8e84b01650fcfc1db1173b3dd83ae52fb8390bc25fcd81d"
     },
     {
       "path": "web/src/RelicAtelier.vue",
@@ -37,8 +37,8 @@
     },
     {
       "path": "web/src/art03-equipment.css",
-      "bytes": 18365,
-      "sha256": "773def444d963c2336dc838e6f7b7c408c237e5a404a438b8933405fd640d279"
+      "bytes": 19422,
+      "sha256": "eec2a94511a84248c0c4af1a09fa8ceb064ded17bc749adefaccc2d8817a5084"
     }
   ],
   "assets": [
