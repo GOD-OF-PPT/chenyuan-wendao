@@ -1,4 +1,4 @@
-import {openSourceSettings,closeSourceSettings,openProductionIntent,closeProductionSettings} from './stage-support';
+import {openSourceSettings,closeSourceSettings,openProductionIntent,closeProductionSettings,selectRelic} from './stage-support';
 import {test,expect,type Page,type TestInfo,type Locator} from '@playwright/test';
 import {snapshot,activitySnapshot,useJourneyClock,finishJourneyClock,revealPaged} from './support';
 import {driver,prepareTrial} from '../../tests/full-route.mjs';
@@ -18,9 +18,9 @@ test('a locked mortal furnace has a readable unlit scene and its complete catalo
 test('the selected forged relic is the visible object and ownership stays distinct from its equipped slot',async({page},info)=>{
  const d=driver();d.realm();d.realm();d.resource('jade',3);d.resource('core',1);d.funds(140);d.go('cave');d.doAction({type:'FORGE',relic:'frost_sword'});const before=await seed(page,d.game);await page.getByTestId('hub-relics').click();
  for(const id of ['frost_sword','jade_seal','soul_lamp','cloud_mirror']){
-  await revealPaged(page,'forge-'+id,'forging-planner');await page.getByTestId('forge-'+id).click();const object=page.getByTestId('production-relic-object');const asset=object.locator('[data-art-path]');await expect(asset).toHaveAttribute('data-art-path','art/v2/equipment/'+id+'-v1.webp');await expect(asset).toHaveAttribute('data-art-state','ready');const image=asset.locator('img');await expect(image).toHaveAttribute('src',new URL('/art/v2/equipment/'+id+'-v1.webp',page.url()).href);const box=await image.boundingBox();expect(box!.width).toBeGreaterThanOrEqual(100);expect(box!.height).toBeGreaterThanOrEqual(100);await expect(page.getByTestId('production-relic-state')).toContainText(id==='frost_sword'?'尚未装备':'尚未炼成');if(id==='frost_sword')await expect(page.getByTestId('production-fire')).toHaveText('器纹已凝');expect(await snapshot(page)).toEqual(before);await shot(page,info,'relic-object-'+id);
+  await selectRelic(page,id);const object=page.getByTestId('production-relic-object');const asset=object.locator('[data-art-path]'),expectedPath='art/v2/equipment/'+id+(before.ownedRelics.includes(id)?'':'-blank')+'-v1.webp';await expect(asset).toHaveCount(1);await expect(asset).toHaveAttribute('data-art-path',expectedPath);await expect(asset).toHaveAttribute('data-art-state','ready');const image=asset.locator('img');await expect(image).toHaveAttribute('src',new URL('/'+expectedPath,page.url()).href);const box=await image.boundingBox();expect(box!.width).toBeGreaterThanOrEqual(100);expect(box!.height).toBeGreaterThanOrEqual(100);await expect(page.getByTestId('production-relic-state')).toContainText(id==='frost_sword'?'尚未装备':'尚未炼成');if(id==='frost_sword')await expect(page.getByTestId('production-fire')).toHaveText('器纹已凝');expect(await snapshot(page)).toEqual(before);await shot(page,info,'relic-object-'+id);
  }
- await page.getByTestId('forge-frost_sword').click();await hit(page.getByTestId('equip-relic-frost_sword'));await expect(page.getByTestId('equip-relic-frost_sword')).toBeEnabled();expect((await snapshot(page)).loadout.relic).toBeNull();expect(await activitySnapshot(page)).toBeNull();
+ await selectRelic(page,"frost_sword");await hit(page.getByTestId('equip-relic-frost_sword'));await expect(page.getByTestId('equip-relic-frost_sword')).toBeEnabled();expect((await snapshot(page)).loadout.relic).toBeNull();expect(await activitySnapshot(page)).toBeNull();
 });
 
 

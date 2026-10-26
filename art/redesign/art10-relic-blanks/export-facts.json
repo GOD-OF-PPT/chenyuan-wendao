@@ -1,0 +1,691 @@
+{
+  "format": "chenyuan-art10-export-facts",
+  "version": 1,
+  "producer": {
+    "path": "art/tools/export_art10_blanks.py",
+    "bytes": 8264,
+    "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+  },
+  "decoder": "Pillow",
+  "decoderVersion": "12.3.0",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "512",
+    "-metadata",
+    "none"
+  ],
+  "alignment": {
+    "method": "uniform-contain-alpha16-bottom-center",
+    "threshold": 16,
+    "resampling": "Pillow BICUBIC inverse affine",
+    "width": 512,
+    "height": 512,
+    "nonuniformScale": false,
+    "cropPaintedBody": false
+  },
+  "assets": [
+    {
+      "id": "frost_sword",
+      "source": {
+        "path": "art/redesign/art10-relic-blanks/frost_sword-blank-v1.png",
+        "bytes": 256960,
+        "sha256": "f4dc96341831c965bf7fe4d98cf7ca28ed931fcd9a06bbb96dc2085ba6ec2b56",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1501927,
+          "solidPixels": 51386,
+          "intermediatePixels": 19203,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          55,
+          19,
+          1210,
+          1206
+        ],
+        "alphaBBox16": [
+          315,
+          297,
+          985,
+          999
+        ],
+        "rgbaSHA256": "88c0e73317e1419720bab753999ee11236eea6d03e34997f2968d0e97523175f"
+      },
+      "reference": {
+        "source": {
+          "path": "art/redesign/art03-objects/frost_sword-v2.png",
+          "bytes": 265325,
+          "sha256": "cf7036014cf3bb96583ebfb83afd94ee8d0269dd82c72699336f203da8e31d85"
+        },
+        "runtime": {
+          "path": "web/public/art/v2/equipment/frost_sword-v1.webp",
+          "bytes": 10960,
+          "sha256": "0054af06284f62b516d5be2802dbd69fecb4cb31ee8d56f0a7d895568df79943",
+          "dimensions": {
+            "width": 512,
+            "height": 512
+          },
+          "format": "webp",
+          "mode": "RGBA",
+          "alpha": true,
+          "alphaProof": {
+            "transparentPixels": 251043,
+            "solidPixels": 7971,
+            "intermediatePixels": 3130,
+            "min": 0,
+            "max": 254
+          },
+          "alphaBBox1": [
+            125,
+            120,
+            402,
+            408
+          ],
+          "alphaBBox16": [
+            128,
+            122,
+            401,
+            407
+          ],
+          "rgbaSHA256": "da1a8ae3ee540102f66323e6116fcb51bb1e80a13e3822ec3694e7a7a7a4c1fc"
+        }
+      },
+      "prompt": {
+        "path": "art/redesign/art10-relic-blanks/frost_sword-blank-v1-prompt.json",
+        "bytes": 2139,
+        "sha256": "5c5fe8aebf48ab4f9b28cfc723c849c78f104fd23ca3d1000f37aa5e80943f58",
+        "literalSHA256": "7abe13ca2bfd55fef270139ab5d3da1745b2ad3784453c6a4003bbf7187fb668"
+      },
+      "audit": {
+        "path": "art/redesign/art10-relic-blanks/receipts/frost_sword-blank-v1.json",
+        "bytes": 1547,
+        "sha256": "b1591030c4bc2ef2f5bd2729d6ff264af3aba6ede76075e7ddba9a5cda524f68"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/frost_sword-blank-v1.webp",
+        "bytes": 11408,
+        "sha256": "e39779f05eddd3f5caa279deb2b2e80b97062b195c6d1e758ee82186121b098b",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 251100,
+          "solidPixels": 8540,
+          "intermediatePixels": 2504,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          127,
+          120,
+          466,
+          435
+        ],
+        "alphaBBox16": [
+          128,
+          122,
+          400,
+          407
+        ],
+        "rgbaSHA256": "c867499f7640b9364ae4abbb6952dd878f85f07847bb7ecc340e3fe61dd11bbc"
+      },
+      "transform": {
+        "scale": 0.405982905982906,
+        "translateX": 0.6111111111110858,
+        "translateY": 1.4230769230769056,
+        "targetAlphaBBox16": [
+          128,
+          122,
+          401,
+          407
+        ],
+        "projectedAlphaBBox1": [
+          22.940170940170916,
+          9.136752136752119,
+          491.8504273504273,
+          491.03846153846155
+        ],
+        "projectedAlphaBBox16": [
+          128.49572649572647,
+          121.99999999999999,
+          400.5042735042735,
+          407.0
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox16": [
+          128,
+          122,
+          400,
+          407
+        ],
+        "alpha16ResidualToReference": [
+          0,
+          0,
+          -1,
+          0
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 11408,
+        "firstSHA256": "e39779f05eddd3f5caa279deb2b2e80b97062b195c6d1e758ee82186121b098b",
+        "secondBytes": 11408,
+        "secondSHA256": "e39779f05eddd3f5caa279deb2b2e80b97062b195c6d1e758ee82186121b098b",
+        "bytesEqual": true,
+        "sourceUnchanged": true,
+        "referenceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "jade_seal",
+      "source": {
+        "path": "art/redesign/art10-relic-blanks/jade_seal-blank-v1.png",
+        "bytes": 2120414,
+        "sha256": "6b766842fcaf622e01451e0662920ff3b40cbee16b9f0ace891e35c244589fa3",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 775867,
+          "solidPixels": 765731,
+          "intermediatePixels": 30918,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          21,
+          1238,
+          1254
+        ],
+        "alphaBBox16": [
+          160,
+          47,
+          1106,
+          1219
+        ],
+        "rgbaSHA256": "5a3e2857d6860003e77417a8f164d207a8cd21839841d6dbe969b962ac310416"
+      },
+      "reference": {
+        "source": {
+          "path": "art/redesign/art03-objects/jade_seal-v1.png",
+          "bytes": 1985699,
+          "sha256": "7253c56040d0e2c4fd8888896e85c0c1999735479f4672fdf0ccfb4e2fd04b5c"
+        },
+        "runtime": {
+          "path": "web/public/art/v2/equipment/jade_seal-v1.webp",
+          "bytes": 56116,
+          "sha256": "81aad3db8a19ad6a39b0e54a96254d6fcc94164bdcbbbb87bd0e3f48ef43c49c",
+          "dimensions": {
+            "width": 512,
+            "height": 512
+          },
+          "format": "webp",
+          "mode": "RGBA",
+          "alpha": true,
+          "alphaProof": {
+            "transparentPixels": 129591,
+            "solidPixels": 125489,
+            "intermediatePixels": 7064,
+            "min": 0,
+            "max": 254
+          },
+          "alphaBBox1": [
+            0,
+            18,
+            511,
+            506
+          ],
+          "alphaBBox16": [
+            66,
+            19,
+            449,
+            497
+          ],
+          "rgbaSHA256": "5e867f1000c9c0bc77f591dba46b9d1ea0242cfb20edf8e435887cdb6ba4f559"
+        }
+      },
+      "prompt": {
+        "path": "art/redesign/art10-relic-blanks/jade_seal-blank-v1-prompt.json",
+        "bytes": 2160,
+        "sha256": "178de92ad2a1a9817944745f6e0109383a0987b5e8dc0a30e83c42bec0ce19bd",
+        "literalSHA256": "09357139b20bc45132ec6c25143600d10146cf8717b0081c95ace7a8cae0c5ec"
+      },
+      "audit": {
+        "path": "art/redesign/art10-relic-blanks/receipts/jade_seal-blank-v1.json",
+        "bytes": 1541,
+        "sha256": "7ef2962316aa1c5fc33967232b9cde4678466d01e33d3e2bd179f0e0877e4b2f"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/jade_seal-blank-v1.webp",
+        "bytes": 62466,
+        "sha256": "cda83c60d3945d041a6848cf1bb298f3e04063ed721ac46194a25a8660e8cef8",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 132672,
+          "solidPixels": 125510,
+          "intermediatePixels": 3962,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          1,
+          20,
+          480,
+          507
+        ],
+        "alphaBBox16": [
+          66,
+          22,
+          449,
+          497
+        ],
+        "rgbaSHA256": "8ee6c415cddf19be4139818e8aca801eb50817444209cc84a46fb8a101baa65a"
+      },
+      "transform": {
+        "scale": 0.4048625792811839,
+        "translateX": 1.2219873150106082,
+        "translateY": 3.4725158562368392,
+        "targetAlphaBBox16": [
+          66,
+          19,
+          449,
+          497
+        ],
+        "projectedAlphaBBox1": [
+          1.2219873150106082,
+          11.974630021141701,
+          502.4418604651163,
+          511.17019027484145
+        ],
+        "projectedAlphaBBox16": [
+          66.00000000000003,
+          22.501057082452483,
+          449.0,
+          497.0
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox16": [
+          66,
+          22,
+          449,
+          497
+        ],
+        "alpha16ResidualToReference": [
+          0,
+          3,
+          0,
+          0
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 62466,
+        "firstSHA256": "cda83c60d3945d041a6848cf1bb298f3e04063ed721ac46194a25a8660e8cef8",
+        "secondBytes": 62466,
+        "secondSHA256": "cda83c60d3945d041a6848cf1bb298f3e04063ed721ac46194a25a8660e8cef8",
+        "bytesEqual": true,
+        "sourceUnchanged": true,
+        "referenceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "soul_lamp",
+      "source": {
+        "path": "art/redesign/art10-relic-blanks/soul_lamp-blank-v1.png",
+        "bytes": 1282657,
+        "sha256": "fd534f0d5dffb08914564976b158b1ab343dcdfaa70afae023f7606b32208af2",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1017381,
+          "solidPixels": 509404,
+          "intermediatePixels": 45731,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          27,
+          16,
+          1242,
+          1200
+        ],
+        "alphaBBox16": [
+          249,
+          21,
+          1017,
+          1187
+        ],
+        "rgbaSHA256": "423492bae3fbf76ecc419a831a8c0c194d3c6511def0b02e48222bbc5f655fd3"
+      },
+      "reference": {
+        "source": {
+          "path": "art/redesign/art03-objects/soul_lamp-v1.png",
+          "bytes": 1359219,
+          "sha256": "57029fb4cda9e57050640e6d338056d92768506d7d6299d9e95d8ca4dfaf17fd"
+        },
+        "runtime": {
+          "path": "web/public/art/v2/equipment/soul_lamp-v1.webp",
+          "bytes": 42144,
+          "sha256": "d0345b92c5c191f50b831ffdeec27a591785b1948398948daee06df799dff1cc",
+          "dimensions": {
+            "width": 512,
+            "height": 512
+          },
+          "format": "webp",
+          "mode": "RGBA",
+          "alpha": true,
+          "alphaProof": {
+            "transparentPixels": 167965,
+            "solidPixels": 84753,
+            "intermediatePixels": 9426,
+            "min": 0,
+            "max": 254
+          },
+          "alphaBBox1": [
+            29,
+            6,
+            471,
+            503
+          ],
+          "alphaBBox16": [
+            99,
+            8,
+            415,
+            484
+          ],
+          "rgbaSHA256": "3ee17b56a7605e88aa86dd643c2af4678764e73aedc5294e8828a0c7982fad7f"
+        }
+      },
+      "prompt": {
+        "path": "art/redesign/art10-relic-blanks/soul_lamp-blank-v1-prompt.json",
+        "bytes": 2176,
+        "sha256": "0ba221b5c99b38ca608fb09eacd127f85fd3755e244e863f6ed62037899195fa",
+        "literalSHA256": "958e530d46eb70cb0112ba40ac0e515962aaac9d2e9ad3516a956f3df830bbd5"
+      },
+      "audit": {
+        "path": "art/redesign/art10-relic-blanks/receipts/soul_lamp-blank-v1.json",
+        "bytes": 1541,
+        "sha256": "1c6675349bdd60349dac540edf07e6ada6b0796c588472da58f6d83faf2867d8"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/soul_lamp-blank-v1.webp",
+        "bytes": 46774,
+        "sha256": "b1b0b54c4747c3c05a16c3349f8a43e2187c642e3b78d76ad80f3517607041d0",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 170801,
+          "solidPixels": 84804,
+          "intermediatePixels": 6539,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          34,
+          6,
+          488,
+          488
+        ],
+        "alphaBBox16": [
+          100,
+          8,
+          414,
+          484
+        ],
+        "rgbaSHA256": "0240276f13615f9aa226520e8ab12c3a7687b4aca393db670d25b8e0d05688c7"
+      },
+      "transform": {
+        "scale": 0.40823327615780447,
+        "translateX": -1.4116638078902497,
+        "translateY": -0.5728987993139185,
+        "targetAlphaBBox16": [
+          99,
+          8,
+          415,
+          484
+        ],
+        "projectedAlphaBBox1": [
+          9.610634648370471,
+          5.958833619210953,
+          505.6140651801029,
+          489.30703259005145
+        ],
+        "projectedAlphaBBox16": [
+          100.23842195540307,
+          7.999999999999975,
+          413.7615780445969,
+          484.0
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox16": [
+          100,
+          8,
+          414,
+          484
+        ],
+        "alpha16ResidualToReference": [
+          1,
+          0,
+          -1,
+          0
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 46774,
+        "firstSHA256": "b1b0b54c4747c3c05a16c3349f8a43e2187c642e3b78d76ad80f3517607041d0",
+        "secondBytes": 46774,
+        "secondSHA256": "b1b0b54c4747c3c05a16c3349f8a43e2187c642e3b78d76ad80f3517607041d0",
+        "bytesEqual": true,
+        "sourceUnchanged": true,
+        "referenceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "cloud_mirror",
+      "source": {
+        "path": "art/redesign/art10-relic-blanks/cloud_mirror-blank-v1.png",
+        "bytes": 1303911,
+        "sha256": "cb13d9b5e37ce9c4bfe206b4b9ae20ae8212b2b5465b3a62db0d5dde9d7b3980",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1086014,
+          "solidPixels": 456566,
+          "intermediatePixels": 29936,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          41,
+          27,
+          1240,
+          1254
+        ],
+        "alphaBBox16": [
+          206,
+          30,
+          1059,
+          1236
+        ],
+        "rgbaSHA256": "88776740318484077f29fca9c6742359e5a8f638a131b52a62985dfb9fad9482"
+      },
+      "reference": {
+        "source": {
+          "path": "art/redesign/art03-objects/cloud_mirror-v1.png",
+          "bytes": 1055777,
+          "sha256": "a7249e6ebd5e69f910b3191dd3cc8085a383f180a4d7fcf8027d401d9704eb50"
+        },
+        "runtime": {
+          "path": "web/public/art/v2/equipment/cloud_mirror-v1.webp",
+          "bytes": 27650,
+          "sha256": "8a8066224ee8487a226dd63ae27f8fd1760a08214cdf93826d8e8d8d7d77a008",
+          "dimensions": {
+            "width": 512,
+            "height": 512
+          },
+          "format": "webp",
+          "mode": "RGBA",
+          "alpha": true,
+          "alphaProof": {
+            "transparentPixels": 192038,
+            "solidPixels": 63820,
+            "intermediatePixels": 6286,
+            "min": 0,
+            "max": 254
+          },
+          "alphaBBox1": [
+            63,
+            7,
+            476,
+            492
+          ],
+          "alphaBBox16": [
+            95,
+            29,
+            415,
+            489
+          ],
+          "rgbaSHA256": "4e04e2670a653ccd3508a4bea04a44f19144bcddce85c55ecd74ad86e35a18ab"
+        }
+      },
+      "prompt": {
+        "path": "art/redesign/art10-relic-blanks/cloud_mirror-blank-v1-prompt.json",
+        "bytes": 2199,
+        "sha256": "44d9e9223c811d76831e53f93a064d0fb41c0e50629b2f788432b939134e5566",
+        "literalSHA256": "1011891e610b2442b8590dba3a8b6385a0e5f1d177b8ee032afe75f5a16fbb63"
+      },
+      "audit": {
+        "path": "art/redesign/art10-relic-blanks/receipts/cloud_mirror-blank-v1.json",
+        "bytes": 1550,
+        "sha256": "30472798692e37b425d415458b49d91ff40a107066f90feffec170a3106db105"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/equipment/cloud_mirror-blank-v1.webp",
+        "bytes": 36314,
+        "sha256": "8b94fa845c1384380d87f7ebb4ddbb5e5d1a21e09c55905f9051b46576418270",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 194483,
+          "solidPixels": 64243,
+          "intermediatePixels": 3418,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          35,
+          36,
+          478,
+          492
+        ],
+        "alphaBBox16": [
+          95,
+          37,
+          415,
+          489
+        ],
+        "rgbaSHA256": "276266d4d491d11b91f7d7069b156a08e758e0e04ea7a1f626d8cc2b35a54af1"
+      },
+      "transform": {
+        "scale": 0.37514654161781946,
+        "translateX": 17.71981242672919,
+        "translateY": 25.31887456037515,
+        "targetAlphaBBox16": [
+          95,
+          29,
+          415,
+          489
+        ],
+        "projectedAlphaBBox1": [
+          33.10082063305979,
+          35.44783118405628,
+          482.90152403282536,
+          495.75263774912077
+        ],
+        "projectedAlphaBBox16": [
+          95.0,
+          36.57327080890973,
+          415.0,
+          489.0
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox16": [
+          95,
+          37,
+          415,
+          489
+        ],
+        "alpha16ResidualToReference": [
+          0,
+          8,
+          0,
+          0
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 36314,
+        "firstSHA256": "8b94fa845c1384380d87f7ebb4ddbb5e5d1a21e09c55905f9051b46576418270",
+        "secondBytes": 36314,
+        "secondSHA256": "8b94fa845c1384380d87f7ebb4ddbb5e5d1a21e09c55905f9051b46576418270",
+        "bytesEqual": true,
+        "sourceUnchanged": true,
+        "referenceUnchanged": true
+      },
+      "visualAcceptance": false
+    }
+  ],
+  "scope": "Actual decode/alpha/alignment/re-export facts; not pixel or user acceptance",
+  "userAcceptance": false
+}

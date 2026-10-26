@@ -1,0 +1,325 @@
+{
+  "format": "chenyuan-art10-full-assets-verification",
+  "version": 1,
+  "recordedAt": "2026-10-25T10:38:29.249206+00:00",
+  "status": "Actual SOURCE6 one complete 387 and following positive passed; no additional new24 or matrix expansion.",
+  "runtimeDigest": "c2e9c18daf7ceccb905f59b40272f9b3905677128fe0c0abd902babef8f653b3",
+  "runtimeSources": 263,
+  "build": {
+    "path": "artifacts/goal-4/art10/build-source6.json",
+    "bytes": 40110,
+    "sha256": "009011911254f9d053cebffde3f439058af039810d390f37d1867ec66a5a2442",
+    "payloadFiles": 73,
+    "payloadBytes": 8512720,
+    "existingRootBuildNotReviewerBuild": true
+  },
+  "source5to6": {
+    "previousSourceDigest": "865c83aea47c27e75163df9eeff17e42572874b43d4b73921bfb3326d5f7b759",
+    "changedRuntimePaths": [
+      "web/src/ta09-equipment.css"
+    ],
+    "other262RuntimePathsByteExact": true,
+    "changeDescriptionFromRoot": "Current TA09 CSS adds height:100% and stretching for real error/work object layout; source5 and6 old/new9 targeted UI each9 passed by parent, not rerun or certified by asset reviewer."
+  },
+  "source4to6": {
+    "previousSourceDigest": "6fb3e014c1a6e2be01b3a37c0f1f2c9807f9b1412044fa9474d288f39f7548a7",
+    "changedRuntimePaths": [
+      "web/src/LearningPlanner.vue",
+      "web/src/ta09-equipment.css"
+    ],
+    "other261RuntimePathsByteExact": true,
+    "necessaryRepairsNotNewRules": "LearningPlanner template and TA09 layout CSS only; rules, Store, database, cycle and award proof not changed in this two-path difference."
+  },
+  "execution": {
+    "ownedExecSession": 60363,
+    "terminalExit": 0,
+    "declared387UniqueBeforeRun": 387,
+    "old363PlusNew24Included": true,
+    "actual387": 387,
+    "durationSeconds": 200.962,
+    "rows": [
+      {
+        "name": "tests",
+        "commandArgs": [
+          "art/tools/test_inventory.py"
+        ],
+        "began": "2026-10-25T10:11:57.440Z",
+        "ended": "2026-10-25T10:15:18.824Z",
+        "exit": 0,
+        "error": null,
+        "expectedTests": 387,
+        "actualTests": 387,
+        "durationSeconds": 200.962,
+        "unittestOK": true,
+        "log": "artifacts/goal-4/art10/guard-full-source6-tests.log",
+        "sha256": "ebb8f6deb24fc3b8a1f2ccaa28fc73711228b6e002c30677cb6b10186d370041"
+      },
+      {
+        "name": "positive",
+        "commandArgs": [
+          "art/tools/check_inventory.py"
+        ],
+        "began": "2026-10-25T10:15:18.828Z",
+        "ended": "2026-10-25T10:15:19.885Z",
+        "exit": 0,
+        "error": null,
+        "expectedTests": null,
+        "actualTests": null,
+        "durationSeconds": null,
+        "unittestOK": null,
+        "log": "artifacts/goal-4/art10/guard-full-source6-positive.log",
+        "sha256": "10657b8353c91c8a5f1b14fc0d521d80c0a3ee97b675ffbb0e474d438336510f"
+      }
+    ],
+    "noRerunAfterPass": true,
+    "noAdditionalNew24Run": true,
+    "rawIdentity": "Unittest full file reports Ran 387 / OK; declaration supplies unique method identities and the frozen test-file hash. No invented per-method verbose result trace.",
+    "notPerformanceAcceptance": "200.962s is recorded verification duration only; no game-performance, host-cause or compatibility conclusion."
+  },
+  "strictBoundary": {
+    "inputs": 791,
+    "preparedSource5Cohort787Retained": true,
+    "source4Cohort783Retained": true,
+    "source3Cohort779Retained": true,
+    "source2Cohort775Retained": true,
+    "historical652Retained": true,
+    "fourNewPhasePaths": [
+      "artifacts/goal-4/art10/build-source6.json",
+      "artifacts/goal-4/art10/guard-full-source6-declared.json",
+      "artifacts/goal-4/art10/guard-source6-input-paths.json",
+      "artifacts/goal-4/art10/run-guard-source6.mjs"
+    ],
+    "onlyE2eInputs": [
+      "web/e2e/economy.spec.ts",
+      "web/e2e/growth.spec.ts",
+      "web/e2e/interface.spec.ts"
+    ],
+    "public10Generated1": [
+      "web/.generated/demo-meta.ts",
+      "web/public/demo-nodes/battle-sword.json",
+      "web/public/demo-nodes/battle-talisman.json",
+      "web/public/demo-nodes/causal-help.json",
+      "web/public/demo-nodes/causal-trade.json",
+      "web/public/demo-nodes/ending-sword.json",
+      "web/public/demo-nodes/ending-talisman.json",
+      "web/public/demo-nodes/manifest.json",
+      "web/public/demo-nodes/opening.json",
+      "web/public/demo-nodes/trial-sword.json",
+      "web/public/demo-nodes/trial-talisman.json"
+    ],
+    "mutableDocsFrozenWithinRun": [
+      "AGENTS.md",
+      "goal-4/plan.md",
+      "goal-4/tasks.md"
+    ],
+    "preActuallyBeforeCommand": true,
+    "postActuallyAfterTerminal": true,
+    "preRecordedAt": "2026-10-25T10:11:56.823Z",
+    "postRecordedAt": "2026-10-25T10:15:20.095Z",
+    "all791SHA256Exact": true,
+    "all263RuntimeSHA256Exact": true,
+    "runtimeMatchesFrozenBuild": true,
+    "crossPhaseCaveat": "Strict equality is per run. Authorised producer CSS/template and ledger hashes differ across phases; no historic reports are relabelled SOURCE6. Old67 specs and stage-support are not consumed by this guard cohort."
+  },
+  "positiveResult": {
+    "format": "chenyuan-art-inventory",
+    "verifiedFiles": 144,
+    "legacyVerifiedFiles": 24,
+    "legacyProductionAssets": 20,
+    "redesignVerifiedFiles": 19,
+    "redesignProductionAssets": 18,
+    "characterBattleVerifiedFiles": 30,
+    "characterBattleProductionAssets": 30,
+    "desktopUIVerifiedFiles": 2,
+    "desktopUIProductionAssets": 2,
+    "statuses": {
+      "reference": 49,
+      "placeholder": 1,
+      "missing": 2,
+      "production": 94
+    },
+    "productionAssets": 94,
+    "singleScreenNativeBytes": 10876,
+    "gameMenuNativeBytes": 16149,
+    "feedbackSkipNativeBytes": 2263,
+    "idleNativeBytes": 21485,
+    "sourceNativeBytes": 10995,
+    "productionNativeBytes": 24267,
+    "preparationNativeBytes": 58309,
+    "adventureNativeBytes": 43962,
+    "stageR1NativeBytes": 17987,
+    "stageR2NativeBytes": 11718,
+    "stageR3NativeBytes": 16828,
+    "stageR4NativeBytes": 13962,
+    "idleTradeoffNativeBytes": 29756,
+    "localLoadingNativeBytes": 1825,
+    "activityHistoryNativeBytes": 7816,
+    "alchemyWorkshopNativeBytes": 18776,
+    "adventureObjectNativeBytes": 35711,
+    "equipmentObjectNativeBytes": 44148,
+    "supplyObjectNativeBytes": 32396,
+    "narrativeObjectNativeBytes": 27099,
+    "cultivationObjectNativeBytes": 44865,
+    "ta07NativeBytes": 31083,
+    "ta08NativeBytes": 41373,
+    "ta09NativeBytes": 28779,
+    "art10NativeBytes": 11985,
+    "scope": "Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance."
+  },
+  "budgets": {
+    "ART03": [
+      44148,
+      45000
+    ],
+    "preparation": [
+      58309,
+      60000
+    ],
+    "TA09": [
+      28779,
+      30000
+    ],
+    "ART10CSS": [
+      11985,
+      12000
+    ],
+    "fourBlankRastersTotal": [
+      156962,
+      640000
+    ],
+    "allOriginalCapsUnraised": true
+  },
+  "originalFailuresPreserved": [
+    {
+      "path": "artifacts/goal-4/art10/assets-new24.log",
+      "sha256": "f65a91ba23a4ecaae67c07f1c2c7d0ad5af9275df39f3e5b24c08ecee0ad8edb"
+    },
+    {
+      "path": "artifacts/goal-4/art10/assets-new24-before.json",
+      "sha256": "7cc3bd27d64a7c97106a023073db4c8f8ba61bd33b314577c33546572ef536d4"
+    },
+    {
+      "path": "artifacts/goal-4/art10/assets-new24-after.json",
+      "sha256": "508c666df38b2b05a8ee4d42264d7d0b20bfb7ac60df810df17cd9ef455a07ac"
+    },
+    {
+      "path": "artifacts/goal-4/art10/old-ta09-consumer-red-1.json",
+      "sha256": "624a30a5d8a0d34d998bf06841b400841489bc1fd4bff6fbbffd74a7c2743ac6"
+    },
+    {
+      "path": "artifacts/goal-4/art10/old-ta09-consumer-red-2.json",
+      "sha256": "64d6b2893766c5687f2c75f5c271f51394903027ea4b29d0f08cd438ff905704"
+    },
+    {
+      "path": "artifacts/goal-4/art10/old-ta09-consumer-red-3.json",
+      "sha256": "909863b200d934800fd59c5d5ef242d7d51dca47bf9060dc3f70d8921b63b9b0"
+    },
+    {
+      "path": "artifacts/goal-4/art10/old-ta09-consumer-red-4.json",
+      "sha256": "a59d9460b99e87ddbfe5e56110ef81ac4fc3c33e94fd3d5e31005089c280b9fd"
+    },
+    {
+      "path": "artifacts/goal-4/art10/cap-negative-repair-inverse.json",
+      "sha256": "fa8817e598d6421639c1614fe5bf5e4d5c4244f9479c26eb7fb8288a2802e076"
+    }
+  ],
+  "priorExecutedFullRuns": [
+    {
+      "path": "artifacts/goal-4/art10/guard-full-verification-source2.json",
+      "bytes": 10340,
+      "sha256": "6166cd88d433f5f47f89a9be7095e44e86e01013762f8bd4d87d130a2bb56c39",
+      "originalSourceDigest": "0c196f45bad8356b519d1f640c6e49f6c71865c4c3630099a65cfb709a086318"
+    },
+    {
+      "path": "artifacts/goal-4/art10/guard-full-verification-source3.json",
+      "bytes": 9799,
+      "sha256": "37de78cc50fcf6d5e7e7a1b323ada1dd8f2e122e93d3b21d7b7ccc24df18e954",
+      "originalSourceDigest": "618be44b995aa705f93825babad9698537705b8089b3dfec54553169568e35aa"
+    },
+    {
+      "path": "artifacts/goal-4/art10/guard-full-verification-source4.json",
+      "bytes": 10441,
+      "sha256": "317def7cce13997628b6647904198e9c09f89f48ea91471b235493c56255302b",
+      "originalSourceDigest": "6fb3e014c1a6e2be01b3a37c0f1f2c9807f9b1412044fa9474d288f39f7548a7"
+    }
+  ],
+  "source5PreparationOnly": {
+    "path": "artifacts/goal-4/art10/guard-source5-preparation.json",
+    "bytes": 38922,
+    "sha256": "84d2b9ba993072cebc553b8546e1565ba18317da84f8b4e378f582d6d9e2fd95",
+    "status": "Prepared 787 paths, runner and declaration only. No SOURCE5 full387/positive command or pre/post execution; never reported as passed."
+  },
+  "assetFacts": {
+    "path": "artifacts/goal-4/art10/assets-safe-summary.json",
+    "bytes": 10692,
+    "sha256": "7591b785b75ad08e6b333512de4b690be2fd8825cb65643503c2d97173c9ff96",
+    "newRuntimeAssets": 4,
+    "totalRuntimeBytes": 156962,
+    "sourceOriginalsAndCurrentFourFinishedReferencesRetained": true,
+    "actualDecodeAndDoubleExportRecordedSeparately": true
+  },
+  "scopeBoundary": "One actual current full387 includes the new24 and all prior363; not 24 plus an old-report composition. Production94=previous90+4; placeholder1 and missing2 remain. Hash/header/provenance/binding guards do not constitute pixel, human, legal or overall art acceptance.",
+  "notExecutedByThisAgent": [
+    "native34 or298 exact-inheritance matrix",
+    "rules815",
+    "currentnewUI9/old67 or stage pixels",
+    "VueTS/build",
+    "compatibility/environment-performance",
+    "user Game/save actions",
+    "commit/HTTP release/overall ART/human"
+  ],
+  "dataSafety": "Hashes, source facts and counts only; no Game, user save or full-IDB payload. Original13 in-flight inputs not mutated by this agent.",
+  "files": [
+    {
+      "path": "artifacts/goal-4/art10/run-guard-source6.mjs",
+      "bytes": 3238,
+      "sha256": "480b521f519916830b5c1daf8f26276c28f171cc75a335621e031e66ce6e67a9"
+    },
+    {
+      "path": "artifacts/goal-4/art10/guard-source6-input-paths.json",
+      "bytes": 32757,
+      "sha256": "bc5b7abcb5ab69cb20153ad3ca61c8bfc519029fc282d9cf6fad92bf1f87092e"
+    },
+    {
+      "path": "artifacts/goal-4/art10/guard-full-source6-declared.json",
+      "bytes": 36519,
+      "sha256": "449f41062308a2a14fc7c6f8ce341c83798f830c589432f9f298994d81705628"
+    },
+    {
+      "path": "artifacts/goal-4/art10/guard-full-source6-before.json",
+      "bytes": 115578,
+      "sha256": "ac9af189af3319e3053c3128b137f97de8d32a6752b5ad2b92f5b94538d7afdf"
+    },
+    {
+      "path": "artifacts/goal-4/art10/guard-full-source6-after.json",
+      "bytes": 115577,
+      "sha256": "386741b90e9d8c5fdac29af956a5cc61d735e9f5b07b63f16182d19569694cf6"
+    },
+    {
+      "path": "artifacts/goal-4/art10/guard-source6-results.json",
+      "bytes": 1447,
+      "sha256": "0d1fa18301948d5895c6a28efb762f56a3c46bac116f93f10d4aebf19194e19d"
+    },
+    {
+      "path": "artifacts/goal-4/art10/guard-full-source6-results.json",
+      "bytes": 1236,
+      "sha256": "fbd841c2bd3072920d697e0abb2bb29f9267a6387c7efe4f1383e2269a53d67c"
+    },
+    {
+      "path": "artifacts/goal-4/art10/guard-source6-run.log",
+      "bytes": 2732,
+      "sha256": "533751bc1920ba658e1ee134c48c312bbfcd0231374d4e09c27caf0b7d755f96"
+    },
+    {
+      "path": "artifacts/goal-4/art10/guard-full-source6-tests.log",
+      "bytes": 489,
+      "sha256": "ebb8f6deb24fc3b8a1f2ccaa28fc73711228b6e002c30677cb6b10186d370041"
+    },
+    {
+      "path": "artifacts/goal-4/art10/guard-full-source6-positive.log",
+      "bytes": 1354,
+      "sha256": "10657b8353c91c8a5f1b14fc0d521d80c0a3ee97b675ffbb0e474d438336510f"
+    }
+  ],
+  "locksReturned": "Owned60363 terminal exit0; parent notified before this ignored metadata write. No further source, guard, ledger or formal-test edits and no more checks."
+}

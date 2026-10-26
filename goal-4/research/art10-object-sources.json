@@ -1,0 +1,43 @@
+{
+  "task": "ART10",
+  "readAt": "2026-10-25",
+  "sources": [
+    {
+      "title": "Clarity in League",
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "published": "2021-03-12",
+      "read": "Actual primary text on silhouettes, meaningful importance hierarchy and restrained visual noise; embedded media not viewed.",
+      "application": "One currently actionable scroll/artifact in normal view; source vs budget vs configuration are distinct verbs, unfinished work retains the same artifact silhouette/light as the finished reference.",
+      "limits": "Not idle pacing, prescribed UI, competitor playtest or human art approval."
+    },
+    {
+      "title": "XAG112 UI navigation",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "read": "Actual primary text on consistent navigation, predictable focus and back routes, alternate content-location paths; examples read as prose, media not played.",
+      "application": "Full shelf/category/page access in a named drawer with stable back/focus; choosing a scroll never queues it, opening materials never travels; original plan and draft remain distinguishable.",
+      "limits": "Project choices, no certification or permission to resume compatibility/scaling work."
+    }
+  ],
+  "repeatWorkflowCandidates": [
+    {
+      "workflow": "Game-object UI and current pixel review",
+      "evidence": "ART03/TA09/CHECK-TA-03, Oct23–25",
+      "confidence": "high/repeated",
+      "decision": "Reuse game-studio→game-ui-frontend/game-playtest and existing agents; no duplicate skill."
+    },
+    {
+      "workflow": "Raster provenance/deterministic export/guard",
+      "evidence": "ART03 four relics, TA08 six natural sources",
+      "confidence": "high/repeated",
+      "decision": "Reuse built-in imagegen and existing inventory/export pattern; add only task asset producer, no new external workflow."
+    },
+    {
+      "workflow": "Source/HTTP/protected changes checks",
+      "evidence": "TA09 and CHECK-TA-03",
+      "confidence": "high/repeated",
+      "decision": "Reuse source-identity/candidate tools and task evidence runners; no duplicate automation."
+    }
+  ],
+  "userArtAccepted": false,
+  "humanAccepted": false
+}

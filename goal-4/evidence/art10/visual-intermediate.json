@@ -1,0 +1,126 @@
+{
+  "actualRootViews": [
+    {
+      "view": "artifacts/goal-4/art10/visual-source1/all-twelve-retain-selected-object-without-permanent-shelves.jpg",
+      "sha256": "8095c611b24e42da47b6a70bfd58bc4946bcdd5289bc0c832f7584c5ae1960c3",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source1"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source1/all-four-retain-a-single-selected-artifact.jpg",
+      "sha256": "e0c4a8bf440f51e4f1581d3cb227b7b88d4e7eea8f63592bd39bfa00030388b7",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source1"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source1/7aaa3-failure.jpg",
+      "sha256": "ffd2b281245f233a7a2cdd4d95e25f99ab34b67c0ef7029bc0b011f195125bc7",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source1"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source1/e4e60-failure.jpg",
+      "sha256": "97618b39bb8a079867216f70d921eec8938ec5fd01576eafd35275899b8a7645",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source1"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source2/all-twelve-retain-selected-object-without-permanent-shelves.jpg",
+      "sha256": "7e9d9af88d1471f53f1d3b30230d3f22b84b8e66155eaf3b126e7debedd9c4ad",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source2"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source2/all-four-retain-a-single-selected-artifact.jpg",
+      "sha256": "8144837f3f25b8a2d684ec82b8209610e8b213283abae8a9755d0241dce23771",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source2"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source2/another-library-scroll-cannot-borrow-current-sealing.jpg",
+      "sha256": "e72e4b1833acc16b4f98516b8322ee1262ae7fb503226be4a25d69b641a25087",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source2"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source2/positive-start-quota-keeps-complete-budget-and-original-intent.jpg",
+      "sha256": "46d06d43a93a8fd883275ed433f57287a0ee449ee4ce2f2d35f70902102f454b",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source2"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source2/materials-actual-deficit-including-all-reserves.jpg",
+      "sha256": "206d5c6b3c145bf812a1ad33edf4bea52772638bf689f73c03ef26762ead80ba",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source2"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source2/actual-money-alternative-source-routes.jpg",
+      "sha256": "3b0ab76492b03a81cea7f6aad54c67b5da1141739cb336f5bb008df74b361e9f",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source2"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source2/canonical-all-forge-budgets-and-two-material-reserves.jpg",
+      "sha256": "fc4a903758657b5c529e017a9492cd250cdd4299c11fbea37d65d04154875e84",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source2"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source2/learning-library-dialog-complete-keyboard-surface.jpg",
+      "sha256": "39ad5506f9c779887a89e42ff617121de7c19a8df5d3d7b3d6dd3fd0eca8346f",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source2"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source2/relic-library-dialog-complete-keyboard-surface.jpg",
+      "sha256": "42a01d528ddde64016f098f7ecbab4c26cc467225c9170dd9da5c468e8404e36",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source2"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source2/explicitly-added-one-scroll-complete-limits.jpg",
+      "sha256": "0e1740a1d5d753048c0d352e3f3ae48da9e71c3e3af0faa1db60172a9221621a",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source2"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source3/learning-library-dialog-complete-keyboard-surface.jpg",
+      "sha256": "132f129f2cb2d817173799b5c063cbe347be3145253c85f8c5eed698ab841181",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source3"
+    },
+    {
+      "view": "artifacts/goal-4/art10/visual-source3/positive-start-quota-keeps-complete-budget-and-original-intent.jpg",
+      "sha256": "bdcb5565aa26db9bd7a19d36fcb2d06fde74b446bb57235a232dc81d4a67b908",
+      "actualPixelReview": true,
+      "format": "JPEG68 original1440x900 dimensions, lossy view only; originalPNG retained",
+      "source": "visual-source3"
+    }
+  ],
+  "countsAreRepeatedViewsNotUniqueCurrentAcceptance": true,
+  "scope": "only ART10 current fixed desktop; other generated frames not pixel-reviewed",
+  "findings": [
+    "source1 held-saving reading object overflow",
+    "source1 quota material not hit",
+    "source2 flat library/no object silhouette and quota actualsword41px despite geometry pass",
+    "source3 narrow4 spines now visible, title/currentstate and allfunction readable; two long status labels wrap before final wider spine",
+    "source3 quota sword101px retains originalretry, allmaterial, budget; resultbox33.69 exceeds30 slot pending36 fix"
+  ],
+  "overallArtHumanBalanceAccepted": false
+}

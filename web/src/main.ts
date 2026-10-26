@@ -38,3 +38,4 @@ import './alchemy-workshop.css';
 import './art03-equipment.css';
 
 import './game-menus.css';
+import './art10-equipment.css';

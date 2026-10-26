@@ -1,0 +1,462 @@
+{
+  "status": "actual AST/direct dependency isolation proof",
+  "originalSpecSha256": "23f4589a24d7d0edef5bd003e24cb8453949cc1f5a9655d559b4406a533f1509",
+  "currentSpecSha256": "e30b89c5cd1d10da50317df5f40b52ec72ceb006fa6bafbe745321a921df24fb",
+  "changedHelpers": [
+    "completed"
+  ],
+  "allSixCallbacksByteExact": true,
+  "changedCallbacks": [],
+  "affectedCallers": [
+    {
+      "title": "CHECK-TA-C1 traded manual completion stays factual in both schools and locations without another travel or study authorization",
+      "callbackSha256": "dd74045f15b30940e9038fc85adf4d4c84a0e4ad694895fd9dd6e81ad28dbf2c",
+      "reachableLocalHelpers": [
+        "attach",
+        "completed",
+        "database",
+        "frame",
+        "load",
+        "manual",
+        "readonlyClick",
+        "shot"
+      ]
+    },
+    {
+      "title": "CHECK-TA-C2 a formally studied manual has the same permanent completion while browsing back preserves each school finite draft",
+      "callbackSha256": "1158537f27bafe05e9f390b84ccc01c363f986ace2522dc09958f48a40bb6255",
+      "reachableLocalHelpers": [
+        "attach",
+        "completed",
+        "database",
+        "draft",
+        "frame",
+        "fresh",
+        "load",
+        "readonlyClick",
+        "sameDraft",
+        "shot"
+      ]
+    },
+    {
+      "title": "CHECK-TA-C3 first paid study seals only after its full native transaction and an original quota retry creates one truthful completion",
+      "callbackSha256": "5102664e3d382120a2a0e7810490c00726cf24de96685ba4b016bf6843462b16",
+      "reachableLocalHelpers": [
+        "attach",
+        "completed",
+        "database",
+        "frame",
+        "fresh",
+        "holdWrite",
+        "load",
+        "manual",
+        "quota",
+        "readonlyClick",
+        "shot",
+        "studySaved"
+      ]
+    },
+    {
+      "title": "CHECK-TA-C5 a learned manual remains readable after a real cancelled configuration failure and only a fresh compared intent changes school",
+      "callbackSha256": "59d8c8904ddbd14b2d39a3b35164439973a0c6ada2a9ce0e62f6d7128769823b",
+      "reachableLocalHelpers": [
+        "attach",
+        "completed",
+        "database",
+        "frame",
+        "fresh",
+        "load",
+        "readonlyClick",
+        "shot"
+      ]
+    }
+  ],
+  "unaffectedSelectedStageCallbacks": [
+    {
+      "title": "CHECK-TA-C4 all eight current game entry surfaces retain their real objects complete controls and readonly Game databases",
+      "callbackSha256": "bae38f38dcbdf6d127644982f504433d7deffebcf9c8d8fe48656780c492e0d0",
+      "reachableLocalHelpers": [
+        "attach",
+        "database",
+        "frame",
+        "load",
+        "readonlyClick",
+        "shot"
+      ]
+    },
+    {
+      "title": "CHECK-TA-C6 completed paid study still exposes its canonical original budget and reserve without changing Game or borrowing a later draft",
+      "callbackSha256": "28fe0297c4b84579da9a8910aea7ce9ac899ae1ad9cd22c179c0a52e370562f3",
+      "reachableLocalHelpers": [
+        "attach",
+        "database",
+        "draft",
+        "frame",
+        "load",
+        "manual",
+        "readonlyClick",
+        "sameDraft",
+        "shot",
+        "studySaved"
+      ]
+    }
+  ],
+  "allFunctions": {
+    "before": {
+      "helpers": {
+        "attach": {
+          "sha256": "4075e9a1a27166bded817819fa20972753be5ff7a1cfa8e534ad84bef78fa689",
+          "calls": []
+        },
+        "database": {
+          "sha256": "0c0ea51b99483cf6ec27d14709a16c773cbe9b1db5b22357b46a93cb8af59d91",
+          "calls": []
+        },
+        "load": {
+          "sha256": "b5b323e68a6839797507246a90ca3583cd9e40a0b48f0b6f6a0b9da9d4205f83",
+          "calls": [
+            "database"
+          ]
+        },
+        "readonlyClick": {
+          "sha256": "de84a3d7b35c87b31aef146946f9e69245288de4aedda07b016ffd7ddd87fe4f",
+          "calls": [
+            "database"
+          ]
+        },
+        "manual": {
+          "sha256": "08dd9d7ecd7b030a1fb6cf5b2a53405d774ee99892b1ad52ed99e3e235d508ea",
+          "calls": [
+            "readonlyClick"
+          ]
+        },
+        "shot": {
+          "sha256": "f48270b79d00a17ab2bdf2c8c011c4f2c131bcdbf31631b0286f3b04283b7d2d",
+          "calls": []
+        },
+        "fresh": {
+          "sha256": "44485761fc5b35d78163eeb04083ad738ca637102752fb96f6cff0ddd4a910e6",
+          "calls": [
+            "attach"
+          ]
+        },
+        "draft": {
+          "sha256": "c552f2f873304fb87b93414f63c77adc5e355ccdeafd07b5eacd543c065c1edc",
+          "calls": [
+            "readonlyClick"
+          ]
+        },
+        "sameDraft": {
+          "sha256": "af7834ae5b8f76507b426c87339993cc8746b39e8788e3c97c21e347e346bd24",
+          "calls": []
+        },
+        "quota": {
+          "sha256": "ed1e019e79ddfeb149b43a21a8724cfd94bc181643a30bd24bd1a3c2e65ed953",
+          "calls": []
+        },
+        "holdWrite": {
+          "sha256": "bd26bd0420160e935802adb26f5e9f3d92ceff16bce5feca2a738bfc38e423a9",
+          "calls": []
+        },
+        "studySaved": {
+          "sha256": "a2229cc61f94f07527886692efe315678dd7875bd545ebb3fd1be07a0df00165",
+          "calls": [
+            "attach",
+            "database"
+          ]
+        },
+        "frame": {
+          "sha256": "4b68705688faf760709c9f43dd1719a75e696f6c29ba9c1ad532428ae76b5add",
+          "calls": [
+            "attach",
+            "shot"
+          ]
+        },
+        "completed": {
+          "sha256": "090fd0626c90c631c0124aac2104635868f1f5d3a72ec26f52bf4046bd04df4b",
+          "calls": [
+            "attach",
+            "database",
+            "frame",
+            "readonlyClick",
+            "shot"
+          ]
+        }
+      },
+      "tests": [
+        {
+          "title": "CHECK-TA-C1 traded manual completion stays factual in both schools and locations without another travel or study authorization",
+          "callbackSha256": "dd74045f15b30940e9038fc85adf4d4c84a0e4ad694895fd9dd6e81ad28dbf2c",
+          "reachableLocalHelpers": [
+            "attach",
+            "completed",
+            "database",
+            "frame",
+            "load",
+            "manual",
+            "readonlyClick",
+            "shot"
+          ]
+        },
+        {
+          "title": "CHECK-TA-C2 a formally studied manual has the same permanent completion while browsing back preserves each school finite draft",
+          "callbackSha256": "1158537f27bafe05e9f390b84ccc01c363f986ace2522dc09958f48a40bb6255",
+          "reachableLocalHelpers": [
+            "attach",
+            "completed",
+            "database",
+            "draft",
+            "frame",
+            "fresh",
+            "load",
+            "readonlyClick",
+            "sameDraft",
+            "shot"
+          ]
+        },
+        {
+          "title": "CHECK-TA-C3 first paid study seals only after its full native transaction and an original quota retry creates one truthful completion",
+          "callbackSha256": "5102664e3d382120a2a0e7810490c00726cf24de96685ba4b016bf6843462b16",
+          "reachableLocalHelpers": [
+            "attach",
+            "completed",
+            "database",
+            "frame",
+            "fresh",
+            "holdWrite",
+            "load",
+            "manual",
+            "quota",
+            "readonlyClick",
+            "shot",
+            "studySaved"
+          ]
+        },
+        {
+          "title": "CHECK-TA-C4 all eight current game entry surfaces retain their real objects complete controls and readonly Game databases",
+          "callbackSha256": "bae38f38dcbdf6d127644982f504433d7deffebcf9c8d8fe48656780c492e0d0",
+          "reachableLocalHelpers": [
+            "attach",
+            "database",
+            "frame",
+            "load",
+            "readonlyClick",
+            "shot"
+          ]
+        },
+        {
+          "title": "CHECK-TA-C5 a learned manual remains readable after a real cancelled configuration failure and only a fresh compared intent changes school",
+          "callbackSha256": "59d8c8904ddbd14b2d39a3b35164439973a0c6ada2a9ce0e62f6d7128769823b",
+          "reachableLocalHelpers": [
+            "attach",
+            "completed",
+            "database",
+            "frame",
+            "fresh",
+            "load",
+            "readonlyClick",
+            "shot"
+          ]
+        },
+        {
+          "title": "CHECK-TA-C6 completed paid study still exposes its canonical original budget and reserve without changing Game or borrowing a later draft",
+          "callbackSha256": "28fe0297c4b84579da9a8910aea7ce9ac899ae1ad9cd22c179c0a52e370562f3",
+          "reachableLocalHelpers": [
+            "attach",
+            "database",
+            "draft",
+            "frame",
+            "load",
+            "manual",
+            "readonlyClick",
+            "sameDraft",
+            "shot",
+            "studySaved"
+          ]
+        }
+      ]
+    },
+    "after": {
+      "helpers": {
+        "attach": {
+          "sha256": "4075e9a1a27166bded817819fa20972753be5ff7a1cfa8e534ad84bef78fa689",
+          "calls": []
+        },
+        "database": {
+          "sha256": "0c0ea51b99483cf6ec27d14709a16c773cbe9b1db5b22357b46a93cb8af59d91",
+          "calls": []
+        },
+        "load": {
+          "sha256": "b5b323e68a6839797507246a90ca3583cd9e40a0b48f0b6f6a0b9da9d4205f83",
+          "calls": [
+            "database"
+          ]
+        },
+        "readonlyClick": {
+          "sha256": "de84a3d7b35c87b31aef146946f9e69245288de4aedda07b016ffd7ddd87fe4f",
+          "calls": [
+            "database"
+          ]
+        },
+        "manual": {
+          "sha256": "08dd9d7ecd7b030a1fb6cf5b2a53405d774ee99892b1ad52ed99e3e235d508ea",
+          "calls": [
+            "readonlyClick"
+          ]
+        },
+        "shot": {
+          "sha256": "f48270b79d00a17ab2bdf2c8c011c4f2c131bcdbf31631b0286f3b04283b7d2d",
+          "calls": []
+        },
+        "fresh": {
+          "sha256": "44485761fc5b35d78163eeb04083ad738ca637102752fb96f6cff0ddd4a910e6",
+          "calls": [
+            "attach"
+          ]
+        },
+        "draft": {
+          "sha256": "c552f2f873304fb87b93414f63c77adc5e355ccdeafd07b5eacd543c065c1edc",
+          "calls": [
+            "readonlyClick"
+          ]
+        },
+        "sameDraft": {
+          "sha256": "af7834ae5b8f76507b426c87339993cc8746b39e8788e3c97c21e347e346bd24",
+          "calls": []
+        },
+        "quota": {
+          "sha256": "ed1e019e79ddfeb149b43a21a8724cfd94bc181643a30bd24bd1a3c2e65ed953",
+          "calls": []
+        },
+        "holdWrite": {
+          "sha256": "bd26bd0420160e935802adb26f5e9f3d92ceff16bce5feca2a738bfc38e423a9",
+          "calls": []
+        },
+        "studySaved": {
+          "sha256": "a2229cc61f94f07527886692efe315678dd7875bd545ebb3fd1be07a0df00165",
+          "calls": [
+            "attach",
+            "database"
+          ]
+        },
+        "frame": {
+          "sha256": "4b68705688faf760709c9f43dd1719a75e696f6c29ba9c1ad532428ae76b5add",
+          "calls": [
+            "attach",
+            "shot"
+          ]
+        },
+        "completed": {
+          "sha256": "2750ce3f93273f90be6a68477bb4b63e02a9a48a2f2306f929031807ece0c80c",
+          "calls": [
+            "attach",
+            "database",
+            "frame",
+            "readonlyClick",
+            "shot"
+          ]
+        }
+      },
+      "tests": [
+        {
+          "title": "CHECK-TA-C1 traded manual completion stays factual in both schools and locations without another travel or study authorization",
+          "callbackSha256": "dd74045f15b30940e9038fc85adf4d4c84a0e4ad694895fd9dd6e81ad28dbf2c",
+          "reachableLocalHelpers": [
+            "attach",
+            "completed",
+            "database",
+            "frame",
+            "load",
+            "manual",
+            "readonlyClick",
+            "shot"
+          ]
+        },
+        {
+          "title": "CHECK-TA-C2 a formally studied manual has the same permanent completion while browsing back preserves each school finite draft",
+          "callbackSha256": "1158537f27bafe05e9f390b84ccc01c363f986ace2522dc09958f48a40bb6255",
+          "reachableLocalHelpers": [
+            "attach",
+            "completed",
+            "database",
+            "draft",
+            "frame",
+            "fresh",
+            "load",
+            "readonlyClick",
+            "sameDraft",
+            "shot"
+          ]
+        },
+        {
+          "title": "CHECK-TA-C3 first paid study seals only after its full native transaction and an original quota retry creates one truthful completion",
+          "callbackSha256": "5102664e3d382120a2a0e7810490c00726cf24de96685ba4b016bf6843462b16",
+          "reachableLocalHelpers": [
+            "attach",
+            "completed",
+            "database",
+            "frame",
+            "fresh",
+            "holdWrite",
+            "load",
+            "manual",
+            "quota",
+            "readonlyClick",
+            "shot",
+            "studySaved"
+          ]
+        },
+        {
+          "title": "CHECK-TA-C4 all eight current game entry surfaces retain their real objects complete controls and readonly Game databases",
+          "callbackSha256": "bae38f38dcbdf6d127644982f504433d7deffebcf9c8d8fe48656780c492e0d0",
+          "reachableLocalHelpers": [
+            "attach",
+            "database",
+            "frame",
+            "load",
+            "readonlyClick",
+            "shot"
+          ]
+        },
+        {
+          "title": "CHECK-TA-C5 a learned manual remains readable after a real cancelled configuration failure and only a fresh compared intent changes school",
+          "callbackSha256": "59d8c8904ddbd14b2d39a3b35164439973a0c6ada2a9ce0e62f6d7128769823b",
+          "reachableLocalHelpers": [
+            "attach",
+            "completed",
+            "database",
+            "frame",
+            "fresh",
+            "load",
+            "readonlyClick",
+            "shot"
+          ]
+        },
+        {
+          "title": "CHECK-TA-C6 completed paid study still exposes its canonical original budget and reserve without changing Game or borrowing a later draft",
+          "callbackSha256": "28fe0297c4b84579da9a8910aea7ce9ac899ae1ad9cd22c179c0a52e370562f3",
+          "reachableLocalHelpers": [
+            "attach",
+            "database",
+            "draft",
+            "frame",
+            "load",
+            "manual",
+            "readonlyClick",
+            "sameDraft",
+            "shot",
+            "studySaved"
+          ]
+        }
+      ]
+    }
+  },
+  "sharedInputHashes": 517,
+  "sharedDifferences": [
+    "web/e2e/stage-ta-review.spec.ts"
+  ],
+  "unchangedRuntimeSources": 263,
+  "runtime": "c2e9c18daf7ceccb905f59b40272f9b3905677128fe0c0abd902babef8f653b3",
+  "wholeFileInverseReview": "analysis/source6-four-closed-dialog-text-review.json",
+  "scope": "Only four originalC1C2C3C5 consume changed completed helper. OriginalpassedC4/C6 callbacks/helpers stable; other twelve selected files and relevant imports sharedactualhashes equal. No whole source7 or one-run76 claim."
+}

@@ -1,0 +1,99 @@
+{
+  "task": "ART10",
+  "status": "checks-passed-awaiting-commit-and-preview",
+  "runtime": "c2e9c18daf7ceccb905f59b40272f9b3905677128fe0c0abd902babef8f653b3",
+  "runtimeFiles": 263,
+  "payloadFiles": 73,
+  "payloadBytes": 8512720,
+  "ui": {
+    "unique": 76,
+    "composition": "new9 + unchanged63 in whole67 + current4 completion leaf; NOT one all-green76 run",
+    "reports": {
+      "ui-new9-source6": {
+        "path": "artifacts/goal-4/art10/ui-new9-source6-report.json",
+        "sha256": "26f4d525f3bddf9e73e2945af40c4087a3fc4563534f7c88ec1524395a4bfe8f",
+        "stats": {
+          "startTime": "2026-10-25T04:17:08.325Z",
+          "duration": 85550.489,
+          "expected": 9,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        }
+      },
+      "ui-old67-source6-recovered": {
+        "path": "artifacts/goal-4/art10/ui-old67-source6-recovered-report.json",
+        "sha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c",
+        "stats": {
+          "startTime": "2026-10-25T10:41:58.596Z",
+          "duration": 486723.885,
+          "expected": 63,
+          "skipped": 0,
+          "unexpected": 4,
+          "flaky": 0
+        }
+      },
+      "ui-old4-completion-source6": {
+        "path": "artifacts/goal-4/art10/ui-old4-completion-source6-report.json",
+        "sha256": "693cbb7a3685a0bf4b36099d3ae19b7c054b09e08c6e09ff931368ab2b0aa652",
+        "stats": {
+          "startTime": "2026-10-26T01:54:54.034Z",
+          "duration": 58000.45,
+          "expected": 4,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        }
+      }
+    },
+    "old9IsSubsetNotAdditionalCoverage": true,
+    "coverage": "coverage.json"
+  },
+  "rules": {
+    "passed": 815,
+    "files": 61,
+    "strictInputs": 375,
+    "terminal": {
+      "runtime": "c2e9c18daf7ceccb905f59b40272f9b3905677128fe0c0abd902babef8f653b3",
+      "inputs": 375,
+      "exact": true,
+      "rows": [
+        {
+          "name": "rules",
+          "exit": 0,
+          "signal": null
+        },
+        {
+          "name": "types",
+          "exit": 0,
+          "signal": null
+        }
+      ],
+      "passed": true
+    }
+  },
+  "native": {
+    "current": 34,
+    "inherited": 298,
+    "sameRun332": false,
+    "proof": "native-inheritance.json"
+  },
+  "assets": {
+    "currentFullTests": 387,
+    "new24Included": true,
+    "oldCapsChanged": false,
+    "proof": "assets-and-guards.json"
+  },
+  "buildAndVueTypes": "actual source6 build exit0, root TS exit0",
+  "humanArtBalanceAccepted": false,
+  "compatibilityOrEnvironmentPerformanceExecuted": false,
+  "remaining": [
+    "ART11 inventory",
+    "ART12 narrative/life",
+    "CHECK-ART-03",
+    "M04 full routes/recovery",
+    "M05 performance",
+    "M06 compatibility last",
+    "clean candidate/final reviews/human acceptance"
+  ]
+}

@@ -3,7 +3,7 @@ import {driver} from '../../tests/full-route.mjs';
 import {advance} from '../../src/full/engine.ts';
 import * as C from '../../src/full/content.ts';
 import {snapshot,activitySnapshot as activity,useJourneyClock,finishJourneyClock,revealPaged} from './support';
-import {openProductionIntent} from './stage-support';
+import {openProductionIntent,openProductionCatalogue,selectRelic} from './stage-support';
 
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
 const errors=new WeakMap<Page,string[]>();
@@ -83,7 +83,7 @@ test('the real alchemy objects keep all seven recipes, honest gates and complete
  const objects=await page.evaluate(()=>['.alchemy-recipe-book','[data-testid=alchemy-furnace]','[data-testid=alchemy-product-tray]'].map(selector=>{const r=document.querySelector(selector)!.getBoundingClientRect();return{left:r.left,right:r.right,width:r.width,height:r.height};}));
  expect(objects[0].right).toBeLessThanOrEqual(objects[1].left);expect(objects[1].right).toBeLessThanOrEqual(objects[2].left);expect(objects[1].width).toBeGreaterThan(180);expect(objects[1].height).toBeGreaterThan(180);
  const picture=page.getByTestId('alchemy-furnace').locator('[data-art-path]').first();await expect(picture).toHaveAttribute('data-art-state','ready');await expect(picture).not.toHaveAttribute('data-art-path','art/v2/catalogue/alchemy-v1.webp');
- await page.getByLabel('显示后续生产目录').check();
+ await openProductionCatalogue(page);await page.getByLabel('显示后续生产目录').check();
  for(const[id,r]of Object.entries(C.recipes)){
   await revealPaged(page,'craft-'+id,'recipe-catalogue','配方');await page.getByTestId('craft-'+id).click();await expect(page.getByTestId('craft-'+id)).toHaveAttribute('aria-pressed','true');
   await expect(page.getByTestId('alchemy-product-tray')).toContainText(r.name);await stock(page,before.core.inventory[r.output],0);await unlit(page);
@@ -168,5 +168,5 @@ test('one real thirty-second furnace saves actual inputs and product before pres
 });
 
 test('the forge retains its original one-cycle craft and explicit equip boundary outside the new alchemy workshop',async({page})=>{
- const before=await fixture(page,{forge:true});await page.getByTestId('hub-relics').click();await page.getByTestId('forge-frost_sword').click();await expect(page.getByTestId('forging-planner')).toBeVisible();await expect(page.getByTestId('alchemy-workshop')).toHaveCount(0);const started=await begin(page);expect(started.version).toBe(4);await page.clock.fastForward(59999);expect(await snapshot(page)).toEqual(before);await page.clock.fastForward(1);await expect.poll(async()=>(await activity(page)).status).toBe('stopped');const after=await snapshot(page);expect(after).toEqual(advance(before,started.nextCommand));expect(after.ownedRelics).toContain('frost_sword');expect(after.loadout).toEqual(before.loadout);await page.getByTestId('equip-relic-frost_sword').click();await expect(page.getByTestId('configuration-dialog')).toBeVisible();expect(await snapshot(page)).toEqual(after);await page.getByTestId('configuration-cancel').click();expect(await snapshot(page)).toEqual(after);
+ const before=await fixture(page,{forge:true});await page.getByTestId('hub-relics').click();await selectRelic(page,"frost_sword");await expect(page.getByTestId('forging-planner')).toBeVisible();await expect(page.getByTestId('alchemy-workshop')).toHaveCount(0);const started=await begin(page);expect(started.version).toBe(4);await page.clock.fastForward(59999);expect(await snapshot(page)).toEqual(before);await page.clock.fastForward(1);await expect.poll(async()=>(await activity(page)).status).toBe('stopped');const after=await snapshot(page);expect(after).toEqual(advance(before,started.nextCommand));expect(after.ownedRelics).toContain('frost_sword');expect(after.loadout).toEqual(before.loadout);await page.getByTestId('equip-relic-frost_sword').click();await expect(page.getByTestId('configuration-dialog')).toBeVisible();expect(await snapshot(page)).toEqual(after);await page.getByTestId('configuration-cancel').click();expect(await snapshot(page)).toEqual(after);
 });

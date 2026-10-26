@@ -416,3 +416,12 @@ ART03复核历史进展（source12、交付前）：source12 f4f31020冻结，�
 - 无push／PR／合并／公开部署／权限变更。回滚只revert本项展示／测试／ledger，保DB9／DB1可读、原档／v0.3／原输入／旧冻结／13及所有失败。
 
 主证据：[evidence/check-ta-03/verification.json](evidence/check-ta-03/verification.json)、coverage.json、visual-review.json、identity-proof.json、review.md及原始artifacts/goal-4/check-ta-03。
+
+
+## ART10开工（2026-10-25）
+
+- 状态：[ ] 当前唯一实施项；基线58f11c6，codex/goal-4-online-recovery；上一轮progress已核，Goal active。原话／保护13／0037及plan已先保存，原input不改、不重建Goal。
+- 参数／预算／验收／风险／回滚：0037；新CSS≤12000B、4冷胚512透明每件≤160000B总≤640000B，全部旧cap保持。常态展读／入有限卷串／原即时比较与器物实际缺口筹备，完整12法／4器／剑简／所有预算／原安排与草案／原重试不删，原30／60／60／Game／DB9不改。
+- 待完成：合法旧基线红→正式对象接线／绘画及早期逐图→声明新9＋旧具名66/67相关／native34及原298精确依赖条件／815／guard／类型构建／真实周期→独立提交／受测-Git-冻结-HTTP／原玩家只读→本项完成及杠精。普通来源返回的静态误判已纠正，无真实红不修App；新冷胚须真实轮廓与光向相连，不用统一object-fit掩盖。
+- 完成／真实红／修缮／检查／像素／同源提交／杠精：留实际交付填写。当前无本项执行通过声明；整体ART／长期／后续M04/5/6／最终包／最大review／真人保持。当前不兼容／环境性能，不push／合并／部署／改权限，下一只ART11。
+- [杠精审查] 开工通过，真实对象操作与完整保留已细化；没有把原美术负面反馈缩为一张新图或新菜单，不改未平衡成长／周期。

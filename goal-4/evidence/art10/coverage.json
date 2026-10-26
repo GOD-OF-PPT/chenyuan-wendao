@@ -1,0 +1,889 @@
+{
+  "status": "actual-current-source6-76unique-proven-related-scope-not-one-green-run",
+  "runtime": "c2e9c18daf7ceccb905f59b40272f9b3905677128fe0c0abd902babef8f653b3",
+  "runtimeSources": 263,
+  "payloadFiles": 73,
+  "payloadBytes": 8512720,
+  "unique": 76,
+  "files": 14,
+  "byFile": {
+    "art10-equipment-stage.spec.ts": 9,
+    "alchemy-workshop.spec.ts": 1,
+    "check-art-02.spec.ts": 6,
+    "equipment-actors.spec.ts": 12,
+    "equipment-objects.spec.ts": 12,
+    "idle-integration.spec.ts": 2,
+    "idle-preparation-active.spec.ts": 2,
+    "idle-preparation-drafts.spec.ts": 2,
+    "idle-preparation.spec.ts": 5,
+    "idle-production.spec.ts": 3,
+    "idle-stage-ui.spec.ts": 2,
+    "stage-r3-layout.spec.ts": 10,
+    "stage-r3.spec.ts": 4,
+    "stage-ta-review.spec.ts": 6
+  },
+  "composition": {
+    "new9Current": 9,
+    "wholeOld67UnchangedPassing": 63,
+    "currentCompletionLeaf": 4,
+    "targetOld9NotAddedToCoverage": "Bothhistoricalsource6target9 andlaterwhole67samebusinessidentities; notcountedtwice"
+  },
+  "oneWhole76GreenRun": false,
+  "originalWholeOld67Preserved": {
+    "passed": 63,
+    "failed": 4,
+    "report": "artifacts/goal-4/art10/ui-old67-source6-recovered-report.json",
+    "durationMs": 486723.885
+  },
+  "leafIsolation": "analysis/source6-four-leaf-ast-isolation.json",
+  "premiseCorrection": "analysis/source6-four-closed-dialog-text-review.json",
+  "phases": [
+    {
+      "phase": "ui-new9-source6",
+      "report": "artifacts/goal-4/art10/ui-new9-source6-report.json",
+      "reportSha256": "26f4d525f3bddf9e73e2945af40c4087a3fc4563534f7c88ec1524395a4bfe8f",
+      "stats": {
+        "startTime": "2026-10-25T04:17:08.325Z",
+        "duration": 85550.489,
+        "expected": 9,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "strictInputs": 520,
+      "pre": "artifacts/goal-4/art10/ui-new9-source6-before.json",
+      "post": "artifacts/goal-4/art10/ui-new9-source6-after.json",
+      "prePostExact": true,
+      "runtime": "c2e9c18daf7ceccb905f59b40272f9b3905677128fe0c0abd902babef8f653b3",
+      "runtimeFiles": 263,
+      "httpFiles": 73,
+      "httpBytes": 8512720,
+      "zeroRetries": true,
+      "exactDeclarations": true
+    },
+    {
+      "phase": "ui-old67-source6-recovered",
+      "report": "artifacts/goal-4/art10/ui-old67-source6-recovered-report.json",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c",
+      "stats": {
+        "startTime": "2026-10-25T10:41:58.596Z",
+        "duration": 486723.885,
+        "expected": 63,
+        "skipped": 0,
+        "unexpected": 4,
+        "flaky": 0
+      },
+      "strictInputs": 533,
+      "pre": "artifacts/goal-4/art10/ui-old67-source6-recovered-before.json",
+      "post": "artifacts/goal-4/art10/ui-old67-source6-recovered-after.json",
+      "prePostExact": true,
+      "runtime": "c2e9c18daf7ceccb905f59b40272f9b3905677128fe0c0abd902babef8f653b3",
+      "runtimeFiles": 263,
+      "httpFiles": 73,
+      "httpBytes": 8512720,
+      "zeroRetries": true,
+      "exactDeclarations": true
+    },
+    {
+      "phase": "ui-old4-completion-source6",
+      "report": "artifacts/goal-4/art10/ui-old4-completion-source6-report.json",
+      "reportSha256": "693cbb7a3685a0bf4b36099d3ae19b7c054b09e08c6e09ff931368ab2b0aa652",
+      "stats": {
+        "startTime": "2026-10-26T01:54:54.034Z",
+        "duration": 58000.45,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "strictInputs": 523,
+      "pre": "artifacts/goal-4/art10/ui-old4-completion-source6-before.json",
+      "post": "artifacts/goal-4/art10/ui-old4-completion-source6-after.json",
+      "prePostExact": true,
+      "runtime": "c2e9c18daf7ceccb905f59b40272f9b3905677128fe0c0abd902babef8f653b3",
+      "runtimeFiles": 263,
+      "httpFiles": 73,
+      "httpBytes": 8512720,
+      "zeroRetries": true,
+      "exactDeclarations": true
+    }
+  ],
+  "records": [
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "complete furnace settings and readonly material/product sources preserve a finite draft without starting travel or production",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 6781,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A1 selected jade remains the default object and complete catalogues open only on request",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 17690,
+      "retry": 0,
+      "phase": "ui-new9-source6",
+      "reportSha256": "26f4d525f3bddf9e73e2945af40c4087a3fc4563534f7c88ec1524395a4bfe8f"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A2 opening a jade choosing another scroll and explicitly adding or removing it have separate readonly draft effects",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5722,
+      "retry": 0,
+      "phase": "ui-new9-source6",
+      "reportSha256": "26f4d525f3bddf9e73e2945af40c4087a3fc4563534f7c88ec1524395a4bfe8f"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A3 finite saved scrolls next draft and library reading survive return without borrowing the running command or a new run",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 13592,
+      "retry": 0,
+      "phase": "ui-new9-source6",
+      "reportSha256": "26f4d525f3bddf9e73e2945af40c4087a3fc4563534f7c88ec1524395a4bfe8f"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A4 learned unequipped scrolls compare atomically while an equipped scroll presents its fact and a useful browse decision",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5092,
+      "retry": 0,
+      "phase": "ui-new9-source6",
+      "reportSha256": "26f4d525f3bddf9e73e2945af40c4087a3fc4563534f7c88ec1524395a4bfe8f"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A5 retained materials actual money and an insufficient authorization choose different complete preparation decisions",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 11060,
+      "retry": 0,
+      "phase": "ui-new9-source6",
+      "reportSha256": "26f4d525f3bddf9e73e2945af40c4087a3fc4563534f7c88ec1524395a4bfe8f"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A6 one genuine retained-material gap leads through an explicit source and cave journey back to the nondefault forge plan",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 6701,
+      "retry": 0,
+      "phase": "ui-new9-source6",
+      "reportSha256": "26f4d525f3bddf9e73e2945af40c4087a3fc4563534f7c88ec1524395a4bfe8f"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A7 an owned artifact moves to compare or browse while its complete original forge authorization remains canonical after refresh",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 6855,
+      "retry": 0,
+      "phase": "ui-new9-source6",
+      "reportSha256": "26f4d525f3bddf9e73e2945af40c4087a3fc4563534f7c88ec1524395a4bfe8f"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A8 a positive-cost forge START quota keeps its original authorization through readonly catalogues and retries once",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7728,
+      "retry": 0,
+      "phase": "ui-new9-source6",
+      "reportSha256": "26f4d525f3bddf9e73e2945af40c4087a3fc4563534f7c88ec1524395a4bfe8f"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A9 catalogue preparation and limit surfaces keep one keyboard owner complete text and the selected object on close",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7648,
+      "retry": 0,
+      "phase": "ui-new9-source6",
+      "reportSha256": "26f4d525f3bddf9e73e2945af40c4087a3fc4563534f7c88ec1524395a4bfe8f"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A1 separately authorized learning equip purchase medicine and personal response keep exact costs and independent game objects across one lawful route",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 16237,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A4 a committed configuration survives queued native snapshot abort and cross-domain reconnect never repeats that equipment or medicine",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 13115,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A5 late native learning delivery cannot replace another page medicine activity or relight the previous learned scroll",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 10729,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A6 unsubmitted learning and medicine drafts survive people life and ordinary detail returns while a later real use updates the anchored factual inventory",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 10442,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A8 relic local saved configuration never relights its old sequence after a foreign same-run A to B to A transition",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 9798,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A8 skill local saved configuration never relights its old sequence after a foreign same-run A to B to A transition",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 12576,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A1 all twelve two-school jade objects retain their complete real effects and readonly slot context beside an explicit finite scroll rail",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 23570,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A10 pause pending hidden scenes and same-id foreign generations clear work and old seals while full history remains authoritative",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 10646,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A11 three instant configurations keep comparison CAS and original retry while foreign A to B to A cannot relight old engraving",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 25471,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A12 both reduced-effect modes and all four failed cold images retain complete readable objects budgets and first real retry results",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 28987,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A2 finite scroll browsing keeps saved draft and slot domains distinct across manual return and clears only on a new run",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 13102,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A3 two paid cross-school scrolls use frozen current commands through native sealing and metadata delivery without borrowing mastery",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 10591,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A4 cumulative paid and legal zero-cost scrolls stop at exact budget or reserve without dropping mastered facts",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 14138,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A5 native thirty-second paid learning has no early Game write and engraves one credible mastery",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 35393,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A6 native sixty-second manual inscribes one insight while talisman school and actual equipment remain unchanged",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 65444,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A7 four artifact blueprints become distinct workpieces and only saved owned artifacts reveal their real cold art",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 28970,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A8 native sixty-second positive-cost forging saves full material and month costs before revealing an unbound artifact",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 65277,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A9 paid LEARN cycle and FORGE admission quota failures retain the exact original intent for one first successful retry",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 12600,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A1 all twelve jade slips and real loadout slots stay read-only inside distinct game objects",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 8275,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A10 learning pause and same-id takeover immediately withdraw old short effects without changing the authoritative learned record",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 9590,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A11 a foreign forge generation, hidden scene and historical receipt never light the old artifact or forge it twice",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5942,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7965,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A2 one legal forge enters cold native saving before its exact sixty-second artifact is committed",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5155,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A3 two selected cross-school jade slips keep exact separate cycles and show only the selected credible completion",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 15632,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A4 a real thirty-second jade study saves its formal fee before the slip becomes mastered",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 34505,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A5 a real sixty-second sword manual commits one insight and never silently changes school or equipment",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 64135,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A6 a real sixty-second forge presents the selected artifact only after exact costs are saved",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 64678,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A7 all four distinct artifact objects retain full materials, owned and actual bound states without writes",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 13610,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A8 school skill and relic comparisons cancel without writes and explicit atomic confirmations retain their real scopes",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 25294,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A9 native acceptance and cycle quota failures keep learning and forging cold while the original exact intent remains retryable",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 51965,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "owned relic equip shows its formal gate during battle and viewing never changes Game",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2709,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "owned relic equip shows its formal gate during event and viewing never changes Game",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2650,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active learn shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3191,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active study shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2715,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "viewing a saved free learning plan keeps manual defaults and each mode retains its own unsubmitted draft",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4523,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "viewing a saved manual plan starts a separate learning queue and does not inherit the manual budget",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3934,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "changing school previews all three slots and cancel keeps Game and activity unchanged",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3332,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "configuration quota failure retains the original confirmation and a later cancelled failure does not block a new intent",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3784,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "manual travel keeps exact finite budget and never studies until separately confirmed",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4273,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "trial equipment inspection keeps its location and explicit rest navigation opens recovery without starting it",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3267,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "two selected jade slips learn in full separate cycles then require explicit compared equipment",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4952,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "all seven recipes and four relics retain their actual materials and fixed desktop controls across catalogue pages",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7586,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "forging takes one full cycle and retains an explicit separate equip action",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4168,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-production.spec.ts",
+      "title": "travelling to the cave retains the nondefault relic and does not forge or equip it",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2530,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the selected forged relic is the visible object and ownership stays distinct from its equipped slot",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 9278,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the selected jade book and its actual slot comparison remain readable through equipment views",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4275,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "a fresh mortal has an explicit empty book catalogue without a phantom selected skill",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4113,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "a mastered book explains local comparison without asking for another learning trip",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2735,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all four relic objects compare owned effects without equipping and equipment views remain read-only",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 6617,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all four relic objects expose their real costs and ingredients and equipment views remain read-only",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 6976,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all twelve books and all fourteen bag objects retain real text, quantities and complete read-only uses",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 26716,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "changing school keeps the finite learning draft and selects a real book of the current school",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4455,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "manual context receives a school change then restores the old queue with a valid current-school selection",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4666,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "missing catalogue paintings keep native jade and bag selection usable without inventing held objects",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3523,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "reading another slot and book cannot replace a multi-book draft or its edited cumulative limits",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3896,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "the actual jade object and status stay inside the stage and relic paging never overlaps its last object",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3502,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "a replacement life of the same realm never receives the previous local relic budget",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3866,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "learning keeps the finite queue and budgets in one on-demand surface",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3754,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "learning queue and nondefault limits survive loadout inspection and another main entry",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4459,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "selecting the same relic preserves its complete edited authorization without a Game command",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3593,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C1 traded manual completion stays factual in both schools and locations without another travel or study authorization",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 13578,
+      "retry": 0,
+      "phase": "ui-old4-completion-source6",
+      "reportSha256": "693cbb7a3685a0bf4b36099d3ae19b7c054b09e08c6e09ff931368ab2b0aa652"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C2 a formally studied manual has the same permanent completion while browsing back preserves each school finite draft",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 24329,
+      "retry": 0,
+      "phase": "ui-old4-completion-source6",
+      "reportSha256": "693cbb7a3685a0bf4b36099d3ae19b7c054b09e08c6e09ff931368ab2b0aa652"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C3 first paid study seals only after its full native transaction and an original quota retry creates one truthful completion",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 10066,
+      "retry": 0,
+      "phase": "ui-old4-completion-source6",
+      "reportSha256": "693cbb7a3685a0bf4b36099d3ae19b7c054b09e08c6e09ff931368ab2b0aa652"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C4 all eight current game entry surfaces retain their real objects complete controls and readonly Game databases",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 8830,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C5 a learned manual remains readable after a real cancelled configuration failure and only a fresh compared intent changes school",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 6938,
+      "retry": 0,
+      "phase": "ui-old4-completion-source6",
+      "reportSha256": "693cbb7a3685a0bf4b36099d3ae19b7c054b09e08c6e09ff931368ab2b0aa652"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C6 completed paid study still exposes its canonical original budget and reserve without changing Game or borrowing a later draft",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 14769,
+      "retry": 0,
+      "phase": "ui-old67-source6-recovered",
+      "reportSha256": "8ea6b54dcb3544b74ae9ee24179173e09767e5af5c88514a4e75ded4c86aa44c"
+    }
+  ],
+  "realPeriodSafeProof": "source6-real-cycle-safe-summary.json",
+  "notClaimed": [
+    "allcurrentUIregistry",
+    "compatibilityorfont/resolution/browser/environment-performance",
+    "overallARTgamefeelhumanacceptance",
+    "singlecurrent332nativewhole",
+    "originalfailureerasure",
+    "nativepreparedECONNREFUSEDasproductfailure"
+  ],
+  "preparationFailure": {
+    "phase": "ui-old67-source6",
+    "actualUI": 0,
+    "evidence": "ui-old67-source6-preparation-error.json",
+    "recovery": "exactsamefrozenHTTPonly,dynamicall73sha,currentfullphaseunique"
+  },
+  "previousReports": "Allbaseline/source1/source2/source3/source4/source5/source6target failures and report originals retained. No overwrite."
+}

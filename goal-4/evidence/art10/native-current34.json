@@ -1,0 +1,486 @@
+{
+  "format": "chenyuan-art10-native34-verification",
+  "version": 1,
+  "recordedAt": "2026-10-25T10:25:01.262778+00:00",
+  "phase": "native-source6",
+  "runtimeDigest": "c2e9c18daf7ceccb905f59b40272f9b3905677128fe0c0abd902babef8f653b3",
+  "runtimeSources": 263,
+  "actualCurrentExecution": true,
+  "actualExit": 0,
+  "actualStats": {
+    "startTime": "2026-10-25T09:57:19.587Z",
+    "duration": 54180.475,
+    "expected": 34,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "currentNamed34": [
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "open: optional local startup has one5000ms budget and cannot permanently block the actual Game App",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/0/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4054,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "meta: optional local startup has one5000ms budget and cannot permanently block the actual Game App",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/1/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 4067,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "open and first read share the total budget, repeated init shares its Promise, late read cannot publish",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/2/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1011,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "open: edits during initial reading and before reconnect remain temporary until explicitly saved",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/3/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 996,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "meta: edits during initial reading and before reconnect remain temporary until explicitly saved",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/4/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 971,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "reconnect supersedes a held old init; newer edits survive the reconnect read and older completion closes only itself",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/5/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 971,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "open: disposing the scope prevents late preferences and channel resurrection",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/6/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 944,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "meta: disposing the scope prevents late preferences and channel resurrection",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/7/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 965,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "an old held observation queue cannot block reconnect or publish into its new owner",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/8/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 958,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "versionchange revokes owner before a held preference failure, old broadcast and invalidation cannot touch the new connection",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/9/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 952,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "a same-connection old broadcast read failure cannot overwrite a later saved preference result",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/10/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 882,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "cancelling an active native readonly transaction aborts it and cleans the abort listener without mutating metadata",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/11/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 867,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "open: late failed delivery after timeout cannot overwrite a new explicit temporary edit",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/12/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 927,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "meta: late failed delivery after timeout cannot overwrite a new explicit temporary edit",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/13/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 895,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "pre-aborted repository open and readonly calls never start a native operation",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/14/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 924,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "native open cancellation closes a held late success and does not deliver a repository",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/15/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 899,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "cancellation at native upgrade aborts the upgrade instead of committing fresh metadata",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/16/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 922,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "an old observation write failure cannot relabel newer saved preferences as temporary",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/17/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 927,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "clearing records after a reconnect preserves unconfirmed temporary display choices",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/18/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 987,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "a delayed settings success uses newer already-read foreign preferences rather than falsely marking old choices saved",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/19/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 994,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "a late record list failure cannot cover the result of a newer saved settings edit",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/20/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 905,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "a held old record list success cannot resurrect entries after an atomic clear",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/21/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 912,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "a held older broadcast failure cannot overwrite a newer same-edit read success",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/22/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 877,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "held export newer-preview: an obsolete read cannot replace or reopen the latest preview",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/23/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 888,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "held export cancel: an obsolete read cannot replace or reopen the latest preview",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/24/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 935,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "a delayed clear success applies newer read foreign preferences only when the display choices were saved",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/25/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 988,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "a held conflict reread cannot release the busy state or publish over a newer clear operation",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/26/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 866,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "clearing temporary observations invalidates a held conflict reread without replacing the clear feedback",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/27/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 865,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "a held settings-conflict recovery read cannot block explicit reconnect indefinitely",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/28/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 866,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/local-startup.spec.ts",
+      "title": "a conflict recovery read shares metadata request ownership with newer successful broadcasts",
+      "project": "chromium",
+      "pointer": "/suites/0/specs/29/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 874,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/online-recovery.spec.ts",
+      "title": "real online quota: retry preserves one finite command and its atomic snapshot",
+      "project": "chromium",
+      "pointer": "/suites/1/specs/0/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 10131,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/online-recovery.spec.ts",
+      "title": "real online quota: reconnect preserves one finite command and its atomic snapshot",
+      "project": "chromium",
+      "pointer": "/suites/1/specs/1/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 16457,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/online-recovery.spec.ts",
+      "title": "real online lost: retry preserves one finite command and its atomic snapshot",
+      "project": "chromium",
+      "pointer": "/suites/1/specs/2/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 9243,
+      "resultCount": 1
+    },
+    {
+      "file": "web/persistence-tests/online-recovery.spec.ts",
+      "title": "real online lost: reconnect preserves one finite command and its atomic snapshot",
+      "project": "chromium",
+      "pointer": "/suites/1/specs/3/tests/0",
+      "timeout": 60000,
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 15930,
+      "resultCount": 1
+    }
+  ],
+  "fileCounts": {
+    "web/persistence-tests/local-startup.spec.ts": 30,
+    "web/persistence-tests/online-recovery.spec.ts": 4
+  },
+  "strictInputs": 719,
+  "prePostAllInputsExact": true,
+  "prePostRuntimeExact": true,
+  "references": {
+    "before": {
+      "path": "artifacts/goal-4/art10/native-source6-before.json",
+      "sha256": "754663112d8538effb321a31fb7bacb34331c7b455292a2bc4e6fe8cd94644c9"
+    },
+    "after": {
+      "path": "artifacts/goal-4/art10/native-source6-after.json",
+      "sha256": "e5dd59c48441504f6be8a8afe2501b7fee3f3f63e906cf5928f0f4fc7eb252c4"
+    },
+    "rawReport": {
+      "path": "artifacts/goal-4/art10/native-source6-report.json",
+      "sha256": "89b21db24180800c822978c0cc40269869d6c1a329f787a2e20d3f735ba4e73a"
+    },
+    "terminal": {
+      "path": "artifacts/goal-4/art10/native-source6-terminal.json",
+      "sha256": "26a355c2b373971680d2202ac157cce9b7f501ba48632424b6d7ce8b765a9372"
+    },
+    "freshDeclarations": {
+      "path": "artifacts/goal-4/art10/native-source6-declared.json",
+      "sha256": "c7c5b92ecbef4495beaf6014ef8d3b75e2399162112530b0cd17d19fb2c98e6f"
+    },
+    "cohortPolicy": {
+      "path": "artifacts/goal-4/art10/native-source6-cohort-policy.json",
+      "sha256": "de0b5ba47513390ea1299daf9a53793c12182f3f50ebbd44bbf0ea6aeed386e0"
+    },
+    "runConfig": {
+      "path": "artifacts/goal-4/art10/native-source6-run.json",
+      "sha256": "6bca092f19c9a0dce8861329c9f005f154f8db2e2853c79ee4baac744b2fc8b5"
+    },
+    "inputList": {
+      "path": "artifacts/goal-4/art10/native-source6-input-paths.json",
+      "sha256": "82422b1a1c204db4ed77cbde62cc9e8fb3066417b21096822996e26115569341"
+    },
+    "runner": {
+      "path": "artifacts/goal-4/art10/run-native-source6.mjs",
+      "sha256": "9751e88872c2e59d8bff370f38cd86800bc76b3247d89b1b9010e9e0c16466bc"
+    },
+    "snapshot": {
+      "path": "artifacts/goal-4/art10/snapshot-native-source6.mjs",
+      "sha256": "9f94fe02af0ebbc2df6f6575e0d039447f792fb22536473741e2cb2c8646cb57"
+    },
+    "build": {
+      "path": "artifacts/goal-4/art10/build-source6.json",
+      "sha256": "009011911254f9d053cebffde3f439058af039810d390f37d1867ec66a5a2442"
+    }
+  },
+  "config": {
+    "original": "web/playwright.idle-persistence.config.ts",
+    "cwd": "web",
+    "workers": 2,
+    "retries": 0,
+    "testTimeouts": [
+      60000
+    ],
+    "onlineActionTimeoutMs": 8000,
+    "onlineNavigationTimeoutMs": 15000,
+    "browser": "chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "trace": "retain-on-failure",
+    "port": 4174,
+    "productionPortsTouched": false
+  },
+  "cohortBoundary": {
+    "excludedUnrelatedE2EDirectory": true,
+    "excludedReason": "Selected native34 does not import e2e/support or stage-support; original85 broad UI set remains separate. All46 persistence corpus files retained conservatively.",
+    "persistenceFiles": 46,
+    "generatedActualCompileInput": "web/.generated/demo-meta.ts",
+    "public10Count": 10,
+    "generated11Exact": true,
+    "currentPayload73Exact": true,
+    "actualAppAndDynamicCSS": "Current App/SFC/Store/proof/runtime and explicit dynamicCSS all frozen; no transformed module identity swap during this run."
+  },
+  "priorOriginsRetained": [
+    "native-source2-report.json remains0c196 originalexecution.",
+    "native-source3-report.json remains618 originalexecution; source4 conditionalinheritance remainshistorical, not reused as source6actual."
+  ],
+  "limits": [
+    "This34 is actual finalsource6; originalM03 298 remainsseparate historicalexecution. No same-run332 claim.",
+    "Not815 rules, visual art, actual longterm growth or useracceptance. No compatibility/performance suite.",
+    "Safe metadata only: noGame/Activity/DB/save payloadcopied from ignoredraw.",
+    "No source/spec/config changes, extra business cases or retries."
+  ]
+}

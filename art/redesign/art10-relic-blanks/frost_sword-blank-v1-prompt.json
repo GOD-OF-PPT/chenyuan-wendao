@@ -1,0 +1,13 @@
+{
+  "asset": "frost_sword-blank-v1",
+  "mode": "built-in",
+  "tool": "image_gen.imagegen",
+  "intent": "precise-object-edit",
+  "transparent_background": true,
+  "prompt": "Use case: precise-object-edit. Edit target: the supplied transparent painting of the game's 青霜剑. Asset type: a cold unfinished engraving-stage blank for the SAME artifact, not a new weapon. Change only surface completion: remove blade engravings, ornamental gold scrollwork, jewel facets and magical finish, leaving brushed cold silver steel, plain old-bronze guard/pommel and a muted teal jade grip with a simple matching cord. Preserve the exact diagonal sword silhouette and proportions, blade pointing down-left and handle upper-right, the blade tip, guard width, grip angle, same three-quarter viewpoint and upper-left soft neutral lighting. Keep the object in the same relative canvas position and footprint with generous original empty margin; whole artifact uncut. Match the existing Chinese fantasy hand-painted game art's material/detail density. Genuinely transparent background, isolated single artifact. No table, pedestal, floor, shadow plate, tool, smoke, fire, glow, floating runes, text, logo or UI. Do not rotate to a vertical sword or redesign the guard shape.",
+  "reference": "art/redesign/art03-objects/frost_sword-v2.png",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-ed7ecdde-04cc-4c35-8be3-83e911d9bdfc.png",
+  "actualOutputHint": "Generated images are saved to /Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254 as /Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-ed7ecdde-04cc-4c35-8be3-83e911d9bdfc.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "providerModel": "not exposed by the built-in tool",
+  "providerRequestId": "not exposed by the built-in tool"
+}
