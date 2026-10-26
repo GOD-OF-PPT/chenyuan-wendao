@@ -1,0 +1,59 @@
+{
+  "runtime": "c2e9c18daf7ceccb905f59b40272f9b3905677128fe0c0abd902babef8f653b3",
+  "currentRootFreshRepresentatives": [
+    {
+      "path": "artifacts/goal-4/art10/visual-source6/learn-quota-full-budget-and-cold-object.jpg",
+      "sha256": "7a8508263ab9efdfaee68b84149725331a5ec4dfc82c3f51784800a83fe0e532",
+      "actualRootPixelView": true,
+      "lossyJPEG68OriginalDimensions": true
+    },
+    {
+      "path": "artifacts/goal-4/art10/visual-source6/native-paid-learning-contact.jpg",
+      "sha256": "25f4d1fed25dc89e0fce74d27328dc5aeb470da1cb7b55bb9786497818036aca",
+      "actualRootPixelView": true,
+      "lossyJPEG68OriginalDimensions": true
+    },
+    {
+      "path": "artifacts/goal-4/art10/visual-source6/learning-library-dialog-complete-keyboard-surface.jpg",
+      "sha256": "332d5b0669eaa33ad25d99fb793400c49f6da94c615597adf9e2bb952af6a190",
+      "actualRootPixelView": true,
+      "lossyJPEG68OriginalDimensions": true
+    },
+    {
+      "path": "artifacts/goal-4/art10/visual-source6/explicitly-added-one-scroll-complete-limits.jpg",
+      "sha256": "f6ed8e1bef96e1488c9b97a58a1723411ecb0053e1c056024e8a2e6e2d9c1103",
+      "actualRootPixelView": true,
+      "lossyJPEG68OriginalDimensions": true
+    },
+    {
+      "path": "artifacts/goal-4/art10/visual-source6-agent/system-jade_seal-complete-cold-fallback.jpg",
+      "sha256": "36ff4b3bc45d6e7602eb9c5219a1fcf936c316f613e0329393e8ff4d70add105",
+      "actualRootPixelView": true,
+      "lossyJPEG68OriginalDimensions": true
+    },
+    {
+      "path": "artifacts/goal-4/art10/visual-source6-agent/preference-soul_lamp-complete-cold-fallback.jpg",
+      "sha256": "b67500e46a1c03ff83a51057ef1990e6749df4c2c5d66e9a7d41f06ecdb74796",
+      "actualRootPixelView": true,
+      "lossyJPEG68OriginalDimensions": true
+    },
+    {
+      "path": "artifacts/goal-4/art10/visual-source6-agent/system-cloud_mirror-complete-cold-fallback.jpg",
+      "sha256": "d996e287ff875cf115591b58cfffab7f37e12d3c8018c6ffc82450dfe73220f7",
+      "actualRootPixelView": true,
+      "lossyJPEG68OriginalDimensions": true
+    },
+    {
+      "path": "artifacts/goal-4/art10/visual-source6-agent/preference-static-owned-failed-image-real-result.jpg",
+      "sha256": "0963e069d512ca6086efc9f0fcc86b9939245ac22bcb9e9d1b3d11d7b0162ea3",
+      "actualRootPixelView": true,
+      "lossyJPEG68OriginalDimensions": true
+    }
+  ],
+  "count": 8,
+  "other323GeneratedFramesNotClaimedReviewed": true,
+  "priorSourceViews": "visual-intermediate.json",
+  "deliveryChromeScreenshot": "ordinary existing viewport, not compatibility test; original remains ignored",
+  "residual": "ART-OBS-CULTIVATION-CONTRAST-01: Chrome delivery view shows breakthrough copy on bright background; keep existing whole-game ART obligation open, no compatibility test or this-task completion claim for cultivation",
+  "overallHumanArtBalanceAccepted": false
+}

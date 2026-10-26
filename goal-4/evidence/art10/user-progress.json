@@ -1,0 +1,24 @@
+{
+  "browser": "Chrome explicitly selected by user after IAB error-page policy refusal",
+  "beforeAfterVisibleTextExact": true,
+  "normalizedAXExact": false,
+  "visibleProgress": {
+    "realm": "凡人",
+    "xp": "10/10",
+    "stones": 40,
+    "hp": "60/60",
+    "mp": "20/20",
+    "activity": "自然吐纳已结束 2/50轮",
+    "saved": true
+  },
+  "rawReadOnlySnapshotsRemainIgnored": true,
+  "userGameActionsImportsRestoresResetsPerformed": false,
+  "allUserDatabaseBytesClaimedEqual": false,
+  "previousIAB5xpRecordNotUsedAsChromeCurrentBaseline": true,
+  "loadedScripts": [
+    "http://127.0.0.1:56884/assets/index-Bz2gs_5y.js"
+  ],
+  "loadedStyles": [
+    "http://127.0.0.1:56884/assets/index-DozQ7i_B.css"
+  ]
+}
