@@ -1,6 +1,6 @@
 {
   "task": "ART11",
-  "status": "checks-passed-awaiting-commit-and-preview",
+  "status": "local-engineering-delivered",
   "runtime": "186c9973db76e0e12dbc0102031609b7fb5997564ddbb99b3f114862e3cda858",
   "runtimeSources": 279,
   "payloadFiles": 87,
@@ -64,5 +64,8 @@
     "M05 performance",
     "M06 compatibility last",
     "clean package/finalreview/human"
-  ]
+  ],
+  "implementationCommit": "19e00a8e3761f50eaac25df00a5fff74b43411c8",
+  "identity": "identity-proof.json",
+  "userProgress": "user-progress.json"
 }

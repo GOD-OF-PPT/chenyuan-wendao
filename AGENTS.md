@@ -313,3 +313,6 @@ ART10实证补充：窄书脊／实际冷胚是主物件，theme!important与hov
 
 
 ART11开工依[0038](docs/decisions/0038-inventory-object-stage-art11-contract.md)与本轮实际回读[XAG112](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112)：行囊常态一个所选物和主要用途，翻找/副用途/价格按需，未知/0库存图谱不画成已经拿到；完整14物/两丹双用途/5禁售保留。选用途仅查看原草案，真实15/6/30与原子保存另行明确开始。参数/布局/绘画为项目推导，非来源时长或认证；Riot本轮fetch失败不冒当前读过。目录/用途返回与原计划可预测；Recovery现单参数组不得静态冒每药独立cache。原Goods所在playable仅余79B，须真实退休旧布局/复用slot，不能搬controller或抬帽；14绘画和缺图fallback须核真实消费、库存与图谱身份。兼容/环境性能仍不执行。
+
+
+ART11实证补充：分类重选是否改所选物须看原watch值是否真的变化，重复当前类不触turn；测试先记真实active/selected，再核close不变，不能为错误首物预期改Game。新物件testid与数量id前缀重合时，只选实际数量b叶子，全部14原数量仍硬验。图像／CSS装饰的负边缘也会造成scrollclip，交易货物与周期须逐祖先／真实像素核，不靠中心命中；专属艺术随可用行高缩放且保文字和44入口。保存结果18正文须有足够linebox，当前成果与下一次预估分明；标题CJK Range也同时验。14透明画件不表示持有，图谱明示未持有，图片失败仍有可辨fallback／DOM入口。当前独立工程不代整体艺术／长期或真人；兼容仍后置。
