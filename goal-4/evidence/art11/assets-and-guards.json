@@ -1,0 +1,357 @@
+{
+  "format": "chenyuan-art11-full-assets-verification",
+  "version": 1,
+  "recordedAt": "2026-10-26T08:58:59.861940+00:00",
+  "status": "Final SOURCE4 one actual complete413 plus following positive passed; no further guard expansion or reruns.",
+  "runtimeDigest": "186c9973db76e0e12dbc0102031609b7fb5997564ddbb99b3f114862e3cda858",
+  "runtimeSources": 279,
+  "build": {
+    "path": "artifacts/goal-4/art11/build-source4.json",
+    "bytes": 44249,
+    "sha256": "bff3d581d239cd99bd1adbef570b1af79b8085fc2cda9358ce064507fc31f0cc",
+    "payloadFiles": 87,
+    "payloadBytes": 9068677,
+    "rootBuildNotReviewerBuild": true
+  },
+  "source3to4": {
+    "originalDigest": "0af8f00abb1bb3c7552002d6bdb6c4c9672a013e64512254bbe2b770083347e3",
+    "changedRuntimePaths": [
+      "web/src/MarketCounter.vue"
+    ],
+    "allOther278RuntimePathsByteExact": true,
+    "rootRepairDescription": "Only MarketCounter CSS +331 bytes for seven real old42 clipping/stock-cycle overlap findings; root reports script/template byte exact. No supply/period/Game changes.",
+    "previousActualReport": {
+      "path": "artifacts/goal-4/art11/guard-full-verification-source3.json",
+      "bytes": 12211,
+      "sha256": "5863efc505d8e83f43464816973c12c2cc4f257601c1d50347cc0458c92cb21f"
+    },
+    "previousResultNotRetagged": true
+  },
+  "execution": {
+    "ownedExecSession": 42833,
+    "terminalExit": 0,
+    "actualUnique413": 413,
+    "old387PlusNew26SameRun": true,
+    "durationSeconds": 355.08,
+    "rows": [
+      {
+        "name": "tests",
+        "commandArgs": [
+          "art/tools/test_inventory.py"
+        ],
+        "began": "2026-10-26T08:49:50.740Z",
+        "ended": "2026-10-26T08:55:46.244Z",
+        "exit": 0,
+        "error": null,
+        "expectedTests": 413,
+        "actualTests": 413,
+        "durationSeconds": 355.08,
+        "unittestOK": true,
+        "log": "artifacts/goal-4/art11/guard-full-source4-tests.log",
+        "sha256": "706196f8c0f26024f1429dd92c7ea8768f410376215a0f025d72cec0307231a1"
+      },
+      {
+        "name": "positive",
+        "commandArgs": [
+          "art/tools/check_inventory.py"
+        ],
+        "began": "2026-10-26T08:55:46.246Z",
+        "ended": "2026-10-26T08:55:47.110Z",
+        "exit": 0,
+        "error": null,
+        "expectedTests": null,
+        "actualTests": null,
+        "durationSeconds": null,
+        "unittestOK": null,
+        "log": "artifacts/goal-4/art11/guard-full-source4-positive.log",
+        "sha256": "664d589fb92822f25f9daed8d49ebbba64fe2ab737225ce92b987320737668b8"
+      }
+    ],
+    "noAdditionalNew26Run": true,
+    "noSkipRetryOrMatrixExpansion": true,
+    "rawBoundary": "Full-file unittest reports413/OK; exact before-run declaration and frozen test hash supply method identities. No invented per-method verbose timings.",
+    "notEnvironmentOrGamePerformanceAcceptance": true
+  },
+  "strictBoundary": {
+    "inputs": 872,
+    "previous868Complete": true,
+    "old864791And652Remain": true,
+    "fourNewPhasePaths": [
+      "artifacts/goal-4/art11/build-source4.json",
+      "artifacts/goal-4/art11/guard-full-source4-declared.json",
+      "artifacts/goal-4/art11/guard-source4-input-paths.json",
+      "artifacts/goal-4/art11/run-guard-source4.mjs"
+    ],
+    "same413IDsAndTestFileHashAsSource3": true,
+    "preRecordedAt": "2026-10-26T08:49:49.808Z",
+    "postRecordedAt": "2026-10-26T08:55:47.292Z",
+    "preActuallyBeforeCommand": true,
+    "postActuallyAfterTerminal": true,
+    "all872SHA256Exact": true,
+    "all279RuntimeSHA256Exact": true,
+    "runtimeMatchesFrozenBuild": true,
+    "onlyE2eInputs": [
+      "web/e2e/economy.spec.ts",
+      "web/e2e/growth.spec.ts",
+      "web/e2e/interface.spec.ts"
+    ],
+    "old42AndStageSupportExcludedAsNotGuardConsumers": true,
+    "heldDocsWithinWindow": [
+      "AGENTS.md",
+      "goal-4/plan.md",
+      "goal-4/tasks.md"
+    ],
+    "public10Generated1": [
+      "web/.generated/demo-meta.ts",
+      "web/public/demo-nodes/battle-sword.json",
+      "web/public/demo-nodes/battle-talisman.json",
+      "web/public/demo-nodes/causal-help.json",
+      "web/public/demo-nodes/causal-trade.json",
+      "web/public/demo-nodes/ending-sword.json",
+      "web/public/demo-nodes/ending-talisman.json",
+      "web/public/demo-nodes/manifest.json",
+      "web/public/demo-nodes/opening.json",
+      "web/public/demo-nodes/trial-sword.json",
+      "web/public/demo-nodes/trial-talisman.json"
+    ],
+    "crossPhaseCaveat": "Each actual run has its own exact input window. MarketCounter and art04 source identities changed after source3; source2/source3 original raw and historical26 retain their own labels. This is a fresh whole413, not composition."
+  },
+  "positiveResult": {
+    "format": "chenyuan-art-inventory",
+    "verifiedFiles": 205,
+    "legacyVerifiedFiles": 24,
+    "legacyProductionAssets": 20,
+    "redesignVerifiedFiles": 19,
+    "redesignProductionAssets": 18,
+    "characterBattleVerifiedFiles": 30,
+    "characterBattleProductionAssets": 30,
+    "desktopUIVerifiedFiles": 2,
+    "desktopUIProductionAssets": 2,
+    "statuses": {
+      "reference": 96,
+      "placeholder": 1,
+      "missing": 2,
+      "production": 108
+    },
+    "productionAssets": 108,
+    "singleScreenNativeBytes": 10876,
+    "gameMenuNativeBytes": 16149,
+    "feedbackSkipNativeBytes": 2263,
+    "idleNativeBytes": 21485,
+    "sourceNativeBytes": 10995,
+    "productionNativeBytes": 24267,
+    "preparationNativeBytes": 59643,
+    "adventureNativeBytes": 43962,
+    "stageR1NativeBytes": 17987,
+    "stageR2NativeBytes": 11718,
+    "stageR3NativeBytes": 16828,
+    "stageR4NativeBytes": 13962,
+    "idleTradeoffNativeBytes": 29756,
+    "localLoadingNativeBytes": 1825,
+    "activityHistoryNativeBytes": 7816,
+    "alchemyWorkshopNativeBytes": 18776,
+    "adventureObjectNativeBytes": 35711,
+    "equipmentObjectNativeBytes": 44148,
+    "supplyObjectNativeBytes": 27564,
+    "narrativeObjectNativeBytes": 27099,
+    "cultivationObjectNativeBytes": 44865,
+    "ta07NativeBytes": 31083,
+    "ta08NativeBytes": 41373,
+    "ta09NativeBytes": 28779,
+    "art10NativeBytes": 11985,
+    "art11NativeBytes": 13715,
+    "scope": "Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance."
+  },
+  "budgets": {
+    "ART11native": [
+      13715,
+      18000
+    ],
+    "ItemArtifact": [
+      2160,
+      4000
+    ],
+    "ART11CSS": [
+      11555,
+      14000
+    ],
+    "ART04": [
+      27564,
+      40000
+    ],
+    "preparation": [
+      59643,
+      60000
+    ],
+    "ART03": [
+      44148,
+      45000
+    ],
+    "stageR3": [
+      16828,
+      18000
+    ],
+    "TA09": [
+      28779,
+      30000
+    ],
+    "ART10CSS": [
+      11985,
+      12000
+    ],
+    "fourteenRasters": [
+      546288,
+      1680000
+    ],
+    "singleRasterCap": 120000,
+    "allOriginalCapsUnraised": true
+  },
+  "nativeFilesFromCurrentFrozenLedger": [
+    {
+      "path": "web/src/ItemArtifact.vue",
+      "bytes": 2160,
+      "sha256": "b651e6b9bc5675ca1ccaecc08d62f5c45ef8d70ae6915bae8b75b507a17328b0"
+    },
+    {
+      "path": "web/src/art11-inventory.css",
+      "bytes": 11555,
+      "sha256": "99eb164046e986a6f23978ebaa33593d4e1d1b13111bf4c023591ee970136a44"
+    }
+  ],
+  "currentART04Identity": {
+    "path": "art/redesign/art04.json",
+    "bytes": 1672,
+    "sha256": "e92654ea7a2d0f4f70907b41ddc0ce67c3a7a52f90058228428aca92282e5050"
+  },
+  "unchangedFourteenExports": {
+    "path": "art/redesign/art11-items/export-facts.json",
+    "bytes": 47563,
+    "sha256": "0b21de7634948d0ec07965adb5eec2ab95619c561cf35057a90d6d25052dc1fc",
+    "exactAgainstPreviousSource3Window": true,
+    "originalsRetained": true,
+    "independentPaintings": 14,
+    "initialSixReproducedExact": true,
+    "actualDoubleEncodeBytesEqual": true,
+    "runtime512And32pxWholeAlphaMargin": true,
+    "pixelAcceptance": false
+  },
+  "originalEvidenceRetained": [
+    {
+      "path": "artifacts/goal-4/art11/guard-full-verification-source2.json",
+      "bytes": 13106,
+      "sha256": "877290971f64a0bdfbf80b9fea845113d7eb43d1a7549e32809195b3cc797777"
+    },
+    {
+      "path": "artifacts/goal-4/art11/guard-full-verification-source3.json",
+      "bytes": 12211,
+      "sha256": "5863efc505d8e83f43464816973c12c2cc4f257601c1d50347cc0458c92cb21f"
+    },
+    {
+      "path": "artifacts/goal-4/art11/new26-initial-results.json",
+      "bytes": 978,
+      "sha256": "2959b0ce4f06aba20a61401d3a128d2ffc6e6f500ac07d094b9997394f8ca3dd"
+    },
+    {
+      "path": "artifacts/goal-4/art11/old-preparation-binding-red.json",
+      "bytes": 918,
+      "sha256": "9271a1178cbeb58fe3425270697c44a7bae5529502dc57f3db9d91d54d82b5fb"
+    },
+    {
+      "path": "artifacts/goal-4/art11/old-preparation-binding-extracted-harness-error.json",
+      "bytes": 679,
+      "sha256": "a9e765c067cf396397fece67ffbaac59c8ca5c7833089e3fe83b75c50b4c4dcd"
+    },
+    {
+      "path": "artifacts/goal-4/art11/fixture-content-repair/inverse-proof.json",
+      "bytes": 855,
+      "sha256": "27be0bb8d648671a8f25826eb091a848380e5c9e099d4e7e2e82b60880ca437f"
+    }
+  ],
+  "oldMethodAndFixtureBoundary": {
+    "old387Methods": 387,
+    "old386BodiesByteExact": true,
+    "soleOldMethodAdaptation": "Production108 exact expected sum adds explicit ART11 fourteen; removing only new contribution restores original complete method.",
+    "newMeaningfulMethods": 26,
+    "notDuplicatedWhenIncludedIn413": true,
+    "source2OneFixtureDependency": "if art11.exists():files.add(ROOT/'src/full/content.ts')",
+    "fixtureWholeFileInverseAndAll413BodiesExact": {
+      "path": "artifacts/goal-4/art11/fixture-content-repair/inverse-proof.json",
+      "bytes": 855,
+      "sha256": "27be0bb8d648671a8f25826eb091a848380e5c9e099d4e7e2e82b60880ca437f"
+    },
+    "new26OriginalRawKept": {
+      "path": "artifacts/goal-4/art11/new26-initial-results.json",
+      "bytes": 978,
+      "sha256": "2959b0ce4f06aba20a61401d3a128d2ffc6e6f500ac07d094b9997394f8ca3dd"
+    }
+  },
+  "files": [
+    {
+      "path": "artifacts/goal-4/art11/snapshot.mjs",
+      "bytes": 1033,
+      "sha256": "33db11eb7dce6028e89c4bb47be601d753986c4a11180d93d9f419267316ee5d"
+    },
+    {
+      "path": "artifacts/goal-4/art11/run-guard-source4.mjs",
+      "bytes": 3238,
+      "sha256": "256ceb6ff8c357789d7a9a5850ffb694c7f68c046beff6ab1b6b7f7d75e5101f"
+    },
+    {
+      "path": "artifacts/goal-4/art11/guard-source4-input-paths.json",
+      "bytes": 36810,
+      "sha256": "3faa6542e0b2b92522fc0799981fdde6fc0bd8f0d09dc69902a1d1d6606a1811"
+    },
+    {
+      "path": "artifacts/goal-4/art11/guard-full-source4-declared.json",
+      "bytes": 39296,
+      "sha256": "9265a76a5c60c4679ac550d70d7dd5a2328e49b934ec14fc1afb0bb4e79421c9"
+    },
+    {
+      "path": "artifacts/goal-4/art11/guard-full-source4-before.json",
+      "bytes": 127129,
+      "sha256": "d368ed963857ab969a66f755dd51bf9b25a406fbddd042b4567dba6173bbc791"
+    },
+    {
+      "path": "artifacts/goal-4/art11/guard-full-source4-after.json",
+      "bytes": 127128,
+      "sha256": "f832ffd8016c52a7a048b2eaa9c53c864b36bfa880d782c3d432e4a3e88857f6"
+    },
+    {
+      "path": "artifacts/goal-4/art11/guard-source4-results.json",
+      "bytes": 1446,
+      "sha256": "a707d29e15843d1c7a36a5846599ebdd519d41349e09465d5fc6f8e53fb075ea"
+    },
+    {
+      "path": "artifacts/goal-4/art11/guard-full-source4-results.json",
+      "bytes": 1235,
+      "sha256": "5ac009638b9aa3c9f18e914f51fc69f73b87c22b1379efcce15ea47bcb6293ab"
+    },
+    {
+      "path": "artifacts/goal-4/art11/guard-source4-run.log",
+      "bytes": 2730,
+      "sha256": "3584db1af9e8ba0c8f48d4f3e94420dc412b0fa9562d756a70ef37046f5ace8a"
+    },
+    {
+      "path": "artifacts/goal-4/art11/guard-full-source4-tests.log",
+      "bytes": 515,
+      "sha256": "706196f8c0f26024f1429dd92c7ea8768f410376215a0f025d72cec0307231a1"
+    },
+    {
+      "path": "artifacts/goal-4/art11/guard-full-source4-positive.log",
+      "bytes": 1383,
+      "sha256": "664d589fb92822f25f9daed8d49ebbba64fe2ab737225ce92b987320737668b8"
+    }
+  ],
+  "notExecutedInThisRun": [
+    "New8/old10/old42 browser checks or pixels",
+    "Native34/298 inherited chain",
+    "Rules815",
+    "Types/build",
+    "Compatibility/environment-performance",
+    "User save/Game actions",
+    "Commit/archive/HTTP release",
+    "Overall ART11/game-feel/long-balance/human acceptance"
+  ],
+  "dataSafety": "Source/export facts, hashes and counts only; no Game/save/IDB payload and original13 not modified by this agent.",
+  "locksReturned": "Owned42833 terminal exit0; root notified immediately. Only ignored final metadata written afterward; no extra suite or frozen-input mutation."
+}

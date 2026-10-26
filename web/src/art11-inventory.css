@@ -1,0 +1,106 @@
+/* ART11: the selected material and its next decision stay on the game stage. */
+#app .art11-inventory{display:flex;flex-direction:column;flex:1;min-height:0;gap:8px}
+#app .goods-catalogue:has(>.art11-inventory){padding:12px 18px;gap:6px}
+#app .inventory-stage-heading{display:flex;justify-content:space-between;align-items:center;min-height:44px;gap:16px;flex:none}
+#app .inventory-stage-heading small{font-size:14px;line-height:1.65}
+#app .inventory-stage-heading button{font-size:18px;min-height:44px;padding:6px 16px}
+#app .inventory-selected{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(0,1.15fr);grid-template-rows:minmax(0,1fr);align-items:center;gap:40px;flex:1;min-height:0;width:min(100%,1100px);align-self:center}
+#app .inventory-selected :is(.inventory-held,.inventory-blueprint){position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0;height:100%;width:100%;max-height:390px;margin:0;padding:12px 16px;gap:8px;background:transparent!important;border:0!important;border-radius:0;box-shadow:none!important;transform:none!important}
+#app .inventory-selected .item-artifact{flex:1;min-height:0;width:100%;height:100%}
+#app .inventory-held>span{font-size:18px;line-height:1.65;padding:6px 20px;border-bottom:1px solid #99ba9e99;min-height:32px}
+#app .inventory-blueprint>small{font-size:14px;line-height:1.65;min-height:24px}
+#app .inventory-selected .inventory-object{position:static;display:flex;flex-direction:column;align-self:center;gap:8px;padding:0;margin:0;border:0;background:none;min-width:0}
+#app .inventory-object>small{font-size:14px;line-height:1.65}
+#app .inventory-object h3{font-size:30px;line-height:1.65;margin:0}
+#app .inventory-object>strong{font-size:20px;line-height:1.65;color:#c3e2c6}
+#app .inventory-object p{font-size:18px;line-height:1.65;margin:0}
+#app .inventory-main-decision{display:flex;justify-content:center;align-items:center;gap:18px;flex:none;min-height:52px;padding:4px 0 10px}
+#app .inventory-main-decision>button{font-size:18px;min-height:48px;padding:8px 22px;width:auto}
+#app .art11-object-dialog{width:1050px;max-width:none;max-height:none;overflow:visible;padding:20px 26px;color:#e2ead2;background:linear-gradient(125deg,#183d3b,#102d32);border:1px solid #a49b6d;border-radius:4px;box-shadow:0 20px 70px #031c28b3}
+#app .art11-object-dialog>header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-bottom:12px;margin:0;border-bottom:1px solid #97b09155}
+#app .art11-object-dialog h3{font-size:26px;line-height:1.65;margin:0}
+#app .art11-object-dialog h4{font-size:20px;line-height:1.65;margin:0}
+#app .art11-object-dialog p{font-size:18px;line-height:1.65;margin:8px 0}
+#app .art11-object-dialog small{font-size:14px;line-height:1.65}
+#app .art11-object-dialog button{font-size:18px;line-height:1.5;min-height:44px}
+#app .art11-object-dialog>footer{display:flex;justify-content:flex-end;gap:16px;padding-top:12px}
+#app .inventory-library-dialog .inventory-directory{display:flex;flex-direction:column;gap:10px;min-width:0;min-height:0}
+#app .inventory-library-dialog .inventory-filters{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:44px}
+#app .inventory-library-dialog .inventory-filters>label{display:flex;align-items:center;gap:12px;font-size:18px}
+#app .inventory-library-dialog .catalogue-tabs{display:flex;justify-content:center;gap:22px;min-height:44px;padding:4px 0}
+#app .inventory-library-dialog .catalogue-tabs>button{flex:0 0 auto;min-width:120px;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important}
+#app .inventory-library-dialog .catalogue-tabs>button[aria-pressed=true]{border-bottom:2px solid #aedcc5!important}
+#app .inventory-library-dialog .inventory-objects{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:220px;gap:16px;padding:12px 6px;background:linear-gradient(110deg,#1c4139,#163b3a);border-block:4px double #899b75}
+#app .inventory-library-dialog .inventory-objects>button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:0;padding:12px;border:1px solid #8aa48666;border-radius:8px;background:#163a3888!important;box-shadow:inset 0 0 20px #0b292b66!important;transform:none!important}
+#app .inventory-library-dialog .inventory-objects>button[aria-pressed=true]{outline:2px solid #b6ddc0;outline-offset:2px}
+#app .inventory-library-dialog .inventory-objects .game-icon{width:52px;height:52px;flex:none}
+#app .inventory-library-dialog .inventory-objects strong{font-size:22px;line-height:1.65}
+#app .inventory-library-dialog .inventory-objects b{font-size:18px;line-height:1.65}
+#app .inventory-library-dialog .inventory-zero{opacity:.8;border-style:dashed!important}
+#app .art11-object-dialog .catalogue-pager{display:flex;justify-content:center;gap:18px;margin:8px 0 0;min-height:44px;flex-wrap:nowrap}
+#app .art11-object-dialog .catalogue-pager button{min-width:100px;width:auto;flex:none}
+#app .art11-object-dialog .catalogue-pager>span{width:auto;order:0}
+#app .inventory-purpose-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:8px 0}
+#app .inventory-purpose-options>section{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:12px 16px;border-block:1px solid #8ba78c66;background:#143735}
+#app .inventory-purpose-options p{margin:0}
+#app .inventory-purpose-options>section>button{align-self:flex-start;margin-top:6px}
+#app .inventory-purpose-options>.inventory-kept{grid-column:1/-1}
+#app .inventory-material-uses{padding:8px 0;border-top:1px solid #8ba78c66}
+#app .inventory-material-uses>p{margin:3px 0}
+
+#app .market-planner:has(>.art11-market),#app .recovery-planner:has(>.art11-recovery){display:flex;flex-direction:column;gap:6px;min-height:0;padding:10px 18px}
+#app .art11-market{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(320px,.85fr);grid-template-rows:44px minmax(0,1fr) auto;gap:8px 34px;flex:1;min-height:0}
+#app .art11-market .counter-library-control{grid-column:1/-1;grid-row:1;display:flex;justify-content:flex-end;min-height:44px}
+#app .counter-library-control>button{min-height:44px;font-size:18px;width:auto}
+#app .art11-market .counter-table{grid-area:2/1;grid-template-columns:minmax(100px,1fr) 120px minmax(100px,.7fr);grid-template-rows:minmax(0,1fr) auto;align-items:center;padding:8px;min-height:0}
+#app .art11-market .counter-item-rest{width:100%;height:200px;max-height:100%}
+#app .art11-market .counter-stones{width:112px;height:100px}
+#app .art11-market .counter-description{grid-area:3/1;grid-template-columns:minmax(0,1fr) auto;padding:8px 12px;gap:4px 12px;min-height:0}
+#app .art11-market .counter-description>h3{font-size:26px;line-height:1.65}
+#app .art11-market .counter-description>p{font-size:18px;line-height:1.65}
+#app .art11-market .counter-decision{grid-column:2;grid-row:2/4;display:flex;flex-direction:column;justify-content:center;min-width:0;min-height:0;padding-left:18px;border-left:1px solid #92ad8d55;background:linear-gradient(90deg,#1b423a44,transparent)}
+#app .art11-market .market-decision{gap:7px}
+#app .art11-market .market-price{line-height:1.65}
+#app .art11-market .market-decision>button{min-height:48px;font-size:18px;width:100%}
+#app .art11-market .counter-exchange{gap:6px}
+#app .art11-market .counter-exchange>strong{font-size:18px;line-height:1.65}
+#app .art11-market .counter-cycle{line-height:1.65;min-height:40px}
+#app .art11-market .preparation-estimate{padding-top:6px}
+#app .art11-market .counter-goods>strong,#app .art11-market .counter-purse>strong{line-height:1.65}
+#app .art11-object-dialog .market-modes{display:flex;gap:16px;align-items:center;padding:8px 0;min-height:44px}
+#app .art11-object-dialog .market-modes>span{margin-left:auto;font-size:18px}
+#app .art11-object-dialog .market-shelves{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:12px 0;min-height:200px}
+#app .art11-object-dialog .market-shelves>button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:10px;background:#183d39!important;border:1px solid #829e7b88;border-radius:5px}
+#app .art11-object-dialog .market-shelves .game-icon{width:48px;height:48px;flex:none}
+#app .art11-object-dialog .market-shelves strong{font-size:20px;line-height:1.65}
+#app .art11-object-dialog .counter-shelf-facts{display:flex;flex-direction:column;gap:3px;font-size:14px;line-height:1.65;text-align:center}
+
+#app .art11-recovery{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);grid-template-rows:44px auto minmax(0,1fr);gap:8px 32px;flex:1;min-height:0}
+#app .art11-recovery .recovery-methods{grid-column:1/-1;grid-row:1;display:flex;justify-content:flex-end;min-height:44px}
+#app .recovery-methods>button{min-height:44px;font-size:18px;width:auto}
+#app .art11-recovery .recovery-body{grid-column:1;grid-row:2;display:grid;grid-template-columns:1fr 1fr;gap:20px;min-height:0;padding:0 12px}
+#app .art11-recovery .recovery-object{grid-column:1;grid-row:3;display:flex;flex-direction:column;justify-content:center;gap:9px;min-height:0;padding:8px 12px;border:0;background:none}
+#app .art11-recovery .recovery-object-heading{display:flex;align-items:center;gap:24px}
+#app .art11-recovery .recovery-vessel{width:200px;height:180px;max-height:100%;min-height:0}
+#app .art11-recovery .recovery-medicine{position:absolute;left:0;right:45px;top:0;bottom:48px;min-height:0}
+#app .art11-recovery .recovery-object h3{font-size:26px;line-height:1.65}
+#app .art11-recovery .recovery-object p{font-size:18px;line-height:1.65}
+#app .art11-recovery .recovery-object small{font-size:14px;line-height:1.65}
+#app .art11-recovery .recovery-decision{grid-column:2;grid-row:2/4;display:flex;flex-direction:column;justify-content:center;min-width:0;min-height:0;gap:8px;padding-left:18px;border-left:1px solid #92ad8d55;background:linear-gradient(90deg,#1b423a44,transparent)}
+#app .art11-recovery .recovery-cycle{min-height:36px;line-height:1.65;padding-top:4px}
+#app .art11-recovery .recovery-arrival,#app .art11-recovery .recovery-saved{min-height:24px;font-size:14px;line-height:1.65}
+#app .art11-recovery .recovery-source{min-height:44px;margin:0}
+#app .art11-recovery .recovery-decision>button{min-height:48px;font-size:18px;width:100%}
+#app .art11-recovery .recovery-decision .preparation-estimate{gap:3px;padding-top:6px}
+#app .art11-recovery .recovery-decision .preparation-estimate strong{font-size:18px;line-height:1.65}
+#app .art11-object-dialog .recovery-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:16px 0;min-height:220px}
+#app .art11-object-dialog .recovery-options>button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;background:#183d39!important;border:1px solid #829e7b88;border-radius:5px}
+#app .art11-object-dialog .recovery-options .game-icon{width:52px;height:52px;flex:none}
+#app .art11-object-dialog .recovery-options strong{font-size:22px;line-height:1.65}
+#app .art11-object-dialog .recovery-options small{font-size:14px;line-height:1.65}
+#app :is(.art11-market,.art11-recovery) [data-testid=preparation-plan-state]{font-size:14px;line-height:1.65}
+
+#app .art11-object-dialog label{font-size:18px;line-height:1.65;min-height:44px}
+#app :is(.market-planner,.recovery-planner)>.preparation-dialog h3{line-height:1.65}
+
+#app .art11-recovery .recovery-object .recovery-arrival{font-size:18px;line-height:1.65;min-height:30px;flex:none}

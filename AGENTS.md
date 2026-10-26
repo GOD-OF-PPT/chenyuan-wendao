@@ -310,3 +310,6 @@ ART10依据[0037物件舞台合同](docs/decisions/0037-equipment-object-stage-a
 
 
 ART10实证补充：窄书脊／实际冷胚是主物件，theme!important与hover要查真实计算值，不能只写background便称已消除平卡。错误态预估与不可执行动作可以按需归拢，但有限授权／原retry／全部事实不丢；grid行160与子对象auto260须显式核actual height／align-self，不能只设min-height。真实SVG工具须留原16px外带，不用clip切掉。关闭原生dialog仍保DOM文本；当前可见完成态否定文案按innerText并显式核dialog关闭／无open，完整参数与原Game断言保持，不借此隐藏可见错误。实际当前Chrome进度与历史IAB记录分开，只读前后核对，不冒用户全DB相等。整体美术／长期和真人责任保持；当前普通交付观察的修行突破正文对比不足另记后续ART，不顺带开启兼容。
+
+
+ART11开工依[0038](docs/decisions/0038-inventory-object-stage-art11-contract.md)与本轮实际回读[XAG112](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112)：行囊常态一个所选物和主要用途，翻找/副用途/价格按需，未知/0库存图谱不画成已经拿到；完整14物/两丹双用途/5禁售保留。选用途仅查看原草案，真实15/6/30与原子保存另行明确开始。参数/布局/绘画为项目推导，非来源时长或认证；Riot本轮fetch失败不冒当前读过。目录/用途返回与原计划可预测；Recovery现单参数组不得静态冒每药独立cache。原Goods所在playable仅余79B，须真实退休旧布局/复用slot，不能搬controller或抬帽；14绘画和缺图fallback须核真实消费、库存与图谱身份。兼容/环境性能仍不执行。

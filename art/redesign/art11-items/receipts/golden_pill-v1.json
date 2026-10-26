@@ -1,0 +1,25 @@
+{
+  "id": "golden_pill",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-cc0142b6-1cf0-4d57-9d32-b3d9d36675cd.png",
+  "workspaceRaw": "art/redesign/art11-items/golden_pill-v1.png",
+  "rawSha256": "562f079f0258df75cb5acd4848bd0ad9f49f546483f8ba3d1abc183e2536371d",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    191,
+    243,
+    1149,
+    1006
+  ]
+}

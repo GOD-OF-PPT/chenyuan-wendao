@@ -1,0 +1,3283 @@
+{
+  "format": "chenyuan-art11-native332-final-layered-proof",
+  "version": 1,
+  "recordedAt": "2026-10-26T08:55:43.896371+00:00",
+  "currentSource4": "186c9973db76e0e12dbc0102031609b7fb5997564ddbb99b3f114862e3cda858",
+  "actualCurrent34": {
+    "path": "artifacts/goal-4/art11/native-source4-verification.json",
+    "sha256": "bfabb74039a8bac88068953575a0c9b689854cc7f832c3e7b9a52486d5fb1a5f"
+  },
+  "actualCurrent34Count": 34,
+  "originalM03Report": {
+    "path": "artifacts/goal-4/matrix-m03/native-source11-report.json",
+    "sha256": "44b0a2df0a5243723cbb1d6974762c347ddc393fcf96ee39136d00f1b221741a"
+  },
+  "originalM03Runtime": "3daa6b703dd3e9fee84778e822fc0296b6d4bedee85a2ff6494884f70eecbb5c",
+  "priorMapping": {
+    "path": "artifacts/goal-4/check-ta-03/analysis/native-rule-inheritance-source5.json",
+    "sha256": "37f84db2eddff6ae5a13ec3d79ba8efca0b4140063c4e2c2510411fb83dd3e52"
+  },
+  "originalNamed298": [
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "clock handshake waits the one missing wall-clock millisecond, saves once and starts a full next cycle",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "clock handshake survives a rewind between its deadline check and the real transaction using the same tick",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "clock handshake pause cancels the wall-clock remainder without settling an abandoned cycle",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "clock handshake reconnect cancels the wall-clock remainder without settling an abandoned cycle",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "clock handshake takeover cancels the wall-clock remainder without settling an abandoned cycle",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "clock handshake dispose cancels the wall-clock remainder without settling an abandoned cycle",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "clock handshake a forward wall-clock jump cannot shorten the monotonic cycle or create catch-up rewards",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "clock handshake keeps a real quota failure visible and retries that same cycle after another wall-clock adjustment",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "Store retry replays a committed cycle and pause/resume preserve its replay identity without more rewards",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "same Store reconnect preserves running arrangement without offline catch-up and explicit resume starts a full period",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/9/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "pause waits for a cycle already committed but not yet delivered and never starts the next cycle",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/10/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "source Store replays a lost material-cycle delivery and a pause during commit delivery never schedules another payout",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/11/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity-store.spec.ts",
+      "title": "production Store retries the saved furnace and a pause while the next commit is in flight never burns another batch",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/0/specs/12/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "online cycles never reward early, a late callback settles one step, and receipts replay the latest snapshot",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "pause and explicit takeover fence old callbacks, reopening grants nothing and starts a complete new cycle",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "the repository blocks short cultivation batches and other writes until pause, then invalidates the old plan",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "cycle quota rolls back Game, previous, activity and receipt; the original command retries once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "cycle abort rolls back Game, previous, activity and receipt; the original command retries once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "a lost cycle delivery replays the saved receipt and automatic budget stopping does not consume another cycle",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "activity command IDs cannot change payloads or cross into ordinary commands and corrupt receipts stay untouched",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "undefined or malformed activity records are rejected rather than overwritten by loading, commands or replacement",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "explicit replacement archives the activity atomically and cannot apply an old cycle to the new run",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "restoring a real breakthrough checkpoint archives the old activity with the replacement and keeps the checkpoint reusable",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/9/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "v3 database upgrades retain real Game records and receipts while an old connection closes on version change",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/10/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "content migration archives and clears the old activity atomically without fabricating offline growth",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/11/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/activity.spec.ts",
+      "title": "cycle and cultivation-cap limits stop in the same saved transaction without automatic breakthrough",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/1/specs/12/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure-store.spec.ts",
+      "title": "Store travel and encounter change periods only after each real atomic arrival, spawn and battle turn",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/2/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure-store.spec.ts",
+      "title": "Store lost battle-turn delivery replays the original result and begins a full next turn without repeated damage or cost",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/2/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure-store.spec.ts",
+      "title": "external progress invalidates viewing intent immediately while an arrived trip is still finishing its checkpoint read",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/2/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure-upgrade.spec.ts",
+      "title": "DB8 preserves real DB7 preparation, configuration proofs, checkpoint and old travel receipt without replaying their effects",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/3/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure.spec.ts",
+      "title": "travel waits for its exact deadline, saves one formal arrival and keeps a complete immutable history entry",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/4/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure.spec.ts",
+      "title": "an explicit encounter continues through real three-second turns and rewards only a formally won battle",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/4/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure.spec.ts",
+      "title": "all seven manual battle actions use exact formal costs, effects and one complete turn without automatic equipment",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/4/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure.spec.ts",
+      "title": "adventure quota never duplicates the stable travel, encounter or battle command",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/4/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure.spec.ts",
+      "title": "adventure abort never duplicates the stable travel, encounter or battle command",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/4/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure.spec.ts",
+      "title": "adventure lost-delivery never duplicates the stable travel, encounter or battle command",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/4/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure.spec.ts",
+      "title": "paused travel and explicit page takeover fence old callbacks and never pay elapsed closed-page time",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/4/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure.spec.ts",
+      "title": "complete activity history paginates beyond eight turns, stays ordered and rejects corrupt same-run records without scanning another run",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/4/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure.spec.ts",
+      "title": "v6 proof binds the original round, policy, timing and full resulting battle state",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/4/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure.spec.ts",
+      "title": "old legal short travel, encounter and battle receipts still replay before the new-write guard",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/4/specs/9/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/adventure.spec.ts",
+      "title": "a current trial gate uses real rounds and stops at the next gate without choosing another question or ending",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/4/specs/10/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/check-art-02-store.spec.ts",
+      "title": "a received native START remains exactly acknowledged after real versionchange closes checkpoint delivery without claiming a new saved Game",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/5/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/check-art-02-store.spec.ts",
+      "title": "unsubmitted quota and lost native START replies remain unacknowledged until original receipt retry and private confirmation memory is bounded",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/5/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/check-art-02-store.spec.ts",
+      "title": "a native START delivered after its Store is disposed cannot acknowledge or overwrite the replacement connection",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/5/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration-store.spec.ts",
+      "title": "Store configuration prepares without writing and applies instantly with a distinct source instead of an action clock",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/6/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration-store.spec.ts",
+      "title": "Store configuration quota retry preserves the exact selected command and never invents a new authorization",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/6/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration-store.spec.ts",
+      "title": "Store configuration lost delivery stays retryable after refresh makes its original revision stale and replays without re-equipping",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/6/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration-store.spec.ts",
+      "title": "Store configuration rejects an old paused-activity confirmation after another arrangement replaces it at the same Game revision",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/6/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration-store.spec.ts",
+      "title": "a newer failed Store configuration replaces the retry identity and cannot silently continue an older selected action",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/6/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration.spec.ts",
+      "title": "read-only configuration compares real school, slots and relic effects and applies each selected change once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/7/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration.spec.ts",
+      "title": "all learned slots and all owned relics stay selectable without repeated fees or automatic school changes",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/7/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration.spec.ts",
+      "title": "configuration binds the paused activity revision and cannot stop another arrangement at the same Game revision",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/7/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration.spec.ts",
+      "title": "configuration quota preserves all records and stable intent retry applies once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/7/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration.spec.ts",
+      "title": "configuration abort preserves all records and stable intent retry applies once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/7/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration.spec.ts",
+      "title": "configuration lost-delivery preserves all records and stable intent retry applies once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/7/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration.spec.ts",
+      "title": "historic configuration replay returns the latest later loadout and original result without equipping again",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/7/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration.spec.ts",
+      "title": "configuration receipts reject altered scope, forged change proof and cross-purpose command reuse",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/7/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration.spec.ts",
+      "title": "configuration has no short-write bypass, and battle or invalid action confirmations cannot mutate the save",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/7/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/configuration.spec.ts",
+      "title": "legal old configuration receipts still replay through ordinary execute while new writes require scoped confirmation",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/7/specs/9/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/history-ui.spec.ts",
+      "title": "native history deliveries cannot restore stale rows or errors after unmount, activity/run replacement or synchronization",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/8/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/history-ui.spec.ts",
+      "title": "a missing saved cycle is reported as incomplete and readonly recovery never invents a receipt or changes Game saved state",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/8/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/history-ui.spec.ts",
+      "title": "a failed native history delivery stays local and the visible retry performs only readonly queries",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/8/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/idle-progression-route.spec.ts",
+      "title": "normal idle new life sword-gather persists every authorized cycle through explicit ascension",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/9/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/idle-progression-route.spec.ts",
+      "title": "normal idle new life sword-commission persists every authorized cycle through explicit ascension",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/9/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/idle-progression-route.spec.ts",
+      "title": "normal idle new life sword-purchase persists every authorized cycle through explicit ascension",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/9/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/idle-progression-route.spec.ts",
+      "title": "normal idle new life talisman-gather persists every authorized cycle through explicit ascension",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/9/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/idle-progression-route.spec.ts",
+      "title": "normal idle new life talisman-commission persists every authorized cycle through explicit ascension",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/9/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/idle-progression-route.spec.ts",
+      "title": "normal idle new life talisman-purchase persists every authorized cycle through explicit ascension",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/9/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/later-mixed-activity.spec.ts",
+      "title": "exact pre-review v6 completion activities and proof receipts remain readable without rewriting original records",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/10/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/later-mixed-activity.spec.ts",
+      "title": "v5 learning and v6 battle controls and configuration history replay across a separately confirmed v7 breakthrough",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/10/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/later-mixed-activity.spec.ts",
+      "title": "v5 sale and v6 round history plus v7 question controls survive explicit trial gates and the chosen ascension ending",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/10/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/later-mixed-activity.spec.ts",
+      "title": "same-revision v5 to v6 to v7 replacements fence configuration CAS and a newly confirmed breakthrough checkpoints the new loadout",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/10/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/later-mixed-activity.spec.ts",
+      "title": "restoring complete preparation after v6 consumption and v5 healing preserves new activities when the original RESTORE receipt replays",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/10/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "local data initializes only its own database and persists settings without creating a Game",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "record publication occurs after transaction complete and is durable on a new connection",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "same ID retries and receipt re-observations deduplicate while altered content is rejected",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "append captures caller values before awaiting and rejects wrong epoch, identity or revision",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "meta-quota: record and metadata roll back together",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "event-quota: record and metadata roll back together",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "event-abort: record and metadata roll back together",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "clear rotates the capture epoch and an old retry cannot erase or re-add newer records",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "pause and resume fence old captures without changing display preferences or producing actions",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "two clients merge appends and reject a stale preference overwrite",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/9/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "unknown-field: invalid local metadata is retained without resetting it",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/10/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "future-preferences: invalid local metadata is retained without resetting it",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/11/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "future database and versionchange close are explicit and retain old data",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/12/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "retention trims by both count and bytes atomically and exposes the removed count",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/13/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "invalid record contents make export fail without deleting or exposing the original row",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/14/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "observer exceptions and mutable observer copies cannot change a committed Game or saved status",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/15/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "a delayed export cannot republish a snapshot cleared after its read or download after a foreign clear",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/16/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/local-experience.spec.ts",
+      "title": "temporary records are bounded, disclosed and cleared without a stale byte counter",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/11/specs/17/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/milestone-store.spec.ts",
+      "title": "prepared selection captures stable Game and activity CAS, waits one full online cycle and stops before unknown branches",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/13/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/milestone-store.spec.ts",
+      "title": "a stored arrangement cannot renew an old selection when activity CAS changes without advancing Game",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/13/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/milestone-store.spec.ts",
+      "title": "failed arrangement retries its original frozen command and all nine ordinary Store short writes are refused",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/13/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/milestone-store.spec.ts",
+      "title": "lost ending delivery replays the exact committed life once, preserves readable results and never starts another cycle",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/13/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/milestone-upgrade.spec.ts",
+      "title": "DB9 preserves DB8 Game, v6 activity, configuration and historical ordinary receipts, checkpoint and closes the old client",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/14/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/milestone.spec.ts",
+      "title": "all nine finite actions wait the complete deadline and save exactly their selected formal outcome with immutable proof",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/15/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/milestone.spec.ts",
+      "title": "checkpoint, owner, activity and receipt faults including put-success abort roll every record back and retry one original command",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/15/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/milestone.spec.ts",
+      "title": "corrupt finite proofs cannot change the chosen consequence, realm, ending, cost, identity or deadline",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/15/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/milestone.spec.ts",
+      "title": "all old short-action receipts replay strictly before the new-write guard and preserve stored progress",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/15/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/milestone.spec.ts",
+      "title": "pause, takeover, refresh, replacement and complete repeated restore fence finite old callbacks",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/15/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/mixed-activity.spec.ts",
+      "title": "cultivation to craft: old start, pause and cycle receipts observe the new plan without restoring or settling the old one",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/16/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/mixed-activity.spec.ts",
+      "title": "craft to forge: old start, pause and cycle receipts observe the new plan without restoring or settling the old one",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/16/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/mixed-activity.spec.ts",
+      "title": "a single completed forge stays finite while its earlier controls and completion replay over a new cultivation plan",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/16/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/mixed-activity.spec.ts",
+      "title": "source and furnace swaps use formal travel, invalidate the paused plans and preserve old receipts over both adapters",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/16/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store assisted lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store craft lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store forge lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store learn lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store study lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store buy lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store sell lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store use-healing lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store use-spirit lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store battle-technique lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/9/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store battle-heal lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/10/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store battle-restore lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/11/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store choose-help lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/12/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store choose-trade lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/13/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store decide-bargain lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/14/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store decide-assist lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/15/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store breakthrough lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/16/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store start-trial lost committed delivery retries the exact consumable command once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/17/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store assisted held committed reply cannot replace newer accepted activity-only",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/18/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store assisted held committed reply cannot replace newer accepted game-and-activity",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/19/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store assisted held committed reply cannot replace newer accepted new-life",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/20/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store forge held committed reply cannot replace newer accepted activity-only",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/21/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store forge held committed reply cannot replace newer accepted game-and-activity",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/22/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store forge held committed reply cannot replace newer accepted new-life",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/23/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store breakthrough held committed reply cannot replace newer accepted activity-only",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/24/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store breakthrough held committed reply cannot replace newer accepted game-and-activity",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/25/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store breakthrough held committed reply cannot replace newer accepted new-life",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/26/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store a matching read preserves the first committed breakthrough result and handoff",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/27/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store lost positive-cost retry cannot carry its old intent into a new life",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/28/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store a failed confirmation reread preserves paid state and requires synchronization, never a new payment",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/29/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost-store.spec.ts",
+      "title": "M02 Store a lost forge receipt replays against later foreign progress without reverting or charging twice",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/18/specs/30/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 assisted quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 assisted abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 assisted lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 craft quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 craft abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 craft lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 forge quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 forge abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 forge lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 learn quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/9/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 learn abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/10/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 learn lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/11/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 study quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/12/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 study abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/13/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 study lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/14/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 buy quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/15/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 buy abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/16/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 buy lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/17/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 sell quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/18/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 sell abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/19/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 sell lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/20/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 use-healing quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/21/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 use-healing abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/22/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 use-healing lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/23/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 use-spirit quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/24/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 use-spirit abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/25/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 use-spirit lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/26/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-technique quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/27/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-technique abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/28/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-technique lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/29/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-heal quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/30/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-heal abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/31/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-heal lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/32/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-restore quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/33/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-restore abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/34/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-restore lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/35/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 choose-help quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/36/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 choose-help abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/37/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 choose-help lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/38/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 choose-trade quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/39/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 choose-trade abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/40/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 choose-trade lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/41/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 decide-bargain quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/42/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 decide-bargain abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/43/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 decide-bargain lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/44/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 decide-assist quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/45/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 decide-assist abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/46/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 decide-assist lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/47/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 breakthrough quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/48/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 breakthrough abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/49/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 breakthrough lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/50/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 start-trial quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/51/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 start-trial abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/52/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 start-trial lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/53/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 assisted uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/54/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 assisted committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/55/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 craft uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/56/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 craft committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/57/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 forge uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/58/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 forge committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/59/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 learn uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/60/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 learn committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/61/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 study uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/62/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 study committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/63/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 buy uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/64/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 buy committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/65/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 sell uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/66/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 sell committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/67/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 use-healing uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/68/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 use-healing committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/69/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 use-spirit uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/70/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 use-spirit committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/71/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-technique uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/72/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-technique committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/73/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-heal uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/74/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-heal committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/75/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-restore uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/76/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 battle-restore committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/77/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 choose-help uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/78/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 choose-help committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/79/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 choose-trade uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/80/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 choose-trade committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/81/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 decide-bargain uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/82/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 decide-bargain committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/83/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 decide-assist uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/84/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 decide-assist committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/85/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 breakthrough uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/86/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 breakthrough committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/87/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 start-trial uncommitted takeover rejection preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/88/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/positive-cost.spec.ts",
+      "title": "M02 start-trial committed replacement replay preserves all stores",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/19/specs/89/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/preparation-activity.spec.ts",
+      "title": "all six preparation kinds settle real one-command costs and outcomes, and only completed cycles are saved",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/20/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/preparation-activity.spec.ts",
+      "title": "the complete skill queue and every legal trade item keep formal fees, free cross-school learning and medicine sales",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/20/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/preparation-activity.spec.ts",
+      "title": "thresholds, inventory goals, gross budgets, reserves, known skills and forbidden sales stop without hidden follow-up",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/20/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/preparation-activity.spec.ts",
+      "title": "each new preparation kind keeps atomic effects and stable replay after quota",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/20/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/preparation-activity.spec.ts",
+      "title": "each new preparation kind keeps atomic effects and stable replay after abort",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/20/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/preparation-activity.spec.ts",
+      "title": "each new preparation kind keeps atomic effects and stable replay after lost-delivery",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/20/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/preparation-activity.spec.ts",
+      "title": "historical recovery and learning receipts remain readable after later legal healing and configuration",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/20/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/preparation-activity.spec.ts",
+      "title": "new activity proof corruption cannot change its cost, recovery, learned skill, owner or original timing",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/20/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/preparation-activity.spec.ts",
+      "title": "six former short-action receipts replay strictly but fresh ordinary writes cannot bypass their activity",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/20/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/preparation-activity.spec.ts",
+      "title": "DB7 preserves every v6 legacy activity, real checkpoint and receipt byte-for-byte and closes the old client",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/20/specs/9/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "two real-formula furnaces settle separately, retain gross products and consumed herbs, and replay no new rewards",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "all seven recipes and four relics persist their exact formal one-command costs without automatic equipment",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "inventory target, cumulative budgets, material and resource reserves, shortages and capacity stop before another furnace",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "craft quota preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "craft abort preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "craft lost-delivery preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "forge quota preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "forge abort preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "forge lost-delivery preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "production pause, explicit takeover, refresh and new-life archive fence old cycles without offline payout",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/9/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "ordinary production writes cannot bypass cycles and damaged recipe, outcome, ownership or equipment receipts remain untouched",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/10/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/production-activity.spec.ts",
+      "title": "v5 cultivation and source activities, complete resources, real checkpoint and receipts survive v6 byte-for-byte",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/21/specs/11/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/source-activity.spec.ts",
+      "title": "two material cycles save separately at full cultivation, never reward early, and retain a complete receipt replay",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/22/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/source-activity.spec.ts",
+      "title": "item and currency targets stop after a real complete cycle and zero-XP work remains productive",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/22/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/source-activity.spec.ts",
+      "title": "month budget, remaining lifespan and capacity stop in the same transaction before another charge",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/22/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/source-activity.spec.ts",
+      "title": "source quota atomically rolls back all stores and retries the same single cycle once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/22/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/source-activity.spec.ts",
+      "title": "source abort atomically rolls back all stores and retries the same single cycle once",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/22/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/source-activity.spec.ts",
+      "title": "source takeover and pause fence old owners and reopening never pays offline time",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/22/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/source-activity.spec.ts",
+      "title": "ordinary SOURCE batches are blocked and explicit travel replaces a paused source without extra payout",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/22/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/source-activity.spec.ts",
+      "title": "source receipts reject a forged different source, target or owner instead of broadening activity authority",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/22/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/source-activity.spec.ts",
+      "title": "v4 cultivation activity, real breakthrough checkpoint and all receipts survive v5 without offline growth",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/22/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init open: disposal fences a late success after the native operation completes",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init open: disposal fences a late failure after the native operation completes",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init snapshot: disposal fences a late success after the native operation completes",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init snapshot: disposal fences a late failure after the native operation completes",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init checkpoint: disposal fences a late success after the native operation completes",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init checkpoint: disposal fences a late failure after the native operation completes",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init previous: disposal fences a late success after the native operation completes",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init previous: disposal fences a late failure after the native operation completes",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init on a disposed Store opens no new repository and cannot publish another ready or saved state",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "an old refresh success cannot overwrite a new connection that read the formal external configuration",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/9/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "an old refresh failure cannot overwrite a new connection that read the formal external configuration",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/10/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "same-connection refreshes reject an older success delivered after the newer formal snapshot",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/11/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "same-connection refreshes reject an older failure delivered after the newer formal snapshot",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/12/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "a stale refresh success cannot replace a later locally confirmed configuration or its saved receipt",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/13/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "a stale refresh failure cannot replace a later locally confirmed configuration or its saved receipt",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/14/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "an already captured old native broadcast callback is inert after reconnect",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/15/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "an already captured old native broadcast callback is inert after dispose",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/16/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init snapshot: a real connection closed after native read completion cannot become available or saved",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/17/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init checkpoint: a real connection closed after native read completion cannot become available or saved",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/18/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "init previous: a real connection closed after native read completion cannot become available or saved",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/19/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "native broadcast refresh checkpoint: closing the actual read connection requires synchronization recovery",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/20/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "native broadcast refresh previous: closing the actual read connection requires synchronization recovery",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/21/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "optional checkpoint delivery failure remains a warning when its native connection is still usable",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/22/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "optional previous delivery failure remains a warning when its native connection is still usable",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/23/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "a confirmed configuration survives a real checkpoint connection close without being relabeled as an uncommitted write",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/24/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "a confirmed configuration survives a real previous connection close without being relabeled as an uncommitted write",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/25/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "a delayed CREATE follow-up snapshot success cannot roll back or invalidate a newer formal choice accepted by public refresh",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/26/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-lifecycle.spec.ts",
+      "title": "a delayed CREATE follow-up snapshot failure cannot roll back or invalidate a newer formal choice accepted by public refresh",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/23/specs/27/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-reconnect.spec.ts",
+      "title": "v5 lost: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/24/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-reconnect.spec.ts",
+      "title": "v5 quota: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/24/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-reconnect.spec.ts",
+      "title": "v6 lost: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/24/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-reconnect.spec.ts",
+      "title": "v6 quota: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/24/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-reconnect.spec.ts",
+      "title": "v7 lost: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/24/specs/4/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-reconnect.spec.ts",
+      "title": "v7 quota: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/24/specs/5/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-reconnect.spec.ts",
+      "title": "reconnect keeps a checkpoint-read warning beside its abandoned-intent explanation",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/24/specs/6/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-reconnect.spec.ts",
+      "title": "failed reconnect open keeps a real error and never declares the snapshot saved",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/24/specs/7/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-reconnect.spec.ts",
+      "title": "failed reconnect snapshot keeps a real error and never declares the snapshot saved",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/24/specs/8/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-sync-queue.spec.ts",
+      "title": "normal sync general: failed verification stops the local cycle, keeps every committed record, and reconnect requires an explicit full continuation",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/25/specs/0/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-sync-queue.spec.ts",
+      "title": "normal sync closed: failed verification stops the local cycle, keeps every committed record, and reconnect requires an explicit full continuation",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/25/specs/1/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-sync-queue.spec.ts",
+      "title": "queued sync general: failed verification stops the local cycle, keeps every committed record, and reconnect requires an explicit full continuation",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/25/specs/2/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    },
+    {
+      "file": "web/persistence-tests/store-sync-queue.spec.ts",
+      "title": "queued sync closed: failed verification stops the local cycle, keeps every committed record, and reconnect requires an explicit full continuation",
+      "project": "chromium",
+      "originalM03Pointer": "/suites/25/specs/3/tests/0",
+      "originalPassed": true,
+      "actualART11Source4Execution": false
+    }
+  ],
+  "original298MapRechecked": true,
+  "disjointCurrent34AndOriginal298": true,
+  "unique332AcrossTwoSources": 332,
+  "sameRunCurrent332": false,
+  "hashAudit": [
+    {
+      "group": "closure83",
+      "path": "scripts/economy/idle-scenarios.mjs",
+      "originalM03SHA256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407",
+      "currentSHA256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/content/m1.ts",
+      "originalM03SHA256": "59698c8ad88139e768b674084f24daf258715cd5dbfcc70b6b4f70c3b8492aa3",
+      "currentSHA256": "59698c8ad88139e768b674084f24daf258715cd5dbfcc70b6b4f70c3b8492aa3",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/demo.ts",
+      "originalM03SHA256": "927e40ac1d792afd0e2f28c2cf7bdd55509af07713ef3db116a7a5019ac9307e",
+      "currentSHA256": "927e40ac1d792afd0e2f28c2cf7bdd55509af07713ef3db116a7a5019ac9307e",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/activity.ts",
+      "originalM03SHA256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+      "currentSHA256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/adventure.ts",
+      "originalM03SHA256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015",
+      "currentSHA256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/ascension.ts",
+      "originalM03SHA256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+      "currentSHA256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/configuration.ts",
+      "originalM03SHA256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+      "currentSHA256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/content.ts",
+      "originalM03SHA256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+      "currentSHA256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/contracts.ts",
+      "originalM03SHA256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+      "currentSHA256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/costs.ts",
+      "originalM03SHA256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+      "currentSHA256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/economy-ledger.ts",
+      "originalM03SHA256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+      "currentSHA256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/engine.ts",
+      "originalM03SHA256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+      "currentSHA256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/errors.ts",
+      "originalM03SHA256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+      "currentSHA256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/events.ts",
+      "originalM03SHA256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+      "currentSHA256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/goals.ts",
+      "originalM03SHA256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+      "currentSHA256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/life-record.ts",
+      "originalM03SHA256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+      "currentSHA256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/mechanisms.ts",
+      "originalM03SHA256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+      "currentSHA256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/milestones.ts",
+      "originalM03SHA256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+      "currentSHA256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/preparation.ts",
+      "originalM03SHA256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+      "currentSHA256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/progression.ts",
+      "originalM03SHA256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+      "currentSHA256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/queries.ts",
+      "originalM03SHA256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+      "currentSHA256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/receipts.ts",
+      "originalM03SHA256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+      "currentSHA256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/story-context.ts",
+      "originalM03SHA256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+      "currentSHA256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/trial-rules.ts",
+      "originalM03SHA256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+      "currentSHA256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/types.ts",
+      "originalM03SHA256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+      "currentSHA256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/full/versions.ts",
+      "originalM03SHA256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+      "currentSHA256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/game/adventure.ts",
+      "originalM03SHA256": "25097127132e6ddf8f121820b64b0ff40c68f5c746e4f8d11a74dbf6345f434c",
+      "currentSHA256": "25097127132e6ddf8f121820b64b0ff40c68f5c746e4f8d11a74dbf6345f434c",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/game/engine.ts",
+      "originalM03SHA256": "191fff654eb23d99aade8b7bc9ad04a9ba69e303430f164f4f2396c79ab93b7d",
+      "currentSHA256": "191fff654eb23d99aade8b7bc9ad04a9ba69e303430f164f4f2396c79ab93b7d",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "src/game/types.ts",
+      "originalM03SHA256": "b34e4fb9876ff51ddf00e00e76e74073301d33e51c06b6ee8d2f26fe0406efab",
+      "currentSHA256": "b34e4fb9876ff51ddf00e00e76e74073301d33e51c06b6ee8d2f26fe0406efab",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "tests/full-route.mjs",
+      "originalM03SHA256": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321",
+      "currentSHA256": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/activity-store-harness.ts",
+      "originalM03SHA256": "7b31eb4d214bca8230e1a61dd1749cd695b68a0eec544241f1eaaf2baac98db7",
+      "currentSHA256": "7b31eb4d214bca8230e1a61dd1749cd695b68a0eec544241f1eaaf2baac98db7",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/activity-store.spec.ts",
+      "originalM03SHA256": "c51001a8abf90f0550c72050caf65a72aeb96a46309af5c42036b8afef9c1869",
+      "currentSHA256": "c51001a8abf90f0550c72050caf65a72aeb96a46309af5c42036b8afef9c1869",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/activity.spec.ts",
+      "originalM03SHA256": "0fda75f6be8f03a3abc463fd60131b1fb3ed12da28d03f600577265874746b2b",
+      "currentSHA256": "0fda75f6be8f03a3abc463fd60131b1fb3ed12da28d03f600577265874746b2b",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/adventure-store.spec.ts",
+      "originalM03SHA256": "67f8f4693b0fa2736f53cd9d4f593f800eed7628307b42505304bc131d130626",
+      "currentSHA256": "67f8f4693b0fa2736f53cd9d4f593f800eed7628307b42505304bc131d130626",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/adventure-upgrade.spec.ts",
+      "originalM03SHA256": "31df8552ddfeb04d9f77d07c9c16cd8df0c371c93c910e747bf4ab226794ffe8",
+      "currentSHA256": "31df8552ddfeb04d9f77d07c9c16cd8df0c371c93c910e747bf4ab226794ffe8",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/adventure.spec.ts",
+      "originalM03SHA256": "6baba86a78196ee6e846b4cef12bb2ef22ef3795b447c7deebe9a12c790eccd8",
+      "currentSHA256": "6baba86a78196ee6e846b4cef12bb2ef22ef3795b447c7deebe9a12c790eccd8",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/check-art-02-store.spec.ts",
+      "originalM03SHA256": "89f457e739444a83bf5df5ed91f183018ec445d429dc8d71e45990b9c025d8a7",
+      "currentSHA256": "89f457e739444a83bf5df5ed91f183018ec445d429dc8d71e45990b9c025d8a7",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/configuration-store.spec.ts",
+      "originalM03SHA256": "d79b55eb85c875f58a877418f134b9b3715f4b675aed40875021a1af0d68d423",
+      "currentSHA256": "d79b55eb85c875f58a877418f134b9b3715f4b675aed40875021a1af0d68d423",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/configuration.spec.ts",
+      "originalM03SHA256": "cdc8926daa4ba9ff5192f144bf653d56968e7e001cee94f25506bee0b7fc7f26",
+      "currentSHA256": "cdc8926daa4ba9ff5192f144bf653d56968e7e001cee94f25506bee0b7fc7f26",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/harness.html",
+      "originalM03SHA256": "b1d33612637f9f26e94f8982866e28620a57813db1f47e6c5d19a7bfd098b66b",
+      "currentSHA256": "b1d33612637f9f26e94f8982866e28620a57813db1f47e6c5d19a7bfd098b66b",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/history-ui.spec.ts",
+      "originalM03SHA256": "83697c5c3e63e1ef98e9246ae86715bbc009a8c91a206e255c7a356a4d309067",
+      "currentSHA256": "83697c5c3e63e1ef98e9246ae86715bbc009a8c91a206e255c7a356a4d309067",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/idle-progression-route.spec.ts",
+      "originalM03SHA256": "afbdd6a10768e8b149a749a00637e9b343bdac3d220b43013450b610ca73c739",
+      "currentSHA256": "afbdd6a10768e8b149a749a00637e9b343bdac3d220b43013450b610ca73c739",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/idle-progression-support.ts",
+      "originalM03SHA256": "05b9a4e6fb1a71683aa18adda77ea7ce4fef2d57ff4ce0642bd248b5bc60ad0e",
+      "currentSHA256": "05b9a4e6fb1a71683aa18adda77ea7ce4fef2d57ff4ce0642bd248b5bc60ad0e",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/later-mixed-activity.spec.ts",
+      "originalM03SHA256": "24de128c92f68421388a98949c8b10782104d6a2a5d011fdcfe87a7a4ac419cf",
+      "currentSHA256": "24de128c92f68421388a98949c8b10782104d6a2a5d011fdcfe87a7a4ac419cf",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/later-mixed-support.ts",
+      "originalM03SHA256": "20696a51f222400a87a1858489368a03f846fd3722f80b973e9b5ecc757b239e",
+      "currentSHA256": "20696a51f222400a87a1858489368a03f846fd3722f80b973e9b5ecc757b239e",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/local-experience.spec.ts",
+      "originalM03SHA256": "5eaf054aed8af7bf46dc37fc84c2d0fcf0e6ca311eb20ff520f91e7ebd5cc0e4",
+      "currentSHA256": "5eaf054aed8af7bf46dc37fc84c2d0fcf0e6ca311eb20ff520f91e7ebd5cc0e4",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/milestone-store.spec.ts",
+      "originalM03SHA256": "6633d0fcace405dcfc7761b72f30b7743a7eb98d4e92fcda35c5da1e92db9f58",
+      "currentSHA256": "6633d0fcace405dcfc7761b72f30b7743a7eb98d4e92fcda35c5da1e92db9f58",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/milestone-support.ts",
+      "originalM03SHA256": "b37002abfd5f0f39edffe12c31abf1eba3635f6bc31acbc40cfc89d41873051e",
+      "currentSHA256": "b37002abfd5f0f39edffe12c31abf1eba3635f6bc31acbc40cfc89d41873051e",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/milestone-upgrade.spec.ts",
+      "originalM03SHA256": "90599bf879fff23faac79e388d90f027ecc2d0541648f8d75b32c37a10b34047",
+      "currentSHA256": "90599bf879fff23faac79e388d90f027ecc2d0541648f8d75b32c37a10b34047",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/milestone.spec.ts",
+      "originalM03SHA256": "2eb68f13d6a97dc335b2aa1dfd3c4949a42dfed17f059206ed3f8abdc694fc8e",
+      "currentSHA256": "2eb68f13d6a97dc335b2aa1dfd3c4949a42dfed17f059206ed3f8abdc694fc8e",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/mixed-activity.spec.ts",
+      "originalM03SHA256": "78c310c1d10f133d27cb532296d46fc329af71110abedb1b33c6984b856a521d",
+      "currentSHA256": "78c310c1d10f133d27cb532296d46fc329af71110abedb1b33c6984b856a521d",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/positive-cost-battle.ts",
+      "originalM03SHA256": "ca0db5934289ccbc73c9dbc1c1f812db9d7392a8182cf4c2ea039284de45be0d",
+      "currentSHA256": "ca0db5934289ccbc73c9dbc1c1f812db9d7392a8182cf4c2ea039284de45be0d",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/positive-cost-milestone.ts",
+      "originalM03SHA256": "a0d9eb409096cb0d6642a99478b9b92c3e57c02ff019b6e9a275c05308b54d5a",
+      "currentSHA256": "a0d9eb409096cb0d6642a99478b9b92c3e57c02ff019b6e9a275c05308b54d5a",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/positive-cost-preparation.ts",
+      "originalM03SHA256": "4db2d26f5c4259fccbf47d77a2715eb882fdd047dfd602f471a320ca1adac5f4",
+      "currentSHA256": "4db2d26f5c4259fccbf47d77a2715eb882fdd047dfd602f471a320ca1adac5f4",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/positive-cost-store.spec.ts",
+      "originalM03SHA256": "23c08d6470ced6ea60f06293c284a4285c36fc8d1751d0c6bc7506d1495518d1",
+      "currentSHA256": "23c08d6470ced6ea60f06293c284a4285c36fc8d1751d0c6bc7506d1495518d1",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/positive-cost-support.ts",
+      "originalM03SHA256": "5d23f5cac2fd56805499d49d987482bf96e2570d179b7944e5ea2d887ab066e2",
+      "currentSHA256": "5d23f5cac2fd56805499d49d987482bf96e2570d179b7944e5ea2d887ab066e2",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/positive-cost.spec.ts",
+      "originalM03SHA256": "28242239e490fd0b4c47fb3bb3aac7b01bea8eb2e125b4b5e88edb1b9e74555a",
+      "currentSHA256": "28242239e490fd0b4c47fb3bb3aac7b01bea8eb2e125b4b5e88edb1b9e74555a",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/preparation-activity.spec.ts",
+      "originalM03SHA256": "dc60f149dd22127c4e4809296ef7a5c9181a4cb01b04217ac040ce6a943528fb",
+      "currentSHA256": "dc60f149dd22127c4e4809296ef7a5c9181a4cb01b04217ac040ce6a943528fb",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/production-activity.spec.ts",
+      "originalM03SHA256": "5e3c3dd68aec762a9ef9676e469d7c5ac97158bd9283b8a28101b433846e7f98",
+      "currentSHA256": "5e3c3dd68aec762a9ef9676e469d7c5ac97158bd9283b8a28101b433846e7f98",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/source-activity.spec.ts",
+      "originalM03SHA256": "1d7289fc51cf74d0a1b6c968385bb6363dff4d8931cc05b8e79239bd18d877a8",
+      "currentSHA256": "1d7289fc51cf74d0a1b6c968385bb6363dff4d8931cc05b8e79239bd18d877a8",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/store-lifecycle.spec.ts",
+      "originalM03SHA256": "7a01eba2bd25819aa714e3df02ba869f44b355d33907607bb78de535786e1e93",
+      "currentSHA256": "7a01eba2bd25819aa714e3df02ba869f44b355d33907607bb78de535786e1e93",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/store-reconnect.spec.ts",
+      "originalM03SHA256": "9c080b6b3c933f4dcd530597f2d4dc7da268cb592585220461a8dd3a33378bae",
+      "currentSHA256": "9c080b6b3c933f4dcd530597f2d4dc7da268cb592585220461a8dd3a33378bae",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/store-sync-queue.spec.ts",
+      "originalM03SHA256": "ecb5ecb245189754dfd51f30bcfb1885b36f6aa17a0aa3958071964516a63d8d",
+      "currentSHA256": "ecb5ecb245189754dfd51f30bcfb1885b36f6aa17a0aa3958071964516a63d8d",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/persistence-tests/support.ts",
+      "originalM03SHA256": "e2963cdd695a0768211f9c8287564646f56802ccb70c4162445519a600210872",
+      "currentSHA256": "e2963cdd695a0768211f9c8287564646f56802ccb70c4162445519a600210872",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/ActivityHistory.vue",
+      "originalM03SHA256": "9ed8e4f3410289a33184b38182c23d2f55f71ca629a1ff0d7f5edec8a0b6e178",
+      "currentSHA256": "9ed8e4f3410289a33184b38182c23d2f55f71ca629a1ff0d7f5edec8a0b6e178",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/CataloguePager.vue",
+      "originalM03SHA256": "b5069cf0f229edb66c1e2779cd3542d98bc8a05e292a485c71c2627a652694c0",
+      "currentSHA256": "b5069cf0f229edb66c1e2779cd3542d98bc8a05e292a485c71c2627a652694c0",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/action-timing.ts",
+      "originalM03SHA256": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897",
+      "currentSHA256": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/activity-clock.ts",
+      "originalM03SHA256": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+      "currentSHA256": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/activity-persistence.ts",
+      "originalM03SHA256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+      "currentSHA256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/activity-view.ts",
+      "originalM03SHA256": "8d08ccebf604e2e1d0285045a30bce54b86eaf71e80d1a31529fa8a46e52ace9",
+      "currentSHA256": "8d08ccebf604e2e1d0285045a30bce54b86eaf71e80d1a31529fa8a46e52ace9",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/adventure-view.ts",
+      "originalM03SHA256": "3362f2731f7597a99810c263af143eff6468d87c2dc4f89f185c0add4a46d354",
+      "currentSHA256": "3362f2731f7597a99810c263af143eff6468d87c2dc4f89f185c0add4a46d354",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/configuration-persistence.ts",
+      "originalM03SHA256": "a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00",
+      "currentSHA256": "a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/full-persistence.ts",
+      "originalM03SHA256": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+      "currentSHA256": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/local-events.ts",
+      "originalM03SHA256": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150",
+      "currentSHA256": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/local-experience.ts",
+      "originalM03SHA256": "65614c37cd5931b275208f78aa9bf06f40768ff402a908fb2d2cf28d16e3b9ed",
+      "currentSHA256": "65614c37cd5931b275208f78aa9bf06f40768ff402a908fb2d2cf28d16e3b9ed",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/local-initialization.ts",
+      "originalM03SHA256": "26e8355dd614be09111516ba714c65ae958b62a3a869720b23d1c4f246b69996",
+      "currentSHA256": "26e8355dd614be09111516ba714c65ae958b62a3a869720b23d1c4f246b69996",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/milestone-view.ts",
+      "originalM03SHA256": "c849797ee14366f00715ee9ab3999bcc3c293996251b4073c7cb4b504ca21022",
+      "currentSHA256": "c849797ee14366f00715ee9ab3999bcc3c293996251b4073c7cb4b504ca21022",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/preparation-view.ts",
+      "originalM03SHA256": "ac0732396ef435359325262ada51dda53b3e28308e2d2add3dc729a8b0375420",
+      "currentSHA256": "ac0732396ef435359325262ada51dda53b3e28308e2d2add3dc729a8b0375420",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/presentation.ts",
+      "originalM03SHA256": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649",
+      "currentSHA256": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/session.ts",
+      "originalM03SHA256": "76c6968b53c1ca990c4ee4ac4a921e549585338c04b10e31636ed9821f5263c0",
+      "currentSHA256": "76c6968b53c1ca990c4ee4ac4a921e549585338c04b10e31636ed9821f5263c0",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/store.ts",
+      "originalM03SHA256": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+      "currentSHA256": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/story-pages.ts",
+      "originalM03SHA256": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7",
+      "currentSHA256": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7",
+      "exact": true
+    },
+    {
+      "group": "closure83",
+      "path": "web/src/use-local-experience.ts",
+      "originalM03SHA256": "2517ee13410259589b97947e3e8f8bcd2bf890efce729ad78f6016fb7d41f85c",
+      "currentSHA256": "2517ee13410259589b97947e3e8f8bcd2bf890efce729ad78f6016fb7d41f85c",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "package.json",
+      "originalM03SHA256": "0ffa0f4c2df0004f19cd55e04d310fd437da64e6c76833f5249ca203d46398c3",
+      "currentSHA256": "0ffa0f4c2df0004f19cd55e04d310fd437da64e6c76833f5249ca203d46398c3",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "package-lock.json",
+      "originalM03SHA256": "d3f1aa6b6a4cca2c3d458a297b2e0320f0bdfa64d01913938c1f44038be143a2",
+      "currentSHA256": "d3f1aa6b6a4cca2c3d458a297b2e0320f0bdfa64d01913938c1f44038be143a2",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "web/package.json",
+      "originalM03SHA256": "9baf1104f5b183d2c40a92b8ae60325df2b0687fa82db440b7931eb2e7b76776",
+      "currentSHA256": "9baf1104f5b183d2c40a92b8ae60325df2b0687fa82db440b7931eb2e7b76776",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "web/package-lock.json",
+      "originalM03SHA256": "d011715fee1a25f0224e7d320a09d96848cab374a394c44062f711f098e21e6d",
+      "currentSHA256": "d011715fee1a25f0224e7d320a09d96848cab374a394c44062f711f098e21e6d",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "tsconfig.json",
+      "originalM03SHA256": "3991480c74bfa2182528cb3f071ab1801a5f72252a714b154cbc63785401e4e6",
+      "currentSHA256": "3991480c74bfa2182528cb3f071ab1801a5f72252a714b154cbc63785401e4e6",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "web/tsconfig.json",
+      "originalM03SHA256": "dd84312a03e3fbd8fe765b6b20731124cb0ef34363798aeb81d4ca8ae8cde7ae",
+      "currentSHA256": "dd84312a03e3fbd8fe765b6b20731124cb0ef34363798aeb81d4ca8ae8cde7ae",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "web/vite.config.ts",
+      "originalM03SHA256": "f850be6cda43ebf7efcdd54fc321bf2687450917dd6a0bc8a1beef9296f7edd9",
+      "currentSHA256": "f850be6cda43ebf7efcdd54fc321bf2687450917dd6a0bc8a1beef9296f7edd9",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "web/playwright.persistence.config.ts",
+      "originalM03SHA256": "c6b4221c4a3c0964c89657afb2ea2718b7c3d87f0566c30d78f70900b08352f6",
+      "currentSHA256": "c6b4221c4a3c0964c89657afb2ea2718b7c3d87f0566c30d78f70900b08352f6",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "web/playwright.idle-persistence.config.ts",
+      "originalM03SHA256": "93fb050e23801dd601e7970d7a79bf40e983ef2da82ccb20ef7036ef4525648d",
+      "currentSHA256": "93fb050e23801dd601e7970d7a79bf40e983ef2da82ccb20ef7036ef4525648d",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "scripts/dev-web.mjs",
+      "originalM03SHA256": "29620dc250f281f3a37e029e49c66e49dc91a952c2e88b43c2294922ea23ae66",
+      "currentSHA256": "29620dc250f281f3a37e029e49c66e49dc91a952c2e88b43c2294922ea23ae66",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "scripts/demo-nodes.mjs",
+      "originalM03SHA256": "8523f135c748f9240fb0d706e126213872dae91c09c398504a55d57918c52c97",
+      "currentSHA256": "8523f135c748f9240fb0d706e126213872dae91c09c398504a55d57918c52c97",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "scripts/source-identity.mjs",
+      "originalM03SHA256": "a52e3e167b389aae6c4fa98d07b02a2ae52dbace1ec81d80a5e6f8254e6dcf24",
+      "currentSHA256": "a52e3e167b389aae6c4fa98d07b02a2ae52dbace1ec81d80a5e6f8254e6dcf24",
+      "exact": true
+    },
+    {
+      "group": "common13",
+      "path": "web/persistence-tests/harness.html",
+      "originalM03SHA256": "b1d33612637f9f26e94f8982866e28620a57813db1f47e6c5d19a7bfd098b66b",
+      "currentSHA256": "b1d33612637f9f26e94f8982866e28620a57813db1f47e6c5d19a7bfd098b66b",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/activity-store.spec.ts",
+      "originalM03SHA256": "c51001a8abf90f0550c72050caf65a72aeb96a46309af5c42036b8afef9c1869",
+      "currentSHA256": "c51001a8abf90f0550c72050caf65a72aeb96a46309af5c42036b8afef9c1869",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/activity.spec.ts",
+      "originalM03SHA256": "0fda75f6be8f03a3abc463fd60131b1fb3ed12da28d03f600577265874746b2b",
+      "currentSHA256": "0fda75f6be8f03a3abc463fd60131b1fb3ed12da28d03f600577265874746b2b",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/adventure-store.spec.ts",
+      "originalM03SHA256": "67f8f4693b0fa2736f53cd9d4f593f800eed7628307b42505304bc131d130626",
+      "currentSHA256": "67f8f4693b0fa2736f53cd9d4f593f800eed7628307b42505304bc131d130626",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/adventure-upgrade.spec.ts",
+      "originalM03SHA256": "31df8552ddfeb04d9f77d07c9c16cd8df0c371c93c910e747bf4ab226794ffe8",
+      "currentSHA256": "31df8552ddfeb04d9f77d07c9c16cd8df0c371c93c910e747bf4ab226794ffe8",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/adventure.spec.ts",
+      "originalM03SHA256": "6baba86a78196ee6e846b4cef12bb2ef22ef3795b447c7deebe9a12c790eccd8",
+      "currentSHA256": "6baba86a78196ee6e846b4cef12bb2ef22ef3795b447c7deebe9a12c790eccd8",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/check-art-02-store.spec.ts",
+      "originalM03SHA256": "89f457e739444a83bf5df5ed91f183018ec445d429dc8d71e45990b9c025d8a7",
+      "currentSHA256": "89f457e739444a83bf5df5ed91f183018ec445d429dc8d71e45990b9c025d8a7",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/configuration-store.spec.ts",
+      "originalM03SHA256": "d79b55eb85c875f58a877418f134b9b3715f4b675aed40875021a1af0d68d423",
+      "currentSHA256": "d79b55eb85c875f58a877418f134b9b3715f4b675aed40875021a1af0d68d423",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/configuration.spec.ts",
+      "originalM03SHA256": "cdc8926daa4ba9ff5192f144bf653d56968e7e001cee94f25506bee0b7fc7f26",
+      "currentSHA256": "cdc8926daa4ba9ff5192f144bf653d56968e7e001cee94f25506bee0b7fc7f26",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/history-ui.spec.ts",
+      "originalM03SHA256": "83697c5c3e63e1ef98e9246ae86715bbc009a8c91a206e255c7a356a4d309067",
+      "currentSHA256": "83697c5c3e63e1ef98e9246ae86715bbc009a8c91a206e255c7a356a4d309067",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/idle-progression-route.spec.ts",
+      "originalM03SHA256": "afbdd6a10768e8b149a749a00637e9b343bdac3d220b43013450b610ca73c739",
+      "currentSHA256": "afbdd6a10768e8b149a749a00637e9b343bdac3d220b43013450b610ca73c739",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/later-mixed-activity.spec.ts",
+      "originalM03SHA256": "24de128c92f68421388a98949c8b10782104d6a2a5d011fdcfe87a7a4ac419cf",
+      "currentSHA256": "24de128c92f68421388a98949c8b10782104d6a2a5d011fdcfe87a7a4ac419cf",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/local-experience.spec.ts",
+      "originalM03SHA256": "5eaf054aed8af7bf46dc37fc84c2d0fcf0e6ca311eb20ff520f91e7ebd5cc0e4",
+      "currentSHA256": "5eaf054aed8af7bf46dc37fc84c2d0fcf0e6ca311eb20ff520f91e7ebd5cc0e4",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/local-startup.spec.ts",
+      "originalM03SHA256": "09289274f24679a5daf36f045370c5fbe8edead10663bf68036f722a09025769",
+      "currentSHA256": "09289274f24679a5daf36f045370c5fbe8edead10663bf68036f722a09025769",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/milestone-store.spec.ts",
+      "originalM03SHA256": "6633d0fcace405dcfc7761b72f30b7743a7eb98d4e92fcda35c5da1e92db9f58",
+      "currentSHA256": "6633d0fcace405dcfc7761b72f30b7743a7eb98d4e92fcda35c5da1e92db9f58",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/milestone-upgrade.spec.ts",
+      "originalM03SHA256": "90599bf879fff23faac79e388d90f027ecc2d0541648f8d75b32c37a10b34047",
+      "currentSHA256": "90599bf879fff23faac79e388d90f027ecc2d0541648f8d75b32c37a10b34047",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/milestone.spec.ts",
+      "originalM03SHA256": "2eb68f13d6a97dc335b2aa1dfd3c4949a42dfed17f059206ed3f8abdc694fc8e",
+      "currentSHA256": "2eb68f13d6a97dc335b2aa1dfd3c4949a42dfed17f059206ed3f8abdc694fc8e",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/mixed-activity.spec.ts",
+      "originalM03SHA256": "78c310c1d10f133d27cb532296d46fc329af71110abedb1b33c6984b856a521d",
+      "currentSHA256": "78c310c1d10f133d27cb532296d46fc329af71110abedb1b33c6984b856a521d",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/online-recovery.spec.ts",
+      "originalM03SHA256": "3ec5bc21938898e757bcdac4797b0bc7038242280d21843660c84355145c23b8",
+      "currentSHA256": "3ec5bc21938898e757bcdac4797b0bc7038242280d21843660c84355145c23b8",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/positive-cost-store.spec.ts",
+      "originalM03SHA256": "23c08d6470ced6ea60f06293c284a4285c36fc8d1751d0c6bc7506d1495518d1",
+      "currentSHA256": "23c08d6470ced6ea60f06293c284a4285c36fc8d1751d0c6bc7506d1495518d1",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/positive-cost.spec.ts",
+      "originalM03SHA256": "28242239e490fd0b4c47fb3bb3aac7b01bea8eb2e125b4b5e88edb1b9e74555a",
+      "currentSHA256": "28242239e490fd0b4c47fb3bb3aac7b01bea8eb2e125b4b5e88edb1b9e74555a",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/preparation-activity.spec.ts",
+      "originalM03SHA256": "dc60f149dd22127c4e4809296ef7a5c9181a4cb01b04217ac040ce6a943528fb",
+      "currentSHA256": "dc60f149dd22127c4e4809296ef7a5c9181a4cb01b04217ac040ce6a943528fb",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/production-activity.spec.ts",
+      "originalM03SHA256": "5e3c3dd68aec762a9ef9676e469d7c5ac97158bd9283b8a28101b433846e7f98",
+      "currentSHA256": "5e3c3dd68aec762a9ef9676e469d7c5ac97158bd9283b8a28101b433846e7f98",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/source-activity.spec.ts",
+      "originalM03SHA256": "1d7289fc51cf74d0a1b6c968385bb6363dff4d8931cc05b8e79239bd18d877a8",
+      "currentSHA256": "1d7289fc51cf74d0a1b6c968385bb6363dff4d8931cc05b8e79239bd18d877a8",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/store-lifecycle.spec.ts",
+      "originalM03SHA256": "7a01eba2bd25819aa714e3df02ba869f44b355d33907607bb78de535786e1e93",
+      "currentSHA256": "7a01eba2bd25819aa714e3df02ba869f44b355d33907607bb78de535786e1e93",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/store-reconnect.spec.ts",
+      "originalM03SHA256": "9c080b6b3c933f4dcd530597f2d4dc7da268cb592585220461a8dd3a33378bae",
+      "currentSHA256": "9c080b6b3c933f4dcd530597f2d4dc7da268cb592585220461a8dd3a33378bae",
+      "exact": true
+    },
+    {
+      "group": "all26SpecFiles",
+      "path": "web/persistence-tests/store-sync-queue.spec.ts",
+      "originalM03SHA256": "ecb5ecb245189754dfd51f30bcfb1885b36f6aa17a0aa3958071964516a63d8d",
+      "currentSHA256": "ecb5ecb245189754dfd51f30bcfb1885b36f6aa17a0aa3958071964516a63d8d",
+      "exact": true
+    }
+  ],
+  "harness": {
+    "path": "web/persistence-tests/harness.html",
+    "originalSHA256": "b1d33612637f9f26e94f8982866e28620a57813db1f47e6c5d19a7bfd098b66b",
+    "currentSHA256": "b1d33612637f9f26e94f8982866e28620a57813db1f47e6c5d19a7bfd098b66b",
+    "exact": true
+  },
+  "historicalGraph": {
+    "path": "goal-4/evidence/check-matrix-01/native-dependency-graph-draft.json",
+    "sha256": "6b9dcd800e30a573ddf65a8b63668d3f9b0e0ee5da1381c460c198ccdca94a28"
+  },
+  "BFS83RecomputedExact": true,
+  "limits": [
+    "Original24seeds/83closure/common13/harness/26spec unchanged, includeeconomy/idle-scenarios; original298 retainM03source3daaidentity.",
+    "CurrentApp34 trulyexecuted in759strictfinalsource4window; no old reportrelabel orcountinflation.",
+    "83doesnotprove815 ornewSFC/paintedobjectgeometry; locksdo notproveoldNode/browser/node_modulesbinaryidentity.",
+    "Safehash/casemetadataonly, noGame/Activity/IDBpayload ornewsuite."
+  ]
+}

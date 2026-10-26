@@ -482,6 +482,13 @@ def validate(root):
     counts['production'] += art10_production
     counts['reference'] += len(art10_files) - art10_production
 
+    from art11_inventory import validate_art11
+    art11_files, art11_production, art11_bytes = validate_art11(root, image_info)
+    assert not recorded.intersection(art11_files), 'ART11 paths overlap older ledgers'
+    recorded.update(art11_files)
+    counts['production'] += art11_production
+    counts['reference'] += len(art11_files) - art11_production
+
     from supply_object_inventory import validate_supply_objects
     supply_bytes = validate_supply_objects(root)
     from narrative_object_inventory import validate_narrative_objects
@@ -912,7 +919,7 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'gameMenuNativeBytes':menu_bytes, 'feedbackSkipNativeBytes':feedback_skip_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'adventureObjectNativeBytes':adventure_object_bytes, 'equipmentObjectNativeBytes':equipment_bytes, 'supplyObjectNativeBytes':supply_bytes, 'narrativeObjectNativeBytes':narrative_object_bytes, 'cultivationObjectNativeBytes':cultivation_bytes, 'ta07NativeBytes':ta07_bytes, 'ta08NativeBytes':ta08_bytes, 'ta09NativeBytes':ta09_bytes, 'art10NativeBytes':art10_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0), 'singleScreenNativeBytes':native_bytes, 'gameMenuNativeBytes':menu_bytes, 'feedbackSkipNativeBytes':feedback_skip_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'adventureObjectNativeBytes':adventure_object_bytes, 'equipmentObjectNativeBytes':equipment_bytes, 'supplyObjectNativeBytes':supply_bytes, 'narrativeObjectNativeBytes':narrative_object_bytes, 'cultivationObjectNativeBytes':cultivation_bytes, 'ta07NativeBytes':ta07_bytes, 'ta08NativeBytes':ta08_bytes, 'ta09NativeBytes':ta09_bytes, 'art10NativeBytes':art10_bytes, 'art11NativeBytes':art11_bytes, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

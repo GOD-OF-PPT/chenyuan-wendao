@@ -1,0 +1,25 @@
+{
+  "id": "dao",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-4532aef9-72f3-45a6-9eb6-5932ccc5e2d4.png",
+  "workspaceRaw": "art/redesign/art11-items/dao-v1.png",
+  "rawSha256": "59d2e3ef4bc583bf6a298f41d4d697d8e48a9a09ba30152866a2c4ad76a3f0bd",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    202,
+    260,
+    1067,
+    1053
+  ]
+}

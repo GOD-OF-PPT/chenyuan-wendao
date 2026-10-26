@@ -1,0 +1,25 @@
+{
+  "id": "core",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-c45be574-9673-4a44-96ce-6c97cfeefcf6.png",
+  "workspaceRaw": "art/redesign/art11-items/core-v1.png",
+  "rawSha256": "5406086cd1f61654eb4f83e9bf7a1329934b133640492676bbc96a824a7d08d9",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    147,
+    149,
+    1117,
+    1100
+  ]
+}

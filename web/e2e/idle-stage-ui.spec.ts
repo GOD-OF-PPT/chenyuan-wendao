@@ -1,4 +1,4 @@
-import {openSourceSettings,closeSourceSettings,openProductionIntent,closeProductionSettings,selectRelic} from './stage-support';
+import {openSourceSettings,closeSourceSettings,openProductionIntent,closeProductionSettings,selectRelic,openInventoryLibrary,closeInventoryLibrary} from './stage-support';
 import {test,expect,type Page,type TestInfo,type Locator} from '@playwright/test';
 import {snapshot,activitySnapshot,useJourneyClock,finishJourneyClock,revealPaged} from './support';
 import {driver,prepareTrial} from '../../tests/full-route.mjs';
@@ -25,9 +25,9 @@ test('the selected forged relic is the visible object and ownership stays distin
 
 
 test('the inventory keeps all real item quantities and all readonly category pages in the game stage',async({page},info)=>{
- const d=driver();d.realm();d.realm();const before=await seed(page,d.game);await closeSourceSettings(page);await page.getByTestId('tab-2').click();await page.getByLabel('显示后续物资配方').check();const seen=new Set<string>();
- for(let n=0;n<20;n++){const panel=page.getByTestId('inventory-catalogue');for(const row of await panel.locator('[data-testid^=item-]').all()){const id=(await row.getAttribute('data-testid'))!.slice(5);seen.add(id);await expect(row).toHaveText('×'+before.core.inventory[id]);}if(n===0)await shot(page,info,'inventory-objects');const next=panel.getByRole('button',{name:'下一页',exact:true});if(await next.isDisabled())break;await hit(next);await next.click();}
- expect([...seen].sort()).toEqual(Object.keys(before.core.inventory).sort());expect(await snapshot(page)).toEqual(before);expect(await activitySnapshot(page)).toBeNull();await shot(page,info,'inventory-final-page');await closeSourceSettings(page);await page.getByTestId('hub-close').click();expect(await snapshot(page)).toEqual(before);
+ const d=driver();d.realm();d.realm();const before=await seed(page,d.game);await closeSourceSettings(page);await page.getByTestId('tab-2').click();await openInventoryLibrary(page);await page.getByLabel('显示后续物资配方').check();const seen=new Set<string>();
+ for(let n=0;n<20;n++){const panel=page.getByTestId('inventory-catalogue');for(const row of await panel.locator('b[data-testid^=item-]').all()){const id=(await row.getAttribute('data-testid'))!.slice(5);seen.add(id);await expect(row).toHaveText('×'+before.core.inventory[id]);}if(n===0)await shot(page,info,'inventory-objects');const next=panel.getByRole('button',{name:'下一页',exact:true});if(await next.isDisabled())break;await hit(next);await next.click();}
+ expect([...seen].sort()).toEqual(Object.keys(before.core.inventory).sort());expect(await snapshot(page)).toEqual(before);expect(await activitySnapshot(page)).toBeNull();await shot(page,info,'inventory-final-page');await closeInventoryLibrary(page);await closeSourceSettings(page);await page.getByTestId('hub-close').click();expect(await snapshot(page)).toEqual(before);
 });
 test('resource points and their pager form a group while expanded limits remain readable and readonly',async({page},info)=>{
  const d=driver();d.go('wilderness');const before=await seed(page,d.game);await closeSourceSettings(page);await page.getByTestId('tab-1').click();await closeSourceSettings(page);await page.getByTestId('explore-mode-source').click();

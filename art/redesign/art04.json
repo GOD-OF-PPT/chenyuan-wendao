@@ -7,18 +7,18 @@
   "files": [
     {
       "path": "web/src/InventoryStage.vue",
-      "bytes": 6910,
-      "sha256": "b6feafe64a9aef7152666633945c370c5a2bc3d01f2ecc9e0c00fe6a64d09a7e"
+      "bytes": 6718,
+      "sha256": "b567cb81c66c77a7171ff1883fcfc9c290b006a5be3a2dc32721fa5eeb8cad88"
     },
     {
       "path": "web/src/MarketCounter.vue",
-      "bytes": 11967,
-      "sha256": "0cf613bd5ebecc9f5300e5f7949ed9acd14d761902be8d9087990d09dfc232ca"
+      "bytes": 10044,
+      "sha256": "c8849c784dd1d864a5787658e941b6fbe10305ee476e5ad8ffc2daa687478b3e"
     },
     {
       "path": "web/src/RecoveryRitual.vue",
-      "bytes": 11975,
-      "sha256": "7e7c13d9c7e345676c3bd7f70c84e472cf6ee03b0c48a16b7bf266732f7ce8cb"
+      "bytes": 9258,
+      "sha256": "9764760b03850ce35a4bab251228ea29983b1dba3615fa31bc4d0ad8e3ef0c88"
     },
     {
       "path": "web/src/supply-effects.ts",

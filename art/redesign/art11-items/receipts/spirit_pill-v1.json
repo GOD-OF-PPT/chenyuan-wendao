@@ -1,0 +1,25 @@
+{
+  "id": "spirit_pill",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-14901246-c5fb-487f-95d8-9ff9cbf6c5d3.png",
+  "workspaceRaw": "art/redesign/art11-items/spirit_pill-v1.png",
+  "rawSha256": "b59618e1c4d438126ed9cb341b1e09cd7a9a9bd38700896ed943450f805a7c6d",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    397,
+    96,
+    858,
+    1158
+  ]
+}

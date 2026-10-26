@@ -97,6 +97,9 @@ class InventoryTests(unittest.TestCase):
   if ta09.exists():files.update(ROOT/ref for ref in json.loads(ta09.read_text())['sourceReferences'])
   art10=ROOT/'art/redesign/art10.json'
   if art10.exists():files.update(ROOT/ref for ref in json.loads(art10.read_text())['sourceReferences'])
+  art11=ROOT/'art/redesign/art11.json'
+  if art11.exists():files.update(ROOT/ref for ref in json.loads(art11.read_text())['sourceReferences'])
+  if art11.exists():files.add(ROOT/'src/full/content.ts')
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -176,7 +179,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0)+(1 if (self.root/'art/redesign/ta07.json').exists() else 0)+(6 if (self.root/'art/redesign/ta08.json').exists() else 0)+(4 if (self.root/'art/redesign/art10.json').exists() else 0))
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0)+(1 if (self.root/'art/redesign/ta07.json').exists() else 0)+(6 if (self.root/'art/redesign/ta08.json').exists() else 0)+(4 if (self.root/'art/redesign/art10.json').exists() else 0)+(14 if (self.root/'art/redesign/art11.json').exists() else 0))
  def test_idle_ui_requires_its_source_ledger(self):
   (self.root/'art/redesign/idle-cultivation.json').unlink();self.rejected()
  def test_idle_ui_budget_cannot_be_raised(self):
@@ -1649,5 +1652,167 @@ class ART10InventoryTests(unittest.TestCase):
    self.restore();m=json.loads((self.root/old['ledger']).read_text());m[old['key']]+=1;self.write(old['ledger'],m)
    with self.assertRaisesRegex(AssertionError,'old budget'):self.check()
   self.restore();m=self.data();p=self.root/m['files'][0]['path'];raw=p.read_bytes()+b'\n@import "https://example.invalid/style.css";';p.write_bytes(raw);m['files'][0].update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.reject(m)
+
+class ART11InventoryTests(unittest.TestCase):
+ def setUp(self):
+  from art11_inventory import NATIVE,DEPENDENCIES,LEDGER
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art11-negative-');self.root=Path(self.temp.name)
+  self.original={name:(ROOT/name).read_bytes() for name in set(NATIVE+DEPENDENCIES+[LEDGER])};self.restore()
+ def tearDown(self):self.temp.cleanup()
+ def restore(self):
+  for name,raw in self.original.items():
+   path=self.root/name;path.parent.mkdir(parents=True,exist_ok=True)
+   if path.is_symlink():path.unlink()
+   path.write_bytes(raw)
+ def data(self):return json.loads((self.root/'art/redesign/art11.json').read_text())
+ def facts(self):return json.loads((self.root/'art/redesign/art11-items/export-facts.json').read_text())
+ def check(self):
+  from art11_inventory import validate_art11
+  from check_inventory import image_info
+  return validate_art11(self.root,image_info)
+ def write(self,name,data):(self.root/name).write_text(json.dumps(data))
+ def sync(self,f):
+  from art11_inventory import FACTS
+  self.write(FACTS,f);m=self.data();m['assets']=copy.deepcopy(f['assets']);raw=(self.root/FACTS).read_bytes();m['provenance']['facts'].update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write('art/redesign/art11.json',m)
+ def reject(self,m):
+  self.write('art/redesign/art11.json',m)
+  with self.assertRaises(AssertionError):self.check()
+ def change_native(self,index,text):
+  m=self.data();row=m['files'][index];raw=text.encode();(self.root/row['path']).write_bytes(raw);row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write('art/redesign/art11.json',m)
+ def change_runtime(self,f,raw):
+  row=f['assets'][0]['runtime'];(self.root/row['path']).write_bytes(raw);row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());proof=f['assets'][0]['exportProof'];proof.update(firstBytes=len(raw),secondBytes=len(raw),firstSHA256=row['sha256'],secondSHA256=row['sha256']);self.sync(f)
+ def change_audit(self,key,value):
+  f=self.facts();row=f['assets'][0]['audit'];data=json.loads((self.root/row['path']).read_text());data[key]=value;self.write(row['path'],data);raw=(self.root/row['path']).read_bytes();row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.sync(f)
+ def test_art11_fourteen_real_exports_two_native_files_and_no_acceptance(self):
+  files,count,total=self.check();self.assertEqual(count,14);self.assertEqual(total,sum(row['bytes'] for row in self.data()['files']));self.assertEqual(len([name for name in files if name.endswith('.webp')]),14);self.assertLessEqual(total,18000);self.assertIs(self.data()['userAcceptance'],False)
+ def test_art11_missing_ledger_cannot_hide_present_production(self):
+  (self.root/'art/redesign/art11.json').unlink()
+  with self.assertRaisesRegex(AssertionError,'Unrecorded ART11'):self.check()
+ def test_art11_header_scope_human_and_primitive_version_are_fixed(self):
+  for key,value in [('format','alias'),('version',True),('task','Goal4 done'),('scope','accepted'),('userAcceptance',True)]:
+   self.restore();m=self.data();m[key]=value;self.reject(m)
+ def test_art11_exact_schema_references_and_actual_reference_files_required(self):
+  for key in ['provenance','sourceReferences','bindings','consumers']:
+   self.restore();m=self.data();del m[key];self.reject(m)
+  self.restore();(self.root/self.data()['sourceReferences'][0]).unlink()
+  with self.assertRaises(AssertionError):self.check()
+ def test_art11_typed_caps_cannot_increase_or_use_boolean_aliases(self):
+  for key,old in self.data()['budgets'].items():
+   for value in [True,old+1]:
+    self.restore();m=self.data();m['budgets'][key]=value;self.reject(m)
+ def test_art11_exact_two_file_inventory_and_actual_identity_required(self):
+  for rows in [[],self.data()['files']*2,list(reversed(self.data()['files']))]:
+   self.restore();m=self.data();m['files']=rows;self.reject(m)
+  for key,value in [('bytes',True),('bytes',1),('sha256','0'*64)]:
+   self.restore();m=self.data();m['files'][0][key]=value;self.reject(m)
+ def test_art11_each_native_cap_is_enforced_after_valid_rehash(self):
+  for index,cap in [(0,4000),(1,14000)]:
+   self.restore();name=self.data()['files'][index]['path'];self.change_native(index,(self.root/name).read_text()+'\n'*(cap+1))
+   with self.assertRaisesRegex(AssertionError,'individual cap'):self.check()
+ def test_art11_original_and_runtime_bytes_cannot_drift(self):
+  for field in ['source','runtime']:
+   self.restore();path=self.root/self.data()['assets'][0][field]['path'];path.write_bytes(path.read_bytes()+b'drift')
+   with self.assertRaisesRegex(AssertionError,'actual bytes'):self.check()
+ def test_art11_fourteen_ids_order_and_independent_source_paths_are_complete(self):
+  for change in ['remove','duplicate','reorder','fake-path']:
+   self.restore();m=self.data()
+   if change=='remove':m['assets'].pop()
+   elif change=='duplicate':m['assets'][1]=m['assets'][0]
+   elif change=='reorder':m['assets'].reverse()
+   else:m['assets'][0]['source']=copy.deepcopy(m['assets'][1]['source'])
+   self.reject(m)
+  self.restore();f=self.facts();generation=json.loads((self.root/f['assets'][0]['audit']['path']).read_text())['generatedOriginal'];row=f['assets'][1]
+  for field,key in [('prompt','generatedPath'),('audit','generatedOriginal')]:
+   data=json.loads((self.root/row[field]['path']).read_text());data[key]=generation;self.write(row[field]['path'],data);raw=(self.root/row[field]['path']).read_bytes();row[field].update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest())
+  self.sync(f)
+  with self.assertRaisesRegex(AssertionError,'independent paintings'):self.check()
+ def test_art11_absolute_traversal_and_symlink_escape_rejected(self):
+  for name in ['/tmp/outside.json','../outside.json']:
+   self.restore();m=self.data();m['sourceReferences'][0]=name;self.reject(m)
+  self.restore()
+  with tempfile.TemporaryDirectory(prefix='art11-outside-') as folder:
+   target=self.root/self.data()['assets'][0]['source']['path'];external=Path(folder)/'raw.png';external.write_bytes(target.read_bytes());target.unlink();target.symlink_to(external)
+   with self.assertRaisesRegex(AssertionError,'external'):self.check()
+ def test_art11_transparency_requires_real_webp_header_not_fact_alias(self):
+  f=self.facts();raw=bytearray((self.root/f['assets'][0]['runtime']['path']).read_bytes());self.assertEqual(raw[12:16],b'VP8X');raw[20]&=~16;self.change_runtime(f,bytes(raw))
+  with self.assertRaisesRegex(AssertionError,'not transparent'):self.check()
+ def test_art11_dimensions_alpha_counts_and_nested_bounds_are_exact(self):
+  for change in ['size','empty','count','bbox','primitive']:
+   self.restore();f=self.facts();row=f['assets'][0]['source']
+   if change=='size':row['dimensions']['width']=512
+   elif change=='empty':row['alphaProof']['solidPixels']=0
+   elif change=='count':row['alphaProof']['intermediatePixels']+=1
+   elif change=='bbox':row['alphaBBox16'][2]=1255
+   else:row['alphaBBox1'][0]=True
+   self.sync(f)
+   with self.assertRaises(AssertionError):self.check()
+ def test_art11_actual_runtime_single_cap_survives_valid_riff_rehash(self):
+  f=self.facts();raw=(self.root/f['assets'][0]['runtime']['path']).read_bytes();payload=b'\0'*(120010-len(raw)-8);self.assertEqual(len(payload)%2,0);changed=bytearray(raw+b'JUNK'+len(payload).to_bytes(4,'little')+payload);changed[4:8]=(len(changed)-8).to_bytes(4,'little');self.change_runtime(f,bytes(changed))
+  with self.assertRaisesRegex(AssertionError,'single120000'):self.check()
+ def test_art11_prompt_literal_and_document_hashes_cannot_be_confused(self):
+  f=self.facts();self.assertNotEqual(f['assets'][0]['prompt']['literalSHA256'],f['assets'][0]['prompt']['sha256']);f['assets'][0]['prompt']['literalSHA256']=f['assets'][0]['prompt']['sha256'];self.sync(f)
+  with self.assertRaisesRegex(AssertionError,'literal/document'):self.check()
+ def test_art11_local_audit_cannot_claim_provider_metadata_or_altered_copy(self):
+  for key,value in [('kind','provider signed'),('requestId','invented'),('model','invented'),('rawSha256','0'*64)]:
+   self.restore();self.change_audit(key,value)
+   with self.assertRaises(AssertionError):self.check()
+ def test_art11_generated_original_path_keep_and_real_alpha_audit_are_bound(self):
+  for key,value in [('generatedOriginal','not-original'),('originalKept',False),('alpha16Bbox',[0,0,1254,1254]),('workspaceRaw','other.png')]:
+   self.restore();self.change_audit(key,value)
+   with self.assertRaises(AssertionError):self.check()
+ def test_art11_exact_producer_helper_and_codec_recipe_required(self):
+  for field,value in [('encoding',['cwebp','-q','1']),('alignment',{}),('decoderVersion',''),('encoderVersion','')]:
+   self.restore();f=self.facts();f[field]=value;self.sync(f)
+   with self.assertRaises(AssertionError):self.check()
+  for key in ['producer','helper']:
+   self.restore();m=self.data();m['provenance'][key]['sha256']='0'*64;self.reject(m)
+ def test_art11_partial_export_cannot_claim_fourteen_ready(self):
+  for key,value in [('complete',False),('complete',1),('pending',['lotus'])]:
+   self.restore();f=self.facts();f[key]=value;self.sync(f)
+   with self.assertRaisesRegex(AssertionError,'incomplete'):self.check()
+ def test_art11_uniform_whole_body_math_cannot_stretch_or_crop(self):
+  for key,value in [('scale',True),('scale',1),('translateX',0),('wholePaintedSourceInside',False)]:
+   self.restore();f=self.facts();f['assets'][0]['transform'][key]=value;self.sync(f)
+   with self.assertRaises(AssertionError):self.check()
+ def test_art11_actual_32px_margin_and_reported_runtime_boxes_are_honest(self):
+  f=self.facts();a=f['assets'][0];a['runtime']['alphaBBox1'][0]=31;a['transform']['actualRuntimeAlphaBBox1'][0]=31;self.sync(f)
+  with self.assertRaisesRegex(AssertionError,'raster32px'):self.check()
+  self.restore();f=self.facts();f['assets'][0]['transform']['actualRuntimeAlphaBBox16'][0]+=1;self.sync(f)
+  with self.assertRaisesRegex(AssertionError,'raster32px'):self.check()
+ def test_art11_actual_double_export_bytes_and_source_unchanged_required(self):
+  for key,value in [('bytesEqual',False),('sourceUnchanged',False),('secondSHA256','0'*64),('firstBytes',True)]:
+   self.restore();f=self.facts();f['assets'][0]['exportProof'][key]=value;self.sync(f)
+   with self.assertRaisesRegex(AssertionError,'export'):self.check()
+ def test_art11_real_image_opening_and_nested_fallback_cannot_detach(self):
+  from art11_inventory import NATIVE
+  for token in [':path="path"','<GameIcon kind="item" :id="itemId"/>']:
+   self.restore();text=(self.root/NATIVE[0]).read_text();self.assertEqual(text.count(token),1);changed=text.replace(token,'',1);self.assertNotEqual(text,changed);self.change_native(0,changed)
+   with self.assertRaises(AssertionError):self.check()
+ def test_art11_each_current_object_receives_actual_item_and_ownership(self):
+  from art11_inventory import CONSUMERS,Tags
+  for consumer in CONSUMERS:
+   self.restore();path=consumer['host'];text=(self.root/path).read_text();openings=__import__('re').findall(r'<ItemArtifact(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text)
+   matches=[tag for tag in openings if any(name=='itemartifact' and all(attrs.get(k)==v for k,v in consumer['attrs'].items()) for name,attrs in Tags('<template>'+tag+'</template>').nodes)]
+   self.assertEqual(len(matches),1);tag=matches[0];self.assertEqual(text.count(tag),1);self.assertEqual(tag.count(':owned='),1);changed=tag.replace(':owned=',':untrusted-owned=',1);self.assertNotEqual(tag,changed);(self.root/path).write_text(text.replace(tag,changed,1))
+   with self.assertRaisesRegex(AssertionError,'consumer props'):self.check()
+ def test_art11_native_object_has_no_io_timer_write_or_external_css(self):
+  for suffix in ["\n<script>setTimeout(()=>{},1)</script>","\n<script>fetch('https://example.invalid')</script>"]:
+   self.restore();text=(self.root/self.data()['files'][0]['path']).read_text();self.change_native(0,text.replace('</script>',suffix+'</script>',1))
+   with self.assertRaises(AssertionError):self.check()
+  self.restore();text=(self.root/self.data()['files'][1]['path']).read_text();self.change_native(1,text+'\n@import "https://example.invalid/style.css";')
+  with self.assertRaisesRegex(AssertionError,'external IO'):self.check()
+ def test_art11_supply_full_proof_and_unique_style_consumer_stay_strict(self):
+  for path,token in [('web/src/supply-effects.ts','undefined,5'),('web/src/activity-effects.ts','resolve(before,command)'),('web/src/main.ts',"import './art11-inventory.css'")]:
+   self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);(self.root/path).write_text(text.replace(token,'/*'+token+'*/',1))
+   with self.assertRaisesRegex(AssertionError,'consumer/proof'):self.check()
+  self.restore();path=self.root/'web/src/main.ts';path.write_text(path.read_text()+"\nimport './art11-inventory.css';")
+  with self.assertRaisesRegex(AssertionError,'uniquely'):self.check()
+ def test_art11_all_old_caps_and_membership_remain_unchanged(self):
+  from art11_inventory import CAPS
+  for prior in CAPS:
+   self.restore();data=json.loads((self.root/prior['ledger']).read_text());data[prior['key']]+=1;self.write(prior['ledger'],data)
+   with self.assertRaisesRegex(AssertionError,'old budget'):self.check()
+  self.restore();prior=CAPS[-1];path=self.root/prior['files'][0];path.write_text(path.read_text()+'\n'*(prior['limit']+1))
+  with self.assertRaisesRegex(AssertionError,'old group'):self.check()
 
 if __name__=='__main__':unittest.main()

@@ -1,0 +1,25 @@
+{
+  "id": "soul",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-98020ee5-e722-4f03-9ab9-22d240f52229.png",
+  "workspaceRaw": "art/redesign/art11-items/soul-v1.png",
+  "rawSha256": "d141ad80f6c806529eb406d469f7c157ba7d62d876ffbeeb889cb92a05420281",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    248,
+    41,
+    1049,
+    1187
+  ]
+}

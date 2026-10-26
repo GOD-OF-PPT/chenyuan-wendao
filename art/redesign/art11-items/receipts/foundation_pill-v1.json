@@ -1,0 +1,25 @@
+{
+  "id": "foundation_pill",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-3a5786b1-f0d8-46c1-82fa-34851d3e91e6.png",
+  "workspaceRaw": "art/redesign/art11-items/foundation_pill-v1.png",
+  "rawSha256": "5379d522005f7e8b8a88f8c6ebf5bdd5d16726ca2843fd63b866966ce6117266",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    136,
+    190,
+    1089,
+    1064
+  ]
+}

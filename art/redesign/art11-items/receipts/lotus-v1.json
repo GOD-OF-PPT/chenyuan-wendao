@@ -1,0 +1,25 @@
+{
+  "id": "lotus",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-f396eca3-a17d-4922-a0b8-ad2dffdb0e15.png",
+  "workspaceRaw": "art/redesign/art11-items/lotus-v1.png",
+  "rawSha256": "4f117aaf584530881f31e2e94b3de8a41f045494f0a788706a7608e0782f1cde",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    122,
+    67,
+    1191,
+    1240
+  ]
+}

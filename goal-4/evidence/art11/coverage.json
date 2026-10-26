@@ -1,0 +1,605 @@
+{
+  "status": "actualcurrentSource4all50unique-related-tests-pass-in-two-complete-groups",
+  "runtime": "186c9973db76e0e12dbc0102031609b7fb5997564ddbb99b3f114862e3cda858",
+  "runtimeSources": 279,
+  "payloadFiles": 87,
+  "payloadBytes": 9068677,
+  "unique": 50,
+  "files": 9,
+  "byFile": {
+    "art11-inventory-stage.spec.ts": 8,
+    "idle-preparation-active.spec.ts": 4,
+    "idle-preparation-drafts.spec.ts": 4,
+    "idle-preparation.spec.ts": 4,
+    "idle-stage-ui.spec.ts": 1,
+    "inventory-objects.spec.ts": 12,
+    "stage-check.spec.ts": 13,
+    "stage-r3-layout.spec.ts": 3,
+    "stage-r3.spec.ts": 1
+  },
+  "composition": {
+    "completeCurrentNew8": 8,
+    "completeCurrentOriginalRelated42": 42,
+    "earlierTarget10": "samebusinesssubsetnotadded",
+    "oneSingle50GreenRun": false
+  },
+  "phases": [
+    {
+      "phase": "ui-new8-source4",
+      "actualCount": 8,
+      "stats": {
+        "startTime": "2026-10-26T08:38:47.773Z",
+        "duration": 121161.69099999999,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/art11/ui-new8-source4-report.json",
+      "reportSHA256": "e970cd91ce2af950f3d79d7d4306571348280f35bea54ecc502031aab6735048",
+      "terminal": "artifacts/goal-4/art11/ui-new8-source4-terminal.json",
+      "strictInputs": 582,
+      "pre": "artifacts/goal-4/art11/ui-new8-source4-before.json",
+      "preSHA256": "e8c17a2687659d86fd82c76b59beaaae2b5e8e6717e6641e4d9bb533310c30c9",
+      "post": "artifacts/goal-4/art11/ui-new8-source4-after.json",
+      "postSHA256": "538f6cfa566ba0509e4614264fd27a05ea78c782aab1015a028e28bb4afc1016",
+      "prePostExact": true,
+      "runtime": "186c9973db76e0e12dbc0102031609b7fb5997564ddbb99b3f114862e3cda858",
+      "runtimeFiles": 279,
+      "httpFiles": 87,
+      "httpBytes": 9068677,
+      "httpAllExact": true,
+      "noRetries": true
+    },
+    {
+      "phase": "ui-old42-source4",
+      "actualCount": 42,
+      "stats": {
+        "startTime": "2026-10-26T08:47:28.840Z",
+        "duration": 248720.604,
+        "expected": 42,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f",
+      "terminal": "artifacts/goal-4/art11/ui-old42-source4-terminal.json",
+      "strictInputs": 590,
+      "pre": "artifacts/goal-4/art11/ui-old42-source4-before.json",
+      "preSHA256": "25503e890df71a502c980b9b7e0affd3d0089d3bb9d5924b705143c75e5d944e",
+      "post": "artifacts/goal-4/art11/ui-old42-source4-after.json",
+      "postSHA256": "d13d263a10cf01ec9cf632a6ee4ff6c0f124856e7771897146201dc244cdbd09",
+      "prePostExact": true,
+      "runtime": "186c9973db76e0e12dbc0102031609b7fb5997564ddbb99b3f114862e3cda858",
+      "runtimeFiles": 279,
+      "httpFiles": 87,
+      "httpBytes": 9068677,
+      "httpAllExact": true,
+      "noRetries": true
+    }
+  ],
+  "records": [
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A1 one selected real item precedes an explicitly requested complete fourteen-item satchel catalogue",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 16718,
+      "phase": "ui-new8-source4",
+      "report": "artifacts/goal-4/art11/ui-new8-source4-report.json",
+      "reportSHA256": "e970cd91ce2af950f3d79d7d4306571348280f35bea54ecc502031aab6735048"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A2 zero-stock blueprints lead to readonly sources while every full use price and protected breakthrough fact remains reachable",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 20461,
+      "phase": "ui-new8-source4",
+      "report": "artifacts/goal-4/art11/ui-new8-source4-report.json",
+      "reportSHA256": "e970cd91ce2af950f3d79d7d4306571348280f35bea54ecc502031aab6735048"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A3 each owned medicine can be inspected used or sold without choosing a purpose spending it and cave rest stays available",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 10553,
+      "phase": "ui-new8-source4",
+      "report": "artifacts/goal-4/art11/ui-new8-source4-report.json",
+      "reportSHA256": "e970cd91ce2af950f3d79d7d4306571348280f35bea54ecc502031aab6735048"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A4 supply purposes retain nondefault drafts and canonical saved authorizations without inventing per-medicine caches or crossing a new run",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 12210,
+      "phase": "ui-new8-source4",
+      "report": "artifacts/goal-4/art11/ui-new8-source4-report.json",
+      "reportSHA256": "e970cd91ce2af950f3d79d7d4306571348280f35bea54ecc502031aab6735048"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A5 source reading returns to the selected item and its real draft while an explicit cave journey never performs recovery",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 6090,
+      "phase": "ui-new8-source4",
+      "report": "artifacts/goal-4/art11/ui-new8-source4-report.json",
+      "reportSHA256": "e970cd91ce2af950f3d79d7d4306571348280f35bea54ecc502031aab6735048"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A6 a paid medicine quota keeps new catalogue and uses readonly then retries its original command once and cancelled old configuration permits only a fresh supply intent",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 11834,
+      "phase": "ui-new8-source4",
+      "report": "artifacts/goal-4/art11/ui-new8-source4-report.json",
+      "reportSHA256": "e970cd91ce2af950f3d79d7d4306571348280f35bea54ecc502031aab6735048"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A7 consuming the last real dose and a lawful realm change reconcile only the selected view while a replacement life closes old catalogue ownership",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7447,
+      "phase": "ui-new8-source4",
+      "report": "artifacts/goal-4/art11/ui-new8-source4-report.json",
+      "reportSHA256": "e970cd91ce2af950f3d79d7d4306571348280f35bea54ecc502031aab6735048"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A8 new item surfaces retain keyboard return full text and safe failed-art fallbacks in both reduced-effect modes and a tight real error",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 32972,
+      "phase": "ui-new8-source4",
+      "report": "artifacts/goal-4/art11/ui-new8-source4-report.json",
+      "reportSHA256": "e970cd91ce2af950f3d79d7d4306571348280f35bea54ecc502031aab6735048"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active buy shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3851,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active rest shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3665,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active sell shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4545,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active use shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3299,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a middle shelf item stays visible after source navigation and reviewing its saved market plan",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3678,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a saved market order keeps an edited stock target and budgets across a real cycle commit and pause",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4027,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a saved medicine arrangement keeps edited dose limits and recovery target across its cycle and pause",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3977,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "first medicine inspection is an unsaved draft and its eventual stop is labelled as a prediction",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 2571,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "a medicine cycle really counts six seconds and commits no early healing",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 10110,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "cave rest uses one full thirty-second period for its original month and full restoration",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3028,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "finite medicine recovery saves real effects then refresh preserves the original arrangement without offline rewards",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4599,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "market purchases one item per deadline and sells medicine only within explicit inventory reserve",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5516,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "idle-stage-ui.spec.ts",
+      "title": "the inventory keeps all real item quantities and all readonly category pages in the game stage",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4039,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A1 every fourteen satchel objects keep real quantities full uses and protected breakthrough ownership read-only",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 27561,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A10 saved recovery short effects stop immediately for held pause and same-id external ownership without losing the real medicine outcome",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 8386,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A11 switching selected goods or buy sell mode and hidden views cannot borrow an active cycle or replay a foreign trade",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 10402,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A12 missing symbol images and both reduced-effect modes keep all three game objects and an actual medicine result readable and usable",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 14946,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A2 market counter and recovery ritual preserve their complete unsubmitted limits without using or trading",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 8668,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A3 native medicine saving keeps the real body and medicine unchanged and never claims that an owned cycle needs takeover",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4945,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A4 one real buy period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 20046,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A5 one real use period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 11313,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A6 one real rest period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 34642,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A7 both medicine sales stop at the exact reserve and all five breakthrough offers stay explicitly forbidden",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 17215,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A8 native acceptance quota failures keep buy medicine and rest atomic and retry the original exact intent once",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 27583,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A9 native cycle quota failures keep buy medicine and rest atomic and retry the original exact intent once",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 34655,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a direct source-market context returns from ordinary details with its order draft intact",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4843,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a replacement life cannot inherit a supply default-view deduplication or edited market budget",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 7511,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "closing future market goods reconciles the actual object and its selected visible shelf",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4190,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "inventory sale inspection returns to its original selected object without a transaction",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3655,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "market buy and sell inspection retain separate drafts and never turn navigation into authorization",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5631,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "market default shows the finite order and opens its complete limits on demand",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4262,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real buy waits its full online period and atomically saves one formal outcome",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 20039,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real rest waits its full online period and atomically saves one formal outcome",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 36268,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real use waits its full online period and atomically saves one formal outcome",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 10312,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "recovery shows the body and real single-dose effect before its complete finite settings",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 5638,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "repeated inventory sell inspection preserves its edited default-view draft",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4790,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "repeated inventory use inspection preserves its edited default-view draft",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4872,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "reselecting the same market object preserves the complete unconfirmed finite authorization",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 3842,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all twelve books and all fourteen bag objects retain real text, quantities and complete read-only uses",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 58340,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "missing catalogue paintings keep native jade and bag selection usable without inventing held objects",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 8326,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "same life realm growth keeps the selected bag item visible when newly unlocked materials move its page",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 6921,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    },
+    {
+      "file": "stage-r3.spec.ts",
+      "title": "inventory offers compact quantity objects and one selected description without writing Game",
+      "project": "chromium",
+      "status": "passed",
+      "durationMs": 4728,
+      "phase": "ui-old42-source4",
+      "report": "artifacts/goal-4/art11/ui-old42-source4-report.json",
+      "reportSHA256": "bc1998c7d86a07be5407cb5e1a9f839123f1837a07ee2c4339613d746d803d6f"
+    }
+  ],
+  "originalOld42IdentitiesExact": true,
+  "originalFailuresRetained": [
+    "ui-baseline-A1-report.json",
+    "ui-new8-source1-report.json",
+    "ui-new8-source2-report.json",
+    "ui-old1-red-source3-report.json",
+    "ui-old42-source3-report.json"
+  ],
+  "latestRunIsNotARebrand": "Bothcompletegroups actuallyexecuted samefrozenSource4,earliersource3greensnotusedforcurrent50",
+  "testAdaptationInverse": "old42-final-adaptation-hashes.json",
+  "additionalThreePremises": "old42-source3-three-premises-review.json",
+  "realPeriodSafeSummary": "source4-real-supply-cycle-safe-summary.json",
+  "notClaimed": [
+    "allcurrentUIregistry/whole461or479",
+    "compatibility/fontscale/resolution/browser/environmentperformance",
+    "overallARTorhumanacceptance",
+    "allgeneratedimagesactuallyviewed",
+    "currentall332nativeonerun",
+    "nativecompleteclockfieldnotcaptured",
+    "failedbranchlatersuccessbeforeactualcurrentrerun"
+  ]
+}

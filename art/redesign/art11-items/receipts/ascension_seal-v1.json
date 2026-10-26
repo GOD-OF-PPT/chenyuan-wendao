@@ -1,0 +1,25 @@
+{
+  "id": "ascension_seal",
+  "kind": "local imagegen audit not provider-signed receipt",
+  "requestId": null,
+  "model": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-82e5cd1e-88e0-4950-9584-2916962a0e7a.png",
+  "workspaceRaw": "art/redesign/art11-items/ascension_seal-v1.png",
+  "rawSha256": "d4bda35f534675cf592e777bdc17aa08149b9b9eff89842577774c2e762e7f84",
+  "originalKept": true,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha16Bbox": [
+    423,
+    35,
+    1079,
+    1186
+  ]
+}

@@ -392,3 +392,12 @@ source5完整461已真实终态460过／1旧在线就绪前提失败，807输入
 - [杠精审查] 通过，仅0037独立工程范围；完整能力／有限授权／实际周期／原重试与当前像素／同源交付分别有证，没有用图／统一环／删断言／加时限代游戏交互。当前范围无已知未修工程阻断，整体工作台感／长期平衡／真人未代签。下一只ART11行囊，再ART12／CHECK-ART-03，修行等其余ART缺口、M04路线恢复／M05性能／M06兼容最后／干净包／最大评审／真人全部保留，Goal active。
 
 主证据：[evidence/art10/verification.json](evidence/art10/verification.json)、coverage.json、identity-proof.json、visual-review.json与review.md。
+
+
+## ART11开工（2026-10-26）
+
+上一轮ART10为实际progress：b38ee47/c37c3f5、c2e9c18d/263源73载荷、76唯一9+63+4及原13/Chrome进度有证。当前只ART11，原话amendments/2026-10-26-goal-continue-art11.md、保护13/status/patch、0038完整参数/风险/验收/回滚先于代码。旧行囊已有真实stock0图谱和source主入口；先核合法物件/全GameDB只读，再锁常驻目录与三栏实际红，不冒Game错误。
+
+找物/辨用途/原有限安排，全部14物/两丹双用途/5禁售和15/6/30不变；药盏/交易案当前对象优先、完整目录和预算按需。14独立透明512绘画单件120000总1680000，旧cap不涨；新ItemArtifact+CSS合18000上限，Goods仅余79B须真实移目录slot/退休布局，controller不搬。新8+旧具名42（实际改变共用路径按0038加例）、815/native34及精确298/新旧guard/类型构建/真实周期与逐图，严格pre-ownedterminal-post及同源HTTP。完成后下一ART12，再CHECK-ART-03；整体艺术/其它ART/M04-5-6兼容最后/干净包/最大review/真人保持，Goal active。
+
+[杠精审查] 开工通过；具体参数及预算已落实，不只登记计划。复用game-studio/UI/playtest/imagegen与旧工具/agent；当前不兼容/环境性能、不改用户档、不push/合并/部署/权限。

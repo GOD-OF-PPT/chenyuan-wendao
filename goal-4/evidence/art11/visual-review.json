@@ -1,0 +1,66 @@
+{
+  "actualRootViews": [
+    {
+      "path": "artifacts/goal-4/art11/visual-source1/default-existing-satchel-before-on-demand-assertion.jpg",
+      "sha256": "ad72cae027b4d81be1fe3bd4dd1ab450eefa93094c7c13112b66c8b20a100dcc",
+      "actualRootPixelReview": true,
+      "originalDimensionsLossyJPEG68": true,
+      "source": "visual-source1"
+    },
+    {
+      "path": "artifacts/goal-4/art11/visual-source1/healing_pill-only-a-use-draft-before-start.jpg",
+      "sha256": "90b03e8d21a2fbf76b97714641fa2dcd8dc833f45bb945bc5ebf4c721c6b05f6",
+      "actualRootPixelReview": true,
+      "originalDimensionsLossyJPEG68": true,
+      "source": "visual-source1"
+    },
+    {
+      "path": "artifacts/goal-4/art11/visual-source1/healing_pill-two-explicit-purposes.jpg",
+      "sha256": "7cfb6b99515e96ef0ec02cb21e68b468e1d53d99f3697d4b2df958e49a6f1999",
+      "actualRootPixelReview": true,
+      "originalDimensionsLossyJPEG68": true,
+      "source": "visual-source1"
+    },
+    {
+      "path": "artifacts/goal-4/art11/visual-source2/recovery-result-tight.jpg",
+      "sha256": "b67d18a5786983c2876aca46e26f14a1ce403928295bc71d03b1687d30a564a4",
+      "actualRootPixelReview": true,
+      "originalDimensionsLossyJPEG68": true,
+      "source": "visual-source2"
+    },
+    {
+      "path": "artifacts/goal-4/art11/visual-source3/system-static-result-does-not-hide-actual-dose-cost.jpg",
+      "sha256": "d601db63ce27269123df144a8b8b357a787b56fb0d813ccee920d56e5c95604d",
+      "actualRootPixelReview": true,
+      "originalDimensionsLossyJPEG68": true,
+      "source": "visual-source3"
+    },
+    {
+      "path": "artifacts/goal-4/art11/visual-source3/complete-fourteen-items-in-an-on-demand-catalogue.jpg",
+      "sha256": "17c873f2b774d3d560bd85ba6e6dd1014dfa48c30f80ed6b79a395354e3136bf",
+      "actualRootPixelReview": true,
+      "originalDimensionsLossyJPEG68": true,
+      "source": "visual-source3"
+    },
+    {
+      "path": "artifacts/goal-4/art11/visual-source4/buy-acceptance-quota.jpg",
+      "sha256": "aa5e91aa6f9c8caad919e9181400c64f4e3f2db5b67958b254826de9916c7dbf",
+      "actualRootPixelReview": true,
+      "originalDimensionsLossyJPEG68": true,
+      "source": "visual-source4"
+    },
+    {
+      "path": "artifacts/goal-4/art11/visual-source4/buy-real-running.jpg",
+      "sha256": "264e9076f67eb3426cb8e7297338d1a1896999b9550f25dab7c10333fc1775dd",
+      "actualRootPixelReview": true,
+      "originalDimensionsLossyJPEG68": true,
+      "source": "visual-source4"
+    }
+  ],
+  "sameSceneAcrossSourcesNotAdditionalUniqueAcceptance": true,
+  "all14GeneratedOutputsActuallyViewedDuringGeneration": true,
+  "newAndOldSource4GeneratedPNGCount": 188,
+  "all188Reviewed": false,
+  "findings": "Old three-column inventory reorganized around current object, empty diagram and explicit uses; physical market stock/cycle clash and recovery result line repaired with original fonts/controls/cost intact. Other art/workbench feel remains human/wholeGame responsibility.",
+  "overallHumanAccepted": false
+}

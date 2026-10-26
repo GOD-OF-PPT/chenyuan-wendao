@@ -12,13 +12,13 @@
     },
     {
       "path": "web/src/MarketPlanner.vue",
-      "bytes": 11294,
-      "sha256": "240bbd381dd0c0879edcf1fec1a35464d9ff437f9a3e4aa60d78a8cbfa64205e"
+      "bytes": 11937,
+      "sha256": "59fae59ccc51211a2bfbff3849cc40ab9464b3ee6ae681e98bb16c0a1c0a490e"
     },
     {
       "path": "web/src/RecoveryPlanner.vue",
-      "bytes": 7490,
-      "sha256": "53f0a3038baf13cd5432f20315734cf1015514ccecbfb38d21d1c70fdf1b3511"
+      "bytes": 8181,
+      "sha256": "bcee2e26b32240e9687d987096bb2b4da63c23418185c26d18c64fe6d832a647"
     },
     {
       "path": "web/src/ConfigurationDialog.vue",
@@ -64,8 +64,13 @@
     ],
     "web/src/InventoryStage.vue": [
       "view('use')",
-      "'inspect-'+main+'-'+itemId",
-      "查看服丹安排"
+      "view('sell')",
+      "'inspect-use-'+itemId",
+      "'inspect-sell-'+itemId",
+      "查看服丹安排",
+      "inventory-main-source",
+      "inventory-uses-dialog",
+      "突破物不可出售"
     ]
   },
   "scope": "Six finite online activities and three immediate compared configurations; approved art reused; no balance or player acceptance."

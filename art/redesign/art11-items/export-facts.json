@@ -1,0 +1,1770 @@
+{
+  "format": "chenyuan-art11-export-facts",
+  "version": 1,
+  "producer": {
+    "path": "art/tools/export_art11_items.py",
+    "bytes": 7841,
+    "sha256": "500b6c5476e65ad7d9a2374cb235587c5cc11a7532af89be208c4f842bb2955f"
+  },
+  "helper": {
+    "path": "art/tools/export_art10_blanks.py",
+    "bytes": 8264,
+    "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+  },
+  "decoder": "Pillow",
+  "decoderVersion": "12.3.0",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "512",
+    "-metadata",
+    "none"
+  ],
+  "alignment": {
+    "method": "uniform-contain-alpha1-margin32-bottom-center",
+    "threshold": 1,
+    "resampling": "Pillow BICUBIC inverse affine",
+    "width": 512,
+    "height": 512,
+    "margin": 32,
+    "samplingGuard": 2,
+    "nonuniformScale": false,
+    "cropPaintedBody": false
+  },
+  "complete": true,
+  "pending": [],
+  "assets": [
+    {
+      "id": "herb",
+      "source": {
+        "path": "art/redesign/art11-items/herb-v1.png",
+        "bytes": 1413771,
+        "sha256": "3f73147d9e592dcb185ca76dc21a00f714c87d478d54303fbe3ec399119ba519",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1054105,
+          "solidPixels": 354452,
+          "intermediatePixels": 163959,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          17,
+          9,
+          1251,
+          1238
+        ],
+        "alphaBBox16": [
+          109,
+          33,
+          1190,
+          1219
+        ],
+        "rgbaSHA256": "904047dcecfd0a3e18fdfa23c0e9299cb4d96ecf0588fa778d072df64eb77367"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/herb-v1-prompt.json",
+        "bytes": 1652,
+        "sha256": "03ea93e7366b9b60d78608a878ec17dd1e26d64f244b21329b509f2f8ddec304",
+        "literalSHA256": "b779fa89957ae9d3ad17409707c2cf0e364ed740b5650f13519863865fab436b"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/herb-v1.json",
+        "bytes": 591,
+        "sha256": "2f7004ad5b2cfe6b6cb9e6dfcb51295e889d5962b95b97693bb59e8e854651fe"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/herb-v1.webp",
+        "bytes": 59714,
+        "sha256": "4289eafba0f0d726051d47594dc6268a0bc493f9403799d59f70e76ad173a4b0",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 198564,
+          "solidPixels": 45145,
+          "intermediatePixels": 18435,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          35,
+          40,
+          467,
+          478
+        ],
+        "alphaBBox16": [
+          67,
+          44,
+          456,
+          471
+        ],
+        "rgbaSHA256": "81cd8cb0d40021eaaecb34085030edff2623f661838ac81efa48af7fdf6e3dae"
+      },
+      "transform": {
+        "scale": 0.35980551053484605,
+        "translateX": 27.883306320907593,
+        "translateY": 32.56077795786058,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          33.99999999999998,
+          35.7990275526742,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          67.1021069692058,
+          44.434359805510496,
+          456.05186385737437,
+          471.1636952998379
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          35,
+          40,
+          467,
+          478
+        ],
+        "actualRuntimeAlphaBBox16": [
+          67,
+          44,
+          456,
+          471
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 59714,
+        "firstSHA256": "4289eafba0f0d726051d47594dc6268a0bc493f9403799d59f70e76ad173a4b0",
+        "secondBytes": 59714,
+        "secondSHA256": "4289eafba0f0d726051d47594dc6268a0bc493f9403799d59f70e76ad173a4b0",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "dew",
+      "source": {
+        "path": "art/redesign/art11-items/dew-v1.png",
+        "bytes": 922870,
+        "sha256": "65c89498b40cf4e54af8c343f3437fc4c77edebcca698bf63f2f8c1308d84864",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1160838,
+          "solidPixels": 385609,
+          "intermediatePixels": 26069,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          47,
+          19,
+          1236,
+          1190
+        ],
+        "alphaBBox16": [
+          332,
+          87,
+          947,
+          1154
+        ],
+        "rgbaSHA256": "b7211d8bc4096931caf18651937926b70b02c1a57256b95df25467a690ff78ac"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/dew-v1-prompt.json",
+        "bytes": 1670,
+        "sha256": "8bfd587cf1035dc7fc11498ecd51edee9b2c8ac94f2c0b6254f90e8789090107",
+        "literalSHA256": "feff66ed56ba85c507e55ed69d4d0a2c49f2959194cf418523673ae2adabf45b"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/dew-v1.json",
+        "bytes": 588,
+        "sha256": "e1ab2c3b132b5c1f6b4c8a85eeb72ab00219b92048baf25173bdb81b11bbdca9"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/dew-v1.webp",
+        "bytes": 31894,
+        "sha256": "9fd9a56e6a407fd39587676313dec3562524dc767d14a026f5aadfa727938c25",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 205441,
+          "solidPixels": 53635,
+          "intermediatePixels": 3068,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          39,
+          43,
+          465,
+          467
+        ],
+        "alphaBBox16": [
+          140,
+          66,
+          370,
+          465
+        ],
+        "rgbaSHA256": "2e70f7535f7d6d5bb44de6acc6c67f1722261e9521b95378315802d2eccce286"
+      },
+      "transform": {
+        "scale": 0.37342304457527337,
+        "translateX": 16.449116904962125,
+        "translateY": 33.626576955424696,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          33.99999999999997,
+          40.72161480235489,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          140.42556770395288,
+          66.11438183347349,
+          370.080740117746,
+          464.5567703952902
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          39,
+          43,
+          465,
+          467
+        ],
+        "actualRuntimeAlphaBBox16": [
+          140,
+          66,
+          370,
+          465
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 31894,
+        "firstSHA256": "9fd9a56e6a407fd39587676313dec3562524dc767d14a026f5aadfa727938c25",
+        "secondBytes": 31894,
+        "secondSHA256": "9fd9a56e6a407fd39587676313dec3562524dc767d14a026f5aadfa727938c25",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "core",
+      "source": {
+        "path": "art/redesign/art11-items/core-v1.png",
+        "bytes": 1635675,
+        "sha256": "5406086cd1f61654eb4f83e9bf7a1329934b133640492676bbc96a824a7d08d9",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 913385,
+          "solidPixels": 634321,
+          "intermediatePixels": 24810,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          25,
+          1242,
+          1243
+        ],
+        "alphaBBox16": [
+          147,
+          149,
+          1117,
+          1100
+        ],
+        "rgbaSHA256": "e471f07098a34c1a2a93411a8367b5323a2380d04aedbc5829f6238893c1a8ef"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/core-v1-prompt.json",
+        "bytes": 1608,
+        "sha256": "b7e0a81fbc86b7b81a6fa33f5c37c55738306bd8c2a2d110326d3d48502d3856",
+        "literalSHA256": "c1d9901da945dca3acabcb9576fac732b043d85371ee90b3281e32c268f21506"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/core-v1.json",
+        "bytes": 592,
+        "sha256": "cc86cb0e15392a257dde17ed0333468873fca0d8379f3953fbdfbe700f057346"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/core-v1.webp",
+        "bytes": 48484,
+        "sha256": "cac701143dda662cda3e218c53d5daf2ff043228e1afc0aea6dc83a503b9eedf",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 178605,
+          "solidPixels": 80947,
+          "intermediatePixels": 2592,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          77,
+          57,
+          435,
+          467
+        ],
+        "alphaBBox16": [
+          87,
+          87,
+          433,
+          427
+        ],
+        "rgbaSHA256": "5a557c80fc08b418126a3e76794858a8fddd72183a823e3f4e1e178de67a89dc"
+      },
+      "transform": {
+        "scale": 0.357487922705314,
+        "translateX": 34.0,
+        "translateY": 33.642512077294725,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          34.0,
+          42.579710144927574,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          86.55072463768116,
+          86.90821256038652,
+          433.3140096618357,
+          426.8792270531401
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          77,
+          57,
+          435,
+          467
+        ],
+        "actualRuntimeAlphaBBox16": [
+          87,
+          87,
+          433,
+          427
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 48484,
+        "firstSHA256": "cac701143dda662cda3e218c53d5daf2ff043228e1afc0aea6dc83a503b9eedf",
+        "secondBytes": 48484,
+        "secondSHA256": "cac701143dda662cda3e218c53d5daf2ff043228e1afc0aea6dc83a503b9eedf",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "jade",
+      "source": {
+        "path": "art/redesign/art11-items/jade-v1.png",
+        "bytes": 2318877,
+        "sha256": "54ce32e28be625a6e16dd99e055b7404a98b957fcd45ab7f7a8a10f74fd8bb25",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 705188,
+          "solidPixels": 840636,
+          "intermediatePixels": 26692,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          32,
+          1236,
+          1254
+        ],
+        "alphaBBox16": [
+          62,
+          65,
+          1210,
+          1206
+        ],
+        "rgbaSHA256": "e4f2046b3c2f0704a7dcb207f749481e5e06d900ba9a27d4572d16482b6214d2"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/jade-v1-prompt.json",
+        "bytes": 1598,
+        "sha256": "9ccabd32e1567bb6ea69b0ef382b811c9fea2f176f7af8caad92bd140c43ccc5",
+        "literalSHA256": "f54b5ccdc704e6e580356ef0a103c67f68ef3cbea73ac472685ae878e01bb7a6"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/jade-v1.json",
+        "bytes": 590,
+        "sha256": "fbf5403e5b3f992e722aec28d9b9bc5cbb675ae7184c1dd125bdc2f73189c6cd"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/jade-v1.webp",
+        "bytes": 62058,
+        "sha256": "fa6b37a3b23c402adc7d5a714e929bba55336baaaf056978831fb5c65694119b",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 150936,
+          "solidPixels": 108457,
+          "intermediatePixels": 2751,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          37,
+          50,
+          470,
+          462
+        ],
+        "alphaBBox16": [
+          56,
+          51,
+          469,
+          461
+        ],
+        "rgbaSHA256": "6d01a3374a00f4aab5db3d0f4f2d696236bcc4c27502ede725d3c7678b5f3f6a"
+      },
+      "transform": {
+        "scale": 0.3592233009708738,
+        "translateX": 34.0,
+        "translateY": 27.533980582524237,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          34.0,
+          39.0291262135922,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          56.271844660194176,
+          50.88349514563103,
+          468.6601941747573,
+          460.75728155339806
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          37,
+          50,
+          470,
+          462
+        ],
+        "actualRuntimeAlphaBBox16": [
+          56,
+          51,
+          469,
+          461
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 62058,
+        "firstSHA256": "fa6b37a3b23c402adc7d5a714e929bba55336baaaf056978831fb5c65694119b",
+        "secondBytes": 62058,
+        "secondSHA256": "fa6b37a3b23c402adc7d5a714e929bba55336baaaf056978831fb5c65694119b",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "lotus",
+      "source": {
+        "path": "art/redesign/art11-items/lotus-v1.png",
+        "bytes": 1329991,
+        "sha256": "4f117aaf584530881f31e2e94b3de8a41f045494f0a788706a7608e0782f1cde",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 997306,
+          "solidPixels": 524888,
+          "intermediatePixels": 50322,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          25,
+          55,
+          1230,
+          1254
+        ],
+        "alphaBBox16": [
+          122,
+          67,
+          1191,
+          1240
+        ],
+        "rgbaSHA256": "8990cfd298a8b5bcb783e078cc49591ff965b4bc310f468b0220eccfca304e63"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/lotus-v1-prompt.json",
+        "bytes": 1589,
+        "sha256": "66a63f93e8efbc1275d315e1dece6d57ea89e2d1674907dd1d4dfd31fe554a5d",
+        "literalSHA256": "34436b4e775567e1b5f4e7e5017a412edd758f08d035db67a5e93eab3ba124a8"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/lotus-v1.json",
+        "bytes": 593,
+        "sha256": "2f53f8a05d917c0d79bf7202aaaffe72e2e882bed94d5f2700b83c2b3734d77d"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/lotus-v1.webp",
+        "bytes": 38208,
+        "sha256": "e10f4caef6b351b6995523ec2a30e5bd615e3ffdb9859be773848a7282d796b6",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 185510,
+          "solidPixels": 71196,
+          "intermediatePixels": 5438,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          60,
+          40,
+          476,
+          478
+        ],
+        "alphaBBox16": [
+          70,
+          41,
+          464,
+          473
+        ],
+        "rgbaSHA256": "a1fa344f505f1b6069c89a1bdde46d1d255f746f85503466f08e278cec5db50c"
+      },
+      "transform": {
+        "scale": 0.36846473029045645,
+        "translateX": 24.78838174273858,
+        "translateY": 15.9452282157676,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          33.99999999999999,
+          36.2107883817427,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          69.74107883817427,
+          40.63236514522818,
+          463.62987551867224,
+          472.8414937759336
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          60,
+          40,
+          476,
+          478
+        ],
+        "actualRuntimeAlphaBBox16": [
+          70,
+          41,
+          464,
+          473
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 38208,
+        "firstSHA256": "e10f4caef6b351b6995523ec2a30e5bd615e3ffdb9859be773848a7282d796b6",
+        "secondBytes": 38208,
+        "secondSHA256": "e10f4caef6b351b6995523ec2a30e5bd615e3ffdb9859be773848a7282d796b6",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "soul",
+      "source": {
+        "path": "art/redesign/art11-items/soul-v1.png",
+        "bytes": 1772340,
+        "sha256": "d141ad80f6c806529eb406d469f7c157ba7d62d876ffbeeb889cb92a05420281",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 994033,
+          "solidPixels": 545620,
+          "intermediatePixels": 32863,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          21,
+          1240,
+          1254
+        ],
+        "alphaBBox16": [
+          248,
+          41,
+          1049,
+          1187
+        ],
+        "rgbaSHA256": "1a99e137f8ddab2b1670aa4b4d4c9e4715585a4cecd0ba30dca264225b9f9dab"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/soul-v1-prompt.json",
+        "bytes": 1633,
+        "sha256": "3a8ce4365cea20bc95381ed594d537a2f155b31d1e9b8dddd78d754c947172a6",
+        "literalSHA256": "c8bd30b59db967b9a54b3b6b9b13993c11e9425e052e2aa43374cdb31a26d9e4"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/soul-v1.json",
+        "bytes": 591,
+        "sha256": "d3c73c518bd7ad6dca14ae46c805f22d1fed9a843f70e5a87be99e280d55ef9b"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/soul-v1.webp",
+        "bytes": 50648,
+        "sha256": "ebdff7f234e55907683b058450c20f897b3091df710e1b6f9a3c3e9cf3677337",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 188880,
+          "solidPixels": 69897,
+          "intermediatePixels": 3367,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          49,
+          42,
+          474,
+          456
+        ],
+        "alphaBBox16": [
+          123,
+          44,
+          409,
+          454
+        ],
+        "rgbaSHA256": "bce2c54b3b2ba29f26477e65fda5f0844e41ec8308004fda9948f6151046a46a"
+      },
+      "transform": {
+        "scale": 0.3580645161290323,
+        "translateX": 33.99999999999997,
+        "translateY": 28.987096774193503,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          33.99999999999997,
+          36.50645161290318,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          122.79999999999998,
+          43.667741935483825,
+          409.60967741935485,
+          454.00967741935483
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          49,
+          42,
+          474,
+          456
+        ],
+        "actualRuntimeAlphaBBox16": [
+          123,
+          44,
+          409,
+          454
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 50648,
+        "firstSHA256": "ebdff7f234e55907683b058450c20f897b3091df710e1b6f9a3c3e9cf3677337",
+        "secondBytes": 50648,
+        "secondSHA256": "ebdff7f234e55907683b058450c20f897b3091df710e1b6f9a3c3e9cf3677337",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "dao",
+      "source": {
+        "path": "art/redesign/art11-items/dao-v1.png",
+        "bytes": 1516910,
+        "sha256": "59d2e3ef4bc583bf6a298f41d4d697d8e48a9a09ba30152866a2c4ad76a3f0bd",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1033821,
+          "solidPixels": 506545,
+          "intermediatePixels": 32150,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          30,
+          1240,
+          1254
+        ],
+        "alphaBBox16": [
+          202,
+          260,
+          1067,
+          1053
+        ],
+        "rgbaSHA256": "ac3d9b8d2d001d356b2850ac29197dcbcc73372c7978b338db2563c28a576adc"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/dao-v1-prompt.json",
+        "bytes": 1548,
+        "sha256": "ccc9f880a8134d1d09fd3501a6f6f6218d30f4c80f0e2d6c34c1aab2de298198",
+        "literalSHA256": "7d27d312e4909b07da2b53e9f6ae29f00edbebc8706999861dd9dbebd5542c19"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/dao-v1.json",
+        "bytes": 590,
+        "sha256": "b3a14a2e8ee721ecc42eb265a55d89b86b7874964b7fd3dc8f556bf20458e18c"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/dao-v1.webp",
+        "bytes": 42156,
+        "sha256": "a7bf3830b88190ee674685ee092106731f20e172a5b5b4eab8dfda94ef673e3a",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 194270,
+          "solidPixels": 64887,
+          "intermediatePixels": 2987,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          91,
+          71,
+          469,
+          446
+        ],
+        "alphaBBox16": [
+          106,
+          122,
+          416,
+          406
+        ],
+        "rgbaSHA256": "862299e9d041e4084d5fd78c56b5adfe6ed11c1a95d1345ec85ce3091a8d5bdf"
+      },
+      "transform": {
+        "scale": 0.3580645161290323,
+        "translateX": 33.99999999999997,
+        "translateY": 28.987096774193503,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          33.99999999999997,
+          39.72903225806447,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          106.32903225806449,
+          122.0838709677419,
+          416.05483870967737,
+          406.0290322580645
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          91,
+          71,
+          469,
+          446
+        ],
+        "actualRuntimeAlphaBBox16": [
+          106,
+          122,
+          416,
+          406
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 42156,
+        "firstSHA256": "a7bf3830b88190ee674685ee092106731f20e172a5b5b4eab8dfda94ef673e3a",
+        "secondBytes": 42156,
+        "secondSHA256": "a7bf3830b88190ee674685ee092106731f20e172a5b5b4eab8dfda94ef673e3a",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "healing_pill",
+      "source": {
+        "path": "art/redesign/art11-items/healing_pill-v1.png",
+        "bytes": 1065220,
+        "sha256": "9b78f221371efe5305281fe8b91133676d69e975c49501b8f1d156f043de178e",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1029118,
+          "solidPixels": 525273,
+          "intermediatePixels": 18125,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          45,
+          1186,
+          1230
+        ],
+        "alphaBBox16": [
+          223,
+          125,
+          1064,
+          1130
+        ],
+        "rgbaSHA256": "766bd201927990ae700de2295feec7dec23d1c0bce7311a27546bd6ed47ad2cb"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/healing_pill-v1-prompt.json",
+        "bytes": 1714,
+        "sha256": "e378b84116234493b107cd459cad52e8ffd54a236b5cc5d395a3b44472cc1ff4",
+        "literalSHA256": "358a73a627b49efa95f4072a8cd5bc47f827790c3d6ba36c8f2c8e8f1aade22c"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/healing_pill-v1.json",
+        "bytes": 608,
+        "sha256": "4e074b747234002d1b5c0aa9b98e249811af9f2d361f45c02f92d8e64c00eb68"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/healing_pill-v1.webp",
+        "bytes": 25168,
+        "sha256": "f6114f224f6a136f020f179eb7995058f1cdee72dcac8a9ce9bdf57bb69059d9",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 186470,
+          "solidPixels": 73664,
+          "intermediatePixels": 2010,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          49,
+          46,
+          466,
+          476
+        ],
+        "alphaBBox16": [
+          117,
+          64,
+          432,
+          440
+        ],
+        "rgbaSHA256": "c686d65fd3effdd7c07c7135d0123e711214018380e33c892cdba7cabb133145"
+      },
+      "transform": {
+        "scale": 0.37436762225969644,
+        "translateX": 34.0,
+        "translateY": 17.52782462057337,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          34.0,
+          34.37436762225971,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          117.4839797639123,
+          64.32377740303542,
+          432.327150084317,
+          440.56323777403037
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          49,
+          46,
+          466,
+          476
+        ],
+        "actualRuntimeAlphaBBox16": [
+          117,
+          64,
+          432,
+          440
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 25168,
+        "firstSHA256": "f6114f224f6a136f020f179eb7995058f1cdee72dcac8a9ce9bdf57bb69059d9",
+        "secondBytes": 25168,
+        "secondSHA256": "f6114f224f6a136f020f179eb7995058f1cdee72dcac8a9ce9bdf57bb69059d9",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "spirit_pill",
+      "source": {
+        "path": "art/redesign/art11-items/spirit_pill-v1.png",
+        "bytes": 779390,
+        "sha256": "b59618e1c4d438126ed9cb341b1e09cd7a9a9bd38700896ed943450f805a7c6d",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1260609,
+          "solidPixels": 281085,
+          "intermediatePixels": 30822,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          0,
+          1218,
+          1254
+        ],
+        "alphaBBox16": [
+          397,
+          96,
+          858,
+          1158
+        ],
+        "rgbaSHA256": "587fb7ff3c9961f8a40d74331aa5a5b6a9e1cd29dec0779ca0859243c3043e3d"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/spirit_pill-v1-prompt.json",
+        "bytes": 1707,
+        "sha256": "e093c5a425c947519a6531f8689dbe5e2bf52e97cdbe8be6283967dfa027ab99",
+        "literalSHA256": "f1e98d3614230c067e59e1716fe884f459044544d9254c20212c7c8e0e8abc72"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/spirit_pill-v1.json",
+        "bytes": 604,
+        "sha256": "b3737fbecfc3ad3275c21c638f6adc44da296d45d712bc189edf32a2e51aa835"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/spirit_pill-v1.webp",
+        "bytes": 24492,
+        "sha256": "1ab2931f9c4202b283dbe95afa8b7fe61b5c33156faeb3d8ca9add2927b487b4",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 223829,
+          "solidPixels": 35179,
+          "intermediatePixels": 3136,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          40,
+          58,
+          467,
+          447
+        ],
+        "alphaBBox16": [
+          181,
+          68,
+          344,
+          444
+        ],
+        "rgbaSHA256": "45510135b91562c857dbcbb8599fb0711a6152ad68b3c278cc34d27add7370fd"
+      },
+      "transform": {
+        "scale": 0.35406698564593303,
+        "translateX": 40.373205741626776,
+        "translateY": 34.0,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          40.373205741626776,
+          34.0,
+          471.62679425837325,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          180.9377990430622,
+          67.99043062200957,
+          344.16267942583727,
+          444.00956937799043
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          40,
+          58,
+          467,
+          447
+        ],
+        "actualRuntimeAlphaBBox16": [
+          181,
+          68,
+          344,
+          444
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 24492,
+        "firstSHA256": "1ab2931f9c4202b283dbe95afa8b7fe61b5c33156faeb3d8ca9add2927b487b4",
+        "secondBytes": 24492,
+        "secondSHA256": "1ab2931f9c4202b283dbe95afa8b7fe61b5c33156faeb3d8ca9add2927b487b4",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "foundation_pill",
+      "source": {
+        "path": "art/redesign/art11-items/foundation_pill-v1.png",
+        "bytes": 1222842,
+        "sha256": "5379d522005f7e8b8a88f8c6ebf5bdd5d16726ca2843fd63b866966ce6117266",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1055003,
+          "solidPixels": 492324,
+          "intermediatePixels": 25189,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          21,
+          1224,
+          1254
+        ],
+        "alphaBBox16": [
+          136,
+          190,
+          1089,
+          1064
+        ],
+        "rgbaSHA256": "be1e3e43deb1344c86f9ceb4192e06a0d0adadfb7bf830a5c7f1e165ec71c321"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/foundation_pill-v1-prompt.json",
+        "bytes": 1545,
+        "sha256": "e514b3a911e4c44abe49ce177f542a03e1e19b9c1123ab6fc4d8bfeee6720b70",
+        "literalSHA256": "956d1dd5869c5de6eaece2040eee4cb748911aa61a521baccc0c4cd92ecf32fa"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/foundation_pill-v1.json",
+        "bytes": 614,
+        "sha256": "8ab9bd5dceb5dc8361092f91fd6f777e83d552092d0a50b100558691383552dd"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/foundation_pill-v1.webp",
+        "bytes": 33140,
+        "sha256": "db5c298534d4bd55fdc42b64bb16a330d07cd52ea08167b1a32f09bb5950de2e",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 195847,
+          "solidPixels": 63906,
+          "intermediatePixels": 2391,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          36,
+          36,
+          471,
+          461
+        ],
+        "alphaBBox16": [
+          85,
+          95,
+          428,
+          409
+        ],
+        "rgbaSHA256": "e01dba5d128c8e9fcecc7fac8f8cdcaab14b59149660946f033331987007c6ef"
+      },
+      "transform": {
+        "scale": 0.36009732360097324,
+        "translateX": 35.62043795620437,
+        "translateY": 26.43795620437953,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          35.62043795620437,
+          33.99999999999997,
+          476.37956204379566,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          84.59367396593673,
+          94.85644768856444,
+          427.7664233576643,
+          409.5815085158151
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          36,
+          36,
+          471,
+          461
+        ],
+        "actualRuntimeAlphaBBox16": [
+          85,
+          95,
+          428,
+          409
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 33140,
+        "firstSHA256": "db5c298534d4bd55fdc42b64bb16a330d07cd52ea08167b1a32f09bb5950de2e",
+        "secondBytes": 33140,
+        "secondSHA256": "db5c298534d4bd55fdc42b64bb16a330d07cd52ea08167b1a32f09bb5950de2e",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "golden_pill",
+      "source": {
+        "path": "art/redesign/art11-items/golden_pill-v1.png",
+        "bytes": 1367520,
+        "sha256": "562f079f0258df75cb5acd4848bd0ad9f49f546483f8ba3d1abc183e2536371d",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1049186,
+          "solidPixels": 503508,
+          "intermediatePixels": 19822,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          63,
+          1226,
+          1210
+        ],
+        "alphaBBox16": [
+          191,
+          243,
+          1149,
+          1006
+        ],
+        "rgbaSHA256": "1d353516997300aef0c4bb10cd39ce874e29d30d61981d6ee7105059aeaf8ec5"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/golden_pill-v1-prompt.json",
+        "bytes": 1642,
+        "sha256": "b450261fe6e767b37cf13b5b1c35579d6b57890e1a9adb7fe035c9cf81283fc8",
+        "literalSHA256": "b553bba05ffdeaf8f644a6d7dd5d56d93a2897613f0c241a49aabfde80c48856"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/golden_pill-v1.json",
+        "bytes": 606,
+        "sha256": "f7269fc8cb431b7c31b49f49a7510c2d81fdfe7f851072ba2daa4f40472ae9dc"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/golden_pill-v1.webp",
+        "bytes": 34612,
+        "sha256": "eeedde783c0b5851146972c5cf13f87a33026f100e4a4c60128ce4d25bd13e62",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 194155,
+          "solidPixels": 66019,
+          "intermediatePixels": 1970,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          66,
+          78,
+          452,
+          463
+        ],
+        "alphaBBox16": [
+          103,
+          128,
+          450,
+          404
+        ],
+        "rgbaSHA256": "e47e6fa1403dad9d800606e666d0dac6c09ac25c1318c7a0ac72b486bf05445f"
+      },
+      "transform": {
+        "scale": 0.3621533442088091,
+        "translateX": 34.0,
+        "translateY": 39.79445350734096,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          34.0,
+          62.610114192495935,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          103.17128874388254,
+          127.79771615008158,
+          450.11419249592166,
+          404.12071778140296
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          66,
+          78,
+          452,
+          463
+        ],
+        "actualRuntimeAlphaBBox16": [
+          103,
+          128,
+          450,
+          404
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 34612,
+        "firstSHA256": "eeedde783c0b5851146972c5cf13f87a33026f100e4a4c60128ce4d25bd13e62",
+        "secondBytes": 34612,
+        "secondSHA256": "eeedde783c0b5851146972c5cf13f87a33026f100e4a4c60128ce4d25bd13e62",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "nascent_pill",
+      "source": {
+        "path": "art/redesign/art11-items/nascent_pill-v1.png",
+        "bytes": 1457716,
+        "sha256": "44b79a1668ec83babe4770d2b6b3d713b6ac8e8ea6fd0bbcf0081232089973e3",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 940625,
+          "solidPixels": 608250,
+          "intermediatePixels": 23641,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          28,
+          1253,
+          1230
+        ],
+        "alphaBBox16": [
+          272,
+          49,
+          1143,
+          1212
+        ],
+        "rgbaSHA256": "29ef9770745cfadea9c6be685a7e9edca445be2b02420e45889527693c66d978"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/nascent_pill-v1-prompt.json",
+        "bytes": 1650,
+        "sha256": "ad155595563c8a6afb89ca600cb6a008deb370438a6f553c4efc59dfd396ff1d",
+        "literalSHA256": "4964b5dbe6288aac3b4598a71951a8bf29f88e1a9019ee757e03d04ca208dc1a"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/nascent_pill-v1.json",
+        "bytes": 607,
+        "sha256": "0d505bac8727d2d86e3069a9b94d0316e3d4b6071bca700c3911390a337bde6d"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/nascent_pill-v1.webp",
+        "bytes": 36040,
+        "sha256": "37a62d61299c641d9849a819494a4d54b9a0bc09bff249716fb4c9a115483e03",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 183363,
+          "solidPixels": 76339,
+          "intermediatePixels": 2442,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          74,
+          59,
+          477,
+          473
+        ],
+        "alphaBBox16": [
+          130,
+          59,
+          439,
+          472
+        ],
+        "rgbaSHA256": "30d588262dc4789d132f1871a975aeddc31bbd6ae44a6bf171ac42df77aa4955"
+      },
+      "transform": {
+        "scale": 0.35434956105347165,
+        "translateX": 34.0,
+        "translateY": 42.15003990422986,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          34.0,
+          52.071827613727066,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          130.3830806065443,
+          59.513168395849966,
+          439.0215482841181,
+          471.6217079010375
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          74,
+          59,
+          477,
+          473
+        ],
+        "actualRuntimeAlphaBBox16": [
+          130,
+          59,
+          439,
+          472
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 36040,
+        "firstSHA256": "37a62d61299c641d9849a819494a4d54b9a0bc09bff249716fb4c9a115483e03",
+        "secondBytes": 36040,
+        "secondSHA256": "37a62d61299c641d9849a819494a4d54b9a0bc09bff249716fb4c9a115483e03",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "spirit_seed",
+      "source": {
+        "path": "art/redesign/art11-items/spirit_seed-v1.png",
+        "bytes": 1354569,
+        "sha256": "03b24d0f174382e0665ace6a7332452d764e9c46f5be780ec7bb131251b26b79",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 974922,
+          "solidPixels": 574669,
+          "intermediatePixels": 22925,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          27,
+          1234,
+          1246
+        ],
+        "alphaBBox16": [
+          222,
+          109,
+          1110,
+          1126
+        ],
+        "rgbaSHA256": "488da88b8ac68379c0c530da13ac8cf9eb02a99ca06f20a8c25b49633ecf2b57"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/spirit_seed-v1-prompt.json",
+        "bytes": 1617,
+        "sha256": "0999a541fb0c14b2c78f16da1edd9728bc1f70d8cfd862d31a3b94c6c634677a",
+        "literalSHA256": "dcd08377128b0fba569f9215117dbd4a5a1cac1b620826a9de250ad0963b37f1"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/spirit_seed-v1.json",
+        "bytes": 606,
+        "sha256": "a63bd5efb4fe034a4d30b8174710765edd3867ffc571438f1df6cb172a142f48"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/spirit_seed-v1.webp",
+        "bytes": 33160,
+        "sha256": "d1934ce9d1f018d866b03671666541f3406d64a10aa8c2ea6950481e3afc5e4f",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 185346,
+          "solidPixels": 74377,
+          "intermediatePixels": 2421,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          64,
+          40,
+          448,
+          476
+        ],
+        "alphaBBox16": [
+          114,
+          69,
+          433,
+          435
+        ],
+        "rgbaSHA256": "f9c58f8bf3f829955a8f7a15352231236849dedb219324cad0893d4ce6e838e8"
+      },
+      "transform": {
+        "scale": 0.35980551053484605,
+        "translateX": 34.0,
+        "translateY": 29.682333873581797,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          34.0,
+          39.39708265802264,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          113.87682333873582,
+          68.90113452188001,
+          433.3841166936791,
+          434.8233387358184
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          64,
+          40,
+          448,
+          476
+        ],
+        "actualRuntimeAlphaBBox16": [
+          114,
+          69,
+          433,
+          435
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 33160,
+        "firstSHA256": "d1934ce9d1f018d866b03671666541f3406d64a10aa8c2ea6950481e3afc5e4f",
+        "secondBytes": 33160,
+        "secondSHA256": "d1934ce9d1f018d866b03671666541f3406d64a10aa8c2ea6950481e3afc5e4f",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "ascension_seal",
+      "source": {
+        "path": "art/redesign/art11-items/ascension_seal-v1.png",
+        "bytes": 942626,
+        "sha256": "d4bda35f534675cf592e777bdc17aa08149b9b9eff89842577774c2e762e7f84",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1176463,
+          "solidPixels": 353409,
+          "intermediatePixels": 42644,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          30,
+          1238,
+          1254
+        ],
+        "alphaBBox16": [
+          423,
+          35,
+          1079,
+          1186
+        ],
+        "rgbaSHA256": "254a6ced9f6ff196821904ba148f80724698d778ff63287f4c5b9bc997bd998c"
+      },
+      "prompt": {
+        "path": "art/redesign/art11-items/ascension_seal-v1-prompt.json",
+        "bytes": 1692,
+        "sha256": "e04dc0dda1b5bfb2ef5a11b91336560a2e013b3153975c4375d67943e64d690e",
+        "literalSHA256": "00c23e4c392028d0194a4e7975017dda3ebc69c6c22c1f29d8a70f871608e235"
+      },
+      "audit": {
+        "path": "art/redesign/art11-items/receipts/ascension_seal-v1.json",
+        "bytes": 611,
+        "sha256": "6fd2b370e07dc448bbd63f49cbfe0a97400e1c3c691afe7a762be3736f2008e3"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/items/ascension_seal-v1.webp",
+        "bytes": 26514,
+        "sha256": "e3d81134f7a6bf663fda8d653beb1553429a5f514a882cc2137a760fc60d1885",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 211889,
+          "solidPixels": 45269,
+          "intermediatePixels": 4986,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          52,
+          39,
+          474,
+          456
+        ],
+        "alphaBBox16": [
+          186,
+          41,
+          421,
+          454
+        ],
+        "rgbaSHA256": "9621b5625ef093837d989ca830dbdfa80d8a70b3ab01f7ea8f45c8bb4522f2e6"
+      },
+      "transform": {
+        "scale": 0.35864297253634897,
+        "translateX": 34.0,
+        "translateY": 28.261712439418375,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          34.0,
+          39.021001615508844,
+          478.0,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          185.7059773828756,
+          40.81421647819059,
+          420.97576736672056,
+          453.61227786752823
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          52,
+          39,
+          474,
+          456
+        ],
+        "actualRuntimeAlphaBBox16": [
+          186,
+          41,
+          421,
+          454
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 26514,
+        "firstSHA256": "e3d81134f7a6bf663fda8d653beb1553429a5f514a882cc2137a760fc60d1885",
+        "secondBytes": 26514,
+        "secondSHA256": "e3d81134f7a6bf663fda8d653beb1553429a5f514a882cc2137a760fc60d1885",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    }
+  ],
+  "scope": "Actual decode/alpha/whole-body alignment/double-export facts; not pixel or user acceptance",
+  "userAcceptance": false
+}

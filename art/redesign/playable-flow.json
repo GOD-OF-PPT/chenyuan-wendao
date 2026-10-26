@@ -39,8 +39,8 @@
     },
     {
       "path": "web/src/GoodsPanel.vue",
-      "bytes": 4046,
-      "sha256": "60c92db3041bebc0052a74bcc45b69fc42b530996552691265897b12bc6eafb7"
+      "bytes": 4006,
+      "sha256": "b7e1b89fd8b02333e2ee924c1572d5497aa1f1a7e8e4f77511ee4bf08503c00f"
     },
     {
       "path": "web/src/CultivationPanel.vue",
