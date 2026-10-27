@@ -13,18 +13,18 @@
     },
     {
       "path": "web/src/NarrativePanel.vue",
-      "bytes": 6182,
-      "sha256": "9658dca23ab65de3d21d77833685faf3b1d4c9f4cf55bb4917315b10dc707273"
+      "bytes": 6195,
+      "sha256": "8bb4f2e0c06f623e322b2b13dabe6569982c24bbaa56d68c4c6391be756a17dc"
     },
     {
       "path": "web/src/FateCatalogue.vue",
-      "bytes": 8027,
-      "sha256": "3889575449542f4b79c653a45a47ba773e15ffa5e4afef4aa7edc044577ae4d1"
+      "bytes": 9673,
+      "sha256": "203216023ecb7012461ba7dce0f7358ef3c05eaecb5ccf3ed0dc66e63ab68890"
     },
     {
       "path": "web/src/LifeCatalogue.vue",
-      "bytes": 4042,
-      "sha256": "80459c978fa67471f650e298169305c6dbc1b3973921765a6ab191e52cb77d2c"
+      "bytes": 3955,
+      "sha256": "09270a81c17dffaacd89255e465abec304c4156dc00dcae6b7978332a3ebbc20"
     },
     {
       "path": "web/src/TrialCatalogue.vue",
@@ -38,8 +38,8 @@
     },
     {
       "path": "web/src/story-book.css",
-      "bytes": 10911,
-      "sha256": "41281ee1e53f48e8cbfa3985dc6a127fd1b888be7edf4bd9a02ea6daf04035c0"
+      "bytes": 8020,
+      "sha256": "94fed5903d79151ae828f475308c586895af1bdb688d3c63ad7554c4c4144908"
     },
     {
       "path": "web/src/reading-memory.ts",

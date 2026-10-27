@@ -1,0 +1,190 @@
+{
+  "format": "chenyuan-narrative-art12",
+  "version": 1,
+  "task": "Goal4 ART12",
+  "maxNativeBytes": 14000,
+  "newBitmapAssets": 0,
+  "assets": [],
+  "files": [
+    {
+      "path": "web/src/art12-narrative.css",
+      "bytes": 6320,
+      "sha256": "c10587eb2190cbcccd5fd1af1e4f199eec53749fff87e7a5e1fb38da1d90ad85"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0039-narrative-reading-art12-contract.md",
+    "goal-4/amendments/2026-10-26-goal-continue-art12.md",
+    "goal-4/research/art12-narrative-sources.json"
+  ],
+  "bindings": {
+    "web/src/main.ts": [
+      "import './art12-narrative.css'"
+    ],
+    "web/src/FateCatalogue.vue": [
+      "const events=computed(()=>availableEvents(props.game));",
+      "events.value.find(e=>e.id===person.value?.next?.id)",
+      "pending.value?.npc===person.value?.name",
+      "personIndex=i;close()",
+      "!enabled||busy||running||!!pendingError||!personQuote?.allowed"
+    ],
+    "web/src/NarrativePanel.vue": [
+      "useReadingMemory",
+      "narrativeFor(props.game)",
+      "page=i;close()",
+      "!enabled||busy||running||!!pendingError||!quote(choice.action).allowed",
+      "emit('act',choice.action)"
+    ],
+    "web/src/LifeCatalogue.vue": [
+      "const mode=ref('life')",
+      "readingPages(lifeReadings(props.game).filter(r=>r.group===mode.value))",
+      "useReadingMemory(()=>mode.value,()=>rows.value.map(r=>r.key+':'+r.part))",
+      "pageSlice(rows.value,page.value,1)",
+      "['life','来路'],['training','修行'],['decisions','因果'],['seal','收卷']",
+      "hasCheckpoint",
+      "pendingError"
+    ],
+    "web/src/EncounterTable.vue": [
+      "art12-encounter",
+      "gameFocusKey",
+      "onDeactivated(close)",
+      "watch([()=>props.game.core.runId,()=>props.mode],close)",
+      "watch(()=>props.personId,()=>route.value?.close())"
+    ],
+    "web/src/ResponseTable.vue": [
+      "art12-response",
+      "gameFocusKey",
+      "onDeactivated(close)",
+      "same(props.action,cycleAction.value)",
+      "same(props.action,result.value.action)",
+      "watch([()=>props.game.core.runId,()=>props.identity,()=>props.mode],close)"
+    ],
+    "web/src/LifeScroll.vue": [
+      "gameFocusKey",
+      "focus?.target(opener.value??null)",
+      "watch(()=>props.game.core.runId,()=>management.value?.close())",
+      "onDeactivated(()=>management.value?.close())",
+      "onScopeDispose(()=>focus?.release(management.value))",
+      "props.game.status==='active'?'此卷未封'",
+      "props.game.ending==='retired'?'归隐收卷'",
+      "props.game.ending==='lifespan'?'寿尽收卷'"
+    ],
+    "web/src/story-pages.ts": [
+      "textPages(text:string,size=140)",
+      "Array.from(text)",
+      "chars.slice(i,i+size).join('')",
+      "group:'seal',key:'scope'",
+      "group:'seal',key:'identity'",
+      "group:'seal',key:'recovery-note'"
+    ],
+    "web/src/reading-memory.ts": [
+      "old?.anchor",
+      "list.indexOf(old.anchor)",
+      "flush:'post'"
+    ],
+    "web/src/NarrativeStageHost.vue": [
+      "provide(narrativeStageKey,useNarrativeStage(()=>props.active))",
+      "<slot/>"
+    ],
+    "web/src/narrative-effects.ts": [
+      "const operations=['EVENT','DECIDE','ANSWER_TRIAL','END','RETIRE','END_LIFE'];",
+      "active,7",
+      "narrativeTarget(a.originGame,a.plan.action)",
+      "e.result.commandId===w.commandId",
+      "p.claim(e.sequence)",
+      "id===target.runId",
+      "onDeactivated(()=>{visible.value=false;effect.value=null;owner=null;})",
+      "let owner:{kind:NarrativeObjectKind;id:string}|null=null;",
+      "const e=p.effect.value,k=kind(),target=id();",
+      "const instance=getCurrentInstance()",
+      "import {visibleFocusTarget} from './focus.ts';",
+      "const element=instance?.vnode.el;",
+      "if(!(element instanceof Element)||!visibleFocusTarget(element)||!e||!valid.value||!narrativeObjectMatches(k,target,e)){effect.value=null;owner=null;return;}",
+      "onMounted(claimCurrent);",
+      "if(effect.value===e&&owner?.kind===k&&owner.id===target)return;",
+      "if(p.claim(e.sequence)){effect.value=e;owner={kind:k,id:target};}",
+      "watch([()=>p.effect.value,kind,id,valid],claimCurrent,{immediate:true,flush:'post'})",
+      "onActivated(()=>{const resumed=!visible.value;visible.value=true;if(resumed)claimCurrent();})",
+      "if(delivery!==sequence||claimed.has(sequence))return false;",
+      "nextTick(()=>{if(delivery===e.sequence)delivery=null;})"
+    ],
+    "web/src/activity-effects.ts": [
+      "a.version&&[2,3,6,extra].includes(a.version)",
+      "resolve(before,command)",
+      "completeActivity(g,prior,r,",
+      "proof(expected)!==proof(a)"
+    ],
+    "web/src/focus.ts": [
+      "!element.isConnected",
+      "element.closest('[inert]')",
+      "style.visibility!=='hidden'&&style.display!=='none'&&box.width>0&&box.height>0"
+    ],
+    "web/src/use-activity-effect.ts": [
+      "createActivityEffectTracker(matches,extra)",
+      "!store?.activityPausing",
+      "activity.value?.ownerId",
+      "timer=setTimeout(()=>effect.value=null,1400)"
+    ]
+  },
+  "dialogs": {
+    "web/src/EncounterTable.vue": [
+      {
+        "id": "fate-people-dialog",
+        "ref": "people",
+        "slots": [
+          "people"
+        ]
+      },
+      {
+        "id": "fate-route-dialog",
+        "ref": "route",
+        "slots": [
+          "route"
+        ]
+      }
+    ],
+    "web/src/ResponseTable.vue": [
+      {
+        "id": "response-choices-dialog",
+        "ref": "choices",
+        "slots": [
+          "choices"
+        ]
+      }
+    ],
+    "web/src/LifeScroll.vue": [
+      {
+        "id": "life-manage-dialog",
+        "ref": "management",
+        "slots": [
+          "management"
+        ]
+      }
+    ]
+  },
+  "slots": {
+    "web/src/FateCatalogue.vue": {
+      "component": "encountertable",
+      "slots": [
+        "#people",
+        "#route",
+        "#decision"
+      ]
+    },
+    "web/src/NarrativePanel.vue": {
+      "component": "responsetable",
+      "slots": [
+        "#choices"
+      ]
+    },
+    "web/src/LifeCatalogue.vue": {
+      "component": "lifescroll",
+      "slots": [
+        "#heading",
+        "#management",
+        "#chapters"
+      ]
+    }
+  },
+  "userAcceptance": false
+}

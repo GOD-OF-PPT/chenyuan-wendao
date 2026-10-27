@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "web/src/stage-r4.css",
-      "bytes": 11198,
-      "sha256": "6d16b4e9ee9daabdaac11d5e05585c4c9049eca5d41f7365c2209e8d24d58b7d"
+      "bytes": 8803,
+      "sha256": "cfaad5028dfdf091596a74d89507917aef9c7b655b05510209125220c4ffd50c"
     },
     {
       "path": "web/src/journal-anchors.ts",

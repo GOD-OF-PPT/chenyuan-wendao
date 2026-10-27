@@ -100,6 +100,8 @@ class InventoryTests(unittest.TestCase):
   art11=ROOT/'art/redesign/art11.json'
   if art11.exists():files.update(ROOT/ref for ref in json.loads(art11.read_text())['sourceReferences'])
   if art11.exists():files.add(ROOT/'src/full/content.ts')
+  art12=ROOT/'art/redesign/art12.json'
+  if art12.exists():files.update(ROOT/ref for ref in json.loads(art12.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -1814,5 +1816,97 @@ class ART11InventoryTests(unittest.TestCase):
    with self.assertRaisesRegex(AssertionError,'old budget'):self.check()
   self.restore();prior=CAPS[-1];path=self.root/prior['files'][0];path.write_text(path.read_text()+'\n'*(prior['limit']+1))
   with self.assertRaisesRegex(AssertionError,'old group'):self.check()
+
+class ART12InventoryTests(unittest.TestCase):
+ def setUp(self):
+  from art12_inventory import NATIVE,DEPENDENCIES,LEDGER
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art12-negative-');self.root=Path(self.temp.name)
+  self.original={name:(ROOT/name).read_bytes() for name in set(NATIVE+DEPENDENCIES+[LEDGER])};self.restore()
+ def tearDown(self):self.temp.cleanup()
+ def restore(self):
+  for name,raw in self.original.items():
+   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True)
+   if p.is_symlink():p.unlink()
+   p.write_bytes(raw)
+ def data(self):return json.loads((self.root/'art/redesign/art12.json').read_text())
+ def write(self,path,value):(self.root/path).write_text(json.dumps(value))
+ def check(self):
+  from art12_inventory import validate_art12
+  return validate_art12(self.root)
+ def reject(self,m):
+  self.write('art/redesign/art12.json',m)
+  with self.assertRaises(AssertionError):self.check()
+ def change_css(self,text):
+  m=self.data();row=m['files'][0];raw=text.encode();(self.root/row['path']).write_bytes(raw);row.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write('art/redesign/art12.json',m)
+ def replace(self,path,old,new):
+  p=self.root/path;text=p.read_text();self.assertEqual(text.count(old),1);changed=text.replace(old,new,1);self.assertNotEqual(text,changed);p.write_text(changed)
+ def opening(self,path,id):
+  text=(self.root/path).read_text();tags=__import__('re').findall(r'<button(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text);matched=[tag for tag in tags if 'data-testid="'+id+'"' in tag];self.assertEqual(len(matched),1);self.assertEqual(text.count(matched[0]),1);return text,matched[0]
+ def test_art12_real_single_bounded_css_and_no_new_bitmaps(self):
+  from art12_inventory import NATIVE
+  files,total=self.check();self.assertEqual(files,set(NATIVE+['art/redesign/art12.json']));self.assertEqual(total,(self.root/NATIVE[0]).stat().st_size);self.assertLessEqual(total,14000);self.assertEqual(self.data()['assets'],[])
+ def test_art12_missing_ledger_rejects_present_stylesheet(self):
+  (self.root/'art/redesign/art12.json').unlink()
+  with self.assertRaisesRegex(AssertionError,'Unrecorded ART12'):self.check()
+ def test_art12_header_typed_budget_and_human_claim_are_fixed(self):
+  for key,value in [('format','alias'),('version',True),('task','wholeGoal'),('maxNativeBytes',14001),('maxNativeBytes',True),('userAcceptance',True)]:
+   self.restore();m=self.data();m[key]=value;self.reject(m)
+ def test_art12_native_inventory_hash_types_and_rehashed_cap_are_real(self):
+  for key,value in [('bytes',True),('bytes',1),('sha256','0'*64),('path','web/src/story-book.css')]:
+   self.restore();m=self.data();m['files'][0][key]=value;self.reject(m)
+  self.restore();m=self.data();m['files']=m['files']*2;self.reject(m)
+  self.restore();name=self.data()['files'][0]['path'];self.change_css((self.root/name).read_text()+'\n'*14001)
+  with self.assertRaisesRegex(AssertionError,'native cap'):self.check()
+ def test_art12_references_shape_paths_and_symlinks_cannot_escape(self):
+  for key in ['sourceReferences','bindings','dialogs','slots']:
+   self.restore();m=self.data();m[key]={} if key!='sourceReferences' else [];self.reject(m)
+  self.restore();(self.root/self.data()['sourceReferences'][0]).unlink()
+  with self.assertRaisesRegex(AssertionError,'missing or external'):self.check()
+  self.restore()
+  with tempfile.TemporaryDirectory(prefix='art12-outside-') as folder:
+   target=self.root/self.data()['files'][0]['path'];external=Path(folder)/'style.css';external.write_bytes(target.read_bytes());target.unlink();target.symlink_to(external)
+   with self.assertRaisesRegex(AssertionError,'external'):self.check()
+ def test_art12_zero_bitmap_boundary_cannot_alias_or_add_asset(self):
+  for key,value in [('newBitmapAssets',True),('newBitmapAssets',1),('assets',[{'path':'new.png'}])]:
+   self.restore();m=self.data();m[key]=value;self.reject(m)
+ def test_art12_actual_unique_stylesheet_consumer_and_no_external_io(self):
+  path='web/src/main.ts';self.replace(path,"import './art12-narrative.css'","/*import './art12-narrative.css'*/")
+  with self.assertRaisesRegex(AssertionError,'consumer/reading/proof'):self.check()
+  self.restore();p=self.root/path;p.write_text(p.read_text()+"\nimport './art12-narrative.css';")
+  with self.assertRaisesRegex(AssertionError,'uniquely'):self.check()
+  self.restore();name=self.data()['files'][0]['path'];self.change_css((self.root/name).read_text()+'\n@import "https://example.invalid/extra.css";')
+  with self.assertRaisesRegex(AssertionError,'external IO'):self.check()
+ def test_art12_all_real_readonly_dialog_content_slots_are_owned_once(self):
+  from art12_inventory import DIALOGS
+  for path,dialogs in DIALOGS.items():
+   for dialog in dialogs:
+    self.restore();slot=dialog['slots'][0];token='<slot name="'+slot+'" :close="close"/>';self.replace(path,token,'<!--'+token+'-->')
+    with self.assertRaisesRegex(AssertionError,'dialog slot'):self.check()
+  self.restore();self.replace('web/src/LifeCatalogue.vue','<template #management="{close}">','<template #retired-management="{close}">')
+  with self.assertRaisesRegex(AssertionError,'parent content slot'):self.check()
+ def test_art12_complete_management_gates_close_before_confirm_and_readonly_export(self):
+  path='web/src/LifeCatalogue.vue'
+  for id,old,new in [('retire',"close();emit('end','RETIRE')","emit('end','RETIRE')"),('end-life','record.overview.remainingMonths===1','true'),('life-restore','||!hasCheckpoint',''),('life-restart','||!!pendingError','')]:
+   self.restore();text,tag=self.opening(path,id);self.assertIn(old,tag);changed=tag.replace(old,new,1);self.assertNotEqual(tag,changed);(self.root/path).write_text(text.replace(tag,changed,1))
+   with self.assertRaises(AssertionError):self.check()
+  self.restore();text,tag=self.opening(path,'export-life');(self.root/path).write_text(text.replace(tag,tag[:-1]+' disabled>',1))
+  with self.assertRaisesRegex(AssertionError,'readonly export'):self.check()
+ def test_art12_full_140_codepoints_four_chapters_and_anchor_fields_preserved(self):
+  for path,old,new in [('web/src/story-pages.ts','size=140','size=139'),('web/src/story-pages.ts',"group:'seal',key:'scope'","group:'seal',key:'retired-scope'"),('web/src/LifeCatalogue.vue',"['seal','收卷']","['missing','收卷']"),('web/src/reading-memory.ts','list.indexOf(old.anchor)','-1')]:
+   self.restore();self.replace(path,old,new)
+   with self.assertRaisesRegex(AssertionError,'consumer/reading/proof'):self.check()
+ def test_art12_one_claimant_stable_host_full_proof_and_visibility_lifecycle(self):
+  for path,old,new in [('web/src/narrative-effects.ts','active,7','active,5'),('web/src/narrative-effects.ts','if(effect.value===e&&owner?.kind===k&&owner.id===target)return;','if(effect.value===e)return;'),('web/src/narrative-effects.ts','if(resumed)claimCurrent();','claimCurrent();'),('web/src/narrative-effects.ts','onDeactivated(()=>{visible.value=false;effect.value=null;owner=null;})','onDeactivated(()=>{visible.value=false;effect.value=null;})'),('web/src/narrative-effects.ts','if(!(element instanceof Element)||!visibleFocusTarget(element)||!e||!valid.value||!narrativeObjectMatches(k,target,e)){effect.value=null;owner=null;return;}','if(!e||!valid.value||!narrativeObjectMatches(k,target,e)){effect.value=null;owner=null;return;}'),('web/src/narrative-effects.ts','const element=instance?.vnode.el;',"const element=document.querySelector('.response-table');"),('web/src/narrative-effects.ts','onMounted(claimCurrent);','onMounted(()=>{});'),('web/src/focus.ts','!element.isConnected','false'),('web/src/activity-effects.ts','resolve(before,command)','resolve(before,otherCommand)'),('web/src/LifeScroll.vue','onDeactivated(()=>management.value?.close())','onDeactivated(()=>{})'),('web/src/LifeScroll.vue',"()=>props.game.core.runId);","()=>props.game.core.runId);useNarrativeObject(()=> 'life',()=>props.game.core.runId);")]:
+   self.restore();self.replace(path,old,new)
+   with self.assertRaises(AssertionError):self.check()
+  self.restore();self.replace('web/src/App.vue','<KeepAlive :max="1"><LifeCatalogue','<Detached :max="1"><LifeCatalogue')
+  with self.assertRaisesRegex(AssertionError,'stable host'):self.check()
+ def test_art12_all_old_caps_and_native_memberships_remain_fixed(self):
+  from art12_inventory import CAPS
+  for prior in CAPS:
+   self.restore();m=json.loads((self.root/prior['ledger']).read_text());m[prior['key']]+=1;self.write(prior['ledger'],m)
+   with self.assertRaisesRegex(AssertionError,'old budgets'):self.check()
+  self.restore();prior=CAPS[-1];m=json.loads((self.root/prior['ledger']).read_text());m['files']=list(reversed(m['files']));self.write(prior['ledger'],m)
+  with self.assertRaisesRegex(AssertionError,'old budgets'):self.check()
 
 if __name__=='__main__':unittest.main()

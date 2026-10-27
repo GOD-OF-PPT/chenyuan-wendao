@@ -9,18 +9,18 @@
   "files": [
     {
       "path": "web/src/EncounterTable.vue",
-      "bytes": 3227,
-      "sha256": "6d8dfe8717503e58d5bde0c6b2d03cb481f05a0600c9ecfe138d7239653feadd"
+      "bytes": 5048,
+      "sha256": "1a06400cfaabd46b4fad0a2d4e025502e8c50ce78da03f4bfd6b4e48f7941cb7"
     },
     {
       "path": "web/src/ResponseTable.vue",
-      "bytes": 3163,
-      "sha256": "2223866ba6724d79011dd9c8f03403725bce74af9f3a5ed790783795de53b3ae"
+      "bytes": 4156,
+      "sha256": "7bdef986b3605e155aa083bf9bfc9243b8241003bcef0d576808d2b898692751"
     },
     {
       "path": "web/src/LifeScroll.vue",
-      "bytes": 2479,
-      "sha256": "db79c19f5e3c73ec578b1f45733bcf8f8a98c38fde697aba322f2d8074a10f46"
+      "bytes": 3800,
+      "sha256": "f0bdbdd135e526755f4d10b50e218dae641e746367718d62ca0150604e4b9418"
     },
     {
       "path": "web/src/NarrativeStageHost.vue",
@@ -29,13 +29,13 @@
     },
     {
       "path": "web/src/narrative-effects.ts",
-      "bytes": 4719,
-      "sha256": "4e199ac596e33c89e3ab3f44a35d8c8fa56a11f09de7178f60210b114ee3905c"
+      "bytes": 5282,
+      "sha256": "ca77c93e636c43fc5c57b1f7b7a3f85bef58aa00f135affe217919b64470b615"
     },
     {
       "path": "web/src/narrative-objects.css",
-      "bytes": 13158,
-      "sha256": "a6a6e0ed84ac372a954c2120a8dd6c3bfbfe9a903cdee12e2a0d4b1132db6352"
+      "bytes": 12978,
+      "sha256": "a271e6c977955e252a18ed34051758989dde3b6b4445ce7401efcb879e6328e9"
     }
   ],
   "sourceReferences": [

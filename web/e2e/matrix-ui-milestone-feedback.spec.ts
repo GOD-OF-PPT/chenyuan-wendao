@@ -6,7 +6,7 @@ import { previewAction, getLifeOverview, getTrialJourney } from '../../src/full/
 import type { Action, Game } from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
 import { lifeReadings, readingPages } from '../src/story-pages';
-import { useJourneyClock, finishJourneyClock } from './support';
+import { useJourneyClock, finishJourneyClock, snapshot, activitySnapshot as activity } from './support';
 
 test.use({ viewport: { width: 1440, height: 900 }, actionTimeout: 8000, navigationTimeout: 15000 });
 type Kind = 'ANSWER_TRIAL' | 'RETIRE' | 'END_LIFE';
@@ -178,7 +178,7 @@ async function answerMotionClearance(page: Page, info: TestInfo, selector: strin
   }
 }
 async function readReceipt(page: Page, a: MilestoneActivity, after: Game, info: TestInfo, name: string) {
-  await page.getByTestId(after.status === 'active' ? 'hub-receipt' : 'life-receipt').click(); const review = page.getByTestId('milestone-review'); await expect(review).toHaveAttribute('data-readonly', 'true'); await expect(page.getByTestId('milestone-confirm')).toHaveCount(0);
+  if(after.status !== 'active')await art12Open(page,'manage');await page.getByTestId(after.status === 'active' ? 'hub-receipt' : 'life-receipt').click(); const review = page.getByTestId('milestone-review'); await expect(review).toHaveAttribute('data-readonly', 'true'); await expect(page.getByTestId('milestone-confirm')).toHaveCount(0);
   const read: string[] = []; for (let i = 0; i < 100; i++) {
     const copy = review.locator('.reading-text p'); read.push(await copy.innerText()); expect(await copy.evaluate(node => parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThanOrEqual(18);
     const next = review.getByRole('button', { name: '下一页', exact: true }); if (await next.isDisabled()) break; await next.click(); if (i === 99) throw new Error('Saved milestone receipt did not finish');
@@ -203,7 +203,7 @@ test('M03-MF1 the explicitly selected six-second answer saves once before its ow
   const checkpoint = state(entered.saved, 'checkpoint'), owner = state(entered.saved, 'checkpoint-owner'); expect(checkpoint.kind).toBe('trial'); expect(checkpoint.snapshot).toEqual(entry.originGame);
   expect(owner).toEqual({ format: 'chenyuan-checkpoint-scope', version: 1, runId: before.core.runId, sourceRunId: checkpoint.sourceRunId, sourceRevision: checkpoint.sourceRevision, kind: 'trial' });
   const action = { type: 'ANSWER_TRIAL', answer: 'accept' } as const; expect(previewAction(before, action).allowed).toBe(true);
-  await page.getByTestId('hub-current').getByRole('button', { name: '继续当前遭遇', exact: true }).click(); await page.getByTestId('story-show-choices').click(); await page.getByTestId('story-select-answer-accept').click();
+  await page.getByTestId('hub-current').getByRole('button', { name: '继续当前遭遇', exact: true }).click(); await page.getByTestId('story-show-choices').click(); await art12Choice(page,'story-select-answer-accept');
   await expect(page.getByTestId('response-table')).toHaveAttribute('data-model', 'question'); await expect(page.getByTestId('response-table')).toHaveAttribute('data-action', 'ANSWER_TRIAL'); await page.getByTestId('answer-accept').click();
   await observe(page, action.type); const a = await begin(page, 'milestone-confirm', action.type, 6000); expect(a.plan.action).toEqual(action); await expect(page.getByTestId('response-clock')).toHaveText('6 / 6 秒');
   const result = await exactCompletion(page, a, before, info, 'ANSWER_TRIAL'); expect(result.after.trial!.answer).toBe('accept'); expect(result.after.trial!.stage).toBe(1); expect(result.after.battle!.round).toBe(0); expect(result.after.battle!.log).toEqual([]);
@@ -230,7 +230,7 @@ async function closing(page: Page, info: TestInfo, kind: 'RETIRE' | 'END_LIFE') 
     d.go('sect'); while (getLifeOverview(d.game).remainingMonths! > 1) d.doAction({ type: 'SOURCE', sourceId: 'work', count: Math.min(50, getLifeOverview(d.game).remainingMonths! - 1) });
     before = await load(page, d.game, info); expect(getLifeOverview(before).remainingMonths).toBe(1); const empty = await database(page); expect(state(empty, 'checkpoint')).toBeUndefined(); expect(state(empty, 'checkpoint-owner')).toBeUndefined();
   }
-  const action = { type: kind } as const; expect(previewAction(before, action).allowed).toBe(true); await page.getByTestId('hub-life').click(); await page.getByTestId('life-mode-seal').click(); await page.getByTestId(kind === 'RETIRE' ? 'retire' : 'end-life').click();
+  const action = { type: kind } as const; expect(previewAction(before, action).allowed).toBe(true); await page.getByTestId('hub-life').click(); await page.getByTestId('life-mode-seal').click(); await art12Open(page,'manage'); await page.getByTestId(kind === 'RETIRE' ? 'retire' : 'end-life').click();
   await expect(page.getByTestId('life-confirmation')).toContainText(kind === 'RETIRE' ? '不消耗剩余游戏月' : '最后1游戏月'); await observe(page, kind); const a = await begin(page, 'life-confirm-end', kind, 12000); expect(a.plan.action).toEqual(action); await expect(page.getByTestId('life-scroll-clock')).toHaveText('12 / 12 秒');
   const result = await exactCompletion(page, a, before, info, kind); expect(result.after.status).toBe('ended'); expect(result.after.ending).toBe(kind === 'RETIRE' ? 'retired' : 'lifespan'); expect(result.after.core.runId).toBe(before.core.runId); expect(result.after.core.world.elapsedMonths - before.core.world.elapsedMonths).toBe(kind === 'RETIRE' ? 0 : 1);
   await painted(page, '[data-testid=life-scroll-result]'); await expect(page.getByTestId('life-scroll-result')).toHaveText('本次已保存 · ' + (kind === 'RETIRE' ? '归隐收卷' : '寿尽收卷')); await expect(page.getByTestId('life-scroll')).toHaveAttribute('data-sealed', 'true'); await expect(page.getByTestId('life-scroll')).toHaveAttribute('data-life', 'ended');
@@ -242,3 +242,11 @@ async function closing(page: Page, info: TestInfo, kind: 'RETIRE' | 'END_LIFE') 
 
 test('M03-MF2 explicitly confirmed retirement preserves a real complete checkpoint and shows only its own saved life scroll once', async ({ page }, info) => { await closing(page, info, 'RETIRE'); });
 test('M03-MF3 the lawful final-month closure saves its one month only at twelve seconds and never replays the sealed-life result', async ({ page }, info) => { await closing(page, info, 'END_LIFE'); });
+
+// ART12: the same controls now live inside explicit readonly surfaces.
+async function art12Stores(page:Page){return page.evaluate(()=>new Promise<any>((accept,reject)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();reject(Error('Readonly surface cannot create DB'));};q.onerror=()=>reject(q.error);q.onsuccess=()=>{const db=q.result,tx=db.transaction([...db.objectStoreNames],'readonly'),rows:any={};for(const name of db.objectStoreNames){rows[name]=[];const r=tx.objectStore(name).openCursor();r.onsuccess=()=>{if(r.result){rows[name].push({key:r.result.key,value:r.result.value});r.result.continue();}};}tx.oncomplete=()=>{db.close();accept({version:db.version,rows});};tx.onabort=()=>{db.close();reject(tx.error);};};}));}
+async function art12Read(page:Page,body:()=>Promise<void>){const g=await snapshot(page),a=await activity(page),db=await art12Stores(page);await body();expect(await snapshot(page)).toEqual(g);expect(await activity(page)).toEqual(a);expect(await art12Stores(page)).toEqual(db);}
+async function art12Open(page:Page,kind:'people'|'route'|'choices'|'manage'){const prefix=kind==='people'?'fate-people':kind==='route'?'fate-route':kind==='choices'?'response-choices':'life-manage';if(!await page.getByTestId(prefix+'-dialog').isVisible())await art12Read(page,async()=>{await page.getByTestId(prefix+'-open').click();await expect(page.getByTestId(prefix+'-dialog')).toBeVisible();});}
+async function art12Close(page:Page,kind:'manage'){if(await page.getByTestId('life-manage-dialog').isVisible())await art12Read(page,async()=>{await page.getByTestId('life-manage-close').click();await expect(page.getByTestId('life-manage-dialog')).not.toBeVisible();});}
+async function art12Person(page:Page,id:string){await art12Open(page,'people');await art12Read(page,async()=>{await page.getByTestId(id).click();await expect(page.getByTestId('fate-people-dialog')).not.toBeVisible();});}
+async function art12Choice(page:Page,id:string){await art12Open(page,'choices');await art12Read(page,async()=>{await page.getByTestId(id).click();await expect(page.getByTestId('response-choices-dialog')).not.toBeVisible();});}

@@ -40,3 +40,5 @@ import './art03-equipment.css';
 import './game-menus.css';
 import './art10-equipment.css';
 import './art11-inventory.css';
+
+import './art12-narrative.css';

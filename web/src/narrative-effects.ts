@@ -1,9 +1,10 @@
-import {computed,inject,nextTick,ref,shallowRef,watch,onActivated,onDeactivated,onScopeDispose,type InjectionKey} from 'vue';
+import {computed,getCurrentInstance,inject,nextTick,ref,shallowRef,watch,onMounted,onActivated,onDeactivated,onScopeDispose,type InjectionKey} from 'vue';
 import type {Action,Game} from '../../src/full/types.ts';
 import type {Activity} from '../../src/full/activity.ts';
 import type {useGame} from './store';
 import {getStoryContext} from '../../src/full/queries.ts';
 import {useActivityPresentation} from './use-activity-effect.ts';
+import {visibleFocusTarget} from './focus.ts';
 
 export type NarrativeObjectKind='fate'|'response'|'life';
 const operations=['EVENT','DECIDE','ANSWER_TRIAL','END','RETIRE','END_LIFE'];
@@ -45,16 +46,24 @@ export const narrativeStageKey:InjectionKey<ReturnType<typeof useNarrativeStage>
 
 /** A scene may show only its current object; revisiting cannot replay a short result. */
 export function useNarrativeObject(kind:()=>NarrativeObjectKind,id:()=>string,active:()=>boolean=()=>true){
- const p=inject(narrativeStageKey)!,visible=ref(true),effect=shallowRef<NonNullable<typeof p.effect.value>|null>(null);
+ const instance=getCurrentInstance(),p=inject(narrativeStageKey)!,visible=ref(true),effect=shallowRef<NonNullable<typeof p.effect.value>|null>(null);
  const valid=computed(()=>visible.value&&active()&&!!p.store?.available&&!p.store.error&&!p.store.activityPausing);
  const engaged=computed(()=>{const w=p.witness.value;return valid.value&&!!p.runtime.value&&!!w&&narrativeObjectMatches(kind(),id(),w);});
  const runtime=computed(()=>engaged.value?p.runtime.value:null),phase=computed(()=>runtime.value?.phase??'idle');
  const seconds=computed(()=>runtime.value?runtime.value.totalMs/1000:0),remaining=computed(()=>runtime.value?Math.ceil(runtime.value.remainingMs/1000):0);
- watch([()=>p.effect.value,kind,id,valid],()=>{
-  effect.value=null;const e=p.effect.value;
-  if(e&&valid.value&&narrativeObjectMatches(kind(),id(),e)&&p.claim(e.sequence))effect.value=e;
- },{immediate:true,flush:'post'});
- onActivated(()=>visible.value=true);onDeactivated(()=>{visible.value=false;effect.value=null;});
+ let owner:{kind:NarrativeObjectKind;id:string}|null=null;
+ function claimCurrent(){
+  const e=p.effect.value,k=kind(),target=id();
+  const element=instance?.vnode.el;
+  if(!(element instanceof Element)||!visibleFocusTarget(element)||!e||!valid.value||!narrativeObjectMatches(k,target,e)){effect.value=null;owner=null;return;}
+  if(effect.value===e&&owner?.kind===k&&owner.id===target)return;
+  effect.value=null;owner=null;
+  if(p.claim(e.sequence)){effect.value=e;owner={kind:k,id:target};}
+ }
+ watch([()=>p.effect.value,kind,id,valid],claimCurrent,{immediate:true,flush:'post'});
+ onMounted(claimCurrent);
+ onActivated(()=>{const resumed=!visible.value;visible.value=true;if(resumed)claimCurrent();});
+ onDeactivated(()=>{visible.value=false;effect.value=null;owner=null;});
  onScopeDispose(()=>effect.value=null);
  return {store:p.store,phase,runtime,engaged,seconds,remaining,effect,action:computed(()=>engaged.value?p.witness.value?.action??null:null),working:computed(()=>engaged.value&&p.working.value),progress:computed(()=>engaged.value?p.progress.value:0)};
 }

@@ -1,0 +1,18 @@
+{
+  "task": "ART12",
+  "actualSources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "read": "consistent navigation, predictable focus and return",
+      "application": "explicit name-slip chooser and single readonly sheet; current page remains on close"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "read": "context/function clear before activating; contextual changes communicated",
+      "application": "recorded character vs present meeting vs future preview; read/preselect/visit/respond/seal separate"
+    }
+  ],
+  "projectInference": "specific layout,dialog,6/12seconds and budgets from existing project, not source rules/certification",
+  "reuse": "existing game-studio→game-ui-frontend/game-playtest; original portraits, Game, reading/proof, task test/asset guards; no new workflow/skill/automation",
+  "noCompetitorPlaytestClaim": true
+}

@@ -316,3 +316,9 @@ ART11开工依[0038](docs/decisions/0038-inventory-object-stage-art11-contract.m
 
 
 ART11实证补充：分类重选是否改所选物须看原watch值是否真的变化，重复当前类不触turn；测试先记真实active/selected，再核close不变，不能为错误首物预期改Game。新物件testid与数量id前缀重合时，只选实际数量b叶子，全部14原数量仍硬验。图像／CSS装饰的负边缘也会造成scrollclip，交易货物与周期须逐祖先／真实像素核，不靠中心命中；专属艺术随可用行高缩放且保文字和44入口。保存结果18正文须有足够linebox，当前成果与下一次预估分明；标题CJK Range也同时验。14透明画件不表示持有，图谱明示未持有，图片失败仍有可辨fallback／DOM入口。当前独立工程不代整体艺术／长期或真人；兼容仍后置。
+
+
+ART12依[0039](docs/decisions/0039-narrative-reading-art12-contract.md)和本轮实际读[XAG112导航](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112)、[XAG114上下文](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114)：人物记录/未来预览/当前会面分清，按需名笺选择只read，真实availableEvents/phase/preview才可递拜帖，不能仅realm unlocked代资格。一份当前回应保全部后果/成本，预选不执行；命卷完整140码点/四篇读页锚保，低频管理不等收卷。原6/12/CAS/唯一host claim/proof/完整回执不变，目录不得再挂第二narrativehook抢成果；未识画像不当现场人物、旧回看不补新演出。具体布局/时长为项目推导，非Xbox认证/数值来源；旧两组余量43/38字节须真实退休重复结构，不迁controller或涨帽。整体艺术/长期/真人与当前兼容环境性能暂停边界保持。
+
+
+ART12实际交接经验：缓存组件的visible状态可能晚于真实DOM退场，不能据此让已离画面的回应对象先占唯一成果。认领前动态核本组件vnode.el仍连接可见，首次挂载/重新激活仅在原单render窗尝试；本组件同effect引用+同kind/id可幂等保持，失活/换物清本地，原host窗口/1400/proof不宽。静态猜测与被动claim、只读CDP诊断分层，只有当前完整新8/旧59回归才证明修闭。选中签translate也要给立即父预留外缘，不以外层dialog容纳或center hit代替。Node strip-types共享模块的相对TS导入须有实际.ts后缀；修正会改变生成演示指纹/包身份，即便Game相同也不冒称全部资源字节相同。原失败、前提适配和本轮工程/整体艺术/真人分开保留，兼容/环境性能仍后置。

@@ -458,3 +458,14 @@ ART03复核历史进展（source12、交付前）：source12 f4f31020冻结，�
 - [杠精审查] 通过，仅0038当前独立工程范围。实际对象/动词/有限授权和保存成果进入正式页，完整功能与原费用/单周期/原retry保；代码／像素／提交HTTP与真人分层，无已知未修本项工程阻断。下一唯一ART12仙缘／命卷，再CHECK-ART-03；修行对比等其他ART、M04路线恢复／M05性能／M06兼容最后／干净包／最大C端代码安全／真人全部保留，Goal active。本项未兼容／环境性能、未push／合并／公开部署／改权限。
 
 主证据：[evidence/art11/verification.json](evidence/art11/verification.json)、coverage.json、identity-proof.json、visual-review.json与review.md。
+
+
+## ART12开工（2026-10-26）
+
+上一轮ART11为progress：19e00a8/63e6571、186c9973/279源87载荷9068677B、50唯一新8+旧42与原13/Chrome10修为40石有证。当前只ART12，不重做旧nextR1/不新建Goal。原话amendments/2026-10-26-goal-continue-art12.md、0039/保护基线/本计划任务先于代码。XAG112/114实读写根AGENTS应用具体导航/context，复用game-studio/UI/playtest/原4画像0新bitmap。
+
+当前缘牍→实际会面→回应、命卷当前正文和低频卷尾管理；保四人物/100手记/原140分页/阅读锚/全部选项/四篇/结尾导出恢复/原6-6-12/CAS/proof。新CSS单文件≤14000，旧story47957/48000与R413962/14000均不涨，真实退重复标题/常驻布局而不迁controller逃帽。先合法基线红后新8/旧具名59及当前native34/精确298、815/新旧guard/类型构建/真实周期与逐张像素，同源提交/HTTP/用户只读后本项结束，下一CHECK-ART-03。其它ART/长期/M04-5-6兼容最后/干净包/最大评审/真人保持，Goal active；当前不兼容/环境性能、不动用户档、不push/合并/部署/权限。
+
+[杠精审查] 开工通过，参数/风险/验收/回滚已落实在0039，不仅计划。
+
+- 当前[ ]：实际实现/检查/红绿/提交/像素/同源/GJ：待真实交付后填写。
