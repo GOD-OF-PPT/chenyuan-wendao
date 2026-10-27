@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-27",
+  "task": "ART13",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "title": "Clarity in League",
+      "publisher": "Riot Games",
+      "published": "2021-03-12",
+      "currentFetchSucceeded": true,
+      "used": "Prioritize actual current decision and object; preserve hierarchy and reduce visual noise."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "title": "Xbox Accessibility Guideline112: UI navigation",
+      "publisher": "Microsoft",
+      "currentFetchSucceeded": true,
+      "used": "Predictable selection/back/focus between current furnace, library and complete settings."
+    }
+  ],
+  "projectInference": "Single current furnace and one primary decision with full on-demand library. Counts/layout/periods are project choices, not source-prescribed values or certification. No competitor playtest claimed."
+}

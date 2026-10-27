@@ -1,0 +1,82 @@
+{
+  "files": [
+    {
+      "file": "web/e2e/stage-support.ts",
+      "before": "7e566bcb950bbccf3bb9ddadcacd451c9cac585e5cfa040e9572aa45782a158e",
+      "current": "565ef3393bac316cb5e3db054650f6b297d1c612358f464b39cad386a362894e",
+      "diff": "artifacts/goal-4/art13/old-public-entry-adaptation/stage-support.ts.final.diff",
+      "reverseAppliedInTemporaryDirectoryRestoredExactOriginal": true
+    },
+    {
+      "file": "web/e2e/support.ts",
+      "before": "e8d4a73c75b84343fcdb2cfb7656dc93dd8ee65006a8a075b6a0f9ffad74370e",
+      "current": "37e059ced4c2ce21e11c99c1d1c5f4fd8b1e21bff57c662f6b56d79e901749c7",
+      "diff": "artifacts/goal-4/art13/old-public-entry-adaptation/support.ts.final.diff",
+      "reverseAppliedInTemporaryDirectoryRestoredExactOriginal": true
+    },
+    {
+      "file": "web/e2e/alchemy-workshop.spec.ts",
+      "before": "3c46f0857b720f69f71688798a5436a96b8ef2d314a22196c9a5bc0f152c9679",
+      "current": "c7639d6e785158b0b11183c363d4fda80d0b31a6eb7e4dcc9a9c8a404cc0a166",
+      "diff": "artifacts/goal-4/art13/old-public-entry-adaptation/alchemy-workshop.spec.ts.final.diff",
+      "reverseAppliedInTemporaryDirectoryRestoredExactOriginal": true
+    },
+    {
+      "file": "web/e2e/idle-production.spec.ts",
+      "before": "6c8648cd620a67f306624a65e7bb52ec93f7c46a7a8c9dd141faa6dd6c66b81c",
+      "current": "1d4bc7cfd1606ca57329df71c672eb76702062a265f00d04f1b7fa798c475c5c",
+      "diff": "artifacts/goal-4/art13/old-public-entry-adaptation/idle-production.spec.ts.final.diff",
+      "reverseAppliedInTemporaryDirectoryRestoredExactOriginal": true
+    },
+    {
+      "file": "web/e2e/idle-integration.spec.ts",
+      "before": "f7d4c24940bc0757bd8c98cbd4edb7fd16c76060b1061be86d9716646eb3dc07",
+      "current": "4d5bd9bcb65934fd08863e97804b726ccc73e2aa8dbfdd847b80e83fbcd3a190",
+      "diff": "artifacts/goal-4/art13/old-public-entry-adaptation/idle-integration.spec.ts.final.diff",
+      "reverseAppliedInTemporaryDirectoryRestoredExactOriginal": true
+    },
+    {
+      "file": "web/e2e/stage-r1.spec.ts",
+      "before": "69484e6817a7dd9b6a4288abf4d07d46543fa5b72543de0911a435b0bca6f975",
+      "current": "decca793b32bd2975691d1cb65f09df17869f2dfad368683431f447fdaa278b0",
+      "diff": "artifacts/goal-4/art13/old-public-entry-adaptation/stage-r1.spec.ts.final.diff",
+      "reverseAppliedInTemporaryDirectoryRestoredExactOriginal": true
+    },
+    {
+      "file": "web/e2e/check-art-01.spec.ts",
+      "before": "6c0ed6a9fce2933eed3eb81be2aa045bffe3aff8faa526e52506cb702e1a59b9",
+      "current": "67f6a52efabbe1bfd10ed8dc7c020a98fd462e0a7819f102539311eca9046f7a",
+      "diff": "artifacts/goal-4/art13/old-public-entry-adaptation/check-art-01.spec.ts.final.diff",
+      "reverseAppliedInTemporaryDirectoryRestoredExactOriginal": true
+    },
+    {
+      "file": "web/e2e/check-u8.spec.ts",
+      "before": "70419c8c5dd9ccba4d5ee5ce95aaceba79779443a385e2bc2dc306c439cadc77",
+      "current": "db22498e9a7474f3d52a20c436126d576ba52224c9ae7a02579dcd695db2c83b",
+      "diff": "artifacts/goal-4/art13/old-public-entry-adaptation/check-u8.spec.ts.final.diff",
+      "reverseAppliedInTemporaryDirectoryRestoredExactOriginal": true
+    },
+    {
+      "file": "web/e2e/matrix-ui-cancel.spec.ts",
+      "before": "394ad405e30ea3fdda950dbe70bcc4a818c0554b7f5178063082344fad627358",
+      "current": "4eeadfabd7a16aff7a86cfb485f55e9c497d74a6245d31005ce5c70222d5bbc9",
+      "diff": "artifacts/goal-4/art13/old-public-entry-adaptation/matrix-ui-cancel.spec.ts.final.diff",
+      "reverseAppliedInTemporaryDirectoryRestoredExactOriginal": true
+    },
+    {
+      "file": "web/e2e/idle-stage-ui.spec.ts",
+      "before": "b54ff3f48028edfaccff6bc1a22dbcf3eae404c888360dd5087bc260efd4d16c",
+      "current": "4dd28a5f7d62b24a76a0690bb1001ff7b80e46b26b9d812f8ac123a9b29fb228",
+      "diff": "artifacts/goal-4/art13/old-public-entry-adaptation/idle-stage-ui.spec.ts.final.diff",
+      "reverseAppliedInTemporaryDirectoryRestoredExactOriginal": true
+    },
+    {
+      "file": "web/e2e/cultivation-objects.spec.ts",
+      "before": "e3e3a004c52bf9a7f750a67d65e333406bf1a01da451d7aac5569a0a8184400a",
+      "current": "ff973baa2d88e40a70769e82336addc6d2203df29d5acc538484c56ff22470a3",
+      "diff": "artifacts/goal-4/art13/old-public-entry-adaptation/cultivation-objects.spec.ts.final.diff",
+      "reverseAppliedInTemporaryDirectoryRestoredExactOriginal": true
+    }
+  ],
+  "scope": "Only real public disclosure entry, selected heading and non-overlapping material layout predicate. Original formal Game/cost/countdown/retry/time limits retained; no old test body deleted."
+}

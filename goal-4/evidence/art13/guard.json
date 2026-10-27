@@ -1,0 +1,20 @@
+{
+  "runtime": "486ac37dc2c864eb0844b318e9b00dc36c0496678dec0e0f022ecdc8f7d83394",
+  "inputs": 1225,
+  "exact": true,
+  "rows": [
+    {
+      "name": "tests",
+      "exit": 0,
+      "seconds": 529.7668800354004,
+      "log": "artifacts/goal-4/art13/guard-source6-tests.log"
+    },
+    {
+      "name": "positive",
+      "exit": 0,
+      "seconds": 1.282182216644287,
+      "log": "artifacts/goal-4/art13/guard-source6-positive.log"
+    }
+  ],
+  "passed": true
+}

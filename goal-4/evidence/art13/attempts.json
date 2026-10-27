@@ -1,0 +1,451 @@
+{
+  "attempts": [
+    {
+      "file": "artifacts/goal-4/art13/core-source4-terminal.json",
+      "sha256": "e94f80b6973f5977b4e1ad260a3f2522851d948ed5a055cb129626fc2a7be4e3",
+      "result": {
+        "runtime": "23e691f8f27dbd3a24557d8a5cd2316810906f140125cbd092e4541337953ccb",
+        "inputs": 656,
+        "exact": true,
+        "rows": [
+          {
+            "name": "rules",
+            "exit": 0,
+            "seconds": 255.14599609375,
+            "log": "artifacts/goal-4/art13/core-source4-rules.log"
+          },
+          {
+            "name": "types",
+            "exit": 0,
+            "seconds": 7.137817859649658,
+            "log": "artifacts/goal-4/art13/core-source4-types.log"
+          }
+        ],
+        "passed": true
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/core-source5-terminal.json",
+      "sha256": "7737e3c28568f4de1d46056c78d5642a1bb67ed3347485c0e3e3151ed18b1a9f",
+      "result": {
+        "runtime": "da0f3bfea8753b4e6a9408318f77e9d5e52560e0dec038ac8b5bd989a7bbf21c",
+        "inputs": 656,
+        "exact": true,
+        "rows": [
+          {
+            "name": "rules",
+            "exit": 0,
+            "seconds": 137.34741306304932,
+            "log": "artifacts/goal-4/art13/core-source5-rules.log"
+          },
+          {
+            "name": "types",
+            "exit": 0,
+            "seconds": 2.316413164138794,
+            "log": "artifacts/goal-4/art13/core-source5-types.log"
+          }
+        ],
+        "passed": true
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/core-source6-terminal.json",
+      "sha256": "9dd82098277893db653c686273f0fbd8d5767fe48cb64c34daa38fd4eba1ccfa",
+      "result": {
+        "runtime": "486ac37dc2c864eb0844b318e9b00dc36c0496678dec0e0f022ecdc8f7d83394",
+        "inputs": 656,
+        "exact": true,
+        "rows": [
+          {
+            "name": "rules",
+            "exit": 0,
+            "seconds": 316.8529369831085,
+            "log": "artifacts/goal-4/art13/core-source6-rules.log"
+          },
+          {
+            "name": "types",
+            "exit": 0,
+            "seconds": 6.1361308097839355,
+            "log": "artifacts/goal-4/art13/core-source6-types.log"
+          }
+        ],
+        "passed": true
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/guard-source4-terminal.json",
+      "sha256": "46e324042c2baead04ec5ad3439d43dbdbbfb361edbbd2f3d241e4e217a2cb3e",
+      "result": {
+        "runtime": "23e691f8f27dbd3a24557d8a5cd2316810906f140125cbd092e4541337953ccb",
+        "inputs": 1225,
+        "exact": true,
+        "rows": [
+          {
+            "name": "tests",
+            "exit": 0,
+            "seconds": 485.5541920661926,
+            "log": "artifacts/goal-4/art13/guard-source4-tests.log"
+          },
+          {
+            "name": "positive",
+            "exit": 0,
+            "seconds": 1.547123908996582,
+            "log": "artifacts/goal-4/art13/guard-source4-positive.log"
+          }
+        ],
+        "passed": true
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/guard-source5-terminal.json",
+      "sha256": "34671a732f53972876050fc0c3cfd71a839b8a9603b79756bfd6515f870608d4",
+      "result": {
+        "runtime": "da0f3bfea8753b4e6a9408318f77e9d5e52560e0dec038ac8b5bd989a7bbf21c",
+        "inputs": 1225,
+        "exact": true,
+        "rows": [
+          {
+            "name": "tests",
+            "exit": -15,
+            "seconds": 188.05888199806213,
+            "log": "artifacts/goal-4/art13/guard-source5-tests.log"
+          }
+        ],
+        "passed": false
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/guard-source6-terminal.json",
+      "sha256": "3b9213094a7e2ca12d3ce4fb75f167f48c0ee1222a50b623bf44643a6841557a",
+      "result": {
+        "runtime": "486ac37dc2c864eb0844b318e9b00dc36c0496678dec0e0f022ecdc8f7d83394",
+        "inputs": 1225,
+        "exact": true,
+        "rows": [
+          {
+            "name": "tests",
+            "exit": 0,
+            "seconds": 529.7668800354004,
+            "log": "artifacts/goal-4/art13/guard-source6-tests.log"
+          },
+          {
+            "name": "positive",
+            "exit": 0,
+            "seconds": 1.282182216644287,
+            "log": "artifacts/goal-4/art13/guard-source6-positive.log"
+          }
+        ],
+        "passed": true
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/native-source6-terminal.json",
+      "sha256": "36cc4bee58040fe68db35f8ed4ac1e79e0291fcfe13d06594c25bef3ca2a2447",
+      "result": {
+        "event": "native-terminal",
+        "declarationExact": true,
+        "actualDeclarations": 34,
+        "retried": [],
+        "phase": "native-source6",
+        "exit": 0,
+        "error": null,
+        "reportCopied": true,
+        "withinPhaseInputsExact": true,
+        "inputs": 478,
+        "runtime": "486ac37dc2c864eb0844b318e9b00dc36c0496678dec0e0f022ecdc8f7d83394",
+        "stats": {
+          "startTime": "2026-10-27T08:51:46.855Z",
+          "duration": 83436.42,
+          "expected": 34,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/ui-baseline-terminal.json",
+      "sha256": "21444d00a374ee9533ae25bce0243b8ca51bb3c4a18d917c080224dd4c4bd9fd",
+      "result": {
+        "exit": 1,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 687,
+        "runtime": "2233ad6e3e9fe1a422cdb98d028d9d26b4cf5fa6977108110eb0329bccbd63c2",
+        "stats": {
+          "startTime": "2026-10-27T08:02:36.130Z",
+          "duration": 12732.626,
+          "expected": 0,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 1,
+        "retried": [],
+        "reportSha256": "aa2a196b13c76d49d7aef565d1cb63f72b5d96183bf9ef94c753b0cf4aff90b7"
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/ui-new-source1-terminal.json",
+      "sha256": "6010ba6bc23304a5559981023af736d27bc429a4d298205491d7707ecea95d03",
+      "result": {
+        "exit": 1,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 687,
+        "runtime": "e4d787f7dfdef182a53986db06c3be2fd1e205564665f760cf67119fee898222",
+        "stats": {
+          "startTime": "2026-10-27T08:07:16.362Z",
+          "duration": 50718.841,
+          "expected": 1,
+          "skipped": 0,
+          "unexpected": 5,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 6,
+        "retried": [],
+        "reportSha256": "bf4796570d3dcacb8a0c365bac8661ce340d54ab6be4eee2d315a15f2b5f9154"
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/ui-new-source2-terminal.json",
+      "sha256": "a4e06e8fd672050655ee18613a92434f3425398292ada9532fe8d9c0c2bc9c97",
+      "result": {
+        "exit": 1,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 687,
+        "runtime": "c7b71d1d09f4406c68d0cd900e14da5c2d6b7a8f7786353c62d7516af5cd6143",
+        "stats": {
+          "startTime": "2026-10-27T08:10:30.567Z",
+          "duration": 27018.201999999997,
+          "expected": 2,
+          "skipped": 0,
+          "unexpected": 4,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 6,
+        "retried": [],
+        "reportSha256": "cb45db1d1a879a432a339f3bfe677bd7acc75f490b8e9582e4e95d2595785f72"
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/ui-new-source3-terminal.json",
+      "sha256": "c9b613c404ffe923dd3bd6a946d7eb0dd3311dc38ed3ddabd791e66dea0f279b",
+      "result": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 687,
+        "runtime": "ce37dae3778d70f48c873f192b338bf1447225d3a34762f9d67219c4c111b3b4",
+        "stats": {
+          "startTime": "2026-10-27T08:14:57.905Z",
+          "duration": 28181.347,
+          "expected": 6,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 6,
+        "retried": [],
+        "reportSha256": "25b61736e3bbfcd91459cd825dff60674f4929b13c9eeaf1d3af2f9e487f8184"
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/ui-new-source4-terminal.json",
+      "sha256": "3fbd0d6a376f40fbe19a4b8a763c49e45ffa273e6ffc62344a535664ef08fab7",
+      "result": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 687,
+        "runtime": "23e691f8f27dbd3a24557d8a5cd2316810906f140125cbd092e4541337953ccb",
+        "stats": {
+          "startTime": "2026-10-27T08:19:35.900Z",
+          "duration": 28385.322,
+          "expected": 6,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 6,
+        "retried": [],
+        "reportSha256": "dc25126e8ae46f8f0546c8462d7ca9677b4bb46ae307e697ea4ff136b92c24e8"
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/ui-new-source5-terminal.json",
+      "sha256": "21d90e1912a7e86fb514bdeaefc56ef20cde4fbdb483d27e5e41807e6151893e",
+      "result": {
+        "exit": 1,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 687,
+        "runtime": "da0f3bfea8753b4e6a9408318f77e9d5e52560e0dec038ac8b5bd989a7bbf21c",
+        "stats": {
+          "startTime": "2026-10-27T08:37:18.955Z",
+          "duration": 22125.861,
+          "expected": 5,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 6,
+        "retried": [],
+        "reportSha256": "692ef5861406ff51d396fddd947b12c68a3da4f8b08fb0be294674bb22abac9e"
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/ui-new-source6-terminal.json",
+      "sha256": "5c747885d8c3af73540e1e4398d1e2f3512848eb0a3dc2d3740b1740201db127",
+      "result": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 687,
+        "runtime": "486ac37dc2c864eb0844b318e9b00dc36c0496678dec0e0f022ecdc8f7d83394",
+        "stats": {
+          "startTime": "2026-10-27T08:43:32.542Z",
+          "duration": 24073.189,
+          "expected": 6,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 6,
+        "retried": [],
+        "reportSha256": "bcb4ff3569afd58b9a5bf8463b3f0361a27c2ae0524fcca9434bdeef19961b4f"
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/ui-old-premise-source2-terminal.json",
+      "sha256": "a665d2ee8bd9701146466e66a5aa9ea16258b7376c8f5ca6cc24e0ce4774bb37",
+      "result": {
+        "exit": 1,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 687,
+        "runtime": "c7b71d1d09f4406c68d0cd900e14da5c2d6b7a8f7786353c62d7516af5cd6143",
+        "stats": {
+          "startTime": "2026-10-27T08:11:23.756Z",
+          "duration": 12098.958,
+          "expected": 0,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 1,
+        "retried": [],
+        "reportSha256": "3b2c62bf3de6c1d2ba515c9506b94797c2f38ae21413924b12c0ec1203ff1b79"
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/ui-pixel-range-red-source4-terminal.json",
+      "sha256": "7069e59eccfea57b00ffcf2090a95a0c50937aa1a51385b7f33467afd69f8164",
+      "result": {
+        "exit": 1,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 687,
+        "runtime": "23e691f8f27dbd3a24557d8a5cd2316810906f140125cbd092e4541337953ccb",
+        "stats": {
+          "startTime": "2026-10-27T08:31:12.807Z",
+          "duration": 21009.761,
+          "expected": 0,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 1,
+        "retried": [],
+        "reportSha256": "b3bd857fb5dedac689040bf874b4bc40358ce78576ee2aa0d888ed10393ef53d"
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/ui-related-source4-terminal.json",
+      "sha256": "f45794738417b36edfb152e7b2ca840630870d20f028ad48dede3181010cfe2f",
+      "result": {
+        "exit": 1,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 696,
+        "runtime": "23e691f8f27dbd3a24557d8a5cd2316810906f140125cbd092e4541337953ccb",
+        "stats": {
+          "startTime": "2026-10-27T08:21:28.535Z",
+          "duration": 794897.897,
+          "expected": 91,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 92,
+        "retried": [],
+        "reportSha256": "ae4bcdbb2c1cab2c9ba21ba16d76c60a88ed8ae0addb2bd1086c7af69e7a57a1"
+      }
+    },
+    {
+      "file": "artifacts/goal-4/art13/ui-related-source6-terminal.json",
+      "sha256": "b72acce9b8bf4259a5d7890fe113f447bba8cb460c0fbd2eea965917f399f49e",
+      "result": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 696,
+        "runtime": "486ac37dc2c864eb0844b318e9b00dc36c0496678dec0e0f022ecdc8f7d83394",
+        "stats": {
+          "startTime": "2026-10-27T08:45:55.382Z",
+          "duration": 488684.603,
+          "expected": 92,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 92,
+        "retried": [],
+        "reportSha256": "25edba39dbb9cb3216b0965095d985af51eea9e14573f7f9a9640f4f00657838"
+      }
+    }
+  ],
+  "commandPreparationErrors": [
+    "Dummy runtime rejected before any child launch.",
+    "Dependent run attempted before async preparation completed; missing plan rejected before child launch, original prepared phase subsequently executed.",
+    "Real timing safe aggregation corrected to decode actual inline report attachment; no product/test change."
+  ],
+  "originalFailuresAndCancellationRetained": true,
+  "pixelRed": "artifacts/goal-4/art13/paused-button-pixel-red.json",
+  "source5GuardStopped": "Owned child explicitly terminated after real fallback defect; exit-15/exact is not a passed guard run."
+}

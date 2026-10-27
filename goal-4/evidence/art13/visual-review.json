@@ -1,0 +1,165 @@
+{
+  "representatives": 11,
+  "fresh": 11,
+  "rows": [
+    {
+      "original": "artifacts/goal-4/art13/ui-new-source6-results/art13-alchemy-stage-ART13--08a0f--and-keyboard-recipe-return-chromium/missing-art-four-material-furnace.png",
+      "originalSha256": "ea5d58a1501690de42971e759daab6f268e1a02f90c38c744e94d08b5f091e24",
+      "view": "artifacts/goal-4/art13/visual-source6/missing-art-four-material-furnace.jpg",
+      "viewSha256": "48d169773b97c5f00a21cedebac8832e3316eba2549ac6db8bf5e2cb67ec6782",
+      "lossy": true,
+      "quality": 68,
+      "size": [
+        1440,
+        900
+      ],
+      "pixelReviewed": true,
+      "review": "Fresh root visual inspection, original1440x900 viewing copy; static representation, no overall art/human acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/art13/ui-new-source6-results/art13-alchemy-stage-ART13--08a0f--and-keyboard-recipe-return-chromium/keyboard-complete-recipe-book.png",
+      "originalSha256": "404944af40cc93ce6bb1de6ed26ccf357e180f83cc1de445aafbed14366033ee",
+      "view": "artifacts/goal-4/art13/visual-source6/keyboard-complete-recipe-book.jpg",
+      "viewSha256": "34d17547953cda2397282a46377fb48c2348cb9bf86090276e45d4ab053e713b",
+      "lossy": true,
+      "quality": 68,
+      "size": [
+        1440,
+        900
+      ],
+      "pixelReviewed": true,
+      "review": "Fresh root visual inspection, original1440x900 viewing copy; static representation, no overall art/human acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/art13/ui-new-source6-results/art13-alchemy-stage-ART13--c7f99-yboard-focus-without-writes-chromium/complete-target-and-budget-return.png",
+      "originalSha256": "ab17ffe555fca440113b554821378618165ad1f689971a1290c4a3b8308377df",
+      "view": "artifacts/goal-4/art13/visual-source6/complete-target-and-budget-return.jpg",
+      "viewSha256": "cc43e9e21b9e012bf0e29de102c0415d59cc353cea6a09225ae4d0a00c19d3b2",
+      "lossy": true,
+      "quality": 68,
+      "size": [
+        1440,
+        900
+      ],
+      "pixelReviewed": true,
+      "review": "Fresh root visual inspection, original1440x900 viewing copy; static representation, no overall art/human acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/art13/ui-new-source6-results/art13-alchemy-stage-ART13--d4603-lays-an-offstage-saved-pill-chromium/readonly-book-during-current-cycle.png",
+      "originalSha256": "3acc96e1b1afb761eb5dff40279e2600a71fa512d9004e5460ad5430f300f8eb",
+      "view": "artifacts/goal-4/art13/visual-source6/readonly-book-during-current-cycle.jpg",
+      "viewSha256": "119c1e09d36b4e9466ce349cec5edf96edeb69a7917cee277c187316e7b164a5",
+      "lossy": true,
+      "quality": 68,
+      "size": [
+        1440,
+        900
+      ],
+      "pixelReviewed": true,
+      "review": "Fresh root visual inspection, original1440x900 viewing copy; static representation, no overall art/human acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/art13/ui-new-source6-results/art13-alchemy-stage-ART13--2b8cf-ts-original-remaining-cycle-chromium/paused-original-furnace-budget.png",
+      "originalSha256": "ce1558000981a9c5e79de6e9a2d9647b28217c44cbba2f82f40be90301a70e2a",
+      "view": "artifacts/goal-4/art13/visual-source6/paused-original-furnace-budget.jpg",
+      "viewSha256": "ba646979bc3e4219e6d7b386b7cd51912b01c0dccac1fd0ae1b2a18e018de07f",
+      "lossy": true,
+      "quality": 68,
+      "size": [
+        1440,
+        900
+      ],
+      "pixelReviewed": true,
+      "review": "Fresh root visual inspection, original1440x900 viewing copy; static representation, no overall art/human acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/art13/ui-new-source6-results/art13-alchemy-stage-ART13--1988b-e-before-one-atomic-product-chromium/four-material-original-quota.png",
+      "originalSha256": "712f23e6a598ffa941659ae1848581182927089e16f22aa107d642389e30e604",
+      "view": "artifacts/goal-4/art13/visual-source6/four-material-original-quota.jpg",
+      "viewSha256": "0b70a401ad0391407e6471ea0d661bcb168d5621b3c00f1ae533e56c4b148b11",
+      "lossy": true,
+      "quality": 68,
+      "size": [
+        1440,
+        900
+      ],
+      "pixelReviewed": true,
+      "review": "Fresh root visual inspection, original1440x900 viewing copy; static representation, no overall art/human acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/art13/ui-new-source6-results/art13-alchemy-stage-ART13--483cc-ly-recipes-remain-reachable-chromium/complete-seven-recipe-book.png",
+      "originalSha256": "18cd8dd4e175a22b45c705da0a883f6b62d3b2d7bd88e0c33a0e28a3d2819d43",
+      "view": "artifacts/goal-4/art13/visual-source6/complete-seven-recipe-book.jpg",
+      "viewSha256": "adacfc81076bf42defdf536d29b0cacda7f5eef3f2fb067e131773fd807651c3",
+      "lossy": true,
+      "quality": 68,
+      "size": [
+        1440,
+        900
+      ],
+      "pixelReviewed": true,
+      "review": "Fresh root visual inspection, original1440x900 viewing copy; static representation, no overall art/human acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/art13/ui-new-source6-results/art13-alchemy-stage-ART13--483cc-ly-recipes-remain-reachable-chromium/single-current-furnace.png",
+      "originalSha256": "66eca4e925b7e131d7defefbaf56cb9537caddeafa30634a6dcd471d55afb1a8",
+      "view": "artifacts/goal-4/art13/visual-source6/single-current-furnace.jpg",
+      "viewSha256": "f036fb91c599fea017e1ab80bac3c41d10a2bf05f70e4f3b78df8b9832027df4",
+      "lossy": true,
+      "quality": 68,
+      "size": [
+        1440,
+        900
+      ],
+      "pixelReviewed": true,
+      "review": "Fresh root visual inspection, original1440x900 viewing copy; static representation, no overall art/human acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/art13/ui-related-source6-results/alchemy-workshop-furnace-p-d567a-the-cumulative-budget-stops-chromium/alchemy-refining.png",
+      "originalSha256": "80cf5c7b7def8cfedabf70a62f72438443f99f74161c55659e58093cf05c0300",
+      "view": "artifacts/goal-4/art13/visual-source6/alchemy-refining.jpg",
+      "viewSha256": "8aaeaa3c2564b53597c7d954e1cdf14a701ede7f23e3fb266866295f94473d24",
+      "lossy": true,
+      "quality": 68,
+      "size": [
+        1440,
+        900
+      ],
+      "pixelReviewed": true,
+      "review": "Fresh root visual inspection, original1440x900 viewing copy; static representation, no overall art/human acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/art13/ui-related-source6-results/alchemy-workshop-furnace-p-d567a-the-cumulative-budget-stops-chromium/alchemy-saving-no-pill.png",
+      "originalSha256": "c2a0a20b145d60109651032a105d35b74ab650a4c322f5dc640bf7e7d78d6539",
+      "view": "artifacts/goal-4/art13/visual-source6/alchemy-saving-no-pill.jpg",
+      "viewSha256": "d2cf5f62ca23b08e3f75009e3f5d7c41eeb907691b784b06d411d6bee63fa932",
+      "lossy": true,
+      "quality": 68,
+      "size": [
+        1440,
+        900
+      ],
+      "pixelReviewed": true,
+      "review": "Fresh root visual inspection, original1440x900 viewing copy; static representation, no overall art/human acceptance."
+    },
+    {
+      "original": "artifacts/goal-4/art13/ui-related-source6-results/alchemy-workshop-furnace-p-d567a-the-cumulative-budget-stops-chromium/alchemy-trusted-arrival.png",
+      "originalSha256": "0e431a3380c1c9c55936907dfc7ad11efd410f871866c7ff997ea1b8cd110431",
+      "view": "artifacts/goal-4/art13/visual-source6/alchemy-trusted-arrival.jpg",
+      "viewSha256": "176206a71abf732f457b195c9dfba4e85f5d2f512e3a5e0163a0b94aafaf45ad",
+      "lossy": true,
+      "quality": 68,
+      "size": [
+        1440,
+        900
+      ],
+      "pixelReviewed": true,
+      "review": "Fresh root visual inspection, original1440x900 viewing copy; static representation, no overall art/human acceptance."
+    }
+  ],
+  "generatedImageCount": 162,
+  "allGeneratedReviewed": false,
+  "originalsRetained": true,
+  "readPerToolCallAtMost": 2,
+  "scope": "Current furnace, full library and settings, pause, actual quota, all picture failure, refine/save/trusted result. Screenshot is not a full animation-trajectory or overall human art certification."
+}
