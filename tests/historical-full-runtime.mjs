@@ -5,23 +5,41 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 export const historicalRulesCommit = 'd3f48ef7df6269133c2875d9b6ca035c0a30ca41';
+export const historicalBalanceOneCommit = 'a143f05482e8da13a97ee774e9b59194a946bbe1';
+export const historicalFullOneCommit = 'a49c0b4d0671a75f25c7781e4613de109c232899';
 /** Execute this repository's exact old source; do not commit generated Game snapshots. Requires a full Git checkout. */
-export async function historicalFullRuntime() {
+export async function historicalFullRuntime(preset = 'causal') {
+  assert.ok(['causal', 'balance-one', 'full-one'].includes(preset));
+  const sourceCommit = preset === 'full-one' ? historicalFullOneCommit : preset === 'balance-one' ? historicalBalanceOneCommit : historicalRulesCommit;
   const root = fileURLToPath(new URL('../', import.meta.url)), folder = mkdtempSync(join(tmpdir(), 'chenyuan-historical-full-'));
   try {
-    const archive = execFileSync('git', ['archive', '--format=tar', historicalRulesCommit, 'src', 'tests/full-route.mjs'], { cwd: root, maxBuffer: 5_000_000, timeout: 30000 });
+    const archive = execFileSync('git', ['archive', '--format=tar', sourceCommit, 'src', 'tests/full-route.mjs'], { cwd: root, maxBuffer: 5_000_000, timeout: 30000 });
     const archivePath = join(folder, 'source.tar');
     writeFileSync(archivePath, archive);
     execFileSync('tar', ['-xf', archivePath, '-C', folder], { timeout: 30000 });
     writeFileSync(join(folder, 'package.json'), '{"type":"module"}');
     const engine = await import(pathToFileURL(join(folder, 'src/full/engine.ts')).href);
     const routes = await import(pathToFileURL(join(folder, 'tests/full-route.mjs')).href);
-    const receipts = await import(pathToFileURL(join(folder, 'src/full/receipts.ts')).href);
+    const receipts = preset === 'full-one' ? null : await import(pathToFileURL(join(folder, 'src/full/receipts.ts')).href);
     const events = await import(pathToFileURL(join(folder, 'src/full/events.ts')).href);
     const sample = engine.newGame('历史回放', 'historical-version-check');
-    assert.equal(sample.core.contentVersion, 'full-demo.2'); assert.equal(sample.core.balanceVersion, 'full-unbalanced.2');
-    return { engine, routes, receipts, events, sourceCommit: historicalRulesCommit };
+    assert.equal(sample.core.contentVersion, preset === 'full-one' ? 'full-demo.1' : 'full-demo.2'); assert.equal(sample.core.balanceVersion, preset === 'causal' ? 'full-unbalanced.2' : 'full-unbalanced.1');
+    return { engine, routes, receipts, events, sourceCommit };
   } finally { rmSync(folder, { recursive: true, force: true }); }
+}
+
+export async function historicalBalanceOneFixture() {
+  const old = await historicalFullRuntime('balance-one'), d = old.routes.driver('help', 'sword');
+  d.realm();
+  const previous = structuredClone(d.checkpoints.qi);
+  const command = { type: 'BREAKTHROUGH', commandId: 'balance-one-break', runId: previous.core.runId, expectedRevision: previous.core.revision };
+  const outcome = old.engine.resolve(previous, command), current = outcome.nextState;
+  const receipt = { format: 'chenyuan-receipt', version: 1, command, fingerprint: old.receipts.canonicalFingerprint(command), result: outcome.result };
+  old.receipts.validateCommandReceipt(receipt, current);
+  const snapshot = structuredClone(previous), versions = { format: snapshot.format, version: snapshot.version, schemaVersion: snapshot.core.schemaVersion, contentVersion: snapshot.core.contentVersion, balanceVersion: snapshot.core.balanceVersion };
+  const checkpoint = { format: 'chenyuan-checkpoint', version: 1, kind: 'breakthrough', sourceRunId: snapshot.core.runId, sourceRevision: snapshot.core.revision, versions, snapshot };
+  const owner = { format: 'chenyuan-checkpoint-scope', version: 1, runId: current.core.runId, sourceRunId: checkpoint.sourceRunId, sourceRevision: checkpoint.sourceRevision, kind: checkpoint.kind };
+  return { sourceCommit: old.sourceCommit, previous, current, checkpoint, owner, receipt, command };
 }
 
 let cachedRuntime;

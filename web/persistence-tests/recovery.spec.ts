@@ -49,7 +49,13 @@ test('corrupt receipts including null and stored undefined never become new exec
   const result = await page.evaluate(async () => {
     const h = (globalThis as any).h, repo = await h.FullSaveRepository.open('bad-receipts');
     const initial = (await repo.create('回执', h.mutation())).state, cmd = h.command(initial, { type: 'CHOOSE', choice: 'leave' });
-    await repo.execute(cmd);
+    // This is the supported legacy-replay path; new actions require an Activity.
+    const formal=h.engine.resolve(initial,cmd), {canonicalFingerprint}=h.receipts;
+    await h.put('bad-receipts',h.FULL_STATE_STORE,'previous',initial);
+    await h.put('bad-receipts',h.FULL_STATE_STORE,'current',formal.nextState);
+    await h.put('bad-receipts',h.FULL_RECEIPT_STORE,cmd.runId+':'+cmd.commandId,
+      {format:'chenyuan-receipt',version:1,command:cmd,fingerprint:canonicalFingerprint(cmd),result:formal.result});
+    const replay=await repo.execute(cmd);if(!replay.replayed)throw Error('Legacy fixture did not replay');
     const raw = await h.inspect('bad-receipts'), original = raw['full-receipts'].find((x: any) => x.value.format === 'chenyuan-receipt').value;
     const variants: any[] = [undefined, null, false, {}, { ...original, result: {} }];
     const wrongId = structuredClone(original); wrongId.result.commandId = 'different'; variants.push(wrongId);
@@ -271,7 +277,7 @@ test('v2 to v3 upgrades the authoritative full state instead of replaying preser
     return { legacy, full, cp, current, loadedCP, oldWrite, raw: await h.inspect(name) };
   });
   expect(result.current).toEqual(result.full); expect(result.loadedCP).toEqual(result.cp);
-  expect(result.current.core.player.realm).toBe('golden'); expect(result.raw.version).toBe(3);
+  expect(result.current.core.player.realm).toBe('golden'); expect(result.raw.version).toBe(9);
   expect(result.raw.state.find((x: any) => x.key === 'current').value).toEqual(result.legacy);
   expect(result.oldWrite.ok).toBe(false);
 });
@@ -295,7 +301,7 @@ test('a foreign checkpoint without scope or migration proof is not adopted durin
     const h = (globalThis as any).h, a = await h.FullSaveRepository.open('foreign-a'), b = await h.FullSaveRepository.open('foreign-b');
     const fixture = JSON.stringify(h.routes.fullRoute().checkpoints.qi);
     const ga = (await a.importText(fixture, h.mutation())).state, gb = (await b.importText(fixture, h.mutation())).state;
-    await a.execute(h.command(ga, { type: 'BREAKTHROUGH' })); await b.execute(h.command(gb, { type: 'BREAKTHROUGH' }));
+    await h.finishAction(a,{type:'BREAKTHROUGH'});await h.finishAction(b,{type:'BREAKTHROUGH'});
     const foreign = await b.loadCheckpoint(); a.close(); b.close();
     await h.put('foreign-a', h.FULL_STATE_STORE, 'checkpoint', foreign); await h.put('foreign-a', h.FULL_STATE_STORE, 'checkpoint-owner', undefined, true);
     const before = await h.inspect('foreign-a'), failed = await h.attempt(() => h.FullSaveRepository.open('foreign-a')), after = await h.inspect('foreign-a');
@@ -378,7 +384,7 @@ test('quota during v2 scope upgrade rolls schema and ownership back and permits 
     return { failed, before, after, current, loaded, final: await h.inspect(name) };
   });
   expect(result.failed.code).toBe('STORAGE_QUOTA'); expect(result.after).toEqual(result.before);
-  expect(result.after.version).toBe(2); expect(result.final.version).toBe(3); expect(result.loaded).toEqual(result.current);
+  expect(result.after.version).toBe(2); expect(result.final.version).toBe(9); expect(result.loaded).toEqual(result.current);
 });
 
 test('unknown v2 schema or empty full stores beside legacy progress never upgrade into a fresh run', async ({ page }) => {

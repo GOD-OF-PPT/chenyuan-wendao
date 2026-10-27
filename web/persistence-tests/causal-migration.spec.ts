@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { setupPersistence } from './support';
+import { setupCurrentRecovery } from './idle-recovery-support';
 import { historicalCausalFixtures } from '../../tests/historical-full-runtime.mjs';
 const fixtures = await historicalCausalFixtures();
-test.beforeEach(async ({ page }) => setupPersistence(page));
+test.beforeEach(async ({ page }) => setupCurrentRecovery(page));
+test.afterEach(async({page})=>{await page.evaluate(()=>{const h=(window as any).h;if(h?.m04RealNow)Date.now=h.m04RealNow;});});
 async function seed(page: any, name: string, fixture: any, stage = 'resolved') {
   await page.evaluate(async ({ name, fixture, stage }: any) => {
     const h = (globalThis as any).h, repo = await h.FullSaveRepository.open(name); repo.close();
@@ -53,9 +54,9 @@ test('old pending events keep identity context while newly confirmed decisions u
     const option = fixture.choice === 'help' ? 'accept' : fixture.choice === 'trade' ? 'bargain' : 'assist';
     const result = await page.evaluate(async ({ name, option }: any) => {
       const h = (globalThis as any).h, repo = await h.FullSaveRepository.open(name), before = await repo.load();
-      const beforeWrong = await h.inspect(name), wrong = await h.attempt(() => repo.execute(h.command(before, { type: 'DECIDE', option: option === 'accept' ? 'bargain' : 'accept' }))), afterWrong = await h.inspect(name);
-      const command = h.command(before, { type: 'DECIDE', option });
-      const first = await repo.execute(command), retry = await repo.execute(command), raw = await h.inspect(name); repo.close();
+      const beforeWrong = await h.inspect(name), wrong = await h.attempt(async () => repo.startActivity(h.milestonePlan({type:'DECIDE',option:option==='accept'?'bargain':'accept'}),h.milestoneMutation(await repo.loadActivitySnapshot()))), afterWrong = await h.inspect(name);
+      const completed=await h.m04Action(repo,{type:'DECIDE',option}),first=completed.lastOutcome;
+      const retry=await repo.settleActivity(completed.records[0].tick),raw=await h.inspect(name); repo.close();
       return { before, first, retry, raw, wrong, beforeWrong, afterWrong };
     }, { name, option });
     expect(normalize(result.before)).toEqual(normalize(fixture.pending.current)); expect(result.before.core.activeEvent.instanceId).toBe(result.before.core.runId + ':shen_return');
@@ -104,12 +105,13 @@ test('later sword study commits ownership and payment together, retrying one int
   const result = await page.evaluate(async () => {
     const h = (globalThis as any).h, d = h.routes.driver('leave', 'talisman'); d.realm(); d.funds(80); d.go('sect');
     const repo = await h.FullSaveRepository.open('manual-atomic'), imported = await repo.importText(JSON.stringify(d.game), h.mutation());
-    const command = h.command(imported.state, { type: 'STUDY', manual: 'jinghong' }), before = await h.inspect('manual-atomic'), original = IDBObjectStore.prototype.put;
+    const started=await repo.startActivity({kind:'study',manual:'jinghong',maxCycles:1,stoneBudget:80,stoneReserve:0},h.milestoneMutation(await repo.loadActivitySnapshot())),command=h.milestoneTick({state:started.state,activity:started.activity}),before=await h.inspect('manual-atomic'),original=IDBObjectStore.prototype.put;
+    h.m04Now=started.activity.dueAt-1;const early=await h.attempt(()=>repo.settleActivity(command));if(early.code!=='ACTIVITY_NOT_DUE')throw Error('Study lost its original full period');h.m04Now=started.activity.dueAt;
     IDBObjectStore.prototype.put = function (value: any, key?: IDBValidKey) { if(this.name===h.FULL_RECEIPT_STORE) throw new DOMException('manual quota','QuotaExceededError'); return original.call(this,value,key!); };
     let failed;
-    try { failed = await h.attempt(() => repo.execute(command)); } finally { IDBObjectStore.prototype.put = original; }
-    const afterFailure = await h.inspect('manual-atomic'), first = await repo.execute(command), retry = await repo.execute(command);
-    const duplicate = await h.attempt(() => repo.execute(h.command(retry.state, { type:'STUDY',manual:'jinghong' }))); repo.close();
+    try { failed = await h.attempt(() => repo.settleActivity(command)); } finally { IDBObjectStore.prototype.put = original; }
+    const afterFailure = await h.inspect('manual-atomic'), first = await repo.settleActivity(command), retry = await repo.settleActivity(command);
+    const duplicate = await h.attempt(async () => repo.startActivity({kind:'study',manual:'jinghong',maxCycles:1,stoneBudget:80,stoneReserve:0},h.milestoneMutation(await repo.loadActivitySnapshot()))); repo.close();
     const reopened = await h.FullSaveRepository.open('manual-atomic'), loaded = await reopened.load(); reopened.close();
     return { before, afterFailure, failed, original: imported.state, first, retry, duplicate, loaded };
   });

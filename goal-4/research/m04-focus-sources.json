@@ -1,0 +1,35 @@
+{
+  "topic": "M04 gameplay completion and native dialog focus handoff",
+  "readAt": "2026-10-27T20:04:55.344753+00:00",
+  "role": "Primary technical references plus project-specific measured inference; not compatibility, performance, art or human acceptance.",
+  "sources": [
+    {
+      "title": "WHATWG HTML dialog closing algorithm",
+      "url": "https://html.spec.whatwg.org/multipage/interactive-elements.html#close-the-dialog",
+      "readSections": [
+        "dialog closing steps12-13",
+        "dialog initial focus discussion"
+      ],
+      "finding": "关闭步骤分别处理先前焦点的恢复和排队的close事件。应用在关闭/保存后自行安排的焦点交接需要核对上下文，不能把两者当成一个同步动作。",
+      "limit": "标准没有规定本游戏的life目标、活动身份、读秒或保存策略；这些由本项目合同和真实回归约束。"
+    },
+    {
+      "title": "MDN HTMLDialogElement close event",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close_event",
+      "finding": "close在dialog关闭时发出，不可取消且不冒泡；用实际close方法和捕获/直接监听观察，不能用隐藏open属性替代关闭。",
+      "limit": "没有据此运行跨浏览器或页面兼容测试。"
+    },
+    {
+      "title": "MDN HTMLElement focus",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus",
+      "finding": "focus指定后续键盘目标，默认行为可带来滚动；本项目沿用preventScroll和可见目标检查，并核对实际焦点及画面。",
+      "limit": "没有引入字体/分辨率矩阵或新的焦点框架。"
+    }
+  ],
+  "projectInference": [
+    "原生自动回退到currentContent，与玩家后来键盘/指针或新导航的选择分别处理；只在原本已受理活动的完整归属和非重放成果成立后交接。",
+    "原锚失效、目标life、实际焦点为当前内容时的例外沿用现有pointerdown/keydown/NAV失效，不放宽新的有效焦点。",
+    "同一可信原生事件的受控消费时序是故障复现接缝，不能命名为原生IDB事务失败，也不计入新的业务覆盖。",
+    "只读查看、参数草案、真实周期受理和保存后的成果保持分明；恢复入口的可见性沿用相邻完整试炼proof，真实REST后不再广告过期报告。"
+  ]
+}

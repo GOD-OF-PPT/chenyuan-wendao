@@ -1,3 +1,4 @@
+import {installRetirementDeliveryGate,armRetirementClose,armRetirementRead,releaseRetirementInOrder,cleanupRetirementGate} from './focus-delivery-support';
 import {test,expect,type Page,type Locator,type TestInfo} from '@playwright/test';
 import {newGame,advance,resolve} from '../../src/full/engine.ts';
 import {completeActivity} from '../../src/full/activity.ts';
@@ -92,11 +93,11 @@ async function running(page:Page,period:number){
   expect(a.cycleMs).toBe(period);expect(a.completedCycles).toBe(0);await expect(page.locator('[data-testid=training-activity][data-generation="'+a.generation+'"][data-running=true]')).toBeVisible();
   await expect(page.getByTestId('training-countdown')).toHaveText((period/1000).toFixed(1)+' 秒');return a;
 }
-async function cycle(page:Page,a:any,before:any,info:TestInfo,label:string){
+async function cycle(page:Page,a:any,before:any,info:TestInfo,label:string,afterSaved?:()=>Promise<void>){
   const accepted=await database(page),left=a.dueAt-await page.evaluate(()=>Date.now());expect(left).toBeGreaterThan(0);expect(left).toBeLessThanOrEqual(a.cycleMs);
   expect(accepted['full-receipts'].some((r:any)=>r.key===a.runId+':'+a.nextCommand.commandId)).toBe(false);
   await page.clock.fastForward(left-1);expect(await database(page)).toEqual(accepted);expect(await snapshot(page)).toEqual(before);
-  await page.clock.fastForward(1);await expect.poll(async()=>(await activity(page))?.completedCycles).toBe(1);await expect(page.getByTestId('save-status')).toHaveText('已保存');
+  await page.clock.fastForward(1);await expect.poll(async()=>(await activity(page))?.completedCycles).toBe(1);if(afterSaved)await afterSaved();await expect(page.getByTestId('save-status')).toHaveText('已保存');
   const expected=resolve(before,a.nextCommand),after=await snapshot(page),raw=await database(page),matches=raw['full-receipts'].filter((r:any)=>r.key===a.runId+':'+a.nextCommand.commandId);
   expect(after).toEqual(advance(before,a.nextCommand));expect(matches).toHaveLength(1);const receipt=matches[0].value;
   expect(receipt.command).toEqual(a.nextCommand);expect(receipt.result).toEqual(expected.result);expect(receipt.proof.activityBefore).toEqual(a);expect(receipt.proof.stateAfter).toEqual(expected.nextState);expect(receipt.proof.resolvedAt).toBeGreaterThanOrEqual(a.dueAt);
@@ -392,4 +393,17 @@ test('CHECK-K14 a real goal toggle delivered after typing preserves the exact pe
     expect(await database(page)).toEqual(raw);expect(await snapshot(page)).toEqual(before);
     await evidence(info,'goal-toggle-final-readonly',{preference,before,raw,current:await database(page)});
   }finally{if(!page.isClosed())await page.evaluate(()=>(window as any).__goalToggleRestore?.());}
+});
+
+for(const newInput of [false,true])test('M04-FOCUS trusted automatic return '+(newInput?'preserves a later real Tab target':'hands the saved retirement to factual life'),async({page},info)=>{
+ await installRetirementDeliveryGate(page);const before=await load(page,driver().game),raw=await database(page);
+ try{
+  await keyboard(page,page.getByTestId('game-settings'));await keyboard(page,page.getByTestId('settings-retire'));const dialog=page.getByTestId('life-confirmation');await expect(dialog).toBeVisible();expect(await database(page)).toEqual(raw);
+  await armRetirementClose(page);const a=await begin(page,'life-confirm-end',12000);expect(a.plan.action).toEqual({type:'RETIRE'});await armRetirementRead(page);let delivery:any;
+  const saved=await cycle(page,a,before,info,'trusted-retirement-return',async()=>{delivery=await releaseRetirementInOrder(page,newInput);await evidence(info,'trusted-native-complete-and-close-consumption',delivery.evidence);});
+  expect(saved.after.status).toBe('ended');expect(saved.after.ending).toBe('retired');expect(saved.after.core.runId).toBe(before.core.runId);
+  if(newInput){expect(await delivery.selected.evaluate((node:any)=>node===document.activeElement)).toBe(true);await expect(page.getByTestId('life-title')).toHaveCount(0);}
+  else await expect(page.getByTestId('life-title')).toBeFocused();
+  expect(await database(page)).toEqual(saved.raw);await page.screenshot({path:info.outputPath(newInput?'retirement-preserves-real-tab.png':'retirement-auto-return-life.png')});
+ }finally{await cleanupRetirementGate(page);}
 });

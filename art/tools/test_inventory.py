@@ -1959,6 +1959,28 @@ class CultivationNotesTests(unittest.TestCase):
    self.changed(self.source.replace(token,''))
    with self.subTest(token=token),self.assertRaisesRegex(AssertionError,'ART15 original focus'):self.check()
 
+ def _m04_recovery_button(self,stage):
+  import re
+  host=re.search(r'<CultivationNotes\b[^>]*data-notes-stage="'+stage+r'"[^>]*>(.*?)</CultivationNotes>',self.app,re.S)
+  self.assertIsNotNone(host)
+  nodes=re.findall(r'<button\b[^>]*data-testid="hub-trial-result"[^>]*>查看渡劫结果与恢复</button>',host[1])
+  self.assertEqual(len(nodes),1);self.assertEqual(self.app.count(nodes[0]),1)
+  return nodes[0]
+ def test_m04_recovery_entry_cannot_leave_either_actual_book_parent(self):
+  for stage in ['gate','practice']:
+   node=self._m04_recovery_button(stage);self.write('web/src/App.vue',self.app.replace(node,'')+node)
+   with self.subTest(stage=stage),self.assertRaisesRegex(AssertionError,'ART15 original readonly choices'):self.check()
+ def test_m04_recovery_entry_requires_actual_trial_recovery(self):
+  for stage in ['gate','practice']:
+   node=self._m04_recovery_button(stage);self.assertIn('v-if="store.trialRecovery"',node)
+   self.write('web/src/App.vue',self.app.replace(node,node.replace('v-if="store.trialRecovery"','v-if="store.activity"')))
+   with self.subTest(stage=stage),self.assertRaisesRegex(AssertionError,'ART15 original view eligibility'):self.check()
+ def test_m04_recovery_entry_cannot_capture_a_hidden_menu_event_opener(self):
+  for stage in ['gate','practice']:
+   node=self._m04_recovery_button(stage);self.assertIn("openHub('trial')",node)
+   self.write('web/src/App.vue',self.app.replace(node,node.replace("openHub('trial')","openHub('trial',$event)")))
+   with self.subTest(stage=stage),self.assertRaisesRegex(AssertionError,'ART15 original view route'):self.check()
+
 class ART16SchoolInventoryTests(unittest.TestCase):
  def setUp(self):
   from art16_inventory import BASE,REFS,NATIVE,PRODUCER,FACTS,LEDGER,OLD,IDS

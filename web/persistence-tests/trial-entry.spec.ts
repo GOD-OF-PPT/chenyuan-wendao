@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { setupPersistence } from './support';
+import {setupCurrentRecovery} from './idle-recovery-support';
 import { detailedTrialScenario } from '../../tests/trial-preparation-route.mjs';
 const scenario=detailedTrialScenario();
-test.beforeEach(async({page})=>setupPersistence(page));
+test.beforeEach(async({page})=>setupCurrentRecovery(page));
+test.afterEach(async({page})=>{if(!page.isClosed())await page.evaluate(()=>{const h=(window as any).h;if(h?.m04RealNow)Date.now=h.m04RealNow;});});
 async function ready(page:any,name:string){
  return page.evaluate(async({name,prefix,actions}:any)=>{
   const h=(globalThis as any).h,repo=await h.FullSaveRepository.open(name);let state=(await repo.importText(JSON.stringify(prefix),h.mutation())).state;
@@ -66,9 +67,9 @@ test('two real entries and complete restores never accumulate or partially retur
 });
 
 test('entry preview identities lose races to another action or life replacement without consuming a seal',async({page})=>{
- await ready(page,'trial-race');const result=await page.evaluate(async()=>{
-  const h=(globalThis as any).h,a=await h.FullSaveRepository.open('trial-race'),b=await h.FullSaveRepository.open('trial-race'),state=await a.load(),review=h.command(state,{type:'START_TRIAL'});
-  const changed=await b.execute(h.command(state,{type:'TRAVEL',location:'cave'})),before=await h.inspect('trial-race'),stale=await h.attempt(()=>a.execute(review)),after=await h.inspect('trial-race');
-  const next=await b.create('新人生',h.mutation(changed.state)),beforeNew=await h.inspect('trial-race'),foreign=await h.attempt(()=>a.execute(review)),afterNew=await h.inspect('trial-race');a.close();b.close();return{before,stale,after,next,beforeNew,foreign,afterNew};
+ const result=await page.evaluate(async()=>{
+  const h=(globalThis as any).h,{repo:a}=await h.m04GoodTrial('trial-race'),b=await h.FullSaveRepository.open('trial-race'),state=await a.load(),review=h.milestoneMutation(await a.loadActivitySnapshot()),plan=h.milestonePlan({type:'START_TRIAL'});
+  const changed=await h.m04Action(b,{type:'TRAVEL',location:'cave'}),before=await h.inspect('trial-race'),stale=await h.attempt(()=>a.startActivity(plan,review)),after=await h.inspect('trial-race');
+  const next=await b.create('新人生',h.mutation(changed.state)),beforeNew=await h.inspect('trial-race'),foreign=await h.attempt(()=>a.startActivity(plan,review)),afterNew=await h.inspect('trial-race');a.close();b.close();return{before,stale,after,next,beforeNew,foreign,afterNew};
  });expect(result.stale.code).toBe('STALE_REVISION');expect(result.after).toEqual(result.before);expect(result.foreign.code).toBe('RUN_MISMATCH');expect(result.afterNew).toEqual(result.beforeNew);expect(result.next.state.core.inventory.ascension_seal).toBe(0);
 });

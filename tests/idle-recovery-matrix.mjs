@@ -1,0 +1,1673 @@
+// Reviewed per-leaf migration and complete source inventories; these are not execution evidence.
+export const idleRecoveryMatrix = {
+  "format": "chenyuan-idle-recovery-matrix",
+  "version": 1,
+  "profile": "idle-current-desktop-v1",
+  "legacySignature": "d542f0aad7132efb6985239d3ab590dd4a99347211cf38fa1c50aa17a91dd6ff",
+  "scope": {
+    "browser": "chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "fontScale": 1,
+    "pageCompatibilityAccepted": false
+  },
+  "rows": [
+    {
+      "id": "FR01",
+      "requirement": "same-ID retries, altered payloads and real double clicks never duplicate cost or rewards",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "two connections commit one copy of the same command despite reordered fields"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N13 two real connections canonicalize the same tick and fence competing finite choices without duplicate rewards"
+            }
+          ],
+          "assertion": "same-ID retries, altered payloads and real double clicks never duplicate cost or rewards",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "new-run and import retries are idempotent and altered payloads reject"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "recovery.spec.ts",
+              "title": "new-run and import retries are idempotent and altered payloads reject"
+            }
+          ],
+          "assertion": "same-ID retries, altered payloads and real double clicks never duplicate cost or rewards",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "game.spec.ts",
+            "title": "double click only commits once while busy"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-choices.spec.ts",
+              "title": "M04-U8 real duplicate confirmation accepts one finite breakthrough and charges one actual pill only at its full deadline"
+            }
+          ],
+          "assertion": "same-ID retries, altered payloads and real double clicks never duplicate cost or rewards",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR02",
+      "requirement": "committed results lost before delivery can be reconciled without replaying mutations",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "fault-matrix.spec.ts",
+            "title": "postcommit breakthrough delivery loss retries the original receipt without duplicate cost or rewinding newer progress"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "fault-matrix.spec.ts",
+              "title": "postcommit breakthrough delivery loss retries the original receipt without duplicate cost or rewinding newer progress"
+            }
+          ],
+          "assertion": "committed results lost before delivery can be reconciled without replaying mutations",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "fault-matrix.spec.ts",
+            "title": "postcommit create delivery loss retains one replacement identity and a retry never repeats its control write"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "fault-matrix.spec.ts",
+              "title": "postcommit create delivery loss retains one replacement identity and a retry never repeats its control write"
+            }
+          ],
+          "assertion": "committed results lost before delivery can be reconciled without replaying mutations",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "fault-matrix.spec.ts",
+            "title": "postcommit import delivery loss retains one replacement identity and a retry never repeats its control write"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "fault-matrix.spec.ts",
+              "title": "postcommit import delivery loss retains one replacement identity and a retry never repeats its control write"
+            }
+          ],
+          "assertion": "committed results lost before delivery can be reconciled without replaying mutations",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "fault-matrix.spec.ts",
+            "title": "postcommit restore delivery loss retains one replacement identity and a retry never repeats its control write"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "fault-matrix.spec.ts",
+              "title": "postcommit restore delivery loss retains one replacement identity and a retry never repeats its control write"
+            }
+          ],
+          "assertion": "committed results lost before delivery can be reconciled without replaying mutations",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "fault-matrix.spec.ts",
+            "title": "postcommit ending delivery loss reloads the actual sealed life and never offers a second ending reward"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "fault-matrix.spec.ts",
+              "title": "postcommit ending delivery loss reloads the actual sealed life and never offers a second ending reward"
+            }
+          ],
+          "assertion": "committed results lost before delivery can be reconciled without replaying mutations",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "fault-matrix.spec.ts",
+            "title": "an uncertain committed command cannot retry over a replacement run from another connection"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "fault-matrix.spec.ts",
+              "title": "an uncertain committed command cannot retry over a replacement run from another connection"
+            }
+          ],
+          "assertion": "committed results lost before delivery can be reconciled without replaying mutations",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR03",
+      "requirement": "replacement CREATE/IMPORT failure rolls every record back and a stable retry replaces once",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "fault-matrix.spec.ts",
+            "title": "create replacement quota retains every old record and a stable retry replaces exactly once"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "fault-matrix.spec.ts",
+              "title": "create replacement quota retains every old record and a stable retry replaces exactly once"
+            }
+          ],
+          "assertion": "replacement CREATE/IMPORT failure rolls every record back and a stable retry replaces once",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "fault-matrix.spec.ts",
+            "title": "create replacement abort retains every old record and a stable retry replaces exactly once"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "fault-matrix.spec.ts",
+              "title": "create replacement abort retains every old record and a stable retry replaces exactly once"
+            }
+          ],
+          "assertion": "replacement CREATE/IMPORT failure rolls every record back and a stable retry replaces once",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "fault-matrix.spec.ts",
+            "title": "import replacement quota retains every old record and a stable retry replaces exactly once"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "fault-matrix.spec.ts",
+              "title": "import replacement quota retains every old record and a stable retry replaces exactly once"
+            }
+          ],
+          "assertion": "replacement CREATE/IMPORT failure rolls every record back and a stable retry replaces once",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "fault-matrix.spec.ts",
+            "title": "import replacement abort retains every old record and a stable retry replaces exactly once"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "fault-matrix.spec.ts",
+              "title": "import replacement abort retains every old record and a stable retry replaces exactly once"
+            }
+          ],
+          "assertion": "replacement CREATE/IMPORT failure rolls every record back and a stable retry replaces once",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR04",
+      "requirement": "stale revisions and replaced run identities cannot overwrite newer progress",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "competing actions and competing new runs reject stale intents rather than overwrite"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N13 two real connections canonicalize the same tick and fence competing finite choices without duplicate rewards"
+            }
+          ],
+          "assertion": "stale revisions and replaced run identities cannot overwrite newer progress",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "stale/cross-run restore and commands cannot overwrite another tab progress"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N5 a fixed full restore rejects another page real action and its replacement life while an old activity cannot settle after restoration"
+            }
+          ],
+          "assertion": "stale revisions and replaced run identities cannot overwrite newer progress",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "game.spec.ts",
+            "title": "stale tab cannot overwrite a newer state"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-cultivation.spec.ts",
+              "title": "an explicit second-page continuation fences the original page and does not double reward"
+            },
+            {
+              "suite": "ui",
+              "file": "idle-recovery-flow.spec.ts",
+              "title": "M04-U3 an open full restore never rewinds another page committed turn or its explicitly replaced life"
+            }
+          ],
+          "assertion": "stale revisions and replaced run identities cannot overwrite newer progress",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "import-reading.spec.ts",
+            "title": "a late file read cannot replace a newer action on the same page"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-controls.spec.ts",
+              "title": "M03-C11 a same-run committed action invalidates the earlier file revision without a new import decision or receipt"
+            }
+          ],
+          "assertion": "stale revisions and replaced run identities cannot overwrite newer progress",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "import-reading.spec.ts",
+            "title": "a late file read cannot replace a newer restart on the same page"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-controls.spec.ts",
+              "title": "M03-C12 an explicitly confirmed restart invalidates a prior file read and preserves the new native control receipt"
+            }
+          ],
+          "assertion": "stale revisions and replaced run identities cannot overwrite newer progress",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "import-reading.spec.ts",
+            "title": "a later selected file owns the import even when the first file finishes last"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-controls.spec.ts",
+              "title": "M03-C9 unreadable File text stays local and a later selected confirmed file owns import when an older read finishes last"
+            }
+          ],
+          "assertion": "stale revisions and replaced run identities cannot overwrite newer progress",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "import-reading.spec.ts",
+            "title": "a file selected on an empty welcome screen cannot overwrite a subsequently created Game"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-controls.spec.ts",
+              "title": "M03-C10 an earlier welcome File text cannot overwrite a subsequently confirmed new Game or create an unauthorized import receipt"
+            }
+          ],
+          "assertion": "stale revisions and replaced run identities cannot overwrite newer progress",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "import-reading.spec.ts",
+            "title": "a delayed typed demo import cannot undo a newer scoped node reset or create normal data"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-controls.spec.ts",
+              "title": "M03-C13 a delayed typed demo file cannot undo a confirmed scoped node reset or create normal Game data"
+            }
+          ],
+          "assertion": "stale revisions and replaced run identities cannot overwrite newer progress",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR05",
+      "requirement": "malformed action and control receipts are rejected without rerunning an intent",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "corrupt receipts including null and stored undefined never become new executable intentions"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "recovery.spec.ts",
+              "title": "corrupt receipts including null and stored undefined never become new executable intentions"
+            }
+          ],
+          "assertion": "malformed action and control receipts are rejected without rerunning an intent",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "bad control receipts reject without rerunning a new-game operation"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "recovery.spec.ts",
+              "title": "bad control receipts reject without rerunning a new-game operation"
+            }
+          ],
+          "assertion": "malformed action and control receipts are rejected without rerunning an intent",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR06",
+      "requirement": "put success followed by abort is not transaction success",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "repository.spec.ts",
+            "title": "transaction abort after put success cannot publish a successful action"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "milestone.spec.ts",
+              "title": "checkpoint, owner, activity and receipt faults including put-success abort roll every record back and retry one original command"
+            }
+          ],
+          "assertion": "put success followed by abort is not transaction success",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "trial-entry.spec.ts",
+            "title": "put success is insufficient: transaction abort leaves all entry records untouched"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once"
+            },
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once"
+            },
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once"
+            }
+          ],
+          "assertion": "put success followed by abort is not transaction success",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "game.spec.ts",
+            "title": "transaction abort does not publish or save success"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-choices.spec.ts",
+              "title": "M04-U10 put success followed by a real native abort publishes no breakthrough success and retries only its original full-period command"
+            }
+          ],
+          "assertion": "put success followed by abort is not transaction success",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR07",
+      "requirement": "receipt/state/checkpoint quota errors preserve old records and never publish saved success",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "repository.spec.ts",
+            "title": "receipt write failure rolls back breakthrough consumption, state and checkpoint together"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "milestone.spec.ts",
+              "title": "checkpoint, owner, activity and receipt faults including put-success abort roll every record back and retry one original command"
+            }
+          ],
+          "assertion": "receipt/state/checkpoint quota errors preserve old records and never publish saved success",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "trial-entry.spec.ts",
+            "title": "checkpoint, owner and receipt write failures roll the entire entry back without replacing the prior good checkpoint"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once"
+            },
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once"
+            },
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once"
+            }
+          ],
+          "assertion": "receipt/state/checkpoint quota errors preserve old records and never publish saved success",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "cutover.spec.ts",
+            "title": "failed write remains visibly unsaved after reread and original intent retry commits once"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-local-recovery.spec.ts",
+              "title": "M03-L2 Game quota records a safe failure and the original cycle command retry creates exactly one action and receipt"
+            }
+          ],
+          "assertion": "receipt/state/checkpoint quota errors preserve old records and never publish saved success",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR08",
+      "requirement": "bad JSON, negative resources, unknown IDs and future schema/content cannot replace a good save",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "repository.spec.ts",
+            "title": "bad imports and stale replacement tokens preserve current state and receipt records"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "repository.spec.ts",
+              "title": "bad imports and stale replacement tokens preserve current state and receipt records"
+            }
+          ],
+          "assertion": "bad JSON, negative resources, unknown IDs and future schema/content cannot replace a good save",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "fault-matrix.spec.ts",
+            "title": "negative resources, unknown IDs and future schemas leave every good record and the active import UI intact"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "fault-matrix.spec.ts",
+              "title": "negative resources, unknown IDs and future schemas leave every good record and the active import UI intact"
+            }
+          ],
+          "assertion": "bad JSON, negative resources, unknown IDs and future schema/content cannot replace a good save",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "game.spec.ts",
+            "title": "bad import never overwrites the current state"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-choices.spec.ts",
+              "title": "M04-U11 malformed JSON stays in the actual import surface and cannot overwrite any complete good Game record"
+            }
+          ],
+          "assertion": "bad JSON, negative resources, unknown IDs and future schema/content cannot replace a good save",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "import-reading.spec.ts",
+            "title": "unreadable file errors stay in the import UI and preserve the saved Game"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-controls.spec.ts",
+              "title": "M03-C9 unreadable File text stays local and a later selected confirmed file owns import when an older read finishes last"
+            }
+          ],
+          "assertion": "bad JSON, negative resources, unknown IDs and future schema/content cannot replace a good save",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "pending-inspection.spec.ts",
+            "title": "imported name and journal markup remain inert text with no script or resource execution"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-boundaries.spec.ts",
+              "title": "M03-B4 legal imported name and journal markup stay literal readable text without script or external requests"
+            }
+          ],
+          "assertion": "bad JSON, negative resources, unknown IDs and future schema/content cannot replace a good save",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR09",
+      "requirement": "known M1/Adventure/full migrations preserve lawful current, previous and checkpoint facts",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "repository.spec.ts",
+            "title": "plain M1 state migrates without inventing a school or losing the opening choice"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "repository.spec.ts",
+              "title": "plain M1 state migrates without inventing a school or losing the opening choice"
+            }
+          ],
+          "assertion": "known M1/Adventure/full migrations preserve lawful current, previous and checkpoint facts",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "repository.spec.ts",
+            "title": "actual legacy repository releases its connection on version change and cannot overwrite the migrated run"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "repository.spec.ts",
+              "title": "actual legacy repository releases its connection on version change and cannot overwrite the migrated run"
+            }
+          ],
+          "assertion": "known M1/Adventure/full migrations preserve lawful current, previous and checkpoint facts",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "repository.spec.ts",
+            "title": "existing full v1 content, previous snapshot and checkpoint migrate atomically with raw backups"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "repository.spec.ts",
+              "title": "existing full v1 content, previous snapshot and checkpoint migrate atomically with raw backups"
+            }
+          ],
+          "assertion": "known M1/Adventure/full migrations preserve lawful current, previous and checkpoint facts",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "cutover.spec.ts",
+            "title": "production page migrates a real legacy opening save without resetting progress"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-local-recovery.spec.ts",
+              "title": "M03-L7 real legacy opening startup migrates the entire lawful state while preserving native originals and exact migration identity"
+            }
+          ],
+          "assertion": "known M1/Adventure/full migrations preserve lawful current, previous and checkpoint facts",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "cutover.spec.ts",
+            "title": "production page migrates a real legacy battle save without resetting progress"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-local-recovery.spec.ts",
+              "title": "M03-L8 real legacy qi startup migrates the entire lawful state while preserving native originals and exact migration identity"
+            }
+          ],
+          "assertion": "known M1/Adventure/full migrations preserve lawful current, previous and checkpoint facts",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "cutover.spec.ts",
+            "title": "production page migrates a real legacy foundation save without resetting progress"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-local-recovery.spec.ts",
+              "title": "M03-L9 real legacy battle startup migrates the entire lawful state while preserving native originals and exact migration identity"
+            }
+          ],
+          "assertion": "known M1/Adventure/full migrations preserve lawful current, previous and checkpoint facts",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR10",
+      "requirement": "upgrade failure and blocked/old clients never adopt or overwrite the wrong authority",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "repository.spec.ts",
+            "title": "quota failure during upgrade rolls back schema/data and a later retry migrates once"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "repository.spec.ts",
+              "title": "quota failure during upgrade rolls back schema/data and a later retry migrates once"
+            }
+          ],
+          "assertion": "upgrade failure and blocked/old clients never adopt or overwrite the wrong authority",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "repository.spec.ts",
+            "title": "a blocked open that already rejected never migrates later after the blocker closes"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "repository.spec.ts",
+              "title": "a blocked open that already rejected never migrates later after the blocker closes"
+            }
+          ],
+          "assertion": "upgrade failure and blocked/old clients never adopt or overwrite the wrong authority",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "v2 to v3 upgrades the authoritative full state instead of replaying preserved v1 progress"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "recovery.spec.ts",
+              "title": "v2 to v3 upgrades the authoritative full state instead of replaying preserved v1 progress"
+            }
+          ],
+          "assertion": "upgrade failure and blocked/old clients never adopt or overwrite the wrong authority",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "failed v2 scope migration leaves database version and all original records at v2"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "recovery.spec.ts",
+              "title": "failed v2 scope migration leaves database version and all original records at v2"
+            }
+          ],
+          "assertion": "upgrade failure and blocked/old clients never adopt or overwrite the wrong authority",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "cutover.spec.ts",
+            "title": "live database version change disables stale writes and provides a reload path"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-local-recovery.spec.ts",
+              "title": "M03-L10 an actual native versionchange closes the stale connection and explicit reread preserves DB9 without silently retrying the failed arrangement"
+            }
+          ],
+          "assertion": "upgrade failure and blocked/old clients never adopt or overwrite the wrong authority",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR11",
+      "requirement": "non-temple events and unfinished battles import and reload their real context",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "repository.spec.ts",
+            "title": "imports reidentify the actual NPC event and preserve an unfinished battle"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "repository.spec.ts",
+              "title": "imports reidentify the actual NPC event and preserve an unfinished battle"
+            }
+          ],
+          "assertion": "non-temple events and unfinished battles import and reload their real context",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "cutover.spec.ts",
+            "title": "imported non-temple event refreshes and resolves through its real option"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-context.spec.ts",
+              "title": "M04-U12 pending event refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle"
+            }
+          ],
+          "assertion": "non-temple events and unfinished battles import and reload their real context",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "game.spec.ts",
+            "title": "opening and battle survive reload without reroll"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-context.spec.ts",
+              "title": "M04-U12 pending opening refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle"
+            },
+            {
+              "suite": "ui",
+              "file": "idle-recovery-context.spec.ts",
+              "title": "M04-U12 pending battle refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle"
+            }
+          ],
+          "assertion": "non-temple events and unfinished battles import and reload their real context",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "pending-inspection.spec.ts",
+            "title": "a pending opening permits readonly inventory and relationships then resumes the exact state"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-context.spec.ts",
+              "title": "M04-U12 pending opening refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle"
+            }
+          ],
+          "assertion": "non-temple events and unfinished battles import and reload their real context",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "pending-inspection.spec.ts",
+            "title": "a pending event permits readonly inventory and relationships then resumes the exact state"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-context.spec.ts",
+              "title": "M04-U12 pending event refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle"
+            }
+          ],
+          "assertion": "non-temple events and unfinished battles import and reload their real context",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "pending-inspection.spec.ts",
+            "title": "a pending battle permits readonly inventory and relationships then resumes the exact state"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-context.spec.ts",
+              "title": "M04-U12 pending battle refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle"
+            }
+          ],
+          "assertion": "non-temple events and unfinished battles import and reload their real context",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "pending-inspection.spec.ts",
+            "title": "starting an event from relationships exposes its choices and keeps them available while reading people"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-milestones.spec.ts",
+              "title": "visiting opens only the selected current-place story and a separately selected response saves once"
+            }
+          ],
+          "assertion": "non-temple events and unfinished battles import and reload their real context",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR12",
+      "requirement": "question, gate transitions and committed rounds reopen without rerolls or duplicate settlement",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "trial-journey.spec.ts",
+            "title": "both schools preserve the whole question, every battle and three gate transitions across reopening and stable replays"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N1 both schools reopen the real online question every round and each gate and replay only the original cycle"
+            }
+          ],
+          "assertion": "question, gate transitions and committed rounds reopen without rerolls or duplicate settlement; two normal empty lives now reload every actual saved round, separately from the full24 normal route set.",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "trial-journey.spec.ts",
+            "title": "question and each gate roll back quota and put-success abort without changing progress, receipt or preparation"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 quota preserves the question and every gate full preparation until the original complete cycle retries once"
+            },
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 abort preserves the question and every gate full preparation until the original complete cycle retries once"
+            }
+          ],
+          "assertion": "question, gate transitions and committed rounds reopen without rerolls or duplicate settlement; two normal empty lives now reload every actual saved round, separately from the full24 normal route set.",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "trial-journey.spec.ts",
+            "title": "sword/accept: normal new game crosses all gates with exact resources and resumes every stage and round"
+          },
+          "current": [
+            {
+              "suite": "journey",
+              "file": "idle-trial-reopen.spec.ts",
+              "title": "current normal sword reopens its actual question and every saved battle round without reroll or an automatic next gate"
+            }
+          ],
+          "assertion": "question, gate transitions and committed rounds reopen without rerolls or duplicate settlement; two normal empty lives now reload every actual saved round, separately from the full24 normal route set.",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "trial-journey.spec.ts",
+            "title": "talisman/release: normal new game crosses all gates with exact resources and resumes every stage and round"
+          },
+          "current": [
+            {
+              "suite": "journey",
+              "file": "idle-trial-reopen.spec.ts",
+              "title": "current normal talisman reopens its actual question and every saved battle round without reroll or an automatic next gate"
+            }
+          ],
+          "assertion": "question, gate transitions and committed rounds reopen without rerolls or duplicate settlement; two normal empty lives now reload every actual saved round, separately from the full24 normal route set.",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR13",
+      "requirement": "ordinary and twice-failed trial checkpoints restore complete budgets without accumulating items",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "ordinary checkpoint stays reusable across restores and rewinds the complete budget"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N4 ordinary restore quota abort and lost delivery retain every store and the exact original receipt never rewinds later earnings"
+            }
+          ],
+          "assertion": "ordinary and twice-failed trial checkpoints restore complete budgets without accumulating items",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "trial-journey.spec.ts",
+            "title": "two real lethal thunder failures can reopen, explain consumed items and restore the same full preparation"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N3 two actual lethal failures in each school preserve paid consumption and restore the same complete preparation twice"
+            }
+          ],
+          "assertion": "ordinary and twice-failed trial checkpoints restore complete budgets without accumulating items",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "trial-journey.spec.ts",
+            "title": "two actual lethal failures retain exact consumption across reload and restore the whole preparation on mobile"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-flow.spec.ts",
+              "title": "M04-U1 sword twice experiences lethal thunder then reads real costs and restores complete preparation after reload"
+            },
+            {
+              "suite": "ui",
+              "file": "idle-recovery-flow.spec.ts",
+              "title": "M04-U1 talisman twice experiences lethal thunder then reads real costs and restores complete preparation after reload"
+            }
+          ],
+          "assertion": "ordinary and twice-failed trial checkpoints restore complete budgets without accumulating items",
+          "compatibilityDeferred": "M06 retains the original mobile, multi-viewport and text-scale obligation; this evidence covers only fixed Chromium1440x900/font1."
+        }
+      ]
+    },
+    {
+      "id": "FR14",
+      "requirement": "missing, foreign or malformed checkpoint purpose/version/ownership is never fabricated",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "bad checkpoint purpose, version or ownership rejects without changing any good record"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N6 missing foreign purpose and future-version checkpoints cannot replace any real current or archived record"
+            }
+          ],
+          "assertion": "missing, foreign or malformed checkpoint purpose/version/ownership is never fabricated",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "repository.spec.ts",
+            "title": "an orphaned full checkpoint or previous snapshot is never mistaken for a new empty run"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "repository.spec.ts",
+              "title": "an orphaned full checkpoint or previous snapshot is never mistaken for a new empty run"
+            }
+          ],
+          "assertion": "missing, foreign or malformed checkpoint purpose/version/ownership is never fabricated",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "a foreign checkpoint without scope or migration proof is not adopted during reopening"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "recovery.spec.ts",
+              "title": "a foreign checkpoint without scope or migration proof is not adopted during reopening"
+            }
+          ],
+          "assertion": "missing, foreign or malformed checkpoint purpose/version/ownership is never fabricated",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "trial-journey.spec.ts",
+            "title": "an imported battle resumes its actual gate, then withdrawal has no invented cumulative consumption or checkpoint"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-flow.spec.ts",
+              "title": "M04-U4 imported mid-trial retreat shows unknown cumulative cost and a legal recovery route without fabricating a checkpoint"
+            }
+          ],
+          "assertion": "missing, foreign or malformed checkpoint purpose/version/ownership is never fabricated",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR15",
+      "requirement": "restore failures/races and cancelled retries cannot partially rewind or cross action ownership",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "restore abort and quota failures retain state, previous, checkpoint, ownership and receipts"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N4 ordinary restore quota abort and lost delivery retain every store and the exact original receipt never rewinds later earnings"
+            }
+          ],
+          "assertion": "restore failures/races and cancelled retries cannot partially rewind or cross action ownership",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "a restore racing a live action commits exactly one intent across connections"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N14 a complete restore racing a due real turn commits exactly one full intent across connections"
+            }
+          ],
+          "assertion": "restore failures/races and cancelled retries cannot partially rewind or cross action ownership",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "trial-journey.spec.ts",
+            "title": "failed complete restore can be cancelled or retried without partial state or a second restore"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-flow.spec.ts",
+              "title": "M04-U2 quota complete restore can cancel its failed intent then retry one fresh original confirmation without a partial rewind"
+            },
+            {
+              "suite": "ui",
+              "file": "idle-recovery-flow.spec.ts",
+              "title": "M04-U2 abort complete restore can cancel its failed intent then retry one fresh original confirmation without a partial rewind"
+            }
+          ],
+          "assertion": "restore failures/races and cancelled retries cannot partially rewind or cross action ownership",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "trial-journey.spec.ts",
+            "title": "a fixed restore cannot rewind another tab turn or its replacement life"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-flow.spec.ts",
+              "title": "M04-U3 an open full restore never rewinds another page committed turn or its explicitly replaced life"
+            }
+          ],
+          "assertion": "restore failures/races and cancelled retries cannot partially rewind or cross action ownership",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR16",
+      "requirement": "lifespan and both ending confirmations settle once and preserve cancellation/restore boundaries",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "life-record.spec.ts",
+            "title": "actual last-month progress ends once, abort rolls back, and two restores recover the complete real preparation"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "idle-recovery-lifespan.spec.ts",
+              "title": "M04-N9 a real final-month cycle aborts atomically and two actual lifespan endings restore the complete ordinary preparation without accumulating goods"
+            }
+          ],
+          "assertion": "lifespan and both ending confirmations settle once and preserve cancellation/restore boundaries; own unaccepted START cancellation and accepted full twelve-second cycle retry are separate identities.",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "ascension.spec.ts",
+            "title": "transmit: failed closing keeps the completed gates and cancellation discards only its own retry"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-choices.spec.ts",
+              "title": "M04-U6 transmit cancels only its unaccepted ending intent while a failed accepted closing cycle retains its original twelve-second retry"
+            }
+          ],
+          "assertion": "lifespan and both ending confirmations settle once and preserve cancellation/restore boundaries; own unaccepted START cancellation and accepted full twelve-second cycle retry are separate identities.",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "ascension.spec.ts",
+            "title": "depart: failed closing keeps the completed gates and cancellation discards only its own retry"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-choices.spec.ts",
+              "title": "M04-U6 depart cancels only its unaccepted ending intent while a failed accepted closing cycle retains its original twelve-second retry"
+            }
+          ],
+          "assertion": "lifespan and both ending confirmations settle once and preserve cancellation/restore boundaries; own unaccepted START cancellation and accepted full twelve-second cycle retry are separate identities.",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "ascension.spec.ts",
+            "title": "two live ending reviews cannot choose twice or end a replacement life"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-choices.spec.ts",
+              "title": "M04-U9 two explicit ending reviews cannot seal twice or end the other page replacement life"
+            }
+          ],
+          "assertion": "lifespan and both ending confirmations settle once and preserve cancellation/restore boundaries; own unaccepted START cancellation and accepted full twelve-second cycle retry are separate identities.",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR17",
+      "requirement": "denied/future storage disables unsafe writes and raw backup never creates or migrates missing data",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "invalid writes reject through promises and storage denial never falls back to memory"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "recovery.spec.ts",
+              "title": "invalid writes reject through promises and storage denial never falls back to memory"
+            }
+          ],
+          "assertion": "denied/future storage disables unsafe writes and raw backup never creates or migrates missing data",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "recovery.spec.ts",
+            "title": "raw backup reads failed and future databases without migration, and missing databases stay missing"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "recovery.spec.ts",
+              "title": "raw backup reads failed and future databases without migration, and missing databases stay missing"
+            }
+          ],
+          "assertion": "denied/future storage disables unsafe writes and raw backup never creates or migrates missing data",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "cutover.spec.ts",
+            "title": "unreadable future database disables new-game writes but offers a readonly original backup"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-boundaries.spec.ts",
+              "title": "M03-B7 a future primary database disables new Game writes and exports only its unchanged raw original without downgrading"
+            }
+          ],
+          "assertion": "denied/future storage disables unsafe writes and raw backup never creates or migrates missing data",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "local-experience.spec.ts",
+            "title": "main save-open errors are recorded with a safe code while excluding native error text"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-local-recovery.spec.ts",
+              "title": "M03-L5 main open denial is a safe recorded code and never turns unreadable progress into a usable empty save"
+            }
+          ],
+          "assertion": "denied/future storage disables unsafe writes and raw backup never creates or migrates missing data",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR18",
+      "requirement": "export/site-data-clear/import restores every Game field with fresh identity and honest missing checkpoint",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "site-recovery.spec.ts",
+            "title": "export then clear all owned site data and import restores the complete Game without inventing a checkpoint"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-flow.spec.ts",
+              "title": "M04-U5 a normally earned nonzero victory exports clears only its isolated site and imports every Game field with a new identity and honest missing checkpoint"
+            }
+          ],
+          "assertion": "export/site-data-clear/import restores every Game field with fresh identity and honest missing checkpoint",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR19",
+      "requirement": "local records/settings failure and clear/paused epochs cannot corrupt or relabel Game success",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "local-experience.spec.ts",
+            "title": "clear rotates the capture epoch and an old retry cannot erase or re-add newer records"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "local-experience.spec.ts",
+              "title": "clear rotates the capture epoch and an old retry cannot erase or re-add newer records"
+            }
+          ],
+          "assertion": "local records/settings failure and clear/paused epochs cannot corrupt or relabel Game success",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "local-experience.spec.ts",
+            "title": "a delayed export cannot republish a snapshot cleared after its read or download after a foreign clear"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "local-experience.spec.ts",
+              "title": "a delayed export cannot republish a snapshot cleared after its read or download after a foreign clear"
+            }
+          ],
+          "assertion": "local records/settings failure and clear/paused epochs cannot corrupt or relabel Game success",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "persistence",
+            "file": "local-experience.spec.ts",
+            "title": "observer exceptions and mutable observer copies cannot change a committed Game or saved status"
+          },
+          "current": [
+            {
+              "suite": "persistence",
+              "file": "local-experience.spec.ts",
+              "title": "observer exceptions and mutable observer copies cannot change a committed Game or saved status"
+            }
+          ],
+          "assertion": "local records/settings failure and clear/paused epochs cannot corrupt or relabel Game success",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "local-experience.spec.ts",
+            "title": "record quota failure keeps the real Game committed and offers a truthful memory-only export"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-local-recovery.spec.ts",
+              "title": "M03-L1 local quota leaves the actual committed Game intact and exports only the failed new observation from memory"
+            },
+            {
+              "suite": "ui",
+              "file": "matrix-ui-local-recovery.spec.ts",
+              "title": "M03-L10 an actual native versionchange closes the stale connection and explicit reread preserves DB9 without silently retrying the failed arrangement"
+            }
+          ],
+          "assertion": "local records/settings failure and clear/paused epochs cannot corrupt or relabel Game success",
+          "compatibilityDeferred": null
+        }
+      ]
+    },
+    {
+      "id": "FR20",
+      "requirement": "presentation failure, elapsed real time and late callbacks do not execute or replay gameplay",
+      "leaves": [
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "game.spec.ts",
+            "title": "missing art cannot block the opening"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-context.spec.ts",
+              "title": "M04-U14 missing scene and portrait resources cannot block a normal opening or its explicit finite cultivation and first breakthrough"
+            }
+          ],
+          "assertion": "presentation failure, elapsed real time and late callbacks do not execute or replay gameplay",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "navigation.spec.ts",
+            "title": "a completed travel cannot overwrite a newer tab choice while save metadata settles"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-focus.spec.ts",
+              "title": "M03-F3 committed travel metadata settles without stealing a later keyboard tab or changing its exact complete native outcome"
+            }
+          ],
+          "assertion": "presentation failure, elapsed real time and late callbacks do not execute or replay gameplay",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "local-experience.spec.ts",
+            "title": "reading, display choices and a day of real clock movement never grant resources or advance lifespan"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "check-matrix-records.spec.ts",
+              "title": "CHECK-MATRIX-L4 one stopped formal cycle and both actual exports survive a same-session virtual day without Game Activity receipt or reward changes"
+            }
+          ],
+          "assertion": "presentation failure, elapsed real time and late callbacks do not execute or replay gameplay",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "accessibility.spec.ts",
+            "title": "a pending content skip never steals the focus from a newer settings choice after asynchronous startup"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "check-matrix-keyboard.spec.ts",
+              "title": "CHECK-K5 a native pending startup content skip never steals the keyboard focus from a newer settings decision"
+            }
+          ],
+          "assertion": "presentation failure, elapsed real time and late callbacks do not execute or replay gameplay",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "guidance.spec.ts",
+            "title": "guidance can be skipped and reviewed through keyboard help without changing the saved Game"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-controls.spec.ts",
+              "title": "M03-C7 keyboard help exposes every current guide and Escape returns focus to its exact public opener without writing Game"
+            }
+          ],
+          "assertion": "presentation failure, elapsed real time and late callbacks do not execute or replay gameplay",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "guidance.spec.ts",
+            "title": "new-player guidance follows committed choices, materials and injury without granting resources"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G1 opening keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game"
+            },
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G2 cultivation keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game"
+            },
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G3 breakthrough keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game"
+            },
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G4 equipment with qi and no chosen school keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game"
+            },
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G6 ordinary battle keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game"
+            },
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G7 recovery after actual attack and retreat keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game"
+            },
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G8 causality awaiting an actual decision keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game"
+            },
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G9 trial preparation keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game"
+            },
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G10 actually sealed ending keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game"
+            },
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G11 trial battle has battle priority keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game"
+            },
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G12 third gate won but END still undecided has trial priority keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game"
+            },
+            {
+              "suite": "ui",
+              "file": "check-matrix-guidance.spec.ts",
+              "title": "CHECK-G5 actual finite SOURCE results suppress only materials and refreshing or reading its old receipt never fabricates a new contextual outcome"
+            }
+          ],
+          "assertion": "presentation failure, elapsed real time and late callbacks do not execute or replay gameplay",
+          "compatibilityDeferred": null
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "guidance.spec.ts",
+            "title": "gameplay help remains readable at four viewports and150 percent with a complete focus return"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "matrix-ui-controls.spec.ts",
+              "title": "M03-C7 keyboard help exposes every current guide and Escape returns focus to its exact public opener without writing Game"
+            }
+          ],
+          "assertion": "presentation failure, elapsed real time and late callbacks do not execute or replay gameplay",
+          "compatibilityDeferred": "M06 retains the original mobile, multi-viewport and text-scale obligation; this evidence covers only fixed Chromium1440x900/font1."
+        },
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "pending-inspection.spec.ts",
+            "title": "a newer inventory selection survives event commit metadata without stealing focus or changing the event"
+          },
+          "current": [
+            {
+              "suite": "ui",
+              "file": "idle-recovery-context.spec.ts",
+              "title": "M04-U13 a response cycle cannot steal a newer inventory selection or its focus when its complete Game is committed"
+            },
+            {
+              "suite": "ui",
+              "file": "matrix-ui-focus.spec.ts",
+              "title": "M03-F3 committed travel metadata settles without stealing a later keyboard tab or changing its exact complete native outcome"
+            }
+          ],
+          "assertion": "presentation failure, elapsed real time and late callbacks do not execute or replay gameplay; actual response commits while inventory is newer; the shared App navigation guard is also exercised with held native travel metadata.",
+          "compatibilityDeferred": null
+        }
+      ]
+    }
+  ],
+  "profiles": {
+    "ui": {
+      "configuration": "playwright.idle-recovery-ui.config.ts",
+      "count": 171,
+      "signature": "5e02a060f778c66794088d01ae52af935c6c0d268ae4740feee10e60c2a33a4b"
+    },
+    "persistence": {
+      "configuration": "playwright.idle-recovery.config.ts",
+      "count": 415,
+      "signature": "3060e3b5e53e02cb34218b38456af92490f7b4fa3f04956a9a5791c5bccb9dc7"
+    },
+    "journey": {
+      "configuration": "playwright.idle-journeys.config.ts",
+      "count": 32,
+      "signature": "c64589f5807292353a82a41c3a643102173ab738ff4485886c6752b01454f4a0"
+    }
+  }
+};

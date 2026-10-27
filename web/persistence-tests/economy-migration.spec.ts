@@ -2,27 +2,17 @@ import { test, expect } from '@playwright/test';
 import { setupPersistence } from './support';
 test.beforeEach(async ({ page }) => setupPersistence(page));
 
-// Fixtures use real natural-cultivation commands: no changed assisted fees are fabricated.
+// Execute the published balance-one source rather than relabelling a current Game.
+import {historicalBalanceOneFixture} from '../../tests/historical-full-runtime.mjs';
+const balanceOne = await historicalBalanceOneFixture();
 async function seedBalanceOne(page: any, name: string) {
-  return page.evaluate(async (name: string) => {
-    const h = (globalThis as any).h, repo = await h.FullSaveRepository.open(name);
-    const prepared = h.routes.fullRoute().checkpoints.qi;
-    const imported = await repo.importText(JSON.stringify(prepared), h.mutation());
-    const oldCommand = h.command(imported.state, { type: 'BREAKTHROUGH' });
-    await repo.execute(oldCommand); repo.close();
-    const raw = await h.inspect(name), state = raw[h.FULL_STATE_STORE];
-    for (const entry of state) {
-      if (['current', 'previous'].includes(entry.key)) { entry.value.core.contentVersion = 'full-demo.2'; entry.value.core.balanceVersion = 'full-unbalanced.1'; }
-      if (entry.key === 'checkpoint') { entry.value.snapshot.core.contentVersion = 'full-demo.2'; entry.value.snapshot.core.balanceVersion = 'full-unbalanced.1'; entry.value.versions.contentVersion = 'full-demo.2'; entry.value.versions.balanceVersion = 'full-unbalanced.1'; }
-      await h.put(name, h.FULL_STATE_STORE, entry.key, entry.value);
-    }
-    for (const entry of raw[h.FULL_RECEIPT_STORE]) {
-      if (entry.value.result) { entry.value.result.versions.contentVersion = 'full-demo.2'; entry.value.result.versions.balanceVersion = 'full-unbalanced.1'; }
-      await h.put(name, h.FULL_RECEIPT_STORE, entry.key, entry.value);
-    }
-    await h.put(name, h.FULL_RECEIPT_STORE, 'raw-undefined', undefined);
-    return { oldCommand, before: await h.inspect(name) };
-  }, name);
+  return page.evaluate(async ({name, fixture}: any) => {
+    const h = (globalThis as any).h, repo = await h.FullSaveRepository.open(name); repo.close();
+    for (const [key,value] of [['current',fixture.current],['previous',fixture.previous],['checkpoint',fixture.checkpoint],['checkpoint-owner',fixture.owner]]) await h.put(name,h.FULL_STATE_STORE,key,value);
+    await h.put(name,h.FULL_RECEIPT_STORE,fixture.command.runId+':'+fixture.command.commandId,fixture.receipt);
+    await h.put(name,h.FULL_RECEIPT_STORE,'raw-undefined',undefined);
+    return {oldCommand:fixture.command,before:await h.inspect(name),sourceCommit:fixture.sourceCommit};
+  }, {name,fixture:balanceOne});
 }
 
 test('balance migration preserves snapshots and all raw receipts, creates a new run and is repeatable', async ({ page }) => {
@@ -85,5 +75,5 @@ test('unknown balance cannot migrate, mutate or discard the original', async ({ 
     const before = await h.inspect('economy-future'), failed = await h.attempt(() => h.FullSaveRepository.open('economy-future'));
     return { failed, before, after: await h.inspect('economy-future') };
   });
-  expect(seeded.before.version).toBe(3); expect(result.failed.code).toBe('SAVE_VERSION'); expect(result.after).toEqual(result.before);
+  expect(seeded.before.version).toBe(9); expect(result.failed.code).toBe('SAVE_VERSION'); expect(result.after).toEqual(result.before);
 });

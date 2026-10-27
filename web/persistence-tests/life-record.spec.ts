@@ -1,16 +1,17 @@
 import { test, expect } from '@playwright/test';
-import { setupPersistence } from './support';
+import { setupCurrentRecovery } from './idle-recovery-support';
 import { getLifeRecord } from '../../src/full/queries.ts';
-test.beforeEach(async ({ page }) => setupPersistence(page));
+test.beforeEach(async ({ page }) => setupCurrentRecovery(page));
+test.afterEach(async({page})=>{if(!page.isClosed())await page.evaluate(()=>{const h=(window as any).h;if(h?.m04RealNow)Date.now=h.m04RealNow;});});
 
 test('retirement state and receipt commit together, quota failure preserves the active life and one retry does not age it', async ({ page }) => {
   const result=await page.evaluate(async()=>{
     const h=(globalThis as any).h,repo=await h.FullSaveRepository.open('retire-atomic');
-    let state=(await repo.create('归隐事务',h.mutation())).state;state=(await repo.execute(h.command(state,{type:'CHOOSE',choice:'leave'}))).state;
-    const before=await h.inspect('retire-atomic'),command=h.command(state,{type:'RETIRE'}),put=IDBObjectStore.prototype.put;
+    let state=(await repo.create('归隐事务',h.mutation())).state;state=(await h.m04Action(repo,{type:'CHOOSE',choice:'leave'})).state;
+    const started=await repo.startActivity(h.milestonePlan({type:'RETIRE'}),h.milestoneMutation(await repo.loadActivitySnapshot())),command=h.milestoneTick(started),before=await h.inspect('retire-atomic'),put=IDBObjectStore.prototype.put;h.m04Now=started.activity.dueAt-1;const early=await h.attempt(()=>repo.settleActivity(command));if(early.code!=='ACTIVITY_NOT_DUE')throw Error('RETIRE must keep its complete twelve-second cycle');h.m04Same(await h.inspect('retire-atomic'),before,'retirement early boundary');h.m04Now=started.activity.dueAt;
     IDBObjectStore.prototype.put=function(value:any,key?:IDBValidKey){if(this.name===h.FULL_RECEIPT_STORE)throw new DOMException('ending quota','QuotaExceededError');return put.call(this,value,key!);};
-    let failed;try{failed=await h.attempt(()=>repo.execute(command));}finally{IDBObjectStore.prototype.put=put;}
-    const afterFailure=await h.inspect('retire-atomic'),first=await repo.execute(command),retry=await repo.execute(command),previous=await repo.loadPrevious();repo.close();
+    let failed;try{failed=await h.attempt(()=>repo.settleActivity(command));}finally{IDBObjectStore.prototype.put=put;}
+    const afterFailure=await h.inspect('retire-atomic'),first=await repo.settleActivity(command),retry=await repo.settleActivity(command),previous=await repo.loadPrevious();repo.close();
     const reopened=await h.FullSaveRepository.open('retire-atomic'),loaded=await reopened.load();reopened.close();
     return{state,before,failed,afterFailure,first,retry,previous,loaded};
   });
@@ -49,10 +50,10 @@ test('actual last-month progress ends once, abort rolls back, and two restores r
 test('a reviewed ending command cannot retire a changed revision or a newly created life', async ({ page }) => {
   const result=await page.evaluate(async()=>{
     const h=(globalThis as any).h,a=await h.FullSaveRepository.open('reviewed-ending'),b=await h.FullSaveRepository.open('reviewed-ending');
-    let state=(await a.create('原人生',h.mutation())).state;state=(await a.execute(h.command(state,{type:'CHOOSE',choice:'leave'}))).state;
-    const reviewed=h.command(state,{type:'RETIRE'}),advanced=(await b.execute(h.command(state,{type:'TRAVEL',location:'cave'}))).state;
-    const beforeStale=await h.inspect('reviewed-ending'),stale=await h.attempt(()=>a.execute(reviewed)),afterStale=await h.inspect('reviewed-ending');
-    const replaced=(await b.create('新人',h.mutation(advanced))).state,beforeForeign=await h.inspect('reviewed-ending'),foreign=await h.attempt(()=>a.execute(reviewed)),afterForeign=await h.inspect('reviewed-ending');a.close();b.close();
+    let state=(await a.create('原人生',h.mutation())).state;state=(await h.m04Action(a,{type:'CHOOSE',choice:'leave'})).state;
+    const reviewed=h.milestoneMutation(await a.loadActivitySnapshot()),plan=h.milestonePlan({type:'RETIRE'}),advanced=(await h.m04Action(b,{type:'TRAVEL',location:'cave'})).state;
+    const beforeStale=await h.inspect('reviewed-ending'),stale=await h.attempt(()=>a.startActivity(plan,reviewed)),afterStale=await h.inspect('reviewed-ending');
+    const replaced=(await b.create('新人',h.mutation(advanced))).state,beforeForeign=await h.inspect('reviewed-ending'),foreign=await h.attempt(()=>a.startActivity(plan,reviewed)),afterForeign=await h.inspect('reviewed-ending');a.close();b.close();
     return{reviewed,stale,beforeStale,afterStale,replaced,foreign,beforeForeign,afterForeign};
   });
   expect(result.stale.code).toBe('STALE_REVISION');expect(result.afterStale).toEqual(result.beforeStale);
@@ -62,7 +63,8 @@ test('a reviewed ending command cannot retire a changed revision or a newly crea
 test('ending inside a pending event is refused without a receipt or false saved ending', async ({ page }) => {
   const result=await page.evaluate(async()=>{
     const h=(globalThis as any).h,repo=await h.FullSaveRepository.open('blocked-ending');const state=(await repo.create('未决',h.mutation())).state;
-    const before=await h.inspect('blocked-ending'),retired=await h.attempt(()=>repo.execute(h.command(state,{type:'RETIRE'}))),lifespan=await h.attempt(()=>repo.execute(h.command(state,{type:'END_LIFE'}))),after=await h.inspect('blocked-ending');repo.close();return{before,retired,lifespan,after};
+    const intent=()=>({commandId:crypto.randomUUID(),runId:state.core.runId,expectedRevision:state.core.revision,expectedActivityId:null,expectedActivityRevision:null,ownerId:'pending-ending-test'});
+    const before=await h.inspect('blocked-ending'),retired=await h.attempt(()=>repo.startActivity({kind:'milestone',action:{type:'RETIRE'},maxCycles:1},intent())),lifespan=await h.attempt(()=>repo.startActivity({kind:'milestone',action:{type:'END_LIFE'},maxCycles:1},intent())),after=await h.inspect('blocked-ending');repo.close();return{before,retired,lifespan,after};
   });
   expect(result.retired.code).toBe('PENDING');expect(result.lifespan.code).toBe('PENDING');expect(result.after).toEqual(result.before);
 });

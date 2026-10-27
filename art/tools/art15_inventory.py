@@ -10,8 +10,8 @@ NATIVE=['web/src/CultivationNotes.vue']
 REFS=['docs/decisions/0043-cultivation-notes-art15-contract.md','goal-4/amendments/2026-10-27-goal-continue-art15.md','goal-4/research/art15-design-sources.json']
 TOKENS=['gameFocusKey','focus.open(dialog.value,opener.value??null)','close();focus?.target(opener.value??null)',"watch(()=>props.identity,close,{flush:'sync'})",'onDeactivated(close)','onScopeDispose(()=>focus?.release(dialog.value))',"node.addEventListener('click',selectView,true)","cleanup(()=>node.removeEventListener('click',selectView,true))",'aria-haspopup="dialog"',':aria-controls="panelId"']
 CALLS={
- 'gate':dict(identity="core.runId+':gate:'+core.player.realm",routes=[("openHub('goal')",None),("openHub('cultivation')",None)]),
- 'practice':dict(identity="core.runId+core.player.realm+(step?.kind??'idle')",routes=[("openHub('cultivation')",None),("openTradeoffs('cultivation',hubTrainingMethod)",None),("act({type:'REST'})",'recoveryNeeded'),("openHub('activity')",'store.activity')])}
+ 'gate':dict(identity="core.runId+':gate:'+core.player.realm",routes=[("openHub('goal')",None),("openHub('cultivation')",None),("openHub('trial')",'store.trialRecovery')]),
+ 'practice':dict(identity="core.runId+core.player.realm+(step?.kind??'idle')",routes=[("openHub('cultivation')",None),("openTradeoffs('cultivation',hubTrainingMethod)",None),("act({type:'REST'})",'recoveryNeeded'),("openHub('activity')",'store.activity'),("openHub('trial')",'store.trialRecovery')])}
 
 def validate_art15(root):
  root=root.resolve()

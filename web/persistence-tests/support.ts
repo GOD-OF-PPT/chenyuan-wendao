@@ -8,6 +8,7 @@ export async function setupPersistence(page: Page) {
     const persistence = await import('/src/full-persistence.ts');
     const engine = await import(`/@fs${root}src/full/engine.ts`);
     const queries = await import(`/@fs${root}src/full/queries.ts`);
+    const receipts = await import(`/@fs${root}src/full/receipts.ts`);
     const legacy = await import(`/@fs${root}src/game/adventure.ts`);
     const routes = await import(`/@fs${root}tests/full-route.mjs`);
     const adventure = await import(`/@fs${root}src/full/adventure.ts`);
@@ -92,6 +93,6 @@ export async function setupPersistence(page: Page) {
         ownerId: a.ownerId, generation: a.generation }); }
       finally { Date.now = realNow; }
     };
-    (globalThis as any).h = { ...persistence, engine, queries, routes, adventure, legacy, seed, inspect, put, legacySamples, mutation, command, attempt, finishAction };
+    (globalThis as any).h = { ...persistence, engine, queries, receipts, routes, adventure, legacy, seed, inspect, put, legacySamples, mutation, command, attempt, finishAction };
   }, root);
 }

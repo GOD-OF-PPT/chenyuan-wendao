@@ -1,5 +1,11 @@
 import { test, expect } from '@playwright/test';
 import { setupPersistence } from './support';
+import {historicalFullRuntime} from '../../tests/historical-full-runtime.mjs';
+const fullOneRuntime=await historicalFullRuntime('full-one');
+const fullOneRoute=fullOneRuntime.routes.fullRoute();
+const fullOnePrevious=fullOneRuntime.routes.driver().game;
+const fullOneEvent=fullOneRuntime.routes.driver();fullOneEvent.realm();fullOneEvent.go('sect');fullOneEvent.doAction({type:'EVENT',event:'shen_return'});
+const fullOneBattle=fullOneRuntime.routes.driver();fullOneBattle.go('wilderness');fullOneBattle.doAction({type:'ENCOUNTER',enemy:'wolf'});fullOneBattle.doAction({type:'BATTLE',move:'attack'});
 test.beforeEach(async ({ page }) => setupPersistence(page));
 
 test('fresh storage waits for explicit creation and survives close/reopen', async ({ page }) => {
@@ -14,7 +20,7 @@ test('fresh storage waits for explicit creation and survives close/reopen', asyn
   expect(result.created.replayed).toBe(false);
   expect(result.created.state).toEqual(result.stored);
   expect(result.loaded).toEqual(result.stored);
-  expect(result.raw.version).toBe(3);
+  expect(result.raw.version).toBe(9);
   expect(result.raw['full-state'].find((x: any) => x.key === 'current').value).toEqual(result.loaded);
 });
 
@@ -144,16 +150,14 @@ test('a blocked open that already rejected never migrates later after the blocke
 });
 
 test('imports reidentify the actual NPC event and preserve an unfinished battle', async ({ page }) => {
-  const result = await page.evaluate(async () => {
-    const h = (globalThis as any).h, d = h.routes.driver(); d.realm(); d.go('sect'); d.doAction({ type: 'EVENT', event: 'shen_return' });
-    const event = d.game, battle = h.routes.driver(); battle.go('wilderness'); battle.doAction({ type: 'ENCOUNTER', enemy: 'wolf' }); battle.doAction({ type: 'BATTLE', move: 'attack' });
-    for (const g of [event, battle.game]) { g.core.contentVersion = 'full-demo.1'; g.core.balanceVersion = 'full-unbalanced.1'; }
+  const result = await page.evaluate(async (fixture:any) => {
+    const h=(globalThis as any).h,event=fixture.event,battle={game:fixture.battle};
     const repo = await h.FullSaveRepository.open('imports'), created = await repo.create('原档', h.mutation());
     const eventImported = await repo.importText(JSON.stringify(event), h.mutation(created.state));
     const battleImported = await repo.importText(JSON.stringify(battle.game), h.mutation(eventImported.state));
     const previous = await repo.loadPrevious(), checkpoint = await repo.loadCheckpoint(); repo.close();
     return { event, eventImported, battle: battle.game, battleImported, previous, checkpoint };
-  });
+  },{event:fullOneEvent.game,battle:fullOneBattle.game,sourceCommit:fullOneRuntime.sourceCommit});
   const event = result.eventImported.state;
   expect(event.core.activeEvent.id).toBe('shen_return');
   expect(event.core.activeEvent.instanceId).toBe(event.core.runId + ':shen_return');
@@ -168,7 +172,7 @@ test('bad imports and stale replacement tokens preserve current state and receip
   const result = await page.evaluate(async () => {
     const h = (globalThis as any).h, repo = await h.FullSaveRepository.open('rejections');
     const created = await repo.create('好档', h.mutation()), intent = h.mutation(created.state);
-    const changed = await repo.execute(h.command(created.state, { type: 'CHOOSE', choice: 'leave' }));
+    const changed = await h.finishAction(repo,{type:'CHOOSE',choice:'leave'});
     const before = await h.inspect('rejections');
     const bad = await h.attempt(() => repo.importText('{bad', h.mutation(changed.state)));
     const stale = await h.attempt(() => repo.importText(JSON.stringify(created.state), intent));
@@ -221,11 +225,9 @@ test('receipt write failure rolls back breakthrough consumption, state and check
 });
 
 test('existing full v1 content, previous snapshot and checkpoint migrate atomically with raw backups', async ({ page }) => {
-  const result = await page.evaluate(async () => {
+  const result = await page.evaluate(async (fixture:any) => {
     const h = (globalThis as any).h, name = 'content-version', repo = await h.FullSaveRepository.open(name); repo.close();
-    const route = h.routes.fullRoute(), raw = structuredClone(route.checkpoints.qi), previous = structuredClone(h.routes.driver().game);
-    const cpSnapshot = structuredClone(route.checkpoints.mortal);
-    for (const g of [raw, previous, cpSnapshot]) { g.core.contentVersion = 'full-demo.1'; g.core.balanceVersion = 'full-unbalanced.1'; }
+    const raw=structuredClone(fixture.route.checkpoints.qi),previous=structuredClone(fixture.previous),cpSnapshot=structuredClone(fixture.route.checkpoints.mortal);
     const cp = { format: 'chenyuan-checkpoint', version: 1, kind: 'breakthrough',
       sourceRunId: cpSnapshot.core.runId, sourceRevision: cpSnapshot.core.revision,
       versions: { format: cpSnapshot.format, version: cpSnapshot.version, schemaVersion: cpSnapshot.core.schemaVersion,
@@ -243,7 +245,7 @@ test('existing full v1 content, previous snapshot and checkpoint migrate atomica
     const checkpoint = await migrated.loadCheckpoint(), archives = await migrated.archives(); migrated.close();
     const again = await h.FullSaveRepository.open(name), loadedAgain = await again.load(), archivesAgain = await again.archives(); again.close();
     return { raw, previous, cp, current, prior, checkpoint, archives, loadedAgain, archivesAgain };
-  });
+  },{route:{checkpoints:fullOneRoute.checkpoints},previous:fullOnePrevious,sourceCommit:fullOneRuntime.sourceCommit});
   expect(result.current.core.contentVersion).toBe('full-demo.3');
   expect(result.current.core.runId).not.toBe(result.raw.core.runId);
   expect(result.current.core.player).toEqual(result.raw.core.player);
@@ -307,7 +309,7 @@ test('newer database versions close stale repositories and remain intact when ol
     const h = (globalThis as any).h, repo = await h.FullSaveRepository.open('future-db');
     const original = (await repo.create('版本', h.mutation())).state;
     await new Promise<void>((resolve, reject) => {
-      const req = indexedDB.open('future-db', 4); req.onupgradeneeded = () => req.result.createObjectStore('future-data').put({ version: 999, data: 'preserved' }, 'future'); req.onsuccess = () => { req.result.close(); resolve(); }; req.onerror = () => reject(req.error);
+      const req = indexedDB.open('future-db', 10); req.onupgradeneeded = () => req.result.createObjectStore('future-data').put({ version: 999, data: 'preserved' }, 'future'); req.onsuccess = () => { req.result.close(); resolve(); }; req.onerror = () => reject(req.error);
     });
     const closed = await h.attempt(() => repo.load()), older = await h.attempt(() => h.FullSaveRepository.open('future-db'));
     const backup = await h.FullSaveRepository.exportRaw('future-db');
@@ -315,9 +317,9 @@ test('newer database versions close stale repositories and remain intact when ol
   });
   expect(result.closed.code).toBe('STORAGE_CLOSED');
   expect(result.older.code).toBe('DB_VERSION');
-  expect(result.backup.database.version).toBe(4);
+  expect(result.backup.database.version).toBe(10);
   expect(result.backup.stores.find((s: any) => s.name === 'future-data').entries[0].value).toEqual({ version: 999, data: 'preserved' });
-  expect(result.raw.version).toBe(4);
+  expect(result.raw.version).toBe(10);
   expect(result.raw['full-state'].find((x: any) => x.key === 'current').value).toEqual(result.original);
 });
 
