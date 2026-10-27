@@ -2,6 +2,7 @@ import {expect,type Page} from '@playwright/test';
 import {revealPaged} from './support';
 // Follow the visible detail controls; retain every original cost and state assertion.
 export async function openProductionSettings(page:Page){
+ await closeAlchemyLibrary(page);
  const settings=page.getByTestId('alchemy-settings'),open=page.getByTestId('alchemy-settings-open');
  if(await open.isVisible()&&!await settings.isVisible()){await open.click();await expect(settings).toBeVisible();}
 }
@@ -36,7 +37,10 @@ export async function closeRelicPreparation(page:Page){if(await page.getByTestId
 export async function openRelicLibrary(page:Page){await closeRelicPreparation(page);const dialog=page.getByTestId('relic-library-dialog');if(!await dialog.isVisible())await page.getByTestId('relic-library-open').click();await expect(dialog).toBeVisible();}
 export async function selectRelic(page:Page,id:string){await openRelicLibrary(page);await revealPaged(page,'forge-'+id,'relic-library-dialog','器谱');await page.getByTestId('forge-'+id).click();await expect(page.getByTestId('relic-library-dialog')).not.toBeVisible();await expect(page.getByTestId('relic-inscription-object')).toHaveAttribute('data-relic',id);}
 export async function openRelicPreparation(page:Page){const open=page.getByTestId('relic-preparation-open');if(await open.isVisible()&&!await page.getByTestId('relic-preparation-dialog').isVisible())await open.click();}
-export async function openProductionCatalogue(page:Page){if(await page.getByTestId('relic-library-open').isVisible())await openRelicLibrary(page);}
+export async function openProductionCatalogue(page:Page){if(await page.getByTestId('alchemy-library-open').isVisible())await openAlchemyLibrary(page);else if(await page.getByTestId('relic-library-open').isVisible())await openRelicLibrary(page);}
+export async function openAlchemyLibrary(page:Page){await closeProductionSettings(page);if(!await page.getByTestId('alchemy-library-dialog').isVisible())await page.getByTestId('alchemy-library-open').click();await expect(page.getByTestId('alchemy-library-dialog')).toBeVisible();}
+export async function closeAlchemyLibrary(page:Page){if(await page.getByTestId('alchemy-library-dialog').isVisible())await page.getByTestId('alchemy-library-close').click();}
+export async function selectAlchemyRecipe(page:Page,id:string){await openAlchemyLibrary(page);await revealPaged(page,'craft-'+id,'alchemy-library-dialog','配方');await page.getByTestId('craft-'+id).click();await expect(page.getByTestId('alchemy-library-dialog')).not.toBeVisible();await expect(page.getByTestId('alchemy-workshop')).toHaveAttribute('data-recipe',id);}
 
 
 export async function openSupplySettings(page:Page){await closeMarketLibrary(page);await closeRecoveryOptions(page);for(const kind of ['market','recovery']){const open=page.getByTestId(kind+'-plan-open');if(await open.isVisible()){if(!await page.getByTestId(kind+'-plan-dialog').isVisible())await open.click();return kind;}}return null;}

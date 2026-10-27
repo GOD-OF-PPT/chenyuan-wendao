@@ -47,7 +47,7 @@ export async function revealAction(page:Page,id:string){
   const mode=id.startsWith('travel-')?'travel':id.startsWith('source-')?'source':id.startsWith('encounter-')?'battle':'purchase';await page.getByTestId('explore-mode-'+mode).click();await revealPaged(page,id,'explore-catalogue');return;
  }
  if(id.startsWith('craft-')&&await page.locator('.single-screen').count()){
-  if(!await page.getByTestId('recipe-catalogue').isVisible())await openHubFeature(page,'forge');await revealPaged(page,id,'recipe-catalogue');return;
+  if(!await page.getByTestId('recipe-catalogue').isVisible())await openHubFeature(page,'forge');if(await page.getByTestId('alchemy-library-open').isVisible()&&!await page.getByTestId('alchemy-library-dialog').isVisible())await page.getByTestId('alchemy-library-open').click();await revealPaged(page,id,'recipe-catalogue');return;
  }
  if(/^(school-|learn-|equip-|forge-|study-manual)/.test(id)){
   await openEquipment(page);const kind=id.startsWith('school-')?'school':id==='study-manual'?'manual':/^(forge-|equip-relic-)/.test(id)?'relics':'skills';const mode=page.getByTestId('equipment-mode-'+kind);if(await mode.isVisible())await mode.click();

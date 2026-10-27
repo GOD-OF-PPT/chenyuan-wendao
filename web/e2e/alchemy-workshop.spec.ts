@@ -1,3 +1,4 @@
+import {selectAlchemyRecipe} from './stage-support';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {driver} from '../../tests/full-route.mjs';
 import {advance} from '../../src/full/engine.ts';
@@ -32,7 +33,7 @@ async function fixture(page:Page,{virtual=true,forge=false}:{virtual?:boolean;fo
 }
 async function openWorkshop(page:Page,id='healing'){
  await page.getByTestId('hub-forge').click();await expect(page.getByTestId('recipe-catalogue')).toBeVisible();
- await revealPaged(page,'craft-'+id,'recipe-catalogue','配方');await page.getByTestId('craft-'+id).click();
+ await selectAlchemyRecipe(page,id);
  await expect(page.getByTestId('alchemy-workshop')).toBeVisible();
 }
 async function openSettings(page:Page){const dialog=page.getByTestId('alchemy-settings');if(!await dialog.isVisible())await page.getByTestId('alchemy-settings-open').click();await expect(dialog).toBeVisible();}
@@ -80,13 +81,13 @@ test('the real alchemy objects keep all seven recipes, honest gates and complete
  await expect(page.getByTestId('alchemy-workshop').locator('input[type=number]:visible')).toHaveCount(0);
  await expect(page.getByTestId('alchemy-workshop')).toContainText(/5\s*炉后停/);await expect(page.getByTestId('alchemy-workshop')).toContainText(/10\s*灵石\s*\/\s*5\s*月/);
  await expect(page.getByTestId('production-estimate')).toBeHidden();await expect(page.locator('#primary-navigation button')).toHaveCount(8);
- const objects=await page.evaluate(()=>['.alchemy-recipe-book','[data-testid=alchemy-furnace]','[data-testid=alchemy-product-tray]'].map(selector=>{const r=document.querySelector(selector)!.getBoundingClientRect();return{left:r.left,right:r.right,width:r.width,height:r.height};}));
- expect(objects[0].right).toBeLessThanOrEqual(objects[1].left);expect(objects[1].right).toBeLessThanOrEqual(objects[2].left);expect(objects[1].width).toBeGreaterThan(180);expect(objects[1].height).toBeGreaterThan(180);
+ const objects=await page.evaluate(()=>['.alchemy-heading','[data-testid=alchemy-furnace]','[data-testid=alchemy-product-tray]'].map(selector=>{const r=document.querySelector(selector)!.getBoundingClientRect();return{left:r.left,right:r.right,width:r.width,height:r.height};}));
+ await expect(page.locator('.alchemy-recipe-book')).not.toBeVisible();expect(objects[2].right).toBeLessThanOrEqual(objects[1].left);expect(objects[1].width).toBeGreaterThan(180);expect(objects[1].height).toBeGreaterThan(180);
  const picture=page.getByTestId('alchemy-furnace').locator('[data-art-path]').first();await expect(picture).toHaveAttribute('data-art-state','ready');await expect(picture).not.toHaveAttribute('data-art-path','art/v2/catalogue/alchemy-v1.webp');
  await openProductionCatalogue(page);await page.getByLabel('显示后续生产目录').check();
  for(const[id,r]of Object.entries(C.recipes)){
-  await revealPaged(page,'craft-'+id,'recipe-catalogue','配方');await page.getByTestId('craft-'+id).click();await expect(page.getByTestId('craft-'+id)).toHaveAttribute('aria-pressed','true');
-  await expect(page.getByTestId('alchemy-product-tray')).toContainText(r.name);await stock(page,before.core.inventory[r.output],0);await unlit(page);
+  await selectAlchemyRecipe(page,id);await expect(page.getByTestId('craft-'+id)).toHaveAttribute('aria-pressed','true');
+  await expect(page.getByTestId('alchemy-workshop').locator('.alchemy-heading')).toContainText(r.name);await stock(page,before.core.inventory[r.output],0);await unlit(page);
   for(const[item,n]of Object.entries(r.inputs)){const node=page.getByTestId('production-source-'+item);await expect(node).toContainText('每炉 '+n);await expect(node).toContainText('持有 '+before.core.inventory[item]);await expect(node).toContainText('保留 0');}
   if(id==='golden'){await frame(page,info,'alchemy-four-materials');const areas=await page.evaluate(()=>{const end=document.querySelector('.alchemy-authorization')!.getBoundingClientRect().top;return [...document.querySelectorAll('.alchemy-materials button')].map(el=>{const r=el.getBoundingClientRect();return {bottom:r.bottom,end,text:[...el.querySelectorAll('strong,span,small')].every(n=>{const t=n.getBoundingClientRect();return t.top>=r.top&&t.bottom<=r.bottom&&t.left>=r.left&&t.right<=r.right;})};});});for(const a of areas){expect(a.bottom).toBeLessThan(a.end);expect(a.text).toBe(true);}}
   if(C.rank(r.min)>C.rank(before.core.player.realm)){await expect(page.getByTestId('production-start')).toBeDisabled();await expect(page.getByTestId('alchemy-workshop')).toContainText(C.realms[r.min].name);}
@@ -122,8 +123,8 @@ test('furnace phases follow the real cycle and only two atomic saved pills arriv
 test('hidden views, pause and a different selected recipe withdraw fire and cannot replay an already saved pill',async({page})=>{
  const before=await fixture(page);await openWorkshop(page);await observeArrivals(page);const first=await begin(page);await page.clock.fastForward(10000);await page.getByTestId('tab-1').click();await expect(page.getByTestId('alchemy-workshop')).toBeHidden();await unlit(page);await page.clock.fastForward(20000);await expect.poll(async()=>(await activity(page)).completedCycles).toBe(1);const middle=await snapshot(page);expect(middle).toEqual(advance(before,first.nextCommand));expect((await arrivals(page)).length).toBe(0);
  await openWorkshop(page);await noArrival(page);await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page)).status).toBe('paused');await expect(page.getByTestId('alchemy-workshop')).toHaveAttribute('data-state','paused');await unlit(page);await page.clock.fastForward(600000);expect(await snapshot(page)).toEqual(middle);
- await page.getByTestId('training-resume').click();const resumed=await activity(page);await expect(page.locator('[data-testid=training-activity][data-generation="'+resumed.generation+'"][data-running=true]')).toBeVisible();await expect(page.getByTestId('training-countdown')).toHaveText('30.0 秒');await page.getByTestId('craft-spirit').click();await unlit(page);const spiritStock=middle.core.inventory.spirit_pill;await stock(page,spiritStock,0);
- await page.clock.fastForward(30000);await expect.poll(async()=>(await activity(page)).completedCycles).toBe(2);await painted(page);const after=await snapshot(page);expect(after).toEqual(advance(middle,resumed.nextCommand));await noArrival(page);await stock(page,spiritStock,0);await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page)).status).toBe('paused');await page.getByTestId('craft-healing').click();await noArrival(page);await stock(page,before.core.inventory.healing_pill+2,2);expect((await arrivals(page)).length).toBe(0);
+ await page.getByTestId('training-resume').click();const resumed=await activity(page);await expect(page.locator('[data-testid=training-activity][data-generation="'+resumed.generation+'"][data-running=true]')).toBeVisible();await expect(page.getByTestId('training-countdown')).toHaveText('30.0 秒');await selectAlchemyRecipe(page,'spirit');await unlit(page);const spiritStock=middle.core.inventory.spirit_pill;await stock(page,spiritStock,0);
+ await page.clock.fastForward(30000);await expect.poll(async()=>(await activity(page)).completedCycles).toBe(2);await painted(page);const after=await snapshot(page);expect(after).toEqual(advance(middle,resumed.nextCommand));await noArrival(page);await stock(page,spiritStock,0);await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page)).status).toBe('paused');await selectAlchemyRecipe(page,'healing');await noArrival(page);await stock(page,before.core.inventory.healing_pill+2,2);expect((await arrivals(page)).length).toBe(0);
 });
 
 test('a quota failure keeps the furnace cold and original-command retry saves one pill with one arrival',async({page},info)=>{

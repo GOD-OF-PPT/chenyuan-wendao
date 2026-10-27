@@ -1,3 +1,4 @@
+import {selectAlchemyRecipe} from './stage-support';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {driver,fullRoute} from '../../tests/full-route.mjs';
 import type {Game,Move} from '../../src/full/types.ts';
@@ -117,7 +118,7 @@ function idleFixture(kind:'craft'|'source'|'encounter'){
 }
 async function target(page:Page,kind:'craft'|'source'|'encounter'){
  if(kind==='craft'){
-  await openHubFeature(page,'forge');await page.getByTestId('craft-healing').click();await openProductionIntent(page);await page.getByLabel('炼丹炉次',{exact:true}).selectOption('1');await closeProductionSettings(page);return 'production-start';
+  await openHubFeature(page,'forge');await selectAlchemyRecipe(page,'healing');await openProductionIntent(page);await page.getByLabel('炼丹炉次',{exact:true}).selectOption('1');await closeProductionSettings(page);return 'production-start';
  }
  await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-'+(kind==='source'?'source':'battle')).click();
  if(kind==='source'){await page.getByTestId('source-herbs').click();await openSourceSettings(page);await page.getByLabel('取材次数',{exact:true}).selectOption('1');await closeSourceSettings(page);return 'source-start';}

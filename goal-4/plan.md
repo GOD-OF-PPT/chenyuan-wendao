@@ -461,3 +461,9 @@ CHECK-ART-03最终检查就绪（2026-10-27）：源4（2233ad6e）当前完整4
 - [杠精审查] 通过，仅0040当前独立工程范围，无已知未修当前硬阻断。不是重跑少量绿，不以测试/像素/提交/HTTP代整体游戏感/美术/长期或真人验收；原错误/未达/负例/原型与正式分层。下一唯一ART13优先丹炉常态单炉/一个主要决定、配方和完整预算按需，沿原循环和火候成果，不新增强制投料/逐炉领取；器谱等后续独立ART及M04路线恢复/M05性能/M06兼容最后/干净包/最大C端代码安全与真人全保，Goal active。未push/合并/公开部署/改权限，当前未开展兼容或环境性能。
 
 证据：[evidence/check-art-03/verification.json](evidence/check-art-03/verification.json)、coverage.json、real-timing.json、identity-proof.json、visual-review.json与review.md。回滚独立revert本项展示/测试接线，保DB9/DB1/原档/原件/13与全部历史。
+
+## ART13开工（2026-10-27）
+
+上一轮为实际progress：5bef46e/b5ab239、2233ad6e当前492/332/815/425、280源87载荷与原ChromeHUD/活动只读保持。本轮唯一ART13，原话amendments/2026-10-27-goal-continue-art13.md、0041合同/13保护先于代码。沿game-studio→game-ui-frontend/game-playtest，Riot清晰度/XAG112当前实读：当前炉体与一个主要决定优先，丹方册/完整参数按需且返回可预测；具体布局为项目推导。
+
+顺序：原话/合同/参数/保护→合法只读基线及三栏层级实红→正式单炉/丹方册/原设置预算与暂停同计划边界→早期逐图/完整文字与真实命中→当前新六/完整相关旧文件及真实30秒、规则/原生/guard/类型构建→本地独立提交/归档重建冻结HTTP/原用户只读→tasks杠精。旧cap不涨，0新bitmap/模块，原周期/费用/Game/DB9/proof不改。只1440/font1 Chromium，无兼容/环境性能；全部其它ART/M04-5-6兼容最后/干净包/最大review/真人保持，Goal active。

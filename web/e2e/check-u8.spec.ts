@@ -1,3 +1,4 @@
+import {selectAlchemyRecipe} from './stage-support';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {snapshot,activitySnapshot,useJourneyClock,finishJourneyClock,revealPaged} from './support';
 import {openProductionIntent,closeProductionSettings,openSupplySettings,closeSupplySettings,openMarketLibrary} from './stage-support';
@@ -100,7 +101,7 @@ test('R4 and B read surfaces keep one running activity and never turn inspection
  await seed(page,d,'lawful-check-u8.json');
  await expect(page.getByTestId('realm')).toHaveText('炼气');
  await page.getByTestId('hub-forge').click();
- await page.getByTestId('craft-healing').click();
+ await selectAlchemyRecipe(page,'healing');
  await page.getByTestId('production-start').click();
  await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');
  const before=await snapshot(page);
@@ -223,7 +224,7 @@ test('five saved cultivation cycles retain every complete receipt after reload w
 
 test('five saved alchemy cycles retain material costs and net pills on every receipt page after reload',async({page},info)=>{
  const d=driver();d.resource('herb',10);d.funds(10);d.go('cave');const before=await seed(page,d,'lawful-check-u8-alchemy-history.json');
- await page.getByTestId('hub-forge').click();await page.getByTestId('craft-healing').click();await openProductionIntent(page);await page.getByLabel('炼丹炉次').selectOption('5');await page.getByTestId('production-intent-toggle').click();
+ await page.getByTestId('hub-forge').click();await selectAlchemyRecipe(page,'healing');await openProductionIntent(page);await page.getByLabel('炼丹炉次').selectOption('5');await page.getByTestId('production-intent-toggle').click();
  await page.getByTestId('production-start').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');
  const completed=await saveFiveCycles(page,3);expect(completed.game.core.inventory.herb).toBe(before.core.inventory.herb-10);expect(completed.game.core.inventory.healing_pill).toBe(before.core.inventory.healing_pill+5);expect(completed.game.core.player.stones).toBe(before.core.player.stones-10);
  await readRestoredHistory(page,info,completed,'alchemy-restored');

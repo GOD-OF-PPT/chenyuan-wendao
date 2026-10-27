@@ -328,3 +328,5 @@ CHECK-ART-03开工依据[0040](docs/decisions/0040-art-03-cross-check-contract.m
 
 
 CHECK-ART-03实际经验：暂停原段与新START预测分开显示；完整canonical计划和当前人生相等时，只引导上方继续原剩余次数/累计预算，不能用自然禁用0预估冒续行，更不能重授整段限额。Market按mode:item保存草案，重复同完整弱查看请求恢复各自缓存；真正不同请求或exact/saved/完整行旅仍强回填，不能把Recovery单参数组的默认语义套到交易缓存。错误CTA可短而明确，完整原因相邻保一次；新增重复长原因会实际挤压队列，须用原错误态18/14/44/Range/祖先及原retry验证。舞台图片可能是阅读层的兄弟节点，祖先CSS背景不足以证明对比；核真实图片/Range重叠与阅读背板，并看图。CSS需匹配真实art06-stage-home层，不以源码有规则代生效。当前原492/332/815/425全部实际验证不等于整体美术/长期/真人；丹炉常驻三栏、器谱锁面入口/留白债按下一独立ART继续，不用机器数量关闭负面验收。
+
+ART13依据[0041](docs/decisions/0041-alchemy-single-furnace-art13-contract.md)及本轮实际回读[Riot清晰度](https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/)、[XAG112](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112)：主炉体/当前丹方/一个实际决定优先，完整目录和稀用参数按需且返回可预测，不保留等权常驻三栏。默认有限上限与真实成本/库存/停止仍可见，原逐炉放置与自动入匣不添逐炉点击；暂停同完整原段只继续原剩余授权。具体布局为项目推导，非来源数值/认证；实际像素/完整Game/回执和用户艺术验收分开，兼容环境性能仍后置。
