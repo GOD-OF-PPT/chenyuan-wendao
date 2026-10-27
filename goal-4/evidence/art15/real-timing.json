@@ -1,0 +1,76 @@
+{
+  "runtime": "72dc0653b0085be2152c837300c3a37e6027bf7925bef0be31d12cc556fee0e9",
+  "raw": {
+    "path": "artifacts/goal-4/art15/real-cycle-proof-extraction.json",
+    "sha256": "642bbee943a1a0ca8ff07d4c5e76a8cb503b072bf48e6da690162c062313c155"
+  },
+  "rows": [
+    {
+      "test": "ART06-A4 one real thirty second natural cycle moves only the formal saved cultivation and preserves a static result without an automatic breakthrough",
+      "name": "natural-real-cycle-proof",
+      "cycleMs": 30000,
+      "activityStartedAt": 1793099867212,
+      "dueAt": 1793099897212,
+      "observerReadyAt": 1793099867458,
+      "firstPutAt": 1793099897263,
+      "firstPutAfterDueMs": 51,
+      "nativeCompleteAt": null,
+      "nativeCompleteReason": "原hook未采事务complete，不猜数值",
+      "completeGameFormalResultAndUniqueReceiptAssertionsPassed": true
+    },
+    {
+      "test": "ART06-A5 a lawful real sixty second assisted cycle charges one exact realm cost and stops before its cumulative budget or reserve can be crossed",
+      "name": "assisted-real-cycle-proof",
+      "cycleMs": 60000,
+      "activityStartedAt": 1793099868184,
+      "dueAt": 1793099928184,
+      "observerReadyAt": 1793099868577,
+      "firstPutAt": 1793099928367,
+      "firstPutAfterDueMs": 183,
+      "nativeCompleteAt": null,
+      "nativeCompleteReason": "原hook未采事务complete，不猜数值",
+      "completeGameFormalResultAndUniqueReceiptAssertionsPassed": true
+    },
+    {
+      "test": "ART06-A12 real CHOOSE saves its complete selected 6000ms result once and never authorizes the next stage",
+      "name": "choose-real-cycle-proof",
+      "cycleMs": 6000,
+      "activityStartedAt": 1793099942847,
+      "dueAt": 1793099948847,
+      "observerReadyAt": 1793099942983,
+      "firstPutAt": 1793099948881,
+      "firstPutAfterDueMs": 34,
+      "nativeCompleteAt": null,
+      "nativeCompleteReason": "原hook未采事务complete，不猜数值",
+      "completeGameFormalResultAndUniqueReceiptAssertionsPassed": true
+    },
+    {
+      "test": "ART06-A13 real BREAKTHROUGH saves its complete selected 30000ms result once and never authorizes the next stage",
+      "name": "breakthrough-real-cycle-proof",
+      "cycleMs": 30000,
+      "activityStartedAt": 1793099955574,
+      "dueAt": 1793099985574,
+      "observerReadyAt": 1793099955677,
+      "firstPutAt": 1793099985647,
+      "firstPutAfterDueMs": 73,
+      "nativeCompleteAt": null,
+      "nativeCompleteReason": "原hook未采事务complete，不猜数值",
+      "completeGameFormalResultAndUniqueReceiptAssertionsPassed": true
+    },
+    {
+      "test": "ART06-A14 real START_TRIAL saves its complete selected 15000ms result once and never authorizes the next stage",
+      "name": "start_trial-real-cycle-proof",
+      "cycleMs": 15000,
+      "activityStartedAt": 1793099955009,
+      "dueAt": 1793099970009,
+      "observerReadyAt": 1793099955138,
+      "firstPutAt": 1793099970058,
+      "firstPutAfterDueMs": 49,
+      "nativeCompleteAt": null,
+      "nativeCompleteReason": "原hook未采事务complete，不猜数值",
+      "completeGameFormalResultAndUniqueReceiptAssertionsPassed": true
+    }
+  ],
+  "noVirtualTimeOnThese5": true,
+  "longTermBalanceOrHumanAccepted": false
+}

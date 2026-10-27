@@ -1,0 +1,33 @@
+{
+  "actualTests": 815,
+  "explicitFiles": 61,
+  "terminal": {
+    "runtime": "72dc0653b0085be2152c837300c3a37e6027bf7925bef0be31d12cc556fee0e9",
+    "inputs": 684,
+    "exact": true,
+    "rows": [
+      {
+        "name": "rules",
+        "exit": 0,
+        "seconds": 274.0961799621582,
+        "log": "artifacts/goal-4/art15/core-source4-rules.log"
+      },
+      {
+        "name": "types",
+        "exit": 0,
+        "seconds": 4.337692022323608,
+        "log": "artifacts/goal-4/art15/core-source4-types.log"
+      }
+    ],
+    "passed": true
+  },
+  "rulesLog": {
+    "path": "artifacts/goal-4/art15/core-source4-rules.log",
+    "sha256": "cc3a8c80f2fde2a1e5121dd125f5d94525cf7cd89dceb37c0cfb3b8773c696c2"
+  },
+  "rootTypes": {
+    "path": "artifacts/goal-4/art15/core-source4-types.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "notPageCompatibilityOrEnvironmentPerformance": true
+}

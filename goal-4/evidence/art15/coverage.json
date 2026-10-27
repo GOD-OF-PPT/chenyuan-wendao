@@ -1,0 +1,672 @@
+{
+  "current": 508,
+  "prior": 502,
+  "all502OriginalIdentitiesPreserved": true,
+  "currentSelected118": 118,
+  "currentOther390NotRunThisTask": 390,
+  "selected11Files": [
+    "art15-cultivation-notes.spec.ts",
+    "check-art03-feedback-art.spec.ts",
+    "check-u8.spec.ts",
+    "cultivation-objects.spec.ts",
+    "idle-cultivation.spec.ts",
+    "idle-integration.spec.ts",
+    "idle-preparation.spec.ts",
+    "matrix-ui-local-recovery.spec.ts",
+    "stage-check.spec.ts",
+    "stage-r1.spec.ts",
+    "stage-u8-b.spec.ts"
+  ],
+  "new": [
+    [
+      "art15-cultivation-notes.spec.ts",
+      "ART15-A1 one readable notes object replaces the default auxiliary button row without hiding finite costs or the main cultivation",
+      "chromium"
+    ],
+    [
+      "art15-cultivation-notes.spec.ts",
+      "ART15-A2 ready gate keeps its real confirmation while notes return from requirements and complete planning to the stable opener",
+      "chromium"
+    ],
+    [
+      "art15-cultivation-notes.spec.ts",
+      "ART15-A3 a finite assisted draft survives compare and healing views and notes never execute their named actions",
+      "chromium"
+    ],
+    [
+      "art15-cultivation-notes.spec.ts",
+      "ART15-A4 reading through one original cycle does not restart its clock and saved results stay readable without another reward",
+      "chromium"
+    ],
+    [
+      "art15-cultivation-notes.spec.ts",
+      "ART15-A5 quota retry and genuine native read abort keep original saved intent while notes remain readonly",
+      "chromium"
+    ],
+    [
+      "art15-cultivation-notes.spec.ts",
+      "ART15-A6 keyboard missing-image and both reduced-effect modes keep the complete gate book and return without a write",
+      "chromium"
+    ]
+  ],
+  "related": [
+    [
+      "check-art03-feedback-art.spec.ts",
+      "CHECK-ART03-C5 cached factual response keeps its one saved ink across inventory and life while pause and foreign takeover fence old and late results",
+      "chromium"
+    ],
+    [
+      "check-art03-feedback-art.spec.ts",
+      "CHECK-ART03-C6 eight fixed-desktop entrances and true NPC fallback identities remain readonly and cultivation stage copy retains measured contrast",
+      "chromium"
+    ],
+    [
+      "check-u8.spec.ts",
+      "R4 and B read surfaces keep one running activity and never turn inspection into a Game write",
+      "chromium"
+    ],
+    [
+      "check-u8.spec.ts",
+      "five saved cultivation cycles retain every complete receipt after reload without replaying rewards",
+      "chromium"
+    ],
+    [
+      "check-u8.spec.ts",
+      "five saved alchemy cycles retain material costs and net pills on every receipt page after reload",
+      "chromium"
+    ],
+    [
+      "check-u8.spec.ts",
+      "five saved purchase cycles retain positive currency costs and exact inventory gains after reload",
+      "chromium"
+    ],
+    [
+      "check-u8.spec.ts",
+      "another page names its takeover and only its new full cycle can award once",
+      "chromium"
+    ],
+    [
+      "check-u8.spec.ts",
+      "paused cultivation exposes saved cycles after reload and history reading preserves the exact resume boundary",
+      "chromium"
+    ],
+    [
+      "check-u8.spec.ts",
+      "the journal returns to life reading after an old milestone is invalidated by a later explicit configuration",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A4 one real thirty second natural cycle moves only the formal saved cultivation and preserves a static result without an automatic breakthrough",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A5 a lawful real sixty second assisted cycle charges one exact realm cost and stops before its cumulative budget or reserve can be crossed",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A6 nondefault saved limits remain distinct from a changed draft across goal and comparison returns and normal period saves never rewrite that draft",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A7 native saving and a held pause keep cultivation cold and truthful until exactly one complete Game is committed then no next cycle starts",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A8 choosing the other method while one cycle runs or saves never borrows its aura clock or saved result and returning cannot claim a missed effect",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A9 native quota and put-success abort preserve the whole cultivation DB and the original exact cycle retries its first real outcome once",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A10 a same-id foreign takeover and a hidden later cycle never replay local aura and refresh requires a newly authorized full cycle",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A11 all real target families and complete source plans stay readonly and the exact lack of cultivation medicine or location controls the next decision",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A12 real CHOOSE saves its complete selected 6000ms result once and never authorizes the next stage",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A13 real BREAKTHROUGH saves its complete selected 30000ms result once and never authorizes the next stage",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A14 real START_TRIAL saves its complete selected 15000ms result once and never authorizes the next stage",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A15 missing practitioner art and both reduced-motion modes retain complete readable objects original gates and exact static saved cultivation",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A16 a pending unaccepted craft or source intent blocks otherwise legal goal travel and trial entry while their complete readonly preparation remains usable",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A1 home and exact training details expose a cultivation site mat and stone seat while both method previews and the goal board remain readonly",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A2 three finite gate previews remain readonly and native cycle quota retains each exact one-shot command until its first successful retry",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A3 a genuinely unaccepted craft START quota keeps its original retry while home and detailed fresh cultivation stay blocked but reading remains usable",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A17 opening through the ordinary current detail keeps the medicine case all three full choices and its one six second result then an actionable next step",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A18 the lawful training footer breakthrough has its own gate and full local period then one realm handoff without replay on return",
+      "chromium"
+    ],
+    [
+      "cultivation-objects.spec.ts",
+      "ART06-A19 a genuinely unaccepted craft start keeps purchase preparation and income sources readonly while their otherwise legal foreign travel cannot replace its original retry",
+      "chromium"
+    ],
+    [
+      "idle-cultivation.spec.ts",
+      "an arrangement persists without rewards and runs two real commands until the cultivation cap",
+      "chromium"
+    ],
+    [
+      "idle-cultivation.spec.ts",
+      "viewing another gameplay keeps progress visible and pause cancels an unfinished cycle",
+      "chromium"
+    ],
+    [
+      "idle-cultivation.spec.ts",
+      "refresh preserves the plan and requires an explicit fresh cycle instead of offline catch-up",
+      "chromium"
+    ],
+    [
+      "idle-cultivation.spec.ts",
+      "assisted cultivation previews the budget and reserve and stops before another charge",
+      "chromium"
+    ],
+    [
+      "idle-cultivation.spec.ts",
+      "a failed cycle stops automatic progression and retry uses the same command exactly once",
+      "chromium"
+    ],
+    [
+      "idle-cultivation.spec.ts",
+      "pause requested while persistence is held finishes that atomic cycle and never starts the next",
+      "chromium"
+    ],
+    [
+      "idle-cultivation.spec.ts",
+      "an explicit second-page continuation fences the original page and does not double reward",
+      "chromium"
+    ],
+    [
+      "idle-cultivation.spec.ts",
+      "one production cycle follows the real thirty-second wall clock and saves before showing the reward",
+      "chromium"
+    ],
+    [
+      "idle-integration.spec.ts",
+      "saved assisted cultivation is inspected exactly and newly confirmed edits become the real new arrangement",
+      "chromium"
+    ],
+    [
+      "idle-integration.spec.ts",
+      "a production cycle and pause keep an inspected unsubmitted draft separate from the original furnace authorization",
+      "chromium"
+    ],
+    [
+      "idle-integration.spec.ts",
+      "a source cycle and pause keep target and limits in the unsubmitted draft without changing the running authorization",
+      "chromium"
+    ],
+    [
+      "idle-integration.spec.ts",
+      "owned relic equip shows its formal gate during battle and viewing never changes Game",
+      "chromium"
+    ],
+    [
+      "idle-integration.spec.ts",
+      "owned relic equip shows its formal gate during event and viewing never changes Game",
+      "chromium"
+    ],
+    [
+      "idle-integration.spec.ts",
+      "natural cultivation retains a nondefault cap and reserve when inspecting and refreshing an arrangement",
+      "chromium"
+    ],
+    [
+      "idle-integration.spec.ts",
+      "a normal new life connects cultivation material gathering furnace planning and a separately confirmed foundation breakthrough",
+      "chromium"
+    ],
+    [
+      "idle-preparation.spec.ts",
+      "two selected jade slips learn in full separate cycles then require explicit compared equipment",
+      "chromium"
+    ],
+    [
+      "idle-preparation.spec.ts",
+      "manual travel keeps exact finite budget and never studies until separately confirmed",
+      "chromium"
+    ],
+    [
+      "idle-preparation.spec.ts",
+      "market purchases one item per deadline and sells medicine only within explicit inventory reserve",
+      "chromium"
+    ],
+    [
+      "idle-preparation.spec.ts",
+      "finite medicine recovery saves real effects then refresh preserves the original arrangement without offline rewards",
+      "chromium"
+    ],
+    [
+      "idle-preparation.spec.ts",
+      "changing school previews all three slots and cancel keeps Game and activity unchanged",
+      "chromium"
+    ],
+    [
+      "idle-preparation.spec.ts",
+      "a medicine cycle really counts six seconds and commits no early healing",
+      "chromium"
+    ],
+    [
+      "idle-preparation.spec.ts",
+      "configuration quota failure retains the original confirmation and a later cancelled failure does not block a new intent",
+      "chromium"
+    ],
+    [
+      "idle-preparation.spec.ts",
+      "cave rest uses one full thirty-second period for its original month and full restoration",
+      "chromium"
+    ],
+    [
+      "idle-preparation.spec.ts",
+      "trial equipment inspection keeps its location and explicit rest navigation opens recovery without starting it",
+      "chromium"
+    ],
+    [
+      "matrix-ui-local-recovery.spec.ts",
+      "M03-L1 local quota leaves the actual committed Game intact and exports only the failed new observation from memory",
+      "chromium"
+    ],
+    [
+      "matrix-ui-local-recovery.spec.ts",
+      "M03-L2 Game quota records a safe failure and the original cycle command retry creates exactly one action and receipt",
+      "chromium"
+    ],
+    [
+      "matrix-ui-local-recovery.spec.ts",
+      "M03-L3 a genuine future local database stays byte-for-byte intact while explicit temporary collection exports no private future data",
+      "chromium"
+    ],
+    [
+      "matrix-ui-local-recovery.spec.ts",
+      "M03-L4 a native local readonly transaction exception has a truthful finite fallback and never hangs or replaces the Game",
+      "chromium"
+    ],
+    [
+      "matrix-ui-local-recovery.spec.ts",
+      "M03-L5 main open denial is a safe recorded code and never turns unreadable progress into a usable empty save",
+      "chromium"
+    ],
+    [
+      "matrix-ui-local-recovery.spec.ts",
+      "M03-L6 clear cancellation confirmation and cross-page preference epoch changes invalidate previews without changing either complete Game",
+      "chromium"
+    ],
+    [
+      "matrix-ui-local-recovery.spec.ts",
+      "M03-L7 real legacy opening startup migrates the entire lawful state while preserving native originals and exact migration identity",
+      "chromium"
+    ],
+    [
+      "matrix-ui-local-recovery.spec.ts",
+      "M03-L8 real legacy qi startup migrates the entire lawful state while preserving native originals and exact migration identity",
+      "chromium"
+    ],
+    [
+      "matrix-ui-local-recovery.spec.ts",
+      "M03-L9 real legacy battle startup migrates the entire lawful state while preserving native originals and exact migration identity",
+      "chromium"
+    ],
+    [
+      "matrix-ui-local-recovery.spec.ts",
+      "M03-L10 an actual native versionchange closes the stale connection and explicit reread preserves DB9 without silently retrying the failed arrangement",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "reselecting the same market object preserves the complete unconfirmed finite authorization",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "market buy and sell inspection retain separate drafts and never turn navigation into authorization",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "closing future market goods reconciles the actual object and its selected visible shelf",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "inventory sale inspection returns to its original selected object without a transaction",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "an edited paused battle strategy survives ordinary goal and character inspection with the same activity",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "a completed battle retains its complete original strategy as read-only pages after the enemy is gone",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "market default shows the finite order and opens its complete limits on demand",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "recovery shows the body and real single-dose effect before its complete finite settings",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "a direct source-market context returns from ordinary details with its order draft intact",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "repeated inventory use inspection preserves its edited default-view draft",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "repeated inventory sell inspection preserves its edited default-view draft",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "leaving and returning after a saved hit removes old actor and progress short effects",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "a completed encounter original authorization stays readable after its explicit retreat changes location",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "real buy waits its full online period and atomically saves one formal outcome",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "real use waits its full online period and atomically saves one formal outcome",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "real rest waits its full online period and atomically saves one formal outcome",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "a turn saved while reading ordinary details does not replay hidden damage on return",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "a replacement life cannot inherit a supply default-view deduplication or edited market budget",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "retreat labels distinguish ordinary combat without changing the battle",
+      "chromium"
+    ],
+    [
+      "stage-check.spec.ts",
+      "retreat labels distinguish the actual trial without changing the battle",
+      "chromium"
+    ],
+    [
+      "stage-r1.spec.ts",
+      "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+      "chromium"
+    ],
+    [
+      "stage-r1.spec.ts",
+      "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+      "chromium"
+    ],
+    [
+      "stage-r1.spec.ts",
+      "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+      "chromium"
+    ],
+    [
+      "stage-r1.spec.ts",
+      "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+      "chromium"
+    ],
+    [
+      "stage-r1.spec.ts",
+      "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+      "chromium"
+    ],
+    [
+      "stage-r1.spec.ts",
+      "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "a chosen purchase preparation survives ordinary goal inspection without changing Game or authorising an activity",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "current mortal cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "current qi cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "current foundation cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "current golden cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "current nascent cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "current spirit cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "preparation comparison and original purchase choice return safely and actual import clears the old draft",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "sword/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "sword/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "sword/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "sword/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "talisman/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "talisman/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "talisman/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "talisman/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "tradeoff controls stay usable with failed drawings and do not execute a projection",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "a life inspection nested inside a preparation goal returns through each original reading surface",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "purchase preparation keeps the currency name and source action readable in its actual card",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "qi preparation material cards keep full names, actions and pagination above navigation",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "foundation preparation material cards keep full names, actions and pagination above navigation",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "golden preparation material cards keep full names, actions and pagination above navigation",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "nascent preparation material cards keep full names, actions and pagination above navigation",
+      "chromium"
+    ],
+    [
+      "stage-u8-b.spec.ts",
+      "spirit preparation material cards keep full names, actions and pagination above navigation",
+      "chromium"
+    ]
+  ],
+  "runtime": "72dc0653b0085be2152c837300c3a37e6027bf7925bef0be31d12cc556fee0e9",
+  "actualUnique": 118,
+  "single118Run": false,
+  "twoCompleteActualRuns": {
+    "ui-new-source4": {
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 691,
+      "runtime": "72dc0653b0085be2152c837300c3a37e6027bf7925bef0be31d12cc556fee0e9",
+      "stats": {
+        "startTime": "2026-10-27T11:15:09.962Z",
+        "duration": 37890.32,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 6,
+      "retried": [],
+      "reportSha256": "405cfdf2cdf76498d7af59a30db07e0d12027f096a3cd4b84f9b5aa72f30b1a4"
+    },
+    "ui-related-source4": {
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 701,
+      "runtime": "72dc0653b0085be2152c837300c3a37e6027bf7925bef0be31d12cc556fee0e9",
+      "stats": {
+        "startTime": "2026-10-27T11:16:39.015Z",
+        "duration": 486698.99299999996,
+        "expected": 112,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 112,
+      "retried": [],
+      "reportSha256": "2294391b83d86c5291e1ed4843726dc366ee0895902f7e87d6c11cc71d567b74"
+    }
+  },
+  "reports": [
+    {
+      "path": "artifacts/goal-4/art15/ui-new-source4-report.json",
+      "sha256": "405cfdf2cdf76498d7af59a30db07e0d12027f096a3cd4b84f9b5aa72f30b1a4"
+    },
+    {
+      "path": "artifacts/goal-4/art15/ui-related-source4-report.json",
+      "sha256": "2294391b83d86c5291e1ed4843726dc366ee0895902f7e87d6c11cc71d567b74"
+    }
+  ],
+  "claims": "6新+112完整相关旧文件两轮，同一冻结源，非整508；其余390本轮未执行。"
+}
