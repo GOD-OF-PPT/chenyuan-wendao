@@ -1,0 +1,206 @@
+{
+  "phases": [
+    {
+      "phase": "ui-baseline-c5",
+      "runtime": "72dc0653b0085be2152c837300c3a37e6027bf7925bef0be31d12cc556fee0e9",
+      "exit": 1,
+      "stats": {
+        "startTime": "2026-10-27T11:40:40.045Z",
+        "duration": 13834.005000000001,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "exact": true,
+      "exactDeclared": true,
+      "terminal": {
+        "path": "artifacts/goal-4/check-art-04/ui-baseline-c5-terminal.json",
+        "sha256": "585baeec8ec5f084fbf099680d7743409e3ce6b649e293c0b4cd7788f3c79dea"
+      }
+    },
+    {
+      "phase": "ui-early-eight-source1",
+      "runtime": "72b74d8fbd697474dc37c6a8de7d896b8ede0f446ae6a110f7413d6a15407efd",
+      "exit": 0,
+      "stats": {
+        "startTime": "2026-10-27T11:48:01.200Z",
+        "duration": 50155.263999999996,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "exact": true,
+      "exactDeclared": true,
+      "terminal": {
+        "path": "artifacts/goal-4/check-art-04/ui-early-eight-source1-terminal.json",
+        "sha256": "178519d21e4de0a81a6ee02b8a2c66355333bb9bce3e010f5420dfd9db326b28"
+      }
+    },
+    {
+      "phase": "ui-focused-source2",
+      "runtime": "c4253b56bf57d32898dcf9458045a840254504ef66ce7d256b72a639a9103f48",
+      "exit": 0,
+      "stats": {
+        "startTime": "2026-10-27T12:40:09.816Z",
+        "duration": 105405.982,
+        "expected": 18,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "exact": true,
+      "exactDeclared": true,
+      "terminal": {
+        "path": "artifacts/goal-4/check-art-04/ui-focused-source2-terminal.json",
+        "sha256": "1a31110f0254a74979a12f72a62df83b3883f741a9f0a38b14f58331ef2ff811"
+      }
+    },
+    {
+      "phase": "ui-focused-source3",
+      "runtime": "cdcc10c447a4b4a2143cdeaf17f4d532edcbd2b7090fa925c9eb250c3fc7f82c",
+      "exit": 0,
+      "stats": {
+        "startTime": "2026-10-27T12:49:22.330Z",
+        "duration": 112848.191,
+        "expected": 18,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "exact": true,
+      "exactDeclared": true,
+      "terminal": {
+        "path": "artifacts/goal-4/check-art-04/ui-focused-source3-terminal.json",
+        "sha256": "e0d392c780beb5d9c7dc5f8c340f18ae239d6bf9859ae55faa4e06426bbd53a7"
+      }
+    },
+    {
+      "phase": "ui-full-source1",
+      "runtime": "72b74d8fbd697474dc37c6a8de7d896b8ede0f446ae6a110f7413d6a15407efd",
+      "exit": 1,
+      "stats": {
+        "startTime": "2026-10-27T11:49:50.394Z",
+        "duration": 2335045.7780000004,
+        "expected": 512,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "exact": true,
+      "exactDeclared": true,
+      "terminal": {
+        "path": "artifacts/goal-4/check-art-04/ui-full-source1-terminal.json",
+        "sha256": "d5b0d95e6e68138a3da0c5c51532c337d9ac5b48d348d0bc2a5ea1a2d4991424"
+      }
+    },
+    {
+      "phase": "ui-full-source3",
+      "runtime": "cdcc10c447a4b4a2143cdeaf17f4d532edcbd2b7090fa925c9eb250c3fc7f82c",
+      "exit": 0,
+      "stats": {
+        "startTime": "2026-10-27T12:58:45.752Z",
+        "duration": 2254421.665,
+        "expected": 514,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "exact": true,
+      "exactDeclared": true,
+      "terminal": {
+        "path": "artifacts/goal-4/check-art-04/ui-full-source3-terminal.json",
+        "sha256": "582c8d8a365bfb0bea1c02db995a796ad9db62f8110d877b216121c24881a348"
+      }
+    },
+    {
+      "phase": "ui-new-source1",
+      "runtime": "72b74d8fbd697474dc37c6a8de7d896b8ede0f446ae6a110f7413d6a15407efd",
+      "exit": 1,
+      "stats": {
+        "startTime": "2026-10-27T11:42:54.909Z",
+        "duration": 24111.856,
+        "expected": 5,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "exact": true,
+      "exactDeclared": true,
+      "terminal": {
+        "path": "artifacts/goal-4/check-art-04/ui-new-source1-terminal.json",
+        "sha256": "7f03784f85a8fc24df79c4cc67a11a067f65f2e6660b096816e9b91188e701af"
+      }
+    },
+    {
+      "phase": "ui-new-source1b",
+      "runtime": "72b74d8fbd697474dc37c6a8de7d896b8ede0f446ae6a110f7413d6a15407efd",
+      "exit": 0,
+      "stats": {
+        "startTime": "2026-10-27T11:45:32.211Z",
+        "duration": 59821.413,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "exact": true,
+      "exactDeclared": true,
+      "terminal": {
+        "path": "artifacts/goal-4/check-art-04/ui-new-source1b-terminal.json",
+        "sha256": "2fa771ae7fa77c5df5ddbfa31ad4d9bae2c4ed658d9df06021b340444dd22646"
+      }
+    },
+    {
+      "phase": "ui-new-source2",
+      "runtime": "c4253b56bf57d32898dcf9458045a840254504ef66ce7d256b72a639a9103f48",
+      "exit": 1,
+      "stats": {
+        "startTime": "2026-10-27T12:40:08.548Z",
+        "duration": 49544.933,
+        "expected": 5,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "exact": true,
+      "exactDeclared": true,
+      "terminal": {
+        "path": "artifacts/goal-4/check-art-04/ui-new-source2-terminal.json",
+        "sha256": "74e72c733941c119c96b4a9a8a65ac157493e3fb3f001d6072e5c48d4497cf4c"
+      }
+    },
+    {
+      "phase": "ui-new-source3",
+      "runtime": "cdcc10c447a4b4a2143cdeaf17f4d532edcbd2b7090fa925c9eb250c3fc7f82c",
+      "exit": 0,
+      "stats": {
+        "startTime": "2026-10-27T12:49:21.025Z",
+        "duration": 45186.346999999994,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "exact": true,
+      "exactDeclared": true,
+      "terminal": {
+        "path": "artifacts/goal-4/check-art-04/ui-new-source3-terminal.json",
+        "sha256": "01dc52d4ecc768b21a3aef987facff5099af67bec935f2537ce162fb472c90c8"
+      }
+    }
+  ],
+  "allOriginalReportsAndTracesPreserved": true,
+  "source1Whole514": "512pass/2fail; book small CJK glyph top1px outside own linebox; formal flee costs/Game/save already passed; not labelled514green",
+  "source2": "only small lineheight applied in practice; high priority #app .milestone-gate small still overrode it at gate; focused18passed/new6strict5/1; no full/native/core/guard Source2 launched",
+  "source3": "#app scoped book small lineheight wins both actual consumers; old thresholds unchanged, all current terminal passed",
+  "sameTrustedCloseRed": "baseline native close consumer held and delivered same trusted event: actual2 dialogs; now only1/currentEscape works; UI event test is not native IDB fault",
+  "emptyCheckboxOracle": "Source1 new6 font16 empty checkbox wrongly classed18 text; auxiliary14 classification changed only here, old assertions and budgets intact",
+  "newBookRangeStrengthenedToHalfPixel": true,
+  "preparation": {
+    "oldBuildRejectedBeforeTests": "a3bb docs HEAD tree differs from e961 post-commit build metadata; actual runtime and payload unchanged; rebuild current baseline before list",
+    "dependentRunMissingPlan": "No tests launched, retained tool error; await successful prepare before actual run"
+  },
+  "evidencePreparationSyntax": "Python metadata formatter syntax fixed before producing any output; no product or validation inputs changed"
+}

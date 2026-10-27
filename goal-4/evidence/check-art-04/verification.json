@@ -1,0 +1,53 @@
+{
+  "task": "Goal4 CHECK-ART-04",
+  "date": "2026-10-27",
+  "status": "local-independent-engineering-delivered",
+  "implementation": "d2e92f6c7ec815b902ac49119df5d5015c45231b",
+  "runtime": "cdcc10c447a4b4a2143cdeaf17f4d532edcbd2b7090fa925c9eb250c3fc7f82c",
+  "current514UI57FilesSingleRun": true,
+  "current332Native26FilesSingleRun": true,
+  "current815Rules61Files": true,
+  "current429AssetGuard": true,
+  "everyActualUIAndNativeResultPassed": true,
+  "zeroSkippedRetryFlaky": true,
+  "rootAndVueTypesAndBuildPassed": true,
+  "singleCurrentUIRunDurationMs": 2254421.665,
+  "strictInputWindows": {
+    "fullUI": 755,
+    "native": 506,
+    "core": 684,
+    "assets": 1229
+  },
+  "runtimeSources": 281,
+  "ownedInputs12AndUniqueGitChecks291": true,
+  "httpFiles": 87,
+  "httpBytes": 9082812,
+  "userPreview": "http://127.0.0.1:56884/",
+  "userProgressReadOnlyPreserved": true,
+  "old508TestsAnd58FileHashesUnchanged": true,
+  "fixedDesktopCurrentRepresentativeFrames12": true,
+  "overallGameArtAccepted": false,
+  "longTermBalanceAccepted": false,
+  "humanAccepted": false,
+  "goalComplete": false,
+  "next": "ART16现有修法选择的物件交互与视觉，先独立合同；后M04/M05/M06兼容最后及全部原义务",
+  "remaining": [
+    "修法大矩形双卡的实际艺术缺口/整体ART与TA",
+    "M04正常路线和恢复完整格",
+    "M05性能完整样本",
+    "M06兼容最后及旧缺口",
+    "干净同源候选包/解包",
+    "最终最大C端/代码/安全review",
+    "长期平衡与真人复验"
+  ],
+  "notRun": [
+    "页面兼容/移动/响应式/多尺寸/多字号/跨浏览器/环境性能专项"
+  ],
+  "dirtyEngineeringPackageNotFinalCandidate": true,
+  "coverage": "coverage.json",
+  "attempts": "attempts.json",
+  "identity": "identity-proof.json",
+  "pixels": "visual-review.json",
+  "timing": "real-timing.json",
+  "review": "review.md"
+}

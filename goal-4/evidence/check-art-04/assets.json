@@ -1,0 +1,77 @@
+{
+  "actualTests": 429,
+  "singleCurrentRun": true,
+  "oldCapsNotRaised": true,
+  "terminal": {
+    "runtime": "cdcc10c447a4b4a2143cdeaf17f4d532edcbd2b7090fa925c9eb250c3fc7f82c",
+    "inputs": 1229,
+    "exact": true,
+    "rows": [
+      {
+        "name": "tests",
+        "exit": 0,
+        "seconds": 388.609246969223,
+        "log": "artifacts/goal-4/check-art-04/guard-source3-tests.log"
+      },
+      {
+        "name": "positive",
+        "exit": 0,
+        "seconds": 1.3124749660491943,
+        "log": "artifacts/goal-4/check-art-04/guard-source3-positive.log"
+      }
+    ],
+    "passed": true
+  },
+  "positive": {
+    "format": "chenyuan-art-inventory",
+    "verifiedFiles": 209,
+    "legacyVerifiedFiles": 24,
+    "legacyProductionAssets": 20,
+    "redesignVerifiedFiles": 19,
+    "redesignProductionAssets": 18,
+    "characterBattleVerifiedFiles": 30,
+    "characterBattleProductionAssets": 30,
+    "desktopUIVerifiedFiles": 2,
+    "desktopUIProductionAssets": 2,
+    "statuses": {
+      "reference": 100,
+      "placeholder": 1,
+      "missing": 2,
+      "production": 108
+    },
+    "productionAssets": 108,
+    "singleScreenNativeBytes": 10876,
+    "gameMenuNativeBytes": 16149,
+    "feedbackSkipNativeBytes": 2263,
+    "idleNativeBytes": 21558,
+    "sourceNativeBytes": 10995,
+    "productionNativeBytes": 24325,
+    "preparationNativeBytes": 59965,
+    "adventureNativeBytes": 43962,
+    "stageR1NativeBytes": 17987,
+    "stageR2NativeBytes": 11718,
+    "stageR3NativeBytes": 16828,
+    "stageR4NativeBytes": 11567,
+    "idleTradeoffNativeBytes": 29756,
+    "localLoadingNativeBytes": 1825,
+    "activityHistoryNativeBytes": 7816,
+    "alchemyWorkshopNativeBytes": 21729,
+    "adventureObjectNativeBytes": 35721,
+    "equipmentObjectNativeBytes": 44917,
+    "supplyObjectNativeBytes": 27564,
+    "narrativeObjectNativeBytes": 31617,
+    "cultivationObjectNativeBytes": 44979,
+    "ta07NativeBytes": 31083,
+    "ta08NativeBytes": 41373,
+    "ta09NativeBytes": 28779,
+    "art10NativeBytes": 11985,
+    "art11NativeBytes": 13715,
+    "art12NativeBytes": 6320,
+    "art15NativeBytes": 4508,
+    "scope": "Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance."
+  },
+  "testsLog": {
+    "path": "artifacts/goal-4/check-art-04/guard-source3-tests.log",
+    "sha256": "69f0402af1afd43d959e151bf2b90e358397682f10021504a6d5bab67899e1cf"
+  }
+}

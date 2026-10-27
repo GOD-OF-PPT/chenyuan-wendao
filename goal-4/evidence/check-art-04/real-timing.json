@@ -1,0 +1,116 @@
+{
+  "runtime": "cdcc10c447a4b4a2143cdeaf17f4d532edcbd2b7090fa925c9eb250c3fc7f82c",
+  "extractedRealSamples": 8,
+  "rows": [
+    {
+      "title": "ART06-A4 one real thirty second natural cycle moves only the formal saved cultivation and preserves a static result without an automatic breakthrough",
+      "attachment": "natural-real-cycle-proof",
+      "cycleMs": 30000,
+      "startedAt": 1793106537726,
+      "dueAt": 1793106567726,
+      "observerReadyAt": 1793106537839,
+      "firstPutAt": 1793106567759,
+      "firstPutAfterDueMs": 33,
+      "nativeCompleteAt": null,
+      "completeNotCaptured": "Original hook records native put; completion time not sampled, do not invent it",
+      "fullFormalGameAndUniqueReceiptAssertionsPassed": true
+    },
+    {
+      "title": "ART06-A5 a lawful real sixty second assisted cycle charges one exact realm cost and stops before its cumulative budget or reserve can be crossed",
+      "attachment": "assisted-real-cycle-proof",
+      "cycleMs": 60000,
+      "startedAt": 1793106538436,
+      "dueAt": 1793106598436,
+      "observerReadyAt": 1793106538576,
+      "firstPutAt": 1793106598466,
+      "firstPutAfterDueMs": 30,
+      "nativeCompleteAt": null,
+      "completeNotCaptured": "Original hook records native put; completion time not sampled, do not invent it",
+      "fullFormalGameAndUniqueReceiptAssertionsPassed": true
+    },
+    {
+      "title": "ART06-A12 real CHOOSE saves its complete selected 6000ms result once and never authorizes the next stage",
+      "attachment": "choose-real-cycle-proof",
+      "cycleMs": 6000,
+      "startedAt": 1793106602710,
+      "dueAt": 1793106608710,
+      "observerReadyAt": 1793106602840,
+      "firstPutAt": 1793106608755,
+      "firstPutAfterDueMs": 45,
+      "nativeCompleteAt": null,
+      "completeNotCaptured": "Original hook records native put; completion time not sampled, do not invent it",
+      "fullFormalGameAndUniqueReceiptAssertionsPassed": true
+    },
+    {
+      "title": "ART06-A13 real BREAKTHROUGH saves its complete selected 30000ms result once and never authorizes the next stage",
+      "attachment": "breakthrough-real-cycle-proof",
+      "cycleMs": 30000,
+      "startedAt": 1793106614109,
+      "dueAt": 1793106644109,
+      "observerReadyAt": 1793106614216,
+      "firstPutAt": 1793106644133,
+      "firstPutAfterDueMs": 24,
+      "nativeCompleteAt": null,
+      "completeNotCaptured": "Original hook records native put; completion time not sampled, do not invent it",
+      "fullFormalGameAndUniqueReceiptAssertionsPassed": true
+    },
+    {
+      "title": "ART06-A14 real START_TRIAL saves its complete selected 15000ms result once and never authorizes the next stage",
+      "attachment": "start_trial-real-cycle-proof",
+      "cycleMs": 15000,
+      "startedAt": 1793106615660,
+      "dueAt": 1793106630660,
+      "observerReadyAt": 1793106615771,
+      "firstPutAt": 1793106630697,
+      "firstPutAfterDueMs": 37,
+      "nativeCompleteAt": null,
+      "completeNotCaptured": "Original hook records native put; completion time not sampled, do not invent it",
+      "fullFormalGameAndUniqueReceiptAssertionsPassed": true
+    },
+    {
+      "title": "ART05-A4 real visit waits its complete 6000ms cycle and saves the exact whole Game once",
+      "attachment": "visit-real-cycle-proof",
+      "cycleMs": 6000,
+      "startedAt": 1793107650200,
+      "dueAt": 1793107656200,
+      "observerReadyAt": 1793107650382,
+      "firstPutAt": 1793107656246,
+      "firstPutAfterDueMs": 46,
+      "nativeCompleteAt": null,
+      "completeNotCaptured": "Original hook records native put; completion time not sampled, do not invent it",
+      "fullFormalGameAndUniqueReceiptAssertionsPassed": true
+    },
+    {
+      "title": "ART05-A5 real response waits its complete 6000ms cycle and saves the exact whole Game once",
+      "attachment": "response-real-cycle-proof",
+      "cycleMs": 6000,
+      "startedAt": 1793107656503,
+      "dueAt": 1793107662503,
+      "observerReadyAt": 1793107656609,
+      "firstPutAt": 1793107662561,
+      "firstPutAfterDueMs": 58,
+      "nativeCompleteAt": null,
+      "completeNotCaptured": "Original hook records native put; completion time not sampled, do not invent it",
+      "fullFormalGameAndUniqueReceiptAssertionsPassed": true
+    },
+    {
+      "title": "ART05-A6 real ending waits its complete 12000ms cycle and saves the exact whole Game once",
+      "attachment": "ending-real-cycle-proof",
+      "cycleMs": 12000,
+      "startedAt": 1793107661356,
+      "dueAt": 1793107673356,
+      "observerReadyAt": 1793107661447,
+      "firstPutAt": 1793107673409,
+      "firstPutAfterDueMs": 53,
+      "nativeCompleteAt": null,
+      "completeNotCaptured": "Original hook records native put; completion time not sampled, do not invent it",
+      "fullFormalGameAndUniqueReceiptAssertionsPassed": true
+    }
+  ],
+  "raw": {
+    "path": "artifacts/goal-4/check-art-04/real-cycle-proofs-current.json",
+    "sha256": "4b60b8ab6b700f6fe029e1482a1f8654f5570952b298cb726395856d27d98937"
+  },
+  "scope": "Only eight extractable real-cycle-proof attachments; other real checks are in full report, no invented timestamps",
+  "noLongTermBalanceOrHumanClaim": true
+}

@@ -1,0 +1,22 @@
+{
+  "runtime": "cdcc10c447a4b4a2143cdeaf17f4d532edcbd2b7090fa925c9eb250c3fc7f82c",
+  "cases": [
+    {
+      "title": "a normal new life follows visible finite idle plans from the welcome through the explicitly selected ascension",
+      "durationMs": 140361,
+      "status": "passed",
+      "attachments": [
+        "visible-normal-idle-route"
+      ]
+    }
+  ],
+  "cycles": 250,
+  "separatelyArrangedSegments": 74,
+  "declaredVirtualOnlineMs": 22416000,
+  "limitations": "Visible controls and accelerated declared cycles prove this route; they do not prove real online pacing, balance or human acceptance.",
+  "M04AllRoutesAndRecoveryComplete": false,
+  "raw": {
+    "path": "artifacts/goal-4/check-art-04/visible-route-current-raw.json",
+    "sha256": "11f5e451f06b41da030711dbd9983a80c32f91491639c0bfecc0bf4addc833d6"
+  }
+}
