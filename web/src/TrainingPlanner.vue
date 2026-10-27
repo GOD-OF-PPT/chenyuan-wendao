@@ -42,3 +42,7 @@ const can=(action:Action)=>props.available&&!props.busy&&!props.running&&!blocke
   </template>
  </section>
 </template>
+
+<style scoped>
+.training-planner :deep(button){font-size:18px}
+</style>

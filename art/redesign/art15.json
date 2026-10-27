@@ -1,0 +1,19 @@
+{
+  "format": "chenyuan-art15-notes",
+  "version": 1,
+  "task": "Goal4 ART15",
+  "maxNativeBytes": 6000,
+  "files": [
+    {
+      "path": "web/src/CultivationNotes.vue",
+      "bytes": 4486,
+      "sha256": "81b2606a0211946248b27c6d50e146e6d0347108a1a4ce8e01b0b81938e841dc"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0043-cultivation-notes-art15-contract.md",
+    "goal-4/amendments/2026-10-27-goal-continue-art15.md",
+    "goal-4/research/art15-design-sources.json"
+  ],
+  "userAcceptance": false
+}

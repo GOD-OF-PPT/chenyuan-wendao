@@ -32,6 +32,7 @@ import NarrativeStageHost from './NarrativeStageHost.vue';
 import CultivationStageHost from './CultivationStageHost.vue';
 import CultivationSite from './CultivationSite.vue';
 import MilestoneGate from './MilestoneGate.vue';
+import CultivationNotes from './CultivationNotes.vue';
 import ActionExecution from './ActionExecution.vue';
 import StageOutcome from './StageOutcome.vue';
 import ExplorePanel from './ExplorePanel.vue';
@@ -641,7 +642,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
           <BattlePanel v-else-if="game.battle" :active="hubMain" :game="game" :can="can" :cost="cost" :why="why" compact @move="battle" @start="startAdventure" @takeover="store.pauseCultivation" :activity="store.activity" :running="store.activityRunning" :busy="store.busy" :available="store.available" :saved-adventure-plan="adventureInspectionPlan" :plan-saved="adventureInspectionSaved" @details="openHub('battle',$event)"><template #activity><TrainingActivity v-if="!immersive&&store.activity?.version===6&&store.activity.status!=='stopped'" :store="store" compact @settings="viewActivityPlan" @details="viewReceipt"/></template></BattlePanel>
           <template v-else-if="phase==='idle'&&game.status==='active'&&core.world.location==='cave'">
            <div v-if="immersive" class="art06-stage-home">
-            <MilestoneGate v-if="primaryBreakthrough&&step?.kind!=='recover'" :game="game" :kind="core.player.realm==='spirit'?'trial':'breakthrough'"><h2>{{goal?.title}}</h2><p>{{step?.detail}}</p><template #decision><button class="primary" data-testid="breakthrough" @click="act(breakthrough)" :disabled="!!pendingStoryError||store.busy||!store.available||core.player.realm!=='spirit'&&!can(breakthrough)">{{breakthroughLabel}}</button><button @click="openHub('goal')">查看全部门槛与来源</button><button data-testid="hub-cultivation-details" @click="openHub('cultivation',$event)">查看完整修行安排</button></template></MilestoneGate>
+            <MilestoneGate v-if="primaryBreakthrough&&step?.kind!=='recover'" :game="game" :kind="core.player.realm==='spirit'?'trial':'breakthrough'"><h2 style="line-height:1.65">{{goal?.title}}</h2><p>{{step?.detail}}</p><template #decision><button class="primary" data-testid="breakthrough" @click="act(breakthrough)" :disabled="!!pendingStoryError||store.busy||!store.available||core.player.realm!=='spirit'&&!can(breakthrough)">{{breakthroughLabel}}</button><CultivationNotes data-notes-stage="gate" :identity="core.runId+':gate:'+core.player.realm" :context="goal?.title??'境门核对'" purpose="门槛 · 完整安排"><button @click="openHub('goal')">查看全部门槛与来源</button><button data-testid="hub-cultivation-details" @click="openHub('cultivation')">查看完整修行安排</button></CultivationNotes></template></MilestoneGate>
             <CultivationSite v-else :game="game" :method="hubTrainingMethod" @method="hubTrainingMethod=$event">
              <template #decision>
               <div v-if="step?.kind!=='cultivate'" class="hub-action-heading"><h2>{{needsSchool?'选择修法':needsPreparation?step?.title:step?.kind==='recover'?step.title:primaryBreakthrough?goal?.title:'安排一段潜修'}}</h2></div>
@@ -657,7 +658,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
                <p v-if="step?.kind==='cultivate'" class="hub-batch-summary" data-testid="hub-batch-summary"><template v-if="store.activity?.status==='paused'">原活动已暂停 · 上方继续保留原预算；另排只查看草案。</template><template v-else>修为圆满即停 · 预计 {{hubTrainingQuote?.cycles??0}} 轮 · 灵石预算{{hubTrainingPlan.stoneBudget}} · 最多50轮</template><small v-if="pendingStoryError">请先处理上方原安排或重新读取</small><small v-else-if="hubTrainingQuote?.failure">{{hubTrainingQuote.failure.message}}</small></p>
               </div></div>
              </template>
-             <div class="art06-secondary-actions"><button class="text-button" data-testid="hub-cultivation-details" @click="openHub('cultivation',$event)">查看完整修行安排</button><button class="text-button" @click="openTradeoffs('cultivation',hubTrainingMethod)">比较两种积累方式</button><button v-if="recoveryNeeded" class="text-button" data-testid="hub-recovery" @click="act({type:'REST'})">查看疗养安排</button><button v-if="store.activity" class="text-button" @click="openHub('activity')">本段成果与停止</button></div>
+             <CultivationNotes data-notes-stage="practice" :identity="core.runId+core.player.realm+(step?.kind??'idle')" :context="goal?.title??'听雨潜修'"><div class="art06-secondary-actions"><button class="text-button" data-testid="hub-cultivation-details" @click="openHub('cultivation')">查看完整修行安排</button><button class="text-button" @click="openTradeoffs('cultivation',hubTrainingMethod)">比较两种积累方式</button><button v-if="recoveryNeeded" class="text-button" data-testid="hub-recovery" @click="act({type:'REST'})">查看疗养安排</button><button v-if="store.activity" class="text-button" @click="openHub('activity')">本段成果与停止</button></div></CultivationNotes>
             </CultivationSite>
            </div>
            <template v-else>

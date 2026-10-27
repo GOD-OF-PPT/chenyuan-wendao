@@ -60,3 +60,5 @@ export async function selectMarketItem(page:Page,id:string,mode:'buy'|'sell'='bu
 export async function openRecoveryOptions(page:Page){if(await page.getByTestId('recovery-plan-dialog').isVisible())await page.getByTestId('recovery-plan-close').click();if(!await page.getByTestId('recovery-options-dialog').isVisible())await page.getByTestId('recovery-options-open').click();await expect(page.getByTestId('recovery-options-dialog')).toBeVisible();}
 export async function closeRecoveryOptions(page:Page){if(await page.getByTestId('recovery-options-dialog').isVisible())await page.getByTestId('recovery-options-close').click();}
 export async function selectRecoveryMethod(page:Page,id:string){await openRecoveryOptions(page);await page.getByTestId('recovery-'+id).click();await expect(page.getByTestId('recovery-options-dialog')).not.toBeVisible();}
+
+export async function openCultivationNotes(page:Page){const dialog=page.getByTestId('cultivation-notes-dialog');if(!await dialog.isVisible())await page.getByTestId('cultivation-notes-open').click();await expect(dialog).toBeVisible();}

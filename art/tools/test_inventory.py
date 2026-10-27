@@ -102,6 +102,8 @@ class InventoryTests(unittest.TestCase):
   if art11.exists():files.add(ROOT/'src/full/content.ts')
   art12=ROOT/'art/redesign/art12.json'
   if art12.exists():files.update(ROOT/ref for ref in json.loads(art12.read_text())['sourceReferences'])
+  art15=ROOT/'art/redesign/art15.json'
+  if art15.exists():files.update(ROOT/ref for ref in json.loads(art15.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -1908,5 +1910,51 @@ class ART12InventoryTests(unittest.TestCase):
    with self.assertRaisesRegex(AssertionError,'old budgets'):self.check()
   self.restore();prior=CAPS[-1];m=json.loads((self.root/prior['ledger']).read_text());m['files']=list(reversed(m['files']));self.write(prior['ledger'],m)
   with self.assertRaisesRegex(AssertionError,'old budgets'):self.check()
+
+class CultivationNotesTests(unittest.TestCase):
+ def setUp(self):
+  from art15_inventory import NATIVE,REFS,LEDGER
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art15-negative-');self.root=Path(self.temp.name)
+  for name in NATIVE+REFS+[LEDGER,'web/src/App.vue']:
+   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
+  self.ledger=json.loads((self.root/LEDGER).read_text());self.source=(self.root/NATIVE[0]).read_text();self.app=(self.root/'web/src/App.vue').read_text()
+ def tearDown(self):self.temp.cleanup()
+ def check(self):
+  from art15_inventory import validate_art15
+  return validate_art15(self.root)
+ def write(self,name,text):
+  p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text)
+ def changed(self,text):
+  m=copy.deepcopy(self.ledger);raw=text.encode();m['files'][0].update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest());self.write('web/src/CultivationNotes.vue',text);self.write('art/redesign/art15.json',json.dumps(m))
+ def test_art15_bounded_native_and_identity(self):
+  self.assertGreater(self.check()[1],0)
+  for change in ['hash','bytes','cap','membership']:
+   m=copy.deepcopy(self.ledger)
+   if change=='hash':m['files'][0]['sha256']='0'*64
+   elif change=='bytes':m['files'][0]['bytes']+=1
+   elif change=='cap':m['maxNativeBytes']+=1
+   else:m['files'].append(dict(m['files'][0]))
+   self.write('art/redesign/art15.json',json.dumps(m))
+   with self.subTest(change=change),self.assertRaisesRegex(AssertionError,'ART15'):self.check()
+ def test_art15_actual_two_app_surfaces_and_slot_parent(self):
+  import re
+  for stage in ['gate','practice']:
+   pattern=r'<CultivationNotes\b[^>]*data-notes-stage="'+stage+r'"[^>]*>(.*?)</CultivationNotes>'
+   text,n=re.subn(pattern,lambda m:'<div>'+m[1]+'</div>',self.app,flags=re.S);self.assertEqual(n,1);self.write('web/src/App.vue',text)
+   with self.subTest(stage=stage),self.assertRaisesRegex(AssertionError,'ART15 actual'):self.check()
+  self.write('web/src/App.vue',self.app);self.changed(self.source.replace('<slot/>','').replace('</dialog>','</dialog><slot/>'))
+  with self.assertRaisesRegex(AssertionError,'ART15 original slot'):self.check()
+ def test_art15_readonly_book_cannot_add_io_clock_or_store(self):
+  for token in ['setTimeout(()=>0,1);','indexedDB.open("unexpected");','fetch("unexpected");']:
+   self.changed(self.source.replace('</script>',token+'</script>'))
+   with self.subTest(token=token),self.assertRaisesRegex(AssertionError,'ART15 readonly'):self.check()
+ def test_art15_original_routes_and_focus_lifecycle(self):
+  text=self.app.replace("@click=\"openTradeoffs('cultivation',hubTrainingMethod)\"","@click=\"openHub('inventory')\"")
+  self.assertNotEqual(text,self.app);self.write('web/src/App.vue',text)
+  with self.assertRaisesRegex(AssertionError,'ART15 original view route'):self.check()
+  self.write('web/src/App.vue',self.app)
+  for token in ['onDeactivated(close)',"watch(()=>props.identity,close,{flush:'sync'})",'focus?.target(opener.value??null)']:
+   self.changed(self.source.replace(token,''))
+   with self.subTest(token=token),self.assertRaisesRegex(AssertionError,'ART15 original focus'):self.check()
 
 if __name__=='__main__':unittest.main()

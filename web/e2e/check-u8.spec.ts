@@ -1,3 +1,4 @@
+import {openCultivationNotes} from './stage-support';
 import {selectAlchemyRecipe} from './stage-support';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {snapshot,activitySnapshot,useJourneyClock,finishJourneyClock,revealPaged} from './support';
@@ -217,7 +218,7 @@ async function readRestoredHistory(page:Page,info:TestInfo,completed:Awaited<Ret
 
 test('five saved cultivation cycles retain every complete receipt after reload without replaying rewards',async({page},info)=>{
  const d=driver();d.go('cave');await seed(page,d,'lawful-check-u8-cultivation-history.json');
- await page.getByTestId('hub-cultivation-details').click();await page.getByTestId('training-limits-toggle').click();await page.getByTestId('cultivation-method-natural').click();await page.getByLabel('修行目标',{exact:true}).selectOption('5');
+ await openCultivationNotes(page);await page.getByTestId('hub-cultivation-details').click();await page.getByTestId('training-limits-toggle').click();await page.getByTestId('cultivation-method-natural').click();await page.getByLabel('修行目标',{exact:true}).selectOption('5');
  await page.getByTestId('training-start').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');
  const completed=await saveFiveCycles(page,1);await readRestoredHistory(page,info,completed,'cultivation-restored');
 });
@@ -242,7 +243,7 @@ test('five saved purchase cycles retain positive currency costs and exact invent
 
 test('another page names its takeover and only its new full cycle can award once',async({page,context})=>{
  const d=driver();d.go('cave');await seed(page,d,'lawful-check-u8-takeover.json');
- await page.getByTestId('hub-cultivation-details').click();await page.getByTestId('training-limits-toggle').click();await page.getByLabel('修行目标',{exact:true}).selectOption('1');await page.getByTestId('training-start').click();
+ await openCultivationNotes(page);await page.getByTestId('hub-cultivation-details').click();await page.getByTestId('training-limits-toggle').click();await page.getByLabel('修行目标',{exact:true}).selectOption('1');await page.getByTestId('training-start').click();
  await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');const old=await activitySnapshot(page),before=await snapshot(page);
  const other=await context.newPage();
  try{
@@ -260,7 +261,7 @@ test('another page names its takeover and only its new full cycle can award once
 
 test('paused cultivation exposes saved cycles after reload and history reading preserves the exact resume boundary',async({page},info)=>{
  const d=driver();d.go('cave');await seed(page,d,'lawful-check-u8-paused-history.json');
- await page.getByTestId('hub-cultivation-details').click();await page.getByTestId('training-limits-toggle').click();await page.getByLabel('修行目标',{exact:true}).selectOption('5');await page.getByTestId('training-start').click();
+ await openCultivationNotes(page);await page.getByTestId('hub-cultivation-details').click();await page.getByTestId('training-limits-toggle').click();await page.getByLabel('修行目标',{exact:true}).selectOption('5');await page.getByTestId('training-start').click();
  await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');
  const first=await activitySnapshot(page);await page.clock.fastForward(first.cycleMs);await expect.poll(async()=>(await activitySnapshot(page))?.completedCycles).toBe(1);
  await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('paused');

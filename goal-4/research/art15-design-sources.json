@@ -1,0 +1,19 @@
+{
+  "task": "ART15",
+  "checkedAt": "2026-10-27",
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "title": "XAG112 UI navigation",
+      "currentFetchSucceeded": true,
+      "used": "Consistent book/open/back/focus."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "title": "XAG114 UI context",
+      "currentFetchSucceeded": true,
+      "used": "Explicit readonly choices, phase changes and preserved context."
+    }
+  ],
+  "projectInference": "Optional cultivation book with original callback authority; layout/6000B are project choices, not certification."
+}
