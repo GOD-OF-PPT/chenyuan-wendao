@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-28",
+  "sources": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/observe",
+      "read": "Actual observe/type/buffered parameter section: buffered requires type; observations are diagnostic entries, not game outcome.",
+      "projectUse": "Separate passive observation and actual saved Game/activity proof; do not use LCP/longtasks as a claim of human gameplay or INP."
+    },
+    {
+      "url": "https://playwright.dev/docs/api/class-browsercontext#browser-context-storage-state",
+      "read": "Actual storageState option section: indexedDB added1.51; omit path for in-memory result. Installed1.56.1 retained.",
+      "projectUse": "Capture the whole normal test context, restore only new isolated contexts, never the user Chrome/save."
+    },
+    {
+      "url": "https://chromedevtools.github.io/devtools-protocol/tot/Network/#method-emulateNetworkConditions",
+      "read": "Web tool redirected to index, not full parameter prose; not used as proof of a current API contract.",
+      "projectUse": "Use existing locked Chromium/CDP command and validate actual responses/network timings in each real run; no dependency upgrade."
+    }
+  ],
+  "limits": "12 current fixed desktop samples are a project scope under the existing compatibility pause. 3000/200/2500000/15000000 come from repository v0.3, not these sources; original30/18deferred retained."
+}

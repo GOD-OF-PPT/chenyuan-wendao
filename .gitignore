@@ -24,6 +24,8 @@ web/journey-results/
 # Production performance measurements (no generated save fixtures in Git)
 web/performance-report/
 web/performance-results/
+web/idle-performance-report/
+web/idle-performance-results/
 web/recovery-report/
 web/.generated/
 web/.generated-demo-*/
