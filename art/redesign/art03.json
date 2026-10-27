@@ -22,8 +22,8 @@
     },
     {
       "path": "web/src/RelicAtelier.vue",
-      "bytes": 15628,
-      "sha256": "695f165df1ad7c788a91d7e49b5d80db5f502d1ecdcf9a0315342a93a5c42e37"
+      "bytes": 15892,
+      "sha256": "b8778d1bfc24accf379accdb858aef58070525d03cc688cfcbbbece8775921b3"
     },
     {
       "path": "web/src/LoadoutConstellation.vue",
@@ -37,8 +37,8 @@
     },
     {
       "path": "web/src/art03-equipment.css",
-      "bytes": 14153,
-      "sha256": "65da76200beddd0082bdab3d1fa5594cf94ac1664eb1d5910dd85b0da6231dc8"
+      "bytes": 14406,
+      "sha256": "d795fe599100e540503db9ed95fe1ea3e42629f8344ef52f46b89c33862f4fd8"
     }
   ],
   "assets": [

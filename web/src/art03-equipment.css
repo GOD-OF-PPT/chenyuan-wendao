@@ -70,8 +70,7 @@
 .relic-description.production-object{display:flex;flex-direction:column;gap:4px;padding:0;background:transparent;min-width:0;align-self:center}
 .relic-description h3{display:block;font-size:27px;line-height:1.25;margin:0}.relic-description p{font-size:18px;line-height:1.55;margin:0}.relic-description>small,.relic-description>span{font-size:14px;line-height:1.4}.relic-cycle{font-size:18px;color:#b8d4b5}
 .relic-description .production-unit{font-size:14px;line-height:1.5}
-.equipment-objects .relic-materials{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0;padding:0;min-width:0}
-.equipment-objects .relic-materials button{display:grid;grid-template-columns:24px minmax(0,1fr);align-content:center;gap:4px 6px;min-height:92px;min-width:0;padding:8px;border:0;border-top:1px solid #b6ba9155;border-bottom:1px solid #b6ba9155;border-radius:2px;background:#173a3cdc;transform:none!important}
+.equipment-objects .relic-materials button{align-content:center;min-width:0;transform:none!important}
 .relic-materials .game-icon{width:24px;height:24px;grid-row:span 2}.relic-materials strong{font-size:16px;line-height:1.5}.relic-materials span,.relic-materials small{grid-column:1/-1;font-size:14px;line-height:1.5}
 
 
@@ -82,7 +81,7 @@
 .relic-authorization>div{min-width:0;display:flex;flex-direction:column;gap:5px;font-size:16px;line-height:1.45}.relic-authorization>div>span,.relic-authorization small{font-size:14px;line-height:1.5}
 .relic-authorization .production-budget{font-size:14px;min-height:44px;padding:5px 8px;background:#1b3a3b;border:0;border-bottom:1px solid #a7bc8b77;text-align:left}
 .relic-action>button{min-height:50px;font-size:18px}
-.relic-locked{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1fr);gap:30px;align-items:center;max-width:950px;margin:auto;width:100%}.relic-locked>[data-art-path]{width:100%;height:300px;filter:grayscale(.7);opacity:.55}.relic-locked>div{display:flex;flex-direction:column;gap:12px}.relic-locked h3{font-size:26px;margin:0}.relic-locked p{font-size:18px;line-height:1.7;margin:0}.relic-locked small{font-size:14px}.relic-locked button{align-self:start;min-height:48px}
+.relic-heading.relic-locked{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1fr);gap:48px;align-items:center;max-width:1050px;margin:auto;width:100%;min-height:0;flex:1}#app .relic-locked>button{display:flex;flex-direction:column;align-items:center;width:100%;height:420px;max-height:100%;padding:8px!important;border:0!important;background:none!important;box-shadow:none!important}.relic-locked>button>[data-art-path]{width:100%;height:calc(100% - 44px);min-height:0;opacity:1}.relic-locked .asset-fallback{display:grid;place-items:center}.relic-locked .game-icon{width:160px;height:200px}.relic-locked>button>span{font-size:18px;line-height:1.65;min-height:44px;display:grid;place-items:center;border-bottom:1px solid #9fc4a966}.relic-locked>div{display:flex;flex-direction:column;gap:12px}.relic-locked h3{font-size:28px;margin:0;line-height:1.65}.relic-locked p{font-size:18px;line-height:1.7;margin:0}.relic-locked small{font-size:14px}
 @keyframes equipment-imprint{from{box-shadow:0 0 0 6px #b9d5a55c}to{box-shadow:0 0 20px #b9d5a522}}
 .hub-reduced .equipment-objects *{animation:none!important}.hub-reduced .jade-saved-seal{transform:none}
 @media(prefers-reduced-motion:reduce){.equipment-objects *{animation:none!important}.jade-saved-seal{transform:none}}
@@ -111,3 +110,7 @@
 #app .learning-planner[data-complete=true] .ta09-jade{height:320px}
 .manual-next{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:16px}
 #app .manual-next>button{min-height:52px;min-width:240px;width:auto;font-size:18px}
+
+#app .art10-relic-stage button:not(.primary),#app .relic-object-verb{font-size:18px!important}
+
+#app .relic-object>strong{font-size:18px}
