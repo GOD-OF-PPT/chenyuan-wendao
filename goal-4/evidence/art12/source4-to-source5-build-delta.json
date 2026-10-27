@@ -1,0 +1,24 @@
+{
+  "from": "dc838b2da01ab675932ffd19d380251f959beb9bdc978108205b17805333f15d",
+  "to": "7aeb418195ff9a9008e6ad79817811f3878b1e6d5c3124687b0a7fc952eaceb9",
+  "changedRuntime": [
+    "web/src/narrative-effects.ts"
+  ],
+  "samePayloadClaim": false,
+  "actualChangedPayload": [
+    ".vite/manifest.json",
+    "assets/index-BW_St_sT.js",
+    "demo-nodes/battle-sword.json",
+    "demo-nodes/battle-talisman.json",
+    "demo-nodes/causal-help.json",
+    "demo-nodes/causal-trade.json",
+    "demo-nodes/ending-sword.json",
+    "demo-nodes/ending-talisman.json",
+    "demo-nodes/manifest.json",
+    "demo-nodes/opening.json",
+    "demo-nodes/trial-sword.json",
+    "demo-nodes/trial-talisman.json",
+    "index.html"
+  ],
+  "reason": "SourceDigest changes generated demo envelope/catalog hashes and their embedded bundle metadata. Root expected full byte equality but actual assertion rejected it; preserve that result. Source5 receives new full new8+old59 runs."
+}

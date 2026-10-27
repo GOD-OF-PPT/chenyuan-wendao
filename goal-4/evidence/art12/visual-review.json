@@ -1,0 +1,64 @@
+{
+  "runtime": "7aeb418195ff9a9008e6ad79817811f3878b1e6d5c3124687b0a7fc952eaceb9",
+  "rootActual3": [
+    {
+      "name": "single-factual-invitation-complete",
+      "original": "artifacts/goal-4/art12/ui-new8-source5-results/art12-narrative-stage-ART1-c7bee-known-futures-stay-readonly-chromium/single-factual-invitation-complete.png",
+      "originalSHA256": "654ceb1bbbf533e217676a1f337f143e3ce17b0fd6b9df202e45368b4244ce52",
+      "view": "artifacts/goal-4/art12/visual-source5/single-factual-invitation-complete.jpg",
+      "viewSHA256": "85ebb1af36bd1499ed752b6af4b877076cf3d4c71e4fa321db35d832224ce24a",
+      "viewFormat": "lossy JPEG68 original dimensions",
+      "width": 1440,
+      "height": 900,
+      "reviewedBy": "root",
+      "actualPixelReviewed": true,
+      "committedView": "goal-4/evidence/art12/single-factual-invitation-complete.jpg"
+    },
+    {
+      "name": "factual-life-four-bookmarks",
+      "original": "artifacts/goal-4/art12/ui-new8-source5-results/art12-narrative-stage-ART1-3814c--and-closes-without-sealing-chromium/factual-life-four-bookmarks.png",
+      "originalSHA256": "b7b873c19b74bd97feb5896df22035e674ed0b6b2999118f8209c4a827583a71",
+      "view": "artifacts/goal-4/art12/visual-source5/factual-life-four-bookmarks.jpg",
+      "viewSHA256": "dbbff51f322cdaef1f5330ebfb91db525acb71c9747d03586ee798cf31724c9f",
+      "viewFormat": "lossy JPEG68 original dimensions",
+      "width": 1440,
+      "height": 900,
+      "reviewedBy": "root",
+      "actualPixelReviewed": true,
+      "committedView": "goal-4/evidence/art12/factual-life-four-bookmarks.jpg"
+    },
+    {
+      "name": "saved-paid-response-final",
+      "original": "artifacts/goal-4/art12/ui-new8-source5-results/art12-narrative-stage-ART1-c3518-te-from-its-one-paid-choice-chromium/saved-paid-response-final.png",
+      "originalSHA256": "9c0130be53c9c33921d4bd9828e68c9f93de753769a07b5da29c1ba4e715011f",
+      "view": "artifacts/goal-4/art12/visual-source5/saved-paid-response-final.jpg",
+      "viewSHA256": "48a3a83184241845aed8b63e852a13f39e0d27b18d4fe125f3560dc3abb910e3",
+      "viewFormat": "lossy JPEG68 original dimensions",
+      "width": 1440,
+      "height": 900,
+      "reviewedBy": "root",
+      "actualPixelReviewed": true,
+      "committedView": "goal-4/evidence/art12/saved-paid-response-final.jpg"
+    }
+  ],
+  "independentReview": "independent-visual-review.json",
+  "distinctCurrentRepresentativeFrames": 7,
+  "currentGeneratedPNGCount": 138,
+  "notAllPixelsReviewed": true,
+  "imageBatchLimit": 2,
+  "viewCopy": "Original resolution JPEG quality68 lossy copies; original PNG and both hashes retained",
+  "userArtOrLongTermAcceptance": false,
+  "ordinaryChromeDelivery": {
+    "original": "goal-4/evidence/art12/chrome-delivery.png",
+    "originalSHA256": "b4c2e8f8a7582c49c12678e4ef676580cb142ea341c2a708815a2a2a9e79bce7",
+    "view": "goal-4/evidence/art12/chrome-delivery.jpg",
+    "viewSHA256": "ece7456e5967969e44ff2d257eae51c47b7ff89b72fb50491b89e18d8fcebee3",
+    "dimensions": [
+      1440,
+      756
+    ],
+    "kind": "ordinary existing user tab readonly delivery observation; viewport unchanged; not fixed-desktop matrix or compatibility validation",
+    "bodyView": "仙缘",
+    "GameActionsExecuted": false
+  }
+}

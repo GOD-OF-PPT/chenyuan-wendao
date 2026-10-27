@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "phase": "guard-full-source5",
+      "rows": [
+        {
+          "name": "tests",
+          "commandArgs": [
+            "art/tools/test_inventory.py"
+          ],
+          "began": "2026-10-27T01:37:49.916Z",
+          "ended": "2026-10-27T01:45:10.648Z",
+          "exit": 0,
+          "error": null,
+          "expectedTests": 425,
+          "actualTests": 425,
+          "durationSeconds": 439.748,
+          "unittestOK": true,
+          "log": "artifacts/goal-4/art12/guard-full-source5-tests.log",
+          "sha256": "7a18c4948bd4cb744c9d40214996481208d04e0ed624a75e16111cc129c5c6d5"
+        },
+        {
+          "name": "positive",
+          "commandArgs": [
+            "art/tools/check_inventory.py"
+          ],
+          "began": "2026-10-27T01:45:10.651Z",
+          "ended": "2026-10-27T01:45:12.294Z",
+          "exit": 0,
+          "error": null,
+          "expectedTests": null,
+          "actualTests": null,
+          "durationSeconds": null,
+          "unittestOK": null,
+          "log": "artifacts/goal-4/art12/guard-full-source5-positive.log",
+          "sha256": "a0d1efefeecd4e4ef440f1bf492c4faee5961bc554e2e4dd0735a21e627efe3a"
+        }
+      ],
+      "inputs": 899,
+      "allInputHashesAndRuntimeExact": true,
+      "runtimeDigest": "7aeb418195ff9a9008e6ad79817811f3878b1e6d5c3124687b0a7fc952eaceb9",
+      "runtimeSources": 280,
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}

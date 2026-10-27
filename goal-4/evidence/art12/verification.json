@@ -1,0 +1,54 @@
+{
+  "task": "ART12",
+  "status": "local-engineering-delivered",
+  "runtime": "7aeb418195ff9a9008e6ad79817811f3878b1e6d5c3124687b0a7fc952eaceb9",
+  "runtimeSources": 280,
+  "payloadFiles": 87,
+  "payloadBytes": 9074609,
+  "ui": {
+    "unique": 67,
+    "files": 9,
+    "composition": "full current new8 + full current related old59; two independent current runs, NOT one67 run",
+    "strictInputs": [
+      597,
+      609
+    ],
+    "skip": 0,
+    "retries": 0,
+    "coverage": "coverage.json"
+  },
+  "rules": {
+    "passed": 815,
+    "files": 61,
+    "strictInputs": 425,
+    "currentSource5": true
+  },
+  "native": {
+    "current34": true,
+    "original298PreciselyInherited": true,
+    "oneRun332": false,
+    "strictInputs": 416
+  },
+  "assets": {
+    "actualCurrentFull425": true,
+    "old413Included": true,
+    "new12Included": true,
+    "strictInputs": 899,
+    "newBitmaps": 0,
+    "allOldCapsRaised": false
+  },
+  "typesBuild": "actual rootTS/Vue/build current passed",
+  "humanArtOrBalanceAccepted": false,
+  "compatibilityOrEnvironmentPerformanceExecuted": false,
+  "remaining": [
+    "CHECK-ART-03",
+    "other actual ART including cultivation contrast",
+    "M04 route/recovery",
+    "M05 performance",
+    "M06 compatibility last",
+    "clean package/finalreview/human"
+  ],
+  "identity": "identity-proof.json",
+  "userProgress": "user-progress.json",
+  "implementationCommit": "c566856840cf86ff40181cc03aff6e1235bbe367"
+}

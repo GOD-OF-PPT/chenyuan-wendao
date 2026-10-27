@@ -1,0 +1,21 @@
+{
+  "player": "顾长青",
+  "realm": "凡人",
+  "xp": "10/10",
+  "stones": 40,
+  "hp": "60/60",
+  "mp": "20/20",
+  "activity": "自然吐纳 ended 2/50 cycles",
+  "beforeAfterVisibleHUDExact": true,
+  "beforeAfterActivityExact": true,
+  "saveStatus": "已保存",
+  "fullVisibleBodyExact": false,
+  "bodyDifference": "Before reload inventory read view; after reload original home; final explicit readonly navigation to Fate. No Game command/import/restore/reset or database testing.",
+  "wholeUserDBEqualityClaimed": false,
+  "resourcesActual": [
+    "./assets/index-BW_St_sT.js",
+    "./assets/index-BTHmjMQJ.css"
+  ],
+  "ordinaryChromeDeliveryScreenshot": "chrome-delivery.png",
+  "compatibilityTest": false
+}

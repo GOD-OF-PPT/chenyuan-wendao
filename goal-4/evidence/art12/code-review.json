@@ -1,0 +1,196 @@
+{
+  "task": "ART12",
+  "scope": "Independent final code/safety review; no runtime, tests, guards or formal documentation edits",
+  "source": {
+    "head": "63e65719a8693bf41f6a75d82d777c934e5e1ef3",
+    "build": "artifacts/goal-4/art12/build-source5.json",
+    "buildSha256": "9869c261103b67657a2b116b34c554c344668feab3e592543ff7ff17dc0591bc",
+    "runtimeDigest": "7aeb418195ff9a9008e6ad79817811f3878b1e6d5c3124687b0a7fc952eaceb9",
+    "runtimeSourceCount": 280,
+    "payloadCount": 87,
+    "payloadBytes": 9074609,
+    "currentRuntimeHashMismatches": [],
+    "narrativeEffectsSha256": "ca77c93e636c43fc5c57b1f7b7a3f85bef58aa00f135affe217919b64470b615"
+  },
+  "contract": {
+    "path": "docs/decisions/0039-narrative-reading-art12-contract.md",
+    "sha256": "943db6ba209ffed806587d8964e643fdf917c7309c97249961b5fb0b477faa05"
+  },
+  "mustFix": [],
+  "findings": [
+    {
+      "topic": "Visible scene claims only",
+      "evidence": [
+        "web/src/narrative-effects.ts:49",
+        "web/src/narrative-effects.ts:55-61",
+        "web/src/focus.ts:4-9"
+      ],
+      "assessment": "getCurrentInstance captures the actual component; claimCurrent checks the current vnode.el is an Element and visibleFocusTarget before any p.claim. Detached, display:none/zero-rect, inert or hidden roots cannot consume delivery. EncounterTable, ResponseTable and LifeScroll each retain one concrete div root and one hook, outside readonly dialogs. This closes the witnessed outgoing Response claim path without changing the host delivery window."
+    },
+    {
+      "topic": "Initial mount and KeepAlive activation",
+      "evidence": [
+        "web/src/narrative-effects.ts:63-66",
+        "web/src/App.vue:711-715"
+      ],
+      "assessment": "Immediate post-watch before an element exists clears only local state. onMounted provides the mounted root opportunity within the existing flush. Re-activation only calls synchronously after false-to-true visibility, when root has actually been reinserted. Same actual effect reference plus same local kind/id is idempotent; the following post-watch does not consume again or clear a valid local claim."
+    },
+    {
+      "topic": "Late return and changing object",
+      "evidence": [
+        "web/src/narrative-effects.ts:24-27",
+        "web/src/narrative-effects.ts:41-42",
+        "web/src/narrative-effects.ts:58-66"
+      ],
+      "assessment": "Invalid/mismatched context clears both local effect and owner. Deactivation clears immediately. Reactivation still requires original delivery and unclaimed sequence; neither claimed Set nor delivery is reset or extended. A quick return cannot republish an already claimed result. Owner reference is additional local idempotence, not a receipt identity or replacement proof."
+    },
+    {
+      "topic": "Frozen action and formal proof",
+      "evidence": [
+        "web/src/narrative-effects.ts:35-39",
+        "web/src/activity-effects.ts:13-27",
+        "web/src/use-activity-effect.ts:22-26"
+      ],
+      "assessment": "Witness still freezes originGame action and nextCommand while real runtime is running, then matches actual commandId. The unchanged tracker checks formal resolve full Game, result, completeActivity, activity/run/generation, observations and non-replay feedback. The hook emits no commands, writes no Game/Store/IDB, awards no delta, creates no timer, and does not widen supported operations."
+    },
+    {
+      "topic": "Duration and error boundaries",
+      "evidence": [
+        "web/src/use-activity-effect.ts:10-25",
+        "web/src/narrative-effects.ts:50",
+        "web/src/EncounterTable.vue:36",
+        "web/src/ResponseTable.vue:29",
+        "web/src/LifeScroll.vue:25"
+      ],
+      "assessment": "The original sole presentation timer is still 1400ms. Hidden documents, paused identity, pending pause, unavailable state and any error clear/suppress shared short results; consumers also gate visible ink on no error. No new timeout, delayed retry, stale callback token, or saved state flag was introduced."
+    },
+    {
+      "topic": "Readonly surfaces and original execution",
+      "evidence": [
+        "web/src/FateCatalogue.vue:35-37",
+        "web/src/NarrativePanel.vue:30-32",
+        "web/src/LifeScroll.vue:13-16",
+        "web/src/LifeCatalogue.vue"
+      ],
+      "assessment": "People and signature selection still change only parent reading selection, then close one local dialog; next route is preview-first and emits original navigate only on explicit action. pending/availableEvents/preview/busy/running/pendingError gates and original ChoiceCard confirmation remain. Management dispatches existing parent actions after closing, with export using original read-only text path. No new implicit travel/EVENT/DECIDE/end or cached write command."
+    }
+  ],
+  "exactProtectedDependencies": [
+    {
+      "path": "web/src/NarrativeStageHost.vue",
+      "sha256": "e195b09b7485b48e88883a830ca2c0b352da396e62f6457e5ff30c0168d9630d",
+      "baselineByteExact": true
+    },
+    {
+      "path": "web/src/use-activity-effect.ts",
+      "sha256": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163",
+      "baselineByteExact": true
+    },
+    {
+      "path": "web/src/activity-effects.ts",
+      "sha256": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b",
+      "baselineByteExact": true
+    },
+    {
+      "path": "web/src/ActionFeedbackStage.vue",
+      "sha256": "f5d17de52070256328b2312087cbe6634edaa1c96420a7088fd62bcf25138c93",
+      "baselineByteExact": true
+    },
+    {
+      "path": "web/src/focus.ts",
+      "sha256": "8ae91e78a4db7a854c293fc4b1bc28f02dd0d542b3119cff383f9245b4944eea",
+      "baselineByteExact": true
+    },
+    {
+      "path": "web/src/App.vue",
+      "sha256": "007bfc19736edcc707371abc918a61aca8d95d4664bc97cd0c4eadd14b52278d",
+      "baselineByteExact": true
+    },
+    {
+      "path": "web/src/store.ts",
+      "sha256": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+      "baselineByteExact": true
+    },
+    {
+      "path": "src/full/activity.ts",
+      "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+      "baselineByteExact": true
+    },
+    {
+      "path": "src/full/engine.ts",
+      "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+      "baselineByteExact": true
+    },
+    {
+      "path": "src/full/receipts.ts",
+      "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+      "baselineByteExact": true
+    }
+  ],
+  "hostDomainProofDeliveryPrefixByteExactTo63e6571": true,
+  "caps": [
+    {
+      "ledger": "art/redesign/narrative-objects.json",
+      "capBytes": 45000,
+      "fileBytes": 31617,
+      "ledgerSha256": "1b35353baeb3f8287d94d45cc829e15c737453534953a6112aa3ffd1e7ad1332",
+      "files": [
+        "web/src/EncounterTable.vue",
+        "web/src/ResponseTable.vue",
+        "web/src/LifeScroll.vue",
+        "web/src/NarrativeStageHost.vue",
+        "web/src/narrative-effects.ts",
+        "web/src/narrative-objects.css"
+      ]
+    },
+    {
+      "ledger": "art/redesign/story-journey.json",
+      "capBytes": 48000,
+      "fileBytes": 46638,
+      "ledgerSha256": "26493dfeef53dd9520aff6d0e6267e5e56fbac7f3363dff2b28fa58b35934280",
+      "files": [
+        "web/src/story-pages.ts",
+        "web/src/NarrativePanel.vue",
+        "web/src/FateCatalogue.vue",
+        "web/src/LifeCatalogue.vue",
+        "web/src/TrialCatalogue.vue",
+        "web/src/ReviewPages.vue",
+        "web/src/story-book.css",
+        "web/src/reading-memory.ts"
+      ]
+    },
+    {
+      "ledger": "art/redesign/stage-r4.json",
+      "capBytes": 14000,
+      "fileBytes": 11567,
+      "ledgerSha256": "4ea13a399c1868e631d2f81bb5a6d18a8db7528c06c5786a625a72494f34b420",
+      "files": [
+        "web/src/stage-r4.css",
+        "web/src/journal-anchors.ts",
+        "web/src/navigation.ts"
+      ]
+    },
+    {
+      "ledger": "art/redesign/art12.json",
+      "capBytes": 14000,
+      "fileBytes": 6320,
+      "ledgerSha256": "40bcf9a959fc9fc2cbac6de06550848d2703cbba075234b2803b28c5cc999b51",
+      "files": [
+        "web/src/art12-narrative.css"
+      ]
+    }
+  ],
+  "realEvidenceBoundary": {
+    "source2": "New8 7 pass/1 A3 fail; historical accepted Game/receipt did not prove ink. Preserve original results.",
+    "source3": "Activation-only candidate still A3 red; passive/CDP diagnostic identified response/shen_return claiming sequence2 before fate/shen. Do not label that candidate fixed.",
+    "source4": "ui-new8-source4-terminal.json actual8 passed/591 exact. old59 actual57 pass/2 failed; latter two hidden-management test premises were separately adapted by their owner. Preserve source4 original report identities.",
+    "source5": "New8 current actual8 passed, terminal exit0 and strict pre/post exact; old59 remained running at this review. Actual report/terminal hashes and selected four fresh frames are in source5-independent-visual-review.json. No overall total pass claim."
+  },
+  "limitations": [
+    "This is a static code and identity review; no browser or suite was launched by this reviewer.",
+    "visibleFocusTarget is reused as a DOM visibility guard, not an occlusion or art-quality proof. Actual ink/controls/text collision needs the current selected PNG and geometry review.",
+    "The current consumers have concrete HTMLElement div roots. A future Fragment/Teleport-only root must not assume this predicate is valid without its own consumer check.",
+    "Pixel review is recorded separately after fresh images exist. No overall eight-page art, TA depth, long-term balance, compatibility/performance or real-user approval is claimed."
+  ],
+  "pixelReview": "artifacts/goal-4/art12/analysis/source5-independent-visual-review.json"
+}
