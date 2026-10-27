@@ -1,0 +1,40 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "asset": "sword-station-v1",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-4f665ce0-1585-48f7-b43a-3da741dbe1fe.png",
+  "selectedCopy": "art/redesign/art16-schools/sword-station-v1.png",
+  "generatedSHA256": "a5d8ccab08223c77e56bde86eebc5067125488431111a3216e1dcef08f1de4f8",
+  "copySHA256": "a5d8ccab08223c77e56bde86eebc5067125488431111a3216e1dcef08f1de4f8",
+  "prompt": "art/redesign/art16-schools/sword-station-v1-prompt.json",
+  "promptSHA256": "4f982060f088a1c0e983af6da03afbefd4abf64faf131b1da99d01e65b8251e7",
+  "reference": "web/public/art/v2/workshop/furnace-v1.webp",
+  "referenceSHA256": "bd201f06af3c18342eb6dda9d5bb2abb96347b623fb32f1d213c4c2b86c25642",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "modeRGBA": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alpha1Bbox": [
+    27,
+    0,
+    1224,
+    1254
+  ],
+  "alpha16Bbox": [
+    299,
+    7,
+    932,
+    1252
+  ],
+  "originalKept": true,
+  "requestId": null,
+  "model": null,
+  "selectedForRuntime": true,
+  "pixelReview": "actual generated original viewed; whole object visible; sword source framing tight7px top/2px bottom, keep original and normalize complete alpha body with32px runtime margin; no semantic edit or outpainting performed"
+}

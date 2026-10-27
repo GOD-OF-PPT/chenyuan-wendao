@@ -1,0 +1,12 @@
+{
+  "asset": "talisman-station-v1",
+  "mode": "built-in",
+  "tool": "image_gen.imagegen",
+  "transparent_background": true,
+  "reference": "web/public/art/v2/workshop/furnace-v1.webp",
+  "referenceSHA256": "bd201f06af3c18342eb6dda9d5bb2abb96347b623fb32f1d213c4c2b86c25642",
+  "prompt": "Use case: stylized-concept. Asset type: production transparent 2D object for an ancient Chinese xianxia idle game, used only to preview the talisman cultivation path. Reference image: style, painterly material detail, restrained jade patina and soft lighting ONLY; do not reproduce the furnace or its silhouette. Primary request: one complete compact cold talisman-writing station: a carved dark-wood brush rest holding a single jade-bound bamboo calligraphy brush diagonally upward, a dark inkstone, and a modest curled cool-ivory blank paper sheet gathered into one clear object silhouette. Front three-quarter view, coherent proportions, visually distinct from a sword rack, all objects complete and uncropped, centered square composition with generous transparent padding on every side. Hand-painted fantasy game asset with detailed wood grain, stone and paper fibers, cool indigo/ink-green palette, pale cool-white paper, tiny old-brass details, soft upper-left game lighting, crisp readable edge. Genuine transparent alpha background, no room, no ground plane, no UI card or rectangle, no labels, no readable text or characters on the paper, no watermark, no people, no flame, smoke, glow, flying papers or painted magical status. The paper is blank and the tools are at rest, not an already-cast spell. Keep the compact station visually substantial.",
+  "status": "generated-selected-for-deterministic-contain",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-64929fa7-cf6d-414b-a58d-52dbbe560588.png",
+  "selectedCopy": "art/redesign/art16-schools/talisman-station-v1.png"
+}

@@ -35,7 +35,8 @@ import './idle-tradeoffs.css';
 import './local-loading.css';
 
 import './alchemy-workshop.css';
-import './art03-equipment.css';
+import './art03-equipment.css'
+import './art16-schools.css';
 
 import './game-menus.css';
 import './art10-equipment.css';

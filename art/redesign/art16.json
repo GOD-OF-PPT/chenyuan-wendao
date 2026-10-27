@@ -1,0 +1,296 @@
+{
+  "format": "chenyuan-school-art16",
+  "version": 1,
+  "task": "Goal4 ART16",
+  "budgets": {
+    "nativeBytes": 12000,
+    "newAssets": 2,
+    "runtimeWidth": 512,
+    "runtimeHeight": 512,
+    "maxRuntimeBytes": 160000,
+    "maxTotalRuntimeBytes": 320000
+  },
+  "files": [
+    {
+      "path": "web/src/art16-schools.css",
+      "bytes": 4999,
+      "sha256": "688f5df2bea7ec30d34d1ef14e6f4041468412fdb85fd32e5e7b8da9b42d4d1e"
+    }
+  ],
+  "assets": [
+    {
+      "id": "sword",
+      "source": {
+        "path": "art/redesign/art16-schools/sword-station-v1.png",
+        "bytes": 789026,
+        "sha256": "a5d8ccab08223c77e56bde86eebc5067125488431111a3216e1dcef08f1de4f8",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1283470,
+          "solidPixels": 217009,
+          "intermediatePixels": 72037,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          27,
+          0,
+          1224,
+          1254
+        ],
+        "alphaBBox16": [
+          299,
+          7,
+          932,
+          1252
+        ],
+        "rgbaSHA256": "87a1669bcd2dee7728d0e56c0872a660e80f109f55041477cd8ac85ff6c973b8"
+      },
+      "prompt": {
+        "path": "art/redesign/art16-schools/sword-station-v1-prompt.json",
+        "bytes": 1885,
+        "sha256": "4f982060f088a1c0e983af6da03afbefd4abf64faf131b1da99d01e65b8251e7",
+        "literalSHA256": "9972875814fd048a88e7127569b547f4a1904f659a69a78a5a3fd9fe08f07492"
+      },
+      "audit": {
+        "path": "art/redesign/art16-schools/receipts/sword-station-v1.json",
+        "bytes": 1419,
+        "sha256": "0ffc6e89235753e7b9e09473d2fe1adc395e4442675c7cdc0f59526f6be8d0b2"
+      },
+      "reference": {
+        "path": "web/public/art/v2/workshop/furnace-v1.webp",
+        "bytes": 63588,
+        "sha256": "bd201f06af3c18342eb6dda9d5bb2abb96347b623fb32f1d213c4c2b86c25642"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/schools/sword-station-v1.webp",
+        "bytes": 30088,
+        "sha256": "81e3328d26597b017f96b03e380e72d8d23b0fd5c7dfd77e5542b7f074f71a3f",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 227180,
+          "solidPixels": 27032,
+          "intermediatePixels": 7932,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          53,
+          34,
+          397,
+          478
+        ],
+        "alphaBBox16": [
+          140,
+          37,
+          365,
+          477
+        ],
+        "rgbaSHA256": "d7ab17bed6c182802c4c145d147fde4029e2489307491aa6f9844e1983205ea4"
+      },
+      "transform": {
+        "scale": 0.35406698564593303,
+        "translateX": 34.531100478468886,
+        "translateY": 34.0,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          44.09090909090908,
+          34.0,
+          467.90909090909093,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          140.39712918660285,
+          36.47846889952153,
+          364.52153110047846,
+          477.29186602870817
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          53,
+          34,
+          397,
+          478
+        ],
+        "actualRuntimeAlphaBBox16": [
+          140,
+          37,
+          365,
+          477
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 30088,
+        "firstSHA256": "81e3328d26597b017f96b03e380e72d8d23b0fd5c7dfd77e5542b7f074f71a3f",
+        "secondBytes": 30088,
+        "secondSHA256": "81e3328d26597b017f96b03e380e72d8d23b0fd5c7dfd77e5542b7f074f71a3f",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    },
+    {
+      "id": "talisman",
+      "source": {
+        "path": "art/redesign/art16-schools/talisman-station-v1.png",
+        "bytes": 1344427,
+        "sha256": "d6b0b62acf8e28ad91efca56fe179b31ae2733ef5db7507e1ce0ec2de99f1615",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1031109,
+          "solidPixels": 499521,
+          "intermediatePixels": 41886,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          33,
+          17,
+          1224,
+          1254
+        ],
+        "alphaBBox16": [
+          81,
+          62,
+          1221,
+          1133
+        ],
+        "rgbaSHA256": "fb37b944d871288e77ba48b3bac5cc0a488fa8096d7715030b64ce1bd7376dff"
+      },
+      "prompt": {
+        "path": "art/redesign/art16-schools/talisman-station-v1-prompt.json",
+        "bytes": 1926,
+        "sha256": "3da3a4d8e7b92462824d85b8e22230e980326a0df97d7dd8dae0bb43cb82dc26",
+        "literalSHA256": "73f363a076c86228f8217f44c08e7e466240e442f260ff1cefb0c45f8990ce6a"
+      },
+      "audit": {
+        "path": "art/redesign/art16-schools/receipts/talisman-station-v1.json",
+        "bytes": 1430,
+        "sha256": "ebbbcf5ee2d685eeb62c16eeb68bc8ce17955305d956fece78e9c46e5a665b21"
+      },
+      "reference": {
+        "path": "web/public/art/v2/workshop/furnace-v1.webp",
+        "bytes": 63588,
+        "sha256": "bd201f06af3c18342eb6dda9d5bb2abb96347b623fb32f1d213c4c2b86c25642"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/schools/talisman-station-v1.webp",
+        "bytes": 38986,
+        "sha256": "67eb84e24b55305af9ef9247c47f2d34f6b31ea8d619cc7eab73e3fe284b3ba3",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 193455,
+          "solidPixels": 64361,
+          "intermediatePixels": 4328,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          59,
+          49,
+          470,
+          449
+        ],
+        "alphaBBox16": [
+          59,
+          50,
+          469,
+          434
+        ],
+        "rgbaSHA256": "456a3fd61d0403c3de7e21b64fd446e2158737d744df28a1d3bc6aff402153f1"
+      },
+      "transform": {
+        "scale": 0.3589329021827001,
+        "translateX": 30.410670978173016,
+        "translateY": 27.898140662894093,
+        "targetBox": [
+          34,
+          34,
+          478,
+          478
+        ],
+        "projectedAlphaBBox1": [
+          42.255456750202114,
+          33.99999999999999,
+          469.7445432497979,
+          478.0
+        ],
+        "projectedAlphaBBox16": [
+          59.48423605497172,
+          50.1519805982215,
+          468.6677445432498,
+          434.5691188358933
+        ],
+        "wholePaintedSourceInside": true,
+        "actualRuntimeAlphaBBox1": [
+          59,
+          49,
+          470,
+          449
+        ],
+        "actualRuntimeAlphaBBox16": [
+          59,
+          50,
+          469,
+          434
+        ]
+      },
+      "exportProof": {
+        "firstBytes": 38986,
+        "firstSHA256": "67eb84e24b55305af9ef9247c47f2d34f6b31ea8d619cc7eab73e3fe284b3ba3",
+        "secondBytes": 38986,
+        "secondSHA256": "67eb84e24b55305af9ef9247c47f2d34f6b31ea8d619cc7eab73e3fe284b3ba3",
+        "bytesEqual": true,
+        "sourceUnchanged": true
+      },
+      "visualAcceptance": false
+    }
+  ],
+  "provenance": {
+    "producer": {
+      "path": "art/tools/export_art16_schools.py",
+      "bytes": 4423,
+      "sha256": "8654da8f100f516a8ef5692f37117a749f89298d4b272a36fd3adec1ec2d60aa"
+    },
+    "facts": {
+      "path": "art/redesign/art16-schools/export-facts.json",
+      "bytes": 8420,
+      "sha256": "0a9eccebf459700311e650945e817d0b00dffd4705429e02240a4d0892d05982"
+    }
+  },
+  "sourceReferences": [
+    "docs/decisions/0045-school-object-art16-contract.md",
+    "goal-4/amendments/2026-10-27-goal-continue-art16.md",
+    "goal-4/research/art16-design-sources.json"
+  ],
+  "userAcceptance": false
+}

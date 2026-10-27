@@ -27,8 +27,8 @@
     },
     {
       "path": "web/src/LoadoutConstellation.vue",
-      "bytes": 4689,
-      "sha256": "57a64e3efb5141447e6f042591e74589d87e2691e1b50186ab57d1ad3b69d336"
+      "bytes": 5187,
+      "sha256": "eef2f2a00693c546fe9de7e3a39e0001cb32b29b17c13a52395d4f740de8ac70"
     },
     {
       "path": "web/src/equipment-effects.ts",
@@ -37,8 +37,8 @@
     },
     {
       "path": "web/src/art03-equipment.css",
-      "bytes": 14406,
-      "sha256": "d795fe599100e540503db9ed95fe1ea3e42629f8344ef52f46b89c33862f4fd8"
+      "bytes": 12473,
+      "sha256": "8fc55e5a995064b5fe58f7e3048ce8000b3c4f153f0f56ad36e989aa1b7cb7bd"
     }
   ],
   "assets": [

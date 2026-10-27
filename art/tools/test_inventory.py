@@ -104,6 +104,8 @@ class InventoryTests(unittest.TestCase):
   if art12.exists():files.update(ROOT/ref for ref in json.loads(art12.read_text())['sourceReferences'])
   art15=ROOT/'art/redesign/art15.json'
   if art15.exists():files.update(ROOT/ref for ref in json.loads(art15.read_text())['sourceReferences'])
+  art16=ROOT/'art/redesign/art16.json'
+  if art16.exists():files.update(ROOT/ref for ref in json.loads(art16.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -183,7 +185,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0)+(1 if (self.root/'art/redesign/ta07.json').exists() else 0)+(6 if (self.root/'art/redesign/ta08.json').exists() else 0)+(4 if (self.root/'art/redesign/art10.json').exists() else 0)+(14 if (self.root/'art/redesign/art11.json').exists() else 0))
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0)+(1 if (self.root/'art/redesign/ta07.json').exists() else 0)+(6 if (self.root/'art/redesign/ta08.json').exists() else 0)+(4 if (self.root/'art/redesign/art10.json').exists() else 0)+(14 if (self.root/'art/redesign/art11.json').exists() else 0)+(2 if (self.root/'art/redesign/art16.json').exists() else 0))
  def test_idle_ui_requires_its_source_ledger(self):
   (self.root/'art/redesign/idle-cultivation.json').unlink();self.rejected()
  def test_idle_ui_budget_cannot_be_raised(self):
@@ -1956,5 +1958,58 @@ class CultivationNotesTests(unittest.TestCase):
   for token in ['onDeactivated(close)',"watch(()=>props.identity,close,{flush:'sync'})",'focus?.target(opener.value??null)']:
    self.changed(self.source.replace(token,''))
    with self.subTest(token=token),self.assertRaisesRegex(AssertionError,'ART15 original focus'):self.check()
+
+class ART16SchoolInventoryTests(unittest.TestCase):
+ def setUp(self):
+  from art16_inventory import BASE,REFS,NATIVE,PRODUCER,FACTS,LEDGER,OLD,IDS
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art16-negative-');self.root=Path(self.temp.name)
+  files=set(REFS+NATIVE+OLD+[PRODUCER,FACTS,LEDGER,'web/src/main.ts','art/redesign/art03.json','web/public/art/v2/workshop/furnace-v1.webp','art/tools/export_art10_blanks.py','art/tools/export_art11_items.py'])
+  for key in IDS:files.update([f'{BASE}/{key}-station-v1.png',f'{BASE}/{key}-station-v1-prompt.json',f'{BASE}/receipts/{key}-station-v1.json',f'web/public/art/v2/schools/{key}-station-v1.webp'])
+  for name in files:
+   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
+  self.ledger=json.loads((self.root/LEDGER).read_text());self.facts=json.loads((self.root/FACTS).read_text());self.actor=(self.root/'web/src/LoadoutConstellation.vue').read_text();self.css=(self.root/NATIVE[0]).read_text()
+ def tearDown(self):self.temp.cleanup()
+ def write(self,name,text):
+  p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text if isinstance(text,str)else json.dumps(text))
+ def restore(self):
+  self.write('art/redesign/art16.json',self.ledger);self.write('art/redesign/art16-schools/export-facts.json',self.facts);self.write('web/src/LoadoutConstellation.vue',self.actor);self.write('web/src/art16-schools.css',self.css)
+ def check(self):
+  from art16_inventory import validate_art16
+  from check_inventory import image_info
+  return validate_art16(self.root,image_info)
+ def factsChange(self,edit):
+  f=copy.deepcopy(self.facts);edit(f);self.write('art/redesign/art16-schools/export-facts.json',f);m=copy.deepcopy(self.ledger);m['assets']=f['assets'];p=self.root/'art/redesign/art16-schools/export-facts.json';m['provenance']['facts'].update(bytes=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest());self.write('art/redesign/art16.json',m)
+ def test_art16_fixed_budget_and_actual_source_identity(self):
+  self.assertEqual(self.check()[1],2)
+  for key,value in [('nativeBytes',12001),('newAssets',3),('runtimeWidth',True),('maxTotalRuntimeBytes',320001)]:
+   self.restore();m=copy.deepcopy(self.ledger);m['budgets'][key]=value;self.write('art/redesign/art16.json',m)
+   with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'ART16 fixed'):self.check()
+  self.restore();p=self.root/'art/redesign/art16-schools/sword-station-v1.png';p.write_bytes(p.read_bytes()+b'changed')
+  with self.assertRaisesRegex(AssertionError,'ART16 actual identity'):self.check()
+ def test_art16_real_image_consumer_parent_and_fallback(self):
+  import re
+  asset=r'<AssetImage\b[^>]*:asset-id="\x27school-station-\x27\+school"[^>]*>.*?</AssetImage>'
+  match=re.search(asset,self.actor,re.S);self.assertIsNotNone(match)
+  for label,text in [('missing',self.actor[:match.start()]+self.actor[match.end():]),('wrong-parent',(self.actor[:match.start()]+self.actor[match.end():]).replace('</template>',match[0]+'</template>',1)),('fallback',self.actor.replace('<GameIcon kind="skill" :id="C.startingLoadouts[school].builder"/>',''))]:
+   self.restore();self.write('web/src/LoadoutConstellation.vue',text)
+   with self.subTest(label=label),self.assertRaisesRegex(AssertionError,'ART16 actual'):self.check()
+ def test_art16_original_school_action_gate_and_echo(self):
+  for token in ["emit('school',school)",'!!schoolReason(school)',"effect.result.type==='SCHOOL'&&game.school===school"]:
+   self.restore();self.assertIn(token,self.actor);self.write('web/src/LoadoutConstellation.vue',self.actor.replace(token,'false',1))
+   with self.subTest(token=token),self.assertRaisesRegex(AssertionError,'ART16'):self.check()
+ def test_art16_alpha_and_double_export_facts_are_bound(self):
+  for label,edit in [('alpha',lambda f:f['assets'][0]['runtime']['alphaProof'].update(transparentPixels=0)),('double',lambda f:f['assets'][0]['exportProof'].update(bytesEqual=False)),('margin',lambda f:f['assets'][0]['runtime'].update(alphaBBox1=[0,0,512,512]))]:
+   self.restore();self.factsChange(edit)
+   with self.subTest(label=label),self.assertRaisesRegex(AssertionError,'ART16'):self.check()
+ def test_art16_old_caps_and_css_external_io_cannot_expand(self):
+  prior=json.loads((self.root/'art/redesign/art03.json').read_text());prior['maxNativeBytes']+=1;self.write('art/redesign/art03.json',prior)
+  with self.assertRaisesRegex(AssertionError,'ART16 old cap'):self.check()
+  prior['maxNativeBytes']-=1;self.write('art/redesign/art03.json',prior);text=self.css+'\n@import "https://example.invalid/font.css";';self.write('web/src/art16-schools.css',text);m=copy.deepcopy(self.ledger);m['files'][0].update(bytes=len(text.encode()),sha256=hashlib.sha256(text.encode()).hexdigest());self.write('art/redesign/art16.json',m)
+  with self.assertRaisesRegex(AssertionError,'ART16 external'):self.check()
+ def test_art16_originals_provider_boundary_and_helper_identity(self):
+  self.factsChange(lambda f:f['assets'][0].update(visualAcceptance=True))
+  with self.assertRaisesRegex(AssertionError,'ART16 cannot assert'):self.check()
+  self.restore();p=self.root/'art/tools/export_art10_blanks.py';p.write_bytes(p.read_bytes()+b'\n# changed\n')
+  with self.assertRaisesRegex(AssertionError,'ART16 actual identity'):self.check()
 
 if __name__=='__main__':unittest.main()

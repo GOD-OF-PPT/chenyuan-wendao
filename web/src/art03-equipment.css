@@ -37,15 +37,6 @@
 .jade-object-action .learning-candidate>button{width:auto;flex:0 1 auto;align-self:auto;min-height:46px}.jade-object-action .learning-candidate>button:first-child{min-width:180px}.jade-object-action .learning-candidate>small{font-size:14px;flex-basis:100%;order:3}
 .jade-saved-seal{pointer-events:none;border:1px solid #ca957a;color:#f3d2a4;background:#4d2824;padding:0 8px;font-size:18px;line-height:1.5;animation:equipment-imprint .7s ease-out}
 .loadout-constellation{display:flex;flex-direction:column;flex:1;min-height:0;position:relative;gap:8px}
-.equipment-objects .school-picker{display:flex;flex-direction:column;flex:1;min-height:0;margin:0;padding:0;background:none}.school-picker h3{margin:0;font-size:22px}.school-picker h3 small{display:block;font-size:14px;font-weight:400;margin-top:5px}
-.school-altars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;flex:1;min-height:0;width:min(100%,1040px);align-self:center;padding:10px 0}
-.school-altars>button{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;min-height:300px;min-width:0;padding:12px 20px;border-width:0 1px;border-color:#b7b88062;border-radius:0;background:radial-gradient(ellipse at 50% 35%,#7ca5832b,transparent 65%),linear-gradient(90deg,transparent,#123c3b88,transparent);transform:none!important}
-.school-altars>button[aria-pressed=true]{border-color:#afd6ab;box-shadow:inset 0 -3px #9bd8bd;background:radial-gradient(ellipse at 50% 35%,#7ca58340,transparent 65%)}
-.school-altars>button>strong{font-size:26px}.school-altars>button>span{font-size:18px}.school-altars>button>small{font-size:14px;line-height:1.4}.school-altars>button>b{font-size:18px;color:#b3d7bb}
-.school-sigil{position:relative;display:grid;place-items:center;width:140px;height:140px;border:1px solid #afb28e80;transform:rotate(45deg);border-radius:12px;box-shadow:0 0 0 10px #859f7620,inset 0 0 30px #8ba67424}
-.school-sigil>.game-icon{width:90px;height:90px;transform:rotate(-45deg)}.school-sigil>i{position:absolute;inset:15px;border:1px solid #b6bf9177;border-radius:50%}.school-sigil>i+i{inset:28px;border-style:dashed}
-.school-altars>[data-school=talisman] .school-sigil{color:#b4d7cb;border-radius:50%;background:#284f4a55}
-.school-starting-scrolls{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.school-starting-scrolls small{font-size:14px;background:#1e4544;padding:7px 10px;border-top:2px solid #99b28666;border-bottom:2px solid #99b28666}
 .loadout-spirit-stage{position:relative;flex:1;min-height:330px;isolation:isolate;background:radial-gradient(ellipse at center,#67967420,transparent 65%)}
 .loadout-body{position:absolute;top:2%;bottom:8%;left:34%;width:32%;opacity:.85}.loadout-body>[data-art-path]{position:absolute!important;inset:0;width:100%!important;height:100%!important}.loadout-body img{object-fit:contain!important}
 .loadout-meridian{position:absolute;inset:12%;border:1px solid #a2ba8b55;border-radius:50%;box-shadow:0 0 0 25px #a2ba8b0d,0 0 0 55px #a2ba8b09;transform:rotateX(28deg)}

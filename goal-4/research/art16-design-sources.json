@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-27",
+  "task": "ART16",
+  "actuallyRead": true,
+  "sources": [
+    {
+      "title": "Riot Clarity in League",
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "applied": "用剑架/符案的不同轮廓说明不同修法，行动层级先于光效，少量有意义反馈。"
+    },
+    {
+      "title": "Xbox XAG114 UI context",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "applied": "点击道器明确是比较，确认才改修法；禁用理由/状态与标签靠近实际对象。"
+    }
+  ],
+  "projectDerivation": "双冷态物件/512/160000/DOM/原即时配置及原子存档均为本项目合同，不是来源数值/认证或竞品试玩。",
+  "humanAcceptance": false
+}
