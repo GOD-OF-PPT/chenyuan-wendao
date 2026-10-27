@@ -1,0 +1,298 @@
+{
+  "format": "chenyuan-idle-matrix-coverage",
+  "version": 1,
+  "profile": "idle-current-desktop-v1",
+  "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+  "phases": 5,
+  "composite": true,
+  "uniqueTests": 618,
+  "totals": {
+    "ui": 171,
+    "persistence": 415,
+    "journey": 32
+  },
+  "normalRoutes": 24,
+  "foundationGuides": 6,
+  "everyRoundNormalRoutes": 2,
+  "requirements": [
+    {
+      "id": "FR01",
+      "legacyLeaves": 3,
+      "currentEvidence": [
+        "[\"persistence\",\"idle-recovery-boundaries.spec.ts\",\"M04-N13 two real connections canonicalize the same tick and fence competing finite choices without duplicate rewards\",\"chromium\"]",
+        "[\"persistence\",\"recovery.spec.ts\",\"new-run and import retries are idempotent and altered payloads reject\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-choices.spec.ts\",\"M04-U8 real duplicate confirmation accepts one finite breakthrough and charges one actual pill only at its full deadline\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR02",
+      "legacyLeaves": 6,
+      "currentEvidence": [
+        "[\"persistence\",\"fault-matrix.spec.ts\",\"postcommit breakthrough delivery loss retries the original receipt without duplicate cost or rewinding newer progress\",\"chromium\"]",
+        "[\"persistence\",\"fault-matrix.spec.ts\",\"postcommit create delivery loss retains one replacement identity and a retry never repeats its control write\",\"chromium\"]",
+        "[\"persistence\",\"fault-matrix.spec.ts\",\"postcommit import delivery loss retains one replacement identity and a retry never repeats its control write\",\"chromium\"]",
+        "[\"persistence\",\"fault-matrix.spec.ts\",\"postcommit restore delivery loss retains one replacement identity and a retry never repeats its control write\",\"chromium\"]",
+        "[\"persistence\",\"fault-matrix.spec.ts\",\"postcommit ending delivery loss reloads the actual sealed life and never offers a second ending reward\",\"chromium\"]",
+        "[\"persistence\",\"fault-matrix.spec.ts\",\"an uncertain committed command cannot retry over a replacement run from another connection\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR03",
+      "legacyLeaves": 4,
+      "currentEvidence": [
+        "[\"persistence\",\"fault-matrix.spec.ts\",\"create replacement quota retains every old record and a stable retry replaces exactly once\",\"chromium\"]",
+        "[\"persistence\",\"fault-matrix.spec.ts\",\"create replacement abort retains every old record and a stable retry replaces exactly once\",\"chromium\"]",
+        "[\"persistence\",\"fault-matrix.spec.ts\",\"import replacement quota retains every old record and a stable retry replaces exactly once\",\"chromium\"]",
+        "[\"persistence\",\"fault-matrix.spec.ts\",\"import replacement abort retains every old record and a stable retry replaces exactly once\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR04",
+      "legacyLeaves": 8,
+      "currentEvidence": [
+        "[\"persistence\",\"idle-recovery-boundaries.spec.ts\",\"M04-N13 two real connections canonicalize the same tick and fence competing finite choices without duplicate rewards\",\"chromium\"]",
+        "[\"persistence\",\"idle-recovery-restore.spec.ts\",\"M04-N5 a fixed full restore rejects another page real action and its replacement life while an old activity cannot settle after restoration\",\"chromium\"]",
+        "[\"ui\",\"idle-cultivation.spec.ts\",\"an explicit second-page continuation fences the original page and does not double reward\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-flow.spec.ts\",\"M04-U3 an open full restore never rewinds another page committed turn or its explicitly replaced life\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-controls.spec.ts\",\"M03-C11 a same-run committed action invalidates the earlier file revision without a new import decision or receipt\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-controls.spec.ts\",\"M03-C12 an explicitly confirmed restart invalidates a prior file read and preserves the new native control receipt\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-controls.spec.ts\",\"M03-C9 unreadable File text stays local and a later selected confirmed file owns import when an older read finishes last\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-controls.spec.ts\",\"M03-C10 an earlier welcome File text cannot overwrite a subsequently confirmed new Game or create an unauthorized import receipt\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-controls.spec.ts\",\"M03-C13 a delayed typed demo file cannot undo a confirmed scoped node reset or create normal Game data\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR05",
+      "legacyLeaves": 2,
+      "currentEvidence": [
+        "[\"persistence\",\"recovery.spec.ts\",\"corrupt receipts including null and stored undefined never become new executable intentions\",\"chromium\"]",
+        "[\"persistence\",\"recovery.spec.ts\",\"bad control receipts reject without rerunning a new-game operation\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR06",
+      "legacyLeaves": 3,
+      "currentEvidence": [
+        "[\"persistence\",\"milestone.spec.ts\",\"checkpoint, owner, activity and receipt faults including put-success abort roll every record back and retry one original command\",\"chromium\"]",
+        "[\"persistence\",\"idle-recovery-current.spec.ts\",\"M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once\",\"chromium\"]",
+        "[\"persistence\",\"idle-recovery-current.spec.ts\",\"M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once\",\"chromium\"]",
+        "[\"persistence\",\"idle-recovery-current.spec.ts\",\"M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-choices.spec.ts\",\"M04-U10 put success followed by a real native abort publishes no breakthrough success and retries only its original full-period command\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR07",
+      "legacyLeaves": 3,
+      "currentEvidence": [
+        "[\"persistence\",\"milestone.spec.ts\",\"checkpoint, owner, activity and receipt faults including put-success abort roll every record back and retry one original command\",\"chromium\"]",
+        "[\"persistence\",\"idle-recovery-current.spec.ts\",\"M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once\",\"chromium\"]",
+        "[\"persistence\",\"idle-recovery-current.spec.ts\",\"M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once\",\"chromium\"]",
+        "[\"persistence\",\"idle-recovery-current.spec.ts\",\"M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-local-recovery.spec.ts\",\"M03-L2 Game quota records a safe failure and the original cycle command retry creates exactly one action and receipt\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR08",
+      "legacyLeaves": 5,
+      "currentEvidence": [
+        "[\"persistence\",\"repository.spec.ts\",\"bad imports and stale replacement tokens preserve current state and receipt records\",\"chromium\"]",
+        "[\"persistence\",\"fault-matrix.spec.ts\",\"negative resources, unknown IDs and future schemas leave every good record and the active import UI intact\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-choices.spec.ts\",\"M04-U11 malformed JSON stays in the actual import surface and cannot overwrite any complete good Game record\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-controls.spec.ts\",\"M03-C9 unreadable File text stays local and a later selected confirmed file owns import when an older read finishes last\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-boundaries.spec.ts\",\"M03-B4 legal imported name and journal markup stay literal readable text without script or external requests\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR09",
+      "legacyLeaves": 6,
+      "currentEvidence": [
+        "[\"persistence\",\"repository.spec.ts\",\"plain M1 state migrates without inventing a school or losing the opening choice\",\"chromium\"]",
+        "[\"persistence\",\"repository.spec.ts\",\"actual legacy repository releases its connection on version change and cannot overwrite the migrated run\",\"chromium\"]",
+        "[\"persistence\",\"repository.spec.ts\",\"existing full v1 content, previous snapshot and checkpoint migrate atomically with raw backups\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-local-recovery.spec.ts\",\"M03-L7 real legacy opening startup migrates the entire lawful state while preserving native originals and exact migration identity\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-local-recovery.spec.ts\",\"M03-L8 real legacy qi startup migrates the entire lawful state while preserving native originals and exact migration identity\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-local-recovery.spec.ts\",\"M03-L9 real legacy battle startup migrates the entire lawful state while preserving native originals and exact migration identity\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR10",
+      "legacyLeaves": 5,
+      "currentEvidence": [
+        "[\"persistence\",\"repository.spec.ts\",\"quota failure during upgrade rolls back schema/data and a later retry migrates once\",\"chromium\"]",
+        "[\"persistence\",\"repository.spec.ts\",\"a blocked open that already rejected never migrates later after the blocker closes\",\"chromium\"]",
+        "[\"persistence\",\"recovery.spec.ts\",\"v2 to v3 upgrades the authoritative full state instead of replaying preserved v1 progress\",\"chromium\"]",
+        "[\"persistence\",\"recovery.spec.ts\",\"failed v2 scope migration leaves database version and all original records at v2\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-local-recovery.spec.ts\",\"M03-L10 an actual native versionchange closes the stale connection and explicit reread preserves DB9 without silently retrying the failed arrangement\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR11",
+      "legacyLeaves": 7,
+      "currentEvidence": [
+        "[\"persistence\",\"repository.spec.ts\",\"imports reidentify the actual NPC event and preserve an unfinished battle\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-context.spec.ts\",\"M04-U12 pending event refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-context.spec.ts\",\"M04-U12 pending opening refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-context.spec.ts\",\"M04-U12 pending battle refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle\",\"chromium\"]",
+        "[\"ui\",\"idle-milestones.spec.ts\",\"visiting opens only the selected current-place story and a separately selected response saves once\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR12",
+      "legacyLeaves": 4,
+      "currentEvidence": [
+        "[\"persistence\",\"idle-recovery-restore.spec.ts\",\"M04-N1 both schools reopen the real online question every round and each gate and replay only the original cycle\",\"chromium\"]",
+        "[\"persistence\",\"idle-recovery-boundaries.spec.ts\",\"M04-N12 quota preserves the question and every gate full preparation until the original complete cycle retries once\",\"chromium\"]",
+        "[\"persistence\",\"idle-recovery-boundaries.spec.ts\",\"M04-N12 abort preserves the question and every gate full preparation until the original complete cycle retries once\",\"chromium\"]",
+        "[\"journey\",\"idle-trial-reopen.spec.ts\",\"current normal sword reopens its actual question and every saved battle round without reroll or an automatic next gate\",\"chromium\"]",
+        "[\"journey\",\"idle-trial-reopen.spec.ts\",\"current normal talisman reopens its actual question and every saved battle round without reroll or an automatic next gate\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR13",
+      "legacyLeaves": 3,
+      "currentEvidence": [
+        "[\"persistence\",\"idle-recovery-restore.spec.ts\",\"M04-N4 ordinary restore quota abort and lost delivery retain every store and the exact original receipt never rewinds later earnings\",\"chromium\"]",
+        "[\"persistence\",\"idle-recovery-restore.spec.ts\",\"M04-N3 two actual lethal failures in each school preserve paid consumption and restore the same complete preparation twice\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-flow.spec.ts\",\"M04-U1 sword twice experiences lethal thunder then reads real costs and restores complete preparation after reload\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-flow.spec.ts\",\"M04-U1 talisman twice experiences lethal thunder then reads real costs and restores complete preparation after reload\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": [
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "trial-journey.spec.ts",
+            "title": "two actual lethal failures retain exact consumption across reload and restore the whole preparation on mobile"
+          },
+          "reason": "M06 retains the original mobile, multi-viewport and text-scale obligation; this evidence covers only fixed Chromium1440x900/font1."
+        }
+      ]
+    },
+    {
+      "id": "FR14",
+      "legacyLeaves": 4,
+      "currentEvidence": [
+        "[\"persistence\",\"idle-recovery-restore.spec.ts\",\"M04-N6 missing foreign purpose and future-version checkpoints cannot replace any real current or archived record\",\"chromium\"]",
+        "[\"persistence\",\"repository.spec.ts\",\"an orphaned full checkpoint or previous snapshot is never mistaken for a new empty run\",\"chromium\"]",
+        "[\"persistence\",\"recovery.spec.ts\",\"a foreign checkpoint without scope or migration proof is not adopted during reopening\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-flow.spec.ts\",\"M04-U4 imported mid-trial retreat shows unknown cumulative cost and a legal recovery route without fabricating a checkpoint\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR15",
+      "legacyLeaves": 4,
+      "currentEvidence": [
+        "[\"persistence\",\"idle-recovery-restore.spec.ts\",\"M04-N4 ordinary restore quota abort and lost delivery retain every store and the exact original receipt never rewinds later earnings\",\"chromium\"]",
+        "[\"persistence\",\"idle-recovery-boundaries.spec.ts\",\"M04-N14 a complete restore racing a due real turn commits exactly one full intent across connections\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-flow.spec.ts\",\"M04-U2 quota complete restore can cancel its failed intent then retry one fresh original confirmation without a partial rewind\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-flow.spec.ts\",\"M04-U2 abort complete restore can cancel its failed intent then retry one fresh original confirmation without a partial rewind\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-flow.spec.ts\",\"M04-U3 an open full restore never rewinds another page committed turn or its explicitly replaced life\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR16",
+      "legacyLeaves": 4,
+      "currentEvidence": [
+        "[\"persistence\",\"idle-recovery-lifespan.spec.ts\",\"M04-N9 a real final-month cycle aborts atomically and two actual lifespan endings restore the complete ordinary preparation without accumulating goods\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-choices.spec.ts\",\"M04-U6 transmit cancels only its unaccepted ending intent while a failed accepted closing cycle retains its original twelve-second retry\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-choices.spec.ts\",\"M04-U6 depart cancels only its unaccepted ending intent while a failed accepted closing cycle retains its original twelve-second retry\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-choices.spec.ts\",\"M04-U9 two explicit ending reviews cannot seal twice or end the other page replacement life\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR17",
+      "legacyLeaves": 4,
+      "currentEvidence": [
+        "[\"persistence\",\"recovery.spec.ts\",\"invalid writes reject through promises and storage denial never falls back to memory\",\"chromium\"]",
+        "[\"persistence\",\"recovery.spec.ts\",\"raw backup reads failed and future databases without migration, and missing databases stay missing\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-boundaries.spec.ts\",\"M03-B7 a future primary database disables new Game writes and exports only its unchanged raw original without downgrading\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-local-recovery.spec.ts\",\"M03-L5 main open denial is a safe recorded code and never turns unreadable progress into a usable empty save\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR18",
+      "legacyLeaves": 1,
+      "currentEvidence": [
+        "[\"ui\",\"idle-recovery-flow.spec.ts\",\"M04-U5 a normally earned nonzero victory exports clears only its isolated site and imports every Game field with a new identity and honest missing checkpoint\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR19",
+      "legacyLeaves": 4,
+      "currentEvidence": [
+        "[\"persistence\",\"local-experience.spec.ts\",\"clear rotates the capture epoch and an old retry cannot erase or re-add newer records\",\"chromium\"]",
+        "[\"persistence\",\"local-experience.spec.ts\",\"a delayed export cannot republish a snapshot cleared after its read or download after a foreign clear\",\"chromium\"]",
+        "[\"persistence\",\"local-experience.spec.ts\",\"observer exceptions and mutable observer copies cannot change a committed Game or saved status\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-local-recovery.spec.ts\",\"M03-L1 local quota leaves the actual committed Game intact and exports only the failed new observation from memory\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-local-recovery.spec.ts\",\"M03-L10 an actual native versionchange closes the stale connection and explicit reread preserves DB9 without silently retrying the failed arrangement\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": []
+    },
+    {
+      "id": "FR20",
+      "legacyLeaves": 8,
+      "currentEvidence": [
+        "[\"ui\",\"idle-recovery-context.spec.ts\",\"M04-U14 missing scene and portrait resources cannot block a normal opening or its explicit finite cultivation and first breakthrough\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-focus.spec.ts\",\"M03-F3 committed travel metadata settles without stealing a later keyboard tab or changing its exact complete native outcome\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-records.spec.ts\",\"CHECK-MATRIX-L4 one stopped formal cycle and both actual exports survive a same-session virtual day without Game Activity receipt or reward changes\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-keyboard.spec.ts\",\"CHECK-K5 a native pending startup content skip never steals the keyboard focus from a newer settings decision\",\"chromium\"]",
+        "[\"ui\",\"matrix-ui-controls.spec.ts\",\"M03-C7 keyboard help exposes every current guide and Escape returns focus to its exact public opener without writing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G1 opening keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G2 cultivation keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G3 breakthrough keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G4 equipment with qi and no chosen school keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G6 ordinary battle keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G7 recovery after actual attack and retreat keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G8 causality awaiting an actual decision keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G9 trial preparation keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G10 actually sealed ending keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G11 trial battle has battle priority keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G12 third gate won but END still undecided has trial priority keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game\",\"chromium\"]",
+        "[\"ui\",\"check-matrix-guidance.spec.ts\",\"CHECK-G5 actual finite SOURCE results suppress only materials and refreshing or reading its old receipt never fabricates a new contextual outcome\",\"chromium\"]",
+        "[\"ui\",\"idle-recovery-context.spec.ts\",\"M04-U13 a response cycle cannot steal a newer inventory selection or its focus when its complete Game is committed\",\"chromium\"]"
+      ],
+      "compatibilityDeferred": [
+        {
+          "legacy": {
+            "suite": "ui",
+            "file": "guidance.spec.ts",
+            "title": "gameplay help remains readable at four viewports and150 percent with a complete focus return"
+          },
+          "reason": "M06 retains the original mobile, multi-viewport and text-scale obligation; this evidence covers only fixed Chromium1440x900/font1."
+        }
+      ]
+    }
+  ],
+  "history": [
+    {
+      "identity": "[\"journey\",\"idle-normal-matrix.spec.ts\",\"normal idle leave/talisman/craft/transmit\",\"chromium\"]",
+      "phase": "ui-all-journeys-source2-final1",
+      "status": "timedOut",
+      "supersededBy": "ui-one-journey-source2-followup1"
+    }
+  ],
+  "legacyNative": {
+    "included": 60,
+    "superseded": 22,
+    "total": 82
+  },
+  "pageCompatibilityAccepted": false,
+  "originalThreeBrowserMatrixAccepted": false,
+  "humanOrBalanceAccepted": false
+}

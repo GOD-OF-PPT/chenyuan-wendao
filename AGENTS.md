@@ -355,3 +355,9 @@ ART16依[0045](docs/decisions/0045-school-object-art16-contract.md)与本轮Riot
 
 
 ART16实查补充：原比较tab同为正文操作保18，持久保存说明保18；真实quota时收空白而不裁掉完整四槽/失败原因/原重试。固定舞台受错误横幅压缩时，道器装饰行可收，文字行和44目标不可收；fallback按实际可用行contain，不能硬保120px逼正文溢出。旧汇总应精确计新增2件，不放宽预算/删除旧assert；真实当前GUI与native已提交丢回复分开核，测试夹具须先满足正式境界/原导入确认。当前9像素和8+100/332/815不代整体艺术/长期/真人，原用户窗口小物件观察留后段兼容，不提前开展该专项。
+
+## 正常路线与恢复交接补充（M04）
+
+依据[0046](docs/decisions/0046-normal-idle-recovery-m04-contract.md)及本轮实际回读[HTML dialog关闭步骤](https://html.spec.whatwg.org/multipage/interactive-elements.html#close-the-dialog)、[MDN close事件](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close_event)：原生还焦点与排队close消费不等于玩家新意图。阶段交接仅在原活动/人生/导航/同步证明仍完整、已保存、无新弹窗和后续输入时完成；旧锚已退场且焦点恰回当前内容的自动还焦点可保原生平交接，实际后续键盘/指针仍撤旧请求。具体守卫是本项目推导，非标准规定的游戏布局、时长或兼容认证。
+
+恢复入口须核沉浸practice与Gate两个真实互斥消费者；相邻trialRecovery过期后不能回放旧报告。真实失败/成本/完整CP、原生命令重试和可达只读入口分别验证；普通CP恢复沿实际native confirm，不据错误弹窗前提改Game。24基础路线不能借隐藏本命/研习升级，正消耗与每关有限用药按实际库存明确授权。旧瞬时测试逐声明保原责任与具名当前替代，所有20要求/88叶子及浏览器/小屏未验项保留；来源清单/报告数量不代覆盖。原总时限超时与后续同源定向通过都保留，unknown不冒根因修复；当前工程组合不称单轮全绿，不代整体艺术、长期平衡、性能或真人。

@@ -1,8 +1,8 @@
 # Goal1完整目标的本次接续登记
 
-## 当前唯一实施项 MATRIX-M04（2026-10-27）
+## MATRIX-M04已交付；下一独立项MATRIX-M05（2026-10-28）
 
-状态[ ]；基线fd7d0ce，上一ART16为真实progress，原13已核。原话amendments/2026-10-27-continue-matrix-m04.md、0046合同/参数/风险/验收/回滚先于运行代码。正常24基础路线+原advanced1、筑基六引导、FR01—20当前恢复要求及原native缺失文件按实际声明补齐；不以虚拟时长/单路径代完整矩阵或长期真人。旧72/60中的其它浏览器/小屏仍M06，不删旧门槛。
+状态[x]；实现437a2b1，实际检查/交付见末尾；基线fd7d0ce，上一ART16为真实progress，原13已核。原话amendments/2026-10-27-continue-matrix-m04.md、0046合同/参数/风险/验收/回滚先于运行代码。正常24基础路线+原advanced1、筑基六引导、FR01—20当前恢复要求及原native缺失文件按实际声明补齐；不以虚拟时长/单路径代完整矩阵或长期真人。旧72/60中的其它浏览器/小屏仍M06，不删旧门槛。
 
 合同→合法基线红→当前有限周期/公开控件和恢复接线→早期逐图→冻结当前24/6/恢复具名声明与所有相关旧UI/native/规则/guard/类型构建→独立提交/同源Git-冻结-HTTP/用户只读→tasks/GJ。本轮只M04，不恢复兼容/环境性能；下一M05，之后强制三任务CHECK-ART16-M45，再M06最后/原综合/干净包/最大评审/艺术长期真人。Goal active。具体细分参数与实际检查留本项真实交付，不能只写计划。
 
@@ -562,3 +562,16 @@ CHECK-ART-03最终检查就绪（2026-10-27）：源4（2233ad6e）当前完整4
 证据：goal-4/evidence/art16/verification.json、coverage.json、attempts.json、identity-proof.json、visual-review.json、real-timing.json与review.md。
 
 计数接续：ART16为CHECK-ART04后第1项，下一M04为第2、M05为第3，故M05后先执行既有“每三任务全面检查”义务CHECK-ART16-M45（当前授权范围，不自动恢复兼容），再最后M06及原CHECK-MATRIX-02归拢；不是等四个实施项后才检查，不新增产品范围。
+
+
+## MATRIX-M04实际交付（2026-10-28）
+
+- 实现437a2b138bc96012ccf54f32df2c64cdc54d8c12，运行b9228b3c。真实practice/Gate手记补只读渡劫结果恢复入口；归隐已保存后原生自动还焦点不再吞生平交接，全部活动/人生/NAV/sync/非重放/后续输入守卫保持。只有App生产改变；Engine/Store/DB9/费用/原逐周期/CAS/proof和全部旧cap不改，0新位图。
+- 当前618唯一=171相关UI（28+143两轮）+415原生存储（一次完整轮）+32路线（24正常/六筑基引导/两派逐回合刷新）；不是单轮618绿。路线首轮31过/1原240秒总时限超时，原例同源135877.783ms定向通过，原失败及unknown根因保M05，不加时限/自动重试/删断言。20原恢复要求/88叶子逐身份保，原native82=60当前执行+22瞬时旧前提具名当前替代；旧三浏览器/小屏责任留M06。
+- 当前823规则/62显式文件、438完整资源/positive、根TS及Vue构建实际通过；UI681/696、native536、路线678/674、core683、资源569各自输入前后exact。原14键盘正文逆向相同，诊断插桩撤除。24基础路线无额外本命/研习/NPC援助，所有成本/完整Game/全库/唯一回执、截止前零变与未知选择保持；虚拟钟不代实际长期成长/趣味。其它372默认UI本项未跑，最终完整矩阵继续。
+- 原K1真实保存却未显示生平保为红；被动1+5绿未冒修复，受控同trusted close/已完成readonly事务消费顺序锁红、窄修后原例及后续真实Tab正反回归均过。普通恢复native confirm、shen_return筑基前置、修炼真实max50预设和REST后Gate等测试前提按实际消费者补正，原约束不减。所有历史失败/准备错误/trace/旧冻结保留。
+- 四张当前固定桌面代表测试帧逐张实际审，另普通Chrome交付观察一张，原PNG/原尺寸JPEG68/hash保留；生成清单不冒全像素/整体艺术。普通原窗口1440×756未设viewport/做兼容，既有整体工作台感/小物件/长期和真人责任继续有效。
+- 284运行源及47归属输入与实现Gitblob共330去重相同（46有实际执行快照，研究资料只作来源）；89载荷9155833B与受测/冻结/提交后重建/56884 HTTP相同。原Chrome凡人未择法/10修为满/40石/60HP/20MP/吐纳结束2/50/已保存，前后HUD/活动/目标只读相同；重载功法回home，不冒全文/全用户DB同。无用户Game/导入/恢复/重置或用户档测试。原13hash未动未提交，dirty工程版非最终干净候选；未push/PR/合并/公开部署/改权限。
+- [杠精审查] 通过，仅0046本项工程合同，无已知未修本项功能阻断。真实完整功能/有限授权/原意图、代码/像素/源/HTTP/真人分层；超时unknown、整体ART/长期与全部后段义务不抹去。下一唯一M05性能，继强制CHECK-ART16-M45三任务综合，再M06兼容最后/原CHECK-MATRIX-02、干净同源包/最大C端代码安全review/真人。Goal active未完成，当前未执行兼容/环境性能。回滚仅revert本项、保DB9/DB1可读和全部原件。
+
+证据：[evidence/matrix-m04/verification.json](evidence/matrix-m04/verification.json)、coverage.json、checks.json、attempts.json、identity-proof.json、visual-review.json、user-progress.json与review.md。

@@ -1,0 +1,811 @@
+{
+  "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+  "scope": {
+    "browser": "chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "fontScale": 1
+  },
+  "phases": [
+    {
+      "name": "ui-corrected-source2-preflight1",
+      "suite": "ui",
+      "terminal": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 681,
+        "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+        "stats": {
+          "startTime": "2026-10-27T19:45:01.648Z",
+          "duration": 170871.37399999998,
+          "expected": 28,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 28,
+        "retried": [],
+        "reportSha256": "6effccee7586cbf3194c5b49a83fc216c3ceee25612a7489c331c369ebe7ab5f"
+      },
+      "evidence": {
+        "report": {
+          "path": "artifacts/goal-4/matrix-m04/ui-corrected-source2-preflight1-report.json",
+          "bytes": 4623784,
+          "sha256": "6effccee7586cbf3194c5b49a83fc216c3ceee25612a7489c331c369ebe7ab5f"
+        },
+        "before": {
+          "path": "artifacts/goal-4/matrix-m04/ui-corrected-source2-preflight1-before.json",
+          "bytes": 109506,
+          "sha256": "a54566076cfad2a2b62c327f4db58f07d56644d49d75da8473b484bc46de1f0f"
+        },
+        "after": {
+          "path": "artifacts/goal-4/matrix-m04/ui-corrected-source2-preflight1-after.json",
+          "bytes": 109505,
+          "sha256": "26601b14ddd4ac29003249454f2ffaa303fac31bd70551144ca3607ed9ba26c6"
+        },
+        "terminal": {
+          "path": "artifacts/goal-4/matrix-m04/ui-corrected-source2-preflight1-terminal.json",
+          "bytes": 518,
+          "sha256": "e27765288420abdfbd4e0e7fe86edd11b3d270d5925a6f04fb8a0ac32762138b"
+        },
+        "declared": {
+          "path": "artifacts/goal-4/matrix-m04/ui-corrected-source2-preflight1-declared.json",
+          "bytes": 22245,
+          "sha256": "f35acc2db33fece1fe2482652f42448c967576bd5fe1148fd9ad4d6d35c4bf73"
+        },
+        "configuration": {
+          "path": "artifacts/goal-4/matrix-m04/playwright.related-preflight.config.ts",
+          "bytes": 603,
+          "sha256": "98018e6a0486213fd56c56f50ee08e3825aaeac56ec64954f0c7d66765c63a28"
+        }
+      }
+    },
+    {
+      "name": "ui-all-journeys-source2-final1",
+      "suite": "journey",
+      "terminal": {
+        "exit": 1,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 678,
+        "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+        "stats": {
+          "startTime": "2026-10-27T19:55:51.814Z",
+          "duration": 2633558.4129999997,
+          "expected": 31,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 32,
+        "retried": [],
+        "reportSha256": "1615df69d7706598a932de2dfe17fadc3233990faa2e4d36082993548390ad1f"
+      },
+      "evidence": {
+        "report": {
+          "path": "artifacts/goal-4/matrix-m04/ui-all-journeys-source2-final1-report.json",
+          "bytes": 1030923,
+          "sha256": "1615df69d7706598a932de2dfe17fadc3233990faa2e4d36082993548390ad1f"
+        },
+        "before": {
+          "path": "artifacts/goal-4/matrix-m04/ui-all-journeys-source2-final1-before.json",
+          "bytes": 109206,
+          "sha256": "55c17ee4935344d1f5bf9d0c5d7d05f1c28030e304430603224eefa1d3e337ff"
+        },
+        "after": {
+          "path": "artifacts/goal-4/matrix-m04/ui-all-journeys-source2-final1-after.json",
+          "bytes": 109205,
+          "sha256": "d9d7d9b6e6073efeb614412866acef190f73ae62d8bf9ecc15aa8ac73d216840"
+        },
+        "terminal": {
+          "path": "artifacts/goal-4/matrix-m04/ui-all-journeys-source2-final1-terminal.json",
+          "bytes": 518,
+          "sha256": "52bb18c5e6fa7348bf127a9c3d11f32ef7a166b40e19ffdc121338624ddb48bd"
+        },
+        "declared": {
+          "path": "artifacts/goal-4/matrix-m04/ui-all-journeys-source2-final1-declared.json",
+          "bytes": 22274,
+          "sha256": "b58cc8c2bd897bba26ad2b08af350fddd9379ed892786dab3c8fd33ff3b243c4"
+        },
+        "configuration": {
+          "path": "artifacts/goal-4/matrix-m04/playwright.routes-current.config.ts",
+          "bytes": 504,
+          "sha256": "ebb9321644eae6edd8a8770ff9df802cc427ba9aa91d5308adc36b5a7432c6eb"
+        }
+      }
+    },
+    {
+      "name": "native-all-source2-final1",
+      "suite": "persistence",
+      "terminal": {
+        "event": "native-terminal",
+        "declarationExact": true,
+        "actualDeclarations": 415,
+        "retried": [],
+        "phase": "native-all-source2-final1",
+        "exit": 0,
+        "error": null,
+        "reportCopied": true,
+        "withinPhaseInputsExact": true,
+        "inputs": 536,
+        "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+        "stats": {
+          "startTime": "2026-10-27T20:23:50.981Z",
+          "duration": 525192.735,
+          "expected": 415,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": []
+      },
+      "evidence": {
+        "report": {
+          "path": "artifacts/goal-4/matrix-m04/native-all-source2-final1-report.json",
+          "bytes": 8965977,
+          "sha256": "68a5a9b4fa1596f27daad227e606e86c5c389d1d3ef618d8a9f4ff69f0677b84"
+        },
+        "before": {
+          "path": "artifacts/goal-4/matrix-m04/native-all-source2-final1-before.json",
+          "bytes": 87258,
+          "sha256": "08bd3793dc5d9a7ced9250effc4cb027adc823387dfc1d21ffd7fef17b74a30c"
+        },
+        "after": {
+          "path": "artifacts/goal-4/matrix-m04/native-all-source2-final1-after.json",
+          "bytes": 87257,
+          "sha256": "4414ec0a9e689fe7adaa26e40110c320034b95e2c51f65356d65486593351c21"
+        },
+        "terminal": {
+          "path": "artifacts/goal-4/matrix-m04/native-all-source2-final1-terminal.json",
+          "bytes": 515,
+          "sha256": "0ea212145a2209eb35c9e6187b773d894f59cb517a474b1706353778a1aad5d1"
+        },
+        "declared": {
+          "path": "artifacts/goal-4/matrix-m04/native-all-source2-final1-declared.json",
+          "bytes": 277985,
+          "sha256": "465f95df03d707a2e217d8541726b23bfbdad956922ad7a4ffffcfbfc1261c52"
+        },
+        "configuration": {
+          "path": "artifacts/goal-4/matrix-m04/playwright.native-all-source2-final1.config.ts",
+          "bytes": 472,
+          "sha256": "aecef0787164f4ab78e8e5a04fa035127625a17575374ed29c1edc39ca9080d1"
+        }
+      }
+    },
+    {
+      "name": "ui-one-journey-source2-followup1",
+      "suite": "journey",
+      "terminal": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 674,
+        "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+        "stats": {
+          "startTime": "2026-10-27T20:40:33.292Z",
+          "duration": 135877.783,
+          "expected": 1,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 1,
+        "retried": [],
+        "reportSha256": "6a851e93d1fe0a684494c785408ae379bac7f283083ef6a52af59169eee7be66"
+      },
+      "evidence": {
+        "report": {
+          "path": "artifacts/goal-4/matrix-m04/ui-one-journey-source2-followup1-report.json",
+          "bytes": 51155,
+          "sha256": "6a851e93d1fe0a684494c785408ae379bac7f283083ef6a52af59169eee7be66"
+        },
+        "before": {
+          "path": "artifacts/goal-4/matrix-m04/ui-one-journey-source2-followup1-before.json",
+          "bytes": 108745,
+          "sha256": "d4235561ee1c464980736f45d787312d5e105dcaf922a94d41116581b5bdf664"
+        },
+        "after": {
+          "path": "artifacts/goal-4/matrix-m04/ui-one-journey-source2-followup1-after.json",
+          "bytes": 108744,
+          "sha256": "e5930d475f0e6784a4f2473a428ca8f3fe9083f28eba07a2a974a9c67823feb4"
+        },
+        "terminal": {
+          "path": "artifacts/goal-4/matrix-m04/ui-one-journey-source2-followup1-terminal.json",
+          "bytes": 508,
+          "sha256": "702a193343a49cc4680067d91a06013336317b14959fdf2b1797f7a52544983b"
+        },
+        "declared": {
+          "path": "artifacts/goal-4/matrix-m04/ui-one-journey-source2-followup1-declared.json",
+          "bytes": 3259,
+          "sha256": "e1d88c8f77e334d962d2dbdfa2d2b30f3e3c6d45fb083b2ada8453d6e3ac34ef"
+        },
+        "configuration": {
+          "path": "artifacts/goal-4/matrix-m04/playwright.routes-early.config.ts",
+          "bytes": 591,
+          "sha256": "b36a026f71b9fbb8228eaaf1f2c1d992daafc044275635494f51dc72fd218b46"
+        }
+      }
+    },
+    {
+      "name": "ui-remainder-source2-final1",
+      "suite": "ui",
+      "terminal": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 696,
+        "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+        "stats": {
+          "startTime": "2026-10-27T20:43:24.369Z",
+          "duration": 499823.808,
+          "expected": 143,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 143,
+        "retried": [],
+        "reportSha256": "f79d74164db29a97695431e294bd50230eee4c665732bf7b8ec114a0cb01672d"
+      },
+      "evidence": {
+        "report": {
+          "path": "artifacts/goal-4/matrix-m04/ui-remainder-source2-final1-report.json",
+          "bytes": 4076530,
+          "sha256": "f79d74164db29a97695431e294bd50230eee4c665732bf7b8ec114a0cb01672d"
+        },
+        "before": {
+          "path": "artifacts/goal-4/matrix-m04/ui-remainder-source2-final1-before.json",
+          "bytes": 111112,
+          "sha256": "8c72e138bcbae186009a23a712b20ba5989c9cf53ea87866dc977ba6a7ffa5bd"
+        },
+        "after": {
+          "path": "artifacts/goal-4/matrix-m04/ui-remainder-source2-final1-after.json",
+          "bytes": 111111,
+          "sha256": "caf41e0e69ed786edf6fededf9700772bde756bba9e0170b019e1472da958bd4"
+        },
+        "terminal": {
+          "path": "artifacts/goal-4/matrix-m04/ui-remainder-source2-final1-terminal.json",
+          "bytes": 512,
+          "sha256": "ad0fb6fcad1a3b8d1365537ff9084dc466faab395895c2af42c89d3ca8c57c7f"
+        },
+        "declared": {
+          "path": "artifacts/goal-4/matrix-m04/ui-remainder-source2-final1-declared.json",
+          "bytes": 100914,
+          "sha256": "9e0c7a109320f12cb8afcee843e61b9e24fda673cbd28ff2ff8a8fdc2ae1ebd8"
+        },
+        "configuration": {
+          "path": "artifacts/goal-4/matrix-m04/playwright.related.config.ts",
+          "bytes": 670,
+          "sha256": "b4da3bd8704b4e4ce842389eb5fc07ea8a85febecd5e2ddcb303592c93132ca9"
+        }
+      }
+    }
+  ],
+  "core": {
+    "tests": 823,
+    "files": 62,
+    "terminal": {
+      "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+      "inputs": 683,
+      "exact": true,
+      "rows": [
+        {
+          "name": "rules",
+          "exit": 0,
+          "seconds": 260.5292937755585,
+          "log": "artifacts/goal-4/matrix-m04/core-source2-current-rules.log"
+        },
+        {
+          "name": "types",
+          "exit": 0,
+          "seconds": 4.204276084899902,
+          "log": "artifacts/goal-4/matrix-m04/core-source2-current-types.log"
+        }
+      ],
+      "passed": true
+    },
+    "proof": {
+      "path": "artifacts/goal-4/matrix-m04/core-source2-current-terminal.json",
+      "bytes": 478,
+      "sha256": "8b8ba08d5c4865b083a2805f7f73364049ac0fa40bc27fb7a0c410292efe28f6"
+    }
+  },
+  "resources": {
+    "tests": 438,
+    "terminal": {
+      "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+      "inputs": 569,
+      "exact": true,
+      "rows": [
+        {
+          "name": "tests",
+          "exit": 0,
+          "seconds": 443.78744292259216,
+          "log": "artifacts/goal-4/matrix-m04/assets-source2-current-tests.log"
+        },
+        {
+          "name": "positive",
+          "exit": 0,
+          "seconds": 1.9278688430786133,
+          "log": "artifacts/goal-4/matrix-m04/assets-source2-current-positive.log"
+        }
+      ],
+      "passed": true
+    },
+    "proof": {
+      "path": "artifacts/goal-4/matrix-m04/assets-source2-current-terminal.json",
+      "bytes": 490,
+      "sha256": "1a0760d619bffe30cdcefc7b83aa6fcc888bcd398cca15adcab80f40099b183b"
+    }
+  },
+  "sourceRegistration": {
+    "sourceDefinitionsOnly": true,
+    "defaultUI": 543,
+    "originalUI": 522,
+    "originalUIRemoved": [],
+    "currentRecoveryUI": 171,
+    "otherCurrentUIOutsideM04": 372,
+    "defaultNative": 355,
+    "currentRecoveryNative": 415,
+    "defaultNativeRemoved": [],
+    "extraOriginalLegacyCases": 60
+  },
+  "ownedExecutionOrigins": {
+    "rows": [
+      {
+        "path": "art/tools/art15_inventory.py",
+        "sha256": "64eac12fb29d81ed9a9ce601aa8d55f021112cb43df16d58fba89ed9c4196787",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "ui-remainder-source2-final1-before.json",
+          "ui-all-journeys-source2-final1-before.json",
+          "ui-one-journey-source2-followup1-before.json",
+          "core-source2-current-before.json",
+          "assets-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "art/tools/test_inventory.py",
+        "sha256": "1277b5aafd2aefff375d7e53e55f53cd298c54212d68f8dd57a1a2fe443a751f",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "ui-remainder-source2-final1-before.json",
+          "ui-all-journeys-source2-final1-before.json",
+          "ui-one-journey-source2-followup1-before.json",
+          "core-source2-current-before.json",
+          "assets-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "docs/decisions/0046-normal-idle-recovery-m04-contract.md",
+        "sha256": "882d2616cea69dbb3d88358c809317a51c98205448a4f3ba5cc6ba3c743c63da",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "ui-remainder-source2-final1-before.json",
+          "ui-all-journeys-source2-final1-before.json",
+          "ui-one-journey-source2-followup1-before.json",
+          "native-all-source2-final1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "goal-4/amendments/2026-10-27-continue-matrix-m04.md",
+        "sha256": "885de15d11ffffa90ee2e36d5129c7d1894eef55ec9b53c5edbb79301615a909",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "ui-remainder-source2-final1-before.json",
+          "ui-all-journeys-source2-final1-before.json",
+          "ui-one-journey-source2-followup1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "goal-4/plan.md",
+        "sha256": "34cc2503ed1abb74597570fac047fd836c8f5fff245db4210757a422866ed9fd",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "ui-remainder-source2-final1-before.json",
+          "ui-all-journeys-source2-final1-before.json",
+          "ui-one-journey-source2-followup1-before.json",
+          "native-all-source2-final1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "goal-4/research/m04-focus-sources.json",
+        "sha256": "f2d3430fbdc9c6574777e30ce12bee4374aa756938ff8a987d18ac9fd22b7114",
+        "exactExecutionOrigins": [],
+        "sourceContractOnly": true
+      },
+      {
+        "path": "goal-4/tasks.md",
+        "sha256": "aef4c0ad3408c5884f126e33bdae3bfc1d966c0360f2a293c2b2608d443a4e77",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "ui-remainder-source2-final1-before.json",
+          "ui-all-journeys-source2-final1-before.json",
+          "ui-one-journey-source2-followup1-before.json",
+          "native-all-source2-final1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "scripts/idle-matrix-evidence.mjs",
+        "sha256": "7358cdff5c51d9a28fa2e319079fbc670269a1969820b6b89f68f47cd92696c5",
+        "exactExecutionOrigins": [
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "tests/historical-full-runtime.mjs",
+        "sha256": "d4cded1771545900f319a951786a2cc4f604544a127f3fe9e4ce57c4f0bd73ae",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "tests/idle-matrix-evidence.test.mjs",
+        "sha256": "6ee69cf2621605273a58df1c4c11bf13a50b08194d0dd20ced50d92ca3611a07",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "tests/idle-recovery-matrix.mjs",
+        "sha256": "7af219f010204b970298b9dcf95ceb87f2b9a9980a5f178634a016085487a281",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "tests/idle-recovery-native-migration.mjs",
+        "sha256": "8102cb2e17490a2fc63e32f247485a4b0edb96e3398f6b89e7af1ef87cb487c7",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/e2e/check-matrix-keyboard.spec.ts",
+        "sha256": "9115090db944fc17ca0c7c2403da423baed859363204aa4d9f794bad86cebf0f",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/e2e/focus-delivery-support.ts",
+        "sha256": "a8423092da2fa49853454b277d965198a1c0631413ca06cfd80f9dfede6c005c",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/e2e/idle-full-route.spec.ts",
+        "sha256": "a9e107ea48f0ce719ad7325992d36a82c71125df7e1fc08ee14fe4bbfa6ad757",
+        "exactExecutionOrigins": [
+          "ui-remainder-source2-final1-before.json",
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/e2e/idle-matrix-scenarios.ts",
+        "sha256": "0dd9881badbfa1d66a9b89c4452c97ebd8de658975974125200b4870f5415a3a",
+        "exactExecutionOrigins": [
+          "ui-all-journeys-source2-final1-before.json",
+          "ui-one-journey-source2-followup1-before.json",
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/e2e/idle-recovery-choices.spec.ts",
+        "sha256": "1532c071447197eb4ee3c7bf322290a647c29ab90007e45bb543eb5478ae93f2",
+        "exactExecutionOrigins": [
+          "ui-remainder-source2-final1-before.json",
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/e2e/idle-recovery-context.spec.ts",
+        "sha256": "69026495d3381620c8d14e18594322e4a10b7ab3d2aef1f60519299be495ec32",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/e2e/idle-recovery-flow.spec.ts",
+        "sha256": "9f70d05476f07bfb1959209682c6fbb88ad6f6abd0677cca4f525c198118ffa0",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/e2e/idle-recovery-ui-support.ts",
+        "sha256": "cf552afb2a72b235072bae675f3731eddeb2f5153d7a90ee8ae2fd0a41ba166d",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "ui-remainder-source2-final1-before.json",
+          "ui-all-journeys-source2-final1-before.json",
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/e2e/idle-recovery-ui.spec.ts",
+        "sha256": "47a44349e6fbc5cef4467ce752ccc34e7934348be4888481eab5feee1226c03d",
+        "exactExecutionOrigins": [
+          "ui-remainder-source2-final1-before.json",
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/e2e/idle-route-support.ts",
+        "sha256": "3bf6bc36d9d533cc0b7496953c21638b11ff38328e20f1584ef6e9eb53f21014",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "ui-remainder-source2-final1-before.json",
+          "ui-all-journeys-source2-final1-before.json",
+          "ui-one-journey-source2-followup1-before.json",
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/journey-tests/idle-foundation-guide.spec.ts",
+        "sha256": "75b24e6d629137176c78ad737ac40642be3b2e7cf6adb5356dece54aac13d77e",
+        "exactExecutionOrigins": [
+          "ui-all-journeys-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/journey-tests/idle-normal-matrix.spec.ts",
+        "sha256": "ae85bed2754c55d108dd0c286df30e40fd4c265f986ffdaae206d5306d27ed87",
+        "exactExecutionOrigins": [
+          "ui-all-journeys-source2-final1-before.json",
+          "ui-one-journey-source2-followup1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/journey-tests/idle-trial-reopen.spec.ts",
+        "sha256": "bd64aa32344754a45867dbbcf222af342cf3fadf1f4719830a854d9efb07ab8b",
+        "exactExecutionOrigins": [
+          "ui-all-journeys-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/ascension.spec.ts",
+        "sha256": "fe22a5e236a5ec340a1eb8e31bdd6b3246febb4756749d3b5c0567cfea7a6222",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/causal-migration.spec.ts",
+        "sha256": "6f8610f461f828f554342ee00daf978bd328cf7df586328f397bfaba110c69f4",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/economy-migration.spec.ts",
+        "sha256": "e4395f4bc98a0f96c240691062a7bbe55449c3bb1f6e5f6afb3b6dfb69ee476d",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/fault-app.ts",
+        "sha256": "01c1ead3c3947afca127c2b311f72745a5b73fa5ab4fab25317b0f6ddd884bd4",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/fault-matrix.spec.ts",
+        "sha256": "ff24b1bc9c546e4ebeaf6013b8c15b74dcf24925796c4828f652cc4749fc0446",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/idle-recovery-boundaries.spec.ts",
+        "sha256": "f8ee17d584eef8d23b7721525de2f76a77f695c65d3cef057e64eee8b53708bf",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/idle-recovery-controls.spec.ts",
+        "sha256": "f0829b311093ffba77546c95e8e5e0286322dd2005983dc72c4948d01e749022",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/idle-recovery-current.spec.ts",
+        "sha256": "995f9ffa2334bdac053d90d5f28aef1179bfe16524e05ea7679f6dde1c066754",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/idle-recovery-lifespan.spec.ts",
+        "sha256": "0195d389d0865820d6ceac6e27c1a21f4fd5d28a788c735caf8460f442370b03",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/idle-recovery-restore.spec.ts",
+        "sha256": "6587398b4ba7bd519a755c02bd66a58b6910e763c463e95ec35acccab1978218",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/idle-recovery-support.ts",
+        "sha256": "24f093b196faa396502f2529767ae1e426d0e2c0aa5ed31c380844a492a49bda",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/life-record.spec.ts",
+        "sha256": "0341ebf7a2961494da355250defbd6b61482cfd105b4771702def114389dfb54",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/recovery.spec.ts",
+        "sha256": "356957a7d32a311f071207d9792b8521ee473951dc1b8164731b5301b78a85b4",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/repository.spec.ts",
+        "sha256": "b5a54d046b5f5f49da325c3320d988752730300e958e8a3efa370831199679d0",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/support.ts",
+        "sha256": "575974559abe9aea13ac44e4e3693d29d66e16703f4e6bd37478c95f9ee3dbce",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/persistence-tests/trial-entry.spec.ts",
+        "sha256": "2c3656035e3540db665c48490cb7b78ac6d49686e0d4bd6011d78b9232abb153",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/playwright.idle-journeys.config.ts",
+        "sha256": "0c128d20c37a87656f58761e60651922adc4725dd3a0e7120ff5c621317b3ba1",
+        "exactExecutionOrigins": [
+          "ui-all-journeys-source2-final1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/playwright.idle-persistence.config.ts",
+        "sha256": "3e45bbe3d393fb595c613323e05af9c31a3fb1d3c0ac267993664e2342992780",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/playwright.idle-recovery-ui.config.ts",
+        "sha256": "d4411b0ae02efbb929dc2dd029db30aeb1551ea6afa70fe93bd9711632bad727",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "ui-remainder-source2-final1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/playwright.idle-recovery.config.ts",
+        "sha256": "6ca4b55c631cfdc5a3a0ff9c096bd89e2271593d64f0e3817a7177c9bbb32c08",
+        "exactExecutionOrigins": [
+          "native-all-source2-final1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/playwright.idle.config.ts",
+        "sha256": "02a0eb1ff00ab7b23325fed476e49aed2dfbca6e7ce99c998d5be3e0781472f9",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "ui-remainder-source2-final1-before.json",
+          "ui-all-journeys-source2-final1-before.json",
+          "ui-one-journey-source2-followup1-before.json",
+          "core-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      },
+      {
+        "path": "web/src/App.vue",
+        "sha256": "7e68dc071f67b65ee633623e88632c70b183ed71106fa59c2f31ebeb1036e683",
+        "exactExecutionOrigins": [
+          "ui-corrected-source2-preflight1-before.json",
+          "ui-remainder-source2-final1-before.json",
+          "ui-all-journeys-source2-final1-before.json",
+          "ui-one-journey-source2-followup1-before.json",
+          "native-all-source2-final1-before.json",
+          "core-source2-current-before.json",
+          "assets-source2-current-before.json"
+        ],
+        "sourceContractOnly": false
+      }
+    ],
+    "allPresentOriginsExact": true
+  }
+}
