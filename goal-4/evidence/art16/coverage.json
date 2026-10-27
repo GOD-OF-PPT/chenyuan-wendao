@@ -1,0 +1,145 @@
+{
+  "runtime": "863b3a4b073525f959caebd21447e171b03c4458e3243b4e53dd968e98fc16b7",
+  "UI": {
+    "unique108": true,
+    "composition": "complete new8 and complete related100 two actual runs; not single108 or all522",
+    "new": {
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 710,
+      "runtime": "863b3a4b073525f959caebd21447e171b03c4458e3243b4e53dd968e98fc16b7",
+      "stats": {
+        "startTime": "2026-10-27T15:09:26.927Z",
+        "duration": 43591.213,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 8,
+      "retried": [],
+      "reportSha256": "ba5c3ce7b194b0b9d3cc42b0babd15c0ce3dc6bfd11a061448dab273cee4f9c8"
+    },
+    "related": {
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 725,
+      "runtime": "863b3a4b073525f959caebd21447e171b03c4458e3243b4e53dd968e98fc16b7",
+      "stats": {
+        "startTime": "2026-10-27T14:57:48.496Z",
+        "duration": 830554.478,
+        "expected": 100,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 100,
+      "retried": [],
+      "reportSha256": "0369d9d9edf6a84f8d5fb3a69b27a8e75be72210f874cd074316a20248e21b47"
+    },
+    "default522Old514Preserved": true,
+    "other414NotRunThisTask": true,
+    "oldSpecsAndHelpersByteExact61": true
+  },
+  "native": {
+    "event": "native-terminal",
+    "declarationExact": true,
+    "actualDeclarations": 332,
+    "retried": [],
+    "phase": "native-source3",
+    "exit": 0,
+    "error": null,
+    "reportCopied": true,
+    "withinPhaseInputsExact": true,
+    "inputs": 521,
+    "runtime": "863b3a4b073525f959caebd21447e171b03c4458e3243b4e53dd968e98fc16b7",
+    "stats": {
+      "startTime": "2026-10-27T14:56:54.137Z",
+      "duration": 413338.442,
+      "expected": 332,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": []
+  },
+  "rules": {
+    "unique": 815,
+    "files": 61,
+    "actualCurrent": true,
+    "terminal": {
+      "runtime": "863b3a4b073525f959caebd21447e171b03c4458e3243b4e53dd968e98fc16b7",
+      "inputs": 708,
+      "exact": true,
+      "rows": [
+        {
+          "name": "rules",
+          "exit": 0,
+          "seconds": 417.0587201118469,
+          "log": "artifacts/goal-4/art16/core-source3-rules.log"
+        },
+        {
+          "name": "types",
+          "exit": 0,
+          "seconds": 4.633790016174316,
+          "log": "artifacts/goal-4/art16/core-source3-types.log"
+        }
+      ],
+      "passed": true
+    }
+  },
+  "assetGuard": {
+    "unique435": true,
+    "composition": "434 unchanged actual pass + current corrected1, not a single435 green run",
+    "originalFull435": {
+      "runtime": "863b3a4b073525f959caebd21447e171b03c4458e3243b4e53dd968e98fc16b7",
+      "inputs": 1247,
+      "exact": true,
+      "rows": [
+        {
+          "name": "tests",
+          "exit": 1,
+          "seconds": 602.9934010505676,
+          "log": "artifacts/goal-4/art16/guard-source3-tests.log"
+        }
+      ],
+      "passed": false
+    },
+    "currentCorrected1": {
+      "runtime": "863b3a4b073525f959caebd21447e171b03c4458e3243b4e53dd968e98fc16b7",
+      "inputs": 1248,
+      "exact": true,
+      "rows": [
+        {
+          "name": "tests",
+          "exit": 0,
+          "seconds": 2.0895020961761475,
+          "log": "artifacts/goal-4/art16/guard-target-current-tests.log"
+        },
+        {
+          "name": "positive",
+          "exit": 0,
+          "seconds": 1.2269680500030518,
+          "log": "artifacts/goal-4/art16/guard-target-current-positive.log"
+        }
+      ],
+      "passed": true
+    },
+    "preciseProof": "guard-435-coverage.json"
+  },
+  "rootVueTypesBuild": true,
+  "notRun": [
+    "页面兼容/响应式/移动/跨浏览器/多尺寸字号",
+    "环境性能专项",
+    "M04全部正常路线恢复",
+    "整体美术/长期平衡/真人验收"
+  ]
+}

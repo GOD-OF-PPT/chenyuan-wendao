@@ -1,0 +1,20 @@
+{
+  "runtimeChangedTrackedFiles": [
+    "web/src/LoadoutConstellation.vue",
+    "web/src/art03-equipment.css",
+    "web/src/main.ts"
+  ],
+  "newRuntimeCSS": "web/src/art16-schools.css",
+  "scriptUnchanged": true,
+  "summaryAndSharedNoteTemplateUnchanged": true,
+  "retiredSchoolCSSExactDeletion": true,
+  "GameStoreEngineDBProofChanged": false,
+  "newProductionObjects": 2,
+  "observations": [
+    "Only saved current SCHOOL uses pre-existing validated echo; EQUIP cannot trigger its one-shot floor mark",
+    "No added write action or timer; default objects cold; current school only Game",
+    "Physical images are transparent with DOM names/gates and original callbacks; plain icon fallback remains actionable",
+    "Shared configuration dialog CSS only; three actual config flows remain in related suites",
+    "Original13 excluded from implementation staging; no external CSS IO/eval/new font/secret/save"
+  ]
+}

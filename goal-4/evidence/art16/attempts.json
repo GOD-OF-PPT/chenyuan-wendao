@@ -1,0 +1,166 @@
+{
+  "UI": {
+    "ui-baseline": {
+      "exit": 1,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 705,
+      "runtime": "751e627ffb36b3c9293044ae3ecd02dfa29919cf8b9c14a08b370105f9e3ff3b",
+      "stats": {
+        "startTime": "2026-10-27T14:26:00.604Z",
+        "duration": 14349.292,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 1,
+      "retried": [],
+      "reportSha256": "0c7ab0c01b92bd9b1a8d38015c73cd1252e2c607823809764ed91471030571be"
+    },
+    "ui-new-source1": {
+      "exit": 1,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 709,
+      "runtime": "48bc2fbb7b9122f410b963fca7bd3895aba9e50b4fc4c9c5d6a8c2855f4d8b69",
+      "stats": {
+        "startTime": "2026-10-27T14:34:56.925Z",
+        "duration": 43011.356,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 8,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 8,
+      "retried": [],
+      "reportSha256": "3c4588bf755108ae83ae3cd5c789a57158e27d08ee03161932871994429ac858"
+    },
+    "ui-new-source2": {
+      "exit": 1,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 709,
+      "runtime": "c683c60b1f69d913dd293dbcdd36fe1852c5423a3ad0764931438ba68b707ba2",
+      "stats": {
+        "startTime": "2026-10-27T14:44:36.414Z",
+        "duration": 49903.679,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 8,
+      "retried": [],
+      "reportSha256": "90d1399ab04fa8278cb8f2b6cdbc31776372da9c0d96f21d44439d9c976cbc26"
+    },
+    "ui-new-source3": {
+      "exit": 1,
+      "launchError": null,
+      "exact": false,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 709,
+      "runtime": "863b3a4b073525f959caebd21447e171b03c4458e3243b4e53dd968e98fc16b7",
+      "stats": {
+        "startTime": "2026-10-27T14:56:07.150Z",
+        "duration": 58468.432,
+        "expected": 7,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 8,
+      "retried": [],
+      "reportSha256": "54cf9f92b3336f6881362daa053f5d54828fe43121ac247ecc43e3ca16c72acb"
+    },
+    "ui-new-source3b": {
+      "exit": 1,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 710,
+      "runtime": "863b3a4b073525f959caebd21447e171b03c4458e3243b4e53dd968e98fc16b7",
+      "stats": {
+        "startTime": "2026-10-27T14:59:56.421Z",
+        "duration": 158046.158,
+        "expected": 7,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 8,
+      "retried": [],
+      "reportSha256": "a885f00fa18833fdaf9e5a5fba10f3be16277b86e8ce3f574ce3ec4da1ff206a"
+    },
+    "ui-new-source3c": {
+      "exit": 1,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 710,
+      "runtime": "863b3a4b073525f959caebd21447e171b03c4458e3243b4e53dd968e98fc16b7",
+      "stats": {
+        "startTime": "2026-10-27T15:04:44.920Z",
+        "duration": 76717.816,
+        "expected": 7,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 8,
+      "retried": [],
+      "reportSha256": "a47ff747eb5b85743352f63d3bf1418af766380c3481ebe6cd03dfef29aff27c"
+    },
+    "ui-new-source3d": {
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 710,
+      "runtime": "863b3a4b073525f959caebd21447e171b03c4458e3243b4e53dd968e98fc16b7",
+      "stats": {
+        "startTime": "2026-10-27T15:09:26.927Z",
+        "duration": 43591.213,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 8,
+      "retried": [],
+      "reportSha256": "ba5c3ce7b194b0b9d3cc42b0babd15c0ce3dc6bfd11a061448dab273cee4f9c8"
+    }
+  },
+  "actualFindings": [
+    "source1 inherited16px button/tabs, persistent note14, original quota footer too low; source2 CSS restores original body18 and compacts spacing",
+    "source2 120px minimum painting row overflows tight error, source3 shrinks decoration only and contains fallback",
+    "new8A5 fixture corrections: public-ready handshake, loadedGame import label, formal foundation prefix for shen_return, original native import confirmation; all existing Game/0.6s/18/14/44/.5/timeouts kept",
+    "source3 first strict cohort invalidated by generated art/tools/__pycache__/check_inventory.cpython-312.pyc; not accepted as green/inherited",
+    "source3 old100 unchanged actual full pass; new8 finalsource3d independent pass",
+    "guard productionAssets sum omitted actual new2; only +2 summand in that one existing method, other434 bytes and complete validator exact; current1 and positive pass"
+  ],
+  "preparation": [
+    "untracked public files guard correctly refused before only two reviewable add-N registrations",
+    "unittest module path prerequisite PYTHONPATH=art/tools",
+    "one runner launch before async list completion ENOENT before browser, corrected by awaiting terminal",
+    "two CUA30s read timeouts reset; explicit Chrome tab later read normal; cause unknown"
+  ],
+  "allOriginalLogsAndTraceRetained": "artifacts/goal-4/art16"
+}

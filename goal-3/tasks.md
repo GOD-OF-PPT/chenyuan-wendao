@@ -414,3 +414,17 @@ U8-A重排接续（0012，开工前逐项细化；当前只设计子项R）：
 - [杠精审查] 通过，仅0044当前综合工程范围，无已知未修本项硬阻断。完整能力/有限授权、真实周期/原子成果、源码/像素/HTTP分层，保原红/实际不确定与后续责任，不把本项代整体Goal完成。下一唯一ART16现有修法选择物件/视觉，再M04/M05/M06兼容最后及三任务检查、干净包/最终最大C端代码安全/真人；Goal active。本轮无兼容/环境性能、无push/PR/合并/公开部署/权限变更。回滚仅revert本项UI/守卫/测试，保DB9/DB1可读/原件/v0.3/存档/13及全部历史。
 
 证据：goal-4/evidence/check-art-04/verification.json、coverage.json、attempts.json、identity-proof.json、visual-review.json、real-timing.json与review.md。
+
+
+## ART16实际交付（2026-10-27）
+
+- 实现8921f6208eec8c7660bf96ca7277c02e5fbb080d，运行863b3a4b。修法双大卡/原道印替换成独立冷态剑架与符案，沿原比较/完整三槽/即时CAS确认及原意图重试；三基础法/真门槛/已学与本命保留。悬停按下与当前Game派、仅可信SCHOOL保存后一次印记分清，无新假读秒、Game/费用/周期/DB9/proof变更。新CSS4999/12000、旧ART0343482/45000及全部cap不涨；两透明512运行件69074/320000，原PNG/完整prompt/本地非provider签名审计/真alpha/双导出保留。
+- 当前108唯一UI=完整新8+完整相关旧100两轮，0skip/retry/flaky，非单轮108或全522；原514声明及61spec/helper逐字保持，其余414本项未跑。332/26原生当前完整同轮、815/61规则及根/Vue类型构建实过，严格710/725/521/708各自exact。435资源为完整轮434过1旧汇总漏新2，随后只补该方法+2条件项并当前1/positive实过，原434/validator字节可逆相同；明确非单轮435绿，1247/1248各exact。
+- 原红与测试前提保留：16px按钮/比较tab、持久结果14、quota footer越导航和错误态120px图行挤正文均实修，原18/14/44/0.5不降。A5补真实App就绪、已载入设置的导入标签/原native确认，以及shen_return正式筑基前置；不改引擎/导入0.6s/断言时限。source3早期pycache变动strict不成立未冒绿，原所有失败/准备错误/trace保。当前30/60/60真实研习/剑简/炼器首put晚due43/53/34ms、原native complete晚due67/75/62ms，不是长期节奏证明。
+- 九张固定1440×900当前代表像素逐张fresh实看，原PNG/JPEG68原尺寸/hash与未审清单分明；非整体艺术。普通Chrome1440×756交付观察道器偏小OBS-ART16-USER-VIEW-01，留M06最后，不改viewport或顺带兼容。两次CUA30s只读超时原件留，后显式Chrome绑定恢复，原因unknown不冒产品修复。
+- 284运行源/27受测本项输入（305去重）与实现Gitblob逐hash相同；89载荷9155408B与受测/提交后重建/冻结/56884实际HTTP同。用户顾长青凡人未择法/10修为满/40石/60HP/20MP/吐纳结束2-50及已保存，只读更新前后去焦点的完整可见树相同；之后只读功法→修法展示，无用户Game执行/导入/恢复/重置或用户档测试，不冒全用户DB相同。原13未改未提交，dirty工程包非最终干净候选。
+- [杠精审查] 通过，仅0045固定桌面独立工程范围。完整能力/有限授权/原确认与原子成果、像素/提交HTTP分层，无已知未修本项硬阻断；整体游戏感/美术/长期平衡和真人仍开放。本项为CHECK-ART04后第1项，下一只M04正常路线恢复，先独立合同；M05性能/M06兼容最后/三任务全面检查/干净同源包/最大C端代码安全/真人全保，Goal active。不push/PR/合并/公开部署/改权限，回滚revert本项并保DB9/DB1可读/原件/v0.3/原档/13/旧冻结及所有失败。
+
+证据：goal-4/evidence/art16/verification.json、coverage.json、attempts.json、identity-proof.json、visual-review.json、real-timing.json与review.md。
+
+计数接续：ART16为CHECK-ART04后第1项，下一M04为第2、M05为第3，故M05后先执行既有“每三任务全面检查”义务CHECK-ART16-M45（当前授权范围，不自动恢复兼容），再最后M06及原CHECK-MATRIX-02归拢；不是等四个实施项后才检查，不新增产品范围。
