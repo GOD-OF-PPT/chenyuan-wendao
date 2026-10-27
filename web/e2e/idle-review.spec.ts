@@ -1,4 +1,4 @@
-import {openSupplySettings,closeSupplySettings} from './stage-support';
+import {openSupplySettings,closeSupplySettings,openMarketLibrary} from './stage-support';
 import {test,expect,type Page,type TestInfo,type Locator} from '@playwright/test';
 import {snapshot,activitySnapshot as activity,useJourneyClock,finishJourneyClock,revealPaged} from './support';
 import {advance} from '../../src/full/engine.ts';
@@ -97,7 +97,7 @@ test('a current trial victory toast lets actual view buttons receive clicks and 
  await hit(page.getByTestId('battle-view-scene'));await page.getByTestId('battle-view-scene').click();await expect(page.getByTestId('battle-view-scene')).toHaveAttribute('aria-pressed','true');expect(await snapshot(page)).toEqual(after);expect(await activity(page)).toEqual(saved);await shot(page,info,'victory-toast-after-real-view-clicks');
 });
 test('an explicit preparation purchase retains its travel draft then trial entry stops for the player question',async({page},info)=>{
- const d=preparedTrial(),before=await seed(page,d.checkpoints.trial);await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-purchase').click();await revealPaged(page,'buy-healing_pill','explore-catalogue');await page.getByTestId('buy-healing_pill').click();
+ const d=preparedTrial(),before=await seed(page,d.checkpoints.trial);await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-purchase').click();await checkArt03Read(page,async()=>{await openMarketLibrary(page);await revealPaged(page,'buy-healing_pill','market-library-dialog','坊市货物');await page.getByTestId('buy-healing_pill').click();await expect(page.getByTestId('market-library-dialog')).not.toBeVisible();});
  await openSupplySettings(page);await page.getByLabel('交易最多件数').fill('2');await page.getByLabel('交易最多件数').blur();await openSupplySettings(page);await page.getByLabel('累计采购灵石预算').fill('41');await page.getByLabel('采购灵石保留量').fill('3');
  await closeSupplySettings(page);expect(await snapshot(page)).toEqual(before);await shot(page,info,'preparation-travel-expanded-budgets');await page.getByTestId('preparation-travel').click();await tick(page);await expect(page.getByTestId('market-planner')).toBeVisible();await expect(page.getByTestId('preparation-plan-state')).toContainText('待确认');
  await openSupplySettings(page);await expect(page.getByLabel('交易最多件数')).toHaveValue('2');await openSupplySettings(page);await expect(page.getByLabel('累计采购灵石预算')).toHaveValue('41');await expect(page.getByLabel('采购灵石保留量')).toHaveValue('3');
@@ -128,3 +128,6 @@ test('the actual storage reconnect reports the saved paused activity and never r
  await hit(page.getByTestId('training-resume'));for(const nav of await page.locator('#primary-navigation button').all())await hit(nav);await shot(page,info,'reconnected-paused-saved-snapshot');
  await page.getByTestId('training-resume').click();await expect.poll(async()=>(await activity(page)).status).toBe('running');expect(await snapshot(page)).toEqual(before);await tick(page);const after=await snapshot(page);expect(after.core.revision).toBe(before.core.revision+1);await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page)).status).toBe('paused');await shot(page,info,'reconnected-explicit-cycle-completed');
 });
+
+// CHECK-ART03: public surface access is readonly over every native Game store.
+async function checkArt03Read(page:Page,body:()=>Promise<void>){const read=()=>page.evaluate(()=>new Promise<any>((accept,reject)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();reject(Error('Readonly catalogue cannot create Game DB'));};q.onerror=()=>reject(q.error);q.onsuccess=()=>{const db=q.result,tx=db.transaction([...db.objectStoreNames],'readonly'),rows:any={};for(const name of db.objectStoreNames){rows[name]=[];const r=tx.objectStore(name).openCursor();r.onsuccess=()=>{if(r.result){rows[name].push({key:r.result.key,value:r.result.value});r.result.continue();}};}tx.oncomplete=()=>{db.close();accept({version:db.version,rows});};tx.onabort=()=>{db.close();reject(tx.error);};};}));const before=await read();await body();expect(await read()).toEqual(before);}

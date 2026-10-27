@@ -1444,9 +1444,9 @@ class TA09InventoryTests(unittest.TestCase):
   for row in CONSUMERS:
    for slot in row.get('requiredSlots',[]):
     for misplaced in [False,True]:
-     self.restore();path=row['host'];text=(self.root/path).read_text();openings=re.findall(r'<template(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text);tags=[tag for tag in openings if any(name=='template'and'#'+slot in attrs for name,attrs in Tags('<template>'+tag+'</template>').nodes)];self.assertEqual(len(tags),1);tag=tags[0];self.assertEqual(text.count(tag),1);changed=text.replace(tag,tag.replace('#'+slot,'#detached-'+slot,1),1)
+     self.restore();path=row['host'];text=(self.root/path).read_text();openings=re.findall(r'<template(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text);tags=[tag for tag in openings if any(name=='template'and'#'+slot in attrs for name,attrs in Tags('<template>'+tag+'</template>').nodes)];self.assertEqual(len(tags),1);tag=tags[0];self.assertEqual(text.count(tag),1);changed=text.replace(tag,tag.replace('#'+slot,'#x',1),1)
      if misplaced:
-      end=changed.rfind('</template>');self.assertGreater(end,0);changed=changed[:end]+tag+'<span>unrelated sibling</span></template>'+changed[end:]
+      end=changed.rfind('</template>');self.assertGreater(end,0);changed=changed[:end]+tag+'<b>x</b></template>'+changed[end:]
      else:changed+='\n<!--'+tag+'-->'
      self.changed_source(path,changed)
      with self.subTest(component=row['component'],slot=slot,misplaced=misplaced),self.assertRaisesRegex(AssertionError,'content slot|jade result'):self.check()

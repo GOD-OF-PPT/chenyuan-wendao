@@ -7,7 +7,7 @@ import { runIdleScenario } from '../../scripts/economy/idle-scenarios.mjs';
 import { snapshot, activitySnapshot, useJourneyClock, finishJourneyClock, openEquipment, openHubFeature,
   revealPaged, revealStoryChoice } from './support';
 import { openTrainingBudget, openSourceSettings, closeSourceSettings, openLearningSettings,
-  closeLearningSettings, selectLearningSkill, openSupplySettings, closeSupplySettings } from './stage-support';
+  closeLearningSettings, selectLearningSkill, openSupplySettings, closeSupplySettings, openMarketLibrary, openRelicLibrary, openLearningLibrary, selectRecoveryMethod } from './stage-support';
 
 test.use({ viewport: { width: 1440, height: 900 }, actionTimeout: 8000, navigationTimeout: 15000 });
 const options = { choice: 'leave', school: 'talisman', preparation: 'purchase', cultivation: 'natural',
@@ -38,7 +38,7 @@ async function narrative(page: Page, id: string) {
     await page.getByTestId('hub-current').getByRole('button', { name: '继续当前遭遇', exact: true }).click();
   }
   if (await page.getByTestId('story-show-choices').isVisible()) await page.getByTestId('story-show-choices').click();
-  await revealStoryChoice(page, id); await decision(page, page.getByTestId(id));
+  await checkArt03Read(page,async()=>{await page.getByTestId('response-choices-open').click();await expect(page.getByTestId('response-choices-dialog')).toBeVisible();await page.getByTestId('story-select-'+id).click();await expect(page.getByTestId('response-choices-dialog')).not.toBeVisible();}); await decision(page, page.getByTestId(id));
 }
 
 /** Only visible controls select a finite plan. This function never writes via a Store or repository. */
@@ -72,8 +72,8 @@ async function selectPlan(page: Page, plan: any): Promise<{ control: Locator; ex
       return { control: page.getByTestId('source-start'), expectedPlan: plan };
     case 'buy':
       await page.getByTestId('tab-1').click(); await page.getByTestId('explore-mode-purchase').click();
-      await page.getByTestId('market-mode-buy').click();
-      await revealPaged(page, 'buy-' + plan.item, 'market-planner', '坊市货物'); await page.getByTestId('buy-' + plan.item).click();
+      await checkArt03Read(page,async()=>{await openMarketLibrary(page);await page.getByTestId('market-mode-buy').click();
+      await revealPaged(page, 'buy-' + plan.item, 'market-library-dialog', '坊市货物'); await page.getByTestId('buy-' + plan.item).click();await expect(page.getByTestId('market-library-dialog')).not.toBeVisible();});
       await openSupplySettings(page); await field(page, '交易最多件数', plan.maxCycles);
       await page.getByLabel('采购停止目标', { exact: true }).selectOption(plan.until);
       if (plan.until === 'target') await field(page, '采购目标库存', plan.targetQuantity);
@@ -96,8 +96,8 @@ async function selectPlan(page: Page, plan: any): Promise<{ control: Locator; ex
       return { control: page.getByTestId('preparation-start'), expectedPlan: plan };
     }
     case 'forge': {
-      await openHubFeature(page, 'relics'); await revealPaged(page, 'forge-' + plan.relicId, 'forging-planner', '器谱');
-      await page.getByTestId('forge-' + plan.relicId).click(); await page.getByTestId('production-limits').click();
+      await openHubFeature(page, 'relics'); await checkArt03Read(page,async()=>{await openRelicLibrary(page);await revealPaged(page, 'forge-' + plan.relicId, 'relic-library-dialog', '器谱');
+      await page.getByTestId('forge-' + plan.relicId).click();await expect(page.getByTestId('relic-library-dialog')).not.toBeVisible();await expect(page.getByTestId('relic-inscription-object')).toHaveAttribute('data-relic',plan.relicId);}); await page.getByTestId('production-limits').click();
       await field(page, '累计生产灵石预算', plan.stoneBudget); await field(page, '生产灵石保留量', plan.stoneReserve);
       await field(page, '累计生产游戏月预算', plan.monthBudget); await field(page, '生产余寿保留量', plan.remainingMonthsReserve);
       const itemReserves: Record<string, number> = {};
@@ -111,7 +111,7 @@ async function selectPlan(page: Page, plan: any): Promise<{ control: Locator; ex
     }
     case 'rest':
       await openHubFeature(page, 'cultivation-details'); await page.getByTestId('rest').click();
-      await page.getByTestId('recovery-rest').click(); await openSupplySettings(page);
+      await checkArt03Read(page,async()=>selectRecoveryMethod(page,'rest')); await openSupplySettings(page);
       await field(page, '疗养余寿保留量', plan.remainingMonthsReserve); await closeSupplySettings(page);
       return { control: page.getByTestId('preparation-start'), expectedPlan: plan };
     case 'battle': {
@@ -167,11 +167,11 @@ async function configure(page: Page, action: any, index: number) {
     await openEquipment(page); await page.getByTestId('equipment-mode-school').click(); await page.getByTestId('school-' + action.school).click();
   } else if (action.type === 'EQUIP') {
     await openEquipment(page); await page.getByTestId('equipment-mode-skills').click();
-    await page.getByLabel('功法流派', { exact: true }).selectOption(C.skills[action.skill].school);
+    await checkArt03Read(page,async()=>{await openLearningLibrary(page);await page.getByLabel('功法流派', { exact: true }).selectOption(C.skills[action.skill].school);});
     await selectLearningSkill(page, action.skill); await page.getByTestId('equip-' + action.skill).click();
   } else if (action.type === 'EQUIP_RELIC') {
-    await openHubFeature(page, 'relics'); await revealPaged(page, 'forge-' + action.relic, 'forging-planner', '器谱');
-    await page.getByTestId('forge-' + action.relic).click(); await page.getByTestId('equip-relic-' + action.relic).click();
+    await openHubFeature(page, 'relics'); await checkArt03Read(page,async()=>{await openRelicLibrary(page);await revealPaged(page, 'forge-' + action.relic, 'relic-library-dialog', '器谱');
+    await page.getByTestId('forge-' + action.relic).click();await expect(page.getByTestId('relic-library-dialog')).not.toBeVisible();await expect(page.getByTestId('relic-inscription-object')).toHaveAttribute('data-relic',action.relic);}); await page.getByTestId('equip-relic-' + action.relic).click();
   } else throw new Error('Unsupported visible configuration ' + action.type);
   await expect(page.getByTestId('configuration-dialog')).toBeVisible();
   expect(await snapshot(page)).toEqual(before); expect(await activitySnapshot(page)).toEqual(previousActivity);
@@ -241,3 +241,6 @@ test('a normal new life follows visible finite idle plans from the welcome throu
   await info.attach('visible-normal-idle-route', { body: JSON.stringify({ options, steps: summary, cycles, onlineMs,
     limitation: 'Visible controls and accelerated declared cycles prove this route; they do not prove real online pacing, balance or human acceptance.' }, null, 2), contentType: 'application/json' });
 });
+
+// CHECK-ART03: public surface access is readonly over every native Game store.
+async function checkArt03Read(page:Page,body:()=>Promise<void>){const read=()=>page.evaluate(()=>new Promise<any>((accept,reject)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();reject(Error('Readonly catalogue cannot create Game DB'));};q.onerror=()=>reject(q.error);q.onsuccess=()=>{const db=q.result,tx=db.transaction([...db.objectStoreNames],'readonly'),rows:any={};for(const name of db.objectStoreNames){rows[name]=[];const r=tx.objectStore(name).openCursor();r.onsuccess=()=>{if(r.result){rows[name].push({key:r.result.key,value:r.result.value});r.result.continue();}};}tx.oncomplete=()=>{db.close();accept({version:db.version,rows});};tx.onabort=()=>{db.close();reject(tx.error);};};}));const before=await read();await body();expect(await read()).toEqual(before);}

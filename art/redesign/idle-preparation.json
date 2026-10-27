@@ -7,18 +7,18 @@
   "files": [
     {
       "path": "web/src/LearningPlanner.vue",
-      "bytes": 18124,
-      "sha256": "f96294c3cff3c2d32966a8cfdfec43c94fba627d688c8fa66f1177eba42e7f35"
+      "bytes": 18575,
+      "sha256": "d5473ace82c8193349e48515096e6411343f36465a85fc86689b35fbbbeea945"
     },
     {
       "path": "web/src/MarketPlanner.vue",
-      "bytes": 11937,
-      "sha256": "59fae59ccc51211a2bfbff3849cc40ab9464b3ee6ae681e98bb16c0a1c0a490e"
+      "bytes": 12464,
+      "sha256": "133ca11bcb8b8c283b3138cc88add796fdc22f507781869e27fb2025b379c760"
     },
     {
       "path": "web/src/RecoveryPlanner.vue",
-      "bytes": 8181,
-      "sha256": "bcee2e26b32240e9687d987096bb2b4da63c23418185c26d18c64fe6d832a647"
+      "bytes": 8573,
+      "sha256": "478733b74bf51b209901a7e7328ea92269a77a30ab41c56c400ddd8b40ef78a9"
     },
     {
       "path": "web/src/ConfigurationDialog.vue",
@@ -27,13 +27,13 @@
     },
     {
       "path": "web/src/preparation-view.ts",
-      "bytes": 1668,
-      "sha256": "ac0732396ef435359325262ada51dda53b3e28308e2d2add3dc729a8b0375420"
+      "bytes": 2441,
+      "sha256": "d46825242a9912510bbec9d726e2bef22f5621e5d84717c0cbd3be70916aa38f"
     },
     {
       "path": "web/src/idle-preparation.css",
-      "bytes": 14116,
-      "sha256": "a010f23ff070bd6d62c9fc57b6104e82aa76d6fc0c8a2da3995b92b450724fd3"
+      "bytes": 12295,
+      "sha256": "9832321f25817d059c4a95e6bc16ac31e7476eac800afaa788575cd00278396a"
     }
   ],
   "sourceReferences": [

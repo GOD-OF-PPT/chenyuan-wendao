@@ -6,7 +6,7 @@ import { previewAction } from '../../src/full/queries.ts';
 import type { Game } from '../../src/full/types.ts';
 import type { Activity } from '../../src/full/activity.ts';
 import { useJourneyClock, finishJourneyClock, activitySnapshot, openHubFeature, selectGoal, revealPaged } from './support';
-import { openSupplySettings, closeSupplySettings } from './stage-support';
+import { openSupplySettings, closeSupplySettings, openInventoryLibrary, openInventoryUses } from './stage-support';
 
 test.use({ viewport: { width: 1440, height: 900 }, actionTimeout: 8000, navigationTimeout: 15000 });
 const databaseName = 'chenyuan-playable-v1', trackingKey = 'chenyuan-tracked-goal-v1';
@@ -148,11 +148,12 @@ test('M03-B3 a tracked real medicine remains spendable and one exact six-second 
   const before = await load(page, d.game), wanted = before.game.core.inventory.healing_pill;
   expect(wanted).toBeGreaterThan(0); await target(page, 'item:healing_pill', wanted);
   await expect(page.getByTestId('goal-complete')).toBeVisible(); expect(await database(page)).toEqual(before.raw);
-  await page.getByTestId('tab-2').click(); await revealPaged(page, 'inventory-select-healing_pill', 'inventory-catalogue', '行囊');
-  await page.getByTestId('inventory-select-healing_pill').click();
-  await expect(page.getByTestId('inventory-object')).toContainText('会消耗追踪物资');
-  await expect(page.getByTestId('inventory-object')).toContainText('材料未被预留');
-  await evidence(info, 'tracked-medicine-before-use', { before, wanted, warning: await page.getByTestId('inventory-object').innerText() });
+  await page.getByTestId('tab-2').click(); await checkArt03Read(page,async()=>{await openInventoryLibrary(page);await revealPaged(page, 'inventory-select-healing_pill', 'inventory-library-dialog', '行囊');
+  await page.getByTestId('inventory-select-healing_pill').click();await expect(page.getByTestId('inventory-library-dialog')).not.toBeVisible();});
+  await checkArt03Read(page,async()=>{await openInventoryUses(page);await expect(page.getByTestId('inventory-uses-dialog')).toBeVisible();});
+  await expect(page.getByTestId('inventory-uses-dialog')).toContainText('会消耗追踪物资');
+  await expect(page.getByTestId('inventory-uses-dialog')).toContainText('材料未被预留');
+  await evidence(info, 'tracked-medicine-before-use', { before, wanted, warning: await page.getByTestId('inventory-uses-dialog').innerText() });
   await click(page.getByTestId('inspect-use-healing_pill')); await openSupplySettings(page);
   await page.getByLabel('最多服丹数', { exact: true }).fill('1'); await page.getByLabel('恢复目标百分比', { exact: true }).fill('100');
   await page.getByLabel('服丹库存保留量', { exact: true }).fill('0'); await closeSupplySettings(page);
@@ -263,3 +264,6 @@ test('M03-B7 a future primary database disables new Game writes and exports only
   await expect(page.getByRole('button', { name: /^踏入仙途/ })).toBeDisabled(); expect(await database(page)).toEqual(original);
   await evidence(info, 'future-primary-raw-export-preserved', { original, exported, after: await database(page) });
 });
+
+// CHECK-ART03: public surface access is readonly over every native Game store.
+async function checkArt03Read(page:Page,body:()=>Promise<void>){const read=()=>page.evaluate(()=>new Promise<any>((accept,reject)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();reject(Error('Readonly catalogue cannot create Game DB'));};q.onerror=()=>reject(q.error);q.onsuccess=()=>{const db=q.result,tx=db.transaction([...db.objectStoreNames],'readonly'),rows:any={};for(const name of db.objectStoreNames){rows[name]=[];const r=tx.objectStore(name).openCursor();r.onsuccess=()=>{if(r.result){rows[name].push({key:r.result.key,value:r.result.value});r.result.continue();}};}tx.oncomplete=()=>{db.close();accept({version:db.version,rows});};tx.onabort=()=>{db.close();reject(tx.error);};};}));const before=await read();await body();expect(await read()).toEqual(before);}

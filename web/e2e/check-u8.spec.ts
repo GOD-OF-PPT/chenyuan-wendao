@@ -1,6 +1,6 @@
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {snapshot,activitySnapshot,useJourneyClock,finishJourneyClock,revealPaged} from './support';
-import {openProductionIntent,closeProductionSettings,openSupplySettings,closeSupplySettings} from './stage-support';
+import {openProductionIntent,closeProductionSettings,openSupplySettings,closeSupplySettings,openMarketLibrary} from './stage-support';
 import {driver} from '../../tests/full-route.mjs';
 import {resolve} from '../../src/full/engine.ts';
 import {activityView} from '../src/activity-view';
@@ -231,7 +231,7 @@ test('five saved alchemy cycles retain material costs and net pills on every rec
 
 test('five saved purchase cycles retain positive currency costs and exact inventory gains after reload',async({page},info)=>{
  const d=driver();d.funds(150);d.go('market');const before=await seed(page,d,'lawful-check-u8-purchase-history.json');
- await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-purchase').click();await revealPaged(page,'buy-healing_pill','market-planner','坊市货物');await page.getByTestId('buy-healing_pill').click();
+ await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-purchase').click();await checkArt03Read(page,async()=>{await openMarketLibrary(page);await revealPaged(page,'buy-healing_pill','market-library-dialog','坊市货物');await page.getByTestId('buy-healing_pill').click();await expect(page.getByTestId('market-library-dialog')).not.toBeVisible();});
  await openSupplySettings(page);await page.getByLabel('交易最多件数').fill('5');await page.getByLabel('交易最多件数').blur();await closeSupplySettings(page);
  await page.getByTestId('preparation-start').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');
  const completed=await saveFiveCycles(page,5);expect(completed.game.core.inventory.healing_pill).toBe(before.core.inventory.healing_pill+5);expect(completed.game.core.player.stones).toBe(before.core.player.stones-90);
@@ -288,3 +288,6 @@ test('the journal returns to life reading after an old milestone is invalidated 
  await page.getByTestId('stage-details').click();await expect(page.getByTestId('life-panel')).toBeVisible();await stageGeometry(page);await assertNoRewardPerformance(page);
  expect(await snapshot(page)).toEqual(before.game);expect(await activitySnapshot(page)).toEqual(before.activity);expect(await gameStores(page)).toEqual(before.stores);
 });
+
+// CHECK-ART03: public surface access is readonly over every native Game store.
+async function checkArt03Read(page:Page,body:()=>Promise<void>){const read=()=>page.evaluate(()=>new Promise<any>((accept,reject)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();reject(Error('Readonly catalogue cannot create Game DB'));};q.onerror=()=>reject(q.error);q.onsuccess=()=>{const db=q.result,tx=db.transaction([...db.objectStoreNames],'readonly'),rows:any={};for(const name of db.objectStoreNames){rows[name]=[];const r=tx.objectStore(name).openCursor();r.onsuccess=()=>{if(r.result){rows[name].push({key:r.result.key,value:r.result.value});r.result.continue();}};}tx.oncomplete=()=>{db.close();accept({version:db.version,rows});};tx.onabort=()=>{db.close();reject(tx.error);};};}));const before=await read();await body();expect(await read()).toEqual(before);}

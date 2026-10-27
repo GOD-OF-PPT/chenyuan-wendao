@@ -22,8 +22,8 @@
     },
     {
       "path": "web/src/RelicAtelier.vue",
-      "bytes": 15376,
-      "sha256": "30271e59a3d01022fb4d7646c9e5fff8ccb59d1ed8ac13c30f77b2e817f7db66"
+      "bytes": 15628,
+      "sha256": "695f165df1ad7c788a91d7e49b5d80db5f502d1ecdcf9a0315342a93a5c42e37"
     },
     {
       "path": "web/src/LoadoutConstellation.vue",

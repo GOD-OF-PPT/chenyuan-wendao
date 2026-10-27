@@ -2,6 +2,7 @@
 import {computed,inject,onDeactivated,onUnmounted,ref,useId,watch} from 'vue';
 import {gameFocusKey} from './focus';
 import type {Action,Game} from '../../src/full/types.ts';
+import {pausedPlanView} from './preparation-view.ts';
 import * as C from '../../src/full/content.ts';
 import {previewActivity,type PreparationPlan,type BuyPlan,type SellPlan} from '../../src/full/activity.ts';
 import {previewAction} from '../../src/full/queries.ts';
@@ -15,6 +16,7 @@ const props=withDefaults(defineProps<{game:Game;busy:boolean;available:boolean;r
 const emit=defineEmits<{start:[PreparationPlan];act:[Action];track:[TrackingTarget];travel:[PreparationPlan]}>();
 const focus=inject(gameFocusKey),settings=ref<HTMLDialogElement>(),library=ref<HTMLDialogElement>(),titleId=useId(),libraryTitle=useId();
 const scene=inject<ReturnType<typeof useGame>>('game-scene');
+const restart=computed(()=>pausedPlanView(scene?.activity,props.game.core.runId,plan.value));
 function openSettings(event:Event){library.value?.close();if(focus)focus.open(settings.value,event.currentTarget as HTMLElement);else settings.value?.showModal();}
 function openLibrary(event:Event){settings.value?.close();if(focus)focus.open(library.value,event.currentTarget as HTMLElement);else library.value?.showModal();}
 function closeViews(){settings.value?.close();library.value?.close();}
@@ -36,10 +38,10 @@ function select(id:string){if(selected.value===id)return;remember();selected.val
 function reconcile(){const index=rows.value.findIndex(([id])=>id===selected.value);if(index<0){page.value=0;if(rows.value.length)select(rows.value[0][0]);}else page.value=Math.floor(index/4);}
 function turn(next:number){const slice=pageSlice(rows.value,next,4);page.value=slice.page;if(slice.rows.length)select(slice.rows[0][0]);}
 function locate(){const match=/^(buy|sell)-(.+)$/.exec(props.highlight);if(match&&Object.hasOwn(C.items,match[2])){selectMode(match[1] as 'buy'|'sell');future.value=C.rank(C.items[match[2]].min)>C.rank(props.game.core.player.realm);select(match[2]);}reconcile();}
-let lastReadIntent='';
-function restore(){const p=props.savedPlan;if(!p)return;const sig=JSON.stringify(p);if(!props.inspectionExact&&!props.planSaved){if(lastReadIntent===sig&&p.kind===mode.value&&p.item===selected.value)return;lastReadIntent=sig;}remember();mode.value=p.kind;future.value=C.rank(C.items[p.item].min)>C.rank(props.game.core.player.realm);selected.value=p.item;page.value=Math.max(0,Math.floor(rows.value.findIndex(([id])=>id===p.item)/4));count.value=p.maxCycles;editedLimits.value=true;if(p.kind==='buy'){until.value=p.until;target.value=p.targetQuantity??props.game.core.inventory[p.item]+1;budget.value=p.stoneBudget;reserve.value=p.stoneReserve;}else itemReserve.value=p.itemReserve;}
+const lastReadIntents=new Map<string,string>();
+function restore(){const p=props.savedPlan;if(!p)return;const sig=JSON.stringify(p),key=p.kind+':'+p.item;if(!props.inspectionExact&&!props.planSaved){if(lastReadIntents.get(key)===sig){selectMode(p.kind);if(C.rank(C.items[p.item].min)>C.rank(props.game.core.player.realm))future.value=true;select(p.item);reconcile();return;}lastReadIntents.set(key,sig);}remember();mode.value=p.kind;future.value=C.rank(C.items[p.item].min)>C.rank(props.game.core.player.realm);selected.value=p.item;page.value=Math.max(0,Math.floor(rows.value.findIndex(([id])=>id===p.item)/4));count.value=p.maxCycles;editedLimits.value=true;if(p.kind==='buy'){until.value=p.until;target.value=p.targetQuantity??props.game.core.inventory[p.item]+1;budget.value=p.stoneBudget;reserve.value=p.stoneReserve;}else itemReserve.value=p.itemReserve;}
 function selectMode(next:'buy'|'sell'){if(mode.value===next)return;remember();const id=selected.value;mode.value=next;selected.value='';if(id)select(id);}
-watch(()=>props.game.core.runId,()=>{drafts.clear();lastReadIntent='';selected.value='';future.value=false;locate();});watch(()=>props.highlight,locate,{immediate:true});watch(rows,reconcile);watch([count,until,target],resetBudget,{flush:'sync'});watch(()=>props.savedPlan,restore,{immediate:true});
+watch(()=>props.game.core.runId,()=>{drafts.clear();lastReadIntents.clear();selected.value='';future.value=false;locate();});watch(()=>props.highlight,locate,{immediate:true});watch(rows,reconcile);watch([count,until,target],resetBudget,{flush:'sync'});watch(()=>props.savedPlan,restore,{immediate:true});
 </script>
 <template>
  <section class="idle-preparation market-planner" :class="{'paper':!embedded,'play-catalogue':!embedded}" data-testid="market-planner" aria-label="坊市购售安排">
@@ -48,8 +50,8 @@ watch(()=>props.game.core.runId,()=>{drafts.clear();lastReadIntent='';selected.v
    <template #decision><div v-if="item" class="preparation-decision market-decision"><small data-testid="preparation-plan-state">{{running&&!(sameSaved&&planSaved)?'下次安排草案 · 当前执行见活动条':sameSaved&&planSaved?'已保存安排；修改后须重新确认':'待确认的新安排，确认后才开始'}}</small>
     <strong class="market-price">每件 {{mode==='buy'?item.buy:item.sell??'不可出售'}} 灵石 · 15 秒</strong>
     <button class="supply-plan-open" data-testid="market-plan-open" @click="openSettings">{{mode==='buy'&&until==='target'?'库存目标 '+target+' · ':''}}本段最多 {{count}} 件 · {{mode==='buy'?'灵石上限 '+budget+' · 保留 '+reserve:'库存保留 '+itemReserve}}<small>调整本段安排 ›</small></button>
-    <div class="preparation-estimate" data-testid="preparation-estimate"><strong>预计成交 {{quote?.cycles??0}} 件 · {{mode==='buy'?'灵石消耗 '+(quote?.stones??0):'灵石收入 '+(quote?.earnedStones??0)}}</strong><small>{{mode==='buy'?'逐件入囊，目标为最终库存':'逐件扣除库存，突破物不可出售；药物也受保留量约束'}}</small><small>{{quote?.failure?.message??(quote?.stopReason?'预计停止：'+quote.stopReason.message:'')}}</small><small v-if="consumptionWarning" data-testid="market-consumption">整段出售：{{consumptionWarning}}</small></div>
-    <button v-if="game.core.world.location!=='market'" class="primary" data-testid="preparation-travel" @click="emit('travel',plan)" :disabled="!!conflict||!move.allowed||mode==='sell'&&item.sell===null">前往云岚坊市 · 不自动成交</button><button v-else class="primary" data-testid="preparation-start" @click="emit('start',plan)" :disabled="!!conflict||!quote?.allowed">{{running?'当前活动进行中，请先暂停':mode==='buy'?'安排购入'+item.name:'安排售出'+item.name}}</button><small class="preparation-reason">{{conflict||'限于本段安排；不自动补货、换物或旅行。'}}</small>
+    <div class="preparation-estimate" data-testid="preparation-estimate"><template v-if="restart.same"><strong data-testid="paused-plan-progress">{{restart.summary}} 件</strong><small>{{restart.note}}</small></template><template v-else><strong>预计成交 {{quote?.cycles??0}} 件 · {{mode==='buy'?'灵石消耗 '+(quote?.stones??0):'灵石收入 '+(quote?.earnedStones??0)}}</strong><small>{{mode==='buy'?'逐件入囊，目标为最终库存':'逐件扣除库存，突破物不可出售；药物也受保留量约束'}}</small><small>{{quote?.failure?.message??(quote?.stopReason?'预计停止：'+quote.stopReason.message:'')}}</small><small v-if="consumptionWarning" data-testid="market-consumption">整段出售：{{consumptionWarning}}</small></template></div>
+    <button v-if="game.core.world.location!=='market'" class="primary" data-testid="preparation-travel" @click="emit('travel',plan)" :disabled="!!conflict||!move.allowed||mode==='sell'&&item.sell===null">前往云岚坊市 · 不自动成交</button><button v-else class="primary" data-testid="preparation-start" @click="emit('start',plan)" :disabled="!!conflict||restart.same||!quote?.allowed">{{conflict?'当前暂不可安排':restart.same?restart.label:restart.label+(mode==='buy'?'安排购入'+item.name:'安排售出'+item.name)}}</button><small class="preparation-reason">{{conflict||'限于本段安排；不自动补货、换物或旅行。'}}</small>
    </div></template>
   </MarketCounter>
   <dialog ref="library" class="art11-object-dialog" data-testid="market-library-dialog" :aria-labelledby="libraryTitle"><header><h3 :id="libraryTitle">坊市货架</h3><label><input v-model="future" type="checkbox" aria-label="显示后续坊市货物">后续境界</label></header>  <nav class="preparation-inline market-modes" aria-label="坊市购售"><button data-testid="market-mode-buy" :aria-pressed="mode==='buy'" @click="selectMode('buy')">购入</button><button data-testid="market-mode-sell" :aria-pressed="mode==='sell'" @click="selectMode('sell')">售出</button><span>持有灵石 {{game.core.player.stones}}</span></nav>

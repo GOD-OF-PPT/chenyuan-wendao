@@ -1,4 +1,5 @@
-import type {PreparationActivity} from '../../src/full/activity.ts';
+import {canonicalFingerprint as proof} from '../../src/full/receipts.ts';
+import type {Activity,ActivityPlan,PreparationActivity} from '../../src/full/activity.ts';
 import {items,skills} from '../../src/full/content.ts';
 export function preparationView(a:PreparationActivity){
  const p=a.plan,names={learn:'研习玉简',study:'参悟惊鸿剑简',buy:'坊市采购',sell:'坊市寄售',use:'药匣调息',rest:'洞府疗养'};
@@ -7,4 +8,11 @@ export function preparationView(a:PreparationActivity){
  const cost=`累计用石 ${a.spentStones}${'stoneBudget'in p?' / '+p.stoneBudget:''} · 岁月 +${a.spentMonths} 月`;
  const goal=p.kind==='use'?`恢复至 ${p.targetPercent}% 或最多 ${p.maxCycles} 枚即停`:p.kind==='buy'&&p.until==='target'?`库存达到 ${p.targetQuantity} 即停`:p.kind==='learn'?'所选玉简各研习一次，不自动装备':p.kind==='study'?'参悟一次即停':p.kind==='rest'?'疗养一次即停':'完成所选件数即停';
  return{name:names[p.kind]+('item'in p?' · '+items[p.item].name:''),noun:names[p.kind],unit:p.kind==='learn'?'卷':p.kind==='use'?'枚':p.kind==='buy'||p.kind==='sell'?'件':'次',type:p.kind.toUpperCase(),rows:[...effects,cost],summary:[`完成 ${a.completedCycles} / ${p.maxCycles}`,...effects,cost],goal};
+}
+
+/** Read-only intent; a matching paused authorization is continued from its rail. */
+export function pausedPlanView(a:Activity|null|undefined,run:string,plan:ActivityPlan){
+ const paused=a?.status==='paused'&&a.runId===run,same=!!paused&&proof(a.plan)===proof(plan);
+ const completed=same&&a?a.completedCycles:0,maxCycles=same&&a?a.plan.maxCycles:0;
+ return{same,label:same?'已保存原安排未变 · 请在上方继续':paused?'替换暂停安排 · ':'',completed,maxCycles,summary:same?`原段已暂停 · 已完成 ${completed} / ${maxCycles}`:'',note:'stoneBudget'in plan?'继续沿用原累计预算与保留线。':'继续沿用原次数、目标与保留线。'};
 }

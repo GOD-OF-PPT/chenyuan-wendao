@@ -1,0 +1,17 @@
+{
+  "task": "CHECK-ART-03",
+  "actualSources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "read": "clear consistent order and predictable focus/return",
+      "application": "three feature families retain current object and saved/draft identity on readonly return"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "read": "context and expected action results clear before activation",
+      "application": "source inspection vs actual travel, NPC record vs pending, original retry vs new authorization"
+    }
+  ],
+  "projectInference": "six combinations, exact layouts/timing/budgets from existing project; not Xbox certification",
+  "reuse": "existing skills/agents/assets/test/guard/build infrastructure; no new workflow"
+}
