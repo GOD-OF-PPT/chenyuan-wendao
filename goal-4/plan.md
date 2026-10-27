@@ -484,3 +484,14 @@ CHECK-ART-03最终检查就绪（2026-10-27）：源4（2233ad6e）当前完整4
 - [杠精审查] 通过，仅0041独立工程合同，无已知未修本项阻断。完整能力/有限授权、真实结果、像素/提交HTTP与真人分层，用户整体负面验收仍有效。下一唯一ART14器谱锁面主次/轮廓，再ART15修行副入口层级，三项后CHECK-ART-04；各项另落实参数合同再动源。其余ART/M04路线恢复/M05性能/M06兼容最后/干净包/最大C端代码安全/真人全保，Goal active。当前无兼容/环境性能专项，无push/合并/公开部署/改权限，回滚只本项revert保DB9/DB1及原件/失败。
 
 证据：goal-4/evidence/art13/verification.json、coverage.json、identity-proof.json、visual-review.json、real-timing.json与review.md。
+
+
+## ART14实际交付（2026-10-27）
+
+- 实现07b00898c4d474d71d8aecc2697d4b0e4732bacb，运行442d18f8。单实体图谱/唯一翻阅/四器直达、真实当前境界/金丹门槛/未炼成正式接线，原完整材料/资金来源/预算/独立认主保。future无行不清forge所选和同器777/9草案；craft原语义/runKey隔离保持。原Game/Store/DB9/费用/60秒/原意图/proof不改，0新位图/模块，原ART0344917/45000、production24310/26000，旧cap不涨。
+- 当前58唯一=完整新4+完整旧54两轮0skip/retry/flaky，六旧文件逐字节ec27784；502保原498身份，444本轮未跑。815/61规则、34当前存储/App恢复、完整425资产/positive与根/Vue类型构建实过；298仅最新CHECK-ART03实际332/122依赖hash精确继承，非当前一轮332。严格687/693/656/485/1225各自exact；真实Forge60秒60234.7ms/put比due晚19ms/complete晚46ms，炼丹30秒30478ms/未采字段null。
+- 旧重复入口/空目录、暗小178.125px画幅、主题平卡底、实际查看/材料/未炼成16px和future往返777→140预算丢失均实红后修。原1/3、2/2及准备candidate超帽未应用等原件保，未放宽Range/字体/全部Game/费用/原期/时限。只退休现役ART10已完整覆盖的旧布局，保align-content/min-width/transform，未迁controller逃帽。八当前代表像素root逐张fresh；生成清单不冒全部艺术，普通Chrome交付不算兼容。
+- 280运行源/12受测实施输入与Gitblob、87载荷9077681B与受测/提交后重建/冻结/56884实际HTTP相同。原顾长青凡人10/10/40石/60HP/20MP/吐纳结束2/50和已保存HUD/活动只读相同；旧丹炉预览重载home再展示器谱，不冒全文/全DB同。原页实际只读翻阅直达四器后返回，无用户Game/导入/恢复/重置或用户档测试。原13未变未提交，dirty工程包非干净最终候选。
+- [杠精审查] 通过，仅0042独立工程合同，无已知未修当前阻断。完整能力/有限授权、真实原子成果和像素/Git/HTTP分层，用户整体工作台感/美术/长期/真人仍开放。下一唯一ART15修行主要决定与副入口层级，随后CHECK-ART-04综合三项；其余ART/M04路线恢复/M05性能/M06兼容最后/干净包/最大C端代码安全/真人全保，Goal active。当前无兼容/环境性能专项，无push/合并/公开部署/改权限，回滚只本项revert保DB9/DB1及所有原件/失败。
+
+证据：goal-4/evidence/art14/verification.json、coverage.json、identity-proof.json、real-timing.json、visual-review.json与review.md。

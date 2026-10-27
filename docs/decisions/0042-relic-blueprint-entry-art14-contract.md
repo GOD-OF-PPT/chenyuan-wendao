@@ -37,3 +37,5 @@ source2新四2过2红：锁面/全四器直接打开与全部图失败/键盘/�
 A2进一步明确已有future开关关闭后重新翻阅仍保同物777/9草案。当前changeFuture在无行时清selected，静态只作待证假设；先真实新四红绿，不据推断改parent。若实际失败，仅forge无行保原选择/参数，craft原语义不动，旧controller/Store及新授权仍沿原确认。
 
 source3实证：A2同器777/9经future关闭/重新翻阅变140；Game/活动/全库只读检查保，是真实本地草案丢失。仅changeFuture在forge无可见行时保原selected，craft条件/有行换物语义逐字保；原开始/命令不动。A4另锁未炼成标记16px，恢复该真实状态正文18px。修后新四及共用parent的完整alchemy旧文件需当前实跑，不贴旧craft绿。
+
+当前一手来源核对见[ART14来源清单](../../goal-4/research/art14-design-sources.json)，实际交付/原红/全部边界见[复核](../../goal-4/evidence/art14/review.md)。

@@ -1,0 +1,29 @@
+{
+  "samples": [
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "one real thirty-second furnace saves actual inputs and product before presenting the completed pill",
+      "attachment": "real-alchemy-cycle",
+      "bodySha256": "214a0b545fcac17154f14fa477df26901a2b8a4e4499c74278d1bbd123d814d4",
+      "passed": true,
+      "periodMs": 30000,
+      "observedMs": 30478.0,
+      "endedAfterDue": true,
+      "firstPutOffsetMs": null,
+      "nativeCompleteOffsetMs": null
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A8 native sixty-second positive-cost forging saves full material and month costs before revealing an unbound artifact",
+      "attachment": "native-sixty-second-positive-forge-native-timing",
+      "bodySha256": "31f17b52d44a7e662aedfecb672d38efee6b7ec27175fdd2e3b75c6c274733b4",
+      "passed": true,
+      "periodMs": 60000,
+      "observedMs": 60234.70000001788,
+      "firstPutOffsetMs": 19,
+      "nativeCompleteOffsetMs": 46
+    }
+  ],
+  "scope": "Actual native forge60s and alchemy30s; other native learning/manual cases also pass in original54. Null fields not captured, never reconstructed as real native timestamps.",
+  "longBalanceOrHumanAcceptance": false
+}

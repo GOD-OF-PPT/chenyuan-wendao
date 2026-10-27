@@ -1,0 +1,32 @@
+{
+  "HUDAndActivityBeforeReloadAfterReloadAndAfterReadonlyBrowsingExactIgnoringIndices": true,
+  "originalVisibleProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "xp": "10/10",
+    "stones": 40,
+    "hp": "60/60",
+    "mp": "20/20",
+    "activity": "stopped natural cultivation",
+    "completed": "2/50",
+    "saved": true
+  },
+  "readonlyActualFourLibrary": true,
+  "allUserDBBytesCompared": false,
+  "wholePageAXEqualClaimed": false,
+  "viewChange": "Old alchemy preview to reloaded home, then relic blueprint; opened four-future library, closed filter and returned. No user Game/import/reset/restore/save test.",
+  "sourceTextHashes": {
+    "user-release-before.txt": "1d78ca2c5f19cf8a0f8bda612ff03d80ac0cd9a80742085b6afd9f17e00a4798",
+    "user-release-after.txt": "c36dab79e0ee4d6b75254a77e476e7dce2148508e698da81df068fbba9aa63a9",
+    "user-final-live.txt": "5297ade574402cb53715eeb5b86c8db867bc65ee9478ae0872397dc297a335b9"
+  },
+  "image": {
+    "original": "artifacts/goal-4/art14/user-final-delivery.png",
+    "originalSha256": "269ffafdda6a29d72dbecab097b4755eb38df53489763cf07750537575aa485d",
+    "view": "goal-4/evidence/art14/chrome-delivery.jpg",
+    "viewSha256": "b7929feadf40e41b9d687ec9d41b213b5c0552c9b0a771c741050a1c59ddae3b",
+    "lossy": true,
+    "quality": 68,
+    "scope": "Ordinary Chrome delivery observation, no resize or compatibility testing"
+  }
+}

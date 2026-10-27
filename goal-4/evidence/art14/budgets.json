@@ -1,0 +1,93 @@
+{
+  "oldLimitsUnchanged": true,
+  "newBitmaps": 0,
+  "newModules": 0,
+  "groups": {
+    "art03": {
+      "bytes": 44917,
+      "limit": 45000,
+      "rows": [
+        {
+          "path": "web/src/JadeStudyScene.vue",
+          "bytes": 5037,
+          "sha256": "2f9c1b1f6c3b60a2e8d42dc0c304e726d386d1fe4ee813796e2acf9458291606"
+        },
+        {
+          "path": "web/src/RelicAtelier.vue",
+          "bytes": 15892,
+          "sha256": "b8778d1bfc24accf379accdb858aef58070525d03cc688cfcbbbece8775921b3"
+        },
+        {
+          "path": "web/src/LoadoutConstellation.vue",
+          "bytes": 4689,
+          "sha256": "57a64e3efb5141447e6f042591e74589d87e2691e1b50186ab57d1ad3b69d336"
+        },
+        {
+          "path": "web/src/equipment-effects.ts",
+          "bytes": 4893,
+          "sha256": "0946c3b6b76e5ea39ebd80571175e2835ce49abe94fe6499f480b1635a934888"
+        },
+        {
+          "path": "web/src/art03-equipment.css",
+          "bytes": 14406,
+          "sha256": "d795fe599100e540503db9ed95fe1ea3e42629f8344ef52f46b89c33862f4fd8"
+        }
+      ]
+    },
+    "idle-production": {
+      "bytes": 24310,
+      "limit": 26000,
+      "rows": [
+        {
+          "path": "web/src/ProductionPlanner.vue",
+          "bytes": 14110,
+          "sha256": "13a4bc37bcfff79bece08652efba1c8cd37c934f81bba84b743b1c51d2e3e2bb"
+        },
+        {
+          "path": "web/src/idle-production.css",
+          "bytes": 6309,
+          "sha256": "50a2df6a433f250ba47dbbfb2692fe6416edfa39414828d1e0d85a267b31d47e"
+        },
+        {
+          "path": "web/src/activity-view.ts",
+          "bytes": 3891,
+          "sha256": "8d08ccebf604e2e1d0285045a30bce54b86eaf71e80d1a31529fa8a46e52ace9"
+        }
+      ]
+    }
+  },
+  "retiredContainerAudit": {
+    "retired": ".equipment-objects .relic-materials{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0;padding:0;min-width:0}\n",
+    "remainingOnlyConsumer": "RelicAtelier.vue .relic-preparation-dialog .relic-materials",
+    "retainedHigherPriorityRule": "#app .relic-preparation-dialog .relic-materials in art10-equipment.css",
+    "allRetiredPropertiesOverridden": [
+      "position",
+      "display",
+      "grid-template-columns",
+      "gap",
+      "margin",
+      "padding",
+      "min-width"
+    ],
+    "buttonsStillRetainOriginalMinWidthTransformAndOthers": true,
+    "nativeGroupAfter": 44980,
+    "nativeCap": 45000
+  },
+  "retiredButtonAudit": {
+    "issues": [
+      "Actual painted blueprint178.125px below180; enlarge same contain frame420px",
+      "Theme important background made object look like a flat card; real#app selector override",
+      "Reached future preview inspect control font16; actual verb and control restored18"
+    ],
+    "retiredOldMaterialButton": ".equipment-objects .relic-materials button{display:grid;grid-template-columns:24px minmax(0,1fr);align-content:center;gap:4px 6px;min-height:92px;min-width:0;padding:8px;border:0;border-top:1px solid #b6ba9155;border-bottom:1px solid #b6ba9155;border-radius:2px;background:#173a3cdc;transform:none!important}",
+    "retainedActiveProperties": [
+      "align-content:center",
+      "min-width:0",
+      "transform:none!important"
+    ],
+    "otherRetiredProperties": "all overridden by existing#app .relic-preparation-dialog .relic-materials button",
+    "nativeAfter": 44846,
+    "cap": 45000,
+    "newBitmap": false
+  }
+}
