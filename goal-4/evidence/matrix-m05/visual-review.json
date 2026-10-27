@@ -1,0 +1,34 @@
+{
+  "currentFrames": [
+    {
+      "original": "artifacts/goal-4/matrix-m05/baseline6-results/production-twelve-current--b1b45-omplete-real-finite-actions-chromium/new-1440.png",
+      "originalSha256": "a2ebd27b783cbbe11373b9147dd24d7b6f10664bb31964329af81b38ac326a11",
+      "view": "artifacts/goal-4/matrix-m05/new-1440-view.jpg",
+      "viewSha256": "40949ae295a089b7fe845959a59c1a6759f6b11ac18973ee1ddfb3472d32d682",
+      "size": [
+        1440,
+        900
+      ],
+      "quality": 68,
+      "lossy": true,
+      "pixelReviewed": true,
+      "review": "实际仙缘阅读表面可见、原HUD/已保存成果和八入口可读，无所审硬遮挡；两个进度的代表帧不代整体美术/长期或真人。"
+    },
+    {
+      "original": "artifacts/goal-4/matrix-m05/baseline6-results/production-twelve-current--b1b45-omplete-real-finite-actions-chromium/resume-1440.png",
+      "originalSha256": "a29a4b9f0a05686da7a5399ecbc1a40af18c1a468b45833e78cbd4878ff8798a",
+      "view": "artifacts/goal-4/matrix-m05/resume-1440-view.jpg",
+      "viewSha256": "5a26b3526a02e283fca7e08120d3cbd02d832ab1b6fc8a78136fb2001a1668d4",
+      "size": [
+        1440,
+        900
+      ],
+      "quality": 68,
+      "lossy": true,
+      "pixelReviewed": true,
+      "review": "实际仙缘阅读表面可见、原HUD/已保存成果和八入口可读，无所审硬遮挡；两个进度的代表帧不代整体美术/长期或真人。"
+    }
+  ],
+  "scope": "Two progress states on the actual fate reading surface after the three measured panels; not the first-action capture or all-eight-page art acceptance.",
+  "overallArtAccepted": false
+}

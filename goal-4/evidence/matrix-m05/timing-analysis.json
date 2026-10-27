@@ -1,0 +1,472 @@
+{
+  "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+  "completeCurrentSamples": 12,
+  "groups": [
+    {
+      "kind": "new",
+      "cpu": 4,
+      "count": 3,
+      "maxFirstControlMs": 1392.800000011921,
+      "maxFirstActionMs": 2550.7999999821186,
+      "maxPanelMs": 121.40000000596046,
+      "maxCriticalBytes": 1903837,
+      "minOutcomeAfterDueMs": 152
+    },
+    {
+      "kind": "new",
+      "cpu": 1,
+      "count": 3,
+      "maxFirstControlMs": 806.1999999880791,
+      "maxFirstActionMs": 1549,
+      "maxPanelMs": 28.299999982118607,
+      "maxCriticalBytes": 1616383,
+      "minOutcomeAfterDueMs": 31
+    },
+    {
+      "kind": "resume",
+      "cpu": 4,
+      "count": 3,
+      "maxFirstControlMs": 1483.199999988079,
+      "maxFirstActionMs": 2994.699999988079,
+      "maxPanelMs": 121.59999999403954,
+      "maxCriticalBytes": 2253995,
+      "minOutcomeAfterDueMs": 198
+    },
+    {
+      "kind": "resume",
+      "cpu": 1,
+      "count": 3,
+      "maxFirstControlMs": 805.5999999940395,
+      "maxFirstActionMs": 1324.5,
+      "maxPanelMs": 34.10000002384186,
+      "maxCriticalBytes": 1536147,
+      "minOutcomeAfterDueMs": 40
+    }
+  ],
+  "stages": [
+    {
+      "id": "new/1440x900/4/1",
+      "firstControl": 1392.800000011921,
+      "firstAction": 2517.5,
+      "clicksBeforeAction": [
+        {
+          "id": "踏入仙途 →",
+          "ms": 1517.4000000059605
+        }
+      ],
+      "longTaskMsBeforeAction": 1043,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/assets/index-DzkO8WQ9.js",
+          "bytes": 306739,
+          "encoding": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "new/1440x900/4/2",
+      "firstControl": 1353.0999999940395,
+      "firstAction": 2490,
+      "clicksBeforeAction": [
+        {
+          "id": "踏入仙途 →",
+          "ms": 1480.5
+        }
+      ],
+      "longTaskMsBeforeAction": 1028,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/assets/index-DzkO8WQ9.js",
+          "bytes": 306739,
+          "encoding": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "new/1440x900/4/3",
+      "firstControl": 1369.7999999821186,
+      "firstAction": 2550.7999999821186,
+      "clicksBeforeAction": [
+        {
+          "id": "踏入仙途 →",
+          "ms": 1508.5
+        }
+      ],
+      "longTaskMsBeforeAction": 1091,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/assets/index-DzkO8WQ9.js",
+          "bytes": 306739,
+          "encoding": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "new/1440x900/1/1",
+      "firstControl": 775,
+      "firstAction": 1517.800000011921,
+      "clicksBeforeAction": [
+        {
+          "id": "踏入仙途 →",
+          "ms": 824.0999999940395
+        }
+      ],
+      "longTaskMsBeforeAction": 125,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/assets/index-DzkO8WQ9.js",
+          "bytes": 306739,
+          "encoding": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "new/1440x900/1/2",
+      "firstControl": 806.1999999880791,
+      "firstAction": 1549,
+      "clicksBeforeAction": [
+        {
+          "id": "踏入仙途 →",
+          "ms": 854.9000000059605
+        }
+      ],
+      "longTaskMsBeforeAction": 131,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/assets/index-DzkO8WQ9.js",
+          "bytes": 306739,
+          "encoding": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "new/1440x900/1/3",
+      "firstControl": 777.2000000178814,
+      "firstAction": 1518,
+      "clicksBeforeAction": [
+        {
+          "id": "踏入仙途 →",
+          "ms": 826.4000000059605
+        }
+      ],
+      "longTaskMsBeforeAction": 123,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/assets/index-DzkO8WQ9.js",
+          "bytes": 306739,
+          "encoding": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "resume/1440x900/4/1",
+      "firstControl": 1483.199999988079,
+      "firstAction": 2994.699999988079,
+      "clicksBeforeAction": [
+        {
+          "id": "tab-1",
+          "ms": 2084.5999999940395
+        },
+        {
+          "id": "explore-mode-travel",
+          "ms": 2393.5999999940395
+        },
+        {
+          "id": "travel-wilderness",
+          "ms": 2579.699999988079
+        },
+        {
+          "id": "adventure-start",
+          "ms": 2730.0999999940395
+        }
+      ],
+      "longTaskMsBeforeAction": 1402,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        }
+      ]
+    },
+    {
+      "id": "resume/1440x900/4/2",
+      "firstControl": 1430,
+      "firstAction": 2906.5999999940395,
+      "clicksBeforeAction": [
+        {
+          "id": "tab-1",
+          "ms": 2029.2999999821186
+        },
+        {
+          "id": "explore-mode-travel",
+          "ms": 2335.199999988079
+        },
+        {
+          "id": "travel-wilderness",
+          "ms": 2504.9000000059605
+        },
+        {
+          "id": "adventure-start",
+          "ms": 2659.2999999821186
+        }
+      ],
+      "longTaskMsBeforeAction": 1365,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        }
+      ]
+    },
+    {
+      "id": "resume/1440x900/4/3",
+      "firstControl": 1370.9000000059605,
+      "firstAction": 2881.100000023842,
+      "clicksBeforeAction": [
+        {
+          "id": "tab-1",
+          "ms": 1906.800000011921
+        },
+        {
+          "id": "explore-mode-travel",
+          "ms": 2211.600000023842
+        },
+        {
+          "id": "travel-wilderness",
+          "ms": 2406.300000011921
+        },
+        {
+          "id": "adventure-start",
+          "ms": 2584.5
+        }
+      ],
+      "longTaskMsBeforeAction": 1290,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        }
+      ]
+    },
+    {
+      "id": "resume/1440x900/1/1",
+      "firstControl": 789.9000000059605,
+      "firstAction": 1292.699999988079,
+      "clicksBeforeAction": [
+        {
+          "id": "tab-1",
+          "ms": 977.0999999940395
+        },
+        {
+          "id": "explore-mode-travel",
+          "ms": 1110.0999999940395
+        },
+        {
+          "id": "travel-wilderness",
+          "ms": 1194.4000000059605
+        },
+        {
+          "id": "adventure-start",
+          "ms": 1244.9000000059605
+        }
+      ],
+      "longTaskMsBeforeAction": 121,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/cave.webp",
+          "bytes": 352000,
+          "encoding": null
+        }
+      ]
+    },
+    {
+      "id": "resume/1440x900/1/2",
+      "firstControl": 805.5999999940395,
+      "firstAction": 1324.5,
+      "clicksBeforeAction": [
+        {
+          "id": "tab-1",
+          "ms": 976.6999999880791
+        },
+        {
+          "id": "explore-mode-travel",
+          "ms": 1109.199999988079
+        },
+        {
+          "id": "travel-wilderness",
+          "ms": 1193.300000011921
+        },
+        {
+          "id": "adventure-start",
+          "ms": 1264.9000000059605
+        }
+      ],
+      "longTaskMsBeforeAction": 134,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/cave.webp",
+          "bytes": 352000,
+          "encoding": null
+        }
+      ]
+    },
+    {
+      "id": "resume/1440x900/1/3",
+      "firstControl": 789.1000000238419,
+      "firstAction": 1305.7000000178814,
+      "clicksBeforeAction": [
+        {
+          "id": "tab-1",
+          "ms": 979.3000000119209
+        },
+        {
+          "id": "explore-mode-travel",
+          "ms": 1108.800000011921
+        },
+        {
+          "id": "travel-wilderness",
+          "ms": 1191.9000000059605
+        },
+        {
+          "id": "adventure-start",
+          "ms": 1248.4000000059605
+        }
+      ],
+      "longTaskMsBeforeAction": 123,
+      "largestResources": [
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/wilderness.webp",
+          "bytes": 365848,
+          "encoding": null
+        },
+        {
+          "url": "http://127.0.0.1:4177/art/v2/scenes/cave.webp",
+          "bytes": 352000,
+          "encoding": null
+        }
+      ]
+    }
+  ],
+  "baseline5": "Earlier twelve attempts were invalidated by a wrong actual-panel mapping. Three partial late4x timings exceeded3000ms and remain real observations, not accepted full samples.",
+  "conclusion": "No production code changed. Current complete12 pass the unchanged budgets; this is not a root-cause repair claim for earlier observations or original240s timeout. Historical causes remain unknown and retained for the mandatory next combined review.",
+  "clock": "All twelve current measurement contexts real; normal seed only virtual.",
+  "remainingOriginal30Profiles": 18
+}

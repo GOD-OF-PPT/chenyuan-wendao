@@ -1,0 +1,425 @@
+{
+  "originalsRetained": true,
+  "attempts": [
+    {
+      "evidence": {
+        "path": "artifacts/goal-4/matrix-m05/baseline1-terminal.json",
+        "bytes": 691,
+        "sha256": "27bb436343e930dc1adb8a1d2f0785074d738f27b8d7d36f99bccaa1f15b3216"
+      },
+      "data": {
+        "phase": "baseline1",
+        "exit": 1,
+        "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+        "inputs": 329,
+        "exact": true,
+        "sameGit": true,
+        "declarationExact": false,
+        "stats": {
+          "startTime": "2026-10-27T21:09:12.147Z",
+          "duration": 501.2779999999998,
+          "expected": 0,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [
+          {
+            "message": "Error: Process from config.webServer was not able to start. Exit code: 1",
+            "stack": "Error: Process from config.webServer was not able to start. Exit code: 1"
+          }
+        ],
+        "retried": [],
+        "reportSha256": "42785d0430c5cc84c943f330004f8ce58d6e633958c60c72480ba6abbaa40542"
+      }
+    },
+    {
+      "evidence": {
+        "path": "artifacts/goal-4/matrix-m05/baseline2-terminal.json",
+        "bytes": 484,
+        "sha256": "7a15077bc006585d86fd62bcc0e6ae2e8a42aa850a4ea2135ad21813a9215932"
+      },
+      "data": {
+        "phase": "baseline2",
+        "exit": 1,
+        "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+        "inputs": 329,
+        "exact": true,
+        "sameGit": true,
+        "declarationExact": true,
+        "stats": {
+          "startTime": "2026-10-27T21:10:12.575Z",
+          "duration": 66748.139,
+          "expected": 0,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "errors": [],
+        "retried": [],
+        "reportSha256": "1fd2dc50878ba378e9877e2da5f35b6f83bc4b92fbdfebbeca792463963d3e1e"
+      }
+    },
+    {
+      "evidence": {
+        "path": "artifacts/goal-4/matrix-m05/baseline4-terminal.json",
+        "bytes": 486,
+        "sha256": "b80b477a253dae5b47de91e2cf55479e5e7ad6260e5cfaf7211141aabe518e7c"
+      },
+      "data": {
+        "phase": "baseline4",
+        "exit": 1,
+        "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+        "inputs": 329,
+        "exact": true,
+        "sameGit": false,
+        "declarationExact": true,
+        "stats": {
+          "startTime": "2026-10-27T21:13:05.105Z",
+          "duration": 160836.479,
+          "expected": 0,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "errors": [],
+        "retried": [],
+        "reportSha256": "66609cf132f95fb4f27e40a0e62791f84d249884b67a85090b7b5ea00a3be28a"
+      },
+      "measurements": {
+        "path": "artifacts/goal-4/matrix-m05/baseline4-measurements.json",
+        "bytes": 210852,
+        "sha256": "6e2283edd94420db31b44c42eacdb328083d29c08a889ef1696b1cb5bc1efa81"
+      },
+      "samples": 0,
+      "attempts": [
+        {
+          "id": "new/1440x900/4/1",
+          "status": "measurement-error",
+          "errorFirstLine": "locator.click: Timeout 8000ms exceeded."
+        },
+        {
+          "id": "new/1440x900/4/2",
+          "status": "measurement-error",
+          "errorFirstLine": "locator.click: Timeout 8000ms exceeded."
+        },
+        {
+          "id": "new/1440x900/4/3",
+          "status": "measurement-error",
+          "errorFirstLine": "locator.click: Timeout 8000ms exceeded."
+        },
+        {
+          "id": "new/1440x900/1/1",
+          "status": "measurement-error",
+          "errorFirstLine": "locator.click: Timeout 8000ms exceeded."
+        },
+        {
+          "id": "new/1440x900/1/2",
+          "status": "measurement-error",
+          "errorFirstLine": "locator.click: Timeout 8000ms exceeded."
+        },
+        {
+          "id": "new/1440x900/1/3",
+          "status": "measurement-error",
+          "errorFirstLine": "locator.click: Timeout 8000ms exceeded."
+        },
+        {
+          "id": "resume/1440x900/4/1",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m"
+        },
+        {
+          "id": "resume/1440x900/4/2",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m"
+        },
+        {
+          "id": "resume/1440x900/4/3",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m"
+        },
+        {
+          "id": "resume/1440x900/1/1",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m"
+        },
+        {
+          "id": "resume/1440x900/1/2",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m"
+        },
+        {
+          "id": "resume/1440x900/1/3",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m"
+        }
+      ]
+    },
+    {
+      "evidence": {
+        "path": "artifacts/goal-4/matrix-m05/baseline5-terminal.json",
+        "bytes": 485,
+        "sha256": "3ee6a1fb7bdd5a290ed42ae6901f3afc55e465bfa31755f8a62dcd102444b1d3"
+      },
+      "data": {
+        "phase": "baseline5",
+        "exit": 1,
+        "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+        "inputs": 333,
+        "exact": true,
+        "sameGit": true,
+        "declarationExact": true,
+        "stats": {
+          "startTime": "2026-10-27T21:18:37.843Z",
+          "duration": 307216.386,
+          "expected": 0,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "errors": [],
+        "retried": [],
+        "reportSha256": "698d4e3eb542cb7f6be3c5daecd6babb8b7c1ad4287a03f8c5b5de72fef09dc3"
+      },
+      "measurements": {
+        "path": "artifacts/goal-4/matrix-m05/baseline5-measurements.json",
+        "bytes": 754208,
+        "sha256": "6bf8a1f4c42d5a4fecd73a9d10fc2e73957a49b300b7f2cfa3443749bd856101"
+      },
+      "samples": 0,
+      "attempts": [
+        {
+          "id": "new/1440x900/4/1",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        },
+        {
+          "id": "new/1440x900/4/2",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        },
+        {
+          "id": "new/1440x900/4/3",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        },
+        {
+          "id": "new/1440x900/1/1",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        },
+        {
+          "id": "new/1440x900/1/2",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        },
+        {
+          "id": "new/1440x900/1/3",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        },
+        {
+          "id": "resume/1440x900/4/1",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        },
+        {
+          "id": "resume/1440x900/4/2",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        },
+        {
+          "id": "resume/1440x900/4/3",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        },
+        {
+          "id": "resume/1440x900/1/1",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        },
+        {
+          "id": "resume/1440x900/1/2",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        },
+        {
+          "id": "resume/1440x900/1/3",
+          "status": "measurement-error",
+          "errorFirstLine": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed"
+        }
+      ]
+    },
+    {
+      "evidence": {
+        "path": "artifacts/goal-4/matrix-m05/baseline6-terminal.json",
+        "bytes": 493,
+        "sha256": "7300cca027dc3907b9e48bbb0adf4940d9de3b8f977bd1906ac4a60e1da6f810"
+      },
+      "data": {
+        "phase": "baseline6",
+        "exit": 0,
+        "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+        "inputs": 333,
+        "exact": true,
+        "sameGit": true,
+        "declarationExact": true,
+        "stats": {
+          "startTime": "2026-10-27T21:27:13.155Z",
+          "duration": 200745.65300000002,
+          "expected": 1,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "retried": [],
+        "reportSha256": "cc538253d9faadf1cf7202086811d14a41f7eacd725333b2f0b9210f6eda7215"
+      },
+      "measurements": {
+        "path": "artifacts/goal-4/matrix-m05/baseline6-measurements.json",
+        "bytes": 855236,
+        "sha256": "f364de2984daeb34359a1b4f5a80ac9ec7eae9fb82f907962f092b5cc9a17491"
+      },
+      "samples": 12,
+      "attempts": [
+        {
+          "id": "new/1440x900/4/1",
+          "status": "passed",
+          "errorFirstLine": null
+        },
+        {
+          "id": "new/1440x900/4/2",
+          "status": "passed",
+          "errorFirstLine": null
+        },
+        {
+          "id": "new/1440x900/4/3",
+          "status": "passed",
+          "errorFirstLine": null
+        },
+        {
+          "id": "new/1440x900/1/1",
+          "status": "passed",
+          "errorFirstLine": null
+        },
+        {
+          "id": "new/1440x900/1/2",
+          "status": "passed",
+          "errorFirstLine": null
+        },
+        {
+          "id": "new/1440x900/1/3",
+          "status": "passed",
+          "errorFirstLine": null
+        },
+        {
+          "id": "resume/1440x900/4/1",
+          "status": "passed",
+          "errorFirstLine": null
+        },
+        {
+          "id": "resume/1440x900/4/2",
+          "status": "passed",
+          "errorFirstLine": null
+        },
+        {
+          "id": "resume/1440x900/4/3",
+          "status": "passed",
+          "errorFirstLine": null
+        },
+        {
+          "id": "resume/1440x900/1/1",
+          "status": "passed",
+          "errorFirstLine": null
+        },
+        {
+          "id": "resume/1440x900/1/2",
+          "status": "passed",
+          "errorFirstLine": null
+        },
+        {
+          "id": "resume/1440x900/1/3",
+          "status": "passed",
+          "errorFirstLine": null
+        }
+      ]
+    },
+    {
+      "evidence": {
+        "path": "artifacts/goal-4/matrix-m05/checks-current-terminal.json",
+        "bytes": 667,
+        "sha256": "7a89e6d8334673cd391556ce59b0c3f78aa280b5317a84e9ada91f92d93774e3"
+      },
+      "data": {
+        "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+        "inputs": 360,
+        "exact": true,
+        "rows": [
+          {
+            "name": "budget-tests",
+            "exit": 0,
+            "seconds": 0.7896780967712402,
+            "log": "artifacts/goal-4/matrix-m05/checks-current-budget-tests.log"
+          },
+          {
+            "name": "root-types",
+            "exit": 0,
+            "seconds": 2.642153263092041,
+            "log": "artifacts/goal-4/matrix-m05/checks-current-root-types.log"
+          },
+          {
+            "name": "asset-positive",
+            "exit": 0,
+            "seconds": 1.2353661060333252,
+            "log": "artifacts/goal-4/matrix-m05/checks-current-asset-positive.log"
+          }
+        ],
+        "passed": true
+      }
+    }
+  ],
+  "notLaunched": {
+    "preparedOnly": true,
+    "executed": false,
+    "reason": "Move the additional whole-DB oracle after the native START/public-running timestamp, so serializing all historical receipts is not falsely measured as player input/loading delay. All original rows still explicitly compared before the real outcome.",
+    "notPerformanceEvidence": true
+  },
+  "corrections": [
+    {
+      "failure": "Existing selectPlan supports auto battle; seed wrongly passed a single flee plan into it. Full normal preparations already reached the real trial battle.",
+      "correction": "Keep the same normal prefix; explicitly use the existing visible manual takeover/flee helper and original3sec cycle afterward. No Game fixture import or new rules.",
+      "productFailure": false
+    },
+    {
+      "new": "Actual welcome accessible name includes arrow; retain same button and use the existing M04 prefix matcher.",
+      "resume": "Actual START atomically archives the prior stopped activity under activity/runId/commandId/previous. Account for exactly that full formal backup; retain every original row and exact cardinality.",
+      "sameGit": "New official measurement output directory was not yet ignored; generated report changed porcelain only. Add explicit report/results ignores, never stage generated snapshots.",
+      "productFailure": false,
+      "performanceSamplesAccepted": 0,
+      "rawAttemptsPreserved": 12
+    },
+    {
+      "actualPanelMap": {
+        "tab-0": "修行",
+        "#inventory-catalogue": "tab-2 行囊",
+        "#fate-catalogue": "tab-3 仙缘"
+      },
+      "failure": "Measurement assumed tab-2 was equipment. PrimaryNav.vue actual contract proves it is inventory. Correct actual surface mapping; retain original three navigation IDs, complete native outcome and all DB proofs.",
+      "partialSlowObservationMs": [
+        3558.4,
+        3140,
+        3261.2
+      ],
+      "status": "Partial cold-start observations only, not accepted samples; complete the current sensor then diagnose.",
+      "runtimeChanged": false
+    }
+  ],
+  "baseline5SlowPartialObservationsMs": [
+    3558.4,
+    3140,
+    3261.2
+  ],
+  "rootRepairClaim": false,
+  "limits": "Earlier panels mismatched their real navigation IDs, so full samples were not accepted. Their real partial slow timings remain, even though the unchanged production runtime later passed the complete12. There was no product performance fix and the cause remains unknown."
+}

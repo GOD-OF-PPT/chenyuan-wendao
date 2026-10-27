@@ -1,0 +1,146 @@
+{
+  "currentPerformance": {
+    "terminal": {
+      "phase": "baseline6",
+      "exit": 0,
+      "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+      "inputs": 333,
+      "exact": true,
+      "sameGit": true,
+      "declarationExact": true,
+      "stats": {
+        "startTime": "2026-10-27T21:27:13.155Z",
+        "duration": 200745.65300000002,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "retried": [],
+      "reportSha256": "cc538253d9faadf1cf7202086811d14a41f7eacd725333b2f0b9210f6eda7215"
+    },
+    "sampleCount": 12,
+    "realClock": true,
+    "evidence": {
+      "path": "artifacts/goal-4/matrix-m05/baseline6-measurements.json",
+      "bytes": 855236,
+      "sha256": "f364de2984daeb34359a1b4f5a80ac9ec7eae9fb82f907962f092b5cc9a17491"
+    },
+    "report": {
+      "path": "artifacts/goal-4/matrix-m05/baseline6-report.json",
+      "bytes": 572358,
+      "sha256": "cc538253d9faadf1cf7202086811d14a41f7eacd725333b2f0b9210f6eda7215"
+    },
+    "before": {
+      "path": "artifacts/goal-4/matrix-m05/baseline6-before.json",
+      "bytes": 64767,
+      "sha256": "6b18427605fd98228a093c9e36543fd702e331fa8f59f8edccd6816c6254ee9e"
+    },
+    "after": {
+      "path": "artifacts/goal-4/matrix-m05/baseline6-after.json",
+      "bytes": 64767,
+      "sha256": "4dcc8609a6c386e237a9470973f092378c86204e6181b74a4bf097682105ed71"
+    },
+    "declared": {
+      "path": "artifacts/goal-4/matrix-m05/baseline6-declared.json",
+      "bytes": 3325,
+      "sha256": "5735e97209cb0f0e1f9bd90faf4b757cafa59b59826db8f13d52b7a85ee29ee5"
+    }
+  },
+  "currentOther": {
+    "budgetTests": 14,
+    "newUniqueTests": 6,
+    "rootTypes": true,
+    "assetPositive": true,
+    "terminal": {
+      "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+      "inputs": 360,
+      "exact": true,
+      "rows": [
+        {
+          "name": "budget-tests",
+          "exit": 0,
+          "seconds": 0.7896780967712402,
+          "log": "artifacts/goal-4/matrix-m05/checks-current-budget-tests.log"
+        },
+        {
+          "name": "root-types",
+          "exit": 0,
+          "seconds": 2.642153263092041,
+          "log": "artifacts/goal-4/matrix-m05/checks-current-root-types.log"
+        },
+        {
+          "name": "asset-positive",
+          "exit": 0,
+          "seconds": 1.2353661060333252,
+          "log": "artifacts/goal-4/matrix-m05/checks-current-asset-positive.log"
+        }
+      ],
+      "passed": true
+    }
+  },
+  "inherited": {
+    "ruleTests": 823,
+    "nativeCases": 415,
+    "relatedUICases": 171,
+    "assetTests": 438,
+    "source": "goal-4/evidence/matrix-m04",
+    "actualInputDifferences": [
+      {
+        "originalSnapshot": "artifacts/goal-4/matrix-m04/core-source2-current-before.json",
+        "inputs": 683,
+        "differences": [
+          "AGENTS.md",
+          "goal-4/plan.md",
+          "goal-4/tasks.md"
+        ]
+      },
+      {
+        "originalSnapshot": "artifacts/goal-4/matrix-m04/assets-source2-current-before.json",
+        "inputs": 569,
+        "differences": []
+      },
+      {
+        "originalSnapshot": "artifacts/goal-4/matrix-m04/native-all-source2-final1-before.json",
+        "inputs": 536,
+        "differences": [
+          "AGENTS.md",
+          "goal-4/plan.md",
+          "goal-4/tasks.md"
+        ]
+      },
+      {
+        "originalSnapshot": "artifacts/goal-4/matrix-m04/ui-corrected-source2-preflight1-before.json",
+        "inputs": 681,
+        "differences": [
+          "AGENTS.md",
+          "goal-4/plan.md",
+          "goal-4/tasks.md",
+          "web/build-report/build.json"
+        ]
+      },
+      {
+        "originalSnapshot": "artifacts/goal-4/matrix-m04/ui-remainder-source2-final1-before.json",
+        "inputs": 696,
+        "differences": [
+          "AGENTS.md",
+          "goal-4/plan.md",
+          "goal-4/tasks.md",
+          "web/build-report/build.json"
+        ]
+      }
+    ],
+    "limit": "No current execution claim for inherited rows. All actual program/runtime/assets and selected harnesses unchanged. Only task guidance and Git build metadata differ; same284 sources and89 payloads are separately checked. The original current32 route composition/unknown timeout remain exactly as M04."
+  },
+  "postCommitRegistration": {
+    "identitiesExact": true,
+    "actualCases": 1,
+    "samplesInsideCase": 12,
+    "source": {
+      "path": "artifacts/goal-4/matrix-m05/committed-declared.json",
+      "bytes": 3292,
+      "sha256": "266c196c975d6c299e50e5556851d45fd3c9af831d80330de25251a88c6ede2e"
+    }
+  }
+}

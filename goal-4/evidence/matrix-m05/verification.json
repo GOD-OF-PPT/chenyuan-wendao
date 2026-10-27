@@ -1,0 +1,108 @@
+{
+  "task": "MATRIX-M05",
+  "state": "bounded current desktop engineering delivery",
+  "implementation": "cbb9f9279b45fd13327cb58b4e0bfafad301b640",
+  "runtime": "b9228b3c1b7ce242e4502c4d53a1e0595545a81b743a2c2b1889b73fabaa131d",
+  "productionRuntimeChanged": false,
+  "scope": {
+    "browser": "chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "fontScale": 1,
+    "cpuMultipliers": [
+      1,
+      4
+    ],
+    "repetitionsPerKindAndCPU": 3,
+    "network": "10Mbps /150ms / actual cold new context and cacheDisabled"
+  },
+  "currentColdSamples": 12,
+  "originalColdSamples": 30,
+  "deferredOriginalSamples": 18,
+  "originalThirtyAccepted": false,
+  "compatibilityAccepted": false,
+  "budgets": {
+    "criticalBytes": 2500000,
+    "packageBytes": 15000000,
+    "firstActionMs": 3000,
+    "panelFeedbackMs": 200
+  },
+  "actualMaxima": {
+    "firstAtomicAcceptanceMs": 2994.699999988079,
+    "firstAtomicAcceptanceMarginMs": 5.300000011920929,
+    "panelFeedbackMs": 121.59999999403954,
+    "criticalTransferBytes": 2253995,
+    "rawPackageBytes": 9155833
+  },
+  "cycle": "Each measured context keeps one actual six-second CHOOSE or TRAVEL cycle with formal whole Game/Activity/unique receipt/native due/complete and all-store readonly proof. firstActionReadyMs uses real new-Game creation or saved finite TRAVEL START/public running; fullOutcomeMs also includes verification and phase assets, while native outcome timing is a separate witness. No subtraction of cycle time to satisfy3000ms.",
+  "currentChecks": {
+    "budgetTests": 14,
+    "newUniqueRuleTests": 6,
+    "rootTypes": true,
+    "vueTypesAndBuild": true,
+    "assetPositive": true
+  },
+  "inheritedChecks": "See checks.json for unchanged823 rules/415 native/171 relatedUI/438 resource tests, not reruns.",
+  "performancePhase": {
+    "inputs": 333,
+    "exact": true,
+    "sameGit": true,
+    "declaredCases": 1,
+    "insideSamples": 12,
+    "retry": 0,
+    "skip": 0,
+    "durationMs": 200745.65300000002
+  },
+  "otherChecksInputs": 360,
+  "gitBlobChecks": 295,
+  "runtimeFiles": 284,
+  "httpFiles": 89,
+  "httpBytes": 9155833,
+  "existingPreviewRestartedOrReloaded": false,
+  "userReadOnlyProgress": "Original Chrome: mortal/unselected10xp40stones60hp20mp; ended natural cultivation2/50 and saved. No Game action/import/reset/restore or user-save test.",
+  "userEvidence": {
+    "path": "artifacts/goal-4/matrix-m05/user-readonly.ax.txt",
+    "bytes": 2477,
+    "sha256": "2e6c5cfefdb8db2470049acf3fbb035e3ffb9c9798526c4fdfbda9514f5a22b0"
+  },
+  "protected13": {
+    "hashes": {
+      "web/e2e/economy.spec.ts": "74d9aa0f71351a890ddb75010aa7ee5eaed03a251cf435824afd836acc3d928a",
+      "web/e2e/growth.spec.ts": "6a3ed492a841efe86af8c077b67629aa8aee9efa2ce583740913cebe4fd833b3",
+      "web/performance-tests/production.spec.ts": "4fedce4841870b4d2b3c70744788ca8ed0d75868652ac6e96119febefafb71a9",
+      "web/performance-tests/support.ts": "5b292d27f4c15ebe74222d8b3e2754db27bd3fb906c489fa793ff02624f36053",
+      "web/playwright.config.ts": "615e17d0d67d0b9bb168fd87287e9e427b2fa2b23a60d6e83cf00eba23c031f1",
+      "web/playwright.journeys.config.ts": "244b1faecde4ddecd1290ef99d5fc7909e5b5947289d0cf9460d771ac22097f7",
+      "web/playwright.performance.config.ts": "8c083d55b7c3bd7bb538d719b098ba5213d95efc460980e9ff73c93ae5ece3a0",
+      "web/playwright.persistence.config.ts": "c6b4221c4a3c0964c89657afb2ea2718b7c3d87f0566c30d78f70900b08352f6",
+      "scripts/collect-validation.mjs": "7c93714fe6f505ffc4679ce507aac4090af6ef831e06f0bbc5b8d56033c864c8",
+      "scripts/merge-ui-shards.mjs": "5a5da98452b5440f24452e8b8b17c0b0e341efea37ecb9b7af09f94ec7194758",
+      "scripts/validation-matrix.mjs": "f911a45b46a052462dd195cd9518ce633f9c997d6946f4660867c087dbf9ad19",
+      "tests/ui-shards.test.mjs": "4b8ff67bfa575f4dd5928c0b591ef590ca999ab5f28c303b85ecbe5c8fa1a07e",
+      "tests/validation-matrix.test.mjs": "4ea8b9736d3e5be6b0b4b8e81410e67fc3f16247aff06d3341fd277ccca334b5"
+    },
+    "exact": true,
+    "committed": false
+  },
+  "remaining": [
+    "Current late4x sample has only5.3ms margin; previous partial3140–3558.4ms observations are preserved and unexplained. A later clean12 is not a root-fix or all-environment guarantee.",
+    "Original M04 total240s route timeout remains unknown; failed trace available, successful followup per-call trace absent.",
+    "Mandatory CHECK-ART16-M45 next, then M06 compatibility last including the remaining18 original performance profiles and original complete matrices.",
+    "The existing56884 Python service returns identity JS even when gzip is accepted; current timing is certified only for recorded Vite preview conditions. Final runnable-package serving policy/performance must be verified in its actual candidate context; identical payload hashes alone do not prove identical timings.",
+    "CHECK-MATRIX-02, clean same-version runnable package/reproduction, maximal C/code/security review.",
+    "Overall game feel/art/long-term balance and real human acceptance."
+  ],
+  "next": "CHECK-ART16-M45",
+  "goalComplete": false,
+  "measurementServer": "Vite production preview4177; actual gzip recorded for JS/CSS.",
+  "existingPreviewServingObservation": {
+    "server": "Existing Python candidate/serve.py56884",
+    "requestAcceptEncoding": "gzip",
+    "responseContentEncoding": null,
+    "bytes": 937323,
+    "payload": "assets/index-DzkO8WQ9.js",
+    "sha256": "ab007bbafb063589805265cda91fde773cb7d0c1fca6f50b4f58da907d7af232"
+  }
+}

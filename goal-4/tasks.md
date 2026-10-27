@@ -1,8 +1,8 @@
 # 本次目标接续任务
 
-## 当前唯一实施项 MATRIX-M05（2026-10-28）
+## MATRIX-M05已交付；下一独立项CHECK-ART16-M45（2026-10-28）
 
-状态[ ]；基线0df49ea，上一M04真实progress已核。原话amendments/2026-10-28-continue-matrix-m05.md、0047合同/参数/预算/验收/风险/回滚及原13保护先于运行代码。仅1440×900/font1 Chromium原12性能样本（new/resume×CPU1/4×三次），原30/其余18保兼容最后M06；3秒受理/200ms/2.5MB/15MB不涨，真实6秒成果另验，完整后期DB从正常可见周期准备。原性能三文件在13内不改不提交，新增明确profile/验证器不放宽旧候选门槛。
+状态[x]；实现cbb9f92，实际交付/限制见末尾；基线0df49ea，上一M04真实progress已核。原话amendments/2026-10-28-continue-matrix-m05.md、0047合同/参数/预算/验收/风险/回滚及原13保护先于运行代码。仅1440×900/font1 Chromium原12性能样本（new/resume×CPU1/4×三次），原30/其余18保兼容最后M06；3秒受理/200ms/2.5MB/15MB不涨，真实6秒成果另验，完整后期DB从正常可见周期准备。原性能三文件在13内不改不提交，新增明确profile/验证器不放宽旧候选门槛。
 
 顺序：合同/原话/保护→一手回读和旧trace只读审计→正式当前有限周期测量器/明确指标迁移/负例→冻结真实12基线→真实慢项先红/假设/最小必要修缮/当前回归→独立提交/同源源与包/原试玩只读→tasks杠精。当前只M05，不兼容；完成后强制CHECK-ART16-M45，再M06最后/原综合/干净包/最大评审/整体ART长期真人，Goal active。实际完成/检查/原红/提交/同源/杠精留本项交付填写，不以文档提前通过。
 
@@ -67,7 +67,7 @@
 | [x] | CHECK-U8 | R4/B/C当前授权全面检查-debug |
 | [ ] | ART | 逐项工程已实装；整体游戏感/美术与真人复验仍开放，具体记录见下方 |
 | [ ] | MATRIX | UI/存储/正常路线/恢复/性能逐格收尾，兼容最后独立处理 |
-| [ ] | CANDIDATE | 同源可运行包、干净重建/解包与最终评审 |
+| [ ] | CANDIDATE | 同源可运行包、实际服务性能、干净重建/解包与最终评审 |
 | [ ] | HUMAN/FINAL | 用户整体交互/美术/长期节奏复验，修缮后整体完成 |
 
 ## U8-C 开工登记
@@ -170,7 +170,7 @@
 | [x] | MATRIX-M03 | 当前入口/目录/25动作和反馈接线工程单元，旧39与整体艺术责任不关闭 |
 | [x] | CHECK-MATRIX-01 | ART06/M02/M03综合检查，含阶段键盘/启动焦点/引导/记录字段残留及A9原超时 |
 | [x] | MATRIX-M04 | 当前完整正常新档路线与失败恢复格，正规逐周期/未知决定不代选 |
-| [ ] | MATRIX-M05 | 独立性能完整样本与失败记录，同源预算不放宽 |
+| [x] | MATRIX-M05 | 当前固定桌面12性能样本/失败记录，原其余18保M06/完整30门槛不放宽 |
 | [ ] | CHECK-ART16-M45 | ART16/M04/M05三项后的当前授权全面检查，先于末段兼容 |
 | [ ] | MATRIX-M06 | 最后独立兼容与历史缺口，届时落实专项合同 |
 | [ ] | CHECK-MATRIX-02 | 后三项全面检查-debug与完整证据归拢 |
@@ -634,3 +634,16 @@ CHECK-ART-03最终检查就绪（2026-10-27）：源4（2233ad6e）当前完整4
 - [杠精审查] 通过，仅0046本项工程合同，无已知未修本项功能阻断。真实完整功能/有限授权/原意图、代码/像素/源/HTTP/真人分层；超时unknown、整体ART/长期与全部后段义务不抹去。下一唯一M05性能，继强制CHECK-ART16-M45三任务综合，再M06兼容最后/原CHECK-MATRIX-02、干净同源包/最大C端代码安全review/真人。Goal active未完成，当前未执行兼容/环境性能。回滚仅revert本项、保DB9/DB1可读和全部原件。
 
 证据：[evidence/matrix-m04/verification.json](evidence/matrix-m04/verification.json)、coverage.json、checks.json、attempts.json、identity-proof.json、visual-review.json、user-progress.json与review.md。
+
+
+## MATRIX-M05实际交付（2026-10-28）
+
+- 实现cbb9f9279b45fd13327cb58b4e0bfafad301b640，运行源仍b9228b3c。本项新增当前有限放置版性能测量器/严格预算验证器/固定桌面profile和两生成目录ignore，没有改运行代码、Game/Store/DB9/费用/周期/proof/美术/旧cap；原13在途未改未提交。
+- 当前12有效样本一次完整轮通过（1用例内new/resume×CPU4/1×三次，200745.653ms/333输入exact/同Git/声明相同/0skip/retry）。最慢首次实际受理2994.7ms、三面板121.6ms、首批2253995B、全包9155833B，原3000/200/2500000/15000000不涨；原30中另外18保M06最后，旧候选验证器不接受12冒30。
+- 后期完整DB由真正新档经可见有限安排/逐周期到化神、入劫问心后明确撤回，278真实回执1457117B/47备份/current previous checkpoint owner；仅准备虚拟周期。12测量context全部真实钟，新建核原创建保存/开场，行旅核真实START原子受理/公开running和完整6秒TICK之后正式全Game/Activity/成本/唯一回执/native截止。三原tab-0修行/tab-2行囊/tab-3仙缘的两帧实际表面/选中和完整DB只读保；fullOutcomeMs含后验/资源等待，native成果时刻另有witness，不混纯引擎延迟。
+- 原准备/测量前提错误全部保：wrapper cwd、single flee误交auto helper、欢迎按钮箭头、原活动唯一归档、实际tab映射及未ignore导致sameGit=false；未为前提改产品/删断言/涨时限。baseline3仅准备未运行，baseline4/5各12attempt非有效通过；baseline6独立完整12，不拼绿。更早后期4倍部分3140—3558.4ms仍真实慢观察，原因unknown；当前余量仅5.3ms，后绿不冒根因修复，交下次综合检查。
+- M04原240秒超时只读test.trace审计完成：最长完成API约1.715秒、多周期步骤约13秒、超时后清理约28秒；成功复核未保逐调用trace，原总时长不同不能归因主机/IDB/GPU或称已修。当前14预算测试（旧8+新6）、根TS/asset-positive在360输入exact实际过，提交后Vue类型/构建过。823规则/415原生/171相关UI按M04未变程序依赖继承，非当前重跑；438资源原569输入全同。2当前进度的仙缘代表图逐张fresh审，原PNG/JPEG68/hash保，非八页艺术/真人认可。
+- 284运行源+11归属输入共295 Gitblob相同；89载荷9155833B与受测/提交后重建/冻结/56884 HTTP同，dirty工程版非干净候选。现有试玩未重启/未重载，原Chrome凡人未择法/10修为/40石/60HP/20MP/吐纳结束2/50已保存只读保持，无用户Game/导入/恢复/重置或用户档测试。当前性能只对应Vite实际gzip条件，原56884 Python服务Accept-Encoding:gzip仍identity JS；相同payload不等相同服务性能，最终可运行包的实际服务/性能保持CANDIDATE义务。
+- [杠精审查] 通过，仅0047当前有界工程合同，无已知未修验证器/接线阻断；完整预算/真实受理与周期/原始失败和未知保，机器与像素不代整体艺术/长期/真人。下一唯一强制CHECK-ART16-M45（ART16/M04/M05三项），重点保当前小余量/旧慢观察、恢复交接和八页游戏感；之后M06兼容最后（含原剩余18性能）/CHECK-MATRIX-02、干净同源包/实际服务/最大C端代码安全/真人。Goal active未完成；定时接续保PAUSED，不擅自恢复。未push/PR/合并/公开部署/改权限，回滚仅revert本项、保DB9/DB1读及原件/v0.3/13/所有失败。
+
+证据：[evidence/matrix-m05/verification.json](evidence/matrix-m05/verification.json)、measurements.json、timing-analysis.json、checks.json、attempts.json、trace-audit.json、identity-proof.json、visual-review.json与review.md。

@@ -361,3 +361,9 @@ ART16实查补充：原比较tab同为正文操作保18，持久保存说明保1
 依据[0046](docs/decisions/0046-normal-idle-recovery-m04-contract.md)及本轮实际回读[HTML dialog关闭步骤](https://html.spec.whatwg.org/multipage/interactive-elements.html#close-the-dialog)、[MDN close事件](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close_event)：原生还焦点与排队close消费不等于玩家新意图。阶段交接仅在原活动/人生/导航/同步证明仍完整、已保存、无新弹窗和后续输入时完成；旧锚已退场且焦点恰回当前内容的自动还焦点可保原生平交接，实际后续键盘/指针仍撤旧请求。具体守卫是本项目推导，非标准规定的游戏布局、时长或兼容认证。
 
 恢复入口须核沉浸practice与Gate两个真实互斥消费者；相邻trialRecovery过期后不能回放旧报告。真实失败/成本/完整CP、原生命令重试和可达只读入口分别验证；普通CP恢复沿实际native confirm，不据错误弹窗前提改Game。24基础路线不能借隐藏本命/研习升级，正消耗与每关有限用药按实际库存明确授权。旧瞬时测试逐声明保原责任与具名当前替代，所有20要求/88叶子及浏览器/小屏未验项保留；来源清单/报告数量不代覆盖。原总时限超时与后续同源定向通过都保留，unknown不冒根因修复；当前工程组合不称单轮全绿，不代整体艺术、长期平衡、性能或真人。
+
+## 放置动作与生产性能测量（M05）
+
+依据[0047](docs/decisions/0047-idle-performance-m05-contract.md)及本轮实际回读[MDN observe/type/buffered](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/observe)、[Playwright storageState](https://playwright.dev/docs/api/class-browsercontext#browser-context-storage-state)。被动观察不代真实事务证明；完整正常后期DB只在隔离测试context内存传递。首个按钮、实际受理、完整周期后native成果分开记：新建需实际Game保存，行旅需原START存储和公开running，再完整6秒核正式Game/Activity/唯一回执/put与complete不早于due。不能从总耗时扣周期凑3秒，或将fullOutcomeMs中的后验/资源等待当纯引擎延迟。
+
+真实面板的语义要从PrimaryNav/消费者核对，tab-2是行囊、tab-3是仙缘；两帧反馈既核选中也核实际表面，不只标签高亮。性能报告保全部attempt/失败原数据，错误前提与产品慢项分别记；新报告目录须明确ignore，不能提交生成存档或用目录变化假报源不一致。当前12与原30/其余18后置分明，原3秒/200ms/2.5MB/15MB不涨；后期5.3ms余量、早期部分超限和M04原超时继续unknown，不以同源后绿宣称修复。相同payload hash不证明HTTP编码/实际服务性能相同，Vite gzip结果不能直接当Python试玩/最终包或公网保证。工程、像素、整体美术/长期与真人分层，下一三任务综合检查先于兼容。
