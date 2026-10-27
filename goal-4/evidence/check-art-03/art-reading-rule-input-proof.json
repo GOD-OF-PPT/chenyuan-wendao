@@ -1,0 +1,18 @@
+{
+  "runtime": "2233ad6e3e9fe1a422cdb98d028d9d26b4cf5fa6977108110eb0329bccbd63c2",
+  "inputs": 751,
+  "exact": true,
+  "rows": [
+    {
+      "name": "rules",
+      "exit": 0,
+      "signal": null
+    },
+    {
+      "name": "types",
+      "exit": 0,
+      "signal": null
+    }
+  ],
+  "passed": true
+}

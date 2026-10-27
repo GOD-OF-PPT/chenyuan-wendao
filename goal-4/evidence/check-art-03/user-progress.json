@@ -1,0 +1,23 @@
+{
+  "visibleHUDExact": true,
+  "activityTextExact": true,
+  "save": "已保存",
+  "fullVisibleBodyExact": false,
+  "reason": "Before reload Fate; normal reload returned original home. No gameplay action performed.",
+  "observedProgress": {
+    "name": "顾长青",
+    "realm": "凡人",
+    "xp": "10/10",
+    "stones": 40,
+    "hp": "60/60",
+    "mp": "20/20",
+    "activity": "自然吐纳 stopped2/50"
+  },
+  "actualBrowserResources": [
+    "./assets/index-DsN5Yhw_.js",
+    "./assets/index-CFcXJsV-.css"
+  ],
+  "noGameActionImportRestoreResetOrUserDBTest": true,
+  "wholeUserDBEqualityClaimed": false,
+  "screenshot": "chrome-delivery.jpg"
+}

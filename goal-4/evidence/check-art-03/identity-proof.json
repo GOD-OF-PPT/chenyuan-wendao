@@ -1,0 +1,13 @@
+{
+  "implementationCommit": "5bef46efef3a228235b96233e43ad9a7a7d5eadf",
+  "runtime": "2233ad6e3e9fe1a422cdb98d028d9d26b4cf5fa6977108110eb0329bccbd63c2",
+  "runtimeSources": 280,
+  "gitBlobAndCurrentAndTestedRuntimeAllExact": true,
+  "postCommitRebuildTestedFrozenPayloadAllExact": true,
+  "payloadFiles": 87,
+  "payloadBytes": 9074563,
+  "actualHTTPGETsExact": true,
+  "userPreviewPort": 56884,
+  "dirtyEngineeringOriginPreserved": true,
+  "cleanFinalCandidate": false
+}

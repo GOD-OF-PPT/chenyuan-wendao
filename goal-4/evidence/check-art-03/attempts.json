@@ -1,0 +1,55 @@
+{
+  "history": [
+    {
+      "path": "artifacts/goal-4/check-art-03/ui-new6-baseline-terminal.json",
+      "sha256": "ff9f95bb9a26a0604ee5030056d3e7ca94ee999ddec80a79f5615405a155c1a9",
+      "originalPreserved": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/ui-new6-baseline2-terminal.json",
+      "sha256": "c363977f711e68442d1d9c53bf5f1d4df9447b262ce760bd89643e6ed0b5d466",
+      "originalPreserved": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/ui-new6-current-source1-terminal.json",
+      "sha256": "37db681026b7fbbcd819bc4a5557089345b45e1db55d282165d4f1aef74b914b",
+      "originalPreserved": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/ui-new6-current-source2-terminal.json",
+      "sha256": "c694d6d70e7e94c772d26404d681a941fd402dbf25a05072ddcaee30eb33c4ac",
+      "originalPreserved": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/new6-C6loadout-current-source2-terminal.json",
+      "sha256": "91188ec1ce7f064ca5d63d9d5611d0fff955af46e98702e276659b75cb7b0524",
+      "originalPreserved": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/ui-full-current-source3-terminal.json",
+      "sha256": "92192546ec1a861eb6fc0165a4856c3f3d2cc0b15e50ff103fb917148e931e31",
+      "originalPreserved": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/ui-related75-current-source4-terminal.json",
+      "sha256": "47c3fb422b6a2ac4cd04e22fb9e2fcbb19b2194d481831c6937cf24514fc9c72",
+      "originalPreserved": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/ui-checkta-C2-current-source4-terminal.json",
+      "sha256": "5fa862c5de19bdc6059b57fa5ea3da2798497f34b38fa33c3bed3926c8e65db0",
+      "originalPreserved": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/guard-full-source4-results.json",
+      "sha256": "6ed773a76e3bfb13beaca7af384fec866a333531fb5412951a6018c0a9a8123b",
+      "originalPreserved": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/source1-native-guard-not-run.json",
+      "sha256": "1aef396eb89dcabc37b082ff6b383b81daf9050249de3fda9b81b8c252d521ed",
+      "originalPreserved": true
+    }
+  ],
+  "scope": "Actual source3 full475/17 preserved. Related74/1/C2leaf and negative1method are subsets, not added coverage. First failed425 oneMethod3subTests preserved. Finalfull492 is independent single run."
+}

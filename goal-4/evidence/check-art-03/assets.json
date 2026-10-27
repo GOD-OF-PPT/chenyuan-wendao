@@ -1,0 +1,230 @@
+{
+  "format": "chenyuan-current-asset-verification",
+  "version": 1,
+  "recordedAt": "2026-10-27T06:35:36.357851+00:00",
+  "status": "passed-current-full425-after-authorized-fixture-repair",
+  "sourceDigest": "2233ad6e3e9fe1a422cdb98d028d9d26b4cf5fa6977108110eb0329bccbd63c2",
+  "runtimeSources": 280,
+  "payloadFiles": 87,
+  "payloadBytes": 9074563,
+  "executions": {
+    "finalComplete425": 1,
+    "sameMethodLeafSubset": 1,
+    "uniqueCoveredMethods": 425,
+    "boundary": "Leaf is existing method repeated only to verify target semantics, not426 coverage. First full425 failure remains separate historical attempt."
+  },
+  "actualUniqueDeclarations": 425,
+  "expected": 425,
+  "actual": 425,
+  "rows": [
+    {
+      "name": "tests",
+      "commandArgs": [
+        "art/tools/test_inventory.py"
+      ],
+      "began": "2026-10-27T06:24:13.814Z",
+      "ended": "2026-10-27T06:31:15.524Z",
+      "exit": 0,
+      "error": null,
+      "expectedTests": 425,
+      "actualTests": 425,
+      "durationSeconds": 421.08,
+      "unittestOK": true,
+      "log": "artifacts/goal-4/check-art-03/guard-full-source4-slotfix-tests.log",
+      "sha256": "121a64b8d48ad09059d8df303f9894ca2f1816aa1a06268857e0f24c9554f97e"
+    },
+    {
+      "name": "positive",
+      "commandArgs": [
+        "art/tools/check_inventory.py"
+      ],
+      "began": "2026-10-27T06:31:15.527Z",
+      "ended": "2026-10-27T06:31:17.275Z",
+      "exit": 0,
+      "error": null,
+      "expectedTests": null,
+      "actualTests": null,
+      "durationSeconds": null,
+      "unittestOK": null,
+      "log": "artifacts/goal-4/check-art-03/guard-full-source4-slotfix-positive.log",
+      "sha256": "e2b6f23bd0c375d7dd68fcd0fe5231d6e63bd4a7ce87c6f5ccded5929ac8ee96"
+    }
+  ],
+  "methodIDsUnchanged": true,
+  "other424MethodsByteExact": true,
+  "changedMethod": "TA09InventoryTests.test_ta09_trusted_props_and_readonly_events_are_real_attributes",
+  "testInventoryWholeFileBaselineExact": false,
+  "testInventorySHA256": "100d7f0ae34bfe08cba06220e4bdb47a3601ed206aff669ea0fccddee1b292d4",
+  "fixtureRepair": {
+    "wholeFileTwoLiteralInverseExact": true,
+    "originalSHA256": "dbb48ddbcc4649200e57958d125481267edbfd8ec5e2b248c56162c05597c216",
+    "currentSHA256": "100d7f0ae34bfe08cba06220e4bdb47a3601ed206aff669ea0fccddee1b292d4",
+    "minimalPatch": {
+      "path": "artifacts/goal-4/check-art-03/analysis/source4-slot-fixture-candidate/minimal.patch",
+      "sha256": "32817d894b48a97ce46ee7a4d115f4cbb2c389a28dcae07581152b28e29a8c56",
+      "bytes": 1597
+    },
+    "latestSteering": {
+      "path": "artifacts/goal-4/check-art-03/source4-slot-fixture-repair/latest-payload-steering.json",
+      "sha256": "7b5fa627d117b35d13c1826007adc3aa4cb7da08216645467f57e6b34e99e894",
+      "bytes": 689
+    },
+    "staticOriginalSlotWrongParentAndAllCapsProof": {
+      "path": "artifacts/goal-4/check-art-03/source4-slot-fixture-repair/static-mutation-proof.json",
+      "sha256": "1d37d5a093e2fe6d6022634df89a1ae86970f786ea0c23bb08c4f0ed0fea66ba",
+      "bytes": 11088
+    },
+    "leafActual": {
+      "path": "artifacts/goal-4/check-art-03/guard-leaf-source4-slotfix-results.json",
+      "sha256": "9b946718dc9cde13acc194e0899f79c2b20c46a54b168d7f88dbb070ce6e33a1",
+      "bytes": 1363
+    },
+    "allOriginalSubtestsActualPassed": true,
+    "unchangedExpectedRegex": "content slot|jade result",
+    "guardCapsProductionModified": false,
+    "learningMutationTotals": [
+      59986,
+      59997,
+      59986,
+      59997
+    ],
+    "cap": 60000
+  },
+  "firstSource4FullAttempt": {
+    "result": {
+      "path": "artifacts/goal-4/check-art-03/guard-full-source4-results.json",
+      "sha256": "6ed773a76e3bfb13beaca7af384fec866a333531fb5412951a6018c0a9a8123b",
+      "bytes": 745
+    },
+    "testsLog": {
+      "path": "artifacts/goal-4/check-art-03/guard-full-source4-tests.log",
+      "sha256": "bea227a75a339158ead55986c137902ef80ea331b2262b65de9a555d90efce25",
+      "bytes": 3722
+    },
+    "status": "failed-preserved",
+    "actualMethods": 425,
+    "failedMethods": 1,
+    "subtestFailures": 3,
+    "withinPhase1206Exact": true,
+    "cause": "Malformed fixture appended verbose disconnected slot/comment payload beyond valid oldcap before required-slot guard; budget rejection was correct and not counted as consumer proof. Actual production positive passed.",
+    "positiveAfterFailedSuite": "not run; runner stopped on failure, independent earlier positive remains original report."
+  },
+  "inputs": {
+    "count": 1221,
+    "allHashesAndRuntimeExact": true,
+    "actualPreBeforeLaunch": "2026-10-27T06:24:12.592Z",
+    "actualPostAfterCommands": "2026-10-27T06:31:17.556Z",
+    "before": {
+      "path": "artifacts/goal-4/check-art-03/guard-full-source4-slotfix-before.json",
+      "sha256": "7eed6d7475bf89af67245bf0d24f8f4f379812b1ed4e2b9f6ee4c2ac6c4e2102",
+      "bytes": 178987
+    },
+    "after": {
+      "path": "artifacts/goal-4/check-art-03/guard-full-source4-slotfix-after.json",
+      "sha256": "7faa275474460f367b3c422b73ae9b0a4e44bd9ae8980a3f2861c57b892af053",
+      "bytes": 178986
+    },
+    "inputPaths": {
+      "path": "artifacts/goal-4/check-art-03/guard-source4-slotfix-input-paths.json",
+      "sha256": "307e780001f9301165315ec4b6599722e0cd7ba59db052d0ec8ea6d87f1f1934",
+      "bytes": 64127
+    },
+    "cohortPolicy": {
+      "path": "artifacts/goal-4/check-art-03/guard-source4-slotfix-cohort-policy.json",
+      "sha256": "c24a15260b915363c37da6446769952629d1f0e6c5025eb09bba0157ebef5ce4",
+      "bytes": 516
+    },
+    "allPrior1206PathsRetained": true,
+    "changedOriginal1206PathsSinceFirstAttempt": [
+      "art/tools/test_inventory.py"
+    ],
+    "crossPhaseBoundary": "Each phase is exact internally. Between original failed source4 attempt and corrected leaf/final only the one authorized test file changed; do not claim all1221 across phases equal.",
+    "actualE2EConsumers": [
+      "web/e2e/economy.spec.ts",
+      "web/e2e/growth.spec.ts",
+      "web/e2e/interface.spec.ts"
+    ],
+    "publicDemoFiles": 10,
+    "generatedMetaBound": true
+  },
+  "positive": {
+    "exit": 0,
+    "verifiedFiles": 207,
+    "productionAssets": 108,
+    "nativeBytes": {
+      "singleScreenNativeBytes": 10876,
+      "gameMenuNativeBytes": 16149,
+      "feedbackSkipNativeBytes": 2263,
+      "idleNativeBytes": 21485,
+      "sourceNativeBytes": 10995,
+      "productionNativeBytes": 24267,
+      "preparationNativeBytes": 59965,
+      "adventureNativeBytes": 43962,
+      "stageR1NativeBytes": 17987,
+      "stageR2NativeBytes": 11718,
+      "stageR3NativeBytes": 16828,
+      "stageR4NativeBytes": 11567,
+      "idleTradeoffNativeBytes": 29756,
+      "localLoadingNativeBytes": 1825,
+      "activityHistoryNativeBytes": 7816,
+      "alchemyWorkshopNativeBytes": 18776,
+      "adventureObjectNativeBytes": 35721,
+      "equipmentObjectNativeBytes": 44400,
+      "supplyObjectNativeBytes": 27564,
+      "narrativeObjectNativeBytes": 31617,
+      "cultivationObjectNativeBytes": 44979,
+      "ta07NativeBytes": 31083,
+      "ta08NativeBytes": 41373,
+      "ta09NativeBytes": 28779,
+      "art10NativeBytes": 11985,
+      "art11NativeBytes": 13715,
+      "art12NativeBytes": 6320
+    }
+  },
+  "capsMembershipBindingsAssetsUnchangedByLedgerRefresh": true,
+  "ledgerRefreshes": [
+    {
+      "path": "artifacts/goal-4/check-art-03/ledger-refresh-source1-applied.json",
+      "sha256": "9e7979d505d902444c4fae1a7fc604c3ef13ea4a6c52e0a2f72c0d97de4a640a",
+      "bytes": 5093
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/ledger-refresh-source2-applied.json",
+      "sha256": "ee5932439e5e4cf1e25d7156b6cac9678656b0b39f55c762f874647773feb072",
+      "bytes": 1025
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/ledger-refresh-source3-applied.json",
+      "sha256": "7b29a67b93bdcf876fb58fef1c0d233fa017ee21cca44b0d5b5fcef3dbc65d63",
+      "bytes": 1043
+    },
+    {
+      "path": "artifacts/goal-4/check-art-03/ledger-refresh-source4-applied.json",
+      "sha256": "92cd0af666e64c92c8e442ff527c19cfac26c974fbd96d0cbf13e526ad9fbc64",
+      "bytes": 2676
+    }
+  ],
+  "freshDeclaration": {
+    "path": "artifacts/goal-4/check-art-03/guard-source4-slotfix-declared.json",
+    "sha256": "400586fe526af2c3aba400caf34e72937c0ebfe78b2a49e673e00a280d84b5ff",
+    "bytes": 42179
+  },
+  "result": {
+    "path": "artifacts/goal-4/check-art-03/guard-full-source4-slotfix-results.json",
+    "sha256": "7e65546ea4bf065c54d56050b8085b04f8c5fccfb12faf5fb1395d7f5b1d8bc1",
+    "bytes": 1274
+  },
+  "testsLog": {
+    "path": "artifacts/goal-4/check-art-03/guard-full-source4-slotfix-tests.log",
+    "sha256": "121a64b8d48ad09059d8df303f9894ca2f1816aa1a06268857e0f24c9554f97e",
+    "bytes": 527
+  },
+  "positiveLog": {
+    "path": "artifacts/goal-4/check-art-03/guard-full-source4-slotfix-positive.log",
+    "sha256": "e2b6f23bd0c375d7dd68fcd0fe5231d6e63bd4a7ce87c6f5ccded5929ac8ee96",
+    "bytes": 1409
+  },
+  "protected13AllOriginalHashesExact": true,
+  "scope": "Engineering guard and original fixed1440 singleChromium native are separate evidence. Full492 UI still independently pending; no overall game feel/long-term/art/human acceptance or compatibility/environment performance claimed.",
+  "privacy": "Safe metadata has only source hashes, counts and test identities; no Game, IndexedDB or user save values."
+}

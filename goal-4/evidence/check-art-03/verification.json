@@ -1,0 +1,57 @@
+{
+  "task": "CHECK-ART-03",
+  "status": "local-engineering-delivered",
+  "implementationCommit": "5bef46efef3a228235b96233e43ad9a7a7d5eadf",
+  "runtime": "2233ad6e3e9fe1a422cdb98d028d9d26b4cf5fa6977108110eb0329bccbd63c2",
+  "runtimeSources": 280,
+  "payloadFiles": 87,
+  "payloadBytes": 9074563,
+  "ui": {
+    "passed": 492,
+    "files": 53,
+    "sameSingleRun": true,
+    "strictInputs": 662,
+    "skip": 0,
+    "retry": 0,
+    "flaky": 0,
+    "coverage": "coverage.json"
+  },
+  "native": {
+    "passed": 332,
+    "files": 26,
+    "sameCurrentRun": true,
+    "strictInputs": 470,
+    "old298NotInherited": true
+  },
+  "rules": {
+    "passed": 815,
+    "files": 61,
+    "currentSource": true,
+    "strictInputs": 443,
+    "artReadingSupplement": {
+      "files": 4,
+      "strictInputs": 751,
+      "alreadyIncludedIn815": true
+    }
+  },
+  "assets": {
+    "passed": 425,
+    "sameSingleCurrentRun": true,
+    "strictInputs": 1221,
+    "newBitmaps": 0,
+    "capsRaised": false
+  },
+  "typesAndBuild": "Actual rootTS/Vue/build current passed; postcommit runtime/payload exact",
+  "humanArtOrLongTermAccepted": false,
+  "compatibilityOrEnvironmentPerformanceExecuted": false,
+  "remaining": [
+    "ART13 alchemy object interface",
+    "Other actual ART including locked relic presentation and milestone secondary hierarchy",
+    "M04 route/recovery matrix",
+    "M05 performance",
+    "M06 compatibility last",
+    "Clean candidate/maxC-end-code-security review/human acceptance"
+  ],
+  "identity": "identity-proof.json",
+  "userProgress": "user-progress.json"
+}

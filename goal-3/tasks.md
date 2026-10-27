@@ -354,3 +354,16 @@ U8-A重排接续（0012，开工前逐项细化；当前只设计子项R）：
 - [杠精审查] 通过，仅0039当前独立工程范围，无已知未修本项阻断。完整功能/原规则和读秒/原子/真实反馈/像素/提交HTTP分层，未把机器绿或几幅图代整体游戏感/艺术/长期平衡或真人认可。下一唯一CHECK-ART-03综合ART10/11/12，继续核修行对比和其它实际ART/跨NPC缺图印记静态观察；M04路线恢复/M05性能/M06兼容最后/干净包/最大C端代码安全/真人全部保持，原生Goal active。未push/合并/公开部署/改权限，回滚独立revert本项表现与guard并保DB9/DB1/原档/v0.3/历史/13。
 
 主证据：[../goal-4/evidence/art12/verification.json](../goal-4/evidence/art12/verification.json)、coverage.json、identity-proof.json、visual-review.json与review.md。
+
+
+## CHECK-ART-03实际交付（2026-10-27）
+
+- 实现5bef46efef3a228235b96233e43ad9a7a7d5eadf，本地codex/goal-4-online-recovery。暂停同完整计划明确上方继续原段，真实已完成/上限与新START预估分清，普通开始不重授整段预算；Market重复弱查看按mode:item保原2/1草案，不同请求/exact/saved仍强回填。人物events/pending的画像/姓名/备用字同源，突破正文真实深底可读；驻章留在按钮内且与真实文字Range不交。错误CTA收短而完整原因仍在旁，原失败例中的卷串越界已闭，原规则/费用/周期/CAS/DB9/proof不改。0新位图/0新运行模块，全部旧cap不涨，prep59965/60000、ART0344400/45000。
+- 最终源2233ad6e当前完整492/53一次实跑全过（2220.526s、662输入exact、0skip/retry/flaky），不是原475/17＋74/1/单例拼绿；原461逐身份保、三项25与新6接入正式默认配置。原生332/26当前一次377110.955ms/470exact，不继承旧298；815规则61文件/443exact＋根TS、4原asset-reading补751真实art输入（已含815不增覆盖）、425完整守卫/1221exact＋positive及Vue构建均实际过。
+- 原真实错误与准备差异均保：初轮源3完整475/17含16旧公开目录/关闭前提和1真实quota布局；9旧文件局部走实际菜单，原matchers/Game/费用/回执/未知分支/240-90-60-8-15窗不减。A9原test逐字节未改实测通过；C2只替真正成功owned完成态旧disabled谓词，未提交quota门槛/140石/jade/原cmd与后认主/斗法/刷新全保。负例原1method三subTest因fixture先撞预算保为失败，最终仅两literal缩小无关payload，原425ID/regex/validator/其他424body保持，10原slot缺失/错父变式均不借cap拒；目标1method仅425子集。
+- 当前正常可见新档路线完整250正式周期/74段至明确飞升，case170.166s/原240s；22,416,000ms为虚拟排程，不冒实际6.2267小时节奏/长期平衡或真人趣味。当前同轮真实12既有操作的put/complete按原hook逐行记录，未采的TRAVEL/complete明确null，不重复定向样本凑覆盖。
+- 八主要功能9代表帧（丹炉locked/future同1功能）=5fresh＋4严格原PNG相同且实际已审继承；另A9当前错误帧fresh，1027生成PNG仅完整清单不冒全审。当前8页无所审硬遮挡/裁切不等整体艺术认可；future丹炉常驻三栏/宽授权条、凡人器谱小暗图/留白与重复入口、修行副入口层级仍记录后续ART。图片按次≤2、原PNG/hash/JPEG68副本分明。
+- 280运行源码与受测/实现Gitblob逐hash相同，317项已归本任务tracked程序/账本输入与受测/Gitblob也相同（原13按约排除）；87载荷9074563B与受测/提交后重建/冻结/56884实际HTTP相同，原dirty工程来源保留非最终干净候选。Chrome已静息更新，原顾长青凡人10/10/40石/60HP/20MP/自然吐纳结束2/50及已保存，HUD/活动只读前后相同；普通重载仙缘→home所以不冒全文或全用户DB字节同，无用户Game执行/导入/恢复/重置或用户档测试。原13hash未动未提交，原件/v0.3/旧冻结/所有失败保留。
+- [杠精审查] 通过，仅0040当前独立工程范围，无已知未修当前硬阻断。不是重跑少量绿，不以测试/像素/提交/HTTP代整体游戏感/美术/长期或真人验收；原错误/未达/负例/原型与正式分层。下一唯一ART13优先丹炉常态单炉/一个主要决定、配方和完整预算按需，沿原循环和火候成果，不新增强制投料/逐炉领取；器谱等后续独立ART及M04路线恢复/M05性能/M06兼容最后/干净包/最大C端代码安全与真人全保，Goal active。未push/合并/公开部署/改权限，当前未开展兼容或环境性能。
+
+证据：[../goal-4/evidence/check-art-03/verification.json](../goal-4/evidence/check-art-03/verification.json)、coverage.json、real-timing.json、identity-proof.json、visual-review.json与review.md。回滚独立revert本项展示/测试接线，保DB9/DB1/原档/原件/13与全部历史。
