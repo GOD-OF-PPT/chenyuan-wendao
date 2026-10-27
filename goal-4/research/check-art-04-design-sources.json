@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-27",
+  "task": "CHECK-ART-04",
+  "actuallyReadThisTask": true,
+  "sources": [
+    {"title":"Xbox Accessibility Guideline 112: UI navigation","url":"https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112","application":"重复入口顺序、操作方式与返回焦点保持可预知；本项目三书册单详情不是来源规定的具体布局。"},
+    {"title":"Xbox Accessibility Guideline 114: UI context","url":"https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114","application":"查看、修改草案与真正执行有上下文；非主动关闭事件不能改变当前新窗口。具体有限授权/时长/CAS为项目合同。"},
+    {"title":"HTMLDialogElement: close event","url":"https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close_event","application":"close在dialog关闭后发出，不冒泡且不能取消；迟到消费须核当前窗口状态。不能将UI close当事务取消或原生IDB失败。"}
+  ],
+  "notClaims":["Xbox认证","竞品完整试玩","页面兼容或环境性能验收","整体艺术/长期平衡/真人通过"]
+}

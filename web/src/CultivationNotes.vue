@@ -20,7 +20,7 @@ onScopeDispose(()=>focus?.release(dialog.value));
 <style scoped>
 .cultivation-notes{min-width:0;align-self:start}
 .cultivation-notes-open{display:flex!important;align-items:center;gap:12px;min-height:48px;padding:4px 8px!important;border:0!important;border-bottom:1px solid #8cb49e66!important;border-radius:0!important;background:none!important;box-shadow:none!important;text-align:left;color:#c8e1ca!important;font-size:18px!important}
-.cultivation-notes-open strong,.cultivation-notes-open small{display:block;font-weight:400;line-height:1.4}.cultivation-notes-open strong{font-size:18px}.cultivation-notes-open small{font-size:14px;color:#b7d0bd}
+.cultivation-notes-open strong,.cultivation-notes-open small{display:block;font-weight:400;line-height:1.4}.cultivation-notes-open strong{font-size:18px}#app .cultivation-notes-open small{font-size:14px;color:#b7d0bd;line-height:1.65}
 .cultivation-notes-book{position:relative;display:block;flex:none;width:36px;height:38px;border:2px solid #9ba77d;border-radius:5px 2px 2px 5px;background:repeating-linear-gradient(0deg,#285346 0 3px,#21463e 4px 6px);box-shadow:3px 2px #071f24}
 .cultivation-notes-book i{position:absolute;inset:4px 5px 4px 8px;border-block:1px solid #a5bb9155;transform-origin:left;transition:transform .15s}.cultivation-notes-book i+i{inset:9px 5px;border-block-color:#c6d3a866}.cultivation-notes-open:is(:hover,:focus-visible) .cultivation-notes-book i{transform:rotate(-5deg)}
 .cultivation-notes-dialog{width:640px;padding:20px 26px;color:#e2ead7;border:1px solid #9db78c;border-radius:5px 2px;background:linear-gradient(120deg,#193e3d,#0c2c33);overflow:visible;max-height:none}
