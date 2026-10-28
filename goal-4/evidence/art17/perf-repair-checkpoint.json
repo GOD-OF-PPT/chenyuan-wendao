@@ -1,0 +1,106 @@
+{
+  "status": "partial_initialization_fix_verified_performance_not_accepted",
+  "runtimeCandidate": "9543ab3e3d37f9ccbbf6b98314790ade3d294051dd49a21cd3c80598bb235ee2",
+  "diagnosticRowsAreSameBusinessCaseNotNewCoverage": true,
+  "reports": [
+    {
+      "artifact": "artifacts/goal-4/art17/perf-repair/differential-measurements.json",
+      "sha256": "97859837d241201610772e11beaf9fd9771b15a884a9f8935494f9adabfd6ea0",
+      "diagnosticOnly": true,
+      "samples": [
+        {
+          "variant": "old",
+          "iteration": 0,
+          "firstActionMs": 3596,
+          "maxPanelMs": 108.09999999403954
+        },
+        {
+          "variant": "current",
+          "iteration": 1,
+          "firstActionMs": 3547.0999999940395,
+          "maxPanelMs": 127.2999999821186
+        },
+        {
+          "variant": "old",
+          "iteration": 2,
+          "firstActionMs": 3619.800000011921,
+          "maxPanelMs": 161.80000001192093
+        },
+        {
+          "variant": "current",
+          "iteration": 3,
+          "firstActionMs": 3521.600000023842,
+          "maxPanelMs": 96.2999999821186
+        }
+      ]
+    },
+    {
+      "artifact": "artifacts/goal-4/art17/perf-repair/native-spans-measurements.json",
+      "sha256": "18063aa6416d1a6bda859fea41d8b996118bfabaa7d4ac0b1eda084d1f11f533",
+      "diagnosticOnly": true,
+      "samples": [
+        {
+          "variant": "current",
+          "iteration": 0,
+          "firstActionMs": 3350.5,
+          "maxPanelMs": 118.10000002384186
+        }
+      ]
+    },
+    {
+      "artifact": "artifacts/goal-4/art17/perf-repair/native-input2-measurements.json",
+      "sha256": "abf40b65b76d4d10424976400ae7b5aec8946c918ff78525b56a8d120d71a8a4",
+      "diagnosticOnly": true,
+      "samples": [
+        {
+          "variant": "current",
+          "iteration": 0,
+          "firstActionMs": 3581.4000000059605,
+          "maxPanelMs": 161.7000000178814
+        }
+      ]
+    },
+    {
+      "artifact": "artifacts/goal-4/art17/perf-repair/world-paint-measurements.json",
+      "sha256": "6d301f6cf0511fc2c7f357a33865df908e1cc3dd191995cd5fc28555fed9ff58",
+      "diagnosticOnly": true,
+      "samples": [
+        {
+          "variant": "current",
+          "iteration": 0,
+          "firstActionMs": 3380.800000011921,
+          "maxPanelMs": 107.09999999403954
+        },
+        {
+          "variant": "current",
+          "iteration": 1,
+          "firstActionMs": 3719.9000000059605,
+          "maxPanelMs": 120.90000000596046
+        }
+      ]
+    }
+  ],
+  "initialStageBefore": {
+    "startTime": "2026-10-28T03:31:11.648Z",
+    "duration": 15619.213,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "initialStageAfter": {
+    "startTime": "2026-10-28T03:44:12.721Z",
+    "duration": 4959.2,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "candidateCode": "Only four App v-if add store.ready; no Store/rules/DB changes",
+  "allSavedGameRecordsPreserved": true,
+  "original13Preserved": true,
+  "nativeMouseAndHiddenBackdropNotAdopted": true,
+  "syntheticDBIgnoredNotCommitted": true,
+  "userLatestPriority": "ART18 dialog/buttons",
+  "art17Complete": false
+}
