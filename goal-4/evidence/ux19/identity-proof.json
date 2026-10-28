@@ -1,0 +1,16 @@
+{
+  "codeCommit": "80e8c67da087f9d38b185a06b85b5d95d97d5f6d",
+  "runtimeDigest": "3845d8139cdf274a0881aed484cb254f276c18b95b9127961eaf16390d4d2b77",
+  "runtimeInputCount": 292,
+  "payloadFiles": 91,
+  "payloadBytes": 9253394,
+  "allGitTestedAndRebuiltBytesEqual": true,
+  "protected13Unchanged": true,
+  "cleanCandidate": false,
+  "scope": "Frozen local review payload; original 13 in-flight files remain outside commit. No clean checkout/complete package or human acceptance claim.",
+  "http": {
+    "raw": "artifacts/goal-4/ux19/http-identity.json",
+    "sha256": "327942f26381cbfc90faeb1aa4a56aa2a24c5b67cf7992b1875c5e28e8f4c15a",
+    "all91DecodedBytesEqual": true
+  }
+}

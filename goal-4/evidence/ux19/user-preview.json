@@ -1,0 +1,33 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "tab": "387928607",
+  "sourceDigest": "3845d8139cdf274a0881aed484cb254f276c18b95b9127961eaf16390d4d2b77",
+  "before": {
+    "name": "顾长青",
+    "realm": "凡人 · 尚未择法",
+    "hp": "60 / 60",
+    "mp": "20 / 20",
+    "xp": "10 / 10",
+    "stones": 40,
+    "activity": "自然吐纳 stopped2/50,30秒每轮",
+    "save": "已保存"
+  },
+  "after": {
+    "name": "顾长青",
+    "realm": "凡人 · 尚未择法",
+    "hp": "60 / 60",
+    "mp": "20 / 20",
+    "xp": "10 / 10",
+    "stones": 40,
+    "activity": "自然吐纳 stopped2/50,30秒每轮",
+    "save": "已保存"
+  },
+  "fullVisibleHudEqual": true,
+  "moduleBefore": "./assets/index-EKu285KB.js",
+  "moduleAfter": "./assets/index-Bljg8iVo.js",
+  "readOnlyDOMOnly": true,
+  "noGameActionImportRestoreOrRestart": true,
+  "serverBefore": "No listener via lsof and actual HTTP connection refused. Existing original tab still displayed saved stopped progress. Started same original loopback server script on frozen new payload; no unrelated process terminated.",
+  "serverHandle": 2650,
+  "scope": "Visible DOM progress only, no user DB read/full-save equality claim. Tests ran isolated new contexts."
+}

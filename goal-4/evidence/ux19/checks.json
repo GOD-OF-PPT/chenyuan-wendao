@@ -1,0 +1,105 @@
+{
+  "task": "UX19 P1-01",
+  "codeCommit": "80e8c67da087f9d38b185a06b85b5d95d97d5f6d",
+  "runtimeDigest": "3845d8139cdf274a0881aed484cb254f276c18b95b9127961eaf16390d4d2b77",
+  "ui": [
+    {
+      "raw": "artifacts/goal-4/ux19/verified-report.json",
+      "sha256": "7025784d571e6260c230651d3f05345247477b760e2ad009d9eb66dd3804a9ed",
+      "runtimeDigest": "3845d8139cdf274a0881aed484cb254f276c18b95b9127961eaf16390d4d2b77",
+      "stats": {
+        "startTime": "2026-10-28T10:02:57.190Z",
+        "duration": 20715.631,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "scope": "1440x900 font1 single Chromium, workers1, retries0"
+    },
+    {
+      "raw": "artifacts/goal-4/ux19/regression-report.json",
+      "sha256": "d22197a5fbbd47ed5f442b8d1b0b1d8160a5b031dbf0a801df72d8b648bb6427",
+      "runtimeDigest": "3845d8139cdf274a0881aed484cb254f276c18b95b9127961eaf16390d4d2b77",
+      "stats": {
+        "startTime": "2026-10-28T10:04:11.211Z",
+        "duration": 216688.411,
+        "expected": 32,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "scope": "1440x900 font1 single Chromium, workers1, retries0"
+    }
+  ],
+  "rules": {
+    "passed": 23,
+    "newCases": 4,
+    "files": [
+      "tests/ux19-first-loop.test.mjs",
+      "tests/play-flow.test.mjs",
+      "tests/guidance.test.mjs"
+    ]
+  },
+  "assets": {
+    "positiveInventory": "passed",
+    "negativePassed": 5,
+    "scope": "Original playable-flow budget/hash/consumer/human-claim guards only; not all450 rerun."
+  },
+  "typesAndBuild": "root tsc, Vue tsc and Vite build passed",
+  "logs": [
+    {
+      "raw": "artifacts/goal-4/ux19/current-unit.log",
+      "sha256": "cd07d50a7c7c188c5080209d400a2921cf93d0fe905296d13602611c6ecc729a"
+    },
+    {
+      "raw": "artifacts/goal-4/ux19/flow-guards.log",
+      "sha256": "4b26319443de02b74a4b72cecf2b7bceef5c9c2d45be9c8dfe06639792e6b864"
+    },
+    {
+      "raw": "artifacts/goal-4/ux19/inventory.log",
+      "sha256": "7c6700103caee895c69780e16f0d26ad2920517d14914ad79a9d84d7155d6c2f"
+    },
+    {
+      "raw": "artifacts/goal-4/ux19/root-types.log",
+      "sha256": "f4db2c939da9c86ddc28dd7279e9d43cdaccb955d89c68482425e95ef8b37061"
+    },
+    {
+      "raw": "artifacts/goal-4/ux19/build.log",
+      "sha256": "bce236491999040e6072439cf77fc08a644e5fb32b466a2a7044b4880ab3d358"
+    },
+    {
+      "raw": "artifacts/goal-4/ux19/committed-build.log",
+      "sha256": "d1dd81f1c62550019319ed0fb1615cefdc3a2f7d766e9560bb9cb008cc896109"
+    },
+    {
+      "raw": "artifacts/goal-4/ux19/baseline-unit.log",
+      "sha256": "56eb606359d4dd24713a90ff448d8a469610d7f576ef2be120fe7bafe4461e36"
+    }
+  ],
+  "oldFailuresRetained": [
+    {
+      "report": "baseline-report.json",
+      "cause": "Test wrongly expected a second travel confirmation; actual return-cave starts its finite travel directly. No production change."
+    },
+    {
+      "report": "baseline-hint-report.json",
+      "cause": "Real product red: old mortal prompt directs pill preparation/material collection."
+    },
+    {
+      "report": "first-current-report.json",
+      "cause": "New geometry probe counted decorative pseudo border as clipped text; corrected probe keeps raw scroll metrics and checks actual text ranges, hit,44px and one-screen geometry. No production CSS changed."
+    },
+    {
+      "report": "current-report.json",
+      "cause": "New test misspelled existing until xp-cap as xp_cap; typed expected plan corrected. No production plan changed."
+    }
+  ],
+  "limits": [
+    "35 unique current UI cases in 2 runs, not full600 or one full green batch.",
+    "Three normal new-life UI routes use virtual clock; actual30s cultivation and breakthrough are separate existing cases. No long-term balance or human comprehension claim.",
+    "Native415/full862 rules/full450 assets not rerun; engine/Store/DB9/other runtime files byte unchanged from ART18 tested source.",
+    "P1-02/03, P2, ART17 four performance reds and final matrices/package/reviews/human remain open.",
+    "Compatibility and environment/performance checks not run."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "runtimeDigest": "3845d8139cdf274a0881aed484cb254f276c18b95b9127961eaf16390d4d2b77",
+  "views": [
+    {
+      "original": "artifacts/goal-4/ux19/verified-results/ux19-first-loop-UX19-help--94416-icitly-confirms-first-entry-chromium/help-first-cultivation.png",
+      "sha256": "a4095b637e1214793890b134cdb343139aeb578e0a17f97c413a434daec8e1b1",
+      "view": "artifacts/goal-4/ux19/views/help-first-cultivation.jpg",
+      "viewSha256": "fb04f8ec35b7b8e12bddd4daadb71e3dac706e982e6b6e4b372a79bf4cfec93d",
+      "size": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG quality68 same dimensions; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/ux19/verified-results/ux19-first-loop-UX19-leave-89dc8-icitly-confirms-first-entry-chromium/full-cultivation-awaits-player.png",
+      "sha256": "e60cf73e874197e00e437c30db45b1edd101cdb31adbf64f802f722faf4bee1d",
+      "view": "artifacts/goal-4/ux19/views/full-cultivation-awaits-player.jpg",
+      "viewSha256": "8466bc84281118dd7a3911214fe7c877b3ec362d1ba39f377b42390089f03ff0",
+      "size": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG quality68 same dimensions; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/ux19/verified-results/ux19-first-loop-UX19-leave-89dc8-icitly-confirms-first-entry-chromium/leave-first-cultivation.png",
+      "sha256": "7155efc7e803eb02a6a7da30a2f55e133981e2fe1ef4b99c5e205d2715602bf1",
+      "view": "artifacts/goal-4/ux19/views/leave-first-cultivation.jpg",
+      "viewSha256": "09cd969e673564fb280eb1eeb751b31a44e4294cfa9ee6312e49c818a5891020",
+      "size": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG quality68 same dimensions; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/ux19/verified-results/ux19-first-loop-UX19-trade-3d756-icitly-confirms-first-entry-chromium/trade-first-cultivation.png",
+      "sha256": "7155efc7e803eb02a6a7da30a2f55e133981e2fe1ef4b99c5e205d2715602bf1",
+      "view": "artifacts/goal-4/ux19/views/trade-first-cultivation.jpg",
+      "viewSha256": "09cd969e673564fb280eb1eeb751b31a44e4294cfa9ee6312e49c818a5891020",
+      "size": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG quality68 same dimensions; original PNG retained"
+    }
+  ],
+  "review": "Actual final help/leave first-cultivation and capped-state images manually reviewed sequentially; trade PNG byte-identical to manually reviewed leave PNG, explicitly inherits its visual review. Current hint, costs, finite authorization, primary action and eight entries fit and actual DOM text ranges/hit pass. Overall art and human acceptance remain open.",
+  "newProbeCorrection": "Pseudo frame extends1px and contributes scrollWidth. Actual text Range is measured for buttons; raw scroll values retained. Non-button hint still requires no scrolling, strict18/44/hit and screen bounds remain. No old assertions or production CSS changed."
+}
