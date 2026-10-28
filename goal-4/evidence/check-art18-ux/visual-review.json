@@ -1,0 +1,136 @@
+{
+  "runtimeDigest": "5dc461186dd3bba4d3dff8ec639a64551a2b09b0206137bcd6e7072f7db2dde9",
+  "reviewedActualFrames": [
+    {
+      "original": "artifacts/goal-4/check-art18-ux/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-forge.png",
+      "sha256": "f9a87face6e03ec445112d6233b578f3bef1934aa8c84912ff2fda17bd0286a7",
+      "view": "artifacts/goal-4/check-art18-ux/normal-eight-views/eight-hub-forge.jpg",
+      "viewSha256": "dc29fc598f492d43dbaa8aad62e80e691dbc4b096f44cd2b4549ca26a59b221e",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/check-art18-ux/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-life.png",
+      "sha256": "758ff8772cbbe928d4150f60d25c83ae500f5431e8709ac9d16150d0547223a1",
+      "view": "artifacts/goal-4/check-art18-ux/normal-eight-views/eight-hub-life.jpg",
+      "viewSha256": "9ac5718d14efcb1a0c46d093d8df47499d7deb2e2eb5a398240747c3e25d601f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/check-art18-ux/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-relics.png",
+      "sha256": "5e48a3125797d4426b9b7355a62b9d591f77637372dded012728deba367b7d42",
+      "view": "artifacts/goal-4/check-art18-ux/normal-eight-views/eight-hub-relics.jpg",
+      "viewSha256": "528ece30393f6efccb0ad7e6106ef86555d627b42476b95cdae35c329910df25",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/check-art18-ux/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-skills.png",
+      "sha256": "07c92f90e64df51241430470eecb67d99e29fadecd123efe55afad80a957e139",
+      "view": "artifacts/goal-4/check-art18-ux/normal-eight-views/eight-hub-skills.jpg",
+      "viewSha256": "b1c1276fcb6f461378ab71c397fdb70a01fdf87f706f92b5442a1dd525d01fde",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/check-art18-ux/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-0.png",
+      "sha256": "31203feb0f88ebb3d19c5f0acc6c8d9893294bc56a2080edc7ba36827485d8c9",
+      "view": "artifacts/goal-4/check-art18-ux/normal-eight-views/eight-tab-0.jpg",
+      "viewSha256": "2aadb3366e8b41b92acb8e3a7f6f475e2799d1ba467998267a48aeda157c42c2",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/check-art18-ux/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-1.png",
+      "sha256": "0ed978e1af6427c8e62140de2e1bb8aa450fac92dff60a5bcc0eff12cd5fa62f",
+      "view": "artifacts/goal-4/check-art18-ux/normal-eight-views/eight-tab-1.jpg",
+      "viewSha256": "ef9d6f2f332dcf28f6b202feab53a995325cbca180daad831ba90af6fd7a1101",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/check-art18-ux/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-2.png",
+      "sha256": "b8da965bc584303d1f8dec851de4865c5d2c0822dfd831b455dfda3dbf81656c",
+      "view": "artifacts/goal-4/check-art18-ux/normal-eight-views/eight-tab-2.jpg",
+      "viewSha256": "90ac5eae1ad3752e2b4fb103f4ac921717d21643ee212d8f5ea6c6cce652d647",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/check-art18-ux/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-3.png",
+      "sha256": "796f72f26655edb9ff3e4da3cc112881854b1d05e933447dbce2e596ceae6d96",
+      "view": "artifacts/goal-4/check-art18-ux/normal-eight-views/eight-tab-3.jpg",
+      "viewSha256": "2d058b39ba959f19ab6a124e219d840dcc2ed7bad451d34b1b1177424ddbfc9d",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions; original PNG retained"
+    }
+  ],
+  "finding": "All8 current earned-route surface shots manually reviewed in sequential pairs. No new blocking overlap in these default states. Trial-goal error state had a genuine nav-overlap red, corrected with spacing only and original geometry revalidated.",
+  "limits": [
+    "These8 default-state pixels are not full615 pixel review or user art acceptance.",
+    "Known P1-03 remains visible: after trial exit, prepare-seal CTA still outranks the full recovery path in notes; UX21 next.",
+    "Broad flat backgrounds and small subjects in several functional pages remain overall art/game-feel debt under the user negative feedback; machine functionality does not close that feedback.",
+    "Normal earning uses actual public controls and formal finite activities with virtual clocks; no real long-term growth or fun claim."
+  ],
+  "reviewedCombinationFrames": [
+    {
+      "original": "artifacts/goal-4/check-art18-ux/regular-results/check-art18-ux-CROSS-ART18-20852-nt-and-consent-cancellation-chromium/mortal-current-cycle-after-consent.png",
+      "sha256": "6f46707f1232aa54813645e30f27cbbe1a0f056f8690c7f40e26c46ed2594604",
+      "view": "artifacts/goal-4/check-art18-ux/cross-views/mortal-current-cycle-after-consent.jpg",
+      "viewSha256": "d6285a002bc94a7c4de00817d6ff76ec43001a9c9ddd0dbdb7b92e54f2ecb403",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same dimensions JPEG68; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/check-art18-ux/regular-results/check-art18-ux-CROSS-ART18-479fb-s-original-selected-command-chromium/ending-quota-stage.png",
+      "sha256": "7389f5b6b09cd87ab5ac78dbac216195095133848f8c01362907c088a15de227",
+      "view": "artifacts/goal-4/check-art18-ux/cross-views/ending-quota-stage.jpg",
+      "viewSha256": "882cd25ee984ae1cfa1184ab1e0f638492e5751b0bc6dc29f814a5c9fc7274e6",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same dimensions JPEG68; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/check-art18-ux/regular-results/check-art18-ux-CROSS-ART18-6ddc2--never-starts-a-battle-turn-chromium/foreign-question-first-gate.png",
+      "sha256": "a0d041691737062ba9081bec3436372b650d24c4b981aff5a3fdc2102c4a8eb1",
+      "view": "artifacts/goal-4/check-art18-ux/cross-views/foreign-question-first-gate.jpg",
+      "viewSha256": "dc8763be5e8248b8e4777019f36cd33c6a1015560bd39265b0fb64eb2193ed87",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same dimensions JPEG68; original PNG retained"
+    }
+  ],
+  "combinationReview": "All3 current regular-run combination images manually reviewed: cancelled consent then actual paused +5, ending quota full road labels above navigation, foreign release first gate without a battle turn. Together11 actual current frames reviewed sequentially with at most2 per call; no downscaling, JPEG68 copies and original PNGs retained."
+}

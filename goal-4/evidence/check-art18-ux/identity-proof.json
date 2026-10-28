@@ -1,0 +1,23 @@
+{
+  "codeCommit": "380f8ebaa9be335b8c78422a9e3d2262b0efd1f4",
+  "runtimeDigest": "5dc461186dd3bba4d3dff8ec639a64551a2b09b0206137bcd6e7072f7db2dde9",
+  "runtimeInputs": 294,
+  "payloadFiles": 91,
+  "payloadBytes": 9258637,
+  "allGitTestedRebuiltEqual": true,
+  "cleanCandidate": false,
+  "protected13NotCommitted": true,
+  "http": {
+    "raw": "artifacts/goal-4/check-art18-ux/http-identity.json",
+    "sha256": "31178fe72af1548087e51a1bd2feabee2e5b1dda09fa4f1cd9f2b6c20195c807",
+    "all91DecodedBytesEqual": true
+  },
+  "semanticReview": {
+    "raw": "artifacts/goal-4/check-art18-ux/code-review-proof.json",
+    "sha256": "83ce1f0360fc9ef0a246615bc855a98f54efec4cc8671ecfb85fc4b1a741d0f2"
+  },
+  "nativeAndUiFullDeclarationAudit": {
+    "raw": "artifacts/goal-4/check-art18-ux/coverage-audit.json",
+    "sha256": "5cc7da58db2b1a220a97eaefb2aa7ee3ca04abee8479c97a3c2e9966f4749b4f"
+  }
+}

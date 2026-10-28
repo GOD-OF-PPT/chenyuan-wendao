@@ -1,0 +1,35 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "tab": "387928607",
+  "runtimeDigest": "5dc461186dd3bba4d3dff8ec639a64551a2b09b0206137bcd6e7072f7db2dde9",
+  "before": {
+    "name": "顾长青",
+    "realm": "凡人 · 尚未择法",
+    "hp": "60 / 60",
+    "mp": "20 / 20",
+    "xp": "10 / 10",
+    "stones": 40,
+    "activity": "自然吐纳 stopped2/50,30s",
+    "save": "已保存"
+  },
+  "after": {
+    "name": "顾长青",
+    "realm": "凡人 · 尚未择法",
+    "hp": "60 / 60",
+    "mp": "20 / 20",
+    "xp": "10 / 10",
+    "stones": 40,
+    "activity": "自然吐纳 stopped2/50,30s",
+    "save": "已保存"
+  },
+  "fullVisibleHudEqual": true,
+  "styleBefore": "./assets/index-DtnH_Efv.css",
+  "styleAfter": "./assets/index-CdVs4qk3.css",
+  "dialogsAndExecutionsBeforeAfter": 0,
+  "readOnlyDOMOnly": true,
+  "noUserDatabaseReadOrGameAction": true,
+  "noImportRestoreOrRestart": true,
+  "oldServer": "Exact PID6091/ux20 committed-frozen script and old index HTTP hash verified before stop; original saved/stopped DOM confirmed.",
+  "newServerSession": 50646,
+  "scope": "Visible progress equality only, not full user database proof. All tests isolated."
+}
