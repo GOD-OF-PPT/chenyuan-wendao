@@ -12,7 +12,7 @@ import AssetImage from './AssetImage.vue';
 import AlchemyWorkshop from './AlchemyWorkshop.vue';
 import RelicAtelier from './RelicAtelier.vue';
 type Limits={stoneBudget:number;stoneReserve:number;monthBudget:number;remainingMonthsReserve:number;itemReserves:Record<string,number>};
-const props=defineProps<{game:Game;mode:'craft'|'forge';busy:boolean;available:boolean;running:boolean;highlight:string;savedPlan:CraftPlan|ForgePlan|null;activity:Activity|null;runtime:{id:string;generation:number;totalMs:number;remainingMs:number;phase:string}|null;embedded?:boolean;minimal?:boolean;consumption:(action:Action)=>string}>();
+const props=defineProps<{game:Game;mode:'craft'|'forge';busy:boolean;available:boolean;running:boolean;highlight:string;relicInspection?:{runId:string;id:string}|null;savedPlan:CraftPlan|ForgePlan|null;activity:Activity|null;runtime:{id:string;generation:number;totalMs:number;remainingMs:number;phase:string}|null;embedded?:boolean;minimal?:boolean;consumption:(action:Action)=>string}>();
 const emit=defineEmits<{start:[CraftPlan|ForgePlan];track:[TrackingTarget];act:[Action];travel:[CraftPlan|ForgePlan];navigate:[NavigationRequest]}>();
 const limitsEdited=ref(false),workshop=ref<InstanceType<typeof AlchemyWorkshop>>();let back=false;
 const selected=ref(''),page=ref(0),future=ref(false),cycles=ref<number|'target'>(5),targetQuantity=ref(1),targetCycles=ref(50),dialog=ref<HTMLDialogElement>();
@@ -29,6 +29,10 @@ function restorePlan(){const p=props.savedPlan;if(!p||p.kind!==props.mode||(p.ki
 function select(id:string){if(id===selected.value)return;limitsEdited.value=false;selected.value=id;cycles.value=output.value?.kind==='breakthrough'?'target':5;targetQuantity.value=1;targetCycles.value=50;resetLimits(props.mode==='forge'||cycles.value==='target'?1:5);restorePlan();}
 function locate(){const prefix=props.mode==='craft'?'craft-':props.highlight.startsWith('equip-relic-')?'equip-relic-':'forge-',id=props.highlight.startsWith(prefix)?props.highlight.slice(prefix.length):'';if((props.mode==='craft'?C.recipes:C.relics)[id]){future.value=true;page.value=Math.max(0,Math.floor(rows.value.findIndex(r=>r.id===id)/4));select(id);}else if(!rows.value.some(r=>r.id===selected.value)&&rows.value.length)select(rows.value[0].id);}
 watch([()=>props.game.core.runId,()=>props.mode,()=>props.highlight],locate,{immediate:true});watch(()=>props.savedPlan,restorePlan);function changeFuture(){page.value=0;if(!rows.value.some(r=>r.id===selected.value)&&(props.mode==='craft'||rows.value.length)){selected.value='';if(rows.value.length)select(rows.value[0].id);}}
+watch(()=>props.relicInspection,r=>{
+ if(props.mode!=='forge'||r?.runId!==props.game.core.runId||!Object.hasOwn(C.relics,r.id))return;
+ future.value=true;page.value=Math.max(0,Math.floor(rows.value.findIndex(x=>x.id===r.id)/4));select(r.id);
+},{immediate:true});
 function changeCycles(){if(!recipe.value||limitsEdited.value)return;const n=cycles.value==='target'?Math.min(targetCycles.value,Math.max(1,targetQuantity.value-props.game.core.inventory[recipe.value.output])):cycles.value;resetLimits(n);}
 function openLimits(returnView:unknown=false){back=returnView===true;const items=Object.fromEntries(Object.keys(unit.value?.items??{}).map(id=>[id,limits.value.itemReserves[id]??0]));draft.value={...copy(limits.value),itemReserves:props.mode==='forge'?{...limits.value.itemReserves,...items}:items};if(props.mode==='forge'){const original=originalForge.value;forgeRead.value=!!original&&proof(plan.value)===proof(original.plan);}dialog.value?.showModal();}
 function closeLimits(){dialog.value?.close();if(back){back=false;workshop.value?.open();}}

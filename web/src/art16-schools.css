@@ -49,3 +49,8 @@
 #app .school-station:focus-visible{outline:none!important}#app .school-station:focus-visible .school-station-ground{outline:3px solid #e3edb7;outline-offset:5px}#app .school-station:focus-visible>b{border-bottom:3px solid #e3edb7}
 
 #app .equipment-panel[data-section=school]>.catalogue-tabs{position:relative;z-index:2;background:linear-gradient(#102d3266,#102d3222)}#app .school-station.interaction-press .school-station-ground{border-color:#e4edbf;box-shadow:0 0 0 6px #b0d6b92b}
+
+#app .configuration-slots:has(>.changed):not(:has(>.changed~.changed)){grid-template-columns:repeat(3,minmax(0,1fr))}
+#app .configuration-slots:has(>.changed):not(:has(>.changed~.changed))>.changed{grid-column:1/-1;order:-1;border-width:1px 0;background:linear-gradient(90deg,#2b544c,#163a3b);gap:20px}
+#app .configuration-slots:has(>.changed):not(:has(>.changed~.changed))>.changed>.game-icon{width:72px;height:72px}
+#app .configuration-slots:has(>.changed):not(:has(>.changed~.changed))>article:not(.changed){border:0;background:transparent}

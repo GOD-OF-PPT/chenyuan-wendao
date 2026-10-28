@@ -1,0 +1,146 @@
+{
+  "format": "chenyuan-art26-export",
+  "version": 1,
+  "producer": {
+    "path": "art/tools/export_art26_actor.py",
+    "bytes": 3264,
+    "sha256": "a021811c4704843004c6871fe75da03fec95c1d8dd014aa5872b347de48f58e9"
+  },
+  "helper": {
+    "path": "art/tools/export_art10_blanks.py",
+    "bytes": 8264,
+    "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+  },
+  "source": {
+    "path": "art/production/art26/player-loadout-idle-v1.png",
+    "bytes": 2440466,
+    "sha256": "662372d16decd1e4286d4a0df9ab920f42074f3afc73f7723ea439df70ab3e2e",
+    "dimensions": {
+      "width": 1024,
+      "height": 1536
+    },
+    "format": "png",
+    "mode": "RGBA",
+    "alpha": true,
+    "alphaProof": {
+      "transparentPixels": 739615,
+      "solidPixels": 757213,
+      "intermediatePixels": 76036,
+      "min": 0,
+      "max": 254
+    },
+    "alphaBBox1": [
+      47,
+      0,
+      985,
+      1536
+    ],
+    "alphaBBox16": [
+      49,
+      4,
+      982,
+      1529
+    ],
+    "rgbaSHA256": "fffc6b49e727a7446849adea01f2c1fdb84eb2abdd2e58bd12b9b615b2e9ba06"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/actors/player-loadout-idle-v1.webp",
+    "bytes": 83104,
+    "sha256": "8d07006f041943a73e9cd9e32fea87a921d0c508cff6fb0cc922a34c7a10ad90",
+    "dimensions": {
+      "width": 512,
+      "height": 768
+    },
+    "format": "webp",
+    "mode": "RGBA",
+    "alpha": true,
+    "alphaProof": {
+      "transparentPixels": 184062,
+      "solidPixels": 189135,
+      "intermediatePixels": 20019,
+      "min": 0,
+      "max": 254
+    },
+    "alphaBBox1": [
+      24,
+      0,
+      493,
+      768
+    ],
+    "alphaBBox16": [
+      25,
+      2,
+      491,
+      764
+    ],
+    "rgbaSHA256": "0777d1cb5e32bae8b8c76a909d53c862c55c863bf322ddc06563e0552547c41c"
+  },
+  "sourceAlphaQuality": {
+    "zeroPixels": 739615,
+    "core250Pixels": 757213,
+    "edgeMax": [
+      1,
+      3,
+      0,
+      0
+    ]
+  },
+  "runtimeAlphaQuality": {
+    "zeroPixels": 184062,
+    "core250Pixels": 189135,
+    "edgeMax": [
+      1,
+      3,
+      0,
+      0
+    ]
+  },
+  "audit": {
+    "path": "art/production/art26/player-loadout-idle-audit.json",
+    "bytes": 2344,
+    "sha256": "96dbe489167eeb322836d6c34b267ebac96a410ebb5e871bf5ae63c6c0e7afeb"
+  },
+  "prompts": [
+    {
+      "path": "art/production/art26/player-loadout-idle-v1-prompt.json",
+      "bytes": 2147,
+      "sha256": "b055edfaf06c4272fb3ec3e1e07e72f6409ad6ced97a9594498aa1a8a871ccb2"
+    },
+    {
+      "path": "art/production/art26/player-loadout-idle-cutout-prompt.json",
+      "bytes": 1476,
+      "sha256": "ac95c0f827781846614b49da18891ba0d5a66ffc1e3486e7e1253f8146f46d23"
+    }
+  ],
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "768",
+    "-metadata",
+    "none"
+  ],
+  "decoder": "Pillow",
+  "decoderVersion": "12.3.0",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "transform": {
+    "uniformScale": 0.5,
+    "crop": false,
+    "semanticEdit": false,
+    "outputWidth": 512,
+    "outputHeight": 768
+  },
+  "doubleExport": {
+    "bytesEqual": true,
+    "firstSHA256": "8d07006f041943a73e9cd9e32fea87a921d0c508cff6fb0cc922a34c7a10ad90",
+    "secondSHA256": "8d07006f041943a73e9cd9e32fea87a921d0c508cff6fb0cc922a34c7a10ad90",
+    "sourceUnchanged": true
+  },
+  "userAcceptance": false
+}

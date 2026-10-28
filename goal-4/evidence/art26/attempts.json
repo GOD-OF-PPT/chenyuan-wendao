@@ -1,0 +1,117 @@
+{
+  "task": "ART26",
+  "reports": [
+    {
+      "path": "artifacts/goal-4/art26/baseline-report.json",
+      "sha256": "3ec9b529007a0583a599a9827209baf63a1b1b1c7d8c72a32423734903192a9e",
+      "stats": {
+        "startTime": "2026-10-28T21:45:24.204Z",
+        "duration": 29206.810999999998,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "note": "真实旧源红：A1先证原四槽/完整库只读后断言新图失败；A2实际已绑定jade_seal却查看首个frost_sword。"
+    },
+    {
+      "path": "artifacts/goal-4/art26/early-report.json",
+      "sha256": "dd7bd941c9ead09c2a47932a51fe2db9e1c66703227fa3cc0fc2a151810bab32",
+      "stats": {
+        "startTime": "2026-10-28T22:04:36.085Z",
+        "duration": 9983.008,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "d0dd920cc5c226db2b564e47c5d77007e77207c90a81a389e5cb5d40159a1438",
+      "note": "首2绿仅早期源；随后真实像素发现背景盖统计/旧important平卡/分类对比，保照片与原绿，不冒最终艺术。"
+    },
+    {
+      "path": "artifacts/goal-4/art26/source2-report.json",
+      "sha256": "b9c5e6ab6638bbc9d658e7d38c985d57c968d8289065ca232f64bb0928fa8bce",
+      "stats": {
+        "startTime": "2026-10-28T22:22:57.226Z",
+        "duration": 26859.438000000002,
+        "expected": 5,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "633adc4910916c37a1a9a3426ba5a15d0d577eb1b21a297250a5e0c42e17ec0a",
+      "note": "初次5新例绿，原背景层级/节点/文本真实修缮后源。"
+    },
+    {
+      "path": "artifacts/goal-4/art26/source3-report.json",
+      "sha256": "d923b94ad239c45927507d9844a3f237d4ada16b412d0052df5d8a282c4aac15",
+      "stats": {
+        "startTime": "2026-10-28T22:28:55.788Z",
+        "duration": 27543.548999999995,
+        "expected": 5,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "633adc4910916c37a1a9a3426ba5a15d0d577eb1b21a297250a5e0c42e17ec0a",
+      "note": "扩展同对象预算777/9、子级换器再返回及真实错误监听的5新例；未扩玩法。"
+    },
+    {
+      "path": "artifacts/goal-4/art26/source4-report.json",
+      "sha256": "0f1f04b43c83a1dc249044bc73e31aaf22f6fa16a87f8bc1e9be8d7a55b08f1d",
+      "stats": {
+        "startTime": "2026-10-28T22:34:16.250Z",
+        "duration": 27421.765,
+        "expected": 5,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "note": "最终运行源：独立只读watch，原locate/watch字节保，5新例过；后续正式191全声明。"
+    },
+    {
+      "path": "artifacts/goal-4/art26/regression-report.json",
+      "sha256": "1d30db3004cff18ca1829c8ecbd21a146f14d18d6e46a87ce675008acee1c25a",
+      "stats": {
+        "startTime": "2026-10-28T22:40:13.541Z",
+        "duration": 912065.043,
+        "expected": 190,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "note": "完整191实际终端190绿1红，无skip/retry：唯一旧测试入口仍写比较此槽功法，DOM真实为查看此槽功法。完整库/预算断言未删，原报告/trace/PNG保。"
+    },
+    {
+      "path": "artifacts/goal-4/art26/targeted-report.json",
+      "bytes": 17369,
+      "sha256": "74e02eca5d38ff3703b4e556ffe082fb4cbb98a060c54e86c5778924ecf41a0a",
+      "stats": {
+        "startTime": "2026-10-28T22:56:16.232Z",
+        "duration": 104893.573,
+        "expected": 13,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "note": "只改测试按钮名比较→查看，原所有断言/时限保；stage-r3完整13整轮通过。191去重覆盖用其它23文件178＋本文件13，不把旧191失败轮改绿。"
+    }
+  ],
+  "resourceAttempts": [
+    {
+      "path": "artifacts/goal-4/art26/before-supersession-root.log",
+      "note": "旧ART25父快照冲突真实保；旧ledger pin不改，只有ART26完整精确规范化通过后才允许EquipmentPanel归属接续，非Game/回执proof放宽。"
+    },
+    {
+      "path": "artifacts/goal-4/art26/sandbox-positive.log",
+      "note": "全局正向fixture漏src/full/configuration.ts，原红保；只补完整依赖，先重过真实/完整沙盒正向再42守卫，不把前置早拒当负例。"
+    }
+  ],
+  "oldReportsRetagged": false,
+  "repeatedRunsIncreaseDistinctCoverage": false,
+  "finalTargeted": "13 whole-file passed, no automatic retry; 191 distinct passing current-runtime cases with exact provenance, not one whole green run"
+}

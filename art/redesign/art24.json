@@ -13,13 +13,13 @@
   "files": [
     {
       "path": "web/src/LoadoutConstellation.vue",
-      "bytes": 5426,
-      "sha256": "c8f09ed96d04304781b22d8691fe075073b91854810a688ed3aa3778a93e76ce"
+      "bytes": 6090,
+      "sha256": "57988cafc499981c9bef0cb1f708eca59dfe61a5fd508195bf253a0df0045b95"
     },
     {
       "path": "web/src/art16-schools.css",
-      "bytes": 6940,
-      "sha256": "4b9f2c6039cb5510a440a07b89b2ba1a02be0524accfe8802e6ebd3b1dad39b8"
+      "bytes": 7485,
+      "sha256": "af4798fd2ce2465fc14e9986f46877c071d9aaf1435f519a8b111e825402ae34"
     }
   ],
   "asset": {

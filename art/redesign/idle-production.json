@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "web/src/ProductionPlanner.vue",
-      "bytes": 14125,
-      "sha256": "f67a0abafb51ad5d9e64c8b8f3938d95f82d3d7204fc0038d388a5cc0997e4bd"
+      "bytes": 14435,
+      "sha256": "6ebbc6551f6c68605b4e634196579787bf50e91d71d8fa84938bcc8cb9f1306b"
     },
     {
       "path": "web/src/idle-production.css",

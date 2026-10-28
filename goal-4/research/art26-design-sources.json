@@ -1,0 +1,17 @@
+{
+  "task": "ART26",
+  "readDate": "2026-10-29",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "read": "important differences deserve attention; keep silhouette and reduce noise",
+      "applied": "one actual character and real item slots, single changed configuration prominent"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "read": "context and button outcomes should be predictable",
+      "applied": "readonly slot destination matches current item; compare before explicit atomic confirmation"
+    }
+  ],
+  "limitation": "300px/layout/asset and byte budgets are project inference; not certification or human art acceptance."
+}

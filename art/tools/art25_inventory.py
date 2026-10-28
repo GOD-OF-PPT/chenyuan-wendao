@@ -25,7 +25,14 @@ def validate_art25(root):
  for n in REFS:local(n)
  for ledger,key,cap in [('art03','maxNativeBytes',45000),('art10','nativeBytes',12000),('idle-preparation','maxNativeBytes',60000),('ta09','nativeBytes',30000)]:
   prior=json.loads(local('art/redesign/'+ledger+'.json').read_text());assert(prior.get('budgets',{}).get(key,prior.get(key)))==cap and sum(local(r['path']).stat().st_size for r in prior['files'])<=cap,'ART25 old cap'
- assert m['originalScriptSHA256']==SCRIPT and m['unchanged']==UNCHANGED and all(digest(n)==h for n,h in UNCHANGED.items()),'ART25 controller ownership'
+ assert m['originalScriptSHA256']==SCRIPT and m['unchanged']==UNCHANGED,'ART25 controller ownership'
+ changed=[n for n,h in UNCHANGED.items()if digest(n)!=h]
+ if changed:
+  assert changed==['web/src/EquipmentPanel.vue'],'ART25 controller ownership'
+  from art26_inventory import validate_art26
+  validate_art26(root)
+  successor=json.loads(local('art/redesign/art26.json').read_text())
+  assert successor['baselines']['equipmentPanel']['sha256']==UNCHANGED[changed[0]],'ART25 exact approved parent baseline'
  actor=local(FILES[0]).read_text();script=actor.split('</script>')[0].replace("import AssetImage from './AssetImage.vue';\n",'');assert hashlib.sha256(script.encode()).hexdigest()==SCRIPT,'ART25 script core'
  a=m['reusedAsset'];assert a==dict(path=SCENE,bytes=171716,sha256='91e3b5d7eebcb36bd0a1cbe3791a119290d0badddb313ad948bd4a0ade968d53')and digest(SCENE)==a['sha256']and local(SCENE).stat().st_size==a['bytes'],'ART25 reused original scene'
  local('art/production/art24/export-facts.json');tree=Tags(actor)

@@ -9,6 +9,8 @@ class ART25Tests(unittest.TestCase):
    name='art/redesign/'+key+'.json';names.add(name);names.update(r['path']for r in json.loads((ROOT/name).read_text())['files'])
   for n in names:
    p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((ROOT/n).read_bytes())
+  if(ROOT/'art/redesign/art26.json').exists():
+   before=(ROOT/'goal-4/evidence/art26/equipment-panel-before.vue.txt').read_bytes();self.assertEqual(hashlib.sha256(before).hexdigest(),UNCHANGED['web/src/EquipmentPanel.vue']);(self.root/'web/src/EquipmentPanel.vue').write_bytes(before)
  def check(self):return validate_art25(self.root)
  def edit(self,fn):
   p=self.root/LEDGER;j=json.loads(p.read_text());fn(j);p.write_text(json.dumps(j))

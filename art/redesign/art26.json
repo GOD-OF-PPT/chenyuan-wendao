@@ -1,0 +1,263 @@
+{
+  "format": "chenyuan-loadout-stage-art26",
+  "version": 1,
+  "task": "Goal4 ART26",
+  "budgets": {
+    "oldNativeCap": 45000,
+    "schoolCssCap": 12000,
+    "productionCap": 26000,
+    "parentCap": 5000,
+    "preparationCap": 60000,
+    "ta09Cap": 30000,
+    "newRasterAssets": 1,
+    "maxRuntimeBytes": 240000,
+    "runtimeWidth": 512,
+    "runtimeHeight": 768
+  },
+  "files": [
+    {
+      "path": "web/src/LoadoutConstellation.vue",
+      "bytes": 6090,
+      "sha256": "57988cafc499981c9bef0cb1f708eca59dfe61a5fd508195bf253a0df0045b95"
+    },
+    {
+      "path": "web/src/EquipmentPanel.vue",
+      "bytes": 4464,
+      "sha256": "31e8c9c3562fd53c1669601d6be90ab6fc3ace637513233fa75b5a92be06fc91"
+    },
+    {
+      "path": "web/src/ProductionPlanner.vue",
+      "bytes": 14435,
+      "sha256": "6ebbc6551f6c68605b4e634196579787bf50e91d71d8fa84938bcc8cb9f1306b"
+    },
+    {
+      "path": "web/src/art03-equipment.css",
+      "bytes": 12672,
+      "sha256": "48024f8b89c4a3a95c892ccec3b6dc66478eaee65b3876e598d22bdb0a05b334"
+    },
+    {
+      "path": "web/src/art16-schools.css",
+      "bytes": 7485,
+      "sha256": "af4798fd2ce2465fc14e9986f46877c071d9aaf1435f519a8b111e825402ae34"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0060-loadout-stage-art26-contract.md",
+    "goal-4/amendments/2026-10-29-goal-continue-art26.md",
+    "goal-4/research/art26-design-sources.json",
+    "goal-4/evidence/art26/equipment-panel-before.vue.txt",
+    "goal-4/evidence/art26/production-planner-before.vue.txt",
+    "src/full/configuration.ts"
+  ],
+  "baselines": {
+    "equipmentPanel": {
+      "path": "goal-4/evidence/art26/equipment-panel-before.vue.txt",
+      "bytes": 4125,
+      "sha256": "b5c8e4011f112ff37f21db4e0088e3304a67dda7f1872ca347d1be12559bc56c"
+    },
+    "productionPlanner": {
+      "path": "goal-4/evidence/art26/production-planner-before.vue.txt",
+      "bytes": 14125,
+      "sha256": "f67a0abafb51ad5d9e64c8b8f3938d95f82d3d7204fc0038d388a5cc0997e4bd"
+    },
+    "loadoutScriptSHA256": "de82ea3cae01d5357c666799224b009e0508397679ce74142a2ec43d71009656",
+    "schoolBranchSHA256": "f254e930aa235ad583fc742ad61509eb5792e7c44b46974a499f929c60d2e8d6"
+  },
+  "unchanged": {
+    "web/src/ConfigurationDialog.vue": "cc50327d03b19836dc9e41df9ff0e36185e2f64b846d510b795b6aad671f8b52",
+    "web/src/ConfigurationOutlook.vue": "72768df4cb3d226c5efc029dfa73e68324cfb0fd5962ca6d9348964224619e20",
+    "web/src/equipment-effects.ts": "0946c3b6b76e5ea39ebd80571175e2835ce49abe94fe6499f480b1635a934888",
+    "src/full/configuration.ts": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520"
+  },
+  "asset": {
+    "format": "chenyuan-art26-export",
+    "version": 1,
+    "producer": {
+      "path": "art/tools/export_art26_actor.py",
+      "bytes": 3264,
+      "sha256": "a021811c4704843004c6871fe75da03fec95c1d8dd014aa5872b347de48f58e9"
+    },
+    "helper": {
+      "path": "art/tools/export_art10_blanks.py",
+      "bytes": 8264,
+      "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+    },
+    "source": {
+      "path": "art/production/art26/player-loadout-idle-v1.png",
+      "bytes": 2440466,
+      "sha256": "662372d16decd1e4286d4a0df9ab920f42074f3afc73f7723ea439df70ab3e2e",
+      "dimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "format": "png",
+      "mode": "RGBA",
+      "alpha": true,
+      "alphaProof": {
+        "transparentPixels": 739615,
+        "solidPixels": 757213,
+        "intermediatePixels": 76036,
+        "min": 0,
+        "max": 254
+      },
+      "alphaBBox1": [
+        47,
+        0,
+        985,
+        1536
+      ],
+      "alphaBBox16": [
+        49,
+        4,
+        982,
+        1529
+      ],
+      "rgbaSHA256": "fffc6b49e727a7446849adea01f2c1fdb84eb2abdd2e58bd12b9b615b2e9ba06"
+    },
+    "runtime": {
+      "path": "web/public/art/v2/actors/player-loadout-idle-v1.webp",
+      "bytes": 83104,
+      "sha256": "8d07006f041943a73e9cd9e32fea87a921d0c508cff6fb0cc922a34c7a10ad90",
+      "dimensions": {
+        "width": 512,
+        "height": 768
+      },
+      "format": "webp",
+      "mode": "RGBA",
+      "alpha": true,
+      "alphaProof": {
+        "transparentPixels": 184062,
+        "solidPixels": 189135,
+        "intermediatePixels": 20019,
+        "min": 0,
+        "max": 254
+      },
+      "alphaBBox1": [
+        24,
+        0,
+        493,
+        768
+      ],
+      "alphaBBox16": [
+        25,
+        2,
+        491,
+        764
+      ],
+      "rgbaSHA256": "0777d1cb5e32bae8b8c76a909d53c862c55c863bf322ddc06563e0552547c41c"
+    },
+    "sourceAlphaQuality": {
+      "zeroPixels": 739615,
+      "core250Pixels": 757213,
+      "edgeMax": [
+        1,
+        3,
+        0,
+        0
+      ]
+    },
+    "runtimeAlphaQuality": {
+      "zeroPixels": 184062,
+      "core250Pixels": 189135,
+      "edgeMax": [
+        1,
+        3,
+        0,
+        0
+      ]
+    },
+    "audit": {
+      "path": "art/production/art26/player-loadout-idle-audit.json",
+      "bytes": 2344,
+      "sha256": "96dbe489167eeb322836d6c34b267ebac96a410ebb5e871bf5ae63c6c0e7afeb"
+    },
+    "prompts": [
+      {
+        "path": "art/production/art26/player-loadout-idle-v1-prompt.json",
+        "bytes": 2147,
+        "sha256": "b055edfaf06c4272fb3ec3e1e07e72f6409ad6ced97a9594498aa1a8a871ccb2"
+      },
+      {
+        "path": "art/production/art26/player-loadout-idle-cutout-prompt.json",
+        "bytes": 1476,
+        "sha256": "ac95c0f827781846614b49da18891ba0d5a66ffc1e3486e7e1253f8146f46d23"
+      }
+    ],
+    "encoding": [
+      "cwebp",
+      "-q",
+      "82",
+      "-m",
+      "6",
+      "-alpha_q",
+      "100",
+      "-resize",
+      "512",
+      "768",
+      "-metadata",
+      "none"
+    ],
+    "decoder": "Pillow",
+    "decoderVersion": "12.3.0",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+    "transform": {
+      "uniformScale": 0.5,
+      "crop": false,
+      "semanticEdit": false,
+      "outputWidth": 512,
+      "outputHeight": 768
+    },
+    "doubleExport": {
+      "bytesEqual": true,
+      "firstSHA256": "8d07006f041943a73e9cd9e32fea87a921d0c508cff6fb0cc922a34c7a10ad90",
+      "secondSHA256": "8d07006f041943a73e9cd9e32fea87a921d0c508cff6fb0cc922a34c7a10ad90",
+      "sourceUnchanged": true
+    },
+    "userAcceptance": false
+  },
+  "candidates": [
+    {
+      "path": "art/production/art26/candidates/idle-v1.png",
+      "bytes": 2509390,
+      "sha256": "39e5a7822fa15fc48e30afc4e36872f6e9f18dc958382c336959e881f18c4426"
+    },
+    {
+      "path": "art/production/art26/candidates/idle-v2-cutout.png",
+      "bytes": 2440466,
+      "sha256": "662372d16decd1e4286d4a0df9ab920f42074f3afc73f7723ea439df70ab3e2e"
+    }
+  ],
+  "reusedAssets": [
+    {
+      "path": "web/public/art/v2/schools/sanctum-v1.webp",
+      "bytes": 171716,
+      "sha256": "91e3b5d7eebcb36bd0a1cbe3791a119290d0badddb313ad948bd4a0ade968d53"
+    },
+    {
+      "path": "web/public/art/v2/characters/player.webp",
+      "bytes": 67524,
+      "sha256": "b8080cda6d7a8f4019a55a0a67808e7e6a88834dbc3ad3ba12167517a6c988c4"
+    },
+    {
+      "path": "web/public/art/v2/equipment/frost_sword-v1.webp",
+      "bytes": 10960,
+      "sha256": "0054af06284f62b516d5be2802dbd69fecb4cb31ee8d56f0a7d895568df79943"
+    },
+    {
+      "path": "web/public/art/v2/equipment/jade_seal-v1.webp",
+      "bytes": 56116,
+      "sha256": "81aad3db8a19ad6a39b0e54a96254d6fcc94164bdcbbbb87bd0e3f48ef43c49c"
+    },
+    {
+      "path": "web/public/art/v2/equipment/soul_lamp-v1.webp",
+      "bytes": 42144,
+      "sha256": "d0345b92c5c191f50b831ffdeec27a591785b1948398948daee06df799dff1cc"
+    },
+    {
+      "path": "web/public/art/v2/equipment/cloud_mirror-v1.webp",
+      "bytes": 27650,
+      "sha256": "8a8066224ee8487a226dd63ae27f8fd1760a08214cdf93826d8e8d8d7d77a008"
+    }
+  ],
+  "userAcceptance": false
+}

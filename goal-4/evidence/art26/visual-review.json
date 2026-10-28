@@ -1,0 +1,218 @@
+{
+  "task": "ART26",
+  "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+  "frames": [
+    {
+      "original": "artifacts/goal-4/art26/regression-results/art26-loadout-stage-ART26--e6518--entrances-and-actual-stats-chromium/mortal-complete-four-sockets.png",
+      "sha256": "952ac823d7734f2db60cf97744d3d918da72ef5b2fa46a991012516236faf538",
+      "view": "artifacts/goal-4/art26/final-views/mortal-complete-four-sockets.jpg",
+      "viewSHA256": "98d9cc18b4ec1052c178286cbdf92b9dc4bc39b3fab0c8e91228b34de62f8739",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "凡人四空位为无物虚线座，完整姓名/门槛/择法与器谱入口保，无随机已持有图。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/art26-loadout-stage-ART26--e6518--entrances-and-actual-stats-chromium/long-name-complete-four-sockets.png",
+      "sha256": "ea94818e374c168fb47017517a4009667de428adf92cda278bc1dc79c3ec2dbf",
+      "view": "artifacts/goal-4/art26/final-views/long-name-complete-four-sockets.jpg",
+      "viewSHA256": "9a3e5cefdf34edd45fcfb293fd6752486a431586cfc971b5eddbb0cb496b8c78",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "16字合法符修名完整在中央，下方真实符印伤害与三法一器不裁切，HUD完整。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/art26-loadout-stage-ART26--3c097--confirmation-remain-intact-chromium/confirmed-combination-is-factual-without-borrowed-old-echo.png",
+      "sha256": "4b86c70fff9fddb5cb1927569ca9a638484b153f3282cbbf61b4c0351d0a3ef0",
+      "view": "artifacts/goal-4/art26/final-views/confirmed-combination-is-factual-without-borrowed-old-echo.jpg",
+      "viewSHA256": "c3b65948e736e7902c950ac7e381f992cf8151da1a270be62126d5109e29ffe5",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "真实确认后builder改为听雨剑势，四槽/数值为提交Game；回到配装无借用旧短已保存章。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/art26-loadout-stage-ART26--3c097--confirmation-remain-intact-chromium/one-real-changed-slot-complete-original-comparison.png",
+      "sha256": "63f0345362c35c9e16816d190ffb382d2a8932217ae9ae75a1673fc6a8ae20c0",
+      "view": "artifacts/goal-4/art26/final-views/one-real-changed-slot-complete-original-comparison.jpg",
+      "viewSHA256": "8b0123fadcdda44127c0fbbea39d1370aa2a9815497cee66e86a367fba7f9960",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "单次起手变化主行在上，其余三槽完整，原前后值/作用/成本/取消确认未丢。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/art26-loadout-stage-ART26--4917b-ame-and-a-real-painted-body-chromium/real-loadout-character-and-four-slots.png",
+      "sha256": "34997f8d60e88adc5de089947c842b68ab5c2f6309f591f2c884fa1c5d86e7df",
+      "view": "artifacts/goal-4/art26/final-views/real-loadout-character-and-four-slots.jpg",
+      "viewSHA256": "7baa5df551ca238a99a179c116db5d98790d20ed3b7c5716bf63ec96799bb09b",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "实际透明合成全身静立无矩形底，真实四槽/数值/分类/八主入口可读，人物与两侧信息无相交。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/art26-loadout-stage-ART26--d6df9-object-without-a-Game-write-chromium/current-relic-and-same-object-budget-return.png",
+      "sha256": "be0a8a4913659af34b747b0847a96ca72de5e739dcf85d842c2c408e8878e9e6",
+      "view": "artifacts/goal-4/art26/final-views/current-relic-and-same-object-budget-return.jpg",
+      "viewSHA256": "aa5de5544a16de7b4c8f3d817042c0763857dc6ce5cbda69fab7ae5afc190271",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "当前本命jade_seal精确落到玄玉印，当前已装备/真实持有与完整来源/安排可读；777/9同对象保存见测试断言，换对象后此帧为原新对象默认140/2，不冒777仍适用于异物。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/art26-loadout-stage-ART26--6bcf9-tions-in-both-reduced-modes-chromium/body-failed-art-complete-game-facts.png",
+      "sha256": "4d91df08edf5730d3ffd67c5d95e6a817daddd7b15dbb163a140633e96581934",
+      "view": "artifacts/goal-4/art26/final-views/body-failed-art-complete-game-facts.jpg",
+      "viewSHA256": "11c4b71019698bec5c4134487079b0fb8ce7e58912ba6a5535e1fd157b71ee73",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "新body实际失败，旧portrait真实ready回退；头像为旧半身样式，仅降级备用，不称新全身已画。四槽实值/动作仍可读。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/art26-loadout-stage-ART26--6bcf9-tions-in-both-reduced-modes-chromium/all-failed-art-complete-game-facts.png",
+      "sha256": "feaf77cee73a799078f343e1bb5b4975ea7077d4e634f2a69e2b18da1d571519",
+      "view": "artifacts/goal-4/art26/final-views/all-failed-art-complete-game-facts.jpg",
+      "viewSHA256": "1552308dc806bda77c4aac3b87d423206ab6d1400fb3b31610a93d9930ef3088",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "全部art含SVG失败，仅完整DOM和实底，不冒备用画成功；四槽/人名/实值/动作可读。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/equipment-actors-TA09-A11--9725b-annot-relight-old-engraving-chromium/SCHOOL-original-confirmation-quota.png",
+      "sha256": "be31eb21294d28fa6a88a768f1da54d4c7691ecddb24f98018a6dabb8e1c2769",
+      "view": "artifacts/goal-4/art26/final-views/SCHOOL-original-confirmation-quota.jpg",
+      "viewSHA256": "ec6a4229f36f391e98d70716e64d248361c177de957882afda7200c8d4e413e9",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "三槽择法原2×2比较保持，完整四槽/原拟值/费用/存储不足原因/原确认重试无重叠。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/equipment-actors-TA09-A11--9725b-annot-relight-old-engraving-chromium/EQUIP_RELIC-original-confirmation-quota.png",
+      "sha256": "881796f7170dc9e5a860d99481310788e696f073a990d44228ed21bc9b241c39",
+      "view": "artifacts/goal-4/art26/final-views/EQUIP_RELIC-original-confirmation-quota.jpg",
+      "viewSHA256": "cba06fa8b38112a4b29e0128e08701e65cfb83f6061f78fee7984f022dbd65f2",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "真实本命一槽变化突出，三余槽/实际器效和原失败原因及重试完整。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/equipment-actors-TA09-A11--9725b-annot-relight-old-engraving-chromium/EQUIP-original-confirmation-quota.png",
+      "sha256": "d39aec1c942814962e0617c14c3cf686f533f3a630455cc2a3ebe8ade2c94de4",
+      "view": "artifacts/goal-4/art26/final-views/EQUIP-original-confirmation-quota.jpg",
+      "viewSHA256": "3b25904a1d3ba10a8f709a1592e5917e95208feb56318ca515bb069e746386ce",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "真实心法一槽变化突出，三余槽完整，原拟静修值/成本/失败原因/原确认重试保。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/art24-school-sanctum-ART24-62940-plane-without-changing-Game-chromium/large-real-school-objects-in-sanctum.png",
+      "sha256": "5ca1bec7af77434b3601cade21880c7b69e22be5a28da488b26fca75feb93155",
+      "view": "artifacts/goal-4/art26/final-views/large-real-school-objects-in-sanctum.jpg",
+      "viewSHA256": "4bdf5f182ab708d57f595557b00a1700e288499557d50ec307ea07145befd500",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "school原分支字节未改；大剑架/符案与真实文字/比较入口仍清楚，分类和底导航不交叠。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/regression-results/art10-equipment-stage-ART1-e4e60-catalogues-and-retries-once-chromium/quota-still-allows-complete-material-reading.png",
+      "sha256": "7c4670e46a2a062e3849e7fe976b279f593253eda5eac6839e58f1f9e8a90ce3",
+      "view": "artifacts/goal-4/art26/final-views/quota-still-allows-complete-material-reading.jpg",
+      "viewSHA256": "226cf0ca007310bbf95a07191d7930ae4cec16fa527c0987e18baceca85a4fc6",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "quota后原完整炼器材料与保留量/真实授权/来源/返回仍可查，不删原功能换艺术。",
+      "reviewMethod": "逐张实际查看，最终当前源原尺寸JPEG68；正文/几何另由固定桌面断言核对，原PNG保留。"
+    },
+    {
+      "original": "artifacts/goal-4/art26/targeted-results/stage-r3-layout-reading-an-79c16-ts-edited-cumulative-limits-chromium/multi-scroll-draft-after-inspection.png",
+      "sha256": "aa50fd6226a4672102b9a6ce5f9f095d119006712694a6512b85a4e04da57d26",
+      "view": "artifacts/goal-4/art26/final-views/multi-scroll-draft-after-inspection.jpg",
+      "viewSHA256": "01004e735ebcc4697d2b7a69ae3f1b86d83a6b49446b9af1e003ac04aa3e9814",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original PNG retained",
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "actualPixelReview": true,
+      "note": "旧名称补正后的完整原例：多卷清单第2页、777累计预算与9保留量、只读预计/停止原因/完成返回完整可读；实际完整Game/Activity断言保。"
+    }
+  ],
+  "actualReviewed": 14,
+  "maxImagesPerTool": 2,
+  "scope": "1440×900/font1 single Chromium only; not compatibility or human/whole art acceptance"
+}
