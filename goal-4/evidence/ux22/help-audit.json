@@ -1,0 +1,96 @@
+{
+  "scope": "12 public chapters plus contextual mortal cultivation hint; not thirteen public pages",
+  "sources": [
+    {
+      "title": "Xbox XAG109 Objective clarity",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/109",
+      "read": "2026-10-28"
+    },
+    {
+      "title": "Xbox XAG112 UI navigation",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "read": "2026-10-28"
+    }
+  ],
+  "consumer": [
+    "web/src/guidance.ts",
+    "web/src/GuidancePanel.vue",
+    "web/src/App.vue",
+    "web/src/PrimaryNav.vue"
+  ],
+  "chapters": [
+    {
+      "id": "welcome",
+      "realPath": "道号→踏入仙途；三开场可入道",
+      "copy": "unchanged",
+      "reason": "新建与长期速度边界已准确"
+    },
+    {
+      "id": "opening",
+      "realPath": "破庙预选→原有限确认",
+      "copy": "updated",
+      "reason": "预选只读、明确安排/读秒/保存，不直接授境"
+    },
+    {
+      "id": "cultivation",
+      "realPath": "修行/洞府→有限吐纳与辅助比较",
+      "copy": "unchanged",
+      "reason": "原有限次数/预算/上限、暂停/主动续接与无离线边界完整"
+    },
+    {
+      "id": "materials",
+      "realPath": "行囊用途数量来源；丹炉丹方材料",
+      "copy": "updated",
+      "reason": "目录分开；查看与按所示耗时前往分开，不自动采购炼制"
+    },
+    {
+      "id": "equipment",
+      "realPath": "功法→修法/功法/配装；法宝→铸造/比较认主",
+      "copy": "updated",
+      "reason": "去旧修行页称呼，确认即时保存不假等，保真实战中/事件门槛"
+    },
+    {
+      "id": "recovery",
+      "realPath": "战中用药占回合；战后洞府疗养",
+      "copy": "unchanged",
+      "reason": "零石无药与余寿成本、查看不耗月已准确"
+    },
+    {
+      "id": "breakthrough",
+      "realPath": "修行→清单/来源→明确单次安排",
+      "copy": "updated",
+      "reason": "引气无需丹；安排后读秒到期保存才破境，不自动突破"
+    },
+    {
+      "id": "battle",
+      "realPath": "战策→顺序/药匣/危险→本关自动斗法，手动可选",
+      "copy": "updated",
+      "reason": "原逐回合读秒保存，未知下一关/选择不代选"
+    },
+    {
+      "id": "causality",
+      "realPath": "仙缘人物→选项预选→原明确有限回应",
+      "copy": "updated",
+      "reason": "查看/代价/确认读秒，保旅行修炼换装约束和无援助主线"
+    },
+    {
+      "id": "trial",
+      "realPath": "修行查看准备→核对入场15秒；问心→当前关战策→收卷",
+      "copy": "updated",
+      "reason": "所有阶段摘要；有效CP才可完整回退，也可保留现状重筹"
+    },
+    {
+      "id": "ending",
+      "realPath": "生平/导出/有效CP/明确新人生",
+      "copy": "unchanged",
+      "reason": "完整收束且无上界新地图，不擅自开始新人生；封卷布局归UX23"
+    },
+    {
+      "id": "save",
+      "realPath": "当前浏览器站点→主动导出；演示独立",
+      "copy": "unchanged",
+      "reason": "非云档/清站点风险/普通导出不含独立CP已准确"
+    }
+  ],
+  "boundaries": "GuideId/order/selection/skip unchanged; zero Game/Store/DB/cost/timer/layout/bitmap changes; project wording is derived not a source mandated layout or human acceptance"
+}
