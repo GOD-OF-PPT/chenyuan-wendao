@@ -203,7 +203,7 @@ test('M03-MF1 the explicitly selected six-second answer saves once before its ow
   const checkpoint = state(entered.saved, 'checkpoint'), owner = state(entered.saved, 'checkpoint-owner'); expect(checkpoint.kind).toBe('trial'); expect(checkpoint.snapshot).toEqual(entry.originGame);
   expect(owner).toEqual({ format: 'chenyuan-checkpoint-scope', version: 1, runId: before.core.runId, sourceRunId: checkpoint.sourceRunId, sourceRevision: checkpoint.sourceRevision, kind: 'trial' });
   const action = { type: 'ANSWER_TRIAL', answer: 'accept' } as const; expect(previewAction(before, action).allowed).toBe(true);
-  await page.getByTestId('hub-current').getByRole('button', { name: '继续当前遭遇', exact: true }).click(); await page.getByTestId('story-show-choices').click(); await art12Choice(page,'story-select-answer-accept');
+  await page.getByTestId('hub-current').getByRole('button', { name: /^(继续当前遭遇|查看问心选择|查看收卷选择)$/, exact: true }).click(); await page.getByTestId('story-show-choices').click(); await art12Choice(page,'story-select-answer-accept');
   await expect(page.getByTestId('response-table')).toHaveAttribute('data-model', 'question'); await expect(page.getByTestId('response-table')).toHaveAttribute('data-action', 'ANSWER_TRIAL'); await page.getByTestId('answer-accept').click();
   await observe(page, action.type); const a = await begin(page, 'milestone-confirm', action.type, 6000); expect(a.plan.action).toEqual(action); await expect(page.getByTestId('response-clock')).toHaveText('6 / 6 秒');
   const result = await exactCompletion(page, a, before, info, 'ANSWER_TRIAL'); expect(result.after.trial!.answer).toBe('accept'); expect(result.after.trial!.stage).toBe(1); expect(result.after.battle!.round).toBe(0); expect(result.after.battle!.log).toEqual([]);

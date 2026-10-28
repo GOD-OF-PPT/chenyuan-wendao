@@ -32,7 +32,7 @@ async function narrative(page: Page, id: string) {
   await home(page);
   if (!await page.getByTestId('narrative-catalogue').isVisible()) {
     await page.getByTestId('tab-0').click();
-    await page.getByTestId('hub-current').getByRole('button', { name: '继续当前遭遇', exact: true }).click();
+    await page.getByTestId('hub-current').getByRole('button', { name: /^(继续当前遭遇|查看问心选择|查看收卷选择)$/, exact: true }).click();
   }
   if (await page.getByTestId('story-show-choices').isVisible()) await page.getByTestId('story-show-choices').click();
   await checkArt03Read(page,async()=>{await page.getByTestId('response-choices-open').click();await expect(page.getByTestId('response-choices-dialog')).toBeVisible();await page.getByTestId('story-select-'+id).click();await expect(page.getByTestId('response-choices-dialog')).not.toBeVisible();}); await decision(page, page.getByTestId(id));

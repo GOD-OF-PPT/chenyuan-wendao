@@ -5,6 +5,7 @@ import {pageSlice} from './play-flow';
 import { computed, ref, shallowRef, watch,onMounted,onScopeDispose } from 'vue';
 import GameIcon from './GameIcon.vue';
 import GoalBoard from './GoalBoard.vue';
+import TrialGoal from './TrialGoal.vue';
 import * as C from '../../src/full/content.ts';
 import { availableEvents } from '../../src/full/engine.ts';
 import { stories } from '../../src/full/events.ts';
@@ -19,7 +20,7 @@ const needIndex=ref(0),sourceIndex=ref(0),pagerMedia=window.matchMedia('(max-wid
 function resized(){compact.value=pagerMedia.matches;sourceIndex.value=0;}onMounted(()=>pagerMedia.addEventListener('change',resized));onScopeDispose(()=>pagerMedia.removeEventListener('change',resized));
 const helpOpen=ref(false),managerOpen=ref(false),moreNeedsOpen=ref(false);
 const props = defineProps<{ game: Game; target: TrackingTarget; enabled: boolean; notice: string; writeBlocked?: boolean }>();
-const emit = defineEmits<{ select: [TrackingTarget]; navigate: [NavigationRequest]; preparation: [Action | null] }>();
+const emit = defineEmits<{ select: [TrackingTarget]; navigate: [NavigationRequest]; preparation: [Action | null]; current:[Event] }>();
 type Focus = { kind: 'item'; id: string; quantity: number } | { kind: 'currency'; quantity: number } | { kind: 'action'; action: Action; title: string };
 const stack = shallowRef<Focus[]>([]), focus = computed(() => stack.value.at(-1));
 const preparation = computed(() => [...stack.value].reverse().find(entry => entry.kind === 'action')?.action ?? null);
@@ -111,8 +112,10 @@ const boardReady=computed(()=>focus.value?.kind==='item'?!!itemView.value?.compl
       <label v-if="target.kind==='item'" class="goal-quantity">目标库存 <input aria-label="目标数量" type="number" min="1" :max="C.maxQuantity" :value="target.quantity" @change="quantityChange"></label>
       <p class="small muted">追踪不消耗游戏月，也不预留材料。</p>
     </details><button class="icon-button" type="button" aria-label="目标追踪帮助" :aria-expanded="helpOpen" aria-controls="goal-help" @click="helpOpen=!helpOpen"><GameIcon kind="action" id="help"/><span>帮助</span></button></div><p v-if="helpOpen" id="goal-help" class="small">目标展示真实缺口和可达来源。前往只旅行或定位，采购、采集和炼制仍需另行确认。查看不消耗游戏月，也不预留材料。</p>
-    <GoalBoard v-if="!managerOpen" :title="focus?focusTitle??'筹备来源':goal.title" :kind="boardObject.kind" :id="boardObject.id" :detail="!focus&&target.kind==='breakthrough'&&boardObject.id?C.items[boardObject.id].name+' · 实有 '+game.core.inventory[boardObject.id]:undefined" :ready="boardReady" :title-test-id="focus?'source-title':'target'" :state="boardReady?'当前条件已具备':'按所缺逐项筹备'" :inspect-id="target.kind==='item'&&!focus?'goal-item-sources':undefined" inspect-label="查看获得方式" @inspect="target.kind==='item'&&(stack=[{...target}])">
+    <TrialGoal v-if="!managerOpen&&!focus&&target.kind==='breakthrough'&&game.status==='active'&&game.trial" :game="game" :notice="notice" @inspect="emit('current',$event)"/>
+    <GoalBoard v-else-if="!managerOpen" :title="focus?focusTitle??'筹备来源':goal.title" :kind="boardObject.kind" :id="boardObject.id" :detail="!focus&&target.kind==='breakthrough'&&boardObject.id?C.items[boardObject.id].name+' · 实有 '+game.core.inventory[boardObject.id]:undefined" :ready="boardReady" :title-test-id="focus?'source-title':'target'" :state="boardReady?'当前条件已具备':'按所缺逐项筹备'" :inspect-id="target.kind==='item'&&!focus?'goal-item-sources':undefined" inspect-label="查看获得方式" @inspect="target.kind==='item'&&(stack=[{...target}])">
       <template #context>
+        <small v-if="target.kind==='breakthrough'&&!focus&&game.status==='active'" data-testid="goal-xp-label">修为 {{game.core.player.xp}} / {{C.realms[game.core.player.realm].xpCap}} · {{game.core.player.xp>=C.realms[game.core.player.realm].xpCap?'已圆满':'积累中'}}</small>
         <ProgressTrack v-if="target.kind==='breakthrough'&&!focus&&game.status==='active'&&C.realms[game.core.player.realm].xpCap>0" class="goal-progress" :value="game.core.player.xp" :max="C.realms[game.core.player.realm].xpCap" label="当前目标修为" :identity="game.core.runId+game.core.player.realm" hint="修为圆满不代表准备齐全；查看目标缺口可找到当前境界的来源。"/>
         <p v-if="notice" class="small" role="status">{{notice}}</p>
         <p v-if="goal.completed" data-testid="goal-complete" class="small">目标已达成，可替换追踪目标。</p>

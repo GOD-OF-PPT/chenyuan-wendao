@@ -1,0 +1,23 @@
+{
+  "format": "chenyuan-trial-guidance",
+  "version": 1,
+  "task": "UX20 P1-02",
+  "maxNativeBytes": 6000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/trial-goal.ts",
+      "bytes": 1140,
+      "sha256": "0f28723f421937fad14896c24205eb1f02128e66df09cc3d05928ec2d91bc98a"
+    },
+    {
+      "path": "web/src/TrialGoal.vue",
+      "bytes": 3329,
+      "sha256": "2e4f43186d286793f0efeb78054f1c4b8874385cb6352d6705a24f2517ca79b3"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0052-trial-stage-guidance-ux20-contract.md",
+    "goal-4/amendments/2026-10-28-goal-continue-ux20.md"
+  ]
+}

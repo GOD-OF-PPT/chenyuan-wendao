@@ -49,10 +49,10 @@ test('ART18-G6 opening response and ascension retain full explicit choices',asyn
  await importRecoveryFixture(page,newGame('初遇客','art18-opening'));await view(page,info,'choice-inspection',()=>page.getByRole('button',{name:'查看保留丹药的代价与结果',exact:true}).click());
 });
 test('ART18-G7 pending responses are read without making a choice',async({page},info)=>{
- const d=driver('trade','sword');d.realm();d.funds(100);d.go('sect');d.doAction({type:'EVENT',event:'shen_return'});await importRecoveryFixture(page,d.game);await page.getByTestId('hub-current').getByRole('button',{name:'继续当前遭遇',exact:true}).click();await page.getByTestId('story-show-choices').click();await view(page,info,'response-choices',()=>page.getByTestId('response-choices-open').click());
+ const d=driver('trade','sword');d.realm();d.funds(100);d.go('sect');d.doAction({type:'EVENT',event:'shen_return'});await importRecoveryFixture(page,d.game);await page.getByTestId('hub-current').getByRole('button',{name:/^(继续当前遭遇|查看问心选择|查看收卷选择)$/,exact:true}).click();await page.getByTestId('story-show-choices').click();await view(page,info,'response-choices',()=>page.getByTestId('response-choices-open').click());
 });
 test('ART18-G8 completed trial shows the real explicit ending confirmation',async({page},info)=>{
- await importRecoveryFixture(page,feedbackExamples().actions.get('END')!.before);await page.getByTestId('hub-current').getByRole('button',{name:'继续当前遭遇',exact:true}).click();await page.getByTestId('story-show-choices').click();await page.getByTestId('ending-transmit').click();await inspect(page,info,'ascension-confirmation');await page.getByTestId('ascension-cancel').click();
+ await importRecoveryFixture(page,feedbackExamples().actions.get('END')!.before);await page.getByTestId('hub-current').getByRole('button',{name:/^(继续当前遭遇|查看问心选择|查看收卷选择)$/,exact:true}).click();await page.getByTestId('story-show-choices').click();await page.getByTestId('ending-transmit').click();await inspect(page,info,'ascension-confirmation');await page.getByTestId('ascension-cancel').click();
 });
 test('ART18-G9 trial entry and real checkpoint recovery retain the complete original preparation',async({page},info)=>{
  await importRecoveryFixture(page,trialJourneyScenario().prepared);await page.getByTestId('breakthrough').click();await view(page,info,'trial-entry',()=>page.getByTestId('trial-review-entry').click());

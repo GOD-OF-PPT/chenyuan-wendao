@@ -41,7 +41,7 @@ function preparedTrial(){const d=driver();for(let n=0;n<4;n++)d.realm();prepareT
 async function enterTrial(page:Page){
  const d=preparedTrial(),prepared=await seed(page,d.checkpoints.trial);
  await page.getByTestId('breakthrough').click();await page.getByTestId('trial-review-entry').click();await page.getByTestId('trial-confirm-entry').click();await tick(page);
- await expect(page.getByTestId('game-hub')).toBeVisible();await page.getByTestId('hub-current').getByRole('button',{name:'继续当前遭遇'}).click();await page.getByTestId('story-show-choices').click();
+ await expect(page.getByTestId('game-hub')).toBeVisible();await page.getByTestId('hub-current').getByRole('button',{name:/^(继续当前遭遇|查看问心选择|查看收卷选择)$/}).click();await page.getByTestId('story-show-choices').click();
  await page.getByTestId('answer-accept').click();await page.getByTestId('milestone-confirm').click();await tick(page);await page.getByTestId('hub-close').click();
  await page.getByTestId('battle-manual-takeover').click();await page.getByTestId('technique').click();await tick(page);return prepared;
 }
@@ -106,7 +106,7 @@ test('an explicit preparation purchase retains its travel draft then trial entry
  await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-travel').click();await revealPaged(page,'travel-terrace','explore-catalogue');await page.getByTestId('travel-terrace').click();expect(await snapshot(page)).toEqual(bought);await page.getByTestId('adventure-start').click();await tick(page);
  await page.getByTestId('hub-close').click();await page.getByTestId('breakthrough').click();await page.getByTestId('trial-review-entry').click();await page.getByTestId('trial-confirm-entry').click();await tick(page);
  const question=await snapshot(page),saved=await activity(page);expect(question.trial.stage).toBe(0);expect(question.core.activeEvent.id).toBe('trial_question');expect(question.battle).toBeNull();expect(saved.stopReason.code).toBe('WAITING_DECISION');
- await expect(page.getByTestId('game-hub')).toBeVisible();await page.getByTestId('hub-current').getByRole('button',{name:'继续当前遭遇'}).click();await page.getByTestId('story-show-choices').click();await page.getByTestId('narrative-catalogue').getByRole('button',{name:'下一页',exact:true}).click();expect(await snapshot(page)).toEqual(question);expect(await activity(page)).toEqual(saved);await shot(page,info,'prepared-trial-question-still-undecided');
+ await expect(page.getByTestId('game-hub')).toBeVisible();await page.getByTestId('hub-current').getByRole('button',{name:/^(继续当前遭遇|查看问心选择|查看收卷选择)$/}).click();await page.getByTestId('story-show-choices').click();await page.getByTestId('narrative-catalogue').getByRole('button',{name:'下一页',exact:true}).click();expect(await snapshot(page)).toEqual(question);expect(await activity(page)).toEqual(saved);await shot(page,info,'prepared-trial-question-still-undecided');
 });
 test('the actual storage reconnect reports the saved paused activity and never retries or grants an offline cycle',async({page},info)=>{
  await page.addInitScript(()=>{
