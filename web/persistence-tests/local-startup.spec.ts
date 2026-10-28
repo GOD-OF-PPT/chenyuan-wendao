@@ -59,6 +59,13 @@ for (const kind of ['open', 'meta'] as const) test(`${kind}: optional local star
   }, kind);
   await expect(page.getByTestId('local-data-status')).toHaveText('正在读取本地设置……');
   await expect(page.getByTestId('save-status')).toHaveText('读取中');
+  const landscape=page.locator('[data-asset-id=loading-mountains]');
+  await expect(landscape).toHaveAttribute('data-art-path','art/v2/ui/mountain-wash-v1.webp');
+  await expect(landscape).toHaveAttribute('data-art-state','ready');
+  await expect(page.getByTestId('game-loading')).toContainText('正在读取本机显示设置');
+  const loading=await page.getByTestId('game-loading').evaluate(node=>({font:parseFloat(getComputedStyle(node).fontSize),text:node.textContent,inside:node.getBoundingClientRect().bottom<=innerHeight}));
+  expect(loading.font).toBeGreaterThanOrEqual(18);expect(loading.inside).toBe(true);
+  if(kind==='open')await page.screenshot({path:info.outputPath('loading-mountains.png')});
   await page.clock.runFor(4999);
   expect(await page.evaluate(() => (globalThis as any).boot.app.store.ready)).toBe(false);
   await page.clock.runFor(1);

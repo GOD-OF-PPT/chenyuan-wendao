@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-28",
+  "sources": [
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-12.5.3",
+      "read": "Actual Accept-Encoding section2632-2663: explicit/wildcard codings, weights, identity and quality0.",
+      "projectUse": "Real local static-service negotiation and byte/HEAD tests; budgets and cache64 are project decisions, not RFC values."
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-12.5.5",
+      "read": "Actual Vary12.5.5 prose read: the field lists request selectors influencing the representation, and affects cache reuse. No certification or cache64 value is inferred.",
+      "projectUse": "Variant responses must be recorded distinctly; final actual response evidence and serving script remain pinned."
+    },
+    {
+      "url": "https://docs.python.org/3/library/http.server.html#http.server.SimpleHTTPRequestHandler",
+      "read": "Actual GET/HEAD/threading guidance, page version3.15.2; installed interpreter remains original3.13 family and implementation uses its existing methods only.",
+      "projectUse": "Extend the existing loopback packaged-demo helper, not a public-production hosting claim."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAll",
+      "read": "Actual no-query/all-records, structured cloning and default increasing key order text; no count limit or new options object used.",
+      "projectUse": "Only a test observer, native same readonly transaction; complete existing keys/values and old cursor comparison retained in the diagnostic."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllKeys",
+      "read": "Actual no-query/all-keys, default increasing key order; paired in the original single readonly transaction.",
+      "projectUse": "Preserve every row/key including empty stores, not a shortened storage proof or a Game repository change."
+    }
+  ],
+  "scope": "1440x900/font1/singleChromium, five combined behaviors and original service performance12. No compatibility restoration; art/human/long balance remain open."
+}

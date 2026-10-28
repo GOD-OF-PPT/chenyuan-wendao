@@ -20,7 +20,12 @@ export function assertIdlePerformanceSample(sample){
  return sample;
 }
 export function assertIdlePerformanceReport(report){
- assert.equal(report.format,'chenyuan-idle-production-performance');assert.equal(report.version,1);
+ assert.equal(report.format,'chenyuan-idle-production-performance');assert.ok([1,2].includes(report.version),'Unknown performance report version');
+ assert.notEqual(report.diagnosticOnly,true,'A profiled diagnostic is not a performance certificate');
+ if(report.version===2){
+  assert.equal(report.serving?.kind,'candidate-python');assert.equal(report.serving.script,'scripts/candidate/serve.py');assert.match(report.serving.sha256,/^[a-f0-9]{64}$/);assert.equal(report.harnessHashes[report.serving.script],report.serving.sha256,'Wrong actual service source');
+  for(const sample of report.samples)for(const resource of sample.resources){assert.equal(resource.productionPath,decodeURIComponent(new URL(resource.url).pathname.slice(1))||'index.html','Wrong actual resource path');const file=report.production.files.find(f=>f.path===resource.productionPath);assert.ok(file,'Unlisted served resource');assert.equal(resource.decodedSHA256,file.sha256,'Served bytes differ from this production build');}
+ }
  assert.deepEqual(report.samples.map(s=>s.id).sort(),idlePerformanceCases().map(s=>s.id).sort(),'All twelve current cold samples are required');
  assert.deepEqual(report.attempts.map(s=>s.id).sort(),idlePerformanceCases().map(s=>s.id).sort(),'Attempt inventory differs');
  assert.ok(report.attempts.every(s=>s.status==='passed'),'A failed measurement cannot be omitted');

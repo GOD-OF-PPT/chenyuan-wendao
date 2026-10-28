@@ -4,7 +4,7 @@ import {snapshot,activitySnapshot,useJourneyClock} from '../e2e/support';
 import {selectPlan,decision} from '../e2e/idle-route-support';
 import {trialJourneyScenario} from '../../tests/trial-journey-route.mjs';
 test.use({actionTimeout:8000,navigationTimeout:15000});
-test.beforeEach(async({page})=>{await setupPersistence(page);await useJourneyClock(page);await page.evaluate(async()=>{const {mountFaultApp}=await import('/persistence-tests/fault-app.ts');(window as any).fault=mountFaultApp();});await expect(page.getByRole('button',{name:'踏入仙途'})).toBeEnabled();});
+test.beforeEach(async({page})=>{await setupPersistence(page);await page.evaluate(async()=>{const {mountFaultApp}=await import('/persistence-tests/fault-app.ts');(window as any).fault=mountFaultApp();});await page.waitForFunction(()=>(window as any).fault.store.ready,undefined,{timeout:15000});await expect(page.getByTestId('save-status')).toHaveText('尚无存档');await useJourneyClock(page);await expect(page.getByRole('button',{name:'踏入仙途'})).toBeEnabled();});
 test.afterEach(async({page})=>{await page.evaluate(()=>(window as any).fault?.dispose());});
 async function importFixture(page:Page,fixture:any){
  const before=await page.evaluate(()=>(window as any).h.inspect((window as any).h.FULL_DB_NAME));

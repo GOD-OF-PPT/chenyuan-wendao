@@ -367,3 +367,11 @@ ART16实查补充：原比较tab同为正文操作保18，持久保存说明保1
 依据[0047](docs/decisions/0047-idle-performance-m05-contract.md)及本轮实际回读[MDN observe/type/buffered](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/observe)、[Playwright storageState](https://playwright.dev/docs/api/class-browsercontext#browser-context-storage-state)。被动观察不代真实事务证明；完整正常后期DB只在隔离测试context内存传递。首个按钮、实际受理、完整周期后native成果分开记：新建需实际Game保存，行旅需原START存储和公开running，再完整6秒核正式Game/Activity/唯一回执/put与complete不早于due。不能从总耗时扣周期凑3秒，或将fullOutcomeMs中的后验/资源等待当纯引擎延迟。
 
 真实面板的语义要从PrimaryNav/消费者核对，tab-2是行囊、tab-3是仙缘；两帧反馈既核选中也核实际表面，不只标签高亮。性能报告保全部attempt/失败原数据，错误前提与产品慢项分别记；新报告目录须明确ignore，不能提交生成存档或用目录变化假报源不一致。当前12与原30/其余18后置分明，原3秒/200ms/2.5MB/15MB不涨；后期5.3ms余量、早期部分超限和M04原超时继续unknown，不以同源后绿宣称修复。相同payload hash不证明HTTP编码/实际服务性能相同，Vite gzip结果不能直接当Python试玩/最终包或公网保证。工程、像素、整体美术/长期与真人分层，下一三任务综合检查先于兼容。
+
+## 三任务检查与实际交付服务（CHECK-ART16-M45）
+
+依据[0048](docs/decisions/0048-art16-m45-cross-check-contract.md)及本轮RFC9110 Accept-Encoding/Vary、Python原handler实读：同payload不代表同网络条件，性能证据须绑定实际运行包服务脚本与逐请求解码hash；文本gzip不改绘画质量/原字节、HEAD/质量0/基础路径/目录redirect/尾斜杠边界，原3秒/200ms/2.5MB/15MB保持。启动未知Game时用既有水墨装饰，不能借装饰冒当前地点或预载后期场景。首次已择修法的说明以真实Game.school区分，原即时比较/确认/原意图保持。
+
+探针也会干扰读秒与交互：首控已记录后不再逐帧强制测它的布局；完整Game/原活动与真实START/六秒周期/allDB证明不减，重复读取可复用同一已核快照，逐body核验放在面板计时后仍须完成。诊断Profiler/Timeline与完整12正式测量分开，diagnosticOnly不充证书。当前修缮不冒正式Game/主CSS或旧240秒unknown根因修复，接近上限的余量与所有旧失败保留。八页像素仍有筹备物件/来源、默认空图谱和叙事面板艺术债，后续逐玩法ART优先，不能用综合检查数量代整体艺术/长期或真人认可；兼容仍最后。
+
+本轮实证补充：大量只读核对可在原单一readonly事务内以无query/count的getAllKeys/getAll配对取全量；默认递增key序与原游标在真实空库/导入/受理/成果逐项相等，不能用减少行数或删断言提速。空档App的公共就绪先于冻结游戏测试钟，给既有5000ms可选设置读取出口实际运行机会；不推游戏钟、不改生产Store或冒native读取根因修复。整体旧失败轮与定向修复按file/title/project和实际未变依赖分别保留，不能将合成覆盖说成一轮全绿或最终候选认可。更新实际消费者时同步修其资源绑定；正向库存先过，再跑完整负向检查，不用红基线的负例绿灯作证。

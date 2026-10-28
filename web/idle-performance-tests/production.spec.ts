@@ -15,12 +15,13 @@ test.beforeAll(async({browser,baseURL},info)=>{
 test('twelve current desktop cold samples preserve the original budgets and complete real finite actions',async({browser,baseURL},info)=>{
  const root=path.resolve('..'),build=JSON.parse(fs.readFileSync('build-report/build.json','utf8'));
  const hash=(file:string)=>createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex');
- const report:any={format:'chenyuan-idle-production-performance',version:1,runtimeDigest:build.sourceDigest,
+ const serving=info.config.metadata.performanceService;expect(serving?.kind).toBe('candidate-python');expect(serving.sha256).toBe(hash(serving.script));
+ const report:any={format:'chenyuan-idle-production-performance',version:2,runtimeDigest:build.sourceDigest,serving,
   sourceHead:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),sourceDirty:!!execFileSync('git',['status','--porcelain'],{cwd:root,encoding:'utf8'}).trim(),
-  harnessHashes:Object.fromEntries(['web/idle-performance-tests/production.spec.ts','web/idle-performance-tests/support.ts','web/playwright.idle-performance.config.ts','scripts/performance-budget.mjs','scripts/idle-performance-budget.mjs'].map(f=>[f,hash(f)])),runtimeSourceHashes:build.runtimeSources,
+  harnessHashes:Object.fromEntries(['web/idle-performance-tests/production.spec.ts','web/idle-performance-tests/support.ts','web/playwright.idle-performance.config.ts','scripts/performance-budget.mjs','scripts/idle-performance-budget.mjs',serving.script].map(f=>[f,hash(f)])),runtimeSourceHashes:build.runtimeSources,
   environment:{platform:`${os.platform()} ${os.release()} ${os.arch()}`,cpu:os.cpus()[0].model,logicalCpus:os.cpus().length,memoryBytes:os.totalmem(),node:process.version,browser:browser.version(),playwright:JSON.parse(fs.readFileSync('node_modules/@playwright/test/package.json','utf8')).version},
   network:{downloadBitsPerSecond:10_000_000,downloadBytesPerSecond:1_250_000,uploadBytesPerSecond:1_250_000,latencyMs:150,method:'CDP Network.emulateNetworkConditions'},cache:'cold: new context + Network.setCacheDisabled',budgets:performanceBudget,
-  server:'Vite production preview on loopback; actual response encodings recorded',trace:'off, unchanged production measurement policy',production:inspectProduction(path.resolve('dist')),samples:[],attempts:[],
+  server:'Actual repository '+serving.script+' on loopback; actual response encodings recorded',trace:'off, unchanged production measurement policy',production:inspectProduction(path.resolve('dist')),samples:[],attempts:[],
   seedStores:late.stores,seedPreparation:'Normal visible finite actions with virtual periods only in the separate unmeasured240s preparation. Full IndexedDB state passed in memory. No import or user profile.',deferredOriginalProfiles:18,originalThirtyAccepted:false,compatibilityAccepted:false};
  try{
   for(const profile of idlePerformanceCases()){
@@ -40,7 +41,7 @@ test('twelve current desktop cold samples preserve the original budgets and comp
     const initial=await snapshot(page);
     if(profile.kind==='resume')expect(initial).toEqual(late.game);else expect(initial).toEqual(newGame(initial.core.player.name,initial.core.runId));
     // The actual late-save action remains TRAVEL; its START and six-second outcome are separate witnesses.
-    const accepted=await acceptMeasuredAction(page,profile.kind);
+    const accepted=await acceptMeasuredAction(page,profile.kind,initial);
     await page.waitForFunction(()=>(window as any).__idlePerformance.firstActionReadyMs);
     if(profile.kind==='resume'){
      const started=await recoveryDatabase(page);
@@ -58,16 +59,22 @@ test('twelve current desktop cold samples preserve the original budgets and comp
     const done=await completeMeasuredAction(page,accepted);
     await expect(page.locator('.world-ambience')).toHaveAttribute('data-art-state','ready');
     await expect.poll(()=>[...resources.values()].filter(r=>!r.finished).map(r=>r.url)).toEqual([]);
-    const initialResources=[...resources.values()].map(r=>({...r}));
+    const initialResources=[...resources.entries()].map(([requestId,r])=>({requestId,...r}));
     expect(initialResources.filter(r=>/\/art\/(?:v2\/)?scenes\/(secret|terrace)/.test(r.url))).toEqual([]);
     const marks=await page.evaluate(()=>(window as any).__idlePerformance),fullOutcomeMs=await page.evaluate(()=>performance.now());
     const currentWrites=marks.nativeWrites.filter((r:any)=>r.store==='full-state'&&r.key==='current'&&r.revision===done.game.core.revision);
     expect(currentWrites).toHaveLength(1);const write=currentWrites[0];
     const starts=marks.nativeWrites.filter((r:any)=>r.kind==='START'&&r.commandId===done.start.input.mutation.commandId);expect(starts).toHaveLength(1);
     const first=profile.kind==='new'?marks.nativeWrites.find((r:any)=>r.store==='full-state'&&r.key==='current'&&r.revision===0):starts[0];expect(first.completeMs).not.toBeNull();expect(write.completeMs).not.toBeNull();
-    const beforeReading=await recoveryDatabase(page),panels=[];
+    const beforeReading=done.raw,panels=[];
     for(const id of ['tab-0','tab-2','tab-3'])panels.push(await panelFeedback(page,id));
     expect(await recoveryDatabase(page)).toEqual(beforeReading);
+    for(const resource of initialResources){
+     const response=await cdp.send('Network.getResponseBody',{requestId:resource.requestId});
+     resource.decodedSHA256=createHash('sha256').update(Buffer.from(response.body,response.base64Encoded?'base64':'utf8')).digest('hex');
+     resource.productionPath=decodeURIComponent(new URL(resource.url).pathname.slice(1))||'index.html';
+     expect(resource.decodedSHA256).toBe(build.files.find((f:any)=>f.path===resource.productionPath)?.sha256);
+    }
     const measured=await page.evaluate(()=>({paints:performance.getEntriesByType('paint').map(e=>e.toJSON()),navigation:performance.getEntriesByType('navigation').map(e=>e.toJSON()),observations:(window as any).__idlePerformance}));
     const metrics=await cdp.send('Performance.getMetrics');
     const sample={...profile,fontScale:1,origin:baseURL!,measurementClock:'real',metricsMeaning:profile.kind==='new'?'created Game and enabled opening':'saved finite TRAVEL START and public running',firstControlReadyMs:marks.firstControlReadyMs,firstActionReadyMs:marks.firstActionReadyMs,fullOutcomeMs,resources:initialResources,criticalTransferBytes:initialResources.reduce((s,r)=>s+r.bytes,0),errors,panelFeedback:panels,committed:true,readingPreservedGame:true,

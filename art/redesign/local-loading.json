@@ -22,8 +22,9 @@
     ],
     "web/src/App.vue": [
       "loading loading-stage",
-      "asset-id=\"loading-wilderness\"",
-      "data-testid=\"game-loading\""
+      "asset-id=\"loading-mountains\"",
+      "data-testid=\"game-loading\"",
+      ":path=\"PANEL_MATERIAL_ASSETS.mountains\""
     ],
     "web/src/use-local-experience.ts": [
       "from './local-initialization'",

@@ -14,10 +14,10 @@ test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:
 const errors=new WeakMap<Page,string[]>();
 function listen(page:Page){if(errors.has(page))return;const list:string[]=[];errors.set(page,list);page.on('pageerror',e=>list.push(e.message));}
 const stateValue=(db:any,key:string)=>db.rows['full-state'].find((r:any)=>r.key===key)?.value??null;
-async function database(page:Page){return page.evaluate(()=>new Promise<any>((accept,reject)=>{
+async function database(page:Page){const value=await page.evaluate(()=>new Promise<any>((accept,reject)=>{
  const request=indexedDB.open('chenyuan-playable-v1');request.onupgradeneeded=()=>{request.transaction!.abort();reject(new Error('ART11 readonly observer cannot create a Game database'));};request.onerror=()=>reject(request.error);
- request.onsuccess=()=>{const db=request.result,tx=db.transaction([...db.objectStoreNames],'readonly'),rows:any={};for(const name of db.objectStoreNames){rows[name]=[];const cursor=tx.objectStore(name).openCursor();cursor.onsuccess=()=>{if(cursor.result){rows[name].push({key:cursor.result.key,value:cursor.result.value});cursor.result.continue();}};}tx.oncomplete=()=>{db.close();accept({version:db.version,rows});};tx.onabort=()=>{db.close();reject(tx.error);};};
-}));}
+ request.onsuccess=()=>{const db=request.result,tx=db.transaction([...db.objectStoreNames],'readonly'),rows:any={},pairs:any={};for(const name of db.objectStoreNames){const store=tx.objectStore(name);pairs[name]={keys:store.getAllKeys(),values:store.getAll()};}tx.oncomplete=()=>{for(const name of db.objectStoreNames){const p=pairs[name];rows[name]=p.keys.result.map((key:any,index:number)=>({key,value:p.values.result[index]}));}db.close();accept({version:db.version,rows});};tx.onabort=()=>{db.close();reject(tx.error);};};
+}));return value;}
 
 function goldenFixture():Game{const d=driver('leave','sword');d.realm();d.realm();d.funds(1000);d.go('sect');validateGame(d.game);return structuredClone(d.game) as Game;}
 

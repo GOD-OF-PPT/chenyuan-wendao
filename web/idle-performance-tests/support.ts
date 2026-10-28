@@ -3,7 +3,7 @@ import * as C from '../../src/full/content.ts';
 import {resolve,stats} from '../../src/full/engine.ts';
 import {completeActivity} from '../../src/full/activity.ts';
 import {createIdleRoute} from '../../scripts/economy/idle-scenarios.mjs';
-import {runVisibleIdleRoute,selectPlan} from '../e2e/idle-route-support';
+import {runVisibleIdleRoute,decision} from '../e2e/idle-route-support';
 import {snapshot,activitySnapshot} from '../e2e/support';
 import {recoveryDatabase,stored,recoveryMove} from '../e2e/idle-recovery-ui-support';
 
@@ -45,7 +45,7 @@ export async function installMeasurement(page:Page,kind:string){
   const visible=(n:Element|null)=>!!n&&!!n.getClientRects().length;
   const loop=()=>{
    const control=kind==='new'?document.querySelector<HTMLButtonElement>('.welcome-form button[type=submit]'):document.querySelector<HTMLButtonElement>('[data-testid=tab-1]');
-   if(control&&!control.disabled&&visible(control)&&!data.firstControlReadyMs)data.firstControlReadyMs=performance.now();
+   if(!data.firstControlReadyMs&&control&&!control.disabled&&visible(control))data.firstControlReadyMs=performance.now();
    const saved=document.querySelector('[data-testid=save-status]')?.textContent?.includes('已保存');
    const ready=kind==='new'?document.querySelector<HTMLButtonElement>('[data-testid=leave]'):document.querySelector<HTMLElement>('[data-testid=training-activity][data-running=true]');
    if(saved&&visible(ready)&&!(ready instanceof HTMLButtonElement&&ready.disabled)){
@@ -56,10 +56,18 @@ export async function installMeasurement(page:Page,kind:string){
  },{kind});
 }
 
-export async function acceptMeasuredAction(page:Page,kind:string){
- const before=await snapshot(page),old=await activitySnapshot(page);
+export async function acceptMeasuredAction(page:Page,kind:string,before:any){
+ const old=await activitySnapshot(page);
  const plan=kind==='new'?{kind:'milestone',action:{type:'CHOOSE',choice:'leave'},maxCycles:1}:{kind:'travel',location:'wilderness',maxCycles:1};
- const selected=await selectPlan(page,plan);await selected.control.click();
+ await expect(page.locator('dialog[open]')).toHaveCount(0);
+ // These contexts are cold and already verified. Keep every actual player click,
+ // without the long-route helper's unrelated closed-dialog discovery reads.
+ if(kind==='new'){
+  await page.getByTestId('leave').click();await page.getByTestId('milestone-confirm').click();
+ }else{
+  await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-travel').click();
+  await decision(page,page.getByTestId('travel-wilderness'));await page.getByTestId('adventure-start').click();
+ }
  await expect.poll(async()=>{const a=await activitySnapshot(page);return a?.id!==old?.id&&a?.status==='running';}).toBe(true);
  const a=await activitySnapshot(page);expect(a.plan).toEqual(plan);expect(a.cycleMs).toBe(6000);
  await expect(page.locator('[data-testid=training-activity][data-running=true]')).toBeVisible();
