@@ -14,7 +14,7 @@ export function nextStep(game:Game){
  if(game.status!=='active')return{kind:'record',title:goal.title,detail:'查看来路、导出存档，或开启新的人生。'};
  if(phase!=='idle')return{kind:'encounter',title:goal.title,detail:game.battle?'观察敌方意图，再选择攻守。':'先完成眼前的抉择，再继续修行。'};
  if(game.core.player.realm!=='mortal'&&!game.school)return{kind:'school',title:'选择剑修或符修',detail:'选择会配好基础功法；两种修法均能走完主线。'};
- if(game.core.player.xp<realm.xpCap)return{kind:'cultivate',title:'修炼至'+realm.xpCap+'修为',detail:'修炼 → 筹备丹药 → 突破。也可以先历练收集材料。'};
+ if(game.core.player.xp<realm.xpCap)return{kind:'cultivate',title:'修炼至'+realm.xpCap+'修为',detail:game.core.player.realm==='mortal'?'到洞府自然吐纳，圆满即停；再确认引气，无需突破丹。':'修炼 → 筹备丹药 → 突破。也可以先历练收集材料。'};
  if(realm.pill&&!game.core.inventory[realm.pill])return{kind:'prepare',title:'筹备'+C.items[realm.pill].name,detail:'修为已满，接下来炼制或采购突破物；继续吐纳不会增加修为。'};
  if(goal.preview?.allowed)return{kind:'breakthrough',title:goal.title,detail:game.core.player.realm==='mortal'?'修为已圆满，确认引气入体；无需突破物。':'物资已齐，确认后消耗对应物品并突破。'};
  if(goal.deficits.some(d=>d.kind==='hp'||d.kind==='mp'))return{kind:'recover',title:'先恢复气血灵力',detail:'到洞府疗养，或使用现有丹药，再继续当前筹备。'};
