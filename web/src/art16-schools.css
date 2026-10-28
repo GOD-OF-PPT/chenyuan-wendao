@@ -1,30 +1,37 @@
-#app .art16-school-picker{display:flex;flex-direction:column;flex:1;min-height:0;min-width:0;gap:4px}
-#app .art16-school-picker h3{margin:0;font-size:26px;line-height:1.65;color:var(--ink-text,#e3ead5)}
-#app .art16-school-picker h3 small{display:block;margin-top:1px;font-size:14px;line-height:1.65;font-weight:400;color:#bbd0bd}
-#app .art16-school-picker .school-altars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;flex:1;min-height:0;min-width:0;width:min(100%,1100px);align-self:center;padding:2px 10px 4px}
-#app .school-station{position:relative;display:grid;grid-template-rows:minmax(0,1fr) auto auto auto auto auto;justify-items:center;align-content:stretch;align-items:center;gap:5px;min-height:0;min-width:0;width:100%;height:100%;padding:0 18px 5px;border:0!important;border-radius:0!important;background:none!important;box-shadow:none!important;color:#dce8d3;text-align:center;font-size:18px;line-height:1.65;transform:none!important;isolation:isolate}
-#app .school-station::before{content:'';position:absolute;inset:12% 8% 18%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse,#5d96822b,transparent 67%);opacity:.45;transition:opacity .16s}
-#app .school-station:not(:disabled):is(:hover,:focus-visible)::before{opacity:1}
-#app .school-station[aria-pressed=true]::before{opacity:1;background:radial-gradient(ellipse,#72b69836,transparent 67%)}
-#app .school-station-object{position:relative;display:block;width:100%;height:100%;min-height:0;max-height:260px;align-self:end;pointer-events:none}
+#app .equipment-panel[data-section=school]{background:transparent!important;border:0!important;isolation:isolate}
+#app .art16-school-picker{position:relative;isolation:isolate;display:flex;flex-direction:column;flex:1;min-height:0;min-width:0;gap:4px}
+#app .art16-school-picker>.school-sanctum{position:absolute!important;inset:-94px -16px -34px;z-index:-2;width:auto!important;height:auto!important;min-height:0;overflow:hidden;border-radius:2px;pointer-events:none}
+#app .school-sanctum img{width:100%;height:100%;object-fit:cover!important;object-position:center 58%;opacity:1}
+#app .art16-school-picker:before{content:'';position:absolute;inset:-94px -16px -34px;z-index:-1;pointer-events:none;background:linear-gradient(#071f2ac9,transparent 32%,#0a263244 75%,#0a2531d9),linear-gradient(90deg,#09252d22,#102f3155 44%,transparent)}
+#app .school-sanctum-fallback{display:block;width:100%;height:100%;background:linear-gradient(145deg,#173a42,#285253 46%,#0f2c36);border-bottom:1px solid #8eaa8977}
+#app .school-sanctum>.asset-fallback{position:absolute;inset:0;padding:0}
+#app .art16-school-picker h3{position:relative;margin:0;padding:4px 18px;font-size:26px;line-height:1.65;color:#eee7c5;text-shadow:0 2px 4px #041c23}
+#app .art16-school-picker h3 small{display:block;margin-top:1px;font-size:14px;line-height:1.65;font-weight:400;color:#d1e0ce}
+#app .art16-school-picker .school-altars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;flex:1;min-height:0;min-width:0;width:min(100%,1320px);align-self:center;padding:2px 0 4px}
+#app .school-station{position:relative;display:grid;grid-template-columns:56% minmax(0,1fr);grid-template-rows:1fr repeat(5,max-content) 1fr;justify-items:center;align-items:center;gap:6px 0;min-height:0;min-width:0;width:100%;height:100%;padding:0 12px 0 0;border:0!important;border-radius:0!important;background:none!important;box-shadow:none!important;outline:none!important;color:#e1ead6;text-align:left;font-size:18px;line-height:1.65;transform:none!important;isolation:isolate}
+#app .school-station:before{content:'';position:absolute;inset:4% 1% 5%;z-index:-1;pointer-events:none;border:0;background:radial-gradient(ellipse at 28% 65%,#75bba81a,transparent 58%);opacity:.45;transition:opacity .16s,border-color .16s}
+#app .school-station:not(:disabled):is(:hover,:focus-visible):before{opacity:1}
+#app .school-station[aria-pressed=true]:before{opacity:1;background:radial-gradient(ellipse at 28% 65%,#8cbe9e36,transparent 64%)}
+#app .school-station-object{position:relative;display:block;grid-column:1;grid-row:1/8;width:100%;height:100%;min-height:0;max-height:none;pointer-events:none}
 #app .school-station-object>[data-art-path]{position:absolute!important;inset:0;width:100%!important;height:100%!important;overflow:visible!important;transition:filter .15s,transform .15s}
-#app .school-station-object img{object-fit:contain!important;filter:drop-shadow(0 8px 5px #001c20aa)}
-#app .school-station:not(:disabled):is(:hover,:focus-visible) .school-station-object>[data-art-path]{transform:translateY(-3px);filter:brightness(1.08)}
-#app .school-station:not(:disabled):active .school-station-object>[data-art-path]{transform:translateY(1px);filter:brightness(1.14)}
-#app .school-station-ground{position:absolute;bottom:3px;left:27%;width:46%;height:14px;border-radius:50%;border-block:1px solid #87b79b55;background:radial-gradient(ellipse,#4a8e7444,transparent 70%);z-index:-1}
-#app .school-station[aria-pressed=true] .school-station-ground{border-color:#b7d6a6;box-shadow:0 0 0 3px #91c5a21c}
+#app .school-station-object img{object-fit:contain!important;filter:drop-shadow(0 18px 10px #00151add)}
+#app .school-station:not(:disabled):is(:hover,:focus-visible) .school-station-object>[data-art-path]{transform:translateY(-3px);filter:brightness(1.1)}
+#app .school-station:not(:disabled):active .school-station-object>[data-art-path]{transform:translateY(1px);filter:brightness(1.16)}
+#app .school-station-ground{position:absolute;bottom:8%;left:15%;width:70%;height:18px;border-radius:50%;border-block:1px solid #95c6b055;background:radial-gradient(ellipse,#4a8e7455,transparent 70%);z-index:-1}
+#app .school-station[aria-pressed=true] .school-station-ground{border-color:#d0e1ac;box-shadow:0 0 0 3px #91c5a22b}
 #app .school-station[data-saved=true] .school-station-ground{animation:art16-school-confirm .7s ease-out}
-#app .school-station>strong{font-size:26px;line-height:1.65;font-weight:400;color:#e4e8c9}
-#app .school-station>.school-style{font-size:18px;line-height:1.65;color:#bcd6c4}
-#app .school-starting-scrolls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;min-width:0}
-#app .school-starting-scrolls>small{display:block;font-size:14px;line-height:1.65;color:#c8dac4;padding:2px 6px;border-bottom:1px solid #8eae8266;background:none}
-#app .school-station>b{font-size:18px;line-height:1.65;font-weight:400;color:#cbe4bc;border-bottom:1px solid #7fae8e80;padding:2px 8px;min-height:34px}
-#app .school-station>.school-reason{font-size:14px;line-height:1.65;color:#bbd1bf}
-#app .school-station:disabled{opacity:.8}
-#app .school-station-object [data-art-state=failed] .game-icon{width:100%;height:100%;max-width:112px;max-height:112px;color:#b6cfb0}
-#app .school-station-object [data-art-state=failed]::after{content:'';position:absolute;left:27%;right:27%;bottom:12%;height:18%;border:2px solid #789b8b;border-radius:8px 4px;background:linear-gradient(90deg,#234a41,#163c3c)}
+#app .school-station>strong,#app .school-station>.school-style,#app .school-station>.school-starting-scrolls,#app .school-station>b,#app .school-station>.school-reason{grid-column:2;justify-self:stretch;text-shadow:0 2px 4px #041c23}
+#app .school-station>strong{grid-row:2;font-size:26px;line-height:1.65;font-weight:400;color:#f1e7be}
+#app .school-station>.school-style{grid-row:3;font-size:18px;line-height:1.65;color:#d3e6d5}
+#app .school-starting-scrolls{grid-row:4;display:flex;gap:4px 8px;flex-wrap:wrap;min-width:0}
+#app .school-starting-scrolls>small{display:block;font-size:14px;line-height:1.65;color:#d5e3cd;padding:2px 0;border-bottom:1px solid #8eae8266;background:none}
+#app .school-station>b{grid-row:5;font-size:18px;line-height:1.65;font-weight:400;color:#e0f1ca;border-bottom:1px solid #9cc5a5b3;padding:5px 0;min-height:44px}
+#app .school-station>.school-reason{grid-row:6;font-size:14px;line-height:1.65;color:#d2e0d0;overflow-wrap:anywhere}
+#app .school-station:disabled{opacity:.85}
+#app .school-station-object [data-art-state=failed] .game-icon{width:100%;height:100%;max-width:160px;max-height:160px;color:#c2d9b9}
+#app .school-station-object [data-art-state=failed]:after{content:'';position:absolute;left:16%;right:16%;bottom:20%;height:15%;border:2px solid #91afa0;border-radius:8px 4px;background:linear-gradient(90deg,#234a41,#163c3c)}
 #app .school-station-object .asset-fallback{display:grid;place-items:center;min-height:0;padding:0;line-height:0}
-#app .art16-school-picker~.loadout-view-note{font-size:18px;line-height:1.65;margin:0;text-align:center;color:#b8cdb8}
+#app .art16-school-picker~.loadout-view-note{position:relative;font-size:18px;line-height:1.65;margin:0;padding:0 12px;text-align:center;color:#d7e4ce;text-shadow:0 2px 4px #041c23}
 #app .configuration-dialog{padding:18px 24px}
 #app .configuration-dialog h2{margin:0 0 6px;line-height:1.65}
 #app .configuration-dialog>p{margin:5px 0;line-height:1.5}
@@ -38,3 +45,7 @@
 #app .hub-reduced .school-station-object>[data-art-path],#app .hub-reduced .school-station::before{transition:none!important;transform:none!important}
 #app .hub-reduced .school-station-ground{animation:none!important}
 @media(prefers-reduced-motion:reduce){#app .school-station-object>[data-art-path],#app .school-station::before{transition:none!important;transform:none!important}#app .school-station-ground{animation:none!important}}
+
+#app .school-station:focus-visible{outline:none!important}#app .school-station:focus-visible .school-station-ground{outline:3px solid #e3edb7;outline-offset:5px}#app .school-station:focus-visible>b{border-bottom:3px solid #e3edb7}
+
+#app .equipment-panel[data-section=school]>.catalogue-tabs{position:relative;z-index:2;background:linear-gradient(#102d3266,#102d3222)}#app .school-station.interaction-press .school-station-ground{border-color:#e4edbf;box-shadow:0 0 0 6px #b0d6b92b}

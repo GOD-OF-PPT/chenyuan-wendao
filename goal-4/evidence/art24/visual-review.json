@@ -1,0 +1,209 @@
+{
+  "runtimeDigest": "88f67b1cef7b50156227ab17bfc06e14251f1e5964b40d2b277f550b76624e07",
+  "scope": "fixed1440x900/font1/Chromium; pixel review is separate from automated geometry; not whole-game or user art acceptance",
+  "frames": [
+    {
+      "original": "artifacts/goal-4/art24/regression-results/art24-school-sanctum-ART24-333a9--retains-real-current-state-chromium/current-sword-path-saved-in-scene.png",
+      "originalSHA256": "66487285a4b9fe1aaad3902acf0c3a34e93641dedd0702eec19e3b67f17c4e7e",
+      "view": "artifacts/goal-4/art24/final-views/current-sword-path-saved-in-scene.jpg",
+      "viewSHA256": "f4df6919bd9947b29220946885ba51e733a17534475f0d2b21136ce306e4fc4a",
+      "originalSize": [
+        1440,
+        900
+      ],
+      "viewSize": [
+        1440,
+        900
+      ],
+      "lossy": true,
+      "quality": 68,
+      "pixelReview": "actually viewed same turn at original dimensions JPEG68, at most two per tool result",
+      "finding": "real current sword, persistent actual saved text and short ground response; no borrowed mastery"
+    },
+    {
+      "original": "artifacts/goal-4/art24/regression-results/art24-school-sanctum-ART24-efbe7-scene-or-every-bitmap-fails-chromium/scene-failed-background-or-all-art.png",
+      "originalSHA256": "1ce96102d546b89c2e9de14b3aa7a9c00ff5720a32a5b3d517aa87eba109d6c5",
+      "view": "artifacts/goal-4/art24/final-views/scene-failed-background-or-all-art.jpg",
+      "viewSHA256": "7742ee7e0defb54eb6f5b7db2e6215367dd2cd872b8bf2a74951c9092bc29f94",
+      "originalSize": [
+        1440,
+        900
+      ],
+      "viewSize": [
+        1440,
+        900
+      ],
+      "lossy": true,
+      "quality": 68,
+      "pixelReview": "actually viewed same turn at original dimensions JPEG68, at most two per tool result",
+      "finding": "only background failure, both old transparent objects remain visible against fallback"
+    },
+    {
+      "original": "artifacts/goal-4/art24/regression-results/art24-school-sanctum-ART24-efbe7-scene-or-every-bitmap-fails-chromium/all-failed-background-or-all-art.png",
+      "originalSHA256": "b71cd78bc84b213f70eea2d24cce3e8365dcc66a276a0bf8a9052f0efafbf463",
+      "view": "artifacts/goal-4/art24/final-views/all-failed-background-or-all-art.jpg",
+      "viewSHA256": "d28b12a090fbf7490d07a8b9af4e3f8a12eff6e0c3f50044095f890114c0414a",
+      "originalSize": [
+        1440,
+        900
+      ],
+      "viewSize": [
+        1440,
+        900
+      ],
+      "lossy": true,
+      "quality": 68,
+      "pixelReview": "actually viewed same turn at original dimensions JPEG68, at most two per tool result",
+      "finding": "all art including SVG failed; only complete DOM and control readability claimed"
+    },
+    {
+      "original": "artifacts/goal-4/art24/regression-results/art24-school-sanctum-ART24-efbe7-scene-or-every-bitmap-fails-chromium/bitmaps-failed-background-or-all-art.png",
+      "originalSHA256": "b2d7b18cf694815a23772c7f369f8fd70112572e2e33ed53537be1366caf1d2f",
+      "view": "artifacts/goal-4/art24/final-views/bitmaps-failed-background-or-all-art.jpg",
+      "viewSHA256": "2770cd012c8da17a15eb11141f4677ad64cc01ff56c5dde0e2fbe8edd23dda04",
+      "originalSize": [
+        1440,
+        900
+      ],
+      "viewSize": [
+        1440,
+        900
+      ],
+      "lossy": true,
+      "quality": 68,
+      "pixelReview": "actually viewed same turn at original dimensions JPEG68, at most two per tool result",
+      "finding": "all WebP failed, SVG art and complete DOM text remain"
+    },
+    {
+      "original": "artifacts/goal-4/art24/regression-results/art24-school-sanctum-ART24-62940-plane-without-changing-Game-chromium/large-real-school-objects-in-sanctum.png",
+      "originalSHA256": "5ca1bec7af77434b3601cade21880c7b69e22be5a28da488b26fca75feb93155",
+      "view": "artifacts/goal-4/art24/final-views/large-real-school-objects-in-sanctum.jpg",
+      "viewSHA256": "3c19ca8a192ffae75534855adce108ee21da7475a680b7c70df7772930ecc8a0",
+      "originalSize": [
+        1440,
+        900
+      ],
+      "viewSize": [
+        1440,
+        900
+      ],
+      "lossy": true,
+      "quality": 68,
+      "pixelReview": "actually viewed same turn at original dimensions JPEG68, at most two per tool result",
+      "finding": "actual scene, large distinct object silhouettes and complete text/actions; no large rectangular station frame"
+    },
+    {
+      "original": "artifacts/goal-4/art24/regression-results/art16-school-objects-ART16-b9f5c-starting-arts-stay-readonly-chromium/mortal-two-readable-stations.png",
+      "originalSHA256": "7d0d579a9c5b4c13a329ea5099ed277395084cb7970705f04c312057eeddc0d0",
+      "view": "artifacts/goal-4/art24/final-views/mortal-two-readable-stations.jpg",
+      "viewSHA256": "fed17dabdc887cb013eeee46812318c36600393efc68947a8006ed00ac20d338",
+      "originalSize": [
+        1440,
+        900
+      ],
+      "viewSize": [
+        1440,
+        900
+      ],
+      "lossy": true,
+      "quality": 68,
+      "pixelReview": "actually viewed same turn at original dimensions JPEG68, at most two per tool result",
+      "finding": "both locked objects and all starting arts/gates complete"
+    },
+    {
+      "original": "artifacts/goal-4/art24/regression-results/art16-school-objects-ART16-fa956-same-object-without-writing-chromium/sword-full-original-compare.png",
+      "originalSHA256": "7173f5e60c9cab8812215c8260433239ee34a5f6e56b4f4761cc3afdb9a4a1ac",
+      "view": "artifacts/goal-4/art24/final-views/sword-full-original-compare.jpg",
+      "viewSHA256": "3779e7cfcf284512d775be97cf17423bcc9d51ca97a97699c89771a6a51789c6",
+      "originalSize": [
+        1440,
+        900
+      ],
+      "viewSize": [
+        1440,
+        900
+      ],
+      "lossy": true,
+      "quality": 68,
+      "pixelReview": "actually viewed same turn at original dimensions JPEG68, at most two per tool result",
+      "finding": "original full three changed slots plus preserved relic, cost-free immediate confirm and cancel intact"
+    },
+    {
+      "original": "artifacts/goal-4/art24/regression-results/art16-school-objects-ART16-8eab6-ntent-for-one-first-success-chromium/native-school-receipt-quota.png",
+      "originalSHA256": "13ff313e8b8a0b2f69ab18a30189cf937706646e61935b5e35f72dec2cf50f7f",
+      "view": "artifacts/goal-4/art24/final-views/native-school-receipt-quota.jpg",
+      "viewSHA256": "3b440686f5c61d569237d49e16862e2d22daaf07578f0de3d9c70e24629822ff",
+      "originalSize": [
+        1440,
+        900
+      ],
+      "viewSize": [
+        1440,
+        900
+      ],
+      "lossy": true,
+      "quality": 68,
+      "pixelReview": "actually viewed same turn at original dimensions JPEG68, at most two per tool result",
+      "finding": "native uncommitted receipt quota leaves full comparison and exact original retry visible"
+    },
+    {
+      "original": "artifacts/goal-4/art24/regression-results/art16-school-objects-ART16-fa102-ses-its-original-four-slots-chromium/both-school-assets-failed-readable.png",
+      "originalSHA256": "8d30f178001547c87d78a90ffa314e2478cf9130d6cd5980287ba3daf6da2d94",
+      "view": "artifacts/goal-4/art24/final-views/both-school-assets-failed-readable.jpg",
+      "viewSHA256": "2e3125de9159b579abd124147bf19b70553822eddf167ce4d76bf7de50acf6fa",
+      "originalSize": [
+        1440,
+        900
+      ],
+      "viewSize": [
+        1440,
+        900
+      ],
+      "lossy": true,
+      "quality": 68,
+      "pixelReview": "actually viewed same turn at original dimensions JPEG68, at most two per tool result",
+      "finding": "real error banner plus two bitmap failures; full text, native SVG fallback and navigation remain readable"
+    },
+    {
+      "original": "artifacts/goal-4/art24/regression-results/art16-school-objects-ART16-ab258-only-the-current-saved-path-chromium/talisman-actual-saved-object.png",
+      "originalSHA256": "28ea2a8d403cd840ceaae2d7a3fef60195af79c9824ab8e184da20685a9a9d32",
+      "view": "artifacts/goal-4/art24/final-views/talisman-actual-saved-object.jpg",
+      "viewSHA256": "83bed3e307cf0e8b492ef5fe2b5469eb05523413809b3e5ada815f2e6a76422f",
+      "originalSize": [
+        1440,
+        900
+      ],
+      "viewSize": [
+        1440,
+        900
+      ],
+      "lossy": true,
+      "quality": 68,
+      "pixelReview": "actually viewed same turn at original dimensions JPEG68, at most two per tool result",
+      "finding": "actual talisman state with separately retained owned equipment; no fake reward"
+    },
+    {
+      "original": "artifacts/goal-4/art24/regression-results/art16-school-objects-ART16-66f11-t-a-hidden-layout-transform-chromium/system-keyboard-school.png",
+      "originalSHA256": "ccaff3e79c74a4022e062068ec680a2caaf7d487aa0f26edf537c6379ef2e0d1",
+      "view": "artifacts/goal-4/art24/final-views/system-keyboard-school.jpg",
+      "viewSHA256": "825e05d682bf77c0eb0509209619f196ca47d4f7124da14d1239b98c264abfb2",
+      "originalSize": [
+        1440,
+        900
+      ],
+      "viewSize": [
+        1440,
+        900
+      ],
+      "lossy": true,
+      "quality": 68,
+      "pixelReview": "actually viewed same turn at original dimensions JPEG68, at most two per tool result",
+      "finding": "keyboard-visible ground outline and verb underline under reduced motion, no station rectangle"
+    }
+  ],
+  "hero": {
+    "path": "goal-4/evidence/art24/school-sanctum.jpg",
+    "sha256": "3c19ca8a192ffae75534855adce108ee21da7475a680b7c70df7772930ecc8a0"
+  },
+  "userAcceptance": false
+}

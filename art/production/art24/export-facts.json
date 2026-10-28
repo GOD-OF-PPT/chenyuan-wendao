@@ -1,0 +1,117 @@
+{
+  "format": "chenyuan-art24-export",
+  "version": 1,
+  "producer": {
+    "path": "art/tools/export_art24_scene.py",
+    "bytes": 3031,
+    "sha256": "55736ef97b49b28b93a8359f21eaa0bfdf3272570cde650840be7462233f9daf"
+  },
+  "helper": {
+    "path": "art/tools/export_art10_blanks.py",
+    "bytes": 8264,
+    "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+  },
+  "source": {
+    "path": "art/production/art24/sanctum-v1.png",
+    "bytes": 2784840,
+    "sha256": "30e1744336c83ed684e9a51e5188c61518d1247576bbdcae233e6af3f75a9efd",
+    "dimensions": {
+      "width": 1774,
+      "height": 887
+    },
+    "format": "png",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1573538,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "rgbaSHA256": "595dd6f1ee6a2273a45eddfcc55a307bb594a3e22ecfac5cd593a526f3e8c061"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/schools/sanctum-v1.webp",
+    "bytes": 171716,
+    "sha256": "91e3b5d7eebcb36bd0a1cbe3791a119290d0badddb313ad948bd4a0ade968d53",
+    "dimensions": {
+      "width": 1536,
+      "height": 768
+    },
+    "format": "webp",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1179648,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "rgbaSHA256": "eab5787ae003d29d2cc96f93350265032f33c497eb9a810def6208fe956d9cf5"
+  },
+  "prompt": {
+    "path": "art/production/art24/sanctum-v1-prompt.json",
+    "bytes": 2766,
+    "sha256": "84b3c5568c0c89fc2c0499cd5b3ba6ddeb388a2331b0956b1d1b43654ec5ff6d"
+  },
+  "audit": {
+    "path": "art/production/art24/sanctum-v1-audit.json",
+    "bytes": 1106,
+    "sha256": "0c19b4e217e4c2da34d03ae91f48b401e3546c3f38f8950fc47b0a11b1429bc6"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "decoder": "Pillow",
+  "decoderVersion": "12.3.0",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "transform": {
+    "uniformScale": 0.8658399098083427,
+    "crop": false,
+    "semanticEdit": false,
+    "outputWidth": 1536,
+    "outputHeight": 768
+  },
+  "doubleExport": {
+    "bytesEqual": true,
+    "firstSHA256": "91e3b5d7eebcb36bd0a1cbe3791a119290d0badddb313ad948bd4a0ade968d53",
+    "secondSHA256": "91e3b5d7eebcb36bd0a1cbe3791a119290d0badddb313ad948bd4a0ade968d53",
+    "sourceUnchanged": true
+  },
+  "userAcceptance": false
+}

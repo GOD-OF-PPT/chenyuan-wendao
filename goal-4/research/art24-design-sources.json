@@ -1,0 +1,19 @@
+{
+  "readAt": "2026-10-29",
+  "scope": "ART24 actual school-stage gap, primary sources not competitive playtest",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "title": "Clarity in League",
+      "principles": "recognizable silhouettes, importance hierarchy and restrained visual noise",
+      "projectDerivation": "large independent cold school objects in a quiet scenic plane; no state painted into background"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "title": "Xbox XAG114 UI context",
+      "principles": "players can predict what a control does",
+      "projectDerivation": "keep original compare then confirm verbs and complete gates/three-slot changes; scene is illustrative not travel"
+    }
+  ],
+  "limits": "230px, layout, resource caps and school-stage decisions are project choices, not source mandated values or certification; fixed desktop only, not compatibility or human art approval"
+}

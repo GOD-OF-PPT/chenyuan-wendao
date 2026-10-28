@@ -1,0 +1,17 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "model": null,
+  "requestId": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-8620fa6b-eed4-4e6e-b3a2-da9282bb028e.png",
+  "selectedCopy": "art/production/art24/sanctum-v1.png",
+  "generatedSHA256": "30e1744336c83ed684e9a51e5188c61518d1247576bbdcae233e6af3f75a9efd",
+  "copySHA256": "30e1744336c83ed684e9a51e5188c61518d1247576bbdcae233e6af3f75a9efd",
+  "promptFile": "art/production/art24/sanctum-v1-prompt.json",
+  "promptSHA256": "84b3c5568c0c89fc2c0499cd5b3ba6ddeb388a2331b0956b1d1b43654ec5ff6d",
+  "literalPromptSHA256": "28f365a87e51a25d40a4def2d00fdb2a9bc42715b6e295db45cc4bb9fce8c5e4",
+  "transparent_background": false,
+  "originalKept": true,
+  "selectionNotes": "Opaque quiet pavilion scene; no text/person/UI or gameplay state painted. Center floor floral engraving is decoration, not an active magic effect. Actual pixel output accepted for composition trial only, not user approval."
+}

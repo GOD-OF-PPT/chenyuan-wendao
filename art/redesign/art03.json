@@ -27,8 +27,8 @@
     },
     {
       "path": "web/src/LoadoutConstellation.vue",
-      "bytes": 5250,
-      "sha256": "6b6c6e629ea362ce805e65d6c029d1bb5f631a4a20d7cbf8efa7ef59fe060fb3"
+      "bytes": 5426,
+      "sha256": "c8f09ed96d04304781b22d8691fe075073b91854810a688ed3aa3778a93e76ce"
     },
     {
       "path": "web/src/equipment-effects.ts",
