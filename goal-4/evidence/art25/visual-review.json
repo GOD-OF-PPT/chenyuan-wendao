@@ -1,0 +1,220 @@
+{
+  "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+  "scope": "fixed1440x900/font1 Chromium; independent actual pixel review separate from geometry, not whole-game or human acceptance",
+  "frames": [
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/art25-study-reading-ART25--87566-writes-or-a-borrowed-reward-chromium/mastered-local-compare-cancel.png",
+      "sha256": "5b4d318461ef98e64a08a2a660677f5e1fde1fe2d6e95014c9371a0bb3233267",
+      "view": "artifacts/goal-4/art25/final-views/mastered-local-compare-cancel.jpg",
+      "viewSHA256": "fa5302b28fd45499715608dace1a98f3804e060080b8004e1af4fdaed40b425f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/art25-study-reading-ART25--e9f89-d-returns-and-readonly-Game-chromium/empty-catalogue-failed-scene.png",
+      "sha256": "0f9dc9abf28f26a08261a09ca3df47992bf8e8f9b2921f19a35126d717cc1b94",
+      "view": "artifacts/goal-4/art25/final-views/empty-catalogue-failed-scene.jpg",
+      "viewSHA256": "fd939725c3bdf2e23762409f040360112e94702ec1f70a2e0608f6bf4149bb72",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/art25-study-reading-ART25--e9f89-d-returns-and-readonly-Game-chromium/manual-real-gates-failed-scene.png",
+      "sha256": "6722ca8b7bc8cc5202e90e5af85968728e03ca0297f47b9b8bd2a68a768011b9",
+      "view": "artifacts/goal-4/art25/final-views/manual-real-gates-failed-scene.jpg",
+      "viewSHA256": "b1d613fe59aab4b5b2e0b8cacbdc11e61dbdfe3caa48248156ad6a2621da34c7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/art25-study-reading-ART25--7b30b-seat-without-any-Game-write-chromium/native-error-current-three-slots.png",
+      "sha256": "c94f6736c257a16fbe71dae2230361750775bea87881a6958ff50012457f4780",
+      "view": "artifacts/goal-4/art25/final-views/native-error-current-three-slots.jpg",
+      "viewSHA256": "9cbde342e88542109d5c5127a4dd6b0478b99c4f286007844554763502e410ea",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/art25-study-reading-ART25--65905--paid-thirty-second-mastery-chromium/finite-draft-before-explicit-start.png",
+      "sha256": "9553c41b1ea9602706f36a6f49aada4c51a9bc73b5b3aac920af6236e7036264",
+      "view": "artifacts/goal-4/art25/final-views/finite-draft-before-explicit-start.jpg",
+      "viewSHA256": "606b4bf4101fa78574ba13bef2e2810244dba7fddce599479b03c6595a2287bd",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/art25-study-reading-ART25--65905--paid-thirty-second-mastery-chromium/saved-mastered-scroll-remains-factual.png",
+      "sha256": "4ed94857b0408b54ea04ef0617845f2748f9a3b57f6f8884426b0317f9412540",
+      "view": "artifacts/goal-4/art25/final-views/saved-mastered-scroll-remains-factual.jpg",
+      "viewSHA256": "dcec2666402d6948a0bfa04589bdf8232b4b0ec8a732ca2387bd738547971b0b",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/art25-study-reading-ART25--1e4ed-e-viewing-never-writes-Game-chromium/current-jade-and-adjacent-decision.png",
+      "sha256": "7eae5ef9390c3bea59520319c13d73fb82109a7bde2d2220189527bfe4d958cf",
+      "view": "artifacts/goal-4/art25/final-views/current-jade-and-adjacent-decision.jpg",
+      "viewSHA256": "065757c3556f24f8efbc2370f25f392898e0419dff2e5660530f628d3b39531a",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/equipment-actors-TA09-A5-n-6e96e-graves-one-credible-mastery-chromium/native-paid-learning-contact.png",
+      "sha256": "5a2f0d88c74fc2b2a83a0234705276c0facddb0befb8fb89e5139fe9b01d03a6",
+      "view": "artifacts/goal-4/art25/final-views/native-paid-learning-contact.jpg",
+      "viewSHA256": "b50d336eaf1c74042aefc2fd9176f52fa05d42f7faa1f68827f880e261e9c23d",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/equipment-actors-TA09-A6-n-18d46--equipment-remain-unchanged-chromium/native-manual-under-talisman-school.png",
+      "sha256": "172962a44c08ee8d9da0ba06b973ee91397e46cce9af78a7daab26a832825b23",
+      "view": "artifacts/goal-4/art25/final-views/native-manual-under-talisman-school.jpg",
+      "viewSHA256": "7fde374e43cacb4a0ef6641615c08f0b848601bf9d26eb271a910def53afcda0",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/equipment-actors-TA09-A12--1e306-nd-first-real-retry-results-chromium/system-held-native-save-really-folded.png",
+      "sha256": "273d85ed18d952dda50ffb2f07f8033baf723b09a04618d27d6931399526dfb1",
+      "view": "artifacts/goal-4/art25/final-views/system-held-native-save-really-folded.jpg",
+      "viewSHA256": "f416295d221905d21313538c9f226d80346ce70c8a9ae2ce405c1029e13616a7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-quota.png",
+      "sha256": "6431a766ab5fbaa62c964ab6c784a3a812801136c0c1b1b2c160d6ef9a41ceb8",
+      "view": "artifacts/goal-4/art25/final-views/learn-acceptance-quota.jpg",
+      "viewSHA256": "c2a76e917408e682ad27c4fa766bac6004f895947023f83f97bcca10ec25c721",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-talisman_calm.png",
+      "sha256": "704c2272e284f7b9914d2e0f6535cd3cd154fb3075d3acf8537c1c12dd67cbd4",
+      "view": "artifacts/goal-4/art25/final-views/learn-acceptance-error-readonly-talisman_calm.jpg",
+      "viewSHA256": "ef2ac59a40743e345739a68babea561daf9314fbe726c6e7c0ca19ac7e87573f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/sword_release-actual-cold-object.png",
+      "sha256": "cc5737ae84e6c27ace92d114cb684cff4b40ae78e0afe08a9c2d169757844168",
+      "view": "artifacts/goal-4/art25/final-views/sword_release-actual-cold-object.jpg",
+      "viewSHA256": "4e9017320faf622e3a0479b4594024b076200b6f50956cf6e1234fa4c0947eeb",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/talisman_release-actual-cold-object.png",
+      "sha256": "163c070f0552bc78d6448b1519b4a8779f19541a1e148ba90c384d28538b6534",
+      "view": "artifacts/goal-4/art25/final-views/talisman_release-actual-cold-object.jpg",
+      "viewSHA256": "16941ab9ccb795c338ef8280b304845dbadf2227161829d050d4d51f0d7d7487",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/talisman_build-actual-cold-object.png",
+      "sha256": "52913925e7dc702b64dd7f51d26ef712a5198698295c92bbc6420879430a3205",
+      "view": "artifacts/goal-4/art25/final-views/talisman_build-actual-cold-object.jpg",
+      "viewSHA256": "4ef4b8cfddf014f57a19a61ff382b7678d300267138f2bca7cd672a82c8dad34",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    },
+    {
+      "original": "artifacts/goal-4/art25/regression-v3-results/equipment-actors-TA09-A1-a-21206-explicit-finite-scroll-rail-chromium/talisman_mind-actual-cold-object.png",
+      "sha256": "b94ff592566aac75c92f34fe491b6d6921b34bc6274dcbc3409d1478bd527091",
+      "view": "artifacts/goal-4/art25/final-views/talisman_mind-actual-cold-object.jpg",
+      "viewSHA256": "66103f0764d6fac97ef22381a42fe230f5f15e818bb16e22c9988235d2137925",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG68 same dimensions original PNG retained",
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "pixelReview": "actually viewed at original dimensions JPEG68, at most two per tool result"
+    }
+  ],
+  "hero": {
+    "path": "goal-4/evidence/art25/study-reading-seat.jpg",
+    "bytes": 145248,
+    "sha256": "fa5302b28fd45499715608dace1a98f3804e060080b8004e1af4fdaed40b425f"
+  },
+  "userAcceptance": false
+}

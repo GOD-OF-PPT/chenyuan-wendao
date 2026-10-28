@@ -1,0 +1,47 @@
+import hashlib,json,tempfile,unittest
+from pathlib import Path
+from art25_inventory import validate_art25,LEDGER,FILES,REFS,UNCHANGED,SCENE
+ROOT=Path(__file__).resolve().parents[2]
+class ART25Tests(unittest.TestCase):
+ def setUp(self):
+  self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name);names={LEDGER,*FILES,*REFS,*UNCHANGED,SCENE,'art/production/art24/export-facts.json'}
+  for key in ['art03','art10','idle-preparation','ta09']:
+   name='art/redesign/'+key+'.json';names.add(name);names.update(r['path']for r in json.loads((ROOT/name).read_text())['files'])
+  for n in names:
+   p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((ROOT/n).read_bytes())
+ def check(self):return validate_art25(self.root)
+ def edit(self,fn):
+  p=self.root/LEDGER;j=json.loads(p.read_text());fn(j);p.write_text(json.dumps(j))
+ def resign(self):
+  def change(j):
+   for r in j['files']:
+    b=(self.root/r['path']).read_bytes();r.update(bytes=len(b),sha256=hashlib.sha256(b).hexdigest())
+  self.edit(change)
+ def test_real_and_complete_sandbox_positive(self):self.assertEqual(validate_art25(ROOT)[1:],self.check()[1:]);self.assertEqual(self.check()[1:],(0,0))
+ def test_missing_ledger_and_reference_are_rejected(self):
+  p=self.root/LEDGER;b=p.read_bytes();p.unlink()
+  with self.assertRaises(AssertionError):self.check()
+  p.write_bytes(b);(self.root/REFS[0]).unlink()
+  with self.assertRaises(AssertionError):self.check()
+ def test_original_caps_and_actual_css_cannot_be_expanded(self):
+  for key,value in [('oldNativeCap',45001),('newRasterAssets',True)]:
+   p=self.root/LEDGER;b=p.read_bytes();self.edit(lambda j:j['budgets'].update({key:value}))
+   with self.assertRaises(AssertionError):self.check()
+   p.write_bytes(b)
+  p=self.root/FILES[1];p.write_text(p.read_text()+' '*12000);self.resign()
+  with self.assertRaises(AssertionError):self.check()
+ def test_real_scene_and_adjacent_action_consumer_are_bound(self):
+  p=self.root/FILES[0];s=p.read_text()
+  for replacement in [s.replace('path="art/v2/schools/sanctum-v1.webp"','path="art/v2/scenes/cave.webp"'),s.replace('class="jade-readable"','class="another-reading-surface"'),s.replace('<span class="study-sanctum-fallback"/>','')]:
+   p.write_text(replacement);self.resign()
+   with self.assertRaises(AssertionError):self.check()
+ def test_original_script_and_parent_controllers_cannot_be_resigned(self):
+  p=self.root/FILES[0];s=p.read_text();p.write_text(s.replace("useEquipmentCycle(kind.value,id)","useEquipmentCycle('forge',id)"));self.resign()
+  with self.assertRaises(AssertionError):self.check()
+  p.write_text(s);self.resign();p=self.root/'web/src/LearningPlanner.vue';p.write_text(p.read_text()+' ')
+  with self.assertRaises(AssertionError):self.check()
+ def test_original_paint_and_human_acceptance_cannot_be_relabelled(self):
+  p=self.root/SCENE;b=p.read_bytes();p.write_bytes(b+b'x')
+  with self.assertRaises(AssertionError):self.check()
+  p.write_bytes(b);self.edit(lambda j:j.update(userAcceptance=True))
+  with self.assertRaises(AssertionError):self.check()

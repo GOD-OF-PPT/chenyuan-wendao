@@ -17,8 +17,8 @@
   "files": [
     {
       "path": "web/src/JadeStudyScene.vue",
-      "bytes": 5037,
-      "sha256": "2f9c1b1f6c3b60a2e8d42dc0c304e726d386d1fe4ee813796e2acf9458291606"
+      "bytes": 5253,
+      "sha256": "434b16c05e5e6870cb67dc1f6611a81637864b0e20463c8bfd93e4c395d675ed"
     },
     {
       "path": "web/src/RelicAtelier.vue",

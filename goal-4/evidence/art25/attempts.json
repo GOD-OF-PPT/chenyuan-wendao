@@ -1,0 +1,344 @@
+{
+  "attempts": [
+    {
+      "name": "baseline",
+      "report": {
+        "path": "artifacts/goal-4/art25/baseline-report.json",
+        "bytes": 14077,
+        "sha256": "c6442e8d3929ce09e2c5b828395ed7c4de1a2000d099ec7801543da3715d5a98"
+      },
+      "runtimeDigest": "88f67b1cef7b50156227ab17bfc06e14251f1e5964b40d2b277f550b76624e07",
+      "stats": {
+        "startTime": "2026-10-28T20:03:05.815Z",
+        "duration": 15455.358999999999,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "early",
+      "report": {
+        "path": "artifacts/goal-4/art25/early-report.json",
+        "bytes": 17802,
+        "sha256": "d289fbe8de963c48ea51d662b95cb12602e40eeb8314f5187b71d8fc1dcaa330"
+      },
+      "runtimeDigest": "907d6016deddea4d7875c41e8d5d5a17e7301e71d722a1d86aba0ac12dfeaf8f",
+      "stats": {
+        "startTime": "2026-10-28T20:06:11.597Z",
+        "duration": 12609.132000000001,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "nav",
+      "report": {
+        "path": "artifacts/goal-4/art25/nav-report.json",
+        "bytes": 2304624,
+        "sha256": "b075ab0dce45f4cd369d98b72d28752cd8df7b84808d84e3b66fd6ad3dfdc211"
+      },
+      "runtimeDigest": "958e9bb0f505877a6298a8c7d69a59a5eb203052599ab4997f7d6b355909f106",
+      "stats": {
+        "startTime": "2026-10-28T20:08:39.061Z",
+        "duration": 66968.849,
+        "expected": 9,
+        "skipped": 0,
+        "unexpected": 4,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "nav2",
+      "report": {
+        "path": "artifacts/goal-4/art25/nav2-report.json",
+        "bytes": 2786780,
+        "sha256": "e81a50e8ba0a156ee5f7d6546e6e78fe342ef0ace72acb574bca165cd011ece0"
+      },
+      "runtimeDigest": "674b1d16ce947410780540eeb097bd6bc697bdda4d528ac876614cc479ac001d",
+      "stats": {
+        "startTime": "2026-10-28T20:11:34.740Z",
+        "duration": 62645.977,
+        "expected": 12,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "source3",
+      "report": {
+        "path": "artifacts/goal-4/art25/source3-report.json",
+        "bytes": 20964,
+        "sha256": "aefa4ba1509642436e38ff3bd32af2d19d590d6a216122013598386c8f8053dc"
+      },
+      "runtimeDigest": "538fe81ee32035200af839912de49a7d29a84603ad4478a029487a7b35c29e97",
+      "stats": {
+        "startTime": "2026-10-28T20:13:50.570Z",
+        "duration": 16087.748000000001,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "all12",
+      "report": {
+        "path": "artifacts/goal-4/art25/all12-report.json",
+        "bytes": 15746,
+        "sha256": "33fcdb740915222d8928ac05aa048c3b1f5932e3fc052d1a45249303cf9cb7cd"
+      },
+      "runtimeDigest": "538fe81ee32035200af839912de49a7d29a84603ad4478a029487a7b35c29e97",
+      "stats": {
+        "startTime": "2026-10-28T20:15:03.239Z",
+        "duration": 8150.957999999999,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "all12-v2",
+      "report": {
+        "path": "artifacts/goal-4/art25/all12-v2-report.json",
+        "bytes": 15761,
+        "sha256": "1b2a609e5e0a4078947a42e1dc1524bfcdad2d58feb5e56b2972fe226bb3a29f"
+      },
+      "runtimeDigest": "cb0f6107409ee17687a7e3cacddfaa6af0f2400ea72e31fb504a479500e4aa8f",
+      "stats": {
+        "startTime": "2026-10-28T20:17:21.061Z",
+        "duration": 9262.197,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "all12-v3",
+      "report": {
+        "path": "artifacts/goal-4/art25/all12-v3-report.json",
+        "bytes": 29444,
+        "sha256": "4939ad571e71cb3ae10e0046b0c0058bb8fe33d72e4ccd72549e94e97ebd1628"
+      },
+      "runtimeDigest": "183fd7e5386ec4eefd7e8e96a45c98fd31376f4942ca44f295739eae81360331",
+      "stats": {
+        "startTime": "2026-10-28T20:19:30.996Z",
+        "duration": 15178.402,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "all12-v4",
+      "report": {
+        "path": "artifacts/goal-4/art25/all12-v4-report.json",
+        "bytes": 7852,
+        "sha256": "77121fac217af56dd6cb932eda1cb8c5ac0bf4af7abd02568ec882500358c9d5"
+      },
+      "runtimeDigest": "e484b9a43af29a247deef68387b38842f8b3764f0b0c14945e9ee9c79d639041",
+      "stats": {
+        "startTime": "2026-10-28T20:21:09.931Z",
+        "duration": 14268.949,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "pressure",
+      "report": {
+        "path": "artifacts/goal-4/art25/pressure-report.json",
+        "bytes": 80173,
+        "sha256": "52c5203a0499c7f968a20e3195fa44d7e8fffe7666ad4b75482647b261c71391"
+      },
+      "runtimeDigest": "e484b9a43af29a247deef68387b38842f8b3764f0b0c14945e9ee9c79d639041",
+      "stats": {
+        "startTime": "2026-10-28T20:22:07.656Z",
+        "duration": 15182.921999999999,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "pressure-v2",
+      "report": {
+        "path": "artifacts/goal-4/art25/pressure-v2-report.json",
+        "bytes": 3814874,
+        "sha256": "93d64bc584e235be4cb37398d34570b3d9f5ba50c98beb83155235416c7318ca"
+      },
+      "runtimeDigest": "c1db83545ec29a346e0de0e1dc2c7d7f04f034f1e74bcad1fcfe5b9baf59cf4f",
+      "stats": {
+        "startTime": "2026-10-28T20:26:37.490Z",
+        "duration": 74346.996,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "regression",
+      "report": {
+        "path": "artifacts/goal-4/art25/regression-report.json",
+        "bytes": 19227170,
+        "sha256": "eea986e7b2f4f6d9074659b7e7167db916a048921003fc9b85a3e611079bf12e"
+      },
+      "runtimeDigest": "c1db83545ec29a346e0de0e1dc2c7d7f04f034f1e74bcad1fcfe5b9baf59cf4f",
+      "stats": {
+        "startTime": "2026-10-28T20:30:28.750Z",
+        "duration": 379475.762,
+        "expected": 69,
+        "skipped": 74,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "pressure-v3",
+      "report": {
+        "path": "artifacts/goal-4/art25/pressure-v3-report.json",
+        "bytes": 5838457,
+        "sha256": "908fca6765bbbe046e68bd9e7ab64039d420dc66301fb6837bda6196e3027bd6"
+      },
+      "runtimeDigest": "ff1bb93661c3e99f29b6c34beb389dc7e0839534c3f053e55cae8f794708c8f0",
+      "stats": {
+        "startTime": "2026-10-28T20:39:18.611Z",
+        "duration": 92980.85399999999,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "regression-v2",
+      "report": {
+        "path": "artifacts/goal-4/art25/regression-v2-report.json",
+        "bytes": 26717079,
+        "sha256": "5af92b3812c6f07fb11dfde5ebad8241ebb24033ff8d8d21ce5e1e933e1496ac"
+      },
+      "runtimeDigest": "ff1bb93661c3e99f29b6c34beb389dc7e0839534c3f053e55cae8f794708c8f0",
+      "stats": {
+        "startTime": "2026-10-28T20:44:45.273Z",
+        "duration": 478431,
+        "expected": 77,
+        "skipped": 67,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "error-slots-probe",
+      "report": {
+        "path": "artifacts/goal-4/art25/error-slots-probe-report.json",
+        "bytes": 15494,
+        "sha256": "021145dc4ba1dba6ccd2e62e84fa99982f1a133b93c93acd5bc951cdde0c8e50"
+      },
+      "runtimeDigest": "ff1bb93661c3e99f29b6c34beb389dc7e0839534c3f053e55cae8f794708c8f0",
+      "stats": {
+        "startTime": "2026-10-28T20:51:28.437Z",
+        "duration": 14013.784,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "source9",
+      "report": {
+        "path": "artifacts/goal-4/art25/source9-report.json",
+        "bytes": 28004,
+        "sha256": "7c9054187ac4cbd101a283a0028af29ce2c5a824e8f9540da8f0a0ddb8fd3339"
+      },
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "stats": {
+        "startTime": "2026-10-28T20:55:34.886Z",
+        "duration": 22578.855,
+        "expected": 5,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "regression-v3",
+      "report": {
+        "path": "artifacts/goal-4/art25/regression-v3-report.json",
+        "bytes": 34612389,
+        "sha256": "74dae27eb7e375612f3e7a2368094882c74fcb1d5aa0f1ffbbde915cf9244427"
+      },
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "stats": {
+        "startTime": "2026-10-28T21:00:51.683Z",
+        "duration": 795065.449,
+        "expected": 145,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": []
+    },
+    {
+      "name": "native-v3",
+      "report": {
+        "path": "artifacts/goal-4/art25/native-v3-report.json",
+        "bytes": 19974,
+        "sha256": "bc4f4678ebb578dc9a798ced661f74ebb874c41ab883d858f722574b96397683"
+      },
+      "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+      "stats": {
+        "startTime": "2026-10-28T20:59:14.590Z",
+        "duration": 13649.390000000001,
+        "expected": 15,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": []
+    }
+  ],
+  "notes": [
+    "Baseline A1 is a real absent-adjacent-action red after valid original jade/Game exists.",
+    "Early4 pass did not prove classification pixels: actual scene covered tabs. Original nav got z2 and new hit scope includes all classification controls.",
+    "Nav9/4 reds were16px current-slot names; next12/1 red was16px manual current-effect. Restored18, never weakened font/Range.",
+    "All12 glyph cases revealed171.972/177.855/173.168/178.224; retained180, returned decorative padding/empty-row gaps. Soft assertions collect all failures and still fail test.",
+    "Native pressure2 reds were real tool/shadow-label collision and article/reader overflow. Working/sealing original74px restored; error queue aligned side by side with all functions.",
+    "First full144 gracefully stopped on actual unfolded-label collision:69 passed,1 failed,2 interrupted,72 not run. Original report/source7 freeze retained. Label moved to left vertical tag; original three pressure cases passed.",
+    "Second full144 had77 pass,2 interrupted,65 not run and no ordinary failure, deliberately stopped for supplemental real native three-slot error containment red:article top409.28125<reader411. Port startup refusal was tooling not_run, never a product red.",
+    "Canonical A5 now proves all three real slot names/18-14-44/containment/readonly DB/budget return. Only error slot rows became44px horizontal; no values/fonts/callbacks removed.",
+    "Final current145 and15 are separate complete whole-selected runs, no retry/skip/error. Earlier partial/green reports retain actual runtime and are not relabeled as final."
+  ],
+  "toolingPortNotRun": {
+    "path": "artifacts/goal-4/art25/error-slots-probe-port-not-run.log",
+    "bytes": 150,
+    "sha256": "aa4a245b94a6ad9405887b15bf45cca1b6d003b4b82ab96a3bf01066c8702d05"
+  }
+}

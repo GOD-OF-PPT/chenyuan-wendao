@@ -15,7 +15,7 @@
 .ta09-jade-stylus{transform-origin:177px 86px;transform:translateX(calc(var(--jade-draw)*23px)) rotate(var(--jade-turn))}.ta09-jade-tool-tip{fill:#4b695d;stroke:#c7d5bd}
 .ta09-jade-sealing{stroke:#d8c58f;stroke-width:4;fill:none}.ta09-jade-attuned{fill:#8d916a;stroke:#e3d8ad;stroke-width:1.6}.ta09-jade-attuned path+path{fill:#284c3d}
 .ta09-jade[data-state=failed] .ta09-jade-drawing{filter:saturate(.5) drop-shadow(3px 4px 2px #06202a77)}
-.ta09-jade-inspect-label{position:absolute;bottom:0;left:8px;right:8px;display:flex;align-items:center;justify-content:center;gap:8px;min-height:32px;font-size:18px;line-height:1.65;background:#102f36e8;border-bottom:1px solid #a1bc9070}
+.ta09-jade-inspect-label{position:absolute;bottom:24px;left:12px;right:auto;writing-mode:vertical-rl;display:flex;align-items:center;justify-content:center;gap:8px;min-height:32px;font-size:18px;line-height:1.65;background:#102f36e8;border-bottom:1px solid #a1bc9070}
 .ta09-jade-inspect-label small{font-size:14px;line-height:1.65}
 #app .ta09-queue{display:flex;flex-direction:column;gap:4px;min-width:0;min-height:0;border-bottom:1px solid #a2b68c4a;padding-bottom:4px}
 .ta09-queue-modes{display:flex;flex-wrap:wrap;align-items:center;gap:3px 12px;min-width:0}
@@ -50,7 +50,10 @@
 #app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(160px,1fr) auto auto auto}
 #app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]>.jade-reading-place{grid-column:1/-1;grid-row:1;min-height:160px;height:100%;align-self:stretch}
 #app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]>.jade-cycle-status{grid-column:1;grid-row:2;min-height:44px}
-#app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]>.jade-object-action{grid-column:2;grid-row:2;align-self:center}
-#app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]>.ta09-queue{grid-column:1/-1;grid-row:3}
+#app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]>.ta09-queue{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
 #app .art10-learning[data-mode=skills] .art10-study-scene[data-state=failed]>.jade-authorization{grid-column:1/-1;grid-row:4}
 #app .art10-learning .art10-study-scene[data-state=failed] .ta09-queue-row,#app .art10-learning .art10-study-scene[data-state=failed] .ta09-queue-scrolls{min-height:44px}
+
+#app .jade-study-scene[data-state=failed] .jade-slots{min-height:44px}
+#app .jade-study-scene[data-state=failed] .jade-slots button{display:flex;align-items:center;gap:8px;min-height:44px;padding-block:4px}
+#app .jade-study-scene[data-state=failed] .jade-slots span{top:10px}

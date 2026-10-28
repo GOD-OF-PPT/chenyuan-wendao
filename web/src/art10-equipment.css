@@ -1,32 +1,32 @@
 /* ART10: one reading place or one workpiece; complete shelves open on request. */
-#app .art10-equipment>.catalogue-tabs{display:flex;justify-content:center;gap:20px;min-height:44px;border-bottom:1px solid #a2b79738;background:none;padding:0;flex:none}
+#app .art10-equipment>.catalogue-tabs{position:relative;z-index:2;display:flex;justify-content:center;gap:20px;min-height:44px;border-bottom:1px solid #a2b79738;background:none;padding:0;flex:none}
 #app .art10-equipment>.catalogue-tabs button{width:auto;flex:0 0 auto;min-width:92px;min-height:44px;border:0!important;border-radius:0;background:none!important;box-shadow:none!important;color:#c8d6bf;font-size:18px;position:relative;padding:6px 12px}
 #app .art10-equipment>.catalogue-tabs button[aria-pressed=true]{color:#c4efda;border-bottom:2px solid #a7dcc7!important}
 #app .art10-equipment>.catalogue-tabs button:active{color:#fff5cf;transform:translateY(1px)}
-#app .art10-learning{display:flex;flex-direction:column;gap:4px;min-height:0;flex:1}
+#app .equipment-panel:is([data-section=skills],[data-section=manual]){background:transparent!important;border:0!important;isolation:isolate;gap:6px}
+#app .art10-learning{display:flex;flex-direction:column;gap:0;min-height:0;flex:1;isolation:isolate}
 #app .art10-study-heading>button{min-height:44px;font-size:18px;padding:6px 16px}
 #app .art10-study-work{display:flex;flex:1;min-height:0}
 #app .art10-study-work>.learning-scroll{display:block;flex:1;height:100%;min-height:0;margin:0;padding:0;border:0;background:none}
-#app .art10-study-scene{display:flex;flex-direction:column;min-height:0;height:100%;gap:4px}
-#app .art10-study-scene .jade-reading-place{display:grid;grid-template-columns:minmax(230px,.85fr) minmax(0,1.35fr);grid-template-rows:minmax(0,1fr);gap:30px;align-items:center;flex:1;min-height:0;width:min(100%,1080px);align-self:center;border:0;background:radial-gradient(ellipse at 23% 60%,#80b89a18,transparent 65%)}
-#app .art10-study-scene .ta09-jade{height:100%;max-height:260px;min-height:0;width:100%;align-self:center}
-#app .art10-study-scene .jade-readable{min-width:0;padding:0 10px 0 0}
-#app .art10-study-scene .learning-object{padding:0;background:none}
+#app .art10-study-scene{position:relative;display:flex;flex-direction:column;min-height:0;height:100%;gap:0}
+#app .study-sanctum{position:absolute!important;inset:-116px -16px -34px;z-index:-2;width:auto!important;height:auto!important;pointer-events:none}
+#app .study-sanctum img{object-fit:cover!important}
+#app .study-sanctum:after{content:'';position:absolute;inset:0;background:linear-gradient(#06212bd9,transparent 30%,#092d3255 60%,#092b31ed)}
+#app .study-sanctum-fallback{display:block;width:100%;height:100%;background:linear-gradient(145deg,#234b4b,#102e37)}
+#app .study-sanctum>.asset-fallback{position:absolute;inset:0;padding:0}
+#app .art10-learning .jade-reading-place{display:grid;grid-template-columns:minmax(240px,.9fr) minmax(0,1.1fr);grid-template-rows:minmax(0,1fr);gap:18px;align-items:center;flex:1;min-height:0;width:min(100%,1240px);align-self:center;background:none}
+#app .art10-study-scene .ta09-jade{height:100%;max-height:none;min-height:0;width:100%;align-self:stretch}
+#app .art10-study-scene .ta09-jade:not([data-working=true],[data-phase=sealing]) .ta09-jade-inspect{padding:18px 20px 24px;outline:none!important}
+#app .art10-study-scene .ta09-jade-inspect-label{background:none;border:0}
+#app .art10-study-scene .ta09-jade-inspect:focus-visible .ta09-jade-inspect-label{outline:2px solid #c4e0b8;outline-offset:-2px}
+#app .art10-study-scene .jade-readable{min-width:0;padding:4px 22px;background:linear-gradient(90deg,#0d3039e8,#0d303966)}
 #app .art10-study-scene .learning-object h3{font-size:28px;line-height:1.65;margin:0}
 #app .art10-study-scene .learning-slot{margin:2px 0 0;padding:6px 0 0;gap:4px 8px;border-top:1px solid #a6bea53b;font-size:14px}
 #app .art10-study-scene .jade-cycle-status{display:flex;flex-wrap:wrap;align-items:center;flex:none;min-height:30px;gap:4px 18px;padding:0 8px;justify-content:center;border:0}
-#app .art10-study-scene .jade-object-action{flex:none;padding:0 8px}
-#app .art10-study-scene .learning-candidate{justify-content:center;gap:6px 18px;min-height:44px}
+#app .art10-study-scene .learning-candidate{justify-content:flex-start;gap:6px 18px;min-height:44px;padding-top:8px}
 #app .art10-study-scene .learning-candidate>button{min-height:44px;font-size:18px;padding:6px 18px}
-#app .art10-scroll-rail{flex:none;min-height:0;padding:3px 8px 0;border:0;border-top:1px solid #a3b49e40;background:none;gap:3px}
-#app .art10-scroll-rail .ta09-queue-modes{gap:12px;padding:0;min-height:44px;border:0}
-#app .art10-scroll-rail .ta09-queue-modes>button{font-size:14px;min-height:44px;padding:5px 10px;background:transparent;border-width:0 0 1px;box-shadow:none}
-#app .art10-scroll-rail .ta09-queue-row{min-height:58px;padding:0;gap:8px}
-#app .art10-scroll-rail .ta09-queue-scrolls{min-height:58px}
-#app .art10-scroll-rail .ta09-queue-scrolls>button{min-height:58px;padding:2px 10px;gap:5px 10px}
-#app .art10-scroll-rail .ta09-queue-slip{height:44px;width:28px}
-#app .art10-scroll-rail .ta09-empty-queue{min-height:36px;margin:0;gap:10px;flex-direction:row;justify-content:center;font-size:14px}
-#app .art10-scroll-rail .ta09-empty-queue svg{width:100px;height:24px}
+#app .art10-scroll-rail{flex:none;min-height:0;padding:3px 8px 0;border:0;border-top:1px solid #a3b49e40;background:none}
+#app .art10-scroll-rail .ta09-empty-queue{min-height:24px}
 #app .art10-study-scene .jade-authorization{flex:none;min-height:0;padding:3px 8px 0}
 #app .art10-study-authorization{display:grid;grid-template-columns:minmax(210px,.7fr) minmax(0,1.3fr) auto;align-items:center;gap:4px 18px;min-height:0;padding:4px 0 0;border-top:1px solid #9fb89d38;background:none}
 #app .art10-study-authorization>.preparation-reason{grid-column:1/-1;min-height:0;margin:0;font-size:14px;line-height:1.65}
@@ -35,9 +35,8 @@
 #app .art10-study-authorization .preparation-estimate{padding:0;border:0;gap:0;background:none;margin:0}
 #app .art10-study-authorization>button{min-height:48px;max-width:280px;font-size:18px}
 #app .art10-study-authorization .learning-plan-summary{min-height:70px;padding:8px 12px;text-align:left;border-width:1px 0;background:#153c3c}
-#app .art10-learning[data-mode=manual] .jade-reading-place{grid-template-columns:280px minmax(0,1fr);width:min(100%,1040px)}
-#app .art10-learning[data-mode=manual] .ta09-jade{height:300px}
-#app .art10-learning[data-complete=true] .ta09-jade{height:320px}
+
+#app .art10-study-scene .learning-object strong{font-size:18px}
 
 #app .art10-relic-stage{display:flex;flex-direction:column;flex:1;min-height:0;gap:8px}
 #app .art10-relic-stage .relic-heading button{min-height:44px;font-size:18px}
@@ -91,7 +90,6 @@
 #app .relic-currency-routes strong{font-size:22px;line-height:1.5}
 #app .relic-currency-routes button{align-self:flex-start;margin-top:5px}
 
-#app .art10-study-scene .learning-slot strong{font-size:18px}
 #app .art10-relic-stage .production-budget.primary{font-size:18px!important}
 #app .art10-relic-stage .relic-object-inspect{background:transparent!important}
 

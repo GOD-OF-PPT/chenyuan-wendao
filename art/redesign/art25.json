@@ -1,0 +1,49 @@
+{
+  "format": "chenyuan-study-reading-art25",
+  "version": 1,
+  "task": "Goal4 ART25",
+  "files": [
+    {
+      "path": "web/src/JadeStudyScene.vue",
+      "bytes": 5253,
+      "sha256": "434b16c05e5e6870cb67dc1f6611a81637864b0e20463c8bfd93e4c395d675ed"
+    },
+    {
+      "path": "web/src/art10-equipment.css",
+      "bytes": 11992,
+      "sha256": "eef8cc1311779a60a78a38614d7c09c9628d1e93dab594031fe10e22152f4b3a"
+    },
+    {
+      "path": "web/src/ta09-equipment.css",
+      "bytes": 8262,
+      "sha256": "de13ed9cc306774407d7ee97efcc122ba24ed3c2cf64a99580d1782ed557b607"
+    }
+  ],
+  "budgets": {
+    "oldNativeCap": 45000,
+    "oldCssCap": 12000,
+    "oldPreparationCap": 60000,
+    "oldTA09Cap": 30000,
+    "newRasterAssets": 0
+  },
+  "sourceReferences": [
+    "docs/decisions/0059-study-reading-art25-contract.md",
+    "goal-4/amendments/2026-10-29-goal-continue-art25.md",
+    "goal-4/research/art25-design-sources.json"
+  ],
+  "originalScriptSHA256": "0f2a558accca3e81f61dce5e74e389b859719f46c58816e6edaa1f4b4d6e947f",
+  "unchanged": {
+    "web/src/LearningPlanner.vue": "d5473ace82c8193349e48515096e6411343f36465a85fc86689b35fbbbeea945",
+    "web/src/StudyQueueRail.vue": "2ee9119806fa68b31c97c28d754fe2589981ad58b832a8c1f43287e955c13997",
+    "web/src/JadeEngraving.vue": "1c1b94c82d145c504fda7c8de43dffacedcdf1db87c9f9579fcefac3bec15c1a",
+    "web/src/EquipmentPanel.vue": "b5c8e4011f112ff37f21db4e0088e3304a67dda7f1872ca347d1be12559bc56c",
+    "web/src/equipment-effects.ts": "0946c3b6b76e5ea39ebd80571175e2835ce49abe94fe6499f480b1635a934888",
+    "web/src/equipment-choreography.ts": "871e41e7555f640fecbc8f26706fac34a5249225a6acb5f1db9c63789a8011bb"
+  },
+  "reusedAsset": {
+    "path": "web/public/art/v2/schools/sanctum-v1.webp",
+    "bytes": 171716,
+    "sha256": "91e3b5d7eebcb36bd0a1cbe3791a119290d0badddb313ad948bd4a0ade968d53"
+  },
+  "userAcceptance": false
+}

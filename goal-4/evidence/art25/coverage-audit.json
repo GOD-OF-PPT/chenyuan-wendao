@@ -1,0 +1,688 @@
+{
+  "runtimeDigest": "c43b4b5f1fe8efec558a76dc472500214cd27cc63f9d81ff892043ba830177c1",
+  "ui": {
+    "passed": 145,
+    "files": [
+      "art10-equipment-stage.spec.ts",
+      "art14-relic-blueprint.spec.ts",
+      "art16-school-objects.spec.ts",
+      "art24-school-sanctum.spec.ts",
+      "art25-study-reading.spec.ts",
+      "check-art-02.spec.ts",
+      "check-art03-combinations.spec.ts",
+      "check-art03-feedback-art.spec.ts",
+      "check-matrix-keyboard.spec.ts",
+      "equipment-actors.spec.ts",
+      "equipment-objects.spec.ts",
+      "idle-integration.spec.ts",
+      "matrix-ui-cancel.spec.ts",
+      "matrix-ui-local-recovery.spec.ts",
+      "stage-r3-layout.spec.ts",
+      "stage-r3.spec.ts",
+      "stage-ta-review.spec.ts",
+      "ux22-help-wayfinding.spec.ts"
+    ],
+    "wholeSelectedRun": true,
+    "automaticRetry": 0,
+    "skipped": 0,
+    "tests": [
+      {
+        "key": "art10-equipment-stage.spec.ts::ART10-A1 selected jade remains the default object and complete catalogues open only on request::chromium",
+        "duration": 17952
+      },
+      {
+        "key": "art10-equipment-stage.spec.ts::ART10-A2 opening a jade choosing another scroll and explicitly adding or removing it have separate readonly draft effects::chromium",
+        "duration": 7499
+      },
+      {
+        "key": "art10-equipment-stage.spec.ts::ART10-A3 finite saved scrolls next draft and library reading survive return without borrowing the running command or a new run::chromium",
+        "duration": 14295
+      },
+      {
+        "key": "art10-equipment-stage.spec.ts::ART10-A4 learned unequipped scrolls compare atomically while an equipped scroll presents its fact and a useful browse decision::chromium",
+        "duration": 5870
+      },
+      {
+        "key": "art10-equipment-stage.spec.ts::ART10-A5 retained materials actual money and an insufficient authorization choose different complete preparation decisions::chromium",
+        "duration": 12181
+      },
+      {
+        "key": "art10-equipment-stage.spec.ts::ART10-A6 one genuine retained-material gap leads through an explicit source and cave journey back to the nondefault forge plan::chromium",
+        "duration": 7251
+      },
+      {
+        "key": "art10-equipment-stage.spec.ts::ART10-A7 an owned artifact moves to compare or browse while its complete original forge authorization remains canonical after refresh::chromium",
+        "duration": 7799
+      },
+      {
+        "key": "art10-equipment-stage.spec.ts::ART10-A8 a positive-cost forge START quota keeps its original authorization through readonly catalogues and retries once::chromium",
+        "duration": 7705
+      },
+      {
+        "key": "art10-equipment-stage.spec.ts::ART10-A9 catalogue preparation and limit surfaces keep one keyboard owner complete text and the selected object on close::chromium",
+        "duration": 7798
+      },
+      {
+        "key": "art14-relic-blueprint.spec.ts::ART14-A1 mortal blueprint is one readable object and one readonly action opens all four relics without an empty library::chromium",
+        "duration": 3688
+      },
+      {
+        "key": "art14-relic-blueprint.spec.ts::ART14-A2 selecting every future relic preserves factual gates all material routes and an edited same-object draft without Game writes::chromium",
+        "duration": 8233
+      },
+      {
+        "key": "art14-relic-blueprint.spec.ts::ART14-A3 missing relic art retains the blueprint verb and gates with keyboard and reduced effects::chromium",
+        "duration": 5724
+      },
+      {
+        "key": "art14-relic-blueprint.spec.ts::ART14-A4 blueprint reading cannot reset another finite cycle or award an unowned relic::chromium",
+        "duration": 3418
+      },
+      {
+        "key": "art16-school-objects.spec.ts::ART16-A1 both real cold school objects replace rectangular cards while mortal gates and all starting arts stay readonly::chromium",
+        "duration": 4293
+      },
+      {
+        "key": "art16-school-objects.spec.ts::ART16-A2 each object opens the complete original comparison and its cancelled outlook returns to the same object without writing::chromium",
+        "duration": 4849
+      },
+      {
+        "key": "art16-school-objects.spec.ts::ART16-A3 two explicit atomic school changes preserve owned relic learned arts and manual while showing only the current saved path::chromium",
+        "duration": 5460
+      },
+      {
+        "key": "art16-school-objects.spec.ts::ART16-A4 native receipt quota rolls back the whole school change and retry keeps the exact original intent for one first success::chromium",
+        "duration": 4360
+      },
+      {
+        "key": "art16-school-objects.spec.ts::ART16-A5 active cultivation battle and narrative keep their true gates and a paused online plan is not continued by comparing a school::chromium",
+        "duration": 8035
+      },
+      {
+        "key": "art16-school-objects.spec.ts::ART16-A6 another page school A to B to A never borrows an old local confirmation glow and refreshed facts remain authoritative::chromium",
+        "duration": 5223
+      },
+      {
+        "key": "art16-school-objects.spec.ts::ART16-A7 both effect-reduction modes keep keyboard object comparison and static actual school facts without a hidden layout transform::chromium",
+        "duration": 6393
+      },
+      {
+        "key": "art16-school-objects.spec.ts::ART16-A8 both missing paintings retain complete readable objects during a real save error and summary still exposes its original four slots::chromium",
+        "duration": 3434
+      },
+      {
+        "key": "art24-school-sanctum.spec.ts::ART24-A1 a real quiet sanctum and large independent school objects replace the flat comparison plane without changing Game::chromium",
+        "duration": 3189
+      },
+      {
+        "key": "art24-school-sanctum.spec.ts::ART24-A2 both objects keep the exact original readonly comparison and one explicit atomic school change retains real current state::chromium",
+        "duration": 4455
+      },
+      {
+        "key": "art24-school-sanctum.spec.ts::ART24-A3 the scene does not occupy other catalogue modes or reset a readonly school return::chromium",
+        "duration": 2565
+      },
+      {
+        "key": "art24-school-sanctum.spec.ts::ART24-A4 mortal gates and all three starting arts stay readable when the scene or every bitmap fails::chromium",
+        "duration": 6705
+      },
+      {
+        "key": "art25-study-reading.spec.ts::ART25-A1 the current real jade and adjacent decision occupy one illustrated reading seat while viewing never writes Game::chromium",
+        "duration": 10454
+      },
+      {
+        "key": "art25-study-reading.spec.ts::ART25-A2 selected scroll draft and nondefault authorization survive reading returns before one exact paid thirty second mastery::chromium",
+        "duration": 5198
+      },
+      {
+        "key": "art25-study-reading.spec.ts::ART25-A3 already mastered jade offers its original local equipment comparison and cancellation returns without writes or a borrowed reward::chromium",
+        "duration": 3082
+      },
+      {
+        "key": "art25-study-reading.spec.ts::ART25-A4 empty catalogue manual reading and failed illustrative background retain full native objects keyboard returns and readonly Game::chromium",
+        "duration": 2684
+      },
+      {
+        "key": "art25-study-reading.spec.ts::ART25-A5 native START failure retains all three current slots inside the complete reading seat without any Game write::chromium",
+        "duration": 4139
+      },
+      {
+        "key": "check-art-02.spec.ts::CHECK2-A8 skill local saved configuration never relights its old sequence after a foreign same-run A to B to A transition::chromium",
+        "duration": 10251
+      },
+      {
+        "key": "check-art-02.spec.ts::CHECK2-A8 relic local saved configuration never relights its old sequence after a foreign same-run A to B to A transition::chromium",
+        "duration": 9506
+      },
+      {
+        "key": "check-art-02.spec.ts::CHECK2-A9 a finite start already committed before a real native connection closure remains a saved readonly arrangement rather than a fresh unarranged choice::chromium",
+        "duration": 5475
+      },
+      {
+        "key": "check-art-02.spec.ts::CHECK2-A5 late native learning delivery cannot replace another page medicine activity or relight the previous learned scroll::chromium",
+        "duration": 14047
+      },
+      {
+        "key": "check-art-02.spec.ts::CHECK2-A1 separately authorized learning equip purchase medicine and personal response keep exact costs and independent game objects across one lawful route::chromium",
+        "duration": 18548
+      },
+      {
+        "key": "check-art-02.spec.ts::CHECK2-A2 medicine cycle quota blocks otherwise legal equipment and visits across domains while read pages export and original retry remain available::chromium",
+        "duration": 13185
+      },
+      {
+        "key": "check-art-02.spec.ts::CHECK2-A3 cancelling failed equipment or visit intent allows only a new explicitly confirmed action in the other domain::chromium",
+        "duration": 13391
+      },
+      {
+        "key": "check-art-02.spec.ts::CHECK2-A4 a committed configuration survives queued native snapshot abort and cross-domain reconnect never repeats that equipment or medicine::chromium",
+        "duration": 14497
+      },
+      {
+        "key": "check-art-02.spec.ts::CHECK2-A6 unsubmitted learning and medicine drafts survive people life and ordinary detail returns while a later real use updates the anchored factual inventory::chromium",
+        "duration": 13780
+      },
+      {
+        "key": "check-art-02.spec.ts::CHECK2-A7 a paid personal response medicine is consumed exactly once and old factual readings cannot become a new recovery effect::chromium",
+        "duration": 12668
+      },
+      {
+        "key": "check-art03-combinations.spec.ts::CHECK-ART03-C1 paid queued study preserves its selected scroll complete draft and original finite authorization through bag people life and ordinary return::chromium",
+        "duration": 9777
+      },
+      {
+        "key": "check-art03-combinations.spec.ts::CHECK-ART03-C2 retained relic materials and explicit travel preserve source return and newer market or rest drafts edited during the same journey::chromium",
+        "duration": 17046
+      },
+      {
+        "key": "check-art03-combinations.spec.ts::CHECK-ART03-C3 both medicine purposes retain separate sale drafts while one real paid response supplies exactly one later dose and factual life stays readonly::chromium",
+        "duration": 20461
+      },
+      {
+        "key": "check-art03-combinations.spec.ts::CHECK-ART03-C4 an atomic positive-medicine quota retains its original retry across all three objects and a partly spent paused order cannot become a fresh full allowance::chromium",
+        "duration": 12015
+      },
+      {
+        "key": "check-art03-feedback-art.spec.ts::CHECK-ART03-C5 cached factual response keeps its one saved ink across inventory and life while pause and foreign takeover fence old and late results::chromium",
+        "duration": 14835
+      },
+      {
+        "key": "check-art03-feedback-art.spec.ts::CHECK-ART03-C6 eight fixed-desktop entrances and true NPC fallback identities remain readonly and cultivation stage copy retains measured contrast::chromium",
+        "duration": 23451
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K1 retirement keyboard cancellation returns its exact settings opener and one twelve-second seal focuses factual life::chromium",
+        "duration": 2832
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K2 trial entry keyboard heading trap and cancellation retain the complete preparation before one fifteen-second question handoff::chromium",
+        "duration": 2498
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K3 the actual custom restore keyboard dialog cancels to its battle opener then restores the whole checkpoint with one six-hundred-ms receipt::chromium",
+        "duration": 6004
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K4 ending keyboard cancellation preserves its factual choice and a single twelve-second confirmation focuses the committed life record::chromium",
+        "duration": 3202
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K5 a native pending startup content skip never steals the keyboard focus from a newer settings decision::chromium",
+        "duration": 1701
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K6 pending startup without newer intent restores welcome focus and genuine keyboard creation choice and navigation keep their proper targets::chromium",
+        "duration": 2805
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K7 actual mortal entry retains one explicit keyboard skip beyond its natural lifetime without changing its actual saved outcome::chromium",
+        "duration": 4066
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K8 an ordinary pill-consuming breakthrough keeps its explicit keyboard prompt static and Enter returns current content without repeating the receipt::chromium",
+        "duration": 2644
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K9 an actual battle turn keyboard prompt preserves focus and an old destroyed skip cannot dismiss the next turn while blur keeps the new target::chromium",
+        "duration": 7258
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K10 trial entry has an explicit held keyboard skip and a restored separately arranged reduced-motion entry has no empty skip control::chromium",
+        "duration": 9343
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K11 an accepted trial entry cannot take focus from a newer keyboard settings decision after its actual saved handoff::chromium",
+        "duration": 2971
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K12 an accepted trial entry cannot replace a newer keyboard exploration navigation or its focus when the original cycle commits::chromium",
+        "duration": 2610
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K13 a saved guard while only the public strategy is visible keeps its original cycle and factual receipt without a viewport fallback or later borrowed actor::chromium",
+        "duration": 3172
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::CHECK-K14 a real goal toggle delivered after typing preserves the exact pending quantity through blur readonly saving and reload::chromium",
+        "duration": 2814
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::M04-FOCUS trusted automatic return hands the saved retirement to factual life::chromium",
+        "duration": 3378
+      },
+      {
+        "key": "check-matrix-keyboard.spec.ts::M04-FOCUS trusted automatic return preserves a later real Tab target::chromium",
+        "duration": 3402
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A1 all twelve two-school jade objects retain their complete real effects and readonly slot context beside an explicit finite scroll rail::chromium",
+        "duration": 23061
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A2 finite scroll browsing keeps saved draft and slot domains distinct across manual return and clears only on a new run::chromium",
+        "duration": 13599
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A3 two paid cross-school scrolls use frozen current commands through native sealing and metadata delivery without borrowing mastery::chromium",
+        "duration": 9211
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A4 cumulative paid and legal zero-cost scrolls stop at exact budget or reserve without dropping mastered facts::chromium",
+        "duration": 12210
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A5 native thirty-second paid learning has no early Game write and engraves one credible mastery::chromium",
+        "duration": 35718
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A6 native sixty-second manual inscribes one insight while talisman school and actual equipment remain unchanged::chromium",
+        "duration": 65360
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A7 four artifact blueprints become distinct workpieces and only saved owned artifacts reveal their real cold art::chromium",
+        "duration": 26161
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A8 native sixty-second positive-cost forging saves full material and month costs before revealing an unbound artifact::chromium",
+        "duration": 64985
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A9 paid LEARN cycle and FORGE admission quota failures retain the exact original intent for one first successful retry::chromium",
+        "duration": 11048
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A10 pause pending hidden scenes and same-id foreign generations clear work and old seals while full history remains authoritative::chromium",
+        "duration": 10669
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A11 three instant configurations keep comparison CAS and original retry while foreign A to B to A cannot relight old engraving::chromium",
+        "duration": 25321
+      },
+      {
+        "key": "equipment-actors.spec.ts::TA09-A12 both reduced-effect modes and all four failed cold images retain complete readable objects budgets and first real retry results::chromium",
+        "duration": 28980
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A1 all twelve jade slips and real loadout slots stay read-only inside distinct game objects::chromium",
+        "duration": 8443
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A2 one legal forge enters cold native saving before its exact sixty-second artifact is committed::chromium",
+        "duration": 4234
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A3 two selected cross-school jade slips keep exact separate cycles and show only the selected credible completion::chromium",
+        "duration": 16093
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A4 a real thirty-second jade study saves its formal fee before the slip becomes mastered::chromium",
+        "duration": 34583
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A5 a real sixty-second sword manual commits one insight and never silently changes school or equipment::chromium",
+        "duration": 64167
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A6 a real sixty-second forge presents the selected artifact only after exact costs are saved::chromium",
+        "duration": 64637
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A7 all four distinct artifact objects retain full materials, owned and actual bound states without writes::chromium",
+        "duration": 13275
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A8 school skill and relic comparisons cancel without writes and explicit atomic confirmations retain their real scopes::chromium",
+        "duration": 24397
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A9 native acceptance and cycle quota failures keep learning and forging cold while the original exact intent remains retryable::chromium",
+        "duration": 55127
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A10 learning pause and same-id takeover immediately withdraw old short effects without changing the authoritative learned record::chromium",
+        "duration": 9541
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A11 a foreign forge generation, hidden scene and historical receipt never light the old artifact or forge it twice::chromium",
+        "duration": 5808
+      },
+      {
+        "key": "equipment-objects.spec.ts::ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable::chromium",
+        "duration": 8689
+      },
+      {
+        "key": "idle-integration.spec.ts::saved assisted cultivation is inspected exactly and newly confirmed edits become the real new arrangement::chromium",
+        "duration": 3400
+      },
+      {
+        "key": "idle-integration.spec.ts::a production cycle and pause keep an inspected unsubmitted draft separate from the original furnace authorization::chromium",
+        "duration": 4055
+      },
+      {
+        "key": "idle-integration.spec.ts::a source cycle and pause keep target and limits in the unsubmitted draft without changing the running authorization::chromium",
+        "duration": 3822
+      },
+      {
+        "key": "idle-integration.spec.ts::owned relic equip shows its formal gate during battle and viewing never changes Game::chromium",
+        "duration": 3238
+      },
+      {
+        "key": "idle-integration.spec.ts::owned relic equip shows its formal gate during event and viewing never changes Game::chromium",
+        "duration": 2903
+      },
+      {
+        "key": "idle-integration.spec.ts::natural cultivation retains a nondefault cap and reserve when inspecting and refreshing an arrangement::chromium",
+        "duration": 4366
+      },
+      {
+        "key": "idle-integration.spec.ts::a normal new life connects cultivation material gathering furnace planning and a separately confirmed foundation breakthrough::chromium",
+        "duration": 15294
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-CANCEL craft keeps its original native failed confirmation until explicit cancel then accepts one fresh legal plan::chromium",
+        "duration": 6615
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-CANCEL source keeps its original native failed confirmation until explicit cancel then accepts one fresh legal plan::chromium",
+        "duration": 6519
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-CANCEL encounter keeps its original native failed confirmation until explicit cancel then accepts one fresh legal plan::chromium",
+        "duration": 5933
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-PENDING a real source cycle quota keeps new work blocked without a modal and retries only the original command::chromium",
+        "duration": 4528
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-CANCEL a lawful battle restore confirmation can fail and be cancelled while a new manual turn keeps the current battle and checkpoint::chromium",
+        "duration": 7693
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-MOVE attack exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay::chromium",
+        "duration": 6021
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-MOVE guard exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay::chromium",
+        "duration": 5963
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-MOVE technique exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay::chromium",
+        "duration": 6399
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-MOVE release exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay::chromium",
+        "duration": 5790
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-MOVE heal exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay::chromium",
+        "duration": 5626
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-MOVE restore exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay::chromium",
+        "duration": 5781
+      },
+      {
+        "key": "matrix-ui-cancel.spec.ts::M03-MOVE flee exposes its formal cost and saves exactly one three-second selected turn with current actors and no history replay::chromium",
+        "duration": 5183
+      },
+      {
+        "key": "matrix-ui-local-recovery.spec.ts::M03-L1 local quota leaves the actual committed Game intact and exports only the failed new observation from memory::chromium",
+        "duration": 4818
+      },
+      {
+        "key": "matrix-ui-local-recovery.spec.ts::M03-L2 Game quota records a safe failure and the original cycle command retry creates exactly one action and receipt::chromium",
+        "duration": 4559
+      },
+      {
+        "key": "matrix-ui-local-recovery.spec.ts::M03-L3 a genuine future local database stays byte-for-byte intact while explicit temporary collection exports no private future data::chromium",
+        "duration": 5746
+      },
+      {
+        "key": "matrix-ui-local-recovery.spec.ts::M03-L4 a native local readonly transaction exception has a truthful finite fallback and never hangs or replaces the Game::chromium",
+        "duration": 3554
+      },
+      {
+        "key": "matrix-ui-local-recovery.spec.ts::M03-L5 main open denial is a safe recorded code and never turns unreadable progress into a usable empty save::chromium",
+        "duration": 2405
+      },
+      {
+        "key": "matrix-ui-local-recovery.spec.ts::M03-L6 clear cancellation confirmation and cross-page preference epoch changes invalidate previews without changing either complete Game::chromium",
+        "duration": 6389
+      },
+      {
+        "key": "matrix-ui-local-recovery.spec.ts::M03-L7 real legacy opening startup migrates the entire lawful state while preserving native originals and exact migration identity::chromium",
+        "duration": 1518
+      },
+      {
+        "key": "matrix-ui-local-recovery.spec.ts::M03-L8 real legacy qi startup migrates the entire lawful state while preserving native originals and exact migration identity::chromium",
+        "duration": 1748
+      },
+      {
+        "key": "matrix-ui-local-recovery.spec.ts::M03-L9 real legacy battle startup migrates the entire lawful state while preserving native originals and exact migration identity::chromium",
+        "duration": 1711
+      },
+      {
+        "key": "matrix-ui-local-recovery.spec.ts::M03-L10 an actual native versionchange closes the stale connection and explicit reread preserves DB9 without silently retrying the failed arrangement::chromium",
+        "duration": 2931
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::the actual jade object and status stay inside the stage and relic paging never overlaps its last object::chromium",
+        "duration": 3788
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::all twelve books and all fourteen bag objects retain real text, quantities and complete read-only uses::chromium",
+        "duration": 35751
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::reading another slot and book cannot replace a multi-book draft or its edited cumulative limits::chromium",
+        "duration": 4529
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::a fresh mortal has an explicit empty book catalogue without a phantom selected skill::chromium",
+        "duration": 4300
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::missing catalogue paintings keep native jade and bag selection usable without inventing held objects::chromium",
+        "duration": 4069
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::one selected book waits thirty real seconds and saves its actual cost before becoming learned::chromium",
+        "duration": 34485
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::one selected relic waits its full real forge cycle and stays separate from equipment::chromium",
+        "duration": 64071
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::same life realm growth keeps the selected bag item visible when newly unlocked materials move its page::chromium",
+        "duration": 3315
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::changing school keeps the finite learning draft and selects a real book of the current school::chromium",
+        "duration": 4416
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::manual context receives a school change then restores the old queue with a valid current-school selection::chromium",
+        "duration": 4593
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::all four relic objects expose their real costs and ingredients and equipment views remain read-only::chromium",
+        "duration": 6503
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::all four relic objects compare owned effects without equipping and equipment views remain read-only::chromium",
+        "duration": 6647
+      },
+      {
+        "key": "stage-r3-layout.spec.ts::a mastered book explains local comparison without asking for another learning trip::chromium",
+        "duration": 2972
+      },
+      {
+        "key": "stage-r3.spec.ts::inventory offers compact quantity objects and one selected description without writing Game::chromium",
+        "duration": 2698
+      },
+      {
+        "key": "stage-r3.spec.ts::learning keeps the finite queue and budgets in one on-demand surface::chromium",
+        "duration": 3532
+      },
+      {
+        "key": "stage-r3.spec.ts::learning queue and nondefault limits survive loadout inspection and another main entry::chromium",
+        "duration": 4138
+      },
+      {
+        "key": "stage-r3.spec.ts::selecting the same relic preserves its complete edited authorization without a Game command::chromium",
+        "duration": 3128
+      },
+      {
+        "key": "stage-r3.spec.ts::a replacement life of the same realm never receives the previous local relic budget::chromium",
+        "duration": 3552
+      },
+      {
+        "key": "stage-ta-review.spec.ts::CHECK-TA-C1 traded manual completion stays factual in both schools and locations without another travel or study authorization::chromium",
+        "duration": 15691
+      },
+      {
+        "key": "stage-ta-review.spec.ts::CHECK-TA-C2 a formally studied manual has the same permanent completion while browsing back preserves each school finite draft::chromium",
+        "duration": 25926
+      },
+      {
+        "key": "stage-ta-review.spec.ts::CHECK-TA-C3 first paid study seals only after its full native transaction and an original quota retry creates one truthful completion::chromium",
+        "duration": 12279
+      },
+      {
+        "key": "stage-ta-review.spec.ts::CHECK-TA-C4 all eight current game entry surfaces retain their real objects complete controls and readonly Game databases::chromium",
+        "duration": 8729
+      },
+      {
+        "key": "stage-ta-review.spec.ts::CHECK-TA-C5 a learned manual remains readable after a real cancelled configuration failure and only a fresh compared intent changes school::chromium",
+        "duration": 7394
+      },
+      {
+        "key": "stage-ta-review.spec.ts::CHECK-TA-C6 completed paid study still exposes its canonical original budget and reserve without changing Game or borrowing a later draft::chromium",
+        "duration": 15562
+      },
+      {
+        "key": "ux22-help-wayfinding.spec.ts::UX22-H1 all twelve manual chapters remain complete readable keyboard pages and never change the full database::chromium",
+        "duration": 10705
+      },
+      {
+        "key": "ux22-help-wayfinding.spec.ts::UX22-H2 equipment help names the real school and loadout entries and both school comparisons cancel without writes or a fake timer::chromium",
+        "duration": 4859
+      },
+      {
+        "key": "ux22-help-wayfinding.spec.ts::UX22-H3 material help distinguishes the inventory sources from the alchemy recipe book without travel or crafting::chromium",
+        "duration": 4361
+      },
+      {
+        "key": "ux22-help-wayfinding.spec.ts::UX22-H4 breakthrough help leads to the original thirty second single arrangement and cancelling does not break through::chromium",
+        "duration": 3811
+      },
+      {
+        "key": "ux22-help-wayfinding.spec.ts::UX22-H5 battle help exposes finite automatic strategy and optional manual control without starting a round::chromium",
+        "duration": 3746
+      },
+      {
+        "key": "ux22-help-wayfinding.spec.ts::UX22-H6 trial help reaches preparation and the explicit fifteen second entry confirmation without consuming the seal::chromium",
+        "duration": 3597
+      }
+    ]
+  },
+  "native": {
+    "passed": 15,
+    "files": [
+      "configuration-store.spec.ts",
+      "configuration.spec.ts"
+    ],
+    "wholeSelectedRun": true,
+    "automaticRetry": 0,
+    "skipped": 0,
+    "tests": [
+      {
+        "key": "configuration-store.spec.ts::Store configuration prepares without writing and applies instantly with a distinct source instead of an action clock::chromium",
+        "duration": 811
+      },
+      {
+        "key": "configuration-store.spec.ts::Store configuration quota retry preserves the exact selected command and never invents a new authorization::chromium",
+        "duration": 462
+      },
+      {
+        "key": "configuration-store.spec.ts::Store configuration lost delivery stays retryable after refresh makes its original revision stale and replays without re-equipping::chromium",
+        "duration": 416
+      },
+      {
+        "key": "configuration-store.spec.ts::Store configuration rejects an old paused-activity confirmation after another arrangement replaces it at the same Game revision::chromium",
+        "duration": 406
+      },
+      {
+        "key": "configuration-store.spec.ts::a newer failed Store configuration replaces the retry identity and cannot silently continue an older selected action::chromium",
+        "duration": 389
+      },
+      {
+        "key": "configuration.spec.ts::read-only configuration compares real school, slots and relic effects and applies each selected change once::chromium",
+        "duration": 473
+      },
+      {
+        "key": "configuration.spec.ts::all learned slots and all owned relics stay selectable without repeated fees or automatic school changes::chromium",
+        "duration": 339
+      },
+      {
+        "key": "configuration.spec.ts::configuration binds the paused activity revision and cannot stop another arrangement at the same Game revision::chromium",
+        "duration": 328
+      },
+      {
+        "key": "configuration.spec.ts::configuration quota preserves all records and stable intent retry applies once::chromium",
+        "duration": 337
+      },
+      {
+        "key": "configuration.spec.ts::configuration abort preserves all records and stable intent retry applies once::chromium",
+        "duration": 341
+      },
+      {
+        "key": "configuration.spec.ts::configuration lost-delivery preserves all records and stable intent retry applies once::chromium",
+        "duration": 334
+      },
+      {
+        "key": "configuration.spec.ts::historic configuration replay returns the latest later loadout and original result without equipping again::chromium",
+        "duration": 305
+      },
+      {
+        "key": "configuration.spec.ts::configuration receipts reject altered scope, forged change proof and cross-purpose command reuse::chromium",
+        "duration": 364
+      },
+      {
+        "key": "configuration.spec.ts::configuration has no short-write bypass, and battle or invalid action confirmations cannot mutate the save::chromium",
+        "duration": 310
+      },
+      {
+        "key": "configuration.spec.ts::legal old configuration receipts still replay through ordinary execute while new writes require scoped confirmation::chromium",
+        "duration": 364
+      }
+    ]
+  },
+  "inputs": {
+    "frozen": 557,
+    "terminalUnchanged": true,
+    "protected13Unchanged": true
+  }
+}

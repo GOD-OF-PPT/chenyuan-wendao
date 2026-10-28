@@ -118,6 +118,8 @@ class InventoryTests(unittest.TestCase):
   if sealed_life.exists():files.update(ROOT/ref for ref in json.loads(sealed_life.read_text())['sourceReferences'])
   art24=ROOT/'art/redesign/art24.json'
   if art24.exists():files.update(ROOT/ref for ref in json.loads(art24.read_text())['sourceReferences'])
+  art25=ROOT/'art/redesign/art25.json'
+  if art25.exists():files.update(ROOT/ref for ref in json.loads(art25.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
