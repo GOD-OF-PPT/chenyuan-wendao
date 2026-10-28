@@ -1,0 +1,44 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "browser": "original Chrome tab387928607/browser1",
+  "before": {
+    "save": "已保存",
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "dialogs": 0,
+    "executions": 0,
+    "module": "./assets/index-BGLDxJIE.js",
+    "styles": [
+      "./assets/index-DUXsa4yg.css"
+    ]
+  },
+  "after": {
+    "save": "已保存",
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "dialogs": 0,
+    "executions": 0,
+    "module": "./assets/index-BZrXaK4C.js",
+    "styles": [
+      "./assets/index-9sZnLajC.css"
+    ]
+  },
+  "visibleHudExact": true,
+  "userGameActions": 0,
+  "userStorageRead": false,
+  "userSaveUsedForTests": false,
+  "payloadFiles": 93,
+  "runningPackage": "artifacts/goal-4/art26/committed-frozen/web",
+  "readOnlyScene": {
+    "body": "ready",
+    "path": "art/v2/actors/player-loadout-idle-v1.webp",
+    "scene": "ready",
+    "slots": [
+      "尚未装备",
+      "尚未装备",
+      "尚未装备",
+      "尚未装备"
+    ],
+    "actualNativeScreenshotViewed": true
+  },
+  "scope": "Only saved/stopped original tab reload, public saved-ready signal, readonly skills/summary navigation and actual native screenshot. No user DB read/test/import/restore/restart/pause, Game action or viewport override; not whole user DB equality or compatibility.",
+  "leftAt": "功法 / 配装；凡人真实四空位、静立角色/内景，未择法/未执行"
+}
