@@ -112,6 +112,8 @@ class InventoryTests(unittest.TestCase):
   if art18.exists():files.update(ROOT/ref for ref in json.loads(art18.read_text())['sourceReferences'])
   trial_guidance=ROOT/'art/redesign/trial-guidance.json'
   if trial_guidance.exists():files.update(ROOT/ref for ref in json.loads(trial_guidance.read_text())['sourceReferences'])
+  trial_return=ROOT/'art/redesign/trial-return.json'
+  if trial_return.exists():files.update(ROOT/ref for ref in json.loads(trial_return.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)

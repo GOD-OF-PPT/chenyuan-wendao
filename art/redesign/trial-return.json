@@ -1,0 +1,23 @@
+{
+  "format": "chenyuan-trial-return",
+  "version": 1,
+  "task": "UX21 P1-03",
+  "maxNativeBytes": 7000,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/trial-return.ts",
+      "bytes": 1364,
+      "sha256": "e1980a75d6d92a0d8ba4b73470e862aebbc2499cc52fef01e7fab47373e02fa9"
+    },
+    {
+      "path": "web/src/TrialReturnChoices.vue",
+      "bytes": 2987,
+      "sha256": "5555c5c1302a32c0848a90e99e3f32084a4a629bf1c5104fb5dffe70d8998fd2"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0054-trial-return-ux21-contract.md",
+    "goal-4/amendments/2026-10-28-goal-continue-ux21.md"
+  ]
+}
