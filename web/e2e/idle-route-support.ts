@@ -266,7 +266,7 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
   expect(activity.plan).toEqual({ kind: 'milestone', action: { type: 'END', ending: options.ending }, maxCycles: 1 });
   expect(activity.status).toBe('stopped'); expect(activity.completedCycles).toBe(1);
   expect(onlineMs).toBe(expected.onlineMs); expect(errors).toEqual([]);
-  await expect(page.getByTestId('life-panel')).toBeVisible(); await expect(page.locator('#feature-title')).toHaveText('此生收卷');
+  await expect(page.getByTestId('life-panel')).toBeVisible(); await expect(page.locator('#feature-title')).toHaveText('修仙生平');
   await page.screenshot({ path: info.outputPath('normal-idle-ascension.png') });
   await page.reload(); await expect(page.getByTestId('save-status')).toHaveText('已保存');
   expect(await snapshot(page)).toEqual(final); expect(await activitySnapshot(page)).toEqual(activity);

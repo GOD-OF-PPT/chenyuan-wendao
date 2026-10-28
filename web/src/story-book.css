@@ -45,3 +45,5 @@
  .single-screen .book-person{flex-basis:82px;padding:6px 2px}.single-screen .book-person figcaption{font-size:calc(16px * var(--font-scale,1));letter-spacing:normal}.single-screen .book-canvas .reading-text{margin:6px;padding:8px 10px}.single-screen .narrative-choices.book-copy{padding:6px}.single-screen .book-landscape>.reading-text{flex:1;max-width:none}.single-screen .book-caption{display:none}
 }
 @media(prefers-reduced-motion:reduce){.single-screen .narrative-choices .choice-act{transform:none!important}}
+
+.single-screen .trial-book.checkpoint-blocked .book-caption{display:none}

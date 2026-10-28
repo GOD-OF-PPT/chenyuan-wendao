@@ -1,0 +1,198 @@
+{
+  "runtimeDigest": "1fd651bbb71d3f31f7a2d0d2c8b0bce5fa1cddefde59af40ab71b023522e31f0",
+  "scope": "current fixed1440x900/font1 Chromium only",
+  "frames": [
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-forge.png",
+      "sha256": "f9a87face6e03ec445112d6233b578f3bef1934aa8c84912ff2fda17bd0286a7",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/eight-hub-forge.jpg",
+      "viewSha256": "94f42c6fa098b14d110d781a021afd143e12918cdff61d49688b2a6f166bce7b",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": true,
+      "prior": "artifacts/goal-4/check-ux21-23/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-forge.png",
+      "priorReview": "eight-views/index.json",
+      "pixelReview": "inherited exact whole PNG from actually reviewed same turn"
+    },
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-life.png",
+      "sha256": "758ff8772cbbe928d4150f60d25c83ae500f5431e8709ac9d16150d0547223a1",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/eight-hub-life.jpg",
+      "viewSha256": "d1cfa037223fac670282cea1d33fa34797b32502d83c53d4f18cc3de2548a692",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": true,
+      "prior": "artifacts/goal-4/check-ux21-23/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-life.png",
+      "priorReview": "eight-views/index.json",
+      "pixelReview": "inherited exact whole PNG from actually reviewed same turn"
+    },
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-relics.png",
+      "sha256": "5e48a3125797d4426b9b7355a62b9d591f77637372dded012728deba367b7d42",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/eight-hub-relics.jpg",
+      "viewSha256": "b36f833fd224956fc18b7b9e07aef120bb7a00f9bd4bf7b5765667d4495736cc",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": true,
+      "prior": "artifacts/goal-4/check-ux21-23/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-relics.png",
+      "priorReview": "eight-views/index.json",
+      "pixelReview": "inherited exact whole PNG from actually reviewed same turn"
+    },
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-skills.png",
+      "sha256": "07c92f90e64df51241430470eecb67d99e29fadecd123efe55afad80a957e139",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/eight-hub-skills.jpg",
+      "viewSha256": "80fa42267816bac9fdcbbf624bf9b5d3133f3277f49f7feb667e51229994dcda",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": true,
+      "prior": "artifacts/goal-4/check-ux21-23/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-hub-skills.png",
+      "priorReview": "eight-views/index.json",
+      "pixelReview": "inherited exact whole PNG from actually reviewed same turn"
+    },
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-0.png",
+      "sha256": "af0f67e644247d805f7cdf7644106581367d1cd66653d12a8c6fad2b6699c1f9",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/eight-tab-0.jpg",
+      "viewSha256": "74a211a392970c88888fffd2c6cd3d452ec262d82b75c76b2ff71a23fa0edc45",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": true,
+      "prior": "artifacts/goal-4/check-ux21-23/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-0.png",
+      "priorReview": "eight-views/index.json",
+      "pixelReview": "inherited exact whole PNG from actually reviewed same turn"
+    },
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-1.png",
+      "sha256": "0ed978e1af6427c8e62140de2e1bb8aa450fac92dff60a5bcc0eff12cd5fa62f",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/eight-tab-1.jpg",
+      "viewSha256": "b2514edab821e61a4bdfa2dc592f2772b8f474728816be61f17a20a86830e4b0",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": true,
+      "prior": "artifacts/goal-4/check-ux21-23/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-1.png",
+      "priorReview": "eight-views/index.json",
+      "pixelReview": "inherited exact whole PNG from actually reviewed same turn"
+    },
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-2.png",
+      "sha256": "b8da965bc584303d1f8dec851de4865c5d2c0822dfd831b455dfda3dbf81656c",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/eight-tab-2.jpg",
+      "viewSha256": "80ff9ce93661360858eb2bca76b2cf69c3353683da5acfeea865ceb3cce122da",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": true,
+      "prior": "artifacts/goal-4/check-ux21-23/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-2.png",
+      "priorReview": "eight-views/index.json",
+      "pixelReview": "inherited exact whole PNG from actually reviewed same turn"
+    },
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-3.png",
+      "sha256": "796f72f26655edb9ff3e4da3cc112881854b1d05e933447dbce2e596ceae6d96",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/eight-tab-3.jpg",
+      "viewSha256": "755e31a2d22ba4d78683519712385be4ac6b4a83be101fcb5ef884d5527be085",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": true,
+      "prior": "artifacts/goal-4/check-ux21-23/regular-results/check-art16-m45-CROSS-M45--c0c20-rfaces-without-a-Game-write-chromium/eight-tab-3.png",
+      "priorReview": "eight-views/index.json",
+      "pixelReview": "inherited exact whole PNG from actually reviewed same turn"
+    },
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-ux21-23-CHECK-UX-C1--ce62c-es-only-the-adjacent-report-chromium/verified-return-after-help-and-real-rest.png",
+      "sha256": "50e33ea1acd73f655e0e3fb50b0ca3bed18c20a7812a84f27987110cc05ce18e",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/verified-return-after-help-and-real-rest.jpg",
+      "viewSha256": "03105a5ab6bbbd53560c88532998606dde80b5dca7665784fefa03bc323a5b4c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": true,
+      "prior": "artifacts/goal-4/check-ux21-23/combinations-v2-results/check-ux21-23-CHECK-UX-C1--ce62c-es-only-the-adjacent-report-chromium/verified-return-after-help-and-real-rest.png",
+      "priorReview": "early-views/index.json",
+      "pixelReview": "inherited exact whole PNG from actually reviewed same turn"
+    },
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-ux21-23-CHECK-UX-C2--7bdb2-t-a-different-authorization-chromium/long-name-actual-sealed-book.png",
+      "sha256": "bef8d52acbb83c3ff98f7355df3abc9a35470f8b3f602f6caf34048af25636b3",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/long-name-actual-sealed-book.jpg",
+      "viewSha256": "a5b5b75ab12e0ba5b9acae2db69d8ae74f4d315c26757fc89fa3a3a1bada5292",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": false,
+      "prior": "artifacts/goal-4/check-ux21-23/combinations-v2-results/check-ux21-23-CHECK-UX-C2--7bdb2-t-a-different-authorization-chromium/long-name-actual-sealed-book.png",
+      "priorReview": "early-views/index.json",
+      "pixelReview": "fresh actual view of current1fd: full name/current Game, error band/book and restored active return readable, no new overlap"
+    },
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-ux21-23-CHECK-UX-C2--7bdb2-t-a-different-authorization-chromium/long-name-real-quota-book.png",
+      "sha256": "b1953914184565eeeaaa942a406527a5502bc351f00f51f547c3f01357281f53",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/long-name-real-quota-book.jpg",
+      "viewSha256": "8318ff94b2cdb8b145b24a6765209d698a9fdbe9a04db6c337bf493dad1cfe18",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": false,
+      "prior": "artifacts/goal-4/check-ux21-23/combinations-v2-results/check-ux21-23-CHECK-UX-C2--7bdb2-t-a-different-authorization-chromium/long-name-real-quota-book.png",
+      "priorReview": "early-views/index.json",
+      "pixelReview": "fresh actual view of current1fd: full name/current Game, error band/book and restored active return readable, no new overlap"
+    },
+    {
+      "original": "artifacts/goal-4/check-ux21-23/regular-v2-results/check-ux21-23-CHECK-UX-C3--e15d5-t-focus-the-old-hidden-book-chromium/restored-life-old-restart-cancelled.png",
+      "sha256": "23978669980a10299f2ea2b27b403868f9baf224fab9fdf757c0d48491232890",
+      "view": "artifacts/goal-4/check-ux21-23/current-views/restored-life-old-restart-cancelled.jpg",
+      "viewSha256": "0fc40d7b3a4f07d090c50897e8c4d0f52e675310d31402176371726ee5c400f3",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same dimensions, original retained",
+      "sameWholePngAsReviewed": false,
+      "prior": "artifacts/goal-4/check-ux21-23/combinations-v2-results/check-ux21-23-CHECK-UX-C3--e15d5-t-focus-the-old-hidden-book-chromium/restored-life-old-restart-cancelled.png",
+      "priorReview": "early-views/index.json",
+      "pixelReview": "fresh actual view of current1fd: full name/current Game, error band/book and restored active return readable, no new overlap"
+    }
+  ],
+  "freshThisPhase": 3,
+  "exactWholePngInheritedThisPhase": 9,
+  "priorChains": [
+    "early-views/index.json",
+    "eight-views/index.json",
+    "goal-4/evidence/check-art18-ux/visual-review.json"
+  ],
+  "repairRed": "artifacts/goal-4/check-ux21-23/early-views/pending-source-canvas-red.jpg",
+  "repairGreen": "artifacts/goal-4/check-ux21-23/early-views/pending-source-canvas-green.jpg",
+  "repairBothActuallyViewed": true,
+  "wholeArtAccepted": false,
+  "remainingArt": "Current school page still has a large dark flat plane and small objects; user overall gamefeel feedback remains valid. Next ART24 is a concrete art task, not compatibility."
+}

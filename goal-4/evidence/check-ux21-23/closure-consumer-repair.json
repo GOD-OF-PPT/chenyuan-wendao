@@ -1,0 +1,7 @@
+{
+  "changedFile": "web/e2e/idle-stage-ui.spec.ts",
+  "before": "ee9a90a1dc1bcf2f6c8188529254a032c0e777d5a68b15e9004454601be5dc30",
+  "after": "e00425a9cbd6f4b6516a48bd3f37298d4cd4fd718e77f1fc5775ac088422b3f0",
+  "exactReplacementOnly": true,
+  "productionRuntimeUnchanged": true
+}

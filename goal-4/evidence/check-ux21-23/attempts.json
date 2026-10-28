@@ -1,0 +1,34 @@
+{
+  "firstSource": "3984",
+  "firstExploratory": {
+    "passed": 317,
+    "failed": 4,
+    "interrupted": 1,
+    "notRun": 318,
+    "report": "artifacts/goal-4/check-ux21-23/regular-report.json",
+    "whyStopped": "Identified duplicate blocker production layout and obsolete UI consumers; own exact runner stopped, all outputs kept, no completion claim"
+  },
+  "repair": {
+    "passed": 4,
+    "report": "artifacts/goal-4/check-ux21-23/repair-report.json",
+    "production": "Unify prep/checkpoint blocker with existing footer and remove duplicate decorative caption only there; keep full text/18/14/44/menus and original CAS",
+    "testConsumers": "Capture actual old settings DOM and prove disconnection plus replacement rather than absence of reused testid; preserve trusted close/readonly/Tab assertions. Actual life detail title is 修仙生平."
+  },
+  "currentWholeRegular": {
+    "passed": 639,
+    "failed": 1,
+    "report": "artifacts/goal-4/check-ux21-23/regular-v2-report.json",
+    "failure": "A second unchanged idle-stage closing-seal test still expected 此生收卷. One exact title literal corrected, production unchanged; original same whole test passed in closure-report."
+  },
+  "closure": {
+    "passed": 1,
+    "report": "artifacts/goal-4/check-ux21-23/closure-report.json",
+    "remainingAsserts": "All original stamp/canvas/reading/tab/pager boundaries, whole Game, lifecycle/period and one outcome retained"
+  },
+  "separateSlow": {
+    "passed": 2,
+    "report": "artifacts/goal-4/check-ux21-23/slow-v2-report.json",
+    "sameOriginal60Seconds": true
+  },
+  "qualification": "642 unique current same-runtime coverage, not a single642 green group. No timeout inflation, assertion removal, automatic retry or source relabel."
+}

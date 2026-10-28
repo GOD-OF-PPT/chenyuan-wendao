@@ -29,12 +29,12 @@ export async function installRetirementDeliveryGate(page:Page){
   w.__m04LifeDelivery={state,armClose(){state.closeArmed=true;},armRead(){state.readArmed=true;},releaseClose(){state.closeArmed=false;release(closePending);},releaseRead(){state.readArmed=false;release(readPending);},cleanup(){state.closeArmed=false;state.readArmed=false;EventTarget.prototype.addEventListener=add;EventTarget.prototype.removeEventListener=remove;IDBObjectStore.prototype.get=get;Object.defineProperty(IDBTransaction.prototype,'oncomplete',descriptor);remove.call(document,'keydown',input,true);for(const r of bindings){remove.call(r.target,r.type,r.wrapped,r.options);add.call(r.target,r.type,r.listener,r.options);}release(closePending);release(readPending);}};
  });
 }
-export async function armRetirementClose(page:Page){await page.evaluate(()=>(window as any).__m04LifeDelivery.armClose());}
+export async function armRetirementClose(page:Page){await page.evaluate(()=>{(window as any).__m04OldSettings=document.querySelector('[data-testid=game-settings]');(window as any).__m04LifeDelivery.armClose();});}
 export async function armRetirementRead(page:Page){await page.evaluate(()=>(window as any).__m04LifeDelivery.armRead());}
 export async function releaseRetirementInOrder(page:Page,newInput=false){
  await expect.poll(()=>page.evaluate(()=>(window as any).__m04LifeDelivery.state.readHeld.length)).toBe(1);
  await expect.poll(()=>page.evaluate(()=>(window as any).__m04LifeDelivery.state.closeHeld.length)).toBeGreaterThan(0);
- await expect(page.getByTestId('hub-current')).toContainText('主动归隐');await expect(page.getByTestId('game-settings')).toHaveCount(0);
+ await expect(page.getByTestId('hub-current')).toContainText('主动归隐');await expect.poll(()=>page.evaluate(()=>(window as any).__m04OldSettings?.isConnected)).toBe(false);await expect(page.getByTestId('sealed-life-hud')).toBeVisible();await expect(page.getByTestId('game-settings')).toHaveCount(1);
  await page.evaluate(()=>(window as any).__m04LifeDelivery.releaseClose());await expect(page.getByTestId('hub-current')).toBeFocused();
  if(newInput)await page.keyboard.press('Tab');const selected=await page.evaluateHandle(()=>document.activeElement);
  const evidence=await page.evaluate(()=>(window as any).__m04LifeDelivery.state);expect(evidence.closeHeld.every((r:any)=>r.trusted&&r.type==='close')).toBe(true);expect(evidence.readHeld).toEqual([{trusted:true,type:'complete',mode:'readonly',database:'chenyuan-playable-v1'}]);if(newInput)expect(evidence.inputs).toEqual([{key:'Tab',trusted:true}]);else expect(evidence.inputs).toEqual([]);

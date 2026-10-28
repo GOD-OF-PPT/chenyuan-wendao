@@ -28,8 +28,8 @@
     },
     {
       "path": "web/src/TrialCatalogue.vue",
-      "bytes": 11251,
-      "sha256": "7f4f7f4b2abfff1d959705098349f291ffb0817dff921455d922e9a99d494afb"
+      "bytes": 11479,
+      "sha256": "a721e499869fb198dd382db3ce7a03257ce80786cba49ba17fc666e8c08b1ab0"
     },
     {
       "path": "web/src/ReviewPages.vue",
@@ -38,8 +38,8 @@
     },
     {
       "path": "web/src/story-book.css",
-      "bytes": 8020,
-      "sha256": "94fed5903d79151ae828f475308c586895af1bdb688d3c63ad7554c4c4144908"
+      "bytes": 8095,
+      "sha256": "f8895a2b4ff2ae96a9ad9865f077d9d655a743b86000c12b3914a28dc3ebbe95"
     },
     {
       "path": "web/src/reading-memory.ts",

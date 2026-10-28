@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-29",
+  "task": "CHECK-UX21-23",
+  "runtimeDigest": "1fd651bbb71d3f31f7a2d0d2c8b0bce5fa1cddefde59af40ab71b023522e31f0",
+  "ui": {
+    "currentUnique": 642,
+    "regularPassed": 639,
+    "regularFailedTitleOriginal": 1,
+    "targetedSameCasePassed": 1,
+    "predeclaredSlowPassed": 2,
+    "singleWholeUiGreenRun": false,
+    "profile": "Chromium1440x900/font1",
+    "automaticRetry": 0,
+    "evidence": "coverage-audit.json and all original reports retained"
+  },
+  "native": {
+    "current": 415,
+    "wholeRun": true,
+    "retry": 0,
+    "skip": 0,
+    "report": "artifacts/goal-4/check-ux21-23/native-v2-report.json"
+  },
+  "normal": {
+    "current": 32,
+    "wholeRun": true,
+    "base": 24,
+    "foundation": 6,
+    "perRoundReopen": 2,
+    "retry": 0,
+    "skip": 0,
+    "report": "artifacts/goal-4/check-ux21-23/journeys-v2-report.json",
+    "note": "Normal visible finite plans with virtual periods; not real-world progression speed or human balance."
+  },
+  "rules": {
+    "actual": 873,
+    "wholeRun": true,
+    "report": "artifacts/goal-4/check-ux21-23/rules-v2.log"
+  },
+  "resources": {
+    "actual": 468,
+    "wholeRun": true,
+    "positiveRootAndSandboxFirst": true,
+    "report": "artifacts/goal-4/check-ux21-23/resources-v2.log"
+  },
+  "code": {
+    "runtimeChanges": [
+      "web/src/TrialCatalogue.vue",
+      "web/src/story-book.css"
+    ],
+    "TrialCatalogueScriptUnchanged": true,
+    "GameStoreDBClockProofUnchanged": true,
+    "newBitmaps": 0,
+    "storyNativeBytes": 47244,
+    "originalStoryCap": 48000,
+    "noCapsRaised": true
+  },
+  "inputs": {
+    "terminalExact": 581,
+    "original13Exact": true
+  },
+  "notRun": [
+    "compatibility",
+    "environment/performance",
+    "clean candidate recreation",
+    "final maximum project review",
+    "long-term balance",
+    "human acceptance"
+  ],
+  "preserved": [
+    "ART17 original four performance reds and unknowns",
+    "user negative overall art/gamefeel feedback",
+    "all failed interrupted and superseded source reports",
+    "v0.3/original inputs/assets/saves/protected13"
+  ],
+  "next": "ART24 school/skill stage scene and object proportions, then continuing art obligations; no compatibility work"
+}
