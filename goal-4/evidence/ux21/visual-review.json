@@ -1,0 +1,62 @@
+{
+  "runtimeDigest": "a4628afd1d55a8be9185a3c002be710d275fe2c41240b004491dde5826efeb52",
+  "views": [
+    {
+      "original": "artifacts/goal-4/ux21/regression-results/ux21-trial-return-UX21-A1--3914c--as-readonly-main-decisions-chromium/trial-return-main.png",
+      "sha256": "30fe2ac924e0a7bb74830c0c147c8da4a25cfa02e17dd316a7b5baaaccde822a",
+      "view": "artifacts/goal-4/ux21/views/trial-return-main.jpg",
+      "viewSha256": "ff255fbcd4a509c35e13b78c7967b7a705959f9cde4caaa580adbb60b1343be7",
+      "size": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same-size; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/ux21/regression-results/ux21-trial-return-UX21-A2--0ee3e-he-complete-checkpoint-once-chromium/complete-restored-original-preparation.png",
+      "sha256": "23f81be8892e74a43d7b68c34710cd5e9b52e9c25ed2c24613d08329f3055e02",
+      "view": "artifacts/goal-4/ux21/views/complete-restored-original-preparation.jpg",
+      "viewSha256": "8095fe7eb0e929842ab21ec56df7bb64695d70512b2750fe7b76061767c93f38",
+      "size": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same-size; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/ux21/regression-results/ux21-trial-return-UX21-A3--9d7a9-s-deterministic-preparation-chromium/no-invented-checkpoint.png",
+      "sha256": "1fa06e175bfde97a06aa51ddb76c63a59a24c51bc474e0cd0f8f94863a0c4a02",
+      "view": "artifacts/goal-4/ux21/views/no-invented-checkpoint.jpg",
+      "viewSha256": "c829ce3019deeec4730ab29cd1d1e3831c98a4386a79129ff1401fcb7c742721",
+      "size": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same-size; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/ux21/regression-results/ux21-trial-return-UX21-A4--bcd9f-ation-and-refresh-ownership-chromium/verified-return-after-rest.png",
+      "sha256": "8cca4b72f7280a83b75e7b04fd928f6d5a4dba8d90ea23ff6863ee5d1f0bb5b7",
+      "view": "artifacts/goal-4/ux21/views/verified-return-after-rest.jpg",
+      "viewSha256": "91df83aa3ea4df86d055a33d837e4cc43e6378c07d6b79c7d3f3768b4d63f7c4",
+      "size": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same-size; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/ux21/regression-results/ux21-trial-return-UX21-A5--17f3f-y-inspection-stays-readonly-chromium/original-rest-quota-return.png",
+      "sha256": "e7dc95fba378ad966d82044d736ea0761d5e079b675043b8464200040a6c42e9",
+      "view": "artifacts/goal-4/ux21/views/original-rest-quota-return.jpg",
+      "viewSha256": "f4ddd75689c413fd7048e0d18253a4923d48992c0cb41c538fc442c464cb1e98",
+      "size": [
+        1440,
+        900
+      ],
+      "encoding": "JPEG68 same-size; original PNG retained"
+    }
+  ],
+  "review": "All5 current regression frames manually reviewed sequentially: main last-seal choice, rest-quota readonly return, noCP import, neutral validCP after REST, complete restored preparation. Actual18body/14small/44targets/screen/hit/full content checked; original PNGs and same-size JPEG68 preserved.",
+  "scope": "Current representative pixels, not full623 art coverage, long-term gameplay or human acceptance."
+}

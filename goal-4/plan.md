@@ -1,3 +1,17 @@
+## UX21 已独立交付（2026-10-28）
+
+- [x] UX21/P1-03：代码`eabc606448dd36f73e66219b1180bb4cdcdce4dc`，运行`a4628afd1d55a8be9185a3c002be710d275fe2c41240b004491dde5826efeb52`。缺引且有当前已核对trial CP/相邻事实时，主舞台可查看完整恢复或保留现状查看重筹；第一步仅CP阅读，不写意图，进一步沿原完整确认/0.6秒/原件/newrun/原子恢复。无CP/普通CP/待核对分清，REST后保有效CP但不演旧战报，旧手记/全来源/预算/普通恢复和原retry均保。
+- 当前单轮124相关UI（8新＋116旧）、27原生恢复/控制、30模型/引导（5新）、资源真实/沙盒正向＋9新旧守卫（6新）、根/Vue类型构建过；旧quota/committed-lost/普通CP/失效与新人生均有据，单列8不重复增覆盖。不是全623/正常32/native415/整规则资源462新轮，上一5dc证保原身份。只1440×900/font1单Chromium，不兼容/环境性能。
+- 新两纯表现4351/7000B，原story46941/48000及其它帽不涨，0新图/Gameplay/Store/DB9/时长。原入口红/两新测试前提错误保全，不改Game inventory凑最后一引；新ledger已同步沙盒依据并先正向过。5当前实拍逐张审，全文/18/14/44/命中/错误态和返回核实，不代整体艺术或真人。
+- 296 Git运行blob/受测-重建-冻结相等，91载荷9263626B/HTTP全同；原56884更新前后已保存/停止/凡人10/10/60/20/40/2of50可见HUD一致，新JS/CSS实际加载，无用户档测试/读取/导入/恢复/重开。13保护不变未提交，无push/合并/公开部署/权限变更，非干净候选。
+- 证据：[checks](evidence/ux21/checks.json)、[review](evidence/ux21/review.md)、[coverage](evidence/ux21/coverage-audit.json)、[identity](evidence/ux21/identity-proof.json)、[visual](evidence/ux21/visual-review.json)、[preview](evidence/ux21/user-preview.json)。原生Goal实读active，整体未complete；原自动化未改。
+
+[杠精审查] 通过，仅UX21工程范围，P1-03仍待真人整体复验。新三项周期第1项完成，下一唯一**UX22帮助/实际入口命名与动词一致（P2-02）**，再UX23封卷游戏呈现/返回一致（P2-03），随后三项综合检查。其它ART/TA/游戏感、ART17性能4红、全部最终矩阵/兼容最后/干净包/最大review/长期真人未完成。以下旧状态保持历史，以本段最新记录为准。
+
+## UX21 当前唯一实施项（2026-10-28）
+
+基线58a2d8a/5dc46118，上一三任务检查已真实交付，Goal active。0054/本轮原话/13保护先于代码；只P1-03主决策的完整恢复/保留现状筹备。新两纯展示模块≤7000B、原48000/ART17/ART06/playable帽不涨、0新图/规则/DB；原恢复0.6秒/完整回退/原件/新run/同command retry保。先原真入口红，真START/问心/撤退生成CP；有/无/未知/普通CP、REST后/刷新/新人生、quota/committed-lost/返回和像素分开验证。只1440/font1单Chromium，不兼容/环境性能。实际结果/GJ待填；新三项周期第1，后续P2/ART/性能原4红/全矩阵/干净包/最大review/长期真人保持。
+
 ## CHECK-ART18-UX 已独立交付（2026-10-28）
 
 - [x] CHECK-ART18-UX：代码`380f8ebaa9be335b8c78422a9e3d2262b0efd1f4`，运行`5dc461186dd3bba4d3dff8ec639a64551a2b09b0206137bcd6e7072f7db2dde9`。真实修复END quota错误栏下行程被导航遮挡，仅收TrialGoal留白，不缩字/藏内容/改控制器；脚本/template/规则/Store/DB9/读秒/原命令不变，旧cap不涨，0新图/玩法。

@@ -1,0 +1,15 @@
+{
+  "codeCommit": "eabc606448dd36f73e66219b1180bb4cdcdce4dc",
+  "runtimeDigest": "a4628afd1d55a8be9185a3c002be710d275fe2c41240b004491dde5826efeb52",
+  "runtimeInputs": 296,
+  "payloadFiles": 91,
+  "payloadBytes": 9263626,
+  "allGitTestedRebuiltBytesEqual": true,
+  "cleanCandidate": false,
+  "original13PreservedNotCommitted": true,
+  "http": {
+    "raw": "artifacts/goal-4/ux21/http-identity.json",
+    "sha256": "ea51fdad05e72fe82abacfe59faf09201426464cae08dff4aff70cf2b8a20dde",
+    "all91DecodedBytesEqual": true
+  }
+}

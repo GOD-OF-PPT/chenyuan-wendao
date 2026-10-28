@@ -1,0 +1,96 @@
+{
+  "task": "UX21 P1-03",
+  "codeCommit": "eabc606448dd36f73e66219b1180bb4cdcdce4dc",
+  "runtimeDigest": "a4628afd1d55a8be9185a3c002be710d275fe2c41240b004491dde5826efeb52",
+  "ui": {
+    "passed": 124,
+    "newCases": 8,
+    "stats": {
+      "startTime": "2026-10-28T13:45:57.451Z",
+      "duration": 488215.003,
+      "expected": 124,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "raw": "artifacts/goal-4/ux21/regression-report.json",
+    "sha256": "318555f37a41e3ca536c7e5939f43d96b83f9141e03af01a538e62e7dbf377bb",
+    "scope": "One current124 related-UI run; new8 also passed separately, not counted twice. Fixed1440x900/font1 Chromium,workers2,retries0."
+  },
+  "native": {
+    "passed": 27,
+    "stats": {
+      "startTime": "2026-10-28T13:55:31.554Z",
+      "duration": 22490.152000000002,
+      "expected": 27,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "raw": "artifacts/goal-4/ux21/native-report.json",
+    "sha256": "208ccac30456815d21c74743ef09123bcbb2526e1e17fe0b2199e4df53a563be",
+    "scope": "Named recovery/restore/control subset, not full415."
+  },
+  "unit": {
+    "passed": 30,
+    "newProjectionCases": 5,
+    "raw": "artifacts/goal-4/ux21/unit.log",
+    "sha256": "5a8d9cd0abbfd3c94b253e1668e26c57b50bc17aeb682acfd7b473453d0ad685"
+  },
+  "resources": {
+    "positiveInventory": {
+      "raw": "artifacts/goal-4/ux21/inventory.log",
+      "sha256": "f2a9775a3137ed65736f46d50a660f78d55858a68b0ffbc19bbe1e9f02b14ca4"
+    },
+    "positiveSandboxAndRelevantGuards": {
+      "raw": "artifacts/goal-4/ux21/guards.log",
+      "sha256": "3de99e813eba0de73d6d55a370e7a5322fa247e5a498050ad6efe1d492cef029"
+    },
+    "passedGuardCases": 9,
+    "newGuardCases": 6,
+    "oldCases": "Global sandbox positive and two original story budget/consumer guards."
+  },
+  "typesBuild": {
+    "root": {
+      "raw": "artifacts/goal-4/ux21/root-types.log",
+      "sha256": "f4db2c939da9c86ddc28dd7279e9d43cdaccb955d89c68482425e95ef8b37061"
+    },
+    "vue": {
+      "raw": "artifacts/goal-4/ux21/build.log",
+      "sha256": "65d0686269722d24aaab602b3b936c21b496d632b3347fa18482f395b8544e7c"
+    },
+    "committed": {
+      "raw": "artifacts/goal-4/ux21/committed-build.log",
+      "sha256": "bae70333398151b6e9c2e25c1089993dba83d8b590cdb9119e3c017714a44381"
+    },
+    "passed": true
+  },
+  "inputs": {
+    "raw": "artifacts/goal-4/ux21/pre-run-inputs-v2.json",
+    "sha256": "af73673d530ee185be4850dbf19e031da925027671d9c4c74b955cd75cab2eba"
+  },
+  "coverage": {
+    "raw": "artifacts/goal-4/ux21/coverage-audit.json",
+    "sha256": "b021aefcd8192cbc95b8c2e25a810d327c279a30c03cfec73f1b642ae8eb083f"
+  },
+  "retainedFailures": [
+    {
+      "raw": "baseline-report.json",
+      "reason": "New fixture incorrectly used two-seal scenario while expecting last-seal0; corrected by legal trialPreparationRunner quantity1, not editing Game inventory."
+    },
+    {
+      "raw": "baseline-entry-report.json",
+      "reason": "Genuine old main-interface entry missing after formal START/ANSWER/FLEE generated the valid CP."
+    },
+    {
+      "raw": "first-current-report.json",
+      "reason": "Four passed; new test referenced non-existing recovery-start instead of actual preparation-start. Corrected selector only, not production behaviour."
+    }
+  ],
+  "limits": [
+    "Current related124/native27/model30/guard9 only; full623 UI/normal32/native415/whole rules/resource462 not rerun. Previous comprehensive5dc source evidence preserved, not relabelled.",
+    "Rules/Store/Repository/DB9/old proof/periods unchanged; new trusted model reads Store-verified CP only, not standalone restore authority.",
+    "Legal late UI fixtures are not normal earning/human/long-term growth proof.",
+    "No compatibility/environment/performance. P2-02/P2-03, broader art/game-feel, ART17 performance4reds, final matrices/clean package/maximal reviews/human acceptance remain pending."
+  ]
+}

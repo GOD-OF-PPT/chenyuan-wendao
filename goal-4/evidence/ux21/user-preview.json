@@ -1,0 +1,40 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "tab": "387928607",
+  "runtimeDigest": "a4628afd1d55a8be9185a3c002be710d275fe2c41240b004491dde5826efeb52",
+  "before": {
+    "name": "顾长青",
+    "realm": "凡人 · 尚未择法",
+    "hp": "60 / 60",
+    "mp": "20 / 20",
+    "xp": "10 / 10",
+    "stones": 40,
+    "activity": "自然吐纳 stopped2/50,30s",
+    "save": "已保存"
+  },
+  "after": {
+    "name": "顾长青",
+    "realm": "凡人 · 尚未择法",
+    "hp": "60 / 60",
+    "mp": "20 / 20",
+    "xp": "10 / 10",
+    "stones": 40,
+    "activity": "自然吐纳 stopped2/50,30s",
+    "save": "已保存"
+  },
+  "fullVisibleHudEqual": true,
+  "beforeModule": "./assets/index-nODRW7Qg.js",
+  "afterModule": "./assets/index-C_y5y7O2.js",
+  "beforeStyles": [
+    "./assets/index-CdVs4qk3.css"
+  ],
+  "afterStyles": [
+    "./assets/index-dovKSFoL.css"
+  ],
+  "dialogsExecutionsBeforeAfter": 0,
+  "DOMReadOnlyOnly": true,
+  "noUserDatabaseReadOrGameplayImportRestoreRestart": true,
+  "oldServer": "Exact23368 command/check-art18-ux frozen script and old HTTP index verified; saved/stopped visible source before update.",
+  "newServerSession": 64467,
+  "scope": "Visible progress only, not full user database equality. All tests isolated."
+}
