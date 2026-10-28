@@ -1,0 +1,403 @@
+{
+  "attempts": [
+    {
+      "path": "artifacts/goal-4/check-art16-m45/art11-bulk-diagnostic-terminal.json",
+      "sha256": "db100a4b7afdad191e9ed7ae6a0d06b1e91c992fb5c6d1e65a684fddc003367b",
+      "phase": "art11-bulk-diagnostic",
+      "exit": 0,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T23:52:55.251Z",
+        "duration": 64510.959,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "diagnostic": true,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/assets-source2-current-terminal.json",
+      "sha256": "1a048844319fa790efe0fad7663acd34cd6e937ed8f3a979a622fb01b402d180",
+      "phase": "assets-source2-current-terminal",
+      "exit": null,
+      "passed": false,
+      "exact": true,
+      "sameGit": null,
+      "stats": null,
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/assets-source6-current-terminal.json",
+      "sha256": "0466e9752fa5ed3d4d3856a06b50243eb69849a837ddd7f6de59afe436efc84a",
+      "phase": "assets-source6-current-terminal",
+      "exit": null,
+      "passed": true,
+      "exact": true,
+      "sameGit": null,
+      "stats": null,
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/core-final-current-terminal.json",
+      "sha256": "d5914fcda079a3ab0e967a076d7081f8b0d240789141173f1101ff78bf8f3136",
+      "phase": "core-final-current-terminal",
+      "exit": null,
+      "passed": true,
+      "exact": true,
+      "sameGit": null,
+      "stats": null,
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/core-source6-current-terminal.json",
+      "sha256": "226c7328a5cb4d72a5e0cb79e6ab3c828526d64fc3b1b61fc9cc5f1558e95454",
+      "phase": "core-source6-current-terminal",
+      "exit": null,
+      "passed": true,
+      "exact": true,
+      "sameGit": null,
+      "stats": null,
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/cpu-resume-diagnostic-terminal.json",
+      "sha256": "28c1b8cf7582923b056bb3affe8728c56563563a215ae219abe1f1d9e483b617",
+      "phase": "cpu-resume-diagnostic",
+      "exit": 1,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T23:11:24.012Z",
+        "duration": 83050.374,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "diagnostic": true,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/fault-ready-diagnostic-terminal.json",
+      "sha256": "50db65bbd831f08da5567e1bda153d9cfeeac44a0aa90baf2b70a540dd54fb5d",
+      "phase": "fault-ready-diagnostic",
+      "exit": 0,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T23:55:18.484Z",
+        "duration": 39249.51,
+        "expected": 11,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "diagnostic": true,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/loading-after-source2-terminal.json",
+      "sha256": "7d4ef7da10efffba6676f3fd95d6df8bab9c0fe40b56c69c9055a2ead394b2a8",
+      "phase": "loading-after-source2",
+      "exit": 0,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T23:21:01.901Z",
+        "duration": 4621.778,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/loading-before-terminal.json",
+      "sha256": "22ee0b85bef6c598fa35323513428c0e43de4eb43eedf5daeea81f14f1b9f20d",
+      "phase": "loading-before",
+      "exit": 1,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T23:19:29.203Z",
+        "duration": 11743.046,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/native-fault-source6-terminal.json",
+      "sha256": "5e07b9292eafa415029a8a413032bedb94cb917b7a8ed520827b92c305877d93",
+      "phase": "native-fault-source6",
+      "exit": 0,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-28T00:33:01.446Z",
+        "duration": 36910.079999999994,
+        "expected": 11,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/native-full-source5-terminal.json",
+      "sha256": "3515646ff49177aded12dd2df0114e96dd74cdefb14ef1e00622394dce0127e5",
+      "phase": "native-full-source5",
+      "exit": 1,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T23:42:49.867Z",
+        "duration": 498374.45999999996,
+        "expected": 414,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/new-source1-terminal.json",
+      "sha256": "4977678ea382c20624598dc3eb34a75cdfab79b768754b45798971b8a894fed4",
+      "phase": "new-source1",
+      "exit": 1,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T22:29:45.532Z",
+        "duration": 170575.71000000002,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/new-target-source3-terminal.json",
+      "sha256": "83af045a18f3751c19962457c93061e16eeb95000ec1f80ef87e47637d67d157",
+      "phase": "new-target-source3",
+      "exit": 0,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T22:45:06.601Z",
+        "duration": 17484.644999999997,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/python-after-transport-terminal.json",
+      "sha256": "c2f7514b4731f68bbb8f52392d23f665741516b01053cb8dcfd9f7fbe7e4d463",
+      "phase": "python-after-transport",
+      "exit": 1,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T22:59:19.159Z",
+        "duration": 227094.21000000002,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/python-before-terminal.json",
+      "sha256": "fc678cd136ad821663d3f3a6a2582bfa29b1fa380c91c6f729ac51fd3aaf806d",
+      "phase": "python-before",
+      "exit": 1,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T22:10:41.109Z",
+        "duration": 241029.264,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/python-final-source2-terminal.json",
+      "sha256": "8faa7fa25d90cfb5de74ef244202823c68a7ffb24dcdea169b147d5adcdb6f2d",
+      "phase": "python-final-source2",
+      "exit": 1,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T23:21:43.494Z",
+        "duration": 202880.139,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/python-final-source4-terminal.json",
+      "sha256": "567db7d0809171d7dc38738e1bdda0cadcf9b22245487db12d729fe227f7411b",
+      "phase": "python-final-source4",
+      "exit": 1,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T23:26:51.591Z",
+        "duration": 209377.53,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/python-final-source5-terminal.json",
+      "sha256": "308b1c4e0bc4ab8abd02613504b2d71dafe468b4dd376a100184267e46e80054",
+      "phase": "python-final-source5",
+      "exit": 0,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T23:34:46.243Z",
+        "duration": 198313.453,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/school-prompt-before-terminal.json",
+      "sha256": "1dbe04aa6790237888c9b738de285c08a729acabdccf376619cb715d5a47e84f",
+      "phase": "school-prompt-before",
+      "exit": 1,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T22:56:34.824Z",
+        "duration": 14156.819999999998,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/timeline-resume-diagnostic-terminal.json",
+      "sha256": "cd39662f009f51ed91558a8cb3083441e67a29b2d1117d17b46e68cedb4002d9",
+      "phase": "timeline-resume-diagnostic",
+      "exit": 1,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T23:32:07.371Z",
+        "duration": 74312.296,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "diagnostic": true,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/ui-art11-source6-terminal.json",
+      "sha256": "24e6f99602a264a69f450f81db1be6dd3325290ae0050f46462b11491a0b087a",
+      "phase": "ui-art11-source6",
+      "exit": 0,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-28T00:29:59.135Z",
+        "duration": 114309.04400000001,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    },
+    {
+      "path": "artifacts/goal-4/check-art16-m45/ui-full-source5-terminal.json",
+      "sha256": "a3b5689c88d710e8ba1fd028e70edc83c1e1b9ad304b9f9104c3c6e43f432aaf",
+      "phase": "ui-full-source5",
+      "exit": 1,
+      "passed": null,
+      "exact": true,
+      "sameGit": true,
+      "stats": {
+        "startTime": "2026-10-27T23:39:14.882Z",
+        "duration": 2971496.8819999998,
+        "expected": 547,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "diagnostic": false,
+      "historicalResultUnmodified": true
+    }
+  ],
+  "earlyOperatorPreparationErrorsAlsoPreserved": [
+    "new-target-source2-prepare-error.json",
+    "loading-after preparation ENOENT while build in progress",
+    "wrong short expected digest rejected before ledger mutation"
+  ],
+  "rawArtifactsRoot": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-art16-m45",
+  "noGreenRetagOfFailedFullRuns": true,
+  "nativeReadRootUnknown": true,
+  "oldM04Total240sRootUnknown": true
+}

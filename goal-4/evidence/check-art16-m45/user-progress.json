@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-28T00:44:58.493973+00:00",
+  "scope": "Actual Chrome original tab, stopped and saved before readonly reload; all AX roles/text equal after numerical AX indices are normalized. Not full user database equality or compatibility.",
+  "normalizationCorrection": "The initial comparison left the generated focused-AX index0->1 unnormalized; raw diff retained, no actual content difference.",
+  "url": "http://127.0.0.1:56884/",
+  "tabId": "387928607",
+  "visibleProgress": {
+    "realm": "凡人",
+    "school": "尚未择法",
+    "hp": "60/60",
+    "mp": "20/20",
+    "xp": "10/10",
+    "stones": 40,
+    "activity": "自然吐纳已结束2/50，每轮30秒",
+    "target": "引气入体",
+    "save": "已保存"
+  },
+  "normalizedAXEqual": true,
+  "noUserGameImportRestoreResetOrAction": true,
+  "rawBeforeSHA256": "2e6c5cfefdb8db2470049acf3fbb035e3ffb9c9798526c4fdfbda9514f5a22b0",
+  "rawAfterSHA256": "ae1cc8f3acab9679849b0300198214ea1c2221389c68ceb4df0ce3259e08567c",
+  "png": "artifacts/goal-4/check-art16-m45/user-post-update.png",
+  "pngSHA256": "1b77140f4ec14c3e497c4745781509886d3f63a4bdf8180cef03561a0d40b047",
+  "jpeg": "artifacts/goal-4/check-art16-m45/user-post-update.jpg",
+  "jpegSHA256": "385c1fae3f3e52efe70980d68cad43c01245ace1dae7bca0aff3b677819179db",
+  "jpegQuality": 68,
+  "pixelReviewed": true,
+  "review": "Actual delivery image viewed; unchanged readable progress and entrance/current decision. Large plain center panel remains art debt."
+}

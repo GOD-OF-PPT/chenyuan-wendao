@@ -1,0 +1,12 @@
+{
+  "runtimeDigest": "8046148df5f201333759f6e1fac708412e0b0102955db25a2e28b51d61d3092c",
+  "actualCodeDependencies": 296,
+  "allActualCodeBytesStillEqualTested": true,
+  "actualServiceSHA256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "completeSamples": 12,
+  "sourceHeadDuringMeasurement": "d6efcfd299404277504892fb36f80d71370bf004",
+  "implementationCommit": "0e23751cc7a9b22e0bf46e3e5ba1eba95c2021f3",
+  "metadataHeadOnlyIsNotRuntimeCodeIdentity": true,
+  "source": "python-final-source5",
+  "noDiagnosticCertificate": true
+}
