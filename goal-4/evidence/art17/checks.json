@@ -1,0 +1,224 @@
+{
+  "scope": "actual1440x900 font1 singleChromium gameplay; original live Chrome only read; no compatibility acceptance",
+  "checks": [
+    {
+      "phase": "new-source6",
+      "passed": 12,
+      "terminal": {
+        "phase": "new-source6",
+        "exit": 0,
+        "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+        "inputs": 336,
+        "exact": true,
+        "sameGit": true,
+        "declarationExact": true,
+        "stats": {
+          "startTime": "2026-10-28T02:20:15.340Z",
+          "duration": 63796.947,
+          "expected": 12,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "retried": [],
+        "reportSha256": "eebafd68de4189239ac844404f1767a198b2defc2059d87ac664da94dfe3b5f5",
+        "measurementCopied": false
+      },
+      "rawReport": "artifacts/goal-4/art17/new-source6-report.json"
+    },
+    {
+      "phase": "related-source6",
+      "passed": 69,
+      "terminal": {
+        "phase": "related-source6",
+        "exit": 0,
+        "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+        "inputs": 348,
+        "exact": true,
+        "sameGit": true,
+        "declarationExact": true,
+        "stats": {
+          "startTime": "2026-10-28T02:20:15.341Z",
+          "duration": 492187.74199999997,
+          "expected": 69,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "retried": [],
+        "reportSha256": "6a36b2208fdbf3c837dda01ece924875663c4c8b6948eeb2e30cea986da9708d",
+        "measurementCopied": false
+      },
+      "rawReport": "artifacts/goal-4/art17/related-source6-report.json"
+    },
+    {
+      "phase": "native-source6",
+      "passed": 415,
+      "terminal": {
+        "phase": "native-source6",
+        "exit": 0,
+        "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+        "inputs": 393,
+        "exact": true,
+        "sameGit": true,
+        "declarationExact": true,
+        "stats": {
+          "startTime": "2026-10-28T02:22:59.905Z",
+          "duration": 448038.577,
+          "expected": 415,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "retried": [],
+        "reportSha256": "a40256facfe60ffb3198cdef4880837b24dbfd93098b3194ba775f304c83003c",
+        "measurementCopied": false
+      },
+      "rawReport": "artifacts/goal-4/art17/native-source6-report.json"
+    },
+    {
+      "phase": "core-final-current-terminal.json",
+      "count": 843,
+      "terminal": {
+        "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+        "inputs": 704,
+        "exact": true,
+        "rows": [
+          {
+            "name": "rules",
+            "exit": 0,
+            "seconds": 147.2019898891449,
+            "log": "artifacts/goal-4/art17/core-final-current-rules.log"
+          },
+          {
+            "name": "types",
+            "exit": 0,
+            "seconds": 2.6513869762420654,
+            "log": "artifacts/goal-4/art17/core-final-current-types.log"
+          }
+        ],
+        "passed": true
+      },
+      "changedNonRuntimeInputsAfterRun": [
+        "AGENTS.md",
+        "docs/decisions/0049-cave-preparation-art17-contract.md",
+        "goal-4/plan.md",
+        "goal-4/tasks.md",
+        "web/idle-performance-tests/production.spec.ts",
+        "web/idle-performance-tests/support.ts"
+      ],
+      "productionRuntimeStillExact": true
+    },
+    {
+      "phase": "assets-final-current-terminal.json",
+      "count": 444,
+      "terminal": {
+        "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+        "inputs": 657,
+        "exact": true,
+        "rows": [
+          {
+            "name": "positive",
+            "exit": 0,
+            "seconds": 1.264875888824463,
+            "log": "artifacts/goal-4/art17/assets-final-current-positive.log"
+          },
+          {
+            "name": "tests",
+            "exit": 0,
+            "seconds": 268.66560196876526,
+            "log": "artifacts/goal-4/art17/assets-final-current-tests.log"
+          }
+        ],
+        "passed": true
+      },
+      "changedNonRuntimeInputsAfterRun": [
+        "docs/decisions/0049-cave-preparation-art17-contract.md",
+        "goal-4/plan.md",
+        "goal-4/tasks.md",
+        "web/idle-performance-tests/production.spec.ts",
+        "web/idle-performance-tests/support.ts"
+      ],
+      "productionRuntimeStillExact": true
+    },
+    {
+      "phase": "performance-guards-final",
+      "passed": 15,
+      "log": "artifacts/goal-4/art17/performance-guards-final.log",
+      "logSHA256": "864f6f185362978d4a8f6e17fe926226f1d34ef478778ee0efb8fce456832a83"
+    }
+  ],
+  "defaultDeclarationConservation": {
+    "original": 548,
+    "current": 560,
+    "originalMissing": [],
+    "new": [
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A1 mortal preparation uses the real seated object and keeps the original explicit breakthrough",
+        "chromium"
+      ],
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A10 inspecting full preparation preserves the running original clock and a new life never keeps the old material",
+        "chromium"
+      ],
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A11 failed paintings and both reduced-effect choices keep real inventory clocks and source controls",
+        "chromium"
+      ],
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A12 the unprovided object slot retains the original temple choice and normal cultivation book",
+        "chromium"
+      ],
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A2 missing foundation pill is visible beside two truthful readonly preparation routes",
+        "chromium"
+      ],
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A3 foundation uses its own current material with all original decisions and a visible scene gap",
+        "chromium"
+      ],
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A4 golden uses its own current material with all original decisions and a visible scene gap",
+        "chromium"
+      ],
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A5 nascent uses its own current material with all original decisions and a visible scene gap",
+        "chromium"
+      ],
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A6 spirit uses its own current material with all original decisions and a visible scene gap",
+        "chromium"
+      ],
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A7 recipe travel and money routes are full-DB readonly and return to the same public object",
+        "chromium"
+      ],
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A8 one actual thirty-second breakthrough keeps its owned medicine until the formal atomic outcome",
+        "chromium"
+      ],
+      [
+        "art17-cave-threshold.spec.ts",
+        "ART17-A9 native quota preserves current object and all stores then retries the original cycle once",
+        "chromium"
+      ]
+    ],
+    "source": "actual --list current default idle config"
+  },
+  "all560UIRerun": false,
+  "sourcePhasesHonest": true
+}

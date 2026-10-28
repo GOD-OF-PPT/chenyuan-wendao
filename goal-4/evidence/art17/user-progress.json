@@ -1,0 +1,41 @@
+{
+  "kind": "visible_readonly_AX_progress_not_full_user_database",
+  "before": {
+    "name": true,
+    "realmAndSchool": true,
+    "hpMp": true,
+    "xp10": true,
+    "stones40": true,
+    "activity": true,
+    "goal": true,
+    "saved": true
+  },
+  "after": {
+    "name": true,
+    "realmAndSchool": true,
+    "hpMp": true,
+    "xp10": true,
+    "stones40": true,
+    "activity": true,
+    "goal": true,
+    "saved": true
+  },
+  "unchanged": true,
+  "newObjectVisible": true,
+  "noUserGameActionImportRestoreResetOrSaveTests": true,
+  "originalPNG": {
+    "path": "artifacts/goal-4/art17/user-after-update.png",
+    "sha256": "c371ec30f0b78a3212bc12bdb3b17073b825c8661c3352e2010cd4f5b0e376d7"
+  },
+  "viewJPEG": {
+    "path": "artifacts/goal-4/art17/user-after-update.jpg",
+    "sha256": "4736f22ab80727a597dd1cc0fde886353b51180f79d82492c0a641c6afeb2db3",
+    "quality": 68,
+    "size": [
+      1440,
+      756
+    ]
+  },
+  "pixelReviewed": true,
+  "pixelReview": "Actually viewed current original Chrome JPEG after readonly reload; object seated on painted mat, primary decision and eight entrances readable. Original live window1440x756 observed only; no viewport/compatibility testing or acceptance."
+}

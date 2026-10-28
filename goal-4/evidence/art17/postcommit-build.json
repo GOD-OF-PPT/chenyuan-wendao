@@ -1,0 +1,21 @@
+{
+  "command": "rtk proxy env PATH=<bundled Node24 plus original PATH> node scripts/build-web.mjs",
+  "actualExit": 0,
+  "toolSession": 17905,
+  "implementation": "0c580da9c24f1c184e24946768f45867055b7760",
+  "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+  "files": 89,
+  "bytes": 9169845,
+  "buildManifestSHA256": "77bc26307fe5b98a57d13a975f27ffd33552d1968abc9fb61693c4b0672b6090",
+  "source": {
+    "head": "0c580da9c24f1c184e24946768f45867055b7760",
+    "source": "0c580da9c24f1c184e24946768f45867055b7760",
+    "tree": "d9dffc31646b58b436b54a927ce879364157f7b7",
+    "dirty": true,
+    "node": "v24.19.0",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "actualLog": "artifacts/goal-4/art17/postcommit-build.log",
+  "performanceAccepted": false
+}

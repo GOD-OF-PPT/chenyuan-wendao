@@ -1,0 +1,12 @@
+{
+  "implementation": "0c580da9c24f1c184e24946768f45867055b7760",
+  "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+  "runtimeGitMatches": 287,
+  "ownedGitMatches": 22,
+  "files": 89,
+  "bytes": 9169845,
+  "testedFrozenRebuiltEqual": true,
+  "serviceSHA256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "performanceAccepted": false,
+  "art17Complete": false
+}

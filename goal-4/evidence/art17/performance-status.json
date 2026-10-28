@@ -1,0 +1,103 @@
+{
+  "accepted": false,
+  "originalBudgetsUnchanged": true,
+  "rounds": [
+    {
+      "phase": "performance-source6",
+      "passed": 8,
+      "failed": [
+        {
+          "id": "new/1440x900/4/3",
+          "error": "new/1440x900/4/3: first action 4106.200000017881ms > 3000ms"
+        },
+        {
+          "id": "resume/1440x900/4/1",
+          "error": "resume/1440x900/4/1: first action 3886.2999999821186ms > 3000ms"
+        },
+        {
+          "id": "resume/1440x900/4/2",
+          "error": "resume/1440x900/4/2: first action 4049.699999988079ms > 3000ms"
+        },
+        {
+          "id": "resume/1440x900/4/3",
+          "error": "resume/1440x900/4/3: first action 3295.699999988079ms > 3000ms"
+        }
+      ],
+      "maxActionMs": 4106.200000017881,
+      "maxPanelMs": 180.60000002384186,
+      "terminal": {
+        "phase": "performance-source6",
+        "exit": 1,
+        "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+        "inputs": 342,
+        "exact": true,
+        "sameGit": true,
+        "declarationExact": true,
+        "stats": {
+          "startTime": "2026-10-28T02:37:20.220Z",
+          "duration": 217506.08800000002,
+          "expected": 0,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "errors": [],
+        "retried": [],
+        "reportSha256": "d177796757f3073a49f944b8b8f5f8b6d2937cae80a8665ed958a29e7fdd1a15",
+        "measurementCopied": true
+      }
+    },
+    {
+      "phase": "performance-readbatch-source6",
+      "passed": 8,
+      "failed": [
+        {
+          "id": "new/1440x900/4/3",
+          "error": "new/1440x900/4/3: tab-3 feedback 258.69999998807907ms > 200ms"
+        },
+        {
+          "id": "resume/1440x900/4/1",
+          "error": "resume/1440x900/4/1: first action 3348ms > 3000ms"
+        },
+        {
+          "id": "resume/1440x900/4/2",
+          "error": "resume/1440x900/4/2: first action 3076.300000011921ms > 3000ms"
+        },
+        {
+          "id": "resume/1440x900/4/3",
+          "error": "resume/1440x900/4/3: first action 3176.0999999940395ms > 3000ms"
+        }
+      ],
+      "maxActionMs": 3348,
+      "maxPanelMs": 258.69999998807907,
+      "terminal": {
+        "phase": "performance-readbatch-source6",
+        "exit": 1,
+        "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+        "inputs": 342,
+        "exact": true,
+        "sameGit": true,
+        "declarationExact": true,
+        "stats": {
+          "startTime": "2026-10-28T02:52:21.063Z",
+          "duration": 220017.309,
+          "expected": 0,
+          "skipped": 0,
+          "unexpected": 1,
+          "flaky": 0
+        },
+        "errors": [],
+        "retried": [],
+        "reportSha256": "09f18bb1816851484c32855da96fa81fad289b08f0769850f891f44f729b48ec",
+        "measurementCopied": true
+      }
+    }
+  ],
+  "externalCPUObserved": true,
+  "externalCPUProvenRootCause": false,
+  "diagnostics": [
+    "artifacts/goal-4/art17/cpu-diagnostic2-analysis.json",
+    "artifacts/goal-4/art17/timeline-diagnostic-measurements.json"
+  ],
+  "requiredNext": "Continue same ART17 with focused diagnosis/minimum fix then original12; no retry-until-green or forced user app closure"
+}

@@ -1,0 +1,155 @@
+{
+  "attempts": [
+    {
+      "file": "artifacts/goal-4/art17/assets-final-current-terminal.json",
+      "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+      "exit": null,
+      "expectedPassed": null,
+      "unexpected": null,
+      "exact": true,
+      "sameGit": null,
+      "passed": true
+    },
+    {
+      "file": "artifacts/goal-4/art17/baseline-source1-terminal.json",
+      "runtime": "8046148df5f201333759f6e1fac708412e0b0102955db25a2e28b51d61d3092c",
+      "exit": 1,
+      "expectedPassed": 0,
+      "unexpected": 2,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    },
+    {
+      "file": "artifacts/goal-4/art17/core-final-current-terminal.json",
+      "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+      "exit": null,
+      "expectedPassed": null,
+      "unexpected": null,
+      "exact": true,
+      "sameGit": null,
+      "passed": true
+    },
+    {
+      "file": "artifacts/goal-4/art17/early-source1-terminal.json",
+      "runtime": "0c7dfc417ae8d67b9589ff50957174795363d6585ec0ad578f0476892ae31cfd",
+      "exit": 0,
+      "expectedPassed": 2,
+      "unexpected": 0,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    },
+    {
+      "file": "artifacts/goal-4/art17/native-source6-terminal.json",
+      "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+      "exit": 0,
+      "expectedPassed": 415,
+      "unexpected": 0,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    },
+    {
+      "file": "artifacts/goal-4/art17/new-source2-terminal.json",
+      "runtime": "d0e5121f708cd4206ae396f0d0898443c45b69119b0cc1fdab11dc277ad5e269",
+      "exit": 1,
+      "expectedPassed": 8,
+      "unexpected": 4,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    },
+    {
+      "file": "artifacts/goal-4/art17/new-source4-final-terminal.json",
+      "runtime": "cefa575ef1c5b2daf5c30647d0323b3cf01a53a50efa5ac0b554d6e9f7e9ec99",
+      "exit": 0,
+      "expectedPassed": 12,
+      "unexpected": 0,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    },
+    {
+      "file": "artifacts/goal-4/art17/new-source4-terminal.json",
+      "runtime": "cefa575ef1c5b2daf5c30647d0323b3cf01a53a50efa5ac0b554d6e9f7e9ec99",
+      "exit": 1,
+      "expectedPassed": 11,
+      "unexpected": 1,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    },
+    {
+      "file": "artifacts/goal-4/art17/new-source5-terminal.json",
+      "runtime": "f9df3b8c9839acfc468d06fefeea9bbaac0e8d8dbe03cfd1be6c832e2315958b",
+      "exit": 0,
+      "expectedPassed": 12,
+      "unexpected": 0,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    },
+    {
+      "file": "artifacts/goal-4/art17/new-source6-terminal.json",
+      "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+      "exit": 0,
+      "expectedPassed": 12,
+      "unexpected": 0,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    },
+    {
+      "file": "artifacts/goal-4/art17/related-source4-terminal.json",
+      "runtime": "cefa575ef1c5b2daf5c30647d0323b3cf01a53a50efa5ac0b554d6e9f7e9ec99",
+      "exit": 1,
+      "expectedPassed": 68,
+      "unexpected": 1,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    },
+    {
+      "file": "artifacts/goal-4/art17/related-source5-terminal.json",
+      "runtime": "f9df3b8c9839acfc468d06fefeea9bbaac0e8d8dbe03cfd1be6c832e2315958b",
+      "exit": 0,
+      "expectedPassed": 69,
+      "unexpected": 0,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    },
+    {
+      "file": "artifacts/goal-4/art17/related-source6-terminal.json",
+      "runtime": "5d5583884e0810cd088c80eb828812af984d7029efec0f67e375bea487d143a3",
+      "exit": 0,
+      "expectedPassed": 69,
+      "unexpected": 0,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    },
+    {
+      "file": "artifacts/goal-4/art17/target-source3-terminal.json",
+      "runtime": "d237e88ae794e8023ea4ddc64c5bb26004129236429d0957a1e95c0b6756b5b9",
+      "exit": 1,
+      "expectedPassed": 3,
+      "unexpected": 1,
+      "exact": true,
+      "sameGit": true,
+      "passed": null
+    }
+  ],
+  "notes": [
+    "All original red reports/logs/screenshots retained; current green runtime is source6 only.",
+    "Baseline build-source premise mismatch and copied assets wrapper nonexistent producer path failed before product checks.",
+    "Source2 product failures: source-focus return and error-layout overflow; isolated import helper premise fixed without dropping assertions.",
+    "Source4 single new failure: hp full vs actual80% rule premise corrected with16 legal flee actions; no Game rule changed.",
+    "Source4 old69 had missing original clock testid; restored on real remaining clock.",
+    "Source5 was passed12/69 but owned-state misleading repeat procurement/funding removed after actual pixels; current source6 reran12/69/415/843/444.",
+    "Pure view initial projected quote corrected to previewAction(currentGame); nonexistent soul fixture corrected to nascent.",
+    "Thirteen representative source6 frames actually reviewed, two exact-byte reviewed-image inheritance; original PNGs retained."
+  ],
+  "noOverallAcceptance": true
+}
