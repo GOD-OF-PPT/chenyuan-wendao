@@ -112,9 +112,74 @@
   },
   "pixels": {
     "actualFrames": 16,
-    "all12ActualCaseProjectionMin": 180,
     "allSevenFormsRetained": true,
-    "wholeGameOrUserAcceptance": false
+    "wholeGameOrUserAcceptance": false,
+    "all12CaseProjection": {
+      "threshold": 180,
+      "minimumMeasured": 181.93600000000004,
+      "measurements": [
+        {
+          "id": "sword_mind",
+          "width": 175.7947365281221,
+          "height": 213.99071883812042
+        },
+        {
+          "id": "sword_still",
+          "width": 162.01600000000002,
+          "height": 203.18399999999997
+        },
+        {
+          "id": "sword_build",
+          "width": 168.86514874410597,
+          "height": 228.00731490152265
+        },
+        {
+          "id": "sword_guard",
+          "width": 154.04800000000006,
+          "height": 217.7920000000001
+        },
+        {
+          "id": "sword_release",
+          "width": 193.59934032007868,
+          "height": 185.82261985186858
+        },
+        {
+          "id": "sword_echo",
+          "width": 181.93600000000004,
+          "height": 173.55417529296875
+        },
+        {
+          "id": "talisman_mind",
+          "width": 164.67200000000003,
+          "height": 187.248
+        },
+        {
+          "id": "talisman_calm",
+          "width": 164.67200000000003,
+          "height": 187.248
+        },
+        {
+          "id": "talisman_build",
+          "width": 154.04800000000006,
+          "height": 207.16800000000006
+        },
+        {
+          "id": "talisman_frost",
+          "width": 154.04800000000006,
+          "height": 207.16800000000006
+        },
+        {
+          "id": "talisman_release",
+          "width": 197.872,
+          "height": 182.96413818359378
+        },
+        {
+          "id": "talisman_return",
+          "width": 197.872,
+          "height": 182.96413818359378
+        }
+      ]
+    }
   },
   "payload": {
     "files": 92,

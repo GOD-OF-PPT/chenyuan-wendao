@@ -1,0 +1,41 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "browser": "original Chrome tab387928607/browser1",
+  "before": {
+    "save": "已保存",
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "dialogs": 0,
+    "executions": 0,
+    "module": "./assets/index-DK0s5oQL.js",
+    "styles": [
+      "./assets/index-KBpB2Yyv.css"
+    ]
+  },
+  "after": {
+    "save": "已保存",
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "dialogs": 0,
+    "executions": 0,
+    "module": "./assets/index-BGLDxJIE.js",
+    "styles": [
+      "./assets/index-DUXsa4yg.css"
+    ]
+  },
+  "visibleHudExact": true,
+  "userGameActions": 0,
+  "userStorageRead": false,
+  "userSaveUsedForTests": false,
+  "payloadFiles": 92,
+  "runningPackage": "artifacts/goal-4/art25/committed-frozen/web",
+  "readOnlyScene": {
+    "state": "ready",
+    "jade": "sword_mind",
+    "mastered": false,
+    "draftCount": 0,
+    "dialogs": 0,
+    "executions": 0,
+    "actualScreenshotViewed": true
+  },
+  "scope": "Saved/stopped before reload, wait public saved signal after initial loading, readonly skills/future checkbox/current-book navigation only. No user DB read/import/restore/restart/pause or viewport override; not whole user DB equality or compatibility test.",
+  "leftAt": "功法 / 功法 / 后续经卷青锋心诀；未收入卷串、未掌握、凡人门槛保留"
+}
