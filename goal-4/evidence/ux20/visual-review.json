@@ -1,0 +1,62 @@
+{
+  "runtimeDigest": "332b5d7906b8bfaf74914d1a711d9d13364f3d3ecf95d8048adec6e42a275e02",
+  "views": [
+    {
+      "original": "artifacts/goal-4/ux20/delivery-results/art18-mainline-usability-A-0d868-ly-return-for-player-review-chromium/foundation-preparation-goal.png",
+      "sha256": "d5c7648ed8271e545791962a588f586d730f1f184ddb1ac07a5868e4aa39db0d",
+      "view": "artifacts/goal-4/ux20/delivery-views/foundation-preparation-goal.jpg",
+      "viewSha256": "7c887842bdaaad0bf6d7008d79784ccb32bbd4bc1386d694fe53ce8e7e4a5597",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/ux20/delivery-results/art18-mainline-usability-A-71507-ly-return-for-player-review-chromium/trial-second-gate-goal.png",
+      "sha256": "a94c933b6d653268e97f31377451700f9f5255b4f09316c2b22df782adc76671",
+      "view": "artifacts/goal-4/ux20/delivery-views/trial-second-gate-goal.jpg",
+      "viewSha256": "1cfa8b370bb73d5d22f6497e146e52c6e514f1a2b7d79698b2d06501fd951365",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/ux20/delivery-results/art18-mainline-usability-A-74e7e-ly-return-for-player-review-chromium/ending-ready-goal.png",
+      "sha256": "a988a1caac30bbc4738cc111a3c0d57a684d86ed531da92bd2ea850c639b4282",
+      "view": "artifacts/goal-4/ux20/delivery-views/ending-ready-goal.jpg",
+      "viewSha256": "3d18c525f54b9e0027b3e2151e27cc3c45fc58252b259eb4710b669afca85bd0",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/ux20/delivery-results/art18-mainline-usability-A-74e7e-ly-return-for-player-review-chromium/ending-ready-home.png",
+      "sha256": "50ab6595a56dca849b83564911e22e0f9d9915a74747fe512cbfe24703e3030c",
+      "view": "artifacts/goal-4/ux20/delivery-views/ending-ready-home.jpg",
+      "viewSha256": "b41a0605cfd23a57476b974933326b5b8f2d3c85870a4320e3b8cf91ec1fe8aa",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG retained"
+    },
+    {
+      "original": "artifacts/goal-4/ux20/delivery-results/art18-mainline-usability-A-8fabe-ly-return-for-player-review-chromium/trial-question-goal.png",
+      "sha256": "31260e685710fb31e56c0ff6d93aeaf7a4a7e3b1dd330efec7a134a1fa47ac51",
+      "view": "artifacts/goal-4/ux20/delivery-views/trial-question-goal.jpg",
+      "viewSha256": "7562ef8306bf221bd41f2e3626a8b66ca7c15f8682a93a9b028d4f6f3576fe04",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG retained"
+    }
+  ],
+  "review": "All five current-source frames manually reviewed sequentially, at most2 per call: ending goal/home, question goal, second gate goal and foundation XP/pill goal. True saved phase replaces spent entry material/fullXP. Current UX20 geometry enforces18body/14small/44button/screen/hit. Original PNGs retained, same-size JPEG68 copies.",
+  "scope": "Representative actual pixels and current141 DOM/function proof; not all612 visual coverage or overall art/human acceptance."
+}
