@@ -1,0 +1,17 @@
+{
+  "codeCommit": "aa2e7d8fb3004d6541bbe78680e38592509c142c",
+  "runtimeDigest": "1fd651bbb71d3f31f7a2d0d2c8b0bce5fa1cddefde59af40ab71b023522e31f0",
+  "runtimeInputs": 300,
+  "payloadFiles": 91,
+  "payloadBytes": 9275464,
+  "testedRebuildFrozenPayloadExact": true,
+  "allRuntimeGitBlobsExact": true,
+  "frozenSourceExact": true,
+  "helperSha256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "protected13Unchanged": true,
+  "notCleanCandidate": true,
+  "httpDecodedAllExact": true,
+  "httpProof": "artifacts/goal-4/check-ux21-23/http-identity.json",
+  "testedHead": "5db4de67ba56d9557ceafd3da42a42da1981f880 with uncommitted current code later committed aa2e7d8",
+  "comparison": "all runtime git blobs and tested/rebuilt/frozen/http payload exact, not precommit HEAD equality"
+}

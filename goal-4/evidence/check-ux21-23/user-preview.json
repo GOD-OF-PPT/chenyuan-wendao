@@ -1,0 +1,31 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "browser": "original Chrome tab387928607/browser1",
+  "before": {
+    "save": "已保存",
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "dialogs": 0,
+    "executions": 0,
+    "module": "./assets/index-BIjR3Vu9.js",
+    "styles": [
+      "./assets/index-Br8D8sIf.css"
+    ]
+  },
+  "after": {
+    "save": "已保存",
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "dialogs": 0,
+    "executions": 0,
+    "module": "./assets/index-Q8NsLZO6.js",
+    "styles": [
+      "./assets/index-BpvYGV9l.css"
+    ]
+  },
+  "visibleHudExact": true,
+  "userGameActions": 0,
+  "userStorageRead": false,
+  "userSaveUsedForTests": false,
+  "scope": "readonly saved/stopped check then reload; no user import/restore/restart/pause, no viewport override or compatibility test; not full user DB equality",
+  "payloadFiles": 91,
+  "runningPackage": "artifacts/goal-4/check-ux21-23/committed-frozen/web"
+}

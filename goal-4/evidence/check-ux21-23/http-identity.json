@@ -1,0 +1,827 @@
+{
+  "base": "http://127.0.0.1:56884",
+  "runtimeDigest": "1fd651bbb71d3f31f7a2d0d2c8b0bce5fa1cddefde59af40ab71b023522e31f0",
+  "files": [
+    {
+      "path": ".vite/manifest.json",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 136,
+      "bytes": 185,
+      "sha256": "ca48bf93d497aa243fd4a7b63c8e4cac8f0ef3e67fba1bac0543a0fb4c95fdc7",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/portraits/lu.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 60432,
+      "bytes": 60432,
+      "sha256": "f3205ef5fc424896898efe8dca19e8871762636c7bb82c7136eea44fd638dff4",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/portraits/pei.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 65460,
+      "bytes": 65460,
+      "sha256": "0a1b64def5cd7200a291af8b98790d07048c190318bd4efbee1081bd6c284ad8",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/portraits/player.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 62438,
+      "bytes": 62438,
+      "sha256": "0c2faca3fd95f303cc4ed0e22169f13be1806066a22f56880cc7bbd3e009f1e6",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/portraits/shen.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 63360,
+      "bytes": 63360,
+      "sha256": "7fb1e08bec233fa3ba11f8f56dd645e3772738e80946990ddb0eb8f97b08ba52",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/portraits/yan.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 62270,
+      "bytes": 62270,
+      "sha256": "0f68e57915cfa22ef10a88699171ab5aca3889d9e66f1d6d0c8d087f7a04bc52",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/scene.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 6438,
+      "bytes": 6438,
+      "sha256": "8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/scenes/secret.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 279296,
+      "bytes": 279296,
+      "sha256": "375d61a2b3701de62085ad8d8697c813bfcb5038420d5a864a65f3dc1fb550b9",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/scenes/settlement.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 253904,
+      "bytes": 253904,
+      "sha256": "f317b1cee05a456eaf5c19d779aa446a9489cc90b78a937f5bbefa6c638328b2",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/scenes/terrace-v2.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 182204,
+      "bytes": 182204,
+      "sha256": "76bbc4ecff4469cfa5e01f7ba182074e6fc70836d9fc9c0b4545afc7208ef45d",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/scenes/wilderness.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 254774,
+      "bytes": 254774,
+      "sha256": "3d07a4455e766b67c0eeae6b54b8373a3a64242e6ab952f16f6234bbfc0aae35",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/ui-kit.svg",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 1618,
+      "bytes": 9046,
+      "sha256": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/actors/player-standing-cold-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 63634,
+      "bytes": 63634,
+      "sha256": "ead57061820734bd53f89f600795310cb2040b478f5e2bf61da2b946571ca2ef",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/catalogue/alchemy-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 84870,
+      "bytes": 84870,
+      "sha256": "f806772d13cd930dd80722c61d6ec53b5e5f882e9314f73c2ec5cb878f7e1528",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/catalogue/study-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 97256,
+      "bytes": 97256,
+      "sha256": "07c30a57cd627bb391f1bc76ea286bc3b88f584928eff7c5f6c603d91de75a4d",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/catalogue/supplies-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 85820,
+      "bytes": 85820,
+      "sha256": "eaff2eaf8338219503f40abc862374d701259efc3cdd602e99b27631543ab666",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/characters/lu.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 64486,
+      "bytes": 64486,
+      "sha256": "632438e9da240cd8b362d785d8b4a581544b79e6fc3d14edd54cc43cf7410ad4",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/characters/pei.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 66310,
+      "bytes": 66310,
+      "sha256": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/characters/player-seated-cold.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 65978,
+      "bytes": 65978,
+      "sha256": "66ff79c01b418faa5c0abb0b3490e54b9d30a8568abb796d410a9559d0a36ace",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/characters/player.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 67524,
+      "bytes": 67524,
+      "sha256": "b8080cda6d7a8f4019a55a0a67808e7e6a88834dbc3ad3ba12167517a6c988c4",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/characters/shen.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 67818,
+      "bytes": 67818,
+      "sha256": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/characters/yan.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 69326,
+      "bytes": 69326,
+      "sha256": "82cc6f98bded838b6b8a59d1d27ba123fdec70c1a0043dd4bf6ea236a65c2e2f",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/enemies/puppet.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 81374,
+      "bytes": 81374,
+      "sha256": "8fabb419720ae44a19e9dedbda32861a0af42ba50dc11803b3bffc1135e6852b",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/enemies/sentinel.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 91306,
+      "bytes": 91306,
+      "sha256": "a832fcb94f72651d3ccf0c19e89240932850e04fb89200d427be859c2f938602",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/enemies/serpent.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 101624,
+      "bytes": 101624,
+      "sha256": "cd981a2a17c1c9399a1bd6efd0eeb4653e0ce7eeb268985803542defce4652a7",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/enemies/shadow.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 100854,
+      "bytes": 100854,
+      "sha256": "8b8223af8135263b02658e6d995c672f227693b603df8d593fbd9da7bac244e2",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/enemies/trial_gate.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 110472,
+      "bytes": 110472,
+      "sha256": "a588999c5f907885722d614796ce177911f880eda2cedf4dcd4f3ae263e184f5",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/enemies/trial_heart.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 90838,
+      "bytes": 90838,
+      "sha256": "d649dc3e9593790fe6e772344ed1bb202e4e495eecb4859d3c15a8be2a418044",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/enemies/trial_thunder.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 102712,
+      "bytes": 102712,
+      "sha256": "728b50ee566e7a7e92a2b729117c70330fd43b66faae6a0b23fa5c8862883686",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/enemies/warden.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 91860,
+      "bytes": 91860,
+      "sha256": "6efee13b8ecd07ae9d3569645c9654b0d681e3fcc96fc52ed01d096d6813f351",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/enemies/wolf.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 84626,
+      "bytes": 84626,
+      "sha256": "95ed2843e926bbce543da559a6a282d3e13f4c5c5ff2630a4402aaec7db9de58",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/equipment/cloud_mirror-blank-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 36314,
+      "bytes": 36314,
+      "sha256": "8b94fa845c1384380d87f7ebb4ddbb5e5d1a21e09c55905f9051b46576418270",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/equipment/cloud_mirror-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 27650,
+      "bytes": 27650,
+      "sha256": "8a8066224ee8487a226dd63ae27f8fd1760a08214cdf93826d8e8d8d7d77a008",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/equipment/frost_sword-blank-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 11408,
+      "bytes": 11408,
+      "sha256": "e39779f05eddd3f5caa279deb2b2e80b97062b195c6d1e758ee82186121b098b",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/equipment/frost_sword-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 10960,
+      "bytes": 10960,
+      "sha256": "0054af06284f62b516d5be2802dbd69fecb4cb31ee8d56f0a7d895568df79943",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/equipment/jade_seal-blank-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 62466,
+      "bytes": 62466,
+      "sha256": "cda83c60d3945d041a6848cf1bb298f3e04063ed721ac46194a25a8660e8cef8",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/equipment/jade_seal-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 56116,
+      "bytes": 56116,
+      "sha256": "81aad3db8a19ad6a39b0e54a96254d6fcc94164bdcbbbb87bd0e3f48ef43c49c",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/equipment/soul_lamp-blank-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 46774,
+      "bytes": 46774,
+      "sha256": "b1b0b54c4747c3c05a16c3349f8a43e2187c642e3b78d76ad80f3517607041d0",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/equipment/soul_lamp-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 42144,
+      "bytes": 42144,
+      "sha256": "d0345b92c5c191f50b831ffdeec27a591785b1948398948daee06df799dff1cc",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/ascension_seal-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 26514,
+      "bytes": 26514,
+      "sha256": "e3d81134f7a6bf663fda8d653beb1553429a5f514a882cc2137a760fc60d1885",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/core-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 48484,
+      "bytes": 48484,
+      "sha256": "cac701143dda662cda3e218c53d5daf2ff043228e1afc0aea6dc83a503b9eedf",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/dao-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 42156,
+      "bytes": 42156,
+      "sha256": "a7bf3830b88190ee674685ee092106731f20e172a5b5b4eab8dfda94ef673e3a",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/dew-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 31894,
+      "bytes": 31894,
+      "sha256": "9fd9a56e6a407fd39587676313dec3562524dc767d14a026f5aadfa727938c25",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/foundation_pill-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 33140,
+      "bytes": 33140,
+      "sha256": "db5c298534d4bd55fdc42b64bb16a330d07cd52ea08167b1a32f09bb5950de2e",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/golden_pill-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 34612,
+      "bytes": 34612,
+      "sha256": "eeedde783c0b5851146972c5cf13f87a33026f100e4a4c60128ce4d25bd13e62",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/healing_pill-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 25168,
+      "bytes": 25168,
+      "sha256": "f6114f224f6a136f020f179eb7995058f1cdee72dcac8a9ce9bdf57bb69059d9",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/herb-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 59714,
+      "bytes": 59714,
+      "sha256": "4289eafba0f0d726051d47594dc6268a0bc493f9403799d59f70e76ad173a4b0",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/jade-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 62058,
+      "bytes": 62058,
+      "sha256": "fa6b37a3b23c402adc7d5a714e929bba55336baaaf056978831fb5c65694119b",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/lotus-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 38208,
+      "bytes": 38208,
+      "sha256": "e10f4caef6b351b6995523ec2a30e5bd615e3ffdb9859be773848a7282d796b6",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/nascent_pill-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 36040,
+      "bytes": 36040,
+      "sha256": "37a62d61299c641d9849a819494a4d54b9a0bc09bff249716fb4c9a115483e03",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/soul-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 50648,
+      "bytes": 50648,
+      "sha256": "ebdff7f234e55907683b058450c20f897b3091df710e1b6f9a3c3e9cf3677337",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/spirit_pill-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 24492,
+      "bytes": 24492,
+      "sha256": "1ab2931f9c4202b283dbe95afa8b7fe61b5c33156faeb3d8ca9add2927b487b4",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/items/spirit_seed-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 33160,
+      "bytes": 33160,
+      "sha256": "d1934ce9d1f018d866b03671666541f3406d64a10aa8c2ea6950481e3afc5e4f",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/scenes/cave-meditation.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 297424,
+      "bytes": 297424,
+      "sha256": "cc59bccfd3a42cdf688acdfd606ebe92d6e8d812eb08202207aaac1b145eeb9e",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/scenes/cave.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 351730,
+      "bytes": 351730,
+      "sha256": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/scenes/market.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 362374,
+      "bytes": 362374,
+      "sha256": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/scenes/opening.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 287184,
+      "bytes": 287184,
+      "sha256": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/scenes/secret.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 359330,
+      "bytes": 359330,
+      "sha256": "bb9e1bda68dbd3ecd861446f7b19982051a9749c20b0cf82ec17f4e9586f997f",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/scenes/sect.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 357912,
+      "bytes": 357912,
+      "sha256": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/scenes/terrace-opened.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 310812,
+      "bytes": 310812,
+      "sha256": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/scenes/terrace-storm.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 302660,
+      "bytes": 302660,
+      "sha256": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/scenes/terrace.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 311830,
+      "bytes": 311830,
+      "sha256": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/scenes/wilderness.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 365578,
+      "bytes": 365578,
+      "sha256": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/schools/sword-station-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 30088,
+      "bytes": 30088,
+      "sha256": "81e3328d26597b017f96b03e380e72d8d23b0fd5c7dfd77e5542b7f074f71a3f",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/schools/talisman-station-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 38986,
+      "bytes": 38986,
+      "sha256": "67eb84e24b55305af9ef9247c47f2d34f6b31ea8d619cc7eab73e3fe284b3ba3",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/sources/dao-cold-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 60950,
+      "bytes": 60950,
+      "sha256": "62903f5b7056ba61b225d8294865fe9e8300334dec1b9ef5fca64946a6192edf",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/sources/dew-cold-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 57462,
+      "bytes": 57462,
+      "sha256": "5272fa6dbb7d5fdc901c3c27634b9749b230831b133eeba455ea315fc9e0da0e",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/sources/herbs-cold-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 73050,
+      "bytes": 73050,
+      "sha256": "0d111845c05e076102a788c98ace1917a2c4e87a13a6f7021eea4851918aaa73",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/sources/jade-cold-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 64378,
+      "bytes": 64378,
+      "sha256": "decbbda3867443a679744416cc05387e19bb7bbb8e124029982af6e233462fdd",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/sources/lotus-cold-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 63704,
+      "bytes": 63704,
+      "sha256": "45a77e2ad96c2af61ad6c474d3d0bad47dbf91a6a451e932e8ee867d8040e14b",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/sources/soul-cold-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 52926,
+      "bytes": 52926,
+      "sha256": "714a6bbbd0cbff9beae1a223f2e550d970f58482bdc05ffc91cc716734f18814",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/ui/action-jade-frame-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 24120,
+      "bytes": 24120,
+      "sha256": "82fc5ee9ef6bda7c75aa728dc820e337213a2c8d91b88f7eec23a39633d9b20d",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/ui/dialog-jade-frame-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 46240,
+      "bytes": 46240,
+      "sha256": "75d212a45b6d2aebc69756219a28404d3ebf326800572ec9f344d4374eff8336",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/ui/meditation-ink.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 96402,
+      "bytes": 96402,
+      "sha256": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/ui/mountain-wash-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 56046,
+      "bytes": 56046,
+      "sha256": "2f30503f639d97ca657520cc8b762121a86bc5dc3971a9ce7b8afb65c0a82aa2",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/ui/xuan-paper-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 9894,
+      "bytes": 9894,
+      "sha256": "c86afbc2f9a330aa61b1f110a9afab0db9bc4f213383ec78d19b4f7d95055f05",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/ui/xuan-paper-v2.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 8344,
+      "bytes": 8344,
+      "sha256": "20ec5b471788120a3eda6bfd7486d9f85dc8e8eacdcf67b40a3c2c263f02d6a0",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "art/v2/workshop/furnace-v1.webp",
+      "status": 200,
+      "encoding": null,
+      "wireBytes": 63588,
+      "bytes": 63588,
+      "sha256": "bd201f06af3c18342eb6dda9d5bb2abb96347b623fb32f1d213c4c2b86c25642",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "assets/index-BpvYGV9l.css",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 79656,
+      "bytes": 430159,
+      "sha256": "0c7712337652c8e24224da4ca54b5b175c578985913c65733ba8e251c262b561",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "assets/index-Q8NsLZO6.js",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 311573,
+      "bytes": 966756,
+      "sha256": "8e86bc8bfa61806dc30da8bdde3558373fc3fdb414013c3092ad7ea81177d46d",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "demo-nodes/battle-sword.json",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 1227,
+      "bytes": 2568,
+      "sha256": "61700cb7aa66e0c116edf8497875662d47643c83070a1b08f03d54e180868c0a",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "demo-nodes/battle-talisman.json",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 1259,
+      "bytes": 2670,
+      "sha256": "c3056d0f9568d505054bbf6132409e1d8d7f796af6bb5fe8e9322bd1ebdb9228",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "demo-nodes/causal-help.json",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 1698,
+      "bytes": 4863,
+      "sha256": "750f0e66d6122ea6064db62792a497ffe14f6d8b4ec7d685c6b625d2f9fddbcc",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "demo-nodes/causal-trade.json",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 1767,
+      "bytes": 5625,
+      "sha256": "6080b3255f1d4885c0f867d489fc53deb1cf7d42d844e2a063aa7211ef97888f",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "demo-nodes/ending-sword.json",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 3877,
+      "bytes": 21314,
+      "sha256": "101015b373d04e0c575a15fc9d2475530f600b150ae32aeee148ddb1ee6b9f07",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "demo-nodes/ending-talisman.json",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 3777,
+      "bytes": 20891,
+      "sha256": "728f5191a0cdc66e25a6757d52b0aaa2c99e01f0fcda2b5f5aad6ba87e440853",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "demo-nodes/manifest.json",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 1378,
+      "bytes": 3522,
+      "sha256": "5ce05e6067229deb758b9f89ce518efbf1d252e78a70f9be3254e0c6676d94bb",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "demo-nodes/opening.json",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 678,
+      "bytes": 1304,
+      "sha256": "5223d2c9babf1819665bae6c37f8859758dd11db15f24177ca79a963bd436fd8",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "demo-nodes/trial-sword.json",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 3674,
+      "bytes": 18339,
+      "sha256": "bc75a2e79440cb0c7d135ff11d93bca0bf843d50305347a9521bfdf4448727a5",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "demo-nodes/trial-talisman.json",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 3295,
+      "bytes": 15257,
+      "sha256": "fa8a9e73a8ccb566dfb860eb6aac7069bab3e2396ed24d6f6134051a169fcd93",
+      "cacheControl": "no-store"
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "encoding": "gzip",
+      "wireBytes": 435,
+      "bytes": 569,
+      "sha256": "9727994ce6e516e165c1e6842d19e3b1cdea1a5c86a76eb3d0cee95b5c4dfb53",
+      "cacheControl": "no-store"
+    }
+  ],
+  "allDecodedBytesEqual": true,
+  "scope": "HTTP identity only; not performance or user-save testing."
+}
