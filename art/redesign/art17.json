@@ -1,0 +1,61 @@
+{
+  "format": "chenyuan-art17-cave",
+  "version": 1,
+  "maxNativeBytes": 20000,
+  "newAssets": 0,
+  "files": [
+    {
+      "path": "web/src/cave-threshold-view.ts",
+      "bytes": 2713,
+      "sha256": "38e8196c1eed720d3baf1dfedff603bfc49b9df730bace5b7a17a573d5d4a773"
+    },
+    {
+      "path": "web/src/CaveThresholdObject.vue",
+      "bytes": 3815,
+      "sha256": "efaee4afe778020f62f26c17461c186ddf2bc8f634e31adfeffee2bca93fbedd"
+    },
+    {
+      "path": "web/src/art17-cave.css",
+      "bytes": 6539,
+      "sha256": "bdbb8120cfdb79f7c192965c1448139f7dbda3406acb9d21abef9b0529a6a9d5"
+    }
+  ],
+  "reusedAssets": [
+    {
+      "path": "web/public/art/v2/characters/player-seated-cold.webp",
+      "bytes": 65978,
+      "sha256": "66ff79c01b418faa5c0abb0b3490e54b9d30a8568abb796d410a9559d0a36ace"
+    },
+    {
+      "path": "web/public/art/v2/items/foundation_pill-v1.webp",
+      "bytes": 33140,
+      "sha256": "db5c298534d4bd55fdc42b64bb16a330d07cd52ea08167b1a32f09bb5950de2e"
+    },
+    {
+      "path": "web/public/art/v2/items/golden_pill-v1.webp",
+      "bytes": 34612,
+      "sha256": "eeedde783c0b5851146972c5cf13f87a33026f100e4a4c60128ce4d25bd13e62"
+    },
+    {
+      "path": "web/public/art/v2/items/nascent_pill-v1.webp",
+      "bytes": 36040,
+      "sha256": "37a62d61299c641d9849a819494a4d54b9a0bc09bff249716fb4c9a115483e03"
+    },
+    {
+      "path": "web/public/art/v2/items/spirit_seed-v1.webp",
+      "bytes": 33160,
+      "sha256": "d1934ce9d1f018d866b03671666541f3406d64a10aa8c2ea6950481e3afc5e4f"
+    },
+    {
+      "path": "web/public/art/v2/items/ascension_seal-v1.webp",
+      "bytes": 26514,
+      "sha256": "e3d81134f7a6bf663fda8d653beb1553429a5f514a882cc2137a760fc60d1885"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0049-cave-preparation-art17-contract.md",
+    "goal-4/amendments/2026-10-28-art17.md",
+    "goal-4/research/art17-design-sources.json"
+  ],
+  "userAcceptance": false
+}

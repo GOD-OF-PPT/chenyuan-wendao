@@ -3,11 +3,21 @@ import * as C from '../../src/full/content.ts';
 import {resolve,stats} from '../../src/full/engine.ts';
 import {completeActivity} from '../../src/full/activity.ts';
 import {createIdleRoute} from '../../scripts/economy/idle-scenarios.mjs';
-import {runVisibleIdleRoute,decision} from '../e2e/idle-route-support';
+import {runVisibleIdleRoute} from '../e2e/idle-route-support';
 import {snapshot,activitySnapshot} from '../e2e/support';
 import {recoveryDatabase,stored,recoveryMove} from '../e2e/idle-recovery-ui-support';
 
 export {snapshot,activitySnapshot,recoveryDatabase};
+// One passive transaction replaces two pre-action connection/serialization round trips.
+// The unmeasured seed verifies equality with both original independent readers.
+export async function measurementStartSnapshot(page:Page){return page.evaluate(()=>new Promise<any>((resolve,reject)=>{
+ const request=indexedDB.open('chenyuan-playable-v1');request.onerror=()=>reject(request.error);request.onsuccess=()=>{
+  const db=request.result,tx=db.transaction('full-state','readonly'),store=tx.objectStore('full-state');
+  const current=store.get('current'),activity=store.get('activity');
+  tx.oncomplete=()=>{db.close();resolve({game:current.result,activity:activity.result??null});};
+  tx.onabort=()=>{db.close();reject(tx.error);};
+ };
+}));}
 export async function seedIdleLateSave(page:Page,info:TestInfo){
  const options={choice:'leave',school:'sword',preparation:'purchase',cultivation:'natural',answer:'accept',ending:'transmit',advanced:false};
  const scenario=(o:any,identity:any)=>{
@@ -56,8 +66,8 @@ export async function installMeasurement(page:Page,kind:string){
  },{kind});
 }
 
-export async function acceptMeasuredAction(page:Page,kind:string,before:any){
- const old=await activitySnapshot(page);
+export async function acceptMeasuredAction(page:Page,kind:string,before:any,originalActivity?:any){
+ const old=originalActivity===undefined?await activitySnapshot(page):originalActivity;
  const plan=kind==='new'?{kind:'milestone',action:{type:'CHOOSE',choice:'leave'},maxCycles:1}:{kind:'travel',location:'wilderness',maxCycles:1};
  await expect(page.locator('dialog[open]')).toHaveCount(0);
  // These contexts are cold and already verified. Keep every actual player click,
@@ -66,7 +76,13 @@ export async function acceptMeasuredAction(page:Page,kind:string,before:any){
   await page.getByTestId('leave').click();await page.getByTestId('milestone-confirm').click();
  }else{
   await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-travel').click();
-  await decision(page,page.getByTestId('travel-wilderness'));await page.getByTestId('adventure-start').click();
+  const control=page.getByTestId('travel-wilderness');
+  const [, ,geometry]=await Promise.all([expect(control).toBeVisible(),expect(control).toBeEnabled(),control.evaluate(node=>{
+   const r=node.getBoundingClientRect(),nav=document.getElementById('primary-navigation')!.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);
+   return{aboveNav:r.bottom<=nav.top,visible:r.x>=0&&r.y>=0&&r.right<=innerWidth&&r.bottom<=innerHeight,hit:!!hit&&(hit===node||node.contains(hit)),oneScreen:document.documentElement.scrollHeight<=innerHeight};
+  })]);
+  expect(geometry).toEqual({aboveNav:true,visible:true,hit:true,oneScreen:true});
+  await control.click();await page.getByTestId('adventure-start').click();
  }
  await expect.poll(async()=>{const a=await activitySnapshot(page);return a?.id!==old?.id&&a?.status==='running';}).toBe(true);
  const a=await activitySnapshot(page);expect(a.plan).toEqual(plan);expect(a.cycleMs).toBe(6000);

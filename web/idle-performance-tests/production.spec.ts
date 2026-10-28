@@ -3,12 +3,12 @@ import fs from 'node:fs';import os from 'node:os';import path from 'node:path';i
 import {newGame} from '../../src/full/engine.ts';
 import {performanceBudget,inspectProduction} from '../../scripts/performance-budget.mjs';
 import {idlePerformanceCases,assertIdlePerformanceSample,assertIdlePerformanceReport} from '../../scripts/idle-performance-budget.mjs';
-import {seedIdleLateSave,installMeasurement,acceptMeasuredAction,completeMeasuredAction,panelFeedback,snapshot,recoveryDatabase} from './support';
+import {seedIdleLateSave,installMeasurement,acceptMeasuredAction,completeMeasuredAction,panelFeedback,snapshot,activitySnapshot,measurementStartSnapshot,recoveryDatabase} from './support';
 
 let late:any,storageState:any;
 test.beforeAll(async({browser,baseURL},info)=>{
  const context=await browser.newContext({baseURL,viewport:{width:1440,height:900}});
- try{const page=await context.newPage();late=await seedIdleLateSave(page,info);storageState=await context.storageState({indexedDB:true});}
+ try{const page=await context.newPage();late=await seedIdleLateSave(page,info);const paired=await measurementStartSnapshot(page);expect(paired).toEqual({game:await snapshot(page),activity:await activitySnapshot(page)});expect(paired.game).toEqual(late.game);storageState=await context.storageState({indexedDB:true});}
  finally{await context.close();}
 });
 
@@ -38,10 +38,10 @@ test('twelve current desktop cold samples preserve the original budgets and comp
     await installMeasurement(page,profile.kind);await page.goto('/',{waitUntil:'domcontentloaded'});
     if(profile.kind==='new')await page.getByRole('button',{name:/^踏入仙途/}).click();
     await expect(page.getByTestId('save-status')).toHaveText('已保存');
-    const initial=await snapshot(page);
+    const paired=await measurementStartSnapshot(page),initial=paired.game;
     if(profile.kind==='resume')expect(initial).toEqual(late.game);else expect(initial).toEqual(newGame(initial.core.player.name,initial.core.runId));
     // The actual late-save action remains TRAVEL; its START and six-second outcome are separate witnesses.
-    const accepted=await acceptMeasuredAction(page,profile.kind,initial);
+    const accepted=await acceptMeasuredAction(page,profile.kind,initial,paired.activity);
     await page.waitForFunction(()=>(window as any).__idlePerformance.firstActionReadyMs);
     if(profile.kind==='resume'){
      const started=await recoveryDatabase(page);

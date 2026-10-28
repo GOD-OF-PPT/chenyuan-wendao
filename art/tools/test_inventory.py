@@ -106,6 +106,8 @@ class InventoryTests(unittest.TestCase):
   if art15.exists():files.update(ROOT/ref for ref in json.loads(art15.read_text())['sourceReferences'])
   art16=ROOT/'art/redesign/art16.json'
   if art16.exists():files.update(ROOT/ref for ref in json.loads(art16.read_text())['sourceReferences'])
+  art17=ROOT/'art/redesign/art17.json'
+  if art17.exists():files.update(ROOT/ref for ref in json.loads(art17.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -2033,5 +2035,56 @@ class ART16SchoolInventoryTests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'ART16 cannot assert'):self.check()
   self.restore();p=self.root/'art/tools/export_art10_blanks.py';p.write_bytes(p.read_bytes()+b'\n# changed\n')
   with self.assertRaisesRegex(AssertionError,'ART16 actual identity'):self.check()
+
+
+class ART17CaveInventoryTests(unittest.TestCase):
+ def setUp(self):
+  from art17_inventory import LEDGER,NATIVE,REFS,ASSETS
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art17-negative-');self.root=Path(self.temp.name);self.names=NATIVE+REFS+ASSETS+[LEDGER,'web/src/App.vue','web/src/MilestoneGate.vue','art/redesign/cultivation-objects.json'];self.original={n:(ROOT/n).read_bytes()for n in self.names};self.restore()
+ def tearDown(self):self.temp.cleanup()
+ def write(self,n,raw):
+  p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(raw if isinstance(raw,bytes)else raw.encode())
+ def restore(self):
+  for n,raw in self.original.items():self.write(n,raw)
+ def check(self):
+  from art17_inventory import validate_art17
+  return validate_art17(self.root)
+ def ledger(self,edit):
+  n='art/redesign/art17.json';m=json.loads((self.root/n).read_text());edit(m);self.write(n,json.dumps(m))
+ def resign(self,n,text):
+  self.write(n,text);self.ledger(lambda m:[r.update(bytes=len(text.encode()),sha256=hashlib.sha256(text.encode()).hexdigest())for r in m['files']if r['path']==n])
+ def test_art17_current_positive_preserves_zero_new_paint_and_fixed_native_cap(self):
+  self.assertGreater(self.check()[1],0)
+  for field,value in [('maxNativeBytes',20001),('newAssets',1),('userAcceptance',True)]:
+   self.restore();self.ledger(lambda m:m.update({field:value}))
+   with self.subTest(field=field),self.assertRaisesRegex(AssertionError,'ART17 fixed'):self.check()
+ def test_art17_all_native_bytes_and_membership_are_real(self):
+  for field in ['sha256','bytes','membership']:
+   self.restore();self.ledger(lambda m:m['files'].append(dict(m['files'][0]))if field=='membership'else m['files'][0].update({field:'0'*64 if field=='sha256'else 1}))
+   with self.subTest(field=field),self.assertRaisesRegex(AssertionError,'ART17'):self.check()
+  self.restore();n='web/src/cave-threshold-view.ts';total=sum((self.root/f).stat().st_size for f in ['web/src/cave-threshold-view.ts','web/src/CaveThresholdObject.vue','web/src/art17-cave.css']);self.resign(n,self.original[n].decode()+' '*(20001-total))
+  with self.assertRaisesRegex(AssertionError,'ART17 actual cap'):self.check()
+ def test_art17_reused_painting_is_exact_not_a_claim_of_new_assets(self):
+  from art17_inventory import ASSETS
+  n=ASSETS[0];self.write(n,self.original[n]+b'changed')
+  with self.assertRaisesRegex(AssertionError,'ART17 actual identity'):self.check()
+ def test_art17_current_view_routes_cannot_start_travel_or_borrow_current_game(self):
+  n='web/src/App.vue';source=self.original[n].decode()
+  for old,new in [('@navigate="inspectCaveDestination"','@navigate="navigate"'),(':game="source"',':game="game"')]:
+   self.restore();self.write(n,source.replace(old,new,1))
+   with self.subTest(old=old),self.assertRaisesRegex(AssertionError,'ART17 view route'):self.check()
+ def test_art17_slot_must_export_original_witness_and_preserve_old_cap(self):
+  n='web/src/MilestoneGate.vue';self.write(n,self.original[n].decode().replace(':remaining="remaining"',':remaining="30"'))
+  with self.assertRaisesRegex(AssertionError,'ART17 original witness'):self.check()
+  self.restore();n='art/redesign/cultivation-objects.json';m=json.loads((self.root/n).read_text());m['budgets']['nativeBytes']+=1;self.write(n,json.dumps(m))
+  with self.assertRaisesRegex(AssertionError,'ART17 old cap'):self.check()
+ def test_art17_presentation_cannot_gain_clock_io_or_detach_paint(self):
+  for token in ['setTimeout(()=>0,1);','indexedDB.open("unexpected");','fetch("unexpected");']:
+   self.restore();n='web/src/CaveThresholdObject.vue';self.resign(n,self.original[n].decode().replace('</script>',token+'</script>'))
+   with self.subTest(token=token),self.assertRaisesRegex(AssertionError,'ART17 readonly'):self.check()
+  self.restore();n='web/src/CaveThresholdObject.vue';self.resign(n,self.original[n].decode().replace(':owned="view.have>0"',':owned="true"'))
+  with self.assertRaisesRegex(AssertionError,'ART17 actual painting'):self.check()
+  self.restore();n='web/src/CaveThresholdObject.vue';self.resign(n,self.original[n].decode().replace('path="art/v2/characters/player-seated-cold.webp"','path="art/v2/characters/wrong.webp"'))
+  with self.assertRaisesRegex(AssertionError,'ART17 actual painting'):self.check()
 
 if __name__=='__main__':unittest.main()
