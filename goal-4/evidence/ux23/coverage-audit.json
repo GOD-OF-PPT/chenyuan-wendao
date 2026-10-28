@@ -1,0 +1,1073 @@
+{
+  "format": "ux23-targeted-coverage",
+  "runtimeDigest": "39847324b62200794f77caa7900d1fcd7a9814263d32acac812de741217f70d4",
+  "ui": {
+    "declared": 128,
+    "passed": 128,
+    "new": 10,
+    "errors": [],
+    "files": [
+      "art12-narrative-stage.spec.ts",
+      "art17-initial-stage.spec.ts",
+      "art18-dialog-controls.spec.ts",
+      "art18-mainline-usability.spec.ts",
+      "check-matrix-guidance.spec.ts",
+      "demo.spec.ts",
+      "matrix-ui-local-recovery.spec.ts",
+      "stage-r4.spec.ts",
+      "ux20-trial-guidance.spec.ts",
+      "ux20-trial-reading.spec.ts",
+      "ux21-trial-return.spec.ts",
+      "ux23-sealed-life.spec.ts"
+    ],
+    "tests": [
+      {
+        "file": "art12-narrative-stage.spec.ts",
+        "title": "ART12-A1 one factual invitation replaces permanent people racks while all four actual portraits records and known futures stay readonly",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art12-narrative-stage.spec.ts",
+        "title": "ART12-A2 a route is readonly until its explicit six-second travel and local eligibility never confuses realm knowledge with a visit",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art12-narrative-stage.spec.ts",
+        "title": "ART12-A3 the actual pending person opens the original response and every signature preview or cancelled confirmation stays separate from its one paid choice",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art12-narrative-stage.spec.ts",
+        "title": "ART12-A4 people journal and ordinary life returns preserve real row anchors through zero one and two new records and isolate a replacement life",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art12-narrative-stage.spec.ts",
+        "title": "ART12-A5 every life bookmark preserves its complete one-hundred-forty-codepoint pages while management opens and closes without sealing",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art12-narrative-stage.spec.ts",
+        "title": "ART12-A6 real checkpoint and all factual life statuses keep their original management confirmations exports receipts and twelve-second ending boundary",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art12-narrative-stage.spec.ts",
+        "title": "ART12-A7 native quota keeps new readonly surfaces separate from the original retry and committed lost delivery reloads without another award",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art12-narrative-stage.spec.ts",
+        "title": "ART12-A8 new surfaces retain real keyboard focus tight-error readability failed portraits and both reduced-motion static results without stamp collisions",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art17-initial-stage.spec.ts",
+        "title": "ART17-A13 complete initial reading precedes the game stage and preserves every saved record",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-dialog-controls.spec.ts",
+        "title": "ART18-E1 game materials preserve readonly menus, one consent surface, keyboard cancel and the original milestone",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-dialog-controls.spec.ts",
+        "title": "ART18-E3 explicit restart keeps its original short countdown and creates only the requested new life",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-dialog-controls.spec.ts",
+        "title": "ART18-E4 an arranged online cycle continues under consent and the changed state cannot be restarted by the old decision",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-dialog-controls.spec.ts",
+        "title": "ART18-E5 cancelling a checkpoint keeps all records and explicit restore uses the complete original checkpoint",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-dialog-controls.spec.ts",
+        "title": "ART18-E2 cancelling import preserves all stores and the explicit game confirmation alone authorizes the original save",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-dialog-controls.spec.ts",
+        "title": "ART18-E6 local-record consent preserves cancel and only clears records after its exact confirmation",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-dialog-controls.spec.ts",
+        "title": "ART18-E7 memory-only consent cannot clear persistent records or the actual Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-dialog-controls.spec.ts",
+        "title": "ART18-E8 selected filenames remain literal text and cannot create executable dialog content",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-dialog-controls.spec.ts",
+        "title": "ART18-E9 missing-material keeps readable consent real press focus and cancellation",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-dialog-controls.spec.ts",
+        "title": "ART18-E9 system-reduction keeps readable consent real press focus and cancellation",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-dialog-controls.spec.ts",
+        "title": "ART18-E9 saved-reduction keeps readable consent real press focus and cancellation",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN opening exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN first-cultivation exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN qi-school exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN foundation-preparation exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN foundation-growth exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN golden-growth exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN nascent-growth exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN needs-recovery exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN trial-ready exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN trial-question exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN trial-battle exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN trial-second-gate exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN trial-recovery exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN ending-ready exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN sealed-life exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G1 opening keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G2 cultivation keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G3 breakthrough keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G4 equipment with qi and no chosen school keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G6 ordinary battle keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G7 recovery after actual attack and retreat keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G8 causality awaiting an actual decision keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G9 trial preparation keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G10 actually sealed ending keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G11 trial battle has battle priority keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G12 third gate won but END still undecided has trial priority keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "check-matrix-guidance.spec.ts",
+        "title": "CHECK-G5 actual finite SOURCE results suppress only materials and refreshing or reading its old receipt never fabricates a new contextual outcome",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo node opening loads a lawful playable state in its own database",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo node battle-sword loads a lawful playable state in its own database",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo node battle-talisman loads a lawful playable state in its own database",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo node causal-help loads a lawful playable state in its own database",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo node causal-trade loads a lawful playable state in its own database",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo node trial-sword loads a lawful playable state in its own database",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo node trial-talisman loads a lawful playable state in its own database",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo node ending-sword loads a lawful playable state in its own database",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo node ending-talisman loads a lawful playable state in its own database",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo menu, actions, settings and return preserve every normal Game, record and tracking value",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo reload, reset and typed export/import stay separate from normal saves",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "unknown, ambiguous, damaged and missing demo nodes never open a normal or demo save",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "a demo seed quota failure keeps the normal database intact and retries one stable import",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo storage denial offers an explicit scoped reread without falling back to the normal Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "two first-load demo tabs share one seed receipt and sync their own committed turn",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "demo trial entries create real repeatable complete checkpoints rather than importing invented ones",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "demo.spec.ts",
+        "title": "both demo endings commit through the real confirmation and a node reset never touches normal progress",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "matrix-ui-local-recovery.spec.ts",
+        "title": "M03-L1 local quota leaves the actual committed Game intact and exports only the failed new observation from memory",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "matrix-ui-local-recovery.spec.ts",
+        "title": "M03-L2 Game quota records a safe failure and the original cycle command retry creates exactly one action and receipt",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "matrix-ui-local-recovery.spec.ts",
+        "title": "M03-L3 a genuine future local database stays byte-for-byte intact while explicit temporary collection exports no private future data",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "matrix-ui-local-recovery.spec.ts",
+        "title": "M03-L4 a native local readonly transaction exception has a truthful finite fallback and never hangs or replaces the Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "matrix-ui-local-recovery.spec.ts",
+        "title": "M03-L5 main open denial is a safe recorded code and never turns unreadable progress into a usable empty save",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "matrix-ui-local-recovery.spec.ts",
+        "title": "M03-L6 clear cancellation confirmation and cross-page preference epoch changes invalidate previews without changing either complete Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "matrix-ui-local-recovery.spec.ts",
+        "title": "M03-L7 real legacy opening startup migrates the entire lawful state while preserving native originals and exact migration identity",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "matrix-ui-local-recovery.spec.ts",
+        "title": "M03-L8 real legacy qi startup migrates the entire lawful state while preserving native originals and exact migration identity",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "matrix-ui-local-recovery.spec.ts",
+        "title": "M03-L9 real legacy battle startup migrates the entire lawful state while preserving native originals and exact migration identity",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "matrix-ui-local-recovery.spec.ts",
+        "title": "M03-L10 an actual native versionchange closes the stale connection and explicit reread preserves DB9 without silently retrying the failed arrangement",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "life chapter and exact page survive ordinary goal inspection without a Game action",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "same person and category selection preserve the current factual reading and ordinary return",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "a story can inspect life and ordinary details then return to its same unconfirmed response",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "opening life from settings inside an ordinary story detail preserves that original one-level return",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "a real six-second visit leaves a clear pending meeting and never silently chooses the response",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "all four people preserve every factual and known future-reading character without acting",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "the complete retained hundred-entry journal remains readable through its actual page controls",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "a duplicate journal entry keeps its own place after a saved commission",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "a duplicate journal entry keeps its own place after a saved commission at the hundred-entry cap",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "a committed visit that adds no journal text preserves the exact repeated entry being read",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "a saved victory with two actual journal entries retains the older readable entry",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "every life chapter retains its full source text and the exported factual life stays complete",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "DECIDE shows every genuine option while preselection and native details remain read-only",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "ANSWER_TRIAL shows every genuine option while preselection and native details remain read-only",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "END shows every genuine option while preselection and native details remain read-only",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "a committed response inserts facts without moving the life reader to another fact",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "one response waits six real seconds and persists its actual selected outcome exactly once",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "the selected ending waits twelve real seconds and seals only this life with all records retained",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "all eight main entries clear the temporary life-reading return while preserving the same pending story",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "a replacement life cannot inherit the previous factual chapter or unconfirmed response",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "entering question again in the same life resets the old response despite its identical semantic id",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "cancelled choice confirmation and a hidden pending peek cannot execute or reopen an old dialogue",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "failed scene and portrait resources keep all people, complete factual reading and return controls usable",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "stage-r4.spec.ts",
+        "title": "a pending trial question can inspect local fate without querying it as a person event",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-guidance.spec.ts",
+        "title": "UX20 stage4: the actual trial phase has one readonly destination and never asks for spent entry material",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-guidance.spec.ts",
+        "title": "UX20 stage0: the actual trial phase has one readonly destination and never asks for spent entry material",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-guidance.spec.ts",
+        "title": "UX20 stage1: the actual trial phase has one readonly destination and never asks for spent entry material",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-guidance.spec.ts",
+        "title": "UX20 stage2: the actual trial phase has one readonly destination and never asks for spent entry material",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-guidance.spec.ts",
+        "title": "UX20 stage3: the actual trial phase has one readonly destination and never asks for spent entry material",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-guidance.spec.ts",
+        "title": "UX20 another tracked item and its full source stack stay available during the ending phase",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-guidance.spec.ts",
+        "title": "UX20 ordinary full cultivation is explicitly labelled separately from its missing pill",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-guidance.spec.ts",
+        "title": "UX20 transmit: reading and cancelling stay readonly then only the selected twelve-second ending seals the life",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-guidance.spec.ts",
+        "title": "UX20 depart: reading and cancelling stay readonly then only the selected twelve-second ending seals the life",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-guidance.spec.ts",
+        "title": "UX20 an aborted ending outcome preserves all stores and retries the original selected command once",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-guidance.spec.ts",
+        "title": "UX20 one ending follows the actual twelve-second online clock before its atomic saved outcome",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux20-trial-reading.spec.ts",
+        "title": "UX20 saving an already-confirmed ending still allows readonly stage inspection without cancelling its original outcome",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux21-trial-return.spec.ts",
+        "title": "UX21-A1 the last spent seal exposes full recovery and current-state preparation as readonly main decisions",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux21-trial-return.spec.ts",
+        "title": "UX21-A2 cancelling keeps every store and explicit original0.6-second recovery restores the complete checkpoint once",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux21-trial-return.spec.ts",
+        "title": "UX21-A3 an imported failed Game has no invented checkpoint or free seal and retains deterministic preparation",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux21-trial-return.spec.ts",
+        "title": "UX21-A4 a real rest retires the adjacent failure report but keeps its verified complete preparation and refresh ownership",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux21-trial-return.spec.ts",
+        "title": "UX21-A5 an unresolved medicine or rest intent remains the only retry while full recovery inspection stays readonly",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux21-trial-return.spec.ts",
+        "title": "UX21-A6 original complete recovery quota retains its checkpoint and retries the same control without partial resource return",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux21-trial-return.spec.ts",
+        "title": "UX21-A7 a genuinely restarted life cannot retain the previous verified return or its checkpoint chapter",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux21-trial-return.spec.ts",
+        "title": "UX21-A8 another page actual rest makes the fresh frozen restore stale and readonly return reflects the new progress",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux23-sealed-life.spec.ts",
+        "title": "UX23-S1 transmit retains a compact factual sealed stage and all readonly entry returns",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux23-sealed-life.spec.ts",
+        "title": "UX23-S1 depart retains a compact factual sealed stage and all readonly entry returns",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux23-sealed-life.spec.ts",
+        "title": "UX23-S1 retired retains a compact factual sealed stage and all readonly entry returns",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux23-sealed-life.spec.ts",
+        "title": "UX23-S1 lifespan retains a compact factual sealed stage and all readonly entry returns",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux23-sealed-life.spec.ts",
+        "title": "UX23-S2 the whole sealed life remains paged and exact while both exports and cancelled management never write Game",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux23-sealed-life.spec.ts",
+        "title": "UX23-S3 the sealed HUD waits for the original twelve second ending and native commit instead of the saving animation",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux23-sealed-life.spec.ts",
+        "title": "UX23-S4 a real preparation checkpoint survives retirement and the original full restore returns to active eight-entry play without auto-continuing",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux23-sealed-life.spec.ts",
+        "title": "UX23-S5 a rejected new life keeps the sealed book and exact original retry then creates only the original opening once",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux23-sealed-life.spec.ts",
+        "title": "UX23-S6 keyboard reduced effects and failed paintings preserve the real book and its stable reading return",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "ux23-sealed-life.spec.ts",
+        "title": "UX23-S7 an externally replaced life cannot retain the old sealed shell or return focus to its hidden book",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      }
+    ]
+  },
+  "native": {
+    "declared": 19,
+    "passed": 19,
+    "new": 0,
+    "errors": [],
+    "files": [
+      "idle-recovery-controls.spec.ts",
+      "idle-recovery-lifespan.spec.ts",
+      "idle-recovery-restore.spec.ts",
+      "life-record.spec.ts"
+    ],
+    "tests": [
+      {
+        "file": "idle-recovery-controls.spec.ts",
+        "title": "M04-N10 Store create committed delivery loss keeps the original replacement identity through explicit retry",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-controls.spec.ts",
+        "title": "M04-N10 Store import committed delivery loss keeps the original replacement identity through explicit retry",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-controls.spec.ts",
+        "title": "M04-N10 Store restore committed delivery loss keeps the original replacement identity through explicit retry",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-controls.spec.ts",
+        "title": "M04-N11 create replacement quota preserves the real good checkpoint and one stable native retry replaces exactly once",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-controls.spec.ts",
+        "title": "M04-N11 create replacement abort preserves the real good checkpoint and one stable native retry replaces exactly once",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-controls.spec.ts",
+        "title": "M04-N11 import replacement quota preserves the real good checkpoint and one stable native retry replaces exactly once",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-controls.spec.ts",
+        "title": "M04-N11 import replacement abort preserves the real good checkpoint and one stable native retry replaces exactly once",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-lifespan.spec.ts",
+        "title": "M04-N9 a real final-month cycle aborts atomically and two actual lifespan endings restore the complete ordinary preparation without accumulating goods",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-restore.spec.ts",
+        "title": "M04-N1 both schools reopen the real online question every round and each gate and replay only the original cycle",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-restore.spec.ts",
+        "title": "M04-N3 two actual lethal failures in each school preserve paid consumption and restore the same complete preparation twice",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-restore.spec.ts",
+        "title": "M04-N4 ordinary restore quota abort and lost delivery retain every store and the exact original receipt never rewinds later earnings",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-restore.spec.ts",
+        "title": "M04-N5 a fixed full restore rejects another page real action and its replacement life while an old activity cannot settle after restoration",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-restore.spec.ts",
+        "title": "M04-N6 missing foreign purpose and future-version checkpoints cannot replace any real current or archived record",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-restore.spec.ts",
+        "title": "M04-N7 each explicitly selected ending restores complete trial preparation and rejects the old life closing tick",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "idle-recovery-restore.spec.ts",
+        "title": "M04-N8 imported mid-trial withdrawal preserves the actual stage and never invents checkpoint or cumulative costs",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "life-record.spec.ts",
+        "title": "retirement state and receipt commit together, quota failure preserves the active life and one retry does not age it",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "life-record.spec.ts",
+        "title": "a reviewed ending command cannot retire a changed revision or a newly created life",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "life-record.spec.ts",
+        "title": "ending inside a pending event is refused without a receipt or false saved ending",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      },
+      {
+        "file": "life-record.spec.ts",
+        "title": "a derived life record is never imported as a Game save over existing progress",
+        "project": "chromium",
+        "status": "passed",
+        "retry": 0
+      }
+    ]
+  },
+  "runtimeUnchanged": true,
+  "inputsUnchanged": true,
+  "protected13Unchanged": true,
+  "inputCount": 535
+}

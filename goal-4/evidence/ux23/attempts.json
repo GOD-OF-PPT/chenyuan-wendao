@@ -1,0 +1,15 @@
+{
+  "scope": "All previous outputs retained; no automatic retries/time-budget increase/assertion drop",
+  "retained": [
+    "baseline.log / baseline-report.json: old sealed HUD absent, actual product baseline red",
+    "build.log: new icon kind needed literal typing, corrected as const",
+    "current-report.json: new geometry wrongly treated existing14/16 auxiliary as body; original source/game untouched by test corrections",
+    "current-v2-report.json / diagnostic-report.json: real40px Noto glyph56px exceeds54px title line; changed line-height to62px, kept font40 and all bounds",
+    "current-v3-report.json / current-v4-report.json: nine pass plus existing16px pager classification correction, separate targeted S2 pass, not a full green run",
+    "regression-report.json:127 pass/1 old lifeView helper still looked for tab-0; added actual sealed-life readonly branch with original checks intact",
+    "repair-report.json: original ART12-A6 then passed; ended management copy clarified with original45000 cap",
+    "regression-v2-report.json and native-report.json:128/19 green at2ec source, subsequently actual pixel review found retired/lifespan HUD clipping; retained as earlier-source evidence",
+    "hud-red-report.json: strict new header-bounds actual red; hud-green-report.json: only new HUD short label/caption changed, full title retained in main life and accessible name",
+    "regression-v3-report.json and native-v3-report.json: final3984 source complete128/19 pass, not pieced together from previous runs"
+  ]
+}

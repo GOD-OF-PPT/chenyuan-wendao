@@ -1,0 +1,177 @@
+{
+  "runtimeDigest": "39847324b62200794f77caa7900d1fcd7a9814263d32acac812de741217f70d4",
+  "scope": "1440x900 font1 single Chromium",
+  "reviewed": 12,
+  "images": [
+    {
+      "name": "transmit-sealed-home",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S1-t-b95ec--all-readonly-entry-returns-chromium/transmit-sealed-home.png",
+      "view": "artifacts/goal-4/ux23/views/transmit-sealed-home.jpg",
+      "originalSha256": "5974a650ab30a1482fa7972548118849e0de4b940d554c1973ee73bb4bdf9917",
+      "viewSha256": "561eb8252227cd52d846a339f2dc6a06aef87c927cfff008f1e8d40a96aeb6b1",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    },
+    {
+      "name": "depart-sealed-home",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S1-d-d2d14--all-readonly-entry-returns-chromium/depart-sealed-home.png",
+      "view": "artifacts/goal-4/ux23/views/depart-sealed-home.jpg",
+      "originalSha256": "4c6b0d95e2bf56d8f6c014be8bc525f06d02f61aef94140945c17f0895f6fd60",
+      "viewSha256": "b0637d01522dbdd811eb115b94b3bc537790742d9ac4460cb293b0c3629ab7b4",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    },
+    {
+      "name": "retired-sealed-home",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S1-r-bcbd0--all-readonly-entry-returns-chromium/retired-sealed-home.png",
+      "view": "artifacts/goal-4/ux23/views/retired-sealed-home.jpg",
+      "originalSha256": "af010002bea9193bf3487c38bda8a762547dbe183a089bf9c1d91e16e368f484",
+      "viewSha256": "55c221a9998d5bf3f0062155154be52b81e7e635307170ffeac17cb6463a8b24",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    },
+    {
+      "name": "lifespan-sealed-home",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S1-l-5312a--all-readonly-entry-returns-chromium/lifespan-sealed-home.png",
+      "view": "artifacts/goal-4/ux23/views/lifespan-sealed-home.jpg",
+      "originalSha256": "5e598a4ca0c25285235ffab3f9e68339624b3e7ea875e712426fedfcbd66ce71",
+      "viewSha256": "28e02af13fd21d608c83deb0b9a6b3e05d7d799639d88c87d2f3a4ed4c12e046",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    },
+    {
+      "name": "sealed-life-complete",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S2-t-709ec-management-never-write-Game-chromium/sealed-life-complete.png",
+      "view": "artifacts/goal-4/ux23/views/sealed-life-complete.jpg",
+      "originalSha256": "950988d510c7655f9dda6f99a9d961d9b977f3a302b7b914ac83745d1b0fe3e4",
+      "viewSha256": "748901037816dbe6439c2e242dbe653abf4ecdcb7872e61de16fb9e78e890a77",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    },
+    {
+      "name": "sealed-training-complete",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S2-t-709ec-management-never-write-Game-chromium/sealed-training-complete.png",
+      "view": "artifacts/goal-4/ux23/views/sealed-training-complete.jpg",
+      "originalSha256": "42db0588d277b2e7d65392e158cad59286d48f671c01105f26d8620dc8a3ffa0",
+      "viewSha256": "71b997bca2c9c657dafa6d976595f80ecfade2791214aa17e9f3627006857c32",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    },
+    {
+      "name": "sealed-decisions-complete",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S2-t-709ec-management-never-write-Game-chromium/sealed-decisions-complete.png",
+      "view": "artifacts/goal-4/ux23/views/sealed-decisions-complete.jpg",
+      "originalSha256": "65c070dba4144a333a6b4d4005788291847cd800f29ce5dc88fee20873289274",
+      "viewSha256": "749838ff6e32650fa51a832a3eb1ecf767b3af42cd794cad9d7920f638eff324",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    },
+    {
+      "name": "sealed-seal-complete",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S2-t-709ec-management-never-write-Game-chromium/sealed-seal-complete.png",
+      "view": "artifacts/goal-4/ux23/views/sealed-seal-complete.jpg",
+      "originalSha256": "b4281ff8c6a1209da9de575d827b81ceade7d829ebf4252260f644858b7ff721",
+      "viewSha256": "9e0bbaec81c92725654f8cf529c0a4db01da97b05e69184ffc05d70e634413ed",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    },
+    {
+      "name": "quota-keeps-readable-sealed-book",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S5-a-4ffc5-y-the-original-opening-once-chromium/quota-keeps-readable-sealed-book.png",
+      "view": "artifacts/goal-4/ux23/views/quota-keeps-readable-sealed-book.jpg",
+      "originalSha256": "17faaefd07e80d1fd921aef82a59bb93ef0eb574ba6c928682182a33e41a0fc5",
+      "viewSha256": "a6306b930c786b98019a10553855dcf1f8043dd36d7ea55da53b83d695d20139",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    },
+    {
+      "name": "native-commit-sealed-only-after-save",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S3-t-09dae-ead-of-the-saving-animation-chromium/native-commit-sealed-only-after-save.png",
+      "view": "artifacts/goal-4/ux23/views/native-commit-sealed-only-after-save.jpg",
+      "originalSha256": "199cd2fc657072710f736eec7d2b77a0881ed43bbfa1d2beb85465cb29eaa751",
+      "viewSha256": "f4ff63eb95b9125f89e9aab951cf1d28da2d5c4e4a44747965416c2cc0c22845",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    },
+    {
+      "name": "system-failed-art-readable-book",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S6-k-082a0-d-its-stable-reading-return-chromium/system-failed-art-readable-book.png",
+      "view": "artifacts/goal-4/ux23/views/system-failed-art-readable-book.jpg",
+      "originalSha256": "ef071aa94bfd4643169e625946d2828263ea678a8aa113dc75e1860d38eefc39",
+      "viewSha256": "a6bb7a9ec9371c821d0a7cb9d11e523eb09b937558771b197e77963ccf24879f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    },
+    {
+      "name": "preference-failed-art-readable-book",
+      "original": "artifacts/goal-4/ux23/regression-v3-results/ux23-sealed-life-UX23-S6-k-082a0-d-its-stable-reading-return-chromium/preference-failed-art-readable-book.png",
+      "view": "artifacts/goal-4/ux23/views/preference-failed-art-readable-book.jpg",
+      "originalSha256": "30bdea836c1fc768e9f72314f6fe7dc4e97fc736f447040c07368e8425834e60",
+      "viewSha256": "16e06c2f97ba2e93e26c6a9cc5c503ee433bb4f7d0e6d899758598cfa8e282e8",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "viewFormat": "JPEG68 lossy same dimensions, original PNG preserved",
+      "pixelReviewed": true,
+      "findings": "实际逐张查看；命卷/四种结局、正文/分页、HUD/导航、错误栏与失图均可读，无本轮新遮挡。仅固定桌面本项像素，不代整体艺术或真人认可。"
+    }
+  ],
+  "beforeHudFix": "artifacts/goal-4/ux23/views-before-hud-fix/index.json",
+  "overallArtAccepted": false
+}

@@ -25,7 +25,7 @@ const seal=computed(()=>props.game.status==='active'?'此卷未封':props.game.s
    <div class="life-scroll-copy narrative-object-paper" :class="{'narrative-object-saved':!!effect&&!store?.error}"><div v-if="engaged" class="narrative-object-cycle" role="status"><strong>{{phase==='saving'?'封卷保存中 · 尚未落定':'已安排收卷一次'}}</strong><span v-if="runtime&&phase==='running'" data-testid="life-scroll-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span></div><slot/><i class="narrative-object-ink" :style="{'--ink-progress':(working&&!store?.error?progress:0)*100+'%'}" aria-hidden="true"/><small v-if="effect&&!store?.error" class="narrative-object-result" data-testid="life-scroll-result" :data-sequence="effect.sequence">本次已保存 · {{effect.notice.label}}</small></div>
    <div class="narrative-seal-space" aria-hidden="true"/><div class="life-scroll-binding"><i class="life-scroll-cord" aria-hidden="true"/><strong>{{seal}}</strong></div>
   </div>
-  <div class="life-scroll-tools"><small>翻卷只阅读，不推进年月。</small><button ref="opener" data-testid="life-manage-open" @click="open">卷尾处理 · 导出与收卷</button></div>
+  <div class="life-scroll-tools"><small>翻卷只阅读，不推进年月。</small><button ref="opener" data-testid="life-manage-open" @click="open">{{game.status==='active'?'卷尾处理 · 导出与收卷':'卷尾留存 · 导出与恢复'}}</button></div>
   <dialog ref="management" class="art12-object-dialog life-management" data-testid="life-manage-dialog" :aria-labelledby="titleId"><header><h3 :id="titleId" tabindex="-1" data-dialog-initial>此生命卷 · 处理与留存</h3><button data-testid="life-manage-close" @click="close">返回当前卷页</button></header><slot name="management" :close="close"/><small>生平文本不含完整进度；恢复时须另行导出存档。</small></dialog>
  </div>
 </template>
