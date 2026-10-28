@@ -1,3 +1,4 @@
+import {answerGameConfirmation} from './game-confirmation-support';
 import {test,expect,type Page} from '@playwright/test';
 import fs from 'node:fs';
 import {createIdleRoute} from '../../scripts/economy/idle-scenarios.mjs';
@@ -60,7 +61,7 @@ test('M04-U3 an open full restore never rewinds another page committed turn or i
  try{
   await useJourneyClock(other);await other.goto('/');await expect(other.getByTestId('save-status')).toHaveText('已保存');await recoveryMove(other,'guard');const current=await snapshot(other),raw=await recoveryDatabase(other);
   await expect(page.getByTestId('trial-restore-stale')).toBeVisible();await expect(page.getByTestId('trial-restore-confirm')).toBeDisabled();expect(await snapshot(page)).toEqual(current);expect(await recoveryDatabase(page)).toEqual(raw);
-  await decision(page,page.getByTestId('trial-restore-cancel'));await openRecoveryRestore(page);await other.getByTestId('game-settings').click();other.once('dialog',d=>d.accept());await other.getByTestId('restart').click();await control600(other,raw);
+  await decision(page,page.getByTestId('trial-restore-cancel'));await openRecoveryRestore(page);await other.getByTestId('game-settings').click();await other.getByTestId('restart').click();await answerGameConfirmation(other,'restart');await control600(other,raw);
   const replacement=await snapshot(other),protectedRaw=await recoveryDatabase(other);await expect.poll(async()=>(await snapshot(page)).core.runId).toBe(replacement.core.runId);
   await expect(page.getByTestId('trial-restore-stale')).toBeVisible();await expect(page.getByTestId('trial-restore-confirm')).toBeDisabled();await page.screenshot({path:info.outputPath('restore-review-stale-new-life.png')});
   await decision(page,page.getByTestId('trial-restore-cancel'));expect(await recoveryDatabase(page)).toEqual(protectedRaw);expect(replacement.core.player.realm).toBe('mortal');

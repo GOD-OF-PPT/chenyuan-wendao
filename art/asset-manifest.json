@@ -1008,8 +1008,8 @@
         },
         {
           "path": "web/src/LocalExperiencePanel.vue",
-          "bytes": 10670,
-          "sha256": "97f8583d89eabb2333aa2d98c0a61e7b0efa57207b4ada4497bcb0754bb51eca"
+          "bytes": 12493,
+          "sha256": "aff8d8faa157b7139e82d5a3b5ebfff257031b0f242560a1f384a9605165b3e0"
         },
         {
           "path": "web/src/BattlePanel.vue",

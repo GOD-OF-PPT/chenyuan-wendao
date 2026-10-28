@@ -5,7 +5,10 @@ import type {useLocalExperience} from './use-local-experience';
 import type {TrackingTarget} from '../../src/full/goals.ts';
 import {formatCosts} from './presentation';
 import CataloguePager from './CataloguePager.vue';
+import GameConfirmDialog from './GameConfirmDialog.vue';
+import {useGameConfirmation} from './use-game-confirmation';
 const props=defineProps<{experience:ReturnType<typeof useLocalExperience>;runId:string|null;target:TrackingTarget}>();
+const confirmation=useGameConfirmation({appearance:()=>({fontScale:props.experience.preferences.value.fontScale,reduceMotion:props.experience.preferences.value.reduceMotion})});
 const preview=ref<HTMLElement>(),exportOpener=ref<HTMLButtonElement>(),exportError=ref('');
 const view=ref<'overview'|'records'|'export'>('overview'),page=ref(0),loading=ref(false);
 let viewRequest=0;
@@ -21,8 +24,14 @@ async function recent(){const request=++viewRequest;loading.value=true;try{await
 async function prepare(){const request=++viewRequest;loading.value=false;exportError.value='';try{await props.experience.prepareExport({runId:props.runId,target:props.target});if(request!==viewRequest)return;view.value='export';await nextTick();if(request===viewRequest&&props.experience.prepared.value)preview.value?.focus();}catch{if(request===viewRequest)exportError.value='记录快照暂无法生成，未下载或改变存档。';}}
 function cancelExport(){props.experience.prepared.value=null;overview();void nextTick(()=>exportOpener.value?.focus());}
 async function download(){try{const data=await props.experience.validatedDownload();if(!data)return;const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)+'\n'],{type:'application/json;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download='尘缘问道-本地试玩记录与偏好.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}catch{exportError.value='记录范围可能已改变，请重新预览；未下载或改变存档。';}}
-function clear(){if(confirm('仅清空本机试玩记录，保留显示设置和游戏存档。确定清空吗？'))void props.experience.clear();}
-function clearMemory(){if(confirm('仅清除本页临时试玩记录；旧本地数据和游戏存档不变。确定吗？'))props.experience.clearMemory();}
+function confirmationSource(memoryOnly=false){
+ const e=props.experience,run=props.runId,view=viewRequest,key=()=>JSON.stringify([props.runId,e.preferences.value.recording,e.memory.value.map(row=>row.id),e.memoryDropped.value,memoryOnly?null:e.confirmationScope()]),original=key();
+ return{current:()=>key()===original,mayReturn:()=>props.runId===run&&viewRequest===view};
+}
+function recordingBlock(){return props.experience.busy.value?'本地记录正在保存，请等保存落定。':props.experience.pending.value?'仍有试玩记录待保存，请等当前队列处理完毕后核对。':!props.experience.available.value?'本地记录库不可写，旧记录保留。':'';}
+const refocus=(s:{mayReturn:()=>boolean})=>void nextTick(()=>s.mayReturn()&&exportOpener.value?.focus());
+async function clear(){const source=confirmationSource();if(await confirmation.ask({kind:'clear-local',title:'清空本地试玩记录',message:'仅清空本机试玩记录和本页临时记录，保留显示设置和游戏存档。此操作不重开人生。',action:'确认清空记录',cancel:'保留记录',current:source.current,blocked:recordingBlock,mayReturn:source.mayReturn})&&source.current()&&!recordingBlock()){await props.experience.clear();refocus(source);}}
+async function clearMemory(){const source=confirmationSource(true);if(await confirmation.ask({kind:'clear-memory',title:'清除临时手记',message:'仅清除本页临时试玩记录；旧本地数据和游戏存档不变。',action:'清除临时记录',cancel:'保留临时记录',current:source.current,mayReturn:source.mayReturn})&&source.current()){props.experience.clearMemory();refocus(source);}}
 function resetPreferences(){void props.experience.setPreferences({fontScale:1,reduceMotion:false});}
 </script>
 <template>
@@ -47,6 +56,7 @@ function resetPreferences(){void props.experience.setPreferences({fontScale:1,re
   <p v-if="exportError" role="alert">{{exportError}}</p>
   </div>
  </details>
+ <GameConfirmDialog v-if="confirmation.request.value" :key="confirmation.request.value.id" :request="confirmation.request.value" @answer="confirmation.answer($event)"/>
 </template>
 <style scoped>
 .local-panel{border-top:1px solid #c3b98f;padding-top:12px;margin-top:16px;min-width:0}.local-panel summary{font-weight:700;cursor:pointer;min-height:44px;display:list-item;align-content:center}.local-panel p{overflow-wrap:anywhere}.local-actions{display:flex;gap:10px;flex-wrap:wrap}.local-actions button{max-width:100%;white-space:normal}.local-list{list-style-position:inside;padding:0 4px}.local-list:focus-visible{outline:3px solid #267c76;outline-offset:3px}.local-list li{margin-bottom:14px;overflow-wrap:anywhere}.local-list span{display:block;font-size:var(--ui14);line-height:1.7}.local-export{padding:14px;border:1px solid #a99c6b;margin-top:16px}.local-export:focus-visible{outline:3px solid #267c76;outline-offset:3px}.local-status{overflow-wrap:anywhere}

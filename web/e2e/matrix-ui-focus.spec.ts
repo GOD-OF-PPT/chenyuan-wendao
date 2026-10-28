@@ -83,17 +83,17 @@ test('M03-F1 native Tab and Shift Tab stay within settings and paged help while 
 });
 
 test('M03-F2 the actual file wrapper and keyboard chooser cancel safely and oversized input retains visible modal error focus and the entire Game', async ({ page }, info) => {
-  const { raw } = await load(page, info), { opener, dialog } = await settings(page), input = dialog.getByTestId('import'), label = dialog.locator('label.file-button');
-  expect(await input.evaluate(node => (node as HTMLInputElement).labels?.[0]?.control === node)).toBe(true); await area(label, info, 'file-real-label-hit-area');
-  for (let i = 0; i < 40 && !await input.evaluate(node => node === document.activeElement); i++) await page.keyboard.press('Tab');
-  await expect(input).toBeFocused(); await area(input, info, 'file-keyboard-visible-wrapper', true);
+  const { raw } = await load(page, info), { opener, dialog } = await settings(page), input = dialog.getByTestId('import'), label = dialog.getByTestId('import-open');
+  expect(await input.evaluate(node => node instanceof HTMLInputElement && node.type === 'file')).toBe(true);await expect(label).toHaveAttribute('type','button'); await area(label, info, 'file-real-label-hit-area');
+  for (let i = 0; i < 40 && !await label.evaluate(node => node === document.activeElement); i++) await page.keyboard.press('Tab');
+  await expect(label).toBeFocused(); await area(label, info, 'file-keyboard-visible-wrapper', true);
   const outline = await label.evaluate(node => ({ style: getComputedStyle(node).outlineStyle, width: getComputedStyle(node).outlineWidth })); expect(outline).toEqual({ style: 'solid', width: '3px' });
-  const keyboardChooser = page.waitForEvent('filechooser'); await page.keyboard.press('Space'); await (await keyboardChooser).setFiles([]); await expect(input).toBeFocused(); expect(await database(page)).toEqual(raw);
+  const keyboardChooser = page.waitForEvent('filechooser'); await page.keyboard.press('Space'); await (await keyboardChooser).setFiles([]); await expect(label).toBeFocused(); expect(await database(page)).toEqual(raw);
   const pointerChooser = page.waitForEvent('filechooser'); await label.click(); await (await pointerChooser).setFiles([]); expect(await database(page)).toEqual(raw);
   await input.setInputFiles({ name: 'oversized-no-import.json', mimeType: 'application/json', buffer: Buffer.alloc(1024 * 1024 + 1) });
   const error = dialog.getByTestId('settings-error'); await expect(error).toHaveText('存档大于 1 MB，未导入'); await expect(dialog.getByTestId('settings-save-status')).toHaveText('保存待确认');
   const copy = await error.evaluate(node => { const r = node.getBoundingClientRect(), parent = node.closest('dialog')!.getBoundingClientRect(); return { font: parseFloat(getComputedStyle(node).fontSize), inside: r.left >= parent.left && r.right <= parent.right && r.top >= parent.top && r.bottom <= parent.bottom, clipped: node.scrollWidth > node.clientWidth + 1 || node.scrollHeight > node.clientHeight + 1 }; }); expect(copy).toMatchObject({ inside: true, clipped: false }); expect(copy.font).toBeGreaterThanOrEqual(18);
-  expect(await input.inputValue()).toBe(''); await input.focus(); await area(input, info, 'file-safe-error-focus', true); expect(await database(page)).toEqual(raw);
+  expect(await input.inputValue()).toBe(''); await label.focus(); await area(label, info, 'file-safe-error-focus', true); expect(await database(page)).toEqual(raw);
   await page.screenshot({ path: info.outputPath('file-wrapper-safe-error.png') }); await page.keyboard.press('Escape'); await expect(dialog).toBeHidden(); await expect(opener).toBeFocused(); expect(await database(page)).toEqual(raw);
 });
 
@@ -183,7 +183,7 @@ test('M03-F4 current critical copy primary controls disabled reasons and keyboar
   const { opener, dialog } = await settings(page); await page.keyboard.press('Tab'); await expect(dialog.getByRole('button', { name: '关闭设置', exact: true })).toBeFocused();
   await expect(dialog.getByTestId('restore-checkpoint')).toBeDisabled(); await expect(dialog.locator('#checkpoint-unavailable')).toBeVisible();
   await contrast(page, info, 'settings-critical-contrast', [['modal body', 'dialog[open] .settings-grid > section > p'], ['disabled restore', '[data-testid=restore-checkpoint]'], ['disabled reason', '#checkpoint-unavailable'], ['file wrapper text', 'dialog[open] .file-button'], ['keyboard focus outline', 'dialog[open] header button', true]]);
-  const input = dialog.getByTestId('import'); await input.focus(); await expect(input).toBeFocused(); await contrast(page, info, 'file-wrapper-visible-focus-contrast', [['file wrapper focus', 'dialog[open] .file-button', true]]);
+  const input = dialog.getByTestId('import-open'); await input.focus(); await expect(input).toBeFocused(); await contrast(page, info, 'file-wrapper-visible-focus-contrast', [['file wrapper focus', 'dialog[open] .file-button', true]]);
   await area(input, info, 'contrast-file-focus-wrapper', true); await page.screenshot({ path: info.outputPath('critical-modal-file-focus-contrast.png') }); expect(await database(page)).toEqual(raw);
   await page.keyboard.press('Escape'); await expect(dialog).toBeHidden(); await expect(opener).toBeFocused(); expect(await database(page)).toEqual(raw);
 });

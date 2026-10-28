@@ -1,3 +1,4 @@
+import {answerGameConfirmation} from './game-confirmation-support';
 import { test, expect, type Page, type Locator, type TestInfo } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 import { driver } from '../../tests/full-route.mjs';
@@ -104,7 +105,7 @@ test('M03-B1 an exact tracked target survives reload and resets for a separately
   expect(preference).toEqual({ version: 1, runId: before.game.core.runId, target: { kind: 'item', id: 'herb', quantity: 3 } });
   await page.reload(); await expect(page.getByTestId('save-status')).toHaveText('已保存'); await openHubFeature(page, 'goal');
   await expect(page.getByTestId('target')).toHaveText('筹备凝气草 ×3'); expect(await database(page)).toEqual(before.raw);
-  await settings(page); page.once('dialog', dialog => dialog.accept()); await page.getByTestId('restart').click();
+  await settings(page); await page.getByTestId('restart').click();await answerGameConfirmation(page,'restart');
   await finishJourneyClock(page); await expect(page.getByTestId('save-status')).toHaveText('已保存');
   const restarted = await database(page), fresh = gameOf(restarted)!;
   expect(fresh.core.runId).not.toBe(before.game.core.runId); expect(fresh).toEqual(newGame(before.game.core.player.name, fresh.core.runId));

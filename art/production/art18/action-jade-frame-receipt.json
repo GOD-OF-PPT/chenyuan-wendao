@@ -1,0 +1,30 @@
+{
+  "tool": "built-in image_gen",
+  "generatedSource": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-88d66540-aa97-4375-b2f3-05ac6a858b41.png",
+  "archivedSource": "art/production/art18/action-jade-frame-source.png",
+  "sha256": "545f5cbc8d27e1472e312fa2e7102dc2896c335e3fc84153efbf98a48c6ca8dc",
+  "size": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "alphaBBox": [
+    0,
+    8,
+    1240,
+    1254
+  ],
+  "alpha128BBox": [
+    67,
+    73,
+    1187,
+    1160
+  ],
+  "prompt": "Use case: stylized-concept. Asset type: production 2D nine-slice primary action button material for a Chinese xianxia idle cultivation game, not a mockup. Create exactly one front-facing square carved jade action plate on a 1024 by 1024 canvas. Intended to become wide game command buttons through nine-slice scaling: keep decorative details within small corner squares and make straight middle edges even. Rich restrained pine-jade surface #246559 blending to ink teal #123b3e, a thin muted old-gold outer rim #a18b58, jade light edging #94c9ad, small elegant abstract cloud curls at corners. Inner 75 percent is quiet unlettered opaque dark jade with subtle stone / lacquer grain and no illustration, suitable for editable ivory DOM action labels. Premium hand-painted xianxia game UI, shallow material bevel and tactile depth, evenly lit, no perspective, no shiny app-glass style. True transparent exterior margin about 16px and crisp alpha. No text, no Chinese writing, no symbols, no numbers, no arrows, no logos, no watermark, no characters, no extra plates, no interface screenshot, no white/yellow parchment, no neon halo.",
+  "at": "2026-10-28T03:49:01.359057+00:00",
+  "state": "source_received_not_runtime_accepted"
+}

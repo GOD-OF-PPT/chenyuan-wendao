@@ -87,6 +87,8 @@ import {demoLink,normalLink} from './demo-loader';
 import {guidanceFor,guideCatalog} from './guidance';
 import GuidancePanel from './GuidancePanel.vue';
 import CataloguePager from './CataloguePager.vue';
+import GameConfirmDialog from './GameConfirmDialog.vue';
+import {useGameConfirmation} from './use-game-confirmation';
 const helpPage=ref(0);
 import {journalAnchors,type JournalLedger,type JournalWrite} from './journal-anchors';
 
@@ -100,7 +102,7 @@ const pendingStoryError=computed(()=>store.unresolved);
 const saveTone=computed(()=>!store.ready||store.busy?'pending':store.error||!store.available?'problem':store.game&&store.saved?'saved':'idle');
 const saveDisplayLabel=computed(()=>store.saveLabel==='本次未保存'?'保存待确认':store.saveLabel);
 const openingChoices=[{id:'help',name:'赠丹相助',detail:'结下赠药之缘'},{id:'trade',name:'以丹换简',detail:`获得剑简，剑修终结伤害 +${C.swordManual.damageBonus}`},{id:'leave',name:'保留丹药',detail:'保留回春丹，各自离开'}] as const;
-const importNotice=ref('');let importReadRevision=0;
+const importNotice=ref(''),importReadRevision=ref(0);
 const experience=useLocalExperience();let appActive=true;const stopObserving=store.observe(value=>{const observedNavigation=navigationRevision;if(['import','restore','restart','new_game'].includes(value.kind)){readingGeneration.value++;narrativeContext.value++;readingReturn.value=null;detailParent.value=null;clearFlowReturns();journalWrites.value=[];}if(value.kind==='action'&&value.result&&value.operation&&store.game?.core.revision===value.result.revisionAfter){const run=store.game.core.runId,revision=value.result.revisionAfter,added=value.operation==='EVENT'?0:value.operation==='BATTLE'&&value.flags.includes('battle_won')?2:1;journalWrites.value=[...journalWrites.value.filter(w=>w.run!==run||w.revision!==revision),{run,revision,added}].slice(-100);}if(value.kind==='action'&&value.result&&store.game&&!value.replayed&&store.lastFromActivity&&store.activityOwned&&store.activity?.version===7&&store.activity.plan.action.type===value.operation&&store.activity.runId===store.game?.core.runId&&value.result.revisionAfter===store.game.core.revision&&((hubView.value==='current'&&value.operation==='CHOOSE'&&value.result.phaseBefore==='opening'&&value.result.phaseAfter==='idle')||(hubView.value==='cultivation'&&value.operation==='BREAKTHROUGH'&&value.result.delta.realm.before!==value.result.delta.realm.after)||(hubView.value==='trial-preparation'&&value.operation==='START_TRIAL'&&value.result.phaseBefore==='idle'&&value.result.phaseAfter==='trial-question')))selectTab('修行');focusObserved(value,observedNavigation);experience.record(value);},experience.fault);onScopeDispose(()=>{appActive=false;stopObserving();});
 const collectionTarget = ref<CollectionTarget | null>(null), highlight = ref('');
 const trainingInspectionPlan=shallowRef<CultivationPlan|null>(null);
@@ -132,6 +134,7 @@ function selectTab(next: string) { clearFlowReturns();readingReturn.value=null;d
 const preparation = shallowRef<Action | null>(null);
 const fontScale = computed({get:()=>experience.preferences.value.fontScale,set:(value:1|1.5|2)=>{void experience.setPreferences({fontScale:value});}}), reduceMotion = computed({get:()=>experience.preferences.value.reduceMotion,set:(value:boolean)=>{void experience.setPreferences({reduceMotion:value});}}), settings = ref<HTMLDialogElement>(), exportError = ref('');
 const settingsButton=ref<HTMLButtonElement>(),contentPanel=ref<HTMLElement>(),navHeight=ref(0);
+const importButton=ref<HTMLButtonElement>(),importInput=ref<HTMLInputElement>();
 const noticeRegion=ref<HTMLElement>(),noticeHeight=ref(0);
 watch(noticeRegion,(node,_,cleanup)=>{if(!node)return;const observer=new ResizeObserver(()=>{const height=node.getBoundingClientRect().height;noticeHeight.value=height?height+8:0;});observer.observe(node);cleanup(()=>observer.disconnect());},{flush:'post'});
 const desktopMedia=window.matchMedia('(min-width:480px)'),wideScreen=ref(desktopMedia.matches);
@@ -180,6 +183,15 @@ onMounted(()=>document.addEventListener('keydown',featureKey));onScopeDispose(()
 function currentContent(){return [...document.querySelectorAll<HTMLElement>('.catalogue-view .play-catalogue')].find(visibleFocusTarget)??(visibleFocusTarget(contentPanel.value??null)?contentPanel.value??null:null);}
 const focus=useFocus(()=>currentContent()??settingsButton.value??null);
 provide(gameFocusKey,focus);
+const confirmation=useGameConfirmation({focus,appearance:()=>({fontScale:fontScale.value,reduceMotion:reduceMotion.value})});
+function confirmationSource(){
+ const key=()=>JSON.stringify([core.value?.runId??null,core.value?.revision??0,store.activity?.id??null,store.activity?.revision??null,store.activity?.ownerId??null,store.syncEpoch]);
+ // navigationRevision also advances on ordinary input; modal return tracks the actual view.
+ const viewKey=()=>JSON.stringify([hubView.value,tab.value,detailParent.value?.view??null,detailParent.value?.tab??null]);
+ const original=key(),view=viewKey(),run=core.value?.runId??null;
+ return{current:()=>appActive&&key()===original&&viewKey()===view,mayReturn:()=>appActive&&(core.value?.runId??null)===run&&viewKey()===view};
+}
+function confirmationBlocked(){return store.busy?'当前行动正在保存，请先等保存落定。':!store.available?'存档当前不可写，请先重新读取。':store.unresolved?'上次行动尚未落定，请先重试或核对原结果。':'';}
 let pendingContentFocus:{owner:number;opener:Element|null}|null=null;
 let beginningJourney:{owner:number;run:string;anchor:Element|null}|null=null;
 type StageFocus={owner:number;sync:number;id:string;run:string;generation:number;ownerId:string;command:string;revision:number;action:string;target:'stage'|'life';anchor:Element|null;ready:boolean};
@@ -464,32 +476,37 @@ async function exportRaw() {
   catch (e) { exportError.value = e instanceof Error ? e.message : String(e); }
 }
 async function importFile(event: Event) {
-  const input = event.target as HTMLInputElement, file = input.files?.[0], owner=++importReadRevision;
+  const input = event.target as HTMLInputElement, file = input.files?.[0], owner=++importReadRevision.value,originDialog=input.closest<HTMLDialogElement>('dialog[open]');
   importNotice.value='';
   if (!file) return;
   input.value='';
   const intent=store.prepareImport();if(!intent)return;
-  const owns=()=>appActive&&owner===importReadRevision;
-  const unchanged=()=>!store.busy&&store.available&&(game.value?.core.runId??null)===intent.expectedRunId&&(game.value?.core.revision??0)===intent.expectedRevision;
+  const source=confirmationSource();
+  const owns=()=>appActive&&owner===importReadRevision.value;
+  const unchanged=()=>!store.busy&&store.available&&source.current()&&(game.value?.core.runId??null)===intent.expectedRunId&&(game.value?.core.revision??0)===intent.expectedRevision;
   if (file.size > MAX_SAVE_BYTES) { store.validationError('存档大于 1 MB，未导入'); input.value = ''; return; }
   try {
     let raw=await file.text();
     if(!owns())return;
-    if(!unchanged()){importNotice.value='读取文件期间进度已变化，未导入。请重新选择文件并核对当前进度。';return;}
+    if(!unchanged()||originDialog&&!originDialog.open){importNotice.value='读取文件期间进度已变化，或已离开原页面，未导入。请重新选择文件并核对。';return;}
     if(session.kind==='demo'){try{raw=JSON.stringify(parseDemoSave(raw,session.node!.nodeId,session.node!.sourceDigest));}catch(e){store.validationError(e instanceof Error?e.message:'演示存档无法核对。');return;}}
-    if (!game.value || confirm(session.kind==='demo'?'导入将替换本节点的演示进度，正常存档保留。是否继续？':'导入将替换当前进度。建议先导出备份，是否继续？')) {
-      if(owns())await store.importPrepared(raw,intent);
+    const message=(session.kind==='demo'?'导入将替换本节点的演示进度，正常存档保留。请先核对需要保留的备份。':'导入将替换当前进度。建议先导出备份，再明确确认本次覆盖。')+'\n所选文件：'+file.name;
+    if (!game.value || await confirmation.ask({kind:'import',title:'导入存档',message,action:'覆盖并导入',cancel:'保留当前进度',current:()=>owns()&&source.current(),blocked:confirmationBlocked,mayReturn:()=>owns()&&source.mayReturn(),opener:settings.value?.open?importButton.value??null:undefined})) {
+      if(owns()&&unchanged())await store.importPrepared(raw,intent);
+      else if(owns())importNotice.value='确认期间进度或安排已变化，本次未导入。请重新选择文件并核对。';
     }
   } catch { if(owns())importNotice.value='文件无法读取，未导入。已有进度保留，请重新选择可读取的存档。'; }
 }
 async function reset() {
-  if (confirm(session.kind==='demo'?'重新载入会替换本节点的演示进度，正常存档保留。是否继续？':'重新开始会替换当前进度，确定已导出需要保留的存档？')) {
-    if(session.kind==='demo')await store.importText(JSON.stringify(session.node!.game));else await store.restart(core.value?.player.name ?? name.value); if (!store.error) { selectTab('修行'); settings.value?.close(); }
+  const source=confirmationSource(),originalName=core.value?.player.name??name.value;
+  if (await confirmation.ask({kind:'restart',title:session.kind==='demo'?'重载演示节点':'重开人生',message:session.kind==='demo'?'重新载入会替换本节点的演示进度，正常存档保留。':'重新开始会替换当前进度。请先导出需要保留的存档；确认后才重开人生。',action:session.kind==='demo'?'重载此节点':'确认重开',cancel:session.kind==='demo'?'保留演示进度':'继续此生',current:source.current,blocked:confirmationBlocked,mayReturn:source.mayReturn})&&source.current()&&!confirmationBlocked()) {
+    if(session.kind==='demo')await store.importText(JSON.stringify(session.node!.game));else await store.restart(originalName); if (!store.error) { selectTab('修行'); settings.value?.close(); }
   }
 }
 async function restore() {
-  if (confirm('回到最近的完整准备检查点，当前进度将被替换，是否继续？')) {
-    await store.checkpoint(); if (!store.error) { selectTab('修行'); settings.value?.close(); }
+  const intent=store.prepareCheckpoint();if(!intent)return;const source=confirmationSource();
+  if (await confirmation.ask({kind:'restore',title:'恢复完整准备',message:'回到最近的完整准备检查点，当前进度将被替换。检查点原件仍保留，请核对后确认。',action:'确认恢复',cancel:'保留当前进度',current:source.current,blocked:confirmationBlocked,mayReturn:source.mayReturn})&&source.current()&&!confirmationBlocked()) {
+    await store.restorePrepared(intent); if (!store.error) { selectTab('修行'); settings.value?.close(); }
   }
 }
 function exportLife() { if (game.value) download(exportLifeText(game.value), '尘缘问道-生平.txt', 'text/plain;charset=utf-8'); }
@@ -644,7 +661,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
       <section class="hub-stage" :class="{'hub-battle':!!game.battle,'hub-opening':phase==='opening'}" aria-label="游戏主舞台">
         <ScenePanel v-if="!game.battle" :game="game" :meditation="cultivationHome&&!producing&&!immersive" :battle-stage="!!game.battle" :eyebrow="phase==='opening'?'山雨破庙':location.subtitle" :title="phase==='opening'?'雨中故人':location.name" description="一念尘缘起，千山共问道。"/>
         <section ref="contentPanel" :id="hubMain?'game-content':undefined" class="paper hub-current" :class="{'hub-cultivating':phase==='idle'&&game.status==='active'&&core.world.location==='cave','art17-current':caveThreshold}" data-testid="hub-current" tabindex="-1" aria-label="当前内容">
-          <template v-if="store.activity?.version===7&&store.activity.status!=='stopped'"><MilestoneGate v-if="['CHOOSE','BREAKTHROUGH','START_TRIAL'].includes(store.activity.plan.action.type)" :game="game" :kind="store.activity.plan.action.type==='CHOOSE'?'opening':store.activity.plan.action.type==='START_TRIAL'?'trial':'breakthrough'" :action="store.activity.plan.action" :class="{'art17-threshold':caveThreshold}"><template v-if="caveThreshold" #object="{source,phase,engaged,remaining,seconds}"><CaveThresholdObject :game="source" :phase="phase" :engaged="engaged" :remaining="remaining" :seconds="seconds" :failed="!!store.error" :enabled="store.available&&!store.busy" @inspect="openPreparation($event)" @navigate="inspectCaveDestination"/></template><p>本次已安排，读秒与停手在上方；原子保存后显示成果。</p><button @click="viewActivityPlan">查看原安排</button></MilestoneGate><TrainingActivity v-if="!immersive" :store="store" @settings="viewActivityPlan" @details="viewReceipt"/><button v-if="store.activity.status==='paused'" class="text-button" @click="openHub('current',$event)">重新查看当前抉择</button></template><template v-else-if="phase==='opening'"><MilestoneGate :game="game" kind="opening"><div class="hub-opening-title"><PortraitImage id="shen" fallback="沈"/><div><span>破庙初遇 · 沈清禾</span><h2>一丹，一念。</h2></div></div><p class="story">山雨将歇，沈清禾向你求药。随身回春丹 ×{{core.inventory.healing_pill}}，要不要介入这段因果，由你决定。</p><div id="opening-actions" class="choices opening-choices" tabindex="-1" data-primary-region role="group" aria-label="破庙抉择"><ChoiceCard v-for="choice in openingChoices" :key="choice.id" :choice-id="choice.id" :label="choice.name" :disabled="!can({type:'CHOOSE',choice:choice.id})" :identity="core.runId+core.revision" :details="choiceDetails({type:'CHOOSE',choice:choice.id},choice.detail)" @choose="act({type:'CHOOSE',choice:choice.id})"><strong>{{choice.name}}</strong><small>{{cost({type:'CHOOSE',choice:choice.id})}}</small><small>{{choice.detail}}</small><small v-if="why({type:'CHOOSE',choice:choice.id})">{{why({type:'CHOOSE',choice:choice.id})}}</small></ChoiceCard></div><button class="text-button" @click="openHub('current',$event)">查看三种选择与剑简说明</button></MilestoneGate></template>
+          <template v-if="store.activity?.version===7&&store.activity.status!=='stopped'"><MilestoneGate v-if="['CHOOSE','BREAKTHROUGH','START_TRIAL'].includes(store.activity.plan.action.type)" :game="game" :kind="store.activity.plan.action.type==='CHOOSE'?'opening':store.activity.plan.action.type==='START_TRIAL'?'trial':'breakthrough'" :action="store.activity.plan.action" :class="{'art17-threshold':caveThreshold}"><template v-if="caveThreshold" #object="{source,phase,engaged,remaining,seconds}"><CaveThresholdObject :game="source" :phase="phase" :engaged="engaged" :remaining="remaining" :seconds="seconds" :failed="!!store.error" :enabled="store.available&&!store.busy" @inspect="openPreparation($event)" @navigate="inspectCaveDestination"/></template><p>本次已安排，读秒与停手在上方；保存后显示成果。</p><button @click="viewActivityPlan">查看原安排</button></MilestoneGate><TrainingActivity v-if="!immersive" :store="store" @settings="viewActivityPlan" @details="viewReceipt"/><button v-if="store.activity.status==='paused'" class="text-button" @click="openHub('current',$event)">重新查看当前抉择</button></template><template v-else-if="phase==='opening'"><MilestoneGate :game="game" kind="opening"><div class="hub-opening-title"><PortraitImage id="shen" fallback="沈"/><div><span>破庙初遇 · 沈清禾</span><h2>一丹，一念。</h2></div></div><p class="story">山雨将歇，沈清禾向你求药。随身回春丹 ×{{core.inventory.healing_pill}}，要不要介入这段因果，由你决定。</p><div id="opening-actions" class="choices opening-choices" tabindex="-1" data-primary-region role="group" aria-label="破庙抉择"><ChoiceCard v-for="choice in openingChoices" :key="choice.id" :choice-id="choice.id" :label="choice.name" :disabled="!can({type:'CHOOSE',choice:choice.id})" :identity="core.runId+core.revision" :details="choiceDetails({type:'CHOOSE',choice:choice.id},choice.detail)" @choose="act({type:'CHOOSE',choice:choice.id})"><strong>{{choice.name}}</strong><small>{{cost({type:'CHOOSE',choice:choice.id})}}</small><small>{{choice.detail}}</small><small v-if="why({type:'CHOOSE',choice:choice.id})">{{why({type:'CHOOSE',choice:choice.id})}}</small></ChoiceCard></div><button class="text-button" @click="openHub('current',$event)">查看三种选择与剑简说明</button></MilestoneGate></template>
           <BattlePanel v-else-if="game.battle" :active="hubMain" :game="game" :can="can" :cost="cost" :why="why" compact @move="battle" @start="startAdventure" @takeover="store.pauseCultivation" :activity="store.activity" :running="store.activityRunning" :busy="store.busy" :available="store.available" :saved-adventure-plan="adventureInspectionPlan" :plan-saved="adventureInspectionSaved" @details="openHub('battle',$event)"><template #activity><TrainingActivity v-if="!immersive&&store.activity?.version===6&&store.activity.status!=='stopped'" :store="store" compact @settings="viewActivityPlan" @details="viewReceipt"/></template></BattlePanel>
           <template v-else-if="phase==='idle'&&game.status==='active'&&core.world.location==='cave'">
            <div v-if="immersive" class="art06-stage-home" :class="{'art17-stage':caveGate,'art17-needs-material':needsPreparation}">
@@ -828,7 +845,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
         </section>
         <section class="settings-saves" aria-labelledby="settings-saves-title"><h3 id="settings-saves-title">留卷 · 续缘</h3>
           <p class="small" role="status" data-testid="settings-save-status">{{saveDisplayLabel}}</p><p v-if="store.error||exportError||importNotice" class="settings-error" role="alert" data-testid="settings-error">{{store.error||exportError||importNotice}}</p>
-          <div class="settings-actions"><label class="file-button">导入存档<input data-testid="import" name="save-import" type="file" accept=".json,application/json" @change="importFile" :disabled="store.busy || !store.available"></label>
+          <div class="settings-actions"><button ref="importButton" type="button" class="file-button" data-testid="import-open" @click="importInput?.click()" :disabled="store.busy || !store.available">导入存档</button><input ref="importInput" hidden aria-label="导入存档" data-testid="import" name="save-import" type="file" accept=".json,application/json" @change="importFile" :disabled="store.busy || !store.available">
           <button v-if="game" @click="exportSave">导出当前进度</button><button data-testid="raw-backup" @click="exportRaw" :disabled="store.busy">导出原件备份</button><button v-if="game" class="danger" data-testid="restart" @click="reset" :disabled="store.busy || !store.available">重新开始</button></div>
           <button v-if="game" class="settings-checkpoint" data-testid="restore-checkpoint" :aria-describedby="!store.hasCheckpoint?'checkpoint-unavailable':undefined" @click="restore" :disabled="store.busy || !store.available || !store.hasCheckpoint"><GameIcon kind="action" id="restore"/> 恢复完整准备检查点</button>
           <p v-if="game&&!store.hasCheckpoint" id="checkpoint-unavailable" class="small">当前没有已验证的完整准备检查点。</p>
@@ -851,7 +868,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
         <p v-if="store.error" role="alert" data-testid="life-error">{{store.error}}</p>
         <button v-if="store.canRetryFor(lifeIntent.command.commandId)" data-testid="life-retry" @click="retryEnd" :disabled="store.busy">重试同一次收卷</button>
         <button data-testid="life-cancel" @click="lifeDialog?.close()" :disabled="store.busy">继续此生</button>
-        <button data-testid="life-confirm-end" @click="confirmEnd" :disabled="store.busy || !store.available || lifeStale || pendingStoryError">{{store.busy?store.saveLabel+'…':lifeIntent.command.type==='RETIRE'?'安排归隐一次 · 12秒':'安排寿尽一次 · 12秒'}}</button>
+        <button class="primary" data-testid="life-confirm-end" @click="confirmEnd" :disabled="store.busy || !store.available || lifeStale || pendingStoryError">{{store.busy?store.saveLabel+'…':lifeIntent.command.type==='RETIRE'?'安排归隐一次 · 12秒':'安排寿尽一次 · 12秒'}}</button>
       </template>
     </dialog>
     <dialog ref="ascensionDialog" class="paper life-confirm" data-testid="ascension-confirmation" aria-labelledby="ascension-title" @cancel="cancelLife" @close="closeAscension">
@@ -904,6 +921,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
       </template>
     </dialog>
     </CultivationStageHost>
+    <GameConfirmDialog v-if="confirmation.request.value" :key="confirmation.request.value.id" :request="confirmation.request.value" @answer="confirmation.answer($event)"/>
   </div>
 </template>
 

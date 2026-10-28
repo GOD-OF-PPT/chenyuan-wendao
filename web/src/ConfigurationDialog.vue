@@ -36,7 +36,7 @@ onMounted(()=>focus?.open(dialog.value));onScopeDispose(()=>focus?.release(dialo
   <div v-else-if="comparedSlot" data-testid="configuration-skill-effects"><p>原法：{{quote.before.loadout[comparedSlot]?C.skills[quote.before.loadout[comparedSlot]!].description:'尚未择法，无功法效果'}}</p><p>拟换：{{quote.after.loadout[comparedSlot]?C.skills[quote.after.loadout[comparedSlot]!].description:'尚未择法，无功法效果'}}</p></div>
   <p class="configuration-effects" data-testid="configuration-effects">修炼加成 {{quote.before.cultivationBonus}} → {{quote.after.cultivationBonus}} · 护御 {{quote.before.guard}} → {{quote.after.guard}}<br>符印伤害 {{quote.before.markDamage}} → {{quote.after.markDamage}} · 剑简加成 {{quote.before.manualDamageBonus}} → {{quote.after.manualDamageBonus}}</p>
   </template><ConfigurationOutlook v-else :snapshot="snapshot" :action="intent.command"/>
-  <p>无需灵石、丹药或游戏岁月。确认即原子保存；原安排不会自动继续。</p>
+  <p>无需灵石、丹药或游戏岁月。保存后才生效；原安排不会自动继续。</p>
   <p v-if="stale" role="status">{{retry?'原确认的回复待核对，请重试原确认；不会重复换装。':'进度或活动已变化，请重新核对后确认。'}}</p><p v-else-if="!quote.allowed" role="status">{{quote.failure?.message}}</p><p v-if="error" role="alert">{{error}}</p>
   <footer><button @click="emit('close')" :disabled="busy" data-testid="configuration-cancel">暂不更换</button><button v-if="stale&&!retry" @click="emit('refresh')" :disabled="busy||!available" data-testid="configuration-refresh">重新核对</button><button v-else-if="retry" @click="emit('retry')" :disabled="busy||!available" data-testid="configuration-retry">重试原确认</button><button v-else class="primary" @click="emit('confirm')" :disabled="busy||!available||!quote.allowed||!!error" data-testid="configuration-confirm">{{busy?'保存中…':'确认'+title}}</button></footer>
  </dialog>

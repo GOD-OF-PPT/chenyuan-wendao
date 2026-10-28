@@ -33,6 +33,7 @@ import '../src/game-menus.css';
 import '../src/art10-equipment.css';
 import '../src/art11-inventory.css';
 import '../src/art12-narrative.css';
+import '../src/art18-ui.css';
 
 type DeliveryMethod='execute'|'settleActivity'|'create'|'importText'|'restoreCheckpoint';
 export function mountFaultApp(){

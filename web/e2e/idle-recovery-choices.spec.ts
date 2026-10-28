@@ -1,3 +1,4 @@
+import {answerGameConfirmation} from './game-confirmation-support';
 import {test,expect,type Page} from '@playwright/test';
 import {trialJourneyScenario} from '../../tests/trial-journey-route.mjs';
 import {fullRoute} from '../../tests/full-route.mjs';
@@ -39,7 +40,7 @@ test('M04-U9 two explicit ending reviews cannot seal twice or end the other page
  try{
   await useJourneyClock(other);await other.goto('/');await expect(other.getByTestId('save-status')).toHaveText('已保存');const selected=await selectPlan(other,{kind:'milestone',action:{type:'END',ending:'depart'},maxCycles:1});await decision(other,selected.control);await settleVisibleActivity(other);const sealed=await snapshot(other),raw=await recoveryDatabase(other);
   await expect(page.getByTestId('ascension-stale')).toBeVisible();await expect(page.getByTestId('ascension-confirm')).toBeDisabled();expect(await snapshot(page)).toEqual(sealed);expect(await recoveryDatabase(page)).toEqual(raw);
-  await other.getByRole('button',{name:'设置',exact:true}).click();other.once('dialog',d=>d.accept());await other.getByTestId('restart').click();await control600(other,raw);const replacement=await snapshot(other),protectedRaw=await recoveryDatabase(other);await expect.poll(async()=>(await snapshot(page)).core.runId).toBe(replacement.core.runId);await expect(page.getByTestId('ascension-stale')).toBeVisible();await expect(page.getByTestId('ascension-confirm')).toBeDisabled();await decision(page,page.getByTestId('ascension-cancel'));expect(await recoveryDatabase(page)).toEqual(protectedRaw);expect(replacement.status).toBe('active');expect(replacement.core.player.realm).toBe('mortal');
+  await other.getByRole('button',{name:'设置',exact:true}).click();await other.getByTestId('restart').click();await answerGameConfirmation(other,'restart');await control600(other,raw);const replacement=await snapshot(other),protectedRaw=await recoveryDatabase(other);await expect.poll(async()=>(await snapshot(page)).core.runId).toBe(replacement.core.runId);await expect(page.getByTestId('ascension-stale')).toBeVisible();await expect(page.getByTestId('ascension-confirm')).toBeDisabled();await decision(page,page.getByTestId('ascension-cancel'));expect(await recoveryDatabase(page)).toEqual(protectedRaw);expect(replacement.status).toBe('active');expect(replacement.core.player.realm).toBe('mortal');
  }finally{await other.close();}
 });
 
@@ -50,6 +51,6 @@ test('M04-U10 put success followed by a real native abort publishes no breakthro
 });
 
 test('M04-U11 malformed JSON stays in the actual import surface and cannot overwrite any complete good Game record',async({page})=>{
- const before=await importRecoveryFixture(page,fullRoute().checkpoints.qi),raw=await recoveryDatabase(page);await page.getByRole('button',{name:'设置',exact:true}).click();page.once('dialog',d=>d.accept());await page.getByTestId('import').setInputFiles({name:'invalid-json-boundary.json',mimeType:'application/json',buffer:Buffer.from('{bad')});
+ const before=await importRecoveryFixture(page,fullRoute().checkpoints.qi),raw=await recoveryDatabase(page);await page.getByRole('button',{name:'设置',exact:true}).click();await page.getByTestId('import').setInputFiles({name:'invalid-json-boundary.json',mimeType:'application/json',buffer:Buffer.from('{bad')});await answerGameConfirmation(page,'import');
  await expect(page.getByTestId('action-countdown')).toHaveText('0.6 秒');await page.clock.runFor(599);expect(await recoveryDatabase(page)).toEqual(raw);await page.clock.runFor(1);await expect(page.getByTestId('settings-error')).toContainText('JSON');await expect(page.getByTestId('settings-save-status')).toHaveText('保存待确认');await expect(page.getByTestId('import')).toBeEnabled();expect(await snapshot(page)).toEqual(before);expect(await recoveryDatabase(page)).toEqual(raw);
 });

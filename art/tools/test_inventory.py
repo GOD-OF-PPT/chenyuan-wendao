@@ -108,6 +108,8 @@ class InventoryTests(unittest.TestCase):
   if art16.exists():files.update(ROOT/ref for ref in json.loads(art16.read_text())['sourceReferences'])
   art17=ROOT/'art/redesign/art17.json'
   if art17.exists():files.update(ROOT/ref for ref in json.loads(art17.read_text())['sourceReferences'])
+  art18=ROOT/'art/redesign/art18.json'
+  if art18.exists():files.update(ROOT/ref for ref in json.loads(art18.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -2086,5 +2088,65 @@ class ART17CaveInventoryTests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'ART17 actual painting'):self.check()
   self.restore();n='web/src/CaveThresholdObject.vue';self.resign(n,self.original[n].decode().replace('path="art/v2/characters/player-seated-cold.webp"','path="art/v2/characters/wrong.webp"'))
   with self.assertRaisesRegex(AssertionError,'ART17 actual painting'):self.check()
+
+
+class ART18MaterialInventoryTests(unittest.TestCase):
+ def setUp(self):
+  from art18_inventory import LEDGER,NATIVE,REFS,ASSETS
+  self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art18-negative-');self.root=Path(self.temp.name)
+  names=NATIVE+REFS+[LEDGER,'web/src/main.ts','web/src/App.vue','web/src/LocalExperiencePanel.vue','web/src/use-local-experience.ts']
+  for name,_,_ in ASSETS:names += [f'web/public/art/v2/ui/{name}-v1.webp',f'art/production/art18/{name}-source.png',f'art/production/art18/{name}-receipt.json']
+  self.original={n:(ROOT/n).read_bytes()for n in names};self.restore()
+ def tearDown(self):self.temp.cleanup()
+ def write(self,n,value):
+  p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(value if isinstance(value,bytes)else value.encode())
+ def restore(self):
+  for n,raw in self.original.items():self.write(n,raw)
+ def check(self):
+  from art18_inventory import validate_art18
+  return validate_art18(self.root)
+ def edit(self,change):
+  n='art/redesign/art18.json';m=json.loads((self.root/n).read_text());change(m);self.write(n,json.dumps(m))
+ def resign(self,n,value):
+  self.write(n,value);raw=(self.root/n).read_bytes()
+  self.edit(lambda m:[r.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest())for field in ['files','runtimeAssets','originals']for r in m[field]if r['path']==n])
+ def test_art18_positive_requires_bounded_real_materials_and_no_human_acceptance(self):
+  self.assertGreater(self.check()[1],0)
+  for key,value in [('maxNativeBytes',18001),('maxRuntimeBytes',144001),('userAcceptance',True)]:
+   self.restore();self.edit(lambda m:m.update({key:value}))
+   with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'ART18'):self.check()
+ def test_art18_real_byte_budget_cannot_be_evaded_by_resigning_the_ledger(self):
+  n='web/src/art18-ui.css';size=self.check()[1];self.resign(n,self.original[n]+b' '*(18001-size))
+  with self.assertRaisesRegex(AssertionError,'ART18 actual budget'):self.check()
+  self.restore();n='web/public/art/v2/ui/dialog-jade-frame-v1.webp';self.resign(n,self.original[n]+b' '*(96001-len(self.original[n])))
+  with self.assertRaisesRegex(AssertionError,'ART18 per-material budget'):self.check()
+ def test_art18_unapproved_asset_or_native_membership_is_rejected(self):
+  for field in ['runtimeAssets','originals','files']:
+   self.restore();self.edit(lambda m:m[field].append(dict(m[field][0])))
+   with self.subTest(field=field),self.assertRaisesRegex(AssertionError,'ART18.*membership'):self.check()
+ def test_art18_source_and_runtime_alpha_are_real_even_with_updated_hashes(self):
+  from PIL import Image
+  for n in ['art/production/art18/action-jade-frame-source.png','web/public/art/v2/ui/action-jade-frame-v1.webp']:
+   self.restore();p=self.root/n
+   with Image.open(p)as image:opaque=image.convert('RGBA');opaque.putalpha(255)
+   opaque.save(p,'PNG'if n.endswith('.png')else'WEBP',quality=82,method=6)
+   self.resign(n,p.read_bytes())
+   if n.endswith('.png'):
+    receipt='art/production/art18/action-jade-frame-receipt.json';r=json.loads((self.root/receipt).read_text());r['sha256']=hashlib.sha256(p.read_bytes()).hexdigest();self.write(receipt,json.dumps(r))
+   with self.subTest(path=n),self.assertRaisesRegex(AssertionError,'ART18 real (material shape|transparency)'):self.check()
+ def test_art18_real_texture_and_stylesheet_consumers_must_remain_attached(self):
+  n='web/src/art18-ui.css';self.resign(n,self.original[n].decode().replace('action-jade-frame-v1.webp','missing-material.webp'))
+  with self.assertRaisesRegex(AssertionError,'ART18 material detached'):self.check()
+  self.restore();n='web/src/main.ts';self.write(n,self.original[n].decode().replace("import './art18-ui.css';",''))
+  with self.assertRaisesRegex(AssertionError,'ART18 stylesheet detached'):self.check()
+ def test_art18_cancel_and_context_guards_cannot_turn_into_writes_or_browser_confirmation(self):
+  n='web/src/App.vue';self.write(n,self.original[n].decode().replace('confirmation.answer($event)','confirmation.answer(true)'))
+  with self.assertRaisesRegex(AssertionError,'ART18 confirmation consumer'):self.check()
+  self.restore();self.write(n,self.original[n]+b"\nconfirm('unexpected');")
+  with self.assertRaisesRegex(AssertionError,'ART18 browser confirmation'):self.check()
+  self.restore();n='web/src/use-game-confirmation.ts';self.resign(n,self.original[n].decode().replace('source.resolve(value)','source.resolve(true)'))
+  with self.assertRaisesRegex(AssertionError,'ART18 consent/return'):self.check()
+  self.restore();self.resign(n,self.original[n]+b'\nsetInterval(()=>0,1000);')
+  with self.assertRaisesRegex(AssertionError,'ART18 presentation gained'):self.check()
 
 if __name__=='__main__':unittest.main()

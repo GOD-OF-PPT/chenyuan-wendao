@@ -111,7 +111,7 @@ test('M03-M1 settings overview local overview loaded records and export preview 
   const game = await load(page, info), { opener, dialog } = await openSettings(page);
   await liveControls(dialog, ['reduce-effects', 'gameplay-help-entry', 'raw-backup', 'settings-life', 'settings-retire', 'restore-checkpoint', 'restart', 'demo-menu-open', 'local-records-panel']);
   await expect(dialog.locator('select[name=text-size]')).toBeVisible(); await expect(dialog.getByText('文字大小', { exact: true })).toBeVisible();
-  await expect(dialog.locator('label.file-button').filter({ has: page.getByTestId('import') })).toBeVisible();
+  await expect(dialog.getByTestId('import-open')).toBeVisible();
   expect(await dialog.locator('select[name=text-size] option').allTextContents()).toEqual(['100%', '150%', '200%']);
   await expect(dialog.getByRole('button', { name: '导出当前进度', exact: true })).toBeVisible();
   await expect(dialog.getByTestId('local-records-panel')).not.toHaveAttribute('open', '');
@@ -121,8 +121,8 @@ test('M03-M1 settings overview local overview loaded records and export preview 
   await effectLabel.click(); await expect(effects).toBeChecked({ checked: !original });
   await expect(effects).toBeEnabled(); await effectLabel.click(); await expect(effects).toBeChecked({ checked: original });
   await expect(effects).toBeEnabled();
-  const importLabel = dialog.locator('label.file-button').filter({ has: page.getByTestId('import') });
-  expect(await dialog.getByTestId('import').evaluate(node => (node as HTMLInputElement).labels?.[0]?.control === node)).toBe(true);
+  const importLabel = dialog.getByTestId('import-open');
+  expect(await dialog.getByTestId('import').evaluate(node => node instanceof HTMLInputElement && node.type === 'file')).toBe(true);await expect(importLabel).toHaveAttribute('type','button');
   const choosing = page.waitForEvent('filechooser'); await importLabel.click(); await (await choosing).setFiles([]); await unchanged(page);
   const downloading = page.waitForEvent('download'); await dialog.getByRole('button', { name: '导出当前进度', exact: true }).click();
   const download = await downloading, path = await download.path(); expect(path).not.toBeNull(); expect(JSON.parse(await readFile(path!, 'utf8'))).toEqual(game);

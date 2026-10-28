@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-28T04:08:52.725088+00:00",
+  "sources": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal",
+      "observed": "Native dialog enters the top layer and makes other document elements inert; returns undefined.",
+      "projectInference": "Use actual showModal and focus boundaries; app activity timers continue, so asynchronous consent must validate its original context."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm",
+      "observed": "Browser confirmation waits for OK/Cancel; browsers may ignore it in some situations.",
+      "projectInference": "Replace its five page call sites with explicit game-styled DOM consent, preserving cancel/no-write and original frozen intent."
+    }
+  ],
+  "notCertification": true
+}

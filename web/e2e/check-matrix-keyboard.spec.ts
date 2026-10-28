@@ -1,3 +1,4 @@
+import {answerGameConfirmation} from './game-confirmation-support';
 import {installRetirementDeliveryGate,armRetirementClose,armRetirementRead,releaseRetirementInOrder,cleanupRetirementGate} from './focus-delivery-support';
 import {test,expect,type Page,type Locator,type TestInfo} from '@playwright/test';
 import {newGame,advance,resolve} from '../../src/full/engine.ts';
@@ -282,7 +283,7 @@ test('CHECK-K9 an actual battle turn keyboard prompt preserves focus and an old 
   await keyboard(page,page.getByTestId('guard'));await expect(page.getByTestId('error')).toContainText('存储空间不足');await expect(page.getByTestId('fx-skip')).toHaveCount(0);await expect(page.getByTestId('action-motion')).toHaveCount(0);expect(await database(page)).toEqual(third.raw);
   const rejected=await page.evaluate(()=>(window as any).__keyboardRejectedStart);await keyboard(page,page.getByTestId('retry'));const original=await running(page,3000),accepted=await database(page);const start=accepted['full-receipts'].filter((r:any)=>r.key===rejected.key);expect(start).toHaveLength(1);expect(start[0].value.input).toEqual(rejected.value.input);
   const fourth=await cycle(page,original,third.after,info,'battle-after-original-start-retry');const lifeSkip=await majorReady(page,'BATTLE');await lifeSkip.focus();await lifeSkip.evaluate(n=>(window as any).__keyboardLifeSkip=n);
-  await keyboard(page,page.getByTestId('game-settings'));await expect(page.getByTestId('fx-skip')).toHaveCount(0);const confirmation=page.waitForEvent('dialog'),restart=keyboard(page,page.getByTestId('restart')),dialog=await confirmation;expect(dialog.message()).not.toBe('');await dialog.accept();await restart;await controlComplete(page,fourth.raw);
+  await keyboard(page,page.getByTestId('game-settings'));await expect(page.getByTestId('fx-skip')).toHaveCount(0);await keyboard(page,page.getByTestId('restart'));await expect(page.getByTestId('game-confirmation-message')).not.toBeEmpty();await answerGameConfirmation(page,'restart');await controlComplete(page,fourth.raw);
   const newRaw=await database(page),newLife=state(newRaw,'current');expect(newLife.core.runId).not.toBe(fourth.after.core.runId);expect(newLife).toEqual(newGame(newLife.core.player.name,newLife.core.runId));expect(state(newRaw,'activity')).toBeNull();expect(state(newRaw,'previous')).toEqual(fourth.after);
   expect(newRaw['full-receipts']).toHaveLength(1);expect(newRaw['full-receipts'][0].value).toMatchObject({format:'chenyuan-control-receipt',kind:'CREATE',mutation:{runId:newLife.core.runId,expectedRunId:fourth.after.core.runId,expectedRevision:fourth.after.core.revision}});
   await expect.poll(async()=>{await page.clock.runFor(16);return await page.getByTestId('hub-pulse').count()===1?page.getByTestId('hub-pulse').getAttribute('data-operation'):null;}).toBe('CREATE');const newNotice=await page.getByTestId('hub-pulse').getAttribute('data-receipt');
@@ -290,8 +291,7 @@ test('CHECK-K9 an actual battle turn keyboard prompt preserves focus and an old 
   await evidence(info,'old-detached-skip',{oldKey,newKey,delivery:'explicit old-node synthetic click, isTrusted=false; not a new player authorization',second,rejected,third,fourth,newRaw,newNotice});
 });
 async function restorePromptPreparation(page:Page){
-  await keyboard(page,page.getByTestId('game-settings'));const raw=await database(page),confirm=page.waitForEvent('dialog'),invoked=page.getByTestId('restore-checkpoint').click(),message=await confirm;
-  expect(message.message()).toContain('完整准备');await message.accept();await invoked;await controlComplete(page,raw);return restored(page,raw);
+  await keyboard(page,page.getByTestId('game-settings'));const raw=await database(page);await page.getByTestId('restore-checkpoint').click();await expect(page.getByTestId('game-confirmation-message')).toContainText('完整准备');await answerGameConfirmation(page,'restore');await controlComplete(page,raw);return restored(page,raw);
 }
 async function staticReducedEntry(page:Page,before:any,info:TestInfo,label:string){
   const saved=await trialEntry(page,before,info,label);await expect.poll(async()=>{await page.clock.runFor(16);return await page.getByTestId('hub-pulse').count()===1?page.getByTestId('hub-pulse').getAttribute('data-operation'):null;},{timeout:8000}).toBe('START_TRIAL');
