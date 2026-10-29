@@ -164,7 +164,15 @@
     "files": 93,
     "bytes": 9534862
   },
-  "identityAfterCodeCommit": "pending actual Git/rebuild/frozen/HTTP check; original preview will not reload if runtime remains identical",
+  "identityAfterCodeCommit": {
+    "codeCommit": "d2b6d8d28f90ae99bedd7fdeb0df0dd046bbba15",
+    "all302GitRuntimeBlobsExact": true,
+    "testedRebuildFrozen93Exact": true,
+    "all93HttpDecodedExact": true,
+    "originalPreviewReadonlyNoReload": true,
+    "identityEvidence": "identity-proof.json",
+    "previewEvidence": "user-preview.json"
+  },
   "notRun": [
     "compatibility/mobile/responsive/crossbrowser/multi-viewport/font",
     "environment/performance",
