@@ -8,6 +8,7 @@ import {pageSlice} from './play-flow';
 import {gameFocusKey} from './focus';
 import CataloguePager from './CataloguePager.vue';
 import ItemArtifact from './ItemArtifact.vue';
+import AssetImage from './AssetImage.vue';
 const props=defineProps<{game:Game;itemId:string;available:boolean;reason:string;consumption:(a:Action)=>string}>();
 const emit=defineEmits<{act:[Action];track:[TrackingTarget]}>();
 const focus=inject(gameFocusKey),library=ref<HTMLDialogElement>(),purposes=ref<HTMLDialogElement>(),instance=useId(),page=ref(0);
@@ -28,14 +29,14 @@ onDeactivated(close);onScopeDispose(()=>{focus?.release(library.value);focus?.re
 </script>
 <template>
  <div class="inventory-stage art11-inventory" data-testid="inventory-stage" :data-item="itemId" :data-owned="stock>0" :data-stock="stock">
+  <AssetImage class="study-sanctum" style="inset:-12px -18px" path="art/v2/workshops/inventory-v1.webp" asset-id="inventory-chamber" eager aria-hidden="true"><span class="study-sanctum-fallback"/></AssetImage>
   <header class="inventory-stage-heading"><small>选择、查看不消耗</small><button data-testid="inventory-library-open" @click="open(library,$event)">翻找行囊 · 全部物资</button></header>
   <template v-if="item">
    <div class="inventory-selected">
     <button v-if="stock>0" class="inventory-held" data-testid="inventory-uses-open" :aria-label="'查看'+item.name+'用途与价格，不消耗'" @click="open(purposes,$event)"><ItemArtifact :item-id="itemId" :owned="true"/><span>查用途 · 不消耗</span></button>
     <div v-else class="inventory-blueprint"><ItemArtifact :item-id="itemId" :owned="false"/><small>图谱 · 尚未持有</small></div>
-    <article class="inventory-object" data-testid="inventory-object"><small>{{item.kind==='medicine'?'随身丹药':item.kind==='breakthrough'?'破境之物':'修行灵材'}}</small><h3>{{item.name}}</h3><strong data-testid="inventory-selected-stock">实存 {{stock}} 件</strong><p>{{item.description}}</p><small>{{stock?'实物查用途后，再明确选择服丹或出售安排。':'查来源只查看获得方式；不自动取材、采购或旅行。'}}</small></article>
+    <article class="inventory-object" data-testid="inventory-object"><small>{{item.kind==='medicine'?'随身丹药':item.kind==='breakthrough'?'破境之物':'修行灵材'}}</small><h3>{{item.name}}</h3><strong data-testid="inventory-selected-stock">实存 {{stock}} 件</strong><p>{{item.description}}</p><small>{{stock?(item.hp||item.mp?'可查看服丹调息或出售换石安排。':item.sell===null?'此物不可出售；可查看用途与来源。':'可查看材料用途或出售安排。'):'查来源只查看获得方式；不自动取材、采购或旅行。'}}</small><footer class="inventory-main-decision"><button v-if="!stock" class="primary" data-testid="inventory-main-source" @click="view('source')">查找{{item.name}}来源</button><button v-else class="primary" data-testid="inventory-main-uses" @click="open(purposes,$event)">查看用途与价格</button><button v-if="!stock" class="text-button" data-testid="inventory-uses-open" @click="open(purposes,$event)">用途与价格</button></footer></article>
    </div>
-   <footer class="inventory-main-decision"><button v-if="!stock" class="primary" data-testid="inventory-main-source" @click="view('source')">查找{{item.name}}来源</button><button v-else class="primary" data-testid="inventory-main-uses" @click="open(purposes,$event)">查看用途与价格</button><button v-if="!stock" class="text-button" data-testid="inventory-uses-open" @click="open(purposes,$event)">用途与价格</button></footer>
   </template>
   <p v-else class="catalogue-empty" data-testid="inventory-current-empty">当前分类没有条目；翻找行囊可切换分类或查看后续物资图谱。</p>
   <dialog ref="library" class="inventory-library-dialog art11-object-dialog" data-testid="inventory-library-dialog" :aria-labelledby="instance+'-library'"><header><h3 :id="instance+'-library'" tabindex="-1" data-dialog-initial>翻找行囊 · 选择只查看</h3><button data-testid="inventory-library-close" @click="close">合上行囊 · 返回选物</button></header><div class="inventory-directory"><slot name="directory" :close="close"/></div></dialog>

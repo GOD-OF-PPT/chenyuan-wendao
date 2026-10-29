@@ -1,0 +1,10 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "useCase": "precise-object-edit",
+  "transparent_background": false,
+  "referenceRole": "art/production/art29/candidates/nook-v1.png: edit target; only table-group vertical composition adjustment",
+  "prompt": "Use case: precise-object-edit. Edit target: the attached empty inventory packing nook illustration. Make ONE targeted composition correction: LOWER the left sorting table so its clear flat TOP surface is around 66-69% of full image height instead of around 52%, using a genuinely lower and shorter table whose feet/base remain entirely in frame around 90-94% height. Do not merely crop or translate the entire picture. The empty dark jade satchel and cloth at far lower-left should remain complete inside the picture beside the low table, scaled/repositioned only as needed to keep this one table group coherent. Keep the table's width and empty working area, calm dark right wall for text, upper mountain/cave/lattice view, palette, lighting and painterly material style the same. Preserve the wide 2:1 full-frame composition and all other scene architecture. Absolutely no collectible/game inventory contents: NO herbs/pills/potions/crystals/coins/weapons/seals, NO characters, NO fire/smoke, NO writing/labels/numbers/UI/buttons. The table top must be visibly lower so separate live item artwork can rest above it. Opaque environment only.",
+  "promptSHA256": "450eb0a2759bdae15002813902f583342bd15b222f7be160f85d6ce7cc5045a4",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-4e353e3f-80bf-4900-ba56-a42f2f297090.png"
+}

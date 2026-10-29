@@ -1,0 +1,20 @@
+{
+  "task": "ART29",
+  "readOn": "2026-10-29",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "title": "Clarity in League",
+      "published": "2021-03-12",
+      "actuallyRead": "clarity goals, hierarchy/noise and recognizable silhouettes",
+      "application": "物资可辨轮廓/实际数量和当前主要决定优先，背景无可冒库存物"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "title": "XAG112 UI navigation",
+      "actuallyRead": "predictable focus, consistent navigation/action order and multiple inputs",
+      "application": "原用途/来源回调与稳定返回保留，签条焦点和只读/执行动词清楚"
+    }
+  ],
+  "limits": "Composition and 200px are project choices, not source numbers, certification, competitor gameplay or human acceptance."
+}

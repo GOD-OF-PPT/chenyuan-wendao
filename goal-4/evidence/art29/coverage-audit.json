@@ -1,0 +1,45 @@
+{
+  "task": "ART29",
+  "runtimeDigest": "a2c0a75b0449ecd535186862ebf94e109d90404d76b63a38f74ba79dc080e485",
+  "ui": {
+    "unique": 155,
+    "completeFiles": 18,
+    "regularWholeRun": 152,
+    "predeclaredRealSingleWorker": 3,
+    "wholeSingle155Run": false,
+    "declaredFileTitleProjectExact": true,
+    "skip": 0,
+    "retry": 0,
+    "reportErrors": 0,
+    "reports": [
+      {
+        "path": "artifacts/goal-4/art29/regular-v2-report.json",
+        "sha256": "07b7e70399d99e79b63f2a7fc55ab2ebbc965a26788dfa8e7c48f339ee2738bf",
+        "actualCases": 152
+      },
+      {
+        "path": "artifacts/goal-4/art29/slow-v2-report.json",
+        "sha256": "ce546eec2e53ae399b8351f69c6f8136b7822ad4b697765937f27254e4b27515",
+        "actualCases": 3
+      }
+    ]
+  },
+  "native": {
+    "unique": 65,
+    "completeFiles": 6,
+    "wholeRun": true,
+    "declaredFileTitleProjectExact": true,
+    "skip": 0,
+    "retry": 0,
+    "reportErrors": 0,
+    "report": "artifacts/goal-4/art29/native-v2-report.json",
+    "sha256": "0e207f9ca2f0bed81a7348ee947bcb41a90f0686389a357f36e7f557cda439b3"
+  },
+  "scope": "Fixed1440x900/font1/singleChromium only. Not whole672UI/415native/32route/873rules current run, compatibility/environment performance, long balance or human art approval.",
+  "inputs": {
+    "initialFrozenInputs": 1128,
+    "allExactAtValidationTerminalBeforeCompletionDocs": true,
+    "previous83RefsIncludedInitially": true,
+    "protected13Exact": true
+  }
+}

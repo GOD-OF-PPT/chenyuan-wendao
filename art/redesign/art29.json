@@ -1,0 +1,218 @@
+{
+  "format": "chenyuan-inventory-scene-art29",
+  "version": 1,
+  "task": "ART29",
+  "budgets": {
+    "oldCssCap": 14000,
+    "oldNativeCap": 18000,
+    "oldSupplyCap": 40000,
+    "newRasterAssets": 1,
+    "maxRuntimeBytes": 280000,
+    "runtimeWidth": 1536,
+    "runtimeHeight": 768,
+    "paintedMinimum": 200
+  },
+  "files": [
+    {
+      "path": "web/src/InventoryStage.vue",
+      "bytes": 7081,
+      "sha256": "ee9da66d0281f008da909090275b335e0c87031a3e43d314c291c48baf744300"
+    },
+    {
+      "path": "web/src/art11-inventory.css",
+      "bytes": 12073,
+      "sha256": "62b4382c926596b800f24e7483931367aa28aa0d1a235d78280269862c061461"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0064-inventory-stage-art29-contract.md",
+    "goal-4/amendments/2026-10-29-goal-continue-art29.md",
+    "goal-4/research/art29-design-sources.json",
+    "goal-4/evidence/art29/inventory-before.vue.txt",
+    "goal-4/evidence/art29/art11-before.css.txt",
+    "goal-4/evidence/art29/legacy-item-bounds.json"
+  ],
+  "baselines": [
+    {
+      "path": "goal-4/evidence/art29/inventory-before.vue.txt",
+      "bytes": 6718,
+      "sha256": "b567cb81c66c77a7171ff1883fcfc9c290b006a5be3a2dc32721fa5eeb8cad88"
+    },
+    {
+      "path": "goal-4/evidence/art29/art11-before.css.txt",
+      "bytes": 11555,
+      "sha256": "99eb164046e986a6f23978ebaa33593d4e1d1b13111bf4c023591ee970136a44"
+    }
+  ],
+  "legacyBounds": {
+    "path": "goal-4/evidence/art29/legacy-item-bounds.json",
+    "bytes": 4412,
+    "sha256": "25212c4ec065a2813f11fbdf2278e163a20fc7cb312e286d3e6b13c1af2802d3"
+  },
+  "unchanged": {
+    "web/src/ItemArtifact.vue": "b651e6b9bc5675ca1ccaecc08d62f5c45ef8d70ae6915bae8b75b507a17328b0",
+    "web/src/GoodsPanel.vue": "b7e1b89fd8b02333e2ee924c1572d5497aa1f1a7e8e4f77511ee4bf08503c00f",
+    "web/src/MarketCounter.vue": "c8849c784dd1d864a5787658e941b6fbe10305ee476e5ad8ffc2daa687478b3e",
+    "web/src/RecoveryRitual.vue": "9764760b03850ce35a4bab251228ea29983b1dba3615fa31bc4d0ad8e3ef0c88",
+    "web/src/MarketPlanner.vue": "133ca11bcb8b8c283b3138cc88add796fdc22f507781869e27fb2025b379c760",
+    "web/src/RecoveryPlanner.vue": "478733b74bf51b209901a7e7328ea92269a77a30ab41c56c400ddd8b40ef78a9",
+    "web/src/supply-effects.ts": "6b11c6aab3e634831854d0c1723b76916bbb26fdbccf640e4adc6e043ee72a19",
+    "web/src/activity-effects.ts": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b",
+    "web/src/use-activity-effect.ts": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/art10-equipment.css": "d7dcafbfed487c825c607812a9a3d04be600f5d49e62c5add44f9464d83ce627",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "art/redesign/art11-items/export-facts.json": "0b21de7634948d0ec07965adb5eec2ab95619c561cf35057a90d6d25052dc1fc"
+  },
+  "presentationEdits": {
+    "import": "import AssetImage from './AssetImage.vue';\n",
+    "scene": "  <AssetImage class=\"study-sanctum\" style=\"inset:-12px -18px\" path=\"art/v2/workshops/inventory-v1.webp\" asset-id=\"inventory-chamber\" eager aria-hidden=\"true\"><span class=\"study-sanctum-fallback\"/></AssetImage>\n",
+    "footer": "   <footer class=\"inventory-main-decision\"><button v-if=\"!stock\" class=\"primary\" data-testid=\"inventory-main-source\" @click=\"view('source')\">查找{{item.name}}来源</button><button v-else class=\"primary\" data-testid=\"inventory-main-uses\" @click=\"open(purposes,$event)\">查看用途与价格</button><button v-if=\"!stock\" class=\"text-button\" data-testid=\"inventory-uses-open\" @click=\"open(purposes,$event)\">用途与价格</button></footer>\n",
+    "cssChanges": [
+      [
+        "#app .art11-inventory{display:flex;",
+        "#app .art11-inventory{position:relative;isolation:isolate;display:flex;"
+      ],
+      [
+        "align-self:center;gap:8px;padding:0;margin:0;border:0;background:none;min-width:0}",
+        "align-self:center;gap:8px;padding:16px 20px;margin:0;border:0;background:linear-gradient(90deg,#0d3039e6,#0d303966);min-width:0}"
+      ],
+      [
+        "#app .inventory-main-decision{display:flex;justify-content:center;align-items:center;gap:18px;flex:none;min-height:52px;padding:4px 0 10px}",
+        "#app .inventory-main-decision{display:flex;justify-content:flex-start;align-items:center;gap:18px;flex:none;min-height:52px;padding:12px 0 0}"
+      ]
+    ],
+    "cssAddition": "\n#app .inventory-held .item-artifact-plate{background:none;border:0;box-shadow:none}#app .inventory-held{outline:0!important}#app .inventory-held:focus-visible>span{outline:2px solid var(--art18-jade)}#app .inventory-held:is(:hover,:focus-visible)>.item-artifact{filter:brightness(1.08)}#app .inventory-held:active>.item-artifact{filter:brightness(.95)}\n#app .art11-inventory[data-item=dao] .inventory-held>.item-artifact{scale:1.06}\n",
+    "capabilityHint": [
+      "{{stock?'实物查用途后，再明确选择服丹或出售安排。':'查来源只查看获得方式；不自动取材、采购或旅行。'}}",
+      "{{stock?(item.hp||item.mp?'可查看服丹调息或出售换石安排。':item.sell===null?'此物不可出售；可查看用途与来源。':'可查看材料用途或出售安排。'):'查来源只查看获得方式；不自动取材、采购或旅行。'}}"
+    ]
+  },
+  "asset": {
+    "format": "chenyuan-art29-export",
+    "version": 1,
+    "producer": {
+      "path": "art/tools/export_art29_scene.py",
+      "bytes": 3190,
+      "sha256": "50b33c422214691c909475b55eb11b8a08f7ae51d57769cd45e2de5d2c0579e7"
+    },
+    "helper": {
+      "path": "art/tools/export_art10_blanks.py",
+      "bytes": 8264,
+      "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+    },
+    "source": {
+      "path": "art/production/art29/inventory-scene-v1.png",
+      "bytes": 2663046,
+      "sha256": "c3e1186f96c0a8aa8dab7c8013eca1171ec8ef6ef40facfe5439480fe0472000",
+      "dimensions": {
+        "width": 1774,
+        "height": 887
+      },
+      "format": "png",
+      "mode": "RGB",
+      "alpha": false,
+      "alphaProof": {
+        "transparentPixels": 0,
+        "solidPixels": 1573538,
+        "intermediatePixels": 0,
+        "min": 255,
+        "max": 255
+      },
+      "alphaBBox1": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "alphaBBox16": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "rgbaSHA256": "9a3f55ad904d16bffa8eb60a219a2b9e2cf2aa20a8b2cd86964c664dce0ab04e"
+    },
+    "runtime": {
+      "path": "web/public/art/v2/workshops/inventory-v1.webp",
+      "bytes": 177748,
+      "sha256": "63aa9bd260ce7943bddd30355e330af0647a4076641a57f964bd0e81f8891be8",
+      "dimensions": {
+        "width": 1536,
+        "height": 768
+      },
+      "format": "webp",
+      "mode": "RGB",
+      "alpha": false,
+      "alphaProof": {
+        "transparentPixels": 0,
+        "solidPixels": 1179648,
+        "intermediatePixels": 0,
+        "min": 255,
+        "max": 255
+      },
+      "alphaBBox1": [
+        0,
+        0,
+        1536,
+        768
+      ],
+      "alphaBBox16": [
+        0,
+        0,
+        1536,
+        768
+      ],
+      "rgbaSHA256": "ff20bf61a429d03f6aee61eb54e6746cc68497155f2236dcd0d07ae511718b03"
+    },
+    "prompts": [
+      {
+        "path": "art/production/art29/inventory-scene-prompt.json",
+        "bytes": 2490,
+        "sha256": "3c261e6811d3223daee092765beced5f7a15511f18dc47d8b67206e6c475c723"
+      },
+      {
+        "path": "art/production/art29/inventory-scene-position-prompt.json",
+        "bytes": 1648,
+        "sha256": "83b12280526c31bc83bdc06f3b21b495eea2eb00c8ffe152f8c281eaf4ac3ac5"
+      }
+    ],
+    "audit": {
+      "path": "art/production/art29/inventory-scene-audit.json",
+      "bytes": 2244,
+      "sha256": "a3b347562e9445f93c826d6c2e05d78b488f1e59e421aa433c1179d30dea7077"
+    },
+    "encoding": [
+      "cwebp",
+      "-q",
+      "82",
+      "-m",
+      "6",
+      "-resize",
+      "1536",
+      "0",
+      "-metadata",
+      "none"
+    ],
+    "decoder": "Pillow",
+    "decoderVersion": "12.3.0",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+    "transform": {
+      "uniformScale": 0.8658399098083427,
+      "crop": false,
+      "semanticEdit": false,
+      "outputWidth": 1536,
+      "outputHeight": 768
+    },
+    "doubleExport": {
+      "bytesEqual": true,
+      "firstSHA256": "63aa9bd260ce7943bddd30355e330af0647a4076641a57f964bd0e81f8891be8",
+      "secondSHA256": "63aa9bd260ce7943bddd30355e330af0647a4076641a57f964bd0e81f8891be8",
+      "sourceUnchanged": true
+    },
+    "userAcceptance": false
+  },
+  "userAcceptance": false
+}

@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "web/src/InventoryStage.vue",
-      "bytes": 6718,
-      "sha256": "b567cb81c66c77a7171ff1883fcfc9c290b006a5be3a2dc32721fa5eeb8cad88"
+      "bytes": 7081,
+      "sha256": "ee9da66d0281f008da909090275b335e0c87031a3e43d314c291c48baf744300"
     },
     {
       "path": "web/src/MarketCounter.vue",

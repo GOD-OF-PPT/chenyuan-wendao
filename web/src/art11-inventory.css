@@ -1,5 +1,5 @@
 /* ART11: the selected material and its next decision stay on the game stage. */
-#app .art11-inventory{display:flex;flex-direction:column;flex:1;min-height:0;gap:8px}
+#app .art11-inventory{position:relative;isolation:isolate;display:flex;flex-direction:column;flex:1;min-height:0;gap:8px}
 #app .goods-catalogue:has(>.art11-inventory){padding:12px 18px;gap:6px}
 #app .inventory-stage-heading{display:flex;justify-content:space-between;align-items:center;min-height:44px;gap:16px;flex:none}
 #app .inventory-stage-heading small{font-size:14px;line-height:1.65}
@@ -9,12 +9,12 @@
 #app .inventory-selected .item-artifact{flex:1;min-height:0;width:100%;height:100%}
 #app .inventory-held>span{font-size:18px;line-height:1.65;padding:6px 20px;border-bottom:1px solid #99ba9e99;min-height:32px}
 #app .inventory-blueprint>small{font-size:14px;line-height:1.65;min-height:24px}
-#app .inventory-selected .inventory-object{position:static;display:flex;flex-direction:column;align-self:center;gap:8px;padding:0;margin:0;border:0;background:none;min-width:0}
+#app .inventory-selected .inventory-object{position:static;display:flex;flex-direction:column;align-self:center;gap:8px;padding:16px 20px;margin:0;border:0;background:linear-gradient(90deg,#0d3039e6,#0d303966);min-width:0}
 #app .inventory-object>small{font-size:14px;line-height:1.65}
 #app .inventory-object h3{font-size:30px;line-height:1.65;margin:0}
 #app .inventory-object>strong{font-size:20px;line-height:1.65;color:#c3e2c6}
 #app .inventory-object p{font-size:18px;line-height:1.65;margin:0}
-#app .inventory-main-decision{display:flex;justify-content:center;align-items:center;gap:18px;flex:none;min-height:52px;padding:4px 0 10px}
+#app .inventory-main-decision{display:flex;justify-content:flex-start;align-items:center;gap:18px;flex:none;min-height:52px;padding:12px 0 0}
 #app .inventory-main-decision>button{font-size:18px;min-height:48px;padding:8px 22px;width:auto}
 #app .art11-object-dialog{width:1050px;max-width:none;max-height:none;overflow:visible;padding:20px 26px;color:#e2ead2;background:linear-gradient(125deg,#183d3b,#102d32);border:1px solid #a49b6d;border-radius:4px;box-shadow:0 20px 70px #031c28b3}
 #app .art11-object-dialog>header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-bottom:12px;margin:0;border-bottom:1px solid #97b09155}
@@ -104,3 +104,6 @@
 #app :is(.market-planner,.recovery-planner)>.preparation-dialog h3{line-height:1.65}
 
 #app .art11-recovery .recovery-object .recovery-arrival{font-size:18px;line-height:1.65;min-height:30px;flex:none}
+
+#app .inventory-held .item-artifact-plate{background:none;border:0;box-shadow:none}#app .inventory-held{outline:0!important}#app .inventory-held:focus-visible>span{outline:2px solid var(--art18-jade)}#app .inventory-held:is(:hover,:focus-visible)>.item-artifact{filter:brightness(1.08)}#app .inventory-held:active>.item-artifact{filter:brightness(.95)}
+#app .art11-inventory[data-item=dao] .inventory-held>.item-artifact{scale:1.06}

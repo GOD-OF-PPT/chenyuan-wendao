@@ -1,0 +1,124 @@
+{
+  "format": "chenyuan-art29-export",
+  "version": 1,
+  "producer": {
+    "path": "art/tools/export_art29_scene.py",
+    "bytes": 3190,
+    "sha256": "50b33c422214691c909475b55eb11b8a08f7ae51d57769cd45e2de5d2c0579e7"
+  },
+  "helper": {
+    "path": "art/tools/export_art10_blanks.py",
+    "bytes": 8264,
+    "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+  },
+  "source": {
+    "path": "art/production/art29/inventory-scene-v1.png",
+    "bytes": 2663046,
+    "sha256": "c3e1186f96c0a8aa8dab7c8013eca1171ec8ef6ef40facfe5439480fe0472000",
+    "dimensions": {
+      "width": 1774,
+      "height": 887
+    },
+    "format": "png",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1573538,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "rgbaSHA256": "9a3f55ad904d16bffa8eb60a219a2b9e2cf2aa20a8b2cd86964c664dce0ab04e"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/workshops/inventory-v1.webp",
+    "bytes": 177748,
+    "sha256": "63aa9bd260ce7943bddd30355e330af0647a4076641a57f964bd0e81f8891be8",
+    "dimensions": {
+      "width": 1536,
+      "height": 768
+    },
+    "format": "webp",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1179648,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "rgbaSHA256": "ff20bf61a429d03f6aee61eb54e6746cc68497155f2236dcd0d07ae511718b03"
+  },
+  "prompts": [
+    {
+      "path": "art/production/art29/inventory-scene-prompt.json",
+      "bytes": 2490,
+      "sha256": "3c261e6811d3223daee092765beced5f7a15511f18dc47d8b67206e6c475c723"
+    },
+    {
+      "path": "art/production/art29/inventory-scene-position-prompt.json",
+      "bytes": 1648,
+      "sha256": "83b12280526c31bc83bdc06f3b21b495eea2eb00c8ffe152f8c281eaf4ac3ac5"
+    }
+  ],
+  "audit": {
+    "path": "art/production/art29/inventory-scene-audit.json",
+    "bytes": 2244,
+    "sha256": "a3b347562e9445f93c826d6c2e05d78b488f1e59e421aa433c1179d30dea7077"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "decoder": "Pillow",
+  "decoderVersion": "12.3.0",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "transform": {
+    "uniformScale": 0.8658399098083427,
+    "crop": false,
+    "semanticEdit": false,
+    "outputWidth": 1536,
+    "outputHeight": 768
+  },
+  "doubleExport": {
+    "bytesEqual": true,
+    "firstSHA256": "63aa9bd260ce7943bddd30355e330af0647a4076641a57f964bd0e81f8891be8",
+    "secondSHA256": "63aa9bd260ce7943bddd30355e330af0647a4076641a57f964bd0e81f8891be8",
+    "sourceUnchanged": true
+  },
+  "userAcceptance": false
+}
