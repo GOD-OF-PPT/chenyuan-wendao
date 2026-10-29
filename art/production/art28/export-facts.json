@@ -1,0 +1,119 @@
+{
+  "format": "chenyuan-art28-export",
+  "version": 1,
+  "producer": {
+    "path": "art/tools/export_art28_scene.py",
+    "bytes": 3182,
+    "sha256": "90ef993f43102b46c1db6f8c299f60e2e5e550fe0790a6284301a75d68e61917"
+  },
+  "helper": {
+    "path": "art/tools/export_art10_blanks.py",
+    "bytes": 8264,
+    "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+  },
+  "source": {
+    "path": "art/production/art28/alchemy-scene-v1.png",
+    "bytes": 2833591,
+    "sha256": "c1f22fa7d3327c19842e3774676762f056e4ace696ce401d89e5c566e2cdc069",
+    "dimensions": {
+      "width": 1774,
+      "height": 887
+    },
+    "format": "png",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1573538,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "rgbaSHA256": "8d07952bb3686f4f0525f49434ad4a67bee5a2588a7965f96c115a2c2c752379"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/workshops/alchemy-v1.webp",
+    "bytes": 196078,
+    "sha256": "388948c205b6d3384ff4fa6047251312c2a45afe270d09d809545615e0fdce79",
+    "dimensions": {
+      "width": 1536,
+      "height": 768
+    },
+    "format": "webp",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1179648,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "rgbaSHA256": "b4ceb95269b90b898feaa09adcbc65eda6e5cadadba9846088c05a9bf24bc1f6"
+  },
+  "prompts": [
+    {
+      "path": "art/production/art28/alchemy-scene-prompt.json",
+      "bytes": 2368,
+      "sha256": "636997f74846d38ac5821a0328adc4363a7a4a6d8baa960e609a8fa1af4562fe"
+    }
+  ],
+  "audit": {
+    "path": "art/production/art28/alchemy-scene-audit.json",
+    "bytes": 1497,
+    "sha256": "03f43171084f96a205fd00a1fcf57fb783b3b194e8db255681be76157ee53342"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "decoder": "Pillow",
+  "decoderVersion": "12.3.0",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "transform": {
+    "uniformScale": 0.8658399098083427,
+    "crop": false,
+    "semanticEdit": false,
+    "outputWidth": 1536,
+    "outputHeight": 768
+  },
+  "doubleExport": {
+    "bytesEqual": true,
+    "firstSHA256": "388948c205b6d3384ff4fa6047251312c2a45afe270d09d809545615e0fdce79",
+    "secondSHA256": "388948c205b6d3384ff4fa6047251312c2a45afe270d09d809545615e0fdce79",
+    "sourceUnchanged": true
+  },
+  "userAcceptance": false
+}

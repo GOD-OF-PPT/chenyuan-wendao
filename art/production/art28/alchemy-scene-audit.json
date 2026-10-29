@@ -1,0 +1,35 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "model": null,
+  "requestId": null,
+  "reference": {
+    "path": "art/production/art27/relic-workshop-v1.png",
+    "bytes": 2789492,
+    "sha256": "7de63c37eb5b8907482e8307db4fe14c3798c50e027b44aa22488ddbe558cc7a"
+  },
+  "calls": [
+    {
+      "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-385a6827-5bfb-4b31-bcf5-aa225c838df6.png",
+      "generatedSHA256": "c1f22fa7d3327c19842e3774676762f056e4ace696ce401d89e5c566e2cdc069",
+      "candidate": {
+        "path": "art/production/art28/candidates/chamber-v1.png",
+        "bytes": 2833591,
+        "sha256": "c1f22fa7d3327c19842e3774676762f056e4ace696ce401d89e5c566e2cdc069"
+      },
+      "prompt": {
+        "path": "art/production/art28/alchemy-scene-prompt.json",
+        "bytes": 2368,
+        "sha256": "636997f74846d38ac5821a0328adc4363a7a4a6d8baa960e609a8fa1af4562fe"
+      },
+      "requestedTransparent": false
+    }
+  ],
+  "selectedCopy": {
+    "path": "art/production/art28/alchemy-scene-v1.png",
+    "bytes": 2833591,
+    "sha256": "c1f22fa7d3327c19842e3774676762f056e4ace696ce401d89e5c566e2cdc069"
+  },
+  "originalsKept": true,
+  "userAcceptance": false,
+  "actualPixelReview": "Empty cold chamber with carved apothecary drawers and closed jars at left perimeter; open right floor, no baked furnace/fire/pills/text. Prompt positions are intentions rather than measured certification."
+}

@@ -1,0 +1,140 @@
+{
+  "task": "ART28",
+  "reports": [
+    {
+      "report": "artifacts/goal-4/art28/baseline-report.json",
+      "sha256": "77768d1fb44c3591393706766755c45a1ff711ecac56bc5d33e9bb963ccb8f6f",
+      "runtimeDigest": "e7cd37b359ef25ace4056570467b01097536a0bb98d54ee98e1ae5ccadf82246",
+      "stats": {
+        "startTime": "2026-10-29T04:06:13.969Z",
+        "duration": 15749.675,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "claim": "original actual report kept; not retagged"
+    },
+    {
+      "report": "artifacts/goal-4/art28/early-report.json",
+      "sha256": "d2afea69334627d6d990b584a3e48971d8b933956923f3a622b1b7eed6de52fe",
+      "runtimeDigest": "8986c0e6d18e5696be2c004d1d89c91cca8edbdb1374ff745c46beed1cc179e3",
+      "stats": {
+        "startTime": "2026-10-29T04:10:12.322Z",
+        "duration": 23205.725,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "claim": "original actual report kept; not retagged"
+    },
+    {
+      "report": "artifacts/goal-4/art28/regular-report.json",
+      "sha256": "9913294e921a67d278fb97dcf67c0ab9c488316976ecc0c9bce3a7f0c6884f08",
+      "runtimeDigest": "8986c0e6d18e5696be2c004d1d89c91cca8edbdb1374ff745c46beed1cc179e3",
+      "stats": {
+        "startTime": "2026-10-29T04:19:34.628Z",
+        "duration": 395608.196,
+        "expected": 144,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "claim": "original actual report kept; not retagged"
+    },
+    {
+      "report": "artifacts/goal-4/art28/focus-report.json",
+      "sha256": "0482d5d6c493d68fdd8fc85e0d72937cf4fa911099324ad27464fef2d09ea46a",
+      "runtimeDigest": "9c0acdac1058eea4905465338c0f528b061fc01a633f92cfd28cf8a4c62065f4",
+      "stats": {
+        "startTime": "2026-10-29T04:30:35.318Z",
+        "duration": 16432.516,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "claim": "original actual report kept; not retagged"
+    },
+    {
+      "report": "artifacts/goal-4/art28/regular-v2-report.json",
+      "sha256": "331bfe2a70df2cabd9d056b00a911505735761fabfaed12b49ffaf1ecd026026",
+      "runtimeDigest": "9c0acdac1058eea4905465338c0f528b061fc01a633f92cfd28cf8a4c62065f4",
+      "stats": {
+        "startTime": "2026-10-29T04:32:44.234Z",
+        "duration": 389616.053,
+        "expected": 144,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "claim": "original actual report kept; not retagged"
+    },
+    {
+      "report": "artifacts/goal-4/art28/slow-v2-report.json",
+      "sha256": "59098ea158f99b791214b985cdcf510068c74890d7461bb8ab4f655be23e3303",
+      "runtimeDigest": "9c0acdac1058eea4905465338c0f528b061fc01a633f92cfd28cf8a4c62065f4",
+      "stats": {
+        "startTime": "2026-10-29T04:41:03.182Z",
+        "duration": 73806.047,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "claim": "original actual report kept; not retagged"
+    },
+    {
+      "report": "artifacts/goal-4/art28/native-v2-report.json",
+      "sha256": "1578bce0d49142245366a3febf398dfdcfedc8ec86874c5e16a4dfdf1d5f556b",
+      "runtimeDigest": "9c0acdac1058eea4905465338c0f528b061fc01a633f92cfd28cf8a4c62065f4",
+      "stats": {
+        "startTime": "2026-10-29T04:43:08.080Z",
+        "duration": 46236.569,
+        "expected": 55,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "claim": "original actual report kept; not retagged"
+    }
+  ],
+  "resourceAttempts": [
+    {
+      "log": "artifacts/goal-4/art28/root-positive.log",
+      "status": "author initial KeyError, original flat production cap misread; not a product Game failure"
+    },
+    {
+      "log": "artifacts/goal-4/art28/new-guards.log",
+      "status": "six methods error before positive; not negative coverage"
+    },
+    {
+      "log": "artifacts/goal-4/art28/positive-and-new-guards.log",
+      "status": "actual root114 passed; complete sandbox missing newly bound root engine/activity refs; negatives not reached"
+    },
+    {
+      "log": "artifacts/goal-4/art28/positive-and-new-guards-v2.log",
+      "status": "actual root114 and complete sandbox114 before six new guards, all pass"
+    },
+    {
+      "log": "artifacts/goal-4/art28/positive-and-new-guards-final.log",
+      "status": "current source actual root114 and complete sandbox114 before six new guards, all pass"
+    },
+    {
+      "log": "artifacts/goal-4/art28/resources.log",
+      "status": "Final current complete498 methods passed after real/complete sandbox positives; 282.547seconds"
+    }
+  ],
+  "pixelRevision": "v1 whole144 green but oversized whole furnace focus frame found by actual pixels; v2 visible verb focus preserves keyboard and original data; all v1 reports and images kept",
+  "oldReportsRetagged": false,
+  "repeatedRunsIncreaseDistinctCoverage": false,
+  "overallUserArtAccepted": false
+}

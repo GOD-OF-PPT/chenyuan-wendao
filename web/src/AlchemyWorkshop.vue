@@ -44,6 +44,7 @@ onScopeDispose(()=>focus?.release(library.value));
 </script>
 <template>
  <div class="alchemy-workshop" data-testid="alchemy-workshop" :data-state="state" :data-recipe="plan.recipeId">
+  <AssetImage class="study-sanctum" style="inset:0" path="art/v2/workshops/alchemy-v1.webp" asset-id="alchemy-chamber" eager aria-hidden="true"><span class="study-sanctum-fallback"/></AssetImage>
   <header class="alchemy-heading"><div><h3>{{recipe.name}}</h3><small>丹方 · 需{{C.realms[recipe.min].name}} · 每炉 {{recipe.stones}} 灵石，固定成丹 1 枚</small></div><button data-testid="alchemy-library-open" @click="browse">翻看丹方册</button></header>
   <div class="alchemy-scene">
    <div class="alchemy-reference">
@@ -51,6 +52,7 @@ onScopeDispose(()=>focus?.release(library.value));
    <div class="alchemy-materials"><small>药匣 · 依丹方逐炉取用；点药材查看来源</small><div class="production-materials" aria-label="单炉材料药匣"><button v-for="(n,id) in recipe.inputs" :key="id" :data-testid="'production-source-'+id" @click="material(String(id))"><ItemArtifact :item-id="String(id)" :owned="game.core.inventory[id]>0"/><strong>{{C.items[id].name}}</strong><span>每炉 {{n}} · 持有 {{game.core.inventory[id]}}</span><small>保留 {{plan.itemReserves[id]??0}} · {{game.core.inventory[id] < n+(plan.itemReserves[id]??0)?'缺 '+(n+(plan.itemReserves[id]??0)-game.core.inventory[id])+' · ':''}}<span style="white-space:nowrap">查看来源 ›</span></small></button></div></div>
    </div>
    <div class="alchemy-furnace" data-testid="alchemy-furnace" :data-burning="burning">
+    <button class="alchemy-inspect" data-testid="alchemy-inspect" aria-label="查看丹炉安排，不开炉" @click="open"><span>查看开炉安排 ›</span></button>
     <div class="alchemy-rune" aria-hidden="true"/><AssetImage path="art/v2/workshop/furnace-v1.webp" asset-id="alchemy-cold-furnace" fit="contain" eager><span class="alchemy-art-fallback">听雨丹炉</span></AssetImage>
     <div class="alchemy-flame" aria-hidden="true"><i/><i/><i/></div><div class="alchemy-smoke" aria-hidden="true"><i/><i/><i/></div>
     <div v-if="arrival" class="alchemy-arrival" data-testid="alchemy-arrival" :data-sequence="arrival.sequence" aria-hidden="true"><GameIcon kind="item" :id="arrival.item"/><b>+{{arrival.quantity}}</b></div>

@@ -1,0 +1,20 @@
+{
+  "task": "ART28",
+  "readOn": "2026-10-29",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "title": "Clarity in League",
+      "published": "2021-03-12",
+      "actuallyRead": "goals, hierarchy, silhouettes and visual noise",
+      "application": "炉体可识别，实际材料/当前决定优先；静态背景不冒实时火或库存"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/109",
+      "title": "XAG109 Objective clarity",
+      "actuallyRead": "goal/overview/implementation progress and clear next steps",
+      "application": "完整真实预算/缺口/停止保留可复查；查看与开炉分明"
+    }
+  ],
+  "limits": "No source mandates this composition, byte budget or periods. Not certification, competitor playtest, user art acceptance or compatibility/performance proof."
+}
