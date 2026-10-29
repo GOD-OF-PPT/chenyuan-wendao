@@ -1,0 +1,119 @@
+{
+  "format": "chenyuan-art31-export",
+  "version": 1,
+  "producer": {
+    "path": "art/tools/export_art31_scene.py",
+    "bytes": 3165,
+    "sha256": "c7df4b6a4cb40df04e13550977a7976670a91bf1b73b1d62ccdc682fa881d634"
+  },
+  "helper": {
+    "path": "art/tools/export_art10_blanks.py",
+    "bytes": 8264,
+    "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+  },
+  "source": {
+    "path": "art/production/art31/life-desk-v1.png",
+    "bytes": 2828876,
+    "sha256": "7eb3c74516376147bb8de74b827bff85975c5e549d2fd007519d398bafe353ae",
+    "dimensions": {
+      "width": 1774,
+      "height": 887
+    },
+    "format": "png",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1573538,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "rgbaSHA256": "5027f0937efc2067fc5e98423ce861c1dcc247d3e191f3958989b9f57414ff2a"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/life/archive-v1.webp",
+    "bytes": 121598,
+    "sha256": "4bbf44de73b950dfb0d915edeb1ef24e3f299017a3b4ea31e5041e197bdcdf47",
+    "dimensions": {
+      "width": 1536,
+      "height": 768
+    },
+    "format": "webp",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1179648,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "rgbaSHA256": "e088009ec809a7da6b883b691048e87d2f43581d588e24f1ff005085bf5803bc"
+  },
+  "prompts": [
+    {
+      "path": "art/production/art31/life-desk-prompt.json",
+      "bytes": 3145,
+      "sha256": "04888a160bf05519fe32c42a32eb1e7091db7facad3b87e22ea5514b06bdc41c"
+    }
+  ],
+  "audit": {
+    "path": "art/production/art31/life-desk-audit.json",
+    "bytes": 1404,
+    "sha256": "34fff6d016331862fe27f533a2f68ea1f87523200886043e0e939b22991d4c37"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "decoder": "Pillow",
+  "decoderVersion": "12.3.0",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "transform": {
+    "uniformScale": 0.8658399098083427,
+    "crop": false,
+    "semanticEdit": false,
+    "outputWidth": 1536,
+    "outputHeight": 768
+  },
+  "doubleExport": {
+    "bytesEqual": true,
+    "firstSHA256": "4bbf44de73b950dfb0d915edeb1ef24e3f299017a3b4ea31e5041e197bdcdf47",
+    "secondSHA256": "4bbf44de73b950dfb0d915edeb1ef24e3f299017a3b4ea31e5041e197bdcdf47",
+    "sourceUnchanged": true
+  },
+  "userAcceptance": false
+}

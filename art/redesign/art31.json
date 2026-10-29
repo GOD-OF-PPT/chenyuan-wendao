@@ -1,0 +1,201 @@
+{
+  "format": "chenyuan-life-scroll-art31",
+  "version": 1,
+  "task": "Goal4 ART31",
+  "budgets": {
+    "oldCssCap": 14000,
+    "oldNarrativeCap": 45000,
+    "oldStoryCap": 48000,
+    "oldFeedbackCap": 34000,
+    "newRasterAssets": 1,
+    "maxRuntimeBytes": 280000,
+    "runtimeWidth": 1536,
+    "runtimeHeight": 768
+  },
+  "files": [
+    {
+      "path": "web/src/LifeScroll.vue",
+      "bytes": 4215,
+      "sha256": "1130d9cadbe7d57c4afea5ba3a18bbe84db7a519f6ed0540000a71b3e6890788"
+    },
+    {
+      "path": "web/src/LifeCatalogue.vue",
+      "bytes": 3988,
+      "sha256": "3e0577cf7e071e2aa5282371f30dca2a1d414c80b36b9e84fa3f5167d4398cec"
+    },
+    {
+      "path": "web/src/art12-narrative.css",
+      "bytes": 13144,
+      "sha256": "29ebf434a630c31295448b4bd890668c77cf851260fd87878359567197d5d3a2"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0067-life-scroll-art31-contract.md",
+    "goal-4/amendments/2026-10-29-goal-continue-art31.md",
+    "goal-4/research/art31-design-sources.json",
+    "goal-4/evidence/art31/LifeScroll.vue.before.txt",
+    "goal-4/evidence/art31/LifeCatalogue.vue.before.txt",
+    "goal-4/evidence/art31/art12-narrative.css.before.txt",
+    "goal-4/evidence/art30/next-life-art-debt.jpg"
+  ],
+  "baselines": [
+    {
+      "path": "goal-4/evidence/art31/LifeScroll.vue.before.txt",
+      "bytes": 3863,
+      "sha256": "e761a9134477ed98057e1886ad8723cc1e5da7543539cfe4c7001e98a4e796c1"
+    },
+    {
+      "path": "goal-4/evidence/art31/LifeCatalogue.vue.before.txt",
+      "bytes": 3955,
+      "sha256": "09270a81c17dffaacd89255e465abec304c4156dc00dcae6b7978332a3ebbc20"
+    },
+    {
+      "path": "goal-4/evidence/art31/art12-narrative.css.before.txt",
+      "bytes": 9721,
+      "sha256": "59c84073a8c5f9d95e34b3247a67f0da3f40b47005d3e8a19fe81b588f0e5835"
+    }
+  ],
+  "unchanged": {
+    "web/src/ActionFeedbackStage.vue": "c0430cb6202624a1f4135556cfadfb17541fa38ca7d8bf29c8079080bc8ffcdb",
+    "web/src/action-feedback.ts": "e947bb62b1de54e51f172a2d412110ea662a01b599f0b97061e8c238f31a3606",
+    "web/src/action-motion.css": "b14bcc27fa59527b32e817a164ca7f546337f4520aa02f4cb7001895460bd495",
+    "web/src/narrative-effects.ts": "ca77c93e636c43fc5c57b1f7b7a3f85bef58aa00f135affe217919b64470b615",
+    "web/src/NarrativeStageHost.vue": "e195b09b7485b48e88883a830ca2c0b352da396e62f6457e5ff30c0168d9630d",
+    "web/src/NarrativePanel.vue": "8bb4f2e0c06f623e322b2b13dabe6569982c24bbaa56d68c4c6391be756a17dc",
+    "web/src/FateCatalogue.vue": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2",
+    "web/src/EncounterTable.vue": "0c73263444112e4d6bc010201750dd836aaef36d03ee612868124afe8033ccf7",
+    "web/src/ResponseTable.vue": "b9ff7f201a14b826085e0e2dbff7c0eba42633684ab20a34a2f058e368e7974e",
+    "web/src/reading-memory.ts": "8e7a0718edb07113e30f817df5ea98180455e1ea4a7f481a10c72b3657357808",
+    "web/src/journal-anchors.ts": "fde853e92c68dd10ad9c14994c41a3157646c5245022b1f8061e4dd0e5aa2605",
+    "web/src/story-pages.ts": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7",
+    "web/src/play-flow.ts": "ec31aeb151728b37a6de4f65f17df9020fed7407194cd02df1330a0e69ad0e76",
+    "web/src/CataloguePager.vue": "b5069cf0f229edb66c1e2779cd3542d98bc8a05e292a485c71c2627a652694c0",
+    "web/src/focus.ts": "8ae91e78a4db7a854c293fc4b1bc28f02dd0d542b3119cff383f9245b4944eea",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/milestones.ts": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+    "src/full/queries.ts": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48"
+  },
+  "asset": {
+    "format": "chenyuan-art31-export",
+    "version": 1,
+    "producer": {
+      "path": "art/tools/export_art31_scene.py",
+      "bytes": 3165,
+      "sha256": "c7df4b6a4cb40df04e13550977a7976670a91bf1b73b1d62ccdc682fa881d634"
+    },
+    "helper": {
+      "path": "art/tools/export_art10_blanks.py",
+      "bytes": 8264,
+      "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+    },
+    "source": {
+      "path": "art/production/art31/life-desk-v1.png",
+      "bytes": 2828876,
+      "sha256": "7eb3c74516376147bb8de74b827bff85975c5e549d2fd007519d398bafe353ae",
+      "dimensions": {
+        "width": 1774,
+        "height": 887
+      },
+      "format": "png",
+      "mode": "RGB",
+      "alpha": false,
+      "alphaProof": {
+        "transparentPixels": 0,
+        "solidPixels": 1573538,
+        "intermediatePixels": 0,
+        "min": 255,
+        "max": 255
+      },
+      "alphaBBox1": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "alphaBBox16": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "rgbaSHA256": "5027f0937efc2067fc5e98423ce861c1dcc247d3e191f3958989b9f57414ff2a"
+    },
+    "runtime": {
+      "path": "web/public/art/v2/life/archive-v1.webp",
+      "bytes": 121598,
+      "sha256": "4bbf44de73b950dfb0d915edeb1ef24e3f299017a3b4ea31e5041e197bdcdf47",
+      "dimensions": {
+        "width": 1536,
+        "height": 768
+      },
+      "format": "webp",
+      "mode": "RGB",
+      "alpha": false,
+      "alphaProof": {
+        "transparentPixels": 0,
+        "solidPixels": 1179648,
+        "intermediatePixels": 0,
+        "min": 255,
+        "max": 255
+      },
+      "alphaBBox1": [
+        0,
+        0,
+        1536,
+        768
+      ],
+      "alphaBBox16": [
+        0,
+        0,
+        1536,
+        768
+      ],
+      "rgbaSHA256": "e088009ec809a7da6b883b691048e87d2f43581d588e24f1ff005085bf5803bc"
+    },
+    "prompts": [
+      {
+        "path": "art/production/art31/life-desk-prompt.json",
+        "bytes": 3145,
+        "sha256": "04888a160bf05519fe32c42a32eb1e7091db7facad3b87e22ea5514b06bdc41c"
+      }
+    ],
+    "audit": {
+      "path": "art/production/art31/life-desk-audit.json",
+      "bytes": 1404,
+      "sha256": "34fff6d016331862fe27f533a2f68ea1f87523200886043e0e939b22991d4c37"
+    },
+    "encoding": [
+      "cwebp",
+      "-q",
+      "82",
+      "-m",
+      "6",
+      "-resize",
+      "1536",
+      "0",
+      "-metadata",
+      "none"
+    ],
+    "decoder": "Pillow",
+    "decoderVersion": "12.3.0",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+    "transform": {
+      "uniformScale": 0.8658399098083427,
+      "crop": false,
+      "semanticEdit": false,
+      "outputWidth": 1536,
+      "outputHeight": 768
+    },
+    "doubleExport": {
+      "bytesEqual": true,
+      "firstSHA256": "4bbf44de73b950dfb0d915edeb1ef24e3f299017a3b4ea31e5041e197bdcdf47",
+      "secondSHA256": "4bbf44de73b950dfb0d915edeb1ef24e3f299017a3b4ea31e5041e197bdcdf47",
+      "sourceUnchanged": true
+    },
+    "userAcceptance": false
+  },
+  "userAcceptance": false
+}

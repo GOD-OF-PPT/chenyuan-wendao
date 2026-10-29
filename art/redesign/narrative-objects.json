@@ -19,8 +19,8 @@
     },
     {
       "path": "web/src/LifeScroll.vue",
-      "bytes": 3863,
-      "sha256": "e761a9134477ed98057e1886ad8723cc1e5da7543539cfe4c7001e98a4e796c1"
+      "bytes": 4215,
+      "sha256": "1130d9cadbe7d57c4afea5ba3a18bbe84db7a519f6ed0540000a71b3e6890788"
     },
     {
       "path": "web/src/NarrativeStageHost.vue",

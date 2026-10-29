@@ -23,8 +23,8 @@
     },
     {
       "path": "web/src/LifeCatalogue.vue",
-      "bytes": 3955,
-      "sha256": "09270a81c17dffaacd89255e465abec304c4156dc00dcae6b7978332a3ebbc20"
+      "bytes": 3988,
+      "sha256": "3e0577cf7e071e2aa5282371f30dca2a1d414c80b36b9e84fa3f5167d4398cec"
     },
     {
       "path": "web/src/TrialCatalogue.vue",
