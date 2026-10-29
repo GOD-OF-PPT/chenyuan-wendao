@@ -1,0 +1,35 @@
+{
+  "task": "CHECK-ART27-29",
+  "threeTaskBase": "7bbbf68d64cb3d815593ac3b09e9cb895af69217",
+  "currentHead": "03c7031ce0b2fb776ca446447c6bf15c41484be2",
+  "currentRuntimeDigest": "a2c0a75b0449ecd535186862ebf94e109d90404d76b63a38f74ba79dc080e485",
+  "actualRuntimeThreeTaskDelta": [
+    "web/public/art/v2/workshops/alchemy-v1.webp",
+    "web/public/art/v2/workshops/inventory-v1.webp",
+    "web/public/art/v2/workshops/relic-v1.webp",
+    "web/src/AlchemyWorkshop.vue",
+    "web/src/InventoryStage.vue",
+    "web/src/RelicAtelier.vue",
+    "web/src/RelicInscription.vue",
+    "web/src/alchemy-workshop.css",
+    "web/src/art03-equipment.css",
+    "web/src/art10-equipment.css",
+    "web/src/art11-inventory.css"
+  ],
+  "existingViewStyleFiles": 8,
+  "newColdDecorativeBackgrounds": 3,
+  "unchangedPreThreeTaskRuntimeInputs": 294,
+  "currentTaskRuntimeFilesUnchanged": 305,
+  "staticScope": {
+    "noGameOrStoreDBClockCASProofNumericalChange": true,
+    "noNewRuntimeModule": true,
+    "assetsDecorativeAndTextQuantityActionsStillDOM": true,
+    "oldGuardCapsRemainFixed": true,
+    "noExternalStyleUrlFontOrEvalAdded": true
+  },
+  "limits": "Scoped diff/contract review, not final maximal security or C-end/human/long-balance acceptance.",
+  "threeTaskAddedSourceLineCount": 48,
+  "actualSourcePatchSHA256": "f9efaf1c71d4e529ac6da942fc50b09ed258955df7b917b93954c518052afcee",
+  "newExternalIoFontEvalStorageCallsFound": [],
+  "basis": "Exact original-script normalization guards, actual8-file source diff, baseline302\u2192current305 with294 unchanged base inputs; scoped code review only"
+}

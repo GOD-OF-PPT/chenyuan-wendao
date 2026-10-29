@@ -1,0 +1,207 @@
+{
+  "date": "2026-10-29",
+  "task": "CHECK-ART27-29",
+  "contract": "docs/decisions/0065-art27-29-cross-check-contract.md",
+  "status": "scoped_check_delivered_with_open_aggregate_timeout",
+  "runtimeDigest": "a2c0a75b0449ecd535186862ebf94e109d90404d76b63a38f74ba79dc080e485",
+  "newCombinations": {
+    "count": 3,
+    "inCurrentUi": true,
+    "timing": "Virtual clock advances original full60/30-second cycles; fullUI separately includes real online cycle tests.",
+    "fixtureLimit": "Formal-rule legal prefixes in isolated DBs, not normal UI earning or human pacing."
+  },
+  "ui": {
+    "wholeSingleRun": false,
+    "regular": 668,
+    "predeclaredSlow": 7,
+    "reports": [
+      {
+        "path": "artifacts/goal-4/check-art27-29/regular-report.json",
+        "bytes": 63912803,
+        "sha256": "653203af2ce53946c833c20de4b36de79fd360fad599d56f34b79157eabe0575"
+      },
+      {
+        "path": "artifacts/goal-4/check-art27-29/slow-report.json",
+        "bytes": 1260370,
+        "sha256": "f430ed547471abf565dcfb024a5cb9ff803855e04e04f79e68385b5b68d2014c"
+      }
+    ],
+    "currentUnique": 675
+  },
+  "native": {
+    "wholeSingleRun": true,
+    "report": {
+      "path": "artifacts/goal-4/check-art27-29/native-report.json",
+      "bytes": 8963532,
+      "sha256": "8cf1dcfb25f4de6742c6210f8149e1b35c386fb0fe71ac68e7c8398fb8d7367a"
+    },
+    "currentUnique": 415
+  },
+  "normal": {
+    "wholeSingleRun": false,
+    "originalWholeRun": {
+      "passed": 31,
+      "failed": 1,
+      "issue": "CHECK2729-J01",
+      "cause": "unknown",
+      "rootCauseFixed": false,
+      "report": {
+        "path": "artifacts/goal-4/check-art27-29/journeys-report.json",
+        "bytes": 1030810,
+        "sha256": "ed0754f3747d0e23d91d1de2e96b5443326033c70b01902286a090c2be3fa219"
+      }
+    },
+    "targetedCompleteFile": {
+      "count": 2,
+      "unchangedSourceAndTimeout": true,
+      "report": {
+        "path": "artifacts/goal-4/check-art27-29/journey-target-report.json",
+        "bytes": 42711,
+        "sha256": "7908b62cd16dfa322f3fff3a5c4b6abf0034a15fc1118ff284b6049a12195dc3"
+      }
+    },
+    "base": 24,
+    "foundation": 6,
+    "perRoundRefresh": 2,
+    "report": [
+      {
+        "path": "artifacts/goal-4/check-art27-29/journeys-report.json",
+        "bytes": 1030810,
+        "sha256": "ed0754f3747d0e23d91d1de2e96b5443326033c70b01902286a090c2be3fa219"
+      },
+      {
+        "path": "artifacts/goal-4/check-art27-29/journey-target-report.json",
+        "bytes": 42711,
+        "sha256": "7908b62cd16dfa322f3fff3a5c4b6abf0034a15fc1118ff284b6049a12195dc3"
+      }
+    ],
+    "limitation": "Visible normal finite plans with virtual declared periods; not real-world growth speed, long balance or human acceptance.",
+    "currentUnique": 32
+  },
+  "rules": {
+    "actual": 873,
+    "wholeRun": true,
+    "fail": 0,
+    "skip": 0,
+    "cancelled": 0,
+    "report": {
+      "path": "artifacts/goal-4/check-art27-29/rules.log",
+      "bytes": 90163,
+      "sha256": "3df7de25768a426f133c5c2124f71f36096df1d005c4b7541f48d479f3a4cccf"
+    }
+  },
+  "resources": {
+    "uniqueMethods": 504,
+    "wholeRun": true,
+    "positiveRootAndCompleteSandboxFirst": true,
+    "productionAssets": 115,
+    "logs": [
+      {
+        "path": "artifacts/goal-4/check-art27-29/positive-resources.log",
+        "bytes": 37,
+        "sha256": "cd8a09f5eed3f30f930e6a6b44af0408af4f1bf1d00eac7f459ba5a8e94a346f"
+      },
+      {
+        "path": "artifacts/goal-4/check-art27-29/resources.log",
+        "bytes": 606,
+        "sha256": "ddf5ae47736cd533ac2f00aa4f4a109531e55e3b06a987775a263090c33368ef"
+      },
+      {
+        "path": "artifacts/goal-4/check-art27-29/resources-declaration.json",
+        "bytes": 46816,
+        "sha256": "4c5515ca3df52d7288192791dd77343498758593057ea5cb5cb98d58f35848c0"
+      }
+    ]
+  },
+  "typesBuild": {
+    "rootTypecheck": true,
+    "vueTypecheckBuild": true,
+    "logs": [
+      {
+        "path": "artifacts/goal-4/check-art27-29/root-typecheck.log",
+        "bytes": 61,
+        "sha256": "f4db2c939da9c86ddc28dd7279e9d43cdaccb955d89c68482425e95ef8b37061"
+      },
+      {
+        "path": "artifacts/goal-4/check-art27-29/build.log",
+        "bytes": 1141,
+        "sha256": "150890bcb91feddad557c3953574d00a8774eebd9c9a94223f16107ca6c8a2f8"
+      }
+    ]
+  },
+  "exports": {
+    "producers": 3,
+    "existingAssetsVerified": 3,
+    "newAssetsThisTask": 0,
+    "logs": [
+      {
+        "path": "artifacts/goal-4/check-art27-29/export-art27.log",
+        "bytes": 193,
+        "sha256": "e321353a58d8b896173cb9e4e508748b52d13a23e7ad5f2cbbf6dcf1d050e3f3"
+      },
+      {
+        "path": "artifacts/goal-4/check-art27-29/export-art28.log",
+        "bytes": 193,
+        "sha256": "0bc4b7ca129b263b146bc16f56124427a92b982249aa30c0c7cae1ee46f0fd7d"
+      },
+      {
+        "path": "artifacts/goal-4/check-art27-29/export-art29.log",
+        "bytes": 193,
+        "sha256": "736899447bd09e135bc084a4e6b71524c06e7023600efd95ab51233a13a2e0f8"
+      }
+    ]
+  },
+  "code": {
+    "runtimeChangesThisTask": 0,
+    "newRuntimeModules": 0,
+    "newArt": 0,
+    "engineStoreDB9ClockCasProofBalanceUnchanged": true,
+    "allOldCapsFixed": true,
+    "addedSource": "3 UI integration tests and fixed-desktop config registration only"
+  },
+  "inputs": {
+    "initialFrozen": 1134,
+    "terminalInitialExact": true,
+    "supplementalBaselineRefs": 0,
+    "supplementalPhase": "No late supplemental inputs; all1134 inputs frozen before final execution.",
+    "terminalSupplementalExact": true,
+    "runtimeFiles": 305,
+    "protected13Exact": true
+  },
+  "pixels": {
+    "currentFrames": 16,
+    "fresh": 11,
+    "exactWholePngEarlierThisTurnInheritance": 5,
+    "lateLegalPrefixFrames": 8,
+    "newCombinationFrames": 8,
+    "normal32ScreenshotsSubstitutedByPrefix": false,
+    "review": "visual-review.json"
+  },
+  "openIssues": [
+    {
+      "id": "CHECK2729-J01",
+      "status": "open",
+      "finding": "Initial full32:31 pass/1 talisman per-round aggregate240s timeout. Unchanged complete2 target passes174933/226891ms. Cause unknown; not repaired, final whole32 gate still not passed.",
+      "scope": "normal-route aggregate stability, not a demonstrated Game or save corruption"
+    },
+    {
+      "id": "ART28-OBS-01",
+      "status": "open",
+      "finding": "Natural short-window text collision; compatibility work paused."
+    },
+    {
+      "id": "ART17-performance",
+      "status": "open",
+      "finding": "Original four reds and unknown causes retained; no current environment/performance measurements."
+    }
+  ],
+  "unfinished": [
+    "overall art/gamefeel and human approval",
+    "long-term pacing/balance",
+    "all final matrix obligations and compatibility last",
+    "clean same-source runnable candidate",
+    "maximal C-end/code/security review"
+  ],
+  "scope": "1440x900/font1 single Chromium only; no compatibility or environment performance development/testing.",
+  "postCommitIdentity": "pending actual code commit and same-runtime rebuild/freeze/HTTP/readonly original preview"
+}

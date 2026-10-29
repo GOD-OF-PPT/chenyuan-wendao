@@ -1,0 +1,20 @@
+{
+  "task": "CHECK-ART27-29",
+  "readOn": "2026-10-29",
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "title": "XAG112 UI navigation",
+      "actuallyRead": "clear consistent navigation and predictable focus",
+      "application": "三场景读取原案/草案与返回次序可预知，换run清旧归属"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/close",
+      "title": "IDBDatabase.close",
+      "modified": "2024-07-19",
+      "actuallyRead": "close waits for existing transactions and forbids new transactions",
+      "application": "关窗口不冒取消原子事务，失败/重试/另一页恢复按正式协议验证"
+    }
+  ],
+  "limits": "Project-derived combinations and layout, no certification or long balance/user art acceptance; compatibility/performance paused."
+}
