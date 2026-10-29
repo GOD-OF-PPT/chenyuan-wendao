@@ -1,0 +1,185 @@
+{
+  "date": "2026-10-29",
+  "task": "CHECK-ART24-26",
+  "contract": "docs/decisions/0061-art24-26-cross-check-contract.md",
+  "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+  "newCombinations": {
+    "count": 3,
+    "allInFinalUi": true,
+    "fixtureLimitation": "Lawful formal-command prefixes in isolated databases; not substituted for normal32."
+  },
+  "ui": {
+    "currentUnique": 659,
+    "regularWholeRun": 657,
+    "predeclaredSlow": 2,
+    "wholeSingleUiRun": false,
+    "skip": 0,
+    "retry": 0,
+    "reportErrors": 0,
+    "exactDeclarationMatched": true,
+    "reports": [
+      {
+        "path": "artifacts/goal-4/check-art24-26/regular-report.json",
+        "bytes": 63800544,
+        "sha256": "1e3085841c926392799d075e018609f473f59414b7a572f09a6e6b92ad4e12ad"
+      },
+      {
+        "path": "artifacts/goal-4/check-art24-26/slow-report.json",
+        "bytes": 1157907,
+        "sha256": "745f816e16645768f559655050c7efebdaa468568de99023a58712f839e3a476"
+      }
+    ]
+  },
+  "native": {
+    "current": 415,
+    "wholeRun": true,
+    "skip": 0,
+    "retry": 0,
+    "report": {
+      "path": "artifacts/goal-4/check-art24-26/native-report.json",
+      "bytes": 8963669,
+      "sha256": "360a3d4fcbf0608bfb179b9f790dc71f0f419c12ff0e0ec3c6f6d80afb79f459"
+    }
+  },
+  "normal": {
+    "current": 32,
+    "wholeRun": true,
+    "base": 24,
+    "foundation": 6,
+    "perRoundReopen": 2,
+    "skip": 0,
+    "retry": 0,
+    "report": {
+      "path": "artifacts/goal-4/check-art24-26/journeys-report.json",
+      "bytes": 1029300,
+      "sha256": "cbbe2e07a5ce5cfcb07dcfc1fea660f84713224b674c33ae60511f00cadc57ba"
+    },
+    "limitation": "Visible normal finite plans with virtual declared periods; not real-world growth speed, long balance or human acceptance."
+  },
+  "rules": {
+    "actual": 873,
+    "wholeRun": true,
+    "skip": 0,
+    "fail": 0,
+    "cancelled": 0,
+    "report": {
+      "path": "artifacts/goal-4/check-art24-26/rules.log",
+      "bytes": 90156,
+      "sha256": "d8771c8c2995e21b47f7a8af7a7d24d53ed628ab246a8c5111b9fe302f483101"
+    }
+  },
+  "resources": {
+    "actualUniqueMethods": 486,
+    "wholeRun": true,
+    "positiveRootAndCompleteSandboxFirst": true,
+    "productionAssets": 112,
+    "logs": [
+      {
+        "path": "artifacts/goal-4/check-art24-26/root-resources-positive.log",
+        "bytes": 1648,
+        "sha256": "562ed23a89b3320a71dbd4e11882364e8dd461a9ce9eef48cc2843ea6232e789"
+      },
+      {
+        "path": "artifacts/goal-4/check-art24-26/resources-positive.log",
+        "bytes": 101,
+        "sha256": "8a8b6f8b2f8c62fc3930e1feb68fd310337f006e06097dfd0db772b1f10ab0e5"
+      },
+      {
+        "path": "artifacts/goal-4/check-art24-26/resources.log",
+        "bytes": 588,
+        "sha256": "9e4f0d11892c7cf64433a266b05b2f25f8cc587e9611484197060df351458d2d"
+      },
+      {
+        "path": "artifacts/goal-4/check-art24-26/resources-declaration.json",
+        "bytes": 46027,
+        "sha256": "553f6f3579980efe69d6e61c9dd5c93996d9f592c7f3e55e183b0653140e7242"
+      }
+    ]
+  },
+  "typesBuild": {
+    "rootTypecheck": true,
+    "vueTypecheckAndBuild": true,
+    "logs": [
+      {
+        "path": "artifacts/goal-4/check-art24-26/root-typecheck.log",
+        "bytes": 61,
+        "sha256": "f4db2c939da9c86ddc28dd7279e9d43cdaccb955d89c68482425e95ef8b37061"
+      },
+      {
+        "path": "artifacts/goal-4/check-art24-26/build.log",
+        "bytes": 1140,
+        "sha256": "5e9b478f8b001e38ba55d450389ce581f5eca90021ecd36111f0a8d28724eea2"
+      }
+    ]
+  },
+  "exports": {
+    "actualProducers": 3,
+    "assets": 4,
+    "newAssetsThisCheck": 0,
+    "note": "ART16两原道器、ART24内景、ART26静立图；0061“三新资产”指三相关producer核对，不是本轮生成三件新资源。",
+    "logs": [
+      {
+        "path": "artifacts/goal-4/check-art24-26/export-art16_schools.log",
+        "bytes": 337,
+        "sha256": "042758fba3bcc94785f47de612c29febe7606cc5b28799a8a9e740bb06b225b8"
+      },
+      {
+        "path": "artifacts/goal-4/check-art24-26/export-art24_scene.log",
+        "bytes": 193,
+        "sha256": "549a333b9357317bfcecda4703f7359b62f4bbb408f5669ac600fc5625a20ba1"
+      },
+      {
+        "path": "artifacts/goal-4/check-art24-26/export-art26_actor.log",
+        "bytes": 192,
+        "sha256": "b893ea544bde8cf47cdc81be4b64b182b4e7caa94a71b16445b1367427e09630"
+      }
+    ]
+  },
+  "code": {
+    "runtimeChanges": [],
+    "engineStoreDB9ClockCasProofUnchanged": true,
+    "noCapsRaised": true,
+    "newRuntimeModules": 0,
+    "newBitmaps": 0,
+    "onlyRuntimeAdjacentChange": "3 current UI integration tests and canonical fixed-desktop registration; no production repair was needed."
+  },
+  "inputs": {
+    "initialFrozen": 991,
+    "terminalInitialExact": true,
+    "supplementalBaselineRefs": 83,
+    "supplementalPhase": "Recorded during regular run, byte-equal to immutable pre-task Git; not relabeled as initial capture.",
+    "terminalSupplementalExact": true,
+    "runtimeFiles": 302,
+    "protected13Exact": true
+  },
+  "pixels": {
+    "currentFrames": 14,
+    "freshReviewed": 12,
+    "sameTurnExactWholePngInherited": 2,
+    "normalVisibleLateStages": 8,
+    "newCombinationFrames": 6,
+    "wholeArtHumanAccepted": false
+  },
+  "payload": {
+    "files": 93,
+    "bytes": 9534862
+  },
+  "identityAfterCodeCommit": "pending actual Git/rebuild/frozen/HTTP check; original preview will not reload if runtime remains identical",
+  "notRun": [
+    "compatibility/mobile/responsive/crossbrowser/multi-viewport/font",
+    "environment/performance",
+    "ART17 original4 performance reds repair",
+    "clean candidate recreation",
+    "final maximum C-end/code/security review",
+    "long balance",
+    "human and overall art/gamefeel acceptance"
+  ],
+  "preserved": [
+    "Original ART17 four reds/unknowns",
+    "user negative overall art feedback",
+    "all original failed and superseded reports",
+    "v0.3/original inputs/assets/user saves/protected13"
+  ],
+  "next": "ART27法宝器物与铸器舞台的场景/主体/主要决定艺术优化；先合同参数旧cap/完整能力/验收回滚，不提前实施第二任务。",
+  "overallGoalComplete": false
+}

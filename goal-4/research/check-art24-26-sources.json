@@ -1,0 +1,21 @@
+{
+  "task": "CHECK-ART24-26",
+  "readDate": "2026-10-29",
+  "sources": [
+    {
+      "title": "XAG112 UI navigation",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "read": "Goal/Overview/consistent order and predictable focus",
+      "projectInference": "三舞台查看/返回/原草案保持，完整配置比较与原确认分清；不用隐藏菜单焦点。"
+    },
+    {
+      "title": "XAG114 UI context",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "read": "Goal/Overview/context change/nearby labels",
+      "projectInference": "周期运行/失败/新人生后实际活动与当前查看对象明确，旧请求不接新授权；来源不规定本项目分格/像素/时长。"
+    }
+  ],
+  "skill": "game-studio -> game-playtest; existing Vue DOM formal runtime retained",
+  "notCertification": true,
+  "compatibilityAndEnvironmentPerformancePaused": true
+}

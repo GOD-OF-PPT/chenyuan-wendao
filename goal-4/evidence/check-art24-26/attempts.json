@@ -1,0 +1,102 @@
+{
+  "task": "CHECK-ART24-26",
+  "reports": [
+    {
+      "path": "artifacts/goal-4/check-art24-26/combinations-report.json",
+      "bytes": 28329,
+      "sha256": "b67331fd95530502ff009ffeab45f0f454af8fdf202d07a6e4dd419395cb62a8",
+      "stats": {
+        "startTime": "2026-10-28T23:11:51.365Z",
+        "duration": 42371.708,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "note": "首3组合2过/1作者前提红：已持有本命页原本无production-start；旧全库/配装错误帧已过，不能冒产品缺功能。原源码/报告/trace保。"
+    },
+    {
+      "path": "artifacts/goal-4/check-art24-26/combinations-v2-report.json",
+      "bytes": 27229,
+      "sha256": "6a71ae63079a816ba8f6dd3e5c6fe4e05a2f921bc02d3b78d9f54b235ac4b248",
+      "stats": {
+        "startTime": "2026-10-28T23:13:18.719Z",
+        "duration": 26524.567,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "note": "仅按真实只读器页补正入口：开始数量0与保存待核对原因，原Game/DB/活动/预算/时限不改，整3过。"
+    },
+    {
+      "path": "artifacts/goal-4/check-art24-26/regular-report.json",
+      "bytes": 63800544,
+      "sha256": "1e3085841c926392799d075e018609f473f59414b7a572f09a6e6b92ad4e12ad",
+      "stats": {
+        "startTime": "2026-10-28T23:23:15.089Z",
+        "duration": 2790667.564,
+        "expected": 657,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "note": "冻结源后657普通完整一轮绿，无自动retry/跳过。"
+    },
+    {
+      "path": "artifacts/goal-4/check-art24-26/slow-report.json",
+      "bytes": 1157907,
+      "sha256": "745f816e16645768f559655050c7efebdaa468568de99023a58712f839e3a476",
+      "stats": {
+        "startTime": "2026-10-29T00:10:25.983Z",
+        "duration": 83145.638,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "note": "原先具名两慢例单worker/原60秒，完整2过，不把分组说成一轮659。"
+    },
+    {
+      "path": "artifacts/goal-4/check-art24-26/native-report.json",
+      "bytes": 8963669,
+      "sha256": "360a3d4fcbf0608bfb179b9f790dc71f0f419c12ff0e0ec3c6f6d80afb79f459",
+      "stats": {
+        "startTime": "2026-10-29T00:12:10.141Z",
+        "duration": 604414.214,
+        "expected": 415,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "note": "当前415原生存储完整一轮绿，旧具名迁移排除和替代合同保持。"
+    },
+    {
+      "path": "artifacts/goal-4/check-art24-26/journeys-report.json",
+      "bytes": 1029300,
+      "sha256": "cbbe2e07a5ce5cfcb07dcfc1fea660f84713224b674c33ae60511f00cadc57ba",
+      "stats": {
+        "startTime": "2026-10-29T00:23:01.236Z",
+        "duration": 2126632.486,
+        "expected": 32,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "runtimeDigest": "74d659f2b18a95601dd2c2a1fd797096db626d0eda7deb9757780b264b3b38e1",
+      "note": "正常24基础、6筑基引导、两派逐回合刷新完整32一轮绿；虚拟周期不冒真实成长/长期/真人。"
+    }
+  ],
+  "runtimeChanged": false,
+  "oldFailureRetagged": false,
+  "normal32": "actual terminal32 passed, exact declaration and current runtime audited",
+  "toolOnlyNotes": [
+    "声明JSON不序列化use字段，首元数据整理KeyError无产品动作；修为记录实际profile源与project/count，不伪造viewport元数据。"
+  ],
+  "repeatedRunsDoNotIncreaseDistinctCoverage": true
+}
