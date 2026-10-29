@@ -133,5 +133,8 @@
     "runtimeInputs": 309,
     "payloadFiles": 100
   },
-  "status": "review_evidence_ready_for_independent_local_commit"
+  "status": "scoped_review_delivered_with_open_findings",
+  "auditCommit": "ec629580df01fa25c163b078c1f575497abc0fc9",
+  "identity": "identity-proof.json",
+  "noRuntimeChangeOriginalPreviewKept": true
 }
