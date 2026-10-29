@@ -23,7 +23,8 @@ watch(()=>props.personId,()=>route.value?.close());
 onDeactivated(close);onScopeDispose(()=>{focus?.release(people.value);focus?.release(route.value);});
 </script>
 <template>
- <div class="encounter-table narrative-object art12-encounter" data-testid="encounter-table" :data-mode="mode" :data-person="portrait" :data-state="phase" :data-status="state" :data-engaged="engaged" :data-working="working&&!store?.error">
+ <div class="encounter-table narrative-object art12-encounter" :class="{'art30-meeting':['shen','lu','pei','yan'].includes(portrait)&&mode!=='journal'}" data-testid="encounter-table" :data-mode="mode" :data-person="portrait" :data-state="phase" :data-status="state" :data-engaged="engaged" :data-working="working&&!store?.error">
+  <AssetImage v-if="['shen','lu','pei','yan'].includes(portrait)&&mode!=='journal'" class="art30-parlour" path="art/v2/workshops/npc-parlour-v1.webp" asset-id="npc-parlour" eager aria-hidden="true"><span class="art30-parlour-fallback"/></AssetImage>
   <header v-if="mode==='people'" class="encounter-controls"><button data-testid="fate-people-open" @click="open(people,$event)">换缘牍 · 四位人物</button></header>
   <aside class="encounter-presence" :class="{'encounter-letter':mode==='events','encounter-journal':mode==='journal'}">
    <figure v-if="portrait&&mode!=='journal'" class="encounter-figure"><PortraitImage class="encounter-portrait" :id="portrait" :fallback="seal||name?.slice(0,1)||'缘'"/><figcaption><h2>{{name}}</h2></figcaption></figure>
@@ -34,7 +35,7 @@ onDeactivated(close);onScopeDispose(()=>{focus?.release(people.value);focus?.rel
   <div class="encounter-canvas book-canvas" :class="mode==='people'?'fate-reading book-with-person':'book-landscape'" :data-testid="mode==='people'?'relationships':undefined" :data-person="mode==='people'?portrait:undefined">
    <AssetImage class="book-scenery" :path="sceneAssetPath(scene)" :asset-id="'reading-scene-'+scene.artKey"/>
    <div class="encounter-copy narrative-object-paper" :class="{'narrative-object-saved':!!effect&&!store?.error}"><slot/><i class="narrative-object-ink" :style="{'--ink-progress':(working&&!store?.error?progress:0)*100+'%'}" aria-hidden="true"/><small v-if="effect&&!store?.error" class="narrative-object-result" data-testid="encounter-result" :data-sequence="effect.sequence">本次已保存 · {{effect.notice.label}}</small></div>
-   <div class="narrative-seal-space" aria-hidden="true"/>
+   <div class="narrative-seal-space" :class="{art30:['shen','lu','pei','yan'].includes(portrait)&&mode!=='journal'}" aria-hidden="true"/>
   </div>
   <footer v-if="$slots.decision" class="encounter-decision"><slot name="decision" :open-route="openRoute"/></footer>
   <dialog ref="people" class="fate-people-dialog art12-object-dialog" data-testid="fate-people-dialog" :aria-labelledby="instance+'-people'"><header><h3 :id="instance+'-people'" tabindex="-1" data-dialog-initial>换缘牍 · 选择只翻读</h3><button data-testid="fate-people-close" @click="close">返回当前缘牍</button></header><nav class="encounter-name-rack" aria-label="人物名笺"><slot name="people" :close="close"/></nav></dialog>

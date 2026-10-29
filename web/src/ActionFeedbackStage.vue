@@ -38,15 +38,15 @@ watch(()=>[observation.value,scene.busy,scene.saved,scene.available,scene.error,
  const next=tracker.consume(activityFeedbackObservation(observation.value,store.activity,store.lastResult),store.game,store.lastResult,store.lastReplayed,store.saved&&store.available,before.value);if(!next){if(state.value==='pending')state.value='idle';return;}if(store.activityPausing||store.lastFromActivity&&(!playfieldActive||next.family!=='battle'&&store.activity?.version!==7)||document.hidden){state.value='idle';return;}
  clearTimeout(timer);const owner=++generation,origin=pending;await nextTick();await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));if(owner!==generation||store.busy||store.error||document.hidden)return;
  notice.value=next;state.value='success';mark(origin?.element??null,'command-success');
- const cast=witness.forNotice(next),spot=next.operation==='BATTLE'?battleSpot(cast):null;
- const blocked=!!document.querySelector('dialog[open]'),fresh=!origin||origin.epoch===epoch,battle=next.family==='battle',answer=next.operation==='ANSWER_TRIAL';
- const book=(answer||['dialogue','closure'].includes(next.family))&&visible('.book-canvas');
- const selector=battle?'.enemy-art':['equipment','recovery'].includes(next.family)?'.character-portrait':next.family==='closure'?'.book-canvas':'.hub-stage,.center-column .scene,[data-primary-region]';
- const target=book||(next.operation==='BATTLE'?spot?.target??null:visible(selector)),at=spot??center(target)??center(origin?.element??null)??{x:innerWidth/2,y:innerHeight*.38};if(book){const r=book.getBoundingClientRect();at.x=r.x+r.width*(answer?.75:.83);at.y=r.y+r.height*(answer?.5:.4);}const hudBottom=document.querySelector('.game-hud')?.getBoundingClientRect().bottom??0;point.value=spot??{x:Math.max(110,Math.min(innerWidth-110,at.x)),y:Math.max(150,hudBottom+120,Math.min(innerHeight-150,at.y)),size:0};
+ const op=next.operation,family=next.family,cast=witness.forNotice(next),spot=op==='BATTLE'?battleSpot(cast):null;
+ const blocked=!!document.querySelector('dialog[open]'),fresh=!origin||origin.epoch===epoch,battle=family==='battle',answer=op==='ANSWER_TRIAL';
+ const book=(answer||['dialogue','closure'].includes(family))&&visible('.book-canvas');
+ const selector=battle?'.enemy-art':['equipment','recovery'].includes(family)?'.character-portrait':family==='closure'?'.book-canvas':'.hub-stage,.center-column .scene,[data-primary-region]';
+ const target=book&&book.querySelector('.art30')||book||(op==='BATTLE'?spot?.target??null:visible(selector)),at=spot??center(target)??center(origin?.element??null)??{x:innerWidth/2,y:innerHeight*.38};if(book&&target===book){const r=book.getBoundingClientRect();at.x=r.x+r.width*(answer?.75:.83);at.y=r.y+r.height*(answer?.5:.4);}const hudBottom=document.querySelector('.game-hud')?.getBoundingClientRect().bottom??0;point.value=spot??{x:Math.max(110,Math.min(innerWidth-110,at.x)),y:Math.max(150,hudBottom+120,Math.min(innerHeight-150,at.y)),size:0};
  showMotion.value=!reduced.value&&!blocked&&fresh&&(!battle||!!target&&!next.terminal);
  floats.value=showMotion.value?next.numbers.map(n=>{const pos=center(visible(n.target==='enemy'?'.enemy-status':'.character-vitals'))??(n.target==='enemy'?origin?.enemy:null)??at;return{...n,x:Math.max(80,Math.min(innerWidth-80,pos.x)),y:Math.max(100,hudBottom+28,Math.min(innerHeight-110,pos.y))};}):[];
  if(showMotion.value&&battle&&!next.terminal)castActors(next,cast,mark);
- if(showMotion.value&&next.family==='travel'){const scene=visible('.scene-image');if(scene instanceof HTMLElement)mark(scene,'scene-arrival',650);}
+ if(showMotion.value&&family==='travel'){const scene=visible('.scene-image');if(scene instanceof HTMLElement)mark(scene,'scene-arrival',650);}
  timer=setTimeout(clear,1600);
 });
 watch([()=>viewKey,()=>playfieldActive,()=>scene.activityPausing,()=>scene.activity?.id,()=>scene.activity?.generation,()=>scene.activity?.ownerId],clear,{flush:'sync'});

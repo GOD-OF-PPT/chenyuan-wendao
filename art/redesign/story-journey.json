@@ -18,8 +18,8 @@
     },
     {
       "path": "web/src/FateCatalogue.vue",
-      "bytes": 9739,
-      "sha256": "f00a42f829354632d6f05ce46a76275767cf2fd38d9c8f7f72396524018b4bdc"
+      "bytes": 9627,
+      "sha256": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2"
     },
     {
       "path": "web/src/LifeCatalogue.vue",

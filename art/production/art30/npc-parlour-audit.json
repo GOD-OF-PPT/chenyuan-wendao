@@ -1,0 +1,35 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "model": null,
+  "requestId": null,
+  "originalsKept": true,
+  "userAcceptance": false,
+  "reference": {
+    "path": "goal-4/evidence/check-art27-29/relationship-art-debt.jpg",
+    "bytes": 106986,
+    "sha256": "755e31a2d22ba4d78683519712385be4ac6b4a83be101fcb5ef884d5527be085"
+  },
+  "selectedCopy": {
+    "path": "art/production/art30/npc-parlour-v1.png",
+    "bytes": 2551001,
+    "sha256": "740edf42832e8320e8f39efb30a11065afe40857c2dfd288bf33a535eb6b975a"
+  },
+  "calls": [
+    {
+      "prompt": {
+        "path": "art/production/art30/npc-parlour-prompt.json",
+        "bytes": 2664,
+        "sha256": "b0b8a20b0f47c3ea431f324968926d797a5ea5be9f876a4825987af8cefb391d"
+      },
+      "candidate": {
+        "path": "art/production/art30/candidates/parlour-v1.png",
+        "bytes": 2551001,
+        "sha256": "740edf42832e8320e8f39efb30a11065afe40857c2dfd288bf33a535eb6b975a"
+      },
+      "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-77a384c0-ca9f-48fe-9ca1-bb72fbf4a3f3.png",
+      "generatedSHA256": "740edf42832e8320e8f39efb30a11065afe40857c2dfd288bf33a535eb6b975a",
+      "requestedTransparent": false,
+      "selection": "Selected first opaque empty pavilion after actual image review; no people, UI text, loot or state painted."
+    }
+  ]
+}

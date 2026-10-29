@@ -9,13 +9,13 @@
   "files": [
     {
       "path": "web/src/EncounterTable.vue",
-      "bytes": 5048,
-      "sha256": "1a06400cfaabd46b4fad0a2d4e025502e8c50ce78da03f4bfd6b4e48f7941cb7"
+      "bytes": 5468,
+      "sha256": "0c73263444112e4d6bc010201750dd836aaef36d03ee612868124afe8033ccf7"
     },
     {
       "path": "web/src/ResponseTable.vue",
-      "bytes": 4156,
-      "sha256": "7bdef986b3605e155aa083bf9bfc9243b8241003bcef0d576808d2b898692751"
+      "bytes": 4522,
+      "sha256": "b9ff7f201a14b826085e0e2dbff7c0eba42633684ab20a34a2f058e368e7974e"
     },
     {
       "path": "web/src/LifeScroll.vue",

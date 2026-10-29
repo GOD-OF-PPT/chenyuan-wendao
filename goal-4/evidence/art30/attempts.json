@@ -1,0 +1,393 @@
+{
+  "task": "ART30",
+  "attempts": [
+    {
+      "attempt": "old-red",
+      "source": "artifacts/goal-4/art30/old-red-source.ts",
+      "report": {
+        "path": "artifacts/goal-4/art30/old-red-report.json",
+        "bytes": 15133,
+        "sha256": "0eb82b0fd37aff2d3062b007b043471f8b1dd6823b910caeb5e31aabc26aabd3"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/old-red.log",
+        "bytes": 6257,
+        "sha256": "a9f5a789c22360b9d6f7c093bd2e2feee4be4bd9899d70a78d77dba5b0e28cdb"
+      },
+      "stats": {
+        "startTime": "2026-10-29T10:13:02.935Z",
+        "duration": 14587.714,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "note": "Expected real old-source missing NPC scene; original preserved.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceSHA256": "f042e55ecfad3f842324ea3d336995207a27897ab87833df308f8d21937c39d5"
+    },
+    {
+      "attempt": "early",
+      "source": "artifacts/goal-4/art30/early-source",
+      "report": {
+        "path": "artifacts/goal-4/art30/early-report.json",
+        "bytes": 15213,
+        "sha256": "a9fdf4fb8179002bfabd568746faab4de264b7554e4e8cf18231c0deaaadbf3e"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/early.log",
+        "bytes": 6415,
+        "sha256": "69f75a2f1c9b723622fe89d58b75eb0d2c7c16fed6cf54492158a1b5e902e435"
+      },
+      "stats": {
+        "startTime": "2026-10-29T10:19:30.363Z",
+        "duration": 7088.883999999999,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "note": "Real portrait246.90625<260.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceFiles": {
+        "spec.ts": "f042e55ecfad3f842324ea3d336995207a27897ab87833df308f8d21937c39d5",
+        "FateCatalogue.vue": "db9e2ee3a55618f202575b9c7ae3e36450cb6eb2ce609640cc15c6c1fe13d68a",
+        "EncounterTable.vue": "f32885f3b8a333b43b1f672ceef82139347a9953b78e6578f876ebfb7e6f86d8",
+        "art12-narrative.css": "4d16bac48926b29e0846b3e0f1d76bf024599b07420ce0bd0650ceede47cb237",
+        "ResponseTable.vue": "9fef5ea174e0f39eda66b6e01060d51143c3b1139d09c513862a4af5e61b6217"
+      }
+    },
+    {
+      "attempt": "early-v2",
+      "source": "artifacts/goal-4/art30/early-v2-source",
+      "report": {
+        "path": "artifacts/goal-4/art30/early-v2-report.json",
+        "bytes": 15226,
+        "sha256": "0e13b0596aac5bacd0b3b2a2dc6bbc2a70f4bf3b6ff121d1182933ada8387d31"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/early-v2.log",
+        "bytes": 6427,
+        "sha256": "a1e52a8d032a8e79f7a67f9f77104ed7f46c58ae2eed00b723512d4cd2723554"
+      },
+      "stats": {
+        "startTime": "2026-10-29T10:23:07.517Z",
+        "duration": 7144.2119999999995,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "note": "Real portrait230.90625<260; row width/direction alone did not resolve it.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceFiles": {
+        "spec.ts": "f042e55ecfad3f842324ea3d336995207a27897ab87833df308f8d21937c39d5",
+        "FateCatalogue.vue": "db9e2ee3a55618f202575b9c7ae3e36450cb6eb2ce609640cc15c6c1fe13d68a",
+        "EncounterTable.vue": "f32885f3b8a333b43b1f672ceef82139347a9953b78e6578f876ebfb7e6f86d8",
+        "art12-narrative.css": "5615c0a53eb6d6a1961526aacc3bc6d7ab117e54a86aadbea45c421d81498238",
+        "ResponseTable.vue": "9fef5ea174e0f39eda66b6e01060d51143c3b1139d09c513862a4af5e61b6217"
+      }
+    },
+    {
+      "attempt": "layout-diagnostic",
+      "source": "artifacts/goal-4/art30/layout-diagnostic-source.ts",
+      "report": {
+        "path": "artifacts/goal-4/art30/layout-diagnostic-report.json",
+        "bytes": 25813,
+        "sha256": "c0c1ce96a5709e2807fb67aad461b77047ccb7ee00b68642dacfc0b7a7c31ad8"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/layout-diagnostic.log",
+        "bytes": 8642,
+        "sha256": "6123315d73897b777366406174987e9e4408b2eb8ef1b22766c03d772d4e3e8a"
+      },
+      "stats": {
+        "startTime": "2026-10-29T10:25:56.673Z",
+        "duration": 7046.851000000001,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "note": "Same real failure instrumented: empty reason small had flex-basis100% and forced wrapping; not a new business coverage.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceSHA256": "e173727c6feeee68d45c94131d6d9fc58f021b411925eb5737d89845bc7f0e75"
+    },
+    {
+      "attempt": "early-v3",
+      "source": "artifacts/goal-4/art30/early-v3-source",
+      "report": {
+        "path": "artifacts/goal-4/art30/early-v3-report.json",
+        "bytes": 18358,
+        "sha256": "52e9c7f265f25bb653bcaabbc8d5cb5676b58cdd88d50393e3e75e89239aec61"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/early-v3.log",
+        "bytes": 1654,
+        "sha256": "a04400196f4761dd84ba59677cbb37e3797365913a8953e5031f81836f752e8e"
+      },
+      "stats": {
+        "startTime": "2026-10-29T10:29:57.701Z",
+        "duration": 15440.911,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "note": "One complete four-portrait case passed after only empty hint layout was removed.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceFiles": {
+        "spec.ts": "f042e55ecfad3f842324ea3d336995207a27897ab87833df308f8d21937c39d5",
+        "FateCatalogue.vue": "db9e2ee3a55618f202575b9c7ae3e36450cb6eb2ce609640cc15c6c1fe13d68a",
+        "EncounterTable.vue": "f32885f3b8a333b43b1f672ceef82139347a9953b78e6578f876ebfb7e6f86d8",
+        "art12-narrative.css": "f20eaace3ab97c52c7741cecfeb5661ca70a868a8900d5e3fcc09b7376133f71",
+        "ResponseTable.vue": "9fef5ea174e0f39eda66b6e01060d51143c3b1139d09c513862a4af5e61b6217"
+      }
+    },
+    {
+      "attempt": "new-four",
+      "source": "artifacts/goal-4/art30/new-four-source",
+      "report": {
+        "path": "artifacts/goal-4/art30/new-four-report.json",
+        "bytes": 57396,
+        "sha256": "85de5349a74a2395c2dfa70f25fc35e8e3fb679ff5fe8c004c9cd7f07d8b60f9"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/new-four.log",
+        "bytes": 14386,
+        "sha256": "59de536c34064b8b9ddac8c969837ebf51885a1eefaf1f72554d67e0da923665"
+      },
+      "stats": {
+        "startTime": "2026-10-29T10:42:35.658Z",
+        "duration": 37664.712,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "note": "2pass/2fail: actual response253.015625<260; author assumed exact2px outline but original3px. Original reporter step-id warning preserved, not a product root-cause fix.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceFiles": {
+        "spec.ts": "ab5c88513819fa1c4fd0a6d094c3b2a5e986c1c8eb7ee08cb039a3cbe55b6584",
+        "FateCatalogue.vue": "db9e2ee3a55618f202575b9c7ae3e36450cb6eb2ce609640cc15c6c1fe13d68a",
+        "EncounterTable.vue": "f32885f3b8a333b43b1f672ceef82139347a9953b78e6578f876ebfb7e6f86d8",
+        "art12-narrative.css": "ab6c5de6a64f5896fcc58a4c17ffb0811bfc43a157c484b7935b2951cbe10cb6",
+        "ResponseTable.vue": "9fef5ea174e0f39eda66b6e01060d51143c3b1139d09c513862a4af5e61b6217"
+      }
+    },
+    {
+      "attempt": "new-four-v2",
+      "source": "artifacts/goal-4/art30/new-four-v2-source",
+      "report": {
+        "path": "artifacts/goal-4/art30/new-four-v2-report.json",
+        "bytes": 68432,
+        "sha256": "e9bca37653daf6c64adf381e2e6c9ef3d6345c63d95cc6e994953ba88ec4f01a"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/new-four-v2.log",
+        "bytes": 9494,
+        "sha256": "ba93b39119ab5d417207d67a804715d4587af61351d138478adff5bbfa4148a7"
+      },
+      "stats": {
+        "startTime": "2026-10-29T10:50:11.324Z",
+        "duration": 38284.726,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "note": "3pass/1fail: actual title28px line-height1.4 Range; auxiliary p.small15 misclassified as body18. Cost dt/dd checks added; local CJK line-height repaired.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceFiles": {
+        "spec.ts": "194001ef5edbc231017587e734c57a820a8a72e15d9c208ef7a0cad6ca5a7f8e",
+        "FateCatalogue.vue": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2",
+        "EncounterTable.vue": "f32885f3b8a333b43b1f672ceef82139347a9953b78e6578f876ebfb7e6f86d8",
+        "art12-narrative.css": "fc7d96b716faaea2a6eb17218148dc61510c59b2f82647a7b2fe1734f4d5a100",
+        "ResponseTable.vue": "9fef5ea174e0f39eda66b6e01060d51143c3b1139d09c513862a4af5e61b6217"
+      }
+    },
+    {
+      "attempt": "new-four-v3",
+      "source": "artifacts/goal-4/art30/new-four-v3-source",
+      "report": {
+        "path": "artifacts/goal-4/art30/new-four-v3-report.json",
+        "bytes": 73991,
+        "sha256": "6acf788723db3a9d931f529f9047611125bb47b8d7c279fa04d1cf9cf4518c3b"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/new-four-v3.log",
+        "bytes": 8608,
+        "sha256": "f6c45e0b4722d736c80c397b8802fb1539e074bd10c91a4adcb81ce2d5b52aed"
+      },
+      "stats": {
+        "startTime": "2026-10-29T10:56:54.809Z",
+        "duration": 39605.673,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "note": "3pass/1 author helper ReferenceError stored import; no product change to correct this.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceFiles": {
+        "spec.ts": "168f523511fa7e5d916f7c3c167a92fc21b8c2c72bfd6ce1052784bfb0168dd7",
+        "FateCatalogue.vue": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2",
+        "EncounterTable.vue": "f32885f3b8a333b43b1f672ceef82139347a9953b78e6578f876ebfb7e6f86d8",
+        "art12-narrative.css": "16984240c1b88cef2adabc61f2dfe1af0c19cbf430b3dfe989549666c47ff3c6",
+        "ResponseTable.vue": "9fef5ea174e0f39eda66b6e01060d51143c3b1139d09c513862a4af5e61b6217"
+      }
+    },
+    {
+      "attempt": "new-four-v4",
+      "source": "artifacts/goal-4/art30/new-four-v4-source",
+      "report": {
+        "path": "artifacts/goal-4/art30/new-four-v4-report.json",
+        "bytes": 67937,
+        "sha256": "e32ca844446ab7ea0ad55785a6006c5a37f539f9f95c71ad8cca6c27e1a97409"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/new-four-v4.log",
+        "bytes": 2276,
+        "sha256": "2ec8ce6079206918b0476984c72be99ac33c3f6980e9399896b3674d51dad2fa"
+      },
+      "stats": {
+        "startTime": "2026-10-29T11:00:54.541Z",
+        "duration": 32546.681,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "note": "4pass, then actual pixel review found stamp overlap; not counted as art completion.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceFiles": {
+        "spec.ts": "7e188b2d0de18f2921958e0786e656674270e1a95a8cef5329f1f9973e10e2e6",
+        "FateCatalogue.vue": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2",
+        "EncounterTable.vue": "f32885f3b8a333b43b1f672ceef82139347a9953b78e6578f876ebfb7e6f86d8",
+        "art12-narrative.css": "16984240c1b88cef2adabc61f2dfe1af0c19cbf430b3dfe989549666c47ff3c6",
+        "ResponseTable.vue": "9fef5ea174e0f39eda66b6e01060d51143c3b1139d09c513862a4af5e61b6217"
+      }
+    },
+    {
+      "attempt": "stamp-red",
+      "source": "artifacts/goal-4/art30/stamp-red-source.ts",
+      "report": {
+        "path": "artifacts/goal-4/art30/stamp-red-report.json",
+        "bytes": 33101,
+        "sha256": "7d482fa85b3233cb59c42205b6cbb345dc6cd9d81af335b6257f5357a541a508"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/stamp-red.log",
+        "bytes": 8179,
+        "sha256": "17a089a46b7ff7b68044bdce7f93507d0d48647565aaf92c0a4f2cf0bcc22920"
+      },
+      "stats": {
+        "startTime": "2026-10-29T11:28:30.448Z",
+        "duration": 11345.592999999999,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "note": "Genuine expanded30px stamp collision with catalogue/reading area; original source/report/trace kept.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceSHA256": "191ad7e4c5fafb86d750a52ea6f13fbc5a3af7b003611e6a218530b0f4aec47b"
+    },
+    {
+      "attempt": "anchor",
+      "source": "artifacts/goal-4/art30/anchor-source",
+      "report": {
+        "path": "artifacts/goal-4/art30/anchor-report.json",
+        "bytes": 68418,
+        "sha256": "f4ff2c2e9ed873d17ca431a513f5e70f6f9cb4c717e92f0ebdbc67498e903510"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/anchor.log",
+        "bytes": 2276,
+        "sha256": "22e2ac9324f51cc03a7315ae938b87d34c225d1b74a9e208ff492b3e25911672"
+      },
+      "stats": {
+        "startTime": "2026-10-29T11:35:40.404Z",
+        "duration": 31809.658,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "note": "4pass including30px but actual pixels showed generic .seal namespace collided with old red style.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceFiles": {
+        "ActionFeedbackStage.vue": "2fc09c9c82de03499cf2caab8437262e8d56010da3608c73536e8b133c7504be",
+        "spec.ts": "191ad7e4c5fafb86d750a52ea6f13fbc5a3af7b003611e6a218530b0f4aec47b",
+        "FateCatalogue.vue": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2",
+        "EncounterTable.vue": "f9dd8f6d2546f3e2d60b2c452e8482d35fae9d10bad650cfae3b95b04094f2a0",
+        "art12-narrative.css": "529dbec6e90f7dda469b42b9edf93363f5b065248d5c45e05b2c38d351dc1b81",
+        "ResponseTable.vue": "5aa45d95c66de5ccb3469d6f2d3bc07179ee5fd020abc60e0bff1259e818c73e"
+      }
+    },
+    {
+      "attempt": "anchor-colour-red",
+      "source": "artifacts/goal-4/art30/anchor-colour-red-source.ts",
+      "report": {
+        "path": "artifacts/goal-4/art30/anchor-colour-red-report.json",
+        "bytes": 16982,
+        "sha256": "d5538ea3a27ec2d6367be9e5394c1e541740f7ee3f773972af235aee9a6bf253"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/anchor-colour-red.log",
+        "bytes": 7028,
+        "sha256": "e7b868432c18424e91a7ff798dca41825bc13da9c67c78c020a9d5d7c13150ae"
+      },
+      "stats": {
+        "startTime": "2026-10-29T11:43:45.670Z",
+        "duration": 16173.062999999998,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "note": "Genuine nontransparent marker red before namespace correction.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceSHA256": "9add0d96444530aad048db28d01182789be2279e318c50887098c41bada7e005"
+    },
+    {
+      "attempt": "anchor-v2",
+      "source": "artifacts/goal-4/art30/anchor-v2-source",
+      "report": {
+        "path": "artifacts/goal-4/art30/anchor-v2-report.json",
+        "bytes": 68421,
+        "sha256": "5b3be3dc15687f8a661c0756bc9ea7ce2c0cab7d07889589ae3ab34431d0196c"
+      },
+      "log": {
+        "path": "artifacts/goal-4/art30/anchor-v2.log",
+        "bytes": 2276,
+        "sha256": "bdb294babddf3a94133077f66c0afb5119f213e9321db97dc133e01727d716ea"
+      },
+      "stats": {
+        "startTime": "2026-10-29T11:50:52.191Z",
+        "duration": 34964.633,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "note": "4pass after unique art30 marker, exact34000 old feedback cap, transparent+30px and full formalGame/DB/cost proof.",
+      "rootCauseAndProductFixClaimsLimitedToActualEvidence": true,
+      "sourceFiles": {
+        "ActionFeedbackStage.vue": "c0430cb6202624a1f4135556cfadfb17541fa38ca7d8bf29c8079080bc8ffcdb",
+        "spec.ts": "9add0d96444530aad048db28d01182789be2279e318c50887098c41bada7e005",
+        "FateCatalogue.vue": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2",
+        "EncounterTable.vue": "0c73263444112e4d6bc010201750dd836aaef36d03ee612868124afe8033ccf7",
+        "art12-narrative.css": "59c84073a8c5f9d95e34b3247a67f0da3f40b47005d3e8a19fe81b588f0e5835",
+        "ResponseTable.vue": "b9ff7f201a14b826085e0e2dbff7c0eba42633684ab20a34a2f058e368e7974e"
+      }
+    }
+  ],
+  "preparationOnly": [
+    "A proposed related file name matrix-ui-records was rejected by declaration set assertion before any execution; corrected to actual check-matrix-records.",
+    "A conversion/config preparation accidentally used default Python without PIL, failed before writing; used the existing bundled Pillow runtime, no dependency installs."
+  ],
+  "originalReportsSourcesTracesAndImagesRetained": true,
+  "finalReports": "coverage-audit.json",
+  "noHistoricalReportRetagged": true
+}

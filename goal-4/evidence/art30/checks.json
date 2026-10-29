@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-29",
+  "task": "ART30",
+  "contract": "docs/decisions/0066-npc-meeting-art30-contract.md",
+  "runtimeDigest": "947f326cc5266758ddb1b15cc67d1ce117b756be6c37181a88c76c8d7e7c715a",
+  "localScope": "fixed1440x900/font1/singleChromium",
+  "ui": {
+    "actualUnique": 373,
+    "wholeFiles": 39,
+    "regularWholeRun": 368,
+    "predeclaredOriginalSlow": 5,
+    "wholeSingle373Run": false,
+    "exactDeclarations": true,
+    "reports": [
+      {
+        "path": "artifacts/goal-4/art30/regular-report.json",
+        "bytes": 51807359,
+        "sha256": "14435157b6f86a0edf828414a4ed5709abf1adaed8a9b2126b654868fee4427a"
+      },
+      {
+        "path": "artifacts/goal-4/art30/slow-report.json",
+        "bytes": 976594,
+        "sha256": "774ca189c970bf9a65df42c664603bf33a22a8e0ec9a547fcb5370702a9148b8"
+      }
+    ]
+  },
+  "native": {
+    "current": 14,
+    "wholeRun": true,
+    "completeFiles": 4,
+    "report": {
+      "path": "artifacts/goal-4/art30/native-report.json",
+      "bytes": 20426,
+      "sha256": "92363d9308393a79174487e4e6c911aa609ff8118f81ebe43a2db0fe338cf23d"
+    }
+  },
+  "models": {
+    "current": 53,
+    "completeFiles": 6,
+    "report": {
+      "path": "artifacts/goal-4/art30/models.log",
+      "bytes": 6402,
+      "sha256": "e61d5c3a8e522414835f4a4c7d3ce9d1ff69fc90274a0504f1a636e475906ab9"
+    }
+  },
+  "resources": {
+    "currentUniqueMethods": 510,
+    "wholeRun": true,
+    "report": {
+      "path": "artifacts/goal-4/art30/resources.log",
+      "bytes": 612,
+      "sha256": "978d5067183c8e14fa5b0026ec9b84c02c416d88e82a668a5c15909e74d8bc9b"
+    },
+    "declaration": {
+      "path": "artifacts/goal-4/art30/resources-declaration.json",
+      "bytes": 47426,
+      "sha256": "fb67db08705ff6de1e10a7ef2fc3c1e575c4bd219a79cbd97394bdfd745c8cc6"
+    }
+  },
+  "selectedSkipRetryReportErrors": {
+    "skip": 0,
+    "retry": 0,
+    "reportErrors": 0
+  },
+  "positiveResourceBaseline": {
+    "actualRoot": 116,
+    "completeSandbox": 116,
+    "beforeNegativeChecks": true,
+    "report": {
+      "path": "artifacts/goal-4/art30/anchor-v2-positive-and-tests.log",
+      "bytes": 141,
+      "sha256": "0126e234b30368321f834063b2c3232a21cd44d76fd76227ba31f55098f51fa6"
+    }
+  },
+  "typesBuild": {
+    "rootTypecheck": true,
+    "vueTypecheckBuild": true,
+    "reports": [
+      {
+        "path": "artifacts/goal-4/art30/root-typecheck.log",
+        "bytes": 61,
+        "sha256": "f4db2c939da9c86ddc28dd7279e9d43cdaccb955d89c68482425e95ef8b37061"
+      },
+      {
+        "path": "artifacts/goal-4/art30/build.log",
+        "bytes": 1141,
+        "sha256": "f2b8848c9eb16a34edf9f0c9cabc9203eb2298076267f6b7af4bfd795344545d"
+      }
+    ]
+  },
+  "asset": {
+    "mode": "built-in imagegen",
+    "actualCalls": 1,
+    "newRuntimeAssets": 1,
+    "originalUnmodified": true,
+    "source": "art/production/art30/npc-parlour-v1.png",
+    "prompt": "art/production/art30/npc-parlour-prompt.json",
+    "runtime": "web/public/art/v2/workshops/npc-parlour-v1.webp",
+    "runtimeBytes": 143876,
+    "sourceDimensions": [
+      1774,
+      887
+    ],
+    "runtimeDimensions": [
+      1536,
+      768
+    ],
+    "opaque": true,
+    "crop": false,
+    "semanticPythonEdit": false,
+    "producerDoubleDeterministicVerify": true,
+    "report": {
+      "path": "artifacts/goal-4/art30/export-verify.log",
+      "bytes": 193,
+      "sha256": "f2e573a8ac0af8d01bd77db6e36db701f4599b9789ce391da3b5c48c0cbefdb4"
+    },
+    "model": null,
+    "requestId": null,
+    "notProviderSignedAudit": true
+  },
+  "source": {
+    "task": "ART30",
+    "base": "cb687eeb2424894878dc86c7cf9384824a749ba7",
+    "runtimeDigest": "947f326cc5266758ddb1b15cc67d1ce117b756be6c37181a88c76c8d7e7c715a",
+    "actualChangedRuntimeFiles": [
+      "web/src/ActionFeedbackStage.vue",
+      "web/src/EncounterTable.vue",
+      "web/src/FateCatalogue.vue",
+      "web/src/ResponseTable.vue",
+      "web/src/art12-narrative.css"
+    ],
+    "newRuntimeAsset": "web/public/art/v2/workshops/npc-parlour-v1.webp",
+    "unchangedOldRuntimeInputs": 300,
+    "originalFourPortraitsExact": true,
+    "threeBusinessScriptsByteIdentical": true,
+    "feedbackRendererChange": "Only optional current-book actual art30 marker center and stable local op/family reuse3/5 reads; exact old-source normalization verified. forNotice and castActors read the notice, do not mutate it.",
+    "unchanged": [
+      "engine",
+      "Store",
+      "DB9",
+      "command/run/revision/ActivityCAS",
+      "full proof and replay guards",
+      "original6second finite actions",
+      "feedback1600ms/14families/12particles",
+      "normal book fallback ratios",
+      "all old cap limits",
+      "whole old CSS prefix"
+    ],
+    "caps": {
+      "feedback": {
+        "actual": 34000,
+        "limit": 34000
+      },
+      "art12Css": {
+        "actual": 9721,
+        "limit": 14000
+      },
+      "narrative": {
+        "actual": 32466,
+        "limit": 45000
+      },
+      "story": {
+        "actual": 47132,
+        "limit": 48000
+      }
+    },
+    "newRuntimeModules": 0,
+    "noNewEvalHtmlExternalFontIoOrCommandAuthority": true,
+    "scope": "Actual scoped diff/baseline/caps/consumer review; not maximal final security/C-end/human or long-balance acceptance."
+  },
+  "inputs": {
+    "initialFrozen": 1164,
+    "terminalExact": true,
+    "runtimeFiles": 306,
+    "protected13Exact": true
+  },
+  "pixels": {
+    "actualCurrent": 31,
+    "fresh": 25,
+    "exactPriorPngInheritance": 6,
+    "review": "visual-review.json"
+  },
+  "noWhole67941532873CurrentRerunClaim": true,
+  "open": [
+    "CHECK2729-J01 original full32 aggregate timeout unknown, targeted2 does not prove repair",
+    "ART28-OBS-01 natural short-window collision,compatibility paused",
+    "ART17 original4 performance reds/unknown,performance paused",
+    "overall art/gamefeel/long balance/human and all final matrices/clean package/maximal final review"
+  ],
+  "postCodeIdentity": "pending actual code commit/build/Git306/frozen97/HTTP/original user preview"
+}

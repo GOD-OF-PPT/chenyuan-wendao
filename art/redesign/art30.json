@@ -1,0 +1,224 @@
+{
+  "format": "chenyuan-npc-meeting-art30",
+  "version": 1,
+  "task": "Goal4 ART30",
+  "budgets": {
+    "oldNarrativeCap": 45000,
+    "oldCssCap": 14000,
+    "oldStoryCap": 48000,
+    "newRasterAssets": 1,
+    "maxRuntimeBytes": 280000,
+    "runtimeWidth": 1536,
+    "runtimeHeight": 768,
+    "paintedMinimum": 260,
+    "oldFeedbackCap": 34000
+  },
+  "files": [
+    {
+      "path": "web/src/EncounterTable.vue",
+      "bytes": 5468,
+      "sha256": "0c73263444112e4d6bc010201750dd836aaef36d03ee612868124afe8033ccf7"
+    },
+    {
+      "path": "web/src/ResponseTable.vue",
+      "bytes": 4522,
+      "sha256": "b9ff7f201a14b826085e0e2dbff7c0eba42633684ab20a34a2f058e368e7974e"
+    },
+    {
+      "path": "web/src/FateCatalogue.vue",
+      "bytes": 9627,
+      "sha256": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2"
+    },
+    {
+      "path": "web/src/ActionFeedbackStage.vue",
+      "bytes": 10909,
+      "sha256": "c0430cb6202624a1f4135556cfadfb17541fa38ca7d8bf29c8079080bc8ffcdb"
+    },
+    {
+      "path": "web/src/art12-narrative.css",
+      "bytes": 9721,
+      "sha256": "59c84073a8c5f9d95e34b3247a67f0da3f40b47005d3e8a19fe81b588f0e5835"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0066-npc-meeting-art30-contract.md",
+    "goal-4/amendments/2026-10-29-goal-continue-art30.md",
+    "goal-4/research/art30-design-sources.json",
+    "goal-4/evidence/art30/EncounterTable.vue.before.txt",
+    "goal-4/evidence/art30/ResponseTable.vue.before.txt",
+    "goal-4/evidence/art30/FateCatalogue.vue.before.txt",
+    "goal-4/evidence/art30/art12-narrative.css.before.txt",
+    "goal-4/evidence/art30/ActionFeedbackStage.vue.before.txt",
+    "goal-4/evidence/check-art27-29/relationship-art-debt.jpg"
+  ],
+  "baselines": [
+    {
+      "path": "goal-4/evidence/art30/EncounterTable.vue.before.txt",
+      "bytes": 5048,
+      "sha256": "1a06400cfaabd46b4fad0a2d4e025502e8c50ce78da03f4bfd6b4e48f7941cb7"
+    },
+    {
+      "path": "goal-4/evidence/art30/ResponseTable.vue.before.txt",
+      "bytes": 4156,
+      "sha256": "7bdef986b3605e155aa083bf9bfc9243b8241003bcef0d576808d2b898692751"
+    },
+    {
+      "path": "goal-4/evidence/art30/FateCatalogue.vue.before.txt",
+      "bytes": 9739,
+      "sha256": "f00a42f829354632d6f05ce46a76275767cf2fd38d9c8f7f72396524018b4bdc"
+    },
+    {
+      "path": "goal-4/evidence/art30/ActionFeedbackStage.vue.before.txt",
+      "bytes": 10882,
+      "sha256": "f5d17de52070256328b2312087cbe6634edaa1c96420a7088fd62bcf25138c93"
+    },
+    {
+      "path": "goal-4/evidence/art30/art12-narrative.css.before.txt",
+      "bytes": 6320,
+      "sha256": "c10587eb2190cbcccd5fd1af1e4f199eec53749fff87e7a5e1fb38da1d90ad85"
+    }
+  ],
+  "unchanged": {
+    "web/src/PortraitImage.vue": "e7b4b55bdce38f13e38960327bf0d8d767e69058671dc7adf42ce1adf87d5208",
+    "web/src/NarrativePanel.vue": "8bb4f2e0c06f623e322b2b13dabe6569982c24bbaa56d68c4c6391be756a17dc",
+    "web/src/NarrativeStageHost.vue": "e195b09b7485b48e88883a830ca2c0b352da396e62f6457e5ff30c0168d9630d",
+    "web/src/narrative-effects.ts": "ca77c93e636c43fc5c57b1f7b7a3f85bef58aa00f135affe217919b64470b615",
+    "web/src/activity-effects.ts": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b",
+    "web/src/use-activity-effect.ts": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163",
+    "web/src/reading-memory.ts": "8e7a0718edb07113e30f817df5ea98180455e1ea4a7f481a10c72b3657357808",
+    "web/src/journal-anchors.ts": "fde853e92c68dd10ad9c14994c41a3157646c5245022b1f8061e4dd0e5aa2605",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/focus.ts": "8ae91e78a4db7a854c293fc4b1bc28f02dd0d542b3119cff383f9245b4944eea",
+    "web/src/ChoiceCard.vue": "322961bb71234da9e284555aad7a568b14b2b4a88cff9736e43cc208d3103e64",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/milestones.ts": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+    "web/public/art/portraits/shen.webp": "7fb1e08bec233fa3ba11f8f56dd645e3772738e80946990ddb0eb8f97b08ba52",
+    "web/public/art/portraits/lu.webp": "f3205ef5fc424896898efe8dca19e8871762636c7bb82c7136eea44fd638dff4",
+    "web/public/art/portraits/pei.webp": "0a1b64def5cd7200a291af8b98790d07048c190318bd4efbee1081bd6c284ad8",
+    "web/public/art/portraits/yan.webp": "0f68e57915cfa22ef10a88699171ab5aca3889d9e66f1d6d0c8d087f7a04bc52",
+    "web/src/action-feedback.ts": "e947bb62b1de54e51f172a2d412110ea662a01b599f0b97061e8c238f31a3606",
+    "web/src/action-motion.css": "b14bcc27fa59527b32e817a164ca7f546337f4520aa02f4cb7001895460bd495"
+  },
+  "asset": {
+    "format": "chenyuan-art30-export",
+    "version": 1,
+    "producer": {
+      "path": "art/tools/export_art30_scene.py",
+      "bytes": 3180,
+      "sha256": "7daa650977e6d74f6c269b64db48ce9c56444f446bf20a43fac476382960089b"
+    },
+    "helper": {
+      "path": "art/tools/export_art10_blanks.py",
+      "bytes": 8264,
+      "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+    },
+    "source": {
+      "path": "art/production/art30/npc-parlour-v1.png",
+      "bytes": 2551001,
+      "sha256": "740edf42832e8320e8f39efb30a11065afe40857c2dfd288bf33a535eb6b975a",
+      "dimensions": {
+        "width": 1774,
+        "height": 887
+      },
+      "format": "png",
+      "mode": "RGB",
+      "alpha": false,
+      "alphaProof": {
+        "transparentPixels": 0,
+        "solidPixels": 1573538,
+        "intermediatePixels": 0,
+        "min": 255,
+        "max": 255
+      },
+      "alphaBBox1": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "alphaBBox16": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "rgbaSHA256": "c11e57f5c2a4eaebbb28893f9a4ec8467463a01c1cc59a59febaf1f691f60e06"
+    },
+    "runtime": {
+      "path": "web/public/art/v2/workshops/npc-parlour-v1.webp",
+      "bytes": 143876,
+      "sha256": "5682ea34bb0370a7f206f62070398ec24079837777368e7bb7bd64c3e3327620",
+      "dimensions": {
+        "width": 1536,
+        "height": 768
+      },
+      "format": "webp",
+      "mode": "RGB",
+      "alpha": false,
+      "alphaProof": {
+        "transparentPixels": 0,
+        "solidPixels": 1179648,
+        "intermediatePixels": 0,
+        "min": 255,
+        "max": 255
+      },
+      "alphaBBox1": [
+        0,
+        0,
+        1536,
+        768
+      ],
+      "alphaBBox16": [
+        0,
+        0,
+        1536,
+        768
+      ],
+      "rgbaSHA256": "4220b5e4a02b6742d2ae9950dd81e1cc3257b8961398716ba9a7d6041e0ca178"
+    },
+    "prompts": [
+      {
+        "path": "art/production/art30/npc-parlour-prompt.json",
+        "bytes": 2664,
+        "sha256": "b0b8a20b0f47c3ea431f324968926d797a5ea5be9f876a4825987af8cefb391d"
+      }
+    ],
+    "audit": {
+      "path": "art/production/art30/npc-parlour-audit.json",
+      "bytes": 1404,
+      "sha256": "b1372a3fa604786995af356bad3710fc143a164e9582986160123a60dc1be7a9"
+    },
+    "encoding": [
+      "cwebp",
+      "-q",
+      "82",
+      "-m",
+      "6",
+      "-resize",
+      "1536",
+      "0",
+      "-metadata",
+      "none"
+    ],
+    "decoder": "Pillow",
+    "decoderVersion": "12.3.0",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+    "transform": {
+      "uniformScale": 0.8658399098083427,
+      "crop": false,
+      "semanticEdit": false,
+      "outputWidth": 1536,
+      "outputHeight": 768
+    },
+    "doubleExport": {
+      "bytesEqual": true,
+      "firstSHA256": "5682ea34bb0370a7f206f62070398ec24079837777368e7bb7bd64c3e3327620",
+      "secondSHA256": "5682ea34bb0370a7f206f62070398ec24079837777368e7bb7bd64c3e3327620",
+      "sourceUnchanged": true
+    },
+    "userAcceptance": false
+  },
+  "userAcceptance": false
+}

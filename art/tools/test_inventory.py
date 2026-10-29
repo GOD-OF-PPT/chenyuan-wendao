@@ -130,6 +130,9 @@ class InventoryTests(unittest.TestCase):
   art29=ROOT/'art/redesign/art29.json'
   if art29.exists():
    data=json.loads(art29.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']))
+  art30=ROOT/'art/redesign/art30.json'
+  if art30.exists():
+   data=json.loads(art30.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']))
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -209,7 +212,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0)+(1 if (self.root/'art/redesign/ta07.json').exists() else 0)+(6 if (self.root/'art/redesign/ta08.json').exists() else 0)+(4 if (self.root/'art/redesign/art10.json').exists() else 0)+(14 if (self.root/'art/redesign/art11.json').exists() else 0)+(2 if (self.root/'art/redesign/art16.json').exists() else 0)+(1 if (self.root/'art/redesign/art24.json').exists() else 0)+(1 if (self.root/'art/redesign/art26.json').exists() else 0)+(1 if (self.root/'art/redesign/art27.json').exists() else 0)+(1 if (self.root/'art/redesign/art28.json').exists() else 0)+(1 if (self.root/'art/redesign/art29.json').exists() else 0))
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0)+(1 if (self.root/'art/redesign/ta07.json').exists() else 0)+(6 if (self.root/'art/redesign/ta08.json').exists() else 0)+(4 if (self.root/'art/redesign/art10.json').exists() else 0)+(14 if (self.root/'art/redesign/art11.json').exists() else 0)+(2 if (self.root/'art/redesign/art16.json').exists() else 0)+(1 if (self.root/'art/redesign/art24.json').exists() else 0)+(1 if (self.root/'art/redesign/art26.json').exists() else 0)+(1 if (self.root/'art/redesign/art27.json').exists() else 0)+(1 if (self.root/'art/redesign/art28.json').exists() else 0)+(1 if (self.root/'art/redesign/art29.json').exists() else 0)+(1 if (self.root/'art/redesign/art30.json').exists() else 0))
  def test_idle_ui_requires_its_source_ledger(self):
   (self.root/'art/redesign/idle-cultivation.json').unlink();self.rejected()
  def test_idle_ui_budget_cannot_be_raised(self):
