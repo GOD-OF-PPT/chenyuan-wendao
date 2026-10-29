@@ -1,0 +1,124 @@
+{
+  "format": "chenyuan-art27-export",
+  "version": 1,
+  "producer": {
+    "path": "art/tools/export_art27_scene.py",
+    "bytes": 3183,
+    "sha256": "e6b7215861b507e03a56fb431e5b34d0fc81b34efd67da5b2301d7721403a1ed"
+  },
+  "helper": {
+    "path": "art/tools/export_art10_blanks.py",
+    "bytes": 8264,
+    "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+  },
+  "source": {
+    "path": "art/production/art27/relic-workshop-v1.png",
+    "bytes": 2789492,
+    "sha256": "7de63c37eb5b8907482e8307db4fe14c3798c50e027b44aa22488ddbe558cc7a",
+    "dimensions": {
+      "width": 1774,
+      "height": 887
+    },
+    "format": "png",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1573538,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1774,
+      887
+    ],
+    "rgbaSHA256": "f656b83a26a7d22022d73ae18801e8122aecc698d64a3ca3d19ff098fd61282f"
+  },
+  "runtime": {
+    "path": "web/public/art/v2/workshops/relic-v1.webp",
+    "bytes": 195308,
+    "sha256": "8712d5e770eda38a0a4e7ce06dd5f137ed7ca9760f2a9fa7cada96db70bb1c86",
+    "dimensions": {
+      "width": 1536,
+      "height": 768
+    },
+    "format": "webp",
+    "mode": "RGB",
+    "alpha": false,
+    "alphaProof": {
+      "transparentPixels": 0,
+      "solidPixels": 1179648,
+      "intermediatePixels": 0,
+      "min": 255,
+      "max": 255
+    },
+    "alphaBBox1": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "alphaBBox16": [
+      0,
+      0,
+      1536,
+      768
+    ],
+    "rgbaSHA256": "aab9dd50fbcc0a1343a232511a9d9938c0e75a760b757f024e09e9c9f6773255"
+  },
+  "prompts": [
+    {
+      "path": "art/production/art27/relic-workshop-prompt.json",
+      "bytes": 2469,
+      "sha256": "ec0564bc13fcd3b34807027a0b631cb4e215653c873c6465804cdf90e10f74c8"
+    },
+    {
+      "path": "art/production/art27/relic-workshop-position-prompt.json",
+      "bytes": 1322,
+      "sha256": "cb1ee2094f08515b40a1a6e0e8c8dd1b722625f3d9ef106398fea0b540b3d0bc"
+    }
+  ],
+  "audit": {
+    "path": "art/production/art27/relic-workshop-audit.json",
+    "bytes": 2292,
+    "sha256": "b82c8cc2581dac0229ac34d6ce42f7a932d30c3f86c040a9f89bb883b2cbe78e"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-resize",
+    "1536",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "decoder": "Pillow",
+  "decoderVersion": "12.3.0",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "transform": {
+    "uniformScale": 0.8658399098083427,
+    "crop": false,
+    "semanticEdit": false,
+    "outputWidth": 1536,
+    "outputHeight": 768
+  },
+  "doubleExport": {
+    "bytesEqual": true,
+    "firstSHA256": "8712d5e770eda38a0a4e7ce06dd5f137ed7ca9760f2a9fa7cada96db70bb1c86",
+    "secondSHA256": "8712d5e770eda38a0a4e7ce06dd5f137ed7ca9760f2a9fa7cada96db70bb1c86",
+    "sourceUnchanged": true
+  },
+  "userAcceptance": false
+}

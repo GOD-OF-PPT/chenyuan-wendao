@@ -1,0 +1,51 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "tool": "image_gen.imagegen",
+  "model": null,
+  "requestId": null,
+  "originalsKept": true,
+  "userAcceptance": false,
+  "reference": {
+    "path": "art/production/art24/sanctum-v1.png",
+    "bytes": 2784840,
+    "sha256": "30e1744336c83ed684e9a51e5188c61518d1247576bbdcae233e6af3f75a9efd"
+  },
+  "selectedCopy": {
+    "path": "art/production/art27/relic-workshop-v1.png",
+    "bytes": 2789492,
+    "sha256": "7de63c37eb5b8907482e8307db4fe14c3798c50e027b44aa22488ddbe558cc7a"
+  },
+  "calls": [
+    {
+      "prompt": {
+        "path": "art/production/art27/relic-workshop-prompt.json",
+        "bytes": 2469,
+        "sha256": "ec0564bc13fcd3b34807027a0b631cb4e215653c873c6465804cdf90e10f74c8"
+      },
+      "candidate": {
+        "path": "art/production/art27/candidates/workshop-v1.png",
+        "bytes": 2938703,
+        "sha256": "3ef9b2c4c42f9929a521c13d5a566cc90b9bad36c8b340783504b4ee99eaea29"
+      },
+      "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-0585fc56-a11a-4e10-8a22-2aa4119e5021.png",
+      "generatedSHA256": "3ef9b2c4c42f9929a521c13d5a566cc90b9bad36c8b340783504b4ee99eaea29",
+      "requestedTransparent": false
+    },
+    {
+      "prompt": {
+        "path": "art/production/art27/relic-workshop-position-prompt.json",
+        "bytes": 1322,
+        "sha256": "cb1ee2094f08515b40a1a6e0e8c8dd1b722625f3d9ef106398fea0b540b3d0bc"
+      },
+      "candidate": {
+        "path": "art/production/art27/candidates/workshop-v2.png",
+        "bytes": 2789492,
+        "sha256": "7de63c37eb5b8907482e8307db4fe14c3798c50e027b44aa22488ddbe558cc7a"
+      },
+      "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-696e31d3-947f-40b2-ac5a-83a040eaaea8.png",
+      "generatedSHA256": "7de63c37eb5b8907482e8307db4fe14c3798c50e027b44aa22488ddbe558cc7a",
+      "requestedTransparent": false
+    }
+  ],
+  "inspection": "Both actual tool outputs viewed. Empty cold scene, no characters/artifacts/UI/flames. Second candidate moves bench lower/left; exact requested percentages are artistic direction, not claimed measured result. Final scene/object alignment must be checked in actual UI."
+}

@@ -122,6 +122,8 @@ class InventoryTests(unittest.TestCase):
   if art25.exists():files.update(ROOT/ref for ref in json.loads(art25.read_text())['sourceReferences'])
   art26=ROOT/'art/redesign/art26.json'
   if art26.exists():files.update(ROOT/ref for ref in json.loads(art26.read_text())['sourceReferences'])
+  art27=ROOT/'art/redesign/art27.json'
+  if art27.exists():files.update(ROOT/ref for ref in json.loads(art27.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)
@@ -201,7 +203,7 @@ class InventoryTests(unittest.TestCase):
   with self.assertRaises((AssertionError,KeyError,ValueError)):validate(self.root)
  def test_current_inventory_is_consistent(self):
   result=validate(self.root);self.assertEqual(result['legacyProductionAssets'],20)
-  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0)+(1 if (self.root/'art/redesign/ta07.json').exists() else 0)+(6 if (self.root/'art/redesign/ta08.json').exists() else 0)+(4 if (self.root/'art/redesign/art10.json').exists() else 0)+(14 if (self.root/'art/redesign/art11.json').exists() else 0)+(2 if (self.root/'art/redesign/art16.json').exists() else 0)+(1 if (self.root/'art/redesign/art24.json').exists() else 0)+(1 if (self.root/'art/redesign/art26.json').exists() else 0))
+  self.assertEqual(result['productionAssets'],(38 if (self.root/'art/redesign/manifest.json').exists() else 20)+(30 if (self.root/'art/redesign/character-battle-manifest.json').exists() else 0)+(2 if (self.root/'art/redesign/desktop-ui-manifest.json').exists() else 0)+(4 if (self.root/'art/redesign/panel-materials.json').exists() else 0)+(3 if (self.root/'art/redesign/catalogue-art/manifest.json').exists() else 0)+(1 if (self.root/'art/redesign/alchemy-workshop.json').exists() else 0)+(4 if (self.root/'art/redesign/art03.json').exists() else 0)+(1 if (self.root/'art/redesign/cultivation-objects.json').exists() else 0)+(1 if (self.root/'art/redesign/ta07.json').exists() else 0)+(6 if (self.root/'art/redesign/ta08.json').exists() else 0)+(4 if (self.root/'art/redesign/art10.json').exists() else 0)+(14 if (self.root/'art/redesign/art11.json').exists() else 0)+(2 if (self.root/'art/redesign/art16.json').exists() else 0)+(1 if (self.root/'art/redesign/art24.json').exists() else 0)+(1 if (self.root/'art/redesign/art26.json').exists() else 0)+(1 if (self.root/'art/redesign/art27.json').exists() else 0))
  def test_idle_ui_requires_its_source_ledger(self):
   (self.root/'art/redesign/idle-cultivation.json').unlink();self.rejected()
  def test_idle_ui_budget_cannot_be_raised(self):
@@ -1464,11 +1466,18 @@ class TA09InventoryTests(unittest.TestCase):
   for row in CONSUMERS:
    for slot in row.get('requiredSlots',[]):
     for misplaced in [False,True]:
-     self.restore();path=row['host'];text=(self.root/path).read_text();openings=re.findall(r'<template(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text);tags=[tag for tag in openings if any(name=='template'and'#'+slot in attrs for name,attrs in Tags('<template>'+tag+'</template>').nodes)];self.assertEqual(len(tags),1);tag=tags[0];self.assertEqual(text.count(tag),1);changed=text.replace(tag,tag.replace('#'+slot,'#x',1),1)
+     self.restore();path=row['host'];text=(self.root/path).read_text();openings=re.findall(r'<template(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text);tags=[tag for tag in openings if any(name=='template'and'#'+slot in attrs for name,attrs in Tags('<template>'+tag+'</template>').nodes)];self.assertEqual(len(tags),1);tag=tags[0];self.assertEqual(text.count(tag),1);start=text.index(tag);depth=0;end=None
+     for match in re.finditer(r'</?template(?=[\s/>])(?:[^>"\']|"[^"]*"|\'[^\']*\')*>',text[start:]):
+      token=match[0]
+      if token.startswith('</'):depth-=1
+      elif not token.endswith('/>'):depth+=1
+      if depth==0:end=start+match.end();break
+     self.assertIsNotNone(end);segment=text[start:end]
      if misplaced:
-      end=changed.rfind('</template>');self.assertGreater(end,0);changed=changed[:end]+tag+'<b>x</b></template>'+changed[end:]
-     else:changed+='\n<!--'+tag+'-->'
-     self.changed_source(path,changed)
+      remainder=text[:start]+text[end:];target=remainder.rfind('</template>');self.assertGreater(target,0);changed=remainder[:target]+segment+remainder[target:]
+     else:
+      comment='<!--'+tag+'-->';padding=len(segment.encode())-len(comment.encode());self.assertGreaterEqual(padding,0);changed=text[:start]+comment+' '*padding+text[end:]
+     self.assertEqual(len(changed.encode()),len(text.encode()));self.changed_source(path,changed)
      with self.subTest(component=row['component'],slot=slot,misplaced=misplaced),self.assertRaisesRegex(AssertionError,'content slot|jade result'):self.check()
   path='web/src/JadeEngraving.vue';token='<span class="ta09-jade-result"><slot name="result"/></span>'
   for outside in [False,True]:
@@ -1666,7 +1675,7 @@ class ART10InventoryTests(unittest.TestCase):
    with self.assertRaises(AssertionError):self.check()
  def test_art10_real_proof_and_unique_css_consumers_remain(self):
   for path,token in [('web/src/equipment-effects.ts','cycleCommand.value=p.activity.value?.nextCommand??null;'),('web/src/main.ts',"import './art10-equipment.css'")]:
-   self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);(self.root/path).write_text(text.replace(token,'/*'+token+'*/',1))
+   self.restore();text=(self.root/path).read_text();self.assertEqual(text.count(token),1);changed=text.replace(token,' '*len(token),1);self.assertEqual(len(changed.encode()),len(text.encode()));(self.root/path).write_text(changed)
    with self.assertRaisesRegex(AssertionError,'consumer/proof'):self.check()
  def test_art10_old_caps_and_external_styles_cannot_expand_scope(self):
   from art10_inventory import OLD_CAPS

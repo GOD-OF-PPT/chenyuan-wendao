@@ -61,6 +61,7 @@ onDeactivated(close);onScopeDispose(()=>{focus?.release(library.value);focus?.re
 </script>
 <template>
  <div class="relic-atelier art10-relic-stage" data-testid="relic-atelier" :data-state="state" :data-working="working" :data-relic="plan.relicId" :data-owned="owned" :data-bound="bound">
+  <AssetImage class="study-sanctum relic-sanctum" path="art/v2/workshops/relic-v1.webp" asset-id="relic-workshop" eager aria-hidden="true"><span class="study-sanctum-fallback"/></AssetImage>
   <header class="relic-heading" :class="{'relic-locked':!relic}" :data-testid="!relic?'forge-locked':undefined"><small v-if="relic">择器只查看 · 炼成后另行比较认主</small><button data-testid="relic-library-open" @click="browse($event)"><AssetImage v-if="!relic" :path="path(visual)" asset-id="relic-future-silhouette" fit="contain" eager><GameIcon kind="relic" id="frost_sword"/></AssetImage><span>{{relic?'翻看器架 · 全部器谱':'翻阅四器图谱 ›'}}</span></button><div v-if="!relic"><h3>器谱待启 · 尚未炼成</h3><p>当前境界：{{C.realms[game.core.player.realm].name}}</p><p>金丹后可在洞府炼器；先翻看四件器谱，核对作用与材料。</p><small>图谱只作参考；翻阅不消耗物资，不安排铸造。</small></div></header>
   <template v-if="relic">
    <div class="relic-object-stage">

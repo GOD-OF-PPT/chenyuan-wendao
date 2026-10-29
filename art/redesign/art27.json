@@ -1,0 +1,223 @@
+{
+  "format": "chenyuan-relic-workshop-art27",
+  "version": 1,
+  "task": "Goal4 ART27",
+  "budgets": {
+    "oldNativeCap": 45000,
+    "oldCssCap": 12000,
+    "oldTA09Cap": 30000,
+    "oldProductionCap": 26000,
+    "oldPreparationCap": 60000,
+    "newRasterAssets": 1,
+    "maxRuntimeBytes": 280000,
+    "runtimeWidth": 1536,
+    "runtimeHeight": 768,
+    "paintedNormalMinimum": 280
+  },
+  "files": [
+    {
+      "path": "web/src/RelicAtelier.vue",
+      "bytes": 16083,
+      "sha256": "9b2b585fc38b989cce519cd91c67e3108ead867a92aa502182af80b9fa5eab67"
+    },
+    {
+      "path": "web/src/art03-equipment.css",
+      "bytes": 12679,
+      "sha256": "040f879e7b73de6df289373f8e68ddf698f12f22787c4200c356b3dbdbecbe17"
+    },
+    {
+      "path": "web/src/art10-equipment.css",
+      "bytes": 11988,
+      "sha256": "d7dcafbfed487c825c607812a9a3d04be600f5d49e62c5add44f9464d83ce627"
+    },
+    {
+      "path": "web/src/RelicInscription.vue",
+      "bytes": 6469,
+      "sha256": "b85438dafb0f5a3139cefdb6586d7f224ba5f04fc32710958c3517966caae789"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0062-relic-workshop-art27-contract.md",
+    "goal-4/amendments/2026-10-29-goal-continue-art27.md",
+    "goal-4/research/art27-design-sources.json",
+    "goal-4/evidence/art27/relic-atelier-before.vue.txt",
+    "goal-4/evidence/art27/legacy-painted-bounds.json",
+    "goal-4/evidence/art27/art03-before.css.txt",
+    "goal-4/evidence/art27/art10-before.css.txt",
+    "goal-4/evidence/art27/relic-inscription-before.vue.txt"
+  ],
+  "baselines": {
+    "atelier": {
+      "path": "goal-4/evidence/art27/relic-atelier-before.vue.txt",
+      "bytes": 15892,
+      "sha256": "b8778d1bfc24accf379accdb858aef58070525d03cc688cfcbbbece8775921b3"
+    },
+    "art03": {
+      "path": "goal-4/evidence/art27/art03-before.css.txt",
+      "bytes": 12672,
+      "sha256": "48024f8b89c4a3a95c892ccec3b6dc66478eaee65b3876e598d22bdb0a05b334"
+    },
+    "art10": {
+      "path": "goal-4/evidence/art27/art10-before.css.txt",
+      "bytes": 11992,
+      "sha256": "eef8cc1311779a60a78a38614d7c09c9628d1e93dab594031fe10e22152f4b3a"
+    },
+    "inscription": {
+      "path": "goal-4/evidence/art27/relic-inscription-before.vue.txt",
+      "bytes": 6366,
+      "sha256": "5d5b01878021f13621cf33ea1ba9aa5337c38ff695c031bb2db28d79a6f769a2"
+    }
+  },
+  "unchanged": {
+    "web/src/ProductionPlanner.vue": "6ebbc6551f6c68605b4e634196579787bf50e91d71d8fa84938bcc8cb9f1306b",
+    "web/src/EquipmentPanel.vue": "31e8c9c3562fd53c1669601d6be90ab6fc3ace637513233fa75b5a92be06fc91",
+    "web/src/JadeStudyScene.vue": "434b16c05e5e6870cb67dc1f6611a81637864b0e20463c8bfd93e4c395d675ed",
+    "web/src/LoadoutConstellation.vue": "57988cafc499981c9bef0cb1f708eca59dfe61a5fd508195bf253a0df0045b95",
+    "web/src/equipment-effects.ts": "0946c3b6b76e5ea39ebd80571175e2835ce49abe94fe6499f480b1635a934888",
+    "web/src/equipment-choreography.ts": "871e41e7555f640fecbc8f26706fac34a5249225a6acb5f1db9c63789a8011bb",
+    "web/src/ConfigurationDialog.vue": "cc50327d03b19836dc9e41df9ff0e36185e2f64b846d510b795b6aad671f8b52",
+    "web/src/ConfigurationOutlook.vue": "72768df4cb3d226c5efc029dfa73e68324cfb0fd5962ca6d9348964224619e20"
+  },
+  "legacyBounds": {
+    "path": "goal-4/evidence/art27/legacy-painted-bounds.json",
+    "bytes": 2522,
+    "sha256": "676131d109d9c5c9c8dd7b72912bed243672e34128ae90fe086b9263133cfc01"
+  },
+  "asset": {
+    "format": "chenyuan-art27-export",
+    "version": 1,
+    "producer": {
+      "path": "art/tools/export_art27_scene.py",
+      "bytes": 3183,
+      "sha256": "e6b7215861b507e03a56fb431e5b34d0fc81b34efd67da5b2301d7721403a1ed"
+    },
+    "helper": {
+      "path": "art/tools/export_art10_blanks.py",
+      "bytes": 8264,
+      "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+    },
+    "source": {
+      "path": "art/production/art27/relic-workshop-v1.png",
+      "bytes": 2789492,
+      "sha256": "7de63c37eb5b8907482e8307db4fe14c3798c50e027b44aa22488ddbe558cc7a",
+      "dimensions": {
+        "width": 1774,
+        "height": 887
+      },
+      "format": "png",
+      "mode": "RGB",
+      "alpha": false,
+      "alphaProof": {
+        "transparentPixels": 0,
+        "solidPixels": 1573538,
+        "intermediatePixels": 0,
+        "min": 255,
+        "max": 255
+      },
+      "alphaBBox1": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "alphaBBox16": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "rgbaSHA256": "f656b83a26a7d22022d73ae18801e8122aecc698d64a3ca3d19ff098fd61282f"
+    },
+    "runtime": {
+      "path": "web/public/art/v2/workshops/relic-v1.webp",
+      "bytes": 195308,
+      "sha256": "8712d5e770eda38a0a4e7ce06dd5f137ed7ca9760f2a9fa7cada96db70bb1c86",
+      "dimensions": {
+        "width": 1536,
+        "height": 768
+      },
+      "format": "webp",
+      "mode": "RGB",
+      "alpha": false,
+      "alphaProof": {
+        "transparentPixels": 0,
+        "solidPixels": 1179648,
+        "intermediatePixels": 0,
+        "min": 255,
+        "max": 255
+      },
+      "alphaBBox1": [
+        0,
+        0,
+        1536,
+        768
+      ],
+      "alphaBBox16": [
+        0,
+        0,
+        1536,
+        768
+      ],
+      "rgbaSHA256": "aab9dd50fbcc0a1343a232511a9d9938c0e75a760b757f024e09e9c9f6773255"
+    },
+    "prompts": [
+      {
+        "path": "art/production/art27/relic-workshop-prompt.json",
+        "bytes": 2469,
+        "sha256": "ec0564bc13fcd3b34807027a0b631cb4e215653c873c6465804cdf90e10f74c8"
+      },
+      {
+        "path": "art/production/art27/relic-workshop-position-prompt.json",
+        "bytes": 1322,
+        "sha256": "cb1ee2094f08515b40a1a6e0e8c8dd1b722625f3d9ef106398fea0b540b3d0bc"
+      }
+    ],
+    "audit": {
+      "path": "art/production/art27/relic-workshop-audit.json",
+      "bytes": 2292,
+      "sha256": "b82c8cc2581dac0229ac34d6ce42f7a932d30c3f86c040a9f89bb883b2cbe78e"
+    },
+    "encoding": [
+      "cwebp",
+      "-q",
+      "82",
+      "-m",
+      "6",
+      "-resize",
+      "1536",
+      "0",
+      "-metadata",
+      "none"
+    ],
+    "decoder": "Pillow",
+    "decoderVersion": "12.3.0",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+    "transform": {
+      "uniformScale": 0.8658399098083427,
+      "crop": false,
+      "semanticEdit": false,
+      "outputWidth": 1536,
+      "outputHeight": 768
+    },
+    "doubleExport": {
+      "bytesEqual": true,
+      "firstSHA256": "8712d5e770eda38a0a4e7ce06dd5f137ed7ca9760f2a9fa7cada96db70bb1c86",
+      "secondSHA256": "8712d5e770eda38a0a4e7ce06dd5f137ed7ca9760f2a9fa7cada96db70bb1c86",
+      "sourceUnchanged": true
+    },
+    "userAcceptance": false
+  },
+  "candidates": [
+    {
+      "path": "art/production/art27/candidates/workshop-v1.png",
+      "bytes": 2938703,
+      "sha256": "3ef9b2c4c42f9929a521c13d5a566cc90b9bad36c8b340783504b4ee99eaea29"
+    },
+    {
+      "path": "art/production/art27/candidates/workshop-v2.png",
+      "bytes": 2789492,
+      "sha256": "7de63c37eb5b8907482e8307db4fe14c3798c50e027b44aa22488ddbe558cc7a"
+    }
+  ],
+  "userAcceptance": false
+}

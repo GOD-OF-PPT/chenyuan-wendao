@@ -15,8 +15,7 @@ const tools={sword:'translate(123 126) rotate(35)',seal:'translate(83 156) rotat
 </script>
 <template>
  <div class="relic-inscription-object" data-testid="relic-inscription-object" :data-relic="relicId" :data-state="state" :data-phase="form.phase" :data-working="form.working" :data-owned="owned" :data-bound="bound" :data-sequence="saved?sequence:undefined" :style="{'--relic-approach':form.approach+'px','--relic-draw':form.draw,'--relic-fold':form.fold}">
-  <button class="relic-object-inspect" data-testid="relic-object-inspect" :aria-label="'查看'+names[id]+'的铸器安排，不开始铸造'" @click="emit('inspect')">
-   <div class="relic-form-surface" :data-form="shape">
+   <div class="relic-form-surface" aria-hidden="true" :data-form="shape">
     <div v-if="finished" class="relic-finished-art" :class="{'relic-art-reveal':saved}"><slot name="artifact"/></div>
     <AssetImage v-else class="relic-cold-blank" :path="'art/v2/equipment/'+id+'-blank-v1.webp'" :asset-id="'relic-blank-'+id" fit="contain" eager><GameIcon kind="relic" :id="id"/><small>{{names[id]}} · 冷胚示意</small></AssetImage>
     <svg v-if="form.working||sealed" class="relic-workpiece" :data-form="shape" viewBox="0 0 240 240" aria-hidden="true">
@@ -28,6 +27,7 @@ const tools={sword:'translate(123 126) rotate(35)',seal:'translate(83 156) rotat
      <g class="relic-sealing" :data-sealing="sealed"><path d="M44 111H65v22H44m131-22h21v22h-21M96 215v-13h49v13"/><path d="m110 209 10-7 12 7-12 8Z"/></g>
     </svg>
    </div>
+  <button class="relic-object-inspect" data-testid="relic-object-inspect" :aria-label="'查看'+names[id]+'的铸器安排，不开始铸造'" @click="emit('inspect')">
    <span class="relic-object-verb">查看铸器安排 <span aria-hidden="true">›</span></span>
   </button>
   <span v-if="bound" class="relic-bound-clasp" aria-hidden="true"><i/>本命扣位</span>
@@ -37,7 +37,7 @@ const tools={sword:'translate(123 126) rotate(35)',seal:'translate(83 156) rotat
 .relic-inscription-object{position:relative;display:flex;flex:1;flex-direction:column;min-height:0;width:100%;height:100%;isolation:isolate}
 .relic-object-inspect{position:relative;display:flex!important;flex:1;flex-direction:column;justify-content:center;align-items:center;min-width:44px;min-height:44px;width:100%;padding:8px 12px 50px!important;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important;transform:none!important;color:#d3dec9}
 .relic-object-inspect:focus-visible{outline:2px solid #9fd8c4;outline-offset:-3px}.relic-object-inspect:hover .relic-object-verb{color:#e5f1d4;border-color:#b9d9b1}
-.relic-form-surface{position:relative;width:100%;height:100%;min-height:0;max-height:300px;aspect-ratio:1}
+.relic-form-surface{position:absolute;left:0;top:0;width:100%;height:100%;min-height:0;max-height:300px;aspect-ratio:1}
 .relic-cold-blank,.relic-finished-art{width:100%;height:100%;min-height:0;display:grid;place-items:center}.relic-cold-blank :deep(.asset-fallback){display:grid;place-items:center;align-content:center;gap:8px}.relic-cold-blank :deep(.game-icon){width:128px;height:144px;margin:0}.relic-cold-blank small{font-size:14px}
 .relic-finished-art :deep([data-art-path]){width:100%!important;height:100%!important;min-height:0}
 .relic-workpiece{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:visible;stroke-linejoin:round;filter:drop-shadow(2px 3px 2px #00171999)}
@@ -47,6 +47,7 @@ const tools={sword:'translate(123 126) rotate(35)',seal:'translate(83 156) rotat
 [data-phase=sealing] .relic-tool{opacity:0}[data-phase=sealing] .relic-engraved-path{stroke-dashoffset:0;opacity:.45}.relic-sealing[data-sealing=true]{opacity:1;transform:none}
 .relic-art-reveal{animation:relic-unseal .65s ease-out}.relic-object-verb{position:absolute;left:8px;right:8px;bottom:8px;min-height:32px;display:flex;gap:8px;align-items:center;justify-content:center;border-bottom:1px solid #8ca58b70;font-size:14px;line-height:1.6}
 .relic-bound-clasp{position:absolute;top:5px;right:5px;display:flex;align-items:center;gap:4px;color:#c5ddba;font-size:14px;pointer-events:none}.relic-bound-clasp i{display:block;width:10px;height:14px;border:2px solid #b8c18c;border-radius:2px}
+.relic-form-surface[data-form=sword] .relic-sealing{translate:0 -28px}
 @keyframes relic-unseal{from{filter:brightness(.8);transform:translateY(4px)}to{filter:none;transform:none}}
 :global(.hub-reduced .relic-inscription-object *){animation:none!important;transition:none!important}:global(.hub-reduced .relic-tool),:global(.hub-reduced .relic-sealing){transform:none!important}
 @media(prefers-reduced-motion:reduce){.relic-inscription-object *{animation:none!important;transition:none!important}.relic-tool,.relic-sealing{transform:none!important}}

@@ -20,8 +20,8 @@
     },
     {
       "path": "web/src/RelicInscription.vue",
-      "bytes": 6366,
-      "sha256": "5d5b01878021f13621cf33ea1ba9aa5337c38ff695c031bb2db28d79a6f769a2"
+      "bytes": 6469,
+      "sha256": "b85438dafb0f5a3139cefdb6586d7f224ba5f04fc32710958c3517966caae789"
     },
     {
       "path": "web/src/equipment-choreography.ts",

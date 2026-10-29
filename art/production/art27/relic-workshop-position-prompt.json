@@ -1,0 +1,9 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "transparent_background": false,
+  "prompt": "Use case: precise-object-edit\nAsset type: the same opaque xianxia workshop environment background plate.\nChange ONLY the placement of the existing empty jade-stone workbench. Move it lower and a little left: its tabletop is centered at 28 percent of the image width and about 72 percent of the image height, with its base around 92 percent of the height. Keep the whole workbench visible, empty, with a small bottom margin. Preserve its dark materials, size, carved geometry and perspective.\nKeep everything else unchanged: the refined ancient timber alcove, mountains and bamboo, small peripheral lantern, cool blue-green palette, lighting, camera, spacious shadowed right side, 2:1 full-scene framing. Do not add characters, artifacts, weapons, flames, smoke, text, symbols, UI, frames, logos, glowing effects or watermark. This remains a calm cold environment only; live game objects will be overlaid by code.",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-696e31d3-947f-40b2-ac5a-83a040eaaea8.png",
+  "reference": "art/production/art27/candidates/workshop-v1.png",
+  "promptSHA256": "688e39d9b6b0eea2d7d4a098cf959c612855aa569d2ba907e83fe66cab25b3ee"
+}

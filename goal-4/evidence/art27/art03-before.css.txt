@@ -1,0 +1,108 @@
+.single-screen.catalogue-view .equipment-disclosure:has(.equipment-objects){display:flex;height:100%}
+.immersive-stage .equipment-disclosure:has(.equipment-objects)::details-content{display:flex;flex:1;min-height:0}
+.immersive-stage .equipment-panel.equipment-objects{height:auto;flex:1;display:flex!important;flex-direction:column;min-height:0;gap:10px;background:linear-gradient(130deg,#102b2fe8,#0b252add)!important}
+.equipment-objects .catalogue-tabs{position:static;display:grid;grid-template-columns:repeat(5,1fr);width:100%;flex:none;margin:0;padding:0;min-height:46px}
+.equipment-objects .catalogue-tabs button{min-height:44px;border-radius:0;background:transparent}
+.equipment-objects .learning-planner{display:flex;height:auto;flex-direction:column;flex:1;min-height:0;gap:8px;padding:0;background:transparent;border:0}
+.equipment-objects .preparation-heading{flex:none;min-height:40px;padding:0;gap:12px;align-items:center}
+
+.equipment-objects .learning-filters{position:static;display:flex;gap:20px;min-height:44px;align-items:center;margin:0;padding:0;flex:none}
+
+.equipment-objects .learning-directory{display:flex;flex-direction:column;gap:8px;min-width:0;min-height:0;padding:0}
+.equipment-objects .learning-entries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:10px;flex:1;min-height:0;padding:6px 3px 10px;border-bottom:7px double #83754b;background:linear-gradient(90deg,transparent 5%,#8c865e18 50%,transparent 95%)}
+.equipment-objects .learning-entries button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:0;min-height:120px;padding:5px 4px;border:1px solid #a39b6f69;border-radius:6px 6px 3px 3px;background:repeating-linear-gradient(90deg,#1f514e 0,#2a6259 10px 10px,#123b38 12px);box-shadow:3px 3px 0 #071b1b,0 -3px 0 #afa3756b;transform:none!important}
+.equipment-objects .learning-entries button[aria-pressed=true]{outline:2px solid var(--jade,#9dd6c2);outline-offset:2px;background:linear-gradient(90deg,#2f685c,#1e4947);box-shadow:0 0 18px #88ceb22b,3px 3px 0 #071b1b}
+.equipment-objects .learning-entries button strong{writing-mode:vertical-rl;font-size:18px;line-height:1.35;letter-spacing:2px;font-weight:600;max-height:100px}
+.equipment-objects .learning-entries button small{font-size:14px;line-height:1.65;text-align:center;white-space:normal}
+.equipment-objects .learning-entries .game-icon{width:22px;height:22px;flex:none}
+.equipment-objects .learning-directory .catalogue-pager{margin:0;flex:none;gap:5px}
+.equipment-objects .learning-object{display:flex;flex-direction:column;justify-content:center;gap:6px;margin:0;padding:4px 0;border:0;min-width:0;background:transparent}
+.equipment-objects .learning-object h3{line-height:1.65;font-size:26px;margin:0;color:#e3e1bd}.equipment-objects .learning-object p{font-size:18px;line-height:1.55;margin:0}.equipment-objects .learning-object small{font-size:14px;line-height:1.5}
+.equipment-objects .learning-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 14px}
+.equipment-objects .learning-slot{display:flex;flex-wrap:wrap;gap:2px 6px;margin-top:8px;padding-top:8px;border-top:1px solid #a7bfa23b;font-size:14px;line-height:1.5}
+.equipment-objects .learning-slot strong{font-size:16px}
+
+.equipment-objects .learning-plan-summary{min-height:88px;padding:12px;text-align:left;border-width:3px 0;border-style:double;border-color:#ad9c6599;border-radius:2px;background:linear-gradient(90deg,#274846,#163b3d 12%,#153437 88%,#274846);box-shadow:0 7px 0 -5px #071a1f}
+.equipment-objects .learning-plan-summary strong{font-size:18px}.equipment-objects .learning-plan-summary small{font-size:14px;display:block;margin-top:7px}
+
+
+
+.jade-study-scene[data-state=failed]{gap:4px}
+.jade-study-scene{display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;position:relative;min-height:100%;height:100%;gap:6px;padding:0}
+.jade-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;min-height:58px}
+.jade-slots button{position:relative;display:grid;align-content:center;gap:3px;min-width:0;min-height:58px;padding:6px 20px 6px 8px;border:0;border-bottom:1px solid #b7b57871;border-radius:0;background:#0a23298c;text-align:left;transform:none!important}
+.jade-slots small{font-size:14px;color:#c3cfb6}.jade-slots strong{font-size:16px;line-height:1.3}.jade-slots span{position:absolute;right:6px;top:20px;color:#92d9c0}
+.jade-cycle-status strong{font-size:18px;color:#bed7bd}.jade-cycle-status small{font-size:14px}
+.jade-object-action .learning-candidate{display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:5px 12px;margin:0;padding:0;background:none;border:0}
+.jade-object-action .learning-candidate>button{width:auto;flex:0 1 auto;align-self:auto;min-height:46px}.jade-object-action .learning-candidate>button:first-child{min-width:180px}.jade-object-action .learning-candidate>small{font-size:14px;flex-basis:100%;order:3}
+.jade-saved-seal{pointer-events:none;border:1px solid #ca957a;color:#f3d2a4;background:#4d2824;padding:0 8px;font-size:18px;line-height:1.5;animation:equipment-imprint .7s ease-out}
+#app .equipment-objects[data-section=summary]{isolation:isolate;background:#102b2f!important}
+.loadout-constellation{display:flex;flex-direction:column;flex:1;min-height:0;position:relative;gap:8px}
+.loadout-spirit-stage{position:relative;flex:1;min-height:330px}
+.loadout-sanctum{position:absolute!important;inset:-64px -18px 0;z-index:-1;width:auto!important;height:auto!important;pointer-events:none}.loadout-sanctum img{object-fit:cover!important}.loadout-sanctum:after{content:'';position:absolute;inset:0;background:linear-gradient(#09272ddd,transparent 38%,#092b32aa)}
+.loadout-body{position:absolute;top:2%;bottom:82px;left:34%;width:32%}.loadout-body>[data-art-path]{position:absolute!important;inset:0;width:100%!important;height:100%!important}.loadout-body img{object-fit:contain!important}
+.loadout-meridian{position:absolute;bottom:0;left:15%;width:70%;height:14px;border-radius:50%;background:radial-gradient(ellipse,#021b2588,transparent 70%)}
+.loadout-stage-caption{position:absolute;bottom:0;left:34%;width:32%;text-align:center}.loadout-stage-caption strong{display:block;font-size:22px;line-height:1.65}.loadout-stage-caption small{display:block;font-size:14px;margin-top:4px}
+.loadout-nodes{position:absolute;inset:0}#app .loadout-node{position:absolute;display:grid;grid-template-columns:88px minmax(0,1fr);align-content:center;gap:5px 12px;width:29%;min-height:130px;padding:14px 18px;border:0!important;background:linear-gradient(90deg,transparent,#092d32e6 12%,#092d3277 85%,transparent)!important;border-radius:0;text-align:left;transform:none!important}
+.loadout-node>.game-icon{grid-row:span 3;width:88px;height:88px;align-self:center}.loadout-empty{border:1px dashed #9bbcb0;border-radius:50%}.loadout-node small{font-size:14px}.loadout-node strong{font-size:21px;line-height:1.65}.loadout-node span{font-size:14px;color:#b5d1b7}.loadout-node b{grid-column:2;font-size:14px;color:#a5dbc6}
+.loadout-node-mind{left:2%;top:8%}.loadout-node-builder{right:2%;top:8%}.loadout-node-finisher{left:2%;bottom:9%}.loadout-node-relic{right:2%;bottom:9%}
+.loadout-node-saved{box-shadow:0 0 22px #a9d3a833;border-color:#b4e1bc;animation:equipment-imprint .7s ease-out}
+#app .loadout-actual-stats{margin:4px 0 0;text-align:center;font-size:18px}.loadout-view-note{margin:0;text-align:center;font-size:14px;line-height:1.5}
+.equipment-local-reason{margin:0;min-height:24px;font-size:14px;color:#dfc09b}
+.immersive-stage .equipment-objects[data-section=relics]>.production-planner[data-mode=forge]{display:flex;flex-direction:column;flex:1;height:auto;min-height:0;padding:0;gap:0;background:none;border:0}
+
+.relic-heading{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:44px;margin:0}.relic-heading small{font-size:14px}.relic-heading label{font-size:16px}
+
+
+
+.relic-rack strong{font-size:18px;line-height:1.3}.relic-rack small{font-size:14px;line-height:1.65;text-align:center}
+
+
+.relic-object>strong{font-size:16px;position:relative;z-index:1;line-height:1.5;padding:5px 8px;background:#102d30e6;border-bottom:1px solid #a2b68d6b}
+.relic-description.production-object{display:flex;flex-direction:column;gap:4px;padding:0;background:transparent;min-width:0;align-self:center}
+.relic-description h3{display:block;font-size:27px;line-height:1.25;margin:0}.relic-description p{font-size:18px;line-height:1.55;margin:0}.relic-description>small,.relic-description>span{font-size:14px;line-height:1.4}.relic-cycle{font-size:18px;color:#b8d4b5}
+.relic-description .production-unit{font-size:14px;line-height:1.5}
+.equipment-objects .relic-materials button{align-content:center;min-width:0;transform:none!important}
+.relic-materials .game-icon{width:24px;height:24px;grid-row:span 2}.relic-materials strong{font-size:16px;line-height:1.5}.relic-materials span,.relic-materials small{grid-column:1/-1;font-size:14px;line-height:1.5}
+
+
+
+
+.relic-result{font-size:16px;padding:7px;background:#153a31f2;border:1px solid #adc39a;text-align:center;color:#deebc9;pointer-events:none;animation:equipment-imprint .7s ease-out}
+
+.relic-authorization>div{min-width:0;display:flex;flex-direction:column;gap:5px;font-size:16px;line-height:1.45}.relic-authorization>div>span,.relic-authorization small{font-size:14px;line-height:1.5}
+.relic-authorization .production-budget{font-size:14px;min-height:44px;padding:5px 8px;background:#1b3a3b;border:0;border-bottom:1px solid #a7bc8b77;text-align:left}
+.relic-action>button{min-height:50px;font-size:18px}
+.relic-heading.relic-locked{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1fr);gap:48px;align-items:center;max-width:1050px;margin:auto;width:100%;min-height:0;flex:1}#app .relic-locked>button{display:flex;flex-direction:column;align-items:center;width:100%;height:420px;max-height:100%;padding:8px!important;border:0!important;background:none!important;box-shadow:none!important}.relic-locked>button>[data-art-path]{width:100%;height:calc(100% - 44px);min-height:0;opacity:1}.relic-locked .asset-fallback{display:grid;place-items:center}.relic-locked .game-icon{width:160px;height:200px}.relic-locked>button>span{font-size:18px;line-height:1.65;min-height:44px;display:grid;place-items:center;border-bottom:1px solid #9fc4a966}.relic-locked>div{display:flex;flex-direction:column;gap:12px}.relic-locked h3{font-size:28px;margin:0;line-height:1.65}.relic-locked p{font-size:18px;line-height:1.7;margin:0}.relic-locked small{font-size:14px}
+@keyframes equipment-imprint{from{box-shadow:0 0 0 6px #b9d5a55c}to{box-shadow:0 0 20px #b9d5a522}}
+.hub-reduced .equipment-objects *{animation:none!important}.hub-reduced .jade-saved-seal{transform:none}
+@media(prefers-reduced-motion:reduce){.equipment-objects *{animation:none!important}.jade-saved-seal{transform:none}}
+
+.jade-empty-art{height:230px;position:relative;min-width:0;display:flex;flex-direction:column;justify-content:end}.equipment-objects .jade-empty-art .catalogue-art{display:block;position:absolute;inset:0;width:100%;height:200px;opacity:.55}.jade-empty-art small{position:relative;font-size:14px;text-align:center;background:#123035dd;padding:4px}
+
+.equipment-objects .learning-directory>.catalogue-pager button{min-width:0;min-height:44px;flex:1;padding:6px}
+
+
+
+.learning-facts{display:flex;flex-wrap:wrap;gap:0 12px;min-width:0}.learning-facts>small{min-width:0;max-width:100%}
+
+
+
+.relic-object .relic-finished-art .asset-fallback{display:grid;place-items:center;box-sizing:border-box;padding-top:56px}
+.relic-object .relic-finished-art .asset-fallback>.game-icon{width:128px;height:100%;max-width:100%;max-height:144px}
+.jade-study-scene[data-state=failed] .ta09-empty-queue{min-height:24px}
+
+#app .jade-study-scene[data-manual=true]{grid-template-rows:minmax(0,1fr) auto}
+#app .jade-study-scene[data-manual=true] .ta09-jade{height:240px;max-height:100%;align-self:center}
+#app .equipment-objects:has(>.learning-planner[data-complete=true]){background:linear-gradient(120deg,#102b2f99,#0b252a55)!important}
+
+
+
+#app .learning-planner[data-complete=true] .jade-reading-place{width:min(100%,1000px);justify-self:center;grid-template-columns:280px minmax(0,1fr);gap:30px}
+#app .learning-planner[data-complete=true] .ta09-jade{height:320px}
+.manual-next{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:16px}
+#app .manual-next>button{min-height:52px;min-width:240px;width:auto;font-size:18px}
+
+#app .art10-relic-stage button:not(.primary),#app .relic-object-verb{font-size:18px!important}
+
+#app .relic-object>strong{font-size:18px}

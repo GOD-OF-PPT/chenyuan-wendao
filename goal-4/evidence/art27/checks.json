@@ -1,0 +1,181 @@
+{
+  "date": "2026-10-29",
+  "task": "ART27",
+  "contract": "docs/decisions/0062-relic-workshop-art27-contract.md",
+  "runtimeDigest": "e7cd37b359ef25ace4056570467b01097536a0bb98d54ee98e1ae5ccadf82246",
+  "ui": {
+    "currentRelated": 199,
+    "completeFiles": 26,
+    "newBusinessCases": 5,
+    "regularWholeRun": 198,
+    "predeclaredSlow": 1,
+    "wholeSingleUiRun": false,
+    "skip": 0,
+    "retry": 0,
+    "reportErrors": 0,
+    "coverage": "coverage-audit.json"
+  },
+  "native": {
+    "current": 15,
+    "completeFiles": 2,
+    "wholeRun": true,
+    "skip": 0,
+    "retry": 0,
+    "report": {
+      "path": "artifacts/goal-4/art27/native-v4-report.json",
+      "bytes": 19965,
+      "sha256": "d84b1118107378d7571ac5246ad8775bb15a528580d8143dc063f2f511a507d0"
+    }
+  },
+  "models": {
+    "actual": 42,
+    "wholeRulesSuite": false,
+    "report": {
+      "path": "artifacts/goal-4/art27/unit-v4.log",
+      "bytes": 4222,
+      "sha256": "141c67cf0337a2746b7ea487031f846eb9086a92cfd4b411712e025c24ac1a7c"
+    }
+  },
+  "resources": {
+    "uniqueMethods": 492,
+    "wholeRun": true,
+    "rootAndCompleteSandboxPositiveFirst": true,
+    "newMethods": 6,
+    "productionAssets": 113,
+    "report": {
+      "path": "artifacts/goal-4/art27/resources-v4.log",
+      "bytes": 594,
+      "sha256": "027853269ada249cd375729b76604aca0baa7651e02da1231a9f0f4b08bd23e5"
+    },
+    "newGuardPositive": {
+      "path": "artifacts/goal-4/art27/seal-final-positive.log",
+      "bytes": 106,
+      "sha256": "7156de99e1272230b7f5a8392d8d15419e56801f73c9c12a21aab83bf3c5c8de"
+    }
+  },
+  "typesBuild": {
+    "rootTypecheck": true,
+    "vueTypecheckAndBuild": true,
+    "reports": [
+      {
+        "path": "artifacts/goal-4/art27/typecheck-v4.log",
+        "bytes": 61,
+        "sha256": "f4db2c939da9c86ddc28dd7279e9d43cdaccb955d89c68482425e95ef8b37061"
+      },
+      {
+        "path": "artifacts/goal-4/art27/seal-repair-build.log",
+        "bytes": 1140,
+        "sha256": "b3794cc183f4b58199122adb6ca93c52358e5e8ca317e0c4786ad7dca4202d3d"
+      }
+    ]
+  },
+  "art": {
+    "builtInImagegenCalls": 2,
+    "newProductionAssets": 1,
+    "runtimeScene": {
+      "path": "web/public/art/v2/workshops/relic-v1.webp",
+      "bytes": 195308,
+      "sha256": "8712d5e770eda38a0a4e7ce06dd5f137ed7ca9760f2a9fa7cada96db70bb1c86"
+    },
+    "sceneDimensions": [
+      1536,
+      768
+    ],
+    "sourceDimensions": [
+      1774,
+      887
+    ],
+    "sourceOpaque": true,
+    "sourceFullFrameUniformNoCrop": true,
+    "doubleExportVerified": true,
+    "exportVerify": {
+      "path": "artifacts/goal-4/art27/export-verify.log",
+      "bytes": 193,
+      "sha256": "e321353a58d8b896173cb9e4e508748b52d13a23e7ad5f2cbbf6dcf1d050e3f3"
+    },
+    "normalPaintedThreshold": 280,
+    "actualMinimum": 287.6875305175781,
+    "paintedAll4": [
+      {
+        "id": "frost_sword",
+        "width": 274.56494140625,
+        "height": 287.6875305175781,
+        "source": "http://127.0.0.1:4173/art/v2/equipment/frost_sword-blank-v1.webp"
+      },
+      {
+        "id": "jade_seal",
+        "width": 264.80859375,
+        "height": 328.41796875,
+        "source": "http://127.0.0.1:4173/art/v2/equipment/jade_seal-blank-v1.webp"
+      },
+      {
+        "id": "soul_lamp",
+        "width": 217.1015625,
+        "height": 329.109375,
+        "source": "http://127.0.0.1:4173/art/v2/equipment/soul_lamp-blank-v1.webp"
+      },
+      {
+        "id": "cloud_mirror",
+        "width": 221.25,
+        "height": 312.515625,
+        "source": "http://127.0.0.1:4173/art/v2/equipment/cloud_mirror-blank-v1.webp"
+      }
+    ],
+    "finalFreshPixelsReviewed": 15,
+    "original8ColdFinishedArtifactsUnchanged": true,
+    "wholeArtOrHumanAccepted": false
+  },
+  "code": {
+    "runtimeChanged": [
+      "web/src/RelicAtelier.vue",
+      "web/src/RelicInscription.vue",
+      "web/src/art03-equipment.css",
+      "web/src/art10-equipment.css"
+    ],
+    "runtimeAdded": [
+      "web/public/art/v2/workshops/relic-v1.webp"
+    ],
+    "otherRuntimeByteExact": 298,
+    "atelierOnlyDecorativeTagCanon": true,
+    "rendererOnlyExactVisualHitSiblingAndStaticSealLayoutCanon": true,
+    "scriptsPropsEmitsSvg240PathsClockProofUnchanged": true,
+    "oldCapsRaised": false,
+    "equipmentObjectBytes": 44998,
+    "equipmentObjectCap": 45000,
+    "art10Bytes": 11988,
+    "art10Cap": 12000,
+    "ta09Bytes": 29130,
+    "ta09Cap": 30000,
+    "productionCap": 26000,
+    "preparationCap": 60000
+  },
+  "inputs": {
+    "finalFrozen": 1010,
+    "finalPhase": "v4; all earlier frozen maps/reports kept",
+    "terminalSame": true,
+    "supplementalOldBaselineRefs": 83,
+    "supplementalRecordedAfterInitialFreeze": true,
+    "supplementalTerminalSame": true,
+    "runtime": 303,
+    "protected13Same": true
+  },
+  "payload": {
+    "files": 94,
+    "bytes": 9730526
+  },
+  "identityAfterCodeCommit": "pending actual Git/rebuild/frozen/HTTP and saved-stopped original preview update",
+  "notRun": [
+    "whole664 UI",
+    "whole415 native",
+    "normal32",
+    "whole873 rules",
+    "compatibility/mobile/responsive/crossbrowser/multi-viewport/font",
+    "environment/performance",
+    "ART17 original4 performance red repairs",
+    "clean candidate final maximum review",
+    "long balance",
+    "human/overall art gamefeel acceptance"
+  ],
+  "previousFullEvidence": "CHECK-ART24-26 exact nonvisual deps only; no old report source retagged",
+  "overallGoalComplete": false
+}

@@ -3,7 +3,7 @@
 #app .art10-equipment>.catalogue-tabs button{width:auto;flex:0 0 auto;min-width:92px;min-height:44px;border:0!important;border-radius:0;background:none!important;box-shadow:none!important;color:#c8d6bf;font-size:18px;position:relative;padding:6px 12px}
 #app .art10-equipment>.catalogue-tabs button[aria-pressed=true]{color:#c4efda;border-bottom:2px solid #a7dcc7!important}
 #app .art10-equipment>.catalogue-tabs button:active{color:#fff5cf;transform:translateY(1px)}
-#app .equipment-panel:is([data-section=skills],[data-section=manual]){background:transparent!important;border:0!important;isolation:isolate;gap:6px}
+#app .equipment-panel:is([data-section=skills],[data-section=manual],[data-section=relics]){background:transparent!important;border:0!important;isolation:isolate;gap:6px}
 #app .art10-learning{display:flex;flex-direction:column;gap:0;min-height:0;flex:1;isolation:isolate}
 #app .art10-study-heading>button{min-height:44px;font-size:18px;padding:6px 16px}
 #app .art10-study-work{display:flex;flex:1;min-height:0}
@@ -38,13 +38,13 @@
 
 #app .art10-study-scene .learning-object strong{font-size:18px}
 
-#app .art10-relic-stage{display:flex;flex-direction:column;flex:1;min-height:0;gap:8px}
+#app .art10-relic-stage{display:flex;flex-direction:column;flex:1;min-height:0;gap:8px;position:relative;isolation:isolate}
 #app .art10-relic-stage .relic-heading button{min-height:44px;font-size:18px}
-#app .art10-relic-stage .relic-object-stage{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);grid-template-rows:minmax(0,1fr);flex:1;min-height:0;min-width:0;align-items:center;gap:36px;width:min(100%,1100px);align-self:center;background:radial-gradient(ellipse at 23% 60%,#83c59715,transparent 60%)}
-#app .art10-relic-stage .relic-object{display:grid;grid-template-columns:minmax(220px,1fr) minmax(120px,.7fr);grid-template-rows:auto minmax(0,1fr) 36px;min-height:0;height:100%;gap:4px 12px;position:relative}
+#app .art10-relic-stage .relic-object-stage{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);flex:1;min-height:0;min-width:0;align-items:center;gap:32px;width:min(100%,1280px);align-self:center}
+#app .art10-relic-stage .relic-object{display:grid;grid-template-columns:minmax(0,1fr) 160px;grid-template-rows:auto minmax(0,1fr) 36px;min-height:0;height:100%;gap:4px 12px;position:relative}
 #app .art10-relic-stage .relic-description p{line-height:1.65}
 #app .relic-bond-reference{display:flex;align-items:center;gap:6px 12px;flex-wrap:wrap;margin-top:6px;padding:6px 0!important;border:0!important;border-top:1px solid #9bb89b40!important;background:none!important}
-#app .relic-result-space{min-height:36px;display:flex;align-items:center;justify-content:center;position:relative;width:100%;flex:none}
+#app .relic-result-space{display:flex;align-items:center;justify-content:center;position:relative}
 #app .relic-result-space .relic-result{position:static;font-size:18px;line-height:1.65;margin:0;padding:2px 10px;border:0;background:#143b32;color:#deebc9;text-align:center;pointer-events:none}
 #app .relic-result-space>[data-testid=configuration-arrival]{font-size:14px;line-height:1.65}
 #app .relic-material-slots{grid-column:2;grid-row:2;display:flex;flex-direction:column;gap:8px;justify-content:center;min-height:0}
@@ -91,7 +91,6 @@
 #app .relic-currency-routes button{align-self:flex-start;margin-top:5px}
 
 #app .art10-relic-stage .production-budget.primary{font-size:18px!important}
-#app .art10-relic-stage .relic-object-inspect{background:transparent!important}
 
 #app .art10-relic-stage .relic-inscription-object{grid-column:1;grid-row:1/3}
 #app .art10-relic-stage .relic-object>strong{grid-column:2;grid-row:1}
@@ -99,3 +98,7 @@
 #app .relic-material-slots small{flex-basis:100%;font-size:14px;line-height:1.65}
 
 .library-book-spine{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:154px;height:220px;padding:10px 6px;box-sizing:border-box;border:5px double #a39d69;border-radius:12px 5px 5px 12px;background:repeating-linear-gradient(90deg,#214b41 0 9px,#193d37 10px 12px);box-shadow:5px 3px #061e24,inset 0 8px #84956d66,inset 0 -8px #84956d66}
+
+#app .relic-sanctum{inset:-16px -16px 0}#app .relic-sanctum img{object-position:left top}
+
+#app .relic-object-inspect{padding-bottom:22px!important}
