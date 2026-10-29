@@ -187,5 +187,16 @@
     "ART17 original4 performance reds/unknown,performance paused",
     "overall art/gamefeel/long balance/human and all final matrices/clean package/maximal final review"
   ],
-  "postCodeIdentity": "pending actual code commit/build/Git306/frozen97/HTTP/original user preview"
+  "postCodeIdentity": {
+    "codeCommit": "f57bf229464b342bcc5a2eef64ca2d2804cbd311",
+    "runtimeInputs": 306,
+    "payloadFiles": 97,
+    "payloadBytes": 10253440,
+    "gitTestedRebuiltFrozenHttpExact": true,
+    "originalUserPublicHudExact": true,
+    "naturalViewportNotOverridden": true,
+    "proof": "identity-proof.json",
+    "preview": "user-preview.json",
+    "notCleanCandidate": true
+  }
 }

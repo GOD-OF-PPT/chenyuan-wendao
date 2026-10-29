@@ -1,0 +1,21 @@
+{
+  "codeCommit": "f57bf229464b342bcc5a2eef64ca2d2804cbd311",
+  "runtimeDigest": "947f326cc5266758ddb1b15cc67d1ce117b756be6c37181a88c76c8d7e7c715a",
+  "runtimeInputs": 306,
+  "payloadFiles": 97,
+  "payloadBytes": 10253440,
+  "gitTestedRebuiltFrozenExact": true,
+  "helperSHA256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "protected13Exact": true,
+  "dirtyEngineeringVersion": true,
+  "testedHead": "cb687eeb2424894878dc86c7cf9384824a749ba7",
+  "noHistoricalReportRetagged": true,
+  "httpDecodedAllExact": true,
+  "httpProof": "artifacts/goal-4/art30/http-identity.json",
+  "httpSHA256": "c4e1465aa8bab015fdd16f06d9a4b515a95bf2782a7ac653a6f2525ca1a16455",
+  "previewServer": "Existing56884 endpoint switched from preserved ART29 folder to ART30 committed-frozen with the exact same1d84 helper, only after original public save/stopped state was confirmed.",
+  "originalPreviewPublicHudExact": true,
+  "userDbOrFullGameRead": false,
+  "normalWhole32GateAccepted": false,
+  "openNormalIssue": "CHECK2729-J01"
+}
