@@ -1,0 +1,83 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "browser": "original Chrome tab387928607/browser1",
+  "before": {
+    "dialogs": 0,
+    "executions": 0,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-CSoytBS3.js",
+    "save": "已保存",
+    "styles": [
+      "./assets/index-idT6cvfz.css"
+    ]
+  },
+  "afterReload": {
+    "dialogs": 0,
+    "executions": 0,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-BunxcFTZ.js",
+    "save": "已保存",
+    "styles": [
+      "./assets/index-D1Ntfu8K.css"
+    ]
+  },
+  "after": {
+    "dialogs": 0,
+    "executions": 0,
+    "furnace": "false",
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-BunxcFTZ.js",
+    "save": "已保存",
+    "scene": [
+      {
+        "decorative": "true",
+        "path": "art/v2/workshops/alchemy-v1.webp",
+        "state": "ready"
+      }
+    ],
+    "styles": [
+      "./assets/index-D1Ntfu8K.css"
+    ],
+    "workshop": "idle"
+  },
+  "visibleHudExact": true,
+  "noUserDbAccess": true,
+  "noGameAction": true,
+  "readonlyNavigation": [
+    "主要页面/丹炉",
+    "查看完整目录",
+    "查看丹炉安排，不开炉",
+    "返回丹炉"
+  ],
+  "scope": "Public DOM/HUD equality only, not whole userGame/DB equality. No agent direct user storage access or save used for tests.",
+  "runningPackage": "artifacts/goal-4/art28/committed-frozen/web",
+  "payloadFiles": 95,
+  "runtimeDigest": "9c0acdac1058eea4905465338c0f528b061fc01a633f92cfd28cf8a4c62065f4",
+  "viewportOverride": false,
+  "screenshot": {
+    "original": {
+      "path": "artifacts/goal-4/art28/original-preview.png",
+      "bytes": 168714,
+      "sha256": "c6697dc704b9b40f847c1336e2e5589d29eda18e790ef8bfacc251f5f08ed979"
+    },
+    "view": {
+      "path": "goal-4/evidence/art28/original-preview.jpg",
+      "bytes": 147009,
+      "sha256": "ede372d77e76da782bbf192eece9087fad8bcf2ed8cb0dfe66fd895a28d23663"
+    },
+    "encoding": "same size JPEG68, lossy",
+    "actualPixelReviewed": true
+  },
+  "openObservation": {
+    "id": "ART28-OBS-01",
+    "status": "open; compatibility development/testing paused",
+    "source": "actual original user window screenshot during read-only update verification",
+    "naturalWindowPixels": [
+      1440,
+      756
+    ],
+    "finding": "成品自动入匣提示与药匣说明在较矮原窗口挤压/相交。固定1440x900受测画面可读不等于此自然窗口已验收。",
+    "noViewportOverrideOrCompatibilitySuite": true,
+    "noTargetedCompatibilityCodeOrTestAdded": true
+  }
+}

@@ -54,6 +54,11 @@
       "path": "artifacts/goal-4/art28/positive-and-new-guards-final.log",
       "bytes": 141,
       "sha256": "02e4ab14c06acd7a1f81467ab1503abd6351a505b291459def1c57ffac7aefe7"
+    },
+    "postDocsRootPositive": {
+      "path": "artifacts/goal-4/art28/post-docs-root-positive.log",
+      "sha256": "6d601a1311809d5422440996c8b4f85c11b8b887e721483e2eb3372583294553",
+      "passed": true
     }
   },
   "typesBuild": {
@@ -137,7 +142,15 @@
     "files": 95,
     "bytes": 9926935
   },
-  "identityAfterCodeCommit": "pending Git/rebuild/frozen/HTTP and saved-stopped original preview update",
+  "identityAfterCodeCommit": {
+    "proof": "identity-proof.json",
+    "codeCommit": "bfe2eaafbb6169aecd221d354bc4043d6cf01b40",
+    "all304GitTestedRebuiltFrozenSame": true,
+    "all95HttpDecodedSame": true,
+    "originalSavedStoppedPreviewUpdated": true,
+    "publicHudUnchanged": true,
+    "noAgentDirectUserDbAccessOrGameAction": true
+  },
   "notRun": [
     "whole668 UI",
     "whole415 native",
@@ -149,5 +162,17 @@
     "clean same-version final candidate and maximum review",
     "long balance",
     "human overall art/gamefeel acceptance"
-  ]
+  ],
+  "openObservation": {
+    "id": "ART28-OBS-01",
+    "status": "open; compatibility development/testing paused",
+    "source": "actual original user window screenshot during read-only update verification",
+    "naturalWindowPixels": [
+      1440,
+      756
+    ],
+    "finding": "成品自动入匣提示与药匣说明在较矮原窗口挤压/相交。固定1440x900受测画面可读不等于此自然窗口已验收。",
+    "noViewportOverrideOrCompatibilitySuite": true,
+    "noTargetedCompatibilityCodeOrTestAdded": true
+  }
 }

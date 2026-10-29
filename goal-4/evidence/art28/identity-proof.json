@@ -1,0 +1,18 @@
+{
+  "codeCommit": "bfe2eaafbb6169aecd221d354bc4043d6cf01b40",
+  "runtimeDigest": "9c0acdac1058eea4905465338c0f528b061fc01a633f92cfd28cf8a4c62065f4",
+  "runtimeInputs": 304,
+  "allRuntimeGitTestedFrozenSourceExact": true,
+  "payloadFiles": 95,
+  "payloadBytes": 9926935,
+  "testedRebuiltFrozenPayloadExact": true,
+  "helperSha256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "protected13Unchanged": true,
+  "notCleanCandidate": true,
+  "http": "all95 decoded bytes/hash equal",
+  "scope": "local scoped engineering package; not final candidate or human art acceptance",
+  "httpProof": "artifacts/goal-4/art28/committed-http.json",
+  "testedHead": "3e3a94d460ddf83d39d96ae0041d37f15ab8867d",
+  "reportHeadNotRetagged": true,
+  "preview": "user-preview.json"
+}
