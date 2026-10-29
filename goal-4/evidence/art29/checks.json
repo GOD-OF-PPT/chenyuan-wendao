@@ -51,6 +51,14 @@
       "path": "artifacts/goal-4/art29/hint-positive-and-new-guards.log",
       "bytes": 141,
       "sha256": "063289aaecbae36761534ba59ba9772e9d240b8a3c85d7796c7a63a4bf4a8820"
+    },
+    "postDocsRootPositive": {
+      "path": "artifacts/goal-4/art29/post-docs-root-positive.log",
+      "sha256": "28b849309fa3a01f86cb349c260f4a8ad0e39967de4ddf98c99748f1ec177d40",
+      "productionAssets": 115,
+      "groupBytes": 14233,
+      "cssBytes": 12073,
+      "passed": true
     }
   },
   "typesBuild": {
@@ -150,5 +158,6 @@
     "clean same-version final candidate and maximum C-end/code/security review",
     "long balance",
     "human overall art/gamefeel approval"
-  ]
+  ],
+  "closeoutAuditCorrection": "artifacts/goal-4/art29/closeout-stat-assertion.json"
 }
