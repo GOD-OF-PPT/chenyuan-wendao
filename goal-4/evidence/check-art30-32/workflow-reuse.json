@@ -1,0 +1,34 @@
+{
+  "candidates": [
+    {
+      "workflow": "exact declaration and terminal source/report audit",
+      "evidence": [
+        "CHECK-ART24-26 2026-10-29",
+        "CHECK-ART27-29 2026-10-29",
+        "CHECK-ART30-32 2026-10-30"
+      ],
+      "frequencyConfidence": "repeated high",
+      "decision": "reuse existing profiles/source-identity/coverage auditor; current result assembly only, no duplicate global Skill"
+    },
+    {
+      "workflow": "PNG to same-size light view and actual pixel chain",
+      "evidence": [
+        "ART30/31/32 2026-10-29/30",
+        "CHECK-ART30-32 2026-10-30"
+      ],
+      "frequencyConfidence": "repeated high",
+      "decision": "reuse existing Pillow/image tools and manifest convention"
+    },
+    {
+      "workflow": "actual full-state UI seam diagnosis",
+      "evidence": [
+        "prior mainline audit 2026-10-28",
+        "current restore stale review 2026-10-30"
+      ],
+      "frequencyConfidence": "repeated high",
+      "decision": "reuse game-playtest and diagnose; no new agent or automation"
+    }
+  ],
+  "createdOrExtendedReusableAssets": [],
+  "missingHighConfidenceWorkflow": null
+}

@@ -26,6 +26,7 @@ export function useMilestoneReview(store:Store){
  watch(()=>store.activity,a=>{const r=review.value;if(r?.activity&&a?.version===7&&a.id===r.activity.id)review.value={...r,activity:structuredClone(a)};});
  const stale=computed(()=>milestoneReviewStale(store,review.value?.prepared??null));
  const retry=computed(()=>!!review.value?.prepared&&store.canRetryFor(review.value.prepared.command.commandId));
+ watch(()=>store.game?.core.runId,run=>{const p=review.value?.prepared;if(run&&p&&run!==p.command.runId&&!store.canRetryFor(p.command.commandId))review.value=null;});
  function close(){const p=review.value?.prepared;if(p)store.discardRetryFor(p.command.commandId);review.value=null;}
  function select(action:MilestoneAction){const prepared=prepareMilestoneReview(store,action);if(!prepared||!store.game)return;review.value={plan:prepared.intent.plan,snapshot:structuredClone(store.game),identity:prepared.command.commandId,prepared,activity:null};}
  function inspect(a:MilestoneActivity){review.value={plan:structuredClone(a.plan),snapshot:structuredClone(a.originGame),identity:a.id,prepared:null,activity:structuredClone(a)};}

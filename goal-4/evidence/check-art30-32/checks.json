@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-30",
+  "task": "CHECK-ART30-32",
+  "contract": "docs/decisions/0069-art30-32-cross-check-contract.md",
+  "status": "actual checks passed; independent commit and preview identity closeout pending",
+  "runtimeDigest": "2461902ca0c5456274f8de410a44e1a08941a51144c33f1f6b8efbfe562be45c",
+  "runtimeInputs": 309,
+  "scope": "fixed1440x900/font1/singleChromium only",
+  "newCombinations": {
+    "count": 3,
+    "inFullUI": true,
+    "fullGameActivityAllDbUniqueFormalReceipt": true,
+    "periodsSeconds": [
+      6,
+      12,
+      15
+    ],
+    "originalRestoreSeconds": 0.6,
+    "virtualBoundaryNotHumanPacing": true,
+    "realCyclesSeparatelyInOriginalFullUi": true
+  },
+  "coverage": "goal-4/evidence/check-art30-32/coverage-audit.json",
+  "ui": {
+    "currentUnique": 698,
+    "completeFiles": 88,
+    "wholeSingleRun": false,
+    "regular": 691,
+    "predeclaredOriginalSlow": 7
+  },
+  "native": {
+    "currentUnique": 415,
+    "completeFiles": 39,
+    "wholeSingleRun": true,
+    "old22RetiredMigrationProfileUnchanged": true
+  },
+  "normal": {
+    "currentUnique": 32,
+    "completeFiles": 3,
+    "wholeSingleRun": true,
+    "timeoutMs": 240000,
+    "workers": 2,
+    "wallDurationMinutes": 37.6,
+    "base": 24,
+    "foundation": 6,
+    "perRoundRefresh": 2,
+    "humanPacing": "not_verified"
+  },
+  "rules": {
+    "actual": 873,
+    "wholeRun": true
+  },
+  "resources": {
+    "uniqueMethods": 522,
+    "wholeRun": true,
+    "positiveRootAndCompleteSandboxFirst": 119,
+    "positiveLog": {
+      "path": "artifacts/goal-4/check-art30-32/positive-resources.log",
+      "bytes": 1869,
+      "sha256": "d08f275029b806ffe69210ee25c11d21f96043eaefd8a89e9a36488afc2cd6b9"
+    },
+    "negativeAndAllOldCapsRetained": true
+  },
+  "selected": {
+    "skip": 0,
+    "automaticRetry": 0,
+    "reportErrors": 0
+  },
+  "rootTypes": "passed",
+  "vueTypesAndBuild": "passed",
+  "precommitRebuiltAll100PayloadsExact": true,
+  "deterministicArt30Art31Art32Verify": "three actual terminal0; original assets hash/size unchanged",
+  "finalInputs": {
+    "count": 1234,
+    "terminalExactBeforeCloseoutDocs": true,
+    "runtime": 309,
+    "protected13Exact": true
+  },
+  "visual": {
+    "currentFrames": 15,
+    "fresh": 7,
+    "exactWholePngInheritedWithReviewedChain": 8,
+    "maxPerCall": 2
+  },
+  "remaining": [
+    "old J01 rootcause unknown retained",
+    "ART17 original four performance reds/unknown",
+    "ART28-OBS-01",
+    "overall art/gamefeel/long balance/human acceptance",
+    "all final matrices/clean same-version package/maximal C-end code security review"
+  ],
+  "compatibilityAndEnvironmentPerformance": "paused"
+}

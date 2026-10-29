@@ -1,0 +1,18 @@
+{
+  "changedRuntimeInputs": [
+    "web/src/milestone-view.ts"
+  ],
+  "runtimeInputsUnchanged": 308,
+  "newRuntimeModules": 0,
+  "exactOneWatchAddition": "\n watch(()=>store.game?.core.runId,run=>{const p=review.value?.prepared;if(run&&p&&run!==p.command.runId&&!store.canRetryFor(p.command.commandId))review.value=null;});",
+  "originalSelectInspectCloseConfirmRetryAndPresentationFullSourcePreserved": true,
+  "clearsOnlyReviewReference": true,
+  "doesNotCallCloseOrDiscardRetry": true,
+  "doesNotCancelNativeTransactionOrChangeFrozenCommand": true,
+  "readonlyActivityInspectAndCanRetryForReviewRemain": true,
+  "sameRunRevisionActivityCasStaleGuardUnchanged": true,
+  "oldNativePendingRetryOwnedByOriginalStore": true,
+  "noEngineDb9NumbersBudgetsDurationOrAssetChanges": true,
+  "oldIdleMilestonesCap": 30000,
+  "actualIdleMilestonesGroupBytes": 16027
+}

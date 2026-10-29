@@ -1,0 +1,19 @@
+{
+  "task": "CHECK-ART30-32",
+  "checkedAt": "2026-10-30",
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "title": "XAG112 UI navigation",
+      "actuallyRead": "Consistent navigation order and predictable focus throughout the game.",
+      "application": "Original temporary life-reading returns, new-phase safe return and cross-run dialog invalidation must remain predictable."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/close",
+      "title": "IDBDatabase.close",
+      "actuallyRead": "Close takes effect after outstanding transactions complete and prevents new transactions; closing a connection does not cancel accepted transactions.",
+      "application": "Readonly navigation/modal closure cannot become cancellation or a new authorization; native quota/old-intent retry and other-page restore are observed as separate actual transactions."
+    }
+  ],
+  "limits": "Project-specific combinations/pixels/durations, not source-prescribed numbers/certification. Fixed1440x900/font1 singleChromium only. No compatibility/environment performance."
+}
