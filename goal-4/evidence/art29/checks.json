@@ -129,7 +129,15 @@
     "files": 96,
     "bytes": 10105564
   },
-  "identityAfterCodeCommit": "pending actual Git/rebuild/frozen/HTTP and safe original preview update",
+  "identityAfterCodeCommit": {
+    "proof": "identity-proof.json",
+    "codeCommit": "bc1e3d10505a089abecc8ac1db02eddc19c55a51",
+    "all305GitTestedRebuiltFrozenSame": true,
+    "all96HttpDecodedSame": true,
+    "originalSavedStoppedPreviewUpdated": true,
+    "publicHudUnchangedAfterPortraitReady": true,
+    "noAgentDirectUserDbOrGameAction": true
+  },
   "notRun": [
     "whole672 UI",
     "whole415 native",

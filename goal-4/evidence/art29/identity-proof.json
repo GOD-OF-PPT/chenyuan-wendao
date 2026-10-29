@@ -1,0 +1,18 @@
+{
+  "codeCommit": "bc1e3d10505a089abecc8ac1db02eddc19c55a51",
+  "runtimeDigest": "a2c0a75b0449ecd535186862ebf94e109d90404d76b63a38f74ba79dc080e485",
+  "runtimeInputs": 305,
+  "allRuntimeGitTestedFrozenSourceExact": true,
+  "payloadFiles": 96,
+  "payloadBytes": 10105564,
+  "testedRebuiltFrozenPayloadExact": true,
+  "helperSha256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "protected13Unchanged": true,
+  "notCleanCandidate": true,
+  "http": "all96 decoded SHA256 bytes equal",
+  "scope": "local scoped fixed-desktop engineering version, not overall gamefeel/long balance/human acceptance",
+  "httpProof": "artifacts/goal-4/art29/committed-http.json",
+  "testedHead": "ada31651da46061e6bdb2d7a63f7103bd0db6fe3",
+  "reportsRetagged": false,
+  "preview": "user-preview.json"
+}

@@ -1,0 +1,79 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "browser": "original Chrome tab387928607/browser1",
+  "before": {
+    "dialogs": 0,
+    "executions": 0,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-BunxcFTZ.js",
+    "save": "已保存",
+    "styles": [
+      "./assets/index-D1Ntfu8K.css"
+    ]
+  },
+  "initialSavedBeforePortraitReady": {
+    "dialogs": 0,
+    "executions": 0,
+    "hud": "道顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-DzRQJcfd.js",
+    "save": "已保存",
+    "styles": [
+      "./assets/index-BZys8YxJ.css"
+    ]
+  },
+  "after": {
+    "dialogs": 0,
+    "executions": 0,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "item": "healing_pill",
+    "module": "./assets/index-DzRQJcfd.js",
+    "owned": "false",
+    "portrait": "ready",
+    "save": "已保存",
+    "scene": [
+      {
+        "decorative": "true",
+        "path": "art/v2/workshops/inventory-v1.webp",
+        "state": "ready"
+      }
+    ],
+    "stock": "0",
+    "styles": [
+      "./assets/index-BZys8YxJ.css"
+    ]
+  },
+  "visibleHudExact": true,
+  "decorativeLoadingNote": "First saved-ready text included the portrait fallback 道; actual portrait ready then full HUD exact. No sleep or Game clock/control change.",
+  "noAgentDirectUserDbAccess": true,
+  "noGameAction": true,
+  "readonlyNavigation": [
+    "主要页面/行囊",
+    "用途与价格",
+    "返回选物"
+  ],
+  "scope": "Public DOM/HUD equality only, not full userGame/DB equality. No agent direct user storage or save use for tests.",
+  "runningPackage": "artifacts/goal-4/art29/committed-frozen/web",
+  "payloadFiles": 96,
+  "runtimeDigest": "a2c0a75b0449ecd535186862ebf94e109d90404d76b63a38f74ba79dc080e485",
+  "viewportOverride": false,
+  "actualNaturalWindowPixels": [
+    1440,
+    756
+  ],
+  "compatibilityValidation": false,
+  "screenshot": {
+    "original": {
+      "path": "artifacts/goal-4/art29/original-preview.png",
+      "bytes": 132652,
+      "sha256": "28a63db02f7e522b5c5ae9082d76b4ee12d187c88025d239ad7b1bce88971854"
+    },
+    "view": {
+      "path": "goal-4/evidence/art29/original-preview.jpg",
+      "bytes": 115583,
+      "sha256": "b4acc382e6ddafa6ae551dfce6c8075fcd72d786ea0693b152b8f3e449a8423b"
+    },
+    "encoding": "same size JPEG68, lossy",
+    "actualPixelReviewed": true
+  },
+  "priorOpenObservation": "ART28-OBS-01 remains open; no compatibility development/test performed"
+}
