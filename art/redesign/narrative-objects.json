@@ -14,8 +14,8 @@
     },
     {
       "path": "web/src/ResponseTable.vue",
-      "bytes": 4522,
-      "sha256": "b9ff7f201a14b826085e0e2dbff7c0eba42633684ab20a34a2f058e368e7974e"
+      "bytes": 5253,
+      "sha256": "8ef738214baf612dd4841080cd138aaf9043893f7679a1cf0f90dddddfacaa2a"
     },
     {
       "path": "web/src/LifeScroll.vue",
@@ -34,8 +34,8 @@
     },
     {
       "path": "web/src/narrative-objects.css",
-      "bytes": 12978,
-      "sha256": "a271e6c977955e252a18ed34051758989dde3b6b4445ce7401efcb879e6328e9"
+      "bytes": 17121,
+      "sha256": "44353d749c6ea41dc7bcae77f05f93ec554804b4c8dce79820b8db9511b72adb"
     }
   ],
   "sourceReferences": [

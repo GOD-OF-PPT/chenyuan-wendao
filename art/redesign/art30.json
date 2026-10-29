@@ -21,8 +21,8 @@
     },
     {
       "path": "web/src/ResponseTable.vue",
-      "bytes": 4522,
-      "sha256": "b9ff7f201a14b826085e0e2dbff7c0eba42633684ab20a34a2f058e368e7974e"
+      "bytes": 5253,
+      "sha256": "8ef738214baf612dd4841080cd138aaf9043893f7679a1cf0f90dddddfacaa2a"
     },
     {
       "path": "web/src/FateCatalogue.vue",

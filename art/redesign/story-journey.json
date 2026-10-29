@@ -13,8 +13,8 @@
     },
     {
       "path": "web/src/NarrativePanel.vue",
-      "bytes": 6195,
-      "sha256": "8bb4f2e0c06f623e322b2b13dabe6569982c24bbaa56d68c4c6391be756a17dc"
+      "bytes": 6603,
+      "sha256": "e4166552f75d46d58cb6dd8f3968a030f0b0be80882390bf19b6b7e5001314a5"
     },
     {
       "path": "web/src/FateCatalogue.vue",

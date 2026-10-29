@@ -1,0 +1,338 @@
+{
+  "format": "chenyuan-milestone-stage-art32",
+  "version": 1,
+  "userAcceptance": false,
+  "budgets": {
+    "oldNarrativeCap": 45000,
+    "oldStoryCap": 48000,
+    "oldFeedbackCap": 34000,
+    "oldArt12CssCap": 14000,
+    "newRasterAssets": 2,
+    "maxRuntimeBytesEach": 280000,
+    "maxRuntimeBytesTotal": 400000,
+    "runtimeWidth": 1536,
+    "runtimeHeight": 768,
+    "normalPlayerPaintMin": 260
+  },
+  "files": [
+    {
+      "path": "web/src/NarrativePanel.vue",
+      "bytes": 6603,
+      "sha256": "e4166552f75d46d58cb6dd8f3968a030f0b0be80882390bf19b6b7e5001314a5"
+    },
+    {
+      "path": "web/src/ResponseTable.vue",
+      "bytes": 5253,
+      "sha256": "8ef738214baf612dd4841080cd138aaf9043893f7679a1cf0f90dddddfacaa2a"
+    },
+    {
+      "path": "web/src/narrative-objects.css",
+      "bytes": 17121,
+      "sha256": "44353d749c6ea41dc7bcae77f05f93ec554804b4c8dce79820b8db9511b72adb"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0068-milestone-decision-art32-contract.md",
+    "goal-4/amendments/2026-10-29-goal-continue-art32.md",
+    "goal-4/research/art32-design-sources.json",
+    "goal-4/evidence/art32/NarrativePanel.vue.before.txt",
+    "goal-4/evidence/art32/ResponseTable.vue.before.txt",
+    "goal-4/evidence/art32/narrative-objects.css.before.txt",
+    "goal-4/evidence/art32/ANSWER_TRIAL-before.jpg",
+    "goal-4/evidence/art32/END-before.jpg"
+  ],
+  "baselines": [
+    {
+      "path": "goal-4/evidence/art32/NarrativePanel.vue.before.txt",
+      "bytes": 6195,
+      "sha256": "8bb4f2e0c06f623e322b2b13dabe6569982c24bbaa56d68c4c6391be756a17dc"
+    },
+    {
+      "path": "goal-4/evidence/art32/ResponseTable.vue.before.txt",
+      "bytes": 4522,
+      "sha256": "b9ff7f201a14b826085e0e2dbff7c0eba42633684ab20a34a2f058e368e7974e"
+    },
+    {
+      "path": "goal-4/evidence/art32/narrative-objects.css.before.txt",
+      "bytes": 12978,
+      "sha256": "a271e6c977955e252a18ed34051758989dde3b6b4445ce7401efcb879e6328e9"
+    }
+  ],
+  "unchanged": {
+    "web/src/LifeScroll.vue": "1130d9cadbe7d57c4afea5ba3a18bbe84db7a519f6ed0540000a71b3e6890788",
+    "web/src/LifeCatalogue.vue": "3e0577cf7e071e2aa5282371f30dca2a1d414c80b36b9e84fa3f5167d4398cec",
+    "web/src/art12-narrative.css": "29ebf434a630c31295448b4bd890668c77cf851260fd87878359567197d5d3a2",
+    "web/src/EncounterTable.vue": "0c73263444112e4d6bc010201750dd836aaef36d03ee612868124afe8033ccf7",
+    "web/src/FateCatalogue.vue": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2",
+    "web/src/ActionFeedbackStage.vue": "c0430cb6202624a1f4135556cfadfb17541fa38ca7d8bf29c8079080bc8ffcdb",
+    "web/src/action-feedback.ts": "e947bb62b1de54e51f172a2d412110ea662a01b599f0b97061e8c238f31a3606",
+    "web/src/action-motion.css": "b14bcc27fa59527b32e817a164ca7f546337f4520aa02f4cb7001895460bd495",
+    "web/src/narrative-effects.ts": "ca77c93e636c43fc5c57b1f7b7a3f85bef58aa00f135affe217919b64470b615",
+    "web/src/NarrativeStageHost.vue": "e195b09b7485b48e88883a830ca2c0b352da396e62f6457e5ff30c0168d9630d",
+    "web/src/use-activity-effect.ts": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163",
+    "web/src/activity-effects.ts": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b",
+    "web/src/reading-memory.ts": "8e7a0718edb07113e30f817df5ea98180455e1ea4a7f481a10c72b3657357808",
+    "web/src/journal-anchors.ts": "fde853e92c68dd10ad9c14994c41a3157646c5245022b1f8061e4dd0e5aa2605",
+    "web/src/ChoiceCard.vue": "322961bb71234da9e284555aad7a568b14b2b4a88cff9736e43cc208d3103e64",
+    "web/src/CataloguePager.vue": "b5069cf0f229edb66c1e2779cd3542d98bc8a05e292a485c71c2627a652694c0",
+    "web/src/focus.ts": "8ae91e78a4db7a854c293fc4b1bc28f02dd0d542b3119cff383f9245b4944eea",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/story-pages.ts": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7",
+    "web/src/assets.ts": "de5fb6c189b144680149d50f456d34269b4c60e670d8893c6d197315778e07b7",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/milestones.ts": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+    "src/full/queries.ts": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+    "web/public/art/v2/actors/player-standing-cold-v1.webp": "ead57061820734bd53f89f600795310cb2040b478f5e2bf61da2b946571ca2ef",
+    "web/public/art/v2/characters/shen.webp": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1",
+    "web/public/art/v2/characters/lu.webp": "632438e9da240cd8b362d785d8b4a581544b79e6fc3d14edd54cc43cf7410ad4",
+    "web/public/art/v2/characters/pei.webp": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d",
+    "web/public/art/v2/characters/yan.webp": "82cc6f98bded838b6b8a59d1d27ba123fdec70c1a0043dd4bf6ea236a65c2e2f"
+  },
+  "asset": {
+    "format": "chenyuan-art32-stages",
+    "version": 1,
+    "assets": {
+      "question": {
+        "format": "chenyuan-art32-export",
+        "version": 1,
+        "producer": {
+          "path": "art/tools/export_art32_stages.py",
+          "bytes": 3726,
+          "sha256": "56965e5cedfb4dd207350ae8f34b00fef9bdb20e02e033ae0364b4235db6c191"
+        },
+        "helper": {
+          "path": "art/tools/export_art10_blanks.py",
+          "bytes": 8264,
+          "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+        },
+        "source": {
+          "path": "art/production/art32/question-v1.png",
+          "bytes": 2256926,
+          "sha256": "3367dcaab9ed0bd74e072e6d66e5c1049969295ddd49d67386c39aa58b2e226c",
+          "dimensions": {
+            "width": 1774,
+            "height": 887
+          },
+          "format": "png",
+          "mode": "RGB",
+          "alpha": false,
+          "alphaProof": {
+            "transparentPixels": 0,
+            "solidPixels": 1573538,
+            "intermediatePixels": 0,
+            "min": 255,
+            "max": 255
+          },
+          "alphaBBox1": [
+            0,
+            0,
+            1774,
+            887
+          ],
+          "alphaBBox16": [
+            0,
+            0,
+            1774,
+            887
+          ],
+          "rgbaSHA256": "9429dc89f88f13e91ba6407a2cac83220b2d17418d3a53fafa2e048cfc97abeb"
+        },
+        "runtime": {
+          "path": "web/public/art/v2/milestones/heart-court-v1.webp",
+          "bytes": 99604,
+          "sha256": "97048fae773e77a915c251a80c2526482e4a5a94a8d5b6ff52a8377875d87582",
+          "dimensions": {
+            "width": 1536,
+            "height": 768
+          },
+          "format": "webp",
+          "mode": "RGB",
+          "alpha": false,
+          "alphaProof": {
+            "transparentPixels": 0,
+            "solidPixels": 1179648,
+            "intermediatePixels": 0,
+            "min": 255,
+            "max": 255
+          },
+          "alphaBBox1": [
+            0,
+            0,
+            1536,
+            768
+          ],
+          "alphaBBox16": [
+            0,
+            0,
+            1536,
+            768
+          ],
+          "rgbaSHA256": "e120fdc757f7d4a1deaf711554d6cd2c8a02e9be46a6e84ec14e0602f1ba8ba0"
+        },
+        "prompts": [
+          {
+            "path": "art/production/art32/question-prompt.json",
+            "bytes": 1792,
+            "sha256": "73ca3ad4f13078439d5dc58f5d7843ca00ece2cca0b398e2ce0f78db8806b965"
+          }
+        ],
+        "audit": {
+          "path": "art/production/art32/question-audit.json",
+          "bytes": 1424,
+          "sha256": "46407ecb7e027ebc8432fc0975697a7d135d23bca01c4df9d447b0c12faf5c6f"
+        },
+        "encoding": [
+          "cwebp",
+          "-q",
+          "82",
+          "-m",
+          "6",
+          "-resize",
+          "1536",
+          "0",
+          "-metadata",
+          "none"
+        ],
+        "decoder": "Pillow",
+        "decoderVersion": "12.3.0",
+        "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+        "transform": {
+          "uniformScale": 0.8658399098083427,
+          "crop": false,
+          "semanticEdit": false,
+          "outputWidth": 1536,
+          "outputHeight": 768
+        },
+        "doubleExport": {
+          "bytesEqual": true,
+          "firstSHA256": "97048fae773e77a915c251a80c2526482e4a5a94a8d5b6ff52a8377875d87582",
+          "secondSHA256": "97048fae773e77a915c251a80c2526482e4a5a94a8d5b6ff52a8377875d87582",
+          "sourceUnchanged": true
+        },
+        "userAcceptance": false
+      },
+      "ending": {
+        "format": "chenyuan-art32-export",
+        "version": 1,
+        "producer": {
+          "path": "art/tools/export_art32_stages.py",
+          "bytes": 3726,
+          "sha256": "56965e5cedfb4dd207350ae8f34b00fef9bdb20e02e033ae0364b4235db6c191"
+        },
+        "helper": {
+          "path": "art/tools/export_art10_blanks.py",
+          "bytes": 8264,
+          "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+        },
+        "source": {
+          "path": "art/production/art32/ending-v1.png",
+          "bytes": 2695336,
+          "sha256": "37c4e5d5d92a1444f84facad37135ce69c325ee59604a7a01403fd496ea6dafc",
+          "dimensions": {
+            "width": 1774,
+            "height": 887
+          },
+          "format": "png",
+          "mode": "RGB",
+          "alpha": false,
+          "alphaProof": {
+            "transparentPixels": 0,
+            "solidPixels": 1573538,
+            "intermediatePixels": 0,
+            "min": 255,
+            "max": 255
+          },
+          "alphaBBox1": [
+            0,
+            0,
+            1774,
+            887
+          ],
+          "alphaBBox16": [
+            0,
+            0,
+            1774,
+            887
+          ],
+          "rgbaSHA256": "32006af5101082abcf0674438e462fb4e82b4a07b0dde96d6cd52870567a85f2"
+        },
+        "runtime": {
+          "path": "web/public/art/v2/milestones/heaven-gate-v1.webp",
+          "bytes": 153512,
+          "sha256": "bd2034f2641aed54747d749308c08cbaa537ace1b62c015eeccf6e6d2c62e665",
+          "dimensions": {
+            "width": 1536,
+            "height": 768
+          },
+          "format": "webp",
+          "mode": "RGB",
+          "alpha": false,
+          "alphaProof": {
+            "transparentPixels": 0,
+            "solidPixels": 1179648,
+            "intermediatePixels": 0,
+            "min": 255,
+            "max": 255
+          },
+          "alphaBBox1": [
+            0,
+            0,
+            1536,
+            768
+          ],
+          "alphaBBox16": [
+            0,
+            0,
+            1536,
+            768
+          ],
+          "rgbaSHA256": "fa5166902e2b72508fe7f9b9cb818039be25ad0e27349c2af1f33e0b14d87af0"
+        },
+        "prompts": [
+          {
+            "path": "art/production/art32/ending-prompt.json",
+            "bytes": 1806,
+            "sha256": "c5c3584f75d3b33321fde6d49d6ad603e1bd3e184e066eaf0f53922cedfa417c"
+          }
+        ],
+        "audit": {
+          "path": "art/production/art32/ending-audit.json",
+          "bytes": 1409,
+          "sha256": "aac421bc16dc1580bd41ef27d0579891cd2c3ea5205edf5c7d7c7a126b1c04ad"
+        },
+        "encoding": [
+          "cwebp",
+          "-q",
+          "82",
+          "-m",
+          "6",
+          "-resize",
+          "1536",
+          "0",
+          "-metadata",
+          "none"
+        ],
+        "decoder": "Pillow",
+        "decoderVersion": "12.3.0",
+        "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+        "transform": {
+          "uniformScale": 0.8658399098083427,
+          "crop": false,
+          "semanticEdit": false,
+          "outputWidth": 1536,
+          "outputHeight": 768
+        },
+        "doubleExport": {
+          "bytesEqual": true,
+          "firstSHA256": "bd2034f2641aed54747d749308c08cbaa537ace1b62c015eeccf6e6d2c62e665",
+          "secondSHA256": "bd2034f2641aed54747d749308c08cbaa537ace1b62c015eeccf6e6d2c62e665",
+          "sourceUnchanged": true
+        },
+        "userAcceptance": false
+      }
+    },
+    "userAcceptance": false
+  }
+}

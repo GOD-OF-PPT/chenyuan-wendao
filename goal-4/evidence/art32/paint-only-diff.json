@@ -1,0 +1,15 @@
+{
+  "beforeFull262Runtime": "344c1fd5338a78619ffb746e4e0094b66f91c399816a0412922aab39c0e6f93d",
+  "currentRuntime": "8cfb7f04645a870943083bd76a394fa56748d040381143426a2f3c7c386805a2",
+  "changedRuntimeFile": [
+    "web/src/narrative-objects.css"
+  ],
+  "unchangedRuntimeInputs": 308,
+  "exactSuffix": "\n#app .art32-threshold .response-figure>figcaption,#app .art32-threshold .response-presence>small,#app .art32-threshold .narrative-object-cycle{background:#0b2932f5;text-shadow:0 1px 2px #031c25}\n",
+  "onlyPaintProperties": [
+    "background",
+    "text-shadow"
+  ],
+  "noGeometryDomEngineOrTimingChange": true,
+  "oldFull262NeverRetaggedAsCurrent": true
+}

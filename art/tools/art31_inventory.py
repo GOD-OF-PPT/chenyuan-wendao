@@ -27,7 +27,8 @@ def validate_art31(root,image_reader):
  assert [r['path']for r in m['files']]==FILES and m['sourceReferences']==REFS and m['baselines']==BASELINES and m['unchanged']==UNCHANGED,'ART31 original scope and sources'
  for r in m['files']+BASELINES:identity(r)
  for n in REFS:local(n)
- for n,h in UNCHANGED.items():assert digest(n)==h,'ART31 original renderer/reading/clock/proof'
+ from art32_inventory import normalize_art32_view
+ for n,h in UNCHANGED.items():assert (hashlib.sha256(normalize_art32_view(n,local(n).read_text()).encode()).hexdigest()if n in ['web/src/NarrativePanel.vue','web/src/ResponseTable.vue']else digest(n))==h,'ART31 original renderer/reading/clock/proof'
  assert local(FILES[-1]).stat().st_size<=14000,'ART31 old CSS cap'
  for key,field,cap in [('narrative-objects','maxNativeBytes',45000),('story-journey','maxNewBytes',48000),('action-feedback','maxBytes',34000)]:
   d=json.loads(local('art/redesign/'+key+'.json').read_text());assert d[field]==cap and sum(local(r['path']).stat().st_size for r in d['files'])<=cap,'ART31 original group cap'

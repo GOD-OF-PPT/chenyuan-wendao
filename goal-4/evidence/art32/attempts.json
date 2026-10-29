@@ -1,0 +1,205 @@
+{
+  "task": "ART32",
+  "originalAttemptsAndSourcesKept": true,
+  "noAutoRetryTimeoutRaisesOrDeletedGameAssertions": true,
+  "attempts": [
+    {
+      "name": "baseline-domains",
+      "explanation": "current original QUESTION/END baseline lawful readonly UI",
+      "report": {
+        "path": "artifacts/goal-4/art32/baseline-domains.json",
+        "bytes": 12600,
+        "sha256": "66ba742939c27c5f06ddc7dee7f272e052a03a8232ba945ed9d19d15337dd704"
+      },
+      "stats": {
+        "startTime": "2026-10-29T15:31:34.272Z",
+        "duration": 9080.007,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "logs": [
+        "artifacts/goal-4/art32-baseline.log"
+      ]
+    },
+    {
+      "name": "old-red",
+      "explanation": "2 real missing-stage reds before implementation",
+      "report": {
+        "path": "artifacts/goal-4/art32/old-red-report.json",
+        "bytes": 17923,
+        "sha256": "087bc6627d54cd701205d06e62f0f97110610363bc7498512a4698515d61b401"
+      },
+      "stats": {
+        "startTime": "2026-10-29T15:47:35.274Z",
+        "duration": 29441.864,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 2,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "logs": [
+        "artifacts/goal-4/art32/old-red.log"
+      ]
+    },
+    {
+      "name": "early",
+      "explanation": "2 ready checks green, actual pixels revealed old flex/skin oversized tabs",
+      "report": {
+        "path": "artifacts/goal-4/art32/early-report.json",
+        "bytes": 5260,
+        "sha256": "fddeba3200dcc93edd4ebfae3c31203968f0f31a174e67ff5919c784a230881e"
+      },
+      "stats": {
+        "startTime": "2026-10-29T15:58:26.069Z",
+        "duration": 8561.285,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "logs": [
+        "artifacts/goal-4/art32/early.log"
+      ]
+    },
+    {
+      "name": "new-eight",
+      "explanation": "8 red:2 actual modal title Range defects,6 author14px auxiliary classification failures",
+      "report": {
+        "path": "artifacts/goal-4/art32/new-eight-report.json",
+        "bytes": 491626,
+        "sha256": "ad7adc77bb09573995ec77be29af1fffb78b7f81b652a0e0e3757d5eb910e7cb"
+      },
+      "stats": {
+        "startTime": "2026-10-29T16:21:00.439Z",
+        "duration": 68364.587,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 8,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "logs": [
+        "artifacts/goal-4/art32/new-eight.log"
+      ]
+    },
+    {
+      "name": "new-eight-v2",
+      "explanation": "8 green with full costs/outcomes/native rollback/time; not final source",
+      "report": {
+        "path": "artifacts/goal-4/art32/new-eight-v2-report.json",
+        "bytes": 664567,
+        "sha256": "86e689c4667703231d33c9d6e48d50d923d629e718954e7a45caa6a5a6f9d7a8"
+      },
+      "stats": {
+        "startTime": "2026-10-29T16:27:01.511Z",
+        "duration": 64302.57400000001,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "logs": [
+        "artifacts/goal-4/art32/new-eight-v2.log"
+      ]
+    },
+    {
+      "name": "before-inline-cost-related",
+      "explanation": "owned partial full UI deliberately stopped for actual inline cost/time usability gap; logs/source/trace retained",
+      "terminalJsonReportPresent": false,
+      "logs": [
+        "artifacts/goal-4/art32/before-inline-cost-related.log"
+      ]
+    },
+    {
+      "name": "before-backing-related",
+      "explanation": "full262 passed; bright-floor label contrast issue found in actual pixels afterwards",
+      "report": {
+        "path": "artifacts/goal-4/art32/before-backing-related-report.json",
+        "bytes": 19545465,
+        "sha256": "35c640198471579392dce6484ff144f094e05e7917bdb679ff15ba3733882bae"
+      },
+      "stats": {
+        "startTime": "2026-10-29T16:55:32.419Z",
+        "duration": 988950.0399999999,
+        "expected": 262,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "logs": [
+        "artifacts/goal-4/art32/before-backing-related.log"
+      ]
+    },
+    {
+      "name": "backing-old-red",
+      "explanation": "real old label alpha0 red, before backing repair",
+      "report": {
+        "path": "artifacts/goal-4/art32/backing-old-red-report.json",
+        "bytes": 18631,
+        "sha256": "30478cd606514b6afeb1e03c581b001a2d87b9c52ea7d3c73eb8e86ddc0df4b3"
+      },
+      "stats": {
+        "startTime": "2026-10-29T17:16:34.387Z",
+        "duration": 8702.7,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "logs": [
+        "artifacts/goal-4/art32/backing-old-red.log"
+      ]
+    },
+    {
+      "name": "current-ui",
+      "explanation": "current full8 after caption-paint fix, complete original Game and new contrast proofs",
+      "report": {
+        "path": "artifacts/goal-4/art32/current-ui-report.json",
+        "bytes": 695006,
+        "sha256": "6124c3e259bc963af839bab9244efe9efeb972c1cf24ebea40675379a883631c"
+      },
+      "stats": {
+        "startTime": "2026-10-29T17:24:14.085Z",
+        "duration": 64128.710999999996,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "logs": [
+        "artifacts/goal-4/art32/current-ui.log"
+      ]
+    },
+    {
+      "name": "native",
+      "explanation": "current14 original four-file migration profile",
+      "report": {
+        "path": "artifacts/goal-4/art32/native-report.json",
+        "bytes": 19138,
+        "sha256": "11bb9690c1cb9a83ca46751937c8c4b9b49aaac5d31b1b4c9313cfe666fdee66"
+      },
+      "stats": {
+        "startTime": "2026-10-29T17:27:37.206Z",
+        "duration": 25270.65,
+        "expected": 14,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "reportErrors": 0,
+      "logs": [
+        "artifacts/goal-4/art32/native.log"
+      ]
+    }
+  ],
+  "toolPreparationNote": "One duplicate optional view-archive step found its already-moved file absent after valid1224 freeze/tested build were written. Revalidated all1224 hashes and original live test handle; did not restart due to observation timeout. Not a product failure."
+}

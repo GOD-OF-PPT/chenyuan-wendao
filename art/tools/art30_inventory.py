@@ -28,12 +28,13 @@ def validate_art30(root,image_reader):
  assert [r['path']for r in m['files']]==FILES and m['sourceReferences']==REFS and m['baselines']==BASELINES and m['unchanged']==UNCHANGED,'ART30 original scope and sources'
  for r in m['files']+BASELINES:identity(r)
  for n in REFS:local(n)
- for n,h in UNCHANGED.items():assert digest(n)==h,'ART30 original portrait/controller/clock/proof'
+ from art32_inventory import normalize_art32_view
+ for n,h in UNCHANGED.items():assert (hashlib.sha256(normalize_art32_view(n,local(n).read_text()).encode()).hexdigest()if n in ['web/src/NarrativePanel.vue','web/src/ResponseTable.vue']else digest(n))==h,'ART30 original portrait/controller/clock/proof'
  assert local(FILES[-1]).stat().st_size<=14000,'ART30 old CSS cap'
  for key,field,cap in [('narrative-objects','maxNativeBytes',45000),('story-journey','maxNewBytes',48000),('action-feedback','maxBytes',34000)]:
   d=json.loads(local('art/redesign/'+key+'.json').read_text());assert d[field]==cap and sum(local(r['path']).stat().st_size for r in d['files'])<=cap,'ART30 original group cap'
  for i,name in enumerate(['EncounterTable','ResponseTable']):
-  original=identity(BASELINES[i]).decode();actor=local(FILES[i]).read_text();condition="['shen','lu','pei','yan'].includes(portrait)"+("&&mode!=='journal'"if i==0 else'')
+  original=identity(BASELINES[i]).decode();actor=normalize_art32_view(FILES[i],local(FILES[i]).read_text());condition="['shen','lu','pei','yan'].includes(portrait)"+("&&mode!=='journal'"if i==0 else'')
   marker='class="'+('encounter-table narrative-object art12-encounter'if i==0 else'response-table narrative-object art12-response')+'"'
   expected=original.replace(marker,marker+' :class="{\'art30-meeting\':'+condition+'}"',1)
   pos=expected.index('\n',expected.index(' <div class="'+('encounter-table'if i==0 else'response-table')))
