@@ -203,5 +203,15 @@
     "maximal C-end/code/security review"
   ],
   "scope": "1440x900/font1 single Chromium only; no compatibility or environment performance development/testing.",
-  "postCommitIdentity": "pending actual code commit and same-runtime rebuild/freeze/HTTP/readonly original preview"
+  "postCommitIdentity": {
+    "codeCommit": "e63fa7d792584623765b62e2a3f8251abe0bf1b2",
+    "runtimeInputs": 305,
+    "payloadFiles": 96,
+    "payloadBytes": 10105564,
+    "gitTestedRebuiltFrozenHttpExact": true,
+    "previewPublicDomExact": true,
+    "noReloadOrServerRestart": true,
+    "notCleanCandidate": true,
+    "proof": "identity-proof.json"
+  }
 }

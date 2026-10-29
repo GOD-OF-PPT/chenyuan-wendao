@@ -1,0 +1,33 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "codeCommit": "e63fa7d792584623765b62e2a3f8251abe0bf1b2",
+  "runtimeDigest": "a2c0a75b0449ecd535186862ebf94e109d90404d76b63a38f74ba79dc080e485",
+  "before": {
+    "dialogs": 0,
+    "executions": 0,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-DzRQJcfd.js",
+    "save": "已保存",
+    "styles": [
+      "./assets/index-BZys8YxJ.css"
+    ],
+    "url": "http://127.0.0.1:56884/"
+  },
+  "after": {
+    "dialogs": 0,
+    "executions": 0,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-DzRQJcfd.js",
+    "save": "已保存",
+    "styles": [
+      "./assets/index-BZys8YxJ.css"
+    ],
+    "url": "http://127.0.0.1:56884/"
+  },
+  "publicDomExact": true,
+  "noUserDbOrFullGameRead": true,
+  "noGameActionOrImportRestoreRestartPause": true,
+  "noReloadOrServerRestart": true,
+  "noViewportOverride": true,
+  "scope": "Original Chrome public DOM and HTTP identity only. Natural viewport is not a compatibility test; no claim that entire user DB or unseen in-memory Game was inspected."
+}

@@ -1,0 +1,11 @@
+# CHECK-ART27-29 三舞台综合检查交付
+
+2026-10-29，代码e63fa7d792584623765b62e2a3f8251abe0bf1b2，运行a2c0a75b0449ecd535186862ebf94e109d90404d76b63a38f74ba79dc080e485。[0065合同](../decisions/0065-art27-29-cross-check-contract.md)检查法宝、丹炉与行囊的跨页/真实库存/独立草案/原时钟、native quota全回滚与原命令唯一重试、暂停沿累计预算、另一页完整CP恢复后的旧人生查看隔离。完整Game/Activity/全部DB/费用/原件与回执核对；3新例使用虚拟钟推进原完整周期，原全UI另含真实在线单周期，不代真人长线。0生产修缮/新画/数值/时长/模块或cap变化。
+
+675当前UI有精确声明（668整轮＋7原慢例，非一轮675）与415native整轮通过。**正常32整轮不是全绿：31过/符修刷新整例240秒超时；现场已核36回合/36刷新和三关完成。** 未改源码/原2worker/240秒/0retry的完整两派文件定向2过174933/226891ms，当前32覆盖是原未变30基础/引导＋定向2。CHECK2729-J01原因unknown保留open，最终干净候选仍欠完整32单轮门槛，不以定向绿冒修复。原report/log/trace/图片全部保；见[原尝试](../../goal-4/evidence/check-art27-29/attempts.json)、[完整覆盖](../../goal-4/evidence/check-art27-29/coverage-audit.json)。
+
+873规则工具、先根115与完整沙盒115正向后504唯一资源方法、root/Vue类型构建及3旧场景producer verify过。三新例的泛词/辅助字号/法宝数据域作者前提红保，按正式描述/14px辅助/ownedRelics补正后整3过；原生产字体、18/14/44、Game/全库/成本/原时限不减。1134冻结输入在验证终端全同，之后仅本收尾记录变更。16当前代表图（8合法后期规则前缀入口＋8组合）11fresh逐张实看/5本轮已审整PNG字节同继承；原PNG/同尺寸JPEG68/hash保，每次至多2，前缀图不冒正常UI赚取过程。见[检查](../../goal-4/evidence/check-art27-29/checks.json)、[像素](../../goal-4/evidence/check-art27-29/visual-review.json)、[杠精审查](../../goal-4/evidence/check-art27-29/review.md)。
+
+305 Git运行blob/受测/重建/冻结同，96载荷10105564B与原56884 HTTP解码hash同，原helper1d84e4a5与ART29服务保持。原Chrome只读公开HUD/资源前后同，0用户DB/完整用户Game读取/用户档测试/导入恢复重开/暂停或Game动作；无服务重启/页面重载/窗口覆盖。13在途hash未改未提交，dirty本地工程版，无push/合并/公开部署/权限变更。见[身份](../../goal-4/evidence/check-art27-29/identity-proof.json)、[原试玩](../../goal-4/evidence/check-art27-29/user-preview.json)。
+
+三任务周期归零，下一唯一ART30：仙缘人物会面场景与当前回应决定，先合同/参数/原能力cap/素材/验收回滚再实装，生平另排。当前仅1440×900/font1单Chromium，不兼容/环境性能；J01、ART28-OBS-01、ART17原四红与整体美术/游戏感、全部后段矩阵/兼容最后/干净同源包/最大C端代码安全review/长期平衡/真人均仍未完，Goal不标complete。

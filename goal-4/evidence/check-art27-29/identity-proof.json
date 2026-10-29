@@ -1,0 +1,21 @@
+{
+  "codeCommit": "e63fa7d792584623765b62e2a3f8251abe0bf1b2",
+  "runtimeDigest": "a2c0a75b0449ecd535186862ebf94e109d90404d76b63a38f74ba79dc080e485",
+  "runtimeInputs": 305,
+  "payloadFiles": 96,
+  "payloadBytes": 10105564,
+  "allRuntimeGitTestedCurrentExact": true,
+  "testedRebuiltFrozenExact": true,
+  "helperSHA256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "runtimeChangesThisCheck": 0,
+  "sourceReportsRetagged": false,
+  "protected13Exact": true,
+  "dirtyEngineeringVersion": true,
+  "runningServer": "Existing ART29 frozen server PID26191 port56884; no restart/reload.",
+  "httpDecodedAllExact": true,
+  "httpProof": "artifacts/goal-4/check-art27-29/http-identity.json",
+  "httpProofSHA256": "a52549ac4646d82d31f5ab250372809728df28c3eb279b2b517ac83ade473ba6",
+  "testedHead": "03c7031ce0b2fb776ca446447c6bf15c41484be2",
+  "finalNormalWholeRunAccepted": false,
+  "openNormalIssue": "CHECK2729-J01"
+}
