@@ -477,3 +477,5 @@ ART32依[0068](docs/decisions/0068-milestone-decision-art32-contract.md)与本�
 ART32实证：consumption仅提示“追踪物资会缺”，无缺口为空，不能冒成本。当前作答/收卷要直接显示原正式quote的实际成本、整次6/12秒及仅一次，完整详情与原确认仍保；预览不等于已安排。场景亮地面会令人物名/说明/周期小字难读，必须实拍并核实际背景/前景，纯补实底/阴影不改盒或原Game。此处alpha≥.95与对白底最亮情况合成对比≥4.5是项目定点回归；实际≥.96/8.44，不冒全UI/认证或兼容。修补前完整262与其后纯绘制修补的新源8必须保真实source/报告身份，不能改标签合并为最终源整轮绿；最终完整矩阵/三任务综合及整体艺术长期真人义务保。
 
 CHECK-ART30-32依[0069](docs/decisions/0069-art30-32-cross-check-contract.md)与本轮XAG112/MDN close实读：跨页阅读不取消原生事务，也不把原当前动作授权交给新页/新人生；阶段真实变化后旧临时story来源失效，返回稳定主舞台再查看实际人物事实，不强返过期对话。入劫CP须取前完整准备，别页明确恢复只沿原0.6秒/full proof，旧问心确认应撤销不续答。真实封卷只在原子保存后沿原effect/sequence一次，旧查看/刷新不演。完整声明/原慢例/原时限与原失败及源身份保；J01unknown、ART17/ART28-OBS-01和所有最终义务不因检查绿关闭，当前兼容/环境性能暂停。
+
+CHECK-ART30-32局修实证：别页完整恢复后Game/全DB正确仍不代表旧未批准确认已退场。useMilestoneReview仅新run/旧prepared且无原canRetryFor时清review引用；不调用close/discard、不取消native或动原冻结命令，只读原安排与同run CAS守卫保持。保v2/probe原红与spirit作者前提记录，当前32整轮过不冒旧J01根因已修；像素/完整source/原意图和真人分层，当前暂停边界不变。

@@ -101,5 +101,24 @@
     "thisNormal32PassedDoesNotProveHistoricalRootCauseFixed": true
   },
   "formalTimeLimitsAndAssertionsUnchanged": true,
-  "automaticRetry": 0
+  "automaticRetry": 0,
+  "previewSwitchAuthorError": {
+    "firstPreflight": "author expected only p5752; lsof also supplied f3; assertion before any signal",
+    "followingStart": "Address already in use because unchanged old static preview still owned56884; no reload or user Game action",
+    "correction": "filter only documented p PID records, still exact5752 and exact old server command; preserve full raw fields",
+    "scope": "preflight/launch author error, not Game/save failure"
+  },
+  "previewThenVerifiedServerAndDecoded100Resources": true,
+  "closeoutAuthorManifestPremise": {
+    "authorPremise": "expected README among1234 frozen paths; original declaration did not include it",
+    "actualDeclaredChanged": [
+      "AGENTS.md",
+      "goal-4/plan.md",
+      "goal-4/tasks.md"
+    ],
+    "assertionOccurredBeforeWritingProofOrChangingAnyRuntime": true,
+    "correction": "keep original freeze exactly; require3 actual declared docs changes and separately record README closeout",
+    "runtimeInputsStillExact": 309,
+    "protected13Exact": true
+  }
 }

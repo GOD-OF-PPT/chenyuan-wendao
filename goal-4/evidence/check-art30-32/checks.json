@@ -2,7 +2,7 @@
   "date": "2026-10-30",
   "task": "CHECK-ART30-32",
   "contract": "docs/decisions/0069-art30-32-cross-check-contract.md",
-  "status": "actual checks passed; independent commit and preview identity closeout pending",
+  "status": "scoped_engineering_check_delivered",
   "runtimeDigest": "2461902ca0c5456274f8de410a44e1a08941a51144c33f1f6b8efbfe562be45c",
   "runtimeInputs": 309,
   "scope": "fixed1440x900/font1/singleChromium only",
@@ -88,5 +88,8 @@
     "overall art/gamefeel/long balance/human acceptance",
     "all final matrices/clean same-version package/maximal C-end code security review"
   ],
-  "compatibilityAndEnvironmentPerformance": "paused"
+  "compatibilityAndEnvironmentPerformance": "paused",
+  "codeCommit": "18e97881e64c94387c3cedadb1b697b8d4237ac1",
+  "sourceIdentity": "goal-4/evidence/check-art30-32/identity-proof.json",
+  "preview": "goal-4/evidence/check-art30-32/user-preview.json"
 }

@@ -1,0 +1,44 @@
+{
+  "codeCommit": "18e97881e64c94387c3cedadb1b697b8d4237ac1",
+  "runtimeDigest": "2461902ca0c5456274f8de410a44e1a08941a51144c33f1f6b8efbfe562be45c",
+  "runtimeInputs": 309,
+  "payloadFiles": 100,
+  "payloadBytes": 10637346,
+  "gitTestedRebuiltFrozenExact": true,
+  "helperSHA256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "protected13Exact": true,
+  "dirtyEngineeringVersion": true,
+  "testedHead": "773aae983f03768113c5e8278e0ee686ddbde8e2",
+  "wholeUi691Plus7": true,
+  "native415Whole": true,
+  "normal32WholeGateAccepted": true,
+  "oldJ01CauseStillUnknown": true,
+  "frozen": "artifacts/goal-4/check-art30-32/committed-frozen",
+  "httpDecodedAllExact": true,
+  "originalPreviewPublicHudExact": true,
+  "httpProof": {
+    "path": "artifacts/goal-4/check-art30-32/preview-http.json",
+    "bytes": 27332,
+    "sha256": "7e03189c267ba2b1c81695c41f9d885ecee8dbe563bd5bf58ca7b10146fee69f"
+  },
+  "beforeHttpProof": {
+    "path": "artifacts/goal-4/check-art30-32/preview-before-http.json",
+    "bytes": 27332,
+    "sha256": "250acb534ab6c52e5610ac49e0f3b14c79cdaff4d2c02e5d8781693e1436fec8"
+  },
+  "previewServer": {
+    "pid": 21173,
+    "command": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python artifacts/goal-4/check-art30-32/committed-frozen/serve.py --port 56884",
+    "session": 43907,
+    "url": "http://127.0.0.1:56884/"
+  },
+  "noUserDbOrFullGameRead": true,
+  "finalInputsTerminalBeforeCloseoutExact": 1234,
+  "afterCloseoutOnlyThreeDeclaredNonRuntimeRecordsChanged": [
+    "AGENTS.md",
+    "goal-4/plan.md",
+    "goal-4/tasks.md"
+  ],
+  "allOtherFrozen1231InputsStillExact": true,
+  "readmeOutsideOriginalFreezeChangedOnlyAsCloseoutRecord": true
+}

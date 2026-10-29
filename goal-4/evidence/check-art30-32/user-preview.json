@@ -1,0 +1,73 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "codeCommit": "18e97881e64c94387c3cedadb1b697b8d4237ac1",
+  "runtimeDigest": "2461902ca0c5456274f8de410a44e1a08941a51144c33f1f6b8efbfe562be45c",
+  "before": {
+    "dialogs": 0,
+    "editableFocused": false,
+    "executions": 0,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-QWlEB_GG.js",
+    "portrait": "ready",
+    "size": [
+      1440,
+      756
+    ],
+    "styles": [
+      "./assets/index-CdyjqoI2.css"
+    ],
+    "url": "http://127.0.0.1:56884/"
+  },
+  "after": {
+    "dialogs": 0,
+    "editableFocused": false,
+    "executions": 0,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-NjsmXw9b.js",
+    "portrait": "ready",
+    "size": [
+      1440,
+      756
+    ],
+    "styles": [
+      "./assets/index-CdyjqoI2.css"
+    ],
+    "url": "http://127.0.0.1:56884/"
+  },
+  "publicHudExact": true,
+  "readyPortraitAndCurrentJs": true,
+  "noUserDbOrFullGameRead": true,
+  "noGameActionOrImportRestoreRestartPause": true,
+  "reloadAndOwnStaticPreviewSwitchAfterSavedStoppedNoEdit": true,
+  "noViewportOverride": true,
+  "scope": "Original Chrome public DOM/resources only. Natural1440x756 observation is not compatibility acceptance or proof of unseen full user DB.",
+  "image": {
+    "original": {
+      "path": "artifacts/goal-4/check-art30-32/user-preview.png",
+      "bytes": 209243,
+      "sha256": "fa62984034f81deb27bdd434f69c77efc6744590f7ab4c5c80730fe65c5fa516"
+    },
+    "view": {
+      "path": "goal-4/evidence/check-art30-32/user-preview.jpg",
+      "bytes": 181901,
+      "sha256": "1eb7496bded80eb5c7ca8a880926f68a371db0ba63309ae0750b1c74d4ff7142"
+    },
+    "encoding": "same dimensions lossy JPEG68",
+    "actualPixelReviewed": true
+  },
+  "beforeHttp": {
+    "path": "artifacts/goal-4/check-art30-32/preview-before-http.json",
+    "bytes": 27332,
+    "sha256": "250acb534ab6c52e5610ac49e0f3b14c79cdaff4d2c02e5d8781693e1436fec8"
+  },
+  "afterHttp": {
+    "path": "artifacts/goal-4/check-art30-32/preview-http.json",
+    "bytes": 27332,
+    "sha256": "7e03189c267ba2b1c81695c41f9d885ecee8dbe563bd5bf58ca7b10146fee69f"
+  },
+  "switchAuthorAttempts": {
+    "path": "artifacts/goal-4/check-art30-32/preview-switch-attempts.json",
+    "bytes": 431,
+    "sha256": "7a3cbfa55114ee9d452d2aa6560073314b57b30190c46403b1f5c302d5dfb62b"
+  }
+}
