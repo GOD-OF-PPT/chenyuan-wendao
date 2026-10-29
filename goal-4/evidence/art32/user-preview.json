@@ -1,0 +1,68 @@
+{
+  "codeCommit": "c5557f0d2e17ceeb2435080bca0fdc7c86a433fb",
+  "runtimeDigest": "8cfb7f04645a870943083bd76a394fa56748d040381143426a2f3c7c386805a2",
+  "url": "http://127.0.0.1:56884/",
+  "before": {
+    "css": [
+      "./assets/index-DajmLKX5.css"
+    ],
+    "dialogs": 0,
+    "execution": 0,
+    "height": 756,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "modules": [
+      "./assets/index-DOYuYOSo.js"
+    ],
+    "save": "已保存",
+    "url": "http://127.0.0.1:56884/",
+    "width": 1440
+  },
+  "afterLoad": {
+    "css": [
+      "./assets/index-CdyjqoI2.css"
+    ],
+    "dialogs": 0,
+    "execution": 0,
+    "height": 756,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "modules": [
+      "./assets/index-QWlEB_GG.js"
+    ],
+    "portraitReady": "ready",
+    "save": "已保存",
+    "width": 1440
+  },
+  "afterReadonlyObservation": {
+    "dialogs": 0,
+    "execution": 0,
+    "height": 756,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "mainTitle": "引气入体",
+    "save": "已保存",
+    "width": 1440
+  },
+  "publicHudExact": true,
+  "noUserDbOrFullGameRead": true,
+  "noUserSaveTestsImportRestoreRestartPauseOrGameAction": true,
+  "readonlyInteractions": [
+    "reload only after actual publicly saved/stopped state",
+    "observe correct new module/CSS and ready actual player portrait",
+    "observe original current goal and original8 entrance main stage"
+  ],
+  "naturalWindowImage": {
+    "png": "artifacts/goal-4/art32/user-preview.png",
+    "pngSha256": "05f8e7b2e62053f35532127cf9a6b1ffe800e57a5665d1692ebc84bf3d3d1296",
+    "view": "goal-4/evidence/art32/user-preview.jpg",
+    "viewSha256": "8de74b6cb5ccfddc0e7b4cceb9118d1355629af54f7ea6052a11f97fd82d9029",
+    "dimensions": [
+      1440,
+      756
+    ],
+    "lossy": "JPEG68 same original dimensions",
+    "actuallyViewed": true
+  },
+  "noViewportOverride": true,
+  "compatibilityAccepted": false,
+  "lateStageArtPictures": "Lawful isolated QA fixtures, not this original mortal save or normal-route earning",
+  "scope": "PublicHUD/resource identity observation only, not full userDB equality or compatibility/performance acceptance"
+}
