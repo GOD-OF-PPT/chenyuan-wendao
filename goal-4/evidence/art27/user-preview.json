@@ -1,0 +1,73 @@
+{
+  "url": "http://127.0.0.1:56884/",
+  "browser": "original Chrome tab387928607/browser1",
+  "before": {
+    "dialogs": 0,
+    "executions": 0,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-BZrXaK4C.js",
+    "save": "已保存",
+    "styles": [
+      "./assets/index-9sZnLajC.css"
+    ]
+  },
+  "afterReload": {
+    "dialogs": 0,
+    "executions": 0,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-CSoytBS3.js",
+    "save": "已保存",
+    "styles": [
+      "./assets/index-idT6cvfz.css"
+    ]
+  },
+  "afterReadOnlyFuture": {
+    "atelier": "<div class=\"relic-atelier art10-relic-stage\" data-testid=\"relic-atelier\" data-state=\"idle\" data-working=\"false\" data-relic=\"frost_sword\" data-owned=\"false\" data-bound=\"false\"><div data-v-b0fc77c8=\"\" class=\"asset-image study-sanctum relic-sanctum\" data-asset-id=\"relic-workshop\" data-art-state=\"ready\" data-art-path=\"art/v2/workshops/relic-v1.webp\" aria-hidden=\"true\"><!----><img data-v-b0fc77c8=\"\" src=\"http://127.0.0.1:56884/art/v2/workshops/relic-v1.webp\" alt=\"\" aria-hidden=\"true\" loading=\"eager\" decoding=\"async\" style=\"visibility: visible; object-fit: cover; object-position: 50% 50%;\"></div><header class=\"relic-heading\"><small>择器只查看 · 炼成后另行比较认主</small><button data-testid=\"relic-library-open\" class=\"\"><!----><span>翻看器架 · 全部器谱</span></button><!----></header><div class=\"relic-object-stage\"><div class=\"relic-object\" data-testid=\"production-relic-object\"><div data-v-61f4c44e=\"\" class=\"relic-inscription-object\" data-testid=\"relic-inscription-object\" data-relic=\"frost_sword\" data-state=\"idle\" data-phase=\"still\" data-working=\"false\" data-owned=\"false\" data-bound=\"false\" style=\"--relic-approach: 0px; --relic-draw: 0; --relic-fold: 0;\"><div data-v-61f4c44e=\"\" class=\"relic-form-surface\" aria-h",
+    "dialogs": 0,
+    "executions": 0,
+    "hud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+    "module": "./assets/index-CSoytBS3.js",
+    "save": "已保存",
+    "scene": [
+      {
+        "html": "<div data-v-b0fc77c8=\"\" class=\"asset-image study-sanctum relic-sanctum\" data-asset-id=\"relic-workshop\" data-art-state=\"ready\" data-art-path=\"art/v2/workshops/relic-v1.webp\" aria-hidden=\"true\"><!----><img data-v-b0fc77c8=\"\" src=\"http://127.0.0.1:56884/art/v2/workshops/relic-v1.webp\" alt=\"\" aria-hidden=\"true\" loading=\"eager\" decoding=\"async\" style=\"visibility: visible; object-fit: cover; object-position: 50% 50%;\"></div>"
+      }
+    ],
+    "styles": [
+      "./assets/index-idT6cvfz.css"
+    ]
+  },
+  "visibleHudExact": true,
+  "userGameActions": 0,
+  "userStorageRead": false,
+  "userSaveUsedForTests": false,
+  "userPauseImportRestoreRestart": false,
+  "readOnlyNavigation": [
+    "主要页面/法宝",
+    "翻阅四器图谱 ›",
+    "青霜剑 需金丹"
+  ],
+  "sceneReady": true,
+  "futureRelicId": "frost_sword",
+  "owned": false,
+  "bound": false,
+  "state": "idle",
+  "payloadFiles": 94,
+  "runningPackage": "artifacts/goal-4/art27/committed-frozen/web",
+  "sourceDigest": "e7cd37b359ef25ace4056570467b01097536a0bb98d54ee98e1ae5ccadf82246",
+  "viewportOverride": false,
+  "actualWindowPixels": [
+    1440,
+    756
+  ],
+  "scope": "Visible public DOM equality only; no userDB or complete userGame read. Natural user window observed, no compatibility validation.",
+  "screenshot": {
+    "original": "artifacts/goal-4/art27/original-preview.png",
+    "originalSha256": "7e550685a9f251e2ba7e9a0f87dae07f9e1a0e8eaf744968a4e48bd77176601b",
+    "view": "goal-4/evidence/art27/original-preview.jpg",
+    "viewSha256": "9cc7836a0d5ec19194a134ba66d779a86e130251c0220e8c8ed83d7bee201276",
+    "viewEncoding": "same size JPEG68, lossy",
+    "actualPixelReviewed": true
+  },
+  "httpProof": "artifacts/goal-4/art27/committed-http.json"
+}

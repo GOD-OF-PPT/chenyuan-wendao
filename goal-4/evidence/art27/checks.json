@@ -51,6 +51,11 @@
       "path": "artifacts/goal-4/art27/seal-final-positive.log",
       "bytes": 106,
       "sha256": "7156de99e1272230b7f5a8392d8d15419e56801f73c9c12a21aab83bf3c5c8de"
+    },
+    "postDocsRootPositive": {
+      "path": "artifacts/goal-4/art27/post-docs-root-positive.log",
+      "sha256": "9ee75872c3e350606577812b3b3801d13d8a201264a96d1573745c815be0764e",
+      "passed": true
     }
   },
   "typesBuild": {
@@ -163,7 +168,15 @@
     "files": 94,
     "bytes": 9730526
   },
-  "identityAfterCodeCommit": "pending actual Git/rebuild/frozen/HTTP and saved-stopped original preview update",
+  "identityAfterCodeCommit": {
+    "proof": "identity-proof.json",
+    "codeCommit": "9f3aad99509be4b1747263c63c70fd31a72be6fe",
+    "runtime303GitTestedRebuiltFrozenExact": true,
+    "httpAll94DecodedExact": true,
+    "originalSavedStoppedPreviewUpdated": true,
+    "publicHudUnchanged": true,
+    "noUserDbAccess": true
+  },
   "notRun": [
     "whole664 UI",
     "whole415 native",
