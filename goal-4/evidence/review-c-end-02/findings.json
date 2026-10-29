@@ -1,0 +1,198 @@
+{
+  "task": "REVIEW-C-END-02",
+  "findings": [
+    {
+      "id": "CEND02-A01",
+      "severity": "P2",
+      "kind": "game_presentation_improvement",
+      "title": "破庙求药的关键人物仅52×60，主视觉仍由通用药匣和选项容器承担",
+      "reproduce": [
+        "隔离正常新Game进入破庙开场",
+        "查看当前求药主舞台与同源仙缘人物舞台对照"
+      ],
+      "observed": "portrait-shen实际ready且52×60；三种完整选择可用，但人物作为对话主体较弱。三选项同权本身合理，不应推荐某一道德选择。",
+      "impact": "第一印象与剧情代入仍弱，属于用户持续指出的游戏感/美术短板；不是Game机制阻断。",
+      "owner": [
+        "web/src/App.vue:675",
+        "web/src/MilestoneGate.vue",
+        "web/src/milestone-objects.css"
+      ],
+      "evidence": [
+        "opening-observation.json",
+        "capture-opening-current-subject-and-choice-hierarchy",
+        "functional-eight-tab-3"
+      ],
+      "recommendation": "下一ART33以已有沈清禾和可辨药匣组织一个抉择舞台；保三选项/全部正文/成本详情/原确认/6秒与只读返回，实际受理和原子结果后才反馈，不代选/新奖励。",
+      "acceptance": "先新合同/预算；原三开场正常路径与原6秒/全Game存档；场景/人物/药匣/当前选择主次及失败/减效/完整内容实际像素。",
+      "status": "open_not_fixed_this_review"
+    },
+    {
+      "id": "CEND02-A02",
+      "severity": "P2",
+      "kind": "visual_hierarchy_improvement",
+      "title": "采集／委托的来源菜单与收益文字仍直接混入细碎亮场景",
+      "reproduce": [
+        "历练→采集/委托→山野采药",
+        "切青云宗宗门杂务并查看真实入囊/草案"
+      ],
+      "observed": "标题、来源小列、页码和收益信息散布在高细节场景上，右状态、下授权与画面同时争夺注意。实际对象、有限预算和结果存在。",
+      "impact": "相比已重排丹炉/法宝/人物页，读取当前来源和操作层级更费力；这是当前像素定性审查，不冒全局对比度数值不合格。",
+      "owner": [
+        "web/src/SourcePlanner.vue",
+        "web/src/SourceField.vue",
+        "web/src/SourceCommission.vue",
+        "web/src/idle-sources.css",
+        "web/src/ta08-source.css",
+        "web/src/art02-source.css"
+      ],
+      "evidence": [
+        "subplay-source-herbs",
+        "subplay-source-commission"
+      ],
+      "recommendation": "后续ART34归拢当前来源与一个主要决定，给实际文字稳定阅读带和来源选中态，保场景对象/完整16来源/全部费用/预算/回执与按需详情，不缩字/裁字/删能力。",
+      "acceptance": "先合同/旧cap；所有自然物与10委托真实像素/字和按钮边界、完整目录与实际逐周期/原子保存，读页不接活动。",
+      "status": "open_not_fixed_this_review"
+    },
+    {
+      "id": "CEND02-I01",
+      "severity": "P2",
+      "kind": "factual_copy_defect",
+      "title": "已撤退且无任何当前遭遇时，目标页仍要求先处理眼前的遭遇",
+      "reproduce": [
+        "正式2引准备→15秒入劫→6秒回答→3秒撤退",
+        "在洞府打开目标页，修为/余引齐、仅缺登仙台地点"
+      ],
+      "observed": "新捕获证明phase=idle、battle/trial/activeEvent均无且真CP存在；goal有前往登仙台却仍显示“先处理眼前的遭遇，目标会随实际进度更新”。",
+      "impact": "错误描述下一步，容易再寻找不存在的遭遇；真实前往仍能完成，非核心流程死锁。",
+      "owner": [
+        "web/src/GoalPanel.vue"
+      ],
+      "evidence": [
+        "target-observation.json",
+        "capture-idle-recovery-goal-before-explicit-travel"
+      ],
+      "recommendation": "UX24按实际formal失败/缺口/地点和阶段呈现，避免把所有未允许情况都写遭遇；不动正式门槛/历史proof。",
+      "acceptance": "同一idle地点缺口旧红→新正确措辞；opening/event/trial/ended/真正资源不足各保真，查看全库不变。",
+      "status": "open_not_fixed_this_review"
+    },
+    {
+      "id": "CEND02-T01",
+      "severity": "P2",
+      "kind": "pre_action_information_gap",
+      "title": "部分直接执行入口未在动作前说明真实周期",
+      "reproduce": [
+        "目标页异地“前往登仙台”",
+        "登仙台主舞台“返回洞府修行”",
+        "第一天劫默认战局查看“开始自动斗法”前的常驻授权"
+      ],
+      "observed": "目标按钮只有“不消耗物资”，补采preActionSixSecondNotice=false，但按下后真6秒/全proof正确；登仙台返回亦仅物资成本；自动斗法主区列40回合/MP/药物/危险而未常驻每招3秒。历练地图则明确“一次6秒”。",
+      "impact": "同类操作的时间代价预期不一致；并非缺执行倒计时或提前结算。",
+      "owner": [
+        "web/src/GoalPanel.vue",
+        "web/src/App.vue",
+        "web/src/BattleStrategy.vue"
+      ],
+      "evidence": [
+        "target-observation.json",
+        "capture-actual-travel-only-after-explicit-click",
+        "trial-ready-home",
+        "trial-battle-home",
+        "functional-eight-tab-1"
+      ],
+      "recommendation": "后续UX24/直接执行周期前告按正式周期来源显示，明确异地行旅与原地即时查看；自动战策说明逐招3秒，不能把最大回合数当保证总时长。",
+      "acceptance": "原地查看不加假计时，异地当前6秒及战斗3秒前后语义一致；保原period/成本/预算/5999+1/全Game和原子proof。",
+      "status": "open_not_fixed_this_review"
+    },
+    {
+      "id": "CEND02-I02",
+      "severity": "P2",
+      "kind": "draft_context_clarity",
+      "title": "剑简已在运行，默认安排标题仍是待确认而未明确下次草案",
+      "reproduce": [
+        "合法可研读剑简的符修付费开启原60秒一次参悟",
+        "留剑简页，不点击查看原安排"
+      ],
+      "observed": "HUD“参悟进行中”与实际59.8秒、局部60秒同时存在，默认preparation-plan-state却写“待确认的新安排，确认后才开始”。Recovery/Market已有“下次安排草案·当前执行见活动条”分支；LearningPlanner共用分支尚缺该语义。",
+      "impact": "玩家可能以为刚才的参悟未受理；原资金/命令/活动实际正确，不能把草案改称已保存来遮掩。",
+      "owner": [
+        "web/src/LearningPlanner.vue:76"
+      ],
+      "evidence": [
+        "subplay-study-manual",
+        "web/src/RecoveryPlanner.vue:39",
+        "web/src/LearningPlanner.vue:76"
+      ],
+      "recommendation": "后续仅明确当前已保存活动与下次草案，保存标记仍由原活动/回执和真正查看原安排产生；保清单/预算/比较/原重试。",
+      "acceptance": "剑简与共用研习的运行/暂停/保存错误/原安排查看/更改草案/刷新各保真，原60/30秒与完整Game不动。",
+      "status": "open_not_fixed_this_review"
+    },
+    {
+      "id": "CEND02-A03",
+      "severity": "P3",
+      "kind": "art_direction_suggestion",
+      "title": "经卷／剑简／疗养的原生几何静物与已绘制角色器物风格仍有落差",
+      "reproduce": [
+        "查看剑简/研习席和疗养页",
+        "与修法剑架、法宝铸器与NPC人物景对照"
+      ],
+      "observed": "绿色几何玉简/静坐符号能辨功能，并非未实现占位；但质感和互动主体弱于当前写实画件。",
+      "impact": "整体艺术与游戏感一致性仍待优化，不作为功能失败或强制全位图规则。",
+      "owner": [
+        "web/src/JadeStudyScene.vue",
+        "web/src/RecoveryRitual.vue"
+      ],
+      "evidence": [
+        "subplay-study-manual",
+        "subplay-learn-scroll",
+        "subplay-rest-cave",
+        "subplay-equip-loadout"
+      ],
+      "recommendation": "后续按玩法逐项定风格与真实物件/状态表达，优先复用现有画；确需位图再沿既有imagegen/确定导出预算，不因换画改结算。",
+      "acceptance": "具体效果在未来独立合同定义；不发明本轮已通过的艺术阈值。",
+      "status": "suggestion_not_implemented"
+    },
+    {
+      "id": "CEND02-I03",
+      "severity": "P2",
+      "kind": "navigation_context_mismatch",
+      "title": "功法／法宝内部跨分类后，标题和主导航仍显示原入口",
+      "reproduce": [
+        "从主导航法宝进入，点内部功法",
+        "从主导航功法进入，点内部法宝"
+      ],
+      "observed": "actualInner=skills时标题法宝·炼制与装备且主导航法宝；反方向actualInner=relics而标题功法·研习与配装/主导航功法。两方向完整DB均不变，非误执行。",
+      "impact": "内外导航对当前正在看的玩法描述不一致，重复分类造成工作台感和定位困惑。",
+      "owner": [
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue:153",
+        "web/src/PrimaryNav.vue"
+      ],
+      "evidence": [
+        "navigation-observation.json",
+        "capture-relics-outer-skills-inner-current-context",
+        "capture-skills-outer-relics-inner-current-context"
+      ],
+      "recommendation": "后续独立修缮共享目录与主入口上下文，明确当前玩法/查看来源及返回。保全部5内分类/八入口/已编辑草案/原确认与重试，不用删分类或自动执行配置解决。",
+      "acceptance": "两方向当前标题/选中态/页面内容一致且返回来源稳定；配置、研习/铸器草案及跨人生归属不变，查看完整DB不写；保持旧cap/原命令/计时。",
+      "status": "open_not_fixed_this_review"
+    }
+  ],
+  "counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 6,
+    "P3": 1
+  },
+  "noNewP1ObservedDoesNotProveWholeGameNoP1": true,
+  "engineeringReviewNotHumanAcceptance": true,
+  "nextOnly": "ART33 opening subject and interaction; laterART34 source hierarchy, then required three-task check before remaining UX repairs",
+  "legacyOpen": [
+    "CHECK2729-J01 old rootcause unknown",
+    "ART17 original four performance reds/unknown",
+    "ART28-OBS-01",
+    "all other historical unclosed items",
+    "overall art/gamefeel/long balance/human",
+    "final complete matrices/clean same-version candidate/maximal C-end code security review"
+  ],
+  "compatibilityEnvironmentPerformance": "paused"
+}

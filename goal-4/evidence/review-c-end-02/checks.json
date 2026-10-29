@@ -1,0 +1,137 @@
+{
+  "task": "REVIEW-C-END-02",
+  "capture2": {
+    "actualNewObservationCases": 2,
+    "stats": {
+      "startTime": "2026-10-29T21:22:07.597Z",
+      "duration": 14342.187999999998,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "report": {
+      "path": "artifacts/goal-4/review-c-end-02/capture-v2-report.json",
+      "bytes": 9111,
+      "sha256": "0e646fa6856c0edcae4fb81012a7f2fe219046a3659b2310785ac0c583daa531"
+    },
+    "declaration": {
+      "path": "artifacts/goal-4/review-c-end-02/capture-v2-declaration.json",
+      "bytes": 4157,
+      "sha256": "e6703517e41236d2c5c7a76a400857928cfdb5f5c2a67817381c138bd1a1c812"
+    },
+    "profile": {
+      "path": "artifacts/goal-4/review-c-end-02/capture-v2.config.ts",
+      "bytes": 513,
+      "sha256": "62acd270f600265403f322dfc7616406a8044886598765357d9003ff64d29283"
+    },
+    "sameImportedBaseRoot": true,
+    "originalTimeouts": {
+      "testMs": 60000,
+      "actionMs": 8000,
+      "navigationMs": 15000,
+      "retries": 0
+    },
+    "testKeys": [
+      "cend-review-observations.spec.ts::CEND02 observation: real retreat and readonly target lead only to its explicit full six-second travel::chromium",
+      "cend-review-observations.spec.ts::CEND02 observation: the actual opening portrait and three full choices remain readonly and distinguishable::chromium"
+    ],
+    "formalFullSixSecondGameActivityReceiptAllDb": true,
+    "trueCheckpointFromActual15Plus6Plus3": true,
+    "noAutoTrialAfterArrival": true,
+    "rawOldErrorsAndSourcesRetained": true,
+    "scope": "Earlier2-case phase retained; not current3-case source or whole698 rerun.",
+    "preservedSource": {
+      "path": "artifacts/goal-4/review-c-end-02/capture-v2-source.ts",
+      "bytes": 7912,
+      "sha256": "e3d9b4ece87b7727a9db27e6ccd6413ff28c590600624bbde13ec5c5012c7cd5"
+    },
+    "originalExecutedProfilePath": "artifacts/goal-4/review-c-end-02/capture.config.ts",
+    "frozenInputs1239TerminalExactBeforeThirdObservation": true,
+    "terminalProof": {
+      "path": "artifacts/goal-4/review-c-end-02/capture-v2-terminal-freeze-proof.json",
+      "bytes": 99,
+      "sha256": "337d9eb1a5fbc5991dd0b19564c687e72eb85e9cd573baade001453c53fcfa9d"
+    }
+  },
+  "inherited": "inheritance.json",
+  "mainline15": "mainline-matrix.json",
+  "eightStages": "stages-matrix.json",
+  "formal25": "actions-matrix.json",
+  "pixels": {
+    "frames": 44,
+    "uniqueWholePng": 43,
+    "freshActualViews": 44,
+    "maximumPerCall": 2
+  },
+  "productionRuntimeChanges": 0,
+  "newRasterAssets": 0,
+  "legacyCapChanges": 0,
+  "protected13Exact": true,
+  "humanAndOverallArtLongBalance": "not_accepted",
+  "compatibilityEnvironmentPerformance": "paused",
+  "selectedSkipRetryReportErrors": 0,
+  "capture3": {
+    "actualNewObservationCases": 3,
+    "wholeSingleRun": true,
+    "stats": {
+      "startTime": "2026-10-29T22:23:19.181Z",
+      "duration": 18396.048,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "report": {
+      "path": "artifacts/goal-4/review-c-end-02/capture-v3-report.json",
+      "bytes": 11040,
+      "sha256": "9f070ed22cfa0b0839f334d9649befc1417d6355aa7e1377a121dc2253f6c60d"
+    },
+    "declaration": {
+      "path": "artifacts/goal-4/review-c-end-02/capture-v3-declaration.json",
+      "bytes": 4828,
+      "sha256": "8ef3905ee1e35dfcb893f86a2b7d55bae1686655825751a904a9d0b7c3eeca75"
+    },
+    "profile": {
+      "path": "artifacts/goal-4/review-c-end-02/capture.config.ts",
+      "bytes": 513,
+      "sha256": "5d395387930d1c24db1c0abebcba9bfd01b0522e0d9a7d9697db6e8d68c00c5c"
+    },
+    "reproProfileCopyByteExact": true,
+    "source": {
+      "path": "artifacts/goal-4/review-c-end-02/capture-v3-source.ts",
+      "bytes": 9555,
+      "sha256": "e7f77a98bc68f123992d6cab3e4885b059ae32b4941030e8c365410ca3cd0199"
+    },
+    "frozenInputs1240TerminalExactBeforeCloseout": true,
+    "testKeys": [
+      "cend-review-observations.spec.ts::CEND02 observation: real retreat and readonly target lead only to its explicit full six-second travel::chromium",
+      "cend-review-observations.spec.ts::CEND02 observation: the actual opening portrait and three full choices remain readonly and distinguishable::chromium",
+      "cend-review-observations.spec.ts::CEND02 observation: shared skill and relic tabs preserve Game while recording actual global navigation context::chromium"
+    ],
+    "originalTimeouts": {
+      "testMs": 60000,
+      "actionMs": 8000,
+      "navigationMs": 15000,
+      "retries": 0
+    },
+    "original2BodiesAndFullOracleByteIdentical": true,
+    "formalFullSixSecondGameActivityReceiptAllDb": true,
+    "bothNavigationDirectionsReadonlyAllDb": true,
+    "scope": "3 current factual/safety observations, not fixedUX pass or one whole701/698 run."
+  },
+  "findings": {
+    "P2": 6,
+    "P3": 1,
+    "allOpenOrSuggested": true
+  },
+  "testedBuild": {
+    "path": "artifacts/goal-4/review-c-end-02/tested-build.json",
+    "sha256": "50622a542dc23398bf48cffdc41fe937e73f438285bb8c458f5d82d4e526a4e9",
+    "testedMetadataHead": "2a370a5746e66f537592e3c832e29ff4a0998d94",
+    "ownedObservationSourceWasDirtyButFrozenBeforeExecution": true,
+    "runtimeInputs": 309,
+    "payloadFiles": 100
+  },
+  "status": "review_evidence_ready_for_independent_local_commit"
+}

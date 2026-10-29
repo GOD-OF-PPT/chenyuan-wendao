@@ -1,0 +1,79 @@
+{
+  "task": "REVIEW-C-END-02",
+  "stageCount": 8,
+  "rows": [
+    {
+      "entry": "修行",
+      "currentObject": "自然/辅助、境门与归途",
+      "assessment": "当前主决定/30—240秒、有限授权/满修为停/真物资清单；末引有CP两恢复选择",
+      "representativePixel": "first-cultivation-home",
+      "executedCurrentFile": "cultivation-objects.spec.ts",
+      "readOnlyAndActionsDistinguished": true,
+      "scope": "Original parent current-runtime case executions inherited; current full pixels/source route reviewed, not every substate newly run."
+    },
+    {
+      "entry": "历练",
+      "currentObject": "地图/资源/委托/挑战/坊市",
+      "assessment": "地图只预览；资源和敌方逐段；来源画与字的层级A02及行旅预告T01待改",
+      "representativePixel": "functional-eight-tab-1",
+      "executedCurrentFile": "adventure-objects.spec.ts",
+      "readOnlyAndActionsDistinguished": true,
+      "scope": "Original parent current-runtime case executions inherited; current full pixels/source route reviewed, not every substate newly run."
+    },
+    {
+      "entry": "丹炉",
+      "currentObject": "一炉/配方/药匣/成品",
+      "assessment": "主体明确、7方完整、默认限次与真实缺材；原子后自动入匣",
+      "representativePixel": "functional-eight-hub-forge",
+      "executedCurrentFile": "alchemy-workshop.spec.ts",
+      "readOnlyAndActionsDistinguished": true,
+      "scope": "Original parent current-runtime case executions inherited; current full pixels/source route reviewed, not every substate newly run."
+    },
+    {
+      "entry": "功法",
+      "currentObject": "剑符/经卷/剑简/四槽",
+      "assessment": "修法/研习/配装已各有对象；剑简运行草案I02及静物风格A03仍待；跨内分类后外标题/主导航不同步I03。",
+      "representativePixel": "subplay-learn-scroll",
+      "executedCurrentFile": "equipment-objects.spec.ts",
+      "readOnlyAndActionsDistinguished": true,
+      "scope": "Original parent current-runtime case executions inherited; current full pixels/source route reviewed, not every substate newly run."
+    },
+    {
+      "entry": "法宝",
+      "currentObject": "当前器物/材料/本命",
+      "assessment": "真实未炼/持有/当前本命区分，四器目录完整；60秒铸器与即时认主分开；跨内分类后外标题/主导航不同步I03。",
+      "representativePixel": "functional-eight-hub-relics",
+      "executedCurrentFile": "art27-relic-workshop.spec.ts",
+      "readOnlyAndActionsDistinguished": true,
+      "scope": "Original parent current-runtime case executions inherited; current full pixels/source route reviewed, not every substate newly run."
+    },
+    {
+      "entry": "行囊",
+      "currentObject": "当前物资与用途/来源/服用或售出",
+      "assessment": "完整14物、恢复两药/5禁售物可查，货柜与药匣行为分开；疗养静物A03建议",
+      "representativePixel": "functional-eight-tab-2",
+      "executedCurrentFile": "inventory-objects.spec.ts",
+      "readOnlyAndActionsDistinguished": true,
+      "scope": "Original parent current-runtime case executions inherited; current full pixels/source route reviewed, not every substate newly run."
+    },
+    {
+      "entry": "仙缘",
+      "currentObject": "当前人物/来意/真实事实和回应",
+      "assessment": "4人物/待回应/未来预览与完整记录分开；实际NPC会面景强于破庙缩略A01",
+      "representativePixel": "subplay-npc-response",
+      "executedCurrentFile": "art30-npc-meeting.spec.ts",
+      "readOnlyAndActionsDistinguished": true,
+      "scope": "Original parent current-runtime case executions inherited; current full pixels/source route reviewed, not every substate newly run."
+    },
+    {
+      "entry": "生平",
+      "currentObject": "真实命卷/4章/卷尾",
+      "assessment": "完整140码点分页和所有文字、未封/真封、原恢复/新人生/导出能力保",
+      "representativePixel": "functional-eight-hub-life",
+      "executedCurrentFile": "art31-life-scroll.spec.ts",
+      "readOnlyAndActionsDistinguished": true,
+      "scope": "Original parent current-runtime case executions inherited; current full pixels/source route reviewed, not every substate newly run."
+    }
+  ],
+  "all25Subverbs": "actions-matrix.json"
+}

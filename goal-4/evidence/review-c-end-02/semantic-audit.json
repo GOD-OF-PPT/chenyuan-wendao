@@ -1,0 +1,28 @@
+{
+  "task": "REVIEW-C-END-02",
+  "baseline": "2a370a5746e66f537592e3c832e29ff4a0998d94",
+  "runtimeDigest": "2461902ca0c5456274f8de410a44e1a08941a51144c33f1f6b8efbfe562be45c",
+  "runtimeInputs": 309,
+  "productionRuntimeChanged": false,
+  "currentWholeObservationCases": 3,
+  "caseSkipRetryReportErrors": 0,
+  "inputs1240TerminalExact": true,
+  "allOldRuntimeTestsAndCapsInheritedNotRetagged": true,
+  "mainlineStages": 15,
+  "functionalStages": 8,
+  "formalActions": 25,
+  "reviewedFrames": 44,
+  "uniquePngHashes": 43,
+  "findings": {
+    "P2": 6,
+    "P3": 1,
+    "fixedThisTurn": 0
+  },
+  "oldSixEngineeringClosureNotHumanAcceptance": true,
+  "fullOriginalOraclePreserved": true,
+  "allReferencesAndOwnedPathsResolve": true,
+  "protected13Exact": true,
+  "globalGoalComplete": false,
+  "noCompatibilityOrEnvironmentPerformance": true,
+  "basis": "Actual reports/source/HTML observations/fullGameActivityReceiptAllDb oracles and explicit pixel review; validation does not certify art or human understanding."
+}

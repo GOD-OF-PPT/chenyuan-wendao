@@ -1,0 +1,49 @@
+{
+  "origin": "goal-4/evidence/art18/mainline-usability-review.md",
+  "originalReportPreserved": true,
+  "currentDisposition": [
+    {
+      "id": "P1-01",
+      "originalProblem": "凡人误要求突破丹/未解锁采集",
+      "currentEngineeringDisposition": "工程闭环",
+      "actualEvidence": "first-cultivation正文与像素、UX19三开场当前原例、父32中六条正常首筑基路线",
+      "limitation": "仍未证明新玩家能独立理解"
+    },
+    {
+      "id": "P1-02",
+      "originalProblem": "三关后仍要求旧渡劫引/缺收卷入口",
+      "currentEngineeringDisposition": "工程闭环",
+      "actualEvidence": "ending-ready-home/goal当前事实及UX20原两12秒确认，父32有两结尾",
+      "limitation": "不据此称整体主线美术通过"
+    },
+    {
+      "id": "P1-03",
+      "originalProblem": "末引失败恢复入口被筹备压过",
+      "currentEngineeringDisposition": "工程闭环",
+      "actualEvidence": "UX21-A1/A2真15/6/3损失与有效CP入口/原0.6完整恢复，A3无CP不补造；functional-eight-tab-0",
+      "limitation": "MAIN导入trial-recovery不携CP，不能拿其替代有效CP证据"
+    },
+    {
+      "id": "P2-01",
+      "originalProblem": "满修为与物资0/1不分",
+      "currentEngineeringDisposition": "工程闭环",
+      "actualEvidence": "foundation-preparation-goal明确修为1000/1000已圆满和筑基丹0/1缺1",
+      "limitation": "图标风格仍可另优化"
+    },
+    {
+      "id": "P2-02",
+      "originalProblem": "帮助沿用旧功能名称",
+      "currentEngineeringDisposition": "工程闭环",
+      "actualEvidence": "当前guidance.ts12主题及当前UX22-H1/H2/H3真实帮助到功法/配装/丹炉/行囊入口",
+      "limitation": "帮助按所示耗时行旅，与T01缺预告仍需统一"
+    },
+    {
+      "id": "P2-03",
+      "originalProblem": "封卷退回三栏工作台",
+      "currentEngineeringDisposition": "工程闭环",
+      "actualEvidence": "sealed-life-home和UX23-S1四结尾紧凑框架/4入口及其全部能力，原12秒实际提交后才出现",
+      "limitation": "不是四种结尾真人/艺术认可"
+    }
+  ],
+  "humanUsabilityAndOverallArt": "still_unaccepted"
+}

@@ -1,0 +1,644 @@
+{
+  "task": "REVIEW-C-END-02",
+  "runtimeDigest": "2461902ca0c5456274f8de410a44e1a08941a51144c33f1f6b8efbfe562be45c",
+  "formalActionCount": 25,
+  "classification": {
+    "repeatedOrStrategy": 13,
+    "instantConfigurations": 3,
+    "finiteMilestones": 9
+  },
+  "rows": [
+    {
+      "action": "CULTIVATE",
+      "entry": "修行当前吐纳/cultivate",
+      "period": "30/60/90/120/180/240秒逐轮",
+      "tradeoff": "自然零石或辅助付石、功法效率与筹物资金取舍",
+      "stop": "修为/次数/累计预算/保留/余寿/暂停",
+      "uiConsumers": [
+        "web/src/App.vue",
+        "web/src/TrainingPlanner.vue",
+        "web/src/CultivationSite.vue"
+      ],
+      "appCallback": "startTraining → store.startCultivation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "cultivation-objects.spec.ts::ART06-A4 one real thirty second natural cycle moves only the formal saved cultivation and preserves a static result without an automatic breakthrough::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "主体/周期/有限默认可读，不自动破境",
+      "pixelSamples": [
+        "first-cultivation-home",
+        "nascent-growth-home"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "SOURCE",
+      "entry": "历练采集委托/source-start",
+      "period": "来源月×30秒，当前30—180秒",
+      "tradeoff": "资源目标或委托灵石、副产修为与时间",
+      "stop": "目标/次数/月预算/余寿/地点/无变化",
+      "uiConsumers": [
+        "web/src/SourceObject.vue",
+        "web/src/SourceField.vue",
+        "web/src/SourcePlanner.vue",
+        "web/src/ExplorePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "ExplorePanel start → startSource → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "source-actors.spec.ts::TA08-A4 a full cultivation commission automatically saves two stone-only periods and retains all actual income without invented material drops::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "实际对象与入囊正确；场景/来源文字层级待改A02",
+      "pixelSamples": [
+        "subplay-source-herbs",
+        "subplay-source-commission"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "CRAFT",
+      "entry": "丹炉丹方/药匣/production-start",
+      "period": "丹方月×30秒，当前30—150秒",
+      "tradeoff": "恢复/突破丹、炉次、材料和资金保留",
+      "stop": "成品目标/炉次/缺材/预算/余寿",
+      "uiConsumers": [
+        "web/src/AlchemyWorkshop.vue",
+        "web/src/ProductionPlanner.vue",
+        "web/src/GoodsPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "GoodsPanel start → startProduction → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "alchemy-workshop.spec.ts::furnace phases follow the real cycle and only two atomic saved pills arrive once before the cumulative budget stops::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "真实炉/药匣/成品与自动入匣，无逐炉领奖",
+      "pixelSamples": [
+        "functional-eight-hub-forge"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "FORGE",
+      "entry": "法宝所选器物/production-start",
+      "period": "60秒一次",
+      "tradeoff": "器物实际流派效果、材料与费用",
+      "stop": "一件/已拥有/缺材/余寿",
+      "uiConsumers": [
+        "web/src/RelicAtelier.vue",
+        "web/src/ProductionPlanner.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "EquipmentPanel start → startProduction → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "equipment-objects.spec.ts::ART03-A2 one legal forge enters cold native saving before its exact sixty-second artifact is committed::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "冷器/持有/本命明确，炼成不自动认主；共享目录导航上下文I03待修。",
+      "pixelSamples": [
+        "functional-eight-hub-relics"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "LEARN",
+      "entry": "功法经卷入串/preparation-start",
+      "period": "30秒逐卷",
+      "tradeoff": "有限顺序、费用保留、实际作用与配装门槛",
+      "stop": "清单/已学会/预算/条件变化",
+      "uiConsumers": [
+        "web/src/JadeStudyScene.vue",
+        "web/src/LearningPlanner.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "EquipmentPanel start → startProduction → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "equipment-objects.spec.ts::ART03-A3 two selected cross-school jade slips keep exact separate cycles and show only the selected credible completion::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "展读/入串/掌握分开；共用草案分支须随I02回归；共享目录导航上下文I03待修。",
+      "pixelSamples": [
+        "subplay-learn-scroll"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "STUDY",
+      "entry": "功法剑简/preparation-start",
+      "period": "60秒一次",
+      "tradeoff": "已有剑简或付费参悟、剑符实际收益差异",
+      "stop": "只一次/已悟/费用保留",
+      "uiConsumers": [
+        "web/src/JadeStudyScene.vue",
+        "web/src/LearningPlanner.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "EquipmentPanel start → startProduction → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "equipment-objects.spec.ts::ART03-A5 a real sixty-second sword manual commits one insight and never silently changes school or equipment::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "真周期/结果正确；运行草案提示I02，静物风格A03建议；共享目录导航上下文I03待修。",
+      "pixelSamples": [
+        "subplay-study-manual"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "SCHOOL",
+      "entry": "功法修法/school-sword或talisman",
+      "period": "即时比较后原子确认，无假等待",
+      "tradeoff": "剑符基础三槽差异与原研习/本命保留",
+      "stop": "战中/事件/活动CAS/相同修法",
+      "uiConsumers": [
+        "web/src/LoadoutConstellation.vue",
+        "web/src/LearningPlanner.vue",
+        "web/src/RelicAtelier.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "act → inspectConfiguration → confirmConfiguration → store.applyConfiguration",
+      "saveChain": "store.applyConfiguration → repository.configure → atomic Game/receipt + activityCAS",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "equipment-objects.spec.ts::ART03-A8 school skill and relic comparisons cancel without writes and explicit atomic confirmations retain their real scopes::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "查看不切换，原完整配置与失败重试保；共享目录导航上下文I03待修。",
+      "pixelSamples": [
+        "functional-eight-hub-skills"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "EQUIP",
+      "entry": "已掌握经卷/equip-id/配装槽",
+      "period": "即时比较后原子确认，无假等待",
+      "tradeoff": "当前槽实际差异，由玩家确认",
+      "stop": "未学/流派不合/已装备/活动CAS",
+      "uiConsumers": [
+        "web/src/LoadoutConstellation.vue",
+        "web/src/LearningPlanner.vue",
+        "web/src/RelicAtelier.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "act → inspectConfiguration → confirmConfiguration → store.applyConfiguration",
+      "saveChain": "store.applyConfiguration → repository.configure → atomic Game/receipt + activityCAS",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "equipment-objects.spec.ts::ART03-A8 school skill and relic comparisons cancel without writes and explicit atomic confirmations retain their real scopes::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "只读比较→明确确认，原Game/活动CAS保持；共享目录导航上下文I03待修。",
+      "pixelSamples": [
+        "subplay-equip-loadout"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "EQUIP_RELIC",
+      "entry": "已持器物/equip-relic-id/本命槽",
+      "period": "即时比较后原子确认，无假等待",
+      "tradeoff": "已炼器物实际本命效果",
+      "stop": "未拥有/已装备/活动CAS",
+      "uiConsumers": [
+        "web/src/LoadoutConstellation.vue",
+        "web/src/LearningPlanner.vue",
+        "web/src/RelicAtelier.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "act → inspectConfiguration → confirmConfiguration → store.applyConfiguration",
+      "saveChain": "store.applyConfiguration → repository.configure → atomic Game/receipt + activityCAS",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "equipment-objects.spec.ts::ART03-A8 school skill and relic comparisons cancel without writes and explicit atomic confirmations retain their real scopes::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "炼成与认主分开，真实保存才反馈；共享目录导航上下文I03待修。",
+      "pixelSamples": [
+        "functional-eight-hub-relics",
+        "subplay-equip-loadout"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "BUY",
+      "entry": "坊市物品/preparation-start",
+      "period": "15秒逐件",
+      "tradeoff": "库存目标/最多件数/总预算/石保留",
+      "stop": "目标/件数/资金/位置",
+      "uiConsumers": [
+        "web/src/MarketCounter.vue",
+        "web/src/MarketPlanner.vue",
+        "web/src/ExplorePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "direct market startPreparation / ExplorePanel start dispatch → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "inventory-objects.spec.ts::ART04-A4 one real buy period keeps all formal costs and body changes behind its actual deadline::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "交换方向/当前库存/费用/停止与完整预算可读",
+      "pixelSamples": [
+        "subplay-market-buy"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "SELL",
+      "entry": "坊市售出/preparation-start",
+      "period": "15秒逐件",
+      "tradeoff": "仅售可售物、保留库存与回收石",
+      "stop": "保留线/次数/禁售突破物/位置",
+      "uiConsumers": [
+        "web/src/MarketCounter.vue",
+        "web/src/MarketPlanner.vue",
+        "web/src/ExplorePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "direct market startPreparation / ExplorePanel start dispatch → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "inventory-objects.spec.ts::ART04-A7 both medicine sales stop at the exact reserve and all five breakthrough offers stay explicitly forbidden::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "净收益与真实停止保，不默许清空/换物",
+      "pixelSamples": [
+        "subplay-market-sell"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "USE",
+      "entry": "行囊丹药→药匣/preparation-start",
+      "period": "6秒逐丹",
+      "tradeoff": "两恢复丹的恢复目标、用量与库存保留",
+      "stop": "达标/药尽/预算/保留/条件",
+      "uiConsumers": [
+        "web/src/InventoryStage.vue",
+        "web/src/GoodsPanel.vue",
+        "web/src/RecoveryRitual.vue",
+        "web/src/RecoveryPlanner.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "GoodsPanel act opens recovery / RecoveryPlanner start → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "inventory-objects.spec.ts::ART04-A5 one real use period keeps all formal costs and body changes behind its actual deadline::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "当前恢复与下次草案分开，原药物扣除同行保存",
+      "pixelSamples": [
+        "subplay-medicine-use"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "REST",
+      "entry": "洞府疗养/preparation-start",
+      "period": "30秒一次",
+      "tradeoff": "1游戏月换圆满、不耗丹，与服丹/战中用药区别",
+      "stop": "一次/已满/地点/余寿",
+      "uiConsumers": [
+        "web/src/InventoryStage.vue",
+        "web/src/GoodsPanel.vue",
+        "web/src/RecoveryRitual.vue",
+        "web/src/RecoveryPlanner.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "GoodsPanel act opens recovery / RecoveryPlanner start → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "inventory-objects.spec.ts::ART04-A6 one real rest period keeps all formal costs and body changes behind its actual deadline::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "成本和读秒清楚；纯图形静物与写实场景风格A03建议",
+      "pixelSamples": [
+        "subplay-rest-cave"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "TRAVEL",
+      "entry": "地图/goal-location/明确前往",
+      "period": "6秒一次",
+      "tradeoff": "目的地/门槛与行路费用",
+      "stop": "一次抵达/非法/暂停/归属变化，不自动后续",
+      "uiConsumers": [
+        "web/src/AdventurePlanner.vue",
+        "web/src/GoalPanel.vue",
+        "web/src/ExplorePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "travel / arrangeTravel → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-adventure.spec.ts::a trip selects without writing then really counts six seconds before one free arrival::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "真6秒/保存已补采全proof；部分直接前往缺预告T01",
+      "pixelSamples": [
+        "functional-eight-tab-1",
+        "capture-idle-recovery-goal-before-explicit-travel",
+        "capture-actual-travel-only-after-explicit-click"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "ENCOUNTER",
+      "entry": "历练挑战当前敌方/adventure-start",
+      "period": "30秒遭遇一次",
+      "tradeoff": "有限场次、掉落目标、补给与风险/战策",
+      "stop": "场次/目标/危险/资源/待决定",
+      "uiConsumers": [
+        "web/src/AdventurePlanner.vue",
+        "web/src/ExplorePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "startAdventure → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-adventure.spec.ts::one real encounter waits thirty seconds and its first battle command waits a separate three seconds::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "敌方/门槛明确，遭遇与第一招各自保存",
+      "pixelSamples": [
+        "subplay-encounter-before-start"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "BATTLE",
+      "entry": "战策battle-auto-start/手动七招",
+      "period": "3秒逐招",
+      "tradeoff": "剑意/符印、敌意、MP总额、药物上限保留、危险线",
+      "stop": "当前敌/关/回合/MP/药物/危险/胜负/撤退",
+      "uiConsumers": [
+        "web/src/BattleCommandConsole.vue",
+        "web/src/BattleStrategy.vue",
+        "web/src/BattlePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "battle(singleBattlePlan) / startAdventure → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-adventure.spec.ts::sword finite strategy plays formal separate turns and its complete receipts remain after refresh::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "敌我和预演净变化可辨；默认自动开始区未常驻3秒T01",
+      "pixelSamples": [
+        "trial-battle-home",
+        "trial-second-gate-home"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "EVENT",
+      "entry": "仙缘人物/此地机缘/event-id",
+      "period": "6秒一次",
+      "tradeoff": "当前境界/当地真实拜访，未知回应另选",
+      "stop": "本次会面即待回应，不自动行旅或代选",
+      "uiConsumers": [
+        "web/src/EncounterTable.vue",
+        "web/src/FateCatalogue.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "storyAct → act → selectMilestone → confirmMilestoneAction → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-milestones.spec.ts::visiting opens only the selected current-place story and a separately selected response saves once::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "真实人物/已记事实/下次来往可辨",
+      "pixelSamples": [
+        "functional-eight-tab-3"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "CHOOSE",
+      "entry": "破庙三选项help/trade/leave→原确认",
+      "period": "6秒一次",
+      "tradeoff": "赠丹/换简/保留的丹药与因果取舍",
+      "stop": "本次即停，不接修炼",
+      "uiConsumers": [
+        "web/src/MilestoneGate.vue",
+        "web/src/ChoiceCard.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "act → selectMilestone → confirmMilestoneAction → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-milestones.spec.ts::a real opening choice remains a preview, then waits six seconds and saves exactly its one medicine cost::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "三选项/费用正确，52×60人物与大面板的主次待改A01",
+      "pixelSamples": [
+        "capture-opening-current-subject-and-choice-hierarchy"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "DECIDE",
+      "entry": "人物回应预选→核对→原确认",
+      "period": "6秒一次",
+      "tradeoff": "所选可见回应的真实成本/已知因果",
+      "stop": "一次/条件变化/未知后续待决定",
+      "uiConsumers": [
+        "web/src/ResponseTable.vue",
+        "web/src/NarrativePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "storyAct → act → selectMilestone → confirmMilestoneAction → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-milestones.spec.ts::visiting opens only the selected current-place story and a separately selected response saves once::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "会面人物/来意/一个当前回应可辨；paid回应跨页旧不重演有父证",
+      "pixelSamples": [
+        "subplay-npc-response"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "BREAKTHROUGH",
+      "entry": "修行当前境门→原确认",
+      "period": "30秒一次",
+      "tradeoff": "满修为、本境真耗物与两可达筹备路线",
+      "stop": "只本境一次/缺物/修为不足/状态变化",
+      "uiConsumers": [
+        "web/src/MilestoneGate.vue",
+        "web/src/CaveThresholdObject.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "act → selectMilestone → confirmMilestoneAction → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-milestones.spec.ts::a real prepared breakthrough waits thirty seconds and stops at the next realm with its actual pill and reset cultivation::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "清单/实际费用/仅一次保，不按现实等待授境",
+      "pixelSamples": [
+        "foundation-preparation-home",
+        "foundation-preparation-goal"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "START_TRIAL",
+      "entry": "修行或登仙台渡劫准备/trial-review-entry",
+      "period": "15秒一次",
+      "tradeoff": "真引/身体/配装准备、完整CP与入场同保存",
+      "stop": "本次入场即待问心，不续答/开战",
+      "uiConsumers": [
+        "web/src/TrialCatalogue.vue",
+        "web/src/MilestoneGate.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "showTrialPreparation → reviewTrial → confirmTrial → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-milestones.spec.ts::trial entry and each answer stop at the next undecided boundary without an automatic battle turn::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "完整准备与当前库存分清，恢复不是补一枚引",
+      "pixelSamples": [
+        "trial-ready-home",
+        "functional-eight-tab-0"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "ANSWER_TRIAL",
+      "entry": "问心选择→原确认",
+      "period": "6秒一次",
+      "tradeoff": "两回答真实承受/攻击差异，完整来路",
+      "stop": "当前答复一次，战策另安排",
+      "uiConsumers": [
+        "web/src/ResponseTable.vue",
+        "web/src/NarrativePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "storyAct → act → selectMilestone → confirmMilestoneAction → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-milestones.spec.ts::the release answer shows its actual attack bonus and never substitutes the other answer or starts a turn::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "阶段目标准确，新run旧确认由上一综合实际修复",
+      "pixelSamples": [
+        "trial-question-home"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "END",
+      "entry": "三关后两结尾→原收卷确认",
+      "period": "12秒一次",
+      "tradeoff": "平等的两个既有收束和完整生平",
+      "stop": "真封卷即停，不续新人生/上界",
+      "uiConsumers": [
+        "web/src/ResponseTable.vue",
+        "web/src/NarrativePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "reviewAscension → confirmAscension → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-milestones.spec.ts::the selected depart ending waits for explicit arrangement and preserves the sealed life without creating another::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "三关/待择与真封卷分开，原quota/唯一重试有父证",
+      "pixelSamples": [
+        "ending-ready-home",
+        "ending-ready-goal",
+        "sealed-life-home",
+        "subplay-ending-actual-choice"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "RETIRE",
+      "entry": "生平卷尾主动归隐→原确认",
+      "period": "12秒一次",
+      "tradeoff": "明确主动收束，不作资源不足默认恢复",
+      "stop": "一次结束；阅读/离线不收卷",
+      "uiConsumers": [
+        "web/src/LifeCatalogue.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "requestEnd → confirmEnd → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-milestones.spec.ts::RETIRE requires its own explicit life confirmation and uses only its formal game-month cost::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "当前紧凑封卷/原恢复导出/新人生确认保持",
+      "pixelSamples": [
+        "sealed-life-home",
+        "functional-eight-hub-life"
+      ],
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "END_LIFE",
+      "entry": "最后1游戏月明确收卷→原确认",
+      "period": "12秒一次",
+      "tradeoff": "仅正式寿尽条件，游戏月成本与阅读区别",
+      "stop": "一次结束，不因现实等待死亡",
+      "uiConsumers": [
+        "web/src/LifeCatalogue.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "requestEnd → confirmEnd → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "executedEvidence": {
+        "kind": "inherited_same_runtime_original_test_dependencies",
+        "key": "idle-milestones.spec.ts::END_LIFE requires its own explicit life confirmation and uses only its formal game-month cost::chromium",
+        "reportSet": "parent actual698 =691 regular+7 original slow; not rerun or renamed this turn"
+      },
+      "interactionAssessment": "真实寿尽状态与原管理完整；不冒真人寿元节奏",
+      "pixelSamples": [
+        "sealed-life-home",
+        "functional-eight-hub-life"
+      ],
+      "humanAndLongBalance": "not_proven"
+    }
+  ],
+  "limits": "Referenced individual real execution + actual parent/save chain + representative pixels, not25 new executions or whole art/human/pacing approval."
+}

@@ -479,3 +479,5 @@ ART32实证：consumption仅提示“追踪物资会缺”，无缺口为空，�
 CHECK-ART30-32依[0069](docs/decisions/0069-art30-32-cross-check-contract.md)与本轮XAG112/MDN close实读：跨页阅读不取消原生事务，也不把原当前动作授权交给新页/新人生；阶段真实变化后旧临时story来源失效，返回稳定主舞台再查看实际人物事实，不强返过期对话。入劫CP须取前完整准备，别页明确恢复只沿原0.6秒/full proof，旧问心确认应撤销不续答。真实封卷只在原子保存后沿原effect/sequence一次，旧查看/刷新不演。完整声明/原慢例/原时限与原失败及源身份保；J01unknown、ART17/ART28-OBS-01和所有最终义务不因检查绿关闭，当前兼容/环境性能暂停。
 
 CHECK-ART30-32局修实证：别页完整恢复后Game/全DB正确仍不代表旧未批准确认已退场。useMilestoneReview仅新run/旧prepared且无原canRetryFor时清review引用；不调用close/discard、不取消native或动原冻结命令，只读原安排与同run CAS守卫保持。保v2/probe原红与spirit作者前提记录，当前32整轮过不冒旧J01根因已修；像素/完整source/原意图和真人分层，当前暂停边界不变。
+
+REVIEW-C-END-02依[0070](docs/decisions/0070-current-mainline-cend-review-contract.md)与本轮XAG109/112、Riot Clarity实读：工程可达/原子绿与真人理解分层；当前对象/目标、主要决定、查看或执行、有限成本周期/停止与返回成果逐页核。正式25动作和15主线阶段要指真实消费/保存链，同源旧证据明确继承而不重贴为新执行；真实混乱须用实际像素/措辞/门槛复现，不靠按钮个数或主观猜测判缺陷。具体清单/参数为项目推导，暂停兼容/环境性能及旧未验责任保。

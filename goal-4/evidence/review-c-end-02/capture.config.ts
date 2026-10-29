@@ -1,0 +1,2 @@
+import base from '../../../web/playwright.idle.config';
+export default {...base,testDir:'/Users/gordon/githome/chenyuan-wendao/web/e2e',testMatch:['cend-review-observations.spec.ts'],workers:1,webServer:{...base.webServer,cwd:'/Users/gordon/githome/chenyuan-wendao/web'},outputDir:'/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/review-c-end-02/capture-v3-results',reporter:[['list'],['json',{outputFile:'/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/review-c-end-02/capture-v3-report.json'}]]};
