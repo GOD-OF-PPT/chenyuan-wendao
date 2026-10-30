@@ -1,6 +1,6 @@
 import hashlib,json,tempfile,unittest
 from pathlib import Path
-from art33_inventory import validate_art33,LEDGER,FILES,PARENTS,REFS,BASE,BASELINES,UNCHANGED,PATCHES
+from art33_inventory import validate_art33,LEDGER,FILES,PARENTS,REFS,BASE,BASELINES,UNCHANGED,PATCHES,normalize_ux25_app,UX25_APP_TRANSFORMS,UX25_APP_BASELINE_SHA256
 from check_inventory import image_info
 ROOT=Path(__file__).resolve().parents[2]
 class ART33Tests(unittest.TestCase):
@@ -59,4 +59,21 @@ class ART33Tests(unittest.TestCase):
  def test_formal_controller_and_old_group_caps_remain_strict(self):
   n=next(iter(UNCHANGED));self.reject(lambda n=n:self.change(n,'import','/* changed */import'))
   self.reject(lambda:self.change('art/redesign/cultivation-objects.json','45000','45001'))
+ def test_ux25_current_time_notices_restore_previous_entire_app_source(self):
+  text=(self.root/PARENTS[0]).read_text()
+  self.assertEqual(hashlib.sha256(normalize_ux25_app(text).encode()).hexdigest(),UX25_APP_BASELINE_SHA256)
+  self.check()
+ def test_ux25_resigned_wrong_period_or_timing_source_rejected(self):
+  for old,new in [('ADVENTURE_CYCLE_MS.travel/1000','ADVENTURE_CYCLE_MS.travel/1000+1'),('ADVENTURE_CYCLE_MS.travel/1000',"actionSeconds({type:'TRAVEL',location:'cave'})"),('ADVENTURE_CYCLE_MS,isAdventurePlan','ADVENTURE_CYCLE_MS as fakePeriod,isAdventurePlan')]:
+   self.reject(lambda old=old,new=new:self.change(PARENTS[0],old,new))
+ def test_ux25_resigned_missing_or_duplicate_time_surface_rejected(self):
+  for before,after in UX25_APP_TRANSFORMS[1:]:
+   self.reject(lambda before=before,after=after:self.change(PARENTS[0],after,before))
+   self.reject(lambda after=after:self.change(PARENTS[0],after,after+after))
+ def test_ux25_resigned_script_side_effect_and_travel_callback_rejected(self):
+  self.reject(lambda:self.change(PARENTS[0],"function closeHub(","setTimeout(()=>{},1);function closeHub("))
+  self.reject(lambda:self.change(PARENTS[0],"@click=\"travel('cave')\"","@click=\"act({type:'BREAKTHROUGH'})\""))
+ def test_ux25_original_parent_caps_cannot_be_raised_or_retyped(self):
+  for field,value in [('parentDeltaBytes',2401),('oldGoalBytes',19001),('oldImmersiveBytes',26001),('parentDeltaBytes',True)]:
+   self.reject(lambda field=field,value=value:self.edit(lambda m:m['budgets'].update({field:value})))
 if __name__=='__main__':unittest.main()

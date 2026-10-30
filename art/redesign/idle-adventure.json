@@ -12,8 +12,8 @@
     },
     {
       "path": "web/src/BattleStrategy.vue",
-      "bytes": 16280,
-      "sha256": "6c5562c021ee432196c73b08e85db703837f0780a3e605e3c0e0e57671a74794"
+      "bytes": 16586,
+      "sha256": "82ea2a3699c26c6e95b76540eeba0f0f30103de1d9e0822b516f864f11c7eda3"
     },
     {
       "path": "web/src/AdventureHistory.vue",

@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-30",
+  "task": "UX25",
+  "source": {
+    "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+    "title": "XAG114 UI context",
+    "actuallyRead": true,
+    "used": "操作前知道预期行为，说明靠近对应动词，同类操作保持一致。"
+  },
+  "projectDerivation": "五个真实行旅入口标正式6秒，自动斗法标每招3秒和原有限上限；同地查看不加假计时。",
+  "periodAuthority": "src/full/adventure.ts ADVENTURE_CYCLE_MS, not legacy short actionSeconds",
+  "notIndustryNumericStandardOrCertification": true,
+  "wholeArtLongBalanceHumanAcceptance": false,
+  "compatibilityAndEnvironmentPerformance": "paused"
+}

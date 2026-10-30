@@ -6,6 +6,8 @@ import {previewActivity} from '../../src/full/activity.ts';
 import {getBreakthroughGoal,previewAction} from '../../src/full/queries.ts';
 import {nextStep} from './play-flow';
 import {actionSeconds} from './action-timing';
+import {ADVENTURE_CYCLE_MS} from '../../src/full/adventure.ts';
+import {formatCosts} from './presentation';
 import CultivationSite from './CultivationSite.vue';
 import type {useGame} from './store';
 import {canonicalFingerprint} from '../../src/full/receipts.ts';
@@ -28,7 +30,7 @@ const can=(action:Action)=>props.available&&!props.busy&&!props.running&&!blocke
 <template>
  <section class="paper play-catalogue training-planner" data-testid="cultivation-catalogue" tabindex="-1">
   <header><div><h3>{{matchesSaved?'已保存的修行安排':'安排一段潜修'}}</h3><small data-testid="training-plan-state">{{matchesSaved?'下方为已保存安排；修改后须重新确认。':savedPlan?'待确认的新安排；原活动尚未改变。':'待确认的新安排；点击开始后才保存。'}}</small></div><button data-testid="training-compare" @click="emit('compare',method)">比较修行取舍</button></header>
-  <div v-if="game.core.world.location!=='cave'" class="catalogue-empty"><strong>返回听雨洞府修炼</strong><button class="primary" data-testid="return-cave" @click="emit('cave')" :disabled="!can({type:'TRAVEL',location:'cave'})">返回洞府</button></div>
+  <div v-if="game.core.world.location!=='cave'" class="catalogue-empty"><strong>返回听雨洞府修炼</strong><button class="primary" data-testid="return-cave" @click="emit('cave')" :disabled="!can({type:'TRAVEL',location:'cave'})">返回洞府<small>{{formatCosts(previewAction(game,{type:'TRAVEL',location:'cave'}).costs)}} · {{ADVENTURE_CYCLE_MS.travel/1000}} 秒行旅</small></button></div>
   <template v-else>
    <CultivationSite :game="game" :method="method" compact @method="selectMethod"><template #decision>
     <p data-testid="training-per-cycle">每轮 {{quote.cycleMs/1000}} 秒 · 修为 {{one.delta?.xp??0}} · {{one.costs?.months??0}} 游戏月<span v-if="method==='assisted'"> · {{one.costs?.stones??0}} 灵石</span></p>

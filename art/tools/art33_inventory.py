@@ -11,6 +11,17 @@ BUDGETS={'nativeBytes': 12000, 'parentDeltaBytes': 2400, 'oldCultivationBytes': 
 PATCHES=[{'path': 'art/redesign/art33/parent-view-patch.json', 'bytes': 4237, 'sha256': 'ec861406332cc2cc74336c2f7e36b6446168313d48093885a47fa2a3c8de45f5'}, {'path': 'art/redesign/art33/guide-view-patch.json', 'bytes': 702, 'sha256': 'b18b48a7571977fff68911881551903d477c6b03dc8b1968925e978b23dcf8b7'}]
 HASHES={'shen-offering': {'source': 'e0b8e7097947178f25249f34c410a5df46bff33f2ee98590d337a6b97376018e', 'runtime': '31c2b4381cefd72f0de80baa5b3c30665039814f79660f86dec1a4b59bf46c91'}, 'medicine-case': {'source': '60c0683acf72c52e2c91b6c0ff417514a1b9347ef0b85d076a00418625728cde', 'runtime': 'fea370cbf9e87c716dc9a248fab9ba5aeb80e0a09de13fb46e066a1a5503b40f'}}
 
+# UX25: three exact display-only transforms, then the original ART33 full-source proof.
+UX25_APP_BASELINE_SHA256='fff09574bebc2ce0ca42445d57f2f102a01744bedfe01fbec42de45f22931f21'
+UX25_APP_TRANSFORMS=[('{isAdventurePlan, singleBattlePlan, type AdventurePlan}', '{ADVENTURE_CYCLE_MS,isAdventurePlan, singleBattlePlan, type AdventurePlan}'), ("{{cost({type:'TRAVEL',location:'cave'})}} {{why({type:'TRAVEL',location:'cave'})}}", "{{cost({type:'TRAVEL',location:'cave'})}} · {{ADVENTURE_CYCLE_MS.travel/1000}} 秒行旅 {{why({type:'TRAVEL',location:'cave'})}}")]
+def normalize_ux25_app(text):
+ if UX25_APP_TRANSFORMS[0][1]not in text:return text
+ for before,after in reversed(UX25_APP_TRANSFORMS):
+  assert text.count(after)==1,'UX25 unique approved timing display'
+  text=text.replace(after,before,1)
+ assert hashlib.sha256(text.encode()).hexdigest()==UX25_APP_BASELINE_SHA256,'UX25 original App full source'
+ return text
+
 def validate_art33(root,image_reader):
  root=root.resolve()
  if not(root/LEDGER).exists():
@@ -38,7 +49,7 @@ def validate_art33(root,image_reader):
    actual=actual.replace(step['new'],step['old'],1)
   return actual
  app=local(PARENTS[0]).read_text();gate=local(PARENTS[1]).read_text();guide=local(PARENTS[2]).read_text();patch=json.loads(local(PATCHES[0]['path']).read_text());gp=json.loads(local(PATCHES[1]['path']).read_text())
- assert reverse(app,patch['appSteps'])==identity(BASELINES[0]).decode(),'ART33 original App full script and callbacks'
+ assert reverse(normalize_ux25_app(app),patch['appSteps'])==identity(BASELINES[0]).decode(),'ART33 original App full script and callbacks'
  assert gate.replace(':seconds="seconds" :view="view"',':seconds="seconds"',1)==identity(BASELINES[1]).decode(),'ART33 one Gate slot only'
  assert gp['defaultInlineUnchanged']is True and reverse(guide,gp['steps'])==identity(BASELINES[2]).decode(),'ART33 original default guidance'
  assert len(app.encode())-BASELINES[0]['bytes']<=2400 and len(gate.encode())-BASELINES[1]['bytes']==13,'ART33 exact parent bounds'

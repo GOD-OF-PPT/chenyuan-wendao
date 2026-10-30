@@ -4,6 +4,7 @@ import CataloguePager from './CataloguePager.vue';
 import {pageSlice} from './play-flow';
 import { computed, ref, shallowRef, watch,onMounted,onScopeDispose } from 'vue';
 import GameIcon from './GameIcon.vue';
+import {ADVENTURE_CYCLE_MS} from '../../src/full/adventure.ts';
 import GoalBoard from './GoalBoard.vue';
 import TrialGoal from './TrialGoal.vue';
 import * as C from '../../src/full/content.ts';
@@ -131,7 +132,7 @@ const boardReady=computed(()=>focus.value?.kind==='item'?!!itemView.value?.compl
         </div>
         <div v-for="gap in primaryNeeds" :key="gap.kind+gap.id" class="goal-line" :data-testid="`need-${gap.id??gap.kind}`"><span><GameIcon v-if="gap.kind==='item'&&gap.id" kind="item" :id="gap.id"/><GameIcon v-else kind="nav" :id="gap.kind==='stones'?'inventory':'cultivate'"/></span><div>{{resourceName(gap)}}<small>{{gap.have}} / {{gap.required}} · 尚缺 {{gap.missing}}</small>
           <button v-if="gap.kind!=='months'" class="text-button" :data-testid="`inspect-${gap.id??gap.kind}`" @click="inspect(gap)" :disabled="!canInspect(gap)">{{inspectLabel(gap)}} →</button>
-          <small v-if="!resourceGap(gap)&&gap.kind!=='months'&&game.core.world.location!=='cave'">{{formatCosts(caveTravel.costs)}}</small><small v-if="!canInspect(gap)">{{!enabled?'等待存档就绪':writeBlocked&&game.core.world.location!=='cave'?'先处理原安排或重新读取':caveTravel.failure?.message}}</small>
+          <small v-if="!resourceGap(gap)&&gap.kind!=='months'&&game.core.world.location!=='cave'">{{formatCosts(caveTravel.costs)}} · {{ADVENTURE_CYCLE_MS.travel/1000}} 秒行旅</small><small v-if="!canInspect(gap)">{{!enabled?'等待存档就绪':writeBlocked&&game.core.world.location!=='cave'?'先处理原安排或重新读取':caveTravel.failure?.message}}</small>
         </div></div>
         <CataloguePager v-if="needPage.pages>1" :page="needPage.page" :pages="needPage.pages" :total="needPage.total" label="目标条件" @change="needIndex=$event"/>
       </template>
@@ -143,14 +144,14 @@ const boardReady=computed(()=>focus.value?.kind==='item'?!!itemView.value?.compl
             <small>准备与行动成本：{{formatCosts(source.costs)}}</small>
             <small v-if="source.failure" data-testid="route-blocker">{{source.failure.message}}</small>
             <button v-if="source.kind==='recipe'||source.kind==='purchase'||source.deficits.length" class="text-button" :data-testid="`plan-${source.kind}-${source.id}`" @click="ingredients(source)">查看筹备缺口 →</button>
-            <button :data-testid="`go-${source.kind}-${source.id}`" @click="goSource(source)" :disabled="!canGo(source)">{{source.navigation?'前往'+C.locations[source.location].name:'查看此地行动'}}</button>
+            <button :data-testid="`go-${source.kind}-${source.id}`" @click="goSource(source)" :disabled="!canGo(source)">{{source.navigation?'前往'+C.locations[source.location].name:'查看此地行动'}}<small v-if="source.navigation">{{ADVENTURE_CYCLE_MS.travel/1000}} 秒行旅</small></button>
             <small v-if="goReason(source)">{{goReason(source)}}</small>
           </div>
         </div><CataloguePager :page="sourcePage.page" :pages="sourcePage.pages" :total="sourcePage.total" label="目标来源" @change="sourceIndex=$event"/>
       </template>
       <template #decision>
         <p v-if="actionView && !needs.length" class="small">物资已齐；前往对应地点后另行确认行动。</p>
-        <button v-if="showLocation" class="text-button goal-location" data-testid="goal-location" :data-navigation-kind="locationPreview?'travel':'view'" @click="goalLocation" :disabled="!enabled || !!locationPreview && (writeBlocked||!locationPreview.allowed)">{{locationLabel}} →<small v-if="locationPreview">{{formatCosts(locationPreview.costs)}}</small></button>
+        <button v-if="showLocation" class="text-button goal-location" data-testid="goal-location" :data-navigation-kind="locationPreview?'travel':'view'" @click="goalLocation" :disabled="!enabled || !!locationPreview && (writeBlocked||!locationPreview.allowed)">{{locationLabel}} →<small v-if="locationPreview">{{formatCosts(locationPreview.costs)}} · {{ADVENTURE_CYCLE_MS.travel/1000}} 秒行旅</small></button>
         <small v-if="showLocation&&locationPreview&&(writeBlocked||locationPreview.failure)">{{writeBlocked?'先处理原安排或重新读取':locationPreview.failure?.message}}</small>
         <p v-if="!focus && !goal.deficits.length && !goal.completed && goal.preview?.allowed" class="small">准备已齐，按当前页面确认行动。</p>
       </template>

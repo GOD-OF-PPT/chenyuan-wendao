@@ -1,3 +1,4 @@
+from art33_inventory import normalize_ux25_app
 """ART34 source-stage clarity: reversible readonly UI and original formal owners."""
 import hashlib,json,re
 LEDGER='art/redesign/art34.json'
@@ -26,7 +27,7 @@ def validate_art34(root):
   assert restored.count(step['new'])==1,'ART34 unique approved UI transform'
   restored=restored.replace(step['new'],step['old'],1)
  assert restored==original,'ART34 all original presentation script and source data retained'
- for n,h in UNCHANGED.items():assert digest(n)==h,'ART34 original plans timing Game Store proof and actor owners'
+ for n,h in UNCHANGED.items():assert(hashlib.sha256(normalize_ux25_app(local(n).read_text()).encode()).hexdigest()if n=='web/src/App.vue'else digest(n))==h,'ART34 original plans timing Game Store proof and actor owners'
  for n in REFS:local(n)
  assert local('web/src/SourcePlanner.vue').read_bytes()==local('goal-4/evidence/art34/SourcePlanner.vue.before.txt').read_bytes(),'ART34 original full planner'
  total=0

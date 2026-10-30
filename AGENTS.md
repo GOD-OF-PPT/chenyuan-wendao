@@ -495,3 +495,5 @@ ART34层级检查补充：收起低频目录后，右侧空间仍须覆盖真实
 CHECK-ART33-34核全矩阵必须先按真实适用profile的file/title/project枚举：基础idle-persistence355不能代既有含发布源迁移/恢复的idle-recovery415，原22过时即时setup保持明确退休/替代义务，不把它们假执行或自动复活。v1七字段回执/next startedAt与v2完整proof/resolvedAt区分；破境完整准备checkpoint/owner与Game/Activity同事务核，不把检查点变化误当无关库改变。原14px辅助说明按既有语义分类，正文18与全字/几何门槛不放宽。根工具的合成证据校验不代表兼容或环境性能实际执行，当前暂停界限保持。
 
 UX24依[0074](docs/decisions/0074-current-goal-guidance-ux24-contract.md)与本轮实读XAG109/114：无资源缺口并不代表当前受遭遇阻挡，地点/境界/修法/状态等应沿正式preview.failure.message与原来源/地点入口说明；原“准备已齐”仅在正式allowed时显示。已有真实失败通道完整时应撤掉相矛盾的猜测提示，不另建一套阶段/门槛映射，也不把删错句冒全流程/真人理解已过。默认trial/completed和所有追踪域、查看不执行/原行旅周期/全DB9保；原GoalPanel19000帽不涨，当前兼容/环境性能及全部最终边界保持。
+
+UX25依[0075](docs/decisions/0075-pre-action-period-notice-ux25-contract.md)及本轮XAG114回读：行动前时间靠近实际动词/成本，真实异地行旅才标行旅周期，同地查看即时；自动斗法说明单招周期与有限授权，不把最多回合乘周期冒保证总时长。新前告读正式ADVENTURE_CYCLE_MS，不借旧actionSeconds短表现时钟猜放置周期；仅显示不参与时钟或结算。原App/GoalPanel/TrainingPlanner/BattleStrategy全函数与回调保持，App受保护源演进按明确唯一字面逆变换再回原全文，旧hash/patch/cap不重签或放宽；整体艺术长期真人及当前兼容环境性能边界保持。
