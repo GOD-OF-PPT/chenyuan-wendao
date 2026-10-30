@@ -1,0 +1,18 @@
+{
+  "task": "ART33",
+  "date": "2026-10-30",
+  "actualRead": true,
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "title": "Riot Clarity in League",
+      "used": "可辨人物主特征、重要性层级和克制视觉噪声；用于破庙人物/药匣/选择主次，不冒竞技游戏规则直接适用或认证"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "title": "XAG114 UI context",
+      "used": "点之前可知查看或执行、标签贴近对象、阶段变化可辨；不规定人物280px或布局预算"
+    }
+  ],
+  "limits": "Fixed desktop project deductions only. No competitor complete playtest, human approval, or new growth timing."
+}

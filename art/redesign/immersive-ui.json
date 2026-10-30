@@ -22,8 +22,8 @@
     },
     {
       "path": "web/src/GuidancePanel.vue",
-      "bytes": 1376,
-      "sha256": "9e2a96b8dadd7b25fef68e885e34bb8a338a9bb1f580c14f9b864ab0f14c78cd"
+      "bytes": 1520,
+      "sha256": "d45ac08ffa4d5596db6ba8e441e17e2c6cc55781ff154dda00e9f100d7e71e81"
     }
   ],
   "consumer": "web/src/main.ts",

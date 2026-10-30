@@ -1,0 +1,230 @@
+{
+  "format": "chenyuan-art33-export",
+  "version": 1,
+  "producer": {
+    "path": "art/tools/export_art33_opening.py",
+    "bytes": 4088,
+    "sha256": "e0d5d522e9380e6ec047bcd0a69367fc7edc4a496ec5283f5efb1dcd12efec4f"
+  },
+  "helper": {
+    "path": "art/tools/export_art10_blanks.py",
+    "bytes": 8264,
+    "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+  },
+  "prompts": {
+    "path": "art/redesign/art33/prompts.json",
+    "bytes": 5073,
+    "sha256": "256801ee845d449f7a2a7020f1cc816b6c3bb084fa3cab5f734408b7b7c568a3"
+  },
+  "selectedSources": {
+    "path": "art/redesign/art33/selected-sources.json",
+    "bytes": 1345,
+    "sha256": "cbe62217fa4baa5fbb165b11f563f67e15e7f57006673e693b39b891ee78c4d8"
+  },
+  "toolAudit": {
+    "path": "art/redesign/art33/tool-audit.json",
+    "bytes": 1717,
+    "sha256": "310cbd5340822fd9308afdabce8fbd04437db9d0a7aa653207f525dc0998a90f"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-resize",
+    "512",
+    "0",
+    "-metadata",
+    "none"
+  ],
+  "decoder": "Pillow",
+  "decoderVersion": "12.3.0",
+  "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+  "assets": {
+    "shen-offering": {
+      "source": {
+        "path": "art/redesign/art33/shen-offering-v1.png",
+        "bytes": 2882566,
+        "sha256": "e0b8e7097947178f25249f34c410a5df46bff33f2ee98590d337a6b97376018e",
+        "dimensions": {
+          "width": 1024,
+          "height": 1536
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 417015,
+          "solidPixels": 1044790,
+          "intermediatePixels": 111059,
+          "min": 0,
+          "max": 254
+        },
+        "alphaBBox1": [
+          0,
+          0,
+          1024,
+          1536
+        ],
+        "alphaBBox16": [
+          0,
+          9,
+          1024,
+          1536
+        ],
+        "rgbaSHA256": "975b8898ed4badff232450739110f87e8f857fc2653331bbff8a39ab7a0b141b"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/opening/shen-offering-v1.webp",
+        "bytes": 105394,
+        "sha256": "31c2b4381cefd72f0de80baa5b3c30665039814f79660f86dec1a4b59bf46c91",
+        "dimensions": {
+          "width": 512,
+          "height": 768
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 103860,
+          "solidPixels": 261477,
+          "intermediatePixels": 27879,
+          "min": 0,
+          "max": 254
+        },
+        "alphaBBox1": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "alphaBBox16": [
+          0,
+          4,
+          512,
+          768
+        ],
+        "rgbaSHA256": "c9904bf433c14d604737afee92d3b951eae79b2c48e28f9aa499e049fd94fe5c"
+      },
+      "promptSHA256": "1bd11ae346ee310c81ce32bc025751ac6c25ba8ecd08e49d7b07ab17687821f0",
+      "references": [
+        {
+          "path": "art/redesign/characters/shen-v1.png",
+          "role": "identity/costume reference only",
+          "sha256": "483d128d9e72dfa44cf3c902df0bab6721beafdb1032184502263f1d7e0cdf42"
+        },
+        {
+          "path": "web/public/art/v2/scenes/opening.webp",
+          "role": "lighting/style reference only; no background in output",
+          "sha256": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a"
+        }
+      ],
+      "transform": {
+        "uniformScale": 0.5,
+        "crop": false,
+        "padding": false,
+        "semanticEdit": false,
+        "outputWidth": 512,
+        "outputHeight": 768
+      },
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "31c2b4381cefd72f0de80baa5b3c30665039814f79660f86dec1a4b59bf46c91",
+        "secondSHA256": "31c2b4381cefd72f0de80baa5b3c30665039814f79660f86dec1a4b59bf46c91",
+        "sourceUnchanged": true
+      }
+    },
+    "medicine-case": {
+      "source": {
+        "path": "art/redesign/art33/medicine-case-v1.png",
+        "bytes": 2194262,
+        "sha256": "60c0683acf72c52e2c91b6c0ff417514a1b9347ef0b85d076a00418625728cde",
+        "dimensions": {
+          "width": 1448,
+          "height": 1086
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 691619,
+          "solidPixels": 824877,
+          "intermediatePixels": 56032,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          23,
+          29,
+          1434,
+          1086
+        ],
+        "alphaBBox16": [
+          115,
+          41,
+          1344,
+          1062
+        ],
+        "rgbaSHA256": "336077448b7169c0bad9d30e98e0386389c2fec3fd73b69dfbf6c5a77caae7a6"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/opening/medicine-case-v1.webp",
+        "bytes": 32502,
+        "sha256": "fea370cbf9e87c716dc9a248fab9ba5aeb80e0a09de13fb46e066a1a5503b40f",
+        "dimensions": {
+          "width": 512,
+          "height": 384
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 86292,
+          "solidPixels": 102803,
+          "intermediatePixels": 7513,
+          "min": 0,
+          "max": 254
+        },
+        "alphaBBox1": [
+          36,
+          13,
+          497,
+          379
+        ],
+        "alphaBBox16": [
+          40,
+          14,
+          476,
+          376
+        ],
+        "rgbaSHA256": "2b52a4da24af66a446a7ddbb944609779f9ba7f62e8e25e66f2021bd9a2e31cb"
+      },
+      "promptSHA256": "0d261a77882a3b5caf1fe3253b5f8d11744c1fa1426bf26932b85777ad91d37c",
+      "references": [
+        {
+          "path": "web/public/art/v2/items/healing_pill-v1.webp",
+          "role": "material/style reference only; bottle must not appear",
+          "sha256": "f6114f224f6a136f020f179eb7995058f1cdee72dcac8a9ce9bdf57bb69059d9"
+        }
+      ],
+      "transform": {
+        "uniformScale": 0.35359116022099446,
+        "crop": false,
+        "padding": false,
+        "semanticEdit": false,
+        "outputWidth": 512,
+        "outputHeight": 384
+      },
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "fea370cbf9e87c716dc9a248fab9ba5aeb80e0a09de13fb46e066a1a5503b40f",
+        "secondSHA256": "fea370cbf9e87c716dc9a248fab9ba5aeb80e0a09de13fb46e066a1a5503b40f",
+        "sourceUnchanged": true
+      }
+    }
+  },
+  "userAcceptance": false
+}

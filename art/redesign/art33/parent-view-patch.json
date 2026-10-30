@@ -1,0 +1,46 @@
+{
+  "appSteps": [
+    {
+      "old": "import MilestoneGate from './MilestoneGate.vue';\n",
+      "new": "import MilestoneGate from './MilestoneGate.vue';\nimport OpeningOffering from './OpeningOffering.vue';\n"
+    },
+    {
+      "old": ":class=\"{'art17-threshold':caveThreshold}\"",
+      "new": ":class=\"{'art17-threshold':caveThreshold,'art33-opening':store.activity.plan.action.type==='CHOOSE'}\""
+    },
+    {
+      "old": "@navigate=\"inspectCaveDestination\"/></template><p>本次已安排，读秒与停手在上方；保存后显示成果。</p>",
+      "new": "@navigate=\"inspectCaveDestination\"/></template><template v-else-if=\"store.activity.plan.action.type==='CHOOSE'\" #object=\"{source,phase,engaged,remaining,seconds,view}\"><OpeningOffering :game=\"source\" :phase=\"phase\" :engaged=\"engaged\" :remaining=\"remaining\" :seconds=\"seconds\" :view-title=\"view?.title\" :status=\"store.activity?.status??'idle'\" :failed=\"!!store.error\" @inspect=\"viewActivityPlan\"/></template><p>本次已安排，读秒与停手在上方；保存后显示成果。</p>"
+    },
+    {
+      "old": "<template v-else-if=\"phase==='opening'\"><MilestoneGate :game=\"game\" kind=\"opening\"><div class=\"hub-opening-title\"><PortraitImage id=\"shen\" fallback=\"沈\"/>",
+      "new": "<template v-else-if=\"phase==='opening'\"><MilestoneGate :game=\"game\" kind=\"opening\" class=\"art33-opening\"><template #object=\"{source,phase,engaged,remaining,seconds,view}\"><OpeningOffering :game=\"source\" :phase=\"phase\" :engaged=\"engaged\" :remaining=\"remaining\" :seconds=\"seconds\" :view-title=\"view?.title\" :failed=\"!!store.error\" @inspect=\"openHub('current',$event)\"/></template><div class=\"hub-opening-title\">"
+    },
+    {
+      "old": "@choose=\"act({type:'CHOOSE',choice:choice.id})\"><strong>{{choice.name}}</strong>",
+      "new": "@choose=\"act({type:'CHOOSE',choice:choice.id})\"><strong>核对 · {{choice.name}}</strong>"
+    },
+    {
+      "old": ":data-font-scale=\"fontScale\"",
+      "new": ":data-opening-reader=\"singleScreen&&phase==='opening'&&hubView==='current'\" :data-font-scale=\"fontScale\""
+    },
+    {
+      "old": "<template v-if=\"phase === 'opening' && !inspectingInventory\"><MilestoneGate :game=\"game\" kind=\"opening\">",
+      "new": "<template v-if=\"phase === 'opening' && !inspectingInventory\"><MilestoneGate :game=\"game\" kind=\"opening\" :class=\"{'art33-opening':singleScreen,'art33-reading':singleScreen}\"><template v-if=\"singleScreen\" #object=\"{source,phase,engaged,remaining,seconds,view}\"><OpeningOffering :game=\"source\" :phase=\"phase\" :engaged=\"engaged\" :remaining=\"remaining\" :seconds=\"seconds\" :view-title=\"view?.title\" :status=\"store.activity?.version===7&&store.activity.plan.action.type==='CHOOSE'?store.activity.status:'idle'\" :failed=\"!!store.error\" reading @inspect=\"closeHub\"/></template>"
+    },
+    {
+      "old": "                <strong>{{choice.name}}</strong><small>{{cost({type:'CHOOSE',choice:choice.id})}}</small>",
+      "new": "                <strong>{{singleScreen?'核对 · ':''}}{{choice.name}}</strong><small>{{cost({type:'CHOOSE',choice:choice.id})}}</small>"
+    },
+    {
+      "old": "<GuidancePanel v-if=\"(cultivationHome||phase==='opening')&&guidanceEnabled&&!skippedGuides.includes(guidance.id)\" :guide=\"guidance\" @skip=\"skipGuidance\" @help=\"showGameplayHelp\"/>",
+      "new": "<GuidancePanel v-if=\"(cultivationHome||phase==='opening')&&guidanceEnabled&&!skippedGuides.includes(guidance.id)\" :guide=\"guidance\" @skip=\"skipGuidance\" @help=\"showGameplayHelp\" :modal=\"singleScreen&&phase==='opening'\" @expand=\"helpPage=guideCatalog.findIndex(g=>g.id===guidance.id);showGameplayHelp()\"/>"
+    }
+  ],
+  "gateStep": {
+    "old": "<slot name=\"object\" :source=\"source\" :phase=\"phase\" :engaged=\"engaged\" :remaining=\"remaining\" :seconds=\"seconds\">",
+    "new": "<slot name=\"object\" :source=\"source\" :phase=\"phase\" :engaged=\"engaged\" :remaining=\"remaining\" :seconds=\"seconds\" :view=\"view\">"
+  },
+  "originalAppSHA256": "01431c4688c118bb98856a3f2eacbfb1042b9db14a721cb0fcc834d457601d30",
+  "originalGateSHA256": "872aaa2b56331f9de29982ad0142b8f8c56c0feab0214133dc80fd66ca275e03"
+}

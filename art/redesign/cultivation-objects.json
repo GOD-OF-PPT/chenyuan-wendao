@@ -23,8 +23,8 @@
     },
     {
       "path": "web/src/MilestoneGate.vue",
-      "bytes": 4301,
-      "sha256": "872aaa2b56331f9de29982ad0142b8f8c56c0feab0214133dc80fd66ca275e03"
+      "bytes": 4314,
+      "sha256": "13f0335382f633755b3a8559adfde5821c97917df5aabfaa77829340f11ba1f1"
     },
     {
       "path": "web/src/GoalBoard.vue",

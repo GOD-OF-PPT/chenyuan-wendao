@@ -1,0 +1,327 @@
+{
+  "format": "chenyuan-opening-offering-art33",
+  "version": 1,
+  "userAcceptance": false,
+  "budgets": {
+    "nativeBytes": 12000,
+    "parentDeltaBytes": 2400,
+    "oldCultivationBytes": 45000,
+    "oldGoalBytes": 19000,
+    "oldImmersiveBytes": 26000,
+    "newRasterAssets": 2,
+    "maxRuntimeBytes": 350000,
+    "personRuntimeBytes": 210000,
+    "caseRuntimeBytes": 180000,
+    "normalPaintMinimum": 280
+  },
+  "files": [
+    {
+      "path": "web/src/OpeningOffering.vue",
+      "bytes": 2911,
+      "sha256": "c523497e96fc105e69f77d2b41c28da79f399aa19f091ad6e02e9e016313f897"
+    },
+    {
+      "path": "web/src/opening-offering.css",
+      "bytes": 9076,
+      "sha256": "de2c9ed1d70de4f1b937f6d518e181c728f2fc28a0c80a9a3b3896ffea2f678a"
+    }
+  ],
+  "parents": [
+    {
+      "path": "web/src/App.vue",
+      "bytes": 158668,
+      "sha256": "fff09574bebc2ce0ca42445d57f2f102a01744bedfe01fbec42de45f22931f21"
+    },
+    {
+      "path": "web/src/MilestoneGate.vue",
+      "bytes": 4314,
+      "sha256": "13f0335382f633755b3a8559adfde5821c97917df5aabfaa77829340f11ba1f1"
+    },
+    {
+      "path": "web/src/GuidancePanel.vue",
+      "bytes": 1520,
+      "sha256": "d45ac08ffa4d5596db6ba8e441e17e2c6cc55781ff154dda00e9f100d7e71e81"
+    }
+  ],
+  "baselines": [
+    {
+      "path": "goal-4/evidence/art33/App.vue.before.txt",
+      "bytes": 157235,
+      "sha256": "01431c4688c118bb98856a3f2eacbfb1042b9db14a721cb0fcc834d457601d30"
+    },
+    {
+      "path": "goal-4/evidence/art33/MilestoneGate.vue.before.txt",
+      "bytes": 4301,
+      "sha256": "872aaa2b56331f9de29982ad0142b8f8c56c0feab0214133dc80fd66ca275e03"
+    },
+    {
+      "path": "goal-4/evidence/art33/GuidancePanel.vue.before.txt",
+      "bytes": 1376,
+      "sha256": "9e2a96b8dadd7b25fef68e885e34bb8a338a9bb1f580c14f9b864ab0f14c78cd"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0071-opening-offering-art33-contract.md",
+    "goal-4/amendments/2026-10-30-goal-continue-art33.md",
+    "goal-4/research/art33-sources.json",
+    "goal-4/evidence/art33/App.vue.before.txt",
+    "goal-4/evidence/art33/MilestoneGate.vue.before.txt",
+    "goal-4/evidence/art33/GuidancePanel.vue.before.txt"
+  ],
+  "unchanged": {
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "web/src/cultivation-effects.ts": "656c74686b1e1cee2f68c61074172d5c3c23f86cf12d5c3eed7205f215de409a",
+    "web/src/milestone-view.ts": "af1a2045781e806806140092349b2ecde690524436b254a0c1f326a94e108efd",
+    "web/src/ChoiceCard.vue": "322961bb71234da9e284555aad7a568b14b2b4a88cff9736e43cc208d3103e64",
+    "web/src/AssetImage.vue": "ecfc476d074c16c14b181abbf62863ebc6d5c014d9473d3118e761433115a8da",
+    "web/src/assets.ts": "de5fb6c189b144680149d50f456d34269b4c60e670d8893c6d197315778e07b7",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/milestones.ts": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+    "src/full/receipts.ts": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae"
+  },
+  "patches": [
+    {
+      "path": "art/redesign/art33/parent-view-patch.json",
+      "bytes": 4237,
+      "sha256": "ec861406332cc2cc74336c2f7e36b6446168313d48093885a47fa2a3c8de45f5"
+    },
+    {
+      "path": "art/redesign/art33/guide-view-patch.json",
+      "bytes": 702,
+      "sha256": "b18b48a7571977fff68911881551903d477c6b03dc8b1968925e978b23dcf8b7"
+    }
+  ],
+  "asset": {
+    "format": "chenyuan-art33-export",
+    "version": 1,
+    "producer": {
+      "path": "art/tools/export_art33_opening.py",
+      "bytes": 4088,
+      "sha256": "e0d5d522e9380e6ec047bcd0a69367fc7edc4a496ec5283f5efb1dcd12efec4f"
+    },
+    "helper": {
+      "path": "art/tools/export_art10_blanks.py",
+      "bytes": 8264,
+      "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+    },
+    "prompts": {
+      "path": "art/redesign/art33/prompts.json",
+      "bytes": 5073,
+      "sha256": "256801ee845d449f7a2a7020f1cc816b6c3bb084fa3cab5f734408b7b7c568a3"
+    },
+    "selectedSources": {
+      "path": "art/redesign/art33/selected-sources.json",
+      "bytes": 1345,
+      "sha256": "cbe62217fa4baa5fbb165b11f563f67e15e7f57006673e693b39b891ee78c4d8"
+    },
+    "toolAudit": {
+      "path": "art/redesign/art33/tool-audit.json",
+      "bytes": 1717,
+      "sha256": "310cbd5340822fd9308afdabce8fbd04437db9d0a7aa653207f525dc0998a90f"
+    },
+    "encoding": [
+      "cwebp",
+      "-q",
+      "82",
+      "-m",
+      "6",
+      "-alpha_q",
+      "100",
+      "-resize",
+      "512",
+      "0",
+      "-metadata",
+      "none"
+    ],
+    "decoder": "Pillow",
+    "decoderVersion": "12.3.0",
+    "encoderVersion": "1.6.0\nlibsharpyuv: 0.4.2",
+    "assets": {
+      "shen-offering": {
+        "source": {
+          "path": "art/redesign/art33/shen-offering-v1.png",
+          "bytes": 2882566,
+          "sha256": "e0b8e7097947178f25249f34c410a5df46bff33f2ee98590d337a6b97376018e",
+          "dimensions": {
+            "width": 1024,
+            "height": 1536
+          },
+          "format": "png",
+          "mode": "RGBA",
+          "alpha": true,
+          "alphaProof": {
+            "transparentPixels": 417015,
+            "solidPixels": 1044790,
+            "intermediatePixels": 111059,
+            "min": 0,
+            "max": 254
+          },
+          "alphaBBox1": [
+            0,
+            0,
+            1024,
+            1536
+          ],
+          "alphaBBox16": [
+            0,
+            9,
+            1024,
+            1536
+          ],
+          "rgbaSHA256": "975b8898ed4badff232450739110f87e8f857fc2653331bbff8a39ab7a0b141b"
+        },
+        "runtime": {
+          "path": "web/public/art/v2/opening/shen-offering-v1.webp",
+          "bytes": 105394,
+          "sha256": "31c2b4381cefd72f0de80baa5b3c30665039814f79660f86dec1a4b59bf46c91",
+          "dimensions": {
+            "width": 512,
+            "height": 768
+          },
+          "format": "webp",
+          "mode": "RGBA",
+          "alpha": true,
+          "alphaProof": {
+            "transparentPixels": 103860,
+            "solidPixels": 261477,
+            "intermediatePixels": 27879,
+            "min": 0,
+            "max": 254
+          },
+          "alphaBBox1": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "alphaBBox16": [
+            0,
+            4,
+            512,
+            768
+          ],
+          "rgbaSHA256": "c9904bf433c14d604737afee92d3b951eae79b2c48e28f9aa499e049fd94fe5c"
+        },
+        "promptSHA256": "1bd11ae346ee310c81ce32bc025751ac6c25ba8ecd08e49d7b07ab17687821f0",
+        "references": [
+          {
+            "path": "art/redesign/characters/shen-v1.png",
+            "role": "identity/costume reference only",
+            "sha256": "483d128d9e72dfa44cf3c902df0bab6721beafdb1032184502263f1d7e0cdf42"
+          },
+          {
+            "path": "web/public/art/v2/scenes/opening.webp",
+            "role": "lighting/style reference only; no background in output",
+            "sha256": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a"
+          }
+        ],
+        "transform": {
+          "uniformScale": 0.5,
+          "crop": false,
+          "padding": false,
+          "semanticEdit": false,
+          "outputWidth": 512,
+          "outputHeight": 768
+        },
+        "doubleExport": {
+          "bytesEqual": true,
+          "firstSHA256": "31c2b4381cefd72f0de80baa5b3c30665039814f79660f86dec1a4b59bf46c91",
+          "secondSHA256": "31c2b4381cefd72f0de80baa5b3c30665039814f79660f86dec1a4b59bf46c91",
+          "sourceUnchanged": true
+        }
+      },
+      "medicine-case": {
+        "source": {
+          "path": "art/redesign/art33/medicine-case-v1.png",
+          "bytes": 2194262,
+          "sha256": "60c0683acf72c52e2c91b6c0ff417514a1b9347ef0b85d076a00418625728cde",
+          "dimensions": {
+            "width": 1448,
+            "height": 1086
+          },
+          "format": "png",
+          "mode": "RGBA",
+          "alpha": true,
+          "alphaProof": {
+            "transparentPixels": 691619,
+            "solidPixels": 824877,
+            "intermediatePixels": 56032,
+            "min": 0,
+            "max": 255
+          },
+          "alphaBBox1": [
+            23,
+            29,
+            1434,
+            1086
+          ],
+          "alphaBBox16": [
+            115,
+            41,
+            1344,
+            1062
+          ],
+          "rgbaSHA256": "336077448b7169c0bad9d30e98e0386389c2fec3fd73b69dfbf6c5a77caae7a6"
+        },
+        "runtime": {
+          "path": "web/public/art/v2/opening/medicine-case-v1.webp",
+          "bytes": 32502,
+          "sha256": "fea370cbf9e87c716dc9a248fab9ba5aeb80e0a09de13fb46e066a1a5503b40f",
+          "dimensions": {
+            "width": 512,
+            "height": 384
+          },
+          "format": "webp",
+          "mode": "RGBA",
+          "alpha": true,
+          "alphaProof": {
+            "transparentPixels": 86292,
+            "solidPixels": 102803,
+            "intermediatePixels": 7513,
+            "min": 0,
+            "max": 254
+          },
+          "alphaBBox1": [
+            36,
+            13,
+            497,
+            379
+          ],
+          "alphaBBox16": [
+            40,
+            14,
+            476,
+            376
+          ],
+          "rgbaSHA256": "2b52a4da24af66a446a7ddbb944609779f9ba7f62e8e25e66f2021bd9a2e31cb"
+        },
+        "promptSHA256": "0d261a77882a3b5caf1fe3253b5f8d11744c1fa1426bf26932b85777ad91d37c",
+        "references": [
+          {
+            "path": "web/public/art/v2/items/healing_pill-v1.webp",
+            "role": "material/style reference only; bottle must not appear",
+            "sha256": "f6114f224f6a136f020f179eb7995058f1cdee72dcac8a9ce9bdf57bb69059d9"
+          }
+        ],
+        "transform": {
+          "uniformScale": 0.35359116022099446,
+          "crop": false,
+          "padding": false,
+          "semanticEdit": false,
+          "outputWidth": 512,
+          "outputHeight": 384
+        },
+        "doubleExport": {
+          "bytesEqual": true,
+          "firstSHA256": "fea370cbf9e87c716dc9a248fab9ba5aeb80e0a09de13fb46e066a1a5503b40f",
+          "secondSHA256": "fea370cbf9e87c716dc9a248fab9ba5aeb80e0a09de13fb46e066a1a5503b40f",
+          "sourceUnchanged": true
+        }
+      }
+    },
+    "userAcceptance": false
+  }
+}

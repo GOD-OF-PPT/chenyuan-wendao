@@ -1,0 +1,46 @@
+{
+  "task": "ART33",
+  "tool": "built-in image_gen",
+  "assets": {
+    "shen-offering": {
+      "mode": "generate",
+      "useCase": "stylized-concept",
+      "prompt": "Use case: stylized-concept.\nAsset type: transparent character illustration for the Chinese xianxia idle game 尘缘问道, a rain-temple opening scene. This is a new pose of the SAME fictional adult woman Shen Qinghe, not a new character.\nInput image1 is identity and costume reference: preserve her face, calm eyes, dark long hair, jade butterfly hair ornament, ivory and muted green embroidered layered hanfu. Input image2 is ONLY lighting and painterly environment reference; do not reproduce any background.\nPrimary request: a tall three-quarter portrait, head to upper thighs with both forearms included. She quietly waits for the player's response to her request for medicine. One EMPTY hand is gently open palm-up near her waist, the other relaxed; composed, dignified and unhurried. Do not add injury, tears, fear, blood, or a story event. Her gaze meets the viewer and turns slightly toward the right-hand choice area.\nStyle: richly painted, semi-realistic premium Chinese fantasy game illustration matching the reference identity; natural anatomy, detailed silk and hair. Modest original costume, no redesign or modern accessories. Soft warm lantern rim from the left, cool blue-green rain ambience; no bloom or magic effect.\nComposition: vertical 2:3, complete hair/hand/sleeve silhouettes inside the canvas with a little transparent margin, lower robe may meet bottom edge. The figure will be composited as the large foreground subject in the temple. No pedestal, scene, seat, labels, UI, border or ground plane.\nBackground: genuinely transparent alpha. Clean natural hair edges without red/green keying fringe, no checkerboard painted into pixels. No object in either hand, no medicine bottle/pill, weapon, glow, reward particle, text, seal, logo or watermark.",
+      "promptSHA256": "1bd11ae346ee310c81ce32bc025751ac6c25ba8ecd08e49d7b07ab17687821f0",
+      "referenceImages": [
+        {
+          "path": "art/redesign/characters/shen-v1.png",
+          "role": "identity/costume reference only",
+          "sha256": "483d128d9e72dfa44cf3c902df0bab6721beafdb1032184502263f1d7e0cdf42"
+        },
+        {
+          "path": "web/public/art/v2/scenes/opening.webp",
+          "role": "lighting/style reference only; no background in output",
+          "sha256": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a"
+        }
+      ],
+      "transparentBackground": true,
+      "generatedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-e3393618-bfd6-4221-85bb-520442cd2328.png",
+      "selectedSource": "art/redesign/art33/shen-offering-v1.png",
+      "userAcceptance": false
+    },
+    "medicine-case": {
+      "mode": "generate",
+      "useCase": "stylized-concept",
+      "prompt": "Use case: stylized-concept.\nAsset type: transparent foreground game prop for 尘缘问道, an ancient rain-temple medicine choice.\nInput image1 is ONLY a material/detail/style reference from the existing jade medicine bottle; do NOT draw the bottle or any medicine.\nPrimary request: one small portable antique Chinese dark-wood medicine case, already open and COMPLETELY EMPTY. A broad shallow single compartment lined in muted ink-green cloth. Dark warm wood grain, restrained aged-brass corner fittings and a simple jade latch. Crafted and believable, gently worn; no large ornate patterns.\nStyle: richly painted semi-realistic premium xianxia game item with crisp believable wood, fabric and metal matching the reference quality. Soft warm lantern highlight from the left and cool dark teal ambient fill, quiet cold object, no glow.\nComposition: wide 4:3, three-quarter FRONT view with slight top-down elevation so the empty tray is plainly visible and the open lid behind it. Entire box and lid in frame with clear silhouette and transparent margins; useful as a small foreground overlay.\nBackground: genuinely transparent alpha with only a small soft contact shadow, no floor, table or scenery, no checkerboard. The case must have NO contents: no bottle, pill, herb, scroll, hand or other prop. No writing, characters, numbers, runes, stamp, logo, UI or watermark. Inventory will be rendered separately by real game state.",
+      "promptSHA256": "0d261a77882a3b5caf1fe3253b5f8d11744c1fa1426bf26932b85777ad91d37c",
+      "referenceImages": [
+        {
+          "path": "web/public/art/v2/items/healing_pill-v1.webp",
+          "role": "material/style reference only; bottle must not appear",
+          "sha256": "f6114f224f6a136f020f179eb7995058f1cdee72dcac8a9ce9bdf57bb69059d9"
+        }
+      ],
+      "transparentBackground": true,
+      "generatedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-07b106d3-7421-4aaa-b965-a276d287ba01.png",
+      "selectedSource": "art/redesign/art33/medicine-case-v1.png",
+      "userAcceptance": false
+    }
+  },
+  "noFallbackCliAuthorizedOrUsed": true
+}

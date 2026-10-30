@@ -18,7 +18,7 @@ const resultText=computed(()=>{const e=effect.value;if(!e)return '';if(e.action.
 </script>
 <template>
  <section class="milestone-gate" data-testid="milestone-gate" :data-kind="kind" :data-action="current?.type" :data-state="phase" :data-status="store?.error?'failed':phase" :data-working="working" :data-engaged="engaged" :data-progress="progress" :data-saved="!!effect" :style="{'--gate-progress':progress*100+'%'}">
-  <slot name="object" :source="source" :phase="phase" :engaged="engaged" :remaining="remaining" :seconds="seconds">
+  <slot name="object" :source="source" :phase="phase" :engaged="engaged" :remaining="remaining" :seconds="seconds" :view="view">
   <div class="milestone-object" :class="{'milestone-object-arrived':!!effect}" :aria-label="title">
    <div v-if="kind==='opening'" class="gate-medicine-case" aria-hidden="true"><i class="gate-case-lid"/><i class="gate-case-tray"/><GameIcon kind="item" id="healing_pill"/></div>
    <div v-else class="gate-threshold" aria-hidden="true"><i class="gate-lintel"/><i class="gate-pillar gate-pillar-left"/><i class="gate-pillar gate-pillar-right"/><i class="gate-veil"/><GameIcon v-if="pill" kind="item" :id="pill"/><span>{{kind==='trial'?'问心':realm.next?C.realms[realm.next].name:'道'}}</span></div>

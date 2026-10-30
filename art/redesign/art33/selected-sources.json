@@ -1,0 +1,46 @@
+{
+  "shen-offering": {
+    "originalGeneratedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-e3393618-bfd6-4221-85bb-520442cd2328.png",
+    "copiedUnchanged": true,
+    "sourcePath": "art/redesign/art33/shen-offering-v1.png",
+    "sha256": "e0b8e7097947178f25249f34c410a5df46bff33f2ee98590d337a6b97376018e",
+    "bytes": 2882566,
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "alphaRange": [
+      0,
+      254
+    ],
+    "alphaZero": 417015,
+    "alphaSolid250": 1044790,
+    "alphaIntermediate": 111059,
+    "actuallyViewedToolOutput": true,
+    "model": null,
+    "requestId": null,
+    "noProviderReceiptClaim": true
+  },
+  "medicine-case": {
+    "originalGeneratedPath": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-07b106d3-7421-4aaa-b965-a276d287ba01.png",
+    "copiedUnchanged": true,
+    "sourcePath": "art/redesign/art33/medicine-case-v1.png",
+    "sha256": "60c0683acf72c52e2c91b6c0ff417514a1b9347ef0b85d076a00418625728cde",
+    "bytes": 2194262,
+    "dimensions": [
+      1448,
+      1086
+    ],
+    "alphaRange": [
+      0,
+      255
+    ],
+    "alphaZero": 691619,
+    "alphaSolid250": 824877,
+    "alphaIntermediate": 56032,
+    "actuallyViewedToolOutput": true,
+    "model": null,
+    "requestId": null,
+    "noProviderReceiptClaim": true
+  }
+}
