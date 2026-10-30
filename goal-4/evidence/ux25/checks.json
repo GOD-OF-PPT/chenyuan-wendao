@@ -1,0 +1,100 @@
+{
+  "task": "UX25",
+  "codeCommit": "69de8f4648322ac6abb1bd669622521d511bc36e",
+  "runtimeDigest": "9fd96afe12d23603b35ad8757ec39ca40878fd896c6859ab6c29a6aa4f3aebaa",
+  "ui": {
+    "uniqueCurrentRelated": 446,
+    "completeFiles": 49,
+    "regularWholeRun": 442,
+    "originalSlowWholeRun": 4,
+    "new9IncludedNotAdded": true,
+    "skip": 0,
+    "retry": 0,
+    "reportErrors": 0,
+    "global743": "declaration only, not full current execution"
+  },
+  "models": {
+    "passed": 113,
+    "completeFiles": 8
+  },
+  "resources": {
+    "passed": 545,
+    "positiveRootTerminal": 0,
+    "positiveSandboxMethods": 1,
+    "originalCapsAndHashesRetained": true
+  },
+  "typesAndBuild": {
+    "root": 0,
+    "vueBuild": 0,
+    "precommitRebuild": 0,
+    "postcommitRebuild": 0
+  },
+  "reports": [
+    {
+      "path": "artifacts/goal-4/ux25/regular-v2-report.json",
+      "bytes": 39336682,
+      "sha256": "2571022e9bae48c3237912d806de0fc226dc53516c9fcc54dc4fec02e1d489da"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/slow-v2-report.json",
+      "bytes": 1162696,
+      "sha256": "a1101d5524c1029888860d67def2987300e43d1ee6060731be97487cb5b1be00"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/models-v2.log",
+      "bytes": 11221,
+      "sha256": "69921369b2887a3628ecc840b6c5432c7fd00a4acee0643a6be8643651e99501"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/resources-v2.log",
+      "bytes": 647,
+      "sha256": "7b008d861fcd813ea1154d2811cc3e3079616b78256231b14ee6823a10710394"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/root-types-v2.log",
+      "bytes": 61,
+      "sha256": "f4db2c939da9c86ddc28dd7279e9d43cdaccb955d89c68482425e95ef8b37061"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/positive-final-root.log",
+      "bytes": 1879,
+      "sha256": "ffc4764c3437065fed4cc01eb9022efae403cbbf6dfba4a4d1e718098c2519f0"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/positive-final-sandbox.log",
+      "bytes": 98,
+      "sha256": "e859a952b01ebd440a6b56467fc579f4987142cb87ab6aaa6dfa558e21e5c716"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/precommit-build.log",
+      "bytes": 1142,
+      "sha256": "78627b3a7994e740217cb99769a28788ae6ca355042e06a5dbfdbc59e9bae943"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/committed-build.log",
+      "bytes": 1142,
+      "sha256": "dbeea7d9785c1702f462c55aec09eea3447c3d41db71cd3f9807dfc5de15d869"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/phase-v2-state.json",
+      "bytes": 2296,
+      "sha256": "39667737cd9d5998742742fe45b5e81a574af69488882b7d1441cdf610bd92c9"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/pre-run-v2-inputs.json",
+      "bytes": 156943,
+      "sha256": "e29a11b7c43e6709663bb08f6e8f4dcb4f520f80a1a7056b50fe5d13ffb36808"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/all-v2-declared-keys.json",
+      "bytes": 67391,
+      "sha256": "01eed0e2428190be2daf07b413bbf46279d453865bdcfc7c95f9f9100cfd4f2b"
+    },
+    {
+      "path": "artifacts/goal-4/ux25/global-v2-declared-keys.json",
+      "bytes": 114537,
+      "sha256": "bd5832a16cb0cb710ba55e8f721dd22cf501945cb6286c2bcd7e2942842b7c70"
+    }
+  ],
+  "scope": "fixed1440x900/font1/singleChromium changed-feature checks; compatibility/environment performance paused; no user save test"
+}

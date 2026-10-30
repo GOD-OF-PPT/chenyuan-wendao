@@ -1,0 +1,38 @@
+{
+  "publicHudExact": true,
+  "publicHud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+  "newJsCssMatchFrozenHtml": true,
+  "avatarReady": true,
+  "naturalViewport": [
+    1440,
+    756
+  ],
+  "notCompatibility": true,
+  "onlyPublicDomAndOneReload": true,
+  "noUserDbFullGameReadOrGameAction": true,
+  "currentSourceDigest": "9fd96afe12d23603b35ad8757ec39ca40878fd896c6859ab6c29a6aa4f3aebaa",
+  "screenshot": {
+    "path": "goal-4/evidence/ux25/user-preview.jpg",
+    "bytes": 184222,
+    "sha256": "78a51cbcdf57306a5e4a4a1cf534b713d76998d8276a157387895acaf0ebac5c"
+  },
+  "oldOwnListenerValidatedBeforeSigterm": true,
+  "oldFreezePreserved": true,
+  "task": "UX25",
+  "before": {
+    "path": "artifacts/goal-4/ux25/user-before.json",
+    "bytes": 607,
+    "sha256": "c14cbe4e028884d65548d949cf8d6ce325e3053628c43b5c5d785e7464b3e7eb"
+  },
+  "after": {
+    "path": "artifacts/goal-4/ux25/user-after.json",
+    "bytes": 630,
+    "sha256": "a9f12bcec1c984575c962f36279f3160d37eca9b300911fb7746b934c5141984"
+  },
+  "httpAfter": {
+    "path": "artifacts/goal-4/ux25/http-after.json",
+    "bytes": 23592,
+    "sha256": "aff372c757dd5386ff9ad2119163ae60b7255e10a415056254b24f5774c82370"
+  },
+  "screenshotActuallyViewed": true
+}

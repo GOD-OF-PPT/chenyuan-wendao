@@ -1,0 +1,191 @@
+{
+  "task": "UX25",
+  "currentFrames": 11,
+  "actuallyViewedThisFinalRun": 9,
+  "wholePngByteExactToActuallyReviewedEarly": 2,
+  "imagesPerToolCallAtMost": 2,
+  "rows": [
+    {
+      "png": "artifacts/goal-4/ux25/regular-v2-results/adventure-objects-rejected-b601a-riginal-start-receipt-retry-chromium/acceptance-error-safe-auto.png",
+      "pngSHA256": "21ed05ff6e597de98987a5d3203dc3e0513e6a3821c3d516b995dab13c1f1aab",
+      "view": "artifacts/goal-4/ux25/views/final-00-acceptance-error-safe-auto.jpg",
+      "viewSHA256": "9a292349820b17c6758913af224b1d05e67d215af587102da397d03dc85bf1da",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+    },
+    {
+      "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-04a7d-hout-promising-a-total-time-chromium/sword-default-per-move-three-seconds.png",
+      "pngSHA256": "55a2c576d253694ad303d44a9de498a17a4bbe7f1bc41ccb179a7d8d4aad2a7f",
+      "view": "artifacts/goal-4/ux25/views/final-01-sword-default-per-move-three-seconds.jpg",
+      "viewSHA256": "b0c22f2c5e316ebcb15d9a1b9eb504a5ac56b5b2c8c2a2dce14107b90287d7af",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+    },
+    {
+      "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-251dd-nly-cave-view-after-arrival-chromium/xp-foreign-travel-notice.png",
+      "pngSHA256": "50a5162cb35566ff1910ad680c712702b30736ad5f8b5b90948da82d45616ece",
+      "view": "artifacts/goal-4/ux25/views/final-02-xp-foreign-travel-notice.jpg",
+      "viewSHA256": "607e38af696f8e579ed7c40e31492e624f5ef2cebab277e85a2f88e2afc25fd4",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+    },
+    {
+      "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-43881--inspection-stays-immediate-chromium/foreign-material-source-trip.png",
+      "pngSHA256": "c73bc18c7afa7391bf4b5a70cf2386d4b27d9637ec851d83d0059a31438f7b0f",
+      "view": "artifacts/goal-4/ux25/views/final-03-foreign-material-source-trip.jpg",
+      "viewSHA256": "71fbf593dc6ecc84e1856b301eccea637b2377c46730eb762a4b0729084f284c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+    },
+    {
+      "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-4409d-e-same-single-saved-arrival-chromium/hub-return-six-seconds.png",
+      "pngSHA256": "a3b4cba168f7833213be3f71a967dde06bd2700f71299894e674b96d3691230d",
+      "view": "artifacts/goal-4/ux25/views/final-04-hub-return-six-seconds.jpg",
+      "viewSHA256": "ff72291db7e7203782c6eee9813685d078ec2be1b58f6426342ca71bed8f5052",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+    },
+    {
+      "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-46566-e-same-single-saved-arrival-chromium/detail-return-six-seconds.png",
+      "pngSHA256": "5288cc06263f3e8a6d5474bd511f9dbd8ca260671233187ef9cbe460786cac8a",
+      "view": "artifacts/goal-4/ux25/views/final-05-detail-return-six-seconds.jpg",
+      "viewSHA256": "89121aade2c6e28e6392b44d2648f30cde115bb2a27311f529b4c72760492672",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "png": "artifacts/goal-4/ux25/early-v2-results/ux25-period-notices-UX25-C-46566-e-same-single-saved-arrival-chromium/detail-return-six-seconds.png",
+        "pngSHA256": "5288cc06263f3e8a6d5474bd511f9dbd8ca260671233187ef9cbe460786cac8a",
+        "view": "artifacts/goal-4/ux25/views/05-detail-return-six-seconds.jpg",
+        "viewSHA256": "89121aade2c6e28e6392b44d2648f30cde115bb2a27311f529b4c72760492672",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "encoding": "same-size lossy JPEG68; original PNG retained",
+        "actuallyViewed": true
+      },
+      "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+    },
+    {
+      "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-5ab9e-g-never-creates-an-activity-chromium/same-place-view-has-no-fake-period.png",
+      "pngSHA256": "b2f4b32eb28e972f271507f55129fe60ff2870af48f2deb12ef7376135c353a1",
+      "view": "artifacts/goal-4/ux25/views/final-06-same-place-view-has-no-fake-period.jpg",
+      "viewSHA256": "d64e02d3bd8255a156c2ce0870854c5b4a2f8e5bee33f1dc76ef1c4dea04be09",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+    },
+    {
+      "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-89f6a-hout-promising-a-total-time-chromium/talisman-default-per-move-three-seconds.png",
+      "pngSHA256": "98399f394a9bf2b3371ee780ad835d0622d19ee78717ff825b05a26f3e7e7a09",
+      "view": "artifacts/goal-4/ux25/views/final-07-talisman-default-per-move-three-seconds.jpg",
+      "viewSHA256": "4bf7db69d52944d5db27c364ad52dd5b96f0e0c4e579e45451ea8ac1029a680d",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+    },
+    {
+      "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-a88c5-ly-its-explicit-atomic-trip-chromium/goal-before-explicit-travel.png",
+      "pngSHA256": "75b08259f47f910988047cb2b11edd9875e3b782f13c664fd843bc9ad8a19e09",
+      "view": "artifacts/goal-4/ux25/views/final-08-goal-before-explicit-travel.jpg",
+      "viewSHA256": "5ab8d3c0e5ed0da010389b8ab2536725d4624e2ed9a597d4af49e37cba5b80c1",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+    },
+    {
+      "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-a88c5-ly-its-explicit-atomic-trip-chromium/goal-real-six-second-notice.png",
+      "pngSHA256": "67fd2e6bee1b44b360529be3eb8de32ffb6b18a4aae2338e2de639668acd8c70",
+      "view": "artifacts/goal-4/ux25/views/final-09-goal-real-six-second-notice.jpg",
+      "viewSHA256": "b93743cd2cc5a1c35560de80b6436363deebe65db2ef7f06dbce18b63b2b2cbc",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "png": "artifacts/goal-4/ux25/early-v2-results/ux25-period-notices-UX25-C-a88c5-ly-its-explicit-atomic-trip-chromium/goal-real-six-second-notice.png",
+        "pngSHA256": "67fd2e6bee1b44b360529be3eb8de32ffb6b18a4aae2338e2de639668acd8c70",
+        "view": "artifacts/goal-4/ux25/views/09-goal-real-six-second-notice.jpg",
+        "viewSHA256": "b93743cd2cc5a1c35560de80b6436363deebe65db2ef7f06dbce18b63b2b2cbc",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "encoding": "same-size lossy JPEG68; original PNG retained",
+        "actuallyViewed": true
+      },
+      "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+    },
+    {
+      "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-c57ed-hout-promising-a-total-time-chromium/trial-default-per-move-three-seconds.png",
+      "pngSHA256": "a27b8f10a40e6830701b211da9c8c93ca4e6c94c56ef42489d511b03fcd769a2",
+      "view": "artifacts/goal-4/ux25/views/final-10-trial-default-per-move-three-seconds.jpg",
+      "viewSHA256": "b508e138666a73471d1f187f08e2666a494c5633fd0b569ea0cb53cea87988c4",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+    }
+  ],
+  "actualProductRedReviewed": "layout-before-visual.json",
+  "paddingOnlyNotAccepted": "layout-check report passes controls but picture hides stop reason; retained",
+  "finalErrorTextProof": "all3 authorization spans and local stop reason have font14/Range/all-ancestor bounds and navBottom checks",
+  "scope": "current six entry surfaces; not overall art/human acceptance"
+}

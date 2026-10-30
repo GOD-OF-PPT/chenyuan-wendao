@@ -1,0 +1,40 @@
+{
+  "task": "UX25",
+  "previousScope": "UX24 19c4444/68f6cbc; full engine baseline CHECK-ART33-34",
+  "onlyRuntimeChanges": [
+    "App.vue pure constant import/current return notice",
+    "GoalPanel.vue pure constant import/three travel notices",
+    "TrainingPlanner.vue pure display imports/current return notice",
+    "BattleStrategy.vue pure constant import/default per-move notice; necessary scoped battle row/padding correction for real rejected-start overlay"
+  ],
+  "other309RuntimeInputsExact": true,
+  "allOriginalFunctionsWatchesCssAndCallbacksRestoredByFixedWholeSourceInverse": true,
+  "native415": {
+    "report": {
+      "path": "artifacts/goal-4/check-art33-34/native-report.json",
+      "bytes": 8963509,
+      "sha256": "7203dee9419f2aacb452fa6aca13dc8a298f8dcce7a085321f354d797259e3d5"
+    },
+    "use": "unchanged rules/Store/DB9 baseline only; not current full execution"
+  },
+  "normal32": {
+    "report": {
+      "path": "artifacts/goal-4/check-art33-34/normal-report.json",
+      "bytes": 1029298,
+      "sha256": "4ccf5ea68573bfd2e198756bca08a50b64c642c099779e74c88667dc3ebf56a2"
+    },
+    "use": "prior legal route rules/economy evidence; current full32 UI not executed or claimed"
+  },
+  "oldFullUi718And734Registration": "historical; not composed with current446 as743 green",
+  "currentScope": {
+    "relatedUiDeclared": 446,
+    "originalSlow": 4,
+    "globalRegistrationOnly": 743,
+    "newCases": 9,
+    "resourceMethods": 545,
+    "modelFiles": 8
+  },
+  "compatibilityAndEnvironmentPerformance": "paused",
+  "allFinalMatricesAndHumanStillOpen": true,
+  "cssQualification": "old stylesheet text exact; new explicit scoped suffix listed in source-diff-proof.json must be removed before inverse; not a claim of zero CSS changes"
+}

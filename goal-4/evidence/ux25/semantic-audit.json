@@ -1,0 +1,139 @@
+{
+  "task": "UX25",
+  "cases": [
+    {
+      "title": "UX25-C1 real retreat exposes six seconds beside the goal travel before only its explicit atomic trip",
+      "expected": true,
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "attachments": [
+            "goal-real-six-second-notice-full-time-notice-geometry",
+            "goal-complete-formal-trip"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UX25-C2 hub return to cave shows its real period and costs before the same single saved arrival",
+      "expected": true,
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "attachments": [
+            "hub-return-six-seconds-full-time-notice-geometry",
+            "hub-return-complete-formal-trip"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UX25-C2 detail return to cave shows its real period and costs before the same single saved arrival",
+      "expected": true,
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "attachments": [
+            "detail-return-six-seconds-full-time-notice-geometry",
+            "detail-return-complete-formal-trip"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UX25-C3 the XP deficit only shows travel time while foreign and becomes an immediate readonly cave view after arrival",
+      "expected": true,
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "attachments": [
+            "xp-foreign-travel-notice-full-time-notice-geometry",
+            "xp-return-complete-formal-trip"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UX25-C4 a material source trip states six seconds without buying and its same-place source inspection stays immediate",
+      "expected": true,
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "attachments": [
+            "foreign-material-source-trip-full-time-notice-geometry",
+            "material-market-complete-formal-trip"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UX25-C5 the same-location trial preparation entry has no travel notice and viewing never creates an activity",
+      "expected": true,
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "title": "UX25-C6 sword default finite tactics state each real three-second move without promising a total time",
+      "expected": true,
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "attachments": [
+            "sword-default-per-move-three-seconds-full-time-notice-geometry",
+            "sword-actual-single-period"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UX25-C6 talisman default finite tactics state each real three-second move without promising a total time",
+      "expected": true,
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "attachments": [
+            "talisman-default-per-move-three-seconds-full-time-notice-geometry",
+            "talisman-actual-single-period"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "UX25-C6 trial default finite tactics state each real three-second move without promising a total time",
+      "expected": true,
+      "results": [
+        {
+          "status": "passed",
+          "retry": 0,
+          "attachments": [
+            "trial-default-per-move-three-seconds-full-time-notice-geometry",
+            "trial-actual-single-period"
+          ]
+        }
+      ]
+    }
+  ],
+  "formalOracle": "test-diff-proof.json; original oneSaved byte-exact",
+  "checks": [
+    "5999/2999ms full Game and entire DB unchanged; +1 exactly once",
+    "full formal resolve Game, previous, activity, canonical command/input/fingerprint, unique receipt and every DB9 store",
+    "original checkpoint and owner remain on goal travel; no automatic trial entry",
+    "source trip never purchases; same-location view no new activity",
+    "default sword talisman trial3s single cycle; no max40=120s promise",
+    "pause/reload preserves complete already-saved Game and DB",
+    "complete costs/limited supplies/reserves/stop reason and geometry retained"
+  ],
+  "scope": "isolated legal prefixes and current UI proof, not human earned progress or long balance"
+}

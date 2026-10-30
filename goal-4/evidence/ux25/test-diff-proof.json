@@ -1,0 +1,7 @@
+{
+  "existingAdventureFileOnlyAddedStrictFourTextGeometry": true,
+  "existingAllTestsOraclesBodiesTimeoutsUnchanged": true,
+  "oneSavedFullFormalAllDbOracleByteExactToExistingCend": true,
+  "source": "artifacts/goal-4/ux25/before-adventure-objects.spec.ts",
+  "addedAssertions": "4 complete text rows/font14/range/all ancestors/navigation; no removed assertion or longer timeout"
+}
