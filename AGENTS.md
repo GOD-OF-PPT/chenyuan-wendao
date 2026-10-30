@@ -493,3 +493,5 @@ ART34依[0072](docs/decisions/0072-source-stage-art34-contract.md)及本轮Riot 
 ART34层级检查补充：收起低频目录后，右侧空间仍须覆盖真实一次入囊的全部物/石/修为、周期累计和停止，而非只验冷态空匣。当前获准桌面场景核对结果文字与授权带/所有祖先、中末真实CSS演出外缘；减少重复纵向留白，不缩字、删结果或抬原时限。阅读册的开关/选择只改变本地阅读与原草案，普通周期不抢页/焦点，已受理原命令仍沿原重试。
 
 CHECK-ART33-34核全矩阵必须先按真实适用profile的file/title/project枚举：基础idle-persistence355不能代既有含发布源迁移/恢复的idle-recovery415，原22过时即时setup保持明确退休/替代义务，不把它们假执行或自动复活。v1七字段回执/next startedAt与v2完整proof/resolvedAt区分；破境完整准备checkpoint/owner与Game/Activity同事务核，不把检查点变化误当无关库改变。原14px辅助说明按既有语义分类，正文18与全字/几何门槛不放宽。根工具的合成证据校验不代表兼容或环境性能实际执行，当前暂停界限保持。
+
+UX24依[0074](docs/decisions/0074-current-goal-guidance-ux24-contract.md)与本轮实读XAG109/114：无资源缺口并不代表当前受遭遇阻挡，地点/境界/修法/状态等应沿正式preview.failure.message与原来源/地点入口说明；原“准备已齐”仅在正式allowed时显示。已有真实失败通道完整时应撤掉相矛盾的猜测提示，不另建一套阶段/门槛映射，也不把删错句冒全流程/真人理解已过。默认trial/completed和所有追踪域、查看不执行/原行旅周期/全DB9保；原GoalPanel19000帽不涨，当前兼容/环境性能及全部最终边界保持。

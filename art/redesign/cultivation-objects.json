@@ -49,8 +49,8 @@
   ],
   "goalPanel": {
     "path": "web/src/GoalPanel.vue",
-    "bytes": 18783,
-    "sha256": "662fbf016bf5c67fc805665397a5e78996428364bac34e6691ba073116708a22"
+    "bytes": 18717,
+    "sha256": "3fb7d66d1c39125c2805e25e12fd0c8c4d7c98b3743a61dbe82c1dad852357d4"
   },
   "assets": [
     {

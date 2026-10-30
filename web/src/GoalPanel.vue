@@ -152,7 +152,7 @@ const boardReady=computed(()=>focus.value?.kind==='item'?!!itemView.value?.compl
         <p v-if="actionView && !needs.length" class="small">物资已齐；前往对应地点后另行确认行动。</p>
         <button v-if="showLocation" class="text-button goal-location" data-testid="goal-location" :data-navigation-kind="locationPreview?'travel':'view'" @click="goalLocation" :disabled="!enabled || !!locationPreview && (writeBlocked||!locationPreview.allowed)">{{locationLabel}} →<small v-if="locationPreview">{{formatCosts(locationPreview.costs)}}</small></button>
         <small v-if="showLocation&&locationPreview&&(writeBlocked||locationPreview.failure)">{{writeBlocked?'先处理原安排或重新读取':locationPreview.failure?.message}}</small>
-        <p v-if="!focus && !goal.deficits.length && !goal.completed" class="small">{{goal.preview?.allowed?'准备已齐，按当前页面确认行动。':'先处理眼前的遭遇，目标会随实际进度更新。'}}</p>
+        <p v-if="!focus && !goal.deficits.length && !goal.completed && goal.preview?.allowed" class="small">准备已齐，按当前页面确认行动。</p>
       </template>
     </GoalBoard>
 
