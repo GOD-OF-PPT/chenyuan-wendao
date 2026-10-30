@@ -50,7 +50,7 @@
     {
       "path": "web/e2e/source-actors.spec.ts",
       "beforeAssertions": 374,
-      "afterAssertions": 374
+      "afterAssertions": 375
     },
     {
       "path": "web/e2e/stage-r4.spec.ts",
@@ -99,5 +99,6 @@
     "idleSources": 10995,
     "idleSourcesCap": 24000
   },
-  "GameRulesStoreDB9CyclesProofAndExistingDrawingsUnchanged": true
+  "GameRulesStoreDB9CyclesProofAndExistingDrawingsUnchanged": true,
+  "lastOldA12ErrorBookNowExplicitlyOpenedAndVisible": true
 }

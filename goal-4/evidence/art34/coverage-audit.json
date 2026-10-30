@@ -17,7 +17,11 @@
     {
       "unchangedFiles": 20,
       "cases": 185,
-      "fromReport": "related-report.json"
+      "report": {
+        "path": "artifacts/goal-4/art34/related-report.json",
+        "bytes": 24363127,
+        "sha256": "9b7738919d1514b47f5955c66f85a9d9629cf009920e4de945fcf6be5c748f17"
+      }
     },
     {
       "affectedCompleteFiles": 3,
@@ -36,7 +40,7 @@
         "bytes": 4901099,
         "sha256": "ae55661b6f7d567a0946f897f62f5e82be376e95051fc5de0ee47e3794714147"
       },
-      "strongerFourVisibleErrorEntries": true
+      "actualFourErrorEntriesVisible": true
     }
   ],
   "currentKeys": [
@@ -330,7 +334,12 @@
       "bytes": 145695,
       "sha256": "0b1c340c765927f0fc75624259ea0e91b659a23cc89f5f6747d357f5e281a241"
     },
-    "delivery1314TerminalExact": true
+    "delivery1314TerminalExact": true,
+    "delivery1314Terminal": {
+      "path": "artifacts/goal-4/art34/delivery-inputs-terminal.json",
+      "bytes": 63,
+      "sha256": "23dc11db0606804db271757a3099fb3fd47c58b8452043bc26a34d1eb6488dcc"
+    }
   },
   "notRun": [
     "full currentUI suite",
