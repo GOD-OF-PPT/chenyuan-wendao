@@ -1,0 +1,55 @@
+{
+  "task": "UX24",
+  "previousFullMatrix": "CHECK-ART33-34 code49513f1/head83972ce",
+  "baselineRuntime": "e3bde797a2cd36f0c3dba2db71bd67025986cf5c676b572c098d086c4be2b2a7",
+  "currentRuntime": "a4bc397011f80bd78de02714dc893f332e752f4184b646d6b0d30acd104dd141",
+  "unchanged312Inputs": true,
+  "onlyRuntimeDifference": "GoalPanel.vue one template line; fixed inverse whole-source proof in source-diff-proof.json",
+  "native415": {
+    "report": {
+      "path": "artifacts/goal-4/check-art33-34/native-report.json",
+      "bytes": 8963509,
+      "sha256": "7203dee9419f2aacb452fa6aca13dc8a298f8dcce7a085321f354d797259e3d5"
+    },
+    "use": "unchanged native rules/Store/DB9/period baseline only; not relabeled as a current full native run"
+  },
+  "normal32": {
+    "report": {
+      "path": "artifacts/goal-4/check-art33-34/normal-report.json",
+      "bytes": 1029298,
+      "sha256": "4ccf5ea68573bfd2e198756bca08a50b64c642c099779e74c88667dc3ebf56a2"
+    },
+    "use": "prior full legal-route evidence with unchanged game rules/economy/Store; current full32 UI journey not run or claimed because GoalPanel is changed"
+  },
+  "oldFullUi718": {
+    "coverage": {
+      "path": "goal-4/evidence/check-art33-34/coverage-audit.json",
+      "bytes": 177306,
+      "sha256": "24b74b023bc3c9ebe7aa96557d523fd069861c16ec8b9d47f41aec02b1a46aba"
+    },
+    "use": "historical baseline, not composed with current329 as full734 green"
+  },
+  "currentPlannedUi": 329,
+  "currentFullRegistrationOnly": 734,
+  "currentActualModels": {
+    "completeFiles": 5,
+    "testsPassed": 47,
+    "actualTerminalExit": 0
+  },
+  "currentAssets": {
+    "fullMethodsPassed": 540,
+    "actualTerminalExit": 0
+  },
+  "finalMatricesAndHumanStillOpen": true,
+  "sourcePreparatoryRecord": {
+    "path": "artifacts/goal-4/ux24/inheritance.json",
+    "sha256": "62f66f2ce34af8edeeec1f654babd5f68ed3515f3eeb946cb9bfdafeb617eb6a",
+    "originalPendingRecordRetained": true
+  },
+  "actualCurrentUi": {
+    "relatedUniquePassed": 329,
+    "regular": 326,
+    "originalSlow": 3
+  },
+  "actualResults": "checks.json and coverage-audit.json"
+}

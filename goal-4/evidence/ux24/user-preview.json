@@ -1,0 +1,41 @@
+{
+  "task": "UX24",
+  "before": {
+    "path": "artifacts/goal-4/ux24/user-before.json",
+    "bytes": 584,
+    "sha256": "438cb48a7d1f1db1280e8a551249cf76690579d230d29de783775104b8204e3f"
+  },
+  "after": {
+    "path": "artifacts/goal-4/ux24/user-after.json",
+    "bytes": 717,
+    "sha256": "d5fe272a87763ce4009f89814ac8fae8e799157d29f22b8d0d24bffee93b57cc"
+  },
+  "publicHudExact": true,
+  "publicHud": "顾长青凡人 · 尚未择法气血 60 / 60灵力 20 / 20修为 10 / 10灵石 40此段活动已结束自然吐纳修为已圆满，停止修炼并筹备突破已完成 2 / 50 轮 · 每轮 30 秒原安排完整回执本段详情当前目标引气入体准备已齐，可核对行动。查看缺口与来源 ›已保存帮助设置",
+  "newJsCssMatchFrozenHtml": true,
+  "avatarReady": true,
+  "naturalViewport": [
+    1440,
+    756
+  ],
+  "notCompatibility": true,
+  "onlyReadPublicDomAndOneReload": true,
+  "noUserDbFullGameReadOrGameAction": true,
+  "oldOwnStaticListenerOnlyStoppedAfterSavedStoppedNoEditing": true,
+  "originalOldFreezePreserved": true,
+  "currentServer": {
+    "path": "artifacts/goal-4/ux24/preview-new-server.json",
+    "bytes": 296,
+    "sha256": "02e7d7681f4ba9dcca5941f78659ed75173aae6816602ba9b330cadbcc80067c"
+  },
+  "httpAfter": {
+    "path": "artifacts/goal-4/ux24/http-after.json",
+    "bytes": 27888,
+    "sha256": "a060312dfa1364251b9fc4f6751ab343196cec20a9a601f7d2d1ba111f46f858"
+  },
+  "screenshot": {
+    "path": "goal-4/evidence/ux24/user-preview.jpg",
+    "bytes": 184222,
+    "sha256": "78a51cbcdf57306a5e4a4a1cf534b713d76998d8276a157387895acaf0ebac5c"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "onlyRuntimeDifference": [
+    "web/src/GoalPanel.vue"
+  ],
+  "unchanged312RuntimeInputs": true,
+  "goalPanelOldBytes": 18783,
+  "goalPanelNewBytes": 18717,
+  "oldCap": 19000,
+  "fixedInverseWholeSourceExact": true,
+  "scriptCssAllOtherTemplateBytesExact": true,
+  "onlyLedgerGoalPanelActualBytesHashChanged": true,
+  "noNewRuntimeModulesOrRaster": true,
+  "allRulesStorePeriodsDB9AndOldProofUnchanged": true,
+  "workflowReuse": {
+    "path": "artifacts/goal-4/ux24/workflow-reuse.json",
+    "sha256": "64489ccf671c1b6772136ce26c054d10b4e7406eacb2114624dded0ad7ebac68"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-30",
+  "task": "UX24",
+  "status": "scoped_engineering_fix_delivered",
+  "codeCommit": "19c44445fbae1894bc1ac2b90c7fe3ca4e18972a",
+  "contract": "docs/decisions/0074-current-goal-guidance-ux24-contract.md",
+  "runtimeDigest": "a4bc397011f80bd78de02714dc893f332e752f4184b646d6b0d30acd104dd141",
+  "runtimeInputs": 313,
+  "onlyRuntimeChange": "GoalPanel.vue one template line",
+  "other312RuntimeInputsExact": true,
+  "noScriptCssOrOtherTemplateChanges": true,
+  "fixedInverseWholeSourceExact": true,
+  "oldGoalCap": 19000,
+  "goalPanelBytes": 18717,
+  "previousGoalPanelBytes": 18783,
+  "newRuntimeModulesOrRasters": 0,
+  "newCasesIncludedIn329": 16,
+  "currentUi": {
+    "uniqueRelated": 329,
+    "completeFiles": 35,
+    "regularWholeRun": 326,
+    "originalSlowWholeRun": 3,
+    "wholeSingleRun": false
+  },
+  "models": {
+    "tests": 47,
+    "completeFiles": 5,
+    "wholeRun": true
+  },
+  "resources": {
+    "unique540WholeRun": true,
+    "positiveRootProductionAssets": 121,
+    "positiveSandboxMethods": 1,
+    "positiveRoot": {
+      "path": "artifacts/goal-4/ux24/positive-root.log",
+      "bytes": 1879,
+      "sha256": "d8963db5cece95f69d820fc8b65d9bd7adedeb3ed63911e1f69f0f40247535dc"
+    },
+    "positiveSandbox": {
+      "path": "artifacts/goal-4/ux24/positive-sandbox.log",
+      "bytes": 98,
+      "sha256": "c631c0e645d0a677aa731333321e6a2bfe2f56990b91c4691a793945f7e560c5"
+    },
+    "oldCapsAndNegativeTestsRetained": true
+  },
+  "rootTypes": "passed",
+  "vueTypesPrecommitBuildAndPostcommitBuild": "passed",
+  "selected": {
+    "skip": 0,
+    "automaticRetry": 0,
+    "reportErrors": 0
+  },
+  "globalProfile734": "discovery only; not current full execution",
+  "native415Normal32FullRoot873": "historical baseline scoped in inheritance.json, not current full gates",
+  "sourceFreeze": {
+    "count": 1361,
+    "terminalExactBeforeCloseoutDocs": true,
+    "protected13Exact": true
+  },
+  "visual": {
+    "current": 15,
+    "freshActuallyViewed": 7,
+    "wholePngReviewedInheritance": 8,
+    "oldRed": 1,
+    "originalUserPageAlsoViewed": true,
+    "maxPerCall": 2
+  },
+  "coverage": "coverage-audit.json",
+  "sourceReview": "static-review.json",
+  "attempts": "attempts.json",
+  "identity": "identity-proof.json",
+  "preview": "user-preview.json",
+  "compatibilityAndEnvironmentPerformance": "paused; no such development or matrix executed",
+  "goal": "active; overall art/gamefeel/long balance/human and all final obligations remain"
+}
