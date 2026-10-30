@@ -1,0 +1,16 @@
+{
+  "runtimeDigest": "e3bde797a2cd36f0c3dba2db71bd67025986cf5c676b572c098d086c4be2b2a7",
+  "runtimeInputs": 313,
+  "allRuntimeBytesSameAsTested": true,
+  "productionRuntimeChangesThisTask": [],
+  "protected13Exact": true,
+  "newTestCombinations": 3,
+  "formalOracle": "full resolve + completeActivity + canonicalFingerprint + versioned receipt + full stores; checkpoints and owner exact",
+  "testPreparatoryFailures": "preserved original early/v2/v3; original auxiliary14 classifier corrected, body18/control44/period/Game unchanged",
+  "compatibilityAndEnvironmentPerformance": "paused; root synthetic validator samples do not run these matrices",
+  "newCombinationFile": "web/e2e/check-art33-34.spec.ts",
+  "contract": "docs/decisions/0073-art33-34-comprehensive-contract.md",
+  "currentRuntimeAndPayloadUnchanged": true,
+  "fullFrozen1334TerminalExact": true,
+  "fullCoverage": "coverage-audit.json"
+}

@@ -1,0 +1,86 @@
+{
+  "task": "CHECK-ART33-34",
+  "originalFindings": {
+    "path": "goal-4/evidence/review-c-end-02/findings.json",
+    "sha256": "bc93a3d61a352f8027e811c7520dbb3575aee17e981258247331676103877e58",
+    "unchanged": true
+  },
+  "engineeringClosuresOnly": [
+    {
+      "id": "CEND02-A01",
+      "task": "ART33",
+      "code": "ea1fb500837d53cc9a5ac8094a6f4e8441b88096"
+    },
+    {
+      "id": "CEND02-A02",
+      "task": "ART34",
+      "code": "b073537805a1f209a6bb749bdc560d8aac1e90a3"
+    }
+  ],
+  "remaining": [
+    {
+      "id": "CEND02-I01",
+      "severity": "P2",
+      "title": "已撤退且无任何当前遭遇时，目标页仍要求先处理眼前的遭遇",
+      "status": "open; not fixed in this check",
+      "sourceOwner": [
+        "web/src/GoalPanel.vue"
+      ]
+    },
+    {
+      "id": "CEND02-T01",
+      "severity": "P2",
+      "title": "部分直接执行入口未在动作前说明真实周期",
+      "status": "open; not fixed in this check",
+      "sourceOwner": [
+        "web/src/GoalPanel.vue",
+        "web/src/App.vue",
+        "web/src/BattleStrategy.vue"
+      ]
+    },
+    {
+      "id": "CEND02-I02",
+      "severity": "P2",
+      "title": "剑简已在运行，默认安排标题仍是待确认而未明确下次草案",
+      "status": "open; not fixed in this check",
+      "sourceOwner": [
+        "web/src/LearningPlanner.vue:76"
+      ]
+    },
+    {
+      "id": "CEND02-A03",
+      "severity": "P3",
+      "title": "经卷／剑简／疗养的原生几何静物与已绘制角色器物风格仍有落差",
+      "status": "open; not fixed in this check",
+      "sourceOwner": [
+        "web/src/JadeStudyScene.vue",
+        "web/src/RecoveryRitual.vue"
+      ]
+    },
+    {
+      "id": "CEND02-I03",
+      "severity": "P2",
+      "title": "功法／法宝内部跨分类后，标题和主导航仍显示原入口",
+      "status": "open; not fixed in this check",
+      "sourceOwner": [
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue:153",
+        "web/src/PrimaryNav.vue"
+      ]
+    }
+  ],
+  "nextIndependent": "UX24: CEND02-I01 factual current-mainline guidance only; contract/parameters/acceptance/rollback before edits, not started in this check",
+  "historicalOpen": [
+    "CHECK2729-J01 original normal240sec whole-run timeout cause unknown",
+    "ART17 original four performance reds/unknown",
+    "ART28-OBS-01",
+    "all prior unresolved obligations retained"
+  ],
+  "finalObligations": [
+    "complete final matrices and clean same-version candidate",
+    "maximal C-end/code/security review",
+    "overall art/gamefeel/long-term balance and actual user acceptance"
+  ],
+  "compatibilityAndEnvironmentPerformance": "paused",
+  "overallGoal": "active; not complete"
+}
