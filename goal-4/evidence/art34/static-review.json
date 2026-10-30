@@ -1,0 +1,103 @@
+{
+  "task": "ART34",
+  "runtimeDigest": "e3bde797a2cd36f0c3dba2db71bd67025986cf5c676b572c098d086c4be2b2a7",
+  "runtimeCount": 313,
+  "oldRuntimeUnchanged": 311,
+  "newRuntimeFiles": 0,
+  "changedRuntime": [
+    "web/src/SourceField.vue",
+    "web/src/art02-source.css"
+  ],
+  "originalFieldScriptAndTemplateExactlyReversible": true,
+  "originalPlannerWholeExact": true,
+  "originalSourceActorsFullSavedCycleGeometryPhysicalAndNativeMiddleLateAssertionsExact": true,
+  "entryAdaptationsOnly": [
+    {
+      "path": "web/e2e/matrix-ui-cancel.spec.ts",
+      "beforeAssertions": 143,
+      "afterAssertions": 143
+    },
+    {
+      "path": "web/e2e/stage-support.ts",
+      "beforeAssertions": 31,
+      "afterAssertions": 34
+    },
+    {
+      "path": "web/e2e/stage-r2.spec.ts",
+      "beforeAssertions": 99,
+      "afterAssertions": 99
+    },
+    {
+      "path": "web/e2e/art18-dialog-gallery.spec.ts",
+      "beforeAssertions": 19,
+      "afterAssertions": 19
+    },
+    {
+      "path": "web/e2e/idle-integration.spec.ts",
+      "beforeAssertions": 75,
+      "afterAssertions": 75
+    },
+    {
+      "path": "web/e2e/support.ts",
+      "beforeAssertions": 16,
+      "afterAssertions": 17
+    },
+    {
+      "path": "web/e2e/cultivation-objects.spec.ts",
+      "beforeAssertions": 315,
+      "afterAssertions": 315
+    },
+    {
+      "path": "web/e2e/source-actors.spec.ts",
+      "beforeAssertions": 374,
+      "afterAssertions": 374
+    },
+    {
+      "path": "web/e2e/stage-r4.spec.ts",
+      "beforeAssertions": 173,
+      "afterAssertions": 173
+    },
+    {
+      "path": "web/e2e/adventure-objects.spec.ts",
+      "beforeAssertions": 234,
+      "afterAssertions": 234
+    },
+    {
+      "path": "web/e2e/check-ta-03.spec.ts",
+      "beforeAssertions": 169,
+      "afterAssertions": 169
+    },
+    {
+      "path": "web/e2e/idle-stage-ui.spec.ts",
+      "beforeAssertions": 67,
+      "afterAssertions": 67
+    },
+    {
+      "path": "web/e2e/idle-sources.spec.ts",
+      "beforeAssertions": 77,
+      "afterAssertions": 77
+    },
+    {
+      "path": "web/e2e/check-art-01.spec.ts",
+      "beforeAssertions": 127,
+      "afterAssertions": 127
+    },
+    {
+      "path": "web/e2e/idle-route-support.ts",
+      "beforeAssertions": 86,
+      "afterAssertions": 86
+    }
+  ],
+  "newRasterAssets": 0,
+  "budgets": {
+    "art02": 42244,
+    "art02Cap": 45000,
+    "added": 6523,
+    "addedCap": 7000,
+    "ta08": 41373,
+    "ta08Cap": 42000,
+    "idleSources": 10995,
+    "idleSourcesCap": 24000
+  },
+  "GameRulesStoreDB9CyclesProofAndExistingDrawingsUnchanged": true
+}

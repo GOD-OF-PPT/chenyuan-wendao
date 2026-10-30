@@ -1,3 +1,4 @@
+import {selectSource as inspectSourceLibrary} from './stage-support';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {driver,fullRoute} from '../../tests/full-route.mjs';
 import {newGame} from '../../src/full/engine.ts';
@@ -59,4 +60,4 @@ test('ART18-G9 trial entry and real checkpoint recovery retain the complete orig
  await runRecoveryPlan(page,{kind:'milestone',action:{type:'START_TRIAL'},maxCycles:1});await runRecoveryPlan(page,{kind:'milestone',action:{type:'ANSWER_TRIAL',answer:'accept'},maxCycles:1});await recoveryMove(page,'guard');await view(page,info,'trial-restore',()=>openRecoveryRestore(page));
 });
 
-test('ART18-G10 the real wilderness source plan retains its full finite authorization',async({page},info)=>{const d=driver('trade','sword');d.go('wilderness');await importRecoveryFixture(page,d.game);await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-source').click();await page.getByTestId('source-herbs').click();await view(page,info,'source-plan',()=>stage.openSourceSettings(page));});
+test('ART18-G10 the real wilderness source plan retains its full finite authorization',async({page},info)=>{const d=driver('trade','sword');d.go('wilderness');await importRecoveryFixture(page,d.game);await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-source').click();await inspectSourceLibrary(page,'herbs');await view(page,info,'source-plan',()=>stage.openSourceSettings(page));});

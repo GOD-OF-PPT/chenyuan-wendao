@@ -25,7 +25,7 @@ export async function expectActivityTotals(page:Page,text:string){
 
 export async function openTrainingBudget(page:Page){const box=page.getByTestId('training-limits');if(!await box.evaluate(n=>(n as HTMLDetailsElement).open))await page.getByTestId('training-limits-toggle').click();await expect(page.getByLabel('累计灵石预算')).toBeVisible();}
 
-export async function openSourceSettings(page:Page,limits=false){const dialog=page.getByTestId('source-plan-dialog');if(!await dialog.isVisible())await page.getByTestId('source-plan-open').click();await expect(dialog).toBeVisible();const box=dialog.locator('.source-limits');if(limits&&!await box.evaluate(n=>(n as HTMLDetailsElement).open))await box.locator('summary').click();}
+export async function openSourceSettings(page:Page,limits=false){await closeSourceLibrary(page);const dialog=page.getByTestId('source-plan-dialog');if(!await dialog.isVisible())await page.getByTestId('source-plan-open').click();await expect(dialog).toBeVisible();const box=dialog.locator('.source-limits');if(limits&&!await box.evaluate(n=>(n as HTMLDetailsElement).open))await box.locator('summary').click();}
 export async function closeSourceSettings(page:Page){if(await page.getByTestId('source-plan-dialog').isVisible())await page.getByTestId('source-plan-close').click();}
 
 export async function openLearningSettings(page:Page){await closeLearningLibrary(page);if(!await page.getByTestId('learning-plan-dialog').isVisible())await page.getByTestId('learning-plan-open').click();await expect(page.getByTestId('learning-plan-dialog')).toBeVisible();}
@@ -62,3 +62,7 @@ export async function closeRecoveryOptions(page:Page){if(await page.getByTestId(
 export async function selectRecoveryMethod(page:Page,id:string){await openRecoveryOptions(page);await page.getByTestId('recovery-'+id).click();await expect(page.getByTestId('recovery-options-dialog')).not.toBeVisible();}
 
 export async function openCultivationNotes(page:Page){const dialog=page.getByTestId('cultivation-notes-dialog');if(!await dialog.isVisible())await page.getByTestId('cultivation-notes-open').click();await expect(dialog).toBeVisible();}
+
+export async function openSourceLibrary(page:Page){await closeSourceSettings(page);if(!await page.getByTestId('source-library-dialog').isVisible())await page.getByTestId('source-library-open').click();await expect(page.getByTestId('source-library-dialog')).toBeVisible();}
+export async function closeSourceLibrary(page:Page){if(await page.getByTestId('source-library-dialog').isVisible())await page.getByTestId('source-library-close').click();}
+export async function selectSource(page:Page,id:string){await openSourceLibrary(page);await revealPaged(page,'source-'+id,'source-planner','来源');await page.getByTestId('source-'+id).click();await expect(page.getByTestId('source-library-dialog')).not.toBeVisible();await expect(page.getByTestId('source-field')).toHaveAttribute('data-source',id);}

@@ -1,3 +1,4 @@
+import {selectSource as inspectSourceLibrary} from './stage-support';
 import {answerGameConfirmation} from './game-confirmation-support';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import type {Game} from '../../src/full/types.ts';
@@ -8,7 +9,7 @@ import {validateActivityReceipt} from '../src/activity-persistence';
 import {previewAction} from '../../src/full/queries.ts';
 import {driver} from '../../tests/full-route.mjs';
 import {snapshot,activitySnapshot as activity,useJourneyClock,revealPaged} from './support';
-import {openSourceSettings,closeSourceSettings} from './stage-support';
+import {openSourceSettings,closeSourceSettings,openSourceLibrary,closeSourceLibrary} from './stage-support';
 
 // 0034: fixed desktop only. Lawful imports set up isolated tests, never the player's save.
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
@@ -34,7 +35,7 @@ async function load(page:Page,game:Game,virtual=true){
  const actual=await snapshot(page) as Game,expected=structuredClone(game);expected.core.runId=actual.core.runId;expected.core.revision=0;if(expected.core.activeEvent)expected.core.activeEvent.instanceId=actual.core.runId+':'+expected.core.activeEvent.id;expect(actual).toEqual(expected);expect(await activity(page)).toBeNull();return actual;
 }
 async function sourceView(page:Page,id:string){await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-source').click();await choose(page,id);}
-async function choose(page:Page,id:string){await closeSourceSettings(page);await revealPaged(page,'source-'+id,'source-planner','来源');await page.getByTestId('source-'+id).click();await expect(page.getByTestId('source-'+id)).toHaveAttribute('aria-pressed','true');await expect(page.locator('.source-chosen')).toContainText(C.sources[id].name);}
+async function choose(page:Page,id:string){await closeSourceSettings(page);await revealPaged(page,'source-'+id,'source-planner','来源');await inspectSourceLibrary(page,id);await expect(page.getByTestId('source-'+id)).toHaveAttribute('aria-pressed','true');await expect(page.locator('.source-chosen')).toContainText(C.sources[id].name);}
 async function beforeObjectAssertion(page:Page,info:TestInfo,id:string){
  const geometry=await page.evaluate(()=>{const box=(n:Element)=>{const r=n.getBoundingClientRect();return{left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height};};const field=document.querySelector('[data-testid=source-field]')!,physical=document.querySelector('[data-testid=source-physical-object]'),commission=document.querySelector('[data-testid=source-commission-object]'),satchel=document.querySelector('[data-testid=source-satchel]');return{field:box(field),location:field.getAttribute('data-location'),kind:field.getAttribute('data-kind'),state:field.getAttribute('data-state'),physical:physical?{box:box(physical),source:physical.getAttribute('data-source')}:null,commission:commission?{box:box(commission)}:null,satchel:satchel?{box:box(satchel)}:null,oldMarks:[...field.querySelectorAll('.source-object-mark')].map(n=>box(n))};});
  await attach(info,id+'-before-new-object-check',geometry);await page.screenshot({path:info.outputPath('ta08-'+id+'-before-object-assertion.png')});return geometry;
@@ -175,7 +176,7 @@ test('TA08-A1 all six lawful natural objects remain cold and readonly with compl
 
 test('TA08-A2 all ten commission instruments remain distinct readonly work objects across three pages with exact mixed or stone compensation',async({page,browser},info)=>{
  const before=await load(page,lawfulSource('work','spirit')),raw=await database(page);await sourceView(page,'work');const signatures:Record<string,string>={};
- await expect(page.getByTestId('source-planner').getByRole('navigation',{name:'来源翻页',exact:true})).toContainText('3');
+ await openSourceLibrary(page);await expect(page.getByTestId('source-planner').getByRole('navigation',{name:'来源翻页',exact:true})).toContainText('3');await closeSourceLibrary(page);
  for(const [id,shape]of Object.entries(commissionShapes)){
   await choose(page,id);const object=page.getByTestId('source-commission-object');await expect(object).toHaveAttribute('data-source',id);await expect(object).toHaveAttribute('data-object',shape);await expect(object).toHaveAttribute('data-working','false');await expect(object).toHaveAttribute('data-phase','still');await expect(page.getByTestId('source-physical-object')).toHaveCount(0);
   const s=C.sources[id];await expect(page.locator('.source-chosen')).toContainText(s.name);await expect(page.locator('.source-chosen')).toContainText(s.months*30+' 秒');await expect(page.getByTestId('source-'+id)).toContainText('需'+C.realms[s.min].name);
@@ -283,7 +284,7 @@ test('TA08-A12 both reduction settings missing natural art and natural or four c
  for(const id of ['work','herbs']){
   const isolated=await browser.newContext({baseURL:base,viewport:{width:1440,height:900}}),p=await isolated.newPage();listen(p);
   try{const before=await load(p,lawfulSource(id,'spirit'));await sourceView(p,id);await parameters(p,{cycles:1});const a=await begin(p,id),pending=await database(p);await quota(p);await p.clock.fastForward(a.cycleMs);await expect(p.getByTestId('error')).toContainText('存储空间不足');expect(await snapshot(p)).toEqual(before);expect(await database(p)).toEqual(pending);expect((await activity(p)).nextCommand).toEqual(a.nextCommand);await cold(p,id);await expect(p.getByTestId('source-start')).toBeDisabled();
-   if(id==='work'){await expect(p.locator('.source-point-grid>button')).toHaveCount(4);for(const [key,s]of Object.entries(C.sources).filter(([,s])=>s.location==='sect').slice(0,4)){const n=p.getByTestId('source-'+key);await expect(n).toContainText(s.name);await expect(n).toContainText('需'+C.realms[s.min].name);for(const [item,num]of Object.entries(s.items))await expect(n).toContainText(C.items[item].name+' ×'+num);if(s.stones)await expect(n).toContainText('灵石 +'+s.stones);}}
+   if(id==='work'){await openSourceLibrary(p);await expect(p.locator('.source-point-grid>button')).toHaveCount(4);for(const [key,s]of Object.entries(C.sources).filter(([,s])=>s.location==='sect').slice(0,4)){const n=p.getByTestId('source-'+key);await expect(n).toContainText(s.name);await expect(n).toContainText('需'+C.realms[s.min].name);for(const [item,num]of Object.entries(s.items))await expect(n).toContainText(C.items[item].name+' ×'+num);if(s.stones)await expect(n).toContainText('灵石 +'+s.stones);await expect(n).toBeVisible();}await frame(p,info,'work-error-complete-source-book-four-signs');await closeSourceLibrary(p);}
    await p.getByTestId('source-satchel-inspect').click();await expect(p.getByTestId('source-satchel')).toHaveAttribute('data-inspecting','true');expect(await database(p)).toEqual(pending);await physical(p,id,info,id+'-error-cold-physical-object');await frame(p,info,id+'-error-complete-source-four-signs');await p.getByTestId('source-object-arrange').click();await openSourceSettings(p,true);await expect(p.getByLabel('取材次数',{exact:true})).toHaveValue('1');await expect(p.getByLabel('累计游戏月预算')).toHaveValue(String(C.sources[id].months));await expect(p.getByLabel('余寿保留量')).toHaveValue('1');await frame(p,info,id+'-error-complete-authorization');await closeSourceSettings(p);expect(await snapshot(p)).toEqual(before);expect(await database(p)).toEqual(pending);await noArrival(p);expect(errors.get(p)??[]).toEqual([]);
   }finally{await p.evaluate(()=>(window as any).__ta08RestorePut?.());await isolated.close();}
  }

@@ -1,0 +1,494 @@
+{
+  "task": "ART34",
+  "scope": "modified source surfaces only; fixed1440x900/font1/Chromium; not human or overall art acceptance",
+  "frames": [
+    {
+      "name": "current-herbs",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-bf7e3-book-and-clear-object-stage-chromium/current-herbs.png",
+      "pngSHA256": "aadf0160ac03714430488603e70ae172be2f203fc3d3dbe63ee5be3224bcbde0",
+      "view": "artifacts/goal-4/art34/views/final-current-herbs.jpg",
+      "viewSHA256": "be441f5067ff9ff07a0b819b79fc73f5cbb86ad1ff4028bb6a1efe6ffe12ec58",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-dew",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-bf7e3-book-and-clear-object-stage-chromium/current-dew.png",
+      "pngSHA256": "fbcc859c6b12f54566d7533ad8852ac7c71e64cd3adfeb02e549daddfaed61c7",
+      "view": "artifacts/goal-4/art34/views/final-current-dew.jpg",
+      "viewSHA256": "cb8b99739546a51e17caaac6ba0893ef371bccd40d4c64b6b7585e4b844ff2c7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-jade",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d85d7-book-and-clear-object-stage-chromium/current-jade.png",
+      "pngSHA256": "a0d80a3a93df4965311ecc2c81de1e9b159925ffc0e7bdda59aaf6df503cbaf7",
+      "view": "artifacts/goal-4/art34/views/final-current-jade.jpg",
+      "viewSHA256": "b6a915fa317b51672a093fb8b7aab95f8bb4b519341b5dd090421491d4f42058",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-lotus",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d85d7-book-and-clear-object-stage-chromium/current-lotus.png",
+      "pngSHA256": "bb5e885a84b54bbbdcb0bc12c3a41393cdd2f19e952e1cf4ae1cd0e616d1541f",
+      "view": "artifacts/goal-4/art34/views/final-current-lotus.jpg",
+      "viewSHA256": "319b9af45b482a6286c4230e938511367a2a3d6516685a9226d46300a345b248",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-soul",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d85d7-book-and-clear-object-stage-chromium/current-soul.png",
+      "pngSHA256": "ac0b043ddd8e1817f2cf551769ac7a829a2a32548d496dffdf93e7c2b92d1c37",
+      "view": "artifacts/goal-4/art34/views/final-current-soul.jpg",
+      "viewSHA256": "3a806588096d745521b10f8d9b371ffb817a1a75678982783b42032e0a7d0a18",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-dao",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-4f825-book-and-clear-object-stage-chromium/current-dao.png",
+      "pngSHA256": "0d32ad717d88fd3192dea1e630748ad57086b452a301df7c851a7194cc45a84c",
+      "view": "artifacts/goal-4/art34/views/final-current-dao.jpg",
+      "viewSHA256": "04dc6a4614025063121fe06ff20390f9847ace8655ae2205e24792dcd97dc614",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-work",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-work.png",
+      "pngSHA256": "6c66a347d0b2868ba6b708551b5e2c415261cc5dd258acff5d0d267b766b66c7",
+      "view": "artifacts/goal-4/art34/views/final-current-work.jpg",
+      "viewSHA256": "a28e34615c9dc9fc61533de858c1865718ad5d7ad1e84f89645b92d1849469c4",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-core",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-core.png",
+      "pngSHA256": "ad4c4520afcb3e2ce71d7a55eee1efbd4149cd349a4fc57fd27912bd01fd45bd",
+      "view": "artifacts/goal-4/art34/views/final-current-core.jpg",
+      "viewSHA256": "f731b70cc4653f0b305742a8bf9ece5e15cacf267d598c12f8e3011b62115e3f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-jade_task",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-jade_task.png",
+      "pngSHA256": "6addb2b890c996781d2c841f5d9ba85e75635d02ccc07781cc30099cf673b98f",
+      "view": "artifacts/goal-4/art34/views/final-current-jade_task.jpg",
+      "viewSHA256": "d49abd5fae49ceee6c4ce2e6f53117ed07e54c9d5fdca98b6cd7a313b71175e7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-work_foundation",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-work_foundation.png",
+      "pngSHA256": "e27a40d53e9813f368497fc1321ed541d40fa654d6d86f305dc9291579f1cce7",
+      "view": "artifacts/goal-4/art34/views/final-current-work_foundation.jpg",
+      "viewSHA256": "04bbb17db55a386fb575f34710e0c710e765e186dd2d56306b7f7af546add3cc",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-lotus_task",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-lotus_task.png",
+      "pngSHA256": "ff40b3a58d6448df9c04891ea31a9c2b3653f46111f828aeb063bbea33a90bae",
+      "view": "artifacts/goal-4/art34/views/final-current-lotus_task.jpg",
+      "viewSHA256": "c45b5753852ebf7edda542a66167005107b88379100744fe92b814572eff4d9a",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-work_golden",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-work_golden.png",
+      "pngSHA256": "bd56a98f0ef831da456d7662f1a25369af03dd4c0493d12bf888bc4d45f60ab1",
+      "view": "artifacts/goal-4/art34/views/final-current-work_golden.jpg",
+      "viewSHA256": "2856ee3b26e7e41a35db3ff82ad6b8220d79e91203dc79dc066e00f5d79fe77a",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-soul_task",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-soul_task.png",
+      "pngSHA256": "e93096cc9e7ef8db3561d38fb14a1ed9cad826647a28c1fc2a6514d0e1bab20d",
+      "view": "artifacts/goal-4/art34/views/final-current-soul_task.jpg",
+      "viewSHA256": "836160dfe84043624b5330e923cc02f287a11098fb0c5a9177d7c269ad2895a7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-work_nascent",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-work_nascent.png",
+      "pngSHA256": "0dd208ca4e37d7328418335f615e35a8efb3602b6cc54635e9dbdeca733ed5c4",
+      "view": "artifacts/goal-4/art34/views/final-current-work_nascent.jpg",
+      "viewSHA256": "0d3b0f9017d21d4fb8bc3d1d4e2beb0a9b7f30b1acd0f04e5893c716a49bf250",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-dao_task",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-dao_task.png",
+      "pngSHA256": "5cf3d6f81ac7098d3c591a472131600ed22c50a7064d682591a7963a3b6c7a06",
+      "view": "artifacts/goal-4/art34/views/final-current-dao_task.jpg",
+      "viewSHA256": "a1838c7c6a2e5e7c493017417fdff7b81550bf5234ac151a4dcbd1757e3975a6",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "current-work_spirit",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-work_spirit.png",
+      "pngSHA256": "bb4b05358b6026ddf27948ac6313e15cc25239188698f28e06fec335d95b7497",
+      "view": "artifacts/goal-4/art34/views/final-current-work_spirit.jpg",
+      "viewSHA256": "36be2a8ce448497a873f4c9ecf3ce3e7c39812a98f0b044532ba1664c3ea2a92",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "wilderness-complete-book-first",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-bf7e3-book-and-clear-object-stage-chromium/wilderness-complete-book-first.png",
+      "pngSHA256": "b3ac72a83a7961510a2bbb91c34fb18b2c6ff3634f678f23b392a499e9cf9919",
+      "view": "artifacts/goal-4/art34/views/final-wilderness-complete-book-first.jpg",
+      "viewSHA256": "3df905e30bd7b628c209dab1c47d454d1211e957bb102194c0d13fa0649c78cf",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "secret-complete-book-first",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d85d7-book-and-clear-object-stage-chromium/secret-complete-book-first.png",
+      "pngSHA256": "e539706e3dcc03d3cefec1b5d1920acc7c38f0736d7bb01dfd0a962941319a43",
+      "view": "artifacts/goal-4/art34/views/final-secret-complete-book-first.jpg",
+      "viewSHA256": "781ad6e4a281ccfec2e2e5f100f0835c3486209dc6f5938690c5c9a5cede8f5a",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "terrace-complete-book-first",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-4f825-book-and-clear-object-stage-chromium/terrace-complete-book-first.png",
+      "pngSHA256": "32a5abc6af9c73c0c63cd3914374ad74c30b08567e904cbc9fbbb13cf94b6dbd",
+      "view": "artifacts/goal-4/art34/views/final-terrace-complete-book-first.jpg",
+      "viewSHA256": "eef50d496b5c0fe6f49a1a884ac842c17c1f712361ee9f21e0bbe2a81dd43e8d",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "sect-complete-book-first",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/sect-complete-book-first.png",
+      "pngSHA256": "d4c06bb826d01ae3d0bc303a8bb4227b030de42a6eee8d067ab3977445f2587a",
+      "view": "artifacts/goal-4/art34/views/final-sect-complete-book-first.jpg",
+      "viewSHA256": "39be0c45ebc8e2f7835d131a2dd101c366f686823ee7ec2148944d0a3728d9cb",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "sect-complete-book-page-2",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/sect-complete-book-page-2.png",
+      "pngSHA256": "9bd8628213dc3c8cbb54a8f7b83ccb4fc6a38ce3e6a6b99b964da67c8993d1a5",
+      "view": "artifacts/goal-4/art34/views/final-sect-complete-book-page-2.jpg",
+      "viewSHA256": "a1133dc886b294ebf2702611a8574d278bb8a3f81132eb504d959ee3d3bd7a4d",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "sect-complete-book-page-3",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/sect-complete-book-page-3.png",
+      "pngSHA256": "b37e18ad98f5490e22af6f7b3eb8677e397a8570bc4533048a86a70618e1e44b",
+      "view": "artifacts/goal-4/art34/views/final-sect-complete-book-page-3.jpg",
+      "viewSHA256": "38a36647c8f8327b233494d1c7618401131cfae89ec5ef428699cfb3780489f1",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "native-quota-source-stage",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-be162-ce-the-original-exact-retry-chromium/native-quota-source-stage.png",
+      "pngSHA256": "30154d626f2f051cbdd38a6de997683fb221642e4e2d574f222e6e84d89909a6",
+      "view": "artifacts/goal-4/art34/views/final-native-quota-source-stage.jpg",
+      "viewSHA256": "758ad4f394e2f148933e5a3f09832c31afa84ae439373a1d128b4cbb49837ac7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "native-quota-complete-source-book",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-be162-ce-the-original-exact-retry-chromium/native-quota-complete-source-book.png",
+      "pngSHA256": "51f72edfd4ade32f51f0c7cde3548f0b84f5b640669a399056b8e14362ab933d",
+      "view": "artifacts/goal-4/art34/views/final-native-quota-complete-source-book.jpg",
+      "viewSHA256": "918114977bd77629efbbb91689a73c875d2d9c61a2e72925e1050af67d92e632",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "second-book-page-after-native-save",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-5a3f7--atomically-saves-behind-it-chromium/second-book-page-after-native-save.png",
+      "pngSHA256": "fd61ecc64fbc9a42315b4c2297a39c176b5f5680d68ff4af2c6d182fd0973949",
+      "view": "artifacts/goal-4/art34/views/final-second-book-page-after-native-save.jpg",
+      "viewSHA256": "b9dbb649f946ea2234b51abfe7a95f6a734447766d2c5dba2d57d22ddc6058f9",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "original-source-paused-after-reading",
+      "png": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-5a3f7--atomically-saves-behind-it-chromium/original-source-paused-after-reading.png",
+      "pngSHA256": "67518c896362484f75f79c521700f262813adfd5e2079f83d1330b533080c074",
+      "view": "artifacts/goal-4/art34/views/final-original-source-paused-after-reading.jpg",
+      "viewSHA256": "7c7224ada77c002aadbb4b86f6cea5381d0a056f32f24711d466aa2c6081593c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "natural-first-saved",
+      "png": "artifacts/goal-4/art34/source-error-book-results/source-actors-TA08-A3-two--37f3f-arget-without-a-claim-click-chromium/natural-first-saved.png",
+      "pngSHA256": "e9811b98541a4a47d049dd80cbf642f5067be3a8d0e06310545478d23ee179b0",
+      "view": "artifacts/goal-4/art34/views/final-natural-first-saved.jpg",
+      "viewSHA256": "7af9e9d19e66a837a16f05341731df2db3a6a717778dcc9892f36c8a3b7eb32c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "commission-stone-first-saved",
+      "png": "artifacts/goal-4/art34/source-error-book-results/source-actors-TA08-A4-a-fu-04b1b-out-invented-material-drops-chromium/commission-stone-first-saved.png",
+      "pngSHA256": "89eaa6ce197c3e45bb159496610d8f7835d07b853713152bcbaf264fa43b1496",
+      "view": "artifacts/goal-4/art34/views/final-commission-stone-first-saved.jpg",
+      "viewSHA256": "91de4cf940868ec6f2a5b9f6aba22ceb9dec68a8c8c0372f7a4ecf831ec2db60",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "longest-commission-actual-composite-result",
+      "png": "artifacts/goal-4/art34/source-error-book-results/source-actors-TA08-A6-the--4699f-al-and-stone-yield-together-chromium/longest-commission-actual-composite-result.png",
+      "pngSHA256": "f8cf78351082969d3e88bde81990e79758bce6191e0d33012105431995f9b28b",
+      "view": "artifacts/goal-4/art34/views/final-longest-commission-actual-composite-result.jpg",
+      "viewSHA256": "d9682fb61419b735bc15f5669e36ec52a0be5d6ed513f3612106ae6016814a83",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "system-reduced-failed-art-complete-source",
+      "png": "artifacts/goal-4/art34/source-error-book-results/source-actors-TA08-A12-bot-b6829--objects-and-readonly-facts-chromium/system-reduced-failed-art-complete-source.png",
+      "pngSHA256": "ef20fc07a904ddd3dc92c32cdd53ace15f9b4741be1d47ba8cf46172e8e9a07b",
+      "view": "artifacts/goal-4/art34/views/final-system-reduced-failed-art-complete-source.jpg",
+      "viewSHA256": "4191be20267121fc534f49716c59d8b8270382d65531d09f1cd88e3bceab5af4",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "preference-reduced-failed-art-complete-source",
+      "png": "artifacts/goal-4/art34/source-error-book-results/source-actors-TA08-A12-bot-b6829--objects-and-readonly-facts-chromium/preference-reduced-failed-art-complete-source.png",
+      "pngSHA256": "ef20fc07a904ddd3dc92c32cdd53ace15f9b4741be1d47ba8cf46172e8e9a07b",
+      "view": "artifacts/goal-4/art34/views/final-preference-reduced-failed-art-complete-source.jpg",
+      "viewSHA256": "4191be20267121fc534f49716c59d8b8270382d65531d09f1cd88e3bceab5af4",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "work-error-complete-source-four-signs",
+      "png": "artifacts/goal-4/art34/source-error-book-results/source-actors-TA08-A12-bot-b6829--objects-and-readonly-facts-chromium/work-error-complete-source-four-signs.png",
+      "pngSHA256": "a9f4b7babc5a776a13ed324e6124fb547565ca96cc3bc3734290287c6ebc70b2",
+      "view": "artifacts/goal-4/art34/views/final-work-error-complete-source-four-signs.jpg",
+      "viewSHA256": "8082a33d7d7ee563246eaac7a44b1598b3806e526dde2dcc245ea8dcb330a170",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "work-error-complete-source-book-four-signs",
+      "png": "artifacts/goal-4/art34/source-error-book-results/source-actors-TA08-A12-bot-b6829--objects-and-readonly-facts-chromium/work-error-complete-source-book-four-signs.png",
+      "pngSHA256": "8ab493c343bd212e7752a4f19e0690f4a9333abb859a42bf427e9d06a1f4b2bc",
+      "view": "artifacts/goal-4/art34/views/final-work-error-complete-source-book-four-signs.jpg",
+      "viewSHA256": "1e7b1a2fdf4a0dad307bf43bfa7c03af74de2ec6cdcc8f775470879a1a31ee9e",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    },
+    {
+      "name": "work-error-complete-authorization",
+      "png": "artifacts/goal-4/art34/source-error-book-results/source-actors-TA08-A12-bot-b6829--objects-and-readonly-facts-chromium/work-error-complete-authorization.png",
+      "pngSHA256": "841e214dcbdf808c4242ca62ec4b8ce49d36c2f305c20ba586a8746514fba939",
+      "view": "artifacts/goal-4/art34/views/final-work-error-complete-authorization.jpg",
+      "viewSHA256": "69e51df1c76e8db075e5eb4ed6c7be49547f8c7170bb9aa50becc03e71cad801",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size lossy JPEG68; original PNG retained",
+      "actuallyViewed": true
+    }
+  ],
+  "viewed": 34,
+  "uniquePng": 33,
+  "maxImagesPerCall": 2,
+  "trackedCopies": [
+    {
+      "path": "goal-4/evidence/art34/source-herbs.jpg",
+      "bytes": 152003,
+      "sha256": "be441f5067ff9ff07a0b819b79fc73f5cbb86ad1ff4028bb6a1efe6ffe12ec58",
+      "fromPNG": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-bf7e3-book-and-clear-object-stage-chromium/current-herbs.png",
+      "pngSHA256": "aadf0160ac03714430488603e70ae172be2f203fc3d3dbe63ee5be3224bcbde0",
+      "sameSizeLossyJpeg68": true
+    },
+    {
+      "path": "goal-4/evidence/art34/source-work.jpg",
+      "bytes": 148234,
+      "sha256": "a28e34615c9dc9fc61533de858c1865718ad5d7ad1e84f89645b92d1849469c4",
+      "fromPNG": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-work.png",
+      "pngSHA256": "6c66a347d0b2868ba6b708551b5e2c415261cc5dd258acff5d0d267b766b66c7",
+      "sameSizeLossyJpeg68": true
+    },
+    {
+      "path": "goal-4/evidence/art34/source-book.jpg",
+      "bytes": 61391,
+      "sha256": "a1133dc886b294ebf2702611a8574d278bb8a3f81132eb504d959ee3d3bd7a4d",
+      "fromPNG": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/sect-complete-book-page-2.png",
+      "pngSHA256": "9bd8628213dc3c8cbb54a8f7b83ccb4fc6a38ce3e6a6b99b964da67c8993d1a5",
+      "sameSizeLossyJpeg68": true
+    },
+    {
+      "path": "goal-4/evidence/art34/source-mixed-result.jpg",
+      "bytes": 157362,
+      "sha256": "d9682fb61419b735bc15f5669e36ec52a0be5d6ed513f3612106ae6016814a83",
+      "fromPNG": "artifacts/goal-4/art34/source-error-book-results/source-actors-TA08-A6-the--4699f-al-and-stone-yield-together-chromium/longest-commission-actual-composite-result.png",
+      "pngSHA256": "f8cf78351082969d3e88bde81990e79758bce6191e0d33012105431995f9b28b",
+      "sameSizeLossyJpeg68": true
+    },
+    {
+      "path": "goal-4/evidence/art34/source-error.jpg",
+      "bytes": 160523,
+      "sha256": "758ad4f394e2f148933e5a3f09832c31afa84ae439373a1d128b4cbb49837ac7",
+      "fromPNG": "artifacts/goal-4/art34/related-results/art34-source-stage-ART34-A-be162-ce-the-original-exact-retry-chromium/native-quota-source-stage.png",
+      "pngSHA256": "30154d626f2f051cbdd38a6de997683fb221642e4e2d574f222e6e84d89909a6",
+      "sameSizeLossyJpeg68": true
+    }
+  ],
+  "overallHumanAcceptance": false
+}

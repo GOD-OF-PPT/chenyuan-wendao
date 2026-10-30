@@ -1,0 +1,25 @@
+{
+  "steps": [
+    {
+      "old": "import {computed} from 'vue';",
+      "new": "import {computed,ref,inject,watch,onDeactivated,onScopeDispose} from 'vue';"
+    },
+    {
+      "old": "import SourceSatchel from './SourceSatchel.vue';",
+      "new": "import SourceSatchel from './SourceSatchel.vue';\nimport {gameFocusKey} from './focus';"
+    },
+    {
+      "old": "</script>",
+      "new": "const focus=inject(gameFocusKey)!,library=ref<HTMLDialogElement>(),libraryTrigger=ref<HTMLButtonElement>();\nfunction openLibrary(){focus.open(library.value,libraryTrigger.value??null);}\nfunction closeLibrary(){library.value?.close();}\nfunction inspectSource(id:string){closeLibrary();focus.target(libraryTrigger.value??null);emit('select',id);}\nwatch(()=>props.game.core.runId+':'+props.game.core.world.location,closeLibrary);\nonDeactivated(closeLibrary);onScopeDispose(()=>focus.release(library.value));\n</script>"
+    },
+    {
+      "old": "class=\"source-field ta08-field\"",
+      "new": "class=\"source-field ta08-field art34-source-field\""
+    },
+    {
+      "old": "    <div class=\"source-points\"><nav class=\"source-point-grid\" :aria-label=\"commission?'差事木签':'场景资源点'\">\n     <button v-for=\"[id,s] in rows\" :key=\"id\" :data-testid=\"'source-'+id\" :aria-pressed=\"plan.sourceId===id\" :aria-label=\"s.name+'，选择查看，不会立即执行'\" @click=\"emit('select',id)\"><strong>{{s.name}}</strong><small>{{gains(s)}} · 需{{C.realms[s.min].name}}</small></button>\n    </nav><nav class=\"catalogue-pager ta08-source-pager\" aria-label=\"来源翻页\"><button data-testid=\"catalogue-prev\" aria-label=\"上一页\" :disabled=\"catalogue.page<=0\" @click=\"emit('page',catalogue.page-1)\">上页</button><span>{{catalogue.page+1}} / {{catalogue.pages}} 页 · {{catalogue.total}} 项</span><button data-testid=\"catalogue-next\" aria-label=\"下一页\" :disabled=\"catalogue.page+1>=catalogue.pages\" @click=\"emit('page',catalogue.page+1)\">下页</button></nav></div>\n",
+      "new": "    <div class=\"source-points\"><button ref=\"libraryTrigger\" type=\"button\" class=\"art34-source-book\" data-testid=\"source-library-open\" aria-haspopup=\"dialog\" @click=\"openLibrary\"><strong>{{commission?'翻差事牌':'翻资源册'}}</strong><small>本地 {{catalogue.total}} 项 · 选择只查看</small></button>\n     <dialog ref=\"library\" class=\"paper art34-source-library\" data-testid=\"source-library-dialog\" aria-labelledby=\"source-library-title\"><header><div><small>{{C.locations[game.core.world.location].name}} · {{commission?'宗门差事':'资源寻踪'}}</small><h3 id=\"source-library-title\" tabindex=\"-1\" data-dialog-initial>{{commission?'翻阅差事牌':'翻阅资源册'}}</h3></div><button type=\"button\" data-testid=\"source-library-close\" @click=\"closeLibrary\">返回资源点</button></header><p>选择只查看来源与本段草案。核对后仍由你另行安排，不会立即取材、承办或离开此地。</p>\n     <nav class=\"source-point-grid\" :aria-label=\"commission?'差事木签':'场景资源点'\">\n     <button v-for=\"[id,s] in rows\" :key=\"id\" :data-testid=\"'source-'+id\" :aria-pressed=\"plan.sourceId===id\" :aria-label=\"s.name+'，选择查看，不会立即执行'\" @click=\"inspectSource(id)\"><strong>{{s.name}}</strong><small>{{gains(s)}} · 需{{C.realms[s.min].name}}</small></button>\n    </nav><nav class=\"catalogue-pager ta08-source-pager\" aria-label=\"来源翻页\"><button data-testid=\"catalogue-prev\" aria-label=\"上一页\" :disabled=\"catalogue.page<=0\" @click=\"emit('page',catalogue.page-1)\">上页</button><span>{{catalogue.page+1}} / {{catalogue.pages}} 页 · {{catalogue.total}} 项</span><button data-testid=\"catalogue-next\" aria-label=\"下一页\" :disabled=\"catalogue.page+1>=catalogue.pages\" @click=\"emit('page',catalogue.page+1)\">下页</button></nav>\n     </dialog>\n    </div>\n"
+    }
+  ],
+  "scope": "Exact readonly SourceField catalogue view and UI lifecycle only; original presentation script retained"
+}

@@ -1,3 +1,4 @@
+import {selectSource as inspectSourceLibrary} from './stage-support';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import type {Action,Game} from '../../src/full/types.ts';
 import type {ActivityPlan} from '../../src/full/activity.ts';
@@ -45,7 +46,7 @@ async function load(page:Page,fixture:Game,info:TestInfo,label:string){
 function learningPrefix(){const d=driver('leave','sword');d.realm();d.funds(80);d.go('market');const quantity=Math.floor((d.game.core.player.stones-20)/C.items.spirit_pill.buy);if(quantity>0)d.doAction({type:'BUY',item:'spirit_pill',quantity});d.go('sect');validateGame(d.game);expect(d.game.core.player.stones).toBeGreaterThanOrEqual(20);expect(d.game.core.player.stones).toBeLessThan(38);expect(d.game.learned).not.toContain('sword_guard');return{game:structuredClone(d.game) as Game,actions:d.actions};}
 function forgingPrefix(){const d=driver('leave','sword');d.realm();d.realm();d.funds(140);d.go('secret');validateGame(d.game);expect(d.game.core.inventory.jade).toBe(0);expect(d.game.ownedRelics).not.toContain('jade_seal');return{game:structuredClone(d.game) as Game,actions:d.actions};}
 async function source(page:Page,id:string,plan:ActivityPlan){
- await readonly(page,async()=>{await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-source').click();await revealPaged(page,'source-'+id,'source-planner','来源');await page.getByTestId('source-'+id).click();await openSourceSettings(page,true);
+ await readonly(page,async()=>{await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-source').click();await revealPaged(page,'source-'+id,'source-planner','来源');await inspectSourceLibrary(page,id);await openSourceSettings(page,true);
   if(plan.kind!=='source')throw new Error('The public Source controls require a Source plan');await page.getByLabel('取材次数',{exact:true}).selectOption(plan.until==='target'?'target':String(plan.maxCycles));
   if(plan.target){await page.getByLabel('目标资源',{exact:true}).selectOption(plan.target.kind==='stones'?'stones':plan.target.id);await page.getByLabel('目标库存',{exact:true}).fill(String(plan.target.quantity));await page.getByLabel('目标最多轮数',{exact:true}).fill(String(plan.maxCycles));}
   await page.getByLabel('累计游戏月预算',{exact:true}).fill(String(plan.monthBudget));await page.getByLabel('余寿保留量',{exact:true}).fill(String(plan.remainingMonthsReserve));await closeSourceSettings(page);

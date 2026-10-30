@@ -1,0 +1,30 @@
+{
+  "task": "ART34",
+  "sources": [
+    {
+      "title": "Riot Clarity",
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "readDate": "2026-10-30",
+      "actualArticleTextRead": true,
+      "principle": "Gameplay hierarchy and minimal competing noise; preserve recognizable current object.",
+      "limits": "Primary guideline only; exact book layout, dimensions, budgets and source timings are project derivations, not certification. Microsoft pages include an authorization notice but also the article text actually returned; no sign-in or bypass performed."
+    },
+    {
+      "title": "XAG112",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "readDate": "2026-10-30",
+      "actualArticleTextRead": true,
+      "principle": "Predictable navigation and focus; repeated menu/return behavior stays consistent.",
+      "limits": "Primary guideline only; exact book layout, dimensions, budgets and source timings are project derivations, not certification. Microsoft pages include an authorization notice but also the article text actually returned; no sign-in or bypass performed."
+    },
+    {
+      "title": "XAG114",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "readDate": "2026-10-30",
+      "actualArticleTextRead": true,
+      "principle": "Context and labels predict what a button does before activation.",
+      "limits": "Primary guideline only; exact book layout, dimensions, budgets and source timings are project derivations, not certification. Microsoft pages include an authorization notice but also the article text actually returned; no sign-in or bypass performed."
+    }
+  ],
+  "scope": "Current source menu/label hierarchy only, not competitor playtest or compatibility/performance acceptance"
+}

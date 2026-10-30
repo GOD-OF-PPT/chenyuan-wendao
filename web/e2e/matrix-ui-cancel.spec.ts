@@ -1,3 +1,4 @@
+import {selectSource as inspectSourceLibrary} from './stage-support';
 import {selectAlchemyRecipe} from './stage-support';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {driver,fullRoute} from '../../tests/full-route.mjs';
@@ -121,7 +122,7 @@ async function target(page:Page,kind:'craft'|'source'|'encounter'){
   await openHubFeature(page,'forge');await selectAlchemyRecipe(page,'healing');await openProductionIntent(page);await page.getByLabel('炼丹炉次',{exact:true}).selectOption('1');await closeProductionSettings(page);return 'production-start';
  }
  await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-'+(kind==='source'?'source':'battle')).click();
- if(kind==='source'){await page.getByTestId('source-herbs').click();await openSourceSettings(page);await page.getByLabel('取材次数',{exact:true}).selectOption('1');await closeSourceSettings(page);return 'source-start';}
+ if(kind==='source'){await inspectSourceLibrary(page,'herbs');await openSourceSettings(page);await page.getByLabel('取材次数',{exact:true}).selectOption('1');await closeSourceSettings(page);return 'source-start';}
  await page.getByTestId('encounter-wolf').click();await page.getByTestId('adventure-page-limits').click();await page.getByLabel('历练总动作上限').fill('1');await page.getByTestId('adventure-page-object').click();return 'adventure-start';
 }
 async function failedConfiguration(page:Page,before:Game,info:TestInfo,label:string){

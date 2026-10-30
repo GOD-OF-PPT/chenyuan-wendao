@@ -1,3 +1,4 @@
+import {selectSource as inspectSourceLibrary} from './stage-support';
 import { test, expect, type Page, type Locator, type TestInfo } from '@playwright/test';
 import { newGame, advance } from '../../src/full/engine.ts';
 import type { Game } from '../../src/full/types.ts';
@@ -57,7 +58,7 @@ export async function selectPlan(page: Page, plan: any): Promise<{ control: Loca
       return { control: page.getByTestId('training-start'), expectedPlan: plan };
     case 'source':
       await page.getByTestId('tab-1').click(); await page.getByTestId('explore-mode-source').click();
-      await revealPaged(page, 'source-' + plan.sourceId, 'source-planner', '来源'); await page.getByTestId('source-' + plan.sourceId).click();
+      await revealPaged(page, 'source-' + plan.sourceId, 'source-planner', '来源'); await inspectSourceLibrary(page,plan.sourceId);
       await openSourceSettings(page, true);
       await page.getByLabel('取材次数', { exact: true }).selectOption(plan.until === 'target' ? 'target' : String(plan.maxCycles));
       if (plan.until === 'target') {

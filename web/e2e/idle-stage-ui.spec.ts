@@ -1,3 +1,4 @@
+import {selectSource as inspectSourceLibrary} from './stage-support';
 import {openProductionCatalogue} from './stage-support';
 import {openSourceSettings,closeSourceSettings,openProductionIntent,closeProductionSettings,selectRelic,openInventoryLibrary,closeInventoryLibrary} from './stage-support';
 import {test,expect,type Page,type TestInfo,type Locator} from '@playwright/test';
@@ -33,7 +34,7 @@ test('the inventory keeps all real item quantities and all readonly category pag
 test('resource points and their pager form a group while expanded limits remain readable and readonly',async({page},info)=>{
  const d=driver();d.go('wilderness');const before=await seed(page,d.game);await closeSourceSettings(page);await page.getByTestId('tab-1').click();await closeSourceSettings(page);await page.getByTestId('explore-mode-source').click();
  const gap=await page.locator('.source-points').evaluate(el=>{const points=[...el.querySelectorAll('.source-point-grid>button')].map(e=>e.getBoundingClientRect().bottom),pager=el.querySelector('.catalogue-pager')!.getBoundingClientRect();return pager.top-Math.max(...points);});expect(gap).toBeLessThanOrEqual(24);
- await page.getByTestId('source-herbs').click();await openSourceSettings(page,true);await shot(page,info,'resource-points-and-limits');expect(await snapshot(page)).toEqual(before);expect(await activitySnapshot(page)).toBeNull();
+ await inspectSourceLibrary(page,'herbs');await openSourceSettings(page,true);await shot(page,info,'resource-points-and-limits');expect(await snapshot(page)).toEqual(before);expect(await activitySnapshot(page)).toBeNull();
 });
 test('the selected jade book and its actual slot comparison remain readable through equipment views',async({page},info)=>{
  const d=driver();d.realm();d.funds(200);d.go('sect');const before=await seed(page,d.game);await page.getByTestId('hub-skills').click();await page.getByTestId('equipment-mode-skills').click();await shot(page,info,'jade-book-stage');

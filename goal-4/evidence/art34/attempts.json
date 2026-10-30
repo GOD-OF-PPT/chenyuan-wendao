@@ -1,0 +1,157 @@
+{
+  "task": "ART34",
+  "attempts": [
+    {
+      "path": "artifacts/goal-4/art34/baseline-red-report.json",
+      "bytes": 13416,
+      "sha256": "53de3d4773971ca79ad3aff776a1de9186e4010934f4bea46b884c06d11fc230",
+      "stats": {
+        "startTime": "2026-10-30T02:03:53.621Z",
+        "duration": 8338.74,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "classification": "True original hierarchy red: complete header backing alpha0 below project.95 criterion; screenshot/trace preserved."
+    },
+    {
+      "path": "artifacts/goal-4/art34/early-report.json",
+      "bytes": 4775,
+      "sha256": "fd2d2b273a127e2ce5a4e261a2d7ba322f2e1e32d22ce5fa4d0f974d2fdd9907",
+      "stats": {
+        "startTime": "2026-10-30T02:11:21.683Z",
+        "duration": 7718.890000000001,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "classification": "First pure readonly book/backing passes."
+    },
+    {
+      "path": "artifacts/goal-4/art34/early-v2-report.json",
+      "bytes": 2149694,
+      "sha256": "e90ce09726fcf259b8e77146aa94a6ae940a441568a40b0d17f89519ef664b4e",
+      "stats": {
+        "startTime": "2026-10-30T02:25:07.413Z",
+        "duration": 61359.04600000001,
+        "expected": 7,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "classification": "8 new cases7pass1real error-layout red. Exact source save failure state preserved, but object/bag overlap authorization; retry branch not reached yet."
+    },
+    {
+      "path": "artifacts/goal-4/art34/early-v3-report.json",
+      "bytes": 152167,
+      "sha256": "8265ad5f37c87fe457df73370068a959ecafbb9c28440631d89d51fb4ef8fe93",
+      "stats": {
+        "startTime": "2026-10-30T02:34:18.374Z",
+        "duration": 8344.771,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "classification": "Author nested CSS declaration lacked terminator, losing first grid rule; actual computed ancestor mismatch kept, no assertion changes."
+    },
+    {
+      "path": "artifacts/goal-4/art34/early-v4-report.json",
+      "bytes": 279365,
+      "sha256": "fd01fe0ea68e4cacfb92872f44be93b33650d61e276f3c0c0d0661516bde20a0",
+      "stats": {
+        "startTime": "2026-10-30T02:39:33.004Z",
+        "duration": 11622.400000000001,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "classification": "Actual quota stage, full book and different-source original exact retry pass."
+    },
+    {
+      "path": "artifacts/goal-4/art34/early-source-report.json",
+      "bytes": 5984797,
+      "sha256": "069e6796eb14ce076b05047aaf2fb0815be4ac1bc074d509efeef76f14c21b50",
+      "stats": {
+        "startTime": "2026-10-30T02:43:38.178Z",
+        "duration": 148954.464,
+        "expected": 14,
+        "skipped": 0,
+        "unexpected": 6,
+        "flaky": 0
+      },
+      "classification": "20 new/old cases14pass6real saved-result-layout reds; formal Game/Activity/canonical v1/allDB passed before visual failures; no false final success."
+    },
+    {
+      "path": "artifacts/goal-4/art34/early-source-v2-report.json",
+      "bytes": 7014434,
+      "sha256": "5aae39e53cb01588cef2170ad8b93db99da43b2929a7879aab1133477c75716f",
+      "stats": {
+        "startTime": "2026-10-30T02:50:58.513Z",
+        "duration": 146867.947,
+        "expected": 19,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "classification": "20 cases19pass1real longest mixed-result overlap1.015625px; original middle/late assertions retained."
+    },
+    {
+      "path": "artifacts/goal-4/art34/mixed-green-report.json",
+      "bytes": 218063,
+      "sha256": "604e816d90c1b91ebab9d40c24b78be47e9cdb88f5de4b3f7c78b11b0d95339b",
+      "stats": {
+        "startTime": "2026-10-30T02:58:39.043Z",
+        "duration": 12415.961000000001,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "classification": "Same180000ms original case passes including complete state/receipt/DB and actual middle/late clearance after whitespace repair."
+    },
+    {
+      "path": "artifacts/goal-4/art34/related-report.json",
+      "bytes": 24363127,
+      "sha256": "9b7738919d1514b47f5955c66f85a9d9629cf009920e4de945fcf6be5c748f17",
+      "stats": {
+        "startTime": "2026-10-30T03:03:47.779Z",
+        "duration": 1054416.8660000002,
+        "expected": 224,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      },
+      "classification": "Full227 first224pass3old entrance failures. Runtime unchanged; full3affected files separately rerun; do not call first run allgreen."
+    },
+    {
+      "path": "artifacts/goal-4/art34/entry-repair-report.json",
+      "bytes": 3090880,
+      "sha256": "333caf369852dd1bf58ff10b67753f370c14ac9d593cf6b8021651188f3cdb18",
+      "stats": {
+        "startTime": "2026-10-30T03:27:52.023Z",
+        "duration": 147936.384,
+        "expected": 30,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "classification": "All30 cases in three affected complete files pass through public book; readonly/44pixel/viewport/scroll and existing Game proofs retained."
+    }
+  ],
+  "allOriginalSourcesLogsReportsTraceAndPngKept": true,
+  "finalSourceBook": {
+    "report": {
+      "path": "artifacts/goal-4/art34/source-error-book-report.json",
+      "bytes": 4901099,
+      "sha256": "ae55661b6f7d567a0946f897f62f5e82be376e95051fc5de0ee47e3794714147"
+    },
+    "cases": 12,
+    "reason": "Strengthen old error4signs assertion to inspect the real open book, including visible entries and full geometry; hidden text count is insufficient.",
+    "runtimeUnchanged": true
+  },
+  "cuaBindingReset": "Previous turn variable was undefined after tool reinitialization; same existing Chrome tab rebound, no browser error or user action."
+}

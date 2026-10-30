@@ -1,0 +1,69 @@
+{
+  "format": "chenyuan-source-stage-art34",
+  "version": 1,
+  "userAcceptance": false,
+  "files": [
+    {
+      "path": "web/src/SourceField.vue",
+      "bytes": 6683,
+      "sha256": "0f3a665944b28a27d52843c6bbe6e05925b3e9a5aaad8e859459fa69091c36be"
+    },
+    {
+      "path": "web/src/art02-source.css",
+      "bytes": 8047,
+      "sha256": "0baf30d5065609265e7ba9baf45a5bde25e2b4d3d31bb62cdbe7badfbe921188"
+    }
+  ],
+  "baselines": [
+    {
+      "path": "goal-4/evidence/art34/SourceField.vue.before.txt",
+      "bytes": 5147,
+      "sha256": "90a35092618c16ce845b5e84f22b8ad39131e25ffb151d8d78b24e13af5dbe29"
+    },
+    {
+      "path": "goal-4/evidence/art34/art02-source.css.before.txt",
+      "bytes": 3060,
+      "sha256": "2bd4bc28ca07595b36764b245ef186a445f478ad53fa3585d7a5dea190e66466"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0072-source-stage-art34-contract.md",
+    "goal-4/amendments/2026-10-30-goal-continue-art34.md",
+    "goal-4/research/art34-design-sources.json",
+    "goal-4/evidence/art34/SourceField.vue.before.txt",
+    "goal-4/evidence/art34/art02-source.css.before.txt",
+    "goal-4/evidence/art34/SourcePlanner.vue.before.txt"
+  ],
+  "unchanged": {
+    "web/src/App.vue": "fff09574bebc2ce0ca42445d57f2f102a01744bedfe01fbec42de45f22931f21",
+    "web/src/SourcePlanner.vue": "c4286f9bbfeac6a1a757ad2aafc0a8e41ee14da14b7212cf23b3a6fb9b34fa49",
+    "web/src/SourceObject.vue": "31adfb2ba5ff140f0b4f438a7b050f3842ba76c0730f9e2dc4df9fec228fa413",
+    "web/src/SourceCommission.vue": "9d385a237a24f51277fa8dae9dd4c7cb7e81c563923370066c89efeea0702314",
+    "web/src/SourceSatchel.vue": "cd93826c381eb6877e073b9eba885b5505fe1e9745de451511ce8ceac65010c4",
+    "web/src/source-choreography.ts": "665cb8c1d7bf0537b992b628720ff3be2bf0206536b36f487799bf67fe1f96f2",
+    "web/src/ta08-source.css": "0bcaa542dca4f1dc9bb862e63ead388dee2f996bf483507d77813710181f3522",
+    "web/src/idle-sources.css": "e26dee84f2cdb8b47d6295d345fb390622c5b45b6db7e49273b6690a2d42815f",
+    "web/src/use-activity-effect.ts": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163",
+    "web/src/activity-effects.ts": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b",
+    "web/src/focus.ts": "8ae91e78a4db7a854c293fc4b1bc28f02dd0d542b3119cff383f9245b4944eea",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/content.ts": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+    "src/full/queries.ts": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48"
+  },
+  "budgets": {
+    "oldArt02Native": 45000,
+    "oldTA08Native": 42000,
+    "oldIdleSourcesNative": 24000,
+    "maxAddedNative": 7000,
+    "newRasterAssets": 0
+  },
+  "patch": {
+    "path": "art/redesign/art34/source-view-patch.json",
+    "bytes": 4060,
+    "sha256": "2264923abe3c2e8d4d68a6dab7686ba318543f6958f9ac94ed5873d956a188e0"
+  }
+}
