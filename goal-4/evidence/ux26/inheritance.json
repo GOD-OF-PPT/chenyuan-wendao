@@ -1,0 +1,52 @@
+{
+  "task": "UX26",
+  "previousScope": "UX25 69de8f4/645b117; unchanged engine/Store/DB9 baseline CHECK-ART33-34",
+  "onlyRuntimeChanges": [
+    "LearningPlanner.vue one38-byte final label expression; script/other template/CSS exact"
+  ],
+  "allOriginalFunctionsWatchesCssAndCallbacksRestoredByFixedWholeSourceInverse": true,
+  "native415": {
+    "report": {
+      "path": "artifacts/goal-4/check-art33-34/native-report.json",
+      "bytes": 8963509,
+      "sha256": "7203dee9419f2aacb452fa6aca13dc8a298f8dcce7a085321f354d797259e3d5"
+    },
+    "use": "unchanged rules/Store/DB9 baseline only; not current full execution"
+  },
+  "normal32": {
+    "report": {
+      "path": "artifacts/goal-4/check-art33-34/normal-report.json",
+      "bytes": 1029298,
+      "sha256": "4ccf5ea68573bfd2e198756bca08a50b64c642c099779e74c88667dc3ebf56a2"
+    },
+    "use": "prior legal route rules/economy evidence; current full32 UI not executed or claimed"
+  },
+  "currentScope": {
+    "relatedUiDeclared": 174,
+    "completeFiles": 23,
+    "originalSlow": 2,
+    "globalRegistrationOnly": 752,
+    "newCases": 9,
+    "resourceMethods": 550,
+    "modelFiles": 7
+  },
+  "compatibilityAndEnvironmentPerformance": "paused",
+  "allFinalMatricesAndHumanStillOpen": true,
+  "other312RuntimeInputsExact": true,
+  "currentDisplayOnly": "original paused/mastered/empty/saved priority unchanged; current draft and authoritative current rail separate",
+  "priorUx25Ui446": {
+    "scope": "previous runtime9fd96af only, not composed as current752 full green",
+    "reports": [
+      {
+        "path": "artifacts/goal-4/ux25/regular-v2-report.json",
+        "bytes": 39336682,
+        "sha256": "2571022e9bae48c3237912d806de0fc226dc53516c9fcc54dc4fec02e1d489da"
+      },
+      {
+        "path": "artifacts/goal-4/ux25/slow-v2-report.json",
+        "bytes": 1162696,
+        "sha256": "a1101d5524c1029888860d67def2987300e43d1ee6060731be97487cb5b1be00"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task": "UX26",
+  "codeCommit": "8955d89a008a88b3c5dcedfcc30e9ce7d4ecbbb9",
+  "runtimeDigest": "7f4de1238fbeeed2c205b147e3a0adc0b02e5708c903615c2fa64ffe96827db0",
+  "all313GitBlobsExact": true,
+  "all10OwnedCodeFilesGitExact": true,
+  "all102PayloadsExactTestedRebuiltFrozen": true,
+  "payloadBytes": 10795461,
+  "helperSHA256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "frozen": "artifacts/goal-4/ux26/committed-frozen",
+  "protected13ExactNotCommitted": true,
+  "dirtyEngineeringNotCleanFinalCandidate": true,
+  "tested": {
+    "path": "artifacts/goal-4/ux26/tested-build.json",
+    "bytes": 50583,
+    "sha256": "b91d61bee67e76ef0908f8406820b8decc1ba752e72baced34b99299be8cb43a"
+  },
+  "precommitRebuilt": {
+    "path": "artifacts/goal-4/ux26/precommit-rebuilt-build.json",
+    "bytes": 50583,
+    "sha256": "b91d61bee67e76ef0908f8406820b8decc1ba752e72baced34b99299be8cb43a"
+  },
+  "committed": {
+    "path": "artifacts/goal-4/ux26/committed-build.json",
+    "bytes": 50583,
+    "sha256": "eae1bc16952ffbe61506cd23fbdc5b75e80b702120738dab2deedab31ad7e1f7"
+  },
+  "initial1434TerminalExactBeforeCloseout": {
+    "path": "artifacts/goal-4/ux26/terminal-inputs-proof.json",
+    "bytes": 247,
+    "sha256": "f4d750644dba64581ecfaee2a4c6bd485402dd866bd88f334e8823296725af14"
+  },
+  "baselineHttp": {
+    "path": "artifacts/goal-4/ux26/http-before-fresh.json",
+    "bytes": 17620,
+    "sha256": "f6b6df1b05434202c5014f7a4146fb212c73f206a8b0d8cdce0b3910d1705140"
+  },
+  "httpAfter": {
+    "path": "artifacts/goal-4/ux26/http-after.json",
+    "bytes": 23592,
+    "sha256": "00a5b74d41ca919d67a526e739e8d477190f0bddebe924491d92558a5bc2511d"
+  },
+  "all102NewHttpDecodedExact": true,
+  "serverTransition": {
+    "path": "artifacts/goal-4/ux26/preview-server-transition.json",
+    "bytes": 520,
+    "sha256": "166d4c1164f39713a2bd99dcbc0925d17fe46cd070c6637b3fc750c4366b2e3a"
+  },
+  "newServer": {
+    "path": "artifacts/goal-4/ux26/preview-new-server.json",
+    "bytes": 350,
+    "sha256": "93976d867427e32680d3bc027db83d1de312dc74848479cfe23ba58b3e14966e"
+  },
+  "userPublicProof": {
+    "path": "artifacts/goal-4/ux26/preview-public-proof.json",
+    "bytes": 870,
+    "sha256": "04df3b64c02cb11c01373957d5b3462ca00b3566eaf9aba1d00eda3688b8e0a3"
+  },
+  "noUserDbFullGameReadOrGameAction": true,
+  "noPushMergePublicDeployPermissionOrAutomationChanges": true,
+  "finalHeadAttestation": "artifacts/goal-4/ux26/final-head-identity.json"
+}

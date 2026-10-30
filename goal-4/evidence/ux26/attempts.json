@@ -1,0 +1,183 @@
+{
+  "task": "UX26",
+  "actualAttempts": [
+    {
+      "report": {
+        "path": "artifacts/goal-4/ux26/baseline-red-report.json",
+        "bytes": 2907,
+        "sha256": "ccc9d8c2187ba0a8e76bc467b0cd02c0250ae71bf693ea3a6a1ba8a4e5b72eee"
+      },
+      "stats": {
+        "startTime": "2026-10-30T11:33:39.313Z",
+        "duration": 2135.544,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "classification": "configuration anchored grep selected no tests; not a game failure"
+    },
+    {
+      "report": {
+        "path": "artifacts/goal-4/ux26/baseline-red-v2-report.json",
+        "bytes": 12492,
+        "sha256": "fdfb87e9100c14bb39fef24e20e8cf2bf755f2e51c9f4660630042d7e0affa9a"
+      },
+      "stats": {
+        "startTime": "2026-10-30T11:35:17.243Z",
+        "duration": 18717.533,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "classification": "actual accepted60s manual retains old contradictory pending label; real product red"
+    },
+    {
+      "report": {
+        "path": "artifacts/goal-4/ux26/early-report.json",
+        "bytes": 147106,
+        "sha256": "4eba54319856476829d34253248e191aecde7f1a21eeb04fe30f15d2d66bc3b3"
+      },
+      "stats": {
+        "startTime": "2026-10-30T11:41:04.783Z",
+        "duration": 58468.162,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "classification": "8pass/1 author premise: current talisman library must explicitly choose sword filter"
+    },
+    {
+      "report": {
+        "path": "artifacts/goal-4/ux26/early-v2-report.json",
+        "bytes": 144063,
+        "sha256": "324072f00442c8c238f910616adb9c2842b70f75b61090ff8331ddbd28cfc445"
+      },
+      "stats": {
+        "startTime": "2026-10-30T11:43:25.406Z",
+        "duration": 64921.48300000001,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "classification": "8pass/1 author premise: existing progress uses settings import with explicit original consent, not welcome-page fresh import helper"
+    },
+    {
+      "report": {
+        "path": "artifacts/goal-4/ux26/early-v3-report.json",
+        "bytes": 139139,
+        "sha256": "5c271bda4e646c2d71a9a343be9a5a2437430da39c5799001ee725db28fad910"
+      },
+      "stats": {
+        "startTime": "2026-10-30T11:46:48.870Z",
+        "duration": 56645.828,
+        "expected": 9,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "classification": "all9 pass same final runtime; preliminary evidence not composed as final full174"
+    }
+  ],
+  "authorOriginals": [
+    {
+      "path": "artifacts/goal-4/ux26/baseline-author-config-error.json",
+      "bytes": 279,
+      "sha256": "aeaf2b82701e4cbc0ac6921412d107b5f8b43dd1b0491376d3aa25b2555936fb"
+    },
+    {
+      "path": "artifacts/goal-4/ux26/baseline-red-source.ts",
+      "bytes": 7627,
+      "sha256": "3b85fb1c3fc3afd3e1da0f81aa814c33bf5284ad833f10d36221926f012e0b2d"
+    },
+    {
+      "path": "artifacts/goal-4/ux26/early-v1-source.ts",
+      "bytes": 16703,
+      "sha256": "643f07434d6c74d5f54411bd512bbe1c25b9bffad12a3f086253752b23fa6dd3"
+    },
+    {
+      "path": "artifacts/goal-4/ux26/early-v2-source.ts",
+      "bytes": 16819,
+      "sha256": "b4d35d7c0655abbd509cfd63c2a9d08018dbc29bcde6ac57d9821bed743310c0"
+    },
+    {
+      "path": "artifacts/goal-4/ux26/slow-with-redundant-workers.config.ts",
+      "bytes": 1510,
+      "sha256": "d37bbf75d4ebd7111e861aaced149e1e2ccd170eaa9657ccbfc6041a8ef214e3"
+    }
+  ],
+  "correctionLimits": "production remains same single38-byte view expression; no changed rule, cost, timer, timeout, original oracle or removed assertion",
+  "finalFull174": {
+    "regular": {
+      "startTime": "2026-10-30T11:51:06.993Z",
+      "duration": 1199430.922,
+      "expected": 172,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "originalSlow": {
+      "startTime": "2026-10-30T12:11:14.332Z",
+      "duration": 109249.356,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "models": 96,
+    "resourceMethods": 550,
+    "phaseTerminals": {
+      "task": "UX26",
+      "runtimeDigest": "7f4de1238fbeeed2c205b147e3a0adc0b02e5708c903615c2fa64ffe96827db0",
+      "frozenInputs": 1434,
+      "current": null,
+      "phases": [
+        {
+          "name": "regular",
+          "started": "2026-10-30T11:51:00.331Z",
+          "command": "rtk proxy env PATH=/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin npx playwright test --config ../artifacts/goal-4/ux26/regular.config.ts > ../artifacts/goal-4/ux26/regular.log 2>&1",
+          "sessionId": 36888,
+          "finished": "2026-10-30T12:11:07.304Z",
+          "exitCode": 0
+        },
+        {
+          "name": "slow",
+          "started": "2026-10-30T12:11:07.512Z",
+          "command": "rtk proxy env PATH=/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin npx playwright test --config ../artifacts/goal-4/ux26/slow.config.ts > ../artifacts/goal-4/ux26/slow.log 2>&1",
+          "sessionId": 60323,
+          "finished": "2026-10-30T12:13:03.667Z",
+          "exitCode": 0
+        },
+        {
+          "name": "models",
+          "started": "2026-10-30T12:13:03.887Z",
+          "command": "rtk proxy env PATH=/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin node --experimental-strip-types --test tests/preparation-activity.test.mjs tests/activity.test.mjs tests/activity-clock.test.mjs tests/configuration.test.mjs tests/full-queries.test.mjs tests/full-contracts.test.mjs tests/idle-configuration-tradeoffs.test.mjs > artifacts/goal-4/ux26/models.log 2>&1",
+          "sessionId": 54408,
+          "finished": "2026-10-30T12:13:06.822Z",
+          "exitCode": 0
+        },
+        {
+          "name": "resources",
+          "started": "2026-10-30T12:13:07.038Z",
+          "command": "rtk proxy /Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m unittest discover -s art/tools > artifacts/goal-4/ux26/resources.log 2>&1",
+          "sessionId": 16802,
+          "finished": "2026-10-30T12:20:40.346Z",
+          "exitCode": 0
+        },
+        {
+          "name": "root-types",
+          "started": "2026-10-30T12:20:40.702Z",
+          "command": "rtk proxy env PATH=/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin npm run typecheck > artifacts/goal-4/ux26/root-types.log 2>&1",
+          "sessionId": 98294,
+          "finished": "2026-10-30T12:20:46.839Z",
+          "exitCode": 0
+        }
+      ],
+      "finished": true
+    },
+    "noAutomaticRetryOrTimeoutRelaxation": true
+  }
+}
