@@ -497,3 +497,5 @@ CHECK-ART33-34核全矩阵必须先按真实适用profile的file/title/project�
 UX24依[0074](docs/decisions/0074-current-goal-guidance-ux24-contract.md)与本轮实读XAG109/114：无资源缺口并不代表当前受遭遇阻挡，地点/境界/修法/状态等应沿正式preview.failure.message与原来源/地点入口说明；原“准备已齐”仅在正式allowed时显示。已有真实失败通道完整时应撤掉相矛盾的猜测提示，不另建一套阶段/门槛映射，也不把删错句冒全流程/真人理解已过。默认trial/completed和所有追踪域、查看不执行/原行旅周期/全DB9保；原GoalPanel19000帽不涨，当前兼容/环境性能及全部最终边界保持。
 
 UX25依[0075](docs/decisions/0075-pre-action-period-notice-ux25-contract.md)及本轮XAG114回读：行动前时间靠近实际动词/成本，真实异地行旅才标行旅周期，同地查看即时；自动斗法说明单招周期与有限授权，不把最多回合乘周期冒保证总时长。新前告读正式ADVENTURE_CYCLE_MS，不借旧actionSeconds短表现时钟猜放置周期；仅显示不参与时钟或结算。原App/GoalPanel/TrainingPlanner/BattleStrategy全函数与回调保持，App受保护源演进按明确唯一字面逆变换再回原全文，旧hash/patch/cap不重签或放宽；整体艺术长期真人及当前兼容环境性能边界保持。
+
+UX26依[0076](docs/decisions/0076-learning-draft-context-ux26-contract.md)及本轮XAG114实读：已受理周期与下次未确认草案须在同页可区分；原安排保存标记只随真实查看归属/参数匹配，暂停匹配、已悟记录和空目录只查看保持各自优先级。标题可指向上方真实活动状态，保存错误时不谎称执行成功；文字改变不建钟/重置草案或扩大重试授权。原ART25全文pin保留，只准明确完整显示逆变换回原source；简明同义文案不删预算能力、不缩字、不压格式或涨帽。具体措辞/60000/60-30秒为项目选择，非来源认证，当前兼容环境性能及整体艺术长期真人边界保持。

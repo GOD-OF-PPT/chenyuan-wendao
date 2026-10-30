@@ -1,6 +1,6 @@
 import hashlib,json,tempfile,unittest
 from pathlib import Path
-from art25_inventory import validate_art25,LEDGER,FILES,REFS,UNCHANGED,SCENE
+from art25_inventory import validate_art25,LEDGER,FILES,REFS,UNCHANGED,SCENE,normalize_ux26_learning,UX26_LEARNING_BEFORE,UX26_LEARNING_AFTER
 ROOT=Path(__file__).resolve().parents[2]
 class ART25Tests(unittest.TestCase):
  def setUp(self):
@@ -47,3 +47,33 @@ class ART25Tests(unittest.TestCase):
   with self.assertRaises(AssertionError):self.check()
   p.write_bytes(b);self.edit(lambda j:j.update(userAcceptance=True))
   with self.assertRaises(AssertionError):self.check()
+
+ def reject_learning(self,change):
+  p=self.root/'web/src/LearningPlanner.vue';old=p.read_bytes();ledger=self.root/'art/redesign/idle-preparation.json';saved=ledger.read_bytes()
+  try:
+   text=change(old.decode());self.assertNotEqual(text,old.decode());p.write_text(text);m=json.loads(ledger.read_text())
+   for row in m['files']:
+    if row['path']=='web/src/LearningPlanner.vue':row.update(bytes=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest())
+   ledger.write_text(json.dumps(m))
+   with self.assertRaises(AssertionError):self.check()
+  finally:p.write_bytes(old);ledger.write_bytes(saved)
+ def test_ux26_current_labels_restore_exact_original_whole_source(self):
+  source=(self.root/'web/src/LearningPlanner.vue').read_text();self.assertEqual(hashlib.sha256(normalize_ux26_learning(source).encode()).hexdigest(),UNCHANGED['web/src/LearningPlanner.vue']);self.check()
+ def test_ux26_equal_size_wrong_running_or_saved_labels_cannot_be_resigned(self):
+  for before,after in [("running?'下次草案","busy   ?'下次草案"),('sameSaved&&planSaved','sameSaved||planSaved'),('下次草案，当前执行见上方','本次草案，当前执行见上方')]:
+   self.assertEqual(len(before.encode()),len(after.encode()));self.reject_learning(lambda text,before=before,after=after:text.replace(before,after,1))
+ def test_ux26_missing_or_duplicated_approved_expression_is_not_ignored(self):
+  self.reject_learning(lambda text:text.replace(UX26_LEARNING_AFTER,"'待确认安排，确认后开始'",1))
+  source=(self.root/'web/src/LearningPlanner.vue').read_text()
+  with self.assertRaises(AssertionError):normalize_ux26_learning(source.replace(UX26_LEARNING_AFTER,UX26_LEARNING_AFTER+UX26_LEARNING_AFTER,1))
+ def test_ux26_equal_size_script_or_callback_cannot_be_resigned(self):
+  for before,after in [('p.stoneBudget===d.stoneBudget','p.stoneBudget!==d.stoneBudget'),("emit('start',plan)","emit('track',plan)")]:
+   self.assertEqual(len(before.encode()),len(after.encode()));self.reject_learning(lambda text,before=before,after=after:text.replace(before,after,1))
+ def test_ux26_original_preparation_cap_cannot_be_raised_retyped_or_exceeded(self):
+  p=self.root/LEDGER;original=p.read_bytes()
+  for value in [60001,True]:
+   try:
+    self.edit(lambda m:m['budgets'].update(oldPreparationCap=value))
+    with self.assertRaises(AssertionError):self.check()
+   finally:p.write_bytes(original)
+  self.reject_learning(lambda text:text+' ')

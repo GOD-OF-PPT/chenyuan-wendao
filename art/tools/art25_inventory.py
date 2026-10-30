@@ -8,6 +8,15 @@ BUDGETS={'oldNativeCap': 45000, 'oldCssCap': 12000, 'oldPreparationCap': 60000, 
 SCRIPT='0f2a558accca3e81f61dce5e74e389b859719f46c58816e6edaa1f4b4d6e947f'
 UNCHANGED={'web/src/LearningPlanner.vue': 'd5473ace82c8193349e48515096e6411343f36465a85fc86689b35fbbbeea945', 'web/src/StudyQueueRail.vue': '2ee9119806fa68b31c97c28d754fe2589981ad58b832a8c1f43287e955c13997', 'web/src/JadeEngraving.vue': '1c1b94c82d145c504fda7c8de43dffacedcdf1db87c9f9579fcefac3bec15c1a', 'web/src/EquipmentPanel.vue': 'b5c8e4011f112ff37f21db4e0088e3304a67dda7f1872ca347d1be12559bc56c', 'web/src/equipment-effects.ts': '0946c3b6b76e5ea39ebd80571175e2835ce49abe94fe6499f480b1635a934888', 'web/src/equipment-choreography.ts': '871e41e7555f640fecbc8f26706fac34a5249225a6acb5f1db9c63789a8011bb'}
 SCENE='web/public/art/v2/schools/sanctum-v1.webp'
+# UX26 permits one exact display expression, while retaining the complete old source pin.
+UX26_LEARNING_BEFORE="'待确认的新安排，确认后才开始'"
+UX26_LEARNING_AFTER="running?'下次草案，当前执行见上方':'待确认安排，确认后开始'"
+def normalize_ux26_learning(text):
+ if UX26_LEARNING_AFTER not in text:return text
+ assert text.count(UX26_LEARNING_AFTER)==1,'UX26 unique approved draft label'
+ text=text.replace(UX26_LEARNING_AFTER,UX26_LEARNING_BEFORE,1)
+ assert hashlib.sha256(text.encode()).hexdigest()==UNCHANGED['web/src/LearningPlanner.vue'],'UX26 original complete learning source'
+ return text
 def validate_art25(root):
  root=root.resolve()
  if not(root/LEDGER).exists():
@@ -26,7 +35,7 @@ def validate_art25(root):
  for ledger,key,cap in [('art03','maxNativeBytes',45000),('art10','nativeBytes',12000),('idle-preparation','maxNativeBytes',60000),('ta09','nativeBytes',30000)]:
   prior=json.loads(local('art/redesign/'+ledger+'.json').read_text());assert(prior.get('budgets',{}).get(key,prior.get(key)))==cap and sum(local(r['path']).stat().st_size for r in prior['files'])<=cap,'ART25 old cap'
  assert m['originalScriptSHA256']==SCRIPT and m['unchanged']==UNCHANGED,'ART25 controller ownership'
- changed=[n for n,h in UNCHANGED.items()if digest(n)!=h]
+ changed=[n for n,h in UNCHANGED.items()if(hashlib.sha256(normalize_ux26_learning(local(n).read_text()).encode()).hexdigest()if n=='web/src/LearningPlanner.vue'else digest(n))!=h]
  if changed:
   assert changed==['web/src/EquipmentPanel.vue'],'ART25 controller ownership'
   from art26_inventory import validate_art26
