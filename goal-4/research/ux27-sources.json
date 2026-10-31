@@ -1,0 +1,15 @@
+{
+  "task": "UX27",
+  "readAt": "2026-10-31",
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "applied": "Consistent navigation and predictable focus; retain original return ownership."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "applied": "Title, current category and selected navigation give consistent context."
+    }
+  ],
+  "limits": "Specific category mapping is project inference, no certification; no compatibility/environment performance checks."
+}

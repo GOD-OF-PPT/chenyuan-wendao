@@ -1,0 +1,92 @@
+[
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-1162b-hout-changing-authorization-chromium/replacement-life-new-skills.png",
+    "sha256": "0c37993069753654d6dfbd34f64897b8fc1dfea0adb132ba6c6da4a38d5a2a3c",
+    "inheritedReviewedPNG": null,
+    "preview": "artifacts/goal-4/ux27/visuals/final-replacement-life-new-skills.jpg",
+    "previewSHA256": "fd7eac7fafebe8b0bbeab7772b52988341bc46dadb94ed17b0c05091dd2c4886",
+    "reviewed": true,
+    "method": "actual individual same-size JPEG68 pixel review; originalPNG retained"
+  },
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-49381--and-preserve-parent-return-chromium/skills-manual.png",
+    "sha256": "82720bfbfccb6bc55768e78ae8c815f41991fc578c64b8031a86774b4c1457f0",
+    "inheritedReviewedPNG": "artifacts/goal-4/ux27/green-3-results/ux27-equipment-context-UX2-49381--and-preserve-parent-return-chromium/skills-manual.png",
+    "reviewed": true,
+    "method": "whole PNG byte identity to actually reviewed image"
+  },
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-49381--and-preserve-parent-return-chromium/skills-relics.png",
+    "sha256": "848bfde5cdc909061704e008c784d5c39b9510829f1379688902e7fd743dc42f",
+    "inheritedReviewedPNG": "artifacts/goal-4/ux27/green-3-results/ux27-equipment-context-UX2-49381--and-preserve-parent-return-chromium/skills-relics.png",
+    "reviewed": true,
+    "method": "whole PNG byte identity to actually reviewed image"
+  },
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-49381--and-preserve-parent-return-chromium/skills-school.png",
+    "sha256": "0c2047a219fe8d66876bff2e5e53737e946487f87a5cc8473bb8dafd21e339ce",
+    "inheritedReviewedPNG": null,
+    "preview": "artifacts/goal-4/ux27/visuals/final-skills-school.jpg",
+    "previewSHA256": "69f68383bd796838c0aab041c8d21fbde5badd336a83a18bfbf0f93d75abf1ce",
+    "reviewed": true,
+    "method": "actual individual same-size JPEG68 pixel review; originalPNG retained"
+  },
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-49381--and-preserve-parent-return-chromium/skills-skills.png",
+    "sha256": "1d713f973fc2c013edf1292f7e3ebaa0121ca58bfdf7c7bfa37f96f8884acf19",
+    "inheritedReviewedPNG": "artifacts/goal-4/ux27/green-3-results/ux27-equipment-context-UX2-49381--and-preserve-parent-return-chromium/skills-skills.png",
+    "reviewed": true,
+    "method": "whole PNG byte identity to actually reviewed image"
+  },
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-49381--and-preserve-parent-return-chromium/skills-summary.png",
+    "sha256": "de1814aa389d527b90200be9e98ffba57e91b701516e33a2412ca1c884c78470",
+    "inheritedReviewedPNG": "artifacts/goal-4/ux27/green-3-results/ux27-equipment-context-UX2-49381--and-preserve-parent-return-chromium/skills-summary.png",
+    "reviewed": true,
+    "method": "whole PNG byte identity to actually reviewed image"
+  },
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-be69a--and-preserve-parent-return-chromium/relics-manual.png",
+    "sha256": "82720bfbfccb6bc55768e78ae8c815f41991fc578c64b8031a86774b4c1457f0",
+    "inheritedReviewedPNG": "artifacts/goal-4/ux27/green-3-results/ux27-equipment-context-UX2-be69a--and-preserve-parent-return-chromium/relics-manual.png",
+    "reviewed": true,
+    "method": "whole PNG byte identity to actually reviewed image"
+  },
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-be69a--and-preserve-parent-return-chromium/relics-relics.png",
+    "sha256": "a02d76e40113bca60c84d1b6ddd1012074fadd753565357ce0cf43ef153ef9c0",
+    "inheritedReviewedPNG": null,
+    "preview": "artifacts/goal-4/ux27/visuals/final-relics-relics.jpg",
+    "previewSHA256": "fae8fdd2c2e4aac9938fddb076fdda66beb2dd5cd1abe026c099d3fa3b157808",
+    "reviewed": true,
+    "method": "actual individual same-size JPEG68 pixel review; originalPNG retained"
+  },
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-be69a--and-preserve-parent-return-chromium/relics-school.png",
+    "sha256": "f1aa1e941c5d69a2bbd611b64a63c5aa92e1a27d3fb8b59b7f7860457bfb5371",
+    "inheritedReviewedPNG": "artifacts/goal-4/ux27/green-3-results/ux27-equipment-context-UX2-be69a--and-preserve-parent-return-chromium/relics-school.png",
+    "reviewed": true,
+    "method": "whole PNG byte identity to actually reviewed image"
+  },
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-be69a--and-preserve-parent-return-chromium/relics-skills.png",
+    "sha256": "1d713f973fc2c013edf1292f7e3ebaa0121ca58bfdf7c7bfa37f96f8884acf19",
+    "inheritedReviewedPNG": "artifacts/goal-4/ux27/green-3-results/ux27-equipment-context-UX2-be69a--and-preserve-parent-return-chromium/relics-skills.png",
+    "reviewed": true,
+    "method": "whole PNG byte identity to actually reviewed image"
+  },
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-be69a--and-preserve-parent-return-chromium/relics-summary.png",
+    "sha256": "de1814aa389d527b90200be9e98ffba57e91b701516e33a2412ca1c884c78470",
+    "inheritedReviewedPNG": "artifacts/goal-4/ux27/green-3-results/ux27-equipment-context-UX2-be69a--and-preserve-parent-return-chromium/relics-summary.png",
+    "reviewed": true,
+    "method": "whole PNG byte identity to actually reviewed image"
+  },
+  {
+    "path": "artifacts/goal-4/ux27/related-results/ux27-equipment-context-UX2-e48fd-hile-browsing-and-returning-chromium/running-original-queue-preserved.png",
+    "sha256": "d0c8bfdb51fe83fa348cf8a1ee69c777a3b9cfdd4540002ac99b964c9b023f8e",
+    "inheritedReviewedPNG": "artifacts/goal-4/ux27/green-3-results/ux27-equipment-context-UX2-e48fd-hile-browsing-and-returning-chromium/running-original-queue-preserved.png",
+    "reviewed": true,
+    "method": "whole PNG byte identity to actually reviewed image"
+  }
+]

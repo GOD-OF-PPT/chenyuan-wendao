@@ -1,0 +1,11 @@
+{
+  "task": "UX27",
+  "codeCommit": "a5939994bcf9d8530ead898ff7dc828419e58553",
+  "runtimeDigest": "090f8bc863706612dbfd59d07f85fcc7ac0d28f8fa9d567b5e40627f0ab1824c",
+  "runtimeGitExact": 313,
+  "ownedCodeGitExact": 10,
+  "testedRebuiltFrozenExactPayloads": 102,
+  "bytes": 10796065,
+  "helperSHA256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "dirty": "13 preserved unrelated inputs plus pending task evidence; not clean final candidate"
+}

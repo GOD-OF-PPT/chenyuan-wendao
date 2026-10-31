@@ -1,0 +1,17 @@
+{
+  "changes": {
+    "art/tools/test_inventory.py": {
+      "before": "06c48ad3ee86e8bbda1e633c989068b0c8c54cc46cf1f2188f7f8d98c57f01f0",
+      "after": "cdae5272f228aa3ba51e58f21f6ca968d5a89edef4216f1b99aaf7dfd52bfadd"
+    }
+  },
+  "productionUnchanged": true,
+  "scope": "Only one new negative test now asserts the full old-source fallback hash, not a helper throwing by itself. Original full553 report retained; 552 unchanged cases reused, corrected target rerun; no claim of one full553 green round.",
+  "exactInverse": {
+    "before": "   with self.subTest(path=name,mutation=old),self.assertRaisesRegex(AssertionError,'UX27'):normalize(source.replace(old,new,1))\n",
+    "after": "   with self.subTest(path=name,mutation=old),self.assertRaisesRegex(AssertionError,'UX27'):\n    normalized=normalize(source.replace(old,new,1));before=(ROOT/('goal-4/evidence/ux27/'+name+'.before.txt')).read_text()\n    assert hashlib.sha256(normalized.encode()).hexdigest()==hashlib.sha256(before.encode()).hexdigest(),'UX27 full source fallback proof'\n",
+    "oldWholeFileSHA256": "06c48ad3ee86e8bbda1e633c989068b0c8c54cc46cf1f2188f7f8d98c57f01f0",
+    "restoredFullFileEqualsFirstRun": true
+  },
+  "unaffected553MethodsExceptOneUnchanged": true
+}
