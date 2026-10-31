@@ -17,8 +17,8 @@
     },
     {
       "path": "web/src/RecoveryPlanner.vue",
-      "bytes": 8567,
-      "sha256": "5de293edd038887f4f3fd5b8b0f88b71b9bf77af06c744d0731e61f9591183f2"
+      "bytes": 8572,
+      "sha256": "13a08bcb6fc24f98a1ff07dad3ad1a803dbbd21ab2d2689611d87f4994f266ab"
     },
     {
       "path": "web/src/ConfigurationDialog.vue",

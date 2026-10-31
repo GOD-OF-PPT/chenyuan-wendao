@@ -39,8 +39,8 @@
     },
     {
       "path": "web/src/RecoveryRitual.vue",
-      "bytes": 9452,
-      "sha256": "59f0187aa56a6ef240bc231df72a8851482c9f05c9c9d823618cbd34b1e96020"
+      "bytes": 9486,
+      "sha256": "97fe60181eb14dc42a39f4001753744af3cab69a9082c2ef86d2048116a9a068"
     }
   ],
   "baselines": [

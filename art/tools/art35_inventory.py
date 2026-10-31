@@ -1,3 +1,4 @@
+from ux29_inventory import normalize_ux29_ritual
 from ux28_inventory import normalize_ux28_recovery
 """ART35 calm props; old renderers reverse to their full original ownership proofs."""
 import hashlib,json,re
@@ -23,6 +24,7 @@ def normalize_art35_jade(text):
 
 RECOVERY_TRANSFORMS=[["import GameIcon from './GameIcon.vue';", "import GameIcon from './GameIcon.vue';\nimport AssetImage from './AssetImage.vue';\nimport './art35-study-rest.css';"], ['<div v-else class="recovery-sitting"><GameIcon kind="nav" id="cultivate"/></div>', '<div v-else class="recovery-sitting"><AssetImage path="art/v2/characters/player-seated-cold.webp" asset-id="resting-self" fit="contain" eager><GameIcon kind="nav" id="cultivate"/></AssetImage></div>']]
 def normalize_art35_recovery(text):
+ text=normalize_ux29_ritual(text)
  if RECOVERY_TRANSFORMS[0][1]not in text:return text
  for before,after in reversed(RECOVERY_TRANSFORMS):
   assert text.count(after)==1,'ART35 unique approved recovery display'
