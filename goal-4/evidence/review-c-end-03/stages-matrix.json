@@ -1,0 +1,106 @@
+{
+  "task": "REVIEW-C-END-03",
+  "count": 8,
+  "rows": [
+    {
+      "entry": "修行",
+      "object": "吐纳/境门",
+      "assessment": "正式周期/有限安排明确，开场人物药匣已实装",
+      "representativePixel": "CULTIVATE-actual-decision.jpg",
+      "actions": [
+        "CULTIVATE",
+        "BREAKTHROUGH",
+        "START_TRIAL",
+        "ANSWER_TRIAL",
+        "END"
+      ],
+      "scope": "Current observed decision/related stage; not every nested page newly executed"
+    },
+    {
+      "entry": "历练",
+      "object": "地图/资源/委托/敌方/坊市",
+      "assessment": "来源菜单与画隔开；行旅6秒/单招3秒明确",
+      "representativePixel": "SOURCE-actual-decision.jpg",
+      "actions": [
+        "TRAVEL",
+        "SOURCE",
+        "ENCOUNTER",
+        "BATTLE",
+        "BUY",
+        "SELL"
+      ],
+      "scope": "Current observed decision/related stage; not every nested page newly executed"
+    },
+    {
+      "entry": "丹炉",
+      "object": "配方/炉体/药匣/成品",
+      "assessment": "当前一炉与材料/有限授权，查看不执行",
+      "representativePixel": "CRAFT-actual-decision.jpg",
+      "actions": [
+        "CRAFT"
+      ],
+      "scope": "Current observed decision/related stage; not every nested page newly executed"
+    },
+    {
+      "entry": "功法",
+      "object": "流派/经卷/剑简/槽位",
+      "assessment": "画件/物件保六轮廓；分类/下次草案用同源UX26/27原完整回归，不冒本轮新跑运行态",
+      "representativePixel": "LEARN-actual-decision.jpg",
+      "actions": [
+        "SCHOOL",
+        "LEARN",
+        "STUDY",
+        "EQUIP"
+      ],
+      "scope": "Current observed decision/related stage; not every nested page newly executed"
+    },
+    {
+      "entry": "法宝",
+      "object": "器物/材料/本命",
+      "assessment": "60秒铸造和即时比较分开，未炼图不冒持有",
+      "representativePixel": "FORGE-actual-decision.jpg",
+      "actions": [
+        "FORGE",
+        "EQUIP_RELIC"
+      ],
+      "scope": "Current observed decision/related stage; not every nested page newly executed"
+    },
+    {
+      "entry": "行囊",
+      "object": "物资/用途/药匣",
+      "assessment": "恢复可达，时间T02/异地零预估I04待修",
+      "representativePixel": "USE-actual-decision.jpg",
+      "actions": [
+        "USE",
+        "REST",
+        "BUY",
+        "SELL"
+      ],
+      "scope": "Current observed decision/related stage; not every nested page newly executed"
+    },
+    {
+      "entry": "仙缘",
+      "object": "人物/来意/回应",
+      "assessment": "拜访确认6秒/不旅行/不代选，当前代表为确认面",
+      "representativePixel": "EVENT-actual-decision.jpg",
+      "actions": [
+        "EVENT",
+        "DECIDE",
+        "CHOOSE"
+      ],
+      "scope": "Current observed decision/related stage; not every nested page newly executed"
+    },
+    {
+      "entry": "生平",
+      "object": "命卷/回看/归隐/寿尽",
+      "assessment": "真实封卷和12秒寿尽确认清楚，不冒全部长文重验",
+      "representativePixel": "sealed-life-home.jpg",
+      "actions": [
+        "END",
+        "RETIRE",
+        "END_LIFE"
+      ],
+      "scope": "Current observed decision/related stage; not every nested page newly executed"
+    }
+  ]
+}

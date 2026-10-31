@@ -1,0 +1,1214 @@
+{
+  "task": "REVIEW-C-END-03",
+  "runtimeDigest": "d0b22d1464abdb9d3908b09d229085a0ba4feeebfbc7891e84866817308cc8b0",
+  "count": 25,
+  "currentReadonlyRows": 25,
+  "rows": [
+    {
+      "action": "CHOOSE",
+      "entry": "破庙三选项help/trade/leave→原确认",
+      "currentFixtureFacts": {
+        "realm": "mortal",
+        "location": "wilderness",
+        "activeEvent": "temple",
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "CHOOSE",
+        "choice": "help"
+      },
+      "actualPrimary": {
+        "id": "milestone-confirm",
+        "text": "安排赠丹相助一次",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "6 秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "6秒一次",
+      "tradeoff": "赠丹/换简/保留的丹药与因果取舍",
+      "stopAndFiniteAuthority": "本次即停，不接修炼",
+      "uiConsumers": [
+        "web/src/MilestoneGate.vue",
+        "web/src/ChoiceCard.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "act → selectMilestone → confirmMilestoneAction → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/CHOOSE-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-milestones.spec.ts::a real opening choice remains a preview, then waits six seconds and saves exactly its one medicine cost::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "TRAVEL",
+      "entry": "地图/goal-location/明确前往",
+      "currentFixtureFacts": {
+        "realm": "mortal",
+        "location": "wilderness",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "TRAVEL",
+        "location": "cave"
+      },
+      "actualPrimary": {
+        "id": "adventure-start",
+        "text": "安排行路至听雨洞府",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "6秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "6秒一次",
+      "tradeoff": "目的地/门槛与行路费用",
+      "stopAndFiniteAuthority": "一次抵达/非法/暂停/归属变化，不自动后续",
+      "uiConsumers": [
+        "web/src/AdventurePlanner.vue",
+        "web/src/GoalPanel.vue",
+        "web/src/ExplorePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "travel / arrangeTravel → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/TRAVEL-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-adventure.spec.ts::a trip selects without writing then really counts six seconds before one free arrival::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "CULTIVATE",
+      "entry": "修行当前吐纳/cultivate",
+      "currentFixtureFacts": {
+        "realm": "mortal",
+        "location": "cave",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "CULTIVATE",
+        "method": "natural",
+        "count": 50
+      },
+      "actualPrimary": {
+        "id": "training-start",
+        "text": "开始自然吐纳",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "30 秒",
+        "30 秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "30/60/90/120/180/240秒逐轮",
+      "tradeoff": "自然零石或辅助付石、功法效率与筹物资金取舍",
+      "stopAndFiniteAuthority": "修为/次数/累计预算/保留/余寿/暂停",
+      "uiConsumers": [
+        "web/src/App.vue",
+        "web/src/TrainingPlanner.vue",
+        "web/src/CultivationSite.vue"
+      ],
+      "appCallback": "startTraining → store.startCultivation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/CULTIVATE-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "cultivation-objects.spec.ts::ART06-A4 one real thirty second natural cycle moves only the formal saved cultivation and preserves a static result without an automatic breakthrough::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "SOURCE",
+      "entry": "历练采集委托/source-start",
+      "currentFixtureFacts": {
+        "realm": "qi",
+        "location": "wilderness",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "SOURCE",
+        "sourceId": "herbs",
+        "count": 4,
+        "target": {
+          "item": "herb",
+          "quantity": 8
+        }
+      },
+      "actualPrimary": {
+        "id": "source-start",
+        "text": "安排山野采药",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "30 秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "来源月×30秒，当前30—180秒",
+      "tradeoff": "资源目标或委托灵石、副产修为与时间",
+      "stopAndFiniteAuthority": "目标/次数/月预算/余寿/地点/无变化",
+      "uiConsumers": [
+        "web/src/SourceObject.vue",
+        "web/src/SourceField.vue",
+        "web/src/SourcePlanner.vue",
+        "web/src/ExplorePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "ExplorePanel start → startSource → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/SOURCE-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "source-actors.spec.ts::TA08-A4 a full cultivation commission automatically saves two stone-only periods and retains all actual income without invented material drops::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "BUY",
+      "entry": "坊市物品/preparation-start",
+      "currentFixtureFacts": {
+        "realm": "nascent",
+        "location": "market",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "BUY",
+        "item": "healing_pill",
+        "quantity": 1
+      },
+      "actualPrimary": {
+        "id": "preparation-start",
+        "text": "安排购入回春丹",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "15 秒",
+        "15 秒"
+      ],
+      "arrangementTimeTokens": [],
+      "wayChooserTimeTokens": null,
+      "periodContract": "15秒逐件",
+      "tradeoff": "库存目标/最多件数/总预算/石保留",
+      "stopAndFiniteAuthority": "目标/件数/资金/位置",
+      "uiConsumers": [
+        "web/src/MarketCounter.vue",
+        "web/src/MarketPlanner.vue",
+        "web/src/ExplorePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "direct market startPreparation / ExplorePanel start dispatch → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/BUY-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "inventory-objects.spec.ts::ART04-A4 one real buy period keeps all formal costs and body changes behind its actual deadline::chromium",
+        "kind": "inherited_exact_runtime_D0_ART35_execution",
+        "source": "goal-4/evidence/art35/coverage-audit.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "SELL",
+      "entry": "坊市售出/preparation-start",
+      "currentFixtureFacts": {
+        "realm": "qi",
+        "location": "market",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "SELL",
+        "item": "herb",
+        "quantity": 1
+      },
+      "actualPrimary": {
+        "id": "preparation-start",
+        "text": "安排售出凝气草",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "15 秒",
+        "15 秒"
+      ],
+      "arrangementTimeTokens": [],
+      "wayChooserTimeTokens": null,
+      "periodContract": "15秒逐件",
+      "tradeoff": "仅售可售物、保留库存与回收石",
+      "stopAndFiniteAuthority": "保留线/次数/禁售突破物/位置",
+      "uiConsumers": [
+        "web/src/MarketCounter.vue",
+        "web/src/MarketPlanner.vue",
+        "web/src/ExplorePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "direct market startPreparation / ExplorePanel start dispatch → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/SELL-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "inventory-objects.spec.ts::ART04-A7 both medicine sales stop at the exact reserve and all five breakthrough offers stay explicitly forbidden::chromium",
+        "kind": "inherited_exact_runtime_D0_ART35_execution",
+        "source": "goal-4/evidence/art35/coverage-audit.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "CRAFT",
+      "entry": "丹炉丹方/药匣/production-start",
+      "currentFixtureFacts": {
+        "realm": "qi",
+        "location": "cave",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "CRAFT",
+        "recipeId": "foundation"
+      },
+      "actualPrimary": {
+        "id": "production-start",
+        "text": "开炉 · 筑基丹",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "30 秒"
+      ],
+      "arrangementTimeTokens": [],
+      "wayChooserTimeTokens": null,
+      "periodContract": "丹方月×30秒，当前30—150秒",
+      "tradeoff": "恢复/突破丹、炉次、材料和资金保留",
+      "stopAndFiniteAuthority": "成品目标/炉次/缺材/预算/余寿",
+      "uiConsumers": [
+        "web/src/AlchemyWorkshop.vue",
+        "web/src/ProductionPlanner.vue",
+        "web/src/GoodsPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "GoodsPanel start → startProduction → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/CRAFT-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "alchemy-workshop.spec.ts::furnace phases follow the real cycle and only two atomic saved pills arrive once before the cumulative budget stops::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "USE",
+      "entry": "行囊丹药→药匣/preparation-start",
+      "currentFixtureFacts": {
+        "realm": "qi",
+        "location": "cave",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "USE",
+        "item": "healing_pill"
+      },
+      "actualPrimary": {
+        "id": "preparation-start",
+        "text": "按目标使用回春丹",
+        "disabled": false
+      },
+      "mainTimeTokens": [],
+      "arrangementTimeTokens": [],
+      "wayChooserTimeTokens": [
+        "6 秒",
+        "6 秒",
+        "30 秒"
+      ],
+      "periodContract": "6秒逐丹",
+      "tradeoff": "两恢复丹的恢复目标、用量与库存保留",
+      "stopAndFiniteAuthority": "达标/药尽/预算/保留/条件",
+      "uiConsumers": [
+        "web/src/InventoryStage.vue",
+        "web/src/GoodsPanel.vue",
+        "web/src/RecoveryRitual.vue",
+        "web/src/RecoveryPlanner.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "GoodsPanel act opens recovery / RecoveryPlanner start → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/USE-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "inventory-objects.spec.ts::ART04-A5 one real use period keeps all formal costs and body changes behind its actual deadline::chromium",
+        "kind": "inherited_exact_runtime_D0_ART35_execution",
+        "source": "goal-4/evidence/art35/coverage-audit.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "CEND03-T02:前导入口/方式页有周期，但当前恢复决定与完整安排未保留",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "REST",
+      "entry": "洞府疗养/preparation-start",
+      "currentFixtureFacts": {
+        "realm": "qi",
+        "location": "cave",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "REST"
+      },
+      "actualPrimary": {
+        "id": "preparation-start",
+        "text": "安排疗养一次",
+        "disabled": false
+      },
+      "mainTimeTokens": [],
+      "arrangementTimeTokens": [],
+      "wayChooserTimeTokens": [
+        "6 秒",
+        "6 秒",
+        "30 秒"
+      ],
+      "periodContract": "30秒一次",
+      "tradeoff": "1游戏月换圆满、不耗丹，与服丹/战中用药区别",
+      "stopAndFiniteAuthority": "一次/已满/地点/余寿",
+      "uiConsumers": [
+        "web/src/InventoryStage.vue",
+        "web/src/GoodsPanel.vue",
+        "web/src/RecoveryRitual.vue",
+        "web/src/RecoveryPlanner.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "GoodsPanel act opens recovery / RecoveryPlanner start → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/REST-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "inventory-objects.spec.ts::ART04-A6 one real rest period keeps all formal costs and body changes behind its actual deadline::chromium",
+        "kind": "inherited_exact_runtime_D0_ART35_execution",
+        "source": "goal-4/evidence/art35/coverage-audit.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "CEND03-T02:前导入口/方式页有周期，但当前恢复决定与完整安排未保留",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "BREAKTHROUGH",
+      "entry": "修行当前境门→原确认",
+      "currentFixtureFacts": {
+        "realm": "mortal",
+        "location": "cave",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "BREAKTHROUGH"
+      },
+      "actualPrimary": {
+        "id": "milestone-confirm",
+        "text": "安排引气入体一次",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "30 秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "30秒一次",
+      "tradeoff": "满修为、本境真耗物与两可达筹备路线",
+      "stopAndFiniteAuthority": "只本境一次/缺物/修为不足/状态变化",
+      "uiConsumers": [
+        "web/src/MilestoneGate.vue",
+        "web/src/CaveThresholdObject.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "act → selectMilestone → confirmMilestoneAction → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/BREAKTHROUGH-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-milestones.spec.ts::a real prepared breakthrough waits thirty seconds and stops at the next realm with its actual pill and reset cultivation::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "SCHOOL",
+      "entry": "功法修法/school-sword或talisman",
+      "currentFixtureFacts": {
+        "realm": "qi",
+        "location": "cave",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "SCHOOL",
+        "school": "sword"
+      },
+      "actualPrimary": {
+        "id": "configuration-confirm",
+        "text": "确认择定修法",
+        "disabled": false
+      },
+      "mainTimeTokens": [],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "即时比较后原子确认，无假等待",
+      "tradeoff": "剑符基础三槽差异与原研习/本命保留",
+      "stopAndFiniteAuthority": "战中/事件/活动CAS/相同修法",
+      "uiConsumers": [
+        "web/src/LoadoutConstellation.vue",
+        "web/src/LearningPlanner.vue",
+        "web/src/RelicAtelier.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "act → inspectConfiguration → confirmConfiguration → store.applyConfiguration",
+      "saveChain": "store.applyConfiguration → repository.configure → atomic Game/receipt + activityCAS",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/SCHOOL-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "equipment-objects.spec.ts::ART03-A8 school skill and relic comparisons cancel without writes and explicit atomic confirmations retain their real scopes::chromium",
+        "kind": "inherited_exact_runtime_D0_ART35_execution",
+        "source": "goal-4/evidence/art35/coverage-audit.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "即时比较/原子确认，不加假等待",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "STUDY",
+      "entry": "功法剑简/preparation-start",
+      "currentFixtureFacts": {
+        "realm": "foundation",
+        "location": "sect",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "STUDY",
+        "manual": "jinghong"
+      },
+      "actualPrimary": {
+        "id": "preparation-start",
+        "text": "安排参悟一次",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "60 秒",
+        "60秒"
+      ],
+      "arrangementTimeTokens": [],
+      "wayChooserTimeTokens": null,
+      "periodContract": "60秒一次",
+      "tradeoff": "已有剑简或付费参悟、剑符实际收益差异",
+      "stopAndFiniteAuthority": "只一次/已悟/费用保留",
+      "uiConsumers": [
+        "web/src/JadeStudyScene.vue",
+        "web/src/LearningPlanner.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "EquipmentPanel start → startProduction → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/STUDY-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "equipment-objects.spec.ts::ART03-A5 a real sixty-second sword manual commits one insight and never silently changes school or equipment::chromium",
+        "kind": "inherited_exact_runtime_D0_ART35_execution",
+        "source": "goal-4/evidence/art35/coverage-audit.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "LEARN",
+      "entry": "功法经卷入串/preparation-start",
+      "currentFixtureFacts": {
+        "realm": "foundation",
+        "location": "sect",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "LEARN",
+        "skill": "sword_still"
+      },
+      "actualPrimary": {
+        "id": "preparation-start",
+        "text": "开始这段研习",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "30 秒",
+        "30秒"
+      ],
+      "arrangementTimeTokens": [],
+      "wayChooserTimeTokens": null,
+      "periodContract": "30秒逐卷",
+      "tradeoff": "有限顺序、费用保留、实际作用与配装门槛",
+      "stopAndFiniteAuthority": "清单/已学会/预算/条件变化",
+      "uiConsumers": [
+        "web/src/JadeStudyScene.vue",
+        "web/src/LearningPlanner.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "EquipmentPanel start → startProduction → startPreparation",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/LEARN-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "equipment-objects.spec.ts::ART03-A3 two selected cross-school jade slips keep exact separate cycles and show only the selected credible completion::chromium",
+        "kind": "inherited_exact_runtime_D0_ART35_execution",
+        "source": "goal-4/evidence/art35/coverage-audit.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "EQUIP",
+      "entry": "已掌握经卷/equip-id/配装槽",
+      "currentFixtureFacts": {
+        "realm": "foundation",
+        "location": "sect",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "EQUIP",
+        "skill": "sword_still"
+      },
+      "actualPrimary": {
+        "id": "configuration-confirm",
+        "text": "确认更换功法",
+        "disabled": false
+      },
+      "mainTimeTokens": [],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "即时比较后原子确认，无假等待",
+      "tradeoff": "当前槽实际差异，由玩家确认",
+      "stopAndFiniteAuthority": "未学/流派不合/已装备/活动CAS",
+      "uiConsumers": [
+        "web/src/LoadoutConstellation.vue",
+        "web/src/LearningPlanner.vue",
+        "web/src/RelicAtelier.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "act → inspectConfiguration → confirmConfiguration → store.applyConfiguration",
+      "saveChain": "store.applyConfiguration → repository.configure → atomic Game/receipt + activityCAS",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/EQUIP-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "equipment-objects.spec.ts::ART03-A8 school skill and relic comparisons cancel without writes and explicit atomic confirmations retain their real scopes::chromium",
+        "kind": "inherited_exact_runtime_D0_ART35_execution",
+        "source": "goal-4/evidence/art35/coverage-audit.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "即时比较/原子确认，不加假等待",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "FORGE",
+      "entry": "法宝所选器物/production-start",
+      "currentFixtureFacts": {
+        "realm": "golden",
+        "location": "cave",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "FORGE",
+        "relic": "jade_seal"
+      },
+      "actualPrimary": {
+        "id": "production-start",
+        "text": "安排铸造玄玉印",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "60 秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "60秒一次",
+      "tradeoff": "器物实际流派效果、材料与费用",
+      "stopAndFiniteAuthority": "一件/已拥有/缺材/余寿",
+      "uiConsumers": [
+        "web/src/RelicAtelier.vue",
+        "web/src/ProductionPlanner.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "EquipmentPanel start → startProduction → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/FORGE-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "equipment-objects.spec.ts::ART03-A2 one legal forge enters cold native saving before its exact sixty-second artifact is committed::chromium",
+        "kind": "inherited_exact_runtime_D0_ART35_execution",
+        "source": "goal-4/evidence/art35/coverage-audit.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "EQUIP_RELIC",
+      "entry": "已持器物/equip-relic-id/本命槽",
+      "currentFixtureFacts": {
+        "realm": "golden",
+        "location": "cave",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "EQUIP_RELIC",
+        "relic": "jade_seal"
+      },
+      "actualPrimary": {
+        "id": "configuration-confirm",
+        "text": "确认祭炼本命",
+        "disabled": false
+      },
+      "mainTimeTokens": [],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "即时比较后原子确认，无假等待",
+      "tradeoff": "已炼器物实际本命效果",
+      "stopAndFiniteAuthority": "未拥有/已装备/活动CAS",
+      "uiConsumers": [
+        "web/src/LoadoutConstellation.vue",
+        "web/src/LearningPlanner.vue",
+        "web/src/RelicAtelier.vue",
+        "web/src/EquipmentPanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "act → inspectConfiguration → confirmConfiguration → store.applyConfiguration",
+      "saveChain": "store.applyConfiguration → repository.configure → atomic Game/receipt + activityCAS",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/EQUIP_RELIC-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "equipment-objects.spec.ts::ART03-A8 school skill and relic comparisons cancel without writes and explicit atomic confirmations retain their real scopes::chromium",
+        "kind": "inherited_exact_runtime_D0_ART35_execution",
+        "source": "goal-4/evidence/art35/coverage-audit.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "即时比较/原子确认，不加假等待",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "ENCOUNTER",
+      "entry": "历练挑战当前敌方/adventure-start",
+      "currentFixtureFacts": {
+        "realm": "qi",
+        "location": "wilderness",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "ENCOUNTER",
+        "enemy": "wolf"
+      },
+      "actualPrimary": {
+        "id": "adventure-start",
+        "text": "按此战策历练雾隐妖狼",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "30秒",
+        "3秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "30秒遭遇一次",
+      "tradeoff": "有限场次、掉落目标、补给与风险/战策",
+      "stopAndFiniteAuthority": "场次/目标/危险/资源/待决定",
+      "uiConsumers": [
+        "web/src/AdventurePlanner.vue",
+        "web/src/ExplorePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "startAdventure → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/ENCOUNTER-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-adventure.spec.ts::one real encounter waits thirty seconds and its first battle command waits a separate three seconds::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "BATTLE",
+      "entry": "战策battle-auto-start/手动七招",
+      "currentFixtureFacts": {
+        "realm": "qi",
+        "location": "wilderness",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "BATTLE",
+        "move": "technique"
+      },
+      "actualPrimary": {
+        "id": "battle-auto-start",
+        "text": "开始自动斗法",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "3 秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "3秒逐招",
+      "tradeoff": "剑意/符印、敌意、MP总额、药物上限保留、危险线",
+      "stopAndFiniteAuthority": "当前敌/关/回合/MP/药物/危险/胜负/撤退",
+      "uiConsumers": [
+        "web/src/BattleCommandConsole.vue",
+        "web/src/BattleStrategy.vue",
+        "web/src/BattlePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "battle(singleBattlePlan) / startAdventure → store.startPlannedActivity",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/BATTLE-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-adventure.spec.ts::sword finite strategy plays formal separate turns and its complete receipts remain after refresh::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "EVENT",
+      "entry": "仙缘人物/此地机缘/event-id",
+      "currentFixtureFacts": {
+        "realm": "foundation",
+        "location": "sect",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "EVENT",
+        "event": "shen_return"
+      },
+      "actualPrimary": {
+        "id": "milestone-confirm",
+        "text": "安排拜访 · 药香故人一次",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "6 秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "6秒一次",
+      "tradeoff": "当前境界/当地真实拜访，未知回应另选",
+      "stopAndFiniteAuthority": "本次会面即待回应，不自动行旅或代选",
+      "uiConsumers": [
+        "web/src/EncounterTable.vue",
+        "web/src/FateCatalogue.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "storyAct → act → selectMilestone → confirmMilestoneAction → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/EVENT-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-milestones.spec.ts::visiting opens only the selected current-place story and a separately selected response saves once::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "DECIDE",
+      "entry": "人物回应预选→核对→原确认",
+      "currentFixtureFacts": {
+        "realm": "foundation",
+        "location": "sect",
+        "activeEvent": "shen_return",
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "DECIDE",
+        "option": "accept"
+      },
+      "actualPrimary": {
+        "id": "milestone-confirm",
+        "text": "安排坐下叙旧一次",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "6 秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "6秒一次",
+      "tradeoff": "所选可见回应的真实成本/已知因果",
+      "stopAndFiniteAuthority": "一次/条件变化/未知后续待决定",
+      "uiConsumers": [
+        "web/src/ResponseTable.vue",
+        "web/src/NarrativePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "storyAct → act → selectMilestone → confirmMilestoneAction → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/DECIDE-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-milestones.spec.ts::visiting opens only the selected current-place story and a separately selected response saves once::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "START_TRIAL",
+      "entry": "修行或登仙台渡劫准备/trial-review-entry",
+      "currentFixtureFacts": {
+        "realm": "spirit",
+        "location": "terrace",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "START_TRIAL"
+      },
+      "actualPrimary": {
+        "id": "trial-confirm-entry",
+        "text": "安排登台一次 · 15秒",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "15秒",
+        "15秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "15秒一次",
+      "tradeoff": "真引/身体/配装准备、完整CP与入场同保存",
+      "stopAndFiniteAuthority": "本次入场即待问心，不续答/开战",
+      "uiConsumers": [
+        "web/src/TrialCatalogue.vue",
+        "web/src/MilestoneGate.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "showTrialPreparation → reviewTrial → confirmTrial → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/START_TRIAL-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-milestones.spec.ts::trial entry and each answer stop at the next undecided boundary without an automatic battle turn::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "ANSWER_TRIAL",
+      "entry": "问心选择→原确认",
+      "currentFixtureFacts": {
+        "realm": "spirit",
+        "location": "terrace",
+        "activeEvent": "trial_question",
+        "trial": 0
+      },
+      "selectedOriginalPrimitive": {
+        "type": "ANSWER_TRIAL",
+        "answer": "accept"
+      },
+      "actualPrimary": {
+        "id": "milestone-confirm",
+        "text": "安排接纳旧我一次",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "6 秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "6秒一次",
+      "tradeoff": "两回答真实承受/攻击差异，完整来路",
+      "stopAndFiniteAuthority": "当前答复一次，战策另安排",
+      "uiConsumers": [
+        "web/src/ResponseTable.vue",
+        "web/src/NarrativePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "storyAct → act → selectMilestone → confirmMilestoneAction → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/ANSWER_TRIAL-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-milestones.spec.ts::the release answer shows its actual attack bonus and never substitutes the other answer or starts a turn::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "END",
+      "entry": "三关后两结尾→原收卷确认",
+      "currentFixtureFacts": {
+        "realm": "spirit",
+        "location": "terrace",
+        "activeEvent": null,
+        "trial": 4
+      },
+      "selectedOriginalPrimitive": {
+        "type": "END",
+        "ending": "transmit"
+      },
+      "actualPrimary": {
+        "id": "ascension-confirm",
+        "text": "安排飞升收卷一次 · 12秒",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "12秒",
+        "12秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "12秒一次",
+      "tradeoff": "平等的两个既有收束和完整生平",
+      "stopAndFiniteAuthority": "真封卷即停，不续新人生/上界",
+      "uiConsumers": [
+        "web/src/ResponseTable.vue",
+        "web/src/NarrativePanel.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "reviewAscension → confirmAscension → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/END-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-milestones.spec.ts::the selected depart ending waits for explicit arrangement and preserves the sealed life without creating another::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "RETIRE",
+      "entry": "生平卷尾主动归隐→原确认",
+      "currentFixtureFacts": {
+        "realm": "foundation",
+        "location": "sect",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "RETIRE"
+      },
+      "actualPrimary": {
+        "id": "life-confirm-end",
+        "text": "安排归隐一次 · 12秒",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "12秒",
+        "12秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "12秒一次",
+      "tradeoff": "明确主动收束，不作资源不足默认恢复",
+      "stopAndFiniteAuthority": "一次结束；阅读/离线不收卷",
+      "uiConsumers": [
+        "web/src/LifeCatalogue.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "requestEnd → confirmEnd → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/RETIRE-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-milestones.spec.ts::RETIRE requires its own explicit life confirmation and uses only its formal game-month cost::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    },
+    {
+      "action": "END_LIFE",
+      "entry": "最后1游戏月明确收卷→原确认",
+      "currentFixtureFacts": {
+        "realm": "qi",
+        "location": "sect",
+        "activeEvent": null,
+        "trial": null
+      },
+      "selectedOriginalPrimitive": {
+        "type": "END_LIFE"
+      },
+      "actualPrimary": {
+        "id": "life-confirm-end",
+        "text": "安排寿尽一次 · 12秒",
+        "disabled": false
+      },
+      "mainTimeTokens": [
+        "12秒",
+        "12秒"
+      ],
+      "arrangementTimeTokens": null,
+      "wayChooserTimeTokens": null,
+      "periodContract": "12秒一次",
+      "tradeoff": "仅正式寿尽条件，游戏月成本与阅读区别",
+      "stopAndFiniteAuthority": "一次结束，不因现实等待死亡",
+      "uiConsumers": [
+        "web/src/LifeCatalogue.vue",
+        "web/src/App.vue"
+      ],
+      "appCallback": "requestEnd → confirmEnd → store.startPreparedMilestone",
+      "saveChain": "store.startPlannedActivity/startPreparedMilestone → repository.startActivity → activity-clock/submitActivityWhenDue → repository.settleActivity → atomic Game/Activity/receipt",
+      "readonlyCurrentObservation": {
+        "report": "capture-v3-report.json",
+        "allGameDBUnchanged": true,
+        "original": "artifacts/goal-4/review-c-end-03/END_LIFE-observation.json"
+      },
+      "actualExecutionEvidence": {
+        "key": "idle-milestones.spec.ts::END_LIFE requires its own explicit life confirmation and uses only its formal game-month cost::chromium",
+        "kind": "historical_execution_formal_owners_unchanged_current_UI_not_rerun",
+        "source": "goal-4/evidence/review-c-end-02/actions-matrix.json",
+        "closure": "callback-source-proof.json; all102 App function bodies and six formal owners unchanged from CEND02; UI rendering not declared identical"
+      },
+      "assessment": "当前实际决定面可读对象/动词/成本/周期与有限边界；不代真人理解",
+      "humanAndLongBalance": "not_proven"
+    }
+  ],
+  "executionLayersNotCombined": true,
+  "scope": "Formal-command fixtures in isolated DB; not earned normal route, every branch, pacing or human acceptance."
+}

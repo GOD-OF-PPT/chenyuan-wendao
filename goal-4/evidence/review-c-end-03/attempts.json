@@ -1,0 +1,54 @@
+{
+  "task": "REVIEW-C-END-03",
+  "runs": [
+    {
+      "path": "artifacts/goal-4/review-c-end-03/capture-v1-report.json",
+      "sha256": "ef7a43420c78794db606c536ca85f098696658f86ed6fc9baf537b3414384171",
+      "stats": {
+        "startTime": "2026-10-31T16:28:25.174Z",
+        "duration": 92764.353,
+        "expected": 40,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": 0
+    },
+    {
+      "path": "artifacts/goal-4/review-c-end-03/capture-v2-report.json",
+      "sha256": "369bb576c46d01ad292e1bfa5b8d030d63503330b428d3046adf7a91d91a078a",
+      "stats": {
+        "startTime": "2026-10-31T16:37:05.896Z",
+        "duration": 114588.71399999999,
+        "expected": 41,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": 0
+    },
+    {
+      "path": "artifacts/goal-4/review-c-end-03/capture-v3-report.json",
+      "sha256": "632c1f1776b3809fa7df7bd1d24c82bf187e60139d6a78041dbe788e5147bf4c",
+      "stats": {
+        "startTime": "2026-10-31T16:41:31.412Z",
+        "duration": 89870.748,
+        "expected": 42,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": 0
+    }
+  ],
+  "v2Failure": "Author premise: first USE fixture is cave, not foreign. Preserved source/report/trace; corrected only lawful formal resolve(TRAVEL sect) prefix. No product bug/relaxed assertion or timeout.",
+  "v3": "Complete42 passed, no earlier run combined",
+  "authorDiagnostics": [
+    "Initial AST guessed missing use-milestone-review.ts; corrected actual milestone-view.ts; seven-owner proof passed.",
+    "Metadata generation initially assumed all stage homes have HUD; sealed-life uses real sealed view. Fixed only report schema to preserve both; no product/test change.",
+    "Metadata inspection initially assumed files dict; corrected actual array.",
+    "Action enum audit first split at a member semicolon; corrected to full Action type boundary and both BUY/SELL literals, exact25 validated; production/capture unchanged."
+  ],
+  "originals": "All input freezes/source versions/configs/PNG/traces retained under artifacts",
+  "imageContext": "EQUIP_RELIC and CHOOSE reopened alone after prior overlarge context; final40 actually inspected."
+}

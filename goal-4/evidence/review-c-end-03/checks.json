@@ -1,0 +1,343 @@
+{
+  "task": "REVIEW-C-END-03",
+  "baselineHead": "ce7bf52401ecd4bfc3d424f39679e4e9cc931d47",
+  "runtimeDigest": "d0b22d1464abdb9d3908b09d229085a0ba4feeebfbc7891e84866817308cc8b0",
+  "currentRun": {
+    "report": "artifacts/goal-4/review-c-end-03/capture-v3-report.json",
+    "reportSHA256": "632c1f1776b3809fa7df7bd1d24c82bf187e60139d6a78041dbe788e5147bf4c",
+    "profile": "artifacts/goal-4/review-c-end-03/capture-v3.config.ts",
+    "profileSHA256": "a4bff4b048bfb98237b6c496937eeaa6db57b61d8f346654b0f8291a462b8ecb",
+    "passed": 42,
+    "unique": 42,
+    "mainline15": 15,
+    "actionReadonly25": 25,
+    "supplements2": 2,
+    "stats": {
+      "startTime": "2026-10-31T16:41:31.412Z",
+      "duration": 89870.748,
+      "expected": 42,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "skip": 0,
+    "retry": 0,
+    "reportErrors": 0,
+    "cases": [
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN opening exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 4154,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN first-cultivation exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 4214,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN qi-school exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3565,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN foundation-preparation exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3829,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN foundation-growth exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3794,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN golden-growth exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3993,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN nascent-growth exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3940,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN needs-recovery exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 4222,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN trial-ready exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3329,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN trial-question exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3214,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN trial-battle exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3453,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN trial-second-gate exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3296,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN trial-recovery exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3209,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN ending-ready exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3702,
+        "timeout": 60000
+      },
+      {
+        "file": "art18-mainline-usability.spec.ts",
+        "title": "ART18-MAIN sealed-life exposes actual goal gap next actions and readonly return for player review",
+        "project": "chromium",
+        "durationMs": 3840,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly CHOOSE exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 2443,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly TRAVEL exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3251,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly CULTIVATE exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3361,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly SOURCE exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3710,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly BUY exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 5428,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly SELL exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 4733,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly CRAFT exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 4689,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly USE exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 4981,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly REST exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 4218,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly BREAKTHROUGH exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 2721,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly SCHOOL exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 2596,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly STUDY exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3908,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly LEARN exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 4177,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly EQUIP exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3385,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly FORGE exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3897,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly EQUIP_RELIC exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3088,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly ENCOUNTER exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3017,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly BATTLE exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 2860,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly EVENT exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 2807,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly DECIDE exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3391,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly START_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 2466,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly ANSWER_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3791,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly END exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3335,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly RETIRE exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3075,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 readonly END_LIFE exposes the real decision object costs authorization and pre-action time for review",
+        "project": "chromium",
+        "durationMs": 3289,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 extra foreign rest preserves Game and records the actual travel preparation and disclosed time",
+        "project": "chromium",
+        "durationMs": 4570,
+        "timeout": 60000
+      },
+      {
+        "file": "cend03-review-observations.spec.ts",
+        "title": "CEND03 extra real prepared trial checkpoint exposes both current preparation and explicit restoration without changing the saved state",
+        "project": "chromium",
+        "durationMs": 7991,
+        "timeout": 60000
+      }
+    ]
+  },
+  "actionsExactFormalEnum25": true,
+  "stages15": true,
+  "entries8": true,
+  "all25ReadonlyGameDB": true,
+  "actualCheckpointThreeActivities": "full formal helper/virtual periods; restore not executed",
+  "currentPixels": {
+    "selected": 40,
+    "actuallyInspected": 40,
+    "inherited": 0,
+    "lossyViewCopies": "same-sizeJPEG68; originalPNG/hash retained"
+  },
+  "productionChanges": 0,
+  "sameRuntimePriorExecution": "inheritance.json; ART35 UI154/native25/root873/resources559 not rerun here",
+  "identity": "identity-proof.json; all323 source workspace/Git and all110 HTTP11183074B exact",
+  "capture445InputsUnchanged": true,
+  "protected13Unchanged": true,
+  "currentFullUI768Native415Normal32": "not_run; next independent comprehensive check",
+  "compatibilityEnvironmentPerformance": "paused_not_run",
+  "userSaveUse": "none; no userDB/fullGame reads/actions/reset/import/restore",
+  "reviewStatus": "complete engineering audit; two findings open, human/overall art/long balance/Goal incomplete"
+}

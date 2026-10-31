@@ -1,0 +1,75 @@
+{
+  "task": "REVIEW-C-END-03",
+  "runtimeDigest": "d0b22d1464abdb9d3908b09d229085a0ba4feeebfbc7891e84866817308cc8b0",
+  "findings": [
+    {
+      "id": "CEND03-T02",
+      "severity": "P2",
+      "title": "恢复的当前执行决定与完整安排没有保留真实耗时，异地返回洞府也未前告6秒",
+      "consumers": [
+        "web/src/RecoveryRitual.vue:34",
+        "web/src/RecoveryPlanner.vue:40",
+        "web/src/RecoveryPlanner.vue:41",
+        "web/src/RecoveryPlanner.vue:45"
+      ],
+      "formalSources": [
+        "src/full/preparation.ts:32",
+        "src/full/adventure.ts:45"
+      ],
+      "reproduction": "合法受伤档：行囊→回春丹用途→服丹安排，或修行→疗养安排；读主区和完整安排。另在青云宗恢复方式选疗养，读返回CTA。",
+      "actual": "USE/REST主区和完整安排无秒数，异地CTA无6秒旅行；运行后读秒不是前告。",
+      "counterEvidence": [
+        "InventoryStage.vue:44用途已写每丹6秒",
+        "TrainingPlanner.vue:43先导入口已写30秒",
+        "RecoveryPlanner.vue:43方式页已写6/30秒"
+      ],
+      "impact": "离开先导入口或换方式后，耗时没有在当前决定旁保留；不表示全路径从未说明/计时缺失。",
+      "evidence": [
+        "USE-observation.json",
+        "REST-observation.json",
+        "foreign-rest-observation.json",
+        "USE-actual-decision.jpg",
+        "foreign-rest-main-before-travel.jpg"
+      ],
+      "minimalRepair": "另任务在当前恢复动词/安排旁读正式PREPARATION_CYCLE_MS，异地实际旅行读ADVENTURE_CYCLE_MS.travel；不改规则/时钟/预算/原意图/DB。",
+      "acceptance": "两药/疗养/异地、原安排/下次草案、暂停/保存中/原意图失败；实际像素与6/30/6完整周期/正式Game-Activity-唯一回执-全DB和原cap/pin。",
+      "status": "open_not_implemented_this_audit"
+    },
+    {
+      "id": "CEND03-I04",
+      "severity": "P3",
+      "title": "异地疗养门槛失败仍显示恢复+0、预计0次，易被理解为疗养无效",
+      "consumers": [
+        "web/src/RecoveryRitual.vue:33",
+        "web/src/RecoveryPlanner.vue:40"
+      ],
+      "reproduction": "合法青云宗受伤35/100档→恢复方式选疗养，不旅行。",
+      "actual": "已有“请先前往听雨洞府”和不自动疗养CTA，同时主区单次+0及右区0次/0月/气血+0。",
+      "impact": "不可执行预估的表达建议；0不证明数值错或游戏卡死。",
+      "evidence": [
+        "foreign-rest-observation.json",
+        "foreign-rest-main-before-travel.jpg"
+      ],
+      "minimalRepair": "另任务依真实quote.allowed/failure说明抵达后再预估，保原quote/库存/寿元；不伪造未来恢复/暗中旅行。",
+      "acceptance": "异地说明门槛，抵达后依当前Game重算；本地已满/缺寿元/缺药/暂停原安排/重试语义及全DB不变，无新消耗。",
+      "status": "open_not_implemented_this_audit"
+    }
+  ],
+  "counts": {
+    "P1": 0,
+    "P2": 1,
+    "P3": 1
+  },
+  "limits": "No new blocker reproduced in covered states; not whole-game absence proof. Findings queued, production unchanged.",
+  "humanArtLongBalance": "pending; user negative feedback retained",
+  "next": "CHECK-UX27-ART35-CEND03 then independent T02/I04 repair tasks",
+  "legacyOpen": [
+    "M04/remaining old art obligations",
+    "J01 native initial-open unknown",
+    "ART17 four historical failures",
+    "ART28-OBS-01",
+    "COMPAT-OBS-1200-01",
+    "final complete matrices/clean package/max C-end-code-security review/real user acceptance"
+  ],
+  "compatibilityEnvironmentPerformance": "paused_not_run"
+}
