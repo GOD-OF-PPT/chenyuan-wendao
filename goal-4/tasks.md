@@ -1,3 +1,16 @@
+## UX29 / CEND03-I04 已独立交付（2026-11-01）
+
+- [x] 异地恢复单次/整段不再把正式失败的0当收益，显示各自真实门槛；实际6秒抵达后按已保存Game重算，另确认30秒疗养。已满/两药缺货/余寿保留/暂停原安排/错误重试保完整能力。代码`8cfa489`，运行7aff3a68；本组三项第2，不加速成长或自动旅行/疗养。
+- 两模板五显示变换，script逐字同、321其余运行输入不变；8572/9486B、preparation59999/60000、ART35delta228/400，旧cap/EDITS/pin不涨不重签；严格逆证回本轮再回历史完整源，0新图/CSS/运行模块/Game/时钟/费用/DB/命令。完整本轮可见消息token103467566、合同/plan/tasks/原源和13实际先于代码保存。
+- 当前91唯一UI（88常规＋3原慢例，10完整文件）/44native/3文件/88规则/567完整资源及类型构建通过，0skip/retry/reportError；root/完整sandbox正向先于全资源方法。早期8/26/新增4包含不注水；原8秒真实红、trace/PNG/source及零案例工具准备错误保，真实listing完成先于执行有据。全Game/Activity/唯一canonical回执/全部DB/前1ms/截止/原意图完整oracle不弱化；14当前图+1旧红逐张看，0继承，原PNG/JPEG68/hash保。
+- 提交对应323运行受测/代码Git/工作区/重建/冻结全同，110载荷11183438B全HTTP同；原56884仅更新自己loopback静态服务。Chrome原页已存/停止/无编辑才刷新，实际新JS/CSS请求及公开60/20/10/40/吐纳停止2轮一致；0直接用户DB/fullGame读取/用户档测试/Game动作。13原无关在途同且不提交，无push/merge/公开部署/权限/自动化变化。
+
+[杠精审查] 本独立工程范围通过，I04工程修复有真实前后/保存/像素/同源证；非独立人验，不代整体艺术/游戏感/长期平衡或完整Goal。旧M04/艺术/J01unknown/ART17四红/ART28-OBS-01/COMPAT-OBS-1200-01与最终完整矩阵/干净候选/最大C端代码安全review/真人义务全保，当前兼容环境性能仍暂停，Goalactive。前轮输入记录补录缺口为历史保留，不被本轮正确记录抹去。
+
+- [ ] 下一独立CANDIDATE-BASE-01：保13在途，使用隔离codex checkout与既有identity/build/candidate工具核已提交运行源的可复现基线、真实可运行入口和完整目标逐格未决账本；原门槛不绕过，暂停兼容环境/真人不能填通过。本项只排队未实施；其为本组三项第3，之后强制综合检查-debug，再原最终矩阵/可运行包/最大review/真人，不自称艺术完成。
+
+证据：[实施](../docs/implementation/goal-4-ux29-recovery-availability.md)、[审查](evidence/ux29/review.md)、[检查](evidence/ux29/checks.json)、[覆盖](evidence/ux29/coverage-audit.json)、[身份](evidence/ux29/identity-proof.json)、[试玩](evidence/ux29/user-preview.json)、[剩余](evidence/ux29/remaining.json)。下文旧开工/排队/未完成为历史，以本条最新交付和下一项为准。
+
 ## UX29 / CEND03-I04 开工（2026-11-01）
 
 上一轮39cf8a2/be256e7为progress，原506d1dad与试玩已核；本轮只依0083修不可执行恢复的伪0预估。可见完整消息原文/token103467566、本合同、两完整原源与13先保，再实施三个planner/两个ritual模板变换。正式失败先于预测，可执行原数字/周期/成本/停止和全授权保；抵达后按实际Game重算，不自动疗养。预计8572/9486B、preparation59999/60000、ART35delta228/400，旧cap/pin不涨、不迁controller。当前新及相关完整文件先枚举/冻结，真实周期/原意图/全DB、正负资源及逐张像素核后独立提交/同源试玩/tasks/GJ。兼容环境性能暂停，全部历史和最终艺术长期真人义务保；本组三项第2，不夹第二任务。结果/提交/GJ待实际。

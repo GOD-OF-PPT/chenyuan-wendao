@@ -1,0 +1,54 @@
+{
+  "task": "UX29/CEND03-I04",
+  "runtimeDigest": "7aff3a68d5d32aacbe3ad9ca5b8cd25d31486784aeb822cd4e330de4c97f4d28",
+  "currentUI": {
+    "passed": 91,
+    "files": 10,
+    "regular": 88,
+    "originalSlowIntersection": 3,
+    "new8IncludedNotAddedTwice": true,
+    "runnerRetries": 0,
+    "skipped": 0,
+    "reportErrors": 0
+  },
+  "native": {
+    "passed": 44,
+    "files": 3,
+    "report": "artifacts/goal-4/ux29/native-report.json"
+  },
+  "rules": {
+    "passed": 88,
+    "log": "artifacts/goal-4/ux29/rules.log"
+  },
+  "resource": {
+    "passed": 567,
+    "new4IncludedNotAddedTwice": true,
+    "rootAndFullSandboxPositiveBeforeFullMethods": true,
+    "rootPreparationNativeBytes": 59999,
+    "log": "artifacts/goal-4/ux29/resource-full.log",
+    "sha256": "eeb5bb556e180e888a2aa5c31d5d0c14f316444ff42bcabb35a996e755e6ec01"
+  },
+  "earlyUI": {
+    "passed": 8,
+    "report": "artifacts/goal-4/ux29/early-1-report.json",
+    "notAdditionalCoverage": true
+  },
+  "earlyInventory26": "26 passed exploratory pattern; subset of final567, not added",
+  "typecheckBuild": {
+    "root": "artifacts/goal-4/ux29/root-typecheck.log",
+    "VueBuild": "artifacts/goal-4/ux29/early-build.log",
+    "passed": true
+  },
+  "scope": "1440x900/font1/oneChromium only; compatibility/environmentperformance paused",
+  "pending": [],
+  "humanAcceptance": false,
+  "codeCommit": "8cfa48941a64c696ef5c2687ddef55233e16df47",
+  "committedBuildAndIdentity": {
+    "passed": true,
+    "log": "artifacts/goal-4/ux29/post-commit-build.log",
+    "sources": 323,
+    "HTTPFiles": 110,
+    "HTTPBytes": 11183438,
+    "nativePublicBeforeAfterExact": true
+  }
+}

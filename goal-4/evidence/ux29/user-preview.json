@@ -1,0 +1,45 @@
+{
+  "status": "updated and native public progress verified",
+  "url": "http://127.0.0.1:56884/",
+  "before": {
+    "hp": "60/60",
+    "mp": "20/20",
+    "xp": "10/10",
+    "stones": 40,
+    "activity": "自然吐纳 ended2/50 at30s",
+    "goal": "引气入体",
+    "location": "听雨洞府",
+    "saved": true,
+    "editingOrDialog": false
+  },
+  "oldOwnedServerPID": 47837,
+  "oldCommandExact": "/Users/gordon/anaconda3/bin/python3 artifacts/goal-4/ux28/committed-frozen/serve.py --port 56884",
+  "agentDirectUserDBOrFullGameReads": 0,
+  "userGameActions": 0,
+  "noUserSaveUsedForTests": true,
+  "newServerPID": 54219,
+  "newCommand": "/Users/gordon/anaconda3/bin/python3 artifacts/goal-4/ux29/committed-frozen/serve.py --port 56884",
+  "codeCommit": "8cfa48941a64c696ef5c2687ddef55233e16df47",
+  "runtimeDigest": "7aff3a68d5d32aacbe3ad9ca5b8cd25d31486784aeb822cd4e330de4c97f4d28",
+  "nativeReload": true,
+  "after": {
+    "hp": "60/60",
+    "mp": "20/20",
+    "xp": "10/10",
+    "stones": 40,
+    "activity": "自然吐纳 ended2/50 at30s",
+    "goal": "引气入体",
+    "location": "听雨洞府",
+    "saved": true,
+    "editingOrDialog": false
+  },
+  "publicBeforeAfterExact": true,
+  "actualRequests": [
+    "assets/index-BZBiCCu7.js 200",
+    "assets/index-Xmwf3Vlw.css 200"
+  ],
+  "requestDelta": "artifacts/goal-4/ux29/native-reload-request-delta.log",
+  "requestDeltaSHA256": "4b88bb732dbcaab1891c76bbdc0245d079ee23d3d95f6a15c68b5ffb207c7a0f",
+  "otherTabs": "Only selected the already observed original game tab; no other game controls used. Refresh gated by fresh native game URL/saved/stopped state.",
+  "humanAcceptance": false
+}

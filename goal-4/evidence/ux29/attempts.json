@@ -1,0 +1,78 @@
+{
+  "attempts": [
+    {
+      "phase": "old-red",
+      "stats": {
+        "startTime": "2026-10-31T23:07:47.993Z",
+        "duration": 17803.375,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/ux29/old-red-report.json",
+      "sha256": "40825ea825af220184d22ee31b2671d3d48c08c746984cd922407ec706876e49",
+      "countsTowardCurrentCoverage": false
+    },
+    {
+      "phase": "early-1",
+      "stats": {
+        "startTime": "2026-10-31T23:10:09.146Z",
+        "duration": 32627.459,
+        "expected": 8,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/ux29/early-1-report.json",
+      "sha256": "06cba0f9cfacf8782e45746493be69890cbbd9a468ce52af7ae59a30d1b2fbfc",
+      "countsTowardCurrentCoverage": false
+    },
+    {
+      "phase": "related-ui",
+      "stats": {
+        "startTime": "2026-10-31T23:13:16.869Z",
+        "duration": 381425.714,
+        "expected": 88,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/ux29/related-ui-report.json",
+      "sha256": "5503d0edb1c8d32aca1d811d599d6fa205714f9078e056255cc5465aa6990a36",
+      "countsTowardCurrentCoverage": true
+    },
+    {
+      "phase": "related-slow",
+      "stats": {
+        "startTime": "2026-10-31T23:20:19.882Z",
+        "duration": 79389.181,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/ux29/related-slow-report.json",
+      "sha256": "d25f7a49c1cdac5ae22318a48149170879a5036460e752e92b48864b5816d42e",
+      "countsTowardCurrentCoverage": true
+    },
+    {
+      "phase": "native",
+      "stats": {
+        "startTime": "2026-10-31T23:13:17.399Z",
+        "duration": 62650.356,
+        "expected": 44,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/ux29/native-report.json",
+      "sha256": "5d34f632e7f43e361c9876c02d4bb3237167d85aaa36d1fd5752d5819dba5559",
+      "countsTowardCurrentCoverage": true
+    }
+  ],
+  "oldRed": "Actual original8s mismatch: expected real cave gate, received zero-cycle forecast; trace/PNG/report retained.",
+  "toolingFailures": "profile-preparation-error.txt summarizes unmatched-parenthesis/no-config --list attempts (0 cases); temporary early-list IndexError while listing process still running. Same handles polled to terminal; actual listing mtimes before successful run starts proved. Not product failures or coverage.",
+  "sourceDifferenceBeforeEarly": "Added missing openInventoryLibrary test import before new8 execution; old C1 red never enters empty-stock helper; preserved old-red.spec.ts.txt.",
+  "resourceRules": "Actual567/88; old prior-source reports remain historical, not relabeled."
+}
