@@ -1,0 +1,14 @@
+{
+  "task": "ART35",
+  "currentDelivery": "engineering-only object-material improvement, human art not accepted",
+  "next": "REVIEW-C-END-03 current mainline/interaction review; third task then comprehensive check",
+  "stillOpen": [
+    "overall game/art and actual user review",
+    "long-term balance",
+    "final complete UI/storage/normal-route/recovery/performance matrices",
+    "clean same-version candidate/max C-end-code-security review",
+    "J01 unknown; ART17 four performance failures; ART28-OBS-01; COMPAT-OBS-1200-01"
+  ],
+  "compatibilityAndEnvironmentPerformance": "not_run_currently_paused",
+  "goal": "active, not complete"
+}

@@ -1,0 +1,11 @@
+{
+  "codeCommit": "4abfb82eab731d40dec33b49275df8fb803ea709",
+  "runtimeDigest": "d0b22d1464abdb9d3908b09d229085a0ba4feeebfbc7891e84866817308cc8b0",
+  "runtimeGitExact": 323,
+  "ownedGitExact": 64,
+  "testedRebuiltFrozenFilesExact": 110,
+  "bytes": 11183074,
+  "helperSHA256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "compatibilityEnvironmentPerformance": "not_run_paused",
+  "userAcceptance": false
+}

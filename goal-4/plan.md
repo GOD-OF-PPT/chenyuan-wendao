@@ -1,3 +1,20 @@
+## ART35 / A03 已独立交付（2026-11-01）
+
+- [x] 依0079完成经卷六轮廓/剑简与真实五叶画件、冷态静坐自己复用；实现 `4abfb82eab731d40dec33b49275df8fb803ea709`，运行d0b22d14。内置8新画＋2窄边缘修订，原PNG/完整prompt/audit/双确定导出和真实消费保，8runtime384646/740000B。新hook/CSS2294/7200；Jade增530/Recovery增194，TA0929660/30000和Supply28121/40000及全部旧cap/pin/proof不涨，原Game/Store/DB9/原动作/30-60秒/授权/回调不动。
+- 当前同源19完整相关文件154唯一=149常规＋5既有预登记慢例，原时限/全部业务循环保；25必要native、873规则、559资源/root与完整sandbox正向、根和提交前后Vue类型构建过，0skip/runnerretry/reportErrors。原A9总60超时保（前3子例formal过，第4约60.8s完成合法fixture才触限），当前同4子例独worker48871ms，根因unknown；不冒旧红修复或早期source绿属于最终源。全768UI/415native/32正常未在本项重跑，兼容环境性能暂停。
+- 新9例核12卷/六轮廓/剑简实际alpha/只读全DB、30/60完整周期/native保存中封卷未掌握/正式Game-Activity-唯一canonical回执-全部DB9、真30秒疗养、失图/原100图标与旧图片请求退场。manual未悟133.37/已悟151.07实际红补修360高/1100-380阅读布局，完整文字/下一步保，图片ready不移动外部列宽/高度。21当前专用图20实看＋1整PNG确审字节同继承，原PNG/同尺寸JPEG68/hash保；不冒全图库或整体艺术真人通过。
+- 323运行/64实现和所需输入Git同，110载荷11183074B受测/冻结/重建/56884identity与请求gzip解码同。旧182缺失，现有192闲置标签原生激活后公开可读，无重复新页；只读已保存/停止/主页/无编辑后安全刷新，凡人/未择法/60HP20MP/修为10/40石/吐纳停止2/50及HUD字符串保持，实际JS H9Yq-QMi/CSS DC7aaeOn。无用户DB/fullGame读取、Game动作/导入/恢复/重置；原13无关不改不提交，无push/合并/公开部署/权限变化。
+
+[杠精审查] 通过0079本项工程范围；原首次打回与所有失败/废案保，当前所有已知本项尺寸/回退/保存/源身份问题均有实际闭环。图片/状态/读秒/真实收益/完整内容/真人分层，不以局部CG替换证明整体“像游戏”或趣味。当前新三任务第2；下一REVIEW-C-END-03为第3，后强制全面检查。J01unknown/ART17四红/ART28-OBS-01/COMPAT-OBS-1200-01与最终完整矩阵/干净同版包/最大C端代码安全review/长期平衡与真实用户艺术复验全保，Goalactive非complete。回滚仅本项且保DB9可读/原档/原输入/原画/v0.3/13。
+
+- [ ] REVIEW-C-END-03 / 当前同版主线与操作易用性再审：仅开工后另存本次原话/合同/全部25Action与15主线阶段、真实消费者/预算/读秒/反馈/恢复/下一步清单；按当前同源固定1440×900/font1 Chromium逐项玩家视角审查（含图已学/未学/失败/回看），区分实际运行/合法规则fixture/历史继承，指向真实未解原因与下一步，保用户负面反馈和完整能力，不把工程可达当易懂/长期好玩。当前只排队，不实施或预认通过；不顺带恢复兼容环境性能。第三项交付后CHECK-UX27-ART35-CEND03独立综合，再沿真实待办/最终完整矩阵/干净候选/最大review/真人推进。结果/提交/GJ：待。
+
+证据：[实施](../docs/implementation/goal-4-art35-study-rest.md)、[检查](evidence/art35/checks.json)、[覆盖](evidence/art35/coverage-audit.json)、[像素](evidence/art35/visual-review.json)、[审查](evidence/art35/review.md)、[原尝试](evidence/art35/attempts.json)、[源码](evidence/art35/identity-proof.json)、[HTTP](evidence/art35/http-identity.json)、[试玩](evidence/art35/user-preview.json)。下文同名旧[ ]准备为历史，不作当前首个未完成项。
+
+## ART35 / A03 开工（2026-10-31）
+
+依0079完整补经卷六轮廓/剑简画件与原五叶展合，静坐复用冷态自己；8独立内置图/≤740000B、新pure image hook/CSS≤7200B、原TA0930000与全部旧cap/pin/Controller保。原话/合同/参数/13/原源先于代码；旧真实红→实画/确定导出/消费与早期像素→实际当前paint/fallback/原全周期Game全DB与完整相关回归→独立提交/同源试玩/任务GJ。三周期第2，当前兼容环境性能暂停，整体艺术长期真人/历史及最终义务保。结果/提交/GJ待实际。
+
 ## UX27 已独立交付（2026-10-31）
 
 - [x] 依0078修CEND02-I03；实现 `a5939994bcf9d8530ead898ff7dc828419e58553`，运行090f8bc8，313运行输入/102载荷10796065B。两个入口的五分类同步当前外标题/主导航；父只消费同人生报告，原catalogue/watch/返回/时钟/授权/原意图与Game/DB9不改。App159429≤159635、Equipment4643≤5000，旧pin/cap/patch保，0新画/CSS/运行模块。
@@ -7,7 +24,7 @@
 
 [杠精审查] 通过0078本独立范围；原完整能力/阅读/成本与预算/原周期和先原子保存、原回调/proof/cap及真实像素/同源有据，无已知本项未修阻断。不称整体产品/艺术/长期/真人或兼容验收；复用现有Skill/工具，未造重复工作流。新三任务周期第1；下一A03，第三项后仍强制全面检查。J01unknown/ART17四红/ART28-OBS-01/COMPAT-OBS-1200-01及最终完整矩阵/干净候选/最大review/真人保持，当前兼容环境性能暂停，Goalactive非complete。
 
-- [ ] A03 / 经卷、剑简与疗养静物风格统一：先按真实CEND02-A03/两个消费者核对象/实际状态和取舍，单独原话/合同/资源与代码旧cap/验收回滚/13保护；复用现有画，必要再沿imagegen/确定导出和game-ui-frontend逐玩法实装。不能只换背景、不改结算/命令/周期/DB9；固定桌面真实功能/效果/像素与同源包，每轮仅一个独立可验项。此处只排队，未开工；具体绘画/预算/阈值待下轮实际合同，不冒艺术完成。结果/提交/杠精：待。
+- [x] A03 / 经卷、剑简与疗养静物风格统一（已交付见顶部；以下原准备）：先按真实CEND02-A03/两个消费者核对象/实际状态和取舍，单独原话/合同/资源与代码旧cap/验收回滚/13保护；复用现有画，必要再沿imagegen/确定导出和game-ui-frontend逐玩法实装。不能只换背景、不改结算/命令/周期/DB9；固定桌面真实功能/效果/像素与同源包，每轮仅一个独立可验项。此处只排队，未开工；具体绘画/预算/阈值待下轮实际合同，不冒艺术完成。结果/提交/杠精：待。
 
 证据：[实施](../docs/implementation/goal-4-ux27-equipment-context.md)、[检查](evidence/ux27/checks.json)、[覆盖](evidence/ux27/coverage-audit.json)、[审查](evidence/ux27/review.md)、[像素](evidence/ux27/final-visual-review.json)、[源码](evidence/ux27/identity-proof.json)、[HTTP](evidence/ux27/http-identity.json)、[试玩](evidence/ux27/user-preview.json)。下文同名旧准备[ ]作为历史保留，不作当前首个未完成项。
 

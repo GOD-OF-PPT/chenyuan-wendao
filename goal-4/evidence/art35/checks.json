@@ -1,0 +1,59 @@
+{
+  "task": "ART35/A03",
+  "codeCommit": "4abfb82eab731d40dec33b49275df8fb803ea709",
+  "runtimeDigest": "d0b22d1464abdb9d3908b09d229085a0ba4feeebfbc7891e84866817308cc8b0",
+  "frozenInputs": 846,
+  "UI": {
+    "current154Unique": true,
+    "regular149": "delivery-regular.json",
+    "originalSlow5": "delivery-slow.json",
+    "wholeRelatedFiles": 19,
+    "originalCaseDeadlinesAndBusinessLoopsUnchanged": true,
+    "skip": 0,
+    "retry": 0,
+    "reportErrors": 0
+  },
+  "native": {
+    "passed": 25,
+    "report": "delivery-native.json"
+  },
+  "root": {
+    "passed": 873,
+    "report": "delivery-root-tests.log"
+  },
+  "resources": {
+    "passed": 559,
+    "report": "delivery-resources.log",
+    "rootPositive": true,
+    "completeSandboxPositiveIncluded": true
+  },
+  "rootTypecheck": true,
+  "VueTypecheckBuildBeforeAfterCodeCommit": true,
+  "newArtwork": {
+    "newProps": 8,
+    "newBuiltinGenerationCalls": 8,
+    "targetedAlphaEditCalls": 2,
+    "runtimeBytes": 384646,
+    "fullPromptSet": "art/production/art35/export-facts.json",
+    "reusedColdActor": "web/public/art/v2/characters/player-seated-cold.webp",
+    "doubleExportVerify": "export-verify.log",
+    "sourcePNGKept": true
+  },
+  "pixels": {
+    "selectedCurrentFrames": 21,
+    "currentActuallyViewed": 20,
+    "priorActuallyReviewedWholePNGSame": 1,
+    "lossyViewCopies": "same-size JPEG68; all originalPNG retained",
+    "notClaimed": "all full-matrix screenshots or overall human art acceptance"
+  },
+  "identity": {
+    "currentRuntimeGitInputs": 323,
+    "ownedImplementationAndRequiredInputs": 64,
+    "payloadFiles": 110,
+    "payloadBytes": 11183074,
+    "testedRebuiltFrozenAndHTTPMatch": true
+  },
+  "userPreview": "user-preview.json",
+  "notRunCurrent": "whole UI768/native415/normal32; compatibility/environment performance paused",
+  "userAcceptance": false
+}
