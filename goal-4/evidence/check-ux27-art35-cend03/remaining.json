@@ -1,0 +1,26 @@
+{
+  "nextIndependent": [
+    "CEND03-T02 recovery action-period notice",
+    "CEND03-I04 foreign unavailable recovery estimate"
+  ],
+  "notFixedHere": [
+    "T02",
+    "I04"
+  ],
+  "legacyRetained": [
+    "J01 original native boot unknown",
+    "ART17 four historical failures",
+    "ART28-OBS-01",
+    "COMPAT-OBS-1200-01",
+    "old/final M04 and complete matrices/clean engineering candidate/max C-end-code-security review/overall art-long balance-real user acceptance"
+  ],
+  "newUnknownExecutionObservations": [
+    "Two initial60s catalogue timeouts; full affected51 later passed unchanged deadlines",
+    "Four initial240s normal total timeouts at distinct late operations; final original32 passed; no rootcause repaired claim",
+    "Old verification reader full32 subsequently30pass2 total240timeouts; new paired readonly read with54 unchanged assertions/probes/whole32green does not establish old application/environment rootcause."
+  ],
+  "retentionLimitation": "first early-v1 independent trace not retained after reused output dir; error report/source and same old144.88875 passive reproduction trace/PNG retained; later phase directories preserved",
+  "compatibilityEnvironmentPerformance": "paused_not_run",
+  "goal": "active",
+  "humanAcceptance": false
+}

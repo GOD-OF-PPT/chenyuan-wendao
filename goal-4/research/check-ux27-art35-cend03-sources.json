@@ -1,0 +1,16 @@
+{
+  "task": "CHECK-UX27-ART35-CEND03",
+  "readAt": "2026-11-01",
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "use": "Consistent order/navigation/focus and predictable return."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "use": "Current UI location/object/intent/outcome known; labels next to corresponding controls."
+    }
+  ],
+  "projectInference": "Validate category/title/navigation, actual versus draft and explicit restore cancellation as a whole chain. Three combos/layout/timing/budgets are project contracts, not source-prescribed numbers/certification.",
+  "limits": "Fixed desktop gameplay only; compatibility/environment performance paused; real art/long balance/user acceptance pending."
+}

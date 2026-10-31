@@ -1,0 +1,24 @@
+{
+  "original": {
+    "file": "web/e2e/check-ux24-26.spec.ts",
+    "functions": {
+      "running": "300da621c7d314455f57074673f6834392649329f33640f55fca20aed8490401",
+      "saved": "c71f7ef9562651af2ac38bbabd53eed8f5dcdc0099f1c176a1eb8880aaa6992d",
+      "cycle": "98f4cb6e387e332a5ff25a289bfe1763f7f23c993efd478add97e53645544215",
+      "readonly": "d5ab6186058a62190529d4c74f65f3864be4c4c13729552130f1c3d360273d97",
+      "frame": "a79d331182bedb764c69bb15469a5e4e53330b6710678639c84c57dc195141b4"
+    }
+  },
+  "current": {
+    "file": "web/e2e/check-ux27-art35-cend03.spec.ts",
+    "functions": {
+      "running": "300da621c7d314455f57074673f6834392649329f33640f55fca20aed8490401",
+      "saved": "c71f7ef9562651af2ac38bbabd53eed8f5dcdc0099f1c176a1eb8880aaa6992d",
+      "cycle": "98f4cb6e387e332a5ff25a289bfe1763f7f23c993efd478add97e53645544215",
+      "readonly": "d5ab6186058a62190529d4c74f65f3864be4c4c13729552130f1c3d360273d97",
+      "frame": "a79d331182bedb764c69bb15469a5e4e53330b6710678639c84c57dc195141b4"
+    }
+  },
+  "allFiveFullFunctionsUnchanged": true,
+  "meaning": "Original per-cycle deadline/full formal Game/Activity/canonical receipt/all DB9/CP-owner and original full frame assertions retained. New specific actual alpha safety adds to these."
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "trace": "artifacts/goal-4/check-ux27-art35-cend03/phase2-normal-results/idle-normal-matrix-normal-idle-help-sword-purchase-transmit-chromium/trace.zip",
+    "errors": [
+      {
+        "message": "Error: Test timeout of 240000ms exceeded",
+        "startTime": 919255.135,
+        "endTime": 919348.764,
+        "apiName": null,
+        "method": "expect"
+      },
+      {
+        "message": "Error: Test timeout of 240000ms exceeded",
+        "startTime": 906346.602,
+        "endTime": 919350.878,
+        "apiName": null,
+        "method": "test.step"
+      }
+    ],
+    "lateCalls": []
+  },
+  {
+    "trace": "artifacts/goal-4/check-ux27-art35-cend03/phase2-normal-results/idle-normal-matrix-normal-idle-help-sword-craft-depart-chromium/trace.zip",
+    "errors": [
+      {
+        "message": "Error: locator.click: Test timeout of 240000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('response-choices-open')\u001b[22m\n",
+        "startTime": 574112.407,
+        "endTime": 574218.302,
+        "apiName": null,
+        "method": "pw:api"
+      },
+      {
+        "message": "Error: locator.click: Test timeout of 240000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('response-choices-open')\u001b[22m\n",
+        "startTime": 572117.927,
+        "endTime": 574218.653,
+        "apiName": null,
+        "method": "test.step"
+      }
+    ],
+    "lateCalls": []
+  },
+  {
+    "trace": "artifacts/goal-4/check-ux27-art35-cend03/phase2-normal-results/idle-normal-matrix-normal-idle-help-sword-craft-transmit-chromium/trace.zip",
+    "errors": [
+      {
+        "message": "Error: locator.isVisible: Test timeout of 240000ms exceeded.\nCall log:\n\u001b[2m    - checking visibility of getByTestId('market-library-dialog')\u001b[22m\n",
+        "startTime": 571349.281,
+        "endTime": 571395.757,
+        "apiName": null,
+        "method": "pw:api"
+      },
+      {
+        "message": "Error: locator.isVisible: Test timeout of 240000ms exceeded.\nCall log:\n\u001b[2m    - checking visibility of getByTestId('market-library-dialog')\u001b[22m\n",
+        "startTime": 570969.875,
+        "endTime": 571396.132,
+        "apiName": null,
+        "method": "test.step"
+      }
+    ],
+    "lateCalls": []
+  },
+  {
+    "trace": "artifacts/goal-4/check-ux27-art35-cend03/phase2-normal-results/idle-normal-matrix-normal-idle-help-sword-purchase-depart-chromium/trace.zip",
+    "errors": [
+      {
+        "message": "Error: Test timeout of 240000ms exceeded",
+        "startTime": 919502.066,
+        "endTime": 919503.693,
+        "apiName": null,
+        "method": "expect"
+      },
+      {
+        "message": "Error: Test timeout of 240000ms exceeded",
+        "startTime": 908964.192,
+        "endTime": 919511.656,
+        "apiName": null,
+        "method": "test.step"
+      }
+    ],
+    "lateCalls": []
+  }
+]

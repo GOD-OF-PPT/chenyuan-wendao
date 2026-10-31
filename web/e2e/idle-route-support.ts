@@ -199,6 +199,20 @@ export async function configure(page: Page, action: any, index: number) {
   await expect(page.getByTestId('action-execution')).toHaveCount(0);
 }
 
+/** Read the same two complete persisted records in one coherent readonly snapshot. */
+export async function readJourneyState(page:Page):Promise<{game:any;activity:any}>{
+ return page.evaluate(()=>new Promise<{game:any;activity:any}>((accept,reject)=>{
+  const request=indexedDB.open('chenyuan-playable-v1');
+  request.onupgradeneeded=()=>{request.transaction!.abort();reject(Error('Journey read cannot create Game DB'));};
+  request.onerror=()=>reject(request.error);
+  request.onsuccess=()=>{const db=request.result;if(!db.objectStoreNames.contains('full-state')){db.close();reject(Error('Journey read requires full-state'));return;}
+   const tx=db.transaction('full-state','readonly'),store=tx.objectStore('full-state'),game=store.get('current'),activity=store.get('activity');
+   tx.oncomplete=()=>{db.close();accept({game:game.result,activity:activity.result??null});};
+   tx.onabort=()=>{db.close();reject(tx.error??Error('Journey readonly transaction aborted'));};
+  };
+ }));
+}
+
 export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,scenario=runIdleScenario,settings:{terminalRealm?:string;reopenStages?:boolean}={}) {
   test.setTimeout(240_000);
   const errors: string[] = [];
@@ -207,23 +221,24 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
   await page.getByRole('button', { name: /^踏入仙途/ }).click();
   // Welcome creation uses the existing short action path; all subsequent Game actions use real activities.
   await finishJourneyClock(page); await expect(page.getByTestId('save-status')).toHaveText('已保存');
-  const initial: Game = await snapshot(page);
+  const initialRead=await readJourneyState(page),initial:Game=initialRead.game,initialActivity=initialRead.activity;
   expect(initial).toEqual(newGame(initial.core.player.name, initial.core.runId));
-  expect(await activitySnapshot(page)).toBeNull();
+  expect(initialActivity).toBeNull();
   const expected = scenario(options, { runId: initial.core.runId, name: initial.core.player.name });
   expect(expected.failure).toBeNull(); expect(expected.success).toBe(true);
   const summary: any[] = []; let onlineMs = 0, cycles = 0; const reopened=new Set<number>();
   for (const [index, step] of expected.steps.entries()) {
     await test.step(`${index + 1}. ${step.label}`, async () => {
       if (step.kind === 'configuration') { await configure(page, step.action, index); summary.push({ kind: step.kind, action: step.action }); return; }
-      const before = await snapshot(page), oldActivity = await activitySnapshot(page);
+      const {game:before,activity:oldActivity} = await readJourneyState(page);
       const selected = await selectPlan(page, step.plan);
-      expect(await snapshot(page), 'viewing and editing a plan must not execute its next step').toEqual(before);
-      expect(await activitySnapshot(page), 'a draft cannot change the saved activity').toEqual(oldActivity);
+      const viewed=await readJourneyState(page);
+      expect(viewed.game, 'viewing and editing a plan must not execute its next step').toEqual(before);
+      expect(viewed.activity, 'a draft cannot change the saved activity').toEqual(oldActivity);
       await decision(page, selected.control);
       await expect.poll(async () => { const a = await activitySnapshot(page); return a?.id !== oldActivity?.id && a?.status === 'running'; }).toBe(true);
-      let current = await activitySnapshot(page);
-      expect(current.plan).toEqual(selected.expectedPlan); expect(await snapshot(page)).toEqual(before);
+      const accepted=await readJourneyState(page);let current=accepted.activity;
+      expect(current.plan).toEqual(selected.expectedPlan); expect(accepted.game).toEqual(before);
       const activityId = current.id; let completed = 0, stepMs = 0;
       while (current.status === 'running') {
         expect(completed, 'the finite arrangement cannot exceed the expected completed cycles').toBeLessThan(step.cycles);
@@ -234,13 +249,14 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
         await page.clock.fastForward(1);
         await expect.poll(async () => (await activitySnapshot(page))?.completedCycles).toBe(current.completedCycles + 1);
         await expect(page.getByTestId('save-status')).toHaveText('已保存');
-        expect(await snapshot(page)).toEqual(advance(game, command));
+        const committed=await readJourneyState(page);
+        expect(committed.game).toEqual(advance(game, command));
         await expect(page.getByTestId('error')).toHaveCount(0);
-        current = await activitySnapshot(page); completed++; cycles++; stepMs += ms; onlineMs += ms;
+        current = committed.activity; completed++; cycles++; stepMs += ms; onlineMs += ms;
         if(settings.reopenStages&&current.plan.kind==='battle'&&current.status==='running'&&!reopened.has(current.plan.trialStage)){
           const stage=current.plan.trialStage;reopened.add(stage);const saved=await snapshot(page),persisted=current;
           await checkArt03Read(page,async()=>{await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');});
-          expect(await snapshot(page)).toEqual(saved);expect(await activitySnapshot(page)).toEqual(persisted);
+          const reloaded=await readJourneyState(page);expect(reloaded.game).toEqual(saved);expect(reloaded.activity).toEqual(persisted);
           await page.getByTestId('training-resume').click();await expect.poll(async()=>(await activitySnapshot(page)).generation).toBe(persisted.generation+1);
           current=await activitySnapshot(page);expect(current.id).toBe(activityId);expect(current.completedCycles).toBe(persisted.completedCycles);expect(current.plan).toEqual(persisted.plan);
         }
@@ -250,13 +266,13 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
       if(settings.reopenStages&&(current.plan.kind==='battle'||current.plan.kind==='milestone'&&current.plan.action.type==='START_TRIAL')){
         const saved=await snapshot(page),persisted=current;
         await checkArt03Read(page,async()=>{await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');});
-        expect(await snapshot(page)).toEqual(saved);expect(await activitySnapshot(page)).toEqual(persisted);
+        const reloaded=await readJourneyState(page);expect(reloaded.game).toEqual(saved);expect(reloaded.activity).toEqual(persisted);
       }
       summary.push({ kind: step.kind, plan: selected.expectedPlan, cycles: completed, onlineMs: stepMs,
         stopReason: current.stopReason.code, realm: (await snapshot(page)).core.player.realm });
     });
   }
-  const final = await snapshot(page), activity = await activitySnapshot(page);
+  const {game:final,activity} = await readJourneyState(page);
   if(settings.terminalRealm){
     expect(final).toEqual(expected.game);expect(final.core.player.realm).toBe(settings.terminalRealm);expect(final.status).toBe('active');
     expect(final.core.runId).toBe(initial.core.runId);expect(onlineMs).toBe(expected.onlineMs);expect(errors).toEqual([]);
@@ -270,7 +286,7 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
   await expect(page.getByTestId('life-panel')).toBeVisible(); await expect(page.locator('#feature-title')).toHaveText('修仙生平');
   await page.screenshot({ path: info.outputPath('normal-idle-ascension.png') });
   await page.reload(); await expect(page.getByTestId('save-status')).toHaveText('已保存');
-  expect(await snapshot(page)).toEqual(final); expect(await activitySnapshot(page)).toEqual(activity);
+  const reloaded=await readJourneyState(page);expect(reloaded.game).toEqual(final); expect(reloaded.activity).toEqual(activity);
   await info.attach('visible-normal-idle-route', { body: JSON.stringify({ options, steps: summary, cycles, onlineMs,
     limitation: 'Visible controls and accelerated declared cycles prove this route; they do not prove real online pacing, balance or human acceptance.' }, null, 2), contentType: 'application/json' });
 }

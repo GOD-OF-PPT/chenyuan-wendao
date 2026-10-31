@@ -1,0 +1,2877 @@
+{
+  "legacyDeclarationCount": 82,
+  "included60ActualCurrentPassed": true,
+  "retired22OriginalSourceNotExecuted": true,
+  "replacementObligations": [
+    {
+      "file": "life-record.spec.ts",
+      "title": "actual last-month progress ends once, abort rolls back, and two restores recover the complete real preparation",
+      "replacementTitlePrefixes": [
+        "M04-N9 ",
+        "prepared selection captures stable Game",
+        "all nine finite actions"
+      ],
+      "reason": "Explicit finite selection and full 12-second life closing replace instant END_LIFE/RETIRE; canonical review CAS and last-month restoration are checked separately.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N9 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-lifespan.spec.ts",
+              "title": "M04-N9 a real final-month cycle aborts atomically and two actual lifespan endings restore the complete ordinary preparation without accumulating goods",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "prepared selection captures stable Game",
+          "actualCurrentPassed": [
+            {
+              "file": "milestone-store.spec.ts",
+              "title": "prepared selection captures stable Game and activity CAS, waits one full online cycle and stops before unknown branches",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "all nine finite actions",
+          "actualCurrentPassed": [
+            {
+              "file": "milestone.spec.ts",
+              "title": "all nine finite actions wait the complete deadline and save exactly their selected formal outcome with immutable proof",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "two connections commit one copy of the same command despite reordered fields",
+      "replacementTitlePrefixes": [
+        "M04-N13 "
+      ],
+      "reason": "The same original identity, full-budget, all-store rollback and race obligation is bound to current Activity/control APIs; new instant execute setup cannot reach this subject.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N13 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N13 two real connections canonicalize the same tick and fence competing finite choices without duplicate rewards",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "competing actions and competing new runs reject stale intents rather than overwrite",
+      "replacementTitlePrefixes": [
+        "M04-N13 "
+      ],
+      "reason": "The same original identity, full-budget, all-store rollback and race obligation is bound to current Activity/control APIs; new instant execute setup cannot reach this subject.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N13 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N13 two real connections canonicalize the same tick and fence competing finite choices without duplicate rewards",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "ordinary checkpoint stays reusable across restores and rewinds the complete budget",
+      "replacementTitlePrefixes": [
+        "M04-N4 "
+      ],
+      "reason": "The same original identity, full-budget, all-store rollback and race obligation is bound to current Activity/control APIs; new instant execute setup cannot reach this subject.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N4 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N4 ordinary restore quota abort and lost delivery retain every store and the exact original receipt never rewinds later earnings",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "two real trial failures can each restore their complete preparation and seal exactly once",
+      "replacementTitlePrefixes": [
+        "M04-N3 "
+      ],
+      "reason": "The same original identity, full-budget, all-store rollback and race obligation is bound to current Activity/control APIs; new instant execute setup cannot reach this subject.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N3 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N3 two actual lethal failures in each school preserve paid consumption and restore the same complete preparation twice",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "restore abort and quota failures retain state, previous, checkpoint, ownership and receipts",
+      "replacementTitlePrefixes": [
+        "M04-N4 "
+      ],
+      "reason": "The same original identity, full-budget, all-store rollback and race obligation is bound to current Activity/control APIs; new instant execute setup cannot reach this subject.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N4 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N4 ordinary restore quota abort and lost delivery retain every store and the exact original receipt never rewinds later earnings",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "stale/cross-run restore and commands cannot overwrite another tab progress",
+      "replacementTitlePrefixes": [
+        "M04-N5 "
+      ],
+      "reason": "The same original identity, full-budget, all-store rollback and race obligation is bound to current Activity/control APIs; new instant execute setup cannot reach this subject.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N5 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N5 a fixed full restore rejects another page real action and its replacement life while an old activity cannot settle after restoration",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "bad checkpoint purpose, version or ownership rejects without changing any good record",
+      "replacementTitlePrefixes": [
+        "M04-N6 "
+      ],
+      "reason": "The same original identity, full-budget, all-store rollback and race obligation is bound to current Activity/control APIs; new instant execute setup cannot reach this subject.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N6 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N6 missing foreign purpose and future-version checkpoints cannot replace any real current or archived record",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "a restore racing a live action commits exactly one intent across connections",
+      "replacementTitlePrefixes": [
+        "M04-N14 "
+      ],
+      "reason": "The same original identity, full-budget, all-store rollback and race obligation is bound to current Activity/control APIs; new instant execute setup cannot reach this subject.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N14 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N14 a complete restore racing a due real turn commits exactly one full intent across connections",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "transaction abort after put success cannot publish a successful action",
+      "replacementTitlePrefixes": [
+        "checkpoint, owner, activity and receipt faults",
+        "M04-N2 ",
+        "M04-N4 "
+      ],
+      "reason": "Current complete-cycle atomic checkpoint/receipt and repeated-control tests preserve the old failure obligation; the instant new-action setup is obsolete.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "checkpoint, owner, activity and receipt faults",
+          "actualCurrentPassed": [
+            {
+              "file": "milestone.spec.ts",
+              "title": "checkpoint, owner, activity and receipt faults including put-success abort roll every record back and retry one original command",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N2 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N4 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N4 ordinary restore quota abort and lost delivery retain every store and the exact original receipt never rewinds later earnings",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "receipt write failure rolls back breakthrough consumption, state and checkpoint together",
+      "replacementTitlePrefixes": [
+        "checkpoint, owner, activity and receipt faults",
+        "M04-N2 ",
+        "M04-N4 "
+      ],
+      "reason": "Current complete-cycle atomic checkpoint/receipt and repeated-control tests preserve the old failure obligation; the instant new-action setup is obsolete.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "checkpoint, owner, activity and receipt faults",
+          "actualCurrentPassed": [
+            {
+              "file": "milestone.spec.ts",
+              "title": "checkpoint, owner, activity and receipt faults including put-success abort roll every record back and retry one original command",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N2 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N4 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N4 ordinary restore quota abort and lost delivery retain every store and the exact original receipt never rewinds later earnings",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "arguments are captured before asynchronous writes and committed retries return the original result with latest state",
+      "replacementTitlePrefixes": [
+        "M04-N15 "
+      ],
+      "reason": "Caller plan/mutation and cycle tick are mutated immediately after actual submission; the captured original full outcome and replay over later real travel are checked without replacing command identity.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N15 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N15 caller mutation after submission cannot change a finite plan or tick and its committed replay returns the latest complete state",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "full breakthroughs and trial questions/battles persist their complete preparing checkpoint",
+      "replacementTitlePrefixes": [
+        "all nine finite actions",
+        "M04-N1 ",
+        "M04-N2 "
+      ],
+      "reason": "Current complete-cycle atomic checkpoint/receipt and repeated-control tests preserve the old failure obligation; the instant new-action setup is obsolete.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "all nine finite actions",
+          "actualCurrentPassed": [
+            {
+              "file": "milestone.spec.ts",
+              "title": "all nine finite actions wait the complete deadline and save exactly their selected formal outcome with immutable proof",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N1 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N1 both schools reopen the real online question every round and each gate and replay only the original cycle",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N2 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "trial-entry.spec.ts",
+      "title": "real entry atomically replaces a breakthrough checkpoint with the complete pre-consumption state and stable retry",
+      "replacementTitlePrefixes": [
+        "M04-N2 "
+      ],
+      "reason": "Actual START_TRIAL uses the fifteen-second Activity and full prior ordinary checkpoint, owner, activity and receipt transaction; old new execute writes are intentionally refused.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N2 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "trial-entry.spec.ts",
+      "title": "checkpoint, owner and receipt write failures roll the entire entry back without replacing the prior good checkpoint",
+      "replacementTitlePrefixes": [
+        "M04-N2 "
+      ],
+      "reason": "Actual START_TRIAL uses the fifteen-second Activity and full prior ordinary checkpoint, owner, activity and receipt transaction; old new execute writes are intentionally refused.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N2 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "trial-entry.spec.ts",
+      "title": "put success is insufficient: transaction abort leaves all entry records untouched",
+      "replacementTitlePrefixes": [
+        "M04-N2 "
+      ],
+      "reason": "Actual START_TRIAL uses the fifteen-second Activity and full prior ordinary checkpoint, owner, activity and receipt transaction; old new execute writes are intentionally refused.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N2 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "trial-entry.spec.ts",
+      "title": "two real entries and complete restores never accumulate or partially return entry materials",
+      "replacementTitlePrefixes": [
+        "M04-N2 "
+      ],
+      "reason": "Actual START_TRIAL uses the fifteen-second Activity and full prior ordinary checkpoint, owner, activity and receipt transaction; old new execute writes are intentionally refused.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N2 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-current.spec.ts",
+              "title": "M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "trial-journey.spec.ts",
+      "title": "both schools preserve the whole question, every battle and three gate transitions across reopening and stable replays",
+      "replacementTitlePrefixes": [
+        "M04-N1 ",
+        "M04-N3 ",
+        "M04-N8 ",
+        "M04-N12 "
+      ],
+      "reason": "Question, three gates, lethal failures and imported no-checkpoint stages now use actual 6/3-second cycle commands and full stored proofs; current cases compare every Game and checkpoint.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N1 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N1 both schools reopen the real online question every round and each gate and replay only the original cycle",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N3 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N3 two actual lethal failures in each school preserve paid consumption and restore the same complete preparation twice",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N8 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N8 imported mid-trial withdrawal preserves the actual stage and never invents checkpoint or cumulative costs",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N12 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 quota preserves the question and every gate full preparation until the original complete cycle retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 abort preserves the question and every gate full preparation until the original complete cycle retries once",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "trial-journey.spec.ts",
+      "title": "question and each gate roll back quota and put-success abort without changing progress, receipt or preparation",
+      "replacementTitlePrefixes": [
+        "M04-N1 ",
+        "M04-N3 ",
+        "M04-N8 ",
+        "M04-N12 "
+      ],
+      "reason": "Question, three gates, lethal failures and imported no-checkpoint stages now use actual 6/3-second cycle commands and full stored proofs; current cases compare every Game and checkpoint.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N1 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N1 both schools reopen the real online question every round and each gate and replay only the original cycle",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N3 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N3 two actual lethal failures in each school preserve paid consumption and restore the same complete preparation twice",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N8 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N8 imported mid-trial withdrawal preserves the actual stage and never invents checkpoint or cumulative costs",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N12 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 quota preserves the question and every gate full preparation until the original complete cycle retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 abort preserves the question and every gate full preparation until the original complete cycle retries once",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "trial-journey.spec.ts",
+      "title": "two real lethal thunder failures can reopen, explain consumed items and restore the same full preparation",
+      "replacementTitlePrefixes": [
+        "M04-N1 ",
+        "M04-N3 ",
+        "M04-N8 ",
+        "M04-N12 "
+      ],
+      "reason": "Question, three gates, lethal failures and imported no-checkpoint stages now use actual 6/3-second cycle commands and full stored proofs; current cases compare every Game and checkpoint.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N1 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N1 both schools reopen the real online question every round and each gate and replay only the original cycle",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N3 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N3 two actual lethal failures in each school preserve paid consumption and restore the same complete preparation twice",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N8 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N8 imported mid-trial withdrawal preserves the actual stage and never invents checkpoint or cumulative costs",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N12 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 quota preserves the question and every gate full preparation until the original complete cycle retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 abort preserves the question and every gate full preparation until the original complete cycle retries once",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "trial-journey.spec.ts",
+      "title": "a restore fixed before another connection turn is stale and its successful replay never rolls back later preparation",
+      "replacementTitlePrefixes": [
+        "M04-N1 ",
+        "M04-N3 ",
+        "M04-N8 ",
+        "M04-N12 "
+      ],
+      "reason": "Question, three gates, lethal failures and imported no-checkpoint stages now use actual 6/3-second cycle commands and full stored proofs; current cases compare every Game and checkpoint.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N1 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N1 both schools reopen the real online question every round and each gate and replay only the original cycle",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N3 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N3 two actual lethal failures in each school preserve paid consumption and restore the same complete preparation twice",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N8 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N8 imported mid-trial withdrawal preserves the actual stage and never invents checkpoint or cumulative costs",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N12 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 quota preserves the question and every gate full preparation until the original complete cycle retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 abort preserves the question and every gate full preparation until the original complete cycle retries once",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "trial-journey.spec.ts",
+      "title": "an imported ongoing trial has no invented checkpoint or total consumption after a real withdrawal",
+      "replacementTitlePrefixes": [
+        "M04-N1 ",
+        "M04-N3 ",
+        "M04-N8 ",
+        "M04-N12 "
+      ],
+      "reason": "Question, three gates, lethal failures and imported no-checkpoint stages now use actual 6/3-second cycle commands and full stored proofs; current cases compare every Game and checkpoint.",
+      "replacementCurrentProof": [
+        {
+          "prefix": "M04-N1 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N1 both schools reopen the real online question every round and each gate and replay only the original cycle",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N3 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N3 two actual lethal failures in each school preserve paid consumption and restore the same complete preparation twice",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N8 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-restore.spec.ts",
+              "title": "M04-N8 imported mid-trial withdrawal preserves the actual stage and never invents checkpoint or cumulative costs",
+              "project": "chromium"
+            }
+          ]
+        },
+        {
+          "prefix": "M04-N12 ",
+          "actualCurrentPassed": [
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 quota preserves the question and every gate full preparation until the original complete cycle retries once",
+              "project": "chromium"
+            },
+            {
+              "file": "idle-recovery-boundaries.spec.ts",
+              "title": "M04-N12 abort preserves the question and every gate full preparation until the original complete cycle retries once",
+              "project": "chromium"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actualCurrent415": [
+    {
+      "file": "activity-store.spec.ts",
+      "title": "clock handshake waits the one missing wall-clock millisecond, saves once and starts a full next cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "clock handshake survives a rewind between its deadline check and the real transaction using the same tick",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "clock handshake pause cancels the wall-clock remainder without settling an abandoned cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "clock handshake reconnect cancels the wall-clock remainder without settling an abandoned cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "clock handshake takeover cancels the wall-clock remainder without settling an abandoned cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "clock handshake dispose cancels the wall-clock remainder without settling an abandoned cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "clock handshake a forward wall-clock jump cannot shorten the monotonic cycle or create catch-up rewards",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "clock handshake keeps a real quota failure visible and retries that same cycle after another wall-clock adjustment",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "Store retry replays a committed cycle and pause/resume preserve its replay identity without more rewards",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "same Store reconnect preserves running arrangement without offline catch-up and explicit resume starts a full period",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "pause waits for a cycle already committed but not yet delivered and never starts the next cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "source Store replays a lost material-cycle delivery and a pause during commit delivery never schedules another payout",
+      "project": "chromium"
+    },
+    {
+      "file": "activity-store.spec.ts",
+      "title": "production Store retries the saved furnace and a pause while the next commit is in flight never burns another batch",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "online cycles never reward early, a late callback settles one step, and receipts replay the latest snapshot",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "pause and explicit takeover fence old callbacks, reopening grants nothing and starts a complete new cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "the repository blocks short cultivation batches and other writes until pause, then invalidates the old plan",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "cycle quota rolls back Game, previous, activity and receipt; the original command retries once",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "cycle abort rolls back Game, previous, activity and receipt; the original command retries once",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "a lost cycle delivery replays the saved receipt and automatic budget stopping does not consume another cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "activity command IDs cannot change payloads or cross into ordinary commands and corrupt receipts stay untouched",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "undefined or malformed activity records are rejected rather than overwritten by loading, commands or replacement",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "explicit replacement archives the activity atomically and cannot apply an old cycle to the new run",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "restoring a real breakthrough checkpoint archives the old activity with the replacement and keeps the checkpoint reusable",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "v3 database upgrades retain real Game records and receipts while an old connection closes on version change",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "content migration archives and clears the old activity atomically without fabricating offline growth",
+      "project": "chromium"
+    },
+    {
+      "file": "activity.spec.ts",
+      "title": "cycle and cultivation-cap limits stop in the same saved transaction without automatic breakthrough",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-store.spec.ts",
+      "title": "Store travel and encounter change periods only after each real atomic arrival, spawn and battle turn",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-store.spec.ts",
+      "title": "Store lost battle-turn delivery replays the original result and begins a full next turn without repeated damage or cost",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-store.spec.ts",
+      "title": "external progress invalidates viewing intent immediately while an arrived trip is still finishing its checkpoint read",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-upgrade.spec.ts",
+      "title": "DB8 preserves real DB7 preparation, configuration proofs, checkpoint and old travel receipt without replaying their effects",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure.spec.ts",
+      "title": "travel waits for its exact deadline, saves one formal arrival and keeps a complete immutable history entry",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure.spec.ts",
+      "title": "an explicit encounter continues through real three-second turns and rewards only a formally won battle",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure.spec.ts",
+      "title": "all seven manual battle actions use exact formal costs, effects and one complete turn without automatic equipment",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure.spec.ts",
+      "title": "adventure quota never duplicates the stable travel, encounter or battle command",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure.spec.ts",
+      "title": "adventure abort never duplicates the stable travel, encounter or battle command",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure.spec.ts",
+      "title": "adventure lost-delivery never duplicates the stable travel, encounter or battle command",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure.spec.ts",
+      "title": "paused travel and explicit page takeover fence old callbacks and never pay elapsed closed-page time",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure.spec.ts",
+      "title": "complete activity history paginates beyond eight turns, stays ordered and rejects corrupt same-run records without scanning another run",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure.spec.ts",
+      "title": "v6 proof binds the original round, policy, timing and full resulting battle state",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure.spec.ts",
+      "title": "old legal short travel, encounter and battle receipts still replay before the new-write guard",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure.spec.ts",
+      "title": "a current trial gate uses real rounds and stops at the next gate without choosing another question or ending",
+      "project": "chromium"
+    },
+    {
+      "file": "ascension.spec.ts",
+      "title": "both schools and endings atomically preserve facts, the trial checkpoint and exact replay identity",
+      "project": "chromium"
+    },
+    {
+      "file": "ascension.spec.ts",
+      "title": "quota and put-success abort keep completed gates and every stored record intact before a single closing retry",
+      "project": "chromium"
+    },
+    {
+      "file": "ascension.spec.ts",
+      "title": "two competing connections can commit only one of the two successful conclusions",
+      "project": "chromium"
+    },
+    {
+      "file": "ascension.spec.ts",
+      "title": "two complete endings restore the same full entry preparation and reject old-life closing commands",
+      "project": "chromium"
+    },
+    {
+      "file": "ascension.spec.ts",
+      "title": "imported completed gates and finished lives never invent a preparation checkpoint or repeat rewards",
+      "project": "chromium"
+    },
+    {
+      "file": "causal-migration.spec.ts",
+      "title": "six exact old-source reunion choices migrate atomically with original receipts and usable repeated checkpoints",
+      "project": "chromium"
+    },
+    {
+      "file": "causal-migration.spec.ts",
+      "title": "old pending events keep identity context while newly confirmed decisions use the new branch once",
+      "project": "chromium"
+    },
+    {
+      "file": "causal-migration.spec.ts",
+      "title": "failure while committing the new content identity preserves the entire exact old source database for retry",
+      "project": "chromium"
+    },
+    {
+      "file": "causal-migration.spec.ts",
+      "title": "never-published content/balance cross pairs are refused without overwriting records",
+      "project": "chromium"
+    },
+    {
+      "file": "causal-migration.spec.ts",
+      "title": "later sword study commits ownership and payment together, retrying one intent only once",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02-store.spec.ts",
+      "title": "a received native START remains exactly acknowledged after real versionchange closes checkpoint delivery without claiming a new saved Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02-store.spec.ts",
+      "title": "unsubmitted quota and lost native START replies remain unacknowledged until original receipt retry and private confirmation memory is bounded",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02-store.spec.ts",
+      "title": "a native START delivered after its Store is disposed cannot acknowledge or overwrite the replacement connection",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration-store.spec.ts",
+      "title": "Store configuration prepares without writing and applies instantly with a distinct source instead of an action clock",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration-store.spec.ts",
+      "title": "Store configuration quota retry preserves the exact selected command and never invents a new authorization",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration-store.spec.ts",
+      "title": "Store configuration lost delivery stays retryable after refresh makes its original revision stale and replays without re-equipping",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration-store.spec.ts",
+      "title": "Store configuration rejects an old paused-activity confirmation after another arrangement replaces it at the same Game revision",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration-store.spec.ts",
+      "title": "a newer failed Store configuration replaces the retry identity and cannot silently continue an older selected action",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration.spec.ts",
+      "title": "read-only configuration compares real school, slots and relic effects and applies each selected change once",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration.spec.ts",
+      "title": "all learned slots and all owned relics stay selectable without repeated fees or automatic school changes",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration.spec.ts",
+      "title": "configuration binds the paused activity revision and cannot stop another arrangement at the same Game revision",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration.spec.ts",
+      "title": "configuration quota preserves all records and stable intent retry applies once",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration.spec.ts",
+      "title": "configuration abort preserves all records and stable intent retry applies once",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration.spec.ts",
+      "title": "configuration lost-delivery preserves all records and stable intent retry applies once",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration.spec.ts",
+      "title": "historic configuration replay returns the latest later loadout and original result without equipping again",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration.spec.ts",
+      "title": "configuration receipts reject altered scope, forged change proof and cross-purpose command reuse",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration.spec.ts",
+      "title": "configuration has no short-write bypass, and battle or invalid action confirmations cannot mutate the save",
+      "project": "chromium"
+    },
+    {
+      "file": "configuration.spec.ts",
+      "title": "legal old configuration receipts still replay through ordinary execute while new writes require scoped confirmation",
+      "project": "chromium"
+    },
+    {
+      "file": "economy-migration.spec.ts",
+      "title": "balance migration preserves snapshots and all raw receipts, creates a new run and is repeatable",
+      "project": "chromium"
+    },
+    {
+      "file": "economy-migration.spec.ts",
+      "title": "quota failure while archiving a receipt aborts the whole balance migration, then retry works",
+      "project": "chromium"
+    },
+    {
+      "file": "economy-migration.spec.ts",
+      "title": "unknown balance cannot migrate, mutate or discard the original",
+      "project": "chromium"
+    },
+    {
+      "file": "fault-matrix.spec.ts",
+      "title": "postcommit breakthrough delivery loss retries the original receipt without duplicate cost or rewinding newer progress",
+      "project": "chromium"
+    },
+    {
+      "file": "fault-matrix.spec.ts",
+      "title": "postcommit create delivery loss retains one replacement identity and a retry never repeats its control write",
+      "project": "chromium"
+    },
+    {
+      "file": "fault-matrix.spec.ts",
+      "title": "postcommit import delivery loss retains one replacement identity and a retry never repeats its control write",
+      "project": "chromium"
+    },
+    {
+      "file": "fault-matrix.spec.ts",
+      "title": "postcommit restore delivery loss retains one replacement identity and a retry never repeats its control write",
+      "project": "chromium"
+    },
+    {
+      "file": "fault-matrix.spec.ts",
+      "title": "postcommit ending delivery loss reloads the actual sealed life and never offers a second ending reward",
+      "project": "chromium"
+    },
+    {
+      "file": "fault-matrix.spec.ts",
+      "title": "an uncertain committed command cannot retry over a replacement run from another connection",
+      "project": "chromium"
+    },
+    {
+      "file": "fault-matrix.spec.ts",
+      "title": "create replacement quota retains every old record and a stable retry replaces exactly once",
+      "project": "chromium"
+    },
+    {
+      "file": "fault-matrix.spec.ts",
+      "title": "create replacement abort retains every old record and a stable retry replaces exactly once",
+      "project": "chromium"
+    },
+    {
+      "file": "fault-matrix.spec.ts",
+      "title": "import replacement quota retains every old record and a stable retry replaces exactly once",
+      "project": "chromium"
+    },
+    {
+      "file": "fault-matrix.spec.ts",
+      "title": "import replacement abort retains every old record and a stable retry replaces exactly once",
+      "project": "chromium"
+    },
+    {
+      "file": "fault-matrix.spec.ts",
+      "title": "negative resources, unknown IDs and future schemas leave every good record and the active import UI intact",
+      "project": "chromium"
+    },
+    {
+      "file": "history-ui.spec.ts",
+      "title": "native history deliveries cannot restore stale rows or errors after unmount, activity/run replacement or synchronization",
+      "project": "chromium"
+    },
+    {
+      "file": "history-ui.spec.ts",
+      "title": "a missing saved cycle is reported as incomplete and readonly recovery never invents a receipt or changes Game saved state",
+      "project": "chromium"
+    },
+    {
+      "file": "history-ui.spec.ts",
+      "title": "a failed native history delivery stays local and the visible retry performs only readonly queries",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-progression-route.spec.ts",
+      "title": "normal idle new life sword-gather persists every authorized cycle through explicit ascension",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-progression-route.spec.ts",
+      "title": "normal idle new life sword-commission persists every authorized cycle through explicit ascension",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-progression-route.spec.ts",
+      "title": "normal idle new life sword-purchase persists every authorized cycle through explicit ascension",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-progression-route.spec.ts",
+      "title": "normal idle new life talisman-gather persists every authorized cycle through explicit ascension",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-progression-route.spec.ts",
+      "title": "normal idle new life talisman-commission persists every authorized cycle through explicit ascension",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-progression-route.spec.ts",
+      "title": "normal idle new life talisman-purchase persists every authorized cycle through explicit ascension",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-boundaries.spec.ts",
+      "title": "M04-N12 quota preserves the question and every gate full preparation until the original complete cycle retries once",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-boundaries.spec.ts",
+      "title": "M04-N12 abort preserves the question and every gate full preparation until the original complete cycle retries once",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-boundaries.spec.ts",
+      "title": "M04-N13 two real connections canonicalize the same tick and fence competing finite choices without duplicate rewards",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-boundaries.spec.ts",
+      "title": "M04-N14 a complete restore racing a due real turn commits exactly one full intent across connections",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-boundaries.spec.ts",
+      "title": "M04-N15 caller mutation after submission cannot change a finite plan or tick and its committed replay returns the latest complete state",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-controls.spec.ts",
+      "title": "M04-N10 Store create committed delivery loss keeps the original replacement identity through explicit retry",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-controls.spec.ts",
+      "title": "M04-N10 Store import committed delivery loss keeps the original replacement identity through explicit retry",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-controls.spec.ts",
+      "title": "M04-N10 Store restore committed delivery loss keeps the original replacement identity through explicit retry",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-controls.spec.ts",
+      "title": "M04-N11 create replacement quota preserves the real good checkpoint and one stable native retry replaces exactly once",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-controls.spec.ts",
+      "title": "M04-N11 create replacement abort preserves the real good checkpoint and one stable native retry replaces exactly once",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-controls.spec.ts",
+      "title": "M04-N11 import replacement quota preserves the real good checkpoint and one stable native retry replaces exactly once",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-controls.spec.ts",
+      "title": "M04-N11 import replacement abort preserves the real good checkpoint and one stable native retry replaces exactly once",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-current.spec.ts",
+      "title": "M04-N2 checkpoint quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-current.spec.ts",
+      "title": "M04-N2 checkpoint-owner quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-current.spec.ts",
+      "title": "M04-N2 receipt quota and put-success abort preserve the actual previous ordinary checkpoint before trial entry retries once",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-lifespan.spec.ts",
+      "title": "M04-N9 a real final-month cycle aborts atomically and two actual lifespan endings restore the complete ordinary preparation without accumulating goods",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-restore.spec.ts",
+      "title": "M04-N1 both schools reopen the real online question every round and each gate and replay only the original cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-restore.spec.ts",
+      "title": "M04-N3 two actual lethal failures in each school preserve paid consumption and restore the same complete preparation twice",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-restore.spec.ts",
+      "title": "M04-N4 ordinary restore quota abort and lost delivery retain every store and the exact original receipt never rewinds later earnings",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-restore.spec.ts",
+      "title": "M04-N5 a fixed full restore rejects another page real action and its replacement life while an old activity cannot settle after restoration",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-restore.spec.ts",
+      "title": "M04-N6 missing foreign purpose and future-version checkpoints cannot replace any real current or archived record",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-restore.spec.ts",
+      "title": "M04-N7 each explicitly selected ending restores complete trial preparation and rejects the old life closing tick",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-restore.spec.ts",
+      "title": "M04-N8 imported mid-trial withdrawal preserves the actual stage and never invents checkpoint or cumulative costs",
+      "project": "chromium"
+    },
+    {
+      "file": "later-mixed-activity.spec.ts",
+      "title": "exact pre-review v6 completion activities and proof receipts remain readable without rewriting original records",
+      "project": "chromium"
+    },
+    {
+      "file": "later-mixed-activity.spec.ts",
+      "title": "v5 learning and v6 battle controls and configuration history replay across a separately confirmed v7 breakthrough",
+      "project": "chromium"
+    },
+    {
+      "file": "later-mixed-activity.spec.ts",
+      "title": "v5 sale and v6 round history plus v7 question controls survive explicit trial gates and the chosen ascension ending",
+      "project": "chromium"
+    },
+    {
+      "file": "later-mixed-activity.spec.ts",
+      "title": "same-revision v5 to v6 to v7 replacements fence configuration CAS and a newly confirmed breakthrough checkpoints the new loadout",
+      "project": "chromium"
+    },
+    {
+      "file": "later-mixed-activity.spec.ts",
+      "title": "restoring complete preparation after v6 consumption and v5 healing preserves new activities when the original RESTORE receipt replays",
+      "project": "chromium"
+    },
+    {
+      "file": "life-record.spec.ts",
+      "title": "retirement state and receipt commit together, quota failure preserves the active life and one retry does not age it",
+      "project": "chromium"
+    },
+    {
+      "file": "life-record.spec.ts",
+      "title": "a reviewed ending command cannot retire a changed revision or a newly created life",
+      "project": "chromium"
+    },
+    {
+      "file": "life-record.spec.ts",
+      "title": "ending inside a pending event is refused without a receipt or false saved ending",
+      "project": "chromium"
+    },
+    {
+      "file": "life-record.spec.ts",
+      "title": "a derived life record is never imported as a Game save over existing progress",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "local data initializes only its own database and persists settings without creating a Game",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "record publication occurs after transaction complete and is durable on a new connection",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "same ID retries and receipt re-observations deduplicate while altered content is rejected",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "append captures caller values before awaiting and rejects wrong epoch, identity or revision",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "meta-quota: record and metadata roll back together",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "event-quota: record and metadata roll back together",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "event-abort: record and metadata roll back together",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "clear rotates the capture epoch and an old retry cannot erase or re-add newer records",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "pause and resume fence old captures without changing display preferences or producing actions",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "two clients merge appends and reject a stale preference overwrite",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "unknown-field: invalid local metadata is retained without resetting it",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "future-preferences: invalid local metadata is retained without resetting it",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "future database and versionchange close are explicit and retain old data",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "retention trims by both count and bytes atomically and exposes the removed count",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "invalid record contents make export fail without deleting or exposing the original row",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "observer exceptions and mutable observer copies cannot change a committed Game or saved status",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "a delayed export cannot republish a snapshot cleared after its read or download after a foreign clear",
+      "project": "chromium"
+    },
+    {
+      "file": "local-experience.spec.ts",
+      "title": "temporary records are bounded, disclosed and cleared without a stale byte counter",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "open: optional local startup has one5000ms budget and cannot permanently block the actual Game App",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "meta: optional local startup has one5000ms budget and cannot permanently block the actual Game App",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "open and first read share the total budget, repeated init shares its Promise, late read cannot publish",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "open: edits during initial reading and before reconnect remain temporary until explicitly saved",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "meta: edits during initial reading and before reconnect remain temporary until explicitly saved",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "reconnect supersedes a held old init; newer edits survive the reconnect read and older completion closes only itself",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "open: disposing the scope prevents late preferences and channel resurrection",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "meta: disposing the scope prevents late preferences and channel resurrection",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "an old held observation queue cannot block reconnect or publish into its new owner",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "versionchange revokes owner before a held preference failure, old broadcast and invalidation cannot touch the new connection",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "a same-connection old broadcast read failure cannot overwrite a later saved preference result",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "cancelling an active native readonly transaction aborts it and cleans the abort listener without mutating metadata",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "open: late failed delivery after timeout cannot overwrite a new explicit temporary edit",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "meta: late failed delivery after timeout cannot overwrite a new explicit temporary edit",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "pre-aborted repository open and readonly calls never start a native operation",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "native open cancellation closes a held late success and does not deliver a repository",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "cancellation at native upgrade aborts the upgrade instead of committing fresh metadata",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "an old observation write failure cannot relabel newer saved preferences as temporary",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "clearing records after a reconnect preserves unconfirmed temporary display choices",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "a delayed settings success uses newer already-read foreign preferences rather than falsely marking old choices saved",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "a late record list failure cannot cover the result of a newer saved settings edit",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "a held old record list success cannot resurrect entries after an atomic clear",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "a held older broadcast failure cannot overwrite a newer same-edit read success",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "held export newer-preview: an obsolete read cannot replace or reopen the latest preview",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "held export cancel: an obsolete read cannot replace or reopen the latest preview",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "a delayed clear success applies newer read foreign preferences only when the display choices were saved",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "a held conflict reread cannot release the busy state or publish over a newer clear operation",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "clearing temporary observations invalidates a held conflict reread without replacing the clear feedback",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "a held settings-conflict recovery read cannot block explicit reconnect indefinitely",
+      "project": "chromium"
+    },
+    {
+      "file": "local-startup.spec.ts",
+      "title": "a conflict recovery read shares metadata request ownership with newer successful broadcasts",
+      "project": "chromium"
+    },
+    {
+      "file": "milestone-store.spec.ts",
+      "title": "prepared selection captures stable Game and activity CAS, waits one full online cycle and stops before unknown branches",
+      "project": "chromium"
+    },
+    {
+      "file": "milestone-store.spec.ts",
+      "title": "a stored arrangement cannot renew an old selection when activity CAS changes without advancing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "milestone-store.spec.ts",
+      "title": "failed arrangement retries its original frozen command and all nine ordinary Store short writes are refused",
+      "project": "chromium"
+    },
+    {
+      "file": "milestone-store.spec.ts",
+      "title": "lost ending delivery replays the exact committed life once, preserves readable results and never starts another cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "milestone-upgrade.spec.ts",
+      "title": "DB9 preserves DB8 Game, v6 activity, configuration and historical ordinary receipts, checkpoint and closes the old client",
+      "project": "chromium"
+    },
+    {
+      "file": "milestone.spec.ts",
+      "title": "all nine finite actions wait the complete deadline and save exactly their selected formal outcome with immutable proof",
+      "project": "chromium"
+    },
+    {
+      "file": "milestone.spec.ts",
+      "title": "checkpoint, owner, activity and receipt faults including put-success abort roll every record back and retry one original command",
+      "project": "chromium"
+    },
+    {
+      "file": "milestone.spec.ts",
+      "title": "corrupt finite proofs cannot change the chosen consequence, realm, ending, cost, identity or deadline",
+      "project": "chromium"
+    },
+    {
+      "file": "milestone.spec.ts",
+      "title": "all old short-action receipts replay strictly before the new-write guard and preserve stored progress",
+      "project": "chromium"
+    },
+    {
+      "file": "milestone.spec.ts",
+      "title": "pause, takeover, refresh, replacement and complete repeated restore fence finite old callbacks",
+      "project": "chromium"
+    },
+    {
+      "file": "mixed-activity.spec.ts",
+      "title": "cultivation to craft: old start, pause and cycle receipts observe the new plan without restoring or settling the old one",
+      "project": "chromium"
+    },
+    {
+      "file": "mixed-activity.spec.ts",
+      "title": "craft to forge: old start, pause and cycle receipts observe the new plan without restoring or settling the old one",
+      "project": "chromium"
+    },
+    {
+      "file": "mixed-activity.spec.ts",
+      "title": "a single completed forge stays finite while its earlier controls and completion replay over a new cultivation plan",
+      "project": "chromium"
+    },
+    {
+      "file": "mixed-activity.spec.ts",
+      "title": "source and furnace swaps use formal travel, invalidate the paused plans and preserve old receipts over both adapters",
+      "project": "chromium"
+    },
+    {
+      "file": "online-recovery.spec.ts",
+      "title": "real online quota: retry preserves one finite command and its atomic snapshot",
+      "project": "chromium"
+    },
+    {
+      "file": "online-recovery.spec.ts",
+      "title": "real online quota: reconnect preserves one finite command and its atomic snapshot",
+      "project": "chromium"
+    },
+    {
+      "file": "online-recovery.spec.ts",
+      "title": "real online lost: retry preserves one finite command and its atomic snapshot",
+      "project": "chromium"
+    },
+    {
+      "file": "online-recovery.spec.ts",
+      "title": "real online lost: reconnect preserves one finite command and its atomic snapshot",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store assisted lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store craft lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store forge lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store learn lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store study lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store buy lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store sell lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store use-healing lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store use-spirit lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store battle-technique lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store battle-heal lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store battle-restore lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store choose-help lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store choose-trade lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store decide-bargain lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store decide-assist lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store breakthrough lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store start-trial lost committed delivery retries the exact consumable command once",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store assisted held committed reply cannot replace newer accepted activity-only",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store assisted held committed reply cannot replace newer accepted game-and-activity",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store assisted held committed reply cannot replace newer accepted new-life",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store forge held committed reply cannot replace newer accepted activity-only",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store forge held committed reply cannot replace newer accepted game-and-activity",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store forge held committed reply cannot replace newer accepted new-life",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store breakthrough held committed reply cannot replace newer accepted activity-only",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store breakthrough held committed reply cannot replace newer accepted game-and-activity",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store breakthrough held committed reply cannot replace newer accepted new-life",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store a matching read preserves the first committed breakthrough result and handoff",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store lost positive-cost retry cannot carry its old intent into a new life",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store a failed confirmation reread preserves paid state and requires synchronization, never a new payment",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost-store.spec.ts",
+      "title": "M02 Store a lost forge receipt replays against later foreign progress without reverting or charging twice",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 assisted quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 assisted abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 assisted lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 craft quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 craft abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 craft lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 forge quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 forge abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 forge lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 learn quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 learn abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 learn lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 study quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 study abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 study lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 buy quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 buy abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 buy lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 sell quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 sell abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 sell lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 use-healing quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 use-healing abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 use-healing lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 use-spirit quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 use-spirit abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 use-spirit lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-technique quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-technique abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-technique lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-heal quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-heal abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-heal lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-restore quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-restore abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-restore lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 choose-help quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 choose-help abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 choose-help lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 choose-trade quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 choose-trade abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 choose-trade lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 decide-bargain quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 decide-bargain abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 decide-bargain lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 decide-assist quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 decide-assist abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 decide-assist lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 breakthrough quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 breakthrough abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 breakthrough lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 start-trial quota: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 start-trial abort: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 start-trial lost-delivery: full native rollback or committed receipt, original retry and exact replay",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 assisted uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 assisted committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 craft uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 craft committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 forge uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 forge committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 learn uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 learn committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 study uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 study committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 buy uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 buy committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 sell uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 sell committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 use-healing uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 use-healing committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 use-spirit uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 use-spirit committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-technique uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-technique committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-heal uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-heal committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-restore uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 battle-restore committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 choose-help uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 choose-help committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 choose-trade uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 choose-trade committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 decide-bargain uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 decide-bargain committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 decide-assist uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 decide-assist committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 breakthrough uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 breakthrough committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 start-trial uncommitted takeover rejection preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "positive-cost.spec.ts",
+      "title": "M02 start-trial committed replacement replay preserves all stores",
+      "project": "chromium"
+    },
+    {
+      "file": "preparation-activity.spec.ts",
+      "title": "all six preparation kinds settle real one-command costs and outcomes, and only completed cycles are saved",
+      "project": "chromium"
+    },
+    {
+      "file": "preparation-activity.spec.ts",
+      "title": "the complete skill queue and every legal trade item keep formal fees, free cross-school learning and medicine sales",
+      "project": "chromium"
+    },
+    {
+      "file": "preparation-activity.spec.ts",
+      "title": "thresholds, inventory goals, gross budgets, reserves, known skills and forbidden sales stop without hidden follow-up",
+      "project": "chromium"
+    },
+    {
+      "file": "preparation-activity.spec.ts",
+      "title": "each new preparation kind keeps atomic effects and stable replay after quota",
+      "project": "chromium"
+    },
+    {
+      "file": "preparation-activity.spec.ts",
+      "title": "each new preparation kind keeps atomic effects and stable replay after abort",
+      "project": "chromium"
+    },
+    {
+      "file": "preparation-activity.spec.ts",
+      "title": "each new preparation kind keeps atomic effects and stable replay after lost-delivery",
+      "project": "chromium"
+    },
+    {
+      "file": "preparation-activity.spec.ts",
+      "title": "historical recovery and learning receipts remain readable after later legal healing and configuration",
+      "project": "chromium"
+    },
+    {
+      "file": "preparation-activity.spec.ts",
+      "title": "new activity proof corruption cannot change its cost, recovery, learned skill, owner or original timing",
+      "project": "chromium"
+    },
+    {
+      "file": "preparation-activity.spec.ts",
+      "title": "six former short-action receipts replay strictly but fresh ordinary writes cannot bypass their activity",
+      "project": "chromium"
+    },
+    {
+      "file": "preparation-activity.spec.ts",
+      "title": "DB7 preserves every v6 legacy activity, real checkpoint and receipt byte-for-byte and closes the old client",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "two real-formula furnaces settle separately, retain gross products and consumed herbs, and replay no new rewards",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "all seven recipes and four relics persist their exact formal one-command costs without automatic equipment",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "inventory target, cumulative budgets, material and resource reserves, shortages and capacity stop before another furnace",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "craft quota preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "craft abort preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "craft lost-delivery preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "forge quota preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "forge abort preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "forge lost-delivery preserves atomic costs, outcome and stable-command retry",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "production pause, explicit takeover, refresh and new-life archive fence old cycles without offline payout",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "ordinary production writes cannot bypass cycles and damaged recipe, outcome, ownership or equipment receipts remain untouched",
+      "project": "chromium"
+    },
+    {
+      "file": "production-activity.spec.ts",
+      "title": "v5 cultivation and source activities, complete resources, real checkpoint and receipts survive v6 byte-for-byte",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "corrupt receipts including null and stored undefined never become new executable intentions",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "new-run and import retries are idempotent and altered payloads reject",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "T04 migrated checkpoints acquire verified scope once without changing the saved game",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "raw backup reads failed and future databases without migration, and missing databases stay missing",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "raw backup refuses unavailable enumeration without opening an absent database",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "raw export preserves an undefined entry explicitly and refuses lossy structured values",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "v2 to v3 upgrades the authoritative full state instead of replaying preserved v1 progress",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "failed v2 scope migration leaves database version and all original records at v2",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "a foreign checkpoint without scope or migration proof is not adopted during reopening",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "bad control receipts reject without rerunning a new-game operation",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "invalid writes reject through promises and storage denial never falls back to memory",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "quota during v2 scope upgrade rolls schema and ownership back and permits a clean retry",
+      "project": "chromium"
+    },
+    {
+      "file": "recovery.spec.ts",
+      "title": "unknown v2 schema or empty full stores beside legacy progress never upgrade into a fresh run",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "fresh storage waits for explicit creation and survives close/reopen",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "native IDB upgrades preserve nine real Adventure stages: help/sword",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "native IDB upgrades preserve nine real Adventure stages: help/talisman",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "native IDB upgrades preserve nine real Adventure stages: trade/sword",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "native IDB upgrades preserve nine real Adventure stages: trade/talisman",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "native IDB upgrades preserve nine real Adventure stages: leave/sword",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "native IDB upgrades preserve nine real Adventure stages: leave/talisman",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "actual legacy repository releases its connection on version change and cannot overwrite the migrated run",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "plain M1 state migrates without inventing a school or losing the opening choice",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "invalid and future legacy snapshots abort the entire database upgrade",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "quota failure during upgrade rolls back schema/data and a later retry migrates once",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "a blocked open that already rejected never migrates later after the blocker closes",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "imports reidentify the actual NPC event and preserve an unfinished battle",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "bad imports and stale replacement tokens preserve current state and receipt records",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "existing full v1 content, previous snapshot and checkpoint migrate atomically with raw backups",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "unknown full content and inconsistent checkpoint metadata never overwrite existing full records",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "newer database versions close stale repositories and remain intact when older code reopens",
+      "project": "chromium"
+    },
+    {
+      "file": "repository.spec.ts",
+      "title": "an orphaned full checkpoint or previous snapshot is never mistaken for a new empty run",
+      "project": "chromium"
+    },
+    {
+      "file": "source-activity.spec.ts",
+      "title": "two material cycles save separately at full cultivation, never reward early, and retain a complete receipt replay",
+      "project": "chromium"
+    },
+    {
+      "file": "source-activity.spec.ts",
+      "title": "item and currency targets stop after a real complete cycle and zero-XP work remains productive",
+      "project": "chromium"
+    },
+    {
+      "file": "source-activity.spec.ts",
+      "title": "month budget, remaining lifespan and capacity stop in the same transaction before another charge",
+      "project": "chromium"
+    },
+    {
+      "file": "source-activity.spec.ts",
+      "title": "source quota atomically rolls back all stores and retries the same single cycle once",
+      "project": "chromium"
+    },
+    {
+      "file": "source-activity.spec.ts",
+      "title": "source abort atomically rolls back all stores and retries the same single cycle once",
+      "project": "chromium"
+    },
+    {
+      "file": "source-activity.spec.ts",
+      "title": "source takeover and pause fence old owners and reopening never pays offline time",
+      "project": "chromium"
+    },
+    {
+      "file": "source-activity.spec.ts",
+      "title": "ordinary SOURCE batches are blocked and explicit travel replaces a paused source without extra payout",
+      "project": "chromium"
+    },
+    {
+      "file": "source-activity.spec.ts",
+      "title": "source receipts reject a forged different source, target or owner instead of broadening activity authority",
+      "project": "chromium"
+    },
+    {
+      "file": "source-activity.spec.ts",
+      "title": "v4 cultivation activity, real breakthrough checkpoint and all receipts survive v5 without offline growth",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init open: disposal fences a late success after the native operation completes",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init open: disposal fences a late failure after the native operation completes",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init snapshot: disposal fences a late success after the native operation completes",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init snapshot: disposal fences a late failure after the native operation completes",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init checkpoint: disposal fences a late success after the native operation completes",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init checkpoint: disposal fences a late failure after the native operation completes",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init previous: disposal fences a late success after the native operation completes",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init previous: disposal fences a late failure after the native operation completes",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init on a disposed Store opens no new repository and cannot publish another ready or saved state",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "an old refresh success cannot overwrite a new connection that read the formal external configuration",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "an old refresh failure cannot overwrite a new connection that read the formal external configuration",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "same-connection refreshes reject an older success delivered after the newer formal snapshot",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "same-connection refreshes reject an older failure delivered after the newer formal snapshot",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "a stale refresh success cannot replace a later locally confirmed configuration or its saved receipt",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "a stale refresh failure cannot replace a later locally confirmed configuration or its saved receipt",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "an already captured old native broadcast callback is inert after reconnect",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "an already captured old native broadcast callback is inert after dispose",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init snapshot: a real connection closed after native read completion cannot become available or saved",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init checkpoint: a real connection closed after native read completion cannot become available or saved",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "init previous: a real connection closed after native read completion cannot become available or saved",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "native broadcast refresh checkpoint: closing the actual read connection requires synchronization recovery",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "native broadcast refresh previous: closing the actual read connection requires synchronization recovery",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "optional checkpoint delivery failure remains a warning when its native connection is still usable",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "optional previous delivery failure remains a warning when its native connection is still usable",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "a confirmed configuration survives a real checkpoint connection close without being relabeled as an uncommitted write",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "a confirmed configuration survives a real previous connection close without being relabeled as an uncommitted write",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "a delayed CREATE follow-up snapshot success cannot roll back or invalidate a newer formal choice accepted by public refresh",
+      "project": "chromium"
+    },
+    {
+      "file": "store-lifecycle.spec.ts",
+      "title": "a delayed CREATE follow-up snapshot failure cannot roll back or invalidate a newer formal choice accepted by public refresh",
+      "project": "chromium"
+    },
+    {
+      "file": "store-reconnect.spec.ts",
+      "title": "v5 lost: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium"
+    },
+    {
+      "file": "store-reconnect.spec.ts",
+      "title": "v5 quota: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium"
+    },
+    {
+      "file": "store-reconnect.spec.ts",
+      "title": "v6 lost: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium"
+    },
+    {
+      "file": "store-reconnect.spec.ts",
+      "title": "v6 quota: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium"
+    },
+    {
+      "file": "store-reconnect.spec.ts",
+      "title": "v7 lost: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium"
+    },
+    {
+      "file": "store-reconnect.spec.ts",
+      "title": "v7 quota: same Store reconnect reports the saved snapshot, abandons the old local retry and never settles offline",
+      "project": "chromium"
+    },
+    {
+      "file": "store-reconnect.spec.ts",
+      "title": "reconnect keeps a checkpoint-read warning beside its abandoned-intent explanation",
+      "project": "chromium"
+    },
+    {
+      "file": "store-reconnect.spec.ts",
+      "title": "failed reconnect open keeps a real error and never declares the snapshot saved",
+      "project": "chromium"
+    },
+    {
+      "file": "store-reconnect.spec.ts",
+      "title": "failed reconnect snapshot keeps a real error and never declares the snapshot saved",
+      "project": "chromium"
+    },
+    {
+      "file": "store-sync-queue.spec.ts",
+      "title": "normal sync general: failed verification stops the local cycle, keeps every committed record, and reconnect requires an explicit full continuation",
+      "project": "chromium"
+    },
+    {
+      "file": "store-sync-queue.spec.ts",
+      "title": "normal sync closed: failed verification stops the local cycle, keeps every committed record, and reconnect requires an explicit full continuation",
+      "project": "chromium"
+    },
+    {
+      "file": "store-sync-queue.spec.ts",
+      "title": "queued sync general: failed verification stops the local cycle, keeps every committed record, and reconnect requires an explicit full continuation",
+      "project": "chromium"
+    },
+    {
+      "file": "store-sync-queue.spec.ts",
+      "title": "queued sync closed: failed verification stops the local cycle, keeps every committed record, and reconnect requires an explicit full continuation",
+      "project": "chromium"
+    },
+    {
+      "file": "trial-entry.spec.ts",
+      "title": "entry preview identities lose races to another action or life replacement without consuming a seal",
+      "project": "chromium"
+    }
+  ],
+  "report": "artifacts/goal-4/check-ux27-art35-cend03/phase2-native-report.json",
+  "reportSHA256": "f547c62972f163ec8230cc348bbf8bc2e4281540bf677fa681e2885629283923",
+  "migrationSourceSHA256": "8102cb2e17490a2fc63e32f247485a4b0edb96e3398f6b89e7af1ef87cb487c7",
+  "runtimeDigest": "f16c376203984436d0e4d3c9b6b12ccbee95189605829aefccb6e08a8a391a13",
+  "compatibility": "not_run_paused"
+}

@@ -1,0 +1,342 @@
+{
+  "before": "artifacts/goal-4/check-ux27-art35-cend03/idle-route-support.before-joint-read.ts",
+  "after": "web/e2e/idle-route-support.ts",
+  "changedExistingFunctions": [
+    "runVisibleIdleRoute"
+  ],
+  "addedFunctions": [
+    "readJourneyState"
+  ],
+  "allOtherNamedFunctionsByteExact": true,
+  "allOtherTopLevelStatementsByteExact": true,
+  "runVisibleAllOriginalMatcherAndExpectedExpressionsInSameOrder": true,
+  "assertions": [
+    {
+      "matcher": "toHaveText",
+      "expected": [
+        "'已保存'"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "newGame(initial.core.player.name, initial.core.runId)"
+      ]
+    },
+    {
+      "matcher": "toBeNull",
+      "expected": []
+    },
+    {
+      "matcher": "toBeNull",
+      "expected": []
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "true"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "before"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "oldActivity"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "true"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "selected.expectedPlan"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "before"
+      ]
+    },
+    {
+      "matcher": "toBeLessThan",
+      "expected": [
+        "step.cycles"
+      ]
+    },
+    {
+      "matcher": "toBeVisible",
+      "expected": []
+    },
+    {
+      "matcher": "toContainText",
+      "expected": [
+        "(current.cycleMs / 1000).toFixed(1)"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "game"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "current.completedCycles + 1"
+      ]
+    },
+    {
+      "matcher": "toHaveText",
+      "expected": [
+        "'已保存'"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "advance(game, command)"
+      ]
+    },
+    {
+      "matcher": "toHaveCount",
+      "expected": [
+        "0"
+      ]
+    },
+    {
+      "matcher": "toHaveText",
+      "expected": [
+        "'已保存'"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "saved"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "persisted"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "persisted.generation+1"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "activityId"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "persisted.completedCycles"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "persisted.plan"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "activityId"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "'stopped'"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "step.cycles"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "step.onlineMs"
+      ]
+    },
+    {
+      "matcher": "toHaveText",
+      "expected": [
+        "'已保存'"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "saved"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "persisted"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "expected.game"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "settings.terminalRealm"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "'active'"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "initial.core.runId"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "expected.onlineMs"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "[]"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "expected.game"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "'ascended'"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "options.ending"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "3"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "{}"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "initial.core.runId"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "{ kind: 'milestone', action: { type: 'END', ending: options.ending }, maxCycles: 1 }"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "'stopped'"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "1"
+      ]
+    },
+    {
+      "matcher": "toBe",
+      "expected": [
+        "expected.onlineMs"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "[]"
+      ]
+    },
+    {
+      "matcher": "toBeVisible",
+      "expected": []
+    },
+    {
+      "matcher": "toHaveText",
+      "expected": [
+        "'修仙生平'"
+      ]
+    },
+    {
+      "matcher": "toHaveText",
+      "expected": [
+        "'已保存'"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "final"
+      ]
+    },
+    {
+      "matcher": "toEqual",
+      "expected": [
+        "activity"
+      ]
+    }
+  ],
+  "actualConsumers": [
+    "web/e2e/idle-full-route.spec.ts",
+    "web/e2e/idle-recovery-flow.spec.ts",
+    "web/journey-tests/idle-normal-matrix.spec.ts",
+    "web/journey-tests/idle-foundation-guide.spec.ts",
+    "web/journey-tests/idle-trial-reopen.spec.ts"
+  ],
+  "oldUIProof": "Unchanged functions/production closure retained; both full existing UI callers and all32 normal must rerun with new read, plus3 verifier probes.",
+  "beforeGitCommit": "3047c1a",
+  "beforeFullFileSHA256": "45fcea7d8b249f3286d17bbf5344854a3690f377542c5beaf1c2509e3ea506cd",
+  "currentFullFileSHA256": "c548b2f104959068c9d00c94f974667150637096f5f319c00f81e7ab3f0c76ab"
+}

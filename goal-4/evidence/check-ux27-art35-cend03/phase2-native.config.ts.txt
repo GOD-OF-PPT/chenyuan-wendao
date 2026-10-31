@@ -1,0 +1,2 @@
+import base from '../../../web/playwright.idle-recovery.config';
+export default {...base,testDir:'/Users/gordon/githome/chenyuan-wendao/web/persistence-tests',webServer:{...base.webServer,cwd:'/Users/gordon/githome/chenyuan-wendao/web'},outputDir:'/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux27-art35-cend03/phase2-native-results',reporter:[['list'],['json',{outputFile:'/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux27-art35-cend03/phase2-native-report.json'}]]};

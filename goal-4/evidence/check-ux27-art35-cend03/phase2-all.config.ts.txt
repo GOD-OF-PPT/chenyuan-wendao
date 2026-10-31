@@ -1,0 +1,2 @@
+import base from '../../../web/playwright.idle.config';
+export default {...base,testDir:'/Users/gordon/githome/chenyuan-wendao/web/e2e',webServer:{...base.webServer,cwd:'/Users/gordon/githome/chenyuan-wendao/web'},outputDir:'/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux27-art35-cend03/phase2-all-results',reporter:[['list'],['json',{outputFile:'/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux27-art35-cend03/phase2-all-report.json'}]]};
