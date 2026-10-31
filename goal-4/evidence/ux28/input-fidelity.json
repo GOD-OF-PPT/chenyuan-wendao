@@ -1,0 +1,9 @@
+{
+  "visibleUserInput": "继续",
+  "originalGoal": "goal-4/input.md",
+  "originalReconstruction": "goal-4/evidence/ux28/reconstructed-goal-context.before.txt",
+  "originalReconstructionSha256": "3da1d08b6605d103c98bd7c99fe20defdb4d07b0a4234da8d49bddcced9250af",
+  "correction": "label reconstructed goal context accurately; preserve entire prior bytes; exact visible continuation saved",
+  "timing": "correction after implementation/early7; no false preimplementation verbatim claim",
+  "engineeringScopeUnchanged": true
+}

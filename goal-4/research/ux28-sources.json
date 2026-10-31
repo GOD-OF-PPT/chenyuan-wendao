@@ -1,0 +1,12 @@
+{
+  "task": "UX28/T02",
+  "readAt": "2026-11-01",
+  "primary": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "applied": "Current action and its per-unit duration visible together; preparation, viewing and execution context distinct."
+    }
+  ],
+  "projectInference": "Use formal preview cycleMs and actual travel constant in existing surfaces. Preserve full authorization and concise covered stop semantics within old cap; no new clock or gameplay wait.",
+  "limits": "Single fixed desktop gameplay; not certification, compatibility/performance or human/long balance acceptance."
+}
