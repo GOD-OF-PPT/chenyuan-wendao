@@ -1,0 +1,112 @@
+{
+  "task": "CHECK-UX24-26",
+  "codeCommit": "040a9f1fe2d055f8fe86e312f0c8595c27575405",
+  "runtimeDigest": "7f4de1238fbeeed2c205b147e3a0adc0b02e5708c903615c2fa64ffe96827db0",
+  "ui": {
+    "passed": 755,
+    "regularWholeRun": 748,
+    "originalSlowWholeRun": 7,
+    "completeFiles": 95,
+    "new3Included": true
+  },
+  "native": {
+    "passed": 415,
+    "retiredLegacy22PreservedWithActualReplacementProof": true
+  },
+  "normal": {
+    "passed": 32,
+    "completeFiles": 3,
+    "original240SecondsTwoWorkers": true,
+    "virtualCyclesNotHumanPacing": true
+  },
+  "root": {
+    "passed": 873,
+    "completeFiles": 71,
+    "syntheticMatrixUnitChecksAreNotActualCompatibilityOrPerformance": true
+  },
+  "resources": {
+    "passed": 550,
+    "rootAndCompleteSandboxPositive": true
+  },
+  "typesAndBuild": {
+    "root": 0,
+    "vue": 0,
+    "precommitRebuild": 0,
+    "postcommitRebuild": 0
+  },
+  "skip": 0,
+  "automaticRetry": 0,
+  "reportErrors": 0,
+  "runtimeInputs": 313,
+  "productionChanges": 0,
+  "rasterChanges": 0,
+  "frozenInputsBeforeCloseout": 1461,
+  "reports": [
+    {
+      "path": "artifacts/goal-4/check-ux24-26/regular-report.json",
+      "bytes": 71924697,
+      "sha256": "f60b5a62e3b1254502168b1bb882af75fd145d3fce40670446d74384b9ab65e5"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/slow-report.json",
+      "bytes": 1260689,
+      "sha256": "a31cb0e65560fe1f632bbeaceb184f46197b165def900c4d1a0b29d1f7d13d7d"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/native-report.json",
+      "bytes": 8963504,
+      "sha256": "ead391c3a11f0411bd6af35076b3a67eee273dab49cf7429aa93fec0d1dbaf4a"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/normal-report.json",
+      "bytes": 1029485,
+      "sha256": "1c7a9ced48cfbe7bf566e1e1c6df900b1dd6c9d344975be1d917f188556589b2"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/root.log",
+      "bytes": 90066,
+      "sha256": "0859ed76c41fd8986ab2535918ad2904b09d8bec8419476aa63f0fddf04f49e3"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/resources.log",
+      "bytes": 652,
+      "sha256": "0059abc9e9b3292968865d6cd68aa9ec66a0c7c556f5e2a9796e76d02fb9a6d3"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/root-types.log",
+      "bytes": 61,
+      "sha256": "f4db2c939da9c86ddc28dd7279e9d43cdaccb955d89c68482425e95ef8b37061"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/positive-root.log",
+      "bytes": 1879,
+      "sha256": "51298fc6f11454f9e4877e36ca437204e5b0f226d65281cfb1f7e30713b4bce6"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/positive-sandbox.log",
+      "bytes": 99,
+      "sha256": "83aca83506e9bc18e222e296b3c34aaecb895320530bc307ab1c95df0d303690"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/tested-build.log",
+      "bytes": 1142,
+      "sha256": "2f9a095df235b4b8607dc64e021f8a5caa206748cadf706e9bd751fc0a202f0e"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/precommit-build.log",
+      "bytes": 1142,
+      "sha256": "d3242b0fe7bd335c8fab255df9fce3e3bc72c6aa5095cd687e3a3a1c42f7d0b7"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/committed-build.log",
+      "bytes": 1142,
+      "sha256": "0e79945aa8f2538d42b1ff119e2a3b675f6e7934ee0a07af0a92f07adba2d48e"
+    },
+    {
+      "path": "artifacts/goal-4/check-ux24-26/pre-run-inputs.json",
+      "bytes": 163304,
+      "sha256": "fdad61e4182a22849d377e2f364f00043d1584004f5d9f77260d970b69ae12bf"
+    }
+  ],
+  "scope": "fixed1440x900/font1/singleChromium; compatibility/environment performance paused; human/art/long balance/final obligations remain"
+}

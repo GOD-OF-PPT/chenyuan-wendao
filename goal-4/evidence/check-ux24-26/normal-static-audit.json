@@ -1,0 +1,27 @@
+{
+  "sources": [
+    {
+      "path": "web/journey-tests/idle-normal-matrix.spec.ts",
+      "sha256": "ae85bed2754c55d108dd0c286df30e40fd4c265f986ffdaae206d5306d27ed87"
+    },
+    {
+      "path": "web/e2e/idle-route-support.ts",
+      "sha256": "45fcea7d8b249f3286d17bbf5344854a3690f377542c5beaf1c2509e3ea506cd"
+    },
+    {
+      "path": "web/e2e/idle-matrix-scenarios.ts",
+      "sha256": "0dd9881badbfa1d66a9b89c4452c97ebd8de658975974125200b4870f5415a3a"
+    }
+  ],
+  "normalNewGameViaVisibleWelcome": true,
+  "plansSelectedThroughVisibleControlsOnly": true,
+  "wholeGameEqualsFormalAdvanceEachCycle": true,
+  "beforeDeadlineMinusOneNoGameReward": true,
+  "finiteCycleCountAndActivityIdentityAndStopChecked": true,
+  "explicitConfigurationAndMilestoneDecisions": true,
+  "all24BasicAscensionCombinationsPlus6FoundationGuides2ReopenRoutesDeclared": true,
+  "finalAscendedEndingWinsAndReloadChecked": true,
+  "notAllDbReceiptProofEveryNormalCycle": "normal helper compares whole Game/activity; full canonical unique receipts/every DB store are separately checked by new3 combinations and native415",
+  "virtualCyclesDoNotProveHumanPacingOrBalance": true,
+  "runtimeResult": "all32 actual reports single pass0skip/retry/errors; original240sec/2workers; normal-terminal-audit.json"
+}

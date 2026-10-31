@@ -1,0 +1,27 @@
+{
+  "task": "CHECK-UX24-26",
+  "productionChanges": 0,
+  "newRasterAssets": 0,
+  "newRuntimeModules": 0,
+  "all313RuntimeInputsUnchanged": true,
+  "allOriginalRulesPeriodsDb9PinsAndCapsUnchanged": true,
+  "oldUi752RegistrationByteExactAfterRemovingNewFile": true,
+  "originalAssertionsTimeoutsAndOraclesPreserved": {
+    "fullFormalCheckpointSavedOracle": {
+      "byteExact": true,
+      "sha256": "e0c554fbdd9751ddb6762a5c2bfb1a5cd4680c30bd208917c3a788b83020bfdc"
+    },
+    "cycleDeadlineOracle": {
+      "byteExact": true,
+      "sha256": "3c6714c7477e06f6ae970f7a59b09f1fc1675cdb1507e60e3a69998dc2eef66a"
+    },
+    "geometryAndTextGuard": {
+      "byteExact": true,
+      "sha256": "196acc128b9953b12743f9a3d4e60a04ccfd097efe03796ee973a0fb60eb710f"
+    }
+  },
+  "newCases": 3,
+  "isolatedNewOrPrefixFixturesOnly": true,
+  "userSaveNeverTested": true,
+  "overallHumanAcceptance": false
+}

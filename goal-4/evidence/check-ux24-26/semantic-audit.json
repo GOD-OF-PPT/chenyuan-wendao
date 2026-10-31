@@ -1,0 +1,49 @@
+{
+  "task": "CHECK-UX24-26",
+  "cases": [
+    {
+      "title": "CHECK-UX2426-C1 normal first entry keeps true goal needs explicit six-second travel and one zero-price scroll distinct from the next draft",
+      "singlePassedResult": true,
+      "attachments": [
+        "normal-opening-complete-reader-geometry",
+        "normal-chosen-offering-complete-formal-atomic-proof",
+        "normal-return-cave-complete-formal-atomic-proof",
+        "normal-full-cultivation-0-complete-formal-atomic-proof",
+        "normal-full-cultivation-1-complete-formal-atomic-proof",
+        "normal-explicit-entry-complete-checkpoint-complete-formal-atomic-proof",
+        "normal-public-explicit-sect-complete-formal-atomic-proof",
+        "normal-original-one-scroll-before-save-geometry",
+        "normal-one-free-scroll-complete-formal-atomic-proof",
+        "normal-real-mastered-record-no-auto-equip-geometry"
+      ]
+    },
+    {
+      "title": "CHECK-UX2426-C2 an actual foreign goal trip leads to a finite paid queue whose failed tick retries only its old authorization after next-draft edits",
+      "singlePassedResult": true,
+      "attachments": [
+        "foreign-goal-only-one-cave-trip-complete-formal-atomic-proof",
+        "explicit-sect-no-auto-learn-complete-formal-atomic-proof",
+        "failed-old-command-new-draft-complete-geometry",
+        "paid-original-command-only-retry-complete-formal-atomic-proof",
+        "paid-paused-complete-history-geometry"
+      ]
+    },
+    {
+      "title": "CHECK-UX2426-C3 the manual next draft survives same-id foreign ownership and only the new sixty-second command grants one insight without offline replay",
+      "singlePassedResult": true,
+      "attachments": [
+        "foreign-owner-current-manual-next-draft-geometry",
+        "foreign-manual-new-command-only-complete-formal-atomic-proof",
+        "foreign-saved-mastery-without-old-reward-geometry"
+      ]
+    }
+  ],
+  "fullFormalOracle": "static-review.json; saved/cycle/frame byte-exact to prior complete contract",
+  "scope": [
+    "normal public creation through opening/travel/two cultivation cycles/entry checkpoint/zero-price one-scroll; no chosen school/equipment/new realm by story",
+    "real goal-deficit travel6s and paid2-scroll777/9 arrangement with IDB TICK fault and1111 next draft; exact original command and one canonical result",
+    "foreign ownership same-id newgeneration manual60s; old page retains draft, no old award, one new insight and no offline refill"
+  ],
+  "wholeGameActivityEveryDb9CanonicalUniqueReceiptsAndCheckpointOwner": "new3 combinations only; normal32 proof is independently described in normal-static-audit.json",
+  "isolatedFixturesNotHumanGrowthOrUserSaveTest": true
+}

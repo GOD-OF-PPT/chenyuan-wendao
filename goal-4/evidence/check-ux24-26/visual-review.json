@@ -1,0 +1,1193 @@
+{
+  "task": "CHECK-UX24-26",
+  "requiredFrames": 52,
+  "freshCurrentActuallyViewed": 34,
+  "wholePngByteExactToActuallyReviewedSource": 18,
+  "rows": [
+    {
+      "i": 0,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C1-30d97-kes-trial-preparation-ready-chromium/actual-arrival-ready-without-automatic-trial.png",
+      "pngSHA256": "a6e43eb77a1ee93df4e706453abbf16994d85387a8d927dff63908d144232a46",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-00-actual-arrival-ready-without-automatic-trial.jpg",
+      "viewSHA256": "f5ac81d240f5eb1f73db47da1cc6fc9570feede37df9d3fc97091f4ec5a2e800",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux24/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux24/regular-results/ux24-goal-guidance-UX24-C1-30d97-kes-trial-preparation-ready-chromium/actual-arrival-ready-without-automatic-trial.png",
+          "pngSHA256": "a6e43eb77a1ee93df4e706453abbf16994d85387a8d927dff63908d144232a46",
+          "inherited": {
+            "record": "artifacts/goal-4/ux24/early-visuals-reviewed.json",
+            "frame": {
+              "png": "artifacts/goal-4/ux24/early-v2-results/ux24-goal-guidance-UX24-C1-30d97-kes-trial-preparation-ready-chromium/actual-arrival-ready-without-automatic-trial.png",
+              "pngSHA256": "a6e43eb77a1ee93df4e706453abbf16994d85387a8d927dff63908d144232a46",
+              "view": "artifacts/goal-4/ux24/views/01-actual-arrival-ready-without-automatic-trial.jpg",
+              "viewSHA256": "f5ac81d240f5eb1f73db47da1cc6fc9570feede37df9d3fc97091f4ec5a2e800",
+              "dimensions": [
+                1440,
+                900
+              ],
+              "encoding": "same-size lossy JPEG68; original PNG retained",
+              "actuallyViewed": true
+            }
+          }
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 1,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C1-30d97-kes-trial-preparation-ready-chromium/idle-location-deficit-before-travel.png",
+      "pngSHA256": "67fd2e6bee1b44b360529be3eb8de32ffb6b18a4aae2338e2de639668acd8c70",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-01-idle-location-deficit-before-travel.jpg",
+      "viewSHA256": "b93743cd2cc5a1c35560de80b6436363deebe65db2ef7f06dbce18b63b2b2cbc",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 2,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C2-02607-ed-encounter-or-ready-claim-chromium/material-actual-formal-blocker.png",
+      "pngSHA256": "5cc54687cb048b49f5e54568044d3003b1dab0d6ba2af34c342146f52326713e",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-02-material-actual-formal-blocker.jpg",
+      "viewSHA256": "3febe3a8e5a48cc3f86837d61f1f214dd09ea926f53b14f84593ea2599da1631",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 3,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C2-14f4c-ed-encounter-or-ready-claim-chromium/relic-realm-actual-formal-blocker.png",
+      "pngSHA256": "ec1f442e9663c6c33a2f6e58ebe55993fa21b3b7f446e79cb01109d5b4d0b1f5",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-03-relic-realm-actual-formal-blocker.jpg",
+      "viewSHA256": "ad0f587d78b8a7242524ed865b7a2d841340105b85ab24e4b489ed01253eb7ef",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux24/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux24/regular-results/ux24-goal-guidance-UX24-C2-14f4c-ed-encounter-or-ready-claim-chromium/relic-realm-actual-formal-blocker.png",
+          "pngSHA256": "ec1f442e9663c6c33a2f6e58ebe55993fa21b3b7f446e79cb01109d5b4d0b1f5",
+          "inherited": {
+            "record": "artifacts/goal-4/ux24/early-visuals-reviewed.json",
+            "frame": {
+              "png": "artifacts/goal-4/ux24/early-v2-results/ux24-goal-guidance-UX24-C2-14f4c-ed-encounter-or-ready-claim-chromium/relic-realm-actual-formal-blocker.png",
+              "pngSHA256": "ec1f442e9663c6c33a2f6e58ebe55993fa21b3b7f446e79cb01109d5b4d0b1f5",
+              "view": "artifacts/goal-4/ux24/views/04-relic-realm-actual-formal-blocker.jpg",
+              "viewSHA256": "ad0f587d78b8a7242524ed865b7a2d841340105b85ab24e4b489ed01253eb7ef",
+              "dimensions": [
+                1440,
+                900
+              ],
+              "encoding": "same-size lossy JPEG68; original PNG retained",
+              "actuallyViewed": true
+            }
+          }
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 4,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C2-40bd3-ed-encounter-or-ready-claim-chromium/stones-actual-formal-blocker.png",
+      "pngSHA256": "d3bc0bd455cf80ca8256063d392b923a59b0e9b32977ecaf1586c96ed08665eb",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-04-stones-actual-formal-blocker.jpg",
+      "viewSHA256": "215f7c1d96584da3a2b362333b50997304a8ccee7e79d63663a501ee61454dbe",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux24/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux24/regular-results/ux24-goal-guidance-UX24-C2-40bd3-ed-encounter-or-ready-claim-chromium/stones-actual-formal-blocker.png",
+          "pngSHA256": "d3bc0bd455cf80ca8256063d392b923a59b0e9b32977ecaf1586c96ed08665eb",
+          "inherited": {
+            "record": "artifacts/goal-4/ux24/early-visuals-reviewed.json",
+            "frame": {
+              "png": "artifacts/goal-4/ux24/early-v2-results/ux24-goal-guidance-UX24-C2-40bd3-ed-encounter-or-ready-claim-chromium/stones-actual-formal-blocker.png",
+              "pngSHA256": "d3bc0bd455cf80ca8256063d392b923a59b0e9b32977ecaf1586c96ed08665eb",
+              "view": "artifacts/goal-4/ux24/views/05-stones-actual-formal-blocker.jpg",
+              "viewSHA256": "215f7c1d96584da3a2b362333b50997304a8ccee7e79d63663a501ee61454dbe",
+              "dimensions": [
+                1440,
+                900
+              ],
+              "encoding": "same-size lossy JPEG68; original PNG retained",
+              "actuallyViewed": true
+            }
+          }
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 5,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C2-49cf9-ed-encounter-or-ready-claim-chromium/opening-actual-formal-blocker.png",
+      "pngSHA256": "7367ec37e78a4a78c6c81179f8246c5ffaae94a11f5c81b8bddf68b29a892884",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-05-opening-actual-formal-blocker.jpg",
+      "viewSHA256": "54d7db8530b463f99fac33b08839aaa7a1ffd03710003193c01b33a0ec403c62",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 6,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C2-6ab24-ed-encounter-or-ready-claim-chromium/event-actual-formal-blocker.png",
+      "pngSHA256": "8d38649255f012df9a9b3353c6c406e172b98a5ae17517430d5de4599a3184a2",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-06-event-actual-formal-blocker.jpg",
+      "viewSHA256": "22f6ca0282e805cd77582dc5cc5407f1321c2d39be35fdb2dd2c1b831dc9c46d",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 7,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C2-b3e5a-ed-encounter-or-ready-claim-chromium/xp-actual-formal-blocker.png",
+      "pngSHA256": "7eb7f61956564eaadae0214f9bfe080fcee8512d69afc6eb7d4e36f2dccb09cf",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-07-xp-actual-formal-blocker.jpg",
+      "viewSHA256": "2e60da58d86c8406c095b9622710b2fb0e2b731490bb319824508906222ff142",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 8,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C2-cd5b8-ed-encounter-or-ready-claim-chromium/battle-actual-formal-blocker.png",
+      "pngSHA256": "4cd163ef3b7f2f023db38aa6f4817ca82ea315a1515862b804689b7e76976d8a",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-08-battle-actual-formal-blocker.jpg",
+      "viewSHA256": "83bdfdb81e790f79d6249e9c825ced160eb650332da7e336275768b4a4c0f8b7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 9,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C2-cdec6-ed-encounter-or-ready-claim-chromium/event-target-actual-formal-blocker.png",
+      "pngSHA256": "ed1c6e02c0ba5dbafdedc2512cc7f887a79b88009c4ee804c12f5e434148367b",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-09-event-target-actual-formal-blocker.jpg",
+      "viewSHA256": "92850f98223c200aa6397046e0b8731793e3bc87acecfdbfa3b8fd78b90d1ed4",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux24/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux24/regular-results/ux24-goal-guidance-UX24-C2-cdec6-ed-encounter-or-ready-claim-chromium/event-target-actual-formal-blocker.png",
+          "pngSHA256": "ed1c6e02c0ba5dbafdedc2512cc7f887a79b88009c4ee804c12f5e434148367b",
+          "inherited": {
+            "record": "artifacts/goal-4/ux24/early-visuals-reviewed.json",
+            "frame": {
+              "png": "artifacts/goal-4/ux24/early-v2-results/ux24-goal-guidance-UX24-C2-cdec6-ed-encounter-or-ready-claim-chromium/event-target-actual-formal-blocker.png",
+              "pngSHA256": "ed1c6e02c0ba5dbafdedc2512cc7f887a79b88009c4ee804c12f5e434148367b",
+              "view": "artifacts/goal-4/ux24/views/10-event-target-actual-formal-blocker.jpg",
+              "viewSHA256": "92850f98223c200aa6397046e0b8731793e3bc87acecfdbfa3b8fd78b90d1ed4",
+              "dimensions": [
+                1440,
+                900
+              ],
+              "encoding": "same-size lossy JPEG68; original PNG retained",
+              "actuallyViewed": true
+            }
+          }
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 10,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C2-d1cf8-ed-encounter-or-ready-claim-chromium/skill-realm-actual-formal-blocker.png",
+      "pngSHA256": "9ef20bcb9a13f584864a20c5e0fd4d7af4a9e53d82dc7a95f569894001bd61fd",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-10-skill-realm-actual-formal-blocker.jpg",
+      "viewSHA256": "8d561a1f812ea3955d0048f189c89cc2aacec102c4320200ffe4742a0eb91b33",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux24/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux24/regular-results/ux24-goal-guidance-UX24-C2-d1cf8-ed-encounter-or-ready-claim-chromium/skill-realm-actual-formal-blocker.png",
+          "pngSHA256": "9ef20bcb9a13f584864a20c5e0fd4d7af4a9e53d82dc7a95f569894001bd61fd",
+          "inherited": {
+            "record": "artifacts/goal-4/ux24/early-visuals-reviewed.json",
+            "frame": {
+              "png": "artifacts/goal-4/ux24/early-v2-results/ux24-goal-guidance-UX24-C2-d1cf8-ed-encounter-or-ready-claim-chromium/skill-realm-actual-formal-blocker.png",
+              "pngSHA256": "9ef20bcb9a13f584864a20c5e0fd4d7af4a9e53d82dc7a95f569894001bd61fd",
+              "view": "artifacts/goal-4/ux24/views/11-skill-realm-actual-formal-blocker.jpg",
+              "viewSHA256": "8d561a1f812ea3955d0048f189c89cc2aacec102c4320200ffe4742a0eb91b33",
+              "dimensions": [
+                1440,
+                900
+              ],
+              "encoding": "same-size lossy JPEG68; original PNG retained",
+              "actuallyViewed": true
+            }
+          }
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 11,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C3-2fa11-n-battle-or-ending-guidance-chromium/trial-4-exclusive-guidance.png",
+      "pngSHA256": "b7c0326c60466cc25ba2e827a936fa360cfbd047e67ffe95827d6c417be654ed",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-11-trial-4-exclusive-guidance.jpg",
+      "viewSHA256": "fa51eaaa0bd9ed75d99065cafc6f411fab9f96f20cea4286e533f35bd37305ab",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux24/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux24/regular-results/ux24-goal-guidance-UX24-C3-2fa11-n-battle-or-ending-guidance-chromium/trial-4-exclusive-guidance.png",
+          "pngSHA256": "b7c0326c60466cc25ba2e827a936fa360cfbd047e67ffe95827d6c417be654ed",
+          "view": "artifacts/goal-4/ux24/views/final-04-trial-4-exclusive-guidance.jpg",
+          "viewSHA256": "fa51eaaa0bd9ed75d99065cafc6f411fab9f96f20cea4286e533f35bd37305ab",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "actuallyViewed": true,
+          "encoding": "same-size lossy JPEG68; original PNG retained"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 12,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C3-69aad-n-battle-or-ending-guidance-chromium/trial-1-exclusive-guidance.png",
+      "pngSHA256": "a5ee130802aea0b4b71fddbecb9dea16be4cb6d03785386bbc183bef6f46bae6",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-12-trial-1-exclusive-guidance.jpg",
+      "viewSHA256": "87b178a967f87a81a516bee26dbdc19cfe644266bd28c6d177358d1c1c4e92e8",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux24/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux24/regular-results/ux24-goal-guidance-UX24-C3-69aad-n-battle-or-ending-guidance-chromium/trial-1-exclusive-guidance.png",
+          "pngSHA256": "a5ee130802aea0b4b71fddbecb9dea16be4cb6d03785386bbc183bef6f46bae6",
+          "view": "artifacts/goal-4/ux24/views/final-05-trial-1-exclusive-guidance.jpg",
+          "viewSHA256": "87b178a967f87a81a516bee26dbdc19cfe644266bd28c6d177358d1c1c4e92e8",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "actuallyViewed": true,
+          "encoding": "same-size lossy JPEG68; original PNG retained"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 13,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C3-f0adc-n-battle-or-ending-guidance-chromium/trial-0-exclusive-guidance.png",
+      "pngSHA256": "ba819bc7b9fd966613292142cad06ae0d05c1807a4e0847775f6aa38e6a775cb",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-13-trial-0-exclusive-guidance.jpg",
+      "viewSHA256": "1e04eaf2cb2eb9a6681642469160b6ff7c1fb92fb18fddaef12b9513ae22d4f8",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux24/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux24/regular-results/ux24-goal-guidance-UX24-C3-f0adc-n-battle-or-ending-guidance-chromium/trial-0-exclusive-guidance.png",
+          "pngSHA256": "ba819bc7b9fd966613292142cad06ae0d05c1807a4e0847775f6aa38e6a775cb",
+          "view": "artifacts/goal-4/ux24/views/final-06-trial-0-exclusive-guidance.jpg",
+          "viewSHA256": "1e04eaf2cb2eb9a6681642469160b6ff7c1fb92fb18fddaef12b9513ae22d4f8",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "actuallyViewed": true,
+          "encoding": "same-size lossy JPEG68; original PNG retained"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 14,
+      "family": "ux24",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux24-goal-guidance-UX24-C5-f0ade-ugh-readonly-target-changes-chromium/owned-relic-goal-complete.png",
+      "pngSHA256": "ee263000859fbe1faefa90d3f2460251d1ffb7a80771e8a4a46f7e1d6f62fb43",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-14-owned-relic-goal-complete.jpg",
+      "viewSHA256": "02b7d7febc90d20a9e2d23e3db4cf52914662de6c02777f98227316c5abf37eb",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 15,
+      "family": "ux25",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/adventure-objects-rejected-b601a-riginal-start-receipt-retry-chromium/acceptance-error-safe-auto.png",
+      "pngSHA256": "8930a6cd43f33c93c4f6f53076cbffbb5950b41860bf6d8f645a41e325d40a26",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-15-acceptance-error-safe-auto.jpg",
+      "viewSHA256": "a38d59ca97f88a384e0d3d307023d3cdd46b6189245341b3817748a5945a1b30",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 16,
+      "family": "ux25",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux25-period-notices-UX25-C-04a7d-hout-promising-a-total-time-chromium/sword-default-per-move-three-seconds.png",
+      "pngSHA256": "55a2c576d253694ad303d44a9de498a17a4bbe7f1bc41ccb179a7d8d4aad2a7f",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-16-sword-default-per-move-three-seconds.jpg",
+      "viewSHA256": "b0c22f2c5e316ebcb15d9a1b9eb504a5ac56b5b2c8c2a2dce14107b90287d7af",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux25/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-04a7d-hout-promising-a-total-time-chromium/sword-default-per-move-three-seconds.png",
+          "pngSHA256": "55a2c576d253694ad303d44a9de498a17a4bbe7f1bc41ccb179a7d8d4aad2a7f",
+          "view": "artifacts/goal-4/ux25/views/final-01-sword-default-per-move-three-seconds.jpg",
+          "viewSHA256": "b0c22f2c5e316ebcb15d9a1b9eb504a5ac56b5b2c8c2a2dce14107b90287d7af",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "encoding": "same-size lossy JPEG68; original PNG retained",
+          "actuallyViewedThisFinalRun": true,
+          "wholePngInherited": false,
+          "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 17,
+      "family": "ux25",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux25-period-notices-UX25-C-251dd-nly-cave-view-after-arrival-chromium/xp-foreign-travel-notice.png",
+      "pngSHA256": "5f7c38f272ffcd2fbfd3b14003eaeb02da2b55599665ce4581a8c38522e3595a",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-17-xp-foreign-travel-notice.jpg",
+      "viewSHA256": "e869a24e93389dbd971b224ff040848539fa4b1737901ff75377501ad3629f18",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 18,
+      "family": "ux25",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux25-period-notices-UX25-C-43881--inspection-stays-immediate-chromium/foreign-material-source-trip.png",
+      "pngSHA256": "a76d93400209c566f9e9fa1af777d31d4bf90ed7f6e9ca74092290da2809166e",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-18-foreign-material-source-trip.jpg",
+      "viewSHA256": "ef09d6c66d41519b61f5952072c8ceb132a5bfb818fc5b834a5457d0fa9cdb79",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 19,
+      "family": "ux25",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux25-period-notices-UX25-C-4409d-e-same-single-saved-arrival-chromium/hub-return-six-seconds.png",
+      "pngSHA256": "a1688c098c8087c5e4d61799486e27d9f6d729cdabe706d1413b0683faa67c53",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-19-hub-return-six-seconds.jpg",
+      "viewSHA256": "3accb430bedc36ae49753aaa9e42caa13497c542674da355892d38f9224dd276",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 20,
+      "family": "ux25",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux25-period-notices-UX25-C-46566-e-same-single-saved-arrival-chromium/detail-return-six-seconds.png",
+      "pngSHA256": "5288cc06263f3e8a6d5474bd511f9dbd8ca260671233187ef9cbe460786cac8a",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-20-detail-return-six-seconds.jpg",
+      "viewSHA256": "89121aade2c6e28e6392b44d2648f30cde115bb2a27311f529b4c72760492672",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux25/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-46566-e-same-single-saved-arrival-chromium/detail-return-six-seconds.png",
+          "pngSHA256": "5288cc06263f3e8a6d5474bd511f9dbd8ca260671233187ef9cbe460786cac8a",
+          "view": "artifacts/goal-4/ux25/views/final-05-detail-return-six-seconds.jpg",
+          "viewSHA256": "89121aade2c6e28e6392b44d2648f30cde115bb2a27311f529b4c72760492672",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "encoding": "same-size lossy JPEG68; original PNG retained",
+          "actuallyViewedThisFinalRun": false,
+          "wholePngInherited": true,
+          "actuallyReviewedSource": {
+            "png": "artifacts/goal-4/ux25/early-v2-results/ux25-period-notices-UX25-C-46566-e-same-single-saved-arrival-chromium/detail-return-six-seconds.png",
+            "pngSHA256": "5288cc06263f3e8a6d5474bd511f9dbd8ca260671233187ef9cbe460786cac8a",
+            "view": "artifacts/goal-4/ux25/views/05-detail-return-six-seconds.jpg",
+            "viewSHA256": "89121aade2c6e28e6392b44d2648f30cde115bb2a27311f529b4c72760492672",
+            "dimensions": [
+              1440,
+              900
+            ],
+            "encoding": "same-size lossy JPEG68; original PNG retained",
+            "actuallyViewed": true
+          },
+          "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 21,
+      "family": "ux25",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux25-period-notices-UX25-C-5ab9e-g-never-creates-an-activity-chromium/same-place-view-has-no-fake-period.png",
+      "pngSHA256": "b2f4b32eb28e972f271507f55129fe60ff2870af48f2deb12ef7376135c353a1",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-21-same-place-view-has-no-fake-period.jpg",
+      "viewSHA256": "d64e02d3bd8255a156c2ce0870854c5b4a2f8e5bee33f1dc76ef1c4dea04be09",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux25/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-5ab9e-g-never-creates-an-activity-chromium/same-place-view-has-no-fake-period.png",
+          "pngSHA256": "b2f4b32eb28e972f271507f55129fe60ff2870af48f2deb12ef7376135c353a1",
+          "view": "artifacts/goal-4/ux25/views/final-06-same-place-view-has-no-fake-period.jpg",
+          "viewSHA256": "d64e02d3bd8255a156c2ce0870854c5b4a2f8e5bee33f1dc76ef1c4dea04be09",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "encoding": "same-size lossy JPEG68; original PNG retained",
+          "actuallyViewedThisFinalRun": true,
+          "wholePngInherited": false,
+          "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 22,
+      "family": "ux25",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux25-period-notices-UX25-C-89f6a-hout-promising-a-total-time-chromium/talisman-default-per-move-three-seconds.png",
+      "pngSHA256": "c28877b0ea7fc66d4d6f48e02e09d8c561ca402e09331d193ffcdf526a979b2e",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-22-talisman-default-per-move-three-seconds.jpg",
+      "viewSHA256": "41b0c962802386c0b4aa192393ba3832718d02669cb5e5def2dfccd5ddf3f114",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 23,
+      "family": "ux25",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux25-period-notices-UX25-C-a88c5-ly-its-explicit-atomic-trip-chromium/goal-before-explicit-travel.png",
+      "pngSHA256": "a98d1087f8619d3eff5e4f4e6d0332e14a7fd2ef1423dc511685a91ffff1809c",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-23-goal-before-explicit-travel.jpg",
+      "viewSHA256": "86c34a86dcd47e5c372965ef1552257ff1e6021aecd1d9b18e6922189d957c41",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 24,
+      "family": "ux25",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux25-period-notices-UX25-C-a88c5-ly-its-explicit-atomic-trip-chromium/goal-real-six-second-notice.png",
+      "pngSHA256": "67fd2e6bee1b44b360529be3eb8de32ffb6b18a4aae2338e2de639668acd8c70",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-24-goal-real-six-second-notice.jpg",
+      "viewSHA256": "b93743cd2cc5a1c35560de80b6436363deebe65db2ef7f06dbce18b63b2b2cbc",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux25/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-a88c5-ly-its-explicit-atomic-trip-chromium/goal-real-six-second-notice.png",
+          "pngSHA256": "67fd2e6bee1b44b360529be3eb8de32ffb6b18a4aae2338e2de639668acd8c70",
+          "view": "artifacts/goal-4/ux25/views/final-09-goal-real-six-second-notice.jpg",
+          "viewSHA256": "b93743cd2cc5a1c35560de80b6436363deebe65db2ef7f06dbce18b63b2b2cbc",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "encoding": "same-size lossy JPEG68; original PNG retained",
+          "actuallyViewedThisFinalRun": false,
+          "wholePngInherited": true,
+          "actuallyReviewedSource": {
+            "png": "artifacts/goal-4/ux25/early-v2-results/ux25-period-notices-UX25-C-a88c5-ly-its-explicit-atomic-trip-chromium/goal-real-six-second-notice.png",
+            "pngSHA256": "67fd2e6bee1b44b360529be3eb8de32ffb6b18a4aae2338e2de639668acd8c70",
+            "view": "artifacts/goal-4/ux25/views/09-goal-real-six-second-notice.jpg",
+            "viewSHA256": "b93743cd2cc5a1c35560de80b6436363deebe65db2ef7f06dbce18b63b2b2cbc",
+            "dimensions": [
+              1440,
+              900
+            ],
+            "encoding": "same-size lossy JPEG68; original PNG retained",
+            "actuallyViewed": true
+          },
+          "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 25,
+      "family": "ux25",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux25-period-notices-UX25-C-c57ed-hout-promising-a-total-time-chromium/trial-default-per-move-three-seconds.png",
+      "pngSHA256": "a27b8f10a40e6830701b211da9c8c93ca4e6c94c56ef42489d511b03fcd769a2",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-25-trial-default-per-move-three-seconds.jpg",
+      "viewSHA256": "b508e138666a73471d1f187f08e2666a494c5633fd0b569ea0cb53cea87988c4",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux25/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux25/regular-v2-results/ux25-period-notices-UX25-C-c57ed-hout-promising-a-total-time-chromium/trial-default-per-move-three-seconds.png",
+          "pngSHA256": "a27b8f10a40e6830701b211da9c8c93ca4e6c94c56ef42489d511b03fcd769a2",
+          "view": "artifacts/goal-4/ux25/views/final-10-trial-default-per-move-three-seconds.jpg",
+          "viewSHA256": "b508e138666a73471d1f187f08e2666a494c5633fd0b569ea0cb53cea87988c4",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "encoding": "same-size lossy JPEG68; original PNG retained",
+          "actuallyViewedThisFinalRun": true,
+          "wholePngInherited": false,
+          "result": "current action/time/cost or finite authorization fully readable; nav clear; no invented same-place period"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 26,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-1b84a--the-unconfirmed-next-draft-chromium/manual-accepted-before-draft-assertion.png",
+      "pngSHA256": "c7d3566b14e52180af05ee726f3f8e34183e9e06428eac0b3c775a741940f0e7",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-26-manual-accepted-before-draft-assertion.jpg",
+      "viewSHA256": "a22b4c4d35c3d8607c31359f8017c853d7bc67ce417fdc8ffe91b55cd68334d2",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 27,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-1b84a--the-unconfirmed-next-draft-chromium/manual-actual-running-next-draft.png",
+      "pngSHA256": "63fca042095c8577bfb0b8329b0fde01fa417923df96794a2e594b3aca63665c",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-27-manual-actual-running-next-draft.jpg",
+      "viewSHA256": "5d4cf424f86a392585574801b031cfbbfff88cab7ff85b5b99ee9acfba8b7b41",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 28,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-1e200-e-without-new-authorization-chromium/skills-failed-tick-current-status-above.png",
+      "pngSHA256": "8d7d7deda52948bed0737ad9e11bf2cc6cf418fc3ca22a1bf65695186042b0c0",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-28-skills-failed-tick-current-status-above.jpg",
+      "viewSHA256": "c1896420cffcb14a1b3b445828cf6acc9c5598b527168fb1df576e1ab74b91b2",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 29,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-204e6--the-unconfirmed-next-draft-chromium/skills-accepted-before-draft-assertion.png",
+      "pngSHA256": "3b4980f99c0050c51f6614c7943a97cc9847087949a2f15d898294a114b33221",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-29-skills-accepted-before-draft-assertion.jpg",
+      "viewSHA256": "eee6b44a479298d60ef2004f72eb56aba6d7f95fbb40a4771eaf032a4d437bb3",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 30,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-204e6--the-unconfirmed-next-draft-chromium/skills-actual-running-next-draft.png",
+      "pngSHA256": "715431c062a3ed2bed6e2a09fbec98afc2fb43431758f8d680540f96e5c0784a",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-30-skills-actual-running-next-draft.jpg",
+      "viewSHA256": "e35004a99220f769c59b7ce57940b7969b69d01d23ce2aa911c35f0a11a58772",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 31,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-b3177-adopts-a-later-edited-draft-chromium/manual-original-retry-running-with-next-draft.png",
+      "pngSHA256": "a7d99d39508cf714f2695cbc79d51e92f7325d19998c8ca5affa726a7f5ce58a",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-31-manual-original-retry-running-with-next-draft.jpg",
+      "viewSHA256": "7ac2beff6f541db31955b7b08446bec0b762f6ad08d0bb919b3ae18e25522ebb",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 32,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-b3177-adopts-a-later-edited-draft-chromium/manual-rejected-start-not-saved.png",
+      "pngSHA256": "00026724f672309ddab07e477089ba30b3536a759204e9046f87b5732246f21e",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-32-manual-rejected-start-not-saved.jpg",
+      "viewSHA256": "da5e9ab9e28303f9170dedd3749c98357b78ef599c40b4d5ebcecbc59f1f4f00",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 33,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-c4112-e-without-new-authorization-chromium/manual-failed-tick-current-status-above.png",
+      "pngSHA256": "31affede449017657c26f0d43049453638695e2457adb20f96f3971546889877",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-33-manual-failed-tick-current-status-above.jpg",
+      "viewSHA256": "97f10ed6082a99461909471990938e53316a7beb7ae74cf6843a9937a5ff1087",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 34,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-c65f2-nd-the-full-original-period-chromium/manual-paused-edited-next-draft.png",
+      "pngSHA256": "9cb8877dfe6afcd2c3bd8f40bec2c8b48ac7de0cdb21d8aa693a6fd7bb6b1988",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-34-manual-paused-edited-next-draft.jpg",
+      "viewSHA256": "7c75af3d5faaf902e073af633c391141a353919bfea0392aff1dc149ffb3103f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux26/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux26/regular-results/ux26-learning-draft-contex-c65f2-nd-the-full-original-period-chromium/manual-paused-edited-next-draft.png",
+          "pngSHA256": "9cb8877dfe6afcd2c3bd8f40bec2c8b48ac7de0cdb21d8aa693a6fd7bb6b1988",
+          "view": "artifacts/goal-4/ux26/views/final-08-manual-paused-edited-next-draft.jpg",
+          "viewSHA256": "7c75af3d5faaf902e073af633c391141a353919bfea0392aff1dc149ffb3103f",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "encoding": "same-size lossy JPEG68; original PNG retained",
+          "actuallyViewedThisFinalRun": true,
+          "wholePngInherited": false,
+          "result": "draft/original/paused/error/readonly/new-life label is complete and consistent with current rail, actual costs and available action; nav unobstructed"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 35,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-c65f2-nd-the-full-original-period-chromium/manual-paused-same-original.png",
+      "pngSHA256": "bf4ee3326d76b98fe982d796bc683b26ebc9969fd811ed982b8979307196dfac",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-35-manual-paused-same-original.jpg",
+      "viewSHA256": "64b5cbd472f0fc6f699ea4ab25e3c89764f9348c272f9cc69319e692a78e6fce",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 36,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-c65f2-nd-the-full-original-period-chromium/manual-running-real-original-view.png",
+      "pngSHA256": "51a7450b1e1d59653fb6750351f5434a164673e305724d782e7cbb2a4d8eb11c",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-36-manual-running-real-original-view.jpg",
+      "viewSHA256": "95908ea8f8fe7c12da7f01074ef5ecc930ab73fbde87e8da13cbc965d6bb57ee",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 37,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-d0af4-nd-the-full-original-period-chromium/skills-paused-edited-next-draft.png",
+      "pngSHA256": "a43a2bd80b0023a4e726a14efbb342c14262adcc6bbd2fe78e34e1fb55d3d623",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-37-skills-paused-edited-next-draft.jpg",
+      "viewSHA256": "e49ed83f10984bbf45fe3b6923879cee593a3c7d4d333eba2e37b0f15771891b",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux26/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux26/regular-results/ux26-learning-draft-contex-d0af4-nd-the-full-original-period-chromium/skills-paused-edited-next-draft.png",
+          "pngSHA256": "a43a2bd80b0023a4e726a14efbb342c14262adcc6bbd2fe78e34e1fb55d3d623",
+          "view": "artifacts/goal-4/ux26/views/final-11-skills-paused-edited-next-draft.jpg",
+          "viewSHA256": "e49ed83f10984bbf45fe3b6923879cee593a3c7d4d333eba2e37b0f15771891b",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "encoding": "same-size lossy JPEG68; original PNG retained",
+          "actuallyViewedThisFinalRun": true,
+          "wholePngInherited": false,
+          "result": "draft/original/paused/error/readonly/new-life label is complete and consistent with current rail, actual costs and available action; nav unobstructed"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 38,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-d0af4-nd-the-full-original-period-chromium/skills-paused-same-original.png",
+      "pngSHA256": "e21943390586c5b99211b3102cf56b2e35d7670f17c4ef96c36f3f35aa0e45be",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-38-skills-paused-same-original.jpg",
+      "viewSHA256": "c1d2511cab480ad73082a8fe9ac460bcfedda136f8c8570f55c082d2425834e0",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 39,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-d0af4-nd-the-full-original-period-chromium/skills-running-real-original-view.png",
+      "pngSHA256": "9781d4d35dd71aeb425dbb1c69f26cb99e5482b7e578acc957268709fd180f81",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-39-skills-running-real-original-view.jpg",
+      "viewSHA256": "ccb11c06ebeb00732b91db42ea74d343170f577f5d59808ccfe232b04160350f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 40,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-f0184-adopts-a-later-edited-draft-chromium/skills-original-retry-running-with-next-draft.png",
+      "pngSHA256": "388c100b4a4f0633c20880cff3fb5aa567e11182a621c38f980626093f514610",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-40-skills-original-retry-running-with-next-draft.jpg",
+      "viewSHA256": "fba5844ba5e2f5b13a6b522af32719cfbffaf70e8b726cda35428eba0cab70c7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 41,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-f0184-adopts-a-later-edited-draft-chromium/skills-rejected-start-not-saved.png",
+      "pngSHA256": "f17c0fb2ab292bdb27fed241e9b33ea41e31e809966222002a28d4d189209f38",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-41-skills-rejected-start-not-saved.jpg",
+      "viewSHA256": "541efd04289211854838b026ed397d839f7abab6f08359acd958aaa4a404f77a",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 42,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-fc5a0-nt-life-retires-both-drafts-chromium/replacement-life-fresh-unconfirmed-manual.png",
+      "pngSHA256": "7189fa1c16c28630605a19adde0c59bb487d0e9b6f93769a3a9bc58973672c38",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-42-replacement-life-fresh-unconfirmed-manual.jpg",
+      "viewSHA256": "db3dfc23e177ffc0bdd222070ab6e2ea49801cc7bf5e769d71d1c6ed6884d352",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux26/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux26/regular-results/ux26-learning-draft-contex-fc5a0-nt-life-retires-both-drafts-chromium/replacement-life-fresh-unconfirmed-manual.png",
+          "pngSHA256": "7189fa1c16c28630605a19adde0c59bb487d0e9b6f93769a3a9bc58973672c38",
+          "view": "artifacts/goal-4/ux26/views/final-16-replacement-life-fresh-unconfirmed-manual.jpg",
+          "viewSHA256": "db3dfc23e177ffc0bdd222070ab6e2ea49801cc7bf5e769d71d1c6ed6884d352",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "encoding": "same-size lossy JPEG68; original PNG retained",
+          "actuallyViewedThisFinalRun": true,
+          "wholePngInherited": false,
+          "result": "draft/original/paused/error/readonly/new-life label is complete and consistent with current rail, actual costs and available action; nav unobstructed"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 43,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-fc5a0-nt-life-retires-both-drafts-chromium/running-manual-empty-skills-readonly.png",
+      "pngSHA256": "1ebe98862ad0054ef99512729396f79f90a402b3a45e30a69210c57cbbce2915",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-43-running-manual-empty-skills-readonly.jpg",
+      "viewSHA256": "6a24b35d9b72f03d3819ac1be1961ae55d1f14ded7816428d8f5e9115947868d",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "goal-4/evidence/ux26/visual-review.json",
+        "record": {
+          "png": "artifacts/goal-4/ux26/regular-results/ux26-learning-draft-contex-fc5a0-nt-life-retires-both-drafts-chromium/running-manual-empty-skills-readonly.png",
+          "pngSHA256": "1ebe98862ad0054ef99512729396f79f90a402b3a45e30a69210c57cbbce2915",
+          "view": "artifacts/goal-4/ux26/views/final-17-running-manual-empty-skills-readonly.jpg",
+          "viewSHA256": "6a24b35d9b72f03d3819ac1be1961ae55d1f14ded7816428d8f5e9115947868d",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "encoding": "same-size lossy JPEG68; original PNG retained",
+          "actuallyViewedThisFinalRun": true,
+          "wholePngInherited": false,
+          "result": "draft/original/paused/error/readonly/new-life label is complete and consistent with current rail, actual costs and available action; nav unobstructed"
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 44,
+      "family": "ux26",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/ux26-learning-draft-contex-fc5a0-nt-life-retires-both-drafts-chromium/running-other-mode-selected-next-queue.png",
+      "pngSHA256": "25eb42381f225a5c786e74b4156602ddec523f56fb0714e26166b3e7bee81dcb",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-44-running-other-mode-selected-next-queue.jpg",
+      "viewSHA256": "6accc2b564bc6e8fbff620e16b6265451c80ca391bf73889a516dc7e7ff19f3c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 45,
+      "family": "newCombination",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/check-ux24-26-CHECK-UX2426-83b84-tion-after-next-draft-edits-chromium/failed-old-command-new-draft-complete.png",
+      "pngSHA256": "13aab7d13581f6e77bfec23e83d6c8bfa3b5f91bfc40e59954d2cb8da41555cc",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-45-failed-old-command-new-draft-complete.jpg",
+      "viewSHA256": "96b73dd6788a12d7436a1be3b864e0d47e0adc75748af8b6f56c8b9c56765e2a",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 46,
+      "family": "newCombination",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/check-ux24-26-CHECK-UX2426-83b84-tion-after-next-draft-edits-chromium/paid-paused-complete-history.png",
+      "pngSHA256": "1c9c7ddbe74c263df3ec67d7b9f7d1244f9bf625817534ccda2d68868c680764",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-46-paid-paused-complete-history.jpg",
+      "viewSHA256": "259b01a60a72b9dab4f270f5c037302fd75caffa8270468a33220277e75eb37e",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 47,
+      "family": "newCombination",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/check-ux24-26-CHECK-UX2426-97d50-ight-without-offline-replay-chromium/foreign-owner-current-manual-next-draft.png",
+      "pngSHA256": "0d609e292a64382227b07e3cc5b8bcbd0652c497b3acca73b7282357bae4e4ca",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-47-foreign-owner-current-manual-next-draft.jpg",
+      "viewSHA256": "f568d1e33c698282dcf286392d14f55e411672bbedcd12a4f86a833763855349",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 48,
+      "family": "newCombination",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/check-ux24-26-CHECK-UX2426-97d50-ight-without-offline-replay-chromium/foreign-saved-mastery-without-old-reward.png",
+      "pngSHA256": "4afda52ed6d593eec752e7a063a6684255d973ec8950fdab2fb4f779c9e27668",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-48-foreign-saved-mastery-without-old-reward.jpg",
+      "viewSHA256": "9a0fd3fda012f293eb5e5614fb6a289d1d8de5f3e5bbac1a68045f09b7ccddae",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 49,
+      "family": "newCombination",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/check-ux24-26-CHECK-UX2426-9803a-istinct-from-the-next-draft-chromium/normal-opening-complete-reader.png",
+      "pngSHA256": "918e5e2fc13a6df385d833c8a1befc824e6aa03d5e05cac3d66d8c7b0b415f25",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-49-normal-opening-complete-reader.jpg",
+      "viewSHA256": "ec786e8dba47da74d6a834982b3971a52c177648e7c131b5bcfdb674fe0b11f5",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": false,
+      "wholePngInherited": true,
+      "actuallyReviewedSource": {
+        "manifest": "artifacts/goal-4/check-ux24-26/early-visuals.json",
+        "record": {
+          "png": "artifacts/goal-4/check-ux24-26/early-results/check-ux24-26-CHECK-UX2426-9803a-istinct-from-the-next-draft-chromium/normal-opening-complete-reader.png",
+          "pngSHA256": "918e5e2fc13a6df385d833c8a1befc824e6aa03d5e05cac3d66d8c7b0b415f25",
+          "view": "artifacts/goal-4/check-ux24-26/views/early-04-normal-opening-complete-reader.jpg",
+          "viewSHA256": "ec786e8dba47da74d6a834982b3971a52c177648e7c131b5bcfdb674fe0b11f5",
+          "dimensions": [
+            1440,
+            900
+          ],
+          "encoding": "same-size JPEG68; original retained",
+          "actuallyViewed": true
+        }
+      },
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 50,
+      "family": "newCombination",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/check-ux24-26-CHECK-UX2426-9803a-istinct-from-the-next-draft-chromium/normal-original-one-scroll-before-save.png",
+      "pngSHA256": "60f343badd7b228ea501d742a569a4ee0ab2a10552e837efa81420f5308f1f05",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-50-normal-original-one-scroll-before-save.jpg",
+      "viewSHA256": "7b9a61b638a0b4e4d6f3e9e159000376aa88cb904a6d09546dac0c189fdadb17",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    },
+    {
+      "i": 51,
+      "family": "newCombination",
+      "png": "artifacts/goal-4/check-ux24-26/regular-results/check-ux24-26-CHECK-UX2426-9803a-istinct-from-the-next-draft-chromium/normal-real-mastered-record-no-auto-equip.png",
+      "pngSHA256": "58177952132605dfafb53c838332a50150ece4c75ecbe676c6229a8ea06775e0",
+      "view": "artifacts/goal-4/check-ux24-26/views/frame-51-normal-real-mastered-record-no-auto-equip.jpg",
+      "viewSHA256": "7338056f8e07b1d6b117724f9c8ac61f990a0045db7e20ed7fada3a7a8bbf839",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; PNG retained",
+      "actuallyViewedThisFinalRun": true,
+      "wholePngInherited": false,
+      "result": "Current formal goal reason/time/limited authorization, original versus draft/paused/error/mastery and readonly state readable in fixed1440x900; no new scoped visual blocker."
+    }
+  ],
+  "maxImagesPerCall": 2,
+  "originalPngAndSameSizeJpeg68Retained": true,
+  "coverage": "all selected UX24/25/26 target domains and new3 combinations",
+  "nativeWindowObservation": "artifacts/goal-4/check-ux24-26/preview-public-proof.json",
+  "compatibilityGapOpen": "COMPAT-OBS-1200-01; natural1200x683 observation only, not a compatibility test or fix",
+  "overallArtLongBalanceHumanAccepted": false
+}

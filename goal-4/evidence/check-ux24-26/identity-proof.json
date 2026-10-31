@@ -1,0 +1,63 @@
+{
+  "task": "CHECK-UX24-26",
+  "codeCommit": "040a9f1fe2d055f8fe86e312f0c8595c27575405",
+  "runtimeDigest": "7f4de1238fbeeed2c205b147e3a0adc0b02e5708c903615c2fa64ffe96827db0",
+  "all313GitTestedRebuiltFrozenExact": true,
+  "all5OwnedCodeFilesGitExact": true,
+  "all102PayloadsExact": true,
+  "payloadBytes": 10795461,
+  "helperSHA256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "frozen": "artifacts/goal-4/check-ux24-26/committed-frozen",
+  "noProductionOrRasterChanges": true,
+  "existingUx26ServerRuntimeByteIdentical": true,
+  "protected13ExactNotCommitted": true,
+  "notCleanFinalCandidate": true,
+  "tested": {
+    "path": "artifacts/goal-4/check-ux24-26/tested-build.json",
+    "bytes": 50583,
+    "sha256": "c3564fa36b4685924b7f8ee86e67db4645cac0476e51a6fe9254de2574f3c4f4"
+  },
+  "precommitRebuilt": {
+    "path": "artifacts/goal-4/check-ux24-26/precommit-rebuilt-build.json",
+    "bytes": 50583,
+    "sha256": "c3564fa36b4685924b7f8ee86e67db4645cac0476e51a6fe9254de2574f3c4f4"
+  },
+  "committed": {
+    "path": "artifacts/goal-4/check-ux24-26/committed-build.json",
+    "bytes": 50583,
+    "sha256": "5a35b6e0e836c6a5254ece972e846a3cb25a6ef87b92566680387d633bb92f2c"
+  },
+  "terminal1461": {
+    "path": "artifacts/goal-4/check-ux24-26/terminal-inputs-proof.json",
+    "bytes": 210,
+    "sha256": "cfa520d7d1ab2ded44d5866dbfd36fa75b83c93f928e77f0200fe44b5fceba2a"
+  },
+  "httpRestored": {
+    "path": "artifacts/goal-4/check-ux24-26/http-baseline-restored.json",
+    "bytes": 17829,
+    "sha256": "33860b0e1091c53542831c977305be3f14e107397487e1b7d40c2c3ee7a266f2"
+  },
+  "httpAfterCommit": {
+    "path": "artifacts/goal-4/check-ux24-26/http-after-commit.json",
+    "bytes": 23884,
+    "sha256": "45dc88a69a07e92c875f1824e5e7ab5912c4df7d0c2e99a827382084a4fa2e75"
+  },
+  "priorUx26ServerFilesByteIdenticalToCurrentCandidate": true,
+  "noSecondServerRestartOrUserReloadNeeded": true,
+  "oldListenerWasGenuinelyAbsent": true,
+  "oldOriginalTabWasAbsent": true,
+  "userPublicProof": {
+    "path": "artifacts/goal-4/check-ux24-26/preview-public-proof.json",
+    "bytes": 1220,
+    "sha256": "0d54844fe22fdd471d6d05cadb31c17c3fd04d6dc4334ad53bbbdc841530bf8d"
+  },
+  "closeoutPublic": {
+    "path": "artifacts/goal-4/check-ux24-26/user-closeout-public.json",
+    "bytes": 607,
+    "sha256": "3622d6c9510da5de2cc7144826e54e6c30aca193345228f509e75ae62f152bc0"
+  },
+  "noGameActionPrivateDbFullGameReadOrUserSaveTest": true,
+  "protected13PreservedNotCommitted": true,
+  "noPushMergePublicDeployPermissionsOrAutomationChanges": true,
+  "finalHeadAttestation": "artifacts/goal-4/check-ux24-26/final-head-identity.json"
+}
