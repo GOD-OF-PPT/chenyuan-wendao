@@ -2192,4 +2192,31 @@ class ART18MaterialInventoryTests(unittest.TestCase):
   self.restore();self.resign(n,self.original[n]+b'\nsetInterval(()=>0,1000);')
   with self.assertRaisesRegex(AssertionError,'ART18 presentation gained'):self.check()
 
+
+class UX27ContextOwnershipTests(unittest.TestCase):
+ def test_ux27_two_approved_views_reverse_to_full_unchanged_parent_sources(self):
+  from art26_inventory import normalize_ux27_equipment
+  from art33_inventory import normalize_ux27_app
+  for name,normalize in [('EquipmentPanel.vue',normalize_ux27_equipment),('App.vue',normalize_ux27_app)]:
+   actual=(ROOT/('web/src/'+name)).read_text();before=(ROOT/('goal-4/evidence/ux27/'+name+'.before.txt')).read_text()
+   self.assertEqual(normalize(actual),before)
+  self.assertLessEqual((ROOT/'web/src/App.vue').stat().st_size,157235+2400)
+  self.assertLessEqual((ROOT/'web/src/EquipmentPanel.vue').stat().st_size,5000)
+ def test_ux27_same_size_old_controller_and_callback_edits_are_not_authorized_by_display_evolution(self):
+  from art26_inventory import normalize_ux27_equipment
+  from art33_inventory import normalize_ux27_app
+  cases=[('App.vue',normalize_ux27_app,'navigationRevision++;','navigationRevision--;'),('App.vue',normalize_ux27_app,'@act="act"','@act="bad"'),('EquipmentPanel.vue',normalize_ux27_equipment,"if(p)section.value=","if(0)section.value="),('EquipmentPanel.vue',normalize_ux27_equipment,"emit('start',$event)","emit('start',null  )")]
+  for name,normalize,old,new in cases:
+   source=(ROOT/('web/src/'+name)).read_text();self.assertIn(old,source);self.assertEqual(len(old),len(new))
+   with self.subTest(path=name,mutation=old),self.assertRaisesRegex(AssertionError,'UX27'):normalize(source.replace(old,new,1))
+ def test_ux27_life_scope_report_and_consumer_cannot_be_detached(self):
+  from art26_inventory import normalize_ux27_equipment
+  from art33_inventory import normalize_ux27_app
+  cases=[('EquipmentPanel.vue',normalize_ux27_equipment,'[props.game.core.runId,section.value]','[props.game.core.runId]'),('App.vue',normalize_ux27_app,"equipmentReading.value.runId===game.value?.core.runId","true"),('App.vue',normalize_ux27_app,'@section="equipmentReading=$event"','@section="equipmentReading=undefined"')]
+  for name,normalize,old,new in cases:
+   source=(ROOT/('web/src/'+name)).read_text();self.assertIn(old,source)
+   with self.subTest(path=name,mutation=old),self.assertRaisesRegex(AssertionError,'UX27'):
+    normalized=normalize(source.replace(old,new,1));before=(ROOT/('goal-4/evidence/ux27/'+name+'.before.txt')).read_text()
+    assert hashlib.sha256(normalized.encode()).hexdigest()==hashlib.sha256(before.encode()).hexdigest(),'UX27 full source fallback proof'
+
 if __name__=='__main__':unittest.main()

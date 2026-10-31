@@ -10,7 +10,7 @@ import type {Action,Game} from '../../src/full/types.ts';
 import type {TrackingTarget} from '../../src/full/goals.ts';
 import type {NavigationRequest} from './navigation';
 const props=defineProps<{game:Game;enabled:boolean;busy:boolean;highlight:string;catalogue?:'skills'|'relics';running:boolean;activity:Activity|null;runtime:ReturnType<typeof useGame>['activityRuntime'];savedProduction:CraftPlan|ForgePlan|null;savedPreparationPlan:PreparationPlan|null;preparationSaved:boolean;consumption:(action:Action)=>string}>();
-const emit=defineEmits<{act:[Action];track:[TrackingTarget];navigate:[NavigationRequest];start:[CraftPlan|ForgePlan|PreparationPlan];move:[CraftPlan|ForgePlan];travelPlan:[PreparationPlan]}>();
+const emit=defineEmits<{act:[Action];track:[TrackingTarget];navigate:[NavigationRequest];start:[CraftPlan|ForgePlan|PreparationPlan];move:[CraftPlan|ForgePlan];travelPlan:[PreparationPlan];section:[{runId:string;section:string}]}>();
 const section=ref(props.catalogue==='relics'?'relics':props.game.school?'skills':'school'),learningFocus=ref(''),relicInspection=ref<{runId:string;id:string}|null>(null);
 const savedLearning=computed(()=>props.savedPreparationPlan?.kind==='learn'||props.savedPreparationPlan?.kind==='study'?props.savedPreparationPlan:null);
 function inspectRelic(){section.value='relics';const id=props.game.loadout.relic;relicInspection.value=id?{runId:props.game.core.runId,id}:null;}
@@ -19,6 +19,7 @@ watch(()=>props.catalogue,value=>{section.value=value==='relics'?'relics':props.
 watch(()=>props.game.core.runId,()=>{section.value=props.catalogue==='relics'?'relics':props.game.school?'skills':'school';learningFocus.value='';relicInspection.value=null;});
 watch(()=>props.highlight,id=>{learningFocus.value='';relicInspection.value=null;if(/^(learn-|equip-)/.test(id)&&Object.hasOwn(C.skills,id.replace(/^(learn-|equip-)/,'')))section.value='skills';if(/^(forge-|equip-relic-)/.test(id)&&Object.hasOwn(C.relics,id.replace(/^(forge-|equip-relic-)/,'')))section.value='relics';if(id==='study-manual')section.value='manual';},{immediate:true});
 watch(savedLearning,p=>{if(p)section.value=p.kind==='study'?'manual':'skills';});
+watch(()=>[props.game.core.runId,section.value],()=>emit('section',{runId:props.game.core.runId,section:section.value}),{immediate:true});
 </script>
 <template>
  <section class="paper equipment-panel play-catalogue equipment-catalogue equipment-objects art10-equipment" :class="{'catalogue-gallery':section==='school'||section==='summary'}" :data-section="section" data-testid="equipment-panel" tabindex="-1" aria-label="功法与法宝">

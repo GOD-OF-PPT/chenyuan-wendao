@@ -29,8 +29,8 @@
   "parents": [
     {
       "path": "web/src/App.vue",
-      "bytes": 158735,
-      "sha256": "a0fe13157651faee105643b121108a102566a6b5aad50b4c37789e1ecc360fb6"
+      "bytes": 159429,
+      "sha256": "ace7316243691e708ee80dac26aca866a9c28b7dbd8633cde11bf584a83ece71"
     },
     {
       "path": "web/src/MilestoneGate.vue",

@@ -22,8 +22,8 @@
     },
     {
       "path": "web/src/EquipmentPanel.vue",
-      "bytes": 4464,
-      "sha256": "31e8c9c3562fd53c1669601d6be90ab6fc3ace637513233fa75b5a92be06fc91"
+      "bytes": 4643,
+      "sha256": "d831e2b08bd70f8ed9fd0480b14be62c0b66e04b6e446916f07dc82d838abedd"
     },
     {
       "path": "web/src/ProductionPlanner.vue",

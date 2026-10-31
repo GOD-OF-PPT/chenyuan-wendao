@@ -11,10 +11,21 @@ BUDGETS={'nativeBytes': 12000, 'parentDeltaBytes': 2400, 'oldCultivationBytes': 
 PATCHES=[{'path': 'art/redesign/art33/parent-view-patch.json', 'bytes': 4237, 'sha256': 'ec861406332cc2cc74336c2f7e36b6446168313d48093885a47fa2a3c8de45f5'}, {'path': 'art/redesign/art33/guide-view-patch.json', 'bytes': 702, 'sha256': 'b18b48a7571977fff68911881551903d477c6b03dc8b1968925e978b23dcf8b7'}]
 HASHES={'shen-offering': {'source': 'e0b8e7097947178f25249f34c410a5df46bff33f2ee98590d337a6b97376018e', 'runtime': '31c2b4381cefd72f0de80baa5b3c30665039814f79660f86dec1a4b59bf46c91'}, 'medicine-case': {'source': '60c0683acf72c52e2c91b6c0ff417514a1b9347ef0b85d076a00418625728cde', 'runtime': 'fea370cbf9e87c716dc9a248fab9ba5aeb80e0a09de13fb46e066a1a5503b40f'}}
 
+UX27_APP_BASELINE_SHA256='a0fe13157651faee105643b121108a102566a6b5aad50b4c37789e1ecc360fb6'
+UX27_APP_TRANSFORMS=[['const receiptAll=ref(false);', "const equipmentReading=shallowRef({runId:'',section:''});\nconst equipmentSection=computed(()=>equipmentReading.value.runId===game.value?.core.runId?equipmentReading.value.section:'');\nconst navigationView=computed(()=>{const view=detailViews.has(hubView.value)?detailParent.value?.view??hubView.value:hubView.value;return ['skills','relics'].includes(view)?equipmentSection.value==='relics'?'relics':'skills':view;});\nconst receiptAll=ref(false);"], ['const hubTitle=computed(()=>({', "const hubTitle=computed(()=>['skills','relics'].includes(hubView.value)&&equipmentSection.value?({school:'修法 · 剑符择道',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',manual:'剑简 · 参悟与研习',summary:'配装 · 三法一器'} as Record<string,string>)[equipmentSection.value]:({"], [' :catalogue="hubView===\'relics\'?\'relics\':\'skills\'"', ' @section="equipmentReading=$event" :catalogue="hubView===\'relics\'?\'relics\':\'skills\'"'], [':view="detailViews.has(hubView)&&detailParent?detailParent.view:hubView"', ':view="navigationView"']]
+def normalize_ux27_app(text):
+ if UX27_APP_TRANSFORMS[0][1]not in text:return text
+ for before,after in reversed(UX27_APP_TRANSFORMS):
+  assert text.count(after)==1,'UX27 exact readonly outer context'
+  text=text.replace(after,before,1)
+ assert hashlib.sha256(text.encode()).hexdigest()==UX27_APP_BASELINE_SHA256,'UX27 exact readonly outer context original full source'
+ return text
+
 # UX25: three exact display-only transforms, then the original ART33 full-source proof.
 UX25_APP_BASELINE_SHA256='fff09574bebc2ce0ca42445d57f2f102a01744bedfe01fbec42de45f22931f21'
 UX25_APP_TRANSFORMS=[('{isAdventurePlan, singleBattlePlan, type AdventurePlan}', '{ADVENTURE_CYCLE_MS,isAdventurePlan, singleBattlePlan, type AdventurePlan}'), ("{{cost({type:'TRAVEL',location:'cave'})}} {{why({type:'TRAVEL',location:'cave'})}}", "{{cost({type:'TRAVEL',location:'cave'})}} · {{ADVENTURE_CYCLE_MS.travel/1000}} 秒行旅 {{why({type:'TRAVEL',location:'cave'})}}")]
 def normalize_ux25_app(text):
+ text=normalize_ux27_app(text)
  if UX25_APP_TRANSFORMS[0][1]not in text:return text
  for before,after in reversed(UX25_APP_TRANSFORMS):
   assert text.count(after)==1,'UX25 unique approved timing display'

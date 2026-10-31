@@ -17,7 +17,18 @@ PARENT_DECL=",relicInspection=ref<{runId:string;id:string}|null>(null)"
 PARENT_FUNC="function inspectRelic(){section.value='relics';const id=props.game.loadout.relic;relicInspection.value=id?{runId:props.game.core.runId,id}:null;}\n"
 PRODUCER_PROP='relicInspection?:{runId:string;id:string}|null;'
 PRODUCER_WATCH="watch(()=>props.relicInspection,r=>{\n if(props.mode!=='forge'||r?.runId!==props.game.core.runId||!Object.hasOwn(C.relics,r.id))return;\n future.value=true;page.value=Math.max(0,Math.floor(rows.value.findIndex(x=>x.id===r.id)/4));select(r.id);\n},{immediate:true});\n"
+UX27_EQUIPMENT_BASELINE_SHA256='31e8c9c3562fd53c1669601d6be90ab6fc3ace637513233fa75b5a92be06fc91'
+UX27_EQUIPMENT_TRANSFORMS=[['travelPlan:[PreparationPlan]}', 'travelPlan:[PreparationPlan];section:[{runId:string;section:string}]}'], ['</script>', "watch(()=>[props.game.core.runId,section.value],()=>emit('section',{runId:props.game.core.runId,section:section.value}),{immediate:true});\n</script>"]]
+def normalize_ux27_equipment(text):
+ if UX27_EQUIPMENT_TRANSFORMS[0][1]not in text:return text
+ for before,after in reversed(UX27_EQUIPMENT_TRANSFORMS):
+  assert text.count(after)==1,'UX27 exact readonly category report'
+  text=text.replace(after,before,1)
+ assert hashlib.sha256(text.encode()).hexdigest()==UX27_EQUIPMENT_BASELINE_SHA256,'UX27 exact readonly category report original full source'
+ return text
+
 def parent_before(s):
+ s=normalize_ux27_equipment(s)
  assert PARENT_DECL in s and PARENT_FUNC in s and s.count('relicInspection.value=null;')==3,'ART26 parent run/navigation scope'
  assert 'relicInspection=null' in s and ':relic-inspection="relicInspection"'in s and "$event==='relic'?inspectRelic():"in s,'ART26 real parent view callback'
  return s.replace(PARENT_DECL,'').replace(PARENT_FUNC,'').replace("learningFocus.value='';relicInspection.value=null;","learningFocus.value='';").replace("section=id;learningFocus='';relicInspection=null","section=id;learningFocus=''").replace("$event==='relic'?inspectRelic():","$event==='relic'?section='relics':").replace(' :relic-inspection="relicInspection"','')

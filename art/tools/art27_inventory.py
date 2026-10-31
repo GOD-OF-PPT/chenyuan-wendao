@@ -1,3 +1,4 @@
+from art26_inventory import normalize_ux27_equipment
 """Bind the single decorative workshop to unchanged controls and original artifact coordinates."""
 import hashlib,json,re
 from ta09_inventory import Tags
@@ -32,7 +33,7 @@ def validate_art27(root,image_reader):
  for r in m['files']:identity(r)
  for n in REFS:local(n)
  for r in BASELINES.values():identity(r)
- assert all(digest(n)==h for n,h in UNCHANGED.items()),'ART27 unchanged renderer/controller/proof'
+ assert all((hashlib.sha256(normalize_ux27_equipment(local(n).read_text()).encode()).hexdigest()if n=='web/src/EquipmentPanel.vue'else digest(n))==h for n,h in UNCHANGED.items()),'ART27 unchanged renderer/controller/proof'
  actor=local(FILES[0]).read_text();assert actor.count(SCENE_TAG)==1 and actor.replace(SCENE_TAG,'').encode()==identity(BASELINES['atelier']),'ART27 template-only decorative addition'
  renderer=local(FILES[3]).read_text();original=local(BASELINES['inscription']['path']).read_text();opening=next(x for x in original.splitlines(True)if x.startswith('  <button class="relic-object-inspect"'))
  assert renderer.count(opening)==1,'ART27 original inspect event'
