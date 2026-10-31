@@ -1,0 +1,87 @@
+{
+  "format": "chenyuan-study-rest-art35",
+  "version": 1,
+  "userAcceptance": false,
+  "budgets": {
+    "newNativeBytes": 7200,
+    "hookBytes": 2400,
+    "cssBytes": 4800,
+    "jadeDeltaBytes": 800,
+    "recoveryDeltaBytes": 400,
+    "newRasterAssets": 8,
+    "maxCoverBytes": 100000,
+    "maxLeafBytes": 40000,
+    "maxRuntimeBytes": 740000,
+    "coverWidth": 512,
+    "coverHeight": 512,
+    "leafWidth": 128,
+    "leafHeight": 512,
+    "oldTA09Cap": 30000,
+    "oldSupplyCap": 40000
+  },
+  "files": [
+    {
+      "path": "web/src/jade-paint.ts",
+      "bytes": 1019,
+      "sha256": "d9eeb4ac87f3b2ef12e3c1d7c966ecb2af06bdf34b231eceee37432bb08ff1da"
+    },
+    {
+      "path": "web/src/art35-study-rest.css",
+      "bytes": 1275,
+      "sha256": "a2378b670f654734f1ff5004474e91a91ed22856f35a786acfc8117e48a0426d"
+    }
+  ],
+  "parents": [
+    {
+      "path": "web/src/JadeEngraving.vue",
+      "bytes": 6933,
+      "sha256": "f08b03fa397ec566a6ff51ebeb181c7a93e8e6e7974f0c7c6397bd36e7d6814b"
+    },
+    {
+      "path": "web/src/RecoveryRitual.vue",
+      "bytes": 9452,
+      "sha256": "59f0187aa56a6ef240bc231df72a8851482c9f05c9c9d823618cbd34b1e96020"
+    }
+  ],
+  "baselines": [
+    {
+      "path": "goal-4/evidence/art35/JadeEngraving.vue.before.txt",
+      "bytes": 6403,
+      "sha256": "1c1b94c82d145c504fda7c8de43dffacedcdf1db87c9f9579fcefac3bec15c1a"
+    },
+    {
+      "path": "goal-4/evidence/art35/RecoveryRitual.vue.before.txt",
+      "bytes": 9258,
+      "sha256": "9764760b03850ce35a4bab251228ea29983b1dba3615fa31bc4d0ad8e3ef0c88"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0079-study-rest-art35-contract.md",
+    "goal-4/amendments/2026-10-31-goal-art35.md",
+    "goal-4/research/art35-sources.json",
+    "goal-4/evidence/art35/JadeEngraving.vue.before.txt",
+    "goal-4/evidence/art35/RecoveryRitual.vue.before.txt"
+  ],
+  "unchanged": {
+    "web/src/JadeStudyScene.vue": "434b16c05e5e6870cb67dc1f6611a81637864b0e20463c8bfd93e4c395d675ed",
+    "web/src/LearningPlanner.vue": "916581594274b568bf22fea242edacf375c7cf53a96ec4ca3766adad58db3d1b",
+    "web/src/RecoveryPlanner.vue": "478733b74bf51b209901a7e7328ea92269a77a30ab41c56c400ddd8b40ef78a9",
+    "web/src/equipment-effects.ts": "0946c3b6b76e5ea39ebd80571175e2835ce49abe94fe6499f480b1635a934888",
+    "web/src/supply-effects.ts": "6b11c6aab3e634831854d0c1723b76916bbb26fdbccf640e4adc6e043ee72a19",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+  },
+  "reusedActor": {
+    "path": "web/public/art/v2/characters/player-seated-cold.webp",
+    "bytes": 65978,
+    "sha256": "66ff79c01b418faa5c0abb0b3490e54b9d30a8568abb796d410a9559d0a36ace"
+  },
+  "facts": {
+    "path": "art/production/art35/export-facts.json",
+    "bytes": 23433,
+    "sha256": "e30fa1b35c4ed05c817cf18cef583abee5fcca45d91637f5b48b57b9ff5fa5e4"
+  }
+}

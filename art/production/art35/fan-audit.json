@@ -1,0 +1,25 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "tool": "image_gen.imagegen",
+  "model": null,
+  "requestId": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-a6acf01d-a1ec-44f9-97a0-b755cb0f3187.png",
+  "selectedCopy": {
+    "path": "art/production/art35/fan-source.png",
+    "bytes": 1820304,
+    "sha256": "4f78ec19a23db1a230f4140f3d0eb5e0b91b878a9d0538ecb1f160431670cb62"
+  },
+  "prompt": {
+    "path": "art/production/art35/fan-prompt.json",
+    "bytes": 1799,
+    "sha256": "9f380cdaa1bc57c78d489182419d801ab7d9d3b6d4a3311837076d906b385eec"
+  },
+  "reference": {
+    "path": "web/public/art/v2/characters/player-seated-cold.webp",
+    "bytes": 65978,
+    "sha256": "66ff79c01b418faa5c0abb0b3490e54b9d30a8568abb796d410a9559d0a36ace"
+  },
+  "requestedTransparent": true,
+  "originalsKept": true,
+  "userAcceptance": false
+}

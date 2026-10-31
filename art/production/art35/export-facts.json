@@ -1,0 +1,935 @@
+{
+  "format": "chenyuan-study-rest-art35-export",
+  "version": 1,
+  "producer": {
+    "path": "art/tools/export_art35_props.py",
+    "bytes": 4207,
+    "sha256": "bf1976b64279443dc76fd86b78b20286fb0d8f7368bdd880d37a91d520776d4e"
+  },
+  "helper": {
+    "path": "art/tools/export_art10_blanks.py",
+    "bytes": 8264,
+    "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+  },
+  "encoding": [
+    "cwebp",
+    "-q",
+    "82",
+    "-m",
+    "6",
+    "-alpha_q",
+    "100",
+    "-metadata",
+    "none"
+  ],
+  "decoder": "Pillow",
+  "decoderVersion": "12.3.0",
+  "encoderVersion": "1.2.4",
+  "assets": [
+    {
+      "name": "heart",
+      "source": {
+        "path": "art/production/art35/heart-source-v2.png",
+        "bytes": 2530892,
+        "sha256": "e8806142c853da983f27ebbdfde4ccba28a94812faac3d889097a88b804a1e81",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 610788,
+          "solidPixels": 909383,
+          "intermediatePixels": 52345,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          19,
+          1224,
+          1236
+        ],
+        "alphaBBox16": [
+          36,
+          26,
+          1222,
+          1225
+        ],
+        "rgbaSHA256": "9e0c35c922d20acf93cbc0b20fbc75276261fbf722b0712e22a22dcb18cb1078"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/study/heart-v1.webp",
+        "bytes": 70656,
+        "sha256": "8ffb2310476341c75d598e97dee3084da8a076976922e002297d6baaae17e7bb",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 109111,
+          "solidPixels": 144278,
+          "intermediatePixels": 8755,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          19,
+          16,
+          493,
+          496
+        ],
+        "alphaBBox16": [
+          20,
+          17,
+          492,
+          495
+        ],
+        "rgbaSHA256": "0d53d66961db6853c978aba7fc380f00e702b89d5137b8897041f96ba0657b1e"
+      },
+      "audit": {
+        "path": "art/production/art35/heart-clean-audit.json",
+        "bytes": 1110,
+        "sha256": "e5726a84233454368b61d84d5e934973cdf048ce43159ae4d59944c45ec0dc7a"
+      },
+      "prompt": {
+        "path": "art/production/art35/heart-clean-prompt.json",
+        "bytes": 1249,
+        "sha256": "193f8dea1aff5e68de409453ee29f112c5700a68ec7ee6b4da57c714e93c8884"
+      },
+      "transform": {
+        "cropOuterAlphaAtMost": 1,
+        "cropBox": [
+          34,
+          24,
+          1224,
+          1228
+        ],
+        "removedOuterMaxAlpha": 1,
+        "uniformScale": 0.39867109634551495,
+        "resized": [
+          474,
+          480
+        ],
+        "offset": [
+          19,
+          16
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "semanticEdit": false
+      },
+      "runtimeEdgeMax": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "8ffb2310476341c75d598e97dee3084da8a076976922e002297d6baaae17e7bb",
+        "secondSHA256": "8ffb2310476341c75d598e97dee3084da8a076976922e002297d6baaae17e7bb",
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "name": "blade",
+      "source": {
+        "path": "art/production/art35/blade-source-v2.png",
+        "bytes": 1320665,
+        "sha256": "d178c4cf3f352a99740158cc60058bfc91f19473842b3f874b75ea82222abfa1",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1114048,
+          "solidPixels": 384807,
+          "intermediatePixels": 73661,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          53,
+          33,
+          1226,
+          1223
+        ],
+        "alphaBBox16": [
+          130,
+          35,
+          1223,
+          1214
+        ],
+        "rgbaSHA256": "8dcef777274dbf492fe3cd4b4413de5f8403c9e3b33b2e5495b6d48fd9a11efe"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/study/blade-v1.webp",
+        "bytes": 55150,
+        "sha256": "f5bab2000a85d7ce3644bd50f4689a4a9c71388e7c39ba4f19aa3addcf456432",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 187047,
+          "solidPixels": 62439,
+          "intermediatePixels": 12658,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          34,
+          16,
+          478,
+          496
+        ],
+        "alphaBBox16": [
+          35,
+          17,
+          477,
+          494
+        ],
+        "rgbaSHA256": "30dfa7a642960d4989d462dc42c79031e06c3fbf83a37590afe019960178d6da"
+      },
+      "audit": {
+        "path": "art/production/art35/blade-clean-audit.json",
+        "bytes": 1110,
+        "sha256": "a1a4f0c8cbe5069746f64b7917a6247530ca5532edf802e6ff6cca780037c286"
+      },
+      "prompt": {
+        "path": "art/production/art35/blade-clean-prompt.json",
+        "bytes": 1249,
+        "sha256": "5b011b461e8aa702a35480e4e3ba11a59a81c0f7c87ae264e5cba6f936b6eecd"
+      },
+      "transform": {
+        "cropOuterAlphaAtMost": 1,
+        "cropBox": [
+          128,
+          33,
+          1225,
+          1220
+        ],
+        "removedOuterMaxAlpha": 1,
+        "uniformScale": 0.4043807919123842,
+        "resized": [
+          444,
+          480
+        ],
+        "offset": [
+          34,
+          16
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "semanticEdit": false
+      },
+      "runtimeEdgeMax": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "f5bab2000a85d7ce3644bd50f4689a4a9c71388e7c39ba4f19aa3addcf456432",
+        "secondSHA256": "f5bab2000a85d7ce3644bd50f4689a4a9c71388e7c39ba4f19aa3addcf456432",
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "name": "scroll",
+      "source": {
+        "path": "art/production/art35/scroll-source.png",
+        "bytes": 1366231,
+        "sha256": "4a86f1e132362f43e549a0c3550f9a8feeec4d7513fb5e6281c33f0210e29cdd",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1068646,
+          "solidPixels": 481964,
+          "intermediatePixels": 21906,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          33,
+          1236,
+          1254
+        ],
+        "alphaBBox16": [
+          48,
+          309,
+          1219,
+          936
+        ],
+        "rgbaSHA256": "652ab20c0b9e9b2f84801064b3b4c3309e4ebbfb0742132a28f2bbb6432c40e0"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/study/scroll-v1.webp",
+        "bytes": 36206,
+        "sha256": "1cb635a6b7b6adf76bf6242087b56fb1b12b1b0c185a079f04e252aa05bce3cb",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 178086,
+          "solidPixels": 80187,
+          "intermediatePixels": 3871,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          16,
+          127,
+          496,
+          385
+        ],
+        "alphaBBox16": [
+          16,
+          128,
+          495,
+          384
+        ],
+        "rgbaSHA256": "dd931475c3899227b6f4876f52babf9a2993ef702c138e71209c0d03a0f46a88"
+      },
+      "audit": {
+        "path": "art/production/art35/scroll-audit.json",
+        "bytes": 938,
+        "sha256": "604376aff506d435e393280d254c2d17264ed2ac35ab1cc238eaf7af3e15deb8"
+      },
+      "prompt": {
+        "path": "art/production/art35/scroll-prompt.json",
+        "bytes": 1793,
+        "sha256": "d85cbd4102655711c02711ea9d2e4e75a5c94bd784eb16d74fba0477473d8878"
+      },
+      "transform": {
+        "cropOuterAlphaAtMost": 1,
+        "cropBox": [
+          46,
+          307,
+          1221,
+          938
+        ],
+        "removedOuterMaxAlpha": 1,
+        "uniformScale": 0.4085106382978723,
+        "resized": [
+          480,
+          258
+        ],
+        "offset": [
+          16,
+          127
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "semanticEdit": false
+      },
+      "runtimeEdgeMax": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "1cb635a6b7b6adf76bf6242087b56fb1b12b1b0c185a079f04e252aa05bce3cb",
+        "secondSHA256": "1cb635a6b7b6adf76bf6242087b56fb1b12b1b0c185a079f04e252aa05bce3cb",
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "name": "knot",
+      "source": {
+        "path": "art/production/art35/knot-source.png",
+        "bytes": 2795515,
+        "sha256": "a143a3a8ebfb11238897ce3dbd97a0ea91cece9de122260bb5b3571a7bb09e51",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 505435,
+          "solidPixels": 1037364,
+          "intermediatePixels": 29717,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          0,
+          1254,
+          1254
+        ],
+        "alphaBBox16": [
+          42,
+          86,
+          1224,
+          1152
+        ],
+        "rgbaSHA256": "afc0d7f63095ed9761e7eaa49226502fa538bb7c0d25f08fb0c1b94966de74db"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/study/knot-v1.webp",
+        "bytes": 75746,
+        "sha256": "1b6ae27e64b564e7d3177689adddc466546b3d902cc538b0c419176baad2b096",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 88794,
+          "solidPixels": 168382,
+          "intermediatePixels": 4968,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          16,
+          40,
+          496,
+          472
+        ],
+        "alphaBBox16": [
+          18,
+          41,
+          495,
+          471
+        ],
+        "rgbaSHA256": "b6940fa8f1f25a8e41142c48f5eb0a2f519e03991c68cb3a3bbdd9873385b080"
+      },
+      "audit": {
+        "path": "art/production/art35/knot-audit.json",
+        "bytes": 934,
+        "sha256": "495bcc20c1b6c763c37880df23f86d1fd27727085c8cd85794343966b9e658ba"
+      },
+      "prompt": {
+        "path": "art/production/art35/knot-prompt.json",
+        "bytes": 1780,
+        "sha256": "b06ea331d34281a6b56e78ef5c66f1addfa58350bd9ccc8e29e6434d41b809ae"
+      },
+      "transform": {
+        "cropOuterAlphaAtMost": 1,
+        "cropBox": [
+          35,
+          84,
+          1226,
+          1155
+        ],
+        "removedOuterMaxAlpha": 1,
+        "uniformScale": 0.40302267002518893,
+        "resized": [
+          480,
+          432
+        ],
+        "offset": [
+          16,
+          40
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "semanticEdit": false
+      },
+      "runtimeEdgeMax": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "1b6ae27e64b564e7d3177689adddc466546b3d902cc538b0c419176baad2b096",
+        "secondSHA256": "1b6ae27e64b564e7d3177689adddc466546b3d902cc538b0c419176baad2b096",
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "name": "seal",
+      "source": {
+        "path": "art/production/art35/seal-source.png",
+        "bytes": 849275,
+        "sha256": "3e76960d9b602166238f24a94e2540476a9fdd4fa1b8e36699f1969f459c53b1",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1258904,
+          "solidPixels": 292536,
+          "intermediatePixels": 21076,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          37,
+          1202,
+          1254
+        ],
+        "alphaBBox16": [
+          481,
+          46,
+          775,
+          1195
+        ],
+        "rgbaSHA256": "79c5dc40b971140772950d157b0c0560758e1e5d885aa5b0801691e4d3959183"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/study/seal-v1.webp",
+        "bytes": 23748,
+        "sha256": "21962bbfcf8b5a6659cf67026e9234b7eb323e6076a71ab4afad24c00953b389",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 208200,
+          "solidPixels": 50498,
+          "intermediatePixels": 3446,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          193,
+          16,
+          318,
+          496
+        ],
+        "alphaBBox16": [
+          194,
+          17,
+          317,
+          495
+        ],
+        "rgbaSHA256": "c95764a8fee738a78097eb772ebc67368f139edae9fc32f7876cb947ec87daec"
+      },
+      "audit": {
+        "path": "art/production/art35/seal-audit.json",
+        "bytes": 933,
+        "sha256": "1c2d8607916986e61041410ab7070da5ca83241d410b89fc0853860b55f7b416"
+      },
+      "prompt": {
+        "path": "art/production/art35/seal-prompt.json",
+        "bytes": 1794,
+        "sha256": "0793e38fe78103282e06b6018050ea778d451c3874d186b861ff6dafc50f4180"
+      },
+      "transform": {
+        "cropOuterAlphaAtMost": 1,
+        "cropBox": [
+          478,
+          44,
+          778,
+          1198
+        ],
+        "removedOuterMaxAlpha": 1,
+        "uniformScale": 0.41594454072790293,
+        "resized": [
+          125,
+          480
+        ],
+        "offset": [
+          193,
+          16
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "semanticEdit": false
+      },
+      "runtimeEdgeMax": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "21962bbfcf8b5a6659cf67026e9234b7eb323e6076a71ab4afad24c00953b389",
+        "secondSHA256": "21962bbfcf8b5a6659cf67026e9234b7eb323e6076a71ab4afad24c00953b389",
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "name": "fan",
+      "source": {
+        "path": "art/production/art35/fan-source.png",
+        "bytes": 1820304,
+        "sha256": "4f78ec19a23db1a230f4140f3d0eb5e0b91b878a9d0538ecb1f160431670cb62",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 907467,
+          "solidPixels": 641903,
+          "intermediatePixels": 23146,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          0,
+          1240,
+          1254
+        ],
+        "alphaBBox16": [
+          23,
+          223,
+          1233,
+          1019
+        ],
+        "rgbaSHA256": "eb61d7f06cf8ca6086fd4c7a46376a1dad57b0ff26a72ee7b549cf5e1a77946c"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/study/fan-v1.webp",
+        "bytes": 45384,
+        "sha256": "1d391be6c90e887592b30c914817c952eb27f1ef29a8633c389658c1da8fc273",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 158959,
+          "solidPixels": 99464,
+          "intermediatePixels": 3721,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          16,
+          98,
+          496,
+          414
+        ],
+        "alphaBBox16": [
+          17,
+          99,
+          495,
+          413
+        ],
+        "rgbaSHA256": "4083828809624880d1efaec427970bb496531421d68820f01b3e502603d829a1"
+      },
+      "audit": {
+        "path": "art/production/art35/fan-audit.json",
+        "bytes": 932,
+        "sha256": "e6e8d2de3ed49ccc75dc5337481b64181d7034b5a1bc03c91ebbd3034fe4df90"
+      },
+      "prompt": {
+        "path": "art/production/art35/fan-prompt.json",
+        "bytes": 1799,
+        "sha256": "9f380cdaa1bc57c78d489182419d801ab7d9d3b6d4a3311837076d906b385eec"
+      },
+      "transform": {
+        "cropOuterAlphaAtMost": 1,
+        "cropBox": [
+          19,
+          220,
+          1236,
+          1022
+        ],
+        "removedOuterMaxAlpha": 1,
+        "uniformScale": 0.3944124897288414,
+        "resized": [
+          480,
+          316
+        ],
+        "offset": [
+          16,
+          98
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "semanticEdit": false
+      },
+      "runtimeEdgeMax": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "1d391be6c90e887592b30c914817c952eb27f1ef29a8633c389658c1da8fc273",
+        "secondSHA256": "1d391be6c90e887592b30c914817c952eb27f1ef29a8633c389658c1da8fc273",
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "name": "manual",
+      "source": {
+        "path": "art/production/art35/manual-source.png",
+        "bytes": 2058904,
+        "sha256": "3bab008f65388bf1fa35f3bfd49dd0a64bb1d8e1e9974b3d5b44b43a96478fdd",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 847848,
+          "solidPixels": 700159,
+          "intermediatePixels": 24509,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          17,
+          1238,
+          1254
+        ],
+        "alphaBBox16": [
+          259,
+          46,
+          1081,
+          1212
+        ],
+        "rgbaSHA256": "56ae01ca5e00153726350431887dded05e7c5ef0f660d00e92b9ed9b6134f7fa"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/study/manual-v1.webp",
+        "bytes": 53988,
+        "sha256": "d73b465c36b644313855e28b67e341e815aa8b0aec94c0d34648be0720f1d126",
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 140346,
+          "solidPixels": 117467,
+          "intermediatePixels": 4331,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          86,
+          16,
+          425,
+          496
+        ],
+        "alphaBBox16": [
+          87,
+          17,
+          424,
+          496
+        ],
+        "rgbaSHA256": "cf5b29d56f8c238f94097713121f74cfeb5e9cdb90216ff9ce7ea9592bd788ae"
+      },
+      "audit": {
+        "path": "art/production/art35/manual-audit.json",
+        "bytes": 938,
+        "sha256": "6d19127df03ece4c7bdff1fa14ca3fa5080329504ce9d8d36d9953a51a3046c4"
+      },
+      "prompt": {
+        "path": "art/production/art35/manual-prompt.json",
+        "bytes": 1855,
+        "sha256": "e4842182450d6edf76060ba119a4a64d247dcc741e610646475773c6d47a97d9"
+      },
+      "transform": {
+        "cropOuterAlphaAtMost": 1,
+        "cropBox": [
+          257,
+          43,
+          1083,
+          1214
+        ],
+        "removedOuterMaxAlpha": 1,
+        "uniformScale": 0.4099060631938514,
+        "resized": [
+          339,
+          480
+        ],
+        "offset": [
+          86,
+          16
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "semanticEdit": false
+      },
+      "runtimeEdgeMax": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "d73b465c36b644313855e28b67e341e815aa8b0aec94c0d34648be0720f1d126",
+        "secondSHA256": "d73b465c36b644313855e28b67e341e815aa8b0aec94c0d34648be0720f1d126",
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "name": "leaf",
+      "source": {
+        "path": "art/production/art35/leaf-source.png",
+        "bytes": 830043,
+        "sha256": "ac9cdb030f0c48537691353c84012bfe47f4d17d9b6d12504f00fdd92ed3f8e8",
+        "dimensions": {
+          "width": 1254,
+          "height": 1254
+        },
+        "format": "png",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 1246115,
+          "solidPixels": 302994,
+          "intermediatePixels": 23407,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          0,
+          0,
+          1250,
+          1254
+        ],
+        "alphaBBox16": [
+          476,
+          12,
+          778,
+          1234
+        ],
+        "rgbaSHA256": "8574d35737132ce1b74db05cfe72b22dff1815e73ba97ef729e20abd77ddadb3"
+      },
+      "runtime": {
+        "path": "web/public/art/v2/study/leaf-v1.webp",
+        "bytes": 23768,
+        "sha256": "f090d0bcc40acafc90828e883ba054fcffa8a58d8f26a6c475d125f2f0178bfc",
+        "dimensions": {
+          "width": 128,
+          "height": 512
+        },
+        "format": "webp",
+        "mode": "RGBA",
+        "alpha": true,
+        "alphaProof": {
+          "transparentPixels": 15974,
+          "solidPixels": 46036,
+          "intermediatePixels": 3526,
+          "min": 0,
+          "max": 255
+        },
+        "alphaBBox1": [
+          4,
+          14,
+          124,
+          498
+        ],
+        "alphaBBox16": [
+          5,
+          18,
+          123,
+          497
+        ],
+        "rgbaSHA256": "d0248e4d1c98f8fbf3627379800e79af810d52d05a7cfe8234b154f7668ff6d7"
+      },
+      "audit": {
+        "path": "art/production/art35/leaf-audit.json",
+        "bytes": 933,
+        "sha256": "92acfff55f971edefe9135c8ce6f9b977b3f8ed3c7a876bee03e54ce49e1ee56"
+      },
+      "prompt": {
+        "path": "art/production/art35/leaf-prompt.json",
+        "bytes": 2012,
+        "sha256": "c03a4c6c36df5cb3e6a73439abd8903e15df228c988b6f6248d944911560ae51"
+      },
+      "transform": {
+        "cropOuterAlphaAtMost": 1,
+        "cropBox": [
+          474,
+          0,
+          781,
+          1237
+        ],
+        "removedOuterMaxAlpha": 1,
+        "uniformScale": 0.39087947882736157,
+        "resized": [
+          120,
+          484
+        ],
+        "offset": [
+          4,
+          14
+        ],
+        "canvas": [
+          128,
+          512
+        ],
+        "semanticEdit": false
+      },
+      "runtimeEdgeMax": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "doubleExport": {
+        "bytesEqual": true,
+        "firstSHA256": "f090d0bcc40acafc90828e883ba054fcffa8a58d8f26a6c475d125f2f0178bfc",
+        "secondSHA256": "f090d0bcc40acafc90828e883ba054fcffa8a58d8f26a6c475d125f2f0178bfc",
+        "sourceUnchanged": true
+      }
+    }
+  ],
+  "userAcceptance": false
+}

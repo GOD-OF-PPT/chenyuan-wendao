@@ -10,8 +10,8 @@
   "files": [
     {
       "path": "web/src/JadeEngraving.vue",
-      "bytes": 6403,
-      "sha256": "1c1b94c82d145c504fda7c8de43dffacedcdf1db87c9f9579fcefac3bec15c1a"
+      "bytes": 6933,
+      "sha256": "f08b03fa397ec566a6ff51ebeb181c7a93e8e6e7974f0c7c6397bd36e7d6814b"
     },
     {
       "path": "web/src/StudyQueueRail.vue",

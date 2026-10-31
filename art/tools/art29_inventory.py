@@ -1,3 +1,4 @@
+from art35_inventory import normalize_art35_recovery
 """ART29 cold packing stage, original actions, and immutable fourteen item drawings."""
 import hashlib,json,re
 from ta09_inventory import Tags
@@ -31,7 +32,7 @@ def validate_art29(root,image_reader):
  assert [r['path']for r in m['files']]==FILES and m['sourceReferences']==REFS and m['baselines']==BASELINES and m['unchanged']==UNCHANGED and m['presentationEdits']==EDITS,'ART29 exact files/baselines/edits'
  for r in m['files']+BASELINES:identity(r)
  for n in REFS:local(n)
- for n,h in UNCHANGED.items():assert digest(n)==h,'ART29 original other controllers/item renderer/clock/proof'
+ for n,h in UNCHANGED.items():assert(hashlib.sha256(normalize_art35_recovery(local(n).read_text()).encode()).hexdigest()if n=='web/src/RecoveryRitual.vue'else digest(n))==h,'ART29 original other controllers/item renderer/clock/proof'
  d=json.loads(local('art/redesign/art11.json').read_text());assert d['budgets']['nativeBytes']==18000 and d['budgets']['cssBytes']==14000 and d['budgets']['itemArtifactBytes']==4000 and sum(local(r['path']).stat().st_size for r in d['files'])<=18000 and local(FILES[1]).stat().st_size<=14000 and local('web/src/ItemArtifact.vue').stat().st_size<=4000,'ART29 old native/CSS caps'
  d=json.loads(local('art/redesign/art04.json').read_text());assert d['maxNativeBytes']==40000 and sum(local(r['path']).stat().st_size for r in d['files'])<=40000,'ART29 old supply cap'
  original=identity(BASELINES[0]).decode();expected=original.replace("import ItemArtifact from './ItemArtifact.vue';\n","import ItemArtifact from './ItemArtifact.vue';\n"+EDITS['import'],1).replace('  <header class="inventory-stage-heading">',EDITS['scene']+'  <header class="inventory-stage-heading">',1);assert expected.count(EDITS['footer'])==1,'ART29 original footer'

@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import {computed,onDeactivated,ref,useId,watch} from 'vue';
+import {useJadePaint} from './jade-paint';
 import * as C from '../../src/full/content';
 import {JADE_FORMS,MANUAL_FORM,projectStudyForm} from './equipment-choreography';
 import './ta09-equipment.css';
 const props=defineProps<{skillId:string;manual:boolean;state:string;progress:number;mastered:boolean;equipped:boolean;sequence:number}>();
 const opened=ref(props.mastered),instance=useId(),paint=(part:string)=>`ta09-jade-${instance}-${part}`;
 const form=computed(()=>props.manual?MANUAL_FORM:JADE_FORMS[props.skillId]?.form);
+const artwork=useJadePaint(form);
 const variant=computed(()=>props.manual?'manual':JADE_FORMS[props.skillId]?.variant);
 const visual=computed(()=>projectStudyForm(props.state,props.progress,props.mastered));
 const spread=computed(()=>visual.value.phase==='sealing'?0:visual.value.working?visual.value.spread:opened.value?1:0);
@@ -19,7 +21,7 @@ watch(()=>props.mastered,v=>{if(v)opened.value=true;});
 onDeactivated(()=>opened.value=props.mastered);
 </script>
 <template>
- <div class="ta09-jade" data-testid="jade-engraving" :data-skill="manual?'jinghong':skillId" :data-form="form" :data-variant="variant" :data-state="state" :data-phase="visual.phase" :data-working="visual.working" :data-mastered="mastered" :data-equipped="equipped" :data-progress="visual.progress" :data-sequence="sequence" :data-open="opened" :data-school="school" :style="{...materials,'--jade-spread':spread,'--jade-draw':visual.draw,'--jade-turn':Math.sin(visual.progress*Math.PI*4)*6+'deg'}">
+ <div class="ta09-jade" data-testid="jade-engraving" :data-painted="artwork.ready.value" :data-skill="manual?'jinghong':skillId" :data-form="form" :data-variant="variant" :data-state="state" :data-phase="visual.phase" :data-working="visual.working" :data-mastered="mastered" :data-equipped="equipped" :data-progress="visual.progress" :data-sequence="sequence" :data-open="opened" :data-school="school" :style="{...materials,'--jade-spread':spread,'--jade-draw':visual.draw,'--jade-turn':Math.sin(visual.progress*Math.PI*4)*6+'deg'}">
   <button type="button" class="ta09-jade-inspect" data-testid="jade-object-inspect" :aria-pressed="locked?undefined:opened" :disabled="locked" :aria-label="name+' · '+label+'，只查看，不开始研习或更换配装'" @click="!locked&&(opened=!opened)">
    <svg v-if="form" class="ta09-jade-drawing" viewBox="0 0 280 250" aria-hidden="true" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke="currentColor" stroke-width="2">
     <defs>
@@ -29,6 +31,7 @@ onDeactivated(()=>opened.value=props.mastered);
     </defs>
     <path class="ta09-jade-rest" d="M41 208L127 182L242 207L145 236Z"/>
     <g class="ta09-jade-case" :data-form="form">
+     <image :key="artwork.cover.value" class="jade-painted-cover" data-jade-part="cover" :href="artwork.cover.value" x="50" y="18" width="180" height="188" @load="artwork.set($event,true)" @error="artwork.set($event,false)"/>
      <path v-if="form==='heart'" class="ta09-jade-face" d="M83 67L142 35L201 67L194 159L141 188L88 158Z"/>
      <path v-else-if="form==='blade'" class="ta09-jade-face" d="M126 29L151 29L171 75L156 167L141 193L123 166L107 75Z"/>
      <path v-else-if="form==='scroll'" class="ta09-jade-face" d="M68 54Q115 38 183 49L205 160Q155 181 94 173Z"/>
@@ -41,6 +44,7 @@ onDeactivated(()=>opened.value=props.mastered);
     </g>
     <g class="ta09-jade-pages" :data-engraved="mastered">
      <g v-for="n in 5" :key="n" class="ta09-jade-page" :style="{'--page-index':n-3}">
+      <image class="jade-painted-leaf" data-jade-part="page" :href="artwork.page" x="125" y="47" width="34" height="128" @load="artwork.set($event,true)" @error="artwork.set($event,false)"/>
       <path class="ta09-jade-face" d="M126 55L148 52L156 165L134 171Z"/>
       <path class="ta09-jade-edge" d="M148 52L153 55L161 169L156 165Z"/>
       <path class="ta09-jade-line" d="M131 78L145 75M133 89L146 86M134 100L147 97M136 113L148 110M138 124L149 121"/>

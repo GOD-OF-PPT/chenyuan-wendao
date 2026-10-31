@@ -1,3 +1,4 @@
+from art35_inventory import normalize_art35_jade
 """Bound the real reading seat, script ownership and existing scene, without new assets."""
 import hashlib,json,re
 from ta09_inventory import Tags
@@ -35,7 +36,7 @@ def validate_art25(root):
  for ledger,key,cap in [('art03','maxNativeBytes',45000),('art10','nativeBytes',12000),('idle-preparation','maxNativeBytes',60000),('ta09','nativeBytes',30000)]:
   prior=json.loads(local('art/redesign/'+ledger+'.json').read_text());assert(prior.get('budgets',{}).get(key,prior.get(key)))==cap and sum(local(r['path']).stat().st_size for r in prior['files'])<=cap,'ART25 old cap'
  assert m['originalScriptSHA256']==SCRIPT and m['unchanged']==UNCHANGED,'ART25 controller ownership'
- changed=[n for n,h in UNCHANGED.items()if(hashlib.sha256(normalize_ux26_learning(local(n).read_text()).encode()).hexdigest()if n=='web/src/LearningPlanner.vue'else digest(n))!=h]
+ changed=[n for n,h in UNCHANGED.items()if(hashlib.sha256(normalize_ux26_learning(local(n).read_text()).encode()).hexdigest()if n=='web/src/LearningPlanner.vue'else hashlib.sha256(normalize_art35_jade(local(n).read_text()).encode()).hexdigest()if n=='web/src/JadeEngraving.vue'else digest(n))!=h]
  if changed:
   assert changed==['web/src/EquipmentPanel.vue'],'ART25 controller ownership'
   from art26_inventory import validate_art26

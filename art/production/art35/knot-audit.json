@@ -1,0 +1,25 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "tool": "image_gen.imagegen",
+  "model": null,
+  "requestId": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-94fb8444-dc06-4fc3-af51-742d9119369b.png",
+  "selectedCopy": {
+    "path": "art/production/art35/knot-source.png",
+    "bytes": 2795515,
+    "sha256": "a143a3a8ebfb11238897ce3dbd97a0ea91cece9de122260bb5b3571a7bb09e51"
+  },
+  "prompt": {
+    "path": "art/production/art35/knot-prompt.json",
+    "bytes": 1780,
+    "sha256": "b06ea331d34281a6b56e78ef5c66f1addfa58350bd9ccc8e29e6434d41b809ae"
+  },
+  "reference": {
+    "path": "web/public/art/v2/characters/player-seated-cold.webp",
+    "bytes": 65978,
+    "sha256": "66ff79c01b418faa5c0abb0b3490e54b9d30a8568abb796d410a9559d0a36ace"
+  },
+  "requestedTransparent": true,
+  "originalsKept": true,
+  "userAcceptance": false
+}

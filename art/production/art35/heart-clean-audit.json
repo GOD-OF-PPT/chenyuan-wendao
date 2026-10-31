@@ -1,0 +1,30 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "model": null,
+  "requestId": null,
+  "tool": "image_gen.imagegen",
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-0c657769-adbc-4d75-bd06-8527ba81ad36.png",
+  "selectedCopy": {
+    "path": "art/production/art35/heart-source-v2.png",
+    "bytes": 2530892,
+    "sha256": "e8806142c853da983f27ebbdfde4ccba28a94812faac3d889097a88b804a1e81"
+  },
+  "prompt": {
+    "path": "art/production/art35/heart-clean-prompt.json",
+    "bytes": 1249,
+    "sha256": "193f8dea1aff5e68de409453ee29f112c5700a68ec7ee6b4da57c714e93c8884"
+  },
+  "reference": {
+    "path": "art/production/art35/heart-source.png",
+    "bytes": 2589662,
+    "sha256": "bc1c7f279bc4dbcb01976e671b2edbdbb49d87f203bc30bac863ff49022e7dcb"
+  },
+  "previousAudit": {
+    "path": "art/production/art35/heart-audit.json",
+    "bytes": 886,
+    "sha256": "b283a3613719a92e56bb16c237a7b0b1ca606f3e98dec8f689802ee9a169d705"
+  },
+  "requestedTransparent": true,
+  "originalsKept": true,
+  "userAcceptance": false
+}

@@ -6,6 +6,8 @@ import {stats} from '../../src/full/engine';
 import {previewAction} from '../../src/full/queries';
 import {useSupplyCycle} from './supply-effects';
 import GameIcon from './GameIcon.vue';
+import AssetImage from './AssetImage.vue';
+import './art35-study-rest.css';
 import ItemArtifact from './ItemArtifact.vue';
 const props=defineProps<{game:Game;kind:'use'|'rest';itemId:string}>();
 const emit=defineEmits<{source:[]}>();
@@ -26,7 +28,7 @@ const stock=computed(()=>props.game.core.inventory[props.itemId]??0);
    <div class="recovery-stat recovery-mp" :data-restored="!!effect&&effect.result.delta.mp>0"><span>灵力</span><strong>{{game.core.player.mp}} / {{body.maxMp}}</strong><progress :value="game.core.player.mp" :max="body.maxMp" aria-label="当前灵力"/></div>
   </div>
   <section class="recovery-object recovery-cabinet" aria-label="当前恢复对象">
-   <div class="recovery-object-heading"><div class="recovery-vessel" :data-saved="!!effect" :style="{'--recovery-turn':(working?progress:0)*360+'deg'}" aria-hidden="true"><i class="recovery-breath"/><i class="recovery-platform"/><template v-if="kind==='use'"><div class="recovery-medicine"><ItemArtifact :item-id="itemId" :owned="stock>0"/></div><div class="recovery-jade-bowl"><i v-if="stock>0" class="recovery-pill"/></div></template><div v-else class="recovery-sitting"><GameIcon kind="nav" id="cultivate"/></div></div><div><small>{{kind==='rest'?'听雨洞府 · 静坐一回':'随身药盏 · 实存 '+stock+' 丹'}}</small><h3>{{kind==='rest'?'洞府休养':item.name}}</h3></div></div>
+   <div class="recovery-object-heading"><div class="recovery-vessel" :data-saved="!!effect" :style="{'--recovery-turn':(working?progress:0)*360+'deg'}" aria-hidden="true"><i class="recovery-breath"/><i class="recovery-platform"/><template v-if="kind==='use'"><div class="recovery-medicine"><ItemArtifact :item-id="itemId" :owned="stock>0"/></div><div class="recovery-jade-bowl"><i v-if="stock>0" class="recovery-pill"/></div></template><div v-else class="recovery-sitting"><AssetImage path="art/v2/characters/player-seated-cold.webp" asset-id="resting-self" fit="contain" eager><GameIcon kind="nav" id="cultivate"/></AssetImage></div></div><div><small>{{kind==='rest'?'听雨洞府 · 静坐一回':'随身药盏 · 实存 '+stock+' 丹'}}</small><h3>{{kind==='rest'?'洞府休养':item.name}}</h3></div></div>
    <p class="recovery-description">{{kind==='rest'?'以一个游戏月换取气血灵力恢复圆满；不消耗丹药。':item.description}}</p>
    <strong class="recovery-unit" data-testid="recovery-per-cycle">预计单次气血 +{{one.delta?.hp??0}} · 灵力 +{{one.delta?.mp??0}}</strong>
    <div class="recovery-cycle" role="status"><strong data-testid="recovery-local-status">{{status}}</strong><span v-if="engaged&&runtime&&phase==='running'" data-testid="recovery-cycle-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span><small v-else-if="!engaged&&activity?.status==='running'&&!store?.error&&!store?.activityPausing">等待本页主动续接，不补离线</small></div>

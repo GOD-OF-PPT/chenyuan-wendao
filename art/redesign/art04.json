@@ -17,8 +17,8 @@
     },
     {
       "path": "web/src/RecoveryRitual.vue",
-      "bytes": 9258,
-      "sha256": "9764760b03850ce35a4bab251228ea29983b1dba3615fa31bc4d0ad8e3ef0c88"
+      "bytes": 9452,
+      "sha256": "59f0187aa56a6ef240bc231df72a8851482c9f05c9c9d823618cbd34b1e96020"
     },
     {
       "path": "web/src/supply-effects.ts",

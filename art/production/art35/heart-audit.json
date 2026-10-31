@@ -1,0 +1,23 @@
+{
+  "kind": "local audit of actual built-in tool result; not a provider-signed receipt",
+  "tool": "image_gen.imagegen",
+  "model": null,
+  "requestId": null,
+  "generatedOriginal": "/Users/gordon/.codex/generated_images/01a15d2f-866c-7250-a7fb-76602283d254/exec-79ab1d96-867e-4b6c-9dc5-0ebb3a2a4559.png",
+  "selectedCopy": {
+    "path": "art/production/art35/heart-source.png",
+    "bytes": 2589662,
+    "sha256": "bc1c7f279bc4dbcb01976e671b2edbdbb49d87f203bc30bac863ff49022e7dcb"
+  },
+  "prompt": {
+    "path": "art/production/art35/heart-prompt.json",
+    "sha256": "4badb55cf6be538b125b5939c4e54dc9f7466bb83efa8ca6547f780778ab8d47"
+  },
+  "reference": {
+    "path": "web/public/art/v2/catalogue/study-v1.webp",
+    "sha256": "07c30a57cd627bb391f1bc76ea286bc3b88f584928eff7c5f6c603d91de75a4d"
+  },
+  "requestedTransparent": true,
+  "originalsKept": true,
+  "userAcceptance": false
+}

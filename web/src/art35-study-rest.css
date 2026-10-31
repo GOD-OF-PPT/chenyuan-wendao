@@ -1,0 +1,12 @@
+/* Calm illustrations follow the existing physical page groups and real cycle state. */
+.jade-painted-cover,.jade-painted-leaf{pointer-events:none}
+.ta09-jade:not([data-painted=true]) :is(.jade-painted-cover,.jade-painted-leaf){visibility:hidden}
+.ta09-jade[data-painted=true] .ta09-jade-case>:is(.ta09-jade-face,.ta09-jade-cord),.ta09-jade[data-painted=true] .ta09-jade-page>path{visibility:hidden}
+#app .recovery-sitting{inset:0;display:grid;place-items:center}
+#app .recovery-sitting [data-asset-id=resting-self]{display:block;width:100%;height:100%;max-height:100%}
+#app .recovery-sitting [data-asset-id=resting-self] img{object-fit:contain;width:100%;height:100%;filter:drop-shadow(0 7px 4px #081f2488)}
+#app .recovery-sitting .asset-fallback>.game-icon{width:100px;height:100px;margin:0;color:#b2c8a4;filter:drop-shadow(0 6px 3px #102b2e)}
+#app .recovery-sitting .asset-fallback{display:grid;place-items:center}
+#app .art10-learning[data-mode=manual] .art10-study-scene .ta09-jade{height:360px;max-height:100%}
+#app .art10-learning .art10-study-scene .ta09-jade[data-painted=true] .ta09-jade-inspect{padding:18px 20px 40px}
+#app .art10-learning[data-mode=manual][data-complete=true] .jade-reading-place{width:min(100%,1100px);grid-template-columns:380px minmax(0,1fr)}

@@ -1,0 +1,16 @@
+{
+  "task": "ART35",
+  "readAt": "2026-10-31",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "applied": "Preserve primary silhouettes, hierarchy and restrained meaningful effects; document-specific material choices are project inferences."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "applied": "Real object, viewing, action time and saved result stay clearly distinguished; no certification claimed."
+    }
+  ],
+  "skill": "built-in imagegen and game-ui-frontend; mobile/environment guidance deferred by explicit user pause",
+  "dimensionsAndBudgets": "project composition choices, not source mandates"
+}

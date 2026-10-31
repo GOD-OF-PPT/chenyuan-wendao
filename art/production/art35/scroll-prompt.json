@@ -1,0 +1,11 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "intent": "new isolated prop; existing image is style reference only",
+  "transparent_background": true,
+  "prompt": "Use case: stylized-concept. Asset type: one transparent cutout for the shipped Chinese xianxia idle game 尘缘问道. The reference is STYLE ONLY: match its detailed restrained painterly realistic fabric and natural material rendering; do not copy its composition, sword, cauldron or magic. A single real carved object, calm inactive state, front three-quarter portrait view, centered and fully contained with at least 10 percent transparent margin. Cool deep celadon jade with mineral clouding, natural stone translucency at thin edges, worn aged-bronze end fittings, restrained dark teal cloth binding where appropriate. Strong coherent silhouette, tangible depth and soft cool upper-left light with tiny warm reflected highlights. High-quality painterly fantasy game prop, detailed material, not a flat geometric/vector icon, not a UI panel. No character, table, background, ground plane, halo, glow, smoke, sparks, rewards, labels, letters, writing, runes, watermark or interface. Actual transparent alpha, no checkerboard. Clean natural alpha edges with NO colored fringing or isolated particles. No tassels or hanging charms; simple binding stays close to the object. Square canvas. Subject: a CLOSED curved rectangular jade scroll case with rolled cylindrical top and bottom edges and a slightly convex blank face; organic curved silhouette, one quiet silk tie. No paper hanging outside.",
+  "promptSHA256": "6106bbab62882648bf7978185e377fa201c2c2e61340fd62c788952311f35df4",
+  "referenced_image_paths": [
+    "/Users/gordon/githome/chenyuan-wendao/web/public/art/v2/characters/player-seated-cold.webp"
+  ]
+}
