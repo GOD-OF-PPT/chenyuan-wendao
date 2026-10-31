@@ -1,0 +1,87 @@
+{
+  "attempts": [
+    {
+      "phase": "old-red",
+      "stats": {
+        "startTime": "2026-10-31T21:59:26.956Z",
+        "duration": 18826.040999999997,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/ux28/old-red-report.json",
+      "sha256": "c0a1572e4553af5139d065d0762e32c16285e9d0abdfbe72e62558049a68b13c",
+      "runtime": "f16c376203984436d0e4d3c9b6b12ccbee95189605829aefccb6e08a8a391a13",
+      "countsTowardCurrentCoverage": false,
+      "note": "old real disclosure mismatch at original8s; trace and PNG retained"
+    },
+    {
+      "phase": "early-1",
+      "stats": {
+        "startTime": "2026-10-31T22:02:18.268Z",
+        "duration": 29824.433,
+        "expected": 7,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/ux28/early-1-report.json",
+      "sha256": "0b092910efe31498513de7ec058b1fa4ac6adea45a5b08b2081d3d8205f35dda",
+      "runtime": "506d1dadcb7cd1e445b2760688b4dbfcc17c0ac65366398fe0a0def0ddf8b120",
+      "countsTowardCurrentCoverage": false,
+      "note": "same-source7 repeated in full related run; no extra coverage"
+    },
+    {
+      "phase": "related-ui",
+      "stats": {
+        "startTime": "2026-10-31T22:07:26.369Z",
+        "duration": 1759598.476,
+        "expected": 263,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/ux28/related-ui-report.json",
+      "sha256": "92bbf7a36d0444064bd2cbb5a5db37cdb17f1bf184f40b95d811ebb270e3ad3b",
+      "runtime": "506d1dadcb7cd1e445b2760688b4dbfcc17c0ac65366398fe0a0def0ddf8b120",
+      "countsTowardCurrentCoverage": true,
+      "note": "complete declared files; original assertions/timeouts; no runner retry"
+    },
+    {
+      "phase": "related-slow",
+      "stats": {
+        "startTime": "2026-10-31T22:36:57.358Z",
+        "duration": 180883.978,
+        "expected": 5,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/ux28/related-slow-report.json",
+      "sha256": "3df3f38b4157274b939bf46d2d65ea0393d212f2254aa282ec1214f639bd4826",
+      "runtime": "506d1dadcb7cd1e445b2760688b4dbfcc17c0ac65366398fe0a0def0ddf8b120",
+      "countsTowardCurrentCoverage": true,
+      "note": "complete declared files; original assertions/timeouts; no runner retry"
+    },
+    {
+      "phase": "native",
+      "stats": {
+        "startTime": "2026-10-31T22:07:55.636Z",
+        "duration": 71086.893,
+        "expected": 59,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "artifacts/goal-4/ux28/native-report.json",
+      "sha256": "a4bf99bb50a868b0093514d69736626378959a5afb133644cd068c0abfc5c87c",
+      "runtime": "506d1dadcb7cd1e445b2760688b4dbfcc17c0ac65366398fe0a0def0ddf8b120",
+      "countsTowardCurrentCoverage": true,
+      "note": "complete declared files; original assertions/timeouts; no runner retry"
+    }
+  ],
+  "resourceFull": "563 current methods after root/complete sandbox positive; new4 are included, not added twice",
+  "rules": "88 actual; previous873 are not relabeled",
+  "previousRawAttemptsAndUnknowns": "../check-ux27-art35-cend03/attempts.json and remaining.json; all retained"
+}

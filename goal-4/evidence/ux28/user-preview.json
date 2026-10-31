@@ -1,0 +1,45 @@
+{
+  "status": "updated and native public progress verified",
+  "method": "native Chrome AX only, existing game tab56884; no userDB/fullGame reads or Game actions",
+  "before": {
+    "hp": "60/60",
+    "mp": "20/20",
+    "xp": "10/10",
+    "stones": 40,
+    "activity": "自然吐纳 ended2/50,30s each",
+    "target": "引气入体",
+    "location": "听雨洞府",
+    "saved": true,
+    "editingOrDialog": false
+  },
+  "oldOwnedServerPID": 39377,
+  "oldOwnedCommand": "/Users/gordon/anaconda3/bin/python3 artifacts/goal-4/check-ux27-art35-cend03/committed-frozen/serve.py --port 56884",
+  "oldArtifactsPreserved": true,
+  "noUserSaveUsedForTests": true,
+  "newRuntime": "506d1dadcb7cd1e445b2760688b4dbfcc17c0ac65366398fe0a0def0ddf8b120",
+  "newCodeCommit": "39cf8a28f92f6154a89a76fe0c1d5dd40a57901a",
+  "browserObservation": "Chrome system Save panel was not operated; after it naturally closed, selected the original game tab, verified stopped/saved/no editing, then clicked the actual browser Reload once.",
+  "postUpdatePublicProgress": {
+    "hp": "60/60",
+    "mp": "20/20",
+    "xp": "10/10",
+    "stones": 40,
+    "activity": "自然吐纳 ended2/50,30s each",
+    "target": "引气入体",
+    "location": "听雨洞府",
+    "saved": true,
+    "editingOrDialog": false
+  },
+  "noUserDBOrFullGameRead": true,
+  "userGameActions": 0,
+  "nativeReloadExecuted": true,
+  "newOwnedServerPID": 47837,
+  "newOwnedCommand": "/Users/gordon/anaconda3/bin/python3 artifacts/goal-4/ux28/committed-frozen/serve.py --port 56884",
+  "publicProgressExactMatch": true,
+  "actualNewBundleRequests": [
+    "GET /assets/index-Jpq0NGz5.js 200",
+    "GET /assets/index-Xmwf3Vlw.css 200"
+  ],
+  "requestDelta": "artifacts/goal-4/ux28/native-reload-request-delta.log",
+  "requestDeltaSHA256": "1f04bdd3ef42f7341cdd29c8d7fab9b99d3c35504c2d925eb4d4740c721d9b0b"
+}

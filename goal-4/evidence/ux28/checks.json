@@ -1,0 +1,82 @@
+{
+  "task": "UX28",
+  "resourceFull": {
+    "passed": 563,
+    "failed": 0,
+    "log": "artifacts/goal-4/ux28/resource-full.log",
+    "sha256": "d6b5c8c0d95ae6a3a597b0ace4fde6f7ddd87a08e52304420bd674e90b36d81b",
+    "seconds": 813.401,
+    "rootAndCompleteSandboxPositiveBeforeNegative": true,
+    "previous559PlusNew4": true
+  },
+  "native": {
+    "startTime": "2026-10-31T22:07:55.636Z",
+    "duration": 71086.893,
+    "expected": 59,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "rules": {
+    "passed": 88,
+    "failed": 0,
+    "skipped": 0,
+    "log": "artifacts/goal-4/ux28/rules.log"
+  },
+  "earlyNewUI": {
+    "startTime": "2026-10-31T22:02:18.268Z",
+    "duration": 29824.433,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "rootTypecheck": {
+    "passed": true,
+    "log": "artifacts/goal-4/ux28/root-typecheck.log"
+  },
+  "VueBuild": {
+    "passed": true,
+    "log": "artifacts/goal-4/ux28/early-build.log"
+  },
+  "relatedUI": {
+    "passed": 268,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "runnerRetries": 0,
+    "reportErrors": 0,
+    "wholeFiles": 31,
+    "regular": {
+      "startTime": "2026-10-31T22:07:26.369Z",
+      "duration": 1759598.476,
+      "expected": 263,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "originalSlowIntersection": {
+      "startTime": "2026-10-31T22:36:57.358Z",
+      "duration": 180883.978,
+      "expected": 5,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "early7NotAddedAgain": true
+  },
+  "currentRuntime": "506d1dadcb7cd1e445b2760688b4dbfcc17c0ac65366398fe0a0def0ddf8b120",
+  "scope": "fixed1440x900/font1/singleChromium actual change, no compatibility/environmentperformance",
+  "overallGoal": "active / notcomplete",
+  "postCommitBuild": {
+    "passed": true,
+    "log": "artifacts/goal-4/ux28/post-commit-build.log",
+    "codeCommit": "39cf8a28f92f6154a89a76fe0c1d5dd40a57901a"
+  },
+  "http": {
+    "passed": true,
+    "files": 110,
+    "decodedBytes": 11183389,
+    "details": "http-identity.json"
+  }
+}
