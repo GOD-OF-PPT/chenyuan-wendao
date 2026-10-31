@@ -38,5 +38,9 @@
   "userSave": "no userDB/fullGame reads or use as fixture; native public before facts only; safe update proof separate",
   "compatibilityEnvironmentPerformance": "paused_not_run",
   "overallGameArtLongBalanceHuman": "not_completed_by_this_task",
-  "goal": "active_not_complete"
+  "goal": "active_not_complete",
+  "codeCommit": "15cb075efccbff21499c1adea4db53ae98734f04",
+  "postCommitRootTypecheckAndVueTypeBuildPassed": true,
+  "committedGitTestedFrozenHTTP110Exact": true,
+  "userPreview": "user-preview.json; public progress fields equal, no userDB/fullGame reads/actions"
 }
