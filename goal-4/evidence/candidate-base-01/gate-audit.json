@@ -1,0 +1,46 @@
+{
+  "originalCandidateProtocol": {
+    "source": "scripts/candidate-evidence.mjs",
+    "requiresCleanCheckout": true,
+    "browsers": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "requirements20Leaves": "scripts/check-recovery-coverage.mjs",
+    "routes": "24x3 original normal routes",
+    "layouts": "4 viewports x3 fontScales x8 states per browser",
+    "performance": "same-source production report via original performance-budget",
+    "sourceAndRuntimeExact": true,
+    "readyReceipt": "scripts/candidate-receipt.mjs also requires three-browser packaged smoke"
+  },
+  "idleEngineeringProtocol": {
+    "source": "scripts/idle-matrix-evidence.mjs",
+    "explicitlyDoesNotReplaceOriginalCandidateGate": true,
+    "requiresExactRuntime": true,
+    "requiresRealBeforeAfterInputsAndTerminalAndDeclarations": true,
+    "reviewedProfiles": {
+      "ui": "playwright.idle-recovery-ui.config.ts /171",
+      "persistence": "playwright.idle-recovery.config.ts /415",
+      "journey": "playwright.idle-journeys.config.ts /32"
+    },
+    "original20RequirementsAnd88LeavesRetained": true
+  },
+  "committedMetadataGap": {
+    "id": "CBASE-META-01",
+    "finding": "Committed shared Playwright profiles emit source identity but lack runtimeDigest required by the idle verifier; original protected WIP adds those fields.",
+    "evidence": "Read-only git diff of3 protected config files; actual clean declarations to be inspected after build.",
+    "actionHere": "Preserve13; explicit isolated verification wrapper may record its real runtime, but is not the reviewed complete named profile or formal matrix certification.",
+    "notClaimed": "No integration/commit of those WIP configs and no metadata relabel of prior reports."
+  },
+  "currentPermissionBoundary": "Compatibility/environmentperformance paused; no corresponding tests executed or thresholds relaxed.",
+  "formalCandidateReady": false,
+  "notExecuted": [
+    "full package()",
+    "candidate receipt",
+    "three-browser smoke",
+    "page compatibility matrix",
+    "environmentperformance matrix",
+    "human acceptance"
+  ]
+}

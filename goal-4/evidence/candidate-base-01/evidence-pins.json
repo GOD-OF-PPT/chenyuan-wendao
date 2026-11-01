@@ -1,0 +1,94 @@
+{
+  "artifacts/goal-4/candidate-base-01/core/validation.json": {
+    "bytes": 5618,
+    "sha256": "7151080493093d8a72d14fd0ca4b4fc1156a5bd052510b6568fd2ecd188d1256"
+  },
+  "artifacts/goal-4/candidate-base-01/core/economy.log": {
+    "bytes": 782,
+    "sha256": "118b7f8b722bfe5d6af8a501fba268b9548dd59c658667d69cdc17975cf30fa5"
+  },
+  "artifacts/goal-4/candidate-base-01/core/tests.tap": {
+    "bytes": 208634,
+    "sha256": "c4261e2d7e35e785fc47553eb5cc42c42cc75ef7ab4e5c3a2f032d7da78ac252"
+  },
+  "artifacts/goal-4/candidate-base-01/core-repaired/validation.json": {
+    "bytes": 5946,
+    "sha256": "5e4c0950eb9a945ebe189f97cf54bdf0d78cfaf74f9455d7f76fd62e64fd6d65"
+  },
+  "artifacts/goal-4/candidate-base-01/core-repaired/documents.log": {
+    "bytes": 1857,
+    "sha256": "9d7bd240a46789ea156eb44ef09667691ff6a5a239ddc98c08185d902c671d42"
+  },
+  "artifacts/goal-4/candidate-base-01/core-repaired/tests.tap": {
+    "bytes": 209234,
+    "sha256": "ed5e4023bcec8813d19b95e7079f9c9d2b5192585951f0352b74ea3e70bee0ea"
+  },
+  "artifacts/goal-4/candidate-base-01/core-final/validation.json": {
+    "bytes": 9128,
+    "sha256": "8b9a676cfa402ecb4ce2ec926df20d811d00816b2d29dadf5e6deb0f5125004d"
+  },
+  "artifacts/goal-4/candidate-base-01/core-final/tests.tap": {
+    "bytes": 209141,
+    "sha256": "85d1717754d7e9c5a8f445a8f2bc019d5cc5696c639d410c0c9cee1f9c609fbd"
+  },
+  "artifacts/goal-4/candidate-base-01/core-final/economy.log": {
+    "bytes": 506,
+    "sha256": "8e5ad8351ac191e2276f2bd4a0c14d3f4eb9dbe73400a1258272ea5138b20a17"
+  },
+  "artifacts/goal-4/candidate-base-01/core-final/documents.log": {
+    "bytes": 2737,
+    "sha256": "b4be329d5c70d7ebc2f0f0195a80939b95e9e0a200ea89598cc6f7e45306a6ec"
+  },
+  "artifacts/goal-4/candidate-base-01/core-final/design-documents.log": {
+    "bytes": 273,
+    "sha256": "b386db1e610aabdc6020ba6119edbcb2a84131b83b22093d54d926f8a4dce2fc"
+  },
+  "artifacts/goal-4/candidate-base-01/economy-regression.tap": {
+    "bytes": 687,
+    "sha256": "35adafe24a4ba12d31df860a5acff8abdee2c221aef78a8b09a65eccea1043fa"
+  },
+  "artifacts/goal-4/candidate-base-01/economy-original.json": {
+    "bytes": 1780980,
+    "sha256": "cf3b130845be41b02b332f1436399a5edc8f5ae9d5093e8124f4b0df032e596c"
+  },
+  "artifacts/goal-4/candidate-base-01/economy-diagnostic-generated.json": {
+    "bytes": 1781680,
+    "sha256": "9c204e5b00938f2a481ddb880fe568c5694c5d44d79b7d270ce6069f11da1e80"
+  },
+  "artifacts/goal-4/candidate-base-01/python-install-report.json": {
+    "bytes": 10836,
+    "sha256": "09bc1445d380e6009d9d74c075b38b51c0a908f8e646ae72e14f27e19f4052ef"
+  },
+  "artifacts/goal-4/candidate-base-01/smoke-before.json": {
+    "bytes": 95845,
+    "sha256": "c7647e2663a381d54f5aa913284429156db3ff25ec6e28f2e987208720d2cf90"
+  },
+  "artifacts/goal-4/candidate-base-01/smoke-after.json": {
+    "bytes": 95871,
+    "sha256": "e54d27ba8ae876dc81e31a2bd9ad150d59870c0ed0b7d385806209480904de0a"
+  },
+  "artifacts/goal-4/candidate-base-01/baseline-smoke.config.ts": {
+    "bytes": 851,
+    "sha256": "876ccefe5b2154c81d5f12b1f8243024287ee9d820ee4e0223fb97979d9244bf"
+  },
+  "artifacts/goal-4/candidate-base-01/baseline-smoke-declared.json": {
+    "bytes": 10031,
+    "sha256": "fbf1ebf07f1154b71c20f89e3be79a12aca3572f671cd080e5c8dde814721711"
+  },
+  "artifacts/goal-4/candidate-base-01/baseline-smoke-report.json": {
+    "bytes": 33308,
+    "sha256": "0048a9c1b57042729c0623cc034c88e299ce873f08258af690e28a2bec9a228b"
+  },
+  "artifacts/goal-4/candidate-base-01/source-export.log": {
+    "bytes": 555,
+    "sha256": "3b220b3e1b4fae99b4ff1cca4436a19d54d604ef493c3fdb17f6b286300e44fa"
+  },
+  "artifacts/goal-4/candidate-base-01/repaired-source-export.log": {
+    "bytes": 591,
+    "sha256": "59f01b97feed74baa39fb66f4cb95305fd83d2f1a85829745e91be34325ef47f"
+  },
+  "artifacts/goal-4/candidate-base-01/final-source-export.log": {
+    "bytes": 579,
+    "sha256": "1be8e7d84348906e8c99db782cb4cbc0a04652ac837f8392b44a123292ee2acf"
+  }
+}

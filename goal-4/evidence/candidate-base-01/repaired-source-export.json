@@ -1,0 +1,19 @@
+{
+  "selectedCommit": "689338366ffdfd6a66b9009e7a8aa59092a2444c",
+  "selectedOnlyObjectAuditTwice": true,
+  "doubleExportExact": true,
+  "exports": [
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/candidate-base-01/repaired-source.bundle",
+      "bytes": 540224934,
+      "sha256": "77650d67ac6db0e310003c988aa45e0e1b33b5a083cf9bf3f39bc43fb29e3478"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/candidate-base-01/repaired-source-repeat.bundle",
+      "bytes": 540224934,
+      "sha256": "77650d67ac6db0e310003c988aa45e0e1b33b5a083cf9bf3f39bc43fb29e3478"
+    }
+  ],
+  "original2bBundlesPreserved": true,
+  "method": "Original source_bundle helper only, not a full candidate package or ready receipt."
+}

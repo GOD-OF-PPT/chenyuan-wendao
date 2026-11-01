@@ -1,3 +1,17 @@
+## CANDIDATE-BASE-01 已独立交付（2026-11-01）
+
+- [x] 本组三项第3的真实可复现基线完成。原2b与689的两次完整core失败保：先经济来源陈旧、后默认Python缺PIL。修复`6893383`分离当前即时120来源报告并固定旧CF3原件，全部非来源数值/账本结果精确同；`ba68375`声明既有Pillow12.3和外置venv。0Game/数值/周期/DB/素材变化，旧报告/失败/v0.3/原档/13在途保。
+- 最终选择`ba683757300f75b79b76ba2d8ff5f3b6f06905f5`：两次source bundle各540440830B/SHA34ea72ae…9f19同字节，实际bundle恢复独立对象库、必需d3f48ef历史可读、无预装Node依赖。原锁安装/原validate:core十命令全过：864源码测试（原已提交862全部保、只新增2）/567资源方法/两个文档检查，clone最终clean；旧根873是不同在途输入，不改标。
+- 323运行输入、110载荷11183438B与既有UX29/7aff3a68精确相同；实际独立HTTP解码同，私有source/.git/脚本HEAD404。两个完整固定1440×900/font1单Chromium文件11例全过（3开场首环/有限修炼/控制，含1真实30秒周期），0skip/retry/reportError，580执行前后输入同；10代表图逐张看，0继承，原PNG/同尺寸JPEG68/hash保。未把这些当完整32正常/415native/816UI/真实长期或人验。
+- 当前实际枚举816广义UI、171恢复UI（816子集）、415native、32正常；171/415/32审阅签名精确，20要求88叶无目录丢失，82旧native保60承接22明确替代。逐格目录/局部执行/历史/暂停分别记账。发现CBASE-META-01：提交的固定profiles缺验证器所需runtimeDigest，原受保护在途有补字段但本轮不集成；本轮独立wrapper只支持11基本检查。原candidate函数实际拒绝单浏览器目录，不生成正式candidate.zip/delivery.ready，不放宽原门槛。
+- 中断前后原话103606463/103777196保；恢复时53172/56884无监听/原handle丢失已实证，先核原包再只恢复自己同版静态服务，两端110项同，不升级源码/刷新用户浏览器/读用户DB/fullGame/执行用户Game。根13在途哈希同且不提交，无push/merge/公开部署/权限/自动化变化。
+
+[杠精审查] 本独立基线工程范围通过：实际源码恢复/原锁安装/core/build/HTTP/正常首环与逐格缺口完整，真实红后最小修复、全部旧报告/断言/预算保，没有用清单或局部绿灯替整体完成。既有用户艺术负评、长期平衡/真人、J01unknown/ART17四红/ART28-OBS-01/COMPAT-OBS-1200-01及原最终矩阵/正式干净候选包/最大C端代码安全review全保；页面兼容和环境性能专项仍暂停，Goal未完成。旧UX28输入来源补录缺口也不隐去。
+
+- [ ] 下一独立CHECK-UX28-UX29-BASE（强制三任务综合）：先新原话/合同/参数/验收回滚/13保护；在未受保护的固定profile接入原helpers计算的真实runtime摘要，保13、不改旧候选门槛/退役映射/原时限。冻结当前目录与同源输入，全面核UX28-UX29-BASE组合、完整当前授权UI/原生/正常/恢复矩阵及原叶语义，不拿目录/旧报告改标签补绿；必要修缮后真实复验。本轮只排队未开始第二任务。兼容/环境性能仍暂停；候选说明/CI依赖与最终最大评审、人验责任保持。
+
+证据：[实施](../docs/implementation/goal-4-candidate-base-01.md)、[审查](evidence/candidate-base-01/review.md)、[检查](evidence/candidate-base-01/checks.json)、[完整目标](evidence/candidate-base-01/goal-matrix.md)、[88叶](evidence/candidate-base-01/requirement-matrix.md)、[验证](evidence/candidate-base-01/verification.json)、[原失败](evidence/candidate-base-01/attempts.json)、[未决](evidence/candidate-base-01/remaining.json)。本机运行说明artifacts/goal-4/candidate-base-01/BASELINE.md。下文旧开工/待验为历史，以本条为准。
+
 ## CANDIDATE-BASE-01 前置依赖修缮 CBASE-E02（仍同一任务）
 
 689新克隆864测试与经济审计均过，文档资源校验因默认Python无PIL失败；原core-repaired原件保，设计文档未执行。依0084先记录再声明既有Pillow12.3，仓库外新Python3.12 venv按要求实际安装。当前root资源正向及v0.4文档已过，check_docs其后原完整资源测试仍按真实进度记，未提前写通过。下一最终pin双bundle/第三个fresh clone完整core/build/独立HTTP与矩阵缺口核对；不把此当Game/性能根因修复，不恢复兼容/环境性能、不改旧2b/689失败标签。

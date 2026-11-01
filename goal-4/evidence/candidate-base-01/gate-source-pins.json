@@ -1,0 +1,9 @@
+{
+  "scripts/candidate-evidence.mjs": "1a651e9628358e8517fc40c9b82faf512a77435f4eb65b1ea6539dce14d7a457",
+  "scripts/idle-matrix-evidence.mjs": "7358cdff5c51d9a28fa2e319079fbc670269a1969820b6b89f68f47cd92696c5",
+  "scripts/package-candidate.py": "3b9c4165a7b9729d2f2a3e820aa196462d01c3d403483a7a719692c31b858148",
+  "scripts/candidate-receipt.mjs": "05504718eec984bb9c7319d465314f313516549860eac966dcd82c343b0d0bf6",
+  "tests/idle-recovery-matrix.mjs": "7af219f010204b970298b9dcf95ceb87f2b9a9980a5f178634a016085487a281",
+  "tests/idle-recovery-native-migration.mjs": "8102cb2e17490a2fc63e32f247485a4b0edb96e3398f6b89e7af1ef87cb487c7",
+  "tests/recovery-matrix.mjs": "97fbee7ef952a250c34821ae9409625f5157595e85c96fb873d37fe09e0f5d32"
+}

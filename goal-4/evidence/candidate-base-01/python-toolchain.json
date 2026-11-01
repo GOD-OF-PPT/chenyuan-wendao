@@ -6,5 +6,22 @@
   "freshExternalVenv": true,
   "installReport": "artifacts/goal-4/candidate-base-01/python-install-report.json",
   "notBundledInSource": true,
-  "scope": "Explicit source-check prerequisite; no environment performance or compatibility matrix."
+  "scope": "Explicit source-check prerequisite; no environment performance or compatibility matrix.",
+  "requirementsSHA256": "41b54a6fb2918667ca47a61d73b522629d84490f3d78f0f20b21135faba10d35",
+  "installReportSHA256": "09bc1445d380e6009d9d74c075b38b51c0a908f8e646ae72e14f27e19f4052ef",
+  "finalSelectedSource": "ba683757300f75b79b76ba2d8ff5f3b6f06905f5",
+  "installedPackages": [
+    {
+      "name": "pillow",
+      "version": "12.3.0",
+      "sha256": "ba09209fbe443b4acccebe845d8a138b89a8f4fbaeedd44953490b5315d5e965"
+    }
+  ],
+  "docsPreflight": {
+    "passed": true,
+    "resourceMethods": 567,
+    "log": "artifacts/goal-4/candidate-base-01/docs-preflight.log",
+    "designLog": "artifacts/goal-4/candidate-base-01/design-docs-preflight.log",
+    "notAdditionalCoreFinalCoverage": true
+  }
 }
