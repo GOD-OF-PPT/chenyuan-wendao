@@ -1671,3 +1671,10 @@ export const idleRecoveryMatrix = {
     }
   }
 };
+
+// Explicit complete fixed-desktop v2 inventory. The original v1 recovery profile above remains immutable.
+export const idleComprehensiveProfiles = {
+ ui: {configuration:'playwright.idle.config.ts',count:816,signature:'d85f8cb00e45b6d95d48b9240039a88a5b896944688b3b6dba65b9660cc89b52'},
+ persistence: {...idleRecoveryMatrix.profiles.persistence},
+ journey: {...idleRecoveryMatrix.profiles.journey},
+};

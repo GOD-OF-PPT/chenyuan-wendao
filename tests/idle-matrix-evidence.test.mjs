@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {inspectIdleReport,latestIdleResults} from '../scripts/idle-matrix-evidence.mjs';
+import {inspectIdleReport,latestIdleResults,inspectIdleDeclarations} from '../scripts/idle-matrix-evidence.mjs';
+import fs from 'node:fs';
 const runtime='a'.repeat(64);
 function report(){return{config:{rootDir:'/isolated/web/e2e',metadata:{runtimeDigest:runtime},projects:[{name:'chromium',repeatEach:1,retries:0}]},errors:[],suites:[{specs:[{file:'example.spec.ts',title:'a pinned verifier fixture',ok:true,tests:[{projectName:'chromium',expectedStatus:'passed',status:'expected',results:[{status:'passed',retry:0}]}]}]}]};}
 const alter=fn=>{const r=report();fn(r,r.suites[0].specs[0],r.suites[0].specs[0].tests[0]);return r;};
@@ -29,4 +30,21 @@ test('current semantic mappings retain all original leaves and give numeric case
  const {idleRecoveryMatrix:matrix}=await import('./idle-recovery-matrix.mjs'),{idleNativeMigration:migration}=await import('./idle-recovery-native-migration.mjs'),{recoveryMatrix:legacy}=await import('./recovery-matrix.mjs');
  assert.deepEqual(Object.fromEntries(Object.entries(matrix.profiles).map(([k,v])=>[k,v.count])),{ui:171,persistence:415,journey:32});for(const pin of Object.values(matrix.profiles))assert.match(pin.signature,/^[a-f0-9]{64}$/);assert.equal(matrix.rows.length,20);assert.equal(matrix.rows.reduce((n,r)=>n+r.leaves.length,0),88);assert.deepEqual(matrix.rows.flatMap(r=>r.leaves.map(l=>l.legacy)),legacy.flatMap(r=>r.evidence));
  assert.equal(migration.includedLegacyTests.length+migration.supersededLegacyTests.length,82);for(const r of migration.supersededLegacyTests)for(const prefix of r.replacementTitlePrefixes)assert.ok(!/^M04-[UN]\d+$/.test(prefix),'N1 must not alias N10/N11');
+});
+
+function declarations(){
+ const data=JSON.parse(fs.readFileSync(new URL('../goal-4/evidence/candidate-base-01/current-inventory.json',import.meta.url),'utf8')).inventories;
+ return data.map(d=>({suite:d.suite,report:{config:{rootDir:'/isolated/web/'+({ui:'e2e',persistence:'persistence-tests',journey:'journey-tests'}[d.suite]),configFile:d.configuration,metadata:{runtimeDigest:runtime}},suites:[{specs:d.rows.map(r=>({file:r.file,title:r.title,tests:[{projectName:r.projectName}]}))}]}}));
+}
+test('v1 keeps its exact original inventory while v2 requires the complete broader inventory and all original UI consumers',()=>{
+ const [broad,recovery,native,normal]=declarations();assert.equal(inspectIdleDeclarations(1,[recovery,native,normal],runtime).length,618);assert.equal(inspectIdleDeclarations(2,[broad,native,normal],runtime,recovery.report).length,1263);assert.throws(()=>inspectIdleDeclarations(1,[broad,native,normal],runtime),/reviewed profile/);
+});
+test('v2 rejects missing cases and same-count invented titles rather than certifying a reduced source inventory',()=>{
+ for(const change of [r=>r.suites[0].specs.pop(),r=>r.suites[0].specs[0].title+=' invented']){const [broad,recovery,native,normal]=declarations();change(broad.report);assert.throws(()=>inspectIdleDeclarations(2,[broad,native,normal],runtime,recovery.report),/Profile declarations|Profile identities/);}
+});
+test('v2 cannot omit or replace the original reviewed recovery UI declaration',()=>{
+ const [broad,recovery,native,normal]=declarations();assert.throws(()=>inspectIdleDeclarations(2,[broad,native,normal],runtime),/requires the original/);recovery.report.suites[0].specs[0].title+=' replaced';assert.throws(()=>inspectIdleDeclarations(2,[broad,native,normal],runtime,recovery.report),/Profile identities/);
+});
+test('v2 rejects wrong runtime metadata and duplicate named profiles',()=>{
+ const [broad,recovery,native,normal]=declarations();assert.throws(()=>inspectIdleDeclarations(2,[broad,native,native],runtime,recovery.report),/Exactly one/);delete broad.report.config.metadata.runtimeDigest;assert.throws(()=>inspectIdleDeclarations(2,[broad,native,normal],runtime,recovery.report),/Declaration source runtime/);
 });
