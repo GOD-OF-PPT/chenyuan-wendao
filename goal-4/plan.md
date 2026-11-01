@@ -1,3 +1,7 @@
+## CANDIDATE-BASE-01 前置依赖修缮 CBASE-E02（仍同一任务）
+
+689新克隆864测试与经济审计均过，文档资源校验因默认Python无PIL失败；原core-repaired原件保，设计文档未执行。依0084先记录再声明既有Pillow12.3，仓库外新Python3.12 venv按要求实际安装。当前root资源正向及v0.4文档已过，check_docs其后原完整资源测试仍按真实进度记，未提前写通过。下一最终pin双bundle/第三个fresh clone完整core/build/独立HTTP与矩阵缺口核对；不把此当Game/性能根因修复，不恢复兼容/环境性能、不改旧2b/689失败标签。
+
 ## CANDIDATE-BASE-01 实证基线修缮 CBASE-E01（仍同一任务）
 
 原2b独立源码的862测试过、原core在经济报告陈旧校验真实失败，文档两项未执行；原log/bundle/报告保。诊断120条及全部非来源字段完全同，仅7新来源/3指纹变化。依0084先登记再修：旧current-report原件/SHA不动，当前即时120报告独立新目标/来源标识，保持全部原检查并补正负测试；0Game/数值/13变更，不将120冒Activity160。提交新pin后重做双bundle/新clone/原core/build和实际HTTP，不改旧红为绿；本项第3仍需随后综合。

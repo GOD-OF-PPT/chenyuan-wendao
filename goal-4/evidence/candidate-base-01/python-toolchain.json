@@ -1,0 +1,10 @@
+{
+  "pythonExecutable": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/candidate-base-01/python-venv/bin/python3",
+  "pythonVersion": "3.12.14 (main, Aug 25 2026, 13:50:22) [Clang 22.1.3 ]",
+  "PillowVersion": "12.3.0",
+  "requirements": "art/requirements.txt",
+  "freshExternalVenv": true,
+  "installReport": "artifacts/goal-4/candidate-base-01/python-install-report.json",
+  "notBundledInSource": true,
+  "scope": "Explicit source-check prerequisite; no environment performance or compatibility matrix."
+}

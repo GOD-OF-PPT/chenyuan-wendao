@@ -14,3 +14,13 @@ T18已独立新制4场景和5透明肖像，并接入40个原生SVG符号与四�
 当前文件事实/缺口见[PROVENANCE](PROVENANCE.md)与[asset-manifest.json](asset-manifest.json)，四场景/五肖像/原生UI与表现制作约定见[PRODUCTION_BRIEF](PRODUCTION_BRIEF.md)。历史scene.webp仍是带字风格图的相同副本；T17已停止加载，改由真实地点/阶段控制原生云山与门势，T18已接无字生产素材与原生降级。没有新增字体、音乐或发行许可。
 
 执行 `python3 art/tools/check_inventory.py` 核对文件hash/字节/像素头、状态/来源引用和禁止文件；它不代替完整图片解码、人工审阅或许可判断。
+
+资源校验和 `npm run validate:core` 的文档步骤依赖 [requirements.txt](requirements.txt) 中锁定的 Pillow。源码重建前可在仓库外创建 Python 虚拟环境，避免改变系统包或使源码工作区变脏：
+
+```sh
+python3 -m venv ../chenyuan-build-venv
+. ../chenyuan-build-venv/bin/activate
+python3 -m pip install --only-binary=:all: -r art/requirements.txt
+```
+
+本轮干净基线验证使用 Python 3.12、Pillow 12.3.0。网页本机 HTTP 运行只需标准库服务，不依赖 Pillow；此安装要求属于源码校验工具，不代表其他环境或性能矩阵已验收。

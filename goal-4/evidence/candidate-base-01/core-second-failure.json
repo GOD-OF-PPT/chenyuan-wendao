@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "689338366ffdfd6a66b9009e7a8aa59092a2444c",
+  "corePassed": false,
+  "testsPassed": 864,
+  "economyPassed": true,
+  "failedCommand": "documents",
+  "reason": "Default Python3.13 has no PIL; existing resource verifier imports Pillow, undeclared in source dependency setup",
+  "notExecuted": [
+    "design-documents"
+  ],
+  "report": "artifacts/goal-4/candidate-base-01/core-repaired/validation.json",
+  "remedy": "Declare existing Pillow12.3 dependency and external venv setup; fresh dependency installation and full new-source reproduction. No Game/performance rootcause claim."
+}

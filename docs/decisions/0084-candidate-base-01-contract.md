@@ -28,3 +28,9 @@
 原2b302bf独立bundle恢复后，原validate:core的862已提交测试全过，economy --check真实红，后两个文档命令未执行。诊断只在已失败clone生成前保存旧文件，再用原--write作对照；根历史报告和bundle原件不变。120条全部成功，去掉sourceHashes后的完整对象逐字段完全相等；新增7来源、3指纹变化，0删除，不是数值变化。原失败/完整core日志与两个报告hash保。
 
 允许本项最小修缮：默认即时120审计目标改为独立docs/economy/current-engine-report.json，旧current-report.json原字节/SHA cf3b1308…596c固定校验，不覆盖/重签；原120计数、两原始baseline pin、支配检查、完整--check保持。新增来源声明说明历史与当前，不把即时120当Activity160或长期真人。仅审计脚本/新报告/说明与有意义正负测试，不改Game/数值/包门槛/13在途。先真实核新旧非来源字段全等，再提交新源pin；另做两次bundle/新独立克隆/原core/build/实际运行。原2b证据保，不用改旧失败的标签冒新成功。预计runtime323及110载荷仍原7aff，需实际证明；若变化继续调查。
+
+## 实证前置依赖 CBASE-E02（同一基线任务）
+
+6893383新独立克隆的864测试及economy均过，documents真实红：PATH默认Python3.13无PIL；design-documents未执行。源码资源守卫早已直接import Pillow，但无提交的Python依赖声明。原core-repaired原件保，不将此归为Game或性能根因。
+
+仅补art/requirements.txt锁定本机既有已验证Pillow12.3.0和art README的仓库外venv安装步骤，不新增运行依赖/素材或变更CI矩阵；用全新外置Python3.12 venv从该声明安装，记录安装来源/版本，再新提交/source bundle/新clone执行完整原core。此为失败后纠正构建前置，不执行环境/性能/兼容矩阵；原所有门槛保持。运行323及110仍须实际字节同，不借工具安装宣称ART17四红已修。
