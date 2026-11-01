@@ -9,5 +9,7 @@
   "runtimeSourceMutation": false,
   "original240SecondLimitUnchanged": true,
   "currentPhaseStillReadsFrozenCb17Clone": true,
-  "rootCodeUncommittedPendingActualBrowserEquivalence": true
+  "rootCodeUncommittedPendingActualBrowserEquivalence": true,
+  "binaryTransportBoundary": "Local Playwright utilityScriptSerializers supports typed arrays but not raw ArrayBuffer. Synthetic probe captures actual getAllKeys binary bytes before transport and checks their associated typed value; full output equality alone would not prove those bytes.",
+  "browserEquivalence": "pending actual new-source JREAD3, no pass claim"
 }

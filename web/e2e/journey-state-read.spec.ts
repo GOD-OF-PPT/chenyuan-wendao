@@ -25,9 +25,13 @@ test('JREAD-2 the whole pair preserves undefined dates arrays and nulls exactly 
  expect(pair).toEqual({game:oldGame,activity:oldActivity});expect(pair.game).toHaveProperty('absent',undefined);expect(pair.game.at).toEqual(new Date('2030-01-01T00:00:00Z'));expect(pair.game.list).toEqual([null,0,'一']);expect(pair.activity).toHaveProperty('extra',undefined);expect(pair.activity.nextCommand).toBeNull();expect(await recoveryDatabase(page)).toEqual(before);
  expect(await readJourneyDatabase(page)).toEqual(before);
  await page.evaluate(()=>new Promise<void>((accept,reject)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onerror=()=>reject(q.error);q.onsuccess=()=>{const db=q.result,tx=db.transaction('probe-marker','readwrite'),store=tx.objectStore('probe-marker');
-  for(const key of [17,new Date('2031-02-03T00:00:00Z'),new Uint8Array([0,255]).buffer,['完整',2]])store.put({key,absent:undefined,list:[null,0,false]},key);
+  for(const key of [17,new Date('2031-02-03T00:00:00Z'),new Uint8Array([0,255]).buffer,['完整',2]])store.put({key,bytes:new Uint8Array([0,255]),absent:undefined,list:[null,0,false]},key);
   store.put(undefined,'undefined-value');tx.oncomplete=()=>{db.close();accept();};tx.onabort=()=>{db.close();reject(tx.error);};};}));
- const complete=await recoveryDatabase(page),bulk=await readJourneyDatabase(page);
+ const complete=await recoveryDatabase(page);
+ // Check binary key bytes before the browser transport serializes ArrayBuffer keys.
+ await page.evaluate(()=>{const get=IDBObjectStore.prototype.getAllKeys,w=window as any;w.__jreadRestoreKeys=()=>{IDBObjectStore.prototype.getAllKeys=get;};IDBObjectStore.prototype.getAllKeys=function(){const request=get.call(this);if(this.name==='probe-marker')request.addEventListener('success',()=>{w.__jreadBinaryKey=request.result.map((key,index)=>key instanceof ArrayBuffer?{index,bytes:[...new Uint8Array(key)]}:null).filter(Boolean);});return request;};});
+ let bulk:any;try{bulk=await readJourneyDatabase(page);}finally{await page.evaluate(()=>{(window as any).__jreadRestoreKeys();});}
+ const binary=await page.evaluate(()=>(window as any).__jreadBinaryKey);expect(binary).toHaveLength(1);expect(binary[0].bytes).toEqual([0,255]);expect(bulk.rows['probe-marker'][binary[0].index].value.bytes).toEqual(new Uint8Array([0,255]));
  expect(bulk).toEqual(complete);expect(bulk.rows['probe-marker']).toHaveLength(6);expect(bulk.rows['probe-marker'].find((r:any)=>r.key==='undefined-value')).toHaveProperty('value',undefined);
  await page.evaluate(()=>{const get=IDBObjectStore.prototype.getAll;IDBObjectStore.prototype.getAll=function(){IDBObjectStore.prototype.getAll=get;const request=get.call(this);this.transaction.abort();return request;};});
  await expect(readJourneyDatabase(page)).rejects.toThrow();expect(await recoveryDatabase(page)).toEqual(complete);expect(await readJourneyDatabase(page)).toEqual(complete);
