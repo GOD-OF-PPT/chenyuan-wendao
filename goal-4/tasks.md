@@ -1,3 +1,17 @@
+## CHECK-UX28-UX29-BASE A9慢例未完成，针对PNG采集修缮（仍同任务）
+
+当前source65普通UI809全过，原7慢例为6过1总60秒红，22513已终态1，原trace/report/全部PNG保；前两learn条件真实完成55.457s，第三forge中超时，不能冒四条件过。host33次PNG采集27.374s。按先于代码的0085/A9参数和原spec备份，只改A9原PNG采集编码，保全部36图/全部断言/四条件/原60和8秒，先实际RGBA像素等价probe、再新pin完整equipment文件复验和逐张看图。当前case不得标完成；原809/415/32/core源码65已过记录保。其他case仅在实际闭包/参数/锁/323应用/110载荷完全不变证明后明确继承，改变spec全部重测，不把原报告改新Git。当前14不同关键图已实看10，4仍待；9整PNG同可继承。原13/原档/v0.3、艺术长期真人和所有旧未完/正式候选/最大评审仍保，兼容环境性能仍暂停。
+
+## CHECK-UX28-UX29-BASE 正常32通过，UI执行中（仍同任务）
+
+65a87ef/7aff干净源码的normal-readonly完整32已实际通过，handle96158终态0；全部原2worker240/8s/完整Game与DB/原意图/单周期断言保，842输入/同Git/精确声明、0skip/retry/errors。当前完整core868/567、native415、追加等价3也全过；原6/26与29/3正常失败保，不能当唯一游戏/环境根因修复。当前只运行ui-regular-readonly809，已确认handle6802须实repoll；原7慢例ui-slow-readonly仍未启动。当前live日志277通过0失败仅为中间观察，不冒整轮结果。102文件源码核对直接新context为1440×900，唯一四尺寸150%在原排除Demo，原grep保，不执行兼容环境性能。原试玩56884的110HTTP载荷11183438B实际同，0用户浏览器刷新/DB读取或Game动作。最终13阶段v2全1263/88叶/82迁移、当前像素/来源/GJ与本地文档提交尚待，不结束本项或开下一项；旧全部未完、13原档/v0.3、整体艺术长期真人及正式候选/最大评审义务保。
+
+## CHECK-UX28-UX29-BASE 当前冻结源码与实证（2026-11-02，仍同任务）
+
+最终测试源码65a87ef已在独立codex/check-ux28-ux29-base-shared干净检出。原core十命令全过：868源码测试、567资源方法/文档；当前shared-equivalence原3例追加对照实过，native-readonly完整415过，全部842输入前后/同Git/精确声明/110HTTP同且0skip/retry/reportError。共享API与原cursor对照完整保，全部323应用输入/数值/周期/DB与原7aff及110载荷不变。0用户DB/fullGame/用户Game操作。
+
+当前normal-readonly完整32正在独立运行，原2worker240秒，已确认handle96158必须实repoll；核心75910/原生16880已观察终态0，不重启。完整UI809普通2worker+7原慢例1worker尚未启动，全部实际枚举及输入先冻结。旧normal6过26红、错峰29过3红与旧UI799过10红全保；不把观察器成本当唯一产品/环境根因。两旧中间build报告被标准重建覆盖后，按原before SHA恢复完全相同字节并明示recovered，原stdout/HTTP/快照/终态保；0案例清单准备错误另记。最终v2全1263/88叶与原82映射、最终当前图/来源/审查与本地文档提交尚待，不能标本项完成或开启下一项。原13在途/原始输入/v0.3、艺术负评/长期/真人及所有旧未完和最大评审/正式候选保持；兼容环境性能仍暂停。
+
 ## CHECK-UX28-UX29-BASE 已证等价后的共享只读接线（仍同任务）
 
 原normal-isolated终态29过3总240s红与完整原件保；private bulk在afd8干净源的JREAD3现有例实过3、842输入/110HTTP同，非全矩阵。另实测符修逐回合69次全库cursor共48.317s。依先于代码的0085/shared-readonly-preparation，测试recoveryDatabase复用已证全keys/values读取，旧完整cursor仅重命名保为JREAD对照，原全部调用者/存档/CAS/时限断言不删。三测试源/原13已实际保，应用323和7aff不变。afd8完整core仍在13845原handle，结束后才切新pin；最终新源core/build、追加等价与完整816/415/32仍待，不冒源升级或游戏/环境根因修复。兼容环境性能/艺术长期真人与所有旧未完保。

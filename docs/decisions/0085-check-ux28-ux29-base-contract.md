@@ -41,3 +41,15 @@
 afd8b45干净源码下原JREAD3例追加核验实际3过、0skip/retry，原before/after/terminal及842输入精确，110HTTP同；缺库、中止、undefined/Date/数组/二进制键在传输前与typed value对应、真实受理/失败/原意图重试的完整库均与原cursor相等。旧normal-isolated终态29过3总240秒失败。第三条符修每回合重开trace另测69次`recoveryDatabase`完整cursor共48317.209ms；该trace仍保，耗时不是产品或环境唯一根因证明。
 
 据此追加第三个测试源`idle-recovery-ui-support.ts`：正式测试观察入口`recoveryDatabase`复用已验证`readJourneyDatabase`，旧完整cursor仅改导出名`recoveryCursorDatabase`留作原样对照，不能删成摘要。JREAD内原cursor断言用明确import alias保持原意，并同时验证现行recoveryDatabase在缺库/完整类型/真实受理/保存失败/重试均与旧完整记录相同。原所有调用者、全部Game/Activity/所有库/唯一回执/1ms边界和时限不变，无新案例/签名/数值/DB或产品代码变化。先存当前三完整原源/SHA再接线；核心校验13845仍在afd8独立clone运行，不碰受测源码，等其终态才切换。最终新pin原core/build和完整816/415/32同源执行，旧各轮、3例等价结果及失败均保，不把旧源码改标最终绿。本共享只读API内部的缺库错误统一为catalogue文字，不改游戏错误/持久proof。回滚新revert保两种读取原件和旧记录。兼容/环境性能仍暂停。
+
+### A9真实60秒红例：保留全部PNG的采集修缮（2026-11-02，仍同任务）
+
+65a87ef当前普通UI809实过，慢例7为6过1总60秒失败，原report/trace/全部PNG/host stage保。A9前两learn条件已完整断言，55.457秒后才进入第三forge条件，61.39秒时原60秒到期；33次PNG采集共27374.316ms，第四条件未执行，不能冒四组已过或产品无缺陷。旧source/log/错误/范围均保，不能靠重跑碰绿、减少图片/目录/几何/完整文字/全库断言、拆例增预算或加时限过关。
+
+只新增一个测试采集helper并让equipment-objects.spec.ts的A9 quotaFrame使用它：单一Chromium1440×900/DPR1/font1，等原字体与可见绘画加载就绪，使用原生Page.captureScreenshot的PNG、fromSurface、captureBeyondViewport:false、optimizeForSpeed:true；保留全部原PNG文件名、完整分辨率、原全部几何/18px/44px/命中/DOM文字、四条件/原60秒/8秒、原Game/Activity/全DB/唯一回执/前1ms/原意图及故障注入不变。不能改node_modules、产品绘画、时钟、动作或DB。参数只影响编码的来源为本轮实读官方Page.pdl captureScreenshot及当前已安装protocol.d.ts；不能据文档就冒实际像素等价。
+
+先保原完整equipment spec，再写。独立固定桌面、无Game的静态图文/渐变probe同时取原page.screenshot PNG和实际helper PNG，以Pillow逐RGBA像素严格相等、1440×900和前后浏览器时钟/DB不变证实采集；该额外诊断不增原816/415/32覆盖。再同源完整equipment-objects文件用原1worker/每例原时限复验，含四条件完整A9；保全部36个目标PNG并逐张实看，不能以尺寸/解码或probe代美术审阅。其余普通809与6慢例的source65原报告保，不改标签。
+
+本修缮仅影响一个spec及其新私有测试helper；新pin完整core/build与命名声明核验，并按实际import闭包/锁/参数/应用323/110载荷逐项证明其余code65 UI/415native/32normal未改依赖，可明确继承原实测；涉及该spec的全部case须新pin完整文件重跑。最终仍用原v2验证全1263/原171/88叶/82迁移及全部历史，不放宽其任何门槛。附加current-source-audit从“所有case单一65”细化为实际current source+逐case未改闭包，明确mixed validation Git，不能把旧报告改新Git或对改变的依赖复用旧证。两种方案均是同7aff游戏运行版本；原最终三浏览器/候选/真人门槛不变。
+
+回滚新revert仅此测试采集helper/调用，保原源/原PNG/原红、所有DB与13在途；不恢复任何页面兼容/环境性能专项。资源增长只在本地证据PNG压缩流，不增加发布资源或放宽原预算。若像素probe不等或完整文件仍失败，保红继续针对性诊断，不删断言或图片。官方一手来源：https://raw.githubusercontent.com/ChromeDevTools/devtools-protocol/master/pdl/domains/Page.pdl （captureScreenshot），安装SDK类型web/node_modules/playwright-core/types/protocol.d.ts 14628-14654。
