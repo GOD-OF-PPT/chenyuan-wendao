@@ -23,3 +23,15 @@
 回滚用新revert仅本元数据/验证接口，保v1可读与所有原件，不降DB、不删用户历史/旧结果或清理13。若出现产品局部缺陷，先补具体源/参数/回滚声明后修，不借本项扩玩法或重平衡。
 
 [杠精计划审查] 通过：v2要求更完整的已授权816并显式保原171子集/全部语义，不把少跑或新总数当覆盖；原原始候选门槛与暂停边界不动。实际全1263/旧断言/原意图/像素及真实源窗核后才交付；结果/提交/最终裁决待执行。
+
+## 同任务真实红例后的只读观察器修缮（先登记，非产品性能专项）
+
+原完整normal32为6过26失败；其后错峰、原2worker/240秒的normal-isolated已在trade/sword/craft两例再次失败。原完整轮次继续到终态，保trace/PNG/全部输入与错误。实际trace已抵达第3关有限战策，74个阶段中的前73完成；未发现此前Game/预算/周期断言失败，不能因此证明整个产品无缺陷。单例真实28次完整目录cursor只读耗时共19272.733ms，474次真实点击77928.273ms；这些只是原例诊断，不构成环境性能矩阵、因果根因结论或艺术认可。
+
+最小修缮仅限`web/e2e/idle-route-support.ts`私有checkArt03Read的完整全库观察：同一个readonly事务中，所有store均以无query/count的getAllKeys/getAll读全键与全值，事务完成才配对输出相同version/rows；缺DB仍abort不创建、错误仍reject。原cursor源码完整保存，原所有查看前后全库比较、完整Game/Activity/唯一回执/1ms截止/240s/8s/正常路线步骤及命令断言逐字保留。函数可独立导出供原JREAD3例追加等价/负向验证，不增加或删减案例，不动广义816/原171/415/32签名。
+
+在原JREAD1/2/3内追加缺DB不创建、原cursor与新全库读对全部真实/合成键值（包括undefined/Date/array/null/二进制与复合key）、真实原子失败/重试以及只读中止不改库的核对，保原断言。依据本轮实读MDN getAll/getAllKeys：无参数读所有匹配记录，使用同一readonly事务与keys确保undefined记录不被丢弃；具体实施及断言为本项目推导。
+
+此改动不涉及应用323运行输入/产物/规则/DB9/数值/周期或用户档，也不声称修复原native boot/J01或运行环境。先保2个原完整helper/test源，再写。测试源码变动后须新本地提交/干净source检出、重建冻结，原轮次不改标签；在新源执行完整816UI（原809/2worker+7慢例/1worker）、415native、32normal（原2worker240s）并保新实际before/after/terminal/声明。初始失败与所有历史仍放最终v2时间序列，0skip/retry/增时限；若仍失败继续具体诊断，不能不断重跑碰绿。只读修缮等价通过不代整体产品/长期/人验。回滚新revert只此两测试源，旧报告/源码和DB可读性保留。
+
+一手API说明： https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAll 、 https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllKeys 。当前页面兼容/环境性能专项暂停不变。

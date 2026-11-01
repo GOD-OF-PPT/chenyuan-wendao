@@ -1,0 +1,13 @@
+{
+  "originalHelperSHA256": "c548b2f104959068c9d00c94f974667150637096f5f319c00f81e7ab3f0c76ab",
+  "helperInverseRestoresWholeOriginal": true,
+  "outsideObserverBlockByteExact": true,
+  "originalRouteStepsAndAllGameAssertionsUnchanged": true,
+  "originalJREADLinesRetainedInOrderExceptExpandedImport": true,
+  "oldJREADCaseTitlesAndCountUnchanged": true,
+  "protected13Exact": true,
+  "runtimeSourceMutation": false,
+  "original240SecondLimitUnchanged": true,
+  "currentPhaseStillReadsFrozenCb17Clone": true,
+  "rootCodeUncommittedPendingActualBrowserEquivalence": true
+}

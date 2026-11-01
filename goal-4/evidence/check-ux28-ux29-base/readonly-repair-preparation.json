@@ -1,0 +1,46 @@
+{
+  "recordedAt": "2026-11-01T15:01:04.812570+00:00",
+  "observedFailedAgain": [
+    "normal idle trade/sword/craft/transmit",
+    "normal idle trade/sword/craft/depart"
+  ],
+  "originalPhaseStillRunning": true,
+  "sourceArchive": [
+    {
+      "path": "pre-bulk-idle-route-support.ts",
+      "sha256": "c548b2f104959068c9d00c94f974667150637096f5f319c00f81e7ab3f0c76ab"
+    },
+    {
+      "path": "pre-bulk-journey-state-read.spec.ts",
+      "sha256": "9962cedffd4c7ecc4501ea8d5157d7dc6356cdbad64abbb243bf28d21f5e9008"
+    }
+  ],
+  "readCostObservation": {
+    "trace": "artifacts/goal-4/check-ux28-ux29-base/normal-isolated-results/idle-normal-matrix-normal-idle-trade-sword-craft-transmit-chromium/trace.zip",
+    "units": "count,totalMs,maxMs; actual one failed case, not app/environment performance acceptance",
+    "groups": {
+      "visibleClick": [
+        474,
+        77928.272999999,
+        626.1790000000037
+      ],
+      "otherFullNativeOrGameRead": [
+        961,
+        29561.3539999997,
+        218.80299999995623
+      ],
+      "pairedFullGameActivity": [
+        489,
+        7247.124000001117,
+        102.84700000006706
+      ],
+      "fullNativeCatalogueCursor": [
+        28,
+        19272.73300000059,
+        994.2730000000447
+      ]
+    }
+  },
+  "rootCause": "unknown; readonly cursor cost measured, not a proved sole timeout cause or game/environment repair",
+  "plan": "0085 same task amendment; preserve all assertions and full all-store data, new clean-source complete matrix after amendment"
+}

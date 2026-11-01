@@ -291,8 +291,22 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
     limitation: 'Visible controls and accelerated declared cycles prove this route; they do not prove real online pacing, balance or human acceptance.' }, null, 2), contentType: 'application/json' });
 }
 
+/** Read all keys and full values from every native store in one readonly transaction. */
+export async function readJourneyDatabase(page:Page){return page.evaluate(()=>new Promise<any>((accept,reject)=>{
+ const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();reject(Error('Readonly catalogue cannot create Game DB'));};q.onerror=()=>reject(q.error);
+ q.onsuccess=()=>{const db=q.result;try{
+  const names=[...db.objectStoreNames],tx=db.transaction(names,'readonly');
+  const reads=names.map(name=>{const store=tx.objectStore(name);return{name,keys:store.getAllKeys(),values:store.getAll()};});
+  tx.oncomplete=()=>{db.close();try{
+   const rows=Object.fromEntries(reads.map(({name,keys,values})=>{if(keys.result.length!==values.result.length)throw Error('Incomplete readonly catalogue');return[name,keys.result.map((key,index)=>({key,value:values.result[index]}))];}));
+   accept({version:db.version,rows});
+  }catch(error){reject(error);}};
+  tx.onabort=()=>{db.close();reject(tx.error??Error('Readonly catalogue transaction aborted'));};
+ }catch(error){db.close();reject(error);}};
+}));}
+
 // CHECK-ART03: public surface access is readonly over every native Game store.
-async function checkArt03Read(page:Page,body:()=>Promise<void>){const read=()=>page.evaluate(()=>new Promise<any>((accept,reject)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();reject(Error('Readonly catalogue cannot create Game DB'));};q.onerror=()=>reject(q.error);q.onsuccess=()=>{const db=q.result,tx=db.transaction([...db.objectStoreNames],'readonly'),rows:any={};for(const name of db.objectStoreNames){rows[name]=[];const r=tx.objectStore(name).openCursor();r.onsuccess=()=>{if(r.result){rows[name].push({key:r.result.key,value:r.result.value});r.result.continue();}};}tx.oncomplete=()=>{db.close();accept({version:db.version,rows});};tx.onabort=()=>{db.close();reject(tx.error);};};}));const before=await read();await body();expect(await read()).toEqual(before);}
+async function checkArt03Read(page:Page,body:()=>Promise<void>){const before=await readJourneyDatabase(page);await body();expect(await readJourneyDatabase(page)).toEqual(before);}
 
 /** Execute only an already explicitly accepted public activity; this never writes via a Store or repository. */
 export async function settleVisibleActivity(page:Page){
