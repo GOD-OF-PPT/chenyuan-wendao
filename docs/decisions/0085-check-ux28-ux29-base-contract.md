@@ -35,3 +35,9 @@
 此改动不涉及应用323运行输入/产物/规则/DB9/数值/周期或用户档，也不声称修复原native boot/J01或运行环境。先保2个原完整helper/test源，再写。测试源码变动后须新本地提交/干净source检出、重建冻结，原轮次不改标签；在新源执行完整816UI（原809/2worker+7慢例/1worker）、415native、32normal（原2worker240s）并保新实际before/after/terminal/声明。初始失败与所有历史仍放最终v2时间序列，0skip/retry/增时限；若仍失败继续具体诊断，不能不断重跑碰绿。只读修缮等价通过不代整体产品/长期/人验。回滚新revert只此两测试源，旧报告/源码和DB可读性保留。
 
 一手API说明： https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAll 、 https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllKeys 。当前页面兼容/环境性能专项暂停不变。
+
+### 已证明等价后的共享观察器接线（仍本任务，先登记）
+
+afd8b45干净源码下原JREAD3例追加核验实际3过、0skip/retry，原before/after/terminal及842输入精确，110HTTP同；缺库、中止、undefined/Date/数组/二进制键在传输前与typed value对应、真实受理/失败/原意图重试的完整库均与原cursor相等。旧normal-isolated终态29过3总240秒失败。第三条符修每回合重开trace另测69次`recoveryDatabase`完整cursor共48317.209ms；该trace仍保，耗时不是产品或环境唯一根因证明。
+
+据此追加第三个测试源`idle-recovery-ui-support.ts`：正式测试观察入口`recoveryDatabase`复用已验证`readJourneyDatabase`，旧完整cursor仅改导出名`recoveryCursorDatabase`留作原样对照，不能删成摘要。JREAD内原cursor断言用明确import alias保持原意，并同时验证现行recoveryDatabase在缺库/完整类型/真实受理/保存失败/重试均与旧完整记录相同。原所有调用者、全部Game/Activity/所有库/唯一回执/1ms边界和时限不变，无新案例/签名/数值/DB或产品代码变化。先存当前三完整原源/SHA再接线；核心校验13845仍在afd8独立clone运行，不碰受测源码，等其终态才切换。最终新pin原core/build和完整816/415/32同源执行，旧各轮、3例等价结果及失败均保，不把旧源码改标最终绿。本共享只读API内部的缺库错误统一为catalogue文字，不改游戏错误/持久proof。回滚新revert保两种读取原件和旧记录。兼容/环境性能仍暂停。

@@ -1,0 +1,80 @@
+{
+  "recordedAt": "2026-11-01T15:33:54.536485+00:00",
+  "archives": [
+    {
+      "path": "pre-sharedbulk-idle-route-support.ts",
+      "source": "web/e2e/idle-route-support.ts",
+      "sha256": "9a89e9da054a43d686cc8135f8e6ed5354110b480db7945eb5ebce2808547bb8"
+    },
+    {
+      "path": "pre-sharedbulk-journey-state-read.spec.ts",
+      "source": "web/e2e/journey-state-read.spec.ts",
+      "sha256": "a1fc412b4b833dad8f17fc9c3325a1fe11d082f668d3e5fd3bbaec9cecc81c47"
+    },
+    {
+      "path": "pre-sharedbulk-idle-recovery-ui-support.ts",
+      "source": "web/e2e/idle-recovery-ui-support.ts",
+      "sha256": "cf552afb2a72b235072bae675f3731eddeb2f5153d7a90ee8ae2fd0a41ba166d"
+    }
+  ],
+  "actualPriorEquivalence": {
+    "exit": 0,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 842,
+    "runtime": "7aff3a68d5d32aacbe3ad9ca5b8cd25d31486784aeb822cd4e330de4c97f4d28",
+    "stats": {
+      "startTime": "2026-11-01T15:32:10.152Z",
+      "duration": 13897.919999999998,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 3,
+    "retried": [],
+    "reportSha256": "e630ece630afd4459f4912dbedd3bb602bfb2d214d8660996098c020dfbdc8b3"
+  },
+  "actualTalismanTrace": {
+    "trace": "artifacts/goal-4/check-ux28-ux29-base/normal-isolated-results/idle-trial-reopen-current--96816-l-or-an-automatic-next-gate-chromium/trace.zip",
+    "groups": {
+      "visibleClick": [
+        347,
+        38892.02099999646,
+        303.68000000016764
+      ],
+      "otherNativeRead": [
+        1128,
+        22870.9749999973,
+        158.02000000001863
+      ],
+      "pairedFullGameActivity": [
+        362,
+        4653.589000005275,
+        61.751999999862164
+      ],
+      "privateFullNativeCatalogueCursor": [
+        16,
+        5298.296999998856,
+        553.1009999997914
+      ],
+      "recoveryWholeNativeCursor": [
+        69,
+        48317.20900000073,
+        1319.4870000001974
+      ]
+    },
+    "incomplete": [
+      {
+        "method": "expect",
+        "params": "{'selector': 'internal:testid=[data-testid=\"save-status\"s]', 'expression': 'to.have.text', 'expectedText': [{'string': '已保存', 'normalizeWhiteSpace': True}], 'expectedValue': {'value': {'v': 'undefined"
+      }
+    ],
+    "scope": "actual failed case diagnosis only; not game/environment rootcause or acceptance"
+  },
+  "coreAfdSourceStillRunning": 13845,
+  "plan": "0085 shared readonly amendment; same task, exact full data/old cursor/assertions/limits preserved. New clean source and full core/build/816/415/32 required."
+}

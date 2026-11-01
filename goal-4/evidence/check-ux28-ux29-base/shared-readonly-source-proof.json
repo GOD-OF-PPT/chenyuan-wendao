@@ -1,0 +1,13 @@
+{
+  "sharedSupportOriginalSHA256": "cf552afb2a72b235072bae675f3731eddeb2f5153d7a90ee8ae2fd0a41ba166d",
+  "oldCursorAndRestOfModuleExactAfterInverse": true,
+  "oldCursorRetainedUnderExplicitBaselineName": true,
+  "existingJREADLinesUnchangedExceptTwoImports": true,
+  "baselineAliasKeepsOldCursorMeaning": true,
+  "newCurrentAPIAssertionsAdded": true,
+  "zeroCaseTitleOrCountChange": true,
+  "allOriginalGameActivityReceiptDatabaseDeadlinesAndTimeoutAssertionsRetained": true,
+  "protected13Exact": true,
+  "actualSharedAPIBrowserEquivalence": "pending new clean source, do not claim pass",
+  "scope": "test observer only, original missingDB error unified only for current test API;0 app/schema/action changes"
+}

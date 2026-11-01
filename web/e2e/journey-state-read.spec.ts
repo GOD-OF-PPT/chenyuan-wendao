@@ -3,7 +3,7 @@ import {driver} from '../../tests/full-route.mjs';
 import {resolve} from '../../src/full/engine';
 import {readJourneyState,readJourneyDatabase} from './idle-route-support';
 import {snapshot,activitySnapshot} from './support';
-import {importRecoveryFixture,recoveryDatabase,stored} from './idle-recovery-ui-support';
+import {importRecoveryFixture,recoveryCursorDatabase as recoveryDatabase,recoveryDatabase as currentDatabase,stored} from './idle-recovery-ui-support';
 
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
 test.setTimeout(60000);
@@ -15,6 +15,8 @@ test('JREAD-1 a readonly joint record read cannot create a missing Game database
  expect(await page.evaluate(()=>indexedDB.databases())).toEqual([]);
  await expect(readJourneyDatabase(page)).rejects.toThrow('Readonly catalogue cannot create Game DB');
  expect(await page.evaluate(()=>indexedDB.databases())).toEqual([]);
+ await expect(currentDatabase(page)).rejects.toThrow('Readonly catalogue cannot create Game DB');expect(await page.evaluate(()=>indexedDB.databases())).toEqual([]);
+ await expect(recoveryDatabase(page)).rejects.toThrow('Readonly M04 observer cannot create Game storage');expect(await page.evaluate(()=>indexedDB.databases())).toEqual([]);
 });
 
 test('JREAD-2 the whole pair preserves undefined dates arrays and nulls exactly like both original reads without writes',async({page})=>{
@@ -35,6 +37,7 @@ test('JREAD-2 the whole pair preserves undefined dates arrays and nulls exactly 
  expect(bulk).toEqual(complete);expect(bulk.rows['probe-marker']).toHaveLength(6);expect(bulk.rows['probe-marker'].find((r:any)=>r.key==='undefined-value')).toHaveProperty('value',undefined);
  await page.evaluate(()=>{const get=IDBObjectStore.prototype.getAll;IDBObjectStore.prototype.getAll=function(){IDBObjectStore.prototype.getAll=get;const request=get.call(this);this.transaction.abort();return request;};});
  await expect(readJourneyDatabase(page)).rejects.toThrow();expect(await recoveryDatabase(page)).toEqual(complete);expect(await readJourneyDatabase(page)).toEqual(complete);
+ expect(await currentDatabase(page)).toEqual(complete);
 });
 
 test('JREAD-3 real accepted failed and retried activity pairs equal both original complete records and the formal saved Game',async({page})=>{
@@ -42,9 +45,12 @@ test('JREAD-3 real accepted failed and retried activity pairs equal both origina
  expect(await readJourneyState(page)).toEqual({game:await snapshot(page),activity:await activitySnapshot(page)});
  await page.getByTestId('cultivate').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');const accepted=await readJourneyState(page),a=accepted.activity,before=await recoveryDatabase(page);expect(accepted.game).toEqual(game);expect(accepted).toEqual({game:await snapshot(page),activity:await activitySnapshot(page)});
  expect(await readJourneyDatabase(page)).toEqual(before);
+ expect(await currentDatabase(page)).toEqual(before);
  await page.evaluate(()=>{const put=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(v:any,k?:IDBValidKey){if(this.name==='full-receipts'&&v?.input?.kind==='TICK'){IDBObjectStore.prototype.put=put;throw new DOMException('JREAD isolated real tick quota','QuotaExceededError');}return k===undefined?put.call(this,v):put.call(this,v,k);};});
  await page.clock.fastForward(a.cycleMs-1);expect(await readJourneyState(page)).toEqual(accepted);expect(await recoveryDatabase(page)).toEqual(before);await page.clock.fastForward(1);await expect(page.getByTestId('error')).toContainText('存储空间不足');expect(await readJourneyState(page)).toEqual(accepted);expect(await recoveryDatabase(page)).toEqual(before);
  expect(await readJourneyDatabase(page)).toEqual(before);
+ expect(await currentDatabase(page)).toEqual(before);
  await page.getByTestId('retry').click();await expect.poll(async()=>(await activitySnapshot(page)).completedCycles).toBe(1);await expect(page.getByTestId('save-status')).toHaveText('已保存');const pair=await readJourneyState(page),raw=await recoveryDatabase(page),formal=resolve(game,a.nextCommand);expect(pair).toEqual({game:await snapshot(page),activity:await activitySnapshot(page)});expect(pair.game).toEqual(formal.nextState);expect(pair.game).toEqual(stored(raw,'current'));expect(pair.activity).toEqual(stored(raw,'activity'));const receipts=raw.rows['full-receipts'].filter((r:any)=>r.key===a.runId+':'+a.nextCommand.commandId);expect(receipts).toHaveLength(1);const receipt=receipts[0].value;expect(receipt.result).toEqual(formal.result);if(receipt.version===2)expect(receipt.proof.stateAfter).toEqual(pair.game);else{expect(receipt.version).toBe(1);expect(receipt).not.toHaveProperty('proof');expect(Object.keys(receipt).sort()).toEqual(['format','version','input','fingerprint','activity','command','result'].sort());}expect(receipt.activity).toEqual(pair.activity);
  expect(await readJourneyDatabase(page)).toEqual(raw);
+ expect(await currentDatabase(page)).toEqual(raw);
 });

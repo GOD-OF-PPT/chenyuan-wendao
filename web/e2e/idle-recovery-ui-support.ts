@@ -4,12 +4,14 @@ import {completeActivity} from '../../src/full/activity.ts';
 import {singleBattlePlan} from '../../src/full/adventure.ts';
 import {canonicalFingerprint} from '../../src/full/receipts.ts';
 import {snapshot,activitySnapshot,useJourneyClock} from './support';
-import {selectPlan,decision,settleVisibleActivity,home} from './idle-route-support';
+import {selectPlan,decision,settleVisibleActivity,home,readJourneyDatabase} from './idle-route-support';
 
-export async function recoveryDatabase(page:Page){return page.evaluate(()=>new Promise<any>((ok,no)=>{
+// Keep the original complete cursor observer as the equivalence baseline.
+export async function recoveryCursorDatabase(page:Page){return page.evaluate(()=>new Promise<any>((ok,no)=>{
  const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();no(Error('Readonly M04 observer cannot create Game storage'));};q.onerror=()=>no(q.error);
  q.onsuccess=()=>{const db=q.result,tx=db.transaction([...db.objectStoreNames],'readonly'),rows:any={};for(const n of db.objectStoreNames){rows[n]=[];const c=tx.objectStore(n).openCursor();c.onsuccess=()=>{if(c.result){rows[n].push({key:c.result.key,value:c.result.value});c.result.continue();}};}tx.oncomplete=()=>{db.close();ok({version:db.version,rows});};tx.onabort=()=>{db.close();no(tx.error);};};
 }));}
+export async function recoveryDatabase(page:Page){return readJourneyDatabase(page);}
 export const stored=(raw:any,key:string)=>raw.rows['full-state'].find((x:any)=>x.key===key)?.value??null;
 export async function recoveryReadonly(page:Page,work:()=>Promise<void>){const before=await recoveryDatabase(page);await work();expect(await recoveryDatabase(page)).toEqual(before);}
 export async function control600(page:Page,before:any){

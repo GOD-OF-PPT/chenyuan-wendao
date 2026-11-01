@@ -1,3 +1,7 @@
+## CHECK-UX28-UX29-BASE 已证等价后的共享只读接线（仍同任务）
+
+原normal-isolated终态29过3总240s红与完整原件保；private bulk在afd8干净源的JREAD3现有例实过3、842输入/110HTTP同，非全矩阵。另实测符修逐回合69次全库cursor共48.317s。依先于代码的0085/shared-readonly-preparation，测试recoveryDatabase复用已证全keys/values读取，旧完整cursor仅重命名保为JREAD对照，原全部调用者/存档/CAS/时限断言不删。三测试源/原13已实际保，应用323和7aff不变。afd8完整core仍在13845原handle，结束后才切新pin；最终新源core/build、追加等价与完整816/415/32仍待，不冒源升级或游戏/环境根因修复。兼容环境性能/艺术长期真人与所有旧未完保。
+
 ## CHECK-UX28-UX29-BASE 正常路线复红与只读修缮准备（仍同任务）
 
 normal原32实际6过26红；normal-isolated保原2workers240s错峰复核，trade/sword/craft两例再次到总时限，原轮继续终态，不当游戏卡死或环境根因已证明。trace实际达第3关；28次全目录cursor读共19.273秒，仅诊断。按0085先追加参数/验收/回滚并保两原完整测试源，再仅以同readonly事务全keys/values替私有全库观察器，保完整库/所有原断言与240秒，不改323应用/数值/DB。原JREAD3案例只追加等价/缺DB/类型/真实保存失败重试/只读abort验证，不变816/171/415/32目录签名。提交后新干净检出/冻结/完整授权矩阵，不用旧测试源改标新通过；所有初红和unknown/13原档保，兼容环境性能仍暂停。本项仍未交付。
