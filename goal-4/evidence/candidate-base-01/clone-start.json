@@ -1,0 +1,67 @@
+{
+  "source": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/candidate-base-01/source",
+  "head": "2b302bff62a84c1048103154cadeaefa77daae2e",
+  "branch": "codex/candidate-base-01",
+  "freshFromActualBundle": true,
+  "noObjectAlternates": true,
+  "noBundledDependencies": true,
+  "requiredHistoryActual": true,
+  "initialClean": true,
+  "protectedWIPIsolation": {
+    "web/e2e/economy.spec.ts": {
+      "committedVersionExact": true,
+      "committedSHA256": "e15274b71a49be17d292f9272da25b725669534e07dbcdf58efcf6e2d31f8282",
+      "rootWIPSHA256": "74d9aa0f71351a890ddb75010aa7ee5eaed03a251cf435824afd836acc3d928a"
+    },
+    "web/e2e/growth.spec.ts": {
+      "committedVersionExact": true,
+      "committedSHA256": "8be4291335410526286c33bf8858119173a470fb2dc0ac8b8fe5fbc1121d945a",
+      "rootWIPSHA256": "6a3ed492a841efe86af8c077b67629aa8aee9efa2ce583740913cebe4fd833b3"
+    },
+    "web/performance-tests/production.spec.ts": {
+      "committedVersionExact": true,
+      "committedSHA256": "e7482bac617965917b6c8fb4c3c94b2f3c8556f18e912d44e21300bd727b0ad2",
+      "rootWIPSHA256": "4fedce4841870b4d2b3c70744788ca8ed0d75868652ac6e96119febefafb71a9"
+    },
+    "web/performance-tests/support.ts": {
+      "committedVersionExact": true,
+      "committedSHA256": "5aa2b519ecd5753d2f603a0a5328807540b9c2bd161323e1bd42e05e8425e851",
+      "rootWIPSHA256": "5b292d27f4c15ebe74222d8b3e2754db27bd3fb906c489fa793ff02624f36053"
+    },
+    "web/playwright.config.ts": {
+      "committedVersionExact": true,
+      "committedSHA256": "a5725f53c5e5fc5de9a711212af998fd61d5f7e8f5b49c679cd36968d81149c3",
+      "rootWIPSHA256": "615e17d0d67d0b9bb168fd87287e9e427b2fa2b23a60d6e83cf00eba23c031f1"
+    },
+    "web/playwright.journeys.config.ts": {
+      "committedVersionExact": true,
+      "committedSHA256": "f4ae7694edada3f490d0ad4bac55a5c817c3834a11ee0ab3b2f804bfbbde274b",
+      "rootWIPSHA256": "244b1faecde4ddecd1290ef99d5fc7909e5b5947289d0cf9460d771ac22097f7"
+    },
+    "web/playwright.performance.config.ts": {
+      "committedVersionExact": true,
+      "committedSHA256": "6f82fa8de21c42201cb763ee304868a555b28ac1123de644f5295f72ec19ac00",
+      "rootWIPSHA256": "8c083d55b7c3bd7bb538d719b098ba5213d95efc460980e9ff73c93ae5ece3a0"
+    },
+    "web/playwright.persistence.config.ts": {
+      "committedVersionExact": true,
+      "committedSHA256": "8447fc49b7cc020c9c1a3ea4a6eba23535512430dd89ca5f0f5203b69ac0e731",
+      "rootWIPSHA256": "c6b4221c4a3c0964c89657afb2ea2718b7c3d87f0566c30d78f70900b08352f6"
+    },
+    "scripts/collect-validation.mjs": {
+      "omittedUntrackedWIP": true
+    },
+    "scripts/merge-ui-shards.mjs": {
+      "omittedUntrackedWIP": true
+    },
+    "scripts/validation-matrix.mjs": {
+      "omittedUntrackedWIP": true
+    },
+    "tests/ui-shards.test.mjs": {
+      "omittedUntrackedWIP": true
+    },
+    "tests/validation-matrix.test.mjs": {
+      "omittedUntrackedWIP": true
+    }
+  }
+}

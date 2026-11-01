@@ -52,7 +52,10 @@ if (process.argv.includes('--idle')) {
   if (passed !== 160) process.exitCode = 1;
 } else {
 const baselinePath = new URL('docs/economy/baseline-full-unbalanced.1.json', root);
-const target = new URL('docs/economy/current-report.json', root);
+const target = new URL('docs/economy/current-engine-report.json', root);
+const historicalFile = 'docs/economy/current-report.json';
+const historicalSha256 = sha(readFileSync(new URL(historicalFile, root)));
+assert.equal(historicalSha256, 'cf3b130845be41b02b332f1436399a5edc8f5ae9d5093e8124f4b0df032e596c', 'Historical instant audit is immutable');
 const baselineText = readFileSync(baselinePath, 'utf8'), baseline = JSON.parse(baselineText);
 const oldCultivationFile = 'docs/economy/baseline-cultivation-full-unbalanced.1.json';
 const oldCultivationText = readFileSync(new URL(oldCultivationFile, root), 'utf8');
@@ -71,6 +74,7 @@ const runs = detailed ? matrix() : allRuns;
 const report = {
   schema: 'chenyuan-economy-audit.1', contentVersion: VERSION, balanceVersion: BALANCE, numericStatus: 'unbalanced',
   scope: 'Real engine commands from new games or explicitly labelled replay checkpoints. Not browser, persistence, global optimality, balance, human or real-time-duration acceptance.',
+  historicalReport: { file: historicalFile, sha256: historicalSha256, scope: 'Frozen historical instant120 report; current engine provenance is recorded separately here. Neither report is idle160 or balance acceptance.' },
   baseline: { file: 'docs/economy/baseline-full-unbalanced.1.json', sha256: sha(baselineText), rulesCommit: baseline.baselineRulesCommit, cultivationFile: oldCultivationFile, cultivationSha256: sha(oldCultivationText) },
   sourceHashes: Object.fromEntries([...files('src/'), ...files('scripts/economy/'), 'scripts/replay-economy.mjs'].sort().map(file => [file, sha(readFileSync(new URL(file, root)))])),
   assumptions: { openings: 3, schools: 2, preparations: 5, cultivationMethods: 2, minds: 2, fixedTrialAnswer: 'accept', fixedEnding: 'transmit',

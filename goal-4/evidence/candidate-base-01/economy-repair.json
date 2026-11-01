@@ -1,0 +1,16 @@
+{
+  "originalReportPath": "docs/economy/current-report.json",
+  "originalReportSHA256": "cf3b130845be41b02b332f1436399a5edc8f5ae9d5093e8124f4b0df032e596c",
+  "currentReportPath": "docs/economy/current-engine-report.json",
+  "currentReportSHA256": "9d934e18536906bfbb00ee187114e124035f107afbb3074ca174179636ee3f7f",
+  "allHistoricalNonSourceResultsExactlyEqual": true,
+  "realInstantRoutes": 120,
+  "scriptAllOriginalCountsBaselinesDominanceChecksRetained": true,
+  "regressionTests": {
+    "passed": 2,
+    "log": "artifacts/goal-4/candidate-base-01/economy-regression.tap",
+    "positiveCLIAndHistoricalMutationCurrentStaleRejections": true
+  },
+  "runtimeInputs323Unchanged": true,
+  "coreWholeFreshReproduction": "pending new committed source"
+}

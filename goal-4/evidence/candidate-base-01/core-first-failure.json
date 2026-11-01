@@ -1,0 +1,19 @@
+{
+  "sourceCommit": "2b302bff62a84c1048103154cadeaefa77daae2e",
+  "corePassed": false,
+  "failedCommand": "economy",
+  "reason": "Economy report is stale",
+  "tests": {
+    "passed": 862,
+    "failed": 0,
+    "skipped": 0,
+    "log": "artifacts/goal-4/candidate-base-01/core/tests.tap"
+  },
+  "notExecuted": [
+    "documents",
+    "design-documents"
+  ],
+  "originalCoreReport": "artifacts/goal-4/candidate-base-01/core/validation.json",
+  "originalEconomyReportSHA256": "cf3b130845be41b02b332f1436399a5edc8f5ae9d5093e8124f4b0df032e596c",
+  "diagnosticPlan": "Keep root historical report unchanged; original clone after failed core is used only as a diagnosis copy, before file preserved; final baseline will use a fresh source pin if repair needed."
+}
