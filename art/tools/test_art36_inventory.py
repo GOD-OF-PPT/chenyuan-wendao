@@ -5,7 +5,10 @@ ROOT=Path(__file__).resolve().parents[2]
 class ErrorStageInventoryTests(unittest.TestCase):
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name);m=json.loads((ROOT/LEDGER).read_text())
-  for name in {LEDGER,CSS,MAIN,m['baseline']['path'],*UNCHANGED,*m['sourceReferences']}:
+  names={LEDGER,CSS,MAIN,m['baseline']['path'],*UNCHANGED,*m['sourceReferences']}
+  if(ROOT/'art/redesign/art37.json').exists():
+   evolution=json.loads((ROOT/'art/redesign/art37.json').read_text());names.update({'art/redesign/art37.json',evolution['baseline']['path']})
+  for name in names:
    dst=self.root/name;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,dst)
  def check(self):return validate_art36(self.root)
  def refresh(self,name):

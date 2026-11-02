@@ -45,3 +45,4 @@ import './art11-inventory.css';
 import './art12-narrative.css';
 import './art18-ui.css';
 import './art36-error-stage.css';
+import './art37-dialog-actions.css';

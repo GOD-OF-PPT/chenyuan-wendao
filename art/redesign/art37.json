@@ -1,0 +1,45 @@
+{
+  "format": "chenyuan-dialog-actions-art37",
+  "version": 1,
+  "userAcceptance": false,
+  "budgets": {
+    "cssBytes": 5000,
+    "mainDeltaBytes": 64,
+    "combinedArt18NativeBytes": 18000,
+    "newRasterAssets": 0
+  },
+  "files": [
+    {
+      "path": "web/src/art37-dialog-actions.css",
+      "bytes": 4801,
+      "sha256": "2290efd671800be93d4afd1b1d240f73349cedd1fef416e0d5bc8af6d6772ff7"
+    }
+  ],
+  "consumer": {
+    "path": "web/src/main.ts",
+    "bytes": 1566,
+    "sha256": "e985976803f0ff98cff52445b1300df7bf7471f34e4594fffc8d34ea327a81b6"
+  },
+  "baseline": {
+    "path": "goal-4/evidence/art37/main.ts.before.txt",
+    "bytes": 1529,
+    "sha256": "d9ce62905a960f11fb8aecdf5c0fbe9b5e65c850ffb76e1fd3ee2ec83feb0c0e"
+  },
+  "unchanged": {
+    "web/src/art18-ui.css": "2a536ea2393e233d0d610bb9feb1af1fd74d906592b3abd4e2b24340a639b947",
+    "web/src/GameConfirmDialog.vue": "e607ab9f4eb60ee6725fb57f4d38a5c7f983ef82c6028539f7fe5e70b70a52cd",
+    "web/src/use-game-confirmation.ts": "6835e6c1ae8dc8435aa57d18ea6529bef0808c3f326cae0adb10d235124df2e4",
+    "web/src/focus.ts": "8ae91e78a4db7a854c293fc4b1bc28f02dd0d542b3119cff383f9245b4944eea",
+    "web/src/App.vue": "ace7316243691e708ee80dac26aca866a9c28b7dbd8633cde11bf584a83ece71",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "art/redesign/art18.json": "b9f4bddcb03ffec75b942e4198887f929408ea5eb2d1787b258aed10520a77e9"
+  },
+  "sourceReferences": [
+    "docs/decisions/0089-dialog-action-overflow-art37-contract.md",
+    "goal-4/amendments/2026-11-02-art37-input.txt",
+    "goal-4/evidence/art37/main.ts.before.txt"
+  ]
+}

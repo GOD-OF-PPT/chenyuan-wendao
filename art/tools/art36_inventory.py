@@ -1,6 +1,7 @@
 """ART36 draws the error-state reading place; it cannot grant authority or alter old budgets."""
 import hashlib,json,re
 from pathlib import Path
+from art37_inventory import original_art37_main
 LEDGER='art/redesign/art36.json'
 CSS='web/src/art36-error-stage.css'
 MAIN='web/src/main.ts'
@@ -23,9 +24,9 @@ def validate_art36(root):
  recorded={LEDGER,CSS,MAIN,m['baseline']['path'],*UNCHANGED,*m['sourceReferences']}
  for p in m['sourceReferences']:local(p)
  for r in m['files']+[m['consumer'],m['baseline']]:
-  data=local(r['path']).read_bytes();assert len(data)==r['bytes'] and hashlib.sha256(data).hexdigest()==r['sha256'],'ART36 actual source facts'
+  data=local(r['path']).read_bytes();data=original_art37_main(root,data)if r['path']==MAIN else data;assert len(data)==r['bytes'] and hashlib.sha256(data).hexdigest()==r['sha256'],'ART36 actual source facts'
  old=local(m['baseline']['path']).read_bytes();assert hashlib.sha256(old).hexdigest()==BASELINE_SHA,'ART36 frozen whole bootstrap'
- main=local(MAIN).read_text();assert main.count(IMPORT)==1 and main.replace(IMPORT,'',1).encode()==old,'ART36 only one pure style import'
+ main=original_art37_main(root,local(MAIN).read_bytes()).decode();assert main.count(IMPORT)==1 and main.replace(IMPORT,'',1).encode()==old,'ART36 only one pure style import'
  assert len(main.encode())-len(old)<=64 and local(CSS).stat().st_size<=1200,'ART36 bounded style delta'
  for p,h in UNCHANGED.items():assert hashlib.sha256(local(p).read_bytes()).hexdigest()==h,'ART36 original owner or old ledger changed'
  assert local(CSS).stat().st_size+local('web/src/art35-study-rest.css').stat().st_size<=4800 and sum(local(p).stat().st_size for p in [CSS,'web/src/art35-study-rest.css','web/src/jade-paint.ts'])<=7200,'ART36 old combined cap not relaxed'
