@@ -26,7 +26,7 @@ test('ART37 expanded settings and destructive press are readable, distinct and r
  for(const [id,name]of [['local-refresh','local-records'],['local-export-preview','local-export']]as const){await page.getByTestId(id).click();await expect(page.getByTestId(id)).toHaveAttribute('aria-pressed','true');await bounded(page,info,name);}
  await local.locator(':scope>summary').click();await reset.click();await bounded(page,info,'danger-confirmation');
  const cancel=page.getByTestId('game-confirmation-cancel');await cancel.focus();await page.keyboard.press('Shift+Tab');await page.keyboard.press('Tab');expect(await cancel.evaluate(n=>getComputedStyle(n).outlineStyle)).toBe('solid');
- const b=(await cancel.boundingBox())!;await page.mouse.move(b.x+b.width/2,b.y+b.height/2);const shadow=await cancel.evaluate(n=>getComputedStyle(n).boxShadow);await page.mouse.down();expect(await cancel.evaluate(n=>getComputedStyle(n).boxShadow)).not.toBe(shadow);await page.screenshot({path:info.outputPath('cancel-pressed.png')});await page.mouse.up();
+ const b=(await cancel.boundingBox())!;await page.mouse.move(b.x+b.width/2,b.y+b.height/2);const shadow=await cancel.evaluate(n=>getComputedStyle(n).boxShadow);await page.mouse.down();expect(await cancel.boundingBox()).toEqual(b);expect(await cancel.evaluate(n=>getComputedStyle(n).boxShadow)).not.toBe(shadow);await page.screenshot({path:info.outputPath('cancel-pressed.png')});await page.mouse.up();
  await expect(page.getByTestId('game-confirmation')).toHaveCount(0);await expect(reset).toBeFocused();expect(await recoveryDatabase(page)).toEqual(before);
 });
 test('ART37 a long literal selected filename wraps completely and cancelling import retains every store',async({page},info)=>{
