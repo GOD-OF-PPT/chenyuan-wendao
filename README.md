@@ -284,7 +284,7 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 本地存档不等于云档，应导出备份；清理浏览器数据可能丢失进度。新功能通过独立分支与PR，不强推、不自动合并、不公开部署、不修改仓库可见性，不提交凭据、个人存档、字体或未授权素材，不复制参考仓库代码。未擅自增加开源许可证。
 
 
-开发回归需要Git和系统tar及完整仓库历史：历史兼容夹具会在临时目录执行固定旧提交源码，测试后清理，不提交存档。CI测试作业已采用fetch-depth:0；浅克隆可先执行`git fetch --unshallow`。静态网页运行包不依赖Git。数值版本更新的经济报告按实际BALANCE命名，旧.1基线与.2报告保留，当前审计写入独立current-report.json，已交付.3报告同样保留。
+开发回归需要Git和系统tar及完整仓库历史：历史兼容夹具会在临时目录执行固定旧提交源码，测试后清理，不提交存档。CI测试作业已采用fetch-depth:0；浅克隆可先执行`git fetch --unshallow`。静态网页运行包不依赖Git。数值版本更新的经济报告按实际BALANCE命名，旧.1基线与.2报告保留，当前即时审计写入独立current-engine-report.json，历史current-report.json与已交付.3报告原件保留。
 
 ## 工程候选包与演示入口
 
@@ -292,7 +292,9 @@ T04建立[事务适配与迁移](docs/implementation/goal-1-full-persistence.md)
 
 `npm --prefix web run build`必经节点生成、类型、Vite与构建来源记录；生产测试检查当前源码与产物，旧/缺失/篡改dist不会被当作新构建。生成JSON和候选包在忽略目录，不提交Git。`npm run demo:generate`可单独重新回放生成节点。
 
-候选装配需要当前完整三浏览器报告和12份正常路线原始JSON，命令为：
+以下保留原Goal1正式候选合同，当前全部兼容/环境性能专项暂停，**本节装配/解包测试命令当前不执行**。局部试玩包不等ready；须用户明确恢复后，按当前完整同源证据和原门槛另行执行。当前工具/源码启动见[运行说明](web/README.md)，资源校验先按art/requirements.txt在仓库外venv安装Pillow；ENGINEERING_REVIEW.md仍为T24历史来源，非当前最大评审。
+
+原候选装配需要当前完整三浏览器报告和12份正常路线原始JSON，历史命令为：
 
 ```sh
 npm run candidate:package

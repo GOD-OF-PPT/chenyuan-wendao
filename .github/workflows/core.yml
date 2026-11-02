@@ -20,4 +20,10 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+      - name: Install locked resource-check dependencies
+        run: |
+          python3 -m venv "$RUNNER_TEMP/chenyuan-art-venv"
+          "$RUNNER_TEMP/chenyuan-art-venv/bin/python3" -m pip install --disable-pip-version-check -r art/requirements.txt
+          "$RUNNER_TEMP/chenyuan-art-venv/bin/python3" -c "import sys, PIL; print(sys.version); print('Pillow', PIL.__version__)"
+          echo "$RUNNER_TEMP/chenyuan-art-venv/bin" >> "$GITHUB_PATH"
       - run: npm run validate:core
