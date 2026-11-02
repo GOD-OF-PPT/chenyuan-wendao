@@ -6,13 +6,14 @@
     "cssBytes": 5000,
     "mainDeltaBytes": 64,
     "combinedArt18NativeBytes": 18000,
-    "newRasterAssets": 0
+    "newRasterAssets": 2,
+    "combinedArt18RuntimeBytes": 144000
   },
   "files": [
     {
       "path": "web/src/art37-dialog-actions.css",
-      "bytes": 4815,
-      "sha256": "203996ed3feb7cfa387da233fa80f893ae2b578e6ea50f54dcf47314aa5d5584"
+      "bytes": 4761,
+      "sha256": "08326ef57455d40490afc4570ae6807633a3e9bbf57dad97e5c2dae854caac68"
     }
   ],
   "consumer": {
@@ -40,6 +41,86 @@
   "sourceReferences": [
     "docs/decisions/0089-dialog-action-overflow-art37-contract.md",
     "goal-4/amendments/2026-11-02-art37-input.txt",
-    "goal-4/evidence/art37/main.ts.before.txt"
+    "goal-4/evidence/art37/main.ts.before.txt",
+    "goal-4/amendments/2026-11-02-art37-artwork-input.txt",
+    "art/production/art37/prompts.json",
+    "art/production/art37/exports.json",
+    "art/tools/export_art37_ui.py",
+    "goal-4/evidence/art37/art18-dialog-controls.spec.ts.before.txt",
+    "goal-4/evidence/art37/art18-dialog-gallery.spec.ts.before.txt"
+  ],
+  "runtimeAssets": [
+    {
+      "source": "art/production/art37/dialog-ink-rim-source.png",
+      "sourceSHA256": "49c4a0bb99faa867f9e63e43a2b1bd104f984cbf3842e2f47752491aae1d3025",
+      "path": "web/public/art/v2/ui/dialog-ink-rim-art37-v1.webp",
+      "sha256": "c9910d40b4ede3a3af1cbf4bde76ded012c92afea20713d7ae99484c7136216b",
+      "bytes": 13162,
+      "size": [
+        512,
+        512
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "alphaPreservedExactlyAfterPacking": true,
+      "settings": {
+        "quality": 82,
+        "method": 6,
+        "exact": true,
+        "resize": "LANCZOS; only zero-alpha exterior trim for plaque"
+      }
+    },
+    {
+      "source": "art/production/art37/action-jade-plaque-source.png",
+      "sourceSHA256": "04eaf83cfb10c7bc52d20ebfa39df2a3d623158bde1e31063f1022353b7b39bf",
+      "path": "web/public/art/v2/ui/action-jade-plaque-art37-v1.webp",
+      "sha256": "4ef1450f5d44b86a42e4add7a0601908fa905f18cf927c1c0009bff88f0c3f17",
+      "bytes": 7332,
+      "size": [
+        512,
+        144
+      ],
+      "crop": [
+        0,
+        39,
+        2172,
+        648
+      ],
+      "alphaPreservedExactlyAfterPacking": true,
+      "settings": {
+        "quality": 82,
+        "method": 6,
+        "exact": true,
+        "resize": "LANCZOS; only zero-alpha exterior trim for plaque"
+      }
+    }
+  ],
+  "originals": [
+    {
+      "path": "art/production/art37/dialog-ink-rim-source.png",
+      "bytes": 346757,
+      "sha256": "49c4a0bb99faa867f9e63e43a2b1bd104f984cbf3842e2f47752491aae1d3025"
+    },
+    {
+      "path": "art/production/art37/action-jade-plaque-source.png",
+      "bytes": 1884971,
+      "sha256": "04eaf83cfb10c7bc52d20ebfa39df2a3d623158bde1e31063f1022353b7b39bf"
+    }
+  ],
+  "testBaselines": [
+    {
+      "path": "goal-4/evidence/art37/art18-dialog-controls.spec.ts.before.txt",
+      "consumer": "web/e2e/art18-dialog-controls.spec.ts",
+      "sha256": "ca5f099acec50a8342457a52dd1de02c4780c364b7a8694efc5495a485b05004"
+    },
+    {
+      "path": "goal-4/evidence/art37/art18-dialog-gallery.spec.ts.before.txt",
+      "consumer": "web/e2e/art18-dialog-gallery.spec.ts",
+      "sha256": "054437d1001eb3e8118a8eefac56eb95d16690433612f7082a54682d44d1267b"
+    }
   ]
 }

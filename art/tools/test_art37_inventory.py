@@ -1,11 +1,14 @@
 import hashlib,json,shutil,tempfile,unittest
 from pathlib import Path
-from art37_inventory import validate_art37,original_art37_main,LEDGER,CSS,MAIN,UNCHANGED
+from art37_inventory import validate_art37,original_art37_main,LEDGER,CSS,MAIN,UNCHANGED,REFS,TEST_BASELINES
 ROOT=Path(__file__).resolve().parents[2]
 class DialogActionInventoryTests(unittest.TestCase):
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name);m=json.loads((ROOT/LEDGER).read_text())
-  for name in {LEDGER,CSS,MAIN,m['baseline']['path'],*UNCHANGED,*m['sourceReferences'],'web/src/GameConfirmDialog.vue','web/src/use-game-confirmation.ts'}:
+  names={LEDGER,CSS,MAIN,m['baseline']['path'],*UNCHANGED,*REFS,*[r['consumer']for r in TEST_BASELINES]}
+  names.update(r['path']for r in json.loads((ROOT/'art/redesign/art18.json').read_text())['runtimeAssets'])
+  for r in m['runtimeAssets']:names.update([r['path'],r['source'],r['source'].replace('-source.png','-receipt.json')])
+  for name in names:
    dst=self.root/name;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,dst)
  def check(self):return validate_art37(self.root)
  def refresh(self,name):
@@ -38,3 +41,18 @@ class DialogActionInventoryTests(unittest.TestCase):
   with self.assertRaises(AssertionError):self.check()
  def test_absent_feature_accepts_a_root_without_ui(self):
   with tempfile.TemporaryDirectory()as d:self.assertEqual(validate_art37(d),(set(),0,0))
+ def test_materials_cannot_be_detached_from_actual_css(self):
+  p=self.root/CSS;p.write_text(p.read_text().replace('dialog-ink-rim-art37-v1.webp','dialog-jade-frame-v1.webp'));self.refresh(CSS)
+  with self.assertRaises(AssertionError):self.check()
+ def test_generated_receipt_cannot_be_replaced_by_an_unverified_label(self):
+  p=self.root/'art/production/art37/dialog-ink-rim-receipt.json';m=json.loads(p.read_text());m['tool']='unverified';p.write_text(json.dumps(m))
+  with self.assertRaises(AssertionError):self.check()
+ def test_all_original_behavior_assertions_survive_material_path_evolution(self):
+  p=self.root/TEST_BASELINES[0]['consumer'];p.write_text(p.read_text().replace('expect(result.overflow).toBe(false)','expect(result.overflow).toBe(true)'))
+  with self.assertRaises(AssertionError):self.check()
+ def test_original_material_cap_cannot_rise(self):
+  p=self.root/LEDGER;m=json.loads(p.read_text());m['budgets']['combinedArt18RuntimeBytes']+=1;p.write_text(json.dumps(m))
+  with self.assertRaises(AssertionError):self.check()
+ def test_pressed_controls_cannot_regain_the_proven_one_pixel_overflow(self):
+  p=self.root/CSS;p.write_text(p.read_text().replace('transform:translateY(0)','transform:translateY(1px)'));self.refresh(CSS)
+  with self.assertRaises(AssertionError):self.check()

@@ -17,7 +17,7 @@ async function frame(page:Page,dialog:Locator,info:TestInfo,name:string){
    return{text:n.textContent?.trim().slice(0,100),font:parseFloat(getComputedStyle(n).fontSize),minimum:n.matches('small,.small,.eyebrow')?14:18,button:n.matches('button'),height:b.height,inside:b.left>=0&&b.top>=0&&b.right<=innerWidth&&b.bottom<=innerHeight,hit:!!hit&&(hit===n||n.contains(hit)),textInside:[...range.getClientRects()].filter(x=>x.width&&x.height).every(x=>x.left>=b.left-1&&x.right<=b.right+1&&x.top>=b.top-1&&x.bottom<=b.bottom+1)};
   })};
  });
- await info.attach(name+'-geometry',{body:JSON.stringify(result),contentType:'application/json'});expect(result.content).not.toBe('none');expect(result.overflow).toBe(false);expect(result.inside).toBe(true);expect(result.frame).toContain('dialog-jade-frame-v1.webp');
+ await info.attach(name+'-geometry',{body:JSON.stringify(result),contentType:'application/json'});expect(result.content).not.toBe('none');expect(result.overflow).toBe(false);expect(result.inside).toBe(true);expect(result.frame).toContain('dialog-ink-rim-art37-v1.webp');
  for(const row of result.rows){expect(row.font,row.text).toBeGreaterThanOrEqual(row.minimum);expect(row.inside,row.text).toBe(true);expect(row.textInside,row.text).toBe(true);if(row.button){expect(row.height,row.text).toBeGreaterThanOrEqual(44);expect(row.hit,row.text).toBe(true);}}
  await page.screenshot({path:info.outputPath(name+'.png')});
 }
@@ -25,7 +25,7 @@ test('ART18-E1 game materials preserve readonly menus, one consent surface, keyb
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await importRecoveryFixture(page,prepared());const before=await recoveryDatabase(page);
  await settings(page);await frame(page,page.locator('dialog.game-settings'),info,'settings-material');
  await page.getByTestId('restart').click();const prompt=page.getByTestId('game-confirmation');await expect(prompt).toHaveAttribute('data-kind','restart');await frame(page,prompt,info,'restart-material');
- expect(await page.getByTestId('game-confirmation-confirm').evaluate(node=>getComputedStyle(node,'::before').borderImageSource)).toContain('action-jade-frame-v1.webp');
+ expect(await page.getByTestId('game-confirmation-confirm').evaluate(node=>getComputedStyle(node,'::before').borderImageSource)).toContain('action-jade-plaque-art37-v1.webp');
  await page.keyboard.press('Tab');expect(await prompt.evaluate(node=>node.contains(document.activeElement))).toBe(true);await page.keyboard.press('Shift+Tab');expect(await prompt.evaluate(node=>node.contains(document.activeElement))).toBe(true);
  await page.keyboard.press('Escape');await expect(prompt).toHaveCount(0);await expect(page.locator('dialog.game-settings')).toBeVisible();await expect(page.getByTestId('restart')).toBeFocused();expect(await recoveryDatabase(page)).toEqual(before);
  await page.getByRole('button',{name:'关闭设置',exact:true}).click();await page.getByTestId('breakthrough').click();await frame(page,page.getByTestId('milestone-review'),info,'milestone-material');await page.getByTestId('milestone-cancel').click();expect(await recoveryDatabase(page)).toEqual(before);expect(errors).toEqual([]);
@@ -77,7 +77,7 @@ test('ART18-E8 selected filenames remain literal text and cannot create executab
 for(const mode of ['missing-material','system-reduction','saved-reduction']as const)test('ART18-E9 '+mode+' keeps readable consent real press focus and cancellation',async({browser},info)=>{
  const context=await browser.newContext({baseURL:info.project.use.baseURL,viewport:{width:1440,height:900},reducedMotion:mode==='system-reduction'?'reduce':'no-preference'}),page=await context.newPage(),errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  try{
-  if(mode==='missing-material')await page.route('**/art/v2/ui/*-jade-frame-v1.webp',r=>r.abort());
+  if(mode==='missing-material')await page.route('**/art/v2/ui/*-art37-v1.webp',r=>r.abort());
   await importRecoveryFixture(page,prepared());await settings(page);
   if(mode==='saved-reduction'){await page.getByTestId('reduce-effects').check();await expect(page.getByTestId('local-data-status')).toContainText('已保存');}
   const before=await recoveryDatabase(page);await page.getByTestId('restart').click();const dialog=page.getByTestId('game-confirmation');await frame(page,dialog,info,mode);

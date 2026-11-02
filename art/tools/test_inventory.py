@@ -152,7 +152,8 @@ class InventoryTests(unittest.TestCase):
   art36=ROOT/'art/redesign/art36.json'
   if art36.exists():files.update(ROOT/ref for ref in json.loads(art36.read_text())['sourceReferences'])
   art37=ROOT/'art/redesign/art37.json'
-  if art37.exists():files.update(ROOT/ref for ref in json.loads(art37.read_text())['sourceReferences'])
+  if art37.exists():
+   current=json.loads(art37.read_text());files.update(ROOT/ref for ref in current['sourceReferences']);files.update(ROOT/r['consumer']for r in current.get('testBaselines',[]))
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)

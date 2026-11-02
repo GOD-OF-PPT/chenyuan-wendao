@@ -1,0 +1,54 @@
+{
+  "format": "chenyuan-art37-ui-exports",
+  "version": 1,
+  "rows": [
+    {
+      "source": "art/production/art37/dialog-ink-rim-source.png",
+      "sourceSHA256": "49c4a0bb99faa867f9e63e43a2b1bd104f984cbf3842e2f47752491aae1d3025",
+      "path": "web/public/art/v2/ui/dialog-ink-rim-art37-v1.webp",
+      "sha256": "c9910d40b4ede3a3af1cbf4bde76ded012c92afea20713d7ae99484c7136216b",
+      "bytes": 13162,
+      "size": [
+        512,
+        512
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "alphaPreservedExactlyAfterPacking": true,
+      "settings": {
+        "quality": 82,
+        "method": 6,
+        "exact": true,
+        "resize": "LANCZOS; only zero-alpha exterior trim for plaque"
+      }
+    },
+    {
+      "source": "art/production/art37/action-jade-plaque-source.png",
+      "sourceSHA256": "04eaf83cfb10c7bc52d20ebfa39df2a3d623158bde1e31063f1022353b7b39bf",
+      "path": "web/public/art/v2/ui/action-jade-plaque-art37-v1.webp",
+      "sha256": "4ef1450f5d44b86a42e4add7a0601908fa905f18cf927c1c0009bff88f0c3f17",
+      "bytes": 7332,
+      "size": [
+        512,
+        144
+      ],
+      "crop": [
+        0,
+        39,
+        2172,
+        648
+      ],
+      "alphaPreservedExactlyAfterPacking": true,
+      "settings": {
+        "quality": 82,
+        "method": 6,
+        "exact": true,
+        "resize": "LANCZOS; only zero-alpha exterior trim for plaque"
+      }
+    }
+  ]
+}
