@@ -37,3 +37,5 @@ ART37目录新增12例显式登记现有idle profile，后段当前完整矩阵�
 实得新图frame1254²/action2172×724；frame只等比缩512²，button仅裁真实全透明外画布box(0,39,2172,648)后打包512×144，不重绘、不造alpha，WEBP82/method6/exact。新图13162+7332=20494B，和旧70360总90854≤原144000；frame中心alpha0，button中心真实253（不谎称全255），原alpha逐字节保。框slice48/按钮slice32与8px边，让字体位于净面。
 
 8f7新画65实际61/4，全部材质/新12例过，四红仍原单像素位移：旧.app-shell.art-theme button:active:enabled specificity高于body .art-theme :where(...)。前translateY(0)只在portal胜出，游戏按钮尚被旧transform覆盖；保原红/几何/112HTTP，最小!important显式覆盖此已证实位移，原阴影/明暗保，不改测试。后续完整65复核与源不变。
+
+8f资源完整590中589过，正向总资产断言未纳入新增2图导致131≠129；实际计数守卫已含新图，补原expected表达式唯一+2，旧逐资产/全部负例不删。资源旧红保并在新源完整重测；不是降低阈值或把未知资产放行。
