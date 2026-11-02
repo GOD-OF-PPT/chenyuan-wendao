@@ -13,7 +13,7 @@
 body .art-theme button.primary::before{inset:0;border-radius:inherit;border-width:8px;border-image-slice:32 fill}
 body .art-theme button.primary{color:#f4f2df;text-shadow:0 1px 2px #072d32;box-shadow:0 3px 8px #03161c66,inset 0 1px #ccebd333}
 body .art-theme :where(button:not(:disabled),.file-button):hover{filter:brightness(1.08);box-shadow:inset 0 1px #ccebd35c,0 0 0 1px #aad9bb55,0 2px 8px #041b2266}
-body .art-theme :where(button:not(:disabled),.file-button):active{transform:translateY(0);transition-duration:0s;filter:brightness(.97);box-shadow:inset 0 3px 7px #041c28b3,inset 0 -1px #c2e5b880}
+body .art-theme :where(button:not(:disabled),.file-button):active{transform:translateY(0)!important;transition-duration:0s;filter:brightness(.97);box-shadow:inset 0 3px 7px #041c28b3,inset 0 -1px #c2e5b880}
 body .art-theme button.primary:not(:disabled):hover{box-shadow:inset 0 1px #d7edc966,0 0 0 1px #a8d8b355,0 3px 10px #041b2266}
 body .art-theme button.primary:not(:disabled):active{box-shadow:inset 0 3px 8px #041c28b3,inset 0 -1px #c2e5b880}
 body .art-theme :where(button,.file-button):focus-visible{outline:2px solid #b8e5c5;outline-offset:3px}
