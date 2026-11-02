@@ -1,0 +1,288 @@
+{
+  "method": "original jadePaintGeometry SVG CTM plus original alphaBBox16; not wrapper size",
+  "target": 180,
+  "oldNormalTarget": 200,
+  "baseline": [
+    {
+      "id": "normal-unmastered",
+      "longEdge": 276.26906249999996
+    },
+    {
+      "id": "sword_mind",
+      "longEdge": 122.08867648203761
+    },
+    {
+      "id": "sword_still",
+      "longEdge": 114.48193359374994
+    },
+    {
+      "id": "sword_build",
+      "longEdge": 121.3485535924882
+    },
+    {
+      "id": "sword_guard",
+      "longEdge": 121.3485535924882
+    },
+    {
+      "id": "sword_release",
+      "longEdge": 118.71892369219867
+    },
+    {
+      "id": "sword_echo",
+      "longEdge": 114.721435546875
+    },
+    {
+      "id": "talisman_mind",
+      "longEdge": 114.242431640625
+    },
+    {
+      "id": "talisman_calm",
+      "longEdge": 114.242431640625
+    },
+    {
+      "id": "talisman_build",
+      "longEdge": 114.48193359374994
+    },
+    {
+      "id": "talisman_frost",
+      "longEdge": 114.48193359374994
+    },
+    {
+      "id": "talisman_release",
+      "longEdge": 114.48193359375
+    },
+    {
+      "id": "talisman_return",
+      "longEdge": 114.48193359375
+    },
+    {
+      "id": "failed-manual",
+      "longEdge": 144.14906249999996
+    }
+  ],
+  "currentDualQueue": [
+    {
+      "id": "sword_mind",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/heart-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 265.3364584682835,
+          "right": 458.4121665317165,
+          "top": 435.39226359041504,
+          "bottom": 630.5997364095849,
+          "width": 193.07570806343296,
+          "height": 195.20747281916988
+        }
+      },
+      "longEdge": 195.20747281916988
+    },
+    {
+      "id": "sword_still",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/heart-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 284.5716015625,
+          "right": 465.3190234375,
+          "top": 441.47347070312503,
+          "bottom": 624.518529296875,
+          "width": 180.747421875,
+          "height": 183.04505859375
+        }
+      },
+      "longEdge": 183.04505859375
+    },
+    {
+      "id": "sword_build",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/blade-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 271.0665579462384,
+          "right": 452.65535454785413,
+          "top": 435.7929511790276,
+          "bottom": 629.8170421891087,
+          "width": 181.58879660161574,
+          "height": 194.02409101008112
+        }
+      },
+      "longEdge": 194.02409101008112
+    },
+    {
+      "id": "sword_guard",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/blade-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 290.315693359375,
+          "right": 459.574931640625,
+          "top": 441.47347070312503,
+          "bottom": 624.13558984375,
+          "width": 169.25923828124996,
+          "height": 182.662119140625
+        }
+      },
+      "longEdge": 182.662119140625
+    },
+    {
+      "id": "sword_release",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/scroll-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 266.7735200965618,
+          "right": 456.5930982715745,
+          "top": 477.7148622095585,
+          "bottom": 588.303850296349,
+          "width": 189.81957817501268,
+          "height": 110.5889880867905
+        }
+      },
+      "longEdge": 189.81957817501268
+    },
+    {
+      "id": "sword_echo",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/scroll-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 283.03984375,
+          "right": 466.467841796875,
+          "top": 483.97975,
+          "bottom": 582.01225,
+          "width": 183.42799804687502,
+          "height": 98.03249999999997
+        }
+      },
+      "longEdge": 183.42799804687502
+    },
+    {
+      "id": "talisman_mind",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/knot-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 283.80572265625,
+          "right": 466.467841796875,
+          "top": 450.664017578125,
+          "bottom": 615.327982421875,
+          "width": 182.662119140625,
+          "height": 164.66396484375002
+        }
+      },
+      "longEdge": 182.662119140625
+    },
+    {
+      "id": "talisman_calm",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/knot-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 283.80572265625,
+          "right": 466.467841796875,
+          "top": 450.664017578125,
+          "bottom": 615.327982421875,
+          "width": 182.662119140625,
+          "height": 164.66396484375002
+        }
+      },
+      "longEdge": 182.662119140625
+    },
+    {
+      "id": "talisman_build",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/seal-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 351.20306640625,
+          "right": 398.304619140625,
+          "top": 441.47347070312503,
+          "bottom": 624.518529296875,
+          "width": 47.10155273437499,
+          "height": 183.04505859375
+        }
+      },
+      "longEdge": 183.04505859375
+    },
+    {
+      "id": "talisman_frost",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/seal-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 351.20306640625,
+          "right": 398.304619140625,
+          "top": 441.47347070312503,
+          "bottom": 624.518529296875,
+          "width": 47.10155273437499,
+          "height": 183.04505859375
+        }
+      },
+      "longEdge": 183.04505859375
+    },
+    {
+      "id": "talisman_release",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/fan-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 283.422783203125,
+          "right": 466.467841796875,
+          "top": 472.874505859375,
+          "bottom": 593.117494140625,
+          "width": 183.04505859375,
+          "height": 120.24298828125
+        }
+      },
+      "longEdge": 183.04505859375
+    },
+    {
+      "id": "talisman_return",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/fan-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 283.422783203125,
+          "right": 466.467841796875,
+          "top": 472.874505859375,
+          "bottom": 593.117494140625,
+          "width": 183.04505859375,
+          "height": 120.24298828125
+        }
+      },
+      "longEdge": 183.04505859375
+    },
+    {
+      "id": "manual",
+      "cover": {
+        "part": "cover",
+        "asset": "web/public/art/v2/study/manual-v1.webp",
+        "visible": true,
+        "box": {
+          "left": 310.3028125,
+          "right": 439.2053125,
+          "top": 433.4385,
+          "bottom": 616.656,
+          "width": 128.90249999999997,
+          "height": 183.21749999999997
+        }
+      },
+      "longEdge": 183.21749999999997
+    }
+  ],
+  "minimumCurrent": 182.662119140625,
+  "scope": "project-derived failed-state target; old errors were exempt from normal 200px, which remains unchanged"
+}

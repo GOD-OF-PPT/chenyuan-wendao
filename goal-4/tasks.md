@@ -1,3 +1,18 @@
+## ART36-ERROR-STAGE 已独立交付（2026-11-02）
+
+- [x] 承接CHECK85-ART-OBS-01：错误态12卷及剑简真实alpha主体由约114—144px提升，最终双卷13对象最小182.662px；正常200px门槛保持。原错误102px全文/重试/备份、目录/描述/实际成本/有限授权/44命中与八入口都保，未缩字或裁内容。实现dcdc11c，仅894B失败态CSS及main34B导入，旧CSS/控制器/账本和Game/30-60秒/DB9不改。
+- 干净提交副本四完整相关文件27过，0skip/retry/errors；348实际输入前后/同干净Git/324运行输入与110HTTP同。原A9完整四条件41.5s过，保原60s。575资源方法（含新增8）/正向/类型构建过；旧规范/帽和原测试全文严格逆变换有据。作者27与追加2不注入最终27；旧7aff的1263全矩阵不冒新5db63d9a已过。
+- 当前12图实看（每次≤2，原PNG保、同尺寸JPEG68有损副本/hash），另保作者原/新对照；真实旧红与首版knot179.979红保留，原180目标未放宽。新样式计原合并CSS2512/4800、原生3531/7200，不重签旧hash/帽或迁controller。
+- 新版独立loopback56885已开Chrome欢迎页，110载荷11184252B全同/3私有路径404，无Game操作。原56884标签未找到，未更新/刷新/读用户DB-fullGame/迁移进度；两个来源分开。局部工程包artifacts/goal-4/art36/art36-local-preview-dcdc11c.zip解包110哈希全同，不冒正式认证候选或解包实例已启动。
+- 原13逐哈希保持，原档/v0.3/全部旧红和unknown保，无push/merge/公开部署/权限/自动化变更。当前全部兼容/环境性能继续暂停，整体Goalactive未完成。本组三项第1。
+
+[杠精审查] 通过本项：实际增大而非仅包装盒；完整能力/授权/失败恢复/原周期和保存不丢，正常/失败/失图/暂停/成功有真实检查与像素。代码与全部旧测试明确逆变换、预算有据；没有用工程绿灯代整体艺术/长期/真人。源审计工具初次遗漏新增PNG import的逆变换已按完整差异修正，非产品失败或放宽断言。
+
+- [ ] 下一独立CBASE-DOC-02：候选说明与依赖/CI核对，先保存本轮原话/合同/参数/验收/回滚；不得为了CI/候选恢复暂停的兼容/环境性能，也不得把局部包冒最终候选。本轮不混做第二项。
+- [ ] 后续同源正式候选/原最终完整矩阵、最大C端/代码/安全review与真人/整体艺术/长期平衡全保；J01unknown/ART17四红/ART28-OBS-01/COMPAT-OBS-1200-01与原输入补录限制保持，不由本项关闭。
+
+证据：[审查](evidence/art36/review.md)、[检查](evidence/art36/checks.json)、[主体](evidence/art36/alpha.json)、[来源与预算](evidence/art36/source-audit.json)、[同源](evidence/art36/identity.json)、[像素](evidence/art36/visual-review.json)、[尝试](evidence/art36/attempts.json)、[未完](evidence/art36/remaining.json)、[实施](../docs/implementation/goal-4-art36-error-stage.md)。下文开工/待排队为历史，以本条最新交付及下一项为准。
+
 ## ART36-ERROR-STAGE 开工（2026-11-02）
 
 上一独立CHECK已d1f269e交付。本轮只处理既有CHECK85-ART-OBS-01，先存自动接续原文token105252321与原13。原R1已完成，当前按最新tasks接续ART36，不建重复Goal。沿game-ui-frontend/Riot Clarity/XAG114保护游戏舞台：错误原因/原意图重试常驻，完整预算/目录/正文/返回都保。先隔离d1f worktree实际复现并用原jadePaintGeometry测alpha、容器/字形/主控几何，再把参数落实0086后仅做必要绘制/布局修缮；优先复用已有8画，无新画需要时不重绘。固定1440×900/font1单Chromium，暂停全部页面兼容/环境性能。

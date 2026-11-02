@@ -1,0 +1,42 @@
+{
+  "source": "dcdc11c858031e53f99a4b76d8fef65739b6c5f5",
+  "productChanged": [
+    "web/src/art36-error-stage.css",
+    "web/src/main.ts"
+  ],
+  "mainStrictInverse": true,
+  "allOldSpecAssertionsAndCasesStrictInverse": true,
+  "specInverse": "remove appended helper, two calls and sole capture import; trailing blank lines ignored",
+  "protected13Exact": true,
+  "unchanged": {
+    "web/src/JadeStudyScene.vue": true,
+    "web/src/JadeEngraving.vue": true,
+    "web/src/LearningPlanner.vue": true,
+    "web/src/equipment-effects.ts": true,
+    "web/src/equipment-choreography.ts": true,
+    "web/src/store.ts": true,
+    "src/full/engine.ts": true,
+    "src/full/activity.ts": true,
+    "web/src/jade-paint.ts": true,
+    "web/src/art35-study-rest.css": true,
+    "art/redesign/art35.json": true
+  },
+  "budgets": {
+    "newCSS": 894,
+    "newCSSCap": 1200,
+    "combinedCSS": 2512,
+    "combinedCSSCap": 4800,
+    "combinedNative": 3531,
+    "combinedNativeCap": 7200,
+    "mainDelta": 34,
+    "mainDeltaCap": 64,
+    "newRaster": 0
+  },
+  "notExecuted": [
+    "compatibility",
+    "environment-performance",
+    "new whole-goal full matrix",
+    "human acceptance",
+    "long-term balance"
+  ]
+}
