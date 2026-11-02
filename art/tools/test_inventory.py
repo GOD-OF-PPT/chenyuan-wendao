@@ -149,6 +149,8 @@ class InventoryTests(unittest.TestCase):
   art34=ROOT/'art/redesign/art34.json'
   if art34.exists():
    data=json.loads(art34.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']));files.update(ROOT/row['path']for row in data['files'])
+  art36=ROOT/'art/redesign/art36.json'
+  if art36.exists():files.update(ROOT/ref for ref in json.loads(art36.read_text())['sourceReferences'])
   for f in files:
    out=self.root/f.relative_to(ROOT);out.parent.mkdir(parents=True,exist_ok=True);os.link(f,out)
   self.write('art/asset-manifest.json',self.manifest)

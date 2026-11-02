@@ -768,7 +768,10 @@ def validate(root):
     recorded.update(art34_files)
     from art35_inventory import validate_art35
     art35_files,art35_count,art35_runtime_bytes=validate_art35(root,image_info)
+    from art36_inventory import validate_art36
+    art36_files,art36_count,art36_bytes=validate_art36(root)
     recorded.update(art35_files)
+    recorded.update(art36_files)
     assert observed <= recorded, 'Unrecorded image files: ' + str(sorted(observed - recorded))
     if (root / '.git').exists():
         result = subprocess.run(['git', '-C', str(root), 'ls-files', '-z'], check=True, capture_output=True)

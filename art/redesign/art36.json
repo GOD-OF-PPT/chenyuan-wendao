@@ -1,0 +1,48 @@
+{
+  "format": "chenyuan-error-stage-art36",
+  "version": 1,
+  "userAcceptance": false,
+  "budgets": {
+    "cssBytes": 1200,
+    "mainDeltaBytes": 64,
+    "combinedArt35CSS": 4800,
+    "combinedArt35Native": 7200,
+    "newRasterAssets": 0
+  },
+  "files": [
+    {
+      "path": "web/src/art36-error-stage.css",
+      "bytes": 894,
+      "sha256": "c664efb45ceba736570c31fc5cdd2dd029d7bbc4041ac1337a5289bac3dafc0b"
+    }
+  ],
+  "consumer": {
+    "path": "web/src/main.ts",
+    "bytes": 1529,
+    "sha256": "d9ce62905a960f11fb8aecdf5c0fbe9b5e65c850ffb76e1fd3ee2ec83feb0c0e"
+  },
+  "baseline": {
+    "path": "goal-4/evidence/art36/main.ts.before.txt",
+    "bytes": 1495,
+    "sha256": "3f0595b97ee03b6854e99df0183fdae476ec6d77fa69aa55183dc2aa48c32a59"
+  },
+  "unchanged": {
+    "web/src/JadeStudyScene.vue": "434b16c05e5e6870cb67dc1f6611a81637864b0e20463c8bfd93e4c395d675ed",
+    "web/src/JadeEngraving.vue": "f08b03fa397ec566a6ff51ebeb181c7a93e8e6e7974f0c7c6397bd36e7d6814b",
+    "web/src/LearningPlanner.vue": "916581594274b568bf22fea242edacf375c7cf53a96ec4ca3766adad58db3d1b",
+    "web/src/equipment-effects.ts": "0946c3b6b76e5ea39ebd80571175e2835ce49abe94fe6499f480b1635a934888",
+    "web/src/equipment-choreography.ts": "871e41e7555f640fecbc8f26706fac34a5249225a6acb5f1db9c63789a8011bb",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "web/src/jade-paint.ts": "d9eeb4ac87f3b2ef12e3c1d7c966ecb2af06bdf34b231eceee37432bb08ff1da",
+    "web/src/art35-study-rest.css": "5229f7d5f301468db7a244dbe97b205bd333a5df39124f39a70f5885f562d6fb",
+    "art/redesign/art35.json": "74dd630c39fd44587b102116365b3fb98615928807e47caccd58da5f102035b8"
+  },
+  "sourceReferences": [
+    "docs/decisions/0086-error-stage-art36-contract.md",
+    "goal-4/amendments/2026-11-02-art36-input.txt",
+    "goal-4/evidence/art36/main.ts.before.txt",
+    "goal-4/evidence/art36/baseline-measurements.json"
+  ]
+}
