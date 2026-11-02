@@ -1,0 +1,22 @@
+{
+  "source": "67bd21360b3aa0943a78ebeaf174773a76e5957f",
+  "unchangedCritical": {
+    "scripts/candidate-evidence.mjs": true,
+    "scripts/candidate-receipt.mjs": true,
+    "scripts/reproduce-candidate.py": true,
+    "scripts/candidate/verify.py": true,
+    "web/playwright.candidate.config.ts": true,
+    "art/requirements.txt": true,
+    "src/full/versions.ts": true,
+    "web/src/full-persistence.ts": true
+  },
+  "protected13Exact": true,
+  "runtimeInputs": 324,
+  "runtimeDigest": "5db63d9a8ec8279ba4c8edaf16a356b2103ae58b9740d85f5353f0ee278ee03d",
+  "newAssets": 0,
+  "browserActions": 0,
+  "userDBorFullGameReads": 0,
+  "userPreviewReloads": 0,
+  "coreException": "install stage now installs both original locked dependency trees; whole-source inverse proves remaining original core body/parseTap exact",
+  "CI": "only three original dependency-setup additions; original gate/triggers/permissions/matrices/timeouts exact after inverse; no push or dispatch"
+}

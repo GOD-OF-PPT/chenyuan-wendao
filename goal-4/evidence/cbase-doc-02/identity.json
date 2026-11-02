@@ -1,0 +1,66 @@
+{
+  "testedCode": {
+    "head": "67bd21360b3aa0943a78ebeaf174773a76e5957f",
+    "source": "67bd21360b3aa0943a78ebeaf174773a76e5957f",
+    "tree": "be88a72c15236e4a77d867e2aa5fb3aac0377834",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "5db63d9a8ec8279ba4c8edaf16a356b2103ae58b9740d85f5353f0ee278ee03d",
+  "buildEqualART36": true,
+  "files": 110,
+  "bytes": 11184252,
+  "HTTP": {
+    "url": "http://127.0.0.1:56885/",
+    "actualAll110Equal": true,
+    "raw": "artifacts/goal-4/cbase-doc-02/http-56885-before-build.json",
+    "sha256": "b5d0aa6c589eab32707b49f141a9b8f2f0239d907d2b444b5e07cea382124495"
+  },
+  "gameDelivery": "ART36 existing 5db runtime unchanged; no new archive, browser action, restart, reload or progress migration",
+  "notesOnly": {
+    "scope": "actual note-renderer output only; not an assembled candidate or acceptance",
+    "source": {
+      "head": "67bd21360b3aa0943a78ebeaf174773a76e5957f",
+      "source": "67bd21360b3aa0943a78ebeaf174773a76e5957f",
+      "tree": "be88a72c15236e4a77d867e2aa5fb3aac0377834",
+      "dirty": false,
+      "node": "v24.22.1",
+      "npm": "8.11.0",
+      "npmOnPath": "8.11.0"
+    },
+    "runtime": "5db63d9a8ec8279ba4c8edaf16a356b2103ae58b9740d85f5353f0ee278ee03d",
+    "files": [
+      {
+        "path": "CHANGELOG.md",
+        "bytes": 1527,
+        "sha256": "5124de7267fabccdc0ecd42a6c44de5d82cd9d01a3967dca3288789b17efb70d"
+      },
+      {
+        "path": "KNOWN_ISSUES.md",
+        "bytes": 1724,
+        "sha256": "57038f2818a37062c0d7c7aa29d6490b59edf22de3240ac72c8ec51cd87ddee4"
+      },
+      {
+        "path": "PLAYTEST_FORM.md",
+        "bytes": 1592,
+        "sha256": "5157610106620d28011d23a79e34d3e703acf9491d12b60e9faef561beb5f0f3"
+      },
+      {
+        "path": "README.md",
+        "bytes": 3851,
+        "sha256": "5da121f9855180f19663abae6f8ba93cc073c5ba447f31d6b0ad9d503e131f58"
+      },
+      {
+        "path": "SAVE_COMPATIBILITY.md",
+        "bytes": 1356,
+        "sha256": "5d5ae3aac086b99b10ddb01ce33ff5b86476d0e0a48058f6839ab7b070ea1d50"
+      }
+    ],
+    "count": 5,
+    "formalCandidateReady": false
+  },
+  "formalCandidateReady": false,
+  "humanAcceptance": false
+}

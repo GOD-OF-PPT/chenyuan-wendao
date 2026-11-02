@@ -1,0 +1,11 @@
+{
+  "scope": "render original note expressions only, no package/evidence bypass or candidate",
+  "originalPackagerSha256": "3b9c4165a7b9729d2f2a3e820aa196462d01c3d403483a7a719692c31b858148",
+  "oldDBText": "正式网页继续使用full Game外层2/schema2、content full-demo.3、balance full-unbalanced.3、数据库v3。已知M1/Adventure/full旧格式按已测迁移策略保留原件；未知/未来版本拒绝，失败不覆盖好档。新指令必须有commandId/runId/expectedRevision，事务complete后才成功。",
+  "formalCurrentDB": "FULL_DB_VERSION=9",
+  "CIExistingPillowSteps": {
+    "core.yml": 0,
+    "playable.yml": 0
+  },
+  "defaultNoPIL": "default-python-before.log"
+}

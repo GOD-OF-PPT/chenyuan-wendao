@@ -1,0 +1,24 @@
+{
+  "source": "db46496234115ee2157b79b4a01ffbff3e7b0cb4",
+  "terminalExit": 1,
+  "emittedTests": 817,
+  "passed": 811,
+  "failedModules": [
+    "cultivation-effects",
+    "equipment-effects",
+    "narrative-effects",
+    "reading-memory",
+    "supply-effects",
+    "ui-battle-choreography"
+  ],
+  "cause": "ERR_MODULE_NOT_FOUND vue: root core tests import real web modules before web npm dependencies have been installed",
+  "notRun": [
+    "m1",
+    "full",
+    "economy",
+    "documents",
+    "design-documents"
+  ],
+  "raw": "core-db464-no-webdeps-report/tests.tap",
+  "scope": "clean source dependency order failure, not a gameplay or page compatibility result"
+}

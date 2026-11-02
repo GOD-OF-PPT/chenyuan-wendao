@@ -1,0 +1,37 @@
+{
+  "originalsRetained": true,
+  "notCountedAsSuccess": [
+    "old statement red: 8 methods, failures2/errors5 missing new renderer and absent CI dependency step",
+    "system default Python ModuleNotFoundError PIL",
+    "explicit interrupted835 core for correcting instant-action documentation; terminal1 and incomplete",
+    "db464 clean core:817 emitted/811 passed/6 missing-Vue modules, later five stages not run"
+  ],
+  "actualAuthorPasses": [
+    "8 note/CI/operational contract methods after final statement correction",
+    "11 original candidate related Node cases",
+    "6 core policy cases including4 new failure/order cases",
+    "5 candidate consumer cases after central dependency repair"
+  ],
+  "counting": "author repeats/underlying Python methods are not added to final whole-core Node count; syntax/install checks are separate",
+  "raw": {
+    "artifacts/goal-4/cbase-doc-02/documents-red.log": "8e597cea701549afa92ccd3a8a5c61c537a5ccfb785bcb4d8a42baaf4fa9d6b0",
+    "artifacts/goal-4/cbase-doc-02/documents-green.log": "e26f0a6d67b11e2ca61159c0cffcb6e1a2e9da889d2c485c5cb6125256af2e15",
+    "artifacts/goal-4/cbase-doc-02/documents-final-author.log": "1065d6c1869979319fcc8f1366d377adb3e675432bb1e0cbb9d93c228860aa45",
+    "artifacts/goal-4/cbase-doc-02/default-python-before.log": "8214f7758596d70386943db0868d34460ea87c8ae72a575af840a3b82da9021f",
+    "artifacts/goal-4/cbase-doc-02/ci-dependencies-install.log": "e12ebf3a09dc3c12068c1f0bcfcd2b14be01af5415eaa5c1298164c9ee71094f",
+    "artifacts/goal-4/cbase-doc-02/candidate-related.tap": "4dca61b96f5cdc143fff7518835b95001ce9bf94abadafb14442fc46f831947a",
+    "artifacts/goal-4/cbase-doc-02/candidate-repaired.tap": "68e9327b86d73c011a733b4604e89d49f9749f275ac3d089bd828d37ed88cd70",
+    "artifacts/goal-4/cbase-doc-02/core-dependencies-red.tap": "eaef524ae6f2c347a569d607c19e7e514170555f01570cc4df51d95a6b9f79d3",
+    "artifacts/goal-4/cbase-doc-02/core-dependencies-green.tap": "7c2340744bf79209904b54988330c13ca918a5c98059dd79eab24104f8d42f52",
+    "artifacts/goal-4/cbase-doc-02/core-835a-interrupted.log": "198bff795c20bf07271c4593ee080b8c90b93c61e4819701ad00e56d6fe81a1d",
+    "artifacts/goal-4/cbase-doc-02/core-835a-stop.json": "499844ce28592d6c04bd8a8aef1d92be831112224e8be4f94a262a1145486741",
+    "artifacts/goal-4/cbase-doc-02/core-db464-no-webdeps.log": "77a04f42fe9f22ef5592e3442017d044aba192f8fdfbf3787061dd403a3362b6",
+    "artifacts/goal-4/cbase-doc-02/core-db464-no-webdeps-report/tests.tap": "3b83d8a3784c682cbd53f9d393e0ed93b81eb9f6abce69ea4617e3688c55350c",
+    "artifacts/goal-4/cbase-doc-02/workflow-yaml.log": "011d47a8ddaa33d807e87ad47aa2a49b2e5daba06e0a9703e86062abaaeb129e"
+  },
+  "toolingNotes": [
+    "Ruby YAML parse succeeded; existing directory-permission/ffi warnings retained, no chmod or environment repair undertaken",
+    "author repaired files named .tap used Node default spec renderer; no parseTap claim for them; final core has explicit real TAP"
+  ],
+  "gJ": "one prerequisite implementation rejection, now passed after true no-dependency clean source core873/resource575/build; no failure/assertion/limit removed"
+}

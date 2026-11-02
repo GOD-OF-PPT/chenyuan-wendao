@@ -1,3 +1,18 @@
+## CBASE-DOC-02 已独立交付（2026-11-02）
+
+- [x] 候选真实消费者的五份说明已按当前有限放置/即时配置、DB9、原子保存/原意图、Pillow前置、历史评审与当前最终边界更新；包实际唯一调用经测试的同文件渲染函数，5份真SHA/版本说明已生成。旧v3/旧Goal2阶段不冒当前，正式candidate/ready未制造。实现835a559/db46496/67bd213。
+- 原两CI仅新增3处外置venv/Pillow锁安装与后续PATH，实际同段隔离安装/版本/路径及YAML解析过；触发器/权限/矩阵/测试命令/时限/发布步骤严格逆变换同原。0push/dispatch/远端CI，不冒CI绿。
+- 干净db464原core真实817/811过/6缺Vue模块红，后5阶段未跑，原报告/源码/日志保。按0087-E03先记录再改现有install阶段为根+web两锁npm ci，同文件明确CLI；保十门禁/其余9命令/原TAP/全部测试，原包验证器/receipt/reproduce/verify字节保。不是预装、mock或删例凑绿。
+- 最终67bd213独立无根/web依赖源码完整core十阶段全过：873源码测试（新增5 Node，其中说明包内含8 Python方法）、575资源方法、规则/经济/文档/设计及类型构建。3276受跟踪输入前后同/同干净Git，324运行输入/110载荷11184252B仍ART36的5db63d9a；不把作者11/5/6等重复运行注入873。
+- 56885只读110HTTP全同，无重启/浏览器动作/用户DB-fullGame读取/刷新/搬档；原13逐哈希保持不提交、原input/v0.3/所有旧红与unknown保。当前兼容/环境性能和旧远端CI继续暂停，原core5分钟及旧矩阵规模未远端实跑、不抬超时。本轮没有UI/原生矩阵新执行或整体艺术/长期/真人认可。
+
+[杠精审查] 打回1后通过：真正缺Vue前置经干净无依赖全链修复，旧PIL/原说明/835中断/db464红全保；原包操作与core剩余源有严格逆变换，原门槛/预算/时限/断言不减。当前本地工程范围有据，不代完整Goal/候选/CI或用户认可。复用既有工具和工作流，无新Skill/自动化/代理。
+
+- [ ] 下一独立MATRIX-CURRENT-02（本组三项第3）：复用既有v2目录/原断言/来源守卫，补齐当前5db固定1440×900/font1单Chromium完整UI/存储/正常/恢复同源证据；先保存原话/合同/验收/回滚，不恢复任何兼容/环境性能或触发旧CI。本轮未开始。第三项后做全面检查-debug。
+- [ ] 后续原正式候选/更大最终矩阵、最大C端/代码/安全review及实际新评审记录随包接线、整体艺术/长期平衡/真人验收全保；J01unknown/ART17四红/ART28-OBS-01/COMPAT-OBS-1200-01/输入补录限制不关。整体Goalactive，未完成。
+
+证据：[审查](evidence/cbase-doc-02/review.md)、[检查](evidence/cbase-doc-02/checks.json)、[原问题](evidence/cbase-doc-02/baseline.json)、[真失败](evidence/cbase-doc-02/dependency-failure.json)、[源码](evidence/cbase-doc-02/source-audit.json)、[core逆变换](evidence/cbase-doc-02/core-source-inverse.json)、[同源](evidence/cbase-doc-02/identity.json)、[尝试](evidence/cbase-doc-02/attempts.json)、[未完](evidence/cbase-doc-02/remaining.json)、[实施](../docs/implementation/goal-4-cbase-doc-02.md)。下文旧开工/待排队/打回均为历史，以本条结果与下一项为准。
+
 ### CBASE-DOC-02 实测依赖顺序失败（同一任务，未完成）
 
 db46496独立无web依赖副本原core真实817/811过/6模块加载红，均缺Vue；后五阶段未跑，原日志/源码/报告保。依0087-E03只完善现有core安装阶段为两锁安装，十门禁/其余命令/候选/原测试和所有暂停边界保持。不是Game失败，也不能当CI已过。[杠精审查] 打回1：原核心消费者存在前置缺口，须实际无依赖新源完整修复，不删测试/mock或借手工预装伪装core自足。
