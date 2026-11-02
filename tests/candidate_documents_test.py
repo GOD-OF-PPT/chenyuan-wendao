@@ -56,7 +56,7 @@ class Notes(unittest.TestCase):
         readme = self.notes()['README.md']
         for phrase in ['Python 3.10+', 'python3 serve.py', '本机HTTP运行不依赖Pillow',
                        'art/requirements.txt', 'python3 -m venv', 'npm ci --ignore-scripts',
-                       'npm --prefix web ci --ignore-scripts', 'source.bundle', 'verify.py candidate.zip']:
+                       'npm --prefix web ci --ignore-scripts', 'source.bundle', 'verify.py candidate.zip', '即时原子确认', '不加假倒计时']:
             self.assertIn(phrase, readme)
 
     def test_known_issues_do_not_certify_paused_or_human_work(self):
