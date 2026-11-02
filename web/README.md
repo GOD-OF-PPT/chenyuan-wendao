@@ -35,7 +35,7 @@ npm run validate:core
 npm --prefix web run build
 ```
 
-`validate:core`保留锁、根安装、类型、内容、全部根源码测试、M1/full回放、当前经济审计、资源/文档及设计文档十步。它不代表浏览器矩阵、长期成长或真人体验。经济即时报告为docs/economy/current-engine-report.json，历史current-report.json保持原件；即时120路线也不冒在线Activity路线或真人节奏。
+`validate:core`保留锁、安装（根与web两锁）、类型、内容、全部根源码测试、M1/full回放、当前经济审计、资源/文档及设计文档十步。它不代表浏览器矩阵、长期成长或真人体验。经济即时报告为docs/economy/current-engine-report.json，历史current-report.json保持原件；即时120路线也不冒在线Activity路线或真人节奏。
 
 当前只对实际改动进行固定1440×900/font1单Chromium玩法/交互与规则、读秒、原子保存验证；新档、失败、恢复、有限授权和完整Game/Activity/回执应按任务范围检查。定向首环例命令（不能代表整体矩阵）：
 

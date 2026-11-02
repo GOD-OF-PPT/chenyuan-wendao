@@ -19,3 +19,11 @@
 回滚仅新revert本项说明/工具渲染/依赖安装段/测试，不reset/clean、不降DB或删包/档/历史；保全部旧失败与原13。检查后本地独立提交、更新tasks/GJ，整体Goal保持active；下一先完成本组第3个实际任务再综合，原最终同源矩阵/正式候选/最大review/整体艺术长期真人不缩。
 
 [杠精计划审查] 通过：真实包生成器与真实CI消费者接线，不仅补一份旁路说明；测试实际输出及安装，严格保候选与暂停边界。复用既有source_bundle/core/build/包核验，不新建重复Skill、工作流或代理。实际结果与裁决待执行。
+
+## 实证依赖修缮 CBASE-DOC-E03（先记录再修改）
+
+独立db46496从无web/node_modules开始原core真实失败：817已发出结果/811过/6模块加载失败，均ERR_MODULE_NOT_FOUND vue，m1以后五步未执行。原报告/源码/日志保。六模块直接导入正式Vue表现模型，不可删测试或用mock替代；原CI core/browser及reproduce的安装顺序同样会触发。
+
+只在既有validate-core.mjs扩充install阶段为根锁与web锁的两次npm ci（ignore-scripts/no-audit/no-fund），使用同文件明确--install-dependencies入口，输出并核两条真实命令。十个原阶段id和其余九阶段命令、全部测试/TAP/源码/日志验证保持。candidate-evidence依原coreCommands严格核本源实际install命令，无弱化或删除，旧报告/版本/验证器原件保。CI只补既有Pillow段，三浏览器/权限/时限不变；reproduce仍走原完整core与原web-install/build，中央前置避免复制新工作流或篡改旧执行顺序。
+
+增加安装顺序/旗标/任一失败不续行和十门禁保留的有意义测试，实际从新的干净提交/无依赖worktree验证完整原core；旧db失败不换标签。当前源码校验环境仍同一Python/Node，不开展环境矩阵；0Game/DB/时钟/画/CSS变化。此前单纯说明/CI修补不足，记本项杠精打回1，须真实完整修复再交付。
