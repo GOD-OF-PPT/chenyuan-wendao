@@ -1,3 +1,18 @@
+## CHECK-UX28-UX29-BASE 已独立交付（2026-11-02）
+
+- [x] UX28／UX29／BASE后三任务综合完成。代码cb17fff接真实runtime与保旧v1的完整v2目录；b9d4688/afd8b45/65a87ef经原cursor对照接通完整全库批量观察；22ec427仅修测试A9的原生无损PNG采集。应用323输入、110载荷11183438B、成长/周期/DB9/资源/样式均不变，游戏仍7aff3a68。
+- 当前固定1440×900/font1单Chromium共1263唯一（816UI/415native/32normal），原v2函数实际核14阶段、20要求88叶、171恢复子集、82原生60承接22替代；0当前skip/retry/reportError。22完整core十命令868/资源567与构建过，PNG静态像素诊断1额外记不注水。65的1251项实际未改闭包/配置/锁/应用载荷逐项核对后继承，22的完整装备12项重新执行；不冒单一22源码单轮1263绿，不给旧报告换Git。
+- 原UI799/10、正常6/26及错峰29/3、新A9慢例6/1均保，40失败执行/37身份、1404历史条目不覆盖。原60/240与8秒、完整Game/Activity/全DB/唯一回执/前1ms/四条件/36PNG断言保。A9截图成本实测后先原RGBA像素等价，再完整文件复验，原60秒内43348ms过。原842快照少一个功能seed helper，以真实清洁65前后及65/22同Git blob补证，原快照不补伪哈希；旧build中间件按原SHA恢复同字节且明示recovered。
+- 50当前图实际逐张看（常规14/A9全部36），9仅整PNG同而继承，原PNG/JPEG68/hash保且一次最多2张。frame19加载fallback不作已加载画像证明；错误横幅下经卷主体显小为既有观察CHECK85-ART-OBS-01（旧65/新22样例全RGBA同），整体艺术并未通过用户认可。
+- 原13在途/原input/v0.3/用户档及所有旧证据保。接续发现56884 ECONNREFUSED，保失败后仅恢复自己同版loopback静态服务，110HTTP全同/3私有路径404；0用户浏览器刷新/DB-fullGame读取/用户Game操作，无push/merge/公开部署/改权限/改自动化。
+
+[杠精审查] 本独立工程检查通过：完整原义务、图片、断言与时限保，真实红后补有等价证明的验证器修缮，当前1263与来源/像素有据；不把计数、组合证据或当前固定桌面通过替整体艺术/长期/真人/原候选门槛。历史J01unknown/ART17四红/ART28-OBS-01/COMPAT-OBS-1200-01、输入补录限制与全部最终义务仍保；兼容环境性能继续暂停，整体Goalactive未完成。
+
+- [ ] 下一独立ART36-ERROR-STAGE（美术优先，尚未开始）：在固定桌面复现错误横幅下未悟/已悟/运行/失败的经卷及主行动，先测真实alpha投影与阅读/导航边界，再在原预算内优化主体体量、提示权重和操作层级；保全部12功法/四条件/目录/成本/有限授权/18-14-44/原读秒、存档与原意图，不借此做兼容/性能、重平衡或改权限。先保存本轮原话/合同/参数/验收/回滚，再代码和定向实际验证。当前只排队，不在本轮实施第二项。
+- [ ] 后续CBASE-DOC-02候选说明与CI依赖、同源正式候选/原最终矩阵、最终最大C端/代码/安全review与真人/整体艺术/长期平衡验收全保；不得擅自恢复暂停专项或以工程结果代用户认可。
+
+证据：[审查](evidence/check-ux28-ux29-base/review.md)、[检查](evidence/check-ux28-ux29-base/checks.json)、[逐叶](evidence/check-ux28-ux29-base/requirement-map.json)、[完整目标边界](evidence/check-ux28-ux29-base/goal-matrix.md)、[来源](evidence/check-ux28-ux29-base/source-audit.json)、[画面](evidence/check-ux28-ux29-base/visual-current.json)、[失败](evidence/check-ux28-ux29-base/attempts.json)、[未决](evidence/check-ux28-ux29-base/remaining.json)、[实施](../docs/implementation/goal-4-check-ux28-ux29-base.md)。下文旧状态均为历史，以本条最新交付/下一项为准。
+
 ## CHECK-UX28-UX29-BASE A9慢例未完成，针对PNG采集修缮（仍同任务）
 
 当前source65普通UI809全过，原7慢例为6过1总60秒红，22513已终态1，原trace/report/全部PNG保；前两learn条件真实完成55.457s，第三forge中超时，不能冒四条件过。host33次PNG采集27.374s。按先于代码的0085/A9参数和原spec备份，只改A9原PNG采集编码，保全部36图/全部断言/四条件/原60和8秒，先实际RGBA像素等价probe、再新pin完整equipment文件复验和逐张看图。当前case不得标完成；原809/415/32/core源码65已过记录保。其他case仅在实际闭包/参数/锁/323应用/110载荷完全不变证明后明确继承，改变spec全部重测，不把原报告改新Git。当前14不同关键图已实看10，4仍待；9整PNG同可继承。原13/原档/v0.3、艺术长期真人和所有旧未完/正式候选/最大评审仍保，兼容环境性能仍暂停。

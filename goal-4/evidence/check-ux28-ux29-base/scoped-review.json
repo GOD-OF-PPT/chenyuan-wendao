@@ -1,0 +1,75 @@
+{
+  "sourcePin": "cb17fff55cf8f4c2b41dfd528ab46960a3869daa",
+  "reviewType": "scoped self review; no subagents or independent acceptance",
+  "codeFiles": [
+    {
+      "path": "scripts/idle-matrix-evidence.mjs",
+      "sha256": "52f063c1d900bc2944c20da2641dc83145c2053e1394ccb4cfeb538cd9dac712",
+      "exactTestedClone": true
+    },
+    {
+      "path": "tests/idle-recovery-matrix.mjs",
+      "sha256": "f67fc0aea78364f636e074da14b705d58884f5b8593289ebfbefa4c8568c2c2d",
+      "exactTestedClone": true
+    },
+    {
+      "path": "tests/idle-matrix-evidence.test.mjs",
+      "sha256": "9bd8d5c6118dec7d0cbb941b819118c273fa7a1e69423790dd9e05b98bbd6466",
+      "exactTestedClone": true
+    },
+    {
+      "path": "web/playwright.idle.config.ts",
+      "sha256": "bb1b75d07be3db10b13f4b146e3cf23ba8b1207985b5a4cafb9693000f9b5f23",
+      "exactTestedClone": true
+    },
+    {
+      "path": "web/playwright.idle-persistence.config.ts",
+      "sha256": "9c9eedf0e3ecb1e8ac3dde6a5449b3086c8d25c9f4681d0c4b12ecf32cdd9651",
+      "exactTestedClone": true
+    }
+  ],
+  "standards": {
+    "v1PinsAndAll88LeavesPreserved": true,
+    "newV2RequiresAll816AndOriginal171Subset": true,
+    "old8UnitAssertionsUnchanged": true,
+    "originalCandidateGatesUnchanged": [
+      {
+        "path": "scripts/candidate-evidence.mjs",
+        "sha256": "1a651e9628358e8517fc40c9b82faf512a77435f4eb65b1ea6539dce14d7a457",
+        "unchangedVsParent": true
+      },
+      {
+        "path": "scripts/candidate-receipt.mjs",
+        "sha256": "05504718eec984bb9c7319d465314f313516549860eac966dcd82c343b0d0bf6",
+        "unchangedVsParent": true
+      }
+    ],
+    "runtimeApplicationChanges": 0,
+    "sourceMetadataUsesOriginalRuntimeSourcesHelper": true,
+    "protected13Exact": true
+  },
+  "spec": {
+    "originalCore868Pass": true,
+    "native415ActualPass": true,
+    "latestUI816CompositePass": true,
+    "normal32": "still_running_do_not_accept",
+    "fullMatrixProtocol": "must_run_after_normal_terminal",
+    "visual": "13current_actual+10wholePNGexact_prior+2old_failure_actual"
+  },
+  "security": {
+    "noRuntimeOrStorageSchemaChange": true,
+    "noEvalNetworkOrPermissionsAdded": true,
+    "localEvidencePathsHaveSameTrustedLocalManifestBoundary": true,
+    "artifactRefsRequireExactSHA": true,
+    "userSaveNotReadOrUsed": true,
+    "noPushMergeDeployment": true
+  },
+  "notClosed": [
+    "overall art/user game-feel feedback",
+    "long balance/human acceptance",
+    "paused compatibility and environment performance",
+    "historical unknowns and initial failures",
+    "formal candidate receipt and final maximal review"
+  ],
+  "verdict": "in_progress_wait_for_original_normal32_and_full_manifest"
+}

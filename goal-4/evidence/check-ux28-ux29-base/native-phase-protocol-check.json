@@ -1,0 +1,6 @@
+{
+  "native415PhasePassedActualHashWindowConfigurationAndDeclarationChecks": true,
+  "wholeMatrixAccepted": false,
+  "expectedReason": "Current normal/UI/native inventory is incomplete or contains undeclared cases",
+  "scope": "Early real-phase protocol integration; missing UI/normal is not accepted or relabeled."
+}

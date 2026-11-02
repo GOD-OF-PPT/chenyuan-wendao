@@ -1,0 +1,10 @@
+{
+  "source": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux28-ux29-base/source",
+  "head": "cb17fff55cf8f4c2b41dfd528ab46960a3869daa",
+  "branch": "codex/check-ux28-ux29-base",
+  "cleanBeforeInstall": true,
+  "noBundledNodeDependencies": true,
+  "noGitAlternates": true,
+  "baseBundle": "candidate-base-01/final-source.bundle",
+  "onlySelectedNewCommitFetchedFromLocalRoot": true
+}

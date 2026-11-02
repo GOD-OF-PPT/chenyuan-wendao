@@ -1,0 +1,33 @@
+{
+  "source": "22ec427050ac90bd9ff551067e24a0bfd2391770",
+  "terminal": {
+    "exit": 0,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 844,
+    "runtime": "7aff3a68d5d32aacbe3ad9ca5b8cd25d31486784aeb822cd4e330de4c97f4d28",
+    "stats": {
+      "startTime": "2026-11-01T18:17:21.131Z",
+      "duration": 11847.921,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 1,
+    "retried": [],
+    "reportSha256": "7f11adc3f20e8e26fc598a3aba37f039843c9f4de02caf9db153ce2839bd05be"
+  },
+  "pixels": [
+    {
+      "equalRGBA": true,
+      "width": 1440,
+      "height": 900,
+      "rgbaSHA256": "2e7cfdf20bbc79981735bf59b4020727acf7efea012cd8bcd6c9e73b4ad9cd4c"
+    }
+  ],
+  "scope": "one isolated fixed-size static renderer diagnostic, not added to1263 gameplay coverage; real A9Game frames still require actual visual review"
+}

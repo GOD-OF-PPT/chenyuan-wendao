@@ -1,0 +1,914 @@
+{
+  "runtime": "7aff3a68d5d32aacbe3ad9ca5b8cd25d31486784aeb822cd4e330de4c97f4d28",
+  "actualCurrentViewed": 50,
+  "wholePNGExactInherited": 9,
+  "regular": [
+    {
+      "index": 1,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/check-ux27-art35-cend03-CH-0d0c7-h-complete-readonly-returns-chromium/paid-scroll-five-leaves-original-23seconds.png",
+      "originalSHA256": "f685222de2ea829cea55fecb9600dfefd5b97dbd6e7494d609fee314c61c3874",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/check-ux27-art35-cend03-CH-0d0c7-h-complete-readonly-returns-chromium/paid-scroll-five-leaves-original-23seconds.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/01-paid-scroll-five-leaves-original-23seconds.jpg",
+      "lightSHA256": "4de38c2340b8e62cdc950b04b06e7a8a3515df770cf11d028d63795b8550638b",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 2,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/check-ux27-art35-cend03-CH-0d0c7-h-complete-readonly-returns-chromium/paid-scroll-real-saved-mastery-context.png",
+      "originalSHA256": "64550eabba05780a3d31d770505cb9da139f0186637cd45c9f1d26c3711d2150",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/check-ux27-art35-cend03-CH-0d0c7-h-complete-readonly-returns-chromium/paid-scroll-real-saved-mastery-context.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/02-paid-scroll-real-saved-mastery-context.jpg",
+      "lightSHA256": "8cc9fda2b1c0dc0510e4d55b868412a389eda53b09f8f25b8f7a31f5385241b3",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 3,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/check-ux27-art35-cend03-CH-e6219-y-its-complete-body-outcome-chromium/dose-failed-old-single-command-next-two-draft.png",
+      "originalSHA256": "e7548fd3e540b88e829b8051c7141c2305885b54cfbf176de9254058827a8208",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/check-ux27-art35-cend03-CH-e6219-y-its-complete-body-outcome-chromium/dose-failed-old-single-command-next-two-draft.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/03-dose-failed-old-single-command-next-two-draft.jpg",
+      "lightSHA256": "a5e649045dca2b39098f132c7debf8b4bfbb097fb65af8d073cb5aa41a942773",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 4,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux28-recovery-period-UX28--69972-have-distinct-period-labels-chromium/paused-refreshed-original-dose6.png",
+      "originalSHA256": "a7d48826acdd3029ced090396f645c3be2c38619adbd101bdc30e0e5c415713a",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": true,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux28-recovery-period-UX28--69972-have-distinct-period-labels-chromium/paused-refreshed-original-dose6.png",
+      "actualViewedCurrentPNG": false,
+      "inheritedActualReview": true,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light/04-paused-refreshed-original-dose6.jpg",
+      "lightSHA256": "387c04b7dfe54c9c451a4c300b7d143040b9627d88f1f368f2d835ae1eb99918"
+    },
+    {
+      "index": 5,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux28-recovery-period-UX28--a42b0--complete-atomic-saved-dose-chromium/running-current-spirit_pill.png",
+      "originalSHA256": "98521f8d787670e06299299e441281635783874e505c0567f5ebedc24a0c70a1",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux28-recovery-period-UX28--a42b0--complete-atomic-saved-dose-chromium/running-current-spirit_pill.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/05-running-current-spirit_pill.jpg",
+      "lightSHA256": "2f8c368a16044c757cc78a104d84119e3573bddb1d6b0f4f60f95c82abdb9a17",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 6,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux28-recovery-period-UX28--a42b0--complete-atomic-saved-dose-chromium/saved-current-spirit_pill.png",
+      "originalSHA256": "f4ad80f42c6c38974934a796ff5d892d304e53fb23ac7dec131b2f8daa147593",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux28-recovery-period-UX28--a42b0--complete-atomic-saved-dose-chromium/saved-current-spirit_pill.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/06-saved-current-spirit_pill.jpg",
+      "lightSHA256": "8eb65bda75c60ff7433f3539092bf587128b60ebfef0e761124b3e2cb2bd83e3",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 7,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux28-recovery-period-UX28--bce0e-rangement-without-executing-chromium/complete-arrangement-rest.png",
+      "originalSHA256": "c4c58c219752fdfc54e5963518e490edd08e467c12acdf0b340566900c115169",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux28-recovery-period-UX28--bce0e-rangement-without-executing-chromium/complete-arrangement-rest.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/07-complete-arrangement-rest.jpg",
+      "lightSHA256": "b905a0a29a5288ccb2245d37fdce34355240fe188c1105872f94cb6ef8861fc4",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 8,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux28-recovery-period-UX28--bce0e-rangement-without-executing-chromium/current-decision-healing_pill.png",
+      "originalSHA256": "d7045f94d25460f230ba9963c3e58f419029e8a78deaae625e6e5c326b321df4",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": true,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux28-recovery-period-UX28--bce0e-rangement-without-executing-chromium/current-decision-healing_pill.png",
+      "actualViewedCurrentPNG": false,
+      "inheritedActualReview": true,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light/08-current-decision-healing_pill.jpg",
+      "lightSHA256": "ed4b3138e891afaa6a5543a41e3480c79932fe21e65c5f935fa1b9974022a2da"
+    },
+    {
+      "index": 9,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux28-recovery-period-UX28--ce3c1-t-advertises-thirty-seconds-chromium/failed-dose-original6-next-rest30.png",
+      "originalSHA256": "9526f12075af2d771f7a22168e5f30fef97ea47770cf49cc4026c12cae3c54b6",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux28-recovery-period-UX28--ce3c1-t-advertises-thirty-seconds-chromium/failed-dose-original6-next-rest30.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/09-failed-dose-original6-next-rest30.jpg",
+      "lightSHA256": "3b9895f010fa4120ed929531d6861e6f6877b4d6c7c0b407e7ed3970ff27dba4",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 10,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-21413-rty-second-rest-restores-it-chromium/arrived-real-reestimate-before-confirm.png",
+      "originalSHA256": "b20918858ee5579e756a7f622991f474cb5c24380ab6580c38bffdc6fff43e54",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": true,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-21413-rty-second-rest-restores-it-chromium/arrived-real-reestimate-before-confirm.png",
+      "actualViewedCurrentPNG": false,
+      "inheritedActualReview": true,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light/10-arrived-real-reestimate-before-confirm.jpg",
+      "lightSHA256": "08af3d4f59a0b7b88f232f8e6a7756c737d9d9aaa0670716b01a430d0ef5f89e"
+    },
+    {
+      "index": 11,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-21413-rty-second-rest-restores-it-chromium/confirmed-rest-half-no-early-body.png",
+      "originalSHA256": "ad0ef4c6addc15caa2192112dab36019d7e25dd27edd3b9df4993e9b0d27b7f9",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-21413-rty-second-rest-restores-it-chromium/confirmed-rest-half-no-early-body.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/11-confirmed-rest-half-no-early-body.jpg",
+      "lightSHA256": "d58ea497fa43d3a740453c985fef4e4115ab05bc7f5228bfa92e26abc5f9499e",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 12,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-21413-rty-second-rest-restores-it-chromium/real-rest-committed-complete-body.png",
+      "originalSHA256": "a22b328254125c6bcc9b871d67da85bd262da921886f26ac21a610dbdce1a350",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-21413-rty-second-rest-restores-it-chromium/real-rest-committed-complete-body.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/12-real-rest-committed-complete-body.jpg",
+      "lightSHA256": "0a56b05ab601fcc224f0bbf5ed39e978a5da9fa29634e428e06466e18c9d7f94",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 13,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-46471-ng-a-zero-yield-arrangement-chromium/full-body-complete-rest-limits.png",
+      "originalSHA256": "fcd56bfa2b5ee4e8a7bcd5651a8137e7d1ad8a263718eeb66f868372e3be2e08",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-46471-ng-a-zero-yield-arrangement-chromium/full-body-complete-rest-limits.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/13-full-body-complete-rest-limits.jpg",
+      "lightSHA256": "6c87650781060a6b3eb95baf1dc0c4d3c1fa83d065d5d12cc901d67ac10e2586",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 14,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-46471-ng-a-zero-yield-arrangement-chromium/full-body-formal-no-change.png",
+      "originalSHA256": "b0bbb6233ac9d4c041461d6e9b1197c84c560d1a44eb53839eed75a2067b8cd2",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": true,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-46471-ng-a-zero-yield-arrangement-chromium/full-body-formal-no-change.png",
+      "actualViewedCurrentPNG": false,
+      "inheritedActualReview": true,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light/14-full-body-formal-no-change.jpg",
+      "lightSHA256": "5772c64bced8e367f87fe3f8476ce5013fedcae9100ec124c2fd4b475180f2e6"
+    },
+    {
+      "index": 15,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-8bc9e--no-fabricated-batch-output-chromium/missing-healing_pill-formal-gates-and-stock.png",
+      "originalSHA256": "a5a4aa3091ff4242f7363676bcf41842919d70f8bef6af2152a3dc2055824c1d",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-8bc9e--no-fabricated-batch-output-chromium/missing-healing_pill-formal-gates-and-stock.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/15-missing-healing_pill-formal-gates-and-stock.jpg",
+      "lightSHA256": "96dda72ea27087fad27600a798fd80322d1cc204be15e85fc1f91f989af6ff95",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 16,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-972a4-plete-Game-and-saved-limits-chromium/paused-refreshed-original-rest-unexecuted.png",
+      "originalSHA256": "9c023f4a83b674e334d73394b9ebeeeaa621c305f42fd7f1846905d3068b78e3",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": true,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-972a4-plete-Game-and-saved-limits-chromium/paused-refreshed-original-rest-unexecuted.png",
+      "actualViewedCurrentPNG": false,
+      "inheritedActualReview": true,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light/16-paused-refreshed-original-rest-unexecuted.jpg",
+      "lightSHA256": "2da4160d0377fd81988e1c7fcfdf40c228df0e7015f3018c073184ca001a1df8"
+    },
+    {
+      "index": 17,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-972a4-plete-Game-and-saved-limits-chromium/paused-rest-missing-medicine-view-only.png",
+      "originalSHA256": "eb10ee6baeb3e6c94eea8fefbdde32ad437693be20606a8a3f2cd4a367f6e2f4",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": true,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-972a4-plete-Game-and-saved-limits-chromium/paused-rest-missing-medicine-view-only.png",
+      "actualViewedCurrentPNG": false,
+      "inheritedActualReview": true,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light/17-paused-rest-missing-medicine-view-only.jpg",
+      "lightSHA256": "fb76a2a42dca3871cabd99f4d959f9f045c65a442b28d4a491b56d08f5ac641c"
+    },
+    {
+      "index": 18,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-b0e1b-e-all-views-remain-readonly-chromium/foreign-complete-limits-still-readonly.png",
+      "originalSHA256": "fc52d335939312573f3b37be560de75f1b56a6815daead8352815ba1cc5b72fa",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-b0e1b-e-all-views-remain-readonly-chromium/foreign-complete-limits-still-readonly.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/18-foreign-complete-limits-still-readonly.jpg",
+      "lightSHA256": "50f17720c7accd39e115fc48c3b2b24693acbf00893357025b25f0a11843f23e",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 19,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-b0e1b-e-all-views-remain-readonly-chromium/foreign-real-gate-current-body.png",
+      "originalSHA256": "a0847ec142e09199952276e13233064947f1f2d7f217e57feb22cc2ff9192729",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-b0e1b-e-all-views-remain-readonly-chromium/foreign-real-gate-current-body.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/19-foreign-real-gate-current-body.jpg",
+      "lightSHA256": "84edc2b83c6d45c0f51d68e4a29e40c2f3edb35d98c42628c7cfcd1496bcf296",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 20,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-cdeb2--no-fabricated-batch-output-chromium/missing-spirit_pill-formal-gates-and-stock.png",
+      "originalSHA256": "c4655cb9951be8856b8da6f27f313e884af91fe2a5121fabc8a6692bcc6bee84",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": true,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-cdeb2--no-fabricated-batch-output-chromium/missing-spirit_pill-formal-gates-and-stock.png",
+      "actualViewedCurrentPNG": false,
+      "inheritedActualReview": true,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light/20-missing-spirit_pill-formal-gates-and-stock.jpg",
+      "lightSHA256": "d2c08516ccf4f11bc69594cf2dc84b04583a78aec2ae3f603b043f43b145593d"
+    },
+    {
+      "index": 21,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-e0bf7--requires-rest-confirmation-chromium/arrival-retried-not-automatic-rest.png",
+      "originalSHA256": "1e28fe66b4588e266948d5df80cbd010f55203cacf90e410e111e80bc89db953",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": true,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-e0bf7--requires-rest-confirmation-chromium/arrival-retried-not-automatic-rest.png",
+      "actualViewedCurrentPNG": false,
+      "inheritedActualReview": true,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light/21-arrival-retried-not-automatic-rest.jpg",
+      "lightSHA256": "7794e33f8355c3dfda32e773f53da076e9e989cf2f23964f3358423862aae4c7"
+    },
+    {
+      "index": 22,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-e0bf7--requires-rest-confirmation-chromium/foreign-failed-arrival-real-gate-original-retry.png",
+      "originalSHA256": "34c1e86271f7b1979cdf3f2b13c9ee27c7f4bc9538f9e4472cc4eb82137c12ba",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": false,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-e0bf7--requires-rest-confirmation-chromium/foreign-failed-arrival-real-gate-original-retry.png",
+      "actualViewedCurrentPNG": true,
+      "inheritedActualReview": false,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light-current/22-foreign-failed-arrival-real-gate-original-retry.jpg",
+      "lightSHA256": "15dde6451696aa548199ff4633261a1a875ecb9290f8d0ccedd918189e28fea6",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68; original PNG preserved",
+      "pendingReview": false
+    },
+    {
+      "index": 23,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-readonly-results/ux29-recovery-availability-e62d2-e-reserve-without-executing-chromium/reserve-gate-not-an-actual-zero-recovery.png",
+      "originalSHA256": "45480cbf5590c2b80ee8ce29d7da0bbc3b0840c60fe513a0d4e648e9c5072779",
+      "phase": "ui-regular-readonly",
+      "sourcePin": "65a87ef0e3b568cffa7e0df7d7cb84226fa2fe0c",
+      "wholePNGExactPrior": true,
+      "priorRecord": "goal-4/evidence/check-ux28-ux29-base/visual-review.json",
+      "priorRecordSHA256": "38f63b8e055078866030aaa487fe658c61666920612928875255b724d4b6a4a4",
+      "priorOriginal": "artifacts/goal-4/check-ux28-ux29-base/ui-regular-v2-results/ux29-recovery-availability-e62d2-e-reserve-without-executing-chromium/reserve-gate-not-an-actual-zero-recovery.png",
+      "actualViewedCurrentPNG": false,
+      "inheritedActualReview": true,
+      "light": "artifacts/goal-4/check-ux28-ux29-base/light/23-reserve-gate-not-an-actual-zero-recovery.jpg",
+      "lightSHA256": "58e3b6ca50f023a507b70a3d26298d770e7f1e494bb44dac801bfca6624a45aa"
+    }
+  ],
+  "a9": [
+    {
+      "index": 1,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/forge-acceptance-owned-artifact-error.png",
+      "originalSHA256": "ebfd644e6db49d8b0448675ad8cce9f7f5265bc5d51a774ac66d362728b9c1d8",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/01-forge-acceptance-owned-artifact-error.jpg",
+      "lightSHA256": "1786644a1e2ecbc4e2a14d878eb9dc00fbbfabafc642ca0877b4a793a8bac79d",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 2,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/forge-acceptance-quota.png",
+      "originalSHA256": "dd0959d4855356edbaf9429965c3d94a66c4373c8971149ccc8bc6f157aeca9a",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/02-forge-acceptance-quota.jpg",
+      "lightSHA256": "cd5e169b3b7a86b17efdc3ffc74e46d326dbf1753817d1b057795a3c2cd3c208",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 3,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/forge-acceptance-readonly-loadout.png",
+      "originalSHA256": "0f63e1015747d71e3acafddf490c9a2446fbaaa848ed3556a4019755b10ef7a6",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/03-forge-acceptance-readonly-loadout.jpg",
+      "lightSHA256": "7aef6b3337a150f1278bef57287126f1b553e5325d6ce3db7bdb94f19b3b16c2",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 4,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/forge-cycle-owned-artifact-error.png",
+      "originalSHA256": "93aba5c9d1839f5a26e6ae0f218928508a8fa6424b2e5bc49f24fe4c4a92c428",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/04-forge-cycle-owned-artifact-error.jpg",
+      "lightSHA256": "3af4bb0d2e6bd22a97f3e93c4950ef954ee0b8e4f13c0d24eb62f06ff15019cd",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 5,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/forge-cycle-quota.png",
+      "originalSHA256": "fb1944a0ceb7cb59683574dfa92b652c1978a9232ec2f7e32ae6b6f0aa3ed8a0",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/05-forge-cycle-quota.jpg",
+      "lightSHA256": "c492ee4ef16957287bcd6a6b45d7a0ac19512c335967a4db7f4125cb5500115f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 6,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/forge-cycle-readonly-loadout.png",
+      "originalSHA256": "151c9f5937cad820773d5a287fa8231c514070ef90ff1b59b18a196e2fb876a7",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/06-forge-cycle-readonly-loadout.jpg",
+      "lightSHA256": "0c1b2cf6c44fed2a5e20bcd43ab1daae6d0cff5c9ca855561e19aae052dd7ed1",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 7,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-sword_build.png",
+      "originalSHA256": "a69532ae00350c4ab758f19f8bbba2f078d84eb8d78dff6c7ea78420747d719b",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/07-learn-acceptance-error-readonly-sword_build.jpg",
+      "lightSHA256": "65c31291837f09c0dc9d5c42e0142dd4bc633f26d14130d1e1715c75328adcb1",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 8,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-sword_echo.png",
+      "originalSHA256": "d4119f1c0aec6d10945c829b9f7aa8be0ed2084be54b561e98086cb2ca5841e6",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/08-learn-acceptance-error-readonly-sword_echo.jpg",
+      "lightSHA256": "91a34add536cf57c4b8ee51f54143837f93af240d0f7fc17832ef0b5ec2efdd9",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 9,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-sword_guard.png",
+      "originalSHA256": "9c0f1fefcacff9b032710fd2880ca321cafa571a2b035712b57bad9659660eb7",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/09-learn-acceptance-error-readonly-sword_guard.jpg",
+      "lightSHA256": "409151e09c4542f72fbafc6f611e7f0f96b54d94314e76e396c8ef9bdd38f407",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 10,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-sword_mind.png",
+      "originalSHA256": "b72e3c701faecbfb5a3351dea9778db593af45a8354da7f6535017333b3e0f06",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/10-learn-acceptance-error-readonly-sword_mind.jpg",
+      "lightSHA256": "6fd9c5cd34c264f5374bc1fc38f21d1e542d711559a464bf576b35d5357d088e",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 11,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-sword_release.png",
+      "originalSHA256": "40baa946e3ff7e3967d66c9833e8bacf5663285d25c269076e0918e4d7030596",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/11-learn-acceptance-error-readonly-sword_release.jpg",
+      "lightSHA256": "ea5157ba265f3722ee4cf038f126a538a02e992a0326a6769f759af107c91df9",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 12,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-sword_still.png",
+      "originalSHA256": "ad85e2be69df882fd90513f3b3f66a12989a1ae199aa0c1faad5b4a798234aeb",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/12-learn-acceptance-error-readonly-sword_still.jpg",
+      "lightSHA256": "6229f112732c8beebe0d0d40592890efb6658a8ca10255d5bede9452db9997c7",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 13,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-talisman_build.png",
+      "originalSHA256": "0a7fa718a5e1e152030ec43657a3587fa5a2fffbff469987be3ee50d0e37c578",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/13-learn-acceptance-error-readonly-talisman_build.jpg",
+      "lightSHA256": "c1a84c15ad20f98dfa06257cd5b6e9072e354124fc64add6741b581d592507da",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 14,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-talisman_calm.png",
+      "originalSHA256": "37b1d362b1a41ce62480132d7875a864845998be35149392c12ae76d2c86f0e5",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/14-learn-acceptance-error-readonly-talisman_calm.jpg",
+      "lightSHA256": "839d92adebc0f49d65b9157fd9c091e9576da00a4a86cf47389b6915dc005c3f",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 15,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-talisman_frost.png",
+      "originalSHA256": "f6e857ff72e2e77890cb4863921599c4eafbc088275a3e31ca00b5c5451fba0b",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/15-learn-acceptance-error-readonly-talisman_frost.jpg",
+      "lightSHA256": "396ffee8bbaa1f77cc4d9a3ea0aacc1c57efb8cc144b1e959ee7a1fc90fddc2c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 16,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-talisman_mind.png",
+      "originalSHA256": "99e18612beaf78641df3011da1cda4e4b9cec9dbf518825066d5ef267ae728d4",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/16-learn-acceptance-error-readonly-talisman_mind.jpg",
+      "lightSHA256": "0b06e4afb723a6fa5e55be0ffda77a958dde57a0e95eed23b1b46e60297681eb",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 17,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-talisman_release.png",
+      "originalSHA256": "b99d17fddec3b33905b67678b5016adcdce77e10af0b63375b0e38a405054ca8",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/17-learn-acceptance-error-readonly-talisman_release.jpg",
+      "lightSHA256": "9154fe9a487790e781055be0938f7b953f914d7d18b9363fa817f088def75d6d",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 18,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-error-readonly-talisman_return.png",
+      "originalSHA256": "4ff4d57a222c1bb75d4d1d90bd128b9ffe96618dc877130e942dac1728bd6d0b",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/18-learn-acceptance-error-readonly-talisman_return.jpg",
+      "lightSHA256": "e19faf49da835775335060f02bea1dcf47765c140c902f856153b4c503bebbd3",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 19,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-owned-slip-error.png",
+      "originalSHA256": "39844d38fd90a50015f7a1bc6811aef57aed692e1c448403a821449fbd0c0c8b",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/19-learn-acceptance-owned-slip-error.jpg",
+      "lightSHA256": "af0d6b85d8f3189284102e608f11e2bbbd4bdef575d131c91ffe36113b0a1e53",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 20,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-quota.png",
+      "originalSHA256": "f749add6181d9b5a20bdac5c3d15bad00b39b4d187aa84c85668438588018f38",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/20-learn-acceptance-quota.jpg",
+      "lightSHA256": "1eb34870d114ab3c400ff89359df94ac56d5e3994cb0d32559be16016add2a07",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 21,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-acceptance-readonly-loadout.png",
+      "originalSHA256": "f839fd0f790e8c6837be2b3a717817da7248ad613306781d8a63c5da893cd8b5",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/21-learn-acceptance-readonly-loadout.jpg",
+      "lightSHA256": "ffee69813a73f18c77b24f7650aac63eaf91356f821ad0fb2721766888b12c57",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 22,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-sword_build.png",
+      "originalSHA256": "cedb3425cb7b3936a6b83dbf0c0cfd7dedaad734532cb956cd0a3dd2a95fa2d3",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/22-learn-cycle-error-readonly-sword_build.jpg",
+      "lightSHA256": "a4b4e6a9eb145ee89d5784472a2e444a031893811383dd98e6c4267994e6d173",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 23,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-sword_echo.png",
+      "originalSHA256": "e7e5b38d97da25315290db3dfc318a54c1ec9ee9dff5189a13b9b57e77fc4ef8",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/23-learn-cycle-error-readonly-sword_echo.jpg",
+      "lightSHA256": "913da7b2cc1640a8e35ae399df5a371a7d173db9daa3c522e3152cc1858582ec",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 24,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-sword_guard.png",
+      "originalSHA256": "cb2038a3576b2cd142bb47784fc9837cbc29fb8ea4331c833ffda78f732f1933",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/24-learn-cycle-error-readonly-sword_guard.jpg",
+      "lightSHA256": "5c475a81126de717ccb68fa7cbf57f912c992056e7089bc8a036e87c6686aa29",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 25,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-sword_mind.png",
+      "originalSHA256": "89d11987de9d20f12b840a82417c42fdda5bf085824294ecf2a25e4742acdb33",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/25-learn-cycle-error-readonly-sword_mind.jpg",
+      "lightSHA256": "90da0324f7b2071755eb91ab4d66234cab362f4ba4adab1ecd9283c7ec595476",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 26,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-sword_release.png",
+      "originalSHA256": "cd2864d7330bb655b2acb1513ee5af11ab7cb853aa845087b925d52b63bb1bef",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/26-learn-cycle-error-readonly-sword_release.jpg",
+      "lightSHA256": "fb9ea2af2a091f064cb20330fdbbe1897b906b0d4954c4a1904176ad72306683",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 27,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-sword_still.png",
+      "originalSHA256": "bd2f431d6670167e5fc01ee66bf2600eff51bf768d5c5f34e457b42e404c0236",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/27-learn-cycle-error-readonly-sword_still.jpg",
+      "lightSHA256": "b98b23cbb0d11590439273c6e41f304b42d8a6c5d8dc9fe8077694fd311634fd",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 28,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-talisman_build.png",
+      "originalSHA256": "fd97938707511dea497f6f2403a6992be41fe3da6ce53fc0aef7e10a79d027a0",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/28-learn-cycle-error-readonly-talisman_build.jpg",
+      "lightSHA256": "526c07ed6460770b47818da2eb75ac80206dc061b5eef16f4c5e5075ee5a521c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 29,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-talisman_calm.png",
+      "originalSHA256": "9b3a5fe6f4031904cfa82eb9e00c4986ec9175d141b5bdc11f7309fff2182cd6",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/29-learn-cycle-error-readonly-talisman_calm.jpg",
+      "lightSHA256": "f757cbe96914313553348be49b70741939899b027be3566cb9d3259dd667c70b",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 30,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-talisman_frost.png",
+      "originalSHA256": "852d0cda48a9f8de3d3d98bf4d0eb870d511eadf65293502058a0aa7496ca698",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/30-learn-cycle-error-readonly-talisman_frost.jpg",
+      "lightSHA256": "0481c1a7e6a77b4caa2bad9a58b6bcdd1d1cdecbd3c9a529267837b6ada861fa",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 31,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-talisman_mind.png",
+      "originalSHA256": "802cda02b63315c4814e61c765e3ace8834817efd89787dfd04e39b55534bf06",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/31-learn-cycle-error-readonly-talisman_mind.jpg",
+      "lightSHA256": "efbfb831e4a1d3b3d6fb83fb9774489e236094d1c803c39c449eee36f8c76c47",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 32,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-talisman_release.png",
+      "originalSHA256": "680e777c16834e8de150a5898c7d11463dd70de29c78c1ff50e3785d67967ae0",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/32-learn-cycle-error-readonly-talisman_release.jpg",
+      "lightSHA256": "63d420ce725ef968a4393bf098aa5a65af552f15fd6902d88ed72299745440ca",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 33,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-error-readonly-talisman_return.png",
+      "originalSHA256": "d1895b21c0539196a167f390429ef0905a2b314d08cf1ea14073381d359f84b8",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/33-learn-cycle-error-readonly-talisman_return.jpg",
+      "lightSHA256": "dbe29754e79130b8540b61218a57c58442ef96b879ca0941ebeebd28e6f964cd",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 34,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-owned-slip-error.png",
+      "originalSHA256": "4d850bca3c07e00663da009ebcc1a012c8728ba9e3c1eaabbf455ad905d5970f",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/34-learn-cycle-owned-slip-error.jpg",
+      "lightSHA256": "bbb1b77937e7e9875e3c7a7aff68e0460c48f707751e7c410a6ac8a35873f136",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 35,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-quota.png",
+      "originalSHA256": "d305a5c13d31b7c4fdd64d12a819c3aa1e1ce54af04535d1a147600b1ae82f0a",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/35-learn-cycle-quota.jpg",
+      "lightSHA256": "4f7592e8cf77b548741f313beb1801e66e1f56a7a99176bcf3b3e449b6193b63",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    },
+    {
+      "index": 36,
+      "original": "artifacts/goal-4/check-ux28-ux29-base/equipment-capture-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/learn-cycle-readonly-loadout.png",
+      "originalSHA256": "8a45a61acceafb0213e11b82344c5f08d975d4af4ff6f3a11e8de5026ef8301b",
+      "light": "artifacts/goal-4/check-ux28-ux29-base/a9-light/36-learn-cycle-readonly-loadout.jpg",
+      "lightSHA256": "e7935600fbc279624e396451c1ff78c224cd4cc3a4694ae9fc205a744e58a8ac",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "encoding": "same-size JPEG68 view copy, original native PNG retained",
+      "actualReviewed": true
+    }
+  ],
+  "method": "At most2 per image call. Actual14 current byte-different regular PNGs andall36 A9 PNGs reviewed through same-size JPEG68; originals retained.9 only full PNG exact prior-review inheritance. Decoded-pixel comparison never substitutes for A9 actual review.",
+  "findings": [
+    "Real6s dose/30s rest/6s travel, old saved plan versus next draft, true gates/stock, receipt andretry text remain readable with mainnavigation.",
+    "A9 all12 skills, both native acceptance/cycle errors, owned items andloadout remain inspectable; cold actors show no fabricated saved reward.",
+    "Regular frame19 captured a real temporary art fallback. It is evidence of the gate/controls, not proof its portrait was fully loaded.",
+    "Error-banner study scenes make the main scroll visually small; current/old65 sword_build images have identical complete RGBA. This is existing art composition needing follow-up, not a new encoder regression or a measured alpha minimum failure."
+  ],
+  "overallArtHumanOrLongBalanceAccepted": false
+}

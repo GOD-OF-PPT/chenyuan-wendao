@@ -1,0 +1,8 @@
+{
+  "allInitialDeclarationsAndPhaseWindowsAccepted": true,
+  "firstCompleteMatrixAccepted": false,
+  "reason": "CROSS-M45-C5 a normal visible late-life preparation exposes all eight actual play surfaces without a Game write: latest spec not passing",
+  "casesDeclared": 1263,
+  "originalFailuresPreserved": true,
+  "isolatedRerunsStillPending": true
+}
