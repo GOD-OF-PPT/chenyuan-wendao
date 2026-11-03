@@ -23,20 +23,20 @@
   },
   "ux29-recovery-availability.spec.ts": {
     "beforeSHA256": "b964686177fa4e1219391e0dba700843bcc03906668cbf636dfea643a1129c99",
-    "afterSHA256": "3e4c6c0efc253eb781a65ad020d1b22423b96529c4fd8ed8e83f7ebf79a85d11",
+    "afterSHA256": "802f739db722ced0918e0b7bd09e85997c4cbdb48e2ed86f9bf554ff88e59ce9",
     "operations": [
       [
         9768,
         "if(!one.allowed)await expect(page.getByTestId('recovery-per-cycle')).toHaveText(one.failure!.message);",
-        "if(!one.allowed){await expect(page.getByTestId('preparation-estimate').locator('strong')).toHaveText(one.failure!.message);await expect(page.getByTestId('recovery-per-cycle')).toHaveCount(0);}"
+        "if(!one.allowed){await expect(page.getByTestId('preparation-estimate').locator('strong')).toHaveText(q.failure!.message);await expect(page.getByTestId('recovery-per-cycle')).toHaveCount(0);}"
       ],
       [
-        10317,
+        10315,
         "await expect(page.locator('.recovery-location-note')).toContainText('抵达后再预估并确认疗养');",
         "await readonly(page,async()=>{await openSupplySettings(page);await expect(page.getByTestId('recovery-plan-dialog')).toContainText('抵达后再预估并确认疗养');await closeSupplySettings(page);});"
       ],
       [
-        12137,
+        12135,
         "await expect(page.getByTestId('preparation-estimate').locator('p')).toHaveText('气血 +'+q.hp+' · 灵力 +'+q.mp);",
         "await expect(page.getByTestId('preparation-estimate').locator('p')).toHaveCount(0);"
       ]

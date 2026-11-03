@@ -14,7 +14,7 @@
   "ux29-recovery-availability.spec.ts": [
     [
       "if(!one.allowed)await expect(page.getByTestId('recovery-per-cycle')).toHaveText(one.failure!.message);",
-      "if(!one.allowed){await expect(page.getByTestId('preparation-estimate').locator('strong')).toHaveText(one.failure!.message);await expect(page.getByTestId('recovery-per-cycle')).toHaveCount(0);}"
+      "if(!one.allowed){await expect(page.getByTestId('preparation-estimate').locator('strong')).toHaveText(q.failure!.message);await expect(page.getByTestId('recovery-per-cycle')).toHaveCount(0);}"
     ],
     [
       "await expect(page.locator('.recovery-location-note')).toContainText('抵达后再预估并确认疗养');",
