@@ -116,10 +116,33 @@
     "reportSha256": "68cf15fb35802a8e7d8b352d324ef1ce55141e47938f55c6d368f4ed36b65b34"
   },
   "currentPhase": "normal-poll",
-  "currentPhaseStatus": "running",
+  "currentPhaseStatus": "terminal passed32",
   "currentPhaseSession": 20200,
   "currentOwnedChild": 93360,
-  "currentFinished": 10,
-  "currentPassed": 10,
-  "currentFailed": 0
+  "currentFinished": 32,
+  "currentPassed": 32,
+  "currentFailed": 0,
+  "currentTerminal": {
+    "exit": 0,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 3409,
+    "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+    "stats": {
+      "startTime": "2026-11-03T11:38:48.395Z",
+      "duration": 2422614.542,
+      "expected": 32,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 32,
+    "retried": [],
+    "reportSha256": "ffb22ccf74a091eae79670ebb1e5529879759143872ae6cbc0833074eaf7d368"
+  },
+  "nextRequired": "same frozen source completeUI834/native415/core then v4 audit",
+  "comprehensiveCheckComplete": false
 }

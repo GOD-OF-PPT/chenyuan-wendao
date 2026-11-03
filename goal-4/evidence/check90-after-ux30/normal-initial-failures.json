@@ -1,0 +1,100 @@
+[
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle help/sword/craft/transmit",
+    "status": "timedOut",
+    "duration": 287821,
+    "message": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle help/sword/craft/depart",
+    "status": "failed",
+    "duration": 275489,
+    "message": "Error: Test timeout of 240000ms exceeded"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle help/talisman/craft/transmit",
+    "status": "failed",
+    "duration": 274381,
+    "message": "Error: Test timeout of 240000ms exceeded"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle help/talisman/craft/depart",
+    "status": "timedOut",
+    "duration": 278233,
+    "message": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle trade/sword/craft/transmit",
+    "status": "timedOut",
+    "duration": 287908,
+    "message": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle trade/sword/craft/depart",
+    "status": "timedOut",
+    "duration": 284403,
+    "message": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle trade/talisman/craft/transmit",
+    "status": "failed",
+    "duration": 266693,
+    "message": "Error: Test timeout of 240000ms exceeded"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle trade/talisman/craft/depart",
+    "status": "failed",
+    "duration": 266674,
+    "message": "Error: Test timeout of 240000ms exceeded"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle leave/sword/craft/transmit",
+    "status": "failed",
+    "duration": 265514,
+    "message": "Error: Test timeout of 240000ms exceeded"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle leave/sword/craft/depart",
+    "status": "failed",
+    "duration": 264520,
+    "message": "Error: Test timeout of 240000ms exceeded"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle leave/talisman/purchase/transmit",
+    "status": "timedOut",
+    "duration": 268337,
+    "message": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle leave/talisman/purchase/depart",
+    "status": "failed",
+    "duration": 266476,
+    "message": "Error: Test timeout of 240000ms exceeded"
+  },
+  {
+    "file": "idle-trial-reopen.spec.ts",
+    "title": "current normal sword reopens its actual question and every saved battle round without reroll or an automatic next gate",
+    "status": "timedOut",
+    "duration": 282156,
+    "message": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-trial-reopen.spec.ts",
+    "title": "current normal talisman reopens its actual question and every saved battle round without reroll or an automatic next gate",
+    "status": "timedOut",
+    "duration": 296038,
+    "message": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  }
+]

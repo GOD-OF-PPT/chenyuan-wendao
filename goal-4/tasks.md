@@ -1,3 +1,11 @@
+## CHECK90 正常路线阶段已验证，综合仍未完成（2026-11-03）
+
+- [x] 当前7c20e72冻结源的完整normal-poll32已真实通过，24完整路线/6筑基引导/2逐回合重开，0retry/skip/error，最大222209ms，原240/8秒与完整逐周期/全Game/Activity/存档/重开断言保持。3409输入前后同、同Git、112HTTP同，运行e9bfa70d。原JREAD3也通过。当前两个运行handle均已终态，禁止重复启动normal-poll。
+- 原normal32的18过/14超时与中间normal-trace的8过/2失败/22跳过全部保留；中间诊断不作为覆盖。仅测试采集/只读观测修缮，初次共享interval数组问题在执行前修正，当前每次使用新数组。完整原helper与逆变换保留。原13/用户档/原始输入/v0.3保持。
+- [ ] 下一阶段继续同一干净执行目录artifacts/goal-4/check90-after-ux30/source（codex/check90-observation-fresh，7c20e72）。先核真实终态与源码，再正式枚举UI834/native415/normal32及原恢复171，完整core/资源检查、UI七慢例1worker+普通827两worker、native415两worker依次执行，最后v4审计。四重型阶段错峰，原参数/所有PNG与暂停边界保持。现有ui-regular/ui-slow/native配置已准备，但尚未运行；完整core也尚未在本冻结源执行，不给旧绿灯改身份。
+
+[杠精阶段审查] 通过正常路线子项。CHECK90及完整Goal均未完成，真实长期节奏、整体艺术与真人复验仍待，兼容/环境性能暂停。详[evidence/check90-after-ux30/normal-review.md](evidence/check90-after-ux30/normal-review.md)。
+
 ## CHECK90 在UX30后接续（2026-11-03，未完成）
 
 当前新冻结7c20e72已构建，327运行输入/112产物与e9b同版逐字节相同。observer-poll原三例实过（3409输入/同Git/112HTTP）。normal-poll完整32正在运行，session20200、child93360，最近10项终态，其中10过/0失败；前两craft已在原240秒内完整通过。下一轮必须先实查此handle/PID和终态，禁止重开；完成后仍须完整UI834/native415/v4审计，当前综合未完成。
