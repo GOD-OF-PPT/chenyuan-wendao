@@ -215,7 +215,7 @@ export async function readJourneyState(page:Page):Promise<{game:any;activity:any
 
 export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,scenario=runIdleScenario,settings:{terminalRealm?:string;reopenStages?:boolean}={}) {
   test.setTimeout(240_000);
-  const savedStatePolling = { intervals: [10, 20, 50, 100] };
+  // This Playwright version consumes interval arrays; each observation receives a fresh list.
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
   await useJourneyClock(page); await page.goto('/');
@@ -237,7 +237,7 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
       expect(viewed.game, 'viewing and editing a plan must not execute its next step').toEqual(before);
       expect(viewed.activity, 'a draft cannot change the saved activity').toEqual(oldActivity);
       await decision(page, selected.control);
-      await expect.poll(async () => { const a = await activitySnapshot(page); return a?.id !== oldActivity?.id && a?.status === 'running'; }, savedStatePolling).toBe(true);
+      await expect.poll(async () => { const a = await activitySnapshot(page); return a?.id !== oldActivity?.id && a?.status === 'running'; }, { intervals: [10, 20, 50, 100] }).toBe(true);
       const accepted=await readJourneyState(page);let current=accepted.activity;
       expect(current.plan).toEqual(selected.expectedPlan); expect(accepted.game).toEqual(before);
       const activityId = current.id; let completed = 0, stepMs = 0;
@@ -248,7 +248,7 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
         const game = await snapshot(page), command = current.nextCommand, ms = current.cycleMs;
         await page.clock.fastForward(ms - 1); expect(await snapshot(page), 'no reward is saved before this real cycle deadline').toEqual(game);
         await page.clock.fastForward(1);
-        await expect.poll(async () => (await activitySnapshot(page))?.completedCycles, savedStatePolling).toBe(current.completedCycles + 1);
+        await expect.poll(async () => (await activitySnapshot(page))?.completedCycles, { intervals: [10, 20, 50, 100] }).toBe(current.completedCycles + 1);
         await expect(page.getByTestId('save-status')).toHaveText('已保存');
         const committed=await readJourneyState(page);
         expect(committed.game).toEqual(advance(game, command));
@@ -258,7 +258,7 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
           const stage=current.plan.trialStage;reopened.add(stage);const saved=await snapshot(page),persisted=current;
           await checkArt03Read(page,async()=>{await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');});
           const reloaded=await readJourneyState(page);expect(reloaded.game).toEqual(saved);expect(reloaded.activity).toEqual(persisted);
-          await page.getByTestId('training-resume').click();await expect.poll(async()=>(await activitySnapshot(page)).generation, savedStatePolling).toBe(persisted.generation+1);
+          await page.getByTestId('training-resume').click();await expect.poll(async()=>(await activitySnapshot(page)).generation, { intervals: [10, 20, 50, 100] }).toBe(persisted.generation+1);
           current=await activitySnapshot(page);expect(current.id).toBe(activityId);expect(current.completedCycles).toBe(persisted.completedCycles);expect(current.plan).toEqual(persisted.plan);
         }
         expect(current.id).toBe(activityId);

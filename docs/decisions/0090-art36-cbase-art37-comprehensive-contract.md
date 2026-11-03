@@ -77,3 +77,7 @@ d8e完整UI830/native415/core875/资源590均过，normal原轮仍继续，help/
 先保存当前完整helper与精确逆变换，再改。原正常32/当前诊断中止到真实终态后，保旧冻结源的独立归档，新的干净source/构建与原JREAD三例检查后，执行完整32。后续完整UI834与native415仍须新实际终态。保持采集对照中的DOM/网络/源/附件、原PNG和缺少连续filmstrip的明确边界。旧原自动filmstrip证据与所有失败保持，v1/v2/v3/v4目录和预算不变。回滚新revert只三处只读轮询参数，保持全部原代码与报告；兼容/环境性能仍暂停。
 
 来源 https://playwright.dev/docs/test-assertions#expectpoll ，并已核当前安装的playwright/lib/matchers/expect.js默认退避。本项目10/20/50/100为失败诊断参数，非来源规定数值。
+
+预执行代码审查发现1b9795a复用了intervals数组，而当前安装timeoutRunner.js在pollAgainstDeadline内pop/shift该数组。1b仅构建，尚未运行新轮询测试，不能称已经验证。三处改为每次调用创建新数组，保原条件/8秒/240秒/所有读与断言。旧1b提交和首份逆变换历史保留，新完整逆变换仍恢复同一原helper。
+
+[杠精代码审查] 打回后修复，调用参数的可变性已核对，下一步以真实原JREAD和完整32检验，当前综合任务仍未完成。
