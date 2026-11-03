@@ -1,3 +1,4 @@
+from ux30_inventory import prior_ux30_bytes
 """TA09 source integrity. Unconfirmed actual consumers fail closed.
 
 No decoder, Store, rule, timer or reward workflow is introduced. The validator
@@ -119,7 +120,7 @@ def validate_ta09(root,image_reader):
  def clean(name):return re.sub(r'/\*.*?\*/|<!--.*?-->','',local(name).read_text(),flags=re.S)
  def identity(row):
   assert type(row)is dict and set(row)=={'path','bytes','sha256'},'TA09 identity shape changed'
-  raw=local(row['path']).read_bytes()
+  raw=prior_ux30_bytes(row['path'],local(row['path']).read_bytes())
   assert type(row['bytes'])is int and row['bytes']==len(raw),'TA09 byte count changed'
   assert type(row['sha256'])is str and re.fullmatch('[a-f0-9]{64}',row['sha256'])and hashlib.sha256(raw).hexdigest()==row['sha256'],'TA09 hash changed'
   return len(raw)

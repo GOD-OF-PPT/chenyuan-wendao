@@ -1,3 +1,4 @@
+from ux30_inventory import normalize_ux30
 """UX29 exact presentation inversion; original controllers and historical proofs stay pinned."""
 import hashlib
 PLANNER_SHA256='5de293edd038887f4f3fd5b8b0f88b71b9bf77af06c744d0731e61f9591183f2'
@@ -11,5 +12,5 @@ def _normalize(text,edits,pin):
   text=text.replace(after,before,1)
  assert hashlib.sha256(text.encode()).hexdigest()==pin,'UX29 complete prior source'
  return text
-def normalize_ux29_planner(text):return _normalize(text,PLANNER_EDITS,PLANNER_SHA256)
-def normalize_ux29_ritual(text):return _normalize(text,RITUAL_EDITS,RITUAL_SHA256)
+def normalize_ux29_planner(text):return _normalize(normalize_ux30('RecoveryPlanner.vue',text),PLANNER_EDITS,PLANNER_SHA256)
+def normalize_ux29_ritual(text):return _normalize(normalize_ux30('RecoveryRitual.vue',text),RITUAL_EDITS,RITUAL_SHA256)

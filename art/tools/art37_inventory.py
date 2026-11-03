@@ -1,3 +1,4 @@
+from ux30_inventory import prior_ux30_bytes
 """ART37 presentation facts; the original consent/clock/store owners remain pinned."""
 import hashlib,json,re
 from pathlib import Path
@@ -36,7 +37,7 @@ def validate_art37(root):
  for r in m['files']+[m['consumer'],m['baseline']]:fact(local(r['path']).read_bytes(),r)
  old=local(m['baseline']['path']).read_bytes();assert hashlib.sha256(old).hexdigest()==BASE_SHA and original_art37_main(root,local(MAIN).read_bytes())==old,'ART37 frozen whole main'
  assert local(MAIN).stat().st_size-len(old)<=64 and local(CSS).stat().st_size<=5000,'ART37 actual presentation cap'
- for name,h in UNCHANGED.items():assert hashlib.sha256(local(name).read_bytes()).hexdigest()==h,'ART37 consent focus writer or old ledger changed'
+ for name,h in UNCHANGED.items():assert hashlib.sha256(prior_ux30_bytes(name,local(name).read_bytes())).hexdigest()==h,'ART37 consent focus writer or old ledger changed'
  old18=json.loads(local('art/redesign/art18.json').read_text());assert sum(local(r['path']).stat().st_size for r in old18['files'])+local(CSS).stat().st_size<=18000,'ART37 original ART18 combined cap'
  for name in REFS:local(name)
  assert m['testBaselines']==TEST_BASELINES,'ART37 exact original behavior tests'

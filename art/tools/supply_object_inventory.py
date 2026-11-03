@@ -1,3 +1,4 @@
+from ux30_inventory import prior_ux30_bytes
 """ART04 code identity/budget and real consumers; no visual or human-acceptance claim."""
 import hashlib,json
 
@@ -26,7 +27,7 @@ def validate_supply_objects(root):
  assert [r['path'] for r in m['files']]==NATIVE,'Supply inventory incomplete'
  total=0
  for row in m['files']:
-  data=local(row['path']).read_bytes();assert type(row['bytes']) is int and row['bytes']==len(data) and row['sha256']==hashlib.sha256(data).hexdigest(),'Supply source identity changed';total+=len(data)
+  data=prior_ux30_bytes(row['path'],local(row['path']).read_bytes());assert type(row['bytes']) is int and row['bytes']==len(data) and row['sha256']==hashlib.sha256(data).hexdigest(),'Supply source identity changed';total+=len(data)
  assert total<=40000,'Supply code budget exceeded'
  for path,fragments in BINDINGS.items():
   text=local(path).read_text()

@@ -16,18 +16,18 @@ const name=(m:string)=>m==='assisted'?'灵石辅助':'自然吐纳';
 const stageLabel=computed(()=>p.phase.value==='saving'?'凝神 · 保存中':p.working.value?'入定 · '+name(props.method):p.store?.error?p.store.unresolved?'停功 · 请先核对进度':'上次未完成 · 新安排需确认':actual.value?`当前${name(actual.value)}；此处预选${name(props.method)}`:'静息 · 选择潜修方式');
 </script>
 <template>
- <section class="art06-site" :class="{'art06-site-compact':compact}" data-testid="cultivation-site" :data-method="method" :data-state="state" :data-working="p.working.value" :data-engaged="p.engaged.value" :style="{'--cultivation-progress':p.progress.value}">
+ <section class="art06-site" :class="{'art06-site-compact':compact}" data-testid="cultivation-site" data-copy30="cultivation" :data-method="method" :data-state="state" :data-working="p.working.value" :data-engaged="p.engaged.value" :style="{'--cultivation-progress':p.progress.value}">
   <div class="art06-sanctum">
    <div class="art06-spirit-stream" aria-hidden="true"><i/><i/><i/></div>
    <div class="art06-cushion" aria-hidden="true"/>
    <AssetImage class="art06-meditator" path="art/v2/characters/player-seated-cold.webp" asset-id="player-seated-cold" fit="contain" eager aria-hidden="true"><GameIcon kind="nav" id="cultivate"/></AssetImage>
    <div class="art06-breath" aria-hidden="true"/>
-   <div class="art06-status"><small>{{stageLabel}}</small><output v-if="p.runtime.value" data-testid="cultivation-cycle-clock">{{p.phase.value==='saving'?'保存中':p.remaining.value+' 秒'}}<span> / 本轮 {{p.seconds.value}} 秒</span></output><small v-if="p.phase.value==='saving'">先核对本轮，保存后才计入修为。</small></div>
+   <div class="art06-status"><small>{{p.phase.value==='idle'&&!actual&&!p.store?.error?'静候入定':stageLabel}}</small><output v-if="p.runtime.value" data-testid="cultivation-cycle-clock">{{p.phase.value==='saving'?'保存中':p.remaining.value+' 秒'}}<span> / 本轮 {{p.seconds.value}} 秒</span></output><small v-if="p.phase.value==='saving'">先核对本轮，保存后才计入修为。</small></div>
    <div v-if="$slots.note" class="art06-note"><slot name="note"/></div>
 
   </div>
   <div class="art06-practice">
-   <header v-if="!compact"><small>听雨洞府 · 潜修</small><h2>{{game.core.player.name}} · {{realm.name}}</h2></header>
+
    <div class="art06-progress" data-testid="cultivation-progress"><span>实际修为</span><strong>{{game.core.player.xp}} / {{realm.xpCap}}</strong><progress :value="game.core.player.xp" :max="realm.xpCap||1" aria-label="已保存修为"/><div v-if="p.effect.value" :key="p.effect.value.sequence" class="art06-harvest" data-testid="cultivation-result" :data-sequence="p.effect.value.sequence" role="status"><strong>修为 +{{p.effect.value.result.delta.xp}} 已存</strong><small>{{p.effect.value.result.costs.stones?'灵石 -'+p.effect.value.result.costs.stones:'未耗灵石'}} · {{p.effect.value.result.costs.months}} 游戏月</small></div></div>
    <nav class="art06-methods" aria-label="选择潜修方式，只改变待确认安排">
     <button type="button" data-testid="cultivation-method-natural" :aria-pressed="method==='natural'" @click="emit('method','natural')"><span class="art06-mat-token" data-testid="cultivation-mat"><GameIcon kind="nav" id="cultivate"/></span><span><strong>自然吐纳</strong><small>引山间灵气 · 不耗灵石</small></span></button>

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate recorded asset facts and status boundaries, not legal rights or visual quality."""
 import argparse
+from ux30_inventory import prior_ux30_bytes,validate_ux30
 import hashlib
 import json
 import re
@@ -55,7 +56,7 @@ def validate_feedback_skip(root):
     assert [row['path'] for row in manifest['files']] == FEEDBACK_SKIP_NATIVE, 'Feedback skip single-file inventory changed'
     total = 0
     for row in manifest['files']:
-        data = local(row['path']).read_bytes()
+        data = prior_ux30_bytes(row['path'],local(row['path']).read_bytes())
         assert type(row['bytes']) is int and row['bytes'] == len(data), 'Feedback skip source bytes changed'
         assert type(row['sha256']) is str and re.fullmatch('[0-9a-f]{64}', row['sha256']) and row['sha256'] == hashlib.sha256(data).hexdigest(), 'Feedback skip source hash changed'
         total += len(data)
@@ -137,7 +138,7 @@ def validate_alchemy_workshop(root, image_reader=image_info):
     assert [row['path'] for row in manifest['files']] == native, 'Alchemy workshop code inventory changed'
     native_bytes = 0
     for row in manifest['files']:
-        data = local(row['path']).read_bytes()
+        data = prior_ux30_bytes(row['path'],local(row['path']).read_bytes())
         assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], 'Alchemy workshop code identity changed'
         native_bytes += len(data)
     assert native_bytes <= 22000, 'Alchemy workshop code budget exceeded'
@@ -148,7 +149,7 @@ def validate_alchemy_workshop(root, image_reader=image_info):
     assert runtime['path'] == 'web/public/art/v2/workshop/furnace-v1.webp'
     recorded = set()
     for item in [source, runtime]:
-        path = local(item['path']); data = path.read_bytes()
+        path = local(item['path']); data = prior_ux30_bytes(path, path.read_bytes())
         assert len(data) == item['bytes'] and hashlib.sha256(data).hexdigest() == item['sha256'], 'Alchemy workshop image identity changed'
         dimensions, alpha, fmt = image_reader(data, path.suffix)
         assert dimensions == item['dimensions'] and alpha == item['alpha'] is True and fmt == item['format'], 'Alchemy workshop image metadata/alpha mismatch'
@@ -222,7 +223,7 @@ def validate_adventure_objects(root):
     assert [row['path'] for row in manifest['files']] == ART02_NATIVE, 'Adventure object inventory changed or proof migration omitted'
     total = 0
     for row in manifest['files']:
-        data = local(row['path']).read_bytes()
+        data = prior_ux30_bytes(row['path'],local(row['path']).read_bytes())
         assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], 'Adventure object identity changed'
         total += len(data)
     assert total <= 45000, 'Adventure object native budget exceeded'
@@ -267,7 +268,7 @@ def validate_equipment_objects(root, image_reader=image_info):
         return file
 
     def identity(row):
-        file = local(row['path']); data = file.read_bytes()
+        file = local(row['path']); data = prior_ux30_bytes(file, file.read_bytes())
         assert hashlib.sha256(data).hexdigest() == row['sha256'], 'Equipment object hash changed'
         if 'bytes' in row:
             assert len(data) == row['bytes'], 'Equipment object byte count changed'
@@ -363,6 +364,7 @@ def validate_equipment_objects(root, image_reader=image_info):
 
 def validate(root):
     root = root.resolve()
+    ux30_files,ux30_bytes=validate_ux30(root)
     adventure_object_bytes = validate_adventure_objects(root)
     feedback_skip_bytes = validate_feedback_skip(root)
     manifest = json.loads((root / 'art/asset-manifest.json').read_text(encoding='utf-8'))
@@ -404,7 +406,7 @@ def validate(root):
         relative = filename.relative_to(root).as_posix()
         assert relative not in recorded, 'Duplicate exported path: ' + relative
         recorded.add(relative)
-        data = filename.read_bytes()
+        data = prior_ux30_bytes(filename, filename.read_bytes())
         assert len(data) == asset['bytes'] and hashlib.sha256(data).hexdigest() == asset['sha256'], aid + ': bytes/hash mismatch'
         if asset['availability'] == 'repo_file':
             dimensions, alpha, fmt = image_info(data, filename.suffix.lower())
@@ -613,7 +615,7 @@ def validate(root):
         assert menu['maxNativeBytes'] == 18000 and menu['maxStylesheetBytes'] == 6000 and menu['userAcceptance'] is False
         assert [row['path'] for row in menu['files']] == ['web/src/LocalExperiencePanel.vue', 'web/src/game-menus.css']
         for row in menu['files']:
-            raw = (root / row['path']).read_bytes()
+            raw = prior_ux30_bytes(row['path'], (root / row['path']).read_bytes())
             assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Game menu source identity changed'
             menu_bytes += len(raw)
             if row['path'].endswith('.css'):
@@ -638,7 +640,7 @@ def validate(root):
         assert idle['maxNativeBytes'] == 22000 and idle['userAcceptance'] is False
         assert [row['path'] for row in idle['files']] == ['web/src/activity-clock.ts', 'web/src/TrainingActivity.vue', 'web/src/TrainingPlanner.vue', 'web/src/idle-activity.css']
         for row in idle['files']:
-            raw = (root / row['path']).read_bytes()
+            raw = prior_ux30_bytes(row['path'], (root / row['path']).read_bytes())
             assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Idle UI source identity changed'
             idle_bytes += len(raw)
         assert idle_bytes <= 22000, 'Idle UI budget exceeded'
@@ -656,7 +658,7 @@ def validate(root):
         assert source_ui['maxNativeBytes'] == 24000 and source_ui['userAcceptance'] is False
         assert [row['path'] for row in source_ui['files']] == ['web/src/SourcePlanner.vue', 'web/src/idle-sources.css']
         for row in source_ui['files']:
-            raw = (root / row['path']).read_bytes()
+            raw = prior_ux30_bytes(row['path'], (root / row['path']).read_bytes())
             assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Source UI identity changed'
             source_ui_bytes += len(raw)
         assert source_ui_bytes <= 24000, 'Source UI budget exceeded'
@@ -674,7 +676,7 @@ def validate(root):
         assert production_ui['maxNativeBytes'] == 26000 and production_ui['userAcceptance'] is False
         assert [row['path'] for row in production_ui['files']] == ['web/src/ProductionPlanner.vue', 'web/src/idle-production.css', 'web/src/activity-view.ts']
         for row in production_ui['files']:
-            raw = (root / row['path']).read_bytes()
+            raw = prior_ux30_bytes(row['path'], (root / row['path']).read_bytes())
             assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Production UI identity changed'
             production_ui_bytes += len(raw)
         assert production_ui_bytes <= 26000, 'Production UI budget exceeded'
@@ -693,7 +695,7 @@ def validate(root):
         assert [r['path'] for r in preparation['files']] == ['web/src/LearningPlanner.vue', 'web/src/MarketPlanner.vue', 'web/src/RecoveryPlanner.vue', 'web/src/ConfigurationDialog.vue', 'web/src/preparation-view.ts', 'web/src/idle-preparation.css']
         total = 0
         for row in preparation['files']:
-            raw = (root / row['path']).read_bytes()
+            raw = prior_ux30_bytes(row['path'], (root / row['path']).read_bytes())
             assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Preparation UI identity changed'
             total += len(raw)
         preparation_bytes = total
@@ -821,7 +823,7 @@ def validate(root):
         assert adventure['maxNativeBytes'] == 45000 and adventure['userAcceptance'] is False
         assert [r['path'] for r in adventure['files']] == ['web/src/AdventurePlanner.vue', 'web/src/BattleStrategy.vue', 'web/src/AdventureHistory.vue', 'web/src/adventure-view.ts', 'web/src/idle-adventure.css']
         for row in adventure['files']:
-            raw = (root / row['path']).read_bytes()
+            raw = prior_ux30_bytes(row['path'], (root / row['path']).read_bytes())
             assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Adventure UI identity changed'
             adventure_bytes += len(raw)
         assert adventure_bytes <= 45000, 'Adventure UI budget exceeded'
@@ -839,7 +841,7 @@ def validate(root):
         assert milestone['maxNativeBytes'] == 30000 and milestone['userAcceptance'] is False
         assert [r['path'] for r in milestone['files']] == ['web/src/MilestoneReview.vue', 'web/src/milestone-view.ts', 'web/src/idle-milestones.css']
         for row in milestone['files']:
-            raw = (root / row['path']).read_bytes()
+            raw = prior_ux30_bytes(row['path'], (root / row['path']).read_bytes())
             assert len(raw) == row['bytes'] and hashlib.sha256(raw).hexdigest() == row['sha256'], 'Milestone UI identity changed'
             milestone_bytes += len(raw)
         assert milestone_bytes <= 30000, 'Milestone UI budget exceeded'
@@ -995,7 +997,8 @@ def validate(root):
     if fx['status'] in {'production', 'reviewed'}:
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
-    return {'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0)+art24_count+art26_count+art27_count+art28_count+art29_count+art30_count+art31_count+art32_count+art33_count+art35_count+art37_count, 'singleScreenNativeBytes':native_bytes, 'gameMenuNativeBytes':menu_bytes, 'feedbackSkipNativeBytes':feedback_skip_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'adventureObjectNativeBytes':adventure_object_bytes, 'equipmentObjectNativeBytes':equipment_bytes, 'supplyObjectNativeBytes':supply_bytes, 'narrativeObjectNativeBytes':narrative_object_bytes, 'cultivationObjectNativeBytes':cultivation_bytes, 'ta07NativeBytes':ta07_bytes, 'ta08NativeBytes':ta08_bytes, 'ta09NativeBytes':ta09_bytes, 'art10NativeBytes':art10_bytes, 'art11NativeBytes':art11_bytes, 'art12NativeBytes':art12_bytes, 'art15NativeBytes':art15_bytes, 'art16NativeBytes':art16_bytes,'art17NativeBytes':art17_bytes,'art18NativeBytes':art18_bytes,'ux20NativeBytes':ux20_bytes,'ux21NativeBytes':ux21_bytes,'ux23NativeBytes':ux23_bytes,'art24RuntimeBytes':art24_runtime_bytes,'art26RuntimeBytes':art26_runtime_bytes,'art27RuntimeBytes':art27_runtime_bytes,'art28RuntimeBytes':art28_runtime_bytes,'art29RuntimeBytes':art29_runtime_bytes,'art30RuntimeBytes':art30_runtime_bytes,'art31RuntimeBytes':art31_runtime_bytes,'art32RuntimeBytes':art32_runtime_bytes,'art33RuntimeBytes':art33_runtime_bytes,'art34NativeBytes':art34_native_bytes,'art35RuntimeBytes':art35_runtime_bytes,'art37NativeBytes':art37_bytes,'art37RuntimeBytes':sum(r['bytes']for r in json.loads((root/'art/redesign/art37.json').read_text())['runtimeAssets'])if(root/'art/redesign/art37.json').exists()else 0, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
+    recorded.update(ux30_files)
+    return {'ux30SourceBytes':ux30_bytes,'ux30ActualGroupBytes':{n:sum((root/r['path']).stat().st_size for r in json.loads((root/('art/redesign/'+n+'.json')).read_text())['files'])for n in ['cultivation-objects','idle-cultivation','idle-production','alchemy-workshop','idle-preparation']},'format': manifest['format'], 'verifiedFiles': len(recorded), 'legacyVerifiedFiles':legacy_files, 'legacyProductionAssets':legacy_production, 'redesignVerifiedFiles':len(redesign_files), 'redesignProductionAssets':redesign_production, 'characterBattleVerifiedFiles':len(character_battle_files), 'characterBattleProductionAssets':character_battle_production, 'desktopUIVerifiedFiles':len(desktop_ui_files), 'desktopUIProductionAssets':desktop_ui_production, 'statuses': counts, 'productionAssets': counts.get('production', 0) + counts.get('reviewed', 0)+art24_count+art26_count+art27_count+art28_count+art29_count+art30_count+art31_count+art32_count+art33_count+art35_count+art37_count, 'singleScreenNativeBytes':native_bytes, 'gameMenuNativeBytes':menu_bytes, 'feedbackSkipNativeBytes':feedback_skip_bytes, 'idleNativeBytes':idle_bytes, 'sourceNativeBytes':source_ui_bytes, 'productionNativeBytes':production_ui_bytes, 'preparationNativeBytes':preparation_bytes, 'adventureNativeBytes':adventure_bytes, 'stageR1NativeBytes':stage_bytes, 'stageR2NativeBytes':r2_bytes, 'stageR3NativeBytes':r3_bytes, 'stageR4NativeBytes':r4_bytes, 'idleTradeoffNativeBytes':tradeoff_bytes, 'localLoadingNativeBytes':loading_bytes, 'activityHistoryNativeBytes':history_bytes, 'alchemyWorkshopNativeBytes':workshop_bytes, 'adventureObjectNativeBytes':adventure_object_bytes, 'equipmentObjectNativeBytes':equipment_bytes, 'supplyObjectNativeBytes':supply_bytes, 'narrativeObjectNativeBytes':narrative_object_bytes, 'cultivationObjectNativeBytes':cultivation_bytes, 'ta07NativeBytes':ta07_bytes, 'ta08NativeBytes':ta08_bytes, 'ta09NativeBytes':ta09_bytes, 'art10NativeBytes':art10_bytes, 'art11NativeBytes':art11_bytes, 'art12NativeBytes':art12_bytes, 'art15NativeBytes':art15_bytes, 'art16NativeBytes':art16_bytes,'art17NativeBytes':art17_bytes,'art18NativeBytes':art18_bytes,'ux20NativeBytes':ux20_bytes,'ux21NativeBytes':ux21_bytes,'ux23NativeBytes':ux23_bytes,'art24RuntimeBytes':art24_runtime_bytes,'art26RuntimeBytes':art26_runtime_bytes,'art27RuntimeBytes':art27_runtime_bytes,'art28RuntimeBytes':art28_runtime_bytes,'art29RuntimeBytes':art29_runtime_bytes,'art30RuntimeBytes':art30_runtime_bytes,'art31RuntimeBytes':art31_runtime_bytes,'art32RuntimeBytes':art32_runtime_bytes,'art33RuntimeBytes':art33_runtime_bytes,'art34NativeBytes':art34_native_bytes,'art35RuntimeBytes':art35_runtime_bytes,'art37NativeBytes':art37_bytes,'art37RuntimeBytes':sum(r['bytes']for r in json.loads((root/'art/redesign/art37.json').read_text())['runtimeAssets'])if(root/'art/redesign/art37.json').exists()else 0, 'scope': 'Hashes and image headers/status/evidence references; not full decode, legal grant, production completion or user visual acceptance.'}
 
 
 if __name__ == '__main__':

@@ -1,3 +1,4 @@
+from ux30_inventory import prior_ux30_bytes,normalize_ux30
 """ART28 binds a cold environment and readonly furnace entry to the original full controller."""
 import hashlib,json,re
 from ta09_inventory import Tags
@@ -21,9 +22,9 @@ def validate_art28(root,image_reader):
  def local(n):
   assert type(n)is str and not n.startswith('/')and'..'not in n.split('/')and'\\'not in n,'ART28 local path'
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART28 missing input';return p
- def digest(n):return hashlib.sha256(local(n).read_bytes()).hexdigest()
+ def digest(n):return hashlib.sha256(prior_ux30_bytes(n,local(n).read_bytes())).hexdigest()
  def identity(r):
-  assert type(r['bytes'])is int and r['bytes']==local(r['path']).stat().st_size and r['sha256']==digest(r['path']),'ART28 actual identity';return local(r['path']).read_bytes()
+  assert type(r['bytes'])is int and r['bytes']==len(prior_ux30_bytes(r['path'],local(r['path']).read_bytes())) and r['sha256']==digest(r['path']),'ART28 actual identity';return prior_ux30_bytes(r['path'],local(r['path']).read_bytes())
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-alchemy-scene-art28'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART28 header'
  assert m['budgets']==BUDGETS and all(type(v)is int for v in m['budgets'].values()),'ART28 fixed typed budgets'
  assert [r['path']for r in m['files']]==FILES and m['sourceReferences']==REFS and m['baselines']==BASELINES and m['unchanged']==UNCHANGED and m['presentationEdits']==EDITS,'ART28 exact members/edits'
@@ -32,7 +33,7 @@ def validate_art28(root,image_reader):
  for n,h in UNCHANGED.items():assert digest(n)==h,'ART28 original controller/clock/proof/cold furnace'
  for ledger,key,cap in [('alchemy-workshop','maxNativeBytes',22000),('idle-production','maxNativeBytes',26000)]:
   d=json.loads(local('art/redesign/'+ledger+'.json').read_text());assert d.get('budgets',{}).get(key,d.get(key))==cap and sum(local(r['path']).stat().st_size for r in d['files'])<=cap,'ART28 actual old native cap'
- actor=local(FILES[0]).read_text();original=identity(BASELINES[0]).decode();expected=original.replace('  <header class="alchemy-heading">',EDITS['scene']+'  <header class="alchemy-heading">',1).replace('    <div class="alchemy-rune"',EDITS['inspect']+'    <div class="alchemy-rune"',1);assert actor==expected,'ART28 template-only original script and full controls'
+ actor=normalize_ux30('AlchemyWorkshop.vue',local(FILES[0]).read_text());original=identity(BASELINES[0]).decode();expected=original.replace('  <header class="alchemy-heading">',EDITS['scene']+'  <header class="alchemy-heading">',1).replace('    <div class="alchemy-rune"',EDITS['inspect']+'    <div class="alchemy-rune"',1);assert actor==expected,'ART28 template-only original script and full controls'
  css=identity(BASELINES[1]).decode()
  for old,new in EDITS['changes']:assert css.count(old)==1,'ART28 baseline exact selector';css=css.replace(old,new,1)
  assert local(FILES[1]).read_text()==css+EDITS['addition'],'ART28 exact pure styles and retired overrides'

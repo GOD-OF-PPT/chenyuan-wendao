@@ -1,3 +1,4 @@
+from ux30_inventory import prior_ux30_bytes,normalize_ux30
 """Opening offering: exact view-only adapters, immutable old controllers and actual art provenance."""
 import hashlib,json,re
 LEDGER='art/redesign/art33.json'
@@ -14,6 +15,7 @@ HASHES={'shen-offering': {'source': 'e0b8e7097947178f25249f34c410a5df46bff33f2ee
 UX27_APP_BASELINE_SHA256='a0fe13157651faee105643b121108a102566a6b5aad50b4c37789e1ecc360fb6'
 UX27_APP_TRANSFORMS=[['const receiptAll=ref(false);', "const equipmentReading=shallowRef({runId:'',section:''});\nconst equipmentSection=computed(()=>equipmentReading.value.runId===game.value?.core.runId?equipmentReading.value.section:'');\nconst navigationView=computed(()=>{const view=detailViews.has(hubView.value)?detailParent.value?.view??hubView.value:hubView.value;return ['skills','relics'].includes(view)?equipmentSection.value==='relics'?'relics':'skills':view;});\nconst receiptAll=ref(false);"], ['const hubTitle=computed(()=>({', "const hubTitle=computed(()=>['skills','relics'].includes(hubView.value)&&equipmentSection.value?({school:'修法 · 剑符择道',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',manual:'剑简 · 参悟与研习',summary:'配装 · 三法一器'} as Record<string,string>)[equipmentSection.value]:({"], [' :catalogue="hubView===\'relics\'?\'relics\':\'skills\'"', ' @section="equipmentReading=$event" :catalogue="hubView===\'relics\'?\'relics\':\'skills\'"'], [':view="detailViews.has(hubView)&&detailParent?detailParent.view:hubView"', ':view="navigationView"']]
 def normalize_ux27_app(text):
+ text=normalize_ux30('App.vue',text)
  if UX27_APP_TRANSFORMS[0][1]not in text:return text
  for before,after in reversed(UX27_APP_TRANSFORMS):
   assert text.count(after)==1,'UX27 exact readonly outer context'
@@ -41,9 +43,9 @@ def validate_art33(root,image_reader):
  def local(n):
   assert type(n)is str and n and not n.startswith('/')and'..'not in n.split('/')and'\\'not in n,'ART33 local path'
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART33 missing input';return p
- def digest(n):return hashlib.sha256(local(n).read_bytes()).hexdigest()
+ def digest(n):return hashlib.sha256(prior_ux30_bytes(n,local(n).read_bytes())).hexdigest()
  def identity(r):
-  assert type(r['bytes'])is int and local(r['path']).stat().st_size==r['bytes']and digest(r['path'])==r['sha256'],'ART33 actual identity';return local(r['path']).read_bytes()
+  assert type(r['bytes'])is int and len(prior_ux30_bytes(r['path'],local(r['path']).read_bytes()))==r['bytes']and digest(r['path'])==r['sha256'],'ART33 actual identity';return prior_ux30_bytes(r['path'],local(r['path']).read_bytes())
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-opening-offering-art33'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART33 honest header'
  assert m['budgets']==BUDGETS and all(type(v)is int for v in m['budgets'].values()),'ART33 typed caps'
  assert [r['path']for r in m['files']]==FILES and [r['path']for r in m['parents']]==PARENTS and m['baselines']==BASELINES and m['sourceReferences']==REFS and m['unchanged']==UNCHANGED and m['patches']==PATCHES,'ART33 exact scope'

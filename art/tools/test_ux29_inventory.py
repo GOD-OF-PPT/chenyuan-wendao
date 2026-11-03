@@ -1,3 +1,4 @@
+from ux30_inventory import normalize_ux30
 import hashlib,unittest
 from pathlib import Path
 from ux29_inventory import PLANNER_EDITS,RITUAL_EDITS,normalize_ux29_planner,normalize_ux29_ritual
@@ -19,9 +20,10 @@ class UX29PresentationTests(unittest.TestCase):
    with self.assertRaises(AssertionError):chain(changed)
  def test_missing_or_duplicate_approved_display_fragments_cannot_bypass_original_pins(self):
   for name,edits,normalize,chain,pin in self.cases:
-   current=(ROOT/'web/src'/name).read_text()
+   current=normalize_ux30(name,(ROOT/'web/src'/name).read_text())
    for before,after in edits:
     for changed in [current.replace(after,before,1),current+after]:
+     self.assertNotEqual(changed,current)
      with self.subTest(name=name),self.assertRaises(AssertionError):chain(changed)
  def test_forced_allowed_fake_recovery_and_unapproved_message_are_rejected(self):
   for name,edits,normalize,chain,pin in self.cases:

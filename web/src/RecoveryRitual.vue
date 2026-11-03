@@ -21,7 +21,7 @@ const saved=computed(()=>{const a=activity.value;return a?.version===5&&a.comple
 const stock=computed(()=>props.game.core.inventory[props.itemId]??0);
 </script>
 <template>
- <div class="recovery-ritual art11-recovery" data-testid="recovery-ritual" :data-kind="kind" :data-state="phase" :data-status="state" :data-working="working" :data-engaged="engaged" :data-item="kind==='use'?itemId:'rest'">
+ <div class="recovery-ritual art11-recovery" data-testid="recovery-ritual" data-copy30="recovery-object" :data-kind="kind" :data-state="phase" :data-status="state" :data-working="working" :data-engaged="engaged" :data-item="kind==='use'?itemId:'rest'">
   <nav class="recovery-methods" aria-label="药盏与静坐"><slot name="options"/></nav>
   <div class="recovery-body" aria-label="当前体魄">
    <div class="recovery-stat recovery-hp" :data-restored="!!effect&&effect.result.delta.hp>0"><span>气血</span><strong>{{game.core.player.hp}} / {{body.maxHp}}</strong><progress :value="game.core.player.hp" :max="body.maxHp" aria-label="当前气血"/></div>
@@ -29,11 +29,11 @@ const stock=computed(()=>props.game.core.inventory[props.itemId]??0);
   </div>
   <section class="recovery-object recovery-cabinet" aria-label="当前恢复对象">
    <div class="recovery-object-heading"><div class="recovery-vessel" :data-saved="!!effect" :style="{'--recovery-turn':(working?progress:0)*360+'deg'}" aria-hidden="true"><i class="recovery-breath"/><i class="recovery-platform"/><template v-if="kind==='use'"><div class="recovery-medicine"><ItemArtifact :item-id="itemId" :owned="stock>0"/></div><div class="recovery-jade-bowl"><i v-if="stock>0" class="recovery-pill"/></div></template><div v-else class="recovery-sitting"><AssetImage path="art/v2/characters/player-seated-cold.webp" asset-id="resting-self" fit="contain" eager><GameIcon kind="nav" id="cultivate"/></AssetImage></div></div><div><small>{{kind==='rest'?'听雨洞府 · 静坐一回':'随身药盏 · 实存 '+stock+' 丹'}}</small><h3>{{kind==='rest'?'洞府休养':item.name}}</h3></div></div>
-   <p class="recovery-description">{{kind==='rest'?'以一个游戏月换取气血灵力恢复圆满；不消耗丹药。':item.description}}</p>
-   <strong class="recovery-unit" data-testid="recovery-per-cycle">{{one.allowed?'预计单次气血 +'+(one.delta?.hp??0)+' · 灵力 +'+(one.delta?.mp??0):one.failure?.message}}</strong>
-   <div class="recovery-cycle" role="status"><strong data-testid="recovery-local-status">{{status}}</strong><span v-if="engaged&&runtime&&phase==='running'" data-testid="recovery-cycle-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span><small v-else-if="!engaged&&activity?.status==='running'&&!store?.error&&!store?.activityPausing">等待本页主动续接，不补离线</small></div>
+   <details><summary style="min-height:44px">调息须知</summary><p class="recovery-description">{{kind==='rest'?'以一个游戏月换取气血灵力恢复圆满；不消耗丹药。':item.description}}</p></details>
+   <strong v-if="one.allowed" class="recovery-unit" data-testid="recovery-per-cycle">{{one.allowed?'预计单次气血 +'+(one.delta?.hp??0)+' · 灵力 +'+(one.delta?.mp??0):one.failure?.message}}</strong>
+   <div v-if="state!=='idle'||activity" class="recovery-cycle" role="status"><strong data-testid="recovery-local-status">{{state==='failed'?'已停手':status}}</strong><span v-if="engaged&&runtime&&phase==='running'" data-testid="recovery-cycle-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span><small v-else-if="!engaged&&activity?.status==='running'&&!store?.error&&!store?.activityPausing">等待本页主动续接，不补离线</small></div>
    <p v-if="effect" class="recovery-arrival" data-testid="recovery-result" :data-sequence="effect.sequence" role="status">本次已保存 · {{effect.notice.delta}}</p><small v-else-if="saved" class="recovery-saved" data-testid="recovery-saved">{{saved}}</small>
-   <button v-if="kind==='use'" class="recovery-source" @click="emit('source')">查看丹药来源与补给 →</button><small v-else class="recovery-location-note">不在洞府时先回洞府；抵达后再预估并确认疗养。</small>
+   <button v-if="kind==='use'" class="recovery-source" @click="emit('source')">查看补给来源 ›</button>
   </section>
   <aside class="recovery-decision preparation-decision"><slot name="decision"/></aside>
  </div>

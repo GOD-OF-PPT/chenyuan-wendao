@@ -1,0 +1,91 @@
+{
+  "format": "chenyuan-primary-copy-ux30",
+  "version": 1,
+  "userAcceptance": false,
+  "budgets": {
+    "newCSSBytes": 0,
+    "newRasterAssets": 0,
+    "appBytes": 159635,
+    "recoveryRitualBytes": 9658,
+    "cultivation-objects": 45000,
+    "idle-cultivation": 22000,
+    "idle-production": 26000,
+    "alchemy-workshop": 22000,
+    "idle-preparation": 60000
+  },
+  "files": [
+    {
+      "path": "web/src/App.vue",
+      "bytes": 159508,
+      "sha256": "8487968f775888aed0529e5db8a4a64bb679ff42c93d5e600137b206e6d2ba5e"
+    },
+    {
+      "path": "web/src/TrainingPlanner.vue",
+      "bytes": 7517,
+      "sha256": "aee9eeb8b91bea2a748bb84b5257a0dd601a134a24598d827fef548da5ce669f"
+    },
+    {
+      "path": "web/src/CultivationSite.vue",
+      "bytes": 4224,
+      "sha256": "e142a23b35f435c73ca10a99332d41fdbb0baf5bfae4fbd46b2775841a2ac851"
+    },
+    {
+      "path": "web/src/AlchemyWorkshop.vue",
+      "bytes": 12065,
+      "sha256": "151e4af4a995fd21c175adda186755ee35fce811913b994a3d5f57e9e3d1f95a"
+    },
+    {
+      "path": "web/src/RecoveryPlanner.vue",
+      "bytes": 8554,
+      "sha256": "cfebbad097fcd2d1913fc510fae511e665aa0403c6e3fd0acbbeed2ac0d4ab67"
+    },
+    {
+      "path": "web/src/RecoveryRitual.vue",
+      "bytes": 9542,
+      "sha256": "275effb2cf2c9069c4f0ac87bde0cd367ea5b161b28b346b6113265a42f2b760"
+    }
+  ],
+  "baselines": [
+    {
+      "path": "goal-4/evidence/ux30/App.vue.before.txt",
+      "bytes": 159429,
+      "sha256": "ace7316243691e708ee80dac26aca866a9c28b7dbd8633cde11bf584a83ece71"
+    },
+    {
+      "path": "goal-4/evidence/ux30/TrainingPlanner.vue.before.txt",
+      "bytes": 7494,
+      "sha256": "9aace9a3ca49d1397f40e980e71c37da69606ecf971bae062a56f85c7bd14594"
+    },
+    {
+      "path": "goal-4/evidence/ux30/CultivationSite.vue.before.txt",
+      "bytes": 4259,
+      "sha256": "01d7e4e927694032e2639273e33729cf4914f924773941e10c6dbadc85aef173"
+    },
+    {
+      "path": "goal-4/evidence/ux30/AlchemyWorkshop.vue.before.txt",
+      "bytes": 12200,
+      "sha256": "16875308ab453d462307500412532a3da500f54760cc87159ef96c1d63b9eaf1"
+    },
+    {
+      "path": "goal-4/evidence/ux30/RecoveryPlanner.vue.before.txt",
+      "bytes": 8572,
+      "sha256": "13a08bcb6fc24f98a1ff07dad3ad1a803dbbd21ab2d2689611d87f4994f266ab"
+    },
+    {
+      "path": "goal-4/evidence/ux30/RecoveryRitual.vue.before.txt",
+      "bytes": 9486,
+      "sha256": "97fe60181eb14dc42a39f4001753744af3cab69a9082c2ef86d2048116a9a068"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0091-primary-game-copy-density-ux30-contract.md",
+    "goal-4/amendments/2026-11-03-ux30-input.md",
+    "art/redesign/ux30-display-edits.json",
+    "goal-4/evidence/ux30/App.vue.before.txt",
+    "goal-4/evidence/ux30/TrainingPlanner.vue.before.txt",
+    "goal-4/evidence/ux30/CultivationSite.vue.before.txt",
+    "goal-4/evidence/ux30/AlchemyWorkshop.vue.before.txt",
+    "goal-4/evidence/ux30/RecoveryPlanner.vue.before.txt",
+    "goal-4/evidence/ux30/RecoveryRitual.vue.before.txt"
+  ]
+}

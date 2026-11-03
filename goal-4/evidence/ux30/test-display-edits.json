@@ -1,0 +1,28 @@
+{
+  "cultivation-objects.spec.ts": [
+    [
+      "预计可完成 1 轮",
+      "本段预估 · 1 轮"
+    ]
+  ],
+  "idle-cultivation.spec.ts": [
+    [
+      "预计可完成 1 轮",
+      "本段预估 · 1 轮"
+    ]
+  ],
+  "ux29-recovery-availability.spec.ts": [
+    [
+      "if(!one.allowed)await expect(page.getByTestId('recovery-per-cycle')).toHaveText(one.failure!.message);",
+      "if(!one.allowed){await expect(page.getByTestId('preparation-estimate').locator('strong')).toHaveText(one.failure!.message);await expect(page.getByTestId('recovery-per-cycle')).toHaveCount(0);}"
+    ],
+    [
+      "await expect(page.locator('.recovery-location-note')).toContainText('抵达后再预估并确认疗养');",
+      "await readonly(page,async()=>{await openSupplySettings(page);await expect(page.getByTestId('recovery-plan-dialog')).toContainText('抵达后再预估并确认疗养');await closeSupplySettings(page);});"
+    ],
+    [
+      "await expect(page.getByTestId('preparation-estimate').locator('p')).toHaveText('气血 +'+q.hp+' · 灵力 +'+q.mp);",
+      "await expect(page.getByTestId('preparation-estimate').locator('p')).toHaveCount(0);"
+    ]
+  ]
+}

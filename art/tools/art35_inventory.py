@@ -1,3 +1,4 @@
+from ux30_inventory import prior_ux30_bytes, normalize_ux30
 from ux29_inventory import normalize_ux29_ritual
 from ux28_inventory import normalize_ux28_recovery
 """ART35 calm props; old renderers reverse to their full original ownership proofs."""
@@ -43,7 +44,7 @@ def validate_art35(root,image_reader):
   return path
  recorded={LEDGER,*FILES,*PARENTS,*REFS,*UNCHANGED}
  def identity(row):
-  data=local(row['path']).read_bytes();recorded.add(row['path'])
+  data=prior_ux30_bytes(row['path'],local(row['path']).read_bytes());recorded.add(row['path'])
   assert row['sha256']==hashlib.sha256(data).hexdigest(),'ART35 actual identity'
   if'bytes'in row:assert type(row['bytes'])is int and row['bytes']==len(data),'ART35 actual bytes'
   return data
@@ -54,7 +55,7 @@ def validate_art35(root,image_reader):
  for row in m['files']+m['parents']+BASELINES:identity(row)
  for name in REFS:local(name)
  assert sum(local(n).stat().st_size for n in FILES)<=7200 and local(FILES[0]).stat().st_size<=2400 and local(FILES[1]).stat().st_size<=4800,'ART35 pure view budget'
- for name,h in UNCHANGED.items():assert hashlib.sha256(normalize_ux28_recovery(local(name).read_text()).encode()if name=='web/src/RecoveryPlanner.vue'else local(name).read_bytes()).hexdigest()==h,'ART35 original activity and rule owners'
+ for name,h in UNCHANGED.items():assert hashlib.sha256(normalize_ux28_recovery(normalize_ux30(name,local(name).read_text())).encode()if name=='web/src/RecoveryPlanner.vue'else local(name).read_bytes()).hexdigest()==h,'ART35 original activity and rule owners'
  for name,baseline,normalize,cap in zip(PARENTS,BASELINES,[normalize_art35_jade,normalize_art35_recovery],[800,400]):
   text=local(name).read_text();assert normalize(text).encode()==identity(baseline),'ART35 complete original renderer'
   assert local(name).stat().st_size-baseline['bytes']<=cap,'ART35 bounded original renderer delta'

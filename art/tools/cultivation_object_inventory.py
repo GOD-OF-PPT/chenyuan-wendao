@@ -1,3 +1,4 @@
+from ux30_inventory import prior_ux30_bytes
 """ART06 identity, fixed budgets and real consumers; no runtime or visual acceptance."""
 import hashlib,json,re
 from pathlib import PurePosixPath
@@ -45,7 +46,7 @@ def validate_cultivation_objects(root,image_reader):
  for p in REFS:local(p)
  def identity(row):
   assert type(row)is dict and set(row)=={'path','bytes','sha256'},'Cultivation source identity shape changed'
-  b=local(row['path']).read_bytes()
+  b=prior_ux30_bytes(row['path'],local(row['path']).read_bytes())
   assert type(row['bytes'])is int and row['bytes']==len(b),'Cultivation source bytes changed'
   assert type(row['sha256'])is str and re.fullmatch('[0-9a-f]{64}',row['sha256'])and row['sha256']==hashlib.sha256(b).hexdigest(),'Cultivation source hash changed'
   return len(b)
