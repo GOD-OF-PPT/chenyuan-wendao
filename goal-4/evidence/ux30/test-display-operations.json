@@ -100,5 +100,21 @@
         ".toContainText('下次草案')"
       ]
     ]
+  },
+  "inventory-objects.spec.ts": {
+    "beforeSHA256": "f09686cead09c3a5542abd9e09ff5dc28c7f53d0386083ff73e66f8196967785",
+    "afterSHA256": "8cfa95e5e88cbbc64821b7c5549700d7220c4913d53d1c153109a0df940ed0e0",
+    "operations": [
+      [
+        4104,
+        "visible=(n:Element)=>!!n.getClientRects().length",
+        "visible=(n:Element)=>n.checkVisibility()&&!!n.getClientRects().length"
+      ],
+      [
+        15563,
+        ".filter(x=>x.getClientRects().length).map",
+        ".filter(x=>x.checkVisibility()&&x.getClientRects().length).map"
+      ]
+    ]
   }
 }

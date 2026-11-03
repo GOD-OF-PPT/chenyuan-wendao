@@ -56,5 +56,15 @@
       ".toContainText('下次安排草案')",
       ".toContainText('下次草案')"
     ]
+  ],
+  "inventory-objects.spec.ts": [
+    [
+      "visible=(n:Element)=>!!n.getClientRects().length",
+      "visible=(n:Element)=>n.checkVisibility()&&!!n.getClientRects().length"
+    ],
+    [
+      ".filter(x=>x.getClientRects().length).map",
+      ".filter(x=>x.checkVisibility()&&x.getClientRects().length).map"
+    ]
   ]
 }
