@@ -24,7 +24,7 @@
     "reportSha256": "5c8ce2a8e200f9b69fe26bd1868d3814cadae9a51842d1ba87fc77c27f0aeb5f"
   },
   "verifierAuthorMethods": 17,
-  "normalStatus": "running, six foundation guides passed; full route results pending",
+  "normalStatus": "running",
   "currentRequired": {
     "ui": 834,
     "persistence": 415,
@@ -34,5 +34,11 @@
   "compatibilityAndEnvironmentPerformance": "paused",
   "normalSession": 53672,
   "normalOwnedChild": 81501,
-  "normalConfig": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/normal.config.ts"
+  "normalConfig": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/normal.config.ts",
+  "normalFinished": 20,
+  "normalPassed": 12,
+  "normalFailed": 8,
+  "nextPhase": "normal-trace full32 after original terminal",
+  "nextPhaseStatus": "prepared, not launched",
+  "observerConsumerModuleClosureCount": 50
 }
