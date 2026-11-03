@@ -39,3 +39,5 @@ d8e完整UI830/native415/core875/资源590均过，normal原轮仍继续，help/
 原normal完整终态后才切换冻结源码和运行新完整相关文件/正常32；原830UI及415其他结果只有实际未变消费闭包/参数/锁/327运行输入和112载荷证明可逐项明示继承，变动消费者全部重跑，暂停性能消费者只披露不运行。新结果不能给旧Git换标签；当前v3全1277、原20要求88叶/171与82映射不减少。原矩阵失败和最终艺术/长期/真人/正式候选义务保。
 
 来源：https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify 、 https://playwright.dev/docs/evaluating 。
+
+传输作者3例实际2过1红：JSON保留自有__proto__而原Playwright完整值传输丢掉该键，不能叫等价，也不能删原对照。将这类key整体回退原结构化路径；JSON-only新合成用例保所有普通字段/Unicode/原型不污染检查，另加特殊键的fallback等价。该原通道限制仅在隔离合成记录观察到，不宣称修复或支持任意特殊原型记录；正式Game精确schema及生产读写未改。原红/trace/JSON全保，新增模式不得放宽未知值。
