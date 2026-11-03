@@ -57,3 +57,44 @@ test('v3 cannot drop or relabel a new consumer, substitute an old consumer, or i
  for(const change of [r=>r.suites[0].specs.pop(),r=>r.suites[0].specs.at(-1).title+=' invented',r=>r.suites[0].specs[0].title+=' replaced']){const[broad,recovery,native,normal]=currentDeclarations();change(broad.report);assert.throws(()=>inspectIdleDeclarations(3,[broad,native,normal],runtime,recovery.report),/Profile declarations|Profile identities/);}
  const[broad,recovery,native,normal]=currentDeclarations();assert.throws(()=>inspectIdleDeclarations(3,[broad,native,normal],runtime),/requires the original/);recovery.report.suites[0].specs[0].title+=' replacement';assert.throws(()=>inspectIdleDeclarations(3,[broad,native,normal],runtime,recovery.report),/Profile identities/);
 });
+
+function copyDeclarations() {
+ const inventories=currentDeclarations();
+ const extra=JSON.parse(fs.readFileSync(new URL('./idle-ux30-additions.json',import.meta.url)));
+ inventories[0].report.suites[0].specs.push(...extra.additions.map(row=>({
+  file:row.file,title:row.title,tests:[{projectName:row.projectName}],
+ })));
+ return inventories;
+}
+
+test('v4 retains the entire v3 inventory and all four real copy-disclosure consumers',()=>{
+ const [broad,recovery,native,normal]=copyDeclarations();
+ assert.equal(inspectIdleDeclarations(4,[broad,native,normal],runtime,recovery.report).length,1281);
+ assert.throws(()=>inspectIdleDeclarations(3,[broad,native,normal],runtime,recovery.report),/Profile declarations/);
+ const [original,originalRecovery,originalNative,originalNormal]=currentDeclarations();
+ assert.equal(inspectIdleDeclarations(3,[original,originalNative,originalNormal],runtime,originalRecovery.report).length,1277);
+ assert.throws(()=>inspectIdleDeclarations(4,[original,originalNative,originalNormal],runtime,originalRecovery.report),/Profile declarations/);
+});
+
+test('v4 rejects missing duplicate or same-count substituted copy and original consumers',()=>{
+ const mutations=[
+  report=>report.suites[0].specs.pop(),
+  report=>report.suites[0].specs.at(-1).title+=' invented',
+  report=>report.suites[0].specs[0].title+=' replaced',
+  report=>report.suites[0].specs.splice(-1,1,structuredClone(report.suites[0].specs.at(-2))),
+ ];
+ for(const mutate of mutations){
+  const [broad,recovery,native,normal]=copyDeclarations();
+  mutate(broad.report);
+  assert.throws(()=>inspectIdleDeclarations(4,[broad,native,normal],runtime,recovery.report),/Profile declarations|Profile identities/);
+ }
+});
+
+test('v4 requires the original recovery declaration and exact current runtime and suite ownership',()=>{
+ const [broad,recovery,native,normal]=copyDeclarations();
+ assert.throws(()=>inspectIdleDeclarations(4,[broad,native,normal],runtime),/requires the original/);
+ assert.throws(()=>inspectIdleDeclarations(4,[broad,native,native],runtime,recovery.report),/Exactly one/);
+ assert.throws(()=>inspectIdleDeclarations(4,[broad,native,normal],'b'.repeat(64),recovery.report),/runtime differs/);
+ recovery.report.suites[0].specs[0].title+=' replaced';
+ assert.throws(()=>inspectIdleDeclarations(4,[broad,native,normal],runtime,recovery.report),/Profile identities/);
+});

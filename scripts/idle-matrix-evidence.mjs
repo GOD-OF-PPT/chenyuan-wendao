@@ -12,6 +12,7 @@ const repositoryRoot=fileURLToPath(new URL('../',import.meta.url));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const key=r=>JSON.stringify([r.suite,r.file,r.title,r.projectName??'chromium']);
 const additions=JSON.parse(fs.readFileSync(new URL('../tests/idle-comprehensive-additions.json',import.meta.url)));
+const copyAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-ux30-additions.json',import.meta.url)));
 export function idleReportTests(report,suite){
  assert.ok(['ui','persistence','journey'].includes(suite),'Unknown current suite');
  const directory=String(report.config?.rootDir??'').replaceAll('\\','/');
@@ -36,21 +37,44 @@ export function latestIdleResults(phases){
 }
 /** Validate real named declarations; v2 includes every v1 UI consumer in the complete UI inventory. */
 export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI){
- assert.ok(version===1||version===2||version===3,'Unknown idle matrix version');assert.match(runtime,/^[a-f0-9]{64}$/);
- const pins=version===1?idleRecoveryMatrix.profiles:version===2?idleComprehensiveProfiles:{...idleComprehensiveProfiles,ui:additions.profile},expected=[],seen=new Set();
+ assert.ok(version===1||version===2||version===3||version===4,'Unknown idle matrix version');assert.match(runtime,/^[a-f0-9]{64}$/);
+ const profiles = {
+  1: idleRecoveryMatrix.profiles,
+  2: idleComprehensiveProfiles,
+  3: {...idleComprehensiveProfiles, ui: additions.profile},
+  4: {...idleComprehensiveProfiles, ui: copyAdditions.profile},
+ };
+ const pins=profiles[version],expected=[],seen=new Set();
  const named=(report,suite,pin)=>{const rows=idleReportTests(report,suite);assert.equal(path.basename(report.config.configFile),pin.configuration,'Partial declaration wrapper is not the reviewed profile');assert.equal(report.config.metadata.runtimeDigest,runtime,'Declaration source runtime differs');assert.equal(rows.length,pin.count,'Profile declarations were reduced');assert.equal(sha(JSON.stringify(rows.map(key).sort())),pin.signature,'Profile identities differ from the reviewed full source inventory');return rows;};
  for(const d of declarations){const pin=pins[d.suite];assert.ok(pin&&!seen.has(d.suite),'Exactly one complete named source profile per suite is required');seen.add(d.suite);expected.push(...named(d.report,d.suite,pin));}
  assert.deepEqual([...seen].sort(),['journey','persistence','ui']);assert.equal(new Set(expected.map(key)).size,expected.length,'Duplicate required identity');
  if(version>=2){assert.ok(recoveryUI,'v2 requires the original reviewed recovery UI declaration');const original=named(recoveryUI,'ui',idleRecoveryMatrix.profiles.ui),complete=new Set(expected.filter(r=>r.suite==='ui').map(key));for(const row of original)assert.ok(complete.has(key(row)),'Original recovery UI consumer lost from the comprehensive inventory');}
- if(version===3){
-  assert.equal(additions.format,'chenyuan-current-comprehensive-additions');assert.equal(additions.version,3);assert.equal(additions.additions.length,14);const added=new Set(additions.additions.map(key)),ui=expected.filter(r=>r.suite==='ui');assert.equal(added.size,14,'Duplicate added identity');for(const id of added)assert.ok(ui.some(r=>key(r)===id),'Missing reviewed added consumer');const original=ui.filter(r=>!added.has(key(r)));assert.equal(original.length,idleComprehensiveProfiles.ui.count,'Original v2 inventory reduced');assert.equal(sha(JSON.stringify(original.map(key).sort())),idleComprehensiveProfiles.ui.signature,'Original v2 consumer lost or replaced');
+ let previousUI=expected.filter(r=>r.suite==='ui');
+ if(version===4){
+  assert.equal(copyAdditions.format,'chenyuan-ux30-comprehensive-additions');
+  assert.equal(copyAdditions.version,4);
+  assert.equal(copyAdditions.parentVersion,3);
+  assert.equal(copyAdditions.additions.length,4);
+  const added=new Set(copyAdditions.additions.map(key));
+  assert.equal(added.size,4,'Duplicate copy consumer');
+  for(const row of copyAdditions.additions){
+   assert.equal(row.suite,'ui');
+   assert.equal(row.file,'ux30-primary-copy.spec.ts');
+   assert.ok(previousUI.some(actual=>key(actual)===key(row)),'Missing reviewed copy consumer');
+  }
+  previousUI=previousUI.filter(row=>!added.has(key(row)));
+  assert.equal(previousUI.length,additions.profile.count,'Original v3 inventory reduced');
+  assert.equal(sha(JSON.stringify(previousUI.map(key).sort())),additions.profile.signature,'Original v3 consumer lost or replaced');
+ }
+ if(version>=3){
+  assert.equal(additions.format,'chenyuan-current-comprehensive-additions');assert.equal(additions.version,3);assert.equal(additions.additions.length,14);const added=new Set(additions.additions.map(key)),ui=previousUI;assert.equal(added.size,14,'Duplicate added identity');for(const id of added)assert.ok(ui.some(r=>key(r)===id),'Missing reviewed added consumer');const original=ui.filter(r=>!added.has(key(r)));assert.equal(original.length,idleComprehensiveProfiles.ui.count,'Original v2 inventory reduced');assert.equal(sha(JSON.stringify(original.map(key).sort())),idleComprehensiveProfiles.ui.signature,'Original v2 consumer lost or replaced');
  }
  return expected;
 }
 /** Explicit same-runtime engineering proof; does not replace the historical candidate gate. */
 export function verifyIdleMatrixCoverage(manifestFile){
  const manifest=JSON.parse(fs.readFileSync(manifestFile)),base=path.dirname(path.resolve(manifestFile));
- assert.equal(manifest.format,'chenyuan-idle-matrix-inputs');assert.ok(manifest.version===1||manifest.version===2||manifest.version===3,'Unknown idle matrix version');assert.deepEqual(manifest.scope,{browser:'chromium',viewport:{width:1440,height:900},fontScale:1});assert.match(manifest.runtime,/^[a-f0-9]{64}$/);
+ assert.equal(manifest.format,'chenyuan-idle-matrix-inputs');assert.ok(manifest.version===1||manifest.version===2||manifest.version===3||manifest.version===4,'Unknown idle matrix version');assert.deepEqual(manifest.scope,{browser:'chromium',viewport:{width:1440,height:900},fontScale:1});assert.match(manifest.runtime,/^[a-f0-9]{64}$/);
  const read=ref=>{assert.ok(ref&&typeof ref.path==='string');assert.match(ref.sha256,/^[a-f0-9]{64}$/);const bytes=fs.readFileSync(path.resolve(base,ref.path));assert.equal(sha(bytes),ref.sha256,'Evidence bytes changed: '+ref.path);return JSON.parse(bytes);};
  const phases=[],phaseNames=new Set();let previousStart=-Infinity;
  for(const descriptor of manifest.phases){
