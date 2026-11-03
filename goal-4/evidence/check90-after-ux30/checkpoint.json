@@ -88,6 +88,38 @@
     "retried": [],
     "reportSha256": "9b10fe7ccc6c07b8afbbef9b479c9614ff34bc0d4a299129277fa07fab065353"
   },
-  "plannedNext": "observer-poll then complete normal-poll32, followed by complete UI834/native415 and v4 audit",
-  "pollImplementation": "1b9795a"
+  "plannedNext": "observer-poll currently launched, then complete normal-poll32; no other heavy phase concurrently",
+  "pollImplementation": "7c20e72d13f50ec52cd570477ed26395845ccd7c",
+  "executionSource": "artifacts/goal-4/check90-after-ux30/source",
+  "executionBranch": "codex/check90-observation-fresh",
+  "originalSourceArchive": "artifacts/goal-4/check90-after-ux30/archive-c241",
+  "original13Unchanged": true,
+  "observerPoll": {
+    "exit": 0,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 3409,
+    "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+    "stats": {
+      "startTime": "2026-11-03T11:36:59.503Z",
+      "duration": 10024.937,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 3,
+    "retried": [],
+    "reportSha256": "68cf15fb35802a8e7d8b352d324ef1ce55141e47938f55c6d368f4ed36b65b34"
+  },
+  "currentPhase": "normal-poll",
+  "currentPhaseStatus": "running",
+  "currentPhaseSession": 20200,
+  "currentOwnedChild": 93360,
+  "currentFinished": 10,
+  "currentPassed": 10,
+  "currentFailed": 0
 }
