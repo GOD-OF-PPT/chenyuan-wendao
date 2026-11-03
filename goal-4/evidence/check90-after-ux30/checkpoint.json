@@ -39,7 +39,7 @@
   "normalPassed": 12,
   "normalFailed": 8,
   "nextPhase": "normal-trace full32 after original terminal",
-  "nextPhaseStatus": "running full32 trace comparison",
+  "nextPhaseStatus": "trace diagnostic interrupted after observed failure; excluded from acceptance",
   "observerConsumerModuleClosureCount": 50,
   "normalTerminal": {
     "exit": 1,
@@ -66,5 +66,28 @@
     "timedOut": 7,
     "failed": 7
   },
-  "nextPhaseSession": 54941
+  "nextPhaseSession": 54941,
+  "traceDiagnosticTerminal": {
+    "exit": 130,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 3406,
+    "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+    "stats": {
+      "startTime": "2026-11-03T11:11:57.644Z",
+      "duration": 779976.833,
+      "expected": 8,
+      "skipped": 22,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 32,
+    "retried": [],
+    "reportSha256": "9b10fe7ccc6c07b8afbbef9b479c9614ff34bc0d4a299129277fa07fab065353"
+  },
+  "plannedNext": "observer-poll then complete normal-poll32, followed by complete UI834/native415 and v4 audit",
+  "pollImplementation": "1b9795a"
 }
