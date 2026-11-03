@@ -1,0 +1,27 @@
+{
+  "productSource": {
+    "head": "013b4679fb583b941253f2b459e868fe11f31b80",
+    "source": "013b4679fb583b941253f2b459e868fe11f31b80",
+    "tree": "99f15db83e89d80d4fb9a02cac551b09df09a246",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "testSource": {
+    "head": "60dd535c1ab3f23162b6ecdcc2e54f52f9474f0e",
+    "source": "60dd535c1ab3f23162b6ecdcc2e54f52f9474f0e",
+    "tree": "a8bb0e823b45b6cee9e93b21ceeb5be8ede25104",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "28a17ff09af39f371861dd151d9f7cf09e165128871411e9ae2ab7e28dde60d6",
+  "all327RuntimeInputsExact": true,
+  "all112PayloadsExact": true,
+  "trackedInputs": 3545,
+  "inputsExact": true,
+  "originalBranchRetained": "codex/ux32-market-wording-final",
+  "originalTestFilePreserved": "goal-4/evidence/ux32/test-before/ux32-market-copy.before-target-frame.spec.ts"
+}
