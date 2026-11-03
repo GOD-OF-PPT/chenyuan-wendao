@@ -1,0 +1,428 @@
+{
+  "currentSource": {
+    "head": "6b5d55489bc157a32c0e1a1f671237df6c080cab",
+    "source": "6b5d55489bc157a32c0e1a1f671237df6c080cab",
+    "tree": "43b0f32482d4e106535473137d698f271bf9a1b3",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+  "groups": [
+    {
+      "phase": "final2/related",
+      "source": {
+        "head": "3c1a2a87c6fe6b6ff765b50c846003f4e9417249",
+        "source": "3c1a2a87c6fe6b6ff765b50c846003f4e9417249",
+        "tree": "ec1e600653229106bda187c619722edab8d4c20c",
+        "dirty": false,
+        "node": "v24.22.1",
+        "npm": "10.9.0",
+        "npmOnPath": "10.9.0"
+      },
+      "files": [
+        "cultivation-objects.spec.ts",
+        "idle-cultivation.spec.ts",
+        "alchemy-workshop.spec.ts",
+        "art13-alchemy-stage.spec.ts",
+        "art15-cultivation-notes.spec.ts",
+        "idle-production.spec.ts",
+        "idle-preparation.spec.ts",
+        "idle-preparation-drafts.spec.ts",
+        "idle-preparation-active.spec.ts",
+        "ux28-recovery-period.spec.ts",
+        "art35-study-rest.spec.ts",
+        "art11-inventory-stage.spec.ts",
+        "art28-alchemy-scene.spec.ts",
+        "art29-inventory-scene.spec.ts"
+      ],
+      "inputs": [
+        {
+          "path": "scripts/economy/idle-scenarios.mjs",
+          "sha256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407"
+        },
+        {
+          "path": "src/full/activity.ts",
+          "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815"
+        },
+        {
+          "path": "src/full/adventure.ts",
+          "sha256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015"
+        },
+        {
+          "path": "src/full/ascension.ts",
+          "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a"
+        },
+        {
+          "path": "src/full/configuration.ts",
+          "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520"
+        },
+        {
+          "path": "src/full/content.ts",
+          "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c"
+        },
+        {
+          "path": "src/full/contracts.ts",
+          "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa"
+        },
+        {
+          "path": "src/full/costs.ts",
+          "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb"
+        },
+        {
+          "path": "src/full/economy-ledger.ts",
+          "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0"
+        },
+        {
+          "path": "src/full/engine.ts",
+          "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+        },
+        {
+          "path": "src/full/errors.ts",
+          "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4"
+        },
+        {
+          "path": "src/full/events.ts",
+          "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d"
+        },
+        {
+          "path": "src/full/goals.ts",
+          "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883"
+        },
+        {
+          "path": "src/full/life-record.ts",
+          "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7"
+        },
+        {
+          "path": "src/full/mechanisms.ts",
+          "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221"
+        },
+        {
+          "path": "src/full/milestones.ts",
+          "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492"
+        },
+        {
+          "path": "src/full/preparation.ts",
+          "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a"
+        },
+        {
+          "path": "src/full/progression.ts",
+          "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406"
+        },
+        {
+          "path": "src/full/queries.ts",
+          "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48"
+        },
+        {
+          "path": "src/full/receipts.ts",
+          "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae"
+        },
+        {
+          "path": "src/full/story-context.ts",
+          "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950"
+        },
+        {
+          "path": "src/full/trial-rules.ts",
+          "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53"
+        },
+        {
+          "path": "src/full/types.ts",
+          "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064"
+        },
+        {
+          "path": "src/full/versions.ts",
+          "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64"
+        },
+        {
+          "path": "tests/full-route.mjs",
+          "sha256": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321"
+        },
+        {
+          "path": "web/e2e/alchemy-workshop.spec.ts",
+          "sha256": "c7639d6e785158b0b11183c363d4fda80d0b31a6eb7e4dcc9a9c8a404cc0a166"
+        },
+        {
+          "path": "web/e2e/art11-inventory-stage.spec.ts",
+          "sha256": "5b5a580836ba5b71ae9bcfc6706faac7692a0f5fdc5b8470d7eb1868243ef7db"
+        },
+        {
+          "path": "web/e2e/art13-alchemy-stage.spec.ts",
+          "sha256": "23bc5f427a527a655782826be9729013a9227209be1b3a624ae707a3e0e05c17"
+        },
+        {
+          "path": "web/e2e/art15-cultivation-notes.spec.ts",
+          "sha256": "01f7d4c3f6507951ec6b615f27f12a68b65f0b8b221d26846b7ecf585d797838"
+        },
+        {
+          "path": "web/e2e/art28-alchemy-scene.spec.ts",
+          "sha256": "e303c180bfdcad4a7f1984fa0209afba7e4cadafe100363238a7f16b05438b68"
+        },
+        {
+          "path": "web/e2e/art29-inventory-scene.spec.ts",
+          "sha256": "698a682e568b87d201731e4f2e3765de018d2d079a0d94d108fc2a1b52e4faa7"
+        },
+        {
+          "path": "web/e2e/art35-study-rest.spec.ts",
+          "sha256": "fdbe0f2c245adc635e0acc09bb813f354baebcdee3db6cc69599981d2af9cb1f"
+        },
+        {
+          "path": "web/e2e/cultivation-objects.spec.ts",
+          "sha256": "bc3f66faf28b68f07d7a27a9033bad3bdf8ddc51be0457fe7c596b488d93352a"
+        },
+        {
+          "path": "web/e2e/game-confirmation-support.ts",
+          "sha256": "be4bbdeaebab740befaf52e37582098c6d9d87030c71d2cabbb756238017f3fd"
+        },
+        {
+          "path": "web/e2e/idle-cultivation.spec.ts",
+          "sha256": "96f911c80ab3ecce438684d86422ded8771e59f3d407244d365475ad4e31a805"
+        },
+        {
+          "path": "web/e2e/idle-preparation-active.spec.ts",
+          "sha256": "a0656d1eebcb51e4ca6bac519ed2a8f789c34b25de140582633ca4c8bb94ca45"
+        },
+        {
+          "path": "web/e2e/idle-preparation-drafts.spec.ts",
+          "sha256": "2ccac15b0fb9f8354a752eff7a110c0361fb3f09f4b83fed7b250cc381d173c9"
+        },
+        {
+          "path": "web/e2e/idle-preparation.spec.ts",
+          "sha256": "ccec62a01831bb1326c53341466e111ef0d8ee06207af945ddab850ac869248e"
+        },
+        {
+          "path": "web/e2e/idle-production.spec.ts",
+          "sha256": "1d4bc7cfd1606ca57329df71c672eb76702062a265f00d04f1b7fa798c475c5c"
+        },
+        {
+          "path": "web/e2e/idle-recovery-ui-support.ts",
+          "sha256": "2b2e9df03cf97cf582a03eb23d2bc2d3eb078a4cffc9c953f54972c047c6d04f"
+        },
+        {
+          "path": "web/e2e/idle-route-support.ts",
+          "sha256": "d5ff6b661f8f9f2b08c4e34b29c7873f8d518b85689c6e393ad390c0f9d142ed"
+        },
+        {
+          "path": "web/e2e/jade-paint-support.ts",
+          "sha256": "eff5e085fe03f2e2e292750c2e5367516dd4ab60a30f382f3a4e4fa5533fa94f"
+        },
+        {
+          "path": "web/e2e/png-capture.ts",
+          "sha256": "f50dc121db18150b8c4c4b48cc0fefc897b4d1e4edffc662c119c1c366cad85b"
+        },
+        {
+          "path": "web/e2e/stage-support.ts",
+          "sha256": "3641cc3ae348aedb7ccfac34e36cfc5fc2366165b64a06769fb687d0694ff32e"
+        },
+        {
+          "path": "web/e2e/support.ts",
+          "sha256": "fd9a2b17463210c5b4d7398be6afd464832557e2293fa9872e51b7f3dd06c4c0"
+        },
+        {
+          "path": "web/e2e/ux28-recovery-period.spec.ts",
+          "sha256": "a8acd54ae42edc5444d1b9b488c21291f18c7a222af4d7b3a5d46cf3d5a7a665"
+        },
+        {
+          "path": "web/src/activity-persistence.ts",
+          "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf"
+        },
+        {
+          "path": "web/src/local-events.ts",
+          "sha256": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150"
+        },
+        {
+          "path": "web/src/local-experience.ts",
+          "sha256": "65614c37cd5931b275208f78aa9bf06f40768ff402a908fb2d2cf28d16e3b9ed"
+        },
+        {
+          "path": "web/src/presentation.ts",
+          "sha256": "bca83aeae9d595d7b23882de8d54feb7f4912b31c19d7581adcc0d64da6b4649"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "d3f1aa6b6a4cca2c3d458a297b2e0320f0bdfa64d01913938c1f44038be143a2"
+        },
+        {
+          "path": "web/package-lock.json",
+          "sha256": "d011715fee1a25f0224e7d320a09d96848cab374a394c44062f711f098e21e6d"
+        },
+        {
+          "path": "web/playwright.idle.config.ts",
+          "sha256": "2bf805b2615df30c89d4262327cd40ac309bd8184dbfa3219f160cac7c3f536f"
+        },
+        {
+          "path": "web/playwright.config.ts",
+          "sha256": "a5725f53c5e5fc5de9a711212af998fd61d5f7e8f5b49c679cd36968d81149c3"
+        }
+      ],
+      "allInputsUnchanged": true,
+      "all112PayloadsUnchanged": true,
+      "nonLiteral": []
+    },
+    {
+      "phase": "recheck/recovery",
+      "source": {
+        "head": "22420127654db605b00239b0f22f41b8168f2335",
+        "source": "22420127654db605b00239b0f22f41b8168f2335",
+        "tree": "50d007acb30957883f14f6cec2ae2b846812e70d",
+        "dirty": false,
+        "node": "v24.22.1",
+        "npm": "10.9.0",
+        "npmOnPath": "10.9.0"
+      },
+      "files": [
+        "ux29-recovery-availability.spec.ts",
+        "ux30-primary-copy.spec.ts"
+      ],
+      "inputs": [
+        {
+          "path": "scripts/economy/idle-scenarios.mjs",
+          "sha256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407"
+        },
+        {
+          "path": "src/full/activity.ts",
+          "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815"
+        },
+        {
+          "path": "src/full/adventure.ts",
+          "sha256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015"
+        },
+        {
+          "path": "src/full/ascension.ts",
+          "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a"
+        },
+        {
+          "path": "src/full/configuration.ts",
+          "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520"
+        },
+        {
+          "path": "src/full/content.ts",
+          "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c"
+        },
+        {
+          "path": "src/full/contracts.ts",
+          "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa"
+        },
+        {
+          "path": "src/full/costs.ts",
+          "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb"
+        },
+        {
+          "path": "src/full/economy-ledger.ts",
+          "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0"
+        },
+        {
+          "path": "src/full/engine.ts",
+          "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+        },
+        {
+          "path": "src/full/errors.ts",
+          "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4"
+        },
+        {
+          "path": "src/full/events.ts",
+          "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d"
+        },
+        {
+          "path": "src/full/goals.ts",
+          "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883"
+        },
+        {
+          "path": "src/full/life-record.ts",
+          "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7"
+        },
+        {
+          "path": "src/full/mechanisms.ts",
+          "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221"
+        },
+        {
+          "path": "src/full/milestones.ts",
+          "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492"
+        },
+        {
+          "path": "src/full/preparation.ts",
+          "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a"
+        },
+        {
+          "path": "src/full/progression.ts",
+          "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406"
+        },
+        {
+          "path": "src/full/queries.ts",
+          "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48"
+        },
+        {
+          "path": "src/full/receipts.ts",
+          "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae"
+        },
+        {
+          "path": "src/full/story-context.ts",
+          "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950"
+        },
+        {
+          "path": "src/full/trial-rules.ts",
+          "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53"
+        },
+        {
+          "path": "src/full/types.ts",
+          "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064"
+        },
+        {
+          "path": "src/full/versions.ts",
+          "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64"
+        },
+        {
+          "path": "tests/full-route.mjs",
+          "sha256": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321"
+        },
+        {
+          "path": "web/e2e/idle-recovery-ui-support.ts",
+          "sha256": "2b2e9df03cf97cf582a03eb23d2bc2d3eb078a4cffc9c953f54972c047c6d04f"
+        },
+        {
+          "path": "web/e2e/idle-route-support.ts",
+          "sha256": "d5ff6b661f8f9f2b08c4e34b29c7873f8d518b85689c6e393ad390c0f9d142ed"
+        },
+        {
+          "path": "web/e2e/stage-support.ts",
+          "sha256": "3641cc3ae348aedb7ccfac34e36cfc5fc2366165b64a06769fb687d0694ff32e"
+        },
+        {
+          "path": "web/e2e/support.ts",
+          "sha256": "fd9a2b17463210c5b4d7398be6afd464832557e2293fa9872e51b7f3dd06c4c0"
+        },
+        {
+          "path": "web/e2e/ux29-recovery-availability.spec.ts",
+          "sha256": "802f739db722ced0918e0b7bd09e85997c4cbdb48e2ed86f9bf554ff88e59ce9"
+        },
+        {
+          "path": "web/e2e/ux30-primary-copy.spec.ts",
+          "sha256": "6ef3e1872494fbb3e8a1b18b1cf1efc3b59a6a524c0c052548b3292223669d56"
+        },
+        {
+          "path": "web/src/activity-persistence.ts",
+          "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "d3f1aa6b6a4cca2c3d458a297b2e0320f0bdfa64d01913938c1f44038be143a2"
+        },
+        {
+          "path": "web/package-lock.json",
+          "sha256": "d011715fee1a25f0224e7d320a09d96848cab374a394c44062f711f098e21e6d"
+        },
+        {
+          "path": "web/playwright.idle.config.ts",
+          "sha256": "2bf805b2615df30c89d4262327cd40ac309bd8184dbfa3219f160cac7c3f536f"
+        },
+        {
+          "path": "web/playwright.config.ts",
+          "sha256": "a5725f53c5e5fc5de9a711212af998fd61d5f7e8f5b49c679cd36968d81149c3"
+        }
+      ],
+      "allInputsUnchanged": true,
+      "all112PayloadsUnchanged": true,
+      "nonLiteral": []
+    }
+  ]
+}
