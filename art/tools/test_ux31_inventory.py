@@ -36,7 +36,7 @@ class ReadabilityContractTests(unittest.TestCase):
 
     def test_current_whole_sources_reverse_exactly_and_actual_old_caps_hold(self):
         recorded,total=validate_ux31(self.root)
-        self.assertEqual(total,70893)
+        self.assertEqual(total,70895)
         self.assertIn(LEDGER,recorded)
         for name,f in FACTS.items():
             self.assertEqual(prior_ux31_bytes(name,(self.root/'web/src'/name).read_bytes()),(self.root/f['baseline']).read_bytes())

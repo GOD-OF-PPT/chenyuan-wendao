@@ -45,6 +45,10 @@
     [
       ".counter-exchange small{font-size:14px;line-height:1.45}",
       ".counter-exchange small{font-size:14px;line-height:1.45;white-space:pre-line}"
+    ],
+    [
+      "'突破物不可出售'",
+      "'突破物\\n不可出售'"
     ]
   ],
   "RecoveryPlanner.vue": [

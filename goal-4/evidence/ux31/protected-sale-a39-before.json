@@ -1,0 +1,11 @@
+{
+  "source": "a39d108",
+  "runtime": "82b4351406e6afcd845a6389d198fd001d0ddecbed841d9410eca9af7d733714",
+  "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/related-regular-results/inventory-objects-ART04-A7-b4bef-s-stay-explicitly-forbidden-chromium/protected-sale-foundation_pill.png",
+  "sha256": "6eb59c90d4c39ad67f00910ddaca369cbb28bd7043ba7e5c78edbd1dced10758",
+  "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/protected-sale-a39-before.jpg",
+  "viewSha256": "16edeafa67875a414eefff60ea8216e47abdeddb7ef47f9b52df5fe0279cc5ae",
+  "encoding": "same1440x900 JPEG68, original PNG retained",
+  "actualViewed": true,
+  "observed": "Current a39 screenshot confirms the final 售 character is stranded on its own line; this is the remaining locked-title branch, not a speculative or historical-only finding."
+}

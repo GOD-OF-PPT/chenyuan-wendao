@@ -12,8 +12,8 @@
     },
     {
       "path": "web/src/MarketCounter.vue",
-      "bytes": 10082,
-      "sha256": "9b6ca02cd3c7bbb58f5e73f9b59e853a159e9b46545043548418354e6a20a310"
+      "bytes": 10084,
+      "sha256": "366fec4997cf9406d40ae43dcd21fdc0e66740370fc29a570d7422aaabbc432e"
     },
     {
       "path": "web/src/RecoveryPlanner.vue",

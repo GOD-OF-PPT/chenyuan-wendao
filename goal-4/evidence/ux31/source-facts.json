@@ -8,9 +8,9 @@
   },
   "MarketCounter.vue": {
     "before": "c8849c784dd1d864a5787658e941b6fbe10305ee476e5ad8ffc2daa687478b3e",
-    "after": "9b6ca02cd3c7bbb58f5e73f9b59e853a159e9b46545043548418354e6a20a310",
+    "after": "366fec4997cf9406d40ae43dcd21fdc0e66740370fc29a570d7422aaabbc432e",
     "beforeBytes": 10044,
-    "bytes": 10082,
+    "bytes": 10084,
     "baseline": "goal-4/evidence/ux31/MarketCounter.vue.before.txt"
   },
   "RecoveryPlanner.vue": {
