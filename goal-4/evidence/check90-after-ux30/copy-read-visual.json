@@ -1,0 +1,112 @@
+[
+  {
+    "index": 0,
+    "name": "mortal-current-cycle-after-consent",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-copy-read-results/check-art18-ux-CROSS-ART18-20852-nt-and-consent-cancellation-chromium/mortal-current-cycle-after-consent.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/copy-read-light/00-mortal-current-cycle-after-consent.jpg",
+    "sha256": "6f705a4d5d2aca27900a0d2767f30c99742d4221b2d1dc9ed4ba16aa4ea75c52",
+    "viewSha256": "af1f2cfe990cd8ba3039c3fd1260f08b5545ac0d6d966aeb0ebf81f638e940ca",
+    "encoding": "same1440x900 JPEG68 lossy; original PNG retained",
+    "actualViewed": true,
+    "review": "The saved first mortal cycle is paused at XP5/10; resume stays in the HUD, the next-draft entry stays secondary, facts and notes remain readable."
+  },
+  {
+    "index": 1,
+    "name": "paused-original-continuation",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-copy-read-results/matrix-ui-intent-M03-I1-pa-6d89d-rangement-never-replaces-it-chromium/paused-original-continuation.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/copy-read-light/01-paused-original-continuation.jpg",
+    "sha256": "07e445070ce1a5116c1c97f264d46e8b10ddaac8c0ab5f5397ed89974d9c27f0",
+    "viewSha256": "7ebfc9c5dc05a263d2413368484fa7ad763afeacbc6d5698d58a9b40d2ccac91",
+    "encoding": "same1440x900 JPEG68 lossy; original PNG retained",
+    "actualViewed": true,
+    "review": "Assisted original pause and the natural next-view draft remain visibly distinct. Original continuation is in the HUD; no observed clipping."
+  },
+  {
+    "index": 2,
+    "name": "explicit-paused-replacement-draft",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-copy-read-results/matrix-ui-intent-M03-I2-an-6a62e-ent-starts-one-finite-cycle-chromium/explicit-paused-replacement-draft.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/copy-read-light/02-explicit-paused-replacement-draft.jpg",
+    "sha256": "8c0ecd6c0b5ecf78c9b750064d878e790ca63154fdc7c862fefedc957d7f53fe",
+    "viewSha256": "51ee557e212f05acf4024920e84b29eb8ed436504eb5f29142dc13319b807818",
+    "encoding": "same1440x900 JPEG68 lossy; original PNG retained",
+    "actualViewed": true,
+    "review": "Editing the finite replacement preserves its one-cycle/20-stone/40-reserve draft, original paused HUD and visible forecast/budget controls."
+  },
+  {
+    "index": 3,
+    "name": "rest-location-readonly-details",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-copy-read-results/stage-check-real-rest-wait-c3eb1-ly-saves-one-formal-outcome-chromium/rest-location-readonly-details.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/copy-read-light/03-rest-location-readonly-details.jpg",
+    "sha256": "e1b8899184ebb3d4b3cf36925430a08e3f89409e0d06cb41c975d42a92a691b3",
+    "viewSha256": "f284413715992cb82fce0e7fefa1ad448729ef04204616feb66248063502514c",
+    "encoding": "same1440x900 JPEG68 lossy; original PNG retained",
+    "actualViewed": true,
+    "review": "The full rest arrangement exposes the actual location explanation and reserve; close returns to the original recovery surface without hiding controls."
+  },
+  {
+    "index": 4,
+    "name": "rest-real-countdown",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-copy-read-results/stage-check-real-rest-wait-c3eb1-ly-saves-one-formal-outcome-chromium/rest-real-countdown.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/copy-read-light/04-rest-real-countdown.jpg",
+    "sha256": "d270e2eed2cca27c38e37aefc7bbf798615a933abb23dc900bd33a561b6a78c6",
+    "viewSha256": "68a0badd5826881da4dba4f13b0071b8777ffe47d9c02ff37e24edd9a338c109",
+    "encoding": "same1440x900 JPEG68 lossy; original PNG retained",
+    "actualViewed": true,
+    "review": "The real online rest retains injured HP79/100 and MP52/60 during countdown; displayed gains are marked predicted and no saved success appears yet."
+  },
+  {
+    "index": 5,
+    "name": "rest-real-saved-outcome",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-copy-read-results/stage-check-real-rest-wait-c3eb1-ly-saves-one-formal-outcome-chromium/rest-real-saved-outcome.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/copy-read-light/05-rest-real-saved-outcome.jpg",
+    "sha256": "9c837528d71022311f810375c4c773f27330787a88782ae4394389b80530787a",
+    "viewSha256": "72d37a5e00be82f34d8239f574a7a83bf4757fc43f442ba12c0a6041fdcc992b",
+    "encoding": "same1440x900 JPEG68 lossy; original PNG retained",
+    "actualViewed": true,
+    "review": "After real rest saves, HP100/100 and MP60/60, actual +21/+8 and one game-month result remain visible, and full-state recovery is disabled with a reason."
+  },
+  {
+    "index": 6,
+    "name": "help-first-cultivation",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-copy-read-results/ux19-first-loop-UX19-help--94416-icitly-confirms-first-entry-chromium/help-first-cultivation.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/copy-read-light/06-help-first-cultivation.jpg",
+    "sha256": "8b9bc04298e56965c997ac1fc8c17ae8ef2694679c74489485e2780a3c80f0a4",
+    "viewSha256": "c62c9097bfa932f8c9fc58eff39f843658aac1586175c9caaa10eb15fa724f96",
+    "encoding": "same1440x900 JPEG68 lossy; original PNG retained",
+    "actualViewed": true,
+    "review": "Normal help choice arrives at the cave with the short goal hint, unit +5/30-second facts, finite default cap and one clear start action."
+  },
+  {
+    "index": 7,
+    "name": "trade-first-cultivation",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-copy-read-results/ux19-first-loop-UX19-trade-3d756-icitly-confirms-first-entry-chromium/trade-first-cultivation.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/copy-read-light/07-trade-first-cultivation.jpg",
+    "sha256": "aceb59b6ae78e4925b9c7fabe2c9bb7d9c177b886a8d340743aebbc0979d5b82",
+    "viewSha256": "95eeb0114acf2c6daf896f68f7d84ed9fbf318329a2c4f0162b579e10049a203",
+    "encoding": "same1440x900 JPEG68 lossy; original PNG retained",
+    "actualViewed": true,
+    "review": "Normal trade choice retains the same readable cultivation structure and original saved travel context; all eight navigation entries are visible."
+  },
+  {
+    "index": 8,
+    "name": "leave-first-cultivation",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-copy-read-results/ux19-first-loop-UX19-leave-89dc8-icitly-confirms-first-entry-chromium/leave-first-cultivation.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/copy-read-light/08-leave-first-cultivation.jpg",
+    "sha256": "8b9bc04298e56965c997ac1fc8c17ae8ef2694679c74489485e2780a3c80f0a4",
+    "viewSha256": "c62c9097bfa932f8c9fc58eff39f843658aac1586175c9caaa10eb15fa724f96",
+    "encoding": "same1440x900 JPEG68 lossy; original PNG retained",
+    "actualViewed": true,
+    "review": "Normal leave choice retains the readable short first decision and full notes entrance; original formal route assertions also passed."
+  },
+  {
+    "index": 9,
+    "name": "full-cultivation-awaits-player",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-copy-read-results/ux19-first-loop-UX19-leave-89dc8-icitly-confirms-first-entry-chromium/full-cultivation-awaits-player.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/copy-read-light/09-full-cultivation-awaits-player.jpg",
+    "sha256": "233ec3c192fa9b75a696cad8e4b9bd97758a048af4c172f03f7d92de5067f709",
+    "viewSha256": "b230e1eaad71143db92f5897979f6164b0d47eb2d0a2f0ceb250560109521b4c",
+    "encoding": "same1440x900 JPEG68 lossy; original PNG retained",
+    "actualViewed": true,
+    "review": "At XP10/10 the mortal stops and asks for an explicit thirty-second first breakthrough; no automatic realm progression is implied."
+  }
+]

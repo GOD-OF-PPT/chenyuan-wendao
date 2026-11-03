@@ -1,0 +1,8 @@
+{
+  "url": "http://127.0.0.1:56887/",
+  "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+  "httpFiles": 112,
+  "allPayloadsExact": true,
+  "method": "readonly static HTTP payloads only; no browser/save read or action",
+  "scope": "Existing independent engineering preview, not a newly accepted formal candidate"
+}

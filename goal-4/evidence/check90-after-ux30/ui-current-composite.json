@@ -1,0 +1,193 @@
+{
+  "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+  "uniqueUI": 834,
+  "allLatestPassed": true,
+  "originalRegular": {
+    "passed": 820,
+    "failed": 7
+  },
+  "fullFileRecheck": {
+    "source": "436f274",
+    "passed": 29,
+    "skipped": 0,
+    "retries": 0,
+    "durationMs": 118701.921
+  },
+  "history": [
+    {
+      "identity": "[\"ui\",\"check-art18-ux.spec.ts\",\"CROSS-ART18-UX-C1 a normal mortal cycle keeps its original countdown and finite budget through arrangement and consent cancellation\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "failed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"check-art18-ux.spec.ts\",\"CROSS-ART18-UX-C2 a real ending quota keeps the new stage readable above navigation and retries only its original selected command\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"check-art18-ux.spec.ts\",\"CROSS-ART18-UX-C3 a foreign saved answer invalidates the frozen question while the actual first-gate view never starts a battle turn\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"matrix-ui-intent.spec.ts\",\"M03-I1 paused assisted cultivation makes original continuation primary and readonly rearrangement never replaces it\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "failed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"matrix-ui-intent.spec.ts\",\"M03-I2 an edited paused plan remains a draft through reading and return until explicit replacement starts one finite cycle\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "failed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"matrix-ui-intent.spec.ts\",\"M03-I3 idle and naturally stopped cultivation retain the original start entrance and never require a paused replacement intent\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"reselecting the same market object preserves the complete unconfirmed finite authorization\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"market buy and sell inspection retain separate drafts and never turn navigation into authorization\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"closing future market goods reconciles the actual object and its selected visible shelf\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"inventory sale inspection returns to its original selected object without a transaction\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"an edited paused battle strategy survives ordinary goal and character inspection with the same activity\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"a completed battle retains its complete original strategy as read-only pages after the enemy is gone\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"market default shows the finite order and opens its complete limits on demand\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"recovery shows the body and real single-dose effect before its complete finite settings\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"a direct source-market context returns from ordinary details with its order draft intact\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"repeated inventory use inspection preserves its edited default-view draft\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"repeated inventory sell inspection preserves its edited default-view draft\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"leaving and returning after a saved hit removes old actor and progress short effects\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"a completed encounter original authorization stays readable after its explicit retreat changes location\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"real buy waits its full online period and atomically saves one formal outcome\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"real use waits its full online period and atomically saves one formal outcome\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"real rest waits its full online period and atomically saves one formal outcome\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "failed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"a turn saved while reading ordinary details does not replay hidden damage on return\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"a replacement life cannot inherit a supply default-view deduplication or edited market budget\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"retreat labels distinguish ordinary combat without changing the battle\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"stage-check.spec.ts\",\"retreat labels distinguish the actual trial without changing the battle\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "passed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"ux19-first-loop.spec.ts\",\"UX19 help: a normal new life understands finite cultivation then explicitly confirms first entry\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "failed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"ux19-first-loop.spec.ts\",\"UX19 trade: a normal new life understands finite cultivation then explicitly confirms first entry\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "failed",
+      "supersededBy": "ui-copy-read"
+    },
+    {
+      "identity": "[\"ui\",\"ux19-first-loop.spec.ts\",\"UX19 leave: a normal new life understands finite cultivation then explicitly confirms first entry\",\"chromium\"]",
+      "phase": "ui-regular",
+      "status": "failed",
+      "supersededBy": "ui-copy-read"
+    }
+  ],
+  "scope": "Same-runtime functional UI coverage only; native415 and full v4 gate still pending; visual V01/V02/V03 and whole-game human acceptance remain open"
+}

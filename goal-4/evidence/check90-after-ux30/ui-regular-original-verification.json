@@ -1,0 +1,125 @@
+{
+  "sourceHead": "7c20e72d13f50ec52cd570477ed26395845ccd7c",
+  "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+  "inputs": 3409,
+  "inputsUnchanged": true,
+  "gitUnchanged": true,
+  "httpPayloads": 112,
+  "httpExact": true,
+  "stats": {
+    "startTime": "2026-11-03T12:46:03.826Z",
+    "duration": 4141918.575,
+    "expected": 820,
+    "skipped": 0,
+    "unexpected": 7,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "file": "check-art18-ux.spec.ts",
+      "title": "CROSS-ART18-UX-C1 a normal mortal cycle keeps its original countdown and finite budget through arrangement and consent cancellation",
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/check-art18-ux.spec.ts",
+            "column": 411,
+            "line": 17
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('journey-hint')\nExpected substring: \u001b[32m\"\u001b[7m无需\u001b[27m突破\u001b[7m丹\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7m修为圆满后再筹备\u001b[27m突破\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('journey-hint')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-copy30=\"home\" class=\"journey-hint\" data-testid=\"journey-hint\">修为圆满后再筹备突破</p>\u001b[22m\n\u001b[2m       - unexpected value \"修为圆满后再筹备突破\"\u001b[22m\n\n\n  15 | }\n  16 | test('CROSS-ART18-UX-C1 a normal mortal cycle keeps its original countdown and finite budget through arrangement and consent cancellation',async({page},info)=>{\n> 17 |  await page.goto('/');await expect(page.getByTestId('save-status')).toHaveText('尚无存档',{timeout:15000});await useJourneyClock(page);await page.getByRole('button',{name:'踏入仙途'}).click();await finishJourneyClock(page);await page.getByTestId('leave').click();await finishJourneyClock(page);await page.getByTestId('return-cave').click();await finishJourneyClock(page);await expect(page.getByTestId('journey-hint')).toContainText('无需突破丹');const g=await snapshot(page);\n     |                                                                                                                                                                                                                                                                                                                                                                                                                           ^\n  18 |  await page.getByTestId('cultivate').click();const a=await online(page);expect(a.plan).toEqual({kind:'cultivation',method:'natural',maxCycles:50,until:'xp-cap',stoneBudget:0,stoneReserve:0});await page.clock.fastForward(10000);\n  19 |  await readonly(page,async()=>{await page.getByTestId('training-settings').click();await expect(page.getByTestId('cultivation-catalogue')).toBeVisible();await page.getByTestId('hub-close').click();await page.getByRole('button',{name:'设置',exact:true}).click();await page.getByTestId('restart').click();await expect(page.getByTestId('game-confirmation')).toHaveAttribute('data-kind','restart');await page.keyboard.press('Escape');await expect(page.getByTestId('restart')).toBeFocused();await page.getByRole('button',{name:'关闭设置',exact:true}).click();});\n  20 |  await expect(page.getByTestId('training-countdown')).toHaveText('20.0 秒');expect(await activity(page)).toEqual(a);expect(await snapshot(page)).toEqual(g);await page.clock.fastForward(19999);expect(await snapshot(page)).toEqual(g);await page.clock.fastForward(1);await expect.poll(async()=>(await activity(page)).completedCycles).toBe(1);await proof(page,g,a);await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page)).status).toBe('paused');await page.screenshot({path:info.outputPath('mortal-current-cycle-after-consent.png')});\n    at /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/check-art18-ux.spec.ts:17:411"
+        }
+      ]
+    },
+    {
+      "file": "matrix-ui-intent.spec.ts",
+      "title": "M03-I1 paused assisted cultivation makes original continuation primary and readonly rearrangement never replaces it",
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts",
+            "column": 27,
+            "line": 61
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('training-estimate').locator('p')\nExpected: visible\nReceived: hidden\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('training-estimate').locator('p')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-v-fd8bda9d=\"\">修为 +500 · 灵石消耗 100 · 5 游戏月</p>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n\n  59 | async function reading(page: Page) {\n  60 |   for (const locator of [page.getByTestId('training-per-cycle'), page.getByTestId('training-estimate').locator('p')]) {\n> 61 |     await expect(locator).toBeVisible();\n     |                           ^\n  62 |     expect(await locator.evaluate(node => parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThanOrEqual(18);\n  63 |   }\n  64 |   for (const node of await page.getByTestId('cultivation-catalogue').locator('small:visible').all())\n    at reading (/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts:61:27)\n    at /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts:144:3"
+        }
+      ]
+    },
+    {
+      "file": "matrix-ui-intent.spec.ts",
+      "title": "M03-I2 an edited paused plan remains a draft through reading and return until explicit replacement starts one finite cycle",
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts",
+            "column": 27,
+            "line": 61
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('training-estimate').locator('p')\nExpected: visible\nReceived: hidden\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('training-estimate').locator('p')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-v-fd8bda9d=\"\">修为 +500 · 灵石消耗 100 · 5 游戏月</p>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n\n  59 | async function reading(page: Page) {\n  60 |   for (const locator of [page.getByTestId('training-per-cycle'), page.getByTestId('training-estimate').locator('p')]) {\n> 61 |     await expect(locator).toBeVisible();\n     |                           ^\n  62 |     expect(await locator.evaluate(node => parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThanOrEqual(18);\n  63 |   }\n  64 |   for (const node of await page.getByTestId('cultivation-catalogue').locator('small:visible').all())\n    at reading (/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts:61:27)\n    at originalPlan (/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts:120:3)\n    at /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts:162:56"
+        }
+      ]
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real rest waits its full online period and atomically saves one formal outcome",
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/stage-check.spec.ts",
+            "column": 377,
+            "line": 62
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.recovery-cabinet')\nExpected substring: \u001b[32m\"不在洞府时\"\u001b[39m\nReceived string:    \u001b[31m\"听雨洞府 · 静坐一回洞府休养调息须知以一个游戏月换取气血灵力恢复圆满；不消耗丹药。预计单次气血 +21 · 灵力 +8\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for locator('.recovery-cabinet')\u001b[22m\n\u001b[2m    12 × locator resolved to <section aria-label=\"当前恢复对象\" class=\"recovery-object recovery-cabinet\">…</section>\u001b[22m\n\u001b[2m       - unexpected value \"听雨洞府 · 静坐一回洞府休养调息须知以一个游戏月换取气血灵力恢复圆满；不消耗丹药。预计单次气血 +21 · 灵力 +8\"\u001b[22m\n\n\n  60 | for(const kind of ['buy','use','rest'] as const)test('real '+kind+' waits its full online period and atomically saves one formal outcome',async({page},info)=>{\n  61 |  const d=driver();if(kind==='buy'){d.funds(100);d.go('market');}else{d.buy('healing_pill',6);d.go('wilderness');d.doAction({type:'ENCOUNTER',enemy:'wolf'});d.doAction({type:'BATTLE',move:'technique'});d.doAction({type:'BATTLE',move:'flee'});d.go('cave');}const before=await seed(page,d,false);\n> 62 |  if(kind==='buy')await market(page);else{await page.getByTestId('tab-2').click();await openInventoryLibrary(page);await page.getByRole('navigation',{name:'行囊分类'}).getByRole('button',{name:'丹药',exact:true}).click();await inspectInventorySupply(page,\"healing_pill\",\"use\");if(kind==='rest'){await selectRecoveryMethod(page,\"rest\");await expect(page.locator('.recovery-cabinet')).toContainText('不在洞府时');}}\n     |                                                                                                                                                                                                                                                                                                                                                                                         ^\n  63 |  const period=kind==='buy'?15000:kind==='use'?6000:30000,began=await page.evaluate(()=>performance.now());await page.getByTestId('preparation-start').click();await expect(page.getByTestId('training-countdown')).toBeVisible();const a=await activity(page),first=await page.getByTestId('training-countdown').innerText();expect(a.cycleMs).toBe(period);await page.waitForTimeout(500);expect(parseFloat(await page.getByTestId('training-countdown').innerText())).toBeLessThan(parseFloat(first));expect(await snapshot(page)).toEqual(before);await shot(page,info,kind+'-real-countdown');await expect.poll(async()=>(await activity(page)).status,{timeout:period+5000}).toBe('stopped');expect(await page.evaluate(()=>performance.now())-began).toBeGreaterThanOrEqual(period);expect(await snapshot(page)).toEqual(advance(before,a.nextCommand));expect((await activity(page)).completedCycles).toBe(1);await frame(page,info,kind+'-real-saved-outcome');\n  64 | });\n  65 |\n    at /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/stage-check.spec.ts:62:377"
+        }
+      ]
+    },
+    {
+      "file": "ux19-first-loop.spec.ts",
+      "title": "UX19 help: a normal new life understands finite cultivation then explicitly confirms first entry",
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/ux19-first-loop.spec.ts",
+            "column": 65,
+            "line": 45
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('journey-hint')\nExpected substring: \u001b[32m\"洞府\"\u001b[39m\nReceived string:    \u001b[31m\"修为圆满后再筹备突破\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('journey-hint')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-copy30=\"home\" class=\"journey-hint\" data-testid=\"journey-hint\">修为圆满后再筹备突破</p>\u001b[22m\n\u001b[2m       - unexpected value \"修为圆满后再筹备突破\"\u001b[22m\n\n\n  43 |  await page.getByTestId('return-cave').click();expect(await snapshot(page)).toEqual(temple);await complete(page,6000);\n  44 |  await expect(page.getByTestId('cultivate')).toBeVisible();const before=await snapshot(page),db=await recoveryDatabase(page);\n> 45 |  const hint=page.getByTestId('journey-hint');await expect(hint).toContainText('洞府');await expect(hint).toContainText('自然吐纳');await expect(hint).toContainText('无需突破丹');await expect(hint).not.toContainText('先历练');await expect(hint).not.toContainText('筹备丹药');\n     |                                                                 ^\n  46 |  await expect(page.getByTestId('cultivation-facts')).toContainText('每轮修为 +5 · 30 秒');await expect(page.getByTestId('hub-batch-summary')).toContainText('预计 2 轮');await expect(page.getByTestId('hub-batch-summary')).toContainText('灵石预算0 · 最多50轮');\n  47 |  await frame(page,info,choice+'-first-cultivation');\n  48 |  await page.getByTestId('hub-goal').click();await expect(page.getByTestId('goal-panel')).toContainText('引气入体');expect(await recoveryDatabase(page)).toEqual(db);\n    at /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/ux19-first-loop.spec.ts:45:65"
+        }
+      ]
+    },
+    {
+      "file": "ux19-first-loop.spec.ts",
+      "title": "UX19 trade: a normal new life understands finite cultivation then explicitly confirms first entry",
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/ux19-first-loop.spec.ts",
+            "column": 65,
+            "line": 45
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('journey-hint')\nExpected substring: \u001b[32m\"洞府\"\u001b[39m\nReceived string:    \u001b[31m\"修为圆满后再筹备突破\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('journey-hint')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-copy30=\"home\" class=\"journey-hint\" data-testid=\"journey-hint\">修为圆满后再筹备突破</p>\u001b[22m\n\u001b[2m       - unexpected value \"修为圆满后再筹备突破\"\u001b[22m\n\n\n  43 |  await page.getByTestId('return-cave').click();expect(await snapshot(page)).toEqual(temple);await complete(page,6000);\n  44 |  await expect(page.getByTestId('cultivate')).toBeVisible();const before=await snapshot(page),db=await recoveryDatabase(page);\n> 45 |  const hint=page.getByTestId('journey-hint');await expect(hint).toContainText('洞府');await expect(hint).toContainText('自然吐纳');await expect(hint).toContainText('无需突破丹');await expect(hint).not.toContainText('先历练');await expect(hint).not.toContainText('筹备丹药');\n     |                                                                 ^\n  46 |  await expect(page.getByTestId('cultivation-facts')).toContainText('每轮修为 +5 · 30 秒');await expect(page.getByTestId('hub-batch-summary')).toContainText('预计 2 轮');await expect(page.getByTestId('hub-batch-summary')).toContainText('灵石预算0 · 最多50轮');\n  47 |  await frame(page,info,choice+'-first-cultivation');\n  48 |  await page.getByTestId('hub-goal').click();await expect(page.getByTestId('goal-panel')).toContainText('引气入体');expect(await recoveryDatabase(page)).toEqual(db);\n    at /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/ux19-first-loop.spec.ts:45:65"
+        }
+      ]
+    },
+    {
+      "file": "ux19-first-loop.spec.ts",
+      "title": "UX19 leave: a normal new life understands finite cultivation then explicitly confirms first entry",
+      "status": "failed",
+      "errors": [
+        {
+          "location": {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/ux19-first-loop.spec.ts",
+            "column": 65,
+            "line": 45
+          },
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('journey-hint')\nExpected substring: \u001b[32m\"洞府\"\u001b[39m\nReceived string:    \u001b[31m\"修为圆满后再筹备突破\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('journey-hint')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-copy30=\"home\" class=\"journey-hint\" data-testid=\"journey-hint\">修为圆满后再筹备突破</p>\u001b[22m\n\u001b[2m       - unexpected value \"修为圆满后再筹备突破\"\u001b[22m\n\n\n  43 |  await page.getByTestId('return-cave').click();expect(await snapshot(page)).toEqual(temple);await complete(page,6000);\n  44 |  await expect(page.getByTestId('cultivate')).toBeVisible();const before=await snapshot(page),db=await recoveryDatabase(page);\n> 45 |  const hint=page.getByTestId('journey-hint');await expect(hint).toContainText('洞府');await expect(hint).toContainText('自然吐纳');await expect(hint).toContainText('无需突破丹');await expect(hint).not.toContainText('先历练');await expect(hint).not.toContainText('筹备丹药');\n     |                                                                 ^\n  46 |  await expect(page.getByTestId('cultivation-facts')).toContainText('每轮修为 +5 · 30 秒');await expect(page.getByTestId('hub-batch-summary')).toContainText('预计 2 轮');await expect(page.getByTestId('hub-batch-summary')).toContainText('灵石预算0 · 最多50轮');\n  47 |  await frame(page,info,choice+'-first-cultivation');\n  48 |  await page.getByTestId('hub-goal').click();await expect(page.getByTestId('goal-panel')).toContainText('引气入体');expect(await recoveryDatabase(page)).toEqual(db);\n    at /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/ux19-first-loop.spec.ts:45:65"
+        }
+      ]
+    }
+  ],
+  "scope": "Complete original regular phase terminal; seven original failures retained, not a passing full UI claim"
+}

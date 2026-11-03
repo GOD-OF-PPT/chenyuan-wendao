@@ -1,0 +1,12 @@
+{
+  "manifest": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/manifest-current-v4.json",
+  "manifestSha256": "0b070f88272bf38952801d9cf680061741521b7f2620b8b322eb97ea8e46924a",
+  "validator": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/scripts/idle-matrix-evidence.mjs",
+  "validatorSha256": "d0d79762ebd360c147166afbfc804624728c200de144656ec8d235cda84011dd",
+  "result": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/matrix-current-v4-result.json",
+  "resultSha256": "c2c4c3dee7aec2378f840ee5a8a5df64d9cf0bef135d67a8c6ccecf5ba7afab7",
+  "verifierExit": 0,
+  "originalFailedAndPassingPhasesPreserved": true,
+  "diagnosticInterruptedPhaseExcludedFromCoverageButPreserved": true,
+  "scope": "fixed1440x900/font1/singleChromium functional coverage only; V01/V02/V03 and whole-goal human/art/balance/final obligations remain open"
+}
