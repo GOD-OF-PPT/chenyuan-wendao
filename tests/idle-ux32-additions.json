@@ -1,0 +1,48 @@
+{
+  "format": "chenyuan-ux32-comprehensive-additions",
+  "version": 6,
+  "parentVersion": 5,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 844,
+    "signature": "b0c18def589b4e8cea3546c143903c38da0e165d841d17b9c7eb15f18e1a9dcb"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "ux32-market-copy.spec.ts",
+      "title": "UX32-A1 the counter keeps price duration and finite authorization while full trade forecasts are optional readonly details",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux32-market-copy.spec.ts",
+      "title": "UX32-A2 every protected sale has one clear gate without a fake price zero trade or changed save",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux32-market-copy.spec.ts",
+      "title": "UX32-A3 actual purchase and sale gates remain clear and a six second trip never performs an unconfirmed trade",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux32-market-copy.spec.ts",
+      "title": "UX32-A4 paused original trade keeps cumulative limits and complete progress without treating a later draft as saved",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux32-market-copy.spec.ts",
+      "title": "UX32-A5 START failure preserves the complete old intent while all optional viewing stays readonly",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux32-market-copy.spec.ts",
+      "title": "UX32-A5 TICK failure preserves the complete old intent while all optional viewing stays readonly",
+      "projectName": "chromium"
+    }
+  ]
+}

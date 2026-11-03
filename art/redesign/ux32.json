@@ -7,8 +7,8 @@
   "files": [
     {
       "path": "web/src/MarketPlanner.vue",
-      "bytes": 12473,
-      "sha256": "dc0d81d57734537fd8feebe305e5dfb58f39ec1d20209bc0f5add2de47aba26f"
+      "bytes": 12472,
+      "sha256": "6d22a1631f9b04e62229498e1961ca47667a2a07cbbdb8c595770b7d3a0533ba"
     },
     {
       "path": "web/src/MarketCounter.vue",

@@ -12,7 +12,7 @@ class MarketCopyContractTests(unittest.TestCase):
         f=self.root/'web/src'/name;s=f.read_text();self.assertIn(before,s);f.write_text(s.replace(before,after,1))
         with self.assertRaises(AssertionError):validate_ux32(self.root)
     def test_current_whole_inverse_keeps_both_original_scripts_and_styles(self):
-        files,total=validate_ux32(self.root);self.assertEqual(total,22535);self.assertIn(LEDGER,files)
+        files,total=validate_ux32(self.root);self.assertEqual(total,22534);self.assertIn(LEDGER,files)
         for name,f in FACTS.items():self.assertEqual(prior_ux32_bytes(name,(self.root/'web/src'/name).read_bytes()),(self.root/f['baseline']).read_bytes())
     def test_actual_start_callback_cannot_change(self):self.reject_change('MarketPlanner.vue',"emit('start',plan)","emit('travel',plan)")
     def test_cumulative_budget_cannot_become_a_fake_zero(self):self.reject_change('MarketPlanner.vue',"'灵石上限 '+budget","'灵石上限 '+0")

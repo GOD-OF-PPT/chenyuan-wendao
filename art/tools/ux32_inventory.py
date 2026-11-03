@@ -3,9 +3,9 @@ import hashlib,json,re
 from pathlib import Path
 LEDGER='art/redesign/ux32.json'
 FACTS={'MarketPlanner.vue': {'before': '133ca11bcb8b8c283b3138cc88add796fdc22f507781869e27fb2025b379c760',
-                       'after': 'dc0d81d57734537fd8feebe305e5dfb58f39ec1d20209bc0f5add2de47aba26f',
+                       'after': '6d22a1631f9b04e62229498e1961ca47667a2a07cbbdb8c595770b7d3a0533ba',
                        'beforeBytes': 12464,
-                       'bytes': 12473,
+                       'bytes': 12472,
                        'baseline': 'goal-4/evidence/ux32/MarketPlanner.vue.before.txt'},
  'MarketCounter.vue': {'before': '366fec4997cf9406d40ae43dcd21fdc0e66740370fc29a570d7422aaabbc432e',
                        'after': 'bcde3e3c643a29868995d52a197e6e1553b37745771866bd9e3a69b04f0d780e',
@@ -15,8 +15,8 @@ FACTS={'MarketPlanner.vue': {'before': '133ca11bcb8b8c283b3138cc88add796fdc22f50
 OPERATIONS={'MarketPlanner.vue': [['翻看货架 · 更换物资与购售', '翻看货架'],
                        ["'下次安排草案 · "
                         "当前执行见活动条':sameSaved&&planSaved?'已保存安排；修改后须重新确认':'待确认的新安排，确认后才开始'",
-                        "'下次交易草案 · "
-                        "当前活动不变':sameSaved&&planSaved?'已保存安排':'待确认交易'"],
+                        "'下次草案 · "
+                        "原活动不变':sameSaved&&planSaved||restart.same?'已保存安排':'待确认'"],
                        ['<strong class="market-price">',
                         '<strong v-if="mode===\'buy\'||item.sell!==null" '
                         'class="market-price">'],
@@ -79,8 +79,8 @@ MANIFEST={'format': 'chenyuan-market-copy-ux32',
  'newRasterAssets': 0,
  'addedCSSBytes': 0,
  'files': [{'path': 'web/src/MarketPlanner.vue',
-            'bytes': 12473,
-            'sha256': 'dc0d81d57734537fd8feebe305e5dfb58f39ec1d20209bc0f5add2de47aba26f'},
+            'bytes': 12472,
+            'sha256': '6d22a1631f9b04e62229498e1961ca47667a2a07cbbdb8c595770b7d3a0533ba'},
            {'path': 'web/src/MarketCounter.vue',
             'bytes': 10062,
             'sha256': 'bcde3e3c643a29868995d52a197e6e1553b37745771866bd9e3a69b04f0d780e'}],

@@ -6,7 +6,7 @@
     ],
     [
       "'下次安排草案 · 当前执行见活动条':sameSaved&&planSaved?'已保存安排；修改后须重新确认':'待确认的新安排，确认后才开始'",
-      "'下次交易草案 · 当前活动不变':sameSaved&&planSaved?'已保存安排':'待确认交易'"
+      "'下次草案 · 原活动不变':sameSaved&&planSaved||restart.same?'已保存安排':'待确认'"
     ],
     [
       "<strong class=\"market-price\">",
