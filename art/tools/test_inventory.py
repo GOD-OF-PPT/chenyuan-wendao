@@ -1392,7 +1392,9 @@ class TA09InventoryTests(unittest.TestCase):
  def setUp(self):
   from ta09_inventory import NATIVE,REFS,DEPENDENCIES,LEDGER
   self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-ta09-negative-');self.root=Path(self.temp.name)
-  names=set(NATIVE+REFS+DEPENDENCIES+[LEDGER]);self.original={p:(ROOT/p).read_bytes()for p in names};self.restore()
+  from ux31_inventory import prior_ux31_bytes
+  # Keep every legacy ownership/slot assertion on the exact original display view.
+  names=set(NATIVE+REFS+DEPENDENCIES+[LEDGER]);self.original={p:prior_ux31_bytes(p,(ROOT/p).read_bytes())for p in names};self.restore()
  def tearDown(self):self.temp.cleanup()
  def restore(self):
   for name,raw in self.original.items():
@@ -1722,7 +1724,9 @@ class ART11InventoryTests(unittest.TestCase):
  def setUp(self):
   from art11_inventory import NATIVE,DEPENDENCIES,LEDGER
   self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art11-negative-');self.root=Path(self.temp.name)
-  self.original={name:(ROOT/name).read_bytes() for name in set(NATIVE+DEPENDENCIES+[LEDGER])};self.restore()
+  from ux31_inventory import prior_ux31_bytes
+  # Standalone ART11 negatives exercise its exact pre-UX31 native contract.
+  self.original={name:prior_ux31_bytes(name,(ROOT/name).read_bytes()) if name in NATIVE else (ROOT/name).read_bytes() for name in set(NATIVE+DEPENDENCIES+[LEDGER])};self.restore()
  def tearDown(self):self.temp.cleanup()
  def restore(self):
   for name,raw in self.original.items():

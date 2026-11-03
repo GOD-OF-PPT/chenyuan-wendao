@@ -1,0 +1,28 @@
+{
+  "source": "5d6a82a",
+  "methods": 612,
+  "failureEntries": [
+    "test_art11_each_native_cap_is_enforced_after_valid_rehash (test_inventory.ART11InventoryTests.test_art11_each_native_cap_is_enforced_after_valid_rehash)",
+    "test_art11_native_object_has_no_io_timer_write_or_external_css (test_inventory.ART11InventoryTests.test_art11_native_object_has_no_io_timer_write_or_external_css)",
+    "test_ta09_queue_view_restore_owner_emit_reset_and_page_clamp_are_real (test_inventory.TA09InventoryTests.test_ta09_queue_view_restore_owner_emit_reset_and_page_clamp_are_real) (path='web/src/LearningPlanner.vue', token='const queueView=ref<QueueView|null>(null);')",
+    "test_ta09_queue_view_restore_owner_emit_reset_and_page_clamp_are_real (test_inventory.TA09InventoryTests.test_ta09_queue_view_restore_owner_emit_reset_and_page_clamp_are_real) (path='web/src/LearningPlanner.vue', token='if(view.runId===props.game.core.runId)queueView.value=view;')",
+    "test_ta09_queue_view_restore_owner_emit_reset_and_page_clamp_are_real (test_inventory.TA09InventoryTests.test_ta09_queue_view_restore_owner_emit_reset_and_page_clamp_are_real) (path='web/src/LearningPlanner.vue', token='queueView.value=null;delete drafts.skills;delete drafts.manual;defaults();')",
+    "test_ta09_sealing_wins_open_preference_and_real_queue_entry_pagers_remain (test_inventory.TA09InventoryTests.test_ta09_sealing_wins_open_preference_and_real_queue_entry_pagers_remain) (tid='learning-plan-open')",
+    "test_ta09_trusted_props_and_readonly_events_are_real_attributes (test_inventory.TA09InventoryTests.test_ta09_trusted_props_and_readonly_events_are_real_attributes) (component='JadeEngraving', slot='result', misplaced=False)",
+    "test_ta09_trusted_props_and_readonly_events_are_real_attributes (test_inventory.TA09InventoryTests.test_ta09_trusted_props_and_readonly_events_are_real_attributes) (component='JadeEngraving', slot='result', misplaced=True)",
+    "test_ta09_trusted_props_and_readonly_events_are_real_attributes (test_inventory.TA09InventoryTests.test_ta09_trusted_props_and_readonly_events_are_real_attributes) (component='StudyQueueRail', slot='slots', misplaced=False)",
+    "test_ta09_trusted_props_and_readonly_events_are_real_attributes (test_inventory.TA09InventoryTests.test_ta09_trusted_props_and_readonly_events_are_real_attributes) (component='StudyQueueRail', slot='slots', misplaced=True)",
+    "test_ta09_trusted_props_and_readonly_events_are_real_attributes (test_inventory.TA09InventoryTests.test_ta09_trusted_props_and_readonly_events_are_real_attributes) (component='RelicInscription', slot='artifact', misplaced=False)",
+    "test_ta09_trusted_props_and_readonly_events_are_real_attributes (test_inventory.TA09InventoryTests.test_ta09_trusted_props_and_readonly_events_are_real_attributes) (component='RelicInscription', slot='artifact', misplaced=True)",
+    "test_ta09_trusted_props_and_readonly_events_are_real_attributes (test_inventory.TA09InventoryTests.test_ta09_trusted_props_and_readonly_events_are_real_attributes) (component='JadeStudyScene', slot='description', misplaced=False)",
+    "test_ta09_trusted_props_and_readonly_events_are_real_attributes (test_inventory.TA09InventoryTests.test_ta09_trusted_props_and_readonly_events_are_real_attributes) (component='JadeStudyScene', slot='description', misplaced=True)",
+    "test_ta09_trusted_props_and_readonly_events_are_real_attributes (test_inventory.TA09InventoryTests.test_ta09_trusted_props_and_readonly_events_are_real_attributes) (component='JadeStudyScene', slot='action', misplaced=False)",
+    "test_ta09_trusted_props_and_readonly_events_are_real_attributes (test_inventory.TA09InventoryTests.test_ta09_trusted_props_and_readonly_events_are_real_attributes) (component='JadeStudyScene', slot='action', misplaced=True)"
+  ],
+  "failureCount": 16,
+  "log": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/resource-tests.log",
+  "logSHA256": "34d25edf069e2d876d527a964ffb320c0dd4f5245e8f87ef93365968932f7aed",
+  "frozenInputs": 3488,
+  "inputsUnchanged": true,
+  "status": "complete original failure preserved; no final resource pass"
+}

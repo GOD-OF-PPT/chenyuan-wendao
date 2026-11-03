@@ -1,0 +1,200 @@
+[
+  {
+    "index": 0,
+    "name": "failed-medicine-complete-fallback",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A1-b-57a61-ceptance-and-original-retry-chromium/failed-medicine-complete-fallback.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/00-failed-medicine-complete-fallback.jpg",
+    "sha256": "6933695a5099d2dd80cb97d7101dd93d53d8199017c3821bd6cbdc2977a7a059",
+    "viewSha256": "176cf2575104ca26a597424c31a29dbe195e22db5f8a12f4d9b25986d04ce501",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Complete pill fallback caption is clear of the bowl and rim, including native failure and first saved recovery; full cost/stock/retry visible."
+  },
+  {
+    "index": 1,
+    "name": "healing_pill-complete-fallback",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A1-b-57a61-ceptance-and-original-retry-chromium/healing_pill-complete-fallback.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/01-healing_pill-complete-fallback.jpg",
+    "sha256": "440e0934bbd728a54498149366a94863483091532d29b1cdf0e6ee2f334a6571",
+    "viewSha256": "f9df69eecf020547709dc9f3a7f7c9eefe4b59217f2570132d2500ab679ce046",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Complete pill fallback caption is clear of the bowl and rim, including native failure and first saved recovery; full cost/stock/retry visible."
+  },
+  {
+    "index": 2,
+    "name": "saved-medicine-complete-fallback",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A1-b-57a61-ceptance-and-original-retry-chromium/saved-medicine-complete-fallback.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/02-saved-medicine-complete-fallback.jpg",
+    "sha256": "1ccbe7f0b3d3bdd313f884cbb477eabe223cd571b08c14a5b1c92d62542539fd",
+    "viewSha256": "bc5b26085c525458238525f11c2c9c2b9f3a5d3613511a445b865459822afd64",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Complete pill fallback caption is clear of the bowl and rim, including native failure and first saved recovery; full cost/stock/retry visible."
+  },
+  {
+    "index": 3,
+    "name": "spirit_pill-complete-fallback",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A1-b-57a61-ceptance-and-original-retry-chromium/spirit_pill-complete-fallback.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/03-spirit_pill-complete-fallback.jpg",
+    "sha256": "bb36425e0ca22639efa1cfa1ba226d74bf2dc7e3910a4d800ff04c843ed9fce6",
+    "viewSha256": "46651ee2102eab63a61d339dd7b0890fb6eb560c48eb771ca8da20e05a240c78",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Complete pill fallback caption is clear of the bowl and rim, including native failure and first saved recovery; full cost/stock/retry visible."
+  },
+  {
+    "index": 4,
+    "name": "buy-grouped-direction",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A2-t-985c6--all-viewing-stays-readonly-chromium/buy-grouped-direction.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/04-buy-grouped-direction.jpg",
+    "sha256": "7eb8c251cb290e44f41b0059bdc3addf1a70bd750e842fe1b9525e1365e0dffc",
+    "viewSha256": "57116b2702d27c5041d48d5ee9b40c3c75d6f2656d335656b1e7650fe03907be",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Trade direction and payment/receipt phrases now form complete lines; item and real price/period remain visible."
+  },
+  {
+    "index": 5,
+    "name": "reserve-0-grouped",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A2-t-985c6--all-viewing-stays-readonly-chromium/reserve-0-grouped.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/05-reserve-0-grouped.jpg",
+    "sha256": "6f00787c64b04a20027e3427b2311c04a7360bd6e17bdadc5f61ba3820cf1144",
+    "viewSha256": "4daede9369980032ec9c0ba71cfe76fec104f54f7e4a4b25ce8e1aeb8066c347",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Zero and largest legal reserve values stay with their labels, with actual threshold reason and controls readable."
+  },
+  {
+    "index": 6,
+    "name": "reserve-1000000-grouped",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A2-t-985c6--all-viewing-stays-readonly-chromium/reserve-1000000-grouped.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/06-reserve-1000000-grouped.jpg",
+    "sha256": "d245d47da3a34af7128da556553f3a9a8e4e991c25564c2dd165256b4fe6cabf",
+    "viewSha256": "6880233173e5efeb80da387fd50aee6c90b1ba1e3af6ce5737b81afafbc17e6b",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Zero and largest legal reserve values stay with their labels, with actual threshold reason and controls readable."
+  },
+  {
+    "index": 7,
+    "name": "sell-grouped-direction",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A2-t-985c6--all-viewing-stays-readonly-chromium/sell-grouped-direction.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/07-sell-grouped-direction.jpg",
+    "sha256": "9bf829f8ebf85478b587662935c70473decbfa1d2b37115ffd95444e1aad2481",
+    "viewSha256": "f08024a99c93766cbb7b1374d9cce3f33f2c742ea6938608ace070a6f15195cf",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Trade direction and payment/receipt phrases now form complete lines; item and real price/period remain visible."
+  },
+  {
+    "index": 8,
+    "name": "cloud_mirror-failed-complete-state",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A3-u-7a963-unrelated-saved-error-state-chromium/cloud_mirror-failed-complete-state.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/08-cloud_mirror-failed-complete-state.jpg",
+    "sha256": "c622602a9a840c383417c16bb66272abdcfa52424f3c197bb07a9a7d243686c4",
+    "viewSha256": "9cd42ad9ef9884823b80fed6a6ee2427a49060c2e5fb852e49fffe520b4887b3",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Relic state badge now has complete word groups and a truthful owned/bound/unmade state. Remaining material-card reserve/number split was observed and added to the same V02 followup; this frame is not final proof of that followup."
+  },
+  {
+    "index": 9,
+    "name": "cloud_mirror-normal-complete-state",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A3-u-7a963-unrelated-saved-error-state-chromium/cloud_mirror-normal-complete-state.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/09-cloud_mirror-normal-complete-state.jpg",
+    "sha256": "39fe57a4809344d0534d8843158a9e5a3c44e9668c87ef944313f3170a22eb71",
+    "viewSha256": "63919735d3fbdd7b371827b7d252c6d5ea6ff5fb2e574a5a719d522537beb94c",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Relic state badge now has complete word groups and a truthful owned/bound/unmade state. Remaining material-card reserve/number split was observed and added to the same V02 followup; this frame is not final proof of that followup."
+  },
+  {
+    "index": 10,
+    "name": "frost_sword-failed-complete-state",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A3-u-7a963-unrelated-saved-error-state-chromium/frost_sword-failed-complete-state.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/10-frost_sword-failed-complete-state.jpg",
+    "sha256": "d5d9368bc530caf6292f55eb992367681b5dc333fa60b7e46b489445fc97eeff",
+    "viewSha256": "19588afb6cc3ad7b5f8ebfe121c37ff17d79e785c97a2fda722108a94fb84e8e",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Relic state badge now has complete word groups and a truthful owned/bound/unmade state. Remaining material-card reserve/number split was observed and added to the same V02 followup; this frame is not final proof of that followup."
+  },
+  {
+    "index": 11,
+    "name": "frost_sword-normal-complete-state",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A3-u-7a963-unrelated-saved-error-state-chromium/frost_sword-normal-complete-state.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/11-frost_sword-normal-complete-state.jpg",
+    "sha256": "1fbc4288bfab2010d241171773a452d90764e2d71e945a646a6ad5db53046610",
+    "viewSha256": "3247336d1c0aea4525df675eb9163f4ec208db843b5d2795df1d7989b2e8ca7d",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Relic state badge now has complete word groups and a truthful owned/bound/unmade state. Remaining material-card reserve/number split was observed and added to the same V02 followup; this frame is not final proof of that followup."
+  },
+  {
+    "index": 12,
+    "name": "jade_seal-failed-complete-state",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A3-u-7a963-unrelated-saved-error-state-chromium/jade_seal-failed-complete-state.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/12-jade_seal-failed-complete-state.jpg",
+    "sha256": "51fa7fac0a408e402f5acf1d67865c3a4774251f24447399d05519769462dc6a",
+    "viewSha256": "b25715d88ec5de80fc5c582ed5dcdf41c75fbc4241b968452e88a88b217870a3",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Relic state badge now has complete word groups and a truthful owned/bound/unmade state. Remaining material-card reserve/number split was observed and added to the same V02 followup; this frame is not final proof of that followup."
+  },
+  {
+    "index": 13,
+    "name": "jade_seal-normal-complete-state",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A3-u-7a963-unrelated-saved-error-state-chromium/jade_seal-normal-complete-state.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/13-jade_seal-normal-complete-state.jpg",
+    "sha256": "f761b34fed328712cf885c2e82e3eb1c8a53f94ffbd92c4fdde00ded3f93fd88",
+    "viewSha256": "22b2d64f250b5c078aafd979b951d424ea704e146fcc34bf0d389094c8945759",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Relic state badge now has complete word groups and a truthful owned/bound/unmade state. Remaining material-card reserve/number split was observed and added to the same V02 followup; this frame is not final proof of that followup."
+  },
+  {
+    "index": 14,
+    "name": "soul_lamp-failed-complete-state",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A3-u-7a963-unrelated-saved-error-state-chromium/soul_lamp-failed-complete-state.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/14-soul_lamp-failed-complete-state.jpg",
+    "sha256": "6f31b74d305b0e7f1ef2d530ea1dd426c02bcc9e1420d08130908acd9d34ad93",
+    "viewSha256": "7f9e336895d171e8c5408832c4b45bb1669dc17b7010bba4a729877e062879de",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Relic state badge now has complete word groups and a truthful owned/bound/unmade state. Remaining material-card reserve/number split was observed and added to the same V02 followup; this frame is not final proof of that followup."
+  },
+  {
+    "index": 15,
+    "name": "soul_lamp-normal-complete-state",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A3-u-7a963-unrelated-saved-error-state-chromium/soul_lamp-normal-complete-state.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/15-soul_lamp-normal-complete-state.jpg",
+    "sha256": "b5e5e602ea3e51eeb9a8f3813f10dfe29111637ab1c753924414b219d0979069",
+    "viewSha256": "062c583def371aea3bfe36663b8497cfdd41c7a7e7ecab238b84aa376acaeae7",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Relic state badge now has complete word groups and a truthful owned/bound/unmade state. Remaining material-card reserve/number split was observed and added to the same V02 followup; this frame is not final proof of that followup."
+  },
+  {
+    "index": 16,
+    "name": "complete-paused-progress",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A4-p-3e136-nal-remaining-cycle-resumes-chromium/complete-paused-progress.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/16-complete-paused-progress.jpg",
+    "sha256": "362b9402f5e26669f5ce293fa77485b5a61b2ba3d8bcaec5bc8d7a40f349b69f",
+    "viewSha256": "2bb1cbac70aee1db73db32abadaaf95cd84db9a534a2954367ed68716e10f299",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Full paused progress, original budget continuation and separately labelled new-plan forecast remain readable in the original complete arrangement dialog; no controls clipped."
+  },
+  {
+    "index": 17,
+    "name": "concise-paused-study",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-results/ux31-readability-UX31-A4-p-3e136-nal-remaining-cycle-resumes-chromium/concise-paused-study.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/focused-light/17-concise-paused-study.jpg",
+    "sha256": "94f2c690f6591b96264dadaf70654e35f722328cb42e28dac1c38e41c1dcf8c5",
+    "viewSha256": "8adbd9dab099521517293908816a0cf2d919de48e52d3861b94ab8280271b241",
+    "encoding": "same1440x900 JPEG68 lossy, original PNG retained",
+    "actualViewed": true,
+    "review": "Paused study main scene has concise saved-plan and resume wording; finite budget and current HUD activity remain visible. Full progress is retained on demand."
+  }
+]

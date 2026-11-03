@@ -11,6 +11,10 @@
     [
       "'器谱冷胚示意 · 尚未炼成'",
       "'器谱冷胚示意\\n尚未炼成'"
+    ],
+    [
+      "{{row.required}} · 保留 {{row.reserve}}",
+      "{{row.required}}<br>保留 {{row.reserve}}"
     ]
   ],
   "MarketCounter.vue": [

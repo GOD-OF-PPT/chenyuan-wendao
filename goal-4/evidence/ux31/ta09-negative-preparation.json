@@ -1,0 +1,10 @@
+{
+  "path": "art/tools/test_inventory.py",
+  "beforeSha256": "9d431d3534f10479cd30e9c82f69b236ddd7cdd464cc2f3ccd68ce193e375d25",
+  "afterSha256": "f28480bd3cea429f0ab384485070f6ad0b0c3bedf87d08445a051d9d75bf715c",
+  "before": "  names=set(NATIVE+REFS+DEPENDENCIES+[LEDGER]);self.original={p:(ROOT/p).read_bytes()for p in names};self.restore()",
+  "after": "  from ux31_inventory import prior_ux31_bytes\n  # Keep every legacy ownership/slot assertion on the exact original display view.\n  names=set(NATIVE+REFS+DEPENDENCIES+[LEDGER]);self.original={p:prior_ux31_bytes(p,(ROOT/p).read_bytes())for p in names};self.restore()",
+  "scope": "Only standalone TA09 fixture materialization; every original event/ownership/slot mutation and expected assertion remains. Current source still has independent UX31 exact-script and actual-cap checks.",
+  "original612Failed": 16,
+  "rerun": "full resource suite required"
+}

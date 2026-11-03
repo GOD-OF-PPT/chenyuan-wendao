@@ -1,0 +1,25 @@
+{
+  "source": "5d6a82aa08a4788ae8d737918a22623e4f6302b6",
+  "terminal": {
+    "exit": 0,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 3496,
+    "runtime": "86f210e7d1229548581aa6c78fdc111480a74f6b4b37d773958d582d8364b809",
+    "stats": {
+      "startTime": "2026-11-03T15:02:05.117Z",
+      "duration": 29458.74,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 4,
+    "retried": [],
+    "reportSha256": "d533da78866e8119f89ad07d293e1d9f0175f765bb1bf56c324eb769b349a2b3"
+  },
+  "scope": "first candidate four cases only; subsequent material-card addition requires a new full recheck"
+}

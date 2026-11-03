@@ -101,6 +101,7 @@ test('UX31-A3 unmade owned and bound relic labels remain complete words during a
   await openHubFeature(page,'relics');
   for(const id of Object.keys(C.relics)){await stage.selectRelic(page,id);const owned=g.ownedRelics.includes(id),bound=g.loadout.relic===id;
    const phrases=owned?bound?['已装备为本命']:['已炼成','尚未装备']:['器谱冷胚示意','尚未炼成'];for(const phrase of phrases)await word(page.getByTestId('production-relic-state'),phrase,18);
+   const cards=page.locator('.relic-material-slots button small');expect(await cards.count()).toBe(Object.keys(C.relics[id].inputs).length);for(const card of await cards.all())await word(card,'保留 0',14);
    await frame(page,info,id+(error?'-failed':'-normal')+'-complete-state',page.getByTestId('relic-atelier'));expect(await database(page)).toEqual(raw);
   }
  }

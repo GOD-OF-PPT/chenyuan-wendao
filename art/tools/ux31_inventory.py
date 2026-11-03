@@ -4,7 +4,7 @@ from pathlib import Path
 
 LEDGER='art/redesign/ux31.json'
 FACTS = {'RelicAtelier.vue': {'before': '9b2b585fc38b989cce519cd91c67e3108ead867a92aa502182af80b9fa5eab67',
-                      'after': '6cf5593fb4b357dced435bce93dab17257ef8a8cf14d242f93a7b27ddf0dcf63',
+                      'after': '10f5c8a995fd12da9cc92d0cecbd19281ec44319c6c8ca17c498f6dde629f96e',
                       'beforeBytes': 16083,
                       'bytes': 16108,
                       'baseline': 'goal-4/evidence/ux31/RelicAtelier.vue.before.txt'},
@@ -36,7 +36,8 @@ FACTS = {'RelicAtelier.vue': {'before': '9b2b585fc38b989cce519cd91c67e3108ead867
 OPERATIONS = {'RelicAtelier.vue': [['<strong data-testid="production-relic-state">',
                        '<strong data-testid="production-relic-state" style="white-space:pre-line">'],
                       ["'已炼成 · 尚未装备'", "'已炼成\\n尚未装备'"],
-                      ["'器谱冷胚示意 · 尚未炼成'", "'器谱冷胚示意\\n尚未炼成'"]],
+                      ["'器谱冷胚示意 · 尚未炼成'", "'器谱冷胚示意\\n尚未炼成'"],
+                      ['{{row.required}} · 保留 {{row.reserve}}', '{{row.required}}<br>保留 {{row.reserve}}']],
  'MarketCounter.vue': [["'购入 · 灵石换物'", "'购入\\n灵石换物'"],
                        ["'售出 · 物资换石'", "'售出\\n物资换石'"],
                        ["'支付灵石，物资入囊'", "'支付灵石\\n物资入囊'"],
