@@ -1,0 +1,27 @@
+{
+  "format": "chenyuan-market-copy-ux32",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "addedCSSBytes": 0,
+  "files": [
+    {
+      "path": "web/src/MarketPlanner.vue",
+      "bytes": 12473,
+      "sha256": "dc0d81d57734537fd8feebe305e5dfb58f39ec1d20209bc0f5add2de47aba26f"
+    },
+    {
+      "path": "web/src/MarketCounter.vue",
+      "bytes": 10062,
+      "sha256": "bcde3e3c643a29868995d52a197e6e1553b37745771866bd9e3a69b04f0d780e"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0093-market-copy-ux32-contract.md",
+    "goal-4/amendments/2026-11-04-ux32-input.md",
+    "goal-4/research/ux32-market-clarity-sources.json",
+    "art/redesign/ux32-display-edits.json",
+    "goal-4/evidence/ux32/MarketPlanner.vue.before.txt",
+    "goal-4/evidence/ux32/MarketCounter.vue.before.txt"
+  ]
+}

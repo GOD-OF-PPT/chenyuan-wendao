@@ -1,3 +1,4 @@
+from ux32_inventory import prior_ux32_bytes
 import hashlib,json,shutil,tempfile,unittest
 from pathlib import Path
 from ux31_inventory import FACTS,GROUPS,REFS,LEDGER,validate_ux31,prior_ux31_bytes
@@ -16,7 +17,7 @@ class ReadabilityContractTests(unittest.TestCase):
         for name in names:
             out=self.root/name
             out.parent.mkdir(parents=True,exist_ok=True)
-            shutil.copyfile(ROOT/name,out)
+            out.write_bytes(prior_ux32_bytes(name,(ROOT/name).read_bytes()))
 
     def resign(self,name):
         p=self.root/LEDGER

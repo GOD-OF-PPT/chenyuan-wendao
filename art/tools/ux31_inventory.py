@@ -1,3 +1,4 @@
+from ux32_inventory import prior_ux32_bytes
 """UX31 exact presentation evolution; all original source pins and actual budgets remain enforced."""
 import hashlib,json,re
 from pathlib import Path
@@ -127,6 +128,7 @@ REFS = ['docs/decisions/0092-visual-readability-ux31-contract.md',
 
 
 def prior_ux31_bytes(path,raw):
+    raw=prior_ux32_bytes(path,raw)
     name=Path(path).name
     if name not in FACTS or MARKERS[name].encode() not in raw:
         return raw
@@ -158,7 +160,7 @@ def validate_ux31(root):
     assert m['files']==[{'path':'web/src/'+n,'bytes':f['bytes'],'sha256':f['after']} for n,f in FACTS.items()], 'UX31 actual source ledger'
     assert m['baselines']==[{'path':f['baseline'],'bytes':f['beforeBytes'],'sha256':f['before']} for f in FACTS.values()], 'UX31 old whole-file pins'
     for n,f in FACTS.items():
-        raw=local('web/src/'+n).read_bytes();old=local(f['baseline']).read_bytes()
+        raw=prior_ux32_bytes(n,local('web/src/'+n).read_bytes());old=local(f['baseline']).read_bytes()
         assert len(raw)==f['bytes'] and hashlib.sha256(raw).hexdigest()==f['after'], 'UX31 current whole source'
         assert len(old)==f['beforeBytes'] and hashlib.sha256(old).hexdigest()==f['before'], 'UX31 preserved original'
         assert prior_ux31_bytes(n,raw)==old, 'UX31 full inverse'
@@ -178,4 +180,4 @@ def validate_ux31(root):
     assert 0<=added<=400, 'UX31 actual added CSS includes inline declarations'
     assert not re.search(rb'font-size|overflow|display\s*:\s*none|opacity\s*:\s*0|@import|@font-face|https?://',css), 'UX31 cannot clip shrink or hide to fit'
     for ref in REFS:local(ref)
-    return {LEDGER,*REFS,*[r['path'] for r in m['files']]},sum(f['bytes'] for f in FACTS.values())
+    return {LEDGER,*REFS,*[r['path'] for r in m['files']]},sum(local('web/src/'+n).stat().st_size for n in FACTS)

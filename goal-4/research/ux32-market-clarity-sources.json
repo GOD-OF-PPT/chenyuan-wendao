@@ -1,0 +1,16 @@
+{
+  "retrievedOn": "2026-11-04",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "read": "Hierarchy and minimal visual noise; clarity means understanding and responding.",
+      "application": "Prefer current object, real trade facts and one main decision over repeated instructions."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "read": "Labels near controls, enough context to understand expected effects and preserve initiated context changes.",
+      "application": "Separate viewing limits from trading, paused saved plans from new drafts, and travel from purchase."
+    }
+  ],
+  "limits": "Primary source principles; concrete copy/layout is project inference, not XAG certification or user acceptance."
+}
