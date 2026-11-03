@@ -1,4 +1,5 @@
 import {answerGameConfirmation} from './game-confirmation-support';
+import {recoveryDatabase} from './idle-recovery-ui-support';
 import {openMarketLibrary,selectMarketItem,selectMarketMode,selectInventoryItem,inspectInventorySupply,openInventoryLibrary,selectRecoveryMethod,closeMarketLibrary,closeRecoveryOptions} from './stage-support';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {driver,prepareTrial} from '../../tests/full-route.mjs';
@@ -59,7 +60,11 @@ test('a completed encounter original authorization stays readable after its expl
 
 for(const kind of ['buy','use','rest'] as const)test('real '+kind+' waits its full online period and atomically saves one formal outcome',async({page},info)=>{
  const d=driver();if(kind==='buy'){d.funds(100);d.go('market');}else{d.buy('healing_pill',6);d.go('wilderness');d.doAction({type:'ENCOUNTER',enemy:'wolf'});d.doAction({type:'BATTLE',move:'technique'});d.doAction({type:'BATTLE',move:'flee'});d.go('cave');}const before=await seed(page,d,false);
- if(kind==='buy')await market(page);else{await page.getByTestId('tab-2').click();await openInventoryLibrary(page);await page.getByRole('navigation',{name:'行囊分类'}).getByRole('button',{name:'丹药',exact:true}).click();await inspectInventorySupply(page,"healing_pill","use");if(kind==='rest'){await selectRecoveryMethod(page,"rest");await expect(page.locator('.recovery-cabinet')).toContainText('不在洞府时');}}
+ if(kind==='buy')await market(page);else{await page.getByTestId('tab-2').click();await openInventoryLibrary(page);await page.getByRole('navigation',{name:'行囊分类'}).getByRole('button',{name:'丹药',exact:true}).click();await inspectInventorySupply(page,"healing_pill","use");if(kind==='rest'){await selectRecoveryMethod(page,"rest");const readBefore=await recoveryDatabase(page);
+  await settings(page,'recovery');await expect(page.getByTestId('recovery-plan-dialog')).toBeVisible();
+  await expect(page.getByTestId('recovery-plan-dialog')).toContainText('不在洞府时');
+  await frame(page,info,'rest-location-readonly-details');await closeSettings(page,'recovery');
+  expect(await recoveryDatabase(page)).toEqual(readBefore);}}
  const period=kind==='buy'?15000:kind==='use'?6000:30000,began=await page.evaluate(()=>performance.now());await page.getByTestId('preparation-start').click();await expect(page.getByTestId('training-countdown')).toBeVisible();const a=await activity(page),first=await page.getByTestId('training-countdown').innerText();expect(a.cycleMs).toBe(period);await page.waitForTimeout(500);expect(parseFloat(await page.getByTestId('training-countdown').innerText())).toBeLessThan(parseFloat(first));expect(await snapshot(page)).toEqual(before);await shot(page,info,kind+'-real-countdown');await expect.poll(async()=>(await activity(page)).status,{timeout:period+5000}).toBe('stopped');expect(await page.evaluate(()=>performance.now())-began).toBeGreaterThanOrEqual(period);expect(await snapshot(page)).toEqual(advance(before,a.nextCommand));expect((await activity(page)).completedCycles).toBe(1);await frame(page,info,kind+'-real-saved-outcome');
 });
 
