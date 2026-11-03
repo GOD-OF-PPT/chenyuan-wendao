@@ -1,0 +1,50 @@
+{
+  "sourceHead": "7c20e72d13f50ec52cd570477ed26395845ccd7c",
+  "originalSha256": "0bb67f69d39b7ffc95ecd823f1109aa3050f149ba88b35dafbed1e766e806e69",
+  "errors": [
+    {
+      "trace": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-regular-results/ux19-first-loop-UX19-help--94416-icitly-confirms-first-entry-chromium/trace.zip",
+      "error": {
+        "type": "error",
+        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('journey-hint')\nExpected substring: \u001b[32m\"洞府\"\u001b[39m\nReceived string:    \u001b[31m\"修为圆满后再筹备突破\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('journey-hint')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-copy30=\"home\" class=\"journey-hint\" data-testid=\"journey-hint\">修为圆满后再筹备突破</p>\u001b[22m\n\u001b[2m       - unexpected value \"修为圆满后再筹备突破\"\u001b[22m\n",
+        "stack": [
+          {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/ux19-first-loop.spec.ts",
+            "line": 45,
+            "column": 65
+          }
+        ]
+      }
+    },
+    {
+      "trace": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-regular-results/ux19-first-loop-UX19-trade-3d756-icitly-confirms-first-entry-chromium/trace.zip",
+      "error": {
+        "type": "error",
+        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('journey-hint')\nExpected substring: \u001b[32m\"洞府\"\u001b[39m\nReceived string:    \u001b[31m\"修为圆满后再筹备突破\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('journey-hint')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-copy30=\"home\" class=\"journey-hint\" data-testid=\"journey-hint\">修为圆满后再筹备突破</p>\u001b[22m\n\u001b[2m       - unexpected value \"修为圆满后再筹备突破\"\u001b[22m\n",
+        "stack": [
+          {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/ux19-first-loop.spec.ts",
+            "line": 45,
+            "column": 65
+          }
+        ]
+      }
+    },
+    {
+      "trace": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-regular-results/ux19-first-loop-UX19-leave-89dc8-icitly-confirms-first-entry-chromium/trace.zip",
+      "error": {
+        "type": "error",
+        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('journey-hint')\nExpected substring: \u001b[32m\"洞府\"\u001b[39m\nReceived string:    \u001b[31m\"修为圆满后再筹备突破\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('journey-hint')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-copy30=\"home\" class=\"journey-hint\" data-testid=\"journey-hint\">修为圆满后再筹备突破</p>\u001b[22m\n\u001b[2m       - unexpected value \"修为圆满后再筹备突破\"\u001b[22m\n",
+        "stack": [
+          {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/ux19-first-loop.spec.ts",
+            "line": 45,
+            "column": 65
+          }
+        ]
+      }
+    }
+  ],
+  "diagnosis": "All three actual new-life choices still read full mortal guidance from the now-short home hint. Same test also retains the old home forecast wording; UX30 retains full guidance in notes and cycle forecasts in complete cultivation arrangement.",
+  "status": "original three failures retained; real readonly entry adaptation pending"
+}
