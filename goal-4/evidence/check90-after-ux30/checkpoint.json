@@ -24,7 +24,7 @@
     "reportSha256": "5c8ce2a8e200f9b69fe26bd1868d3814cadae9a51842d1ba87fc77c27f0aeb5f"
   },
   "verifierAuthorMethods": 17,
-  "normalStatus": "running",
+  "normalStatus": "terminal:18 passed,14 failures with original240s timeout messages",
   "currentRequired": {
     "ui": 834,
     "persistence": 415,
@@ -39,6 +39,32 @@
   "normalPassed": 12,
   "normalFailed": 8,
   "nextPhase": "normal-trace full32 after original terminal",
-  "nextPhaseStatus": "prepared, not launched",
-  "observerConsumerModuleClosureCount": 50
+  "nextPhaseStatus": "running full32 trace comparison",
+  "observerConsumerModuleClosureCount": 50,
+  "normalTerminal": {
+    "exit": 1,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 3406,
+    "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+    "stats": {
+      "startTime": "2026-11-03T10:08:41.233Z",
+      "duration": 3542363.5700000003,
+      "expected": 18,
+      "skipped": 0,
+      "unexpected": 14,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 32,
+    "retried": [],
+    "reportSha256": "10e0f050d7bb22c4db0ab3f7f7fde369b4303446b10985b0d5c594427c3caec5"
+  },
+  "normalResultStatuses": {
+    "timedOut": 7,
+    "failed": 7
+  },
+  "nextPhaseSession": 54941
 }

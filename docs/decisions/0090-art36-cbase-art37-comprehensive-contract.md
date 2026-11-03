@@ -65,3 +65,15 @@ d8e完整UI830/native415/core875/资源590均过，normal原轮仍继续，help/
 当前原轮必须到真实终态后再启动新配置的完整32；不打断、不并行抢写或只重跑两条绿例。没有测试或产品源码改动，无需改时钟/模拟速度/资源/DB/旧矩阵签名。新配置、全部声明与112HTTP及同源before/after/终态另名保存；最终报告按真实先后保原失败，不抹旧证。若仍失败继续具体诊断，不把记录减负当产品修复或放宽原门槛。本动作是已有失败测试的采集参数修缮，当前兼容/环境性能专项继续暂停。
 
 来源 https://playwright.dev/docs/api/class-tracing#tracing-start 与 https://playwright.dev/docs/api/class-testoptions#test-options-trace 。
+
+## 追踪对照未解决超时后的只读轮询参数（先于代码）
+
+原normal完整32已终态18过14失败，全部失败消息含原240秒超时（结果枚举7 timedOut、7 failed）。normal-trace当前前两craft仍超240，depart追踪包降到9300958B且screencastFrames为0，说明记录选项实际生效但不足。当前样本抵达第71段战策，325次“poll toBe”累计38295.227ms。当前安装expect.js默认退避为100/250/500/1000ms。完整轮中没有通过扩大时限或截断步骤取得通过。
+
+当前采集对照已提供反例与下一诊断依据，停止该中间诊断轮，保留完整原报告、部分执行/中断/未执行状态，不纳入当前合格矩阵。此处调整此前继续整轮对照的执行顺序，正式完整32义务继续由下一轮承担。停止只针对已核归属的normal-trace协调进程，不停止Goal或用户试玩。
+
+复用原0088曾提出但未完成完整normal-poll验证的轮询方案，现以当前325次/38.3秒新证据实施。仅runVisibleIdleRoute内受理/周期提交/重开续接三处expect.poll增加intervals:[10,20,50,100]，继承原8秒总等待与每例240秒。全部原条件、Game/Activity/全库、每周期ms-1、命令、完整PNG、点击与全部路线步骤保留，读函数仍为原只读观测，不改变游戏时钟/等待周期/Store或存档。该方案尚未证明解决问题，不能把旧提出或一次定向绿灯当交付。
+
+先保存当前完整helper与精确逆变换，再改。原正常32/当前诊断中止到真实终态后，保旧冻结源的独立归档，新的干净source/构建与原JREAD三例检查后，执行完整32。后续完整UI834与native415仍须新实际终态。保持采集对照中的DOM/网络/源/附件、原PNG和缺少连续filmstrip的明确边界。旧原自动filmstrip证据与所有失败保持，v1/v2/v3/v4目录和预算不变。回滚新revert只三处只读轮询参数，保持全部原代码与报告；兼容/环境性能仍暂停。
+
+来源 https://playwright.dev/docs/test-assertions#expectpoll ，并已核当前安装的playwright/lib/matchers/expect.js默认退避。本项目10/20/50/100为失败诊断参数，非来源规定数值。

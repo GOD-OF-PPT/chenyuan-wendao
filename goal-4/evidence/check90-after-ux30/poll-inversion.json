@@ -1,0 +1,25 @@
+{
+  "beforeSHA256": "d5ff6b661f8f9f2b08c4e34b29c7873f8d518b85689c6e393ad390c0f9d142ed",
+  "afterSHA256": "2b9ee1c67c50056fbfbdfe66a22bd9ea31464fbf5b99e1aed65bb4a2b19054fb",
+  "completeOriginalRestored": true,
+  "onlyThreeReadonlyPollSites": true,
+  "timeoutUnchanged": true,
+  "changes": [
+    [
+      "  test.setTimeout(240_000);",
+      "  test.setTimeout(240_000);\n  const savedStatePolling = { intervals: [10, 20, 50, 100] };"
+    ],
+    [
+      "return a?.id !== oldActivity?.id && a?.status === 'running'; }).toBe(true);",
+      "return a?.id !== oldActivity?.id && a?.status === 'running'; }, savedStatePolling).toBe(true);"
+    ],
+    [
+      "expect.poll(async () => (await activitySnapshot(page))?.completedCycles).toBe(current.completedCycles + 1);",
+      "expect.poll(async () => (await activitySnapshot(page))?.completedCycles, savedStatePolling).toBe(current.completedCycles + 1);"
+    ],
+    [
+      "expect.poll(async()=>(await activitySnapshot(page)).generation).toBe(persisted.generation+1);",
+      "expect.poll(async()=>(await activitySnapshot(page)).generation, savedStatePolling).toBe(persisted.generation+1);"
+    ]
+  ]
+}
