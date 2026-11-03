@@ -27,5 +27,16 @@
     "observed": "Short word groups split across lines, for example 尚未装/备 and 库存保留/0. Content remains present but reading is less natural.",
     "requiredFollowup": "Refine short player-facing labels and preserve meaningful word/number groups without shrinking fonts or losing budgets.",
     "scope": "fixed1440x900; overall art acceptance remains pending"
+  },
+  {
+    "id": "CHECK90-V03",
+    "status": "open",
+    "severity": "copy density and repeated state",
+    "surface": "paused study stage",
+    "evidence": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-regular-results/check-art36-cbase-art37-CH-323fe-d-one-atomic-original-cycle-chromium/study-saved-paused.png",
+    "sha256": "1c6699c037f038aab653989a4cd9f915169e55f2a971ae9e277c8d2b97be018e",
+    "observed": "Paused state appears in the HUD and study footer, while the same saved-plan/resume wording is repeated at the top-left of the stage and in its disabled primary control. The current 1/2 progress is also repeated. Content is readable but repeats the reading burden reported by the user.",
+    "requiredFollowup": "Reduce repeated messages to one clear current state and real resume destination, while preserving the full finite budget, saved-plan/draft distinction, comparison, all queue entries, original retry and explicit authorization. Scope and exact changes must be registered before implementation.",
+    "scope": "fixed1440x900; current UX30 covered cultivation/alchemy/recovery, study copy still awaits the next focused pass; not a waiver of overall clarity"
   }
 ]
