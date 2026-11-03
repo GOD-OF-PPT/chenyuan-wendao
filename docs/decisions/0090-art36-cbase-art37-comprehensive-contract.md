@@ -27,3 +27,15 @@
 [杠精计划审查] 通过：包含实际跨模块组合与原完整目录，不只相加旧绿；保新旧语义、所有暂停项和最终责任。检查结果/修缮/交付裁决待真实填写。
 
 实际初始干净源组合2过，3337输入/同Git/112HTTP全同。完整源实际--list为830UI，签名19baf88c…，原816全文签名保，新14（ART37十二与本轮两组合）逐名列tests/idle-comprehensive-additions.json。v3验证器新增14项与原v2再核子集，不把旧v2重签；原12验证器测试+新2方法均过，合成清单不算游戏执行。当前完整1277仍待四阶段真实执行。
+
+## 原正常轮真实超时后的只读传输调查（同任务，未完成）
+
+d8e完整UI830/native415/core875/资源590均过，normal原轮仍继续，help/sword/craft两例原240s超时、trace约273MB已保，正文已到收卷但不算过。对原trace只读统计：全DB23次17187ms、477次statepair7389ms、466次click80190ms，不能据此认唯一根因。只调查已有失败，不做环境性能矩阵；不改受测source、不重启原轮。
+
+先存两原完整helper/JREAD3源/hash，再允许对readJourneyDatabase测试观察器加无损传输快径：仍同一个readonly事务getAllKeys/getAll所有store全键全值、完成后配对；仅确认整个返回值为有限非-0数字/字符串/布尔/null、无额外属性的稠密数组和无共享引用/环的普通对象树时，把完整JSON字符串送回Node并完整parse。不得投影/摘要/缓存/删读/减少比较；有undefined/Date/二进制/稀疏/共享图/特殊原型/非有限数/-0则用原Playwright完整值传输，未知不猜。原缺库abort/事务拒绝/关闭权不变，原结构化传输提供显式只读对照。JSON字符串只parse，不进DOM、不eval。依据MDN JSON.stringify值域损失与Playwright evaluate跨进程说明，具体白名单为项目推导。
+
+在原JREAD3例内保全部原断言并追加JSON树全字段/完整库的自动与原结构化、原cursor逐值等价，以及undefined/Date/二进制/非有限/-0/稀疏/共享引用完整fallback、不建缺库/中止/真实START-TICK失败重试。实际观察回传模式，不能仅假定快径被使用。先小范围对照，不得改正常240/8秒、任何读秒/ms-1/全Game/Activity/唯一回执/全部正文/所有PNG或生产Game/DB/时钟。若等价不成立撤回快径，保失败。
+
+原normal完整终态后才切换冻结源码和运行新完整相关文件/正常32；原830UI及415其他结果只有实际未变消费闭包/参数/锁/327运行输入和112载荷证明可逐项明示继承，变动消费者全部重跑，暂停性能消费者只披露不运行。新结果不能给旧Git换标签；当前v3全1277、原20要求88叶/171与82映射不减少。原矩阵失败和最终艺术/长期/真人/正式候选义务保。
+
+来源：https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify 、 https://playwright.dev/docs/evaluating 。

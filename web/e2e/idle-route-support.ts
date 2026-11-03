@@ -292,18 +292,20 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
 }
 
 /** Read all keys and full values from every native store in one readonly transaction. */
-export async function readJourneyDatabase(page:Page){return page.evaluate(()=>new Promise<any>((accept,reject)=>{
+export async function readJourneyDatabase(page:Page,transport:'auto'|'structured'='auto'){const observed=await page.evaluate(transport=>new Promise<any>((accept,reject)=>{
  const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();reject(Error('Readonly catalogue cannot create Game DB'));};q.onerror=()=>reject(q.error);
  q.onsuccess=()=>{const db=q.result;try{
   const names=[...db.objectStoreNames],tx=db.transaction(names,'readonly');
   const reads=names.map(name=>{const store=tx.objectStore(name);return{name,keys:store.getAllKeys(),values:store.getAll()};});
   tx.oncomplete=()=>{db.close();try{
    const rows=Object.fromEntries(reads.map(({name,keys,values})=>{if(keys.result.length!==values.result.length)throw Error('Incomplete readonly catalogue');return[name,keys.result.map((key,index)=>({key,value:values.result[index]}))];}));
-   accept({version:db.version,rows});
+   const value={version:db.version,rows},stack:any[]=[value],seen=new WeakSet<object>();let json=transport==='auto';
+   while(json&&stack.length){const item=stack.pop();if(item===null||typeof item==='string'||typeof item==='boolean')continue;if(typeof item==='number'){json=Number.isFinite(item)&&!Object.is(item,-0);continue;}if(typeof item!=='object'||seen.has(item)){json=false;break;}seen.add(item);if(typeof item.toJSON==='function'){json=false;break;}const keys=Object.keys(item);if(Array.isArray(item)){if(keys.length!==item.length||Reflect.ownKeys(item).length!==keys.length+1||keys.some((key,index)=>key!==String(index))){json=false;break;}}else if(Object.getPrototypeOf(item)!==Object.prototype||Reflect.ownKeys(item).length!==keys.length){json=false;break;}for(const key of keys)stack.push(item[key]);}
+   accept(json?{transport:'json',text:JSON.stringify(value)}:{transport:'structured',value});
   }catch(error){reject(error);}};
   tx.onabort=()=>{db.close();reject(tx.error??Error('Readonly catalogue transaction aborted'));};
  }catch(error){db.close();reject(error);}};
-}));}
+}),transport);return observed.transport==='json'?JSON.parse(observed.text):observed.value;}
 
 // CHECK-ART03: public surface access is readonly over every native Game store.
 async function checkArt03Read(page:Page,body:()=>Promise<void>){const before=await readJourneyDatabase(page);await body();expect(await readJourneyDatabase(page)).toEqual(before);}
