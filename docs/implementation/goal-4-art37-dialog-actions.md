@@ -1,0 +1,5 @@
+# ART37 弹窗/按钮新材质及越界修缮
+
+按0089落地共享青黛弹窗、玉质主按钮、可辨朱墨危险动作、内凹按下和静态焦点；复核时发现并修正旧主题1px按下位移的优先级覆盖。用户否定旧繁复饰框后，实际使用内置imagegen重绘两材质并接入；原画、提示词/回执、确定导出、alpha/哈希与原预算均保。
+
+证据见[审查](../../goal-4/evidence/art37/review.md)、[检查](../../goal-4/evidence/art37/checks.json)、[33类映射](../../goal-4/evidence/art37/dialog-map.json)、[画面](../../goal-4/evidence/art37/visual-current.json)、[来源](../../goal-4/evidence/art37/source-audit.json)、[历史尝试](../../goal-4/evidence/art37/attempts.json)。65项固定桌面交互、873核心、590资源和类型构建通过；完整矩阵/最终候选与整体美术、长期、真人未完。全部兼容和环境性能暂停，未推送或自动更新用户档。

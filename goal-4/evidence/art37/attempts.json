@@ -1,0 +1,218 @@
+[
+  {
+    "phase": "baseline",
+    "terminal": {
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 3299,
+      "runtime": "5db63d9a8ec8279ba4c8edaf16a356b2103ae58b9740d85f5353f0ee278ee03d",
+      "stats": {
+        "startTime": "2026-11-02T08:55:36.156Z",
+        "duration": 59086.316,
+        "expected": 21,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 21,
+      "retried": [],
+      "reportSha256": "166cd2294c497c16d4ce5a92bbcc946a928ed289685ac87f9212a59444344c8c"
+    },
+    "report": "artifacts/goal-4/art37/baseline-report.json",
+    "log": "artifacts/goal-4/art37/baseline.log"
+  },
+  {
+    "phase": "probe",
+    "terminal": {
+      "exit": 1,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 3304,
+      "runtime": "5db63d9a8ec8279ba4c8edaf16a356b2103ae58b9740d85f5353f0ee278ee03d",
+      "stats": {
+        "startTime": "2026-11-02T09:17:40.973Z",
+        "duration": 12511.12,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 1,
+      "retried": [],
+      "reportSha256": "a1d37b8f61479fc2601527be59896d5a673bd0d354502c1fc767728b8ab6bb29"
+    },
+    "report": "artifacts/goal-4/art37/probe-report.json",
+    "log": "artifacts/goal-4/art37/probe.log"
+  },
+  {
+    "phase": "probe-green",
+    "terminal": {
+      "exit": 1,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 3305,
+      "runtime": "958f84aabe7bc78c520f0da0fd533de04ffdc368e057932e39db441c5af4d014",
+      "stats": {
+        "startTime": "2026-11-02T09:34:23.031Z",
+        "duration": 12065.864000000001,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 1,
+      "retried": [],
+      "reportSha256": "50f25b71b127b5173f6e9450a4e32f4076ec024bf5b5ff9ec66a2b4be0999946"
+    },
+    "report": "artifacts/goal-4/art37/probe-green-report.json",
+    "log": "artifacts/goal-4/art37/probe-green.log"
+  },
+  {
+    "phase": "author-gallery",
+    "terminal": {
+      "exit": 1,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 3300,
+      "runtime": "958f84aabe7bc78c520f0da0fd533de04ffdc368e057932e39db441c5af4d014",
+      "stats": {
+        "startTime": "2026-11-02T09:34:46.630Z",
+        "duration": 58309.818,
+        "expected": 20,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 21,
+      "retried": [],
+      "reportSha256": "bcb127311864a1170009b245758838c4d5691c93f3ec182606c870a1dc6fc5a5"
+    },
+    "report": "artifacts/goal-4/art37/author-gallery-report.json",
+    "log": "artifacts/goal-4/art37/author-gallery.log"
+  },
+  {
+    "phase": "author2",
+    "terminal": {
+      "exit": 1,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 3301,
+      "runtime": "908ed34f604b6f4255475fc194d9b36507978a9e3cd6bf7a6e446a2083982da0",
+      "stats": {
+        "startTime": "2026-11-02T09:39:54.884Z",
+        "duration": 91092.02,
+        "expected": 32,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 33,
+      "retried": [],
+      "reportSha256": "77697293e5bb5126434ecd4919aa28027698195606459ac24debf4a862314448"
+    },
+    "report": "artifacts/goal-4/art37/author2-report.json",
+    "log": "artifacts/goal-4/art37/author2.log"
+  },
+  {
+    "phase": "final-ui",
+    "terminal": {
+      "exit": 1,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 3305,
+      "runtime": "7add550f0ac8f504f66c8200c86bb15de7aca29a12b811dc6d95f54d5a7db5ab",
+      "stats": {
+        "startTime": "2026-11-02T09:47:49.937Z",
+        "duration": 233788.34600000002,
+        "expected": 62,
+        "skipped": 0,
+        "unexpected": 3,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 65,
+      "retried": [],
+      "reportSha256": "8f10635fb019283bede8a82a77dd45fc6589728a7c24b16623aba0bb1af0d925"
+    },
+    "report": "artifacts/goal-4/art37/final-ui-report.json",
+    "log": "artifacts/goal-4/art37/final-ui.log"
+  },
+  {
+    "phase": "artwork-ui",
+    "terminal": {
+      "exit": 1,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 3317,
+      "runtime": "2ad57dbd0ed45dc9c6c2380968f52bbb9c905fb60414903b241b55914c5d04e0",
+      "stats": {
+        "startTime": "2026-11-02T10:09:32.503Z",
+        "duration": 253042.162,
+        "expected": 61,
+        "skipped": 0,
+        "unexpected": 4,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 65,
+      "retried": [],
+      "reportSha256": "51d1f357f2660bec00793921fc67d52549c351faf8d785a943b2773848a6d40a"
+    },
+    "report": "artifacts/goal-4/art37/artwork-ui-report.json",
+    "log": "artifacts/goal-4/art37/artwork-ui.log"
+  },
+  {
+    "phase": "artwork2-ui",
+    "terminal": {
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 3317,
+      "runtime": "3f4f9616f14083c217643f7eeccdfd2314069712562cfde5ed586772a17e3ebb",
+      "stats": {
+        "startTime": "2026-11-02T10:29:23.158Z",
+        "duration": 191863.274,
+        "expected": 65,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 65,
+      "retried": [],
+      "reportSha256": "df097068f71e4a9817af78d978489a6ebcb4e6215589a6affd9a20a8fe010e1e"
+    },
+    "report": "artifacts/goal-4/art37/artwork2-ui-report.json",
+    "log": "artifacts/goal-4/art37/artwork2-ui.log"
+  },
+  {
+    "phase": "resources-first-artwork",
+    "tests": 590,
+    "passed": 589,
+    "failed": 1,
+    "reason": "Expected asset total missing two new materials; fixed exact +2 only",
+    "log": "artifacts/goal-4/art37/artwork-resources-full.log"
+  }
+]
