@@ -55,3 +55,13 @@ d8e完整UI830/native415/core875/资源590均过，normal原轮仍继续，help/
 当前仍仅1440×900/font1/单Chromium，兼容/环境性能与旧CI暂停。自己的4173测试源可在核归属与无运行测试后切换；用户56884—56887的试玩和存档保持只读边界。本机工具进程可沿用caffeinate -i。每张图单独核、最多两张回传，原PNG/JPEG68/hash保。回滚使用新revert，仅本v4扩展或有据局部修缮，保原版本与DB9/原13/历史原件。
 
 [杠精计划审查] 通过，当前承接真实未完完整检查，正常路线与完整目录均须有新实际终态。当前未完成。
+
+## 正常路线追踪采集诊断与后续参数（当前原轮仍运行）
+
+当前c241/e9b完整normal32仍在运行。前两条help/sword/craft在原240秒超时，原trace分别约250/255MB保留。depart样本14次已完成全库读取全部使用JSON快径，共2003.48ms；快径已生效，不能归因于未接入。其trace有2691个自动filmstrip帧，2677个JPEG资源共243019329B，占压缩包主要体积；433次点击共86612ms，其余读取/断言也耗时。卷积时序/体积仅诊断，不证明唯一根因或产品性能已修。
+
+依据本轮实际读取Playwright官方Tracing/TestOptions与安装test.d.ts，screenshots控制trace时间轴预览帧，snapshots保留DOM与网络，sources和attachments各自保留。下一轮仅外置normal-trace配置把trace改成{mode:'retain-on-failure',screenshots:false,snapshots:true,sources:true,attachments:true}，保留原错误自动截图与所有spec显式PNG、正文/几何/Game/Activity/全DB/回执/ms-1/每周期断言/全部行动步骤/原240秒与8秒/2worker/零自动重试。新trace明确没有连续JPEG画面，不能据此声称逐帧视觉已验收。原32完整基线及原filmstrip保留，完整UI834仍按原trace执行。
+
+当前原轮必须到真实终态后再启动新配置的完整32；不打断、不并行抢写或只重跑两条绿例。没有测试或产品源码改动，无需改时钟/模拟速度/资源/DB/旧矩阵签名。新配置、全部声明与112HTTP及同源before/after/终态另名保存；最终报告按真实先后保原失败，不抹旧证。若仍失败继续具体诊断，不把记录减负当产品修复或放宽原门槛。本动作是已有失败测试的采集参数修缮，当前兼容/环境性能专项继续暂停。
+
+来源 https://playwright.dev/docs/api/class-tracing#tracing-start 与 https://playwright.dev/docs/api/class-testoptions#test-options-trace 。

@@ -1,0 +1,38 @@
+{
+  "task": "CHECK90 continuation, incomplete",
+  "source": "c24190ef67b76e17bd501aaab1665fa79d648abb",
+  "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+  "observer": {
+    "exit": 0,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 3406,
+    "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+    "stats": {
+      "startTime": "2026-11-03T10:07:52.591Z",
+      "duration": 6481.685,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 3,
+    "retried": [],
+    "reportSha256": "5c8ce2a8e200f9b69fe26bd1868d3814cadae9a51842d1ba87fc77c27f0aeb5f"
+  },
+  "verifierAuthorMethods": 17,
+  "normalStatus": "running, six foundation guides passed; full route results pending",
+  "currentRequired": {
+    "ui": 834,
+    "persistence": 415,
+    "journey": 32,
+    "total": 1281
+  },
+  "compatibilityAndEnvironmentPerformance": "paused",
+  "normalSession": 53672,
+  "normalOwnedChild": 81501,
+  "normalConfig": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/normal.config.ts"
+}
