@@ -1,0 +1,19 @@
+{
+  "sourceHead": "8dea8ed39decabd08e398f8d59a3bb6d435ea570",
+  "passed": true,
+  "coreCounts": {
+    "tests": 881,
+    "pass": 881,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "resourceMethods": 612,
+  "resourceSeconds": 509.527,
+  "allTenGates": true,
+  "trackedInputs": 3504,
+  "inputsExact": true,
+  "report": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/closure-core-report/validation.json",
+  "reportSHA256": "be091d10a41abdd57429edda0b887ce88b145e197d604101f3fd6a3fbb1e0124"
+}

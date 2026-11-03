@@ -1,0 +1,23 @@
+{
+  "kind": "local engineering preview; not formal candidate",
+  "source": {
+    "head": "8dea8ed39decabd08e398f8d59a3bb6d435ea570",
+    "source": "8dea8ed39decabd08e398f8d59a3bb6d435ea570",
+    "tree": "e82ac518f0349501d24ccf071640a2fee5db313c",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "sourceDigest": "a62bed068bf6e8547fb18edd340dc3cdcf4af583ce6dd0d1116f05569b3e003b",
+  "archive": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/ux31-preview-8dea8ed.zip",
+  "archiveBytes": 10123523,
+  "archiveSha256": "4ea62f2bf23923ae6005bae9d906342331800d1b95510a142342eb41cd43802e",
+  "payloadFiles": 112,
+  "payloadBytes": 11209668,
+  "extractedPayloadAllMatch": true,
+  "savesIncluded": false,
+  "fontsIncluded": false,
+  "execution": "archive extracted and actually served on loopback 56888; all 112 HTTP payload hashes match current tested build",
+  "humanAcceptance": false
+}

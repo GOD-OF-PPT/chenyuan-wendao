@@ -1,18 +1,26 @@
 [
   {
     "id": "CHECK90-V01",
-    "status": "open",
+    "status": "resolved_in_ux31_engineering_scope",
     "severity": "visual readability",
     "surface": "recovery object with failed artwork",
     "evidence": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-slow-results/art11-inventory-stage-ART1-1c9bf-odes-and-a-tight-real-error-chromium/preference-static-result-does-not-hide-actual-dose-cost.png",
     "sha256": "a0f3805ea398e07cdf70cf9cdcd1d0b99d548f11363e19072495cde5196dd339",
     "observed": "The decorative medicine bowl covers the trailing portion of the image-fallback caption. Item name, inventory, actual effect, cost and controls remain readable.",
     "requiredFollowup": "Keep the object identifiable and the complete meaningful fallback information unobstructed; inspect the bowl/caption relationship and remove duplicate implementation wording only with explicit display review.",
-    "scope": "fixed1440x900; not compatibility or overall art acceptance"
+    "scope": "fixed1440x900; not compatibility or overall art acceptance",
+    "originalStatus": "open",
+    "resolution": {
+      "productCommit": "8dea8ed",
+      "runtime": "a62bed068bf6e8547fb18edd340dc3cdcf4af583ce6dd0d1116f05569b3e003b",
+      "review": "goal-4/evidence/ux31/review.md",
+      "humanAcceptance": false,
+      "overallArtAndCopyStillPending": true
+    }
   },
   {
     "id": "CHECK90-V02",
-    "status": "open",
+    "status": "resolved_in_ux31_engineering_scope",
     "severity": "copy and line-breaking polish",
     "surfaces": [
       "relic owned-state badge",
@@ -26,17 +34,33 @@
     ],
     "observed": "Short word groups split across lines, for example 尚未装/备 and 库存保留/0. Content remains present but reading is less natural.",
     "requiredFollowup": "Refine short player-facing labels and preserve meaningful word/number groups without shrinking fonts or losing budgets.",
-    "scope": "fixed1440x900; overall art acceptance remains pending"
+    "scope": "fixed1440x900; overall art acceptance remains pending",
+    "originalStatus": "open",
+    "resolution": {
+      "productCommit": "8dea8ed",
+      "runtime": "a62bed068bf6e8547fb18edd340dc3cdcf4af583ce6dd0d1116f05569b3e003b",
+      "review": "goal-4/evidence/ux31/review.md",
+      "humanAcceptance": false,
+      "overallArtAndCopyStillPending": true
+    }
   },
   {
     "id": "CHECK90-V03",
-    "status": "open",
+    "status": "resolved_in_ux31_engineering_scope",
     "severity": "copy density and repeated state",
     "surface": "paused study stage",
     "evidence": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-regular-results/check-art36-cbase-art37-CH-323fe-d-one-atomic-original-cycle-chromium/study-saved-paused.png",
     "sha256": "1c6699c037f038aab653989a4cd9f915169e55f2a971ae9e277c8d2b97be018e",
     "observed": "Paused state appears in the HUD and study footer, while the same saved-plan/resume wording is repeated at the top-left of the stage and in its disabled primary control. The current 1/2 progress is also repeated. Content is readable but repeats the reading burden reported by the user.",
     "requiredFollowup": "Reduce repeated messages to one clear current state and real resume destination, while preserving the full finite budget, saved-plan/draft distinction, comparison, all queue entries, original retry and explicit authorization. Scope and exact changes must be registered before implementation.",
-    "scope": "fixed1440x900; current UX30 covered cultivation/alchemy/recovery, study copy still awaits the next focused pass; not a waiver of overall clarity"
+    "scope": "fixed1440x900; current UX30 covered cultivation/alchemy/recovery, study copy still awaits the next focused pass; not a waiver of overall clarity",
+    "originalStatus": "open",
+    "resolution": {
+      "productCommit": "8dea8ed",
+      "runtime": "a62bed068bf6e8547fb18edd340dc3cdcf4af583ce6dd0d1116f05569b3e003b",
+      "review": "goal-4/evidence/ux31/review.md",
+      "humanAcceptance": false,
+      "overallArtAndCopyStillPending": true
+    }
   }
 ]

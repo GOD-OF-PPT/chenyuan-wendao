@@ -529,3 +529,6 @@ ART37依[0089](docs/decisions/0089-dialog-action-overflow-art37-contract.md)统�
 
 
 CHECK90的UX30消费者复核所得：说明从常驻区转到手记/预估/完整安排后，验收须沿真实入口打开，保原全文语义与可见/字体/几何、正常路线和原时限，不用visible过滤或删断言规避。互斥details阅读后恢复原展开状态，返回稳定来源焦点，完整库不变再执行原活动；真实计时起点仍在查看结束之后。原失败与整文件复验分别留身份，同运行版本聚合不能把原失败轮重贴为通过。功能1281覆盖与V01/V02/V03视觉缺口、整体艺术长期真人分别记录，兼容环境性能暂停边界不变。
+
+
+UX31依据[0092](docs/decisions/0092-visual-readability-ux31-contract.md)及本轮实读[Riot Clarity](https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/)、[XAG101](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/101)：短语与标签/数值按含义成组，检查正常、禁售、已拥有/已认主、保存失败和最大合法值，不以普通态通过代所有分支。装饰让位于完整字形；失图可调整物件关系，不能缩字体/图标或遮掉说明。暂停主区保当前状态、实际预算和原继续入口，完整已完成量/原预算说明可在已有安排里按需读，新安排预演须另标；查看仍不执行或重授预算。原保护源码经精确逆变换保旧hash，实际当前组字节另核；旧域变异测试可物化精确旧视图以保原语义断言，但当前新源必须另有严格保护与真实消费验证。6px/字体门槛/分行均为项目具体选择，非来源认证；整体艺术长期真人与当前兼容环境暂停边界保持。

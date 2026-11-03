@@ -1,0 +1,22 @@
+[
+  {
+    "name": "bag-ascension_seal-complete-uses",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/layout-recheck/layout-file-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-ascension_seal-complete-uses.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/layout-recheck/bag-ascension_seal-complete-uses.jpg",
+    "sha256": "e954651bcb42109a03d4256f694a82304749bce7bdb693b614891e037199a790",
+    "viewSha256": "bd58d7421c258a50d7c5d73e932775df4e50874b9cb0d83871ac2acfaa6377bd",
+    "encoding": "same1440x900 JPEG68, original lossless PNG retained",
+    "actualViewed": true,
+    "review": "Actual final catalogue item and full-use dialog pixels reviewed after complete 40-PNG loop: entire text and return/source controls visible without cropping."
+  },
+  {
+    "name": "bag-ascension_seal",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/layout-recheck/layout-file-results/stage-r3-layout-all-twelve-a0268-and-complete-read-only-uses-chromium/bag-ascension_seal.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/layout-recheck/bag-ascension_seal.jpg",
+    "sha256": "737c9f34c9bc101746505e3f46b97bf56720e09752714a1a03e28188b6261007",
+    "viewSha256": "0730062688af3d5dc4d62ed21bed778f616a8aff64696192867625537373c75c",
+    "encoding": "same1440x900 JPEG68, original lossless PNG retained",
+    "actualViewed": true,
+    "review": "Actual final catalogue item and full-use dialog pixels reviewed after complete 40-PNG loop: entire text and return/source controls visible without cropping."
+  }
+]

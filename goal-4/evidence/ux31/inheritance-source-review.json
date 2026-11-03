@@ -1,0 +1,1039 @@
+{
+  "requiredUnique": 161,
+  "wholeFileRecheck": 13,
+  "inheritedUnique": 148,
+  "unchangedDependencyFiles": 55,
+  "nonLiteral": [],
+  "checks": [
+    {
+      "file": "scripts/economy/idle-scenarios.mjs",
+      "sha256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407"
+    },
+    {
+      "file": "src/full/activity.ts",
+      "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815"
+    },
+    {
+      "file": "src/full/adventure.ts",
+      "sha256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015"
+    },
+    {
+      "file": "src/full/ascension.ts",
+      "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a"
+    },
+    {
+      "file": "src/full/configuration.ts",
+      "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520"
+    },
+    {
+      "file": "src/full/content.ts",
+      "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c"
+    },
+    {
+      "file": "src/full/contracts.ts",
+      "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa"
+    },
+    {
+      "file": "src/full/costs.ts",
+      "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb"
+    },
+    {
+      "file": "src/full/economy-ledger.ts",
+      "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0"
+    },
+    {
+      "file": "src/full/engine.ts",
+      "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+    },
+    {
+      "file": "src/full/errors.ts",
+      "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4"
+    },
+    {
+      "file": "src/full/events.ts",
+      "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d"
+    },
+    {
+      "file": "src/full/goals.ts",
+      "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883"
+    },
+    {
+      "file": "src/full/life-record.ts",
+      "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7"
+    },
+    {
+      "file": "src/full/mechanisms.ts",
+      "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221"
+    },
+    {
+      "file": "src/full/milestones.ts",
+      "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492"
+    },
+    {
+      "file": "src/full/preparation.ts",
+      "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a"
+    },
+    {
+      "file": "src/full/progression.ts",
+      "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406"
+    },
+    {
+      "file": "src/full/queries.ts",
+      "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48"
+    },
+    {
+      "file": "src/full/receipts.ts",
+      "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae"
+    },
+    {
+      "file": "src/full/story-context.ts",
+      "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950"
+    },
+    {
+      "file": "src/full/trial-rules.ts",
+      "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53"
+    },
+    {
+      "file": "src/full/types.ts",
+      "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064"
+    },
+    {
+      "file": "src/full/versions.ts",
+      "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64"
+    },
+    {
+      "file": "tests/full-route.mjs",
+      "sha256": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321"
+    },
+    {
+      "file": "web/e2e/art10-equipment-stage.spec.ts",
+      "sha256": "29406ab9c74ee242e338709e579d8a20e31d7969d264f587a138bbee531bed8e"
+    },
+    {
+      "file": "web/e2e/art11-inventory-stage.spec.ts",
+      "sha256": "5b5a580836ba5b71ae9bcfc6706faac7692a0f5fdc5b8470d7eb1868243ef7db"
+    },
+    {
+      "file": "web/e2e/art27-relic-workshop.spec.ts",
+      "sha256": "3cbd79d99ea83f3ce29d655e34ac49d61676047182b3d0017599cb567d13d2c2"
+    },
+    {
+      "file": "web/e2e/art35-study-rest.spec.ts",
+      "sha256": "fdbe0f2c245adc635e0acc09bb813f354baebcdee3db6cc69599981d2af9cb1f"
+    },
+    {
+      "file": "web/e2e/check-art03-combinations.spec.ts",
+      "sha256": "7328c7039ef04bb1dbd33c9e51ec4ac37bb772c185a5f49be3a74f8ec9c404b2"
+    },
+    {
+      "file": "web/e2e/check-art36-cbase-art37.spec.ts",
+      "sha256": "e0a8a100ae9b177152dcae5f5dee4e0a2037dad6171a304cf561b096440bcdbc"
+    },
+    {
+      "file": "web/e2e/check-ta-03.spec.ts",
+      "sha256": "32931660236b597917e3da8cc6a0b8fff355f2652b44723a58e0557d4c84b747"
+    },
+    {
+      "file": "web/e2e/equipment-actors.spec.ts",
+      "sha256": "7624bcbae4f42d6ea9ae4e88e0da9e5ecd09c47a36c04f4cb4a657adf118eb27"
+    },
+    {
+      "file": "web/e2e/equipment-objects.spec.ts",
+      "sha256": "26ffa06fee96cf726ed0f565735d62bd643907285ad73f8c148e67f737568679"
+    },
+    {
+      "file": "web/e2e/game-confirmation-support.ts",
+      "sha256": "be4bbdeaebab740befaf52e37582098c6d9d87030c71d2cabbb756238017f3fd"
+    },
+    {
+      "file": "web/e2e/idle-preparation-active.spec.ts",
+      "sha256": "a0656d1eebcb51e4ca6bac519ed2a8f789c34b25de140582633ca4c8bb94ca45"
+    },
+    {
+      "file": "web/e2e/idle-preparation-drafts.spec.ts",
+      "sha256": "2ccac15b0fb9f8354a752eff7a110c0361fb3f09f4b83fed7b250cc381d173c9"
+    },
+    {
+      "file": "web/e2e/idle-preparation.spec.ts",
+      "sha256": "ccec62a01831bb1326c53341466e111ef0d8ee06207af945ddab850ac869248e"
+    },
+    {
+      "file": "web/e2e/idle-recovery-ui-support.ts",
+      "sha256": "2b2e9df03cf97cf582a03eb23d2bc2d3eb078a4cffc9c953f54972c047c6d04f"
+    },
+    {
+      "file": "web/e2e/idle-route-support.ts",
+      "sha256": "5113456696aac00759ec7d007a52e0493e8545a39f2d6a14f0de2ce79106615d"
+    },
+    {
+      "file": "web/e2e/inventory-objects.spec.ts",
+      "sha256": "3f252bfb6637fca6abc2852321f177c8ceacfc848fe57202ec7bda1ec44f1e05"
+    },
+    {
+      "file": "web/e2e/jade-paint-support.ts",
+      "sha256": "eff5e085fe03f2e2e292750c2e5367516dd4ab60a30f382f3a4e4fa5533fa94f"
+    },
+    {
+      "file": "web/e2e/png-capture.ts",
+      "sha256": "f50dc121db18150b8c4c4b48cc0fefc897b4d1e4edffc662c119c1c366cad85b"
+    },
+    {
+      "file": "web/e2e/stage-check.spec.ts",
+      "sha256": "fa4dddaea3bbf257a25b757695545c123f9db85e580255126d640c240904ea2e"
+    },
+    {
+      "file": "web/e2e/stage-support.ts",
+      "sha256": "3641cc3ae348aedb7ccfac34e36cfc5fc2366165b64a06769fb687d0694ff32e"
+    },
+    {
+      "file": "web/e2e/support.ts",
+      "sha256": "fd9a2b17463210c5b4d7398be6afd464832557e2293fa9872e51b7f3dd06c4c0"
+    },
+    {
+      "file": "web/e2e/ux26-learning-draft-context.spec.ts",
+      "sha256": "f2b200731c31ce715704c0540f6643a4e5825a741eddfcfc53cac1d4007589e4"
+    },
+    {
+      "file": "web/e2e/ux28-recovery-period.spec.ts",
+      "sha256": "a8acd54ae42edc5444d1b9b488c21291f18c7a222af4d7b3a5d46cf3d5a7a665"
+    },
+    {
+      "file": "web/e2e/ux29-recovery-availability.spec.ts",
+      "sha256": "802f739db722ced0918e0b7bd09e85997c4cbdb48e2ed86f9bf554ff88e59ce9"
+    },
+    {
+      "file": "web/e2e/ux30-primary-copy.spec.ts",
+      "sha256": "6ef3e1872494fbb3e8a1b18b1cf1efc3b59a6a524c0c052548b3292223669d56"
+    },
+    {
+      "file": "web/e2e/ux31-readability.spec.ts",
+      "sha256": "2912f3081a9e3f61f0eb1bebba0d2f4dc41a3c4f7db29b8610a530dd9f809afc"
+    },
+    {
+      "file": "web/src/activity-persistence.ts",
+      "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf"
+    },
+    {
+      "file": "web/src/configuration-persistence.ts",
+      "sha256": "a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00"
+    },
+    {
+      "file": "web/src/local-events.ts",
+      "sha256": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150"
+    },
+    {
+      "file": "web/src/local-experience.ts",
+      "sha256": "65614c37cd5931b275208f78aa9bf06f40768ff402a908fb2d2cf28d16e3b9ed"
+    }
+  ],
+  "inherited": [
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A1 selected jade remains the default object and complete catalogues open only on request",
+      "project": "chromium"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A2 opening a jade choosing another scroll and explicitly adding or removing it have separate readonly draft effects",
+      "project": "chromium"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A3 finite saved scrolls next draft and library reading survive return without borrowing the running command or a new run",
+      "project": "chromium"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A4 learned unequipped scrolls compare atomically while an equipped scroll presents its fact and a useful browse decision",
+      "project": "chromium"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A5 retained materials actual money and an insufficient authorization choose different complete preparation decisions",
+      "project": "chromium"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A6 one genuine retained-material gap leads through an explicit source and cave journey back to the nondefault forge plan",
+      "project": "chromium"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A7 an owned artifact moves to compare or browse while its complete original forge authorization remains canonical after refresh",
+      "project": "chromium"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A8 a positive-cost forge START quota keeps its original authorization through readonly catalogues and retries once",
+      "project": "chromium"
+    },
+    {
+      "file": "art10-equipment-stage.spec.ts",
+      "title": "ART10-A9 catalogue preparation and limit surfaces keep one keyboard owner complete text and the selected object on close",
+      "project": "chromium"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A1 one selected real item precedes an explicitly requested complete fourteen-item satchel catalogue",
+      "project": "chromium"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A2 zero-stock blueprints lead to readonly sources while every full use price and protected breakthrough fact remains reachable",
+      "project": "chromium"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A3 each owned medicine can be inspected used or sold without choosing a purpose spending it and cave rest stays available",
+      "project": "chromium"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A4 supply purposes retain nondefault drafts and canonical saved authorizations without inventing per-medicine caches or crossing a new run",
+      "project": "chromium"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A5 source reading returns to the selected item and its real draft while an explicit cave journey never performs recovery",
+      "project": "chromium"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A6 a paid medicine quota keeps new catalogue and uses readonly then retries its original command once and cancelled old configuration permits only a fresh supply intent",
+      "project": "chromium"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A7 consuming the last real dose and a lawful realm change reconcile only the selected view while a replacement life closes old catalogue ownership",
+      "project": "chromium"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A8 new item surfaces retain keyboard return full text and safe failed-art fallbacks in both reduced-effect modes and a tight real error",
+      "project": "chromium"
+    },
+    {
+      "file": "art27-relic-workshop.spec.ts",
+      "title": "ART27-A1 all four actual cold silhouettes become readable workshop subjects while original materials effects and Game stay readonly",
+      "project": "chromium"
+    },
+    {
+      "file": "art27-relic-workshop.spec.ts",
+      "title": "ART27-A2 actual owned and bound objects retain complete budgets and original explicit comparison with no forged ownership",
+      "project": "chromium"
+    },
+    {
+      "file": "art27-relic-workshop.spec.ts",
+      "title": "ART27-A3 a positive forge keeps its original full cycle cold until native save and quota retry commits exactly one complete artifact",
+      "project": "chromium"
+    },
+    {
+      "file": "art27-relic-workshop.spec.ts",
+      "title": "ART27-A4 a mortal reads the same complete future catalogue and real gate during a finite cultivation without restarting its clock",
+      "project": "chromium"
+    },
+    {
+      "file": "art27-relic-workshop.spec.ts",
+      "title": "ART27-A5 failed workshop or all-art fallback preserves keyboard budgets and real facts under both reduced-effect choices",
+      "project": "chromium"
+    },
+    {
+      "file": "art35-study-rest.spec.ts",
+      "title": "ART35-A1 cold actual painted codex replaces flat faces without starting a Game action",
+      "project": "chromium"
+    },
+    {
+      "file": "art35-study-rest.spec.ts",
+      "title": "ART35-A2 resting uses the existing cold seated self and real body facts without claiming a recovery",
+      "project": "chromium"
+    },
+    {
+      "file": "art35-study-rest.spec.ts",
+      "title": "ART35-A3 all twelve real covers and manual preserve six silhouettes and actual five-leaf opening without writes",
+      "project": "chromium"
+    },
+    {
+      "file": "art35-study-rest.spec.ts",
+      "title": "ART35-A4 skills artwork follows the original full period and seals behind an atomic save before mastery",
+      "project": "chromium"
+    },
+    {
+      "file": "art35-study-rest.spec.ts",
+      "title": "ART35-A4 manual artwork follows the original full period and seals behind an atomic save before mastery",
+      "project": "chromium"
+    },
+    {
+      "file": "art35-study-rest.spec.ts",
+      "title": "ART35-A5 rest keeps the actual thirty second deadline and complete original body receipt behind saving",
+      "project": "chromium"
+    },
+    {
+      "file": "art35-study-rest.spec.ts",
+      "title": "ART35-A6 corrupt new props leave original distinct native cases and seated fallback usable without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art35-study-rest.spec.ts",
+      "title": "ART35-A7 a late retired cover request cannot replace the current read-only object",
+      "project": "chromium"
+    },
+    {
+      "file": "art35-study-rest.spec.ts",
+      "title": "ART35-A8 a missing seated painting keeps the original visible meditation fallback and exact body facts",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art03-combinations.spec.ts",
+      "title": "CHECK-ART03-C1 paid queued study preserves its selected scroll complete draft and original finite authorization through bag people life and ordinary return",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art03-combinations.spec.ts",
+      "title": "CHECK-ART03-C2 retained relic materials and explicit travel preserve source return and newer market or rest drafts edited during the same journey",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art03-combinations.spec.ts",
+      "title": "CHECK-ART03-C3 both medicine purposes retain separate sale drafts while one real paid response supplies exactly one later dose and factual life stays readonly",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art03-combinations.spec.ts",
+      "title": "CHECK-ART03-C4 an atomic positive-medicine quota retains its original retry across all three objects and a partly spent paused order cannot become a fresh full allowance",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art36-cbase-art37.spec.ts",
+      "title": "CHECK90-C1 failed two-scroll study retains original authorization through new dialog cancel and one atomic original cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art36-cbase-art37.spec.ts",
+      "title": "CHECK90-C2 recovery keeps its selected object and full thirty second atomic period while new consent is cancelled",
+      "project": "chromium"
+    },
+    {
+      "file": "check-ta-03.spec.ts",
+      "title": "CHECK-TA03-C1 lawful stone commission funds paid study and exact instant equipment before one real formal battle turn",
+      "project": "chromium"
+    },
+    {
+      "file": "check-ta-03.spec.ts",
+      "title": "CHECK-TA03-C2 lawful raw jade becomes a once-retried unbound relic then exact recognition and one protected battle turn",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A1 all twelve two-school jade objects retain their complete real effects and readonly slot context beside an explicit finite scroll rail",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A2 finite scroll browsing keeps saved draft and slot domains distinct across manual return and clears only on a new run",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A3 two paid cross-school scrolls use frozen current commands through native sealing and metadata delivery without borrowing mastery",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A4 cumulative paid and legal zero-cost scrolls stop at exact budget or reserve without dropping mastered facts",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A5 native thirty-second paid learning has no early Game write and engraves one credible mastery",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A6 native sixty-second manual inscribes one insight while talisman school and actual equipment remain unchanged",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A7 four artifact blueprints become distinct workpieces and only saved owned artifacts reveal their real cold art",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A8 native sixty-second positive-cost forging saves full material and month costs before revealing an unbound artifact",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A9 paid LEARN cycle and FORGE admission quota failures retain the exact original intent for one first successful retry",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A10 pause pending hidden scenes and same-id foreign generations clear work and old seals while full history remains authoritative",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A11 three instant configurations keep comparison CAS and original retry while foreign A to B to A cannot relight old engraving",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A12 both reduced-effect modes and all four failed cold images retain complete readable objects budgets and first real retry results",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A1 all twelve jade slips and real loadout slots stay read-only inside distinct game objects",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A2 one legal forge enters cold native saving before its exact sixty-second artifact is committed",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A3 two selected cross-school jade slips keep exact separate cycles and show only the selected credible completion",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A4 a real thirty-second jade study saves its formal fee before the slip becomes mastered",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A5 a real sixty-second sword manual commits one insight and never silently changes school or equipment",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A6 a real sixty-second forge presents the selected artifact only after exact costs are saved",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A7 all four distinct artifact objects retain full materials, owned and actual bound states without writes",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A8 school skill and relic comparisons cancel without writes and explicit atomic confirmations retain their real scopes",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A9 native acceptance and cycle quota failures keep learning and forging cold while the original exact intent remains retryable",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A10 learning pause and same-id takeover immediately withdraw old short effects without changing the authoritative learned record",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A11 a foreign forge generation, hidden scene and historical receipt never light the old artifact or forge it twice",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active learn shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active study shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active buy shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active sell shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active use shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-active.spec.ts",
+      "title": "active rest shows its own object and decreasing cycle before any persisted effect",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "viewing a saved free learning plan keeps manual defaults and each mode retains its own unsubmitted draft",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "viewing a saved manual plan starts a separate learning queue and does not inherit the manual budget",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a saved market order keeps an edited stock target and budgets across a real cycle commit and pause",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a saved medicine arrangement keeps edited dose limits and recovery target across its cycle and pause",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "a middle shelf item stays visible after source navigation and reviewing its saved market plan",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation-drafts.spec.ts",
+      "title": "first medicine inspection is an unsaved draft and its eventual stop is labelled as a prediction",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "two selected jade slips learn in full separate cycles then require explicit compared equipment",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "manual travel keeps exact finite budget and never studies until separately confirmed",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "market purchases one item per deadline and sells medicine only within explicit inventory reserve",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "finite medicine recovery saves real effects then refresh preserves the original arrangement without offline rewards",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "changing school previews all three slots and cancel keeps Game and activity unchanged",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "a medicine cycle really counts six seconds and commits no early healing",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "configuration quota failure retains the original confirmation and a later cancelled failure does not block a new intent",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "cave rest uses one full thirty-second period for its original month and full restoration",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "title": "trial equipment inspection keeps its location and explicit rest navigation opens recovery without starting it",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A1 every fourteen satchel objects keep real quantities full uses and protected breakthrough ownership read-only",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A2 market counter and recovery ritual preserve their complete unsubmitted limits without using or trading",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A3 native medicine saving keeps the real body and medicine unchanged and never claims that an owned cycle needs takeover",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A4 one real buy period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A5 one real use period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A6 one real rest period keeps all formal costs and body changes behind its actual deadline",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A7 both medicine sales stop at the exact reserve and all five breakthrough offers stay explicitly forbidden",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A8 native acceptance quota failures keep buy medicine and rest atomic and retry the original exact intent once",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A9 native cycle quota failures keep buy medicine and rest atomic and retry the original exact intent once",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A10 saved recovery short effects stop immediately for held pause and same-id external ownership without losing the real medicine outcome",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A11 switching selected goods or buy sell mode and hidden views cannot borrow an active cycle or replay a foreign trade",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A12 missing symbol images and both reduced-effect modes keep all three game objects and an actual medicine result readable and usable",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "reselecting the same market object preserves the complete unconfirmed finite authorization",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "market buy and sell inspection retain separate drafts and never turn navigation into authorization",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "closing future market goods reconciles the actual object and its selected visible shelf",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "inventory sale inspection returns to its original selected object without a transaction",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "an edited paused battle strategy survives ordinary goal and character inspection with the same activity",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a completed battle retains its complete original strategy as read-only pages after the enemy is gone",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "market default shows the finite order and opens its complete limits on demand",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "recovery shows the body and real single-dose effect before its complete finite settings",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a direct source-market context returns from ordinary details with its order draft intact",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "repeated inventory use inspection preserves its edited default-view draft",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "repeated inventory sell inspection preserves its edited default-view draft",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "leaving and returning after a saved hit removes old actor and progress short effects",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a completed encounter original authorization stays readable after its explicit retreat changes location",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real buy waits its full online period and atomically saves one formal outcome",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real use waits its full online period and atomically saves one formal outcome",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "real rest waits its full online period and atomically saves one formal outcome",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a turn saved while reading ordinary details does not replay hidden damage on return",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "a replacement life cannot inherit a supply default-view deduplication or edited market budget",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "retreat labels distinguish ordinary combat without changing the battle",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "title": "retreat labels distinguish the actual trial without changing the battle",
+      "project": "chromium"
+    },
+    {
+      "file": "ux26-learning-draft-context.spec.ts",
+      "title": "UX26-C1 manual accepted cycle keeps the actual saved timer separate from the unconfirmed next draft",
+      "project": "chromium"
+    },
+    {
+      "file": "ux26-learning-draft-context.spec.ts",
+      "title": "UX26-C1 skills accepted cycle keeps the actual saved timer separate from the unconfirmed next draft",
+      "project": "chromium"
+    },
+    {
+      "file": "ux26-learning-draft-context.spec.ts",
+      "title": "UX26-C2 manual paused original view edited draft and refreshed resume keep distinct truthful labels and the full original period",
+      "project": "chromium"
+    },
+    {
+      "file": "ux26-learning-draft-context.spec.ts",
+      "title": "UX26-C2 skills paused original view edited draft and refreshed resume keep distinct truthful labels and the full original period",
+      "project": "chromium"
+    },
+    {
+      "file": "ux26-learning-draft-context.spec.ts",
+      "title": "UX26-C3 manual rejected acceptance stays unconfirmed and original receipt retry never adopts a later edited draft",
+      "project": "chromium"
+    },
+    {
+      "file": "ux26-learning-draft-context.spec.ts",
+      "title": "UX26-C3 skills rejected acceptance stays unconfirmed and original receipt retry never adopts a later edited draft",
+      "project": "chromium"
+    },
+    {
+      "file": "ux26-learning-draft-context.spec.ts",
+      "title": "UX26-C4 manual failed period remains an unconfirmed next draft and exact original tick retries once without new authorization",
+      "project": "chromium"
+    },
+    {
+      "file": "ux26-learning-draft-context.spec.ts",
+      "title": "UX26-C4 skills failed period remains an unconfirmed next draft and exact original tick retries once without new authorization",
+      "project": "chromium"
+    },
+    {
+      "file": "ux26-learning-draft-context.spec.ts",
+      "title": "UX26-C5 running manual empty skill browsing and a separate queue never borrow saved ownership and a replacement life retires both drafts",
+      "project": "chromium"
+    },
+    {
+      "file": "ux28-recovery-period.spec.ts",
+      "title": "UX28-C1 both real medicines and cave rest retain per-unit time at the current decision and complete arrangement without executing",
+      "project": "chromium"
+    },
+    {
+      "file": "ux28-recovery-period.spec.ts",
+      "title": "UX28-C2 foreign rest separately describes the real six-second travel and thirty-second recovery then arrives without healing",
+      "project": "chromium"
+    },
+    {
+      "file": "ux28-recovery-period.spec.ts",
+      "title": "UX28-C3 healing_pill keeps its advertised real six-second deadline and one complete atomic saved dose",
+      "project": "chromium"
+    },
+    {
+      "file": "ux28-recovery-period.spec.ts",
+      "title": "UX28-C3 spirit_pill keeps its advertised real six-second deadline and one complete atomic saved dose",
+      "project": "chromium"
+    },
+    {
+      "file": "ux28-recovery-period.spec.ts",
+      "title": "UX28-C4 cave rest advertises thirty seconds and retains the actual single full restoration and game month",
+      "project": "chromium"
+    },
+    {
+      "file": "ux28-recovery-period.spec.ts",
+      "title": "UX28-C5 a failed original dose retains its six-second frozen intent while a new rest draft advertises thirty seconds",
+      "project": "chromium"
+    },
+    {
+      "file": "ux28-recovery-period.spec.ts",
+      "title": "UX28-C6 original paused and refreshed medicine limits remain exact while readonly recovery methods have distinct period labels",
+      "project": "chromium"
+    },
+    {
+      "file": "ux29-recovery-availability.spec.ts",
+      "title": "UX29-C1 foreign recovery shows real gates rather than failed zero forecasts while all views remain readonly",
+      "project": "chromium"
+    },
+    {
+      "file": "ux29-recovery-availability.spec.ts",
+      "title": "UX29-C2 an explicit six-second arrival reestimates actual Game and only a separately confirmed thirty-second rest restores it",
+      "project": "chromium"
+    },
+    {
+      "file": "ux29-recovery-availability.spec.ts",
+      "title": "UX29-C3 an already full cave shows the formal no-change reason without pretending a zero-yield arrangement",
+      "project": "chromium"
+    },
+    {
+      "file": "ux29-recovery-availability.spec.ts",
+      "title": "UX29-C4 missing healing_pill keeps real stock and its distinct formal gate with no fabricated batch output",
+      "project": "chromium"
+    },
+    {
+      "file": "ux29-recovery-availability.spec.ts",
+      "title": "UX29-C4 missing spirit_pill keeps real stock and its distinct formal gate with no fabricated batch output",
+      "project": "chromium"
+    },
+    {
+      "file": "ux29-recovery-availability.spec.ts",
+      "title": "UX29-C5 a true lifespan-reserve gate retains the one-cycle physical estimate and complete editable reserve without executing",
+      "project": "chromium"
+    },
+    {
+      "file": "ux29-recovery-availability.spec.ts",
+      "title": "UX29-C6 foreign travel native failure preserves all records and retries only its original six-second arrival then requires rest confirmation",
+      "project": "chromium"
+    },
+    {
+      "file": "ux29-recovery-availability.spec.ts",
+      "title": "UX29-C7 a paused original rest survives missing-medicine inspection and refresh with the same complete Game and saved limits",
+      "project": "chromium"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C1 cultivation keeps actionable unit facts and finite caps while complete forecasts and offline rules remain readonly with a preserved draft",
+      "project": "chromium"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C2 alchemy keeps true material costs period and finite authorisation while full recipe lore and safe-stop rules remain available without an action",
+      "project": "chromium"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C3 recovery shows each actual single effect once and complete medicine rest and stop details remain readable with all saved draft fields",
+      "project": "chromium"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C4 a real new mortal reaches the clear primary action and reading folded rules cannot restart or shortcut its original thirty-second saved cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "ux31-readability.spec.ts",
+      "title": "UX31-A1 both medicine fallbacks keep complete words clear of the bowl through a real failed acceptance and original retry",
+      "project": "chromium"
+    },
+    {
+      "file": "ux31-readability.spec.ts",
+      "title": "UX31-A2 trade direction and recovery reserve values stay in complete word groups while all viewing stays readonly",
+      "project": "chromium"
+    },
+    {
+      "file": "ux31-readability.spec.ts",
+      "title": "UX31-A3 unmade owned and bound relic labels remain complete words during a real unrelated saved-error state",
+      "project": "chromium"
+    },
+    {
+      "file": "ux31-readability.spec.ts",
+      "title": "UX31-A4 paused study keeps a concise current state and full progress on demand before the original remaining cycle resumes",
+      "project": "chromium"
+    }
+  ],
+  "changed": [
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "the actual jade object and status stay inside the stage and relic paging never overlaps its last object",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all twelve books and all fourteen bag objects retain real text, quantities and complete read-only uses",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "reading another slot and book cannot replace a multi-book draft or its edited cumulative limits",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "a fresh mortal has an explicit empty book catalogue without a phantom selected skill",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "missing catalogue paintings keep native jade and bag selection usable without inventing held objects",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "one selected book waits thirty real seconds and saves its actual cost before becoming learned",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "one selected relic waits its full real forge cycle and stays separate from equipment",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "same life realm growth keeps the selected bag item visible when newly unlocked materials move its page",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "changing school keeps the finite learning draft and selects a real book of the current school",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "manual context receives a school change then restores the old queue with a valid current-school selection",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all four relic objects expose their real costs and ingredients and equipment views remain read-only",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all four relic objects compare owned effects without equipping and equipment views remain read-only",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "a mastered book explains local comparison without asking for another learning trip",
+      "project": "chromium"
+    }
+  ],
+  "scope": "Read-only dependency comparison; dynamic recheck still awaits its real terminal"
+}
