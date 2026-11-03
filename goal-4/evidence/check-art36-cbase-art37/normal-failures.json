@@ -1,0 +1,72 @@
+[
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle help/sword/craft/transmit",
+    "status": "timedOut",
+    "duration": 279596,
+    "error": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle help/sword/craft/depart",
+    "status": "timedOut",
+    "duration": 279241,
+    "error": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle help/talisman/craft/transmit",
+    "status": "timedOut",
+    "duration": 286017,
+    "error": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle help/talisman/craft/depart",
+    "status": "timedOut",
+    "duration": 284618,
+    "error": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle trade/sword/craft/transmit",
+    "status": "timedOut",
+    "duration": 274988,
+    "error": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle trade/sword/craft/depart",
+    "status": "timedOut",
+    "duration": 274742,
+    "error": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle trade/talisman/craft/transmit",
+    "status": "timedOut",
+    "duration": 279995,
+    "error": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle trade/talisman/craft/depart",
+    "status": "failed",
+    "duration": 266521,
+    "error": "Error: Test timeout of 240000ms exceeded"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle leave/sword/craft/transmit",
+    "status": "timedOut",
+    "duration": 268193,
+    "error": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  },
+  {
+    "file": "idle-normal-matrix.spec.ts",
+    "title": "normal idle leave/sword/craft/depart",
+    "status": "timedOut",
+    "duration": 266588,
+    "error": "\u001b[31mTest timeout of 240000ms exceeded.\u001b[39m"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "original": "artifacts/goal-4/check-art36-cbase-art37/combination-results/check-art36-cbase-art37-CH-323fe-d-one-atomic-original-cycle-chromium/failed-study-cancel.png",
+    "view": "artifacts/goal-4/check-art36-cbase-art37/combination-light/failed-study-cancel.jpg",
+    "sha256": "cb0006c4f3f598020f5fe0846d47d43ad2c4ddb9dbcedf0558128a25070c956f",
+    "viewSha256": "383575c0b5d7fdb96be50988ff30eccc8484816e12e5bf8b60714d4a7ee2bb62",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68 lossy; originalPNG retained",
+    "notes": "Actual combination pixel review; failure/complete parameters/consent/paused or saved state legible. Not user visual acceptance."
+  },
+  {
+    "original": "artifacts/goal-4/check-art36-cbase-art37/combination-results/check-art36-cbase-art37-CH-323fe-d-one-atomic-original-cycle-chromium/failed-study-plan.png",
+    "view": "artifacts/goal-4/check-art36-cbase-art37/combination-light/failed-study-plan.jpg",
+    "sha256": "e52925cf8af681e9102d4c2800c73a553c89ea0fae913378c6830e09fd2cbdd1",
+    "viewSha256": "cb73054c4e9089784b81cc48d9a5a1aa7a5d7fe17819d3e40643fe788846a34b",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68 lossy; originalPNG retained",
+    "notes": "Actual combination pixel review; failure/complete parameters/consent/paused or saved state legible. Not user visual acceptance."
+  },
+  {
+    "original": "artifacts/goal-4/check-art36-cbase-art37/combination-results/check-art36-cbase-art37-CH-323fe-d-one-atomic-original-cycle-chromium/failed-study.png",
+    "view": "artifacts/goal-4/check-art36-cbase-art37/combination-light/failed-study.jpg",
+    "sha256": "18d14a76ef94e01d084b7e8cf08c420090396ea66419440ed97e61a37f83fea2",
+    "viewSha256": "bec3417fe338b79ead8f6e2e7c221076179280d18bad35bdfbf49b2176f33b4e",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68 lossy; originalPNG retained",
+    "notes": "Actual combination pixel review; failure/complete parameters/consent/paused or saved state legible. Not user visual acceptance."
+  },
+  {
+    "original": "artifacts/goal-4/check-art36-cbase-art37/combination-results/check-art36-cbase-art37-CH-323fe-d-one-atomic-original-cycle-chromium/study-saved-paused.png",
+    "view": "artifacts/goal-4/check-art36-cbase-art37/combination-light/study-saved-paused.jpg",
+    "sha256": "04e7a3698f41d20132075d971dafa1923f364d8b0e1899b37fc58b1fdb9c23da",
+    "viewSha256": "573d4749ab61cd2d7ba882d1a82ef85e0beddc94de8cdb6cee86d041ef9a77be",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68 lossy; originalPNG retained",
+    "notes": "Actual combination pixel review; failure/complete parameters/consent/paused or saved state legible. Not user visual acceptance."
+  },
+  {
+    "original": "artifacts/goal-4/check-art36-cbase-art37/combination-results/check-art36-cbase-art37-CH-c3229-le-new-consent-is-cancelled-chromium/rest-cancel.png",
+    "view": "artifacts/goal-4/check-art36-cbase-art37/combination-light/rest-cancel.jpg",
+    "sha256": "4e8d7be2635ff1d620aa7a2c94884829a9052c2397c0f927aac56b5c4aa9964a",
+    "viewSha256": "9c9cf55ad389009ce1a311e4a7e285f3ec7deb9c8e87606c246e0c2e25de9592",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68 lossy; originalPNG retained",
+    "notes": "Actual combination pixel review; failure/complete parameters/consent/paused or saved state legible. Not user visual acceptance."
+  },
+  {
+    "original": "artifacts/goal-4/check-art36-cbase-art37/combination-results/check-art36-cbase-art37-CH-c3229-le-new-consent-is-cancelled-chromium/rest-plan.png",
+    "view": "artifacts/goal-4/check-art36-cbase-art37/combination-light/rest-plan.jpg",
+    "sha256": "3c9e0524e7795a7f2443414ed7475975551d31de59bef882de0ddbbb9f13746e",
+    "viewSha256": "f76de8e771b5e078a5fb6bcf5a370dc8a9088d1e181818aa4922dc64ce1808bf",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68 lossy; originalPNG retained",
+    "notes": "Actual combination pixel review; failure/complete parameters/consent/paused or saved state legible. Not user visual acceptance."
+  },
+  {
+    "original": "artifacts/goal-4/check-art36-cbase-art37/combination-results/check-art36-cbase-art37-CH-c3229-le-new-consent-is-cancelled-chromium/rest-running-cancel.png",
+    "view": "artifacts/goal-4/check-art36-cbase-art37/combination-light/rest-running-cancel.jpg",
+    "sha256": "97b140ac86b7e193a66dbe6c3747586b0bef45c1082e419a5838d872a3d0556f",
+    "viewSha256": "fdf69b6dd381b432e61a37b89d1b1008b36fa93f83ee17a95d2f4d9e21cf995d",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68 lossy; originalPNG retained",
+    "notes": "Actual combination pixel review; failure/complete parameters/consent/paused or saved state legible. Not user visual acceptance."
+  },
+  {
+    "original": "artifacts/goal-4/check-art36-cbase-art37/combination-results/check-art36-cbase-art37-CH-c3229-le-new-consent-is-cancelled-chromium/rest-saved.png",
+    "view": "artifacts/goal-4/check-art36-cbase-art37/combination-light/rest-saved.jpg",
+    "sha256": "359cabfa5aae706b870ec8505aeb46d05a31d9171000a195e59cc4660a08e7b4",
+    "viewSha256": "94b2df3ed3132faacff380141797a25a89d786eea3bdccfe22aecbaa28187c58",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68 lossy; originalPNG retained",
+    "notes": "Actual combination pixel review; failure/complete parameters/consent/paused or saved state legible. Not user visual acceptance."
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "owners": [
+    {
+      "path": "web/src/App.vue",
+      "unchangedSince": "d1f269e",
+      "sha256": "ace7316243691e708ee80dac26aca866a9c28b7dbd8633cde11bf584a83ece71"
+    },
+    {
+      "path": "web/src/GameConfirmDialog.vue",
+      "unchangedSince": "d1f269e",
+      "sha256": "e607ab9f4eb60ee6725fb57f4d38a5c7f983ef82c6028539f7fe5e70b70a52cd"
+    },
+    {
+      "path": "web/src/use-game-confirmation.ts",
+      "unchangedSince": "d1f269e",
+      "sha256": "6835e6c1ae8dc8435aa57d18ea6529bef0808c3f326cae0adb10d235124df2e4"
+    },
+    {
+      "path": "web/src/store.ts",
+      "unchangedSince": "d1f269e",
+      "sha256": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7"
+    },
+    {
+      "path": "web/src/full-persistence.ts",
+      "unchangedSince": "d1f269e",
+      "sha256": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21"
+    },
+    {
+      "path": "src/full/engine.ts",
+      "unchangedSince": "d1f269e",
+      "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+    },
+    {
+      "path": "src/full/activity.ts",
+      "unchangedSince": "d1f269e",
+      "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815"
+    }
+  ],
+  "scope": "Exact unchanged controllers/rules/writers; shared CSS and validation source reviewed separately. Not a full security completion."
+}

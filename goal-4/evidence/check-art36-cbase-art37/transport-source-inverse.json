@@ -1,0 +1,8 @@
+{
+  "path": "web/e2e/idle-route-support.ts",
+  "beforeSHA256": "9a89e9da054a43d686cc8135f8e6ed5354110b480db7945eb5ebce2808547bb8",
+  "currentSHA256": "d5ff6b661f8f9f2b08c4e34b29c7873f8d518b85689c6e393ad390c0f9d142ed",
+  "fullOriginalReverseExact": true,
+  "unchanged": "All database open/store/getAllKeys/getAll/transaction-complete/pairing/error/close statements and all other module functions/imports; only guarded return transport and diagnostic mode added.",
+  "limit": "Transport validation only; current full consumer regression still pending."
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "path": "art/redesign/art18.json",
+    "sha256": "b9f4bddcb03ffec75b942e4198887f929408ea5eb2d1787b258aed10520a77e9",
+    "budgets": {
+      "maxNativeBytes": 18000,
+      "maxRuntimeBytes": 144000
+    }
+  },
+  {
+    "path": "art/redesign/art35.json",
+    "sha256": "74dd630c39fd44587b102116365b3fb98615928807e47caccd58da5f102035b8",
+    "budgets": {
+      "newNativeBytes": 7200,
+      "hookBytes": 2400,
+      "cssBytes": 4800,
+      "jadeDeltaBytes": 800,
+      "recoveryDeltaBytes": 400,
+      "newRasterAssets": 8,
+      "maxCoverBytes": 100000,
+      "maxLeafBytes": 40000,
+      "maxRuntimeBytes": 740000,
+      "coverWidth": 512,
+      "coverHeight": 512,
+      "leafWidth": 128,
+      "leafHeight": 512,
+      "oldTA09Cap": 30000,
+      "oldSupplyCap": 40000
+    }
+  },
+  {
+    "path": "art/redesign/art36.json",
+    "sha256": "4d1dcaf81614367beb1e99e93c693ae9076440a7ade08642dda5b1f8b05c9363",
+    "budgets": {
+      "cssBytes": 1200,
+      "mainDeltaBytes": 64,
+      "combinedArt35CSS": 4800,
+      "combinedArt35Native": 7200,
+      "newRasterAssets": 0
+    }
+  },
+  {
+    "path": "art/redesign/art37.json",
+    "sha256": "0c4cb2f06251ba81ad210b062db8ad0be72a1428981882c612282a6cf7a12baf",
+    "budgets": {
+      "cssBytes": 5000,
+      "mainDeltaBytes": 64,
+      "combinedArt18NativeBytes": 18000,
+      "newRasterAssets": 2,
+      "combinedArt18RuntimeBytes": 144000
+    }
+  }
+]
