@@ -1,0 +1,54 @@
+{
+  "sourceHead": "7c20e72d13f50ec52cd570477ed26395845ccd7c",
+  "originalSha256": "2a1169877f8859292c130410b9acb5887ef4bf6ff93f5a95d22654daa3846839",
+  "errors": [
+    {
+      "trace": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-regular-results/matrix-ui-intent-M03-I2-an-6a62e-ent-starts-one-finite-cycle-chromium/trace.zip",
+      "error": {
+        "type": "error",
+        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('training-estimate').locator('p')\nExpected: visible\nReceived: hidden\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('training-estimate').locator('p')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-v-fd8bda9d=\"\">修为 +500 · 灵石消耗 100 · 5 游戏月</p>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n",
+        "stack": [
+          {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts",
+            "line": 61,
+            "column": 27,
+            "function": "reading"
+          },
+          {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts",
+            "line": 120,
+            "column": 3,
+            "function": "originalPlan"
+          },
+          {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts",
+            "line": 162,
+            "column": 56
+          }
+        ]
+      }
+    },
+    {
+      "trace": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-regular-results/matrix-ui-intent-M03-I1-pa-6d89d-rangement-never-replaces-it-chromium/trace.zip",
+      "error": {
+        "type": "error",
+        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('training-estimate').locator('p')\nExpected: visible\nReceived: hidden\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('training-estimate').locator('p')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-v-fd8bda9d=\"\">修为 +500 · 灵石消耗 100 · 5 游戏月</p>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n",
+        "stack": [
+          {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts",
+            "line": 61,
+            "column": 27,
+            "function": "reading"
+          },
+          {
+            "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/matrix-ui-intent.spec.ts",
+            "line": 144,
+            "column": 3
+          }
+        ]
+      }
+    }
+  ],
+  "diagnosis": "Two original reading assertions target the forecast paragraph while UX30 intentionally starts its details closed. The full forecast must be read after the actual disclosure is opened, then original details state and all database values retained.",
+  "status": "original red retained; display-reading repair pending"
+}

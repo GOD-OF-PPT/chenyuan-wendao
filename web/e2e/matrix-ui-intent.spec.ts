@@ -57,12 +57,23 @@ async function control(locator: Locator) {
 async function click(locator: Locator) { await expect(locator).toBeEnabled(); await control(locator); await locator.click(); }
 
 async function reading(page: Page) {
+  const forecast = page.getByTestId('training-estimate').locator('details');
+  const limits = page.getByTestId('training-limits');
+  const forecastWasOpen = await forecast.evaluate(node => (node as HTMLDetailsElement).open);
+  const limitsWereOpen = await limits.evaluate(node => (node as HTMLDetailsElement).open);
+  const before = await state(page);
+  if (!forecastWasOpen) await click(forecast.locator('summary'));
   for (const locator of [page.getByTestId('training-per-cycle'), page.getByTestId('training-estimate').locator('p')]) {
     await expect(locator).toBeVisible();
     expect(await locator.evaluate(node => parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThanOrEqual(18);
   }
   for (const node of await page.getByTestId('cultivation-catalogue').locator('small:visible').all())
     expect(await node.evaluate(el => parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(14);
+  if (!forecastWasOpen) await click(forecast.locator('summary'));
+  if (limitsWereOpen) await openTrainingBudget(page);
+  expect(await forecast.evaluate(node => (node as HTMLDetailsElement).open)).toBe(forecastWasOpen);
+  expect(await limits.evaluate(node => (node as HTMLDetailsElement).open)).toBe(limitsWereOpen);
+  expect((await state(page)).raw).toEqual(before.raw);
 }
 
 async function seed(page: Page) {

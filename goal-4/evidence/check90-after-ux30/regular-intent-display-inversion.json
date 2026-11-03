@@ -1,0 +1,12 @@
+{
+  "path": "web/e2e/matrix-ui-intent.spec.ts",
+  "beforeSha256": "2a1169877f8859292c130410b9acb5887ef4bf6ff93f5a95d22654daa3846839",
+  "afterSha256": "4d073ac5d65f585b6be2dfcd50720374ca34d5af319301f25b333edb6dbce399",
+  "old": "async function reading(page: Page) {\n  for (const locator of [page.getByTestId('training-per-cycle'), page.getByTestId('training-estimate').locator('p')]) {\n    await expect(locator).toBeVisible();\n    expect(await locator.evaluate(node => parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThanOrEqual(18);\n  }\n  for (const node of await page.getByTestId('cultivation-catalogue').locator('small:visible').all())\n    expect(await node.evaluate(el => parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(14);\n}",
+  "new": "async function reading(page: Page) {\n  const forecast = page.getByTestId('training-estimate').locator('details');\n  const limits = page.getByTestId('training-limits');\n  const forecastWasOpen = await forecast.evaluate(node => (node as HTMLDetailsElement).open);\n  const limitsWereOpen = await limits.evaluate(node => (node as HTMLDetailsElement).open);\n  const before = await state(page);\n  if (!forecastWasOpen) await click(forecast.locator('summary'));\n  for (const locator of [page.getByTestId('training-per-cycle'), page.getByTestId('training-estimate').locator('p')]) {\n    await expect(locator).toBeVisible();\n    expect(await locator.evaluate(node => parseFloat(getComputedStyle(node).fontSize))).toBeGreaterThanOrEqual(18);\n  }\n  for (const node of await page.getByTestId('cultivation-catalogue').locator('small:visible').all())\n    expect(await node.evaluate(el => parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(14);\n  if (!forecastWasOpen) await click(forecast.locator('summary'));\n  if (limitsWereOpen) await openTrainingBudget(page);\n  expect(await forecast.evaluate(node => (node as HTMLDetailsElement).open)).toBe(forecastWasOpen);\n  expect(await limits.evaluate(node => (node as HTMLDetailsElement).open)).toBe(limitsWereOpen);\n  expect((await state(page)).raw).toEqual(before.raw);\n}",
+  "uniqueReplacement": true,
+  "entireOriginalRecovered": true,
+  "originalAssertionsPreserved": true,
+  "productRuntimeChanged": false,
+  "browserVerification": "pending original full UI terminal"
+}

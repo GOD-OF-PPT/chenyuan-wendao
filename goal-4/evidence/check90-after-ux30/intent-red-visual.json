@@ -1,0 +1,20 @@
+[
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-regular-results/matrix-ui-intent-M03-I1-pa-6d89d-rangement-never-replaces-it-chromium/test-failed-1.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/regular-light/intent-red-0.jpg",
+    "sha256": "77310669f53ee7cd908384de4bcce73def8c7bf6ddd68e87caa272e44486c9f7",
+    "viewSha256": "c6a45b8a4c7da0b5f04260fcae55a640ac2cb4a5f3001d268e738be08b58c61b",
+    "encoding": "same1440x900 JPEG68, original PNG retained",
+    "actualViewed": true,
+    "review": "The full budget is visible and the forecast disclosure is visibly closed. The single-period cost, finite limits and original paused/resume context remain readable. Failure is an obsolete direct-reading path, not absence of the forecast. Browser rerun of the revised reader remains pending."
+  },
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-regular-results/matrix-ui-intent-M03-I2-an-6a62e-ent-starts-one-finite-cycle-chromium/test-failed-1.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/regular-light/intent-red-1.jpg",
+    "sha256": "c48fd86270f5ace21ac0dce67aefe8b9d4fe3042343a0dfa5ffbb4221198bf4f",
+    "viewSha256": "2ae3c174eaf3d0b2367d6b63953900061924cfb2e4e710857720067442c28205",
+    "encoding": "same1440x900 JPEG68, original PNG retained",
+    "actualViewed": true,
+    "review": "The full budget is visible and the forecast disclosure is visibly closed. The single-period cost, finite limits and original paused/resume context remain readable. Failure is an obsolete direct-reading path, not absence of the forecast. Browser rerun of the revised reader remains pending."
+  }
+]
