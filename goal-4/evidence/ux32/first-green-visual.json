@@ -1,0 +1,233 @@
+[
+  {
+    "index": 0,
+    "name": "default-buy",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A1-t-5d81a-e-optional-readonly-details-chromium/default-buy.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/00-default-buy.jpg",
+    "sha256": "2ef666b7b97532f3a16f3ac7fe5dda5109dda9812e5e5f3c4195b1bde214ce71",
+    "viewSha256": "ac3d6a5411b4325c01c0e1e4c07a6c95e64575022590c0f5e80e12921fd0a28c",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 1,
+    "name": "finite-sale",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A1-t-5d81a-e-optional-readonly-details-chromium/finite-sale.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/01-finite-sale.jpg",
+    "sha256": "2067a2691e9e398bc3d6d53fb5a09e6d8e775a4ca269ad834f44a1ef0c472b9e",
+    "viewSha256": "f58105fbc81948022f071c85ea704a21efd5e3349e618fa4371b34977a15739e",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 2,
+    "name": "finite-target-buy",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A1-t-5d81a-e-optional-readonly-details-chromium/finite-target-buy.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/02-finite-target-buy.jpg",
+    "sha256": "148ba817972e026e77fb54be8191c54279f01177a15c3dfeec65abcd76125f61",
+    "viewSha256": "9758a3cb285dacc837198a5432d28eff6057cd4b0d28b607e05d1f6eff08a797",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 3,
+    "name": "full-buy-forecast",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A1-t-5d81a-e-optional-readonly-details-chromium/full-buy-forecast.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/03-full-buy-forecast.jpg",
+    "sha256": "6e253289d0a23b9db309b8a0d1b56257ce9da9d04e81c2ad03234ead36f5bd87",
+    "viewSha256": "e8204960100f1ff44ce5a314d52814bf48030d7f01558fc40416ed1f26cb8174",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 4,
+    "name": "protected-ascension_seal",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A2-e-9ee0f--zero-trade-or-changed-save-chromium/protected-ascension_seal.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/04-protected-ascension_seal.jpg",
+    "sha256": "28521172b50f149d87ce2dff4b41f23089093dfa52ce171ce4a3d15e75916655",
+    "viewSha256": "fb4681dae5172f6076f08b5d8eb581aaaef70313ece39329548393438f51488d",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 5,
+    "name": "protected-foundation_pill",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A2-e-9ee0f--zero-trade-or-changed-save-chromium/protected-foundation_pill.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/05-protected-foundation_pill.jpg",
+    "sha256": "acd128805ec5e6a34fa8cc1074fec2cb3766fde0e268eeff0a783c35f4a4e73a",
+    "viewSha256": "1d326a82ba679c547d0472d6eb13ac87fc4b1e306acb0c6a2271ad72a4d8fb89",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 6,
+    "name": "protected-golden_pill",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A2-e-9ee0f--zero-trade-or-changed-save-chromium/protected-golden_pill.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/06-protected-golden_pill.jpg",
+    "sha256": "c898cdb0b9c240b3236a626280b9234c92bbfe72b63e2d53ecca2db594f72e75",
+    "viewSha256": "e0b49a6c5d0b31cf087505b65ce117729994b4210d15939409366c6edbdba330",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 7,
+    "name": "protected-nascent_pill",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A2-e-9ee0f--zero-trade-or-changed-save-chromium/protected-nascent_pill.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/07-protected-nascent_pill.jpg",
+    "sha256": "7886fc33268fadbe63651dabb430bba27a212be903b44f2ee80c71dd573010b2",
+    "viewSha256": "1554b95426b9b2bdcaf0c6ba99e59a1432201a711d02d22e2192962b31b3c8f1",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 8,
+    "name": "protected-spirit_seed",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A2-e-9ee0f--zero-trade-or-changed-save-chromium/protected-spirit_seed.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/08-protected-spirit_seed.jpg",
+    "sha256": "f410c104aa94a84bd7bcb18179031b00fba24d163b7fa6a966c47259584951c1",
+    "viewSha256": "0578bca043c8d748b5029cbaa64fee492c668811a28a8b2a6f4287c7b337447e",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 9,
+    "name": "foreign-trade-gate",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A3-a-8a974-rforms-an-unconfirmed-trade-chromium/foreign-trade-gate.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/09-foreign-trade-gate.jpg",
+    "sha256": "44d42609423fba4bbae8f5a729bb1cb0e9fcb12d033480734dc781ed830f8309",
+    "viewSha256": "e0e14d1f35e18b2bd80a0fc0aa770bed2ff87ab881e7a317e79e2bbc7fe17497",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 10,
+    "name": "sale-reserve-real-gate",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A3-a-8a974-rforms-an-unconfirmed-trade-chromium/sale-reserve-real-gate.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/10-sale-reserve-real-gate.jpg",
+    "sha256": "4bee3ca23a0e4de7f4c863d8f034c44644d4340b150a7e8a445493d33a267cc4",
+    "viewSha256": "373153dc5ba856cd6b5ae28141a8fe9a384b9c9cdea15441887a1b219ed2951d",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 11,
+    "name": "zero-budget-real-gate",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A3-a-8a974-rforms-an-unconfirmed-trade-chromium/zero-budget-real-gate.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/11-zero-budget-real-gate.jpg",
+    "sha256": "f4c3ffa67792db748fddc64496ad92930911769be893bee1c887f8168919fe32",
+    "viewSha256": "952a1dfa8cd8774ceaef6c3a413bb0ef3713c25168a9c572290b3c958d5a43b3",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 12,
+    "name": "paused-trade-complete",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A4-p-dde82-ting-a-later-draft-as-saved-chromium/paused-trade-complete.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/12-paused-trade-complete.jpg",
+    "sha256": "9cbdaf34258391f59411e87bf4f5fe3ca5aaa7f9529a86df15ff1424d51338a3",
+    "viewSha256": "ad9ca7dfd80253a6bb3e4ee65cce06faced7053755415ded3ed05ee4fb9810f3",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 13,
+    "name": "paused-trade",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A4-p-dde82-ting-a-later-draft-as-saved-chromium/paused-trade.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/13-paused-trade.jpg",
+    "sha256": "3bb5734fab8b32125bba9efd5c94051eef05afb2950e674d63e4d1c1e16fce7a",
+    "viewSha256": "edfb0da59f3bbe93474f64a95c3ba6573ef008206792b6bbe1bc3466eb41a099",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 14,
+    "name": "saved-two-original-trades",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A4-p-dde82-ting-a-later-draft-as-saved-chromium/saved-two-original-trades.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/14-saved-two-original-trades.jpg",
+    "sha256": "dff8b70122657688131f77d6f718653288d27a4f02ac528c5245c33fa43c80f4",
+    "viewSha256": "bfad6fc54e75b72ebcd47c88fe891446e26b2aa2ac8255e1605f10a1b715824c",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 15,
+    "name": "START-original-error",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A5-S-edd41-onal-viewing-stays-readonly-chromium/START-original-error.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/15-START-original-error.jpg",
+    "sha256": "05a4bb0426a18d2f26ab7386175399f03c8a1cc8e986454c7e2250bb985fc1c2",
+    "viewSha256": "170e52a4aaedccaa5b72d15e0265174c2798ca6c0d4978e9a9fdbcca662f44b0",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 16,
+    "name": "START-read-next-draft",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A5-S-edd41-onal-viewing-stays-readonly-chromium/START-read-next-draft.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/16-START-read-next-draft.jpg",
+    "sha256": "de3d53086b8593fd352e08fffd40b99379321d5b3a468413f7367afe07565fc9",
+    "viewSha256": "95ac8f80e9fb8fc2215a5e2e112dc40008016c0e5e9c4d27566f10936e9e3aec",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 17,
+    "name": "START-saved-original-only",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A5-S-edd41-onal-viewing-stays-readonly-chromium/START-saved-original-only.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/17-START-saved-original-only.jpg",
+    "sha256": "b19897cf61edc56cee5cc4e1ec52113f59ea359b906de71225e5792b43a31c72",
+    "viewSha256": "0e46eb5246677627fdb0e0d15cf533615798590c1e1bb9fee07379b6f7e317f1",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 18,
+    "name": "TICK-original-error",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A5-T-41930-onal-viewing-stays-readonly-chromium/TICK-original-error.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/18-TICK-original-error.jpg",
+    "sha256": "1e22fc722ee97e00a4319e01c79455f8d5b9bbef91aacd1f3d043ea201ecb277",
+    "viewSha256": "7e43e9874fac3b98c8dc914b668da6562874eb1ddf663c744525257c8a2cdb0a",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 19,
+    "name": "TICK-read-next-draft",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A5-T-41930-onal-viewing-stays-readonly-chromium/TICK-read-next-draft.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/19-TICK-read-next-draft.jpg",
+    "sha256": "f744b3ad7142c617eafdbfcbbd0a6ecc180eed94be041a0fbab4ab7774457110",
+    "viewSha256": "72dd8ca71d25d8f51d486cef37860fd584a84a6e2fa580bdab02c7423ea0e350",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  },
+  {
+    "index": 20,
+    "name": "TICK-saved-original-only",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-results/ux32-market-copy-UX32-A5-T-41930-onal-viewing-stays-readonly-chromium/TICK-saved-original-only.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/focused-light/20-TICK-saved-original-only.jpg",
+    "sha256": "027409b287d6058ad659502dd26d0a659fd42d5854f748b54880d38893355087",
+    "viewSha256": "0ec668d555de00c8fc6451cf7bba78b05aedfb9adc4f4360ecd100602ccdb2c4",
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "actualViewed": true,
+    "review": "Actual full-size pixels reviewed. Controls and finite facts readable. The generic buy note incorrectly says stock-target stop even in count mode; this candidate is superseded for copy correction, not overall approval."
+  }
+]

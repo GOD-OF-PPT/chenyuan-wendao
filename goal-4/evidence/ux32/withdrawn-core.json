@@ -1,0 +1,30 @@
+{
+  "rootPid": 39771,
+  "rootCommand": "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/validate-core.mjs /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/core-report",
+  "cwd": "p39771\nfcwd\nn/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/source\n",
+  "ownedDescendants": [
+    {
+      "pid": 39771,
+      "ppid": 39769,
+      "command": "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/validate-core.mjs /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/core-report"
+    },
+    {
+      "pid": 39772,
+      "ppid": 39771,
+      "command": "caffeinate -i /Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/validate-core.mjs /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/core-report"
+    },
+    {
+      "pid": 40291,
+      "ppid": 39771,
+      "command": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python scripts/check_docs.py"
+    },
+    {
+      "pid": 40294,
+      "ppid": 40291,
+      "command": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m unittest discover -s /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux32/final/source/art/tools -p test_*.py"
+    }
+  ],
+  "reason": "Actual focused screenshot revealed misleading goal-stock stop wording for a count-limited purchase. Supersede display candidate before full validation; no product test failure inferred.",
+  "coverageClaim": false,
+  "priorArtifactsRetained": true
+}

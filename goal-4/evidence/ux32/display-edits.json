@@ -38,7 +38,7 @@
     ],
     [
       "<p>只调整待确认草案，关闭保留参数；返回后另行确认才成交。</p>",
-      "<p>关闭保留，返回确认；逐件成交免领取。</p><div class=\"preparation-estimate\" data-testid=\"market-full-estimate\"><template v-if=\"restart.same\"><strong data-testid=\"paused-plan-progress\">{{restart.summary}} 件</strong><small>{{restart.note}}</small></template><template v-else-if=\"quote?.allowed\"><strong>预计成交 {{quote.cycles}} 件 · {{mode==='buy'?'灵石消耗 '+quote.stones:'灵石收入 '+quote.earnedStones}}</strong><small>{{mode==='buy'?'入囊至目标库存即停':'逐件出售，保留库存；突破物禁售'}}</small><small>{{quote?.stopReason?'预计停止：'+quote.stopReason.message:''}}</small></template><strong v-else>{{mode==='sell'&&item?.sell===null?'突破物不可出售':quote?.failure?.message}}</strong><small>仅执行本单，不自动接续其他行动。</small></div>"
+      "<p>关闭保留调整，返回后确认；逐件成交免领取。</p><div class=\"preparation-estimate\" data-testid=\"market-full-estimate\"><template v-if=\"restart.same\"><strong data-testid=\"paused-plan-progress\">{{restart.summary}} 件</strong><small>{{restart.note}}</small></template><template v-else-if=\"quote?.allowed\"><strong>预计成交 {{quote.cycles}} 件 · {{mode==='buy'?'灵石消耗 '+quote.stones:'灵石收入 '+quote.earnedStones}}</strong><small>{{mode==='buy'?'逐件入囊':'逐件出售，保留库存；突破物禁售'}}</small><small>{{quote?.stopReason?'预计停止：'+quote.stopReason.message:''}}</small></template><strong v-else>{{mode==='sell'&&item?.sell===null?'突破物不可出售':quote?.failure?.message}}</strong><small>仅执行本单，不自动接续其他行动。</small></div>"
     ],
     [
       "<label>累计采购灵石预算<input",
@@ -63,6 +63,10 @@
     [
       "本段最多 {{count}} 件",
       "最多 {{count}} 件"
+    ],
+    [
+      ">目标库存<input",
+      ">目标总库存<input"
     ]
   ],
   "MarketCounter.vue": [

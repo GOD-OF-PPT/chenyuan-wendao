@@ -3,9 +3,9 @@ import hashlib,json,re
 from pathlib import Path
 LEDGER='art/redesign/ux32.json'
 FACTS={'MarketPlanner.vue': {'before': '133ca11bcb8b8c283b3138cc88add796fdc22f507781869e27fb2025b379c760',
-                       'after': '6d22a1631f9b04e62229498e1961ca47667a2a07cbbdb8c595770b7d3a0533ba',
+                       'after': 'e015c642208184c806464b976f450b3dcca74c6d78c17db42312d7ba7a26b588',
                        'beforeBytes': 12464,
-                       'bytes': 12472,
+                       'bytes': 12469,
                        'baseline': 'goal-4/evidence/ux32/MarketPlanner.vue.before.txt'},
  'MarketCounter.vue': {'before': '366fec4997cf9406d40ae43dcd21fdc0e66740370fc29a570d7422aaabbc432e',
                        'after': 'bcde3e3c643a29868995d52a197e6e1553b37745771866bd9e3a69b04f0d780e',
@@ -44,7 +44,7 @@ OPERATIONS={'MarketPlanner.vue': [['翻看货架 · 更换物资与购售', '翻
                         'class="preparation-reason">{{conflict||\'限于本段安排；不自动补货、换物或旅行。\'}}</small>',
                         ':disabled="!!conflict||restart.same||!quote?.allowed">{{restart.same?\'上方继续交易\':restart.label+(mode===\'buy\'?\'开始购入\'+item.name:\'开始售出\'+item.name)}}</button>'],
                        ['<p>只调整待确认草案，关闭保留参数；返回后另行确认才成交。</p>',
-                        '<p>关闭保留，返回确认；逐件成交免领取。</p><div '
+                        '<p>关闭保留调整，返回后确认；逐件成交免领取。</p><div '
                         'class="preparation-estimate" '
                         'data-testid="market-full-estimate"><template '
                         'v-if="restart.same"><strong '
@@ -53,7 +53,7 @@ OPERATIONS={'MarketPlanner.vue': [['翻看货架 · 更换物资与购售', '翻
                         'v-else-if="quote?.allowed"><strong>预计成交 '
                         "{{quote.cycles}} 件 · {{mode==='buy'?'灵石消耗 "
                         "'+quote.stones:'灵石收入 "
-                        "'+quote.earnedStones}}</strong><small>{{mode==='buy'?'入囊至目标库存即停':'逐件出售，保留库存；突破物禁售'}}</small><small>{{quote?.stopReason?'预计停止：'+quote.stopReason.message:''}}</small></template><strong "
+                        "'+quote.earnedStones}}</strong><small>{{mode==='buy'?'逐件入囊':'逐件出售，保留库存；突破物禁售'}}</small><small>{{quote?.stopReason?'预计停止：'+quote.stopReason.message:''}}</small></template><strong "
                         "v-else>{{mode==='sell'&&item?.sell===null?'突破物不可出售':quote?.failure?.message}}</strong><small>仅执行本单，不自动接续其他行动。</small></div>"],
                        ['<label>累计采购灵石预算<input', '<label>用石上限<input'],
                        ['<label>采购灵石保留量<input', '<label>灵石保留<input'],
@@ -61,7 +61,8 @@ OPERATIONS={'MarketPlanner.vue': [['翻看货架 · 更换物资与购售', '翻
                        ['完成调整 · 返回货架', '返回货架'],
                        ["{{mode==='buy'?'购入':'售出'}}安排</h3>",
                         "{{mode==='buy'?'购入':'售出'}}</h3>"],
-                       ['本段最多 {{count}} 件', '最多 {{count}} 件']],
+                       ['本段最多 {{count}} 件', '最多 {{count}} 件'],
+                       ['>目标库存<input', '>目标总库存<input']],
  'MarketCounter.vue': [['<div class="counter-cycle" '
                         'data-testid="market-cycle-status">',
                         '<div v-if="state!==\'idle\'||totals" '
@@ -79,8 +80,8 @@ MANIFEST={'format': 'chenyuan-market-copy-ux32',
  'newRasterAssets': 0,
  'addedCSSBytes': 0,
  'files': [{'path': 'web/src/MarketPlanner.vue',
-            'bytes': 12472,
-            'sha256': '6d22a1631f9b04e62229498e1961ca47667a2a07cbbdb8c595770b7d3a0533ba'},
+            'bytes': 12469,
+            'sha256': 'e015c642208184c806464b976f450b3dcca74c6d78c17db42312d7ba7a26b588'},
            {'path': 'web/src/MarketCounter.vue',
             'bytes': 10062,
             'sha256': 'bcde3e3c643a29868995d52a197e6e1553b37745771866bd9e3a69b04f0d780e'}],
