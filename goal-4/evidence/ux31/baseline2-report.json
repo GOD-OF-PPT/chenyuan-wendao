@@ -1,0 +1,393 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "runtimeDigest": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+      "scope": "author diagnostic against unchanged frozen e9b static product; not a final frozen test-source pass",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runtimeDigest": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+          "scope": "author diagnostic against unchanged frozen e9b static product; not a final frozen test-source pass",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "ux31-readability.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "ux31-readability.spec.ts",
+      "file": "ux31-readability.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UX31-A1 both medicine fallbacks keep complete words clear of the bowl through a real failed acceptance and original retry",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5564,
+                  "error": {
+                    "message": "Error: full fallback words avoid bowl and rim\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                    "stack": "Error: full fallback words avoid bowl and rim\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at fallback (/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:62:146)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:80:121\n    at readonly (/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:23:93)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:80:49",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                      "column": 146,
+                      "line": 62
+                    },
+                    "snippet": "  60 |  });\n  61 |  await info.attach(name+'-caption',{body:JSON.stringify(g),contentType:'application/json'});await frame(page,info,name,page.getByTestId('recovery-ritual'));\n> 62 |  expect(g.words.length).toBeGreaterThan(0);expect(g.font).toBeGreaterThanOrEqual(14);expect(g.occluded,'full fallback words avoid bowl and rim').toBe(false);\n     |                                                                                                                                                  ^\n  63 | }\n  64 | async function quotaStart(page:Page){\n  65 |  await page.evaluate(()=>{const put=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(value:any,key?:IDBValidKey){"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                        "column": 146,
+                        "line": 62
+                      },
+                      "message": "Error: full fallback words avoid bowl and rim\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  60 |  });\n  61 |  await info.attach(name+'-caption',{body:JSON.stringify(g),contentType:'application/json'});await frame(page,info,name,page.getByTestId('recovery-ritual'));\n> 62 |  expect(g.words.length).toBeGreaterThan(0);expect(g.font).toBeGreaterThanOrEqual(14);expect(g.occluded,'full fallback words avoid bowl and rim').toBe(false);\n     |                                                                                                                                                  ^\n  63 | }\n  64 | async function quotaStart(page:Page){\n  65 |  await page.evaluate(()=>{const put=IDBObjectStore.prototype.put;IDBObjectStore.prototype.put=function(value:any,key?:IDBValidKey){\n    at fallback (/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:62:146)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:80:121\n    at readonly (/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:23:93)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:80:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T14:35:55.376Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "healing_pill-complete-fallback-caption",
+                      "contentType": "application/json",
+                      "body": "eyJ3b3JkcyI6W3sibGVmdCI6NTYzLCJyaWdodCI6NjgyLCJ0b3AiOjQ5NS40MDYyNSwiYm90dG9tIjo1MTUuNDA2MjV9XSwiYm93bCI6eyJsZWZ0Ijo2NTgsInJpZ2h0Ijo3NDIsInRvcCI6NTA2LjUsImJvdHRvbSI6NTQ0LjV9LCJyaW0iOnsibGVmdCI6NjU3LCJyaWdodCI6NzQzLCJ0b3AiOjQ5Ny41LCJib3R0b20iOjUyMy41fSwiZm9udCI6MTQsIm9jY2x1ZGVkIjp0cnVlfQ=="
+                    },
+                    {
+                      "name": "healing_pill-complete-fallback-controls",
+                      "contentType": "application/json",
+                      "body": "eyJwYWdlSGVpZ2h0Ijo5MDAsInBhZ2VXaWR0aCI6MTQ0MCwiY29udHJvbHMiOlt7InRleHQiOiLpgInmi6nmgaLlpI3mlrnlvI8iLCJoIjo0NCwidyI6MTMwLCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZSwidW5jbGlwcGVkIjp0cnVlfSx7InRleHQiOiLosIPmga/pobvnn6UiLCJoIjo0NCwidyI6NDY0LjM5MDYyNSwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWUsInVuY2xpcHBlZCI6dHJ1ZX0seyJ0ZXh0Ijoi5p+l55yL6KGl57uZ5p2l5rqQIOKAuiIsImgiOjQ0LCJ3Ijo0NjQuMzkwNjI1LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZSwidW5jbGlwcGVkIjp0cnVlfSx7InRleHQiOiLnm67moIcgMTAwJSDCtyDmnIDlpJogMyDkuLkgwrcg5bqT5a2Y5L+d55WZIDBcbuWNleasoTbnp5Igwrcg6LCD5pW0IOKAuiIsImgiOjk2LCJ3IjozMDYuNjA5Mzc1LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZSwidW5jbGlwcGVkIjp0cnVlfSx7InRleHQiOiLmnI3nlKjlm57mmKXkuLkiLCJoIjo0OCwidyI6MzA2LjYwOTM3NSwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWUsInVuY2xpcHBlZCI6dHJ1ZX1dfQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A1-b-57a61-ceptance-and-original-retry-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A1-b-57a61-ceptance-and-original-retry-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A1-b-57a61-ceptance-and-original-retry-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                    "column": 146,
+                    "line": 62
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0ad4e806edbb1cf44b57-0c426966eebe6a795408",
+          "file": "ux31-readability.spec.ts",
+          "line": 213,
+          "column": 1
+        },
+        {
+          "title": "UX31-A2 trade direction and recovery reserve values stay in complete word groups while all viewing stays readonly",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3546,
+                  "error": {
+                    "message": "Error: 灵石换物 remains one readable word group\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m1\u001b[39m\nReceived length: \u001b[31m2\u001b[39m\nReceived array:  \u001b[31m[39997, 42966]\u001b[39m",
+                    "stack": "Error: 灵石换物 remains one readable word group\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m1\u001b[39m\nReceived length: \u001b[31m2\u001b[39m\nReceived array:  \u001b[31m[39997, 42966]\u001b[39m\n    at word (/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:49:142)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:89:76",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                      "column": 142,
+                      "line": 49
+                    },
+                    "snippet": "  47 |   const box=node.getBoundingClientRect();return{found,rows:[...new Set(rects.map(r=>Math.round(r.top*100)))],rects,font:parseFloat(getComputedStyle(node).fontSize),inside:rects.every(r=>r.left>=box.left-.5&&r.right<=box.right+.5&&r.top>=box.top-.5&&r.bottom<=box.bottom+.5)};\n  48 |  },phrase);\n> 49 |  expect(g.found,phrase).toBe(true);expect(g.rects.length,phrase).toBeGreaterThan(0);expect(g.rows,phrase+' remains one readable word group').toHaveLength(1);expect(g.font,phrase).toBeGreaterThanOrEqual(minimum);expect(g.inside,phrase).toBe(true);\n     |                                                                                                                                              ^\n  50 | }\n  51 | async function fallback(page:Page,info:TestInfo,name:string,id:string){\n  52 |  const art=page.locator('.recovery-medicine [data-art-state]');await expect(art).toHaveAttribute('data-art-state','failed');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                        "column": 142,
+                        "line": 49
+                      },
+                      "message": "Error: 灵石换物 remains one readable word group\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m1\u001b[39m\nReceived length: \u001b[31m2\u001b[39m\nReceived array:  \u001b[31m[39997, 42966]\u001b[39m\n\n  47 |   const box=node.getBoundingClientRect();return{found,rows:[...new Set(rects.map(r=>Math.round(r.top*100)))],rects,font:parseFloat(getComputedStyle(node).fontSize),inside:rects.every(r=>r.left>=box.left-.5&&r.right<=box.right+.5&&r.top>=box.top-.5&&r.bottom<=box.bottom+.5)};\n  48 |  },phrase);\n> 49 |  expect(g.found,phrase).toBe(true);expect(g.rects.length,phrase).toBeGreaterThan(0);expect(g.rows,phrase+' remains one readable word group').toHaveLength(1);expect(g.font,phrase).toBeGreaterThanOrEqual(minimum);expect(g.inside,phrase).toBe(true);\n     |                                                                                                                                              ^\n  50 | }\n  51 | async function fallback(page:Page,info:TestInfo,name:string,id:string){\n  52 |  const art=page.locator('.recovery-medicine [data-art-state]');await expect(art).toHaveAttribute('data-art-state','failed');\n    at word (/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:49:142)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:89:76"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T14:36:04.355Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A2-t-985c6--all-viewing-stays-readonly-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A2-t-985c6--all-viewing-stays-readonly-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A2-t-985c6--all-viewing-stays-readonly-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                    "column": 142,
+                    "line": 49
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0ad4e806edbb1cf44b57-8bbe70da261f16898006",
+          "file": "ux31-readability.spec.ts",
+          "line": 243,
+          "column": 1
+        },
+        {
+          "title": "UX31-A3 unmade owned and bound relic labels remain complete words during a real unrelated saved-error state",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4499,
+                  "error": {
+                    "message": "Error: 尚未装备 remains one readable word group\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m1\u001b[39m\nReceived length: \u001b[31m2\u001b[39m\nReceived array:  \u001b[31m[31000, 33700]\u001b[39m",
+                    "stack": "Error: 尚未装备 remains one readable word group\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m1\u001b[39m\nReceived length: \u001b[31m2\u001b[39m\nReceived array:  \u001b[31m[31000, 33700]\u001b[39m\n    at word (/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:49:142)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:103:102",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                      "column": 142,
+                      "line": 49
+                    },
+                    "snippet": "  47 |   const box=node.getBoundingClientRect();return{found,rows:[...new Set(rects.map(r=>Math.round(r.top*100)))],rects,font:parseFloat(getComputedStyle(node).fontSize),inside:rects.every(r=>r.left>=box.left-.5&&r.right<=box.right+.5&&r.top>=box.top-.5&&r.bottom<=box.bottom+.5)};\n  48 |  },phrase);\n> 49 |  expect(g.found,phrase).toBe(true);expect(g.rects.length,phrase).toBeGreaterThan(0);expect(g.rows,phrase+' remains one readable word group').toHaveLength(1);expect(g.font,phrase).toBeGreaterThanOrEqual(minimum);expect(g.inside,phrase).toBe(true);\n     |                                                                                                                                              ^\n  50 | }\n  51 | async function fallback(page:Page,info:TestInfo,name:string,id:string){\n  52 |  const art=page.locator('.recovery-medicine [data-art-state]');await expect(art).toHaveAttribute('data-art-state','failed');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                        "column": 142,
+                        "line": 49
+                      },
+                      "message": "Error: 尚未装备 remains one readable word group\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m1\u001b[39m\nReceived length: \u001b[31m2\u001b[39m\nReceived array:  \u001b[31m[31000, 33700]\u001b[39m\n\n  47 |   const box=node.getBoundingClientRect();return{found,rows:[...new Set(rects.map(r=>Math.round(r.top*100)))],rects,font:parseFloat(getComputedStyle(node).fontSize),inside:rects.every(r=>r.left>=box.left-.5&&r.right<=box.right+.5&&r.top>=box.top-.5&&r.bottom<=box.bottom+.5)};\n  48 |  },phrase);\n> 49 |  expect(g.found,phrase).toBe(true);expect(g.rects.length,phrase).toBeGreaterThan(0);expect(g.rows,phrase+' remains one readable word group').toHaveLength(1);expect(g.font,phrase).toBeGreaterThanOrEqual(minimum);expect(g.inside,phrase).toBe(true);\n     |                                                                                                                                              ^\n  50 | }\n  51 | async function fallback(page:Page,info:TestInfo,name:string,id:string){\n  52 |  const art=page.locator('.recovery-medicine [data-art-state]');await expect(art).toHaveAttribute('data-art-state','failed');\n    at word (/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:49:142)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:103:102"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T14:36:10.380Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "frost_sword-normal-complete-state-controls",
+                      "contentType": "application/json",
+                      "body": "eyJwYWdlSGVpZ2h0Ijo5MDAsInBhZ2VXaWR0aCI6MTQ0MCwiY29udHJvbHMiOlt7InRleHQiOiLnv7vnnIvlmajmnrYgwrcg5YWo6YOo5Zmo6LCxIiwiaCI6NDUsInciOjE5NywiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWUsInVuY2xpcHBlZCI6dHJ1ZX0seyJ0ZXh0Ijoi5p+l55yL6ZO45Zmo5a6J5o6SXG7igLoiLCJoIjozNTQsInciOjUzMy4zOTA2MjUsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlLCJ1bmNsaXBwZWQiOnRydWV9LHsidGV4dCI6IuWcsOiEieeBteeOiVxu5oyB5pyJIDEgLyDpnIDmnIkgMyDCtyDkv53nlZkgMCDCtyDnvLogMiIsImgiOjg0LjE4NzUsInciOjE2MCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWUsInVuY2xpcHBlZCI6dHJ1ZX0seyJ0ZXh0Ijoi5aaW5qC4XG7mjIHmnIkgMCAvIOmcgOaciSAxIMK3IOS/neeVmSAwIMK3IOe8uiAxIiwiaCI6ODQuMTg3NSwidyI6MTYwLCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZSwidW5jbGlwcGVkIjp0cnVlfSx7InRleHQiOiLlmajosLHmnZDmlpnkuI7mnaXmupAiLCJoIjo0OCwidyI6MTYwLCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZSwidW5jbGlwcGVkIjp0cnVlfSx7InRleHQiOiLlrozmlbTpk7jlmajlronmjpIiLCJoIjo0OCwidyI6MTQwLCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZSwidW5jbGlwcGVkIjp0cnVlfSx7InRleHQiOiLmjaLnnIvlhbbku5blmajosLEiLCJoIjo0OCwidyI6MTQyLCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZSwidW5jbGlwcGVkIjp0cnVlfV19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A3-u-7a963-unrelated-saved-error-state-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A3-u-7a963-unrelated-saved-error-state-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A3-u-7a963-unrelated-saved-error-state-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                    "column": 142,
+                    "line": 49
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0ad4e806edbb1cf44b57-307a521d474d1e3f3dca",
+          "file": "ux31-readability.spec.ts",
+          "line": 272,
+          "column": 1
+        },
+        {
+          "title": "UX31-A4 paused study keeps a concise current state and full progress on demand before the original remaining cycle resumes",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 13335,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('learning-planner').getByTestId('preparation-plan-state')\nExpected: \u001b[32m\"\u001b[7m原\u001b[27m已保存安排\"\u001b[39m\nReceived: \u001b[31m\"已保存\u001b[7m原\u001b[27m安排\u001b[7m未变 · 请在上方继续\u001b[27m\"\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('learning-planner').getByTestId('preparation-plan-state')\u001b[22m\n\u001b[2m    12 × locator resolved to <small data-testid=\"preparation-plan-state\">已保存原安排未变 · 请在上方继续</small>\u001b[22m\n\u001b[2m       - unexpected value \"已保存原安排未变 · 请在上方继续\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('learning-planner').getByTestId('preparation-plan-state')\nExpected: \u001b[32m\"\u001b[7m原\u001b[27m已保存安排\"\u001b[39m\nReceived: \u001b[31m\"已保存\u001b[7m原\u001b[27m安排\u001b[7m未变 · 请在上方继续\u001b[27m\"\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('learning-planner').getByTestId('preparation-plan-state')\u001b[22m\n\u001b[2m    12 × locator resolved to <small data-testid=\"preparation-plan-state\">已保存原安排未变 · 请在上方继续</small>\u001b[22m\n\u001b[2m       - unexpected value \"已保存原安排未变 · 请在上方继续\"\u001b[22m\n\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:114:59",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                      "column": 59,
+                      "line": 114
+                    },
+                    "snippet": "  112 |  const before=await snapshot(page);await page.getByTestId('preparation-start').click();await expect.poll(async()=>(await activity(page))?.status).toBe('running');const a=await activity(page);await finishCycle(page,a,before,await database(page));\n  113 |  await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page))?.status).toBe('paused');const paused=await activity(page),raw=await database(page),g=await snapshot(page),root=page.getByTestId('learning-planner');\n> 114 |  await expect(root.getByTestId('preparation-plan-state')).toHaveText('原已保存安排');await expect(root.getByTestId('preparation-start')).toHaveText('上方继续研习');await expect(root.getByTestId('preparation-start')).toBeDisabled();await expect(page.getByTestId('paused-plan-progress')).toBeHidden();\n      |                                                           ^\n  115 |  await expect(page.getByTestId('jade-study-status')).toContainText('此段研习已暂停');await expect(root.locator('.art10-authorization-summary')).toContainText('累计灵石上限 240 · 保留 0');await frame(page,info,'concise-paused-study',root);\n  116 |  await readonly(page,async()=>{await stage.openLearningSettings(page);await expect(page.getByTestId('paused-plan-progress')).toBeVisible();await expect(page.getByTestId('paused-plan-progress')).toContainText('已完成 1 / 2 卷');await expect(page.getByTestId('learning-full-estimate')).toContainText('继续沿用原累计预算与保留线');await expect(page.getByTestId('learning-full-estimate')).toContainText('新安排预演');await frame(page,info,'complete-paused-progress',page.getByTestId('learning-plan-dialog'));await stage.closeLearningSettings(page);});\n  117 |  expect(await database(page)).toEqual(raw);await page.getByTestId('training-resume').click();await expect.poll(async()=>(await activity(page))?.status).toBe('running');const resumed=await activity(page);expect(resumed.id).toBe(paused.id);expect(resumed.plan).toEqual(paused.plan);expect(resumed.spentStones).toBe(paused.spentStones);await expect(page.getByTestId('training-countdown')).toHaveText('30.0 秒');await finishCycle(page,resumed,g,await database(page));await expect.poll(async()=>(await activity(page)).status).toBe('stopped');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                        "column": 59,
+                        "line": 114
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('learning-planner').getByTestId('preparation-plan-state')\nExpected: \u001b[32m\"\u001b[7m原\u001b[27m已保存安排\"\u001b[39m\nReceived: \u001b[31m\"已保存\u001b[7m原\u001b[27m安排\u001b[7m未变 · 请在上方继续\u001b[27m\"\u001b[39m\nTimeout:  8000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('learning-planner').getByTestId('preparation-plan-state')\u001b[22m\n\u001b[2m    12 × locator resolved to <small data-testid=\"preparation-plan-state\">已保存原安排未变 · 请在上方继续</small>\u001b[22m\n\u001b[2m       - unexpected value \"已保存原安排未变 · 请在上方继续\"\u001b[22m\n\n\n  112 |  const before=await snapshot(page);await page.getByTestId('preparation-start').click();await expect.poll(async()=>(await activity(page))?.status).toBe('running');const a=await activity(page);await finishCycle(page,a,before,await database(page));\n  113 |  await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page))?.status).toBe('paused');const paused=await activity(page),raw=await database(page),g=await snapshot(page),root=page.getByTestId('learning-planner');\n> 114 |  await expect(root.getByTestId('preparation-plan-state')).toHaveText('原已保存安排');await expect(root.getByTestId('preparation-start')).toHaveText('上方继续研习');await expect(root.getByTestId('preparation-start')).toBeDisabled();await expect(page.getByTestId('paused-plan-progress')).toBeHidden();\n      |                                                           ^\n  115 |  await expect(page.getByTestId('jade-study-status')).toContainText('此段研习已暂停');await expect(root.locator('.art10-authorization-summary')).toContainText('累计灵石上限 240 · 保留 0');await frame(page,info,'concise-paused-study',root);\n  116 |  await readonly(page,async()=>{await stage.openLearningSettings(page);await expect(page.getByTestId('paused-plan-progress')).toBeVisible();await expect(page.getByTestId('paused-plan-progress')).toContainText('已完成 1 / 2 卷');await expect(page.getByTestId('learning-full-estimate')).toContainText('继续沿用原累计预算与保留线');await expect(page.getByTestId('learning-full-estimate')).toContainText('新安排预演');await frame(page,info,'complete-paused-progress',page.getByTestId('learning-plan-dialog'));await stage.closeLearningSettings(page);});\n  117 |  expect(await database(page)).toEqual(raw);await page.getByTestId('training-resume').click();await expect.poll(async()=>(await activity(page))?.status).toBe('running');const resumed=await activity(page);expect(resumed.id).toBe(paused.id);expect(resumed.plan).toEqual(paused.plan);expect(resumed.spentStones).toBe(paused.spentStones);await expect(page.getByTestId('training-countdown')).toHaveText('30.0 秒');await finishCycle(page,resumed,g,await database(page));await expect.poll(async()=>(await activity(page)).status).toBe('stopped');\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts:114:59"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T14:36:17.532Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A4-p-3e136-nal-remaining-cycle-resumes-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A4-p-3e136-nal-remaining-cycle-resumes-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline2-results/ux31-readability-UX31-A4-p-3e136-nal-remaining-cycle-resumes-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/ux31-readability.spec.ts",
+                    "column": 59,
+                    "line": 114
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0ad4e806edbb1cf44b57-4adb72f8bdd44862a093",
+          "file": "ux31-readability.spec.ts",
+          "line": 319,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T14:35:53.503Z",
+    "duration": 38964.337,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

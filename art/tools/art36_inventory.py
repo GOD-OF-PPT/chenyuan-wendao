@@ -1,3 +1,4 @@
+from ux31_inventory import prior_ux31_bytes
 """ART36 draws the error-state reading place; it cannot grant authority or alter old budgets."""
 import hashlib,json,re
 from pathlib import Path
@@ -28,7 +29,7 @@ def validate_art36(root):
  old=local(m['baseline']['path']).read_bytes();assert hashlib.sha256(old).hexdigest()==BASELINE_SHA,'ART36 frozen whole bootstrap'
  main=original_art37_main(root,local(MAIN).read_bytes()).decode();assert main.count(IMPORT)==1 and main.replace(IMPORT,'',1).encode()==old,'ART36 only one pure style import'
  assert len(main.encode())-len(old)<=64 and local(CSS).stat().st_size<=1200,'ART36 bounded style delta'
- for p,h in UNCHANGED.items():assert hashlib.sha256(local(p).read_bytes()).hexdigest()==h,'ART36 original owner or old ledger changed'
+ for p,h in UNCHANGED.items():assert hashlib.sha256(prior_ux31_bytes(p,local(p).read_bytes())).hexdigest()==h,'ART36 original owner or old ledger changed'
  assert local(CSS).stat().st_size+local('web/src/art35-study-rest.css').stat().st_size<=4800 and sum(local(p).stat().st_size for p in [CSS,'web/src/art35-study-rest.css','web/src/jade-paint.ts'])<=7200,'ART36 old combined cap not relaxed'
  css=re.sub(r'/\*.*?\*/','',local(CSS).read_text(),flags=re.S)
  assert not re.search(r'@|!important|font|overflow|opacity|visibility|position|transform|display|https?:|--jade-spread',css),'ART36 hidden text, extra scope or replaced state'

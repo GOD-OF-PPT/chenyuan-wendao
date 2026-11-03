@@ -1,0 +1,6 @@
+{
+  "originalLog": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux31/baseline.log",
+  "reason": "Runner from frozen source and author tests from root loaded two separate Playwright instances",
+  "testCasesExecuted": 0,
+  "next": "standalone fixed-profile config and root web runner; no product edits or limits changed"
+}

@@ -1,3 +1,4 @@
+from ux31_inventory import prior_ux31_bytes
 """ART11 immutable item exports and actual read-only consumers.
 
 Default validation checks bytes, headers and hash-bound actual decode/export
@@ -76,7 +77,7 @@ def validate_art11(root, image_reader):
 
     def identity(row,expected):
         assert type(row) is dict and set(row)=={'path','bytes','sha256'} and row['path']==expected, 'ART11 identity shape/path changed'
-        data=local(expected).read_bytes()
+        data=prior_ux31_bytes(expected,local(expected).read_bytes())
         assert type(row['bytes']) is int and row['bytes']==len(data) and row['bytes']>0, 'ART11 actual bytes changed'
         assert sha(row['sha256']) and row['sha256']==hashlib.sha256(data).hexdigest(), 'ART11 actual hash changed'
 

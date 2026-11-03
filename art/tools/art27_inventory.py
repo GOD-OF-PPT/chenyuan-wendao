@@ -1,3 +1,4 @@
+from ux31_inventory import prior_ux31_bytes,normalize_ux31
 from art26_inventory import normalize_ux27_equipment
 """Bind the single decorative workshop to unchanged controls and original artifact coordinates."""
 import hashlib,json,re
@@ -23,10 +24,10 @@ def validate_art27(root,image_reader):
  def local(n):
   assert type(n)is str and not n.startswith('/')and'..'not in n.split('/')and'\\'not in n,'ART27 local path'
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART27 missing input';return p
- def digest(n):return hashlib.sha256(local(n).read_bytes()).hexdigest()
+ def digest(n):return hashlib.sha256(prior_ux31_bytes(n,local(n).read_bytes())).hexdigest()
  def identity(r):
-  assert type(r['bytes'])is int and r['bytes']==local(r['path']).stat().st_size and r['sha256']==digest(r['path']),'ART27 actual identity'
-  return local(r['path']).read_bytes()
+  assert type(r['bytes'])is int and r['bytes']==len(prior_ux31_bytes(r['path'],local(r['path']).read_bytes())) and r['sha256']==digest(r['path']),'ART27 actual identity'
+  return prior_ux31_bytes(r['path'],local(r['path']).read_bytes())
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-relic-workshop-art27'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART27 header'
  assert m['budgets']==BUDGETS and all(type(v)is int for v in m['budgets'].values()),'ART27 fixed typed cap'
  assert [r['path']for r in m['files']]==FILES and m['sourceReferences']==REFS and m['baselines']==BASELINES and m['unchanged']==UNCHANGED,'ART27 exact members/baselines'
@@ -34,7 +35,7 @@ def validate_art27(root,image_reader):
  for n in REFS:local(n)
  for r in BASELINES.values():identity(r)
  assert all((hashlib.sha256(normalize_ux27_equipment(local(n).read_text()).encode()).hexdigest()if n=='web/src/EquipmentPanel.vue'else digest(n))==h for n,h in UNCHANGED.items()),'ART27 unchanged renderer/controller/proof'
- actor=local(FILES[0]).read_text();assert actor.count(SCENE_TAG)==1 and actor.replace(SCENE_TAG,'').encode()==identity(BASELINES['atelier']),'ART27 template-only decorative addition'
+ actor=normalize_ux31(FILES[0],local(FILES[0]).read_text());assert actor.count(SCENE_TAG)==1 and actor.replace(SCENE_TAG,'').encode()==identity(BASELINES['atelier']),'ART27 template-only decorative addition'
  renderer=local(FILES[3]).read_text();original=local(BASELINES['inscription']['path']).read_text();opening=next(x for x in original.splitlines(True)if x.startswith('  <button class="relic-object-inspect"'))
  assert renderer.count(opening)==1,'ART27 original inspect event'
  normalized=renderer.replace('aria-hidden="true" :data-form="shape"',':data-form="shape"',1).replace(opening,'').replace('   <div class="relic-form-surface"',opening+'   <div class="relic-form-surface"',1).replace('.relic-form-surface{position:absolute;left:0;top:0;','.relic-form-surface{position:relative;',1)

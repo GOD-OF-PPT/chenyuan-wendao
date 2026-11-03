@@ -1,3 +1,4 @@
+from ux31_inventory import prior_ux31_bytes
 import hashlib, json, shutil, tempfile, unittest
 from pathlib import Path
 from ux30_inventory import FACTS, GROUPS, REFS, LEDGER, validate_ux30, prior_ux30_bytes
@@ -17,7 +18,8 @@ class PrimaryCopyTests(unittest.TestCase):
         for n in names:
             p = self.root / n
             p.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(ROOT / n, p)
+            # Preserve the standalone UX30 contract view; UX31 validates actual current sources separately.
+            p.write_bytes(prior_ux31_bytes(n,(ROOT / n).read_bytes()))
 
     def update(self, fn):
         p = self.root / LEDGER

@@ -1,0 +1,83 @@
+{
+  "format": "chenyuan-readability-ux31",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "maxAddedCSSBytes": 400,
+  "files": [
+    {
+      "path": "web/src/RelicAtelier.vue",
+      "bytes": 16108,
+      "sha256": "6cf5593fb4b357dced435bce93dab17257ef8a8cf14d242f93a7b27ddf0dcf63"
+    },
+    {
+      "path": "web/src/MarketCounter.vue",
+      "bytes": 10082,
+      "sha256": "9b6ca02cd3c7bbb58f5e73f9b59e853a159e9b46545043548418354e6a20a310"
+    },
+    {
+      "path": "web/src/RecoveryPlanner.vue",
+      "bytes": 8552,
+      "sha256": "3bce24833d9cbf3ecc3d0733520ff4d9e6fafc869ec24d6d526ba33aaa61cb1b"
+    },
+    {
+      "path": "web/src/LearningPlanner.vue",
+      "bytes": 18625,
+      "sha256": "a9202d043c1ba1875a9c7706b7c80bf071667afd966081e7ac203b57c5763a78"
+    },
+    {
+      "path": "web/src/JadeStudyScene.vue",
+      "bytes": 5225,
+      "sha256": "10856e9645c1e7944da5ef0d98951a6a3d4a282dedd979863f6e9b2985fb29b9"
+    },
+    {
+      "path": "web/src/art11-inventory.css",
+      "bytes": 12301,
+      "sha256": "fcc3dfcf1299e9f8b2a81822ac15f54899ef5f274a08f9359d34af3eb7b9ed44"
+    }
+  ],
+  "baselines": [
+    {
+      "path": "goal-4/evidence/ux31/RelicAtelier.vue.before.txt",
+      "bytes": 16083,
+      "sha256": "9b2b585fc38b989cce519cd91c67e3108ead867a92aa502182af80b9fa5eab67"
+    },
+    {
+      "path": "goal-4/evidence/ux31/MarketCounter.vue.before.txt",
+      "bytes": 10044,
+      "sha256": "c8849c784dd1d864a5787658e941b6fbe10305ee476e5ad8ffc2daa687478b3e"
+    },
+    {
+      "path": "goal-4/evidence/ux31/RecoveryPlanner.vue.before.txt",
+      "bytes": 8554,
+      "sha256": "cfebbad097fcd2d1913fc510fae511e665aa0403c6e3fd0acbbeed2ac0d4ab67"
+    },
+    {
+      "path": "goal-4/evidence/ux31/LearningPlanner.vue.before.txt",
+      "bytes": 18613,
+      "sha256": "916581594274b568bf22fea242edacf375c7cf53a96ec4ca3766adad58db3d1b"
+    },
+    {
+      "path": "goal-4/evidence/ux31/JadeStudyScene.vue.before.txt",
+      "bytes": 5253,
+      "sha256": "434b16c05e5e6870cb67dc1f6611a81637864b0e20463c8bfd93e4c395d675ed"
+    },
+    {
+      "path": "goal-4/evidence/ux31/art11-inventory.css.before.txt",
+      "bytes": 12073,
+      "sha256": "62b4382c926596b800f24e7483931367aa28aa0d1a235d78280269862c061461"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0092-visual-readability-ux31-contract.md",
+    "goal-4/amendments/2026-11-03-ux31-input.md",
+    "goal-4/research/ux31-readability-sources.json",
+    "art/redesign/ux31-display-edits.json",
+    "goal-4/evidence/ux31/RelicAtelier.vue.before.txt",
+    "goal-4/evidence/ux31/MarketCounter.vue.before.txt",
+    "goal-4/evidence/ux31/RecoveryPlanner.vue.before.txt",
+    "goal-4/evidence/ux31/LearningPlanner.vue.before.txt",
+    "goal-4/evidence/ux31/JadeStudyScene.vue.before.txt",
+    "goal-4/evidence/ux31/art11-inventory.css.before.txt"
+  ]
+}

@@ -1,3 +1,4 @@
+from ux31_inventory import prior_ux31_bytes,normalize_ux31
 from ux28_inventory import normalize_ux28_recovery
 from art35_inventory import normalize_art35_recovery
 """ART29 cold packing stage, original actions, and immutable fourteen item drawings."""
@@ -25,9 +26,9 @@ def validate_art29(root,image_reader):
  def local(n):
   assert type(n)is str and not n.startswith('/')and'..'not in n.split('/')and'\\'not in n,'ART29 local path'
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART29 missing input';return p
- def digest(n):return hashlib.sha256(local(n).read_bytes()).hexdigest()
+ def digest(n):return hashlib.sha256(prior_ux31_bytes(n,local(n).read_bytes())).hexdigest()
  def identity(r):
-  assert type(r['bytes'])is int and r['bytes']==local(r['path']).stat().st_size and r['sha256']==digest(r['path']),'ART29 actual identity';return local(r['path']).read_bytes()
+  assert type(r['bytes'])is int and r['bytes']==len(prior_ux31_bytes(r['path'],local(r['path']).read_bytes())) and r['sha256']==digest(r['path']),'ART29 actual identity';return prior_ux31_bytes(r['path'],local(r['path']).read_bytes())
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-inventory-scene-art29'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART29 header'
  assert m['budgets']==BUDGETS and all(type(v)is int for v in m['budgets'].values()),'ART29 fixed typed budget'
  assert [r['path']for r in m['files']]==FILES and m['sourceReferences']==REFS and m['baselines']==BASELINES and m['unchanged']==UNCHANGED and m['presentationEdits']==EDITS,'ART29 exact files/baselines/edits'
@@ -40,7 +41,7 @@ def validate_art29(root,image_reader):
  expected=expected.replace(EDITS['footer'],'',1).replace('</small></article>','</small>'+EDITS['footer'].strip()+'</article>',1);expected=expected.replace(*EDITS['capabilityHint'],1);actor=local(FILES[0]).read_text();assert actor==expected,'ART29 exact presentation move and original entire controller'
  css=identity(BASELINES[1]).decode()
  for old,new in EDITS['cssChanges']:assert css.count(old)==1,'ART29 original exact selector';css=css.replace(old,new,1)
- assert local(FILES[1]).read_text()==css+EDITS['cssAddition'],'ART29 exact inventory styles and unchanged other domains'
+ assert normalize_ux31(FILES[1],local(FILES[1]).read_text())==css+EDITS['cssAddition'],'ART29 exact inventory styles and unchanged other domains'
  assert not re.search(r'@import|@font-face|https?://|file://',local(FILES[1]).read_text()),'ART29 external style IO'
  tree=Tags(actor);scenes=[i for i,(t,a)in enumerate(tree.nodes)if t=='assetimage'and a.get('asset-id')=='inventory-chamber'];decisions=[i for i,(t,a)in enumerate(tree.nodes)if t=='footer'and a.get('class')=='inventory-main-decision'];assert len(scenes)==len(decisions)==1,'ART29 actual scene and one primary decision'
  i=scenes[0];a=tree.nodes[i][1];assert a.get('path')=='art/v2/workshops/inventory-v1.webp'and a.get('aria-hidden')=='true'and a.get('class')=='study-sanctum'and a.get('style')=='inset:-12px -18px','ART29 actual decorative scene'

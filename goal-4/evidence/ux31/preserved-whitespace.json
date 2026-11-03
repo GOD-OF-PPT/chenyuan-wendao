@@ -1,0 +1,6 @@
+{
+  "path": "goal-4/evidence/ux31/guard-before/art35_inventory.py",
+  "source": "3244c44:art/tools/art35_inventory.py",
+  "sha256": "9e14c2cf5a47fc2123da5bc62d3b49d238e6245c5814dca99536832e602d85cc",
+  "note": "Exact original includes a blank EOF line. Kept byte-identical; product/test/docs diff-check passes with only this immutable evidence copy excluded."
+}

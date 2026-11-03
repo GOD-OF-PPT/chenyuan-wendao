@@ -107,3 +107,7 @@
 
 #app .inventory-held .item-artifact-plate{background:none;border:0;box-shadow:none}#app .inventory-held{outline:0!important}#app .inventory-held:focus-visible>span{outline:2px solid var(--art18-jade)}#app .inventory-held:is(:hover,:focus-visible)>.item-artifact{filter:brightness(1.08)}#app .inventory-held:active>.item-artifact{filter:brightness(.95)}
 #app .art11-inventory[data-item=dao] .inventory-held>.item-artifact{scale:1.06}
+
+/* UX31: separate the bowl without shrinking the fallback icon or text. */
+#app .art11-recovery .recovery-vessel:has(.asset-fallback) .recovery-jade-bowl{bottom:6px}
+#app .art11-recovery .supply-plan-open{white-space:pre-line}

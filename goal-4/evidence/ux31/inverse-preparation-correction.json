@@ -1,0 +1,5 @@
+{
+  "issue": "Initial deletion inverse used only </small>, which is not unique; validation stopped before the CSS write.",
+  "resolution": "Use the entire unique small element as the explicit before/after span. All five SFC scripts remain byte-identical; no browser run consumed a partial new product.",
+  "originalsPreserved": true
+}

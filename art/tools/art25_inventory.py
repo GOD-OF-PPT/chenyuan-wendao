@@ -1,3 +1,4 @@
+from ux31_inventory import prior_ux31_bytes,normalize_ux31
 from art35_inventory import normalize_art35_jade
 """Bound the real reading seat, script ownership and existing scene, without new assets."""
 import hashlib,json,re
@@ -13,6 +14,7 @@ SCENE='web/public/art/v2/schools/sanctum-v1.webp'
 UX26_LEARNING_BEFORE="'待确认的新安排，确认后才开始'"
 UX26_LEARNING_AFTER="running?'下次草案，当前执行见上方':'待确认安排，确认后开始'"
 def normalize_ux26_learning(text):
+ text=normalize_ux31('LearningPlanner.vue',text)
  if UX26_LEARNING_AFTER not in text:return text
  assert text.count(UX26_LEARNING_AFTER)==1,'UX26 unique approved draft label'
  text=text.replace(UX26_LEARNING_AFTER,UX26_LEARNING_BEFORE,1)
@@ -26,12 +28,12 @@ def validate_art25(root):
  def local(n):
   assert type(n)is str and not n.startswith('/')and'..'not in n.split('/')and'\\'not in n,'ART25 local path'
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART25 missing input';return p
- def digest(n):return hashlib.sha256(local(n).read_bytes()).hexdigest()
+ def digest(n):return hashlib.sha256(prior_ux31_bytes(n,local(n).read_bytes())).hexdigest()
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-study-reading-art25'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART25 header'
  assert m['budgets']==BUDGETS and all(type(v)is int for v in m['budgets'].values()),'ART25 fixed cap'
  assert [r['path']for r in m['files']]==FILES and m['sourceReferences']==REFS,'ART25 exact members'
  for r in m['files']:
-  assert type(r['bytes'])is int and r['bytes']==local(r['path']).stat().st_size and r['sha256']==digest(r['path']),'ART25 actual identity'
+  assert type(r['bytes'])is int and r['bytes']==len(prior_ux31_bytes(r['path'],local(r['path']).read_bytes())) and r['sha256']==digest(r['path']),'ART25 actual identity'
  for n in REFS:local(n)
  for ledger,key,cap in [('art03','maxNativeBytes',45000),('art10','nativeBytes',12000),('idle-preparation','maxNativeBytes',60000),('ta09','nativeBytes',30000)]:
   prior=json.loads(local('art/redesign/'+ledger+'.json').read_text());assert(prior.get('budgets',{}).get(key,prior.get(key)))==cap and sum(local(r['path']).stat().st_size for r in prior['files'])<=cap,'ART25 old cap'
@@ -43,7 +45,7 @@ def validate_art25(root):
   validate_art26(root)
   successor=json.loads(local('art/redesign/art26.json').read_text())
   assert successor['baselines']['equipmentPanel']['sha256']==UNCHANGED[changed[0]],'ART25 exact approved parent baseline'
- actor=local(FILES[0]).read_text();script=actor.split('</script>')[0].replace("import AssetImage from './AssetImage.vue';\n",'');assert hashlib.sha256(script.encode()).hexdigest()==SCRIPT,'ART25 script core'
+ actor=normalize_ux31(FILES[0],local(FILES[0]).read_text());script=actor.split('</script>')[0].replace("import AssetImage from './AssetImage.vue';\n",'');assert hashlib.sha256(script.encode()).hexdigest()==SCRIPT,'ART25 script core'
  a=m['reusedAsset'];assert a==dict(path=SCENE,bytes=171716,sha256='91e3b5d7eebcb36bd0a1cbe3791a119290d0badddb313ad948bd4a0ade968d53')and digest(SCENE)==a['sha256']and local(SCENE).stat().st_size==a['bytes'],'ART25 reused original scene'
  local('art/production/art24/export-facts.json');tree=Tags(actor)
  art=[i for i,(t,v)in enumerate(tree.nodes)if t=='assetimage'and v.get('asset-id')=='study-sanctum'];assert len(art)==1,'ART25 actual scene'

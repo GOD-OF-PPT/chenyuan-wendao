@@ -151,6 +151,8 @@ class InventoryTests(unittest.TestCase):
    data=json.loads(art34.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']));files.update(ROOT/row['path']for row in data['files'])
   art36=ROOT/'art/redesign/art36.json'
   if art36.exists():files.update(ROOT/ref for ref in json.loads(art36.read_text())['sourceReferences'])
+  ux31=ROOT/'art/redesign/ux31.json'
+  if ux31.exists():files.update(ROOT/ref for ref in json.loads(ux31.read_text())['sourceReferences'])
   ux30=ROOT/'art/redesign/ux30.json'
   if ux30.exists():files.update(ROOT/ref for ref in json.loads(ux30.read_text())['sourceReferences'])
   art37=ROOT/'art/redesign/art37.json'

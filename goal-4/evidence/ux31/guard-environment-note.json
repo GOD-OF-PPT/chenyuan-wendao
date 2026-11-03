@@ -1,0 +1,1 @@
+{"scope":"author positive check only","firstResult":"UX31 current guard passed; full legacy check could not import Pillow from system Python","resolution":"reuse the established Pillow virtual environment for full resource checks; not a product failure"}

@@ -1,3 +1,4 @@
+from ux31_inventory import prior_ux31_bytes
 'UX30 exact copy/template evolution, preserving all previous complete source proofs.'
 
 import hashlib, json, re
@@ -200,6 +201,7 @@ REFS = ['docs/decisions/0091-primary-game-copy-density-ux30-contract.md',
  'goal-4/evidence/ux30/RecoveryRitual.vue.before.txt']
 
 def prior_ux30_bytes(path, raw):
+    raw = prior_ux31_bytes(path, raw)
     name = Path(path).name
     if name not in FACTS or b'data-copy30=' not in raw:
         return raw
@@ -232,11 +234,11 @@ def validate_ux30(root):
     assert [r['path'] for r in m['baselines']] == [f['baseline'] for f in FACTS.values()], 'UX30 exact originals'
     assert json.loads(local('art/redesign/ux30-display-edits.json').read_text()) == {name: [[before, after] for _, before, after in rows] for name, rows in OPERATIONS.items()}, 'UX30 exact published copy changes'
     for row in m['files'] + m['baselines']:
-        data = local(row['path']).read_bytes()
+        data = prior_ux31_bytes(row['path'], local(row['path']).read_bytes())
         assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], 'UX30 actual source facts'
     for name, f in FACTS.items():
         path = 'web/src/' + name
-        raw = local(path).read_bytes()
+        raw = prior_ux31_bytes(path, local(path).read_bytes())
         before = local(f['baseline']).read_bytes()
         assert hashlib.sha256(before).hexdigest() == f['before'] and prior_ux30_bytes(name, raw) == before, 'UX30 original source inverse'
         assert len(raw) == f['bytes'] and raw.count(b'data-copy30=') == 1, 'UX30 actual copy consumer'
