@@ -1,0 +1,21 @@
+{
+  "sourceHead": "7c20e72d13f50ec52cd570477ed26395845ccd7c",
+  "runtimeDigest": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+  "originalTest": "/Users/gordon/githome/chenyuan-wendao/web/e2e/check-art18-ux.spec.ts",
+  "originalSha256": "b7bbc0174097f9c7d6f4b215a0cae2d474b48a556a18155cd429a60746438806",
+  "errors": [
+    {
+      "type": "error",
+      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('journey-hint')\nExpected substring: \u001b[32m\"\u001b[7m无需\u001b[27m突破\u001b[7m丹\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7m修为圆满后再筹备\u001b[27m突破\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('journey-hint')\u001b[22m\n\u001b[2m    12 × locator resolved to <p data-copy30=\"home\" class=\"journey-hint\" data-testid=\"journey-hint\">修为圆满后再筹备突破</p>\u001b[22m\n\u001b[2m       - unexpected value \"修为圆满后再筹备突破\"\u001b[22m\n",
+      "stack": [
+        {
+          "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/e2e/check-art18-ux.spec.ts",
+          "line": 17,
+          "column": 411
+        }
+      ]
+    }
+  ],
+  "diagnosis": "Original journey-hint expectation still targets full mortal breakthrough guidance; UX30 moved the complete step.detail to the existing cultivation notes. The main hint now identifies preparation after full cultivation. Game, timing and authorization assertions have not run beyond this old text assertion.",
+  "status": "original failure retained; display-path adaptation pending; frozen running source unchanged"
+}

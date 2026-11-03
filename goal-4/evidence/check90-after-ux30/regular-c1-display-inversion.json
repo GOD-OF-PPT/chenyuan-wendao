@@ -1,0 +1,11 @@
+{
+  "path": "web/e2e/check-art18-ux.spec.ts",
+  "beforeSha256": "b7bbc0174097f9c7d6f4b215a0cae2d474b48a556a18155cd429a60746438806",
+  "afterSha256": "a09e115542984ffcfd52d49504098885904f9f13899877b53d10de8bbde630a2",
+  "old": "await expect(page.getByTestId('journey-hint')).toContainText('无需突破丹');",
+  "new": "await expect(page.getByTestId('journey-hint')).toHaveText('修为圆满后再筹备突破');\n await readonly(page,async()=>{\n  await page.getByTestId('cultivation-notes-open').click();\n  await expect(page.getByTestId('cultivation-notes-dialog')).toBeVisible();\n  await expect(page.getByTestId('cultivation-notes-dialog')).toContainText('无需突破丹');\n  await page.getByTestId('cultivation-notes-close').click();\n  await expect(page.getByTestId('cultivation-notes-dialog')).not.toBeVisible();\n  await expect(page.getByTestId('cultivation-notes-open')).toBeFocused();\n });",
+  "uniqueReplacement": true,
+  "entireOriginalRecovered": true,
+  "productRuntimeChanged": false,
+  "browserVerification": "pending complete original regular phase"
+}

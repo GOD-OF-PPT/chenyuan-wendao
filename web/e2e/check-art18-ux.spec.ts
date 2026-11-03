@@ -14,7 +14,15 @@ async function frame(page:Page,info:TestInfo,name:string){
  for(const r of rows){expect(r.font,r.text??'').toBeGreaterThanOrEqual(r.tag==='SMALL'?14:18);expect(r.inside,r.text??'').toBe(true);if(r.tag==='BUTTON'){expect(r.height).toBeGreaterThanOrEqual(44);expect(r.hit).toBe(true);}else expect(r.clipped,r.text??'').toBe(false);}expect(await page.evaluate(()=>document.documentElement.scrollHeight)).toBeLessThanOrEqual(900);
 }
 test('CROSS-ART18-UX-C1 a normal mortal cycle keeps its original countdown and finite budget through arrangement and consent cancellation',async({page},info)=>{
- await page.goto('/');await expect(page.getByTestId('save-status')).toHaveText('尚无存档',{timeout:15000});await useJourneyClock(page);await page.getByRole('button',{name:'踏入仙途'}).click();await finishJourneyClock(page);await page.getByTestId('leave').click();await finishJourneyClock(page);await page.getByTestId('return-cave').click();await finishJourneyClock(page);await expect(page.getByTestId('journey-hint')).toContainText('无需突破丹');const g=await snapshot(page);
+ await page.goto('/');await expect(page.getByTestId('save-status')).toHaveText('尚无存档',{timeout:15000});await useJourneyClock(page);await page.getByRole('button',{name:'踏入仙途'}).click();await finishJourneyClock(page);await page.getByTestId('leave').click();await finishJourneyClock(page);await page.getByTestId('return-cave').click();await finishJourneyClock(page);await expect(page.getByTestId('journey-hint')).toHaveText('修为圆满后再筹备突破');
+ await readonly(page,async()=>{
+  await page.getByTestId('cultivation-notes-open').click();
+  await expect(page.getByTestId('cultivation-notes-dialog')).toBeVisible();
+  await expect(page.getByTestId('cultivation-notes-dialog')).toContainText('无需突破丹');
+  await page.getByTestId('cultivation-notes-close').click();
+  await expect(page.getByTestId('cultivation-notes-dialog')).not.toBeVisible();
+  await expect(page.getByTestId('cultivation-notes-open')).toBeFocused();
+ });const g=await snapshot(page);
  await page.getByTestId('cultivate').click();const a=await online(page);expect(a.plan).toEqual({kind:'cultivation',method:'natural',maxCycles:50,until:'xp-cap',stoneBudget:0,stoneReserve:0});await page.clock.fastForward(10000);
  await readonly(page,async()=>{await page.getByTestId('training-settings').click();await expect(page.getByTestId('cultivation-catalogue')).toBeVisible();await page.getByTestId('hub-close').click();await page.getByRole('button',{name:'设置',exact:true}).click();await page.getByTestId('restart').click();await expect(page.getByTestId('game-confirmation')).toHaveAttribute('data-kind','restart');await page.keyboard.press('Escape');await expect(page.getByTestId('restart')).toBeFocused();await page.getByRole('button',{name:'关闭设置',exact:true}).click();});
  await expect(page.getByTestId('training-countdown')).toHaveText('20.0 秒');expect(await activity(page)).toEqual(a);expect(await snapshot(page)).toEqual(g);await page.clock.fastForward(19999);expect(await snapshot(page)).toEqual(g);await page.clock.fastForward(1);await expect.poll(async()=>(await activity(page)).completedCycles).toBe(1);await proof(page,g,a);await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page)).status).toBe('paused');await page.screenshot({path:info.outputPath('mortal-current-cycle-after-consent.png')});

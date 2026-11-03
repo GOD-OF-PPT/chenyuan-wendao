@@ -1,0 +1,20 @@
+[
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-regular-results/art15-cultivation-notes-AR-16d90-sts-or-the-main-cultivation-chromium/one-main-cultivation-and-notes.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/regular-light/one-main-cultivation-and-notes.jpg",
+    "sha256": "50f2c1fd22cb83cb778cae7c0c22363a87de74470baa0caa7b0c79f029aa8143",
+    "viewSha256": "2fea168736cbd50d946bd69043d3197ad6442a69dd39c7efb0bba6d40f7e612c",
+    "encoding": "same1440x900 JPEG68, original PNG retained",
+    "actualViewed": true,
+    "review": "Main action and unit reward/cost/30-second period plus finite cap readable. Full cultivation guidance is reachable in the nearby notes. No claim of all-page clarity or human acceptance."
+  },
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-regular-results/alchemy-workshop-complete--c7f28-arting-travel-or-production-chromium/alchemy-complete-settings.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/regular-light/alchemy-complete-settings.jpg",
+    "sha256": "f188d9a8913888407f1f571f07c9cad490e46406d2dd6415693005a209b3be02",
+    "viewSha256": "4da6bc3b4ab54bbd404da80e80fb0abcf34ac1981f425888be996604017bd67d",
+    "encoding": "same1440x900 JPEG68, original PNG retained",
+    "actualViewed": true,
+    "review": "Complete alchemy settings are intentionally on-demand; paragraph, targets, actual forecast and return/confirm are inside the dialog and readable. Main game surface remains beneath the modal."
+  }
+]
