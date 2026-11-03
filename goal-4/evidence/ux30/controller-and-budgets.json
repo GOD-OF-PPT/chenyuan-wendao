@@ -1,0 +1,38 @@
+[
+  {
+    "path": "web/src/App.vue",
+    "bytes": 159508,
+    "delta": 79,
+    "fullScriptEqual": true
+  },
+  {
+    "path": "web/src/TrainingPlanner.vue",
+    "bytes": 7517,
+    "delta": 23,
+    "fullScriptEqual": true
+  },
+  {
+    "path": "web/src/CultivationSite.vue",
+    "bytes": 4224,
+    "delta": -35,
+    "fullScriptEqual": true
+  },
+  {
+    "path": "web/src/AlchemyWorkshop.vue",
+    "bytes": 12065,
+    "delta": -135,
+    "fullScriptEqual": true
+  },
+  {
+    "path": "web/src/RecoveryPlanner.vue",
+    "bytes": 8554,
+    "delta": -18,
+    "fullScriptEqual": true
+  },
+  {
+    "path": "web/src/RecoveryRitual.vue",
+    "bytes": 9542,
+    "delta": 56,
+    "fullScriptEqual": true
+  }
+]
