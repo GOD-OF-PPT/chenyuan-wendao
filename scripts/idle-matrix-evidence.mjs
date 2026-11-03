@@ -11,6 +11,7 @@ import {ascensionMatrix} from '../tests/ascension-matrix.mjs';
 const repositoryRoot=fileURLToPath(new URL('../',import.meta.url));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const key=r=>JSON.stringify([r.suite,r.file,r.title,r.projectName??'chromium']);
+const additions=JSON.parse(fs.readFileSync(new URL('../tests/idle-comprehensive-additions.json',import.meta.url)));
 export function idleReportTests(report,suite){
  assert.ok(['ui','persistence','journey'].includes(suite),'Unknown current suite');
  const directory=String(report.config?.rootDir??'').replaceAll('\\','/');
@@ -35,18 +36,21 @@ export function latestIdleResults(phases){
 }
 /** Validate real named declarations; v2 includes every v1 UI consumer in the complete UI inventory. */
 export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI){
- assert.ok(version===1||version===2,'Unknown idle matrix version');assert.match(runtime,/^[a-f0-9]{64}$/);
- const pins=version===1?idleRecoveryMatrix.profiles:idleComprehensiveProfiles,expected=[],seen=new Set();
+ assert.ok(version===1||version===2||version===3,'Unknown idle matrix version');assert.match(runtime,/^[a-f0-9]{64}$/);
+ const pins=version===1?idleRecoveryMatrix.profiles:version===2?idleComprehensiveProfiles:{...idleComprehensiveProfiles,ui:additions.profile},expected=[],seen=new Set();
  const named=(report,suite,pin)=>{const rows=idleReportTests(report,suite);assert.equal(path.basename(report.config.configFile),pin.configuration,'Partial declaration wrapper is not the reviewed profile');assert.equal(report.config.metadata.runtimeDigest,runtime,'Declaration source runtime differs');assert.equal(rows.length,pin.count,'Profile declarations were reduced');assert.equal(sha(JSON.stringify(rows.map(key).sort())),pin.signature,'Profile identities differ from the reviewed full source inventory');return rows;};
  for(const d of declarations){const pin=pins[d.suite];assert.ok(pin&&!seen.has(d.suite),'Exactly one complete named source profile per suite is required');seen.add(d.suite);expected.push(...named(d.report,d.suite,pin));}
  assert.deepEqual([...seen].sort(),['journey','persistence','ui']);assert.equal(new Set(expected.map(key)).size,expected.length,'Duplicate required identity');
- if(version===2){assert.ok(recoveryUI,'v2 requires the original reviewed recovery UI declaration');const original=named(recoveryUI,'ui',idleRecoveryMatrix.profiles.ui),complete=new Set(expected.filter(r=>r.suite==='ui').map(key));for(const row of original)assert.ok(complete.has(key(row)),'Original recovery UI consumer lost from the comprehensive inventory');}
+ if(version>=2){assert.ok(recoveryUI,'v2 requires the original reviewed recovery UI declaration');const original=named(recoveryUI,'ui',idleRecoveryMatrix.profiles.ui),complete=new Set(expected.filter(r=>r.suite==='ui').map(key));for(const row of original)assert.ok(complete.has(key(row)),'Original recovery UI consumer lost from the comprehensive inventory');}
+ if(version===3){
+  assert.equal(additions.format,'chenyuan-current-comprehensive-additions');assert.equal(additions.version,3);assert.equal(additions.additions.length,14);const added=new Set(additions.additions.map(key)),ui=expected.filter(r=>r.suite==='ui');assert.equal(added.size,14,'Duplicate added identity');for(const id of added)assert.ok(ui.some(r=>key(r)===id),'Missing reviewed added consumer');const original=ui.filter(r=>!added.has(key(r)));assert.equal(original.length,idleComprehensiveProfiles.ui.count,'Original v2 inventory reduced');assert.equal(sha(JSON.stringify(original.map(key).sort())),idleComprehensiveProfiles.ui.signature,'Original v2 consumer lost or replaced');
+ }
  return expected;
 }
 /** Explicit same-runtime engineering proof; does not replace the historical candidate gate. */
 export function verifyIdleMatrixCoverage(manifestFile){
  const manifest=JSON.parse(fs.readFileSync(manifestFile)),base=path.dirname(path.resolve(manifestFile));
- assert.equal(manifest.format,'chenyuan-idle-matrix-inputs');assert.ok(manifest.version===1||manifest.version===2,'Unknown idle matrix version');assert.deepEqual(manifest.scope,{browser:'chromium',viewport:{width:1440,height:900},fontScale:1});assert.match(manifest.runtime,/^[a-f0-9]{64}$/);
+ assert.equal(manifest.format,'chenyuan-idle-matrix-inputs');assert.ok(manifest.version===1||manifest.version===2||manifest.version===3,'Unknown idle matrix version');assert.deepEqual(manifest.scope,{browser:'chromium',viewport:{width:1440,height:900},fontScale:1});assert.match(manifest.runtime,/^[a-f0-9]{64}$/);
  const read=ref=>{assert.ok(ref&&typeof ref.path==='string');assert.match(ref.sha256,/^[a-f0-9]{64}$/);const bytes=fs.readFileSync(path.resolve(base,ref.path));assert.equal(sha(bytes),ref.sha256,'Evidence bytes changed: '+ref.path);return JSON.parse(bytes);};
  const phases=[],phaseNames=new Set();let previousStart=-Infinity;
  for(const descriptor of manifest.phases){
@@ -61,7 +65,7 @@ export function verifyIdleMatrixCoverage(manifestFile){
   const began=Date.parse(report.stats.startTime);assert.ok(Number.isFinite(began)&&began>=previousStart,'Phases must retain real chronological order');assert.ok(Date.parse(before.recordedAt)<=began&&began+report.stats.duration<=Date.parse(after.recordedAt)+1,'Snapshot is not a real before/after execution window');previousStart=began;
   phases.push({name:descriptor.name,suite:descriptor.suite,tests});
  }
- const {current,history}=latestIdleResults(phases),expected=inspectIdleDeclarations(manifest.version,manifest.declarations.map(d=>({suite:d.suite,report:read(d.report)})),manifest.runtime,manifest.version===2?read(manifest.recoveryUIDeclaration):undefined);
+ const {current,history}=latestIdleResults(phases),expected=inspectIdleDeclarations(manifest.version,manifest.declarations.map(d=>({suite:d.suite,report:read(d.report)})),manifest.runtime,manifest.version>=2?read(manifest.recoveryUIDeclaration):undefined);
  assert.deepEqual([...current.keys()].sort(),expected.map(key).sort(),'Current normal/UI/native inventory is incomplete or contains undeclared cases');
  for(const {test:r} of current.values()){assert.equal(r.ok,true,r.title+': latest spec not passing');assert.equal(r.status,'expected',r.title+': latest outcome unexpected');assert.equal(r.results[0].status,'passed',r.title+': latest case did not pass');}
  assert.equal(idleRecoveryMatrix.legacySignature,sha(JSON.stringify(recoveryMatrix)),'Original obligations changed without per-leaf review');
@@ -78,7 +82,7 @@ export function verifyIdleMatrixCoverage(manifestFile){
  const actual=[...current.values()].map(r=>r.test),routes=actual.filter(r=>r.file==='idle-normal-matrix.spec.ts');assert.deepEqual(routes.map(r=>r.title).sort(),ascensionMatrix.map(r=>'normal idle '+r.id).sort(),'All24 normal routes required');
  const guides=actual.filter(r=>r.file==='idle-foundation-guide.spec.ts');assert.equal(guides.length,6);assert.equal(new Set(guides.map(r=>r.title.replace(/^guided idle foundation /,'').split('/').slice(0,2).join('/'))).size,6,'All six opening/school guides required');
  assert.deepEqual(actual.filter(r=>r.file==='idle-trial-reopen.spec.ts').map(r=>r.title).sort(),['sword','talisman'].map(s=>'current normal '+s+' reopens its actual question and every saved battle round without reroll or an automatic next gate').sort());
- return{format:'chenyuan-idle-matrix-coverage',version:manifest.version,profile:manifest.version===2?'fixed-desktop-comprehensive-v2':idleRecoveryMatrix.profile,runtime:manifest.runtime,phases:phases.length,composite:phases.length>3,uniqueTests:actual.length,totals:Object.fromEntries(['ui','persistence','journey'].map(s=>[s,actual.filter(r=>r.suite===s).length])),normalRoutes:24,foundationGuides:6,everyRoundNormalRoutes:2,requirements,history,legacyNative:{included:idleNativeMigration.includedLegacyTests.length,superseded:idleNativeMigration.supersededLegacyTests.length,total:idleNativeMigration.legacyDeclarationCount},pageCompatibilityAccepted:false,originalThreeBrowserMatrixAccepted:false,humanOrBalanceAccepted:false};
+ return{format:'chenyuan-idle-matrix-coverage',version:manifest.version,profile:manifest.version>=2?'fixed-desktop-comprehensive-v'+manifest.version:idleRecoveryMatrix.profile,runtime:manifest.runtime,phases:phases.length,composite:phases.length>3,uniqueTests:actual.length,totals:Object.fromEntries(['ui','persistence','journey'].map(s=>[s,actual.filter(r=>r.suite===s).length])),normalRoutes:24,foundationGuides:6,everyRoundNormalRoutes:2,requirements,history,legacyNative:{included:idleNativeMigration.includedLegacyTests.length,superseded:idleNativeMigration.supersededLegacyTests.length,total:idleNativeMigration.legacyDeclarationCount},pageCompatibilityAccepted:false,originalThreeBrowserMatrixAccepted:false,humanOrBalanceAccepted:false};
 }
 
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))console.log(JSON.stringify(verifyIdleMatrixCoverage(process.argv[2])));

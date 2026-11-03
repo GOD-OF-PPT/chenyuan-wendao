@@ -48,3 +48,12 @@ test('v2 cannot omit or replace the original reviewed recovery UI declaration',(
 test('v2 rejects wrong runtime metadata and duplicate named profiles',()=>{
  const [broad,recovery,native,normal]=declarations();assert.throws(()=>inspectIdleDeclarations(2,[broad,native,native],runtime,recovery.report),/Exactly one/);delete broad.report.config.metadata.runtimeDigest;assert.throws(()=>inspectIdleDeclarations(2,[broad,native,normal],runtime,recovery.report),/Declaration source runtime/);
 });
+
+function currentDeclarations(){const [broad,recovery,native,normal]=declarations(),extra=JSON.parse(fs.readFileSync(new URL('./idle-comprehensive-additions.json',import.meta.url)));broad.report.suites[0].specs.push(...extra.additions.map(r=>({file:r.file,title:r.title,tests:[{projectName:r.projectName}]})));return[broad,recovery,native,normal];}
+test('v3 requires all fourteen new dialog and cross-task consumers while retaining the complete exact v2 and original recovery inventories',()=>{
+ const [broad,recovery,native,normal]=currentDeclarations();assert.equal(inspectIdleDeclarations(3,[broad,native,normal],runtime,recovery.report).length,1277);assert.throws(()=>inspectIdleDeclarations(2,[broad,native,normal],runtime,recovery.report),/Profile declarations/);
+});
+test('v3 cannot drop or relabel a new consumer, substitute an old consumer, or ignore original recovery source',()=>{
+ for(const change of [r=>r.suites[0].specs.pop(),r=>r.suites[0].specs.at(-1).title+=' invented',r=>r.suites[0].specs[0].title+=' replaced']){const[broad,recovery,native,normal]=currentDeclarations();change(broad.report);assert.throws(()=>inspectIdleDeclarations(3,[broad,native,normal],runtime,recovery.report),/Profile declarations|Profile identities/);}
+ const[broad,recovery,native,normal]=currentDeclarations();assert.throws(()=>inspectIdleDeclarations(3,[broad,native,normal],runtime),/requires the original/);recovery.report.suites[0].specs[0].title+=' replacement';assert.throws(()=>inspectIdleDeclarations(3,[broad,native,normal],runtime,recovery.report),/Profile identities/);
+});

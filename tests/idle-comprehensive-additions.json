@@ -1,0 +1,95 @@
+{
+  "format": "chenyuan-current-comprehensive-additions",
+  "version": 3,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 830,
+    "signature": "19baf88c73536ccba30d07eda8d8ecc28aae941097c9addc19ea16c2cfef9704"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 expanded settings and destructive press are readable, distinct and readonly",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 a long literal selected filename wraps completely and cancelling import retains every store",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 expanded target production and its full limits keep both return actions reachable without opening the furnace",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 study complete directory pages preserve visible text, controls and the Game",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 alchemy complete directory pages preserve visible text, controls and the Game",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 relic complete directory pages preserve visible text, controls and the Game",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 market complete directory pages preserve visible text, controls and the Game",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 inventory complete directory pages preserve visible text, controls and the Game",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 wilderness complete directory pages preserve visible text, controls and the Game",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 commission complete directory pages preserve visible text, controls and the Game",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 system reduced effects keep static dialog text and focus",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 saved reduced effects keep static dialog text and focus",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-art36-cbase-art37.spec.ts",
+      "title": "CHECK90-C1 failed two-scroll study retains original authorization through new dialog cancel and one atomic original cycle",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-art36-cbase-art37.spec.ts",
+      "title": "CHECK90-C2 recovery keeps its selected object and full thirty second atomic period while new consent is cancelled",
+      "projectName": "chromium"
+    }
+  ]
+}
