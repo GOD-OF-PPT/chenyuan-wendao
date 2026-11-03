@@ -115,10 +115,10 @@
     "retried": [],
     "reportSha256": "68cf15fb35802a8e7d8b352d324ef1ce55141e47938f55c6d368f4ed36b65b34"
   },
-  "currentPhase": "normal-poll",
-  "currentPhaseStatus": "terminal passed32",
-  "currentPhaseSession": 20200,
-  "currentOwnedChild": 93360,
+  "currentPhase": "ui-regular",
+  "currentPhaseStatus": "verified running",
+  "currentPhaseSession": 85022,
+  "currentOwnedChild": 2161,
   "currentFinished": 32,
   "currentPassed": 32,
   "currentFailed": 0,
@@ -143,6 +143,22 @@
     "retried": [],
     "reportSha256": "ffb22ccf74a091eae79670ebb1e5529879759143872ae6cbc0833074eaf7d368"
   },
-  "nextRequired": "same frozen source completeUI834/native415/core then v4 audit",
-  "comprehensiveCheckComplete": false
+  "nextRequired": "wait on existing ui-regular handle; then native415 and v4 audit; preserve visual repairs and final acceptance as unfinished",
+  "comprehensiveCheckComplete": false,
+  "coreCurrentPassed": true,
+  "coreCurrentTests": 878,
+  "resourceMethods": 602,
+  "uiSlowPassed": 7,
+  "currentObservedFinished": 270,
+  "currentObservedFailures": 0,
+  "slowScreenshots": {
+    "total": 54,
+    "actualViewed": 34,
+    "priorExactInherited": 17,
+    "currentExactInherited": 3
+  },
+  "openVisualFindings": [
+    "CHECK90-V01",
+    "CHECK90-V02"
+  ]
 }

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "CHECK90-V01",
+    "status": "open",
+    "severity": "visual readability",
+    "surface": "recovery object with failed artwork",
+    "evidence": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-slow-results/art11-inventory-stage-ART1-1c9bf-odes-and-a-tight-real-error-chromium/preference-static-result-does-not-hide-actual-dose-cost.png",
+    "sha256": "a0f3805ea398e07cdf70cf9cdcd1d0b99d548f11363e19072495cde5196dd339",
+    "observed": "The decorative medicine bowl covers the trailing portion of the image-fallback caption. Item name, inventory, actual effect, cost and controls remain readable.",
+    "requiredFollowup": "Keep the object identifiable and the complete meaningful fallback information unobstructed; inspect the bowl/caption relationship and remove duplicate implementation wording only with explicit display review.",
+    "scope": "fixed1440x900; not compatibility or overall art acceptance"
+  },
+  {
+    "id": "CHECK90-V02",
+    "status": "open",
+    "severity": "copy and line-breaking polish",
+    "surfaces": [
+      "relic owned-state badge",
+      "market exchange caption",
+      "recovery authorization summary"
+    ],
+    "evidence": [
+      "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-slow-results/equipment-objects-ART03-A9-6c765-ct-intent-remains-retryable-chromium/forge-acceptance-owned-artifact-error.png",
+      "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-slow-results/inventory-objects-ART04-A4-79ae1--behind-its-actual-deadline-chromium/buy-real-running.png",
+      "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/ui-slow-results/inventory-objects-ART04-A5-e2f8a--behind-its-actual-deadline-chromium/use-real-running.png"
+    ],
+    "observed": "Short word groups split across lines, for example 尚未装/备 and 库存保留/0. Content remains present but reading is less natural.",
+    "requiredFollowup": "Refine short player-facing labels and preserve meaningful word/number groups without shrinking fonts or losing budgets.",
+    "scope": "fixed1440x900; overall art acceptance remains pending"
+  }
+]

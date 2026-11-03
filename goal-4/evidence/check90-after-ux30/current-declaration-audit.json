@@ -1,0 +1,15 @@
+{
+  "version": 4,
+  "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
+  "expectedTotal": 1281,
+  "counts": {
+    "ui": 834,
+    "uiRegular": 827,
+    "uiSlow": 7,
+    "native": 415,
+    "normal": 32,
+    "recoverySubset": 171
+  },
+  "actualNamedDeclarations": true,
+  "originalCompatibilityExclusionRetained": true
+}
