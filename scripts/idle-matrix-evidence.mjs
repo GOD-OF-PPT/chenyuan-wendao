@@ -16,6 +16,7 @@ const copyAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-ux30-addit
 const readabilityAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-ux31-additions.json',import.meta.url)));
 const marketCopyAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-ux32-additions.json',import.meta.url)));
 const statusAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-ux33-additions.json',import.meta.url)));
+const combinationAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-check-ux31-33-additions.json',import.meta.url)));
 export function idleReportTests(report,suite){
  assert.ok(['ui','persistence','journey'].includes(suite),'Unknown current suite');
  const directory=String(report.config?.rootDir??'').replaceAll('\\','/');
@@ -40,7 +41,7 @@ export function latestIdleResults(phases){
 }
 /** Validate real named declarations; v2 includes every v1 UI consumer in the complete UI inventory. */
 export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI){
- assert.ok(version===1||version===2||version===3||version===4||version===5||version===6||version===7,'Unknown idle matrix version');assert.match(runtime,/^[a-f0-9]{64}$/);
+ assert.ok(version===1||version===2||version===3||version===4||version===5||version===6||version===7||version===8,'Unknown idle matrix version');assert.match(runtime,/^[a-f0-9]{64}$/);
  const profiles = {
   1: idleRecoveryMatrix.profiles,
   2: idleComprehensiveProfiles,
@@ -49,6 +50,7 @@ export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI)
   5: {...idleComprehensiveProfiles, ui: readabilityAdditions.profile},
   6: {...idleComprehensiveProfiles, ui: marketCopyAdditions.profile},
   7: {...idleComprehensiveProfiles, ui: statusAdditions.profile},
+  8: {...idleComprehensiveProfiles, ui: combinationAdditions.profile},
  };
  const pins=profiles[version],expected=[],seen=new Set();
  const named=(report,suite,pin)=>{const rows=idleReportTests(report,suite);assert.equal(path.basename(report.config.configFile),pin.configuration,'Partial declaration wrapper is not the reviewed profile');assert.equal(report.config.metadata.runtimeDigest,runtime,'Declaration source runtime differs');assert.equal(rows.length,pin.count,'Profile declarations were reduced');assert.equal(sha(JSON.stringify(rows.map(key).sort())),pin.signature,'Profile identities differ from the reviewed full source inventory');return rows;};
@@ -56,7 +58,22 @@ export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI)
  assert.deepEqual([...seen].sort(),['journey','persistence','ui']);assert.equal(new Set(expected.map(key)).size,expected.length,'Duplicate required identity');
  if(version>=2){assert.ok(recoveryUI,'v2 requires the original reviewed recovery UI declaration');const original=named(recoveryUI,'ui',idleRecoveryMatrix.profiles.ui),complete=new Set(expected.filter(r=>r.suite==='ui').map(key));for(const row of original)assert.ok(complete.has(key(row)),'Original recovery UI consumer lost from the comprehensive inventory');}
  let previousUI=expected.filter(r=>r.suite==='ui');
- if(version===7){
+ if(version===8){
+  assert.equal(combinationAdditions.format,'chenyuan-ux31-33-comprehensive-additions');
+  assert.equal(combinationAdditions.version,8);
+  assert.equal(combinationAdditions.parentVersion,7);
+  assert.equal(combinationAdditions.additions.length,3);
+  const added=new Set(combinationAdditions.additions.map(key));
+  assert.equal(added.size,3,'Duplicate combination consumer');
+  for(const row of combinationAdditions.additions){
+   assert.equal(row.suite,'ui');assert.equal(row.file,'check-ux31-33.spec.ts');
+   assert.ok(previousUI.some(actual=>key(actual)===key(row)),'Missing reviewed combination consumer');
+  }
+  previousUI=previousUI.filter(row=>!added.has(key(row)));
+  assert.equal(previousUI.length,statusAdditions.profile.count,'Original v7 inventory reduced');
+  assert.equal(sha(JSON.stringify(previousUI.map(key).sort())),statusAdditions.profile.signature,'Original v7 consumer lost or replaced');
+ }
+ if(version>=7){
   assert.equal(statusAdditions.format,'chenyuan-ux33-comprehensive-additions');
   assert.equal(statusAdditions.version,7);
   assert.equal(statusAdditions.parentVersion,6);
@@ -128,7 +145,7 @@ export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI)
 /** Explicit same-runtime engineering proof; does not replace the historical candidate gate. */
 export function verifyIdleMatrixCoverage(manifestFile){
  const manifest=JSON.parse(fs.readFileSync(manifestFile)),base=path.dirname(path.resolve(manifestFile));
- assert.equal(manifest.format,'chenyuan-idle-matrix-inputs');assert.ok(manifest.version===1||manifest.version===2||manifest.version===3||manifest.version===4||manifest.version===5||manifest.version===6||manifest.version===7,'Unknown idle matrix version');assert.deepEqual(manifest.scope,{browser:'chromium',viewport:{width:1440,height:900},fontScale:1});assert.match(manifest.runtime,/^[a-f0-9]{64}$/);
+ assert.equal(manifest.format,'chenyuan-idle-matrix-inputs');assert.ok(manifest.version===1||manifest.version===2||manifest.version===3||manifest.version===4||manifest.version===5||manifest.version===6||manifest.version===7||manifest.version===8,'Unknown idle matrix version');assert.deepEqual(manifest.scope,{browser:'chromium',viewport:{width:1440,height:900},fontScale:1});assert.match(manifest.runtime,/^[a-f0-9]{64}$/);
  const read=ref=>{assert.ok(ref&&typeof ref.path==='string');assert.match(ref.sha256,/^[a-f0-9]{64}$/);const bytes=fs.readFileSync(path.resolve(base,ref.path));assert.equal(sha(bytes),ref.sha256,'Evidence bytes changed: '+ref.path);return JSON.parse(bytes);};
  const phases=[],phaseNames=new Set();let previousStart=-Infinity;
  for(const descriptor of manifest.phases){

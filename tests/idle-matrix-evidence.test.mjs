@@ -185,3 +185,32 @@ test('v7 preserves original recovery declaration runtime and suite ownership',()
  recovery.report.suites[0].specs[0].title+=' replaced';
  assert.throws(()=>inspectIdleDeclarations(7,[broad,native,normal],runtime,recovery.report),/Profile identities/);
 });
+
+function combinationDeclarations(){
+ const inventories=statusDeclarations();
+ const extra=JSON.parse(fs.readFileSync(new URL('./idle-check-ux31-33-additions.json',import.meta.url)));
+ inventories[0].report.suites[0].specs.push(...extra.additions.map(row=>({file:row.file,title:row.title,tests:[{projectName:row.projectName}]})));
+ return inventories;
+}
+test('v8 retains every v7 consumer and adds the three exact combination checks',()=>{
+ const [broad,recovery,native,normal]=combinationDeclarations();
+ assert.equal(inspectIdleDeclarations(8,[broad,native,normal],runtime,recovery.report).length,1301);
+ assert.throws(()=>inspectIdleDeclarations(7,[broad,native,normal],runtime,recovery.report),/Profile declarations/);
+ const [old,oldRecovery,oldNative,oldNormal]=statusDeclarations();
+ assert.equal(inspectIdleDeclarations(7,[old,oldNative,oldNormal],runtime,oldRecovery.report).length,1298);
+ assert.throws(()=>inspectIdleDeclarations(8,[old,oldNative,oldNormal],runtime,oldRecovery.report),/Profile declarations/);
+});
+test('v8 refuses missing duplicate or invented combinations and replaced parent consumers',()=>{
+ for(const mutate of [r=>r.suites[0].specs.pop(),r=>r.suites[0].specs.at(-1).title+=' invented',r=>r.suites[0].specs[0].title+=' replaced',r=>r.suites[0].specs.splice(-1,1,structuredClone(r.suites[0].specs.at(-2)))]){
+  const [broad,recovery,native,normal]=combinationDeclarations();mutate(broad.report);
+  assert.throws(()=>inspectIdleDeclarations(8,[broad,native,normal],runtime,recovery.report),/Profile declarations|Profile identities/);
+ }
+});
+test('v8 keeps original recovery source runtime and suite ownership mandatory',()=>{
+ const [broad,recovery,native,normal]=combinationDeclarations();
+ assert.throws(()=>inspectIdleDeclarations(8,[broad,native,normal],runtime),/requires the original/);
+ assert.throws(()=>inspectIdleDeclarations(8,[broad,native,native],runtime,recovery.report),/Exactly one/);
+ assert.throws(()=>inspectIdleDeclarations(8,[broad,native,normal],'b'.repeat(64),recovery.report),/runtime differs/);
+ recovery.report.suites[0].specs[0].title+=' replaced';
+ assert.throws(()=>inspectIdleDeclarations(8,[broad,native,normal],runtime,recovery.report),/Profile identities/);
+});
