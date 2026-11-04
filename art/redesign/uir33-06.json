@@ -1,0 +1,70 @@
+{
+  "format": "chenyuan-life-entry-uir33-06",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "oldStoryCap": 48000,
+  "oldNarrativeCap": 45000,
+  "files": [
+    {
+      "path": "web/src/LifeCatalogue.vue",
+      "bytes": 4051,
+      "sha256": "a6f96b99c510280e78a261c9d16c728dc715fb74f6f06e2f9b3dd6330037a403",
+      "before": "goal-4/evidence/uir33-06/before/web/src/LifeCatalogue.vue",
+      "beforeBytes": 3988,
+      "beforeSHA256": "3e0577cf7e071e2aa5282371f30dca2a1d414c80b36b9e84fa3f5167d4398cec"
+    },
+    {
+      "path": "web/src/story-pages.ts",
+      "bytes": 6147,
+      "sha256": "cdeff2da61fc28199b529c3394c3e881570eb0fe0bcee69770af871e8a104c9c",
+      "before": "goal-4/evidence/uir33-06/before/web/src/story-pages.ts",
+      "beforeBytes": 5939,
+      "beforeSHA256": "f75cc6730dc6b949ce7344aa79e54e6b84ac6f31d30661659e6d300be4df0fb7"
+    }
+  ],
+  "operations": {
+    "LifeCatalogue.vue": [
+      [
+        "{{record.overview.title}}",
+        "{{game.status==='active'?record.overview.name+' · 修行纪事':record.overview.title}}"
+      ]
+    ],
+    "story-pages.ts": [
+      [
+        " return rows;\n}",
+        " if(active){rows.push(rows.shift()!);rows.unshift({group:'life',key:'life-now',title:'此刻与来路',text:r.overview.ageLabel+'，'+r.overview.realmName+'。'+r.opening.text+(r.realms.at(-1)?.text??'')});}\n return rows;\n}"
+      ]
+    ]
+  },
+  "oldLedgers": {
+    "story-journey": "da8d4de050fc8e2254a0ee2d64fc3e747122db5f0f06709dc6c61f728011c15d",
+    "narrative-objects": "0dc8cdfa6666fa9702d8b9845704075dc62b6f3b4e192013b406457fa68db3c2",
+    "art31": "188a145aa07a2289637ebd91ca679f0107b466410031b6a4750db74c6412aa84",
+    "art32": "5582eb52404e5128f282fdf2e3da7bf26022abc764442e1034d87ae5ced01cf3"
+  },
+  "unchanged": {
+    "src/full/life-record.ts": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+    "web/src/LifeScroll.vue": "1130d9cadbe7d57c4afea5ba3a18bbe84db7a519f6ed0540000a71b3e6890788",
+    "web/src/reading-memory.ts": "8e7a0718edb07113e30f817df5ea98180455e1ea4a7f481a10c72b3657357808",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "web/src/App.vue": "2549b27003e11cf12f44e2ba41a1053b2de996c3636110f277ac84babd1dd4fd"
+  },
+  "sourceReferences": [
+    "docs/decisions/0101-life-entry-uir33-06-contract.md",
+    "goal-4/amendments/2026-11-04-uir33-06-input.md",
+    "goal-4/research/uir33-06-sources.json",
+    "goal-4/evidence/uir33-06/before/web/e2e/art31-life-scroll.spec.ts"
+  ],
+  "consumer": {
+    "path": "web/e2e/art31-life-scroll.spec.ts",
+    "before": "goal-4/evidence/uir33-06/before/web/e2e/art31-life-scroll.spec.ts",
+    "beforeSHA256": "03b9949a5570859bc4ae6f6fa4c9c6e8eb7fad5ec2235333934dc754e44d542e",
+    "operation": [
+      "const title=getLifeRecord(before).overview.title;",
+      "const title=before.core.player.name+' · 修行纪事';"
+    ]
+  }
+}

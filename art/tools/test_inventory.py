@@ -154,6 +154,9 @@ class InventoryTests(unittest.TestCase):
   checkuir=ROOT/'art/redesign/check-uir33-label.json'
   if checkuir.exists():
    m=json.loads(checkuir.read_text());files.update(ROOT/ref for ref in m['sourceReferences']+[m['before']])
+  uir3306=ROOT/'art/redesign/uir33-06.json'
+  if uir3306.exists():
+   data=json.loads(uir3306.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[r['before']for r in data['files']]+[data['consumer']['path']]+list(data['unchanged']))
   uir3305=ROOT/'art/redesign/uir33-05.json'
   if uir3305.exists():
    data=json.loads(uir3305.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[data['before']['path']])

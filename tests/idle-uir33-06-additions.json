@@ -1,0 +1,54 @@
+{
+  "format": "chenyuan-uir33-06-comprehensive-additions",
+  "version": 14,
+  "parentVersion": 13,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 889,
+    "signature": "9f29a860e98de0b4d3f454d6005fdfe855f869f7915ba8577a7c31bc893c7217"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 opening leave leads with the actual life instead of repeated unsealed instructions",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 opening help leads with the actual life instead of repeated unsealed instructions",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 opening trade leads with the actual life instead of repeated unsealed instructions",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 longest lawful name and complete late chapters preserve every original fact and unchanged text export",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 one original cultivation cycle preserves the selected life record and context through ordinary return",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 a failed twelve-second retirement keeps the active entry and only its original retry reveals the sealed conclusion",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 replacing a life restores its own factual first page without inheriting the old reading or intent",
+      "projectName": "chromium"
+    }
+  ]
+}

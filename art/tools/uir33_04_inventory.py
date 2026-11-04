@@ -1,3 +1,4 @@
+from uir33_06_inventory import prior_uir3306_bytes
 """Book hierarchy only; all originals reconstruct exactly and old budgets remain fixed."""
 from check_uir33_inventory import prior_check_uir33_bytes
 import hashlib,json
@@ -93,6 +94,7 @@ OPERATIONS={'web/src/CultivationNotes.vue': [["purpose?:string}>(),{purpose:'安
 CAPS={'art03': 45000, 'idle-preparation': 60000, 'art15': 6000}
 MARKERS={'CultivationNotes.vue':'prefix?:string','JadeStudyScene.vue':'import StudyNotes','LearningPlanner.vue':'v-if="currentSlot!==selected"'}
 def prior_uir3304_bytes(path,raw):
+ raw=prior_uir3306_bytes(path,raw)
  raw=prior_check_uir33_bytes(path,raw)
  name=Path(path).name
  if name not in FACTS or MARKERS[name].encode() not in raw:return raw

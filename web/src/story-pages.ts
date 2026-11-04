@@ -26,5 +26,6 @@ export function lifeReadings(game:Game):Reading[]{
  ...r.people.map(p=>({group:'decisions',key:'person-'+p.id,title:p.name+' · '+p.label,text:p.facts.map(f=>f.title+'：'+f.text).join('\n')||p.note})),
  {group:'seal',key:'scope',title:'记录范围',text:r.scope},{group:'seal',key:'identity',title:'存档身份',text:r.source.runId+' · 进度 '+r.source.revision+' · '+r.source.contentVersion+' / '+r.source.balanceVersion},{group:'seal',key:'recovery-note',title:'准备恢复',text:'恢复会回退完整准备，包括物品、年月、装备与人物记录，不保留此后所得。没有检查点时不能补造快照。生平文本不含完整进度，恢复请另行导出存档。',testId:'life-recovery-note'}];
  if(!r.decisions.length)rows.push({group:'decisions',key:'life-no-decisions',title:'实际选择',text:'存档尚无其他事件选择记录，不补写交情或来往。',testId:'life-no-decisions'});
+ if(active){rows.push(rows.shift()!);rows.unshift({group:'life',key:'life-now',title:'此刻与来路',text:r.overview.ageLabel+'，'+r.overview.realmName+'。'+r.opening.text+(r.realms.at(-1)?.text??'')});}
  return rows;
 }

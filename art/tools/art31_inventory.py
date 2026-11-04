@@ -1,3 +1,4 @@
+from uir33_06_inventory import prior_uir3306_bytes
 """ART31 physical life reading, exact original controls and one blank decorative desk."""
 import hashlib,json,re
 LEDGER='art/redesign/art31.json'
@@ -19,9 +20,9 @@ def validate_art31(root,image_reader):
  def local(n):
   assert type(n)is str and n and not n.startswith('/')and'..'not in n.split('/')and'\\'not in n,'ART31 local path'
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART31 missing input';return p
- def digest(n):return hashlib.sha256(local(n).read_bytes()).hexdigest()
+ def digest(n):return hashlib.sha256(prior_uir3306_bytes(n,local(n).read_bytes())).hexdigest()
  def identity(r):
-  assert type(r['bytes'])is int and r['bytes']==local(r['path']).stat().st_size and r['sha256']==digest(r['path']),'ART31 actual identity';return local(r['path']).read_bytes()
+  raw=prior_uir3306_bytes(r['path'],local(r['path']).read_bytes());assert type(r['bytes'])is int and r['bytes']==len(raw) and r['sha256']==digest(r['path']),'ART31 actual identity';return raw
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-life-scroll-art31'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART31 header'
  assert m['budgets']==BUDGETS and all(type(v)is int for v in m['budgets'].values()),'ART31 fixed typed caps'
  assert [r['path']for r in m['files']]==FILES and m['sourceReferences']==REFS and m['baselines']==BASELINES and m['unchanged']==UNCHANGED,'ART31 original scope and sources'
@@ -41,7 +42,7 @@ def validate_art31(root,image_reader):
  assert local(FILES[0]).read_text()==expected,'ART31 exact view geometry/original full life script'
  original=identity(BASELINES[1]).decode();pager='<CataloguePager :page="paged.page" :pages="paged.pages" :total="paged.total" label="生平" @change="page=$event"/>'
  assert original.count(pager)==1,'ART31 original unique pager'
- expected=original.replace(pager,'',1).replace('</nav></template>\n   <article','</nav></template><template #pagination>'+pager+'</template>\n   <article',1);assert local(FILES[1]).read_text()==expected,'ART31 exact parent-owned pagination slot and original all management controls'
+ expected=original.replace(pager,'',1).replace('</nav></template>\n   <article','</nav></template><template #pagination>'+pager+'</template>\n   <article',1);assert prior_uir3306_bytes(FILES[1],local(FILES[1]).read_bytes()).decode()==expected,'ART31 exact parent-owned pagination slot and original all management controls'
  css=local(FILES[-1]).read_text();old=identity(BASELINES[-1]).decode();assert css.startswith(old),'ART31 previous CSS domains altered'
  extra=css[len(old):];assert all(s in extra for s in ['art31-scroll','art31-desk','grid-template-columns:150px','life-scroll-tools','life-scroll-copy','white-space:break-spaces']),'ART31 real physical reading consumers'
  assert not re.search(r'@import|@font-face|https?://|file://|@media',extra),'ART31 external IO/font/compatibility rules'

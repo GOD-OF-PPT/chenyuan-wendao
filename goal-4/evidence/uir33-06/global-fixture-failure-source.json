@@ -1,0 +1,7 @@
+{
+  "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-06/global-fixture-before.py",
+  "bytes": 190311,
+  "sha256": "98446346802077d66d6b64ed8b2eb96d7f1b53eb86eca0fe42ede906521047d7",
+  "failure": "story-inventory-initial-failure.txt",
+  "correction": "Include the declared unchanged dependencies in the existing full sandbox; assertions unchanged"
+}
