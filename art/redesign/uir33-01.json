@@ -1,0 +1,23 @@
+{
+  "format": "chenyuan-cultivation-ongoing-uir33-01",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "maxAddedNativeBytes": 6000,
+  "added": {
+    "path": "web/src/CultivationOngoing.vue",
+    "bytes": 3250,
+    "sha256": "06984ea4f6dd663a32fb274a47321eecc9c618b4fdb1ff0f10f4df8301e4c72d"
+  },
+  "sourceReferences": [
+    "docs/decisions/0096-cultivation-active-uir33-01-contract.md",
+    "goal-4/amendments/2026-11-04-uir33-01-input.md",
+    "art/redesign/uir33-01-edits.json",
+    "goal-4/evidence/uir33-01/before/web/src/App.vue",
+    "goal-4/evidence/uir33-01/before/web/src/CultivationSite.vue"
+  ],
+  "originalLedgers": {
+    "art/redesign/ux33.json": "ca0c3a052c3f9508957a38da9a8acada9821104c2461aa127bccd0743f27c3b8",
+    "art/redesign/cultivation-objects.json": "280f616867bc0f01262e68cfc7df1b14d647b215c652e690fc96b42dc367abeb"
+  }
+}

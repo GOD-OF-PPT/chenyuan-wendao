@@ -1,0 +1,38 @@
+{
+  "web/src/App.vue": [
+    [
+      "import CultivationSite from './CultivationSite.vue';",
+      "import CultivationSite from './CultivationSite.vue';\nimport CultivationOngoing from './CultivationOngoing.vue';"
+    ],
+    [
+      "<CultivationSite v-else :game=\"game\" :method=\"hubTrainingMethod\" @method=\"hubTrainingMethod=$event\">",
+      "<CultivationSite v-else :game=\"game\" :method=\"store.activity?.version===1&&store.activity.status!=='stopped'?store.activity.plan.method:hubTrainingMethod\" @method=\"hubTrainingMethod=$event\">\n             <template v-if=\"store.activity&&store.activity.status!=='stopped'\" #activity><CultivationOngoing @inspect=\"viewActivityPlan\"/></template>"
+    ],
+    [
+      "               <button v-else-if=\"store.activity?.status==='paused'\" class=\"text-button\" data-testid=\"hub-training-rearrange\" @click=\"openHub('cultivation',$event)\">另排一段潜修</button>\n               <button v-else class=\"primary cultivate-primary\" data-testid=\"cultivate\" @click=\"startTraining(hubTrainingPlan)\" :disabled=\"!!pendingStoryError||!store.available||store.busy||store.activityRunning||!hubTrainingQuote?.allowed\">{{store.activityRunning?'已有活动 · 先暂停再安排':'开始'+(hubTrainingMethod==='natural'?'自然吐纳':'灵石辅助')}}</button>\n",
+      "               <button v-else class=\"primary cultivate-primary\" data-testid=\"cultivate\" @click=\"startTraining(hubTrainingPlan)\" :disabled=\"!!pendingStoryError||!store.available||store.busy||store.activityRunning||!hubTrainingQuote?.allowed\">{{store.activityRunning?'已有活动 · 先暂停再安排':'开始'+(hubTrainingMethod==='natural'?'自然吐纳':'灵石辅助')}}</button>\n"
+    ],
+    [
+      "{{store.activityRunning?'已有活动 · 先暂停再安排':'开始'+(hubTrainingMethod==='natural'?'自然吐纳':'灵石辅助')}}",
+      "{{'开始'+(hubTrainingMethod==='natural'?'自然吐纳':'灵石辅助')}}"
+    ],
+    [
+      "<template v-if=\"store.activity?.status==='paused'\">原活动已暂停 · 上方继续保留原预算；另排只查看草案。</template><template v-else>圆满即停 · 最多50轮 · 灵石上限{{hubTrainingPlan.stoneBudget}}</template>",
+      "圆满即停 · 最多50轮 · 灵石上限{{hubTrainingPlan.stoneBudget}}"
+    ]
+  ],
+  "web/src/CultivationSite.vue": [
+    [
+      "<div class=\"art06-status\"><small>",
+      "<div class=\"art06-status\"><small v-if=\"!$slots.activity\">"
+    ],
+    [
+      "<nav class=\"art06-methods\"",
+      "<nav v-if=\"!$slots.activity\" class=\"art06-methods\""
+    ],
+    [
+      "<div class=\"art06-main-decision\"><slot name=\"decision\"/></div>",
+      "<slot name=\"activity\"/><div v-if=\"!$slots.activity\" class=\"art06-main-decision\"><slot name=\"decision\"/></div>"
+    ]
+  ]
+}

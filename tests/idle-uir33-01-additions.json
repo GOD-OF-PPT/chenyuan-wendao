@@ -1,0 +1,42 @@
+{
+  "format": "chenyuan-uir33-01-comprehensive-additions",
+  "version": 9,
+  "parentVersion": 8,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 859,
+    "signature": "8e92d3328cb5bd6a39ef2d42ac43e465f2f97261ecb267a05d0bea1097ef96da"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A1 the running cultivation stage replaces new-plan controls with real pause and original-budget keyboard continuation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A2 assisted identity actual spending and finite limits survive readonly plan inspection refresh and explicit takeover",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A3 a failed cycle exposes the canonical retry while viewing the next draft cannot replace the accepted command",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A4 the stage pause during a held atomic save settles only that cycle without starting another",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A5 another cave activity keeps its real name controls and authorization instead of a disabled cultivation draft",
+      "projectName": "chromium"
+    }
+  ]
+}

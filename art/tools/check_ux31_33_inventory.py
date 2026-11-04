@@ -1,4 +1,5 @@
 """Exact alchemy forecast display evolution; original script, events and caps stay owned."""
+from uir33_01_inventory import prior_uir3301_bytes
 import hashlib,json,re
 from pathlib import Path
 LEDGER='art/redesign/check-ux31-33.json'
@@ -40,6 +41,7 @@ OPERATIONS=[['<strong>预计 {{quote.cycles}} 炉 · 灵石消耗 {{quote.stones
   'quote.stopReason">预计停止：{{quote.stopReason.message}}</small>']]
 MARKER='<strong v-if="quote.failure">暂不可开炉：'
 def prior_check_ux3133_bytes(path,raw):
+ raw=prior_uir3301_bytes(path,raw)
  if Path(path).name!='AlchemyWorkshop.vue' or MARKER.encode() not in raw:return raw
  assert hashlib.sha256(raw).hexdigest()==MANIFEST['files'][0]['sha256'], 'CHECK95 current whole display source changed'
  text=raw.decode()

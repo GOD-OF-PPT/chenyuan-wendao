@@ -1,0 +1,101 @@
+[
+  {
+    "source": "artifacts/goal-4/uir33-01/author2-results/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation/natural-paused.png",
+    "sourceSHA256": "c32ecd81ee7869b717f0d3334477c3125b7deda7145e99a3911562052283a480",
+    "view": "artifacts/goal-4/uir33-01/views2/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-natural-paused.jpg",
+    "viewSHA256": "f3bc30dfc391c9db6ae2ee9a78be4147050997dbfb7694d7bd191feec2617b63",
+    "format": "same-size lossy JPEG68",
+    "size": [
+      1440,
+      900
+    ]
+  },
+  {
+    "source": "artifacts/goal-4/uir33-01/author2-results/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation/natural-running.png",
+    "sourceSHA256": "87ca4eedae83dbc24db00e4e8e2e208536ed102a880b2a3c4baa0d0ce6cf228f",
+    "view": "artifacts/goal-4/uir33-01/views2/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-natural-running.jpg",
+    "viewSHA256": "a96928544d3a8e768827c4253cefa5fbe4a87dccc3a66db3ea98a6aa27ddc18c",
+    "format": "same-size lossy JPEG68",
+    "size": [
+      1440,
+      900
+    ]
+  },
+  {
+    "source": "artifacts/goal-4/uir33-01/author2-results/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation/natural-saved-cycle.png",
+    "sourceSHA256": "de51eae4d668f2d038ba1a42c24f097aa24bfbdbc630407c81ac982ec6f12c85",
+    "view": "artifacts/goal-4/uir33-01/views2/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-natural-saved-cycle.jpg",
+    "viewSHA256": "a13a793c87f808a5735bde2cd88f689a832a3b1fa57076aa697c4c8df6aedf7a",
+    "format": "same-size lossy JPEG68",
+    "size": [
+      1440,
+      900
+    ]
+  },
+  {
+    "source": "artifacts/goal-4/uir33-01/author2-results/uir33-01-cultivation-activ-84023-fresh-and-explicit-takeover/assisted-awaiting-takeover.png",
+    "sourceSHA256": "5aff05d85eeee8f478c11921932337b55c69add8b4ef047fffa693ea2c4147df",
+    "view": "artifacts/goal-4/uir33-01/views2/uir33-01-cultivation-activ-84023-fresh-and-explicit-takeover-assisted-awaiting-takeover.jpg",
+    "viewSHA256": "2209815f2d85d790b2c2aaa608ee8215cd0c043d21ba64fe7581b3ef8ebe7fda",
+    "format": "same-size lossy JPEG68",
+    "size": [
+      1440,
+      900
+    ]
+  },
+  {
+    "source": "artifacts/goal-4/uir33-01/author2-results/uir33-01-cultivation-activ-84023-fresh-and-explicit-takeover/assisted-spent-first-cycle.png",
+    "sourceSHA256": "dbb8cdfc69ac5b4d80b796a543fdfe4f73a29c8975e22e40169e7f48b65b8e2a",
+    "view": "artifacts/goal-4/uir33-01/views2/uir33-01-cultivation-activ-84023-fresh-and-explicit-takeover-assisted-spent-first-cycle.jpg",
+    "viewSHA256": "c778c426c3ebc6dedd616829c1db24a6943b023ef3f661ce0a7267737211ff0e",
+    "format": "same-size lossy JPEG68",
+    "size": [
+      1440,
+      900
+    ]
+  },
+  {
+    "source": "artifacts/goal-4/uir33-01/author2-results/uir33-01-cultivation-activ-9eb98--disabled-cultivation-draft/alchemy-on-cultivation-stage.png",
+    "sourceSHA256": "6a3d195a00a1148bf8cd5dfc817d88e5748627ab6cb9f8f32835d00905d5a333",
+    "view": "artifacts/goal-4/uir33-01/views2/uir33-01-cultivation-activ-9eb98--disabled-cultivation-draft-alchemy-on-cultivation-stage.jpg",
+    "viewSHA256": "02783ba8ec0cbf35aad8ed8c1a66ff0d9bfef2c0ed663006957d71eeb65da2c1",
+    "format": "same-size lossy JPEG68",
+    "size": [
+      1440,
+      900
+    ]
+  },
+  {
+    "source": "artifacts/goal-4/uir33-01/author2-results/uir33-01-cultivation-activ-c0ce0-eplace-the-accepted-command/original-error-main-stage.png",
+    "sourceSHA256": "fb0f048b7b9a1d5bed9ee70484b4782e039053e0b7228d61937778583dcedbd1",
+    "view": "artifacts/goal-4/uir33-01/views2/uir33-01-cultivation-activ-c0ce0-eplace-the-accepted-command-original-error-main-stage.jpg",
+    "viewSHA256": "59d0fa629d6d3bc930144c8e7661b1d2a7f67c1aa36578450ac83f0254c0fb72",
+    "format": "same-size lossy JPEG68",
+    "size": [
+      1440,
+      900
+    ]
+  },
+  {
+    "source": "artifacts/goal-4/uir33-01/author2-results/uir33-01-cultivation-activ-e248f-le-without-starting-another/pausing-main-stage.png",
+    "sourceSHA256": "b65d046205a8c4d1c0b440c8f3e1e4224ea946543f5dfe7d9fcceea47dc434d2",
+    "view": "artifacts/goal-4/uir33-01/views2/uir33-01-cultivation-activ-e248f-le-without-starting-another-pausing-main-stage.jpg",
+    "viewSHA256": "a4c16cc143dcc6bee8e830161dc6a0370d6c2290083fb0b74ae3c291e5409471",
+    "format": "same-size lossy JPEG68",
+    "size": [
+      1440,
+      900
+    ]
+  },
+  {
+    "source": "artifacts/goal-4/uir33-01/author2-results/uir33-01-cultivation-activ-e248f-le-without-starting-another/saving-main-stage.png",
+    "sourceSHA256": "b259153f8f9ee2c035751c11a0e4f51735cbfd716390d06fc1cd4299329bab9b",
+    "view": "artifacts/goal-4/uir33-01/views2/uir33-01-cultivation-activ-e248f-le-without-starting-another-saving-main-stage.jpg",
+    "viewSHA256": "0d78a751525061e8204af1fff55cec912755b632ebdb1f66936be28ec79317db",
+    "format": "same-size lossy JPEG68",
+    "size": [
+      1440,
+      900
+    ]
+  }
+]

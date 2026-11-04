@@ -1,0 +1,40 @@
+✔ current evidence parser retains an actual unique file title project and suite identity (3.954011ms)
+✔ another runtime cannot be relabelled as current evidence (3.726976ms)
+✔ reporter errors cannot be hidden by successful individual cases (1.36987ms)
+✔ skips expected failures automatic retries and repetitions cannot add current coverage (1.751661ms)
+✔ a duplicate declaration wrong layer or another browser cannot satisfy a current consumer (1.934019ms)
+✔ a newer failed case never falls back to an earlier green result (0.627822ms)
+✔ an explicit later passing execution keeps the original failure in composite history (0.593426ms)
+✔ current semantic mappings retain all original leaves and give numeric cases explicit boundaries (2.328612ms)
+✔ v1 keeps its exact original inventory while v2 requires the complete broader inventory and all original UI consumers (21.70881ms)
+✔ v2 rejects missing cases and same-count invented titles rather than certifying a reduced source inventory (10.614663ms)
+✔ v2 cannot omit or replace the original reviewed recovery UI declaration (13.86458ms)
+✔ v2 rejects wrong runtime metadata and duplicate named profiles (9.226509ms)
+✔ v3 requires all fourteen new dialog and cross-task consumers while retaining the complete exact v2 and original recovery inventories (15.693574ms)
+✔ v3 cannot drop or relabel a new consumer, substitute an old consumer, or ignore original recovery source (21.178662ms)
+✔ v4 retains the entire v3 inventory and all four real copy-disclosure consumers (40.158494ms)
+✔ v4 rejects missing duplicate or same-count substituted copy and original consumers (19.039682ms)
+✔ v4 requires the original recovery declaration and exact current runtime and suite ownership (12.989349ms)
+✔ v5 retains all original v4 consumers and requires all four real readability scenarios (42.816215ms)
+✔ v5 rejects missing duplicate invented or replaced consumers without weakening the original inventories (21.580419ms)
+✔ v5 preserves original recovery declaration runtime and suite ownership requirements (11.862227ms)
+✔ v6 retains all original v5 consumers and requires six market copy scenarios (64.997612ms)
+✔ v6 rejects missing duplicate invented or replaced consumers without weakening old inventories (17.512086ms)
+✔ v6 preserves original recovery declaration runtime and suite ownership (11.512504ms)
+✔ v7 retains all original v6 consumers and requires seven status clarity scenarios (74.332526ms)
+✔ v7 rejects missing duplicate invented or replaced consumers without weakening old inventories (15.166322ms)
+✔ v7 preserves original recovery declaration runtime and suite ownership (11.547895ms)
+✔ v8 retains every v7 consumer and adds the three exact combination checks (88.394019ms)
+✔ v8 refuses missing duplicate or invented combinations and replaced parent consumers (20.687456ms)
+✔ v8 keeps original recovery source runtime and suite ownership mandatory (18.287908ms)
+✔ v9 preserves all v8 identities with five real ongoing-stage consumers (165.217172ms)
+✔ v9 rejects missing invented duplicate or replaced ongoing and original consumers (31.827893ms)
+✔ v9 retains exact runtime and full original recovery obligation (20.58941ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1063.81421

@@ -214,3 +214,23 @@ test('v8 keeps original recovery source runtime and suite ownership mandatory',(
  recovery.report.suites[0].specs[0].title+=' replaced';
  assert.throws(()=>inspectIdleDeclarations(8,[broad,native,normal],runtime,recovery.report),/Profile identities/);
 });
+
+function ongoingDeclarations(){
+ const inventories=combinationDeclarations(),extra=JSON.parse(fs.readFileSync(new URL('./idle-uir33-01-additions.json',import.meta.url)));
+ inventories[0].report.suites[0].specs.push(...extra.additions.map(row=>({file:row.file,title:row.title,tests:[{projectName:row.projectName}]})));return inventories;
+}
+test('v9 preserves all v8 identities with five real ongoing-stage consumers',()=>{
+ const [broad,recovery,native,normal]=ongoingDeclarations();assert.equal(inspectIdleDeclarations(9,[broad,native,normal],runtime,recovery.report).length,1306);
+ assert.throws(()=>inspectIdleDeclarations(8,[broad,native,normal],runtime,recovery.report),/Profile declarations/);
+ const [old,oldRecovery,oldNative,oldNormal]=combinationDeclarations();assert.equal(inspectIdleDeclarations(8,[old,oldNative,oldNormal],runtime,oldRecovery.report).length,1301);
+});
+test('v9 rejects missing invented duplicate or replaced ongoing and original consumers',()=>{
+ for(const mutate of [r=>r.suites[0].specs.pop(),r=>r.suites[0].specs.at(-1).title+=' invented',r=>r.suites[0].specs[0].title+=' replaced',r=>r.suites[0].specs.splice(-1,1,structuredClone(r.suites[0].specs.at(-2)))]){
+  const [broad,recovery,native,normal]=ongoingDeclarations();mutate(broad.report);assert.throws(()=>inspectIdleDeclarations(9,[broad,native,normal],runtime,recovery.report),/Profile declarations|Profile identities/);
+ }
+});
+test('v9 retains exact runtime and full original recovery obligation',()=>{
+ const [broad,recovery,native,normal]=ongoingDeclarations();assert.throws(()=>inspectIdleDeclarations(9,[broad,native,normal],runtime),/requires the original/);
+ assert.throws(()=>inspectIdleDeclarations(9,[broad,native,normal],'b'.repeat(64),recovery.report),/runtime differs/);
+ assert.throws(()=>inspectIdleDeclarations(9,[broad,native,native],runtime,recovery.report),/Exactly one/);
+});

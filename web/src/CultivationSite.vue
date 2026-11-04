@@ -22,18 +22,18 @@ const stageLabel=computed(()=>p.phase.value==='saving'?'凝神 · 保存中':p.w
    <div class="art06-cushion" aria-hidden="true"/>
    <AssetImage class="art06-meditator" path="art/v2/characters/player-seated-cold.webp" asset-id="player-seated-cold" fit="contain" eager aria-hidden="true"><GameIcon kind="nav" id="cultivate"/></AssetImage>
    <div class="art06-breath" aria-hidden="true"/>
-   <div class="art06-status"><small>{{p.phase.value==='idle'&&!actual&&!p.store?.error?'静候入定':stageLabel}}</small><output v-if="p.runtime.value" data-testid="cultivation-cycle-clock">{{p.phase.value==='saving'?'保存中':p.remaining.value+' 秒'}}<span> / 本轮 {{p.seconds.value}} 秒</span></output><small v-if="p.phase.value==='saving'">先核对本轮，保存后才计入修为。</small></div>
+   <div class="art06-status"><small v-if="!$slots.activity">{{p.phase.value==='idle'&&!actual&&!p.store?.error?'静候入定':stageLabel}}</small><output v-if="p.runtime.value" data-testid="cultivation-cycle-clock">{{p.phase.value==='saving'?'保存中':p.remaining.value+' 秒'}}<span> / 本轮 {{p.seconds.value}} 秒</span></output><small v-if="p.phase.value==='saving'">先核对本轮，保存后才计入修为。</small></div>
    <div v-if="$slots.note" class="art06-note"><slot name="note"/></div>
 
   </div>
   <div class="art06-practice">
 
    <div class="art06-progress" data-testid="cultivation-progress"><span>实际修为</span><strong>{{game.core.player.xp}} / {{realm.xpCap}}</strong><progress :value="game.core.player.xp" :max="realm.xpCap||1" aria-label="已保存修为"/><div v-if="p.effect.value" :key="p.effect.value.sequence" class="art06-harvest" data-testid="cultivation-result" :data-sequence="p.effect.value.sequence" role="status"><strong>修为 +{{p.effect.value.result.delta.xp}} 已存</strong><small>{{p.effect.value.result.costs.stones?'灵石 -'+p.effect.value.result.costs.stones:'未耗灵石'}} · {{p.effect.value.result.costs.months}} 游戏月</small></div></div>
-   <nav class="art06-methods" aria-label="选择潜修方式，只改变待确认安排">
+   <nav v-if="!$slots.activity" class="art06-methods" aria-label="选择潜修方式，只改变待确认安排">
     <button type="button" data-testid="cultivation-method-natural" :aria-pressed="method==='natural'" @click="emit('method','natural')"><span class="art06-mat-token" data-testid="cultivation-mat"><GameIcon kind="nav" id="cultivate"/></span><span><strong>自然吐纳</strong><small>引山间灵气 · 不耗灵石</small></span></button>
     <button type="button" data-testid="cultivation-method-assisted" :aria-pressed="method==='assisted'" @click="emit('method','assisted')"><span class="art06-stone-token" data-testid="cultivation-stone-seat"><GameIcon kind="item" id="core"/></span><span><strong>灵石辅助</strong><small>现有 {{game.core.player.stones}} 灵石 · 炼气始可用</small></span></button>
    </nav>
-   <div class="art06-main-decision"><slot name="decision"/></div>
+   <slot name="activity"/><div v-if="!$slots.activity" class="art06-main-decision"><slot name="decision"/></div>
    <slot/>
   </div>
   <div v-if="$slots.parameters" class="art06-parameters"><slot name="parameters"/></div>
