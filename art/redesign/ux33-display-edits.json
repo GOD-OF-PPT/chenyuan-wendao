@@ -209,12 +209,20 @@
     [
       "failed:store?.syncIssue?'同步待核对 · 器纹已歇':'保存待核对 · 请查看上方提示'",
       "failed:store?.syncIssue?'进度待核对':'查看上方提示'"
+    ],
+    [
+      "存档待核对，请先核对并重试原操作",
+      "请先处理上方存档提示"
     ]
   ],
   "AlchemyWorkshop.vue": [
     [
       "failed:!props.available||feedbackStore?.syncIssue?'存档待核对 · 炉火已歇':feedbackStore?.unresolved?'当前活动保存未确认 · 请在活动条重试':'上次操作未完成 · 可另行安排'",
       "failed:!props.available||feedbackStore?.syncIssue?'进度待核对':feedbackStore?.unresolved?'查看上方提示':'上次未完成 · 可另行安排'"
+    ],
+    [
+      "当前活动保存未确认，请重试或取消原安排",
+      "请先处理上方存档提示"
     ]
   ],
   "SourcePlanner.vue": [

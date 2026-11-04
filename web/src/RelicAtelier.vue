@@ -34,7 +34,7 @@ const quote=computed(()=>relic.value?previewActivity(props.game,props.plan):null
 const equipment=computed(()=>owned.value?previewAction(props.game,{type:'EQUIP_RELIC',relic:props.plan.relicId}):null);
 const atCave=computed(()=>props.game.core.world.location==='cave');
 const travel=computed(()=>!atCave.value?previewAction(props.game,{type:'TRAVEL',location:'cave'}):null);
-const conflict=computed(()=>store?.unresolved?'存档待核对，请先核对并重试原操作':!props.available?'存档未就绪':props.busy?'当前行动保存中，请稍候':props.running?'已有活动进行中，请先暂停':'');
+const conflict=computed(()=>store?.unresolved?'请先处理上方存档提示':!props.available?'存档未就绪':props.busy?'当前行动保存中，请稍候':props.running?'已有活动进行中，请先暂停':'');
 const reason=computed(()=>conflict.value||((atCave.value?quote.value?.failure?.message:travel.value?.failure?.message)??''));
 const currentRelic=computed(()=>props.game.loadout.relic?C.relics[props.game.loadout.relic]:null);
 const materials=computed(()=>Object.entries(relic.value?.inputs??{}).map(([id,cost])=>({id,cost,reserve:props.plan.itemReserves[id]??0,have:props.game.core.inventory[id],required:cost+(props.plan.itemReserves[id]??0)})));

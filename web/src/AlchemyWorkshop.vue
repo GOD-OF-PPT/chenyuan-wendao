@@ -27,7 +27,7 @@ const quote=computed(()=>previewActivity(props.game,props.plan));
 const finite=computed(()=>props.plan.until==='target'?'成品库存达到 '+props.plan.targetQuantity+' 即停 · 最多 '+props.plan.maxCycles+' 炉':props.plan.maxCycles+' 炉后停');
 const total=computed(()=>current.value?.version===3?current.value.gainedItems[recipe.value.output]??0:0);
 const blocked=computed(()=>!props.available||props.busy||props.running||feedbackStore?.unresolved||restart.value.same&&atCave.value);
-const reason=computed(()=>!props.available?'存档未就绪':feedbackStore?.unresolved?feedbackStore.syncIssue?'请先重新读取当前进度':'当前活动保存未确认，请重试或取消原安排':props.busy?'正在保存，请稍候':props.running?'已有活动进行中，请先暂停':quote.value.failure?.message??'');
+const reason=computed(()=>!props.available?'存档未就绪':feedbackStore?.unresolved?feedbackStore.syncIssue?'请先重新读取当前进度':'请先处理上方存档提示':props.busy?'正在保存，请稍候':props.running?'已有活动进行中，请先暂停':quote.value.failure?.message??'');
 function close(){library.value?.close();settings.value?.close();settingsOpen.value=false;}
 function open(){if(!visible.value)return;close();settingsOpen.value=true;settings.value?.showModal();}
 function browse(event:Event){close();if(focus)focus.open(library.value,event.currentTarget as HTMLElement);else library.value?.showModal();}

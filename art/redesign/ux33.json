@@ -52,13 +52,13 @@
     },
     {
       "path": "web/src/RelicAtelier.vue",
-      "bytes": 16070,
-      "sha256": "5c01edde5247c0e01d7aecdb1a8c0a23039ca941ca7357ff25a7439579b4452e"
+      "bytes": 16052,
+      "sha256": "3e9260aed7c6050d220faf3ba8256d0b5f595f2a5418f732e4014d9cff64e5f2"
     },
     {
       "path": "web/src/AlchemyWorkshop.vue",
-      "bytes": 12009,
-      "sha256": "df324eb4f7b25f7cd091e475af413d158162e3fcd49b952d9bb705e24f399a92"
+      "bytes": 11982,
+      "sha256": "cff2e34bbfa34726fab08e763180e90b9401559dcf06f05142a50b8d5d36d803"
     },
     {
       "path": "web/src/SourcePlanner.vue",

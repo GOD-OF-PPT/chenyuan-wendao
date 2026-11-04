@@ -13,7 +13,7 @@ class SharedStatusTests(unittest.TestCase):
   p=self.root/'web/src'/n;s=p.read_text();self.assertIn(a,s);p.write_text(s.replace(a,b,1))
   with self.assertRaises(AssertionError):validate_ux33(self.root)
  def test_exact_current_source_preserves_every_original_with_original_budgets(self):
-  files,total=validate_ux33(self.root);self.assertEqual(total,282459);self.assertIn(LEDGER,files)
+  files,total=validate_ux33(self.root);self.assertEqual(total,282414);self.assertIn(LEDGER,files)
   for n,f in FACTS.items():self.assertEqual(prior_ux33_bytes(n,(self.root/'web/src'/n).read_bytes()),(self.root/f['baseline']).read_bytes())
  def test_retry_callback_cannot_reauthorize_a_new_plan(self):self.changed('App.vue','@click="retryOperation"','@click="restart"')
  def test_pause_authority_and_callback_remain_owned(self):self.changed('TrainingActivity.vue','@click="store.pauseCultivation"','@click="store.retry"')
