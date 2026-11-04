@@ -1,0 +1,190 @@
+{
+  "runtime": "5a1ea161e162d14ad2cda78eead5879e81e1b2d05e7b7b79e0cf5dc017a72b27",
+  "reviewed": 13,
+  "inheritedByHashOnly": 0,
+  "notAllGeneratedScreenshotsReviewed": true,
+  "images": [
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/check-uir33-01-CHECK-UIR33-cc693-ent-unconfirmed-study-draft-chromium/failed-original-cultivation-next-study-draft.png",
+      "originalSha256": "63fe8bd3d3a3baadad739bc6d20c0be91b34f5e3d520481df8c1e50f3ccb4153",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/failed-original-cultivation-next-study-draft.jpg",
+      "previewSha256": "8f07f669501d22b2ca90e8afe1b44982cb65b71e5ca820d796c943a65bb900c6",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "失败背景下下次草案仅1卷，书册标签/完整安排/关闭均清楚，弹窗内容无裁切；背景原错误被模态隔离，关闭后仍原重试。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/failed-original-cultivation-next-study-draft.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/check-uir33-01-CHECK-UIR33-3aba1-p-independent-authorization-chromium/original-study-through-local-arrival.png",
+      "originalSha256": "546e42111f0dc6ec9dcd44b2204270ed4985d5ce0aa2bf6f643d287dcfd0ea20",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/original-study-through-local-arrival.jpg",
+      "previewSha256": "0f40ec20cbe277f357eaa40d2c88632172c21300f95ac7ec23e063e54c94dc91",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "原安排两卷的当前与待研区分，下一草案/三槽/完整安排可见，已保存身份不混入新草案。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/original-study-through-local-arrival.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/check-uir33-01-CHECK-UIR33-3aba1-p-independent-authorization-chromium/two-scrolls-saved-no-auto-equipment.png",
+      "originalSha256": "bd196277e352b9b70a4b9da18e6f20053dafaa0924f2216aacec0d4f7b15101b",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/two-scrolls-saved-no-auto-equipment.jpg",
+      "previewSha256": "1f62a95f131379d798702df863495e6f332f8070f10f0d389e355513ff03dad4",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "已掌握两卷后的中性研习清单与实际已掌握/比较配装可见；有限授权保留、底导航不重叠。仍有多个已掌握提示，整体减负责任不关闭。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/two-scrolls-saved-no-auto-equipment.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/check-uir33-01-CHECK-UIR33-5f9d5-act-main-stage-continuation-chromium/paused-cultivation-local-view-study-book.png",
+      "originalSha256": "bab8690e61202a48cbe71388f8e2435296dd30f75ff75208b6a9fdfa744f9c3b",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/paused-cultivation-local-view-study-book.jpg",
+      "previewSha256": "6817ebd3c5da170ad09c2549564728e02d5c9d3d5681e5fd43914104850e35f9",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "三槽完整可读，两个0卷标签未伪造学习安排；关闭与完整安排有可达入口。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/paused-cultivation-local-view-study-book.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/check-uir33-01-CHECK-UIR33-5f9d5-act-main-stage-continuation-chromium/original-assisted-period-saved.png",
+      "originalSha256": "b411bd22ab766ea16fc8801a5511b0cee7070ef5f8eeb3a487ec208fa04c0200",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/original-assisted-period-saved.jpg",
+      "previewSha256": "830b8dcfa78ab47e88350ebe176e066a944d0f6c6085bacad965f6d9739866ea",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "辅助修炼已暂停、已完成1/5与原用石20/60及保留10可读，继续修炼为主要操作，原手记入口与八主导航未遮挡。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/original-assisted-period-saved.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-relics.png",
+      "originalSha256": "acb73656fb9139a00ace92c85caee09f72d30791c49972b5ddb29133f28710f7",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/stage-entry-hub-relics.jpg",
+      "previewSha256": "c5712b9de1df95d00c2e64a313f8e8b4e42994f7dbdd57536550603b67dc1ebd",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "未炼成与实际境界明确，四器图谱可见；画不冒持有，文字/导航未遮挡。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/stage-entry-hub-relics.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-life.png",
+      "originalSha256": "b28ace3cb6ce67fe3788070669cd63650337695480b350bc4d866d66765e45d7",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/stage-entry-hub-life.jpg",
+      "previewSha256": "9759b6c29d22df5c924c5674e10875761b5b0580831998bf8295ebfe78a0f349",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "真实UIR33-06未解：首屏主要是尚未结束说明，重复标题状态仍存在；正文/导航未裁切，不能按机器通过关闭。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/stage-entry-hub-life.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-2.png",
+      "originalSha256": "dcc2e3ccd2e0ae6189d6c8d95a1cfeb705ec010093893d2cdccad8a0ee663a23",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/stage-entry-tab-2.jpg",
+      "previewSha256": "761173f710df3724f8a760354963185b3f2febd2591a1b6a1db31a7fd56a6286",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "当前材料实际12件与用途价格突出，完整目录入口可见，物件及按钮未裁切。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/stage-entry-tab-2.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/real-compact-stage.png",
+      "originalSha256": "7bf424cb3b1f3a04cc9a6f6fee5088f7d27db58cb5de11eb8a832600b9e71c8b",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/stage-real-compact-stage.jpg",
+      "previewSha256": "7799dce98717887e70e01b4644c52a70bed0357a2bf47b9faf04388c6222f1bd",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "修行方法/单周期效果成本与唯一开始、有限50轮及手记可辨；人物/八入口未裁切。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/stage-real-compact-stage.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-3.png",
+      "originalSha256": "b458e8420d6bc57536e38ff07408dc739e121e635b8cfd17917f3b3b178ca649",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/stage-entry-tab-3.jpg",
+      "previewSha256": "060be24c7b7aaedfbccfa7a67a68663d38f06df13e64c1ceb610113c84236483",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "人物/当前事实/查看后续与分页可辨；未识/尚无来往仍重复，保后续整体UI整理责任。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/stage-entry-tab-3.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-1.png",
+      "originalSha256": "2ceab1d0fbfb6782fb9a7c6807589914ca5ff39877ebd1e2bb93db52e1cb506a",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/stage-entry-tab-1.jpg",
+      "previewSha256": "11ac9aea58073d51edac1578b43522812e921fd6c38fbeaf4b8539a7c0860c27",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "当前地点提供查看修行目标，不再显示同地到同地灰出发；六地入口完整，地图上方留白仍是后续构图观察。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/stage-entry-tab-1.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-forge.png",
+      "originalSha256": "af6afa3cd811173425238fe1385c2bb3fc9001f3b3d521437f1c973b8deeac67",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/stage-entry-hub-forge.jpg",
+      "previewSha256": "f3eb22f5280e16b583442ccc0297d4881b187664867ff10ee9c063d2fd2550dd",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "丹方/持有/药材/原有限5炉与开炉分明；翻方册、来源、限额与导航未遮挡。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/stage-entry-hub-forge.jpg"
+    },
+    {
+      "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-skills.png",
+      "originalSha256": "9cca9970ca73a7bb6f69c13baf8285e388707d97c659f2a4b1b0402287861adf",
+      "preview": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/check-uir33-01/views/stage-entry-hub-skills.jpg",
+      "previewSha256": "a6253bddfc2893d52f50f1287d8e5da2f461508f6eb5c6a344e7e74c982732dc",
+      "pixels": [
+        1440,
+        900
+      ],
+      "lossy": "JPEG quality 68 same resolution",
+      "visuallyReviewed": true,
+      "review": "当前已配装心诀与换卷为主要决定，原多层卷串/槽位已收至手记，正文/原首次资料完整。",
+      "previewSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-01/final2/views/stage-entry-hub-skills.jpg"
+    }
+  ]
+}

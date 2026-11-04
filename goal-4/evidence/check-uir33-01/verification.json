@@ -1,0 +1,108 @@
+{
+  "task": "CHECK-UIR33-01",
+  "completedEngineeringTask": true,
+  "overallUIAccepted": false,
+  "userAcceptance": false,
+  "goalStatus": "active",
+  "productCommit": "44377ce94d4ade4193ba7dd2f9211540624da042",
+  "runtime": "5a1ea161e162d14ad2cda78eead5879e81e1b2d05e7b7b79e0cf5dc017a72b27",
+  "core": {
+    "passed": true,
+    "nodeCases": 903,
+    "resourceMethods": 657,
+    "trackedInputs": 3913,
+    "beforeAfterEqual": true,
+    "evidence": "fixed-core-verification.json"
+  },
+  "ui": {
+    "passed": 225,
+    "failed": 0,
+    "retried": 0,
+    "declaredFiles": 29,
+    "files": [
+      "adventure-objects.spec.ts",
+      "art10-equipment-stage.spec.ts",
+      "art15-cultivation-notes.spec.ts",
+      "art25-study-reading.spec.ts",
+      "art35-study-rest.spec.ts",
+      "check-art-02.spec.ts",
+      "check-art03-combinations.spec.ts",
+      "check-art04-combinations.spec.ts",
+      "check-u8.spec.ts",
+      "check-uir33-01.spec.ts",
+      "cultivation-objects.spec.ts",
+      "equipment-actors.spec.ts",
+      "idle-adventure.spec.ts",
+      "idle-cultivation.spec.ts",
+      "idle-integration.spec.ts",
+      "matrix-ui-focus.spec.ts",
+      "matrix-ui-intent.spec.ts",
+      "matrix-ui-local-recovery.spec.ts",
+      "stage-check.spec.ts",
+      "stage-r1.spec.ts",
+      "stage-r2.spec.ts",
+      "stage-r3.spec.ts",
+      "stage-ta-review.spec.ts",
+      "uir33-01-cultivation-active.spec.ts",
+      "uir33-02-local-exploration.spec.ts",
+      "uir33-04-study-notes.spec.ts",
+      "ux26-learning-draft-context.spec.ts",
+      "ux30-primary-copy.spec.ts",
+      "ux33-activity-status.spec.ts"
+    ],
+    "trackedInputs": 3921,
+    "beforeAfterEqual": true,
+    "report": "artifacts/goal-4/check-uir33-01/final2/related-report.json",
+    "reportSha256": "9a0ab7d3d1818138ef4082ea58aad48d99f201132281f692b215bb92a5368945",
+    "durationMs": 2026249.888,
+    "deferredSystemOrMixedCases": 5,
+    "deferred": [
+      "system reduced effects retain real source progress and static committed results",
+      "ART15-A6",
+      "ART25-A4",
+      "ART06-A15",
+      "TA09-A12"
+    ]
+  },
+  "preview": {
+    "url": "http://127.0.0.1:56895/",
+    "threeCasesPassed": true,
+    "threeAreUiSubset": true,
+    "httpPayloads": 112,
+    "integrity": "preview-integrity.json"
+  },
+  "visual": {
+    "currentActuallyReviewed": 13,
+    "generatedPngs": 495,
+    "allGeneratedReviewed": false,
+    "evidence": "visual-review.json"
+  },
+  "requiredFinalMatrix": {
+    "version": 12,
+    "ui": 872,
+    "storage": 415,
+    "normalRoute": 32,
+    "total": 1319,
+    "fullyExecuted": false
+  },
+  "protected13Unchanged": true,
+  "playerSavesUsedOrModified": false,
+  "compatibilityOrEnvironmentPerformanceExecuted": false,
+  "remaining": [
+    "UIR33-05 activity detail hierarchy",
+    "UIR33-06 life first page",
+    "UIR33-07 meaningful saved outcome feedback",
+    "UIR33-08 remaining alchemy rules",
+    "full final matrix and final same-source candidate",
+    "final customer/code/security reviews",
+    "overall art and long-term balance and human acceptance"
+  ],
+  "next": "UIR33-05",
+  "review": "review.md",
+  "finalDocuments": {
+    "exit": 0,
+    "resourcesAgain": 657,
+    "resourcesUnique": 657,
+    "designExit": 0
+  }
+}

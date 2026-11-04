@@ -1,20 +1,60 @@
 {
   "task": "CHECK-UIR33-01",
-  "completed": false,
-  "source": "70f9f30",
-  "coreSession": 40535,
-  "next": "after install build; await real terminal before list/type; execute union fixed UI; retain old reports",
+  "completed": true,
+  "source": "44377ce",
+  "coreSession": 43572,
+  "next": "UIR33-05; current core/UI/preview handles completed, do not restart old phases",
   "goalActive": true,
-  "uiSession": 30002,
+  "uiSession": 92472,
   "uiDeclarations": 225,
-  "runtime": "758e340d7d71c0caf91e289cd77c895a8da8a2abbf04f690529e0501daccbeab",
-  "pending": "Poll original live handles; preserve frozen sources; no repeated/parallel restart",
+  "runtime": "5a1ea161e162d14ad2cda78eead5879e81e1b2d05e7b7b79e0cf5dc017a72b27",
+  "pending": "None for CHECK-UIR33-01; UI/art and final-goal work remains in tasks.md",
   "deferred": 5,
   "coreExit": 0,
   "corePassed": {
     "node": 903,
+    "resources": 657,
+    "inputs": 3913
+  },
+  "uiPending225": false,
+  "priorCorePassedButPriorRuntime": true,
+  "priorUiCancelled": {
+    "session": 30002,
+    "exit": 130,
+    "passed": 88,
+    "unexecuted": 137
+  },
+  "newUiPhase": "artifacts/goal-4/check-uir33-01/final2/related",
+  "newUiRunning": false,
+  "server4173": 10304,
+  "fixedCorePassed": {
+    "node": 903,
+    "resources": 657,
+    "inputs": 3913
+  },
+  "uiRuntime": "5a1ea161e162d14ad2cda78eead5879e81e1b2d05e7b7b79e0cf5dc017a72b27",
+  "previewServer": 78118,
+  "previewPhase": {
+    "session": 55000,
+    "exit": 0,
+    "cases": 3,
+    "inputs": 3921,
+    "httpFiles": 112,
+    "notAdditionalUnique": true
+  },
+  "visualReviewedNewCombinations": 5,
+  "uiCurrentNoReportedFailure": true,
+  "uiExit": 0,
+  "uiPassed": 225,
+  "visualReviewedEntries": 8,
+  "finalEvidence": "verification.json",
+  "priorCorePassed": {
+    "node": 903,
     "resources": 654,
     "inputs": 3899
   },
-  "uiPending225": true
+  "finalDocumentSession": {
+    "id": 37022,
+    "exit": 0
+  }
 }
