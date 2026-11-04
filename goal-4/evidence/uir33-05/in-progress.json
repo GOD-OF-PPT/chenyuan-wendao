@@ -1,0 +1,22 @@
+{
+  "task": "UIR33-05",
+  "completed": true,
+  "runtime": "ef3c9a0317118d117132aa7de204cd0479cb6707b4d2497baff5719b5bd0e00b",
+  "productCommit": "5805fd89c29ab2b21002224a582c46a98b72b3a3",
+  "uiSession": 5023,
+  "uiCases": 91,
+  "uiRunning": false,
+  "frozenSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-05/final2/source",
+  "previewSession": 39898,
+  "previewExit": 0,
+  "previewCases": 2,
+  "previewServer": 90577,
+  "testServer": 30808,
+  "typecheckSession": 8120,
+  "typecheckExit": 0,
+  "nativeGoalStatus": "active",
+  "next": "UIR33-06; UIR33-05 final91 and preview2 are terminal0, do not restart old phases",
+  "uiExit": 0,
+  "uiUniquePassed": 91,
+  "evidence": "verification.json"
+}

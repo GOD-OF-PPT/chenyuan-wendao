@@ -1,0 +1,4566 @@
+{
+  "baselineShortPanelHeight": 686,
+  "currentLiveHeight": 495.59375,
+  "currentPausedHeight": 430,
+  "currentStrategyHeights": [
+    439,
+    439,
+    439,
+    439,
+    439
+  ],
+  "strategyReadingBodyFontAtLeast18": true,
+  "fivePageButtonPositionStableWithin1px": true,
+  "frames": [
+    {
+      "name": "live-cultivation-geometry",
+      "case": "UIR33-05-A1 compact live and paused details retain one clock original limits and complete saved receipts",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 495.59375,
+          "bottom": 615.59375,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 401.59375,
+          "bottom": 600.59375,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 546.59375,
+            "width": 180,
+            "height": 44,
+            "bottom": 590.59375,
+            "right": 711,
+            "text": "暂停修炼",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 546.59375,
+            "width": 120,
+            "height": 44,
+            "bottom": 590.59375,
+            "right": 839,
+            "text": "查看修炼安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 547,
+            "y": 388.59375,
+            "width": 820,
+            "height": 33,
+            "bottom": 421.59375,
+            "right": 1367,
+            "text": "已完成 0 / 5 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 945,
+            "text": "累计修为 +0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 1367,
+            "text": "灵石已用 0 / 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 460.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 487.59375,
+            "right": 945,
+            "text": "游戏岁月 +0 月 · 保留灵石 9",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 509.59375,
+            "width": 850,
+            "height": 21,
+            "bottom": 530.59375,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "paused-cultivation-geometry",
+      "case": "UIR33-05-A1 compact live and paused details retain one clock original limits and complete saved receipts",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 430,
+          "bottom": 550,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 336,
+          "bottom": 535,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 481,
+            "width": 180,
+            "height": 44,
+            "bottom": 525,
+            "right": 711,
+            "text": "继续修炼",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 481,
+            "width": 120,
+            "height": 44,
+            "bottom": 525,
+            "right": 839,
+            "text": "查看修炼安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 280,
+            "width": 850,
+            "height": 21,
+            "bottom": 301,
+            "right": 1381,
+            "text": "继续后本轮重新计时；关闭或刷新期间不补发收益。",
+            "font": 14,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 323,
+            "width": 820,
+            "height": 33,
+            "bottom": 356,
+            "right": 1367,
+            "text": "已完成 0 / 5 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 362,
+            "width": 398,
+            "height": 27,
+            "bottom": 389,
+            "right": 945,
+            "text": "累计修为 +0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 362,
+            "width": 398,
+            "height": 27,
+            "bottom": 389,
+            "right": 1367,
+            "text": "灵石已用 0 / 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 395,
+            "width": 398,
+            "height": 27,
+            "bottom": 422,
+            "right": 945,
+            "text": "游戏岁月 +0 月 · 保留灵石 9",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 444,
+            "width": 850,
+            "height": 21,
+            "bottom": 465,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "saved-cultivation-geometry",
+      "case": "UIR33-05-A1 compact live and paused details retain one clock original limits and complete saved receipts",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 430,
+          "bottom": 550,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 336,
+          "bottom": 535,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 481,
+            "width": 180,
+            "height": 44,
+            "bottom": 525,
+            "right": 711,
+            "text": "继续修炼",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 481,
+            "width": 120,
+            "height": 44,
+            "bottom": 525,
+            "right": 839,
+            "text": "查看修炼安排",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 847,
+            "y": 481,
+            "width": 90,
+            "height": 44,
+            "bottom": 525,
+            "right": 937,
+            "text": "完整回执",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 280,
+            "width": 850,
+            "height": 21,
+            "bottom": 301,
+            "right": 1381,
+            "text": "继续后本轮重新计时；关闭或刷新期间不补发收益。",
+            "font": 14,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 323,
+            "width": 820,
+            "height": 33,
+            "bottom": 356,
+            "right": 1367,
+            "text": "已完成 1 / 5 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 362,
+            "width": 398,
+            "height": 27,
+            "bottom": 389,
+            "right": 945,
+            "text": "累计修为 +50",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 362,
+            "width": 398,
+            "height": 27,
+            "bottom": 389,
+            "right": 1367,
+            "text": "灵石已用 0 / 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 395,
+            "width": 398,
+            "height": 27,
+            "bottom": 422,
+            "right": 945,
+            "text": "游戏岁月 +1 月 · 保留灵石 9",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 444,
+            "width": 850,
+            "height": 21,
+            "bottom": 465,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "refreshed-paused-detail-geometry",
+      "case": "UIR33-05-A1 compact live and paused details retain one clock original limits and complete saved receipts",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 196,
+          "width": 920,
+          "height": 430,
+          "bottom": 626,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 275,
+          "width": 882,
+          "height": 336,
+          "bottom": 611,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 216.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 260.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 216.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 260.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 216.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 260.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 216.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 260.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 557,
+            "width": 180,
+            "height": 44,
+            "bottom": 601,
+            "right": 711,
+            "text": "继续修炼",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 557,
+            "width": 120,
+            "height": 44,
+            "bottom": 601,
+            "right": 839,
+            "text": "查看修炼安排",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 847,
+            "y": 557,
+            "width": 90,
+            "height": 44,
+            "bottom": 601,
+            "right": 937,
+            "text": "完整回执",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 356,
+            "width": 850,
+            "height": 21,
+            "bottom": 377,
+            "right": 1381,
+            "text": "继续后本轮重新计时；关闭或刷新期间不补发收益。",
+            "font": 14,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 399,
+            "width": 820,
+            "height": 33,
+            "bottom": 432,
+            "right": 1367,
+            "text": "已完成 1 / 5 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 438,
+            "width": 398,
+            "height": 27,
+            "bottom": 465,
+            "right": 945,
+            "text": "累计修为 +50",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 438,
+            "width": 398,
+            "height": 27,
+            "bottom": 465,
+            "right": 1367,
+            "text": "灵石已用 0 / 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 471,
+            "width": 398,
+            "height": 27,
+            "bottom": 498,
+            "right": 945,
+            "text": "游戏岁月 +1 月 · 保留灵石 9",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 520,
+            "width": 850,
+            "height": 21,
+            "bottom": 541,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "quota-detail-geometry",
+      "case": "UIR33-05-A2 native quota keeps visible original retry and a singular complete cycle in the compact detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 212,
+          "width": 920,
+          "height": 430,
+          "bottom": 642,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 291,
+          "width": 882,
+          "height": 336,
+          "bottom": 627,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 232.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 276.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 232.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 276.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 232.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 276.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 232.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 276.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 573,
+            "width": 88,
+            "height": 44,
+            "bottom": 617,
+            "right": 619,
+            "text": "暂停修炼",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 627,
+            "y": 573,
+            "width": 106,
+            "height": 44,
+            "bottom": 617,
+            "right": 733,
+            "text": "重试原操作",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 741,
+            "y": 573,
+            "width": 120,
+            "height": 44,
+            "bottom": 617,
+            "right": 861,
+            "text": "查看修炼安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 372,
+            "width": 850,
+            "height": 21,
+            "bottom": 393,
+            "right": 1381,
+            "text": "继续后本轮重新计时；关闭或刷新期间不补发收益。",
+            "font": 14,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 415,
+            "width": 820,
+            "height": 33,
+            "bottom": 448,
+            "right": 1367,
+            "text": "已完成 0 / 1 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 454,
+            "width": 398,
+            "height": 27,
+            "bottom": 481,
+            "right": 945,
+            "text": "累计修为 +0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 454,
+            "width": 398,
+            "height": 27,
+            "bottom": 481,
+            "right": 1367,
+            "text": "灵石已用 0 / 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 487,
+            "width": 398,
+            "height": 27,
+            "bottom": 514,
+            "right": 945,
+            "text": "游戏岁月 +0 月 · 保留灵石 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 536,
+            "width": 850,
+            "height": 21,
+            "bottom": 557,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "retry-saved-stopped-detail-geometry",
+      "case": "UIR33-05-A2 native quota keeps visible original retry and a singular complete cycle in the compact detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 436,
+          "bottom": 556,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 342,
+          "bottom": 541,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 487,
+            "width": 120,
+            "height": 44,
+            "bottom": 531,
+            "right": 651,
+            "text": "查看修炼安排",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 659,
+            "y": 487,
+            "width": 90,
+            "height": 44,
+            "bottom": 531,
+            "right": 749,
+            "text": "完整回执",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 280,
+            "width": 850,
+            "height": 27,
+            "bottom": 307,
+            "right": 1381,
+            "text": "已完成安排的修炼周期",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 329,
+            "width": 820,
+            "height": 33,
+            "bottom": 362,
+            "right": 1367,
+            "text": "已完成 1 / 1 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 368,
+            "width": 398,
+            "height": 27,
+            "bottom": 395,
+            "right": 945,
+            "text": "累计修为 +50",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 368,
+            "width": 398,
+            "height": 27,
+            "bottom": 395,
+            "right": 1367,
+            "text": "灵石已用 0 / 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 401,
+            "width": 398,
+            "height": 27,
+            "bottom": 428,
+            "right": 945,
+            "text": "游戏岁月 +1 月 · 保留灵石 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 450,
+            "width": 850,
+            "height": 21,
+            "bottom": 471,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "source-running-geometry",
+      "case": "UIR33-05-source full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 495.59375,
+          "bottom": 615.59375,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 401.59375,
+          "bottom": 600.59375,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 546.59375,
+            "width": 180,
+            "height": 44,
+            "bottom": 590.59375,
+            "right": 711,
+            "text": "暂停取材",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 546.59375,
+            "width": 120,
+            "height": 44,
+            "bottom": 590.59375,
+            "right": 839,
+            "text": "查看取材安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 547,
+            "y": 388.59375,
+            "width": 820,
+            "height": 33,
+            "bottom": 421.59375,
+            "right": 1367,
+            "text": "已完成 0 / 1 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 945,
+            "text": "累计修为 +0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 1367,
+            "text": "尚无已保存物资",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 460.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 487.59375,
+            "right": 945,
+            "text": "游戏月已用 0 / 1 · 余寿保留 0 月",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 509.59375,
+            "width": 850,
+            "height": 21,
+            "bottom": 530.59375,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 30 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "source-saved-geometry",
+      "case": "UIR33-05-source full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 436,
+          "bottom": 556,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 342,
+          "bottom": 541,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 487,
+            "width": 120,
+            "height": 44,
+            "bottom": 531,
+            "right": 651,
+            "text": "查看取材安排",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 659,
+            "y": 487,
+            "width": 90,
+            "height": 44,
+            "bottom": 531,
+            "right": 749,
+            "text": "完整回执",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 280,
+            "width": 850,
+            "height": 27,
+            "bottom": 307,
+            "right": 1381,
+            "text": "已完成安排的取材轮数",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 329,
+            "width": 820,
+            "height": 33,
+            "bottom": 362,
+            "right": 1367,
+            "text": "已完成 1 / 1 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 368,
+            "width": 398,
+            "height": 27,
+            "bottom": 395,
+            "right": 945,
+            "text": "累计修为 +5",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 368,
+            "width": 398,
+            "height": 27,
+            "bottom": 395,
+            "right": 1367,
+            "text": "凝气草 +2",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 401,
+            "width": 398,
+            "height": 27,
+            "bottom": 428,
+            "right": 945,
+            "text": "游戏月已用 1 / 1 · 余寿保留 0 月",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 450,
+            "width": 850,
+            "height": 21,
+            "bottom": 471,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 30 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "craft-running-geometry",
+      "case": "UIR33-05-craft full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 495.59375,
+          "bottom": 615.59375,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 401.59375,
+          "bottom": 600.59375,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 546.59375,
+            "width": 180,
+            "height": 44,
+            "bottom": 590.59375,
+            "right": 711,
+            "text": "暂停炼丹",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 546.59375,
+            "width": 120,
+            "height": 44,
+            "bottom": 590.59375,
+            "right": 839,
+            "text": "查看炼丹安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 547,
+            "y": 388.59375,
+            "width": 820,
+            "height": 33,
+            "bottom": 421.59375,
+            "right": 1367,
+            "text": "已完成 0 / 1 炉",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 945,
+            "text": "尚无已保存成品",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 1367,
+            "text": "灵石已用 0 / 5000 · 保留 7",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 460.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 487.59375,
+            "right": 945,
+            "text": "游戏月已用 0 / 20 · 余寿留 1 月",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 460.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 487.59375,
+            "right": 1367,
+            "text": "耗材：暂无",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 509.59375,
+            "width": 850,
+            "height": 21,
+            "bottom": 530.59375,
+            "right": 1381,
+            "text": "完成所选炉次即停 · 每轮 150 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "craft-saved-geometry",
+      "case": "UIR33-05-craft full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 436,
+          "bottom": 556,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 342,
+          "bottom": 541,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 487,
+            "width": 120,
+            "height": 44,
+            "bottom": 531,
+            "right": 651,
+            "text": "查看炼丹安排",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 659,
+            "y": 487,
+            "width": 90,
+            "height": 44,
+            "bottom": 531,
+            "right": 749,
+            "text": "完整回执",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 280,
+            "width": 850,
+            "height": 27,
+            "bottom": 307,
+            "right": 1381,
+            "text": "已完成安排的炼丹炉数",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 329,
+            "width": 820,
+            "height": 33,
+            "bottom": 362,
+            "right": 1367,
+            "text": "已完成 1 / 1 炉",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 368,
+            "width": 398,
+            "height": 27,
+            "bottom": 395,
+            "right": 945,
+            "text": "成丹：渡劫引 +1",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 368,
+            "width": 398,
+            "height": 27,
+            "bottom": 395,
+            "right": 1367,
+            "text": "灵石已用 240 / 5000 · 保留 7",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 401,
+            "width": 398,
+            "height": 27,
+            "bottom": 428,
+            "right": 945,
+            "text": "游戏月已用 5 / 20 · 余寿留 1 月",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 401,
+            "width": 398,
+            "height": 27,
+            "bottom": 428,
+            "right": 1367,
+            "text": "耗材：妖核 ×3 · 凝魂晶 ×4 · 道蕴砂 ×6",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 450,
+            "width": 850,
+            "height": 21,
+            "bottom": 471,
+            "right": 1381,
+            "text": "完成所选炉次即停 · 每轮 150 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "forge-running-geometry",
+      "case": "UIR33-05-forge full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 495.59375,
+          "bottom": 615.59375,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 401.59375,
+          "bottom": 600.59375,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 546.59375,
+            "width": 180,
+            "height": 44,
+            "bottom": 590.59375,
+            "right": 711,
+            "text": "暂停炼器",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 546.59375,
+            "width": 120,
+            "height": 44,
+            "bottom": 590.59375,
+            "right": 839,
+            "text": "查看炼器安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 547,
+            "y": 388.59375,
+            "width": 820,
+            "height": 33,
+            "bottom": 421.59375,
+            "right": 1367,
+            "text": "已完成 0 / 1 件",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 945,
+            "text": "尚无已保存成品",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 1367,
+            "text": "灵石已用 0 / 5000 · 保留 7",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 460.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 487.59375,
+            "right": 945,
+            "text": "游戏月已用 0 / 20 · 余寿留 1 月",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 460.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 487.59375,
+            "right": 1367,
+            "text": "耗材：暂无",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 509.59375,
+            "width": 850,
+            "height": 21,
+            "bottom": 530.59375,
+            "right": 1381,
+            "text": "炼成一件即停，不自动装备 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "forge-saved-geometry",
+      "case": "UIR33-05-forge full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 436,
+          "bottom": 556,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 342,
+          "bottom": 541,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 487,
+            "width": 120,
+            "height": 44,
+            "bottom": 531,
+            "right": 651,
+            "text": "查看炼器安排",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 659,
+            "y": 487,
+            "width": 90,
+            "height": 44,
+            "bottom": 531,
+            "right": 749,
+            "text": "完整回执",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 280,
+            "width": 850,
+            "height": 27,
+            "bottom": 307,
+            "right": 1381,
+            "text": "法宝已炼成，请自行选择是否装备",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 329,
+            "width": 820,
+            "height": 33,
+            "bottom": 362,
+            "right": 1367,
+            "text": "已完成 1 / 1 件",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 368,
+            "width": 398,
+            "height": 27,
+            "bottom": 395,
+            "right": 945,
+            "text": "器成：玄玉印",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 368,
+            "width": 398,
+            "height": 27,
+            "bottom": 395,
+            "right": 1367,
+            "text": "灵石已用 140 / 5000 · 保留 7",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 401,
+            "width": 398,
+            "height": 27,
+            "bottom": 428,
+            "right": 945,
+            "text": "游戏月已用 2 / 20 · 余寿留 1 月",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 401,
+            "width": 398,
+            "height": 27,
+            "bottom": 428,
+            "right": 1367,
+            "text": "耗材：地脉灵玉 ×4",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 450,
+            "width": 850,
+            "height": 21,
+            "bottom": 471,
+            "right": 1381,
+            "text": "炼成一件即停，不自动装备 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "learn-running-geometry",
+      "case": "UIR33-05-learn full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 462.59375,
+          "bottom": 582.59375,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 368.59375,
+          "bottom": 567.59375,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 513.59375,
+            "width": 180,
+            "height": 44,
+            "bottom": 557.59375,
+            "right": 711,
+            "text": "暂停研习玉简",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 513.59375,
+            "width": 152,
+            "height": 44,
+            "bottom": 557.59375,
+            "right": 871,
+            "text": "查看研习玉简安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 547,
+            "y": 388.59375,
+            "width": 820,
+            "height": 33,
+            "bottom": 421.59375,
+            "right": 1367,
+            "text": "已完成 0 / 9 卷",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 945,
+            "text": "累计用石 0 / 5000 · 岁月 +0 月",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 476.59375,
+            "width": 850,
+            "height": 21,
+            "bottom": 497.59375,
+            "right": 1381,
+            "text": "所选玉简各研习一次，不自动装备 · 每轮 30 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "learn-saved-geometry",
+      "case": "UIR33-05-learn full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 430,
+          "bottom": 550,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 336,
+          "bottom": 535,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 481,
+            "width": 152,
+            "height": 44,
+            "bottom": 525,
+            "right": 683,
+            "text": "查看研习玉简安排",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 691,
+            "y": 481,
+            "width": 90,
+            "height": 44,
+            "bottom": 525,
+            "right": 781,
+            "text": "完整回执",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 280,
+            "width": 850,
+            "height": 27,
+            "bottom": 307,
+            "right": 1381,
+            "text": "已完成本次安排的有限次数",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 329,
+            "width": 820,
+            "height": 33,
+            "bottom": 362,
+            "right": 1367,
+            "text": "已完成 9 / 9 卷",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 368,
+            "width": 398,
+            "height": 54,
+            "bottom": 422,
+            "right": 945,
+            "text": "掌握：止水剑心、听雨剑势、回风归一、镇灵心诀、太清符心、镇灵符、寒霜符、燃符诀、归元符",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 368,
+            "width": 398,
+            "height": 54,
+            "bottom": 422,
+            "right": 1367,
+            "text": "累计用石 680 / 5000 · 岁月 +0 月",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 444,
+            "width": 850,
+            "height": 21,
+            "bottom": 465,
+            "right": 1381,
+            "text": "所选玉简各研习一次，不自动装备 · 每轮 30 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "milestone-running-geometry",
+      "case": "UIR33-05-milestone full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 462.59375,
+          "bottom": 582.59375,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 368.59375,
+          "bottom": 567.59375,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 513.59375,
+            "width": 180,
+            "height": 44,
+            "bottom": 557.59375,
+            "right": 711,
+            "text": "暂停此项",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 513.59375,
+            "width": 120,
+            "height": 44,
+            "bottom": 557.59375,
+            "right": 839,
+            "text": "查看此项安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 547,
+            "y": 388.59375,
+            "width": 820,
+            "height": 33,
+            "bottom": 421.59375,
+            "right": 1367,
+            "text": "已完成 0 / 1 次",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 945,
+            "text": "本次成本：筑基丹 ×1",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 1367,
+            "text": "仅执行已选内容一次，未完成前不结算",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 476.59375,
+            "width": 850,
+            "height": 21,
+            "bottom": 497.59375,
+            "right": 1381,
+            "text": "本境突破后停止；不自动修炼或继续下一次突破。 · 本次在线 30 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "milestone-saved-geometry",
+      "case": "UIR33-05-milestone full original costs outcomes and finite stopping remain readable in the content-sized detail",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 490,
+          "bottom": 610,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 396,
+          "bottom": 595,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 541,
+            "width": 120,
+            "height": 44,
+            "bottom": 585,
+            "right": 651,
+            "text": "查看此项安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 280,
+            "width": 850,
+            "height": 27,
+            "bottom": 307,
+            "right": 1381,
+            "text": "已保存本次明确安排的一次行动，未自动接续其他活动",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 329,
+            "width": 820,
+            "height": 33,
+            "bottom": 362,
+            "right": 1367,
+            "text": "已完成 1 / 1 次",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 368,
+            "width": 398,
+            "height": 54,
+            "bottom": 422,
+            "right": 945,
+            "text": "你踏入筑基。修行没有捷径，新的资源与机缘已向你开放。",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 368,
+            "width": 398,
+            "height": 54,
+            "bottom": 422,
+            "right": 1367,
+            "text": "实际耗物：筑基丹 ×1 · 灵石 0 · 游戏月 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 428,
+            "width": 398,
+            "height": 54,
+            "bottom": 482,
+            "right": 945,
+            "text": "修为 -1000 · 气血 +70 · 灵力 +40 · 灵石净变 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 428,
+            "width": 398,
+            "height": 54,
+            "bottom": 482,
+            "right": 1367,
+            "text": "已保存本次明确安排的一次行动，未自动接续其他活动",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 504,
+            "width": 850,
+            "height": 21,
+            "bottom": 525,
+            "right": 1381,
+            "text": "本境突破后停止；不自动修炼或继续下一次突破。 · 本次在线 30 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "battle-running-geometry",
+      "case": "UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 556.59375,
+          "bottom": 676.59375,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 462.59375,
+          "bottom": 661.59375,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 1099,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 954,
+            "text": "成果与停止",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 958,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 1389,
+            "text": "原战策 · 只读",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 607.59375,
+            "width": 180,
+            "height": 44,
+            "bottom": 651.59375,
+            "right": 711,
+            "text": "暂停斗法",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 607.59375,
+            "width": 120,
+            "height": 44,
+            "bottom": 651.59375,
+            "right": 839,
+            "text": "查看斗法安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 547,
+            "y": 449.59375,
+            "width": 820,
+            "height": 33,
+            "bottom": 482.59375,
+            "right": 1367,
+            "text": "已完成 0 / 9 次动作",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 488.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 515.59375,
+            "right": 945,
+            "text": "入场 0 · 出招 0 · 胜 0 / 败退 0 / 撤退 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 488.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 515.59375,
+            "right": 1367,
+            "text": "累计耗灵 0 / 77 · 用药 暂无",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 521.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 548.59375,
+            "right": 945,
+            "text": "灵石 +0 · 修为 +0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 521.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 548.59375,
+            "right": 1367,
+            "text": "下一步：满剑意可按正式规则打断本次重击",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 570.59375,
+            "width": 850,
+            "height": 21,
+            "bottom": 591.59375,
+            "right": 1381,
+            "text": "只执行当前敌人与关卡，危险或上限即停 · 每轮 3 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "battle-saved-geometry",
+      "case": "UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 497,
+          "bottom": 617,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 403,
+          "bottom": 602,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 954,
+            "text": "成果与停止",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 958,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 1389,
+            "text": "原战策 · 只读",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 548,
+            "width": 120,
+            "height": 44,
+            "bottom": 592,
+            "right": 651,
+            "text": "查看斗法安排",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 659,
+            "y": 548,
+            "width": 88,
+            "height": 44,
+            "bottom": 592,
+            "right": 747,
+            "text": "本段回执",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 341,
+            "width": 850,
+            "height": 27,
+            "bottom": 368,
+            "right": 1381,
+            "text": "当前敌人已战胜，本段斗法结束",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 390,
+            "width": 820,
+            "height": 33,
+            "bottom": 423,
+            "right": 1367,
+            "text": "已完成 1 / 9 次动作",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 429,
+            "width": 398,
+            "height": 27,
+            "bottom": 456,
+            "right": 945,
+            "text": "入场 0 · 出招 1 · 胜 1 / 败退 0 / 撤退 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 429,
+            "width": 398,
+            "height": 27,
+            "bottom": 456,
+            "right": 1367,
+            "text": "累计耗灵 12 / 77 · 用药 暂无",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 462,
+            "width": 398,
+            "height": 27,
+            "bottom": 489,
+            "right": 945,
+            "text": "灵石 +10 · 修为 +35 · 妖核 +1",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 462,
+            "width": 398,
+            "height": 27,
+            "bottom": 489,
+            "right": 1367,
+            "text": "下一步：当前敌人已战胜，本段斗法结束",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 511,
+            "width": 850,
+            "height": 21,
+            "bottom": 532,
+            "right": 1381,
+            "text": "只执行当前敌人与关卡，危险或上限即停 · 每轮 3 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "original-strategy-0-geometry",
+      "case": "UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 439,
+          "bottom": 559,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 345,
+          "bottom": 544,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 954,
+            "text": "成果与停止",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 958,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 1389,
+            "text": "原战策 · 只读",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 482,
+            "width": 100,
+            "height": 44,
+            "bottom": 526,
+            "right": 623,
+            "text": "上一页",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1289,
+            "y": 482,
+            "width": 100,
+            "height": 44,
+            "bottom": 526,
+            "right": 1389,
+            "text": "下一页",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 538,
+            "y": 314,
+            "width": 836,
+            "height": 30.59375,
+            "bottom": 344.59375,
+            "right": 1374,
+            "text": "雾隐妖狼；最多 9 次动作。仅回看保存的授权，不重新开战、不再次出招或恢复旧活动。",
+            "font": 18,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "original-strategy-1-geometry",
+      "case": "UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 439,
+          "bottom": 559,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 345,
+          "bottom": 544,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 954,
+            "text": "成果与停止",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 958,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 1389,
+            "text": "原战策 · 只读",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 482,
+            "width": 100,
+            "height": 44,
+            "bottom": 526,
+            "right": 623,
+            "text": "上一页",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1289,
+            "y": 482,
+            "width": 100,
+            "height": 44,
+            "bottom": 526,
+            "right": 1389,
+            "text": "下一页",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 538,
+            "y": 314,
+            "width": 836,
+            "height": 30.59375,
+            "bottom": 344.59375,
+            "right": 1374,
+            "text": "累计灵力上限 77。本关自动战策，只限原敌人与关卡",
+            "font": 18,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "original-strategy-2-geometry",
+      "case": "UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 439,
+          "bottom": 559,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 345,
+          "bottom": 544,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 954,
+            "text": "成果与停止",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 958,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 1389,
+            "text": "原战策 · 只读",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 482,
+            "width": 100,
+            "height": 44,
+            "bottom": 526,
+            "right": 623,
+            "text": "上一页",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1289,
+            "y": 482,
+            "width": 100,
+            "height": 44,
+            "bottom": 526,
+            "right": 1389,
+            "text": "下一页",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 538,
+            "y": 314,
+            "width": 836,
+            "height": 30.59375,
+            "bottom": 344.59375,
+            "right": 1374,
+            "text": "终结术法 → 起手术法 → 普通攻击 → 凝神护体。应对重击：是；释放层数门槛 3 层。",
+            "font": 18,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "original-strategy-3-geometry",
+      "case": "UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 439,
+          "bottom": 559,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 345,
+          "bottom": 544,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 954,
+            "text": "成果与停止",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 958,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 1389,
+            "text": "原战策 · 只读",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 482,
+            "width": 100,
+            "height": 44,
+            "bottom": 526,
+            "right": 623,
+            "text": "上一页",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1289,
+            "y": 482,
+            "width": 100,
+            "height": 44,
+            "bottom": 526,
+            "right": 1389,
+            "text": "下一页",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 538,
+            "y": 314,
+            "width": 836,
+            "height": 61.1875,
+            "bottom": 375.1875,
+            "right": 1374,
+            "text": "气血低于 0% 用回春，整段最多 1 丹，库存保留 0；灵力低于 0% 用回灵，整段最多 0 丹，库存保留 0。用药占正式回合，不自动补货。",
+            "font": 18,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "original-strategy-4-geometry",
+      "case": "UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 439,
+          "bottom": 559,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 345,
+          "bottom": 544,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 954,
+            "text": "成果与停止",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 958,
+            "y": 213,
+            "width": 431,
+            "height": 44,
+            "bottom": 257,
+            "right": 1389,
+            "text": "原战策 · 只读",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 523,
+            "y": 482,
+            "width": 100,
+            "height": 44,
+            "bottom": 526,
+            "right": 623,
+            "text": "上一页",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1289,
+            "y": 482,
+            "width": 100,
+            "height": 44,
+            "bottom": 526,
+            "right": 1389,
+            "text": "下一页",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 538,
+            "y": 314,
+            "width": 836,
+            "height": 30.59375,
+            "bottom": 344.59375,
+            "right": 1374,
+            "text": "气血危险线 20%；触线暂停，不离场。此处不是当前战策的新确认。",
+            "font": 18,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "native-saving-geometry",
+      "case": "UIR33-05-saving native commit and pending pause keep the record readable before any saved outcome",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 495.59375,
+          "bottom": 615.59375,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 401.59375,
+          "bottom": 600.59375,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 546.59375,
+            "width": 180,
+            "height": 44,
+            "bottom": 590.59375,
+            "right": 711,
+            "text": "暂停修炼",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 546.59375,
+            "width": 120,
+            "height": 44,
+            "bottom": 590.59375,
+            "right": 839,
+            "text": "查看修炼安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 547,
+            "y": 388.59375,
+            "width": 820,
+            "height": 33,
+            "bottom": 421.59375,
+            "right": 1367,
+            "text": "已完成 0 / 5 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 945,
+            "text": "累计修为 +0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 427.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 454.59375,
+            "right": 1367,
+            "text": "灵石已用 0 / 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 460.59375,
+            "width": 398,
+            "height": 27,
+            "bottom": 487.59375,
+            "right": 945,
+            "text": "游戏岁月 +0 月 · 保留灵石 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 509.59375,
+            "width": 850,
+            "height": 21,
+            "bottom": 530.59375,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "native-pause-pending-geometry",
+      "case": "UIR33-05-saving native commit and pending pause keep the record readable before any saved outcome",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 430,
+          "bottom": 550,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 336,
+          "bottom": 535,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 481,
+            "width": 180,
+            "height": 44,
+            "bottom": 525,
+            "right": 711,
+            "text": "正在暂停…",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 481,
+            "width": 120,
+            "height": 44,
+            "bottom": 525,
+            "right": 839,
+            "text": "查看修炼安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 280,
+            "width": 850,
+            "height": 21,
+            "bottom": 301,
+            "right": 1381,
+            "text": "核对本轮结算后停止，不再开始下一轮。",
+            "font": 14,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 323,
+            "width": 820,
+            "height": 33,
+            "bottom": 356,
+            "right": 1367,
+            "text": "已完成 0 / 5 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 362,
+            "width": 398,
+            "height": 27,
+            "bottom": 389,
+            "right": 945,
+            "text": "累计修为 +0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 362,
+            "width": 398,
+            "height": 27,
+            "bottom": 389,
+            "right": 1367,
+            "text": "灵石已用 0 / 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 395,
+            "width": 398,
+            "height": 27,
+            "bottom": 422,
+            "right": 945,
+            "text": "游戏岁月 +0 月 · 保留灵石 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 444,
+            "width": 850,
+            "height": 21,
+            "bottom": 465,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "native-saved-paused-geometry",
+      "case": "UIR33-05-saving native commit and pending pause keep the record readable before any saved outcome",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 430,
+          "bottom": 550,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 336,
+          "bottom": 535,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 481,
+            "width": 180,
+            "height": 44,
+            "bottom": 525,
+            "right": 711,
+            "text": "继续修炼",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 481,
+            "width": 120,
+            "height": 44,
+            "bottom": 525,
+            "right": 839,
+            "text": "查看修炼安排",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 847,
+            "y": 481,
+            "width": 90,
+            "height": 44,
+            "bottom": 525,
+            "right": 937,
+            "text": "完整回执",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 280,
+            "width": 850,
+            "height": 21,
+            "bottom": 301,
+            "right": 1381,
+            "text": "继续后本轮重新计时；关闭或刷新期间不补发收益。",
+            "font": 14,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 323,
+            "width": 820,
+            "height": 33,
+            "bottom": 356,
+            "right": 1367,
+            "text": "已完成 1 / 5 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 362,
+            "width": 398,
+            "height": 27,
+            "bottom": 389,
+            "right": 945,
+            "text": "累计修为 +50",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 362,
+            "width": 398,
+            "height": 27,
+            "bottom": 389,
+            "right": 1367,
+            "text": "灵石已用 0 / 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 395,
+            "width": 398,
+            "height": 27,
+            "bottom": 422,
+            "right": 945,
+            "text": "游戏岁月 +1 月 · 保留灵石 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 444,
+            "width": 850,
+            "height": 21,
+            "bottom": 465,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "unowned-saved-detail-geometry",
+      "case": "UIR33-05-takeover both detail pages keep original authority and only the newly owned full cycle saves",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 196,
+          "width": 920,
+          "height": 430,
+          "bottom": 626,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 275,
+          "width": 882,
+          "height": 336,
+          "bottom": 611,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 216.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 260.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 216.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 260.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 216.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 260.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 216.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 260.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 557,
+            "width": 180,
+            "height": 44,
+            "bottom": 601,
+            "right": 711,
+            "text": "此页接管 · 重计本轮",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 557,
+            "width": 120,
+            "height": 44,
+            "bottom": 601,
+            "right": 839,
+            "text": "查看修炼安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 356,
+            "width": 850,
+            "height": 21,
+            "bottom": 377,
+            "right": 1381,
+            "text": "继续后本轮重新计时；关闭或刷新期间不补发收益。",
+            "font": 14,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 399,
+            "width": 820,
+            "height": 33,
+            "bottom": 432,
+            "right": 1367,
+            "text": "已完成 0 / 5 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 438,
+            "width": 398,
+            "height": 27,
+            "bottom": 465,
+            "right": 945,
+            "text": "累计修为 +0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 438,
+            "width": 398,
+            "height": 27,
+            "bottom": 465,
+            "right": 1367,
+            "text": "灵石已用 0 / 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 471,
+            "width": 398,
+            "height": 27,
+            "bottom": 498,
+            "right": 945,
+            "text": "游戏岁月 +0 月 · 保留灵石 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 520,
+            "width": 850,
+            "height": 21,
+            "bottom": 541,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    },
+    {
+      "name": "previous-owner-detail-geometry",
+      "case": "UIR33-05-takeover both detail pages keep original authority and only the newly owned full cycle saves",
+      "geometry": {
+        "pane": {
+          "x": 496,
+          "y": 120,
+          "width": 920,
+          "height": 430,
+          "bottom": 550,
+          "right": 1416
+        },
+        "body": {
+          "x": 515,
+          "y": 199,
+          "width": 882,
+          "height": 336,
+          "bottom": 535,
+          "right": 1397
+        },
+        "nav": {
+          "x": 0,
+          "y": 818,
+          "width": 1440,
+          "height": 82,
+          "bottom": 900,
+          "right": 1440
+        },
+        "controls": [
+          {
+            "x": 997,
+            "y": 140.5,
+            "width": 88,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1085,
+            "text": "指引",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1093,
+            "y": 140.5,
+            "width": 94,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1187,
+            "text": "突破筹备",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1195,
+            "y": 140.5,
+            "width": 62,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1257,
+            "text": "目标",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 1265,
+            "y": 140.5,
+            "width": 120,
+            "height": 44,
+            "bottom": 184.5,
+            "right": 1385,
+            "text": "返回原处",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 531,
+            "y": 481,
+            "width": 180,
+            "height": 44,
+            "bottom": 525,
+            "right": 711,
+            "text": "此页接管 · 重计本轮",
+            "hit": true,
+            "clipped": false
+          },
+          {
+            "x": 719,
+            "y": 481,
+            "width": 120,
+            "height": 44,
+            "bottom": 525,
+            "right": 839,
+            "text": "查看修炼安排",
+            "hit": true,
+            "clipped": false
+          }
+        ],
+        "copy": [
+          {
+            "x": 531,
+            "y": 280,
+            "width": 850,
+            "height": 21,
+            "bottom": 301,
+            "right": 1381,
+            "text": "继续后本轮重新计时；关闭或刷新期间不补发收益。",
+            "font": 14,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 323,
+            "width": 820,
+            "height": 33,
+            "bottom": 356,
+            "right": 1367,
+            "text": "已完成 0 / 5 轮",
+            "font": 22,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 362,
+            "width": 398,
+            "height": 27,
+            "bottom": 389,
+            "right": 945,
+            "text": "累计修为 +0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 969,
+            "y": 362,
+            "width": 398,
+            "height": 27,
+            "bottom": 389,
+            "right": 1367,
+            "text": "灵石已用 0 / 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 547,
+            "y": 395,
+            "width": 398,
+            "height": 27,
+            "bottom": 422,
+            "right": 945,
+            "text": "游戏岁月 +0 月 · 保留灵石 0",
+            "font": 18,
+            "visible": true
+          },
+          {
+            "x": 531,
+            "y": 444,
+            "width": 850,
+            "height": 21,
+            "bottom": 465,
+            "right": 1381,
+            "text": "完成所选轮数即停 · 每轮 60 秒",
+            "font": 14,
+            "visible": true
+          }
+        ],
+        "scroll": 900,
+        "innerScroll": false
+      }
+    }
+  ]
+}
