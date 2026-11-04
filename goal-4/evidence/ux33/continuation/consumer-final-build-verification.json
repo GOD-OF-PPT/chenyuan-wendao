@@ -1,0 +1,18 @@
+{
+  "inputs": 3642,
+  "runtime": "85e1ac2eceae597e6b6b0a82d65f5b5f6c2916cdd19f5a33bc690be692171db3",
+  "files": 112,
+  "bytes": 11210075,
+  "source": {
+    "head": "69e7d769cbe4576ba2012f3dcbc6c9c8570555fb",
+    "source": "69e7d769cbe4576ba2012f3dcbc6c9c8570555fb",
+    "tree": "40e541428bbfc632a004ebbb212d89a1a91d069d",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "exactProductFrom": "4f62d86",
+  "runtimeSourcesUnchanged": true,
+  "payloadsUnchanged": true
+}

@@ -1,0 +1,94 @@
+{
+  "all": 401,
+  "authorized": 384,
+  "slow": 5,
+  "regular": 379,
+  "exactUnion": true,
+  "deferred": [
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "system reduced effects retain real source progress and static committed results",
+      "project": "chromium"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "system reduced motion keeps the real furnace states and saved product without animated flame or smoke",
+      "project": "chromium"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A8 new item surfaces retain keyboard return full text and safe failed-art fallbacks in both reduced-effect modes and a tight real error",
+      "project": "chromium"
+    },
+    {
+      "file": "art12-narrative-stage.spec.ts",
+      "title": "ART12-A8 new surfaces retain real keyboard focus tight-error readability failed portraits and both reduced-motion static results without stamp collisions",
+      "project": "chromium"
+    },
+    {
+      "file": "art15-cultivation-notes.spec.ts",
+      "title": "ART15-A6 keyboard missing-image and both reduced-effect modes keep the complete gate book and return without a write",
+      "project": "chromium"
+    },
+    {
+      "file": "art17-cave-threshold.spec.ts",
+      "title": "ART17-A11 failed paintings and both reduced-effect choices keep real inventory clocks and source controls",
+      "project": "chromium"
+    },
+    {
+      "file": "art30-npc-meeting.spec.ts",
+      "title": "ART30-A3 failed scene and all portrait art keep four actual people facts keyboard returns and readable static reduced-effect stages",
+      "project": "chromium"
+    },
+    {
+      "file": "art31-life-scroll.spec.ts",
+      "title": "ART31-A5 failed scroll painting and both reduced-effect choices keep all four chapters and actual keyboard management return fully usable",
+      "project": "chromium"
+    },
+    {
+      "file": "art32-milestone-stage.spec.ts",
+      "title": "ART32-A3 ANSWER_TRIAL keeps full pages original keyboard return and static actual execution when paintings fail in both reduced-effect modes",
+      "project": "chromium"
+    },
+    {
+      "file": "art32-milestone-stage.spec.ts",
+      "title": "ART32-A3 END keeps full pages original keyboard return and static actual execution when paintings fail in both reduced-effect modes",
+      "project": "chromium"
+    },
+    {
+      "file": "art33-opening-offering.spec.ts",
+      "title": "ART33-A5 system failed images retain full accessible choices and reduced motion keeps original real countdown",
+      "project": "chromium"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A8 talisman preparation survives missing standing art and both reduction settings keep real actions and readable static results",
+      "project": "chromium"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A15 missing practitioner art and both reduced-motion modes retain complete readable objects original gates and exact static saved cultivation",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable",
+      "project": "chromium"
+    },
+    {
+      "file": "inventory-objects.spec.ts",
+      "title": "ART04-A12 missing symbol images and both reduced-effect modes keep all three game objects and an actual medicine result readable and usable",
+      "project": "chromium"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A13 missing portraits and scene art plus both reduced-effect modes preserve complete objects real clocks and a static saved life result",
+      "project": "chromium"
+    },
+    {
+      "file": "source-actors.spec.ts",
+      "title": "TA08-A12 both reduction settings missing natural art and natural or four commission error layouts retain complete usable objects and readonly facts",
+      "project": "chromium"
+    }
+  ]
+}

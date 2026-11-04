@@ -1,0 +1,6 @@
+{
+  "reason": "Actual cross-page error pixels exposed two remaining local recovery instructions that promised wrong actions; corresponding copy corrected before final validation. Preserve da75 incomplete core; run final core only after all related UI checks settle.",
+  "terminatedOwnedResourcePids": [
+    79435
+  ]
+}

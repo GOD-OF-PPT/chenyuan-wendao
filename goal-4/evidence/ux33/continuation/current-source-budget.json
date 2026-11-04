@@ -1,0 +1,48 @@
+{
+  "files": 14,
+  "totalNativeBytes": 282414,
+  "newRasterAssets": 0,
+  "newCSSBytes": 0,
+  "App": {
+    "bytes": 159582,
+    "cap": 159635
+  },
+  "groups": {
+    "idle-cultivation": {
+      "bytes": 21969,
+      "cap": 22000
+    },
+    "idle-production": {
+      "bytes": 25491,
+      "cap": 26000
+    },
+    "idle-preparation": {
+      "bytes": 59977,
+      "cap": 60000
+    },
+    "art03": {
+      "bytes": 44895,
+      "cap": 45000
+    },
+    "art04": {
+      "bytes": 28124,
+      "cap": 40000
+    },
+    "idle-sources": {
+      "bytes": 11060,
+      "cap": 24000
+    },
+    "alchemy-workshop": {
+      "bytes": 21776,
+      "cap": 22000
+    },
+    "catalogue-art/manifest": {
+      "bytes": 16436,
+      "cap": 18000
+    },
+    "ta08": {
+      "bytes": 41364,
+      "cap": 42000
+    }
+  }
+}

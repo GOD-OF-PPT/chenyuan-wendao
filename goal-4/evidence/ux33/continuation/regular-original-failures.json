@@ -1,0 +1,86 @@
+[
+  {
+    "file": "check-art-02.spec.ts",
+    "title": "CHECK2-A2 medicine cycle quota blocks otherwise legal equipment and visits across domains while read pages export and original retry remain available",
+    "status": "failed",
+    "error": "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('equip-reason')\nExpected substring: \"核对\"\nReceived string:    \"请先处理存档提示\"\n"
+  },
+  {
+    "file": "ux26-learning-draft-context.spec.ts",
+    "title": "UX26-C1 manual accepted cycle keeps the actual saved timer separate from the unconfirmed next draft",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"下次草案，当前执行见上方\"\nReceived: \"下次草案 · 原活动不变\"\n"
+  },
+  {
+    "file": "ux26-learning-draft-context.spec.ts",
+    "title": "UX26-C1 skills accepted cycle keeps the actual saved timer separate from the unconfirmed next draft",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"下次草案，当前执行见上方\"\nReceived: \"下次草案 · 原活动不变\"\n"
+  },
+  {
+    "file": "ux26-learning-draft-context.spec.ts",
+    "title": "UX26-C2 manual paused original view edited draft and refreshed resume keep distinct truthful labels and the full original period",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"下次草案，当前执行见上方\"\nReceived: \"下次草案 · 原活动不变\"\n"
+  },
+  {
+    "file": "ux26-learning-draft-context.spec.ts",
+    "title": "UX26-C2 skills paused original view edited draft and refreshed resume keep distinct truthful labels and the full original period",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"下次草案，当前执行见上方\"\nReceived: \"下次草案 · 原活动不变\"\n"
+  },
+  {
+    "file": "ux26-learning-draft-context.spec.ts",
+    "title": "UX26-C3 manual rejected acceptance stays unconfirmed and original receipt retry never adopts a later edited draft",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"待确认安排，确认后开始\"\nReceived: \"待确认安排\"\n"
+  },
+  {
+    "file": "ux26-learning-draft-context.spec.ts",
+    "title": "UX26-C3 skills rejected acceptance stays unconfirmed and original receipt retry never adopts a later edited draft",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"待确认安排，确认后开始\"\nReceived: \"待确认安排\"\n"
+  },
+  {
+    "file": "ux26-learning-draft-context.spec.ts",
+    "title": "UX26-C4 manual failed period remains an unconfirmed next draft and exact original tick retries once without new authorization",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"下次草案，当前执行见上方\"\nReceived: \"下次草案 · 原活动不变\"\n"
+  },
+  {
+    "file": "ux26-learning-draft-context.spec.ts",
+    "title": "UX26-C4 skills failed period remains an unconfirmed next draft and exact original tick retries once without new authorization",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"下次草案，当前执行见上方\"\nReceived: \"下次草案 · 原活动不变\"\n"
+  },
+  {
+    "file": "ux26-learning-draft-context.spec.ts",
+    "title": "UX26-C5 running manual empty skill browsing and a separate queue never borrow saved ownership and a replacement life retires both drafts",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"展读经卷 · 查看不入串\"\nReceived: \"仅查看\"\n"
+  },
+  {
+    "file": "ux29-recovery-availability.spec.ts",
+    "title": "UX29-C4 missing healing_pill keeps real stock and its distinct formal gate with no fabricated batch output",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-estimate').locator('strong')\nExpected: \"回春丹不足，安排停止\"\nReceived: \"回春丹不足\"\n"
+  },
+  {
+    "file": "ux29-recovery-availability.spec.ts",
+    "title": "UX29-C4 missing spirit_pill keeps real stock and its distinct formal gate with no fabricated batch output",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-estimate').locator('strong')\nExpected: \"回灵丹不足，安排停止\"\nReceived: \"回灵丹不足\"\n"
+  },
+  {
+    "file": "ux29-recovery-availability.spec.ts",
+    "title": "UX29-C7 a paused original rest survives missing-medicine inspection and refresh with the same complete Game and saved limits",
+    "status": "failed",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-estimate').locator('strong')\nExpected: \"回春丹不足，安排停止\"\nReceived: \"回春丹不足\"\n"
+  },
+  {
+    "file": "ux32-market-copy.spec.ts",
+    "title": "UX32-A3 actual purchase and sale gates remain clear and a six second trip never performs an unconfirmed trade",
+    "status": "failed",
+    "error": "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('preparation-estimate')\nExpected substring: \"预算\"\nReceived string:    \"本段用石额度不足\"\n"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "phase": "consumers-slow",
+    "exit": 0,
+    "stats": {
+      "startTime": "2026-11-04T03:34:39.071Z",
+      "duration": 38888.098,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  {
+    "phase": "consumers-regular",
+    "exit": 0,
+    "stats": {
+      "startTime": "2026-11-04T03:35:27.531Z",
+      "duration": 295258.52400000003,
+      "expected": 43,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  {
+    "phase": "dialog-review",
+    "exit": 0,
+    "stats": {
+      "startTime": "2026-11-04T03:40:32.196Z",
+      "duration": 23651.701,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  }
+]
