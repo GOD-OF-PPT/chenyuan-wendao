@@ -1,0 +1,167 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-02/focus-baseline.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-02/focus-baseline-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-02/focus-baseline-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "uir33-02-local-exploration.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "uir33-02-local-exploration.spec.ts",
+      "file": "uir33-02-local-exploration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR33-02-A2 all six actual locations lead only to their complete existing local catalogue or preparation view",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 10035,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('explore-mode-source')\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('explore-mode-source')\u001b[22m\n\u001b[2m    9 × locator resolved to <button aria-pressed=\"true\" data-testid=\"explore-mode-source\">采集 / 委托</button>\u001b[22m\n\u001b[2m      - unexpected value \"inactive\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('explore-mode-source')\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('explore-mode-source')\u001b[22m\n\u001b[2m    9 × locator resolved to <button aria-pressed=\"true\" data-testid=\"explore-mode-source\">采集 / 委托</button>\u001b[22m\n\u001b[2m      - unexpected value \"inactive\"\u001b[22m\n\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-02-local-exploration.spec.ts:52:450",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-02-local-exploration.spec.ts",
+                      "column": 450,
+                      "line": 52
+                    },
+                    "snippet": "  50 |  for(const [place,label,target]of [['cave','查看修行目标','goal-panel'],['wilderness','查看山野取材','source-planner'],['sect','查看宗门委托','source-planner'],['market','查看坊市交易','market-counter'],['secret','查看古境取材','source-planner'],['terrace','查看渡劫准备','goal-panel']]as const){\n  51 |   const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage(),faults:string[]=[];page.on('pageerror',e=>faults.push(e.message));\n> 52 |   try{d.go(place);const before=await importRecoveryFixture(page,d.game),raw=await database(page);await map(page);await expect(page.getByTestId('journey-local-open')).toHaveText(label);await frame(page,info,'local-'+place);await page.getByTestId('journey-local-open').click();await expect(page.getByTestId(target)).toBeVisible();if(target!=='goal-panel')await expect(page.getByTestId('explore-mode-'+(target==='market-counter'?'purchase':'source'))).toBeFocused();expect(await database(page)).toEqual(raw);expect(await activity(page)).toBeNull();expect(await snapshot(page)).toEqual(before);if(target==='goal-panel')await page.getByTestId('hub-close').click();else await page.getByTestId('explore-mode-travel').click();await expect(page.getByTestId('travel-'+place)).toHaveAttribute('aria-pressed','true');expect(await database(page)).toEqual(raw);expect(faults).toEqual([]);}finally{await context.close();}\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^\n  53 |  }\n  54 | });\n  55 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-02-local-exploration.spec.ts",
+                        "column": 450,
+                        "line": 52
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('explore-mode-source')\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('explore-mode-source')\u001b[22m\n\u001b[2m    9 × locator resolved to <button aria-pressed=\"true\" data-testid=\"explore-mode-source\">采集 / 委托</button>\u001b[22m\n\u001b[2m      - unexpected value \"inactive\"\u001b[22m\n\n\n  50 |  for(const [place,label,target]of [['cave','查看修行目标','goal-panel'],['wilderness','查看山野取材','source-planner'],['sect','查看宗门委托','source-planner'],['market','查看坊市交易','market-counter'],['secret','查看古境取材','source-planner'],['terrace','查看渡劫准备','goal-panel']]as const){\n  51 |   const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage(),faults:string[]=[];page.on('pageerror',e=>faults.push(e.message));\n> 52 |   try{d.go(place);const before=await importRecoveryFixture(page,d.game),raw=await database(page);await map(page);await expect(page.getByTestId('journey-local-open')).toHaveText(label);await frame(page,info,'local-'+place);await page.getByTestId('journey-local-open').click();await expect(page.getByTestId(target)).toBeVisible();if(target!=='goal-panel')await expect(page.getByTestId('explore-mode-'+(target==='market-counter'?'purchase':'source'))).toBeFocused();expect(await database(page)).toEqual(raw);expect(await activity(page)).toBeNull();expect(await snapshot(page)).toEqual(before);if(target==='goal-panel')await page.getByTestId('hub-close').click();else await page.getByTestId('explore-mode-travel').click();await expect(page.getByTestId('travel-'+place)).toHaveAttribute('aria-pressed','true');expect(await database(page)).toEqual(raw);expect(faults).toEqual([]);}finally{await context.close();}\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^\n  53 |  }\n  54 | });\n  55 |\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-02-local-exploration.spec.ts:52:450"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T09:43:14.340Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "local-cave-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwiaGVpZ2h0Ijo5MDAsImNvbnRyb2xzIjpbeyJ0ZXh0Ijoi6Z2S5bKa5bGx6YeOXG7pnIDlh6HkuroiLCJmb250IjoxNiwiaGVpZ2h0Ijo2Ny4xODc1LCJ3aWR0aCI6MTUwLCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZSwib3ZlcmZsb3ciOmZhbHNlfSx7InRleHQiOiLlkKzpm6jmtJ7lupxcbuW9k+WJjeaJgOWcqCIsImZvbnQiOjE2LCJoZWlnaHQiOjY3LjE4NzUsIndpZHRoIjoxNTAsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlLCJvdmVyZmxvdyI6ZmFsc2V9LHsidGV4dCI6IumdkuS6keWul1xu6ZyA54K85rCUIiwiZm9udCI6MTYsImhlaWdodCI6NjcuMTg3NSwid2lkdGgiOjE1MCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWUsIm92ZXJmbG93IjpmYWxzZX0seyJ0ZXh0Ijoi5LqR5bKa5Z2K5biCXG7pnIDngrzmsJQiLCJmb250IjoxNiwiaGVpZ2h0Ijo2Ny4xODc1LCJ3aWR0aCI6MTUwLCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZSwib3ZlcmZsb3ciOmZhbHNlfSx7InRleHQiOiLnhaflvbHlj6TlooNcbumcgOetkeWfuiIsImZvbnQiOjE2LCJoZWlnaHQiOjY3LjE4NzUsIndpZHRoIjoxNTAsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlLCJvdmVyZmxvdyI6ZmFsc2V9LHsidGV4dCI6IueZu+S7meWPsFxu6ZyA5YyW56WeIiwiZm9udCI6MTYsImhlaWdodCI6NjcuMTg3NSwid2lkdGgiOjE1MCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWUsIm92ZXJmbG93IjpmYWxzZX0seyJ0ZXh0Ijoi5p+l55yL5L+u6KGM55uu5qCHIiwiZm9udCI6MjEsImhlaWdodCI6NTQsIndpZHRoIjoxNTIsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlLCJvdmVyZmxvdyI6ZmFsc2V9XSwidGV4dCI6W3sidGV4dCI6IuatpOWcsCDCtyDlkKzpm6jmtJ7lupwiLCJmb250IjoyMiwibWluIjoxOCwiaW5rIjp0cnVlfSx7InRleHQiOiLlvZPliY3miYDlnKjvvJrlkKzpm6jmtJ7lupwiLCJmb250IjoyMCwibWluIjoxOCwiaW5rIjp0cnVlfSx7InRleHQiOiLnn7Plo4HpmpTmlq3lsJjlmqPvvIzmqpDpm6jmlbLlk43lsoHmnIjjgILkvaDlnKjokrLlm6LliY3mkYrlvIDooYzlm4rvvJrpnZnkv67jgIHngrzkuLnvvIzmiJbkuLrkuIvkuIDmrKHov5zooYzkvZzlh4blpIfjgIIiLCJmb250IjoxOCwibWluIjoxOCwiaW5rIjp0cnVlfSx7InRleHQiOiLot6/moIfkuLrnm67nmoTlnLDnpLrmhI/vvJvngrnpgInlj6rmn6XnnIvvvIznoa7orqTooYzot6/lkI7miY3np7vliqjjgIIiLCJmb250IjoxNCwibWluIjoxNCwiaW5rIjp0cnVlfSx7InRleHQiOiLmn6XnnIvkuI3miafooYzvvIzljp/mtLvliqjkuI7ojYnmoYjkv53nlZnjgIIiLCJmb250IjoxNCwibWluIjoxNCwiaW5rIjp0cnVlfV19"
+                    },
+                    {
+                      "name": "local-wilderness-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwiaGVpZ2h0Ijo5MDAsImNvbnRyb2xzIjpbeyJ0ZXh0Ijoi6Z2S5bKa5bGx6YeOXG7lvZPliY3miYDlnKgiLCJmb250IjoxNiwiaGVpZ2h0Ijo2Ny4xODc1LCJ3aWR0aCI6MTUwLCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZSwib3ZlcmZsb3ciOmZhbHNlfSx7InRleHQiOiLlkKzpm6jmtJ7lupxcbumcgOWHoeS6uiIsImZvbnQiOjE2LCJoZWlnaHQiOjY3LjE4NzUsIndpZHRoIjoxNTAsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlLCJvdmVyZmxvdyI6ZmFsc2V9LHsidGV4dCI6IumdkuS6keWul1xu6ZyA54K85rCUIiwiZm9udCI6MTYsImhlaWdodCI6NjcuMTg3NSwid2lkdGgiOjE1MCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWUsIm92ZXJmbG93IjpmYWxzZX0seyJ0ZXh0Ijoi5LqR5bKa5Z2K5biCXG7pnIDngrzmsJQiLCJmb250IjoxNiwiaGVpZ2h0Ijo2Ny4xODc1LCJ3aWR0aCI6MTUwLCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZSwib3ZlcmZsb3ciOmZhbHNlfSx7InRleHQiOiLnhaflvbHlj6TlooNcbumcgOetkeWfuiIsImZvbnQiOjE2LCJoZWlnaHQiOjY3LjE4NzUsIndpZHRoIjoxNTAsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlLCJvdmVyZmxvdyI6ZmFsc2V9LHsidGV4dCI6IueZu+S7meWPsFxu6ZyA5YyW56WeIiwiZm9udCI6MTYsImhlaWdodCI6NjcuMTg3NSwid2lkdGgiOjE1MCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWUsIm92ZXJmbG93IjpmYWxzZX0seyJ0ZXh0Ijoi5p+l55yL5bGx6YeO5Y+W5p2QIiwiZm9udCI6MjEsImhlaWdodCI6NTQsIndpZHRoIjoxNTIsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlLCJvdmVyZmxvdyI6ZmFsc2V9XSwidGV4dCI6W3sidGV4dCI6IuatpOWcsCDCtyDpnZLlsprlsbHph44iLCJmb250IjoyMiwibWluIjoxOCwiaW5rIjp0cnVlfSx7InRleHQiOiLlvZPliY3miYDlnKjvvJrpnZLlsprlsbHph44iLCJmb250IjoyMCwibWluIjoxOCwiaW5rIjp0cnVlfSx7InRleHQiOiLmnb7po47lkLnmlaPlsbHpl7ToloTpm77jgILlvqrmuqrlj6/lr7vlh53msJTojYnvvIzmnJ3pnLLlh53lnKjlj7blsJbvvJvmm7Tmt7HnmoTmnpflvbHph4zvvIzkuZ/mnInlppbniannqqXkvLrjgIIiLCJmb250IjoxOCwibWluIjoxOCwiaW5rIjp0cnVlfSx7InRleHQiOiLot6/moIfkuLrnm67nmoTlnLDnpLrmhI/vvJvngrnpgInlj6rmn6XnnIvvvIznoa7orqTooYzot6/lkI7miY3np7vliqjjgIIiLCJmb250IjoxNCwibWluIjoxNCwiaW5rIjp0cnVlfSx7InRleHQiOiLmn6XnnIvkuI3miafooYzvvIzljp/mtLvliqjkuI7ojYnmoYjkv53nlZnjgIIiLCJmb250IjoxNCwibWluIjoxNCwiaW5rIjp0cnVlfV19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-02/focus-baseline-results/uir33-02-local-exploration-2ae29-talogue-or-preparation-view-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-02/focus-baseline-results/uir33-02-local-exploration-2ae29-talogue-or-preparation-view-chromium/test-failed-2.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-02/focus-baseline-results/uir33-02-local-exploration-2ae29-talogue-or-preparation-view-chromium/test-failed-3.png"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-02/focus-baseline-results/uir33-02-local-exploration-2ae29-talogue-or-preparation-view-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-02-local-exploration.spec.ts",
+                    "column": 450,
+                    "line": 52
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4b7513225d804b820abf-2da901e7e4051ca09212",
+          "file": "uir33-02-local-exploration.spec.ts",
+          "line": 203,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T09:43:13.140Z",
+    "duration": 12292.049,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

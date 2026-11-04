@@ -27,6 +27,6 @@ const line=computed(()=>{const a=points[props.game.core.world.location],b=points
    <span v-if="working" class="journey-traveller" data-testid="journey-route-marker" :style="marker" aria-hidden="true">行</span>
    <span v-if="effect?.notice.family==='travel'" :key="effect.sequence" class="journey-arrival" data-testid="journey-arrival" :data-sequence="effect.sequence" role="status">已保存抵达 · {{C.locations[game.core.world.location].name}}</span>
   </div>
-  <div class="journey-decision"><strong>当前：{{C.locations[game.core.world.location].name}} → {{C.locations[selected].name}}</strong><p>{{C.locations[selected].description}}</p><small>一次6秒 · 不消耗游戏月 · 抵达即停。到达后不会自动取材、采购、研习或挑战。</small><small>路标为目的地示意；点选只查看，确认行路后才移动。</small></div>
+  <div class="journey-decision"><strong>{{selected===game.core.world.location?'当前所在：'+C.locations[selected].name:'当前：'+C.locations[game.core.world.location].name+' → '+C.locations[selected].name}}</strong><p>{{C.locations[selected].description}}</p><small v-if="selected!==game.core.world.location">一次6秒 · 不消耗游戏月 · 抵达即停。到达后不会自动取材、采购、研习或挑战。</small><small>路标为目的地示意；点选只查看，确认行路后才移动。</small></div>
  </div>
 </template>

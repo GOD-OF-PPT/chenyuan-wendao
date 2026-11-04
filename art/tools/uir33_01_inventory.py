@@ -1,4 +1,5 @@
 """Current cultivation controls, strict complete inverse and separate added surface budget."""
+from uir33_02_inventory import prior_uir3302_bytes
 import hashlib,json,re
 from pathlib import Path
 LEDGER='art/redesign/uir33-01.json'
@@ -80,6 +81,7 @@ OPERATIONS={'web/src/App.vue': [["import CultivationSite from './CultivationSite
                                   'name="decision"/></div>']]}
 MARKERS={'App.vue':'import CultivationOngoing','CultivationSite.vue':'<slot name="activity"/>'}
 def prior_uir3301_bytes(path,raw):
+ raw=prior_uir3302_bytes(path,raw)
  name=Path(path).name
  if name not in FACTS or MARKERS[name].encode() not in raw:return raw
  f=FACTS[name]

@@ -1,7 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {inspectIdleReport,latestIdleResults,inspectIdleDeclarations} from '../scripts/idle-matrix-evidence.mjs';
+import {inspectIdleReport,latestIdleResults,inspectIdleDeclarations,verifyIdleMatrixCoverage} from '../scripts/idle-matrix-evidence.mjs';
 import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
 const runtime='a'.repeat(64);
 function report(){return{config:{rootDir:'/isolated/web/e2e',metadata:{runtimeDigest:runtime},projects:[{name:'chromium',repeatEach:1,retries:0}]},errors:[],suites:[{specs:[{file:'example.spec.ts',title:'a pinned verifier fixture',ok:true,tests:[{projectName:'chromium',expectedStatus:'passed',status:'expected',results:[{status:'passed',retry:0}]}]}]}]};}
 const alter=fn=>{const r=report();fn(r,r.suites[0].specs[0],r.suites[0].specs[0].tests[0]);return r;};
@@ -233,4 +236,35 @@ test('v9 retains exact runtime and full original recovery obligation',()=>{
  const [broad,recovery,native,normal]=ongoingDeclarations();assert.throws(()=>inspectIdleDeclarations(9,[broad,native,normal],runtime),/requires the original/);
  assert.throws(()=>inspectIdleDeclarations(9,[broad,native,normal],'b'.repeat(64),recovery.report),/runtime differs/);
  assert.throws(()=>inspectIdleDeclarations(9,[broad,native,native],runtime,recovery.report),/Exactly one/);
+});
+
+function localExplorationDeclarations(){
+ const inventories=ongoingDeclarations(),extra=JSON.parse(fs.readFileSync(new URL('./idle-uir33-02-additions.json',import.meta.url)));
+ inventories[0].report.suites[0].specs.push(...extra.additions.map(row=>({file:row.file,title:row.title,tests:[{projectName:row.projectName}]})));return inventories;
+}
+test('v10 preserves every v9 consumer and adds five exact local exploration cases',()=>{
+ const [broad,recovery,native,normal]=localExplorationDeclarations();assert.equal(inspectIdleDeclarations(10,[broad,native,normal],runtime,recovery.report).length,1311);
+ assert.throws(()=>inspectIdleDeclarations(9,[broad,native,normal],runtime,recovery.report),/Profile declarations/);
+ const [old,oldRecovery,oldNative,oldNormal]=ongoingDeclarations();assert.equal(inspectIdleDeclarations(9,[old,oldNative,oldNormal],runtime,oldRecovery.report).length,1306);
+});
+test('v10 rejects missing duplicate renamed or replaced local and old consumers',()=>{
+ for(const mutate of [r=>r.suites[0].specs.pop(),r=>r.suites[0].specs.at(-1).title+=' invented',r=>r.suites[0].specs[0].title+=' replaced',r=>r.suites[0].specs.splice(-1,1,structuredClone(r.suites[0].specs.at(-2)))]){
+  const [broad,recovery,native,normal]=localExplorationDeclarations();mutate(broad.report);assert.throws(()=>inspectIdleDeclarations(10,[broad,native,normal],runtime,recovery.report),/Profile declarations|Profile identities/);
+ }
+});
+test('v10 still requires the exact runtime full recovery and correct suite owner',()=>{
+ const [broad,recovery,native,normal]=localExplorationDeclarations();assert.throws(()=>inspectIdleDeclarations(10,[broad,native,normal],runtime),/requires the original/);
+ assert.throws(()=>inspectIdleDeclarations(10,[broad,native,normal],'b'.repeat(64),recovery.report),/runtime differs/);
+ assert.throws(()=>inspectIdleDeclarations(10,[broad,native,native],runtime,recovery.report),/Exactly one/);
+});
+
+test('the real outer verifier recognizes v9 and v10 but cannot accept their unexecuted inventories',t=>{
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'chenyuan-local-matrix-'));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
+ const save=(name,value)=>{const raw=JSON.stringify(value),file=path.join(dir,name);fs.writeFileSync(file,raw);return{path:name,sha256:createHash('sha256').update(raw).digest('hex')};};
+ for(const version of [9,10]){
+  const [broad,recovery,native,normal]=version===9?ongoingDeclarations():localExplorationDeclarations();
+  const manifest={format:'chenyuan-idle-matrix-inputs',version,runtime,scope:{browser:'chromium',viewport:{width:1440,height:900},fontScale:1},phases:[],declarations:[broad,native,normal].map(d=>({suite:d.suite,report:save(version+'-'+d.suite+'.json',d.report)})),recoveryUIDeclaration:save(version+'-recovery.json',recovery.report)};
+  const file=path.join(dir,'manifest.json');fs.writeFileSync(file,JSON.stringify(manifest));assert.throws(()=>verifyIdleMatrixCoverage(file),/Current normal\/UI\/native inventory is incomplete/);
+  for(const invalid of [0,11]){fs.writeFileSync(file,JSON.stringify({...manifest,version:invalid}));assert.throws(()=>verifyIdleMatrixCoverage(file),/Unknown idle matrix version/);}
+ }
 });

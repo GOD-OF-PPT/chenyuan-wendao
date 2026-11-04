@@ -1,0 +1,27 @@
+{
+  "format": "chenyuan-local-exploration-uir33-02",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "newCSSBytes": 0,
+  "maxAddedNativeBytes": 2500,
+  "added": {
+    "path": "web/src/JourneyLocalAction.vue",
+    "bytes": 1452,
+    "sha256": "640bf5362cb743162b64e7b9c3f07ae26329a8d6c5a12c8ffa643464fcb405db"
+  },
+  "sourceReferences": [
+    "docs/decisions/0097-local-exploration-uir33-02-contract.md",
+    "goal-4/amendments/2026-11-04-uir33-02-input.md",
+    "goal-4/research/uir33-02-sources.json",
+    "art/redesign/uir33-02-edits.json",
+    "goal-4/evidence/uir33-02/before/web/src/AdventurePlanner.vue",
+    "goal-4/evidence/uir33-02/before/web/src/ExplorePanel.vue",
+    "goal-4/evidence/uir33-02/before/web/src/JourneyMap.vue"
+  ],
+  "oldLedgers": {
+    "idle-adventure": "ce5cf186d5f11a9ec23f9762caf7310e2a367599b911c1376e27e6105f7a5ba9",
+    "art02": "697f41e90df96108c1e1d330d511bc91b019aa36f1e1124a152f91d1946a6e9c",
+    "playable-flow": "d516844473a772bc1fdd2225a05c23a083d5a1a3145291f0d13c9beb4479d3b8"
+  }
+}
