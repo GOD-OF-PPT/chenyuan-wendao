@@ -1,4 +1,5 @@
 """Book hierarchy only; all originals reconstruct exactly and old budgets remain fixed."""
+from check_uir33_inventory import prior_check_uir33_bytes
 import hashlib,json
 from pathlib import Path
 LEDGER='art/redesign/uir33-04.json'
@@ -92,6 +93,7 @@ OPERATIONS={'web/src/CultivationNotes.vue': [["purpose?:string}>(),{purpose:'安
 CAPS={'art03': 45000, 'idle-preparation': 60000, 'art15': 6000}
 MARKERS={'CultivationNotes.vue':'prefix?:string','JadeStudyScene.vue':'import StudyNotes','LearningPlanner.vue':'v-if="currentSlot!==selected"'}
 def prior_uir3304_bytes(path,raw):
+ raw=prior_check_uir33_bytes(path,raw)
  name=Path(path).name
  if name not in FACTS or MARKERS[name].encode() not in raw:return raw
  f=FACTS[name];assert hashlib.sha256(raw).hexdigest()==f['sha256'], 'UIR33-04 complete current parent'
@@ -113,7 +115,7 @@ def validate_uir3304(root):
  assert json.loads(local(LEDGER).read_text())==MANIFEST, 'UIR33-04 exact ledger'
  assert json.loads(local('art/redesign/uir33-04-edits.json').read_text())==OPERATIONS, 'UIR33-04 exact edits'
  for name,f in FACTS.items():
-  raw=local(f['path']).read_bytes();before=local(f['before']).read_bytes()
+  raw=prior_check_uir33_bytes(f['path'],local(f['path']).read_bytes());before=local(f['before']).read_bytes()
   assert len(raw)==f['bytes'] and hashlib.sha256(raw).hexdigest()==f['sha256'], 'UIR33-04 complete current source'
   assert hashlib.sha256(before).hexdigest()==f['beforeSHA256'], 'UIR33-04 preserved source'
   assert prior_uir3304_bytes(name,raw)==before, 'UIR33-04 complete inverse'

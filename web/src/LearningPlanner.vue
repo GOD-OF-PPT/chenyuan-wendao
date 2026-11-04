@@ -88,7 +88,7 @@ defaults();
       <small v-if="conflict" class="preparation-reason" :data-testid="mode==='skills'&&game.learned.includes(selected)?'equip-reason':undefined" role="status">{{conflict}}</small>
       <template v-if="mode==='manual'&&!manualComplete||mode==='skills'&&queue.length">
       <button v-if="mode==='manual'" class="learning-plan-summary" data-testid="learning-plan-open" @click="openSettings"><strong>仅参悟一次 · 完整安排</strong><small>累计灵石上限 {{budget}} · 保留 {{reserve}}</small></button>
-      <div v-else class="art10-authorization-summary"><strong>待研卷串 {{queue.length}} 卷</strong><small>累计灵石上限 {{budget}} · 保留 {{reserve}}</small></div>
+      <div v-else class="art10-authorization-summary"><strong>研习清单 {{queue.length}} 卷</strong><small>累计灵石上限 {{budget}} · 保留 {{reserve}}</small></div>
       <div v-if="!conflict&&!restart.same" class="preparation-estimate" data-testid="preparation-estimate"><strong>{{forecast.title}}</strong><small>{{forecast.reason}}</small><small>{{planningNote}}</small></div>
       <button v-if="(mode==='manual'||pending)&&game.core.world.location!=='sect'" :class="{primary:mode==='manual'||pending>0}" data-testid="preparation-travel" @click="emit('travel',plan)" :disabled="!!conflict||!move.allowed||mode==='skills'&&!queue.length">前往青云宗 · 不自动研习</button><button v-else-if="mode==='manual'||pending" :class="{primary:mode==='manual'||pending>0}" data-testid="preparation-start" @click="emit('start',plan)" :disabled="!!conflict||restart.same||!quote?.allowed">{{conflict?'当前暂不可安排':restart.same?'上方继续研习':restart.label+(mode==='manual'?'安排参悟一次':'开始这段研习')}}</button>
       </template>

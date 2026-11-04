@@ -1,0 +1,6 @@
+{
+  "time": 1793797408.167592,
+  "pid": 58441,
+  "command": "node artifacts/goal-4/check-uir33-01/final/run-phase.mjs related 758e340d7d71c0caf91e289cd77c895a8da8a2abbf04f690529e0501daccbeab\n",
+  "reason": "Actual completed-learning label defect reproduced in label-baseline; remaining old-source UI checks superseded by fixed-source full check. Preserve partial and interrupted results; no pass claim."
+}

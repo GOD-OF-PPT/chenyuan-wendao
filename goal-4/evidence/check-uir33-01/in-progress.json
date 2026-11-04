@@ -1,0 +1,20 @@
+{
+  "task": "CHECK-UIR33-01",
+  "completed": false,
+  "source": "70f9f30",
+  "coreSession": 40535,
+  "next": "after install build; await real terminal before list/type; execute union fixed UI; retain old reports",
+  "goalActive": true,
+  "uiSession": 30002,
+  "uiDeclarations": 225,
+  "runtime": "758e340d7d71c0caf91e289cd77c895a8da8a2abbf04f690529e0501daccbeab",
+  "pending": "Poll original live handles; preserve frozen sources; no repeated/parallel restart",
+  "deferred": 5,
+  "coreExit": 0,
+  "corePassed": {
+    "node": 903,
+    "resources": 654,
+    "inputs": 3899
+  },
+  "uiPending225": true
+}
