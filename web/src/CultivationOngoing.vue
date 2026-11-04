@@ -35,6 +35,6 @@ const phase=computed(()=>check.value?'进度待核对':store.activityPausing?'�
 </template>
 
 <style scoped>
-.cultivation-ongoing{gap:12px}.cultivation-ongoing h2{margin:0;font-weight:400}.ongoing-progress{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}.ongoing-progress span{margin-left:auto;font-size:14px;color:#bad2c7}.cultivation-ongoing strong{color:#c3f5dd;font-size:26px;font-weight:400}.cultivation-ongoing>.text-button{align-self:center;min-height:44px}.cultivation-ongoing>small{color:#c5d8ca}
+.cultivation-ongoing{gap:12px}.cultivation-ongoing h2{margin:0;font-weight:400}.ongoing-progress{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}.ongoing-progress span{margin-left:auto;font-size:14px;color:#bad2c7}.cultivation-ongoing strong{color:#c3f5dd;font-size:26px;font-weight:400}.cultivation-ongoing>.text-button{align-self:center;min-height:44px;font-size:18px!important}.cultivation-ongoing>small{color:#c5d8ca}
 :global(.art06-status:empty){display:none}
 </style>

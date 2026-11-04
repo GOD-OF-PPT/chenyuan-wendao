@@ -6,8 +6,8 @@
   "maxAddedNativeBytes": 6000,
   "added": {
     "path": "web/src/CultivationOngoing.vue",
-    "bytes": 3250,
-    "sha256": "06984ea4f6dd663a32fb274a47321eecc9c618b4fdb1ff0f10f4df8301e4c72d"
+    "bytes": 3275,
+    "sha256": "16a814b95344928cdf3b8eef6ab6ab0aca757bc86cd335c2446b869ca2cfcf85"
   },
   "sourceReferences": [
     "docs/decisions/0096-cultivation-active-uir33-01-contract.md",

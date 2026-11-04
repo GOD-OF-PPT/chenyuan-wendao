@@ -26,11 +26,11 @@ async function frame(page:Page,info:TestInfo,name:string){
   const inside=(r:DOMRect)=>r.left>=box.left-1&&r.right<=box.right+1&&r.top>=box.top-1&&r.bottom<=box.bottom+1;
   return{body:{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight},safe:box.bottom<=nav.top,
    text:[...root.querySelectorAll<HTMLElement>('h2,p,small')].map(n=>{const r=document.createRange();r.selectNodeContents(n);return{text:n.innerText,font:parseFloat(getComputedStyle(n).fontSize),min:n.tagName==='SMALL'?14:18,ink:[...r.getClientRects()].filter(r=>r.width&&r.height).every(inside)};}),
-   controls:[...root.querySelectorAll<HTMLButtonElement>('button')].map(n=>{const r=n.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return{text:n.innerText,width:r.width,height:r.height,inside:inside(r),hit:hit===n||!!hit&&n.contains(hit),clipped:n.scrollWidth>n.clientWidth+1||n.scrollHeight>n.clientHeight+1};})};
+   controls:[...root.querySelectorAll<HTMLButtonElement>('button')].map(n=>{const r=n.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return{text:n.innerText,font:parseFloat(getComputedStyle(n).fontSize),width:r.width,height:r.height,inside:inside(r),hit:hit===n||!!hit&&n.contains(hit),clipped:n.scrollWidth>n.clientWidth+1||n.scrollHeight>n.clientHeight+1};})};
  });
  await info.attach(name+'-geometry',{body:JSON.stringify(g),contentType:'application/json'});await captureFixedPng(page,info.outputPath(name+'.png'));
  expect(g.body.width).toBeLessThanOrEqual(1440);expect(g.body.height).toBeLessThanOrEqual(900);expect(g.safe).toBe(true);
- for(const c of g.controls){expect(c.width,c.text).toBeGreaterThanOrEqual(44);expect(c.height,c.text).toBeGreaterThanOrEqual(44);expect(c.inside,c.text).toBe(true);expect(c.hit,c.text).toBe(true);expect(c.clipped,c.text).toBe(false);}
+ for(const c of g.controls){expect(c.font,c.text).toBeGreaterThanOrEqual(18);expect(c.width,c.text).toBeGreaterThanOrEqual(44);expect(c.height,c.text).toBeGreaterThanOrEqual(44);expect(c.inside,c.text).toBe(true);expect(c.hit,c.text).toBe(true);expect(c.clipped,c.text).toBe(false);}
  for(const t of g.text){expect(t.font,t.text).toBeGreaterThanOrEqual(t.min);expect(t.ink,t.text).toBe(true);}
 }
 async function saved(page:Page,info:TestInfo,a:any,before:any,accepted:any){
