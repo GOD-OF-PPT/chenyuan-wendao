@@ -1,0 +1,10 @@
+{
+  "complete": false,
+  "productBeforeReadingRefinement": "ffd2aa3",
+  "authorTenCasesPassed": true,
+  "readingRefinementPassed": true,
+  "newResourceMethods": 29,
+  "matrixMethods": 45,
+  "next": "freeze refined source, current related UI once, same-source package and actual visual review",
+  "fullGoalComplete": false
+}

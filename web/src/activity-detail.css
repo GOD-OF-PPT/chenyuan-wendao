@@ -15,8 +15,8 @@
 .immersive-stage .activity-detail-surface .training-resume-note,.immersive-stage .activity-detail-surface .training-goal,.immersive-stage .activity-detail-surface .training-notice,.immersive-stage .activity-detail-surface [data-testid=training-stop]{margin:0;line-height:1.5}
 .immersive-stage .activity-detail-surface [data-testid=training-stop]{font-size:18px;color:#e0d6ad}
 .immersive-stage .activity-detail-surface .training-activity>footer{flex-wrap:wrap;justify-content:flex-start;gap:8px;padding-top:4px}
-.immersive-stage .activity-detail-surface>[data-testid=activity-plan-review]{flex:none;min-height:320px}
-.immersive-stage .activity-detail-surface>[data-testid=activity-plan-review]>.review-pages{display:flex;flex-direction:column;height:320px;min-height:320px;gap:12px}
+.immersive-stage .activity-detail-surface>[data-testid=activity-plan-review]{flex:none;min-height:260px}
+.immersive-stage .activity-detail-surface>[data-testid=activity-plan-review]>.review-pages{display:flex;flex-direction:column;height:260px;min-height:260px;gap:12px}
 .immersive-stage .activity-detail-surface .review-pages .catalogue-pager{margin-top:auto}
 
 .immersive-stage .activity-detail-surface .review-pages>.reading-text{flex:1;min-height:0}

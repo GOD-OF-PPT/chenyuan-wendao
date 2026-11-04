@@ -30,6 +30,7 @@ async function frame(page:Page,info:TestInfo,name:string,short=false){
  await captureFixedPng(page,info.outputPath(name+'.png'));
  expect(g.scroll).toBeLessThanOrEqual(900);expect(g.innerScroll).toBe(false);expect(g.pane.bottom).toBeLessThanOrEqual(g.nav.y);
  if(short)expect(g.pane.height,'short activity content must not retain a nearly full-height report panel').toBeLessThanOrEqual(520);
+ if(await page.getByTestId('activity-plan-review').isVisible())expect(g.pane.height,'paged strategy should remain a concise reading record').toBeLessThanOrEqual(460);
  for(const c of g.controls){expect(c.width,c.text).toBeGreaterThanOrEqual(44);expect(c.height,c.text).toBeGreaterThanOrEqual(44);expect(c.hit,c.text).toBe(true);expect(c.clipped,c.text).toBe(false);expect(c.y,c.text).toBeGreaterThanOrEqual(g.pane.y);expect(c.bottom,c.text).toBeLessThanOrEqual(g.nav.y);}
  for(const c of g.copy){expect(c.visible,c.text).toBe(true);expect(c.font,c.text).toBeGreaterThanOrEqual(14);expect(c.y,c.text).toBeGreaterThanOrEqual(g.body.y);expect(c.bottom,c.text).toBeLessThanOrEqual(g.body.bottom+1);}
 }
