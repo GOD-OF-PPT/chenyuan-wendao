@@ -185,6 +185,10 @@
     [
       "failed:store?.syncIssue?'同步待核对 · 气息已歇':'保存待核对 · 请查看上方提示'",
       "failed:store?.syncIssue?'进度待核对':'查看上方提示'"
+    ],
+    [
+      "{{state==='failed'?'已停手':status}}",
+      "{{status}}"
     ]
   ],
   "JadeStudyScene.vue": [

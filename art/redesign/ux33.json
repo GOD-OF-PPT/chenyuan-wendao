@@ -42,8 +42,8 @@
     },
     {
       "path": "web/src/RecoveryRitual.vue",
-      "bytes": 9504,
-      "sha256": "b89677b3e2e762048540419502c1017f77f7db62eb0de01f8506a0a986ac3826"
+      "bytes": 9475,
+      "sha256": "9cc10138931c8006053ea658022112ec2edd99f9b63078ab998e5ae3fd02c6f7"
     },
     {
       "path": "web/src/JadeStudyScene.vue",
