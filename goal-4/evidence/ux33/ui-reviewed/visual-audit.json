@@ -1,0 +1,600 @@
+[
+  {
+    "name": "focused-source-reserve-gate",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--12e28-and-does-not-write-anything-chromium/source-reserve-gate.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-source-reserve-gate.jpg",
+    "sha256": "53192d7cc2a05dc86ef3fd79a2c0fc73f9122150306fd82a529a10d7a11f6ee5",
+    "viewSha256": "e9063cb235b8ff038c769e77ad3b060f17d0530289fadabb63355ec12809cfb3",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-aborted-confirmed",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--29091-ome-with-an-uncommitted-one-chromium/aborted-confirmed.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-aborted-confirmed.jpg",
+    "sha256": "4831d7a765386d1aea54dc4b5cfb861905c55183b7d3aa75b278bef3d14f9148",
+    "viewSha256": "398c80fe685efd3de0bda4a8aa2533b725684fc970f397d157b7eb6ad2d1bc13",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-aborted-pending",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--29091-ome-with-an-uncommitted-one-chromium/aborted-pending.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-aborted-pending.jpg",
+    "sha256": "03fcfac302fe0034da5fdc70322775a954f04a645805e003df7c90ea7db2d280",
+    "viewSha256": "dade5261ade0ac20c72f7b390fb4255e40bbfed5c5bd0e6d51db4123b4887cdf",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-complete-paused-details",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--5082e-reading-and-original-resume-chromium/complete-paused-details.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-complete-paused-details.jpg",
+    "sha256": "29ea1a36dc90ce9f232b0d2874d160d85477e569d76061696b6ea36da156da08",
+    "viewSha256": "0ea0dd49faafbd63942f323d428d99dad58901e5eeaf1cb726ad4fd0bf3eaa3a",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "focused-paused-rail",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--5082e-reading-and-original-resume-chromium/paused-rail.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-paused-rail.jpg",
+    "sha256": "585844a9ba78f804bcf9465149630e8e512de51c8ebd03064f794b9e1e70a40e",
+    "viewSha256": "d205935bafee0d73d4c4f2ff9ee807520233fba7f09fbc2e1eafad9b5d35d207",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-running-rail",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--5082e-reading-and-original-resume-chromium/running-rail.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-running-rail.jpg",
+    "sha256": "22d5bb0cdc91a585e6b5395ddca242515f09be3825e0a9de9196df68d04eff26",
+    "viewSha256": "7c4d3a83f795bb110679994ab953eac05781ce931ae6a6251df9663dfe920b5c",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "focused-saved-awaiting-owner",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--7cf81-reward-or-a-duplicate-clock-chromium/saved-awaiting-owner.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-saved-awaiting-owner.jpg",
+    "sha256": "af71a01a5469a50774aac0fc0865b61ef556122383c6bf6ffc2175b5274e11fe",
+    "viewSha256": "fdc6bb445c82954a51de538da564f42df9953b501aef94d03d6055854b8b4c0d",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-error-forge",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--97051-es-the-failed-source-intent-chromium/error-forge.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-error-forge.jpg",
+    "sha256": "941ad5bd85b0889f44a0c65e894611d0a278dd7b101edea1fc532de72e75b285",
+    "viewSha256": "3ea601be3c1eeabdb04a85a396a7e52b341be52c43c4e50421f7de63e7acd61a",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-error-market",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--97051-es-the-failed-source-intent-chromium/error-market.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-error-market.jpg",
+    "sha256": "325ebebac791e6aeb07b672f2fa2863e22e9651088be498537a803bd8b3ba419",
+    "viewSha256": "c13343cdaa60602116d4d4701edbb9e9c530a0c2242d3edf6828c10f594495df",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-error-recovery",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--97051-es-the-failed-source-intent-chromium/error-recovery.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-error-recovery.jpg",
+    "sha256": "374e3bec2bef2ea2ce6b2fd626a88b878c298588015a361c2730971c7a63868a",
+    "viewSha256": "def83874cbc36d3982d410716ec289423374f1fec438f6fef13ab8f8e06faa4a",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "focused-error-relics",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--97051-es-the-failed-source-intent-chromium/error-relics.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-error-relics.jpg",
+    "sha256": "70c20716c01df33ee513b5abd300042e4255db23effc85d404417aa6df4d8776",
+    "viewSha256": "652fa7478d564a22512f877425fe6e422df68193910173f26dba67941c212cdf",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-error-skills",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--97051-es-the-failed-source-intent-chromium/error-skills.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-error-skills.jpg",
+    "sha256": "64640bcc906d33080cf36dedeaa79860e2281e595aed3ef0d5d62f67cef2d62b",
+    "viewSha256": "232e61046ce9e5376bff97cadc11cf06937878f5724c8903c581bbbcc875f2f1",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "focused-source-start-error",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--97051-es-the-failed-source-intent-chromium/source-start-error.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-source-start-error.jpg",
+    "sha256": "eaea7b7441b475a188ab4d1908726f5ff8e188791f0cbeb808a356a5c7357692",
+    "viewSha256": "4185aef1d7d5104b45f0cc81239cc77d5072ae7f11ec81133e5d31d26a91fff8",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-learn-budget-gate",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--b0143-ke-zero-completion-forecast-chromium/learn-budget-gate.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-learn-budget-gate.jpg",
+    "sha256": "589378c68b546a2f88bd6d59b924057364ad9f3502e34e0d1fcee136893758e8",
+    "viewSha256": "24088510c85db5bcc3b2d665e4a02ea0e5e9b9e8c76e2bfa46f35585782e8905",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-purchase-budget-gate",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--b0143-ke-zero-completion-forecast-chromium/purchase-budget-gate.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-purchase-budget-gate.jpg",
+    "sha256": "f13e2a96643e997775e9df38dde24feb544bffaae4afe40c41a7f27b2bf2eed5",
+    "viewSha256": "990a7cf220ee6b9f0a1ae197409e64e9f55ddbc27dc54a5ad5f5895147da8423",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-study-budget-gate",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--b0143-ke-zero-completion-forecast-chromium/study-budget-gate.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-study-budget-gate.jpg",
+    "sha256": "b41b32e8afb96bb5fbfcc648936aafb20fd3cfb243db4e706797bf4997c0125b",
+    "viewSha256": "52516f7be9323b5523fcdee3945dd1b12b641705f0c3c6081229a94d668bac2c",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-committed-reply-lost-confirmed",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--daf93-ome-with-an-uncommitted-one-chromium/committed-reply-lost-confirmed.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-committed-reply-lost-confirmed.jpg",
+    "sha256": "f8e0d50da852fa35c1a8574ac40ade79dc1f3a2228bbe78c2e0fdd376cb5cb66",
+    "viewSha256": "9831fd473d6b6fd8e649fc829ebfe5f996d407e15db726cbe0eb658c8a42ad05",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "focused-committed-reply-lost-pending",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/focused-results/ux33-activity-status-UX33--daf93-ome-with-an-uncommitted-one-chromium/committed-reply-lost-pending.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/focused-committed-reply-lost-pending.jpg",
+    "sha256": "ee6906044af38f187f9dd2f8f89864985ce742bd443bac9f7b034916c41531da",
+    "viewSha256": "b9fb82ce734fa54103c51c3e6ff3244e2db877804aa626d8299fa2e9f467c4aa",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "stage-review-character-on-demand",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-a-confirmed-repla-cc570-e-alchemy-draft-or-activity-chromium/character-on-demand.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-character-on-demand.jpg",
+    "sha256": "4fc3e5074bda261d778f5e0305290d7aac6d019c25843e42c0b4094a2ff84e66",
+    "viewSha256": "c53a227734464b30d82fa6a547bc11a5a0ff465ed10b4a7055c700f689410513",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "stage-review-configuration-feedback-clear",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium/configuration-feedback-clear.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-configuration-feedback-clear.jpg",
+    "sha256": "dfd9d635d64c45c752eafdb30699622c42339646d97a19a0f3b3b8909712a3b5",
+    "viewSha256": "3efd389175342cd1cbbffdd4949fd77e8322390a8c6db3c4a4ea1b3983487f06",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "stage-review-persistent-equipment-result",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium/persistent-equipment-result.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-persistent-equipment-result.jpg",
+    "sha256": "89106db0036610b0d9137eaf8325d344a71865c3ad452c28149a438a11f34471",
+    "viewSha256": "8f2b7e22e3cd18a5866b25795fcbd37cd9dadcc714778395228aea0b13250342",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "stage-review-alchemy-focused-decision",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-alchemy-opens-fin-156cd--goal-with-its-draft-intact-chromium/alchemy-focused-decision.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-alchemy-focused-decision.jpg",
+    "sha256": "876e41d2382c3da0af2253c462a3ebec26cec3de6fe61b9a97c99bb0d32c3025",
+    "viewSha256": "a99aef481636c7930ea805b1e0f4cb06e73b801c959909d8ecc677c537d7bc2a",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "stage-review-training-assisted-layout",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium/training-assisted-layout.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-training-assisted-layout.jpg",
+    "sha256": "854a03db2d8b755ac83f2d2c90641e8dfd84c3ae0f1fef201086b7730f8cc1bc",
+    "viewSha256": "a054e762a85ca6e58fff6a73477e88266b474bb618acc16b47ad3e57cc47ec58",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "stage-review-training-natural-layout",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium/training-natural-layout.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-training-natural-layout.jpg",
+    "sha256": "bbf5fe25fcea6dd5d4e3d40d5985d6f5991890cbcbb41f3ea5884ea102f81a93",
+    "viewSha256": "5968a275a14781e62ef42a0aa6a3440b7dab1b5c27205d3caa858f819f27f913",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "stage-review-cross-page-activity",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/cross-page-activity.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-cross-page-activity.jpg",
+    "sha256": "407e78b08b3e0ff759b5e4c3851dd6194be65fc378221a8035d81a3aec97ddf2",
+    "viewSha256": "e13d8c2f1b4df77992d5b9419d409abc1f4cae267481358c45eb0807d97d70df",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "stage-review-failed-cycle-controls",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/failed-cycle-controls.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-failed-cycle-controls.jpg",
+    "sha256": "aad2d91873662ff8090accb30a2bdc95ba4a367b0086fdf6f59120c784d7c0b3",
+    "viewSha256": "96e7e63645b6a25496194a91e7c3c2d1fd804a86040c42a765c844f6fbc674f8",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "stage-review-failed-four-materials",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/failed-four-materials.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-failed-four-materials.jpg",
+    "sha256": "371c42308c9227c6c5749433cacf0fa5d1152f6cbb43cc9550e837417a8aca81",
+    "viewSha256": "8e39a66aa7f8a4ae49afd0311b9ab2f9c1303f25827345326826ba2a73d4cbe6",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "stage-review-paused-activity",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/paused-activity.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-paused-activity.jpg",
+    "sha256": "7c2440423b0402dc4a93172c91bfa7d13e375d1128d6920a771d491daa01a5a5",
+    "viewSha256": "efc1da10d2b1e27781d3478fb36cac8d48e76284e3b026ddbe1ea7114654c842",
+    "actualViewed": false,
+    "encoding": "same1440x900 JPEG68; original PNG retained"
+  },
+  {
+    "name": "stage-review-entry-hub-forge",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-forge.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-entry-hub-forge.jpg",
+    "sha256": "08ed2dee01567f5f917b1b53340f93fdf8d71e59b767707ae1653135108aa737",
+    "viewSha256": "01c7abc927d26b0d99ad3a21f866abfcb969a4ed6856eb8b2ddeacc5825f786b",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "stage-review-entry-hub-life",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-life.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-entry-hub-life.jpg",
+    "sha256": "b28ace3cb6ce67fe3788070669cd63650337695480b350bc4d866d66765e45d7",
+    "viewSha256": "e7ef39ad15901f7f8664b214c4fdf21040843ad5bdee8e8ddaa12eda2a731ade",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "stage-review-entry-hub-relics",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-relics.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-entry-hub-relics.jpg",
+    "sha256": "acb73656fb9139a00ace92c85caee09f72d30791c49972b5ddb29133f28710f7",
+    "viewSha256": "fc1379470395e883ef8dc922a53b25da9bd33e9f860dfbbd905d3b299252d81c",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "stage-review-entry-hub-skills",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-skills.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-entry-hub-skills.jpg",
+    "sha256": "df8c93c88137ec8374a1e0af204912a65ebaedd36b64ecbf4d8bc6ea7292a50a",
+    "viewSha256": "0db7e984db0bfa7eec0d5cd424a49592acc96767740b38c213763cabc9328258",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "stage-review-entry-tab-1",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-1.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-entry-tab-1.jpg",
+    "sha256": "c5c4033dee9fc02013c3d50d64e6191bc62c2e3bc7ffe270a2db10343a293255",
+    "viewSha256": "7d262284af95126c47b0f2e2f6dadac3ea7b099d3d719337e557b72e0af1c5b9",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "stage-review-entry-tab-2",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-2.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-entry-tab-2.jpg",
+    "sha256": "dcc2e3ccd2e0ae6189d6c8d95a1cfeb705ec010093893d2cdccad8a0ee663a23",
+    "viewSha256": "2be034a4b742e5a5bc371352d16e32e309f3d9b2044777c65db88f93e4bff31c",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "stage-review-entry-tab-3",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-3.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-entry-tab-3.jpg",
+    "sha256": "b41a70a0cee4dd8910b28aa446845c552f560fdd92ac11112cfe75ba02f8184e",
+    "viewSha256": "5acbcd460c62f10169dc6a2bdbd8f2507f15ec1f0fac9f29e09c678dc04eeb88",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "stage-review-real-compact-stage",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/stage-review-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/real-compact-stage.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/stage-review-real-compact-stage.jpg",
+    "sha256": "c4b2be453868231299f2fe4872fc97e9779957eb35ef9190704c08ad2e56ba63",
+    "viewSha256": "52ce1cda10b37cb1a7e3bb164803974627ba0c0935e788a79e0644ef58790602",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual fixed desktop pixels reviewed; hierarchy findings remain open, see ui-suitability-review.md."
+  },
+  {
+    "name": "dialog-review-commission-1",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium/commission-1.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-commission-1.jpg",
+    "sha256": "e841f95c019d33145c90cb96c74c5d4e0e73aa5926b2487b1f45d11ec02d7b36",
+    "viewSha256": "56c26ec4db5aefed761de206c58ee7c2ea629b639abdb55ecc570d846917743c",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-commission-2",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium/commission-2.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-commission-2.jpg",
+    "sha256": "f777cd3128f6dc4b2ad7424b48318629f066439d5d65160b1f61be416df6d544",
+    "viewSha256": "43240e0beb7180fa6ded274a917f857a75857d81de9abdc919d31a9a03067e2b",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-commission-3",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium/commission-3.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-commission-3.jpg",
+    "sha256": "9883d31cf0e2c17d9d02628f871772eb3b6f29a1acb5a621e136f8756f930884",
+    "viewSha256": "649b2203e0c9a477af8810e85a0b02c7ac6bb2bd0915e25a7fc2b6186b27fcb3",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-alchemy-1",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-3c060--text-controls-and-the-Game-chromium/alchemy-1.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-alchemy-1.jpg",
+    "sha256": "50d95981b4ad8a5b9d41d22b7238c8505fb777e76ab5fc40b91e552a664ca71f",
+    "viewSha256": "3c9d706846ade68cecc08bf9c245e2c7f8d6df950638696a528106b700b17155",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-alchemy-2",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-3c060--text-controls-and-the-Game-chromium/alchemy-2.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-alchemy-2.jpg",
+    "sha256": "fb71cabe15ec46b2e3510d74ce5e2b880c08f98021b372629dfc1e3800d3c98e",
+    "viewSha256": "988951f9406a8becc2be03d491ed363c27860c4532aa4499ab8e245d925a0302",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-long-filename",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-3ecc1--import-retains-every-store-chromium/long-filename.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-long-filename.jpg",
+    "sha256": "0bbd0eda31e335a6605f8a12ce618d6486fdafb38f69184fd6848043e9f36660",
+    "viewSha256": "428f3a7d58e1c4678fc796d6581ffecf6401ce33330596983eab17e2d12c7163",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-cancel-pressed",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/cancel-pressed.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-cancel-pressed.jpg",
+    "sha256": "29814b7a90a5fa31f286d4fd2e6bf5f61b7098349f4589dea2e095a4184193fe",
+    "viewSha256": "1f59c98611ec0cb7efc0960a7ae16d33514112a4f122a6c624177edf810bb33b",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-danger-confirmation",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/danger-confirmation.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-danger-confirmation.jpg",
+    "sha256": "7786047a359a7c6f2da359419a688536e41dbbddb8cdca650ca4819e2ea55740",
+    "viewSha256": "00c50b912f70e482fea2227c76ff9404d14c262b0611b667ec8f1d9132fddcfe",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-local-export",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/local-export.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-local-export.jpg",
+    "sha256": "805d5b3cdb8820d7ab1b47a13319a80be02b76e40f111ebbae406232452dde33",
+    "viewSha256": "a1e07aac830649c036cdc03007938525adc94b178fc083054684a4459b711ac3",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-local-overview",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/local-overview.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-local-overview.jpg",
+    "sha256": "75fabd9c9e7fef91361968bc3fa97df92b71626a08afbdc1ff7bac08b6aa4553",
+    "viewSha256": "029e7c6f4cce61a45a06e8dbba2d060b996fa954aa48f471024aae8c47fc6351",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-local-records",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/local-records.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-local-records.jpg",
+    "sha256": "7ad4f3e7bc206d288bc78d755c60483e218d658234b5b435c7717196213e5b8c",
+    "viewSha256": "78d6eec0a312808b8b51506be7c256d2327a15e4891c2039f9db2a732dd34195",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-settings",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/settings.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-settings.jpg",
+    "sha256": "f8885e29bc0ba24246893ac43fafde62ae0052cc28fe18fdb70f786247d990fd",
+    "viewSha256": "702d47d954e0249f9ef8beb28544dc189b7c39865c27ce80ac7ff137859bcb1c",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-inventory-1",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-51226--text-controls-and-the-Game-chromium/inventory-1.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-inventory-1.jpg",
+    "sha256": "418e484a97ee4f310f1ef1ae163b76070e073bd98fa26979f7d4e42a734d846d",
+    "viewSha256": "ae1c5b13c37e6d0c229ed5cae0bda1cfcb1ddf26ed900fae8e733ab6d9d141a2",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-inventory-2",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-51226--text-controls-and-the-Game-chromium/inventory-2.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-inventory-2.jpg",
+    "sha256": "2f6666d6ec4bde6db44874a72c035c9c1d152fbc82a39091dc5862c63314ebc9",
+    "viewSha256": "96f6c7b4abc5f0149f4afb0390f68a6d209254f8003325069cd8df99da41dce8",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-wilderness-1",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-74840--text-controls-and-the-Game-chromium/wilderness-1.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-wilderness-1.jpg",
+    "sha256": "26356172d66dc72fe3679078c32b5ead4290a435e4729f96c91e4aeae2e64809",
+    "viewSha256": "e18b5183c58fd55f80d7e5a01b7ac214e0399f12c2e5fab8182fba4ab24f84e2",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-market-1",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-1.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-market-1.jpg",
+    "sha256": "f82a46649819a2dbcc716d11258bba347b71dc45d84ad1824dbc49e4826d9f44",
+    "viewSha256": "c71ef521454b7e966dbdbf468476b1c82db5097ace642430b255c70f30e952ed",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-market-2",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-2.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-market-2.jpg",
+    "sha256": "e1f8ec901e8b73befc8caa55548a3c1b865614820c635077a3d12b4b6e696611",
+    "viewSha256": "c25e2726b4b8f6a6f016822aaf3281fa8a4611d7e50e03ac1006668b91885007",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-market-3",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-3.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-market-3.jpg",
+    "sha256": "55c83f7c335b42675145df9bd8930f27a114a964b6dccca49d0521c8aba0a8b0",
+    "viewSha256": "e706181735bc16d115178bdef782a5094d9a05860c0848462bd6ac74e8334fb6",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-market-4",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-4.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-market-4.jpg",
+    "sha256": "44d248659e4d5f043a2b619e6730b98dacfc2880d8ac86bf50df80e6cf5d03ac",
+    "viewSha256": "eddbb15c294932a04aafba453f114cd51a2f77d28b843c4337a3bf6693f01a23",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-study-1",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium/study-1.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-study-1.jpg",
+    "sha256": "53a9159dc4d7046031dc80ae03cbdceff47eeb603e20698daa276fe56b4cfa19",
+    "viewSha256": "0def1b8d3ed0733a44204b423e5e0ecd245801a13cc150f96bdbc72c31c2e7cf",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-study-2",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium/study-2.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-study-2.jpg",
+    "sha256": "eac9dc87047873d6ee543b09c07d320f1697beb07d9588330921232a7de11cf9",
+    "viewSha256": "ca295bf111780eee26300b1b50d4401ff27d8be7cc2a29624088025691704499",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-study-3",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium/study-3.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-study-3.jpg",
+    "sha256": "44169a0fff354d546d268c23758d3fe8dda47bbb3dd06de30713ce2958052bed",
+    "viewSha256": "1ab34ae683a8abfc308dc9feffe0bb0c2c0de76ed60d92924bdf5f4c0b8dbab8",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-relic-1",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-e59a0--text-controls-and-the-Game-chromium/relic-1.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-relic-1.jpg",
+    "sha256": "77864835c000a98136fa6ddb2f5206f0ce51a17c03f8e230c8df6de8b184f576",
+    "viewSha256": "2df97cc2b7145938be78da6c551d37d1988fabb6370417f0010ae65862a461c3",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-production-limits",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium/production-limits.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-production-limits.jpg",
+    "sha256": "e5ab054df505e1a5f16e44d6592dfc1e44ad9b9534817c676bc6b80170b92b12",
+    "viewSha256": "a9165b380ed6d37a3e2b81971fcc48736707dae5477e944a097179168e350e3e",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-production-return",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium/production-return.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-production-return.jpg",
+    "sha256": "d66c85b2c474894e6a91bb664c9d1b2a9ca2e911471d562cd9a213c470d07481",
+    "viewSha256": "98d5592c4e170cf2f447bafb02ee6cb2de1ee753d1f806697e814ad39bf3beba",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  },
+  {
+    "name": "dialog-review-production-target",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/dialog-review-results/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium/production-target.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/ux33/reviewed/visual-light/dialog-review-production-target.jpg",
+    "sha256": "f380390fdcfb436d3fed8df741e2ed58b3f292621a2906e6c2b73e3b6f98e5af",
+    "viewSha256": "e9ec68815fc92a84a23b28967468cf9d3cae7ba401164fe0e234981e29b741fa",
+    "actualViewed": true,
+    "encoding": "same1440x900 JPEG68; original PNG retained",
+    "review": "Actual modal pixels reviewed, including every captured directory page; no visible clipping in these states. Production zero-forecast hierarchy remains UIR33-08."
+  }
+]
