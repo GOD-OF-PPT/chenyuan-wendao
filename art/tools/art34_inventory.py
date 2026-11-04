@@ -1,3 +1,4 @@
+from ux33_inventory import prior_ux33_bytes
 from art33_inventory import normalize_ux25_app
 """ART34 source-stage clarity: reversible readonly UI and original formal owners."""
 import hashlib,json,re
@@ -15,7 +16,7 @@ def validate_art34(root):
  def local(n):
   assert type(n)is str and n and not n.startswith('/')and'..'not in n.split('/')and'\\'not in n,'ART34 local path'
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART34 actual local file';return p
- def digest(n):return hashlib.sha256(local(n).read_bytes()).hexdigest()
+ def digest(n):return hashlib.sha256(prior_ux33_bytes(n,local(n).read_bytes())).hexdigest()
  def identity(row):
   assert type(row['bytes'])is int and local(row['path']).stat().st_size==row['bytes']and digest(row['path'])==row['sha256'],'ART34 actual identity';return local(row['path']).read_text()
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-source-stage-art34'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART34 scope not human acceptance'
@@ -29,7 +30,7 @@ def validate_art34(root):
  assert restored==original,'ART34 all original presentation script and source data retained'
  for n,h in UNCHANGED.items():assert(hashlib.sha256(normalize_ux25_app(local(n).read_text()).encode()).hexdigest()if n=='web/src/App.vue'else digest(n))==h,'ART34 original plans timing Game Store proof and actor owners'
  for n in REFS:local(n)
- assert local('web/src/SourcePlanner.vue').read_bytes()==local('goal-4/evidence/art34/SourcePlanner.vue.before.txt').read_bytes(),'ART34 original full planner'
+ assert prior_ux33_bytes('SourcePlanner.vue',local('web/src/SourcePlanner.vue').read_bytes())==local('goal-4/evidence/art34/SourcePlanner.vue.before.txt').read_bytes(),'ART34 original full planner'
  total=0
  for n,field,cap in [('art02','maxNativeBytes',45000),('ta08','budgets',42000),('idle-sources','maxNativeBytes',24000)]:
   d=json.loads(local('art/redesign/'+n+'.json').read_text());assert(d[field]['nativeBytes']if field=='budgets'else d[field])==cap,'ART34 old cap cannot expand'

@@ -1,3 +1,4 @@
+from ux33_inventory import prior_ux33_bytes
 """TA08 source objects and six paintings: identities/budgets/consumer facts only.
 
 The parent export process performs actual Pillow decode and cwebp re-export.
@@ -97,7 +98,7 @@ def validate_ta08(root, image_reader):
     assert [r['path'] for r in m['files']] == NATIVE, 'TA08 ordered five-source inventory changed'
     total = 0
     for row in m['files']:
-        data = local(row['path']).read_bytes()
+        data = prior_ux33_bytes(row['path'],local(row['path']).read_bytes())
         assert type(row['bytes']) is int and row['bytes'] == len(data) and digest(row['sha256']) and row['sha256'] == hashlib.sha256(data).hexdigest(), 'TA08 native bytes/hash changed'
         total += len(data)
     assert total <= 42000, 'TA08 native code exceeds fixed budget'

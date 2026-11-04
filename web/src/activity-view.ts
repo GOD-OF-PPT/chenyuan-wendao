@@ -9,6 +9,11 @@ const gains=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=
 const quantities=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=>items[id].name+' ×'+n).join(' · ');
 // Keep persisted v6 reasons and their exact receipt proofs unchanged.
 export function stopMessage(plan:ActivityPlan,reason:RuleFailure|null|undefined){
+ if(['buy','learn','study'].includes(plan.kind)){
+  if(reason?.code==='ACTIVITY_BUDGET')return'本段用石额度不足';
+  if(reason?.code==='INSUFFICIENT_STONES')return'灵石不足';
+ }
+ if((plan.kind==='sell'||plan.kind==='use')&&reason?.code==='INSUFFICIENT_ITEM'&&Object.hasOwn(items,plan.item))return items[plan.item].name+'不足';
  if(reason?.code==='CYCLES_COMPLETE'){
   if(plan.kind==='travel')return'已抵达目的地，本次行旅结束';
   if(plan.kind==='encounter')return'已完成本段历练动作上限，后续由你另行安排';
@@ -16,6 +21,13 @@ export function stopMessage(plan:ActivityPlan,reason:RuleFailure|null|undefined)
  }
  return reason?.message??'';
 }
+const recoveryCauses=new Map([
+ ['存储空间不足，本次操作未提交，原进度保留','存储空间不足'],
+ ['存储事务失败，本次操作未提交，原进度保留','存储事务失败'],
+ ['本地存储不可访问，已有数据未改动','本地存储不可访问'],
+]);
+/** Only uncertain known storage reports are projected; their original values stay untouched. */
+export function recoveryMessage(value:string,unconfirmed:boolean){return unconfirmed?recoveryCauses.get(value)??value:value;}
 export function activityView(a:Activity,game:Game|null){
  if(a.version===7)return milestoneView(a);
  if(a.version===6)return adventureView(a);

@@ -1,0 +1,246 @@
+{
+  "App.vue": [
+    [
+      "import StageOutcome from './StageOutcome.vue';",
+      "import StageOutcome from './StageOutcome.vue';\nimport {recoveryMessage} from './activity-view';"
+    ],
+    [
+      "<strong class=\"error-title\">{{store.available?'本次操作需要处理':'存档暂不可用'}}</strong><p>{{store.error}}</p><p v-if=\"store.canRetry\" class=\"small\" data-testid=\"retry-policy\">保存结果尚未确认。重试会核对同一次操作，不会重复结算。</p>",
+      "<p class=\"error-title\"><strong>{{store.canRetry?'保存待核对':store.available?'操作受阻':'存档不可用'}}</strong><span v-if=\"store.canRetry\" class=\"small\" data-testid=\"retry-policy\"> · 重试核对原操作，不重复结算。</span></p><p>{{recoveryMessage(store.error,store.canRetry)}}</p>"
+    ],
+    [
+      ">重试本次操作</button>",
+      ">重试原操作</button>"
+    ]
+  ],
+  "TrainingActivity.vue": [
+    [
+      "const status=computed(()=>takeover.value?'已保存 · 本页尚未接管':props.store.activityPausing?'正在暂停':runtime.value?.phase==='saving'?'本轮保存中':runtime.value?(a.value?.version===1?'吐纳进行中':view.value?.noun+'进行中'):a.value?.status==='paused'?view.value?.noun+'已暂停':a.value?.status==='stopped'?'此段活动已结束':'已保存活动安排');",
+      "const status=computed(()=>!props.store.available?'进度待核对':props.store.activityPausing?'正在暂停':runtime.value?.phase==='saving'?'正在保存':runtime.value?'进行中':a.value?.status==='paused'?'已暂停':a.value?.status==='stopped'?'本段已结束':props.store.canRetry?'保存待核对':takeover.value?'待接管':'待继续');"
+    ],
+    [
+      "const notice=computed(()=>compactV6()&&props.store.activityNotice===a.value?.stopReason?.message?'':props.store.activityNotice);",
+      "const notice=computed(()=>{const n=props.store.activityNotice;return n===a.value?.stopReason?.message||!runtime.value&&a.value?.status!=='stopped'&&n===blocked.value?.message||a.value?.status==='paused'&&!a.value.stopReason&&n==='活动已暂停。未完成的这一轮在继续时重新计时。'?'':n;});"
+    ],
+    [
+      "const blockMessage=computed(()=>{const m=blocked.value?.message??'';return compactV6()&&(m===a.value?.stopReason?.message||m===notice.value)?'':m;});",
+      "const blockMessage=computed(()=>blocked.value?.message===a.value?.stopReason?.message?'':a.value?stopMessage(a.value.plan,blocked.value):'');"
+    ],
+    [
+      "rail&&a.status==='paused'?'已暂停 · 继续后本轮重计时':status",
+      "rail&&a.status==='paused'&&store.available?'已暂停 · 续行重计本轮':status"
+    ],
+    [
+      "compact&&a.version===6?'继续':'继续'+view.noun",
+      "rail||compact&&a.version===6?'继续':'继续'+view.noun"
+    ],
+    [
+      "compact&&a.version===6?'暂停':'暂停'+view.noun",
+      "rail||compact&&a.version===6?'暂停':'暂停'+view.noun"
+    ],
+    [
+      "runtime||store.activityPausing||store.canRetry?'primary':'text-button'",
+      "runtime||store.activityPausing?'primary':'text-button'"
+    ],
+    [
+      "<button v-if=\"store.canRetry\" data-testid=\"training-retry\"",
+      "<button v-if=\"store.canRetry&&!rail\" data-testid=\"training-retry\""
+    ],
+    [
+      ">重试本次保存</button>",
+      ">重试原操作</button>"
+    ]
+  ],
+  "activity-view.ts": [
+    [
+      " if(reason?.code==='CYCLES_COMPLETE'){",
+      " if(['buy','learn','study'].includes(plan.kind)){\n  if(reason?.code==='ACTIVITY_BUDGET')return'本段用石额度不足';\n  if(reason?.code==='INSUFFICIENT_STONES')return'灵石不足';\n }\n if((plan.kind==='sell'||plan.kind==='use')&&reason?.code==='INSUFFICIENT_ITEM'&&Object.hasOwn(items,plan.item))return items[plan.item].name+'不足';\n if(reason?.code==='CYCLES_COMPLETE'){"
+    ],
+    [
+      "export function activityView(a:Activity,game:Game|null){",
+      "const recoveryCauses=new Map([\n ['存储空间不足，本次操作未提交，原进度保留','存储空间不足'],\n ['存储事务失败，本次操作未提交，原进度保留','存储事务失败'],\n ['本地存储不可访问，已有数据未改动','本地存储不可访问'],\n]);\n/** Only uncertain known storage reports are projected; their original values stay untouched. */\nexport function recoveryMessage(value:string,unconfirmed:boolean){return unconfirmed?recoveryCauses.get(value)??value:value;}\nexport function activityView(a:Activity,game:Game|null){"
+    ]
+  ],
+  "MarketPlanner.vue": [
+    [
+      "import {pausedPlanView} from './preparation-view.ts';",
+      "import {pausedPlanView} from './preparation-view.ts';\nimport {stopMessage} from './activity-view';"
+    ],
+    [
+      "'存档状态待核对，请先恢复或重试'",
+      "'请先处理存档提示'"
+    ],
+    [
+      "'当前活动进行中，请先暂停后确认交易安排'",
+      "'先暂停当前活动，再确认交易'"
+    ],
+    [
+      "restart.same?'':quote?.failure?.message)",
+      "restart.same?'':stopMessage(plan,quote?.failure))"
+    ],
+    [
+      "'预计停止：'+quote.stopReason.message",
+      "'预计停止：'+stopMessage(plan,quote.stopReason)"
+    ],
+    [
+      "'突破物不可出售':quote?.failure?.message",
+      "'突破物不可出售':stopMessage(plan,quote?.failure)"
+    ],
+    [
+      "'当前行动保存中，请稍候'",
+      "'正在保存，请稍候'"
+    ]
+  ],
+  "LearningPlanner.vue": [
+    [
+      "import {pausedPlanView} from './preparation-view.ts';",
+      "import {pausedPlanView} from './preparation-view.ts';\nimport {stopMessage} from './activity-view';"
+    ],
+    [
+      "'存档状态待核对，请先恢复或重试'",
+      "'请先处理存档提示'"
+    ],
+    [
+      "'当前活动进行中，请先暂停后确认新安排'",
+      "'先暂停当前活动，再确认新安排'"
+    ],
+    [
+      "quote.value?'预计完成 '",
+      "quote.value?.failure?'暂不可开始':quote.value?'预计完成 '"
+    ],
+    [
+      "quote.value?.failure?.message??(quote.value?.stopReason?'预计停止：'+quote.value.stopReason.message:'所选费用、资格或已掌握状态变化时停止')",
+      "quote.value?.failure?stopMessage(plan.value,quote.value.failure):quote.value?.stopReason?'预计停止：'+stopMessage(plan.value,quote.value.stopReason):'所选费用、资格或已掌握状态变化时停止'"
+    ],
+    [
+      "'当前行动保存中，请稍候'",
+      "'正在保存，请稍候'"
+    ],
+    [
+      "'已保存安排；修改后须重新确认'",
+      "'已保存安排'"
+    ],
+    [
+      "'下次草案，当前执行见上方'",
+      "'下次草案 · 原活动不变'"
+    ],
+    [
+      "'待确认安排，确认后开始'",
+      "'待确认安排'"
+    ],
+    [
+      "'已悟记录 · 回看已保存原安排'",
+      "'已悟记录 · 原安排'"
+    ],
+    [
+      "'已悟记录 · 此简可随时展读'",
+      "'已悟记录 · 可展读'"
+    ],
+    [
+      "'展读经卷 · 查看不入串'",
+      "'查看不入串'"
+    ],
+    [
+      "择卷只查看；收入待研卷串与开始研习须另行点击。",
+      "择卷只查看；入串后另行开始研习。"
+    ],
+    [
+      "这里只调整待确认草案，关闭保留选择；另行点击开始后才保存并执行。",
+      "关闭保留草案；另行开始后才执行。"
+    ]
+  ],
+  "RecoveryPlanner.vue": [
+    [
+      "import {pausedPlanView} from './preparation-view.ts';",
+      "import {pausedPlanView} from './preparation-view.ts';\nimport {stopMessage} from './activity-view';"
+    ],
+    [
+      "'存档待核对，请先核对并重试原操作'",
+      "'请先处理存档提示'"
+    ],
+    [
+      "'当前活动进行中，请先暂停后安排恢复'",
+      "'先暂停当前活动，再调息'"
+    ],
+    [
+      "quote.failure?.message??('预计'",
+      "(quote.failure?stopMessage(plan,quote.failure):null)??('预计'"
+    ],
+    [
+      "预计停止：{{quote.stopReason.message}}",
+      "预计停止：{{stopMessage(plan,quote.stopReason)}}"
+    ],
+    [
+      "'当前行动保存中，请稍候'",
+      "'正在保存，请稍候'"
+    ]
+  ],
+  "MarketCounter.vue": [
+    [
+      "failed:store?.syncIssue?'同步待核对 · 交易已停':'保存待核对 · 请查看上方提示'",
+      "failed:store?.syncIssue?'进度待核对':'查看上方提示'"
+    ]
+  ],
+  "RecoveryRitual.vue": [
+    [
+      "failed:store?.syncIssue?'同步待核对 · 气息已歇':'保存待核对 · 请查看上方提示'",
+      "failed:store?.syncIssue?'进度待核对':'查看上方提示'"
+    ]
+  ],
+  "JadeStudyScene.vue": [
+    [
+      "failed:store?.syncIssue?'存档待核对 · 已停卷':'保存待核对 · 请查看上方提示'",
+      "failed:store?.syncIssue?'进度待核对':'查看上方提示'"
+    ]
+  ],
+  "RelicAtelier.vue": [
+    [
+      "failed:store?.syncIssue?'同步待核对 · 器纹已歇':'保存待核对 · 请查看上方提示'",
+      "failed:store?.syncIssue?'进度待核对':'查看上方提示'"
+    ]
+  ],
+  "AlchemyWorkshop.vue": [
+    [
+      "failed:!props.available||feedbackStore?.syncIssue?'存档待核对 · 炉火已歇':feedbackStore?.unresolved?'当前活动保存未确认 · 请在活动条重试':'上次操作未完成 · 可另行安排'",
+      "failed:!props.available||feedbackStore?.syncIssue?'进度待核对':feedbackStore?.unresolved?'查看上方提示':'上次未完成 · 可另行安排'"
+    ]
+  ],
+  "SourcePlanner.vue": [
+    [
+      "<span>预计 {{quote?.cycles??0}} 轮",
+      "<span v-if=\"quote?.failure\">{{quote.failure.message}}</span><span v-else>预计 {{quote?.cycles??0}} 轮"
+    ],
+    [
+      "quote?.failure?'暂不可安排：'+quote.failure.message:quote?.stopReason?'预计停止：'+quote.stopReason.message:''",
+      "!quote?.failure&&quote?.stopReason?'预计停止：'+quote.stopReason.message:''"
+    ],
+    [
+      "<template v-if=\"cycles==='target'\"> · 按完整一轮结算",
+      "<template v-if=\"quote?.allowed&&cycles==='target'\"> · 按完整一轮结算"
+    ],
+    [
+      "'进度同步待核对，请先重新读取。':'存档待核对，请在活动条重试。'",
+      "'请先重新读取进度。':'请先处理存档提示。'"
+    ],
+    [
+      "{{!quote?.allowed?perCycle?.failure?.message:''}}",
+      "{{!quote?.allowed&&perCycle?.failure?.message!==quote?.failure?.message?perCycle?.failure?.message:''}}"
+    ]
+  ],
+  "SourceObject.vue": [
+    [
+      "state==='failed'?'已停手，先核对存档'",
+      "state==='failed'?'查看上方提示'"
+    ]
+  ],
+  "StageOutcome.vue": [
+    [
+      "已确认的成果保留，请先重新读取当前进度。",
+      "已确认成果保留；请重新读取。"
+    ],
+    [
+      "本次未保存</strong><p>进度未结算，请先处理上方原因并重试。",
+      "结果待核对</strong><p>请先查看上方处理提示。"
+    ]
+  ]
+}

@@ -11,7 +11,7 @@ const stock=computed(()=>props.game.core.inventory[props.itemId]??0);
 const {store,activity,runtime,phase,progress,engaged,effect}=useSupplyCycle(()=>props.mode,()=>props.itemId);
 const working=computed(()=>engaged.value&&phase.value==='running'&&!!store?.available&&!store.error&&!store.activityPausing);
 const state=computed(()=>!store?.available||store.error?'failed':store.activityPausing&&activity.value?'stopping':engaged.value&&phase.value==='saving'?'saving':working.value?'trading':activity.value?.status==='paused'?'paused':'idle');
-const status=computed(()=>({failed:store?.syncIssue?'同步待核对 · 交易已停':'保存待核对 · 请查看上方提示',stopping:'正在停手，保存后暂停',saving:'落账保存中 · 尚未成交',trading:props.mode==='buy'?'购入中 · 保存后入囊':'售出中 · 保存后得石',paused:'这段交易已暂停',idle:activity.value?.status==='stopped'?'这段交易已结束':'确认安排后逐件成交'})[state.value]);
+const status=computed(()=>({failed:store?.syncIssue?'进度待核对':'查看上方提示',stopping:'正在停手，保存后暂停',saving:'落账保存中 · 尚未成交',trading:props.mode==='buy'?'购入中 · 保存后入囊':'售出中 · 保存后得石',paused:'这段交易已暂停',idle:activity.value?.status==='stopped'?'这段交易已结束':'确认安排后逐件成交'})[state.value]);
 const tradable=computed(()=>!!item.value&&(props.mode==='buy'||item.value.sell!==null));
 const signed=(n:number)=>n>0?'+'+n:String(n);
 const result=computed(()=>{const r=effect.value?.result;if(!r||r.type!==(props.mode==='buy'?'BUY':'SELL'))return null;return{quantity:r.delta.inventory[props.itemId]??0,stones:r.delta.stones,sequence:effect.value!.sequence};});

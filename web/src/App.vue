@@ -40,6 +40,7 @@ import CaveThresholdObject from './CaveThresholdObject.vue';
 import CultivationNotes from './CultivationNotes.vue';
 import ActionExecution from './ActionExecution.vue';
 import StageOutcome from './StageOutcome.vue';
+import {recoveryMessage} from './activity-view';
 import ExplorePanel from './ExplorePanel.vue';
 import GoodsPanel from './GoodsPanel.vue';
 import PreparationPanel from './PreparationPanel.vue';
@@ -644,7 +645,7 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
     <div ref="noticeRegion" class="stage-alerts">
     <section v-if="immersive&&resumeVisible&&game&&store.ready&&!hubMain" class="resume-strip" data-testid="resume-strip"><span>已续上本机进度 · {{realm.name}} · {{location.name}}</span><button type="button" class="text-button" @click="resumeVisible=false;focusPrimary()">继续当前内容 ↓</button></section>
     <div v-if="store.error" class="error-banner" role="alert" data-testid="error">
-      <strong class="error-title">{{store.available?'本次操作需要处理':'存档暂不可用'}}</strong><p>{{store.error}}</p><p v-if="store.canRetry" class="small" data-testid="retry-policy">保存结果尚未确认。重试会核对同一次操作，不会重复结算。</p><button v-if="store.canRetry" class="primary" data-testid="retry" @click="retryOperation" :disabled="store.busy">重试本次操作</button>
+      <p class="error-title"><strong>{{store.canRetry?'保存待核对':store.available?'操作受阻':'存档不可用'}}</strong><span v-if="store.canRetry" class="small" data-testid="retry-policy"> · 重试核对原操作，不重复结算。</span></p><p>{{recoveryMessage(store.error,store.canRetry)}}</p><button v-if="store.canRetry" class="primary" data-testid="retry" @click="retryOperation" :disabled="store.busy">重试原操作</button>
       <button v-if="!store.available" data-testid="reload-storage" @click="initialiseGame()" :disabled="store.busy">重新读取</button>
       <button @click="exportRaw" :disabled="store.busy">导出原件备份</button>
     </div>

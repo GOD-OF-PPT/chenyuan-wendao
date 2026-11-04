@@ -1,3 +1,4 @@
+from ux33_inventory import prior_ux33_bytes
 """Additive source and consumer binding for the three catalogue paintings."""
 import hashlib,json
 
@@ -37,7 +38,7 @@ def validate_catalogue_art(root,image_info):
  assert sum(a['runtime']['bytes']for a in m['assets'])<=360000
  assert [r['path']for r in m['files']]==['web/src/CatalogueArt.vue','web/src/StageOutcome.vue','web/src/catalogue-art.css']
  for r in m['files']:
-  data=(root/r['path']).read_bytes();assert len(data)==r['bytes'] and hashlib.sha256(data).hexdigest()==r['sha256']
+  data=prior_ux33_bytes(r['path'],(root/r['path']).read_bytes());assert len(data)==r['bytes'] and hashlib.sha256(data).hexdigest()==r['sha256']
  assert sum(r['bytes']for r in m['files'])<=18000
  for file,fragments in m['bindings'].items():assert all(s in(root/file).read_text()for s in fragments)
  return recorded,3

@@ -1,0 +1,99 @@
+{
+  "format": "chenyuan-shared-status-ux33",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "newCSSBytes": 0,
+  "files": [
+    {
+      "path": "web/src/App.vue",
+      "bytes": 159582,
+      "sha256": "ab88622cb1e5e80b504ae21ad19c9562183a16de6825fd66147259cf8107679c"
+    },
+    {
+      "path": "web/src/TrainingActivity.vue",
+      "bytes": 7716,
+      "sha256": "cf52d3aa3d5063585ac52dd4b0eb1ff8afc46d088c911ed6b5939ce6601e544c"
+    },
+    {
+      "path": "web/src/activity-view.ts",
+      "bytes": 4747,
+      "sha256": "020a7580936a2019a78e766cb3c1c3863666c48fe4e3707a6b60b8abd74cd5a3"
+    },
+    {
+      "path": "web/src/MarketPlanner.vue",
+      "bytes": 12494,
+      "sha256": "dd07092b9c8d858181eb5c7b65976532adc6e8efdbc8c3b3c8e5b66acfee4d72"
+    },
+    {
+      "path": "web/src/LearningPlanner.vue",
+      "bytes": 18553,
+      "sha256": "4b8bf6d3980792cd9e5f025a5f3738b90f9b9146480d8d270612192ce39c3756"
+    },
+    {
+      "path": "web/src/RecoveryPlanner.vue",
+      "bytes": 8586,
+      "sha256": "91acc6f6ef5921ae04749c53d34a6870e840b2664d1a5bc1b48477d4bf7d37cc"
+    },
+    {
+      "path": "web/src/MarketCounter.vue",
+      "bytes": 10024,
+      "sha256": "0904ac5fdb5d0079e408deb4c2a898fe1bbc2286620f70023c49e8e85376ad66"
+    },
+    {
+      "path": "web/src/RecoveryRitual.vue",
+      "bytes": 9504,
+      "sha256": "b89677b3e2e762048540419502c1017f77f7db62eb0de01f8506a0a986ac3826"
+    },
+    {
+      "path": "web/src/JadeStudyScene.vue",
+      "bytes": 5190,
+      "sha256": "18b9c6e9d05d8d1f28c529f64e21dce51700c08e1befb885ecc8ec93d0f741c6"
+    },
+    {
+      "path": "web/src/RelicAtelier.vue",
+      "bytes": 16070,
+      "sha256": "5c01edde5247c0e01d7aecdb1a8c0a23039ca941ca7357ff25a7439579b4452e"
+    },
+    {
+      "path": "web/src/AlchemyWorkshop.vue",
+      "bytes": 12009,
+      "sha256": "df324eb4f7b25f7cd091e475af413d158162e3fcd49b952d9bb705e24f399a92"
+    },
+    {
+      "path": "web/src/SourcePlanner.vue",
+      "bytes": 8401,
+      "sha256": "b16e1314cd5c812eeb1e7be1a648efc76d46e81cd469e0f7bfc0a6225c7517cc"
+    },
+    {
+      "path": "web/src/SourceObject.vue",
+      "bytes": 5404,
+      "sha256": "fd8b7bc3062c935e7fce82214ceb0aa09b5cc6df49e5bd38a3f710bc3e450752"
+    },
+    {
+      "path": "web/src/StageOutcome.vue",
+      "bytes": 4221,
+      "sha256": "deb66c8e9e2e58ded008dd10cd26dfcbe51b9204c4fb65a57b1f4cc4a2fdeeaf"
+    }
+  ],
+  "sourceReferences": [
+    "docs/decisions/0094-shared-activity-status-ux33-contract.md",
+    "goal-4/amendments/2026-11-04-ux33-input.md",
+    "goal-4/research/ux33-status-clarity-sources.json",
+    "art/redesign/ux33-display-edits.json",
+    "goal-4/evidence/ux33/App.vue.before.txt",
+    "goal-4/evidence/ux33/TrainingActivity.vue.before.txt",
+    "goal-4/evidence/ux33/activity-view.ts.before.txt",
+    "goal-4/evidence/ux33/MarketPlanner.vue.before.txt",
+    "goal-4/evidence/ux33/LearningPlanner.vue.before.txt",
+    "goal-4/evidence/ux33/RecoveryPlanner.vue.before.txt",
+    "goal-4/evidence/ux33/MarketCounter.vue.before.txt",
+    "goal-4/evidence/ux33/RecoveryRitual.vue.before.txt",
+    "goal-4/evidence/ux33/JadeStudyScene.vue.before.txt",
+    "goal-4/evidence/ux33/RelicAtelier.vue.before.txt",
+    "goal-4/evidence/ux33/AlchemyWorkshop.vue.before.txt",
+    "goal-4/evidence/ux33/SourcePlanner.vue.before.txt",
+    "goal-4/evidence/ux33/SourceObject.vue.before.txt",
+    "goal-4/evidence/ux33/StageOutcome.vue.before.txt"
+  ]
+}

@@ -29,7 +29,7 @@ const boundEcho=computed(()=>{const c=configuration.value;return c?.result.type=
 const state=computed(()=>!props.available||store?.error?'failed':store?.activityPausing&&activity.value?'pausing':engaged.value?phase.value==='saving'?'saving':phase.value==='running'?progress.value<.2?'preparing':progress.value<.8?'engraving':'forming':'idle':activity.value?.status==='paused'?'paused':'idle');
 const restart=computed(()=>pausedPlanView(store?.activity,props.game.core.runId,props.plan));
 const working=computed(()=>engaged.value&&phase.value==='running'&&props.available&&!store?.error&&!store?.activityPausing);
-const status=computed(()=>({failed:store?.syncIssue?'同步待核对 · 器纹已歇':'保存待核对 · 请查看上方提示',pausing:'正在停手，保存后暂停',saving:'封存器纹 · 保存后炼成',paused:'此段已暂停 · 器谱保留',preparing:'备胚',engraving:'淬炼器纹',forming:'器物成形',idle:owned.value?'器纹已凝':activity.value?.status==='stopped'?'安排已停止':'待铸造'})[state.value]);
+const status=computed(()=>({failed:store?.syncIssue?'进度待核对':'查看上方提示',pausing:'正在停手，保存后暂停',saving:'封存器纹 · 保存后炼成',paused:'此段已暂停 · 器谱保留',preparing:'备胚',engraving:'淬炼器纹',forming:'器物成形',idle:owned.value?'器纹已凝':activity.value?.status==='stopped'?'安排已停止':'待铸造'})[state.value]);
 const quote=computed(()=>relic.value?previewActivity(props.game,props.plan):null);
 const equipment=computed(()=>owned.value?previewAction(props.game,{type:'EQUIP_RELIC',relic:props.plan.relicId}):null);
 const atCave=computed(()=>props.game.core.world.location==='cave');

@@ -1,3 +1,4 @@
+from ux33_inventory import prior_ux33_bytes
 """UX32 exact template evolution; no clock, save, script or style change."""
 import hashlib,json,re
 from pathlib import Path
@@ -93,6 +94,7 @@ MANIFEST={'format': 'chenyuan-market-copy-ux32',
                       'goal-4/evidence/ux32/MarketCounter.vue.before.txt']}
 MARKERS={'MarketPlanner.vue':'market-full-estimate','MarketCounter.vue':"v-if=\"state!=='idle'||totals\""}
 def prior_ux32_bytes(path,raw):
+    raw=prior_ux33_bytes(path,raw)
     name=Path(path).name
     if name not in FACTS or MARKERS[name].encode() not in raw:return raw
     assert hashlib.sha256(raw).hexdigest()==FACTS[name]['after'], 'UX32 complete display source changed'
@@ -114,11 +116,11 @@ def validate_ux32(root):
     assert json.loads(local(LEDGER).read_text())==MANIFEST, 'UX32 scope cannot be resigned'
     assert json.loads(local('art/redesign/ux32-display-edits.json').read_text())==OPERATIONS, 'UX32 exact inverse operations'
     for n,f in FACTS.items():
-        raw=local('web/src/'+n).read_bytes();old=local(f['baseline']).read_bytes()
+        raw=prior_ux33_bytes(n,local('web/src/'+n).read_bytes());old=local(f['baseline']).read_bytes()
         assert len(raw)==f['bytes'] and hashlib.sha256(raw).hexdigest()==f['after'], 'UX32 actual source pin'
         assert len(old)==f['beforeBytes'] and hashlib.sha256(old).hexdigest()==f['before'], 'UX32 original source pin'
         assert prior_ux32_bytes(n,raw)==old, 'UX32 complete inverse'
         for pattern in [rb'<script setup.*?</script>',rb'<style.*?</style>']:
             assert re.findall(pattern,raw,re.S)==re.findall(pattern,old,re.S), 'UX32 script/clock/style ownership'
     for ref in MANIFEST['sourceReferences']:local(ref)
-    return {LEDGER,*MANIFEST['sourceReferences'],*['web/src/'+n for n in FACTS]},sum(f['bytes'] for f in FACTS.values())
+    return {LEDGER,*MANIFEST['sourceReferences'],*['web/src/'+n for n in FACTS]},sum(local('web/src/'+n).stat().st_size for n in FACTS)

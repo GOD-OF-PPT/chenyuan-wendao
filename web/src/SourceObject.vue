@@ -36,6 +36,6 @@ const arrival=computed(()=>props.sequence>0&&!['failed','inactive','paused','pau
    <span v-if="arrival" :key="sequence" class="ta08-resource-saved-mark" aria-hidden="true"/>
    <span class="ta08-object-affordance">定程 <small>查看本段安排</small></span>
   </button>
-  <p class="ta08-object-caption"><strong>{{SOURCE_TOOLS[sourceId]}}</strong><span>{{visual.phase==='sealing'?'本轮封存中，尚未入囊':state==='failed'?'已停手，先核对存档':visual.working?'依本段安排逐轮取材':'择此资源，核对投入后再安排'}}</span></p>
+  <p class="ta08-object-caption"><strong>{{SOURCE_TOOLS[sourceId]}}</strong><span>{{visual.phase==='sealing'?'本轮封存中，尚未入囊':state==='failed'?'查看上方提示':visual.working?'依本段安排逐轮取材':'择此资源，核对投入后再安排'}}</span></p>
  </section>
 </template>

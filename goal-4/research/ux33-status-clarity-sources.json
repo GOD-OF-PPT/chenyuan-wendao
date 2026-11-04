@@ -1,0 +1,18 @@
+{
+  "retrievedOn": "2026-11-04",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "used": "Preserve visual hierarchy and minimize noise; show the current gameplay state clearly."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/109",
+      "used": "Clear current objectives and progress, with complete details available when needed."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "used": "Players can predict control outcomes and see context near the relevant controls."
+    }
+  ],
+  "limits": "Project-derived copy and layout, not source-prescribed pixels, certification, full competitor playtesting or human acceptance."
+}

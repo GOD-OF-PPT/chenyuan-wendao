@@ -151,6 +151,8 @@ class InventoryTests(unittest.TestCase):
    data=json.loads(art34.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']));files.update(ROOT/row['path']for row in data['files'])
   art36=ROOT/'art/redesign/art36.json'
   if art36.exists():files.update(ROOT/ref for ref in json.loads(art36.read_text())['sourceReferences'])
+  ux33=ROOT/'art/redesign/ux33.json'
+  if ux33.exists():files.update(ROOT/ref for ref in json.loads(ux33.read_text())['sourceReferences'])
   ux32=ROOT/'art/redesign/ux32.json'
   if ux32.exists():files.update(ROOT/ref for ref in json.loads(ux32.read_text())['sourceReferences'])
   ux31=ROOT/'art/redesign/ux31.json'
@@ -1219,7 +1221,8 @@ class TA08InventoryTests(unittest.TestCase):
  def setUp(self):
   from ta08_inventory import NATIVE,REFS,PROMPT_REFS,DEPENDENCIES,LEDGER
   self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-ta08-negative-');self.root=Path(self.temp.name)
-  self.original={name:(ROOT/name).read_bytes()for name in set(NATIVE+REFS+PROMPT_REFS+DEPENDENCIES+[LEDGER])};self.restore()
+  from ux33_inventory import prior_ux33_bytes
+  self.original={name:prior_ux33_bytes(name,(ROOT/name).read_bytes()) if name in NATIVE else (ROOT/name).read_bytes() for name in set(NATIVE+REFS+PROMPT_REFS+DEPENDENCIES+[LEDGER])};self.restore()
  def tearDown(self):self.temp.cleanup()
  def restore(self):
   for name,raw in self.original.items():

@@ -1,3 +1,4 @@
+from ux33_inventory import prior_ux33_bytes
 import json,shutil,tempfile,unittest
 from pathlib import Path
 from ux32_inventory import LEDGER,MANIFEST,FACTS,prior_ux32_bytes,validate_ux32
@@ -7,7 +8,7 @@ class MarketCopyContractTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name)
         for n in {LEDGER,*MANIFEST['sourceReferences'],*['web/src/'+n for n in FACTS]}:
-            target=self.root/n;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/n,target)
+            target=self.root/n;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(prior_ux33_bytes(n,(ROOT/n).read_bytes()))
     def reject_change(self,name,before,after):
         f=self.root/'web/src'/name;s=f.read_text();self.assertIn(before,s);f.write_text(s.replace(before,after,1))
         with self.assertRaises(AssertionError):validate_ux32(self.root)

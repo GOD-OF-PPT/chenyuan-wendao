@@ -149,9 +149,9 @@ for(const kind of ['craft','source','encounter'] as const)test('M03-CANCEL '+kin
 
 test('M03-PENDING a real source cycle quota keeps new work blocked without a modal and retries only the original command',async({page},info)=>{
  const before=await load(page,idleFixture('source'));await target(page,'source');const a=await begin(page,'source-start'),raw=await database(page);await quota(page,'tick');await page.clock.fastForward(a.cycleMs);
- await expect(page.getByTestId('training-retry')).toBeVisible();const hit=await rejected(page);expect(hit.key).toBe(a.runId+':'+a.nextCommand.commandId);expect(await snapshot(page)).toEqual(before);expect(await database(page)).toEqual(raw);
+ await expect(page.getByTestId('retry')).toBeVisible();const hit=await rejected(page);expect(hit.key).toBe(a.runId+':'+a.nextCommand.commandId);expect(await snapshot(page)).toEqual(before);expect(await database(page)).toEqual(raw);
  await expect(page.getByTestId('source-start')).toBeDisabled();await page.getByTestId('explore-mode-battle').click();await page.getByTestId('encounter-wolf').click();await expect(page.getByTestId('adventure-start')).toBeDisabled();
- await record(page,info,'pending-source-blocks-new-encounter',{before,a,raw,hit});await page.getByTestId('training-retry').click();await expect.poll(async()=>(await activity(page))?.completedCycles).toBe(1);
+ await record(page,info,'pending-source-blocks-new-encounter',{before,a,raw,hit});await page.getByTestId('retry').click();await expect.poll(async()=>(await activity(page))?.completedCycles).toBe(1);
  await expect(page.getByTestId('save-status')).toHaveText('已保存');const done=await snapshot(page),after=await database(page),rows=after.rows['full-receipts'].filter((r:any)=>r.key===hit.key);
  expect(done).toEqual(resolve(before,a.nextCommand).nextState);expect(rows).toHaveLength(1);expect(rows[0].value.command).toEqual(a.nextCommand);expect((await activity(page)).plan).toEqual(a.plan);expect(await memoryGame(page)).toEqual(done);
  await page.clock.fastForward(120000);expect(await snapshot(page)).toEqual(done);expect(await database(page)).toEqual(after);

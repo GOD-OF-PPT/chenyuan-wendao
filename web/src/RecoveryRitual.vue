@@ -16,7 +16,7 @@ const body=computed(()=>stats(props.game)),item=computed(()=>C.items[props.itemI
 const one=computed(()=>previewAction(props.game,props.kind==='rest'?{type:'REST'}:{type:'USE',item:props.itemId}));
 const state=computed(()=>store?.error||!store?.available?'failed':store.activityPausing&&activity.value?'pausing':engaged.value?phase.value==='saving'?'saving':phase.value==='running'?'running':'idle':activity.value?.status==='paused'?'paused':'idle');
 const working=computed(()=>state.value==='running');
-const status=computed(()=>({failed:store?.syncIssue?'同步待核对 · 气息已歇':'保存待核对 · 请查看上方提示',pausing:'正在停手，保存后暂停',saving:'调息已毕 · 保存后回元',running:props.kind==='rest'?'静坐养息':'服丹调息',paused:'此段已暂停 · 药匣保留',idle:activity.value?.status==='stopped'?'本段安排已停止':'先择恢复方式，再确认安排'})[state.value]);
+const status=computed(()=>({failed:store?.syncIssue?'进度待核对':'查看上方提示',pausing:'正在停手，保存后暂停',saving:'调息已毕 · 保存后回元',running:props.kind==='rest'?'静坐养息':'服丹调息',paused:'此段已暂停 · 药匣保留',idle:activity.value?.status==='stopped'?'本段安排已停止':'先择恢复方式，再确认安排'})[state.value]);
 const saved=computed(()=>{const a=activity.value;return a?.version===5&&a.completedCycles?`本段已恢复：气血 +${a.restoredHp} · 灵力 +${a.restoredMp}`:'';});
 const stock=computed(()=>props.game.core.inventory[props.itemId]??0);
 </script>
