@@ -1,0 +1,16 @@
+{
+  "task": "UIR33-04",
+  "completed": false,
+  "candidate": "eccada9",
+  "coreSession": 27463,
+  "source": "artifacts/goal-4/uir33-04/final/source",
+  "expectedNext": "after install, build; await build terminal before type/list; launch fixed related tests; no compatibility",
+  "nextTaskAfterDelivery": "CHECK-UIR33-01",
+  "original13Preserved": true,
+  "coreExit": 1,
+  "coreStatus": "900 rules pass; full654 resource has three legacy fixture methods/seven subtest failures; original report preserved, exact old-view fixture fixed in root and targeted13 passed",
+  "uiSession": 73024,
+  "uiStatus": "95 in frozen eccada9; currently past53, five known public-view consumer failures; root adaptations pending complete-file rerun",
+  "testServerSession": 87278,
+  "previewSession": 74511
+}

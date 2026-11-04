@@ -1992,9 +1992,10 @@ class ART12InventoryTests(unittest.TestCase):
 class CultivationNotesTests(unittest.TestCase):
  def setUp(self):
   from art15_inventory import NATIVE,REFS,LEDGER
+  from uir33_04_inventory import prior_uir3304_bytes
   self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art15-negative-');self.root=Path(self.temp.name)
   for name in NATIVE+REFS+[LEDGER,'web/src/App.vue']:
-   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/name,p)
+   p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(prior_uir3304_bytes(name,(ROOT/name).read_bytes()))
   self.ledger=json.loads((self.root/LEDGER).read_text());self.source=(self.root/NATIVE[0]).read_text();self.app=(self.root/'web/src/App.vue').read_text()
  def tearDown(self):self.temp.cleanup()
  def check(self):
