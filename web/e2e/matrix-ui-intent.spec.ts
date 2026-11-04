@@ -149,8 +149,10 @@ test('M03-I1 paused assisted cultivation makes original continuation primary and
   const fixture = await pausedAssisted(page), { paused } = fixture;
   await evidence(info, 'paused-before-intent-check', fixture);
   await expect(page.locator('#game-content [data-testid="cultivate"].primary:enabled:visible')).toHaveCount(0);
-  const rearrange = page.getByTestId('hub-training-rearrange');
-  await expect(rearrange).toHaveText('另排一段潜修'); await expect(rearrange).not.toHaveClass(/(^|\s)primary(\s|$)/);
+  await expect(page.getByTestId('cultivation-active-resume')).toHaveClass(/(^|\s)primary(\s|$)/);
+  await click(page.getByTestId('cultivation-notes-open')); expect((await state(page)).raw).toEqual(paused.raw);
+  const rearrange = page.getByTestId('hub-cultivation-details');
+  await expect(rearrange).toHaveText('查看完整修行安排'); await expect(rearrange).not.toHaveClass(/(^|\s)primary(\s|$)/);
   await click(rearrange); await expect(page.getByTestId('cultivation-catalogue')).toBeVisible(); await openTrainingBudget(page);
   await reading(page); expect((await state(page)).raw).toEqual(paused.raw);
   await click(page.getByTestId('hub-close')); expect((await state(page)).raw).toEqual(paused.raw);
@@ -183,7 +185,8 @@ test('M03-I2 an edited paused plan remains a draft through reading and return un
   expect((await state(page)).raw).toEqual(paused.raw); await reading(page);
   await page.screenshot({ path: info.outputPath('explicit-paused-replacement-draft.png') });
   await click(page.getByTestId('hub-close')); expect((await state(page)).raw).toEqual(paused.raw);
-  await click(page.getByTestId('hub-training-rearrange')); await openTrainingBudget(page);
+  await click(page.getByTestId('cultivation-notes-open')); expect((await state(page)).raw).toEqual(paused.raw);
+  await click(page.getByTestId('hub-cultivation-details')); await openTrainingBudget(page);
   await expect(page.getByLabel('修行目标', { exact: true })).toHaveValue('1');
   await expect(page.getByTestId('training-start')).toHaveText(/替换暂停安排/);
   expect((await state(page)).raw).toEqual(paused.raw); await click(page.getByTestId('training-start'));
@@ -201,7 +204,7 @@ test('M03-I2 an edited paused plan remains a draft through reading and return un
 test('M03-I3 idle and naturally stopped cultivation retain the original start entrance and never require a paused replacement intent', async ({ page }, info) => {
   const before = await seed(page);
   await control(page.getByTestId('cultivate')); await expect(page.getByTestId('cultivate')).toBeEnabled();
-  await expect(page.getByTestId('hub-training-rearrange')).toHaveCount(0); expect((await state(page)).raw).toEqual(before.raw);
+  await expect(page.getByTestId('cultivation-active-resume')).toHaveCount(0); expect((await state(page)).raw).toEqual(before.raw);
   await openHubFeature(page, 'cultivation-details'); await openTrainingBudget(page);
   await page.getByLabel('修行目标', { exact: true }).selectOption('1');
   await expect(page.getByTestId('training-start')).toBeEnabled(); await expect(page.getByTestId('training-start')).not.toHaveText(/替换暂停安排/);
@@ -210,7 +213,7 @@ test('M03-I3 idle and naturally stopped cultivation retain the original start en
   expect(natural.cycleMs).toBe(60000); await click(page.getByTestId('hub-close'));
   const completed = await oneCycle(page, natural, beforeCycle);
   expect(completed.after.activity!.status).toBe('stopped'); expect(completed.expected.result.costs.stones).toBe(0);
-  await expect(page.getByTestId('hub-training-rearrange')).toHaveCount(0); await expect(page.getByTestId('cultivate')).toBeEnabled();
+  await expect(page.getByTestId('cultivation-active-resume')).toHaveCount(0); await expect(page.getByTestId('cultivate')).toBeEnabled();
   await control(page.getByTestId('cultivate')); expect((await state(page)).raw).toEqual(completed.after.raw);
   await click(page.getByTestId('cultivate')); const next = await running(page);
   expect(next.id).not.toBe(natural.id); expect(next.plan.kind).toBe('cultivation');

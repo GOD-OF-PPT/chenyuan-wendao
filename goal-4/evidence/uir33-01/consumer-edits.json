@@ -1,0 +1,44 @@
+{
+  "files": [
+    {
+      "path": "web/e2e/check-u8.spec.ts",
+      "before": "goal-4/evidence/uir33-01/before/web/e2e/check-u8.spec.ts",
+      "beforeSHA256": "a5ab51d5af8042b4a71254c315e14dd2e04ed71ca039d8cdbbcdd2b1be9453d0",
+      "afterSHA256": "d9cd9042555e33006965dba5f7400222b25a436a36a5782f313d46ae27b8c8e1",
+      "edits": [
+        [
+          "getByTestId('training-activity')).toContainText('本页尚未接管')",
+          "getByTestId('training-activity')).toContainText('待接管')"
+        ]
+      ],
+      "inverseExact": true,
+      "scope": "one previous UX33 label expectation; all actions, proof, timing and complete file preserved"
+    },
+    {
+      "path": "web/e2e/matrix-ui-intent.spec.ts",
+      "before": "goal-4/evidence/uir33-01/before/web/e2e/matrix-ui-intent.spec.ts",
+      "beforeSHA256": "4d073ac5d65f585b6be2dfcd50720374ca34d5af319301f25b333edb6dbce399",
+      "afterSHA256": "3320545a448988a50ae8f3eb2905970135192f81ccf204504cc73c4f3837b229",
+      "edits": [
+        [
+          "  const rearrange = page.getByTestId('hub-training-rearrange');\n  await expect(rearrange).toHaveText('另排一段潜修');",
+          "  await expect(page.getByTestId('cultivation-active-resume')).toHaveClass(/(^|\\s)primary(\\s|$)/);\n  await click(page.getByTestId('cultivation-notes-open')); expect((await state(page)).raw).toEqual(paused.raw);\n  const rearrange = page.getByTestId('hub-cultivation-details');\n  await expect(rearrange).toHaveText('查看完整修行安排');"
+        ],
+        [
+          "  await click(page.getByTestId('hub-training-rearrange')); await openTrainingBudget(page);",
+          "  await click(page.getByTestId('cultivation-notes-open')); expect((await state(page)).raw).toEqual(paused.raw);\n  await click(page.getByTestId('hub-cultivation-details')); await openTrainingBudget(page);"
+        ],
+        [
+          "await expect(page.getByTestId('hub-training-rearrange')).toHaveCount(0); expect((await state(page)).raw).toEqual(before.raw);",
+          "await expect(page.getByTestId('cultivation-active-resume')).toHaveCount(0); expect((await state(page)).raw).toEqual(before.raw);"
+        ],
+        [
+          "await expect(page.getByTestId('hub-training-rearrange')).toHaveCount(0); await expect(page.getByTestId('cultivate')).toBeEnabled();",
+          "await expect(page.getByTestId('cultivation-active-resume')).toHaveCount(0); await expect(page.getByTestId('cultivate')).toBeEnabled();"
+        ]
+      ],
+      "inverseExact": true,
+      "scope": "follow actual notes->complete plan; retain all state, original budget, ms-1, receipt and replacement assertions; verify actual stage continuation primary"
+    }
+  ]
+}

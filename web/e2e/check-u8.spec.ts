@@ -247,7 +247,7 @@ test('another page names its takeover and only its new full cycle can award once
  await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');const old=await activitySnapshot(page),before=await snapshot(page);
  const other=await context.newPage();
  try{
-  await other.goto('/');await expect(other.getByTestId('training-resume')).toContainText('接管');await expect(other.getByTestId('training-activity')).toContainText('本页尚未接管');
+  await other.goto('/');await expect(other.getByTestId('training-resume')).toContainText('接管');await expect(other.getByTestId('training-activity')).toContainText('待接管');
   expect(await snapshot(other)).toEqual(before);expect(await activitySnapshot(other)).toEqual(old);
   await other.getByTestId('training-resume').click();await expect.poll(async()=>(await activitySnapshot(other))?.generation).toBeGreaterThan(old.generation);
   const current=await activitySnapshot(other);expect(current.ownerId).not.toBe(old.ownerId);await expect(page.getByTestId('training-resume')).toContainText('接管');
