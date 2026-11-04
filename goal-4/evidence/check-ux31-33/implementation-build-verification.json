@@ -1,0 +1,15 @@
+{
+  "source": {
+    "head": "eb395852fcee414dc4a8e5519689a4f63c48fea7",
+    "source": "eb395852fcee414dc4a8e5519689a4f63c48fea7",
+    "tree": "8e9ca5608bd10110bb73b1f7693ef6f63d486e94",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "5d5492426ec5a2b9f67d22ebec5d80a74463284380448c5f3815263e1a600a8f",
+  "files": 112,
+  "bytes": 11210206,
+  "unchangedInputs": 3717
+}

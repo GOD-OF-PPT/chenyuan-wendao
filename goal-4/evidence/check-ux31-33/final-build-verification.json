@@ -1,0 +1,16 @@
+{
+  "source": {
+    "head": "7d95093f4ad7f3902e5e1ea4fb5b555e517d14be",
+    "source": "7d95093f4ad7f3902e5e1ea4fb5b555e517d14be",
+    "tree": "bfb6a4cfd524dc7392f996f21ae128e4e927fb7a",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "5d5492426ec5a2b9f67d22ebec5d80a74463284380448c5f3815263e1a600a8f",
+  "files": 112,
+  "bytes": 11210206,
+  "unchangedInputs": 3719,
+  "sameImplementationProduct": true
+}
