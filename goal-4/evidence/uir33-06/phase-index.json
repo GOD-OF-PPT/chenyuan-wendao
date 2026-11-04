@@ -1,0 +1,131 @@
+{
+  "runtime": "82db7e7002492f8af5f1d4c720b0639ec9ef2af2fe75a3224cb2d6328fcf4dbb",
+  "productCommit": "fd23fda",
+  "files": [
+    {
+      "path": "artifacts/goal-4/uir33-06/final/related.config.ts",
+      "bytes": 591,
+      "sha256": "5955a6e28b83f5eff91523475450151c4de2b325a32b89acabdb542321e8ceda"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/related-declared.json",
+      "bytes": 52156,
+      "sha256": "0e965ba8df6db0590eb6df98e9bb065318a6ba5e9a1f6dc4a3bfd4afda63ac85"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/related-plan.json",
+      "bytes": 15669,
+      "sha256": "b123c7a11ea235d7a5f2db9b7e137a86d56cfc56c58e28c989d599a5f684c135"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/related-report.json",
+      "bytes": 5955605,
+      "sha256": "7ec7067073a67fbbc451c06c14f4d6fd435d8e97eb681a3b8bb771c6dea47ce6"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/related-terminal.json",
+      "bytes": 510,
+      "sha256": "a1fd6b51663e37ba2c5a8ac3acc48f273cdd991f88143f3e2b1f33712a890b0c"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/related-before.json",
+      "bytes": 517974,
+      "sha256": "3505894d7637af48d0a8d0401ae7b75751acf46bcb2fa02f498d85c38807f0ea"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/related-after.json",
+      "bytes": 517973,
+      "sha256": "b23b7b95f26584206643c9591878851b706ff259ac3b5a54063b167545adb012"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/related-http.json",
+      "bytes": 36917,
+      "sha256": "9e38da966aad69a2e0b13ed39e11571bf4731419ad360db368ea050414c55ea2"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/focused-validation.json",
+      "bytes": 3014,
+      "sha256": "df09f40312b1da8762211e84a9759465646fee1f665cbcc9fdbda8753126edff"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/focused-before.json",
+      "bytes": 473920,
+      "sha256": "79d937e52935276b4a7d6aff1a9b56e809710aa9ea8d66df2eac9f32e9d97b29"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/focused-after.json",
+      "bytes": 473920,
+      "sha256": "79d937e52935276b4a7d6aff1a9b56e809710aa9ea8d66df2eac9f32e9d97b29"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/focused-rules.log",
+      "bytes": 7549,
+      "sha256": "01a910f686886e57c8d107affdb574089fce515d763dc9ca9ccd37bcc370f066"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/focused-resources.log",
+      "bytes": 137,
+      "sha256": "3d742bc88dc90dfe815ff938753e0907f03d4b3bb453078334378d487bca0729"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/focused-inventory.log",
+      "bytes": 2598,
+      "sha256": "a2ea26a59fdd53b03db7c2f6c257387fb89fb7631dbd27cfeb54bbcd9a3a9d97"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/focused-types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/preview.config.ts",
+      "bytes": 512,
+      "sha256": "54bcb61c56a294007eced546218f483fb80dc7a5c3143d2d46a09a15f10a6300"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/preview-declared.json",
+      "bytes": 4515,
+      "sha256": "a451b7420dfdb8e2bd29bd071972586d865ca670b2512929d5b414f88e8a90d1"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/preview-plan.json",
+      "bytes": 921,
+      "sha256": "3cb47384b8e98e1491dd9c536a317ba3dd59a45c6db77237e0b3ab2d2f046451"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/preview-report.json",
+      "bytes": 56723,
+      "sha256": "9603c14508cfb2f2d539973848d4f43c5df0ba556f8944bca9e7aef925a4ec48"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/preview-terminal.json",
+      "bytes": 517,
+      "sha256": "b7b7b67c9b468ab5fb709cc856404c0dc03acb168c92cdd504f85ec0b76bc9f0"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/preview-before.json",
+      "bytes": 517974,
+      "sha256": "c3d6184e5c8a0e05b42665fc48f77cc9a1a618916ff2535089929fb832ead902"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/preview-after.json",
+      "bytes": 517973,
+      "sha256": "188593984fa3227ef5de692af8307368bf16ff65af1e071bfd342feeb4d286ed"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/preview-http.json",
+      "bytes": 36917,
+      "sha256": "6b7dc1dc604360a55b6bbd47bad1ae48e36a6691d127862dcc36474b8c103fb5"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/final/preview-integrity.json",
+      "bytes": 945,
+      "sha256": "2133eb09d94902b87c53cdc7eab1d33fec5f85d3f013f7c4a426236136090913"
+    },
+    {
+      "path": "artifacts/goal-4/uir33-06/old-4173-identity.json",
+      "bytes": 16646,
+      "sha256": "18ce7f943be853493efe94f30b79629970c0fa9556c10ec767dd0e54bdde1c85"
+    }
+  ]
+}

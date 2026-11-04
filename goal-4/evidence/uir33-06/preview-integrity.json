@@ -1,0 +1,22 @@
+{
+  "archive": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-06/uir33-06-preview-fd23fda.zip",
+  "archiveSha256": "83958f88dccb05093a8c240e625da33dc77d9b6687c66e2ccd5d5a3e8316ebda",
+  "archiveBytes": 10126621,
+  "unpacked": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-06/preview-unpacked-fd23fda",
+  "runtime": "82db7e7002492f8af5f1d4c720b0639ec9ef2af2fe75a3224cb2d6328fcf4dbb",
+  "buildSource": {
+    "head": "fd23fda54bd3d23925f2fa8da4b1bf6224d32868",
+    "source": "fd23fda54bd3d23925f2fa8da4b1bf6224d32868",
+    "tree": "47db520da3c47f4817ac6623fad815f399c835a1",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtimeFiles": 112,
+  "runtimeBytes": 11218967,
+  "allArchiveAndExtractedBytesMatch": true,
+  "containsPlayerSave": false,
+  "containsFonts": false,
+  "scope": "Independent local engineering preview, not final candidate or human acceptance."
+}
