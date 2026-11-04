@@ -1,0 +1,42 @@
+{
+  "format": "chenyuan-activity-detail-uir33-05",
+  "version": 1,
+  "userAcceptance": false,
+  "maxAddedNativeBytes": 3200,
+  "newRasterAssets": 0,
+  "files": [
+    {
+      "path": "web/src/activity-detail.css",
+      "bytes": 2872,
+      "sha256": "f5e05362bd389f3e4b0a05d90b6e641931056f557257982df5f03156f497bda2"
+    }
+  ],
+  "consumer": {
+    "path": "web/src/main.ts",
+    "bytes": 1598,
+    "sha256": "ba7d484e521876911b756fee5e81c25be7ea86b8d92a9d46391d2f98454d25ee"
+  },
+  "before": {
+    "path": "goal-4/evidence/uir33-05/before/web/src/main.ts",
+    "bytes": 1566,
+    "sha256": "e985976803f0ff98cff52445b1300df7bf7471f34e4594fffc8d34ea327a81b6"
+  },
+  "sourceReferences": [
+    "docs/decisions/0100-activity-detail-uir33-05-contract.md",
+    "goal-4/amendments/2026-11-04-uir33-05-input.md",
+    "goal-4/research/uir33-05-sources.json"
+  ],
+  "unchanged": {
+    "web/src/TrainingActivity.vue": "cf52d3aa3d5063585ac52dd4b0eb1ff8afc46d088c911ed6b5939ce6601e544c",
+    "web/src/App.vue": "2549b27003e11cf12f44e2ba41a1053b2de996c3636110f277ac84babd1dd4fd",
+    "web/src/activity-clock.ts": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "web/src/stage-r1.css": "1ed138017fb93db1156aea3db518ea7f930864a0503e3adb7363f4e4eb68112d",
+    "web/src/idle-preparation.css": "9832321f25817d059c4a95e6bc16ac31e7476eac800afaa788575cd00278396a",
+    "web/src/idle-activity.css": "17ef27c763e8c2e5a7d57f11b5f24f1604cc4df97562abf6f4e4a909a30c13e6",
+    "art/redesign/stage-r1.json": "3ce30ea55cf43ef9f335df7a0cc744f0f0c9afc40cdef5997fdf7dcc5dedc967",
+    "art/redesign/idle-cultivation.json": "b1443902e2ed89bcfd861b9704ec1a544ac1c3a0c7de7161e64d5553a3838f39"
+  }
+}

@@ -258,14 +258,14 @@ test('v10 still requires the exact runtime full recovery and correct suite owner
  assert.throws(()=>inspectIdleDeclarations(10,[broad,native,native],runtime,recovery.report),/Exactly one/);
 });
 
-test('the real outer verifier recognizes v9 through v12 but cannot accept their unexecuted inventories',t=>{
+test('the real outer verifier recognizes v9 through v13 but cannot accept their unexecuted inventories',t=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'chenyuan-local-matrix-'));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
  const save=(name,value)=>{const raw=JSON.stringify(value),file=path.join(dir,name);fs.writeFileSync(file,raw);return{path:name,sha256:createHash('sha256').update(raw).digest('hex')};};
- for(const version of [9,10,11,12]){
-  const [broad,recovery,native,normal]=version===9?ongoingDeclarations():version===10?localExplorationDeclarations():version===11?studyNotesDeclarations():uirCombinationDeclarations();
+ for(const version of [9,10,11,12,13]){
+  const [broad,recovery,native,normal]=version===9?ongoingDeclarations():version===10?localExplorationDeclarations():version===11?studyNotesDeclarations():version===12?uirCombinationDeclarations():activityDetailDeclarations();
   const manifest={format:'chenyuan-idle-matrix-inputs',version,runtime,scope:{browser:'chromium',viewport:{width:1440,height:900},fontScale:1},phases:[],declarations:[broad,native,normal].map(d=>({suite:d.suite,report:save(version+'-'+d.suite+'.json',d.report)})),recoveryUIDeclaration:save(version+'-recovery.json',recovery.report)};
   const file=path.join(dir,'manifest.json');fs.writeFileSync(file,JSON.stringify(manifest));assert.throws(()=>verifyIdleMatrixCoverage(file),/Current normal\/UI\/native inventory is incomplete/);
-  for(const invalid of [0,13]){fs.writeFileSync(file,JSON.stringify({...manifest,version:invalid}));assert.throws(()=>verifyIdleMatrixCoverage(file),/Unknown idle matrix version/);}
+  for(const invalid of [0,14]){fs.writeFileSync(file,JSON.stringify({...manifest,version:invalid}));assert.throws(()=>verifyIdleMatrixCoverage(file),/Unknown idle matrix version/);}
  }
 });
 
@@ -278,3 +278,8 @@ function uirCombinationDeclarations(){const inventories=studyNotesDeclarations()
 test('v12 retains every v11 identity and adds the three actual UIR combinations',()=>{const [b,r,n,j]=uirCombinationDeclarations();assert.equal(inspectIdleDeclarations(12,[b,n,j],runtime,r.report).length,1319);assert.throws(()=>inspectIdleDeclarations(11,[b,n,j],runtime,r.report),/Profile declarations/);const [old,rr,nn,jj]=studyNotesDeclarations();assert.equal(inspectIdleDeclarations(11,[old,nn,jj],runtime,rr.report).length,1316);});
 test('v12 rejects missing duplicate renamed and replaced source consumers',()=>{for(const mutate of [r=>r.suites[0].specs.pop(),r=>r.suites[0].specs.at(-1).title+=' invented',r=>r.suites[0].specs[0].title+=' replaced',r=>r.suites[0].specs.splice(-1,1,structuredClone(r.suites[0].specs.at(-2)))]){const [b,r,n,j]=uirCombinationDeclarations();mutate(b.report);assert.throws(()=>inspectIdleDeclarations(12,[b,n,j],runtime,r.report),/Profile declarations|Profile identities/);}});
 test('v12 still enforces exact source runtime full recovery and unique suite ownership',()=>{const [b,r,n,j]=uirCombinationDeclarations();assert.throws(()=>inspectIdleDeclarations(12,[b,n,j],runtime),/requires the original/);assert.throws(()=>inspectIdleDeclarations(12,[b,n,j],'b'.repeat(64),r.report),/runtime differs/);assert.throws(()=>inspectIdleDeclarations(12,[b,n,n],runtime,r.report),/Exactly one/);});
+
+function activityDetailDeclarations(){const inventories=uirCombinationDeclarations(),extra=JSON.parse(fs.readFileSync(new URL('./idle-uir33-05-additions.json',import.meta.url)));inventories[0].report.suites[0].specs.push(...extra.additions.map(row=>({file:row.file,title:row.title,tests:[{projectName:row.projectName}]})));return inventories;}
+test('v13 preserves all original identities and adds ten activity detail cases',()=>{const [b,r,n,j]=activityDetailDeclarations();assert.equal(inspectIdleDeclarations(13,[b,n,j],runtime,r.report).length,1329);assert.throws(()=>inspectIdleDeclarations(12,[b,n,j],runtime,r.report),/Profile declarations/);const [old,rr,nn,jj]=uirCombinationDeclarations();assert.equal(inspectIdleDeclarations(12,[old,nn,jj],runtime,rr.report).length,1319);});
+test('v13 rejects missing duplicate renamed or replaced consumers',()=>{for(const mutate of [r=>r.suites[0].specs.pop(),r=>r.suites[0].specs.at(-1).title+=' invented',r=>r.suites[0].specs[0].title+=' replaced',r=>r.suites[0].specs.splice(-1,1,structuredClone(r.suites[0].specs.at(-2)))]){const [b,r,n,j]=activityDetailDeclarations();mutate(b.report);assert.throws(()=>inspectIdleDeclarations(13,[b,n,j],runtime,r.report),/Profile declarations|Profile identities/);}});
+test('v13 retains original recovery source runtime and unique suites',()=>{const [b,r,n,j]=activityDetailDeclarations();assert.throws(()=>inspectIdleDeclarations(13,[b,n,j],runtime),/requires the original/);assert.throws(()=>inspectIdleDeclarations(13,[b,n,j],'b'.repeat(64),r.report),/runtime differs/);assert.throws(()=>inspectIdleDeclarations(13,[b,n,n],runtime,r.report),/Exactly one/);});

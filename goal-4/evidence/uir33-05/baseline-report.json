@@ -1,0 +1,159 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-05/baseline.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "runtimeDigest": "5a1ea161e162d14ad2cda78eead5879e81e1b2d05e7b7b79e0cf5dc017a72b27",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-05/baseline-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-05/baseline-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runtimeDigest": "5a1ea161e162d14ad2cda78eead5879e81e1b2d05e7b7b79e0cf5dc017a72b27",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "uir33-05-activity-detail.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "uir33-05-activity-detail.spec.ts",
+      "file": "uir33-05-activity-detail.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR33-05-A1 compact live and paused details retain one clock original limits and complete saved receipts",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3337,
+                  "error": {
+                    "message": "Error: short activity content must not retain a nearly full-height report panel\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m520\u001b[39m\nReceived:    \u001b[31m686\u001b[39m",
+                    "stack": "Error: short activity content must not retain a nearly full-height report panel\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m520\u001b[39m\nReceived:    \u001b[31m686\u001b[39m\n    at frame (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-05-activity-detail.spec.ts:31:108)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-05-activity-detail.spec.ts:53:109",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-05-activity-detail.spec.ts",
+                      "column": 108,
+                      "line": 31
+                    },
+                    "snippet": "  29 |  await captureFixedPng(page,info.outputPath(name+'.png'));\n  30 |  expect(g.scroll).toBeLessThanOrEqual(900);expect(g.innerScroll).toBe(false);expect(g.pane.bottom).toBeLessThanOrEqual(g.nav.y);\n> 31 |  if(short)expect(g.pane.height,'short activity content must not retain a nearly full-height report panel').toBeLessThanOrEqual(520);\n     |                                                                                                            ^\n  32 |  for(const c of g.controls){expect(c.width,c.text).toBeGreaterThanOrEqual(44);expect(c.height,c.text).toBeGreaterThanOrEqual(44);expect(c.hit,c.text).toBe(true);expect(c.clipped,c.text).toBe(false);expect(c.y,c.text).toBeGreaterThanOrEqual(g.pane.y);expect(c.bottom,c.text).toBeLessThanOrEqual(g.nav.y);}\n  33 |  for(const c of g.copy){expect(c.visible,c.text).toBe(true);expect(c.font,c.text).toBeGreaterThanOrEqual(14);expect(c.y,c.text).toBeGreaterThanOrEqual(g.body.y);expect(c.bottom,c.text).toBeLessThanOrEqual(g.body.bottom+1);}\n  34 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-05-activity-detail.spec.ts",
+                        "column": 108,
+                        "line": 31
+                      },
+                      "message": "Error: short activity content must not retain a nearly full-height report panel\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m520\u001b[39m\nReceived:    \u001b[31m686\u001b[39m\n\n  29 |  await captureFixedPng(page,info.outputPath(name+'.png'));\n  30 |  expect(g.scroll).toBeLessThanOrEqual(900);expect(g.innerScroll).toBe(false);expect(g.pane.bottom).toBeLessThanOrEqual(g.nav.y);\n> 31 |  if(short)expect(g.pane.height,'short activity content must not retain a nearly full-height report panel').toBeLessThanOrEqual(520);\n     |                                                                                                            ^\n  32 |  for(const c of g.controls){expect(c.width,c.text).toBeGreaterThanOrEqual(44);expect(c.height,c.text).toBeGreaterThanOrEqual(44);expect(c.hit,c.text).toBe(true);expect(c.clipped,c.text).toBe(false);expect(c.y,c.text).toBeGreaterThanOrEqual(g.pane.y);expect(c.bottom,c.text).toBeLessThanOrEqual(g.nav.y);}\n  33 |  for(const c of g.copy){expect(c.visible,c.text).toBe(true);expect(c.font,c.text).toBeGreaterThanOrEqual(14);expect(c.y,c.text).toBeGreaterThanOrEqual(g.body.y);expect(c.bottom,c.text).toBeLessThanOrEqual(g.body.bottom+1);}\n  34 | }\n    at frame (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-05-activity-detail.spec.ts:31:108)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-05-activity-detail.spec.ts:53:109"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T14:33:19.449Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "live-cultivation-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJwYW5lIjp7IngiOjQ5NiwieSI6MTIwLCJ3aWR0aCI6OTIwLCJoZWlnaHQiOjY4NiwiYm90dG9tIjo4MDYsInJpZ2h0IjoxNDE2fSwiYm9keSI6eyJ4Ijo1MTUsInkiOjIwMSwid2lkdGgiOjg4MiwiaGVpZ2h0Ijo1OTAsImJvdHRvbSI6NzkxLCJyaWdodCI6MTM5N30sIm5hdiI6eyJ4IjowLCJ5Ijo4MTgsIndpZHRoIjoxNDQwLCJoZWlnaHQiOjgyLCJib3R0b20iOjkwMCwicmlnaHQiOjE0NDB9LCJjb250cm9scyI6W3sieCI6OTk3LCJ5IjoxNDAuNSwid2lkdGgiOjg4LCJoZWlnaHQiOjQ0LCJib3R0b20iOjE4NC41LCJyaWdodCI6MTA4NSwidGV4dCI6IuaMh+W8lSIsImhpdCI6dHJ1ZSwiY2xpcHBlZCI6ZmFsc2V9LHsieCI6MTA5MywieSI6MTQwLjUsIndpZHRoIjo5NCwiaGVpZ2h0Ijo0NCwiYm90dG9tIjoxODQuNSwicmlnaHQiOjExODcsInRleHQiOiLnqoHnoLTnrbnlpIciLCJoaXQiOnRydWUsImNsaXBwZWQiOmZhbHNlfSx7IngiOjExOTUsInkiOjE0MC41LCJ3aWR0aCI6NjIsImhlaWdodCI6NDQsImJvdHRvbSI6MTg0LjUsInJpZ2h0IjoxMjU3LCJ0ZXh0Ijoi55uu5qCHIiwiaGl0Ijp0cnVlLCJjbGlwcGVkIjpmYWxzZX0seyJ4IjoxMjY1LCJ5IjoxNDAuNSwid2lkdGgiOjEyMCwiaGVpZ2h0Ijo0NCwiYm90dG9tIjoxODQuNSwicmlnaHQiOjEzODUsInRleHQiOiLov5Tlm57ljp/lpIQiLCJoaXQiOnRydWUsImNsaXBwZWQiOmZhbHNlfSx7IngiOjgwMSwieSI6NDE4Ljg5MDYyNSwid2lkdGgiOjE4MCwiaGVpZ2h0Ijo0NCwiYm90dG9tIjo0NjIuODkwNjI1LCJyaWdodCI6OTgxLCJ0ZXh0Ijoi5pqC5YGc5L+u54K8IiwiaGl0Ijp0cnVlLCJjbGlwcGVkIjpmYWxzZX0seyJ4Ijo5OTEsInkiOjQxOC44OTA2MjUsIndpZHRoIjoxMjAsImhlaWdodCI6NDQsImJvdHRvbSI6NDYyLjg5MDYyNSwicmlnaHQiOjExMTEsInRleHQiOiLmn6XnnIvkv67ngrzlronmjpIiLCJoaXQiOnRydWUsImNsaXBwZWQiOmZhbHNlfV0sImNvcHkiOlt7IngiOjcxMi45MDYyNSwieSI6MzY3LjUsIndpZHRoIjo5MC4xNDA2MjUsImhlaWdodCI6MjIuMzkwNjI1LCJib3R0b20iOjM4OS44OTA2MjUsInJpZ2h0Ijo4MDMuMDQ2ODc1LCJ0ZXh0Ijoi5bey5a6M5oiQIDAgLyA1IOi9riIsImZvbnQiOjE0LCJ2aXNpYmxlIjp0cnVlfSx7IngiOjgyMS4wNDY4NzUsInkiOjM2Ny41LCJ3aWR0aCI6NzUuNDA2MjUsImhlaWdodCI6MjIuMzkwNjI1LCJib3R0b20iOjM4OS44OTA2MjUsInJpZ2h0Ijo4OTYuNDUzMTI1LCJ0ZXh0Ijoi57Sv6K6h5L+u5Li6ICswIiwiZm9udCI6MTQsInZpc2libGUiOnRydWV9LHsieCI6OTE0LjQ1MzEyNSwieSI6MzY3LjUsIndpZHRoIjo4Ni42NDA2MjUsImhlaWdodCI6MjIuMzkwNjI1LCJib3R0b20iOjM4OS44OTA2MjUsInJpZ2h0IjoxMDAxLjA5Mzc1LCJ0ZXh0Ijoi54G155+z5bey55SoIDAgLyAwIiwiZm9udCI6MTQsInZpc2libGUiOnRydWV9LHsieCI6MTAxOS4wOTM3NSwieSI6MzY3LjUsIndpZHRoIjoxNzkuOTg0Mzc1LCJoZWlnaHQiOjIyLjM5MDYyNSwiYm90dG9tIjozODkuODkwNjI1LCJyaWdodCI6MTE5OS4wNzgxMjUsInRleHQiOiLmuLjmiI/lsoHmnIggKzAg5pyIIMK3IOS/neeVmeeBteefsyA5IiwiZm9udCI6MTQsInZpc2libGUiOnRydWV9LHsieCI6NTQ4LCJ5IjozOTcuODkwNjI1LCJ3aWR0aCI6ODE2LCJoZWlnaHQiOjIxLCJib3R0b20iOjQxOC44OTA2MjUsInJpZ2h0IjoxMzY0LCJ0ZXh0Ijoi5a6M5oiQ5omA6YCJ6L2u5pWw5Y2z5YGcIMK3IOavj+i9riA2MCDnp5IiLCJmb250IjoxNCwidmlzaWJsZSI6dHJ1ZX1dLCJzY3JvbGwiOjkwMCwiaW5uZXJTY3JvbGwiOmZhbHNlfQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-05/baseline-results/uir33-05-activity-detail-U-7fca7-and-complete-saved-receipts-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-05/baseline-results/uir33-05-activity-detail-U-7fca7-and-complete-saved-receipts-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-05/baseline-results/uir33-05-activity-detail-U-7fca7-and-complete-saved-receipts-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-05-activity-detail.spec.ts",
+                    "column": 108,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "94c42fce08482a03b3fb-dda96dc2e894fa3219fc",
+          "file": "uir33-05-activity-detail.spec.ts",
+          "line": 177,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T14:33:17.476Z",
+    "duration": 6434.9619999999995,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

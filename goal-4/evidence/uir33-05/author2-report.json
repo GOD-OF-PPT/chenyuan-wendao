@@ -1,0 +1,84 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-05/author2.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "runtimeDigest": "423f604a11bc93d0d71da18e02126c0c7ccb1f16ff428ab9688a5525c9805858"
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-05/author2-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-05/author2-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runtimeDigest": "423f604a11bc93d0d71da18e02126c0c7ccb1f16ff428ab9688a5525c9805858"
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "uir33-05-activity-detail.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [],
+  "errors": [
+    {
+      "message": "SyntaxError: /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-05-activity-detail.spec.ts: Unexpected token (83:324)\n\n  81 |\n  82 | test('UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory',async({page},info)=>{\n> 83 |  const d=driver();d.go('wilderness');d.doAction({type:'ENCOUNTER',enemy:'wolf'});while(d.game.battle&&d.game.battle.hp>16)d.doAction({type:'BATTLE',move:'attack'});const before=await importRecoveryFixture(page,d.game),plan=defaultBattlePlan(before);plan.maxCycles=9;plan.mpBudget=77;plan.strategy.healBelowPercent=0;const a=if(kind==='learn'){await openHubFeature(page,'skills');await openLearningLibrary(page);await page.getByLabel('功法流派',{exact:true}).selectOption('all');await closeLearningLibrary(page);await home(page);}await begin(page,plan);await readonly(page,()=>inspect(page));await frame(page,info,'battle-running',false);const done=await tick(page,a,before);await expect.poll(async()=>(await activity(page))?.status).toBe('stopped');await frame(page,info,'battle-saved',false);\n     |                                                                                                                                                                                                                                                                                                                                     ^\n  84 |  await readonly(page,async()=>{await page.getByTestId('activity-original-plan').click();const read=page.getByTestId('activity-plan-review');let text='';let height:number|undefined;\n  85 |   for(let n=0;n<12;n++){text+=await read.innerText();await frame(page,info,'original-strategy-'+n,false);const next=read.getByRole('button',{name:'下一页',exact:true});const y=(await next.boundingBox())!.y;if(height!==undefined)expect(Math.abs(y-height)).toBeLessThanOrEqual(1);height=y;if(await next.isDisabled())break;await next.click();}\n  86 |   for(const word of ['9','77','招式顺序','重击','回春','危险','不重新开战'])expect(text).toContain(word);",
+      "stack": "SyntaxError: /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-05-activity-detail.spec.ts: Unexpected token (83:324)\n\n  81 |\n  82 | test('UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory',async({page},info)=>{\n> 83 |  const d=driver();d.go('wilderness');d.doAction({type:'ENCOUNTER',enemy:'wolf'});while(d.game.battle&&d.game.battle.hp>16)d.doAction({type:'BATTLE',move:'attack'});const before=await importRecoveryFixture(page,d.game),plan=defaultBattlePlan(before);plan.maxCycles=9;plan.mpBudget=77;plan.strategy.healBelowPercent=0;const a=if(kind==='learn'){await openHubFeature(page,'skills');await openLearningLibrary(page);await page.getByLabel('功法流派',{exact:true}).selectOption('all');await closeLearningLibrary(page);await home(page);}await begin(page,plan);await readonly(page,()=>inspect(page));await frame(page,info,'battle-running',false);const done=await tick(page,a,before);await expect.poll(async()=>(await activity(page))?.status).toBe('stopped');await frame(page,info,'battle-saved',false);\n     |                                                                                                                                                                                                                                                                                                                                     ^\n  84 |  await readonly(page,async()=>{await page.getByTestId('activity-original-plan').click();const read=page.getByTestId('activity-plan-review');let text='';let height:number|undefined;\n  85 |   for(let n=0;n<12;n++){text+=await read.innerText();await frame(page,info,'original-strategy-'+n,false);const next=read.getByRole('button',{name:'下一页',exact:true});const y=(await next.boundingBox())!.y;if(height!==undefined)expect(Math.abs(y-height)).toBeLessThanOrEqual(1);height=y;if(await next.isDisabled())break;await next.click();}\n  86 |   for(const word of ['9','77','招式顺序','重击','回春','危险','不重新开战'])expect(text).toContain(word);",
+      "location": {
+        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-05-activity-detail.spec.ts",
+        "line": 83,
+        "column": 324
+      },
+      "snippet": "\u001b[90m   at \u001b[39muir33-05-activity-detail.spec.ts:83\n\n  81 |\n  82 | test('UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory',async({page},info)=>{\n> 83 |  const d=driver();d.go('wilderness');d.doAction({type:'ENCOUNTER',enemy:'wolf'});while(d.game.battle&&d.game.battle.hp>16)d.doAction({type:'BATTLE',move:'attack'});const before=await importRecoveryFixture(page,d.game),plan=defaultBattlePlan(before);plan.maxCycles=9;plan.mpBudget=77;plan.strategy.healBelowPercent=0;const a=if(kind==='learn'){await openHubFeature(page,'skills');await openLearningLibrary(page);await page.getByLabel('功法流派',{exact:true}).selectOption('all');await closeLearningLibrary(page);await home(page);}await begin(page,plan);await readonly(page,()=>inspect(page));await frame(page,info,'battle-running',false);const done=await tick(page,a,before);await expect.poll(async()=>(await activity(page))?.status).toBe('stopped');await frame(page,info,'battle-saved',false);\n     |                                                                                                                                                                                                                                                                                                                                    ^\n  84 |  await readonly(page,async()=>{await page.getByTestId('activity-original-plan').click();const read=page.getByTestId('activity-plan-review');let text='';let height:number|undefined;\n  85 |   for(let n=0;n<12;n++){text+=await read.innerText();await frame(page,info,'original-strategy-'+n,false);const next=read.getByRole('button',{name:'下一页',exact:true});const y=(await next.boundingBox())!.y;if(height!==undefined)expect(Math.abs(y-height)).toBeLessThanOrEqual(1);height=y;if(await next.isDisabled())break;await next.click();}\n  86 |   for(const word of ['9','77','招式顺序','重击','回春','危险','不重新开战'])expect(text).toContain(word);"
+    },
+    {
+      "message": "Error: No tests found",
+      "stack": "Error: No tests found"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-11-04T14:46:40.952Z",
+    "duration": 53.51099999999997,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

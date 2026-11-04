@@ -1,0 +1,19 @@
+{
+  "readOn": "2026-11-04",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "principle": "信息层级与视觉噪声按重要性分配；本项目用于进度/控制优先，非游戏风格认证。"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "principle": "重复入口和焦点顺序一致；保原暂停/继续/安排/回执顺序与原父返回。"
+    }
+  ],
+  "derivedNotSourceNumbers": [
+    "固定1440×900当前授权",
+    "活动详情随内容收合与版式",
+    "新增CSS最多3200字节"
+  ],
+  "wholeArtAcceptance": false
+}

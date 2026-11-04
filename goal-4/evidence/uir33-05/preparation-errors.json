@@ -1,0 +1,8 @@
+[
+  {
+    "stage": "baseline config import",
+    "error": "Requiring @playwright/test second time; root CLI and frozen config resolved different installations",
+    "productCasesRun": 0,
+    "fix": "Reuse only frozen assertWebBuild; use one root Playwright installation"
+  }
+]

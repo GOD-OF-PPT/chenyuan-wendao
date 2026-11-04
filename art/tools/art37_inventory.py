@@ -1,3 +1,4 @@
+from uir33_05_inventory import prior_uir3305_main
 from ux30_inventory import prior_ux30_bytes
 """ART37 presentation facts; the original consent/clock/store owners remain pinned."""
 import hashlib,json,re
@@ -15,6 +16,7 @@ TEST_BASELINES=[{'path': 'goal-4/evidence/art37/art18-dialog-controls.spec.ts.be
 def fact(raw,row):
  assert type(row['bytes'])is int and row['bytes']==len(raw)and row['sha256']==hashlib.sha256(raw).hexdigest(),'ART37 exact bytes'
 def original_art37_main(root,raw):
+ raw=prior_uir3305_main(raw)
  root=Path(root)
  if IMPORT not in raw:
   assert not(root/LEDGER).exists(),'ART37 detached main import'
@@ -34,9 +36,10 @@ def validate_art37(root):
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-dialog-actions-art37'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART37 header'
  assert m['budgets']==BUDGETS and all(type(v)is int for v in m['budgets'].values()),'ART37 original fixed caps'
  assert [r['path']for r in m['files']]==[CSS]and m['baseline']['path']=='goal-4/evidence/art37/main.ts.before.txt'and m['sourceReferences']==REFS and m['unchanged']==UNCHANGED,'ART37 fixed scope'
- for r in m['files']+[m['consumer'],m['baseline']]:fact(local(r['path']).read_bytes(),r)
+ for r in m['files']+[m['consumer'],m['baseline']]:
+  raw=local(r['path']).read_bytes();fact(prior_uir3305_main(raw) if r['path']==MAIN else raw,r)
  old=local(m['baseline']['path']).read_bytes();assert hashlib.sha256(old).hexdigest()==BASE_SHA and original_art37_main(root,local(MAIN).read_bytes())==old,'ART37 frozen whole main'
- assert local(MAIN).stat().st_size-len(old)<=64 and local(CSS).stat().st_size<=5000,'ART37 actual presentation cap'
+ assert len(prior_uir3305_main(local(MAIN).read_bytes()))-len(old)<=64 and local(CSS).stat().st_size<=5000,'ART37 actual presentation cap'
  for name,h in UNCHANGED.items():assert hashlib.sha256(prior_ux30_bytes(name,local(name).read_bytes())).hexdigest()==h,'ART37 consent focus writer or old ledger changed'
  old18=json.loads(local('art/redesign/art18.json').read_text());assert sum(local(r['path']).stat().st_size for r in old18['files'])+local(CSS).stat().st_size<=18000,'ART37 original ART18 combined cap'
  for name in REFS:local(name)
