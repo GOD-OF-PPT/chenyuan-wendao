@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-uir33-check-comprehensive-additions",
+  "version": 12,
+  "parentVersion": 11,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 872,
+    "signature": "2684d73a635d78a9cd897cca739e1d4f53cf7ca09d026a7d8011ecb22375f461"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-uir33-01.spec.ts",
+      "title": "CHECK-UIR33-C1 original assisted limits survive stage pause local-map viewing study-book reading and exact main-stage continuation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir33-01.spec.ts",
+      "title": "CHECK-UIR33-C2 original cultivation quota retry remains singular through local-goal viewing and a different unconfirmed study draft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir33-01.spec.ts",
+      "title": "CHECK-UIR33-C3 explicit six-second arrival local commission viewing and two original thirty-second scrolls keep independent authorization",
+      "projectName": "chromium"
+    }
+  ]
+}
