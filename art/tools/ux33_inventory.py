@@ -1,4 +1,5 @@
 """UX33 exact display projection; old proofs, callbacks, styles and budgets remain owned."""
+from check_ux31_33_inventory import prior_check_ux3133_bytes
 import hashlib,json,re
 from pathlib import Path
 LEDGER='art/redesign/ux33.json'
@@ -376,6 +377,7 @@ MARKERS={'App.vue': "import StageOutcome from './StageOutcome.vue';\n"
  'SourceObject.vue': "state==='failed'?'查看上方提示'",
  'StageOutcome.vue': '已确认成果保留；请重新读取。'}
 def prior_ux33_bytes(path,raw):
+ raw=prior_check_ux3133_bytes(path,raw)
  name=Path(path).name
  if name not in FACTS or MARKERS[name].encode() not in raw:return raw
  assert hashlib.sha256(raw).hexdigest()==FACTS[name]['after'], 'UX33 complete display source changed'
@@ -397,7 +399,7 @@ def validate_ux33(root):
  assert json.loads(local(LEDGER).read_text())==MANIFEST, 'UX33 exact current ledger'
  assert json.loads(local('art/redesign/ux33-display-edits.json').read_text())==OPERATIONS, 'UX33 exact changes'
  for n,f in FACTS.items():
-  raw=local('web/src/'+n).read_bytes();old=local(f['baseline']).read_bytes()
+  raw=prior_check_ux3133_bytes(n,local('web/src/'+n).read_bytes());old=local(f['baseline']).read_bytes()
   assert len(raw)==f['bytes'] and hashlib.sha256(raw).hexdigest()==f['after'], 'UX33 current source'
   assert len(old)==f['beforeBytes'] and hashlib.sha256(old).hexdigest()==f['before'], 'UX33 original source'
   assert prior_ux33_bytes(n,raw)==old, 'UX33 full inverse'
@@ -408,4 +410,4 @@ def validate_ux33(root):
   assert sum(local(x).stat().st_size for x in g['files'])<=g['cap'], 'UX33 original regional cap'
  assert local('web/src/App.vue').stat().st_size<=159635 and local('web/src/RecoveryRitual.vue').stat().st_size<=9658, 'UX33 original parent caps'
  for ref in MANIFEST['sourceReferences']:local(ref)
- return {LEDGER,*MANIFEST['sourceReferences'],*['web/src/'+n for n in FACTS]},sum(f['bytes']for f in FACTS.values())
+ return {LEDGER,*MANIFEST['sourceReferences'],*['web/src/'+n for n in FACTS]},sum(local('web/src/'+n).stat().st_size for n in FACTS)

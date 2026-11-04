@@ -1,0 +1,14 @@
+[
+  [
+    "<strong>预计 {{quote.cycles}} 炉 · 灵石消耗 {{quote.stones}} · {{quote.months}} 游戏月</strong>",
+    "<strong v-if=\"quote.failure\">暂不可开炉：{{quote.failure.message}}</strong><strong v-else>预计 {{quote.cycles}} 炉 · 灵石消耗 {{quote.stones}} · {{quote.months}} 游戏月</strong>"
+  ],
+  [
+    "<small>耗材：{{costText(quote.spentItems)||'暂无'}}；成品 {{costText(quote.items)||'暂无'}}</small>",
+    "<small v-if=\"!quote.failure\">耗材：{{costText(quote.spentItems)||'暂无'}}；成品 {{costText(quote.items)||'暂无'}}</small>"
+  ],
+  [
+    "<small>{{quote.failure?'暂不可安排：'+quote.failure.message:quote.stopReason?'预计停止：'+quote.stopReason.message:''}}</small>",
+    "<small v-if=\"!quote.failure && quote.stopReason\">预计停止：{{quote.stopReason.message}}</small>"
+  ]
+]

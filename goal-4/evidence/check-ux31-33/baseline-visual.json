@@ -1,0 +1,20 @@
+[
+  {
+    "name": "missing-material-complete-arrangement",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/baseline-results/check-ux31-33-CHECK-UX3133-51243-ource-returns-stay-readonly-chromium/missing-material-complete-arrangement.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/light/missing-material-complete-arrangement.jpg",
+    "sha256": "7d8860e616d1a6710cd2d45adf4d8ff8850d80e9abd91020516f45afd8bae89d",
+    "viewSha256": "4f8a6202e5b8e91242e498c4c3826e74c144b4c38a64f04eb9ddba40e366ca42",
+    "actualViewed": true,
+    "review": "Actual baseline pixels show a zero-valued forecast taking priority over the real failure. Pending saved failure and next draft remain separately visible."
+  },
+  {
+    "name": "original-error-next-draft-gate",
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/baseline-results/check-ux31-33-CHECK-UX3133-fc18b-nge-its-saved-authorization-chromium/original-error-next-draft-gate.png",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/light/original-error-next-draft-gate.jpg",
+    "sha256": "4f7fb6b55ed4c606ef77d5e264bedb9c4d731ac47af300e2223ca7d98bdfe26c",
+    "viewSha256": "fe339026f4414b149b5b93f4f97412dcbb5882cc2ebb96a160d7f86533937701",
+    "actualViewed": true,
+    "review": "Actual baseline pixels show a zero-valued forecast taking priority over the real failure. Pending saved failure and next draft remain separately visible."
+  }
+]

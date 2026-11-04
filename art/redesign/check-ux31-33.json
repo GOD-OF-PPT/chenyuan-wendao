@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-ux31-33-combination-check",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "newCSSBytes": 0,
+  "files": [
+    {
+      "path": "web/src/AlchemyWorkshop.vue",
+      "bytes": 12054,
+      "sha256": "f81b5f9ada539eb9abd229875bd4e5987d6597bf29c713134de8a1ebb209e6f8"
+    }
+  ],
+  "before": {
+    "path": "goal-4/evidence/check-ux31-33/before/web/src/AlchemyWorkshop.vue",
+    "bytes": 11982,
+    "sha256": "cff2e34bbfa34726fab08e763180e90b9401559dcf06f05142a50b8d5d36d803"
+  },
+  "maxNativeBytes": 22000,
+  "nativeFiles": [
+    "web/src/AlchemyWorkshop.vue",
+    "web/src/alchemy-workshop.css",
+    "web/src/alchemy-feedback.ts"
+  ],
+  "oldLedgers": {
+    "art/redesign/ux33.json": "ca0c3a052c3f9508957a38da9a8acada9821104c2461aa127bccd0743f27c3b8",
+    "art/redesign/alchemy-workshop.json": "bf770f33e405cea888c33c6f4485b014f8b29b11d83614745758f7240c29a12f"
+  },
+  "sourceReferences": [
+    "docs/decisions/0095-ux31-33-combination-check.md",
+    "goal-4/amendments/2026-11-04-check-ux31-33-input.md",
+    "goal-4/research/check-ux31-33-sources.json",
+    "goal-4/evidence/check-ux31-33/before/web/src/AlchemyWorkshop.vue",
+    "art/redesign/check-ux31-33-edits.json"
+  ]
+}

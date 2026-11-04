@@ -1,0 +1,82 @@
+[
+  {
+    "file": "check-ux24-26.spec.ts",
+    "title": "CHECK-UX2426-C1 normal first entry keeps true goal needs explicit six-second travel and one zero-price scroll distinct from the next draft",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"下次草案，当前执行见上方\"\nReceived: \"下次草案 · 原活动不变\"\n",
+    "location": {
+      "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/source/web/e2e/check-ux24-26.spec.ts",
+      "column": 342,
+      "line": 34
+    }
+  },
+  {
+    "file": "check-ux24-26.spec.ts",
+    "title": "CHECK-UX2426-C2 an actual foreign goal trip leads to a finite paid queue whose failed tick retries only its old authorization after next-draft edits",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"下次草案，当前执行见上方\"\nReceived: \"下次草案 · 原活动不变\"\n",
+    "location": {
+      "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/source/web/e2e/check-ux24-26.spec.ts",
+      "column": 976,
+      "line": 40
+    }
+  },
+  {
+    "file": "check-ux24-26.spec.ts",
+    "title": "CHECK-UX2426-C3 the manual next draft survives same-id foreign ownership and only the new sixty-second command grants one insight without offline replay",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"下次草案，当前执行见上方\"\nReceived: \"下次草案 · 原活动不变\"\n",
+    "location": {
+      "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/source/web/e2e/check-ux24-26.spec.ts",
+      "column": 518,
+      "line": 44
+    }
+  },
+  {
+    "file": "check-ux27-art35-cend03.spec.ts",
+    "title": "CHECK-UX27ART35-C1 paid painted scroll keeps all five contexts original clock and exact finite mastery through complete readonly returns",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"已保存安排；修改后须重新确认\"\nReceived: \"已保存安排\"\n",
+    "location": {
+      "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/source/web/e2e/check-ux27-art35-cend03.spec.ts",
+      "column": 379,
+      "line": 42
+    }
+  },
+  {
+    "file": "check-ux27-art35-cend03.spec.ts",
+    "title": "CHECK-UX27ART35-C3 the manual next draft survives same-id foreign ownership and only the new sixty-second command grants one insight without offline replay",
+    "error": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('preparation-plan-state')\nExpected: \"下次草案，当前执行见上方\"\nReceived: \"下次草案 · 原活动不变\"\n",
+    "location": {
+      "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/source/web/e2e/check-ux27-art35-cend03.spec.ts",
+      "column": 518,
+      "line": 52
+    }
+  },
+  {
+    "file": "check-ux31-33.spec.ts",
+    "title": "CHECK-UX3133-C1 missing alchemy ingredients lead with their real gate while complete settings and material-source returns stay readonly",
+    "error": "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('production-estimate').locator('strong')\nExpected substring: \"凝气草不足\"\nReceived string:    \"预计 0 炉 · 灵石消耗 0 · 0 游戏月\"\n",
+    "location": {
+      "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/source/web/e2e/check-ux31-33.spec.ts",
+      "column": 98,
+      "line": 55
+    }
+  },
+  {
+    "file": "check-ux31-33.spec.ts",
+    "title": "CHECK-UX3133-C2 a budget gate cannot masquerade as a zero forecast and a newly affordable furnace preserves the full original thirty-second transaction",
+    "error": "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('production-estimate').locator('strong')\nExpected substring: \"预算\"\nReceived string:    \"预计 0 炉 · 灵石消耗 0 · 0 游戏月\"\n",
+    "location": {
+      "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/source/web/e2e/check-ux31-33.spec.ts",
+      "column": 152,
+      "line": 63
+    }
+  },
+  {
+    "file": "check-ux31-33.spec.ts",
+    "title": "CHECK-UX3133-C3 a failed original furnace remains the only retry while an unaffordable next draft and readonly sources cannot change its saved authorization",
+    "error": "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('production-estimate').locator('strong')\nExpected substring: \"预算\"\nReceived string:    \"预计 0 炉 · 灵石消耗 0 · 0 游戏月\"\n",
+    "location": {
+      "file": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-ux31-33/baseline/source/web/e2e/check-ux31-33.spec.ts",
+      "column": 183,
+      "line": 72
+    }
+  }
+]
