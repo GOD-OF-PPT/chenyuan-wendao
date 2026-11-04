@@ -138,7 +138,7 @@
     ],
     [
       "'展读经卷 · 查看不入串'",
-      "'查看不入串'"
+      "'仅查看'"
     ],
     [
       "择卷只查看；收入待研卷串与开始研习须另行点击。",
@@ -195,6 +195,10 @@
     [
       "failed:store?.syncIssue?'存档待核对 · 已停卷':'保存待核对 · 请查看上方提示'",
       "failed:store?.syncIssue?'进度待核对':'查看上方提示'"
+    ],
+    [
+      "v-else-if=\"!manual||!mastered\"",
+      "v-else-if=\"!mastered\""
     ]
   ],
   "RelicAtelier.vue": [

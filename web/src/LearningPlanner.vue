@@ -74,7 +74,7 @@ defaults();
 </script>
 <template>
  <section class="idle-preparation learning-planner art10-learning" :class="{'paper':!embedded,'play-catalogue':!embedded}" :data-mode="mode" :data-complete="manualComplete" data-testid="learning-planner" aria-label="玉简研习安排">
-  <header class="preparation-heading art10-study-heading"><small data-testid="preparation-plan-state">{{restart.same&&!conflict?'原已保存安排':manualComplete?originalManual?'已悟记录 · 原安排':'已悟记录 · 可展读':mode==='skills'&&!queue.length?'查看不入串':sameSaved&&planSaved?'已保存安排':running?'下次草案 · 原活动不变':'待确认安排'}}</small><button v-if="mode==='skills'" type="button" class="art10-library-opener" :class="{primary:!pending&&(!skill||game.learned.includes(selected)&&currentSlot===selected)}" data-testid="learning-library-open" @click="openLibrary">翻经架 · 换卷</button></header>
+  <header class="preparation-heading art10-study-heading"><small data-testid="preparation-plan-state">{{restart.same&&!conflict?'原已保存安排':manualComplete?originalManual?'已悟记录 · 原安排':'已悟记录 · 可展读':mode==='skills'&&!queue.length?'仅查看':sameSaved&&planSaved?'已保存安排':running?'下次草案 · 原活动不变':'待确认安排'}}</small><button v-if="mode==='skills'" type="button" class="art10-library-opener" :class="{primary:!pending&&(!skill||game.learned.includes(selected)&&currentSlot===selected)}" data-testid="learning-library-open" @click="openLibrary">翻经架 · 换卷</button></header>
   <div class="preparation-work learning-work art10-study-work">
    <div class="learning-scroll">
     <JadeStudyScene :key="mode" :game="game" :skill-id="selected" :manual="mode==='manual'" :queue="queue" :queue-view="queueView" @remember="rememberQueue" @inspect="focusSkill" @plan="openSettings"><template #description>
