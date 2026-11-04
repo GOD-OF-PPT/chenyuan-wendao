@@ -1,0 +1,54 @@
+{
+  "format": "chenyuan-ux33-comprehensive-additions",
+  "version": 7,
+  "parentVersion": 6,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 851,
+    "signature": "280e7b7eb410950bf16238f8b5ea83552ee55351494b1f703f419b6090e9a47e"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A1 the shared rail keeps real cycle progress and concise controls through pause detail reading and original resume",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A2 aborted keeps one canonical original retry and never confuses an unknown outcome with an uncommitted one",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A2 committed-reply-lost keeps one canonical original retry and never confuses an unknown outcome with an uncommitted one",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A3 local objects point to one full recovery cause while viewing other playfields never replaces the failed source intent",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A4 paid preparation failures retain actual limits without cross-gameplay wording or a fake zero-completion forecast",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A5 a rejected source plan shows its actual reserve gate without a zero-yield plan and does not write anything",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A6 reload and explicit takeover preserve the original remaining allowance without an offline reward or a duplicate clock",
+      "projectName": "chromium"
+    }
+  ]
+}
