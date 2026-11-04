@@ -2226,16 +2226,18 @@ class UX27ContextOwnershipTests(unittest.TestCase):
  def test_ux27_same_size_old_controller_and_callback_edits_are_not_authorized_by_display_evolution(self):
   from art26_inventory import normalize_ux27_equipment
   from art33_inventory import normalize_ux27_app
+  from ux33_inventory import prior_ux33_bytes
   cases=[('App.vue',normalize_ux27_app,'navigationRevision++;','navigationRevision--;'),('App.vue',normalize_ux27_app,'@act="act"','@act="bad"'),('EquipmentPanel.vue',normalize_ux27_equipment,"if(p)section.value=","if(0)section.value="),('EquipmentPanel.vue',normalize_ux27_equipment,"emit('start',$event)","emit('start',null  )")]
   for name,normalize,old,new in cases:
-   source=(ROOT/('web/src/'+name)).read_text();self.assertIn(old,source);self.assertEqual(len(old),len(new))
+   source=prior_ux33_bytes(name,(ROOT/('web/src/'+name)).read_bytes()).decode();self.assertIn(old,source);self.assertEqual(len(old),len(new))
    with self.subTest(path=name,mutation=old),self.assertRaisesRegex(AssertionError,'UX27'):normalize(source.replace(old,new,1))
  def test_ux27_life_scope_report_and_consumer_cannot_be_detached(self):
   from art26_inventory import normalize_ux27_equipment
   from art33_inventory import normalize_ux27_app
+  from ux33_inventory import prior_ux33_bytes
   cases=[('EquipmentPanel.vue',normalize_ux27_equipment,'[props.game.core.runId,section.value]','[props.game.core.runId]'),('App.vue',normalize_ux27_app,"equipmentReading.value.runId===game.value?.core.runId","true"),('App.vue',normalize_ux27_app,'@section="equipmentReading=$event"','@section="equipmentReading=undefined"')]
   for name,normalize,old,new in cases:
-   source=(ROOT/('web/src/'+name)).read_text();self.assertIn(old,source)
+   source=prior_ux33_bytes(name,(ROOT/('web/src/'+name)).read_bytes()).decode();self.assertIn(old,source)
    with self.subTest(path=name,mutation=old),self.assertRaisesRegex(AssertionError,'UX27'):
     normalized=normalize(source.replace(old,new,1));before=(ROOT/('goal-4/evidence/ux27/'+name+'.before.txt')).read_text()
     assert hashlib.sha256(normalized.encode()).hexdigest()==hashlib.sha256(before.encode()).hexdigest(),'UX27 full source fallback proof'

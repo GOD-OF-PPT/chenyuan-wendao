@@ -27,7 +27,8 @@ class UX29PresentationTests(unittest.TestCase):
      with self.subTest(name=name),self.assertRaises(AssertionError):chain(changed)
  def test_forced_allowed_fake_recovery_and_unapproved_message_are_rejected(self):
   for name,edits,normalize,chain,pin in self.cases:
-   current=(ROOT/'web/src'/name).read_text();target='quote.allowed'if name.startswith('RecoveryPlanner')else'one.allowed'
+   current=normalize_ux30(name,(ROOT/'web/src'/name).read_text());target='quote.allowed'if name.startswith('RecoveryPlanner')else'one.allowed'
    self.assertIn(target,current)
    for changed in [current.replace(target,'true',1),current.replace('failure?.message',"'恢复+999'",1)]:
+    self.assertNotEqual(changed,current)
     with self.subTest(name=name),self.assertRaises(AssertionError):chain(changed)

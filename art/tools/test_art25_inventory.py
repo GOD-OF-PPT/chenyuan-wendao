@@ -1,6 +1,7 @@
 import hashlib,json,tempfile,unittest
 from pathlib import Path
 from art25_inventory import validate_art25,LEDGER,FILES,REFS,UNCHANGED,SCENE,normalize_ux26_learning,UX26_LEARNING_BEFORE,UX26_LEARNING_AFTER
+from ux33_inventory import prior_ux33_bytes
 ROOT=Path(__file__).resolve().parents[2]
 class ART25Tests(unittest.TestCase):
  def setUp(self):
@@ -8,7 +9,7 @@ class ART25Tests(unittest.TestCase):
   for key in ['art03','art10','idle-preparation','ta09']:
    name='art/redesign/'+key+'.json';names.add(name);names.update(r['path']for r in json.loads((ROOT/name).read_text())['files'])
   for n in names:
-   p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((ROOT/n).read_bytes())
+   p=self.root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(prior_ux33_bytes(n,(ROOT/n).read_bytes()))
   if(ROOT/'art/redesign/art26.json').exists():
    before=(ROOT/'goal-4/evidence/art26/equipment-panel-before.vue.txt').read_bytes();self.assertEqual(hashlib.sha256(before).hexdigest(),UNCHANGED['web/src/EquipmentPanel.vue']);(self.root/'web/src/EquipmentPanel.vue').write_bytes(before)
  def check(self):return validate_art25(self.root)

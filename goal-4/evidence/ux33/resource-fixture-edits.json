@@ -1,0 +1,23 @@
+[
+  {
+    "file": "art/tools/test_art25_inventory.py",
+    "beforeFile": "goal-4/evidence/ux33/resource-fixture-before/test_art25_inventory.py",
+    "beforeSha256": "a4ea1678f544c04bdebaa7f07e908ecee2c4921df6d8d3e92c9cefbf3d9ee63a",
+    "afterSha256": "f2bb5aefb51b0a44f301e10ec1517bee3e7f67fd0073150ef9e00c9072787b25",
+    "scope": "Historical source preparation before existing mutations; all original rejection assertions and caps retained"
+  },
+  {
+    "file": "art/tools/test_inventory.py",
+    "beforeFile": "goal-4/evidence/ux33/resource-fixture-before/test_inventory.py",
+    "beforeSha256": "53dd524defaa1351776d10d76228898419e5488ba4978f74ba431c00e8e361df",
+    "afterSha256": "953386fb608e9a26181fd964af5e344afa5132723acf57d48ee56a5220da5ffb",
+    "scope": "Historical source preparation before existing mutations; all original rejection assertions and caps retained"
+  },
+  {
+    "file": "art/tools/test_ux29_inventory.py",
+    "beforeFile": "goal-4/evidence/ux33/resource-fixture-before/test_ux29_inventory.py",
+    "beforeSha256": "dad0fe7679c9b73290265b733117b1875d7058811496d18faac1a0ab58915f45",
+    "afterSha256": "ad69e5b24acdab18804ea33c1ec57c4bb1ef326e7b5081b2f6c3c8ea1215d80a",
+    "scope": "Historical source preparation before existing mutations; all original rejection assertions and caps retained"
+  }
+]
