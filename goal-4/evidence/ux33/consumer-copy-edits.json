@@ -1,0 +1,116 @@
+{
+  "productCommit": "4f62d86",
+  "runtime": "85e1ac2eceae597e6b6b0a82d65f5b5f6c2916cdd19f5a33bc690be692171db3",
+  "records": [
+    {
+      "file": "web/e2e/equipment-objects.spec.ts",
+      "beforeFile": "goal-4/evidence/ux33/test-guidance-before/equipment-objects.spec.ts",
+      "beforeSha256": "6b44bb0d0320014ca4c1c49498e921746d62cbdbc35072d1fdfc069a0c130f60",
+      "afterSha256": "78b9e45b3f82faba0c77b116a5c654e0dc5173936d577fc600b16d5a67bcfed8",
+      "edits": [
+        {
+          "before": "getByTestId('equip-reason')).toContainText('核对')",
+          "after": "getByTestId('equip-reason')).toContainText('请先处理存档提示')",
+          "count": 1
+        },
+        {
+          "before": "getByTestId('production-equip-reason')).toContainText('核对')",
+          "after": "getByTestId('production-equip-reason')).toContainText('请先处理上方存档提示')",
+          "count": 1
+        }
+      ],
+      "exactInverse": true
+    },
+    {
+      "file": "web/e2e/check-art-02.spec.ts",
+      "beforeFile": "goal-4/evidence/ux33/test-guidance-before/check-art-02.spec.ts",
+      "beforeSha256": "2c40ebd4fcf4236e81593556b100ee9fbd129fcbde557c201096a0bef031ce85",
+      "afterSha256": "7afebe748c5a5b65ffb5cc0f2c06a0e5e9c02d948031e8bc875718d1bb7d86ba",
+      "edits": [
+        {
+          "before": "getByTestId('equip-reason')).toContainText('核对')",
+          "after": "getByTestId('equip-reason')).toContainText('请先处理存档提示')",
+          "count": 1
+        }
+      ],
+      "exactInverse": true
+    },
+    {
+      "file": "web/e2e/ux26-learning-draft-context.spec.ts",
+      "beforeFile": "goal-4/evidence/ux33/test-guidance-before/ux26-learning-draft-context.spec.ts",
+      "beforeSha256": "f2b200731c31ce715704c0540f6643a4e5825a741eddfcfc53cac1d4007589e4",
+      "afterSha256": "ce5401cb4f31a59cc46cbf826f70a40a98edc0e3431f94e0b7d497efeefea1a3",
+      "edits": [
+        {
+          "before": "'下次草案，当前执行见上方'",
+          "after": "'下次草案 · 原活动不变'",
+          "count": 8
+        },
+        {
+          "before": "'待确认安排，确认后开始'",
+          "after": "'待确认安排'",
+          "count": 3
+        },
+        {
+          "before": "'已保存安排；修改后须重新确认'",
+          "after": "'已保存安排'",
+          "count": 2
+        },
+        {
+          "before": "'展读经卷 · 查看不入串'",
+          "after": "'仅查看'",
+          "count": 2
+        }
+      ],
+      "exactInverse": true
+    },
+    {
+      "file": "web/e2e/ux32-market-copy.spec.ts",
+      "beforeFile": "goal-4/evidence/ux33/test-guidance-before/ux32-market-copy.spec.ts",
+      "beforeSha256": "c761ff2fe52875ad00bf6a2c71f69bb6844100809a32469df037e0bf10e24076",
+      "afterSha256": "e8f4c0e65c7d737075390df9e307af98080aac225d97d9a3bc307ffe0a140885",
+      "edits": [
+        {
+          "before": "getByTestId('preparation-estimate')).toContainText('预算')",
+          "after": "getByTestId('preparation-estimate')).toContainText('本段用石额度不足')",
+          "count": 1
+        }
+      ],
+      "exactInverse": true
+    },
+    {
+      "file": "web/e2e/ux29-recovery-availability.spec.ts",
+      "beforeFile": "goal-4/evidence/ux33/test-guidance-before/ux29-recovery-availability.spec.ts",
+      "beforeSha256": "802f739db722ced0918e0b7bd09e85997c4cbdb48e2ed86f9bf554ff88e59ce9",
+      "afterSha256": "ce0b5daec0cd32f78f71418b99423b0c41be36b4871065f746f86e3de8d9fcb6",
+      "edits": [
+        {
+          "before": "async function unavailable(page:Page,g:any,plan:any){",
+          "after": "async function unavailable(page:Page,g:any,plan:any,displayedReason?:string){",
+          "count": 1
+        },
+        {
+          "before": "expect(q.allowed).toBe(false);await expect(page.getByTestId('preparation-estimate')",
+          "after": "expect(q.allowed).toBe(false);if(displayedReason)expect(q.failure?.code).toBe('INSUFFICIENT_ITEM');await expect(page.getByTestId('preparation-estimate')",
+          "count": 1
+        },
+        {
+          "before": ".toHaveText(q.failure!.message)",
+          "after": ".toHaveText(displayedReason??q.failure!.message)",
+          "count": 2
+        },
+        {
+          "before": "unavailable(page,before,{kind:'use',item,maxCycles:3,targetPercent:100,itemReserve:0})",
+          "after": "unavailable(page,before,{kind:'use',item,maxCycles:3,targetPercent:100,itemReserve:0},item==='healing_pill'?'回春丹不足':'回灵丹不足')",
+          "count": 1
+        },
+        {
+          "before": "unavailable(page,before,{kind:'use',item:'healing_pill',maxCycles:3,targetPercent:100,itemReserve:0})",
+          "after": "unavailable(page,before,{kind:'use',item:'healing_pill',maxCycles:3,targetPercent:100,itemReserve:0},'回春丹不足')",
+          "count": 1
+        }
+      ],
+      "exactInverse": true
+    }
+  ]
+}
