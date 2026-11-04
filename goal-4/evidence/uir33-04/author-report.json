@@ -1,0 +1,458 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "uir33-04-study-notes.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "uir33-04-study-notes.spec.ts",
+      "file": "uir33-04-study-notes.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR33-04-A1 one study book removes parallel queue controls while current equipment and every catalogue remain readable without writes",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4147,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at frame (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:16:254)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:21:325",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts",
+                      "column": 254,
+                      "line": 16
+                    },
+                    "snippet": "  14 |  const g=await page.evaluate(()=>{const root=document.querySelector<HTMLElement>('dialog[open]')??document.querySelector<HTMLElement>('[data-testid=equipment-panel]')!,box=root.getBoundingClientRect(),nav=document.getElementById('primary-navigation')!.getBoundingClientRect();const limit=root.matches('dialog')?innerHeight:nav.top,inside=(r:DOMRect)=>r.left>=box.left-1&&r.right<=box.right+1&&r.top>=box.top-1&&r.bottom<=box.bottom+1&&r.bottom<=limit;\n  15 |  return{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight,overflow:root.scrollHeight>root.clientHeight+1||root.scrollWidth>root.clientWidth+1,controls:[...root.querySelectorAll<HTMLElement>('button,input,select')].filter(n=>n.checkVisibility()).map(n=>{const r=n.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return{text:n.innerText,width:r.width,height:r.height,inside:inside(r),hit:n.matches(':disabled')||hit===n||!!hit&&n.contains(hit)};}),text:[...root.querySelectorAll<HTMLElement>('h3,.learning-object p,.learning-object small,.jade-slots strong,.jade-slots small,.ta09-queue-scrolls strong,.ta09-queue-scrolls small')].filter(n=>n.checkVisibility()).map(n=>{const q=document.createRange();q.selectNodeContents(n);return{text:n.innerText,font:parseFloat(getComputedStyle(n).fontSize),min:n.tagName==='SMALL'?14:18,ink:[...q.getClientRects()].filter(x=>x.width&&x.height).every(inside)};})};});\n> 16 |  await info.attach(name+'-geometry',{body:JSON.stringify(g),contentType:'application/json'});await captureFixedPng(page,info.outputPath(name+'.png'));expect(g.width).toBeLessThanOrEqual(1440);expect(g.height).toBeLessThanOrEqual(900);expect(g.overflow).toBe(false);for(const c of g.controls){expect(c.width,c.text).toBeGreaterThanOrEqual(44);expect(c.height,c.text).toBeGreaterThanOrEqual(44);expect(c.inside,c.text).toBe(true);expect(c.hit,c.text).toBe(true);}for(const t of g.text){expect(t.font,t.text).toBeGreaterThanOrEqual(t.min);expect(t.ink,t.text).toBe(true);}\n     |                                                                                                                                                                                                                                                              ^\n  17 | }\n  18 | async function queued(page:Page){for(const id of ['sword_guard','sword_still','talisman_frost']){await selectLearningSkill(page,id);await page.getByTestId('learn-'+id).click();}await openLearningSettings(page);await page.getByLabel('累计研习灵石预算').fill('777');await page.getByLabel('研习灵石保留量').fill('9');await closeLearningSettings(page);}\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts",
+                        "column": 254,
+                        "line": 16
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  14 |  const g=await page.evaluate(()=>{const root=document.querySelector<HTMLElement>('dialog[open]')??document.querySelector<HTMLElement>('[data-testid=equipment-panel]')!,box=root.getBoundingClientRect(),nav=document.getElementById('primary-navigation')!.getBoundingClientRect();const limit=root.matches('dialog')?innerHeight:nav.top,inside=(r:DOMRect)=>r.left>=box.left-1&&r.right<=box.right+1&&r.top>=box.top-1&&r.bottom<=box.bottom+1&&r.bottom<=limit;\n  15 |  return{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight,overflow:root.scrollHeight>root.clientHeight+1||root.scrollWidth>root.clientWidth+1,controls:[...root.querySelectorAll<HTMLElement>('button,input,select')].filter(n=>n.checkVisibility()).map(n=>{const r=n.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return{text:n.innerText,width:r.width,height:r.height,inside:inside(r),hit:n.matches(':disabled')||hit===n||!!hit&&n.contains(hit)};}),text:[...root.querySelectorAll<HTMLElement>('h3,.learning-object p,.learning-object small,.jade-slots strong,.jade-slots small,.ta09-queue-scrolls strong,.ta09-queue-scrolls small')].filter(n=>n.checkVisibility()).map(n=>{const q=document.createRange();q.selectNodeContents(n);return{text:n.innerText,font:parseFloat(getComputedStyle(n).fontSize),min:n.tagName==='SMALL'?14:18,ink:[...q.getClientRects()].filter(x=>x.width&&x.height).every(inside)};})};});\n> 16 |  await info.attach(name+'-geometry',{body:JSON.stringify(g),contentType:'application/json'});await captureFixedPng(page,info.outputPath(name+'.png'));expect(g.width).toBeLessThanOrEqual(1440);expect(g.height).toBeLessThanOrEqual(900);expect(g.overflow).toBe(false);for(const c of g.controls){expect(c.width,c.text).toBeGreaterThanOrEqual(44);expect(c.height,c.text).toBeGreaterThanOrEqual(44);expect(c.inside,c.text).toBe(true);expect(c.hit,c.text).toBe(true);}for(const t of g.text){expect(t.font,t.text).toBeGreaterThanOrEqual(t.min);expect(t.ink,t.text).toBe(true);}\n     |                                                                                                                                                                                                                                                              ^\n  17 | }\n  18 | async function queued(page:Page){for(const id of ['sword_guard','sword_still','talisman_frost']){await selectLearningSkill(page,id);await page.getByTestId('learn-'+id).click();}await openLearningSettings(page);await page.getByLabel('累计研习灵石预算').fill('777');await page.getByLabel('研习灵石保留量').fill('9');await closeLearningSettings(page);}\n  19 |\n    at frame (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:16:254)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:21:325"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T11:01:56.978Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "current-equipped-main-stage-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwiaGVpZ2h0Ijo5MDAsIm92ZXJmbG93Ijp0cnVlLCJjb250cm9scyI6W3sidGV4dCI6IuS/ruazlSIsIndpZHRoIjo5MiwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IuWKn+azlSIsIndpZHRoIjo5MiwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IuazleWunSIsIndpZHRoIjo5MiwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IuWJkeeugCIsIndpZHRoIjo5MiwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IumFjeijhSIsIndpZHRoIjo5MiwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6Iue/u+e7j+aetiDCtyDmjaLljbciLCJ3aWR0aCI6MTUxLCJoZWlnaHQiOjQ0LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZX0seyJ0ZXh0Ijoi5ZCI566AXG7lj6rmn6XnnIvljbfpnaIiLCJ3aWR0aCI6NTQ5Ljg5MDYyNSwiaGVpZ2h0Ijo0MDkuNzE4NzUsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLmn6XnnIvmraTms5XnrbnlpIciLCJ3aWR0aCI6MTQ0LCJoZWlnaHQiOjQ0LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZX0seyJ0ZXh0Ijoi56CU5Lmg5omL6K6wXG7ljbfkuLIgwrcg5Y6f5a6J5o6SIMK3IOS4ieanvVxu4oC6Iiwid2lkdGgiOjIxOS41NzgxMjUsImhlaWdodCI6NTcuMjgxMjUsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfV0sInRleHQiOlt7InRleHQiOiLpnZLplIvlv4Por4AiLCJmb250IjoyOCwibWluIjoxOCwiaW5rIjp0cnVlfSx7InRleHQiOiLliZHkv64gwrcg5b+D5rOVIMK3IOmcgOeCvOawlCIsImZvbnQiOjE0LCJtaW4iOjE0LCJpbmsiOnRydWV9LHsidGV4dCI6IuWfuuehgOWJkeivgO+8muenr+iThOWJkeaEj++8jOa7oeS4ieWxguWPr+aJk+aWremHjeWHu+OAgiIsImZvbnQiOjE4LCJtaW4iOjE4LCJpbmsiOnRydWV9LHsidGV4dCI6IummluasoeeglOS5oOavj+WNtyAwIOeBteefsyDCtyAzMCDnp5Igwrcg6Z2S5LqR5a6XIiwiZm9udCI6MTQsIm1pbiI6MTQsImluayI6dHJ1ZX0seyJ0ZXh0Ijoi5bey5o6M5o+h77yM5peg6ZyA5YaN5qyh56CU5Lmg77yb5Y+v5Y6f5Zyw5q+U6L6D6YWN6KOFIiwiZm9udCI6MTQsIm1pbiI6MTQsImluayI6dHJ1ZX1dfQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-23b03-ain-readable-without-writes-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-23b03-ain-readable-without-writes-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-23b03-ain-readable-without-writes-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts",
+                    "column": 254,
+                    "line": 16
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4227303f3668b3526b7d-d9d69b0d2fa4efb2dc7a",
+          "file": "uir33-04-study-notes.spec.ts",
+          "line": 105,
+          "column": 1
+        },
+        {
+          "title": "UIR33-04-A2 queue domains pages and nondefault finite limits survive one-dialog transitions and stable return",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9041,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('skill-select-talisman_frost')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('skill-select-talisman_frost')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('skill-select-talisman_frost')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('skill-select-talisman_frost')\u001b[22m\n\n    at revealPaged (/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts:29:994)\n    at selectLearningSkill (/Users/gordon/githome/chenyuan-wendao/web/e2e/stage-support.ts:37:96)\n    at queued (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:18:98)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:27:50",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts",
+                      "column": 994,
+                      "line": 29
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39msupport.ts:29\n\n  27 |  const db=request.result;if(!db.objectStoreNames.contains('full-state')){db.close();resolve(null);return;}\n  28 |  const tx=db.transaction('full-state','readonly'),read=tx.objectStore('full-state').get('activity');read.onsuccess=()=>resolve(read.result??null);read.onerror=()=>reject(read.error);tx.oncomplete=()=>db.close();};}));}\n> 29 | export async function revealPaged(page:Page,id:string,panelId:string,label?:string){const target=page.getByTestId(id),panel=page.getByTestId(panelId);if(id.startsWith('source-')&&C.sources[id.slice(7)]&&await page.getByTestId('source-library-open').isVisible()&&!await page.getByTestId('source-library-dialog').isVisible()){if(await page.getByTestId('source-plan-dialog').isVisible())await page.getByTestId('source-plan-close').click();await page.getByTestId('source-library-open').click();await expect(page.getByTestId('source-library-dialog')).toBeVisible();}if(await target.isVisible()||!await panel.isVisible())return;const pager=label?panel.getByRole('navigation',{name:label+'翻页'}):panel.locator('.catalogue-pager').last();const prev=pager.getByTestId('catalogue-prev'),next=pager.getByTestId('catalogue-next');for(let i=0;i<30&&await prev.isEnabled();i++)await prev.click();for(let i=0;i<30&&!await target.isVisible()&&await next.isEnabled();i++)await next.click();await expect(target).toBeVisible();}\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^\n  30 | export async function revealItem(page:Page,id:string){await revealPaged(page,'item-'+id,'inventory-catalogue');}\n  31 | export async function revealStoryChoice(page:Page,id:string){\n  32 |  if(await page.getByTestId(id).isVisible())return;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts",
+                        "column": 994,
+                        "line": 29
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('skill-select-talisman_frost')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('skill-select-talisman_frost')\u001b[22m\n\n\n   at support.ts:29\n\n  27 |  const db=request.result;if(!db.objectStoreNames.contains('full-state')){db.close();resolve(null);return;}\n  28 |  const tx=db.transaction('full-state','readonly'),read=tx.objectStore('full-state').get('activity');read.onsuccess=()=>resolve(read.result??null);read.onerror=()=>reject(read.error);tx.oncomplete=()=>db.close();};}));}\n> 29 | export async function revealPaged(page:Page,id:string,panelId:string,label?:string){const target=page.getByTestId(id),panel=page.getByTestId(panelId);if(id.startsWith('source-')&&C.sources[id.slice(7)]&&await page.getByTestId('source-library-open').isVisible()&&!await page.getByTestId('source-library-dialog').isVisible()){if(await page.getByTestId('source-plan-dialog').isVisible())await page.getByTestId('source-plan-close').click();await page.getByTestId('source-library-open').click();await expect(page.getByTestId('source-library-dialog')).toBeVisible();}if(await target.isVisible()||!await panel.isVisible())return;const pager=label?panel.getByRole('navigation',{name:label+'翻页'}):panel.locator('.catalogue-pager').last();const prev=pager.getByTestId('catalogue-prev'),next=pager.getByTestId('catalogue-next');for(let i=0;i<30&&await prev.isEnabled();i++)await prev.click();for(let i=0;i<30&&!await target.isVisible()&&await next.isEnabled();i++)await next.click();await expect(target).toBeVisible();}\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^\n  30 | export async function revealItem(page:Page,id:string){await revealPaged(page,'item-'+id,'inventory-catalogue');}\n  31 | export async function revealStoryChoice(page:Page,id:string){\n  32 |  if(await page.getByTestId(id).isVisible())return;\n    at revealPaged (/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts:29:994)\n    at selectLearningSkill (/Users/gordon/githome/chenyuan-wendao/web/e2e/stage-support.ts:37:96)\n    at queued (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:18:98)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:27:50"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T11:02:05.424Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-77c8f-ansitions-and-stable-return-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-77c8f-ansitions-and-stable-return-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-77c8f-ansitions-and-stable-return-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts",
+                    "column": 994,
+                    "line": 29
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4227303f3668b3526b7d-a7ca5be28b4e4abba513",
+          "file": "uir33-04-study-notes.spec.ts",
+          "line": 128,
+          "column": 1
+        },
+        {
+          "title": "UIR33-04-A3 an open original-plan page survives the real thirty-second command and never restarts its clock or changes the next draft",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8770,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('skill-select-talisman_frost')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('skill-select-talisman_frost')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('skill-select-talisman_frost')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('skill-select-talisman_frost')\u001b[22m\n\n    at revealPaged (/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts:29:994)\n    at selectLearningSkill (/Users/gordon/githome/chenyuan-wendao/web/e2e/stage-support.ts:37:96)\n    at queued (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:18:98)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:31:32",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts",
+                      "column": 994,
+                      "line": 29
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39msupport.ts:29\n\n  27 |  const db=request.result;if(!db.objectStoreNames.contains('full-state')){db.close();resolve(null);return;}\n  28 |  const tx=db.transaction('full-state','readonly'),read=tx.objectStore('full-state').get('activity');read.onsuccess=()=>resolve(read.result??null);read.onerror=()=>reject(read.error);tx.oncomplete=()=>db.close();};}));}\n> 29 | export async function revealPaged(page:Page,id:string,panelId:string,label?:string){const target=page.getByTestId(id),panel=page.getByTestId(panelId);if(id.startsWith('source-')&&C.sources[id.slice(7)]&&await page.getByTestId('source-library-open').isVisible()&&!await page.getByTestId('source-library-dialog').isVisible()){if(await page.getByTestId('source-plan-dialog').isVisible())await page.getByTestId('source-plan-close').click();await page.getByTestId('source-library-open').click();await expect(page.getByTestId('source-library-dialog')).toBeVisible();}if(await target.isVisible()||!await panel.isVisible())return;const pager=label?panel.getByRole('navigation',{name:label+'翻页'}):panel.locator('.catalogue-pager').last();const prev=pager.getByTestId('catalogue-prev'),next=pager.getByTestId('catalogue-next');for(let i=0;i<30&&await prev.isEnabled();i++)await prev.click();for(let i=0;i<30&&!await target.isVisible()&&await next.isEnabled();i++)await next.click();await expect(target).toBeVisible();}\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^\n  30 | export async function revealItem(page:Page,id:string){await revealPaged(page,'item-'+id,'inventory-catalogue');}\n  31 | export async function revealStoryChoice(page:Page,id:string){\n  32 |  if(await page.getByTestId(id).isVisible())return;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts",
+                        "column": 994,
+                        "line": 29
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('skill-select-talisman_frost')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('skill-select-talisman_frost')\u001b[22m\n\n\n   at support.ts:29\n\n  27 |  const db=request.result;if(!db.objectStoreNames.contains('full-state')){db.close();resolve(null);return;}\n  28 |  const tx=db.transaction('full-state','readonly'),read=tx.objectStore('full-state').get('activity');read.onsuccess=()=>resolve(read.result??null);read.onerror=()=>reject(read.error);tx.oncomplete=()=>db.close();};}));}\n> 29 | export async function revealPaged(page:Page,id:string,panelId:string,label?:string){const target=page.getByTestId(id),panel=page.getByTestId(panelId);if(id.startsWith('source-')&&C.sources[id.slice(7)]&&await page.getByTestId('source-library-open').isVisible()&&!await page.getByTestId('source-library-dialog').isVisible()){if(await page.getByTestId('source-plan-dialog').isVisible())await page.getByTestId('source-plan-close').click();await page.getByTestId('source-library-open').click();await expect(page.getByTestId('source-library-dialog')).toBeVisible();}if(await target.isVisible()||!await panel.isVisible())return;const pager=label?panel.getByRole('navigation',{name:label+'翻页'}):panel.locator('.catalogue-pager').last();const prev=pager.getByTestId('catalogue-prev'),next=pager.getByTestId('catalogue-next');for(let i=0;i<30&&await prev.isEnabled();i++)await prev.click();for(let i=0;i<30&&!await target.isVisible()&&await next.isEnabled();i++)await next.click();await expect(target).toBeVisible();}\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^\n  30 | export async function revealItem(page:Page,id:string){await revealPaged(page,'item-'+id,'inventory-catalogue');}\n  31 | export async function revealStoryChoice(page:Page,id:string){\n  32 |  if(await page.getByTestId(id).isVisible())return;\n    at revealPaged (/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts:29:994)\n    at selectLearningSkill (/Users/gordon/githome/chenyuan-wendao/web/e2e/stage-support.ts:37:96)\n    at queued (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:18:98)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:31:32"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T11:02:16.757Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-9ffad-k-or-changes-the-next-draft-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-9ffad-k-or-changes-the-next-draft-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-9ffad-k-or-changes-the-next-draft-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts",
+                    "column": 994,
+                    "line": 29
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4227303f3668b3526b7d-2f8e7a6ee091dd0b3a51",
+          "file": "uir33-04-study-notes.spec.ts",
+          "line": 154,
+          "column": 1
+        },
+        {
+          "title": "UIR33-04-A4 original acceptance failure keeps the only retry while study-book inspection and edited limits never change its command",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8538,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('skill-select-talisman_frost')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('skill-select-talisman_frost')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('skill-select-talisman_frost')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('skill-select-talisman_frost')\u001b[22m\n\n    at revealPaged (/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts:29:994)\n    at selectLearningSkill (/Users/gordon/githome/chenyuan-wendao/web/e2e/stage-support.ts:37:96)\n    at queued (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:18:98)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:35:32",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts",
+                      "column": 994,
+                      "line": 29
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39msupport.ts:29\n\n  27 |  const db=request.result;if(!db.objectStoreNames.contains('full-state')){db.close();resolve(null);return;}\n  28 |  const tx=db.transaction('full-state','readonly'),read=tx.objectStore('full-state').get('activity');read.onsuccess=()=>resolve(read.result??null);read.onerror=()=>reject(read.error);tx.oncomplete=()=>db.close();};}));}\n> 29 | export async function revealPaged(page:Page,id:string,panelId:string,label?:string){const target=page.getByTestId(id),panel=page.getByTestId(panelId);if(id.startsWith('source-')&&C.sources[id.slice(7)]&&await page.getByTestId('source-library-open').isVisible()&&!await page.getByTestId('source-library-dialog').isVisible()){if(await page.getByTestId('source-plan-dialog').isVisible())await page.getByTestId('source-plan-close').click();await page.getByTestId('source-library-open').click();await expect(page.getByTestId('source-library-dialog')).toBeVisible();}if(await target.isVisible()||!await panel.isVisible())return;const pager=label?panel.getByRole('navigation',{name:label+'翻页'}):panel.locator('.catalogue-pager').last();const prev=pager.getByTestId('catalogue-prev'),next=pager.getByTestId('catalogue-next');for(let i=0;i<30&&await prev.isEnabled();i++)await prev.click();for(let i=0;i<30&&!await target.isVisible()&&await next.isEnabled();i++)await next.click();await expect(target).toBeVisible();}\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^\n  30 | export async function revealItem(page:Page,id:string){await revealPaged(page,'item-'+id,'inventory-catalogue');}\n  31 | export async function revealStoryChoice(page:Page,id:string){\n  32 |  if(await page.getByTestId(id).isVisible())return;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts",
+                        "column": 994,
+                        "line": 29
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('skill-select-talisman_frost')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('skill-select-talisman_frost')\u001b[22m\n\n\n   at support.ts:29\n\n  27 |  const db=request.result;if(!db.objectStoreNames.contains('full-state')){db.close();resolve(null);return;}\n  28 |  const tx=db.transaction('full-state','readonly'),read=tx.objectStore('full-state').get('activity');read.onsuccess=()=>resolve(read.result??null);read.onerror=()=>reject(read.error);tx.oncomplete=()=>db.close();};}));}\n> 29 | export async function revealPaged(page:Page,id:string,panelId:string,label?:string){const target=page.getByTestId(id),panel=page.getByTestId(panelId);if(id.startsWith('source-')&&C.sources[id.slice(7)]&&await page.getByTestId('source-library-open').isVisible()&&!await page.getByTestId('source-library-dialog').isVisible()){if(await page.getByTestId('source-plan-dialog').isVisible())await page.getByTestId('source-plan-close').click();await page.getByTestId('source-library-open').click();await expect(page.getByTestId('source-library-dialog')).toBeVisible();}if(await target.isVisible()||!await panel.isVisible())return;const pager=label?panel.getByRole('navigation',{name:label+'翻页'}):panel.locator('.catalogue-pager').last();const prev=pager.getByTestId('catalogue-prev'),next=pager.getByTestId('catalogue-next');for(let i=0;i<30&&await prev.isEnabled();i++)await prev.click();for(let i=0;i<30&&!await target.isVisible()&&await next.isEnabled();i++)await next.click();await expect(target).toBeVisible();}\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^\n  30 | export async function revealItem(page:Page,id:string){await revealPaged(page,'item-'+id,'inventory-catalogue');}\n  31 | export async function revealStoryChoice(page:Page,id:string){\n  32 |  if(await page.getByTestId(id).isVisible())return;\n    at revealPaged (/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts:29:994)\n    at selectLearningSkill (/Users/gordon/githome/chenyuan-wendao/web/e2e/stage-support.ts:37:96)\n    at queued (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:18:98)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:35:32"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T11:02:27.547Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-18631-ts-never-change-its-command-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-18631-ts-never-change-its-command-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-18631-ts-never-change-its-command-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/support.ts",
+                    "column": 994,
+                    "line": 29
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4227303f3668b3526b7d-14330eb2377a2608faa9",
+          "file": "uir33-04-study-notes.spec.ts",
+          "line": 192,
+          "column": 1
+        },
+        {
+          "title": "UIR33-04-A5 leaving the study book closes it while shared cultivation notes retain their original complete readonly routes",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3905,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n    at frame (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:16:254)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:39:765",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts",
+                      "column": 254,
+                      "line": 16
+                    },
+                    "snippet": "  14 |  const g=await page.evaluate(()=>{const root=document.querySelector<HTMLElement>('dialog[open]')??document.querySelector<HTMLElement>('[data-testid=equipment-panel]')!,box=root.getBoundingClientRect(),nav=document.getElementById('primary-navigation')!.getBoundingClientRect();const limit=root.matches('dialog')?innerHeight:nav.top,inside=(r:DOMRect)=>r.left>=box.left-1&&r.right<=box.right+1&&r.top>=box.top-1&&r.bottom<=box.bottom+1&&r.bottom<=limit;\n  15 |  return{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight,overflow:root.scrollHeight>root.clientHeight+1||root.scrollWidth>root.clientWidth+1,controls:[...root.querySelectorAll<HTMLElement>('button,input,select')].filter(n=>n.checkVisibility()).map(n=>{const r=n.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return{text:n.innerText,width:r.width,height:r.height,inside:inside(r),hit:n.matches(':disabled')||hit===n||!!hit&&n.contains(hit)};}),text:[...root.querySelectorAll<HTMLElement>('h3,.learning-object p,.learning-object small,.jade-slots strong,.jade-slots small,.ta09-queue-scrolls strong,.ta09-queue-scrolls small')].filter(n=>n.checkVisibility()).map(n=>{const q=document.createRange();q.selectNodeContents(n);return{text:n.innerText,font:parseFloat(getComputedStyle(n).fontSize),min:n.tagName==='SMALL'?14:18,ink:[...q.getClientRects()].filter(x=>x.width&&x.height).every(inside)};})};});\n> 16 |  await info.attach(name+'-geometry',{body:JSON.stringify(g),contentType:'application/json'});await captureFixedPng(page,info.outputPath(name+'.png'));expect(g.width).toBeLessThanOrEqual(1440);expect(g.height).toBeLessThanOrEqual(900);expect(g.overflow).toBe(false);for(const c of g.controls){expect(c.width,c.text).toBeGreaterThanOrEqual(44);expect(c.height,c.text).toBeGreaterThanOrEqual(44);expect(c.inside,c.text).toBe(true);expect(c.hit,c.text).toBe(true);}for(const t of g.text){expect(t.font,t.text).toBeGreaterThanOrEqual(t.min);expect(t.ink,t.text).toBe(true);}\n     |                                                                                                                                                                                                                                                              ^\n  17 | }\n  18 | async function queued(page:Page){for(const id of ['sword_guard','sword_still','talisman_frost']){await selectLearningSkill(page,id);await page.getByTestId('learn-'+id).click();}await openLearningSettings(page);await page.getByLabel('累计研习灵石预算').fill('777');await page.getByLabel('研习灵石保留量').fill('9');await closeLearningSettings(page);}\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts",
+                        "column": 254,
+                        "line": 16
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  14 |  const g=await page.evaluate(()=>{const root=document.querySelector<HTMLElement>('dialog[open]')??document.querySelector<HTMLElement>('[data-testid=equipment-panel]')!,box=root.getBoundingClientRect(),nav=document.getElementById('primary-navigation')!.getBoundingClientRect();const limit=root.matches('dialog')?innerHeight:nav.top,inside=(r:DOMRect)=>r.left>=box.left-1&&r.right<=box.right+1&&r.top>=box.top-1&&r.bottom<=box.bottom+1&&r.bottom<=limit;\n  15 |  return{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight,overflow:root.scrollHeight>root.clientHeight+1||root.scrollWidth>root.clientWidth+1,controls:[...root.querySelectorAll<HTMLElement>('button,input,select')].filter(n=>n.checkVisibility()).map(n=>{const r=n.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return{text:n.innerText,width:r.width,height:r.height,inside:inside(r),hit:n.matches(':disabled')||hit===n||!!hit&&n.contains(hit)};}),text:[...root.querySelectorAll<HTMLElement>('h3,.learning-object p,.learning-object small,.jade-slots strong,.jade-slots small,.ta09-queue-scrolls strong,.ta09-queue-scrolls small')].filter(n=>n.checkVisibility()).map(n=>{const q=document.createRange();q.selectNodeContents(n);return{text:n.innerText,font:parseFloat(getComputedStyle(n).fontSize),min:n.tagName==='SMALL'?14:18,ink:[...q.getClientRects()].filter(x=>x.width&&x.height).every(inside)};})};});\n> 16 |  await info.attach(name+'-geometry',{body:JSON.stringify(g),contentType:'application/json'});await captureFixedPng(page,info.outputPath(name+'.png'));expect(g.width).toBeLessThanOrEqual(1440);expect(g.height).toBeLessThanOrEqual(900);expect(g.overflow).toBe(false);for(const c of g.controls){expect(c.width,c.text).toBeGreaterThanOrEqual(44);expect(c.height,c.text).toBeGreaterThanOrEqual(44);expect(c.inside,c.text).toBe(true);expect(c.hit,c.text).toBe(true);}for(const t of g.text){expect(t.font,t.text).toBeGreaterThanOrEqual(t.min);expect(t.ink,t.text).toBe(true);}\n     |                                                                                                                                                                                                                                                              ^\n  17 | }\n  18 | async function queued(page:Page){for(const id of ['sword_guard','sword_still','talisman_frost']){await selectLearningSkill(page,id);await page.getByTestId('learn-'+id).click();}await openLearningSettings(page);await page.getByLabel('累计研习灵石预算').fill('777');await page.getByLabel('研习灵石保留量').fill('9');await closeLearningSettings(page);}\n  19 |\n    at frame (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:16:254)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:39:765"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T11:02:37.884Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "returned-current-scroll-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwiaGVpZ2h0Ijo5MDAsIm92ZXJmbG93Ijp0cnVlLCJjb250cm9scyI6W3sidGV4dCI6IuS/ruazlSIsIndpZHRoIjo5MiwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IuWKn+azlSIsIndpZHRoIjo5MiwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IuazleWunSIsIndpZHRoIjo5MiwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IuWJkeeugCIsIndpZHRoIjo5MiwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IumFjeijhSIsIndpZHRoIjo5MiwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6Iue/u+e7j+aetiDCtyDmjaLljbciLCJ3aWR0aCI6MTUxLCJoZWlnaHQiOjQ0LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZX0seyJ0ZXh0Ijoi5ZCI566AXG7lj6rmn6XnnIvljbfpnaIiLCJ3aWR0aCI6NTQ5Ljg5MDYyNSwiaGVpZ2h0Ijo0MDkuNzE4NzUsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLmn6XnnIvmraTms5XnrbnlpIciLCJ3aWR0aCI6MTQ0LCJoZWlnaHQiOjQ0LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZX0seyJ0ZXh0Ijoi56CU5Lmg5omL6K6wXG7ljbfkuLIgwrcg5Y6f5a6J5o6SIMK3IOS4ieanvVxu4oC6Iiwid2lkdGgiOjIxOS41NzgxMjUsImhlaWdodCI6NTcuMjgxMjUsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfV0sInRleHQiOlt7InRleHQiOiLpnZLplIvlv4Por4AiLCJmb250IjoyOCwibWluIjoxOCwiaW5rIjp0cnVlfSx7InRleHQiOiLliZHkv64gwrcg5b+D5rOVIMK3IOmcgOeCvOawlCIsImZvbnQiOjE0LCJtaW4iOjE0LCJpbmsiOnRydWV9LHsidGV4dCI6IuWfuuehgOWJkeivgO+8muenr+iThOWJkeaEj++8jOa7oeS4ieWxguWPr+aJk+aWremHjeWHu+OAgiIsImZvbnQiOjE4LCJtaW4iOjE4LCJpbmsiOnRydWV9LHsidGV4dCI6IummluasoeeglOS5oOavj+WNtyAwIOeBteefsyDCtyAzMCDnp5Igwrcg6Z2S5LqR5a6XIiwiZm9udCI6MTQsIm1pbiI6MTQsImluayI6dHJ1ZX0seyJ0ZXh0Ijoi5bey5o6M5o+h77yM5peg6ZyA5YaN5qyh56CU5Lmg77yb5Y+v5Y6f5Zyw5q+U6L6D6YWN6KOFIiwiZm9udCI6MTQsIm1pbiI6MTQsImluayI6dHJ1ZX1dfQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-98395-al-complete-readonly-routes-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-98395-al-complete-readonly-routes-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/author-results/uir33-04-study-notes-UIR33-98395-al-complete-readonly-routes-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts",
+                    "column": 254,
+                    "line": 16
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4227303f3668b3526b7d-71480bf831f9e8663039",
+          "file": "uir33-04-study-notes.spec.ts",
+          "line": 242,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T11:01:55.516Z",
+    "duration": 47211.258,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

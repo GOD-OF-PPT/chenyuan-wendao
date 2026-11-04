@@ -1,4 +1,5 @@
 """Exact local-view wiring; original travel defaults, receipts and caps are retained."""
+from uir33_04_inventory import prior_uir3304_bytes
 import hashlib,json
 from pathlib import Path
 LEDGER='art/redesign/uir33-02.json'
@@ -83,6 +84,7 @@ OPERATIONS={'web/src/AdventurePlanner.vue': [["import JourneyMap from './Journey
 CAPS={'idle-adventure': 45000, 'art02': 45000, 'playable-flow': 60000}
 MARKERS={'AdventurePlanner.vue':'import JourneyLocalAction','ExplorePanel.vue':'@locations="selectMode"','JourneyMap.vue':"'当前所在：'+C.locations[selected].name"}
 def prior_uir3302_bytes(path,raw):
+ raw=prior_uir3304_bytes(path,raw)
  name=Path(path).name
  if name not in FACTS or MARKERS[name].encode() not in raw:return raw
  f=FACTS[name];assert hashlib.sha256(raw).hexdigest()==f['sha256'], 'UIR33-02 current complete parent'

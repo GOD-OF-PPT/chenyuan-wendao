@@ -1,3 +1,4 @@
+import {openStudyNotes,closeStudyNotes} from './stage-support';
 import {test,expect,type Page,type TestInfo,type Browser} from '@playwright/test';
 import type {Game} from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
@@ -22,7 +23,7 @@ async function load(page:Page,game:Game){
  await input.setInputFiles({name:'lawful-check-ta-prefix.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(game))});await expect(page.getByTestId('action-execution')).toBeVisible();await expect(page.getByTestId('action-countdown')).toHaveText('0.6 秒');await page.clock.runFor(599);expect(await database(page)).toEqual(initial);await page.clock.runFor(1);await expect(page.getByTestId('save-status')).toHaveText('已保存');
  const before=await snapshot(page) as Game,expected=structuredClone(game);expected.core.runId=before.core.runId;expected.core.revision=0;if(expected.core.activeEvent)expected.core.activeEvent.instanceId=before.core.runId+':'+expected.core.activeEvent.id;expect(before).toEqual(expected);expect(await activity(page)).toBeNull();return before;
 }
-async function readonlyClick(page:Page,id:string){const before=await snapshot(page),raw=await database(page),a=await activity(page);await page.getByTestId(id).click();expect(await snapshot(page)).toEqual(before);expect(await activity(page)).toEqual(a);expect(await database(page)).toEqual(raw);}
+async function readonlyClick(page:Page,id:string){const before=await snapshot(page),raw=await database(page),a=await activity(page);if(/^(queue-|jade-slot-)/.test(id)||id==='learning-plan-open')await openStudyNotes(page);else await closeStudyNotes(page);await page.getByTestId(id).click();expect(await snapshot(page)).toEqual(before);expect(await activity(page)).toEqual(a);expect(await database(page)).toEqual(raw);}
 async function manual(page:Page){await readonlyClick(page,'hub-skills');await readonlyClick(page,'equipment-mode-manual');await expect(page.getByTestId('sword-manual')).toBeVisible();}
 async function shot(page:Page,info:TestInfo,name:string){await page.screenshot({path:info.outputPath(name+'.png')});}
 async function fresh(browser:Browser,info:TestInfo,name:string,body:(page:Page)=>Promise<void>){

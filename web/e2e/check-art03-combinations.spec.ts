@@ -1,3 +1,4 @@
+import {openStudyNotes,closeStudyNotes} from './stage-support';
 import {answerGameConfirmation} from './game-confirmation-support';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import type {Game} from '../../src/full/types.ts';
@@ -41,7 +42,7 @@ async function saved(page:Page,a:any,before:Game,accepted:any,info:TestInfo,name
 
 async function quota(page:Page,kind:'cycle'|'start'|'configuration'='cycle'){await page.evaluate(kind=>{const w=window as any,put=IDBObjectStore.prototype.put;w.__checkArt03Rejected=[];w.__checkArt03RestorePut=()=>IDBObjectStore.prototype.put=put;IDBObjectStore.prototype.put=function(value:any,key?:IDBValidKey){if(this.transaction.db.name==='chenyuan-playable-v1'&&(kind==='cycle'?this.name==='full-state'&&key==='current':this.name==='full-receipts'&&(kind==='start'?value?.input?.kind==='START':value?.format==='chenyuan-configuration-receipt'))){w.__checkArt03Rejected.push({key,value:structuredClone(value),wall:Date.now()});w.__checkArt03RestorePut();throw new DOMException('CHECK-ART03 native '+kind+' quota fixture','QuotaExceededError');}return put.call(this,value,key!);};},kind);}
 
-async function readonlyClick(page:Page,id:string){const before=await snapshot(page),raw=await database(page),a=await activity(page);await page.getByTestId(id).click();expect(await snapshot(page)).toEqual(before);expect(await activity(page)).toEqual(a);expect(await database(page)).toEqual(raw);}
+async function readonlyClick(page:Page,id:string){const before=await snapshot(page),raw=await database(page),a=await activity(page);if(/^(queue-|jade-slot-)/.test(id)||id==='learning-plan-open')await openStudyNotes(page);else await closeStudyNotes(page);await page.getByTestId(id).click();expect(await snapshot(page)).toEqual(before);expect(await activity(page)).toEqual(a);expect(await database(page)).toEqual(raw);}
 
 async function layoutReady(page:Page){await expect.poll(()=>page.evaluate(()=>{const app=document.querySelector<HTMLElement>('.app-shell'),alerts=app?.querySelector('.stage-alerts');if(!app?.classList.contains('immersive-stage')||!alerts)return true;const h=alerts.getBoundingClientRect().height,known=parseFloat(app.style.getPropertyValue('--notice-height'));return Number.isFinite(known)&&Math.abs(known-(h?h+8:0))<=.5;}),{timeout:8000}).toBe(true);}
 

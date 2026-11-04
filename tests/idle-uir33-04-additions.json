@@ -1,0 +1,42 @@
+{
+  "format": "chenyuan-uir33-04-comprehensive-additions",
+  "version": 11,
+  "parentVersion": 10,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 869,
+    "signature": "b6610db46f9742c9b774c05898c2f9106852eaddaead90551a129e0f647fb662"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir33-04-study-notes.spec.ts",
+      "title": "UIR33-04-A1 one study book removes parallel queue controls while current equipment and every catalogue remain readable without writes",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-04-study-notes.spec.ts",
+      "title": "UIR33-04-A2 queue domains pages and nondefault finite limits survive one-dialog transitions and stable return",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-04-study-notes.spec.ts",
+      "title": "UIR33-04-A3 an open original-plan page survives the real thirty-second command and never restarts its clock or changes the next draft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-04-study-notes.spec.ts",
+      "title": "UIR33-04-A4 original acceptance failure keeps the only retry while study-book inspection and edited limits never change its command",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-04-study-notes.spec.ts",
+      "title": "UIR33-04-A5 leaving the study book closes it while shared cultivation notes retain their original complete readonly routes",
+      "projectName": "chromium"
+    }
+  ]
+}

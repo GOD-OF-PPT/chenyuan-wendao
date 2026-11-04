@@ -258,13 +258,18 @@ test('v10 still requires the exact runtime full recovery and correct suite owner
  assert.throws(()=>inspectIdleDeclarations(10,[broad,native,native],runtime,recovery.report),/Exactly one/);
 });
 
-test('the real outer verifier recognizes v9 and v10 but cannot accept their unexecuted inventories',t=>{
+test('the real outer verifier recognizes v9 v10 and v11 but cannot accept their unexecuted inventories',t=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'chenyuan-local-matrix-'));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
  const save=(name,value)=>{const raw=JSON.stringify(value),file=path.join(dir,name);fs.writeFileSync(file,raw);return{path:name,sha256:createHash('sha256').update(raw).digest('hex')};};
- for(const version of [9,10]){
-  const [broad,recovery,native,normal]=version===9?ongoingDeclarations():localExplorationDeclarations();
+ for(const version of [9,10,11]){
+  const [broad,recovery,native,normal]=version===9?ongoingDeclarations():version===10?localExplorationDeclarations():studyNotesDeclarations();
   const manifest={format:'chenyuan-idle-matrix-inputs',version,runtime,scope:{browser:'chromium',viewport:{width:1440,height:900},fontScale:1},phases:[],declarations:[broad,native,normal].map(d=>({suite:d.suite,report:save(version+'-'+d.suite+'.json',d.report)})),recoveryUIDeclaration:save(version+'-recovery.json',recovery.report)};
   const file=path.join(dir,'manifest.json');fs.writeFileSync(file,JSON.stringify(manifest));assert.throws(()=>verifyIdleMatrixCoverage(file),/Current normal\/UI\/native inventory is incomplete/);
-  for(const invalid of [0,11]){fs.writeFileSync(file,JSON.stringify({...manifest,version:invalid}));assert.throws(()=>verifyIdleMatrixCoverage(file),/Unknown idle matrix version/);}
+  for(const invalid of [0,12]){fs.writeFileSync(file,JSON.stringify({...manifest,version:invalid}));assert.throws(()=>verifyIdleMatrixCoverage(file),/Unknown idle matrix version/);}
  }
 });
+
+function studyNotesDeclarations(){const inventories=localExplorationDeclarations(),extra=JSON.parse(fs.readFileSync(new URL('./idle-uir33-04-additions.json',import.meta.url)));inventories[0].report.suites[0].specs.push(...extra.additions.map(row=>({file:row.file,title:row.title,tests:[{projectName:row.projectName}]})));return inventories;}
+test('v11 retains every previous source case and adds five study-book consumers',()=>{const [broad,recovery,native,normal]=studyNotesDeclarations();assert.equal(inspectIdleDeclarations(11,[broad,native,normal],runtime,recovery.report).length,1316);assert.throws(()=>inspectIdleDeclarations(10,[broad,native,normal],runtime,recovery.report),/Profile declarations/);const [old,r,n,j]=localExplorationDeclarations();assert.equal(inspectIdleDeclarations(10,[old,n,j],runtime,r.report).length,1311);});
+test('v11 refuses missing duplicate renamed and replaced consumers',()=>{for(const mutate of [r=>r.suites[0].specs.pop(),r=>r.suites[0].specs.at(-1).title+=' invented',r=>r.suites[0].specs[0].title+=' replaced',r=>r.suites[0].specs.splice(-1,1,structuredClone(r.suites[0].specs.at(-2)))]){const [b,r,n,j]=studyNotesDeclarations();mutate(b.report);assert.throws(()=>inspectIdleDeclarations(11,[b,n,j],runtime,r.report),/Profile declarations|Profile identities/);}});
+test('v11 keeps exact runtime original recovery and unique suite ownership',()=>{const [b,r,n,j]=studyNotesDeclarations();assert.throws(()=>inspectIdleDeclarations(11,[b,n,j],runtime),/requires the original/);assert.throws(()=>inspectIdleDeclarations(11,[b,n,j],'b'.repeat(64),r.report),/runtime differs/);assert.throws(()=>inspectIdleDeclarations(11,[b,n,n],runtime,r.report),/Exactly one/);});

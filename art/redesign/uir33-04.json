@@ -1,0 +1,26 @@
+{
+  "format": "chenyuan-study-notes-uir33-04",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "maxAddedNativeBytes": 2500,
+  "added": {
+    "path": "web/src/StudyNotes.vue",
+    "bytes": 477,
+    "sha256": "aa386bcdbe90d2d9b0b3acfaabb839f0d209b20dad4f0604d9ccda2953c8db5f"
+  },
+  "sourceReferences": [
+    "docs/decisions/0098-study-hierarchy-uir33-04-contract.md",
+    "goal-4/amendments/2026-11-04-uir33-04-input.md",
+    "goal-4/research/uir33-04-sources.json",
+    "art/redesign/uir33-04-edits.json",
+    "goal-4/evidence/uir33-04/before/web/src/CultivationNotes.vue",
+    "goal-4/evidence/uir33-04/before/web/src/JadeStudyScene.vue",
+    "goal-4/evidence/uir33-04/before/web/src/LearningPlanner.vue"
+  ],
+  "oldLedgers": {
+    "art03": "a2a078e6ee338a17286a6c159767334f26a2698cd5848767932993ad7f124cef",
+    "idle-preparation": "bad1cbd7a8e23cdf505f6e055c6cf75ab4886a009a500f8f041e6ef94c58cf51",
+    "art15": "f93c941d6f799a296b67c1ceec19831cf7c398d2193ba9f3241aa40c404c24ca"
+  }
+}

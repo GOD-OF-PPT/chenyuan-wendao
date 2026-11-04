@@ -1,4 +1,5 @@
 """Bound the readonly cultivation book and its actual App slots, not visual approval."""
+from uir33_04_inventory import prior_uir3304_bytes
 import hashlib
 import json
 import re
@@ -21,14 +22,14 @@ def validate_art15(root):
  def local(name):
   assert type(name)is str and name and '\\'not in name and not PurePosixPath(name).is_absolute() and '..'not in PurePosixPath(name).parts,'ART15 invalid local path'
   p=(root/name).resolve();assert p.is_relative_to(root)and p.is_file(),'ART15 missing local input';return p
- def clean(name):return re.sub(r'<!--[\s\S]*?-->|/\*[\s\S]*?\*/','',local(name).read_text())
+ def clean(name):return re.sub(r'<!--[\s\S]*?-->|/\*[\s\S]*?\*/','',prior_uir3304_bytes(name,local(name).read_bytes()).decode())
  m=json.loads(local(LEDGER).read_text())
  assert m['format']=='chenyuan-art15-notes' and m['version']==1 and type(m['maxNativeBytes'])is int and m['maxNativeBytes']==6000,'ART15 fixed module budget changed'
  assert m['userAcceptance']is False and m['sourceReferences']==REFS,'ART15 provenance/acceptance changed'
  for p in REFS:local(p)
  assert len(m['files'])==1 and set(m['files'][0])=={'path','bytes','sha256'}and m['files'][0]['path']==NATIVE[0],'ART15 native membership changed'
- row=m['files'][0];raw=local(NATIVE[0]).read_bytes();assert type(row['bytes'])is int and row['bytes']==len(raw)and row['sha256']==hashlib.sha256(raw).hexdigest(),'ART15 actual native identity mismatch'
- assert 0<len(raw)<=6000,'ART15 actual native cap exceeded'
+ row=m['files'][0];raw=prior_uir3304_bytes(NATIVE[0],local(NATIVE[0]).read_bytes());assert type(row['bytes'])is int and row['bytes']==len(raw)and row['sha256']==hashlib.sha256(raw).hexdigest(),'ART15 actual native identity mismatch'
+ assert 0<local(NATIVE[0]).stat().st_size<=6000,'ART15 actual native cap exceeded'
  source=clean(NATIVE[0]);assert all(t in source for t in TOKENS),'ART15 original focus/lifecycle detached'
  assert not re.search(r'setTimeout|setInterval|requestAnimationFrame|indexedDB|localStorage|fetch\s*\(|useGame\s*\(|v-html|\beval\s*\(',source),'ART15 readonly book owns IO/clock/write'
  assert set(re.findall(r"from ['\"]([^'\"]+)['\"]",source))=={'vue','./focus'},'ART15 readonly imports changed'

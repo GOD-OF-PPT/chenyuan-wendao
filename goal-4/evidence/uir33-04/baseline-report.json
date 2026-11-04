@@ -1,0 +1,152 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/baseline.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/baseline-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/baseline-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "uir33-04-study-notes.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "uir33-04-study-notes.spec.ts",
+      "file": "uir33-04-study-notes.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR33-04-A1 one study book removes parallel queue controls while current equipment and every catalogue remain readable without writes",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8968,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('study-notes-open')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('study-notes-open')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('study-notes-open')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('study-notes-open')\u001b[22m\n\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:21:108",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts",
+                      "column": 108,
+                      "line": 21
+                    },
+                    "snippet": "  19 |\n  20 | test('UIR33-04-A1 one study book removes parallel queue controls while current equipment and every catalogue remain readable without writes',async({page},info)=>{\n> 21 |  const before=await load(page),raw=await database(page);await expect(page.getByTestId('study-notes-open')).toBeVisible();await expect(page.getByTestId('queue-mode-slots')).not.toBeVisible();await expect(page.locator('.learning-slot')).toHaveCount(0);await expect(page.getByTestId('jade-study-status')).toContainText('静心展读');await frame(page,info,'current-equipped-main-stage');\n     |                                                                                                            ^\n  22 |  await page.getByTestId('study-notes-open').focus();await page.keyboard.press('Enter');await expect(page.getByTestId('study-notes-dialog')).toBeVisible();await expect(page.locator('dialog[open]')).toHaveCount(1);await page.getByTestId('queue-mode-slots').click();await frame(page,info,'three-slots-in-study-book');await page.getByTestId('jade-slot-builder').click();await expect(page.getByTestId('study-notes-dialog')).toBeHidden();await expect(page.getByTestId('study-notes-open')).toBeFocused();expect(await database(page)).toEqual(raw);expect(await snapshot(page)).toEqual(before);\n  23 |  for(const id of ['school','skills','relics','manual','summary'])await expect(page.getByTestId('equipment-mode-'+id)).toBeVisible();\n  24 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts",
+                        "column": 108,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('study-notes-open')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('study-notes-open')\u001b[22m\n\n\n  19 |\n  20 | test('UIR33-04-A1 one study book removes parallel queue controls while current equipment and every catalogue remain readable without writes',async({page},info)=>{\n> 21 |  const before=await load(page),raw=await database(page);await expect(page.getByTestId('study-notes-open')).toBeVisible();await expect(page.getByTestId('queue-mode-slots')).not.toBeVisible();await expect(page.locator('.learning-slot')).toHaveCount(0);await expect(page.getByTestId('jade-study-status')).toContainText('静心展读');await frame(page,info,'current-equipped-main-stage');\n     |                                                                                                            ^\n  22 |  await page.getByTestId('study-notes-open').focus();await page.keyboard.press('Enter');await expect(page.getByTestId('study-notes-dialog')).toBeVisible();await expect(page.locator('dialog[open]')).toHaveCount(1);await page.getByTestId('queue-mode-slots').click();await frame(page,info,'three-slots-in-study-book');await page.getByTestId('jade-slot-builder').click();await expect(page.getByTestId('study-notes-dialog')).toBeHidden();await expect(page.getByTestId('study-notes-open')).toBeFocused();expect(await database(page)).toEqual(raw);expect(await snapshot(page)).toEqual(before);\n  23 |  for(const id of ['school','skills','relics','manual','summary'])await expect(page.getByTestId('equipment-mode-'+id)).toBeVisible();\n  24 | });\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts:21:108"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T10:59:21.966Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/baseline-results/uir33-04-study-notes-UIR33-23b03-ain-readable-without-writes-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/baseline-results/uir33-04-study-notes-UIR33-23b03-ain-readable-without-writes-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/baseline-results/uir33-04-study-notes-UIR33-23b03-ain-readable-without-writes-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-04-study-notes.spec.ts",
+                    "column": 108,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4227303f3668b3526b7d-d9d69b0d2fa4efb2dc7a",
+          "file": "uir33-04-study-notes.spec.ts",
+          "line": 105,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T10:59:20.128Z",
+    "duration": 12998.361,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
