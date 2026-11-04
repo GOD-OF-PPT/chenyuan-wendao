@@ -32,3 +32,5 @@
 干净36475b8的ART15-A4发现新“查看本段安排”继承14px，低于原正文按钮18px门槛；原例保，不放宽断言。新表面改为18px并把新五例按钮字体也加入检查。原91轮继续其自身冻结源至真实终态；修后完整相关文件按新源复验。
 
 旧消费者接续：check-u8仍期待UX33前“本页尚未接管”，只精确适配当前“待接管”；matrix-ui-intent的另排入口改沿修行手记→完整安排，保原草案/全部预算/重排确认/完整Game与回执/ms-1，另核当前主区继续确为primary。整文件原件与逐span逆变换保于本轮证据。原ART06-A18准备读档曾停在“读取中”15秒；沿旧U8C-BOOT-01边界保native unknown，不加等待或删断言，不把后续绿灯称根因修复。
+
+原M03命中辅助函数在新只读路径会检查原生showModal顶层内按钮；其DOM书册祖先不再是实际包含画布，原断言误报cultivation-notes。按MDN showModal顶层语义（本轮实读https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal），祖先检查只在已检查开放dialog自身后结束；原所有对话框内/viewport/44目标/字号/命中/单屏断言保。两红原冻结报告保，完整三例须新源复验，不修改产品布局来迎合无效祖先。

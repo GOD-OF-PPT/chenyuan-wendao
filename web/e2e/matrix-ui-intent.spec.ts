@@ -44,6 +44,7 @@ async function control(locator: Locator) {
       const box = p.getBoundingClientRect(), style = getComputedStyle(p);
       if (style.display !== 'contents' && box.width > 0 && box.height > 0 &&
         (r.left < box.left - 1 || r.right > box.right + 1 || r.top < box.top - 1 || r.bottom > box.bottom + 1)) outside.push(p.id || p.className);
+      if (p instanceof HTMLDialogElement && p.matches(':modal')) break;
     }
     return { height: r.height, width: r.width, font: parseFloat(getComputedStyle(node).fontSize),
       viewport: r.left >= 0 && r.top >= 0 && r.right <= innerWidth && r.bottom <= innerHeight,
