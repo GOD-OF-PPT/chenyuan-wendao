@@ -1,0 +1,41 @@
+{
+  "task": "UIR33-01",
+  "completed": true,
+  "product": "7e8ee5207901c3f8c987be5ce0c438ca6c421fdc",
+  "consumerCommit": "43a5f13",
+  "runtime": "a653bf50adaaf62f0d486350c3c405899e6f38604b5e1c0185bb7b30e5a9ed20",
+  "core": {
+    "session": 18146,
+    "cwd": "artifacts/goal-4/uir33-01/final2/source",
+    "output": "artifacts/goal-4/uir33-01/final2/core",
+    "known": "terminal0:893 Node,642 resource and all10 gates;3765 inputs exact",
+    "exit": 0
+  },
+  "ui": {
+    "session": 10985,
+    "cwd": "artifacts/goal-4/uir33-01/final3/source",
+    "output": "artifacts/goal-4/uir33-01/final3/related-report.json",
+    "declared": 91,
+    "known": "terminal1:89/2, exact; two modal-helper failures superseded only by full3 current-file verification93170 exit0, combined91 with63 unchanged dependency files",
+    "exit": 1
+  },
+  "servers": {
+    "4173": 19915,
+    "56892": 74737
+  },
+  "oldUI": {
+    "session": 29773,
+    "exit": 1,
+    "passed": 86,
+    "failed": 5,
+    "terminal": "artifacts/goal-4/uir33-01/final/related-terminal.json"
+  },
+  "remaining": [],
+  "nextTask": "UIR33-02",
+  "goalActive": true,
+  "previewSmoke": {
+    "session": 70413,
+    "exit": 0,
+    "notAdditionalUniqueCase": true
+  }
+}

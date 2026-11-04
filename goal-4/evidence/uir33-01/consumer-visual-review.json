@@ -1,0 +1,28 @@
+[
+  {
+    "source": "artifacts/goal-4/uir33-01/final4/reviewed-results/matrix-ui-intent-M03-I1-pa-6d89d-rangement-never-replaces-it-chromium/paused-original-continuation.png",
+    "sourceSHA256": "82b74e8638b3c04c8d8f827423eee78afe5eaf084fdb5474fb319cf300fed2c8",
+    "view": "artifacts/goal-4/uir33-01/final4/views/paused-original-continuation.jpg",
+    "viewSHA256": "10104d54dd45879422e81af49fa4ccd33df23022612e533e06633bf1d769bf0f",
+    "size": [
+      1440,
+      900
+    ],
+    "format": "same-size JPEG68",
+    "reviewed": true,
+    "review": "Actually inspected full fixed desktop pixels; primary original continuation and complete next-draft form both readable; no human art acceptance claimed."
+  },
+  {
+    "source": "artifacts/goal-4/uir33-01/final4/reviewed-results/matrix-ui-intent-M03-I2-an-6a62e-ent-starts-one-finite-cycle-chromium/explicit-paused-replacement-draft.png",
+    "sourceSHA256": "fd41b2e63daae7f2f9fd0e03f424fa5a78ff6c0819a591a0f8f62f48b01aa465",
+    "view": "artifacts/goal-4/uir33-01/final4/views/explicit-paused-replacement-draft.jpg",
+    "viewSHA256": "9304cd76690af31ebe20bf1d2cdf113f2990f79ced1bace1323c251c50e0332b",
+    "size": [
+      1440,
+      900
+    ],
+    "format": "same-size JPEG68",
+    "reviewed": true,
+    "review": "Actually inspected full fixed desktop pixels; primary original continuation and complete next-draft form both readable; no human art acceptance claimed."
+  }
+]
