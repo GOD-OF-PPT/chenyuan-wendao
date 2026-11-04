@@ -3,7 +3,7 @@ import hashlib,json,re
 from pathlib import Path
 LEDGER='art/redesign/ux33.json'
 FACTS={'App.vue': {'before': '8487968f775888aed0529e5db8a4a64bb679ff42c93d5e600137b206e6d2ba5e',
-             'after': 'ab88622cb1e5e80b504ae21ad19c9562183a16de6825fd66147259cf8107679c',
+             'after': '8d1b128ef7e927f2df9c869d827030908fbef620962333a06a2969f2b39978fc',
              'bytes': 159582,
              'beforeBytes': 159508,
              'baseline': 'goal-4/evidence/ux33/App.vue.before.txt'},
@@ -84,7 +84,8 @@ OPERATIONS={'App.vue': [["import StageOutcome from './StageOutcome.vue';",
               'v-if="store.canRetry" class="small" data-testid="retry-policy"> '
               '· '
               '重试核对原操作，不重复结算。</span></p><p>{{recoveryMessage(store.error,store.canRetry)}}</p>'],
-             ['>重试本次操作</button>', '>重试原操作</button>']],
+             ['>重试本次操作</button>', '>重试原操作</button>'],
+             ['本段活动已安排；可在上方暂停或查看成果。', '本段活动已保存；可在上方查看进度与安排。']],
  'TrainingActivity.vue': [["const status=computed(()=>takeover.value?'已保存 · "
                            "本页尚未接管':props.store.activityPausing?'正在暂停':runtime.value?.phase==='saving'?'本轮保存中':runtime.value?(a.value?.version===1?'吐纳进行中':view.value?.noun+'进行中'):a.value?.status==='paused'?view.value?.noun+'已暂停':a.value?.status==='stopped'?'此段活动已结束':'已保存活动安排');",
                            'const '
@@ -230,7 +231,7 @@ MANIFEST={'format': 'chenyuan-shared-status-ux33',
  'newCSSBytes': 0,
  'files': [{'path': 'web/src/App.vue',
             'bytes': 159582,
-            'sha256': 'ab88622cb1e5e80b504ae21ad19c9562183a16de6825fd66147259cf8107679c'},
+            'sha256': '8d1b128ef7e927f2df9c869d827030908fbef620962333a06a2969f2b39978fc'},
            {'path': 'web/src/TrainingActivity.vue',
             'bytes': 7716,
             'sha256': 'cf52d3aa3d5063585ac52dd4b0eb1ff8afc46d088c911ed6b5939ce6601e544c'},
