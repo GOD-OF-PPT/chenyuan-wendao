@@ -1,0 +1,156 @@
+[
+  {
+    "source": "artifacts/goal-4/uir33-04/final/related-results/uir33-04-study-notes-UIR33-18631-ts-never-change-its-command-chromium/failed-start-readonly-slots.png",
+    "sha256": "e9b321b2488cc433e21b44c47000037d802f9f313fbb7c5e68e53ffe135a9a82",
+    "prior": {
+      "source": "artifacts/goal-4/uir33-04/author2-results/uir33-04-study-notes-UIR33-18631-ts-never-change-its-command-chromium/failed-start-readonly-slots.png",
+      "sha256": "c4c1f07a24ed776c48b1cf956601af5c4581e4f2e52f37a13717c13edff74d70",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/views2/failed-start-readonly-slots.jpg",
+      "viewSHA256": "09976bb9926d0c49acdab30dfd1df6c9a6740f1cf923d320c22701f808336d11",
+      "size": [
+        1440,
+        900
+      ],
+      "format": "same-size JPEG68",
+      "reviewed": false
+    },
+    "samePNG": false,
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final/views/failed-start-readonly-slots.jpg",
+    "viewSHA256": "edcc9044e4caeac0dc2d1e80a6c802825617bf3b3f4bd37dfba7d8fb9219c89d",
+    "format": "same1440x900 JPEG68; original PNG retained",
+    "reviewed": true,
+    "scope": "fresh fixed1440x900 pixels inspected; no overall art or human acceptance claim"
+  },
+  {
+    "source": "artifacts/goal-4/uir33-04/final/related-results/uir33-04-study-notes-UIR33-23b03-ain-readable-without-writes-chromium/current-equipped-main-stage.png",
+    "sha256": "fa917aea4790b2e0d2eeb21971f5cf3e2c517eeb1d0e095e95005dae4dd972c5",
+    "prior": {
+      "source": "artifacts/goal-4/uir33-04/author2-results/uir33-04-study-notes-UIR33-23b03-ain-readable-without-writes-chromium/current-equipped-main-stage.png",
+      "sha256": "fa917aea4790b2e0d2eeb21971f5cf3e2c517eeb1d0e095e95005dae4dd972c5",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/views2/current-equipped-main-stage.jpg",
+      "viewSHA256": "8244c643fb31d4d1c2cc3ab7c7e2d310dd39cf67f0b88beb01637fe2f739f144",
+      "size": [
+        1440,
+        900
+      ],
+      "format": "same-size JPEG68",
+      "reviewed": false
+    },
+    "samePNG": true,
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final/views/current-equipped-main-stage.jpg",
+    "viewSHA256": "8244c643fb31d4d1c2cc3ab7c7e2d310dd39cf67f0b88beb01637fe2f739f144",
+    "format": "same1440x900 JPEG68; original PNG retained",
+    "reviewed": true,
+    "scope": "fresh fixed1440x900 pixels inspected; no overall art or human acceptance claim"
+  },
+  {
+    "source": "artifacts/goal-4/uir33-04/final/related-results/uir33-04-study-notes-UIR33-23b03-ain-readable-without-writes-chromium/three-slots-in-study-book.png",
+    "sha256": "812973c6748b3cdad516ea82a3fa7b29ab17c6c09033c4cb129145e0955aae04",
+    "prior": {
+      "source": "artifacts/goal-4/uir33-04/author2-results/uir33-04-study-notes-UIR33-23b03-ain-readable-without-writes-chromium/three-slots-in-study-book.png",
+      "sha256": "6db2d3785c88ebdee5933360b860e33a806020059d3398756e216dfa7818b4c2",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/views2/three-slots-in-study-book.jpg",
+      "viewSHA256": "f974e2af12f96ff784075eef3fba5d03ac76fbd38b8bffb08ef5eb5661ca230e",
+      "size": [
+        1440,
+        900
+      ],
+      "format": "same-size JPEG68",
+      "reviewed": false
+    },
+    "samePNG": false,
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final/views/three-slots-in-study-book.jpg",
+    "viewSHA256": "28e241f00ad75610e5b489a3ceeb18e8e0222225cc2d8a501ef4128863fa410e",
+    "format": "same1440x900 JPEG68; original PNG retained",
+    "reviewed": true,
+    "scope": "fresh fixed1440x900 pixels inspected; no overall art or human acceptance claim"
+  },
+  {
+    "source": "artifacts/goal-4/uir33-04/final/related-results/uir33-04-study-notes-UIR33-77c8f-ansitions-and-stable-return-chromium/complete-finite-budget.png",
+    "sha256": "42f5c70634f38fa5422cdb1b5c0f250f5f43e40a3d4c108e7f8342d333073ceb",
+    "prior": {
+      "source": "artifacts/goal-4/uir33-04/author2-results/uir33-04-study-notes-UIR33-77c8f-ansitions-and-stable-return-chromium/complete-finite-budget.png",
+      "sha256": "33ddeb4f0ebbedb3acfe8dc7450ba3c8ecc2a4bdf4d108b9d24860f2a431593f",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/views2/complete-finite-budget.jpg",
+      "viewSHA256": "848d889bdf39ae15f2d46bd760da57ccd6e57dd9d32fa47b3549a1f6a2f9c750",
+      "size": [
+        1440,
+        900
+      ],
+      "format": "same-size JPEG68",
+      "reviewed": false
+    },
+    "samePNG": false,
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final/views/complete-finite-budget.jpg",
+    "viewSHA256": "6a63aa37f3c5252c1118e0423f3ce6657f25ef37bdf5bacfc67005e960361071",
+    "format": "same1440x900 JPEG68; original PNG retained",
+    "reviewed": true,
+    "scope": "fresh fixed1440x900 pixels inspected; no overall art or human acceptance claim"
+  },
+  {
+    "source": "artifacts/goal-4/uir33-04/final/related-results/uir33-04-study-notes-UIR33-77c8f-ansitions-and-stable-return-chromium/draft-page-two.png",
+    "sha256": "5ea4dad6c5cd300e722c504d0b1f0e8ec21acbe010abb5cf2cd08e959612edf4",
+    "prior": {
+      "source": "artifacts/goal-4/uir33-04/author2-results/uir33-04-study-notes-UIR33-77c8f-ansitions-and-stable-return-chromium/draft-page-two.png",
+      "sha256": "452191390c74889d2f38550af3c1abee1aaccdb040e13e3830a116c99daa5275",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/views2/draft-page-two.jpg",
+      "viewSHA256": "bf9064c71fe0dc6e0206f6036e6cf0a0bb2ec1d203c5d58067c50a39fb44c34e",
+      "size": [
+        1440,
+        900
+      ],
+      "format": "same-size JPEG68",
+      "reviewed": false
+    },
+    "samePNG": false,
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final/views/draft-page-two.jpg",
+    "viewSHA256": "4994a981e3e16d4f83703622d13155d86f8211c1d7d774ded7cea25192c6a59e",
+    "format": "same1440x900 JPEG68; original PNG retained",
+    "reviewed": true,
+    "scope": "fresh fixed1440x900 pixels inspected; no overall art or human acceptance claim"
+  },
+  {
+    "source": "artifacts/goal-4/uir33-04/final/related-results/uir33-04-study-notes-UIR33-98395-al-complete-readonly-routes-chromium/returned-current-scroll.png",
+    "sha256": "55cb174e4ac6a979294e4d5c7d3f48936bcd3b077197ae34c127dbec17e0efa7",
+    "prior": {
+      "source": "artifacts/goal-4/uir33-04/author2-results/uir33-04-study-notes-UIR33-98395-al-complete-readonly-routes-chromium/returned-current-scroll.png",
+      "sha256": "68815e66fef422b09cc07a7b3eaf82da9c1452124787a5ff7c2f30fe3b1fced3",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/views2/returned-current-scroll.jpg",
+      "viewSHA256": "7e78aeaca12f816888869a5517e24460b35bf40769726a9fdb78963bdab2cd68",
+      "size": [
+        1440,
+        900
+      ],
+      "format": "same-size JPEG68",
+      "reviewed": false
+    },
+    "samePNG": false,
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final/views/returned-current-scroll.jpg",
+    "viewSHA256": "24030980bae2422f5bf0ce0a01f0f8a1eadd031c32206de2695e69b1578af625",
+    "format": "same1440x900 JPEG68; original PNG retained",
+    "reviewed": true,
+    "scope": "fresh fixed1440x900 pixels inspected; no overall art or human acceptance claim"
+  },
+  {
+    "source": "artifacts/goal-4/uir33-04/final/related-results/uir33-04-study-notes-UIR33-9ffad-k-or-changes-the-next-draft-chromium/reading-original-plan-during-next-cycle.png",
+    "sha256": "81e28a5deaf9115a8f000531a5fd651c052aeb1ba035d78c261695c5fea8ff5c",
+    "prior": {
+      "source": "artifacts/goal-4/uir33-04/author2-results/uir33-04-study-notes-UIR33-9ffad-k-or-changes-the-next-draft-chromium/reading-original-plan-during-next-cycle.png",
+      "sha256": "4dce408366b5f708ce47066d845637c2512eadfeb6a3d8376a964aac6e0a275a",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/views2/reading-original-plan-during-next-cycle.jpg",
+      "viewSHA256": "5ca1a40d3d8e8b4fa31c8dbb7b8d18233f780891a10f498f2d21509212c4de32",
+      "size": [
+        1440,
+        900
+      ],
+      "format": "same-size JPEG68",
+      "reviewed": false
+    },
+    "samePNG": false,
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final/views/reading-original-plan-during-next-cycle.jpg",
+    "viewSHA256": "6ebc2d62339733a5d8c76c0c6ac23d7ebec5167a78a1de968e99ea32adc609c2",
+    "format": "same1440x900 JPEG68; original PNG retained",
+    "reviewed": true,
+    "scope": "fresh fixed1440x900 pixels inspected; no overall art or human acceptance claim"
+  }
+]

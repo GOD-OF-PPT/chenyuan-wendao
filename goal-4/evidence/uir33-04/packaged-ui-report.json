@@ -1,0 +1,188 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final2/preview.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final2/source/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": {},
+    "maxFailures": 0,
+    "metadata": {
+      "chenyuan": {
+        "head": "9cac5a61b9fbbda8b658ce2618c327c6c0278306",
+        "source": "9cac5a61b9fbbda8b658ce2618c327c6c0278306",
+        "tree": "86ffdfeb24c96f4e7e5fa4b10b05260fd8b5ed30",
+        "dirty": false,
+        "node": "v24.22.1",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigest": "758e340d7d71c0caf91e289cd77c895a8da8a2abbf04f690529e0501daccbeab",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final2/preview-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final2/preview-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "chenyuan": {
+            "head": "9cac5a61b9fbbda8b658ce2618c327c6c0278306",
+            "source": "9cac5a61b9fbbda8b658ce2618c327c6c0278306",
+            "tree": "86ffdfeb24c96f4e7e5fa4b10b05260fd8b5ed30",
+            "dirty": false,
+            "node": "v24.22.1",
+            "npm": "8.11.0",
+            "npmOnPath": "8.11.0"
+          },
+          "runtimeDigest": "758e340d7d71c0caf91e289cd77c895a8da8a2abbf04f690529e0501daccbeab",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/final2/source/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "uir33-04-study-notes.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "uir33-04-study-notes.spec.ts",
+      "file": "uir33-04-study-notes.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR33-04-A1 one study book removes parallel queue controls while current equipment and every catalogue remain readable without writes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3498,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T12:16:14.081Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "current-equipped-main-stage-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwiaGVpZ2h0Ijo5MDAsIm92ZXJmbG93IjpmYWxzZSwiY29udHJvbHMiOlt7InRleHQiOiLkv67ms5UiLCJ3aWR0aCI6OTIsImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLlip/ms5UiLCJ3aWR0aCI6OTIsImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLms5Xlrp0iLCJ3aWR0aCI6OTIsImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLliZHnroAiLCJ3aWR0aCI6OTIsImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLphY3oo4UiLCJ3aWR0aCI6OTIsImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLnv7vnu4/mnrYgwrcg5o2i5Y23Iiwid2lkdGgiOjE1MSwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IuWQiOeugFxu5Y+q5p+l55yL5Y236Z2iIiwid2lkdGgiOjU0OS44OTA2MjUsImhlaWdodCI6NDA5LjcxODc1LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZX0seyJ0ZXh0Ijoi5p+l55yL5q2k5rOV56255aSHIiwid2lkdGgiOjE0NCwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IueglOS5oOaJi+iusFxu5Y235LiyIMK3IOWOn+WuieaOkiDCtyDkuInmp71cbuKAuiIsIndpZHRoIjoyMTkuNTc4MTI1LCJoZWlnaHQiOjU3LjI4MTI1LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZX1dLCJ0ZXh0IjpbeyJ0ZXh0Ijoi6Z2S6ZSL5b+D6K+AIiwiZm9udCI6MjgsIm1pbiI6MTgsImluayI6dHJ1ZX0seyJ0ZXh0Ijoi5YmR5L+uIMK3IOW/g+azlSDCtyDpnIDngrzmsJQiLCJmb250IjoxNCwibWluIjoxNCwiaW5rIjp0cnVlfSx7InRleHQiOiLln7rnoYDliZHor4DvvJrnp6/ok4TliZHmhI/vvIzmu6HkuInlsYLlj6/miZPmlq3ph43lh7vjgIIiLCJmb250IjoxOCwibWluIjoxOCwiaW5rIjp0cnVlfSx7InRleHQiOiLpppbmrKHnoJTkuaDmr4/ljbcgMCDngbXnn7MgwrcgMzAg56eSIMK3IOmdkuS6keWulyIsImZvbnQiOjE0LCJtaW4iOjE0LCJpbmsiOnRydWV9LHsidGV4dCI6IuW3suaOjOaPoe+8jOaXoOmcgOWGjeasoeeglOS5oO+8m+WPr+WOn+WcsOavlOi+g+mFjeijhSIsImZvbnQiOjE0LCJtaW4iOjE0LCJpbmsiOnRydWV9LHsidGV4dCI6IumdmeW/g+WxleivuyIsImZvbnQiOjE4LCJtaW4iOjE4LCJpbmsiOnRydWV9LHsidGV4dCI6IueglOS5oOaJi+iusCIsImZvbnQiOjE4LCJtaW4iOjE4LCJpbmsiOnRydWV9LHsidGV4dCI6IuWNt+S4siDCtyDljp/lronmjpIgwrcg5LiJ5qe9IiwiZm9udCI6MTQsIm1pbiI6MTQsImluayI6dHJ1ZX1dfQ=="
+                    },
+                    {
+                      "name": "three-slots-in-study-book-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwiaGVpZ2h0Ijo5MDAsIm92ZXJmbG93IjpmYWxzZSwiY29udHJvbHMiOlt7InRleHQiOiLlkIjkuIrmiYvorrAiLCJ3aWR0aCI6OTgsImhlaWdodCI6NDQuMDkzNzUsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLljp/lronmjpIgMCDljbciLCJ3aWR0aCI6MTAzLjQ1MzEyNSwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IuS4i+asoeiNieahiCAwIOWNtyIsIndpZHRoIjoxMjEuNDUzMTI1LCJoZWlnaHQiOjQ0LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZX0seyJ0ZXh0Ijoi5b2T5YmN5LiJ5qe9Iiwid2lkdGgiOjg2LCJoZWlnaHQiOjQ0LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZX0seyJ0ZXh0Ijoi5a6a5Y23IMK3IOWujOaVtOWuieaOkiIsIndpZHRoIjoxNDksImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLlv4Pms5VcbumdkumUi+W/g+ivgFxu4peHIiwid2lkdGgiOjI5MS4zMjgxMjUsImhlaWdodCI6NjYuNjg3NSwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6Iui1t+aJi1xu6Z2S6ZSL6LW35Yq/XG7il4ciLCJ3aWR0aCI6MjkxLjMyODEyNSwiaGVpZ2h0Ijo2Ni42ODc1LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZX0seyJ0ZXh0Ijoi57uI57uTXG7mg4rpuL/mlqlcbuKXhyIsIndpZHRoIjoyOTEuMzQzNzUsImhlaWdodCI6NjYuNjg3NSwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9XSwidGV4dCI6W3sidGV4dCI6IueglOS5oOaJi+iusCIsImZvbnQiOjI2LCJtaW4iOjE4LCJpbmsiOnRydWV9LHsidGV4dCI6IuW/g+azlSIsImZvbnQiOjE0LCJtaW4iOjE0LCJpbmsiOnRydWV9LHsidGV4dCI6IumdkumUi+W/g+ivgCIsImZvbnQiOjE4LCJtaW4iOjE4LCJpbmsiOnRydWV9LHsidGV4dCI6Iui1t+aJiyIsImZvbnQiOjE0LCJtaW4iOjE0LCJpbmsiOnRydWV9LHsidGV4dCI6IumdkumUi+i1t+WKvyIsImZvbnQiOjE4LCJtaW4iOjE4LCJpbmsiOnRydWV9LHsidGV4dCI6Iue7iOe7kyIsImZvbnQiOjE0LCJtaW4iOjE0LCJpbmsiOnRydWV9LHsidGV4dCI6IuaDium4v+aWqSIsImZvbnQiOjE4LCJtaW4iOjE4LCJpbmsiOnRydWV9XX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4227303f3668b3526b7d-d9d69b0d2fa4efb2dc7a",
+          "file": "uir33-04-study-notes.spec.ts",
+          "line": 109,
+          "column": 1
+        },
+        {
+          "title": "UIR33-04-A2 queue domains pages and nondefault finite limits survive one-dialog transitions and stable return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6386,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-04T12:16:18.308Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "draft-page-two-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwiaGVpZ2h0Ijo5MDAsIm92ZXJmbG93IjpmYWxzZSwiY29udHJvbHMiOlt7InRleHQiOiLlkIjkuIrmiYvorrAiLCJ3aWR0aCI6OTgsImhlaWdodCI6NDQuMDkzNzUsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLljp/lronmjpIgMCDljbciLCJ3aWR0aCI6MTAzLjQ1MzEyNSwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IuS4i+asoeiNieahiCAzIOWNtyIsIndpZHRoIjoxMjEuNDUzMTI1LCJoZWlnaHQiOjQ0LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZX0seyJ0ZXh0Ijoi5b2T5YmN5LiJ5qe9Iiwid2lkdGgiOjg2LCJoZWlnaHQiOjQ0LCJpbnNpZGUiOnRydWUsImhpdCI6dHJ1ZX0seyJ0ZXh0Ijoi5a6a5Y23IMK3IOWujOaVtOWuieaOkiIsIndpZHRoIjoxNDksImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLkuIrpobUiLCJ3aWR0aCI6NDQsImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLlr5LpnJznrKZcbuiNieahiOW+heehruiupCIsIndpZHRoIjozODYsImhlaWdodCI6NjAuNjg3NSwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9LHsidGV4dCI6IuS4i+mhtSIsIndpZHRoIjo0NCwiaGVpZ2h0Ijo0NCwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9XSwidGV4dCI6W3sidGV4dCI6IueglOS5oOaJi+iusCIsImZvbnQiOjI2LCJtaW4iOjE4LCJpbmsiOnRydWV9LHsidGV4dCI6IuWvkumcnOespiIsImZvbnQiOjE4LCJtaW4iOjE4LCJpbmsiOnRydWV9LHsidGV4dCI6IuiNieahiOW+heehruiupCIsImZvbnQiOjE0LCJtaW4iOjE0LCJpbmsiOnRydWV9XX0="
+                    },
+                    {
+                      "name": "complete-finite-budget-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ3aWR0aCI6MTQ0MCwiaGVpZ2h0Ijo5MDAsIm92ZXJmbG93IjpmYWxzZSwiY29udHJvbHMiOlt7InRleHQiOiLnp7vpmaQiLCJ3aWR0aCI6NTgsImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLkuIrkuIDpobUiLCJ3aWR0aCI6NzYsImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLkuIvkuIDpobUiLCJ3aWR0aCI6NzYsImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiIiLCJ3aWR0aCI6ODgsImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiIiLCJ3aWR0aCI6ODgsImhlaWdodCI6NDQsImluc2lkZSI6dHJ1ZSwiaGl0Ijp0cnVlfSx7InRleHQiOiLlrozmiJDosIPmlbQgwrcg6L+U5Zue57uP5Y23Iiwid2lkdGgiOjIxNywiaGVpZ2h0Ijo0OC4wOTM3NSwiaW5zaWRlIjp0cnVlLCJoaXQiOnRydWV9XSwidGV4dCI6W3sidGV4dCI6IuacrOauteeglOS5oCDCtyDmnInpmZDlronmjpIiLCJmb250IjoyOCwibWluIjoxOCwiaW5rIjp0cnVlfV19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4227303f3668b3526b7d-a7ca5be28b4e4abba513",
+          "file": "uir33-04-study-notes.spec.ts",
+          "line": 132,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-04T12:16:10.949Z",
+    "duration": 13910.409000000001,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

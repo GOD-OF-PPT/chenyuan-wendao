@@ -1,6 +1,6 @@
 {
   "task": "UIR33-04",
-  "completed": false,
+  "completed": true,
   "candidate": "eccada9",
   "coreSession": 27463,
   "source": "artifacts/goal-4/uir33-04/final/source",
@@ -12,5 +12,12 @@
   "uiSession": 73024,
   "uiStatus": "95 in frozen eccada9; currently past53, five known public-view consumer failures; root adaptations pending complete-file rerun",
   "testServerSession": 87278,
-  "previewSession": 74511
+  "previewSession": 74511,
+  "delivery": "review.md",
+  "uiCompositePassed": 95,
+  "consumersSession": 97763,
+  "consumersExit": 0,
+  "previewCheckSession": 15209,
+  "previewCheckExit": 0,
+  "goalActive": true
 }

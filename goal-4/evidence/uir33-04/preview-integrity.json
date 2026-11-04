@@ -1,0 +1,22 @@
+{
+  "archive": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/uir33-04-preview-eccada9.zip",
+  "archiveSha256": "880c9026caac9c8210ff94614bbe50875450730dc314b54e07906a0f13c8d11a",
+  "archiveBytes": 10125924,
+  "unpacked": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-04/preview-unpacked-eccada9",
+  "runtime": "758e340d7d71c0caf91e289cd77c895a8da8a2abbf04f690529e0501daccbeab",
+  "buildSource": {
+    "head": "eccada910ce3ac9029faeacc7ca6ac44806c34b3",
+    "source": "eccada910ce3ac9029faeacc7ca6ac44806c34b3",
+    "tree": "41c10133cb888a69f5b3f7f0289837666831466f",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtimeFiles": 112,
+  "runtimeBytes": 11215952,
+  "allArchiveAndExtractedBytesMatch": true,
+  "containsPlayerSave": false,
+  "containsFonts": false,
+  "scope": "Independent local engineering preview, not final candidate or human acceptance."
+}
