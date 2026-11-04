@@ -212,7 +212,7 @@
     ],
     [
       "quote?.failure?'暂不可安排：'+quote.failure.message:quote?.stopReason?'预计停止：'+quote.stopReason.message:''",
-      "!quote?.failure&&quote?.stopReason?'预计停止：'+quote.stopReason.message:''"
+      "!quote?.failure && quote?.stopReason?'预计停止：'+quote.stopReason.message:''"
     ],
     [
       "<template v-if=\"cycles==='target'\"> · 按完整一轮结算",
