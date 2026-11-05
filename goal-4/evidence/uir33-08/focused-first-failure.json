@@ -1,0 +1,8 @@
+{
+  "source": "683fe2e",
+  "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8",
+  "result": "2 passed, 1 failed",
+  "failure": "new A1 expected unchanged five-cycle budget10 after changing target3; actual existing1 pill means2 cycles and budget4",
+  "repair": "consumer computes finite authorised amount from original actual inventory, exact budget assertion retained",
+  "remainingAssertions": "unchanged focus/full fields/fullDB/formal receipt/ms-1"
+}
