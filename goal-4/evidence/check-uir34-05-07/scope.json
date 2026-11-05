@@ -1,0 +1,276 @@
+{
+  "files": [
+    "uir34-05-trial-life-focus.spec.ts",
+    "idle-recovery-choices.spec.ts",
+    "ux20-trial-guidance.spec.ts",
+    "art32-milestone-stage.spec.ts",
+    "idle-milestones.spec.ts",
+    "matrix-ui-cancel.spec.ts",
+    "narrative-objects.spec.ts",
+    "art31-life-scroll.spec.ts",
+    "matrix-ui-milestone-feedback.spec.ts",
+    "art12-narrative-stage.spec.ts",
+    "check-matrix-keyboard.spec.ts",
+    "ux22-help-wayfinding.spec.ts",
+    "check-art30-32.spec.ts",
+    "cultivation-objects.spec.ts",
+    "art18-dialog-gallery.spec.ts",
+    "ux20-trial-reading.spec.ts",
+    "ux21-trial-return.spec.ts",
+    "art18-dialog-controls.spec.ts",
+    "check-art18-ux.spec.ts",
+    "uir34-06-character-folio.spec.ts",
+    "stage-r1.spec.ts",
+    "stage-r2.spec.ts",
+    "stage-check.spec.ts",
+    "stage-r4.spec.ts",
+    "check-ta-03.spec.ts",
+    "matrix-ui-boundaries.spec.ts",
+    "stage-u8-b.spec.ts",
+    "idle-adventure.spec.ts",
+    "ux23-sealed-life.spec.ts",
+    "uir34-07-fate-clarity.spec.ts",
+    "art30-npc-meeting.spec.ts",
+    "uir34-02-finite-focus.spec.ts",
+    "check-uir34-05-07.spec.ts"
+  ],
+  "grepInvert": "ART32-A3 |ART12-A8 |ART18-E9 system-reduction|ART31-A5 |ART05-A13 |ART06-A15 |CHECK-K10 |UX23-S6 |ART30-A3 ",
+  "sources": [
+    "artifacts/goal-4/uir34-05/current/related-authorized.config.ts",
+    "artifacts/goal-4/uir34-06/current/related.config.ts",
+    "artifacts/goal-4/uir34-07/current/related.config.ts"
+  ],
+  "audit": [
+    {
+      "file": "uir34-05-trial-life-focus.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "idle-recovery-choices.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "art32-milestone-stage.spec.ts",
+      "specialLines": [
+        {
+          "line": 45,
+          "text": " for(const all of [false,true]){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900},reducedMotion:all?'no-preference':'reduce'}),page=await context.newPage(),errors:string[]=[];page.on('pageerror',e=>errors."
+        }
+      ]
+    },
+    {
+      "file": "idle-milestones.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "specialLines": [
+        {
+          "line": 31,
+          "text": " validateGame(game);await page.emulateMedia({reducedMotion:'no-preference'});await useJourneyClock(page);await page.goto('/');"
+        }
+      ]
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "specialLines": [
+        {
+          "line": 46,
+          "text": " for(const type of ['DECIDE','ANSWER_TRIAL','END']as const){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),p=await context.newPage();listen(p);try{const before=await load(p,feedbackExamples().actions."
+        },
+        {
+          "line": 87,
+          "text": " for(const kind of ['depart','RETIRE','END_LIFE']){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),p=await context.newPage();listen(p);try{let source:any;if(kind==='depart')source=feedbackExamples().ac"
+        },
+        {
+          "line": 101,
+          "text": " for(const kind of ['visit','response','closing']){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),p=await context.newPage();listen(p);try{let source:any;if(kind==='visit'){const d=driver();d.go('sect'"
+        },
+        {
+          "line": 115,
+          "text": " for(const mode of ['system','preference']){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),p=await context.newPage();listen(p);let failedArt=0;try{await p.emulateMedia({reducedMotion:mode==='system'?'"
+        },
+        {
+          "line": 122,
+          "text": " for(const kind of ['visit','retire','ending']){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),p=await context.newPage();listen(p);try{let source:any;if(kind==='ending')source=feedbackExamples().actio"
+        }
+      ]
+    },
+    {
+      "file": "art31-life-scroll.spec.ts",
+      "specialLines": [
+        {
+          "line": 53,
+          "text": " for(const all of [false,true]){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900},reducedMotion:all?'no-preference':'reduce'}),page=await context.newPage(),errors:string[]=[];page.on('pageerror',e=>errors."
+        }
+      ]
+    },
+    {
+      "file": "matrix-ui-milestone-feedback.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "art12-narrative-stage.spec.ts",
+      "specialLines": [
+        {
+          "line": 124,
+          "text": " for(const [status,fixture]of states){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage();try{const before=await load(page,fixture),raw=await database(page);await lifeView(page"
+        },
+        {
+          "line": 125,
+          "text": " const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage();try{let before=await load(page,d.checkpoints.mortal);await page.getByTestId('breakthrough').click();const breakthrough=awai"
+        },
+        {
+          "line": 134,
+          "text": " for(const reduced of ['system','preference']){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900},reducedMotion:reduced==='system'?'reduce':'no-preference'}),page=await context.newPage();await page.route('*"
+        }
+      ]
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "specialLines": [
+        {
+          "line": 17,
+          "text": "test.use({viewport:{width:1440,height:900},reducedMotion:'no-preference',actionTimeout:8000,navigationTimeout:15000});"
+        },
+        {
+          "line": 305,
+          "text": "  await page.emulateMedia({reducedMotion:'reduce'});expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);"
+        },
+        {
+          "line": 310,
+          "text": "  await page.emulateMedia({reducedMotion:'no-preference'});expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(false);expect(await database(page)).toEqual(preferencePreparation.raw);await staticReducedEntry(page,prefere"
+        }
+      ]
+    },
+    {
+      "file": "ux22-help-wayfinding.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "check-art30-32.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "specialLines": [
+        {
+          "line": 74,
+          "text": " for(const mode of ['quota','abort'] as const){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage();listen(page);try{const before=await load(page,mortal());await setup(page,'nat"
+        },
+        {
+          "line": 93,
+          "text": " for(const mode of ['system','setting']as const){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900},reducedMotion:mode==='system'?'reduce':'no-preference'}),page=await context.newPage();listen(page);try{awa"
+        },
+        {
+          "line": 97,
+          "text": " for(const kind of ['goal','trial'] as const){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage();listen(page);try{const before=await load(page,kind==='goal'?caveFixture().game"
+        },
+        {
+          "line": 117,
+          "text": " for(const [kind,source]of fixtures){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage();listen(page);try{const before=await load(page,source),raw=await database(page);if(kind!"
+        }
+      ]
+    },
+    {
+      "file": "art18-dialog-gallery.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "ux20-trial-reading.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "ux21-trial-return.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "art18-dialog-controls.spec.ts",
+      "specialLines": [
+        {
+          "line": 78,
+          "text": " const context=await browser.newContext({baseURL:info.project.use.baseURL,viewport:{width:1440,height:900},reducedMotion:mode==='system-reduction'?'reduce':'no-preference'}),page=await context.newPage(),errors:string[]=[];page.on('pageerror',e=>errors.push(e.m"
+        }
+      ]
+    },
+    {
+      "file": "check-art18-ux.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "uir34-06-character-folio.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "stage-check.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "stage-r4.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "check-ta-03.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "matrix-ui-boundaries.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "ux23-sealed-life.spec.ts",
+      "specialLines": [
+        {
+          "line": 56,
+          "text": " for(const mode of ['system','preference']){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900},reducedMotion:mode==='system'?'reduce':'no-preference'}),page=await context.newPage(),childErrors:string[]=[];p"
+        }
+      ]
+    },
+    {
+      "file": "uir34-07-fate-clarity.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "art30-npc-meeting.spec.ts",
+      "specialLines": [
+        {
+          "line": 43,
+          "text": " for(const all of [false,true]){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900},reducedMotion:all?'no-preference':'reduce'}),page=await context.newPage(),e:string[]=[];page.on('pageerror',x=>e.push(x.mes"
+        },
+        {
+          "line": 49,
+          "text": " const examples=feedbackExamples();for(const type of ['ANSWER_TRIAL','END']){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage(),e:string[]=[];page.on('pageerror',x=>e.push(x.m"
+        }
+      ]
+    },
+    {
+      "file": "uir34-02-finite-focus.spec.ts",
+      "specialLines": []
+    },
+    {
+      "file": "check-uir34-05-07.spec.ts",
+      "specialLines": []
+    }
+  ],
+  "scope": "Three original scope unions, original mixed-case omissions remain. Must inspect all special lines before running."
+}
