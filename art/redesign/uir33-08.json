@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-alchemy-arrangement-uir33-08",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "newCSSBytes": 0,
+  "path": "web/src/AlchemyWorkshop.vue",
+  "bytes": 12158,
+  "sha256": "92c9475de4eef1d693fe78d5890e652d181056de7938bcbe8ce2f7c34f0dbf84",
+  "before": "goal-4/evidence/uir33-08/before/web/src/AlchemyWorkshop.vue",
+  "beforeSHA256": "f81b5f9ada539eb9abd229875bd4e5987d6597bf29c713134de8a1ebb209e6f8",
+  "beforeBytes": 12054,
+  "maxNativeBytes": 22000,
+  "nativeFiles": [
+    "web/src/AlchemyWorkshop.vue",
+    "web/src/alchemy-workshop.css",
+    "web/src/alchemy-feedback.ts"
+  ],
+  "unchanged": {
+    "web/src/alchemy-workshop.css": "26362acf00d49c9fa8a29168cc36be231d4ba6db8aba6c6c0d815926d56e6db3",
+    "web/src/alchemy-feedback.ts": "dfe2886f81b73788fc406e89f8631618ee5dadbdc24bab80db4dc5a8e4759899",
+    "web/src/ProductionPlanner.vue": "6ebbc6551f6c68605b4e634196579787bf50e91d71d8fa84938bcc8cb9f1306b",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815"
+  },
+  "sourceReferences": [
+    "docs/decisions/0104-alchemy-arrangement-uir33-08-contract.md",
+    "goal-4/amendments/2026-11-05-uir33-08-input.md",
+    "goal-4/research/uir33-08-sources.json"
+  ]
+}

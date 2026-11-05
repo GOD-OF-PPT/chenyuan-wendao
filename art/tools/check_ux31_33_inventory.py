@@ -1,3 +1,4 @@
+from uir33_08_inventory import prior_uir3308_bytes
 """Exact alchemy forecast display evolution; original script, events and caps stay owned."""
 from uir33_01_inventory import prior_uir3301_bytes
 import hashlib,json,re
@@ -41,7 +42,7 @@ OPERATIONS=[['<strong>预计 {{quote.cycles}} 炉 · 灵石消耗 {{quote.stones
   'quote.stopReason">预计停止：{{quote.stopReason.message}}</small>']]
 MARKER='<strong v-if="quote.failure">暂不可开炉：'
 def prior_check_ux3133_bytes(path,raw):
- raw=prior_uir3301_bytes(path,raw)
+ raw=prior_uir3308_bytes(path,prior_uir3301_bytes(path,raw))
  if Path(path).name!='AlchemyWorkshop.vue' or MARKER.encode() not in raw:return raw
  assert hashlib.sha256(raw).hexdigest()==MANIFEST['files'][0]['sha256'], 'CHECK95 current whole display source changed'
  text=raw.decode()
@@ -61,7 +62,7 @@ def validate_check_ux3133(root):
   return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST, 'CHECK95 exact ledger cannot be resigned'
  assert json.loads(local(EDITS).read_text())==OPERATIONS, 'CHECK95 exact display edits'
- raw=local(MANIFEST['files'][0]['path']).read_bytes();before=local(MANIFEST['before']['path']).read_bytes()
+ raw=prior_uir3308_bytes(MANIFEST['files'][0]['path'],local(MANIFEST['files'][0]['path']).read_bytes());before=local(MANIFEST['before']['path']).read_bytes()
  assert len(raw)==MANIFEST['files'][0]['bytes'] and hashlib.sha256(raw).hexdigest()==MANIFEST['files'][0]['sha256'], 'CHECK95 current source'
  assert len(before)==MANIFEST['before']['bytes'] and hashlib.sha256(before).hexdigest()==MANIFEST['before']['sha256'], 'CHECK95 preserved prior source'
  assert prior_check_ux3133_bytes(source,raw)==before, 'CHECK95 full inverse'

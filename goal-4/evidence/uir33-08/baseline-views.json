@@ -1,0 +1,18 @@
+[
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-08/baseline/baseline-results/uir33-08-alchemy-arrangeme-3f410--and-budget-remain-readonly-chromium/default-arrangement.png",
+    "originalSHA256": "c7c5b8a0e2f828b444c4f8cc470ee95110d3df1681b833a3a69631c11cd9f1b8",
+    "view": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/uir33-08/views/before-default-arrangement.png.jpg",
+    "viewSHA256": "0d00862529d764fbfc7aa20763f2c1ebcedf142f11b8a95801c0e0ab8ab783c9",
+    "lossy": true,
+    "quality": 68
+  },
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-08/baseline/baseline-results/uir33-08-alchemy-arrangeme-57f77-gate-outside-the-disclosure-chromium/four-material-default.png",
+    "originalSHA256": "931d73ce5d2cd048cf40fbbd08b32dfbe05a0902c14291e32ee4365b4ce48131",
+    "view": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/uir33-08/views/before-four-material-default.png.jpg",
+    "viewSHA256": "7a1b8138b09b996fb00981582903ffd69fa0a80dd5d7e28569a81a9042927456",
+    "lossy": true,
+    "quality": 68
+  }
+]

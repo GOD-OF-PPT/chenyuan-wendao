@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-uir33-08-comprehensive-additions",
+  "version": 17,
+  "parentVersion": 16,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 900,
+    "signature": "41996ee512a99e3160f2206c98c2cd6f6dd63769f1256b449336250dd604f3d9"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir33-08-alchemy-arrangement.spec.ts",
+      "title": "UIR33-08-A1 the furnace arrangement leads with the selected recipe true unit and finite target while complete rules and budget remain readonly",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-08-alchemy-arrangement.spec.ts",
+      "title": "UIR33-08-A2 four-material forecast and complete target rules fit together while an unaffordable draft keeps its real gate outside the disclosure",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-08-alchemy-arrangement.spec.ts",
+      "title": "UIR33-08-A3 reading rules after a quota failure cannot change the original thirty-second command or replay its saved reward",
+      "projectName": "chromium"
+    }
+  ]
+}

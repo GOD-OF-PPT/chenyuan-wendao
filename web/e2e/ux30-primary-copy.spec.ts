@@ -194,6 +194,8 @@ test('UX30-C2 alchemy keeps true material costs period and finite authorisation 
         await frame(page, info, 'full-recipe-lore', page.getByTestId('alchemy-library-dialog'));
         await closeAlchemyLibrary(page);
         await openProductionSettings(page);
+        await page.getByTestId('alchemy-settings').locator('.alchemy-rules > summary').click();
+        await expect(page.getByTestId('alchemy-settings').locator('.alchemy-rules > p')).toBeVisible();
         await expect(page.getByTestId('alchemy-settings')).toContainText('成品自动入匣，无需领取');
         await expect(page.getByTestId('alchemy-settings')).toContainText('材料不足、达到目标或触及保留量时自动停炉');
         await expect(page.getByTestId('production-estimate')).toContainText('耗材');

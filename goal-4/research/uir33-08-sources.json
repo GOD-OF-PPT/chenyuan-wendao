@@ -1,0 +1,16 @@
+{
+  "readOn": "2026-11-05",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "use": "hierarchy and minimal visual noise",
+      "limit": "combat clarity adapted to idle game, not layout prescription"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "use": "consistent navigation and predictable focus",
+      "limit": "not certification or mandated dimensions"
+    }
+  ],
+  "newWorkflow": false
+}

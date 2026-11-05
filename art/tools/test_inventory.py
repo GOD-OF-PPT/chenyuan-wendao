@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3308=ROOT/'art/redesign/uir33-08.json'
+  if uir3308.exists():
+   data=json.loads(uir3308.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[data['before']]+list(data['unchanged']))
   workshop=ROOT/'art/redesign/alchemy-workshop.json'
   if workshop.exists():
    data=json.loads(workshop.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+data['rights']['evidenceReferences']);files.update(ROOT/row['path'] for row in data['files'])
@@ -2265,5 +2268,18 @@ class UX27ContextOwnershipTests(unittest.TestCase):
    with self.subTest(path=name,mutation=old),self.assertRaisesRegex(AssertionError,'UX27'):
     normalized=normalize(source.replace(old,new,1));before=(ROOT/('goal-4/evidence/ux27/'+name+'.before.txt')).read_text()
     assert hashlib.sha256(normalized.encode()).hexdigest()==hashlib.sha256(before.encode()).hexdigest(),'UX27 full source fallback proof'
+
+
+class UIR3308ExactTemplateTests(unittest.TestCase):
+ def test_current_template_reverses_to_the_full_old_controller_and_rules(self):
+  from uir33_08_inventory import validate_uir3308,prior_uir3308_bytes,MANIFEST
+  self.assertLessEqual(validate_uir3308(ROOT)[1],22000)
+  self.assertEqual(prior_uir3308_bytes(MANIFEST['path'],(ROOT/MANIFEST['path']).read_bytes()),(ROOT/MANIFEST['before']).read_bytes())
+ def test_same_size_controller_rules_and_gate_mutations_are_rejected(self):
+  from uir33_08_inventory import prior_uir3308_bytes,MANIFEST
+  raw=(ROOT/MANIFEST['path']).read_text()
+  for a,b in [("emit('start')","emit('badxx')"),('停炉与续接规则','停炉与假的规则'),('quote.allowed','quote.failure')]:
+   self.assertIn(a,raw)
+   with self.subTest(mutation=a),self.assertRaisesRegex(AssertionError,'UIR33-08'):prior_uir3308_bytes(MANIFEST['path'],raw.replace(a,b,1).encode())
 
 if __name__=='__main__':unittest.main()
