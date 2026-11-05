@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-uir33-07-comprehensive-additions",
+  "version": 15,
+  "parentVersion": 14,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 893,
+    "signature": "40e79f3f326520188f1be1d2e82a6b77b6a18172087978349f731a33b98412c5"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "title": "UIR33-07 SCHOOL saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "title": "UIR33-07 EQUIP saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "title": "UIR33-07 EQUIP_RELIC saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "title": "UIR33-07 failed configuration shows no success and original retry saves the exact choice once",
+      "projectName": "chromium"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/baseline.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "runtimeDigest": "82db7e7002492f8af5f1d4c720b0639ec9ef2af2fe75a3224cb2d6328fcf4dbb",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/baseline-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/baseline-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runtimeDigest": "82db7e7002492f8af5f1d4c720b0639ec9ef2af2fe75a3224cb2d6328fcf4dbb",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "uir33-07-outcome-focus.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "uir33-07-outcome-focus.spec.ts",
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR33-07 SCHOOL saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 980,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/\", waiting until \"load\"\u001b[22m\n\n    at importRecoveryFixture (/Users/gordon/githome/chenyuan-wendao/web/e2e/idle-recovery-ui-support.ts:22:41)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts:16:51",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/idle-recovery-ui-support.ts",
+                      "column": 41,
+                      "line": 22
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39midle-recovery-ui-support.ts:22\n\n  20 | }\n  21 | export async function importRecoveryFixture(page:Page,fixture:any){\n> 22 |  await useJourneyClock(page);await page.goto('/');const input=page.getByLabel('导入已有存档',{exact:true});await expect(input).toBeEnabled({timeout:15000});const before=await recoveryDatabase(page);\n     |                                         ^\n  23 |  await input.setInputFiles({name:'lawful-current-recovery.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(fixture))});await control600(page,before);\n  24 |  const actual=await snapshot(page),expected=structuredClone(fixture);expected.core.runId=actual.core.runId;expected.core.revision=0;if(expected.core.activeEvent)expected.core.activeEvent.instanceId=actual.core.runId+':'+expected.core.activeEvent.id;\n  25 |  expect(actual).toEqual(expected);return actual;"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/idle-recovery-ui-support.ts",
+                        "column": 41,
+                        "line": 22
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/\", waiting until \"load\"\u001b[22m\n\n\n   at idle-recovery-ui-support.ts:22\n\n  20 | }\n  21 | export async function importRecoveryFixture(page:Page,fixture:any){\n> 22 |  await useJourneyClock(page);await page.goto('/');const input=page.getByLabel('导入已有存档',{exact:true});await expect(input).toBeEnabled({timeout:15000});const before=await recoveryDatabase(page);\n     |                                         ^\n  23 |  await input.setInputFiles({name:'lawful-current-recovery.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(fixture))});await control600(page,before);\n  24 |  const actual=await snapshot(page),expected=structuredClone(fixture);expected.core.runId=actual.core.runId;expected.core.revision=0;if(expected.core.activeEvent)expected.core.activeEvent.instanceId=actual.core.runId+':'+expected.core.activeEvent.id;\n  25 |  expect(actual).toEqual(expected);return actual;\n    at importRecoveryFixture (/Users/gordon/githome/chenyuan-wendao/web/e2e/idle-recovery-ui-support.ts:22:41)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts:16:51"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T01:31:14.178Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/baseline-results/uir33-07-outcome-focus-UIR-f67f1-st-receipt-remains-readable-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/baseline-results/uir33-07-outcome-focus-UIR-f67f1-st-receipt-remains-readable-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/idle-recovery-ui-support.ts",
+                    "column": 41,
+                    "line": 22
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0deab64ea90ad107e70a-08ef99b275885665c9ea",
+          "file": "uir33-07-outcome-focus.spec.ts",
+          "line": 114,
+          "column": 56
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T01:31:12.347Z",
+    "duration": 3803.7690000000002,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

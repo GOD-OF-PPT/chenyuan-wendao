@@ -2,7 +2,7 @@ import type {Action,Game,Move} from '../../src/full/types.ts';
 import {gamePhase,type ActionResult} from '../../src/full/contracts.ts';
 import type {Observation} from './local-events.ts';
 import * as C from '../../src/full/content.ts';
-import {formatCosts,formatDelta} from './presentation.ts';
+import {formatCosts,outcome} from './presentation.ts';
 import {ICONS} from './ui-icons.ts';
 import {publicId} from './local-events.ts';
 import type {Activity} from '../../src/full/activity.ts';
@@ -61,7 +61,7 @@ export function describeAction(result:ActionResult,game:Game,observation:Observa
   const remaining=game.battle?.enemy===before.battle.enemy?game.battle.hp:null;
   if(remaining!==null&&remaining!==before.battle.hp)numbers.push({target:'enemy',value:remaining-before.battle.hp,label:'敌方气血'});
  }
- return {...row,key:JSON.stringify([result.runId,result.commandId]),operation:result.type,major:result.type==='BREAKTHROUGH'||result.type==='BATTLE'||result.phaseBefore.startsWith('trial-')||result.phaseAfter.startsWith('trial-'),terminal,delta:formatDelta(result.delta),summary:`实际 ${result.executedSteps} / ${result.requestedSteps} 次 · ${result.stopReason?.message??formatCosts(result.costs)}`,numbers};
+ return {...row,key:JSON.stringify([result.runId,result.commandId]),operation:result.type,major:result.type==='BREAKTHROUGH'||result.type==='BATTLE'||result.phaseBefore.startsWith('trial-')||result.phaseAfter.startsWith('trial-'),terminal,delta:outcome(result,game,action),summary:`实际 ${result.executedSteps} / ${result.requestedSteps} 次 · ${result.stopReason?.message??formatCosts(result.costs)}`,numbers};
 }
 /** One bounded, read-only consumer. Seeing a button click is never proof of a successful action. */
 export function createActionFeedbackTracker(){

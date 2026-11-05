@@ -1,3 +1,4 @@
+from uir33_07_inventory import prior_uir3307_bytes
 from uir33_06_inventory import prior_uir3306_bytes
 """ART31 physical life reading, exact original controls and one blank decorative desk."""
 import hashlib,json,re
@@ -20,7 +21,7 @@ def validate_art31(root,image_reader):
  def local(n):
   assert type(n)is str and n and not n.startswith('/')and'..'not in n.split('/')and'\\'not in n,'ART31 local path'
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART31 missing input';return p
- def digest(n):return hashlib.sha256(prior_uir3306_bytes(n,local(n).read_bytes())).hexdigest()
+ def digest(n):return hashlib.sha256(prior_uir3306_bytes(n,prior_uir3307_bytes(n,local(n).read_bytes()))).hexdigest()
  def identity(r):
   raw=prior_uir3306_bytes(r['path'],local(r['path']).read_bytes());assert type(r['bytes'])is int and r['bytes']==len(raw) and r['sha256']==digest(r['path']),'ART31 actual identity';return raw
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-life-scroll-art31'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART31 header'

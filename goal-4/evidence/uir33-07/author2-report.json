@@ -1,0 +1,240 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/author2.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "runtimeDigest": "76d4ed035dceaa513a872f15c161802677d41b32e181cf7bb48fb76a89f2a6e2",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/author2-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/author2-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runtimeDigest": "76d4ed035dceaa513a872f15c161802677d41b32e181cf7bb48fb76a89f2a6e2",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "uir33-07-outcome-focus.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "uir33-07-outcome-focus.spec.ts",
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR33-07 SCHOOL saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6396,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T01:36:00.619Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "SCHOOL-before-focus-assert-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ0b3AiOjExNCwiYm90dG9tIjoxNzYuOTg0Mzc1LCJodWRCb3R0b20iOjExMiwibmF2VG9wIjo4MTgsImNvcHkiOlt7InRleHQiOiLliZHpgZPliJ3miJAiLCJmb250IjoyNCwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX0seyJ0ZXh0Ijoi5YmR5L+uIMK3IOWfuuehgOWJkeivgO+8muenr+iThOWJkeaEj++8jOa7oeS4ieWxguWPr+aJk+aWremHjeWHu+OAgiIsImZvbnQiOjE2LCJpbnNpZGUiOnRydWUsImNsaXAiOmZhbHNlfSx7InRleHQiOiLlrp7pmYUgMSAvIDEg5qyhIMK3IOS4jea2iOiAl+eJqei1hCIsImZvbnQiOjE0LCJpbnNpZGUiOnRydWUsImNsaXAiOmZhbHNlfV0sImJ1dHRvbnMiOnRydWV9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0deab64ea90ad107e70a-08ef99b275885665c9ea",
+          "file": "uir33-07-outcome-focus.spec.ts",
+          "line": 118,
+          "column": 56
+        },
+        {
+          "title": "UIR33-07 EQUIP saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4333,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T01:36:07.631Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "EQUIP-before-focus-assert-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ0b3AiOjExNCwiYm90dG9tIjoxOTIuOTY4NzUsImh1ZEJvdHRvbSI6MTEyLCJuYXZUb3AiOjgxOCwiY29weSI6W3sidGV4dCI6IumFjeijhSDCtyDmraLmsLTliZHlv4MiLCJmb250IjoyNCwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX0seyJ0ZXh0Ijoi5b+D5rOV77ya5q2i5rC05YmR5b+DIMK3IOmdmeS/ruaUtuebiiArMjUl77yb5oiY5paX5oqk5L2T6aKd5aSW5YeP5LykIDbjgIIiLCJmb250IjoxNiwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX0seyJ0ZXh0Ijoi5a6e6ZmFIDEgLyAxIOasoSDCtyDkuI3mtojogJfnianotYQiLCJmb250IjoxNCwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX1dLCJidXR0b25zIjp0cnVlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0deab64ea90ad107e70a-649bca685d4fa3855d1b",
+          "file": "uir33-07-outcome-focus.spec.ts",
+          "line": 118,
+          "column": 56
+        },
+        {
+          "title": "UIR33-07 EQUIP_RELIC saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4214,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T01:36:11.995Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "EQUIP_RELIC-before-focus-assert-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ0b3AiOjExNCwiYm90dG9tIjoxNzYuOTg0Mzc1LCJodWRCb3R0b20iOjExMiwibmF2VG9wIjo4MTgsImNvcHkiOlt7InRleHQiOiLmnKzlkb0gwrcg546E546J5Y2wIiwiZm9udCI6MjQsImluc2lkZSI6dHJ1ZSwiY2xpcCI6ZmFsc2V9LHsidGV4dCI6IueOhOeOieWNsCDCtyDmr4/mrKHmib/lj5fkvKTlrrPlh48gOO+8jOmAguWQiOeos+WBpea4oeWKq+OAgiIsImZvbnQiOjE2LCJpbnNpZGUiOnRydWUsImNsaXAiOmZhbHNlfSx7InRleHQiOiLlrp7pmYUgMSAvIDEg5qyhIMK3IOS4jea2iOiAl+eJqei1hCIsImZvbnQiOjE0LCJpbnNpZGUiOnRydWUsImNsaXAiOmZhbHNlfV0sImJ1dHRvbnMiOnRydWV9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0deab64ea90ad107e70a-f8f6b0a512871540aa70",
+          "file": "uir33-07-outcome-focus.spec.ts",
+          "line": 118,
+          "column": 56
+        },
+        {
+          "title": "UIR33-07 failed configuration shows no success and original retry saves the exact choice once",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3155,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T01:36:16.230Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "original-retry-real-outcome-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ0b3AiOjExNCwiYm90dG9tIjoxOTIuOTY4NzUsImh1ZEJvdHRvbSI6MTEyLCJuYXZUb3AiOjgxOCwiY29weSI6W3sidGV4dCI6IumFjeijhSDCtyDmraLmsLTliZHlv4MiLCJmb250IjoyNCwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX0seyJ0ZXh0Ijoi5b+D5rOV77ya5q2i5rC05YmR5b+DIMK3IOmdmeS/ruaUtuebiiArMjUl77yb5oiY5paX5oqk5L2T6aKd5aSW5YeP5LykIDbjgIIiLCJmb250IjoxNiwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX0seyJ0ZXh0Ijoi5a6e6ZmFIDEgLyAxIOasoSDCtyDkuI3mtojogJfnianotYQiLCJmb250IjoxNCwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX1dLCJidXR0b25zIjp0cnVlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0deab64ea90ad107e70a-e954a6aa11df2e01ef4b",
+          "file": "uir33-07-outcome-focus.spec.ts",
+          "line": 156,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T01:35:58.706Z",
+    "duration": 20841.633,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

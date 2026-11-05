@@ -1,3 +1,4 @@
+from uir33_07_inventory import prior_uir3307_bytes
 import json,shutil,tempfile,unittest
 from pathlib import Path
 from check_ux31_33_inventory import prior_check_ux3133_bytes
@@ -9,7 +10,7 @@ class SharedStatusTests(unittest.TestCase):
   names={LEDGER,*MANIFEST['sourceReferences'],*['web/src/'+n for n in FACTS]}
   for n,g in GROUPS.items():names.add('art/redesign/'+n+'.json');names.update(g['files'])
   for n in names:
-   out=self.root/n;out.parent.mkdir(parents=True,exist_ok=True);out.write_bytes(prior_check_ux3133_bytes(n,(ROOT/n).read_bytes()))
+   out=self.root/n;out.parent.mkdir(parents=True,exist_ok=True);out.write_bytes(prior_check_ux3133_bytes(n,prior_uir3307_bytes(n,(ROOT/n).read_bytes())))
  def changed(self,n,a,b):
   p=self.root/'web/src'/n;s=p.read_text();self.assertIn(a,s);p.write_text(s.replace(a,b,1))
   with self.assertRaises(AssertionError):validate_ux33(self.root)

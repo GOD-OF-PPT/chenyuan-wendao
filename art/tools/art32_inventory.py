@@ -1,3 +1,4 @@
+from uir33_07_inventory import prior_uir3307_bytes
 from uir33_06_inventory import prior_uir3306_bytes
 """ART32 precise decorative phase transform and original full-view recovery."""
 import hashlib,json,re
@@ -33,7 +34,7 @@ def validate_art32(root,image_reader):
  def local(n):
   assert type(n)is str and n and not n.startswith('/')and'..'not in n.split('/')and'\\'not in n,'ART32 local path'
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART32 missing input';return p
- def digest(n):return hashlib.sha256(prior_uir3306_bytes(n,local(n).read_bytes())).hexdigest()
+ def digest(n):return hashlib.sha256(prior_uir3306_bytes(n,prior_uir3307_bytes(n,local(n).read_bytes()))).hexdigest()
  def identity(r):
   assert type(r['bytes'])is int and local(r['path']).stat().st_size==r['bytes']and digest(r['path'])==r['sha256'],'ART32 actual identity';return local(r['path']).read_bytes()
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-milestone-stage-art32'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART32 header'

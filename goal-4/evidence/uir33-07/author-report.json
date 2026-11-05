@@ -1,0 +1,279 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/author.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "runtimeDigest": "76d4ed035dceaa513a872f15c161802677d41b32e181cf7bb48fb76a89f2a6e2",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/author-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/author-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runtimeDigest": "76d4ed035dceaa513a872f15c161802677d41b32e181cf7bb48fb76a89f2a6e2",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "uir33-07-outcome-focus.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "uir33-07-outcome-focus.spec.ts",
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR33-07 SCHOOL saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4230,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T01:34:04.369Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "SCHOOL-before-focus-assert-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ0b3AiOjExNCwiYm90dG9tIjoxNzYuOTg0Mzc1LCJodWRCb3R0b20iOjExMiwibmF2VG9wIjo4MTgsImNvcHkiOlt7InRleHQiOiLliZHpgZPliJ3miJAiLCJmb250IjoyNCwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX0seyJ0ZXh0Ijoi5YmR5L+uIMK3IOWfuuehgOWJkeivgO+8muenr+iThOWJkeaEj++8jOa7oeS4ieWxguWPr+aJk+aWremHjeWHu+OAgiIsImZvbnQiOjE2LCJpbnNpZGUiOnRydWUsImNsaXAiOmZhbHNlfSx7InRleHQiOiLlrp7pmYUgMSAvIDEg5qyhIMK3IOS4jea2iOiAl+eJqei1hCIsImZvbnQiOjE0LCJpbnNpZGUiOnRydWUsImNsaXAiOmZhbHNlfV0sImJ1dHRvbnMiOnRydWV9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0deab64ea90ad107e70a-08ef99b275885665c9ea",
+          "file": "uir33-07-outcome-focus.spec.ts",
+          "line": 114,
+          "column": 56
+        },
+        {
+          "title": "UIR33-07 EQUIP saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4115,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T01:34:09.157Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "EQUIP-before-focus-assert-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ0b3AiOjExNCwiYm90dG9tIjoxOTIuOTY4NzUsImh1ZEJvdHRvbSI6MTEyLCJuYXZUb3AiOjgxOCwiY29weSI6W3sidGV4dCI6IumFjeijhSDCtyDmraLmsLTliZHlv4MiLCJmb250IjoyNCwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX0seyJ0ZXh0Ijoi5b+D5rOV77ya5q2i5rC05YmR5b+DIMK3IOmdmeS/ruaUtuebiiArMjUl77yb5oiY5paX5oqk5L2T6aKd5aSW5YeP5LykIDbjgIIiLCJmb250IjoxNiwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX0seyJ0ZXh0Ijoi5a6e6ZmFIDEgLyAxIOasoSDCtyDkuI3mtojogJfnianotYQiLCJmb250IjoxNCwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX1dLCJidXR0b25zIjp0cnVlfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0deab64ea90ad107e70a-649bca685d4fa3855d1b",
+          "file": "uir33-07-outcome-focus.spec.ts",
+          "line": 114,
+          "column": 56
+        },
+        {
+          "title": "UIR33-07 EQUIP_RELIC saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4244,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T01:34:13.295Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "EQUIP_RELIC-before-focus-assert-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ0b3AiOjExNCwiYm90dG9tIjoxNzYuOTg0Mzc1LCJodWRCb3R0b20iOjExMiwibmF2VG9wIjo4MTgsImNvcHkiOlt7InRleHQiOiLmnKzlkb0gwrcg546E546J5Y2wIiwiZm9udCI6MjQsImluc2lkZSI6dHJ1ZSwiY2xpcCI6ZmFsc2V9LHsidGV4dCI6IueOhOeOieWNsCDCtyDmr4/mrKHmib/lj5fkvKTlrrPlh48gOO+8jOmAguWQiOeos+WBpea4oeWKq+OAgiIsImZvbnQiOjE2LCJpbnNpZGUiOnRydWUsImNsaXAiOmZhbHNlfSx7InRleHQiOiLlrp7pmYUgMSAvIDEg5qyhIMK3IOS4jea2iOiAl+eJqei1hCIsImZvbnQiOjE0LCJpbnNpZGUiOnRydWUsImNsaXAiOmZhbHNlfV0sImJ1dHRvbnMiOnRydWV9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0deab64ea90ad107e70a-f8f6b0a512871540aa70",
+          "file": "uir33-07-outcome-focus.spec.ts",
+          "line": 114,
+          "column": 56
+        },
+        {
+          "title": "UIR33-07 failed configuration shows no success and original retry saves the exact choice once",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3430,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at frame (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts:13:1236)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts:20:1108",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts",
+                      "column": 1236,
+                      "line": 13
+                    },
+                    "snippet": "  11 | async function open(page:Page,a:any){if(a.type==='SCHOOL'){await openHubFeature(page,'skills');await page.getByTestId('equipment-mode-school').click();await page.getByTestId('school-'+a.school).click();}else if(a.type==='EQUIP'){await openHubFeature(page,'skills');await selectLearningSkill(page,a.skill);await page.getByTestId('equip-'+a.skill).click();}else{await openHubFeature(page,'relics');await selectRelic(page,a.relic);await page.getByTestId('equip-relic-'+a.relic).click();}await expect(page.getByTestId('configuration-dialog')).toBeVisible();}\n  12 | async function painted(page:Page){await expect.poll(async()=>{await page.clock.runFor(16);return page.getByTestId('hub-pulse').isVisible();}).toBe(true);}\n> 13 | async function frame(page:Page,info:TestInfo,name:string){const data=await page.getByTestId('hub-pulse').evaluate(n=>{const r=n.getBoundingClientRect(),hud=document.querySelector('.game-hud')!.getBoundingClientRect(),nav=document.getElementById('primary-navigation')!.getBoundingClientRect(),copy=[...n.querySelectorAll<HTMLElement>('strong,span,small')].map(x=>{const b=x.getBoundingClientRect();return{text:x.innerText,font:parseFloat(getComputedStyle(x).fontSize),inside:b.left>=r.left&&b.right<=r.right&&b.top>=r.top&&b.bottom<=r.bottom,clip:x.scrollWidth>x.clientWidth+1||x.scrollHeight>x.clientHeight+1};});return{top:r.top,bottom:r.bottom,hudBottom:hud.bottom,navTop:nav.top,copy,buttons:[...document.querySelectorAll<HTMLButtonElement>('main button')].filter(x=>x.checkVisibility()).every(x=>{const b=x.getBoundingClientRect(),hit=document.elementFromPoint(b.x+b.width/2,b.y+b.height/2);return x.disabled||hit===x||!!hit&&x.contains(hit);})};});await info.attach(name+'-geometry',{body:JSON.stringify(data),contentType:'application/json'});await captureFixedPng(page,info.outputPath(name+'.png'));expect(data.top).toBeGreaterThanOrEqual(data.hudBottom);expect(data.bottom).toBeLessThanOrEqual(data.navTop);expect(data.buttons).toBe(true);for(const row of data.copy){expect(row.font).toBeGreaterThanOrEqual(14);expect(row.inside).toBe(true);expect(row.clip).toBe(false);}}\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ^\n  14 | async function configured(page:Page,g:any,raw:any,a:any){await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(g.core.revision+1);const next=await database(page),added=next.rows['full-receipts'].filter((r:any)=>!raw.rows['full-receipts'].some((old:any)=>old.key===r.key));expect(added).toHaveLength(1);const receipt=added[0].value;expect(receipt.format).toBe('chenyuan-configuration-receipt');expect(receipt.intent.command).toMatchObject(a);const expected=resolve(g,receipt.intent.command);expect(stored(next,'current')).toEqual(expected.nextState);expect(await snapshot(page)).toEqual(expected.nextState);expect(receipt.result).toEqual(expected.result);expect(stored(next,'previous')).toEqual(g);expect(stored(next,'activity')).toEqual(stored(raw,'activity'));expect(next.rows['full-receipts'].filter((r:any)=>r.key!==added[0].key)).toEqual(raw.rows['full-receipts']);for(const n of Object.keys(next.rows).filter(n=>!['full-state','full-receipts'].includes(n)))expect(next.rows[n]).toEqual(raw.rows[n]);return{game:expected.nextState,raw:next,receipt};}\n  15 | for(const type of ['SCHOOL','EQUIP','EQUIP_RELIC']as const)test('UIR33-07 '+type+' saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable',async({page},info)=>{\n  16 |  const ex=feedbackExamples().actions.get(type)!,g=await importRecoveryFixture(page,ex.before),a=ex.action,raw=await database(page);await readonly(page,async()=>{await open(page,a);await page.getByTestId('configuration-cancel').click();});await open(page,a);await page.getByTestId('configuration-confirm').click();const done=await configured(page,g,raw,a);await painted(page);const pulse=page.getByTestId('hub-pulse');await frame(page,info,type+'-before-focus-assert');await expect(pulse).not.toContainText('物资未变化');const target=type==='SCHOOL'?C.skills[done.game.loadout.mind].description:type==='EQUIP'?C.skills[a.skill].description:C.relics[a.relic].description;await expect(pulse.locator('span')).toContainText(target);await expect(pulse.locator('small')).toContainText('不消耗物资');await page.clock.fastForward(2000);await expect(pulse).toHaveCount(0);await expect(page.getByTestId('stage-delta')).toContainText(type==='SCHOOL'?(done.game.school==='sword'?'剑修':'符修'):type==='EQUIP'?C.skills[a.skill].name:C.relics[a.relic].name);await expect(page.getByTestId('stage-delta')).toContainText('配装已保存');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts",
+                        "column": 1236,
+                        "line": 13
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  11 | async function open(page:Page,a:any){if(a.type==='SCHOOL'){await openHubFeature(page,'skills');await page.getByTestId('equipment-mode-school').click();await page.getByTestId('school-'+a.school).click();}else if(a.type==='EQUIP'){await openHubFeature(page,'skills');await selectLearningSkill(page,a.skill);await page.getByTestId('equip-'+a.skill).click();}else{await openHubFeature(page,'relics');await selectRelic(page,a.relic);await page.getByTestId('equip-relic-'+a.relic).click();}await expect(page.getByTestId('configuration-dialog')).toBeVisible();}\n  12 | async function painted(page:Page){await expect.poll(async()=>{await page.clock.runFor(16);return page.getByTestId('hub-pulse').isVisible();}).toBe(true);}\n> 13 | async function frame(page:Page,info:TestInfo,name:string){const data=await page.getByTestId('hub-pulse').evaluate(n=>{const r=n.getBoundingClientRect(),hud=document.querySelector('.game-hud')!.getBoundingClientRect(),nav=document.getElementById('primary-navigation')!.getBoundingClientRect(),copy=[...n.querySelectorAll<HTMLElement>('strong,span,small')].map(x=>{const b=x.getBoundingClientRect();return{text:x.innerText,font:parseFloat(getComputedStyle(x).fontSize),inside:b.left>=r.left&&b.right<=r.right&&b.top>=r.top&&b.bottom<=r.bottom,clip:x.scrollWidth>x.clientWidth+1||x.scrollHeight>x.clientHeight+1};});return{top:r.top,bottom:r.bottom,hudBottom:hud.bottom,navTop:nav.top,copy,buttons:[...document.querySelectorAll<HTMLButtonElement>('main button')].filter(x=>x.checkVisibility()).every(x=>{const b=x.getBoundingClientRect(),hit=document.elementFromPoint(b.x+b.width/2,b.y+b.height/2);return x.disabled||hit===x||!!hit&&x.contains(hit);})};});await info.attach(name+'-geometry',{body:JSON.stringify(data),contentType:'application/json'});await captureFixedPng(page,info.outputPath(name+'.png'));expect(data.top).toBeGreaterThanOrEqual(data.hudBottom);expect(data.bottom).toBeLessThanOrEqual(data.navTop);expect(data.buttons).toBe(true);for(const row of data.copy){expect(row.font).toBeGreaterThanOrEqual(14);expect(row.inside).toBe(true);expect(row.clip).toBe(false);}}\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ^\n  14 | async function configured(page:Page,g:any,raw:any,a:any){await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(g.core.revision+1);const next=await database(page),added=next.rows['full-receipts'].filter((r:any)=>!raw.rows['full-receipts'].some((old:any)=>old.key===r.key));expect(added).toHaveLength(1);const receipt=added[0].value;expect(receipt.format).toBe('chenyuan-configuration-receipt');expect(receipt.intent.command).toMatchObject(a);const expected=resolve(g,receipt.intent.command);expect(stored(next,'current')).toEqual(expected.nextState);expect(await snapshot(page)).toEqual(expected.nextState);expect(receipt.result).toEqual(expected.result);expect(stored(next,'previous')).toEqual(g);expect(stored(next,'activity')).toEqual(stored(raw,'activity'));expect(next.rows['full-receipts'].filter((r:any)=>r.key!==added[0].key)).toEqual(raw.rows['full-receipts']);for(const n of Object.keys(next.rows).filter(n=>!['full-state','full-receipts'].includes(n)))expect(next.rows[n]).toEqual(raw.rows[n]);return{game:expected.nextState,raw:next,receipt};}\n  15 | for(const type of ['SCHOOL','EQUIP','EQUIP_RELIC']as const)test('UIR33-07 '+type+' saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable',async({page},info)=>{\n  16 |  const ex=feedbackExamples().actions.get(type)!,g=await importRecoveryFixture(page,ex.before),a=ex.action,raw=await database(page);await readonly(page,async()=>{await open(page,a);await page.getByTestId('configuration-cancel').click();});await open(page,a);await page.getByTestId('configuration-confirm').click();const done=await configured(page,g,raw,a);await painted(page);const pulse=page.getByTestId('hub-pulse');await frame(page,info,type+'-before-focus-assert');await expect(pulse).not.toContainText('物资未变化');const target=type==='SCHOOL'?C.skills[done.game.loadout.mind].description:type==='EQUIP'?C.skills[a.skill].description:C.relics[a.relic].description;await expect(pulse.locator('span')).toContainText(target);await expect(pulse.locator('small')).toContainText('不消耗物资');await page.clock.fastForward(2000);await expect(pulse).toHaveCount(0);await expect(page.getByTestId('stage-delta')).toContainText(type==='SCHOOL'?(done.game.school==='sword'?'剑修':'符修'):type==='EQUIP'?C.skills[a.skill].name:C.relics[a.relic].name);await expect(page.getByTestId('stage-delta')).toContainText('配装已保存');\n    at frame (/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts:13:1236)\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts:20:1108"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T01:34:17.555Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "original-retry-real-outcome-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ0b3AiOjExNCwiYm90dG9tIjoxOTIuOTY4NzUsImh1ZEJvdHRvbSI6MTEyLCJuYXZUb3AiOjgxOCwiY29weSI6W3sidGV4dCI6IumFjeijhSDCtyDmraLmsLTliZHlv4MiLCJmb250IjoyNCwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX0seyJ0ZXh0Ijoi5b+D5rOV77ya5q2i5rC05YmR5b+DIMK3IOmdmeS/ruaUtuebiiArMjUl77yb5oiY5paX5oqk5L2T6aKd5aSW5YeP5LykIDbjgIIiLCJmb250IjoxNiwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX0seyJ0ZXh0Ijoi5a6e6ZmFIDEgLyAxIOasoSDCtyDkuI3mtojogJfnianotYQiLCJmb250IjoxNCwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX1dLCJidXR0b25zIjpmYWxzZX0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/author-results/uir33-07-outcome-focus-UIR-28c0f-saves-the-exact-choice-once-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/author-results/uir33-07-outcome-focus-UIR-28c0f-saves-the-exact-choice-once-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/author-results/uir33-07-outcome-focus-UIR-28c0f-saves-the-exact-choice-once-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts",
+                    "column": 1236,
+                    "line": 13
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0deab64ea90ad107e70a-e954a6aa11df2e01ef4b",
+          "file": "uir33-07-outcome-focus.spec.ts",
+          "line": 152,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T01:34:02.526Z",
+    "duration": 19057.407,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

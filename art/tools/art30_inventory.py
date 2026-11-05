@@ -1,3 +1,4 @@
+from uir33_07_inventory import prior_uir3307_bytes
 """ART30 owns four presentation files, a decorative NPC scene and original save/reading boundaries."""
 import hashlib,json,re
 from narrative_object_inventory import NATIVE as NARRATIVE_FILES
@@ -20,7 +21,7 @@ def validate_art30(root,image_reader):
  def local(n):
   assert type(n)is str and n and not n.startswith('/')and'..'not in n.split('/')and'\\'not in n,'ART30 local path'
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART30 missing input';return p
- def digest(n):return hashlib.sha256(local(n).read_bytes()).hexdigest()
+ def digest(n):return hashlib.sha256(prior_uir3307_bytes(n,local(n).read_bytes())).hexdigest()
  def identity(r):
   assert type(r['bytes'])is int and r['bytes']==local(r['path']).stat().st_size and r['sha256']==digest(r['path']),'ART30 actual identity';return local(r['path']).read_bytes()
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-npc-meeting-art30'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART30 header'

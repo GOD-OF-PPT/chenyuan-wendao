@@ -1,0 +1,159 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/baseline3.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "runtimeDigest": "82db7e7002492f8af5f1d4c720b0639ec9ef2af2fe75a3224cb2d6328fcf4dbb",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/baseline3-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/baseline3-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runtimeDigest": "82db7e7002492f8af5f1d4c720b0639ec9ef2af2fe75a3224cb2d6328fcf4dbb",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "uir33-07-outcome-focus.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "uir33-07-outcome-focus.spec.ts",
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR33-07 SCHOOL saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 14210,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('hub-pulse')\nExpected substring: not \u001b[32m\"物资未变化\"\u001b[39m\nReceived string: \u001b[31m\"剑道初成\u001b[7m物资未变化\u001b[27m实际 1 / 1 次 · 不消耗物资\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('hub-pulse')\u001b[22m\n\u001b[2m    12 × locator resolved to <div role=\"status\" data-family=\"learning\" data-testid=\"hub-pulse\" data-operation=\"SCHOOL\" class=\"hub-pulse action-feedback-toast\" data-receipt=\"[\"3a14b44e-8deb-457c-b892-459e9cbb7c5a\",\"0566f9c8-33a8-4e18-85a3-f1c441efcdc3\"]\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"剑道初成物资未变化实际 1 / 1 次 · 不消耗物资\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('hub-pulse')\nExpected substring: not \u001b[32m\"物资未变化\"\u001b[39m\nReceived string: \u001b[31m\"剑道初成\u001b[7m物资未变化\u001b[27m实际 1 / 1 次 · 不消耗物资\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('hub-pulse')\u001b[22m\n\u001b[2m    12 × locator resolved to <div role=\"status\" data-family=\"learning\" data-testid=\"hub-pulse\" data-operation=\"SCHOOL\" class=\"hub-pulse action-feedback-toast\" data-receipt=\"[\"3a14b44e-8deb-457c-b892-459e9cbb7c5a\",\"0566f9c8-33a8-4e18-85a3-f1c441efcdc3\"]\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"剑道初成物资未变化实际 1 / 1 次 · 不消耗物资\"\u001b[22m\n\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts:16:493",
+                    "location": {
+                      "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts",
+                      "column": 493,
+                      "line": 16
+                    },
+                    "snippet": "  14 | async function configured(page:Page,g:any,raw:any,a:any){await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(g.core.revision+1);const next=await database(page),added=next.rows['full-receipts'].filter((r:any)=>!raw.rows['full-receipts'].some((old:any)=>old.key===r.key));expect(added).toHaveLength(1);const receipt=added[0].value;expect(receipt.format).toBe('chenyuan-configuration-receipt');expect(receipt.intent.command).toMatchObject(a);const expected=resolve(g,receipt.intent.command);expect(stored(next,'current')).toEqual(expected.nextState);expect(await snapshot(page)).toEqual(expected.nextState);expect(receipt.result).toEqual(expected.result);expect(stored(next,'previous')).toEqual(g);expect(stored(next,'activity')).toEqual(stored(raw,'activity'));expect(next.rows['full-receipts'].filter((r:any)=>r.key!==added[0].key)).toEqual(raw.rows['full-receipts']);for(const n of Object.keys(next.rows).filter(n=>!['full-state','full-receipts'].includes(n)))expect(next.rows[n]).toEqual(raw.rows[n]);return{game:expected.nextState,raw:next,receipt};}\n  15 | for(const type of ['SCHOOL','EQUIP','EQUIP_RELIC']as const)test('UIR33-07 '+type+' saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable',async({page},info)=>{\n> 16 |  const ex=feedbackExamples().actions.get(type)!,g=await importRecoveryFixture(page,ex.before),a=ex.action,raw=await database(page);await readonly(page,async()=>{await open(page,a);await page.getByTestId('configuration-cancel').click();});await open(page,a);await page.getByTestId('configuration-confirm').click();const done=await configured(page,g,raw,a);await painted(page);const pulse=page.getByTestId('hub-pulse');await frame(page,info,type+'-before-focus-assert');await expect(pulse).not.toContainText('物资未变化');const target=type==='SCHOOL'?C.skills[done.game.loadout.mind].description:type==='EQUIP'?C.skills[a.skill].description:C.relics[a.relic].description;await expect(pulse.locator('span')).toContainText(target);await expect(pulse.locator('small')).toContainText('不消耗物资');await page.clock.fastForward(2000);await expect(pulse).toHaveCount(0);await expect(page.getByTestId('stage-delta')).toContainText(type==='SCHOOL'?(done.game.school==='sword'?'剑修':'符修'):type==='EQUIP'?C.skills[a.skill].name:C.relics[a.relic].name);await expect(page.getByTestId('stage-delta')).toContainText('配装已保存');\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^\n  17 |  await readonly(page,async()=>{await page.getByTestId('hub-receipt').click();await expect(page.getByTestId('actual-cost')).toContainText('不消耗物资');await expect(page.getByTestId('actual-delta')).toContainText('物资未变化');await page.getByTestId('hub-close').click();});await expect(pulse).toHaveCount(0);await page.reload();await page.clock.fastForward(2000);expect(await snapshot(page)).toEqual(done.game);expect(await database(page)).toEqual(done.raw);await expect(pulse).toHaveCount(0);\n  18 | });\n  19 | test('UIR33-07 failed configuration shows no success and original retry saves the exact choice once',async({page},info)=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts",
+                        "column": 493,
+                        "line": 16
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('hub-pulse')\nExpected substring: not \u001b[32m\"物资未变化\"\u001b[39m\nReceived string: \u001b[31m\"剑道初成\u001b[7m物资未变化\u001b[27m实际 1 / 1 次 · 不消耗物资\"\u001b[39m\nTimeout: 8000ms\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" with timeout 8000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('hub-pulse')\u001b[22m\n\u001b[2m    12 × locator resolved to <div role=\"status\" data-family=\"learning\" data-testid=\"hub-pulse\" data-operation=\"SCHOOL\" class=\"hub-pulse action-feedback-toast\" data-receipt=\"[\"3a14b44e-8deb-457c-b892-459e9cbb7c5a\",\"0566f9c8-33a8-4e18-85a3-f1c441efcdc3\"]\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"剑道初成物资未变化实际 1 / 1 次 · 不消耗物资\"\u001b[22m\n\n\n  14 | async function configured(page:Page,g:any,raw:any,a:any){await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(g.core.revision+1);const next=await database(page),added=next.rows['full-receipts'].filter((r:any)=>!raw.rows['full-receipts'].some((old:any)=>old.key===r.key));expect(added).toHaveLength(1);const receipt=added[0].value;expect(receipt.format).toBe('chenyuan-configuration-receipt');expect(receipt.intent.command).toMatchObject(a);const expected=resolve(g,receipt.intent.command);expect(stored(next,'current')).toEqual(expected.nextState);expect(await snapshot(page)).toEqual(expected.nextState);expect(receipt.result).toEqual(expected.result);expect(stored(next,'previous')).toEqual(g);expect(stored(next,'activity')).toEqual(stored(raw,'activity'));expect(next.rows['full-receipts'].filter((r:any)=>r.key!==added[0].key)).toEqual(raw.rows['full-receipts']);for(const n of Object.keys(next.rows).filter(n=>!['full-state','full-receipts'].includes(n)))expect(next.rows[n]).toEqual(raw.rows[n]);return{game:expected.nextState,raw:next,receipt};}\n  15 | for(const type of ['SCHOOL','EQUIP','EQUIP_RELIC']as const)test('UIR33-07 '+type+' saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable',async({page},info)=>{\n> 16 |  const ex=feedbackExamples().actions.get(type)!,g=await importRecoveryFixture(page,ex.before),a=ex.action,raw=await database(page);await readonly(page,async()=>{await open(page,a);await page.getByTestId('configuration-cancel').click();});await open(page,a);await page.getByTestId('configuration-confirm').click();const done=await configured(page,g,raw,a);await painted(page);const pulse=page.getByTestId('hub-pulse');await frame(page,info,type+'-before-focus-assert');await expect(pulse).not.toContainText('物资未变化');const target=type==='SCHOOL'?C.skills[done.game.loadout.mind].description:type==='EQUIP'?C.skills[a.skill].description:C.relics[a.relic].description;await expect(pulse.locator('span')).toContainText(target);await expect(pulse.locator('small')).toContainText('不消耗物资');await page.clock.fastForward(2000);await expect(pulse).toHaveCount(0);await expect(page.getByTestId('stage-delta')).toContainText(type==='SCHOOL'?(done.game.school==='sword'?'剑修':'符修'):type==='EQUIP'?C.skills[a.skill].name:C.relics[a.relic].name);await expect(page.getByTestId('stage-delta')).toContainText('配装已保存');\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^\n  17 |  await readonly(page,async()=>{await page.getByTestId('hub-receipt').click();await expect(page.getByTestId('actual-cost')).toContainText('不消耗物资');await expect(page.getByTestId('actual-delta')).toContainText('物资未变化');await page.getByTestId('hub-close').click();});await expect(pulse).toHaveCount(0);await page.reload();await page.clock.fastForward(2000);expect(await snapshot(page)).toEqual(done.game);expect(await database(page)).toEqual(done.raw);await expect(pulse).toHaveCount(0);\n  18 | });\n  19 | test('UIR33-07 failed configuration shows no success and original retry saves the exact choice once',async({page},info)=>{\n    at /Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts:16:493"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T01:36:00.615Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "SCHOOL-before-focus-assert-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJ0b3AiOjExNCwiYm90dG9tIjoxNzYuOTg0Mzc1LCJodWRCb3R0b20iOjExMiwibmF2VG9wIjo4MTgsImNvcHkiOlt7InRleHQiOiLliZHpgZPliJ3miJAiLCJmb250IjoyNCwiaW5zaWRlIjp0cnVlLCJjbGlwIjpmYWxzZX0seyJ0ZXh0Ijoi54mp6LWE5pyq5Y+Y5YyWIiwiZm9udCI6MTYsImluc2lkZSI6dHJ1ZSwiY2xpcCI6ZmFsc2V9LHsidGV4dCI6IuWunumZhSAxIC8gMSDmrKEgwrcg5LiN5raI6ICX54mp6LWEIiwiZm9udCI6MTQsImluc2lkZSI6dHJ1ZSwiY2xpcCI6ZmFsc2V9XSwiYnV0dG9ucyI6dHJ1ZX0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/baseline3-results/uir33-07-outcome-focus-UIR-f67f1-st-receipt-remains-readable-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/baseline3-results/uir33-07-outcome-focus-UIR-f67f1-st-receipt-remains-readable-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/baseline3-results/uir33-07-outcome-focus-UIR-f67f1-st-receipt-remains-readable-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/gordon/githome/chenyuan-wendao/web/e2e/uir33-07-outcome-focus.spec.ts",
+                    "column": 493,
+                    "line": 16
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0deab64ea90ad107e70a-08ef99b275885665c9ea",
+          "file": "uir33-07-outcome-focus.spec.ts",
+          "line": 118,
+          "column": 56
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T01:35:58.638Z",
+    "duration": 17603.028,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
