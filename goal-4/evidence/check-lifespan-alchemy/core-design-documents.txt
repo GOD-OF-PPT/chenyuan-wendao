@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "markdownFiles": 9,
+  "localLinks": 47,
+  "externalLinksListedNotNetworkValidated": 34,
+  "staticPlans": 30,
+  "notTested": [
+    "runtime game",
+    "dependency installation",
+    "production build",
+    "browser tests",
+    "human playtest"
+  ]
+}

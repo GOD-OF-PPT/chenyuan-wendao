@@ -1,0 +1,2043 @@
+[
+  {
+    "file": "alchemy-workshop.spec.ts",
+    "title": "the real alchemy objects keep all seven recipes, honest gates and complete material quantities in one fixed desktop stage",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 8225,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "alchemy-workshop.spec.ts",
+    "title": "complete furnace settings and readonly material/product sources preserve a finite draft without starting travel or production",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 6048,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "alchemy-workshop.spec.ts",
+    "title": "furnace phases follow the real cycle and only two atomic saved pills arrive once before the cumulative budget stops",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 6501,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "alchemy-workshop.spec.ts",
+    "title": "hidden views, pause and a different selected recipe withdraw fire and cannot replay an already saved pill",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4983,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "alchemy-workshop.spec.ts",
+    "title": "a quota failure keeps the furnace cold and original-command retry saves one pill with one arrival",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4755,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "alchemy-workshop.spec.ts",
+    "title": "refresh, explicit continuation and saved receipt pages never animate an old completed furnace as a new reward",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5661,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "alchemy-workshop.spec.ts",
+    "title": "a different native page may craft but cannot light this page furnace or replay its saved product arrival",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5409,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "alchemy-workshop.spec.ts",
+    "title": "an invalid furnace image keeps real recipe, material and open-furnace controls playable",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3605,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "alchemy-workshop.spec.ts",
+    "title": "preference reduced motion keeps the real furnace states and saved product without animated flame or smoke",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3583,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "alchemy-workshop.spec.ts",
+    "title": "one real thirty-second furnace saves actual inputs and product before presenting the completed pill",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 35338,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "alchemy-workshop.spec.ts",
+    "title": "the forge retains its original one-cycle craft and explicit equip boundary outside the new alchemy workshop",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3296,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art13-alchemy-stage.spec.ts",
+    "title": "ART13-A1 one current furnace replaces permanent recipe columns while all seven readonly recipes remain reachable",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 6484,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art13-alchemy-stage.spec.ts",
+    "title": "ART13-A2 recipe and budget disclosure return to the same finite draft and predictable keyboard focus without writes",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5572,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art13-alchemy-stage.spec.ts",
+    "title": "ART13-A3 a partly spent paused furnace cannot restart its full allowance and continuing saves only its original remaining cycle",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4572,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art13-alchemy-stage.spec.ts",
+    "title": "ART13-A4 viewing another recipe and leaving its catalogue never restarts a cycle or replays an offstage saved pill",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4444,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art13-alchemy-stage.spec.ts",
+    "title": "ART13-A5 a four-material quota keeps the original intent all materials and retry reachable before one atomic product",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4038,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art13-alchemy-stage.spec.ts",
+    "title": "ART13-A6 a missing furnace still exposes a useful current object full four-material sources and keyboard recipe return",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4376,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art28-alchemy-scene.spec.ts",
+    "title": "ART28-A1 a real cold chamber and furnace inspection expose complete original budgets without lighting fire or writing Game",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 6008,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art28-alchemy-scene.spec.ts",
+    "title": "ART28-A2 every real recipe material source and future gate remain readable with one main decision and readonly return",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 12709,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art28-alchemy-scene.spec.ts",
+    "title": "ART28-A3 phases inspection quota and native saving retain the original single cycle and one atomic saved pill",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 12895,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art31-life-scroll.spec.ts",
+    "title": "ART31-A1 one physical life scroll keeps every character of all four factual chapters exact paging management return and export readonly",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 30558,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art31-life-scroll.spec.ts",
+    "title": "ART31-A2 one real retirement intent keeps its twelve-second boundary native all-store rollback and one original retry before showing a factual sealed scroll",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 7955,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art31-life-scroll.spec.ts",
+    "title": "ART31-A3 the actual full checkpoint restore returns a new unsealed life with its original preparation and discards old-life reading without auto closing",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 6556,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art31-life-scroll.spec.ts",
+    "title": "ART31-A4 retired reading preserves every original chapter character actual status and export with original restart confirmation",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 11546,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art31-life-scroll.spec.ts",
+    "title": "ART31-A4 lifespan reading preserves every original chapter character actual status and export with original restart confirmation",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 10772,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art31-life-scroll.spec.ts",
+    "title": "ART31-A4 transmit reading preserves every original chapter character actual status and export with original restart confirmation",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 14009,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art31-life-scroll.spec.ts",
+    "title": "ART31-A4 depart reading preserves every original chapter character actual status and export with original restart confirmation",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 13295,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art37-dialog-actions.spec.ts",
+    "title": "ART37 expanded settings and destructive press are readable, distinct and readonly",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 6923,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art37-dialog-actions.spec.ts",
+    "title": "ART37 a long literal selected filename wraps completely and cancelling import retains every store",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2546,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art37-dialog-actions.spec.ts",
+    "title": "ART37 expanded target production and its full limits keep both return actions reachable without opening the furnace",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4377,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art37-dialog-actions.spec.ts",
+    "title": "ART37 study complete directory pages preserve visible text, controls and the Game",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5213,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art37-dialog-actions.spec.ts",
+    "title": "ART37 alchemy complete directory pages preserve visible text, controls and the Game",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3672,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art37-dialog-actions.spec.ts",
+    "title": "ART37 relic complete directory pages preserve visible text, controls and the Game",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2973,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art37-dialog-actions.spec.ts",
+    "title": "ART37 market complete directory pages preserve visible text, controls and the Game",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 6070,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art37-dialog-actions.spec.ts",
+    "title": "ART37 inventory complete directory pages preserve visible text, controls and the Game",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3928,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art37-dialog-actions.spec.ts",
+    "title": "ART37 wilderness complete directory pages preserve visible text, controls and the Game",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2688,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art37-dialog-actions.spec.ts",
+    "title": "ART37 commission complete directory pages preserve visible text, controls and the Game",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4479,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "art37-dialog-actions.spec.ts",
+    "title": "ART37 saved reduced effects keep static dialog text and focus",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2808,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly CHOOSE exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2646,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly TRAVEL exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2759,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly CULTIVATE exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3650,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly SOURCE exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2907,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly BUY exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4634,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly SELL exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3913,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly CRAFT exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3629,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly USE exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3953,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly REST exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3897,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly BREAKTHROUGH exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2458,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly SCHOOL exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2612,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly STUDY exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3168,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly LEARN exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4149,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly EQUIP exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3588,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly FORGE exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3439,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly EQUIP_RELIC exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3918,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly ENCOUNTER exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2584,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly BATTLE exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2528,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly EVENT exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2528,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly DECIDE exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2799,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly START_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2373,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly ANSWER_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2903,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly END exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2995,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly RETIRE exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3116,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 readonly END_LIFE exposes the real decision object costs authorization and pre-action time for review",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3146,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 extra foreign rest preserves Game and records the actual travel preparation and disclosed time",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4014,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "title": "CEND03 extra real prepared trial checkpoint exposes both current preparation and explicit restoration without changing the saved state",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 8161,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-art36-cbase-art37.spec.ts",
+    "title": "CHECK90-C1 failed two-scroll study retains original authorization through new dialog cancel and one atomic original cycle",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 9836,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-art36-cbase-art37.spec.ts",
+    "title": "CHECK90-C2 recovery keeps its selected object and full thirty second atomic period while new consent is cancelled",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 9336,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-lifespan-alchemy.spec.ts",
+    "title": "CHECK-LIFE-ALCHEMY-C1 a complete unaffordable alchemy draft and folded rules survive readonly life choices and return without an activity",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5944,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-lifespan-alchemy.spec.ts",
+    "title": "CHECK-LIFE-ALCHEMY-C2 a failed original work tick keeps its authorization through furnace and life reading then stops at the real lifespan boundary",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 8065,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-lifespan-alchemy.spec.ts",
+    "title": "CHECK-LIFE-ALCHEMY-C3 a held native breakthrough saves preparation Game and result together after readonly alchemy inspection and pause",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5692,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-uir33-02.spec.ts",
+    "title": "CHECK-UIR33-02 EQUIP saved seal follows its visible object and clears across life and exact receipt reading",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4895,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-uir33-02.spec.ts",
+    "title": "CHECK-UIR33-02 EQUIP_RELIC saved seal follows its visible object and clears across life and exact receipt reading",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4959,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-uir33-02.spec.ts",
+    "title": "CHECK-UIR33-02 failed original cultivation keeps the real error and retry across life details without a screen-wide decorative frame",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3304,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-uir33-02.spec.ts",
+    "title": "CHECK-UIR33-02 a saved breakthrough has one unchanged stop reason and full life and original milestone result",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3062,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-ux31-33.spec.ts",
+    "title": "CHECK-UX3133-C1 missing alchemy ingredients lead with their real gate while complete settings and material-source returns stay readonly",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4476,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-ux31-33.spec.ts",
+    "title": "CHECK-UX3133-C2 a budget gate cannot masquerade as a zero forecast and a newly affordable furnace preserves the full original thirty-second transaction",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5149,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "check-ux31-33.spec.ts",
+    "title": "CHECK-UX3133-C3 a failed original furnace remains the only retry while an unaffordable next draft and readonly sources cannot change its saved authorization",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5135,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r1.spec.ts",
+    "title": "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 9532,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r1.spec.ts",
+    "title": "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5619,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r1.spec.ts",
+    "title": "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 7795,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r1.spec.ts",
+    "title": "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4914,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r1.spec.ts",
+    "title": "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5337,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r1.spec.ts",
+    "title": "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4264,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "life chapter and exact page survive ordinary goal inspection without a Game action",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2773,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "same person and category selection preserve the current factual reading and ordinary return",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4030,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "a story can inspect life and ordinary details then return to its same unconfirmed response",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2913,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "opening life from settings inside an ordinary story detail preserves that original one-level return",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3726,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "a real six-second visit leaves a clear pending meeting and never silently chooses the response",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 11794,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "all four people preserve every factual and known future-reading character without acting",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 9839,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "the complete retained hundred-entry journal remains readable through its actual page controls",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 17397,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "a duplicate journal entry keeps its own place after a saved commission",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4583,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "a duplicate journal entry keeps its own place after a saved commission at the hundred-entry cap",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4325,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "a committed visit that adds no journal text preserves the exact repeated entry being read",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3539,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "a saved victory with two actual journal entries retains the older readable entry",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3228,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "every life chapter retains its full source text and the exported factual life stays complete",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 9387,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "DECIDE shows every genuine option while preselection and native details remain read-only",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 7250,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "ANSWER_TRIAL shows every genuine option while preselection and native details remain read-only",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 7100,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "END shows every genuine option while preselection and native details remain read-only",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 7143,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "a committed response inserts facts without moving the life reader to another fact",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3709,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "one response waits six real seconds and persists its actual selected outcome exactly once",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 11153,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "the selected ending waits twelve real seconds and seals only this life with all records retained",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 17128,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "all eight main entries clear the temporary life-reading return while preserving the same pending story",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 7470,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "a replacement life cannot inherit the previous factual chapter or unconfirmed response",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4519,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "entering question again in the same life resets the old response despite its identical semantic id",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5415,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "cancelled choice confirmation and a hidden pending peek cannot execute or reopen an old dialogue",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4508,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "failed scene and portrait resources keep all people, complete factual reading and return controls usable",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3532,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "stage-r4.spec.ts",
+    "title": "a pending trial question can inspect local fate without querying it as a person event",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3014,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-01-cultivation-active.spec.ts",
+    "title": "UIR33-01-A1 the running cultivation stage replaces new-plan controls with real pause and original-budget keyboard continuation",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3665,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-01-cultivation-active.spec.ts",
+    "title": "UIR33-01-A2 assisted identity actual spending and finite limits survive readonly plan inspection refresh and explicit takeover",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3943,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-01-cultivation-active.spec.ts",
+    "title": "UIR33-01-A3 a failed cycle exposes the canonical retry while viewing the next draft cannot replace the accepted command",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3258,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-01-cultivation-active.spec.ts",
+    "title": "UIR33-01-A4 the stage pause during a held atomic save settles only that cycle without starting another",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2757,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-01-cultivation-active.spec.ts",
+    "title": "UIR33-01-A5 another cave activity keeps its real name controls and authorization instead of a disabled cultivation draft",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3346,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-06-life-entry.spec.ts",
+    "title": "UIR33-06 opening leave leads with the actual life instead of repeated unsealed instructions",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3061,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-06-life-entry.spec.ts",
+    "title": "UIR33-06 opening help leads with the actual life instead of repeated unsealed instructions",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4442,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-06-life-entry.spec.ts",
+    "title": "UIR33-06 opening trade leads with the actual life instead of repeated unsealed instructions",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3826,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-06-life-entry.spec.ts",
+    "title": "UIR33-06 longest lawful name and complete late chapters preserve every original fact and unchanged text export",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 12206,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-06-life-entry.spec.ts",
+    "title": "UIR33-06 one original cultivation cycle preserves the selected life record and context through ordinary return",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4593,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-06-life-entry.spec.ts",
+    "title": "UIR33-06 a failed twelve-second retirement keeps the active entry and only its original retry reveals the sealed conclusion",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5688,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-06-life-entry.spec.ts",
+    "title": "UIR33-06 replacing a life restores its own factual first page without inheriting the old reading or intent",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4717,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-08-alchemy-arrangement.spec.ts",
+    "title": "UIR33-08-A1 the furnace arrangement leads with the selected recipe true unit and finite target while complete rules and budget remain readonly",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4775,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-08-alchemy-arrangement.spec.ts",
+    "title": "UIR33-08-A2 four-material forecast and complete target rules fit together while an unaffordable draft keeps its real gate outside the disclosure",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5191,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir33-08-alchemy-arrangement.spec.ts",
+    "title": "UIR33-08-A3 reading rules after a quota failure cannot change the original thirty-second command or replay its saved reward",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4827,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir34-01-lifespan-guidance.spec.ts",
+    "title": "UIR34-01-A1 foreign last-month travel leads to an actionable readonly life guide without a zero-yield main action or a fictional checkpoint",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4624,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir34-01-lifespan-guidance.spec.ts",
+    "title": "UIR34-01-A2 a genuinely prepared last-month breakthrough keeps its original full thirty-second atomic checkpoint and restores ordinary guidance",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2560,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir34-01-lifespan-guidance.spec.ts",
+    "title": "UIR34-01-A3 a real native checkpoint remains inspectable after finite public work periods reach the lifespan boundary without restoring or ending",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 160394,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir34-01-lifespan-guidance.spec.ts",
+    "title": "UIR34-01-A4 viewing last-month options during a failed original trip cannot replace its command or spend the last month",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3859,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir34-01-lifespan-guidance.spec.ts",
+    "title": "UIR34-01-A5 an original paused assisted budget resumes once and stops at the real lifespan limit before the new readonly guide appears",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4736,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir34-01-lifespan-guidance.spec.ts",
+    "title": "UIR34-01-A6 a last-month battle keeps its actual action and context until an explicitly saved retreat returns to the cave guide",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2851,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir34-01-lifespan-guidance.spec.ts",
+    "title": "UIR34-01-A7 a superseding navigation cancels a late life-management opening without a hidden dialog or Game write",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2241,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "uir34-01-lifespan-guidance.spec.ts",
+    "title": "UIR34-01-A8 a chosen material target persists through lifespan guidance life reading and refresh without accepting another activity",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3507,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C1 actual retreat keeps one truthful location blocker and only explicit six-second travel makes trial preparation ready",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 8801,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C2 opening keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2680,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C2 event keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2444,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C2 event-target keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2394,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C2 battle keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2531,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C2 xp keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2935,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C2 material keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2586,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C2 skill-realm keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2686,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C2 relic-realm keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2694,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C2 stones keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3155,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C3 trial stage0 retains its actual exclusive question battle or ending guidance",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2371,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C3 trial stage1 retains its actual exclusive question battle or ending guidance",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2681,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C3 trial stage4 retains its actual exclusive question battle or ending guidance",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2480,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C4 retired remains a completed life with readonly return instead of new preparation",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 1842,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C4 ascended remains a completed life with readonly return instead of new preparation",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 1784,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux24-goal-guidance.spec.ts",
+    "title": "UX24-C5 completed item skill event and owned relic tracking keeps the factual completion through readonly target changes",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3080,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux30-primary-copy.spec.ts",
+    "title": "UX30-C1 cultivation keeps actionable unit facts and finite caps while complete forecasts and offline rules remain readonly with a preserved draft",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5656,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux30-primary-copy.spec.ts",
+    "title": "UX30-C2 alchemy keeps true material costs period and finite authorisation while full recipe lore and safe-stop rules remain available without an action",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4673,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux30-primary-copy.spec.ts",
+    "title": "UX30-C3 recovery shows each actual single effect once and complete medicine rest and stop details remain readable with all saved draft fields",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 10548,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux30-primary-copy.spec.ts",
+    "title": "UX30-C4 a real new mortal reaches the clear primary action and reading folded rules cannot restart or shortcut its original thirty-second saved cycle",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4626,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux33-activity-status.spec.ts",
+    "title": "UX33-A1 the shared rail keeps real cycle progress and concise controls through pause detail reading and original resume",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3242,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux33-activity-status.spec.ts",
+    "title": "UX33-A2 aborted keeps one canonical original retry and never confuses an unknown outcome with an uncommitted one",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4439,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux33-activity-status.spec.ts",
+    "title": "UX33-A2 committed-reply-lost keeps one canonical original retry and never confuses an unknown outcome with an uncommitted one",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 4374,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux33-activity-status.spec.ts",
+    "title": "UX33-A3 local objects point to one full recovery cause while viewing other playfields never replaces the failed source intent",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 7332,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux33-activity-status.spec.ts",
+    "title": "UX33-A4 paid preparation failures retain actual limits without cross-gameplay wording or a fake zero-completion forecast",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 5296,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux33-activity-status.spec.ts",
+    "title": "UX33-A5 a rejected source plan shows its actual reserve gate without a zero-yield plan and does not write anything",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 2258,
+        "retry": 0
+      }
+    ]
+  },
+  {
+    "file": "ux33-activity-status.spec.ts",
+    "title": "UX33-A6 reload and explicit takeover preserve the original remaining allowance without an offline reward or a duplicate clock",
+    "projectName": "chromium",
+    "status": "expected",
+    "results": [
+      {
+        "status": "passed",
+        "duration": 3734,
+        "retry": 0
+      }
+    ]
+  }
+]

@@ -569,3 +569,6 @@ CEND04依[0105](docs/decisions/0105-current-ui-suitability-cend04-contract.md)�
 
 
 UIR34-01依[0106](docs/decisions/0106-lifespan-guidance-uir34-01-contract.md)：寿限提示依正式phase/life/AGE_LIMIT，LOCATION_REQUIRED不冒寿元受阻，最后月仍可合法突破、筹备/配置或处理当前战局。主位真实受阻时给可查看去向，不用+0/灰色开始冒计划；原追踪只加上下文不暗改。准备核对只在原Store验证可用时出现，不补造或自动恢复/收卷。App返回实际导航owner，异步查看核人生/sync/导航；LifeScroll只读公开接口激活原可见书册入口，原写回调/焦点/预算/时钟保持。真实CPP测试应由正式保存建立；长前缀只读观察可合并保存activity/Date与公开DOM下一周期读秒，保完整周期/截止/原8秒与案例上限，不加sleep或提高时限掩盖异步握手。具体布局和措辞为项目推导，工程范围见goal-4/evidence/uir34-01；三任务综合另做，兼容环境性能及整体艺术/长期/真人边界保持。
+
+
+CHECK-UIR33-08-CEND04-UIR34-01依[0107](docs/decisions/0107-lifespan-alchemy-combination-check.md)核草案跨页、原失败重试与突破保存中查看/暂停：玩家设余寿保留线时正式ACTIVITY_RESERVE不能误当AGE_LIMIT，更不能为匹配测试改产品/历史回执；实际回洞后另核寿限主指引。几何检查按正文18px、真实辅助≥14px分类，不能把16px辅助导航错作正文或反向放宽正文/44目标/全Game/时限。当前19文件157及3子集、960规则/683资源是本轮有限工程证据，v19全1358与已知有限抉择等艺术问题仍开放；未改生产的复用包必须明确旧包身份并核333运行源/112载荷，不能伪造新版。具体分类/用例为项目推导，兼容环境性能当前暂停，艺术长期真人分开。

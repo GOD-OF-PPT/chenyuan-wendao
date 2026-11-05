@@ -1,0 +1,149 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-lifespan-alchemy/consumer/combinations.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-lifespan-alchemy/consumer/source/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": {},
+    "maxFailures": 0,
+    "metadata": {
+      "chenyuan": {
+        "head": "79a7115ec6b68dfd455d24747c3f52d3e4f9e5d8",
+        "source": "79a7115ec6b68dfd455d24747c3f52d3e4f9e5d8",
+        "tree": "c3cac179b45aa047a3833fa34fac57da94b39351",
+        "dirty": false,
+        "node": "v24.22.1",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigest": "8f5105b733a7385f98762e81fdce07d08e30bd9f0b2f24fd8a8c39d1f4c75e13"
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "chenyuan": {
+            "head": "79a7115ec6b68dfd455d24747c3f52d3e4f9e5d8",
+            "source": "79a7115ec6b68dfd455d24747c3f52d3e4f9e5d8",
+            "tree": "c3cac179b45aa047a3833fa34fac57da94b39351",
+            "dirty": false,
+            "node": "v24.22.1",
+            "npm": "8.11.0",
+            "npmOnPath": "8.11.0"
+          },
+          "runtimeDigest": "8f5105b733a7385f98762e81fdce07d08e30bd9f0b2f24fd8a8c39d1f4c75e13"
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-lifespan-alchemy/consumer/source/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "check-lifespan-alchemy.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "check-lifespan-alchemy.spec.ts",
+      "file": "check-lifespan-alchemy.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CHECK-LIFE-ALCHEMY-C1 a complete unaffordable alchemy draft and folded rules survive readonly life choices and return without an activity",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c43f02b4e814e644de97-c63596ef2fb8dde41d36",
+          "file": "check-lifespan-alchemy.spec.ts",
+          "line": 155,
+          "column": 1
+        },
+        {
+          "title": "CHECK-LIFE-ALCHEMY-C2 a failed original work tick keeps its authorization through furnace and life reading then stops at the real lifespan boundary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c43f02b4e814e644de97-60ba5dbb21d051dfb191",
+          "file": "check-lifespan-alchemy.spec.ts",
+          "line": 216,
+          "column": 1
+        },
+        {
+          "title": "CHECK-LIFE-ALCHEMY-C3 a held native breakthrough saves preparation Game and result together after readonly alchemy inspection and pause",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c43f02b4e814e644de97-1ca497b13046e17986f8",
+          "file": "check-lifespan-alchemy.spec.ts",
+          "line": 289,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T10:43:48.633Z",
+    "duration": 1465.3129999999992,
+    "expected": 0,
+    "skipped": 3,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

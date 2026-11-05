@@ -1,0 +1,132 @@
+[
+  {
+    "raw": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-results/check-lifespan-alchemy-CHE-2c7b1--return-without-an-activity-chromium/full-alchemy-draft-restored-after-life.png",
+    "rawSha256": "c100a736e3e4e8d8e273885860bdd195fc508fd1d30ebeca5a6acf9f9dc047c2",
+    "view": "goal-4/evidence/check-lifespan-alchemy/views/full-alchemy-draft-restored-after-life.png.jpg",
+    "viewSha256": "49a85526aa2345b5753ffe8557865b08cf257965c7612914b0bad7556f41b476",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy JPEG quality 68 same size",
+    "actuallyViewed": true,
+    "pixelReview": "从原命卷返回后目标/上限/原有限草案保持，原返回焦点可见，无裁切。"
+  },
+  {
+    "raw": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-results/check-lifespan-alchemy-CHE-2c7b1--return-without-an-activity-chromium/last-month-full-alchemy-before-life.png",
+    "rawSha256": "26a136b3ff0e1e479a10df7012e270e04638f2da11fc544c79575c01ef228a2d",
+    "view": "goal-4/evidence/check-lifespan-alchemy/views/last-month-full-alchemy-before-life.png.jpg",
+    "viewSha256": "483ba9356b0e57e578ab25b189d67bfb49772a8a695d61e22d411ec6a73c2aa5",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy JPEG quality 68 same size",
+    "actuallyViewed": true,
+    "pixelReview": "炼丹目标3/上限5、每炉30秒/2灵石与保留余寿原因可辨；完整规则展开可读，底部预算/禁用开始不越界。"
+  },
+  {
+    "raw": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-results/check-lifespan-alchemy-CHE-2c7b1--return-without-an-activity-chromium/readonly-life-from-alchemy-draft.png",
+    "rawSha256": "a816b4180f4d097f7c4ded71b10f5f26b0eeb58e7486b37bb89158d411f85892",
+    "view": "goal-4/evidence/check-lifespan-alchemy/views/readonly-life-from-alchemy-draft.png.jpg",
+    "viewSha256": "3575c1b20d6e91285ffeb2bb446b57c0aef46f42dd693d37f041b614a0ad63c8",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy JPEG quality 68 same size",
+    "actuallyViewed": true,
+    "pixelReview": "导出/归隐/最后月收卷入口与另行确认说明清楚，查看未执行；末项恢复说明完整。"
+  },
+  {
+    "raw": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-results/check-lifespan-alchemy-CHE-8435a--the-real-lifespan-boundary-chromium/actual-lifespan-stop-after-original-retry.png",
+    "rawSha256": "f0b879a77e94ce551851ae0b11b452b4f73b757bf050a0315df8f97caf5abe5c",
+    "view": "goal-4/evidence/check-lifespan-alchemy/views/actual-lifespan-stop-after-original-retry.png.jpg",
+    "viewSha256": "ae13ae2fb46ab07a2bb730e665e2f79643789a290d3a8236c73742aefec34b22",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy JPEG quality 68 same size",
+    "actuallyViewed": true,
+    "pixelReview": "真实余寿1月回洞后主位明确受阻与查看去向，不再+0/灰色大开始；八入口完整，原当前目标仍筹备筑基。"
+  },
+  {
+    "raw": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-results/check-lifespan-alchemy-CHE-8435a--the-real-lifespan-boundary-chromium/original-work-failure-furnace-rules.png",
+    "rawSha256": "132526c9e2012dee3e18e911ad97bad220a745d4e8f1cc6eb29c16b42e2dae3e",
+    "view": "goal-4/evidence/check-lifespan-alchemy/views/original-work-failure-furnace-rules.png.jpg",
+    "viewSha256": "e71b5c22b3b12490a24cb7fe288a1cde50615b7e99bf39778bea2ac106729144",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy JPEG quality 68 same size",
+    "actuallyViewed": true,
+    "pixelReview": "原失败跨页后仍要求核对存档；炼丹缺草与完整规则可读，未成为新授权。"
+  },
+  {
+    "raw": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-results/check-lifespan-alchemy-CHE-8435a--the-real-lifespan-boundary-chromium/original-work-failure-life-options.png",
+    "rawSha256": "247f3135904b5bc3ecaba665aab762d92dc0f00e43dca8c6ad3d3077139d11b5",
+    "view": "goal-4/evidence/check-lifespan-alchemy/views/original-work-failure-life-options.png.jpg",
+    "viewSha256": "3ea34e640415982941ea7aa5e7f8317e482fe63c89bcad8451e7928c07f665a8",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy JPEG quality 68 same size",
+    "actuallyViewed": true,
+    "pixelReview": "存档待核对时归隐禁用并就地说明重试/取消原安排，无收卷新意图。"
+  },
+  {
+    "raw": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-results/check-lifespan-alchemy-CHE-b2976-lchemy-inspection-and-pause-chromium/held-breakthrough-old-game-alchemy-rules.png",
+    "rawSha256": "1bc813e0bf83d4b3895109a6e0e1f75e90c5edc4f16c872fc28a4025de915edb",
+    "view": "goal-4/evidence/check-lifespan-alchemy/views/held-breakthrough-old-game-alchemy-rules.png.jpg",
+    "viewSha256": "a71c8d4488f4466a5c28688cad191aeb502db094191bb263b76e8397caff91f2",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy JPEG quality 68 same size",
+    "actuallyViewed": true,
+    "pixelReview": "事务未完成时仍为原炼气/原存量，保存中有活动阻止新开炉，规则和返回可读。"
+  },
+  {
+    "raw": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-results/check-lifespan-alchemy-CHE-b2976-lchemy-inspection-and-pause-chromium/saved-breakthrough-life-reading.png",
+    "rawSha256": "60cd780c61cacc813b834206d6327e6d76fa70e046ab80400a14c9656c818d2d",
+    "view": "goal-4/evidence/check-lifespan-alchemy/views/saved-breakthrough-life-reading.png.jpg",
+    "viewSha256": "36312f91884b265304214421616d4b54281929b910adca38de521b0bc73d6647",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy JPEG quality 68 same size",
+    "actuallyViewed": true,
+    "pixelReview": "真实保存后生平更新筑基并保完整卷页、分页、卷尾与返回；辅助导航16px、正文18px可读，视觉不冒整体艺术认可。"
+  },
+  {
+    "raw": "artifacts/goal-4/check-lifespan-alchemy/consumer/union-results/cend03-review-observations-00407--pre-action-time-for-review-chromium/CHOOSE-actual-decision.png",
+    "rawSha256": "a08fd0b3382866d251102585a1e111adfd947144577019582f642b0f17b65a08",
+    "view": "goal-4/evidence/check-lifespan-alchemy/views/union-CHOOSE-actual-decision.png.jpg",
+    "viewSha256": "45819e19b57196f30b164c99659f985a4b8ee16bf8e0cdef3a2f9ba417cf38ed",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy JPEG quality 68 same size",
+    "actuallyViewed": true,
+    "pixelReview": "当前实际确认窗无越界，人物/来由/成本/耗时与主确认可读；仍有三页来由、重复作用/停止/保存协议分散当前决定，原UIR34-02负面审查保持，下一独立项重排，不能据几何绿宣称适合游戏。"
+  },
+  {
+    "raw": "artifacts/goal-4/check-lifespan-alchemy/consumer/union-results/cend03-review-observations-86b50--pre-action-time-for-review-chromium/BREAKTHROUGH-actual-decision.png",
+    "rawSha256": "90cd863be98c898226c57f835f274c89447601212027debb76a084b82a26baf0",
+    "view": "goal-4/evidence/check-lifespan-alchemy/views/union-BREAKTHROUGH-actual-decision.png.jpg",
+    "viewSha256": "b024685f6c99dda27b1e2a9ffd0cf13d18ae6af0c8ecb2d6881050076975ffa4",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy JPEG quality 68 same size",
+    "actuallyViewed": true,
+    "pixelReview": "当前实际确认窗无越界，人物/来由/成本/耗时与主确认可读；仍有三页来由、重复作用/停止/保存协议分散当前决定，原UIR34-02负面审查保持，下一独立项重排，不能据几何绿宣称适合游戏。"
+  }
+]

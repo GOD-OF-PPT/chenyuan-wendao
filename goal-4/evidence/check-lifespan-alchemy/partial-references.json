@@ -1,0 +1,67 @@
+{
+  "incomplete": true,
+  "references": [
+    {
+      "path": "artifacts/goal-4/check-lifespan-alchemy/current/combinations-terminal.json",
+      "bytes": 508,
+      "sha256": "7d170afa819b6ae3ba2cf4600d2db4caf352ef7fb8ad2ae45f62fc92188f0056"
+    },
+    {
+      "path": "artifacts/goal-4/check-lifespan-alchemy/current/combinations-report.json",
+      "bytes": 167117,
+      "sha256": "e3166774d13f0de660090fc479d162a2a4050dd4687a96aa6a7fe9fb15bc9d9d"
+    },
+    {
+      "path": "artifacts/goal-4/check-lifespan-alchemy/current/combinations-before.json",
+      "bytes": 564998,
+      "sha256": "208070e09e2d9beff3ef30f1d3754b51df06c2bb9edf0b0f07aebed8bd459599"
+    },
+    {
+      "path": "artifacts/goal-4/check-lifespan-alchemy/current/combinations-after.json",
+      "bytes": 564997,
+      "sha256": "9e3e3ab3fa4cd18433b0fabd282aa59055cd104bf285689765bb9a3a33d6fc75"
+    },
+    {
+      "path": "artifacts/goal-4/check-lifespan-alchemy/current/core-terminal.json",
+      "bytes": 187,
+      "sha256": "d1ed2267433e4aa5662c164187f51902d68a37fefb91e752818f5d81065f54d9"
+    },
+    {
+      "path": "artifacts/goal-4/check-lifespan-alchemy/current/core-report/validation.json",
+      "bytes": 9364,
+      "sha256": "c6bf0c160f7faa40f41e35893993f43cdb9cc931ab128c69b6dd59a4e36d05be"
+    },
+    {
+      "path": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-terminal.json",
+      "bytes": 508,
+      "sha256": "53004312f586e36bf066d0194ffb9196e769f900d890ae2cc710b47eb41ca164"
+    },
+    {
+      "path": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-report.json",
+      "bytes": 145585,
+      "sha256": "12fb910c1e85f75218b1b67441b2b5f3a0c2395875ef280514ed3d7744b98764"
+    },
+    {
+      "path": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-before.json",
+      "bytes": 564998,
+      "sha256": "bf1c204c05c72e2b88d49733aa0fc669e305c52d5c658b4254d1d341ff2b2de6"
+    },
+    {
+      "path": "artifacts/goal-4/check-lifespan-alchemy/consumer/combinations-after.json",
+      "bytes": 564997,
+      "sha256": "c233cd3a6e0535015240e310c5e608a6b8a16d9c49db8c9fbe09ef06d9768637"
+    }
+  ],
+  "extractedOriginalAtomicProofs": [
+    {
+      "case": "CHECK-LIFE-ALCHEMY-C2 a failed original work tick keeps its authorization through furnace and life reading then stops at the real lifespan boundary",
+      "file": "goal-4/evidence/check-lifespan-alchemy/same-original-work-only-once-atomic-proof.json",
+      "bytes": 23024
+    },
+    {
+      "case": "CHECK-LIFE-ALCHEMY-C3 a held native breakthrough saves preparation Game and result together after readonly alchemy inspection and pause",
+      "file": "goal-4/evidence/check-lifespan-alchemy/held-breakthrough-full-preparation-atomic-proof.json",
+      "bytes": 65475
+    }
+  ]
+}
