@@ -1,0 +1,69 @@
+{
+  "task": "UIR33-07",
+  "contentFocusEngineeringCompleted": true,
+  "overallFeedbackArtCompleted": false,
+  "overallGoalCompleted": false,
+  "productCommit": "f4453b25d7a1006dfd58ae2634bbaff2d89db773",
+  "runtime": "76d4ed035dceaa513a872f15c161802677d41b32e181cf7bb48fb76a89f2a6e2",
+  "UI": {
+    "uniquePassed": 53,
+    "files": 8,
+    "newIncluded": 4,
+    "retries": 0,
+    "failures": 0,
+    "inputsBeforeAfter": 4106,
+    "equal": true,
+    "deferred": [
+      "ART26-A5",
+      "TA09-A12"
+    ]
+  },
+  "focused": {
+    "nodePassed": 92,
+    "resourceMethodsPassed": 33,
+    "positiveFullInventory": true,
+    "typesAndBuild": true,
+    "inputs": 4098,
+    "beforeAfterEqual": true,
+    "wholeCoreAndResourceSuiteReexecuted": false
+  },
+  "runtimeFiles": 331,
+  "unchangedRuntimeFiles": 328,
+  "visual": {
+    "currentActuallyViewed": 4,
+    "allGeneratedViewed": false,
+    "residual": "Original global equipment sigil near left heading; next combined review must address geometry/art separately."
+  },
+  "budgets": {
+    "feedback": 33998,
+    "feedbackCap": 34000,
+    "catalogue": 16114,
+    "catalogueCap": 18000,
+    "presentationAdded": 1088,
+    "presentationAddedCap": 2400,
+    "newAssets": 0
+  },
+  "preview": {
+    "url": "http://127.0.0.1:56898/",
+    "archive": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-07/uir33-07-preview-f4453b2.zip",
+    "bytes": 10126707,
+    "sha256": "9553def1651f313a3882655b0da46b2a3b2beea386f7b33875de9bea6f15131c",
+    "httpFiles": 112,
+    "runtimeBytes": 11219296,
+    "packageCases": 4,
+    "packageCasesSubsetOf53": true
+  },
+  "finalObligation": {
+    "version": 15,
+    "UI": 893,
+    "storage": 415,
+    "normalRoute": 32,
+    "total": 1340,
+    "wholeExecuted": false
+  },
+  "playerSaveChanged": false,
+  "original13Preserved": true,
+  "compatibilityEnvironmentPerformance": "paused, not executed",
+  "next": "CHECK-UIR33-02",
+  "goal": "active"
+}

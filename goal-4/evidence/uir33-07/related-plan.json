@@ -1,0 +1,275 @@
+{
+  "runtime": "76d4ed035dceaa513a872f15c161802677d41b32e181cf7bb48fb76a89f2a6e2",
+  "cwd": "web",
+  "retries": 0,
+  "configRelative": "../related.config.ts",
+  "buildRelative": "web/build-report/build.json",
+  "httpURL": "http://127.0.0.1:4173/",
+  "expectedDeclarations": [
+    {
+      "file": "art26-loadout-stage.spec.ts",
+      "title": "ART26-A1 the actual three skills and bound relic surround a calm complete character with readonly Game and a real painted body",
+      "project": "chromium"
+    },
+    {
+      "file": "art26-loadout-stage.spec.ts",
+      "title": "ART26-A2 viewing the bound slot reaches that actual relic instead of the first catalogue object without a Game write",
+      "project": "chromium"
+    },
+    {
+      "file": "art26-loadout-stage.spec.ts",
+      "title": "ART26-A3 one actual changed skill is primary while all four facts and original explicit atomic confirmation remain intact",
+      "project": "chromium"
+    },
+    {
+      "file": "art26-loadout-stage.spec.ts",
+      "title": "ART26-A4 mortal empty sockets and a lawful sixteen-character talisman identity keep all four entrances and actual stats",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A8 skill local saved configuration never relights its old sequence after a foreign same-run A to B to A transition",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A8 relic local saved configuration never relights its old sequence after a foreign same-run A to B to A transition",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A9 a finite start already committed before a real native connection closure remains a saved readonly arrangement rather than a fresh unarranged choice",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A5 late native learning delivery cannot replace another page medicine activity or relight the previous learned scroll",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A1 separately authorized learning equip purchase medicine and personal response keep exact costs and independent game objects across one lawful route",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A2 medicine cycle quota blocks otherwise legal equipment and visits across domains while read pages export and original retry remain available",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A3 cancelling failed equipment or visit intent allows only a new explicitly confirmed action in the other domain",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A4 a committed configuration survives queued native snapshot abort and cross-domain reconnect never repeats that equipment or medicine",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A6 unsubmitted learning and medicine drafts survive people life and ordinary detail returns while a later real use updates the anchored factual inventory",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art-02.spec.ts",
+      "title": "CHECK2-A7 a paid personal response medicine is consumed exactly once and old factual readings cannot become a new recovery effect",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art03-combinations.spec.ts",
+      "title": "CHECK-ART03-C1 paid queued study preserves its selected scroll complete draft and original finite authorization through bag people life and ordinary return",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art03-combinations.spec.ts",
+      "title": "CHECK-ART03-C2 retained relic materials and explicit travel preserve source return and newer market or rest drafts edited during the same journey",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art03-combinations.spec.ts",
+      "title": "CHECK-ART03-C3 both medicine purposes retain separate sale drafts while one real paid response supplies exactly one later dose and factual life stays readonly",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art03-combinations.spec.ts",
+      "title": "CHECK-ART03-C4 an atomic positive-medicine quota retains its original retry across all three objects and a partly spent paused order cannot become a fresh full allowance",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A1 all twelve two-school jade objects retain their complete real effects and readonly slot context beside an explicit finite scroll rail",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A2 finite scroll browsing keeps saved draft and slot domains distinct across manual return and clears only on a new run",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A3 two paid cross-school scrolls use frozen current commands through native sealing and metadata delivery without borrowing mastery",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A4 cumulative paid and legal zero-cost scrolls stop at exact budget or reserve without dropping mastered facts",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A5 native thirty-second paid learning has no early Game write and engraves one credible mastery",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A6 native sixty-second manual inscribes one insight while talisman school and actual equipment remain unchanged",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A7 four artifact blueprints become distinct workpieces and only saved owned artifacts reveal their real cold art",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A8 native sixty-second positive-cost forging saves full material and month costs before revealing an unbound artifact",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A9 paid LEARN cycle and FORGE admission quota failures retain the exact original intent for one first successful retry",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A10 pause pending hidden scenes and same-id foreign generations clear work and old seals while full history remains authoritative",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A11 three instant configurations keep comparison CAS and original retry while foreign A to B to A cannot relight old engraving",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a committed full restore with lost delivery keeps its original modal retry enabled and replay leaves every database record unchanged",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a fresh stale full restore confirmation still rejects another page actual new battle turn without writing",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a travel preview and actual one-arrival stop use travel language and inspecting does not start another action",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "manual recovery medicines available retain their reason without an empty trailing separator",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "manual recovery medicines unavailable retain their reason without an empty trailing separator",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "a current trial victory toast lets actual view buttons receive clicks and never authorizes the next gate",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "an explicit preparation purchase retains its travel draft then trial entry stops for the player question",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "title": "the actual storage reconnect reports the saved paused activity and never retries or grants an offline cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C1 traded manual completion stays factual in both schools and locations without another travel or study authorization",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C2 a formally studied manual has the same permanent completion while browsing back preserves each school finite draft",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C3 first paid study seals only after its full native transaction and an original quota retry creates one truthful completion",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C4 all eight current game entry surfaces retain their real objects complete controls and readonly Game databases",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C5 a learned manual remains readable after a real cancelled configuration failure and only a fresh compared intent changes school",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-ta-review.spec.ts",
+      "title": "CHECK-TA-C6 completed paid study still exposes its canonical original budget and reserve without changing Game or borrowing a later draft",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "title": "UIR33-07 SCHOOL saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "title": "UIR33-07 EQUIP saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "title": "UIR33-07 EQUIP_RELIC saved feedback identifies the actual choice and effect while full zero-cost receipt remains readable",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-07-outcome-focus.spec.ts",
+      "title": "UIR33-07 failed configuration shows no success and original retry saves the exact choice once",
+      "project": "chromium"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "task": "UIR33-07",
+  "completed": true,
+  "source": "f4453b2",
+  "runtime": "76d4ed035dceaa513a872f15c161802677d41b32e181cf7bb48fb76a89f2a6e2",
+  "relatedSession": 63598,
+  "relatedCases": 53,
+  "focusedSession": 19669,
+  "focusedExit": 0,
+  "previewServer": 27031,
+  "testServer": 45371,
+  "next": "CHECK-UIR33-02; allcurrent run handles terminal0, do not restart",
+  "goal": "active",
+  "previewPhaseSession": 28161,
+  "previewExit": 0,
+  "previewCases": 4,
+  "visualCurrentReviewed": 4,
+  "rulesPassed": 92,
+  "resourceMethodsPassed": 33,
+  "relatedExit": 0,
+  "relatedPassed": 53,
+  "evidence": "verification.json"
+}
