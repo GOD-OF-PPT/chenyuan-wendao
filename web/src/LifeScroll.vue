@@ -9,6 +9,7 @@ import AssetImage from './AssetImage.vue';
 import './narrative-objects.css';
 const props=defineProps<{game:Game;mode:string}>();
 const focus=inject(gameFocusKey),management=ref<HTMLDialogElement>(),opener=ref<HTMLButtonElement>(),titleId=useId();
+defineExpose({manage:()=>opener.value?.click()});
 function close(){if(management.value?.open){management.value.close();focus?.target(opener.value??null);}}
 function open(event:Event){if(focus)focus.open(management.value,event.currentTarget as HTMLElement);else management.value?.showModal();}
 watch(()=>props.game.core.runId,()=>management.value?.close());onDeactivated(()=>management.value?.close());onScopeDispose(()=>focus?.release(management.value));

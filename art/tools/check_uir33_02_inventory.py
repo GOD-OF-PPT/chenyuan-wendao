@@ -1,3 +1,4 @@
+from uir34_01_inventory import prior_uir3401_bytes
 """Exact positioning/decorative cleanup and duplicate visible stop removal."""
 import hashlib,json,re
 from pathlib import Path
@@ -104,6 +105,7 @@ MANIFEST={'format': 'chenyuan-check-uir33-02',
  'sourceReferences': ['docs/decisions/0103-uir33-stage-feedback-check.md',
                       'goal-4/amendments/2026-11-05-check-uir33-02-input.md']}
 def prior_check_uir3302_bytes(path,raw):
+ raw=prior_uir3401_bytes(path,raw)
  name=Path(path).name
  if name not in MANIFEST['files']:return raw
  f=MANIFEST['files'][name]
@@ -130,6 +132,6 @@ def validate_check_uir3302(root):
   if name.endswith('.vue'):assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'CHECK UIR02 events'
  for name,cap in [('action-feedback',34000),('idle-cultivation',22000)]:
   ledger=local('art/redesign/'+name+'.json');assert hashlib.sha256(ledger.read_bytes()).hexdigest()==MANIFEST['originalLedgers'][name],'CHECK UIR02 old ledger';assert sum(local(r['path']).stat().st_size for r in json.loads(ledger.read_text())['files'])<=cap,'CHECK UIR02 actual cap'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'CHECK UIR02 immutable owner'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_uir3401_bytes(n,local(n).read_bytes())).hexdigest()==h,'CHECK UIR02 immutable owner'
  for n in MANIFEST['sourceReferences']:local(n)
  return {LEDGER,*[f[k]for f in MANIFEST['files'].values()for k in ['path','before']],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']},sum(f['bytes']for f in MANIFEST['files'].values())

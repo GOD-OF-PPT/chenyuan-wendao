@@ -1,3 +1,4 @@
+from uir34_01_inventory import prior_uir3401_bytes
 """Current cultivation controls, strict complete inverse and separate added surface budget."""
 from uir33_02_inventory import prior_uir3302_bytes
 import hashlib,json,re
@@ -81,6 +82,7 @@ OPERATIONS={'web/src/App.vue': [["import CultivationSite from './CultivationSite
                                   'name="decision"/></div>']]}
 MARKERS={'App.vue':'import CultivationOngoing','CultivationSite.vue':'<slot name="activity"/>'}
 def prior_uir3301_bytes(path,raw):
+ raw=prior_uir3401_bytes(path,raw)
  raw=prior_uir3302_bytes(path,raw)
  name=Path(path).name
  if name not in FACTS or MARKERS[name].encode() not in raw:return raw
@@ -104,7 +106,7 @@ def validate_uir3301(root):
  assert json.loads(local(LEDGER).read_text())==MANIFEST, 'UIR33-01 exact ledger'
  assert json.loads(local('art/redesign/uir33-01-edits.json').read_text())==OPERATIONS, 'UIR33-01 exact edits'
  for name,f in FACTS.items():
-  raw=local(f['path']).read_bytes();before=local(f['before']).read_bytes()
+  raw=prior_uir3401_bytes(f['path'],local(f['path']).read_bytes());before=local(f['before']).read_bytes()
   assert len(raw)==f['bytes'] and hashlib.sha256(raw).hexdigest()==f['sha256'], 'UIR33-01 current complete parent'
   assert hashlib.sha256(before).hexdigest()==f['beforeSHA256'], 'UIR33-01 original preserved'
   assert prior_uir3301_bytes(name,raw)==before, 'UIR33-01 inverse'

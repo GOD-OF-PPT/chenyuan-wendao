@@ -1,3 +1,4 @@
+from uir34_01_inventory import prior_uir3401_bytes
 """ART05 source identity, fixed budget and consumer wiring; not runtime or visual proof."""
 import hashlib,json,re
 from pathlib import PurePosixPath
@@ -46,7 +47,7 @@ def validate_narrative_objects(root):
  assert [row['path'] for row in m['files']]==NATIVE,'Narrative source inventory incomplete'
  total=0
  for row in m['files']:
-  data=local(row['path']).read_bytes()
+  data=prior_uir3401_bytes(row['path'],local(row['path']).read_bytes())
   assert type(row['bytes']) is int and row['bytes']==len(data),'Narrative source byte count changed'
   assert type(row['sha256']) is str and re.fullmatch('[0-9a-f]{64}',row['sha256']) and row['sha256']==hashlib.sha256(data).hexdigest(),'Narrative source hash changed'
   total+=len(data)

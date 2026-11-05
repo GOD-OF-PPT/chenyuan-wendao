@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3401=ROOT/'art/redesign/uir34-01.json'
+  if uir3401.exists():
+   data=json.loads(uir3401.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']));files.update(ROOT/ref['before'] for ref in data['files'].values())
   uir3308=ROOT/'art/redesign/uir33-08.json'
   if uir3308.exists():
    data=json.loads(uir3308.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[data['before']]+list(data['unchanged']))
@@ -2281,5 +2284,18 @@ class UIR3308ExactTemplateTests(unittest.TestCase):
   for a,b in [("emit('start')","emit('badxx')"),('停炉与续接规则','停炉与假的规则'),('quote.allowed','quote.failure')]:
    self.assertIn(a,raw)
    with self.subTest(mutation=a),self.assertRaisesRegex(AssertionError,'UIR33-08'):prior_uir3308_bytes(MANIFEST['path'],raw.replace(a,b,1).encode())
+
+
+class UIR3401LifespanDisplayTests(unittest.TestCase):
+ def test_exact_current_sources_reconstruct_all_old_controllers_and_controls(self):
+  from uir34_01_inventory import validate_uir3401,prior_uir3401_bytes,MANIFEST
+  self.assertLessEqual(validate_uir3401(ROOT)[1],6000)
+  for name,r in MANIFEST['files'].items():self.assertEqual(prior_uir3401_bytes(name,(ROOT/r['path']).read_bytes()),(ROOT/r['before']).read_bytes())
+ def test_changed_clock_save_focus_or_manager_activation_cannot_hide_inside_display_evolution(self):
+  from uir34_01_inventory import prior_uir3401_bytes
+  cases=[('App.vue','@click="startTraining(hubTrainingPlan)"','@click="startTraining(defaultTraining)"'),('App.vue','if(owns(owner??null))','if(true)'),('LifeScroll.vue','opener.value?.click()','management.value?.showModal()'),('LifeCatalogue.vue',"emit('end','RETIRE')","emit('end','END_LIFE')")]
+  for name,a,b in cases:
+   raw=(ROOT/('web/src/'+name)).read_text();self.assertIn(a,raw)
+   with self.subTest(name=name,mutation=a),self.assertRaisesRegex(AssertionError,'UIR34-01'):prior_uir3401_bytes(name,raw.replace(a,b,1).encode())
 
 if __name__=='__main__':unittest.main()

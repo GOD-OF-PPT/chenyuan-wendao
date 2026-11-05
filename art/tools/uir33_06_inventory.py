@@ -1,3 +1,4 @@
+from uir34_01_inventory import prior_uir3401_bytes
 """Factual active life entry and title; preserve every original row and write owner."""
 import hashlib,json,re
 from pathlib import Path
@@ -51,6 +52,7 @@ MANIFEST={'format': 'chenyuan-life-entry-uir33-06',
 FACTS={Path(r['path']).name:r for r in MANIFEST['files']}
 MARKERS={'LifeCatalogue.vue':" · 修行纪事",'story-pages.ts':"key:'life-now'"}
 def prior_uir3306_bytes(path,raw):
+ raw=prior_uir3401_bytes(path,raw)
  name=Path(path).name
  if name not in FACTS or MARKERS[name].encode() not in raw:return raw
  f=FACTS[name];assert hashlib.sha256(raw).hexdigest()==f['sha256'],'UIR33-06 exact current projection'
@@ -69,13 +71,13 @@ def validate_uir3306(root):
   return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'UIR33-06 original scope and budgets'
  for name,f in FACTS.items():
-  raw=local(f['path']).read_bytes();old=local(f['before']).read_bytes();assert len(raw)==f['bytes'] and hashlib.sha256(raw).hexdigest()==f['sha256'],'UIR33-06 current facts';assert len(old)==f['beforeBytes'] and hashlib.sha256(old).hexdigest()==f['beforeSHA256'],'UIR33-06 original preserved';assert prior_uir3306_bytes(name,raw)==old,'UIR33-06 full inverse'
+  raw=prior_uir3401_bytes(f['path'],local(f['path']).read_bytes());old=local(f['before']).read_bytes();assert len(raw)==f['bytes'] and hashlib.sha256(raw).hexdigest()==f['sha256'],'UIR33-06 current facts';assert len(old)==f['beforeBytes'] and hashlib.sha256(old).hexdigest()==f['beforeSHA256'],'UIR33-06 original preserved';assert prior_uir3306_bytes(name,raw)==old,'UIR33-06 full inverse'
   if name.endswith('.vue'):
    assert re.search(rb'<script setup.*?</script>',raw,re.S).group()==re.search(rb'<script setup.*?</script>',old,re.S).group(),'UIR33-06 original controller'
    assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'UIR33-06 original events'
  for n,pin in MANIFEST['oldLedgers'].items():assert hashlib.sha256(local('art/redesign/'+n+'.json').read_bytes()).hexdigest()==pin,'UIR33-06 old ledger immutable'
  for name,cap in [('story-journey',48000),('narrative-objects',45000)]:assert sum(local(r['path']).stat().st_size for r in json.loads(local('art/redesign/'+name+'.json').read_text())['files'])<=cap,'UIR33-06 original actual cap'
- for n,pin in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==pin,'UIR33-06 original reading writer or export'
+ for n,pin in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_uir3401_bytes(n,local(n).read_bytes())).hexdigest()==pin,'UIR33-06 original reading writer or export'
  for n in MANIFEST['sourceReferences']:local(n)
  consumer=MANIFEST['consumer'];base=local(consumer['before']).read_bytes();assert hashlib.sha256(base).hexdigest()==consumer['beforeSHA256'],'UIR33-06 original behavior test';old,new=consumer['operation'];assert base.decode().count(old)==1 and local(consumer['path']).read_text()==base.decode().replace(old,new,1),'UIR33-06 only active title expectation may evolve'
  return {LEDGER,*[v[k]for v in FACTS.values()for k in ['path','before']],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']},sum(v['bytes']-v['beforeBytes']for v in FACTS.values())

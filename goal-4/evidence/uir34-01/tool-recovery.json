@@ -1,0 +1,27 @@
+{
+  "method": "recovered exact prior tools from this same chat record and matched committed hashes",
+  "files": {
+    "run-phase.mjs": {
+      "sha256": "343f10102ee9ef18d1b184908a8a3d55780b4202042e5939b85a52feed7364a6",
+      "sessionByteOffset": 1641521905,
+      "bytes": 4668
+    },
+    "snapshot.mjs": {
+      "sha256": "eab8e77de186232e2db84e7a2d88df3b8bc2a929da4c91156e2fbd02454694a9",
+      "sessionByteOffset": 1641521905,
+      "bytes": 1034
+    },
+    "phase-support.mjs": {
+      "sha256": "02f0f0e6b9801e4300d6bf337bc17ba1f6530c2f90f1d15ab9b885296ba63326",
+      "sessionByteOffset": 1641206724,
+      "bytes": 2876
+    },
+    "prepare-phase.mjs": {
+      "sha256": "06fe9fc80dae65ef9555a5a943813b3f23003bb5897f35845dc62834e9e37627",
+      "sessionByteOffset": 1641206724,
+      "bytes": 1281
+    }
+  },
+  "priorPins": "goal-4/evidence/uir33-08/verification.json",
+  "newWorkflow": false
+}

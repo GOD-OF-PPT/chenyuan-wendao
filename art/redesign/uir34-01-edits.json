@@ -1,0 +1,52 @@
+{
+  "web/src/App.vue": [
+    [
+      "import LifeCatalogue from './LifeCatalogue.vue';",
+      "import LifeCatalogue from './LifeCatalogue.vue';\nimport LifespanGuide from './LifespanGuide.vue';\nimport {lifespanGuidance} from './lifespan-guidance';"
+    ],
+    [
+      "const hubGoal=computed(",
+      "const lifeBook=ref<{manage():void}>();\nconst lifeState=computed(()=>game.value?lifespanGuidance(game.value):null);\nasync function inspectLifespan(event:Event){const owns=inspectionOwner();const owner=await showLife(event);if(owns(owner??null))lifeBook.value?.manage();}\nconst hubGoal=computed("
+    ],
+    [
+      ":gap=\"hubGoalHint\"",
+      ":gap=\"lifeState?.hint??hubGoalHint\""
+    ],
+    [
+      "    <section v-if=\"!hubMain && game && overview?.status==='active' && overview.remainingMonths!==null && overview.remainingMonths<=12\" class=\"paper lifespan-warning\" role=\"status\" data-testid=\"lifespan-warning\"><strong>余寿 {{overview.remainingMonths}} 游戏月 · {{overview.ageLabel}}</strong><p>{{overview.remainingMonths===1?'耗时行动将停止。若修为与突破物已备齐，仍可核对突破条件；也可恢复准备检查点，或确认度过最后1游戏月后收卷。':'游戏月在行动完成时消耗；在线修炼在切页后仍继续。暂停后阅读与离线不扣减余寿，请核对当前准备与检查点。'}}</p><button data-testid=\"lifespan-open-life\" @click=\"showLife\">查看生平与收卷选择</button></section>",
+      "    <LifespanGuide v-if=\"!hubMain&&game\" :game=\"game\" @life=\"showLife\" @checkpoint=\"showSettings\"/>"
+    ],
+    [
+      "             <template #decision>\n              <div v-if=\"step?.kind",
+      "             <template #decision>\n              <LifespanGuide v-if=\"lifeState?.blocked&&step?.kind==='cultivate'&&!pendingStoryError\" :game=\"game\" stage @life=\"inspectLifespan\" @checkpoint=\"showSettings\"/><template v-else>\n              <div v-if=\"step?.kind"
+    ],
+    [
+      "              </div></div>\n             </template>",
+      "              </div></div></template>\n             </template>"
+    ],
+    [
+      "focus.target(title??lifeSection.value??currentContent());\n}",
+      "focus.target(title??lifeSection.value??currentContent());return owner;\n}"
+    ],
+    [
+      "<LifeCatalogue :key=",
+      "<LifeCatalogue ref=\"lifeBook\" :key="
+    ]
+  ],
+  "web/src/LifeScroll.vue": [
+    [
+      "function close(){",
+      "defineExpose({manage:()=>opener.value?.click()});\nfunction close(){"
+    ]
+  ],
+  "web/src/LifeCatalogue.vue": [
+    [
+      "const mode=ref('life'),record=",
+      "const book=ref<{manage():void}>();\ndefineExpose({manage:()=>book.value?.manage()});\nconst mode=ref('life'),record="
+    ],
+    [
+      "<LifeScroll :game=",
+      "<LifeScroll ref=\"book\" :game="
+    ]
+  ]
+}

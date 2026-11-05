@@ -1,3 +1,4 @@
+from uir34_01_inventory import prior_uir3401_bytes
 from uir33_07_inventory import prior_uir3307_bytes
 from uir33_06_inventory import prior_uir3306_bytes
 """ART31 physical life reading, exact original controls and one blank decorative desk."""
@@ -40,7 +41,7 @@ def validate_art31(root,image_reader):
  binding='<div class="life-scroll-binding"><i class="life-scroll-cord" aria-hidden="true"/><strong>{{seal}}</strong></div>'
  expected=expected.replace(binding,'',1).replace('<div class="life-scroll-title"><slot name="heading"/></div>','<div class="life-scroll-title"><slot name="heading"/>'+binding+'</div>',1).replace('class="narrative-seal-space"','class="narrative-seal-space art30"',1).replace('<small>翻卷只阅读，不推进年月。</small><button ref="opener"','<small>翻卷只阅读，不推进年月。</small><slot name="pagination"/><button ref="opener"',1)
  expected=expected.replace('<div class="narrative-seal-space art30" aria-hidden="true"/>','<div class="narrative-seal-space art30" aria-hidden="true"><strong v-if="effect&&!store?.error" class="art31-imprint" data-testid="art31-imprint" :data-sequence="effect.sequence">{{seal}}</strong></div>',1)
- assert local(FILES[0]).read_text()==expected,'ART31 exact view geometry/original full life script'
+ assert prior_uir3401_bytes(FILES[0],local(FILES[0]).read_bytes()).decode()==expected,'ART31 exact view geometry/original full life script'
  original=identity(BASELINES[1]).decode();pager='<CataloguePager :page="paged.page" :pages="paged.pages" :total="paged.total" label="生平" @change="page=$event"/>'
  assert original.count(pager)==1,'ART31 original unique pager'
  expected=original.replace(pager,'',1).replace('</nav></template>\n   <article','</nav></template><template #pagination>'+pager+'</template>\n   <article',1);assert prior_uir3306_bytes(FILES[1],local(FILES[1]).read_bytes()).decode()==expected,'ART31 exact parent-owned pagination slot and original all management controls'
