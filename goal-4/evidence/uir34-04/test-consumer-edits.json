@@ -18,7 +18,7 @@
   "web/e2e/ux33-activity-status.spec.ts": {
     "before": "goal-4/evidence/uir34-04/test-before/ux33-activity-status.spec.ts",
     "beforeSHA256": "060c65130fccd2c72d22c6238919df3e2ccfc259385f9f4b7ec6167010f23245",
-    "sha256": "10be922af9ccd681ed390cf5b2d60dd02df922ea557342e796bbf04818c720bd",
+    "sha256": "5cf462fb2ab91d71df8eba27579ccf12bd38c7254c927d142229208113d486a7",
     "operations": [
       [
         "toHaveText('\u5f85\u63a5\u7ba1')",
@@ -31,6 +31,10 @@
       [
         "toHaveText('\u7ee7\u7eed')",
         "toHaveText('\u7ee7\u7eed\u4fee\u70bc')"
+      ],
+      [
+        "toContainText('\u4e0d\u8865\u53d1\u6536\u76ca')",
+        "toContainText('\u79bb\u7ebf\u65e0\u6536\u76ca')"
       ]
     ],
     "replaceAll": true
