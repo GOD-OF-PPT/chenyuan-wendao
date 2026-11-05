@@ -1,0 +1,13 @@
+{
+  "raw": "artifacts/goal-4/uir34-04/baseline-correct/baseline-results/uir34-04-resume-wording-UI-760ee-load-without-offline-income-chromium/before-resume-copy-assertion.png",
+  "rawSha256": "56a87184377a0f5dfe1257ebb7d92765c6f77ccd99c64c9d7c31077697199100",
+  "view": "goal-4/evidence/uir34-04/baseline-view.jpg",
+  "viewSha256": "4ace052c79c0d92c6928d4ecfc74ed08c733b425be813a851ef40a9a688b3a45",
+  "pixels": [
+    1440,
+    900
+  ],
+  "encoding": "lossy same-size JPEG68",
+  "actuallyViewed": true,
+  "pixelReview": "旧4f60原已花20/40辅助刷新后主按钮此页接管、HUD待接管的真实原红例；用于改前对照，不冒新源。"
+}

@@ -1,0 +1,129 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-04/readable/package.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-04/readable/source/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": {},
+    "maxFailures": 0,
+    "metadata": {
+      "chenyuan": {
+        "head": "28708d1f87d2a395ebff13f585621097f7eba84a",
+        "source": "28708d1f87d2a395ebff13f585621097f7eba84a",
+        "tree": "e630be1bf1f0573005c08ee2216eb5a2f9e9aa5b",
+        "dirty": false,
+        "node": "v24.22.1",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigest": "814a1a25cb1263962bdaa0c0c0c85794189ce4dd0c7ab91c41e0ff3f3cb99831"
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-04/readable/package-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "chenyuan": {
+            "head": "28708d1f87d2a395ebff13f585621097f7eba84a",
+            "source": "28708d1f87d2a395ebff13f585621097f7eba84a",
+            "tree": "e630be1bf1f0573005c08ee2216eb5a2f9e9aa5b",
+            "dirty": false,
+            "node": "v24.22.1",
+            "npm": "8.11.0",
+            "npmOnPath": "8.11.0"
+          },
+          "runtimeDigest": "814a1a25cb1263962bdaa0c0c0c85794189ce4dd0c7ab91c41e0ff3f3cb99831"
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-04/readable/source/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "uir34-04-resume-wording.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "uir34-04-resume-wording.spec.ts",
+      "file": "uir34-04-resume-wording.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR34-04-A1 spent assisted cultivation resumes its real purpose and original remaining allowance after reload without offline income",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "68aaf7effe733f969fc1-b3f56f7b19815f4fe927",
+          "file": "uir34-04-resume-wording.spec.ts",
+          "line": 168,
+          "column": 1
+        },
+        {
+          "title": "UIR34-04-A3 a saved opening choice reloads as continue instead of page authority and still needs its complete original six-second outcome",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "68aaf7effe733f969fc1-1e7c13762adfa17b3134",
+          "file": "uir34-04-resume-wording.spec.ts",
+          "line": 274,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T15:46:43.567Z",
+    "duration": 182.99900000000025,
+    "expected": 0,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

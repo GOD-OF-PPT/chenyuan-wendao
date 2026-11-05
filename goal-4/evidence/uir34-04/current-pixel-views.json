@@ -1,0 +1,38 @@
+[
+  {
+    "case": "UIR34-04-A1 spent assisted cultivation resumes its real purpose and original remaining allowance after reload without offline income",
+    "phase": "package",
+    "source": "be1fe5b9d2d278557b8f7c2ec4600ccd81fe808b",
+    "runtime": "eff3f4791a11b9b08e748383135c8112bae15a553fcc3b500812a3e8df0b0270",
+    "raw": "artifacts/goal-4/uir34-04/release/package-results/uir34-04-resume-wording-UI-760ee-load-without-offline-income-chromium/saved-assisted-main.png",
+    "rawSha256": "587ec49f33bcaff77d68fe3852a7fea8f5e4ac9f84191496f87599f77413277b",
+    "view": "goal-4/evidence/uir34-04/views-current/UIR34-04-A1.jpg",
+    "viewSha256": "e514c3e006801446a40f943813f07b31113a85fe01906527717ae551214a24a9",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG68",
+    "actuallyViewed": true,
+    "superseded": true,
+    "pixelReview": "已实际看eff3版本：继续赠丹相助出现单字折行，后修复按钮完整文字宽度；此旧图不冒最终美术通过。"
+  },
+  {
+    "case": "UIR34-04-A3 a saved opening choice reloads as continue instead of page authority and still needs its complete original six-second outcome",
+    "phase": "package",
+    "source": "be1fe5b9d2d278557b8f7c2ec4600ccd81fe808b",
+    "runtime": "eff3f4791a11b9b08e748383135c8112bae15a553fcc3b500812a3e8df0b0270",
+    "raw": "artifacts/goal-4/uir34-04/release/package-results/uir34-04-resume-wording-UI-b54e7-original-six-second-outcome-chromium/saved-opening-resume.png",
+    "rawSha256": "cc04d96253ac16df77ef91e00b0b12fee451a3e6e8041513e85ade4a11d77c65",
+    "view": "goal-4/evidence/uir34-04/views-current/UIR34-04-A3.jpg",
+    "viewSha256": "39bc73134af769fa62ea542779426706b2cbd2d30e0413765084640932a0f030",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG68",
+    "actuallyViewed": true,
+    "superseded": true,
+    "pixelReview": "已实际看eff3版本：继续赠丹相助出现单字折行，后修复按钮完整文字宽度；此旧图不冒最终美术通过。"
+  }
+]

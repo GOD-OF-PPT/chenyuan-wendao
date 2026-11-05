@@ -1,0 +1,68 @@
+{
+  "task": "UIR34-04",
+  "status": "locally_verified",
+  "testedSource": "28708d1f87d2a395ebff13f585621097f7eba84a",
+  "runtime": "814a1a25cb1263962bdaa0c0c0c85794189ce4dd0c7ab91c41e0ff3f3cb99831",
+  "productionFiles": [
+    "web/src/CultivationOngoing.vue",
+    "web/src/TrainingActivity.vue",
+    "web/src/OpeningOffering.vue"
+  ],
+  "scope": "Display labels/aria-equivalent name plus single same-control inline min-width; original Store/rules/Game/clock/CAS unchanged",
+  "bytes": {
+    "idleActual": 21943,
+    "idleCap": 22000,
+    "ongoingActual": 3279,
+    "ongoingCap": 6000,
+    "newRasterAssets": 0,
+    "newFontFiles": 0,
+    "newStylesheetFiles": 0
+  },
+  "ui": {
+    "unique": 78,
+    "completeFiles": 10,
+    "newCasesIncluded": 4,
+    "package2Subset": true,
+    "retries": 0,
+    "skipped": 0,
+    "inputs": 4664,
+    "inputsExact": true,
+    "runtimeSources": 333,
+    "HTTPPayloads": 112,
+    "HTTPExact": true,
+    "originalSystemDeferred": 1,
+    "usesPreviousUIInheritance": false
+  },
+  "checks": {
+    "rulesAndRegistryMethods": 79,
+    "resourceProtectionMethods": 28,
+    "positiveInventory": true,
+    "vueType": true,
+    "build": true,
+    "inputs": 4657,
+    "allExact": true,
+    "oldFull960And683Rerun": false
+  },
+  "pixels": {
+    "currentActualViewed": 5,
+    "baselineActualViewed": 1,
+    "newCaseGeometryFrames": 6,
+    "fullAtomicProofs": 5,
+    "allGeneratedImagesClaimedViewed": false
+  },
+  "fullMatrix": {
+    "version": 22,
+    "UI": 925,
+    "storage": 415,
+    "normalRoute": 32,
+    "total": 1372,
+    "currentWholeExecuted": false
+  },
+  "preview": "http://127.0.0.1:56907/",
+  "engineeringPreviewOnly": true,
+  "wholeArtLongTermHumanAccepted": false,
+  "protected13Exact": true,
+  "next": "CHECK-UIR34-02-04 independent comprehensive review/debug",
+  "goal": "active",
+  "compatibilityAndEnvironmentPerformance": "not_run; paused"
+}
