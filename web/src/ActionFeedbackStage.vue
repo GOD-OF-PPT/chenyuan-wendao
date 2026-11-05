@@ -39,9 +39,10 @@ watch(()=>[observation.value,scene.busy,scene.saved,scene.available,scene.error,
  clearTimeout(timer);const owner=++generation,origin=pending;await nextTick();await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));if(owner!==generation||store.busy||store.error||document.hidden)return;
  notice.value=next;state.value='success';mark(origin?.element??null,'command-success');
  const op=next.operation,family=next.family,cast=witness.forNotice(next),spot=op==='BATTLE'?battleSpot(cast):null;
+ if(family==='equipment'){await nextTick();await new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r())));if(owner!==generation||store.busy||store.error||document.hidden)return;}
  const blocked=!!document.querySelector('dialog[open]'),fresh=!origin||origin.epoch===epoch,battle=family==='battle',answer=op==='ANSWER_TRIAL';
  const book=(answer||['dialogue','closure'].includes(family))&&visible('.book-canvas');
- const selector=battle?'.enemy-art':['equipment','recovery'].includes(family)?'.character-portrait':family==='closure'?'.book-canvas':'.hub-stage,.center-column .scene,[data-primary-region]';
+ const selector=battle?'.enemy-art':family==='equipment'?'.ta09-jade,.relic-inscription-object':family==='recovery'?'.character-portrait':family==='closure'?'.book-canvas':'.hub-stage,.center-column .scene,[data-primary-region]';
  const target=book&&book.querySelector('.art30')||book||(op==='BATTLE'?spot?.target??null:visible(selector)),at=spot??center(target)??center(origin?.element??null)??{x:innerWidth/2,y:innerHeight*.38};if(book&&target===book){const r=book.getBoundingClientRect();at.x=r.x+r.width*(answer?.75:.83);at.y=r.y+r.height*(answer?.5:.4);}const hudBottom=document.querySelector('.game-hud')?.getBoundingClientRect().bottom??0;point.value=spot??{x:Math.max(110,Math.min(innerWidth-110,at.x)),y:Math.max(150,hudBottom+120,Math.min(innerHeight-150,at.y)),size:0};
  showMotion.value=!reduced.value&&!blocked&&fresh&&(!battle||!!target&&!next.terminal);
  floats.value=showMotion.value?next.numbers.map(n=>{const pos=center(visible(n.target==='enemy'?'.enemy-status':'.character-vitals'))??(n.target==='enemy'?origin?.enemy:null)??at;return{...n,x:Math.max(80,Math.min(innerWidth-80,pos.x)),y:Math.max(100,hudBottom+28,Math.min(innerHeight-110,pos.y))};}):[];
@@ -67,6 +68,5 @@ onScopeDispose(()=>{clear();stop();document.removeEventListener('pointerdown',po
    </template>
   </div>
   <span v-for="(n,index) in floats" :key="notice?.key+'-'+index" class="action-number" :class="{damage:n.value<0}" :style="{left:n.x+'px',top:n.y+'px'}" aria-hidden="true" :data-target="n.target" data-testid="action-number">{{n.value>0?'+':''}}{{n.value}}<small>{{n.label}}</small></span>
-  <div v-if="state==='error'" class="action-failure-glow" aria-hidden="true"/>
  </div>
 </template>

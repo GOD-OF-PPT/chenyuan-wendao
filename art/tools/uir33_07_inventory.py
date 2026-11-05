@@ -1,3 +1,4 @@
+from check_uir33_02_inventory import prior_check_uir3302_bytes
 """Pure outcome emphasis; original feedback authorization reconstructs exactly."""
 import json,hashlib,re
 from pathlib import Path
@@ -98,6 +99,7 @@ MANIFEST={'format': 'chenyuan-outcome-focus-uir33-07',
  'sourceReferences': ['docs/decisions/0102-outcome-focus-uir33-07-contract.md',
                       'goal-4/amendments/2026-11-05-uir33-07-input.md']}
 def prior_uir3307_bytes(path,raw):
+ raw=prior_check_uir3302_bytes(path,raw)
  name=Path(path).name
  if name not in MANIFEST['files']:return raw
  f=MANIFEST['files'][name]
@@ -122,6 +124,6 @@ def validate_uir3307(root):
  delta=MANIFEST['files']['presentation.ts']['bytes']-MANIFEST['files']['presentation.ts']['beforeBytes'];assert 0<delta<=2400,'UIR33-07 added projection cap'
  for n,cap in [('action-feedback',34000),('catalogue-art/manifest',18000)]:
   ledger=local('art/redesign/'+n+'.json');assert hashlib.sha256(ledger.read_bytes()).hexdigest()==MANIFEST['oldLedgers'][n],'UIR33-07 original ledger';assert sum(local(r['path']).stat().st_size for r in json.loads(ledger.read_text())['files'])<=cap,'UIR33-07 actual original cap'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR33-07 original proof and write owners'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_check_uir3302_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR33-07 original proof and write owners'
  for ref in MANIFEST['sourceReferences']:local(ref)
  return {LEDGER,*[f[k]for f in MANIFEST['files'].values()for k in ['path','before']],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']},delta

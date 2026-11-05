@@ -1,3 +1,4 @@
+from check_uir33_02_inventory import prior_check_uir3302_bytes
 """Current activity record presentation; one CSS import, unchanged state owners."""
 import hashlib,json,re
 from pathlib import Path
@@ -57,6 +58,6 @@ def validate_uir3305(root):
   if '{' in rule:
    selectors=rule.rsplit('/*',1)[-1].split('*/')[-1].split('{')[0].strip()
    assert all(x.strip().startswith('.immersive-stage') and 'activity-detail-surface' in x for x in selectors.split(',')),'UIR33-05 only activity detail'
- for n,pin in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==pin,'UIR33-05 original state owner or cap'
+ for n,pin in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_check_uir3302_bytes(n,local(n).read_bytes())).hexdigest()==pin,'UIR33-05 original state owner or cap'
  for n in MANIFEST['sourceReferences']:local(n)
  return {LEDGER,*[r['path'] for r in MANIFEST['files']],MANIFEST['consumer']['path'],MANIFEST['before']['path'],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']},len(css.encode())

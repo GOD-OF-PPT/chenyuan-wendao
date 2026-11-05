@@ -23,7 +23,7 @@ def validate_art30(root,image_reader):
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART30 missing input';return p
  def digest(n):return hashlib.sha256(prior_uir3307_bytes(n,local(n).read_bytes())).hexdigest()
  def identity(r):
-  assert type(r['bytes'])is int and r['bytes']==local(r['path']).stat().st_size and r['sha256']==digest(r['path']),'ART30 actual identity';return local(r['path']).read_bytes()
+  raw=prior_uir3307_bytes(r['path'],local(r['path']).read_bytes());assert type(r['bytes'])is int and r['bytes']==len(raw) and r['sha256']==digest(r['path']),'ART30 actual identity';return raw
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-npc-meeting-art30'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART30 header'
  assert m['budgets']==BUDGETS and all(type(v)is int for v in m['budgets'].values()),'ART30 fixed typed caps'
  assert [r['path']for r in m['files']]==FILES and m['sourceReferences']==REFS and m['baselines']==BASELINES and m['unchanged']==UNCHANGED,'ART30 original scope and sources'
@@ -45,7 +45,7 @@ def validate_art30(root,image_reader):
  expected=original.replace(header,'',1).replace(':aria-pressed="mode===id" @click="mode=id">{{label}}</button></nav>',':aria-pressed="mode===id" @click="mode=id">{{label}}</button>'+button+'</nav>',1);expected=expected.replace("?'下次来往预览':'已记来往'","?'下次来往预览':person?.label==='未识'?'人物图鉴':'已记来往'",1);assert local(FILES[2]).read_text()==expected,'ART30 exact duplicate header retirement/life callback'
  original=identity(BASELINES[3]).decode();start=original.index(' const cast=');end=original.index('\n timer=setTimeout(clear,1600);',start);region=original[start:end];assert region.count('next.operation')==3 and region.count('next.family')==5,'ART30 original repeated fields'
  changed=region.replace('next.operation','op').replace('next.family','family').replace(' const cast=',' const op=next.operation,family=next.family,cast=',1).replace('const target=book||',"const target=book&&book.querySelector('.art30')||book||",1).replace('if(book){','if(book&&target===book){',1)
- assert local(FILES[3]).read_text()==original[:start]+changed+original[end:],'ART30 exact NPC DOM anchor and original full feedback lifecycle'
+ assert prior_uir3307_bytes(FILES[3],local(FILES[3]).read_bytes()).decode()==original[:start]+changed+original[end:],'ART30 exact NPC DOM anchor and original full feedback lifecycle'
  css=local(FILES[-1]).read_text();old=identity(BASELINES[-1]).decode();assert css.startswith(old),'ART30 previous CSS domains altered'
  extra=css[len(old):];assert all(s in extra for s in ['art30-meeting','art30-parlour','writing-mode:vertical-rl','narrative-object-paper','var(--art18-command)','data-working=true']),'ART30 actual scene/decision/phase consumption'
  assert not re.search(r'@import|@font-face|https?://|file://|@media',extra),'ART30 external IO/font/compatibility rules'

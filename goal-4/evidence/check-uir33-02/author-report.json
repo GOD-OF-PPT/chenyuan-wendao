@@ -1,0 +1,228 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-02/author.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "runtimeDigest": "b8aa276d5b6b33e85dc9ae9f2980b3423f5f8b0c52307ce5796eba1d95c12383",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-02/author-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-02/author-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "runtimeDigest": "b8aa276d5b6b33e85dc9ae9f2980b3423f5f8b0c52307ce5796eba1d95c12383",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "check-uir33-02.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "check-uir33-02.spec.ts",
+      "file": "check-uir33-02.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CHECK-UIR33-02 EQUIP saved seal follows its visible object and clears across life and exact receipt reading",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4713,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T02:25:10.105Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "seal-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJjeCI6Mzc0Ljk0NSwiY3kiOjQ5OS44NTksIm9iamVjdCI6eyJ4IjoxMDAsInkiOjI5NSwid2lkdGgiOjU0OS44OTA2MjUsImhlaWdodCI6NDA5LjcxODc1fSwib3V0ZXIiOnsibGVmdCI6MjM0Ljk0NSwicmlnaHQiOjUxNC45NDQ5OTk5OTk5OTk5LCJ0b3AiOjM1OS44NTksImJvdHRvbSI6NjM5Ljg1ODk5OTk5OTk5OTl9LCJyZWdpb25zIjpbeyJjbHMiOiJ0b3BiYXIgZ2FtZS1odWQiLCJvdmVybGFwIjowfSx7ImNscyI6ImZlYXR1cmUtaGVhZGVyIiwib3ZlcmxhcCI6MH0seyJjbHMiOiJqYWRlLXJlYWRhYmxlIiwib3ZlcmxhcCI6MH0seyJjbHMiOiJib3R0b20tbmF2IHN0YWdlLW5hdiIsIm92ZXJsYXAiOjB9XX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bd9e29710abf8128a5f2-759d58e715c970f0d0e1",
+          "file": "check-uir33-02.spec.ts",
+          "line": 83,
+          "column": 46
+        },
+        {
+          "title": "CHECK-UIR33-02 EQUIP_RELIC saved seal follows its visible object and clears across life and exact receipt reading",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3834,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T02:25:15.531Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "seal-geometry",
+                      "contentType": "application/json",
+                      "body": "eyJjeCI6MzQ2LjY5NSwiY3kiOjQ4MSwib2JqZWN0Ijp7IngiOjgwLCJ5IjozMDQsIndpZHRoIjo1MzMuMzkwNjI1LCJoZWlnaHQiOjM1NH0sIm91dGVyIjp7ImxlZnQiOjIwNi42OTUsInJpZ2h0Ijo0ODYuNjk1LCJ0b3AiOjM0MSwiYm90dG9tIjo2MjF9LCJyZWdpb25zIjpbeyJjbHMiOiJ0b3BiYXIgZ2FtZS1odWQiLCJvdmVybGFwIjowfSx7ImNscyI6ImZlYXR1cmUtaGVhZGVyIiwib3ZlcmxhcCI6MH0seyJjbHMiOiJib3R0b20tbmF2IHN0YWdlLW5hdiIsIm92ZXJsYXAiOjB9XX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bd9e29710abf8128a5f2-41228df24801ebbcf5e8",
+          "file": "check-uir33-02.spec.ts",
+          "line": 83,
+          "column": 46
+        },
+        {
+          "title": "CHECK-UIR33-02 failed original cultivation keeps the real error and retry across life details without a screen-wide decorative frame",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2710,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T02:25:19.391Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bd9e29710abf8128a5f2-15bcdd4a27a6603fd6c4",
+          "file": "check-uir33-02.spec.ts",
+          "line": 170,
+          "column": 1
+        },
+        {
+          "title": "CHECK-UIR33-02 a saved breakthrough has one unchanged stop reason and full life and original milestone result",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2782,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T02:25:22.129Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bd9e29710abf8128a5f2-0fc7d8d3a081a9b45109",
+          "file": "check-uir33-02.spec.ts",
+          "line": 219,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T02:25:08.239Z",
+    "duration": 16876.620000000003,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

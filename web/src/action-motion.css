@@ -56,7 +56,6 @@
 .motion-battle[data-variant*=flee] .motion-ring{animation-name:motion-travel;border-style:dotted}
 .action-number{position:fixed;z-index:17;transform:translate(-50%,-50%);font-family:'Kaiti SC',STKaiti,serif;font-size:var(--ui30);font-weight:700;color:#d5f0bf;text-shadow:0 2px 5px #0b2830,0 0 9px #16342c;pointer-events:none;animation:action-number 1.15s ease-out both}
 .action-number.damage{color:#ffd3bb}.action-number small{display:block;text-align:center;font-size:var(--ui14);font-weight:400;line-height:1.3;color:inherit}
-.action-failure-glow{position:fixed;inset:72px 5% 100px;border:1px solid #dba18b77;border-radius:14px;box-shadow:inset 0 0 28px #c57e6233;pointer-events:none;animation:failure-ink .9s ease-out both}
 .actor-impact{animation:actor-impact .32s ease-out}.actor-arrival{animation:actor-arrival .5s ease-out}.scene-arrival{animation:scene-arrival .55s ease-out}
 @keyframes command-ink{to{box-shadow:inset 0 0 0 2px #e2d193,0 0 19px #c2d98d88}}
 @keyframes command-done{from{filter:brightness(1.08)}to{filter:brightness(1)}}@keyframes command-error{30%{filter:brightness(1.08)}}
@@ -81,12 +80,11 @@
 @keyframes motion-impact{from{transform:scale(.2);opacity:1}to{transform:scale(1.1) rotate(60deg);opacity:0}}
 @keyframes motion-slash{from{clip-path:inset(0 100% 0 0);opacity:0}25%{opacity:1}to{clip-path:inset(0);opacity:0}}
 @keyframes action-number{from{opacity:0;margin-top:8px}15%,65%{opacity:1}to{opacity:0;margin-top:-45px}}
-@keyframes failure-ink{from{opacity:0}30%{opacity:1}to{opacity:0}}
 @keyframes actor-impact{25%{transform:translateX(4px);filter:brightness(1.18)}55%{transform:translateX(-3px)}to{transform:translateX(0)}}
 @keyframes actor-arrival{from{opacity:.4;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
 @keyframes scene-arrival{from{opacity:.65}to{opacity:1}}
-@media(prefers-reduced-motion:reduce){.action-motion,.action-number,.action-failure-glow{display:none!important}.action-feedback-toast.hub-pulse,.command-pending,.command-success,.command-error,.actor-impact,.actor-arrival,.scene-arrival{animation:none!important}}
-.hub-reduced :is(.action-motion,.action-number,.action-failure-glow){display:none!important}.hub-reduced :is(.action-feedback-toast,.command-pending,.command-success,.command-error,.actor-impact,.actor-arrival,.scene-arrival){animation:none!important}
+@media(prefers-reduced-motion:reduce){.action-motion,.action-number{display:none!important}.action-feedback-toast.hub-pulse,.command-pending,.command-success,.command-error,.actor-impact,.actor-arrival,.scene-arrival{animation:none!important}}
+.hub-reduced :is(.action-motion,.action-number){display:none!important}.hub-reduced :is(.action-feedback-toast,.command-pending,.command-success,.command-error,.actor-impact,.actor-arrival,.scene-arrival){animation:none!important}
 
 .motion-battle[data-variant=victory]{--motion-color:#e5d69c}.motion-battle[data-variant=victory] .motion-slash,.motion-battle[data-variant=defeat] .motion-slash{display:none}
 .motion-battle[data-variant=victory] .motion-ring{animation-name:motion-ascend}.motion-battle[data-variant=defeat] .motion-ring{border-style:dotted;animation-name:motion-travel}

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/gordon/githome/chenyuan-wendao/art/tools/check_inventory.py", line 1044, in <module>
+    print(json.dumps(validate(args.root), ensure_ascii=False))
+                     ~~~~~~~~^^^^^^^^^^^
+  File "/Users/gordon/githome/chenyuan-wendao/art/tools/check_inventory.py", line 781, in validate
+    art30_files,art30_count,art30_runtime_bytes=validate_art30(root,image_info)
+                                                ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/gordon/githome/chenyuan-wendao/art/tools/art30_inventory.py", line 48, in validate_art30
+    assert local(FILES[3]).read_text()==original[:start]+changed+original[end:],'ART30 exact NPC DOM anchor and original full feedback lifecycle'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ART30 exact NPC DOM anchor and original full feedback lifecycle
