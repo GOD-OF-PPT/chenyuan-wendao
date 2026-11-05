@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3405=ROOT/'art/redesign/uir34-05.json'
+  if uir3405.exists():
+   data=json.loads(uir3405.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[data['before']]+list(data['unchanged']))
   check340204=ROOT/'art/redesign/check-uir34-02-04.json'
   if check340204.exists():
    data=json.loads(check340204.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[data['before']]+list(data['unchanged']))
@@ -2390,3 +2393,15 @@ class Check340204ReadonlyCloseTests(unittest.TestCase):
    self.write(LEDGER,MANIFEST)
 
 if __name__=='__main__':unittest.main()
+
+class Uir3405Tests(unittest.TestCase):
+ def test_complete_current_inverse_and_original_caps(self):
+  from uir34_05_inventory import validate_uir3405,prior_uir3405_bytes,MANIFEST
+  self.assertLessEqual(validate_uir3405(ROOT)[1],2200)
+  self.assertEqual(prior_uir3405_bytes(MANIFEST['path'],(ROOT/MANIFEST['path']).read_bytes()),(ROOT/MANIFEST['before']).read_bytes())
+ def test_reject_writer_gate_clock_and_missing_disclosure(self):
+  from uir34_05_inventory import prior_uir3405_bytes,MANIFEST
+  source=(ROOT/MANIFEST['path']).read_text()
+  for old,new in [('@click="confirmTrial"','@click="confirmEnd"'),('trialStale','false'),('15秒','1秒'),('class="milestone-notes"','class="removed-notes"'),('startPreparedMilestone(review.intent)','startPreparedMilestone(null)')]:
+   self.assertIn(old,source)
+   with self.subTest(old=old),self.assertRaisesRegex(AssertionError,'UIR34-05'):prior_uir3405_bytes(MANIFEST['path'],source.replace(old,new,1).encode())

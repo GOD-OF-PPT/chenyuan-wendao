@@ -1,3 +1,4 @@
+from uir34_05_inventory import prior_uir3405_bytes
 """Strict display evolution for lifespan state and the original readonly life-manager entry."""
 import hashlib,json
 from pathlib import Path
@@ -85,6 +86,7 @@ MANIFEST={'format': 'chenyuan-lifespan-guidance-uir34-01',
                       'art/redesign/uir34-01-edits.json']}
 MARKERS={'App.vue':"import LifespanGuide from './LifespanGuide.vue';",'LifeCatalogue.vue':'defineExpose({manage:()=>book.value?.manage()});','LifeScroll.vue':'defineExpose({manage:'}
 def prior_uir3401_bytes(path,raw):
+ raw=prior_uir3405_bytes(path,raw)
  name=Path(path).name
  if name not in MANIFEST['files']or MARKERS[name].encode()not in raw:return raw
  row=MANIFEST['files'][name];assert hashlib.sha256(raw).hexdigest()==row['sha256'],'UIR34-01 exact complete source'
@@ -103,7 +105,7 @@ def validate_uir3401(root):
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'UIR34-01 immutable scope'
  assert json.loads(local('art/redesign/uir34-01-edits.json').read_text())=={r['path']:r['operations']for r in MANIFEST['files'].values()},'UIR34-01 immutable edits'
  for name,row in MANIFEST['files'].items():
-  raw=local(row['path']).read_bytes();old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'UIR34-01 actual current source';assert hashlib.sha256(old).hexdigest()==row['beforeSHA256'],'UIR34-01 original preserved';assert prior_uir3401_bytes(name,raw)==old,'UIR34-01 inverse'
+  raw=prior_uir3405_bytes(row['path'],local(row['path']).read_bytes());old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'UIR34-01 actual current source';assert hashlib.sha256(old).hexdigest()==row['beforeSHA256'],'UIR34-01 original preserved';assert prior_uir3401_bytes(name,raw)==old,'UIR34-01 inverse'
  total=0
  for n,row in MANIFEST['added'].items():
   raw=local(n).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'UIR34-01 actual new source';total+=len(raw)
@@ -111,6 +113,6 @@ def validate_uir3401(root):
  for group,cap in MANIFEST['caps'].items():
   if group=='app':continue
   assert sum(local(row['path']).stat().st_size for row in json.loads(local('art/redesign/'+group+'.json').read_text())['files'])<=cap,'UIR34-01 original actual regional cap'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR34-01 original writing clock and focus owner'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_uir3405_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR34-01 original writing clock and focus owner'
  for n in MANIFEST['sourceReferences']:local(n)
  return{LEDGER,*MANIFEST['sourceReferences'],*[v[k]for v in MANIFEST['files'].values()for k in ['path','before']],*MANIFEST['added'],*MANIFEST['unchanged']},total

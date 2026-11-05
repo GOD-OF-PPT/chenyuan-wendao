@@ -584,3 +584,6 @@ UIR34-04依[0110](docs/decisions/0110-resume-player-wording-uir34-04-contract.md
 
 
 CHECK-UIR34-02-04依[0111](docs/decisions/0111-confirm-configuration-resume-check.md)与本轮XAG114回读：只读查看和正在批准的写意图区分关闭边界，不能允许保存中开原安排却用通用busy禁用所有返回、挡住原暂停。真实review.activity/prepared为空的回看在busy可关闭/Esc；原START新确认提交中仍锁定，close只撤查看/归还焦点，不discard/取消或重发原TICK。两边各以原生事务保留和完整Game/Activity/v2/CPP同事务验证，保存中不阻塞读全DB假定成功。角色/场所/阶段耗时先核正式规则：凡人30与炼气60分开，异地前缀须正式行旅，参数通过现有合法输入；配置后原STATE_CHANGED活动条按原设计隐藏，核真实同次成果及全部原预算/回执，不能把显示目标错当数据丢失。具体readonly例外为本项目实证推导，不是来源规定；严格整源逆回/原30000帽保，当前231/包3与972/691只独立工程范围，全1375/艺术长期真人及后续仍待，兼容环境性能当前暂停不变。
+
+
+UIR34-05依据[0112](docs/decisions/0112-trial-life-confirmation-focus.md)及本轮实读[XAG114](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114)：入劫/归隐/寿尽/飞升确认先呈真实已选后果、费用与原15/12秒、仅本次及不可逆边界，准备/人生完整原页在明确说明入口翻阅；不以删记录/缩字/内长滚动减负。关闭只撤原意图，阅读不执行或授权；原确认/重试/CPP/owner/活动与Game原子权不迁出App。details闭合退出布局但保同意图阅读页，新意图重置；固定桌面每页核完整字符/18正文/14辅助/44操作及实际命中/像素，不能以默认截图代展开态。具体折叠/色调为本项目推导，原App159635帽与所有旧预算/hash保；兼容环境性能仍暂停，整体艺术长期真人和完整矩阵仍待。

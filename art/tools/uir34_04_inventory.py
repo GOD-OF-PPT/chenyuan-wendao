@@ -1,3 +1,4 @@
+from uir34_05_inventory import prior_uir3405_bytes
 """Strict player-facing resume copy; original state guards and atomic owners unchanged."""
 import hashlib,json,re
 from pathlib import Path
@@ -89,6 +90,6 @@ def validate_uir3404(root):
  for group,cap in MANIFEST['caps'].items():
   if group.endswith('.vue'):assert local('web/src/'+group).stat().st_size<=cap,'UIR34-04 original view cap'
   else:assert sum(local(r['path']).stat().st_size for r in json.loads(local('art/redesign/'+group+'.json').read_text())['files'])<=cap,'UIR34-04 original actual group cap'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR34-04 original owner and rules'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_uir3405_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR34-04 original owner and rules'
  for n in MANIFEST['sourceReferences']:local(n)
  return{LEDGER,*MANIFEST['sourceReferences'],*[r[k]for r in MANIFEST['files'].values()for k in ['path','before']],*MANIFEST['unchanged']},sum(local(r['path']).stat().st_size for r in MANIFEST['files'].values())

@@ -1,0 +1,10 @@
+{
+  "unexecutedPlanError": "Unique tail text had 2 matches; planned source not written on assertion failure. Retried using exact file suffix.",
+  "red": "artifacts/goal-4/uir34-05/red/report.json",
+  "redSource": "6e3385785badadda56c594b584d694c938e98da2",
+  "redRuntime": "bee1b34f62ad3ea2ff4b12ca4ae929eba5b03f5a0f8ae8e8a2529dae29fcf5c4",
+  "nodeRegistryFirst": "77/78; newly added outer manifest condition used unscoped version, corrected to manifest.version; original unknown-version test preserved.",
+  "nodeRegistrySecond": "77/78; old future-version negative 24 is now legal; exact same negative moves to25. No runtime/game code changed.",
+  "missingPillowProbe": "system Python3.13 has noPIL; reuse existing approved Pillow12.3.0 venv for same-size views.",
+  "port4175": "Vite strictPort refused occupied port, no other server stopped; root diagnostic4179 used."
+}

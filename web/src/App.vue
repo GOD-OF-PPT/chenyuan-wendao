@@ -880,38 +880,38 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
     </dialog>
     <dialog ref="demoMenu" class="paper demo-menu" aria-labelledby="demo-menu-title"><header><h2 id="demo-menu-title" tabindex="-1" data-dialog-initial>演示节点</h2><button @click="demoMenu?.close()" aria-label="关闭演示节点">关闭</button></header><p>以下是由正式指令回放生成的演示存档。进入不会替换正常进度，演示不计入正常新档通关验证。</p><nav v-once class="demo-list" aria-label="演示节点选择"><a v-for="node in demoMenuNodes" :key="node.id" :href="node.href" :data-testid="'demo-node-'+node.id"><strong>{{node.label}}</strong><span>{{node.description}}</span></a></nav></dialog>
     <dialog ref="gameplayHelp" class="paper settings game-help" aria-labelledby="gameplay-help-title"><header><h2 id="gameplay-help-title" tabindex="-1" data-dialog-initial>玩法帮助</h2><button type="button" aria-label="关闭玩法帮助" @click="gameplayHelp?.close()">关闭</button></header><p>提示随已保存的行动与当前状态出现，也可逐项重看。约30分钟只用于理解玩法，不限定到达境界或通关时间。</p><p class="small">跳过或关闭引导仅影响本页显示，刷新后可再次出现；不会改变成长、物品、掉落或存档。设置与当前提示均可回到这里。</p><button type="button" data-testid="guide-toggle" :aria-pressed="guidanceEnabled" @click="guidanceEnabled=!guidanceEnabled;skippedGuides=[]">本页引导：{{guidanceEnabled?'开启':'关闭'}}</button><section class="help-chapter" :key="guideCatalog[helpPage].id"><span class="help-folio" aria-hidden="true">行道录 · {{String(helpPage+1).padStart(2,'0')}}</span><h3>{{guideCatalog[helpPage].title}}</h3><p>{{guideCatalog[helpPage].body}}</p></section><CataloguePager :page="helpPage" :pages="guideCatalog.length" :total="guideCatalog.length" label="帮助主题" @change="helpPage=$event"/></dialog>
-    <dialog ref="lifeDialog" class="paper life-confirm" data-testid="life-confirmation" aria-labelledby="life-confirm-title" @cancel="cancelLife" @close="closeLifeReview">
-      <template v-if="lifeIntent">
-        <header><h2 id="life-confirm-title" tabindex="-1" data-dialog-initial>{{lifeIntent.command.type==='RETIRE'?'确认主动归隐':'确认度过最后一月'}}</h2></header>
-        <template v-if="singleScreen"><p>{{lifeIntent.command.type==='RETIRE'?'本次完成并保存后主动归隐，不消耗剩余游戏月，不写作寿尽。':'本次完成并保存后消耗最后1游戏月，达到当前境界寿限，以寿尽收卷。'}}</p><ReviewPages :rows="confirmationReadings('life')" :identity="lifeIntent.command.commandId"/></template><template v-else>
-        <p data-testid="life-review">{{lifeIntent.record.overview.name}} · {{lifeIntent.record.overview.ageLabel}} · {{lifeIntent.record.overview.realmName}} · 行道{{lifeIntent.record.overview.elapsedMonths}}游戏月</p>
-        <p>{{lifeIntent.command.type==='RETIRE'?'本次完成并保存后以主动归隐收卷，不消耗剩余游戏月，不写作寿尽。':'本次完成并保存后将消耗最后1游戏月，达到当前境界寿限，以寿尽收卷。'}}</p>
-        <p>当前存档与人物记录保留，可导出；恢复检查点会回退完整准备状态。此确认不会开启新的人生。</p>
-        </template>
-        <p>收卷结束当前人生，不能撤销为继续此卷；12秒在线完成后才保存结果。</p>
-        <p v-if="lifeStale" role="alert" data-testid="life-stale">进度已更新，请取消后重新查看与确认。此处不会结束另一份进度。</p>
-        <p v-if="store.error" role="alert" data-testid="life-error">{{store.error}}</p>
-        <button v-if="store.canRetryFor(lifeIntent.command.commandId)" data-testid="life-retry" @click="retryEnd" :disabled="store.busy">重试同一次收卷</button>
-        <button data-testid="life-cancel" @click="lifeDialog?.close()" :disabled="store.busy">继续此生</button>
-        <button class="primary" data-testid="life-confirm-end" @click="confirmEnd" :disabled="store.busy || !store.available || lifeStale || pendingStoryError">{{store.busy?store.saveLabel+'…':lifeIntent.command.type==='RETIRE'?'安排归隐一次 · 12秒':'安排寿尽一次 · 12秒'}}</button>
-      </template>
-    </dialog>
-    <dialog ref="ascensionDialog" class="paper life-confirm" data-testid="ascension-confirmation" aria-labelledby="ascension-title" @cancel="cancelLife" @close="closeAscension">
-      <template v-if="ascensionIntent">
-        <h2 id="ascension-title" tabindex="-1" data-dialog-initial>确认{{ascensionIntent.choice.label}}</h2>
-        <template v-if="singleScreen"><p data-testid="ascension-review-description">{{ascensionIntent.choice.description}}</p><p>本次12秒在线完成并保存后以所选结尾封卷，不再继续本卷修炼或战斗。当前物品、配装与人物记录保留，不新增道具或上界玩法。</p><ReviewPages :rows="confirmationReadings('ending')" :identity="ascensionIntent.command.commandId"/></template><template v-else>
-        <p data-testid="ascension-review-identity">{{ascensionIntent.view.record.overview.name}} · {{ascensionIntent.view.record.overview.ageLabel}} · 行道{{ascensionIntent.view.record.overview.elapsedMonths}}游戏月</p>
-        <p data-testid="ascension-review-description">{{ascensionIntent.choice.description}}</p>
-        <p>本次12秒在线完成并保存后，以所选结尾封卷。不再继续本卷的修炼或战斗；当前物品、配装与人物记录保留，不新增道具奖励或上界玩法。</p>
-        <details><summary>此生实际来路</summary><p>{{ascensionIntent.view.record.opening.text}}</p><p>{{ascensionIntent.view.record.training.school}} · {{ascensionIntent.view.record.training.loadout.map(slot=>slot.name).join(' / ')}} · {{ascensionIntent.view.record.training.equippedRelic}}</p><p v-for="decision in ascensionIntent.view.record.decisions" :key="decision.id">{{decision.npc}} · {{decision.text}}</p><p v-if="!ascensionIntent.view.record.decisions.length">没有其他已选事件记录，不补写故人或盟约。</p><p>{{ascensionIntent.view.record.pledges.text}}</p></details>
-        </template>
-        <p v-if="ascensionStale" data-testid="ascension-stale" role="alert">进度已更新，请取消后重新核对；此处不会替另一份进度选择结尾。</p>
-        <p v-if="store.error" data-testid="ascension-error" role="alert">{{store.error}}</p>
-        <button v-if="store.canRetryFor(ascensionIntent.command.commandId)" data-testid="ascension-retry" @click="retryAscension" :disabled="store.busy">重试同一次封卷</button>
-        <button data-testid="ascension-cancel" @click="ascensionDialog?.close()" :disabled="store.busy">继续核对</button>
-        <button class="primary" data-testid="ascension-confirm" @click="confirmAscension" :disabled="store.busy || !store.available || ascensionStale || pendingStoryError">{{store.busy?store.saveLabel+'…':'安排飞升收卷一次 · 12秒'}}</button>
-      </template>
-    </dialog>
+<dialog ref="lifeDialog" class="paper life-confirm closure-focus" data-testid="life-confirmation" aria-labelledby="life-confirm-title" @cancel="cancelLife" @close="closeLifeReview">
+<template v-if="lifeIntent">
+<header><h2 id="life-confirm-title" tabindex="-1" data-dialog-initial>{{lifeIntent.command.type==='RETIRE'?'确认主动归隐':'确认度过最后一月'}}</h2></header>
+<template v-if="singleScreen"><p>{{lifeIntent.command.type==='RETIRE'?'本次完成并保存后主动归隐，不消耗剩余游戏月，不写作寿尽。':'本次完成并保存后消耗最后1游戏月，达到当前境界寿限，以寿尽收卷。'}}</p><details class="milestone-notes"><summary>此生记录与保存说明</summary><ReviewPages :rows="confirmationReadings('life')" :identity="lifeIntent.command.commandId"/></details></template><template v-else>
+<p data-testid="life-review">{{lifeIntent.record.overview.name}} · {{lifeIntent.record.overview.ageLabel}} · {{lifeIntent.record.overview.realmName}} · 行道{{lifeIntent.record.overview.elapsedMonths}}游戏月</p>
+<p>{{lifeIntent.command.type==='RETIRE'?'本次完成并保存后以主动归隐收卷，不消耗剩余游戏月，不写作寿尽。':'本次完成并保存后将消耗最后1游戏月，达到当前境界寿限，以寿尽收卷。'}}</p>
+<p>当前存档与人物记录保留，可导出；恢复检查点会回退完整准备状态。此确认不会开启新的人生。</p>
+</template>
+<p>收卷结束当前人生，不能撤销为继续此卷；不耗物，12秒在线完成后才保存结果。</p>
+<p v-if="lifeStale" role="alert" data-testid="life-stale">进度已更新，请取消后重新查看与确认。此处不会结束另一份进度。</p>
+<p v-if="store.error" role="alert" data-testid="life-error">{{store.error}}</p>
+<button v-if="store.canRetryFor(lifeIntent.command.commandId)" data-testid="life-retry" @click="retryEnd" :disabled="store.busy">重试同一次收卷</button>
+<button data-testid="life-cancel" @click="lifeDialog?.close()" :disabled="store.busy">继续此生</button>
+<button class="primary" data-testid="life-confirm-end" @click="confirmEnd" :disabled="store.busy || !store.available || lifeStale || pendingStoryError">{{store.busy?store.saveLabel+'…':lifeIntent.command.type==='RETIRE'?'安排归隐一次 · 12秒':'安排寿尽一次 · 12秒'}}</button>
+</template>
+</dialog>
+<dialog ref="ascensionDialog" class="paper life-confirm closure-focus" data-testid="ascension-confirmation" aria-labelledby="ascension-title" @cancel="cancelLife" @close="closeAscension">
+<template v-if="ascensionIntent">
+<h2 id="ascension-title" tabindex="-1" data-dialog-initial>确认{{ascensionIntent.choice.label}}</h2>
+<template v-if="singleScreen"><p data-testid="ascension-review-description">{{ascensionIntent.choice.description}}</p><p>12秒·不耗物，以所选结尾封卷。本卷修炼与战斗结束，不能继续此卷。</p><details class="milestone-notes"><summary>此生来路与保存说明</summary><ReviewPages :rows="confirmationReadings('ending')" :identity="ascensionIntent.command.commandId"/><p>本次12秒在线完成并保存后以所选结尾封卷，不再继续本卷修炼或战斗。当前物品、配装与人物记录保留，不新增道具或上界玩法。</p></details></template><template v-else>
+<p data-testid="ascension-review-identity">{{ascensionIntent.view.record.overview.name}} · {{ascensionIntent.view.record.overview.ageLabel}} · 行道{{ascensionIntent.view.record.overview.elapsedMonths}}游戏月</p>
+<p data-testid="ascension-review-description">{{ascensionIntent.choice.description}}</p>
+<p>本次12秒在线完成并保存后，以所选结尾封卷。不再继续本卷的修炼或战斗；当前物品、配装与人物记录保留，不新增道具奖励或上界玩法。</p>
+<details><summary>此生实际来路</summary><p>{{ascensionIntent.view.record.opening.text}}</p><p>{{ascensionIntent.view.record.training.school}} · {{ascensionIntent.view.record.training.loadout.map(slot=>slot.name).join(' / ')}} · {{ascensionIntent.view.record.training.equippedRelic}}</p><p v-for="decision in ascensionIntent.view.record.decisions" :key="decision.id">{{decision.npc}} · {{decision.text}}</p><p v-if="!ascensionIntent.view.record.decisions.length">没有其他已选事件记录，不补写故人或盟约。</p><p>{{ascensionIntent.view.record.pledges.text}}</p></details>
+</template>
+<p v-if="ascensionStale" data-testid="ascension-stale" role="alert">进度已更新，请取消后重新核对；此处不会替另一份进度选择结尾。</p>
+<p v-if="store.error" data-testid="ascension-error" role="alert">{{store.error}}</p>
+<button v-if="store.canRetryFor(ascensionIntent.command.commandId)" data-testid="ascension-retry" @click="retryAscension" :disabled="store.busy">重试同一次封卷</button>
+<button data-testid="ascension-cancel" @click="ascensionDialog?.close()" :disabled="store.busy">继续核对</button>
+<button class="primary" data-testid="ascension-confirm" @click="confirmAscension" :disabled="store.busy || !store.available || ascensionStale || pendingStoryError">{{store.busy?store.saveLabel+'…':'安排飞升收卷一次 · 12秒'}}</button>
+</template>
+</dialog>
     <dialog ref="trialRestoreDialog" class="paper life-confirm" data-testid="trial-restore-confirmation" aria-labelledby="trial-restore-title" @cancel="cancelLife" @close="closeTrialRestore">
       <template v-if="trialRestoreIntent">
         <h2 id="trial-restore-title" tabindex="-1" data-dialog-initial>恢复完整入场准备</h2>
@@ -927,26 +927,26 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
         <button data-testid="trial-restore-confirm" class="primary" @click="confirmTrialRestore" :disabled="store.busy || !store.available || trialRestoreStale">{{store.busy?store.saveLabel+'…':'确认恢复完整准备'}}</button>
       </template>
     </dialog>
-    <dialog ref="trialDialog" class="paper life-confirm" data-testid="trial-entry-confirmation" aria-labelledby="trial-entry-title" @cancel="cancelLife" @close="closeTrialReview">
-      <template v-if="trialIntent">
-        <header><h2 id="trial-entry-title" tabindex="-1" data-dialog-initial>核对正式入场</h2></header>
-        <template v-if="singleScreen"><p data-testid="trial-review-cost">入场实际成本：{{formatCosts(trialIntent.view.costs)}}。安排不扣物；在线15秒完成后，扣物、完整准备与问心同次保存成功才进入。</p><ReviewPages :rows="confirmationReadings('entry')" :identity="trialIntent.command.commandId"/></template><template v-else>
-        <p data-testid="trial-review-identity">{{trialIntent.view.snapshotSummary.name}} · {{trialIntent.view.snapshotSummary.realm}} · {{formatAgeMonths(trialIntent.view.snapshotSummary.ageMonths)}} · 行道{{trialIntent.view.snapshotSummary.elapsedMonths}}游戏月</p>
-        <p data-testid="trial-review-cost">入场实际成本：{{formatCosts(trialIntent.view.costs)}}。安排不扣物；在线15秒完成后，扣物、完整准备与问心同次保存成功才进入。</p>
-        <p>气血 {{trialIntent.view.preparation.hp}} / {{trialIntent.view.preparation.maxHp}} · 灵力 {{trialIntent.view.preparation.mp}} / {{trialIntent.view.preparation.maxMp}} · 灵石 {{trialIntent.view.snapshotSummary.stones}}</p>
-        <p>配装：{{trialIntent.view.preparation.loadout.map(slot=>slot.name).join(' / ')}} · {{trialIntent.view.preparation.relic}}</p>
-        <details><summary>即将保存的完整准备范围</summary><p>包括全部已掌握与剑简资格、背包、装备/法宝、人物选择、里程碑与当前进度；不只保存境界。</p><p>{{trialIntent.view.snapshotSummary.inventory.map(item=>item.name+' ×'+item.quantity).join(' · ')}}</p><p>已掌握 {{trialIntent.view.snapshotSummary.learned.length}}项，已有法宝 {{trialIntent.view.snapshotSummary.relics.length}}件，已选事件 {{trialIntent.view.snapshotSummary.choiceCount}}项。</p></details>
-        <p>开始后先回答问心，准备与消耗跨三关保留。此处只确认入场，不代表已经渡劫成功。</p>
-        </template>
-        <p v-if="trialStale" role="alert" data-testid="trial-review-stale">进度已更新，请返回准备页重新核对；此处不会启动另一份进度。</p>
-        <p v-if="store.error" role="alert" data-testid="trial-entry-error">{{store.error}}</p>
-        <button v-if="store.canRetryFor(trialIntent.command.commandId)" data-testid="trial-entry-retry" @click="retryTrial" :disabled="store.busy">重试同一次入场</button>
-        <button data-testid="trial-entry-cancel" @click="trialDialog?.close()" :disabled="store.busy">返回准备</button>
-        <button class="primary" data-testid="trial-confirm-entry" @click="confirmTrial" :disabled="store.busy || !store.available || trialStale">{{store.busy?store.saveLabel+'…':'安排登台一次 · 15秒'}}</button>
-      </template>
-    </dialog>
+<dialog ref="trialDialog" class="paper life-confirm closure-focus" data-testid="trial-entry-confirmation" aria-labelledby="trial-entry-title" @cancel="cancelLife" @close="closeTrialReview">
+<template v-if="trialIntent">
+<header><h2 id="trial-entry-title" tabindex="-1" data-dialog-initial>核对正式入场</h2></header>
+<template v-if="singleScreen"><p data-testid="trial-review-cost">入场实际成本：{{formatCosts(trialIntent.view.costs)}} · 在线15秒</p><p>登台后先问心，再迎三关；此举只入场，不代表渡劫成功。</p><details class="milestone-notes"><summary>完整准备与入场说明</summary><ReviewPages :rows="confirmationReadings('entry')" :identity="trialIntent.command.commandId"/><p>安排不扣物；在线15秒完成后，扣物、完整准备与问心同次保存成功才进入。</p></details></template><template v-else>
+<p data-testid="trial-review-identity">{{trialIntent.view.snapshotSummary.name}} · {{trialIntent.view.snapshotSummary.realm}} · {{formatAgeMonths(trialIntent.view.snapshotSummary.ageMonths)}} · 行道{{trialIntent.view.snapshotSummary.elapsedMonths}}游戏月</p>
+<p data-testid="trial-review-cost">入场实际成本：{{formatCosts(trialIntent.view.costs)}}。安排不扣物；在线15秒完成后，扣物、完整准备与问心同次保存成功才进入。</p>
+<p>气血 {{trialIntent.view.preparation.hp}} / {{trialIntent.view.preparation.maxHp}} · 灵力 {{trialIntent.view.preparation.mp}} / {{trialIntent.view.preparation.maxMp}} · 灵石 {{trialIntent.view.snapshotSummary.stones}}</p>
+<p>配装：{{trialIntent.view.preparation.loadout.map(slot=>slot.name).join(' / ')}} · {{trialIntent.view.preparation.relic}}</p>
+<details><summary>即将保存的完整准备范围</summary><p>包括全部已掌握与剑简资格、背包、装备/法宝、人物选择、里程碑与当前进度；不只保存境界。</p><p>{{trialIntent.view.snapshotSummary.inventory.map(item=>item.name+' ×'+item.quantity).join(' · ')}}</p><p>已掌握 {{trialIntent.view.snapshotSummary.learned.length}}项，已有法宝 {{trialIntent.view.snapshotSummary.relics.length}}件，已选事件 {{trialIntent.view.snapshotSummary.choiceCount}}项。</p></details>
+<p>开始后先回答问心，准备与消耗跨三关保留。此处只确认入场，不代表已经渡劫成功。</p>
+</template>
+<p v-if="trialStale" role="alert" data-testid="trial-review-stale">进度已更新，请返回准备页重新核对；此处不会启动另一份进度。</p>
+<p v-if="store.error" role="alert" data-testid="trial-entry-error">{{store.error}}</p>
+<button v-if="store.canRetryFor(trialIntent.command.commandId)" data-testid="trial-entry-retry" @click="retryTrial" :disabled="store.busy">重试同一次入场</button>
+<button data-testid="trial-entry-cancel" @click="trialDialog?.close()" :disabled="store.busy">返回准备</button>
+<button class="primary" data-testid="trial-confirm-entry" @click="confirmTrial" :disabled="store.busy || !store.available || trialStale">{{store.busy?store.saveLabel+'…':'安排登台一次 · 15秒'}}</button>
+</template>
+</dialog>
     </CultivationStageHost>
     <GameConfirmDialog v-if="confirmation.request.value" :key="confirmation.request.value.id" :request="confirmation.request.value" @answer="confirmation.answer($event)"/>
   </div>
 </template>
-
+<style src="./closure-focus.css"></style>

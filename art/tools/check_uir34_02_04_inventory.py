@@ -1,3 +1,4 @@
+from uir34_05_inventory import prior_uir3405_bytes
 """Allow only readonly busy dismissal; retain unapproved confirmations and original writers."""
 import hashlib,json
 from pathlib import Path
@@ -46,6 +47,6 @@ def validate_check340204(root):
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'CHECK34 immutable scope'
  raw=local(MANIFEST['path']).read_bytes();old=local(MANIFEST['before']).read_bytes();assert len(raw)==MANIFEST['bytes']and hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'CHECK34 actual complete close source';assert hashlib.sha256(old).hexdigest()==MANIFEST['beforeSHA256'],'CHECK34 original preserved';assert prior_check340204_bytes(MANIFEST['path'],raw)==old,'CHECK34 full inverse'
  total=sum(local(r['path']).stat().st_size for r in json.loads(local('art/redesign/idle-milestones.json').read_text())['files']);assert total<=30000,'CHECK34 original milestone cap'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'CHECK34 original writes conditions clock and other consumers'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_uir3405_bytes(n,local(n).read_bytes())).hexdigest()==h,'CHECK34 original writes conditions clock and other consumers'
  for n in MANIFEST['sourceReferences']:local(n)
  return{LEDGER,MANIFEST['path'],MANIFEST['before'],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']},total

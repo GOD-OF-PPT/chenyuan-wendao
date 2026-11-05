@@ -1,3 +1,4 @@
+from uir34_05_inventory import prior_uir3405_bytes
 from check_uir34_02_04_inventory import prior_check340204_bytes
 """Strict finite-choice display evolution; original confirmation owners and legacy cap retained."""
 import hashlib,json
@@ -127,6 +128,6 @@ def validate_uir3402(root):
  for name,r in MANIFEST['files'].items():
   raw=prior_check340204_bytes(r['path'],local(r['path']).read_bytes());old=local(r['before']).read_bytes();assert len(raw)==r['bytes']and hashlib.sha256(raw).hexdigest()==r['sha256'],'UIR34-02 actual complete source';assert hashlib.sha256(old).hexdigest()==r['beforeSHA256'],'UIR34-02 original preserved';assert prior_uir3402_bytes(name,raw)==old,'UIR34-02 inverse'
  total=sum(local(n).stat().st_size for n in ['web/src/MilestoneReview.vue','web/src/milestone-view.ts','web/src/idle-milestones.css']);assert total<=30000,'UIR34-02 original milestone cap'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR34-02 original rules owners and style'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_uir3405_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR34-02 original rules owners and style'
  for n in MANIFEST['sourceReferences']:local(n)
  return{LEDGER,*MANIFEST['sourceReferences'],*[r[k]for r in MANIFEST['files'].values()for k in ['path','before']],*MANIFEST['unchanged']},total
