@@ -1,0 +1,10 @@
+{
+  "session": 22351,
+  "exit": 0,
+  "methods": 683,
+  "seconds": 459.056,
+  "source": "2e4b0f8b76d3bc8703bc86e8c91b893ab4135505",
+  "scope": "all art/tools test_*.py; preliminary run without a whole-input before/after snapshot",
+  "noProductChangesDuringRun": true,
+  "doesNotProve": "pixel art or human/game balance acceptance"
+}
