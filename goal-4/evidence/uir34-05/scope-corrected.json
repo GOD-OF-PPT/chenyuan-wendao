@@ -1,0 +1,42 @@
+{
+  "relatedFiles": [
+    "uir34-05-trial-life-focus.spec.ts",
+    "idle-recovery-choices.spec.ts",
+    "ux20-trial-guidance.spec.ts",
+    "art32-milestone-stage.spec.ts",
+    "idle-milestones.spec.ts",
+    "matrix-ui-cancel.spec.ts",
+    "narrative-objects.spec.ts",
+    "art31-life-scroll.spec.ts",
+    "matrix-ui-milestone-feedback.spec.ts",
+    "art12-narrative-stage.spec.ts",
+    "check-matrix-keyboard.spec.ts",
+    "ux22-help-wayfinding.spec.ts",
+    "check-art30-32.spec.ts",
+    "cultivation-objects.spec.ts",
+    "art18-dialog-gallery.spec.ts",
+    "ux20-trial-reading.spec.ts",
+    "ux21-trial-return.spec.ts",
+    "art18-dialog-controls.spec.ts",
+    "check-art18-ux.spec.ts"
+  ],
+  "deferredOriginalSystemBranches": [
+    "ART32-A3 (2 original cases)",
+    "ART12-A8",
+    "ART18-E9 system-reduction",
+    "ART31-A5",
+    "ART05-A13",
+    "ART06-A15",
+    "CHECK-K10"
+  ],
+  "fixed": {
+    "viewport": [
+      1440,
+      900
+    ],
+    "fontScale": 1,
+    "browser": "Chromium"
+  },
+  "original13Preserved": true,
+  "original164Phase": "Stopped before any of these four deferred mixed-system tests; original terminal and report retained. Newly authorized phase reruns complete authorized declarations."
+}

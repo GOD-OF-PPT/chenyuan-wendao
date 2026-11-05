@@ -1,0 +1,34 @@
+{
+  "sourceProgressCommit": "70abc857b6a00e4ede308292f7019d1e0aaf6007",
+  "red": {
+    "case": "START_TRIAL",
+    "exit": 1,
+    "runtime": "bee1b34f62ad3ea2ff4b12ca4ae929eba5b03f5a0f8ae8e8a2529dae29fcf5c4",
+    "report": "artifacts/goal-4/uir34-05/red/report.json",
+    "finding": "Default complete book had no voluntary disclosure; raw PNG and actually viewed same-sizeJPEG retained."
+  },
+  "diagnostic5": {
+    "report": "artifacts/goal-4/uir34-05/diagnostic/report.json",
+    "passed": 5,
+    "scope": "Mutable root diagnostic, not frozen final phase; all five original complete Game/Activity/CPP/other-store proofs retained."
+  },
+  "preliminaryResourceInventory": {
+    "command": "python -m unittest discover -s art/tools -p test_inventory.py",
+    "tests": 467,
+    "exit": 0,
+    "seconds": 482.349,
+    "scope": "Root preliminary only. Final frozen full test*.py methods remain separate."
+  },
+  "preliminaryVue": {
+    "exit": 0,
+    "scope": "Root preliminary, final frozen check pending"
+  },
+  "diagnosticService": {
+    "port": 4179,
+    "ownedPID": 49237,
+    "cwd": "/Users/gordon/githome/chenyuan-wendao/web",
+    "stoppedAfterDiagnosticTerminal": true,
+    "finalQAService": 4173,
+    "newPreview": 56909
+  }
+}
