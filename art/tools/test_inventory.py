@@ -2311,7 +2311,7 @@ class UIR3402FocusTests(unittest.TestCase):
   for name,r in MANIFEST['files'].items():self.assertEqual(prior_uir3402_bytes(name,(ROOT/r['path']).read_bytes()),(ROOT/r['before']).read_bytes())
  def test_uir3402_rejects_changed_confirm_notes_marker_css_scope_and_budget(self):
   from uir34_02_inventory import validate_uir3402,MANIFEST,LEDGER
-  for name,old,new in [('MilestoneReview.vue',"@click=\"emit('confirm')\"","@click=\"emit('close')\""),('MilestoneReview.vue','data-focus','data-wrong'),('MilestoneReview.vue','busy||!available||stale','busy||!available'),('MilestoneReview.vue','来由与执行说明','删减说明'),('idle-milestones.css','min-height:160px','min-height:159px')]:
+  for name,old,new in [('MilestoneReview.vue',"@click=\"emit('confirm')\"","@click=\"emit('close')\""),('MilestoneReview.vue','data-focus','data-wrong'),('MilestoneReview.vue','busy||!available||stale','busy||!available'),('MilestoneReview.vue','来由与执行说明','删减说明'),('idle-milestones.css','min-height:160px','min-height:159px'),('idle-milestones.css','display:none','display:block')]:
    r=MANIFEST['files'][name];p=self.root/r['path'];raw=p.read_text();self.assertIn(old,raw);self.write(r['path'],raw.replace(old,new,1))
    with self.subTest(name=name,mutation=old),self.assertRaisesRegex(AssertionError,'UIR34-02'):validate_uir3402(self.root)
    self.write(str(p.relative_to(self.root)),raw)

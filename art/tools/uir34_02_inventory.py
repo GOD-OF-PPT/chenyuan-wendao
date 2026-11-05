@@ -48,8 +48,8 @@ MANIFEST={'format': 'chenyuan-finite-choice-focus-uir34-02',
                                                   [4006, '', ' v-if="!focused"'],
                                                   [4363, '', 'focused?decisionVerb:']]},
            'idle-milestones.css': {'path': 'web/src/idle-milestones.css',
-                                   'bytes': 4121,
-                                   'sha256': '85487aa4e1400bb0652c319da03e6557b414c5cfc2a59e7fb18fb50edbb994d8',
+                                   'bytes': 4179,
+                                   'sha256': '496d9959423622607290aab8f8d8ce35f04c1361310a7a2f9545e17fcbf03054',
                                    'before': 'goal-4/evidence/uir34-02/before/web/src/idle-milestones.css',
                                    'beforeSHA256': '4c902f46f3d7889f52409e22a9b3c22929a377b2e04e23d34521a6ba7e1db686',
                                    'operations': [[2505,
@@ -83,7 +83,9 @@ MANIFEST={'format': 'chenyuan-finite-choice-focus-uir34-02',
                                                    '.milestone-notes>small{display:block;margin:4px 0}\n'
                                                    '.milestone-review[data-focus=choice] '
                                                    'footer{justify-content:flex-end;margin-top:8px;padding-top:8px}.milestone-review[data-focus=choice] '
-                                                   'footer button{min-width:240px;max-width:100%}\n']]}},
+                                                   'footer button{min-width:240px;max-width:100%}\n'
+                                                   '\n'
+                                                   '.milestone-notes:not([open])>:not(summary){display:none}\n']]}},
  'unchanged': {'web/src/milestone-view.ts': 'af1a2045781e806806140092349b2ecde690524436b254a0c1f326a94e108efd',
                'web/src/ReviewPages.vue': '174210329c8aa9af93839f2a54cac0d8d76c50362c862bbc79096ecfeb92e7e2',
                'web/src/App.vue': 'ecffa3d113dd0980f272b56e809c379d8fe87842f80aef7298db234dd3e97ec0',

@@ -11,3 +11,5 @@
 .milestone-notes .review-pages{margin:4px 0 8px}.milestone-review .milestone-notes .reading-text{padding:10px 14px!important;min-height:100px}.milestone-review .milestone-notes .reading-text p{font-size:18px!important;line-height:1.55}
 .milestone-notes>small{display:block;margin:4px 0}
 .milestone-review[data-focus=choice] footer{justify-content:flex-end;margin-top:8px;padding-top:8px}.milestone-review[data-focus=choice] footer button{min-width:240px;max-width:100%}
+
+.milestone-notes:not([open])>:not(summary){display:none}
