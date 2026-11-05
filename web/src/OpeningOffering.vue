@@ -9,7 +9,7 @@ const props=withDefaults(defineProps<{game:Game;phase:string;engaged:boolean;rem
 const emit=defineEmits<{inspect:[Event]}>();
 const total=computed(()=>props.engaged?props.seconds:MILESTONE_CYCLE_MS.CHOOSE/1000);
 const arranged=computed(()=>props.status==='running'||props.status==='paused');
-const state=computed(()=>props.failed?'存档待核对 · 请沿原操作核对':props.status==='paused'?'此念已安排 · 已暂停':props.phase==='saving'?'正在记下此念 · 尚未落定':props.engaged?'所选回应进行中':arranged.value?'此念已保存 · 继续或接管见上方':'药匣在侧 · 先看三种选择');
+const state=computed(()=>props.failed?'存档待核对 · 请沿原操作核对':props.status==='paused'?'此念已安排 · 已暂停':props.phase==='saving'?'正在记下此念 · 尚未落定':props.engaged?'所选回应进行中':arranged.value?'此念已保存 · 继续见上方':'药匣在侧 · 先看三种选择');
 </script>
 <template>
  <div class="milestone-object art33-offering" data-testid="opening-offering" :data-phase="phase" :data-failed="failed" :data-arranged="arranged">

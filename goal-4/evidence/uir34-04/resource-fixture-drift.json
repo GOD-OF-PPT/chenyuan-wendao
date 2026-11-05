@@ -1,0 +1,17 @@
+{
+  "baselineSource": "5ec3fe7c4d88c08ea00bbb8d488ef92049363a48",
+  "baselineActuallyFailed": true,
+  "failure": "UX33 original regional cap",
+  "inconsistentFixtureBytes": 60005,
+  "actualCoherentCurrentBytes": 59999,
+  "oldTest": "goal-4/evidence/uir34-04/resource-before/test_ux33_inventory.py",
+  "oldSHA256": "c3d8d409de8ab6cabdf22b9fe1410977f36ac172bd2c49b962ec601ddcdbfb5a",
+  "newSHA256": "2f6aa61e3e038718665c6f48f057f2b0dc182718c2dd6c826569cfeb33998cd5",
+  "preserved": [
+    "historical declared282414",
+    "every exact normalized file hash and full inverse",
+    "original60000 cap and all other caps",
+    "retry/pause/clock/error mutations"
+  ],
+  "repair": "Copy current raw source consistently, preserve historical exact pins via existing strict inverses, separately check actual returned bytes. No game source or cap changed."
+}

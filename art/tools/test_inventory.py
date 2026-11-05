@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3404=ROOT/'art/redesign/uir34-04.json'
+  if uir3404.exists():
+   data=json.loads(uir3404.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']));files.update(ROOT/r['before']for r in data['files'].values())
   uir3403=ROOT/'art/redesign/uir34-03.json'
   if uir3403.exists():
    data=json.loads(uir3403.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[data['before']]+list(data['unchanged']))
@@ -2341,5 +2344,26 @@ class UIR3403FocusTests(unittest.TestCase):
    m=json.loads((ROOT/LEDGER).read_text());m[key]=value;self.write(LEDGER,m)
    with self.subTest(scope=key),self.assertRaisesRegex(AssertionError,'UIR34-03'):validate_uir3403(self.root)
    self.write(LEDGER,MANIFEST)
+
+class UIR3404ResumeCopyTests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_complete_copy_inverse_original_guards_owners_and_caps(self):
+  from uir34_04_inventory import validate_uir3404,prior_uir3404_bytes,MANIFEST
+  validate_uir3404(ROOT)
+  for name,r in MANIFEST['files'].items():self.assertEqual(prior_uir3404_bytes(name,(ROOT/r['path']).read_bytes()),(ROOT/r['before']).read_bytes())
+ def test_resume_pause_retry_reading_clock_and_budget_cannot_hide_in_copy(self):
+  from uir34_04_inventory import validate_uir3404,MANIFEST,LEDGER
+  for name,a,b in [('TrainingActivity.vue','@click="store.resumeCultivation"','@click="store.retry"'),('TrainingActivity.vue','!store.canRetry','true'),('TrainingActivity.vue','runtime.value?.remainingMs','1'),('TrainingActivity.vue','待继续 · 本轮重计','待接管'),('CultivationOngoing.vue','@click="store.resumeCultivation"','@click="store.retry"'),('CultivationOngoing.vue','离线无收益','离线有收益'),('OpeningOffering.vue',"emit('inspect',$event)","emit('start',$event)")]:
+   p=MANIFEST['files'][name]['path'];raw=(ROOT/p).read_text();self.assertIn(a,raw);self.write(p,raw.replace(a,b,1))
+   with self.subTest(file=name,mutation=a),self.assertRaisesRegex(AssertionError,'UIR34-04'):validate_uir3404(self.root)
+   self.write(p,raw)
+  for key,value in [('userAcceptance',True),('newRasterAssets',1)]:
+   m=json.loads((ROOT/LEDGER).read_text());m[key]=value;self.write(LEDGER,m)
+   with self.subTest(scope=key),self.assertRaisesRegex(AssertionError,'UIR34-04'):validate_uir3404(self.root)
+   self.write(LEDGER,MANIFEST)
+  m=json.loads((ROOT/LEDGER).read_text());m['caps']['idle-cultivation']+=1;self.write(LEDGER,m)
+  with self.assertRaisesRegex(AssertionError,'UIR34-04'):validate_uir3404(self.root)
 
 if __name__=='__main__':unittest.main()

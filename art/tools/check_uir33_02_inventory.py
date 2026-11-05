@@ -1,3 +1,4 @@
+from uir34_04_inventory import prior_uir3404_bytes
 from uir34_01_inventory import prior_uir3401_bytes
 """Exact positioning/decorative cleanup and duplicate visible stop removal."""
 import hashlib,json,re
@@ -105,6 +106,7 @@ MANIFEST={'format': 'chenyuan-check-uir33-02',
  'sourceReferences': ['docs/decisions/0103-uir33-stage-feedback-check.md',
                       'goal-4/amendments/2026-11-05-check-uir33-02-input.md']}
 def prior_check_uir3302_bytes(path,raw):
+ raw=prior_uir3404_bytes(path,raw)
  raw=prior_uir3401_bytes(path,raw)
  name=Path(path).name
  if name not in MANIFEST['files']:return raw
@@ -127,7 +129,7 @@ def validate_check_uir3302(root):
  if not(root/LEDGER).exists():return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'CHECK UIR02 exact scope'
  for name,f in MANIFEST['files'].items():
-  raw=local(f['path']).read_bytes();old=local(f['before']).read_bytes();assert len(raw)==f['bytes']and hashlib.sha256(raw).hexdigest()==f['sha256'],'CHECK UIR02 facts';assert hashlib.sha256(old).hexdigest()==f['beforeSHA256'],'CHECK UIR02 old preserved';assert prior_check_uir3302_bytes(name,raw)==old,'CHECK UIR02 inverse'
+  raw=prior_uir3404_bytes(f['path'],local(f['path']).read_bytes());old=local(f['before']).read_bytes();assert len(raw)==f['bytes']and hashlib.sha256(raw).hexdigest()==f['sha256'],'CHECK UIR02 facts';assert hashlib.sha256(old).hexdigest()==f['beforeSHA256'],'CHECK UIR02 old preserved';assert prior_check_uir3302_bytes(name,raw)==old,'CHECK UIR02 inverse'
   if name=='TrainingActivity.vue':assert re.search(rb'<script.*?</script>',raw,re.S).group()==re.search(rb'<script.*?</script>',old,re.S).group(),'CHECK UIR02 original activity controller'
   if name.endswith('.vue'):assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'CHECK UIR02 events'
  for name,cap in [('action-feedback',34000),('idle-cultivation',22000)]:

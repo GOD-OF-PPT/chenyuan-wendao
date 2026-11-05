@@ -1,3 +1,4 @@
+from uir34_04_inventory import prior_uir3404_bytes
 from uir34_01_inventory import prior_uir3401_bytes
 """Current cultivation controls, strict complete inverse and separate added surface budget."""
 from uir33_02_inventory import prior_uir3302_bytes
@@ -113,7 +114,7 @@ def validate_uir3301(root):
   script=re.search(rb'<script setup.*?</script>',raw,re.S).group()
   if name=='App.vue':script=script.replace(b"\nimport CultivationOngoing from './CultivationOngoing.vue';",b'')
   assert script==re.search(rb'<script setup.*?</script>',before,re.S).group(), 'UIR33-01 original controller stays owned'
- v=MANIFEST['added'];raw=local(v['path']).read_bytes()
+ v=MANIFEST['added'];raw=prior_uir3404_bytes(v['path'],local(v['path']).read_bytes())
  assert len(raw)==v['bytes']<=6000 and hashlib.sha256(raw).hexdigest()==v['sha256'], 'UIR33-01 exact added surface'
  assert local('web/src/App.vue').stat().st_size<=159635, 'UIR33-01 original parent cap'
  old=json.loads(local('art/redesign/cultivation-objects.json').read_text())

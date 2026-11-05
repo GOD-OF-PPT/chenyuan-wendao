@@ -1,0 +1,12 @@
+[
+  "uir33-01-cultivation-active.spec.ts",
+  "ux33-activity-status.spec.ts",
+  "check-u8.spec.ts",
+  "idle-cultivation.spec.ts",
+  "idle-recovery-context.spec.ts",
+  "idle-review.spec.ts",
+  "art33-opening-offering.spec.ts",
+  "uir33-05-activity-detail.spec.ts",
+  "idle-milestones.spec.ts",
+  "uir34-04-resume-wording.spec.ts"
+]

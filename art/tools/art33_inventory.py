@@ -66,7 +66,7 @@ def validate_art33(root,image_reader):
  assert gate.replace(':seconds="seconds" :view="view"',':seconds="seconds"',1)==identity(BASELINES[1]).decode(),'ART33 one Gate slot only'
  assert gp['defaultInlineUnchanged']is True and reverse(guide,gp['steps'])==identity(BASELINES[2]).decode(),'ART33 original default guidance'
  assert len(app.encode())-BASELINES[0]['bytes']<=2400 and len(gate.encode())-BASELINES[1]['bytes']==13,'ART33 exact parent bounds'
- view=local(FILES[0]).read_text();script=view.split('</script>')[0]
+ view=normalize_ux30(FILES[0],local(FILES[0]).read_text());script=view.split('</script>')[0]
  assert "defineEmits<{inspect:[Event]}>()"in script and all(n in view for n in ['MILESTONE_CYCLE_MS.CHOOSE','game.core.inventory.healing_pill>0','{{game.core.inventory.healing_pill}}','phase===\'running\'','remaining','seconds','viewTitle','status','data-failed','data-arranged','position="0% 100%"','此念已保存 · 继续或接管见上方']),'ART33 readonly state consumers'
  assert not re.search(r'\b(?:setTimeout|setInterval|requestAnimationFrame|Date|performance|fetch|indexedDB|localStorage|useGameStore|resolve|advance|onMounted)\b|v-html|eval\s*\(',view),'ART33 no clock IO reward or script execution'
  assert app.count('<OpeningOffering ')==3 and app.count('phase,engaged,remaining,seconds,view}')>=3,'ART33 all actual original slot consumers'

@@ -1,0 +1,42 @@
+{
+  "web/e2e/uir33-01-cultivation-active.spec.ts": {
+    "before": "goal-4/evidence/uir34-04/test-before/uir33-01-cultivation-active.spec.ts",
+    "beforeSHA256": "2eb658a6ebc4766746663bfb1af0638b4509f41e3b59589f78683d10aa86d97f",
+    "sha256": "05d70d8aaa72165d3821edf8bfee45723f53e5089a1cc328ae5c81365f21c2e1",
+    "operations": [
+      [
+        "toHaveText('\u6b64\u9875\u63a5\u7ba1')",
+        "toHaveText('\u7ee7\u7eed\u4fee\u70bc')"
+      ]
+    ],
+    "replaceAll": true
+  },
+  "web/e2e/ux33-activity-status.spec.ts": {
+    "before": "goal-4/evidence/uir34-04/test-before/ux33-activity-status.spec.ts",
+    "beforeSHA256": "060c65130fccd2c72d22c6238919df3e2ccfc259385f9f4b7ec6167010f23245",
+    "sha256": "b4bc180e956d2aa64a11e7a44bb20f05126bf194008d6b979a47ca1b8913eec9",
+    "operations": [
+      [
+        "toHaveText('\u5f85\u63a5\u7ba1')",
+        "toHaveText('\u5f85\u7ee7\u7eed \u00b7 \u672c\u8f6e\u91cd\u8ba1')"
+      ]
+    ],
+    "replaceAll": true
+  },
+  "web/e2e/check-u8.spec.ts": {
+    "before": "goal-4/evidence/uir34-04/test-before/check-u8.spec.ts",
+    "beforeSHA256": "d9cd9042555e33006965dba5f7400222b25a436a36a5782f313d46ae27b8c8e1",
+    "sha256": "822230ddf4273de5ff45e84de6dc235af52cf75df2c7e2e05306fe53e312dcfc",
+    "operations": [
+      [
+        "toContainText('\u63a5\u7ba1')",
+        "toContainText('\u7ee7\u7eed\u4fee\u70bc')"
+      ],
+      [
+        "toContainText('\u5f85\u63a5\u7ba1')",
+        "toContainText('\u5f85\u7ee7\u7eed \u00b7 \u672c\u8f6e\u91cd\u8ba1')"
+      ]
+    ],
+    "replaceAll": true
+  }
+}

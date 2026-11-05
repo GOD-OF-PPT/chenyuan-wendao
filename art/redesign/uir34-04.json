@@ -1,0 +1,133 @@
+{
+  "format": "chenyuan-resume-wording-uir34-04",
+  "version": 1,
+  "userAcceptance": false,
+  "files": {
+    "CultivationOngoing.vue": {
+      "path": "web/src/CultivationOngoing.vue",
+      "bytes": 3273,
+      "sha256": "eccf022a8791eb1a07816a76405cf77d65014336402892a7ff1180fde71c91d6",
+      "before": "goal-4/evidence/uir34-04/before/CultivationOngoing.vue",
+      "beforeSHA256": "16a814b95344928cdf3b8eef6ab6ab0aca757bc86cd335c2446b869ca2cfcf85",
+      "operations": [
+        [
+          940,
+          "等",
+          ""
+        ],
+        [
+          941,
+          "接管",
+          "继续 · 本轮重计"
+        ],
+        [
+          2162,
+          "takeover?'此页接管':",
+          ""
+        ],
+        [
+          2255,
+          "段",
+          ""
+        ],
+        [
+          2261,
+          "新",
+          ""
+        ],
+        [
+          2262,
+          "时",
+          ""
+        ],
+        [
+          2263,
+          "关闭期间不补",
+          "离线无"
+        ],
+        [
+          2268,
+          "",
+          "，继续后其他页停手"
+        ]
+      ]
+    },
+    "TrainingActivity.vue": {
+      "path": "web/src/TrainingActivity.vue",
+      "bytes": 7661,
+      "sha256": "ae0fd682327fa48407b7dc97139f3292ddf705feebe95d7d71cb36abad559d41",
+      "before": "goal-4/evidence/uir34-04/before/TrainingActivity.vue",
+      "beforeSHA256": "153c7621131e635df954f2467776c060ad90daf73d9c91ba82b0e2ed3e5e843a",
+      "operations": [
+        [
+          1514,
+          "接管",
+          "继续 · 本轮重计"
+        ],
+        [
+          4651,
+          "",
+          "沿用原额度，本轮重计；离线无收益，"
+        ],
+        [
+          4671,
+          "本轮重新计时；关闭或刷新期间不补发收益",
+          "其他页停手"
+        ],
+        [
+          5650,
+          "(takeover?'在此页接管':",
+          ""
+        ],
+        [
+          5654,
+          ")",
+          ""
+        ],
+        [
+          5783,
+          "takeover?'此页接管 · 重计本轮':rail||compact&&a.version===6?'继续':",
+          ""
+        ]
+      ]
+    },
+    "OpeningOffering.vue": {
+      "path": "web/src/OpeningOffering.vue",
+      "bytes": 2902,
+      "sha256": "67663a49903252fdfb91751422a72a577b072cb9e7c84e357e06a1e8b2a96d47",
+      "before": "goal-4/evidence/uir34-04/before/OpeningOffering.vue",
+      "beforeSHA256": "c523497e96fc105e69f77d2b41c28da79f399aa19f091ad6e02e9e016313f897",
+      "operations": [
+        [
+          926,
+          "或接管",
+          ""
+        ]
+      ]
+    }
+  },
+  "caps": {
+    "idle-cultivation": 22000,
+    "CultivationOngoing.vue": 6000,
+    "art33": 12000
+  },
+  "newRasterAssets": 0,
+  "unchanged": {
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/activity-clock.ts": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/activity-view.ts": "020a7580936a2019a78e766cb3c1c3863666c48fe4e3707a6b60b8abd74cd5a3",
+    "web/src/focus.ts": "8ae91e78a4db7a854c293fc4b1bc28f02dd0d542b3119cff383f9245b4944eea",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/milestones.ts": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+    "web/src/App.vue": "ecffa3d113dd0980f272b56e809c379d8fe87842f80aef7298db234dd3e97ec0",
+    "web/src/idle-activity.css": "17ef27c763e8c2e5a7d57f11b5f24f1604cc4df97562abf6f4e4a909a30c13e6",
+    "web/src/stage-r1.css": "1ed138017fb93db1156aea3db518ea7f930864a0503e3adb7363f4e4eb68112d"
+  },
+  "sourceReferences": [
+    "docs/decisions/0110-resume-player-wording-uir34-04-contract.md",
+    "goal-4/amendments/2026-11-05-uir34-04-input.md"
+  ]
+}
