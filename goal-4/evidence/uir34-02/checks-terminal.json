@@ -1,0 +1,36 @@
+{
+  "source": {
+    "head": "d6db6d5fb8cac8fbc1a0e8bd4d7eda6fb7d3920d",
+    "source": "d6db6d5fb8cac8fbc1a0e8bd4d7eda6fb7d3920d",
+    "tree": "fe41f54a86c81a0c74c5f55d720910b8e8b50b6e",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "54589c3f9fd86e1585d366f9c35f17488401e2889b589652eb2c8644d53831d7",
+  "inputs": 4463,
+  "exact": true,
+  "results": [
+    {
+      "name": "vue-type",
+      "exit": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "node",
+      "exit": 0,
+      "sha256": "976bd5076baa4f5226d40e2fe5817668671e3281d4cb7cb2dcf4395cef914db4"
+    },
+    {
+      "name": "resource-mutations",
+      "exit": 0,
+      "sha256": "ad44d386d2e877665e88a8a1f7e9e26e804040f6881865c3d97982b6d5a9fdf0"
+    },
+    {
+      "name": "resource-positive",
+      "exit": 0,
+      "sha256": "c9ee0f82f9da564c20a3e8b5ac6b871a4ea0919e39efaad19d4c9f4df340d2c8"
+    }
+  ]
+}

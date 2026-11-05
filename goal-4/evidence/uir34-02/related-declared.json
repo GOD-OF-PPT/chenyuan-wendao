@@ -1,0 +1,2297 @@
+{
+  "config": {
+    "configFile": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-02/layout/related.config.ts",
+    "rootDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-02/layout/source/web/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": {},
+    "maxFailures": 0,
+    "metadata": {
+      "chenyuan": {
+        "head": "d6db6d5fb8cac8fbc1a0e8bd4d7eda6fb7d3920d",
+        "source": "d6db6d5fb8cac8fbc1a0e8bd4d7eda6fb7d3920d",
+        "tree": "fe41f54a86c81a0c74c5f55d720910b8e8b50b6e",
+        "dirty": false,
+        "node": "v24.22.1",
+        "npm": "8.11.0",
+        "npmOnPath": "8.11.0"
+      },
+      "runtimeDigest": "54589c3f9fd86e1585d366f9c35f17488401e2889b589652eb2c8644d53831d7"
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-02/layout/related-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "chenyuan": {
+            "head": "d6db6d5fb8cac8fbc1a0e8bd4d7eda6fb7d3920d",
+            "source": "d6db6d5fb8cac8fbc1a0e8bd4d7eda6fb7d3920d",
+            "tree": "fe41f54a86c81a0c74c5f55d720910b8e8b50b6e",
+            "dirty": false,
+            "node": "v24.22.1",
+            "npm": "8.11.0",
+            "npmOnPath": "8.11.0"
+          },
+          "runtimeDigest": "54589c3f9fd86e1585d366f9c35f17488401e2889b589652eb2c8644d53831d7"
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-02/layout/source/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "idle-milestones.spec.ts",
+          "art33-opening-offering.spec.ts",
+          "art30-npc-meeting.spec.ts",
+          "art32-milestone-stage.spec.ts",
+          "art12-narrative-stage.spec.ts",
+          "art18-dialog-controls.spec.ts",
+          "check-art18-ux.spec.ts",
+          "idle-recovery-context.spec.ts",
+          "uir34-02-finite-focus.spec.ts",
+          "cend03-review-observations.spec.ts",
+          "check-art30-32.spec.ts",
+          "check-lifespan-alchemy.spec.ts",
+          "uir34-01-lifespan-guidance.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "art12-narrative-stage.spec.ts",
+      "file": "art12-narrative-stage.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ART12-A1 one factual invitation replaces permanent people racks while all four actual portraits records and known futures stay readonly",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f7dc035db42fc2c218cf-20fd9c9626b8aeb0e06b",
+          "file": "art12-narrative-stage.spec.ts",
+          "line": 875,
+          "column": 1
+        },
+        {
+          "title": "ART12-A2 a route is readonly until its explicit six-second travel and local eligibility never confuses realm knowledge with a visit",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f7dc035db42fc2c218cf-039bbf838ec1d5d495a0",
+          "file": "art12-narrative-stage.spec.ts",
+          "line": 925,
+          "column": 1
+        },
+        {
+          "title": "ART12-A3 the actual pending person opens the original response and every signature preview or cancelled confirmation stays separate from its one paid choice",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f7dc035db42fc2c218cf-df3dcf683a3b8b3c0e1f",
+          "file": "art12-narrative-stage.spec.ts",
+          "line": 968,
+          "column": 1
+        },
+        {
+          "title": "ART12-A4 people journal and ordinary life returns preserve real row anchors through zero one and two new records and isolate a replacement life",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f7dc035db42fc2c218cf-cc3ac555127fc563da99",
+          "file": "art12-narrative-stage.spec.ts",
+          "line": 1042,
+          "column": 1
+        },
+        {
+          "title": "ART12-A5 every life bookmark preserves its complete one-hundred-forty-codepoint pages while management opens and closes without sealing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f7dc035db42fc2c218cf-63050dfeef187e398387",
+          "file": "art12-narrative-stage.spec.ts",
+          "line": 1113,
+          "column": 1
+        },
+        {
+          "title": "ART12-A6 real checkpoint and all factual life statuses keep their original management confirmations exports receipts and twelve-second ending boundary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f7dc035db42fc2c218cf-6c789424770f47f2019b",
+          "file": "art12-narrative-stage.spec.ts",
+          "line": 1141,
+          "column": 1
+        },
+        {
+          "title": "ART12-A7 native quota keeps new readonly surfaces separate from the original retry and committed lost delivery reloads without another award",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "f7dc035db42fc2c218cf-37e843d32aa62c5bad7f",
+          "file": "art12-narrative-stage.spec.ts",
+          "line": 1246,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "art18-dialog-controls.spec.ts",
+      "file": "art18-dialog-controls.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ART18-E1 game materials preserve readonly menus, one consent surface, keyboard cancel and the original milestone",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9c270f9436fd4077a820-44044d1143cfc8f2c0bb",
+          "file": "art18-dialog-controls.spec.ts",
+          "line": 101,
+          "column": 1
+        },
+        {
+          "title": "ART18-E3 explicit restart keeps its original short countdown and creates only the requested new life",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9c270f9436fd4077a820-8e02dea7e91091692745",
+          "file": "art18-dialog-controls.spec.ts",
+          "line": 134,
+          "column": 1
+        },
+        {
+          "title": "ART18-E4 an arranged online cycle continues under consent and the changed state cannot be restarted by the old decision",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9c270f9436fd4077a820-3cc226c62877fa872146",
+          "file": "art18-dialog-controls.spec.ts",
+          "line": 149,
+          "column": 1
+        },
+        {
+          "title": "ART18-E5 cancelling a checkpoint keeps all records and explicit restore uses the complete original checkpoint",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9c270f9436fd4077a820-0f77e8eb8db919a58e3b",
+          "file": "art18-dialog-controls.spec.ts",
+          "line": 189,
+          "column": 1
+        },
+        {
+          "title": "ART18-E2 cancelling import preserves all stores and the explicit game confirmation alone authorizes the original save",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9c270f9436fd4077a820-e2e403865daade5cf2a1",
+          "file": "art18-dialog-controls.spec.ts",
+          "line": 226,
+          "column": 1
+        },
+        {
+          "title": "ART18-E6 local-record consent preserves cancel and only clears records after its exact confirmation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9c270f9436fd4077a820-a803226cd5852fa5d9b5",
+          "file": "art18-dialog-controls.spec.ts",
+          "line": 258,
+          "column": 1
+        },
+        {
+          "title": "ART18-E7 memory-only consent cannot clear persistent records or the actual Game",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9c270f9436fd4077a820-4b60bed4348a54ea7308",
+          "file": "art18-dialog-controls.spec.ts",
+          "line": 283,
+          "column": 1
+        },
+        {
+          "title": "ART18-E8 selected filenames remain literal text and cannot create executable dialog content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9c270f9436fd4077a820-735e59fdfea33431ea30",
+          "file": "art18-dialog-controls.spec.ts",
+          "line": 324,
+          "column": 1
+        },
+        {
+          "title": "ART18-E9 missing-material keeps readable consent real press focus and cancellation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9c270f9436fd4077a820-368a50821e311b7333fe",
+          "file": "art18-dialog-controls.spec.ts",
+          "line": 342,
+          "column": 81
+        },
+        {
+          "title": "ART18-E9 saved-reduction keeps readable consent real press focus and cancellation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9c270f9436fd4077a820-c7762e4fa1ed958b3ff3",
+          "file": "art18-dialog-controls.spec.ts",
+          "line": 342,
+          "column": 81
+        }
+      ]
+    },
+    {
+      "title": "art30-npc-meeting.spec.ts",
+      "file": "art30-npc-meeting.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ART30-A1 four original NPC silhouettes and their real facts share a cold meeting scene with one current decision without changing Game",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "cf26bb27437e40e0900f-7534476afd99eed38f33",
+          "file": "art30-npc-meeting.spec.ts",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "ART30-A2 paid NPC response keeps complete costs cancellation six-second boundary native rollback and one original retry in the same meeting stage",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "cf26bb27437e40e0900f-39a7b9d3b324355e9628",
+          "file": "art30-npc-meeting.spec.ts",
+          "line": 249,
+          "column": 1
+        },
+        {
+          "title": "ART30-A4 actual question ending and journal remain in their original reading domains with full text and no fabricated NPC meeting",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "cf26bb27437e40e0900f-790e792a59cd70c392b5",
+          "file": "art30-npc-meeting.spec.ts",
+          "line": 392,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "art32-milestone-stage.spec.ts",
+      "file": "art32-milestone-stage.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ART32-A1 ANSWER_TRIAL has its own actual decision stage with the original complete reading and readonly selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6f868db05b64ddc4a4b9-4067fa73a38478ae5e02",
+          "file": "art32-milestone-stage.spec.ts",
+          "line": 271,
+          "column": 50
+        },
+        {
+          "title": "ART32-A1 END has its own actual decision stage with the original complete reading and readonly selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6f868db05b64ddc4a4b9-efa40eca9ca0c6eff1cb",
+          "file": "art32-milestone-stage.spec.ts",
+          "line": 271,
+          "column": 50
+        },
+        {
+          "title": "ART32-A2 answer-accept keeps its original single period native rollback and exact-intent retry before any actual outcome",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6f868db05b64ddc4a4b9-9382408723199357b701",
+          "file": "art32-milestone-stage.spec.ts",
+          "line": 344,
+          "column": 135
+        },
+        {
+          "title": "ART32-A2 answer-release keeps its original single period native rollback and exact-intent retry before any actual outcome",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6f868db05b64ddc4a4b9-b4f69d8543fd02acccb7",
+          "file": "art32-milestone-stage.spec.ts",
+          "line": 344,
+          "column": 135
+        },
+        {
+          "title": "ART32-A2 ending-transmit keeps its original single period native rollback and exact-intent retry before any actual outcome",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6f868db05b64ddc4a4b9-58000613b92883c15956",
+          "file": "art32-milestone-stage.spec.ts",
+          "line": 344,
+          "column": 135
+        },
+        {
+          "title": "ART32-A2 ending-depart keeps its original single period native rollback and exact-intent retry before any actual outcome",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "6f868db05b64ddc4a4b9-30b0bf822c73373fa596",
+          "file": "art32-milestone-stage.spec.ts",
+          "line": 344,
+          "column": 135
+        }
+      ]
+    },
+    {
+      "title": "art33-opening-offering.spec.ts",
+      "file": "art33-opening-offering.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ART33-A1 full opening reading and every explanation stay readonly with original keyboard return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b450abbd75f830990b3f-65ca815f635673323458",
+          "file": "art33-opening-offering.spec.ts",
+          "line": 247,
+          "column": 1
+        },
+        {
+          "title": "ART33-A2 help: normal new life authorizes one full six-second choice and stores complete formal proof",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b450abbd75f830990b3f-fe25245f7bfddae22e81",
+          "file": "art33-opening-offering.spec.ts",
+          "line": 292,
+          "column": 50
+        },
+        {
+          "title": "ART33-A2 trade: normal new life authorizes one full six-second choice and stores complete formal proof",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b450abbd75f830990b3f-6d174e484b8138962042",
+          "file": "art33-opening-offering.spec.ts",
+          "line": 292,
+          "column": 50
+        },
+        {
+          "title": "ART33-A2 leave: normal new life authorizes one full six-second choice and stores complete formal proof",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b450abbd75f830990b3f-a2c44e95006d43193390",
+          "file": "art33-opening-offering.spec.ts",
+          "line": 292,
+          "column": 50
+        },
+        {
+          "title": "ART33-A3 native cycle quota keeps actual medicine and all controls until original unique retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b450abbd75f830990b3f-b3632f2e516cfc60660c",
+          "file": "art33-opening-offering.spec.ts",
+          "line": 326,
+          "column": 1
+        },
+        {
+          "title": "ART33-A4 rejected START and paused refreshed original choice cannot be replaced by new art interactions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b450abbd75f830990b3f-4656223ba10e81679c90",
+          "file": "art33-opening-offering.spec.ts",
+          "line": 365,
+          "column": 1
+        },
+        {
+          "title": "ART33-A5 preference failed images retain full accessible choices and reduced motion keeps original real countdown",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b450abbd75f830990b3f-6c2820f7eab3fb2442c4",
+          "file": "art33-opening-offering.spec.ts",
+          "line": 413,
+          "column": 51
+        },
+        {
+          "title": "ART33-A6 another page owns the same choice and taking over keeps the original plan and never invents offline medicine",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b450abbd75f830990b3f-08757b26caffe2226d05",
+          "file": "art33-opening-offering.spec.ts",
+          "line": 444,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "cend03-review-observations.spec.ts",
+      "file": "cend03-review-observations.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CEND03 readonly CHOOSE exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-44141ecb9bef0e2fe31a",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly TRAVEL exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-04cb1e22e2e480899b8b",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly CULTIVATE exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-9f3e16cf84338c2b56ae",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly SOURCE exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-b9e5a2e337fbd6997007",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly BUY exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-224333cc7834ec0abe3b",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly SELL exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-4aff049c09913075f2bb",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly CRAFT exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-711a8008ca2ad3701ae7",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly USE exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-120c2b5d00dd2c9baff0",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly REST exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-c7d8903f798c909b8116",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly BREAKTHROUGH exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-f0a5caf8952d8916ebd0",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly SCHOOL exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-1480ce07c2dea30cc98e",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly STUDY exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-d55da053db847600eef5",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly LEARN exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-3df4b2fda8ea69a72d2d",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly EQUIP exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-4a71b0d2a56c17771c2d",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly FORGE exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-77d6ac68947e1bde9b6d",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly EQUIP_RELIC exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-4141c1e908e7b543ee31",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly ENCOUNTER exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-cd3b58c29f66dd1e85b4",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly BATTLE exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-5617e0f3eec809821b12",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly EVENT exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-5a90dc6c51583419dc4f",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly DECIDE exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-ea8040f5bd9bc9885f45",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly START_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-a5379a8c7c9e9eee357e",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly ANSWER_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-4ddcf2d62720ac5224c9",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly END exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-7748aafbf0ad653bec4d",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly RETIRE exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-c6432ac463f6634353bc",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 readonly END_LIFE exposes the real decision object costs authorization and pre-action time for review",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-e8e00979a5a6581e3d75",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 164,
+          "column": 29
+        },
+        {
+          "title": "CEND03 extra foreign rest preserves Game and records the actual travel preparation and disclosed time",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-675b9e1cddcc824bb985",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 226,
+          "column": 1
+        },
+        {
+          "title": "CEND03 extra real prepared trial checkpoint exposes both current preparation and explicit restoration without changing the saved state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "bf7d4dd18731ee59d37e-bea73756e1d37168aefc",
+          "file": "cend03-review-observations.spec.ts",
+          "line": 268,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "check-art18-ux.spec.ts",
+      "file": "check-art18-ux.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CROSS-ART18-UX-C1 a normal mortal cycle keeps its original countdown and finite budget through arrangement and consent cancellation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "320f9e11eb19bbed4704-2c9d3f471bae09dbcbfd",
+          "file": "check-art18-ux.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "CROSS-ART18-UX-C2 a real ending quota keeps the new stage readable above navigation and retries only its original selected command",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "320f9e11eb19bbed4704-448d2501f6e24e094b35",
+          "file": "check-art18-ux.spec.ts",
+          "line": 153,
+          "column": 1
+        },
+        {
+          "title": "CROSS-ART18-UX-C3 a foreign saved answer invalidates the frozen question while the actual first-gate view never starts a battle turn",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "320f9e11eb19bbed4704-78c73e6e2826cef8e57c",
+          "file": "check-art18-ux.spec.ts",
+          "line": 194,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "check-art30-32.spec.ts",
+      "file": "check-art30-32.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CHECK-ART3032-C1 one paid six-second response stays authoritative through life reading and a later safe return shows actual saved person facts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aeed2c943ecfc0d94f40-00e175929870791858e0",
+          "file": "check-art30-32.spec.ts",
+          "line": 213,
+          "column": 1
+        },
+        {
+          "title": "CHECK-ART3032-C2 an ending fails atomically while its life reader stays unsealed and the original retry delivers one real local seal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aeed2c943ecfc0d94f40-c3d25a9a0663dabb7501",
+          "file": "check-art30-32.spec.ts",
+          "line": 276,
+          "column": 1
+        },
+        {
+          "title": "CHECK-ART3032-C3 a real trial checkpoint and other-page full restore invalidate an unapproved old question without continuing either life",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "aeed2c943ecfc0d94f40-67e3e7cec1715d5d78cb",
+          "file": "check-art30-32.spec.ts",
+          "line": 348,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "check-lifespan-alchemy.spec.ts",
+      "file": "check-lifespan-alchemy.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CHECK-LIFE-ALCHEMY-C1 a complete unaffordable alchemy draft and folded rules survive readonly life choices and return without an activity",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c43f02b4e814e644de97-c63596ef2fb8dde41d36",
+          "file": "check-lifespan-alchemy.spec.ts",
+          "line": 155,
+          "column": 1
+        },
+        {
+          "title": "CHECK-LIFE-ALCHEMY-C2 a failed original work tick keeps its authorization through furnace and life reading then stops at the real lifespan boundary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c43f02b4e814e644de97-60ba5dbb21d051dfb191",
+          "file": "check-lifespan-alchemy.spec.ts",
+          "line": 216,
+          "column": 1
+        },
+        {
+          "title": "CHECK-LIFE-ALCHEMY-C3 a held native breakthrough saves preparation Game and result together after readonly alchemy inspection and pause",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c43f02b4e814e644de97-1ca497b13046e17986f8",
+          "file": "check-lifespan-alchemy.spec.ts",
+          "line": 289,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "idle-milestones.spec.ts",
+      "file": "idle-milestones.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "a real opening choice remains a preview, then waits six seconds and saves exactly its one medicine cost",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-47e817436b48f1e3d44e",
+          "file": "idle-milestones.spec.ts",
+          "line": 231,
+          "column": 1
+        },
+        {
+          "title": "a real prepared breakthrough waits thirty seconds and stops at the next realm with its actual pill and reset cultivation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-10ff8f6ddafc29095aa4",
+          "file": "idle-milestones.spec.ts",
+          "line": 268,
+          "column": 1
+        },
+        {
+          "title": "visiting opens only the selected current-place story and a separately selected response saves once",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-264c2cabfb04ab2ee954",
+          "file": "idle-milestones.spec.ts",
+          "line": 298,
+          "column": 1
+        },
+        {
+          "title": "a paused selected opening survives refresh, has a read-only original arrangement and grants no offline result",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-9677a29546e4ed1ee5d0",
+          "file": "idle-milestones.spec.ts",
+          "line": 336,
+          "column": 1
+        },
+        {
+          "title": "trial entry and each answer stop at the next undecided boundary without an automatic battle turn",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-dfcdc52ec611eba77d70",
+          "file": "idle-milestones.spec.ts",
+          "line": 373,
+          "column": 1
+        },
+        {
+          "title": "the release answer shows its actual attack bonus and never substitutes the other answer or starts a turn",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-0ecd0874fdaa9530a628",
+          "file": "idle-milestones.spec.ts",
+          "line": 404,
+          "column": 1
+        },
+        {
+          "title": "the selected transmit ending waits for explicit arrangement and preserves the sealed life without creating another",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-c2b97154ba863c55225e",
+          "file": "idle-milestones.spec.ts",
+          "line": 435,
+          "column": 46
+        },
+        {
+          "title": "the selected depart ending waits for explicit arrangement and preserves the sealed life without creating another",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-34c5c39ad7153c16015b",
+          "file": "idle-milestones.spec.ts",
+          "line": 435,
+          "column": 46
+        },
+        {
+          "title": "RETIRE requires its own explicit life confirmation and uses only its formal game-month cost",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-cfc05211644a5260bbcd",
+          "file": "idle-milestones.spec.ts",
+          "line": 463,
+          "column": 43
+        },
+        {
+          "title": "END_LIFE requires its own explicit life confirmation and uses only its formal game-month cost",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-f8069efd609b6a59a1d3",
+          "file": "idle-milestones.spec.ts",
+          "line": 463,
+          "column": 43
+        },
+        {
+          "title": "a failed arrangement retries the same preview and a different page never gets pulled back by its later completion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-07bf11b7d8b67ea99761",
+          "file": "idle-milestones.spec.ts",
+          "line": 492,
+          "column": 1
+        },
+        {
+          "title": "another page changing the activity makes the frozen choice stale without refreshing its authorization",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-723fa59e2f7e0e2ec392",
+          "file": "idle-milestones.spec.ts",
+          "line": 522,
+          "column": 1
+        },
+        {
+          "title": "a running visit disables new visits while people, journal and same-place inspection stay usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-6d801f4f033310a9fe75",
+          "file": "idle-milestones.spec.ts",
+          "line": 544,
+          "column": 1
+        },
+        {
+          "title": "a running answer disables all answer choices but preserves details and full narrative reading",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-ad309fec5249f8484e49",
+          "file": "idle-milestones.spec.ts",
+          "line": 578,
+          "column": 1
+        },
+        {
+          "title": "running retirement disables another seal while life pages and export remain available without ending the life",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-001119797981c360c1bf",
+          "file": "idle-milestones.spec.ts",
+          "line": 625,
+          "column": 1
+        },
+        {
+          "title": "running trial entry disables another entry and foreign travel while preparation pages and equipment inspection remain usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "03c57786c2874e6ca345-674d9f2772dac389238b",
+          "file": "idle-milestones.spec.ts",
+          "line": 664,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "idle-recovery-context.spec.ts",
+      "file": "idle-recovery-context.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "M04-U12 pending opening refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0b102f3baab71f363cf-0dcc561db2d174713d6f",
+          "file": "idle-recovery-context.spec.ts",
+          "line": 26,
+          "column": 53
+        },
+        {
+          "title": "M04-U12 pending event refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0b102f3baab71f363cf-a08ab24e01b5e4699ebe",
+          "file": "idle-recovery-context.spec.ts",
+          "line": 26,
+          "column": 53
+        },
+        {
+          "title": "M04-U12 pending battle refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0b102f3baab71f363cf-15bd73fc81aefd38a083",
+          "file": "idle-recovery-context.spec.ts",
+          "line": 26,
+          "column": 53
+        },
+        {
+          "title": "M04-U13 a response cycle cannot steal a newer inventory selection or its focus when its complete Game is committed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0b102f3baab71f363cf-3c027f0e4d3de44acc41",
+          "file": "idle-recovery-context.spec.ts",
+          "line": 116,
+          "column": 1
+        },
+        {
+          "title": "M04-U14 missing scene and portrait resources cannot block a normal opening or its explicit finite cultivation and first breakthrough",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "c0b102f3baab71f363cf-d0a4f6a61a9fba6278b1",
+          "file": "idle-recovery-context.spec.ts",
+          "line": 166,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "uir34-01-lifespan-guidance.spec.ts",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR34-01-A1 foreign last-month travel leads to an actionable readonly life guide without a zero-yield main action or a fictional checkpoint",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b75255d70c30881798ee-12a92f1c6f13bc3823fb",
+          "file": "uir34-01-lifespan-guidance.spec.ts",
+          "line": 185,
+          "column": 1
+        },
+        {
+          "title": "UIR34-01-A2 a genuinely prepared last-month breakthrough keeps its original full thirty-second atomic checkpoint and restores ordinary guidance",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b75255d70c30881798ee-d742de7c945c54c881ef",
+          "file": "uir34-01-lifespan-guidance.spec.ts",
+          "line": 212,
+          "column": 1
+        },
+        {
+          "title": "UIR34-01-A3 a real native checkpoint remains inspectable after finite public work periods reach the lifespan boundary without restoring or ending",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b75255d70c30881798ee-0ad5d7e749e28472fac0",
+          "file": "uir34-01-lifespan-guidance.spec.ts",
+          "line": 232,
+          "column": 1
+        },
+        {
+          "title": "UIR34-01-A4 viewing last-month options during a failed original trip cannot replace its command or spend the last month",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b75255d70c30881798ee-256ebd5d7cc3f0df747b",
+          "file": "uir34-01-lifespan-guidance.spec.ts",
+          "line": 324,
+          "column": 1
+        },
+        {
+          "title": "UIR34-01-A5 an original paused assisted budget resumes once and stops at the real lifespan limit before the new readonly guide appears",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b75255d70c30881798ee-3764951df3fe470f04f2",
+          "file": "uir34-01-lifespan-guidance.spec.ts",
+          "line": 374,
+          "column": 1
+        },
+        {
+          "title": "UIR34-01-A6 a last-month battle keeps its actual action and context until an explicitly saved retreat returns to the cave guide",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b75255d70c30881798ee-0b7ba9a561da4141a059",
+          "file": "uir34-01-lifespan-guidance.spec.ts",
+          "line": 426,
+          "column": 1
+        },
+        {
+          "title": "UIR34-01-A7 a superseding navigation cancels a late life-management opening without a hidden dialog or Game write",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b75255d70c30881798ee-f904fa360f90747b2e74",
+          "file": "uir34-01-lifespan-guidance.spec.ts",
+          "line": 449,
+          "column": 1
+        },
+        {
+          "title": "UIR34-01-A8 a chosen material target persists through lifespan guidance life reading and refresh without accepting another activity",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "b75255d70c30881798ee-8f53419a9d80fee1126b",
+          "file": "uir34-01-lifespan-guidance.spec.ts",
+          "line": 469,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "uir34-02-finite-focus.spec.ts",
+      "file": "uir34-02-finite-focus.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "UIR34-02-A1 CHOOSE leads with the real choice while complete notes cancel and one original atomic period remain intact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9466c11fd06a4cd6dd9a-b26708665510221a89a9",
+          "file": "uir34-02-finite-focus.spec.ts",
+          "line": 176,
+          "column": 54
+        },
+        {
+          "title": "UIR34-02-A2 BREAKTHROUGH leads with the real choice while complete notes cancel and one original atomic period remain intact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9466c11fd06a4cd6dd9a-32a750bc2273836dbd10",
+          "file": "uir34-02-finite-focus.spec.ts",
+          "line": 176,
+          "column": 54
+        },
+        {
+          "title": "UIR34-02-A3 EVENT leads with the real choice while complete notes cancel and one original atomic period remain intact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9466c11fd06a4cd6dd9a-cbb5fa896d2c43ca90df",
+          "file": "uir34-02-finite-focus.spec.ts",
+          "line": 176,
+          "column": 54
+        },
+        {
+          "title": "UIR34-02-A4 DECIDE leads with the real choice while complete notes cancel and one original atomic period remain intact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9466c11fd06a4cd6dd9a-5e4e68243838de63912d",
+          "file": "uir34-02-finite-focus.spec.ts",
+          "line": 176,
+          "column": 54
+        },
+        {
+          "title": "UIR34-02-A5 ANSWER_TRIAL leads with the real choice while complete notes cancel and one original atomic period remain intact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9466c11fd06a4cd6dd9a-7ccc6943f73c15a5a894",
+          "file": "uir34-02-finite-focus.spec.ts",
+          "line": 176,
+          "column": 54
+        },
+        {
+          "title": "UIR34-02-A6 another public choice makes the open notes stale without rewriting the first choice or authorizing it",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "9466c11fd06a4cd6dd9a-f99943be2e2ad39a6437",
+          "file": "uir34-02-finite-focus.spec.ts",
+          "line": 230,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T12:16:05.860Z",
+    "duration": 2696.689,
+    "expected": 0,
+    "skipped": 105,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

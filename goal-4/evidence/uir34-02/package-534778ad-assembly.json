@@ -1,0 +1,21 @@
+{
+  "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-02/uir34-02-preview-c7e1b3f.zip",
+  "bytes": 10126440,
+  "sha256": "503468be0710c29f008c94c9ff2c04f544e9121675f1b3da9be99169030be6da",
+  "source": {
+    "head": "c7e1b3f25f3b31d511bc467f5c3a350de4c4c3f2",
+    "source": "c7e1b3f25f3b31d511bc467f5c3a350de4c4c3f2",
+    "tree": "f8c1852f56bdffb8ae9f1d6be2527338cae443f6",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "534778ad37492c41b9db98fc34469d319dc7468208e0ea28540c385942190ae0",
+  "payloadFiles": 112,
+  "allUnpackedPayloadsExact": true,
+  "archiveFunction": "scripts/package-candidate.py:archive_tree",
+  "serverSourceSha256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565",
+  "formalCandidate": false,
+  "packageUITests": "pending"
+}

@@ -1,0 +1,15 @@
+[
+  "idle-milestones.spec.ts",
+  "art33-opening-offering.spec.ts",
+  "art30-npc-meeting.spec.ts",
+  "art32-milestone-stage.spec.ts",
+  "art12-narrative-stage.spec.ts",
+  "art18-dialog-controls.spec.ts",
+  "check-art18-ux.spec.ts",
+  "idle-recovery-context.spec.ts",
+  "uir34-02-finite-focus.spec.ts",
+  "cend03-review-observations.spec.ts",
+  "check-art30-32.spec.ts",
+  "check-lifespan-alchemy.spec.ts",
+  "uir34-01-lifespan-guidance.spec.ts"
+]

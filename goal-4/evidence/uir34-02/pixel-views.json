@@ -1,0 +1,163 @@
+[
+  {
+    "case": "UIR34-02-A1 CHOOSE leads with the real choice while complete notes cancel and one original atomic period remain intact",
+    "raw": "artifacts/goal-4/uir34-02/final/focused-results/uir34-02-finite-focus-UIR3-a17fe-atomic-period-remain-intact-chromium/default-focused-choice.png",
+    "rawSha256": "146ec22f591cc7634ba76e3ecf7010a4d940abd622934d8fe8d19d23697e835d",
+    "view": "goal-4/evidence/uir34-02/views/UIR34-02-A1-default.jpg",
+    "viewSha256": "0ce3d1887f703cb017a6bc3fbcfe0e4cf35be37e5f457c4c9a2db9dbd2461ce6",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG quality68",
+    "actuallyViewed": true,
+    "source": "13761c1a478ed78cf2a85f44fcc173d6c6994208",
+    "runtime": "f32e0c8ffe82c64ba7e48989e9f8dfbc3b4e68a5660159df08980bff50712175",
+    "superseded": true
+  },
+  {
+    "case": "UIR34-02-A1 CHOOSE leads with the real choice while complete notes cancel and one original atomic period remain intact",
+    "raw": "artifacts/goal-4/uir34-02/final/focused-results/uir34-02-finite-focus-UIR3-a17fe-atomic-period-remain-intact-chromium/saved-original-readonly.png",
+    "rawSha256": "7121084673be83727f07fe7d42e9b2987b782253b04fa92bd466b278ba2fb933",
+    "view": "goal-4/evidence/uir34-02/views/UIR34-02-A1-readonly.jpg",
+    "viewSha256": "f03cbe97f29a1a0c90ea5488df47945740ed7bcf3ad841eab5aef459646401ad",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG quality68",
+    "actuallyViewed": false,
+    "source": "13761c1a478ed78cf2a85f44fcc173d6c6994208",
+    "runtime": "f32e0c8ffe82c64ba7e48989e9f8dfbc3b4e68a5660159df08980bff50712175",
+    "superseded": true
+  },
+  {
+    "case": "UIR34-02-A2 BREAKTHROUGH leads with the real choice while complete notes cancel and one original atomic period remain intact",
+    "raw": "artifacts/goal-4/uir34-02/final/focused-results/uir34-02-finite-focus-UIR3-c7427-atomic-period-remain-intact-chromium/default-focused-choice.png",
+    "rawSha256": "366f586fa61812487a0ca1853848ce473fec275ed4fef4db175338f1510eb295",
+    "view": "goal-4/evidence/uir34-02/views/UIR34-02-A2-default.jpg",
+    "viewSha256": "35c4ba9632b97a07793d7f59f434979914ec50b9d4ce165fbf7ee4f9b3934ad3",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG quality68",
+    "actuallyViewed": true,
+    "source": "13761c1a478ed78cf2a85f44fcc173d6c6994208",
+    "runtime": "f32e0c8ffe82c64ba7e48989e9f8dfbc3b4e68a5660159df08980bff50712175",
+    "superseded": true
+  },
+  {
+    "case": "UIR34-02-A3 EVENT leads with the real choice while complete notes cancel and one original atomic period remain intact",
+    "raw": "artifacts/goal-4/uir34-02/final/focused-results/uir34-02-finite-focus-UIR3-dca1e-atomic-period-remain-intact-chromium/default-focused-choice.png",
+    "rawSha256": "e39ccdeb5338c0bd0e0fd6d944828eb126a07d6b112f3e74f4f5964e0d453e08",
+    "view": "goal-4/evidence/uir34-02/views/UIR34-02-A3-default.jpg",
+    "viewSha256": "e51a22a7b25f39c89db3f409ccefbe60dee2136104e02859e75c1b443f45a4ce",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG quality68",
+    "actuallyViewed": true,
+    "source": "13761c1a478ed78cf2a85f44fcc173d6c6994208",
+    "runtime": "f32e0c8ffe82c64ba7e48989e9f8dfbc3b4e68a5660159df08980bff50712175",
+    "superseded": true
+  },
+  {
+    "case": "UIR34-02-A4 DECIDE leads with the real choice while complete notes cancel and one original atomic period remain intact",
+    "raw": "artifacts/goal-4/uir34-02/final/focused-results/uir34-02-finite-focus-UIR3-0d660-atomic-period-remain-intact-chromium/default-focused-choice.png",
+    "rawSha256": "e43e6f58c0e3f43907f7b0888c7da8f97b28ab072207d29496680e0b421109ac",
+    "view": "goal-4/evidence/uir34-02/views/UIR34-02-A4-default.jpg",
+    "viewSha256": "b340cdaeed80b20f34b03fb28bd6491469867d67649af156f7b57c1e6f5c0622",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG quality68",
+    "actuallyViewed": true,
+    "source": "13761c1a478ed78cf2a85f44fcc173d6c6994208",
+    "runtime": "f32e0c8ffe82c64ba7e48989e9f8dfbc3b4e68a5660159df08980bff50712175",
+    "superseded": true
+  },
+  {
+    "case": "UIR34-02-A5 ANSWER_TRIAL leads with the real choice while complete notes cancel and one original atomic period remain intact",
+    "raw": "artifacts/goal-4/uir34-02/final/focused-results/uir34-02-finite-focus-UIR3-9e9e6-atomic-period-remain-intact-chromium/default-focused-choice.png",
+    "rawSha256": "8b58b084ab7c9045130bcd4d9c83345baf04bedf6dd15028ccd23d3f1724183c",
+    "view": "goal-4/evidence/uir34-02/views/UIR34-02-A5-default.jpg",
+    "viewSha256": "bb8c6958944d1a173edddf062d75ad750925faed19f2b25428c9c91aa81a8e48",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG quality68",
+    "actuallyViewed": false,
+    "source": "13761c1a478ed78cf2a85f44fcc173d6c6994208",
+    "runtime": "f32e0c8ffe82c64ba7e48989e9f8dfbc3b4e68a5660159df08980bff50712175",
+    "superseded": true
+  },
+  {
+    "case": "UIR34-02-A5 ANSWER_TRIAL leads with the real choice while complete notes cancel and one original atomic period remain intact",
+    "raw": "artifacts/goal-4/uir34-02/final/focused-results/uir34-02-finite-focus-UIR3-9e9e6-atomic-period-remain-intact-chromium/complete-notes-page-0.png",
+    "rawSha256": "e46d6dc2e41aaea849556bf8965296fc5906952682b689401cf39abc6cc7180d",
+    "view": "goal-4/evidence/uir34-02/views/UIR34-02-A5-notes.jpg",
+    "viewSha256": "af92c9d998cef7a5767aa6389fc23a1ff6655906857ca1ab973588f21067b57e",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG quality68",
+    "actuallyViewed": false,
+    "source": "13761c1a478ed78cf2a85f44fcc173d6c6994208",
+    "runtime": "f32e0c8ffe82c64ba7e48989e9f8dfbc3b4e68a5660159df08980bff50712175",
+    "superseded": true
+  },
+  {
+    "case": "UIR34-02-A6 another public choice makes the open notes stale without rewriting the first choice or authorizing it",
+    "raw": "artifacts/goal-4/uir34-02/final/focused-results/uir34-02-finite-focus-UIR3-3f5af-st-choice-or-authorizing-it-chromium/stale-choice-with-primary-blocked.png",
+    "rawSha256": "e8ee6d26f78f4da1f2f976aa43992fa264cd84a8db1526d5bf32835f956b2b27",
+    "view": "goal-4/evidence/uir34-02/views/UIR34-02-A6-stale.jpg",
+    "viewSha256": "27ae88bca10be1f2a3d645c877ea77d7f5556a36c98517427a67f41bfbd0c2a5",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG quality68",
+    "actuallyViewed": false,
+    "source": "13761c1a478ed78cf2a85f44fcc173d6c6994208",
+    "runtime": "f32e0c8ffe82c64ba7e48989e9f8dfbc3b4e68a5660159df08980bff50712175",
+    "superseded": true
+  },
+  {
+    "case": "UIR34-02-A6 another public choice makes the open notes stale without rewriting the first choice or authorizing it",
+    "raw": "artifacts/goal-4/uir34-02/final/focused-results/uir34-02-finite-focus-UIR3-3f5af-st-choice-or-authorizing-it-chromium/stale-original-choice-page-0.png",
+    "rawSha256": "251765505085185becfb7b6e3a280034a56c1c712129b6f8b9bd875b23edb783",
+    "view": "goal-4/evidence/uir34-02/views/UIR34-02-A6-stale-notes.jpg",
+    "viewSha256": "a22ac5a69d16d9e11404802709ad0436523cdde1c5dc5bfc60d14b44dc1b6f4d",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG quality68",
+    "actuallyViewed": false,
+    "source": "13761c1a478ed78cf2a85f44fcc173d6c6994208",
+    "runtime": "f32e0c8ffe82c64ba7e48989e9f8dfbc3b4e68a5660159df08980bff50712175",
+    "superseded": true
+  },
+  {
+    "case": "UIR34-02 original default",
+    "raw": "artifacts/goal-4/uir34-02/baseline/baseline-results/uir34-02-finite-focus-UIR3-a17fe-atomic-period-remain-intact-chromium/before-focus-assertion.png",
+    "rawSha256": "298c62efe8ea27f721e926f5891287358efd7964029a59ed08849ff28d70faec",
+    "view": "goal-4/evidence/uir34-02/views/baseline-choice.jpg",
+    "viewSha256": "404e1897ef09989ed8ebff01714f617838abc05de0d671039ea1160d19d68fba",
+    "pixels": [
+      1440,
+      900
+    ],
+    "encoding": "lossy same-size JPEG quality68",
+    "actuallyViewed": true,
+    "source": "16151e3808ccb6983dcffcceb623e48c2714d80b",
+    "runtime": "8f5105b733a7385f98762e81fdce07d08e30bd9f0b2f24fd8a8c39d1f4c75e13",
+    "superseded": true,
+    "pixelReview": "实际旧默认窗三页来由与多处同权规则；作为本轮原红/改前像素，不冒当前通过。"
+  }
+]
