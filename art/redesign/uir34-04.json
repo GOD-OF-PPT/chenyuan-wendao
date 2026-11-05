@@ -44,8 +44,8 @@
     },
     "TrainingActivity.vue": {
       "path": "web/src/TrainingActivity.vue",
-      "bytes": 7667,
-      "sha256": "4465452c7a0b9589a123a122c3f5419bd0bec8fe48aca892ab8fed4e537a9f57",
+      "bytes": 7719,
+      "sha256": "ec5680acf3300c4f95c5473df9200c587b022a80c1be6fa490fb53a7ee477ad7",
       "before": "goal-4/evidence/uir34-04/before/TrainingActivity.vue",
       "beforeSHA256": "153c7621131e635df954f2467776c060ad90daf73d9c91ba82b0e2ed3e5e843a",
       "operations": [
@@ -80,9 +80,49 @@
           ""
         ],
         [
-          5785,
-          "takeover?'此页接管 · 重计本轮':rail||compact&&a.version===6?'继续':",
+          5657,
+          "",
+          "(a.version===7?view.name:"
+        ],
+        [
+          5691,
+          "",
+          ")"
+        ],
+        [
+          5811,
+          "takeover?",
           ""
+        ],
+        [
+          5812,
+          "此页接管 · 重计本轮",
+          "继续"
+        ],
+        [
+          5815,
+          ":rail||compact&&",
+          "+("
+        ],
+        [
+          5829,
+          "6",
+          "7"
+        ],
+        [
+          5831,
+          "'继续'",
+          "view.name"
+        ],
+        [
+          5841,
+          "'继续'+",
+          ""
+        ],
+        [
+          5850,
+          "",
+          ")"
         ]
       ]
     },
