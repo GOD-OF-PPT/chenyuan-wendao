@@ -5,8 +5,8 @@
   "files": {
     "CultivationOngoing.vue": {
       "path": "web/src/CultivationOngoing.vue",
-      "bytes": 3273,
-      "sha256": "eccf022a8791eb1a07816a76405cf77d65014336402892a7ff1180fde71c91d6",
+      "bytes": 3279,
+      "sha256": "f58baa4c24d8ed9908bc31cfad9f61a436813e0382bc68cbf40c7025c4f684b1",
       "before": "goal-4/evidence/uir34-04/before/CultivationOngoing.vue",
       "beforeSHA256": "16a814b95344928cdf3b8eef6ab6ab0aca757bc86cd335c2446b869ca2cfcf85",
       "operations": [
@@ -31,22 +31,12 @@
           ""
         ],
         [
-          2261,
-          "新",
-          ""
-        ],
-        [
-          2262,
-          "时",
-          ""
-        ],
-        [
-          2263,
+          2265,
           "关闭期间不补",
           "离线无"
         ],
         [
-          2268,
+          2270,
           "",
           "，继续后其他页停手"
         ]
@@ -54,8 +44,8 @@
     },
     "TrainingActivity.vue": {
       "path": "web/src/TrainingActivity.vue",
-      "bytes": 7661,
-      "sha256": "ae0fd682327fa48407b7dc97139f3292ddf705feebe95d7d71cb36abad559d41",
+      "bytes": 7667,
+      "sha256": "4465452c7a0b9589a123a122c3f5419bd0bec8fe48aca892ab8fed4e537a9f57",
       "before": "goal-4/evidence/uir34-04/before/TrainingActivity.vue",
       "beforeSHA256": "153c7621131e635df954f2467776c060ad90daf73d9c91ba82b0e2ed3e5e843a",
       "operations": [
@@ -66,26 +56,31 @@
         ],
         [
           4651,
+          "继续后",
+          "沿用原额度，"
+        ],
+        [
+          4664,
+          "关闭或刷新期间不补发",
+          "离线无"
+        ],
+        [
+          4669,
           "",
-          "沿用原额度，本轮重计；离线无收益，"
+          "，继续后其他页停手"
         ],
         [
-          4671,
-          "本轮重新计时；关闭或刷新期间不补发收益",
-          "其他页停手"
-        ],
-        [
-          5650,
+          5652,
           "(takeover?'在此页接管':",
           ""
         ],
         [
-          5654,
+          5656,
           ")",
           ""
         ],
         [
-          5783,
+          5785,
           "takeover?'此页接管 · 重计本轮':rail||compact&&a.version===6?'继续':",
           ""
         ]
