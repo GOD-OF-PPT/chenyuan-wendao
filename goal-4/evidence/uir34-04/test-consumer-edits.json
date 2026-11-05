@@ -42,5 +42,17 @@
       ]
     ],
     "replaceAll": true
+  },
+  "web/e2e/art33-opening-offering.spec.ts": {
+    "before": "goal-4/evidence/uir34-04/test-before/art33-opening-offering.spec.ts",
+    "beforeSHA256": "a810f5fb32ea44d46cf19619f9e627791ce538749884544caac4ed814b0feea4",
+    "sha256": "89cf30ace4e87b170da0edac5294f29d55244d782a222a8060fb3a6f49d23cb8",
+    "operations": [
+      [
+        "toContainText('\u7ee7\u7eed\u6216\u63a5\u7ba1\u89c1\u4e0a\u65b9')",
+        "toContainText('\u7ee7\u7eed\u89c1\u4e0a\u65b9')"
+      ]
+    ],
+    "replaceAll": true
   }
 }
