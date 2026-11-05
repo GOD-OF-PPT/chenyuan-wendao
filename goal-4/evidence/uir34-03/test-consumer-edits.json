@@ -65,5 +65,16 @@
       ]
     ],
     "replaceAll": true
+  },
+  "web/e2e/art26-loadout-stage.spec.ts": {
+    "before": "goal-4/evidence/uir34-03/test-before/art26-loadout-stage.spec.ts",
+    "beforeSHA256": "c92539600d058e282cecf451465d772d62ed89a0f377407aeb88e2900d18f3cb",
+    "sha256": "959f6de17f3a2209478e441c9f751a465bd0e10cc95aa22a15633c9c5f91d41f",
+    "operations": [
+      [
+        "await page.getByTestId('equip-sword_guard').click();const slots=page.locator('.configuration-slots');",
+        "await page.getByTestId('equip-sword_guard').click();await page.getByTestId('config-full').click();const slots=page.locator('.configuration-slots');"
+      ]
+    ]
   }
 }
