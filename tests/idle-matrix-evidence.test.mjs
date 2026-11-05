@@ -258,14 +258,14 @@ test('v10 still requires the exact runtime full recovery and correct suite owner
  assert.throws(()=>inspectIdleDeclarations(10,[broad,native,native],runtime,recovery.report),/Exactly one/);
 });
 
-test('the real outer verifier recognizes v9 through v18 but cannot accept their unexecuted inventories',t=>{
+test('the real outer verifier recognizes v9 through v19 but cannot accept their unexecuted inventories',t=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'chenyuan-local-matrix-'));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
  const save=(name,value)=>{const raw=JSON.stringify(value),file=path.join(dir,name);fs.writeFileSync(file,raw);return{path:name,sha256:createHash('sha256').update(raw).digest('hex')};};
- for(const version of [9,10,11,12,13,14,15,16,17,18]){
-  const [broad,recovery,native,normal]=version===9?ongoingDeclarations():version===10?localExplorationDeclarations():version===11?studyNotesDeclarations():version===12?uirCombinationDeclarations():version===13?activityDetailDeclarations():version===14?lifeEntryDeclarations():version===15?outcomeDeclarations():version===16?secondCheckDeclarations():version===17?alchemyArrangementDeclarations():lifespanGuidanceDeclarations();
+ for(const version of [9,10,11,12,13,14,15,16,17,18,19]){
+  const [broad,recovery,native,normal]=version===9?ongoingDeclarations():version===10?localExplorationDeclarations():version===11?studyNotesDeclarations():version===12?uirCombinationDeclarations():version===13?activityDetailDeclarations():version===14?lifeEntryDeclarations():version===15?outcomeDeclarations():version===16?secondCheckDeclarations():version===17?alchemyArrangementDeclarations():version===18?lifespanGuidanceDeclarations():lifespanAlchemyDeclarations();
   const manifest={format:'chenyuan-idle-matrix-inputs',version,runtime,scope:{browser:'chromium',viewport:{width:1440,height:900},fontScale:1},phases:[],declarations:[broad,native,normal].map(d=>({suite:d.suite,report:save(version+'-'+d.suite+'.json',d.report)})),recoveryUIDeclaration:save(version+'-recovery.json',recovery.report)};
   const file=path.join(dir,'manifest.json');fs.writeFileSync(file,JSON.stringify(manifest));assert.throws(()=>verifyIdleMatrixCoverage(file),/Current normal\/UI\/native inventory is incomplete/);
-  for(const invalid of [0,19]){fs.writeFileSync(file,JSON.stringify({...manifest,version:invalid}));assert.throws(()=>verifyIdleMatrixCoverage(file),/Unknown idle matrix version/);}
+  for(const invalid of [0,20]){fs.writeFileSync(file,JSON.stringify({...manifest,version:invalid}));assert.throws(()=>verifyIdleMatrixCoverage(file),/Unknown idle matrix version/);}
  }
 });
 
@@ -308,3 +308,8 @@ function lifespanGuidanceDeclarations(){const v=alchemyArrangementDeclarations()
 test('v18 retains all v17 cases and eight permanent lifespan boundary cases',()=>{const[b,r,n,j]=lifespanGuidanceDeclarations();assert.equal(inspectIdleDeclarations(18,[b,n,j],runtime,r.report).length,1355);assert.throws(()=>inspectIdleDeclarations(17,[b,n,j],runtime,r.report),/Profile declarations/);});
 test('v18 refuses missing duplicate renamed and replaced new and original consumers',()=>{for(const mutate of[r=>r.suites[0].specs.pop(),r=>r.suites[0].specs.at(-1).title+=' invented',r=>r.suites[0].specs[0].title+=' replaced',r=>r.suites[0].specs.splice(-1,1,structuredClone(r.suites[0].specs.at(-2)))]){const[b,r,n,j]=lifespanGuidanceDeclarations();mutate(b.report);assert.throws(()=>inspectIdleDeclarations(18,[b,n,j],runtime,r.report),/Profile declarations|Profile identities/);}});
 test('v18 requires the exact runtime original recovery and unique full suite inventories',()=>{const[b,r,n,j]=lifespanGuidanceDeclarations();assert.throws(()=>inspectIdleDeclarations(18,[b,n,j],runtime),/requires the original/);assert.throws(()=>inspectIdleDeclarations(18,[b,n,j],'b'.repeat(64),r.report),/runtime differs/);assert.throws(()=>inspectIdleDeclarations(18,[b,n,n],runtime,r.report),/Exactly one/);});
+
+function lifespanAlchemyDeclarations(){const v=lifespanGuidanceDeclarations(),extra=JSON.parse(fs.readFileSync(new URL('./idle-check-lifespan-alchemy-additions.json',import.meta.url)));v[0].report.suites[0].specs.push(...extra.additions.map(row=>({file:row.file,title:row.title,tests:[{projectName:row.projectName}]})));return v;}
+test('v19 retains every v18 consumer and requires three actual lifespan alchemy combinations',()=>{const[b,r,n,j]=lifespanAlchemyDeclarations();assert.equal(inspectIdleDeclarations(19,[b,n,j],runtime,r.report).length,1358);assert.throws(()=>inspectIdleDeclarations(18,[b,n,j],runtime,r.report),/Profile declarations/);});
+test('v19 refuses missing duplicate renamed or replaced old and new consumers',()=>{for(const mutate of[r=>r.suites[0].specs.pop(),r=>r.suites[0].specs.at(-1).title+=' invented',r=>r.suites[0].specs[0].title+=' replaced',r=>r.suites[0].specs.splice(-1,1,structuredClone(r.suites[0].specs.at(-2)))]){const[b,r,n,j]=lifespanAlchemyDeclarations();mutate(b.report);assert.throws(()=>inspectIdleDeclarations(19,[b,n,j],runtime,r.report),/Profile declarations|Profile identities/);}});
+test('v19 retains source runtime recovery and unique full-suite obligations',()=>{const[b,r,n,j]=lifespanAlchemyDeclarations();assert.throws(()=>inspectIdleDeclarations(19,[b,n,j],runtime),/requires the original/);assert.throws(()=>inspectIdleDeclarations(19,[b,n,j],'b'.repeat(64),r.report),/runtime differs/);assert.throws(()=>inspectIdleDeclarations(19,[b,n,n],runtime,r.report),/Exactly one/);});

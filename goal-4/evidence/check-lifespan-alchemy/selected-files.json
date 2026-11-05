@@ -1,0 +1,31 @@
+{
+  "files": [
+    "alchemy-workshop.spec.ts",
+    "art13-alchemy-stage.spec.ts",
+    "art28-alchemy-scene.spec.ts",
+    "art31-life-scroll.spec.ts",
+    "art37-dialog-actions.spec.ts",
+    "cend03-review-observations.spec.ts",
+    "check-art36-cbase-art37.spec.ts",
+    "check-lifespan-alchemy.spec.ts",
+    "check-uir33-02.spec.ts",
+    "check-ux31-33.spec.ts",
+    "stage-r1.spec.ts",
+    "stage-r4.spec.ts",
+    "uir33-01-cultivation-active.spec.ts",
+    "uir33-06-life-entry.spec.ts",
+    "uir33-08-alchemy-arrangement.spec.ts",
+    "uir34-01-lifespan-guidance.spec.ts",
+    "ux24-goal-guidance.spec.ts",
+    "ux30-primary-copy.spec.ts",
+    "ux33-activity-status.spec.ts"
+  ],
+  "oldUniqueFiles": 18,
+  "newCombinationFiles": 1,
+  "deferred": [
+    "ART28-A4",
+    "ART31-A5",
+    "system reduced motion keeps",
+    "ART37 system reduced"
+  ]
+}

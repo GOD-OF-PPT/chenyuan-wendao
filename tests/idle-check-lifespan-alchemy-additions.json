@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-lifespan-alchemy-check-additions",
+  "version": 19,
+  "parentVersion": 18,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 911,
+    "signature": "a8174159c20933d50655fdcef0494b215755f2b0bf435cbeb9e3d60fd1ec7f0d"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-lifespan-alchemy.spec.ts",
+      "title": "CHECK-LIFE-ALCHEMY-C1 a complete unaffordable alchemy draft and folded rules survive readonly life choices and return without an activity",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-lifespan-alchemy.spec.ts",
+      "title": "CHECK-LIFE-ALCHEMY-C2 a failed original work tick keeps its authorization through furnace and life reading then stops at the real lifespan boundary",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-lifespan-alchemy.spec.ts",
+      "title": "CHECK-LIFE-ALCHEMY-C3 a held native breakthrough saves preparation Game and result together after readonly alchemy inspection and pause",
+      "projectName": "chromium"
+    }
+  ]
+}
