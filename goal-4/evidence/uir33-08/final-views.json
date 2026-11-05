@@ -1,0 +1,26 @@
+[
+  {
+    "original": "artifacts/goal-4/uir33-08/final/focused-results/uir33-08-alchemy-arrangeme-3f410--and-budget-remain-readonly-chromium/target-with-complete-rules.png",
+    "sha256": "af92f2c25ee42d8deefab9ea8c52e62baef08df414612304cf50481cb780ef73",
+    "view": "goal-4/evidence/uir33-08/views/final-target-with-complete-rules.png.jpg",
+    "viewSHA256": "5656dad122e8a404556c69a8d69702e96057c3a283ceb945b3904d284f069f9b",
+    "lossy": true,
+    "quality": 68
+  },
+  {
+    "original": "artifacts/goal-4/uir33-08/final/focused-results/uir33-08-alchemy-arrangeme-57f77-gate-outside-the-disclosure-chromium/four-material-default.png",
+    "sha256": "ae620c255ec01d3aab069fdd90838005732f93e737834c0c4b8ab19573227f29",
+    "view": "goal-4/evidence/uir33-08/views/final-four-material-default.png.jpg",
+    "viewSHA256": "2556e892fc678e518392f27100fa10b7512cad4e79268cec886179b16d41550e",
+    "lossy": true,
+    "quality": 68
+  },
+  {
+    "original": "artifacts/goal-4/uir33-08/final/focused-results/uir33-08-alchemy-arrangeme-57f77-gate-outside-the-disclosure-chromium/four-material-full-rules.png",
+    "sha256": "01ed975896de67a693571fd472033b1d0ce810904b286c47cdaf47a712402fa1",
+    "view": "goal-4/evidence/uir33-08/views/final-four-material-full-rules.png.jpg",
+    "viewSHA256": "c8007eae573ad91b8d33782b111e822d2c5b7fec56c9d6f8f04fc71d4e9b704e",
+    "lossy": true,
+    "quality": 68
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-08/candidate/focused-results/uir33-08-alchemy-arrangeme-3f410--and-budget-remain-readonly-chromium/default-arrangement.png",
+    "originalSHA256": "dff3bebb8d291da0de6db829559d27d08182f6490f66b81268215602642f6a39",
+    "view": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/uir33-08/views/current-default-arrangement.png.jpg",
+    "viewSHA256": "53aa1370c1b8eb4a852c06ed43bbf830202ba65a421cb9cca40563368bc52816",
+    "lossy": true,
+    "quality": 68,
+    "source": "683fe2e",
+    "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8"
+  },
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-08/candidate/focused-results/uir33-08-alchemy-arrangeme-3f410--and-budget-remain-readonly-chromium/target-with-complete-rules.png",
+    "originalSHA256": "10b4d6c3033c7fb50b949e1fb7a12763a42c8604e50d6ac9b5e7cea4718e950a",
+    "view": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/uir33-08/views/current-target-with-complete-rules.png.jpg",
+    "viewSHA256": "5656dad122e8a404556c69a8d69702e96057c3a283ceb945b3904d284f069f9b",
+    "lossy": true,
+    "quality": 68,
+    "source": "683fe2e",
+    "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8"
+  },
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-08/candidate/focused-results/uir33-08-alchemy-arrangeme-b8955--or-replay-its-saved-reward-chromium/original-failure-next-draft-rules.png",
+    "originalSHA256": "379dc2a6c5120ca98f8eab056076056bbc079afef60eac9cd4df0bc1592684ad",
+    "view": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/uir33-08/views/current-original-failure-next-draft-rules.png.jpg",
+    "viewSHA256": "aeabb11934a5d12ee117d9945b65f5969b38f04193f74db44ff826d44e1554d1",
+    "lossy": true,
+    "quality": 68,
+    "source": "683fe2e",
+    "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8"
+  },
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-08/candidate/focused-results/uir33-08-alchemy-arrangeme-57f77-gate-outside-the-disclosure-chromium/four-material-default.png",
+    "originalSHA256": "ca534396893b06b5657604a81e334a5b9f0337e995b4cdd0f7000fff3c765e9c",
+    "view": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/uir33-08/views/current-four-material-default.png.jpg",
+    "viewSHA256": "9ee335494f89c44defae8aff3272b6a5268649c6680d074dcfb78893a05d4e35",
+    "lossy": true,
+    "quality": 68,
+    "source": "683fe2e",
+    "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8"
+  },
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-08/candidate/focused-results/uir33-08-alchemy-arrangeme-57f77-gate-outside-the-disclosure-chromium/four-material-full-rules.png",
+    "originalSHA256": "59b97201f3eca73dfeb8e3f1356cbc6ba12562b556c82d5025efef6d6518f20a",
+    "view": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/uir33-08/views/current-four-material-full-rules.png.jpg",
+    "viewSHA256": "c7318e99256f2cc1560260bd3b0261a18dee948153de90a2f7729c80a9bbb070",
+    "lossy": true,
+    "quality": 68,
+    "source": "683fe2e",
+    "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8"
+  },
+  {
+    "original": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir33-08/candidate/focused-results/uir33-08-alchemy-arrangeme-57f77-gate-outside-the-disclosure-chromium/budget-gate-visible-with-rules-folded.png",
+    "originalSHA256": "c6175f34cd56b9d3bb009b9c3404dcbf868c92590300c05c3f1b72dd2c8ddbff",
+    "view": "/Users/gordon/githome/chenyuan-wendao/goal-4/evidence/uir33-08/views/current-budget-gate-visible-with-rules-folded.png.jpg",
+    "viewSHA256": "3937528f0b2ee1be3b1d8af7f8a8bbfbffc0adb065d13b12ce18e1d6a61b52a1",
+    "lossy": true,
+    "quality": 68,
+    "source": "683fe2e",
+    "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8"
+  }
+]

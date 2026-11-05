@@ -1,0 +1,259 @@
+{
+  "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8",
+  "source": "1227d073d234bfdee1add644e3f24f5ae7b0f964",
+  "executedUnique": 43,
+  "files": [
+    "alchemy-workshop.spec.ts",
+    "art13-alchemy-stage.spec.ts",
+    "art28-alchemy-scene.spec.ts",
+    "art37-dialog-actions.spec.ts",
+    "check-art36-cbase-art37.spec.ts",
+    "check-ux31-33.spec.ts",
+    "uir33-08-alchemy-arrangement.spec.ts",
+    "ux30-primary-copy.spec.ts"
+  ],
+  "declarations": [
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "the real alchemy objects keep all seven recipes, honest gates and complete material quantities in one fixed desktop stage",
+      "project": "chromium"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "complete furnace settings and readonly material/product sources preserve a finite draft without starting travel or production",
+      "project": "chromium"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "furnace phases follow the real cycle and only two atomic saved pills arrive once before the cumulative budget stops",
+      "project": "chromium"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "hidden views, pause and a different selected recipe withdraw fire and cannot replay an already saved pill",
+      "project": "chromium"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "a quota failure keeps the furnace cold and original-command retry saves one pill with one arrival",
+      "project": "chromium"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "refresh, explicit continuation and saved receipt pages never animate an old completed furnace as a new reward",
+      "project": "chromium"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "a different native page may craft but cannot light this page furnace or replay its saved product arrival",
+      "project": "chromium"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "an invalid furnace image keeps real recipe, material and open-furnace controls playable",
+      "project": "chromium"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "preference reduced motion keeps the real furnace states and saved product without animated flame or smoke",
+      "project": "chromium"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "one real thirty-second furnace saves actual inputs and product before presenting the completed pill",
+      "project": "chromium"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "title": "the forge retains its original one-cycle craft and explicit equip boundary outside the new alchemy workshop",
+      "project": "chromium"
+    },
+    {
+      "file": "art13-alchemy-stage.spec.ts",
+      "title": "ART13-A1 one current furnace replaces permanent recipe columns while all seven readonly recipes remain reachable",
+      "project": "chromium"
+    },
+    {
+      "file": "art13-alchemy-stage.spec.ts",
+      "title": "ART13-A2 recipe and budget disclosure return to the same finite draft and predictable keyboard focus without writes",
+      "project": "chromium"
+    },
+    {
+      "file": "art13-alchemy-stage.spec.ts",
+      "title": "ART13-A3 a partly spent paused furnace cannot restart its full allowance and continuing saves only its original remaining cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "art13-alchemy-stage.spec.ts",
+      "title": "ART13-A4 viewing another recipe and leaving its catalogue never restarts a cycle or replays an offstage saved pill",
+      "project": "chromium"
+    },
+    {
+      "file": "art13-alchemy-stage.spec.ts",
+      "title": "ART13-A5 a four-material quota keeps the original intent all materials and retry reachable before one atomic product",
+      "project": "chromium"
+    },
+    {
+      "file": "art13-alchemy-stage.spec.ts",
+      "title": "ART13-A6 a missing furnace still exposes a useful current object full four-material sources and keyboard recipe return",
+      "project": "chromium"
+    },
+    {
+      "file": "art28-alchemy-scene.spec.ts",
+      "title": "ART28-A1 a real cold chamber and furnace inspection expose complete original budgets without lighting fire or writing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art28-alchemy-scene.spec.ts",
+      "title": "ART28-A2 every real recipe material source and future gate remain readable with one main decision and readonly return",
+      "project": "chromium"
+    },
+    {
+      "file": "art28-alchemy-scene.spec.ts",
+      "title": "ART28-A3 phases inspection quota and native saving retain the original single cycle and one atomic saved pill",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 expanded settings and destructive press are readable, distinct and readonly",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 a long literal selected filename wraps completely and cancelling import retains every store",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 expanded target production and its full limits keep both return actions reachable without opening the furnace",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 study complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 alchemy complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 relic complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 market complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 inventory complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 wilderness complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 commission complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 saved reduced effects keep static dialog text and focus",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art36-cbase-art37.spec.ts",
+      "title": "CHECK90-C1 failed two-scroll study retains original authorization through new dialog cancel and one atomic original cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "check-art36-cbase-art37.spec.ts",
+      "title": "CHECK90-C2 recovery keeps its selected object and full thirty second atomic period while new consent is cancelled",
+      "project": "chromium"
+    },
+    {
+      "file": "check-ux31-33.spec.ts",
+      "title": "CHECK-UX3133-C1 missing alchemy ingredients lead with their real gate while complete settings and material-source returns stay readonly",
+      "project": "chromium"
+    },
+    {
+      "file": "check-ux31-33.spec.ts",
+      "title": "CHECK-UX3133-C2 a budget gate cannot masquerade as a zero forecast and a newly affordable furnace preserves the full original thirty-second transaction",
+      "project": "chromium"
+    },
+    {
+      "file": "check-ux31-33.spec.ts",
+      "title": "CHECK-UX3133-C3 a failed original furnace remains the only retry while an unaffordable next draft and readonly sources cannot change its saved authorization",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-08-alchemy-arrangement.spec.ts",
+      "title": "UIR33-08-A1 the furnace arrangement leads with the selected recipe true unit and finite target while complete rules and budget remain readonly",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-08-alchemy-arrangement.spec.ts",
+      "title": "UIR33-08-A2 four-material forecast and complete target rules fit together while an unaffordable draft keeps its real gate outside the disclosure",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-08-alchemy-arrangement.spec.ts",
+      "title": "UIR33-08-A3 reading rules after a quota failure cannot change the original thirty-second command or replay its saved reward",
+      "project": "chromium"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C1 cultivation keeps actionable unit facts and finite caps while complete forecasts and offline rules remain readonly with a preserved draft",
+      "project": "chromium"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C2 alchemy keeps true material costs period and finite authorisation while full recipe lore and safe-stop rules remain available without an action",
+      "project": "chromium"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C3 recovery shows each actual single effect once and complete medicine rest and stop details remain readable with all saved draft fields",
+      "project": "chromium"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C4 a real new mortal reaches the clear primary action and reading folded rules cannot restart or shortcut its original thirty-second saved cycle",
+      "project": "chromium"
+    }
+  ],
+  "focused3": "subset of43, not extra coverage",
+  "package3": "subset of43, separate packaged payload proof",
+  "deferred": [
+    {
+      "file": "art28-alchemy-scene.spec.ts",
+      "titlePrefix": "ART28-A4",
+      "reason": "mixed system reduced media, existing compatibility/environment pause"
+    },
+    {
+      "file": "alchemy-workshop.spec.ts",
+      "titlePrefix": "system reduced motion keeps",
+      "reason": "system reduced-media case remains paused"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "titlePrefix": "ART37 system reduced",
+      "reason": "system reduced-media case remains paused"
+    }
+  ],
+  "fullMatrix": {
+    "version": 17,
+    "UI": 900,
+    "storage": 415,
+    "normal": 32,
+    "total": 1347,
+    "complete": false
+  }
+}

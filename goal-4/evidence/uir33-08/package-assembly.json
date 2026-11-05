@@ -1,0 +1,21 @@
+{
+  "archive": "artifacts/goal-4/uir33-08/uir33-08-preview-1227d07.zip",
+  "archiveBytes": 10124696,
+  "archiveSHA256": "a8fcb7621208988a18dbc316c6ff8c3fbde8301dacf45dc3814cd5110b69dba1",
+  "source": {
+    "head": "1227d073d234bfdee1add644e3f24f5ae7b0f964",
+    "source": "1227d073d234bfdee1add644e3f24f5ae7b0f964",
+    "tree": "659ed3f358e674c8adeefa0da9695e8bdba09b92",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8",
+  "files": 112,
+  "runtimeBytes": 11219229,
+  "fixedPackageHelper": "scripts/package-candidate.py archive_tree",
+  "port": 56900,
+  "ready": false,
+  "scope": "local UI task preview, not full candidate or user acceptance"
+}
