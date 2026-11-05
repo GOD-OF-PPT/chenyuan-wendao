@@ -1,0 +1,20 @@
+{
+  "declarations": 132,
+  "deferred": [
+    "UX23-S6"
+  ],
+  "reviewedSpecialLines": [
+    {
+      "file": "matrix-ui-cancel.spec.ts",
+      "line": 31,
+      "text": " validateGame(game);await page.emulateMedia({reducedMotion:'no-preference'});await useJourneyClock(page);await page.goto('/');"
+    },
+    {
+      "file": "ux23-sealed-life.spec.ts",
+      "line": 56,
+      "text": " for(const mode of ['system','preference']){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900},reducedMotion:mode==='system'?'reduce':'no-preference'}),page=await context.newPage(),childErrors:string[]=[];page.on('pageerror',e=>childErrors.push(e.message));try{await page.rout"
+    }
+  ],
+  "noMixedCaseExecuted": true,
+  "allRemainingFixed1440x900Font1": true
+}

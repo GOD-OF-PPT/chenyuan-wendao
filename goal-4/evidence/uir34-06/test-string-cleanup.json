@@ -1,0 +1,9 @@
+{
+  "path": "art/tools/test_inventory.py",
+  "beforeSHA256": "e1440d5538e443bf374f2681a2ee879ef79c164676f1d2643a7e640c7080c855",
+  "afterSHA256": "063256d8a4006e07bdf499cc70006586cf3f8301e97a6e2d19788309d09154e8",
+  "wholeModuleASTEqual": true,
+  "ASTSHA256": "b1ba652683eec8bea1125358a64f73a701fe25f55b48a3cab8ad099dc361857e",
+  "change": "One raw-string prefix removes Python invalid-escape warning. Entire module AST and embedded JS script value exact; no assertions or source/runtime behavior altered. Full697 original execution at frozenec97 retains warning; final four current methods rerun separately.",
+  "originalFrozenSource": "artifacts/goal-4/uir34-06/current/source/art/tools/test_inventory.py"
+}

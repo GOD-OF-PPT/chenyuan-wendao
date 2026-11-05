@@ -1,0 +1,6 @@
+{
+  "exit": 0,
+  "cases": 4,
+  "warnings": "SyntaxWarning promoted to error",
+  "scope": "Current cleaned module, full AST identical to original frozen697 module; not697 rerun."
+}

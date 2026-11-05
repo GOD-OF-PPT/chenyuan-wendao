@@ -2432,6 +2432,6 @@ class Uir3406Tests(unittest.TestCase):
 
  def test_compiled_style_cannot_hide_the_single_screen_root(self):
   import subprocess
-  script="""import fs from 'node:fs';import assert from 'node:assert/strict';import {parse,compileStyle} from './web/node_modules/@vue/compiler-sfc/dist/compiler-sfc.esm-browser.js';const s=parse(fs.readFileSync('web/src/CharacterPanel.vue','utf8')).descriptor.styles[0],r=compileStyle({source:s.content,filename:'CharacterPanel.vue',id:'data-v-scopecheck',scoped:true});assert.deepEqual(r.errors,[]);assert.ok(!/\.single-screen\s*\{/.test(r.code),'ancestor swallowed local selector');assert.ok(r.code.includes('.single-screen .character-sheet.character-folio[data-v-scopecheck]::before'));"""
+  script=r"""import fs from 'node:fs';import assert from 'node:assert/strict';import {parse,compileStyle} from './web/node_modules/@vue/compiler-sfc/dist/compiler-sfc.esm-browser.js';const s=parse(fs.readFileSync('web/src/CharacterPanel.vue','utf8')).descriptor.styles[0],r=compileStyle({source:s.content,filename:'CharacterPanel.vue',id:'data-v-scopecheck',scoped:true});assert.deepEqual(r.errors,[]);assert.ok(!/\.single-screen\s*\{/.test(r.code),'ancestor swallowed local selector');assert.ok(r.code.includes('.single-screen .character-sheet.character-folio[data-v-scopecheck]::before'));"""
   result=subprocess.run(['node','--input-type=module','-e',script],cwd=ROOT,text=True,capture_output=True)
   self.assertEqual(result.returncode,0,result.stdout+result.stderr)

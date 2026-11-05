@@ -1,0 +1,17 @@
+{
+  "files": [
+    "uir34-06-character-folio.spec.ts",
+    "stage-r1.spec.ts",
+    "stage-r2.spec.ts",
+    "stage-check.spec.ts",
+    "stage-r4.spec.ts",
+    "check-ta-03.spec.ts",
+    "matrix-ui-boundaries.spec.ts",
+    "stage-u8-b.spec.ts",
+    "idle-adventure.spec.ts",
+    "matrix-ui-cancel.spec.ts",
+    "ux23-sealed-life.spec.ts"
+  ],
+  "deferredOriginalMixedCase": "UX23-S6 keyboard reduced effects and failed paintings preserve the real book and its stable reading return",
+  "why": "Includes system reduce/no-preference contexts; original case/obligation unchanged, not executed. All selected sources audited before declaration/run. Only fixed1440x900/font1/singleChromium."
+}

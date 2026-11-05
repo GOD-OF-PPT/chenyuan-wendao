@@ -1,0 +1,19 @@
+{
+  "source": "ec97a1389184d2ef5cb1793c181b601b0eaffc21",
+  "runtime": "a1fb6ce5b6f5b98eb3f26887cd758a5465f032dbcb2fbcb290210a54ee21ac6b",
+  "uniqueRelevant": 132,
+  "new6AreSubset": true,
+  "package6AreSubset": true,
+  "newGeometry": 8,
+  "actualPixelViews": 8,
+  "newCasePNGs": 14,
+  "fullResourceMethods": 697,
+  "nodeRulesTools": 98,
+  "laterCleanedUnit4Subset": true,
+  "fullMatrixObligations": 1386,
+  "matrixNotFullyExecuted": true,
+  "deferredOriginalCase": "UX23-S6 mixed system media remains unchanged and unexecuted",
+  "humanAcceptance": false,
+  "relatedSourceFiles": 11,
+  "allAuthorizedCasesOfTheseFilesExecuted": true
+}
