@@ -1,0 +1,9 @@
+{
+  "oldMatrixOnlyPreliminary": 72,
+  "newDeclarationFailureLog": "artifacts/goal-4/check-uir34-02-04/declarations/new-declare-error.log",
+  "commitNotCreatedBecauseManifestAbsent": true,
+  "oldFreezePath": "artifacts/goal-4/check-uir34-02-04/current",
+  "oldFreezeNewTestExists": false,
+  "oldFreezeUIAndCoreExecuted": false,
+  "requirement": "Correct declarations then commit; next frozen source must contain all new files and exact HEAD before running checks"
+}
