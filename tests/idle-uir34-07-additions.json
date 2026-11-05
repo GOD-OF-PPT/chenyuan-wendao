@@ -1,0 +1,42 @@
+{
+  "format": "chenyuan-uir34-07-comprehensive-additions",
+  "version": 26,
+  "parentVersion": 25,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 944,
+    "signature": "f3b1b0c218f97ca0da1863dd69ebf49b18b728c99d39e0b8d0571748a4e144e8"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir34-07-fate-clarity.spec.ts",
+      "title": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-07-fate-clarity.spec.ts",
+      "title": "UIR34-07 A2 help preserves its actual opening relation complete facts future boundaries and current reading",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-07-fate-clarity.spec.ts",
+      "title": "UIR34-07 A2 trade preserves its actual opening relation complete facts future boundaries and current reading",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-07-fate-clarity.spec.ts",
+      "title": "UIR34-07 A3 only the original saved visit shows pending reply and native failure retries one command before an explicitly chosen response",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-07-fate-clarity.spec.ts",
+      "title": "UIR34-07 A4 journal headings all text and ordinary detail returns remain in the original reading domain without Game changes",
+      "projectName": "chromium"
+    }
+  ]
+}

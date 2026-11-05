@@ -1,3 +1,4 @@
+from uir34_07_inventory import prior_uir3407_bytes
 from uir33_07_inventory import prior_uir3307_bytes
 from uir33_06_inventory import prior_uir3306_bytes
 """ART32 precise decorative phase transform and original full-view recovery."""
@@ -10,6 +11,7 @@ def expand_art32_view(path,text):
  return text
 
 def normalize_art32_view(path,text):
+ text=prior_uir3407_bytes(path,text.encode()).decode()
  if path not in TRANSFORMS or 'art32-' not in text:return text
  for before,after in reversed(TRANSFORMS[path]):
   assert text.count(after)==1,'ART32 exact approved decorative transform'

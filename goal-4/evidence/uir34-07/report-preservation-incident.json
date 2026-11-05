@@ -1,0 +1,22 @@
+{
+  "originalToolFailure": "62535 terminal1; original assistant tool output at c84066 retained in conversation",
+  "lostFile": "artifacts/goal-4/uir34-07/current-old-consumer/report.json",
+  "cause": "Direct preliminary Playwright rerun reused output path after adapting category assertion; JSON and output folder replaced by green run95463. This is not hidden or claimed preserved.",
+  "preservedOriginalSource": "goal-4/evidence/uir34-07/before/web/e2e/art30-npc-meeting.spec.ts",
+  "originalSourceSHA256": "05629447de30834e7589b97cda58c80a6a8b30f949c7c2f64052fa81a00fd793",
+  "reproductionSource": "web/e2e/__uir34_07_original_art30.spec.ts",
+  "reproductionSourceSHA256": "05629447de30834e7589b97cda58c80a6a8b30f949c7c2f64052fa81a00fd793",
+  "reproduction": "artifacts/goal-4/uir34-07/original-consumer-reproduction/report.json",
+  "scope": "Exact original whole test/known original failure recreated against unchanged modified runtime as separately named diagnostic; never reconstruct original reporter metadata or count duplicate coverage. Future preliminary phases require fresh unique directory before launch.",
+  "reproducedExit": 1,
+  "reproducedStats": {
+    "startTime": "2026-11-05T21:38:56.684Z",
+    "duration": 8451.532,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "sourceMovedAfterTerminal": "artifacts/goal-4/uir34-07/original-consumer-reproduction/original-art30-source.spec.ts",
+  "notOriginalReporterRestoration": true
+}

@@ -593,3 +593,6 @@ UIR34-06依[0113](docs/decisions/0113-character-folio-focus.md)与本轮XAG114�
 
 
 UIR34-06编译实证补充：Vue scoped中以:global(.single-screen)开头再拼局部选择器，会在本项目实际编译中只留下.single-screen；因此伪元素display:none曾误隐藏全界面。已用普通外层.single-screen＋组件局部class并核真实编译CSS、根界面可见与实际伪元素display/mask。源pin/类型或CSS存在不证明界面可用，不以force点击、删命中/可见断言或加等待掩盖；原六失败及编译结果保。
+
+
+UIR34-07依[0114](docs/decisions/0114-fate-status-deduplication.md)及XAG114上下文/意义分组实读：去重复只作用外围展示，正式summary是最后事实，含保留丹药/各自离开/尚未正式结识，不能删或改写来伪减字。当前未识summary保全文、temple页保山雨破庙标题，后续预览恢复关系上下文并明标未执行；已识/相助/暂别及已保存待回应保。完整row.key/part/正文/页数、查询域/阅读记忆/控制器不改，标题只是只读投影。废弃通用caption对应的展示prop可随唯一父绑定删除，不能删待回应或宣称正式相识。原story48000和narrative45000帽保持，旧全源/hash靠精确逆回，0新画/字体/CSS；少字不等于更易懂，仍看真实原文/分页/6秒原子/像素。兼容环境性能当前暂停，三任务综合与整体艺术长期真人仍待。

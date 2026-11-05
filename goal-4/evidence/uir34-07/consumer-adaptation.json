@@ -1,0 +1,17 @@
+{
+  "path": "web/e2e/art30-npc-meeting.spec.ts",
+  "before": "goal-4/evidence/uir34-07/before/web/e2e/art30-npc-meeting.spec.ts",
+  "beforeSHA256": "05629447de30834e7589b97cda58c80a6a8b30f949c7c2f64052fa81a00fd793",
+  "afterSHA256": "c4803431b2ebf88360ce91683eed32d13426a466de4ab1c9cbdb459bd20c93c9",
+  "operations": [
+    [
+      "await expect(stage.locator('.reading-category')).toHaveText(person.label==='未识'?'人物图鉴':'已记来往');",
+      "await expect(stage.locator('.reading-category')).toHaveCount(0);const relation=page.getByTestId('relationship-label-'+person.id);if(person.label==='未识')await expect(relation).toHaveCount(0);else await expect(relation).toHaveText(person.label);"
+    ]
+  ],
+  "baseline": "artifacts/goal-4/uir34-07/old-consumer/report.json",
+  "scope": "Only retired generic summary category adapts to new actual-state visibility. Original full summary, all4 NPCs, painted>=260, frame18/14/44/focus, Game/wholeDB assertions unchanged. All3 authorized original ART30 cases rerun; original A3 media mixed preserved/deferred.",
+  "overwrittenCurrentOldExpectation": "artifacts/goal-4/uir34-07/current-old-consumer/report.json",
+  "reproducedCurrentOldExpectation": "artifacts/goal-4/uir34-07/original-consumer-reproduction/report.json",
+  "preservationIncident": "report-preservation-incident.json"
+}

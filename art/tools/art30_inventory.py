@@ -1,3 +1,4 @@
+from uir34_07_inventory import prior_uir3407_bytes
 from uir33_07_inventory import prior_uir3307_bytes
 """ART30 owns four presentation files, a decorative NPC scene and original save/reading boundaries."""
 import hashlib,json,re
@@ -42,7 +43,7 @@ def validate_art30(root,image_reader):
   scene='\n  <AssetImage v-if="'+condition+'" class="art30-parlour" path="art/v2/workshops/npc-parlour-v1.webp" asset-id="npc-parlour" eager aria-hidden="true"><span class="art30-parlour-fallback"/></AssetImage>'
   expected=expected[:pos]+scene+expected[pos:];expected=expected.replace('class="narrative-seal-space"','class="narrative-seal-space" :class="{art30:'+condition+'}"',1);assert actor==expected,'ART30 exact decorative NPC domain/original controller'
  original=identity(BASELINES[2]).decode();button='<button data-testid="show-life" @click="emit(\'life\')">修仙生平</button>';header='<header><div><small>仙缘 · 只记真实来往</small><h2 v-if="mode!==\'people\'">{{mode===\'events\'?\'此地机缘\':\'行道手记\'}}</h2></div>'+button+'</header>'
- expected=original.replace(header,'',1).replace(':aria-pressed="mode===id" @click="mode=id">{{label}}</button></nav>',':aria-pressed="mode===id" @click="mode=id">{{label}}</button>'+button+'</nav>',1);expected=expected.replace("?'下次来往预览':'已记来往'","?'下次来往预览':person?.label==='未识'?'人物图鉴':'已记来往'",1);assert local(FILES[2]).read_text()==expected,'ART30 exact duplicate header retirement/life callback'
+ expected=original.replace(header,'',1).replace(':aria-pressed="mode===id" @click="mode=id">{{label}}</button></nav>',':aria-pressed="mode===id" @click="mode=id">{{label}}</button>'+button+'</nav>',1);expected=expected.replace("?'下次来往预览':'已记来往'","?'下次来往预览':person?.label==='未识'?'人物图鉴':'已记来往'",1);assert prior_uir3407_bytes(FILES[2],local(FILES[2]).read_bytes()).decode()==expected,'ART30 exact duplicate header retirement/life callback'
  original=identity(BASELINES[3]).decode();start=original.index(' const cast=');end=original.index('\n timer=setTimeout(clear,1600);',start);region=original[start:end];assert region.count('next.operation')==3 and region.count('next.family')==5,'ART30 original repeated fields'
  changed=region.replace('next.operation','op').replace('next.family','family').replace(' const cast=',' const op=next.operation,family=next.family,cast=',1).replace('const target=book||',"const target=book&&book.querySelector('.art30')||book||",1).replace('if(book){','if(book&&target===book){',1)
  assert prior_uir3307_bytes(FILES[3],local(FILES[3]).read_bytes()).decode()==original[:start]+changed+original[end:],'ART30 exact NPC DOM anchor and original full feedback lifecycle'

@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3407=ROOT/'art/redesign/uir34-07.json'
+  if uir3407.exists():
+   data=json.loads(uir3407.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']));files.update(ROOT/r['before']for r in data['files'].values())
   uir3406=ROOT/'art/redesign/uir34-06.json'
   if uir3406.exists():
    data=json.loads(uir3406.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[data['before']]+list(data['unchanged']))
@@ -2435,3 +2438,26 @@ class Uir3406Tests(unittest.TestCase):
   script=r"""import fs from 'node:fs';import assert from 'node:assert/strict';import {parse,compileStyle} from './web/node_modules/@vue/compiler-sfc/dist/compiler-sfc.esm-browser.js';const s=parse(fs.readFileSync('web/src/CharacterPanel.vue','utf8')).descriptor.styles[0],r=compileStyle({source:s.content,filename:'CharacterPanel.vue',id:'data-v-scopecheck',scoped:true});assert.deepEqual(r.errors,[]);assert.ok(!/\.single-screen\s*\{/.test(r.code),'ancestor swallowed local selector');assert.ok(r.code.includes('.single-screen .character-sheet.character-folio[data-v-scopecheck]::before'));"""
   result=subprocess.run(['node','--input-type=module','-e',script],cwd=ROOT,text=True,capture_output=True)
   self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+
+class Uir3407Tests(unittest.TestCase):
+ def test_full_inverse_and_actual_original_caps(self):
+  from uir34_07_inventory import validate_uir3407,prior_uir3407_bytes,MANIFEST
+  self.assertLessEqual(validate_uir3407(ROOT)[1],48000)
+  for r in MANIFEST['files'].values():self.assertEqual(prior_uir3407_bytes(r['path'],(ROOT/r['path']).read_bytes()),(ROOT/r['before']).read_bytes())
+ def test_original_query_identity_callbacks_clock_and_complete_text_are_not_mutable(self):
+  from uir34_07_inventory import prior_uir3407_bytes,MANIFEST
+  for name,r in MANIFEST['files'].items():
+   source=(ROOT/r['path']).read_text()
+   pairs=[('row.text','row.title'),("emit('act',","emit('resume',"),('getRelationships(props.game)','[]')]if name=='FateCatalogue.vue'else[('useNarrativeObject','useUnknownObject'),('pending','false'),('onDeactivated(close)','onDeactivated(()=>{})')]
+   for a,b in pairs:
+    self.assertIn(a,source)
+    with self.subTest(name=name,a=a),self.assertRaisesRegex(AssertionError,'UIR34-07'):prior_uir3407_bytes(r['path'],source.replace(a,b,1).encode())
+ def test_ledger_types_budget_and_acceptance_cannot_change(self):
+  from uir34_07_inventory import validate_uir3407,MANIFEST,LEDGER
+  with tempfile.TemporaryDirectory()as d:
+   root=Path(d)
+   names={LEDGER,*[r[k]for r in MANIFEST['files'].values()for k in ['path','before']],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']}
+   for n in names:p=root/n;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((ROOT/n).read_bytes())
+   for key,value in [('version',True),('userAcceptance',True),('caps',{'story-journey':49000,'narrative-objects':45000})]:
+    m=copy.deepcopy(MANIFEST);m[key]=value;(root/LEDGER).write_text(json.dumps(m))
+    with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'UIR34-07'):validate_uir3407(root)

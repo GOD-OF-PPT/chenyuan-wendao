@@ -8,7 +8,7 @@ import {useNarrativeObject} from './narrative-effects';
 import AssetImage from './AssetImage.vue';
 import PortraitImage from './PortraitImage.vue';
 import './narrative-objects.css';
-const props=defineProps<{game:Game;mode:string;personId?:string;name?:string;seal?:string;eventId?:string;pending:boolean;recorded?:boolean}>();
+const props=defineProps<{game:Game;mode:string;personId?:string;name?:string;seal?:string;eventId?:string;pending:boolean}>();
 const portrait=computed(()=>NPC_PORTRAITS[props.personId??'']??props.personId??'');
 const scene=computed(()=>scenePresentation(props.game));
 const {store,phase,working,progress,effect,engaged,runtime,action}=useNarrativeObject(()=> 'fate',()=>props.mode==='events'?(props.eventId?'event:'+props.eventId:''):portrait.value,()=>props.mode!=='journal');
@@ -29,7 +29,7 @@ onDeactivated(close);onScopeDispose(()=>{focus?.release(people.value);focus?.rel
   <aside class="encounter-presence" :class="{'encounter-letter':mode==='events','encounter-journal':mode==='journal'}">
    <figure v-if="portrait&&mode!=='journal'" class="encounter-figure"><PortraitImage class="encounter-portrait" :id="portrait" :fallback="seal||name?.slice(0,1)||'缘'"/><figcaption><h2>{{name}}</h2></figcaption></figure>
    <div v-else class="encounter-letter-object" aria-hidden="true"><i/><i/><i/><b>{{mode==='journal'?'记':'访'}}</b></div>
-   <small>{{mode==='people'?(pending?'本次会面已保存 · 回应由你决定':recorded?'已记来往 · 翻读实际事实':'人物图鉴 · 尚无正式来往'):mode==='events'?(pending?'会面已保存 · 回应由你决定':'拜帖未递 · 核对后才拜访'):'此生行道手记 · 回看不推进年月'}}</small>
+   <small v-if="mode!=='people'||pending">{{mode==='people'?'本次会面已保存 · 回应由你决定':mode==='events'?(pending?'会面已保存 · 回应由你决定':'拜帖未递 · 核对后才拜访'):'此生行道手记 · 回看不推进年月'}}</small>
    <div v-if="engaged" class="narrative-object-cycle" role="status"><strong>{{verb}}{{phase==='saving'?'保存中 · 尚未落定':'进行中'}}</strong><span v-if="runtime&&phase==='running'" data-testid="encounter-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span></div>
   </aside>
   <div class="encounter-canvas book-canvas" :class="mode==='people'?'fate-reading book-with-person':'book-landscape'" :data-testid="mode==='people'?'relationships':undefined" :data-person="mode==='people'?portrait:undefined">

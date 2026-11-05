@@ -1,3 +1,4 @@
+from uir34_07_inventory import prior_uir3407_bytes
 from uir34_05_inventory import prior_uir3405_bytes
 """Strict display evolution for lifespan state and the original readonly life-manager entry."""
 import hashlib,json
@@ -86,6 +87,7 @@ MANIFEST={'format': 'chenyuan-lifespan-guidance-uir34-01',
                       'art/redesign/uir34-01-edits.json']}
 MARKERS={'App.vue':"import LifespanGuide from './LifespanGuide.vue';",'LifeCatalogue.vue':'defineExpose({manage:()=>book.value?.manage()});','LifeScroll.vue':'defineExpose({manage:'}
 def prior_uir3401_bytes(path,raw):
+ raw=prior_uir3407_bytes(path,raw)
  raw=prior_uir3405_bytes(path,raw)
  name=Path(path).name
  if name not in MANIFEST['files']or MARKERS[name].encode()not in raw:return raw

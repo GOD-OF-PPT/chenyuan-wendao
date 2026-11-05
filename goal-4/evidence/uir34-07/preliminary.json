@@ -1,0 +1,21 @@
+{
+  "previousGoalTurn": "progress:983663f delivered06; current next original07",
+  "oldActualRed": "artifacts/goal-4/uir34-07/red/report.json",
+  "firstFive": "artifacts/goal-4/uir34-07/diagnostic/report.json",
+  "firstFivePassed": 4,
+  "firstFiveFailed": 1,
+  "reason": "Author fixture had onlyqi; formal shen_return needsfoundation. Corrected with original public d.realm() prefix and explicit unlocked precondition. No timing, gate, Game or assertion relaxed.",
+  "originalsKept": true,
+  "correctedNew5": {
+    "report": "artifacts/goal-4/uir34-07/diagnostic-fixed/report.json",
+    "passed": 5,
+    "exit": 0
+  },
+  "oldConsumerBaseline": {
+    "report": "artifacts/goal-4/uir34-07/old-consumer/report.json",
+    "passed": 1,
+    "exit": 0
+  },
+  "intentionalCategoryAdaptation": "consumer-adaptation.json",
+  "reportIncident": "report-preservation-incident.json"
+}
