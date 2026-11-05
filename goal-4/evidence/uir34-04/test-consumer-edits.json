@@ -2,11 +2,15 @@
   "web/e2e/uir33-01-cultivation-active.spec.ts": {
     "before": "goal-4/evidence/uir34-04/test-before/uir33-01-cultivation-active.spec.ts",
     "beforeSHA256": "2eb658a6ebc4766746663bfb1af0638b4509f41e3b59589f78683d10aa86d97f",
-    "sha256": "05d70d8aaa72165d3821edf8bfee45723f53e5089a1cc328ae5c81365f21c2e1",
+    "sha256": "ae9452b8a8a2d502fc6823d8190b45e73505c503c3d34a8361b0d52afc1c48b3",
     "operations": [
       [
         "toHaveText('\u6b64\u9875\u63a5\u7ba1')",
         "toHaveText('\u7ee7\u7eed\u4fee\u70bc')"
+      ],
+      [
+        "toContainText('\u6cbf\u7528\u539f\u6bb5\u989d\u5ea6\uff0c\u672c\u8f6e\u91cd\u65b0\u8ba1\u65f6')",
+        "toContainText('\u6cbf\u7528\u539f\u989d\u5ea6\uff0c\u672c\u8f6e\u91cd\u65b0\u8ba1\u65f6')"
       ]
     ],
     "replaceAll": true
@@ -14,7 +18,7 @@
   "web/e2e/ux33-activity-status.spec.ts": {
     "before": "goal-4/evidence/uir34-04/test-before/ux33-activity-status.spec.ts",
     "beforeSHA256": "060c65130fccd2c72d22c6238919df3e2ccfc259385f9f4b7ec6167010f23245",
-    "sha256": "e8a29d93571bcb7bb633ce4024834931b23947d99f411933d9bf0f4b71c34ade",
+    "sha256": "10be922af9ccd681ed390cf5b2d60dd02df922ea557342e796bbf04818c720bd",
     "operations": [
       [
         "toHaveText('\u5f85\u63a5\u7ba1')",
@@ -23,6 +27,10 @@
       [
         "toContainText('\u7ee7\u7eed\u540e\u672c\u8f6e\u91cd\u65b0\u8ba1\u65f6')",
         "toContainText('\u6cbf\u7528\u539f\u989d\u5ea6\uff0c\u672c\u8f6e\u91cd\u65b0\u8ba1\u65f6')"
+      ],
+      [
+        "toHaveText('\u7ee7\u7eed')",
+        "toHaveText('\u7ee7\u7eed\u4fee\u70bc')"
       ]
     ],
     "replaceAll": true
