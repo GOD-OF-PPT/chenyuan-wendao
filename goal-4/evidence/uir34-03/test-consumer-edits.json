@@ -24,24 +24,34 @@
   "web/e2e/check-art24-26.spec.ts": {
     "before": "goal-4/evidence/uir34-03/test-before/check-art24-26.spec.ts",
     "beforeSHA256": "759e0d7101c393e1c2fd760ab50db68d968a1650a636daf7f6d121a1c16ee0b1",
-    "sha256": "e9e1cfeff6f31e3acd49fd6754a21278aaf98d12919a5804405d969b27dd731a",
+    "sha256": "c9b7f40fe9d2aa12eb6a8aa9ed5bf9d9f246bdb21d87e555b8b52875d0848a07",
     "operations": [
       [
         "await expect(page.locator('.configuration-slots article')).toHaveCount(4);",
         "await page.getByTestId('config-full').click();await expect(page.locator('.configuration-slots article')).toHaveCount(4);"
+      ],
+      [
+        "await expect(page.getByTestId('relic-atelier')).toContainText('\u4fdd\u5b58\u5f85\u6838\u5bf9');",
+        "await expect(page.getByTestId('relic-atelier')).toHaveAttribute('data-state','failed');await expect(page.getByTestId('relic-atelier')).toContainText('\u67e5\u770b\u4e0a\u65b9\u63d0\u793a');await expect(page.getByTestId('error')).toContainText('\u5b58\u50a8\u7a7a\u95f4\u4e0d\u8db3');"
       ]
-    ]
+    ],
+    "replaceAll": true
   },
   "web/e2e/stage-r3-layout.spec.ts": {
     "before": "goal-4/evidence/uir34-03/test-before/stage-r3-layout.spec.ts",
     "beforeSHA256": "1107b5941d3f01910e7d02735d189669fcee74bf10a704e4b9a5100a1f7a3989",
-    "sha256": "c45c81f3ed58f38f88841b5c582584a012e0dc3b72ed4d0fd436734736e5a803",
+    "sha256": "83a45addf53ac928e781fbb338c4001aa69596f0cfc2c641dc497d7d6fa1a2e2",
     "operations": [
       [
         "await expect(page.getByTestId('configuration-relic-effects')).toContainText(relic.description);",
         "await page.getByTestId('config-full').click();await expect(page.getByTestId('configuration-relic-effects')).toContainText(relic.description);"
+      ],
+      [
+        "await expect(page.getByTestId('jade-study-status')).toContainText('\u6b64\u6cd5\u5df2\u88c5\u914d');",
+        "await expect(page.getByTestId('jade-engraving')).toHaveAttribute('data-equipped','true');await expect(page.getByTestId('jade-engraving')).toHaveAttribute('data-skill',(await snapshot(page)).loadout.mind!);await expect(page.getByTestId('jade-study-status')).toContainText('\u9759\u5fc3\u5c55\u8bfb');"
       ]
-    ]
+    ],
+    "replaceAll": true
   },
   "web/e2e/art16-school-objects.spec.ts": {
     "before": "goal-4/evidence/uir34-03/test-before/art16-school-objects.spec.ts",
@@ -57,11 +67,15 @@
   "web/e2e/equipment-objects.spec.ts": {
     "before": "goal-4/evidence/uir34-03/test-before/equipment-objects.spec.ts",
     "beforeSHA256": "78b9e45b3f82faba0c77b116a5c654e0dc5173936d577fc600b16d5a67bcfed8",
-    "sha256": "cf4838502bb3f77246474f56f9808ed67beea9af5465b62f44af8e476fff5e94",
+    "sha256": "ab1ef4a14c2430fb1e8aa0ba8bcce4ec105e8cc0ac0f8b16f173ab242b1099b8",
     "operations": [
       [
         ".configuration-relic-effects>p",
         "[data-testid=configuration-relic-effects]>p"
+      ],
+      [
+        "await p.getByTestId('equip-relic-'+id).click();await expect(p.getByTestId('configuration-relic-effects')).toContainText(r.description);",
+        "await p.getByTestId('equip-relic-'+id).click();await p.getByTestId('config-full').click();await expect(p.getByTestId('configuration-relic-effects')).toContainText(r.description);"
       ]
     ],
     "replaceAll": true

@@ -1,0 +1,23 @@
+{
+  "beforeRuntime": "54589c3f9fd86e1585d366f9c35f17488401e2889b589652eb2c8644d53831d7",
+  "baselineActuallyFailed": 3,
+  "evidence": [
+    {
+      "title": "CHECK-ART-C2 a native paid-study quota keeps complete loadout and relic reading then retries only the original cycle before a readonly comparison",
+      "message": "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('relic-atelier')\nExpected substring: \"保存待核对\"\nReceived string:    \"择器只查看 · 炼成后另行比较认主翻看器架 · 全部器谱查看铸器安排 ›本命扣位地脉灵玉持有 0 / 需有 4保留 0 · 缺 4已装备为本命玄玉印每次承受伤害减 8，适合稳健渡劫。查看上方提示每件 140 灵石 · 2 游戏月 · 60 秒 · 只铸造1件实际本命当前本命即此器器谱安排参考 · 此器已炼成 · 只铸造1件上限 140 灵石 / 2 月 · 保留 0 灵石 / 余寿 1 月器谱材料与来源完整铸器安排换看其他器谱请先处理上方存档提示器架 · 择器只查看回到所选器物 后续境界青霜剑需金丹玄玉印当前本命照魂灯需金丹流云镜需金丹筹备玄玉印回到器物核对单件投入及本段保留量；查看来源不取材、不采购。地脉灵玉单件 4 + 保留 0 = 需有 4持有 0 · 尚缺 4 · 查看完整来源灵石单件 140 + 保留 0 = 需有 140持有 1960 · 尚缺 0查看灵石来源当前授权 140 灵石 / 2 月；核对完整预算与保留量\"\nTimeout: 8000ms\n\nCall log:\n  - Expect \"toContainText\" with timeout 8000ms\n  - waiting for getByTestId('relic-atelier')\n    12 × locator resolved to <div data-owned=\"true\" data-bound=\"true\" data-state=\"failed\" data-working=\"false\" data-relic=\"jade_seal\" data-testid=\"relic-atelier\" class=\"relic-atelier art10-relic-stage\">…</div>\n       - unexpected value \"择器只查看 · 炼成后另行比较认主翻看器架 · 全部器谱查看铸器安排 ›本命扣位地脉灵玉持有 0 / 需有 4保留 0 · 缺 4已装备为本命玄玉印每次承受伤害减"
+    },
+    {
+      "title": "the actual jade object and status stay inside the stage and relic paging never overlaps its last object",
+      "message": "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('jade-study-status')\nExpected substring: \"此法已装配\"\nReceived string:    \"静心展读\"\nTimeout: 8000ms\n\nCall log:\n  - Expect \"toContainText\" with timeout 8000ms\n  - waiting for getByTestId('jade-study-status')\n    12 × locator resolved to <div role=\"status\" class=\"jade-cycle-status\" data-testid=\"jade-study-status\">…</div>\n       - unexpected value \"静心展读\"\n"
+    },
+    {
+      "title": "missing catalogue paintings keep native jade and bag selection usable without inventing held objects",
+      "message": "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByTestId('jade-study-status')\nExpected substring: \"此法已装配\"\nReceived string:    \"静心展读\"\nTimeout: 8000ms\n\nCall log:\n  - Expect \"toContainText\" with timeout 8000ms\n  - waiting for getByTestId('jade-study-status')\n    12 × locator resolved to <div role=\"status\" class=\"jade-cycle-status\" data-testid=\"jade-study-status\">…</div>\n       - unexpected value \"静心展读\"\n"
+    }
+  ],
+  "rules": [
+    "docs/decisions/0098-study-hierarchy-uir33-04-contract.md",
+    "docs/decisions/0094-shared-activity-status-ux33-contract.md"
+  ],
+  "repair": "Current declared static mastery and local error semantics, with actual equipped id/flag and original full error. No production state, Game, callback or timing change."
+}
