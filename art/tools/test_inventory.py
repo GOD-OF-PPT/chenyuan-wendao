@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  check340204=ROOT/'art/redesign/check-uir34-02-04.json'
+  if check340204.exists():
+   data=json.loads(check340204.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[data['before']]+list(data['unchanged']))
   uir3404=ROOT/'art/redesign/uir34-04.json'
   if uir3404.exists():
    data=json.loads(uir3404.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']));files.update(ROOT/r['before']for r in data['files'].values())
@@ -2365,5 +2368,25 @@ class UIR3404ResumeCopyTests(unittest.TestCase):
    self.write(LEDGER,MANIFEST)
   m=json.loads((ROOT/LEDGER).read_text());m['caps']['idle-cultivation']+=1;self.write(LEDGER,m)
   with self.assertRaisesRegex(AssertionError,'UIR34-04'):validate_uir3404(self.root)
+
+class Check340204ReadonlyCloseTests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_busy_readonly_inverse_retains_all_original_commands_and_caps(self):
+  from check_uir34_02_04_inventory import validate_check340204,prior_check340204_bytes,MANIFEST
+  self.assertLessEqual(validate_check340204(ROOT)[1],30000)
+  self.assertEqual(prior_check340204_bytes(MANIFEST['path'],(ROOT/MANIFEST['path']).read_bytes()),(ROOT/MANIFEST['before']).read_bytes())
+ def test_unapproved_close_confirmation_retry_and_clock_cannot_change(self):
+  from check_uir34_02_04_inventory import validate_check340204,MANIFEST,LEDGER
+  raw=(ROOT/MANIFEST['path']).read_text()
+  for a,b in [('busy&&!review.activity','false'),('(!busy||review.activity)','true'),("emit('confirm')","emit('close')"),('pendingError','false'),('milestone-retry','new-retry')]:
+   self.assertIn(a,raw);self.write(MANIFEST['path'],raw.replace(a,b,1))
+   with self.subTest(mutation=a),self.assertRaisesRegex(AssertionError,'CHECK34'):validate_check340204(self.root)
+   self.write(MANIFEST['path'],raw)
+  for key,value in [('originalMilestoneCap',30001),('userAcceptance',True)]:
+   m=json.loads((ROOT/LEDGER).read_text());m[key]=value;self.write(LEDGER,m)
+   with self.subTest(scope=key),self.assertRaisesRegex(AssertionError,'CHECK34'):validate_check340204(self.root)
+   self.write(LEDGER,MANIFEST)
 
 if __name__=='__main__':unittest.main()

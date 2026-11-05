@@ -1,3 +1,4 @@
+from check_uir34_02_04_inventory import prior_check340204_bytes
 """Strict finite-choice display evolution; original confirmation owners and legacy cap retained."""
 import hashlib,json
 from pathlib import Path
@@ -103,6 +104,7 @@ MANIFEST={'format': 'chenyuan-finite-choice-focus-uir34-02',
  'sourceReferences': ['docs/decisions/0108-finite-choice-focus-uir34-02-contract.md',
                       'goal-4/amendments/2026-11-05-uir34-02-input.md']}
 def prior_uir3402_bytes(path,raw):
+ raw=prior_check340204_bytes(path,raw)
  name=Path(path).name
  if name not in MANIFEST['files']:return raw
  row=MANIFEST['files'][name]
@@ -123,7 +125,7 @@ def validate_uir3402(root):
   return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'UIR34-02 immutable scope'
  for name,r in MANIFEST['files'].items():
-  raw=local(r['path']).read_bytes();old=local(r['before']).read_bytes();assert len(raw)==r['bytes']and hashlib.sha256(raw).hexdigest()==r['sha256'],'UIR34-02 actual complete source';assert hashlib.sha256(old).hexdigest()==r['beforeSHA256'],'UIR34-02 original preserved';assert prior_uir3402_bytes(name,raw)==old,'UIR34-02 inverse'
+  raw=prior_check340204_bytes(r['path'],local(r['path']).read_bytes());old=local(r['before']).read_bytes();assert len(raw)==r['bytes']and hashlib.sha256(raw).hexdigest()==r['sha256'],'UIR34-02 actual complete source';assert hashlib.sha256(old).hexdigest()==r['beforeSHA256'],'UIR34-02 original preserved';assert prior_uir3402_bytes(name,raw)==old,'UIR34-02 inverse'
  total=sum(local(n).stat().st_size for n in ['web/src/MilestoneReview.vue','web/src/milestone-view.ts','web/src/idle-milestones.css']);assert total<=30000,'UIR34-02 original milestone cap'
  for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR34-02 original rules owners and style'
  for n in MANIFEST['sourceReferences']:local(n)
