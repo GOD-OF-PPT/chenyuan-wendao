@@ -1,0 +1,68 @@
+{
+  "task": "UIR34-03",
+  "status": "locally_verified",
+  "productionCommit": "3da1e9f5e6b01abf147da80d486875a0a11c7f77",
+  "latestConsumerSource": "0686858788724591a4c90f17a5cd70bd517cb4a1",
+  "runtime": "4f60acc4c0ea78bc608561d6623a5300214d2b7986beac51fc69e99e172cc6b9",
+  "productionFiles": [
+    "web/src/ConfigurationDialog.vue"
+  ],
+  "componentBytes": 5642,
+  "componentCap": 5643,
+  "groupBytes": 59999,
+  "originalGroupCap": 60000,
+  "newRasterAssets": 0,
+  "UI": {
+    "uniqueComposite": 101,
+    "originalPhase": {
+      "passed": 96,
+      "failed": 5
+    },
+    "unchangedEightFilesInherited": 70,
+    "completeArt26Repaired": 4,
+    "latestThreeCompleteFiles": 27,
+    "newFourIncluded": 4,
+    "packageTwoSubset": 2,
+    "singleAllGreen101Run": false,
+    "systemMixedDeferred": 5,
+    "automaticRetries": 0
+  },
+  "identity": {
+    "originalUIInputs": 4563,
+    "art26RepairInputs": 4564,
+    "latestRepairInputs": 4567,
+    "currentChecksInputs": 4560,
+    "allExact": true,
+    "runtimeSources": 333,
+    "HTTPPayloads": 112,
+    "allHTTPExact": true
+  },
+  "currentChecks": {
+    "rulesAndMatrixMethods": 76,
+    "resourceMethods": 7,
+    "positiveInventory": true,
+    "vueType": true,
+    "build": true,
+    "oldFull960And683Rerun": false
+  },
+  "pixels": {
+    "actuallyViewedCurrent": 10,
+    "baselineViewed": 1,
+    "newCaseGeometryFrames": 40,
+    "allGeneratedImagesClaimedViewed": false
+  },
+  "completeMatrix": {
+    "version": 21,
+    "UI": 921,
+    "storage": 415,
+    "normalRoute": 32,
+    "total": 1368,
+    "wholeCurrentExecuted": false
+  },
+  "preview": "http://127.0.0.1:56904/",
+  "formalCandidate": false,
+  "wholeGameArtLongTermHumanAccepted": false,
+  "protected13Exact": true,
+  "next": "UIR34-04 recovery wording, then check02/03/04",
+  "compatibilityAndEnvironmentPerformance": "not_run; paused"
+}

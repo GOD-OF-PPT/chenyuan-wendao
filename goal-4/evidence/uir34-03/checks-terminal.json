@@ -1,0 +1,36 @@
+{
+  "source": {
+    "head": "0686858788724591a4c90f17a5cd70bd517cb4a1",
+    "source": "0686858788724591a4c90f17a5cd70bd517cb4a1",
+    "tree": "47c26339da400b8a9cdcdb5c159de52f58045f8b",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "4f60acc4c0ea78bc608561d6623a5300214d2b7986beac51fc69e99e172cc6b9",
+  "inputs": 4560,
+  "exact": true,
+  "results": [
+    {
+      "name": "vue-type",
+      "exit": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "node",
+      "exit": 0,
+      "sha256": "a2c8674d22343c34594b112fde6092e320ac90f2dac8d0ae9995147020eb8212"
+    },
+    {
+      "name": "resource-mutations",
+      "exit": 0,
+      "sha256": "6fd2603203cde42ebf41d5072ebffa86f9eb30d624bdbf369102444bd755b0a5"
+    },
+    {
+      "name": "resource-positive",
+      "exit": 0,
+      "sha256": "5212fd02ba362b1722f0120d33c2728e9d2121b4aa40701fa99021ab1b0f39b6"
+    }
+  ]
+}
