@@ -1,0 +1,28 @@
+{
+  "initialGenerator": "Forgot json import after writing test; unique empty directory existed, config not written. Next CLI refused missing config before executing tests; error retained in tool output, no product/UI failure.",
+  "fix": "Write config only after confirming no report/output exists, inspect terminal before dependent work.",
+  "firstThree": {
+    "report": "artifacts/goal-4/check-uir34-05-07/preliminary/report.json",
+    "passed": 2,
+    "failed": 1,
+    "reason": "Generic helper misclassified existing16px person-picker auxiliary control as18px body. Scope-specific auxiliary toolbar/menu classes now14px; body/primary18, original44 target/ink/hit/fullGame/time unchanged. No production source altered."
+  },
+  "secondThree": {
+    "report": "artifacts/goal-4/check-uir34-05-07/preliminary-v2/report.json",
+    "passed": 2,
+    "failed": 1,
+    "reason": "C2 full native entry/CPP proof passed, then test assumed resume footer opens narrative directly. Actual original resumeEncounter selects cultivation stage; existing explicit \u67e5\u770b\u95ee\u5fc3\u9009\u62e9 opens question. Preserved original code and added actual readonly route assertion/click, no sleep/timeout or write changed."
+  },
+  "thirdThree": {
+    "report": "artifacts/goal-4/check-uir34-05-07/preliminary-v3/report.json",
+    "passed": 2,
+    "failed": 1,
+    "reason": "C2 all atomic/question text assertions passed, final frame misclassified original16px narrative header navigation(\u6e21\u52ab\u884c\u7a0b/\u56de\u770b\u751f\u5e73) as body. Only that semantic header region classified auxiliary14; primary/body18 and all Game/44/ink/time kept. Production unchanged."
+  },
+  "fourthThree": {
+    "report": "artifacts/goal-4/check-uir34-05-07/preliminary-v4/report.json",
+    "passed": 3,
+    "exit": 0,
+    "scope": "Mutable root test consumer against old07 immutable runtime, not final current-source comprehensive execution."
+  }
+}
