@@ -558,3 +558,5 @@ UIR33-06依[0101](docs/decisions/0101-life-entry-uir33-06-contract.md)及本轮X
 UIR33-07依[0102](docs/decisions/0102-outcome-focus-uir33-07-contract.md)：非物资配置成功应先显示实际道途/槽位/器物及正式作用；完整成本和净变化仍由原回执提供，不把零delta误作没变化。只读摘要须核相同人生与当前revision，缺明确术法command时仅用当前正式已保存记录，不猜旧槽或宣称更优。原保存/tracker/重放资格保持；视觉首次可见与控件已绘制分开核验，不能放宽旧时限和命中。具体措辞为项目推导，整体艺术长期真人与兼容环境边界保持。
 
 CHECK-UIR33-02依[0103](docs/decisions/0103-uir33-stage-feedback-check.md)：设备成功印记定位实际当前器物，不以HUD小头像作大型演出中心；提示条发布后原ResizeObserver会移动舞台，须等布局并复核原generation/错误/忙碌/hidden再取点。明帧opacity及220+30外缘需实看/实测，首帧透明不算效果验收。错误原因/重试保留，移除无信息全屏轮廓；明细只去与已显示stopped完全相同的行，原回执/持久停止不改。预算和兼容环境边界保持，综合检查不代整体艺术真人。
+
+CHECK-UIR33-02消费者复核补充：toast发布和equipment布局后演出绘制是两个异步边界，虚拟钟退场检查先等真实action-motion节点及原控件命中，再推进原时长；不以first-visible假定后续rAF已完成。原8秒/16ms握手、2000ms退场、全库与原意图断言保持，完整受影响文件复验；未改案例继承须核完整依赖闭包，原196/3报告不改标签。
