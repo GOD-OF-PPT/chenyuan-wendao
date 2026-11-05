@@ -8,33 +8,36 @@ MANIFEST={'format': 'chenyuan-finite-choice-focus-uir34-02',
  'maxNativeBytes': 30000,
  'newRasterAssets': 0,
  'files': {'MilestoneReview.vue': {'path': 'web/src/MilestoneReview.vue',
-                                   'bytes': 4825,
-                                   'sha256': 'a9b346af69f7e1512e896c4b2c7fb168666c3b1648e3d39a7ce8a56f89f02338',
+                                   'bytes': 5014,
+                                   'sha256': '20de4cb9497fab63f9a4b9e4265e116d5fd05c6f7fc22c7e114e3fca2d634354',
                                    'before': 'goal-4/evidence/uir34-02/before/web/src/MilestoneReview.vue',
                                    'beforeSHA256': '8c3dd9bb9d382f102f3204195ced86b19321399b427440533e01ab6a575e3698',
                                    'operations': [[1170,
                                                    '',
                                                    'const '
                                                    "focused=computed(()=>!props.review.activity&&['CHOOSE','BREAKTHROUGH','EVENT','DECIDE','ANSWER_TRIAL'].includes(props.review.plan.action.type));\n"
+                                                   'const '
+                                                   "choiceEffect=computed(()=>props.review.plan.action.type==='EVENT'?`与${view.value.speaker}相见，展开「${view.value.title.replace(/^拜访 "
+                                                   "· /,'')}」。`:view.value.effect);\n"
                                                    'const decisionVerb=computed(()=>{const '
                                                    'a=props.review.plan.action;return '
                                                    "a.type==='CHOOSE'?({help:'赠出回春丹',trade:'以丹换简',leave:'保留丹药'}as "
                                                    "const)[a.choice]:a.type==='EVENT'?'拜访'+view.value.speaker:a.type==='ANSWER_TRIAL'?'作答 "
                                                    "· '+view.value.title:view.value.title;});\n"],
-                                                  [1852, '', '" :data-focus="focused?\'choice\':undefined'],
-                                                  [2559,
+                                                  [2017, '', '" :data-focus="focused?\'choice\':undefined'],
+                                                  [2724,
                                                    '',
                                                    'div v-if="focused" '
                                                    'class="milestone-choice"><small>此举之后</small><p '
                                                    'class="milestone-effect" '
-                                                   'data-testid="milestone-effect">{{view.effect}}</p></div><'],
-                                                  [2718, '', ' v-else'],
-                                                  [2783, '', ' v-if="!focused"'],
-                                                  [3025, '在线 ', ''],
-                                                  [3027, '', 'focused?'],
-                                                  [3047, '}}', "+' 秒 · 仅本次':'在线 '+view.seconds+'"],
-                                                  [3095, '', "'}}"],
-                                                  [3190,
+                                                   'data-testid="milestone-effect">{{choiceEffect}}</p></div><'],
+                                                  [2884, '', ' v-else'],
+                                                  [2949, '', ' v-if="!focused"'],
+                                                  [3191, '在线 ', ''],
+                                                  [3193, '', 'focused?'],
+                                                  [3213, '}}', "+' 秒 · 仅本次':'在线 '+view.seconds+'"],
+                                                  [3261, '', "'}}"],
+                                                  [3356,
                                                    '',
                                                    '>\n'
                                                    '  <details v-if="focused" class="milestone-notes" '
@@ -42,8 +45,8 @@ MANIFEST={'format': 'chenyuan-finite-choice-focus-uir34-02',
                                                    ':rows="readings" :identity="review.identity"/><small>在线 '
                                                    '{{view.seconds}} 秒 · 仅一次 · '
                                                    '初值未平衡</small><small>安排保存后开始读秒；实际结算成功后才产生变化。</small></details'],
-                                                  [3840, '', ' v-if="!focused"'],
-                                                  [4197, '', 'focused?decisionVerb:']]},
+                                                  [4006, '', ' v-if="!focused"'],
+                                                  [4363, '', 'focused?decisionVerb:']]},
            'idle-milestones.css': {'path': 'web/src/idle-milestones.css',
                                    'bytes': 4121,
                                    'sha256': '85487aa4e1400bb0652c319da03e6557b414c5cfc2a59e7fb18fb50edbb994d8',

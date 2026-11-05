@@ -13,13 +13,14 @@ const emit=defineEmits<{close:[];confirm:[];retry:[]}>(),dialog=ref<HTMLDialogEl
 const view=computed(()=>milestonePresentation(props.review.snapshot,props.review.plan.action)),scene=computed(()=>scenePresentation(props.review.snapshot));
 const readings=computed(()=>props.review.activity?[...view.value.readings,...milestoneView(props.review.activity).details.map((text,i)=>({key:'saved-'+i,title:props.review.activity!.completedCycles?'已保存的实际成果':'原安排与停止状态',text}))]:view.value.readings);
 const focused=computed(()=>!props.review.activity&&['CHOOSE','BREAKTHROUGH','EVENT','DECIDE','ANSWER_TRIAL'].includes(props.review.plan.action.type));
+const choiceEffect=computed(()=>props.review.plan.action.type==='EVENT'?`与${view.value.speaker}相见，展开「${view.value.title.replace(/^拜访 · /,'')}」。`:view.value.effect);
 const decisionVerb=computed(()=>{const a=props.review.plan.action;return a.type==='CHOOSE'?({help:'赠出回春丹',trade:'以丹换简',leave:'保留丹药'}as const)[a.choice]:a.type==='EVENT'?'拜访'+view.value.speaker:a.type==='ANSWER_TRIAL'?'作答 · '+view.value.title:view.value.title;});
 onMounted(()=>focus?.open(dialog.value));onScopeDispose(()=>focus?.release(dialog.value));
 </script>
 <template>
  <dialog ref="dialog" class="paper milestone-review" data-testid="milestone-review" :data-action="review.plan.action.type" :data-readonly="!!review.activity" :data-focus="focused?'choice':undefined" aria-labelledby="milestone-review-title" @cancel.prevent="!busy&&emit('close')" @close="emit('close')">
   <header><div><small>{{review.activity?'已保存原安排 · 只读回看':'已选内容 · 尚未安排'}} · {{view.speaker}}</small><h2 id="milestone-review-title" tabindex="-1" data-dialog-initial>{{view.title}}</h2></div><button data-testid="milestone-cancel" @click="emit('close')" :disabled="busy">{{review.activity?'返回':'暂不安排'}}</button></header>
-  <div class="milestone-scene"><AssetImage class="milestone-scenery" :path="sceneAssetPath(scene)" :asset-id="'milestone-scene-'+scene.artKey"/><PortraitImage class="milestone-person" :id="view.portrait" :fallback="view.speaker.slice(0,1)"/><div v-if="focused" class="milestone-choice"><small>此举之后</small><p class="milestone-effect" data-testid="milestone-effect">{{view.effect}}</p></div><ReviewPages v-else :rows="readings" :identity="review.identity"/></div>
+  <div class="milestone-scene"><AssetImage class="milestone-scenery" :path="sceneAssetPath(scene)" :asset-id="'milestone-scene-'+scene.artKey"/><PortraitImage class="milestone-person" :id="view.portrait" :fallback="view.speaker.slice(0,1)"/><div v-if="focused" class="milestone-choice"><small>此举之后</small><p class="milestone-effect" data-testid="milestone-effect">{{choiceEffect}}</p></div><ReviewPages v-else :rows="readings" :identity="review.identity"/></div>
   <p v-if="!focused" class="milestone-effect" data-testid="milestone-effect">{{view.effect}}</p>
   <div class="milestone-facts"><p data-testid="milestone-cost">{{review.activity?'原安排成本':'本次成本'}}：{{view.cost}}</p><p data-testid="milestone-period">{{focused?view.seconds+' 秒 · 仅本次':'在线 '+view.seconds+' 秒 · 仅一次 · 初值未平衡'}}</p></div>
   <p class="milestone-boundary" data-testid="milestone-boundary">{{view.next}}</p>
