@@ -1,0 +1,41 @@
+{
+  "priorSource": {
+    "head": "70abc857b6a00e4ede308292f7019d1e0aaf6007",
+    "source": "70abc857b6a00e4ede308292f7019d1e0aaf6007",
+    "tree": "e35c73cf4124cc97e537cf573bbfe268ffb75514",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "currentConsumerSource": {
+    "head": "243325d4c9e30fec10b4d87c34029e28c32596c7",
+    "source": "243325d4c9e30fec10b4d87c34029e28c32596c7",
+    "tree": "1f0f56bcc53b0abbe07e9d72be757635f6ae5cff",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "3c9c21c39c402b315195dd26423eaeabe97d0f1a59e9be1525e2a0585dcf0457",
+  "runtimeSourcesExact": 334,
+  "all112PayloadRecordsExact": true,
+  "allOldTrackedInputsCompared": 4815,
+  "onlyChangedOriginalTrackedInput": [
+    "web/e2e/ux22-help-wayfinding.spec.ts"
+  ],
+  "full693": {
+    "terminal": "../current/checks-terminal.json",
+    "source": {
+      "head": "70abc857b6a00e4ede308292f7019d1e0aaf6007",
+      "source": "70abc857b6a00e4ede308292f7019d1e0aaf6007",
+      "tree": "e35c73cf4124cc97e537cf573bbfe268ffb75514",
+      "dirty": false,
+      "node": "v24.22.1",
+      "npm": "8.11.0",
+      "npmOnPath": "8.11.0"
+    },
+    "inherited": "All Python tests/tools, scopes, runtime, reference fixtures and original input data unchanged. Only this UI consumer was adapted; fullpositive and new2 negative+95 rules+Vue rerun at current consumer source."
+  },
+  "scope": "Same runtime, separate immutable source and execution provenance; never claim full160 once green."
+}

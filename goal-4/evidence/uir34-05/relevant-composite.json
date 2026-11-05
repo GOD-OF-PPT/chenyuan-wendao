@@ -1,0 +1,19 @@
+{
+  "runtime": "3c9c21c39c402b315195dd26423eaeabe97d0f1a59e9be1525e2a0585dcf0457",
+  "uniqueCurrentRelevantCases": 160,
+  "completeUnchangedFiles": 18,
+  "inheritedPassed": 154,
+  "currentFullChangedFile": "ux22-help-wayfinding.spec.ts",
+  "currentFullChangedFilePassed": 6,
+  "samePackageCases": 5,
+  "packageCasesAreSubset": true,
+  "firstCurrentRelated": {
+    "passed": 159,
+    "failed": 1,
+    "source": "70abc857b6a00e4ede308292f7019d1e0aaf6007",
+    "report": "artifacts/goal-4/uir34-05/current/related-authorized-report.json"
+  },
+  "baselineSameFailure": "artifacts/goal-4/uir34-05/old-h4/report.json",
+  "sourceBridge": "consumer-source-bridge.json",
+  "scope": "Composite160 unique, not a single all-green160 run or165 coverage. Each unchanged complete file and all old dependencies exact; all6 changed-file consumers rerun at243325d4. Original failures remain."
+}

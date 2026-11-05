@@ -1,0 +1,47 @@
+[
+  {
+    "case": "UIR34-05 START_TRIAL: current consequence precedes optional complete notes and only its original finite atomic outcome executes",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-05/current/proof-data/atomic-0.json",
+    "sha256": "78eacd0b4dbd9ce64dc476faefceccd8ea1397c1ffcd32bb0f52d1d9d64701d9",
+    "bytes": 127985,
+    "commandId": "cycle:235455a1-ecd5-467c-b40c-1c95df21b0e1:0:1",
+    "kind": "START_TRIAL",
+    "fullGameActivityReceiptPreviousOtherStoresValidated": true
+  },
+  {
+    "case": "UIR34-05 RETIRE: current consequence precedes optional complete notes and only its original finite atomic outcome executes",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-05/current/proof-data/atomic-1.json",
+    "sha256": "af4f923524fd7c6800466ce9e6643b0f84a16584935546be064bf4da2a4e6bfc",
+    "bytes": 64382,
+    "commandId": "cycle:97a79e7a-23bb-4d55-84ce-0933e313c659:0:1",
+    "kind": "RETIRE",
+    "fullGameActivityReceiptPreviousOtherStoresValidated": true
+  },
+  {
+    "case": "UIR34-05 END_LIFE: current consequence precedes optional complete notes and only its original finite atomic outcome executes",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-05/current/proof-data/atomic-2.json",
+    "sha256": "154ac6ad26d2bbc1a34f8b86d32dbc5a1a430aa79747de9670fef0175ddb6fdd",
+    "bytes": 57566,
+    "commandId": "cycle:0bc5b70a-ea43-44ea-a91c-5742dd3b7e02:0:1",
+    "kind": "END_LIFE",
+    "fullGameActivityReceiptPreviousOtherStoresValidated": true
+  },
+  {
+    "case": "UIR34-05 transmit: current consequence precedes optional complete notes and only its original finite atomic outcome executes",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-05/current/proof-data/atomic-3.json",
+    "sha256": "639dffabf83816b853d6eef0c12cdd59f0a463890f94ff3e5bb8c420456f2f1f",
+    "bytes": 121578,
+    "commandId": "cycle:5d8e347b-cd78-467c-91d5-1cefa3a60e05:0:1",
+    "kind": "END",
+    "fullGameActivityReceiptPreviousOtherStoresValidated": true
+  },
+  {
+    "case": "UIR34-05 depart: current consequence precedes optional complete notes and only its original finite atomic outcome executes",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir34-05/current/proof-data/atomic-4.json",
+    "sha256": "0df8818d44dc839232db3b684fbcb7ef680abf359aba24d522546efcb4d080a8",
+    "bytes": 121387,
+    "commandId": "cycle:9b98f92c-0db6-48af-9b36-c0e37698f013:0:1",
+    "kind": "END",
+    "fullGameActivityReceiptPreviousOtherStoresValidated": true
+  }
+]
