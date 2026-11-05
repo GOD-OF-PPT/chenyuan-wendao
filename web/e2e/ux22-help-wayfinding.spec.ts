@@ -73,7 +73,7 @@ test('UX22-H3 material help distinguishes the inventory sources from the alchemy
 test('UX22-H4 breakthrough help leads to the original thirty second single arrangement and cancelling does not break through',async({page})=>{
  await importRecoveryFixture(page,driver().checkpoints.mortal);await recoveryReadonly(page,async()=>{
   const d=await openHelp(page,'breakthrough');await expect(d.locator('.help-chapter p')).toContainText('读秒');await expect(d.locator('.help-chapter p')).toContainText('保存');await closeHelp(page);
-  await press(page.getByTestId('breakthrough'));await expect(page.getByTestId('milestone-review')).toHaveAttribute('data-action','BREAKTHROUGH');await expect(page.getByTestId('milestone-period')).toHaveText('在线 30 秒 · 仅一次 · 初值未平衡');await expect(page.getByTestId('milestone-confirm')).toHaveText('安排引气入体一次');await expect(page.getByTestId('action-execution')).toHaveCount(0);await press(page.getByTestId('milestone-cancel'));await expect(page.getByTestId('breakthrough')).toBeFocused();
+  await press(page.getByTestId('breakthrough'));await expect(page.getByTestId('milestone-review')).toHaveAttribute('data-action','BREAKTHROUGH');await expect(page.getByTestId('milestone-period')).toHaveText('30 秒 · 仅本次');const notes=page.getByTestId('milestone-notes');await press(notes.locator('summary'));await expect(notes.locator(':scope>small').first()).toHaveText('在线 30 秒 · 仅一次 · 初值未平衡');await press(notes.locator('summary'));await expect(page.getByTestId('milestone-confirm')).toHaveText('引气入体');await expect(page.getByTestId('action-execution')).toHaveCount(0);await press(page.getByTestId('milestone-cancel'));await expect(page.getByTestId('breakthrough')).toBeFocused();
  });
 });
 
