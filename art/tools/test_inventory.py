@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3402=ROOT/'art/redesign/uir34-02.json'
+  if uir3402.exists():
+   data=json.loads(uir3402.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']));files.update(ROOT/ref['before'] for ref in data['files'].values())
   uir3401=ROOT/'art/redesign/uir34-01.json'
   if uir3401.exists():
    data=json.loads(uir3401.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']));files.update(ROOT/ref['before'] for ref in data['files'].values())
@@ -2297,5 +2300,24 @@ class UIR3401LifespanDisplayTests(unittest.TestCase):
   for name,a,b in cases:
    raw=(ROOT/('web/src/'+name)).read_text();self.assertIn(a,raw)
    with self.subTest(name=name,mutation=a),self.assertRaisesRegex(AssertionError,'UIR34-01'):prior_uir3401_bytes(name,raw.replace(a,b,1).encode())
+
+class UIR3402FocusTests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_uir3402_original_cap_whole_inverse_and_readonly_owners(self):
+  from uir34_02_inventory import validate_uir3402,prior_uir3402_bytes,MANIFEST
+  self.assertLessEqual(validate_uir3402(ROOT)[1],30000)
+  for name,r in MANIFEST['files'].items():self.assertEqual(prior_uir3402_bytes(name,(ROOT/r['path']).read_bytes()),(ROOT/r['before']).read_bytes())
+ def test_uir3402_rejects_changed_confirm_notes_marker_css_scope_and_budget(self):
+  from uir34_02_inventory import validate_uir3402,MANIFEST,LEDGER
+  for name,old,new in [('MilestoneReview.vue',"@click=\"emit('confirm')\"","@click=\"emit('close')\""),('MilestoneReview.vue','data-focus','data-wrong'),('MilestoneReview.vue','busy||!available||stale','busy||!available'),('MilestoneReview.vue','来由与执行说明','删减说明'),('idle-milestones.css','min-height:160px','min-height:159px')]:
+   r=MANIFEST['files'][name];p=self.root/r['path'];raw=p.read_text();self.assertIn(old,raw);self.write(r['path'],raw.replace(old,new,1))
+   with self.subTest(name=name,mutation=old),self.assertRaisesRegex(AssertionError,'UIR34-02'):validate_uir3402(self.root)
+   self.write(str(p.relative_to(self.root)),raw)
+  for key,value in [('maxNativeBytes',30001),('userAcceptance',True)]:
+   p=self.root/LEDGER;raw=p.read_text();m=json.loads(raw);m[key]=value;self.write(LEDGER,m)
+   with self.subTest(scope=key),self.assertRaisesRegex(AssertionError,'UIR34-02'):validate_uir3402(self.root)
+   self.write(str(p.relative_to(self.root)),raw)
 
 if __name__=='__main__':unittest.main()
