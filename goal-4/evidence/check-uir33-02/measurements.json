@@ -1,0 +1,235 @@
+{
+  "currentSource": "d6b4577",
+  "motionSize": 220,
+  "additionalOuterMargin": 30,
+  "rows": [
+    {
+      "phase": "old",
+      "case": "CHECK-UIR33-02 EQUIP saved seal follows its visible object and clears across life and exact receipt reading",
+      "xDifference": 264.9453125,
+      "yDifference": 311.34375,
+      "geometry": {
+        "cx": 110,
+        "cy": 232,
+        "object": {
+          "x": 100,
+          "y": 381.96875,
+          "width": 549.890625,
+          "height": 322.75
+        },
+        "outer": {
+          "left": -30,
+          "right": 250,
+          "top": 92,
+          "bottom": 372
+        },
+        "regions": [
+          {
+            "cls": "topbar game-hud",
+            "overlap": 4520
+          },
+          {
+            "cls": "feature-header",
+            "overlap": 12656
+          },
+          {
+            "cls": "jade-readable",
+            "overlap": 0
+          },
+          {
+            "cls": "bottom-nav stage-nav",
+            "overlap": 0
+          }
+        ]
+      }
+    },
+    {
+      "phase": "old",
+      "case": "CHECK-UIR33-02 EQUIP_RELIC saved seal follows its visible object and clears across life and exact receipt reading",
+      "xDifference": 236.6953125,
+      "yDifference": 284.4921875,
+      "geometry": {
+        "cx": 110,
+        "cy": 232,
+        "object": {
+          "x": 80,
+          "y": 374.984375,
+          "width": 533.390625,
+          "height": 283.015625
+        },
+        "outer": {
+          "left": -30,
+          "right": 250,
+          "top": 92,
+          "bottom": 372
+        },
+        "regions": [
+          {
+            "cls": "topbar game-hud",
+            "overlap": 4520
+          },
+          {
+            "cls": "feature-header",
+            "overlap": 12656
+          },
+          {
+            "cls": "bottom-nav stage-nav",
+            "overlap": 0
+          }
+        ]
+      }
+    },
+    {
+      "phase": "first-layout",
+      "case": "CHECK-UIR33-02 EQUIP saved seal follows its visible object and clears across life and exact receipt reading",
+      "xDifference": 0.0003125000000068212,
+      "yDifference": 43.48475000000002,
+      "geometry": {
+        "cx": 374.945,
+        "cy": 499.859,
+        "object": {
+          "x": 100,
+          "y": 381.96875,
+          "width": 549.890625,
+          "height": 322.75
+        },
+        "outer": {
+          "left": 234.945,
+          "right": 514.9449999999999,
+          "top": 359.859,
+          "bottom": 639.8589999999999
+        },
+        "regions": [
+          {
+            "cls": "topbar game-hud",
+            "overlap": 0
+          },
+          {
+            "cls": "feature-header",
+            "overlap": 0
+          },
+          {
+            "cls": "jade-readable",
+            "overlap": 0
+          },
+          {
+            "cls": "bottom-nav stage-nav",
+            "overlap": 0
+          }
+        ]
+      }
+    },
+    {
+      "phase": "first-layout",
+      "case": "CHECK-UIR33-02 EQUIP_RELIC saved seal follows its visible object and clears across life and exact receipt reading",
+      "xDifference": 0.0003125000000068212,
+      "yDifference": 35.4921875,
+      "geometry": {
+        "cx": 346.695,
+        "cy": 481,
+        "object": {
+          "x": 80,
+          "y": 374.984375,
+          "width": 533.390625,
+          "height": 283.015625
+        },
+        "outer": {
+          "left": 206.695,
+          "right": 486.695,
+          "top": 341,
+          "bottom": 621
+        },
+        "regions": [
+          {
+            "cls": "topbar game-hud",
+            "overlap": 0
+          },
+          {
+            "cls": "feature-header",
+            "overlap": 0
+          },
+          {
+            "cls": "bottom-nav stage-nav",
+            "overlap": 0
+          }
+        ]
+      }
+    },
+    {
+      "phase": "current-package",
+      "case": "CHECK-UIR33-02 EQUIP saved seal follows its visible object and clears across life and exact receipt reading",
+      "xDifference": 0.0003125000000068212,
+      "yDifference": 0.0002500000000509317,
+      "geometry": {
+        "cx": 374.945,
+        "cy": 543.344,
+        "object": {
+          "x": 100,
+          "y": 381.96875,
+          "width": 549.890625,
+          "height": 322.75
+        },
+        "outer": {
+          "left": 234.945,
+          "right": 514.9449999999999,
+          "top": 403.34400000000005,
+          "bottom": 683.344
+        },
+        "regions": [
+          {
+            "cls": "topbar game-hud",
+            "overlap": 0
+          },
+          {
+            "cls": "feature-header",
+            "overlap": 0
+          },
+          {
+            "cls": "jade-readable",
+            "overlap": 0
+          },
+          {
+            "cls": "bottom-nav stage-nav",
+            "overlap": 0
+          }
+        ]
+      }
+    },
+    {
+      "phase": "current-package",
+      "case": "CHECK-UIR33-02 EQUIP_RELIC saved seal follows its visible object and clears across life and exact receipt reading",
+      "xDifference": 0.0003125000000068212,
+      "yDifference": 0.00018750000003819878,
+      "geometry": {
+        "cx": 346.695,
+        "cy": 516.492,
+        "object": {
+          "x": 80,
+          "y": 374.984375,
+          "width": 533.390625,
+          "height": 283.015625
+        },
+        "outer": {
+          "left": 206.695,
+          "right": 486.695,
+          "top": 376.49199999999996,
+          "bottom": 656.492
+        },
+        "regions": [
+          {
+            "cls": "topbar game-hud",
+            "overlap": 0
+          },
+          {
+            "cls": "feature-header",
+            "overlap": 0
+          },
+          {
+            "cls": "bottom-nav stage-nav",
+            "overlap": 0
+          }
+        ]
+      }
+    }
+  ]
+}

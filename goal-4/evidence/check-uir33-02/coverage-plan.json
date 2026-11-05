@@ -1,0 +1,39 @@
+{
+  "source": "d6b4577",
+  "method": "union of entire previously executed files ofUIR33-05/06/07 plus newcheck; onlylisted environment cases deferred",
+  "files": {
+    "art12-narrative-stage.spec.ts": 7,
+    "art15-cultivation-notes.spec.ts": 5,
+    "art26-loadout-stage.spec.ts": 4,
+    "art31-life-scroll.spec.ts": 7,
+    "check-art-02.spec.ts": 10,
+    "check-art03-combinations.spec.ts": 4,
+    "check-u8.spec.ts": 7,
+    "check-uir33-02.spec.ts": 4,
+    "equipment-actors.spec.ts": 11,
+    "idle-adventure.spec.ts": 12,
+    "idle-cultivation.spec.ts": 8,
+    "idle-milestones.spec.ts": 16,
+    "idle-review.spec.ts": 8,
+    "matrix-ui-milestone-feedback.spec.ts": 3,
+    "stage-check.spec.ts": 20,
+    "stage-r1.spec.ts": 6,
+    "stage-r4.spec.ts": 24,
+    "stage-ta-review.spec.ts": 6,
+    "uir33-05-activity-detail.spec.ts": 10,
+    "uir33-06-life-entry.spec.ts": 7,
+    "uir33-07-outcome-focus.spec.ts": 4,
+    "ux23-sealed-life.spec.ts": 9,
+    "ux33-activity-status.spec.ts": 7
+  },
+  "currentCases": 199,
+  "deferred": [
+    "ART12-A8",
+    "ART15-A6",
+    "ART26-A5",
+    "ART31-A5",
+    "TA09-A12",
+    "UX23-S6"
+  ],
+  "wholeFinal1344Executed": false
+}

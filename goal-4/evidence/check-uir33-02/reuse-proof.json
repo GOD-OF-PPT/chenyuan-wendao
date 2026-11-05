@@ -1,0 +1,3706 @@
+{
+  "format": "check-uir33-02-reused-evidence",
+  "runtime": "aaabcb43108c1e3bdf57a670b5406f8a85f620389a1d313739448fa6136fbe34",
+  "passedCasesReused": 195,
+  "completeFiles": 22,
+  "sourceReport": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-02/final2/related-report.json",
+  "sourceReportSHA256": "b3355fbe4b0fc19f5c84882d6eff86a385eb8428b779c60f7d9e8a2d1d76c0c2",
+  "initialStats": {
+    "startTime": "2026-11-05T02:55:31.790Z",
+    "duration": 1728399.923,
+    "expected": 196,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  },
+  "changedOldInputs": [
+    "AGENTS.md",
+    "docs/decisions/0103-uir33-stage-feedback-check.md",
+    "web/e2e/uir33-07-outcome-focus.spec.ts"
+  ],
+  "allRuntime331Exact": true,
+  "localDependencies": 71,
+  "closure": {
+    "files": [
+      "scripts/economy/idle-scenarios.mjs",
+      "src/demo.ts",
+      "src/full/activity.ts",
+      "src/full/adventure.ts",
+      "src/full/ascension.ts",
+      "src/full/configuration.ts",
+      "src/full/content.ts",
+      "src/full/contracts.ts",
+      "src/full/costs.ts",
+      "src/full/economy-ledger.ts",
+      "src/full/engine.ts",
+      "src/full/errors.ts",
+      "src/full/events.ts",
+      "src/full/goals.ts",
+      "src/full/life-record.ts",
+      "src/full/mechanisms.ts",
+      "src/full/milestones.ts",
+      "src/full/preparation.ts",
+      "src/full/progression.ts",
+      "src/full/queries.ts",
+      "src/full/receipts.ts",
+      "src/full/story-context.ts",
+      "src/full/trial-rules.ts",
+      "src/full/types.ts",
+      "src/full/versions.ts",
+      "tests/action-feedback-fixtures.mjs",
+      "tests/full-route.mjs",
+      "web/e2e/art12-narrative-stage.spec.ts",
+      "web/e2e/art15-cultivation-notes.spec.ts",
+      "web/e2e/art26-loadout-stage.spec.ts",
+      "web/e2e/art31-life-scroll.spec.ts",
+      "web/e2e/check-art-02.spec.ts",
+      "web/e2e/check-art03-combinations.spec.ts",
+      "web/e2e/check-u8.spec.ts",
+      "web/e2e/check-uir33-02.spec.ts",
+      "web/e2e/equipment-actors.spec.ts",
+      "web/e2e/game-confirmation-support.ts",
+      "web/e2e/idle-adventure.spec.ts",
+      "web/e2e/idle-cultivation.spec.ts",
+      "web/e2e/idle-milestones.spec.ts",
+      "web/e2e/idle-recovery-ui-support.ts",
+      "web/e2e/idle-review.spec.ts",
+      "web/e2e/idle-route-support.ts",
+      "web/e2e/jade-paint-support.ts",
+      "web/e2e/matrix-ui-milestone-feedback.spec.ts",
+      "web/e2e/png-capture.ts",
+      "web/e2e/stage-check.spec.ts",
+      "web/e2e/stage-r1.spec.ts",
+      "web/e2e/stage-r4.spec.ts",
+      "web/e2e/stage-support.ts",
+      "web/e2e/stage-ta-review.spec.ts",
+      "web/e2e/support.ts",
+      "web/e2e/uir33-05-activity-detail.spec.ts",
+      "web/e2e/uir33-06-life-entry.spec.ts",
+      "web/e2e/ux23-sealed-life.spec.ts",
+      "web/e2e/ux33-activity-status.spec.ts",
+      "web/src/action-timing.ts",
+      "web/src/activity-clock.ts",
+      "web/src/activity-persistence.ts",
+      "web/src/activity-view.ts",
+      "web/src/adventure-view.ts",
+      "web/src/configuration-persistence.ts",
+      "web/src/full-persistence.ts",
+      "web/src/local-events.ts",
+      "web/src/local-experience.ts",
+      "web/src/milestone-view.ts",
+      "web/src/preparation-view.ts",
+      "web/src/presentation.ts",
+      "web/src/session.ts",
+      "web/src/store.ts",
+      "web/src/story-pages.ts"
+    ],
+    "edges": [
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "web/e2e/game-confirmation-support.ts",
+        "specifier": "./game-confirmation-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/game-confirmation-support.ts",
+        "to": "web/src/local-experience.ts",
+        "specifier": "../src/local-experience",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/local-experience.ts",
+        "to": "web/src/local-events.ts",
+        "specifier": "./local-events",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/local-events.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/content.ts",
+        "to": "src/full/mechanisms.ts",
+        "specifier": "./mechanisms.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/content.ts",
+        "to": "src/full/mechanisms.ts",
+        "specifier": "./mechanisms.ts",
+        "line": 3,
+        "kind": "re-export"
+      },
+      {
+        "from": "web/src/local-events.ts",
+        "to": "src/full/events.ts",
+        "specifier": "../../src/full/events.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/events.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/events.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/events.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/types.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/types.ts",
+        "to": "src/full/versions.ts",
+        "specifier": "./versions.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/versions.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/local-events.ts",
+        "to": "src/full/versions.ts",
+        "specifier": "../../src/full/versions.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/local-events.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/ascension.ts",
+        "specifier": "./ascension.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/events.ts",
+        "specifier": "./events.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/life-record.ts",
+        "specifier": "./life-record.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/life-record.ts",
+        "to": "src/full/ascension.ts",
+        "specifier": "./ascension.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/life-record.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/life-record.ts",
+        "to": "src/full/events.ts",
+        "specifier": "./events.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/life-record.ts",
+        "to": "src/full/story-context.ts",
+        "specifier": "./story-context.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/story-context.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/story-context.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/story-context.ts",
+        "to": "src/full/events.ts",
+        "specifier": "./events.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/story-context.ts",
+        "to": "src/full/events.ts",
+        "specifier": "./events.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/life-record.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/story-context.ts",
+        "specifier": "./story-context.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "./engine.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/ascension.ts",
+        "specifier": "./ascension.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/trial-rules.ts",
+        "specifier": "./trial-rules.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/events.ts",
+        "specifier": "./events.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/life-record.ts",
+        "specifier": "./life-record.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/story-context.ts",
+        "specifier": "./story-context.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/costs.ts",
+        "specifier": "./costs.ts",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/costs.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/costs.ts",
+        "to": "src/full/events.ts",
+        "specifier": "./events.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/costs.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/costs.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/contracts.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/contracts.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/contracts.ts",
+        "to": "src/full/versions.ts",
+        "specifier": "./versions.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/costs.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/versions.ts",
+        "specifier": "./versions.ts",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 13,
+        "kind": "re-export"
+      },
+      {
+        "from": "src/full/engine.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 14,
+        "kind": "re-export"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/costs.ts",
+        "specifier": "./costs.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/costs.ts",
+        "specifier": "./costs.ts",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/trial-rules.ts",
+        "specifier": "./trial-rules.ts",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/queries.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 13,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/local-events.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/local-events.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "../../src/full/contracts.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/costs.ts",
+        "specifier": "./costs.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "./engine.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "./receipts.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/receipts.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/receipts.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "./engine.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/receipts.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/receipts.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/receipts.ts",
+        "to": "src/full/versions.ts",
+        "specifier": "./versions.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/receipts.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/receipts.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/goals.ts",
+        "specifier": "./goals.ts",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/goals.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/goals.ts",
+        "to": "src/full/events.ts",
+        "specifier": "./events.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/goals.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "./engine.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/goals.ts",
+        "to": "src/full/costs.ts",
+        "specifier": "./costs.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/goals.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/goals.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "./queries.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/goals.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/preparation.ts",
+        "specifier": "./preparation.ts",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/preparation.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/preparation.ts",
+        "to": "src/full/costs.ts",
+        "specifier": "./costs.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/preparation.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "./engine.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/preparation.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/preparation.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "./receipts.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/preparation.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/preparation.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/preparation.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "./activity.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/preparation.ts",
+        "specifier": "./preparation.ts",
+        "line": 13,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/preparation.ts",
+        "specifier": "./preparation.ts",
+        "line": 14,
+        "kind": "re-export"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/preparation.ts",
+        "specifier": "./preparation.ts",
+        "line": 15,
+        "kind": "re-export"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/adventure.ts",
+        "specifier": "./adventure.ts",
+        "line": 16,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/adventure.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/adventure.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/adventure.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/adventure.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/adventure.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/adventure.ts",
+        "to": "src/full/costs.ts",
+        "specifier": "./costs.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/adventure.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "./engine.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/adventure.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "./receipts.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/adventure.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/adventure.ts",
+        "to": "src/full/trial-rules.ts",
+        "specifier": "./trial-rules.ts",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/adventure.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "./activity.ts",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/adventure.ts",
+        "specifier": "./adventure.ts",
+        "line": 18,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/adventure.ts",
+        "specifier": "./adventure.ts",
+        "line": 19,
+        "kind": "re-export"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/adventure.ts",
+        "specifier": "./adventure.ts",
+        "line": 21,
+        "kind": "re-export"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/milestones.ts",
+        "specifier": "./milestones.ts",
+        "line": 23,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/milestones.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/milestones.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/milestones.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "./activity.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/milestones.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "./engine.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/milestones.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "./receipts.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/milestones.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/milestones.ts",
+        "specifier": "./milestones.ts",
+        "line": 25,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/milestones.ts",
+        "specifier": "./milestones.ts",
+        "line": 26,
+        "kind": "re-export"
+      },
+      {
+        "from": "src/full/activity.ts",
+        "to": "src/full/milestones.ts",
+        "specifier": "./milestones.ts",
+        "line": 29,
+        "kind": "re-export"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "src/full/versions.ts",
+        "specifier": "../../src/full/versions.ts",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "web/src/activity-persistence.ts",
+        "specifier": "../src/activity-persistence",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-persistence.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-persistence.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-persistence.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "../../src/full/errors.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-persistence.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-persistence.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "../../src/full/contracts.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-persistence.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-persistence.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-persistence.ts",
+        "to": "src/full/costs.ts",
+        "specifier": "../../src/full/costs.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-persistence.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "tests/full-route.mjs",
+        "to": "src/full/engine.ts",
+        "specifier": "../src/full/engine.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "tests/full-route.mjs",
+        "to": "src/full/content.ts",
+        "specifier": "../src/full/content.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "tests/action-feedback-fixtures.mjs",
+        "specifier": "../../tests/action-feedback-fixtures.mjs",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "tests/action-feedback-fixtures.mjs",
+        "to": "src/full/engine.ts",
+        "specifier": "../src/full/engine.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "tests/action-feedback-fixtures.mjs",
+        "to": "src/full/queries.ts",
+        "specifier": "../src/full/queries.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "tests/action-feedback-fixtures.mjs",
+        "to": "tests/full-route.mjs",
+        "specifier": "./full-route.mjs",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "web/src/story-pages.ts",
+        "specifier": "../src/story-pages",
+        "line": 13,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/story-pages.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/story-pages.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/story-pages.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "../../src/full/contracts.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/story-pages.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 14,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/support.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art15-cultivation-notes.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art15-cultivation-notes.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art15-cultivation-notes.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art15-cultivation-notes.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-support.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art26-loadout-stage.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art26-loadout-stage.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art26-loadout-stage.spec.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art26-loadout-stage.spec.ts",
+        "to": "web/e2e/idle-recovery-ui-support.ts",
+        "specifier": "./idle-recovery-ui-support",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-recovery-ui-support.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-recovery-ui-support.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-recovery-ui-support.ts",
+        "to": "src/full/adventure.ts",
+        "specifier": "../../src/full/adventure.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-recovery-ui-support.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-recovery-ui-support.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-recovery-ui-support.ts",
+        "to": "web/e2e/idle-route-support.ts",
+        "specifier": "./idle-route-support",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-route-support.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-route-support.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-route-support.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-route-support.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-route-support.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-route-support.ts",
+        "to": "scripts/economy/idle-scenarios.mjs",
+        "specifier": "../../scripts/economy/idle-scenarios.mjs",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "scripts/economy/idle-scenarios.mjs",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "scripts/economy/idle-scenarios.mjs",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "scripts/economy/idle-scenarios.mjs",
+        "to": "src/full/economy-ledger.ts",
+        "specifier": "../../src/full/economy-ledger.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/economy-ledger.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "./engine.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/economy-ledger.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/economy-ledger.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "./receipts.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/economy-ledger.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/economy-ledger.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "scripts/economy/idle-scenarios.mjs",
+        "to": "src/full/progression.ts",
+        "specifier": "../../src/full/progression.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/content.ts",
+        "specifier": "./content.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "./activity.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "./activity.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/configuration.ts",
+        "specifier": "./configuration.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/configuration.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/configuration.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/configuration.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "./engine.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/configuration.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/configuration.ts",
+        "specifier": "./configuration.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/economy-ledger.ts",
+        "specifier": "./economy-ledger.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/economy-ledger.ts",
+        "specifier": "./economy-ledger.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "./engine.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "./contracts.ts",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "./errors.ts",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "src/full/progression.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./types.ts",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "scripts/economy/idle-scenarios.mjs",
+        "to": "src/full/adventure.ts",
+        "specifier": "../../src/full/adventure.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-route-support.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-route-support.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art26-loadout-stage.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "to": "tests/action-feedback-fixtures.mjs",
+        "specifier": "../../tests/action-feedback-fixtures.mjs",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "to": "web/src/story-pages.ts",
+        "specifier": "../src/story-pages",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "to": "web/src/activity-persistence.ts",
+        "specifier": "../src/activity-persistence",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "to": "web/e2e/game-confirmation-support.ts",
+        "specifier": "./game-confirmation-support",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "to": "web/e2e/idle-recovery-ui-support.ts",
+        "specifier": "./idle-recovery-ui-support",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art-02.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art-02.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art-02.spec.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art-02.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art-02.spec.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art-02.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art-02.spec.ts",
+        "to": "web/src/story-pages.ts",
+        "specifier": "../src/story-pages",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art-02.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art-02.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "web/e2e/game-confirmation-support.ts",
+        "specifier": "./game-confirmation-support",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts.ts",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "src/full/versions.ts",
+        "specifier": "../../src/full/versions.ts",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "web/src/activity-persistence.ts",
+        "specifier": "../src/activity-persistence",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 13,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 14,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-u8.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-u8.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-u8.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-u8.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-u8.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-u8.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-u8.spec.ts",
+        "to": "web/src/activity-view.ts",
+        "specifier": "../src/activity-view",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-view.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-view.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "../../src/full/contracts.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-view.ts",
+        "to": "web/src/preparation-view.ts",
+        "specifier": "./preparation-view",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/preparation-view.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/preparation-view.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/preparation-view.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-view.ts",
+        "to": "web/src/adventure-view.ts",
+        "specifier": "./adventure-view",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/adventure-view.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/adventure-view.ts",
+        "to": "src/full/adventure.ts",
+        "specifier": "../../src/full/adventure.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/adventure-view.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-view.ts",
+        "to": "web/src/milestone-view.ts",
+        "specifier": "./milestone-view",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/milestone-view.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/milestone-view.ts",
+        "to": "src/full/milestones.ts",
+        "specifier": "../../src/full/milestones.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/milestone-view.ts",
+        "to": "src/full/milestones.ts",
+        "specifier": "../../src/full/milestones.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/milestone-view.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/milestone-view.ts",
+        "to": "src/full/ascension.ts",
+        "specifier": "../../src/full/ascension.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/milestone-view.ts",
+        "to": "src/full/trial-rules.ts",
+        "specifier": "../../src/full/trial-rules.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/milestone-view.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/milestone-view.ts",
+        "to": "web/src/store.ts",
+        "specifier": "./store",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "src/full/configuration.ts",
+        "specifier": "../../src/full/configuration.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "../../src/full/contracts.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "web/src/full-persistence.ts",
+        "specifier": "./full-persistence",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "../../src/full/errors.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "src/full/versions.ts",
+        "specifier": "../../src/full/versions.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "../../src/full/contracts.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "web/src/activity-persistence.ts",
+        "specifier": "./activity-persistence",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "src/full/configuration.ts",
+        "specifier": "../../src/full/configuration.ts",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "web/src/configuration-persistence.ts",
+        "specifier": "./configuration-persistence",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/configuration-persistence.ts",
+        "to": "src/full/configuration.ts",
+        "specifier": "../../src/full/configuration.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/configuration-persistence.ts",
+        "to": "src/full/configuration.ts",
+        "specifier": "../../src/full/configuration.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/configuration-persistence.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/configuration-persistence.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/configuration-persistence.ts",
+        "to": "src/full/errors.ts",
+        "specifier": "../../src/full/errors.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/configuration-persistence.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "../../src/full/contracts.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/configuration-persistence.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/full-persistence.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 13,
+        "kind": "re-export"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "web/src/full-persistence.ts",
+        "specifier": "./full-persistence",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "web/src/local-events.ts",
+        "specifier": "./local-events",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "web/src/session.ts",
+        "specifier": "./session",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/session.ts",
+        "to": "web/src/full-persistence.ts",
+        "specifier": "./full-persistence",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/session.ts",
+        "to": "web/src/local-experience.ts",
+        "specifier": "./local-experience",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/session.ts",
+        "to": "src/demo.ts",
+        "specifier": "../../src/demo.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/demo.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "./full/engine.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "src/demo.ts",
+        "to": "src/full/versions.ts",
+        "specifier": "./full/versions.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "src/demo.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "./full/receipts.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "src/demo.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "./full/queries.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "src/demo.ts",
+        "to": "src/full/types.ts",
+        "specifier": "./full/types.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "web/src/action-timing.ts",
+        "specifier": "./action-timing",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/action-timing.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/action-timing.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "web/src/activity-clock.ts",
+        "specifier": "./activity-clock",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 13,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "src/full/milestones.ts",
+        "specifier": "../../src/full/milestones.ts",
+        "line": 14,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "src/full/milestones.ts",
+        "specifier": "../../src/full/milestones.ts",
+        "line": 15,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts.ts",
+        "line": 16,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/milestone-view.ts",
+        "to": "web/src/presentation.ts",
+        "specifier": "./presentation",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/presentation.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/presentation.ts",
+        "to": "web/src/local-events.ts",
+        "specifier": "./local-events.ts",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/presentation.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/presentation.ts",
+        "to": "src/full/contracts.ts",
+        "specifier": "../../src/full/contracts.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/presentation.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/milestone-view.ts",
+        "to": "web/src/story-pages.ts",
+        "specifier": "./story-pages",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-view.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/activity-view.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-u8.spec.ts",
+        "to": "web/src/presentation.ts",
+        "specifier": "../src/presentation",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-uir33-02.spec.ts",
+        "to": "tests/action-feedback-fixtures.mjs",
+        "specifier": "../../tests/action-feedback-fixtures.mjs",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-uir33-02.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-uir33-02.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-uir33-02.spec.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-uir33-02.spec.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-uir33-02.spec.ts",
+        "to": "web/src/activity-persistence.ts",
+        "specifier": "../src/activity-persistence",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-uir33-02.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-uir33-02.spec.ts",
+        "to": "web/e2e/idle-recovery-ui-support.ts",
+        "specifier": "./idle-recovery-ui-support",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-uir33-02.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-uir33-02.spec.ts",
+        "to": "web/e2e/png-capture.ts",
+        "specifier": "./png-capture",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "web/e2e/jade-paint-support.ts",
+        "specifier": "./jade-paint-support",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "web/e2e/game-confirmation-support.ts",
+        "specifier": "./game-confirmation-support",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts.ts",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "web/src/activity-persistence.ts",
+        "specifier": "../src/activity-persistence",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "web/src/configuration-persistence.ts",
+        "specifier": "../src/configuration-persistence",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 13,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 14,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 15,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-adventure.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-adventure.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-adventure.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-cultivation.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-cultivation.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-cultivation.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-cultivation.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-cultivation.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-milestones.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-milestones.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-milestones.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-milestones.spec.ts",
+        "to": "src/full/costs.ts",
+        "specifier": "../../src/full/costs.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-milestones.spec.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-milestones.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-review.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-review.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-review.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-review.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-review.spec.ts",
+        "to": "web/src/presentation.ts",
+        "specifier": "../src/presentation",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-review.spec.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-review.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/matrix-ui-milestone-feedback.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/matrix-ui-milestone-feedback.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/matrix-ui-milestone-feedback.spec.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/matrix-ui-milestone-feedback.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/matrix-ui-milestone-feedback.spec.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/matrix-ui-milestone-feedback.spec.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/matrix-ui-milestone-feedback.spec.ts",
+        "to": "web/src/story-pages.ts",
+        "specifier": "../src/story-pages",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/matrix-ui-milestone-feedback.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-check.spec.ts",
+        "to": "web/e2e/game-confirmation-support.ts",
+        "specifier": "./game-confirmation-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-check.spec.ts",
+        "to": "web/e2e/idle-recovery-ui-support.ts",
+        "specifier": "./idle-recovery-ui-support",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-check.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-check.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-check.spec.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-check.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-check.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r1.spec.ts",
+        "to": "web/e2e/game-confirmation-support.ts",
+        "specifier": "./game-confirmation-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r1.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r1.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r1.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r1.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r1.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "web/e2e/game-confirmation-support.ts",
+        "specifier": "./game-confirmation-support",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "tests/action-feedback-fixtures.mjs",
+        "specifier": "../../tests/action-feedback-fixtures.mjs",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "web/src/story-pages.ts",
+        "specifier": "../src/story-pages",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries.ts",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 13,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "to": "src/full/types.ts",
+        "specifier": "../../src/full/types.ts",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content.ts",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine.ts",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity.ts",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts.ts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "to": "web/src/activity-persistence.ts",
+        "specifier": "../src/activity-persistence",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "to": "web/src/configuration-persistence.ts",
+        "specifier": "../src/configuration-persistence",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "src/full/content.ts",
+        "specifier": "../../src/full/content",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "src/full/adventure.ts",
+        "specifier": "../../src/full/adventure",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "web/src/activity-persistence.ts",
+        "specifier": "../src/activity-persistence",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "web/e2e/idle-recovery-ui-support.ts",
+        "specifier": "./idle-recovery-ui-support",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "web/e2e/idle-route-support.ts",
+        "specifier": "./idle-route-support",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "to": "web/e2e/png-capture.ts",
+        "specifier": "./png-capture",
+        "line": 13,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "tests/action-feedback-fixtures.mjs",
+        "specifier": "../../tests/action-feedback-fixtures.mjs",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "src/full/activity.ts",
+        "specifier": "../../src/full/activity",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "src/full/receipts.ts",
+        "specifier": "../../src/full/receipts",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "web/src/activity-persistence.ts",
+        "specifier": "../src/activity-persistence",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "web/src/story-pages.ts",
+        "specifier": "../src/story-pages",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 10,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "web/e2e/idle-recovery-ui-support.ts",
+        "specifier": "./idle-recovery-ui-support",
+        "line": 11,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "web/e2e/game-confirmation-support.ts",
+        "specifier": "./game-confirmation-support",
+        "line": 12,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "to": "web/e2e/png-capture.ts",
+        "specifier": "./png-capture",
+        "line": 13,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux23-sealed-life.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux23-sealed-life.spec.ts",
+        "to": "src/full/queries.ts",
+        "specifier": "../../src/full/queries",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux23-sealed-life.spec.ts",
+        "to": "tests/action-feedback-fixtures.mjs",
+        "specifier": "../../tests/action-feedback-fixtures.mjs",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux23-sealed-life.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux23-sealed-life.spec.ts",
+        "to": "web/src/story-pages.ts",
+        "specifier": "../src/story-pages",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux23-sealed-life.spec.ts",
+        "to": "web/e2e/idle-recovery-ui-support.ts",
+        "specifier": "./idle-recovery-ui-support",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux23-sealed-life.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 8,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux23-sealed-life.spec.ts",
+        "to": "web/e2e/game-confirmation-support.ts",
+        "specifier": "./game-confirmation-support",
+        "line": 9,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux33-activity-status.spec.ts",
+        "to": "tests/full-route.mjs",
+        "specifier": "../../tests/full-route.mjs",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux33-activity-status.spec.ts",
+        "to": "src/full/engine.ts",
+        "specifier": "../../src/full/engine",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux33-activity-status.spec.ts",
+        "to": "src/full/costs.ts",
+        "specifier": "../../src/full/costs",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux33-activity-status.spec.ts",
+        "to": "web/e2e/idle-recovery-ui-support.ts",
+        "specifier": "./idle-recovery-ui-support",
+        "line": 5,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux33-activity-status.spec.ts",
+        "to": "web/e2e/support.ts",
+        "specifier": "./support",
+        "line": 6,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux33-activity-status.spec.ts",
+        "to": "web/e2e/stage-support.ts",
+        "specifier": "./stage-support",
+        "line": 7,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux33-activity-status.spec.ts",
+        "to": "web/e2e/png-capture.ts",
+        "specifier": "./png-capture",
+        "line": 8,
+        "kind": "import"
+      }
+    ],
+    "externals": [
+      {
+        "from": "web/e2e/game-confirmation-support.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art12-narrative-stage.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/support.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art15-cultivation-notes.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-support.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art26-loadout-stage.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art26-loadout-stage.spec.ts",
+        "specifier": "node:fs",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-recovery-ui-support.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-route-support.ts",
+        "specifier": "@playwright/test",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/art31-life-scroll.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art-02.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-art03-combinations.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-u8.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/milestone-view.ts",
+        "specifier": "vue",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "specifier": "pinia",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/store.ts",
+        "specifier": "vue",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/src/session.ts",
+        "specifier": "vue",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/check-uir33-02.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/png-capture.ts",
+        "specifier": "node:fs/promises",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/png-capture.ts",
+        "specifier": "@playwright/test",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/jade-paint-support.ts",
+        "specifier": "node:fs",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/jade-paint-support.ts",
+        "specifier": "@playwright/test",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/equipment-actors.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-adventure.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-cultivation.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-milestones.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-milestones.spec.ts",
+        "specifier": "node:crypto",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/idle-review.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/matrix-ui-milestone-feedback.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-check.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r1.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 4,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-r4.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 3,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/stage-ta-review.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 2,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-05-activity-detail.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/uir33-06-life-entry.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux23-sealed-life.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      },
+      {
+        "from": "web/e2e/ux33-activity-status.spec.ts",
+        "specifier": "@playwright/test",
+        "line": 1,
+        "kind": "import"
+      }
+    ],
+    "nonLiteral": []
+  },
+  "checks": [
+    {
+      "path": "scripts/economy/idle-scenarios.mjs",
+      "sha256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407"
+    },
+    {
+      "path": "src/demo.ts",
+      "sha256": "927e40ac1d792afd0e2f28c2cf7bdd55509af07713ef3db116a7a5019ac9307e"
+    },
+    {
+      "path": "src/full/activity.ts",
+      "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815"
+    },
+    {
+      "path": "src/full/adventure.ts",
+      "sha256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015"
+    },
+    {
+      "path": "src/full/ascension.ts",
+      "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a"
+    },
+    {
+      "path": "src/full/configuration.ts",
+      "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520"
+    },
+    {
+      "path": "src/full/content.ts",
+      "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c"
+    },
+    {
+      "path": "src/full/contracts.ts",
+      "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa"
+    },
+    {
+      "path": "src/full/costs.ts",
+      "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb"
+    },
+    {
+      "path": "src/full/economy-ledger.ts",
+      "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0"
+    },
+    {
+      "path": "src/full/engine.ts",
+      "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+    },
+    {
+      "path": "src/full/errors.ts",
+      "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4"
+    },
+    {
+      "path": "src/full/events.ts",
+      "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d"
+    },
+    {
+      "path": "src/full/goals.ts",
+      "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883"
+    },
+    {
+      "path": "src/full/life-record.ts",
+      "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7"
+    },
+    {
+      "path": "src/full/mechanisms.ts",
+      "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221"
+    },
+    {
+      "path": "src/full/milestones.ts",
+      "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492"
+    },
+    {
+      "path": "src/full/preparation.ts",
+      "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a"
+    },
+    {
+      "path": "src/full/progression.ts",
+      "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406"
+    },
+    {
+      "path": "src/full/queries.ts",
+      "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48"
+    },
+    {
+      "path": "src/full/receipts.ts",
+      "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae"
+    },
+    {
+      "path": "src/full/story-context.ts",
+      "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950"
+    },
+    {
+      "path": "src/full/trial-rules.ts",
+      "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53"
+    },
+    {
+      "path": "src/full/types.ts",
+      "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064"
+    },
+    {
+      "path": "src/full/versions.ts",
+      "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64"
+    },
+    {
+      "path": "tests/action-feedback-fixtures.mjs",
+      "sha256": "caae2948278f71852bab474874b32d3a7b6e2bd4b0a3b70bbc346337b6dc0f34"
+    },
+    {
+      "path": "tests/full-route.mjs",
+      "sha256": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321"
+    },
+    {
+      "path": "web/e2e/art12-narrative-stage.spec.ts",
+      "sha256": "eb8f251b61197269bc658c0460e7f526a63d4230554ca4f6188b223562bd5567"
+    },
+    {
+      "path": "web/e2e/art15-cultivation-notes.spec.ts",
+      "sha256": "a0c997dcc48390342419945ded9fb94327158afc03bd8b89de9772ae08917ed1"
+    },
+    {
+      "path": "web/e2e/art26-loadout-stage.spec.ts",
+      "sha256": "c92539600d058e282cecf451465d772d62ed89a0f377407aeb88e2900d18f3cb"
+    },
+    {
+      "path": "web/e2e/art31-life-scroll.spec.ts",
+      "sha256": "1f853ef60e3c6a3458550d0f9ae6233849878994b81bffe196e75b4c04f5689c"
+    },
+    {
+      "path": "web/e2e/check-art-02.spec.ts",
+      "sha256": "591593beb39c33344caf0eab737f13957c2fa5d447346a678a97c7b6974a2345"
+    },
+    {
+      "path": "web/e2e/check-art03-combinations.spec.ts",
+      "sha256": "388be738470026a2c665576d87ec9c1a6c8b158af406489094de04f5f42d2407"
+    },
+    {
+      "path": "web/e2e/check-u8.spec.ts",
+      "sha256": "d9cd9042555e33006965dba5f7400222b25a436a36a5782f313d46ae27b8c8e1"
+    },
+    {
+      "path": "web/e2e/check-uir33-02.spec.ts",
+      "sha256": "baa4788df7addabdac2be7e0b95073d73375a09a2fe610cff016e2fbfa550b35"
+    },
+    {
+      "path": "web/e2e/equipment-actors.spec.ts",
+      "sha256": "f56474af7144f9c5f58ab39381527c938e8417897f894fb9251cfcf03f0933b9"
+    },
+    {
+      "path": "web/e2e/game-confirmation-support.ts",
+      "sha256": "be4bbdeaebab740befaf52e37582098c6d9d87030c71d2cabbb756238017f3fd"
+    },
+    {
+      "path": "web/e2e/idle-adventure.spec.ts",
+      "sha256": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7"
+    },
+    {
+      "path": "web/e2e/idle-cultivation.spec.ts",
+      "sha256": "18384ff998451f8760805e5f8bd5f3f8b427e0052e68332bda580e8d9005c4ba"
+    },
+    {
+      "path": "web/e2e/idle-milestones.spec.ts",
+      "sha256": "23685e2cd8979b72962ab5523845868a8f69c643ca783b5ef65dc61138c1ef8b"
+    },
+    {
+      "path": "web/e2e/idle-recovery-ui-support.ts",
+      "sha256": "2b2e9df03cf97cf582a03eb23d2bc2d3eb078a4cffc9c953f54972c047c6d04f"
+    },
+    {
+      "path": "web/e2e/idle-review.spec.ts",
+      "sha256": "efbcd11776c6b24552cf0694adbf621d6308550a1f2c1da875d46d99cf947a72"
+    },
+    {
+      "path": "web/e2e/idle-route-support.ts",
+      "sha256": "5113456696aac00759ec7d007a52e0493e8545a39f2d6a14f0de2ce79106615d"
+    },
+    {
+      "path": "web/e2e/jade-paint-support.ts",
+      "sha256": "eff5e085fe03f2e2e292750c2e5367516dd4ab60a30f382f3a4e4fa5533fa94f"
+    },
+    {
+      "path": "web/e2e/matrix-ui-milestone-feedback.spec.ts",
+      "sha256": "f4913febf721a947974bd84873d6a205042956871425c0f7c1059bd466f23307"
+    },
+    {
+      "path": "web/e2e/png-capture.ts",
+      "sha256": "f50dc121db18150b8c4c4b48cc0fefc897b4d1e4edffc662c119c1c366cad85b"
+    },
+    {
+      "path": "web/e2e/stage-check.spec.ts",
+      "sha256": "fa4dddaea3bbf257a25b757695545c123f9db85e580255126d640c240904ea2e"
+    },
+    {
+      "path": "web/e2e/stage-r1.spec.ts",
+      "sha256": "8e656081aa27886456f2f186a3438dba1915b0eba87e5f1ad24cc0ea757753c4"
+    },
+    {
+      "path": "web/e2e/stage-r4.spec.ts",
+      "sha256": "1b712a374998d2a320328809bf4b8a791c000860c1bbaba75537aef60fb5acff"
+    },
+    {
+      "path": "web/e2e/stage-support.ts",
+      "sha256": "f31385408a68974e51b39ba5bdf08d76ece145ecd4a540c200419ffc6e5a6bb1"
+    },
+    {
+      "path": "web/e2e/stage-ta-review.spec.ts",
+      "sha256": "e13acce0502744e89dc6ea4463aa7e26083f53548507a4a11c7daed40f74eab5"
+    },
+    {
+      "path": "web/e2e/support.ts",
+      "sha256": "674387c658ed43bf56ceedb80b3df3baf63243e77ece9eeed87ec7e9396f8682"
+    },
+    {
+      "path": "web/e2e/uir33-05-activity-detail.spec.ts",
+      "sha256": "67be5f7817c0aa63160b99b68fc21cd9ebdbf44f604630b2eb8c5709b061acda"
+    },
+    {
+      "path": "web/e2e/uir33-06-life-entry.spec.ts",
+      "sha256": "5ea5e814ef7b21c5eacefa483deb495e6be14d1a5c8713c2e03fc85769a248e9"
+    },
+    {
+      "path": "web/e2e/ux23-sealed-life.spec.ts",
+      "sha256": "08a4944810f0ec7687e3b7072dadd9a92c43866cfec469ba4169abf9109ad67a"
+    },
+    {
+      "path": "web/e2e/ux33-activity-status.spec.ts",
+      "sha256": "060c65130fccd2c72d22c6238919df3e2ccfc259385f9f4b7ec6167010f23245"
+    },
+    {
+      "path": "web/src/action-timing.ts",
+      "sha256": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897"
+    },
+    {
+      "path": "web/src/activity-clock.ts",
+      "sha256": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901"
+    },
+    {
+      "path": "web/src/activity-persistence.ts",
+      "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf"
+    },
+    {
+      "path": "web/src/activity-view.ts",
+      "sha256": "020a7580936a2019a78e766cb3c1c3863666c48fe4e3707a6b60b8abd74cd5a3"
+    },
+    {
+      "path": "web/src/adventure-view.ts",
+      "sha256": "3362f2731f7597a99810c263af143eff6468d87c2dc4f89f185c0add4a46d354"
+    },
+    {
+      "path": "web/src/configuration-persistence.ts",
+      "sha256": "a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00"
+    },
+    {
+      "path": "web/src/full-persistence.ts",
+      "sha256": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21"
+    },
+    {
+      "path": "web/src/local-events.ts",
+      "sha256": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150"
+    },
+    {
+      "path": "web/src/local-experience.ts",
+      "sha256": "65614c37cd5931b275208f78aa9bf06f40768ff402a908fb2d2cf28d16e3b9ed"
+    },
+    {
+      "path": "web/src/milestone-view.ts",
+      "sha256": "af1a2045781e806806140092349b2ecde690524436b254a0c1f326a94e108efd"
+    },
+    {
+      "path": "web/src/preparation-view.ts",
+      "sha256": "d46825242a9912510bbec9d726e2bef22f5621e5d84717c0cbd3be70916aa38f"
+    },
+    {
+      "path": "web/src/presentation.ts",
+      "sha256": "afb0da3d1dbbb9c58095a1ef97bb04e1411c088c06ba2941685704bbc717eca0"
+    },
+    {
+      "path": "web/src/session.ts",
+      "sha256": "76c6968b53c1ca990c4ee4ac4a921e549585338c04b10e31636ed9821f5263c0"
+    },
+    {
+      "path": "web/src/store.ts",
+      "sha256": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7"
+    },
+    {
+      "path": "web/src/story-pages.ts",
+      "sha256": "cdeff2da61fc28199b529c3394c3e881570eb0fe0bcee69770af871e8a104c9c"
+    }
+  ],
+  "scope": "195 unchanged consumers only; all four cases in changed file need fresh complete run; original196/3 preserved"
+}

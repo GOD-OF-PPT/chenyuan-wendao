@@ -1,0 +1,22 @@
+{
+  "archive": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-02/check-uir33-02-preview-d6b4577.zip",
+  "archiveSha256": "dc5514418631242918eecd1c893efbc28831d56466309bcb5787f2c5ab0fc06d",
+  "archiveBytes": 10126690,
+  "unpacked": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-02/preview-unpacked-d6b4577",
+  "runtime": "aaabcb43108c1e3bdf57a670b5406f8a85f620389a1d313739448fa6136fbe34",
+  "buildSource": {
+    "head": "d6b4577cf2bff4a4cb2568f377e10ea1da7177e8",
+    "source": "d6b4577cf2bff4a4cb2568f377e10ea1da7177e8",
+    "tree": "8d17d4035fdbc2f58ff7da1cf6610a99e8cf7102",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtimeFiles": 112,
+  "runtimeBytes": 11219112,
+  "allArchiveAndExtractedBytesMatch": true,
+  "containsPlayerSave": false,
+  "containsFonts": false,
+  "scope": "Independent local engineering preview, not final candidate or human acceptance."
+}
