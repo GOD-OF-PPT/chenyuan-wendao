@@ -1,0 +1,32 @@
+[
+  {
+    "phase": "cend04-lifespan",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-lifespan-results/cend04-lifespan-probe-CEND-513f8-r-an-added-full-matrix-case-chromium/last-month-character-details.png",
+    "originalSHA256": "e5db4b77861ff435cec1056422c0773040e77aea41592f5947cae1aff0a47f16",
+    "view": "goal-4/evidence/cend04/views/last-month-last-month-character-details.png.jpg",
+    "viewSHA256": "12f2befbabf5080c2d4436ceb8cc24214a0d3559ccff414df5dbc1a8902cd52d",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-lifespan",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-lifespan-results/cend04-lifespan-probe-CEND-513f8-r-an-added-full-matrix-case-chromium/last-month-main-stage.png",
+    "originalSHA256": "11526cf5bc29f4b9a7b046c1a79eb89f527c8e7a25d8f576188dacacd35813d7",
+    "view": "goal-4/evidence/cend04/views/last-month-last-month-main-stage.png.jpg",
+    "viewSHA256": "00037ab3cb60f638893187f3e19f91ed3a1355d4cc2202cf3ca01c993abdca18",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-lifespan",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-lifespan-results/cend04-lifespan-probe-CEND-513f8-r-an-added-full-matrix-case-chromium/last-month-goal-details.png",
+    "originalSHA256": "f85a68c25b6cbb4f9d13c7b4fb902f9464d02b67878cef6bb5b0a6ce1838f209",
+    "view": "goal-4/evidence/cend04/views/last-month-last-month-goal-details.png.jpg",
+    "viewSHA256": "a60f9f0d211be3bdbe96f8dcf3d11a81790b53d1f1bc5e1d705da64f55760414",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  }
+]

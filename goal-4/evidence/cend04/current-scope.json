@@ -1,0 +1,758 @@
+{
+  "source": "1227d073d234bfdee1add644e3f24f5ae7b0f964",
+  "rootBaseline": "7df9524",
+  "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8",
+  "uniqueExistingUI": 52,
+  "fourCompleteFiles": 42,
+  "ART37ordinarySubset": 10,
+  "ART37Unrun": [
+    "ART37 system reduced effects keep static dialog text and focus",
+    "ART37 saved reduced effects keep static dialog text and focus"
+  ],
+  "allWithinCurrent900Declarations": true,
+  "newDeclarations": 0,
+  "humanAcceptance": false,
+  "full1347MatrixExecuted": false,
+  "terminals": [
+    {
+      "phase": "cend04-stage",
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 4217,
+      "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8",
+      "stats": {
+        "startTime": "2026-11-05T05:10:33.617Z",
+        "duration": 32002.357,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 6,
+      "retried": [],
+      "reportSha256": "d4ed718cd76baabe0287dc3bdbaf478bfb04d6f031df2eea2c61d6c1ad9a0f51"
+    },
+    {
+      "phase": "cend04-decisions",
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 4217,
+      "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8",
+      "stats": {
+        "startTime": "2026-11-05T05:11:14.391Z",
+        "duration": 72984.969,
+        "expected": 27,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 27,
+      "retried": [],
+      "reportSha256": "fbab509e681abd3af940011c213e9a0e419b59cc09af4ad407eba403a8a87c59"
+    },
+    {
+      "phase": "cend04-dialogs",
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 4217,
+      "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8",
+      "stats": {
+        "startTime": "2026-11-05T05:12:39.980Z",
+        "duration": 43570.547,
+        "expected": 10,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 10,
+      "retried": [],
+      "reportSha256": "20f7f2eb38b781a59924915f6dc3713280c839c2b09832654958679faebc7fcb"
+    },
+    {
+      "phase": "cend04-states",
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 4217,
+      "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8",
+      "stats": {
+        "startTime": "2026-11-05T05:13:33.896Z",
+        "duration": 33248.638999999996,
+        "expected": 9,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 9,
+      "retried": [],
+      "reportSha256": "d82281b1983d5dbf6d9fb6b432014e7c916308038e785fd6bf0bb8f1090b78a3"
+    }
+  ],
+  "cases": [
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly CHOOSE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly TRAVEL exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly CULTIVATE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly SOURCE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly BUY exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly SELL exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly CRAFT exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly USE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly REST exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly BREAKTHROUGH exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly SCHOOL exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly STUDY exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly LEARN exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly EQUIP exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly FORGE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly EQUIP_RELIC exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly ENCOUNTER exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly BATTLE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly EVENT exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly DECIDE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly START_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly ANSWER_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly END exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly RETIRE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly END_LIFE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 extra foreign rest preserves Game and records the actual travel preparation and disclosed time",
+      "project": "chromium"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 extra real prepared trial checkpoint exposes both current preparation and explicit restoration without changing the saved state",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 expanded settings and destructive press are readable, distinct and readonly",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 a long literal selected filename wraps completely and cancelling import retains every store",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 expanded target production and its full limits keep both return actions reachable without opening the furnace",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 study complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 alchemy complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 relic complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 market complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 inventory complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 wilderness complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 commission complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 EQUIP saved seal follows its visible object and clears across life and exact receipt reading",
+      "project": "chromium"
+    },
+    {
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 EQUIP_RELIC saved seal follows its visible object and clears across life and exact receipt reading",
+      "project": "chromium"
+    },
+    {
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 failed original cultivation keeps the real error and retry across life details without a screen-wide decorative frame",
+      "project": "chromium"
+    },
+    {
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 a saved breakthrough has one unchanged stop reason and full life and original milestone result",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A1 the running cultivation stage replaces new-plan controls with real pause and original-budget keyboard continuation",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A2 assisted identity actual spending and finite limits survive readonly plan inspection refresh and explicit takeover",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A3 a failed cycle exposes the canonical retry while viewing the next draft cannot replace the accepted command",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A4 the stage pause during a held atomic save settles only that cycle without starting another",
+      "project": "chromium"
+    },
+    {
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A5 another cave activity keeps its real name controls and authorization instead of a disabled cultivation draft",
+      "project": "chromium"
+    }
+  ],
+  "references": {
+    "cend04-stage-terminal.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-stage-terminal.json",
+      "bytes": 508,
+      "sha256": "9d0951f017c4d3968a2fd3d4b58b1d507dc8cc4fdf87fa9a35ed3fce2d75de8f"
+    },
+    "cend04-stage-before.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-stage-before.json",
+      "bytes": 539692,
+      "sha256": "956752aeb51a03317ac1806bf786415b66d968dd054ebffe8197a72368e69c2b"
+    },
+    "cend04-stage-after.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-stage-after.json",
+      "bytes": 539691,
+      "sha256": "9abc214f59b7fb488e4c811b7b04eca0ff8ac4ba275fb015e64eb3052f054a60"
+    },
+    "cend04-stage-report.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-stage-report.json",
+      "bytes": 11869,
+      "sha256": "d4ed718cd76baabe0287dc3bdbaf478bfb04d6f031df2eea2c61d6c1ad9a0f51"
+    },
+    "cend04-stage-declared.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-stage-declared.json",
+      "bytes": 6367,
+      "sha256": "f6174c7c8de56fca8348463e246348fd19434e1f8b61a7eea6c533d5ed300ba5"
+    },
+    "cend04-stage-http.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-stage-http.json",
+      "bytes": 36917,
+      "sha256": "50930ae667cfbc226a84b011f8a6414a9427438acd0679327d649a6a9ccad59a"
+    },
+    "cend04-stage-input-paths.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-stage-input-paths.json",
+      "bytes": 209200,
+      "sha256": "51d0562d41bc320296de4a912270c6a33f2a287a22ec4808987bda2ec8124659"
+    },
+    "cend04-stage-plan.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-stage-plan.json",
+      "bytes": 1452,
+      "sha256": "b1dd80802b725eb31220273c73bf0dfa9f0684a4b63dc0b01fd4005ff6b46184"
+    },
+    "cend04-stage.config.ts": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-stage.config.ts",
+      "bytes": 354,
+      "sha256": "46c5abe394236a16ee23d0450e31ddabee4a293d0c23fc4341eeeb355fa1e4d9"
+    },
+    "cend04-stage.log": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-stage.log",
+      "bytes": 1688,
+      "sha256": "3c1ec190f41411921153ff8263d3148d005ccc39344d324323ac35cfcabb62ed"
+    },
+    "cend04-stage-runner.log": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-stage-runner.log",
+      "bytes": 1275,
+      "sha256": "a0d7234a8bde8c4d273f6c389e287a76140f75cc707bbc67bf5b8e79f3ebd10e"
+    },
+    "cend04-decisions-terminal.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-decisions-terminal.json",
+      "bytes": 510,
+      "sha256": "4de155a2c965800223691c7d3f79af4ad0dec7096b933dbcbec50d9764b4b59b"
+    },
+    "cend04-decisions-before.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-decisions-before.json",
+      "bytes": 539712,
+      "sha256": "ea88d97480f9f6e6f25332ddb2806495712fd867e35718d0e502ed12a5719269"
+    },
+    "cend04-decisions-after.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-decisions-after.json",
+      "bytes": 539711,
+      "sha256": "a9fb447faa4d1ef674bc4cd59f7773f385139166bd8771d1ddc247fd5951b48a"
+    },
+    "cend04-decisions-report.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-decisions-report.json",
+      "bytes": 107571,
+      "sha256": "fbab509e681abd3af940011c213e9a0e419b59cc09af4ad407eba403a8a87c59"
+    },
+    "cend04-decisions-declared.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-decisions-declared.json",
+      "bytes": 20660,
+      "sha256": "0c66eb915ea0fd3e67320149e0086f6a7c8901ef8eef65ff844af3c697b1ea52"
+    },
+    "cend04-decisions-http.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-decisions-http.json",
+      "bytes": 36917,
+      "sha256": "070c3f6d3ae8c53431f6f8436c46c468341d9c36be67fba878b6f24f2f38fa8d"
+    },
+    "cend04-decisions-input-paths.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-decisions-input-paths.json",
+      "bytes": 209216,
+      "sha256": "48f47f13c3f08c65a0fef1167eeefa486dddc403cc23bb310d99f9ba2bb917c2"
+    },
+    "cend04-decisions-plan.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-decisions-plan.json",
+      "bytes": 6209,
+      "sha256": "1379ef51d9c8793501225d07f56bd495478543425d1da7a5fdff01cb86107eb4"
+    },
+    "cend04-decisions.config.ts": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-decisions.config.ts",
+      "bytes": 380,
+      "sha256": "9575a87c8df414bdc77fee0db33d035ff95bef1bfee31166804302d3bf24a477"
+    },
+    "cend04-decisions.log": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-decisions.log",
+      "bytes": 5845,
+      "sha256": "e9c8c1e450baadcfac96b10e94aa10eceb2af1eba320d6ead5244f9a598c1c16"
+    },
+    "cend04-decisions-runner.log": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-decisions-runner.log",
+      "bytes": 1294,
+      "sha256": "5aae13df908167b30d1e9dc3c5f44a870ebbf4725a34f57aa8878284fe9a2b08"
+    },
+    "cend04-dialogs-terminal.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-dialogs-terminal.json",
+      "bytes": 510,
+      "sha256": "534a15b032b8b83438814ba6d0bafe8f674c73de219321e3ac371c3b0a774175"
+    },
+    "cend04-dialogs-before.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-dialogs-before.json",
+      "bytes": 539702,
+      "sha256": "5031defc8dbad8053e1d98b97056ee284f6df20cd344bec93d48fa96c0239a71"
+    },
+    "cend04-dialogs-after.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-dialogs-after.json",
+      "bytes": 539701,
+      "sha256": "5a540f6df53399bbe23fc1a32366b6c6dc81eff0ffddf882b06a3ac04e6fa184"
+    },
+    "cend04-dialogs-report.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-dialogs-report.json",
+      "bytes": 62998,
+      "sha256": "20f7f2eb38b781a59924915f6dc3713280c839c2b09832654958679faebc7fcb"
+    },
+    "cend04-dialogs-declared.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-dialogs-declared.json",
+      "bytes": 8993,
+      "sha256": "cfa3b21902218b663037d1a56a885f567b68531da74785fe5d30ba0a7b15ea7c"
+    },
+    "cend04-dialogs-http.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-dialogs-http.json",
+      "bytes": 36917,
+      "sha256": "fba0840867dadc9be44830bb9d2c3d6e673383c63de7afce4f39ff2e98536726"
+    },
+    "cend04-dialogs-input-paths.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-dialogs-input-paths.json",
+      "bytes": 209208,
+      "sha256": "1cb9563fc19587c784dc92c507b88b8f799eca2365e5cf9ea98133a4148a93a1"
+    },
+    "cend04-dialogs-plan.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-dialogs-plan.json",
+      "bytes": 2224,
+      "sha256": "1a57cbe2111cb347060ded41c323d5ff64164f2aa3ba6945c7b9d4f1d6c7f977"
+    },
+    "cend04-dialogs.config.ts": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-dialogs.config.ts",
+      "bytes": 412,
+      "sha256": "ad1cd02fd1221e6f686ef51acfcb389b0fd5e25ea0f8e10426f7861be1b04b0c"
+    },
+    "cend04-dialogs.log": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-dialogs.log",
+      "bytes": 2361,
+      "sha256": "044fb2f11f6ec5ad37b9ea39bc92c7765c3c56a526c3e755ac5dee29063e9682"
+    },
+    "cend04-dialogs-runner.log": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-dialogs-runner.log",
+      "bytes": 1286,
+      "sha256": "19021e1c5e31f87c4de0f9bc163b2c31e75dec51cee86df8ad94be2d3149f6d3"
+    },
+    "cend04-states-terminal.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-states-terminal.json",
+      "bytes": 517,
+      "sha256": "a746499c8ed8596d409eba4065c534860fecc7773d71ede54587908a0ec34e54"
+    },
+    "cend04-states-before.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-states-before.json",
+      "bytes": 539697,
+      "sha256": "7ad952158525f95677b5593d644c2f3ed0d0f77b621968586e71a5af444514b9"
+    },
+    "cend04-states-after.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-states-after.json",
+      "bytes": 539696,
+      "sha256": "3d5d4113d0a5e441be41e79b054a97cc81e66a4746dbc4e527600215f34ed25d"
+    },
+    "cend04-states-report.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-states-report.json",
+      "bytes": 151271,
+      "sha256": "d82281b1983d5dbf6d9fb6b432014e7c916308038e785fd6bf0bb8f1090b78a3"
+    },
+    "cend04-states-declared.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-states-declared.json",
+      "bytes": 8820,
+      "sha256": "2410f8ea57cd5b2ae6db45cd6fddaf56d1968f41329f304a401aedb5d61e0901"
+    },
+    "cend04-states-http.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-states-http.json",
+      "bytes": 36917,
+      "sha256": "00865da45e6680053664a00776ecfbc28181f69f6b34611b7f4774ec87224036"
+    },
+    "cend04-states-input-paths.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-states-input-paths.json",
+      "bytes": 209204,
+      "sha256": "f6f9d7ecdc3d29a2efe99b50167b540c0a657718b9207f1661d5c295c0641d4a"
+    },
+    "cend04-states-plan.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-states-plan.json",
+      "bytes": 2305,
+      "sha256": "e630ad8b96deb5d4e27fe17850ab00bdaad3d8fc17edc9d0d46a8a7bbc10ce13"
+    },
+    "cend04-states.config.ts": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-states.config.ts",
+      "bytes": 401,
+      "sha256": "8777a0f5b1ae366cb6ba6abef878ad8fc611bdcda207bfefeafa7a09879d690b"
+    },
+    "cend04-states.log": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-states.log",
+      "bytes": 2449,
+      "sha256": "51dae9f64ef034ee1cc32716af2a0b1cd9251861dc3321e0a8e0908638067b15"
+    },
+    "cend04-states-runner.log": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-states-runner.log",
+      "bytes": 1288,
+      "sha256": "69ae7f89a51b01e5459aa338c1ae2520c2ac026e47203329862f457d5b2e1181"
+    },
+    "cend04-lifespan-terminal.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-terminal.json",
+      "bytes": 507,
+      "sha256": "de104eef1dee599b4bbc0310e6ba0d549c9a52a0e30a11a75942b04d7355a217"
+    },
+    "cend04-lifespan-before.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-before.json",
+      "bytes": 539815,
+      "sha256": "2bc69bfc777e95f910879b5d783ea71aa22e4a59f73a1b054e9be39474d75f8e"
+    },
+    "cend04-lifespan-after.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-after.json",
+      "bytes": 539814,
+      "sha256": "5082fd99e83f6a36c240abda83cd443b160ce3f048fb1f543fcb62026c72e489"
+    },
+    "cend04-lifespan-report.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-report.json",
+      "bytes": 6697,
+      "sha256": "d807e5884abcfa77327bab610d440a26c1f1c868719cf69cae90d27e5d181bad"
+    },
+    "cend04-lifespan-declared.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-declared.json",
+      "bytes": 3186,
+      "sha256": "ed7a09fabcc5c2f1666b3a7a82a0a02304d106f890ff1efd3868f33c3672ada6"
+    },
+    "cend04-lifespan-http.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-http.json",
+      "bytes": 36917,
+      "sha256": "1dd83b61764865f9182ea53ede4620d46be92306f2bdedc047949f9593a19ae9"
+    },
+    "cend04-lifespan-input-paths.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-input-paths.json",
+      "bytes": 209334,
+      "sha256": "76ea480dacc9ac1c00013b08e7771f144b5a0a62b972146879140c8c7c4c8c6a"
+    },
+    "cend04-lifespan-plan.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-plan.json",
+      "bytes": 508,
+      "sha256": "9cac072ce93aa39b4eccc143ffd3ccdfcfcc5d3875be8e79877597be25752f98"
+    },
+    "cend04-lifespan.config.ts": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan.config.ts",
+      "bytes": 358,
+      "sha256": "0eb64eee9988cc981f06908b5521e3f1c2c45e47f633b0ba4361bc92dc865862"
+    },
+    "cend04-lifespan.log": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan.log",
+      "bytes": 897,
+      "sha256": "6df225eee92ea5d9b6d89bc8a81f878cd3820d8346b0ff90df19745d6cdc3239"
+    },
+    "cend04-lifespan-travel-terminal.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel-terminal.json",
+      "bytes": 516,
+      "sha256": "438ee685a57cc62573e4ee14db4d8a385ab099a673df363220c8f2f0765b76ef"
+    },
+    "cend04-lifespan-travel-before.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel-before.json",
+      "bytes": 539857,
+      "sha256": "5db363d7e3133a3658122356de672ef95db303fc29df2d04d6245498543b7a75"
+    },
+    "cend04-lifespan-travel-after.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel-after.json",
+      "bytes": 539856,
+      "sha256": "85bd06b0885ef57a0fa60e53f57eb0f69623608ae642ca75916303dd540b7473"
+    },
+    "cend04-lifespan-travel-report.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel-report.json",
+      "bytes": 19165,
+      "sha256": "72256a80e16d7ab785460ed9d67a94241436490087ea75b7be05a579832bb255"
+    },
+    "cend04-lifespan-travel-declared.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel-declared.json",
+      "bytes": 3241,
+      "sha256": "30676be802a31544c801a35ab32f5ef97329eb114c8c71bc3bb814672a8fcd9a"
+    },
+    "cend04-lifespan-travel-http.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel-http.json",
+      "bytes": 36917,
+      "sha256": "efe536b32d704aa5ecb91c20b353456c6b1b68a0e5bb4ec05e31d4a4cb441dd5"
+    },
+    "cend04-lifespan-travel-input-paths.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel-input-paths.json",
+      "bytes": 209369,
+      "sha256": "3251a122a72b240a823f247501bca3bc3756b08eab4044600819cc1a1cc14408"
+    },
+    "cend04-lifespan-travel-plan.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel-plan.json",
+      "bytes": 535,
+      "sha256": "d275830b918c3a52b27a8623d47a156ad0350dde86ee31f9e35271e8d953ef84"
+    },
+    "cend04-lifespan-travel.config.ts": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel.config.ts",
+      "bytes": 379,
+      "sha256": "42cb46c5a15c457e21d7e9e1a54afc16c26c3d088943173765a38e310e8e486b"
+    },
+    "cend04-lifespan-travel.log": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel.log",
+      "bytes": 917,
+      "sha256": "a8621384c3046b994e1cb2a5cfbba1a306a9bd3783bca70d61620927cd3c39a6"
+    },
+    "cend04-lifespan-probe.spec.ts": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-probe.spec.ts",
+      "bytes": 2312,
+      "sha256": "8f812a32ef0a0e0492a1e5d12c72aaa322758a495792337e9b334b8df7b3abd7"
+    },
+    "cend04-lifespan-travel-probe.spec.ts": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel-probe.spec.ts",
+      "bytes": 2418,
+      "sha256": "1604ac34dbde3f63de05d6c44ad152cf62161cc4c8f2e4cbcb457811f50985d9"
+    },
+    "cend04-lifespan-list-preparation-failure.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-list-preparation-failure.json",
+      "bytes": 3383,
+      "sha256": "395bf2a8e9fa7882f5edc5b86fb0c05bace75a1f8d3e1810eff4a542401ccc97"
+    },
+    "cend04-lifespan-list-second-preparation-failure.json": {
+      "path": "artifacts/goal-4/uir33-08/final/cend04-lifespan-list-second-preparation-failure.json",
+      "bytes": 3279,
+      "sha256": "0f7072ddbe21cebcf58a05d784308260b96f67e84c6008679c0c2ce13cf8debe"
+    }
+  },
+  "supplementalDiagnostics": [
+    {
+      "phase": "cend04-lifespan",
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 4218,
+      "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8",
+      "stats": {
+        "startTime": "2026-11-05T05:58:29.225Z",
+        "duration": 7597.445,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 1,
+      "retried": [],
+      "reportSha256": "d807e5884abcfa77327bab610d440a26c1f1c868719cf69cae90d27e5d181bad"
+    },
+    {
+      "phase": "cend04-lifespan-travel",
+      "exit": 0,
+      "launchError": null,
+      "exact": true,
+      "sameGit": true,
+      "exactDeclared": true,
+      "inputs": 4218,
+      "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8",
+      "stats": {
+        "startTime": "2026-11-05T06:06:10.319Z",
+        "duration": 7076.092000000001,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "actualDeclarations": 1,
+      "retried": [],
+      "reportSha256": "72256a80e16d7ab785460ed9d67a94241436490087ea75b7be05a579832bb255"
+    }
+  ],
+  "supplementalNotPartOf900": true,
+  "newFormalCases": 0
+}

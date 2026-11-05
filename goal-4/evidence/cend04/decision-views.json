@@ -1,0 +1,282 @@
+[
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-00407--pre-action-time-for-review-chromium/CHOOSE-actual-decision.png",
+    "originalSHA256": "a08fd0b3382866d251102585a1e111adfd947144577019582f642b0f17b65a08",
+    "view": "goal-4/evidence/cend04/views/decision-CHOOSE-actual-decision.png.jpg",
+    "viewSHA256": "45819e19b57196f30b164c99659f985a4b8ee16bf8e0cdef3a2f9ba417cf38ed",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-04687--pre-action-time-for-review-chromium/SOURCE-actual-decision.png",
+    "originalSHA256": "9375035436c84253ec9d2bc91b3a34a1ea848854a9c8091c9f74f9f42493113a",
+    "view": "goal-4/evidence/cend04/views/decision-SOURCE-actual-decision.png.jpg",
+    "viewSHA256": "4ac148737cfabed6f24414151d3f00f482749d25dd3a5258e344ddb2c6bf2745",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-0fa85--pre-action-time-for-review-chromium/BUY-actual-decision.png",
+    "originalSHA256": "9b53c77d0765376b5ac0b785958d494347e16b3071a13364162d5bdc3b9fcbcd",
+    "view": "goal-4/evidence/cend04/views/decision-BUY-actual-decision.png.jpg",
+    "viewSHA256": "0d047e362f79afca20f13035a0e792996eb16233f948b6febcb4fe5c8bb56308",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-2169f--pre-action-time-for-review-chromium/EQUIP_RELIC-actual-decision.png",
+    "originalSHA256": "50d246c421f26d8685ccb18f43a720b3a6dca288d9ce66ff659e9f4e3894edee",
+    "view": "goal-4/evidence/cend04/views/decision-EQUIP_RELIC-actual-decision.png.jpg",
+    "viewSHA256": "d56c0d1ee2ca6ad69553f01dc1ab34cdbf4e7cae3b9c90750a1c81e7630b48be",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-2c54c--pre-action-time-for-review-chromium/END-actual-decision.png",
+    "originalSHA256": "c070a75b8d8af3c28d7ff241855d6775df38c625b171b623ba1bdd923f4f8a49",
+    "view": "goal-4/evidence/cend04/views/decision-END-actual-decision.png.jpg",
+    "viewSHA256": "acc784b93ac4c97415276e7785835fc122a47fe50623ccb8f23fbbc47c58197c",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-36ca0--pre-action-time-for-review-chromium/SELL-actual-decision.png",
+    "originalSHA256": "31795aa0fe83f12d43fff46f67479f5fbbc1fc5b8ca23a3eee2337ffa4f8dc71",
+    "view": "goal-4/evidence/cend04/views/decision-SELL-actual-decision.png.jpg",
+    "viewSHA256": "69a625e6644ba25caeba08a30ef43fb9ea9bf9e7e9c427a11ecd48dd77c5054d",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-3f997--pre-action-time-for-review-chromium/LEARN-actual-decision.png",
+    "originalSHA256": "3e5ce128c5504f7963edf55c279e87743cd33881c79b3f4fd2ee038d705c6dc0",
+    "view": "goal-4/evidence/cend04/views/decision-LEARN-actual-decision.png.jpg",
+    "viewSHA256": "5f6014f96b5f60bc2ebc7aab694e31f27be051afdb6b00189eb71917e2cb05fc",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-4305e--pre-action-time-for-review-chromium/EVENT-actual-decision.png",
+    "originalSHA256": "b87167ce07f04116c772f1452c7d6761f0a7a312992ba39c701cab6d5b47bf70",
+    "view": "goal-4/evidence/cend04/views/decision-EVENT-actual-decision.png.jpg",
+    "viewSHA256": "70e903202ed40efce72016e70a622222fb68c84bda5ab90889a1029e0d8c6af7",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-4655d--pre-action-time-for-review-chromium/RETIRE-actual-decision.png",
+    "originalSHA256": "67f59a59df4612e0701428428828067d2900214d43799b561aa4759f082a3129",
+    "view": "goal-4/evidence/cend04/views/decision-RETIRE-actual-decision.png.jpg",
+    "viewSHA256": "26ccc10e5f1bccfde0d6dff2ffce1ff4ff56a0b82260cf718297c0d5e0492f24",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-47479--pre-action-time-for-review-chromium/STUDY-actual-decision.png",
+    "originalSHA256": "75ef8c4d8b0fd41acb2cc98776d9316ee1f1db9f1165ea3c3b97c6a2559b923e",
+    "view": "goal-4/evidence/cend04/views/decision-STUDY-actual-decision.png.jpg",
+    "viewSHA256": "dcc32d9ce0c8b9c7208e6b77c75fa84e017d59f460854f08e5a79474ca361c78",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-51f1d--pre-action-time-for-review-chromium/EQUIP-actual-decision.png",
+    "originalSHA256": "1da0432abb896ccbf6cb45c641da88e3abfd1dc5df4505eb2c68366e4daa074f",
+    "view": "goal-4/evidence/cend04/views/decision-EQUIP-actual-decision.png.jpg",
+    "viewSHA256": "439bfd0ebcafd8461dc902ea18b7be103a42d8724e8df36597210db5eefe23b4",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-52151--pre-action-time-for-review-chromium/TRAVEL-actual-decision.png",
+    "originalSHA256": "458c1a2dbc671d6748f32cfdb981c4b688a610b637b79929c8ae708e6125b326",
+    "view": "goal-4/evidence/cend04/views/decision-TRAVEL-actual-decision.png.jpg",
+    "viewSHA256": "36bc5786e771d6ee25e84735291f61de675350c146db995d97337a94f0045084",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-53e63--pre-action-time-for-review-chromium/REST-actual-decision.png",
+    "originalSHA256": "3c032597649a99264e99b13b5c44cf0bbf14fb9b329a19ba90d73fb3975140e5",
+    "view": "goal-4/evidence/cend04/views/decision-REST-actual-decision.png.jpg",
+    "viewSHA256": "cb70b8ad44d09bf570f35f7177d8496690c1075c1b0a94ace2e1c51770fa7f8e",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-559a6--pre-action-time-for-review-chromium/CULTIVATE-actual-decision.png",
+    "originalSHA256": "30f42d0b44ebc6833ef73a9e747135e3f06d70ba3045b01424c3713dc9ca67f9",
+    "view": "goal-4/evidence/cend04/views/decision-CULTIVATE-actual-decision.png.jpg",
+    "viewSHA256": "cb856e1b47a8d3c86c9ae4652dfebb0a84978bf0cf8e995a96564d6bbfc1c533",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-5f06d--pre-action-time-for-review-chromium/FORGE-actual-decision.png",
+    "originalSHA256": "5e62ab10c453185a1e59f9dfe1c189d77ca090bd35049c26dc9b0c50bfe35ac2",
+    "view": "goal-4/evidence/cend04/views/decision-FORGE-actual-decision.png.jpg",
+    "viewSHA256": "3ff6afa3e316f1a26195023c6ad8030a76b5c66e24a71bdb3c6da001aad07c3d",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-6beb8--pre-action-time-for-review-chromium/USE-actual-decision.png",
+    "originalSHA256": "b3150ee4baa4384b8fdaee743e5080c80a327b719bb0dc333b4aa232ff33629d",
+    "view": "goal-4/evidence/cend04/views/decision-USE-actual-decision.png.jpg",
+    "viewSHA256": "90e638a694e8a798feaa145c3f1c7ef8e6322385ab72b3afa44eb3ca8fb1d279",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-8680a-paration-and-disclosed-time-chromium/foreign-rest-main-before-travel.png",
+    "originalSHA256": "5076d96b33fc429da56dacb44dace2bb2eb582a9b21a7a8f2279182024cf6f49",
+    "view": "goal-4/evidence/cend04/views/decision-foreign-rest-main-before-travel.png.jpg",
+    "viewSHA256": "1b1e839d35ebe21d86b35ac6196588c38a6e9d094ddd21219acbb23118407e88",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-86b50--pre-action-time-for-review-chromium/BREAKTHROUGH-actual-decision.png",
+    "originalSHA256": "7d672c3c488c8d4db775ae499c0c9e33f4694dce75c15c3b42452cfc2b947c5f",
+    "view": "goal-4/evidence/cend04/views/decision-BREAKTHROUGH-actual-decision.png.jpg",
+    "viewSHA256": "86ce13e1a385e27057afd38280eb9543e6f19c90b498622d0f61ac8df638fa65",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-b6967--pre-action-time-for-review-chromium/BATTLE-actual-decision.png",
+    "originalSHA256": "39cb3fe2ca252b40a6197619a7d4bd568be3558a1d7b3566e6483262a3569a40",
+    "view": "goal-4/evidence/cend04/views/decision-BATTLE-actual-decision.png.jpg",
+    "viewSHA256": "663cd3cfd255eff105ef942da5e72d64a6c4b23b35dc5fc5d0b49dddc68a6217",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-b9518--pre-action-time-for-review-chromium/DECIDE-actual-decision.png",
+    "originalSHA256": "8169289924d5455692a83f600f12f47e0547197fb71a64bc9232d7fe54e8ec12",
+    "view": "goal-4/evidence/cend04/views/decision-DECIDE-actual-decision.png.jpg",
+    "viewSHA256": "2808c084ce76f20fc04f56de1c8dc8f1e0cee83445b38c548410cf11de8ec4bc",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-c1e7d--pre-action-time-for-review-chromium/SCHOOL-actual-decision.png",
+    "originalSHA256": "012cd75daec68352dd022e6ce0b790c46d7b889a9c5423cfd4d93308bacd126a",
+    "view": "goal-4/evidence/cend04/views/decision-SCHOOL-actual-decision.png.jpg",
+    "viewSHA256": "ffc3308685510ef859f02d8b5fbdb1803085601613a907f1af5a96e5f7204644",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-ca50d--pre-action-time-for-review-chromium/END_LIFE-actual-decision.png",
+    "originalSHA256": "f961b16683890754e749e15137cb0a903aad491f70eb2e49dc1d8dfd0cd74670",
+    "view": "goal-4/evidence/cend04/views/decision-END_LIFE-actual-decision.png.jpg",
+    "viewSHA256": "c4a6511ce0a72d7238adf9315af9baa13b61de479d7bc78b6694f55b0a604a03",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-cc722--pre-action-time-for-review-chromium/CRAFT-actual-decision.png",
+    "originalSHA256": "50865678e62d84b782c94017f4067a9ef366e65c652b7d1aca05dbe6e67858fb",
+    "view": "goal-4/evidence/cend04/views/decision-CRAFT-actual-decision.png.jpg",
+    "viewSHA256": "2ec02607aa738e87fe04d0ad40026467d20bdefef267b0dc3e4cbb4699c80f60",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-d4b50--pre-action-time-for-review-chromium/ENCOUNTER-actual-decision.png",
+    "originalSHA256": "fd7c7fa15ce1c3adecf65905ecda955530bc60fe546a24624caaaf0fbefbf6dd",
+    "view": "goal-4/evidence/cend04/views/decision-ENCOUNTER-actual-decision.png.jpg",
+    "viewSHA256": "59de0145a862d134a76c4b13c3db28be00278309c893dc09e915fbd88a11fcff",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-e54cb--pre-action-time-for-review-chromium/ANSWER_TRIAL-actual-decision.png",
+    "originalSHA256": "11a6adc47a6022a38924af0ce91bd7e33e729197dd98203c9ebcf4a7eff4e6c4",
+    "view": "goal-4/evidence/cend04/views/decision-ANSWER_TRIAL-actual-decision.png.jpg",
+    "viewSHA256": "c0497e047734952d7ffb6671be892d8d560011938f7f3bbce9dd53a541b01ad6",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-ef7ad-ut-changing-the-saved-state-chromium/real-checkpoint-current-home.png",
+    "originalSHA256": "8814a3d6df36881eea9a4f92aa097197f2052f10cd706e2a5b2ff3b344f6fa64",
+    "view": "goal-4/evidence/cend04/views/decision-real-checkpoint-current-home.png.jpg",
+    "viewSHA256": "4aa0b062adabb1ee2d1cc670fa16bf5344c26636d3a415ad59fc13bca1e78dce",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-ef7ad-ut-changing-the-saved-state-chromium/real-checkpoint-explicit-restore-review.png",
+    "originalSHA256": "478cb8cda573cd66a35a9865d5b089fde0fe1b106a8afbf6aa9b25faefe0f25c",
+    "view": "goal-4/evidence/cend04/views/decision-real-checkpoint-explicit-restore-review.png.jpg",
+    "viewSHA256": "2fb5f682495fdc54e713b39952b48b492c81e19a6b4ea4e2dacdd30930a2d8e0",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-decisions",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-decisions-results/cend03-review-observations-fccca--pre-action-time-for-review-chromium/START_TRIAL-actual-decision.png",
+    "originalSHA256": "48b1861680741eaa0c4b5c0ef6ff4be0de1aafd57c9c7a6a46d55870c3175fb3",
+    "view": "goal-4/evidence/cend04/views/decision-START_TRIAL-actual-decision.png.jpg",
+    "viewSHA256": "e357474f24c5e2aa15e63afd395b868d2184025857a7631f2f849a975af61828",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  }
+]

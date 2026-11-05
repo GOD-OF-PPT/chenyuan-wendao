@@ -1,0 +1,12 @@
+{
+  "web/src/App.vue": "2549b27003e11cf12f44e2ba41a1053b2de996c3636110f277ac84babd1dd4fd",
+  "web/src/CharacterPanel.vue": "f92981c82db646aee274be8113e395540708a7a8a8b08d6190effa151c0f586c",
+  "web/src/ConfigurationDialog.vue": "cc50327d03b19836dc9e41df9ff0e36185e2f64b846d510b795b6aad671f8b52",
+  "web/src/CultivationOngoing.vue": "16a814b95344928cdf3b8eef6ab6ab0aca757bc86cd335c2446b869ca2cfcf85",
+  "web/src/EncounterTable.vue": "0c73263444112e4d6bc010201750dd836aaef36d03ee612868124afe8033ccf7",
+  "web/src/FateCatalogue.vue": "da3efbc6ebfd68d042a07ce3e89343299b94094ad3d2590f77005e61780763a2",
+  "web/src/GoalPanel.vue": "417e46b09e64471b3bbc72d2ab6514b13af253b47409fb1af529a8077c63e0cd",
+  "web/src/MilestoneReview.vue": "8c3dd9bb9d382f102f3204195ced86b19321399b427440533e01ab6a575e3698",
+  "web/src/TrainingActivity.vue": "153c7621131e635df954f2467776c060ad90daf73d9c91ba82b0e2ed3e5e843a",
+  "web/src/milestone-view.ts": "af1a2045781e806806140092349b2ecde690524436b254a0c1f326a94e108efd"
+}

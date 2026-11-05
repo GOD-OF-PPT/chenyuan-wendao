@@ -1,0 +1,22 @@
+[
+  {
+    "phase": "cend04-lifespan-travel",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel-results/cend04-lifespan-travel-pro-378bb-uidance-without-ending-life-chromium/last-month-cave-main.png",
+    "originalSHA256": "2588503fbdb5584f765984d4e50fd7f6bfc06699aa6bed885fc1f8d2d758cd26",
+    "view": "goal-4/evidence/cend04/views/last-month2-last-month-cave-main.png.jpg",
+    "viewSHA256": "0c4ef9a7074512b895d0185ddc340b48b142d7b91243dc57eabe3154565a255d",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-lifespan-travel",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-lifespan-travel-results/cend04-lifespan-travel-pro-378bb-uidance-without-ending-life-chromium/last-month-cave-goal.png",
+    "originalSHA256": "a6e363efd900809386c1346379e6b3bbefac03a3d307fab67d63db0ad29c76b9",
+    "view": "goal-4/evidence/cend04/views/last-month2-last-month-cave-goal.png.jpg",
+    "viewSHA256": "bfb1af5cec14dd45f28d2eca0a2430f287eda9e84691f9b956e3a787372e7de6",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  }
+]

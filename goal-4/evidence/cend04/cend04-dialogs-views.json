@@ -1,0 +1,122 @@
+[
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/settings.png",
+    "originalSHA256": "f8885e29bc0ba24246893ac43fafde62ae0052cc28fe18fdb70f786247d990fd",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-settings.png.jpg",
+    "viewSHA256": "702d47d954e0249f9ef8beb28544dc189b7c39865c27ce80ac7ff137859bcb1c",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/danger-confirmation.png",
+    "originalSHA256": "2978538262606d935824c252dc41d4b92a520e62807e822c1036870632430b98",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-danger-confirmation.png.jpg",
+    "viewSHA256": "e9aee8988661d7d06f20a08c5f9bbd79eb9ba5454815cfb82778489bc68884cd",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-3ecc1--import-retains-every-store-chromium/long-filename.png",
+    "originalSHA256": "24c406cbbeca1bda0f422e23d6ef77d5d13cb6997745fce2d68f2f296737a042",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-long-filename.png.jpg",
+    "viewSHA256": "ab1068b93a841c8126cf1d0b41877250a59bedfe9824a74f033ed2957f62e4f5",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium/production-target.png",
+    "originalSHA256": "f4cafed2e39b11dc59238729997be27823897ab7cc7fd3510823c377aebb7ee1",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-production-target.png.jpg",
+    "viewSHA256": "1ae0ac5b2972096bcc352753adbc351ada81b79c7347653e91e016231b0cd61e",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium/production-limits.png",
+    "originalSHA256": "2ce6aed5c2fd6a2037a785d53e8ac665335586bb2af74d091590bf2cc7da752c",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-production-limits.png.jpg",
+    "viewSHA256": "8eea7921a9b256a1554bfdef953a71861aa902676c83063f0f50a9f4d437adda",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium/study-1.png",
+    "originalSHA256": "18f7249da04a0f89a36956ce84c458f95b5974a03d860fb22ec9ef63832a967f",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-study-1.png.jpg",
+    "viewSHA256": "8323a1a29b3d36fae1357da2409fd0f2ddd5746c5300d39dfef3e64402c227cb",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-3c060--text-controls-and-the-Game-chromium/alchemy-2.png",
+    "originalSHA256": "26ae6635af24fc55a78fc22c360072edd1e38ef5c39491ebbea9c143763471b5",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-alchemy-2.png.jpg",
+    "viewSHA256": "7919ebdf207633ae0d2e4b3539a5a568de3061d1753f7411f732e5604519d436",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-e59a0--text-controls-and-the-Game-chromium/relic-1.png",
+    "originalSHA256": "77864835c000a98136fa6ddb2f5206f0ce51a17c03f8e230c8df6de8b184f576",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-relic-1.png.jpg",
+    "viewSHA256": "2df97cc2b7145938be78da6c551d37d1988fabb6370417f0010ae65862a461c3",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-4.png",
+    "originalSHA256": "f5e234942b195b73f7823118a02b3af9102952013bd15f4e1f62181661ca491c",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-market-4.png.jpg",
+    "viewSHA256": "4beb83d6ce5f08f6790ce7cdc96502a8d81ccc8f643956f4b7af4ba0652b6b83",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-51226--text-controls-and-the-Game-chromium/inventory-2.png",
+    "originalSHA256": "2f6666d6ec4bde6db44874a72c035c9c1d152fbc82a39091dc5862c63314ebc9",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-inventory-2.png.jpg",
+    "viewSHA256": "96f6c7b4abc5f0149f4afb0390f68a6d209254f8003325069cd8df99da41dce8",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-74840--text-controls-and-the-Game-chromium/wilderness-1.png",
+    "originalSHA256": "26356172d66dc72fe3679078c32b5ead4290a435e4729f96c91e4aeae2e64809",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-wilderness-1.png.jpg",
+    "viewSHA256": "e18b5183c58fd55f80d7e5a01b7ac214e0399f12c2e5fab8182fba4ab24f84e2",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-dialogs",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-dialogs-results/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium/commission-3.png",
+    "originalSHA256": "d9a165f907d5f80a8b22dbbf9a049e923745fc974838742aebf3372af443e18d",
+    "view": "goal-4/evidence/cend04/views/cend04-dialogs-commission-3.png.jpg",
+    "viewSHA256": "6852983cbc486878db8f24b5f0b8868a491fc8f4e1579acc0acb5870ed463204",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  }
+]

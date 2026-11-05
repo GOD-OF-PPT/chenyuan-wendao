@@ -563,3 +563,6 @@ CHECK-UIR33-02消费者复核补充：toast发布和equipment布局后演出绘�
 
 
 UIR33-08依[0104](docs/decisions/0104-alchemy-arrangement-uir33-08-contract.md)及本轮Riot Clarity/XAG112：炼丹安排先辨实际丹方、单炉秒数/投入/成丹、有限目标与真实预估，低频停炉/在线续接规则在同一可展开说明保全文。门槛与追踪物消耗警告不能一起折叠，阅读不执行；重复返回可归一但原close/预算返回/草案和原命令不改。具体details、布局和22000B帽为项目约定，当前固定桌面实拍/正式保存与整体艺术真人分开，兼容环境性能仍暂停。
+
+
+CEND04依[0105](docs/decisions/0105-current-ui-suitability-cend04-contract.md)及本轮实际回读[XAG109](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/109)/[XAG114](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114)：确认主区先辨当前动作、代价、耗时/有限范围及后果，背景/完整规则可按需读；不能让保存协议与开发说明代替游戏互动。恢复按钮说明玩家能继续什么，同时保原预算/完整重计与其他页执行归属的实际边界。比较先辨所选器物/功法的真实作用，不把未变数值呈成新收益；完整旧值与原比较能力仍可查。寿限等重要状态须核实际主舞台/目标与正式门槛，不能只凭隐藏的旧提示组件存在就称已告知。具体布局/文案/优先级为项目推导；本轮仅审查，发现项按后续独立任务修，52机器绿不代整体UI/真人艺术认可，兼容环境性能暂停不变。

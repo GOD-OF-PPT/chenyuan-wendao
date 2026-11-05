@@ -1,0 +1,21 @@
+{
+  "exit": 0,
+  "launchError": null,
+  "exact": true,
+  "sameGit": true,
+  "exactDeclared": true,
+  "inputs": 4217,
+  "runtime": "1dac39e15df8a00a10e456b77463fafa24f8dbbf57faec1c0c57f65c16c8a0e8",
+  "stats": {
+    "startTime": "2026-11-05T05:12:39.980Z",
+    "duration": 43570.547,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "errors": [],
+  "actualDeclarations": 10,
+  "retried": [],
+  "reportSha256": "20f7f2eb38b781a59924915f6dc3713280c839c2b09832654958679faebc7fcb"
+}

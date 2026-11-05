@@ -1,0 +1,82 @@
+[
+  {
+    "phase": "cend04-states",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-states-results/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-chromium/natural-running.png",
+    "originalSHA256": "743823d6dc4eaa4a0234036a213e509e2992d1caf4d030b8e503ed3f795c1253",
+    "view": "goal-4/evidence/cend04/views/cend04-states-natural-running.png.jpg",
+    "viewSHA256": "de1795b313623effb800d11812369b4ee8974f3693e9f7d0980fd071ba503d79",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-states",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-states-results/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-chromium/natural-paused.png",
+    "originalSHA256": "7465da51a62d0d1aac43e52c110cdb4c037aa34aa0ec39fadab48701a0ab7004",
+    "view": "goal-4/evidence/cend04/views/cend04-states-natural-paused.png.jpg",
+    "viewSHA256": "4615b1d2bc0fd3711de91c225b466d209a044099bcd36174aeb169dd1e84abba",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-states",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-states-results/uir33-01-cultivation-activ-84023-fresh-and-explicit-takeover-chromium/assisted-awaiting-takeover.png",
+    "originalSHA256": "f59659edf685c0bcbb261f654d017cfdf0aa190a5faaa48fc789ccfef1474842",
+    "view": "goal-4/evidence/cend04/views/cend04-states-assisted-awaiting-takeover.png.jpg",
+    "viewSHA256": "8d0ed80f6052dbcf089a8b54b3c517e990b8126cf9a5a85a308a80e041e9eb03",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-states",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-states-results/uir33-01-cultivation-activ-c0ce0-eplace-the-accepted-command-chromium/original-error-main-stage.png",
+    "originalSHA256": "15f0cfc04dc5bc78737bdba85b155774c2d20c08d78b33a2a4bb8ee35561e05a",
+    "view": "goal-4/evidence/cend04/views/cend04-states-original-error-main-stage.png.jpg",
+    "viewSHA256": "5daa77cc1f6813fa3fbf9174c76ae8af4fdf09e68a0ac50d6224faf952c7344a",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-states",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-states-results/uir33-01-cultivation-activ-e248f-le-without-starting-another-chromium/saving-main-stage.png",
+    "originalSHA256": "1e535db9f169a4a9c421f13ac5c8b18883fc66dc90f463f6dd69b9eee261c23f",
+    "view": "goal-4/evidence/cend04/views/cend04-states-saving-main-stage.png.jpg",
+    "viewSHA256": "6cfa491bc8417094f8df7eeca0abb55e17c2bdcf2cbd1facf2e28d3f67b3ed06",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-states",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-states-results/uir33-01-cultivation-activ-e248f-le-without-starting-another-chromium/pausing-main-stage.png",
+    "originalSHA256": "8afd6f7cb8b44ae94c459ec9ed52f08cf8eefd5486efea631e0e08ce8366e5c7",
+    "view": "goal-4/evidence/cend04/views/cend04-states-pausing-main-stage.png.jpg",
+    "viewSHA256": "0c138ff1333567307ea49cc6e60e507a5e4e09bfdbb993ee55c98efc2ae38bef",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-states",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-states-results/check-uir33-02-CHECK-UIR33-88910-e-and-exact-receipt-reading-chromium/EQUIP_RELIC-object-seal.png",
+    "originalSHA256": "d28e02e6bbf499a46600f8e58dcee4f87d08a9b75044f66c2258f57ae73c8ac5",
+    "view": "goal-4/evidence/cend04/views/cend04-states-EQUIP_RELIC-object-seal.png.jpg",
+    "viewSHA256": "20c8b8b100abfb0d91d62210f27c2e77b13bb6ae48b41d1a5ed672913a77086a",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  },
+  {
+    "phase": "cend04-states",
+    "original": "artifacts/goal-4/uir33-08/final/cend04-states-results/check-uir33-02-CHECK-UIR33-302c2-d-original-milestone-result-chromium/one-breakthrough-stop.png",
+    "originalSHA256": "0e455f9011deaa6abe5a9e0076e2cb007872d5527893fc5d809a09b350b19956",
+    "view": "goal-4/evidence/cend04/views/cend04-states-one-breakthrough-stop.png.jpg",
+    "viewSHA256": "41cec70603426c19b4ede72632995dba32d8b83358ebeeca4ccff40a757cd8fd",
+    "lossy": true,
+    "quality": 68,
+    "actualViewed": true
+  }
+]

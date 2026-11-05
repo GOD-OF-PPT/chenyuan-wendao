@@ -1,0 +1,13 @@
+import {test,expect} from './source/web/node_modules/@playwright/test';
+import {feedbackExamples}from'./source/tests/action-feedback-fixtures.mjs';
+import {getLifeOverview,previewAction}from'./source/src/full/queries';
+import {importRecoveryFixture,recoveryDatabase as database}from'./source/web/e2e/idle-recovery-ui-support';
+import {captureFixedPng}from'./source/web/e2e/png-capture';
+test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
+test('CEND04 supplemental readonly last-month guidance observation is not a usability pass or an added full-matrix case',async({page},info)=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));const game=await importRecoveryFixture(page,feedbackExamples().actions.get('END_LIFE').before),raw=await database(page),life=getLifeOverview(game),cultivate=previewAction(game,{type:'CULTIVATE',method:'natural',count:1});expect(life.remainingMonths).toBe(1);
+ const home={hud:await page.getByTestId('game-hud').innerText(),content:await page.locator('#game-content').innerText(),visibleWarning:await page.getByTestId('lifespan-warning').isVisible(),goal:await page.getByTestId('hub-target').innerText()};await captureFixedPng(page,info.outputPath('last-month-main-stage.png'));expect(await database(page)).toEqual(raw);
+ await page.getByTestId('hub-goal').click();await expect(page.getByTestId('goal-panel')).toBeVisible();const goal=await page.getByTestId('goal-panel').innerText();await captureFixedPng(page,info.outputPath('last-month-goal-details.png'));await page.getByTestId('hub-close').click();expect(await database(page)).toEqual(raw);
+ await page.getByTestId('hud-character').click();await expect(page.getByTestId('character-details')).toBeVisible();const character=await page.getByTestId('character-details').innerText();await captureFixedPng(page,info.outputPath('last-month-character-details.png'));await page.getByTestId('hub-close').click();expect(await database(page)).toEqual(raw);
+ await info.attach('actual-last-month-observation',{body:JSON.stringify({life,cultivate,home,goal,character,allDBUnchanged:true,errors,scope:'Read-only boundary diagnostic; not human comprehension, all-route inability or accepted UI.'}),contentType:'application/json'});expect(errors).toEqual([]);
+});
