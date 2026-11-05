@@ -587,3 +587,9 @@ CHECK-UIR34-02-04依[0111](docs/decisions/0111-confirm-configuration-resume-chec
 
 
 UIR34-05依据[0112](docs/decisions/0112-trial-life-confirmation-focus.md)及本轮实读[XAG114](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114)：入劫/归隐/寿尽/飞升确认先呈真实已选后果、费用与原15/12秒、仅本次及不可逆边界，准备/人生完整原页在明确说明入口翻阅；不以删记录/缩字/内长滚动减负。关闭只撤原意图，阅读不执行或授权；原确认/重试/CPP/owner/活动与Game原子权不迁出App。details闭合退出布局但保同意图阅读页，新意图重置；固定桌面每页核完整字符/18正文/14辅助/44操作及实际命中/像素，不能以默认截图代展开态。具体折叠/色调为本项目推导，原App159635帽与所有旧预算/hash保；兼容环境性能仍暂停，整体艺术长期真人和完整矩阵仍待。
+
+
+UIR34-06依[0113](docs/decisions/0113-character-folio-focus.md)与本轮XAG114回读：先核原始finding再接续，主角寿元/四槽不能因控制器摘要误写被换成NPC范围。人物志由真实画像/姓名境界、年龄寿限/余寿及三法一器组织；静态槽不冒可点击配置，空槽/实际装备/封卷都保原事实，返回和Game写权归原App。只读详情不重建活动，原TICK保存后更新真实Game；保存失败保原值和全局原重试。重复纸框需核实际伪元素display，画像静态软边只作用装饰，不遮正文/假动态。16字符合法姓名、失图、原生quota及封卷在固定1440×900实测；18正文/14辅助/44操作不降，不加内长滚动。具体两列/软边为项目推导，原模式/原预算保，兼容环境性能暂停，整体艺术长期真人及完整矩阵仍待。
+
+
+UIR34-06编译实证补充：Vue scoped中以:global(.single-screen)开头再拼局部选择器，会在本项目实际编译中只留下.single-screen；因此伪元素display:none曾误隐藏全界面。已用普通外层.single-screen＋组件局部class并核真实编译CSS、根界面可见与实际伪元素display/mask。源pin/类型或CSS存在不证明界面可用，不以force点击、删命中/可见断言或加等待掩盖；原六失败及编译结果保。

@@ -1,0 +1,41 @@
+<script setup lang="ts">
+import { computed, ref } from 'vue';
+import * as C from '../../src/full/content.ts';
+import { getLifeOverview } from '../../src/full/queries.ts';
+import type { Game } from '../../src/full/types.ts';
+import PortraitImage from './PortraitImage.vue';
+import ProgressTrack from './ProgressTrack.vue';
+const props = defineProps<{game:Game;compact?:boolean;detailsOnly?:boolean}>();
+const emit=defineEmits<{inspect:[event:MouseEvent]}>();
+const player = computed(() => props.game.core.player), realm = computed(() => C.realms[player.value.realm]);
+const life = computed(() => getLifeOverview(props.game));
+const sealed = computed(() => props.game.status==='ascended');
+const school = computed(() => props.game.school==='sword'?'剑修':props.game.school==='talisman'?'符修':'尚未择法');
+const expanded = ref(false);
+</script>
+<template>
+  <aside class="paper character-sheet" data-testid="character-panel" aria-label="道者个人志">
+    <div v-if="!detailsOnly" class="character-portrait" aria-hidden="true"><PortraitImage id="player" fallback="道"/></div>
+    <div v-if="!detailsOnly" class="character-heading"><span class="section-label">道者 · 个人志</span><h2>{{player.name}}</h2><span class="realm-badge" data-testid="realm">{{realm.name}}</span></div>
+    <div v-if="!detailsOnly" class="character-vitals" :data-testid="sealed?'ascension-sealed-stats':undefined">
+      <p v-if="sealed" class="small">此生已封卷。本卷不继续上界修行，保留封卷时的实际状态。</p>
+      <div class="stat"><label>{{sealed?'封卷气血':'气血'}} <b data-testid="hp">{{player.hp}}<template v-if="!sealed"> / {{realm.maxHp}}</template></b></label><ProgressTrack v-if="!sealed" :value="player.hp" :max="realm.maxHp" label="气血" tone="health" :identity="game.core.runId+player.realm" hint="气血会随真实行动变化；战中丹药占回合，战后可到洞府核对疗养。"/></div>
+      <div class="stat"><label>{{sealed?'封卷灵力':'灵力'}} <b>{{player.mp}}<template v-if="!sealed"> / {{realm.maxMp}}</template></b></label><ProgressTrack v-if="!sealed" :value="player.mp" :max="realm.maxMp" label="灵力" tone="spirit" :identity="game.core.runId+player.realm" hint="术法消耗灵力，基础攻击和护体可回灵；按行动旁的实际成本选择。"/></div>
+      <div v-if="!sealed" class="stat"><label>修为 <b data-testid="xp">{{player.xp}} / {{realm.xpCap}}</b></label><ProgressTrack :value="player.xp" :max="realm.xpCap||1" label="修为" :identity="game.core.runId+player.realm" hint="修为满后仍需核对突破条件和物品，再由你确认行动。"/></div>
+      <div class="character-pair character-currency"><span>{{sealed?'封卷灵石':'灵石'}}</span><b data-testid="stones">{{player.stones}}</b></div>
+    </div>
+    <button v-if="compact" class="text-button character-hint" @click="emit('inspect',$event)">寿元与配装 →</button>
+    <details v-else :open="detailsOnly||expanded" @toggle="expanded=($event.target as HTMLDetailsElement).open">
+      <summary class="character-hint" data-testid="character-toggle">{{detailsOnly?'寿元与配装':expanded?'收起详情':'查看寿元与配装'}}</summary>
+      <div class="character-details" data-testid="character-details">
+        <div class="character-pair"><span>{{sealed?'封卷年龄':'年龄 / 寿限'}}</span><b data-testid="age-limit">{{life.ageLabel}}<template v-if="!sealed"> / {{life.limitLabel}}</template></b></div>
+        <h3>当前修法 · {{school}}</h3>
+        <dl class="character-loadout"><div><dt>心法</dt><dd>{{game.loadout.mind?C.skills[game.loadout.mind].name:'引气入体后选择'}}</dd></div><div><dt>起手</dt><dd>{{game.loadout.builder?C.skills[game.loadout.builder].name:'尚未装备'}}</dd></div><div><dt>终结</dt><dd>{{game.loadout.finisher?C.skills[game.loadout.finisher].name:'尚未装备'}}</dd></div><div><dt>本命法宝</dt><dd>{{game.loadout.relic?C.relics[game.loadout.relic].name:'金丹后可炼制装备'}}</dd></div></dl>
+      </div>
+    </details>
+  </aside>
+</template>
+<style scoped>
+.character-sheet{grid-area:character;padding:22px 20px;display:flex;flex-direction:column}.character-sheet details{display:block}.character-heading{text-align:center}.character-sheet summary{list-style:none;cursor:pointer;text-align:center;min-height:44px;display:grid;place-items:center}.character-sheet summary::-webkit-details-marker{display:none}.character-sheet h2{font-size:calc(1.3888889rem * var(--font-scale,1));margin:10px 0 4px;overflow-wrap:anywhere}.character-sheet .section-label{justify-content:center}.realm-badge{display:inline-block;border:1px solid #8d9a82;padding:3px 18px;color:#294746;font-size:calc(0.83333333rem * var(--font-scale,1));background:#e7ecdc}.character-hint{display:block;font-size:calc(0.72222222rem * var(--font-scale,1));color:#655b4d;margin-top:8px}.character-vitals{text-align:left}.character-portrait{height:210px;display:flex;justify-content:center;align-items:center;gap:18px;background:radial-gradient(ellipse,#b6c9bf88,transparent 68%);margin:18px 0}.character-portrait>span{display:grid;place-items:center;width:92px;height:92px;border:1px solid #96966c;border-radius:50%;outline:1px solid #acb2a0;outline-offset:6px;font-size:calc(2.7222222rem * var(--font-scale,1));color:#3c5d53}.character-portrait small{writing-mode:vertical-rl;letter-spacing:.3em}.character-sheet .stat{margin:18px 0}.character-sheet .stat label,.character-sheet .stat b{font-size:calc(0.77777778rem * var(--font-scale,1))}.character-pair{display:grid;gap:5px;margin:18px 0;font-size:calc(0.77777778rem * var(--font-scale,1))}.character-pair b{font-size:calc(0.88888889rem * var(--font-scale,1));color:#294746}.character-sheet h3{font-size:calc(0.88888889rem * var(--font-scale,1));line-height:1.7}.character-loadout{font-size:calc(0.77777778rem * var(--font-scale,1));margin:12px 0 0;line-height:1.7}.character-loadout>div{margin-top:12px}.character-loadout dt{color:#655b4d}.character-loadout dd{margin:2px 0;color:#294746;overflow-wrap:anywhere}.character-details>.small{text-align:center}.character-sheet :focus-visible{outline:3px solid #4d8782;outline-offset:5px}
+@media(max-width:760px){.character-sheet{padding:20px;width:100%}.character-sheet h2{font-size:calc(1.2222222rem * var(--font-scale,1))}.character-vitals{display:grid;grid-template-columns:1fr 1fr;gap:12px}.character-vitals>p{grid-column:1/-1}.character-sheet .stat label{flex-wrap:wrap;gap:4px}.character-portrait{height:200px}.character-pair{grid-template-columns:1fr 1fr}.character-details{padding-top:8px}}
+</style>

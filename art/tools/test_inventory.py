@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3406=ROOT/'art/redesign/uir34-06.json'
+  if uir3406.exists():
+   data=json.loads(uir3406.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[data['before']]+list(data['unchanged']))
   uir3405=ROOT/'art/redesign/uir34-05.json'
   if uir3405.exists():
    data=json.loads(uir3405.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[data['before']]+list(data['unchanged']))
@@ -2405,3 +2408,30 @@ class Uir3405Tests(unittest.TestCase):
   for old,new in [('@click="confirmTrial"','@click="confirmEnd"'),('trialStale','false'),('15秒','1秒'),('class="milestone-notes"','class="removed-notes"'),('startPreparedMilestone(review.intent)','startPreparedMilestone(null)')]:
    self.assertIn(old,source)
    with self.subTest(old=old),self.assertRaisesRegex(AssertionError,'UIR34-05'):prior_uir3405_bytes(MANIFEST['path'],source.replace(old,new,1).encode())
+
+class Uir3406Tests(unittest.TestCase):
+ def test_whole_original_inverse_and_actual_added_cap(self):
+  from uir34_06_inventory import validate_uir3406,prior_uir3406_bytes,MANIFEST
+  self.assertLessEqual(validate_uir3406(ROOT)[1],6000)
+  self.assertEqual(prior_uir3406_bytes((ROOT/MANIFEST['path']).read_bytes()),(ROOT/MANIFEST['before']).read_bytes())
+ def test_reject_authority_identity_empty_slot_and_readable_layout_changes(self):
+  from uir34_06_inventory import prior_uir3406_bytes,MANIFEST
+  source=(ROOT/MANIFEST['path']).read_text()
+  for old,new in [('props.game','null'),("emit('inspect',$event)","emit('inspect',null)"),('detailsOnly?\'section\':\'details\'','\'details\''),('font-size:18px!important','font-size:12px!important'),('尚未装备','已装备'),('life.remainingMonths','0')]:
+   self.assertIn(old,source)
+   with self.subTest(old=old),self.assertRaisesRegex(AssertionError,'UIR34-06'):prior_uir3406_bytes(source.replace(old,new,1).encode())
+ def test_reject_manifest_type_substitution(self):
+  from uir34_06_inventory import validate_uir3406,MANIFEST,LEDGER
+  with tempfile.TemporaryDirectory()as d:
+   root=Path(d)
+   for name in {LEDGER,MANIFEST['path'],MANIFEST['before'],*MANIFEST['sourceReferences'],*MANIFEST['unchanged']}:
+    p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((ROOT/name).read_bytes())
+   for key,value in [('version',True),('maxAddedNativeBytes',7000),('userAcceptance',True),('beforeSHA256','0'*64)]:
+    changed=copy.deepcopy(MANIFEST);changed[key]=value;(root/LEDGER).write_text(json.dumps(changed))
+    with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'UIR34-06'):validate_uir3406(root)
+
+ def test_compiled_style_cannot_hide_the_single_screen_root(self):
+  import subprocess
+  script="""import fs from 'node:fs';import assert from 'node:assert/strict';import {parse,compileStyle} from './web/node_modules/@vue/compiler-sfc/dist/compiler-sfc.esm-browser.js';const s=parse(fs.readFileSync('web/src/CharacterPanel.vue','utf8')).descriptor.styles[0],r=compileStyle({source:s.content,filename:'CharacterPanel.vue',id:'data-v-scopecheck',scoped:true});assert.deepEqual(r.errors,[]);assert.ok(!/\.single-screen\s*\{/.test(r.code),'ancestor swallowed local selector');assert.ok(r.code.includes('.single-screen .character-sheet.character-folio[data-v-scopecheck]::before'));"""
+  result=subprocess.run(['node','--input-type=module','-e',script],cwd=ROOT,text=True,capture_output=True)
+  self.assertEqual(result.returncode,0,result.stdout+result.stderr)
