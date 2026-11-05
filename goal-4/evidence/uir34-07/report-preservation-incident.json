@@ -18,5 +18,27 @@
     "flaky": 0
   },
   "sourceMovedAfterTerminal": "artifacts/goal-4/uir34-07/original-consumer-reproduction/original-art30-source.spec.ts",
-  "notOriginalReporterRestoration": true
+  "notOriginalReporterRestoration": true,
+  "originalToolOutputRecoveredFromExactRollout": [
+    {
+      "rollout": "/Users/gordon/.codex/sessions/2026/10/21/rollout-2026-10-21T14-39-18-01a15d2f-866c-7250-a7fb-76602283d254.jsonl",
+      "line": 159545,
+      "byteOffset": 1704524393,
+      "originalLineSHA256": "9c73ba2793851983e79da2c5d151a3873862f4d16bae9e45ab4e7f4c6c3c376a",
+      "saved": "goal-4/evidence/uir34-07/original-current-failure-tool-output.json",
+      "savedSHA256": "e9986ca2e01af0971831ef7465b17069af8dccf7ff13d8c3b738bab6aecda73e"
+    }
+  ],
+  "originalReporterJSONStillNotRecovered": true,
+  "matchingItemTypes": [
+    {
+      "type": "response_item",
+      "payloadType": "custom_tool_call_output"
+    }
+  ],
+  "resolution": "Exact original custom_tool_call_output and its structured exec_command result recovered from current rollout with original offset/line hash and saved hash. Reporter JSON remains overwritten; exact-source red reproduction is separate.",
+  "exactOriginalCommandOutput": {
+    "path": "goal-4/evidence/uir34-07/original-current-failure-command-output.json",
+    "sha256": "c6d36cabfb0167af70526f1e2de35cdb5296bda24cb72dc8b34518818942fb39"
+  }
 }

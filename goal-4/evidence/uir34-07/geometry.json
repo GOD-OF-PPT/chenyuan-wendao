@@ -1,0 +1,3872 @@
+[
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "leave-current-fact-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你保留丹药，各自离开，尚未正式结识。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "shen-full-0-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你保留丹药，各自离开，尚未正式结识。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "shen-full-1-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "山雨破庙",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你保留丹药，各自离开，尚未正式结识。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "shen-full-2-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "下次来往预览",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "未识 · 下一次来往 · 药香故人",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "青云宗 · 筑基起。待相应境界后再访，不会自动触发或补发物资。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "pei-full-0-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "裴照",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "裴照",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "尚未会面，没有已发生的相助或约定。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 2 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "pei-full-1-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "裴照",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "裴照",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "下次来往预览",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "未识 · 下一次来往 · 山门论剑",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "青云宗 · 筑基起。待相应境界后再访，不会自动触发或补发物资。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 2 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "lu-full-0-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "陆玄松",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "陆玄松",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "尚未会面，没有已发生的相助或约定。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 4 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "lu-full-1-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "陆玄松",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "陆玄松",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "下次来往预览",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "未识 · 下一次来往 · 执事问道",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "青云宗 · 炼气起。陆玄松没有问你的灵根，只问修炼、丹药、功法，眼下最缺什么。他提醒你，境界不能只靠苦坐。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 4 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "lu-full-2-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "陆玄松",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "陆玄松",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "下次来往预览",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "未识 · 请教物资来源",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "获凝气草 ×2；得知委托与坊市的筹备方式。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 4 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "lu-full-3-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "陆玄松",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "陆玄松",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "下次来往预览",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "未识 · 婉言作别",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "不消耗物品，各循其道。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 4 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "yan-full-0-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "砚尘",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "砚尘",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "尚未会面，没有已发生的相助或约定。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 2 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+    "name": "yan-full-1-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "砚尘",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "砚尘",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "下次来往预览",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "未识 · 下一次来往 · 守碑人",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "照影古境 · 筑基起。待相应境界后再访，不会自动触发或补发物资。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 2 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A2 help preserves its actual opening relation complete facts future boundaries and current reading",
+    "name": "help-real-relation-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相助",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你在雨夜赠出回春丹，沈清禾记下这次相助。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A2 help preserves its actual opening relation complete facts future boundaries and current reading",
+    "name": "shen-full-0-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相助",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你在雨夜赠出回春丹，沈清禾记下这次相助。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A2 help preserves its actual opening relation complete facts future boundaries and current reading",
+    "name": "shen-full-1-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相助 · 山雨破庙",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你在雨夜赠出回春丹，沈清禾记下这次相助。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A2 help preserves its actual opening relation complete facts future boundaries and current reading",
+    "name": "shen-full-2-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "下次来往预览",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相助 · 下一次来往 · 药香故人",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "青云宗 · 筑基起。待相应境界后再访，不会自动触发或补发物资。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A2 trade preserves its actual opening relation complete facts future boundaries and current reading",
+    "name": "trade-real-relation-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相识",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你以丹换取剑简，彼此两清。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A2 trade preserves its actual opening relation complete facts future boundaries and current reading",
+    "name": "shen-full-0-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相识",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你以丹换取剑简，彼此两清。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A2 trade preserves its actual opening relation complete facts future boundaries and current reading",
+    "name": "shen-full-1-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相识 · 山雨破庙",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你以丹换取剑简，彼此两清。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A2 trade preserves its actual opening relation complete facts future boundaries and current reading",
+    "name": "shen-full-2-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "下次来往预览",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相识 · 下一次来往 · 药香故人",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "青云宗 · 筑基起。待相应境界后再访，不会自动触发或补发物资。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 3 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A3 only the original saved visit shows pending reply and native failure retries one command before an explicitly chosen response",
+    "name": "before-visit-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看拜访安排 · 药香故人",
+          "w": 245,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你保留丹药，各自离开，尚未正式结识。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "不消耗物资 · 在线6秒 · 仅拜访一次",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 5 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A3 only the original saved visit shows pending reply and native failure retries one command before an explicitly chosen response",
+    "name": "visit-failed-no-false-meeting-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看拜访安排 · 药香故人",
+          "w": 245,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你保留丹药，各自离开，尚未正式结识。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "不消耗物资 · 在线6秒 · 仅拜访一次",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "存档待核对，请先重试或取消原安排",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 5 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A3 only the original saved visit shows pending reply and native failure retries one command before an explicitly chosen response",
+    "name": "saved-visit-awaits-answer-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "读对方来意",
+          "w": 128,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "继续当前遭遇",
+          "w": 138,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "本次会面已保存 · 回应由你决定",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你保留丹药，各自离开，尚未正式结识。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "本次已保存 · 机缘展开",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "已会面 · 待你回应；阅读不推进当前安排。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 5 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A3 only the original saved visit shows pending reply and native failure retries one command before an explicitly chosen response",
+    "name": "shen-full-0-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相助",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你在药庐以草相助，从这次会面建立了新信任。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "本次已保存 · 抉择落定",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 4 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A3 only the original saved visit shows pending reply and native failure retries one command before an explicitly chosen response",
+    "name": "shen-full-1-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相助 · 山雨破庙",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你保留丹药，各自离开，尚未正式结识。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "本次已保存 · 抉择落定",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 4 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A3 only the original saved visit shows pending reply and native failure retries one command before an explicitly chosen response",
+    "name": "shen-full-2-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相助 · 药香故人",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你在药庐以草相助，从这次会面建立了新信任。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "本次已保存 · 抉择落定",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 4 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A3 only the original saved visit shows pending reply and native failure retries one command before an explicitly chosen response",
+    "name": "shen-full-3-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "换缘牍 · 四位人物",
+          "w": 160,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "查看来往地点与后续",
+          "w": 200,
+          "h": 45,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "沈清禾",
+          "font": 28,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "下次来往预览",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "相助 · 下一次来往 · 一诺千山",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "听雨洞府 · 元婴起。待相应境界后再访，不会自动触发或补发物资。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "本次已保存 · 抉择落定",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 4 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "阅读不耗时；无援助也可修行。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  },
+  {
+    "case": "UIR34-07 A4 journal headings all text and ordinary detail returns remain in the original reading domain without Game changes",
+    "name": "journal-original-headings-geometry",
+    "data": {
+      "scroll": 900,
+      "width": 1440,
+      "dialogOverflow": 0,
+      "controls": [
+        {
+          "text": "人物",
+          "w": 64,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "此地机缘",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "近期手记",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "修仙生平",
+          "w": 100,
+          "h": 44.09375,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "上一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        },
+        {
+          "text": "下一页",
+          "w": 92,
+          "h": 44,
+          "hit": true,
+          "inside": true,
+          "parent": true,
+          "range": true,
+          "clip": false
+        }
+      ],
+      "text": [
+        {
+          "text": "此生行道手记 · 回看不推进年月",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "近期手记 · 1",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "你提笔绘符。护持、灼伤与引爆，皆有其时机。",
+          "font": 18,
+          "minimum": 18,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "共 6 项",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        },
+        {
+          "text": "近100条手记；完整因果见生平。",
+          "font": 14,
+          "minimum": 14,
+          "inside": true,
+          "range": true
+        }
+      ]
+    }
+  }
+]
