@@ -83,7 +83,7 @@ test('CHECK-ART-C2 a native paid-study quota keeps complete loadout and relic re
   await page.getByTestId('equipment-mode-skills').click();await selectLearningSkill(page,'sword_guard');await expect(page.getByTestId('preparation-start')).toBeDisabled();
  });
  expect(await activity(page)).toEqual(a);await page.getByTestId('retry').click();const first=await oneSaved(page,a,before);expect(first.game.loadout).toEqual(before.loadout);
- await selectLearningSkill(page,'sword_guard');await page.getByTestId('equip-sword_guard').click();await expect(page.locator('.configuration-slots article')).toHaveCount(4);await expect(page.locator('.configuration-slots .changed')).toHaveCount(1);await frame(page,info,'real-study-retry-then-one-slot-compare');await page.getByTestId('configuration-cancel').click();expect(await recoveryDatabase(page)).toEqual(first.raw);
+ await selectLearningSkill(page,'sword_guard');await page.getByTestId('equip-sword_guard').click();await page.getByTestId('config-full').click();await expect(page.locator('.configuration-slots article')).toHaveCount(4);await expect(page.locator('.configuration-slots .changed')).toHaveCount(1);await frame(page,info,'real-study-retry-then-one-slot-compare');await page.getByTestId('configuration-cancel').click();expect(await recoveryDatabase(page)).toEqual(first.raw);
 });
 test('CHECK-ART-C3 another page full restore retires old-life current-relic inspection and its edited budget without applying a new authorization',async({page,context},info)=>{
  const before=await importRecoveryFixture(page,prepared(true));expect(before.core.player.realm).toBe('golden');

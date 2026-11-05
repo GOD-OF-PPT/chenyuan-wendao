@@ -1,3 +1,4 @@
+from uir34_03_inventory import prior_uir3403_bytes
 from uir33_07_inventory import prior_uir3307_bytes
 """UX33 exact display projection; old proofs, callbacks, styles and budgets remain owned."""
 from check_ux31_33_inventory import prior_check_ux3133_bytes
@@ -378,6 +379,7 @@ MARKERS={'App.vue': "import StageOutcome from './StageOutcome.vue';\n"
  'SourceObject.vue': "state==='failed'?'查看上方提示'",
  'StageOutcome.vue': '已确认成果保留；请重新读取。'}
 def prior_ux33_bytes(path,raw):
+ raw=prior_uir3403_bytes(path,raw)
  raw=prior_check_ux3133_bytes(path,prior_uir3307_bytes(path,raw))
  name=Path(path).name
  if name not in FACTS or MARKERS[name].encode() not in raw:return raw

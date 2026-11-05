@@ -1,3 +1,4 @@
+from uir34_03_inventory import prior_uir3403_bytes
 """ART26 actor/actual slots and a strictly bounded readonly inspection handoff."""
 import hashlib,json,re
 from pathlib import PurePosixPath
@@ -47,7 +48,7 @@ def validate_art26(root,image_reader=None):
  def local(n):
   assert type(n)is str and not PurePosixPath(n).is_absolute()and'..'not in PurePosixPath(n).parts and'\\'not in n,'ART26 local path'
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART26 missing input';return p
- def digest(n):return hashlib.sha256(local(n).read_bytes()).hexdigest()
+ def digest(n):return hashlib.sha256(prior_uir3403_bytes(n,local(n).read_bytes())).hexdigest()
  def identity(r):
   assert type(r['bytes'])is int and r['bytes']==local(r['path']).stat().st_size and r['sha256']==digest(r['path']),'ART26 actual identity'
   return local(r['path']).read_bytes()

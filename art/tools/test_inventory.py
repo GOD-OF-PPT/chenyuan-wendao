@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3403=ROOT/'art/redesign/uir34-03.json'
+  if uir3403.exists():
+   data=json.loads(uir3403.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+[data['before']]+list(data['unchanged']))
   uir3402=ROOT/'art/redesign/uir34-02.json'
   if uir3402.exists():
    data=json.loads(uir3402.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']));files.update(ROOT/ref['before'] for ref in data['files'].values())
@@ -2319,5 +2322,24 @@ class UIR3402FocusTests(unittest.TestCase):
    p=self.root/LEDGER;raw=p.read_text();m=json.loads(raw);m[key]=value;self.write(LEDGER,m)
    with self.subTest(scope=key),self.assertRaisesRegex(AssertionError,'UIR34-02'):validate_uir3402(self.root)
    self.write(str(p.relative_to(self.root)),raw)
+
+class UIR3403FocusTests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_original_cap_full_inverse_and_unchanged_configuration(self):
+  from uir34_03_inventory import validate_uir3403,prior_uir3403_bytes,MANIFEST
+  self.assertLessEqual(validate_uir3403(ROOT)[1],60000)
+  self.assertEqual(prior_uir3403_bytes(MANIFEST['path'],(ROOT/MANIFEST['path']).read_bytes()),(ROOT/MANIFEST['before']).read_bytes())
+ def test_effects_comparison_confirm_and_budget_cannot_change_outside_display(self):
+  from uir34_03_inventory import validate_uir3403,MANIFEST,LEDGER
+  for a,b in [("emit('confirm')","emit('close')"),('!q.allowed||!!error','!q.allowed'),('config-full','missing-full'),("key==='cultivationBonus'","key==='guard'"),('ConfigurationOutlook v-else','div v-else')]:
+   raw=(ROOT/MANIFEST['path']).read_text();self.assertIn(a,raw);self.write(MANIFEST['path'],raw.replace(a,b,1))
+   with self.subTest(mutation=a),self.assertRaisesRegex(AssertionError,'UIR34-03'):validate_uir3403(self.root)
+   self.write(MANIFEST['path'],raw)
+  for key,value in [('maxComponentBytes',5644),('maxGroupBytes',60001),('userAcceptance',True)]:
+   m=json.loads((ROOT/LEDGER).read_text());m[key]=value;self.write(LEDGER,m)
+   with self.subTest(scope=key),self.assertRaisesRegex(AssertionError,'UIR34-03'):validate_uir3403(self.root)
+   self.write(LEDGER,MANIFEST)
 
 if __name__=='__main__':unittest.main()
