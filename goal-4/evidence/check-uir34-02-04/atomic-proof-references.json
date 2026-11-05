@@ -1,0 +1,50 @@
+[
+  {
+    "case": "CHECK-UIR34-C1 a normal opening resumes only its chosen gift then original idle cycles and breakthrough lead to an explicit complete school comparison",
+    "path": "goal-4/evidence/check-uir34-02-04/CHECK-UIR34-C1-complete-tick-0.json",
+    "bytes": 32779,
+    "sha256": "3307daa7c7054bae65ce0063810013eb537bdf2c0792deb4a7f54544989b8a6d"
+  },
+  {
+    "case": "CHECK-UIR34-C1 a normal opening resumes only its chosen gift then original idle cycles and breakthrough lead to an explicit complete school comparison",
+    "path": "goal-4/evidence/check-uir34-02-04/CHECK-UIR34-C1-complete-tick-1.json",
+    "bytes": 49774,
+    "sha256": "8cfba7ac1aa93e70d6d530a8771865a3eeebd15a316fa8b5b57e292421258f3c"
+  },
+  {
+    "case": "CHECK-UIR34-C1 a normal opening resumes only its chosen gift then original idle cycles and breakthrough lead to an explicit complete school comparison",
+    "path": "goal-4/evidence/check-uir34-02-04/CHECK-UIR34-C1-complete-tick-2.json",
+    "bytes": 46768,
+    "sha256": "c3f66d0bdd467dc54dfde99987336cab12d6a66914fbf8f8d61958c009ad45eb"
+  },
+  {
+    "case": "CHECK-UIR34-C1 a normal opening resumes only its chosen gift then original idle cycles and breakthrough lead to an explicit complete school comparison",
+    "path": "goal-4/evidence/check-uir34-02-04/CHECK-UIR34-C1-complete-tick-3.json",
+    "bytes": 48846,
+    "sha256": "ef430080eca968180f3c994f92170cb312122985c4908916d7d238a40363b6cc"
+  },
+  {
+    "case": "CHECK-UIR34-C1 a normal opening resumes only its chosen gift then original idle cycles and breakthrough lead to an explicit complete school comparison",
+    "path": "goal-4/evidence/check-uir34-02-04/CHECK-UIR34-C1-complete-tick-4.json",
+    "bytes": 70304,
+    "sha256": "5ad2aa9781a286c213a115fb2434dd808e0b887ca22d303340aba6f962f7f3ee"
+  },
+  {
+    "case": "CHECK-UIR34-C1 a normal opening resumes only its chosen gift then original idle cycles and breakthrough lead to an explicit complete school comparison",
+    "path": "goal-4/evidence/check-uir34-02-04/CHECK-UIR34-C1-full-configuration-proof.json",
+    "bytes": 71841,
+    "sha256": "c97392da079842aa50a14983c9b4248936857d700b8b5b1df86c3df0e8a055d5"
+  },
+  {
+    "case": "CHECK-UIR34-C2 a paused finite activity keeps its allowance through full comparison and native configuration retry then retires without an automatic new cycle",
+    "path": "goal-4/evidence/check-uir34-02-04/CHECK-UIR34-C2-full-configuration-proof.json",
+    "bytes": 36586,
+    "sha256": "a9f99dee5e86bc46b0115c582b5a771f1d0ffe8d9ae56cae695c9eb1e161ed69"
+  },
+  {
+    "case": "CHECK-UIR34-C3 held breakthrough saving keeps configuration readonly and the original preparation and outcome commit once after an explicit pause",
+    "path": "goal-4/evidence/check-uir34-02-04/CHECK-UIR34-C3-complete-tick-0.json",
+    "bytes": 54022,
+    "sha256": "43d681d6086f4766980b03e5638dc7553b2d8d83163fa0f6eda30846ac0db7de"
+  }
+]

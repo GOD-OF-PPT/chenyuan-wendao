@@ -1,24 +1,28 @@
 {
-  "currentRuntime": "814a1a25cb1263962bdaa0c0c0c85794189ce4dd0c7ab91c41e0ff3f3cb99831",
   "source": {
-    "head": "ce50e736a89ec30594a486304657df833cdbe4e4",
-    "source": "ce50e736a89ec30594a486304657df833cdbe4e4",
-    "tree": "c2dfa937fb06714f04a9e2d1b6915eb1ecce8bcf",
+    "head": "6e3385785badadda56c594b584d694c938e98da2",
+    "source": "6e3385785badadda56c594b584d694c938e98da2",
+    "tree": "2e15431fb350cd2a302e69ca32ab5e9190760750",
     "dirty": false,
     "node": "v24.22.1",
     "npm": "8.11.0",
     "npmOnPath": "8.11.0"
   },
-  "productionChanged": false,
-  "runtime333Exact": true,
-  "payload112Exact": true,
-  "preview": "http://127.0.0.1:56907/",
+  "runtime": "bee1b34f62ad3ea2ff4b12ca4ae929eba5b03f5a0f8ae8e8a2529dae29fcf5c4",
+  "productionChanged": true,
+  "changedProductionFile": "web/src/MilestoneReview.vue",
+  "preview": "http://127.0.0.1:56908/",
+  "package": "package-assembly.json",
+  "runtimeSources": 333,
+  "payloadFiles": 112,
+  "actualPackageHTTP": "package-http.json",
+  "reusedOldPackage": false,
   "previewChecks": [
     {
       "path": ".vite/manifest.json",
       "status": 200,
       "bytes": 185,
-      "sha256": "9ad6d5518d57a46e2a16ccf0072ff8c8e9edea98ad74c152597d931841aa0c12",
+      "sha256": "2fdaceee56d6c131286ffec1cbf62fd1bd4f2c7a1bf8fedd53ae91f75cf965fb",
       "matches": true
     },
     {
@@ -715,95 +719,90 @@
       "matches": true
     },
     {
-      "path": "assets/index-CaqbKBRt.js",
+      "path": "assets/index-X1-jSwID.js",
       "status": 200,
-      "bytes": 989834,
-      "sha256": "cd9e31f85ea8deaf319b5684dbacb4e7fc05a546df22f5183e5550236e8bcb95",
+      "bytes": 989875,
+      "sha256": "507dafccd3e4003be4b41d2562e96be288dabca2a0a765708f377950155c572d",
       "matches": true
     },
     {
       "path": "demo-nodes/battle-sword.json",
       "status": 200,
       "bytes": 2568,
-      "sha256": "12b32762d9d9a27c63ee2c28bf5d9277794a9ef4485a6f5e2afa73fdb886828b",
+      "sha256": "e7c0afb8ac73b7a52218db09aff5d0fe5025f859dffc32f5850d16650d09aebb",
       "matches": true
     },
     {
       "path": "demo-nodes/battle-talisman.json",
       "status": 200,
       "bytes": 2670,
-      "sha256": "6c17dfc51b41b320c8f51303be763df3164a1ecc01e93845f2cbed8cd144d058",
+      "sha256": "0313b6b2ebdfda7fba80d1ec2c06db4c78d51ecded819d590ddef1f55417b5a8",
       "matches": true
     },
     {
       "path": "demo-nodes/causal-help.json",
       "status": 200,
       "bytes": 4863,
-      "sha256": "0c2964c521c5dc1910b089e2cb404a69b1b1ababa862b644304d3b59f702dd91",
+      "sha256": "ac318569170afe92c66e1a27b30ac0c0dbc9f65691ab879f10fab9ddaa5edf65",
       "matches": true
     },
     {
       "path": "demo-nodes/causal-trade.json",
       "status": 200,
       "bytes": 5625,
-      "sha256": "3a3bee58b26678b8d37d156fba00937af29dccaa0c1f0a7e4075c5ff6206709c",
+      "sha256": "ca1ae6c0f3a6ba9f694a9f924a607d9130fec6166dc7f3f52c94af938be30f9c",
       "matches": true
     },
     {
       "path": "demo-nodes/ending-sword.json",
       "status": 200,
       "bytes": 21314,
-      "sha256": "ffaf14ce27f4ea4b5e1bd1fd23cf74697c793cd4c0128ffbab6dd9ac7f513655",
+      "sha256": "0d2cafcfe8096590acdd5d0563648d7caa1725f76cce0ae0a644403330f0261c",
       "matches": true
     },
     {
       "path": "demo-nodes/ending-talisman.json",
       "status": 200,
       "bytes": 20891,
-      "sha256": "85746b625961a70603864b966d20914c835afae1d72d9311a92ffab0c14bfbf2",
+      "sha256": "23fe2b908b7e44b49776cea6fbf1c837bb8db178ecb0da5d8975714e3308368f",
       "matches": true
     },
     {
       "path": "demo-nodes/manifest.json",
       "status": 200,
       "bytes": 3522,
-      "sha256": "d35d95f96a4f9e22e4fe833ba93c8b00a3a2e22d15c4dc0c506c4a65a2349799",
+      "sha256": "59756f83511e55acfa3b2eba1b4dd2a52b9cca875619e380543c78bd0bcf9ab9",
       "matches": true
     },
     {
       "path": "demo-nodes/opening.json",
       "status": 200,
       "bytes": 1304,
-      "sha256": "6da7b319309fcbb957cd522b973d308bff70ec612c501d8b9786bfdb59fe079a",
+      "sha256": "bc860a6b494ff468a7cbe879f9e197e49501a0efcf2551534818f625ee40a83f",
       "matches": true
     },
     {
       "path": "demo-nodes/trial-sword.json",
       "status": 200,
       "bytes": 18339,
-      "sha256": "afcf6dccb2504813827794ed19d8d85a3a38f0de0f8ae818cdb48117b81e73eb",
+      "sha256": "828693b339d8523073819bdfbfca59e1228f269ad97dc04db8f1b8375890cf66",
       "matches": true
     },
     {
       "path": "demo-nodes/trial-talisman.json",
       "status": 200,
       "bytes": 15257,
-      "sha256": "6f83bbf64146f3613199195273b5b0febb6ac9acf11dabe6cb66af14ea126768",
+      "sha256": "57378553f3c6a4ede74dd9e32d719f3d5c6e9e8eec71035c8608ac1872f122e1",
       "matches": true
     },
     {
       "path": "index.html",
       "status": 200,
       "bytes": 569,
-      "sha256": "8443053c053254b5a59e0024177b0742cab189dc660054de2e19939dd9965d9d",
+      "sha256": "8be797f6c3c667fe75869275d7421f168866826110a74e611db881c2dd6b6090",
       "matches": true
     }
   ],
   "allHTTPExact": true,
-  "reusedPreviousPackage": true,
-  "package": {
-    "path": "artifacts/goal-4/uir34-04/uir34-04-preview-28708d1.zip",
-    "bytes": 10126503,
-    "sha256": "a8d431eef3ffdfec2408dba632129c7ac9b284481a4db9f2c605cc30dd9a5367"
-  }
+  "packageSHA256": "08462fe334d9429a5fd1bd259024bd211f3d92c8f24bf7ee7a4fc040b993130f"
 }
