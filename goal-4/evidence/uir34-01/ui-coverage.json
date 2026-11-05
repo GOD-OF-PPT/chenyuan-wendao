@@ -1,0 +1,718 @@
+{
+  "source": "5ee0000",
+  "runtime": "8f5105b733a7385f98762e81fdce07d08e30bd9f0b2f24fd8a8c39d1f4c75e13",
+  "actualUniqueUI": 114,
+  "files": [
+    "art31-life-scroll.spec.ts",
+    "cend03-review-observations.spec.ts",
+    "check-uir33-02.spec.ts",
+    "stage-r1.spec.ts",
+    "stage-r4.spec.ts",
+    "uir33-01-cultivation-active.spec.ts",
+    "uir33-06-life-entry.spec.ts",
+    "uir33-08-alchemy-arrangement.spec.ts",
+    "uir34-01-lifespan-guidance.spec.ts",
+    "ux24-goal-guidance.spec.ts",
+    "ux33-activity-status.spec.ts"
+  ],
+  "cases": [
+    {
+      "suite": "ui",
+      "file": "art31-life-scroll.spec.ts",
+      "title": "ART31-A1 one physical life scroll keeps every character of all four factual chapters exact paging management return and export readonly",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art31-life-scroll.spec.ts",
+      "title": "ART31-A2 one real retirement intent keeps its twelve-second boundary native all-store rollback and one original retry before showing a factual sealed scroll",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art31-life-scroll.spec.ts",
+      "title": "ART31-A3 the actual full checkpoint restore returns a new unsealed life with its original preparation and discards old-life reading without auto closing",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art31-life-scroll.spec.ts",
+      "title": "ART31-A4 retired reading preserves every original chapter character actual status and export with original restart confirmation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art31-life-scroll.spec.ts",
+      "title": "ART31-A4 lifespan reading preserves every original chapter character actual status and export with original restart confirmation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art31-life-scroll.spec.ts",
+      "title": "ART31-A4 transmit reading preserves every original chapter character actual status and export with original restart confirmation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art31-life-scroll.spec.ts",
+      "title": "ART31-A4 depart reading preserves every original chapter character actual status and export with original restart confirmation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly CHOOSE exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly TRAVEL exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly CULTIVATE exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly SOURCE exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly BUY exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly SELL exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly CRAFT exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly USE exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly REST exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly BREAKTHROUGH exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly SCHOOL exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly STUDY exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly LEARN exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly EQUIP exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly FORGE exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly EQUIP_RELIC exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly ENCOUNTER exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly BATTLE exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly EVENT exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly DECIDE exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly START_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly ANSWER_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly END exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly RETIRE exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly END_LIFE exposes the real decision object costs authorization and pre-action time for review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 extra foreign rest preserves Game and records the actual travel preparation and disclosed time",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 extra real prepared trial checkpoint exposes both current preparation and explicit restoration without changing the saved state",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 EQUIP saved seal follows its visible object and clears across life and exact receipt reading",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 EQUIP_RELIC saved seal follows its visible object and clears across life and exact receipt reading",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 failed original cultivation keeps the real error and retry across life details without a screen-wide decorative frame",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 a saved breakthrough has one unchanged stop reason and full life and original milestone result",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r1.spec.ts",
+      "title": "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r1.spec.ts",
+      "title": "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r1.spec.ts",
+      "title": "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r1.spec.ts",
+      "title": "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r1.spec.ts",
+      "title": "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r1.spec.ts",
+      "title": "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "life chapter and exact page survive ordinary goal inspection without a Game action",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "same person and category selection preserve the current factual reading and ordinary return",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "a story can inspect life and ordinary details then return to its same unconfirmed response",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "opening life from settings inside an ordinary story detail preserves that original one-level return",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "a real six-second visit leaves a clear pending meeting and never silently chooses the response",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "all four people preserve every factual and known future-reading character without acting",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "the complete retained hundred-entry journal remains readable through its actual page controls",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "a duplicate journal entry keeps its own place after a saved commission",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "a duplicate journal entry keeps its own place after a saved commission at the hundred-entry cap",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "a committed visit that adds no journal text preserves the exact repeated entry being read",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "a saved victory with two actual journal entries retains the older readable entry",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "every life chapter retains its full source text and the exported factual life stays complete",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "DECIDE shows every genuine option while preselection and native details remain read-only",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "ANSWER_TRIAL shows every genuine option while preselection and native details remain read-only",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "END shows every genuine option while preselection and native details remain read-only",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "a committed response inserts facts without moving the life reader to another fact",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "one response waits six real seconds and persists its actual selected outcome exactly once",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "the selected ending waits twelve real seconds and seals only this life with all records retained",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "all eight main entries clear the temporary life-reading return while preserving the same pending story",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "a replacement life cannot inherit the previous factual chapter or unconfirmed response",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "entering question again in the same life resets the old response despite its identical semantic id",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "cancelled choice confirmation and a hidden pending peek cannot execute or reopen an old dialogue",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "failed scene and portrait resources keep all people, complete factual reading and return controls usable",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "stage-r4.spec.ts",
+      "title": "a pending trial question can inspect local fate without querying it as a person event",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A1 the running cultivation stage replaces new-plan controls with real pause and original-budget keyboard continuation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A2 assisted identity actual spending and finite limits survive readonly plan inspection refresh and explicit takeover",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A3 a failed cycle exposes the canonical retry while viewing the next draft cannot replace the accepted command",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A4 the stage pause during a held atomic save settles only that cycle without starting another",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A5 another cave activity keeps its real name controls and authorization instead of a disabled cultivation draft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 opening leave leads with the actual life instead of repeated unsealed instructions",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 opening help leads with the actual life instead of repeated unsealed instructions",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 opening trade leads with the actual life instead of repeated unsealed instructions",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 longest lawful name and complete late chapters preserve every original fact and unchanged text export",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 one original cultivation cycle preserves the selected life record and context through ordinary return",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 a failed twelve-second retirement keeps the active entry and only its original retry reveals the sealed conclusion",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-06-life-entry.spec.ts",
+      "title": "UIR33-06 replacing a life restores its own factual first page without inheriting the old reading or intent",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-08-alchemy-arrangement.spec.ts",
+      "title": "UIR33-08-A1 the furnace arrangement leads with the selected recipe true unit and finite target while complete rules and budget remain readonly",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-08-alchemy-arrangement.spec.ts",
+      "title": "UIR33-08-A2 four-material forecast and complete target rules fit together while an unaffordable draft keeps its real gate outside the disclosure",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir33-08-alchemy-arrangement.spec.ts",
+      "title": "UIR33-08-A3 reading rules after a quota failure cannot change the original thirty-second command or replay its saved reward",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A1 foreign last-month travel leads to an actionable readonly life guide without a zero-yield main action or a fictional checkpoint",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A2 a genuinely prepared last-month breakthrough keeps its original full thirty-second atomic checkpoint and restores ordinary guidance",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A3 a real native checkpoint remains inspectable after finite public work periods reach the lifespan boundary without restoring or ending",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A4 viewing last-month options during a failed original trip cannot replace its command or spend the last month",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A5 an original paused assisted budget resumes once and stops at the real lifespan limit before the new readonly guide appears",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A6 a last-month battle keeps its actual action and context until an explicitly saved retreat returns to the cave guide",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A7 a superseding navigation cancels a late life-management opening without a hidden dialog or Game write",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A8 a chosen material target persists through lifespan guidance life reading and refresh without accepting another activity",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C1 actual retreat keeps one truthful location blocker and only explicit six-second travel makes trial preparation ready",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 opening keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 event keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 event-target keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 battle keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 xp keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 material keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 skill-realm keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 relic-realm keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 stones keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C3 trial stage0 retains its actual exclusive question battle or ending guidance",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C3 trial stage1 retains its actual exclusive question battle or ending guidance",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C3 trial stage4 retains its actual exclusive question battle or ending guidance",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C4 retired remains a completed life with readonly return instead of new preparation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C4 ascended remains a completed life with readonly return instead of new preparation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C5 completed item skill event and owned relic tracking keeps the factual completion through readonly target changes",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A1 the shared rail keeps real cycle progress and concise controls through pause detail reading and original resume",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A2 aborted keeps one canonical original retry and never confuses an unknown outcome with an uncommitted one",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A2 committed-reply-lost keeps one canonical original retry and never confuses an unknown outcome with an uncommitted one",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A3 local objects point to one full recovery cause while viewing other playfields never replaces the failed source intent",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A4 paid preparation failures retain actual limits without cross-gameplay wording or a fake zero-completion forecast",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A5 a rejected source plan shows its actual reserve gate without a zero-yield plan and does not write anything",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "ux33-activity-status.spec.ts",
+      "title": "UX33-A6 reload and explicit takeover preserve the original remaining allowance without an offline reward or a duplicate clock",
+      "projectName": "chromium"
+    }
+  ],
+  "native1": "subset114, not additional coverage",
+  "package3": "subset114, packaged payload verification",
+  "deferred": [
+    "ART31-A5 existing mixed environment case"
+  ],
+  "all908DeclaredNotAllExecuted": true,
+  "formalRequirement": {
+    "version": 18,
+    "UI": 908,
+    "storage": 415,
+    "normal": 32,
+    "total": 1355,
+    "fullyExecuted": false
+  }
+}

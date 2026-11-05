@@ -1,0 +1,22 @@
+{
+  "periods": 1221,
+  "batches": 25,
+  "life": {
+    "name": "动作试玩",
+    "status": "active",
+    "reason": null,
+    "title": "此生仍在继续",
+    "conclusion": "以下是当前已保存的来路，尚未作出此生的结束选择。",
+    "realm": "qi",
+    "realmName": "炼气",
+    "elapsedMonths": 1223,
+    "startAgeMonths": 216,
+    "ageMonths": 1439,
+    "ageLabel": "119岁11个月",
+    "limitMonths": 1440,
+    "limitLabel": "120岁",
+    "remainingMonths": 1
+  },
+  "checkpointSource": "28974fe7-84f8-484c-a79d-1c9f08d67903",
+  "scope": "Public finite online activities under virtual clocks; setup only, not real growth pace or added UI coverage."
+}

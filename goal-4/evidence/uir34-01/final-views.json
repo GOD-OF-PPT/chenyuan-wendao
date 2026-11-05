@@ -1,0 +1,119 @@
+[
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/uir34-01-lifespan-guidance-f07cf-hidden-dialog-or-Game-write-chromium/superseding-navigation-no-late-management.png",
+    "sha256": "7709a7366a4ea9c0698cd20c54a7c5b69c3f57880f973ff0043f4cb07a47352f",
+    "view": "goal-4/evidence/uir34-01/views/final-superseding-navigation-no-late-management.jpg",
+    "viewSHA256": "b64809ed7d303441bb6a0d53c7b58e5fe778dfe999e438bdb6739ccc33d644df",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/uir34-01-lifespan-guidance-71599--accepting-another-activity-chromium/tracked-target-after-refresh.png",
+    "sha256": "42e50158f5f7474c9f59bd01e3ddd47d8ab435e2fca7c481a7b9644c95845698",
+    "view": "goal-4/evidence/uir34-01/views/final-tracked-target-after-refresh.jpg",
+    "viewSHA256": "e153c52225de82cfbc0b03d9d4125204cf3d96e856492f30875f825bc7c45f23",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/uir34-01-lifespan-guidance-1fcb1-and-or-spend-the-last-month-chromium/guide-after-original-retry.png",
+    "sha256": "3a2ea5f730d145e832de06a309bd48040af7ad5dbd1c01ef181e525c31b8828f",
+    "view": "goal-4/evidence/uir34-01/views/final-guide-after-original-retry.jpg",
+    "viewSHA256": "b91302d2654ed74ceb5370ea1d3c727c4ee6e150920d9b68e764a3b590cfe8f6",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/uir34-01-lifespan-guidance-756b6--new-readonly-guide-appears-chromium/guide-after-original-budget-stop.png",
+    "sha256": "619c1f4909fca27e59cee8a6c46e883fc18cb4d681a139aa84cf1f9462da393f",
+    "view": "goal-4/evidence/uir34-01/views/final-guide-after-original-budget-stop.jpg",
+    "viewSHA256": "625a56d181ad7acef84e45e5dbd4d44ccd3428e57e00766b6d6323e433b76131",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/uir34-01-lifespan-guidance-cf779-t-returns-to-the-cave-guide-chromium/guide-only-after-explicit-retreat.png",
+    "sha256": "1120c4d4343d7cd16ff79bdab91c92c645ada36c21a03b773516ea0b653264a3",
+    "view": "goal-4/evidence/uir34-01/views/final-guide-only-after-explicit-retreat.jpg",
+    "viewSHA256": "dcb846eac2b83704e090cc3bc2774e17560f8a2dd9f5a8422234985c0f6a889d",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-relics.png",
+    "sha256": "acb73656fb9139a00ace92c85caee09f72d30791c49972b5ddb29133f28710f7",
+    "view": "goal-4/evidence/uir34-01/views/final-entry-hub-relics.jpg",
+    "viewSHA256": "fc1379470395e883ef8dc922a53b25da9bd33e9f860dfbbd905d3b299252d81c",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-life.png",
+    "sha256": "c65da97af6d66a7f5888cc9458d1cc0a1c00a29c7850e5ef6bdc9946015489db",
+    "view": "goal-4/evidence/uir34-01/views/final-entry-hub-life.jpg",
+    "viewSHA256": "580a995790210bcebd6081ddb5a60983b3e2f249c0e064a437ac92428d7957e2",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-2.png",
+    "sha256": "dcc2e3ccd2e0ae6189d6c8d95a1cfeb705ec010093893d2cdccad8a0ee663a23",
+    "view": "goal-4/evidence/uir34-01/views/final-entry-tab-2.jpg",
+    "viewSHA256": "2be034a4b742e5a5bc371352d16e32e309f3d9b2044777c65db88f93e4bff31c",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/real-compact-stage.png",
+    "sha256": "c4b2be453868231299f2fe4872fc97e9779957eb35ef9190704c08ad2e56ba63",
+    "view": "goal-4/evidence/uir34-01/views/final-real-compact-stage.jpg",
+    "viewSHA256": "52ce1cda10b37cb1a7e3bb164803974627ba0c0935e788a79e0644ef58790602",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-3.png",
+    "sha256": "b458e8420d6bc57536e38ff07408dc739e121e635b8cfd17917f3b3b178ca649",
+    "view": "goal-4/evidence/uir34-01/views/final-entry-tab-3.jpg",
+    "viewSHA256": "16047656d6782e9b0b562899c1904de924d3ba9519ca083bdd324238ac60f095",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-1.png",
+    "sha256": "a8decffacacbf5b0d851b116aa69d3373a134554645f0afdc723465889f95bb6",
+    "view": "goal-4/evidence/uir34-01/views/final-entry-tab-1.jpg",
+    "viewSHA256": "e705a0b9184c89e67fef720ce2807f979b8b096b0a4c41a2c54f11440f365fc5",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-forge.png",
+    "sha256": "af6afa3cd811173425238fe1385c2bb3fc9001f3b3d521437f1c973b8deeac67",
+    "view": "goal-4/evidence/uir34-01/views/final-entry-hub-forge.jpg",
+    "viewSHA256": "c8c63cbcaac76672bcc7b4eb0aa61be02427a132dfb8599756cdd316a82e6633",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/final/related-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-skills.png",
+    "sha256": "dfdbe341a6f5bce0e5a8010d62af4d61007bfd39826da6ef8fc16f65512d00a9",
+    "view": "goal-4/evidence/uir34-01/views/final-entry-hub-skills.jpg",
+    "viewSHA256": "852f28fc2f6058bece96f724b7c4bb2795ebd6ec45ee21247b777587cf745920",
+    "quality": 68,
+    "lossy": true,
+    "actualViewed": true
+  }
+]

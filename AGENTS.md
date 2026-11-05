@@ -566,3 +566,6 @@ UIR33-08依[0104](docs/decisions/0104-alchemy-arrangement-uir33-08-contract.md)�
 
 
 CEND04依[0105](docs/decisions/0105-current-ui-suitability-cend04-contract.md)及本轮实际回读[XAG109](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/109)/[XAG114](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114)：确认主区先辨当前动作、代价、耗时/有限范围及后果，背景/完整规则可按需读；不能让保存协议与开发说明代替游戏互动。恢复按钮说明玩家能继续什么，同时保原预算/完整重计与其他页执行归属的实际边界。比较先辨所选器物/功法的真实作用，不把未变数值呈成新收益；完整旧值与原比较能力仍可查。寿限等重要状态须核实际主舞台/目标与正式门槛，不能只凭隐藏的旧提示组件存在就称已告知。具体布局/文案/优先级为项目推导；本轮仅审查，发现项按后续独立任务修，52机器绿不代整体UI/真人艺术认可，兼容环境性能暂停不变。
+
+
+UIR34-01依[0106](docs/decisions/0106-lifespan-guidance-uir34-01-contract.md)：寿限提示依正式phase/life/AGE_LIMIT，LOCATION_REQUIRED不冒寿元受阻，最后月仍可合法突破、筹备/配置或处理当前战局。主位真实受阻时给可查看去向，不用+0/灰色开始冒计划；原追踪只加上下文不暗改。准备核对只在原Store验证可用时出现，不补造或自动恢复/收卷。App返回实际导航owner，异步查看核人生/sync/导航；LifeScroll只读公开接口激活原可见书册入口，原写回调/焦点/预算/时钟保持。真实CPP测试应由正式保存建立；长前缀只读观察可合并保存activity/Date与公开DOM下一周期读秒，保完整周期/截止/原8秒与案例上限，不加sleep或提高时限掩盖异步握手。具体布局和措辞为项目推导，工程范围见goal-4/evidence/uir34-01；三任务综合另做，兼容环境性能及整体艺术/长期/真人边界保持。

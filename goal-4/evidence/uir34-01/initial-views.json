@@ -1,0 +1,20 @@
+[
+  {
+    "original": "artifacts/goal-4/uir34-01/current/focused-results/uir34-01-lifespan-guidance-03e0d-n-or-a-fictional-checkpoint-chromium/existing-life-choices-without-authorisation.png",
+    "sha256": "15fc131fd22836843f571841554c3e792b2f1fda6dcb7ad16ddfc14c74bec403",
+    "view": "goal-4/evidence/uir34-01/views/existing-life-choices-without-authorisation.jpg",
+    "viewSHA256": "fcc2309da7c999dd1440bafe0973f08ac1829900d8e5f63cd8cfcfe68b6ac07b",
+    "actualViewed": true,
+    "quality": 68,
+    "lossy": true
+  },
+  {
+    "original": "artifacts/goal-4/uir34-01/current/focused-results/uir34-01-lifespan-guidance-03e0d-n-or-a-fictional-checkpoint-chromium/last-month-main-guide.png",
+    "sha256": "c2f1edf6656374626e316152a7435d751558a989c816d3b3cd24d471cbef2780",
+    "view": "goal-4/evidence/uir34-01/views/last-month-main-guide.jpg",
+    "viewSHA256": "50696b772327845f06108298cfa4dac05523a27b8ac51f8069ea5a7e2b4b56d7",
+    "actualViewed": true,
+    "quality": 68,
+    "lossy": true
+  }
+]
