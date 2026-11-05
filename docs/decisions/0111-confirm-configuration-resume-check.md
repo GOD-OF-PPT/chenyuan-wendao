@@ -35,3 +35,5 @@ ce50e73三新例0/3原红与完整输入保。C1正式凡人周期30秒，首稿
 C3是实际UI阻塞：TICK正在原子保存时允许只读打开原安排，但MilestoneReview所有返回/Esc都因busy禁用，原pause被modal挡住。局修仅readonly（review.activity存在、prepared为空）在busy时允许close；未批准/正在START保存的确认仍禁用返回，原Game/Store/原意图/时钟/暂停不改。新C3先原生保留START事务核未批准确认仍不可关闭，再TICK保留核readonly可返回/原暂停和完整v2/CPP同事务；保存中不读阻塞全DB假定成功。
 
 仅MilestoneReview两处UI关闭守卫，不迁写回调；原文件完整保、精确整源逆回旧全文/hash，旧UIR34-02帽与其它所有帽保持，不新增画/字体/CSS。当前新生产源后完整核心/全部相关与像素重新核，旧ce50绿只留原源。
+
+f557045三组合2过/1红：C1正常在线链及C3原START锁定/read-only返回/完整突破已过。C2完整配置/活动失效proof已过，最后误找STATE_CHANGED旧活动条；既有App明示隐藏该旧条、显示本次StageOutcome。改为断言旧继续入口/活动条消失，并核同次止水剑心已存成果和HUD辅助几何；不弱化原活动/预算/回执/全库断言，生产不再改。
