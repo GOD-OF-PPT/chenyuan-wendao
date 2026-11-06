@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-check-ui35-feedback-additions",
+  "version": 30,
+  "parentVersion": 29,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 957,
+    "signature": "ade29499ab8f3f97116c33836ad860ea244c16f37e639d8c807874b3fd16fe9a"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-ui35-feedback.spec.ts",
+      "title": "CHECK-UI35-C1 an actual saved new game keeps its short control seal in the result strip outside opening text and natural expiry changes no Game",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-ui35-feedback.spec.ts",
+      "title": "CHECK-UI35-C2 exhausted paid cultivation free selection original quota retry pause and reload keep true counts finite allowance and a complete resumed period",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-ui35-feedback.spec.ts",
+      "title": "CHECK-UI35-C3 an original welcome import retry saves once before its safe control seal and modal restart never borrows a free or stale effect",
+      "projectName": "chromium"
+    }
+  ]
+}

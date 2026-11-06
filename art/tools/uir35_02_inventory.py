@@ -1,3 +1,4 @@
+from check_ui35_inventory import prior_check_ui35_bytes
 """Exact small read-only fallback; existing controls, sources, and budgets remain pinned."""
 import hashlib,json,re
 from pathlib import Path
@@ -63,6 +64,7 @@ MANIFEST={'format': 'chenyuan-uir35-02-assisted-fallback',
  'sourceReferences': ['docs/decisions/0118-assisted-cultivation-fallback.md',
                       'goal-4/amendments/2026-11-06-uir35-02-input.md']}
 def prior_uir3502_bytes(path,raw):
+ raw=prior_check_ui35_bytes(path,raw)
  if Path(path).name!='App.vue'or b'import CultivationFallback 'not in raw:return raw
  row=MANIFEST['app'];assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'UIR34-01 UIR34-05 UIR34-06 UIR34-07 UIR35-01 UIR35-02 exact whole App display'
  text=raw.decode()

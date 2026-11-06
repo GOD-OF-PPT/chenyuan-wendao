@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  checkui35=ROOT/'art/redesign/check-ui35.json'
+  if checkui35.exists():
+   current=json.loads(checkui35.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[x['before']for x in current['files'].values()],*current['unchanged']])
   uir3502=ROOT/'art/redesign/uir35-02.json'
   if uir3502.exists():
    current=json.loads(uir3502.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],current['app']['path'],current['app']['before'],*current['added'],*current['unchanged']])
@@ -2526,3 +2529,25 @@ class Uir3502Tests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'UIR35-02'):validate_uir3502(self.root)
   self.write(LEDGER,MANIFEST);self.write(MANIFEST['app']['before'],'lost original')
   with self.assertRaisesRegex(AssertionError,'UIR35-02'):validate_uir3502(self.root)
+
+class CheckUi35Tests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_whole_feedback_inverse_and_all_original_budgets(self):
+  from check_ui35_inventory import MANIFEST,validate_check_ui35,prior_check_ui35_bytes
+  self.assertLessEqual(validate_check_ui35(ROOT)[1],34000)
+  for n,row in MANIFEST['files'].items():self.assertEqual(prior_check_ui35_bytes(n,(ROOT/n).read_bytes()),(ROOT/row['before']).read_bytes())
+ def test_receipt_guards_timer_and_original_actors_cannot_change(self):
+  from check_ui35_inventory import validate_check_ui35
+  for n,a,b in [('ActionFeedbackStage.vue','store.saved&&store.available','true'),('ActionFeedbackStage.vue','setTimeout(clear,1600)','setTimeout(clear,16000)'),('ActionFeedbackStage.vue','fresh&&','true&&'),('action-motion.css','scale(.16)','scale(2)')]:
+   p='web/src/'+n;raw=(ROOT/p).read_text();self.assertIn(a,raw);self.write(p,raw.replace(a,b,1))
+   with self.subTest(change=a),self.assertRaises(AssertionError):validate_check_ui35(self.root)
+   self.write(p,raw)
+ def test_missing_receipt_scope_and_higher_budget_cannot_pass(self):
+  from check_ui35_inventory import MANIFEST,LEDGER,validate_check_ui35
+  for key,value in [('userAcceptance',True),('maxFeedbackBytes',34001),('newRasterAssets',1)]:
+   m=copy.deepcopy(MANIFEST);m[key]=value;self.write(LEDGER,m)
+   with self.subTest(key=key),self.assertRaises(AssertionError):validate_check_ui35(self.root)
+  self.write(LEDGER,MANIFEST);(self.root/LEDGER).unlink()
+  with self.assertRaises(AssertionError):validate_check_ui35(self.root)

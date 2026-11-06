@@ -1,0 +1,99 @@
+{
+  "format": "chenyuan-check-ui35-control-feedback",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "maxFeedbackBytes": 34000,
+  "files": {
+    "web/src/ActionFeedbackStage.vue": {
+      "before": "goal-4/evidence/check-uir35-01-02-cend05/before/web/src/ActionFeedbackStage.vue",
+      "beforeSha256": "627baf033129c973a3eec1f9902914b436f2ca37ae4b45f239ef02037f8dcad2",
+      "bytes": 11323,
+      "sha256": "4345000cda45d032154b1f7d8fdc0767082df46125d433e1815351f8a3b3447e",
+      "operations": [
+        [
+          6039,
+          "",
+          "ontrol=family==='dialogue'&&next.variant==='control',c"
+        ],
+        [
+          6187,
+          "",
+          "||control"
+        ],
+        [
+          6851,
+          "",
+          "control?root.value?.querySelector('.action-feedback-toast'):"
+        ],
+        [
+          7006,
+          "at=spo",
+          "middle=center(targe"
+        ],
+        [
+          7028,
+          "center(target)",
+          "null),at=spot??middle"
+        ],
+        [
+          7120,
+          "",
+          "control&&middle)at.x=target!.getBoundingClientRect().right-36;if("
+        ],
+        [
+          7410,
+          "",
+          "control?{...at,size:0}:"
+        ],
+        [
+          7605,
+          "",
+          "&&(!control||!!middle)"
+        ]
+      ]
+    },
+    "web/src/action-motion.css": {
+      "before": "goal-4/evidence/check-uir35-01-02-cend05/before/web/src/action-motion.css",
+      "beforeSha256": "fa4dbd48ff59877a2de4ab60ff348aba77659c520f900f2ba2f0ca119096664a",
+      "bytes": 11233,
+      "sha256": "141dc6a9e8021b2eeec654d5c51f30036fea6699d0337e1b58e62b0a49e97f04",
+      "operations": [
+        [
+          5466,
+          "}.motion-slash{position:absolute;left:10%;top:50%;width:80%;height:4px;background:linear-gradient(90deg,transparent,#f5f2cc,var(--motion-color),transparent);box-shadow:0 0 12px #e2edbb99;transform:rotate(-38deg);animation:motion-slash .45s ease-out both}\n.motion-slash.slash-two{transform:rotate(32deg);animation-delay:.12s;opacity:.6",
+          ""
+        ],
+        [
+          9925,
+          "motion-slash{from{clip-path:inset(0 100% 0 0);opacity:0}25%{opacity:1}to{clip-path:inset(0);opacity:0}}\n@keyframes ",
+          ""
+        ],
+        [
+          11139,
+          "",
+          "\n.motion-dialogue[data-variant=control]{z-index:17;transform:translate(-50%,-50%) scale(.16)}\n"
+        ]
+      ]
+    }
+  },
+  "unchanged": {
+    "web/src/App.vue": "9f3f6c4596d9c8d4801e5ff0fecd1f9cda7a0842a13f3083ae4613d58e14e78f",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/action-feedback.ts": "af4f938bd1dae6b00ed089e1fbc44eb0c3b2751cbe67786713b06d95030d88df",
+    "web/src/activity-clock.ts": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/BattleCast.vue": "e777a72538088e29a5b648dcb3a98a02bee51185c143c4b9f0ae724c603bc69d",
+    "web/src/ta07-cast.css": "05336c9c061713cfd8be1473bdc4b3c6e4a368036cc14ae9e81f420cefdd1ecd",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "web/src/CultivationFallback.vue": "8db348a488f4c70947a8974579f26816d25657f1fbabee632d049448cc369883",
+    "web/src/cultivation-fallback.ts": "579ff1b15aa9195c9d5d05e973118ae2e1cbafebd0415af3fb23fbbf0aedd9d1"
+  },
+  "sourceReferences": [
+    "docs/decisions/0120-check-ui35-control-feedback-contract.md",
+    "goal-4/amendments/2026-11-06-check-ui35-input.md",
+    "goal-4/evidence/check-uir35-01-02-cend05/dead-style-removal.json"
+  ]
+}

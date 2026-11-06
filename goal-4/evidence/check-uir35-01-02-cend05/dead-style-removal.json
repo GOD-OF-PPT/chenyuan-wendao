@@ -1,0 +1,17 @@
+{
+  "removedDefinitions": [
+    ".motion-slash",
+    ".motion-slash.slash-two",
+    "@keyframes motion-slash"
+  ],
+  "removedText": [
+    ".motion-battle,.motion-trial[data-variant=answer]{width:160px;height:160px}.motion-slash{position:absolute;left:10%;top:50%;width:80%;height:4px;background:linear-gradient(90deg,transparent,#f5f2cc,var(--motion-color),transparent);box-shadow:0 0 12px #e2edbb99;transform:rotate(-38deg);animation:motion-slash .45s ease-out both}\n",
+    ".motion-slash.slash-two{transform:rotate(32deg);animation-delay:.12s;opacity:.6}\n",
+    "@keyframes motion-slash{from{clip-path:inset(0 100% 0 0);opacity:0}25%{opacity:1}to{clip-path:inset(0);opacity:0}}\n"
+  ],
+  "preservedLiveSizeRule": ".motion-battle,.motion-trial[data-variant=answer]{width:160px;height:160px}",
+  "sourceConsumersOutsideCss": 0,
+  "originalCap": 34000,
+  "initialPlacementFeedbackBytes": 33737,
+  "finalActualFeedbackBytes": 33749
+}

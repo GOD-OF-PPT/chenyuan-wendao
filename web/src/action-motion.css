@@ -46,8 +46,7 @@
 .motion-trial .motion-particles>i{height:26px;width:2px;animation-name:motion-lightning}
 .motion-battle{--motion-color:#bbddd1}.motion-battle .motion-ring{border-radius:30%;animation-name:motion-impact}
 .motion-battle .motion-sigil{opacity:.6}
-.motion-battle,.motion-trial[data-variant=answer]{width:160px;height:160px}.motion-slash{position:absolute;left:10%;top:50%;width:80%;height:4px;background:linear-gradient(90deg,transparent,#f5f2cc,var(--motion-color),transparent);box-shadow:0 0 12px #e2edbb99;transform:rotate(-38deg);animation:motion-slash .45s ease-out both}
-.motion-slash.slash-two{transform:rotate(32deg);animation-delay:.12s;opacity:.6}
+.motion-battle,.motion-trial[data-variant=answer]{width:160px;height:160px}
 .motion-battle[data-variant*=talisman]{--motion-color:#e2ca91}.motion-battle[data-variant*=talisman] .motion-ring{border-radius:2%;border-style:dashed;animation-name:motion-stamp}
 .motion-battle[data-variant*=release]{width:280px;height:280px}.motion-battle[data-variant*=release] .motion-slash{height:7px}
 .motion-battle[data-variant*=guard] .motion-slash,.motion-battle[data-variant*=heal] .motion-slash,.motion-battle[data-variant*=restore] .motion-slash,.motion-battle[data-variant*=flee] .motion-slash,.motion-battle[data-variant=challenge] .motion-slash{display:none}
@@ -78,7 +77,6 @@
 @keyframes motion-trial{from{transform:rotate(45deg) scale(.3);opacity:0}25%,40%{opacity:1}to{transform:rotate(135deg) scale(1.15);opacity:0}}
 @keyframes motion-lightning{from{transform:rotate(var(--angle)) translateX(20px);opacity:0}25%{opacity:1}to{transform:rotate(var(--angle)) translateX(120px) scaleY(2);opacity:0}}
 @keyframes motion-impact{from{transform:scale(.2);opacity:1}to{transform:scale(1.1) rotate(60deg);opacity:0}}
-@keyframes motion-slash{from{clip-path:inset(0 100% 0 0);opacity:0}25%{opacity:1}to{clip-path:inset(0);opacity:0}}
 @keyframes action-number{from{opacity:0;margin-top:8px}15%,65%{opacity:1}to{opacity:0;margin-top:-45px}}
 @keyframes actor-impact{25%{transform:translateX(4px);filter:brightness(1.18)}55%{transform:translateX(-3px)}to{transform:translateX(0)}}
 @keyframes actor-arrival{from{opacity:.4;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
@@ -88,3 +86,5 @@
 
 .motion-battle[data-variant=victory]{--motion-color:#e5d69c}.motion-battle[data-variant=victory] .motion-slash,.motion-battle[data-variant=defeat] .motion-slash{display:none}
 .motion-battle[data-variant=victory] .motion-ring{animation-name:motion-ascend}.motion-battle[data-variant=defeat] .motion-ring{border-style:dotted;animation-name:motion-travel}
+
+.motion-dialogue[data-variant=control]{z-index:17;transform:translate(-50%,-50%) scale(.16)}
