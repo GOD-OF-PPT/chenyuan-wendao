@@ -1,0 +1,879 @@
+{
+  "frames": 7,
+  "rows": [
+    {
+      "attachment": "encounter-default-clear-summary-actual-geometry",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-04/current/package-results/uir35-04-battle-medicine-U-ffcef--separate-three-second-turn-chromium/encounter-default-clear-summary.png",
+      "geo": {
+        "root": {
+          "left": 41,
+          "top": 268,
+          "right": 1399,
+          "bottom": 793,
+          "width": 1358,
+          "height": 525
+        },
+        "nav": {
+          "left": 0,
+          "top": 818,
+          "right": 1440,
+          "bottom": 900,
+          "width": 1440,
+          "height": 82
+        },
+        "controls": [
+          {
+            "label": "对手与目标",
+            "box": {
+              "left": 1117,
+              "top": 273,
+              "right": 1223,
+              "bottom": 317,
+              "width": 106,
+              "height": 44
+            },
+            "hit": true,
+            "font": 16
+          },
+          {
+            "label": "战策",
+            "box": {
+              "left": 1229,
+              "top": 273,
+              "right": 1287,
+              "bottom": 317,
+              "width": 58,
+              "height": 44
+            },
+            "hit": true,
+            "font": 16
+          },
+          {
+            "label": "目标与限额",
+            "box": {
+              "left": 1293,
+              "top": 273,
+              "right": 1399,
+              "bottom": 317,
+              "width": 106,
+              "height": 44
+            },
+            "hit": true,
+            "font": 16
+          },
+          {
+            "label": "雾隐妖狼需炼气 · 选择对手",
+            "box": {
+              "left": 41,
+              "top": 330,
+              "right": 221,
+              "bottom": 404.1875,
+              "width": 180,
+              "height": 74.1875
+            },
+            "hit": true,
+            "font": 16
+          },
+          {
+            "label": "守山石卫需炼气 · 选择对手",
+            "box": {
+              "left": 231,
+              "top": 330,
+              "right": 411,
+              "bottom": 404.1875,
+              "width": 180,
+              "height": 74.1875
+            },
+            "hit": true,
+            "font": 16
+          },
+          {
+            "label": "上一页",
+            "box": {
+              "left": 334.515625,
+              "top": 728.5,
+              "right": 434.515625,
+              "bottom": 772.5,
+              "width": 100,
+              "height": 44
+            },
+            "hit": true,
+            "font": 16
+          },
+          {
+            "label": "下一页",
+            "box": {
+              "left": 569.484375,
+              "top": 728.5,
+              "right": 669.484375,
+              "bottom": 772.5,
+              "width": 100,
+              "height": 44
+            },
+            "hit": true,
+            "font": 16
+          },
+          {
+            "label": "按此战策历练雾隐妖狼",
+            "box": {
+              "left": 979,
+              "top": 739,
+              "right": 1399,
+              "bottom": 793,
+              "width": 420,
+              "height": 54
+            },
+            "hit": true,
+            "font": 21
+          }
+        ],
+        "texts": [
+          {
+            "text": "预计停止：已完成本段安排的有限场次",
+            "box": {
+              "left": 979,
+              "top": 494.5,
+              "right": 1399,
+              "bottom": 515.5,
+              "width": 420,
+              "height": 21
+            },
+            "font": 14,
+            "overflow": false
+          },
+          {
+            "text": "最多 1 场 · 游戏月 1 / 余寿保留 1 · 最多 41 动作 · 灵力累计 480",
+            "box": {
+              "left": 979,
+              "top": 521.5,
+              "right": 1399,
+              "bottom": 542.5,
+              "width": 420,
+              "height": 21
+            },
+            "font": 14,
+            "overflow": false
+          },
+          {
+            "text": "不自动用药；危险线 20% 暂停。",
+            "box": {
+              "left": 979,
+              "top": 548.5,
+              "right": 1399,
+              "bottom": 569.5,
+              "width": 420,
+              "height": 21
+            },
+            "font": 14,
+            "overflow": false
+          },
+          {
+            "text": "只执行本次明确安排；关闭或刷新后主动继续，不补离线收益。",
+            "box": {
+              "left": 979,
+              "top": 708,
+              "right": 1399,
+              "bottom": 729,
+              "width": 420,
+              "height": 21
+            },
+            "font": 14,
+            "overflow": false
+          }
+        ],
+        "caption": {
+          "left": 979,
+          "top": 708,
+          "right": 1399,
+          "bottom": 729,
+          "width": 420,
+          "height": 21
+        },
+        "button": {
+          "left": 979,
+          "top": 739,
+          "right": 1399,
+          "bottom": 793,
+          "width": 420,
+          "height": 54
+        }
+      }
+    },
+    {
+      "attachment": "zero-medicine-paused-real-turn-actual-geometry",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-04/current/package-results/uir35-04-battle-medicine-U-ffcef--separate-three-second-turn-chromium/zero-medicine-paused-real-turn.png",
+      "geo": {
+        "root": {
+          "left": 40,
+          "top": 132,
+          "right": 1400,
+          "bottom": 794,
+          "width": 1360,
+          "height": 662
+        },
+        "nav": {
+          "left": 0,
+          "top": 818,
+          "right": 1440,
+          "bottom": 900,
+          "width": 1440,
+          "height": 82
+        },
+        "controls": [
+          {
+            "label": "战局",
+            "box": {
+              "left": 1099.421875,
+              "top": 132,
+              "right": 1147.421875,
+              "bottom": 176,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "战策",
+            "box": {
+              "left": 1153.421875,
+              "top": 132,
+              "right": 1201.421875,
+              "bottom": 176,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "手动操作",
+            "box": {
+              "left": 1207.421875,
+              "top": 132,
+              "right": 1283.421875,
+              "bottom": 176,
+              "width": 76,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "术法与最近8条",
+            "box": {
+              "left": 1289.421875,
+              "top": 132,
+              "right": 1400,
+              "bottom": 176,
+              "width": 110.578125,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          }
+        ],
+        "texts": [
+          {
+            "text": "原历练 雾隐妖狼，入场 1/1，游戏月 1/1，余寿保留 1；动作 2/41；未耗丹药；灵力累计已用 8/480；不自动用药；危险线 20% 暂停，不离场。",
+            "box": {
+              "left": 1070,
+              "top": 723.109375,
+              "right": 1400,
+              "bottom": 794,
+              "width": 330,
+              "height": 70.890625
+            },
+            "font": 14,
+            "overflow": false
+          }
+        ],
+        "caption": null,
+        "button": null
+      }
+    },
+    {
+      "attachment": "battle-default-no-auto-medicine-actual-geometry",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-04/current/package-results/uir35-04-battle-medicine-U-51a62-exact-formal-no-action-gate-chromium/battle-default-no-auto-medicine.png",
+      "geo": {
+        "root": {
+          "left": 40,
+          "top": 132,
+          "right": 1400,
+          "bottom": 794,
+          "width": 1360,
+          "height": 662
+        },
+        "nav": {
+          "left": 0,
+          "top": 818,
+          "right": 1440,
+          "bottom": 900,
+          "width": 1440,
+          "height": 82
+        },
+        "controls": [
+          {
+            "label": "战局",
+            "box": {
+              "left": 1099.421875,
+              "top": 132,
+              "right": 1147.421875,
+              "bottom": 176,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "战策",
+            "box": {
+              "left": 1153.421875,
+              "top": 132,
+              "right": 1201.421875,
+              "bottom": 176,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "手动操作",
+            "box": {
+              "left": 1207.421875,
+              "top": 132,
+              "right": 1283.421875,
+              "bottom": 176,
+              "width": 76,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "术法与最近8条",
+            "box": {
+              "left": 1289.421875,
+              "top": 132,
+              "right": 1400,
+              "bottom": 176,
+              "width": 110.578125,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "开始自动斗法",
+            "box": {
+              "left": 1070,
+              "top": 728,
+              "right": 1400,
+              "bottom": 784,
+              "width": 330,
+              "height": 56
+            },
+            "hit": true,
+            "font": 24
+          }
+        ],
+        "texts": [
+          {
+            "text": "待确认战策：每招 3 秒 · 本关最多 39 回合 · 灵力累计上限 480",
+            "box": {
+              "left": 1070,
+              "top": 610,
+              "right": 1400,
+              "bottom": 652,
+              "width": 330,
+              "height": 42
+            },
+            "font": 14,
+            "overflow": false
+          },
+          {
+            "text": "不自动用药",
+            "box": {
+              "left": 1070,
+              "top": 660,
+              "right": 1400,
+              "bottom": 681,
+              "width": 330,
+              "height": 21
+            },
+            "font": 14,
+            "overflow": false
+          },
+          {
+            "text": "危险线 20% · 暂停战策，不离场",
+            "box": {
+              "left": 1070,
+              "top": 689,
+              "right": 1400,
+              "bottom": 710,
+              "width": 330,
+              "height": 21
+            },
+            "font": 14,
+            "overflow": false
+          }
+        ],
+        "caption": null,
+        "button": null
+      }
+    },
+    {
+      "attachment": "enabled-threshold-zero-budget-is-a-stop-actual-geometry",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-04/current/package-results/uir35-04-battle-medicine-U-51a62-exact-formal-no-action-gate-chromium/enabled-threshold-zero-budget-is-a-stop.png",
+      "geo": {
+        "root": {
+          "left": 40,
+          "top": 132,
+          "right": 1400,
+          "bottom": 794,
+          "width": 1360,
+          "height": 662
+        },
+        "nav": {
+          "left": 0,
+          "top": 818,
+          "right": 1440,
+          "bottom": 900,
+          "width": 1440,
+          "height": 82
+        },
+        "controls": [
+          {
+            "label": "战局",
+            "box": {
+              "left": 1099.421875,
+              "top": 132,
+              "right": 1147.421875,
+              "bottom": 176,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "战策",
+            "box": {
+              "left": 1153.421875,
+              "top": 132,
+              "right": 1201.421875,
+              "bottom": 176,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "手动操作",
+            "box": {
+              "left": 1207.421875,
+              "top": 132,
+              "right": 1283.421875,
+              "bottom": 176,
+              "width": 76,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "术法与最近8条",
+            "box": {
+              "left": 1289.421875,
+              "top": 132,
+              "right": 1400,
+              "bottom": 176,
+              "width": 110.578125,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "开始自动斗法",
+            "box": {
+              "left": 1070,
+              "top": 707,
+              "right": 1400,
+              "bottom": 763,
+              "width": 330,
+              "height": 56
+            },
+            "hit": true,
+            "font": 24
+          }
+        ],
+        "texts": [
+          {
+            "text": "待确认战策：每招 3 秒 · 本关最多 39 回合 · 灵力累计上限 480",
+            "box": {
+              "left": 1070,
+              "top": 589,
+              "right": 1400,
+              "bottom": 631,
+              "width": 330,
+              "height": 42
+            },
+            "font": 14,
+            "overflow": false
+          },
+          {
+            "text": "回春最多 0 / 保留 0（气血 100% · 触用药线停手）",
+            "box": {
+              "left": 1070,
+              "top": 639,
+              "right": 1400,
+              "bottom": 660,
+              "width": 330,
+              "height": 21
+            },
+            "font": 14,
+            "overflow": false
+          },
+          {
+            "text": "危险线 20% · 暂停战策，不离场",
+            "box": {
+              "left": 1070,
+              "top": 668,
+              "right": 1400,
+              "bottom": 689,
+              "width": 330,
+              "height": 21
+            },
+            "font": 14,
+            "overflow": false
+          }
+        ],
+        "caption": null,
+        "button": null
+      }
+    },
+    {
+      "attachment": "actual-two-medicine-finite-authorization-actual-geometry",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-04/current/package-results/uir35-04-battle-medicine-U-ca4ed-paused-original-arrangement-chromium/actual-two-medicine-finite-authorization.png",
+      "geo": {
+        "root": {
+          "left": 40,
+          "top": 132,
+          "right": 1400,
+          "bottom": 794,
+          "width": 1360,
+          "height": 662
+        },
+        "nav": {
+          "left": 0,
+          "top": 818,
+          "right": 1440,
+          "bottom": 900,
+          "width": 1440,
+          "height": 82
+        },
+        "controls": [
+          {
+            "label": "战局",
+            "box": {
+              "left": 1099.421875,
+              "top": 132,
+              "right": 1147.421875,
+              "bottom": 176,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "战策",
+            "box": {
+              "left": 1153.421875,
+              "top": 132,
+              "right": 1201.421875,
+              "bottom": 176,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "手动操作",
+            "box": {
+              "left": 1207.421875,
+              "top": 132,
+              "right": 1283.421875,
+              "bottom": 176,
+              "width": 76,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "术法与最近8条",
+            "box": {
+              "left": 1289.421875,
+              "top": 132,
+              "right": 1400,
+              "bottom": 176,
+              "width": 110.578125,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "开始自动斗法",
+            "box": {
+              "left": 1070,
+              "top": 728,
+              "right": 1400,
+              "bottom": 784,
+              "width": 330,
+              "height": 56
+            },
+            "hit": true,
+            "font": 24
+          }
+        ],
+        "texts": [
+          {
+            "text": "待确认战策：每招 3 秒 · 本关最多 3 回合 · 灵力累计上限 16",
+            "box": {
+              "left": 1070,
+              "top": 589,
+              "right": 1400,
+              "bottom": 631,
+              "width": 330,
+              "height": 42
+            },
+            "font": 14,
+            "overflow": false
+          },
+          {
+            "text": "回春最多 1 / 保留 2（气血 50%）；回灵最多 1 / 保留 1（灵力 100%）",
+            "box": {
+              "left": 1070,
+              "top": 639,
+              "right": 1400,
+              "bottom": 681,
+              "width": 330,
+              "height": 42
+            },
+            "font": 14,
+            "overflow": false
+          },
+          {
+            "text": "危险线 20% · 暂停战策，不离场",
+            "box": {
+              "left": 1070,
+              "top": 689,
+              "right": 1400,
+              "bottom": 710,
+              "width": 330,
+              "height": 21
+            },
+            "font": 14,
+            "overflow": false
+          }
+        ],
+        "caption": null,
+        "button": null
+      }
+    },
+    {
+      "attachment": "paused-real-dose-and-original-limits-actual-geometry",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-04/current/package-results/uir35-04-battle-medicine-U-ca4ed-paused-original-arrangement-chromium/paused-real-dose-and-original-limits.png",
+      "geo": {
+        "root": {
+          "left": 40,
+          "top": 132,
+          "right": 1400,
+          "bottom": 794,
+          "width": 1360,
+          "height": 662
+        },
+        "nav": {
+          "left": 0,
+          "top": 818,
+          "right": 1440,
+          "bottom": 900,
+          "width": 1440,
+          "height": 82
+        },
+        "controls": [
+          {
+            "label": "战局",
+            "box": {
+              "left": 1099.421875,
+              "top": 132,
+              "right": 1147.421875,
+              "bottom": 176,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "战策",
+            "box": {
+              "left": 1153.421875,
+              "top": 132,
+              "right": 1201.421875,
+              "bottom": 176,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "手动操作",
+            "box": {
+              "left": 1207.421875,
+              "top": 132,
+              "right": 1283.421875,
+              "bottom": 176,
+              "width": 76,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "术法与最近8条",
+            "box": {
+              "left": 1289.421875,
+              "top": 132,
+              "right": 1400,
+              "bottom": 176,
+              "width": 110.578125,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          }
+        ],
+        "texts": [
+          {
+            "text": "原本关自动斗法 雾隐妖狼；动作 1/3；已用回春 1、回灵 0；灵力累计已用 0/16；回春最多 1 / 保留 2（气血 50%）；回灵最多 1 / 保留 1（灵力 100%）；危险线 20% 暂停，不离场。",
+            "box": {
+              "left": 1070,
+              "top": 702.8125,
+              "right": 1400,
+              "bottom": 794,
+              "width": 330,
+              "height": 91.1875
+            },
+            "font": 14,
+            "overflow": false
+          }
+        ],
+        "caption": null,
+        "button": null
+      }
+    },
+    {
+      "attachment": "native-quota-original-zero-medicine-authority-actual-geometry",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-04/current/package-results/uir35-04-battle-medicine-U-3ebf6-omplete-three-second-period-chromium/native-quota-original-zero-medicine-authority.png",
+      "geo": {
+        "root": {
+          "left": 40,
+          "top": 224,
+          "right": 1400,
+          "bottom": 794,
+          "width": 1360,
+          "height": 570
+        },
+        "nav": {
+          "left": 0,
+          "top": 818,
+          "right": 1440,
+          "bottom": 900,
+          "width": 1440,
+          "height": 82
+        },
+        "controls": [
+          {
+            "label": "战局",
+            "box": {
+              "left": 1057.421875,
+              "top": 224,
+              "right": 1105.421875,
+              "bottom": 268,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "战策",
+            "box": {
+              "left": 1111.421875,
+              "top": 224,
+              "right": 1159.421875,
+              "bottom": 268,
+              "width": 48,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "暂停并手动接管",
+            "box": {
+              "left": 1165.421875,
+              "top": 224,
+              "right": 1283.421875,
+              "bottom": 268,
+              "width": 118,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          },
+          {
+            "label": "术法与最近8条",
+            "box": {
+              "left": 1289.421875,
+              "top": 224,
+              "right": 1400,
+              "bottom": 268,
+              "width": 110.578125,
+              "height": 44
+            },
+            "hit": true,
+            "font": 14
+          }
+        ],
+        "texts": [
+          {
+            "text": "原本关自动斗法 雾隐妖狼；动作 0/3；未耗丹药；灵力累计已用 0/24；不自动用药；危险线 20% 暂停，不离场。",
+            "box": {
+              "left": 1070,
+              "top": 723.109375,
+              "right": 1400,
+              "bottom": 794,
+              "width": 330,
+              "height": 70.890625
+            },
+            "font": 14,
+            "overflow": false
+          }
+        ],
+        "caption": null,
+        "button": null
+      }
+    }
+  ],
+  "scope": "Actual selected controls/text/nav/footer geometry; not whole-product review"
+}

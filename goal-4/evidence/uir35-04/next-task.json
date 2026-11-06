@@ -1,0 +1,20 @@
+{
+  "nextTask": "CEND06",
+  "countSinceLastCheck": 3,
+  "goal": "Current eight-stage,25 decision entries, ordinary dialogs, mainline usability and actual idle feedback suitability review; original negative feedback remains valid",
+  "source": "e0b76a6fce50623c61999832795ccbf468fe65b0",
+  "runtime": "ac49bbb5b147fee83b5c39377dbab3519bc91974dc187d11bb3753b420e7dd88",
+  "originalFindings": "CEND05 F01/F02/F03 now locally repaired, require C-end reinspection",
+  "mustInclude": [
+    "original CEND05 coverage and three recent corrections",
+    "all ordinary menu/dialog/button/text and current activity states",
+    "full correct formal Game vs read-only UI roles",
+    "actual normal new-game online observation separate from virtual rule checks",
+    "exact named current authorised list and actual per-image review",
+    "record new concrete gaps before claiming readiness"
+  ],
+  "notSubstitute": "120 current related UI or 115 previous UI do not equal full C-end or overall art/human acceptance",
+  "then": "CHECK-UIR35-03-04-CEND06 full authorised check-debug",
+  "compatibilityPerformance": "remain paused; no original assertions removed",
+  "goalComplete": false
+}
