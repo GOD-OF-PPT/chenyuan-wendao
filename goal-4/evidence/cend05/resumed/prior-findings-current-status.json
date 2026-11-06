@@ -1,0 +1,74 @@
+[
+  {
+    "id": "UIR34-01",
+    "originalTitle": "寿限受阻时主舞台仍把普通修炼放在主位",
+    "status": "locally_improved_in_current_review",
+    "userAccepted": false,
+    "currentEvidence": [
+      "extra:last-month-main-guide.png"
+    ]
+  },
+  {
+    "id": "UIR34-02",
+    "originalTitle": "有限抉择确认仍像流程审批",
+    "status": "locally_improved_in_current_review",
+    "userAccepted": false,
+    "currentEvidence": [
+      "action:CHOOSE",
+      "action:BREAKTHROUGH",
+      "action:EVENT",
+      "action:DECIDE",
+      "action:ANSWER_TRIAL"
+    ]
+  },
+  {
+    "id": "UIR34-03",
+    "originalTitle": "配装比较仍把未变化数值与真实作用同等强调",
+    "status": "locally_improved_in_current_review",
+    "userAccepted": false,
+    "currentEvidence": [
+      "action:SCHOOL",
+      "action:EQUIP",
+      "action:EQUIP_RELIC"
+    ]
+  },
+  {
+    "id": "UIR34-04",
+    "originalTitle": "恢复入口仍暴露页面归属术语",
+    "status": "locally_improved_in_current_review",
+    "userAccepted": false,
+    "currentEvidence": [
+      "extra:assisted-awaiting-takeover.png"
+    ]
+  },
+  {
+    "id": "UIR34-05",
+    "originalTitle": "入劫和收卷确认首屏仍偏记录核对",
+    "status": "locally_improved_in_current_review",
+    "userAccepted": false,
+    "currentEvidence": [
+      "action:START_TRIAL",
+      "action:END",
+      "action:RETIRE",
+      "action:END_LIFE"
+    ]
+  },
+  {
+    "id": "UIR34-06",
+    "originalTitle": "人物详情仍是宽面板中的单列属性表",
+    "status": "locally_improved_in_current_review",
+    "userAccepted": false,
+    "currentEvidence": [
+      "normal:profile"
+    ]
+  },
+  {
+    "id": "UIR34-07",
+    "originalTitle": "仙缘未结识状态重复三次",
+    "status": "locally_improved_in_current_review",
+    "userAccepted": false,
+    "currentEvidence": [
+      "stage:entry-tab-3.png"
+    ]
+  }
+]

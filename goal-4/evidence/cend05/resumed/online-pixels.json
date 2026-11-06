@@ -1,0 +1,89 @@
+[
+  {
+    "group": "normal-online",
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-online-results/cend05-online-observation--582fd-without-importing-a-fixture-chromium/normal-selected-original-choice.png",
+    "rawSha256": "bd6157aa92db061ea9862aff8d783537ca613aa4e87bbdc9cba2656f60d2a095",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-online-views/normal-selected-original-choice.png.jpg",
+    "viewSha256": "98c6b8430789a5bbd1560c192699d35ae7d1d3b443d050f299dbf64643bc29dc",
+    "sameDimensions": true,
+    "quality": 68,
+    "viewed": true,
+    "note": "已选内容、沈清禾与此举后果、0物资/6秒、本次确认可辨；完整来由按需。",
+    "review": "本次选择/实际成本0/原6秒与后果明确。"
+  },
+  {
+    "group": "normal-online",
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-online-results/cend05-online-observation--582fd-without-importing-a-fixture-chromium/normal-trip-real-running.png",
+    "rawSha256": "1d2bf81adbd0d7c58073e784a01e7ce867d46bc7bf6468cbe71cd2b13dd2f0d0",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-online-views/normal-trip-real-running.png.jpg",
+    "viewSha256": "6f65033b499be0c4eaa7a581963d8b409c73e1875988337b89157419f4897755",
+    "sameDimensions": true,
+    "quality": 68,
+    "viewed": false
+  },
+  {
+    "group": "normal-online",
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-online-results/cend05-online-observation--582fd-without-importing-a-fixture-chromium/normal-created-opening.png",
+    "rawSha256": "4731bdddb3612fa11fce0e6269e2f7acff76926cb1863a043ee9c6988400e3e7",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-online-views/normal-created-opening.png.jpg",
+    "viewSha256": "c198e52e67b3f8146cf311823b2a8fee3c7459410eaa2230c1f9b8c15025ae55",
+    "sameDimensions": true,
+    "quality": 68,
+    "viewed": true,
+    "note": "实际新档开场/已选保留丹药确认；开场短印章外观压住选择正文需定位补查。",
+    "review": "开局短印章压住选择文字，已另用只读几何/自然消退复现。"
+  },
+  {
+    "group": "normal-online",
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-online-results/cend05-online-observation--582fd-without-importing-a-fixture-chromium/normal-paused-profile-real-game.png",
+    "rawSha256": "8b6ffa048dbc4e2f5945b07eddfec64aecc9a47cf4f3a47c0eeeceee0afe60b1",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-online-views/normal-paused-profile-real-game.png.jpg",
+    "viewSha256": "a7768d4182751ec67caae3aee098a427c2852ceae8369ab815391ff0eedf66aa",
+    "sameDimensions": true,
+    "quality": 68,
+    "viewed": true,
+    "review": "实钟首周期后姓名/凡人、18岁1月/90岁与余寿863月、尚未择法/四槽状态两列可读，原UIR34-06宽单列问题已改善。"
+  },
+  {
+    "group": "normal-online",
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-online-results/cend05-online-observation--582fd-without-importing-a-fixture-chromium/normal-choice-real-running.png",
+    "rawSha256": "4477546884522b688452a1796fadde13f16343576532344bf3bac474e946fa85",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-online-views/normal-choice-real-running.png.jpg",
+    "viewSha256": "53c3e1ee99984d9a1ad4a0b49b2443d04f8e7ac5f3ea1559586cd2e4e8680e7d",
+    "sameDimensions": true,
+    "quality": 68,
+    "viewed": false
+  },
+  {
+    "group": "normal-online",
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-online-results/cend05-online-observation--582fd-without-importing-a-fixture-chromium/normal-cave-before-idle.png",
+    "rawSha256": "08d84ea8b9cb4ad4b30b77e73124604938da8d990d6248e9f629fcdb4a03cce6",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-online-views/normal-cave-before-idle.png.jpg",
+    "viewSha256": "5722d145ea8dbdd8df8fd161aca27e2f602b612a0479f9caedb6c39dfd1ba587",
+    "sameDimensions": true,
+    "quality": 68,
+    "viewed": true,
+    "review": "真实新档回洞后可辨自然+5/30秒/1月与上限50，原行旅已结束。0/10仍为全亮轨。"
+  },
+  {
+    "group": "normal-online",
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-online-results/cend05-online-observation--582fd-without-importing-a-fixture-chromium/normal-cultivation-real-running.png",
+    "rawSha256": "2aa089d06b476569405334a9fea616aeb1c155385b941168091de85efa966ff0",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-online-views/normal-cultivation-real-running.png.jpg",
+    "viewSha256": "23623138bf9d778f39bf1166f9bce1c0ddb1f5bd08bd1e90836c416b2f57f816",
+    "sameDimensions": true,
+    "quality": 68,
+    "viewed": false
+  },
+  {
+    "group": "normal-online",
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-online-results/cend05-online-observation--582fd-without-importing-a-fixture-chromium/normal-first-saved-period-paused.png",
+    "rawSha256": "a311336a4b734d413c710e57c45f2bf35970b3da5a8cebc13910e251bbcc6b8e",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-online-views/normal-first-saved-period-paused.png.jpg",
+    "viewSha256": "8b65cd11f403a2ffad09b46dfb2398a7d393f3181d18172cf1dead6488deb21c",
+    "sameDimensions": true,
+    "quality": 68,
+    "viewed": true,
+    "review": "实际30秒后5/10、已完成1轮/上限50与真实+5，暂停/继续明确；亮色未完成右半比左半更抢眼。"
+  }
+]

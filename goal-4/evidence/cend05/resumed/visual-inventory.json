@@ -1,0 +1,1883 @@
+[
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium/training-assisted-layout.png",
+    "rawSha256": "e0218085ee13c912eaa4d5c897264486fc81ef071c16b366ed4088c1e5cb1d19",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium--training-assisted-layout.png.jpg",
+    "viewSha256": "9a3cec684e5fcf9dd7bdaaf58d0ed8bb398a528279bdb8bbfd7e26304e77a51d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium/training-natural-layout.png",
+    "rawSha256": "f16a0078f6a23b540a1a7110acb0f85b0c7ab919c6a59b877631648f6b9b5de5",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium--training-natural-layout.png.jpg",
+    "viewSha256": "ec12dd6c3ed39ee7de7c564e8207ea43c1a6886dc9a157ba673d4b645215cdf5",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-4.png",
+    "rawSha256": "6c7b11eca3e4bc17b5405d07a31f36b8ff8d547b0bbb90286a68dbc184105a7e",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium--market-4.png.jpg",
+    "viewSha256": "91bcfe01e44d15b60101e6b7cd97a07dc2e88a66cd988880908fcedc5be7489f",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-2.png",
+    "rawSha256": "e1f8ec901e8b73befc8caa55548a3c1b865614820c635077a3d12b4b6e696611",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium--market-2.png.jpg",
+    "viewSha256": "c25e2726b4b8f6a6f016822aaf3281fa8a4611d7e50e03ac1006668b91885007",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-3.png",
+    "rawSha256": "55c83f7c335b42675145df9bd8930f27a114a964b6dccca49d0521c8aba0a8b0",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium--market-3.png.jpg",
+    "viewSha256": "e706181735bc16d115178bdef782a5094d9a05860c0848462bd6ac74e8334fb6",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-1.png",
+    "rawSha256": "f82a46649819a2dbcc716d11258bba347b71dc45d84ad1824dbc49e4826d9f44",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium--market-1.png.jpg",
+    "viewSha256": "c71ef521454b7e966dbdbf468476b1c82db5097ace642430b255c70f30e952ed",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-f07cf-hidden-dialog-or-Game-write-chromium/superseding-navigation-no-late-management.png",
+    "rawSha256": "7709a7366a4ea9c0698cd20c54a7c5b69c3f57880f973ff0043f4cb07a47352f",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-f07cf-hidden-dialog-or-Game-write-chromium--superseding-navigation-no-late-management.png.jpg",
+    "viewSha256": "b64809ed7d303441bb6a0d53c7b58e5fe778dfe999e438bdb6739ccc33d644df",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-a-confirmed-repla-cc570-e-alchemy-draft-or-activity-chromium/character-on-demand.png",
+    "rawSha256": "33d888f7e9708866efe68bee79eaffc5032bf8cd3f2cff1916bd636d4842c28f",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-a-confirmed-repla-cc570-e-alchemy-draft-or-activity-chromium--character-on-demand.png.jpg",
+    "viewSha256": "0e491cd1c91ee8ea650baea724b347a304324b3b7f37cacfcca5ebb6f283e3d7",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium/assisted-quota-old-facts.png",
+    "rawSha256": "f8d49ef3922ab7fff729b0b58e7007c1573fb459d9153a07981c4ce16b888476",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium--assisted-quota-old-facts.png.jpg",
+    "viewSha256": "141a1acfed05a7335753780f69a74c9f1705b2349e68340a59c6ed626dfcf36e",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium/assisted-real-cost.png",
+    "rawSha256": "d3f7720d23a2c785eb5ccbc9f01ee53334aa6d124d548c39c514d365b8f6a52f",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium--assisted-real-cost.png.jpg",
+    "viewSha256": "67316a018ef40f9f761e86c480d63665e7d2f981893e932d7e12b1e8a46be3c8",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium/assisted-budget-stop.png",
+    "rawSha256": "6c87a52c2401c815e2b7f191e99394d4b90a2ecdd070490f487b40a25f80f782",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium--assisted-budget-stop.png.jpg",
+    "viewSha256": "021c962648f15f1caa41c1cff9a40be903498fd504318dd7cb33e1a7361f5c2e",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-default-before-fold-assert.png",
+    "rawSha256": "47b2910247a15340cf98a5b09b2de78d610e689d5bb15585cb2878b914865646",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium--transmit-default-before-fold-assert.png.jpg",
+    "viewSha256": "c835453f23f59b57db78f038e025901d67619948c2a21e4ff33a9fad8ffe975f",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-0.png",
+    "rawSha256": "071e5b3d3126f2edc77fd8c9ec62920f80000545ad3d8d11566e2abdd2de9060",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium--transmit-notes-0.png.jpg",
+    "viewSha256": "ffced39e184267b02a4f13c727ccde08a945980b451798bd34836bc495d5fcc8",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-1.png",
+    "rawSha256": "142b4f3a58bd5c79f25990ae8811a7c691097602dc8d73f98ad004a07ac2c8b3",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium--transmit-notes-1.png.jpg",
+    "viewSha256": "b489d635f3a57bc187a4ad6f3cd71a69ffc72a17a41c2b452d4d1b415871154a",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-3.png",
+    "rawSha256": "b161f788d61936d4a6b722a6d6976cf95f2d226f2558714f922c3e04cdbc35fe",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium--transmit-notes-3.png.jpg",
+    "viewSha256": "b7ced647dbc046e9134710aab5284de00e47bb917d38a2c800e674924925705b",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-2.png",
+    "rawSha256": "2094aba914c9904339b7805b7b6417594689c10b4e023ea61fe14613d5a23ce7",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium--transmit-notes-2.png.jpg",
+    "viewSha256": "49c243dae027183caf63e6959ad59ca9e36527b8c4da85582278eb68533bf51e",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-6.png",
+    "rawSha256": "0151ce6a5f31c9c495b606e4af79b3f625884b0e8f73402a5afcf73f40836a70",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium--transmit-notes-6.png.jpg",
+    "viewSha256": "7fd0fae55d18d5080326606082447694c2f68457f212fe1c5869aeeb128bee10",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-7.png",
+    "rawSha256": "31e2495736b042e534b7cedf6aa99ba8d11587e1ede6202281e250c7a889ed73",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium--transmit-notes-7.png.jpg",
+    "viewSha256": "e6e4a7eac9b1cffea2f015b02f4cdfc21950298a8df7d404ec4a66e33562912f",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-5.png",
+    "rawSha256": "6f0b2cff0aae55aa3e0ee72a1aab83840fe9982b9768035f454827518c6c508f",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium--transmit-notes-5.png.jpg",
+    "viewSha256": "787d492b5ed085e72a02d9ceb275191d533a58f1c9b5e424092133133563301e",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-4.png",
+    "rawSha256": "fe7a61daae51ad6426ea63b619f97521a9fc21208b2e73aec0164a52a952c047",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium--transmit-notes-4.png.jpg",
+    "viewSha256": "4db330697956275c28c41c4c3a1501ec7e1f23b839d3c7e1bf8d2afee72b9618",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-8.png",
+    "rawSha256": "5b9074ce94d231011a880a69c505fcd1c46d90df7e1baa12a927e51cd90c80fe",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium--transmit-notes-8.png.jpg",
+    "viewSha256": "2114e8fe48e32b0f554857b81831ff83144fdf72fa2a348061a10a988d54153b",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-decision.png",
+    "rawSha256": "754438db504b18e50092c909f51054fe1a61f3bff0bf032fcbb3cf4254ac2177",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium--transmit-decision.png.jpg",
+    "viewSha256": "5f4227b68a6cdbc75a3513e162bb23f27bb41e9cb1c2ab4ffc05432835babfdb",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium/production-target.png",
+    "rawSha256": "f4cafed2e39b11dc59238729997be27823897ab7cc7fd3510823c377aebb7ee1",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium--production-target.png.jpg",
+    "viewSha256": "1ae0ac5b2972096bcc352753adbc351ada81b79c7347653e91e016231b0cd61e",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium/production-return.png",
+    "rawSha256": "54ea10e51aeeaa848e27c858581f1e599d99f1e0f1a5aaa2dc6d5ae1a2a8ec1c",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium--production-return.png.jpg",
+    "viewSha256": "808ea27c22f12fe4618c701cb21554f5b70bbeeea3f3cd16692860de17a01024",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium/production-limits.png",
+    "rawSha256": "0db03795d3e40722120c08124f8ada6b4dfdf937f102b0fba4d15b478b4ee4f8",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium--production-limits.png.jpg",
+    "viewSha256": "c1bd6aae288ed4fa046387509269e7019b83b3cd5810a45e5a9c6f903382e6df",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "低频限额表单数值/保留与待确认草案语义可读，五字段及应用/取消未裁切，不把调整当保存。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-36ca0--pre-action-time-for-review-chromium/SELL-actual-decision.png",
+    "rawSha256": "55b9d98bf172654ebaac9cc47796255f278467f714466d03721dfc7c96db34be",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-36ca0--pre-action-time-for-review-chromium--SELL-actual-decision.png.jpg",
+    "viewSha256": "900f7b82264f418a4472062d031008b9377071fc5821073592f3a2fe04ac0c1f",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "物资换石方向与持有2/每件2石15秒、最多1件与库存保留清楚，未冒成交。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium/configuration-feedback-clear.png",
+    "rawSha256": "211927aeb72afacbcd3cdfdbff9ecfc37678c78ec5be822684777932535ff6b4",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium--configuration-feedback-clear.png.jpg",
+    "viewSha256": "027e94be04dc50465bf26761060e0a9d555a272393de7ed381934e987fbd8305",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium/persistent-equipment-result.png",
+    "rawSha256": "c702bc5e2cfe9010e2ad2a3a1a3f604064c332f75f4a9cdc7c397b7b87f72666",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium--persistent-equipment-result.png.jpg",
+    "viewSha256": "a837fc46661599252f8755bf6018b9cf1a08361cadd1485f352716deeceb1b5c",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium/END_LIFE-notes-1.png",
+    "rawSha256": "066579da2c3db37255de588a1a22e7681da480676273df5b9a8e20c3c1aafd69",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium--END_LIFE-notes-1.png.jpg",
+    "viewSha256": "11430a4e76955030f3e79930d2d82984d7276ce7e90762fa63f1c697a37c14ff",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium/END_LIFE-notes-0.png",
+    "rawSha256": "d866ea869655475360c51dd360b0d0f2d68acb5612753f87e39fee269955af99",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium--END_LIFE-notes-0.png.jpg",
+    "viewSha256": "a2f59882391d34954962feee3e4df285562b083642f014222cfca698af652d74",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium/END_LIFE-decision.png",
+    "rawSha256": "eefee01565de92ebb1690ffa719393e766f740881cbb5c6602062d7737375add",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium--END_LIFE-decision.png.jpg",
+    "viewSha256": "296a0bf4355c71b49011fdffd78954675ce50f12e465c09be7b739b4b58f0a0f",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium/END_LIFE-default-before-fold-assert.png",
+    "rawSha256": "d326b42fd3a9ba89f8a7d053e439b492d4742f0145c0a699f29b70decc18a1a2",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium--END_LIFE-default-before-fold-assert.png.jpg",
+    "viewSha256": "b1e27ae739c1dd74e514f570207584ae81dea822864b882571a77ab198c94d4d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-ef7ad-ut-changing-the-saved-state-chromium/real-checkpoint-explicit-restore-review.png",
+    "rawSha256": "ea8b34cf489b77ec1790831ce33664c590dd94a04e9849be3513c04a53fc709c",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-ef7ad-ut-changing-the-saved-state-chromium--real-checkpoint-explicit-restore-review.png.jpg",
+    "viewSha256": "5f75834dd97ae88161fa1bfca52655ba3e9139ebba212fb638f3509f2ae00475",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-ef7ad-ut-changing-the-saved-state-chromium/real-checkpoint-current-home.png",
+    "rawSha256": "cdaa4b5c92b5eb41ece33b4ef4191c8de5b94396c90fe931306c63ea6f345ec7",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-ef7ad-ut-changing-the-saved-state-chromium--real-checkpoint-current-home.png.jpg",
+    "viewSha256": "c5e88da059a8085ca45d1e4bebdc61a79d5724430aeb6887a1047cca842df1b7",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-71599--accepting-another-activity-chromium/tracked-target-after-refresh.png",
+    "rawSha256": "5dc6a8f72d9ae00e8346bae3118c6409cc8b87bbc3e781ef467af2bc44bca0fc",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-71599--accepting-another-activity-chromium--tracked-target-after-refresh.png.jpg",
+    "viewSha256": "343ba76fea73e8404d01d80fe13b2ba4f50bb291a42719678f9c8a3480811add",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-71599--accepting-another-activity-chromium/explicit-tracked-target-preserved.png",
+    "rawSha256": "fea427f9c9607cf9c8e219484e19dc60b7685e0984b3f1da8deeca34243dfc5a",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-71599--accepting-another-activity-chromium--explicit-tracked-target-preserved.png.jpg",
+    "viewSha256": "55c04a818cae778d9c7bdf5d252be81c5f951c9c5a990918dd089842efe5571b",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-d22f2-domain-without-Game-changes-chromium/journal-original-headings.png",
+    "rawSha256": "513c7507048802d923a03814402cd406c52b64eed2f773fefd86b72142e2a355",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-d22f2-domain-without-Game-changes-chromium--journal-original-headings.png.jpg",
+    "viewSha256": "98a1024f5650011bcc1718984f71f03e737a72f2953b1226b42d383bed0c6dc0",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/settings.png",
+    "rawSha256": "f8885e29bc0ba24246893ac43fafde62ae0052cc28fe18fdb70f786247d990fd",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium--settings.png.jpg",
+    "viewSha256": "702d47d954e0249f9ef8beb28544dc189b7c39865c27ce80ac7ff137859bcb1c",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/cancel-pressed.png",
+    "rawSha256": "29814b7a90a5fa31f286d4fd2e6bf5f61b7098349f4589dea2e095a4184193fe",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium--cancel-pressed.png.jpg",
+    "viewSha256": "1f59c98611ec0cb7efc0960a7ae16d33514112a4f122a6c624177edf810bb33b",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/local-overview.png",
+    "rawSha256": "75fabd9c9e7fef91361968bc3fa97df92b71626a08afbdc1ff7bac08b6aa4553",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium--local-overview.png.jpg",
+    "viewSha256": "029e7c6f4cce61a45a06e8dbba2d060b996fa954aa48f471024aae8c47fc6351",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "低频本地偏好与采集/清空/重置可读，说明留在显式展开页，未冒进度/寿元或上传。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/local-export.png",
+    "rawSha256": "aa1c4de16784a629c888ebb529296699d84d1234dd1eabb6dc472e200ded4cb1",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium--local-export.png.jpg",
+    "viewSha256": "1ec75a56bf8e684235ac0cf5fa519a5fa5f672cdf1830208185aa62ed1f39d56",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/danger-confirmation.png",
+    "rawSha256": "b2a023f300e30f21ecefdcf9578413da5cb119751da0cfa6e52a22bdc9496ee7",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium--danger-confirmation.png.jpg",
+    "viewSha256": "2178d0e1a7b92cc370b135d96107b3bbe512df029987066f3983b395fe927ac5",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "重开会替换进度/先导出备份与继续此生/确认重开分明，红色危险按钮未越界。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/local-records.png",
+    "rawSha256": "aa907b8cb7044c86c7f6b68bf0ce92a2f4f764b3f98d0c6255396f016efb1ba3",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium--local-records.png.jpg",
+    "viewSha256": "80fb8a276b50efb6c0812b1388b48c5885e4e38ec0dcb71d4d1d992aa22978f7",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-1fcb1-and-or-spend-the-last-month-chromium/guide-after-original-retry.png",
+    "rawSha256": "813ea7cffdd69839a6b780db31498b21df5d198f20afe22c863b26cfe6542db7",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-1fcb1-and-or-spend-the-last-month-chromium--guide-after-original-retry.png.jpg",
+    "viewSha256": "ae5fdafa6fed90c517dc3c99697abffb7e775a938621b83036f3f43a6031ef77",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-51f1d--pre-action-time-for-review-chromium/EQUIP-actual-decision.png",
+    "rawSha256": "dc76f1536e0562d2876f0411f94fc835e8b1e2a8cd9210f4ae88b030fadf9a14",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-51f1d--pre-action-time-for-review-chromium--EQUIP-actual-decision.png.jpg",
+    "viewSha256": "ebfdd0773c933144978000a416a2f12bd5ed4a491f86b65bca4263b0f71344de",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "止水剑心静修+25%/护御真实变化优先，完整比较按需；无假读秒或不变指标灌满默认页。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-one-saved.png",
+    "rawSha256": "87734a9e615d3033cdc5e17cd20597b26b5488022ef77c70aeb45858a2f3bf4e",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium--natural-one-saved.png.jpg",
+    "viewSha256": "a0d55f1d8f0167929b8cc7f341f2675272d5f7e877e47f7df1fc4f50a420fe51",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-goal-running.png",
+    "rawSha256": "38daaca22cb7ddd48b00b952261d157e730817f206713b1ec2e6dcf9e62e8ae0",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium--natural-goal-running.png.jpg",
+    "viewSha256": "bbd36ddf3f5d81688279c4f52d6a04fbc6580cba9898cae49144c86a09b28bea",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-complete-authority.png",
+    "rawSha256": "ac9d6e2bc4381dc28aed438bd25353fb60817b02b83e2a60ddd3aa4e4c392177",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium--natural-complete-authority.png.jpg",
+    "viewSha256": "fcdd31644128f560b438b93751056e56e94ea74406d4751d1f4e71fa01fddf7c",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-paused.png",
+    "rawSha256": "0af2a93a3c61e0b79e86ea45e44edbfa1df8495113cc165beb45fbb81ea49d9c",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium--natural-paused.png.jpg",
+    "viewSha256": "69edd585b2f50b4dd49bb9b46dcfc17e83e73c15b33e4fa2fb52ae5661915395",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-real-stop-two-of-upper-fifty.png",
+    "rawSha256": "f00fc3ba4c5d9f0586d1c599471a2d2f3c6362a9c2cacf52a1623db546495eac",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium--natural-real-stop-two-of-upper-fifty.png.jpg",
+    "viewSha256": "72c594751d1450dea00db8e05869f795fa72e43a76593e6832c78ed20a79fea6",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-53e63--pre-action-time-for-review-chromium/REST-actual-decision.png",
+    "rawSha256": "dbf9db733ede9fd9280cd4971fbb467bc4cbb25d4fc31792a379117d62964ce0",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-53e63--pre-action-time-for-review-chromium--REST-actual-decision.png.jpg",
+    "viewSha256": "a8fbfaf96a3391832b73a035cf8445797a4b385b1a22531b3e378d0dbfef1e98",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "洞府疗养一次/30秒/1月与余寿保留可辨，已满灵力不冒恢复；HP70%与满MP的进度轨对照继续显示未完成区更亮的层级风险。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-b9518--pre-action-time-for-review-chromium/DECIDE-actual-decision.png",
+    "rawSha256": "977f4fc0a57d98253caec9c99dfbdea2f6eead8dc92f45da3f09a69630e75e3c",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-b9518--pre-action-time-for-review-chromium--DECIDE-actual-decision.png.jpg",
+    "viewSha256": "7579cd18472a71b2835115c147f2c2300ca85f4c880b5bfbf2826a9dabf1b3e4",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "叙旧当前选择/预期收1丹与赠药因果，6秒仅本次不选其它回应明确。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-4655d--pre-action-time-for-review-chromium/RETIRE-actual-decision.png",
+    "rawSha256": "04acdeb5c2ea86ffe30ffc7dc58fbb9e22b7c789fd06a12f68a82543a677b214",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-4655d--pre-action-time-for-review-chromium--RETIRE-actual-decision.png.jpg",
+    "viewSha256": "1162adb8fa45fb5ac8ca24c7b661f1427ebd87b1da2bec3795dfc59ddbf3fcf9",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "主动归隐不写寿尽/不消耗剩余游戏月、不可逆/12秒与继续此生分开，完整记录按需。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-chromium/natural-saved-cycle.png",
+    "rawSha256": "40564df77876d6d1c699b27172030615efd86cd32497c88404c502a798022527",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-chromium--natural-saved-cycle.png.jpg",
+    "viewSha256": "6dc8eaf0a134a767a84de907a7df322c8e7515539aeeb2a53e4060387a66deb1",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-chromium/natural-paused.png",
+    "rawSha256": "96fc12de88c7d942393c4cfdfa316edf9460ea5f79e6cfb8dc41724ca968defc",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-chromium--natural-paused.png.jpg",
+    "viewSha256": "eb62ffa357a7ff1496f71fc745301cf06823d61d513f502f5dead0383b74f99b",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-chromium/natural-running.png",
+    "rawSha256": "e8ce9f04af7406f607453faab5bdcb33fced899affadae7230b94c6506fb7267",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-chromium--natural-running.png.jpg",
+    "viewSha256": "c096f51eda13f41426e7f778fbd243f5498e36c877a7ef67ea4558535c7337fe",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-01-goal-authority-UI-ea178-elds-without-a-hidden-write-chromium/natural-finite-one.png",
+    "rawSha256": "a490a3ab7f589c818ff60493345ce4b53f9703cfdf92afc50fb7ed25a3911942",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-01-goal-authority-UI-ea178-elds-without-a-hidden-write-chromium--natural-finite-one.png.jpg",
+    "viewSha256": "7f929ca59d59ca3b94212e9d92928da07e40661b59fdfe4a8b8d49e7c4c4eafe",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/check-uir33-02-CHECK-UIR33-88910-e-and-exact-receipt-reading-chromium/EQUIP_RELIC-object-seal.png",
+    "rawSha256": "52c71ad2295534674a8cd704cc0abc935e76cd5baa40c24cb1f1d31d281ad5f8",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/check-uir33-02-CHECK-UIR33-88910-e-and-exact-receipt-reading-chromium--EQUIP_RELIC-object-seal.png.jpg",
+    "viewSha256": "910980e91273f40a4f9c284318e35a1cfc5dd0247af5421a721f6b9844f1a4c2",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-c1e7d--pre-action-time-for-review-chromium/SCHOOL-actual-decision.png",
+    "rawSha256": "ae18e19eb7fd47b92be2bf3fd3e7b182369e86eb7a3b5b7f56aff6b5c8f35488",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-c1e7d--pre-action-time-for-review-chromium--SCHOOL-actual-decision.png.jpg",
+    "viewSha256": "b806eabde3bb8eb3e98e470d7f03144e9ecacdd8c1b047cb4878f3013c11f4ac",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "择法专属三法与真实作用优先，基础指标无变未铺同值表，完整比较/预演可查，免费即时确认明确。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-0fa85--pre-action-time-for-review-chromium/BUY-actual-decision.png",
+    "rawSha256": "9b53c77d0765376b5ac0b785958d494347e16b3071a13364162d5bdc3b9fcbcd",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-0fa85--pre-action-time-for-review-chromium--BUY-actual-decision.png.jpg",
+    "viewSha256": "0d047e362f79afca20f13035a0e792996eb16233f948b6febcb4fe5c8bb56308",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "灵石换物箭头、实际库存/当前25灵石、每件18/15秒、最多1件/预算18和原确认清楚。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-66e4f-io-with-its-original-return-chromium/mortal-folio-before-layout-assert.png",
+    "rawSha256": "c9dfcd919949edc35df7bf3da1670f9a1725ea6d39b5213c2a8cf6f11bb564a4",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-66e4f-io-with-its-original-return-chromium--mortal-folio-before-layout-assert.png.jpg",
+    "viewSha256": "d4e242bb7c2e815e30e502b312df3de27eed0e19cf209ba6f3554d146df8a19c",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-66e4f-io-with-its-original-return-chromium/mortal-folio.png",
+    "rawSha256": "24a7b2f0a9bef454097f9f9db40574f2332019b7626ab323edfd11eba58d9fe6",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-66e4f-io-with-its-original-return-chromium--mortal-folio.png.jpg",
+    "viewSha256": "66e848eb91ff996af854c1a31ef78aa0e49508470253f96a837b65e3ed3bf101",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-2c54c--pre-action-time-for-review-chromium/END-actual-decision.png",
+    "rawSha256": "589d512ec4205c8363b3bb15a5e21d15041d840e84ec7bf972717832177c5052",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-2c54c--pre-action-time-for-review-chromium--END-actual-decision.png.jpg",
+    "viewSha256": "a7d3405636bda92d5e495339d3032c6c727b272ce0a5aa3ffdfb6618eaf9b02b",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "留道传承当前后果/12秒不耗物/结束此卷明确，完整人生按需，无默认九页工程说明。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-4305e--pre-action-time-for-review-chromium/EVENT-actual-decision.png",
+    "rawSha256": "a4fc73f0a2f0fcdb4e76e68bb1b39d59459b05b686a3c2a4b795f1ed512af080",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-4305e--pre-action-time-for-review-chromium--EVENT-actual-decision.png.jpg",
+    "viewSha256": "322415b8650e03793b3c0e527cebff293faeb2bb917915e13c617a0aa05fa2aa",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "沈清禾/药香故人真实对象、6秒0物资和拜访后待决定，不自动代答明确；完整说明按需。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-69d5e--original-equipment-context-chromium/sword-four-slots.png",
+    "rawSha256": "d1ef2319ad2956b9cc693f78cec3a4d04b1f676e99369a83a2b9537ecdc1040d",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-69d5e--original-equipment-context-chromium--sword-four-slots.png.jpg",
+    "viewSha256": "a9da99e0f1938826b340136aa574ae7f7ba4caf913bf1e8532f589d1e3d234b9",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-69d5e--original-equipment-context-chromium/sword-four-slots-before-layout-assert.png",
+    "rawSha256": "7f0232f7dd1b2a17fe3f2086b0c5d75a4f6fdca57fce31f16b200e7943fbfae9",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-69d5e--original-equipment-context-chromium--sword-four-slots-before-layout-assert.png.jpg",
+    "viewSha256": "53b433ba2101a5ce118fb13677ac7d7cb50a9283f0fa327e96c238b34b6517ae",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-756b6--new-readonly-guide-appears-chromium/preserved-original-budget-life-view.png",
+    "rawSha256": "58feef6a6aeda58b6fd855dd30657978cc5e077295cf17ee6cd5c50f4da7789b",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-756b6--new-readonly-guide-appears-chromium--preserved-original-budget-life-view.png.jpg",
+    "viewSha256": "d0c689d569ca15f9dc82ffb6bc42d9f6990afed7e57d216726d1a8ef1a33ffc4",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-756b6--new-readonly-guide-appears-chromium/guide-after-original-budget-stop.png",
+    "rawSha256": "d9f469366b63bc14ef9d34a34eb2d95aabfbfa82a3b3ecae2938170a43739b66",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-756b6--new-readonly-guide-appears-chromium--guide-after-original-budget-stop.png.jpg",
+    "viewSha256": "8ca6bd0d8f55c04e02de465d2ed4b949676ce639a4293620e5a923aebe8cdfcc",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir33-01-cultivation-activ-9eb98--disabled-cultivation-draft-chromium/alchemy-on-cultivation-stage.png",
+    "rawSha256": "2c6b2e5dccb85c46e40be5bbe4705777f140a87af6864c7f0f82f0d450d8961f",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir33-01-cultivation-activ-9eb98--disabled-cultivation-draft-chromium--alchemy-on-cultivation-stage.png.jpg",
+    "viewSha256": "398623d18e22e29aed710df5d1040f74e81536c91d7487fe8b674f730d0fa9f5",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-e59a0--text-controls-and-the-Game-chromium/relic-1.png",
+    "rawSha256": "77864835c000a98136fa6ddb2f5206f0ce51a17c03f8e230c8df6de8b184f576",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-e59a0--text-controls-and-the-Game-chromium--relic-1.png.jpg",
+    "viewSha256": "2df97cc2b7145938be78da6c551d37d1988fabb6370417f0010ae65862a461c3",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-2a850-y-then-offers-a-free-choice-chromium/original-retry-then-free-choice.png",
+    "rawSha256": "6c87a52c2401c815e2b7f191e99394d4b90a2ecdd070490f487b40a25f80f782",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-2a850-y-then-offers-a-free-choice-chromium--original-retry-then-free-choice.png.jpg",
+    "viewSha256": "021c962648f15f1caa41c1cff9a40be903498fd504318dd7cb33e1a7361f5c2e",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-2a850-y-then-offers-a-free-choice-chromium/native-saving-keeps-original-paid-facts.png",
+    "rawSha256": "5065823e25460af5b74d22e1de28ace26c2cd5fc688974338c566335f9451b29",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-2a850-y-then-offers-a-free-choice-chromium--native-saving-keeps-original-paid-facts.png.jpg",
+    "viewSha256": "7ad9ccb1186322b5848c32d6e7999f3b03ee8f9d304e09a9901674db488a050e",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-d4b50--pre-action-time-for-review-chromium/ENCOUNTER-actual-decision.png",
+    "rawSha256": "30419ecfacd8466a86edf7d56208991fdf9832d10abb4fbaf872424004dd2383",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-d4b50--pre-action-time-for-review-chromium--ENCOUNTER-actual-decision.png.jpg",
+    "viewSha256": "ff5108d21a2ebc25af92a6813dc5d2bf3d9e3dbdf253e73fd3dd6fe73d7b31b5",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "对手预览/尚未开战、30秒迎战与3秒每回合、胜利预期/有限1场与4动作可辨；右侧零用药/保留/阈值组合密集且底部规则被挤成窄多行，待列简化常驻摘要。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-alchemy-opens-fin-156cd--goal-with-its-draft-intact-chromium/alchemy-focused-decision.png",
+    "rawSha256": "c2d39167b6537854ffe6e6e22c492973d10de1657f4bdeb9ecff952b43f21f82",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-alchemy-opens-fin-156cd--goal-with-its-draft-intact-chromium--alchemy-focused-decision.png.jpg",
+    "viewSha256": "bcc1910eb459e52c6432bfb68289c31864caaaeecfbe00cea51e9bce1cbb092a",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-a7af3-y-with-a-fallback-selection-chromium/paused-original-budget-unchanged.png",
+    "rawSha256": "e03bd9aef8f9f083ebb23f9235428a78dcc941a3cb68d49bfef91c7d4909abcf",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-a7af3-y-with-a-fallback-selection-chromium--paused-original-budget-unchanged.png.jpg",
+    "viewSha256": "857dd291a0a71701636c58e99ea784ba48cd039b2fcb357699dbd64cd0927572",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-a7af3-y-with-a-fallback-selection-chromium/newer-navigation-keeps-its-focus.png",
+    "rawSha256": "fce1028e46b4c3bdd49b3ebca85fd9a8156c8734e2d151055860eb1034a4fb72",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-a7af3-y-with-a-fallback-selection-chromium--newer-navigation-keeps-its-focus.png.jpg",
+    "viewSha256": "ad3aa8e659de33bd408805a943576b3c943edfdb27635c57c39005f63f05caa6",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-a7af3-y-with-a-fallback-selection-chromium/new-life-no-old-free-choice.png",
+    "rawSha256": "4a5f5744f7d1ad630a3444bd65940a2487171b834143400ce8639b451c6c3bc4",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-a7af3-y-with-a-fallback-selection-chromium--new-life-no-old-free-choice.png.jpg",
+    "viewSha256": "7e740ff7210fa04751e1cef11f4eae9a7d67c0c0bca2dc7d77b22262fe5549b7",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-5f06d--pre-action-time-for-review-chromium/FORGE-actual-decision.png",
+    "rawSha256": "7edca0c22359f71cf734753527264eacd8ca4d3266b31a01f73233570b1500c7",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-5f06d--pre-action-time-for-review-chromium--FORGE-actual-decision.png.jpg",
+    "viewSha256": "adb516255762baf6def465324b4497e147e525524fb74334eaea0286c3b4bdb1",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "玄玉印冷胚示意/未炼成与实际本命未装分开，灵玉5需4、140石/2月/60秒、只1件及不自动认主明确。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/before-visit-before-dedup-assert.png",
+    "rawSha256": "2f3e0315f5a123aeed18a1722fdac7bafb16acb855bbef129a555490293de0fd",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium--before-visit-before-dedup-assert.png.jpg",
+    "viewSha256": "6de153069703a5be36b24740bc45a0f8a5df85079903026ad93d8b93cd9e6c92",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/saved-visit-awaits-answer.png",
+    "rawSha256": "d9af578e124f1f4136b96045055966ed0fbfbd61b9131369bd69858db8191bed",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium--saved-visit-awaits-answer.png.jpg",
+    "viewSha256": "1ce4098b72aac5e4fcacfbb18ac1bd7bc9f089c54057ed023e442b255e334ec9",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/shen-full-3.png",
+    "rawSha256": "975e3d1504b818ed2115ac4bbd57aa1522805535b41e74896d420fc2f4a7ffcd",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium--shen-full-3.png.jpg",
+    "viewSha256": "93954f6c57fb473901da368b56c5d68c62e14326b5789496a2033ff66e65f8e6",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/shen-full-2.png",
+    "rawSha256": "4a2afac614d645ccfb3b80fb43578d5a52260b404c77a85b69c94ad1153e5801",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium--shen-full-2.png.jpg",
+    "viewSha256": "6d5d6984e48edd18399fa5066a2d73829012d034a1bcbdce0ec99700d912fd9d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/shen-full-0.png",
+    "rawSha256": "5dddf098f00066708a1f8f461c8a1facbdbdf882351f6a17608fef7a6c4d2b88",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium--shen-full-0.png.jpg",
+    "viewSha256": "aa4fc232fdecda403c0f20c7523324a015b68ad43c3e51e155be820be5551e67",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/shen-full-1.png",
+    "rawSha256": "d467c47d43da948ba463d4978ff7e5e3d0995d34e7b0d77c9284999bade662dd",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium--shen-full-1.png.jpg",
+    "viewSha256": "60210796f7c801a4b77c461eacb765b6ed35c7269591c79bc987ad8136d7f007",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/before-visit.png",
+    "rawSha256": "38d2b9f60196ec055da84e5debd133cb0efc3b46b4de3958e02e06c09196f2dd",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium--before-visit.png.jpg",
+    "viewSha256": "6de153069703a5be36b24740bc45a0f8a5df85079903026ad93d8b93cd9e6c92",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/visit-failed-no-false-meeting.png",
+    "rawSha256": "68571465edfe28030c0e347c4a5732e475253c8b711030e13f47028fdfc425e8",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium--visit-failed-no-false-meeting.png.jpg",
+    "viewSha256": "ea997eafe7ba855c4c1f68af9cb71d2ebedbfe264b7c4d1e322fce0034564b1d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium/shen-full-2.png",
+    "rawSha256": "de4c399ba06ea9bd0753012024346f0b0901c1e2eadb935ef4d6ae6161ad448c",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium--shen-full-2.png.jpg",
+    "viewSha256": "12a22c050e6c924b9ee46fb6943153202c7760a07dddcd0bd054cf4b994b9109",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium/shen-full-0.png",
+    "rawSha256": "58312fd648ba1322cecfdeef24629f23b13814d8a3394a994449d6f89c36c301",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium--shen-full-0.png.jpg",
+    "viewSha256": "0565932468e4813b862313759593fd712a2eb6e43b20ae4893da62b8e502bc0d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium/shen-full-1.png",
+    "rawSha256": "0edae395b1a3d6076d5e5e94caa89c85916c9b228f262f414eb66b2b6df09eb6",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium--shen-full-1.png.jpg",
+    "viewSha256": "4d9ee803132a7db6e982d3c5e362f57410bc2412190b560e7f4c92a9b2fda144",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium/trade-real-relation-before-dedup-assert.png",
+    "rawSha256": "c396638ba495f3e06993afe30064c2b5ec6b4af7dc6ea28bc02fa87aadb442c0",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium--trade-real-relation-before-dedup-assert.png.jpg",
+    "viewSha256": "9ff5ea3e1704a37d213484ad7d043ac1e8f00b9afd759a160e295268309b88d0",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium/trade-real-relation.png",
+    "rawSha256": "a9196d7dc6039945ab0a28adc23ac0bafb3ebc548f7500d4d371fe098c4e6ec8",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium--trade-real-relation.png.jpg",
+    "viewSha256": "89fb8a918d68286aafb6b6e1b15fd6d58dc1a1b8f6ebeddc7aeb3851feff56d8",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-ca50d--pre-action-time-for-review-chromium/END_LIFE-actual-decision.png",
+    "rawSha256": "592a1059f94a2bf6f43156b7bafe1a9c6deadcde949d9f024512506f41f4e9d8",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-ca50d--pre-action-time-for-review-chromium--END_LIFE-actual-decision.png.jpg",
+    "viewSha256": "36ad6738f32702aa319613f56abd7a220b87aff05f79424d6d1e9010f13f935b",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "最后一月耗费/当前寿限封卷及不可逆/12秒、继续此生与真正确认分明；完整记录按需。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium/running-folio.png",
+    "rawSha256": "8857e227fd3afff17512be00a0abdaa91397cfa63229eff3e82005f57f0b7e04",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium--running-folio.png.jpg",
+    "viewSha256": "3bd5907a7dcdb0cbdeed15e0e80f467dd97c6736b4b75e09161e461ad1288c63",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium/saved-folio.png",
+    "rawSha256": "08f0016d44f4c893b7132c06eae8a1250499dff9c17d3c52e2a4f400405e9415",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium--saved-folio.png.jpg",
+    "viewSha256": "84693997ba3ccd4ab9da38df9427cea4f6c13cee6aa9ab46227271cbb8822f19",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium/quota-folio.png",
+    "rawSha256": "81d5a3dea5b12a69c5da889c1cb0fdb83b6347b8ddd4a863c98a8a8829bb259f",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium--quota-folio.png.jpg",
+    "viewSha256": "6fe925873d676fad3186b69b6aa3de6dc0540cd5dd3388492464e4eb4bd4ccac",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium/running-folio-before-layout-assert.png",
+    "rawSha256": "d1f55db5db3f109bd08241452ea6011a417aa61c783d7a8f422e1656268e1a04",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium--running-folio-before-layout-assert.png.jpg",
+    "viewSha256": "84fb5b01b2e22061581b6d98cc61fc90a2a68f1245516a605edb7878825af830",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-04687--pre-action-time-for-review-chromium/SOURCE-actual-decision.png",
+    "rawSha256": "a051f69b06522e93ca861bda5bf62534088c4d4614962a6e8743cf1dca30153a",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-04687--pre-action-time-for-review-chromium--SOURCE-actual-decision.png.jpg",
+    "viewSha256": "3fb2d1998d4afda729c8766deb9829d136e23d5433ff8b3359a4aa4be6f588ac",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "资源点与药草、每轮30秒/2草/上限XP5、5轮150秒有限投入与真实库存分层；待安排下仍有已保存本段+0字段，保留待核实际语义，不冒已执行。 源码SourceSatchel17/39为同源已存累计或无累计时0，保存演出另受真实savedYield/sequence守卫；不列作已授权或已发奖错误。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-952b1--original-equipment-context-chromium/talisman-four-slots-before-layout-assert.png",
+    "rawSha256": "baf8bbeef71830c6386e4a37d7d870fa5afd0df157aa9fc50f1a64ce50ca1a10",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-952b1--original-equipment-context-chromium--talisman-four-slots-before-layout-assert.png.jpg",
+    "viewSha256": "486b0abed5860fade39c7e37980ee9164ebd5e264c9ff2fe00c90621174c1647",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-952b1--original-equipment-context-chromium/talisman-four-slots.png",
+    "rawSha256": "ab183fb3f69ac8ad6dc4646b83897ee97f250a1a8031d7ed636b4114bb313d5d",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-952b1--original-equipment-context-chromium--talisman-four-slots.png.jpg",
+    "viewSha256": "5b478511305aa17b69f54df52a65bc0472d4cbba8e476247d201bcd3bca39e22",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-51226--text-controls-and-the-Game-chromium/inventory-1.png",
+    "rawSha256": "baccd9470e253159d4b49869309b65d0522e2463c1b2f12e6f03a5c076accfd6",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-51226--text-controls-and-the-Game-chromium--inventory-1.png.jpg",
+    "viewSha256": "5533662101c15070635e79e11ec88cf384f02622269afe515b4565b51f4f67c3",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-51226--text-controls-and-the-Game-chromium/inventory-2.png",
+    "rawSha256": "2f6666d6ec4bde6db44874a72c035c9c1d152fbc82a39091dc5862c63314ebc9",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-51226--text-controls-and-the-Game-chromium--inventory-2.png.jpg",
+    "viewSha256": "96f6c7b4abc5f0149f4afb0390f68a6d209254f8003325069cd8df99da41dce8",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-a709b--started-full-natural-cycle-chromium/manual-selection-not-a-start.png",
+    "rawSha256": "3fe809eeb1dcc30b9ac5f067855cd252d530001c338ab44c46018aa592e4a4be",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-a709b--started-full-natural-cycle-chromium--manual-selection-not-a-start.png.jpg",
+    "viewSha256": "321d149d832ef50a65d0d622823d6b3537328ee19b1fa9d8a5375f5333366a54",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-a709b--started-full-natural-cycle-chromium/exhausted-free-choice.png",
+    "rawSha256": "827a9ac91aa892988d6846ba21e146d46fa61b55901b812cc779cd4273de9457",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-a709b--started-full-natural-cycle-chromium--exhausted-free-choice.png.jpg",
+    "viewSha256": "054799b87dc243d1cc84d6a036ff7b3f5d94fcc2f5f8b68275d0f9b9289e505a",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "辅助耗尽后有真实0/需20、免费每轮50/60秒/1月与最多50、明确只预选按钮，原35-02改善成立。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-a709b--started-full-natural-cycle-chromium/natural-real-saved-and-explicitly-paused.png",
+    "rawSha256": "60512ad9dbc2360296cdef4777a5da22db477d2f95f979813aadfe00ba5a2d5e",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-a709b--started-full-natural-cycle-chromium--natural-real-saved-and-explicitly-paused.png.jpg",
+    "viewSha256": "17b1ae54775c6f9d8ced8ac8ff15c264916d351b126c761ad8a0dde6a0e346be",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-default-before-fold-assert.png",
+    "rawSha256": "2707773cc3a7564b244517be23a88de408f7a1cfc14474dfc7ad53afd0159f67",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium--START_TRIAL-default-before-fold-assert.png.jpg",
+    "viewSha256": "8505ecc5c08088bcaa30e0df0fc6e6b1d33c97bd99a64341365f2a6c2518b0b8",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-3.png",
+    "rawSha256": "6d26093c36965eb927ae436a6fa5cda500ac366b109fe59b63c50d1993e234e0",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium--START_TRIAL-notes-3.png.jpg",
+    "viewSha256": "84b6baa8c762c8b63cc344aa60aedba891f5f79f0ccb409071a0e604f42e2963",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-2.png",
+    "rawSha256": "8339c47aca4aee623f218a602b018e1a4deaae8fee0cf820128d0e665345e40d",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium--START_TRIAL-notes-2.png.jpg",
+    "viewSha256": "683f3e4fda5efed3471dc858741036d3b94ad202aa1043d6f72402d344d93e99",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-0.png",
+    "rawSha256": "c77014fbfee9cc505c197391dfd1f8befce96b70466156b518f898604ff9afe1",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium--START_TRIAL-notes-0.png.jpg",
+    "viewSha256": "eed0d4770c9ffc265af16e0e808b928c9056bd1ef9cc3e06a79f8c2d8ecc0bb8",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-1.png",
+    "rawSha256": "d6ee9590d86a71e2038979508a314df7b3f7864e6cf0209fe49b9843eb192a30",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium--START_TRIAL-notes-1.png.jpg",
+    "viewSha256": "4695a03ea8696297554ad47fb35fb96cef41d6a2f38fe1a9b362568b2d49237a",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-5.png",
+    "rawSha256": "78c2695fdc6a9d745fa2fdb2d834970bdeb39a1d903f70cb981a693c823513ad",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium--START_TRIAL-notes-5.png.jpg",
+    "viewSha256": "7dca76dad20cde954c20e0eb918c339ab2d7a95d7549fd10ec0c88bf8b8bd786",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-decision.png",
+    "rawSha256": "cb0c44dc8d8ec4ea244456ec4deed52553413921eb0a33277a452c674675c5c5",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium--START_TRIAL-decision.png.jpg",
+    "viewSha256": "5e802cbe01a52d9e8a82dfeaac15543bae0020f36a4ff8bc21126e5d54f65417",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-4.png",
+    "rawSha256": "444e9a9cc50ee05ea3832521da0e5784e60a254392b2792c0916fb8b6ebbc4ac",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium--START_TRIAL-notes-4.png.jpg",
+    "viewSha256": "8e89a8aa2715c2d9434fda6b7230398f686d6c01b722c13f127bc8d26cd2dbb3",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-6.png",
+    "rawSha256": "5b3865a2bf27d655a3b49f4867d128243524369239fe30fa0638e1bbc6f08387",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium--START_TRIAL-notes-6.png.jpg",
+    "viewSha256": "b850117c2e13b27ca975d219ae8fd92284a1aa41a6741790e40079e18599f54f",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-559a6--pre-action-time-for-review-chromium/CULTIVATE-actual-decision.png",
+    "rawSha256": "30f42d0b44ebc6833ef73a9e747135e3f06d70ba3045b01424c3713dc9ca67f9",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-559a6--pre-action-time-for-review-chromium--CULTIVATE-actual-decision.png.jpg",
+    "viewSha256": "cb856e1b47a8d3c86c9ae4652dfebb0a84978bf0cf8e995a96564d6bbfc1c533",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "完整安排按需/预计2轮与最多50上限可辨，0修为时原生进度轨仍整条亮白，须与真实半进度图核对视觉层级风险。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium/native-checkpoint-readonly-life-options.png",
+    "rawSha256": "d1fa590ab12702d6f3070879494cd18045b5e8ca7c3b2024e3e7fafdcbb068f8",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium--native-checkpoint-readonly-life-options.png.jpg",
+    "viewSha256": "a06f7f41e87b5c0fff2b6e17e69783e7dab168f8243a5fcb1ff31503f86f3e74",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium/last-month-real-checkpoint-guide.png",
+    "rawSha256": "81443476c4bbdd4cd434b6737da1ceb70f68a5c702e46fdf7762126df6f63a6c",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium--last-month-real-checkpoint-guide.png.jpg",
+    "viewSha256": "e3995b525cc86f9c56ad73f5ab9d51f51d166f50b8411efbe06a9b7d1b8b9709",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-00407--pre-action-time-for-review-chromium/CHOOSE-actual-decision.png",
+    "rawSha256": "28c6256ecf0c191e3d2882bc73f5f9ee0029b0ca481b40acfe2201993a4f276e",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-00407--pre-action-time-for-review-chromium--CHOOSE-actual-decision.png.jpg",
+    "viewSha256": "f2d90cd2450081f21a8788777fc2dca97db9754b36a1b7d9d61c7bc4db751139",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "当前人物/赠丹后果/回春丹1与6秒明确，完整协议按需；较旧首屏聚焦。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-cf779-t-returns-to-the-cave-guide-chromium/guide-only-after-explicit-retreat.png",
+    "rawSha256": "325627272369f7c7c558b5c3374596102ed7cac36e9ecf4c889613ca0d2a401d",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-cf779-t-returns-to-the-cave-guide-chromium--guide-only-after-explicit-retreat.png.jpg",
+    "viewSha256": "b6b4217f2770c6cb26e93e6bd34fc5b75330905beeb1c7d4d7e8ebaca46e152f",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium/original-full.png",
+    "rawSha256": "f601b8d9e5c467a899b40746460bbe7c4a464b19f826ad41ad45cd3b59c675ea",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium--original-full.png.jpg",
+    "viewSha256": "21181b72675a7a443b7d808097d17d70436a3687301f98f5094a39c4daef6589",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium/original-affordable.png",
+    "rawSha256": "c46ccbe11dc3264976694755033746b768205f614f7b9676ace2e152fe42233a",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium--original-affordable.png.jpg",
+    "viewSha256": "a790347765a8e3b9ec43b4d5f56d6832a6c86e566d0f3c847fdcab5e94937cab",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium/original-lifespan.png",
+    "rawSha256": "ce5e73c91356617146f4f7ba0599c13d19181d87a225a68ee09e9904bdcb2f29",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium--original-lifespan.png.jpg",
+    "viewSha256": "32e4bbea2d68c5ec1175e32164107e696f94836f191f85a16556605f41e43b04",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium/original-mortal.png",
+    "rawSha256": "d50ec22c0ff1aab1f65c7ccae931639c2c993925c31e9ea44e9720039d6f00ac",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium--original-mortal.png.jpg",
+    "viewSha256": "9d08ebf6a646c352e54586dd9180dafce39e4364dc18f70e086fbad1447190c7",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-03e0d-n-or-a-fictional-checkpoint-chromium/actual-last-month-before-primary-assertion.png",
+    "rawSha256": "020fc61efa195a05c059816b05fa9e72cd1cd9897cb72d87f0109452fa2f9cce",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-03e0d-n-or-a-fictional-checkpoint-chromium--actual-last-month-before-primary-assertion.png.jpg",
+    "viewSha256": "37b21d14a5999ab95957ad09e96644fe3fecdc10728c928ff585b9a5ad0d79de",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-03e0d-n-or-a-fictional-checkpoint-chromium/existing-life-choices-without-authorisation.png",
+    "rawSha256": "f3e78235a33791eb3d3910ce935c9e401de73e98eb12a9eec06182a8d9b9161e",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-03e0d-n-or-a-fictional-checkpoint-chromium--existing-life-choices-without-authorisation.png.jpg",
+    "viewSha256": "317a14159c544d6abc218293a4a9b95d4c3ad48501e2dd899b2b5ac9f659feb7",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-01-lifespan-guidance-03e0d-n-or-a-fictional-checkpoint-chromium/last-month-main-guide.png",
+    "rawSha256": "020fc61efa195a05c059816b05fa9e72cd1cd9897cb72d87f0109452fa2f9cce",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-01-lifespan-guidance-03e0d-n-or-a-fictional-checkpoint-chromium--last-month-main-guide.png.jpg",
+    "viewSha256": "37b21d14a5999ab95957ad09e96644fe3fecdc10728c928ff585b9a5ad0d79de",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "原AGE_LIMIT主位已换寿元去向/真实余寿1，未主推+0灰开始；实际准备只在可用时提示。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-3c060--text-controls-and-the-Game-chromium/alchemy-2.png",
+    "rawSha256": "fb71cabe15ec46b2e3510d74ce5e2b880c08f98021b372629dfc1e3800d3c98e",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-3c060--text-controls-and-the-Game-chromium--alchemy-2.png.jpg",
+    "viewSha256": "988951f9406a8becc2be03d491ed363c27860c4532aa4499ab8e245d925a0302",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "丹方全部7项/后续境界与两页目录保留，选方只查看及回当前炉明确；未新增裁切。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-3c060--text-controls-and-the-Game-chromium/alchemy-1.png",
+    "rawSha256": "92df1a0073f3e0c0e517d0a91c9063e32a0b2a15d3e41e0cc089660a2025d85a",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-3c060--text-controls-and-the-Game-chromium--alchemy-1.png.jpg",
+    "viewSha256": "3c9d706846ade68cecc08bf9c245e2c7f8d6df950638696a528106b700b17155",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-3f997--pre-action-time-for-review-chromium/LEARN-actual-decision.png",
+    "rawSha256": "dc30ae5d8598c5fdcb207d08cf5b0baff873c517b32750629058c9ffb5abb1a8",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-3f997--pre-action-time-for-review-chromium--LEARN-actual-decision.png.jpg",
+    "viewSha256": "9103db2bd9624ced3ab07aa80498330a63b16eb8fddae697d27e0385ae618571",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "止水专属作用/当前心法、已入卷串与待确认分开，30秒/100石和1卷有限清单可辨，未自动装配。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-47479--pre-action-time-for-review-chromium/STUDY-actual-decision.png",
+    "rawSha256": "cfa49e8cc42e4a4ac3970bbb371db08d2e266d6a12808b4f5e60dac1aed6096c",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-47479--pre-action-time-for-review-chromium--STUDY-actual-decision.png.jpg",
+    "viewSha256": "97e06260c66a70fdaac0a460c16691611198d393e5bc4cd1f778a459013cc34a",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "剑简+4与当前0、不重复收费资格、80石60秒与一次有限确认明确，不自动装配/切法。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-6beb8--pre-action-time-for-review-chromium/USE-actual-decision.png",
+    "rawSha256": "aae078596dfd616f4668faa9adf7473223643951935780c2ed5adbbb7d5f6d5c",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-6beb8--pre-action-time-for-review-chromium--USE-actual-decision.png.jpg",
+    "viewSha256": "3a70b65cc842ba115cf5051eda88ce979e7b01a23f61c3f656fb34251e02cf67",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "药瓶/实际2丹、单次+35与6秒、目标100%/最多3丹、预计使用2丹/合计65分开；HP35%的未完成段仍亮白。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir33-01-cultivation-activ-c0ce0-eplace-the-accepted-command-chromium/original-error-main-stage.png",
+    "rawSha256": "b78deddff5b550dfc8d0e71018dc00957f0b30de9865c0837c91d6283a8697d0",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir33-01-cultivation-activ-c0ce0-eplace-the-accepted-command-chromium--original-error-main-stage.png.jpg",
+    "viewSha256": "1faea19da2d8107a571663ddbbf0a3c9a848dd439945137879b74293d59811ca",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "原quota后0轮/原旧数值保持，存储原因/重试原操作常驻，主位不冒成功；进度0仍全亮轨是视觉风险。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-fccca--pre-action-time-for-review-chromium/START_TRIAL-actual-decision.png",
+    "rawSha256": "b413ce241b7dbc258408738c38dd97ba9d4439929075cf12dfd2ec26b514f579",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-fccca--pre-action-time-for-review-chromium--START_TRIAL-actual-decision.png.jpg",
+    "viewSha256": "f0f45ebda981409bc045606012116cbf0967423f3a30eaad59fc6a4c9a9a5076",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "渡劫引1/在线15秒与先问心再三关突出，完整准备按需，未把登台当渡劫成功。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-3ecc1--import-retains-every-store-chromium/long-filename.png",
+    "rawSha256": "24c406cbbeca1bda0f422e23d6ef77d5d13cb6997745fce2d68f2f296737a042",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-3ecc1--import-retains-every-store-chromium--long-filename.png.jpg",
+    "viewSha256": "ab1068b93a841c8126cf1d0b41877250a59bedfe9824a74f033ed2957f62e4f5",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "最长文件名作为文本换行，危险导入后果/按钮完整，未把测试HTML字样执行。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium/shen-full-2.png",
+    "rawSha256": "05d1016dfc2624910626d0411e932dda66e01d732e5c7548330f6b7a221b4596",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium--shen-full-2.png.jpg",
+    "viewSha256": "9cbb693a21ca9e1931e6fa35bbcf4680bb45429e28eb337309ea674b5db39171",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium/shen-full-0.png",
+    "rawSha256": "cac75b61e3b275e90f18b9fa043223359229bdabf2d79a65665ae2865ff50633",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium--shen-full-0.png.jpg",
+    "viewSha256": "8d9699fbc9e64674b1554d83da3430853a6c4b9cfe6893b972faa42b0ce007aa",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium/shen-full-1.png",
+    "rawSha256": "82193adb9e910dddb43f67a8d22d1f5f478065e23e74f36023753aeb5c0098b1",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium--shen-full-1.png.jpg",
+    "viewSha256": "37238f3e94e908dff7cae5fc38b0415e59d20d1e3d9d435fe0719c4bf6630754",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium/help-real-relation-before-dedup-assert.png",
+    "rawSha256": "260f6c9d47cbdf641f8691060969accc0f50ab0a83a7816e2bb5d56fe119cb43",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium--help-real-relation-before-dedup-assert.png.jpg",
+    "viewSha256": "b5898279a5bd56bbb9f90c5dbe40d8943852f2c436916f4827a9c9e4ca1b7d98",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium/help-real-relation.png",
+    "rawSha256": "cac75b61e3b275e90f18b9fa043223359229bdabf2d79a65665ae2865ff50633",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium--help-real-relation.png.jpg",
+    "viewSha256": "8d9699fbc9e64674b1554d83da3430853a6c4b9cfe6893b972faa42b0ce007aa",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-cc722--pre-action-time-for-review-chromium/CRAFT-actual-decision.png",
+    "rawSha256": "50865678e62d84b782c94017f4067a9ef366e65c652b7d1aca05dbe6e67858fb",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-cc722--pre-action-time-for-review-chromium--CRAFT-actual-decision.png.jpg",
+    "viewSha256": "2ec02607aa738e87fe04d0ad40026467d20bdefef267b0dc3e4cbb4699c80f60",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "筑基丹单炉材料/持有数、20灵石与30秒/1月、成品到1即停及上限有限明确；炉体与主要开炉可辨。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-2.png",
+    "rawSha256": "0eed75ad79e79cc593170509d74f5890a79dc62b115dfa648f9c396575e3a486",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium--depart-notes-2.png.jpg",
+    "viewSha256": "610a40fe0f64e0dceba16e666bb1d90f134ff85192d6f392e2522943e88af6d5",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-3.png",
+    "rawSha256": "6f14d9bf6f4dff10a0447fe91a2b85cd53f2cd80e5ea761717f30705c8e75fa5",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium--depart-notes-3.png.jpg",
+    "viewSha256": "7a48f4698a23073d617de7ee9654cd48a07538b27bcb9d15b9702b13491ac2fb",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-1.png",
+    "rawSha256": "394a95880cb4fd6167b3c38f999f02c155053ec615299276a942171ad60af87b",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium--depart-notes-1.png.jpg",
+    "viewSha256": "d1c1ee64d3bbc085eca12ac2f569d5fcea935a52039091ec90f2c476970cc016",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-0.png",
+    "rawSha256": "ad05e1c1d631efafd9e48f2790ca14f934a10b3affda3d5301ce3331177a2d28",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium--depart-notes-0.png.jpg",
+    "viewSha256": "d58eb89fb0fa99739166fb03c7c48d602429a53d2c1fc9711f1bf785f844767e",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-4.png",
+    "rawSha256": "1a68611076092ed02b5136950d9d5a7d1a8077dea025b3118d38a3d0dcdd2e5d",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium--depart-notes-4.png.jpg",
+    "viewSha256": "1893f808087b8d2a9090d89d61e59158171ab3c1ea3e58e7840bd09af76cbb96",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-default-before-fold-assert.png",
+    "rawSha256": "867ac0b1b57c34aa7136bc7a9c2bafc5f508fa99bbb16c234a8f15994fd67a15",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium--depart-default-before-fold-assert.png.jpg",
+    "viewSha256": "9543bd894e69bd0ad4404b4a488cdfd8c9758aea862a453dff7e874cdfda1baf",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-5.png",
+    "rawSha256": "42a64c0576c542cac69abcc29de45196acc767b3e01bb250b045074536ac47da",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium--depart-notes-5.png.jpg",
+    "viewSha256": "1562df9398fc916a350e25e8d7a8ebd68c6a8a456a65f9c58d1f528cf2293494",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-7.png",
+    "rawSha256": "c13ef60d0f72399f2c170a759978ae9ff730efc8a87e97c1757df3e096970305",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium--depart-notes-7.png.jpg",
+    "viewSha256": "6589da5a021581cba5f6d3e436bd69d20c0430c388b4c5da4eeba8ff6f07fd89",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-6.png",
+    "rawSha256": "f8653eb23b7e6a3416bd2eca101e9539fe02f09162c73074f2e922638d92bf96",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium--depart-notes-6.png.jpg",
+    "viewSha256": "959c6ebcbd5262bebf9828595da095fb48b6c121688bb552a3951914a0a2e40a",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-decision.png",
+    "rawSha256": "d171caea68dde5ab8e7cdeffe57779630be01f24c6b9440f8691fa1e97cc35ab",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium--depart-decision.png.jpg",
+    "viewSha256": "a2e61d2582e9a8fe4a94637650125f40d5b9a8bae52639f732b641f0e33c0808",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-8.png",
+    "rawSha256": "42cb17c5c22179b95d75dc8b73b9f9be0fbeee1343a4600a5205a358f0952261",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium--depart-notes-8.png.jpg",
+    "viewSha256": "352a25acf5324e4edc330f2d6201162dc850db73e681e192499c82df7f64be88",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/check-uir33-02-CHECK-UIR33-302c2-d-original-milestone-result-chromium/one-breakthrough-stop.png",
+    "rawSha256": "e4ccd3e97d7dfe2665303dcc7b5ee98e8c0af5a7f8f6b5dae43d9a1f664f3bd2",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/check-uir33-02-CHECK-UIR33-302c2-d-original-milestone-result-chromium--one-breakthrough-stop.png.jpg",
+    "viewSha256": "f17fae20231a325828500e35e3604078e0e13d13afd742b82a9ffffb75bd333f",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-74840--text-controls-and-the-Game-chromium/wilderness-1.png",
+    "rawSha256": "26356172d66dc72fe3679078c32b5ead4290a435e4729f96c91e4aeae2e64809",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-74840--text-controls-and-the-Game-chromium--wilderness-1.png.jpg",
+    "viewSha256": "e18b5183c58fd55f80d7e5a01b7ac214e0399f12c2e5fab8182fba4ab24f84e2",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-e54cb--pre-action-time-for-review-chromium/ANSWER_TRIAL-actual-decision.png",
+    "rawSha256": "21486e94a303f4558b22a096d2d305b44c52fe7b5c16f6feae5c7a2b4d8e4536",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-e54cb--pre-action-time-for-review-chromium--ANSWER_TRIAL-actual-decision.png.jpg",
+    "viewSha256": "4168f0ac9d8d9409201ba7ac55a6ad1a0b98bc29ffc35ce3c5427598fe28d577",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "问心当前回答/天劫减伤10、6秒仅本次与不自动出招可辨，完整说明按需。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-ad739-ual-slots-and-stable-return-chromium/long-name-fallback.png",
+    "rawSha256": "8188c08cd558e90c64be70079a79c54b5dc9303b67c6df7d0ec207016a1b869d",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-ad739-ual-slots-and-stable-return-chromium--long-name-fallback.png.jpg",
+    "viewSha256": "b6e5071a86e5f94fbdc42d79c6d2bb77cb46b849142169321552da6ac979bb5d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-ad739-ual-slots-and-stable-return-chromium/long-name-fallback-before-layout-assert.png",
+    "rawSha256": "8188c08cd558e90c64be70079a79c54b5dc9303b67c6df7d0ec207016a1b869d",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-ad739-ual-slots-and-stable-return-chromium--long-name-fallback-before-layout-assert.png.jpg",
+    "viewSha256": "b6e5071a86e5f94fbdc42d79c6d2bb77cb46b849142169321552da6ac979bb5d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/check-uir33-02-CHECK-UIR33-593b6-e-and-exact-receipt-reading-chromium/EQUIP-object-seal.png",
+    "rawSha256": "1ad57bb8b0199c28e72fee995410b4a1ce325adbdb71346eb16ea8d6e68e91ab",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/check-uir33-02-CHECK-UIR33-593b6-e-and-exact-receipt-reading-chromium--EQUIP-object-seal.png.jpg",
+    "viewSha256": "68bcd1e46d8f104969939b4be0757f16e125f6410bf298600a8830b8a9f88243",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium/RETIRE-default-before-fold-assert.png",
+    "rawSha256": "cce46c526c2ec41d30479a4624a8f2cb67dfb646678a49a71cc4bbb5dc682395",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium--RETIRE-default-before-fold-assert.png.jpg",
+    "viewSha256": "d18aefedfcef2f1f0930b111077f286e3e5fbd2147c169ed5036239acbe66519",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium/RETIRE-notes-0.png",
+    "rawSha256": "cf71c57672274148134735d0284fe648ad2b74005d7af048d1b869cdc0ffe1a4",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium--RETIRE-notes-0.png.jpg",
+    "viewSha256": "54731f4586dc28892c1f010e477e83d1ee7f0fe2ce06d7c69df27ef279e0a1af",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium/RETIRE-notes-1.png",
+    "rawSha256": "379b300b3b6c5eea6f464d40e365aa44bc2eb0645bac4b353b395b3911bd54bd",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium--RETIRE-notes-1.png.jpg",
+    "viewSha256": "e8201bd11755c6fb21b0c88673aea08bfa6361e8556efcf1f11d6183f13c929d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium/RETIRE-decision.png",
+    "rawSha256": "720cd1f5aa859e31c23767bddedcc9f85b31261a95a624e11c015893852804c9",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium--RETIRE-decision.png.jpg",
+    "viewSha256": "1468d9d754b05dc47dc5fa4905541ceb502335b1fa4d7acc982210004e6fb6dd",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium/study-1.png",
+    "rawSha256": "18f7249da04a0f89a36956ce84c458f95b5974a03d860fb22ec9ef63832a967f",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium--study-1.png.jpg",
+    "viewSha256": "8323a1a29b3d36fae1357da2409fd0f2ddd5746c5300d39dfef3e64402c227cb",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium/study-3.png",
+    "rawSha256": "037542868de6dc0cba3c3dcabf23b063755657b1450519597968d45f9f1e2bd7",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium--study-3.png.jpg",
+    "viewSha256": "ae5c803d574c16689764e0f5bd89d3c281184a9576c2741d95f4419e9167a927",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "经架4卷/分类/后续境界与完整12项分页齐，待研习不冒已掌握；关闭返回明确。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium/study-2.png",
+    "rawSha256": "9edea12b746e5bc3a79de1c46633e62192f34941a8de6c831da1ff1ae21096a0",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium--study-2.png.jpg",
+    "viewSha256": "c079d14f26b7f3b95753bf87357fdf373b3544e8c5de8ab5fd512b2b869b014d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-7d1b4-invented-future-or-new-life-chromium/sealed-folio-before-layout-assert.png",
+    "rawSha256": "120ba104a879c3b87747ae7f6e3348e7abc394fcee34d7ceb9ef2bb9e4ed1992",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-7d1b4-invented-future-or-new-life-chromium--sealed-folio-before-layout-assert.png.jpg",
+    "viewSha256": "aa02ce07dc9cf49dfcfc11f307a044918487915cc744381daac79eb2c622dbd9",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-06-character-folio-U-7d1b4-invented-future-or-new-life-chromium/sealed-folio.png",
+    "rawSha256": "44f0c631daf49c42793f092b4a866b3736d38f5ec2adfba2f78ca64376b43860",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-06-character-folio-U-7d1b4-invented-future-or-new-life-chromium--sealed-folio.png.jpg",
+    "viewSha256": "7bc3092ff659aba562f521b45b05c55c1e35b7936c8315c42c84801b69d9ee7e",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-b6967--pre-action-time-for-review-chromium/BATTLE-actual-decision.png",
+    "rawSha256": "c028dba7897d2f7094c4c3428e2de05a130797fa2dfcc25728197e047393d320",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-b6967--pre-action-time-for-review-chromium--BATTLE-actual-decision.png.jpg",
+    "viewSha256": "0a2039757807cc5b0c4d7436a4d8c4b5e72039bc4ed6c2501af15434819b8881",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "敌我/当前意图/预演下一招及真实预计HP/MP变化可辨，40回合/480灵力/危险20%有限授权齐；零用药多个0字段与长策略句仍挤在常驻区。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/check-uir33-02-CHECK-UIR33-4fe05-creen-wide-decorative-frame-chromium/quota-detail-no-extra-frame.png",
+    "rawSha256": "55e6437a07591dee7558c549b1864ed528cdd7cf39633b9f7067ca110d7fc665",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/check-uir33-02-CHECK-UIR33-4fe05-creen-wide-decorative-frame-chromium--quota-detail-no-extra-frame.png.jpg",
+    "viewSha256": "861d68f69da0564b4b541b1130b987b40d0a53295d1080d328675d6a147b3604",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/check-uir33-02-CHECK-UIR33-4fe05-creen-wide-decorative-frame-chromium/quota-original-error.png",
+    "rawSha256": "b6c49d704577660fb5923ae64fdc04dcdbf16ff7b1830ea2de0456ed154d08e1",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/check-uir33-02-CHECK-UIR33-4fe05-creen-wide-decorative-frame-chromium--quota-original-error.png.jpg",
+    "viewSha256": "988be8615cc76f5d6c2e155d140d190b17d3363d1e6cfca601549451e0ca749e",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-relics.png",
+    "rawSha256": "acb73656fb9139a00ace92c85caee09f72d30791c49972b5ddb29133f28710f7",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium--entry-hub-relics.png.jpg",
+    "viewSha256": "fc1379470395e883ef8dc922a53b25da9bd33e9f860dfbbd905d3b299252d81c",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "锁定器谱有主体/四器只读目录，明确未炼成与金丹门槛。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-life.png",
+    "rawSha256": "c65da97af6d66a7f5888cc9458d1cc0a1c00a29c7850e5ef6bdc9946015489db",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium--entry-hub-life.png.jpg",
+    "viewSha256": "580a995790210bcebd6081ddb5a60983b3e2f249c0e064a437ac92428d7957e2",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "命卷四分类、正文与页码/卷尾处理可辨，未封状态真实。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-2.png",
+    "rawSha256": "dcc2e3ccd2e0ae6189d6c8d95a1cfeb705ec010093893d2cdccad8a0ee663a23",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium--entry-tab-2.png.jpg",
+    "viewSha256": "2be034a4b742e5a5bc371352d16e32e309f3d9b2044777c65db88f93e4bff31c",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "行囊当前物/实际12件/用途与目录分开。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/real-compact-stage.png",
+    "rawSha256": "c4b2be453868231299f2fe4872fc97e9779957eb35ef9190704c08ad2e56ba63",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium--real-compact-stage.png.jpg",
+    "viewSha256": "52ce1cda10b37cb1a7e3bb164803974627ba0c0935e788a79e0644ef58790602",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "当前修炼对象、实际每轮、方式和有限上限可辨，无新越界。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-3.png",
+    "rawSha256": "ec145156a426e36200eb93c31e0398a8ccda84edce397a099d65bfa6eac68d61",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium--entry-tab-3.png.jpg",
+    "viewSha256": "047c15f41f49838944945ec244ead40c8d08ff0fd5d1555a28522276e87b1629",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "开场未结识事实保一处，人物/此地/手记及分页可辨。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-1.png",
+    "rawSha256": "2ceab1d0fbfb6782fb9a7c6807589914ca5ff39877ebd1e2bb93db52e1cb506a",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium--entry-tab-1.png.jpg",
+    "viewSha256": "95542d27a53462de483fe5d8afb14709b63b06c0a327ac9be3973f54a4f46c0c",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "六地点/当前所在/四分类与只读选择、真正行旅分明。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-forge.png",
+    "rawSha256": "af6afa3cd811173425238fe1385c2bb3fc9001f3b3d521437f1c973b8deeac67",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium--entry-hub-forge.png.jpg",
+    "viewSha256": "c8c63cbcaac76672bcc7b4eb0aa61be02427a132dfb8599756cdd316a82e6633",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "丹炉/单炉材料与实际库存/开炉/有限投入可辨，设置按需。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-skills.png",
+    "rawSha256": "dfdbe341a6f5bce0e5a8010d62af4d61007bfd39826da6ef8fc16f65512d00a9",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium--entry-hub-skills.png.jpg",
+    "viewSha256": "852f28fc2f6058bece96f724b7c4bb2795ebd6ec45ee21247b777587cf745920",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "所选玉简作用和已掌握当前心法可辨；App160/163/852按section同步标题与主导航，不判重复路由错误。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/yan-full-1.png",
+    "rawSha256": "970a18079d4ee2444cf22751e158a57d8f62d6eba35062416cd973975ae5092d",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--yan-full-1.png.jpg",
+    "viewSha256": "519503b4050253dbef33e795d7f4325a6a7dfae7243fedccc2bd23f67aa819c5",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/yan-full-0.png",
+    "rawSha256": "005045d0156e929c07a3cb233eb8141718e3323d70b63e493180465ed57c1f87",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--yan-full-0.png.jpg",
+    "viewSha256": "d09e951175775c8b5f45de67346da4e4398870dbb2982b997f481652fce8544a",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/leave-current-fact-before-dedup-assert.png",
+    "rawSha256": "4a98ec1b111c9c017323257173e44fbb74d0c48feb80b8464d7fb8123f44dea8",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--leave-current-fact-before-dedup-assert.png.jpg",
+    "viewSha256": "991667821da2b7acf32bb3b233eb4ce7174888d059197c9ea990b5a7919e481d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/shen-full-2.png",
+    "rawSha256": "b426f60b3baffa3b9e2979ec1e39b7a21a439b687d21ecbd69304e7e8297a3a8",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--shen-full-2.png.jpg",
+    "viewSha256": "98e5aa7374667c6f8d7d48e6fca2a977dde867cccdae0ab04ea45e99b769a534",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/shen-full-0.png",
+    "rawSha256": "e336a468242d73782af01f7ff8bb2d782d4ea8a0a717e8763f6dd14adb88a024",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--shen-full-0.png.jpg",
+    "viewSha256": "991667821da2b7acf32bb3b233eb4ce7174888d059197c9ea990b5a7919e481d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/shen-full-1.png",
+    "rawSha256": "02fc62dab4b52fd06a8a2b834c081e835b0c5ecc8f680d62ee16a49b9b5c32c7",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--shen-full-1.png.jpg",
+    "viewSha256": "65cad95aca5bba36128dd5a1fd340dfe5be305277c4f7305c3a973c98d62a075",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/lu-full-3.png",
+    "rawSha256": "e0ee443133c961f710da295c0e34f200cd3cba35595c617a491997ee5caa8baa",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--lu-full-3.png.jpg",
+    "viewSha256": "3e7148cfbbdc1799dd720373fb84e771589cf7e3eb947fbc957113a8093959f5",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/lu-full-2.png",
+    "rawSha256": "9e30045646c57e8bba6083ddf78d7d9b20afee8a32b9e26ebe55b5186dc1c6dc",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--lu-full-2.png.jpg",
+    "viewSha256": "c2330586b33a88d43c36ceb3fb7376e0c0b347ce4ce65a0396c0220f3054fc0e",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/lu-full-0.png",
+    "rawSha256": "3dfa9a0cc723fb793088178f6aa87a02a20c64541fe94445d873685d5674a5ad",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--lu-full-0.png.jpg",
+    "viewSha256": "a10dc2f1dbf893a6a268f4a5f4b6fcb2bd613337b6ae237262f9929e45cca3df",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/pei-full-1.png",
+    "rawSha256": "753a38757d042576d74386e2804ab4071ebdcab5c639b13b0c415ff9549b29f7",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--pei-full-1.png.jpg",
+    "viewSha256": "d87c757b0b0bdf753e93529ef1a2cf0fff873a73a355b964887dca8ea24eae83",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/pei-full-0.png",
+    "rawSha256": "2d0981b7685cae32b829179daad2d5ca1f0278631dfacf0b69e76851a158b6a7",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--pei-full-0.png.jpg",
+    "viewSha256": "93c8cd8f598ecc9fc25053101ef12c702eed107539bc6015f18f361547b75871",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/lu-full-1.png",
+    "rawSha256": "36336ac3daf2f8d976d3a2b424cdeb94b2d0a0365ad2874c04ab17ba503ce21b",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--lu-full-1.png.jpg",
+    "viewSha256": "eb1aaa85e64ce60450e467ce48b5baaa2d50c3adc7c086d18442b7059556ed3d",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/leave-current-fact.png",
+    "rawSha256": "0b1f799be94e3d27b33aa8e1f19268fa4fb09bfd148ffed765ce2263cd8694ba",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium--leave-current-fact.png.jpg",
+    "viewSha256": "9adc3fe0324d13042bd6a740c79280d568510dae0c3aa8988b3599e4d91d1508",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-86b50--pre-action-time-for-review-chromium/BREAKTHROUGH-actual-decision.png",
+    "rawSha256": "7b6f3a0e702612fab0b499837110731992531717ad7f2a0f1edc9a35cc1f15fe",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-86b50--pre-action-time-for-review-chromium--BREAKTHROUGH-actual-decision.png.jpg",
+    "viewSha256": "35c4ba9632b97a07793d7f59f434979914ec50b9d4ce165fbf7ee4f9b3934ad3",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "本次引气/重置修为和新境恢复、0物资/30秒/仅本次明确，原完整说明可查。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-2169f--pre-action-time-for-review-chromium/EQUIP_RELIC-actual-decision.png",
+    "rawSha256": "6ef9914ed0c9334673f8b87eef27958bb973a81c75e205f96d87302af3d7304d",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-2169f--pre-action-time-for-review-chromium--EQUIP_RELIC-actual-decision.png.jpg",
+    "viewSha256": "c50de18b391093ecde0a1e4c071a6b1b33bae9d49ce8235adbf85b1c448e5e45",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "玄玉印承伤减8独立突出，不再用四项0变化盖过专属作用，完整比较可查、即时免费确认。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium/commission-1.png",
+    "rawSha256": "6f86726c38e3864aceea44ff96b81dbaef2ad363d0d1d5686026a228aacca0e3",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium--commission-1.png.jpg",
+    "viewSha256": "c26cc7fc7ec20cc38ff87c6b20223af145bc6f8c79875c8b02c21214b0597769",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium/commission-2.png",
+    "rawSha256": "f777cd3128f6dc4b2ad7424b48318629f066439d5d65160b1f61be416df6d544",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium--commission-2.png.jpg",
+    "viewSha256": "43240e0beb7180fa6ded274a917f857a75857d81de9abdc919d31a9a03067e2b",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium/commission-3.png",
+    "rawSha256": "9883d31cf0e2c17d9d02628f871772eb3b6f29a1acb5a621e136f8756f930884",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium--commission-3.png.jpg",
+    "viewSha256": "649b2203e0c9a477af8810e85a0b02c7ac6bb2bd0915e25a7fc2b6186b27fcb3",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir33-01-cultivation-activ-84023-fresh-and-explicit-takeover-chromium/assisted-spent-first-cycle.png",
+    "rawSha256": "abc9a7dbf92523bec639ca9355c3e73c416d36e85213478db68c1ba5fe1142b0",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir33-01-cultivation-activ-84023-fresh-and-explicit-takeover-chromium--assisted-spent-first-cycle.png.jpg",
+    "viewSha256": "138c6b2973ab7f8dbea8ce1748831de1312abd9f55a0927d87f75d6d8144cb90",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir33-01-cultivation-activ-84023-fresh-and-explicit-takeover-chromium/assisted-awaiting-takeover.png",
+    "rawSha256": "57abeef64fae2f4bf9d3066bb7c705dabbfe6100645c9e12da76a7757e7b7bfb",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir33-01-cultivation-activ-84023-fresh-and-explicit-takeover-chromium--assisted-awaiting-takeover.png.jpg",
+    "viewSha256": "cae90d3d6034e8f8508de3f77fcc8764dc9b9a4cfbc39a569a0399070b995a35",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "继续修炼/原额度/本轮重计/离线无收益可见，无页面接管术语；实际支出20/40和累积100保。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir33-01-cultivation-activ-e248f-le-without-starting-another-chromium/pausing-main-stage.png",
+    "rawSha256": "bf8d583d428737bca4f51092de2d653f14eff0b3f6a1e765f6d42fee177ebc1c",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir33-01-cultivation-activ-e248f-le-without-starting-another-chromium--pausing-main-stage.png.jpg",
+    "viewSha256": "fc2f0d64f7c1e6895579e4baaff75b6aee6cb1d0d1b19b0660788e9c0e189b7c",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "保存中暂停显示核对本轮后停手/不再下一轮，不冒已暂停或已结算。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/uir33-01-cultivation-activ-e248f-le-without-starting-another-chromium/saving-main-stage.png",
+    "rawSha256": "ed0f69de5165614bf3bf193a4084214224c37559aa34cd8db92207408f8b963b",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/uir33-01-cultivation-activ-e248f-le-without-starting-another-chromium--saving-main-stage.png.jpg",
+    "viewSha256": "c915aca965e0c676b6eb2444d9d02c14041f62a081fea8aa605abaf10fbaa069",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "原生保存中保旧0修为/0轮，实际保存状态和暂停入口可读，动效不发奖励。"
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/paused-activity.png",
+    "rawSha256": "78f221fa153482fd5b2068cdfe93c74549b67c3b4f20d7b77d11782e2549f880",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium--paused-activity.png.jpg",
+    "viewSha256": "24f36c635d26be241b2e11bc1479073574d22302eedc88e25d710ba80db007b7",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/cross-page-activity.png",
+    "rawSha256": "a8854f6b102704eeb2c385664f3a3750e7c3c2da6080aabebb39c415e7016039",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium--cross-page-activity.png.jpg",
+    "viewSha256": "cd5bcf722153e941771875c7a53722280a958af19a18799c733466ea91e20f64",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/failed-four-materials.png",
+    "rawSha256": "578b11d97373661a6b3c5bece2e805ba08d24b687c824fc9d331a65397f703ce",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium--failed-four-materials.png.jpg",
+    "viewSha256": "d408eae79bed05ed4e6cd1802c223499b0debbcf4dea4fc937c6dd5d0ad148ca",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/failed-cycle-controls.png",
+    "rawSha256": "2c82677c51bba218ec11f7a39f7ec949dd6544747af1dc327fe0c0ff3a82a623",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium--failed-cycle-controls.png.jpg",
+    "viewSha256": "27a9f4a9a9c430bfb4436f0ea75293c33495807a8d9d1250bea4618fb0b1528f",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-8680a-paration-and-disclosed-time-chromium/foreign-rest-main-before-travel.png",
+    "rawSha256": "5076d96b33fc429da56dacb44dace2bb2eb582a9b21a7a8f2279182024cf6f49",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-8680a-paration-and-disclosed-time-chromium--foreign-rest-main-before-travel.png.jpg",
+    "viewSha256": "1b1e839d35ebe21d86b35ac6196588c38a6e9d094ddd21219acbb23118407e88",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-52151--pre-action-time-for-review-chromium/TRAVEL-actual-decision.png",
+    "rawSha256": "491d8933895092b3bdc767ef78b250ffddd0ea344b754ecf8c8e207ddc984542",
+    "view": "artifacts/goal-4/uir35-02/current/cend05-views/cend03-review-observations-52151--pre-action-time-for-review-chromium--TRAVEL-actual-decision.png.jpg",
+    "viewSha256": "8720324bfb0ae14ffb675ad05462c5cbe04482a569e4f77ff0c3525448b08b36",
+    "quality": 68,
+    "sameDimensions": true,
+    "viewed": true,
+    "review": "当前位置与目的预览/尚未抵达明确，6秒0游戏月/抵达即停和原预算确认可辨，查看不自动行旅。"
+  }
+]

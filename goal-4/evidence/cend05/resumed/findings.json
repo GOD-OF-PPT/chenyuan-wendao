@@ -1,0 +1,83 @@
+{
+  "runtime": "099f87393e70fd4fdd9b652430419daa20a85f8a21afc1e15f63d17b3e0ee6d2",
+  "source": "c9bdff6f2418c633b2f9d89d441b48463fef04f8",
+  "humanValidated": false,
+  "allUnfixed": true,
+  "findings": [
+    {
+      "id": "CEND05-F01",
+      "priority": "P1 experience",
+      "title": "开卷短印章覆盖初遇选择正文",
+      "observed": "真实新档保存后，CREATE的dialogue印章落在首两项选择上；独立实钟复现记录15个图形/文字矩形交叠，包含赠丹标题/回春丹1/结缘/以丹换简标题。原1600ms后自然消退，全游戏库前后相同。不是点击拦截或奖励错误。",
+      "reproduce": "隔离新档→踏入仙途→原0.6秒保存后首帧；无需导入、加速或额外操作。",
+      "evidence": [
+        "opening-effect-observation.json",
+        "opening-effect-pixels.json"
+      ],
+      "sources": [
+        "web/src/ActionFeedbackStage.vue:42",
+        "web/src/ActionFeedbackStage.vue:45",
+        "web/src/ActionFeedbackStage.vue:67",
+        "web/src/action-motion.css:14",
+        "web/src/action-motion.css:39",
+        "web/src/action-motion.css:41"
+      ],
+      "nextTask": "下一三任务综合debug先以真实重叠红例修短反馈锚点，基于当前可见场景留白/提示安全区及演出外缘避开选择正文和入口；保可信当前回执、原时长/减少动效语义、旧回执不重演，不隐藏全部动效或改变Game/周期/保存。",
+      "fixed": false,
+      "sourcePins": {
+        "web/src/ActionFeedbackStage.vue": "627baf033129c973a3eec1f9902914b436f2ca37ae4b45f239ef02037f8dcad2",
+        "web/src/action-motion.css": "fa4dbd48ff59877a2de4ab60ff348aba77659c520f900f2ba2f0ca119096664a"
+      }
+    },
+    {
+      "id": "CEND05-F02",
+      "priority": "P2 visual clarity",
+      "title": "未完成进度轨比实际已完成部分更亮",
+      "observed": "修为0/10或0/1000时整轨亮白，实钟首周期5/10时左半暗绿、右半亮白；调息35/100气血的未完成65%也更亮。数值与填充长度正确，风险在亮区更像完成量，和青黛舞台不协调，非百分比运算故障。",
+      "reproduce": "正常回洞查看0修为→真实首30秒后暂停看5/10；或行囊服丹前看35/100气血。",
+      "evidence": [
+        "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-559a6--pre-action-time-for-review-chromium/CULTIVATE-actual-decision.png",
+        "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-6beb8--pre-action-time-for-review-chromium/USE-actual-decision.png",
+        "online-pixels.json"
+      ],
+      "sources": [
+        "web/src/style.css:26",
+        "web/src/style.css:27",
+        "web/src/CultivationSite.vue:31",
+        "web/src/cultivation-objects.css:12",
+        "web/src/RecoveryRitual.vue:27",
+        "web/src/RecoveryRitual.vue:28",
+        "web/src/RecoveryRitual.vue:44"
+      ],
+      "nextTask": "独立改进完成/未完成轨层级，使用暗轨与清晰实际填充；保原value/max/可读数字和无假进度，核0/部分/满/保存中/失败及静态结果。只当前固定桌面，不借此恢复兼容。",
+      "fixed": false,
+      "sourcePins": {
+        "web/src/cultivation-objects.css": "e72dbbaf48cda74d973d9878cfab6fd7bc4d28d02f1e68d5d24bdb4d8b61b78d",
+        "web/src/style.css": "5f1c1bdd58ff91debf24606c039780af729957b013a320332f2dc02c73d932a9",
+        "web/src/RecoveryRitual.vue": "9cc10138931c8006053ea658022112ec2edd99f9b63078ab998e5ae3fd02c6f7",
+        "web/src/CultivationSite.vue": "b39966928306502220b66ebd3a4bd8f6eaae88243fbd306de80a08aa353072d5"
+      }
+    },
+    {
+      "id": "CEND05-F03",
+      "priority": "P2 interaction clarity",
+      "title": "未用药战策常驻区仍堆多组零值",
+      "observed": "迎战和自动斗法默认用药上限均0，却同时铺回春/回灵最多0、保留0和阈值0%；迎战末段规则被按钮挤成窄多行。真实敌意/下一招/危险停手已清楚，这些无用药字段仍增加阅读负担。非药物策略丢失或越界崩溃。",
+      "reproduce": "历练→挑战雾隐妖狼或已入当前战局，保持默认不自动用药策略。",
+      "evidence": [
+        "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-d4b50--pre-action-time-for-review-chromium/ENCOUNTER-actual-decision.png",
+        "artifacts/goal-4/uir35-02/current/cend05-results/cend03-review-observations-b6967--pre-action-time-for-review-chromium/BATTLE-actual-decision.png"
+      ],
+      "sources": [
+        "web/src/AdventurePlanner.vue:64",
+        "web/src/BattleStrategy.vue:68"
+      ],
+      "nextTask": "独立将真实零用药策略表达为不自动用药等简明语义，常驻保实际有限场次/动作/灵力/关键安全线，完整用药预算/库存保留/阈值与全部招式优先级仍在原战策可查；不改原策略/授权/斗法规则或藏能力。",
+      "fixed": false,
+      "sourcePins": {
+        "web/src/AdventurePlanner.vue": "aba45902b0f308011603edad8c839f25741ab875b17ac10cb481f01c5966dde7",
+        "web/src/BattleStrategy.vue": "82ea2a3699c26c6e95b76540eeba0f0f30103de1d9e0822b516f864f11c7eda3"
+      }
+    }
+  ]
+}

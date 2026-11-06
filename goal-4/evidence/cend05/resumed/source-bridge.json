@@ -1,0 +1,246 @@
+{
+  "producer": {
+    "head": "c9bdff6f2418c633b2f9d89d441b48463fef04f8",
+    "source": "c9bdff6f2418c633b2f9d89d441b48463fef04f8",
+    "tree": "d89794fe3e2b49f3d3fb23382bbf684f2c65ed8b",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "allCurrentRuntime336Exact": true,
+  "selectedDependencyFiles": 57,
+  "allSelectedDependenciesExact": true,
+  "protectedInFlightConsumed": false,
+  "dependencies": {
+    "package-lock.json": {
+      "sha256": "d3f1aa6b6a4cca2c3d458a297b2e0320f0bdfa64d01913938c1f44038be143a2",
+      "currentFrom": "actual working file"
+    },
+    "scripts/assert-web-build.mjs": {
+      "sha256": "4d8b60c8aa870eeb892c6ad56d2f8c9ae03d97e6070f784744bb40fd01e55da9",
+      "currentFrom": "actual working file"
+    },
+    "scripts/economy/idle-scenarios.mjs": {
+      "sha256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407",
+      "currentFrom": "actual working file"
+    },
+    "scripts/economy/scenarios.mjs": {
+      "sha256": "7b82f06c10749a9d81e6cb8c3486c26d886a5ca30dd198471f68f9e67891ca9e",
+      "currentFrom": "actual working file"
+    },
+    "scripts/source-identity.mjs": {
+      "sha256": "a52e3e167b389aae6c4fa98d07b02a2ae52dbace1ec81d80a5e6f8254e6dcf24",
+      "currentFrom": "actual working file"
+    },
+    "src/full/activity.ts": {
+      "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+      "currentFrom": "actual working file"
+    },
+    "src/full/adventure.ts": {
+      "sha256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015",
+      "currentFrom": "actual working file"
+    },
+    "src/full/ascension.ts": {
+      "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+      "currentFrom": "actual working file"
+    },
+    "src/full/configuration.ts": {
+      "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+      "currentFrom": "actual working file"
+    },
+    "src/full/content.ts": {
+      "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+      "currentFrom": "actual working file"
+    },
+    "src/full/contracts.ts": {
+      "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+      "currentFrom": "actual working file"
+    },
+    "src/full/costs.ts": {
+      "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+      "currentFrom": "actual working file"
+    },
+    "src/full/economy-ledger.ts": {
+      "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+      "currentFrom": "actual working file"
+    },
+    "src/full/engine.ts": {
+      "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+      "currentFrom": "actual working file"
+    },
+    "src/full/errors.ts": {
+      "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+      "currentFrom": "actual working file"
+    },
+    "src/full/events.ts": {
+      "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+      "currentFrom": "actual working file"
+    },
+    "src/full/goals.ts": {
+      "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+      "currentFrom": "actual working file"
+    },
+    "src/full/life-record.ts": {
+      "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+      "currentFrom": "actual working file"
+    },
+    "src/full/mechanisms.ts": {
+      "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+      "currentFrom": "actual working file"
+    },
+    "src/full/milestones.ts": {
+      "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+      "currentFrom": "actual working file"
+    },
+    "src/full/preparation.ts": {
+      "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+      "currentFrom": "actual working file"
+    },
+    "src/full/progression.ts": {
+      "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+      "currentFrom": "actual working file"
+    },
+    "src/full/queries.ts": {
+      "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+      "currentFrom": "actual working file"
+    },
+    "src/full/receipts.ts": {
+      "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+      "currentFrom": "actual working file"
+    },
+    "src/full/story-context.ts": {
+      "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+      "currentFrom": "actual working file"
+    },
+    "src/full/trial-rules.ts": {
+      "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+      "currentFrom": "actual working file"
+    },
+    "src/full/types.ts": {
+      "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+      "currentFrom": "actual working file"
+    },
+    "src/full/versions.ts": {
+      "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+      "currentFrom": "actual working file"
+    },
+    "tests/action-feedback-fixtures.mjs": {
+      "sha256": "caae2948278f71852bab474874b32d3a7b6e2bd4b0a3b70bbc346337b6dc0f34",
+      "currentFrom": "actual working file"
+    },
+    "tests/causal-route.mjs": {
+      "sha256": "9987d0f04d5d0dddddf095d38dcabc30430cd77d63512fb18a09ed63c6bb584f",
+      "currentFrom": "actual working file"
+    },
+    "tests/full-route.mjs": {
+      "sha256": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321",
+      "currentFrom": "actual working file"
+    },
+    "tests/lifespan-guidance-fixtures.mjs": {
+      "sha256": "317ec5d685451ab53700b58faa5dd3fe799551c57e9b248fbacfc4241f647b25",
+      "currentFrom": "actual working file"
+    },
+    "tests/trial-preparation-route.mjs": {
+      "sha256": "08e44ef986c7bf69fa255c41bcb5247b5463a62269fe45dbf0755cefb98eb419",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/art37-dialog-actions.spec.ts": {
+      "sha256": "25a9da6f638581a4bfdc7c0790cdaba6daadcfc2e7d40c2a47e8f97f5d064c21",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/cend03-review-observations.spec.ts": {
+      "sha256": "0784172014af8d68715bdce8cd417cfc183f32cc81b87f6f398fa1ba5b038d11",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/cend05-online-observation.spec.ts": {
+      "sha256": "6566cb59c8232eb9df432e8470567c907103239559026de60cc62815bdcd5364",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/check-uir33-02.spec.ts": {
+      "sha256": "baa4788df7addabdac2be7e0b95073d73375a09a2fe610cff016e2fbfa550b35",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/game-confirmation-support.ts": {
+      "sha256": "be4bbdeaebab740befaf52e37582098c6d9d87030c71d2cabbb756238017f3fd",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/idle-recovery-ui-support.ts": {
+      "sha256": "2b2e9df03cf97cf582a03eb23d2bc2d3eb078a4cffc9c953f54972c047c6d04f",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/idle-route-support.ts": {
+      "sha256": "5113456696aac00759ec7d007a52e0493e8545a39f2d6a14f0de2ce79106615d",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/png-capture.ts": {
+      "sha256": "f50dc121db18150b8c4c4b48cc0fefc897b4d1e4edffc662c119c1c366cad85b",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/stage-r1.spec.ts": {
+      "sha256": "8e656081aa27886456f2f186a3438dba1915b0eba87e5f1ad24cc0ea757753c4",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/stage-support.ts": {
+      "sha256": "f31385408a68974e51b39ba5bdf08d76ece145ecd4a540c200419ffc6e5a6bb1",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/support.ts": {
+      "sha256": "674387c658ed43bf56ceedb80b3df3baf63243e77ece9eeed87ec7e9396f8682",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/uir33-01-cultivation-active.spec.ts": {
+      "sha256": "ae9452b8a8a2d502fc6823d8190b45e73505c503c3d34a8361b0d52afc1c48b3",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/uir34-01-lifespan-guidance.spec.ts": {
+      "sha256": "faa74e22e84026c637a44c3a9f76998ab9f752d8f4a7cfcada76c0933ba9fe99",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/uir34-05-trial-life-focus.spec.ts": {
+      "sha256": "9689898ed351df8df523dd8e73ff7d36c0c5c6e166f3905be5958f0766b2952e",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/uir34-06-character-folio.spec.ts": {
+      "sha256": "fd74deb49d5f81fd3b9e258920822d0ba3d0f4c30071a803b2fa63fc375df253",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/uir34-07-fate-clarity.spec.ts": {
+      "sha256": "1a74fd5a76d3b13c77bff706061c4577e4f9c53032634e10e8216b2cd6d00bb7",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/uir35-01-goal-authority.spec.ts": {
+      "sha256": "9c661e0926600ece4057959132aeae2417cf5783ed76befba7dbf6f4e2d3e2ce",
+      "currentFrom": "actual working file"
+    },
+    "web/e2e/uir35-02-cultivation-fallback.spec.ts": {
+      "sha256": "0b038ffe8e11d1fad5360ff4883add1e7589b166a4a3f0b73f9ed0f45c492987",
+      "currentFrom": "actual working file"
+    },
+    "web/package-lock.json": {
+      "sha256": "d011715fee1a25f0224e7d320a09d96848cab374a394c44062f711f098e21e6d",
+      "currentFrom": "actual working file"
+    },
+    "web/playwright.config.ts": {
+      "sha256": "a5725f53c5e5fc5de9a711212af998fd61d5f7e8f5b49c679cd36968d81149c3",
+      "currentFrom": "committed HEAD; unrelated in-flight preserved"
+    },
+    "web/playwright.idle.config.ts": {
+      "sha256": "85c0ba7683ecf47ecf832b92fc4e1054e3551041bc8cb2bb541cdff551abf936",
+      "currentFrom": "actual working file"
+    },
+    "web/src/activity-persistence.ts": {
+      "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+      "currentFrom": "actual working file"
+    },
+    "web/src/local-events.ts": {
+      "sha256": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150",
+      "currentFrom": "actual working file"
+    },
+    "web/src/local-experience.ts": {
+      "sha256": "65614c37cd5931b275208f78aa9bf06f40768ff402a908fb2d2cf28d16e3b9ed",
+      "currentFrom": "actual working file"
+    }
+  },
+  "scope": "Frozen actual approved source reused; unrelated13 are not execution inputs. No current production changes."
+}

@@ -1,0 +1,1853 @@
+[
+  {
+    "action": "CHOOSE",
+    "selectedOriginalPrimitive": {
+      "type": "CHOOSE",
+      "choice": "help"
+    },
+    "fixtureFacts": {
+      "realm": "mortal",
+      "location": "wilderness",
+      "activeEvent": "temple",
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "已选内容 · 尚未安排 · 沈清禾\n赠丹相助\n暂不安排\n此举之后\n\n赠出回春丹，结下赠药之缘。\n\n本次成本：回春丹 ×1\n\n6 秒 · 仅本次\n\n抉择落定后停止；修炼、旅行与破境仍由你安排。\n\n来由与执行说明\n赠出回春丹",
+      "controls": [
+        {
+          "id": "milestone-cancel",
+          "label": null,
+          "text": "暂不安排",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "milestone-confirm",
+          "label": null,
+          "text": "赠出回春丹",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "6 秒"
+      ]
+    },
+    "control": {
+      "id": "milestone-confirm",
+      "text": "赠出回春丹",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "TRAVEL",
+    "selectedOriginalPrimitive": {
+      "type": "TRAVEL",
+      "location": "cave"
+    },
+    "fixtureFacts": {
+      "realm": "mortal",
+      "location": "wilderness",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "行旅 · 听雨洞府\n待确认的新安排；选择不会旅行或开战\n听雨洞府\n目的地预览 · 尚未抵达\n青岚山野\n当前所在\n听雨洞府\n需凡人\n青云宗\n需炼气\n云岚坊市\n需炼气\n照影古境\n需筑基\n登仙台\n需化神\n当前：青岚山野 → 听雨洞府\n\n石壁隔断尘嚣，檐雨敲响岁月。你在蒲团前摊开行囊：静修、炼丹，或为下一次远行作准备。\n\n一次6秒 · 不消耗游戏月 · 抵达即停。到达后不会自动取材、采购、研习或挑战。\n路标为目的地示意；点选只查看，确认行路后才移动。\n预计一次抵达\n预计停止：已抵达目的地，本次行旅结束\n只执行本次明确安排；关闭或刷新后主动继续，不补离线收益。\n安排行路至听雨洞府",
+      "controls": [
+        {
+          "id": "travel-wilderness",
+          "label": null,
+          "text": "青岚山野\n当前所在",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "travel-cave",
+          "label": null,
+          "text": "听雨洞府\n需凡人",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "travel-sect",
+          "label": null,
+          "text": "青云宗\n需炼气",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "travel-market",
+          "label": null,
+          "text": "云岚坊市\n需炼气",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "travel-secret",
+          "label": null,
+          "text": "照影古境\n需筑基",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "travel-terrace",
+          "label": null,
+          "text": "登仙台\n需化神",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "adventure-start",
+          "label": null,
+          "text": "安排行路至听雨洞府",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "6秒"
+      ]
+    },
+    "control": {
+      "id": "adventure-start",
+      "text": "安排行路至听雨洞府",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "CULTIVATE",
+    "selectedOriginalPrimitive": {
+      "type": "CULTIVATE",
+      "method": "natural",
+      "count": 50
+    },
+    "fixtureFacts": {
+      "realm": "mortal",
+      "location": "cave",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "安排一段潜修\n确认后开始\n比较方式\n静候入定\n实际修为\n0 / 10\n自然吐纳\n引山间灵气 · 不耗灵石\n灵石辅助\n现有 40 灵石 · 炼气始可用\n\n每轮 30 秒 · 修为 5 · 1 游戏月\n\n本段预估 · 2 轮\n累计灵石上限 0 · 保留 0 · 最多 50 轮\n开始自然吐纳\n本段限额 · 修为圆满即停 · 最多 50 轮\n修为尚未圆满\n引气入体\n查看疗养安排 · 每次 30 秒\n气血灵力已经圆满",
+      "controls": [
+        {
+          "id": "training-compare",
+          "label": null,
+          "text": "比较方式",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "cultivation-method-natural",
+          "label": null,
+          "text": "自然吐纳\n引山间灵气 · 不耗灵石",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "cultivation-method-assisted",
+          "label": null,
+          "text": "灵石辅助\n现有 40 灵石 · 炼气始可用",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "training-start",
+          "label": null,
+          "text": "开始自然吐纳",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "label": "修行目标",
+          "text": "",
+          "value": "xp-cap",
+          "disabled": false
+        },
+        {
+          "label": "圆满最多轮数",
+          "text": "",
+          "value": "50",
+          "disabled": false
+        },
+        {
+          "label": "累计灵石预算",
+          "text": "",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "label": "灵石保留量",
+          "text": "",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "id": "breakthrough",
+          "label": null,
+          "text": "引气入体",
+          "value": null,
+          "disabled": true
+        },
+        {
+          "id": "rest",
+          "label": null,
+          "text": "查看疗养安排 · 每次 30 秒\n气血灵力已经圆满",
+          "value": null,
+          "disabled": true
+        }
+      ],
+      "seconds": [
+        "30 秒",
+        "30 秒"
+      ]
+    },
+    "control": {
+      "id": "training-start",
+      "text": "开始自然吐纳",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "SOURCE",
+    "selectedOriginalPrimitive": {
+      "type": "SOURCE",
+      "sourceId": "herbs",
+      "count": 4,
+      "target": {
+        "item": "herb",
+        "quantity": 8
+      }
+    },
+    "fixtureFacts": {
+      "realm": "qi",
+      "location": "wilderness",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "青岚山野 · 取材寻踪\n山野采药\n每轮 30 秒 / 1 游戏月 · 凝气草 ×2 · 需炼气 · 修为最多 +5\n所得自动入囊，无需逐轮领取。\n翻资源册\n本地 2 项 · 选择只查看\n定程\n查看本段安排\n\n药镰与束草绳\n择此资源，核对投入后再安排\n\n待安排\n检视采集袋\n实际持有 · 已保存本段\n凝气草\n0\n本段已保存 +0\n5 轮后停 · 调整安排\n累计上限 5 游戏月 · 余寿至少保留 1 月\n预计 5 轮 · 5 游戏月 · 凝气草 +10\n预计停止：已完成安排的取材轮数\n安排山野采药\n在线逐轮保存；刷新后主动继续，不补离线。",
+      "controls": [
+        {
+          "id": "source-library-open",
+          "label": null,
+          "text": "翻资源册\n本地 2 项 · 选择只查看",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "source-object-arrange",
+          "label": "山野采药，查看并调整本段安排，不立即执行",
+          "text": "定程\n查看本段安排",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "source-satchel-inspect",
+          "label": "检视采集袋，只查看，不领取或执行",
+          "text": "检视采集袋\n实际持有 · 已保存本段",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "source-plan-open",
+          "label": null,
+          "text": "5 轮后停 · 调整安排\n累计上限 5 游戏月 · 余寿至少保留 1 月",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "source-start",
+          "label": null,
+          "text": "安排山野采药",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "30 秒"
+      ]
+    },
+    "control": {
+      "id": "source-start",
+      "text": "安排山野采药",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "BUY",
+    "selectedOriginalPrimitive": {
+      "type": "BUY",
+      "item": "healing_pill",
+      "quantity": 1
+    },
+    "fixtureFacts": {
+      "realm": "nascent",
+      "location": "market",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "翻看货架\n行囊实存 1 件\n购入\n灵石换物\n←\n支付灵石\n物资入囊\n25 灵石\n回春丹\n需凡人\n\n恢复气血；高境界按自身上限恢复一定比例。战中服用占一回合。\n\n查看来源与筹备\n待确认\n每件 18 灵石 · 15 秒\n最多 1 件 · 灵石上限 18 · 保留 0\n调整 ›\n开始购入回春丹",
+      "controls": [
+        {
+          "id": "market-library-open",
+          "label": null,
+          "text": "翻看货架",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "label": null,
+          "text": "查看来源与筹备",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "market-plan-open",
+          "label": null,
+          "text": "最多 1 件 · 灵石上限 18 · 保留 0\n调整 ›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "preparation-start",
+          "label": null,
+          "text": "开始购入回春丹",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "15 秒"
+      ]
+    },
+    "control": {
+      "id": "preparation-start",
+      "text": "开始购入回春丹",
+      "disabled": false
+    },
+    "details": {
+      "text": "回春丹 · 购入\n\n关闭保留调整，返回后确认；逐件成交免领取。\n\n预计成交 1 件 · 灵石消耗 18\n逐件入囊\n预计停止：已完成本次安排的有限次数\n仅执行本单，不自动接续其他行动。\n最多件数\n停止目标\n完成本段件数\n库存达到目标\n用石上限\n灵石保留\n返回货架",
+      "controls": [
+        {
+          "label": "交易最多件数",
+          "text": "",
+          "value": "1",
+          "disabled": false
+        },
+        {
+          "label": "采购停止目标",
+          "text": "完成本段件数\n库存达到目标",
+          "value": "cycles",
+          "disabled": false
+        },
+        {
+          "label": "累计采购灵石预算",
+          "text": "",
+          "value": "18",
+          "disabled": false
+        },
+        {
+          "label": "采购灵石保留量",
+          "text": "",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "id": "market-plan-close",
+          "label": null,
+          "text": "返回货架",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": []
+    },
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "SELL",
+    "selectedOriginalPrimitive": {
+      "type": "SELL",
+      "item": "herb",
+      "quantity": 1
+    },
+    "fixtureFacts": {
+      "realm": "qi",
+      "location": "market",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "翻看货架\n行囊实存 2 件\n售出\n物资换石\n→\n交出物资\n收取灵石\n10 灵石\n凝气草\n\n山野采得。回春丹与各境丹药的基础药材。\n\n查看来源与筹备\n待确认\n每件 2 灵石 · 15 秒\n最多 1 件 · 库存保留 0\n调整 ›\n开始售出凝气草",
+      "controls": [
+        {
+          "id": "market-library-open",
+          "label": null,
+          "text": "翻看货架",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "label": null,
+          "text": "查看来源与筹备",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "market-plan-open",
+          "label": null,
+          "text": "最多 1 件 · 库存保留 0\n调整 ›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "preparation-start",
+          "label": null,
+          "text": "开始售出凝气草",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "15 秒"
+      ]
+    },
+    "control": {
+      "id": "preparation-start",
+      "text": "开始售出凝气草",
+      "disabled": false
+    },
+    "details": {
+      "text": "凝气草 · 售出\n\n关闭保留调整，返回后确认；逐件成交免领取。\n\n预计成交 1 件 · 灵石收入 2\n逐件出售，保留库存；突破物禁售\n预计停止：已完成本次安排的有限次数\n仅执行本单，不自动接续其他行动。\n最多件数\n至少保留（件）\n返回货架",
+      "controls": [
+        {
+          "label": "交易最多件数",
+          "text": "",
+          "value": "1",
+          "disabled": false
+        },
+        {
+          "label": "出售库存保留量",
+          "text": "",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "id": "market-plan-close",
+          "label": null,
+          "text": "返回货架",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": []
+    },
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "CRAFT",
+    "selectedOriginalPrimitive": {
+      "type": "CRAFT",
+      "recipeId": "foundation"
+    },
+    "fixtureFacts": {
+      "realm": "qi",
+      "location": "cave",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "炼制筑基丹\n丹方 · 需炼气 · 每炉 20 灵石，固定成丹 1 枚\n翻看丹方册\n持有 0 枚\n本段成丹 0 枚\n来源与坊市替代 ›\n单炉药材 · 点选找来源\n凝气草\n每炉 8 · 持有 8\n保留 0 · 查看来源 ›\n灵露\n每炉 2 · 持有 2\n保留 0 · 查看来源 ›\n妖核\n每炉 1 · 持有 1\n保留 0 · 查看来源 ›\n查看安排 ›\n待启炉\n每炉 30 秒 · 1 游戏月\n开炉 · 筑基丹\n成品库存达到 1 即停 · 最多 50 炉 · 开炉才执行\n投入上限 20 灵石 / 1 月\n保留 0 灵石 / 余寿 1 月 · 达标或触线即停\n安排\n限额",
+      "controls": [
+        {
+          "id": "alchemy-library-open",
+          "label": null,
+          "text": "翻看丹方册",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "alchemy-product-source",
+          "label": "筑基丹来源与坊市替代",
+          "text": "来源与坊市替代 ›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "production-source-herb",
+          "label": null,
+          "text": "凝气草\n每炉 8 · 持有 8\n保留 0 · 查看来源 ›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "production-source-dew",
+          "label": null,
+          "text": "灵露\n每炉 2 · 持有 2\n保留 0 · 查看来源 ›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "production-source-core",
+          "label": null,
+          "text": "妖核\n每炉 1 · 持有 1\n保留 0 · 查看来源 ›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "alchemy-inspect",
+          "label": "查看丹炉安排，不开炉",
+          "text": "查看安排 ›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "production-start",
+          "label": null,
+          "text": "开炉 · 筑基丹",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "alchemy-settings-open",
+          "label": null,
+          "text": "安排",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "production-limits",
+          "label": null,
+          "text": "限额",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "30 秒"
+      ]
+    },
+    "control": {
+      "id": "production-start",
+      "text": "开炉 · 筑基丹",
+      "disabled": false
+    },
+    "details": {
+      "text": "炼制筑基丹 · 每炉 30 秒\n返回丹炉\n\n待确认草案 · 每炉 20 灵石，成丹1枚\n\n目标库存 1 · 最多50炉 · 调整炉次\n炉次\n1 炉后停\n5 炉后停\n20 炉后停\n50 炉后停\n库存达到目标即停\n成品库存\n最多\n炉\n预计 1 炉 · 灵石消耗 20 · 1 游戏月\n耗材：凝气草 ×8 · 灵露 ×2 · 妖核 ×1；成品 筑基丹 ×1\n预计停止：成品库存已达到安排目标，丹火已收\n停炉与续接规则\n调整完整预算与保留量\n开炉 · 筑基丹",
+      "controls": [
+        {
+          "id": "alchemy-settings-close",
+          "label": null,
+          "text": "返回丹炉",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "label": "炼丹炉次",
+          "text": "1 炉后停\n5 炉后停\n20 炉后停\n50 炉后停\n库存达到目标即停",
+          "value": "target",
+          "disabled": false
+        },
+        {
+          "label": "成品目标库存",
+          "text": "",
+          "value": "1",
+          "disabled": false
+        },
+        {
+          "label": "目标最多炉次",
+          "text": "",
+          "value": "50",
+          "disabled": false
+        },
+        {
+          "id": "production-limits",
+          "label": null,
+          "text": "调整完整预算与保留量",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "production-start",
+          "label": null,
+          "text": "开炉 · 筑基丹",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "30 秒"
+      ]
+    },
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "USE",
+    "selectedOriginalPrimitive": {
+      "type": "USE",
+      "item": "healing_pill"
+    },
+    "fixtureFacts": {
+      "realm": "qi",
+      "location": "cave",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "选择恢复方式\n气血\n35 / 100\n灵力\n60 / 60\n随身药盏 · 实存 2 丹\n回春丹\n调息须知\n预计单次气血 +35 · 灵力 +0\n查看补给来源 ›\n确认后开始\n目标 100% · 最多 3 丹\n库存保留 0\n单次6秒 · 调整 ›\n预计使用 2 丹 · 0 游戏月\n\n预计合计气血 +65 · 灵力 +0\n\n服用回春丹",
+      "controls": [
+        {
+          "id": "recovery-options-open",
+          "label": null,
+          "text": "选择恢复方式",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "label": null,
+          "text": "查看补给来源 ›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "recovery-plan-open",
+          "label": null,
+          "text": "目标 100% · 最多 3 丹\n库存保留 0\n单次6秒 · 调整 ›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "preparation-start",
+          "label": null,
+          "text": "服用回春丹",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "6秒"
+      ]
+    },
+    "control": {
+      "id": "preparation-start",
+      "text": "服用回春丹",
+      "disabled": false
+    },
+    "details": {
+      "text": "回春丹 · 单次6秒\n\n关闭保留草案；确认才执行。达标或触及保留线即停，逐次保存。\n\n战中服丹占回合，另在斗法安排。\n\n预计停止：已达到安排的恢复目标，不再消耗丹药\n\n气血目标\n%\n最多用药\n库存保留\n返回调息",
+      "controls": [
+        {
+          "label": "恢复目标百分比",
+          "text": "",
+          "value": "100",
+          "disabled": false
+        },
+        {
+          "label": "最多服丹数",
+          "text": "",
+          "value": "3",
+          "disabled": false
+        },
+        {
+          "label": "服丹库存保留量",
+          "text": "",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "id": "recovery-plan-close",
+          "label": null,
+          "text": "返回调息",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "6秒"
+      ]
+    },
+    "ways": {
+      "text": "药匣与疗养方式\n回春丹\n持有 2 丹 · 6 秒 / 丹\n回灵丹\n持有 2 丹 · 6 秒 / 丹\n洞府疗养\n1 游戏月 · 30 秒 · 恢复至满\n返回调息",
+      "controls": [
+        {
+          "id": "recovery-healing_pill",
+          "label": null,
+          "text": "回春丹\n持有 2 丹 · 6 秒 / 丹",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "recovery-spirit_pill",
+          "label": null,
+          "text": "回灵丹\n持有 2 丹 · 6 秒 / 丹",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "recovery-rest",
+          "label": null,
+          "text": "洞府疗养\n1 游戏月 · 30 秒 · 恢复至满",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "recovery-options-close",
+          "label": null,
+          "text": "返回调息",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "6 秒",
+        "6 秒",
+        "30 秒"
+      ]
+    },
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "REST",
+    "selectedOriginalPrimitive": {
+      "type": "REST"
+    },
+    "fixtureFacts": {
+      "realm": "qi",
+      "location": "cave",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "选择恢复方式\n气血\n70 / 100\n灵力\n60 / 60\n听雨洞府 · 静坐一回\n洞府休养\n调息须知\n预计单次气血 +30 · 灵力 +0\n确认后开始\n疗养一次 · 余寿保留 1 月\n单次30秒 · 调整 ›\n预计疗养 1 次 · 1 游戏月\n疗养一次",
+      "controls": [
+        {
+          "id": "recovery-options-open",
+          "label": null,
+          "text": "选择恢复方式",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "recovery-plan-open",
+          "label": null,
+          "text": "疗养一次 · 余寿保留 1 月\n单次30秒 · 调整 ›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "preparation-start",
+          "label": null,
+          "text": "疗养一次",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "30秒"
+      ]
+    },
+    "control": {
+      "id": "preparation-start",
+      "text": "疗养一次",
+      "disabled": false
+    },
+    "details": {
+      "text": "洞府疗养 · 单次30秒\n\n关闭保留草案；确认才执行。达标或触及保留线即停，逐次保存。\n\n不在洞府时先回洞府；抵达后再预估并确认疗养。\n\n预计停止：已完成本次安排的有限次数\n\n余寿保留（月）\n返回调息",
+      "controls": [
+        {
+          "label": "疗养余寿保留量",
+          "text": "",
+          "value": "1",
+          "disabled": false
+        },
+        {
+          "id": "recovery-plan-close",
+          "label": null,
+          "text": "返回调息",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "30秒"
+      ]
+    },
+    "ways": {
+      "text": "药匣与疗养方式\n回春丹\n持有 1 丹 · 6 秒 / 丹\n回灵丹\n持有 2 丹 · 6 秒 / 丹\n洞府疗养\n1 游戏月 · 30 秒 · 恢复至满\n返回调息",
+      "controls": [
+        {
+          "id": "recovery-healing_pill",
+          "label": null,
+          "text": "回春丹\n持有 1 丹 · 6 秒 / 丹",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "recovery-spirit_pill",
+          "label": null,
+          "text": "回灵丹\n持有 2 丹 · 6 秒 / 丹",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "recovery-rest",
+          "label": null,
+          "text": "洞府疗养\n1 游戏月 · 30 秒 · 恢复至满",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "recovery-options-close",
+          "label": null,
+          "text": "返回调息",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "6 秒",
+        "6 秒",
+        "30 秒"
+      ]
+    },
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "BREAKTHROUGH",
+    "selectedOriginalPrimitive": {
+      "type": "BREAKTHROUGH"
+    },
+    "fixtureFacts": {
+      "realm": "mortal",
+      "location": "cave",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "已选内容 · 尚未安排 · 行道之人\n引气入体\n暂不安排\n此举之后\n\n仅踏入炼气，修为按规则重置，气血灵力按新境界恢复。\n\n本次成本：不消耗物资\n\n30 秒 · 仅本次\n\n本境突破后停止；不自动修炼或继续下一次突破。\n\n来由与执行说明\n引气入体",
+      "controls": [
+        {
+          "id": "milestone-cancel",
+          "label": null,
+          "text": "暂不安排",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "milestone-confirm",
+          "label": null,
+          "text": "引气入体",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "30 秒"
+      ]
+    },
+    "control": {
+      "id": "milestone-confirm",
+      "text": "引气入体",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "SCHOOL",
+    "selectedOriginalPrimitive": {
+      "type": "SCHOOL",
+      "school": "sword"
+    },
+    "fixtureFacts": {
+      "realm": "qi",
+      "location": "cave",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "择定修法 · 剑修\n配装效果\n完整比较\n本境历练预演\n\n青锋心诀：基础剑诀：积蓄剑意，满三层可打断重击。\n\n青锋起势：消耗 8 灵力，伤害并获得 2 层剑意。\n\n惊鸿斩：消耗 12 灵力和全部剑意，满层打断重击。\n\n基础指标保持原值；专属作用见上。\n\n无需灵石、丹药或游戏岁月。保存后才生效；原安排不会自动继续。\n\n暂不更换\n确认择定修法",
+      "controls": [
+        {
+          "id": "configuration-view-effects",
+          "label": null,
+          "text": "配装效果",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "config-full",
+          "label": null,
+          "text": "完整比较",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "configuration-view-combat",
+          "label": null,
+          "text": "本境历练预演",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "configuration-cancel",
+          "label": null,
+          "text": "暂不更换",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "configuration-confirm",
+          "label": null,
+          "text": "确认择定修法",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": []
+    },
+    "control": {
+      "id": "configuration-confirm",
+      "text": "确认择定修法",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "STUDY",
+    "selectedOriginalPrimitive": {
+      "type": "STUDY",
+      "manual": "jinghong"
+    },
+    "fixtureFacts": {
+      "realm": "foundation",
+      "location": "sect",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "待确认安排\n展简\n只查看卷面\n惊鸿剑简\n\n剑修终结术法伤害 +4；不改变当前配装。\n\n破庙交易已获得同一启迪时，不重复收费。\n当前伤害加成 0\n\n一次 80 灵石 · 60 秒 · 青云宗 · 需筑基\n\n安排后逐卷研习\n一次60秒\n仅参悟一次 · 完整安排\n累计灵石上限 80 · 保留 0\n预计完成 1 次参悟 · 消耗 80 灵石\n预计停止：已完成本次安排的有限次数\n只研习已选内容；不自动换派、装配或前往宗门。\n安排参悟一次",
+      "controls": [
+        {
+          "id": "jade-object-inspect",
+          "label": "惊鸿剑简 · 展简，只查看，不开始研习或更换配装",
+          "text": "展简\n只查看卷面",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "learning-plan-open",
+          "label": null,
+          "text": "仅参悟一次 · 完整安排\n累计灵石上限 80 · 保留 0",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "preparation-start",
+          "label": null,
+          "text": "安排参悟一次",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "60 秒",
+        "60秒"
+      ]
+    },
+    "control": {
+      "id": "preparation-start",
+      "text": "安排参悟一次",
+      "disabled": false
+    },
+    "details": {
+      "text": "剑简参悟 · 有限安排\n\n关闭保留草案；另行开始后才执行。\n\n新安排预演 · 预计完成 1 次参悟 · 消耗 80 灵石\n预计停止：已完成本次安排的有限次数\n只研习已选内容；不自动换派、装配或前往宗门。\n累计研习灵石预算\n研习灵石保留量\n完成调整 · 返回经卷",
+      "controls": [
+        {
+          "label": "累计研习灵石预算",
+          "text": "",
+          "value": "80",
+          "disabled": false
+        },
+        {
+          "label": "研习灵石保留量",
+          "text": "",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "id": "learning-plan-close",
+          "label": null,
+          "text": "完成调整 · 返回经卷",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": []
+    },
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "LEARN",
+    "selectedOriginalPrimitive": {
+      "type": "LEARN",
+      "skill": "sword_still"
+    },
+    "fixtureFacts": {
+      "realm": "foundation",
+      "location": "sect",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "待确认安排\n翻经架 · 换卷\n展简\n只查看卷面\n止水剑心\n剑修 · 心法 · 需筑基\n\n静修收益 +25%；战斗护体额外减伤 6。\n\n首次研习每卷 100 灵石 · 30 秒 · 青云宗\n当前心法：\n青锋心诀\n已收入卷串\n查看此法筹备\n安排后逐卷研习\n逐卷30秒\n研习手记\n卷串 · 原安排 · 三槽\n›\n研习清单 1 卷\n累计灵石上限 100 · 保留 0\n预计完成 1 卷 · 消耗 100 灵石\n预计停止：已完成本次安排的有限次数\n只研习已选内容；不自动换派、装配或前往宗门。\n开始这段研习",
+      "controls": [
+        {
+          "id": "learning-library-open",
+          "label": null,
+          "text": "翻经架 · 换卷",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "jade-object-inspect",
+          "label": "止水剑心 · 展简，只查看，不开始研习或更换配装",
+          "text": "展简\n只查看卷面",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "learn-sword_still",
+          "label": null,
+          "text": "已收入卷串",
+          "value": null,
+          "disabled": true
+        },
+        {
+          "id": "track-skill-sword_still",
+          "label": null,
+          "text": "查看此法筹备",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "study-notes-open",
+          "label": null,
+          "text": "研习手记\n卷串 · 原安排 · 三槽\n›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "preparation-start",
+          "label": null,
+          "text": "开始这段研习",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "30 秒",
+        "30秒"
+      ]
+    },
+    "control": {
+      "id": "preparation-start",
+      "text": "开始这段研习",
+      "disabled": false
+    },
+    "details": {
+      "text": "本段研习 · 有限安排\n\n关闭保留草案；另行开始后才执行。\n\n本段清单 · 1 / 12 卷\n止水剑心\n100 灵石\n移除\n新安排预演 · 预计完成 1 卷 · 消耗 100 灵石\n预计停止：已完成本次安排的有限次数\n只研习已选内容；不自动换派、装配或前往宗门。\n累计研习灵石预算\n研习灵石保留量\n完成调整 · 返回经卷",
+      "controls": [
+        {
+          "label": "移除止水剑心",
+          "text": "移除",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "label": "累计研习灵石预算",
+          "text": "",
+          "value": "100",
+          "disabled": false
+        },
+        {
+          "label": "研习灵石保留量",
+          "text": "",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "id": "learning-plan-close",
+          "label": null,
+          "text": "完成调整 · 返回经卷",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": []
+    },
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "EQUIP",
+    "selectedOriginalPrimitive": {
+      "type": "EQUIP",
+      "skill": "sword_still"
+    },
+    "fixtureFacts": {
+      "realm": "foundation",
+      "location": "sect",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "更换功法 · 止水剑心\n配装效果\n完整比较\n本境历练预演\n\n静修收益 +25%；战斗护体额外减伤 6。\n\n修炼加成 0% → 25% · 护御 31 → 37\n\n无需灵石、丹药或游戏岁月。保存后才生效；原安排不会自动继续。\n\n暂不更换\n确认更换功法",
+      "controls": [
+        {
+          "id": "configuration-view-effects",
+          "label": null,
+          "text": "配装效果",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "config-full",
+          "label": null,
+          "text": "完整比较",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "configuration-view-combat",
+          "label": null,
+          "text": "本境历练预演",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "configuration-cancel",
+          "label": null,
+          "text": "暂不更换",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "configuration-confirm",
+          "label": null,
+          "text": "确认更换功法",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": []
+    },
+    "control": {
+      "id": "configuration-confirm",
+      "text": "确认更换功法",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "FORGE",
+    "selectedOriginalPrimitive": {
+      "type": "FORGE",
+      "relic": "jade_seal"
+    },
+    "fixtureFacts": {
+      "realm": "golden",
+      "location": "cave",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "择器只查看 · 炼成后另行比较认主\n翻看器架 · 全部器谱\n查看铸器安排\n›\n地脉灵玉\n持有 5 / 需有 4\n保留 0 · 缺 0\n器谱冷胚示意\n尚未炼成\n玄玉印\n\n每次承受伤害减 8，适合稳健渡劫。\n\n待铸造\n\n每件 140 灵石 · 2 游戏月 · 60 秒 · 只铸造1件\n\n实际本命\n尚未装备\n\n铸成只获得器物，不自动认主。\n\n待确认安排 · 开始才执行 · 只铸造1件\n上限 140 灵石 / 2 月 · 保留 0 灵石 / 余寿 1 月\n材料与来源\n完整铸器安排\n安排铸造玄玉印\n材料、预算与保留量按本段安排核对；不会自动采购或取材。",
+      "controls": [
+        {
+          "id": "relic-library-open",
+          "label": null,
+          "text": "翻看器架 · 全部器谱",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "relic-object-inspect",
+          "label": "查看玄玉印的铸器安排，不开始铸造",
+          "text": "查看铸器安排\n›",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "relic-material-slot-jade",
+          "label": null,
+          "text": "地脉灵玉\n持有 5 / 需有 4\n保留 0 · 缺 0",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "relic-preparation-open",
+          "label": null,
+          "text": "材料与来源",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "production-limits",
+          "label": null,
+          "text": "完整铸器安排",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "production-start",
+          "label": null,
+          "text": "安排铸造玄玉印",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "60 秒"
+      ]
+    },
+    "control": {
+      "id": "production-start",
+      "text": "安排铸造玄玉印",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "EQUIP_RELIC",
+    "selectedOriginalPrimitive": {
+      "type": "EQUIP_RELIC",
+      "relic": "jade_seal"
+    },
+    "fixtureFacts": {
+      "realm": "golden",
+      "location": "cave",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "祭炼本命 · 玄玉印\n配装效果\n完整比较\n本境历练预演\n\n每次承受伤害减 8，适合稳健渡劫。\n\n基础指标保持原值；专属作用见上。\n\n无需灵石、丹药或游戏岁月。保存后才生效；原安排不会自动继续。\n\n暂不更换\n确认祭炼本命",
+      "controls": [
+        {
+          "id": "configuration-view-effects",
+          "label": null,
+          "text": "配装效果",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "config-full",
+          "label": null,
+          "text": "完整比较",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "configuration-view-combat",
+          "label": null,
+          "text": "本境历练预演",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "configuration-cancel",
+          "label": null,
+          "text": "暂不更换",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "configuration-confirm",
+          "label": null,
+          "text": "确认祭炼本命",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": []
+    },
+    "control": {
+      "id": "configuration-confirm",
+      "text": "确认祭炼本命",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "ENCOUNTER",
+    "selectedOriginalPrimitive": {
+      "type": "ENCOUNTER",
+      "enemy": "wolf"
+    },
+    "fixtureFacts": {
+      "realm": "qi",
+      "location": "wilderness",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "历练 · 雾隐妖狼\n待确认的新安排；选择不会旅行或开战\n对手与目标\n战策\n目标与限额\n雾隐妖狼\n需炼气 · 选择对手\n守山石卫\n需炼气 · 选择对手\n对手预览 · 尚未开战\n雾隐妖狼 · 气血 76\n迎战30秒 · 每回合3秒；普通原始伤害 13 · 重击原始伤害 32。\n\n胜利后：妖核 ×1 · 灵石 +10 · 修为最多 +35\n\n上一页\n1 / 1 页\n共 2 项\n下一页\n预计 1 场 · 胜 1 场 · 4 个动作\n预计停止：已完成本段安排的有限场次\n最多 1 场 · 游戏月 1 / 余寿保留 1 · 最多 41 动作 · 灵力累计 480；回春 0 / 保留 0（0%），回灵 0 / 保留 0（0%）；危险线 20% 暂停。\n只执行本次明确安排；关闭或刷新后主动继续，不补离线收益。\n按此战策历练雾隐妖狼",
+      "controls": [
+        {
+          "id": "adventure-page-object",
+          "label": null,
+          "text": "对手与目标",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "adventure-page-strategy",
+          "label": null,
+          "text": "战策",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "adventure-page-limits",
+          "label": null,
+          "text": "目标与限额",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "encounter-wolf",
+          "label": null,
+          "text": "雾隐妖狼\n需炼气 · 选择对手",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "encounter-warden",
+          "label": null,
+          "text": "守山石卫\n需炼气 · 选择对手",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "catalogue-prev",
+          "label": null,
+          "text": "上一页",
+          "value": null,
+          "disabled": true
+        },
+        {
+          "id": "catalogue-next",
+          "label": null,
+          "text": "下一页",
+          "value": null,
+          "disabled": true
+        },
+        {
+          "id": "adventure-start",
+          "label": null,
+          "text": "按此战策历练雾隐妖狼",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "30秒",
+        "3秒"
+      ]
+    },
+    "control": {
+      "id": "adventure-start",
+      "text": "按此战策历练雾隐妖狼",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "BATTLE",
+    "selectedOriginalPrimitive": {
+      "type": "BATTLE",
+      "move": "technique"
+    },
+    "fixtureFacts": {
+      "realm": "qi",
+      "location": "wilderness",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "斗法 · 第 1 回合\n战局\n战策\n手动操作\n术法与最近8条\n动作试玩\n己方\n己方气血\n100 / 100\n灵力\n60 / 60\n剑意 0 / 3\n剑\n剑\n剑\n雾隐妖狼\n76 / 76 气血\n敌方意图\n试探进攻\n敌方原始伤害 13\n交锋\n先辨敌意，再定攻守\n战策预估：青锋起势\n按已选招式优先级选择当前合法行动\n拟本回合：气血 -13 · 灵力 -8；实际结果以保存为准。\n待确认战策：每招 3 秒 · 本关最多 40 回合 · 灵力累计上限 480\n回春最多 0 / 保留 0（气血 0%）；回灵最多 0 / 保留 0（灵力 0%）\n危险线 20% · 暂停战策，不离场\n开始自动斗法",
+      "controls": [
+        {
+          "id": "battle-view-scene",
+          "label": null,
+          "text": "战局",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "battle-view-strategy",
+          "label": null,
+          "text": "战策",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "battle-manual-takeover",
+          "label": null,
+          "text": "手动操作",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "battle-recent",
+          "label": null,
+          "text": "术法与最近8条",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "label": "查看己方气血进度",
+          "text": "",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "label": "查看斗法灵力进度",
+          "text": "",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "label": "查看敌方气血进度",
+          "text": "",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "battle-auto-start",
+          "label": null,
+          "text": "开始自动斗法",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "3 秒"
+      ]
+    },
+    "control": {
+      "id": "battle-auto-start",
+      "text": "开始自动斗法",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "EVENT",
+    "selectedOriginalPrimitive": {
+      "type": "EVENT",
+      "event": "shen_return"
+    },
+    "fixtureFacts": {
+      "realm": "foundation",
+      "location": "sect",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "已选内容 · 尚未安排 · 沈清禾\n拜访 · 药香故人\n暂不安排\n此举之后\n\n与沈清禾相见，展开「药香故人」。\n\n本次成本：不消耗物资\n\n6 秒 · 仅本次\n\n拜访完成后停为待决定；先读当前机缘，再选择回应。\n\n来由与执行说明\n拜访沈清禾",
+      "controls": [
+        {
+          "id": "milestone-cancel",
+          "label": null,
+          "text": "暂不安排",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "milestone-confirm",
+          "label": null,
+          "text": "拜访沈清禾",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "6 秒"
+      ]
+    },
+    "control": {
+      "id": "milestone-confirm",
+      "text": "拜访沈清禾",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "DECIDE",
+    "selectedOriginalPrimitive": {
+      "type": "DECIDE",
+      "option": "accept"
+    },
+    "fixtureFacts": {
+      "realm": "foundation",
+      "location": "sect",
+      "activeEvent": "shen_return",
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "已选内容 · 尚未安排 · 沈清禾\n坐下叙旧\n暂不安排\n沈\n此举之后\n\n收下回春丹 ×1；赠丹之缘有了回响。\n\n本次成本：不消耗物资\n\n6 秒 · 仅本次\n\n仅回应当前机缘一次；条件变化停止，不改选其他回应。\n\n来由与执行说明\n坐下叙旧",
+      "controls": [
+        {
+          "id": "milestone-cancel",
+          "label": null,
+          "text": "暂不安排",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "milestone-confirm",
+          "label": null,
+          "text": "坐下叙旧",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "6 秒"
+      ]
+    },
+    "control": {
+      "id": "milestone-confirm",
+      "text": "坐下叙旧",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "START_TRIAL",
+    "selectedOriginalPrimitive": {
+      "type": "START_TRIAL"
+    },
+    "fixtureFacts": {
+      "realm": "spirit",
+      "location": "terrace",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "核对正式入场\n\n入场实际成本：渡劫引 ×1 · 在线15秒\n\n登台后先问心，再迎三关；此举只入场，不代表渡劫成功。\n\n完整准备与入场说明\n返回准备\n安排登台一次 · 15秒",
+      "controls": [
+        {
+          "id": "trial-entry-cancel",
+          "label": null,
+          "text": "返回准备",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "trial-confirm-entry",
+          "label": null,
+          "text": "安排登台一次 · 15秒",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "15秒",
+        "15秒"
+      ]
+    },
+    "control": {
+      "id": "trial-confirm-entry",
+      "text": "安排登台一次 · 15秒",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "ANSWER_TRIAL",
+    "selectedOriginalPrimitive": {
+      "type": "ANSWER_TRIAL",
+      "answer": "accept"
+    },
+    "fixtureFacts": {
+      "realm": "spirit",
+      "location": "terrace",
+      "activeEvent": "trial_question",
+      "trial": 0
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "已选内容 · 尚未安排 · 问心\n接纳旧我\n暂不安排\n此举之后\n\n你接纳曾经的自己，天劫每击减伤 10。\n\n本次成本：不消耗物资\n\n6 秒 · 仅本次\n\n答案保存后进入第一关；当前天劫战策须另行安排，不自动出招。\n\n来由与执行说明\n作答 · 接纳旧我",
+      "controls": [
+        {
+          "id": "milestone-cancel",
+          "label": null,
+          "text": "暂不安排",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "milestone-confirm",
+          "label": null,
+          "text": "作答 · 接纳旧我",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "6 秒"
+      ]
+    },
+    "control": {
+      "id": "milestone-confirm",
+      "text": "作答 · 接纳旧我",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "END",
+    "selectedOriginalPrimitive": {
+      "type": "END",
+      "ending": "transmit"
+    },
+    "fixtureFacts": {
+      "realm": "spirit",
+      "location": "terrace",
+      "activeEvent": null,
+      "trial": 4
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "确认留道传承\n\n将此生所学留在人间，而后踏入天门。传承记录来自你实际走过的路，不要求先结下人物盟约。\n\n12秒·不耗物，以所选结尾封卷。本卷修炼与战斗结束，不能继续此卷。\n\n此生来路与保存说明\n继续核对\n安排飞升收卷一次 · 12秒",
+      "controls": [
+        {
+          "id": "ascension-cancel",
+          "label": null,
+          "text": "继续核对",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "ascension-confirm",
+          "label": null,
+          "text": "安排飞升收卷一次 · 12秒",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "12秒",
+        "12秒"
+      ]
+    },
+    "control": {
+      "id": "ascension-confirm",
+      "text": "安排飞升收卷一次 · 12秒",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "RETIRE",
+    "selectedOriginalPrimitive": {
+      "type": "RETIRE"
+    },
+    "fixtureFacts": {
+      "realm": "foundation",
+      "location": "sect",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "确认主动归隐\n\n本次完成并保存后主动归隐，不消耗剩余游戏月，不写作寿尽。\n\n此生记录与保存说明\n\n收卷结束当前人生，不能撤销为继续此卷；不耗物，12秒在线完成后才保存结果。\n\n继续此生\n安排归隐一次 · 12秒",
+      "controls": [
+        {
+          "id": "life-cancel",
+          "label": null,
+          "text": "继续此生",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "life-confirm-end",
+          "label": null,
+          "text": "安排归隐一次 · 12秒",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "12秒",
+        "12秒"
+      ]
+    },
+    "control": {
+      "id": "life-confirm-end",
+      "text": "安排归隐一次 · 12秒",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  },
+  {
+    "action": "END_LIFE",
+    "selectedOriginalPrimitive": {
+      "type": "END_LIFE"
+    },
+    "fixtureFacts": {
+      "realm": "qi",
+      "location": "sect",
+      "activeEvent": null,
+      "trial": null
+    },
+    "formalPrimitiveAllowed": true,
+    "main": {
+      "text": "确认度过最后一月\n\n本次完成并保存后消耗最后1游戏月，达到当前境界寿限，以寿尽收卷。\n\n此生记录与保存说明\n\n收卷结束当前人生，不能撤销为继续此卷；不耗物，12秒在线完成后才保存结果。\n\n继续此生\n安排寿尽一次 · 12秒",
+      "controls": [
+        {
+          "id": "life-cancel",
+          "label": null,
+          "text": "继续此生",
+          "value": null,
+          "disabled": false
+        },
+        {
+          "id": "life-confirm-end",
+          "label": null,
+          "text": "安排寿尽一次 · 12秒",
+          "value": null,
+          "disabled": false
+        }
+      ],
+      "seconds": [
+        "12秒",
+        "12秒"
+      ]
+    },
+    "control": {
+      "id": "life-confirm-end",
+      "text": "安排寿尽一次 · 12秒",
+      "disabled": false
+    },
+    "details": null,
+    "ways": null,
+    "allGameDBUnchanged": true,
+    "errors": [],
+    "scope": "Current real readonly entry/decision on a formal-command fixture. Not action execution, normal earning, human understanding or a usability pass."
+  }
+]
