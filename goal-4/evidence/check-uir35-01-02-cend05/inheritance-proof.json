@@ -1,0 +1,70 @@
+{
+  "originalProducer": {
+    "head": "280a31870b3d054a83e2c5013d183af029631b3b",
+    "source": "280a31870b3d054a83e2c5013d183af029631b3b",
+    "tree": "a1b1662676cb716489ce86f3f0782fdf15399930",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "consumerProducer": {
+    "head": "381c455766d863fadff625d2f23b9ee958dca198",
+    "source": "381c455766d863fadff625d2f23b9ee958dca198",
+    "tree": "a7db34c3574a0045f168912f59bce7d623e5c8f0",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "originalPassedUnchangedWholeFiles": 22,
+  "inheritedUi": 158,
+  "changedWholeFileRetested": 13,
+  "originalFailedUnion": {
+    "pass": 165,
+    "fail": 6,
+    "reportSha256": "1ad90bdb7f4b68ca155c9894617f5f8221234f5741879ea80ba82b54ff64cd1e"
+  },
+  "changes": {
+    "web/e2e/matrix-ui-controls.spec.ts": {
+      "before": "da8fc3c1ba33a93b833c6c9dff08455bb0a980565644801ba18a451504a5bdb6",
+      "after": "b6dc48ea9fcbc5df525054d04361f51e103cd73fa8ef1b1f854a3dd2be4ddc2a"
+    },
+    "docs/decisions/0120-check-ui35-control-feedback-contract.md": {
+      "before": "847aa3d914296f6d66f02d24effe2b9dcda9ec590f4fdf7edbcee0895992dba3",
+      "after": "4381d946678dae641a5e2b5960358043fe9327f2b5cb30a8ac426bceb1607d0c"
+    }
+  },
+  "addedNonRuntimeEvidence": [
+    "goal-4/evidence/check-uir35-01-02-cend05/before/web/e2e/matrix-ui-controls.spec.ts",
+    "goal-4/evidence/check-uir35-01-02-cend05/union-debug.json"
+  ],
+  "removed": [],
+  "otherTrackedBytesExact": 5036,
+  "runtimeFiles": 336,
+  "runtimeDigest": "945b94a1f1f40742c36d36534a04b2c6d38722e45e32f41f110749aaabead866",
+  "runtimeAllExact": true,
+  "httpPayloadsAllByteExact": true,
+  "payloadFiles": 112,
+  "ownDependencies": 1981,
+  "ownDependenciesAllExact": true,
+  "dependenciesDigest": "7a9d960622cf3046222ec30aa287710a72c3dd2d2c8ddf6de263e1c44b240bd9",
+  "notSingleGreen171": true,
+  "originalCoreAnd714ProducerRetained": {
+    "head": "280a31870b3d054a83e2c5013d183af029631b3b",
+    "source": "280a31870b3d054a83e2c5013d183af029631b3b",
+    "tree": "a1b1662676cb716489ce86f3f0782fdf15399930",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "fullProfile": {
+    "version": 30,
+    "ui": 957,
+    "storage": 415,
+    "normalRoutes": 32,
+    "total": 1404,
+    "executed": false
+  }
+}

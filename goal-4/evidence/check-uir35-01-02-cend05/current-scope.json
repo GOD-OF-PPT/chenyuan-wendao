@@ -1,0 +1,1378 @@
+{
+  "coverage": 171,
+  "unchangedWholeFileCoverage": 158,
+  "currentChangedWholeFileCoverage": 13,
+  "single171GreenRun": false,
+  "rows": [
+    {
+      "file": "art33-opening-offering.spec.ts",
+      "title": "ART33-A1 full opening reading and every explanation stay readonly with original keyboard return",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art33-opening-offering.spec.ts",
+      "title": "ART33-A2 help: normal new life authorizes one full six-second choice and stores complete formal proof",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art33-opening-offering.spec.ts",
+      "title": "ART33-A2 trade: normal new life authorizes one full six-second choice and stores complete formal proof",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art33-opening-offering.spec.ts",
+      "title": "ART33-A2 leave: normal new life authorizes one full six-second choice and stores complete formal proof",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art33-opening-offering.spec.ts",
+      "title": "ART33-A3 native cycle quota keeps actual medicine and all controls until original unique retry",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art33-opening-offering.spec.ts",
+      "title": "ART33-A4 rejected START and paused refreshed original choice cannot be replaced by new art interactions",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art33-opening-offering.spec.ts",
+      "title": "ART33-A6 another page owns the same choice and taking over keeps the original plan and never invents offline medicine",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 expanded settings and destructive press are readable, distinct and readonly",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 a long literal selected filename wraps completely and cancelling import retains every store",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 expanded target production and its full limits keep both return actions reachable without opening the furnace",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 study complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 alchemy complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 relic complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 market complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 inventory complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 wilderness complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 commission complete directory pages preserve visible text, controls and the Game",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A1 four direct strike objects medicine kit and retreat lane have distinct physical hierarchy beside a complete cold standing actor",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 attack has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 guard has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 technique has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 release has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 heal has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 restore has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A2 flee has its own physical preparation and saved gesture after exactly one formal three-second turn",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A3 a native positive-MP technique really counts down three seconds and its first native write and sole whole-game result respect the deadline",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A4 native saving and quota keep actors uncommitted while an explicit retry saves the exact original command and cost only once",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A5 readonly strategy hidden scene and a pending native pause clear preparation without replacing the finite draft or counting a second turn",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A6 same battle id foreign ownership and generation clear saved gestures while refresh and original history never borrow the old actor",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "title": "TA07-A7 a saved terminal turn never paints the next enemy and a legal defeat never borrows a victory actor",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly CHOOSE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly TRAVEL exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly CULTIVATE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly SOURCE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly BUY exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly SELL exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly CRAFT exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly USE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly REST exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly BREAKTHROUGH exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly SCHOOL exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly STUDY exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly LEARN exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly EQUIP exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly FORGE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly EQUIP_RELIC exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly ENCOUNTER exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly BATTLE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly EVENT exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly DECIDE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly START_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly ANSWER_TRIAL exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly END exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly RETIRE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 readonly END_LIFE exposes the real decision object costs authorization and pre-action time for review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 extra foreign rest preserves Game and records the actual travel preparation and disclosed time",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "title": "CEND03 extra real prepared trial checkpoint exposes both current preparation and explicit restoration without changing the saved state",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-art03-feedback-art.spec.ts",
+      "title": "CHECK-ART03-C5 cached factual response keeps its one saved ink across inventory and life while pause and foreign takeover fence old and late results",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-art03-feedback-art.spec.ts",
+      "title": "CHECK-ART03-C6 eight fixed-desktop entrances and true NPC fallback identities remain readonly and cultivation stage copy retains measured contrast",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K1 retirement keyboard cancellation returns its exact settings opener and one twelve-second seal focuses factual life",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K2 trial entry keyboard heading trap and cancellation retain the complete preparation before one fifteen-second question handoff",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K3 the actual custom restore keyboard dialog cancels to its battle opener then restores the whole checkpoint with one six-hundred-ms receipt",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K4 ending keyboard cancellation preserves its factual choice and a single twelve-second confirmation focuses the committed life record",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K5 a native pending startup content skip never steals the keyboard focus from a newer settings decision",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K6 pending startup without newer intent restores welcome focus and genuine keyboard creation choice and navigation keep their proper targets",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K7 actual mortal entry retains one explicit keyboard skip beyond its natural lifetime without changing its actual saved outcome",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K8 an ordinary pill-consuming breakthrough keeps its explicit keyboard prompt static and Enter returns current content without repeating the receipt",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K9 an actual battle turn keyboard prompt preserves focus and an old destroyed skip cannot dismiss the next turn while blur keeps the new target",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K11 an accepted trial entry cannot take focus from a newer keyboard settings decision after its actual saved handoff",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K12 an accepted trial entry cannot replace a newer keyboard exploration navigation or its focus when the original cycle commits",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K13 a saved guard while only the public strategy is visible keeps its original cycle and factual receipt without a viewport fallback or later borrowed actor",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "CHECK-K14 a real goal toggle delivered after typing preserves the exact pending quantity through blur readonly saving and reload",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "M04-FOCUS trusted automatic return hands the saved retirement to factual life",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "title": "M04-FOCUS trusted automatic return preserves a later real Tab target",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-ui35-feedback.spec.ts",
+      "title": "CHECK-UI35-C1 an actual saved new game keeps its short control seal in the result strip outside opening text and natural expiry changes no Game",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-ui35-feedback.spec.ts",
+      "title": "CHECK-UI35-C2 exhausted paid cultivation free selection original quota retry pause and reload keep true counts finite allowance and a complete resumed period",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-ui35-feedback.spec.ts",
+      "title": "CHECK-UI35-C3 an original welcome import retry saves once before its safe control seal and modal restart never borrows a free or stale effect",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 EQUIP saved seal follows its visible object and clears across life and exact receipt reading",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 EQUIP_RELIC saved seal follows its visible object and clears across life and exact receipt reading",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 failed original cultivation keeps the real error and retry across life details without a screen-wide decorative frame",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-uir33-02.spec.ts",
+      "title": "CHECK-UIR33-02 a saved breakthrough has one unchanged stop reason and full life and original milestone result",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-uir34-02-04.spec.ts",
+      "title": "CHECK-UIR34-C1 a normal opening resumes only its chosen gift then original idle cycles and breakthrough lead to an explicit complete school comparison",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-uir34-02-04.spec.ts",
+      "title": "CHECK-UIR34-C2 a paused finite activity keeps its allowance through full comparison and native configuration retry then retires without an automatic new cycle",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "check-uir34-02-04.spec.ts",
+      "title": "CHECK-UIR34-C3 held breakthrough saving keeps configuration readonly and the original preparation and outcome commit once after an explicit pause",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "an arrangement persists without rewards and runs two real commands until the cultivation cap",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "viewing another gameplay keeps progress visible and pause cancels an unfinished cycle",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "refresh preserves the plan and requires an explicit fresh cycle instead of offline catch-up",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "assisted cultivation previews the budget and reserve and stops before another charge",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "a failed cycle stops automatic progression and retry uses the same command exactly once",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "pause requested while persistence is held finishes that atomic cycle and never starts the next",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "an explicit second-page continuation fences the original page and does not double reward",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "idle-cultivation.spec.ts",
+      "title": "one production cycle follows the real thirty-second wall clock and saves before showing the reward",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "matrix-ui-milestone-feedback.spec.ts",
+      "title": "M03-MF1 the explicitly selected six-second answer saves once before its own trial feedback and leaves the real first enemy unacted",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "matrix-ui-milestone-feedback.spec.ts",
+      "title": "M03-MF2 explicitly confirmed retirement preserves a real complete checkpoint and shows only its own saved life scroll once",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "matrix-ui-milestone-feedback.spec.ts",
+      "title": "M03-MF3 the lawful final-month closure saves its one month only at twelve seconds and never replays the sealed-life result",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A1 all four factual people keep their complete known and future readings in a readonly encounter object",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A2 complete responses question answers and both endings remain readonly preselected objects until their original confirmation",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A3 the factual life scroll keeps every character in all four chapters and exports without sealing or writing Game",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A4 real visit waits its complete 6000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A5 real response waits its complete 6000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A6 real ending waits its complete 12000ms cycle and saves the exact whole Game once",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A7 the other ending retirement and lifespan seal only their selected factual life with no automatic new run",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A8 preselecting another response never borrows the original running or held saving ink and pause preserves its one exact commit",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A9 failed acceptance keeps the original intent retryable and explicit cancellation permits only a fresh separately confirmed response",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A10 visit response and closing native cycle failures stay atomic then retry the same command for their first actual result only",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A11 changing the visited person or invitation and external same-id ownership never lends or later reclaims another objects ink",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A12 all one hundred lawful journal rows and life-return anchors remain readable without advancing or borrowing a hidden visit",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A14 an already open visit retirement or ascension review refuses fresh confirmation after a native sync failure until explicit reconnect and a new review",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A1 the running cultivation stage replaces new-plan controls with real pause and original-budget keyboard continuation",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A2 assisted identity actual spending and finite limits survive readonly plan inspection refresh and explicit takeover",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A3 a failed cycle exposes the canonical retry while viewing the next draft cannot replace the accepted command",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A4 the stage pause during a held atomic save settles only that cycle without starting another",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir33-01-cultivation-active.spec.ts",
+      "title": "UIR33-01-A5 another cave activity keeps its real name controls and authorization instead of a disabled cultivation draft",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A1 foreign last-month travel leads to an actionable readonly life guide without a zero-yield main action or a fictional checkpoint",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A2 a genuinely prepared last-month breakthrough keeps its original full thirty-second atomic checkpoint and restores ordinary guidance",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A3 a real native checkpoint remains inspectable after finite public work periods reach the lifespan boundary without restoring or ending",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A4 viewing last-month options during a failed original trip cannot replace its command or spend the last month",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A5 an original paused assisted budget resumes once and stops at the real lifespan limit before the new readonly guide appears",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A6 a last-month battle keeps its actual action and context until an explicitly saved retreat returns to the cave guide",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A7 a superseding navigation cancels a late life-management opening without a hidden dialog or Game write",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A8 a chosen material target persists through lifespan guidance life reading and refresh without accepting another activity",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-04-resume-wording.spec.ts",
+      "title": "UIR34-04-A1 spent assisted cultivation resumes its real purpose and original remaining allowance after reload without offline income",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-04-resume-wording.spec.ts",
+      "title": "UIR34-04-A2 continuing the saved furnace on another page retires its old clock and only the newly authorized full cycle yields a pill",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-04-resume-wording.spec.ts",
+      "title": "UIR34-04-A3 a saved opening choice reloads as continue instead of page authority and still needs its complete original six-second outcome",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-04-resume-wording.spec.ts",
+      "title": "UIR34-04-A4 a native source resume failure leaves original progress and exact retry intact while purpose and full-cycle boundaries remain readable",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-05-trial-life-focus.spec.ts",
+      "title": "UIR34-05 START_TRIAL: current consequence precedes optional complete notes and only its original finite atomic outcome executes",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-05-trial-life-focus.spec.ts",
+      "title": "UIR34-05 RETIRE: current consequence precedes optional complete notes and only its original finite atomic outcome executes",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-05-trial-life-focus.spec.ts",
+      "title": "UIR34-05 END_LIFE: current consequence precedes optional complete notes and only its original finite atomic outcome executes",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-05-trial-life-focus.spec.ts",
+      "title": "UIR34-05 transmit: current consequence precedes optional complete notes and only its original finite atomic outcome executes",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-05-trial-life-focus.spec.ts",
+      "title": "UIR34-05 depart: current consequence precedes optional complete notes and only its original finite atomic outcome executes",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C1 mortal identity lifespan and all empty slots share one readonly character folio with its original return",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C2 sword factual equipped four slots and age remain exact without changing the original equipment context",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C2 talisman factual equipped four slots and age remain exact without changing the original equipment context",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C3 ascended folio preserves the sealed actual age realm and four slots without an invented future or new life",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C4 longest legal Chinese name and failed portrait remain readable with complete factual slots and stable return",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-06-character-folio.spec.ts",
+      "title": "UIR34-06 C5 the original full cultivation cycle stays authoritative under its character folio through native quota and one saved retry",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-07-fate-clarity.spec.ts",
+      "title": "UIR34-07 A1 leave opening keeps its complete factual relation once while all four NPC records and explicit future pages remain readonly",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-07-fate-clarity.spec.ts",
+      "title": "UIR34-07 A2 help preserves its actual opening relation complete facts future boundaries and current reading",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-07-fate-clarity.spec.ts",
+      "title": "UIR34-07 A2 trade preserves its actual opening relation complete facts future boundaries and current reading",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-07-fate-clarity.spec.ts",
+      "title": "UIR34-07 A3 only the original saved visit shows pending reply and native failure retries one command before an explicitly chosen response",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir34-07-fate-clarity.spec.ts",
+      "title": "UIR34-07 A4 journal headings all text and ordinary detail returns remain in the original reading domain without Game changes",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir35-01-goal-authority.spec.ts",
+      "title": "UIR35-01-A1 natural cultivation shows actual growth instead of a fifty-cycle completion target and stops on the second original thirty-second period",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir35-01-goal-authority.spec.ts",
+      "title": "UIR35-01-A2 an explicit finite natural plan keeps its true target maximum and all original zero budget fields without a hidden write",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir35-01-goal-authority.spec.ts",
+      "title": "UIR35-01-A3 assisted actual spending stays prominent and a failed second save cannot advance the displayed count or replace the original authority",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir35-02-cultivation-fallback.spec.ts",
+      "title": "UIR35-02-A1 spent assisted stones reveal a lawful natural choice without a hidden write before one explicitly started full natural cycle",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir35-02-cultivation-fallback.spec.ts",
+      "title": "UIR35-02-A2 affordable locked lifespan and full-growth states retain their original decision instead of a misleading free substitute",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir35-02-cultivation-fallback.spec.ts",
+      "title": "UIR35-02-A3 native saving and a quota failure retain the old paid activity until the original retry atomically exhausts it and only then offers a free choice",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "uir35-02-cultivation-fallback.spec.ts",
+      "title": "UIR35-02-A4 pause reload readonly drafts and an explicitly imported new life never replace saved authority with a fallback selection",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C1 cultivation keeps actionable unit facts and finite caps while complete forecasts and offline rules remain readonly with a preserved draft",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C2 alchemy keeps true material costs period and finite authorisation while full recipe lore and safe-stop rules remain available without an action",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C3 recovery shows each actual single effect once and complete medicine rest and stop details remain readable with all saved draft fields",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "title": "UX30-C4 a real new mortal reaches the clear primary action and reading folded rules cannot restart or shortcut its original thirty-second saved cycle",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "280a31870b3d054a83e2c5013d183af029631b3b"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C1 new_game has its own explicit UI decision native saved identity and one control feedback without game rewards",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C2 restart has its own explicit UI decision native saved identity and one control feedback without game rewards",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C3 import has its own explicit UI decision native saved identity and one control feedback without game rewards",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C4 restore has its own explicit UI decision native saved identity and one control feedback without game rewards",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C5 local report preview cancellation and explicit download preserve the full Game and disclose a private non-save snapshot",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C6 recording disabled persists across refresh without backfilling and re-enabling captures only the next explicitly arranged action",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C7 keyboard help exposes every current guide and Escape returns focus to its exact public opener without writing Game",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C8 the demo menu exposes all nine lawful node scopes while normal Game local records and tracking remain isolated",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C9 unreadable File text stays local and a later selected confirmed file owns import when an older read finishes last",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C10 an earlier welcome File text cannot overwrite a subsequently confirmed new Game or create an unauthorized import receipt",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C11 a same-run committed action invalidates the earlier file revision without a new import decision or receipt",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C12 an explicitly confirmed restart invalidates a prior file read and preserves the new native control receipt",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    },
+    {
+      "file": "matrix-ui-controls.spec.ts",
+      "title": "M03-C13 a delayed typed demo file cannot undo a confirmed scoped node reset or create normal Game data",
+      "project": "chromium",
+      "status": "expected",
+      "results": 1,
+      "producer": "381c455766d863fadff625d2f23b9ee958dca198"
+    }
+  ],
+  "sourceProof": "inheritance-proof.json",
+  "package3AreSubset": true
+}
