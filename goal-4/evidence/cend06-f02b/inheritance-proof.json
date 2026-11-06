@@ -1,0 +1,51 @@
+{
+  "baseProducer": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+  "consumerProducer": "ad12194567e0988b2f64b7a58c0f6596e51245b3",
+  "commonTrackedFiles": 5178,
+  "changedFiles": [
+    "web/e2e/check-ui35-feedback.spec.ts"
+  ],
+  "allOtherTrackedBytesEqual": true,
+  "changeScope": "Only local controlFrame test polling cadence and passive CSS diagnostics; all3 case titles/assertions and140 identities preserved.",
+  "runtimeAndPayloadProofPendingBuild": false,
+  "runtime": "2d3ac45e260c62a3888ca8097cac4fddcc5041df8a5e66c4c2afe0153a845556",
+  "runtimeFiles": 341,
+  "allRuntimeEqual": true,
+  "payloadFiles": 112,
+  "allPayloadBytesEqual": true,
+  "baseSource": {
+    "head": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+    "source": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+    "tree": "0a259ccf15bf10d44cc528753c257ad0a33e1006",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "consumerSource": {
+    "head": "ad12194567e0988b2f64b7a58c0f6596e51245b3",
+    "source": "ad12194567e0988b2f64b7a58c0f6596e51245b3",
+    "tree": "881306797b0b290bf77f8ca4faaa4b3dd801942d",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "dependencies": {
+    "node_modules": {
+      "files": 133,
+      "allExact": true
+    },
+    "web/node_modules": {
+      "files": 1848,
+      "allExact": true
+    }
+  },
+  "resourceScopesUnchanged": [
+    "art",
+    "docs/v0.3/reference",
+    "web/public",
+    "web/src"
+  ],
+  "changedTestNotAResourceConsumer": true
+}

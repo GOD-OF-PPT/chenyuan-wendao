@@ -1,0 +1,119 @@
+{
+  "producer": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+  "oldTrace": "artifacts/goal-4/cend06-f02b/final/ui-results/check-ui35-feedback-CHECK--95136-rows-a-free-or-stale-effect-chromium/trace.zip",
+  "oldTraceSha256": "4ac75a347e99a43cc72c1a21a4396cfba837066a7a50f312fd2e76947a90ff22",
+  "failure": "CHECK-UI35-C3 import stamp opacity >.3 missed, no reported Game error",
+  "nativeSamplingTimeline": [
+    {
+      "start": 333749.274,
+      "method": "clockRunFor"
+    },
+    {
+      "start": 333752.813,
+      "method": "queryCount"
+    },
+    {
+      "start": 333865.841,
+      "method": "clockRunFor"
+    },
+    {
+      "start": 333870.22,
+      "method": "queryCount"
+    },
+    {
+      "start": 334130.655,
+      "method": "clockRunFor"
+    },
+    {
+      "start": 334138.797,
+      "method": "queryCount"
+    },
+    {
+      "start": 334809.498,
+      "method": "clockRunFor"
+    },
+    {
+      "start": 334816.371,
+      "method": "queryCount"
+    },
+    {
+      "start": 335885.588,
+      "method": "clockRunFor"
+    },
+    {
+      "start": 335888.477,
+      "method": "queryCount"
+    }
+  ],
+  "nativeCSSDurationMs": {
+    "root": 1300,
+    "seal": 1000
+  },
+  "diagnostic": {
+    "report": "artifacts/goal-4/cend06-f02b/control-frame-diagnostic-01/report.json",
+    "passed": 1,
+    "nativeSamples": [
+      {
+        "name": "IMPORT-native-css-frame-samples",
+        "values": [
+          {
+            "present": false
+          },
+          {
+            "present": false
+          },
+          {
+            "present": true,
+            "timeline": 1443.666,
+            "root": {
+              "opacity": 0,
+              "animations": [
+                {
+                  "state": "running",
+                  "time": 0,
+                  "duration": 1300
+                }
+              ]
+            },
+            "seal": {
+              "opacity": 0,
+              "animations": [
+                {
+                  "state": "running",
+                  "time": 0,
+                  "duration": 1000
+                }
+              ]
+            }
+          },
+          {
+            "present": true,
+            "timeline": 1527,
+            "root": {
+              "opacity": 0.822048,
+              "animations": [
+                {
+                  "state": "running",
+                  "time": 99.9900000151246,
+                  "duration": 1300
+                }
+              ]
+            },
+            "seal": {
+              "opacity": 0.383644,
+              "animations": [
+                {
+                  "state": "running",
+                  "time": 99.9900000151246,
+                  "duration": 1000
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "repair": "Only original test helper polls16ms and records native animations; keep8000ms/.3/all geometry/full DB/no-replay checks. No production change.",
+  "compositeRequirement": "Run complete changed3-case file; retain unchanged other whole files and original report producers with full source/dependency/payload byte proof. Do not label original failed140 as all-green."
+}

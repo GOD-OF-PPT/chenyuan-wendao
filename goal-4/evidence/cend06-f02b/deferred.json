@@ -1,0 +1,5 @@
+{
+  "scope": "1440x900/font1 single Chromium",
+  "wholeCaseRegex": "ART33-A5 (system|preference)|ART06-A15 missing practitioner art|ART32-A3 |(system|preference) reduced effects retain",
+  "reason": "Seven mixed reduction/media cases deferred before execution, original assertions retained; no compatibility/environment/performance matrix."
+}
