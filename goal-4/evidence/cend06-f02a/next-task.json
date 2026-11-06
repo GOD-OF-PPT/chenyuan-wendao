@@ -1,0 +1,26 @@
+{
+  "task": "CEND06-F02B travel execution interaction",
+  "taskPositionSinceComprehensive": 2,
+  "scope": "Actual destination, route/distance intent, original finite6-second runtime and arrival only after atomic commit; contextual game stage and readonly original plan review.",
+  "beforeCode": [
+    "read latest root AGENTS and goal4 input/plan/tasks and relevant references",
+    "save original input/contract/parameters/acceptance/rollback",
+    "inspect actual travel components and current App/native budgets before choosing implementation; do not extract controllers merely to evade caps"
+  ],
+  "unchanged": [
+    "actual current location until accepted travel commits",
+    "Game/TRAVEL/Activity/DB9/CAS/receipts and original full period",
+    "one current activity and all8 entrances",
+    "viewing destination never starts travel or encounter"
+  ],
+  "later": [
+    "current C-end review as third independent task then comprehensive check",
+    "full1419+future additions matrix and same-source formal candidate",
+    "largest C-end code safety review, long-term balance and real human acceptance"
+  ],
+  "paused": [
+    "compatibility",
+    "environment/performance browser matrix"
+  ],
+  "goal": "active"
+}

@@ -1,0 +1,1220 @@
+[
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-46c0a-ding-and-readonly-selection-chromium/ending-all-original-options.png",
+    "sha256": "efbe5daadbe35d334a34a993ea87222e08a8897c51e857fa03d4e9059fac4c5a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-46c0a-ding-and-readonly-selection-chromium/ending-depart-complete-original-details.png",
+    "sha256": "08a0c68c1466159e80ce2c7c2c4d303f2f157a07a658ea3b70666a4b584a890a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-46c0a-ding-and-readonly-selection-chromium/ending-depart-current-decision.png",
+    "sha256": "62eda606f690590119a71f8caf9785791b6cb7fdafda89bf45048a33c9d19b54",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-46c0a-ding-and-readonly-selection-chromium/ending-memory-page-0.png",
+    "sha256": "cccd30e8f80e3e865734a2c05b7add164f6f5126f6780c856b81c2e74ab0b75b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-46c0a-ding-and-readonly-selection-chromium/ending-memory-page-4.png",
+    "sha256": "112d811f8ded19a786eb503582a60471f8df3006fe159d06d416291874f95327",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-46c0a-ding-and-readonly-selection-chromium/ending-story-page-0.png",
+    "sha256": "a3d577f0681b298c12a02b84538b07d66bc6419804ec70cbf043a801c6e7a8c4",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-46c0a-ding-and-readonly-selection-chromium/ending-transmit-complete-original-details.png",
+    "sha256": "78bb3e24c27293ad5733777ca40302807ea67374a4877fd7431e91ab280cf35e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-46c0a-ding-and-readonly-selection-chromium/ending-transmit-current-decision.png",
+    "sha256": "bb2e05a9e962af097fe1346f6276c4b415c9012aa4c6fc07636b8f764e0b7503",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-490ff-y-before-any-actual-outcome-chromium/answer-release-another-sign-does-not-own-clock.png",
+    "sha256": "7adeb51296603d333b264151070fcbf32701274daa74f5aba18f61ced617bd67",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-490ff-y-before-any-actual-outcome-chromium/answer-release-native-quota-original-full-decision.png",
+    "sha256": "f299f4594b32a2e1960626150ed6769721b7c7543a60ad2754c3b4ec600870b6",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-490ff-y-before-any-actual-outcome-chromium/answer-release-original-current-countdown.png",
+    "sha256": "ff1cb923bf87edb133cfb4f49712cc70f0fbba7cece81d350d01dc0c0222a35b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-490ff-y-before-any-actual-outcome-chromium/answer-release-quota-all-original-options.png",
+    "sha256": "0505240ad054981ecb96952eaf7cbbda737952ba2b126980dfabfaeaadc5d842",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-90c22-y-before-any-actual-outcome-chromium/ending-transmit-another-sign-does-not-own-clock.png",
+    "sha256": "0cdc202ab69f6a67f359994dbbec152ae4a10cebc0fe839a570e8fcbd6484625",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-90c22-y-before-any-actual-outcome-chromium/ending-transmit-native-quota-original-full-decision.png",
+    "sha256": "2553a90cc18429be527ca56c3a65e8b3abeff2e1298130f64a8544a67e28f3cb",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-90c22-y-before-any-actual-outcome-chromium/ending-transmit-original-current-countdown.png",
+    "sha256": "4115f3ae86689b2115e9f5377ea2aa62af53a5b5ede40c5acfef53100bb8316d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-90c22-y-before-any-actual-outcome-chromium/ending-transmit-quota-all-original-options.png",
+    "sha256": "589be8570870bedff34f506207f287c6bcb54726c0f0a607347f568c680c544f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-91a0f-y-before-any-actual-outcome-chromium/answer-accept-another-sign-does-not-own-clock.png",
+    "sha256": "a134712c39ae58ad7aa8169893bb2239a58c6818da07f7e947b9d80d77402e3d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-91a0f-y-before-any-actual-outcome-chromium/answer-accept-native-quota-original-full-decision.png",
+    "sha256": "a6a26a279c5f22b8480951be6a3984b7a47fa89f6aef596cfd61af395fb44e06",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-91a0f-y-before-any-actual-outcome-chromium/answer-accept-original-current-countdown.png",
+    "sha256": "5175287493c15f3eb004a573dd6f9946ee52746ef84391069614b1d7ef30c704",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-91a0f-y-before-any-actual-outcome-chromium/answer-accept-quota-all-original-options.png",
+    "sha256": "5a82c992c839514e206ba3e9ac556abfdec05e316d02a48ae1d642e39783c88c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-91a0f-y-before-any-actual-outcome-chromium/paused-original-question.png",
+    "sha256": "b2ae263383544940d4d8409f87040d158fef480ce6d8e6e07f8597d2e001736f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-c273c-ding-and-readonly-selection-chromium/answer-accept-complete-original-details.png",
+    "sha256": "996962400364fa1cbed666e8ff0d68327e339c52fff2b38daeef50418b67c48b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-c273c-ding-and-readonly-selection-chromium/answer-accept-current-decision.png",
+    "sha256": "339c2a9ff00a0a02ad8447ff653e126990c164fa4fdb20eb2cb3251cee7aaf35",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-c273c-ding-and-readonly-selection-chromium/answer-release-complete-original-details.png",
+    "sha256": "28a9834229e8da99816c8a112f3af0c99ca3b6a3c46481719ee89bc2a9e30d44",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-c273c-ding-and-readonly-selection-chromium/answer-release-current-decision.png",
+    "sha256": "6e456a010046677e349b7ead42b76bfff5918dd1541f315a31868a82ee3ffdc0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-c273c-ding-and-readonly-selection-chromium/question-all-original-options.png",
+    "sha256": "a2d0f2e62f8a76d5e61555fdc3c3b6d2cce19192779b6bb0619abc016f1acb0d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-c273c-ding-and-readonly-selection-chromium/question-memory-page-0.png",
+    "sha256": "0caf5752014afb422f8cc1d891120ed7348c7bb87ad3154b868fbc9d5335046b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-c273c-ding-and-readonly-selection-chromium/question-memory-page-5.png",
+    "sha256": "66d1ce3666fac0a8463a592142e0d5657f8a2b3314a01b51cf41839c160f9b62",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-c273c-ding-and-readonly-selection-chromium/question-story-page-0.png",
+    "sha256": "1cebe8c2a5c3fdcff8bd2f0caf5361cc85a2d1d948d84513863fa044c27cb4ac",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-fe31f-y-before-any-actual-outcome-chromium/ending-depart-another-sign-does-not-own-clock.png",
+    "sha256": "0e0d58c4f3574d18ac05be00442a1455d78bdc0f383b1983ba2ff8e41cc13dc1",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-fe31f-y-before-any-actual-outcome-chromium/ending-depart-native-quota-original-full-decision.png",
+    "sha256": "d5f4fef9b213055a0a80f86161a06117675c0fd1f04c5def102b5a93624773f6",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-fe31f-y-before-any-actual-outcome-chromium/ending-depart-original-current-countdown.png",
+    "sha256": "c63f374eb71d72d3fe704b0f0e9a251954dd80e66b6309eef19aa8448b390c21",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art32-milestone-stage-ART3-fe31f-y-before-any-actual-outcome-chromium/ending-depart-quota-all-original-options.png",
+    "sha256": "7f6f29ef87b5b6d92046018e926b8b58c8421976c8a459939f578158eebcc008",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-08392-tores-complete-formal-proof-chromium/leave-actual-six-second-stage.png",
+    "sha256": "20b2cf7ee562009394d4fc946351d64d5a4d41de845bcfd3ded6eb7ac4ec909c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-08392-tores-complete-formal-proof-chromium/leave-original-confirmation.png",
+    "sha256": "26fc965095a0c8b30840fbcb25f1a82b137cc8ad4e923157b924e7ab6496ae09",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-4df97-tores-complete-formal-proof-chromium/help-actual-six-second-stage.png",
+    "sha256": "b723567c779cfdb94e84d51466aff0631809d6fabe6ac751f095eafd47ce9010",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-4df97-tores-complete-formal-proof-chromium/help-original-confirmation.png",
+    "sha256": "f66e17a473fae94411a3bc1ed18ceb147fc592f351355015301197d60f04c8ec",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-7b19f-tores-complete-formal-proof-chromium/trade-actual-six-second-stage.png",
+    "sha256": "c4e43e226bd3dece4de2af1a0f4e71d78e5fe39cc0140fd4179c662ce77fc9d7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-7b19f-tores-complete-formal-proof-chromium/trade-original-confirmation.png",
+    "sha256": "e33d415826d65e7663d05d5f61183de6843ab1ebab191f360367613ab93f8dec",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-c1e71-th-original-keyboard-return-chromium/complete-opening-reader.png",
+    "sha256": "808d1b57906edf19a4662eb83aec4d9f32d641ea284a45ef4685ab49f44ab8a7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-c1e71-th-original-keyboard-return-chromium/complete-opening-sword-explanation.png",
+    "sha256": "75d44a7dcecdc4571a465464306a38f545b7df66080e961db755a95b92a74a5c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-c1e71-th-original-keyboard-return-chromium/current-opening-full-guidance.png",
+    "sha256": "fc11d4e8c723ea728241e4c2a75010b662af4d4dfd3e248f0fc3955bd2bc8035",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-c1e71-th-original-keyboard-return-chromium/details-help.png",
+    "sha256": "4f86643566022fc2506615c269923f27976d57e7bfce46e0abda74ef65d124bd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-c1e71-th-original-keyboard-return-chromium/details-leave.png",
+    "sha256": "01ff114b4211d3972d264af9b5afcee26120fedf6bacb3370a272ae41e9608ee",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-c1e71-th-original-keyboard-return-chromium/details-trade.png",
+    "sha256": "6914c2ee9a38fb36139b9f9d114035265cc7e5fac19ebbbb2c6bbb2f0e764d22",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-c1e71-th-original-keyboard-return-chromium/opening-subject-and-three-signs.png",
+    "sha256": "ccfe51893c68714996ab294696fb63e5ec0cc51adb3ce7befc799a10ac8f763f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-e23b2-ced-by-new-art-interactions-chromium/paused-opening-person-and-case.png",
+    "sha256": "a11f66ba0dfa8dc96b744e7d73689cc25f98606cccdce4a609a1e7228f071c08",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-e23b2-ced-by-new-art-interactions-chromium/start-rejected-original-intent.png",
+    "sha256": "e412bce69fe5bf6a791dbc41ea2c59bdb203a20b0322ad7c250cbfab990af147",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-f150f-er-invents-offline-medicine-chromium/foreign-original-choice-before-takeover.png",
+    "sha256": "679ec4f8e284de8c65ad690738c11b1bdde22c46375d2de0cd95e5c2fddb72bd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-f9b8e-until-original-unique-retry-chromium/quota-complete-opening-stage.png",
+    "sha256": "048e47ecf7aa35222affbe6412a9d860ffdd7f7e41aa79df1542fdd8f57283c7",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend06-f02a/repair-02/views/quota-complete-opening-stage.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/art33-opening-offering-ART-f9b8e-until-original-unique-retry-chromium/quota-original-choice-readonly.png",
+    "sha256": "29d8b072ef4531b0844fd85b87579ed86b638e419f3f9c2391f8304cde66bd50",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-00407--pre-action-time-for-review-chromium/CHOOSE-actual-decision.png",
+    "sha256": "1ce367ece54dc21f598c371b63fe4b2c7914745b8a3dc365d813b4e2733c44de",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-04687--pre-action-time-for-review-chromium/SOURCE-actual-decision.png",
+    "sha256": "c8f67095f81791e838f321a0f161c317b8278a911bcfafc104ea7ee10a958275",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-0fa85--pre-action-time-for-review-chromium/BUY-actual-decision.png",
+    "sha256": "9b53c77d0765376b5ac0b785958d494347e16b3071a13364162d5bdc3b9fcbcd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-2169f--pre-action-time-for-review-chromium/EQUIP_RELIC-actual-decision.png",
+    "sha256": "bc152b6d3d9a3311edded26029abac69520f8efec25793c51f639f4ff554cd3d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-2c54c--pre-action-time-for-review-chromium/END-actual-decision.png",
+    "sha256": "c00bec3eddfb60acc892ffd3f54d8e8c8eacab84cbceef232eed70a438453aa0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-36ca0--pre-action-time-for-review-chromium/SELL-actual-decision.png",
+    "sha256": "31795aa0fe83f12d43fff46f67479f5fbbc1fc5b8ca23a3eee2337ffa4f8dc71",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-3f997--pre-action-time-for-review-chromium/LEARN-actual-decision.png",
+    "sha256": "5fafb7c0b4b1118f194c0313e11788e8152c359bbbafd83f97e39bcad79cfba2",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-4305e--pre-action-time-for-review-chromium/EVENT-actual-decision.png",
+    "sha256": "a4fc73f0a2f0fcdb4e76e68bb1b39d59459b05b686a3c2a4b795f1ed512af080",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-4655d--pre-action-time-for-review-chromium/RETIRE-actual-decision.png",
+    "sha256": "04acdeb5c2ea86ffe30ffc7dc58fbb9e22b7c789fd06a12f68a82543a677b214",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-47479--pre-action-time-for-review-chromium/STUDY-actual-decision.png",
+    "sha256": "75ef8c4d8b0fd41acb2cc98776d9316ee1f1db9f1165ea3c3b97c6a2559b923e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-51f1d--pre-action-time-for-review-chromium/EQUIP-actual-decision.png",
+    "sha256": "ed6a432b361a26de088455e7894ec748f08c72d1a02cb9c681758d754eb4066d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-52151--pre-action-time-for-review-chromium/TRAVEL-actual-decision.png",
+    "sha256": "04a6db1a66f6c62ebbe5493a0f00a92a6d75923b0f410ebf3c8f62b63ffb63a5",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-53e63--pre-action-time-for-review-chromium/REST-actual-decision.png",
+    "sha256": "dae728ab06af47e30ec5802f9a3eb9cbe4de3f2398295329fe6d7ff27511e329",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-559a6--pre-action-time-for-review-chromium/CULTIVATE-actual-decision.png",
+    "sha256": "ad9b3d4aaf9a4d7bc563cdb7e08014f469a32b37aed0fd6526fc4f0de58f46fd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-5f06d--pre-action-time-for-review-chromium/FORGE-actual-decision.png",
+    "sha256": "5e62ab10c453185a1e59f9dfe1c189d77ca090bd35049c26dc9b0c50bfe35ac2",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-6beb8--pre-action-time-for-review-chromium/USE-actual-decision.png",
+    "sha256": "a8f21927b13fa802cb687bf629094c585894bcd8fb753fdfb19829f635f50148",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-8680a-paration-and-disclosed-time-chromium/foreign-rest-main-before-travel.png",
+    "sha256": "1ae015d5d5bd8f06b2f6e59c9d734368b84d0ad4d6d4c6eb65f5d2b0d7e17f88",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-86b50--pre-action-time-for-review-chromium/BREAKTHROUGH-actual-decision.png",
+    "sha256": "7b6f3a0e702612fab0b499837110731992531717ad7f2a0f1edc9a35cc1f15fe",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-b6967--pre-action-time-for-review-chromium/BATTLE-actual-decision.png",
+    "sha256": "d9ff73407fc6230da63c3cbe392f7757e44043f6f607c1ca41a3555e95561261",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-b9518--pre-action-time-for-review-chromium/DECIDE-actual-decision.png",
+    "sha256": "c59b8b523de1029e6c23144ad9b36b44257ad9c49815aa9f4b6f8251a39e415b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-c1e7d--pre-action-time-for-review-chromium/SCHOOL-actual-decision.png",
+    "sha256": "107cd9f06be92914bebbdd7e0ba46ce13c2264eb08c4323fac2dfc666d087ddc",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-ca50d--pre-action-time-for-review-chromium/END_LIFE-actual-decision.png",
+    "sha256": "ad25682f6b32f762e0ab562246f4a5990ab67813e87924b46319a55315125ac7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-cc722--pre-action-time-for-review-chromium/CRAFT-actual-decision.png",
+    "sha256": "890e22260740d181def7d413d5c6a27a9bd8d394fee6c93c034bd53a68ff6a0a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-d4b50--pre-action-time-for-review-chromium/ENCOUNTER-actual-decision.png",
+    "sha256": "e2ef9028fb24e01a69b2b95ea0dda755f4dd305a829ff7ca05ed37bf10508b2f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-e54cb--pre-action-time-for-review-chromium/ANSWER_TRIAL-actual-decision.png",
+    "sha256": "284e65e158d4293b897bfce78856b6a29c568f3868ef82dcb4110c60b0eff3ac",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-ef7ad-ut-changing-the-saved-state-chromium/real-checkpoint-current-home.png",
+    "sha256": "e9e4f74beb1e2e5f4a0b8617575b3b5ea4331f9a76feff19cbfd8b0882af894b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-ef7ad-ut-changing-the-saved-state-chromium/real-checkpoint-explicit-restore-review.png",
+    "sha256": "df5dc7945e2018604f09e9a2997b6c83ab136319cfb63613316364505bcfe21f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend03-review-observations-fccca--pre-action-time-for-review-chromium/START_TRIAL-actual-decision.png",
+    "sha256": "f6ccc330cd79513ebb4ead9b728e5ff71963b8e349612c66a6c34acfc05b6b25",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend06-f02a-opening-respon-126c2-ole-complete-atomic-outcome-chromium/trade-chosen-six-second-stage.png",
+    "sha256": "106fd0f80806e1ebb20b664612b67b1d15b0b76670f101d15861468f979b7d51",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend06-f02a-opening-respon-126c2-ole-complete-atomic-outcome-chromium/trade-halfway-after-readonly-return.png",
+    "sha256": "b5ab11dd2317923f79e994d4c663bdf58d92ca6b8e7589b641edf75705624d34",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend06-f02a-opening-respon-461e7-ole-complete-atomic-outcome-chromium/leave-chosen-six-second-stage.png",
+    "sha256": "5047715d4f54f6eb92c324f3af9a71faa95bca8189459104514ca759af0d2d8e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend06-f02a-opening-respon-461e7-ole-complete-atomic-outcome-chromium/leave-halfway-after-readonly-return.png",
+    "sha256": "2ec4168ede725881b27bc784bc9710b59015e02ad2bfef714fc4b47b98b0abc7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend06-f02a-opening-respon-73c65-intent-retries-exactly-once-chromium/original-native-saving-medicine-not-yet-given.png",
+    "sha256": "07284e678eb9fdd16037d2b2fa130eefcb5c7bf14f6364c045f0acd0b4adcc8a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend06-f02a-opening-respon-73c65-intent-retries-exactly-once-chromium/original-tick-quota-chosen-response-unsettled.png",
+    "sha256": "6e0c2f894a1947ddb08226d0a59653720a6d38c9b89dc471797ea770b48684fd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend06-f02a-opening-respon-b0d04--before-full-resumed-choice-chromium/other-page-sees-original-choice-without-own-clock.png",
+    "sha256": "a25b306a3540f137c0179e5987757e87f41d5350634deaa0cb628f6541c7d96f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend06-f02a-opening-respon-b0d04--before-full-resumed-choice-chromium/paused-trade-still-only-intention.png",
+    "sha256": "b2209e81df6e8dc9eb7d7f676d39167dc5e84754c38a29287c3dea8d28488b62",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend06-f02a-opening-respon-dd44f-ole-complete-atomic-outcome-chromium/help-chosen-six-second-stage.png",
+    "sha256": "cddcd760ca3d5e35415f2a1a762456f2be90794d926b7d95a490fc243d74d3bb",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cend06-f02a-opening-respon-dd44f-ole-complete-atomic-outcome-chromium/help-halfway-after-readonly-return.png",
+    "sha256": "89b6bb9a67c20f222adf1dda533a9bafb5e5ca2da683c4babfbedf780774d8f2",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-feedback-CHECK--5256c-d-a-complete-resumed-period-chromium/true-count-two-after-original-allowance-resume.png",
+    "sha256": "dc1813f93ac4890152ce5aaf0457f742a083b2eb3ecba2cf642034f154c2facd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-feedback-CHECK--8f248-ural-expiry-changes-no-Game-chromium/CREATE-control-safe.png",
+    "sha256": "67a3e880f76e38bd8d2db87b5b4cae406dc3611c40f9c5f96d7f03ef94fd2b6a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-feedback-CHECK--8f248-ural-expiry-changes-no-Game-chromium/opening-after-original-expiry.png",
+    "sha256": "284ad6152f424a900d46d8c516d6972c64dc51c6daf067bb42cb171f6b87e8f4",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-feedback-CHECK--95136-rows-a-free-or-stale-effect-chromium/IMPORT-control-safe.png",
+    "sha256": "2b0af84421a24b22db6d4baaf73bb882eaf4394a56a93bac254f556b6c4cc484",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-feedback-CHECK--95136-rows-a-free-or-stale-effect-chromium/restored-import-never-replays-control-seal.png",
+    "sha256": "82132f76c7005dad7489d4ac148b0a0b786ef7dead9c7c772948929066561dd8",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-source-state-CH-3c8ad-sh-and-an-explicit-new-life-chromium/commission-actual-stock-and-period-income.png",
+    "sha256": "b5d30f63dc4cb6816b7b9181aaf48667846c799addc3fc25ad6004e5ca094af2",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-source-state-CH-3c8ad-sh-and-an-explicit-new-life-chromium/new-life-no-inherited-commission.png",
+    "sha256": "1ac624e15bdf973c7c16ac68bcb0f5e2a071ec95ddd403019260cbfc38e8a978",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/arranged-first-period-no-yield.png",
+    "sha256": "80b17e217c09cd60e1f3f03ade1cfd45e83faf63b6377f9f576dcc51ef4fdb65",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/held-native-no-premature-harvest.png",
+    "sha256": "ab162438edb9d64a119842b6975f4ef451758c42154c9a8c26ddd230eec38042",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/saved-first-harvest.png",
+    "sha256": "e12209f7df4be44a3d12af029da8b30242e9c834c52d14ae71addb03d5e9d246",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/unarranged-stock.png",
+    "sha256": "c2ba26e0194d0a2c6709f12d89f47fc470abad994675efeb2e3bb207c9557761",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/failed-first-period-no-saved-yield.png",
+    "sha256": "73af1d2510b2b2eb129b28d047e495bc429a471e01aee649bbd7263adf78ea93",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/finite-original-two-harvests.png",
+    "sha256": "54f68597a8494e954a56fe96d6f1504ba49cd6bb1e91198d5f2c2faf539016a9",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/paused-original-real-harvest.png",
+    "sha256": "0c21982b0d1104234b030e5eef71a54644af98a5050dcbe5d9e07290702f8869",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--11558-r-authorizes-the-next-stage-chromium/choose-real-confirmation.png",
+    "sha256": "c8e63981cf63ccc1cd805baf0c626bda2e067dbe118dc25d2e8b6f7bdc849f7e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--11558-r-authorizes-the-next-stage-chromium/choose-real-running.png",
+    "sha256": "ecea7451f6e6833f27fe86ebffead49b0a671bd5099312fe50a90c9cdc9ad274",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--11558-r-authorizes-the-next-stage-chromium/choose-real-saved.png",
+    "sha256": "4d8f892868d6367873cad1c34917311f78d268d93ba2eb93f5ac12ae627a98a7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--29445-d-then-no-next-cycle-starts-chromium/cultivation-native-saving.png",
+    "sha256": "027f0acceb5079a9aed6a71fa8bbc7746761b658916606a1e2121fd6b8966a50",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--29445-d-then-no-next-cycle-starts-chromium/cultivation-pause-pending.png",
+    "sha256": "41150a88b9f15a9f12ccd0653cc5f220baf217771e855248b65cdd0962391a9d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--2ed67--replace-its-original-retry-chromium/pending-craft-preparation-income-route.png",
+    "sha256": "8e14416779035266cc84330354c89256ffc55ffe359b23c0725dcd5ca560380b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--41861--goal-board-remain-readonly-chromium/cultivation-details-object.png",
+    "sha256": "813a2f756f2a6aa80c67985f214d0773b5fa6af13cd0670baa316cdddeaea701",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--41861--goal-board-remain-readonly-chromium/cultivation-full-parameters.png",
+    "sha256": "abac31cadf81d39ddc90d28de6ee0a2bb8a38893825a5cd6a8d3a03fe8cdcc91",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--41861--goal-board-remain-readonly-chromium/cultivation-home-object.png",
+    "sha256": "f44b6110bcc90083528edc0e7174198709f2ff995a9a6914878cbde471231e0a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--41861--goal-board-remain-readonly-chromium/current-goal-object.png",
+    "sha256": "723727eb63373829616e1fb19d2df3d5077f64e8ca10c542afa985d5da7d7157",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--55bac-r-authorizes-the-next-stage-chromium/start_trial-real-confirmation.png",
+    "sha256": "eb9775a038c5e61770f1dba0781f6139218888410875eebafd39a5700ae91d3d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--55bac-r-authorizes-the-next-stage-chromium/start_trial-real-running.png",
+    "sha256": "6c9cf7565f6ebedb01e79de67e3cd0b2f19225b630a4a36300776d294b1cd9de",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--55bac-r-authorizes-the-next-stage-chromium/start_trial-real-saved.png",
+    "sha256": "4a9a4bbda889bb3bc6c95c3667f8f29a870655c800103fa789f3595f0a9fffa3",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--66bd2--its-first-successful-retry-chromium/breakthrough-native-cycle-quota.png",
+    "sha256": "2174bee6b29d7544e9f6879bf43fbe36f17d388d677eba5c24ef284b42bf4a0f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--66bd2--its-first-successful-retry-chromium/choose-native-cycle-quota.png",
+    "sha256": "294f7faf478d858fc2b6882c27fcfca491f625c9d87feaa2b36bc7559cc7d208",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--66bd2--its-first-successful-retry-chromium/milestone-gate-breakthrough.png",
+    "sha256": "3ad352553b3e809c4e9fc74e0e0bee5d523f20874f0d0948ad77305b8cbf2a32",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--66bd2--its-first-successful-retry-chromium/milestone-gate-choose.png",
+    "sha256": "2560ace2e044a8331aea5bbf931817cdaadbd34e7fba110f4ace5ae68792bc0e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--66bd2--its-first-successful-retry-chromium/milestone-gate-start_trial.png",
+    "sha256": "719d375dc32643edf31c1d605e6a5d2b2a3e2b024baa9b5be3e84db375c3fce0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--66bd2--its-first-successful-retry-chromium/start_trial-native-cycle-quota.png",
+    "sha256": "5a3838e4b2ff8122cd785c33047dbd991a68fa2c2dbc0571276994be7c9291dc",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--69c64--controls-the-next-decision-chromium/goal-full-source-route-readonly.png",
+    "sha256": "f219574c977630519aafaa0fe9306f804d1e3926629266503456aa20c56cf52c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--69c64--controls-the-next-decision-chromium/herb-source-page-0.png",
+    "sha256": "1cfcf52f30a8db70f1f66477f81d7c5937cc7bae80ee6060c6c6debdb4d722b5",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--69c64--controls-the-next-decision-chromium/herb-source-page-1.png",
+    "sha256": "aabb2dcc034a903a19acf16ae08020450a358b61e447460cb58ef68a24dd4ca0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--69c64--controls-the-next-decision-chromium/herb-source-page-2.png",
+    "sha256": "9a132d5b38d8fdee185fa71bb1d88a3d298830a0a3d0c0559a8d99c39dc722a7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--69c64--controls-the-next-decision-chromium/herb-source-page-3.png",
+    "sha256": "1ecb36475dbf28e87a6920fea5bf3252cf77c64c35b16b34473bd224cc017406",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--69c64--controls-the-next-decision-chromium/herb-source-page-4.png",
+    "sha256": "f219574c977630519aafaa0fe9306f804d1e3926629266503456aa20c56cf52c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--6c3e9--preparation-remains-usable-chromium/pending-craft-complete-goal-no-new-travel.png",
+    "sha256": "2c991d60c76590067a642eb48352db3174cc7c2795c0ee88f7812e0f67fd2270",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--6c3e9--preparation-remains-usable-chromium/pending-source-trial-readonly-no-fresh-entry.png",
+    "sha256": "5becb46f66b6182258af59ead571fcfe59df91fbe69eba4c76c4472cfa317d08",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--7c71b-t-or-reserve-can-be-crossed-chromium/assisted-real-running.png",
+    "sha256": "aa59891d6434ba02739b2339434f3bf2e6feb3c8daf4e2b33eaab42f03bd339e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--7c71b-t-or-reserve-can-be-crossed-chromium/assisted-real-saved.png",
+    "sha256": "202bfbd24e9065a7b334d6837cb08f728aa06aff146349ed023e9b2b7d87f2ce",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--86a16--but-reading-remains-usable-chromium/pending-craft-details-new-cultivation.png",
+    "sha256": "1044f4d1d8cdc16f64b6541f7fcf96d5f6bce28be8f1e6660f733064f16144e1",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--86a16--but-reading-remains-usable-chromium/pending-craft-home-new-cultivation.png",
+    "sha256": "0a19c98f1c40a7ef1df0a41b3dbd47b840186159be12a578ed73c6610d78c090",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--ba0f5-es-never-rewrite-that-draft-chromium/running-next-draft-distinct.png",
+    "sha256": "824339470af41de45cba0422e883d3f3a93bd31be854673381fe8093d2ca899c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--c8ddf-newly-authorized-full-cycle-chromium/same-id-takeover-no-old-aura.png",
+    "sha256": "1dd69f72c14671f059c4bf8b814a8bb5439b0771ed8896699473b328a7d54170",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--cc26f-its-first-real-outcome-once-chromium/cultivation-abort-no-outcome.png",
+    "sha256": "c0a11b916ef8a26ce04cd658c47d01dc963a8e9201cb65e29523af1b070da9b3",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--cc26f-its-first-real-outcome-once-chromium/cultivation-quota-no-outcome.png",
+    "sha256": "14a2c650dd1399dc324031b014dc3fcf7db8edd45ee59d44ca2f648479cd070b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--d5ea2-r-authorizes-the-next-stage-chromium/breakthrough-real-confirmation.png",
+    "sha256": "32fa17304831d91da6719a1d83c6c55b24d2fdfdb1f0f33f0e83560f314074d5",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--d5ea2-r-authorizes-the-next-stage-chromium/breakthrough-real-running.png",
+    "sha256": "2c96d43d08b1adac12919c7d7b53062a064d130058f2970a3741572c9a8d93ca",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--d5ea2-r-authorizes-the-next-stage-chromium/breakthrough-real-saved.png",
+    "sha256": "015e15296f6b706d30a8d80db4aff11adf89af193aaeaf54dde465e1fb315a30",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--d9213-hen-an-actionable-next-step-chromium/ordinary-opening-all-choices.png",
+    "sha256": "638568c7316c93b85c56f5b23ffb64938b66c1b3f2c599a7f79cfac53d7cc423",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend06-f02a/repair-02/views/ordinary-opening-all-choices.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--d9213-hen-an-actionable-next-step-chromium/ordinary-opening-saved-next-step.png",
+    "sha256": "4e647091d69d626e8e173e37cbc72f7b2ad65962d197ce53975e28475ff87a9f",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend06-f02a/repair-02/views/ordinary-opening-saved-next-step.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--dd760-ff-without-replay-on-return-chromium/training-footer-breakthrough-running.png",
+    "sha256": "075c5b858bd6c26fc934d471126b7cb46609664472ed23b9ed0f6d25591313e4",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--dd760-ff-without-replay-on-return-chromium/training-footer-breakthrough-saved.png",
+    "sha256": "20ce8de3f4367639de319050128d9d7f49a4e98fcb482b5be0e43a7113ce19c5",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--dd760-ff-without-replay-on-return-chromium/training-footer-original-breakthrough.png",
+    "sha256": "4f49be25f63ef909134c6e0e4c3f8c71a06a8fc1e2192d44d36d08d0e7526d7d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--e7c19-t-an-automatic-breakthrough-chromium/natural-real-running.png",
+    "sha256": "afdac6768dfe4c5c85d59094584044cb5025f900e02ee77be983729eb344ff04",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--e7c19-t-an-automatic-breakthrough-chromium/natural-real-saved.png",
+    "sha256": "fda38b2dec516f5c60ff2166598a15d12c77ce0247a5784e0cc802b1388e3c63",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/cultivation-objects-ART06--f5a53-annot-claim-a-missed-effect-chromium/different-method-no-borrowed-cycle.png",
+    "sha256": "ec7ab9fab2d3a728fb0cc2b617d82ec15f5be3b3cbc30027319cb3d79b2862a4",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-END-LIFE-r-d2f7f--its-formal-game-month-cost-chromium/end_life-sealed.png",
+    "sha256": "32413058fbd8d65a51fc8c36b1207f0571adc28b028bf21ccba216ef3244d512",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-END-LIFE-r-d2f7f--its-formal-game-month-cost-chromium/end_life-selected.png",
+    "sha256": "270d64641c1050b5561d57458a0ead73a881d3b63ecebd92c90dfd838844fd7f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-RETIRE-req-49341--its-formal-game-month-cost-chromium/retire-sealed.png",
+    "sha256": "4db7fbf57dd7d2dbdba9a36d89da7275e6c015b7f1b085c94324c894d689aff1",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-RETIRE-req-49341--its-formal-game-month-cost-chromium/retire-selected.png",
+    "sha256": "3e2de4befff158084b0b3ce42a078c294b202f35b7bf658f983d824fbb4f9423",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-a-failed-a-36078-ack-by-its-later-completion-chromium/choice-cross-page-result.png",
+    "sha256": "07c25174e73413f245b4d60bebd14a9f0563eeafa325bb3d28340391ba85cc20",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-a-paused-s-6c32c-nd-grants-no-offline-result-chromium/opening-original-arrangement.png",
+    "sha256": "467ebbfa6b11fd468d7e0a60787a17ba03d99f94a1492b3e47b125e084c23304",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-a-real-ope-67378-actly-its-one-medicine-cost-chromium/opening-real-result.png",
+    "sha256": "c8a8ec802b869fa3632d40967d0a152644d8efdc82ffae098e1e1ed71b7042db",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-a-real-ope-67378-actly-its-one-medicine-cost-chromium/opening-selected.png",
+    "sha256": "643d37b993144e72d6a81f673b08844d567916e4d3fa67c1e83fce9f95bb8b16",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-a-real-pre-bac63--pill-and-reset-cultivation-chromium/breakthrough-real-result.png",
+    "sha256": "e5ccb403a05861cf89778a7a7fc3face90abbb394f4ba99f7ed5fcc5d686ed62",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-a-real-pre-bac63--pill-and-reset-cultivation-chromium/breakthrough-selected.png",
+    "sha256": "f89b9cb2bb85f878832f7f93394260668cd82547dc0f9b30d4ebf83c008d8c04",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-a-running--7f50d-lace-inspection-stay-usable-chromium/visit-paused-choice-available.png",
+    "sha256": "c3512c48909a23ff3109e91efce580bb6f382670866a1dd9df63cfed1e6d2e6a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-a-running--89976--and-full-narrative-reading-chromium/question-paused-choice-available.png",
+    "sha256": "bbe706bc9e93b4a34f040c3cd0f079b8de82950068e8ad7d0b2264dd992a3eb0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-running-re-7ef27-ble-without-ending-the-life-chromium/retirement-paused-choice-available.png",
+    "sha256": "e351ae338a678ea0b10bb8d7d2c212f5465faf4d07d4d16441629d02a40a69fa",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-running-tr-3b676-nt-inspection-remain-usable-chromium/trial-running-equipment-reading.png",
+    "sha256": "7bc438e230023769197690ea2281105d1e251839a9e0206fc37c367eb249e45a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-the-releas-0ce40-her-answer-or-starts-a-turn-chromium/question-release-selected.png",
+    "sha256": "ce8ce710c4e404f5bdadd8c1f26e00a258a7d024b8ba2d268673815eb3c7720d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-the-select-59e9f-fe-without-creating-another-chromium/ending-transmit-sealed.png",
+    "sha256": "f0856665695c59c45ff1e55c50b0a4fcf10381cb840b5057b729f454e2c4f2cb",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-the-select-59e9f-fe-without-creating-another-chromium/ending-transmit-selected.png",
+    "sha256": "83749902e3082fd576c68062bc7b07b714659e627d2ece5e6427ba055afb39d0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-the-select-d3d4c-fe-without-creating-another-chromium/ending-depart-sealed.png",
+    "sha256": "1ef4ec5fad3e305bab4dcd8b0a7a1f67873b96896c8874818e6350c2376865ef",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-the-select-d3d4c-fe-without-creating-another-chromium/ending-depart-selected.png",
+    "sha256": "026dd330223e6ce931745e1eb8d12f82df54873f3c06f4fadfb835d85127866f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-trial-entr-ca5be-ut-an-automatic-battle-turn-chromium/question-selected.png",
+    "sha256": "b941fd99fab78bb212210d6fbd8bc64990ecc7956607c828c00160cd5636cb65",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-trial-entr-ca5be-ut-an-automatic-battle-turn-chromium/trial-entry-selected.png",
+    "sha256": "c88d8b2c664bf84d8415088ff9c8648fd51905b322a9c693ec64013b84152b17",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-visiting-o-b953d-elected-response-saves-once-chromium/response-selected.png",
+    "sha256": "aa94b6a18d124527732393e9396c4d688280c6db804abeacb7fd0b6f109ec08f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/idle-milestones-visiting-o-b953d-elected-response-saves-once-chromium/visit-selected.png",
+    "sha256": "776408b0085f3fdd822b01986d7e6afa20bed7ed535efdcc6cf9d17249146daf",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/matrix-ui-milestone-feedba-a3f9d-he-real-first-enemy-unacted-chromium/answer-saved-current-trial.png",
+    "sha256": "7ce2bf26b14e86641139d497ca5a0d0dcaf6efe66960cbc70e2e2e43c1dc380b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/matrix-ui-milestone-feedba-c7d41-lays-the-sealed-life-result-chromium/end_life-saved-life.png",
+    "sha256": "c66894ee5352ba01f5725e70e3c4993be34077d029618d171fa4adc0391b6631",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-native-saving-still-partial-frame-1.png",
+    "sha256": "0d7e094dfe53959ed60a388dcd4a46c9544102a01c25b50cd86c25e13979834c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-partial-before-frame-1.png",
+    "sha256": "13b6ec016c2c6eb705338daa6c6aa6943abf80d831986a4fc4ee047c8dc9d4c6",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-saved-full-frame-1.png",
+    "sha256": "417a3c0732082a322819a917e42df0325fbe9e0b3ccbd881801978e7464ce185",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-03-progress-hierarch-4b434-eadonly-viewing-and-refresh-chromium/pill-only-real-saved-recovery-frame-1.png",
+    "sha256": "58f3d3e59462c17806631de0cf9eb6700bc166532e1148fd5174aaa4219b9b98",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-03-progress-hierarch-4b434-eadonly-viewing-and-refresh-chromium/pill-partial-before-frame-1.png",
+    "sha256": "a4c44dd4ac10d2f6dd749b635edea0f5aa53c1773cb10f51f5638a7da094bfb9",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-failed-still-zero-frame-1.png",
+    "sha256": "3c611ab1ef903ecbaf0c8cc62652ee7b0f8dd829537387af6a97312af1cf8659",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-full-frame-1.png",
+    "sha256": "8f7585291831b8cf90e58a3744b45891388f740190da83671d03f72782e2d252",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-full-frame-2.png",
+    "sha256": "8f7585291831b8cf90e58a3744b45891388f740190da83671d03f72782e2d252",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-half-paused-frame-1.png",
+    "sha256": "5673c9f07ed8c91e22a6a32f4244e76cd68136bcb055fde11205afd783e7f201",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-half-reloaded-frame-1.png",
+    "sha256": "f76f62ff90dc6461d60418bf344fc4b10659b8e59319196beeeaf707042bb829",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-zero-frame-1.png",
+    "sha256": "c6277a0065fca90c146da8d36614691fc32cf2d279092b544988ab024c9ec40d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-04-battle-medicine-U-3ebf6-omplete-three-second-period-chromium/native-quota-original-zero-medicine-authority.png",
+    "sha256": "6954d45ad4ba4c16c488dba315661de2a6a79ba2d036aa9f5163083f0e1f3dd0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-04-battle-medicine-U-3ebf6-omplete-three-second-period-chromium/true-victory-stops-before-another-encounter.png",
+    "sha256": "57f5633d6e59170e0c978911e88990b16b866da7a7771c76e4d830f68899b1a7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-04-battle-medicine-U-51a62-exact-formal-no-action-gate-chromium/battle-default-no-auto-medicine.png",
+    "sha256": "18249e36c95667d0fba7cb23a47ca5131406cf680b647c5597a679b2347a833d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-04-battle-medicine-U-51a62-exact-formal-no-action-gate-chromium/enabled-threshold-zero-budget-is-a-stop.png",
+    "sha256": "77c5a15bdbe5392f8541bc680d4c1f76e58f27aeb2857f3b3e24da1ff18361d3",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-04-battle-medicine-U-ca4ed-paused-original-arrangement-chromium/actual-two-medicine-finite-authorization.png",
+    "sha256": "c1eb27912c0ccb7195928ffb3768c7ae1db3b4fb47d06b14945f7472fd0ae0c6",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-04-battle-medicine-U-ca4ed-paused-original-arrangement-chromium/paused-real-dose-and-original-limits.png",
+    "sha256": "aa7435055d3c6dff06f8d6acca9ea720eb5658793a6971d6080b11cfe8df222b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-04-battle-medicine-U-ffcef--separate-three-second-turn-chromium/encounter-default-clear-summary.png",
+    "sha256": "c6725188f2345059a432bb091f9c7af6cf37bbf07803f59e79371d611a2edee8",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/ui-results/uir35-04-battle-medicine-U-ffcef--separate-three-second-turn-chromium/zero-medicine-paused-real-turn.png",
+    "sha256": "69d4c2ac61cef2cb54d0b8c8c833fd3571ad498797c685244d16564794de2c55",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/package-results/cend06-f02a-opening-respon-126c2-ole-complete-atomic-outcome-chromium/trade-chosen-six-second-stage.png",
+    "sha256": "25a00fe94bc2a6cc5871bc46a467a70337d4b3694e96bd70fc8cb61bbe905cbe",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/package-results/cend06-f02a-opening-respon-126c2-ole-complete-atomic-outcome-chromium/trade-halfway-after-readonly-return.png",
+    "sha256": "06663610e5b8990158fd35d0c759265fb6dbcaa4b73433ae6d2b590413d40d20",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend06-f02a/repair-02/views/trade-halfway-after-readonly-return.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/package-results/cend06-f02a-opening-respon-461e7-ole-complete-atomic-outcome-chromium/leave-chosen-six-second-stage.png",
+    "sha256": "7a0829e41713012020ff3320d6d45f913695c398e9f18d2a2004cbc99f3a161d",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend06-f02a/repair-02/views/leave-chosen-six-second-stage.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/package-results/cend06-f02a-opening-respon-461e7-ole-complete-atomic-outcome-chromium/leave-halfway-after-readonly-return.png",
+    "sha256": "db488e0c8ec0d205e2ede3499e37992db49727609046629b6bfa4a050a148f48",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/package-results/cend06-f02a-opening-respon-73c65-intent-retries-exactly-once-chromium/original-native-saving-medicine-not-yet-given.png",
+    "sha256": "07284e678eb9fdd16037d2b2fa130eefcb5c7bf14f6364c045f0acd0b4adcc8a",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend06-f02a/repair-02/views/original-native-saving-medicine-not-yet-given.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/package-results/cend06-f02a-opening-respon-73c65-intent-retries-exactly-once-chromium/original-tick-quota-chosen-response-unsettled.png",
+    "sha256": "98588e5ac807d7840c239618cf3251ebc9fae0b1311ca3fe2cd3d798eaf0bb00",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend06-f02a/repair-02/views/original-tick-quota-chosen-response-unsettled.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/package-results/cend06-f02a-opening-respon-b0d04--before-full-resumed-choice-chromium/other-page-sees-original-choice-without-own-clock.png",
+    "sha256": "a25b306a3540f137c0179e5987757e87f41d5350634deaa0cb628f6541c7d96f",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend06-f02a/repair-02/views/other-page-sees-original-choice-without-own-clock.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/package-results/cend06-f02a-opening-respon-b0d04--before-full-resumed-choice-chromium/paused-trade-still-only-intention.png",
+    "sha256": "b2209e81df6e8dc9eb7d7f676d39167dc5e84754c38a29287c3dea8d28488b62",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend06-f02a/repair-02/views/paused-trade-still-only-intention.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/package-results/cend06-f02a-opening-respon-dd44f-ole-complete-atomic-outcome-chromium/help-chosen-six-second-stage.png",
+    "sha256": "ea4a3a5173f11f9363b462b95efac5450ff6119ee3fce3c37d413f51df761063",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend06-f02a/repair-02/views/help-chosen-six-second-stage.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/cend06-f02a/repair-02/package-results/cend06-f02a-opening-respon-dd44f-ole-complete-atomic-outcome-chromium/help-halfway-after-readonly-return.png",
+    "sha256": "31224b6bc776447e424222f81b955deb62170c242d4479aec0baed8c5b14e68c",
+    "actuallyViewed": false,
+    "selectedView": null
+  }
+]
