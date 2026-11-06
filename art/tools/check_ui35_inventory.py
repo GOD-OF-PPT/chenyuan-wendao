@@ -1,3 +1,4 @@
+from uir35_03_inventory import prior_uir3503_bytes
 """Exact control-only miniature placement and proven unused slash definitions; old receipt rules stay pinned."""
 import hashlib,json,re
 from pathlib import Path
@@ -61,6 +62,7 @@ MANIFEST={'format': 'chenyuan-check-ui35-control-feedback',
                       'goal-4/amendments/2026-11-06-check-ui35-input.md',
                       'goal-4/evidence/check-uir35-01-02-cend05/dead-style-removal.json']}
 def prior_check_ui35_bytes(path,raw):
+ raw=prior_uir3503_bytes(path,raw)
  names=[n for n in MANIFEST['files']if Path(n).name==Path(path).name]
  if not names:return raw
  n=names[0];marker=b"control=family==='dialogue'"if n.endswith('.vue')else b'.motion-dialogue[data-variant=control]'

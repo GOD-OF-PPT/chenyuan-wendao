@@ -1,0 +1,122 @@
+{
+  "selectedFiles": [
+    "uir35-03-progress-hierarchy.spec.ts",
+    "uir35-01-goal-authority.spec.ts",
+    "uir35-02-cultivation-fallback.spec.ts",
+    "check-ui35-feedback.spec.ts",
+    "cultivation-objects.spec.ts",
+    "art11-inventory-stage.spec.ts",
+    "idle-preparation.spec.ts",
+    "ux28-recovery-period.spec.ts",
+    "ux29-recovery-availability.spec.ts",
+    "ux30-primary-copy.spec.ts",
+    "idle-recovery-ui.spec.ts",
+    "idle-recovery-choices.spec.ts",
+    "stage-r1.spec.ts",
+    "cend03-review-observations.spec.ts",
+    "art35-study-rest.spec.ts"
+  ],
+  "environmentAudit": [
+    {
+      "file": "uir35-03-progress-hierarchy.spec.ts",
+      "explicitEnvironmentLines": []
+    },
+    {
+      "file": "uir35-01-goal-authority.spec.ts",
+      "explicitEnvironmentLines": []
+    },
+    {
+      "file": "uir35-02-cultivation-fallback.spec.ts",
+      "explicitEnvironmentLines": [
+        {
+          "line": 55,
+          "text": " const target=info.project.use.baseURL;expect(typeof target).toBe('string');for(const item of cases){const context=await browser.newContext({baseURL:target,viewport:{width:1440,height:900}}),p=await context.newPage();try{const before=await importRecoveryFixture(p,item.game);expect(new URL(p.url()).origin).toBe(new URL(target!).origin);await info.attach('fixture-origin-'+item.id,{body:JSON.stringify({expected:target,a"
+        }
+      ]
+    },
+    {
+      "file": "check-ui35-feedback.spec.ts",
+      "explicitEnvironmentLines": []
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "explicitEnvironmentLines": [
+        {
+          "line": 74,
+          "text": " for(const mode of ['quota','abort'] as const){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage();listen(page);try{const before=await load(page,mortal());await setup(page,'natural');await observe(page);const a=await begin(page),raw=await database(page);await cycleFault(page,mode);await page.clock.fastForward(a.cycleMs);await expect(p"
+        },
+        {
+          "line": 93,
+          "text": " for(const mode of ['system','setting']as const){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900},reducedMotion:mode==='system'?'reduce':'no-preference'}),page=await context.newPage();listen(page);try{await page.route(/\\.(webp|png)(\\?|$)/,r=>r.abort());const before=await load(page,mortal());if(mode==='setting'){await page.getByRole('button',{name:'设置',exact:true"
+        },
+        {
+          "line": 97,
+          "text": " for(const kind of ['goal','trial'] as const){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage();listen(page);try{const before=await load(page,kind==='goal'?caveFixture().game:trialFixture());"
+        },
+        {
+          "line": 117,
+          "text": " for(const [kind,source]of fixtures){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage();listen(page);try{const before=await load(page,source),raw=await database(page);if(kind!=='CHOOSE')await page.getByTestId('breakthrough').click();await picture(page,info,'milestone-gate-'+kind.toLowerCase());expect.soft(await page.getByTestId('mile"
+        }
+      ]
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "explicitEnvironmentLines": [
+        {
+          "line": 26,
+          "text": " listen(page);if(virtual)await useJourneyClock(page);await page.goto('/');await expect(page.locator('.app-shell')).toHaveAttribute('data-font-scale','1');let input=page.getByLabel('导入已有存档',{exact:true});let confirmation:string|null=null;"
+        },
+        {
+          "line": 102,
+          "text": " for(const [index,item]of ['healing_pill','spirit_pill'].entries()){const context=index?await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}):null,p=context?await context.newPage():page;try{const before=await load(p,medicineFixture()),raw=await database(p);expect(before.core.inventory[item]).toBeGreaterThan(0);expect(previewMedicine(before,item)).toBe(true);await openBag(p);awai"
+        },
+        {
+          "line": 126,
+          "text": " for(const [index,mode]of ['system','preference'].entries()){const context=index?await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}):null,p=context?await context.newPage():page;try{await p.emulateMedia({reducedMotion:mode==='system'?'reduce':'no-preference'});let requests=0;await p.route('**/art/v2/items/*-v1.webp',route=>{requests++;return route.fulfill({status:200,contentTyp"
+        }
+      ]
+    },
+    {
+      "file": "idle-preparation.spec.ts",
+      "explicitEnvironmentLines": []
+    },
+    {
+      "file": "ux28-recovery-period.spec.ts",
+      "explicitEnvironmentLines": []
+    },
+    {
+      "file": "ux29-recovery-availability.spec.ts",
+      "explicitEnvironmentLines": []
+    },
+    {
+      "file": "ux30-primary-copy.spec.ts",
+      "explicitEnvironmentLines": []
+    },
+    {
+      "file": "idle-recovery-ui.spec.ts",
+      "explicitEnvironmentLines": []
+    },
+    {
+      "file": "idle-recovery-choices.spec.ts",
+      "explicitEnvironmentLines": []
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "explicitEnvironmentLines": []
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "explicitEnvironmentLines": []
+    },
+    {
+      "file": "art35-study-rest.spec.ts",
+      "explicitEnvironmentLines": []
+    }
+  ],
+  "scope": "Fixed1440x900 font1 singleChromium only; mixed cases must be deferred before execution",
+  "deferredWholeMixedCases": [
+    "ART06-A15 ",
+    "ART11-A8 "
+  ],
+  "originalAssertionsRetained": true
+}

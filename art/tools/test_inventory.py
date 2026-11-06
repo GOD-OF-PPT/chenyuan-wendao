@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3503=ROOT/'art/redesign/uir35-03.json'
+  if uir3503.exists():
+   current=json.loads(uir3503.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],current['path'],current['before'],*current['unchanged']])
   checkui35=ROOT/'art/redesign/check-ui35.json'
   if checkui35.exists():
    current=json.loads(checkui35.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[x['before']for x in current['files'].values()],*current['unchanged']])
@@ -2551,3 +2554,29 @@ class CheckUi35Tests(unittest.TestCase):
    with self.subTest(key=key),self.assertRaises(AssertionError):validate_check_ui35(self.root)
   self.write(LEDGER,MANIFEST);(self.root/LEDGER).unlink()
   with self.assertRaises(AssertionError):validate_check_ui35(self.root)
+
+class Uir3503Tests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_exact_whole_native_stylesheet_inverse_and_original_fallbacks(self):
+  from uir35_03_inventory import MANIFEST,validate_uir3503,prior_uir3503_bytes
+  self.assertEqual(validate_uir3503(ROOT)[1],16577)
+  self.assertEqual(prior_uir3503_bytes(MANIFEST['path'],(ROOT/MANIFEST['path']).read_bytes()),(ROOT/MANIFEST['before']).read_bytes())
+ def test_original_values_timers_and_atomic_writers_cannot_change(self):
+  from uir35_03_inventory import MANIFEST,validate_uir3503
+  for n in ['web/src/CultivationSite.vue','web/src/RecoveryRitual.vue','web/src/activity-clock.ts','web/src/store.ts']:
+   raw=(ROOT/n).read_text();self.write(n,raw+'\n/* unauthorized */')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'UIR35-03'):validate_uir3503(self.root)
+   self.write(n,raw)
+  n=MANIFEST['path'];raw=(ROOT/n).read_text();self.write(n,raw.replace('var(--game-jade,#52796e)','#52796e',1))
+  with self.assertRaises(AssertionError):validate_uir3503(self.root)
+ def test_missing_ledger_corrupt_original_and_scope_inflation_cannot_pass(self):
+  from uir35_03_inventory import MANIFEST,LEDGER,validate_uir3503
+  for key,value in [('userAcceptance',True),('maxAddedBytes',101),('newRasterAssets',1)]:
+   m=copy.deepcopy(MANIFEST);m[key]=value;self.write(LEDGER,m)
+   with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'UIR35-03'):validate_uir3503(self.root)
+  self.write(LEDGER,MANIFEST);(self.root/LEDGER).unlink()
+  with self.assertRaisesRegex(AssertionError,'UIR35-03'):validate_uir3503(self.root)
+  self.write(LEDGER,MANIFEST);self.write(MANIFEST['before'],'lost preserved stylesheet')
+  with self.assertRaisesRegex(AssertionError,'UIR35-03'):validate_uir3503(self.root)

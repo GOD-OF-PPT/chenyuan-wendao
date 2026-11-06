@@ -1,0 +1,63 @@
+{
+  "format": "chenyuan-uir35-03-saved-progress",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "maxAddedBytes": 100,
+  "path": "web/src/style.css",
+  "before": "goal-4/evidence/uir35-03/before/web/src/style.css",
+  "beforeBytes": 16526,
+  "beforeSha256": "5f1c1bdd58ff91debf24606c039780af729957b013a320332f2dc02c73d932a9",
+  "bytes": 16577,
+  "sha256": "9290ad9cb1e75c09222bcb4f6b5e1af427ca5ea77550e1d53e101e7658b15c27",
+  "operations": [
+    [
+      1453,
+      "",
+      "var(--game-base,"
+    ],
+    [
+      1476,
+      "",
+      ")"
+    ],
+    [
+      1556,
+      "",
+      "var(--game-base,"
+    ],
+    [
+      1579,
+      "",
+      ")"
+    ],
+    [
+      1626,
+      "",
+      "var(--game-jade,"
+    ],
+    [
+      1649,
+      "",
+      ")"
+    ]
+  ],
+  "unchanged": {
+    "web/src/App.vue": "9f3f6c4596d9c8d4801e5ff0fecd1f9cda7a0842a13f3083ae4613d58e14e78f",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/CultivationSite.vue": "b39966928306502220b66ebd3a4bd8f6eaae88243fbd306de80a08aa353072d5",
+    "web/src/RecoveryRitual.vue": "9cc10138931c8006053ea658022112ec2edd99f9b63078ab998e5ae3fd02c6f7",
+    "web/src/TrainingActivity.vue": "601e58f6b9edc237031d77337e527e529ac4d619447980bf9e5cddb0b700e4d3",
+    "web/src/ActionExecution.vue": "f01edb8a65e07fd91c0b90519f3e542e9261644564f63bc72f27bc4acafbe5f9",
+    "web/src/immersive-theme.css": "6f55f39540dd49a1708dd585cee61e91ae114441e20fb1d1731f024501288197",
+    "web/src/activity-clock.ts": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+  },
+  "sourceReferences": [
+    "docs/decisions/0121-saved-progress-hierarchy-uir35-03.md",
+    "goal-4/amendments/2026-11-06-uir35-03-input.md",
+    "goal-4/research/uir35-03-sources.json"
+  ]
+}

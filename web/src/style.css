@@ -22,9 +22,9 @@ b{font-weight:500;font-variant-numeric:tabular-nums}
 .stat{margin:16px 0}
 .stat label{font-size:var(--ui14);display:flex;justify-content:space-between;margin-bottom:7px}
 .stat b{font-size:var(--ui14)}
-progress{display:block;width:100%;height:5px;border:0;background:#dcdccc;border-radius:10px;overflow:hidden}
-progress::-webkit-progress-bar{background:#dcdccc}
-progress::-webkit-progress-value{background:#52796e}
+progress{display:block;width:100%;height:5px;border:0;background:var(--game-base,#dcdccc);border-radius:10px;overflow:hidden}
+progress::-webkit-progress-bar{background:var(--game-base,#dcdccc)}
+progress::-webkit-progress-value{background:var(--game-jade,#52796e)}
 progress::-moz-progress-bar{background:#52796e}
 progress.health::-webkit-progress-value,progress.enemy-health::-webkit-progress-value{background:#a15f55}
 progress.cultivation::-webkit-progress-value{background:#a0874f}

@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-uir35-03-progress-additions",
+  "version": 31,
+  "parentVersion": 30,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 960,
+    "signature": "413930feb1334462718ea809108d894fa3926289efc036b268f8eae996c0ddd8"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir35-03-progress-hierarchy.spec.ts",
+      "title": "UIR35-03-P1 actual mortal cultivation keeps zero and half saved fill through quota pause reload and two complete original periods before a full bar",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir35-03-progress-hierarchy.spec.ts",
+      "title": "UIR35-03-P2 injured actual HP and MP retain their saved partial bars while native rest saving is held and brighten fully only after its original thirty-second transaction",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir35-03-progress-hierarchy.spec.ts",
+      "title": "UIR35-03-P3 a single explicitly budgeted pill keeps numerical partial recovery and its full six-second saved outcome across readonly viewing and refresh",
+      "projectName": "chromium"
+    }
+  ]
+}

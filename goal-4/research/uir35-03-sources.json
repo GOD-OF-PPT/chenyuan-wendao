@@ -1,0 +1,17 @@
+{
+  "readDate": "2026-11-06",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "scope": "hierarchy and minimal visual noise",
+      "inference": "bright saved fill over subdued uncompleted track"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/102",
+      "scope": "contrast of important visual information; additional numeric labels",
+      "inference": "sample rendered fill/track; preserve exact number and label; not accessibility certification"
+    }
+  ],
+  "compatibilityPerformance": "paused",
+  "userAcceptance": false
+}
