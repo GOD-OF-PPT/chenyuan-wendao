@@ -3,8 +3,10 @@ import {computed,onMounted,onUnmounted,ref,watch} from 'vue';
 import type { Game } from '../../src/full/types.ts';
 import { scenePresentation } from './scene-presentation';
 import AssetImage from './AssetImage.vue';
+import TravelPassage from './TravelPassage.vue';
 import {SCENE_CROPS,TERRACE_ART,terraceViewport,sceneAssetPath} from './assets';
-const props = defineProps<{ game: Game; eyebrow: string; title: string; description: string; battleStage?:boolean; meditation?:boolean; withAction?:boolean }>();
+const props = defineProps<{ game: Game; eyebrow: string; title: string; description: string; battleStage?:boolean; meditation?:boolean; withAction?:boolean;passage?:boolean }>();
+const emit=defineEmits<{inspect:[Event]}>();
 const scene = computed(() => scenePresentation(props.game));
 const scenePath=computed(()=>sceneAssetPath(scene.value,props.meditation));
 const root=ref<HTMLElement>(),artReady=ref(false),size=ref({width:0,height:0});let observer:ResizeObserver|undefined;
@@ -53,6 +55,7 @@ const photoBox=computed(()=>{const box=terraceViewport(size.value.width,size.val
     <div class="scene-vignette" aria-hidden="true"></div>
     <div class="scene-copy"><span v-if="!battleStage&&!meditation" class="eyebrow">{{eyebrow}}</span><h2>{{title}}</h2><p v-if="!battleStage&&!meditation">{{description}}</p></div>
     <span class="scene-seal" aria-hidden="true">问<br>道</span>
+    <TravelPassage v-if="passage" :game="game" @inspect="emit('inspect',$event)"/>
     <slot/>
   </section>
 </template>

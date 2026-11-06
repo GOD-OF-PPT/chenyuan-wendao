@@ -1,3 +1,4 @@
+from cend06_f02b_inventory import prior_f02b_bytes
 """Exact readonly response inverse; original writers and proof unchanged."""
 import hashlib,json,re
 from pathlib import Path
@@ -66,7 +67,11 @@ MANIFEST={'format': 'chenyuan-cend06-f02a-opening-response',
  'sourceReferences': ['docs/decisions/0125-opening-response-cend06-f02a.md',
                       'goal-4/amendments/2026-11-06-cend06-f02a-input.md',
                       'goal-4/research/cend06-f02a-sources.json']}
+def f02a_parent(path,raw):
+ try:return prior_f02b_bytes(path,raw)
+ except AssertionError as error:raise AssertionError('F02A parent: '+str(error))from error
 def prior_f02a_bytes(path,raw):
+ raw=f02a_parent(path,raw)
  matches=[n for n in MANIFEST['files']if Path(n).name==Path(path).name]
  if not matches:return raw
  row=MANIFEST['files'][matches[0]]
@@ -89,7 +94,7 @@ def validate_f02a(root):
   return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'F02A immutable scope and original caps'
  for n,row in MANIFEST['files'].items():
-  raw=local(n).read_bytes();old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'F02A current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'F02A original source';assert prior_f02a_bytes(n,raw)==old,'F02A complete inverse'
+  raw=f02a_parent(n,local(n).read_bytes());old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'F02A current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'F02A original source';assert prior_f02a_bytes(n,raw)==old,'F02A complete inverse'
   if n.endswith('App.vue'):assert raw.split(b'</script>')[0].replace(b"\nimport OpeningResponse from './OpeningResponse.vue';",b'')==old.split(b'</script>')[0],'F02A only parent display import'
  for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'F02A original rules clocks stores proof and gate'
  total=0

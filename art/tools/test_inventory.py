@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  f02b=ROOT/'art/redesign/cend06-f02b.json'
+  if f02b.exists():
+   current=json.loads(f02b.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[x['before']for x in current['files'].values()],*current['added'],*current['unchanged']])
   f02a=ROOT/'art/redesign/cend06-f02a.json'
   if f02a.exists():
    current=json.loads(f02a.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[x['before']for x in current['files'].values()],*current['added'],*current['unchanged']])
@@ -2660,3 +2663,29 @@ class F02aTests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'F02A'):validate_f02a(self.root)
   self.write(LEDGER,MANIFEST);self.write(next(iter(MANIFEST['files'].values()))['before'],'lost original')
   with self.assertRaisesRegex(AssertionError,'F02A'):validate_f02a(self.root)
+
+class F02bTests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_f02b_complete_scene_inverse_and_original_callbacks(self):
+  from cend06_f02b_inventory import MANIFEST,validate_f02b,prior_f02b_bytes
+  self.assertLessEqual(validate_f02b(ROOT)[1],8500)
+  for n,row in MANIFEST['files'].items():self.assertEqual(prior_f02b_bytes(n,(ROOT/n).read_bytes()),(ROOT/row['before']).read_bytes())
+  n='web/src/App.vue';raw=(ROOT/n).read_text();self.write(n,raw.replace('@inspect="viewActivityPlan"','@inspect="act"',1))
+  with self.assertRaisesRegex(AssertionError,'F02B'):validate_f02b(self.root)
+ def test_f02b_cannot_borrow_clock_or_remove_scene_authority(self):
+  from cend06_f02b_inventory import MANIFEST,validate_f02b
+  for n in ['web/src/TravelPassage.vue',*MANIFEST['unchanged']]:
+   raw=(ROOT/n).read_text();self.write(n,raw+'\n/* unauthorized */')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'F02B'):validate_f02b(self.root)
+   self.write(n,raw)
+ def test_f02b_larger_caps_missing_ledger_or_changed_original_are_rejected(self):
+  from cend06_f02b_inventory import MANIFEST,LEDGER,validate_f02b
+  for k,v in [('maxAddedNativeBytes',8501),('originalAppCap',159636),('originalParentDeltaCap',2401),('maxUncommittedProgress',1),('userAcceptance',True)]:
+   m=copy.deepcopy(MANIFEST);m[k]=v;self.write(LEDGER,m)
+   with self.subTest(key=k),self.assertRaisesRegex(AssertionError,'F02B'):validate_f02b(self.root)
+  self.write(LEDGER,MANIFEST);(self.root/LEDGER).unlink()
+  with self.assertRaisesRegex(AssertionError,'F02B'):validate_f02b(self.root)
+  self.write(LEDGER,MANIFEST);self.write(next(iter(MANIFEST['files'].values()))['before'],'lost original')
+  with self.assertRaisesRegex(AssertionError,'F02B'):validate_f02b(self.root)
