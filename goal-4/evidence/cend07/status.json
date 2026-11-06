@@ -1,0 +1,115 @@
+{
+  "task": "CEND07",
+  "auditCompleted": true,
+  "productionChanged": false,
+  "newFormalCases": 0,
+  "thirdIndependentTaskCompleted": true,
+  "actualFormalUi": 106,
+  "formalFiles": 17,
+  "extraOnlineDiagnosticPassed": 1,
+  "extraReadonlyDiagnosticPassed": 1,
+  "retainedAuthorPremiseFailure": 1,
+  "terminals": {
+    "cend07": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-terminal.json",
+      "sha256": "7b63cb2306a2f7cf3041a1a06409166cc0787bb3d51ec3e3ba8891e739f8648c",
+      "value": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 5186,
+        "runtime": "2d3ac45e260c62a3888ca8097cac4fddcc5041df8a5e66c4c2afe0153a845556",
+        "stats": {
+          "startTime": "2026-11-06T17:18:29.803Z",
+          "duration": 542588.177,
+          "expected": 106,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 106,
+        "retried": [],
+        "reportSha256": "5fd5835045c2687624569be8c0a04cfe5f8c1a0da40dab9fb9494313b0ac33b8"
+      }
+    },
+    "cend07-online": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-online-terminal.json",
+      "sha256": "59c4b1cbfbc5d01577a328942130001c4531aa1680254d677b84d501dd524fbe",
+      "value": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 5186,
+        "runtime": "2d3ac45e260c62a3888ca8097cac4fddcc5041df8a5e66c4c2afe0153a845556",
+        "stats": {
+          "startTime": "2026-11-06T17:20:11.431Z",
+          "duration": 52740.618,
+          "expected": 1,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 1,
+        "retried": [],
+        "reportSha256": "2e72b69e044412252846be54cb908d70b8883f329db4972ce217a803983f0cfd"
+      }
+    }
+  },
+  "production": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+  "testConsumer": "ad12194567e0988b2f64b7a58c0f6596e51245b3",
+  "runtime": "2d3ac45e260c62a3888ca8097cac4fddcc5041df8a5e66c4c2afe0153a845556",
+  "runtimeFiles": 341,
+  "selectedLocalClosureFiles": 67,
+  "publishedDependencyFiles": 1981,
+  "visual": {
+    "generated": 267,
+    "formalGenerated": 254,
+    "onlineGenerated": 8,
+    "correctedReadonlyGenerated": 4,
+    "retainedInitialDiagnosticFailureGenerated": 1,
+    "actuallyViewed": 47,
+    "uniqueActuallyViewedPngHashes": 47,
+    "notActuallyViewed": 220,
+    "selected": 57,
+    "selectedInheritedOnly": 10,
+    "selectedDirectOrExactPriorPixel": 57,
+    "maxImagesPerToolResult": 2,
+    "truncated13And14NotCountedUntilSuccessfulReview": true
+  },
+  "openFindings": [
+    "CEND07-F01",
+    "CEND07-F02",
+    "CEND07-F03",
+    "CEND07-F04"
+  ],
+  "protected13Exact": true,
+  "package": {
+    "path": "artifacts/goal-4/cend06-f02b/cend06-f02b-preview-6d641be.zip",
+    "bytes": 10106556,
+    "sha256": "c0d5d198e7d4f86e3b97bdbf10d3c7d5f6e1a7cc99901687b56ed43cb4351ed6",
+    "production": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+    "formalCandidate": false
+  },
+  "preview": "http://127.0.0.1:56919/",
+  "prior200and729OnlyOriginalIdentity": true,
+  "noNewBuildPackageInstall": true,
+  "fullMatrix": {
+    "UI": 977,
+    "storage": 415,
+    "normal": 32,
+    "total": 1424,
+    "executed": false
+  },
+  "compatibilityEnvironmentPerformance": "paused",
+  "formalCandidate": false,
+  "overallUiArtAccepted": false,
+  "humanAccepted": false,
+  "goalComplete": false,
+  "nextOnlyTask": "CHECK-CEND06-F02A-F02B-CEND07"
+}

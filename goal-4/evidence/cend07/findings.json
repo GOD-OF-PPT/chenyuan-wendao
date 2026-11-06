@@ -1,0 +1,316 @@
+{
+  "task": "CEND07",
+  "scope": "Current same-runtime author review; four P2 UI/art debts, not four gameplay/save bugs. No production changes this round.",
+  "findings": [
+    {
+      "id": "CEND07-F01",
+      "priority": "P2",
+      "kind": "forecast-state-wording",
+      "title": "未开始的停止预告仍使用已完成/已抵达/当前库存已达标的完成口吻",
+      "seen": [
+        "库存0、待安排目标4，预告为“预计停止：当前库存已达到安排目标，取材停止”",
+        "行旅确认前，预告为“已抵达目的地，本次行旅结束”",
+        "未开始研习，预告为“已完成本次安排的有限次数”"
+      ],
+      "reproduce": "只选取材目标4而实际库存0、另一目的地、或未掌握功法加入待研习清单，查看预估；不开始。",
+      "impact": "预计前缀存在，未伪造Game或奖励；完成口吻与当前状态冲突，增加理解成本。",
+      "owners": [
+        {
+          "file": "web/src/SourcePlanner.vue",
+          "line": 42
+        },
+        {
+          "file": "web/src/AdventurePlanner.vue",
+          "line": 65
+        },
+        {
+          "file": "web/src/LearningPlanner.vue",
+          "line": 47
+        },
+        {
+          "file": "web/src/activity-view.ts",
+          "line": 11
+        }
+      ],
+      "pixels": [
+        {
+          "name": "SOURCE-actual-decision",
+          "raw": "artifacts/goal-4/cend06-f02b/consumer/cend07-results/cend03-review-observations-04687--pre-action-time-for-review-chromium/SOURCE-actual-decision.png",
+          "pngSha256": "e1d0149e918aaf0a39c8356d67bf53f8e412a51e1a572248e8f90a7e0b0b2ce3",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/09-SOURCE-actual-decision.jpg",
+          "viewSha256": "ec14746109de62198f12ea9a3d877f784a230fb941a705ab821cb0870432277e",
+          "actuallyViewed": true
+        },
+        {
+          "name": "LEARN-actual-decision",
+          "raw": "artifacts/goal-4/cend06-f02b/consumer/cend07-results/cend03-review-observations-3f997--pre-action-time-for-review-chromium/LEARN-actual-decision.png",
+          "pngSha256": "65060565e7c079b8a00367d768f5562a772f57f263792228308daa040576a986",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/14-LEARN-actual-decision.jpg",
+          "viewSha256": "0e212c34d83d37d2d5872ecb1b69fa0720cfb13d5c7988fd92dc93e1c6420035",
+          "actuallyViewed": true
+        },
+        {
+          "name": "TRAVEL-actual-decision",
+          "raw": "artifacts/goal-4/cend06-f02b/consumer/cend07-results/cend03-review-observations-52151--pre-action-time-for-review-chromium/TRAVEL-actual-decision.png",
+          "pngSha256": "8359cf8b77e8e6fa2a32eaa449ca99d6c78cfe188ea29c4dc2e56b38ceaa5457",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/19-TRAVEL-actual-decision.jpg",
+          "viewSha256": "8bdabee96c44d3ee1191bc547e46aefacba13a035c95a279b1a094d7b95c31d2",
+          "actuallyViewed": true
+        },
+        {
+          "name": "failed-first-period-no-saved-yield",
+          "raw": "artifacts/goal-4/cend06-f02b/consumer/cend07-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/failed-first-period-no-saved-yield.png",
+          "pngSha256": "faa9ac27410e90da9f2afd6ee326e61c8ee47b0f3fcc77a6ee84ae9142f2aad1",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/44-failed-first-period-no-saved-yield.jpg",
+          "viewSha256": "41a418fc59e4bdbc6042eb3d59074c73e7ec61c8994cbe5d03a102e47a36fdd4",
+          "actuallyViewed": true
+        }
+      ],
+      "fixBoundary": "只在预估显示域按正式reason.code和玩法映射未来条件，如库存达4时停手、抵达后停手；真正stopReason/回执/历史proof/预测器/规则不改。实际失败与已停止成果不可走未来口吻。保当前数量、单周期、累计预算/保留/目标、原重试及原字节预算。",
+      "validationNext": "独立合同后在综合任务核无活动、首轮、暂停、保存中、失败、真正停止与历史等域，全Game/DB、原子保存/读秒及当前完整相关文件/核心/资源检查。",
+      "status": "open-not-implemented",
+      "production": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+      "consumer": "ad12194567e0988b2f64b7a58c0f6596e51245b3",
+      "runtime": "2d3ac45e260c62a3888ca8097cac4fddcc5041df8a5e66c4c2afe0153a845556",
+      "sourcePins": {
+        "web/src/SourcePlanner.vue": "7b433cef8f834a2ae98ff63dbca9339c9d5012385b6cb69ca7ed21199255fac5",
+        "web/src/AdventurePlanner.vue": "19f1eacdc32f2bf7e03d76de4b344a26c5758f5435e62844fdc22d77edb5ac9f",
+        "web/src/LearningPlanner.vue": "e7667d343e251cccb822ccaf742a61ff605ffa7efdb841b4c518f65984424bd4",
+        "web/src/activity-view.ts": "020a7580936a2019a78e766cb3c1c3863666c48fe4e3707a6b60b8abd74cd5a3"
+      },
+      "humanAcceptance": false
+    },
+    {
+      "id": "CEND07-F02",
+      "priority": "P2",
+      "kind": "high-frequency-information-hierarchy",
+      "title": "常用功法/器物舞台重复解释查看与执行边界，分散主要决定",
+      "seen": [
+        "已装配功法同屏：仅查看、只查看卷面、已掌握无需再次研习、此法已在当前心法、静心展读",
+        "炼器标题、器谱状态、底部授权与按钮旁多次解释择器/开始/不自动认主；实际授权与持有状态仍必须保留"
+      ],
+      "reproduce": "从八入口打开功法当前已装配经卷；或合法金丹炼器fixture选择未炼成器物，不展开低频手记。",
+      "impact": "功能可达且真实，但安全合同式重复文字抢占玩法信息，扫描成本高；不能缩字或删真实成本/失败原因。",
+      "owners": [
+        {
+          "file": "web/src/LearningPlanner.vue",
+          "line": 77
+        },
+        {
+          "file": "web/src/LearningPlanner.vue",
+          "line": 82
+        },
+        {
+          "file": "web/src/JadeEngraving.vue",
+          "line": 67
+        },
+        {
+          "file": "web/src/JadeStudyScene.vue",
+          "line": 25
+        },
+        {
+          "file": "web/src/RelicAtelier.vue",
+          "line": 65
+        },
+        {
+          "file": "web/src/RelicAtelier.vue",
+          "line": 71
+        }
+      ],
+      "pixels": [
+        {
+          "name": "entry-hub-skills",
+          "raw": "artifacts/goal-4/cend06-f02b/consumer/cend07-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-skills.png",
+          "pngSha256": "9cca9970ca73a7bb6f69c13baf8285e388707d97c659f2a4b1b0402287861adf",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/03-entry-hub-skills.jpg",
+          "viewSha256": "48febfeb50b94387414380c5b0bd59c11afb5ea529a7247ef964463150acdf7a",
+          "actuallyViewed": true
+        },
+        {
+          "name": "LEARN-actual-decision",
+          "raw": "artifacts/goal-4/cend06-f02b/consumer/cend07-results/cend03-review-observations-3f997--pre-action-time-for-review-chromium/LEARN-actual-decision.png",
+          "pngSha256": "65060565e7c079b8a00367d768f5562a772f57f263792228308daa040576a986",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/14-LEARN-actual-decision.jpg",
+          "viewSha256": "0e212c34d83d37d2d5872ecb1b69fa0720cfb13d5c7988fd92dc93e1c6420035",
+          "actuallyViewed": true
+        },
+        {
+          "name": "FORGE-actual-decision",
+          "raw": "artifacts/goal-4/cend06-f02b/consumer/cend07-results/cend03-review-observations-5f06d--pre-action-time-for-review-chromium/FORGE-actual-decision.png",
+          "pngSha256": "d3b917ad82338df7911975400c184e34f155067c1c20e8ce2f65fd343dea4281",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/22-FORGE-actual-decision.jpg",
+          "viewSha256": "bfb10f525b5437e84782aee5ff1f22ad5b4200814b3fc8341faae22247a9ccb3",
+          "actuallyViewed": true
+        }
+      ],
+      "fixBoundary": "后续先按功法已掌握/待研习/运行/失败逐态收敛重复说明；常驻对象、作用、成本和一个正确主动作，完整原安排/规则按需查看。器物另行逐项，不批量删只读/安全提示；设置、危险确认、实质成本和不可逆后果不按少字目标删减。保焦点/缓存/阅读与写权。",
+      "validationNext": "同对象/目录/比较/完整参数回填、普通周期不清阅读、原焦点与公开写链、实际像素/主动作和完整信息。",
+      "status": "open-not-implemented",
+      "production": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+      "consumer": "ad12194567e0988b2f64b7a58c0f6596e51245b3",
+      "runtime": "2d3ac45e260c62a3888ca8097cac4fddcc5041df8a5e66c4c2afe0153a845556",
+      "sourcePins": {
+        "web/src/LearningPlanner.vue": "e7667d343e251cccb822ccaf742a61ff605ffa7efdb841b4c518f65984424bd4",
+        "web/src/JadeEngraving.vue": "f08b03fa397ec566a6ff51ebeb181c7a93e8e6e7974f0c7c6397bd36e7d6814b",
+        "web/src/JadeStudyScene.vue": "750a2ced6b1f307e42b44417b430a0069af792c286e324474c412b5f731453d0",
+        "web/src/RelicAtelier.vue": "3e9260aed7c6050d220faf3ba8256d0b5f595f2a5418f732e4014d9cff64e5f2"
+      },
+      "humanAcceptance": false
+    },
+    {
+      "id": "CEND07-F03",
+      "priority": "P2",
+      "kind": "art-consistency",
+      "title": "行旅线描旅人与绘画场景不统一，大块图板仍显示意工具感",
+      "seen": [
+        "当前实钟/半程行旅的旅人为圆头衣摆线条SVG，其它玩法主体为有材质的古风绘画",
+        "路线/实际6秒读秒/暂停保存已真实接通，不提前抵达；本项为美术欠账"
+      ],
+      "reproduce": "正常新档回应后选择听雨洞府，观察6秒行旅；或同源半程/暂停/保存中合法fixture。",
+      "impact": "状态清楚，但画面像路线进度板，尚欠用户要求的沉浸游戏感；作者像素艺术判断，非功能故障或行业硬值认证。",
+      "owners": [
+        {
+          "file": "web/src/TravelPassage.vue",
+          "line": 27
+        },
+        {
+          "file": "web/src/travel-passage.css",
+          "line": 17
+        }
+      ],
+      "pixels": [
+        {
+          "name": "cave-departure-halfway",
+          "raw": "artifacts/goal-4/cend06-f02b/consumer/cend07-results/cend06-f02b-travel-passage-cf450-out-executing-another-route-chromium/cave-departure-halfway.png",
+          "pngSha256": "d93b0df69c847b83af72ba6b817cc315cfb9ce3ecef5df64ba436d02e9397532",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/41-cave-departure-halfway.jpg",
+          "viewSha256": "03f14ba8039aa1ea555bd8cf03b3dc7f1c2886c77a3abdcd203e31251a6ac46e",
+          "actuallyViewed": true
+        },
+        {
+          "name": "native-saving-has-not-arrived",
+          "raw": "artifacts/goal-4/cend06-f02b/consumer/cend07-results/cend06-f02b-travel-passage-eb96b-vel-retry-saves-one-arrival-chromium/native-saving-has-not-arrived.png",
+          "pngSha256": "3eff5355aadab6ff3ac8b875f68573ba7d5607ebcb726626f41c12484f828686",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/42-native-saving-has-not-arrived.jpg",
+          "viewSha256": "35f671d1c6bcf342fbbd947493b52c2d2aa3beb13015fa5bb72c493208fb2eb1",
+          "actuallyViewed": true
+        },
+        {
+          "name": "paused-route-keeps-destination-not-arrival",
+          "raw": "artifacts/goal-4/cend06-f02b/consumer/cend07-results/cend06-f02b-travel-passage-6493a-xplicit-resumed-six-seconds-chromium/paused-route-keeps-destination-not-arrival.png",
+          "pngSha256": "4f485074dceb099a0b2bf5d378d36b695c7a1840f59b650732be45d1941bdb68",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/43-paused-route-keeps-destination-not-arrival.jpg",
+          "viewSha256": "0180cf0ae641a0134ae79979f44c5ef333ab1b5c7b9f46ec562630561ef91474",
+          "actuallyViewed": true
+        },
+        {
+          "name": "normal-trip-real-running",
+          "raw": "artifacts/goal-4/cend06-f02b/consumer/cend07-online-results/cend05-online-observation--582fd-without-importing-a-fixture-chromium/normal-trip-real-running.png",
+          "pngSha256": "56f47c0ce1440a0b1f49ff908a8af6f4a729bf47ff3b570f9758a6d484ad2ff5",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/56-normal-trip-real-running.jpg",
+          "viewSha256": "934aaf15170ec821575a7cdcee2c7c7c8f38f406dbfa2223946b1b55143726f2",
+          "actuallyViewed": true
+        }
+      ],
+      "fixBoundary": "独立任务先评估复用现有同风格立绘的真实构图，必要位图沿imagegen/资产证据；保路线示意、真owner/id/generation时钟、提交前94%上限、旧地点到原子确认才切、回看/暂停/8入口/原预算，不造距离、等待或收益。",
+      "validationNext": "各目的地运行/暂停/保存/失败与隐藏/接管像素及全Game/原子证明，不以SVG/CSS存在或按钮命中冒美术通过。",
+      "status": "open-not-implemented",
+      "production": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+      "consumer": "ad12194567e0988b2f64b7a58c0f6596e51245b3",
+      "runtime": "2d3ac45e260c62a3888ca8097cac4fddcc5041df8a5e66c4c2afe0153a845556",
+      "sourcePins": {
+        "web/src/TravelPassage.vue": "3a9c8b2e671e82e58d60135fa253fd1bb7174a39f9ac629d2957ff2873e53f71",
+        "web/src/travel-passage.css": "3d8e598154392104a1f2e197a675f03f1e50564decaa28abeed4ee721d506b46"
+      },
+      "humanAcceptance": false
+    },
+    {
+      "id": "CEND07-F04",
+      "priority": "P2",
+      "kind": "mainline-preparation-art-and-decision-hierarchy",
+      "title": "筑基筹备仍以放大通用图标和等权卡片组织，核心物件与缺口表现偏弱",
+      "seen": [
+        "洞府已有丹药冷胚；打开完整筹备后为通用金线瓶与四张同权材料卡",
+        "来源页放大叶图标、主要区域大量留白，购买替代仍是数字卡；来源功能真实可达"
+      ],
+      "reproduce": "合法炼气修为1000/1000、筑基丹0、40灵石fixture；cave-object-inspect→prepare-source-herb→prepare-back→prepare-purchase-route，只读查看。",
+      "impact": "本轮未复现筹备来源功能断链，但下一步仍靠读清单理解，主线美术/交互像工作台；fixture不证明正常成长或用户理解。",
+      "owners": [
+        {
+          "file": "web/src/PreparationPanel.vue",
+          "line": 30
+        },
+        {
+          "file": "web/src/PreparationPanel.vue",
+          "line": 35
+        },
+        {
+          "file": "web/src/GoalBoard.vue",
+          "line": 14
+        },
+        {
+          "file": "web/src/GoalBoard.vue",
+          "line": 36
+        }
+      ],
+      "pixels": [
+        {
+          "name": "qi-full-missing-pill-main",
+          "raw": "artifacts/goal-4/cend07/preparation-review-02/results/review-CEND07-diagnostic-l-9f459-ly-mainline-and-recipe-gaps-chromium/qi-full-missing-pill-main.png",
+          "pngSha256": "ee0f29bffdbf098ed36c13022c4da1c89897363125624e8707dc2d056b1d3184",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/45-qi-full-missing-pill-main.jpg",
+          "viewSha256": "07e102a82e3a0ba3b69d2f6a78297edce8df3b69cca6465e8a8e3c178d137da1",
+          "actuallyViewed": true
+        },
+        {
+          "name": "qi-full-pill-preparation",
+          "raw": "artifacts/goal-4/cend07/preparation-review-02/results/review-CEND07-diagnostic-l-9f459-ly-mainline-and-recipe-gaps-chromium/qi-full-pill-preparation.png",
+          "pngSha256": "528bada8be6dc5c0154e793bb2efd9fb54801415394f4326eaf28f2c17a6d015",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/46-qi-full-pill-preparation.jpg",
+          "viewSha256": "aa0719b63ae18e9e11806a066d2a0e04bc66775352ec50814cece4f57a8a49af",
+          "actuallyViewed": true
+        },
+        {
+          "name": "qi-herb-sources-readonly",
+          "raw": "artifacts/goal-4/cend07/preparation-review-02/results/review-CEND07-diagnostic-l-9f459-ly-mainline-and-recipe-gaps-chromium/qi-herb-sources-readonly.png",
+          "pngSha256": "1d927bb724d70c00546d1897838503ca1fd295473a0e909ccc3cc1ad3d9bc70d",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/47-qi-herb-sources-readonly.jpg",
+          "viewSha256": "f13d5a05b7001ac67255258bd1ad443213927e38a7c25fbb26d125ada1cba46f",
+          "actuallyViewed": true
+        },
+        {
+          "name": "qi-pill-purchase-alternative",
+          "raw": "artifacts/goal-4/cend07/preparation-review-02/results/review-CEND07-diagnostic-l-9f459-ly-mainline-and-recipe-gaps-chromium/qi-pill-purchase-alternative.png",
+          "pngSha256": "bfe65828f6c650da849ec9554a1c8da9ddafb83153a0e15f1f9c5ed2b651ed76",
+          "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07/views/48-qi-pill-purchase-alternative.jpg",
+          "viewSha256": "3f241753750a3d9534dc320978d5370e837477c31aa635030ff745b89fdde712",
+          "actuallyViewed": true
+        }
+      ],
+      "fixBoundary": "后续独立以真实物件/药匣材料位与当前缺口组织，沿现有双路线、所有来源/比较/返回/分页；建议不偷变旅行/采购/制作或自动突破。不删材料、缩字、藏功能或改费用/时长/DB9。",
+      "validationNext": "各境配方、全缺/已齐/已持丹、资金路线/当前与外地、来源分页与只读Game/DB、固定桌面整块像素及命中。",
+      "status": "open-not-implemented",
+      "production": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+      "consumer": "ad12194567e0988b2f64b7a58c0f6596e51245b3",
+      "runtime": "2d3ac45e260c62a3888ca8097cac4fddcc5041df8a5e66c4c2afe0153a845556",
+      "sourcePins": {
+        "web/src/PreparationPanel.vue": "cc8e14c4d44401a5c1173273b1d287511866a3ff5595c6c76bc118f866689d5c",
+        "web/src/GoalBoard.vue": "f9c6164d41fca71125a3ae63b592a8cc3e1c036c6c0e8e47fc2547a1b721d70e"
+      },
+      "humanAcceptance": false
+    }
+  ],
+  "sourcePins": {
+    "web/src/SourcePlanner.vue": "7b433cef8f834a2ae98ff63dbca9339c9d5012385b6cb69ca7ed21199255fac5",
+    "web/src/AdventurePlanner.vue": "19f1eacdc32f2bf7e03d76de4b344a26c5758f5435e62844fdc22d77edb5ac9f",
+    "web/src/LearningPlanner.vue": "e7667d343e251cccb822ccaf742a61ff605ffa7efdb841b4c518f65984424bd4",
+    "web/src/activity-view.ts": "020a7580936a2019a78e766cb3c1c3863666c48fe4e3707a6b60b8abd74cd5a3",
+    "web/src/JadeEngraving.vue": "f08b03fa397ec566a6ff51ebeb181c7a93e8e6e7974f0c7c6397bd36e7d6814b",
+    "web/src/JadeStudyScene.vue": "750a2ced6b1f307e42b44417b430a0069af792c286e324474c412b5f731453d0",
+    "web/src/RelicAtelier.vue": "3e9260aed7c6050d220faf3ba8256d0b5f595f2a5418f732e4014d9cff64e5f2",
+    "web/src/TravelPassage.vue": "3a9c8b2e671e82e58d60135fa253fd1bb7174a39f9ac629d2957ff2873e53f71",
+    "web/src/travel-passage.css": "3d8e598154392104a1f2e197a675f03f1e50564decaa28abeed4ee721d506b46",
+    "web/src/PreparationPanel.vue": "cc8e14c4d44401a5c1173273b1d287511866a3ff5595c6c76bc118f866689d5c",
+    "web/src/GoalBoard.vue": "f9c6164d41fca71125a3ae63b592a8cc3e1c036c6c0e8e47fc2547a1b721d70e"
+  }
+}

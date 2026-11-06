@@ -1,0 +1,54 @@
+{
+  "preparation": {
+    "preparation-review-01": {
+      "report": "artifacts/goal-4/cend07/preparation-review-01/report.json",
+      "reportSha256": "0cbdbeb6dea5a0b231bda5ced06053eafa7b73a983548c64fe7a2dc2bc10d31d",
+      "stats": {
+        "startTime": "2026-11-06T17:22:55.790Z",
+        "duration": 13534.519,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "testSource": "artifacts/goal-4/cend07/preparation-review-01/review.spec.ts",
+      "testSha256": "27a556d30c6164b8e469ae7b0c0d1b50ac817810f3f4ce2ee61d3314b46f5f38",
+      "config": "artifacts/goal-4/cend07/preparation-review-01/playwright.config.mjs",
+      "configSha256": "5271185a81a5e14901cf0ce1c5a9d3d15ee69c95dc95aa816e487a14ccdceac3"
+    },
+    "preparation-review-02": {
+      "report": "artifacts/goal-4/cend07/preparation-review-02/report.json",
+      "reportSha256": "3559221dc6ef59bfab84a4b5a3da7292708de0b4f71e6f64a31b291fee2076cd",
+      "stats": {
+        "startTime": "2026-11-06T17:29:59.527Z",
+        "duration": 4677.098,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "testSource": "artifacts/goal-4/cend07/preparation-review-02/review.spec.ts",
+      "testSha256": "ed4020166eb74da8f489596233e979ccf3934f88323c414e971f6e102866c470",
+      "config": "artifacts/goal-4/cend07/preparation-review-02/playwright.config.mjs",
+      "configSha256": "89fd5fc0b098e8f19ddb16c1b904a26d01ae847418d2862d74eb1d81c3239231"
+    }
+  },
+  "firstFailureMeaning": "Author expected legacy goal-panel; public cave entry correctly renders preparation-catalogue. Original failure/report/PNG retained. Corrected diagnostic passed; not a product repair/new formal case.",
+  "metadataReadFailures": [
+    {
+      "script": "artifacts/goal-4/cend07/final-readonly.mjs",
+      "sha256": "97511c67362ce9e5daf82354f1a3fc85190ec0d2f5cd6d6ced00eac4221e8377",
+      "failure": "extra relative parent; module not found before checks/output"
+    },
+    {
+      "script": "artifacts/goal-4/cend07/final-readonly-v2.mjs",
+      "sha256": "838dcd16b29723c045d387426b65650be357ca239126596a3d2f60ca61c4b207",
+      "failure": "git quoted non-ASCII history paths; no final report"
+    },
+    {
+      "failure": "visual metadata aggregation expected prior pngSha256 instead of actual sha256; failed before visual inventory write; corrected by exact prior sha256 plus raw file hash, no alias in production/proof"
+    }
+  ],
+  "finalReadonly": "goal-4/evidence/cend07/final-readonly.json",
+  "notProductFailures": true
+}

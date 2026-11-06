@@ -1,0 +1,201 @@
+{
+  "task": "CEND07",
+  "production": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+  "consumer": {
+    "head": "ad12194567e0988b2f64b7a58c0f6596e51245b3",
+    "source": "ad12194567e0988b2f64b7a58c0f6596e51245b3",
+    "tree": "881306797b0b290bf77f8ca4faaa4b3dd801942d",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "2d3ac45e260c62a3888ca8097cac4fddcc5041df8a5e66c4c2afe0153a845556",
+  "runtimeFiles": 341,
+  "selectedCompleteFormalFiles": 17,
+  "selectedWithOnlineFiles": 18,
+  "localClosureFiles": 67,
+  "publishedDependencies": 1981,
+  "noInstallBuildOrPackageThisRound": true,
+  "reusedProducerEvidence": {
+    "record": "goal-4/evidence/cend06-f02b/status.json",
+    "sha256": "2f59a1acb74287a948715dc41940c614af72db9dd02abf5c9ef2e3fd08d1183e",
+    "node200": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+    "resources729": "6d641bee35ab86ba8bf4b510b3e9b80f11c93a5f",
+    "consumerTypeBuild": "ad12194567e0988b2f64b7a58c0f6596e51245b3",
+    "fullCore1012": "625325f historical, not current newly run"
+  },
+  "inputs": {
+    "phase-support.mjs": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/phase-support.mjs",
+      "sha256": "02f0f0e6b9801e4300d6bf337bc17ba1f6530c2f90f1d15ab9b885296ba63326"
+    },
+    "snapshot.mjs": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/snapshot.mjs",
+      "sha256": "eab8e77de186232e2db84e7a2d88df3b8bc2a929da4c91156e2fbd02454694a9"
+    },
+    "prepare-phase.mjs": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/prepare-phase.mjs",
+      "sha256": "06fe9fc80dae65ef9555a5a943813b3f23003bb5897f35845dc62834e9e37627"
+    },
+    "run-phase.mjs": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/run-phase.mjs",
+      "sha256": "343f10102ee9ef18d1b184908a8a3d55780b4202042e5939b85a52feed7364a6"
+    },
+    "cend07-preflight.mjs": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-preflight.mjs",
+      "sha256": "2bc09f04ba0cbf165dd556999b37dcf97239e07029ea31abb96902cd9c63dc98"
+    },
+    "cend07.config.ts": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07.config.ts",
+      "sha256": "4c5d3c3fa7b34c95a3b554011105327cb5e11de5f4934f388f769e1a0218490f"
+    },
+    "cend07-plan.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-plan.json",
+      "sha256": "7bf617287f5997dc1405428eb0998d4482d528d378f81c82d517d3958bf53196"
+    },
+    "cend07-online.config.ts": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-online.config.ts",
+      "sha256": "7e3738bb66aa953607df77b46f21810a8c41e6a40f09995e07033a0a1bf0b047"
+    },
+    "cend07-online-plan.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-online-plan.json",
+      "sha256": "b695d4db59f1ca0842b69a5ca537ddbd3a6346ae79771af0108a3d3934b5af22"
+    },
+    "cend07-declared.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-declared.json",
+      "sha256": "d6c59fd21fd7f795df641e16883a08e8035b6ec55157dc1144ef57366a492f52"
+    },
+    "cend07-online-declared.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-online-declared.json",
+      "sha256": "883f272ade77dc1b975b15f76664a2d97458a5f24dc8002bb0390149f5c2e7e2"
+    },
+    "cend07-before.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-before.json",
+      "sha256": "6e90303aa0d22856cc4aaf2b97e54e5435c7cbc0885bc5f5969f635da082a5ef"
+    },
+    "cend07-after.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-after.json",
+      "sha256": "b3a626015d90572285fc971f593717a50aaa82d73260ddc5f25eea8cc4c5e179"
+    },
+    "cend07-online-before.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-online-before.json",
+      "sha256": "3d85e3c22b35b2995957154ee1728c078b6800bc8f1e3014963a0c2244e2acd6"
+    },
+    "cend07-online-after.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-online-after.json",
+      "sha256": "337e31bd6b3a72e4131c99167eee1031dc8457ac8259e56112ecbaffca5f8f3e"
+    },
+    "cend07-http.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-http.json",
+      "sha256": "125788e0f1a4a9a196b07a819f179a15b7ed325904e277cc35a2ac36ba1e2f41"
+    },
+    "cend07-online-http.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-online-http.json",
+      "sha256": "752a4896d1c05b73bf866dce8c7219306d28804ab359056651f9030c4aec27c5"
+    },
+    "cend07-preflight-code.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-preflight-code.json",
+      "sha256": "11d215e53fef335461858919906edc8ac1186ddd87fe7a971a804a74f1f46058"
+    },
+    "cend07-preflight-deps.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-preflight-deps.json",
+      "sha256": "1051c7783fdfbbbf41346bd9efdf12a409663e375da6b262ef25d8e35a704f7d"
+    },
+    "cend07-preflight-http.json": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-preflight-http.json",
+      "sha256": "ad4e8be233a25e4c331955a7a274d7cbcb479ec9a12363392ea7f0a20ddbe17a"
+    }
+  },
+  "terminals": {
+    "cend07": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-terminal.json",
+      "sha256": "7b63cb2306a2f7cf3041a1a06409166cc0787bb3d51ec3e3ba8891e739f8648c",
+      "value": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 5186,
+        "runtime": "2d3ac45e260c62a3888ca8097cac4fddcc5041df8a5e66c4c2afe0153a845556",
+        "stats": {
+          "startTime": "2026-11-06T17:18:29.803Z",
+          "duration": 542588.177,
+          "expected": 106,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 106,
+        "retried": [],
+        "reportSha256": "5fd5835045c2687624569be8c0a04cfe5f8c1a0da40dab9fb9494313b0ac33b8"
+      }
+    },
+    "cend07-online": {
+      "path": "artifacts/goal-4/cend06-f02b/consumer/cend07-online-terminal.json",
+      "sha256": "59c4b1cbfbc5d01577a328942130001c4531aa1680254d677b84d501dd524fbe",
+      "value": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 5186,
+        "runtime": "2d3ac45e260c62a3888ca8097cac4fddcc5041df8a5e66c4c2afe0153a845556",
+        "stats": {
+          "startTime": "2026-11-06T17:20:11.431Z",
+          "duration": 52740.618,
+          "expected": 1,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 1,
+        "retried": [],
+        "reportSha256": "2e72b69e044412252846be54cb908d70b8883f329db4972ce217a803983f0cfd"
+      }
+    }
+  },
+  "extraReadonly": {
+    "preparation-review-01": {
+      "report": "artifacts/goal-4/cend07/preparation-review-01/report.json",
+      "reportSha256": "0cbdbeb6dea5a0b231bda5ced06053eafa7b73a983548c64fe7a2dc2bc10d31d",
+      "stats": {
+        "startTime": "2026-11-06T17:22:55.790Z",
+        "duration": 13534.519,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "testSource": "artifacts/goal-4/cend07/preparation-review-01/review.spec.ts",
+      "testSha256": "27a556d30c6164b8e469ae7b0c0d1b50ac817810f3f4ce2ee61d3314b46f5f38",
+      "config": "artifacts/goal-4/cend07/preparation-review-01/playwright.config.mjs",
+      "configSha256": "5271185a81a5e14901cf0ce1c5a9d3d15ee69c95dc95aa816e487a14ccdceac3"
+    },
+    "preparation-review-02": {
+      "report": "artifacts/goal-4/cend07/preparation-review-02/report.json",
+      "reportSha256": "3559221dc6ef59bfab84a4b5a3da7292708de0b4f71e6f64a31b291fee2076cd",
+      "stats": {
+        "startTime": "2026-11-06T17:29:59.527Z",
+        "duration": 4677.098,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "testSource": "artifacts/goal-4/cend07/preparation-review-02/review.spec.ts",
+      "testSha256": "ed4020166eb74da8f489596233e979ccf3934f88323c414e971f6e102866c470",
+      "config": "artifacts/goal-4/cend07/preparation-review-02/playwright.config.mjs",
+      "configSha256": "89fd5fc0b098e8f19ddb16c1b904a26d01ae847418d2862d74eb1d81c3239231"
+    }
+  },
+  "finalMetadataScript": {
+    "path": "artifacts/goal-4/cend07/final-readonly-v3.mjs",
+    "sha256": "cbb7afe27325ff035bcbbbd9cbac9e531326bb102e638f039258aac5504d63b2"
+  },
+  "rawGameAndStoresOnlyIgnored": true
+}
