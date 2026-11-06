@@ -1,0 +1,103 @@
+{
+  "fixedScope": {
+    "browser": "chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "fontScale": 1
+  },
+  "wholeMixedCasesExcludedBeforeFormalExecution": [
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "system reduced effects retain real source progress and static committed results",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "preference reduced effects retain real source progress and static committed results",
+      "project": "chromium"
+    },
+    {
+      "file": "art32-milestone-stage.spec.ts",
+      "title": "ART32-A3 ANSWER_TRIAL keeps full pages original keyboard return and static actual execution when paintings fail in both reduced-effect modes",
+      "project": "chromium"
+    },
+    {
+      "file": "art32-milestone-stage.spec.ts",
+      "title": "ART32-A3 END keeps full pages original keyboard return and static actual execution when paintings fail in both reduced-effect modes",
+      "project": "chromium"
+    },
+    {
+      "file": "art33-opening-offering.spec.ts",
+      "title": "ART33-A5 system failed images retain full accessible choices and reduced motion keeps original real countdown",
+      "project": "chromium"
+    },
+    {
+      "file": "art33-opening-offering.spec.ts",
+      "title": "ART33-A5 preference failed images retain full accessible choices and reduced motion keeps original real countdown",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 system reduced effects keep static dialog text and focus",
+      "project": "chromium"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "title": "ART37 saved reduced effects keep static dialog text and focus",
+      "project": "chromium"
+    },
+    {
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A15 missing practitioner art and both reduced-motion modes retain complete readable objects original gates and exact static saved cultivation",
+      "project": "chromium"
+    },
+    {
+      "file": "source-actors.spec.ts",
+      "title": "TA08-A12 both reduction settings missing natural art and natural or four commission error layouts retain complete usable objects and readonly facts",
+      "project": "chromium"
+    }
+  ],
+  "grepInvert": "ART37 (system|saved) reduced effects|TA08-A12 both reduction settings|ART33-A5 (system|preference)|ART06-A15 missing practitioner art|ART32-A3 |(system|preference) reduced effects retain",
+  "assertionsPreserved": true,
+  "compatibilityEnvironmentPerformance": "paused",
+  "selectedPreliminaryDeclarationCount": 266,
+  "selectedFiles": [
+    "adventure-objects.spec.ts",
+    "art32-milestone-stage.spec.ts",
+    "art33-opening-offering.spec.ts",
+    "art34-source-stage.spec.ts",
+    "art37-dialog-actions.spec.ts",
+    "cend03-review-observations.spec.ts",
+    "cend06-f02a-opening-response.spec.ts",
+    "cend06-f02b-travel-passage.spec.ts",
+    "check-cend07-forecast-context.spec.ts",
+    "check-ui35-feedback.spec.ts",
+    "check-ui35-source-state.spec.ts",
+    "check-uir33-02.spec.ts",
+    "cultivation-objects.spec.ts",
+    "idle-adventure.spec.ts",
+    "idle-cultivation.spec.ts",
+    "idle-integration.spec.ts",
+    "idle-milestones.spec.ts",
+    "idle-preparation-active.spec.ts",
+    "idle-preparation-drafts.spec.ts",
+    "idle-preparation.spec.ts",
+    "idle-production.spec.ts",
+    "idle-sources.spec.ts",
+    "matrix-ui-milestone-feedback.spec.ts",
+    "source-actors.spec.ts",
+    "stage-r1.spec.ts",
+    "stage-r2.spec.ts",
+    "uir33-01-cultivation-active.spec.ts",
+    "uir34-01-lifespan-guidance.spec.ts",
+    "uir34-05-trial-life-focus.spec.ts",
+    "uir34-06-character-folio.spec.ts",
+    "uir34-07-fate-clarity.spec.ts",
+    "uir35-01-goal-authority.spec.ts",
+    "uir35-02-cultivation-fallback.spec.ts",
+    "uir35-03-progress-hierarchy.spec.ts",
+    "uir35-04-battle-medicine.spec.ts"
+  ]
+}

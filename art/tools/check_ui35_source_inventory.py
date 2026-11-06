@@ -56,7 +56,10 @@ def validate_check_ui35_source(root):
  assert len(raw)-len(old)<=300,'CHECK-UI35-SOURCE added bytes'
  assert raw.split(b'</script>')[0]==old.split(b'</script>')[0],'CHECK-UI35-SOURCE unchanged script and proof'
  assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'CHECK-UI35-SOURCE original callbacks'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_f02a_bytes(n,local(n).read_bytes())).hexdigest()==h,'CHECK-UI35-SOURCE original rules clocks stores source identity and styling'
+ for n,h in MANIFEST['unchanged'].items():
+  try:unchanged=prior_f02a_bytes(n,local(n).read_bytes())
+  except AssertionError as error:raise AssertionError('CHECK-UI35-SOURCE '+n+': '+str(error))from error
+  assert hashlib.sha256(unchanged).hexdigest()==h,'CHECK-UI35-SOURCE original rules clocks stores source identity and styling'
  ta=json.loads(local('art/redesign/ta08.json').read_text());total=sum(local(r['path']).stat().st_size for r in ta['files']);assert ta['budgets']['nativeBytes']==42000 and total<=42000,'CHECK-UI35-SOURCE actual original TA08 cap'
  for n in MANIFEST['sourceReferences']:local(n)
  return {LEDGER,MANIFEST['path'],MANIFEST['before'],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']},total
