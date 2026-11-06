@@ -19,6 +19,6 @@ const state=computed(()=>props.failed?'存档待核对 · 请沿原操作核对'
    <AssetImage v-if="game.core.inventory.healing_pill>0" path="art/v2/items/healing_pill-v1.webp" asset-id="opening-owned-medicine" class="art33-medicine" fit="contain" aria-hidden="true"><GameIcon kind="item" id="healing_pill"/></AssetImage>
    <span class="art33-case-label"><strong>{{reading?'回到破庙主舞台':arranged?'重读此念安排':'翻看雨夜药匣'}}</strong><small data-testid="milestone-material">回春丹 · 实有 {{game.core.inventory.healing_pill}}</small></span>
   </button>
-  <div class="art33-state" role="status"><strong>{{state}}</strong><small v-if="!arranged">选择只核对 · 确认后回应 · 每次 {{total}} 秒 · 仅一次</small></div>
+  <div class="art33-state" role="status"><strong>{{state}}</strong><span v-if="reading&&engaged&&phase==='running'" data-testid="milestone-cycle-clock">{{remaining}} / {{seconds}} 秒</span><small v-else-if="!arranged">选择只核对 · 确认后回应 · 每次 {{total}} 秒 · 仅一次</small></div>
  </div>
 </template>

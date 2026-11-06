@@ -1,0 +1,94 @@
+{
+  "producer": "26d1c4c16c27f64452b60ab088ddc3ae0accead7",
+  "resources": {
+    "executed": 726,
+    "durationSeconds": 798.758,
+    "failedSubcases": 9,
+    "failedMethods": 4,
+    "details": [
+      {
+        "heading": "FAIL: test_check_ui35_source_rejects_clock_identity_and_original_mutation (test_inventory.Check340204ReadonlyCloseTests.test_check_ui35_source_rejects_clock_identity_and_original_mutation) (file='web/src/App.vue')",
+        "reason": "AssertionError: \"CHECK-UI35-SOURCE\" does not match \"F02A complete current source\""
+      },
+      {
+        "heading": "FAIL: test_changed_clock_save_focus_or_manager_activation_cannot_hide_inside_display_evolution (test_inventory.UIR3401LifespanDisplayTests.test_changed_clock_save_focus_or_manager_activation_cannot_hide_inside_display_evolution) (name='App.vue', mutation='@click=\"startTraining(hubTrainingPlan)\"')",
+        "reason": "AssertionError: \"UIR34-01\" does not match \"F02A complete current source\""
+      },
+      {
+        "heading": "FAIL: test_changed_clock_save_focus_or_manager_activation_cannot_hide_inside_display_evolution (test_inventory.UIR3401LifespanDisplayTests.test_changed_clock_save_focus_or_manager_activation_cannot_hide_inside_display_evolution) (name='App.vue', mutation='if(owns(owner??null))')",
+        "reason": "AssertionError: \"UIR34-01\" does not match \"F02A complete current source\""
+      },
+      {
+        "heading": "FAIL: test_resume_pause_retry_reading_clock_and_budget_cannot_hide_in_copy (test_inventory.UIR3404ResumeCopyTests.test_resume_pause_retry_reading_clock_and_budget_cannot_hide_in_copy) (file='OpeningOffering.vue', mutation=\"emit('inspect',$event)\")",
+        "reason": "AssertionError: \"UIR34-04\" does not match \"F02A complete current source\""
+      },
+      {
+        "heading": "FAIL: test_reject_writer_gate_clock_and_missing_disclosure (test_inventory.Uir3405Tests.test_reject_writer_gate_clock_and_missing_disclosure) (old='@click=\"confirmTrial\"')",
+        "reason": "AssertionError: \"UIR34-05\" does not match \"F02A complete current source\""
+      },
+      {
+        "heading": "FAIL: test_reject_writer_gate_clock_and_missing_disclosure (test_inventory.Uir3405Tests.test_reject_writer_gate_clock_and_missing_disclosure) (old='trialStale')",
+        "reason": "AssertionError: \"UIR34-05\" does not match \"F02A complete current source\""
+      },
+      {
+        "heading": "FAIL: test_reject_writer_gate_clock_and_missing_disclosure (test_inventory.Uir3405Tests.test_reject_writer_gate_clock_and_missing_disclosure) (old='15秒')",
+        "reason": "AssertionError: \"UIR34-05\" does not match \"F02A complete current source\""
+      },
+      {
+        "heading": "FAIL: test_reject_writer_gate_clock_and_missing_disclosure (test_inventory.Uir3405Tests.test_reject_writer_gate_clock_and_missing_disclosure) (old='class=\"milestone-notes\"')",
+        "reason": "AssertionError: \"UIR34-05\" does not match \"F02A complete current source\""
+      },
+      {
+        "heading": "FAIL: test_reject_writer_gate_clock_and_missing_disclosure (test_inventory.Uir3405Tests.test_reject_writer_gate_clock_and_missing_disclosure) (old='startPreparedMilestone(review.intent)')",
+        "reason": "AssertionError: \"UIR34-05\" does not match \"F02A complete current source\""
+      }
+    ]
+  },
+  "UI": {
+    "exit": 1,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 5155,
+    "runtime": "ecaeff57f2c81a7a67c282b72d9213691a6aec5f145df0b4477b88e4013b3d91",
+    "stats": {
+      "startTime": "2026-11-06T13:00:27.585Z",
+      "duration": 737608.768,
+      "expected": 86,
+      "skipped": 0,
+      "unexpected": 9,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 95,
+    "retried": [],
+    "reportSha256": "4acc153f3a94867f8be04da462d304f5f0a48234ffd61775c15e2d5d549a0763"
+  },
+  "newPackage5": {
+    "exit": 0,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 5155,
+    "runtime": "ecaeff57f2c81a7a67c282b72d9213691a6aec5f145df0b4477b88e4013b3d91",
+    "stats": {
+      "startTime": "2026-11-06T13:03:33.769Z",
+      "duration": 33410.168000000005,
+      "expected": 5,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 5,
+    "retried": [],
+    "reportSha256": "53c33192c662dabe94b52b59934bf89927cfb91d532c5d6970c13a82c0292440"
+  },
+  "actualProductGaps": [
+    "New header paragraph14px violates original18px body minimum.",
+    "Ordinary current-detail CHOOSE execution lost visible original clock when removing duplicate home clock."
+  ],
+  "repairBoundary": "Increase body text to18; restore original clock only in reading surface; do not alter rules or weaken Game/clock/geometry assertions."
+}

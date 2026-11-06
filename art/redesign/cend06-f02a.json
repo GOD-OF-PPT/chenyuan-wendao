@@ -31,8 +31,8 @@
       "before": "goal-4/evidence/cend06-f02a/before/web/src/OpeningOffering.vue",
       "beforeBytes": 2902,
       "beforeSha256": "67663a49903252fdfb91751422a72a577b072cb9e7c84e357e06a1e8b2a96d47",
-      "bytes": 2770,
-      "sha256": "76e027706ac2575123e3b06dd257f0191ebf25826629cd29c289a3b97a6f5e4a",
+      "bytes": 2898,
+      "sha256": "fd775d201b0955c24469c3a7efa8e03656c358550b224b0bbb921e06aabbce9f",
       "operations": [
         [
           890,
@@ -47,7 +47,7 @@
         [
           2339,
           "<div class=\"art33-state\" role=\"status\"><strong>{{state}}</strong><span v-if=\"engaged&&phase==='running'\" data-testid=\"milestone-cycle-clock\">{{remaining}} / {{seconds}} 秒</span><small v-else>{{arranged?viewTitle:'选择只核对 · 确认后回应'}} · 每次 {{total}} 秒 · 仅一次</small></div>",
-          "<div class=\"art33-state\" role=\"status\"><strong>{{state}}</strong><small v-if=\"!arranged\">选择只核对 · 确认后回应 · 每次 {{total}} 秒 · 仅一次</small></div>"
+          "<div class=\"art33-state\" role=\"status\"><strong>{{state}}</strong><span v-if=\"reading&&engaged&&phase==='running'\" data-testid=\"milestone-cycle-clock\">{{remaining}} / {{seconds}} 秒</span><small v-else-if=\"!arranged\">选择只核对 · 确认后回应 · 每次 {{total}} 秒 · 仅一次</small></div>"
         ]
       ]
     }
@@ -59,7 +59,7 @@
     },
     "web/src/opening-response.css": {
       "bytes": 2590,
-      "sha256": "2b5b8fd7457e23446d8bae43d99aae5d40e8e831b1c1fab96419540b49c78fc2"
+      "sha256": "7e986a6ebf81b4b9c6b655be038d5d163c70b528969c9a6162367471585a155a"
     }
   },
   "unchanged": {

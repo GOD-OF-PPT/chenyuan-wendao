@@ -2338,7 +2338,7 @@ class UIR3401LifespanDisplayTests(unittest.TestCase):
   cases=[('App.vue','@click="startTraining(hubTrainingPlan)"','@click="startTraining(defaultTraining)"'),('App.vue','if(owns(owner??null))','if(true)'),('LifeScroll.vue','opener.value?.click()','management.value?.showModal()'),('LifeCatalogue.vue',"emit('end','RETIRE')","emit('end','END_LIFE')")]
   for name,a,b in cases:
    raw=(ROOT/('web/src/'+name)).read_text();self.assertIn(a,raw)
-   with self.subTest(name=name,mutation=a),self.assertRaisesRegex(AssertionError,'UIR34-01'):prior_uir3401_bytes(name,raw.replace(a,b,1).encode())
+   with self.subTest(name=name,mutation=a),self.assertRaisesRegex(AssertionError,'F02A'if name=='App.vue'else'UIR34-01'):prior_uir3401_bytes(name,raw.replace(a,b,1).encode())
 
 class UIR3402FocusTests(unittest.TestCase):
  setUp=InventoryTests.setUp
@@ -2390,7 +2390,7 @@ class UIR3404ResumeCopyTests(unittest.TestCase):
   from uir34_04_inventory import validate_uir3404,MANIFEST,LEDGER
   for name,a,b in [('TrainingActivity.vue','@click="store.resumeCultivation"','@click="store.retry"'),('TrainingActivity.vue','!store.canRetry','true'),('TrainingActivity.vue','runtime.value?.remainingMs','1'),('TrainingActivity.vue','待继续 · 本轮重计','待接管'),('CultivationOngoing.vue','@click="store.resumeCultivation"','@click="store.retry"'),('CultivationOngoing.vue','离线无收益','离线有收益'),('OpeningOffering.vue',"emit('inspect',$event)","emit('start',$event)")]:
    p=MANIFEST['files'][name]['path'];raw=(ROOT/p).read_text();self.assertIn(a,raw);self.write(p,raw.replace(a,b,1))
-   with self.subTest(file=name,mutation=a),self.assertRaisesRegex(AssertionError,'UIR34-04'):validate_uir3404(self.root)
+   with self.subTest(file=name,mutation=a),self.assertRaisesRegex(AssertionError,'F02A'if name=='OpeningOffering.vue'else'UIR34-04'):validate_uir3404(self.root)
    self.write(p,raw)
   for key,value in [('userAcceptance',True),('newRasterAssets',1)]:
    m=json.loads((ROOT/LEDGER).read_text());m[key]=value;self.write(LEDGER,m)
@@ -2429,7 +2429,7 @@ class Check340204ReadonlyCloseTests(unittest.TestCase):
   from check_ui35_source_inventory import MANIFEST,validate_check_ui35_source
   for n in [MANIFEST['before'],*MANIFEST['unchanged']]:
    p=self.root/n;raw=p.read_bytes();self.write(n,(raw+b'\n').decode())
-   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'CHECK-UI35-SOURCE'):validate_check_ui35_source(self.root)
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'F02A'if n=='web/src/App.vue'else'CHECK-UI35-SOURCE'):validate_check_ui35_source(self.root)
    self.write(n,raw.decode())
  def test_check_ui35_source_rejects_fake_saved_state_and_widened_budget(self):
   from check_ui35_source_inventory import MANIFEST,LEDGER,validate_check_ui35_source
@@ -2450,7 +2450,7 @@ class Uir3405Tests(unittest.TestCase):
   source=(ROOT/MANIFEST['path']).read_text()
   for old,new in [('@click="confirmTrial"','@click="confirmEnd"'),('trialStale','false'),('15秒','1秒'),('class="milestone-notes"','class="removed-notes"'),('startPreparedMilestone(review.intent)','startPreparedMilestone(null)')]:
    self.assertIn(old,source)
-   with self.subTest(old=old),self.assertRaisesRegex(AssertionError,'UIR34-05'):prior_uir3405_bytes(MANIFEST['path'],source.replace(old,new,1).encode())
+   with self.subTest(old=old),self.assertRaisesRegex(AssertionError,'F02A'):prior_uir3405_bytes(MANIFEST['path'],source.replace(old,new,1).encode())
 
 class Uir3406Tests(unittest.TestCase):
  def test_whole_original_inverse_and_actual_added_cap(self):

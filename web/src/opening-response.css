@@ -1,6 +1,6 @@
 #app .art33-opening>.milestone-object-content:has(>.opening-response){align-self:center;gap:12px;padding:22px 26px;border-left:1px solid var(--game-jade,#9ed8c2)}
 #app .opening-response{display:grid;gap:14px;min-width:0;color:var(--game-ink,#f0edda)}
-#app .opening-response header p{margin:0;color:var(--game-jade,#9ed8c2);font-size:14px;letter-spacing:2px}
+#app .opening-response header p{margin:0;color:var(--game-jade,#9ed8c2);font-size:18px;letter-spacing:2px}
 #app .opening-response h2{margin:3px 0 0;font-size:32px;line-height:1.5;letter-spacing:4px;font-weight:500}
 #app .opening-response-moment{display:grid;grid-template-columns:112px minmax(0,1fr);align-items:center;gap:22px;min-height:112px}
 #app .opening-response-moment>p{font-size:20px;line-height:1.6;margin:0}

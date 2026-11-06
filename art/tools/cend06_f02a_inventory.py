@@ -30,8 +30,8 @@ MANIFEST={'format': 'chenyuan-cend06-f02a-opening-response',
            'web/src/OpeningOffering.vue': {'before': 'goal-4/evidence/cend06-f02a/before/web/src/OpeningOffering.vue',
                                            'beforeBytes': 2902,
                                            'beforeSha256': '67663a49903252fdfb91751422a72a577b072cb9e7c84e357e06a1e8b2a96d47',
-                                           'bytes': 2770,
-                                           'sha256': '76e027706ac2575123e3b06dd257f0191ebf25826629cd29c289a3b97a6f5e4a',
+                                           'bytes': 2898,
+                                           'sha256': 'fd775d201b0955c24469c3a7efa8e03656c358550b224b0bbb921e06aabbce9f',
                                            'operations': [[890, "'所选回应进行中'", "'正回应此念'"],
                                                           [1419, '破庙求药 · 静候你的抉择', "{{arranged?viewTitle:'破庙求药'}}"],
                                                           [2339,
@@ -43,13 +43,15 @@ MANIFEST={'format': 'chenyuan-cend06-f02a-opening-response',
                                                            "v-else>{{arranged?viewTitle:'选择只核对 · 确认后回应'}} · 每次 "
                                                            '{{total}} 秒 · 仅一次</small></div>',
                                                            '<div class="art33-state" '
-                                                           'role="status"><strong>{{state}}</strong><small '
-                                                           'v-if="!arranged">选择只核对 · 确认后回应 · 每次 {{total}} 秒 · '
-                                                           '仅一次</small></div>']]}},
+                                                           'role="status"><strong>{{state}}</strong><span '
+                                                           'v-if="reading&&engaged&&phase===\'running\'" '
+                                                           'data-testid="milestone-cycle-clock">{{remaining}} / '
+                                                           '{{seconds}} 秒</span><small v-else-if="!arranged">选择只核对 · '
+                                                           '确认后回应 · 每次 {{total}} 秒 · 仅一次</small></div>']]}},
  'added': {'web/src/OpeningResponse.vue': {'bytes': 3462,
                                            'sha256': '725a3f03b21310890c795509d1c008d9fb28ba408b5c2b2fd7e2a753b987a05a'},
            'web/src/opening-response.css': {'bytes': 2590,
-                                            'sha256': '2b5b8fd7457e23446d8bae43d99aae5d40e8e831b1c1fab96419540b49c78fc2'}},
+                                            'sha256': '7e986a6ebf81b4b9c6b655be038d5d163c70b528969c9a6162367471585a155a'}},
  'unchanged': {'web/src/MilestoneGate.vue': '13f0335382f633755b3a8559adfde5821c97917df5aabfaa77829340f11ba1f1',
                'web/src/milestone-view.ts': 'af1a2045781e806806140092349b2ecde690524436b254a0c1f326a94e108efd',
                'web/src/cultivation-effects.ts': '656c74686b1e1cee2f68c61074172d5c3c23f86cf12d5c3eed7205f215de409a',
