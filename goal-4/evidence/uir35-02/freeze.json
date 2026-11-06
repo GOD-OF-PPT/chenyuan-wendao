@@ -1,0 +1,6 @@
+{
+  "initialPreparedSource": "77bda281607ec2818039160de8d8fc5b59ebc616",
+  "finalFrozenSource": "c9bdff6f2418c633b2f9d89d441b48463fef04f8",
+  "reason": "test-only explicit host pin before any dependency installation/build/execution",
+  "oldSourceExecuted": false
+}

@@ -1,0 +1,12 @@
+{
+  "version": 29,
+  "uiDeclared": 954,
+  "originalUi950Retained": true,
+  "uiSignature": "3048ba58fe82ce66f5032a3f6bd4d19b06b965d08b702e040f7fe533b1040697",
+  "runtime": "099f87393e70fd4fdd9b652430419daa20a85f8a21afc1e15f63d17b3e0ee6d2",
+  "executed": false,
+  "storageObligation": 415,
+  "normalObligation": 32,
+  "allTotal": 1401,
+  "scope": "Real named full UI --list; not execution or acceptance"
+}

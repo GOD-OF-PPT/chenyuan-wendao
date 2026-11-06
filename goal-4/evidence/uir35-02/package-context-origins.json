@@ -1,0 +1,29 @@
+{
+  "allOnActualPackageHost": true,
+  "rows": [
+    {
+      "case": "UIR35-02-A2 affordable locked lifespan and full-growth states retain their original decision instead of a misleading free substitute",
+      "name": "fixture-origin-affordable",
+      "expected": "http://127.0.0.1:56913/",
+      "actual": "http://127.0.0.1:56913/"
+    },
+    {
+      "case": "UIR35-02-A2 affordable locked lifespan and full-growth states retain their original decision instead of a misleading free substitute",
+      "name": "fixture-origin-mortal",
+      "expected": "http://127.0.0.1:56913/",
+      "actual": "http://127.0.0.1:56913/"
+    },
+    {
+      "case": "UIR35-02-A2 affordable locked lifespan and full-growth states retain their original decision instead of a misleading free substitute",
+      "name": "fixture-origin-lifespan",
+      "expected": "http://127.0.0.1:56913/",
+      "actual": "http://127.0.0.1:56913/"
+    },
+    {
+      "case": "UIR35-02-A2 affordable locked lifespan and full-growth states retain their original decision instead of a misleading free substitute",
+      "name": "fixture-origin-full",
+      "expected": "http://127.0.0.1:56913/",
+      "actual": "http://127.0.0.1:56913/"
+    }
+  ]
+}

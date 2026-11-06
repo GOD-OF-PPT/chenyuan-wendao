@@ -1,0 +1,51 @@
+{
+  "files": [
+    "uir35-02-cultivation-fallback.spec.ts",
+    "uir35-01-goal-authority.spec.ts",
+    "uir33-01-cultivation-active.spec.ts",
+    "uir34-01-lifespan-guidance.spec.ts",
+    "idle-cultivation.spec.ts",
+    "uir34-04-resume-wording.spec.ts",
+    "check-uir33-02.spec.ts",
+    "stage-r1.spec.ts",
+    "matrix-ui-controls.spec.ts",
+    "art37-dialog-actions.spec.ts",
+    "check-matrix-keyboard.spec.ts",
+    "check-uir34-02-04.spec.ts",
+    "ux30-primary-copy.spec.ts"
+  ],
+  "deferred": [
+    "CHECK-K10 entire mixed system/preference motion case",
+    "ART37 system reduced effects",
+    "ART37 saved reduced effects"
+  ],
+  "mediaLines": [
+    {
+      "file": "uir35-02-cultivation-fallback.spec.ts",
+      "line": 55,
+      "text": " const target=info.project.use.baseURL;expect(typeof target).toBe('string');for(const item of cases){const context=await browser.newContext({baseURL:target,viewport:{width:1440,height:900}}),p=await context.newPage();try{const before=await importRecoveryFixture(p,item.game);expect(new URL(p.url()).origin).toBe(new URL(target!).origin);await info.attach('fixture-origin-'+item.id,{body:JSON.stringify({expected:target,actual:p.url()}),contentType:'application/json'});if(await p.getByTestId('cultiva"
+    },
+    {
+      "file": "art37-dialog-actions.spec.ts",
+      "line": 59,
+      "text": " const context=await browser.newContext({baseURL:info.project.use.baseURL,viewport:{width:1440,height:900},reducedMotion:mode==='system'?'reduce':'no-preference'}),page=await context.newPage();"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "line": 17,
+      "text": "test.use({viewport:{width:1440,height:900},reducedMotion:'no-preference',actionTimeout:8000,navigationTimeout:15000});"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "line": 305,
+      "text": "  await page.emulateMedia({reducedMotion:'reduce'});expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);"
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "line": 310,
+      "text": "  await page.emulateMedia({reducedMotion:'no-preference'});expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(false);expect(await database(page)).toEqual(preferencePreparation.raw);await staticReducedEntry(page,preferencePreparation.after,info,'trial-new-preference-reduced-result');"
+    }
+  ],
+  "currentScope": "1440x900/font1/singleChromium only; nominal no-preference contexts and distinct Game fixtures use same actual tested host",
+  "initialPortFailure": "4175 owned by pre-existing PID9541; not touched. New own61197 test server."
+}
