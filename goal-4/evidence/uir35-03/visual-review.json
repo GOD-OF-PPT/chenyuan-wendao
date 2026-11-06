@@ -1,0 +1,117 @@
+{
+  "actuallyViewed": 10,
+  "rows": [
+    {
+      "number": 1,
+      "name": "cultivation-zero",
+      "raw": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-zero-frame-1.png",
+      "rawSha256": "04627e2946ef2ca7c4c20dae6848e30aa2b1b103208addbe79927da24c123b8c",
+      "view": "artifacts/goal-4/uir35-03/current/view/01-cultivation-zero.jpg",
+      "viewSha256": "5b0a3e633222fa3b93fd875f4afec8fd87ba2288ad15974ccb935bba16a4bce4",
+      "format": "JPEG68 lossy same1440x900",
+      "actuallyViewed": true,
+      "observation": "zero saved XP has a subdued track, no bright unfilled line, number0/10 clear"
+    },
+    {
+      "number": 2,
+      "name": "cultivation-failed-still-zero",
+      "raw": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-failed-still-zero-frame-1.png",
+      "rawSha256": "bc6400ba514484201f7bf317671f9acebeea6a5e92fb00b93623a08d9174fa38",
+      "view": "artifacts/goal-4/uir35-03/current/view/02-cultivation-failed-still-zero.jpg",
+      "viewSha256": "76c4caeb96a3c0ade7ff317cd8fefda2b236a5d5df055051273127fb38797d27",
+      "format": "JPEG68 lossy same1440x900",
+      "actuallyViewed": true,
+      "observation": "native quota retains0/10 dark track; original retry/error and all stage/navigation remain clear"
+    },
+    {
+      "number": 3,
+      "name": "cultivation-half-paused",
+      "raw": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-half-paused-frame-1.png",
+      "rawSha256": "6e7924b19a8d4ba287fbe438f0721083f96698b7c357883ef100ef1c6f33f9a2",
+      "view": "artifacts/goal-4/uir35-03/current/view/03-cultivation-half-paused.jpg",
+      "viewSha256": "20e819fd0db03413e39c22bae6ff347ec30f2be42ccf895d9905804a51155c59",
+      "format": "JPEG68 lossy same1440x900",
+      "actuallyViewed": true,
+      "observation": "saved5/10 is visibly left half jade with dark remaining half; original actual count and pause state readable"
+    },
+    {
+      "number": 4,
+      "name": "cultivation-half-reloaded",
+      "raw": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-half-reloaded-frame-1.png",
+      "rawSha256": "f76f62ff90dc6461d60418bf344fc4b10659b8e59319196beeeaf707042bb829",
+      "view": "artifacts/goal-4/uir35-03/current/view/04-cultivation-half-reloaded.jpg",
+      "viewSha256": "23516a3f042e624014befef3cdb76408d31ab9935f003d554cdc19d932f5fa0d",
+      "format": "JPEG68 lossy same1440x900",
+      "actuallyViewed": true,
+      "observation": "reloaded pause retains same half and no new reward effect"
+    },
+    {
+      "number": 5,
+      "name": "cultivation-full",
+      "raw": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-full-frame-2.png",
+      "rawSha256": "8f7585291831b8cf90e58a3744b45891388f740190da83671d03f72782e2d252",
+      "view": "artifacts/goal-4/uir35-03/current/view/05-cultivation-full.jpg",
+      "viewSha256": "bc91748326d45d7cdb231f5709d7b6f7e9eef8447dd9104083e85641d1baf803",
+      "format": "JPEG68 lossy same1440x900",
+      "actuallyViewed": true,
+      "observation": "full10/10 read from original on-demand planner; original disabled next cultivation and breakthrough action remain clear"
+    },
+    {
+      "number": 6,
+      "name": "rest-partial-before",
+      "raw": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-partial-before-frame-1.png",
+      "rawSha256": "13b6ec016c2c6eb705338daa6c6aa6943abf80d831986a4fc4ee047c8dc9d4c6",
+      "view": "artifacts/goal-4/uir35-03/current/view/06-rest-partial-before.jpg",
+      "viewSha256": "bf6949be69c2497bdbc7209b2cb63e715f21fcc535fbbba6fb685724ea81a7f3",
+      "format": "JPEG68 lossy same1440x900",
+      "actuallyViewed": true,
+      "observation": "actual HP74/170 and MP92/100 partial jade lengths agree with exact labels; full rest cost/time clear"
+    },
+    {
+      "number": 7,
+      "name": "rest-native-saving-still-partial",
+      "raw": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-native-saving-still-partial-frame-1.png",
+      "rawSha256": "0d7e094dfe53959ed60a388dcd4a46c9544102a01c25b50cd86c25e13979834c",
+      "view": "artifacts/goal-4/uir35-03/current/view/07-rest-native-saving-still-partial.jpg",
+      "viewSha256": "519d53e7418b707f2e4ee3c43cef5454c5f6ad285b4434e56bd9184fd97f559d",
+      "format": "JPEG68 lossy same1440x900",
+      "actuallyViewed": true,
+      "observation": "native held save retains74/170 and92/100 with saving state; no visual pre-restoration"
+    },
+    {
+      "number": 8,
+      "name": "rest-saved-full",
+      "raw": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-saved-full-frame-1.png",
+      "rawSha256": "12b6add43813528bc48b4f7df7ce29a3e05b03ecf60391ec3c7cba8765e75572",
+      "view": "artifacts/goal-4/uir35-03/current/view/08-rest-saved-full.jpg",
+      "viewSha256": "336b803ee7356b6c744374cd578487655a8b8e79863f8a1f692f70ae3daccc62",
+      "format": "JPEG68 lossy same1440x900",
+      "actuallyViewed": true,
+      "observation": "only committed rest shows170/170 and100/100 fully jade and exact saved gains; existing character result highlight separate from meter task"
+    },
+    {
+      "number": 9,
+      "name": "pill-partial-before",
+      "raw": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-4b434-eadonly-viewing-and-refresh-chromium/pill-partial-before-frame-1.png",
+      "rawSha256": "a4c44dd4ac10d2f6dd749b635edea0f5aa53c1773cb10f51f5638a7da094bfb9",
+      "view": "artifacts/goal-4/uir35-03/current/view/09-pill-partial-before.jpg",
+      "viewSha256": "1fe90e314d8ec25cdaedd445a8af49a1e56c9e7d403f979ad04f0f0a545ca671",
+      "format": "JPEG68 lossy same1440x900",
+      "actuallyViewed": true,
+      "observation": "pill draft74/170 HP and92/100 MP with explicit one-dose budget; no action on view"
+    },
+    {
+      "number": 10,
+      "name": "pill-only-real-saved-recovery",
+      "raw": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-4b434-eadonly-viewing-and-refresh-chromium/pill-only-real-saved-recovery-frame-1.png",
+      "rawSha256": "8688f77494b1030c917c77fb7b06a074489622573e457cb67dc8f1ddfff0cea1",
+      "view": "artifacts/goal-4/uir35-03/current/view/10-pill-only-real-saved-recovery.jpg",
+      "viewSha256": "0dc0aee8cdf94ea42830f64d8a03702a807cf2a22700fb118253a190f87f3cae",
+      "format": "JPEG68 lossy same1440x900",
+      "actuallyViewed": true,
+      "observation": "one committed pill shows133/170 HP and unchanged92/100 MP; actual stock5 and one dose stopped; saved HP+59 agrees with formal result, no full HP invented"
+    }
+  ],
+  "allGeneratedReviewed": false,
+  "scope": "Selected10 package frames actually reviewed at original dimensions; no overall art acceptance"
+}

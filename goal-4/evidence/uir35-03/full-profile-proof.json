@@ -1,0 +1,12 @@
+{
+  "version": 31,
+  "uiDeclared": 960,
+  "signature": "413930feb1334462718ea809108d894fa3926289efc036b268f8eae996c0ddd8",
+  "originalUi957Retained": true,
+  "runtime": "9bac1d9d02e4de985a8b97bf3bebe4e45e7c011a27a9104c6e8a79c461633ff1",
+  "executed": false,
+  "storage": 415,
+  "normalRoutes": 32,
+  "totalObligation": 1407,
+  "scope": "Actual named full list, not execution"
+}

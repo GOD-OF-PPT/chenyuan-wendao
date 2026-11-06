@@ -1,0 +1,445 @@
+{
+  "report": "artifacts/goal-4/uir35-03/current/package-report.json",
+  "reportSha256": "99c595843fa05e2fc967da53f291917e6b8c3130833a72ca8e9e06d9d01652bb",
+  "frames": 10,
+  "meters": 15,
+  "allExpectedPixels": true,
+  "rows": [
+    {
+      "name": "cultivation-zero",
+      "label": "已保存修为",
+      "value": 0,
+      "max": 10,
+      "samples": {
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "track": [
+          1014,
+          297
+        ]
+      },
+      "contrastFillToTrack": null,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-zero-frame-1.png",
+      "sha256": "04627e2946ef2ca7c4c20dae6848e30aa2b1b103208addbe79927da24c123b8c",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "cultivation-failed-still-zero",
+      "label": "已保存修为",
+      "value": 0,
+      "max": 10,
+      "samples": {
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "track": [
+          1014,
+          334
+        ]
+      },
+      "contrastFillToTrack": null,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-failed-still-zero-frame-1.png",
+      "sha256": "bc6400ba514484201f7bf317671f9acebeea6a5e92fb00b93623a08d9174fa38",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "cultivation-half-paused",
+      "label": "已保存修为",
+      "value": 5,
+      "max": 10,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ],
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "fill": [
+          878,
+          257
+        ],
+        "track": [
+          1150,
+          257
+        ]
+      },
+      "contrastFillToTrack": 9.553063057727966,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-half-paused-frame-1.png",
+      "sha256": "6e7924b19a8d4ba287fbe438f0721083f96698b7c357883ef100ef1c6f33f9a2",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "cultivation-half-reloaded",
+      "label": "已保存修为",
+      "value": 5,
+      "max": 10,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ],
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "fill": [
+          878,
+          257
+        ],
+        "track": [
+          1150,
+          257
+        ]
+      },
+      "contrastFillToTrack": 9.553063057727966,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-half-reloaded-frame-1.png",
+      "sha256": "f76f62ff90dc6461d60418bf344fc4b10659b8e59319196beeeaf707042bb829",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "cultivation-full",
+      "label": "已保存修为",
+      "value": 10,
+      "max": 10,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ]
+      },
+      "positions": {
+        "fill": [
+          1161,
+          419
+        ]
+      },
+      "contrastFillToTrack": null,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-full-frame-2.png",
+      "sha256": "8f7585291831b8cf90e58a3744b45891388f740190da83671d03f72782e2d252",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "rest-partial-before",
+      "label": "当前气血",
+      "value": 74,
+      "max": 170,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ],
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "fill": [
+          593,
+          307
+        ],
+        "track": [
+          704,
+          307
+        ]
+      },
+      "contrastFillToTrack": 9.553063057727966,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-partial-before-frame-1.png",
+      "sha256": "13b6ec016c2c6eb705338daa6c6aa6943abf80d831986a4fc4ee047c8dc9d4c6",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "rest-partial-before",
+      "label": "当前灵力",
+      "value": 92,
+      "max": 100,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ],
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "fill": [
+          889,
+          307
+        ],
+        "track": [
+          1000,
+          307
+        ]
+      },
+      "contrastFillToTrack": 9.553063057727966,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-partial-before-frame-1.png",
+      "sha256": "13b6ec016c2c6eb705338daa6c6aa6943abf80d831986a4fc4ee047c8dc9d4c6",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "rest-native-saving-still-partial",
+      "label": "当前气血",
+      "value": 74,
+      "max": 170,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ],
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "fill": [
+          593,
+          307
+        ],
+        "track": [
+          704,
+          307
+        ]
+      },
+      "contrastFillToTrack": 9.553063057727966,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-native-saving-still-partial-frame-1.png",
+      "sha256": "0d7e094dfe53959ed60a388dcd4a46c9544102a01c25b50cd86c25e13979834c",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "rest-native-saving-still-partial",
+      "label": "当前灵力",
+      "value": 92,
+      "max": 100,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ],
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "fill": [
+          889,
+          307
+        ],
+        "track": [
+          1000,
+          307
+        ]
+      },
+      "contrastFillToTrack": 9.553063057727966,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-native-saving-still-partial-frame-1.png",
+      "sha256": "0d7e094dfe53959ed60a388dcd4a46c9544102a01c25b50cd86c25e13979834c",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "rest-saved-full",
+      "label": "当前气血",
+      "value": 170,
+      "max": 170,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ]
+      },
+      "positions": {
+        "fill": [
+          656,
+          307
+        ]
+      },
+      "contrastFillToTrack": null,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-saved-full-frame-1.png",
+      "sha256": "12b6add43813528bc48b4f7df7ce29a3e05b03ecf60391ec3c7cba8765e75572",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "rest-saved-full",
+      "label": "当前灵力",
+      "value": 100,
+      "max": 100,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ]
+      },
+      "positions": {
+        "fill": [
+          898,
+          307
+        ]
+      },
+      "contrastFillToTrack": null,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-saved-full-frame-1.png",
+      "sha256": "12b6add43813528bc48b4f7df7ce29a3e05b03ecf60391ec3c7cba8765e75572",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "pill-partial-before",
+      "label": "当前气血",
+      "value": 74,
+      "max": 170,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ],
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "fill": [
+          593,
+          307
+        ],
+        "track": [
+          704,
+          307
+        ]
+      },
+      "contrastFillToTrack": 9.553063057727966,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-4b434-eadonly-viewing-and-refresh-chromium/pill-partial-before-frame-1.png",
+      "sha256": "a4c44dd4ac10d2f6dd749b635edea0f5aa53c1773cb10f51f5638a7da094bfb9",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "pill-partial-before",
+      "label": "当前灵力",
+      "value": 92,
+      "max": 100,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ],
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "fill": [
+          889,
+          307
+        ],
+        "track": [
+          1000,
+          307
+        ]
+      },
+      "contrastFillToTrack": 9.553063057727966,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-4b434-eadonly-viewing-and-refresh-chromium/pill-partial-before-frame-1.png",
+      "sha256": "a4c44dd4ac10d2f6dd749b635edea0f5aa53c1773cb10f51f5638a7da094bfb9",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "pill-only-real-saved-recovery",
+      "label": "当前气血",
+      "value": 133,
+      "max": 170,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ],
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "fill": [
+          631,
+          307
+        ],
+        "track": [
+          743,
+          307
+        ]
+      },
+      "contrastFillToTrack": 9.553063057727966,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-4b434-eadonly-viewing-and-refresh-chromium/pill-only-real-saved-recovery-frame-1.png",
+      "sha256": "8688f77494b1030c917c77fb7b06a074489622573e457cb67dc8f1ddfff0cea1",
+      "noMissingRegionInvented": true
+    },
+    {
+      "name": "pill-only-real-saved-recovery",
+      "label": "当前灵力",
+      "value": 92,
+      "max": 100,
+      "samples": {
+        "fill": [
+          158,
+          216,
+          194
+        ],
+        "track": [
+          16,
+          40,
+          47
+        ]
+      },
+      "positions": {
+        "fill": [
+          889,
+          307
+        ],
+        "track": [
+          1000,
+          307
+        ]
+      },
+      "contrastFillToTrack": 9.553063057727966,
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-03/current/package-results/uir35-03-progress-hierarch-4b434-eadonly-viewing-and-refresh-chromium/pill-only-real-saved-recovery-frame-1.png",
+      "sha256": "8688f77494b1030c917c77fb7b06a074489622573e457cb67dc8f1ddfff0cea1",
+      "noMissingRegionInvented": true
+    }
+  ],
+  "scope": "Actual sampled native pixels only; no overall visual or accessibility acceptance"
+}
