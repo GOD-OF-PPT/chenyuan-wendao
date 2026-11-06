@@ -1,0 +1,18 @@
+{
+  "rejections": [
+    {
+      "case": "missing",
+      "exit": 1,
+      "log": "artifacts/goal-4/cend06/observer-guard-missing.log",
+      "sha256": "46088177c94bc123957159b9aa65a63398cf39452e65b12f8ed5a52a9a024a82"
+    },
+    {
+      "case": "existing",
+      "exit": 1,
+      "log": "artifacts/goal-4/cend06/observer-guard-existing.log",
+      "sha256": "8f9bfb46793ad8f32ef6c4aa0532e00f0fa8974ce71b3df6e3ab5777146bedf2"
+    }
+  ],
+  "originalWitnessAllFilesExact": true,
+  "observerSourceSha256": "ff4346423f161ea23b0ae9747d766e615a6f37a6481a74fc81fee19b2ac00b81"
+}

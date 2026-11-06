@@ -1,0 +1,19 @@
+{
+  "producer": "8b5170fffc7d9a0735d852fd0d34024ab1c1f512",
+  "runtime": "ac49bbb5b147fee83b5c39377dbab3519bc91974dc187d11bb3753b420e7dd88",
+  "scope": "isolated lawful fixture via public import then readonly navigation; not normal new-game or extra formal coverage",
+  "currentActivity": null,
+  "gameDBVersion": 9,
+  "allGameDBUnchanged": true,
+  "sourceId": "herbs",
+  "label": "检视采集袋\n实际持有 · 已保存本段\n凝气草\n0\n本段已保存 +0",
+  "activeYieldEffects": 0,
+  "sourceStartReceipts": 0,
+  "recordedInventoryHerb": 0,
+  "errors": [],
+  "pngSha256": "18e7e1587664ae985e3eea77a9d292302b60f5512c3f11bd4ddde7278fec30c0",
+  "fullProof": {
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend06/source-witness-01/full-db-proof.json",
+    "sha256": "4259678e7a3ab743d536f09baee92f4ab1370db7e721dd776de7af285af065fd"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "readDate": "2026-11-06",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "used": "clarity hierarchy and minimal noise"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "used": "predictable context and know what an action does"
+    }
+  ],
+  "projectInference": "current fixed desktop full-stage review and per-finding independent repair; no certification",
+  "scope": "singleChromium1440x900 font1; compatibility/system/preferences/environment performance paused"
+}
