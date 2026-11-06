@@ -1,3 +1,4 @@
+from cend06_f02a_inventory import prior_f02a_bytes
 from uir35_03_inventory import prior_uir3503_bytes
 """Exact control-only miniature placement and proven unused slash definitions; old receipt rules stay pinned."""
 import hashlib,json,re
@@ -84,7 +85,7 @@ def validate_check_ui35(root):
  for n,row in MANIFEST['files'].items():
   raw=local(n).read_bytes();old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'CHECK-UI35 current source';assert hashlib.sha256(old).hexdigest()==row['beforeSha256'],'CHECK-UI35 original preserved';assert prior_check_ui35_bytes(n,raw)==old,'CHECK-UI35 whole inverse'
   if n.endswith('.vue'):assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'CHECK-UI35 original events'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'CHECK-UI35 original receipt rules writers and other actors'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_f02a_bytes(n,local(n).read_bytes())).hexdigest()==h,'CHECK-UI35 original receipt rules writers and other actors'
  total=sum(local(x['path']).stat().st_size for x in json.loads(local('art/redesign/action-feedback.json').read_text())['files']);assert total<=34000,'CHECK-UI35 original actual budget'
  assert all('motion-slash'not in p.read_text()and'slash-two'not in p.read_text()for p in(root/'web/src').rglob('*')if p.is_file()and p.suffix in ['.vue','.ts','.js']),'CHECK-UI35 removed slash definitions have no consumers'
  for n in MANIFEST['sourceReferences']:local(n)

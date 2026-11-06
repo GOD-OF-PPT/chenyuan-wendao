@@ -1,3 +1,4 @@
+from cend06_f02a_inventory import prior_f02a_bytes
 from uir35_04_inventory import prior_uir3504_bytes
 """Native saved progress theme only; preserve every original selector, layout and writing owner."""
 import hashlib,json
@@ -55,7 +56,7 @@ def validate_uir3503(root):
  before=local(MANIFEST['before']).read_bytes();assert len(before)==MANIFEST['beforeBytes']and hashlib.sha256(before).hexdigest()==MANIFEST['beforeSha256'],'UIR35-03 preserved original stylesheet'
  assert prior_uir3503_bytes(MANIFEST['path'],raw)==before,'UIR35-03 exact whole stylesheet inverse'
  assert len(raw)-len(before)<=100,'UIR35-03 actual added-byte cap'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR35-03 original Game DOM numbers timers and saves'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_f02a_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR35-03 original Game DOM numbers timers and saves'
  kit=next(a for a in json.loads(local('art/asset-manifest.json').read_text())['assets']if a['id']=='native-ui-kit')
  assert kit['bytes']+sum(local(c['path']).stat().st_size for c in kit['codeComponents'])<=80000,'UIR35-03 actual original native-kit cap'
  for n in MANIFEST['sourceReferences']:local(n)

@@ -1,3 +1,4 @@
+from cend06_f02a_inventory import prior_f02a_bytes
 """Exact source-state display inverse; original writers and animation proof remain strict."""
 import hashlib,json,re
 from pathlib import Path
@@ -31,6 +32,7 @@ MANIFEST={'format': 'chenyuan-check-ui35-source-state',
  'sourceReferences': ['docs/decisions/0124-check-ui35-source-state-contract.md',
                       'goal-4/amendments/2026-11-06-check-uir35-03-04-cend06-input.md']}
 def prior_check_ui35_source_bytes(path,raw):
+ raw=prior_f02a_bytes(path,raw)
  if Path(path).name!=Path(MANIFEST['path']).name or '当前库存'.encode() not in raw:return raw
  assert len(raw)==MANIFEST['bytes']and hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'CHECK-UI35-SOURCE complete current source'
  text=raw.decode()
@@ -54,7 +56,7 @@ def validate_check_ui35_source(root):
  assert len(raw)-len(old)<=300,'CHECK-UI35-SOURCE added bytes'
  assert raw.split(b'</script>')[0]==old.split(b'</script>')[0],'CHECK-UI35-SOURCE unchanged script and proof'
  assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'CHECK-UI35-SOURCE original callbacks'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'CHECK-UI35-SOURCE original rules clocks stores source identity and styling'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_f02a_bytes(n,local(n).read_bytes())).hexdigest()==h,'CHECK-UI35-SOURCE original rules clocks stores source identity and styling'
  ta=json.loads(local('art/redesign/ta08.json').read_text());total=sum(local(r['path']).stat().st_size for r in ta['files']);assert ta['budgets']['nativeBytes']==42000 and total<=42000,'CHECK-UI35-SOURCE actual original TA08 cap'
  for n in MANIFEST['sourceReferences']:local(n)
  return {LEDGER,MANIFEST['path'],MANIFEST['before'],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']},total

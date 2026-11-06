@@ -1,3 +1,4 @@
+from cend06_f02a_inventory import prior_f02a_bytes
 from check_ui35_inventory import prior_check_ui35_bytes
 """Exact small read-only fallback; existing controls, sources, and budgets remain pinned."""
 import hashlib,json,re
@@ -81,9 +82,10 @@ def validate_uir3502(root):
   assert all(not(root/n).exists()for n in MANIFEST['added']),'UIR35-02 unrecorded added view';return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'UIR35-02 immutable scope'
  row=MANIFEST['app'];raw=local(row['path']).read_bytes();old=local(row['before']).read_bytes();assert hashlib.sha256(old).hexdigest()==row['beforeSHA256'],'UIR35-02 preserved parent';assert prior_uir3502_bytes(row['path'],raw)==old,'UIR35-02 complete inverse'
- script=re.search(rb'<script.*?</script>',raw,re.S).group().replace(b"\nimport CultivationFallback from './CultivationFallback.vue';",b'').replace(b'const uiLocked=computed(()=>store.busy||!store.available);\n',b'')
+ viewraw=prior_f02a_bytes(row['path'],raw)
+ script=re.search(rb'<script.*?</script>',viewraw,re.S).group().replace(b"\nimport CultivationFallback from './CultivationFallback.vue';",b'').replace(b'const uiLocked=computed(()=>store.busy||!store.available);\n',b'')
  assert script==re.search(rb'<script.*?</script>',old,re.S).group(),'UIR35-02 original App controller'
- assert re.findall(rb'@[\w:.-]+="[^"]*"',raw.replace(b' @natural="hubTrainingMethod=\'natural\'"',b''))==re.findall(rb'@[\w:.-]+="[^"]*"',old),'UIR35-02 original event authority'
+ assert re.findall(rb'@[\w:.-]+="[^"]*"',viewraw.replace(b' @natural="hubTrainingMethod=\'natural\'"',b''))==re.findall(rb'@[\w:.-]+="[^"]*"',old),'UIR35-02 original event authority'
  assert len(raw)<=159635 and raw.count(b'uiLocked')==26,'UIR35-02 original parent cap and24 equivalent bindings'
  total=0
  for n,r in MANIFEST['added'].items():

@@ -1,0 +1,39 @@
+{
+  "oldPackageRed": {
+    "report": "artifacts/goal-4/cend06-f02a/red-01/report.json",
+    "case": "F02A help",
+    "reason": "No selected response stage; old generic arranged text and large review button",
+    "exit": 1
+  },
+  "initialPreliminary": {
+    "report": "artifacts/goal-4/cend06-f02a/preliminary-01/report.json",
+    "passed": 4,
+    "failed": 1,
+    "reason": "Opening another Page and re-installing Playwright clock reset the shared context after a full-day paused advance, leaving 86410500ms instead of <=6000ms; fixture error, not product clock failure."
+  },
+  "correctedForeignPremise": {
+    "report": "artifacts/goal-4/cend06-f02a/preliminary-02/report.json",
+    "passed": 1,
+    "change": "Reuse already-installed context clock; do not install it again on another Page."
+  },
+  "latestPreliminary": {
+    "report": "artifacts/goal-4/cend06-f02a/preliminary-03/report.json",
+    "passed": 5,
+    "source": "latest single scene timer and unchanged formal cost/total time in original requirements"
+  },
+  "resourcePremises": [
+    {
+      "reason": "Positive guard invoked while a generic SequenceMatcher(autojunk=False) was still consuming the whole159KB App; no new guard yet, discovery0 was rejected, not a pass. Its exec result handle was lost when only output string was displayed. A later duplicate was interrupted, original verified PID70485 was absent by followup.",
+      "correction": "Use exact two known App fragment replacements and complete inverse/hashes, linear work. No original Game or authority changes. No stale generator is treated as a live blocker."
+    },
+    {
+      "log": "artifacts/goal-4/cend06-f02a/preliminary-02/uir35-consumers.log",
+      "failed": 2,
+      "passed": 15,
+      "reason": "Original UIR35-02 negative inputs now reject earlier in exact F02A App proof; expected failure message no longer matches old owner only.",
+      "correction": "Keep all mutations and rejection assertion; shared reject helper accepts UIR35-02 or F02A. Actual original App cap159635 and callback/script original proof unchanged after complete new inverse."
+    }
+  ],
+  "currentProtected13Exact": true,
+  "formalVerificationPending": true
+}

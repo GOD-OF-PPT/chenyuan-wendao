@@ -1,3 +1,4 @@
+from cend06_f02a_inventory import prior_f02a_bytes
 from check_ui35_source_inventory import prior_check_ui35_source_bytes
 """Exact readonly medicine summaries and encounter footer; original plans and transaction owners stay pinned."""
 import hashlib,json,re
@@ -107,7 +108,7 @@ def validate_uir3504(root):
   raw=local(n).read_bytes();old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'UIR35-04 current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'UIR35-04 preserved complete original';assert prior_uir3504_bytes(n,raw)==old,'UIR35-04 full inverse'
   if n.endswith('.vue'):assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'UIR35-04 original writing and view callbacks'
  row=MANIFEST['projection'];raw=local(row['path']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256']and len(raw)<=2000,'UIR35-04 pure projected medicine text'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR35-04 original rules input CAS clocks atomic stores and history'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_f02a_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR35-04 original rules input CAS clocks atomic stores and history'
  adventure=json.loads(local('art/redesign/idle-adventure.json').read_text());total=sum(local(row['path']).stat().st_size for row in adventure['files'])+len(raw);assert adventure['maxNativeBytes']==45000 and total<=45000,'UIR35-04 actual original45000 includes added projection'
  art02=json.loads(local('art/redesign/art02.json').read_text());assert art02['maxNativeBytes']==45000 and sum(local(row['path']).stat().st_size for row in art02['files'])<=45000,'UIR35-04 actual original ART02 cap'
  for n in MANIFEST['sourceReferences']:local(n)

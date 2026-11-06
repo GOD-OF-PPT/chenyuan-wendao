@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  f02a=ROOT/'art/redesign/cend06-f02a.json'
+  if f02a.exists():
+   current=json.loads(f02a.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[x['before']for x in current['files'].values()],*current['added'],*current['unchanged']])
   checkui35source=ROOT/'art/redesign/check-ui35-source.json'
   if checkui35source.exists():
    current=json.loads(checkui35source.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],current['path'],current['before'],*current['unchanged']])
@@ -2538,7 +2541,7 @@ class Uir3502Tests(unittest.TestCase):
  def reject(self,n,a,b):
   from uir35_02_inventory import validate_uir3502
   raw=(ROOT/n).read_text();self.assertIn(a,raw);self.write(n,raw.replace(a,b,1))
-  with self.assertRaisesRegex(AssertionError,'UIR35-02'):validate_uir3502(self.root)
+  with self.assertRaisesRegex(AssertionError,'UIR35-02|F02A'):validate_uir3502(self.root)
  def test_existing_boolean_safety_cannot_be_bypassed(self):self.reject('web/src/App.vue','store.busy||!store.available','false')
  def test_preview_cannot_replace_original_begin_or_retry(self):self.reject('web/src/App.vue',"hubTrainingMethod='natural'","startTraining(hubTrainingPlan)")
  def test_unit_xp_cannot_be_replaced_by_whole_plan_or_resource_gate(self):
@@ -2631,3 +2634,29 @@ class Uir3504Tests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'UIR35-04'):validate_uir3504(self.root)
   self.write(LEDGER,MANIFEST);self.write(next(iter(MANIFEST['files'].values()))['before'],'lost original')
   with self.assertRaisesRegex(AssertionError,'UIR35-04'):validate_uir3504(self.root)
+
+class F02aTests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_f02a_complete_inverse_and_original_writing_callback(self):
+  from cend06_f02a_inventory import MANIFEST,validate_f02a,prior_f02a_bytes
+  self.assertLessEqual(validate_f02a(ROOT)[1],8000)
+  for n,row in MANIFEST['files'].items():self.assertEqual(prior_f02a_bytes(n,(ROOT/n).read_bytes()),(ROOT/row['before']).read_bytes())
+  n='web/src/App.vue';raw=(ROOT/n).read_text();self.write(n,raw.replace('@inspect="viewActivityPlan"','@inspect="act"',1))
+  with self.assertRaisesRegex(AssertionError,'F02A'):validate_f02a(self.root)
+ def test_f02a_cannot_replace_clock_authority_or_original_proof(self):
+  from cend06_f02a_inventory import MANIFEST,validate_f02a
+  for n in ['web/src/OpeningResponse.vue',*MANIFEST['unchanged']]:
+   raw=(ROOT/n).read_text();self.write(n,raw+'\n/* unauthorized */')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'F02A'):validate_f02a(self.root)
+   self.write(n,raw)
+ def test_f02a_missing_original_or_larger_budget_is_rejected(self):
+  from cend06_f02a_inventory import MANIFEST,LEDGER,validate_f02a
+  for k,v in [('maxAddedNativeBytes',8001),('actualART33Cap',12001),('actualParentDeltaCap',2401),('userAcceptance',True)]:
+   m=copy.deepcopy(MANIFEST);m[k]=v;self.write(LEDGER,m)
+   with self.subTest(key=k),self.assertRaisesRegex(AssertionError,'F02A'):validate_f02a(self.root)
+  self.write(LEDGER,MANIFEST);(self.root/LEDGER).unlink()
+  with self.assertRaisesRegex(AssertionError,'F02A'):validate_f02a(self.root)
+  self.write(LEDGER,MANIFEST);self.write(next(iter(MANIFEST['files'].values()))['before'],'lost original')
+  with self.assertRaisesRegex(AssertionError,'F02A'):validate_f02a(self.root)
