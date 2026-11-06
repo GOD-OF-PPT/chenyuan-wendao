@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  forecast=ROOT/'art/redesign/check-cend07.json'
+  if forecast.exists():
+   current=json.loads(forecast.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[x['before']for x in current['files'].values()]])
   f02b=ROOT/'art/redesign/cend06-f02b.json'
   if f02b.exists():
    current=json.loads(f02b.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[x['before']for x in current['files'].values()],*current['added'],*current['unchanged']])
@@ -2689,3 +2692,29 @@ class F02bTests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'F02B'):validate_f02b(self.root)
   self.write(LEDGER,MANIFEST);self.write(next(iter(MANIFEST['files'].values()))['before'],'lost original')
   with self.assertRaisesRegex(AssertionError,'F02B'):validate_f02b(self.root)
+
+class ForecastContextTests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_forecast_full_inverse_and_original_actual_caps(self):
+  from check_cend07_inventory import MANIFEST,validate_forecast,prior_forecast_bytes
+  validate_forecast(ROOT)
+  for n,row in MANIFEST['files'].items():self.assertEqual(prior_forecast_bytes(n,(ROOT/n).read_bytes()),(ROOT/row['before']).read_bytes())
+ def test_forecast_cannot_expand_domain_or_change_default_saved_reason(self):
+  from check_cend07_inventory import MANIFEST,validate_forecast
+  for n in MANIFEST['files']:
+   raw=(ROOT/n).read_text();self.write(n,raw+'\n/* outside forecast contract */')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'CF01'):validate_forecast(self.root)
+   self.write(n,raw)
+ def test_forecast_original_and_caps_cannot_be_replaced(self):
+  from check_cend07_inventory import MANIFEST,LEDGER,validate_forecast
+  for key,value in [('maxHelperDeltaBytes',401),('userAcceptance',True),('newRasterAssets',1)]:
+   m=copy.deepcopy(MANIFEST);m[key]=value;self.write(LEDGER,m)
+   with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'CF01'):validate_forecast(self.root)
+  self.write(LEDGER,MANIFEST);row=next(iter(MANIFEST['files'].values()));self.write(row['before'],'lost original')
+  with self.assertRaisesRegex(AssertionError,'CF01'):validate_forecast(self.root)
+ def test_forecast_missing_ledger_is_not_legacy_compatibility(self):
+  from check_cend07_inventory import LEDGER,validate_forecast
+  (self.root/LEDGER).unlink()
+  with self.assertRaisesRegex(AssertionError,'CF01'):validate_forecast(self.root)

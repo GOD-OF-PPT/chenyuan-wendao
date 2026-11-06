@@ -1,3 +1,4 @@
+from check_cend07_inventory import prior_forecast_bytes
 from cend06_f02a_inventory import prior_f02a_bytes
 from check_ui35_inventory import prior_check_ui35_bytes
 """Exact small read-only fallback; existing controls, sources, and budgets remain pinned."""
@@ -91,7 +92,7 @@ def validate_uir3502(root):
  for n,r in MANIFEST['added'].items():
   value=local(n).read_bytes();assert len(value)==r['bytes']and hashlib.sha256(value).hexdigest()==r['sha256'],'UIR35-02 exact added projection';total+=len(value)
  assert total<=6000,'UIR35-02 added budget'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR35-02 original writer clock rules and focus'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_forecast_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR35-02 original writer clock rules and focus'
  for n,cap in MANIFEST['caps'].items():
   if n in ['app','added']:continue
   actual=sum(local(x['path']).stat().st_size for x in json.loads(local('art/redesign/'+n+'.json').read_text())['files']);assert actual<=cap,'UIR35-02 original group cap'

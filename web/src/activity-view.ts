@@ -8,7 +8,12 @@ import {items,recipes,relics,sources} from '../../src/full/content.ts';
 const gains=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=>items[id].name+' +'+n).join(' · ');
 const quantities=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=>items[id].name+' ×'+n).join(' · ');
 // Keep persisted v6 reasons and their exact receipt proofs unchanged.
-export function stopMessage(plan:ActivityPlan,reason:RuleFailure|null|undefined){
+export function stopMessage(plan:ActivityPlan,reason:RuleFailure|null|undefined,forecast=false){
+ if(forecast){
+  if(reason?.code==='CYCLES_COMPLETE')return plan.kind==='travel'?'抵达目的地后停步':'完成本段次数后停手';
+  if(reason?.code==='TARGET_MET')return'达到所设目标后停手';
+  if(reason?.code==='XP_CAP')return'修为圆满后停手，转为筹备突破';
+ }
  if(['buy','learn','study'].includes(plan.kind)){
   if(reason?.code==='ACTIVITY_BUDGET')return'本段用石额度不足';
   if(reason?.code==='INSUFFICIENT_STONES')return'灵石不足';

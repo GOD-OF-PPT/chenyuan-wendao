@@ -1,3 +1,4 @@
+from check_cend07_inventory import prior_forecast_bytes
 from cend06_f02a_inventory import prior_f02a_bytes
 from check_ui35_source_inventory import prior_check_ui35_source_bytes
 """Exact readonly medicine summaries and encounter footer; original plans and transaction owners stay pinned."""
@@ -105,7 +106,9 @@ def validate_uir3504(root):
   assert not(root/MANIFEST['projection']['path']).exists(),'UIR35-04 unrecorded projection';return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'UIR35-04 immutable scope and original caps'
  for n,row in MANIFEST['files'].items():
-  raw=local(n).read_bytes();old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'UIR35-04 current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'UIR35-04 preserved complete original';assert prior_uir3504_bytes(n,raw)==old,'UIR35-04 full inverse'
+  try:raw=prior_forecast_bytes(n,local(n).read_bytes())
+  except AssertionError as error:raise AssertionError('UIR35-04 parent: '+str(error))from error
+  old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'UIR35-04 current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'UIR35-04 preserved complete original';assert prior_uir3504_bytes(n,raw)==old,'UIR35-04 full inverse'
   if n.endswith('.vue'):assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'UIR35-04 original writing and view callbacks'
  row=MANIFEST['projection'];raw=local(row['path']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256']and len(raw)<=2000,'UIR35-04 pure projected medicine text'
  for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_f02a_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR35-04 original rules input CAS clocks atomic stores and history'

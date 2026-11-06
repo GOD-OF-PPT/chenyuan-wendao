@@ -1,3 +1,4 @@
+from check_cend07_inventory import prior_forecast_bytes
 """Exact template-only decision hierarchy; original rules, callbacks and cap remain."""
 import hashlib,json,re
 from pathlib import Path
@@ -32,6 +33,8 @@ OPERATIONS=[['这段炼丹 · 安排与完整预估', '{{recipe.name}} · 每炉
   'class="alchemy-rules"><summary>停炉与续接规则</summary><p>只调整待确认安排，开炉后才执行。在线逐炉保存，刷新后主动继续；不自动采购、取材或突破。成品自动入匣，无需领取。材料不足、达到目标或触及保留量时自动停炉。</p></details><footer>']]
 MARKER='class="alchemy-rules"'
 def prior_uir3308_bytes(path,raw):
+ try:raw=prior_forecast_bytes(path,raw)
+ except AssertionError as error:raise AssertionError('UIR33-08 parent: '+str(error))from error
  if Path(path).name!='AlchemyWorkshop.vue' or MARKER.encode() not in raw:return raw
  assert hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'UIR33-08 current complete source'
  text=raw.decode()
@@ -47,7 +50,7 @@ def validate_uir3308(root):
   assert not(root/MANIFEST['path']).exists()or MARKER.encode()not in(root/MANIFEST['path']).read_bytes(),'UIR33-08 unrecorded source'
   return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'UIR33-08 immutable ledger'
- raw=local(MANIFEST['path']).read_bytes();old=local(MANIFEST['before']).read_bytes()
+ raw=prior_forecast_bytes(MANIFEST['path'],local(MANIFEST['path']).read_bytes());old=local(MANIFEST['before']).read_bytes()
  assert len(raw)==MANIFEST['bytes']and hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'UIR33-08 actual source'
  assert len(old)==MANIFEST['beforeBytes']and hashlib.sha256(old).hexdigest()==MANIFEST['beforeSHA256'],'UIR33-08 preserved source'
  assert prior_uir3308_bytes(MANIFEST['path'],raw)==old,'UIR33-08 full inverse'

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import {computed,inject,onDeactivated,onUnmounted,ref,useId,watch} from 'vue';
-import {gameFocusKey} from './focus';
-import type {Action,Game} from '../../src/full/types.ts';
-import {pausedPlanView} from './preparation-view.ts';
-import {stopMessage} from './activity-view';
-import * as C from '../../src/full/content.ts';
-import {previewActivity,ADVENTURE_CYCLE_MS,type PreparationPlan,type UsePlan,type RestPlan} from '../../src/full/activity.ts';
-import {previewAction} from '../../src/full/queries.ts';
-import type {TrackingTarget} from '../../src/full/goals.ts';
-import type {useGame} from './store';
+import{computed,inject,onDeactivated,onUnmounted,ref,useId,watch}from 'vue';
+import{gameFocusKey}from './focus';
+import type{Action,Game}from '../../src/full/types.ts';
+import{pausedPlanView}from './preparation-view.ts';
+import{stopMessage}from './activity-view';
+import*as C from '../../src/full/content.ts';
+import{previewActivity,ADVENTURE_CYCLE_MS,type PreparationPlan,type UsePlan,type RestPlan}from '../../src/full/activity.ts';
+import{previewAction}from '../../src/full/queries.ts';
+import type{TrackingTarget}from '../../src/full/goals.ts';
+import type{useGame}from './store';
 import RecoveryRitual from './RecoveryRitual.vue';
 import GameIcon from './GameIcon.vue';
 const props=withDefaults(defineProps<{game:Game;busy:boolean;available:boolean;running:boolean;highlight:string;savedPlan:UsePlan|RestPlan|null;planSaved?:boolean;inspectionExact?:boolean;embedded?:boolean}>(),{planSaved:false,inspectionExact:true});
@@ -43,7 +43,7 @@ watch(()=>props.game.core.runId,()=>lastReadIntent='');watch([()=>props.game.cor
   </template></RecoveryRitual>
   <dialog ref="options" class="art11-object-dialog" data-testid="recovery-options-dialog" :aria-labelledby="optionsTitle"><h3 :id="optionsTitle">药匣与疗养方式</h3>  <div class="recovery-options" aria-label="恢复方式"><button v-for="id in ['healing_pill','spirit_pill']" :key="id" :aria-pressed="mode==='use'&&selected===id" :data-testid="'recovery-'+id" @click="choose(id);options?.close()"><GameIcon kind="item" :id="id"/><strong>{{C.items[id].name}}</strong><small>持有 {{game.core.inventory[id]}} 丹 · 6 秒 / 丹</small></button><button :aria-pressed="mode==='rest'" data-testid="recovery-rest" @click="choose('rest');options?.close()"><GameIcon kind="nav" id="cultivate"/><strong>洞府疗养</strong><small>1 游戏月 · 30 秒 · 恢复至满</small></button></div>
 <footer><button data-testid="recovery-options-close" @click="options?.close()">返回调息</button></footer></dialog>
-  <dialog ref="settings" class="preparation-dialog" data-testid="recovery-plan-dialog" :aria-labelledby="titleId"><h3 :id="titleId">{{mode==='rest'?'洞府疗养':item.name}} · 单次{{quote.cycleMs/1000}}秒</h3><p>关闭保留草案；确认才执行。达标或触及保留线即停，逐次保存。</p><small v-if="mode==='use'">战中服丹占回合，另在斗法安排。</small><small v-else>不在洞府时先回洞府；抵达后再预估并确认疗养。</small><p v-if="quote.stopReason">预计停止：{{stopMessage(plan,quote.stopReason)}}</p><template v-if="mode==='use'"><label class="recovery-target">{{item.hp?'气血':'灵力'}}目标 <input v-model.number="target" type="number" min="1" max="100" aria-label="恢复目标百分比">%</label><div class="recovery-limits-fields"><label>最多用药<input v-model.number="count" type="number" min="1" max="50" aria-label="最多服丹数"></label><label>库存保留<input v-model.number="reserve" type="number" min="0" :max="C.maxQuantity" aria-label="服丹库存保留量"></label></div></template><div v-else class="recovery-limits-fields"><label>余寿保留（月）<input v-model.number="monthsReserve" type="number" min="1" aria-label="疗养余寿保留量"></label></div>
+  <dialog ref="settings" class="preparation-dialog" data-testid="recovery-plan-dialog" :aria-labelledby="titleId"><h3 :id="titleId">{{mode==='rest'?'洞府疗养':item.name}} · 单次{{quote.cycleMs/1000}}秒</h3><p>关闭保留草案；确认才执行。达标或触及保留线即停，逐次保存。</p><small v-if="mode==='use'">战中服丹占回合，另在斗法安排。</small><small v-else>不在洞府时先回洞府；抵达后再预估并确认疗养。</small><p v-if="quote.stopReason">预计停止：{{stopMessage(plan,quote.stopReason,true)}}</p><template v-if="mode==='use'"><label class="recovery-target">{{item.hp?'气血':'灵力'}}目标 <input v-model.number="target" type="number" min="1" max="100" aria-label="恢复目标百分比">%</label><div class="recovery-limits-fields"><label>最多用药<input v-model.number="count" type="number" min="1" max="50" aria-label="最多服丹数"></label><label>库存保留<input v-model.number="reserve" type="number" min="0" :max="C.maxQuantity" aria-label="服丹库存保留量"></label></div></template><div v-else class="recovery-limits-fields"><label>余寿保留（月）<input v-model.number="monthsReserve" type="number" min="1" aria-label="疗养余寿保留量"></label></div>
 <footer><button data-testid="recovery-plan-close" @click="settings?.close()">返回调息</button></footer></dialog>
  </section>
 </template>

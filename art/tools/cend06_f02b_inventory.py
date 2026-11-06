@@ -1,3 +1,4 @@
+from check_cend07_inventory import prior_forecast_bytes
 """Exact travel-only scene adapter and unchanged authority, with original caps."""
 import hashlib,json,re
 from pathlib import Path
@@ -67,6 +68,7 @@ MANIFEST={'format': 'chenyuan-cend06-f02b-travel-passage',
                       'goal-4/amendments/2026-11-06-cend06-f02b-input.md',
                       'goal-4/research/cend06-f02b-sources.json']}
 def prior_f02b_bytes(path,raw):
+ raw=prior_forecast_bytes(path,raw)
  matches=[n for n in MANIFEST['files']if Path(n).name==Path(path).name]
  if not matches:return raw
  row=MANIFEST['files'][matches[0]]
@@ -98,7 +100,10 @@ def validate_f02b(root):
  assert total<=8500,'F02B new native cap'
  assert MANIFEST['files']['web/src/ScenePanel.vue']['bytes']-MANIFEST['files']['web/src/ScenePanel.vue']['beforeBytes']<=400,'F02B scene delta'
  app=local('web/src/App.vue').stat().st_size;assert app<=159635 and app-157235<=2400,'F02B actual original App caps'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'F02B original maps clocks stores rules and focus'
+ for n,h in MANIFEST['unchanged'].items():
+  try:raw=prior_forecast_bytes(n,local(n).read_bytes())
+  except AssertionError as error:raise AssertionError('F02B unchanged parent: '+str(error))from error
+  assert hashlib.sha256(raw).hexdigest()==h,'F02B original maps clocks stores rules and focus'
  s=local('web/src/TravelPassage.vue').read_text();assert not re.search(r'\b(?:setTimeout|setInterval|requestAnimationFrame|Date|performance|fetch|indexedDB|localStorage|resolve|startPlannedActivity|pauseCultivation|resumeCultivation)\b|v-html|eval\s*\(',s),'F02B no own clock IO writes or rewards'
  assert "defineEmits<{inspect:[Event]}>()"in s and all(x in s for x in ['activityLocal','gameRevision','generation','remainingMs','Teleport','defer','data-testid=hub-current']),'F02B real clock and original target'
  for n in MANIFEST['sourceReferences']:local(n)
