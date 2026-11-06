@@ -1,0 +1,46 @@
+{
+  "sourceBefore": "5f521c2",
+  "originalPreparationFailures": [
+    {
+      "session": 58184,
+      "exit": 1,
+      "cause": "CommonJS named config import; no product execution"
+    },
+    {
+      "session": 24987,
+      "exit": 1,
+      "cause": "new fixture wrongly asserted result.ok instead of actual executedSteps; no product execution"
+    }
+  ],
+  "originalProductRed": {
+    "session": 76824,
+    "exit": 1,
+    "report": "artifacts/goal-4/uir35-01/original-red-v3/report.json",
+    "cause": "actual HUD reports 0/50 rather than actual count and explicit upper limit"
+  },
+  "currentPreliminary": {
+    "session": 71144,
+    "exit": 0,
+    "passed": 3,
+    "report": "artifacts/goal-4/uir35-01/current-preliminary/report.json"
+  },
+  "resourcePreparation": [
+    {
+      "session": 77967,
+      "exit": 130,
+      "scope": "explicitly stopped incomplete system-Python suite; missing Pillow and inverse chain not yet connected, not final execution"
+    },
+    {
+      "session": 50070,
+      "exit": 1,
+      "cause": "system Python missing Pillow; inverse reached art18"
+    },
+    {
+      "session": 91703,
+      "exit": 0,
+      "scope": "proper existing Pillow environment positive inventory"
+    }
+  ],
+  "rootDeclarationFailure": "stale root build identity assertion refused --list; wrapper-only full950 used to prepare v28, actual named frozen declaration still required",
+  "scope": "No performance/compatibility/old user save execution"
+}

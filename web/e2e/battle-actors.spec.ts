@@ -270,7 +270,7 @@ for(const move of ['attack','guard','technique','release','heal','restore','flee
   await savedGesture(page,move,before.school,info,'move-'+move+'-saved');const observedRows=await observed(page);expect(observedRows).toHaveLength(1);expect(observedRows[0]).toMatchObject({key,move,school:before.school});
   await expect(page.getByTestId('enemy-hp')).toContainText(String(saved.after.battle!.hp)+' /');await expect(page.getByTestId('battle-player')).toContainText(String(saved.after.core.player.hp)+' /');
  }
- await expect(page.getByTestId('training-summary')).toContainText('已完成 1 / 1');await frame(page,info,'move-'+move+'-saved-scene');
+ await expect(page.getByTestId('training-summary')).toContainText('已完成 1 次动作 · 上限 1 次动作');await frame(page,info,'move-'+move+'-saved-scene');
  await stable(page,saved);if(move!=='flee')expect(await observed(page)).toHaveLength(1);
 });
 
@@ -290,7 +290,7 @@ test('TA07-A3 a native positive-MP technique really counts down three seconds an
  await expect.poll(async()=>parseFloat(await page.getByTestId('training-countdown').innerText())).toBeLessThan(first);expect(await snapshot(page)).toEqual(before);expect(await database(page)).toEqual(accepted);await expect(page.getByTestId('battle-cast')).toHaveCount(0);expect(await page.evaluate(()=>(window as any).__ta07Writes)).toEqual([]);
  const saved=await formalResult(page,a,before,accepted,info,'native-technique'),ended=await page.evaluate(()=>({wall:Date.now(),mono:performance.now(),writes:(window as any).__ta07Writes}));
  expect(ended.mono-began.mono).toBeGreaterThanOrEqual(3000);expect(ended.wall).toBeGreaterThanOrEqual(a.dueAt);expect(ended.writes).toHaveLength(1);expect(ended.writes[0].wall).toBeGreaterThanOrEqual(a.dueAt);expect(ended.writes[0].value).toEqual(saved.after);expect(ended.writes[0].mode).toBe('readwrite');
- expect(saved.after.core.player.mp).toBe(resolve(before,a.nextCommand).nextState.core.player.mp);await expect(page.getByTestId('training-summary')).toContainText('已完成 1 / 1');
+ expect(saved.after.core.player.mp).toBe(resolve(before,a.nextCommand).nextState.core.player.mp);await expect(page.getByTestId('training-summary')).toContainText('已完成 1 次动作 · 上限 1 次动作');
  await attach(info,'native-cycle-before-response-assertion',{began,a,first,ended,firstNativeWrite:ended.writes[0],receipt:saved.receipt});
  expect(saved.formal.result.delta.hp).toBeLessThan(0);const response=saved.after.battle!.hp<before.battle!.hp?'exchange':'counter';
  await expect.poll(()=>page.evaluate(({move,school,run,enemy,response,revision})=>(window as any).__ta07EnemyResponses.filter((row:any)=>row.connected&&row.move===move&&row.school===school&&row.role==='enemy'&&row.run===run&&row.enemy===enemy&&row.revision===revision&&row.response===response).length,{move:'technique',school:before.school,run:before.core.runId,enemy:before.battle!.enemy,revision:String(saved.after.core.revision),response}),{timeout:8000}).toBeGreaterThan(0);
@@ -379,7 +379,7 @@ test('TA07-A8 talisman preparation survives missing standing art and both reduct
  for(const id of Object.values(moveButtons))await expect(page.getByTestId(id)).toBeVisible();const signatures:any[]=[];
  for(const move of ['technique','release','guard','attack'] as const){
   const preview=previewAction(before,{type:'BATTLE',move});expect(preview.allowed).toBe(true);const a=await begin(page,moveButtons[move]);signatures.push(await preparation(page,move,before,info,'reduced-talisman-'+move));
-  const saved=await cycle(page,a,before,info,'reduced-talisman-'+move);await paint(page,a,move,false);await expect(page.getByTestId('battle-cast')).toHaveCount(0);await expect(page.getByTestId('action-number')).toHaveCount(0);await expect(page.getByTestId('fx-skip')).toHaveCount(0);await expect(page.getByTestId('training-summary')).toContainText('已完成 1 / 1');
+  const saved=await cycle(page,a,before,info,'reduced-talisman-'+move);await paint(page,a,move,false);await expect(page.getByTestId('battle-cast')).toHaveCount(0);await expect(page.getByTestId('action-number')).toHaveCount(0);await expect(page.getByTestId('fx-skip')).toHaveCount(0);await expect(page.getByTestId('training-summary')).toContainText('已完成 1 次动作 · 上限 1 次动作');
   if(saved.after.battle){await expect(page.getByTestId('enemy-hp')).toContainText(String(saved.after.battle.hp)+' /');await staticAnimations(page);}
   await page.clock.runFor(1601);before=saved.after;
  }
@@ -387,6 +387,6 @@ test('TA07-A8 talisman preparation survives missing standing art and both reduct
  const isolated=await browser.newContext({baseURL:new URL(page.url()).origin,viewport:{width:1440,height:900},reducedMotion:'no-preference'}),p=await isolated.newPage();listen(p);
  try{
   const origin=await load(p,battleFixture('sword','technique'));await p.getByTestId('game-settings').click();await p.getByTestId('reduce-effects').check();await expect(p.getByTestId('reduce-effects')).toBeChecked();await p.getByRole('button',{name:'关闭设置',exact:true}).click();await reducedSkipNavigation(p,info,'preference-reduction');await manual(p);
-  const a=await begin(p,'technique');await preparation(p,'technique',origin,info,'preference-reduced-sword');await staticAnimations(p);const saved=await cycle(p,a,origin,info,'preference-reduced-sword');await paint(p,a,'technique',false);await expect(p.getByTestId('battle-cast')).toHaveCount(0);await expect(p.getByTestId('action-number')).toHaveCount(0);await expect(p.getByTestId('fx-skip')).toHaveCount(0);await expect(p.getByTestId('training-summary')).toContainText('已完成 1 / 1');await frame(p,info,'preference-reduced-sword-actual-saved');await stable(p,saved);expect(diagnostics.get(p)?.errors).toEqual([]);
+  const a=await begin(p,'technique');await preparation(p,'technique',origin,info,'preference-reduced-sword');await staticAnimations(p);const saved=await cycle(p,a,origin,info,'preference-reduced-sword');await paint(p,a,'technique',false);await expect(p.getByTestId('battle-cast')).toHaveCount(0);await expect(p.getByTestId('action-number')).toHaveCount(0);await expect(p.getByTestId('fx-skip')).toHaveCount(0);await expect(p.getByTestId('training-summary')).toContainText('已完成 1 次动作 · 上限 1 次动作');await frame(p,info,'preference-reduced-sword-actual-saved');await stable(p,saved);expect(diagnostics.get(p)?.errors).toEqual([]);
  }finally{await isolated.close();}
 });

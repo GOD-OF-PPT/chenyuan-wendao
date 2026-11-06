@@ -1,3 +1,4 @@
+from uir35_01_inventory import validate_uir3501
 from uir34_07_inventory import validate_uir3407
 from uir34_06_inventory import validate_uir3406
 from uir34_05_inventory import validate_uir3405
@@ -385,6 +386,7 @@ def validate_equipment_objects(root, image_reader=image_info):
 
 def validate(root):
     root = root.resolve()
+    validate_uir3501(root)
     check340204_files,check340204_bytes=validate_check340204(root)
     uir3404_files,uir3404_bytes=validate_uir3404(root)
     uir3403_files,uir3403_bytes=validate_uir3403(root)

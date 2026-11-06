@@ -213,7 +213,7 @@ async function stoppedFacts(page:Page,saved:any){
   const a=state(saved.raw,'activity'),view=activityView(a,saved.after),rail=page.locator('.game-hud .activity-rail[data-status="stopped"]');
   expect(a.status).toBe('stopped');expect(a.completedCycles).toBe(1);await expect(rail).toHaveAttribute('data-testid','training-summary');
   await expect(rail.locator('header strong')).toHaveText(view.name);await expect(rail.getByTestId('training-stop')).toHaveText(stopMessage(a.plan,a.stopReason));
-  await expect(rail.locator('.rail-count')).toHaveText('已完成 1 / '+a.plan.maxCycles+' '+view.unit+' · '+(a.version===7?'本次':'每轮')+' '+a.cycleMs/1000+' 秒');
+  await expect(rail.locator('.rail-count')).toHaveText('已完成 1 '+view.unit+' · 上限 '+a.plan.maxCycles+' '+view.unit+' · '+(a.version===7?'本次':'每轮')+' '+a.cycleMs/1000+' 秒');
   await expect(page.getByTestId('save-status')).toHaveText('已保存');expect(await database(page)).toEqual(saved.raw);
 }
 async function promptFooter(page:Page,skip:Locator){

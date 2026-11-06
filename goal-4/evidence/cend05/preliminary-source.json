@@ -1,0 +1,15 @@
+{
+  "producer": {
+    "head": "ac4306f666f6e5c24f4f8c43cdf78948874cdc7a",
+    "source": "ac4306f666f6e5c24f4f8c43cdf78948874cdc7a",
+    "tree": "513034e6ac72fcc18d2e0ced2e2207419934c120",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "0fed62b449a23416962144693d8b513e26e6e1f0f1d3f6f5278adf8448e61fb9",
+  "runtimeFiles": 334,
+  "allRuntimeExact": true,
+  "diagnostic": "online-preliminary separate normal online test; no formal76 rerun yet"
+}

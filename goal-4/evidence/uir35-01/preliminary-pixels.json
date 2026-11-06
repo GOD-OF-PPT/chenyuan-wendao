@@ -1,0 +1,65 @@
+[
+  {
+    "raw": "artifacts/goal-4/uir35-01/current-preliminary/results/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium/assisted-quota-old-facts.png",
+    "sha256": "dd5806d5ec45be3023ca9e160205c335537b5171cb8e20b584d93c28df2e8984",
+    "view": "artifacts/goal-4/uir35-01/views/assisted-quota-old-facts.png.jpg",
+    "viewSha256": "71906be5a03fc2f650fde03ff6b54a2c31381dd3da0bb8bc644055255e8ac391",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-01/current-preliminary/results/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium/assisted-real-cost.png",
+    "sha256": "2a4899654bb97db8f5c784a8d0314d2e45328a282bea13cb57d55a933f42aca4",
+    "view": "artifacts/goal-4/uir35-01/views/assisted-real-cost.png.jpg",
+    "viewSha256": "e039e5c4f20c1977e419e9c903f5b3ab049d104c018881d9229637b048ab9afc",
+    "viewed": true
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-01/current-preliminary/results/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium/assisted-budget-stop.png",
+    "sha256": "14d357e6d63e95e0d3fcdc2da1988aaa91263b1c590d27669d71467858cdc0a1",
+    "view": "artifacts/goal-4/uir35-01/views/assisted-budget-stop.png.jpg",
+    "viewSha256": "2817a97e43bb3dc95df0b3eb5c1e840d368a7de423cc2326c5612f00ad7eac93",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-01/current-preliminary/results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-one-saved.png",
+    "sha256": "adf38bcca9b95285f019ef7c8d464e56d94e2c4ae765215ed75a9d35058abfcd",
+    "view": "artifacts/goal-4/uir35-01/views/natural-one-saved.png.jpg",
+    "viewSha256": "753d9a0c6c1e3f188970c3d3afb06bd06af543f4450b71a54838f2dcbf375281",
+    "viewed": true
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-01/current-preliminary/results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-goal-running.png",
+    "sha256": "c42f72825bfcfe07a19152e42b8ff9b133fc2482fc2a1a25e0b0ddeb6180482d",
+    "view": "artifacts/goal-4/uir35-01/views/natural-goal-running.png.jpg",
+    "viewSha256": "ff612c390e6a75a65bda29ac01360046cfb3d6779df490f8534cbb2ae2d9e0ef",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-01/current-preliminary/results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-complete-authority.png",
+    "sha256": "ac9d6e2bc4381dc28aed438bd25353fb60817b02b83e2a60ddd3aa4e4c392177",
+    "view": "artifacts/goal-4/uir35-01/views/natural-complete-authority.png.jpg",
+    "viewSha256": "fcdd31644128f560b438b93751056e56e94ea74406d4751d1f4e71fa01fddf7c",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-01/current-preliminary/results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-paused.png",
+    "sha256": "0af2a93a3c61e0b79e86ea45e44edbfa1df8495113cc165beb45fbb81ea49d9c",
+    "view": "artifacts/goal-4/uir35-01/views/natural-paused.png.jpg",
+    "viewSha256": "69edd585b2f50b4dd49bb9b46dcfc17e83e73c15b33e4fa2fb52ae5661915395",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-01/current-preliminary/results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-real-stop-two-of-upper-fifty.png",
+    "sha256": "a9b8bb36d8d864378276fd4b448cf013a153b157f0516f65edeca2eb5e899292",
+    "view": "artifacts/goal-4/uir35-01/views/natural-real-stop-two-of-upper-fifty.png.jpg",
+    "viewSha256": "d359b06b6185f9458d734c78929d374f89c52af3368a0ae4a198fdc4f8709707",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/uir35-01/current-preliminary/results/uir35-01-goal-authority-UI-ea178-elds-without-a-hidden-write-chromium/natural-finite-one.png",
+    "sha256": "3d45824592128e8785554e8ba7900efbfc14830b5890d45957f747ed77d7733e",
+    "view": "artifacts/goal-4/uir35-01/views/natural-finite-one.png.jpg",
+    "viewSha256": "51c8d458ebf39c01b369f83ac04cee0dc6e08dd79ee04a98e8bc1609de7959e1",
+    "viewed": false
+  }
+]

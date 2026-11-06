@@ -1,3 +1,4 @@
+from uir35_01_inventory import prior_uir3501_bytes
 from uir34_05_inventory import prior_uir3405_bytes
 """Strict player-facing resume copy; original state guards and atomic owners unchanged."""
 import hashlib,json,re
@@ -65,6 +66,7 @@ MANIFEST={'format': 'chenyuan-resume-wording-uir34-04',
                       'goal-4/amendments/2026-11-05-uir34-04-input.md']}
 MARKERS={'CultivationOngoing.vue':'待继续 · 本轮重计','TrainingActivity.vue':'待继续 · 本轮重计','OpeningOffering.vue':'此念已保存 · 继续见上方'}
 def prior_uir3404_bytes(path,raw):
+ raw=prior_uir3501_bytes(path,raw)
  name=Path(path).name
  if name not in MANIFEST['files']or MARKERS[name].encode()not in raw:return raw
  row=MANIFEST['files'][name];assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'UIR34-04 exact complete display source'
@@ -83,7 +85,7 @@ def validate_uir3404(root):
   return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'UIR34-04 immutable scope'
  for name,r in MANIFEST['files'].items():
-  raw=local(r['path']).read_bytes();old=local(r['before']).read_bytes();assert len(raw)==r['bytes']and hashlib.sha256(raw).hexdigest()==r['sha256'],'UIR34-04 actual source';assert hashlib.sha256(old).hexdigest()==r['beforeSHA256'],'UIR34-04 original preserved';assert prior_uir3404_bytes(name,raw)==old,'UIR34-04 full inverse'
+  raw=prior_uir3501_bytes(r['path'],local(r['path']).read_bytes());old=local(r['before']).read_bytes();assert len(raw)==r['bytes']and hashlib.sha256(raw).hexdigest()==r['sha256'],'UIR34-04 actual source';assert hashlib.sha256(old).hexdigest()==r['beforeSHA256'],'UIR34-04 original preserved';assert prior_uir3404_bytes(name,raw)==old,'UIR34-04 full inverse'
   assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'UIR34-04 original event authority'
   assert re.findall(rb':disabled="[^"]*"',raw)==re.findall(rb':disabled="[^"]*"',old),'UIR34-04 original safety guards'
   assert re.findall(rb'<style.*?</style>',raw,re.S)==re.findall(rb'<style.*?</style>',old,re.S),'UIR34-04 original styles'

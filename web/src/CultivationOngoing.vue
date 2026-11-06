@@ -16,10 +16,10 @@ const phase=computed(()=>check.value?'进度待核对':store.activityPausing?'�
 <template>
  <section v-if="a&&view" class="cultivation-ongoing art06-main-decision" data-testid="cultivation-ongoing" :data-status="a.status" aria-label="本段已保存安排">
   <header><small>{{phase}}</small><h2>{{view.name}}</h2></header>
-  <p class="ongoing-progress">已完成 <strong>{{a.completedCycles}}</strong> / {{a.plan.maxCycles}} {{view.unit}}<span>每{{view.unit}} {{a.cycleMs/1000}} 秒</span></p>
+  <p class="ongoing-progress">已完成 <strong>{{a.completedCycles}}</strong> {{view.unit}}<template v-if="a.version!==1"> · 上限 {{a.plan.maxCycles}} {{view.unit}}</template><span>每{{view.unit}} {{a.cycleMs/1000}} 秒</span></p>
   <template v-if="a.version===1">
    <p>本段修为 <strong>+{{a.gainedXp}}</strong></p>
-   <small>{{view.goal}} · 用石 {{a.spentStones}} / {{a.plan.stoneBudget}} · 保留 {{a.plan.stoneReserve}}</small>
+   <small>{{view.goal}} · 上限 {{a.plan.maxCycles}} 轮<template v-if="a.plan.method==='assisted'"> · 用石 {{a.spentStones}} / {{a.plan.stoneBudget}} · 保留 {{a.plan.stoneReserve}}</template><template v-else> · 不耗灵石</template></small>
   </template>
   <small v-else>{{view.summary.join(' · ')}} · {{view.goal}}</small>
   <p v-if="check" role="status">请先处理上方存档提示，再继续本段。</p>

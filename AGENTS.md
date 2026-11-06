@@ -605,3 +605,6 @@ CHECK-UIR34-05-07开工约定：组合例先核真实原导航/辅助控件语�
 
 
 CHECK-UIR34-05-07当前源984规则/700资源与297授权UI/包3只证明本组三任务工程边界；先用真实原路由/控件语义区分导航辅助与正文，不能为测试假设改游戏或缩全Game/44/周期。native保留TICK时不做会阻塞的全DB读，释放后核完整CPP/owner/回执同行；put成功后abort仍不等于已封卷。没有生产改变时原包要明示生产者/全运行源/载荷同，不伪造新版本。当前C端适合性/最终1394/艺术长期真人仍开放，兼容环境性能暂停不因综合自动恢复。
+
+
+UIR35-01依[0117](docs/decisions/0117-cultivation-goal-limit-uir35-01.md)及本轮回读[Riot清晰度](https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/)/[XAG114](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114)：活动最大授权不是成长任务分母。显示真实已完成数、明确上限，修为圆满/限次停止按原计划说明；自然修炼不耗灵石可直述，完整原预算/保留字段仍可查，辅助修炼的实际支出/预算/保留常驻。普通非修炼活动也保实际次数与上限；不得通过少字丢有限授权或推算未经保存成果。只改模板不改计时/Store/Game与原子权，保持6000/22000旧帽与历史完整逆回。具体文案为项目推导，当前固定桌面检查不代兼容、全界面艺术、长期平衡或真人验收。

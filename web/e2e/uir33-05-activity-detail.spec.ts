@@ -1,3 +1,4 @@
+import{activityView}from'../src/activity-view';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
 import {driver} from '../../tests/full-route.mjs';
 import * as C from '../../src/full/content';
@@ -77,7 +78,7 @@ for(const kind of ['source','craft','forge','learn','milestone'] as const)test('
  let prior=before;const cycles=kind==='learn'?plan.maxCycles:1;
  for(let n=0;n<cycles;n++){const a=await activity(page);const done=await tick(page,a,prior);prior=done.game;}
  await expect.poll(async()=>(await activity(page))?.status).toBe('stopped');if(!await page.getByTestId('activity-details').isVisible())await readonly(page,()=>inspect(page));await frame(page,info,kind+'-saved',false);
- await expect(page.getByTestId('training-totals')).toContainText('已完成 '+cycles+' / '+cycles);await expect(page.getByTestId('training-stop')).not.toHaveText('');const raw=await database(page);await page.clock.fastForward(86400000);expect(await database(page)).toEqual(raw);
+ await expect(page.getByTestId('training-totals')).toContainText('已完成 '+cycles+' '+activityView((await activity(page))!,await snapshot(page)).unit+' · 上限 '+cycles);await expect(page.getByTestId('training-stop')).not.toHaveText('');const raw=await database(page);await page.clock.fastForward(86400000);expect(await database(page)).toEqual(raw);
 });
 
 test('UIR33-05-battle complete original battle strategy is paged with stable controls after the saved victory',async({page},info)=>{

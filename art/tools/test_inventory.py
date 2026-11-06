@@ -2461,3 +2461,25 @@ class Uir3407Tests(unittest.TestCase):
    for key,value in [('version',True),('userAcceptance',True),('caps',{'story-journey':49000,'narrative-objects':45000})]:
     m=copy.deepcopy(MANIFEST);m[key]=value;(root/LEDGER).write_text(json.dumps(m))
     with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'UIR34-07'):validate_uir3407(root)
+
+class Uir3501Tests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_complete_display_inverse_and_original_authority_caps(self):
+  from uir35_01_inventory import MANIFEST,prior_uir3501_bytes,validate_uir3501
+  validate_uir3501(ROOT)
+  for n,row in MANIFEST['files'].items():self.assertEqual(prior_uir3501_bytes(n,(ROOT/n).read_bytes()),(ROOT/row['before']).read_bytes())
+ def test_false_count_free_cost_and_new_authority_are_rejected(self):
+  from uir35_01_inventory import validate_uir3501
+  for n,a,b in [('CultivationOngoing.vue','a.completedCycles','a.plan.maxCycles'),('CultivationOngoing.vue',"a.plan.method==='assisted'",'false'),('TrainingActivity.vue','store.pauseCultivation','store.retry'),('TrainingActivity.vue','runtime.value?.remainingMs','0')]:
+   p='web/src/'+n;s=(ROOT/p).read_text();self.assertIn(a,s);self.write(p,s.replace(a,b,1))
+   with self.subTest(file=n,change=a),self.assertRaisesRegex(AssertionError,'UIR35-01'):validate_uir3501(self.root)
+   self.write(p,s)
+ def test_original_limits_cannot_be_raised_or_human_acceptance_forged(self):
+  from uir35_01_inventory import LEDGER,MANIFEST,validate_uir3501
+  for key,value in [('newRasterAssets',1),('userAcceptance',True)]:
+   m=copy.deepcopy(MANIFEST);m[key]=value;self.write(LEDGER,m)
+   with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'UIR35-01'):validate_uir3501(self.root)
+  m=copy.deepcopy(MANIFEST);m['caps']['idle-cultivation']+=1;self.write(LEDGER,m)
+  with self.assertRaisesRegex(AssertionError,'UIR35-01'):validate_uir3501(self.root)

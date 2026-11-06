@@ -1,0 +1,58 @@
+[
+  {
+    "raw": "artifacts/goal-4/cend05/online-preliminary/results/cend05-online-observation--582fd-without-importing-a-fixture/normal-selected-original-choice.png",
+    "rawSha256": "79c250b97ba50563e52264c322344e90a470aabcfbefdf738e09f89f93b7830f",
+    "view": "artifacts/goal-4/cend05/views/normal-selected-original-choice.png.jpg",
+    "viewSha256": "f8fee45d6646c16614d57923d0879a14b0c1ff58621d4ab26bec1faa6b226275",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/cend05/online-preliminary/results/cend05-online-observation--582fd-without-importing-a-fixture/normal-trip-real-running.png",
+    "rawSha256": "0b7d746d819887e21e351d097cadc6bb10bcb4d70f8eefbe0c7d7f954c09c548",
+    "view": "artifacts/goal-4/cend05/views/normal-trip-real-running.png.jpg",
+    "viewSha256": "307a0d1d7e11ab3ea7c9d0f3032ab2dfc7bf40d1446ceb029844b0795d97ccf6",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/cend05/online-preliminary/results/cend05-online-observation--582fd-without-importing-a-fixture/normal-created-opening.png",
+    "rawSha256": "9e883735101c12b4d019dd1fd8b07897b91eb66cfd6d83ca4f9f0ce38fbe2fad",
+    "view": "artifacts/goal-4/cend05/views/normal-created-opening.png.jpg",
+    "viewSha256": "1b74b1cca0e69d96006174d271cd9511438254eeb752fb6eb341a063dfc528b6",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/cend05/online-preliminary/results/cend05-online-observation--582fd-without-importing-a-fixture/normal-paused-profile-real-game.png",
+    "rawSha256": "cd586fafcf24002f6b13759789249a6dc81a47ba8b206042ec440e863a792764",
+    "view": "artifacts/goal-4/cend05/views/normal-paused-profile-real-game.png.jpg",
+    "viewSha256": "8b77f7ec375ae2174b13ae03a3be87f9ec4d620b98668e44c16373e1d6248cff",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/cend05/online-preliminary/results/cend05-online-observation--582fd-without-importing-a-fixture/normal-choice-real-running.png",
+    "rawSha256": "7602a772f39b063805108c5dce85c4bb7df6f237232ab99596dc299446107258",
+    "view": "artifacts/goal-4/cend05/views/normal-choice-real-running.png.jpg",
+    "viewSha256": "1300ed5e39c30a1cb90bb70b5a30ad03f10546f2c9832206c7a16ed6dfe9c3ad",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/cend05/online-preliminary/results/cend05-online-observation--582fd-without-importing-a-fixture/normal-cave-before-idle.png",
+    "rawSha256": "4347fbb7d10678bdbb533f401a6b2256b54cebe52deaf691cea79e689a421812",
+    "view": "artifacts/goal-4/cend05/views/normal-cave-before-idle.png.jpg",
+    "viewSha256": "59d8308fcceaa780a679fcf6cf17e3935add32c9ce373d2574e603d17e74bd46",
+    "viewed": true
+  },
+  {
+    "raw": "artifacts/goal-4/cend05/online-preliminary/results/cend05-online-observation--582fd-without-importing-a-fixture/normal-cultivation-real-running.png",
+    "rawSha256": "80dec2edf15bd146f09efab21eedb5f0738732382838c8d64e13ba7fa7dc1d8a",
+    "view": "artifacts/goal-4/cend05/views/normal-cultivation-real-running.png.jpg",
+    "viewSha256": "f7bc9634a357f95f27f68291df59ff7d183c1522f406b2f9ff7bd318af91cc5f",
+    "viewed": false
+  },
+  {
+    "raw": "artifacts/goal-4/cend05/online-preliminary/results/cend05-online-observation--582fd-without-importing-a-fixture/normal-first-saved-period-paused.png",
+    "rawSha256": "427a3d1264b733238bf262ca69de638fbd820971814fd71bd9de6d168f33b1ea",
+    "view": "artifacts/goal-4/cend05/views/normal-first-saved-period-paused.png.jpg",
+    "viewSha256": "e35092b6ee7ac04b02dde13451488d7634e27d397fcc1a2d1e98d8ed3bd1e0d9",
+    "viewed": true
+  }
+]
