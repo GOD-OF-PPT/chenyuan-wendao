@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3502=ROOT/'art/redesign/uir35-02.json'
+  if uir3502.exists():
+   current=json.loads(uir3502.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],current['app']['path'],current['app']['before'],*current['added'],*current['unchanged']])
   uir3501=ROOT/'art/redesign/uir35-01.json'
   if uir3501.exists():
    current=json.loads(uir3501.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*current['unchanged'],*[row['before']for row in current['files'].values()]])
@@ -2493,3 +2496,33 @@ class Uir3501Tests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'UIR35-01'):validate_uir3501(self.root)
   self.write(LEDGER,MANIFEST);row=next(iter(MANIFEST['files'].values()));self.write(row['before'],'not the preserved source')
   with self.assertRaisesRegex(AssertionError,'UIR35-01'):validate_uir3501(self.root)
+
+class Uir3502Tests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_full_app_inverse_and_existing_controller_and_caps_remain(self):
+  from uir35_02_inventory import MANIFEST,prior_uir3502_bytes,validate_uir3502
+  self.assertLessEqual(validate_uir3502(ROOT)[1],6000);self.assertEqual(prior_uir3502_bytes(MANIFEST['app']['path'],(ROOT/MANIFEST['app']['path']).read_bytes()),(ROOT/MANIFEST['app']['before']).read_bytes())
+ def reject(self,n,a,b):
+  from uir35_02_inventory import validate_uir3502
+  raw=(ROOT/n).read_text();self.assertIn(a,raw);self.write(n,raw.replace(a,b,1))
+  with self.assertRaisesRegex(AssertionError,'UIR35-02'):validate_uir3502(self.root)
+ def test_existing_boolean_safety_cannot_be_bypassed(self):self.reject('web/src/App.vue','store.busy||!store.available','false')
+ def test_preview_cannot_replace_original_begin_or_retry(self):self.reject('web/src/App.vue',"hubTrainingMethod='natural'","startTraining(hubTrainingPlan)")
+ def test_unit_xp_cannot_be_replaced_by_whole_plan_or_resource_gate(self):
+  for a,b in [('xp:unit.delta.xp','xp:quote.xp'),("unit.costs.stones!==0",'false'),("paid.failure.code!=='INSUFFICIENT_STONES'",'false')]:self.reject('web/src/cultivation-fallback.ts',a,b)
+ def test_selection_focus_cannot_escape_its_original_life(self):self.reject('web/src/CultivationFallback.vue','props.game.core.runId===run','true')
+ def test_old_caps_and_user_acceptance_cannot_change(self):
+  from uir35_02_inventory import LEDGER,MANIFEST,validate_uir3502
+  for key,value in [('newRasterAssets',1),('userAcceptance',True)]:
+   m=copy.deepcopy(MANIFEST);m[key]=value;self.write(LEDGER,m)
+   with self.assertRaisesRegex(AssertionError,'UIR35-02'):validate_uir3502(self.root)
+  m=copy.deepcopy(MANIFEST);m['caps']['app']+=1;self.write(LEDGER,m)
+  with self.assertRaisesRegex(AssertionError,'UIR35-02'):validate_uir3502(self.root)
+ def test_missing_ledger_and_corrupt_original_cannot_pass(self):
+  from uir35_02_inventory import LEDGER,MANIFEST,validate_uir3502
+  (self.root/LEDGER).unlink()
+  with self.assertRaisesRegex(AssertionError,'UIR35-02'):validate_uir3502(self.root)
+  self.write(LEDGER,MANIFEST);self.write(MANIFEST['app']['before'],'lost original')
+  with self.assertRaisesRegex(AssertionError,'UIR35-02'):validate_uir3502(self.root)

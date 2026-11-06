@@ -1,0 +1,193 @@
+{
+  "format": "chenyuan-uir35-02-assisted-fallback",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "app": {
+    "path": "web/src/App.vue",
+    "before": "goal-4/evidence/uir35-02/before/web/src/App.vue",
+    "beforeSHA256": "5e6a59b75b7021914ab4bdd356ef6608ec3f391d3522c9ac6eb8272698e7146a",
+    "bytes": 159410,
+    "sha256": "9f3f6c4596d9c8d4801e5ff0fecd1f9cda7a0842a13f3083ae4613d58e14e78f",
+    "operations": [
+      [
+        3865,
+        "",
+        ".vue';\nimport CultivationFallback from './CultivationFallback"
+      ],
+      [
+        6703,
+        "",
+        "uiLocked=computed(()=>store.busy||!store.available);\nconst "
+      ],
+      [
+        73935,
+        "store.busy||!store.available",
+        "uiLocked"
+      ],
+      [
+        77302,
+        "store.busy||!store.available",
+        "uiLocked"
+      ],
+      [
+        77434,
+        "store.busy || !store.available",
+        "uiLocked"
+      ],
+      [
+        77862,
+        "store.busy || !store.available",
+        "uiLocked"
+      ],
+      [
+        85229,
+        "store.busy||!store.available",
+        "uiLocked"
+      ],
+      [
+        85394,
+        "store.busy||!store.available",
+        "uiLocked"
+      ],
+      [
+        86516,
+        "template",
+        "CultivationFallback"
+      ],
+      [
+        86542,
+        "",
+        " :game=\"game\" :plan=\"hubTrainingPlan\" :blocked=\"pendingStoryError||uiLocked||store.activityRunning\" @natural=\"hubTrainingMethod='natural'\""
+      ],
+      [
+        87995,
+        "store.busy||!store.available",
+        "uiLocked"
+      ],
+      [
+        88184,
+        "store.busy||!store.available",
+        "uiLocked"
+      ],
+      [
+        88583,
+        "store.busy||!store.available",
+        "uiLocked"
+      ],
+      [
+        88834,
+        "!store.available||store.busy",
+        "uiLocked"
+      ],
+      [
+        89293,
+        "template",
+        "CultivationFallback"
+      ],
+      [
+        92672,
+        "store.busy||!store.available",
+        "uiLocked"
+      ],
+      [
+        92860,
+        "store.busy||!store.available",
+        "uiLocked"
+      ],
+      [
+        93265,
+        "!store.available||store.busy",
+        "uiLocked"
+      ],
+      [
+        93448,
+        "!store.available||store.busy",
+        "uiLocked"
+      ],
+      [
+        94843,
+        "!store.available||store.busy",
+        "uiLocked"
+      ],
+      [
+        119556,
+        "!store.available||store.busy",
+        "uiLocked"
+      ],
+      [
+        137436,
+        "store.busy || !store.available",
+        "uiLocked"
+      ],
+      [
+        137625,
+        "store.busy || !store.available",
+        "uiLocked"
+      ],
+      [
+        137874,
+        "store.busy || !store.available",
+        "uiLocked"
+      ],
+      [
+        138099,
+        "store.busy || !store.available",
+        "uiLocked"
+      ],
+      [
+        141584,
+        "store.busy || !store.available",
+        "uiLocked"
+      ],
+      [
+        143977,
+        "store.busy || !store.available",
+        "uiLocked"
+      ],
+      [
+        146007,
+        "store.busy || !store.available",
+        "uiLocked"
+      ],
+      [
+        148528,
+        "store.busy || !store.available",
+        "uiLocked"
+      ]
+    ]
+  },
+  "added": {
+    "web/src/CultivationFallback.vue": {
+      "bytes": 1949,
+      "sha256": "8db348a488f4c70947a8974579f26816d25657f1fbabee632d049448cc369883"
+    },
+    "web/src/cultivation-fallback.ts": {
+      "bytes": 1434,
+      "sha256": "579ff1b15aa9195c9d5d05e973118ae2e1cbafebd0415af3fb23fbbf0aedd9d1"
+    }
+  },
+  "caps": {
+    "app": 159635,
+    "added": 6000,
+    "cultivation-objects": 45000,
+    "idle-cultivation": 22000
+  },
+  "unchanged": {
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/focus.ts": "8ae91e78a4db7a854c293fc4b1bc28f02dd0d542b3119cff383f9245b4944eea",
+    "web/src/CultivationSite.vue": "b39966928306502220b66ebd3a4bd8f6eaae88243fbd306de80a08aa353072d5",
+    "web/src/CultivationOngoing.vue": "36ff8a84502f8031e6d4410f650e5aa264faf3346051ac932f5cc35715726253",
+    "web/src/TrainingPlanner.vue": "aee9eeb8b91bea2a748bb84b5257a0dd601a134a24598d827fef548da5ce669f",
+    "web/src/activity-clock.ts": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/queries.ts": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48"
+  },
+  "sourceReferences": [
+    "docs/decisions/0118-assisted-cultivation-fallback.md",
+    "goal-4/amendments/2026-11-06-uir35-02-input.md"
+  ]
+}

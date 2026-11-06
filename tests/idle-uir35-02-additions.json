@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-uir35-02-cultivation-fallback-additions",
+  "version": 29,
+  "parentVersion": 28,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 954,
+    "signature": "3048ba58fe82ce66f5032a3f6bd4d19b06b965d08b702e040f7fe533b1040697"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "uir35-02-cultivation-fallback.spec.ts",
+      "title": "UIR35-02-A1 spent assisted stones reveal a lawful natural choice without a hidden write before one explicitly started full natural cycle",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir35-02-cultivation-fallback.spec.ts",
+      "title": "UIR35-02-A2 affordable locked lifespan and full-growth states retain their original decision instead of a misleading free substitute",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir35-02-cultivation-fallback.spec.ts",
+      "title": "UIR35-02-A3 native saving and a quota failure retain the old paid activity until the original retry atomically exhausts it and only then offers a free choice",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "uir35-02-cultivation-fallback.spec.ts",
+      "title": "UIR35-02-A4 pause reload readonly drafts and an explicitly imported new life never replace saved authority with a fallback selection",
+      "projectName": "chromium"
+    }
+  ]
+}

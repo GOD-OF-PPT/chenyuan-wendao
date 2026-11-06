@@ -1,3 +1,4 @@
+from uir35_02_inventory import prior_uir3502_bytes
 """Exact display-only growth and authorization separation; all historical complete pins remain."""
 import hashlib,json,re
 from pathlib import Path
@@ -70,6 +71,7 @@ MANIFEST={'format': 'chenyuan-uir35-01-growth-authorization',
  'sourceReferences': ['docs/decisions/0117-cultivation-goal-limit-uir35-01.md',
                       'goal-4/amendments/2026-11-06-uir35-01-input.md']}
 def prior_uir3501_bytes(path,raw):
+ raw=prior_uir3502_bytes(path,raw)
  key=str(path).replace('\\','/')
  if key not in MANIFEST['files']:
   matches=[n for n in MANIFEST['files']if Path(n).name==Path(path).name]
@@ -98,7 +100,7 @@ def validate_uir3501(root):
   if n.endswith('.vue'):
    for pattern in [rb'<script.*?</script>',rb'<style.*?</style>',rb'@[\w:.-]+="[^"]*"',rb':disabled="[^"]*"']:
     assert re.findall(pattern,raw,re.S)==re.findall(pattern,old,re.S),'UIR35-01 original controller styles events and safety'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR35-01 original authority clock and rules'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_uir3502_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR35-01 original authority clock and rules'
  for n,cap in MANIFEST['caps'].items():
   total=local('web/src/'+n).stat().st_size if n.endswith('.vue')else sum(local(x['path']).stat().st_size for x in json.loads(local('art/redesign/'+n+'.json').read_text())['files'])
   assert total<=cap,'UIR35-01 actual original cap'

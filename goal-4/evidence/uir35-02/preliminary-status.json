@@ -1,0 +1,18 @@
+{
+  "previousTurn": "progress",
+  "originalRed": {
+    "session": 46315,
+    "exit": 1,
+    "report": "artifacts/goal-4/uir35-02/original-red/report.json",
+    "scope": "lawful assisted2 cycles spends40 then expected current fallback absent"
+  },
+  "projectionSetupFailure": "Node ESM import omitted .ts suffix; corrected before UI verification, no product execution in failed command",
+  "projectionTests": 6,
+  "currentPreliminary": {
+    "session": 79805,
+    "passed": 4,
+    "scope": "before extra newer-navigation assertion"
+  },
+  "currentV2": "same4 cases with original focus-race route added; preserve its separate report",
+  "scope": "fixed1440x900 singleChromium/font1; no compatibility/environment performance or user saves"
+}

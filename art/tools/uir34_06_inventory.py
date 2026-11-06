@@ -1,3 +1,4 @@
+from uir35_02_inventory import prior_uir3502_bytes
 """Strict current-only character folio with all original component source retained."""
 import hashlib,json
 from pathlib import Path
@@ -117,6 +118,6 @@ def validate_uir3406(root):
  assert canonical(json.loads(local(LEDGER).read_text()))==canonical(MANIFEST),'UIR34-06 immutable typed scope'
  raw=local(MANIFEST['path']).read_bytes();old=local(MANIFEST['before']).read_bytes();assert len(old)==MANIFEST['beforeBytes'] and hashlib.sha256(old).hexdigest()==MANIFEST['beforeSHA256'],'UIR34-06 original preserved';assert prior_uir3406_bytes(raw)==old,'UIR34-06 whole original component'
  delta=len(raw)-len(old);assert delta<=6000,'UIR34-06 added native cap'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR34-06 original writing controls clocks and stage'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_uir3502_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR34-06 original writing controls clocks and stage'
  for n in MANIFEST['sourceReferences']:local(n)
  return{LEDGER,MANIFEST['path'],MANIFEST['before'],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']},delta

@@ -1,3 +1,4 @@
+from uir35_02_inventory import prior_uir3502_bytes
 """Exact presentation-only status deduplication; old controllers, full pages and caps stay strict."""
 import hashlib,json
 from pathlib import Path
@@ -62,6 +63,7 @@ MANIFEST={'format': 'chenyuan-uir34-07-fate-status-dedup',
                'src/full/activity.ts': '2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815'},
  'sourceReferences': ['docs/decisions/0114-fate-status-deduplication.md', 'goal-4/amendments/2026-11-06-uir34-07-input.md']}
 def prior_uir3407_bytes(path,raw):
+ raw=prior_uir3502_bytes(path,raw)
  name=Path(path).name
  if name not in MANIFEST['files']:return raw
  r=MANIFEST['files'][name]
@@ -87,6 +89,6 @@ def validate_uir3407(root):
  totals={}
  for n,cap in MANIFEST['caps'].items():
   d=json.loads(local('art/redesign/'+n+'.json').read_text());total=sum(local(r['path']).stat().st_size for r in d['files']);assert total<=cap,'UIR34-07 actual original group cap';totals[n]=total
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR34-07 original model clock memory effects or authority'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_uir3502_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR34-07 original model clock memory effects or authority'
  for n in MANIFEST['sourceReferences']:local(n)
  return{LEDGER,*[r[k]for r in MANIFEST['files'].values()for k in ['path','before']],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']},totals['story-journey']

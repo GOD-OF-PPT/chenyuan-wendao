@@ -1,3 +1,4 @@
+from uir35_02_inventory import prior_uir3502_bytes
 from uir35_01_inventory import prior_uir3501_bytes
 """Exact presentation-only evolution for the original trial and life confirmations."""
 import hashlib,json
@@ -117,12 +118,12 @@ def validate_uir3405(root):
   assert b'closure-focus' not in local(MANIFEST['path']).read_bytes(),'UIR34-05 unrecorded view'
   return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'UIR34-05 immutable scope'
- raw=local(MANIFEST['path']).read_bytes();old=local(MANIFEST['before']).read_bytes()
+ raw=prior_uir3502_bytes(MANIFEST['path'],local(MANIFEST['path']).read_bytes());old=local(MANIFEST['before']).read_bytes()
  assert len(raw)==MANIFEST['bytes'] and hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'UIR34-05 actual source'
  assert hashlib.sha256(old).hexdigest()==MANIFEST['beforeSHA256'] and prior_uir3405_bytes(MANIFEST['path'],raw)==old,'UIR34-05 original complete preserved'
  assert len(raw)<=159635,'UIR34-05 original App cap'
  css=local(MANIFEST['css']['path']).read_bytes();assert len(css)==MANIFEST['css']['bytes'] and hashlib.sha256(css).hexdigest()==MANIFEST['css']['sha256'],'UIR34-05 actual CSS'
  assert len(css)<=2200,'UIR34-05 local style cap'
- for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'UIR34-05 original writer clock or reading'
+ for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_uir3502_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR34-05 original writer clock or reading'
  for n in MANIFEST['sourceReferences']:local(n)
  return {LEDGER,MANIFEST['path'],MANIFEST['before'],MANIFEST['css']['path'],*MANIFEST['unchanged'],*MANIFEST['sourceReferences']},len(css)
