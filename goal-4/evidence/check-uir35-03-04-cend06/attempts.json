@@ -1,0 +1,50 @@
+{
+  "oldPackageRed": {
+    "report": "artifacts/goal-4/check-uir35-03-04-cend06/red-01/report.json",
+    "exit": 1,
+    "reason": "Current old package has no Activity yet displays actual holdings / saved period +0; expected current stock not found."
+  },
+  "preliminary": {
+    "report": "artifacts/goal-4/check-uir35-03-04-cend06/preliminary-01/report.json",
+    "passed": 3,
+    "formalFrozenEvidence": false
+  },
+  "toolingCorrections": [
+    {
+      "reason": "Generated Python bytes marker contained non-ASCII bytes literal",
+      "correction": "explicit UTF8 string.encode; no production effect"
+    },
+    {
+      "reason": "New tests used write_text on hard-linked temporary fixtures, changing root SourceSatchel event and ledger cap temporarily",
+      "correction": "use existing copy-on-write self.write. Restore exact intended two-template source from preserved before; verify unchanged script/events, manifest SHA and all unchanged owner hashes. Three isolated negative tests and positive inventory then pass. No user save affected."
+    },
+    {
+      "reason": "Registry insertion expected two indent spaces; actual one. Assertion stopped before script write",
+      "correction": "Exact one-space insertion; v33 registry105 tests pass"
+    },
+    {
+      "reason": "Preliminary Vite first started at root",
+      "correction": "Own process stopped and restarted from web before all three tests"
+    }
+  ],
+  "fullValidationPending": false,
+  "additionalAttempts": [
+    {
+      "error": "Initial official Vue build21 TS7006 template errors; current generated global declaration absent",
+      "buildBeganUTC": "2026-11-06T11:41:53.447Z",
+      "coreDependencyInstallEndedUTC": "2026-11-06T11:41:57.327Z",
+      "buildEndedUTC": "2026-11-06T11:42:17.099Z",
+      "workflowDefect": "core validation includes its own npm ci and was incorrectly started concurrently with build. Dependency installation and compilation are dependent phases, even after an earlier install finished.",
+      "recovery": "Wait for install terminal. Unmodified vue-tsc diagnostic generated the official global types, byte identical to prior clean build. Original strict vue-tsc and official Vite build re-executed after install passed;5123 tracked inputs exact. No source/config/dependency pin changes, no type weakening.",
+      "internalCompilerFailureMechanism": "not independently proven; do not label this as a product cold-start bug or a repaired compiler"
+    },
+    {
+      "error": "Two early list invocations rejected because failed build had no build.json",
+      "recovery": "Both stopped before browser; new successful named declaration followed official build"
+    },
+    {
+      "error": "First phase launch omitted required explicit runtime argument",
+      "recovery": "Rejected before snapshots/browser/HTTP; original error log retained. Correct explicit runtime launched one actual129 UI execution."
+    }
+  ]
+}

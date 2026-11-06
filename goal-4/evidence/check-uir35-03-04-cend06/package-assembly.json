@@ -1,0 +1,20 @@
+{
+  "source": {
+    "head": "625325fb17d635a7d401a4cb63762a77cb3be6dc",
+    "source": "625325fb17d635a7d401a4cb63762a77cb3be6dc",
+    "tree": "60b2ee63f313ef5b26a30b36cb8042632686d7e4",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "c88eff3261205044fd93641f84915fbd3216ec8ff375786d34ab2ffa54cde53b",
+  "archive": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/check-ui35-source-preview-625325f.zip",
+  "bytes": 10103094,
+  "sha256": "2593ee08946cc5a68c6e8b29ac2826ca7322d3c220516d8c3ea68ed28f9b2748",
+  "unpacked": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/preview-unpacked-625325f",
+  "files": 112,
+  "payloadBytes": 11233214,
+  "formalCandidate": false,
+  "scope": "Engineering preview only. Full matrix, final review, overall art, idle balance and human acceptance pending."
+}

@@ -1,0 +1,192 @@
+[
+  {
+    "name": "unarranged-stock",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/unarranged-stock.png",
+    "pngSha256": "e7db0677abfdde983df0bcdebec9052fe1c1d9d2ef75372b27c8089c7d93b37c",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/unarranged-stock.jpg",
+    "viewSha256": "b2015dfd6bb0d3db83315efa19f0bd727086c4bdaa6ea0898674f9edd0f0fd25",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current stock and source period state readable, no observed overlap with source controls or navigation at 1440x900/font1; animation is only actual committed result."
+  },
+  {
+    "name": "arranged-first-period-no-yield",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/arranged-first-period-no-yield.png",
+    "pngSha256": "830c8d4ed9da17cc02a543c9afc567b63abb431802e03378cde84d4ff66874d7",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/arranged-first-period-no-yield.jpg",
+    "viewSha256": "31b28c9dc50677d089971471be38e8dc2b243aecb96c12b1360265ef0a516973",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current stock and source period state readable, no observed overlap with source controls or navigation at 1440x900/font1; animation is only actual committed result."
+  },
+  {
+    "name": "held-native-no-premature-harvest",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/held-native-no-premature-harvest.png",
+    "pngSha256": "102946b9a568e6a3a22ccfbe3e03870cd88fbf13f7e2754a18549e512a550795",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/held-native-no-premature-harvest.jpg",
+    "viewSha256": "166a86dce4db200c03628d8137fef5314a54618952ecc0639e867c34cfcc76c3",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current stock and source period state readable, no observed overlap with source controls or navigation at 1440x900/font1; animation is only actual committed result."
+  },
+  {
+    "name": "saved-first-harvest",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/saved-first-harvest.png",
+    "pngSha256": "5973159c6aa52263bd46db3956b88822eb2a1205e8ab4f2d54ab5b6f3a2b3e9e",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/saved-first-harvest.jpg",
+    "viewSha256": "bb3341402d2da040109c54ae248c21ebbe2def02e408be58bc56866aa1af6fd6",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current stock and source period state readable, no observed overlap with source controls or navigation at 1440x900/font1; animation is only actual committed result."
+  },
+  {
+    "name": "commission-actual-stock-and-period-income",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-3c8ad-sh-and-an-explicit-new-life-chromium/commission-actual-stock-and-period-income.png",
+    "pngSha256": "936513a3c3323a7e10e4b538f7040abbb9599a51294bcded402f20570aabddd8",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/commission-actual-stock-and-period-income.jpg",
+    "viewSha256": "1349262352afcaa2c55f02efc63117daee81c6d55c01a3ad27909c062f1cae5c",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current stock and source period state readable, no observed overlap with source controls or navigation at 1440x900/font1; animation is only actual committed result."
+  },
+  {
+    "name": "new-life-no-inherited-commission",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-3c8ad-sh-and-an-explicit-new-life-chromium/new-life-no-inherited-commission.png",
+    "pngSha256": "a2e75961e10d556ed20dbd5b2f9394ba5dcc62acd5d5933d239fbd4a3e73efe3",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/new-life-no-inherited-commission.jpg",
+    "viewSha256": "e73f29ca975526b2112f85bbdd056400af9ba23dab1541516f52d9d5398b15f2",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current stock and source period state readable, no observed overlap with source controls or navigation at 1440x900/font1; animation is only actual committed result."
+  },
+  {
+    "name": "failed-first-period-no-saved-yield",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/failed-first-period-no-saved-yield.png",
+    "pngSha256": "7f64602ce014848d277e1523086f7483acde0ef79bd1a0212aa9dd19222ca689",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/failed-first-period-no-saved-yield.jpg",
+    "viewSha256": "13be5890e2254cbb882197e1449f2bf47d4e77e96f800492f9eee3db93f151e9",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current stock and source period state readable, no observed overlap with source controls or navigation at 1440x900/font1; animation is only actual committed result."
+  },
+  {
+    "name": "paused-original-real-harvest",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/paused-original-real-harvest.png",
+    "pngSha256": "0c21982b0d1104234b030e5eef71a54644af98a5050dcbe5d9e07290702f8869",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/paused-original-real-harvest.jpg",
+    "viewSha256": "21a671ccf09c1d96ce710d78c595f99fab671b10e0a6b5f63f80059b63917498",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current stock and source period state readable, no observed overlap with source controls or navigation at 1440x900/font1; animation is only actual committed result."
+  },
+  {
+    "name": "finite-original-two-harvests",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/finite-original-two-harvests.png",
+    "pngSha256": "26c3d04791c51e1cabb45e5e8133835d735b71f3e5f167e4a617209af338117a",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/finite-original-two-harvests.jpg",
+    "viewSha256": "a4184a284bc763f88273db7650d30331c7f80ce0300dd40163747cb3f7b36f09",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current stock and source period state readable, no observed overlap with source controls or navigation at 1440x900/font1; animation is only actual committed result."
+  },
+  {
+    "name": "cultivation-zero-frame-1",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-zero-frame-1.png",
+    "pngSha256": "c6277a0065fca90c146da8d36614691fc32cf2d279092b544988ab024c9ec40d",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/cultivation-zero-frame-1.jpg",
+    "viewSha256": "c181b84490f7635c1a1f596aaacb3ca1ac15b2fbefc070a786298e8dff89cc9c",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current fixed desktop image reviewed: actual progress / explicit action / gates and returns remain readable. This is a local regression check, not overall art acceptance."
+  },
+  {
+    "name": "cultivation-half-paused-frame-1",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-half-paused-frame-1.png",
+    "pngSha256": "11dfb0dac0be07f58baaca89ee1f19a8af026ad39fcfdb7fcf0d99a5efc6cac3",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/cultivation-half-paused-frame-1.jpg",
+    "viewSha256": "086e1b36759c48b7d7ca7864b288c092abbe856194f54e2a2d709b1d601441d7",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current fixed desktop image reviewed: actual progress / explicit action / gates and returns remain readable. This is a local regression check, not overall art acceptance."
+  },
+  {
+    "name": "rest-native-saving-still-partial-frame-1",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-native-saving-still-partial-frame-1.png",
+    "pngSha256": "b7ce95fcd573b187e89688374b8231ec6313b718c0eadf1ead1b4deef347e7ac",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/rest-native-saving-still-partial-frame-1.jpg",
+    "viewSha256": "c127dc614f4c49b9c23e3eca4ae848eb5857d8db6109bf34b2c757268a499f6d",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current fixed desktop image reviewed: actual progress / explicit action / gates and returns remain readable. This is a local regression check, not overall art acceptance."
+  },
+  {
+    "name": "encounter-default-clear-summary",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-04-battle-medicine-U-ffcef--separate-three-second-turn-chromium/encounter-default-clear-summary.png",
+    "pngSha256": "19ab0d44eeef61ded6905a51d8632c4af3c0014a5a3227dfbd3c3e0f3a8e1735",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/encounter-default-clear-summary.jpg",
+    "viewSha256": "bda19c5a8c2600b91a00bc0f65428b4b3513cd49308bee3e6322f3c5979dafe5",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current fixed desktop image reviewed: actual progress / explicit action / gates and returns remain readable. This is a local regression check, not overall art acceptance."
+  },
+  {
+    "name": "actual-two-medicine-finite-authorization",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-04-battle-medicine-U-ca4ed-paused-original-arrangement-chromium/actual-two-medicine-finite-authorization.png",
+    "pngSha256": "1299817ff5795cb5f57dfb5185217e9a7c8eaae1786489df0b645d373f4d07bd",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/actual-two-medicine-finite-authorization.jpg",
+    "viewSha256": "a549a4a92bc9e434bba38ff20f14f864158e2b0d462e5d6d2bc13e428caf2f80",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current fixed desktop image reviewed: actual progress / explicit action / gates and returns remain readable. This is a local regression check, not overall art acceptance."
+  },
+  {
+    "name": "enabled-threshold-zero-budget-is-a-stop",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-04-battle-medicine-U-51a62-exact-formal-no-action-gate-chromium/enabled-threshold-zero-budget-is-a-stop.png",
+    "pngSha256": "9b0ccf2f68fa14fad3e725bf9cf7d5a408877d626a4b785508ca6741c9eca1ff",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/enabled-threshold-zero-budget-is-a-stop.jpg",
+    "viewSha256": "c85a3ca5568d36a6b5b0fe4fdf611d97fe6d71f728e506e85305d57d4bc8d446",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current fixed desktop image reviewed: actual progress / explicit action / gates and returns remain readable. This is a local regression check, not overall art acceptance."
+  },
+  {
+    "name": "CREATE-control-safe",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-feedback-CHECK--8f248-ural-expiry-changes-no-Game-chromium/CREATE-control-safe.png",
+    "pngSha256": "5d457405a561a708b3880d528ebe0ef6070d671992ababae0d5b3d0295ee0054",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/CREATE-control-safe.jpg",
+    "viewSha256": "966ff0902b7a12a025bcf19d4b5fd5dc33812581386d61dff52fab3c6877a4c7",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current fixed desktop image reviewed: actual progress / explicit action / gates and returns remain readable. This is a local regression check, not overall art acceptance."
+  },
+  {
+    "name": "opening-after-original-expiry",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-feedback-CHECK--8f248-ural-expiry-changes-no-Game-chromium/opening-after-original-expiry.png",
+    "pngSha256": "470bdca77c06eb7dd9772722ff459a77a85467284cb12afa20e5de5141b37ca3",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/opening-after-original-expiry.jpg",
+    "viewSha256": "683ce95523f0002d519441fca3832ad24c61ea2c7bcc4a2d6781d2d609f2c0ed",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current fixed desktop image reviewed: actual progress / explicit action / gates and returns remain readable. This is a local regression check, not overall art acceptance."
+  },
+  {
+    "name": "native-quota-complete-source-book",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-be162-ce-the-original-exact-retry-chromium/native-quota-complete-source-book.png",
+    "pngSha256": "57206119954891f147cc422cd0bbacf549a567dfd6b653d9ae74ad683d153eea",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/native-quota-complete-source-book.jpg",
+    "viewSha256": "dc07a9e9e034dbc73af128fddc40657e2fb9c0da69eb5acd745f4a2b95eced1d",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current fixed desktop image reviewed: actual progress / explicit action / gates and returns remain readable. This is a local regression check, not overall art acceptance."
+  },
+  {
+    "name": "different-source-after-original-unique-retry",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-be162-ce-the-original-exact-retry-chromium/different-source-after-original-unique-retry.png",
+    "pngSha256": "225c8916b0570c5a3f2a9ad98b9e6432e9f0cdba9e0cfff2c4a82d4b32279509",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/different-source-after-original-unique-retry.jpg",
+    "viewSha256": "9a4c33e60c2831bf7ecad7ec17ff610b20fe706fe08e625345e1a2db14c09f86",
+    "lossy": "JPEG quality68 same 1440x900",
+    "actuallyViewed": true,
+    "review": "Current fixed desktop image reviewed: actual progress / explicit action / gates and returns remain readable. This is a local regression check, not overall art acceptance."
+  }
+]

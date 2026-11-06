@@ -1,0 +1,1940 @@
+[
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-4f825-book-and-clear-object-stage-chromium/current-dao.png",
+    "sha256": "bd7ebdaa83f34dc081f5696442d99ad503ab4618359a93ec57e77059c45a8d54",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-4f825-book-and-clear-object-stage-chromium/terrace-complete-book-first.png",
+    "sha256": "bbf80d72310ce7dd8824cfcddbb1095267c9974b07480e0b42681a13bd73e4d2",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-5a3f7--atomically-saves-behind-it-chromium/original-source-paused-after-reading.png",
+    "sha256": "d69ec65a38a7b068633245a440745d63d45f156a9f621d0e428910df5fa554f6",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-5a3f7--atomically-saves-behind-it-chromium/second-book-page-after-native-save.png",
+    "sha256": "ffa7e398ccc94cbbdfdb2f25078e4e650fdbc7ab47b038b14753acc21b7de566",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-b4af6--or-reauthorizing-its-draft-chromium/new-life-old-source-book-closed.png",
+    "sha256": "6a247a13b86d32686c4610c60e089269a6f8087043be4b6cb307be2a7a25e1e7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-be162-ce-the-original-exact-retry-chromium/different-source-after-original-unique-retry.png",
+    "sha256": "225c8916b0570c5a3f2a9ad98b9e6432e9f0cdba9e0cfff2c4a82d4b32279509",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/different-source-after-original-unique-retry.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-be162-ce-the-original-exact-retry-chromium/native-quota-complete-source-book.png",
+    "sha256": "57206119954891f147cc422cd0bbacf549a567dfd6b653d9ae74ad683d153eea",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/native-quota-complete-source-book.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-be162-ce-the-original-exact-retry-chromium/native-quota-source-stage.png",
+    "sha256": "0e03c96c43e1c4b09a3a9c87be6549fded88cb8f88e0f552293cffeb774502d4",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-bf7e3-book-and-clear-object-stage-chromium/current-dew.png",
+    "sha256": "70a11d49b2248942f5775441ad48cfdc932eda573799271309bdcd9d8d48fcae",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-bf7e3-book-and-clear-object-stage-chromium/current-herbs.png",
+    "sha256": "59fe1ad88b69bfe0ccf917d2f07b10a1e49205118bed4cc760fe3e7d9e8a3f24",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-bf7e3-book-and-clear-object-stage-chromium/wilderness-complete-book-first.png",
+    "sha256": "005704d610738bd027e8cf31cc29d379eab5c3b8e3c46faafba90fd6a5432fee",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-core.png",
+    "sha256": "3711dab791009ab0785352246c120390fe26e3d4582eed055b8c7fe9a60b5a11",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-dao_task.png",
+    "sha256": "a6f473f6e8c55e8f071f1c1473257867787ebac72df2a558f10bae29391f6f4e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-jade_task.png",
+    "sha256": "c10315291392089218050350f892abefbc28ea625c155ac84f075e7ddd9c9b33",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-lotus_task.png",
+    "sha256": "3f6093caf97278c3d431f8447efee3a8177b5c2adcdf678ed67f2c0c682d90fa",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-soul_task.png",
+    "sha256": "1bc93cfaf9bfac2adc75eb4374ad1f160759d12e769281c7834c6dcad9b64b8b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-work.png",
+    "sha256": "4ef6f31365800051ba723e5eeebeb26fe2f14589fdef02ca30a40ff7b46c7250",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-work_foundation.png",
+    "sha256": "f090cf3120c40e4ef6fb0abe786abd4f6ebfa7957e11632a8ffce1ff34cc8498",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-work_golden.png",
+    "sha256": "a0f519d99f180e22a6bce6caec066adb46db772998ae1ae530edae81b828a5af",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-work_nascent.png",
+    "sha256": "c43c4f603d4443e37a482cd23d6e659ece804d8ca464e36cfff9bc9814c46811",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/current-work_spirit.png",
+    "sha256": "77eddfa1f64da679bf0bbf155226927f2c3e9977fb2f8535dadd4960d8778c96",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/sect-complete-book-first.png",
+    "sha256": "4ffcb68727ccfcd67588065f6c231dea3083cad1988bdae94d2049d6c8cd497c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/sect-complete-book-page-2.png",
+    "sha256": "a0f981786e3f2378afe7b658f718583b383f0c193ad8e8de63569412896e6c1c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d37f3-book-and-clear-object-stage-chromium/sect-complete-book-page-3.png",
+    "sha256": "b6db91a03f938ff83f54cfea880a5fe1f4589f9e9ecd636ae654487355607f28",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d85d7-book-and-clear-object-stage-chromium/current-jade.png",
+    "sha256": "776ec35c7c28c0b7640c5af7dca18c945d493e50677d633db483e03ecbc03fca",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d85d7-book-and-clear-object-stage-chromium/current-lotus.png",
+    "sha256": "39425a5909ce8ec6058079064548e8975412e2fe46be7bda9676dfd2199de39f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d85d7-book-and-clear-object-stage-chromium/current-soul.png",
+    "sha256": "4e6a7be18e38335e3d168d93213d5ad2a62245ab069685d442ecdcd13d4fbb9d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-d85d7-book-and-clear-object-stage-chromium/secret-complete-book-first.png",
+    "sha256": "f8ae1cb9bb63a97e7bf6d52f00fd617550d68179d7f77b2d12f8a00100e70017",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art34-source-stage-ART34-A-e38a4-ll-readonly-catalogue-opens-chromium/current-source-before-hierarchy-assertion.png",
+    "sha256": "6818ce2696900434065023bb7a85fd7af2a2130059d1c60e1fa04775c1ceb51a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium/commission-1.png",
+    "sha256": "4dd46a2d310022bd7a3eb6500cb5e506d82054ae4adcac44523de7f174135a71",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium/commission-2.png",
+    "sha256": "99713e3a8ffb3c097c34cfe9f2ea3d6bbc4328aa0644e296f1ce1961f4f50358",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-2b77f--text-controls-and-the-Game-chromium/commission-3.png",
+    "sha256": "687a92b71a5647f14fd0d33be98b2cf78c2319813ee86eca2aff6111d7941e96",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-3c060--text-controls-and-the-Game-chromium/alchemy-1.png",
+    "sha256": "45fa6689ab86329b430d11383b7b3d8e0b3caf34ff0c8083f6c33a780c263807",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-3c060--text-controls-and-the-Game-chromium/alchemy-2.png",
+    "sha256": "fb71cabe15ec46b2e3510d74ce5e2b880c08f98021b372629dfc1e3800d3c98e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-3ecc1--import-retains-every-store-chromium/long-filename.png",
+    "sha256": "5f4bb49e96e75b3ec51be4704b87161ad1ff5d20f03dd7a30ba60ffa8c05877a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/cancel-pressed.png",
+    "sha256": "0af464ad53cfbe0e23390c113ba5c9e520e7bb12d111d8f3f736b076c6e9049b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/danger-confirmation.png",
+    "sha256": "0e890e984cd04a935bf238fedee00231b875c2aaf2737454d4b9b4263cad69f4",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/local-export.png",
+    "sha256": "805d5b3cdb8820d7ab1b47a13319a80be02b76e40f111ebbae406232452dde33",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/local-overview.png",
+    "sha256": "75fabd9c9e7fef91361968bc3fa97df92b71626a08afbdc1ff7bac08b6aa4553",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/local-records.png",
+    "sha256": "aa907b8cb7044c86c7f6b68bf0ce92a2f4f764b3f98d0c6255396f016efb1ba3",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-4ea2d-dable-distinct-and-readonly-chromium/settings.png",
+    "sha256": "771a60c9f2b6d3c56d41e17ffe229b36546bd6c597431be9ef3945d05de35650",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-51226--text-controls-and-the-Game-chromium/inventory-1.png",
+    "sha256": "5ffdd081b9cf9c09bdf8bc7c11a29af245765d7ba4ad03e7cabb78500353acca",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-51226--text-controls-and-the-Game-chromium/inventory-2.png",
+    "sha256": "2f6666d6ec4bde6db44874a72c035c9c1d152fbc82a39091dc5862c63314ebc9",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-74840--text-controls-and-the-Game-chromium/wilderness-1.png",
+    "sha256": "972cae4daa4d61876ad0a1f92fd8458a4ff21d9ec9ff0106f12dd2658dec29c0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-1.png",
+    "sha256": "f82a46649819a2dbcc716d11258bba347b71dc45d84ad1824dbc49e4826d9f44",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-2.png",
+    "sha256": "80fecb0dea941d5eb67956441e5ff52914a79b8c1af306778ab0c001512aa577",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-3.png",
+    "sha256": "a1d6b4a0d3e62842d328f6601fba1138c4f58e1523955cde06930d747593d3c2",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-78f75--text-controls-and-the-Game-chromium/market-4.png",
+    "sha256": "44d248659e4d5f043a2b619e6730b98dacfc2880d8ac86bf50df80e6cf5d03ac",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium/study-1.png",
+    "sha256": "18f7249da04a0f89a36956ce84c458f95b5974a03d860fb22ec9ef63832a967f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium/study-2.png",
+    "sha256": "9edea12b746e5bc3a79de1c46633e62192f34941a8de6c831da1ff1ae21096a0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-d0f19--text-controls-and-the-Game-chromium/study-3.png",
+    "sha256": "e3fa0e18b695383dc3bba4c48818d006bb8cdbce7b04b7c87045ae2052e7181c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-e59a0--text-controls-and-the-Game-chromium/relic-1.png",
+    "sha256": "77864835c000a98136fa6ddb2f5206f0ce51a17c03f8e230c8df6de8b184f576",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium/production-limits.png",
+    "sha256": "7d5dc81ea8642dc1a2364f69ba597c8a44dbac49180b53fec639807384b52b68",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium/production-return.png",
+    "sha256": "bdaeb6da8b0a5d95562ecbf87320397f53911850220174486037b404a44848fb",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/art37-dialog-actions-ART37-f7ba5-without-opening-the-furnace-chromium/production-target.png",
+    "sha256": "f4cafed2e39b11dc59238729997be27823897ab7cc7fd3510823c377aebb7ee1",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-00407--pre-action-time-for-review-chromium/CHOOSE-actual-decision.png",
+    "sha256": "dba739a88a77c4e34c0c18748e416d54285172784fe7c50e4dffe2952ace9fc6",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-04687--pre-action-time-for-review-chromium/SOURCE-actual-decision.png",
+    "sha256": "cdbd575b5e0fb211c46e422d50661eb7effc03eccbacd2ab4afa40d8c489024d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-0fa85--pre-action-time-for-review-chromium/BUY-actual-decision.png",
+    "sha256": "9b53c77d0765376b5ac0b785958d494347e16b3071a13364162d5bdc3b9fcbcd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-2169f--pre-action-time-for-review-chromium/EQUIP_RELIC-actual-decision.png",
+    "sha256": "9b57ab9eca218093ac0199dda24d3aba7844e10dc5b023dbe355ec81aa4b8c2d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-2c54c--pre-action-time-for-review-chromium/END-actual-decision.png",
+    "sha256": "f97c31b864fa42811df1b0040a24a3d7ff6c386b8dd96519778236cc64bf1647",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-36ca0--pre-action-time-for-review-chromium/SELL-actual-decision.png",
+    "sha256": "55b9d98bf172654ebaac9cc47796255f278467f714466d03721dfc7c96db34be",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-3f997--pre-action-time-for-review-chromium/LEARN-actual-decision.png",
+    "sha256": "65060565e7c079b8a00367d768f5562a772f57f263792228308daa040576a986",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-4305e--pre-action-time-for-review-chromium/EVENT-actual-decision.png",
+    "sha256": "a4fc73f0a2f0fcdb4e76e68bb1b39d59459b05b686a3c2a4b795f1ed512af080",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-4655d--pre-action-time-for-review-chromium/RETIRE-actual-decision.png",
+    "sha256": "1c14df745c304b3db21bd8b32c55531ad5d337802b55dd6bb1fbcf95c37c2cbc",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-47479--pre-action-time-for-review-chromium/STUDY-actual-decision.png",
+    "sha256": "0ae2abb5354e4397f5ab2228cdc104b5ba5ccf3206a01b9657d1cb71706a8307",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-51f1d--pre-action-time-for-review-chromium/EQUIP-actual-decision.png",
+    "sha256": "dc76f1536e0562d2876f0411f94fc835e8b1e2a8cd9210f4ae88b030fadf9a14",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-52151--pre-action-time-for-review-chromium/TRAVEL-actual-decision.png",
+    "sha256": "8359cf8b77e8e6fa2a32eaa449ca99d6c78cfe188ea29c4dc2e56b38ceaa5457",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-53e63--pre-action-time-for-review-chromium/REST-actual-decision.png",
+    "sha256": "af383f0fc451a9b97f08a0d685644030da991e47b5a311ea1266f5426867666e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-559a6--pre-action-time-for-review-chromium/CULTIVATE-actual-decision.png",
+    "sha256": "c147aee9ed4713eadd3f1d1bda2f448b65f96e7e6524da882f71b4ba094d6a39",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-5f06d--pre-action-time-for-review-chromium/FORGE-actual-decision.png",
+    "sha256": "d3b917ad82338df7911975400c184e34f155067c1c20e8ce2f65fd343dea4281",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-6beb8--pre-action-time-for-review-chromium/USE-actual-decision.png",
+    "sha256": "a8f21927b13fa802cb687bf629094c585894bcd8fb753fdfb19829f635f50148",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-8680a-paration-and-disclosed-time-chromium/foreign-rest-main-before-travel.png",
+    "sha256": "1ae015d5d5bd8f06b2f6e59c9d734368b84d0ad4d6d4c6eb65f5d2b0d7e17f88",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-86b50--pre-action-time-for-review-chromium/BREAKTHROUGH-actual-decision.png",
+    "sha256": "7b6f3a0e702612fab0b499837110731992531717ad7f2a0f1edc9a35cc1f15fe",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-b6967--pre-action-time-for-review-chromium/BATTLE-actual-decision.png",
+    "sha256": "d9ff73407fc6230da63c3cbe392f7757e44043f6f607c1ca41a3555e95561261",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-b9518--pre-action-time-for-review-chromium/DECIDE-actual-decision.png",
+    "sha256": "42e128db3b163c47a81d589d91fb1ddfe623badf044d9ba5566aebe3e126aeab",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-c1e7d--pre-action-time-for-review-chromium/SCHOOL-actual-decision.png",
+    "sha256": "107cd9f06be92914bebbdd7e0ba46ce13c2264eb08c4323fac2dfc666d087ddc",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-ca50d--pre-action-time-for-review-chromium/END_LIFE-actual-decision.png",
+    "sha256": "592a1059f94a2bf6f43156b7bafe1a9c6deadcde949d9f024512506f41f4e9d8",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-cc722--pre-action-time-for-review-chromium/CRAFT-actual-decision.png",
+    "sha256": "890e22260740d181def7d413d5c6a27a9bd8d394fee6c93c034bd53a68ff6a0a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-d4b50--pre-action-time-for-review-chromium/ENCOUNTER-actual-decision.png",
+    "sha256": "e2ef9028fb24e01a69b2b95ea0dda755f4dd305a829ff7ca05ed37bf10508b2f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-e54cb--pre-action-time-for-review-chromium/ANSWER_TRIAL-actual-decision.png",
+    "sha256": "79958e9d839313385764606bd4eaf61eb4d7a0d0f4054ed5c9564897d1648983",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-ef7ad-ut-changing-the-saved-state-chromium/real-checkpoint-current-home.png",
+    "sha256": "e9e4f74beb1e2e5f4a0b8617575b3b5ea4331f9a76feff19cbfd8b0882af894b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-ef7ad-ut-changing-the-saved-state-chromium/real-checkpoint-explicit-restore-review.png",
+    "sha256": "df5dc7945e2018604f09e9a2997b6c83ab136319cfb63613316364505bcfe21f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/cend03-review-observations-fccca--pre-action-time-for-review-chromium/START_TRIAL-actual-decision.png",
+    "sha256": "edd7d50c1f21d4b43c740bd41705028d09767197afecea7a37a5e1063451d7b9",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-feedback-CHECK--5256c-d-a-complete-resumed-period-chromium/true-count-two-after-original-allowance-resume.png",
+    "sha256": "5dd5291e9720c43dbccae8bd57262a2ab5ce90b4db7a826a080f417f63e9ee59",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-feedback-CHECK--8f248-ural-expiry-changes-no-Game-chromium/CREATE-control-safe.png",
+    "sha256": "5d457405a561a708b3880d528ebe0ef6070d671992ababae0d5b3d0295ee0054",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/CREATE-control-safe.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-feedback-CHECK--8f248-ural-expiry-changes-no-Game-chromium/opening-after-original-expiry.png",
+    "sha256": "470bdca77c06eb7dd9772722ff459a77a85467284cb12afa20e5de5141b37ca3",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/opening-after-original-expiry.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-feedback-CHECK--95136-rows-a-free-or-stale-effect-chromium/IMPORT-control-safe.png",
+    "sha256": "9b358a706d90b013cca70298651cafd38b3cb0b204c0be1fa6b414c37fb88ada",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-feedback-CHECK--95136-rows-a-free-or-stale-effect-chromium/restored-import-never-replays-control-seal.png",
+    "sha256": "82132f76c7005dad7489d4ac148b0a0b786ef7dead9c7c772948929066561dd8",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-source-state-CH-3c8ad-sh-and-an-explicit-new-life-chromium/commission-actual-stock-and-period-income.png",
+    "sha256": "4c54d99c41961fd8ad07c42148830363d3fe6c4a2034c5d8a2ff3e67309c5d40",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-source-state-CH-3c8ad-sh-and-an-explicit-new-life-chromium/new-life-no-inherited-commission.png",
+    "sha256": "e9ea127abd0bdfe67471556f51e84ceda1ed3cc03d24e463d04a205a7fa2854a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/arranged-first-period-no-yield.png",
+    "sha256": "638b31eb5175e40a2011a19a11cc7c827e0352ef0275558fc80c0c78796b5ee8",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/held-native-no-premature-harvest.png",
+    "sha256": "c6df830b232fbfa30d33589ffeb8ef502530a5b339f79e6101db71ec8240470e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/saved-first-harvest.png",
+    "sha256": "c890330fcb91a176c87f83c83fcf53f01eee0aaa4753f887c83642bb9f2e756d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/unarranged-stock.png",
+    "sha256": "02e49e84b9df93fdf3e87ffd9785ad364b68150c223c9850b9008733535355d9",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/failed-first-period-no-saved-yield.png",
+    "sha256": "73af1d2510b2b2eb129b28d047e495bc429a471e01aee649bbd7263adf78ea93",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/finite-original-two-harvests.png",
+    "sha256": "54f68597a8494e954a56fe96d6f1504ba49cd6bb1e91198d5f2c2faf539016a9",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/paused-original-real-harvest.png",
+    "sha256": "4c682686e760fc1abd4ae7375b4e81979b6fdd57b0245251b664add48edf1d04",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-uir33-02-CHECK-UIR33-302c2-d-original-milestone-result-chromium/one-breakthrough-stop.png",
+    "sha256": "e4ccd3e97d7dfe2665303dcc7b5ee98e8c0af5a7f8f6b5dae43d9a1f664f3bd2",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-uir33-02-CHECK-UIR33-4fe05-creen-wide-decorative-frame-chromium/quota-detail-no-extra-frame.png",
+    "sha256": "95133f6fdbc2dca921ae42a4a1245f7647878d15b0d44636f3dc2535300efde7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-uir33-02-CHECK-UIR33-4fe05-creen-wide-decorative-frame-chromium/quota-original-error.png",
+    "sha256": "c9bfd1b714e024c813d7572309574563731d9b6916029a02b631dec1b0a7e8fb",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-uir33-02-CHECK-UIR33-593b6-e-and-exact-receipt-reading-chromium/EQUIP-object-seal.png",
+    "sha256": "c8804bb4e678d3c8cad4291a7e3fbb0c2be23cb60627dad714776f9ce0433a28",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/check-uir33-02-CHECK-UIR33-88910-e-and-exact-receipt-reading-chromium/EQUIP_RELIC-object-seal.png",
+    "sha256": "0d464b0eab883f309ae1720cbf880acede4492dd77888dbcd947f6f8f6a11296",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-integration-a-normal--a0696-med-foundation-breakthrough-chromium/normal-idle-foundation.png",
+    "sha256": "04b9d43252f79c5748f30f87e4a55a94f65468dc5fb283da9092a14e4354f5e3",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-integration-a-product-8b3b1-ginal-furnace-authorization-chromium/production-draft-after-save.png",
+    "sha256": "f81a43c19727c8d7d339d8dc2275aac2f41dead3b549d26f372e78929c1c7451",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-integration-a-source--75c75-g-the-running-authorization-chromium/source-draft-after-save.png",
+    "sha256": "a410750f4dabc47dfe8ce92972b35f7126e7490e453de50702e2de7bd13d89dd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-integration-natural-c-7c61f-d-refreshing-an-arrangement-chromium/natural-saved-limits.png",
+    "sha256": "c4a93b1cca57f5b941605b8999dacf95b5d6b600684b62315ccdd919c959ec21",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-integration-owned-rel-a3f96--viewing-never-changes-Game-chromium/equip-gate-battle.png",
+    "sha256": "4103d25c7f6833202058c0071d4a6b17a20955e72fbfdc5b45ed30aa0547af01",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-integration-owned-rel-ef2fc--viewing-never-changes-Game-chromium/equip-gate-event.png",
+    "sha256": "c953235fc489015eb6656345eb8e4ede063136b6b842de8caba417bca933f037",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-integration-saved-ass-43015-me-the-real-new-arrangement-chromium/saved-cultivation.png",
+    "sha256": "48da42206cf2315cc727c9cec7900273ecf6ef37257223fdd08bf61f5ef4a2c7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-sources-a-normal-new--544fc-les-within-the-month-budget-chromium/source-active.png",
+    "sha256": "5cee2d42fa13517ad398069f07d26f802df7c130f0a37a7bb5f3ef8a1440ceda",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-sources-a-normal-new--544fc-les-within-the-month-budget-chromium/source-plan.png",
+    "sha256": "9dcfe6640b0248e6a29ee8a4d07c44ad23929b1228543d335ceec37dbd810cd3",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-sources-a-normal-new--544fc-les-within-the-month-budget-chromium/source-stopped.png",
+    "sha256": "dab0f2dbdf0d7b0cb75b5f08935c9e8722725143b374faba7075936ababd351d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-sources-commission-in-55887-t-while-cultivation-is-full-chromium/commission-stopped.png",
+    "sha256": "2cf24554ce6cf08c1c878b2e41a1e0851ab0a35e134115ae62c1bf9c39970bed",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-sources-commission-in-55887-t-while-cultivation-is-full-chromium/commission-target.png",
+    "sha256": "18f34b700b29f7711526171f5296d67c41606adb333b776e899e3bd992e53ad0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-sources-one-source-cy-f68f8-ting-its-material-and-month-chromium/source-real-cycle.png",
+    "sha256": "73ef5c54d11d6252e929bde66eb21b34e5f2f1a1c31a914be87273f654486aeb",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/idle-sources-source-pause--e485b-full-explicit-resumed-cycle-chromium/source-paused.png",
+    "sha256": "3d183ec826bd5a162d15784b8ad31e1aabee8256d35910c79b32399e0ef41823",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A1-all--4f8a9-d-finite-arrangement-access-chromium/natural-dao-cold.png",
+    "sha256": "081252c5c9ad243e94dd9806ae67ad383afcc796730afad65dc864c636bea38c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A1-all--4f8a9-d-finite-arrangement-access-chromium/natural-dew-cold.png",
+    "sha256": "a94b816704d61d8d9630ee510a29a8afa9eae5dfdc78092af48fdd76549e09e7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A1-all--4f8a9-d-finite-arrangement-access-chromium/natural-herbs-cold.png",
+    "sha256": "9e6472ff863227180cee88fbb526214982b03537894b6bc5b3fb0ac7182ff84a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A1-all--4f8a9-d-finite-arrangement-access-chromium/natural-jade-cold.png",
+    "sha256": "5d15a87315fa7679073695e45e027e1f0f85b43a55a937fad60a59874c4ecd11",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A1-all--4f8a9-d-finite-arrangement-access-chromium/natural-lotus-cold.png",
+    "sha256": "0501bcfe2b2b1d27f6e96f1de426b2b49cdc36ee1775a5b0807200dd3bface5c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A1-all--4f8a9-d-finite-arrangement-access-chromium/natural-soul-cold.png",
+    "sha256": "5c5c71d2f5b5c3d3e064b1c2e74c1b631f03b798b793b22866f990f048186584",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A1-all--4f8a9-d-finite-arrangement-access-chromium/ta08-dao-before-object-assertion.png",
+    "sha256": "e75661691c54caf2187db39e4269139ef9ee0ca0d1b6a88bb4604f3a095fa75c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A1-all--4f8a9-d-finite-arrangement-access-chromium/ta08-herbs-before-object-assertion.png",
+    "sha256": "d2c9029c8deb1ecaf850aa140a6ccd004b495e0ddc10d73f8781e5f2ab034fa3",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A1-all--4f8a9-d-finite-arrangement-access-chromium/ta08-jade-before-object-assertion.png",
+    "sha256": "5a9902f99f67dddb35b5ced6738f2d7b050352da7af1e1868d88ac916647ee65",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A10-eve-4a2c9-authorization-remains-exact-chromium/complete-nondefault-commission-target-budget.png",
+    "sha256": "f216c315edf9cacf822848cec6cd9220b72a97ab0bf2af261c25fe60bba4609a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A10-eve-4a2c9-authorization-remains-exact-chromium/saved-commission-arrangement-is-not-new-authorization.png",
+    "sha256": "d3f5a007e84aba930c9626988cb7af67f09c19e68d121e9751fce6287514a7dd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A11-imp-daacb-y-arranging-the-replacement-chromium/new-life-no-old-source-or-budget.png",
+    "sha256": "8789e9832186421d83c43cc49a486d3583e0931293dc3e9ace2832c324324bf5",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-core-cold.png",
+    "sha256": "ad49e067cbd43010eddaf221eac58a2aa5fa9f438c73815c85ed861a9a3ab05e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-dao_task-cold.png",
+    "sha256": "c1aef299a9a521b45b11d50678d6464d89b7909a27fb558c323c08c4c0551d13",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-jade_task-cold.png",
+    "sha256": "b9ed19b45db6ead9559c1b5319e40d0180cde39a9d00f50591b84faf0a0a823f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-lotus_task-cold.png",
+    "sha256": "46cef0ae82b032f80e2dd477669a8c27c9d135102e207fcc49b2e4ab330bab00",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-soul_task-cold.png",
+    "sha256": "ca3f4f39e0c9d9670f9a4c9f72df979236179d2573947967dc881ea83a9c92da",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-work-cold.png",
+    "sha256": "c823f84d3e68193b9fac9d52211becd39f9b328ea9a588cc65278063f0192b50",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-work_foundation-cold.png",
+    "sha256": "8be0b5c06d556ce1635ef2ebbca4cabe3ea6cd5dabbf7a0b8785e13a1a426c3c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-work_golden-cold.png",
+    "sha256": "dcbab78d45484f948208e4a120c9cc9d943260d716301fd3931b14a9c93ad266",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-work_nascent-cold.png",
+    "sha256": "6233329d3cc473c0761952575a6ca98d0d1cf7121f451fb5450b9697c420796d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A2-all--e5fb3-mixed-or-stone-compensation-chromium/commission-work_spirit-cold.png",
+    "sha256": "5113ff02f3e4e872f9cbfeca204dbf69bbf287a062948aa04f698870c0dbcdcf",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A3-two--37f3f-arget-without-a-claim-click-chromium/natural-first-saved.png",
+    "sha256": "4070f6d30af00f29aceeb5123169466e1b05cff76db6f663d8118bf2a667d46c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A3-two--37f3f-arget-without-a-claim-click-chromium/natural-two-cycles-target-stopped.png",
+    "sha256": "40f3c2c71e58699c13a049e2c1d5ed4d9cac5b5b2736866b59e466b85c24feca",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A3-two--37f3f-arget-without-a-claim-click-chromium/natural-work-half-cycle.png",
+    "sha256": "a4e71dcbb67e5754fde94437941108ca0bde151e02a2ea75af404dcf3e21c40f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A4-a-fu-04b1b-out-invented-material-drops-chromium/commission-stone-first-saved.png",
+    "sha256": "a1aaef5f7f6ac2972e824a1de22dc8b3842f3db3a5e3b6a88a220032ee334f37",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A4-a-fu-04b1b-out-invented-material-drops-chromium/commission-stones-two-periods-no-claim.png",
+    "sha256": "fc3fdf61e73a6707a7a2b215445228e10e5f56c039b012c32d6c3a3bc707f9ff",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A5-one--352ac-e-write-no-earlier-than-due-chromium/native-thirty-second-commission-saved.png",
+    "sha256": "0d6a99d9e4cfad665250a3d1323a500d2a32426e01847df2a98bcf49fe63f008",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A6-the--4699f-al-and-stone-yield-together-chromium/longest-commission-actual-composite-result.png",
+    "sha256": "100778b097fd5c1450c9b6049d05bfddc62136579efb4bbee82220b6924670c0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A7-held-2843e-it-retry-stows-exactly-once-chromium/source-native-saving-before-any-bag-award.png",
+    "sha256": "066d3c91fc9c7c9a9245d6d9c9c78d1922f629ae6889ebd75a39d2deb03cb624",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A7-held-2843e-it-retry-stows-exactly-once-chromium/source-quota-exact-original-retry-saved.png",
+    "sha256": "266a21674fa12d8da8eb9eeaffe9d2ba4d4049702d193640f765f00efaae0570",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A7-held-2843e-it-retry-stows-exactly-once-chromium/source-quota-original-command-frozen.png",
+    "sha256": "2db5aa12a7b2a189c42d97c25ad661373a0a034d2dac23bf12b475d3dbd01271",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A8-sour-be3c6-ng-the-finite-original-plan-chromium/source-pause-pending-clears-short-result.png",
+    "sha256": "367f26e83ed251143d5f8685b7f4979e2c07047f791f08f4df63275462a5d466",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/source-actors-TA08-A9-a-sa-8afa2-ceipts-never-replay-rewards-chromium/source-same-id-history-remains-only-readable.png",
+    "sha256": "0f27713253430d03b2dcd10806571509bc6fe62ed2f631ca70eb9f99a9e9e7d1",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-a-confirmed-repla-cc570-e-alchemy-draft-or-activity-chromium/character-on-demand.png",
+    "sha256": "33d888f7e9708866efe68bee79eaffc5032bf8cd3f2cff1916bd636d4842c28f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium/configuration-feedback-clear.png",
+    "sha256": "4d085fc1374d04ee19d8268823580e5757b902108ee160e577e8978271588c94",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium/persistent-equipment-result.png",
+    "sha256": "2f5226a1547c5f4a01a6020363b756e0685e15d5a40c6493342a550602d268fb",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-alchemy-opens-fin-156cd--goal-with-its-draft-intact-chromium/alchemy-focused-decision.png",
+    "sha256": "876e41d2382c3da0af2253c462a3ebec26cec3de6fe61b9a97c99bb0d32c3025",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium/training-assisted-layout.png",
+    "sha256": "323fa18e06fdfaf5da1e0d7a9ec5346759bb8090df8ef5288b268dae68b7fa31",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium/training-natural-layout.png",
+    "sha256": "30098a1edcd579b8090970ea3f042fbe32fa648ca1278985d22e7413c1e46668",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/cross-page-activity.png",
+    "sha256": "a8854f6b102704eeb2c385664f3a3750e7c3c2da6080aabebb39c415e7016039",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/failed-cycle-controls.png",
+    "sha256": "2c82677c51bba218ec11f7a39f7ec949dd6544747af1dc327fe0c0ff3a82a623",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/failed-four-materials.png",
+    "sha256": "cc119f1812e4d540176e30948cbd4b9b856501c2c593f40f00a6605cd889856f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/paused-activity.png",
+    "sha256": "78f221fa153482fd5b2068cdfe93c74549b67c3b4f20d7b77d11782e2549f880",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-forge.png",
+    "sha256": "08ed2dee01567f5f917b1b53340f93fdf8d71e59b767707ae1653135108aa737",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-life.png",
+    "sha256": "c65da97af6d66a7f5888cc9458d1cc0a1c00a29c7850e5ef6bdc9946015489db",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-relics.png",
+    "sha256": "acb73656fb9139a00ace92c85caee09f72d30791c49972b5ddb29133f28710f7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-skills.png",
+    "sha256": "dfdbe341a6f5bce0e5a8010d62af4d61007bfd39826da6ef8fc16f65512d00a9",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-1.png",
+    "sha256": "2ceab1d0fbfb6782fb9a7c6807589914ca5ff39877ebd1e2bb93db52e1cb506a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-2.png",
+    "sha256": "dcc2e3ccd2e0ae6189d6c8d95a1cfeb705ec010093893d2cdccad8a0ee663a23",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-3.png",
+    "sha256": "299b00e10633ddede5371df8c7306af4a1df4545f2d1c10235a81caddb0f71e3",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/real-compact-stage.png",
+    "sha256": "dcca2446be1bce1615ae1edd65608c3847aee634eef18813cff0d0a0ac2b8bf6",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-chromium/natural-paused.png",
+    "sha256": "5eb82f33eea456453a117c242fe08100f8a02d657b44ba48de4268b5dd694a33",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-chromium/natural-running.png",
+    "sha256": "7022b9f0f155a8986afdbf815144697e1c7bd5a920d3802c54ca677172135620",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir33-01-cultivation-activ-4e8e6-udget-keyboard-continuation-chromium/natural-saved-cycle.png",
+    "sha256": "c4d9d0b7a267f08489e2dc1e9962cd008dabd30558a9fac389ff1e620466d019",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir33-01-cultivation-activ-84023-fresh-and-explicit-takeover-chromium/assisted-awaiting-takeover.png",
+    "sha256": "9f5becf9983a39243378b6e3983a573d6fdf4df411d9f92df247ebfbc14d526f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir33-01-cultivation-activ-84023-fresh-and-explicit-takeover-chromium/assisted-spent-first-cycle.png",
+    "sha256": "7a5d116dc849e4beed0def47f5fcca77d26226a6eb09778f3c7d4fe11abe6d1e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir33-01-cultivation-activ-9eb98--disabled-cultivation-draft-chromium/alchemy-on-cultivation-stage.png",
+    "sha256": "5971e3a959830d4503af47c72b648e6d4082e8f477a1462857f7acca31d1fe8a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir33-01-cultivation-activ-c0ce0-eplace-the-accepted-command-chromium/original-error-main-stage.png",
+    "sha256": "f3af3e5f7784ecdedf0e2f3a5044beead2d5eb6c685b93d2c91081be2e2bae38",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir33-01-cultivation-activ-e248f-le-without-starting-another-chromium/pausing-main-stage.png",
+    "sha256": "f538bf31203555551910d762dbebbcca46880b357e6b0bee40bf056b6e25b57a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir33-01-cultivation-activ-e248f-le-without-starting-another-chromium/saving-main-stage.png",
+    "sha256": "92cab613f7f98210accf818bb96b83d5fafd37b99c60c3b979308ed73a228a0e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-03e0d-n-or-a-fictional-checkpoint-chromium/actual-last-month-before-primary-assertion.png",
+    "sha256": "52b56410b6e5eb4f981f291c8abdc7c9e27236a1ba068996632578e7dea1dd30",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-03e0d-n-or-a-fictional-checkpoint-chromium/existing-life-choices-without-authorisation.png",
+    "sha256": "f3e78235a33791eb3d3910ce935c9e401de73e98eb12a9eec06182a8d9b9161e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-03e0d-n-or-a-fictional-checkpoint-chromium/last-month-main-guide.png",
+    "sha256": "52b56410b6e5eb4f981f291c8abdc7c9e27236a1ba068996632578e7dea1dd30",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-1fcb1-and-or-spend-the-last-month-chromium/guide-after-original-retry.png",
+    "sha256": "1109a3db8f5fdb03aa626a0a69016ccdb2415cabb2ba5dbf3069cad56e6771cb",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium/last-month-real-checkpoint-guide.png",
+    "sha256": "967bcd2f24ebda4b04c36efcba7b2aa47617403f8926e7f41915a634996cde66",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium/native-checkpoint-readonly-life-options.png",
+    "sha256": "d1fa590ab12702d6f3070879494cd18045b5e8ca7c3b2024e3e7fafdcbb068f8",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-71599--accepting-another-activity-chromium/explicit-tracked-target-preserved.png",
+    "sha256": "fea427f9c9607cf9c8e219484e19dc60b7685e0984b3f1da8deeca34243dfc5a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-71599--accepting-another-activity-chromium/tracked-target-after-refresh.png",
+    "sha256": "aba98022869f37752a6be3af4d3a1ff21fdf2c70ea05d43bb8315d57add76c2d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-756b6--new-readonly-guide-appears-chromium/guide-after-original-budget-stop.png",
+    "sha256": "1677b67fcf7a54f1372309deb727e5bdf4e130c9c46615c6cd50319fc52828d0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-756b6--new-readonly-guide-appears-chromium/preserved-original-budget-life-view.png",
+    "sha256": "3ac6092d900ce5b8c44e07c5ca882f3d4db9572158bfd18c97ba27d1f8f85112",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-cf779-t-returns-to-the-cave-guide-chromium/guide-only-after-explicit-retreat.png",
+    "sha256": "1509b235af82053efa7727ec1288a12104f11e5df769e276bc17213de55d905a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-01-lifespan-guidance-f07cf-hidden-dialog-or-Game-write-chromium/superseding-navigation-no-late-management.png",
+    "sha256": "07ffc68e35dcc786a8b8144edb13d520b44157910cde19f2f3e44bb5ccbda872",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium/RETIRE-decision.png",
+    "sha256": "720cd1f5aa859e31c23767bddedcc9f85b31261a95a624e11c015893852804c9",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium/RETIRE-default-before-fold-assert.png",
+    "sha256": "11daa6c37c5907d5c101fff23f6cf8927920868a6346637e92dbbb12a0c6589b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium/RETIRE-notes-0.png",
+    "sha256": "cf71c57672274148134735d0284fe648ad2b74005d7af048d1b869cdc0ffe1a4",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--921a4-ite-atomic-outcome-executes-chromium/RETIRE-notes-1.png",
+    "sha256": "46f81e67310164ab7e878d9785b29b3408d5224b202ba34f01ff2d83c2c9ea6e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-decision.png",
+    "sha256": "d171caea68dde5ab8e7cdeffe57779630be01f24c6b9440f8691fa1e97cc35ab",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-default-before-fold-assert.png",
+    "sha256": "867ac0b1b57c34aa7136bc7a9c2bafc5f508fa99bbb16c234a8f15994fd67a15",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-0.png",
+    "sha256": "014784126c3e7b53c2f502991fd2ed1faac86d211764753c18ef895f5e2caaca",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-1.png",
+    "sha256": "94e4e110d06b937504a8314f961e70ff15a5622cc45cb1b58a8a48150a85a123",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-2.png",
+    "sha256": "22e33a005233e21cbd8c9b5bc30528f97a2dbf1b73088523e199bfbec2e0fa4b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-3.png",
+    "sha256": "ff3f86b2def37ab2be7f5c55d7ad65552cd6aae59466c9bfc7449101269c03e4",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-4.png",
+    "sha256": "09c9f25b5d815b97bfbb64e0dcdc15b0e3a552d485b53b681b592784bc803148",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-5.png",
+    "sha256": "b016cc8027fdde688b1b1d5dc2b9663eb22af0b6e2ffae5ad97ffebd825c3589",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-6.png",
+    "sha256": "6403b3280c7fe0d020985a8d90ea4070a45ac4a5ceb98ab155a46260e1db8add",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-7.png",
+    "sha256": "94d4f49ae728909b4da145f9977e30ecace217414631eaef6bbcd05866855d91",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bb764-ite-atomic-outcome-executes-chromium/depart-notes-8.png",
+    "sha256": "ceac58fd124cfc8338f54368bd1f995a8366e4c07c6891fd32366d7367f91740",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-decision.png",
+    "sha256": "cb0c44dc8d8ec4ea244456ec4deed52553413921eb0a33277a452c674675c5c5",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-default-before-fold-assert.png",
+    "sha256": "db6e1418ee8171ec9f8fcfc99fc1dfdb9cfed4f158cde2b395b20e752154eaa8",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-0.png",
+    "sha256": "c77014fbfee9cc505c197391dfd1f8befce96b70466156b518f898604ff9afe1",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-1.png",
+    "sha256": "d6ee9590d86a71e2038979508a314df7b3f7864e6cf0209fe49b9843eb192a30",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-2.png",
+    "sha256": "35fccefa6fb322f77d54acd66ffeac83ce2f5e177642049b3f767df380bcc56a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-3.png",
+    "sha256": "6d26093c36965eb927ae436a6fa5cda500ac366b109fe59b63c50d1993e234e0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-4.png",
+    "sha256": "ef6acd79f5c3fdc68b8000016ef4de4124fc2bd7913ed3b9736d51cd7294d441",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-5.png",
+    "sha256": "78c2695fdc6a9d745fa2fdb2d834970bdeb39a1d903f70cb981a693c823513ad",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--bbc16-ite-atomic-outcome-executes-chromium/START_TRIAL-notes-6.png",
+    "sha256": "68dc04ce6691e52b854d6e26af4cf1d82bdac522162fe70d2d866f0219df21a0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium/END_LIFE-decision.png",
+    "sha256": "eefee01565de92ebb1690ffa719393e766f740881cbb5c6602062d7737375add",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium/END_LIFE-default-before-fold-assert.png",
+    "sha256": "9036d94b2e0f7707bd3c122cb9709c5a052683e89ccbedbc838f70026bacc379",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium/END_LIFE-notes-0.png",
+    "sha256": "d866ea869655475360c51dd360b0d0f2d68acb5612753f87e39fee269955af99",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--c254b-ite-atomic-outcome-executes-chromium/END_LIFE-notes-1.png",
+    "sha256": "36593b0c131c6fd0e3aa8254229b609f473572b55fb0a141067f619b322e2c21",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-decision.png",
+    "sha256": "f15849f7599ada30cb8ae2120d469855807cfd5a20e90e8c6666b91f74681529",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-default-before-fold-assert.png",
+    "sha256": "cc7d4df76d6ea1b798e800df0b85f0614d93a923213bddeb6598f5033bc060c5",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-0.png",
+    "sha256": "5aa4e7569c889feaf5dce7efb609f22f43a473d9152419432dbfd5b3de3f8ecf",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-1.png",
+    "sha256": "398326d8318959ffda3ab80afd5dc087b6817778f5cf445b48ebdc2e924405c0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-2.png",
+    "sha256": "d80d155b89b9e42da8ac6663966f0b2af50f33aab7b306c03b1620744f0dec2c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-3.png",
+    "sha256": "6d477e0c601b842b63c6c07921aadaf72d572fe361e3cde86720adb1b8e3e27f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-4.png",
+    "sha256": "943049b02291dae094c0965cc626ec9156bfa90e96ef68b0f29425edb28ca88d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-5.png",
+    "sha256": "5fb7813d4efadf9ebcb29dd57da5314b2b086b2432935e68c8677bf146086e6a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-6.png",
+    "sha256": "7fd200f3c99622743d2128562052ea3312f7d6d6d09c3933012ece0024fb5124",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-7.png",
+    "sha256": "5809ee0d9636083e287180f637ff1affdd01f920509e286391ac920837ca365d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-05-trial-life-focus--e2030-ite-atomic-outcome-executes-chromium/transmit-notes-8.png",
+    "sha256": "f6f3f5cf964f4384bd629aa81c58634fac5d8605436f584112f5ce555ca15e1b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-66e4f-io-with-its-original-return-chromium/mortal-folio-before-layout-assert.png",
+    "sha256": "a1ed9fff39e238f5bb80cbbefa193e10ecf807fb22d642d035d498dd0d867923",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-66e4f-io-with-its-original-return-chromium/mortal-folio.png",
+    "sha256": "24a7b2f0a9bef454097f9f9db40574f2332019b7626ab323edfd11eba58d9fe6",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-69d5e--original-equipment-context-chromium/sword-four-slots-before-layout-assert.png",
+    "sha256": "dd56f9b7d06b411bfab9ccf9b18f9e061fa7e79d2af190b03599431186ea64e2",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-69d5e--original-equipment-context-chromium/sword-four-slots.png",
+    "sha256": "d1ef2319ad2956b9cc693f78cec3a4d04b1f676e99369a83a2b9537ecdc1040d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium/quota-folio.png",
+    "sha256": "81d5a3dea5b12a69c5da889c1cb0fdb83b6347b8ddd4a863c98a8a8829bb259f",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium/running-folio-before-layout-assert.png",
+    "sha256": "8857e227fd3afff17512be00a0abdaa91397cfa63229eff3e82005f57f0b7e04",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium/running-folio.png",
+    "sha256": "8857e227fd3afff17512be00a0abdaa91397cfa63229eff3e82005f57f0b7e04",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-741bf-e-quota-and-one-saved-retry-chromium/saved-folio.png",
+    "sha256": "08f0016d44f4c893b7132c06eae8a1250499dff9c17d3c52e2a4f400405e9415",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-7d1b4-invented-future-or-new-life-chromium/sealed-folio-before-layout-assert.png",
+    "sha256": "120ba104a879c3b87747ae7f6e3348e7abc394fcee34d7ceb9ef2bb9e4ed1992",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-7d1b4-invented-future-or-new-life-chromium/sealed-folio.png",
+    "sha256": "44f0c631daf49c42793f092b4a866b3736d38f5ec2adfba2f78ca64376b43860",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-952b1--original-equipment-context-chromium/talisman-four-slots-before-layout-assert.png",
+    "sha256": "8063d89ce3113867032deffde8679c5e73261de717909949f47963b48fa7a517",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-952b1--original-equipment-context-chromium/talisman-four-slots.png",
+    "sha256": "ab183fb3f69ac8ad6dc4646b83897ee97f250a1a8031d7ed636b4114bb313d5d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-ad739-ual-slots-and-stable-return-chromium/long-name-fallback-before-layout-assert.png",
+    "sha256": "2a70b602a80030e7a938feb605d0d546e054f51e716483f8820ae7f0b2830c91",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-06-character-folio-U-ad739-ual-slots-and-stable-return-chromium/long-name-fallback.png",
+    "sha256": "8188c08cd558e90c64be70079a79c54b5dc9303b67c6df7d0ec207016a1b869d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/leave-current-fact-before-dedup-assert.png",
+    "sha256": "4a98ec1b111c9c017323257173e44fbb74d0c48feb80b8464d7fb8123f44dea8",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/leave-current-fact.png",
+    "sha256": "0b1f799be94e3d27b33aa8e1f19268fa4fb09bfd148ffed765ce2263cd8694ba",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/lu-full-0.png",
+    "sha256": "8a89e47ac93ba238d0caef307afa461232329038f14cf03a3e18870f37bc18ff",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/lu-full-1.png",
+    "sha256": "50ac81d8d11f70031fd60e9387a56f55138c0c2e7e4708359746378f62690066",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/lu-full-2.png",
+    "sha256": "28d30e8c8829a39e10bf32aabc0e38424f250de2e512288aafbb98d8c4d463ca",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/lu-full-3.png",
+    "sha256": "821d371cd3f0e93979f03819fd31108fa04f5f53f4ae93d7a07742ad29c501ee",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/pei-full-0.png",
+    "sha256": "00c162d4827ee1d8697f5525f6f1ea1114d7b3347561e49d154dde257782cc3d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/pei-full-1.png",
+    "sha256": "8e0b2d7f08de069522664ea948701d99704e83d4eaf20a935515a8053a0e623b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/shen-full-0.png",
+    "sha256": "e336a468242d73782af01f7ff8bb2d782d4ea8a0a717e8763f6dd14adb88a024",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/shen-full-1.png",
+    "sha256": "7180f006b53502bbc114b7527072407bac74d2075288dce56c1e2bd182f83d70",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/shen-full-2.png",
+    "sha256": "bce7d7541133d2b935b1d5bb269cb7b8e06aac4c027136de940b1033e2e0a5ac",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/yan-full-0.png",
+    "sha256": "6747cf6d4d415eb1b89759fe0ab730a570e47a603c4c558f5dadc444556d4cac",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-0f5dc-uture-pages-remain-readonly-chromium/yan-full-1.png",
+    "sha256": "66a43f19ef2fb1421e26c9c64f5f243626bf9ecd4600581e0f5a3f46e184d2a0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium/help-real-relation-before-dedup-assert.png",
+    "sha256": "cbd7bff1bce41ddb94a7c8969f06b684488198cb78a9d68d82ab1be88eee8696",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium/help-real-relation.png",
+    "sha256": "cac75b61e3b275e90f18b9fa043223359229bdabf2d79a65665ae2865ff50633",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium/shen-full-0.png",
+    "sha256": "f0ec318c8b9be78c7d6135c917073dde0f93dcfbd17c080b56fe23c3b18cc7ba",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium/shen-full-1.png",
+    "sha256": "b54533490df75949908de02c446cff4a5a6bdf40da910829dfa6128e9658ea87",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-1a1f4-ndaries-and-current-reading-chromium/shen-full-2.png",
+    "sha256": "eb8ee5a5e5e9fadd2349917056d93d7e34dc6564192754167df9d3f27580362e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium/shen-full-0.png",
+    "sha256": "58312fd648ba1322cecfdeef24629f23b13814d8a3394a994449d6f89c36c301",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium/shen-full-1.png",
+    "sha256": "4e32a016a724edab1ec5e2849092c0248e7afca5e8951a60e3d2fb4c38ab2e2b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium/shen-full-2.png",
+    "sha256": "ec1de010d674132f33a9e9ef6efc8539fd895b074333a2f0a71179e6869dad63",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium/trade-real-relation-before-dedup-assert.png",
+    "sha256": "a4c117342eecde94d9ccf9dd1a6c1a09421c1941f961f26851cc4b038a62a564",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-9abc4-ndaries-and-current-reading-chromium/trade-real-relation.png",
+    "sha256": "3bf99f35c36038a307a360464a2622127c00b124c95d8906ae5fdd7450dba60a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-d22f2-domain-without-Game-changes-chromium/journal-original-headings.png",
+    "sha256": "16df171bd5a702cd3fc8bc946d96ef547103fb824790f75920f42df0a8db90cd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/before-visit-before-dedup-assert.png",
+    "sha256": "3da2b445b9db2ac8203a6db41601998183d9229a21b5b64b6538aaea778219b6",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/before-visit.png",
+    "sha256": "38d2b9f60196ec055da84e5debd133cb0efc3b46b4de3958e02e06c09196f2dd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/saved-visit-awaits-answer.png",
+    "sha256": "1c5a5830a08088646875052adfdbbae9bb69a1ee1c058ed2fe6adb376eacbe56",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/shen-full-0.png",
+    "sha256": "7efcfe7e58dcbd2b0e644668f312ec1054d31132b4a212421b77b18beb3221ec",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/shen-full-1.png",
+    "sha256": "084b24e222e2ac115823a201ebc668821dbed5ba7cc6ad58a5369581494b4124",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/shen-full-2.png",
+    "sha256": "b41f58f9a2f4038bc3a314fd3f3e9201279b73edbabdf4d70697fee7cd3ce123",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/shen-full-3.png",
+    "sha256": "1bdd8506cc54c554a4663e68267d0a14c5c0689272914e96a1372aa488c4d894",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir34-07-fate-clarity-UIR3-dc0a4--explicitly-chosen-response-chromium/visit-failed-no-false-meeting.png",
+    "sha256": "d04f1da62db7c2165c88cc32ffddc3bbd74833b6dedbbf5a997f4d37c954b78b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-complete-authority.png",
+    "sha256": "8f6d78ecceee8ec85c929c58f69a41bb55fc19ef7ba2b9381c104dcb4e255b8c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-goal-running.png",
+    "sha256": "2f0644906ca264f7660074d2863a4265bf69bbe7d9c18d97b9abfe87d6b72146",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-one-saved.png",
+    "sha256": "4f68357cd90b65a808ca4800a3bddeeb5aa36cd8cbf97cee5586acb86d196ac4",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-paused.png",
+    "sha256": "9d035a130d7f66ef6511f4259e46519b1429079a984669b694b6748699282efd",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-01-goal-authority-UI-bb626-iginal-thirty-second-period-chromium/natural-real-stop-two-of-upper-fifty.png",
+    "sha256": "5ec974900543c45bb3681a6f6ffd1f20bd575d2147801b70e5f806e147df53ea",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium/assisted-budget-stop.png",
+    "sha256": "15b97d04f92958ab58bd91993179e24eeac5b35207603c58b741d8397eef6a3b",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium/assisted-quota-old-facts.png",
+    "sha256": "504b328c4e38cfa2e199beda707e2498c368c7b649e8db25b7435a80a4613496",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-01-goal-authority-UI-da023-lace-the-original-authority-chromium/assisted-real-cost.png",
+    "sha256": "d6a53416b29c802b9acfafdd1b5c8956af29e9fffc6deb76112bfa777c6a9a0c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-01-goal-authority-UI-ea178-elds-without-a-hidden-write-chromium/natural-finite-one.png",
+    "sha256": "c5250e1586943d86171699fc6ab2b58aa1b63dc2fa3efa6e9d8d9810c838813d",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-2a850-y-then-offers-a-free-choice-chromium/native-saving-keeps-original-paid-facts.png",
+    "sha256": "76d08447e19be1d29654f23bca5e31353dfda3523b6b74fca8c30a3ff19336b3",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-2a850-y-then-offers-a-free-choice-chromium/original-retry-then-free-choice.png",
+    "sha256": "61f1f0b664a02c38f7fb5df4b25187be744c55079c72c3bba4e8491ea4a1a6be",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-a709b--started-full-natural-cycle-chromium/exhausted-free-choice.png",
+    "sha256": "5ef5356a73f7eb59ceb7debfe2053309856d094a8ae2dd9c1df5d9513e56e978",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-a709b--started-full-natural-cycle-chromium/manual-selection-not-a-start.png",
+    "sha256": "eba8601da59cd42b86699cae5e322f3ea90b1acd8e2ad9e9a3459869dbcd8d2e",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-a709b--started-full-natural-cycle-chromium/natural-real-saved-and-explicitly-paused.png",
+    "sha256": "eb5b3ebf29b9bf6384b7c8c12d88df371095a1aa552bb3e4723ca63672b2c291",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-a7af3-y-with-a-fallback-selection-chromium/new-life-no-old-free-choice.png",
+    "sha256": "c0ad2c0db551d3048aaee60c99866ef12245096e476bcedd0588822a4d43c8b0",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-a7af3-y-with-a-fallback-selection-chromium/newer-navigation-keeps-its-focus.png",
+    "sha256": "3c0f121595e75011053e9f9b4eead3ff9da78fad436a2b76df3ab3c72163771c",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-a7af3-y-with-a-fallback-selection-chromium/paused-original-budget-unchanged.png",
+    "sha256": "6d270b08c4b4ca7205e4aef0c7ab691fd804313bc16ec22662774b3d564b18df",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium/original-affordable.png",
+    "sha256": "570b3a491c73165cb4490ab7da6fae6e4b58d47eeb2f4b3577114cc8d23f5c17",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium/original-full.png",
+    "sha256": "f601b8d9e5c467a899b40746460bbe7c4a464b19f826ad41ad45cd3b59c675ea",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium/original-lifespan.png",
+    "sha256": "225e0d3b08fb8fc37b72c02dc88c69c1b238cea9098cf2c9957f10a0f54a877a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-02-cultivation-fallb-e82b3--misleading-free-substitute-chromium/original-mortal.png",
+    "sha256": "62e3669ccb54e036c233c634d41382811a8455c7fe2e175c516e3f57546031a6",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-native-saving-still-partial-frame-1.png",
+    "sha256": "b7ce95fcd573b187e89688374b8231ec6313b718c0eadf1ead1b4deef347e7ac",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/rest-native-saving-still-partial-frame-1.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-partial-before-frame-1.png",
+    "sha256": "13b6ec016c2c6eb705338daa6c6aa6943abf80d831986a4fc4ee047c8dc9d4c6",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-05509-l-thirty-second-transaction-chromium/rest-saved-full-frame-1.png",
+    "sha256": "2ada0dac765e5f08c37a5a256359a4b447878c26ebec3fae139611d277e29e9a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-4b434-eadonly-viewing-and-refresh-chromium/pill-only-real-saved-recovery-frame-1.png",
+    "sha256": "056278c41c28a18aac94812484c81f1dfa14af9cb8d537590e1c2b43804704f7",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-4b434-eadonly-viewing-and-refresh-chromium/pill-partial-before-frame-1.png",
+    "sha256": "a4c44dd4ac10d2f6dd749b635edea0f5aa53c1773cb10f51f5638a7da094bfb9",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-failed-still-zero-frame-1.png",
+    "sha256": "583db059c1df4bf7fd9ac3dd0407e229cd5802c3d3aee8028e82a9333d69c8b4",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-full-frame-1.png",
+    "sha256": "8f7585291831b8cf90e58a3744b45891388f740190da83671d03f72782e2d252",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-full-frame-2.png",
+    "sha256": "8f7585291831b8cf90e58a3744b45891388f740190da83671d03f72782e2d252",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-half-paused-frame-1.png",
+    "sha256": "11dfb0dac0be07f58baaca89ee1f19a8af026ad39fcfdb7fcf0d99a5efc6cac3",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/cultivation-half-paused-frame-1.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-half-reloaded-frame-1.png",
+    "sha256": "f76f62ff90dc6461d60418bf344fc4b10659b8e59319196beeeaf707042bb829",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-03-progress-hierarch-a7953-l-periods-before-a-full-bar-chromium/cultivation-zero-frame-1.png",
+    "sha256": "c6277a0065fca90c146da8d36614691fc32cf2d279092b544988ab024c9ec40d",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/cultivation-zero-frame-1.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-04-battle-medicine-U-3ebf6-omplete-three-second-period-chromium/native-quota-original-zero-medicine-authority.png",
+    "sha256": "7661407e9ae3304f1e0670ad39bbfabcef89128e71a52c6f12575093cb114e65",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-04-battle-medicine-U-3ebf6-omplete-three-second-period-chromium/true-victory-stops-before-another-encounter.png",
+    "sha256": "fe0ceecee0cd133579efc9bca38ed83e98506a44c667796544a3604e27915a0a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-04-battle-medicine-U-51a62-exact-formal-no-action-gate-chromium/battle-default-no-auto-medicine.png",
+    "sha256": "80b0fdf437ca995c1a9f62c0fd253c702ad8bf893e94fe664dad815c4c69f266",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-04-battle-medicine-U-51a62-exact-formal-no-action-gate-chromium/enabled-threshold-zero-budget-is-a-stop.png",
+    "sha256": "9b0ccf2f68fa14fad3e725bf9cf7d5a408877d626a4b785508ca6741c9eca1ff",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/enabled-threshold-zero-budget-is-a-stop.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-04-battle-medicine-U-ca4ed-paused-original-arrangement-chromium/actual-two-medicine-finite-authorization.png",
+    "sha256": "1299817ff5795cb5f57dfb5185217e9a7c8eaae1786489df0b645d373f4d07bd",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/actual-two-medicine-finite-authorization.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-04-battle-medicine-U-ca4ed-paused-original-arrangement-chromium/paused-real-dose-and-original-limits.png",
+    "sha256": "3f7839529020c73b11a04c8d946a3924742494493fe10ff431a58f008abd1cee",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-04-battle-medicine-U-ffcef--separate-three-second-turn-chromium/encounter-default-clear-summary.png",
+    "sha256": "19ab0d44eeef61ded6905a51d8632c4af3c0014a5a3227dfbd3c3e0f3a8e1735",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/encounter-default-clear-summary.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-results/uir35-04-battle-medicine-U-ffcef--separate-three-second-turn-chromium/zero-medicine-paused-real-turn.png",
+    "sha256": "b3304a792eea07c21cf7ec5ab40b31b28d3647dce955c4ded7907665ae047c9a",
+    "actuallyViewed": false,
+    "selectedView": null
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-3c8ad-sh-and-an-explicit-new-life-chromium/commission-actual-stock-and-period-income.png",
+    "sha256": "936513a3c3323a7e10e4b538f7040abbb9599a51294bcded402f20570aabddd8",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/commission-actual-stock-and-period-income.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-3c8ad-sh-and-an-explicit-new-life-chromium/new-life-no-inherited-commission.png",
+    "sha256": "a2e75961e10d556ed20dbd5b2f9394ba5dcc62acd5d5933d239fbd4a3e73efe3",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/new-life-no-inherited-commission.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/arranged-first-period-no-yield.png",
+    "sha256": "830c8d4ed9da17cc02a543c9afc567b63abb431802e03378cde84d4ff66874d7",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/arranged-first-period-no-yield.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/held-native-no-premature-harvest.png",
+    "sha256": "102946b9a568e6a3a22ccfbe3e03870cd88fbf13f7e2754a18549e512a550795",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/held-native-no-premature-harvest.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/saved-first-harvest.png",
+    "sha256": "5973159c6aa52263bd46db3956b88822eb2a1205e8ab4f2d54ab5b6f3a2b3e9e",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/saved-first-harvest.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-80367-k-from-actual-saved-harvest-chromium/unarranged-stock.png",
+    "sha256": "e7db0677abfdde983df0bcdebec9052fe1c1d9d2ef75372b27c8089c7d93b37c",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/unarranged-stock.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/failed-first-period-no-saved-yield.png",
+    "sha256": "7f64602ce014848d277e1523086f7483acde0ef79bd1a0212aa9dd19222ca689",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/failed-first-period-no-saved-yield.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/finite-original-two-harvests.png",
+    "sha256": "26c3d04791c51e1cabb45e5e8133835d735b71f3e5f167e4a617209af338117a",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/finite-original-two-harvests.jpg"
+  },
+  {
+    "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/package-results/check-ui35-source-state-CH-dd647-reserve-actual-saved-totals-chromium/paused-original-real-harvest.png",
+    "sha256": "0c21982b0d1104234b030e5eef71a54644af98a5050dcbe5d9e07290702f8869",
+    "actuallyViewed": true,
+    "selectedView": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/views/paused-original-real-harvest.jpg"
+  }
+]

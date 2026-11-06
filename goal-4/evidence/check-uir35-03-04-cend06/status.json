@@ -1,0 +1,283 @@
+{
+  "task": "CHECK-UIR35-03-04-CEND06",
+  "status": "local_task_delivered",
+  "producer": {
+    "head": "625325fb17d635a7d401a4cb63762a77cb3be6dc",
+    "source": "625325fb17d635a7d401a4cb63762a77cb3be6dc",
+    "tree": "60b2ee63f313ef5b26a30b36cb8042632686d7e4",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "c88eff3261205044fd93641f84915fbd3216ec8ff375786d34ab2ffa54cde53b",
+  "productionChange": {
+    "path": "web/src/SourceSatchel.vue",
+    "beforeBytes": 5817,
+    "bytes": 5930,
+    "delta": 113,
+    "actualTA08Bytes": 41477,
+    "originalTA08Cap": 42000,
+    "scriptEventsRulesWritersClocksUnchanged": true
+  },
+  "core": {
+    "passed": true,
+    "counts": {
+      "tests": 1012,
+      "pass": 1012,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "gates": [
+      {
+        "id": "lock",
+        "exitCode": 0,
+        "file": "lock.log",
+        "sha256": "54fa65de1b7102737c83fc108aca6ddf00f050dc713d813eb7b4cc556867d86e"
+      },
+      {
+        "id": "install",
+        "exitCode": 0,
+        "file": "install.log",
+        "sha256": "26174f1a7f0701900875c3a6587c122ca9ecd1835b644138453d4c69cc69deef"
+      },
+      {
+        "id": "typecheck",
+        "exitCode": 0,
+        "file": "typecheck.log",
+        "sha256": "f4db2c939da9c86ddc28dd7279e9d43cdaccb955d89c68482425e95ef8b37061"
+      },
+      {
+        "id": "content",
+        "exitCode": 0,
+        "file": "content.log",
+        "sha256": "2a8a24e0be7819b02d5db91f564ceb92fdd2e6335fc878baee00478f339f39c1"
+      },
+      {
+        "id": "tests",
+        "exitCode": 0,
+        "file": "tests.tap",
+        "sha256": "71294bb49e5a0cca2b743156fe13cd39424fe203978e4249c7032065a116a46c"
+      },
+      {
+        "id": "m1",
+        "exitCode": 0,
+        "file": "m1.log",
+        "sha256": "024881873a5380e45bb463a269d573c601c72442d5250492caaab1b46a79aad2"
+      },
+      {
+        "id": "full",
+        "exitCode": 0,
+        "file": "full.log",
+        "sha256": "d3914ec8adf33a8cf8ad565407ffec84c97c3eac56d5a3b6dfd442d96ce9139c"
+      },
+      {
+        "id": "economy",
+        "exitCode": 0,
+        "file": "economy.log",
+        "sha256": "c34a2297cc3676b66b2e8828f4d8331f88d0d9082d1cc23d611c2fa053fe7dc8"
+      },
+      {
+        "id": "documents",
+        "exitCode": 0,
+        "file": "documents.log",
+        "sha256": "086579112531ef87022eab77439510ce0e4fb545f70690edb11d3525da459778"
+      },
+      {
+        "id": "design-documents",
+        "exitCode": 0,
+        "file": "design-documents.log",
+        "sha256": "b386db1e610aabdc6020ba6119edbcb2a84131b83b22093d54d926f8a4dce2fc"
+      }
+    ],
+    "resources": {
+      "passed": 723,
+      "runOnceInsideDocuments": true,
+      "durationSeconds": 480.683
+    }
+  },
+  "ui": {
+    "exit": 0,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 5130,
+    "runtime": "c88eff3261205044fd93641f84915fbd3216ec8ff375786d34ab2ffa54cde53b",
+    "stats": {
+      "startTime": "2026-11-06T11:51:58.055Z",
+      "duration": 808362.372,
+      "expected": 129,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 129,
+    "retried": [],
+    "reportSha256": "33134cda1d12b185e77f26312b6191c29f7573c79eb65057fece147f8f291e99"
+  },
+  "package": {
+    "exit": 0,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 5130,
+    "runtime": "c88eff3261205044fd93641f84915fbd3216ec8ff375786d34ab2ffa54cde53b",
+    "stats": {
+      "startTime": "2026-11-06T11:56:07.470Z",
+      "duration": 23593.914,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 3,
+    "retried": [],
+    "reportSha256": "1811ab83c44b9b1c7bd54f436e0824957f4f2191a14838a7c54b0a78aeafb74c"
+  },
+  "dependencies": {
+    "node_modules": {
+      "files": 133,
+      "allExact": true
+    },
+    "web/node_modules": {
+      "files": 1848,
+      "allExact": true
+    }
+  },
+  "declaration": {
+    "version": 33,
+    "ui": 967,
+    "storage": 415,
+    "normal": 32,
+    "total": 1414,
+    "fullMatrixExecuted": false,
+    "newCases": 3,
+    "package3IsSubsetOf129": true
+  },
+  "visuals": {
+    "png": 323,
+    "actuallyViewed": 19,
+    "notViewed": 304,
+    "allOriginalsKept": true,
+    "lossyView": "same dimensions JPEG68",
+    "maxImagesPerCall": 2
+  },
+  "terminals": {
+    "install-terminal.json": {
+      "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/install-terminal.json",
+      "sha256": "fa96407822f003e8f9eb338e77dcdf0686a2059cb23c748e3fc121c3b98e2d89",
+      "value": {
+        "exit": 0,
+        "inputs": 5123,
+        "exact": true
+      }
+    },
+    "core-terminal.json": {
+      "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/core-terminal.json",
+      "sha256": "e60b8390f85430d91fd74feb35b8cecc8e0f3f2c7882bb2621f60a2aad056e7c",
+      "value": {
+        "exit": 0,
+        "inputs": 5123,
+        "allExact": true,
+        "validation": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir35-03-04-cend06/current/core-report/validation.json"
+      }
+    },
+    "ui-terminal.json": {
+      "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/ui-terminal.json",
+      "sha256": "5e197ab7881bc5ab7f50d78f98e00a3cb33749c1825f672c18a76eb3d2a6eada",
+      "value": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 5130,
+        "runtime": "c88eff3261205044fd93641f84915fbd3216ec8ff375786d34ab2ffa54cde53b",
+        "stats": {
+          "startTime": "2026-11-06T11:51:58.055Z",
+          "duration": 808362.372,
+          "expected": 129,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 129,
+        "retried": [],
+        "reportSha256": "33134cda1d12b185e77f26312b6191c29f7573c79eb65057fece147f8f291e99"
+      }
+    },
+    "package-terminal.json": {
+      "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/package-terminal.json",
+      "sha256": "996dd9e6e8c6e4907f6a914d82ea693258a8c2c2061a43ca255203ca3d87603e",
+      "value": {
+        "exit": 0,
+        "launchError": null,
+        "exact": true,
+        "sameGit": true,
+        "exactDeclared": true,
+        "inputs": 5130,
+        "runtime": "c88eff3261205044fd93641f84915fbd3216ec8ff375786d34ab2ffa54cde53b",
+        "stats": {
+          "startTime": "2026-11-06T11:56:07.470Z",
+          "duration": 23593.914,
+          "expected": 3,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "errors": [],
+        "actualDeclarations": 3,
+        "retried": [],
+        "reportSha256": "1811ab83c44b9b1c7bd54f436e0824957f4f2191a14838a7c54b0a78aeafb74c"
+      }
+    },
+    "build-terminal.json": {
+      "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/build-terminal.json",
+      "sha256": "729c6e43cbb22d8eeca4c5f271f00fda4917908fabb03b6770227392884d67db",
+      "value": {
+        "rows": [
+          {
+            "name": "build",
+            "exit": 1
+          }
+        ],
+        "inputs": 5123,
+        "exact": true,
+        "exit": 1
+      }
+    },
+    "build-recheck-terminal.json": {
+      "path": "artifacts/goal-4/check-uir35-03-04-cend06/current/build-recheck-terminal.json",
+      "sha256": "5d691ca0abef8e0cf1214c53a20e2bd27df3526fd31f5cc17d5c8d7f0d9ef03d",
+      "value": {
+        "rows": [
+          {
+            "name": "build",
+            "exit": 0
+          }
+        ],
+        "inputs": 5123,
+        "exact": true,
+        "exit": 0
+      }
+    }
+  },
+  "boundaries": {
+    "compatibilityEnvironmentPerformance": "paused; original assertions retained",
+    "original56884": "untouched; no user save read or mutation",
+    "prior56916": "retained",
+    "protected13": "exact before/after",
+    "formalCandidate": false,
+    "overallArtAccepted": false,
+    "idleBalanceAccepted": false,
+    "humanAccepted": false,
+    "goal": "active"
+  }
+}

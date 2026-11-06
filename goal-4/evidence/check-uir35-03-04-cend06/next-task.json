@@ -1,0 +1,24 @@
+{
+  "task": "CEND06-F02A opening execution interaction",
+  "reason": "CEND06-F01 local fix delivered; comprehensive check complete. Next independent UI problem remains generic software-like opening execution.",
+  "beforeCode": [
+    "save original input and per-task source/parameters/acceptance/rollback",
+    "inspect OpeningOffering and App official callbacks / finite6s action",
+    "keep actual item until saved; show chosen response and actual current runtime in stage; quiet contextual TA, plan review secondary"
+  ],
+  "unchanged": [
+    "original Game choices costs six-second period CAS persistence replay proof",
+    "reading and preview never start actions",
+    "all opening options and full details remain available"
+  ],
+  "later": [
+    "F02B travel execution subject/path/actual count-down",
+    "full1414 matrix and same-source formal candidate",
+    "final C-end code safety review and real human acceptance"
+  ],
+  "paused": [
+    "compatibility",
+    "environment/performance browser matrix"
+  ],
+  "goal": "active"
+}
