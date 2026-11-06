@@ -1,0 +1,14 @@
+{
+  "version": 28,
+  "uiDeclared": 950,
+  "originalUi947Retained": true,
+  "uiSignature": "fe603eb219def203df79f6b1d0694078b2176e7e42560bacb50fafb4270b1774",
+  "runtime": "0792661bb85c3f547b9c8923292bbe6362ea052693b9b899098ae9f18c779ee4",
+  "executed": false,
+  "normalAndStorageOriginalObligations": {
+    "storage": 415,
+    "normal": 32,
+    "allTotal": 1397
+  },
+  "scope": "Actual named full UI profile --list; 1397 remains unexecuted full obligation"
+}

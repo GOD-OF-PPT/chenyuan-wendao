@@ -1,0 +1,19 @@
+{
+  "rows": [
+    {
+      "name": "node-rules",
+      "exit": 0
+    },
+    {
+      "name": "resource",
+      "exit": 0
+    },
+    {
+      "name": "negative",
+      "exit": 1
+    }
+  ],
+  "inputs": 4957,
+  "exact": true,
+  "exit": 1
+}
