@@ -1,0 +1,17 @@
+{
+  "producer": "e6f4380850e2d7ed0f328db353bd7225a153c263",
+  "observedBeforeFullPhaseTerminal": true,
+  "failures": [
+    {
+      "caseDirectory": "artifacts/goal-4/cend06-f02a/repair-01/ui-results/art33-opening-offering-ART-f9b8e-until-original-unique-retry-chromium",
+      "traceSha256": "f03af7ae4ab174dcd054bfa916147386b9c212873082235c7d15a3ccd559e167",
+      "assertion": "decisionHitsSeal must be false, actual true; original scene-seal and new decision pane overlap in failed or paused scene."
+    },
+    {
+      "caseDirectory": "artifacts/goal-4/cend06-f02a/repair-01/ui-results/art33-opening-offering-ART-e23b2-ced-by-new-art-interactions-chromium",
+      "traceSha256": "edc95c8a7da51ecb3e6c963f935e1f2e9a9dd314f6bddbf804895c1f154e44c7",
+      "assertion": "decisionHitsSeal must be false, actual true; original scene-seal and new decision pane overlap in failed or paused scene."
+    }
+  ],
+  "boundedRepair": "Reserve24px at the right edge of only the new response pane; keep original scene-seal and all original controls. Add whole pane / scene-seal intersection assertion."
+}
