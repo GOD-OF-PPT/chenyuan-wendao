@@ -1,0 +1,17 @@
+{
+  "originalProducer": "8b5170fffc7d9a0735d852fd0d34024ab1c1f512",
+  "originalSession": 16250,
+  "originalExit": 1,
+  "fullMethods": 720,
+  "passed": 719,
+  "failed": 1,
+  "failedMethod": "test_art34_inventory.ART34Tests.test_actual_root_and_complete_sandbox",
+  "error": "42375 != 42371",
+  "oldConsumerSha256": "6e65805120b6f901c1382000bdfff28eb1092f4f0c183dac07f37dbdfff94fd8",
+  "newConsumerSha256": "12c1134feba8d37780aab38f6351967cf80f8d6e2abf5c14e3c13f9bef9955f9",
+  "oldCurrentByteExpectation": 42371,
+  "newActualByteExpectation": 42375,
+  "originalCap": 45000,
+  "productionChange": false,
+  "plan": "fresh consumer freeze, complete changed resource module, exact untouched-source/dependency/runtime/payload inheritance proof; preserve original failed report"
+}

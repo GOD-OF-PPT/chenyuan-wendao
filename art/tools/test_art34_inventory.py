@@ -21,7 +21,7 @@ class ART34Tests(unittest.TestCase):
   self.check();fn()
   with self.assertRaises((AssertionError,KeyError,ValueError)):self.check()
  def test_actual_root_and_complete_sandbox(self):
-  self.assertEqual(self.check()[1],42371);self.assertEqual(validate_art34(ROOT)[1],42371)
+  self.assertEqual(self.check()[1],42375);self.assertEqual(validate_art34(ROOT)[1],42375)
  def test_caps_membership_and_user_acceptance_cannot_expand(self):
   self.reject(lambda:self.edit(lambda m:m['budgets'].update(oldArt02Native=45001)))
   self.reject(lambda:self.edit(lambda m:m['files'].pop()))
