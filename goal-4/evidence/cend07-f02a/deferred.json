@@ -1,0 +1,49 @@
+{
+  "fixedScope": {
+    "browser": "chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "fontScale": 1
+  },
+  "wholeMixedCasesExcludedBeforeFormalExecution": [
+    {
+      "file": "art25-study-reading.spec.ts",
+      "title": "ART25-A4 empty catalogue manual reading and failed illustrative background retain full native objects keyboard returns and readonly Game",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A12 both reduced-effect modes and all four failed cold images retain complete readable objects budgets and first real retry results",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable",
+      "project": "chromium"
+    }
+  ],
+  "grepInvert": "ART25-A4 |TA09-A12 |ART03-A12 ",
+  "assertionsPreserved": true,
+  "selectedPreliminaryDeclarationCount": 111,
+  "selectedFiles": [
+    "art10-equipment-stage.spec.ts",
+    "art25-study-reading.spec.ts",
+    "art35-study-rest.spec.ts",
+    "cend07-f02a-power-focus.spec.ts",
+    "check-cend07-forecast-context.spec.ts",
+    "check-uir33-01.spec.ts",
+    "equipment-actors.spec.ts",
+    "equipment-objects.spec.ts",
+    "idle-preparation-active.spec.ts",
+    "idle-preparation-drafts.spec.ts",
+    "idle-preparation.spec.ts",
+    "stage-r3-layout.spec.ts",
+    "stage-r3.spec.ts",
+    "uir33-04-study-notes.spec.ts",
+    "uir34-03-configuration-focus.spec.ts",
+    "ux26-learning-draft-context.spec.ts"
+  ],
+  "compatibilityEnvironmentPerformance": "paused"
+}

@@ -1,3 +1,4 @@
+from cend07_f02a_inventory import prior_power_focus_bytes
 """Exact forecast-only projection; preserve all original source and regional caps."""
 import hashlib,json,re
 from pathlib import Path
@@ -218,6 +219,8 @@ MANIFEST={'format': 'chenyuan-check-cend07-forecast-context',
                       'goal-4/amendments/2026-11-07-check-cend07-input.md',
                       'goal-4/research/check-cend07-sources.json']}
 def prior_forecast_bytes(path,raw):
+ try:raw=prior_power_focus_bytes(path,raw)
+ except AssertionError as error:raise AssertionError('CF01 parent: '+str(error))from error
  names=[n for n in MANIFEST['files']if Path(n).name==Path(path).name]
  if not names:return raw
  row=MANIFEST['files'][names[0]]
@@ -242,7 +245,9 @@ def validate_forecast(root):
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'CF01 immutable scope/caps'
  delta=0
  for n,row in MANIFEST['files'].items():
-  raw=local(n).read_bytes();old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'CF01 current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'CF01 original source';assert prior_forecast_bytes(n,raw)==old,'CF01 complete inverse';delta+=len(raw)-len(old)
+  try:raw=prior_power_focus_bytes(n,local(n).read_bytes())
+  except AssertionError as error:raise AssertionError('CF01 parent: '+str(error))from error
+  old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'CF01 current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'CF01 original source';assert prior_forecast_bytes(n,raw)==old,'CF01 complete inverse';delta+=len(raw)-len(old)
   assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'CF01 original callbacks'
   assert re.findall(rb'<style.*?</style>',raw,re.S)==re.findall(rb'<style.*?</style>',old,re.S),'CF01 original styles'
  assert MANIFEST['files']['web/src/activity-view.ts']['bytes']-MANIFEST['files']['web/src/activity-view.ts']['beforeBytes']<=400,'CF01 helper delta'

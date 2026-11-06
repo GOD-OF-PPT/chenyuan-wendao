@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  power=ROOT/'art/redesign/cend07-f02a.json'
+  if power.exists():
+   current=json.loads(power.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[r['before']for r in current['files'].values()]])
   forecast=ROOT/'art/redesign/check-cend07.json'
   if forecast.exists():
    current=json.loads(forecast.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[x['before']for x in current['files'].values()]])
@@ -2718,3 +2721,29 @@ class ForecastContextTests(unittest.TestCase):
   from check_cend07_inventory import LEDGER,validate_forecast
   (self.root/LEDGER).unlink()
   with self.assertRaisesRegex(AssertionError,'CF01'):validate_forecast(self.root)
+
+class PowerFocusTests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_power_focus_preserves_complete_original_sources_and_actual_caps(self):
+  from cend07_f02a_inventory import MANIFEST,validate_power_focus,prior_power_focus_bytes
+  self.assertLessEqual(validate_power_focus(ROOT)[1],0)
+  for n,row in MANIFEST['files'].items():self.assertEqual(prior_power_focus_bytes(n,(ROOT/n).read_bytes()),(ROOT/row['before']).read_bytes())
+ def test_power_focus_cannot_change_logic_or_unrecorded_visible_conditions(self):
+  from cend07_f02a_inventory import MANIFEST,validate_power_focus
+  for n in MANIFEST['files']:
+   original=(ROOT/n).read_text();self.write(n,original+'\n/* outside power display contract */')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'PF02'):validate_power_focus(self.root)
+   self.write(n,original)
+ def test_power_focus_cannot_replace_original_or_widen_caps(self):
+  from cend07_f02a_inventory import MANIFEST,LEDGER,validate_power_focus
+  for k,v in [('maxNativeDeltaBytes',1),('userAcceptance',True),('newRasterAssets',1)]:
+   m=copy.deepcopy(MANIFEST);m[k]=v;self.write(LEDGER,m)
+   with self.subTest(key=k),self.assertRaisesRegex(AssertionError,'PF02'):validate_power_focus(self.root)
+  self.write(LEDGER,MANIFEST);self.write(next(iter(MANIFEST['files'].values()))['before'],'lost original')
+  with self.assertRaisesRegex(AssertionError,'PF02'):validate_power_focus(self.root)
+ def test_power_focus_missing_ledger_is_not_a_legacy_fallback(self):
+  from cend07_f02a_inventory import LEDGER,validate_power_focus
+  (self.root/LEDGER).unlink()
+  with self.assertRaisesRegex(AssertionError,'PF02'):validate_power_focus(self.root)

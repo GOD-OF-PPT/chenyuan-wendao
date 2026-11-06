@@ -64,7 +64,7 @@ onDeactivated(()=>opened.value=props.mastered);
     <g v-if="equipped" class="ta09-jade-attuned" data-testid="jade-equipped-clasp"><path d="M173 155L190 149L196 163L179 172Z"/><path d="M179 159L190 162L182 167Z"/></g>
    </svg>
    <span class="ta09-jade-result"><slot name="result"/></span>
-   <span class="ta09-jade-inspect-label">{{label}}<small>只查看卷面</small></span>
+   <span class="ta09-jade-inspect-label">{{label}}<small v-if="manual">只查看卷面</small></span>
   </button>
  </div>
 </template>

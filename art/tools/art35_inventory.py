@@ -1,3 +1,4 @@
+from cend07_f02a_inventory import prior_power_focus_bytes
 from ux31_inventory import prior_ux31_bytes
 from ux30_inventory import prior_ux30_bytes, normalize_ux30
 from ux29_inventory import normalize_ux29_ritual
@@ -17,6 +18,8 @@ RUNTIME_SHA={'heart': '8ffb2310476341c75d598e97dee3084da8a076976922e002297d6baaa
 SOURCE_SHA={'heart': 'e8806142c853da983f27ebbdfde4ccba28a94812faac3d889097a88b804a1e81', 'blade': 'd178c4cf3f352a99740158cc60058bfc91f19473842b3f874b75ea82222abfa1', 'scroll': '4a86f1e132362f43e549a0c3550f9a8feeec4d7513fb5e6281c33f0210e29cdd', 'knot': 'a143a3a8ebfb11238897ce3dbd97a0ea91cece9de122260bb5b3571a7bb09e51', 'seal': '3e76960d9b602166238f24a94e2540476a9fdd4fa1b8e36699f1969f459c53b1', 'fan': '4f78ec19a23db1a230f4140f3d0eb5e0b91b878a9d0538ecb1f160431670cb62', 'manual': '3bab008f65388bf1fa35f3bfd49dd0a64bb1d8e1e9974b3d5b44b43a96478fdd', 'leaf': 'ac9cdb030f0c48537691353c84012bfe47f4d17d9b6d12504f00fdd92ed3f8e8'}
 JADE_TRANSFORMS=[["import {computed,onDeactivated,ref,useId,watch} from 'vue';", "import {computed,onDeactivated,ref,useId,watch} from 'vue';\nimport {useJadePaint} from './jade-paint';"], ['const variant=computed', 'const artwork=useJadePaint(form);\nconst variant=computed'], ['data-testid="jade-engraving"', 'data-testid="jade-engraving" :data-painted="artwork.ready.value"'], ['<g class="ta09-jade-case" :data-form="form">', '<g class="ta09-jade-case" :data-form="form">\n     <image :key="artwork.cover.value" class="jade-painted-cover" data-jade-part="cover" :href="artwork.cover.value" x="50" y="18" width="180" height="188" @load="artwork.set($event,true)" @error="artwork.set($event,false)"/>'], ['<g v-for="n in 5" :key="n" class="ta09-jade-page" :style="{\'--page-index\':n-3}">', '<g v-for="n in 5" :key="n" class="ta09-jade-page" :style="{\'--page-index\':n-3}">\n      <image class="jade-painted-leaf" data-jade-part="page" :href="artwork.page" x="125" y="47" width="34" height="128" @load="artwork.set($event,true)" @error="artwork.set($event,false)"/>']]
 def normalize_art35_jade(text):
+ try:text=prior_power_focus_bytes('JadeEngraving.vue',text.encode()).decode()
+ except AssertionError as error:raise AssertionError('ART35 parent: '+str(error))from error
  if JADE_TRANSFORMS[0][1]not in text:return text
  for before,after in reversed(JADE_TRANSFORMS):
   assert text.count(after)==1,'ART35 unique approved jade display'
@@ -45,7 +48,9 @@ def validate_art35(root,image_reader):
   return path
  recorded={LEDGER,*FILES,*PARENTS,*REFS,*UNCHANGED}
  def identity(row):
-  data=prior_ux30_bytes(row['path'],local(row['path']).read_bytes());recorded.add(row['path'])
+  try:data=prior_ux30_bytes(row['path'],local(row['path']).read_bytes())
+  except AssertionError as error:raise AssertionError('ART35 '+row['path']+': '+str(error))from error
+  recorded.add(row['path'])
   assert row['sha256']==hashlib.sha256(data).hexdigest(),'ART35 actual identity'
   if'bytes'in row:assert type(row['bytes'])is int and row['bytes']==len(data),'ART35 actual bytes'
   return data
