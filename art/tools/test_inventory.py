@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3501=ROOT/'art/redesign/uir35-01.json'
+  if uir3501.exists():
+   current=json.loads(uir3501.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*current['unchanged'],*[row['before']for row in current['files'].values()]])
   uir3407=ROOT/'art/redesign/uir34-07.json'
   if uir3407.exists():
    data=json.loads(uir3407.read_text());files.update(ROOT/ref for ref in data['sourceReferences']+list(data['unchanged']));files.update(ROOT/r['before']for r in data['files'].values())
@@ -2482,4 +2485,11 @@ class Uir3501Tests(unittest.TestCase):
    m=copy.deepcopy(MANIFEST);m[key]=value;self.write(LEDGER,m)
    with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'UIR35-01'):validate_uir3501(self.root)
   m=copy.deepcopy(MANIFEST);m['caps']['idle-cultivation']+=1;self.write(LEDGER,m)
+  with self.assertRaisesRegex(AssertionError,'UIR35-01'):validate_uir3501(self.root)
+
+ def test_missing_new_ledger_and_corrupted_original_are_rejected(self):
+  from uir35_01_inventory import LEDGER,MANIFEST,validate_uir3501
+  p=self.root/LEDGER;p.unlink()
+  with self.assertRaisesRegex(AssertionError,'UIR35-01'):validate_uir3501(self.root)
+  self.write(LEDGER,MANIFEST);row=next(iter(MANIFEST['files'].values()));self.write(row['before'],'not the preserved source')
   with self.assertRaisesRegex(AssertionError,'UIR35-01'):validate_uir3501(self.root)

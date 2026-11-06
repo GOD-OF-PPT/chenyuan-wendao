@@ -89,7 +89,9 @@ def validate_uir3501(root):
  root=Path(root).resolve()
  def local(n):
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'UIR35-01 local input';return p
- if not(root/LEDGER).exists():return set(),0
+ if not(root/LEDGER).exists():
+  assert all(hashlib.sha256(local(n).read_bytes()).hexdigest()!=row['sha256']for n,row in MANIFEST['files'].items()),'UIR35-01 unrecorded display source'
+  return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'UIR35-01 immutable scope'
  for n,row in MANIFEST['files'].items():
   raw=local(n).read_bytes();old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'UIR35-01 current source';assert hashlib.sha256(old).hexdigest()==row['beforeSHA256'],'UIR35-01 preserved original';assert prior_uir3501_bytes(n,raw)==old,'UIR35-01 inverse'
