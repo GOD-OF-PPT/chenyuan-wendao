@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-check-ui35-source-additions",
+  "version": 33,
+  "parentVersion": 32,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 967,
+    "signature": "e6eab6831b87277bebfecf220ddeddd1b3db4ba01f571cf831fb254771aa7fc8"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-ui35-source-state.spec.ts",
+      "title": "CHECK-UI35-S1 unarranged herbs failed START original retry and held first period distinguish current stock from actual saved harvest",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-ui35-source-state.spec.ts",
+      "title": "CHECK-UI35-S2 actual commission income stays separate from stock across another source refresh and an explicit new life",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-ui35-source-state.spec.ts",
+      "title": "CHECK-UI35-S3 failed original harvest tick retries once then pause refresh and the original finite plan preserve actual saved totals",
+      "projectName": "chromium"
+    }
+  ]
+}

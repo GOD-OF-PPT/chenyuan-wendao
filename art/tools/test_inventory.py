@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  checkui35source=ROOT/'art/redesign/check-ui35-source.json'
+  if checkui35source.exists():
+   current=json.loads(checkui35source.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],current['path'],current['before'],*current['unchanged']])
   uir3504=ROOT/'art/redesign/uir35-04.json'
   if uir3504.exists():
    current=json.loads(uir3504.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[r['before']for r in current['files'].values()],current['projection']['path'],*current['unchanged']])
@@ -2412,6 +2415,25 @@ class Check340204ReadonlyCloseTests(unittest.TestCase):
    m=json.loads((ROOT/LEDGER).read_text());m[key]=value;self.write(LEDGER,m)
    with self.subTest(scope=key),self.assertRaisesRegex(AssertionError,'CHECK34'):validate_check340204(self.root)
    self.write(LEDGER,MANIFEST)
+
+ def test_check_ui35_source_complete_inverse_and_unowned_callbacks(self):
+  from check_ui35_source_inventory import MANIFEST,validate_check_ui35_source,prior_check_ui35_source_bytes
+  self.assertLessEqual(validate_check_ui35_source(ROOT)[1],42000)
+  self.assertEqual(prior_check_ui35_source_bytes(MANIFEST['path'],(ROOT/MANIFEST['path']).read_bytes()),(ROOT/MANIFEST['before']).read_bytes())
+  p=self.root/MANIFEST['path'];raw=p.read_bytes();self.write(MANIFEST['path'],raw.replace(b'@click="opened=!opened"',b'@click="opened=true"').decode())
+  with self.assertRaisesRegex(AssertionError,'CHECK-UI35-SOURCE'):validate_check_ui35_source(self.root)
+ def test_check_ui35_source_rejects_clock_identity_and_original_mutation(self):
+  from check_ui35_source_inventory import MANIFEST,validate_check_ui35_source
+  for n in [MANIFEST['before'],*MANIFEST['unchanged']]:
+   p=self.root/n;raw=p.read_bytes();self.write(n,(raw+b'\n').decode())
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'CHECK-UI35-SOURCE'):validate_check_ui35_source(self.root)
+   self.write(n,raw.decode())
+ def test_check_ui35_source_rejects_fake_saved_state_and_widened_budget(self):
+  from check_ui35_source_inventory import MANIFEST,LEDGER,validate_check_ui35_source
+  p=self.root/MANIFEST['path'];raw=p.read_text();self.write(MANIFEST['path'],raw.replace('首轮尚无成果','本段已保存 +0'))
+  with self.assertRaisesRegex(AssertionError,'CHECK-UI35-SOURCE'):validate_check_ui35_source(self.root)
+  self.write(MANIFEST['path'],raw);l=self.root/LEDGER;m=json.loads(l.read_text());m['actualTA08Cap']=45000;self.write(LEDGER,m)
+  with self.assertRaisesRegex(AssertionError,'CHECK-UI35-SOURCE'):validate_check_ui35_source(self.root)
 
 if __name__=='__main__':unittest.main()
 

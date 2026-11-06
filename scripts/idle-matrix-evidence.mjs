@@ -27,7 +27,8 @@ const outcomeAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-uir33-0
 const secondCheckAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-check-uir33-02-additions.json',import.meta.url)));
 const alchemyArrangementAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-uir33-08-additions.json',import.meta.url)));
 const lifespanGuidanceAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-uir34-01-additions.json',import.meta.url)));
-const medicineSummaryAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-uir35-04-additions.json',import.meta.url)));
+const sourceStateAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-check-ui35-source-additions.json',import.meta.url)));
+ const medicineSummaryAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-uir35-04-additions.json',import.meta.url)));
 const savedProgressAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-uir35-03-additions.json',import.meta.url)));
 const ui35FeedbackAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-check-ui35-additions.json',import.meta.url)));
 const cultivationFallbackAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-uir35-02-additions.json',import.meta.url)));
@@ -65,7 +66,7 @@ export function latestIdleResults(phases){
 }
 /** Validate real named declarations; v2 includes every v1 UI consumer in the complete UI inventory. */
 export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI){
- assert.ok(version===1||version===2||version===3||version===4||version===5||version===6||version===7||version===8||version===9||version===10||version===11||version===12||version===13||version===14||version===15||version===16||version===17||version===18||version===19||version===20||version===21||version===22||version===23||version===24||version===25||version===26||version===27||version===28||version===29||version===30||version===31||version===32,'Unknown idle matrix version');assert.match(runtime,/^[a-f0-9]{64}$/);
+ assert.ok(version===1||version===2||version===3||version===4||version===5||version===6||version===7||version===8||version===9||version===10||version===11||version===12||version===13||version===14||version===15||version===16||version===17||version===18||version===19||version===20||version===21||version===22||version===23||version===24||version===25||version===26||version===27||version===28||version===29||version===30||version===31||version===32||version===33,'Unknown idle matrix version');assert.match(runtime,/^[a-f0-9]{64}$/);
  const profiles = {
   1: idleRecoveryMatrix.profiles,
   2: idleComprehensiveProfiles,
@@ -99,6 +100,7 @@ export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI)
   30: {...idleComprehensiveProfiles, ui: ui35FeedbackAdditions.profile},
   31: {...idleComprehensiveProfiles, ui: savedProgressAdditions.profile},
   32: {...idleComprehensiveProfiles, ui: medicineSummaryAdditions.profile},
+  33: {...idleComprehensiveProfiles, ui: sourceStateAdditions.profile},
  };
  const pins=profiles[version],expected=[],seen=new Set();
  const named=(report,suite,pin)=>{const rows=idleReportTests(report,suite);assert.equal(path.basename(report.config.configFile),pin.configuration,'Partial declaration wrapper is not the reviewed profile');assert.equal(report.config.metadata.runtimeDigest,runtime,'Declaration source runtime differs');assert.equal(rows.length,pin.count,'Profile declarations were reduced');assert.equal(sha(JSON.stringify(rows.map(key).sort())),pin.signature,'Profile identities differ from the reviewed full source inventory');return rows;};
@@ -106,7 +108,13 @@ export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI)
  assert.deepEqual([...seen].sort(),['journey','persistence','ui']);assert.equal(new Set(expected.map(key)).size,expected.length,'Duplicate required identity');
  if(version>=2){assert.ok(recoveryUI,'v2 requires the original reviewed recovery UI declaration');const original=named(recoveryUI,'ui',idleRecoveryMatrix.profiles.ui),complete=new Set(expected.filter(r=>r.suite==='ui').map(key));for(const row of original)assert.ok(complete.has(key(row)),'Original recovery UI consumer lost from the comprehensive inventory');}
  let previousUI=expected.filter(r=>r.suite==='ui');
- if(version===32){
+ if(version===33){
+  assert.equal(sourceStateAdditions.format,'chenyuan-check-ui35-source-additions');assert.equal(sourceStateAdditions.version,33);assert.equal(sourceStateAdditions.parentVersion,32);assert.equal(sourceStateAdditions.additions.length,3);
+  const added=new Set(sourceStateAdditions.additions.map(key));assert.equal(added.size,3,'Duplicate source state combination');
+  for(const row of sourceStateAdditions.additions){assert.equal(row.suite,'ui');assert.equal(row.file,'check-ui35-source-state.spec.ts');assert.ok(previousUI.some(actual=>key(actual)===key(row)),'Missing reviewed source state consumer');}
+  previousUI=previousUI.filter(row=>!added.has(key(row)));assert.equal(previousUI.length,medicineSummaryAdditions.profile.count,'Original v32 inventory reduced');assert.equal(sha(JSON.stringify(previousUI.map(key).sort())),medicineSummaryAdditions.profile.signature,'Original v32 consumer lost or replaced');
+ }
+ if(version>=32){
   assert.equal(medicineSummaryAdditions.format,'chenyuan-uir35-04-medicine-additions');assert.equal(medicineSummaryAdditions.version,32);assert.equal(medicineSummaryAdditions.parentVersion,31);assert.equal(medicineSummaryAdditions.additions.length,4);
   const added=new Set(medicineSummaryAdditions.additions.map(key));assert.equal(added.size,4,'Duplicate medicine summary case');
   for(const row of medicineSummaryAdditions.additions){assert.equal(row.suite,'ui');assert.equal(row.file,'uir35-04-battle-medicine.spec.ts');assert.ok(previousUI.some(actual=>key(actual)===key(row)),'Missing reviewed medicine summary case');}
@@ -345,7 +353,7 @@ export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI)
 /** Explicit same-runtime engineering proof; does not replace the historical candidate gate. */
 export function verifyIdleMatrixCoverage(manifestFile){
  const manifest=JSON.parse(fs.readFileSync(manifestFile)),base=path.dirname(path.resolve(manifestFile));
- assert.equal(manifest.format,'chenyuan-idle-matrix-inputs');assert.ok(manifest.version===1||manifest.version===2||manifest.version===3||manifest.version===4||manifest.version===5||manifest.version===6||manifest.version===7||manifest.version===8||manifest.version===9||manifest.version===10||manifest.version===11||manifest.version===12||manifest.version===13||manifest.version===14||manifest.version===15||manifest.version===16||manifest.version===17||manifest.version===18||manifest.version===19||manifest.version===20||manifest.version===21||manifest.version===22||manifest.version===23||manifest.version===24||manifest.version===25||manifest.version===26||manifest.version===27||manifest.version===28||manifest.version===29||manifest.version===30||manifest.version===31||manifest.version===32,'Unknown idle matrix version');assert.deepEqual(manifest.scope,{browser:'chromium',viewport:{width:1440,height:900},fontScale:1});assert.match(manifest.runtime,/^[a-f0-9]{64}$/);
+ assert.equal(manifest.format,'chenyuan-idle-matrix-inputs');assert.ok(manifest.version===1||manifest.version===2||manifest.version===3||manifest.version===4||manifest.version===5||manifest.version===6||manifest.version===7||manifest.version===8||manifest.version===9||manifest.version===10||manifest.version===11||manifest.version===12||manifest.version===13||manifest.version===14||manifest.version===15||manifest.version===16||manifest.version===17||manifest.version===18||manifest.version===19||manifest.version===20||manifest.version===21||manifest.version===22||manifest.version===23||manifest.version===24||manifest.version===25||manifest.version===26||manifest.version===27||manifest.version===28||manifest.version===29||manifest.version===30||manifest.version===31||manifest.version===32||manifest.version===33,'Unknown idle matrix version');assert.deepEqual(manifest.scope,{browser:'chromium',viewport:{width:1440,height:900},fontScale:1});assert.match(manifest.runtime,/^[a-f0-9]{64}$/);
  const read=ref=>{assert.ok(ref&&typeof ref.path==='string');assert.match(ref.sha256,/^[a-f0-9]{64}$/);const bytes=fs.readFileSync(path.resolve(base,ref.path));assert.equal(sha(bytes),ref.sha256,'Evidence bytes changed: '+ref.path);return JSON.parse(bytes);};
  const phases=[],phaseNames=new Set();let previousStart=-Infinity;
  for(const descriptor of manifest.phases){

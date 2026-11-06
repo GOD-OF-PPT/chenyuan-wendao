@@ -1,3 +1,4 @@
+from check_ui35_source_inventory import prior_check_ui35_source_bytes
 """Exact readonly medicine summaries and encounter footer; original plans and transaction owners stay pinned."""
 import hashlib,json,re
 from pathlib import Path
@@ -83,6 +84,7 @@ MANIFEST={'format': 'chenyuan-uir35-04-battle-medicine',
                       'goal-4/amendments/2026-11-06-uir35-04-input.md',
                       'goal-4/research/uir35-04-sources.json']}
 def prior_uir3504_bytes(path,raw):
+ raw=prior_check_ui35_source_bytes(path,raw)
  matches=[n for n in MANIFEST['files']if Path(n).name==Path(path).name]
  if not matches:return raw
  n=matches[0];marker=b'medicineSummary'if n.endswith('.vue')else b'grid-column:2;grid-row:4;display:grid;grid-template-columns:minmax(0,1fr)'
