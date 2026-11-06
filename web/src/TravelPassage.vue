@@ -25,7 +25,7 @@ const label=computed(()=>({running:'行路中',saving:'正在落脚 · 尚未确
     <svg class="travel-passage-line" viewBox="0 0 1000 180" preserveAspectRatio="none" aria-hidden="true"><path d="M120 116Q320 168 500 112T880 116"/><path class="travel-path-light" d="M120 116Q320 168 500 112T880 116"/></svg>
     <span class="travel-passage-place from"><i aria-hidden="true">◇</i><small>{{C.locations[game.core.world.location].name}}</small></span><span class="travel-passage-place to"><i aria-hidden="true">◇</i><small>{{C.locations[selected.destination].name}}</small></span>
     <svg class="travel-passage-walker" data-testid="travel-passage-walker" :style="marker" viewBox="0 0 80 120" aria-hidden="true"><path class="traveller-shadow" d="M9 115Q36 108 70 115Q48 123 9 115Z"/><g><circle cx="38" cy="19" r="10"/><path d="M26 20Q18 2 37 3Q48 3 51 19M25 28L13 86L36 95L57 84L46 30Q36 37 25 28ZM28 35L42 48L62 43M40 48L40 89M26 89L20 113M43 91L56 113M64 29L61 114"/><path d="M27 37Q11 42 12 67L21 64M31 47L21 81M45 57L50 80"/></g></svg>
-    <figcaption>行程示意 · 尚未抵达</figcaption>
+    <figcaption>本程路线示意</figcaption>
    </figure>
    <footer><div><p>本程成本：{{cost}}</p><small>{{ADVENTURE_CYCLE_MS.travel/1000}} 秒 · 只走本程，下一行动由你安排</small></div><button type="button" class="text-button" data-testid="travel-passage-review" @click="emit('inspect',$event)">回看行程 ›</button></footer>
   </article>

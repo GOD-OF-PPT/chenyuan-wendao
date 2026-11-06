@@ -60,8 +60,8 @@
   },
   "added": {
     "web/src/TravelPassage.vue": {
-      "bytes": 4219,
-      "sha256": "b3c4834e42af4c676395698a385f8561a08bc22c6b913fc665d63b5b7e0e1d90"
+      "bytes": 4209,
+      "sha256": "3a9c8b2e671e82e58d60135fa253fd1bb7174a39f9ac629d2957ff2873e53f71"
     },
     "web/src/travel-passage.css": {
       "bytes": 3714,

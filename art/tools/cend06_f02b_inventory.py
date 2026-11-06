@@ -45,8 +45,8 @@ MANIFEST={'format': 'chenyuan-cend06-f02b-travel-passage',
                                                       '    <TravelPassage v-if="passage" :game="game" '
                                                       '@inspect="emit(\'inspect\',$event)"/>\n'
                                                       '    <slot/>']]}},
- 'added': {'web/src/TravelPassage.vue': {'bytes': 4219,
-                                         'sha256': 'b3c4834e42af4c676395698a385f8561a08bc22c6b913fc665d63b5b7e0e1d90'},
+ 'added': {'web/src/TravelPassage.vue': {'bytes': 4209,
+                                         'sha256': '3a9c8b2e671e82e58d60135fa253fd1bb7174a39f9ac629d2957ff2873e53f71'},
            'web/src/travel-passage.css': {'bytes': 3714,
                                           'sha256': '3d8e598154392104a1f2e197a675f03f1e50564decaa28abeed4ee721d506b46'}},
  'unchanged': {'web/src/OpeningResponse.vue': '725a3f03b21310890c795509d1c008d9fb28ba408b5c2b2fd7e2a753b987a05a',
