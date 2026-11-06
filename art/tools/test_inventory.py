@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  uir3504=ROOT/'art/redesign/uir35-04.json'
+  if uir3504.exists():
+   current=json.loads(uir3504.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[r['before']for r in current['files'].values()],current['projection']['path'],*current['unchanged']])
   uir3503=ROOT/'art/redesign/uir35-03.json'
   if uir3503.exists():
    current=json.loads(uir3503.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],current['path'],current['before'],*current['unchanged']])
@@ -2580,3 +2583,29 @@ class Uir3503Tests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'UIR35-03'):validate_uir3503(self.root)
   self.write(LEDGER,MANIFEST);self.write(MANIFEST['before'],'lost preserved stylesheet')
   with self.assertRaisesRegex(AssertionError,'UIR35-03'):validate_uir3503(self.root)
+
+class Uir3504Tests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_complete_parent_inverse_and_actual_original_caps_include_projection(self):
+  from uir35_04_inventory import MANIFEST,validate_uir3504,prior_uir3504_bytes
+  self.assertLessEqual(validate_uir3504(ROOT)[1],45000)
+  for n,r in MANIFEST['files'].items():self.assertEqual(prior_uir3504_bytes(n,(ROOT/n).read_bytes()),(ROOT/r['before']).read_bytes())
+ def test_projection_cannot_change_drafts_rules_cycles_or_atomic_writers(self):
+  from uir35_04_inventory import MANIFEST,validate_uir3504
+  for n in [MANIFEST['projection']['path'],'web/src/store.ts','src/full/adventure.ts','web/src/full-persistence.ts']:
+   raw=(ROOT/n).read_text();self.write(n,raw+'\n/* unauthorized */')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'UIR35-04'):validate_uir3504(self.root)
+   self.write(n,raw)
+  n='web/src/AdventurePlanner.vue';raw=(ROOT/n).read_text();self.write(n,raw.replace("emit('start',plan)","emit('start',{...plan,maxCycles:999})",1))
+  with self.assertRaisesRegex(AssertionError,'UIR35-04'):validate_uir3504(self.root)
+ def test_missing_ledger_corrupt_original_and_larger_caps_cannot_pass(self):
+  from uir35_04_inventory import MANIFEST,LEDGER,validate_uir3504
+  for key,value in [('maxAdventureBytes',45001),('maxArt02Bytes',45001),('maxProjectionBytes',2001),('userAcceptance',True),('newRasterAssets',1)]:
+   m=copy.deepcopy(MANIFEST);m[key]=value;self.write(LEDGER,m)
+   with self.subTest(key=key),self.assertRaisesRegex(AssertionError,'UIR35-04'):validate_uir3504(self.root)
+  self.write(LEDGER,MANIFEST);(self.root/LEDGER).unlink()
+  with self.assertRaisesRegex(AssertionError,'UIR35-04'):validate_uir3504(self.root)
+  self.write(LEDGER,MANIFEST);self.write(next(iter(MANIFEST['files'].values()))['before'],'lost original')
+  with self.assertRaisesRegex(AssertionError,'UIR35-04'):validate_uir3504(self.root)

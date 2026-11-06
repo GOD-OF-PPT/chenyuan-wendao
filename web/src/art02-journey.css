@@ -13,7 +13,7 @@
   &>.adventure-confirm>small{max-width:none}
   &[data-section=object]{display:grid;grid-template-columns:minmax(0,1fr) 420px;grid-template-rows:auto auto minmax(200px,1fr) auto;gap:8px 16px;
    &>.adventure-preview{grid-column:2;grid-row:2/4;align-self:center;padding:0}
-   &>.adventure-confirm{grid-column:2;grid-row:4;display:grid;grid-template-columns:130px 1fr}
+   &>.adventure-confirm{grid-column:2;grid-row:4;display:grid;grid-template-columns:minmax(0,1fr)}
   }
  }
 }

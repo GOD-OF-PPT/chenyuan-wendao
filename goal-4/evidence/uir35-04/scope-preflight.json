@@ -1,0 +1,139 @@
+{
+  "selectedFiles": [
+    "uir35-04-battle-medicine.spec.ts",
+    "idle-adventure.spec.ts",
+    "adventure-objects.spec.ts",
+    "stage-r2.spec.ts",
+    "uir33-02-local-exploration.spec.ts",
+    "check-uir33-02.spec.ts",
+    "battle-actors.spec.ts",
+    "cend03-review-observations.spec.ts",
+    "check-art03-combinations.spec.ts",
+    "check-matrix-keyboard.spec.ts",
+    "stage-r1.spec.ts",
+    "idle-review.spec.ts"
+  ],
+  "environmentAudit": [
+    {
+      "file": "uir35-04-battle-medicine.spec.ts",
+      "environmentLines": []
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "environmentLines": []
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "environmentLines": [
+        {
+          "line": 80,
+          "text": " const isolated=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),quest=await isolated.newPage(),questErrors:string[]=[];quest.on('pageerror',e=>questErrors.push(e.message));"
+        },
+        {
+          "line": 99,
+          "text": " await page.emulateMedia({reducedMotion:mode==='system'?'reduce':'no-preference'});const before=await fixture(page);if(mode==='preference'){await page.getByTestId('game-settings').click();await page.getByTestId('reduce-effects').check();await page.getByRole('button',{name:'关闭设置',exact:true}).click();}await explore(page);await inspectSourceLibrary(p"
+        },
+        {
+          "line": 113,
+          "text": "  const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),p=await context.newPage(),pageErrors:string[]=[];p.on('pageerror',e=>pageErrors.push(e.message));const consoleRows:unknown[]=[];p.on('console',e=>{if(e.type()==='error'||e.type()==='warning')consoleRows.push({type:e.type(),text:e.text()});})"
+        }
+      ]
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "environmentLines": []
+    },
+    {
+      "file": "uir33-02-local-exploration.spec.ts",
+      "environmentLines": [
+        {
+          "line": 51,
+          "text": "  const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage(),faults:string[]=[];page.on('pageerror',e=>faults.push(e.message));"
+        }
+      ]
+    },
+    {
+      "file": "check-uir33-02.spec.ts",
+      "environmentLines": []
+    },
+    {
+      "file": "battle-actors.spec.ts",
+      "environmentLines": [
+        {
+          "line": 45,
+          "text": " await expect(page.locator('.app-shell')).toHaveAttribute('data-font-scale','1');const raw=await database(page);"
+        },
+        {
+          "line": 369,
+          "text": " const isolated=await browser.newContext({baseURL:new URL(page.url()).origin,viewport:{width:1440,height:900},reducedMotion:'no-preference'}),p=await isolated.newPage();listen(p);"
+        },
+        {
+          "line": 377,
+          "text": " await page.emulateMedia({reducedMotion:'reduce'});await page.route('**/art/v2/actors/player-standing-cold-v1.webp',route=>route.fulfill({status:200,contentType:'image/webp',body:'TA07 explicit unavailable character image fixture'}));"
+        },
+        {
+          "line": 387,
+          "text": " const isolated=await browser.newContext({baseURL:new URL(page.url()).origin,viewport:{width:1440,height:900},reducedMotion:'no-preference'}),p=await isolated.newPage();listen(p);"
+        },
+        {
+          "line": 389,
+          "text": "  const origin=await load(p,battleFixture('sword','technique'));await p.getByTestId('game-settings').click();await p.getByTestId('reduce-effects').check();await expect(p.getByTestId('reduce-effects')).toBeChecked();await p.getByRole('button',{name:'关闭设置',exact:true}).click();await reducedSkipNavigation(p,info,'preference-reduction');await manual(p)"
+        }
+      ]
+    },
+    {
+      "file": "cend03-review-observations.spec.ts",
+      "environmentLines": []
+    },
+    {
+      "file": "check-art03-combinations.spec.ts",
+      "environmentLines": [
+        {
+          "line": 26,
+          "text": " listen(page);if(virtual)await useJourneyClock(page);await page.goto('/');await expect(page.locator('.app-shell')).toHaveAttribute('data-font-scale','1');let input=page.getByLabel('导入已有存档',{exact:true});let confirmation:string|null=null;"
+        }
+      ]
+    },
+    {
+      "file": "check-matrix-keyboard.spec.ts",
+      "environmentLines": [
+        {
+          "line": 17,
+          "text": "test.use({viewport:{width:1440,height:900},reducedMotion:'no-preference',actionTimeout:8000,navigationTimeout:15000});"
+        },
+        {
+          "line": 47,
+          "text": "  await clock(page);await page.goto('/');await expect(page.getByLabel('导入已有存档',{exact:true})).toBeEnabled();await expect(page.locator('.app-shell')).toHaveAttribute('data-font-scale','1');"
+        },
+        {
+          "line": 305,
+          "text": "  await page.emulateMedia({reducedMotion:'reduce'});expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);"
+        },
+        {
+          "line": 309,
+          "text": "  const preferencePreparation=await restorePromptPreparation(page);await keyboard(page,page.getByTestId('game-settings'));await expect(page.getByTestId('reduce-effects')).toBeVisible();await page.getByTestId('reduce-effects').check();await expect(page.getByTestId('reduce-effects')).toBeChecked();await expect(page.locator('.app-shell')).toHaveClass("
+        },
+        {
+          "line": 310,
+          "text": "  await page.emulateMedia({reducedMotion:'no-preference'});expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(false);expect(await database(page)).toEqual(preferencePreparation.raw);await staticReducedEntry(page,preferencePreparation.after,info,'trial-new-preference-reduced-result');"
+        }
+      ]
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "environmentLines": []
+    },
+    {
+      "file": "idle-review.spec.ts",
+      "environmentLines": []
+    }
+  ],
+  "scope": "fixed1440x900 font1 singleChromium only; whole mixed cases deferred before execution; original assertions intact",
+  "deferredWholeMixedCases": [
+    "system reduced effects retain real source progress and static committed results",
+    "preference reduced effects retain real source progress and static committed results",
+    "TA07-A8 ",
+    "CHECK-K10 "
+  ],
+  "originalAssertionsRetained": true
+}

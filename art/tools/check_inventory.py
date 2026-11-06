@@ -1,3 +1,4 @@
+from uir35_04_inventory import validate_uir3504
 from uir35_03_inventory import validate_uir3503,prior_uir3503_bytes
 from check_ui35_inventory import validate_check_ui35
 from uir35_02_inventory import validate_uir3502
@@ -389,6 +390,7 @@ def validate_equipment_objects(root, image_reader=image_info):
 
 def validate(root):
     root = root.resolve()
+    uir3504_files,uir3504_bytes=validate_uir3504(root)
     uir3503_files,uir3503_bytes=validate_uir3503(root)
     checkui35_files,checkui35_bytes=validate_check_ui35(root)
     uir3502_files,uir3502_bytes=validate_uir3502(root)
@@ -1048,6 +1050,7 @@ def validate(root):
         assert fx['targetSpec']['maxGroups'] == 4 and fx['bindings']['groups'] == ['入道', '突破', '剑符反馈', '渡劫'], 'FX group budget changed'
     assert by_id['runtime-scene-placeholder']['sha256'] == by_id['ref-style']['sha256'], 'Placeholder/reference copy identity changed without updated provenance'
     recorded.update(check340204_files)
+    recorded.update(uir3504_files)
     recorded.update(uir3503_files)
     recorded.update(checkui35_files)
     recorded.update(uir3502_files)

@@ -1,3 +1,4 @@
+from uir35_04_inventory import prior_uir3504_bytes
 """Native saved progress theme only; preserve every original selector, layout and writing owner."""
 import hashlib,json
 from pathlib import Path
@@ -34,6 +35,7 @@ MANIFEST={'format': 'chenyuan-uir35-03-saved-progress',
                       'goal-4/amendments/2026-11-06-uir35-03-input.md',
                       'goal-4/research/uir35-03-sources.json']}
 def prior_uir3503_bytes(path,raw):
+ raw=prior_uir3504_bytes(path,raw)
  if Path(path).name!='style.css' or b'background:var(--game-base,#dcdccc)'not in raw:return raw
  assert len(raw)==MANIFEST['bytes']and hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'UIR35-03 exact complete stylesheet'
  text=raw.decode()

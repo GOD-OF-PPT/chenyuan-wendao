@@ -1,3 +1,4 @@
+from uir35_04_inventory import prior_uir3504_bytes
 """Exact local-view wiring; original travel defaults, receipts and caps are retained."""
 from uir33_04_inventory import prior_uir3304_bytes
 import hashlib,json
@@ -106,7 +107,7 @@ def validate_uir3302(root):
  assert json.loads(local(LEDGER).read_text())==MANIFEST, 'UIR33-02 exact ledger'
  assert json.loads(local('art/redesign/uir33-02-edits.json').read_text())==OPERATIONS, 'UIR33-02 exact edits'
  for name,f in FACTS.items():
-  raw=local(f['path']).read_bytes();before=local(f['before']).read_bytes()
+  raw=prior_uir3504_bytes(f['path'],local(f['path']).read_bytes());before=local(f['before']).read_bytes()
   assert len(raw)==f['bytes'] and hashlib.sha256(raw).hexdigest()==f['sha256'], 'UIR33-02 current source'
   assert hashlib.sha256(before).hexdigest()==f['beforeSHA256'], 'UIR33-02 preserved original'
   assert prior_uir3302_bytes(name,raw)==before, 'UIR33-02 full inverse'
