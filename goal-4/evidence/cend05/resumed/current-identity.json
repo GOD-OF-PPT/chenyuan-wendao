@@ -39,5 +39,9 @@
   },
   "full1401Executed": false,
   "overallUiHumanAccepted": false,
-  "overallGoalComplete": false
+  "overallGoalComplete": false,
+  "supplementalReproducerRawPngs": 2,
+  "rawPngsIncludingReproducer": 216,
+  "unviewedPngsIncludingReproducer": 164,
+  "supplementalReproducerCoverageAdded": 0
 }

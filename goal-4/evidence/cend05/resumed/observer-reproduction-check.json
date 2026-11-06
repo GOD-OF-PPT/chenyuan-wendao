@@ -1,0 +1,16 @@
+{
+  "originalRunPreserved": true,
+  "guardedReproducerPassed": true,
+  "session": 52141,
+  "exit": 0,
+  "scriptSha256": "1b70468fc2067eda9bfb570c648b816970ae7541529c4aaa55f04ff96f5cdf18",
+  "observationPath": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend05/opening-reproducer-v1/observation.json",
+  "observationSha256": "1b06f68827a30b2d55012236b85d84728018fa1dabb882171e2f7e4199897b60",
+  "overlapPairs": 16,
+  "allGameDBUnchanged": true,
+  "all112ActualResourcesCheckedBeforeLaunch": true,
+  "formalCoverageAdded": 0,
+  "uniqueOpeningProbeAdded": 0,
+  "rawSupplementalPngs": 2,
+  "supplementalPngsVisuallyReviewed": false
+}

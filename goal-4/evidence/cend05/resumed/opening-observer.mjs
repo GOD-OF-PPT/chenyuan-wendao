@@ -1,6 +1,11 @@
 import{chromium,expect}from'/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-02/current/source/web/node_modules/@playwright/test/index.mjs';
 import fs from 'node:fs';import assert from 'node:assert/strict';import{createHash}from'node:crypto';import path from'node:path';
-const directory=path.dirname(new URL(import.meta.url).pathname),sha=x=>createHash('sha256').update(x).digest('hex');
+const taskArtifacts='/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend05';
+assert(process.argv[2],'Pass a new output directory directly under '+taskArtifacts);const directory=path.resolve(process.argv[2]);assert(path.dirname(directory)===fs.realpathSync(taskArtifacts)&&!fs.existsSync(directory),'Preserve original evidence; output must be a new task-artifact directory');
+const sha=x=>createHash('sha256').update(x).digest('hex'),receipt=JSON.parse(fs.readFileSync('/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/uir35-02/current/source/web/build-report/build.json'));
+assert.equal(receipt.sourceDigest,'099f87393e70fd4fdd9b652430419daa20a85f8a21afc1e15f63d17b3e0ee6d2');
+for(const item of receipt.files){const q=await fetch('http://127.0.0.1:56913/'+item.path,{headers:{'Accept-Encoding':'identity'}});assert.equal(q.status,200);const raw=Buffer.from(await q.arrayBuffer());assert.equal(raw.length,item.bytes);assert.equal(sha(raw),item.sha256);}
+fs.mkdirSync(directory);
 const browser=await chromium.launch();const context=await browser.newContext({baseURL:'http://127.0.0.1:56913/',viewport:{width:1440,height:900}}),page=await context.newPage(),errors=[];page.setDefaultTimeout(8000);page.setDefaultNavigationTimeout(15000);page.on('pageerror',e=>errors.push(e.message));
 async function gameDB(){return page.evaluate(()=>new Promise((ok,no)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction.abort();no(Error('observer cannot create Game'));};q.onerror=()=>no(q.error);q.onsuccess=()=>{const db=q.result,names=[...db.objectStoreNames],tx=db.transaction(names,'readonly'),rows={};for(const n of names){const store=tx.objectStore(n),a=store.getAllKeys(),b=store.getAll();b.onsuccess=()=>rows[n]=b.result.map((value,i)=>({key:a.result[i],value}));}tx.oncomplete=()=>{db.close();ok({version:db.version,rows});};tx.onabort=()=>{db.close();no(tx.error);};};}));}
 try{
