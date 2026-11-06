@@ -1,0 +1,23 @@
+{
+  "source": {
+    "head": "915913b8ea7b90cb82e14c3a453523e115064ded",
+    "source": "915913b8ea7b90cb82e14c3a453523e115064ded",
+    "tree": "3efe334d2d7db3b20c2708be25768cc45ab778e4",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "607461ba998e5f9da832a7c2247153d63ed72ed2c0e8fed107ff13d7e6da4c17",
+  "archive": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend07/check-cend07-preview-915913b.zip",
+  "bytes": 10108402,
+  "sha256": "db8169e1a568a794f34d54c5ae1711b6b521386caf364010a018fe5dd84ee419",
+  "unpacked": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend07/preview-unpacked-915913b",
+  "files": 112,
+  "payloadBytes": 11246916,
+  "formalCandidate": false,
+  "assembledBeforeUIValidation": true,
+  "validationComplete": true,
+  "validatedUiCases": 266,
+  "validatedUnpackedSubsetCases": 3
+}
