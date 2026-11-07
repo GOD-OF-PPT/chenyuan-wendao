@@ -102,7 +102,7 @@ test('UX31-A3 unmade owned and bound relic labels remain complete words during a
   await openHubFeature(page,'relics');
   for(const id of Object.keys(C.relics)){await stage.selectRelic(page,id);const owned=g.ownedRelics.includes(id),bound=g.loadout.relic===id;
    const phrases=owned?bound?['已装备为本命']:['已炼成','尚未装备']:['器谱冷胚示意','尚未炼成'];for(const phrase of phrases)await word(page.getByTestId('production-relic-state'),phrase,18);
-   const cards=page.locator('.relic-material-slots button small');expect(await cards.count()).toBe(Object.keys(C.relics[id].inputs).length);for(const card of await cards.all())await word(card,'保留 0',14);
+   if(owned){await page.getByTestId('relic-preparation-open').click();const dialog=page.getByTestId('relic-preparation-dialog'),cards=dialog.locator('.production-materials>button>span');expect(await cards.count()).toBe(Object.keys(C.relics[id].inputs).length);for(const[item,n]of Object.entries(C.relics[id].inputs)){const button=page.getByTestId('production-source-'+item);await word(button.locator('span'),'保留 0',14);await expect(button).toContainText('单件 '+n+' + 保留 0 = 需有 '+n);await expect(button).toContainText('持有 '+g.core.inventory[item]+' · 尚缺 '+Math.max(0,n-g.core.inventory[item]));}await frame(page,info,id+(error?'-failed':'-normal')+'-complete-material-reference',dialog);await page.getByTestId('relic-preparation-close').click();}else{const cards=page.locator('.relic-material-slots button small');expect(await cards.count()).toBe(Object.keys(C.relics[id].inputs).length);for(const card of await cards.all())await word(card,'保留 0',14);}
    await frame(page,info,id+(error?'-failed':'-normal')+'-complete-state',page.getByTestId('relic-atelier'));expect(await database(page)).toEqual(raw);
   }
  }
