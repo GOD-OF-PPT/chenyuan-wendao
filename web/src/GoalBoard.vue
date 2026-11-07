@@ -6,26 +6,27 @@ const emit=defineEmits<{inspect:[]}>();
 const icon=computed(()=>props.kind==='breakthrough'&&props.id?{kind:'item' as const,id:props.id}:props.kind==='item'||props.kind==='skill'||props.kind==='relic'?{kind:props.kind,id:props.id??''}:{kind:'nav' as const,id:props.kind==='event'?'karma':'cultivate'});
 </script>
 <template>
- <div class="goal-board" data-testid="goal-object-board" :data-kind="kind" :data-object-id="id" :data-ready="!!ready">
-  <div class="goal-board-object">
-   <small class="goal-board-caption">{{kind==='stones'?'筹石':kind==='breakthrough'?(id?'突破物':'修行所向'):'目标物件'}}</small>
-   <component :is="inspectId?'button':'div'" class="goal-board-vessel" :class="{interactive:inspectId,'goal-board-pill':id?.endsWith('_pill')}" :data-testid="inspectId" :type="inspectId?'button':undefined" :aria-label="inspectId?inspectLabel:undefined" @click="inspectId&&emit('inspect')">
-    <i class="goal-board-stand" aria-hidden="true"/>
-    <svg v-if="kind==='stones'" class="goal-board-currency" viewBox="0 0 100 100" aria-hidden="true"><path d="m49 13 19 26-9 44H35L24 39Z M49 13v70 M24 39h44 M49 13 35 39l14 44 10-44Z"/></svg>
-    <GameIcon v-else :kind="icon.kind" :id="icon.id"/>
-    <span v-if="inspectId" class="goal-board-inspect">{{inspectLabel??'查看来源'}} ›</span>
-   </component>
-   <h3 :data-testid="titleTestId">{{title}}</h3>
-   <strong v-if="state" class="goal-board-state">{{state}}</strong>
-   <p v-if="detail" class="goal-board-detail">{{detail}}</p>
-   <div v-if="$slots.context" class="goal-board-context"><slot name="context"/></div>
-  </div>
-  <div class="goal-board-work">
-   <div v-if="$slots.conditions" class="goal-board-conditions"><slot name="conditions"/></div>
-   <div v-if="$slots.routes" class="goal-board-routes"><slot name="routes"/></div>
-   <div v-if="$slots.decision" class="goal-board-decision"><slot name="decision"/></div>
-  </div>
- </div>
+<div class="goal-board" data-testid="goal-object-board" :data-kind="kind" :data-object-id="id" :data-ready="!!ready">
+<div class="goal-board-object">
+<small class="goal-board-caption">{{kind==='stones'?'筹石':kind==='breakthrough'?(id?'突破物':'修行所向'):'目标物件'}}</small>
+<component :is="inspectId?'button':'div'" class="goal-board-vessel" :class="{interactive:inspectId,'goal-board-pill':id?.endsWith('_pill')}" :data-testid="inspectId" :type="inspectId?'button':undefined" :aria-label="inspectId?inspectLabel:undefined" @click="inspectId&&emit('inspect')">
+<i class="goal-board-stand" aria-hidden="true"/>
+<slot name="artifact">    <svg v-if="kind==='stones'" class="goal-board-currency" viewBox="0 0 100 100" aria-hidden="true"><path d="m49 13 19 26-9 44H35L24 39Z M49 13v70 M24 39h44 M49 13 35 39l14 44 10-44Z"/></svg>
+<GameIcon v-else :kind="icon.kind" :id="icon.id"/>
+</slot>
+<span v-if="inspectId" class="goal-board-inspect">{{inspectLabel??'查看来源'}} ›</span>
+</component>
+<h3 :data-testid="titleTestId">{{title}}</h3>
+<strong v-if="state" class="goal-board-state">{{state}}</strong>
+<p v-if="detail" class="goal-board-detail">{{detail}}</p>
+<div v-if="$slots.context" class="goal-board-context"><slot name="context"/></div>
+</div>
+<div class="goal-board-work">
+<div v-if="$slots.conditions" class="goal-board-conditions"><slot name="conditions"/></div>
+<div v-if="$slots.routes" class="goal-board-routes"><slot name="routes"/></div>
+<div v-if="$slots.decision" class="goal-board-decision"><slot name="decision"/></div>
+</div>
+</div>
 </template>
 <style scoped>
 #app .goal-board{display:grid;grid-template-columns:minmax(210px,.42fr) minmax(0,1fr);gap:30px;min-height:0;min-width:0;flex:1;align-items:start;color:#dce8d6}

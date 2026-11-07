@@ -1,3 +1,4 @@
+from cend07_f04_inventory import prior_preparation_bench_bytes
 from cend07_f02a_inventory import prior_power_focus_bytes
 """Exact forecast-only projection; preserve all original source and regional caps."""
 import hashlib,json,re
@@ -219,6 +220,7 @@ MANIFEST={'format': 'chenyuan-check-cend07-forecast-context',
                       'goal-4/amendments/2026-11-07-check-cend07-input.md',
                       'goal-4/research/check-cend07-sources.json']}
 def prior_forecast_bytes(path,raw):
+ raw=prior_preparation_bench_bytes(path,raw)
  try:raw=prior_power_focus_bytes(path,raw)
  except AssertionError as error:raise AssertionError('CF01 parent: '+str(error))from error
  names=[n for n in MANIFEST['files']if Path(n).name==Path(path).name]

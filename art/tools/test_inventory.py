@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  bench=ROOT/'art/redesign/cend07-f04.json'
+  if bench.exists():
+   current=json.loads(bench.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[r['before']for r in current['files'].values()]])
   power=ROOT/'art/redesign/cend07-f02a.json'
   if power.exists():
    current=json.loads(power.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[r['before']for r in current['files'].values()]])
@@ -2721,6 +2724,44 @@ class ForecastContextTests(unittest.TestCase):
   from check_cend07_inventory import LEDGER,validate_forecast
   (self.root/LEDGER).unlink()
   with self.assertRaisesRegex(AssertionError,'CF01'):validate_forecast(self.root)
+
+class PreparationBenchTests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_preparation_bench_complete_inverse_and_actual_regional_caps(self):
+  from cend07_f04_inventory import MANIFEST,validate_preparation_bench,prior_preparation_bench_bytes
+  self.assertLessEqual(validate_preparation_bench(ROOT)[1],12000)
+  for n,r in MANIFEST['files'].items():self.assertEqual(prior_preparation_bench_bytes(n,(ROOT/n).read_bytes()),(ROOT/r['before']).read_bytes())
+ def test_preparation_bench_changed_display_is_rejected(self):
+  from cend07_f04_inventory import MANIFEST,validate_preparation_bench
+  for r in MANIFEST['display']:
+   original=(ROOT/r['path']).read_text();self.write(r['path'],original+'\n/* unrecorded display */')
+   with self.subTest(file=r['path']),self.assertRaisesRegex(AssertionError,'PB04'):validate_preparation_bench(self.root)
+   self.write(r['path'],original)
+ def test_preparation_bench_original_authority_and_slot_cannot_change(self):
+  from cend07_f04_inventory import MANIFEST,validate_preparation_bench
+  for n in MANIFEST['files']:
+   original=(ROOT/n).read_text();self.write(n,original+'\n<!-- unrecorded parent -->')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'PB04'):validate_preparation_bench(self.root)
+   self.write(n,original)
+ def test_preparation_bench_missing_original_and_ledger_are_rejected(self):
+  from cend07_f04_inventory import MANIFEST,LEDGER,validate_preparation_bench
+  n=next(iter(MANIFEST['files'].values()))['before'];self.write(n,'original lost')
+  with self.assertRaisesRegex(AssertionError,'PB04'):validate_preparation_bench(self.root)
+  self.write(n,(ROOT/n).read_text());(self.root/LEDGER).unlink()
+  with self.assertRaisesRegex(AssertionError,'PB04'):validate_preparation_bench(self.root)
+ def test_preparation_bench_caps_provenance_and_acceptance_are_immutable(self):
+  from cend07_f04_inventory import MANIFEST,LEDGER,validate_preparation_bench
+  for k,v in [('maxDisplayBytes',12001),('newRasterAssets',1),('version',True),('userAcceptance',True)]:
+   m=copy.deepcopy(MANIFEST);m[k]=v;self.write(LEDGER,m)
+   with self.subTest(key=k),self.assertRaisesRegex(AssertionError,'PB04'):validate_preparation_bench(self.root)
+ def test_preparation_bench_cannot_replace_reused_painting_or_item_owner(self):
+  from cend07_f04_inventory import MANIFEST,validate_preparation_bench
+  for n in [MANIFEST['reusedAssets'][0]['path'],'web/src/ItemArtifact.vue']:
+   original=(ROOT/n).read_bytes();p=self.root/n;p.unlink();p.write_bytes(original+b'changed')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'PB04'):validate_preparation_bench(self.root)
+   p.unlink();p.write_bytes(original)
 
 class PowerFocusTests(unittest.TestCase):
  setUp=InventoryTests.setUp

@@ -1,0 +1,56 @@
+[
+  {
+    "index": 0,
+    "raw": "artifacts/goal-4/cend07-f04/preliminary-v5-results/cend07-f04-preparation-ben-496d7-with-every-reachable-source-chromium/qi-material-tray-page-1.png",
+    "pngSha256": "e3aa94cc7e2d7c1d7a0ae666f19d2f96df4d246ec639e4d88ed9dfacc3233d43",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f04/early-v5-views/0-qi-material-tray-page-1.jpg",
+    "viewSha256": "fa1f38bd4cfdaccd577fb6b494bf0c5e9c738ab113cefd0b03a665d9ce179965",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900"
+  },
+  {
+    "index": 1,
+    "raw": "artifacts/goal-4/cend07-f04/preliminary-v5-results/cend07-f04-preparation-ben-496d7-with-every-reachable-source-chromium/qi-material-source-painting.png",
+    "pngSha256": "7b3b87f4e2e27a65f9401f4ea7422af6a6abbd98c56cd9ab71147977f86206e9",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f04/early-v5-views/1-qi-material-source-painting.jpg",
+    "viewSha256": "185b91f88854e2c87cb1b9603d8651f093d832b406a428020dbdf3ecdac34d00",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900"
+  },
+  {
+    "index": 2,
+    "raw": "artifacts/goal-4/cend07-f04/preliminary-v5-results/cend07-f04-preparation-ben-496d7-with-every-reachable-source-chromium/qi-purchase-alternative.png",
+    "pngSha256": "aa986bf48250c964dc3d966260b63eac03088465eb8a665af44a2910f650d0ba",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f04/early-v5-views/2-qi-purchase-alternative.jpg",
+    "viewSha256": "ff643416eae58815e62b521f1caff9e6d1cb3d4d7d423e51895df732510401d7",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900"
+  },
+  {
+    "index": 3,
+    "raw": "artifacts/goal-4/cend07-f04/preliminary-v5-results/cend07-f04-preparation-ben-1a795-with-every-reachable-source-chromium/foundation-material-tray-page-2.png",
+    "pngSha256": "cca28576584f9230c66c0d2aa0e66dfc4d91a17ae932ff4856778c915fb57853",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f04/early-v5-views/3-foundation-material-tray-page-2.jpg",
+    "viewSha256": "dda477b9cddc1911738d59baa5627fe51774b7a42e954347e082bdc60e0327d6",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900"
+  },
+  {
+    "index": 4,
+    "raw": "artifacts/goal-4/cend07-f04/preliminary-v5-results/cend07-f04-preparation-ben-a5d1f-ffered-repeated-procurement-chromium/already-owned-pill-return-original-breakthrough.png",
+    "pngSha256": "a61c07a66c198a1c695fcf52f4be9f30138f62242ebdc4d5ad002eba380b88f2",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f04/early-v5-views/4-already-owned-pill-return-original-breakthrough.jpg",
+    "viewSha256": "c62fa326a5bd16d98b66867be4362b90f08190b6a48b9ce86d02c7c12506388d",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900"
+  },
+  {
+    "index": 5,
+    "raw": "artifacts/goal-4/cend07-f04/preliminary-v5-results/cend07-f04-preparation-ben-62cce-d-no-pill-decision-readonly-chromium/mortal-original-no-pill-surface.png",
+    "pngSha256": "b24600261caf533b50dbda8cfe78a62eb4534a9863e8e0ab007d6a4fcbf987ea",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f04/early-v5-views/5-mortal-original-no-pill-surface.jpg",
+    "viewSha256": "5e886b2d1ad4eb42cb02c625e7cd03f1d139c8406e3a2b400bbd920990bcb3bd",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900"
+  }
+]

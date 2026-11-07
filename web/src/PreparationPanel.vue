@@ -8,7 +8,9 @@ import {preparationFor,resourceSources,sourceNavigation,pageSlice} from './play-
 import type {NavigationRequest} from './navigation';
 import CataloguePager from './CataloguePager.vue';
 import GoalBoard from './GoalBoard.vue';
-import GameIcon from './GameIcon.vue';
+import ItemArtifact from './ItemArtifact.vue';
+import PreparationMaterials from './PreparationMaterials.vue';
+import './preparation-bench.css';
 const props=defineProps<{game:Game;busy:boolean;available:boolean;running:boolean;blocked?:boolean}>(),emit=defineEmits<{act:[Action];navigate:[NavigationRequest];home:[];compare:['gather'|'purchase']}>();
 const route=ref<'craft'|'purchase'>('craft'),focus=ref<{item:string|null;quantity:number}|null>(null),page=ref(0);
 const model=computed(()=>preparationFor(props.game)),action=computed(()=>route.value==='craft'?model.value.craft:model.value.buy),quote=computed(()=>action.value?previewAction(props.game,action.value):null);
@@ -27,14 +29,15 @@ function earn(source:ItemSource){const deficit=source.deficits.find(d=>d.kind===
 <template>
 <section class="paper play-catalogue preparation-catalogue" data-testid="preparation-catalogue" tabindex="-1">
 <header><div><small>修炼 → 筹备 → 突破</small></div><button data-testid="preparation-compare" @click="emit('compare',route==='purchase'?'purchase':'gather')">比较筹备取舍</button><button v-if="focus" @click="focus=null;page=0" data-testid="prepare-back">← 返回材料清单</button><button v-else @click="emit('home')">返回修行</button></header>
-<GoalBoard :title="focus?(focus.item?C.items[focus.item].name:'灵石')+'来源':model.pill?'筹备'+C.items[model.pill].name:model.goal.title" :kind="focus?focus.item?'item':'stones':model.pill?'item':'breakthrough'" :id="focus?.item??model.pill??''" :ready="!!model.pill&&game.core.inventory[model.pill]>0" :detail="focus?'当前 '+(focus.item?game.core.inventory[focus.item]:game.core.player.stones)+' / '+focus.quantity:model.pill?'现有 '+game.core.inventory[model.pill]+' 枚':''">
+<GoalBoard :title="focus?(focus.item?C.items[focus.item].name:'灵石')+'来源':model.pill?'筹备'+C.items[model.pill].name:model.goal.title" :kind="focus?focus.item?'item':'stones':model.pill?'item':'breakthrough'" :id="focus?.item??model.pill??''" :state="(!focus||focus.item)&&(focus?.item??model.pill)&&!game.core.inventory[(focus?.item??model.pill)!]?'图谱 · 未持有':undefined" :ready="!!model.pill&&game.core.inventory[model.pill]>0" :detail="focus?'当前 '+(focus.item?game.core.inventory[focus.item]:game.core.player.stones)+' / '+focus.quantity:model.pill?'现有 '+game.core.inventory[model.pill]+' 枚':''">
+<template v-if="focus?.item||!focus&&model.pill" #artifact><span class="preparation-target-art"><ItemArtifact :item-id="(focus?.item??model.pill)!" :owned="game.core.inventory[(focus?.item??model.pill)!]>0"/></span></template>
 <template #conditions>
 <p v-if="!model.pill">{{model.goal.preview?.failure?.message??'当前无需突破丹药。'}}<button @click="emit('home')">继续修行</button></p>
 <template v-else-if="game.core.inventory[model.pill]>0"><div class="preparation-ready"><strong>{{C.items[model.pill].name}}已备齐</strong><p>当前 {{game.core.inventory[model.pill]}} 枚。{{model.goal.preview?.failure?.message??'返回洞府即可确认下一步。'}}</p><button class="primary" @click="emit('home')">返回修行，核对突破</button></div></template>
 <template v-else-if="!focus">
 <nav class="goal-route-choice" aria-label="丹药筹备路线"><button :aria-pressed="route==='craft'" @click="route='craft'" data-testid="prepare-craft-route"><span class="goal-route-mark" aria-hidden="true">鼎</span><strong>自行炼制</strong><small>备药入炉 · 查看材料</small></button><button :aria-pressed="route==='purchase'" @click="route='purchase'" data-testid="prepare-purchase-route"><span class="goal-route-mark" aria-hidden="true">市</span><strong>坊市成丹</strong><small>筹石换丹 · 查看所需</small></button></nav>
 <p class="catalogue-description">{{route==='craft'?'收齐材料后回洞府炼丹；材料有多条来源。':'积攒灵石到坊市购买成丹，无需战斗或炼制。'}}<span>本次成本：{{formatCosts(quote?.costs??null)}}</span></p>
-<div class="catalogue-grid preparation-needs"><article v-for="need in needPage.rows" :key="need.id??'stones'" :data-testid="'prepare-need-'+(need.id??'stones')"><div><GameIcon v-if="need.id" kind="item" :id="need.id"/><strong>{{need.label}}</strong><span>{{need.have}} / {{need.required}}</span></div><small>{{need.have>=need.required?'已经备齐':'尚缺 '+(need.required-need.have)}}</small><button v-if="need.have<need.required" @click="inspect(need.id,need.required)" :data-testid="'prepare-source-'+(need.id??'stones')">查看来源 →</button></article></div>
+<PreparationMaterials :needs="needPage.rows" @inspect="inspect"/>
 <CataloguePager :page="needPage.page" :pages="needPage.pages" :total="needPage.total" label="筹备材料" @change="page=$event"/>
 </template>
 </template>
