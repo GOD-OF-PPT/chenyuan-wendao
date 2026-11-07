@@ -1,0 +1,8 @@
+{
+  "before": ":global(#app) .source-start.text-button{background:transparent!important;box-shadow:none!important;transition:none!important}",
+  "beforeCompiled": "#app{background:transparent!important;box-shadow:none!important;transition:none!important}",
+  "after": "#app .source-start.text-button{background:transparent!important;box-shadow:none!important;transition:none!important}",
+  "afterCompiled": "#app .source-start.text-button[data-v-probe]{background:transparent!important;box-shadow:none!important;transition:none!important}",
+  "reason": "Vue global pseudo replaced the selector. Ordinary ancestor selector scopes its final target correctly.",
+  "GameChanged": false
+}

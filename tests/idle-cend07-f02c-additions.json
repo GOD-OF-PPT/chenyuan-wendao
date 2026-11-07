@@ -1,0 +1,42 @@
+{
+  "format": "chenyuan-cend07-f02c-source-additions",
+  "version": 42,
+  "parentVersion": 41,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1013,
+    "signature": "7ca63376b161cf20fb7a86a0ec3093aaa666a63626f08c457a9e86959948df31"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend07-f02c-source-intent.spec.ts",
+      "title": "CEND07-F02C-C1 natural gathering distinguishes its live finite activity from a complete readonly next draft and one original saved period",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f02c-source-intent.spec.ts",
+      "title": "CEND07-F02C-C2 sect commission distinguishes its live finite activity from a complete readonly next draft and one original saved period",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f02c-source-intent.spec.ts",
+      "title": "CEND07-F02C-C3 pause resume retains original authorization while an explicitly chosen new arrangement uses its separate visible draft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f02c-source-intent.spec.ts",
+      "title": "CEND07-F02C-C4 failed admission and held cycle retain their exact original retry while secondary draft controls cannot pretend to execute",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f02c-source-intent.spec.ts",
+      "title": "CEND07-F02C-C5 reload foreign generation and replacement life never borrow an old local clock or label a fresh draft as current authorization",
+      "projectName": "chromium"
+    }
+  ]
+}

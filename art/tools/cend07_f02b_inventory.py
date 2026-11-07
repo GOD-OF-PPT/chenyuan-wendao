@@ -1,3 +1,4 @@
+from cend07_f02c_inventory import prior_source_intent_bytes
 """Exact relic hierarchy, actual ownership and original forge/save authority."""
 import hashlib,json,re
 from pathlib import Path
@@ -144,6 +145,7 @@ MANIFEST={'format': 'chenyuan-cend07-f02b-relic-focus',
                       'goal-4/research/cend07-f02b-sources.json']} 
 MARKER='铸造资料'.encode()
 def prior_relic_focus_bytes(path,raw):
+ raw=prior_source_intent_bytes(path,raw)
  if Path(path).name!='RelicAtelier.vue':return raw
  row=MANIFEST['files']['web/src/RelicAtelier.vue']
  if hashlib.sha256(raw).hexdigest()==row['beforeSha256']or MARKER not in raw:return raw

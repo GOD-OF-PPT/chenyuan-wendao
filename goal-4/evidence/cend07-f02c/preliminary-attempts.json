@@ -1,0 +1,85 @@
+{
+  "old-red": {
+    "report": "artifacts/goal-4/cend07-f02c/old-red-report.json",
+    "sha256": "7433da075a06159d429a2a1f1fb2a0f200a3da5ad66b81935787ed08e6e99afb",
+    "stats": {
+      "startTime": "2026-11-07T21:57:56.270Z",
+      "duration": 243522.354,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 5,
+      "flaky": 0
+    },
+    "diagnosticOnly": true
+  },
+  "old-red-v2": {
+    "report": "artifacts/goal-4/cend07-f02c/old-red-v2-report.json",
+    "sha256": "bdae5f7598ad7dc226e73418f13c80fbe26acb89dc586d66e2f1a8c6b269241b",
+    "stats": {
+      "startTime": "2026-11-07T22:08:07.047Z",
+      "duration": 46273.655999999995,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 5,
+      "flaky": 0
+    },
+    "diagnosticOnly": true
+  },
+  "preliminary": {
+    "report": "artifacts/goal-4/cend07-f02c/preliminary-report.json",
+    "sha256": "2361dc21a9dc006386d4acade0454fa01492ec3c4a8c36a7603c3e503deaf977",
+    "stats": {
+      "startTime": "2026-11-07T22:14:04.109Z",
+      "duration": 54416.523,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 5,
+      "flaky": 0
+    },
+    "diagnosticOnly": true
+  },
+  "preliminary-v2": {
+    "report": "artifacts/goal-4/cend07-f02c/preliminary-v2-report.json",
+    "sha256": "157656e3540ad61b33b9cf44ac352214a288016e909222530f7fa72dbc3944a6",
+    "stats": {
+      "startTime": "2026-11-07T22:18:16.354Z",
+      "duration": 50647.236000000004,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 5,
+      "flaky": 0
+    },
+    "diagnosticOnly": true
+  },
+  "preliminary-v3": {
+    "report": "artifacts/goal-4/cend07-f02c/preliminary-v3-report.json",
+    "sha256": "6108686cdadddce570d646934904ba7b3f3bba5b3b6b53865f3251da354d19fe",
+    "stats": {
+      "startTime": "2026-11-07T22:23:53.207Z",
+      "duration": 31930.148,
+      "expected": 5,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "diagnosticOnly": true
+  },
+  "strictPositive": {
+    "log": "artifacts/goal-4/cend07-f02c/positive-pre-freeze.log",
+    "exit": 0
+  },
+  "focusedResources": {
+    "log": "artifacts/goal-4/cend07-f02c/focused-resources-pre-freeze.log",
+    "passed": 18,
+    "exit": 0
+  },
+  "matrix": {
+    "log": "artifacts/goal-4/cend07-f02c/matrix-pre-freeze.tap",
+    "passed": 132,
+    "exit": 0
+  },
+  "types": {
+    "log": "artifacts/goal-4/cend07-f02c/type-pre-freeze.log",
+    "exit": 0
+  }
+}

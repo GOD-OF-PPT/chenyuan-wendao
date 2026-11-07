@@ -1,0 +1,12 @@
+{
+  "firstReport": "artifacts/goal-4/cend07-f02c/old-red-report.json",
+  "firstInput": "artifacts/goal-4/cend07-f02c/old-red-input.spec.ts",
+  "realUIFindings": "Primary disabled/running and paused new START competition; paused draft and no-clock labels unclear.",
+  "probeCorrections": [
+    "Existing heading uses id=source-plan-title, not data-testid.",
+    "New START archives exact old paused activity under full-backups/activity/<run>/<command>/previous; expected exact archive derived from original formal persistence source and receipt mutation.",
+    "Use supported finite5 for edited draft rather than nonexistent option2.",
+    "Measure classes/labels directly after existing public phase/clock waits; no repeated timeout for an impossible static old class. Thresholds/Game/DB assertions unchanged."
+  ],
+  "gameStoreRulesModified": false
+}
