@@ -38,3 +38,5 @@
 #app .preparation-catalogue .goal-board-work .catalogue-note{font-size:18px;line-height:1.5}
 .hub-reduced .preparation-material{transition:none!important}
 @media(prefers-reduced-motion:reduce){.preparation-material{transition:none!important}}
+
+#app .preparation-materials>article:focus-visible{outline:2px solid #b7d6a8;outline-offset:2px}

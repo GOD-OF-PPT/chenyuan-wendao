@@ -1,4 +1,5 @@
 """Exact preparation art slots and readonly materials, original authority/caps retained."""
+from check_cend07_three_inventory import prior_three_check_bytes
 import hashlib,json,re
 from pathlib import Path
 LEDGER='art/redesign/cend07-f04.json'
@@ -165,6 +166,7 @@ MANIFEST={'format': 'chenyuan-cend07-f04-preparation-bench',
                       'goal-4/research/cend07-f04-sources.json']}
 MARKERS={'PreparationPanel.vue':b'PreparationMaterials','GoalBoard.vue':b'<slot name="artifact">'}
 def prior_preparation_bench_bytes(path,raw):
+ raw=prior_three_check_bytes(path,raw)
  name=Path(path).name;rows=[r for n,r in MANIFEST['files'].items()if Path(n).name==name]
  if not rows:return raw
  row=rows[0]
@@ -184,7 +186,9 @@ def validate_preparation_bench(root):
   assert not any((root/r['path']).exists()for r in MANIFEST['display']),'PB04 missing ledger';return set(),0
  m=json.loads(local(LEDGER).read_text());assert m==MANIFEST and all(type(m[k])is int for k in ['version','newRasterAssets','maxDisplayBytes'])and m['userAcceptance']is False,'PB04 immutable scope/caps'
  for n,row in MANIFEST['files'].items():
-  raw=local(n).read_bytes();old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'PB04 current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'PB04 original source';assert prior_preparation_bench_bytes(n,raw)==old,'PB04 full inverse'
+  try:raw=prior_three_check_bytes(n,local(n).read_bytes())
+  except AssertionError as error:raise AssertionError('PB04 current source: '+str(error))from error
+  old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'PB04 current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'PB04 original source';assert prior_preparation_bench_bytes(n,raw)==old,'PB04 full inverse'
   assert re.findall(rb'<style.*?</style>',raw,re.S)==re.findall(rb'<style.*?</style>',old,re.S),'PB04 original component styles'
   current=raw.split(b'</script>')[0];prior=old.split(b'</script>')[0]
   if n.endswith('PreparationPanel.vue'):
@@ -192,14 +196,16 @@ def validate_preparation_bench(root):
   assert current==prior,'PB04 original authority'
  total=0
  for row in MANIFEST['display']+MANIFEST['reusedAssets']:
-  raw=local(row['path']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'PB04 display/asset identity'
+  try:raw=prior_three_check_bytes(row['path'],local(row['path']).read_bytes())
+  except AssertionError as error:raise AssertionError('PB04 display/asset identity: '+str(error))from error
+  assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'PB04 display/asset identity'
   if row in MANIFEST['display']:total+=len(raw)
  assert total<=12000,'PB04 new display cap'
  assert hashlib.sha256(local('web/src/ItemArtifact.vue').read_bytes()).hexdigest()==MANIFEST['reusedItemArtifactSha256'],'PB04 original artifact owner'
  for g in MANIFEST['groups'].values():
   assert hashlib.sha256(local(g['ledger']).read_bytes()).hexdigest()==g['ledgerSha256'],'PB04 original ledger';assert sum(local(n).stat().st_size for n in g['files'])<=g['cap'],'PB04 actual regional cap'
  assert local('web/src/GoalPanel.vue').stat().st_size<=19000,'PB04 original goal cap'
- display=local(MANIFEST['display'][0]['path']).read_text();css=local(MANIFEST['display'][1]['path']).read_text()
+ display=prior_three_check_bytes(MANIFEST['display'][0]['path'],local(MANIFEST['display'][0]['path']).read_bytes()).decode();css=prior_three_check_bytes(MANIFEST['display'][1]['path'],local(MANIFEST['display'][1]['path']).read_bytes()).decode()
  assert not re.search(r'useGame|indexedDB|localStorage|fetch\s*\(|setTimeout|setInterval|requestAnimationFrame|v-html|\beval\s*\(',display),'PB04 display acquired authority/clock'
  assert not re.search(r'@import|https?://|url\s*\(',css),'PB04 external CSS'
  assert all(x in display for x in ["emit('inspect',need.id,need.required)",':owned="need.have>0"',"need.have>=need.required"]),'PB04 actual material interaction'

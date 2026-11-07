@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-check-cend07-three-additions",
+  "version": 40,
+  "parentVersion": 39,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1004,
+    "signature": "d82ee2fff60510bd5e7d83dd17cdd558f1142c312a62b06bff26b1c3720a6440"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CHECK-CEND07-C1 a second material page returns to its original currency object and keyboard focus without writing Game",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CHECK-CEND07-C2 an online commission remains the same activity during local readonly inspection and a newly completed material remains the return target",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CHECK-CEND07-C3 learned origin and queued draft survive preparation and a matching readonly painted goal without hidden travel",
+      "projectName": "chromium"
+    }
+  ]
+}

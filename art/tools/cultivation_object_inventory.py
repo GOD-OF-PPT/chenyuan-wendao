@@ -53,7 +53,10 @@ def validate_cultivation_objects(root,image_reader):
   return len(b)
  assert type(m['files'])is list and all(type(r)is dict for r in m['files'])and[r.get('path')for r in m['files']]==NATIVE,'Cultivation seven-source inventory changed'
  total=sum(identity(r)for r in m['files']);assert total<=45000,'Cultivation object code exceeds fixed budget'
- assert type(m['goalPanel'])is dict and m['goalPanel'].get('path')=='web/src/GoalPanel.vue'and identity(m['goalPanel'])<=19000,'GoalPanel exceeds whole-file budget'
+ assert type(m['goalPanel'])is dict and m['goalPanel'].get('path')=='web/src/GoalPanel.vue','GoalPanel exceeds whole-file budget'
+ assert local('web/src/GoalPanel.vue').stat().st_size<=19000,'GoalPanel exceeds whole-file budget'
+ assert all(f in local('web/src/GoalPanel.vue').read_text()for f in BINDINGS['web/src/GoalPanel.vue']),'Missing cultivation consumer: web/src/GoalPanel.vue'
+ assert identity(m['goalPanel'])<=19000,'GoalPanel exceeds whole-file budget'
  for p,fragments in BINDINGS.items():
   assert all(f in local(p).read_text()for f in fragments),'Missing cultivation consumer: '+p
  app=local('web/src/App.vue').read_text();host=re.search(r'<CultivationStageHost\b[^>]*>(.*?)</CultivationStageHost>',app,re.S)

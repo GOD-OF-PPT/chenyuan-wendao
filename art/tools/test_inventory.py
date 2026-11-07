@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  three=ROOT/'art/redesign/check-cend07-three.json'
+  if three.exists():
+   current=json.loads(three.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*current['authority'],*[r['before']for r in current['files'].values()]])
   travelpaint=ROOT/'art/redesign/cend07-f03.json'
   if travelpaint.exists():
    current=json.loads(travelpaint.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*current['authority'],*[r['before']for r in current['files'].values()]])
@@ -2727,6 +2730,47 @@ class ForecastContextTests(unittest.TestCase):
   from check_cend07_inventory import LEDGER,validate_forecast
   (self.root/LEDGER).unlink()
   with self.assertRaisesRegex(AssertionError,'CF01'):validate_forecast(self.root)
+
+class ThreeTaskCheckTests(unittest.TestCase):
+ def setUp(self):
+  InventoryTests.setUp(self)
+  from check_cend07_three_inventory import validate_three_check
+  validate_three_check(self.root)
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_three_check_whole_inverse_and_actual_original_caps(self):
+  from check_cend07_three_inventory import MANIFEST,validate_three_check,prior_three_check_bytes
+  validate_three_check(ROOT)
+  for n,row in MANIFEST['files'].items():self.assertEqual(prior_three_check_bytes(n,(ROOT/n).read_bytes()),(ROOT/row['before']).read_bytes())
+ def test_three_check_unrecorded_view_or_focus_code_is_rejected(self):
+  from check_cend07_three_inventory import MANIFEST,validate_three_check
+  for n in MANIFEST['files']:
+   raw=(ROOT/n).read_text();self.write(n,raw+'\n/* unauthorized */')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'CT03'):validate_three_check(self.root)
+   self.write(n,raw)
+ def test_three_check_cannot_modify_real_game_store_or_shared_focus(self):
+  from check_cend07_three_inventory import validate_three_check
+  for n in ['web/src/App.vue','web/src/focus.ts','src/full/engine.ts']:
+   raw=(ROOT/n).read_text();self.write(n,raw+' ')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'CT03'):validate_three_check(self.root)
+   self.write(n,raw)
+ def test_three_check_cap_aliases_and_human_acceptance_are_immutable(self):
+  from check_cend07_three_inventory import MANIFEST,LEDGER,validate_three_check
+  for k,v in [('version',True),('goalPanelCap',19001),('displayCap',12001),('newRasterAssets',1),('userAcceptance',True)]:
+   m=copy.deepcopy(MANIFEST);m[k]=v;self.write(LEDGER,m)
+   with self.subTest(key=k),self.assertRaisesRegex(AssertionError,'CT03'):validate_three_check(self.root)
+ def test_three_check_missing_original_and_ledger_are_not_accepted(self):
+  from check_cend07_three_inventory import MANIFEST,LEDGER,validate_three_check
+  n=next(iter(MANIFEST['files'].values()))['before'];self.write(n,'lost original')
+  with self.assertRaisesRegex(AssertionError,'CT03'):validate_three_check(self.root)
+  self.write(n,(ROOT/n).read_text());(self.root/LEDGER).unlink()
+  with self.assertRaisesRegex(AssertionError,'CT03'):validate_three_check(self.root)
+ def test_three_check_original_ledgers_cannot_be_rewritten(self):
+  from check_cend07_three_inventory import validate_three_check
+  for n in ['art/redesign/playable-flow.json','art/redesign/cend07-f04.json']:
+   raw=(ROOT/n).read_text();self.write(n,raw+' ')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'CT03'):validate_three_check(self.root)
+   self.write(n,raw)
 
 class PaintedTravelTests(unittest.TestCase):
  def setUp(self):

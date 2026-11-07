@@ -1,0 +1,19 @@
+{
+  "task": "CHECK-CEND07-F02A-F04-F03",
+  "readAt": "2026-11-08",
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "read": "Consistent order and predictable focus movement",
+      "inference": "材料第二页进入来源再返回，应回原材料页与可辨目标，不因按钮被卸载落到body。"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "read": "Player knows context and anticipated result; labels near controls",
+      "inference": "查看不能执行；同一物件跨筹备/目标维持可辨绘画和真实实有/图谱状态。"
+    }
+  ],
+  "limits": "页码、焦点目标、DOM参数和字节为项目推导，非XAG数字/认证；兼容环境性能暂停。",
+  "skill": "game-playtest",
+  "reuse": "既有Playwright公开入口/正式fixture/原子全Game proof/冻结phase/core工具，不建立issue-tracker/新工作流。"
+}
