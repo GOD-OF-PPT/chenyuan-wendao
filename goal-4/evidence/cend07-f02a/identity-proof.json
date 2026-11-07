@@ -1,0 +1,14 @@
+{
+  "runtime": "8268a2ea34cc3da722bc859ab8be3d8b62a8c1bf9dcb31f5dad2c31715b0c140",
+  "runtimeFiles": 341,
+  "payloadFiles": 112,
+  "payloadBytes": 11246968,
+  "threeConsumerBuildsExact": true,
+  "packageZipAndUnpackedExact": true,
+  "archiveSha256": "3b1b114aa9482a2991ea525d794c1df78c0d6908957ea8517634e69bbff7168b",
+  "protected13Exact": true,
+  "historicalInputsAndV03Exact": true,
+  "authoritativeRulesWritersQueueProof": "unchanged-authority.json",
+  "userSaveTouched": false,
+  "formalCandidate": false
+}
