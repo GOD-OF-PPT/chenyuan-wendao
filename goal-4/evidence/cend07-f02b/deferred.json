@@ -1,0 +1,57 @@
+{
+  "scope": {
+    "browser": "chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "fontScale": 1
+  },
+  "selectedWholeFiles": [
+    "cend07-f02b-relic-focus.spec.ts",
+    "art10-equipment-stage.spec.ts",
+    "art14-relic-blueprint.spec.ts",
+    "equipment-actors.spec.ts",
+    "equipment-objects.spec.ts",
+    "art27-relic-workshop.spec.ts",
+    "ux31-readability.spec.ts",
+    "ux27-equipment-context.spec.ts",
+    "check-ta-03.spec.ts",
+    "idle-production.spec.ts",
+    "idle-preparation.spec.ts",
+    "idle-preparation-drafts.spec.ts",
+    "idle-preparation-active.spec.ts",
+    "stage-r3.spec.ts",
+    "stage-r3-layout.spec.ts",
+    "idle-recovery-ui.spec.ts",
+    "idle-recovery-context.spec.ts",
+    "uir34-03-configuration-focus.spec.ts",
+    "stage-r1.spec.ts",
+    "check-uir33-01.spec.ts"
+  ],
+  "selectedCases": 121,
+  "wholeMixedCasesDeferredBeforeExecution": [
+    {
+      "file": "art14-relic-blueprint.spec.ts",
+      "title": "ART14-A3 missing relic art retains the blueprint verb and gates with keyboard and reduced effects",
+      "project": "chromium"
+    },
+    {
+      "file": "art27-relic-workshop.spec.ts",
+      "title": "ART27-A5 failed workshop or all-art fallback preserves keyboard budgets and real facts under both reduced-effect choices",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A12 both reduced-effect modes and all four failed cold images retain complete readable objects budgets and first real retry results",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable",
+      "project": "chromium"
+    }
+  ],
+  "assertionsPreserved": true,
+  "compatibilityEnvironmentPerformance": "paused"
+}

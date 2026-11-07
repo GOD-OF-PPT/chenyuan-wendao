@@ -1,0 +1,19 @@
+{
+  "task": "CEND07-F02B",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "source": "Riot developer article 2021-03-12",
+      "readThisRound": true,
+      "finding": "Preserve hierarchy and minimize noise; strongest emphasis follows gameplay importance."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "source": "Xbox XAG114 UI context",
+      "readThisRound": true,
+      "finding": "Sufficient context for expected interaction; labels next to associated elements, preserve functionality."
+    }
+  ],
+  "inference": "Single current artifact fact; original forge cost persistent before ownership and complete historical cost behind native disclosure once owned. Project choice, not source numeric policy or certification.",
+  "userAcceptance": false
+}

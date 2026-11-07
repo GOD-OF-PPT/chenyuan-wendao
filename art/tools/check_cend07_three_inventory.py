@@ -1,3 +1,4 @@
+from cend07_f02b_inventory import prior_relic_focus_bytes
 """Three-task view-only return and goal artwork repairs; all original authority/caps."""
 import hashlib,json,re
 from pathlib import Path
@@ -323,6 +324,7 @@ MANIFEST={'format': 'chenyuan-check-cend07-three',
                       'goal-4/research/check-cend07-three-sources.json']}
 MARKERS={'PreparationPanel.vue':b'restoreMaterialFocus','PreparationMaterials.vue':b'restoreMaterialFocus','GoalPanel.vue':b'const painted=','preparation-bench.css':b'article:focus-visible'}
 def prior_three_check_bytes(path,raw):
+ raw=prior_relic_focus_bytes(path,raw)
  name=Path(path).name;rows=[v for n,v in MANIFEST['files'].items()if Path(n).name==name]
  if not rows:return raw
  row=rows[0]

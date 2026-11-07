@@ -1,0 +1,18 @@
+[
+  {
+    "raw": "artifacts/goal-4/cend07-f02b/old-red-v3-results/cend07-f02b-relic-focus-CE-90990-the-full-readonly-catalogue-chromium/unowned-before-hierarchy-assertions.png",
+    "pngSha256": "30891d17bbfa2b89c42dbd3fedb8b970de485caf410815de1368a76de6d0be61",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f02b/old-views/unowned-before-hierarchy-assertions.jpg",
+    "viewSha256": "0a6e637a4a85023750d3d147d0abc98494561b6b903e60fb14e783fb0f141297",
+    "lossy": "JPEG68 original1440x900",
+    "actuallyViewed": true
+  },
+  {
+    "raw": "artifacts/goal-4/cend07-f02b/old-red-v3-results/cend07-f02b-relic-focus-CE-eef3c-ediate-equip-remains-atomic-chromium/owned-before-origin-assertions.png",
+    "pngSha256": "91f4756e7a8ddca0c270433481a55b1b9b0ceecbe494e9e79a08198bbfbfa87e",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f02b/old-views/owned-before-origin-assertions.jpg",
+    "viewSha256": "d6f4675227dc4d130e5813f3399ce90348fbb538e445e1d3985d3b2f983068f4",
+    "lossy": "JPEG68 original1440x900",
+    "actuallyViewed": true
+  }
+]
