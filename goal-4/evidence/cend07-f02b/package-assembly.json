@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "c3843e7a6c4a5ee6f397643bb3c786eefc3e355b",
+  "runtime": "1188334128988c69c02b20000722ab85d0a5fe3b1cc5cc333f18748a71da54dc",
+  "archive": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f02b/cend07-f02b-preview-c3843e7.zip",
+  "bytes": 10108738,
+  "sha256": "c2bd9be242163b0b35ed48aecfdbc6053cf2b4a66ec0327720dbe54315fcb6af",
+  "unpacked": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f02b/preview-unpacked-c3843e7",
+  "files": 112,
+  "payloadBytes": 11255228,
+  "formalCandidate": false,
+  "assembledBeforeFormalValidationComplete": true,
+  "allPathsSafe": true,
+  "archiveAndUnpackedExact": true
+}

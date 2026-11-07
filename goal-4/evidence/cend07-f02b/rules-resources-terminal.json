@@ -1,0 +1,19 @@
+{
+  "rows": [
+    {
+      "name": "registry",
+      "exit": 0
+    },
+    {
+      "name": "positive",
+      "exit": 0
+    },
+    {
+      "name": "resources",
+      "exit": 0
+    }
+  ],
+  "inputs": 5394,
+  "exact": true,
+  "exit": 0
+}
