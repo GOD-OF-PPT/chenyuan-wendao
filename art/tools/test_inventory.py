@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  travelpaint=ROOT/'art/redesign/cend07-f03.json'
+  if travelpaint.exists():
+   current=json.loads(travelpaint.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[r['before']for r in current['files'].values()]])
   bench=ROOT/'art/redesign/cend07-f04.json'
   if bench.exists():
    current=json.loads(bench.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[r['before']for r in current['files'].values()]])
@@ -2724,6 +2727,44 @@ class ForecastContextTests(unittest.TestCase):
   from check_cend07_inventory import LEDGER,validate_forecast
   (self.root/LEDGER).unlink()
   with self.assertRaisesRegex(AssertionError,'CF01'):validate_forecast(self.root)
+
+class PaintedTravelTests(unittest.TestCase):
+ setUp=InventoryTests.setUp
+ write=InventoryTests.write
+ tearDown=InventoryTests.tearDown
+ def test_painted_travel_preserves_complete_original_clock_and_native_cap(self):
+  from cend07_f03_inventory import MANIFEST,validate_painted_travel,prior_painted_travel_bytes
+  self.assertLessEqual(validate_painted_travel(ROOT)[1],8500)
+  for n,r in MANIFEST['files'].items():self.assertEqual(prior_painted_travel_bytes(n,(ROOT/n).read_bytes()),(ROOT/r['before']).read_bytes())
+ def test_painted_travel_rejects_unrecorded_markup_css_and_clock(self):
+  from cend07_f03_inventory import MANIFEST,validate_painted_travel
+  for n in MANIFEST['files']:
+   original=(ROOT/n).read_text();self.write(n,original+'\n/* unrecorded travel change */')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'TP03'):validate_painted_travel(self.root)
+   self.write(n,original)
+ def test_painted_travel_cannot_replace_existing_raster_widget_or_provenance(self):
+  from cend07_f03_inventory import MANIFEST,validate_painted_travel
+  for row in MANIFEST['reused']:
+   p=self.root/row['path'];raw=p.read_bytes();p.unlink();p.write_bytes(raw+b'changed')
+   with self.subTest(file=row['path']),self.assertRaisesRegex(AssertionError,'TP03'):validate_painted_travel(self.root)
+   p.unlink();p.write_bytes(raw)
+ def test_painted_travel_missing_ledger_or_original_is_not_a_fallback(self):
+  from cend07_f03_inventory import MANIFEST,LEDGER,validate_painted_travel
+  n=next(iter(MANIFEST['files'].values()))['before'];self.write(n,'lost')
+  with self.assertRaisesRegex(AssertionError,'TP03'):validate_painted_travel(self.root)
+  self.write(n,(ROOT/n).read_text());(self.root/LEDGER).unlink()
+  with self.assertRaisesRegex(AssertionError,'TP03'):validate_painted_travel(self.root)
+ def test_painted_travel_cannot_relax_cap_progress_or_claim_human_acceptance(self):
+  from cend07_f03_inventory import MANIFEST,LEDGER,validate_painted_travel
+  for k,v in [('version',True),('maxNativeBytes',8501),('maxUncommittedProgress',1),('newRasterAssets',1),('userAcceptance',True)]:
+   m=copy.deepcopy(MANIFEST);m[k]=v;self.write(LEDGER,m)
+   with self.subTest(key=k),self.assertRaisesRegex(AssertionError,'TP03'):validate_painted_travel(self.root)
+ def test_painted_travel_original_game_owner_and_legacy_caps_are_immutable(self):
+  from cend07_f03_inventory import MANIFEST,validate_painted_travel
+  for n in ['web/src/ScenePanel.vue','web/src/store.ts',MANIFEST['legacyLedger']]:
+   original=(ROOT/n).read_text();self.write(n,original+' ')
+   with self.subTest(file=n),self.assertRaisesRegex(AssertionError,'TP03'):validate_painted_travel(self.root)
+   self.write(n,original)
 
 class PreparationBenchTests(unittest.TestCase):
  setUp=InventoryTests.setUp

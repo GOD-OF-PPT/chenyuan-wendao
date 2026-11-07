@@ -1,0 +1,30 @@
+{
+  "task": "CEND07-F03",
+  "readAt": "2026-11-07",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "publisher": "Riot Games",
+      "date": "2021-03-12",
+      "read": "Recognizable silhouettes, gameplay hierarchy, noise",
+      "inference": "用同一人物/服装/绘画语言，降低大实底图板对实景的竞争，不冒攻击/法宝。"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "publisher": "Microsoft",
+      "read": "Player knows current context and expected result; nearby labels",
+      "inference": "真实出发地/目的地/成本/本程示意与当前状态常驻，未原子提交不画成已抵达。"
+    }
+  ],
+  "skills": [
+    "game-ui-frontend",
+    "game-playtest"
+  ],
+  "reusedImagegenAsset": {
+    "source": "art/production/art26/player-loadout-idle-v1.png",
+    "audit": "art/production/art26/player-loadout-idle-audit.json",
+    "runtime": "web/public/art/v2/actors/player-loadout-idle-v1.webp",
+    "role": "同一无武器人物，仅本程示意，不是假称真实行走帧或新生成"
+  },
+  "limitations": "具体尺寸/局部背景/0.94与6秒为项目设计及已有参数，非行业数字或真人认证；兼容/环境性能当前暂停。"
+}

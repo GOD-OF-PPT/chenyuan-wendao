@@ -1,3 +1,4 @@
+from cend07_f03_inventory import prior_painted_travel_bytes
 from check_cend07_inventory import prior_forecast_bytes
 """Exact travel-only scene adapter and unchanged authority, with original caps."""
 import hashlib,json,re
@@ -96,7 +97,9 @@ def validate_f02b(root):
   else:assert raw.split(b'<style')[1]==old.split(b'<style')[1],'F02B original scene styles and media unchanged'
  total=0
  for n,row in MANIFEST['added'].items():
-  raw=local(n).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'F02B readonly passage identity';total+=len(raw)
+  try:raw=prior_painted_travel_bytes(n,local(n).read_bytes())
+  except AssertionError as error:raise AssertionError('F02B readonly passage: '+str(error))from error
+  assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'F02B readonly passage identity';total+=len(raw)
  assert total<=8500,'F02B new native cap'
  assert MANIFEST['files']['web/src/ScenePanel.vue']['bytes']-MANIFEST['files']['web/src/ScenePanel.vue']['beforeBytes']<=400,'F02B scene delta'
  app=local('web/src/App.vue').stat().st_size;assert app<=159635 and app-157235<=2400,'F02B actual original App caps'
