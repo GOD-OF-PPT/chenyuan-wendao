@@ -1,0 +1,38 @@
+{
+  "source": "d24268b2b6915fc88732026fcf93059c3ba5574b",
+  "stats": {
+    "startTime": "2026-11-07T12:04:01.825Z",
+    "duration": 1368566.9070000001,
+    "expected": 109,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "terminal": {
+    "exit": 1,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 5269,
+    "runtime": "8268a2ea34cc3da722bc859ab8be3d8b62a8c1bf9dcb31f5dad2c31715b0c140",
+    "stats": {
+      "startTime": "2026-11-07T12:04:01.825Z",
+      "duration": 1368566.9070000001,
+      "expected": 109,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 111,
+    "retried": [],
+    "reportSha256": "fb1af0106ff5dae41d8b4911dc472ce302dba8b9a825e17ad19ddd980e9ab72b"
+  },
+  "meaning": "Two remaining old display premises: geometry queried retired static jade-study-status, empty unrelated-mode and new-life draft expected retired merely-viewing label. All old Game/ownership/cycle/budget/geometry thresholds retained; geometry now measures factual badge and pending view checks actual mode/engagement/unchanged or null activity. No production change.",
+  "reportSha256": "fb1af0106ff5dae41d8b4911dc472ce302dba8b9a825e17ad19ddd980e9ab72b",
+  "wholeChangedFilesToRerun": [
+    "stage-r3-layout.spec.ts",
+    "ux26-learning-draft-context.spec.ts"
+  ]
+}
