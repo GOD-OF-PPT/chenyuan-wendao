@@ -61,5 +61,7 @@
   "userSaveModified": false,
   "pushMergeDeployPermissionsChanged": false,
   "threeTaskCounter": 1,
-  "nextTask": "CEND07-F02C source activity primary decision and pause clarity"
+  "nextTask": "CEND07-F02C source activity primary decision and pause clarity",
+  "deliveryCommit": "b16cd3222a9c996dd5ec872f7d65579bc17c55fa",
+  "formalTaskRejectionsResolved": 1
 }
