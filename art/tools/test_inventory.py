@@ -70,7 +70,7 @@ class InventoryTests(unittest.TestCase):
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
   travelpaint=ROOT/'art/redesign/cend07-f03.json'
   if travelpaint.exists():
-   current=json.loads(travelpaint.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[r['before']for r in current['files'].values()]])
+   current=json.loads(travelpaint.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*current['authority'],*[r['before']for r in current['files'].values()]])
   bench=ROOT/'art/redesign/cend07-f04.json'
   if bench.exists():
    current=json.loads(bench.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[r['before']for r in current['files'].values()]])
@@ -2729,7 +2729,10 @@ class ForecastContextTests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'CF01'):validate_forecast(self.root)
 
 class PaintedTravelTests(unittest.TestCase):
- setUp=InventoryTests.setUp
+ def setUp(self):
+  InventoryTests.setUp(self)
+  from cend07_f03_inventory import validate_painted_travel
+  validate_painted_travel(self.root)
  write=InventoryTests.write
  tearDown=InventoryTests.tearDown
  def test_painted_travel_preserves_complete_original_clock_and_native_cap(self):
