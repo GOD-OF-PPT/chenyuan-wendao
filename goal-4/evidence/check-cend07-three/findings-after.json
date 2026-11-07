@@ -1,0 +1,50 @@
+{
+  "task": "CHECK-CEND07-F02A-F04-F03",
+  "status": "local-engineering-verified",
+  "sourceRuntime": "344f0022d9190592ebd4fa948d1bbd584b5f01cdd2a3365037da2a9f9d05ae87",
+  "fixed": [
+    {
+      "id": "CHECK-3-F1",
+      "status": "fixed-and-verified",
+      "severity": "P2",
+      "symptom": "五项材料第二页查看灵石来源再返回，页码2/2变1/2且activeElement BODY。",
+      "owner": "PreparationPanel/PreparationMaterials",
+      "proof": "final/ui-report.json and final/package-report.json, exact full Game/Activity/allDB; checks.json",
+      "regressionCase": "CHECK-CEND07-C1",
+      "productCommit": "7abe75f918201d5e5d79ca516b88939f9c20fe2f"
+    },
+    {
+      "id": "CHECK-3-F2",
+      "status": "fixed-and-verified",
+      "severity": "P2",
+      "symptom": "运行30秒委托时，同地的查看采集/委托按钮也disabled；App.navigate同地本身只定位，不新授权。",
+      "owner": "PreparationPanel.canTravel",
+      "proof": "final/ui-report.json and final/package-report.json, exact full Game/Activity/allDB; checks.json",
+      "regressionCase": "CHECK-CEND07-C2",
+      "productCommit": "7abe75f918201d5e5d79ca516b88939f9c20fe2f"
+    },
+    {
+      "id": "CHECK-3-F3",
+      "status": "fixed-and-verified",
+      "severity": "P2",
+      "symptom": "筹备凝金丹实际绘画，普通目标同一物件退回通用瓶/圆板，artCount0。",
+      "owner": "GoalPanel artifact slot",
+      "proof": "final/ui-report.json and final/package-report.json, exact full Game/Activity/allDB; checks.json",
+      "regressionCase": "CHECK-CEND07-C3",
+      "productCommit": "7abe75f918201d5e5d79ca516b88939f9c20fe2f"
+    }
+  ],
+  "stillOpen": [
+    {
+      "id": "CEND07-F02-RELIC",
+      "scope": "remaining original artifact repeated facts and source/pause competing decisions",
+      "status": "next-independent-implementation-required"
+    },
+    {
+      "id": "GOAL-FINAL",
+      "scope": "full1451 matrix formal candidate final C-end/code/security review human art/gameplay long balance",
+      "status": "not-complete"
+    }
+  ],
+  "overallArtAccepted": false
+}

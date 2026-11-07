@@ -1,0 +1,26 @@
+{
+  "source": {
+    "head": "7abe75f918201d5e5d79ca516b88939f9c20fe2f",
+    "source": "7abe75f918201d5e5d79ca516b88939f9c20fe2f",
+    "tree": "f4b18bf070502aa67a7a0c604fab08228747e1b5",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "344f0022d9190592ebd4fa948d1bbd584b5f01cdd2a3365037da2a9f9d05ae87",
+  "runtimeFiles": 343,
+  "closureFiles": 90,
+  "selectedFiles": 35,
+  "publishedDependencyFiles": 1981,
+  "payloadFiles": 112,
+  "payloadBytes": 11255086,
+  "rootFrozenGitExact": true,
+  "archiveAndUnpackedExact": true,
+  "httpExact": true,
+  "archiveSha256": "0f28dd44a2e197639f3849a362c0349ed8096c22f525b5aaff3d29774145208c",
+  "protected13Exact": true,
+  "originalInputsV03Preserved": true,
+  "userSaveModified": false,
+  "formalCandidate": false
+}
