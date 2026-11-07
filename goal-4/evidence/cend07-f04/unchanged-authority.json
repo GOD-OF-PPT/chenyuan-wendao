@@ -1,0 +1,63 @@
+{
+  "source": {
+    "head": "12f1ca16e82d777fc9e392b5d0a047ee044fbfa5",
+    "source": "12f1ca16e82d777fc9e392b5d0a047ee044fbfa5",
+    "tree": "6b6a01a8ed1071802d4069313146a0f92b466de4",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "e7d7e86309081deeb58eea932f4521cd9ade54a1b93933e77a90c927b43759cf",
+  "comparedTo": "d24268b2b6915fc88732026fcf93059c3ba5574b",
+  "runtimeFiles": 343,
+  "changedOriginalFiles": [
+    "web/src/GoalBoard.vue",
+    "web/src/PreparationPanel.vue"
+  ],
+  "addedPurePresentationFiles": [
+    "web/src/PreparationMaterials.vue",
+    "web/src/preparation-bench.css"
+  ],
+  "unchangedOriginalRuntimeFiles": 339,
+  "originalAuthorityFiles": {
+    "src/full/preparation.ts": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+    "src/full/story-context.ts": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+    "src/full/mechanisms.ts": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+    "src/full/economy-ledger.ts": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+    "src/full/versions.ts": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+    "src/full/errors.ts": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+    "src/full/queries.ts": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+    "src/full/contracts.ts": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+    "src/full/costs.ts": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/content.ts": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+    "src/full/ascension.ts": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+    "src/full/types.ts": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+    "src/full/growth.ts": "42076ba5b572e519d64c3d85b570b223d36af1dac8510f4dedc928e137beaf26",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/adventure.ts": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015",
+    "src/full/events.ts": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+    "src/full/milestones.ts": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+    "src/full/life-record.ts": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+    "src/full/goals.ts": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+    "src/full/validate-content.ts": "72bd297d0f44036ba0b0b84d587f00a11d6b14b8fd2656f0381681d9fefb02d1",
+    "src/full/receipts.ts": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+    "src/full/trial-rules.ts": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+    "src/full/progression.ts": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+    "src/full/configuration.ts": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/activity-clock.ts": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "web/src/configuration-persistence.ts": "a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/equipment-effects.ts": "0946c3b6b76e5ea39ebd80571175e2835ce49abe94fe6499f480b1635a934888",
+    "web/src/equipment-choreography.ts": "871e41e7555f640fecbc8f26706fac34a5249225a6acb5f1db9c63789a8011bb",
+    "web/src/use-activity-effect.ts": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163",
+    "web/src/activity-view.ts": "166671b5bc26461fcea557d41c12fd1ed89e900458702f298cb6507e92866b05",
+    "web/src/StudyQueueRail.vue": "2ee9119806fa68b31c97c28d754fe2589981ad58b832a8c1f43287e955c13997"
+  },
+  "allExactInRootAndFrozen": true,
+  "user56884And56921Untouched": true,
+  "protected13Unchanged": true
+}

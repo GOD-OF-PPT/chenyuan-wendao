@@ -1,0 +1,57 @@
+[
+  {
+    "index": 0,
+    "name": "qi",
+    "raw": "artifacts/goal-4/cend07-f04/consumer/recheck-results/stage-u8-b-qi-preparation--de255-pagination-above-navigation-chromium/preparation-cards-qi.png",
+    "pngSha256": "598e6f6cf947d3db4a4ae6d876e5d0da317e5fdec4e2221af3bfa1d3d0a939bb",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f04/consumer/selected-views/0-qi.jpg",
+    "viewSha256": "ea5fe9e7e99580971e48c6b014c8237c54473ee2fe1b9ae686a76b609639ca86",
+    "lossy": "JPEG68 original1440x900",
+    "actuallyViewed": true,
+    "source": "6e9d748c8742227d6146ea17f32b0c806c77236f"
+  },
+  {
+    "index": 1,
+    "name": "foundation",
+    "raw": "artifacts/goal-4/cend07-f04/consumer/recheck-results/stage-u8-b-foundation-prep-82864-pagination-above-navigation-chromium/preparation-cards-foundation.png",
+    "pngSha256": "9b256a5fd9d974597f08592ed0f8da13fe01ea47f60e3f137101bdfcbd9cf15b",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f04/consumer/selected-views/1-foundation.jpg",
+    "viewSha256": "a6972595e8bb66fa74e0b338ebfcb68f0094ae1b6c443430a0f4242f733345f3",
+    "lossy": "JPEG68 original1440x900",
+    "actuallyViewed": true,
+    "source": "6e9d748c8742227d6146ea17f32b0c806c77236f"
+  },
+  {
+    "index": 2,
+    "name": "golden",
+    "raw": "artifacts/goal-4/cend07-f04/consumer/recheck-results/stage-u8-b-golden-preparat-9b8a4-pagination-above-navigation-chromium/preparation-cards-golden.png",
+    "pngSha256": "62d16b844bcb7384e2514e54c0719a2033fd0d6345319105612d7af380a6b215",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f04/consumer/selected-views/2-golden.jpg",
+    "viewSha256": "1dcb123af00f4740d6b5208a82a34e7f21e09d40045b753349912c7fb6b6550e",
+    "lossy": "JPEG68 original1440x900",
+    "actuallyViewed": true,
+    "source": "6e9d748c8742227d6146ea17f32b0c806c77236f"
+  },
+  {
+    "index": 3,
+    "name": "nascent",
+    "raw": "artifacts/goal-4/cend07-f04/consumer/recheck-results/stage-u8-b-nascent-prepara-57e86-pagination-above-navigation-chromium/preparation-cards-nascent.png",
+    "pngSha256": "163c7b5bbf970e447aa9263b50ac59ca7b9992e0e9d381c3059d24fb629f9389",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f04/consumer/selected-views/3-nascent.jpg",
+    "viewSha256": "eb1c41be760a54196f20cb9c0900221e0cd6d61664eb1320d34b3bd41d14dcf6",
+    "lossy": "JPEG68 original1440x900",
+    "actuallyViewed": true,
+    "source": "6e9d748c8742227d6146ea17f32b0c806c77236f"
+  },
+  {
+    "index": 4,
+    "name": "spirit",
+    "raw": "artifacts/goal-4/cend07-f04/consumer/recheck-results/stage-u8-b-spirit-preparat-88c0f-pagination-above-navigation-chromium/preparation-cards-spirit.png",
+    "pngSha256": "251cfac31e5949dfb3021e7bbfc83ebeb25043bd00135cde2ab82578e569e274",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f04/consumer/selected-views/4-spirit.jpg",
+    "viewSha256": "89a9bb62bfb89ae90e6b652d1edb315176505b976678812df5f589c85f21b261",
+    "lossy": "JPEG68 original1440x900",
+    "actuallyViewed": true,
+    "source": "6e9d748c8742227d6146ea17f32b0c806c77236f"
+  }
+]

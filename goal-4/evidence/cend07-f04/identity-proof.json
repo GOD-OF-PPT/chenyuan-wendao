@@ -1,0 +1,16 @@
+{
+  "runtime": "e7d7e86309081deeb58eea932f4521cd9ade54a1b93933e77a90c927b43759cf",
+  "runtimeFiles": 343,
+  "payloadFiles": 112,
+  "payloadBytes": 11253072,
+  "producer": "12f1ca16e82d777fc9e392b5d0a047ee044fbfa5",
+  "testConsumer": "6e9d748c8742227d6146ea17f32b0c806c77236f",
+  "currentRootRuntimeExact": true,
+  "consumerRebuildPayloadExact": true,
+  "archiveAndUnpackedExact": true,
+  "archiveSha256": "28d0f59eab546352c5e02f1c5e711c995c76f5ec339a32dc8c190067c5300e9a",
+  "protected13Exact": true,
+  "v03AndOriginalInputsPreserved": true,
+  "userSaveModified": false,
+  "formalCandidate": false
+}

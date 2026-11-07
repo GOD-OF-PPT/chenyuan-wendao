@@ -1,0 +1,60 @@
+{
+  "task": "CEND07-F04",
+  "status": "local-engineering-delivery",
+  "implementationAndBuildProducer": "12f1ca16e82d777fc9e392b5d0a047ee044fbfa5",
+  "testConsumer": "6e9d748c8742227d6146ea17f32b0c806c77236f",
+  "runtime": "e7d7e86309081deeb58eea932f4521cd9ade54a1b93933e77a90c927b43759cf",
+  "runtimeFiles": 343,
+  "newNativeBytes": 6314,
+  "nativeCap": 12000,
+  "actualRegionalBytes": {
+    "flow": 59951,
+    "flowCap": 60000,
+    "cultivation": 44963,
+    "cultivationCap": 45000,
+    "goalPanel": 18961,
+    "goalPanelCap": 19000
+  },
+  "newRasterAssets": 0,
+  "rulesWritersClocksAndQueueUnchanged": true,
+  "relatedNodePassed": 231,
+  "completeResourcesPassed": 743,
+  "currentUIComposite": 151,
+  "uiComposition": [
+    127,
+    24
+  ],
+  "original151SingleAllGreen": false,
+  "packageSubset": 3,
+  "currentVisualsDirect": 18,
+  "packageByteIdenticalPixelInheritance": 5,
+  "allOriginalPngs": 271,
+  "notDirectlyViewed": 253,
+  "matrix": {
+    "version": 38,
+    "ui": 994,
+    "storage": 415,
+    "normal": 32,
+    "total": 1441,
+    "fullRun": false
+  },
+  "fixedScope": {
+    "browser": "chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "fontScale": 1
+  },
+  "compatibilityEnvironmentPerformance": "paused",
+  "preview": "http://127.0.0.1:56922/",
+  "formalCandidate": false,
+  "overallArtAccepted": false,
+  "userAcceptance": false,
+  "goalComplete": false,
+  "nextTask": "CEND07-F03",
+  "mandatoryAfterNext": "three-task comprehensive debug",
+  "userSaveModified": false,
+  "protected13Unchanged": true,
+  "pushMergeDeploymentOrPermissionsChanged": false
+}

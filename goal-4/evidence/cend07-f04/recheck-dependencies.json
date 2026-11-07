@@ -1,0 +1,17 @@
+{
+  "recordedAt": "2026-11-07T14:46:46.831754+00:00",
+  "source": "6e9d748c8742227d6146ea17f32b0c806c77236f",
+  "beforeActualRecheck": true,
+  "rows": [
+    {
+      "directory": "node_modules",
+      "files": 133,
+      "exact": true
+    },
+    {
+      "directory": "web/node_modules",
+      "files": 1848,
+      "exact": true
+    }
+  ]
+}
