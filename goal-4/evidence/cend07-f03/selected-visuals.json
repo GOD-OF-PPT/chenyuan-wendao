@@ -1,0 +1,156 @@
+[
+  {
+    "index": 0,
+    "name": "native-normal-in-transit-current-world-unchanged",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-b5db2-c-arrival-changes-the-world-chromium/native-normal-in-transit-current-world-unchanged.png",
+    "pngSha256": "b3272506ba4fd14d28d6d848b471b858d194a587d88984b6fcb44e04e3f261cb",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/00-native-normal-in-transit-current-world-unchanged.jpg",
+    "viewSha256": "e1ddf34e9d0e99f957b3f9711932314ab9c895b71fe87a6f095c0f2e1c7d3c00",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 1,
+    "name": "cave-departure-halfway",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-cf450-out-executing-another-route-chromium/cave-departure-halfway.png",
+    "pngSha256": "a6bd39150d0d170faa5c2dae38bca890cfe93c4c8f75849c7040dee92cd311a0",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/01-cave-departure-halfway.jpg",
+    "viewSha256": "1e2290b1459da18b1b984906a645dfc3cd3e2772b1241ede3535372a5c3de924",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 2,
+    "name": "native-saving-has-not-arrived",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-eb96b-vel-retry-saves-one-arrival-chromium/native-saving-has-not-arrived.png",
+    "pngSha256": "62ba3c77bc7a1c34cf01ce8b604a36265e120da5f843a6b6f63522c0fc121798",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/02-native-saving-has-not-arrived.jpg",
+    "viewSha256": "41ec3f982457c8b86b23d147f09e1300b648f078812bcf601ade6ed87296282e",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 3,
+    "name": "failed-arrival-old-location-and-original-retry",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-eb96b-vel-retry-saves-one-arrival-chromium/failed-arrival-old-location-and-original-retry.png",
+    "pngSha256": "fc670140173353f0a35ccb4e1574a22d460cf6d5ac7afa0b31666d26827f7e27",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/03-failed-arrival-old-location-and-original-retry.jpg",
+    "viewSha256": "514ba14e1fcf935c1a3e3fe588e2d26b1da079bac0619430216d84d181e5e21a",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 4,
+    "name": "paused-route-keeps-destination-not-arrival",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-6493a-xplicit-resumed-six-seconds-chromium/paused-route-keeps-destination-not-arrival.png",
+    "pngSha256": "98c3a7efc1fe622b1b185de7f629cd7dd7adac54e1a7114db6532f7b58057c90",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/04-paused-route-keeps-destination-not-arrival.jpg",
+    "viewSha256": "ddda469bbcaadc0950d0dc3854086b08e316e7b75f252fa392a723dbd3b84deb",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 5,
+    "name": "foreign-owner-no-borrowed-travel-clock",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-78fc7-oute-and-all-its-old-clocks-chromium/foreign-owner-no-borrowed-travel-clock.png",
+    "pngSha256": "b22f34736b0a3862d4a433a32d7881c32bb312f8873c04033075164ce3f1ff5e",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/05-foreign-owner-no-borrowed-travel-clock.jpg",
+    "viewSha256": "862db59fbcdaf8f56e06aa4aa1aae0f0e0a1ad3ebfd53b3475c5e41838fa7b06",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 6,
+    "name": "wilderness-painted-halfway-source-world",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-e567a-x-second-atomic-destination-chromium/wilderness-painted-halfway-source-world.png",
+    "pngSha256": "e564cd6e2db86af2d8c5dd4cf7d12bf3393ecf874699097fdeb0ac214e262964",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/06-wilderness-painted-halfway-source-world.jpg",
+    "viewSha256": "830955b6ab96c283eaa9728520d0f720a36f10321aca3a320b40a46f54e87d3f",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 7,
+    "name": "cave-painted-halfway-source-world",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-e6389-x-second-atomic-destination-chromium/cave-painted-halfway-source-world.png",
+    "pngSha256": "a93f9d6850f312291fc75d5127f178542a700c832298f877bc14612a6f8b00fa",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/07-cave-painted-halfway-source-world.jpg",
+    "viewSha256": "8e1da1307b63c22ca0e9223e767027369371d9c483a8f8caccd968d39feda5b9",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 8,
+    "name": "sect-painted-halfway-source-world",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-4a476-x-second-atomic-destination-chromium/sect-painted-halfway-source-world.png",
+    "pngSha256": "765bcbeeeb9743b3721542864a96cac712d648a7bcccab899b77b92a122ab1bf",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/08-sect-painted-halfway-source-world.jpg",
+    "viewSha256": "5ad2a4cc66367f0034dc9ad345a299a63479eac3237bcbc76c694b0b2e1f19e8",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 9,
+    "name": "market-painted-halfway-source-world",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-3c16d-x-second-atomic-destination-chromium/market-painted-halfway-source-world.png",
+    "pngSha256": "bb0773fca562782fdebf19c8b3369d1df6eb438ab75ff6429f5e2501ec9654f9",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/09-market-painted-halfway-source-world.jpg",
+    "viewSha256": "fc2da8dd82d1b9d6ac64540aa4f7abc289cb8eec54b3d834efb8821270b9ebdb",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 10,
+    "name": "secret-painted-halfway-source-world",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-29671-x-second-atomic-destination-chromium/secret-painted-halfway-source-world.png",
+    "pngSha256": "30df931e95a5601c07e1c9721fb91f93a045826f37f805de4b25c1ded92d8797",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/10-secret-painted-halfway-source-world.jpg",
+    "viewSha256": "a09e2a718fdef3907739560a9d01fc19aabb0ccb4bc0eb706ca36265856ca99a",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 11,
+    "name": "terrace-painted-halfway-source-world",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-b9ce6-x-second-atomic-destination-chromium/terrace-painted-halfway-source-world.png",
+    "pngSha256": "6b001a055b817b9f8a64793885ff7494dd91c36f84c9fa4791d546e722dc52f8",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/11-terrace-painted-halfway-source-world.jpg",
+    "viewSha256": "29a31dc772351e355e2ec39e26d2d6c1cbb958beb39edb1bfa3da43adce219d7",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 12,
+    "name": "failed-painting-static-readable-route",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-1261a-nd-original-readonly-review-chromium/failed-painting-static-readable-route.png",
+    "pngSha256": "88f8c492ee4de2f5771c28ac8c2f427070dd2b55e66d7c8927a4892aca8b9003",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/12-failed-painting-static-readable-route.jpg",
+    "viewSha256": "d69ae1851973e69313f1c76ffadc533af20889b9c2e44bacdb7b35b898650297",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  },
+  {
+    "index": 13,
+    "name": "original-map-return-keeps-current-period",
+    "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-cf450-out-executing-another-route-chromium/original-map-return-keeps-current-period.png",
+    "pngSha256": "d78917efe631ef5bd6a1e3b17d05129e6258bb9dc97602293ca351abb6db35a6",
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/13-original-map-return-keeps-current-period.jpg",
+    "viewSha256": "48708d411dcb37db266ceb5003a90a4ee26f549b6ef1ba3f4c60db002efb4483",
+    "actuallyViewed": true,
+    "lossy": "JPEG68 original1440x900",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2"
+  }
+]

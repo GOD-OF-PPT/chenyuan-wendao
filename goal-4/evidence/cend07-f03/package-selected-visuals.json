@@ -1,0 +1,20 @@
+[
+  {
+    "raw": "artifacts/goal-4/cend07-f03/consumer/package-results/cend06-f02b-travel-passage-e6389-x-second-atomic-destination-chromium/cave-painted-halfway-source-world.png",
+    "sha256": "8c549627e1b07398215162bf8e9625c52eae1cf84f2ee98fc4114176a3ce1688",
+    "actuallyViewed": true,
+    "exactViewedPixelInheritance": null,
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/consumer/package-views/0-cave-painted-halfway-source-world.jpg",
+    "viewSha256": "77cc83ca6948e76d088673381d74bfdbe1ae52df332f8fb7e5bedde7d34d0239",
+    "lossy": "JPEG68 original1440x900"
+  },
+  {
+    "raw": "artifacts/goal-4/cend07-f03/consumer/package-results/cend06-f02b-travel-passage-b5db2-c-arrival-changes-the-world-chromium/native-normal-in-transit-current-world-unchanged.png",
+    "sha256": "3b2bfabc1fb6faa0e33a14dcabcb9ba90a2b8e79a99e9bb6d7295b9dd42897ad",
+    "actuallyViewed": true,
+    "exactViewedPixelInheritance": null,
+    "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/consumer/package-views/1-native-normal-in-transit-current-world-unchanged.jpg",
+    "viewSha256": "3102ee74a679ad995c1e37093fd8730f7db089808cafeb46ba9203dd650612fe",
+    "lossy": "JPEG68 original1440x900"
+  }
+]

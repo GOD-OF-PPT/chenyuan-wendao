@@ -1,0 +1,1109 @@
+{
+  "currentDirectlyViewed": 16,
+  "directUniquePngHashes": 16,
+  "uiDirect": 14,
+  "currentPackageDirect": 2,
+  "packageExactViewedInheritance": [
+    {
+      "raw": "artifacts/goal-4/cend07-f03/consumer/package-results/cend06-f02b-travel-passage-1261a-nd-original-readonly-review-chromium/failed-painting-static-readable-route.png",
+      "sha256": "88f8c492ee4de2f5771c28ac8c2f427070dd2b55e66d7c8927a4892aca8b9003",
+      "actuallyViewed": false,
+      "exactViewedPixelInheritance": {
+        "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-1261a-nd-original-readonly-review-chromium/failed-painting-static-readable-route.png",
+        "pngSha256": "88f8c492ee4de2f5771c28ac8c2f427070dd2b55e66d7c8927a4892aca8b9003",
+        "sourceActuallyViewed": true
+      }
+    }
+  ],
+  "rawPngTotal": 151,
+  "notDirectlyViewed": 135,
+  "jpeg": "lossy quality68 original1440x900; originalPNG retained",
+  "maximumImagesPerToolResult": 2,
+  "selected": [
+    {
+      "index": 0,
+      "name": "native-normal-in-transit-current-world-unchanged",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-b5db2-c-arrival-changes-the-world-chromium/native-normal-in-transit-current-world-unchanged.png",
+      "pngSha256": "b3272506ba4fd14d28d6d848b471b858d194a587d88984b6fcb44e04e3f261cb",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/00-native-normal-in-transit-current-world-unchanged.jpg",
+      "viewSha256": "e1ddf34e9d0e99f957b3f9711932314ab9c895b71fe87a6f095c0f2e1c7d3c00",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 1,
+      "name": "cave-departure-halfway",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-cf450-out-executing-another-route-chromium/cave-departure-halfway.png",
+      "pngSha256": "a6bd39150d0d170faa5c2dae38bca890cfe93c4c8f75849c7040dee92cd311a0",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/01-cave-departure-halfway.jpg",
+      "viewSha256": "1e2290b1459da18b1b984906a645dfc3cd3e2772b1241ede3535372a5c3de924",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 2,
+      "name": "native-saving-has-not-arrived",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-eb96b-vel-retry-saves-one-arrival-chromium/native-saving-has-not-arrived.png",
+      "pngSha256": "62ba3c77bc7a1c34cf01ce8b604a36265e120da5f843a6b6f63522c0fc121798",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/02-native-saving-has-not-arrived.jpg",
+      "viewSha256": "41ec3f982457c8b86b23d147f09e1300b648f078812bcf601ade6ed87296282e",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 3,
+      "name": "failed-arrival-old-location-and-original-retry",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-eb96b-vel-retry-saves-one-arrival-chromium/failed-arrival-old-location-and-original-retry.png",
+      "pngSha256": "fc670140173353f0a35ccb4e1574a22d460cf6d5ac7afa0b31666d26827f7e27",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/03-failed-arrival-old-location-and-original-retry.jpg",
+      "viewSha256": "514ba14e1fcf935c1a3e3fe588e2d26b1da079bac0619430216d84d181e5e21a",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 4,
+      "name": "paused-route-keeps-destination-not-arrival",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-6493a-xplicit-resumed-six-seconds-chromium/paused-route-keeps-destination-not-arrival.png",
+      "pngSha256": "98c3a7efc1fe622b1b185de7f629cd7dd7adac54e1a7114db6532f7b58057c90",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/04-paused-route-keeps-destination-not-arrival.jpg",
+      "viewSha256": "ddda469bbcaadc0950d0dc3854086b08e316e7b75f252fa392a723dbd3b84deb",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 5,
+      "name": "foreign-owner-no-borrowed-travel-clock",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-78fc7-oute-and-all-its-old-clocks-chromium/foreign-owner-no-borrowed-travel-clock.png",
+      "pngSha256": "b22f34736b0a3862d4a433a32d7881c32bb312f8873c04033075164ce3f1ff5e",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/05-foreign-owner-no-borrowed-travel-clock.jpg",
+      "viewSha256": "862db59fbcdaf8f56e06aa4aa1aae0f0e0a1ad3ebfd53b3475c5e41838fa7b06",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 6,
+      "name": "wilderness-painted-halfway-source-world",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-e567a-x-second-atomic-destination-chromium/wilderness-painted-halfway-source-world.png",
+      "pngSha256": "e564cd6e2db86af2d8c5dd4cf7d12bf3393ecf874699097fdeb0ac214e262964",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/06-wilderness-painted-halfway-source-world.jpg",
+      "viewSha256": "830955b6ab96c283eaa9728520d0f720a36f10321aca3a320b40a46f54e87d3f",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 7,
+      "name": "cave-painted-halfway-source-world",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-e6389-x-second-atomic-destination-chromium/cave-painted-halfway-source-world.png",
+      "pngSha256": "a93f9d6850f312291fc75d5127f178542a700c832298f877bc14612a6f8b00fa",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/07-cave-painted-halfway-source-world.jpg",
+      "viewSha256": "8e1da1307b63c22ca0e9223e767027369371d9c483a8f8caccd968d39feda5b9",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 8,
+      "name": "sect-painted-halfway-source-world",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-4a476-x-second-atomic-destination-chromium/sect-painted-halfway-source-world.png",
+      "pngSha256": "765bcbeeeb9743b3721542864a96cac712d648a7bcccab899b77b92a122ab1bf",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/08-sect-painted-halfway-source-world.jpg",
+      "viewSha256": "5ad2a4cc66367f0034dc9ad345a299a63479eac3237bcbc76c694b0b2e1f19e8",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 9,
+      "name": "market-painted-halfway-source-world",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-3c16d-x-second-atomic-destination-chromium/market-painted-halfway-source-world.png",
+      "pngSha256": "bb0773fca562782fdebf19c8b3369d1df6eb438ab75ff6429f5e2501ec9654f9",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/09-market-painted-halfway-source-world.jpg",
+      "viewSha256": "fc2da8dd82d1b9d6ac64540aa4f7abc289cb8eec54b3d834efb8821270b9ebdb",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 10,
+      "name": "secret-painted-halfway-source-world",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-29671-x-second-atomic-destination-chromium/secret-painted-halfway-source-world.png",
+      "pngSha256": "30df931e95a5601c07e1c9721fb91f93a045826f37f805de4b25c1ded92d8797",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/10-secret-painted-halfway-source-world.jpg",
+      "viewSha256": "a09e2a718fdef3907739560a9d01fc19aabb0ccb4bc0eb706ca36265856ca99a",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 11,
+      "name": "terrace-painted-halfway-source-world",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-b9ce6-x-second-atomic-destination-chromium/terrace-painted-halfway-source-world.png",
+      "pngSha256": "6b001a055b817b9f8a64793885ff7494dd91c36f84c9fa4791d546e722dc52f8",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/11-terrace-painted-halfway-source-world.jpg",
+      "viewSha256": "29a31dc772351e355e2ec39e26d2d6c1cbb958beb39edb1bfa3da43adce219d7",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 12,
+      "name": "failed-painting-static-readable-route",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-1261a-nd-original-readonly-review-chromium/failed-painting-static-readable-route.png",
+      "pngSha256": "88f8c492ee4de2f5771c28ac8c2f427070dd2b55e66d7c8927a4892aca8b9003",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/12-failed-painting-static-readable-route.jpg",
+      "viewSha256": "d69ae1851973e69313f1c76ffadc533af20889b9c2e44bacdb7b35b898650297",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "index": 13,
+      "name": "original-map-return-keeps-current-period",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-cf450-out-executing-another-route-chromium/original-map-return-keeps-current-period.png",
+      "pngSha256": "d78917efe631ef5bd6a1e3b17d05129e6258bb9dc97602293ca351abb6db35a6",
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/final/selected-views/13-original-map-return-keeps-current-period.jpg",
+      "viewSha256": "48708d411dcb37db266ceb5003a90a4ee26f549b6ef1ba3f4c60db002efb4483",
+      "actuallyViewed": true,
+      "lossy": "JPEG68 original1440x900",
+      "source": "596ab730915ca9af0406932696aa786181cf88a2"
+    },
+    {
+      "raw": "artifacts/goal-4/cend07-f03/consumer/package-results/cend06-f02b-travel-passage-e6389-x-second-atomic-destination-chromium/cave-painted-halfway-source-world.png",
+      "sha256": "8c549627e1b07398215162bf8e9625c52eae1cf84f2ee98fc4114176a3ce1688",
+      "actuallyViewed": true,
+      "exactViewedPixelInheritance": null,
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/consumer/package-views/0-cave-painted-halfway-source-world.jpg",
+      "viewSha256": "77cc83ca6948e76d088673381d74bfdbe1ae52df332f8fb7e5bedde7d34d0239",
+      "lossy": "JPEG68 original1440x900"
+    },
+    {
+      "raw": "artifacts/goal-4/cend07-f03/consumer/package-results/cend06-f02b-travel-passage-b5db2-c-arrival-changes-the-world-chromium/native-normal-in-transit-current-world-unchanged.png",
+      "sha256": "3b2bfabc1fb6faa0e33a14dcabcb9ba90a2b8e79a99e9bb6d7295b9dd42897ad",
+      "actuallyViewed": true,
+      "exactViewedPixelInheritance": null,
+      "view": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend07-f03/consumer/package-views/1-native-normal-in-transit-current-world-unchanged.jpg",
+      "viewSha256": "3102ee74a679ad995c1e37093fd8730f7db089808cafeb46ba9203dd650612fe",
+      "lossy": "JPEG68 original1440x900"
+    }
+  ],
+  "raw": [
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-a-quota--570c4-ly-one-recorded-bag-arrival-chromium/commission-four-signs-error-safe.png",
+      "sha256": "7220f581a9de2b642dbbbc75ca027d7e6412f7dfb7af237f2d9e8f1dc495ab65",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-a-quota--570c4-ly-one-recorded-bag-arrival-chromium/commission-four-signs-error.png",
+      "sha256": "93a70817bccda5235cb57c62a8987bd5ecfbc9e58c21330affbcdb78c488e097",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-a-quota--570c4-ly-one-recorded-bag-arrival-chromium/source-error-safe-stage.png",
+      "sha256": "2fc93b63f434a3854b6dfb849e82fd615af78bad0d57f6334132d904e5cd7d60",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-all-six--df8e1-s-an-honest-readonly-choice-chromium/scene-sources-cave.png",
+      "sha256": "dc1a88534644ff06a6c4c0a6910e5139b2bac2c65fb701e025981fdda74febb5",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-all-six--df8e1-s-an-honest-readonly-choice-chromium/scene-sources-market.png",
+      "sha256": "8dd706525eafd8a7723dd0316828218ea4da7dfc81e55475f6f73bd27078bf21",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-all-six--df8e1-s-an-honest-readonly-choice-chromium/scene-sources-secret.png",
+      "sha256": "f723868fc27debf48ba2c82ffcc31aab626c0ffd1d73d3e54807aa8b8dbb0a4b",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-all-six--df8e1-s-an-honest-readonly-choice-chromium/scene-sources-sect.png",
+      "sha256": "77f626ead60fb9beebee02e49151c94e92f179c3fe63e81f4c32927f20bf5c7c",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-all-six--df8e1-s-an-honest-readonly-choice-chromium/scene-sources-terrace.png",
+      "sha256": "ed5f126245751bd3ce62ae86af324e0829c14e89d2775c31e00bf323bece3b0b",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-all-six--df8e1-s-an-honest-readonly-choice-chromium/scene-sources-wilderness.png",
+      "sha256": "358115f2a4e436d1da3573f87445d9ebbfa4e2a91f3a858cda33254596ce0e17",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-all-six--df8e1-s-an-honest-readonly-choice-chromium/six-destination-map.png",
+      "sha256": "c6ffb328a96fa973241e3d6c2b6495ab84cc5f4f43d873274339b2e32149f2c5",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-journey--ed049--and-the-atomic-transaction-chromium/journey-saved-arrival.png",
+      "sha256": "80b2e0ac8166a9b41181a7276af72843bf4be148e00857f575301d4b0ef819f2",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-journey--ed049--and-the-atomic-transaction-chromium/journey-saving-not-arrived.png",
+      "sha256": "f7edbafa34efc013c7bcb5f9c6f14e1632619ba328187245efddfddf5fa585c6",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-missing--19d03-jects-plus-legal-saved-work-chromium/journey-native-image-fallback.png",
+      "sha256": "aeb241839ef985b22a272879dc412ffa2f7ef0a99d738ec5ca2afc84a170d9d3",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-missing--19d03-jects-plus-legal-saved-work-chromium/source-native-image-fallback.png",
+      "sha256": "c5e69e91ad4fb13728bade7759b644e4a4b49087405ed9c9ad6321f34e92db9e",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-one-real-7375e--until-it-is-actually-saved-chromium/real-three-second-battle-result.png",
+      "sha256": "bbd046d21a5786b37bd9fd4922eea7b41ce6404cff1bd5f316cf14f56dd8eb90",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-real-six-b7c5f-ntil-their-actual-deadlines-chromium/real-travel-and-source-result.png",
+      "sha256": "4ad56a9e22db895cf48699abb34e67f21a062f885e5488416cf0dd92bc38d05b",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-rejected-b601a-riginal-start-receipt-retry-chromium/acceptance-error-auto.png",
+      "sha256": "cb1f0801d55502326d658f674f0dbe865b1492d452e8da80aa5c3a7bf03e0be2",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-rejected-b601a-riginal-start-receipt-retry-chromium/acceptance-error-encounter.png",
+      "sha256": "a497c33086b1dfec6e63a202f0eb8a8d9e7ebc1395c579c0fab6d84a1711a963",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-rejected-b601a-riginal-start-receipt-retry-chromium/acceptance-error-manual.png",
+      "sha256": "9675dc4de0927c67d5de13fda7bea96b4db9b05430098845ece16596df501f1b",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-rejected-b601a-riginal-start-receipt-retry-chromium/acceptance-error-safe-auto.png",
+      "sha256": "99da1bea8add23fc6b7e6cc9ea3927ce206d88641c30683565519bf4e490b15b",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-rejected-b601a-riginal-start-receipt-retry-chromium/acceptance-error-safe-encounter.png",
+      "sha256": "8920767c9db5d60c7ec393b753da3acc4d67d47764b841736893a28a908e8b6d",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-rejected-b601a-riginal-start-receipt-retry-chromium/acceptance-error-safe-manual.png",
+      "sha256": "1609b1348628b420799fb0480060cee0bce55b9b9b61027f5144171168d9dbf2",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-rejected-b601a-riginal-start-receipt-retry-chromium/acceptance-error-safe-travel.png",
+      "sha256": "46c02ac5f1e02dd137c9d3a8b3d07b0166bfdd31edc531be0e7e4c69e518d3a9",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-rejected-b601a-riginal-start-receipt-retry-chromium/acceptance-error-travel.png",
+      "sha256": "7c9de2af1515394cbd5ad73ba9dd53c56b51124d727e896b639b89f509ae20de",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-resource-22fad-category-and-source-details-chromium/source-complete-target-and-budget.png",
+      "sha256": "d9809451759725374e3f0145f1a36d982eaca504e52588854d469c2188616248",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-resource-22fad-category-and-source-details-chromium/source-scene-draft.png",
+      "sha256": "a3a57d8263e04de189901169d91076ea31c5b795617e8f50fd35d2afedcfd4f7",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-source-p-f53bf-cle-until-its-finite-target-chromium/source-real-half-cycle.png",
+      "sha256": "be7c37115691bde30a0fd2092f49dcc4a5044fca7699d92c47426e23ca002473",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-source-p-f53bf-cle-until-its-finite-target-chromium/source-trusted-bag-arrival.png",
+      "sha256": "1c89df1b18447be4a1af32efbdb2b5bbe8e9f68e638780901edb7ec4e4a8fd3f",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-sword-ba-714d9-one-saved-three-second-turn-chromium/battle-sword-seven-objects.png",
+      "sha256": "9f4f2dfed439bfa9ee0bbea6dcc67abf95b0c70557293b8b28aa27c717833574",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/adventure-objects-talisman-c681d-one-saved-three-second-turn-chromium/battle-talisman-seven-objects.png",
+      "sha256": "a7e04e4c433f0956d7e6b5d4f0924955770439be0800df30786da22ddf560e66",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-1261a-nd-original-readonly-review-chromium/failed-painting-static-readable-route.png",
+      "sha256": "88f8c492ee4de2f5771c28ac8c2f427070dd2b55e66d7c8927a4892aca8b9003",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-29671-x-second-atomic-destination-chromium/secret-painted-halfway-source-world.png",
+      "sha256": "30df931e95a5601c07e1c9721fb91f93a045826f37f805de4b25c1ded92d8797",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-3c16d-x-second-atomic-destination-chromium/market-painted-halfway-source-world.png",
+      "sha256": "bb0773fca562782fdebf19c8b3369d1df6eb438ab75ff6429f5e2501ec9654f9",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-4a476-x-second-atomic-destination-chromium/sect-painted-halfway-source-world.png",
+      "sha256": "765bcbeeeb9743b3721542864a96cac712d648a7bcccab899b77b92a122ab1bf",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-6493a-xplicit-resumed-six-seconds-chromium/paused-route-keeps-destination-not-arrival.png",
+      "sha256": "98c3a7efc1fe622b1b185de7f629cd7dd7adac54e1a7114db6532f7b58057c90",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-78fc7-oute-and-all-its-old-clocks-chromium/foreign-owner-no-borrowed-travel-clock.png",
+      "sha256": "b22f34736b0a3862d4a433a32d7881c32bb312f8873c04033075164ce3f1ff5e",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-b5db2-c-arrival-changes-the-world-chromium/native-normal-in-transit-current-world-unchanged.png",
+      "sha256": "b3272506ba4fd14d28d6d848b471b858d194a587d88984b6fcb44e04e3f261cb",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-b9ce6-x-second-atomic-destination-chromium/terrace-painted-halfway-source-world.png",
+      "sha256": "6b001a055b817b9f8a64793885ff7494dd91c36f84c9fa4791d546e722dc52f8",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-cf450-out-executing-another-route-chromium/cave-departure-halfway.png",
+      "sha256": "a6bd39150d0d170faa5c2dae38bca890cfe93c4c8f75849c7040dee92cd311a0",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-cf450-out-executing-another-route-chromium/original-map-return-keeps-current-period.png",
+      "sha256": "d78917efe631ef5bd6a1e3b17d05129e6258bb9dc97602293ca351abb6db35a6",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-e567a-x-second-atomic-destination-chromium/wilderness-painted-halfway-source-world.png",
+      "sha256": "e564cd6e2db86af2d8c5dd4cf7d12bf3393ecf874699097fdeb0ac214e262964",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-e6389-x-second-atomic-destination-chromium/cave-painted-halfway-source-world.png",
+      "sha256": "a93f9d6850f312291fc75d5127f178542a700c832298f877bc14612a6f8b00fa",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-eb96b-vel-retry-saves-one-arrival-chromium/failed-arrival-old-location-and-original-retry.png",
+      "sha256": "fc670140173353f0a35ccb4e1574a22d460cf6d5ac7afa0b31666d26827f7e27",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend06-f02b-travel-passage-eb96b-vel-retry-saves-one-arrival-chromium/native-saving-has-not-arrived.png",
+      "sha256": "62ba3c77bc7a1c34cf01ce8b604a36265e120da5f843a6b6f63522c0fc121798",
+      "directlyViewed": true
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-1a795-with-every-reachable-source-chromium/foundation-material-source-painting.png",
+      "sha256": "0c6393b873050865b8949912be7c67ba8b7453a15353996035cdb502ab463672",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-1a795-with-every-reachable-source-chromium/foundation-material-tray-page-1.png",
+      "sha256": "5115b7c7d010e1d4b538d6b43ec24edffbb513cee4367f76c61857966592da98",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-1a795-with-every-reachable-source-chromium/foundation-material-tray-page-2.png",
+      "sha256": "712fbbe54e69a39cd3035d7ca8622e8e433249336e33b83bc8a89a35e7138f2d",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-1a795-with-every-reachable-source-chromium/foundation-purchase-alternative.png",
+      "sha256": "28da3a0374c98c7ec8be94445926381e428aceb32a671c5599c2665685d17624",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-40758-put-becomes-an-owned-target-chromium/actual-saved-pill-owned-no-repeat-materials.png",
+      "sha256": "dc061bca1d98ee4fae5b04129f55d663d52053422ebe224cd53582eb4c95b16c",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-40758-put-becomes-an-owned-target-chromium/complete-ingredients-original-arrange.png",
+      "sha256": "446948bb0c1f7a015a41fa4989cbd349873195913f52a4ad1f883c22a9df73fc",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-496d7-with-every-reachable-source-chromium/qi-material-source-painting.png",
+      "sha256": "f73d2d584d7cf7cb0de32b9c678d4ae7061b9cbe80053d93db8dcbbc460e1638",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-496d7-with-every-reachable-source-chromium/qi-material-tray-page-1.png",
+      "sha256": "611779f9a1e620b87d78f2fddfe3050397a5d6e8722f6ebf3252ff4bbf59a6a4",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-496d7-with-every-reachable-source-chromium/qi-purchase-alternative.png",
+      "sha256": "be37f4cca3097a7f3a8bf299a13732b82e1093e4d0cf675d375362c0fb226f4c",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-62cce-d-no-pill-decision-readonly-chromium/mortal-original-no-pill-surface.png",
+      "sha256": "b24600261caf533b50dbda8cfe78a62eb4534a9863e8e0ab007d6a4fcbf987ea",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-7b519-etries-the-same-intent-once-chromium/source-before-explicit-travel.png",
+      "sha256": "f73d2d584d7cf7cb0de32b9c678d4ae7061b9cbe80053d93db8dcbbc460e1638",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-81597-source-return-stay-readonly-chromium/partial-owned-herb-still-missing-six.png",
+      "sha256": "a54a6a544db209cc0f0644f8dd1ed5704422dcd589b385964cca6ab87dd448b6",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-81597-source-return-stay-readonly-chromium/partial-source-real-owned-state.png",
+      "sha256": "f04a0ef823c66c6fd052790a05de6e44c1f809fdfcbd118c6a6314c9f168be57",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-a5d1f-ffered-repeated-procurement-chromium/already-owned-pill-return-original-breakthrough.png",
+      "sha256": "a61c07a66c198a1c695fcf52f4be9f30138f62242ebdc4d5ad002eba380b88f2",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-bfc4f-with-every-reachable-source-chromium/spirit-material-source-painting.png",
+      "sha256": "d84a9e512801a530a85fdf4822034f98b4d40c9d3fdd23dc2f69d8f46acea8dd",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-bfc4f-with-every-reachable-source-chromium/spirit-material-tray-page-1.png",
+      "sha256": "5cd3c4aa89c2b1dc41e7151f8101ce9412fac0f156319b6b0d63dce60bca1be8",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-bfc4f-with-every-reachable-source-chromium/spirit-purchase-alternative.png",
+      "sha256": "ce726408e6edd4a156b76a8608c6b7c3f221a8b5ee6c7558dc7f0206adfb6308",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-ce674-with-every-reachable-source-chromium/nascent-material-source-painting.png",
+      "sha256": "d8492b666ee63ef4d11c09dfdaf2387f81f3947e60c47b7a3e8fb6f5fc828116",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-ce674-with-every-reachable-source-chromium/nascent-material-tray-page-1.png",
+      "sha256": "32d9be53fe10c852923475964b086b3a01298ee05ed0b9dcd569ab4c2c3717a7",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-ce674-with-every-reachable-source-chromium/nascent-purchase-alternative.png",
+      "sha256": "6b99ea17cc3172f31981f88793bfe57a99310ea4dd7683bdfc4ed0853e889575",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-f3bd9-with-every-reachable-source-chromium/golden-material-source-painting.png",
+      "sha256": "36ec9556121a764cf027f6c06f9dd96f9f6fd6ad0b17d90ed6889507a2946136",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-f3bd9-with-every-reachable-source-chromium/golden-material-tray-page-1.png",
+      "sha256": "b10ab9d1ff7dba1a870139c08214b900fe4c62e40a1f7fda64e842c240c5bdf3",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-f3bd9-with-every-reachable-source-chromium/golden-material-tray-page-2.png",
+      "sha256": "dfd5dd5b1ac7e7d3486d3630e2e8bcce16c7f6a9c9bff9a14abd1afacf46c840",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/cend07-f04-preparation-ben-f3bd9-with-every-reachable-source-chromium/golden-purchase-alternative.png",
+      "sha256": "e30c864e7ee8196f31c95cba01cde0131c5eca782f565bc1275af694f34b2f3b",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/check-u8-R4-and-B-read-sur-ad166-nspection-into-a-Game-write-chromium/check-u8-life-reading.png",
+      "sha256": "fe2c8ba671585c25880faa1b2e5f7936b90c8d6235f91298f286e3d60adc5052",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/check-u8-R4-and-B-read-sur-ad166-nspection-into-a-Game-write-chromium/check-u8-production-reading.png",
+      "sha256": "fd22c47146313731ccaa414cd7655df08afae7cab5e6aa6c1a8e71c5ebe42907",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/alchemy-restored-history-first.png",
+      "sha256": "5607ccc66ad215ae70cf7d098a67cc3265e4aceaaf12f06c6d8335b8f89a77ed",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/check-u8-five-saved-alchem-c338b-y-receipt-page-after-reload-chromium/alchemy-restored-history-last.png",
+      "sha256": "8b7df3fa806eed7633074d0f9f56bca97dfb22b4486606836ec316d251132f73",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/check-u8-five-saved-cultiv-09bd1-d-without-replaying-rewards-chromium/cultivation-restored-history-first.png",
+      "sha256": "b4653fa3a42e1e34e9774675df89845cfd0641be0ad0aa3d4521dbc710b19a13",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/check-u8-five-saved-cultiv-09bd1-d-without-replaying-rewards-chromium/cultivation-restored-history-last.png",
+      "sha256": "5a59145d69965ec0c0613949cd05a8615da4ea144a6fcdb33d364701326518fb",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/check-u8-five-saved-purcha-805dc-nventory-gains-after-reload-chromium/purchase-restored-history-first.png",
+      "sha256": "fdcd01f3d107fd94348f110d9068bfbfd13c6175432195b57a6653c95f6e8c5e",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/check-u8-five-saved-purcha-805dc-nventory-gains-after-reload-chromium/purchase-restored-history-last.png",
+      "sha256": "c6af06e2d947ae04d684fc297b3233453a1066806779a991d56b75bea5ad6e11",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/check-u8-paused-cultivatio-96b51-s-the-exact-resume-boundary-chromium/paused-history.png",
+      "sha256": "3e2d267b275de7c3ec131d48900ba39aacc2ee84d3412b1a7541ade12ec98a90",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-a-dangerous-2f65a-eachable-with-its-real-cost-chromium/danger-paused.png",
+      "sha256": "02db722b4cc424d0a914fe63e932e8a4ca28a2c45a15542a44630c02320b35de",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-a-trip-sele-26f20-nds-before-one-free-arrival-chromium/travel-arrived.png",
+      "sha256": "952345a06c4ce4c4cf9b4a061c924fc8b7b35f88bb5c9fdc57cc923a57bdf32c",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-a-trip-sele-26f20-nds-before-one-free-arrival-chromium/travel-selection.png",
+      "sha256": "e2aca9759d83ddf149c7d9183b3f636005679077b346166ffeb938dff706d041",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-an-existing-21759--awaiting-new-authorization-chromium/trial-current-gate-plan.png",
+      "sha256": "0c2e91b0f9000936f8664f5c8ec3bd07aef4629ba9f5fb41910dd45b6c1783c0",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-an-existing-21759--awaiting-new-authorization-chromium/trial-gate-boundary.png",
+      "sha256": "37e7fd0b4b27cd0ed949df79a0c77d0f69d7943ccf9e616c2e3c0e7a10e09bdd",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-inspecting--d949b-limit-without-changing-Game-chromium/battle-original-arrangement.png",
+      "sha256": "197e42b5ddd00f3c5631221dbb78a70a50e6afe6033b3b33545fccf98ee14b2e",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-manual-take-f086b-retreat-alone-pays-eight-HP-chromium/manual-takeover.png",
+      "sha256": "67e706f3472a678fab5950550a6ae0fbaf46bb2e1b782db3d40de4b595fcc89f",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-manual-take-f086b-retreat-alone-pays-eight-HP-chromium/retreat-result.png",
+      "sha256": "d53211ce5e9a7f5fc8b906593e7d09aeb42f613c8e06e309ba8fa14cbb0ee3cb",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-one-real-en-ebf0a-ts-a-separate-three-seconds-chromium/battle-real-turn-paused.png",
+      "sha256": "5b142e03e062bd446a4117c3ed12e37084719a1b865a8b48170601fed46ce971",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-reading-a-l-384dc-xt-authorized-turn-is-saved-chromium/history-reading-during-turn.png",
+      "sha256": "3d07f8de07432840403528ebcb8811971f24f8efb22ffe0c12bb82597037fc23",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-battle.png",
+      "sha256": "3a92b1696117213783b0329bf5d61a772b60066ce4478ecb212e099b41200d69",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-medicine.png",
+      "sha256": "1cc5c6efa04e97df750a2579a07c7b4fa2ae4eedbdd57cd2ddb6ccf840df5681",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-priority.png",
+      "sha256": "9262cb857e7cabf9669ed4bd03fdd042e91fa62364d70dfab06c5c3ec537a79c",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-receipts.png",
+      "sha256": "560df92548c8458471c5dc820d8b55a310d1acde74031a887a77d36ff42527d5",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-sword-finit-05ed4-ceipts-remain-after-refresh-chromium/sword-risk.png",
+      "sha256": "23fee6e4b8687f6ce7f7bb058fc235b722f5fd60d6c39c48535cd41ffc1dec44",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-battle.png",
+      "sha256": "4fff07620c4099ccd5e3dd38d042cbc9c63807e25833d188b2fcf9da7b4b1309",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-medicine.png",
+      "sha256": "2db004b1af2fa65f2c2a0a573ac79d956d111a60388d2c1a86b66d184b3df51f",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-priority.png",
+      "sha256": "c83dd489b27ee49b19ea9766cf1ad7939017ea19dec4530f4b3314f2b608e627",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-receipts.png",
+      "sha256": "47269a16a8461fa272da3a00b667426e3ad7e2ac7e7addae2af90e0f4368b546",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-adventure-talisman-fi-b2ba9-ceipts-remain-after-refresh-chromium/talisman-risk.png",
+      "sha256": "ff6afb8ad64db01bd6fb6c97326fa38ca798ec42dcfe52b9ebcd1a6b6383eb72",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-integration-a-normal--a0696-med-foundation-breakthrough-chromium/normal-idle-foundation.png",
+      "sha256": "04b9d43252f79c5748f30f87e4a55a94f65468dc5fb283da9092a14e4354f5e3",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-integration-a-product-8b3b1-ginal-furnace-authorization-chromium/production-draft-after-save.png",
+      "sha256": "45a4fb91c8595f9c5200d81c032ededde9ba26c05f0a832f98d46d69f6ea7527",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-integration-a-source--75c75-g-the-running-authorization-chromium/source-draft-after-save.png",
+      "sha256": "c01a2bb2a48855ab3cce4decd7a7a32dc8a17f53fc2f38b860020d2bbb20e007",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-integration-natural-c-7c61f-d-refreshing-an-arrangement-chromium/natural-saved-limits.png",
+      "sha256": "c4a93b1cca57f5b941605b8999dacf95b5d6b600684b62315ccdd919c959ec21",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-integration-owned-rel-a3f96--viewing-never-changes-Game-chromium/equip-gate-battle.png",
+      "sha256": "40d94bb7c51918508dd18031e5004d545653567c714f59c2efabf26256f54da7",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-integration-owned-rel-ef2fc--viewing-never-changes-Game-chromium/equip-gate-event.png",
+      "sha256": "c953235fc489015eb6656345eb8e4ede063136b6b842de8caba417bca933f037",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/idle-integration-saved-ass-43015-me-the-real-new-arrangement-chromium/saved-cultivation.png",
+      "sha256": "48da42206cf2315cc727c9cec7900273ecf6ef37257223fdd08bf61f5ef4a2c7",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-a-confirmed-repla-cc570-e-alchemy-draft-or-activity-chromium/character-on-demand.png",
+      "sha256": "33d888f7e9708866efe68bee79eaffc5032bf8cd3f2cff1916bd636d4842c28f",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium/configuration-feedback-clear.png",
+      "sha256": "0b4ec602b61933df93884b67ea7afaba43ec60b9d3eeb2c48b816e110171eff3",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-a-saved-configura-3e1fa-f-the-HUD-and-page-controls-chromium/persistent-equipment-result.png",
+      "sha256": "2f5226a1547c5f4a01a6020363b756e0685e15d5a40c6493342a550602d268fb",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-alchemy-opens-fin-156cd--goal-with-its-draft-intact-chromium/alchemy-focused-decision.png",
+      "sha256": "876e41d2382c3da0af2253c462a3ebec26cec3de6fe61b9a97c99bb0d32c3025",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium/training-assisted-layout.png",
+      "sha256": "83e0aafea4f06a8483b175578a01e4439d169c023173040fa7a6531099745930",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-expanded-cultivat-d1c88-above-confirmation-controls-chromium/training-natural-layout.png",
+      "sha256": "29b5f4d94b240ff067620023b46cd7fa96767e587e2342e57f336497e228e621",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/cross-page-activity.png",
+      "sha256": "a8854f6b102704eeb2c385664f3a3750e7c3c2da6080aabebb39c415e7016039",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/failed-cycle-controls.png",
+      "sha256": "8603830c929416d4244926beaced022ee4a47444f5387073f13c25ff59aabec2",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/failed-four-materials.png",
+      "sha256": "80f34ab615de29b74a41af6e149779e45fcc1d7b10eb314b4401f7403e47a4af",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-one-activity-rail-be970--pause-and-failure-controls-chromium/paused-activity.png",
+      "sha256": "b79bb50bcbfc1b3bbfb63da0531ca522a964dd4e77aa745c8dfa9cdcb9a6e251",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-forge.png",
+      "sha256": "08ed2dee01567f5f917b1b53340f93fdf8d71e59b767707ae1653135108aa737",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-life.png",
+      "sha256": "c65da97af6d66a7f5888cc9458d1cc0a1c00a29c7850e5ef6bdc9946015489db",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-relics.png",
+      "sha256": "acb73656fb9139a00ace92c85caee09f72d30791c49972b5ddb29133f28710f7",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-skills.png",
+      "sha256": "714b5a8a47b22fa9f29258e58d3314f66120e4ae3e5dca52337288c25bd62542",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-1.png",
+      "sha256": "2ceab1d0fbfb6782fb9a7c6807589914ca5ff39877ebd1e2bb93db52e1cb506a",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-2.png",
+      "sha256": "dcc2e3ccd2e0ae6189d6c8d95a1cfeb705ec010093893d2cdccad8a0ee663a23",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-3.png",
+      "sha256": "299b00e10633ddede5371df8c7306af4a1df4545f2d1c10235a81caddb0f71e3",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/real-compact-stage.png",
+      "sha256": "18946b1b36368a3d18553d6be81bab3bb54106ba8253fcfb070321a6d25993e3",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-a-confirmed-trip--64c0b-limits-for-the-new-location-chromium/source-new-location-defaults.png",
+      "sha256": "f774730079b7ec7b98fc1f0e2de6368bd3bdb8e24ca3642749f64254157a614e",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-a-missing-enemy-p-b9cfe--a-saved-manual-turn-usable-chromium/battle-missing-paint.png",
+      "sha256": "5de7a0fde73f5a10ed4f144e91290e353caadd93ed8808e6523271b701eeffa4",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-a-real-trip-to-a--aaedc-t-without-granting-anything-chromium/no-source-after-actual-trip.png",
+      "sha256": "fbfdea2aacedf63e20401cb9c47f01a166b4361d6c6ca2eed45242827be03769",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounter-limits-secret.png",
+      "sha256": "7217baff253e9527d9e57a6d67bee3d1ef9f884c4ab1b34d3215d1ccf7651438",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounter-limits-terrace.png",
+      "sha256": "c737e0da128c0cfdc4cec31ed0860362f8584b277916e5e97c456b01898e024a",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounter-limits-wilderness.png",
+      "sha256": "53f00dac276a268cd76667b520c715b8c2556b18b541934dfbfca2fa8a63fa88",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounters-secret.png",
+      "sha256": "034dbb36d68579e7b9da1242c75a68fdadb78047d6b5464f17bc201419b46c8b",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounters-terrace.png",
+      "sha256": "ce20e6dc060d7c48cfc668e07543f315404e141bbea6e17578ee3c65be88bf5b",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/encounters-wilderness.png",
+      "sha256": "bb2bbe6d6613a9efdcd8cb3ff1bf8fd1938ebecd8bb576763cb8816da116f47d",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-cave.png",
+      "sha256": "e4e4cf0c101336f2692ea4cbd2fa4727d059f225da30407b34dd108beca60759",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-market.png",
+      "sha256": "1efc0def02f68aab26fa945e4e6c2b8369b80e788c0ab747df1ccd7926659ca0",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-secret.png",
+      "sha256": "9cb2466525c5421fd86d215efba389e58f80254975a6746a4bfd071db23a928b",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-sect.png",
+      "sha256": "b51e42dd902e6bc5975d8c93e4a309344147b23eedcba85d59d53c9dc5f00697",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-terrace.png",
+      "sha256": "11fd66251f5bf0c1035ea5b5bef309767e53a412be01d087070688d61867b8cb",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-all-sixteen-resou-1c41f-across-their-real-locations-chromium/resources-wilderness.png",
+      "sha256": "853b38e807ea0a9bfdb9e4624136c63db474720d1f5d9dd64fa55f582d4603e4",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-destination-previ-bc296-ble-without-implicit-travel-chromium/destination-preview.png",
+      "sha256": "eb788f26d932e316aa9e5a8b4ab16b5ff4813a71f97dcd20e8c6b62839b8658c",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-inspecting-a-save-f7db5-new-life-without-navigation-chromium/new-life-default-source-plan.png",
+      "sha256": "9d3415a3fa2eaa677e3b0c57874b37257f0c60d96eb367929deec5280a0f28fd",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-refresh-shows-the-cf57c-until-explicit-continuation-chromium/source-paused-real-stock.png",
+      "sha256": "a0b4685fb9ba57f26266f58c78496619c2f1c1c1998cff8dd7223a66e98b4683",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-reselecting-the-c-141e4-in-the-full-encounter-draft-chromium/encounter-preserved-draft.png",
+      "sha256": "2620f66fec34d8036dac5c670eac1d687ab304b44d4e255f271ce29df9679012",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-resource-points-e-352f3-ect-and-category-inspection-chromium/resource-saved-target.png",
+      "sha256": "487d0f23c8228f4d057120e78ebca213d940c50701c9e087ba92877372fa1a89",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-resource-points-e-352f3-ect-and-category-inspection-chromium/resource-stage.png",
+      "sha256": "96e062d5661e128f1fc913e8b69664535f01b0bbc82b9c152cf4139f54181eba",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-resource-points-e-352f3-ect-and-category-inspection-chromium/source-target-and-budget.png",
+      "sha256": "d9809451759725374e3f0145f1a36d982eaca504e52588854d469c2188616248",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-the-battle-scene--8ff94-resolve-through-saved-turns-chromium/battle-manual.png",
+      "sha256": "cade34ada45b4cafb99afeca1640c111e0ec56844b8c6072b165d2a072c092b5",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-the-battle-scene--8ff94-resolve-through-saved-turns-chromium/battle-paused.png",
+      "sha256": "e07a840c4d68b60f034ecd777786fccab9db34bfac90ab8c56a4b0aa15a5366a",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-the-battle-scene--8ff94-resolve-through-saved-turns-chromium/battle-stage-intent.png",
+      "sha256": "c4d10562cc6073ecb25e06bc5113a8fccfaa9bc4be95ba390e76f2f48332a149",
+      "directlyViewed": false
+    },
+    {
+      "phase": "original-ui",
+      "raw": "artifacts/goal-4/cend07-f03/final/ui-results/stage-r2-the-battle-scene--8ff94-resolve-through-saved-turns-chromium/battle-strategy.png",
+      "sha256": "498666a17d1d83b9deeb57eaac21cb3903aabb3535e4420b7502024e95bc4c46",
+      "directlyViewed": false
+    },
+    {
+      "phase": "current-package",
+      "raw": "artifacts/goal-4/cend07-f03/consumer/package-results/cend06-f02b-travel-passage-1261a-nd-original-readonly-review-chromium/failed-painting-static-readable-route.png",
+      "sha256": "88f8c492ee4de2f5771c28ac8c2f427070dd2b55e66d7c8927a4892aca8b9003",
+      "directlyViewed": false
+    },
+    {
+      "phase": "current-package",
+      "raw": "artifacts/goal-4/cend07-f03/consumer/package-results/cend06-f02b-travel-passage-b5db2-c-arrival-changes-the-world-chromium/native-normal-in-transit-current-world-unchanged.png",
+      "sha256": "3b2bfabc1fb6faa0e33a14dcabcb9ba90a2b8e79a99e9bb6d7295b9dd42897ad",
+      "directlyViewed": true
+    },
+    {
+      "phase": "current-package",
+      "raw": "artifacts/goal-4/cend07-f03/consumer/package-results/cend06-f02b-travel-passage-e6389-x-second-atomic-destination-chromium/cave-painted-halfway-source-world.png",
+      "sha256": "8c549627e1b07398215162bf8e9625c52eae1cf84f2ee98fc4114176a3ce1688",
+      "directlyViewed": true
+    }
+  ],
+  "earlyVisualsSeparate": {
+    "initial": 4,
+    "finalDiagnostic": 2
+  },
+  "overallArtAccepted": false
+}

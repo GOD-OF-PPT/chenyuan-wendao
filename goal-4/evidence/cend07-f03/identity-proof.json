@@ -1,0 +1,16 @@
+{
+  "runtime": "25d70bc65d24c83e9e2d85db48a291993ee1e4033f791c57d8c2932d994455bf",
+  "runtimeFiles": 343,
+  "payloadFiles": 112,
+  "payloadBytes": 11253601,
+  "uiProducer": "596ab730915ca9af0406932696aa786181cf88a2",
+  "currentRulesResourcesBuildPackageProducer": "900f16cf24323fadc83c6f42415df5e33fd6518f",
+  "currentRootRuntimeExact": true,
+  "consumerRebuildPayloadExact": true,
+  "archiveAndUnpackedExact": true,
+  "archiveSha256": "84eb5e1c1044428b8f6d05114e5b5cba6af31de2a3a96ee109e1fbb9cef0d920",
+  "protected13Exact": true,
+  "v03AndOriginalInputsPreserved": true,
+  "userSaveModified": false,
+  "formalCandidate": false
+}

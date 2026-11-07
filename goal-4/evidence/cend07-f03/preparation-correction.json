@@ -1,0 +1,8 @@
+{
+  "initialHead": "596ab730915ca9af0406932696aa786181cf88a2",
+  "reason": "Worktree creation was requested before commit process terminal; no install/build/tests consumed this source.",
+  "commitAndWorktreeHandlesBothTerminal": true,
+  "cleanAndNoUntrackedBeforeSwitch": true,
+  "correctedExplicitDetachedHead": "900f16cf24323fadc83c6f42415df5e33fd6518f",
+  "statusAfterSwitch": ""
+}

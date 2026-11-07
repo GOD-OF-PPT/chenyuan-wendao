@@ -1,0 +1,517 @@
+{
+  "format": 1,
+  "uiProducer": {
+    "head": "596ab730915ca9af0406932696aa786181cf88a2",
+    "source": "596ab730915ca9af0406932696aa786181cf88a2",
+    "tree": "dcac600a9dfb7fa5fd383940957d19e853d04f3d",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "10.9.0",
+    "npmOnPath": "10.9.0"
+  },
+  "currentConsumer": {
+    "head": "900f16cf24323fadc83c6f42415df5e33fd6518f",
+    "source": "900f16cf24323fadc83c6f42415df5e33fd6518f",
+    "tree": "72a5dd8ca2658e8bb25fa06b4c62bf771e5ebf05",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "runtime": "25d70bc65d24c83e9e2d85db48a291993ee1e4033f791c57d8c2932d994455bf",
+  "runtimeFiles": 343,
+  "currentCoverage": 76,
+  "wholeFiles": [
+    "web/e2e/adventure-objects.spec.ts",
+    "web/e2e/cend06-f02b-travel-passage.spec.ts",
+    "web/e2e/cend07-f04-preparation-bench.spec.ts",
+    "web/e2e/check-u8.spec.ts",
+    "web/e2e/idle-adventure.spec.ts",
+    "web/e2e/idle-integration.spec.ts",
+    "web/e2e/stage-r1.spec.ts",
+    "web/e2e/stage-r2.spec.ts"
+  ],
+  "closureFiles": 57,
+  "closureHashes": {
+    "scripts/economy/idle-scenarios.mjs": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407",
+    "src/demo.ts": "927e40ac1d792afd0e2f28c2cf7bdd55509af07713ef3db116a7a5019ac9307e",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/adventure.ts": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015",
+    "src/full/ascension.ts": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+    "src/full/configuration.ts": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+    "src/full/content.ts": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+    "src/full/contracts.ts": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+    "src/full/costs.ts": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+    "src/full/economy-ledger.ts": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/errors.ts": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+    "src/full/events.ts": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+    "src/full/goals.ts": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+    "src/full/life-record.ts": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+    "src/full/mechanisms.ts": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+    "src/full/milestones.ts": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+    "src/full/preparation.ts": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+    "src/full/progression.ts": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+    "src/full/queries.ts": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+    "src/full/receipts.ts": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+    "src/full/story-context.ts": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+    "src/full/trial-rules.ts": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+    "src/full/types.ts": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+    "src/full/versions.ts": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+    "tests/full-route.mjs": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321",
+    "web/e2e/adventure-objects.spec.ts": "2c1a7cb9929d80f813c82efce1bb8106099e74ab525c69c27a25a7218ac2106f",
+    "web/e2e/cend06-f02b-travel-passage.spec.ts": "774a3655fd79911296f242384a786c9290dd4f271e6a47b23d5da5f2774ce1a1",
+    "web/e2e/cend07-f04-preparation-bench.spec.ts": "0bcb4a2a06b02cebf19a0bda9dfa4e6c5e4c853021ac7c5f0eeb341d8f2a884b",
+    "web/e2e/check-u8.spec.ts": "822230ddf4273de5ff45e84de6dc235af52cf75df2c7e2e05306fe53e312dcfc",
+    "web/e2e/game-confirmation-support.ts": "be4bbdeaebab740befaf52e37582098c6d9d87030c71d2cabbb756238017f3fd",
+    "web/e2e/idle-adventure.spec.ts": "0e0c3041c60c3e57e03316e1435180d671866928f99f90a287ef71e7225a8ef7",
+    "web/e2e/idle-integration.spec.ts": "44dbe436208686c3eaf9c88f071d761c327531a50e6f0c78a23c46a281ec337f",
+    "web/e2e/idle-recovery-ui-support.ts": "2b2e9df03cf97cf582a03eb23d2bc2d3eb078a4cffc9c953f54972c047c6d04f",
+    "web/e2e/idle-route-support.ts": "5113456696aac00759ec7d007a52e0493e8545a39f2d6a14f0de2ce79106615d",
+    "web/e2e/png-capture.ts": "f50dc121db18150b8c4c4b48cc0fefc897b4d1e4edffc662c119c1c366cad85b",
+    "web/e2e/stage-r1.spec.ts": "8e656081aa27886456f2f186a3438dba1915b0eba87e5f1ad24cc0ea757753c4",
+    "web/e2e/stage-r2.spec.ts": "8e26621394e140238a614597efbe20eb1698792d8784b87267bf6ab81be655a3",
+    "web/e2e/stage-support.ts": "f31385408a68974e51b39ba5bdf08d76ece145ecd4a540c200419ffc6e5a6bb1",
+    "web/e2e/support.ts": "674387c658ed43bf56ceedb80b3df3baf63243e77ece9eeed87ec7e9396f8682",
+    "web/src/action-timing.ts": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897",
+    "web/src/activity-clock.ts": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "web/src/activity-view.ts": "166671b5bc26461fcea557d41c12fd1ed89e900458702f298cb6507e92866b05",
+    "web/src/adventure-view.ts": "3362f2731f7597a99810c263af143eff6468d87c2dc4f89f185c0add4a46d354",
+    "web/src/configuration-persistence.ts": "a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "web/src/local-events.ts": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150",
+    "web/src/local-experience.ts": "65614c37cd5931b275208f78aa9bf06f40768ff402a908fb2d2cf28d16e3b9ed",
+    "web/src/milestone-view.ts": "af1a2045781e806806140092349b2ecde690524436b254a0c1f326a94e108efd",
+    "web/src/navigation.ts": "f97fb271e8928fe48d981b4bcbeba7d655ed2a1b9036693a202a8cc433b558fc",
+    "web/src/play-flow.ts": "ec31aeb151728b37a6de4f65f17df9020fed7407194cd02df1330a0e69ad0e76",
+    "web/src/preparation-view.ts": "d46825242a9912510bbec9d726e2bef22f5621e5d84717c0cbd3be70916aa38f",
+    "web/src/presentation.ts": "afb0da3d1dbbb9c58095a1ef97bb04e1411c088c06ba2941685704bbc717eca0",
+    "web/src/session.ts": "76c6968b53c1ca990c4ee4ac4a921e549585338c04b10e31636ed9821f5263c0",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/story-pages.ts": "cdeff2da61fc28199b529c3394c3e881570eb0fe0bcee69770af871e8a104c9c"
+  },
+  "nonLiteral": [],
+  "dependencyProof": [
+    {
+      "directory": "node_modules",
+      "files": 133,
+      "allThreeRootsExact": true
+    },
+    {
+      "directory": "web/node_modules",
+      "files": 1848,
+      "allThreeRootsExact": true
+    }
+  ],
+  "payloadFiles": 112,
+  "payloadBytes": 11253601,
+  "allRuntimeClosureDependenciesAndPayloadExact": true,
+  "originalUIReportSha256": "2a15a7cd5f51c21095c81d0dfab4e8b173f2d1b7f18593e1a70f391ecc0fe0f8",
+  "original76SingleRunAllGreen": true,
+  "currentConsumer76Rerun": false,
+  "reason": "Only art/tools/test_inventory.py fixture repair and goal documentation differ; all 76 full-file code closures and actual343 runtime/1981 dependency/112 payload files exact.",
+  "declarations": [
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "all six destinations are map objects and every sixteen source and six ordinary enemy remains an honest readonly choice",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "resource objects keep complete target and lifetime budgets as a draft through reselect, other category and source details",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "journey progress cannot show a saved destination before 5999 plus one milliseconds and the atomic transaction",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "source progress is real and saved products enter the bag once per full cycle until its finite target",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "pause, hidden scene, refresh and old receipt pages never create a new resource reward effect",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "a quota failure freezes the resource object and same-command retry grants exactly one recorded bag arrival",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "sword battle has opposed real actors and all seven manual moves with costs before one saved three-second turn",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "talisman battle has opposed real actors and all seven manual moves with costs before one saved three-second turn",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "missing source and journey paintings retain native resource and destination objects plus legal saved work",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "real six-second journey and thirty-second gathering preserve game state until their actual deadlines",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "one real three-second manual guard keeps the live battle unchanged until it is actually saved",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "rejected acceptance in all four adventure entrances blocks new intent but keeps readonly inspection and the original start receipt retry",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "F02B a normal new life returns to the cave through one real six-second visible passage and only its atomic arrival changes the world",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "F02B cave departure and original map review keep one accepted destination and a continuous half-period without executing another route",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "F02B native START and held TICK quotas keep the old world until the exact original travel retry saves one arrival",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "F02B paused refreshed travel keeps the original single route and no offline progress before a full explicit resumed six seconds",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "F02B foreign takeover keeps the exact destination and an explicit new life clears a later pending route and all its old clocks",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 wilderness uses the painted unarmed traveller and the original six-second atomic destination",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 cave uses the painted unarmed traveller and the original six-second atomic destination",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 sect uses the painted unarmed traveller and the original six-second atomic destination",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 market uses the painted unarmed traveller and the original six-second atomic destination",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 secret uses the painted unarmed traveller and the original six-second atomic destination",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 terrace uses the painted unarmed traveller and the original six-second atomic destination",
+      "project": "chromium"
+    },
+    {
+      "file": "cend06-f02b-travel-passage.spec.ts",
+      "title": "CEND07-F03 a failed travel painting keeps the static fallback complete route costs clock and original readonly review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P1 qi preparation uses its actual target painting and complete readonly material tray with every reachable source",
+      "project": "chromium"
+    },
+    {
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P2 foundation preparation uses its actual target painting and complete readonly material tray with every reachable source",
+      "project": "chromium"
+    },
+    {
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P3 golden preparation uses its actual target painting and complete readonly material tray with every reachable source",
+      "project": "chromium"
+    },
+    {
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P4 nascent preparation uses its actual target painting and complete readonly material tray with every reachable source",
+      "project": "chromium"
+    },
+    {
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P5 spirit preparation uses its actual target painting and complete readonly material tray with every reachable source",
+      "project": "chromium"
+    },
+    {
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P6 mortal preparation keeps its original default object and no-pill decision readonly",
+      "project": "chromium"
+    },
+    {
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P7 partially gathered material is owned while its real remaining gap and source return stay readonly",
+      "project": "chromium"
+    },
+    {
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P8 complete ingredients lead to the original thirty-second alchemy and only saved output becomes an owned target",
+      "project": "chromium"
+    },
+    {
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P9 an already held breakthrough pill is not represented as missing or offered repeated procurement",
+      "project": "chromium"
+    },
+    {
+      "file": "cend07-f04-preparation-bench.spec.ts",
+      "title": "CEND07-F04-P10 a material source keeps the original six-second travel and native failed tick retries the same intent once",
+      "project": "chromium"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "R4 and B read surfaces keep one running activity and never turn inspection into a Game write",
+      "project": "chromium"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved cultivation cycles retain every complete receipt after reload without replaying rewards",
+      "project": "chromium"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved alchemy cycles retain material costs and net pills on every receipt page after reload",
+      "project": "chromium"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "five saved purchase cycles retain positive currency costs and exact inventory gains after reload",
+      "project": "chromium"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "another page names its takeover and only its new full cycle can award once",
+      "project": "chromium"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "paused cultivation exposes saved cycles after reload and history reading preserves the exact resume boundary",
+      "project": "chromium"
+    },
+    {
+      "file": "check-u8.spec.ts",
+      "title": "the journal returns to life reading after an old milestone is invalidated by a later explicit configuration",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "a trip selects without writing then really counts six seconds before one free arrival",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "one real encounter waits thirty seconds and its first battle command waits a separate three seconds",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "sword finite strategy plays formal separate turns and its complete receipts remain after refresh",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "talisman finite strategy plays formal separate turns and its complete receipts remain after refresh",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "manual takeover cancels the pending turn and an explicit retreat alone pays eight HP",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "travel context never steals a later navigation and refreshing a trip grants no offline arrival",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "an existing trial can automate only its present gate and leaves the next gate awaiting new authorization",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "inspecting the original paused battle arrangement restores every selected limit without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "reading a later receipt page stays on that page while the next authorized turn is saved",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "an external progress notification cancels the pending trip viewing intention immediately",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "a dangerous turn pauses with the battle intact and leaves retreat reachable with its real cost",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-adventure.spec.ts",
+      "title": "non-pointer pause while a trip is saving cancels its viewing intention even if that arrival commits",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "saved assisted cultivation is inspected exactly and newly confirmed edits become the real new arrangement",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a production cycle and pause keep an inspected unsubmitted draft separate from the original furnace authorization",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a source cycle and pause keep target and limits in the unsubmitted draft without changing the running authorization",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "owned relic equip shows its formal gate during battle and viewing never changes Game",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "owned relic equip shows its formal gate during event and viewing never changes Game",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "natural cultivation retains a nondefault cap and reserve when inspecting and refreshing an arrangement",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-integration.spec.ts",
+      "title": "a normal new life connects cultivation material gathering furnace planning and a separately confirmed foundation breakthrough",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "resource points expose a finite summary and retain an edited target through same-object and category inspection",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "destination preview protects the scene and all six places remain reachable without implicit travel",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "the battle scene gives enemy intent room while original finite strategy and manual actions still resolve through saved turns",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "a real trip to a location without gathering removes the previous resource object without granting anything",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "refresh shows the saved source arrangement without a working effect until explicit continuation",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "all sixteen resource points and six ordinary enemies remain selectable across their real locations",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "a missing enemy painting leaves real intent and a saved manual turn usable",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "inspecting a saved source plan cannot carry its limits into an imported new life without navigation",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "a confirmed trip rebuilds all source limits for the new location",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r2.spec.ts",
+      "title": "reselecting the current opponent and inspecting another category retain the full encounter draft",
+      "project": "chromium"
+    }
+  ],
+  "producerTerminal": {
+    "exit": 0,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 5329,
+    "runtime": "25d70bc65d24c83e9e2d85db48a291993ee1e4033f791c57d8c2932d994455bf",
+    "stats": {
+      "startTime": "2026-11-07T16:08:17.418Z",
+      "duration": 488212.892,
+      "expected": 76,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 76,
+    "retried": [],
+    "reportSha256": "2a15a7cd5f51c21095c81d0dfab4e8b173f2d1b7f18593e1a70f391ecc0fe0f8"
+  }
+}

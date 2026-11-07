@@ -1,0 +1,35 @@
+{
+  "scope": {
+    "browser": "chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "fontScale": 1
+  },
+  "files": [
+    "cend06-f02b-travel-passage.spec.ts",
+    "idle-adventure.spec.ts",
+    "adventure-objects.spec.ts",
+    "idle-integration.spec.ts",
+    "stage-r2.spec.ts",
+    "check-u8.spec.ts",
+    "stage-r1.spec.ts",
+    "cend07-f04-preparation-bench.spec.ts"
+  ],
+  "wholeMixedCasesDeferredBeforeExecution": [
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "system reduced effects retain real source progress and static committed results",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "preference reduced effects retain real source progress and static committed results",
+      "project": "chromium"
+    }
+  ],
+  "assertionsPreserved": true,
+  "declaredSelected": 76,
+  "compatibilityEnvironmentPerformance": "paused"
+}
