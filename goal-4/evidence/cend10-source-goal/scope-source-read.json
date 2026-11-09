@@ -1,0 +1,32 @@
+{
+  "files": 17,
+  "possiblePreferencesGeometryDeclarations": [
+    {
+      "file": "source-actors.spec.ts",
+      "line": 32,
+      "code": " listen(page);if(virtual)await useJourneyClock(page);await page.goto('/');await expect(page.getByLabel('导入已有存档',{exact:true})).toBeEnabled();await expect(page.locator('.app-shell')).toHaveAttribute('data-font-scale','1');const raw=await database(page);"
+    },
+    {
+      "file": "source-actors.spec.ts",
+      "line": 159,
+      "code": "  const isolated=index===0?null:await browser.newContext({baseURL:new URL(page.url()).origin,viewport:{width:1440,height:900},reducedMotion:'no-preference'}),p=isolated?await isolated.newPage():page;"
+    },
+    {
+      "file": "source-actors.spec.ts",
+      "line": 277,
+      "code": "  const isolated=index?await browser.newContext({baseURL:base,viewport:{width:1440,height:900},reducedMotion:'no-preference'}):null,p=isolated?await isolated.newPage():page;listen(p);"
+    },
+    {
+      "file": "source-actors.spec.ts",
+      "line": 278,
+      "code": "  try{await p.emulateMedia({reducedMotion:mode==='system'?'reduce':'no-preference'});await p.route('**/art/v2/sources/herbs-cold-v1.webp',r=>r.fulfill({status:200,contentType:'image/webp',body:'TA08 explicit unavailable natural bitmap'}));const before=await load(p,lawfulSource('herbs'));if(mode==='preference'){await p.getByTestId('game-settings').c"
+    }
+  ],
+  "historicalFullWholeMixedDeferralSources": "check-cend08-09/deferred.json",
+  "deferredBeforeRun": [
+    "ART27-A5 ",
+    "TA08-A12 "
+  ],
+  "fixedDefaultAttributeAssertionsAreNotPreferenceChanges": true,
+  "actualCompatibilityOrEnvironmentPerformanceExecution": false
+}

@@ -1,0 +1,7 @@
+{
+  "path": "web/e2e/check-ui35-source-state.spec.ts",
+  "beforeSHA256": "a608387365c9ef388fd6d1d836695588086eb70ae3a277495edb188ba25e32c1",
+  "afterSHA256": "cb63f6b7954f9deed0ae94fe975fabc87feed54f3a4784775be464f8836bdc14",
+  "completeInverseExact": true,
+  "originalAllTextQuantitiesGameReceiptAndStoreAssertionsPreserved": true
+}

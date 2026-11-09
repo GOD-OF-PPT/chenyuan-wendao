@@ -1,0 +1,377 @@
+{
+  "files": [
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/baseline.config.ts",
+      "sha256": "c05bbee5a934d5a4d73ac4f7f2a34c2154dc6d9e37dc8212da5b7067a5054fa9",
+      "bytes": 574
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/baseline-setup-failed.config.ts.txt",
+      "sha256": "295d3c4676d1caa274fddc887e5c54cfd82883460ed37331686c02cbed2848a8",
+      "bytes": 600
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/baseline-initial-setup.log",
+      "sha256": "bc794952aada82810e1149976caff377b64ddee7534f7419692aee1f5a825ccd",
+      "bytes": 3099
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/baseline-setup-error.log",
+      "sha256": "bc794952aada82810e1149976caff377b64ddee7534f7419692aee1f5a825ccd",
+      "bytes": 3099
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/baseline.log",
+      "sha256": "b270f2fa6de36f49fff5be43b62005d6fbf525c93a7aaa599a6fe2f4bf72d0b8",
+      "bytes": 16986
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/baseline-report.json",
+      "sha256": "037bb06d21c78a27ca55c9bd3c217848ddecc524db7ba1811cb6282e871d0293",
+      "bytes": 307836
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/preliminary-errors.json",
+      "sha256": "9422cc1367080a3d3a208c17085e43ee00ebef98ebb9f0df3b166241dd10370d",
+      "bytes": 435
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/rules-preliminary.log",
+      "sha256": "63779ba887a14f556b57c7b715e053ae5b29a0913ac15a126c89317629a903d9",
+      "bytes": 15476
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/checks-terminal.json",
+      "sha256": "fc2add5cc755463a32b68fd71fea3ccf7464661cb40d1230c795abfc00b36c1d",
+      "bytes": 232
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/checks-before.json",
+      "sha256": "c5a1fad782f2979813c7b7a8d9df9f2fb03f042d361607ede96c92c9f007f125",
+      "bytes": 673780
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/checks-after.json",
+      "sha256": "c5a1fad782f2979813c7b7a8d9df9f2fb03f042d361607ede96c92c9f007f125",
+      "bytes": 673780
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/superseded-resource-process.json",
+      "sha256": "7082544a131ebf035c68c01afaf54fffaace2b697aa1ae99a3c51928af572707",
+      "bytes": 881
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/rules.log",
+      "sha256": "e784567c1ffed417d2493c478e21eb33e056de68340b7b14bcfc6b7842ed0331",
+      "bytes": 110138
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/positive.log",
+      "sha256": "9a7a0198e24c571999200160dd4269ac80393a4c9d4c7b600bc7b117ca4ec128",
+      "bytes": 3378
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/resources.log",
+      "sha256": "2e9564be0bc49ee46e02163fc8cdbfe115aae08a51fb616454baf92f15524b98",
+      "bytes": 4080
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/four-terminal.json",
+      "sha256": "d0ace2b135709d1a96c461920dc2ecbd08e9c06a48630e67fbba7398074a76f7",
+      "bytes": 485
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/four-report.json",
+      "sha256": "8f19d435d664cb36166a1b347dc941c75796418556071a24c051ca99a3fd0486",
+      "bytes": 411584
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/four.log",
+      "sha256": "3039242e77f365a40fcecd0039c7680cd6031dab327c44827ca1988a504598cc",
+      "bytes": 9422
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/build-driver.py",
+      "sha256": "ce76b5851e961b5f9618d2d88a569ded2ebbc743a4d8fbb602451174de0050bf",
+      "bytes": 1373
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/build-terminal.json",
+      "sha256": "245fc2ef8b7d55413677419d818bc922a103aae94fa430ffb32035d6eadf7662",
+      "bytes": 176
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/build-before.json",
+      "sha256": "26dcac5d1735d118d8d925668b244aebd5733cd79e46e329d50e4436faa863cd",
+      "bytes": 674039
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/build-after.json",
+      "sha256": "26dcac5d1735d118d8d925668b244aebd5733cd79e46e329d50e4436faa863cd",
+      "bytes": 674039
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/install.log",
+      "sha256": "fe2ded3041ef0ce8a18deec0d5cfabaf49fb2c5f5631c923b00aa62529086118",
+      "bytes": 195
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/build.log",
+      "sha256": "3e901a70a61dcaedda1ce0f5fcdad9994c023f27859eac2fd36614b5010059fa",
+      "bytes": 1045
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/run-checks.py",
+      "sha256": "9516d669b45dacd3746708231b0e4a3710c816a5fee74277a3ff8d8048cd49b9",
+      "bytes": 1541
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/checks-terminal.json",
+      "sha256": "c99b4d105cde9a0db83e74cde22c6e43b894d264f12ef02932b33de1a4b5c4e9",
+      "bytes": 230
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/checks-before.json",
+      "sha256": "13c8546324166e66e97d4f1e75068f8e56601b95e1b4dd4799c8aeedf10835bd",
+      "bytes": 674037
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/checks-after.json",
+      "sha256": "13c8546324166e66e97d4f1e75068f8e56601b95e1b4dd4799c8aeedf10835bd",
+      "bytes": 674037
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/rules.log",
+      "sha256": "5f7eba5bec73c30cbaff348f792629d8fbd529d51c979da48c16147d325b3ebb",
+      "bytes": 110374
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/positive.log",
+      "sha256": "53b1214a641586a5e942c1c4f20480b5bddba81d37e412b2afbffe673e780ca8",
+      "bytes": 3378
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/resources.log",
+      "sha256": "60bbaf9bded657a63770f379f09e0f6a03713e4cec21b1b826e43a154b80373b",
+      "bytes": 898
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/four-terminal.json",
+      "sha256": "51172e23966cf42c932652ae424fb3f8600af8bb0ee3d66e172d280302b52c36",
+      "bytes": 485
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/four-report.json",
+      "sha256": "3068d19e12288b9ca23db494176e5356134607417af7986d65e6667bf4f1d4d8",
+      "bytes": 507783
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/four.log",
+      "sha256": "1dc40c1d9539835a2f0acf4f53aba389c64b2b4968284f16fd49a683eb7c5a40",
+      "bytes": 1198
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/ui-terminal.json",
+      "sha256": "95d57b83cdc14d85cf25a320d9542c896eab3bcbc120161f93dd97747c1bc5a0",
+      "bytes": 491
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/ui-report.json",
+      "sha256": "26bba45116cad07327216cce65e5b371b9210a88fbefce8f4bf22c1ab82554cf",
+      "bytes": 10876441
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/ui.log",
+      "sha256": "c81a0dc9dbd021bf3efa9c2accfd17026237d55d58f15a5ede7811123d919bf3",
+      "bytes": 25772
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/ui-declared.json",
+      "sha256": "93801cf1598aa55ebf627de914a0ffe5a9c08a92de42a421313437637df348f1",
+      "bytes": 78306
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/ui.config.ts",
+      "sha256": "f877c740c631ffb9c00401ce65f4e15e89d4a3e8dd621a7eaade40d99487611b",
+      "bytes": 912
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/ui-before.json",
+      "sha256": "229f0d92a53bcdd9f313cde19c43e652303c46ea052717ef2c27f6f02185f253",
+      "bytes": 733977
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/ui-after.json",
+      "sha256": "229f0d92a53bcdd9f313cde19c43e652303c46ea052717ef2c27f6f02185f253",
+      "bytes": 733977
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/ui-http.json",
+      "sha256": "6b139d26dca6baf2b095a6034f82a8bec8631390341dcf009e24fdbd50ce7bbd",
+      "bytes": 56891
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/ui-source-closure.json",
+      "sha256": "f97bcb4acdf344208cd3ae1fce4fe7ffb9ff18140a21eb278a2c625b2867b3b7",
+      "bytes": 53066
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/canonical-service-replacement.json",
+      "sha256": "88c414034d127cbe3475ea5c3edaac22b71c3ebb05911020a70b2bf544f72153",
+      "bytes": 539
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/verified/preview-archive.json",
+      "sha256": "57fa4f268eec5d124d1e420a0a3fd465ae61368457020c77627e77871d85f5c1",
+      "bytes": 823
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/build-driver.py",
+      "sha256": "ce76b5851e961b5f9618d2d88a569ded2ebbc743a4d8fbb602451174de0050bf",
+      "bytes": 1373
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/build-terminal.json",
+      "sha256": "f22eb4ae5c5a78a4ba52575b376420ed63f19b7a4f1ad8b8d5b8edd3ae50d780",
+      "bytes": 176
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/build-before.json",
+      "sha256": "51b6e46bd582a23300485d114733186525367ab005ce33d7206779be3d5b539e",
+      "bytes": 674170
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/build-after.json",
+      "sha256": "51b6e46bd582a23300485d114733186525367ab005ce33d7206779be3d5b539e",
+      "bytes": 674170
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/install.log",
+      "sha256": "64b719aca8743f27ec2fdd516832cf69851911844f7d4ae3c2c69267f71b01f1",
+      "bytes": 195
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/build.log",
+      "sha256": "a4975681b1e5ec8c560f404f1633e5ab1537ac60a91808d688a7b33a845129e3",
+      "bytes": 1045
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/run-seven.mjs",
+      "sha256": "c3e88c48e5fc05ef509b5b17d8bb8f56f2b3b5cf52988d68ffd60a25017066cf",
+      "bytes": 4177
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/seven.config.ts",
+      "sha256": "e41900c42c74d011e568f7cb0744d582ec6b411f73c159afff5dd73f4572e232",
+      "bytes": 445
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/seven-declared.json",
+      "sha256": "36765c421459e51ebf5ce60472493e8ea10023a0a17f08b422af82259acad73b",
+      "bytes": 7567
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/seven-terminal.json",
+      "sha256": "9e03fc529bc6bd8777ef3550ba007b7812db6d92fde88997a4faf02b07ffaf6e",
+      "bytes": 485
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/seven-before.json",
+      "sha256": "098b238a04fbdbd9d6a7c4ec12f52752e73d668df05344fb005f9cfb1e12e9a6",
+      "bytes": 734121
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/seven-after.json",
+      "sha256": "098b238a04fbdbd9d6a7c4ec12f52752e73d668df05344fb005f9cfb1e12e9a6",
+      "bytes": 734121
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/seven-http.json",
+      "sha256": "2c59dd4b0abcd08e22583250549d6b90fc31d0343cc75a602d895c5a0c90cf27",
+      "bytes": 28579
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/seven-report.json",
+      "sha256": "07617da6a4ff805f7632da442a2ec0e840102139d4c8a75f526ddece50330c52",
+      "bytes": 761982
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/seven.log",
+      "sha256": "619996d9e5c41564c9ef6b5c8327f240579761d8480ebd80b6bd7d5efcfb9f3f",
+      "bytes": 1814
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/run-package.mjs",
+      "sha256": "95de8e9d9143e152b0ffcfbd62d04acdc65e8c9d2f5d48fb3af7b4ecd0f15f98",
+      "bytes": 4201
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/package.config.ts",
+      "sha256": "f87d4f067c287c1fb896a9803947a03d700fddc5af421ec4fb3f5572e5a5f1f5",
+      "bytes": 415
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/package-declared.json",
+      "sha256": "f151fd3abb712d2a34e39f818170ef268c1b435c9b9adf263c4ed97afe1e7dbf",
+      "bytes": 5304
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/package-terminal.json",
+      "sha256": "5d3745a0f26b612345c2c7f3f874c038f04f393376bfda1e74503103ebe0426f",
+      "bytes": 485
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/package-before.json",
+      "sha256": "bed713bc5f130009ba162920d3b7edd1417a7b27f4656b9a2b2bcedf76fab695",
+      "bytes": 734127
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/package-after.json",
+      "sha256": "bed713bc5f130009ba162920d3b7edd1417a7b27f4656b9a2b2bcedf76fab695",
+      "bytes": 734127
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/package-http.json",
+      "sha256": "d337f5b55405691f6a6c6ed826713ea66f9de197c4cd6116d60abc13b23618e3",
+      "bytes": 28579
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/package-report.json",
+      "sha256": "8cf1520ab5dc84d5e38721c4c9e1fdd98b0f89b8a95022ab20c964c01b8c506e",
+      "bytes": 595258
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/package.log",
+      "sha256": "566713014273e9de3395204b9141ab0c7574ba3cdef5c145d8e3346b64e0f555",
+      "bytes": 1198
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/ui-full-declared.json",
+      "sha256": "9842fcf66fa1082932a81b292f767249f6ff03346bf843d7936b880f98b6f8db",
+      "bytes": 728687
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/native-declared.json",
+      "sha256": "efed990e6d40834055e43ec19d7e5e3e0891483d84577c7f24f7a3737e0225fb",
+      "bytes": 277886
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/normal-declared.json",
+      "sha256": "1036fa12dc34eff5bafb6941570fe5a6ede93114b4f8f51e98281a0944d94979",
+      "bytes": 22377
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/recovery-ui-declared.json",
+      "sha256": "e6b80f3a0f7a55c0ab059c3319c555126149b496ac5722768e8ff0010a4ff0d1",
+      "bytes": 120833
+    },
+    {
+      "path": "artifacts/goal-4/cend10-source-goal/final/verify-declarations.mjs",
+      "sha256": "ebac8b513104c269f7a6c0ed60306c4001e195271920c40b1231367bac5fd1c3",
+      "bytes": 985
+    }
+  ],
+  "isolatedFixtureGameDBAttachmentsRemainIgnored": true,
+  "unviewedGeneratedPNGsNotPixelReview": true,
+  "oldAndSupersededFailuresRetained": true
+}
