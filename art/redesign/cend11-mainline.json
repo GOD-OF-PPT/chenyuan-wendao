@@ -104,8 +104,8 @@
   ],
   "display": {
     "path": "web/src/HudGoal.vue",
-    "bytes": 2156,
-    "sha256": "0d602115ad69e16cd1f97d5b91f63be81fabb212c2e97048dd309ea45bdd1258"
+    "bytes": 2160,
+    "sha256": "56364f91553a2a4e38096b67d2eb7a0cd735499ae7f6cbdd4303a510bc0fbf9b"
   },
   "projection": {
     "path": "web/src/hud-goal.ts",
