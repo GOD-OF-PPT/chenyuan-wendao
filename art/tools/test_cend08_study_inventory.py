@@ -1,14 +1,14 @@
 import copy,hashlib,unittest
 from pathlib import Path
-from test_inventory import InventoryTests,ROOT
+import test_inventory as inventory
 from cend08_study_inventory import MANIFEST,LEDGER,validate_study_intent,prior_study_intent_bytes
+ROOT=inventory.ROOT
 
 class StudyIntentTests(unittest.TestCase):
- setUp=InventoryTests.setUp
- tearDown=InventoryTests.tearDown
- write=InventoryTests.write
+ tearDown=inventory.InventoryTests.tearDown
+ write=inventory.InventoryTests.write
  def setUp(self):
-  InventoryTests.setUp(self)
+  inventory.InventoryTests.setUp(self)
   validate_study_intent(self.root)
  def test_complete_inverse_and_actual_old_caps(self):
   self.assertEqual(validate_study_intent(ROOT)[1],-26)
