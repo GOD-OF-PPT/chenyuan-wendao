@@ -1,0 +1,18 @@
+{
+  "actualOwnedProcesses": [
+    [
+      "98777",
+      "98655",
+      "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend09-source/producer/source/web/node_modules/@playwright/test/cli.js test --config /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend09-source/producer/ui.config.ts --project=chromium"
+    ],
+    [
+      "99249",
+      "99248",
+      "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m unittest discover -s art/tools -p test_*.py"
+    ]
+  ],
+  "resourceCwd": "p99249\nfcwd\nn/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend09-source/producer/source\n",
+  "reason": "Actual pixel finding requires new fallback text backing. Initial source is superseded; stop its incomplete validations and preserve terminals. Not an observation timeout restart.",
+  "signal": "SIGINT",
+  "notFullPass": true
+}

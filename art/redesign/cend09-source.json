@@ -17,8 +17,8 @@
   },
   "display": {
     "path": "web/src/src-stage.css",
-    "bytes": 3655,
-    "sha256": "50f1693b7c8406a79111bb0891155c37c460bd0c5a819a5dd3bdef648cd67d59"
+    "bytes": 3790,
+    "sha256": "f9b0a4fbe14a0419454b4da52726b372ac46f29ec40ffd6ce6882b4c8509f0fb"
   },
   "authority": {
     "web/src/SourcePlanner.vue": "ea42a57110db234205d8ef8f1d46f4969802a7757ed16ede9d0ff3e33e3b9e72",

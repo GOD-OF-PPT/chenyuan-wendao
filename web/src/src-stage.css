@@ -26,6 +26,7 @@
  & .ta08-stock-row>b{color:#e1edc1}
  & .ta08-period-facts{padding-top:2px}
  & .ta08-object-caption{justify-self:center;width:fit-content;max-width:100%;padding:4px 18px;background:linear-gradient(90deg,#0b292f00,#0b292fe6 18%,#0b292fe6 82%,#0b292f00);border:0;box-shadow:none}
+ & .ta08-resource-fallback>strong,& .ta08-resource-fallback>small{padding:2px 8px;background:#0b292fef;box-shadow:0 1px 3px #041b2277}
  & .ta08-object-caption>strong{color:#e1e8ca}
  & .ta08-object-affordance{border:0;border-left:2px solid #9cbea0;padding:5px 10px;background:linear-gradient(90deg,#103b37ef,#0c2d31d9)}
  & .source-arrangement{padding:8px 14px;gap:4px 16px;border:0;background:linear-gradient(0deg,#0b292ff2,#0b292fbd);box-shadow:none}
