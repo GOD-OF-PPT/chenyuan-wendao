@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import {computed} from 'vue';
+import {computed,useId} from 'vue';
 import * as C from '../../src/full/content';
 import AssetImage from './AssetImage.vue';
 import {SOURCE_ART,SOURCE_TOOLS,projectSourceWork} from './source-choreography';
 import './ta08-source.css';
+import SourceMaterials from './SourceMaterials.vue';
 const props=defineProps<{sourceId:string;state:string;progress:number;sequence:number}>();
 const emit=defineEmits<{arrange:[]}>();
+const prefix='source-tool-'+useId(),paint=(name:string)=>prefix+'-'+name;
+const materials=Object.fromEntries(['wood','bronze','fiber'].map(name=>['--ta08-'+name+'-fill',`url(#${paint(name)})`]));
 const visual=computed(()=>projectSourceWork(props.state,props.progress));
 const source=computed(()=>C.sources[props.sourceId]);
 const arrival=computed(()=>props.sequence>0&&!['failed','inactive','paused','pausing'].includes(props.state));
@@ -24,13 +27,16 @@ const arrival=computed(()=>props.sequence>0&&!['failed','inactive','paused','pau
      <g v-else><path d="M61 164Q157 104 260 161L238 195Q160 226 80 194ZM61 164Q163 200 260 161M83 168L140 149L174 161L224 146M109 186L153 174L204 186"/><path d="M140 139L145 125L151 138M193 143L201 122L209 141"/></g>
     </svg><strong>{{source?.name}}</strong><small>资源绘画暂未载入 · 仍可定程</small></span>
    </AssetImage>
-   <svg class="ta08-resource-tool" viewBox="0 0 320 240" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+   <svg :style="materials" class="ta08-resource-tool" viewBox="0 0 320 240" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <SourceMaterials :prefix="prefix"/>
+    <g :filter="'url(#'+paint('surface')+')'">
     <g v-if="sourceId==='herbs'" class="ta08-tool-contact"><path d="M224 87L188 158L177 156L212 86Z" class="ta08-tool-wood"/><path d="M213 86Q153 75 132 130Q176 105 213 104Z" class="ta08-tool-metal"/><path d="M110 175Q130 164 150 177M114 182Q132 170 147 183" stroke-width="2"/></g>
     <g v-else-if="sourceId==='dew'" class="ta08-tool-contact"><path d="M247 83L195 155L183 149L235 77Z" class="ta08-tool-wood"/><path d="M174 170Q194 180 214 170L207 189H182Z" class="ta08-tool-metal"/><path d="M194 157V164" stroke-width="2"/></g>
     <g v-else-if="sourceId==='jade'" class="ta08-tool-contact"><path d="M235 88L182 149L175 143L227 80Z" class="ta08-tool-metal"/><path d="M237 73L250 83L235 103L222 93Z" class="ta08-tool-wood"/><path d="M158 154L173 145M166 165L178 153" stroke-width="1.5"/></g>
     <g v-else-if="sourceId==='lotus'" class="ta08-tool-contact"><path d="M269 66L184 151L178 145L263 60Z" class="ta08-tool-wood"/><path d="M178 145Q150 137 140 165Q163 171 184 151Z" class="ta08-tool-metal"/><path d="M95 188Q126 196 149 188" stroke-width="1.5"/></g>
     <g v-else-if="sourceId==='soul'" class="ta08-tool-contact"><path d="M247 78L188 130L181 123L240 71Z" class="ta08-tool-wood"/><path d="M184 128Q157 128 148 169M184 128Q165 143 166 178M184 128Q176 150 185 174" class="ta08-tool-fiber"/></g>
     <g v-else class="ta08-tool-contact"><path d="M252 80L193 139L184 131L245 73Z" class="ta08-tool-wood"/><path d="M185 132Q160 136 150 164Q179 162 194 140Z" class="ta08-tool-fiber"/><path d="M110 183Q142 173 172 181" stroke-width="1.5"/></g>
+    </g>
    </svg>
    <span class="ta08-contact-trace" :data-phase="visual.phase" data-testid="source-work-layer" aria-hidden="true"><i/><i/><i/></span>
    <span v-if="arrival" :key="sequence" class="ta08-resource-saved-mark" aria-hidden="true"/>

@@ -1,3 +1,4 @@
+from cend08_f03_inventory import validate_source_materials
 from cend08_f02_inventory import validate_config_art
 from cend08_study_inventory import validate_study_intent
 from cend07_f02c_inventory import validate_source_intent
@@ -402,6 +403,7 @@ def validate_equipment_objects(root, image_reader=image_info):
 
 def validate(root):
     root = root.resolve()
+    source_material_files,source_material_bytes=validate_source_materials(root)
     config_art_files,config_art_bytes=validate_config_art(root)
     study_intent_files,study_intent_delta=validate_study_intent(root)
     source_intent_files,source_intent_delta=validate_source_intent(root)
@@ -1077,6 +1079,7 @@ def validate(root):
     recorded.update(power_files)
     recorded.update(source_intent_files)
     recorded.update(study_intent_files)
+    recorded.update(source_material_files)
     recorded.update(config_art_files)
     recorded.update(relic_focus_files)
     recorded.update(threecheck_files)

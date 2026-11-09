@@ -3,10 +3,11 @@ import {computed,useId} from 'vue';
 import * as C from '../../src/full/content';
 import {COMMISSION_OBJECTS,COMMISSION_WORK,projectSourceWork} from './source-choreography';
 import './ta08-source.css';
+import SourceMaterials from './SourceMaterials.vue';
 const props=defineProps<{sourceId:string;state:string;progress:number;sequence:number}>();
 const emit=defineEmits<{arrange:[]}>();
 const instance=useId(),paint=(material:string)=>`ta08-task-${props.sourceId}-${instance}-${material}`;
-const materials=computed(()=>Object.fromEntries(['wood','paper','bronze','jade','stone','fiber'].map(name=>['--ta08-'+name+'-fill',`url(#${paint(name)})`])));
+const materials=computed(()=>Object.fromEntries(['wood','paper','bronze','jade','stone','fiber'].map(name=>['--ta08-'+name+'-fill',`url(#${paint('material-'+name)})`])));
 const visual=computed(()=>projectSourceWork(props.state,props.progress));
 const object=computed(()=>COMMISSION_OBJECTS[props.sourceId as keyof typeof COMMISSION_OBJECTS]);
 const source=computed(()=>C.sources[props.sourceId]);
@@ -17,14 +18,8 @@ const arrival=computed(()=>props.sequence>0&&!['failed','inactive','paused','pau
   <button type="button" class="ta08-task-view" data-testid="source-object-arrange" :aria-label="(source?.name??'宗门差事')+'，查看并调整本段安排，不立即承办'" @click="emit('arrange')">
    <span class="ta08-task-table" aria-hidden="true"/>
    <svg class="ta08-task-drawing" viewBox="0 0 320 240" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <defs>
-     <linearGradient :id="paint('wood')" x2=".9" y2="1"><stop stop-color="#8a7950"/><stop offset=".3" stop-color="#5c7657"/><stop offset="1" stop-color="#183c36"/></linearGradient>
-     <linearGradient :id="paint('paper')" x2=".3" y2="1"><stop stop-color="#c6cfad"/><stop offset=".5" stop-color="#9db69a"/><stop offset="1" stop-color="#567e6b"/></linearGradient>
-     <linearGradient :id="paint('bronze')" x2="1" y2=".6"><stop stop-color="#4b6555"/><stop offset=".32" stop-color="#c4b780"/><stop offset=".48" stop-color="#e0d2a0"/><stop offset="1" stop-color="#384e43"/></linearGradient>
-     <linearGradient :id="paint('jade')" x2=".8" y2="1"><stop stop-color="#bddbc0"/><stop offset=".25" stop-color="#69a994"/><stop offset="1" stop-color="#1c4d45"/></linearGradient>
-     <linearGradient :id="paint('stone')" x2=".2" y2="1"><stop stop-color="#668477"/><stop offset=".4" stop-color="#3b6257"/><stop offset="1" stop-color="#183936"/></linearGradient>
-     <linearGradient :id="paint('fiber')" x2="0" y2="1"><stop stop-color="#c1bd8b"/><stop offset=".5" stop-color="#999d69"/><stop offset="1" stop-color="#596e49"/></linearGradient>
-    </defs>
+    <SourceMaterials :prefix="paint('material')"/>
+    <g :filter="'url(#'+paint('material-surface')+')'">
     <g v-if="object==='sweep'" class="ta08-task-body task-sweep">
      <path d="M78 177Q105 162 137 177L130 202H85ZM83 182H132" class="ta08-task-bronze"/>
      <path d="M121 181L134 180L130 202H112Z" fill="#173b33" fill-opacity=".45" stroke-opacity=".3"/><ellipse cx="107" cy="177" rx="28" ry="6" fill="#163a33" stroke-opacity=".7"/>
@@ -82,6 +77,7 @@ const arrival=computed(()=>props.sequence>0&&!['failed','inactive','paused','pau
      <path d="M68 75L76 70V180L68 185ZM241 72L250 70V179L241 180Z" class="ta08-task-wood"/>
      <g class="ta08-task-tool"><path d="M136 126L164 114L193 128V166L165 180L136 166Z" class="ta08-task-jade"/><path d="M153 116V95L166 85L180 96V118M150 143L164 134L180 144L164 163Z"/></g>
      <path d="M98 198H226" class="ta08-task-wood"/>
+    </g>
     </g>
    </svg>
    <span class="ta08-task-work-trace" data-testid="source-work-layer" :data-phase="visual.phase" aria-hidden="true"><i/><i/><i/></span>

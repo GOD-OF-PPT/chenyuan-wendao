@@ -1,3 +1,4 @@
+from cend08_f03_inventory import prior_source_material_bytes
 from uir34_04_inventory import prior_uir3404_bytes
 from uir34_03_inventory import prior_uir3403_bytes
 from uir33_07_inventory import prior_uir3307_bytes
@@ -380,6 +381,7 @@ MARKERS={'App.vue': "import StageOutcome from './StageOutcome.vue';\n"
  'SourceObject.vue': "state==='failed'?'查看上方提示'",
  'StageOutcome.vue': '已确认成果保留；请重新读取。'}
 def prior_ux33_bytes(path,raw):
+ raw=prior_source_material_bytes(path,raw)
  raw=prior_uir3404_bytes(path,raw)
  raw=prior_uir3403_bytes(path,raw)
  raw=prior_check_ux3133_bytes(path,prior_uir3307_bytes(path,raw))
@@ -404,7 +406,7 @@ def validate_ux33(root):
  assert json.loads(local(LEDGER).read_text())==MANIFEST, 'UX33 exact current ledger'
  assert json.loads(local('art/redesign/ux33-display-edits.json').read_text())==OPERATIONS, 'UX33 exact changes'
  for n,f in FACTS.items():
-  raw=prior_check_ux3133_bytes(n,prior_uir3307_bytes(n,prior_uir3404_bytes(n,local('web/src/'+n).read_bytes())));old=local(f['baseline']).read_bytes()
+  raw=prior_check_ux3133_bytes(n,prior_uir3307_bytes(n,prior_uir3404_bytes(n,prior_source_material_bytes(n,local('web/src/'+n).read_bytes()))));old=local(f['baseline']).read_bytes()
   assert len(raw)==f['bytes'] and hashlib.sha256(raw).hexdigest()==f['after'], 'UX33 current source'
   assert len(old)==f['beforeBytes'] and hashlib.sha256(old).hexdigest()==f['before'], 'UX33 original source'
   assert prior_ux33_bytes(n,raw)==old, 'UX33 full inverse'
