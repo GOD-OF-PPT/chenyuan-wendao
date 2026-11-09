@@ -1,6 +1,6 @@
 {
   "task": "CHECK-CEND07-F02B-F02C-CEND08",
-  "status": "local-completed-pending-task-record-after-delivery-commit",
+  "status": "locally-completed-and-task-recorded",
   "applicationChanged": false,
   "originalProductSource": "51413948a4c0a2d9c14697526c8fb435bff4c40e",
   "runtime": "3b3f39de288f41606ccf873efa23d51d269903950e2e4c63da57e717ac0d05ca",
@@ -48,5 +48,7 @@
   "review": "review.md",
   "checks": "checks.json",
   "sourceProof": "ui-composite-proof.json",
-  "rawReferences": "raw-evidence-index.json"
+  "rawReferences": "raw-evidence-index.json",
+  "deliveryCommit": "9be1ba92939eb0ef3e545f385eb13bfef3408072",
+  "threeTaskCounter": 0
 }
