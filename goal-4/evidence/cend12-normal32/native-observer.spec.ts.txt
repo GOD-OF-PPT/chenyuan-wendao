@@ -1,0 +1,81 @@
+import fs from 'node:fs';
+import {test,expect} from '../source/web/node_modules/@playwright/test/index.mjs';
+import {runVisibleIdleRoute,readJourneyDatabase,readJourneyState} from '../source/web/e2e/idle-route-support';
+import {baselineIdleScenario} from '../source/web/e2e/idle-matrix-scenarios';
+
+test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
+test('normal idle help/sword/craft/transmit',async({page},info)=>{
+ const pictures:any[]=[],seen=new Set<string>(),clockArgs:any[]=[];
+ async function readOnly(){
+  const dbs=await page.evaluate(()=>indexedDB.databases());
+  return dbs.some(d=>d.name==='chenyuan-playable-v1')?await readJourneyDatabase(page):{gameDatabaseAbsent:true};
+ }
+ async function capture(name:string){
+  if(seen.has(name))return;
+  const before=await readOnly();
+  const geometry=await page.evaluate(()=>({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth,scrollHeight:document.documentElement.scrollHeight}));
+  expect(geometry).toEqual({width:1440,height:900,scrollWidth:1440,scrollHeight:900});
+  const path=info.outputPath(name+'.png');
+  await page.screenshot({path,fullPage:false,animations:'allow',caret:'initial',timeout:8000});
+  expect(await readOnly(),'taking a native PNG is readonly over the complete Game database').toEqual(before);
+  seen.add(name);pictures.push({name,path,geometry,fullDatabaseBeforeAfterExact:true,originalAnimationsAllowed:true});
+ }
+ const goto=page.goto.bind(page),forward=page.clock.fastForward.bind(page.clock),reload=page.reload.bind(page),step=test.step.bind(test);
+ page.goto=async(...args:any[])=>{
+  const result=await goto(...args);
+  await expect(page.getByRole('button',{name:/^踏入仙途/})).toBeVisible();
+  await capture('full-normal-welcome');return result;
+ };
+ function phase(a:any,g:any){
+  const p=a?.plan;if(!p||a.status!=='running')return null;
+  if(p.kind==='travel')return 'full-normal-travel';
+  if(p.kind==='cultivation')return 'full-normal-cultivation';
+  if(p.kind==='source'&&p.sourceId==='herbs')return 'full-normal-gather';
+  if(p.kind==='source'&&p.sourceId==='core')return 'full-normal-commission';
+  if(p.kind==='craft'&&p.recipeId==='foundation')return 'full-normal-alchemy';
+  if(p.kind==='buy')return 'full-normal-market-buy';
+  if(p.kind==='battle')return 'full-normal-gate-'+p.trialStage;
+  if(p.kind==='milestone'){
+   if(p.action.type==='CHOOSE')return 'full-normal-opening';
+   if(p.action.type==='BREAKTHROUGH'&&g?.core.player.realm==='qi')return 'full-normal-foundation-breakthrough';
+   if(p.action.type==='START_TRIAL')return 'full-normal-enter-trial';
+   if(p.action.type==='ANSWER_TRIAL')return 'full-normal-answer';
+   if(p.action.type==='END')return 'full-normal-end-arranged';
+  }
+  return null;
+ }
+ page.clock.fastForward=async(...args:any[])=>{
+  const state=await readJourneyState(page),a=state.activity;
+  const key=phase(a,state.game),observe=key&&!seen.has(key)&&args.length===1&&args[0]===a.cycleMs-1;
+  clockArgs.push(args);
+  const result=await forward(...args);
+  if(observe)await capture(key!);
+  return result;
+ };
+ page.reload=async(...args:any[])=>{
+  const result=await reload(...args);
+  await expect(page.getByTestId('save-status')).toHaveText('已保存');
+  const a=(await readJourneyState(page)).activity;
+  if(a?.status==='running'&&a.plan.kind==='battle'&&!seen.has('full-normal-gate-reopen')){
+   await expect(page.getByTestId('training-resume')).toBeVisible();
+   await capture('full-normal-gate-reopen');
+  }
+  return result;
+ };
+ test.step=async(title:any,body:any,options:any)=>step(title,async(stepInfo:any)=>{
+  const result=await body(stepInfo);
+  if(title==='69. 确认本次入劫')await capture('full-normal-question-ready');
+  return result;
+ },options);
+ try{
+  const options={choice:'help',school:'sword',preparation:'gather',cultivation:'natural',answer:'accept',ending:'transmit',advanced:false};
+  await runVisibleIdleRoute(page,info,options,baselineIdleScenario,{reopenStages:true});
+  await capture('full-normal-sealed');
+  const expected=['welcome','travel','cultivation','gather','commission','alchemy','market-buy','opening','foundation-breakthrough','enter-trial','answer','gate-1','gate-2','gate-3','end-arranged','gate-reopen','question-ready','sealed'].map(n=>'full-normal-'+n);
+  expect([...seen].sort()).toEqual(expected.sort());
+  await info.attach('native-normal-png-observations',{body:JSON.stringify({sameCaseSubset:true,noNewUniqueCoverage:true,unmodifiedPublicDriver:true,pictures,clockArgs}),contentType:'application/json'});
+  fs.writeFileSync(info.outputPath('native-png-observations.json'),JSON.stringify({pictures,clockArgs},null,2)+'\n',{flag:'wx'});
+ }finally{
+  page.goto=goto;page.clock.fastForward=forward;page.reload=reload;test.step=step;
+ }
+});

@@ -1,0 +1,183 @@
+{
+  "source": {
+    "head": "8f512bf511accbabf1c8993ec15996c2bacfcc43",
+    "source": "8f512bf511accbabf1c8993ec15996c2bacfcc43",
+    "tree": "b021c19e7ba49ecb05c42a8b411833702cef0743",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "10.9.0",
+    "npmOnPath": "10.9.0"
+  },
+  "cases": [
+    {
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation help/sword/craft",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation trade/sword/purchase",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation leave/sword/craft",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation help/talisman/purchase",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation trade/talisman/craft",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation leave/talisman/purchase",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/craft/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/craft/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/purchase/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/purchase/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/craft/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/craft/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/purchase/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/purchase/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/craft/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/craft/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/purchase/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/purchase/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/craft/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/craft/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/purchase/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/purchase/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/craft/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/craft/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/purchase/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/purchase/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/craft/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/craft/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/purchase/transmit",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/purchase/depart",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-trial-reopen.spec.ts",
+      "title": "current normal sword reopens its actual question and every saved battle round without reroll or an automatic next gate",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-trial-reopen.spec.ts",
+      "title": "current normal talisman reopens its actual question and every saved battle round without reroll or an automatic next gate",
+      "project": "chromium"
+    }
+  ],
+  "count": 32,
+  "actualDeclarationsNotExecution": true,
+  "fixedScope": {
+    "viewport": [
+      1440,
+      900
+    ],
+    "fontScale": 1,
+    "browser": "chromium"
+  }
+}

@@ -18,6 +18,14 @@
 
 ## 交付和后续
 
+### 像素证据补正（仍本项，第1次杠精打回）
+
+正常32已实际全过，0生产/原测试或公共驱动改源。随后同一原case的trace保留补拍亦通过，但原生trace帧实际为800×500，记录的1440×900仅是视口元数据；首欢迎代表还是加载页。原374497674字节trace、错误维度索引副本、提取帧与2次实际看图保留，不能把这些帧当1440像素或欢迎页已验收。
+
+仅增加本地artifact中的一例观察补充：复用未改的runVisibleIdleRoute、baselineIdleScenario、相同help/sword/craft/transmit参数和reopenStages；保原240000ms、全部逐期/最后1ms/全Game/活动/geometry/原子断言。观察器在原goto已显示欢迎后、原clockFastForward(ms-1)返回后、原START_TRIAL步骤完整提交后及原reload出现继续入口时拍真实1440×900 PNG；转发完全相同clock参数，不增加/seek/pause时间、不修改Game或原公共驱动，每张图前后用原全库readonly观察器比对，读图不发奖。保持一个worker/0retry、原动作与等待阈值，关闭该补充的自动压缩连拍与DOM录制，仅保原source/API trace与明确全尺寸PNG；不放宽任何周期/费用/来源/预算或保存合同。补充1是已过32中同一case的观察子集，不新增33/34覆盖。若补充改变生产或原公共驱动，必须另冻结并重验受影响完整正常文件；本次不这样改。
+
+输入来源补记：`goal-4/amendments/2026-11-10-cend12-normal32-input.md` 是本轮原生 `get_goal.objective` 原文而非最新用户消息；原件不改写，最新用户原话另存 `2026-11-10-cend12-latest-user-input.md`，来源说明见同目录 `2026-11-10-cend12-input-provenance.md`。本轮 0 生产或测试代码变更，冻结受测源身份仍为 8f512bf，不把本补记冒已在原冻结中。
+
 复用game-playtest/现有Playwright可见正式驱动、原全库观察器/源冻结/身份/archive_tree/serve/Pillow，不创建重复Skill/agent/automation或为验证造图。只有出现具体交互缺口才定向一手准则调研并落项目经验，不以研究替完整32实跑。
 
 当前已有411产品/运行6354e659/350运行/112载荷、56945试玩/56946解包与ZIP可读。若本轮运行源码/全部载荷逐字同，明确复用原工程版，不能捏造新产品或部署；若变则新冻结/构建/独立origin/包/解包/HTTP同源。仅核自有4173测试服务身份，原56884/56945和用户DB不读写/迁移，不用用户档测试。保13/v0.3/四Goal input/原件/旧图包/所有失败与旧缺失unknown，DB9旧档可读，不降库、重置、清理或prune。
