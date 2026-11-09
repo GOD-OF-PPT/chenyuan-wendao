@@ -1,0 +1,25 @@
+{
+  "producer": "414fd4f06e613f12339692959025fd750e5c4f87",
+  "runtimeUnchangedByRepair": "0a02c30a40047f3fc9bd137992d9ac98f137f814f372a5777232776531588f37",
+  "proofs": [
+    {
+      "path": "artifacts/goal-4/cend09-source/verified/original-guard-attribution.log",
+      "sha256": "b54e5a875ad408ded84a65043d53f4108a09ea4d9106aee3778af781bd8c0739"
+    },
+    {
+      "path": "artifacts/goal-4/cend09-source/verified/art34-actual-sandbox.log",
+      "sha256": "f2a19c35c74b3e8d17df623e4f12efc3da3c56734b603cfb3a18d45197d24fbd"
+    }
+  ],
+  "actualFailures": [
+    "Dangerous SourceField still rejected first by SH09; original parent SC02 attribution not wrapped. Preserve old regex and chain cause.",
+    "ART34 historical inverse return42375 became42373 from authorized2byte import reduction. Keep actual raw caps; preserve historical inverse metric and report actual values separately."
+  ],
+  "sameSecondReviewRepairNoNewDeliveryAttempt": true,
+  "repairedWholeFiles": {
+    "path": "artifacts/goal-4/cend09-source/repaired-old-guards.log",
+    "count": 14,
+    "seconds": 15.65,
+    "exit": 0
+  }
+}

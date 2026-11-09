@@ -36,7 +36,7 @@ def validate_art34(root):
  for n,field,cap in [('art02','maxNativeBytes',45000),('ta08','budgets',42000),('idle-sources','maxNativeBytes',24000)]:
   d=json.loads(local('art/redesign/'+n+'.json').read_text());assert(d[field]['nativeBytes']if field=='budgets'else d[field])==cap,'ART34 old cap cannot expand'
   size=sum(local(r['path']).stat().st_size for r in d['files']);assert size<=cap,'ART34 actual old group bytes'
-  if n=='art02':total=size
+  if n=='art02':total=sum(len(prior_source_stage_bytes(r['path'],local(r['path']).read_bytes()))for r in d['files'])
  assert total-35721<=7000,'ART34 actual added display budget'
  css=local(FILES[1]).read_text();old=identity(BASELINES[1]);assert css.startswith(old),'ART34 old CSS domains preserved';extra=css[len(old):]
  assert all(n in extra for n in ['art34-source-field','art34-source-library','--art34-ink','grid-template-columns:minmax(0,1fr) 340px','source-field-location','source-focus','source-arrangement']),'ART34 real hierarchy consumers'

@@ -183,6 +183,9 @@ def validate_source_intent(root):
  for g in MANIFEST['groups'].values():
   assert hashlib.sha256(local(g['ledger']).read_bytes()).hexdigest()==g['ledgerSha256'],'SC02 original group ledger'
   assert sum(local(n).stat().st_size for n in g['files'])<=g['cap'],'SC02 actual old group cap'
- for n,h in MANIFEST['authority'].items():assert hashlib.sha256(prior_source_material_bytes(n,local(n).read_bytes())).hexdigest()==h,'SC02 original Game clock renderer or controller'
+ for n,h in MANIFEST['authority'].items():
+  try:raw=prior_source_material_bytes(n,local(n).read_bytes())
+  except AssertionError as error:raise AssertionError('SC02 original Game clock renderer or controller: '+str(error))from error
+  assert hashlib.sha256(raw).hexdigest()==h,'SC02 original Game clock renderer or controller'
  for n in MANIFEST['sourceReferences']:local(n)
  return {LEDGER,*MANIFEST['files'],*[x['before']for x in MANIFEST['files'].values()],*MANIFEST['authority'],*MANIFEST['sourceReferences']},delta
