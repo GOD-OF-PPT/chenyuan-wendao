@@ -1,0 +1,30 @@
+{
+  "format": "chenyuan-check-cend07-bc08-additions",
+  "version": 44,
+  "parentVersion": 43,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1021,
+    "signature": "09d714a8084d15b9b8fc3016c5f722ffef2f053fe244f1ccb6166aa4fa993761"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-cend07-bc08.spec.ts",
+      "title": "CHECK-BC08-C1 a running commission preserves owned relic reading and a two-scroll partial-budget draft through pause resume and its sole original source period",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend07-bc08.spec.ts",
+      "title": "CHECK-BC08-C2 cancelling then immediately binding an owned relic preserves the paused source CAS and finite study draft without automatically resuming either",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend07-bc08.spec.ts",
+      "title": "CHECK-BC08-C3 a commission quota failure remains authoritative across relic and study reading and the same intent retries only one source reward",
+      "projectName": "chromium"
+    }
+  ]
+}

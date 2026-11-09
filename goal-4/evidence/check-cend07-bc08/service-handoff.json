@@ -1,0 +1,11 @@
+{
+  "stoppedOnlyOwnedTestService": true,
+  "oldPID": 27924,
+  "verifiedCommand": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python artifacts/goal-4/cend08-recovery/source/scripts/candidate/serve.py --directory artifacts/goal-4/cend08-recovery/source/web/dist --port 4173",
+  "sameUser": true,
+  "oldIndexSHA256": "e9efc86493ddd23b1d4772dbee0170e8d133bea22cea129180f957042a1945c3",
+  "stoppedSignal": "SIGTERM",
+  "4173NowFree": true,
+  "original56884AndPreview56927Untouched": true,
+  "next": "start current8069898 tested frozen dist at same4173; verify all112"
+}

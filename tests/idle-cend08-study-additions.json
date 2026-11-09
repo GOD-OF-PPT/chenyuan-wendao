@@ -1,0 +1,51 @@
+{
+  "format": "chenyuan-cend08-study-additions",
+  "version": 43,
+  "parentVersion": 42,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1018,
+    "signature": "1895dcffc47b32d624c8d184afa5ffeb7f77619d449541fe57248f879a8c61f3"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend08-study-intent.spec.ts",
+      "title": "CEND08-F01-A1 one manual keeps actual effect cost and finite budget beside the action while complete terms remain readonly",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend08-study-intent.spec.ts",
+      "title": "CEND08-F01-A2 learning keeps an actual budget failure visible and retains edited finite limits when the terms close",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend08-study-intent.spec.ts",
+      "title": "CEND08-F01-A3 a genuinely mastered manual still shows its saved fact and complete original reference with no repeat action",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend08-study-intent.spec.ts",
+      "title": "CEND08-F01-A4 a real location gate remains on the main decision and looking at terms never travels or learns",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend08-study-intent.spec.ts",
+      "title": "CEND08-F01-A5 admitted manual work keeps its real countdown and pause survives reload without a learned fact or new authorization",
+      "projectName": "chromium"
+    }
+  ],
+  "retainedConsumerRenames": [
+    {
+      "file": "cend07-f02a-power-focus.spec.ts",
+      "projectName": "chromium",
+      "before": "CEND07-F02A-A4 the full twelve-scroll catalogue honest gates and unchanged manual visible status remain readonly with their complete original conditions",
+      "after": "CEND07-F02A-A4 the full twelve-scroll catalogue honest gates and explicit manual costs remain readonly with their complete original conditions",
+      "sourceReference": "goal-4/evidence/cend08/review.md"
+    }
+  ]
+}

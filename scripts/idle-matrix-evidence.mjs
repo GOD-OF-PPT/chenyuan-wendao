@@ -27,6 +27,8 @@ const outcomeAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-uir33-0
 const secondCheckAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-check-uir33-02-additions.json',import.meta.url)));
 const alchemyArrangementAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-uir33-08-additions.json',import.meta.url)));
 const lifespanGuidanceAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-uir34-01-additions.json',import.meta.url)));
+const studyIntentAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-cend08-study-additions.json',import.meta.url)));
+const bc08Additions=JSON.parse(fs.readFileSync(new URL('../tests/idle-check-cend07-bc08-additions.json',import.meta.url)));
 const sourceIntentAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-cend07-f02c-additions.json',import.meta.url)));
 const relicFocusAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-cend07-f02b-additions.json',import.meta.url)));
 const threeCheckAdditions=JSON.parse(fs.readFileSync(new URL('../tests/idle-check-cend07-three-additions.json',import.meta.url)));
@@ -75,7 +77,7 @@ export function latestIdleResults(phases){
 }
 /** Validate real named declarations; v2 includes every v1 UI consumer in the complete UI inventory. */
 export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI){
- assert.ok(version===1||version===2||version===3||version===4||version===5||version===6||version===7||version===8||version===9||version===10||version===11||version===12||version===13||version===14||version===15||version===16||version===17||version===18||version===19||version===20||version===21||version===22||version===23||version===24||version===25||version===26||version===27||version===28||version===29||version===30||version===31||version===32||version===33||version===34||version===35||version===36||version===37||version===38||version===39||version===40||version===41||version===42,'Unknown idle matrix version');assert.match(runtime,/^[a-f0-9]{64}$/);
+ assert.ok(version===1||version===2||version===3||version===4||version===5||version===6||version===7||version===8||version===9||version===10||version===11||version===12||version===13||version===14||version===15||version===16||version===17||version===18||version===19||version===20||version===21||version===22||version===23||version===24||version===25||version===26||version===27||version===28||version===29||version===30||version===31||version===32||version===33||version===34||version===35||version===36||version===37||version===38||version===39||version===40||version===41||version===42||version===43||version===44,'Unknown idle matrix version');assert.match(runtime,/^[a-f0-9]{64}$/);
  const profiles = {
   1: idleRecoveryMatrix.profiles,
   2: idleComprehensiveProfiles,
@@ -119,6 +121,8 @@ export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI)
   40: {...idleComprehensiveProfiles, ui: threeCheckAdditions.profile},
   41: {...idleComprehensiveProfiles, ui: relicFocusAdditions.profile},
   42: {...idleComprehensiveProfiles, ui: sourceIntentAdditions.profile},
+  43: {...idleComprehensiveProfiles, ui: studyIntentAdditions.profile},
+  44: {...idleComprehensiveProfiles, ui: bc08Additions.profile},
  };
  const pins=profiles[version],expected=[],seen=new Set();
  const named=(report,suite,pin)=>{const rows=idleReportTests(report,suite);assert.equal(path.basename(report.config.configFile),pin.configuration,'Partial declaration wrapper is not the reviewed profile');assert.equal(report.config.metadata.runtimeDigest,runtime,'Declaration source runtime differs');assert.equal(rows.length,pin.count,'Profile declarations were reduced');assert.equal(sha(JSON.stringify(rows.map(key).sort())),pin.signature,'Profile identities differ from the reviewed full source inventory');return rows;};
@@ -126,6 +130,25 @@ export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI)
  assert.deepEqual([...seen].sort(),['journey','persistence','ui']);assert.equal(new Set(expected.map(key)).size,expected.length,'Duplicate required identity');
  if(version>=2){assert.ok(recoveryUI,'v2 requires the original reviewed recovery UI declaration');const original=named(recoveryUI,'ui',idleRecoveryMatrix.profiles.ui),complete=new Set(expected.filter(r=>r.suite==='ui').map(key));for(const row of original)assert.ok(complete.has(key(row)),'Original recovery UI consumer lost from the comprehensive inventory');}
  let previousUI=expected.filter(r=>r.suite==='ui');
+ if(version>=44){
+  assert.equal(bc08Additions.format,'chenyuan-check-cend07-bc08-additions');assert.equal(bc08Additions.version,44);assert.equal(bc08Additions.parentVersion,43);assert.equal(bc08Additions.additions.length,3);
+  const added=new Set(bc08Additions.additions.map(key));assert.equal(added.size,3,'Duplicate cross-feature consumer');
+  for(const row of bc08Additions.additions){assert.equal(row.suite,'ui');assert.equal(row.file,'check-cend07-bc08.spec.ts');assert.ok(previousUI.some(actual=>key(actual)===key(row)),'Missing reviewed cross-feature consumer');}
+  previousUI=previousUI.filter(row=>!added.has(key(row)));assert.equal(previousUI.length,studyIntentAdditions.profile.count,'Original v43 inventory reduced');assert.equal(sha(JSON.stringify(previousUI.map(key).sort())),studyIntentAdditions.profile.signature,'Original v43 consumer lost or replaced');
+ }
+ if(version>=43){
+  assert.equal(studyIntentAdditions.format,'chenyuan-cend08-study-additions');assert.equal(studyIntentAdditions.version,43);assert.equal(studyIntentAdditions.parentVersion,42);assert.equal(studyIntentAdditions.additions.length,5);
+  const added=new Set(studyIntentAdditions.additions.map(key));assert.equal(added.size,5,'Duplicate study intent case');
+  for(const row of studyIntentAdditions.additions){assert.equal(row.suite,'ui');assert.equal(row.file,'cend08-study-intent.spec.ts');assert.ok(previousUI.some(actual=>key(actual)===key(row)),'Missing reviewed study intent consumer');}
+  previousUI=previousUI.filter(row=>!added.has(key(row)));
+  const rename={file:'cend07-f02a-power-focus.spec.ts',projectName:'chromium',before:'CEND07-F02A-A4 the full twelve-scroll catalogue honest gates and unchanged manual visible status remain readonly with their complete original conditions',after:'CEND07-F02A-A4 the full twelve-scroll catalogue honest gates and explicit manual costs remain readonly with their complete original conditions',sourceReference:'goal-4/evidence/cend08/review.md'};
+  assert.deepEqual(studyIntentAdditions.retainedConsumerRenames,[rename],'Only the reviewed manual cost consumer may change its title');
+  const renamedKey=key({suite:'ui',file:rename.file,title:rename.after,projectName:rename.projectName});assert.equal(previousUI.filter(row=>key(row)===renamedKey).length,1,'Missing exact reviewed manual cost consumer');
+  // Normalize only the ancestry proof; actual current declarations retain their new title.
+  previousUI=previousUI.map(row=>key(row)===renamedKey?{...row,title:rename.before}:row);
+  assert.equal(previousUI.length,sourceIntentAdditions.profile.count,'Original v42 inventory reduced');assert.equal(sha(JSON.stringify(previousUI.map(key).sort())),sourceIntentAdditions.profile.signature,'Original v42 consumer lost or replaced');
+ }
+
  if(version>=42){
   assert.equal(sourceIntentAdditions.format,'chenyuan-cend07-f02c-source-additions');assert.equal(sourceIntentAdditions.version,42);assert.equal(sourceIntentAdditions.parentVersion,41);assert.equal(sourceIntentAdditions.additions.length,5);
   const added=new Set(sourceIntentAdditions.additions.map(key));assert.equal(added.size,5,'Duplicate source intent case');
@@ -425,7 +448,7 @@ export function inspectIdleDeclarations(version,declarations,runtime,recoveryUI)
 /** Explicit same-runtime engineering proof; does not replace the historical candidate gate. */
 export function verifyIdleMatrixCoverage(manifestFile){
  const manifest=JSON.parse(fs.readFileSync(manifestFile)),base=path.dirname(path.resolve(manifestFile));
- assert.equal(manifest.format,'chenyuan-idle-matrix-inputs');assert.ok(manifest.version===1||manifest.version===2||manifest.version===3||manifest.version===4||manifest.version===5||manifest.version===6||manifest.version===7||manifest.version===8||manifest.version===9||manifest.version===10||manifest.version===11||manifest.version===12||manifest.version===13||manifest.version===14||manifest.version===15||manifest.version===16||manifest.version===17||manifest.version===18||manifest.version===19||manifest.version===20||manifest.version===21||manifest.version===22||manifest.version===23||manifest.version===24||manifest.version===25||manifest.version===26||manifest.version===27||manifest.version===28||manifest.version===29||manifest.version===30||manifest.version===31||manifest.version===32||manifest.version===33||manifest.version===34||manifest.version===35||manifest.version===36||manifest.version===37||manifest.version===38||manifest.version===39||manifest.version===40||manifest.version===41||manifest.version===42,'Unknown idle matrix version');assert.deepEqual(manifest.scope,{browser:'chromium',viewport:{width:1440,height:900},fontScale:1});assert.match(manifest.runtime,/^[a-f0-9]{64}$/);
+ assert.equal(manifest.format,'chenyuan-idle-matrix-inputs');assert.ok(manifest.version===1||manifest.version===2||manifest.version===3||manifest.version===4||manifest.version===5||manifest.version===6||manifest.version===7||manifest.version===8||manifest.version===9||manifest.version===10||manifest.version===11||manifest.version===12||manifest.version===13||manifest.version===14||manifest.version===15||manifest.version===16||manifest.version===17||manifest.version===18||manifest.version===19||manifest.version===20||manifest.version===21||manifest.version===22||manifest.version===23||manifest.version===24||manifest.version===25||manifest.version===26||manifest.version===27||manifest.version===28||manifest.version===29||manifest.version===30||manifest.version===31||manifest.version===32||manifest.version===33||manifest.version===34||manifest.version===35||manifest.version===36||manifest.version===37||manifest.version===38||manifest.version===39||manifest.version===40||manifest.version===41||manifest.version===42||manifest.version===43||manifest.version===44,'Unknown idle matrix version');assert.deepEqual(manifest.scope,{browser:'chromium',viewport:{width:1440,height:900},fontScale:1});assert.match(manifest.runtime,/^[a-f0-9]{64}$/);
  const read=ref=>{assert.ok(ref&&typeof ref.path==='string');assert.match(ref.sha256,/^[a-f0-9]{64}$/);const bytes=fs.readFileSync(path.resolve(base,ref.path));assert.equal(sha(bytes),ref.sha256,'Evidence bytes changed: '+ref.path);return JSON.parse(bytes);};
  const phases=[],phaseNames=new Set();let previousStart=-Infinity;
  for(const descriptor of manifest.phases){
