@@ -1,0 +1,11 @@
+{
+  "actualOwnedResourceChild": [
+    "2453",
+    "2451",
+    "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m unittest discover -s art/tools -p test_*.py"
+  ],
+  "cwd": "p2453\nfcwd\nn/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend09-source/final/source\n",
+  "reason": "995 intermediate fallback-only source omitted two real original-scope regressions. Stop obsolete validation, preserve actual status, validate new final source. Not a timeout restart.",
+  "signal": "SIGINT",
+  "notFullPass": true
+}
