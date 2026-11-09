@@ -1,0 +1,15 @@
+{
+  "previousGoalTurn": "progress",
+  "sourceHead": "f987d0f9ab1be723e79d2ec84f1397e7d89673dd",
+  "threeTaskProductBase": "4b7bde3",
+  "currentRuntimeDigest": "3b3f39de288f41606ccf873efa23d51d269903950e2e4c63da57e717ac0d05ca",
+  "root343SameAsDelivered514": true,
+  "initialProductionChanges": 0,
+  "currentNewTests": "three cross-feature sequences in check-cend07-bc08.spec.ts",
+  "openArtDebts": [
+    "CEND08-F02",
+    "CEND08-F03"
+  ],
+  "originalPlayerDBReadOrChanged": false,
+  "priorIgnoredOriginalsMissingStateKept": true
+}

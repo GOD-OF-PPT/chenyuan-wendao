@@ -1,0 +1,14 @@
+{
+  "readDate": "2026-11-09",
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/112",
+      "usedFor": "consistent navigation, same repeated order and predictable focus"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "usedFor": "enough context and explicit meaning of reading versus changing configuration or executing"
+    }
+  ],
+  "projectInference": "three cross-play feature sequences, budgets, geometry and identity proof; no Xbox certification"
+}

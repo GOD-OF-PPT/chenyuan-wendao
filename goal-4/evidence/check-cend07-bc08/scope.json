@@ -1,0 +1,115 @@
+{
+  "oldWholeFiles": [
+    "adventure-objects.spec.ts",
+    "art10-equipment-stage.spec.ts",
+    "art11-inventory-stage.spec.ts",
+    "art14-relic-blueprint.spec.ts",
+    "art18-dialog-controls.spec.ts",
+    "art18-mainline-usability.spec.ts",
+    "art27-relic-workshop.spec.ts",
+    "art34-source-stage.spec.ts",
+    "cend03-review-observations.spec.ts",
+    "cend06-f02b-travel-passage.spec.ts",
+    "cend07-f02a-power-focus.spec.ts",
+    "cend07-f02b-relic-focus.spec.ts",
+    "cend07-f02c-source-intent.spec.ts",
+    "cend07-f04-preparation-bench.spec.ts",
+    "cend08-study-intent.spec.ts",
+    "check-cend07-forecast-context.spec.ts",
+    "check-matrix-guidance.spec.ts",
+    "check-matrix-records.spec.ts",
+    "check-ta-03.spec.ts",
+    "check-ui35-source-state.spec.ts",
+    "check-uir33-01.spec.ts",
+    "equipment-actors.spec.ts",
+    "equipment-objects.spec.ts",
+    "idle-adventure.spec.ts",
+    "idle-integration.spec.ts",
+    "idle-preparation-active.spec.ts",
+    "idle-preparation-drafts.spec.ts",
+    "idle-preparation.spec.ts",
+    "idle-production.spec.ts",
+    "idle-recovery-context.spec.ts",
+    "idle-recovery-ui.spec.ts",
+    "idle-sources.spec.ts",
+    "matrix-ui-intent.spec.ts",
+    "source-actors.spec.ts",
+    "stage-r1.spec.ts",
+    "stage-r2.spec.ts",
+    "stage-r3-layout.spec.ts",
+    "stage-r3.spec.ts",
+    "stage-r4.spec.ts",
+    "stage-u8-b.spec.ts",
+    "uir33-02-local-exploration.spec.ts",
+    "uir34-03-configuration-focus.spec.ts",
+    "uir34-04-resume-wording.spec.ts",
+    "ux24-goal-guidance.spec.ts",
+    "ux27-equipment-context.spec.ts",
+    "ux31-readability.spec.ts",
+    "ux33-activity-status.spec.ts"
+  ],
+  "newWholeFile": "check-cend07-bc08.spec.ts",
+  "newPlannedCases": 3,
+  "wholeMixedCasesDeferredBeforeExecution": [
+    {
+      "file": "art14-relic-blueprint.spec.ts",
+      "title": "ART14-A3 missing relic art retains the blueprint verb and gates with keyboard and reduced effects",
+      "project": "chromium"
+    },
+    {
+      "file": "art27-relic-workshop.spec.ts",
+      "title": "ART27-A5 failed workshop or all-art fallback preserves keyboard budgets and real facts under both reduced-effect choices",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A12 both reduced-effect modes and all four failed cold images retain complete readable objects budgets and first real retry results",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "system reduced effects retain real source progress and static committed results",
+      "project": "chromium"
+    },
+    {
+      "file": "adventure-objects.spec.ts",
+      "title": "preference reduced effects retain real source progress and static committed results",
+      "project": "chromium"
+    },
+    {
+      "file": "source-actors.spec.ts",
+      "title": "TA08-A12 both reduction settings missing natural art and natural or four commission error layouts retain complete usable objects and readonly facts",
+      "project": "chromium"
+    },
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A8",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-dialog-controls.spec.ts",
+      "title": "ART18-E9 system-reduction",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-dialog-controls.spec.ts",
+      "title": "ART18-E9 saved-reduction",
+      "project": "chromium"
+    }
+  ],
+  "scope": {
+    "browser": "chromium",
+    "viewport": [
+      1440,
+      900
+    ],
+    "fontScale": 1
+  },
+  "core": "actual complete ten gates; documents already includes full resource suite",
+  "finalMatrixNotProven": true
+}
