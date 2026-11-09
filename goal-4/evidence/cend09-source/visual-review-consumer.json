@@ -1,0 +1,35 @@
+{
+  "consumer": "0d1a8dc56f0c4033bef64c59518b415c7fd8cb5f",
+  "product": "414fd4f06e613f12339692959025fd750e5c4f87",
+  "actualViewed": 2,
+  "maximumPerResult": 2,
+  "rows": [
+    {
+      "name": "jade_task-paused-material",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend09-source/consumer/ui-results/cend09-source-stage-CEND09-c3d20-ty-and-original-quota-retry-chromium/jade_task-paused-material.png",
+      "pngSHA256": "e0d7500ee31f8badfe785cb676c328fa420f6788d60cc010647e575a2af0b2e9",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend09-source/consumer/views/consumer-jade_task-paused-material.jpg",
+      "jpegSHA256": "632ad58d6a168b831cd2197b84d90efe1791f9f7c56764bf75f122e2c3603e0b",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "quality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "jade_task-quota-failed",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend09-source/consumer/ui-results/cend09-source-stage-CEND09-c3d20-ty-and-original-quota-retry-chromium/jade_task-quota-failed.png",
+      "pngSHA256": "8688fcc3de92d662a6a3b21e2558923307af093d68033602a40198470c3f5590",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend09-source/consumer/views/consumer-jade_task-quota-failed.jpg",
+      "jpegSHA256": "7fd7c9207f8e381004115041731aff444439bbc9dd720cbfa4b6fabe500248ac",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "quality": 68,
+      "actuallyViewed": true
+    }
+  ],
+  "notHumanAcceptance": true
+}
