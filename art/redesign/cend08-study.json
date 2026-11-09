@@ -1,0 +1,115 @@
+{
+  "format": "chenyuan-cend08-study-intent",
+  "version": 1,
+  "userAcceptance": false,
+  "maxNativeDeltaBytes": 0,
+  "newRasterAssets": 0,
+  "files": {
+    "web/src/LearningPlanner.vue": {
+      "before": "goal-4/evidence/cend08/before/web/src/LearningPlanner.vue",
+      "beforeBytes": 18498,
+      "beforeSha256": "8ab818e7af414ad482854c504d9438db11e9bde66b11252a5ed8f163238fdcf3",
+      "bytes": 18483,
+      "sha256": "02cae4c97de4b054acb1208fe7801b370019a08a05d9a844d9c8f245f009a503",
+      "operations": [
+        [
+          9848,
+          "mall v-if=\"!manualComplete\">破庙交易已获得同一启迪时，不重复收费。</small><s",
+          ""
+        ],
+        [
+          13005,
+          "仅参悟一次 · ",
+          ""
+        ],
+        [
+          13375,
+          "",
+          " v-if=\"quote?.stopReason?.code!=='CYCLES_COMPLETE'\""
+        ],
+        [
+          13444,
+          "}}</small><small>{{planningNote",
+          ""
+        ],
+        [
+          15686,
+          "",
+          "small v-if=\"mode==='manual'\">破庙交易已获得同一启迪时，不重复收费。</small><"
+        ],
+        [
+          17074,
+          "完成调整 · ",
+          ""
+        ]
+      ]
+    },
+    "web/src/JadeStudyScene.vue": {
+      "before": "goal-4/evidence/cend08/before/web/src/JadeStudyScene.vue",
+      "beforeBytes": 5241,
+      "beforeSha256": "01f2ee3390241cd4edd6769fdc1a563a185c2b1f938e2290d7d4de7b50aee52f",
+      "bytes": 5230,
+      "sha256": "e561a38bbdf4b4a5cb814263b541dbe1f129a8e82c140717abfc73fe145488ba",
+      "operations": [
+        [
+          2420,
+          "安排后逐卷研习",
+          ""
+        ],
+        [
+          3658,
+          "",
+          "status&&("
+        ],
+        [
+          3693,
+          "",
+          ")"
+        ]
+      ]
+    }
+  },
+  "groups": {
+    "idle-preparation": {
+      "ledger": "art/redesign/idle-preparation.json",
+      "ledgerSha256": "bad1cbd7a8e23cdf505f6e055c6cf75ab4886a009a500f8f041e6ef94c58cf51",
+      "cap": 60000,
+      "files": [
+        "web/src/LearningPlanner.vue",
+        "web/src/MarketPlanner.vue",
+        "web/src/RecoveryPlanner.vue",
+        "web/src/ConfigurationDialog.vue",
+        "web/src/preparation-view.ts",
+        "web/src/idle-preparation.css"
+      ]
+    },
+    "art03": {
+      "ledger": "art/redesign/art03.json",
+      "ledgerSha256": "a2a078e6ee338a17286a6c159767334f26a2698cd5848767932993ad7f124cef",
+      "cap": 45000,
+      "files": [
+        "web/src/JadeStudyScene.vue",
+        "web/src/RelicAtelier.vue",
+        "web/src/LoadoutConstellation.vue",
+        "web/src/equipment-effects.ts",
+        "web/src/art03-equipment.css"
+      ]
+    },
+    "ta09": {
+      "ledger": "art/redesign/ta09.json",
+      "ledgerSha256": "b52562bd4fc17b77cf00a171beec5624361a7c0ba1bb13160220299b2cfca76d",
+      "cap": 30000,
+      "files": [
+        "web/src/JadeEngraving.vue",
+        "web/src/StudyQueueRail.vue",
+        "web/src/RelicInscription.vue",
+        "web/src/equipment-choreography.ts",
+        "web/src/ta09-equipment.css"
+      ]
+    }
+  },
+  "sourceReferences": [
+    "docs/decisions/0135-cend08-ui-mainline-review.md",
+    "goal-4/amendments/2026-11-09-cend08-f01-optimization.md"
+  ]
+}

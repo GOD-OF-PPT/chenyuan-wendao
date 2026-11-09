@@ -68,6 +68,9 @@ class InventoryTests(unittest.TestCase):
   history_ui=ROOT/'art/redesign/activity-history.json'
   if history_ui.exists():
    data=json.loads(history_ui.read_text());files.update(ROOT/ref for ref in data['sourceReferences']);files.update(ROOT/row['path'] for row in data['files'])
+  studyintent=ROOT/'art/redesign/cend08-study.json'
+  if studyintent.exists():
+   current=json.loads(studyintent.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*[r['before']for r in current['files'].values()]])
   sourceintent=ROOT/'art/redesign/cend07-f02c.json'
   if sourceintent.exists():
    current=json.loads(sourceintent.read_text());files.update(ROOT/n for n in [*current['sourceReferences'],*current['files'],*current['authority'],*[row['before']for row in current['files'].values()]])

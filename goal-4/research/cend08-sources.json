@@ -1,0 +1,17 @@
+{
+  "task": "CEND08",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "readThisRound": true,
+      "finding": "Gameplay hierarchy and minimized noise keep important state identifiable."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "readThisRound": true,
+      "finding": "Enough context and adjacent labels for predictable interaction."
+    }
+  ],
+  "inference": "Review each actual object and verb, then its full costs/authorization/result/next step separately from aesthetic judgment. Not a certification.",
+  "userAcceptance": false
+}

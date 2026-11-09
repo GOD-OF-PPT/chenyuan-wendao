@@ -1,3 +1,4 @@
+from cend08_study_inventory import prior_study_intent_bytes
 """Exact three-source power-study hierarchy, with original callbacks and caps."""
 import hashlib,json,re
 from pathlib import Path
@@ -99,7 +100,11 @@ MANIFEST={'format': 'chenyuan-cend07-f02a-power-focus',
                       'goal-4/amendments/2026-11-07-cend07-f02a-input.md',
                       'goal-4/research/cend07-f02a-sources.json']}
 MARKERS={'LearningPlanner.vue':b'const known=computed(', 'JadeStudyScene.vue':b'v-if="manual||state', 'JadeEngraving.vue':'<small v-if="manual">只查看卷面'.encode()}
+def current_power_bytes(path,raw):
+ try:return prior_study_intent_bytes(path,raw)
+ except AssertionError as error:raise AssertionError("PF02 parent: "+str(error))from error
 def prior_power_focus_bytes(path,raw):
+ raw=current_power_bytes(path,raw)
  name=Path(path).name;names=[n for n in MANIFEST['files']if Path(n).name==name]
  if not names:return raw
  row=MANIFEST['files'][names[0]]
@@ -120,7 +125,7 @@ def validate_power_focus(root):
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'PF02 immutable scope/caps'
  total=0
  for n,row in MANIFEST['files'].items():
-  raw=local(n).read_bytes();old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'PF02 current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'PF02 original source';assert prior_power_focus_bytes(n,raw)==old,'PF02 full inverse';total+=len(raw)-len(old)
+  raw=current_power_bytes(n,local(n).read_bytes());old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'PF02 current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'PF02 original source';assert prior_power_focus_bytes(n,raw)==old,'PF02 full inverse';total+=len(raw)-len(old)
   assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'PF02 original view and writing callbacks'
   assert re.findall(rb'<style.*?</style>',raw,re.S)==re.findall(rb'<style.*?</style>',old,re.S),'PF02 original styles'
   if n.endswith('JadeEngraving.vue'):assert raw.split(b'</script>')[0]==old.split(b'</script>')[0],'PF02 actual object logic'
