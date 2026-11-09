@@ -1,0 +1,12 @@
+{
+  "file": "web/e2e/ux33-activity-status.spec.ts",
+  "originalSHA256": "5cf462fb2ab91d71df8eba27579ccf12bd38c7254c927d142229208113d486a7",
+  "currentSHA256": "2c10a267f4003cc7426c143e2b51cd2d22d3fa301c3be606cbd8f815a1df355b",
+  "onlyTwoTimeLocationAssertionsChanged": true,
+  "newAssertionsAlsoCheckActualCostAndLocation": true,
+  "original30And60SecondsPreserved": true,
+  "productChanged": false,
+  "initialFull393": "initial-ui-terminal.json",
+  "fullChangedFileRequired": true,
+  "old387NotYetInherited": true
+}
