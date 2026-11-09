@@ -1,3 +1,4 @@
+from cend10_stock_goal_inventory import prior_stock_goal_bytes
 import hashlib,json,re
 from pathlib import Path
 LEDGER='art/redesign/cend09-source.json'
@@ -46,6 +47,7 @@ MANIFEST={'format': 'chenyuan-source-stage-hierarchy',
                       'goal-4/amendments/2026-11-09-cend09-source-input.md',
                       'goal-4/research/cend09-source-sources.json']}
 def prior_source_stage_bytes(path,raw):
+ raw=prior_stock_goal_bytes(path,raw)
  row=MANIFEST['parent']
  if Path(path).name!=Path(row['path']).name or row['newImport'].encode() not in raw:return raw
  assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'SH09 exact current whole parent'
@@ -72,6 +74,6 @@ def validate_source_stage(root):
  assert css.startswith(b"@import './ta08-source.css';"),'SH09 original material stylesheet still imported'
  assert not re.search(rb'@media|@font-face|https?:|display\s*:\s*none|visibility\s*:\s*hidden|overflow\s*:\s*(?:hidden|auto|scroll)|(?<![\w-])content\s*:|font-size\s*:\s*(?:[0-9]|1[0-3])px',css),'SH09 no compatibility hiding scrolling fake text or small fonts'
  for field,label in [('authority','original authority'),('oldLedgers','old ledgers')]:
-  for n,h in MANIFEST[field].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'SH09 '+label
+  for n,h in MANIFEST[field].items():assert hashlib.sha256(prior_stock_goal_bytes(n,local(n).read_bytes())).hexdigest()==h,'SH09 '+label
  for n in MANIFEST['sourceReferences']:local(n)
  return{LEDGER,row['path'],row['before'],d['path'],*MANIFEST['authority'],*MANIFEST['oldLedgers'],*MANIFEST['sourceReferences']},len(css)

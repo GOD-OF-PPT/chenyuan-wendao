@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-09",
+  "actualReads": [
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "application": "Place labels near associated elements; distinguish saved current goal from editable next draft."
+    },
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "application": "Prioritize actual current gameplay and minimize visual noise."
+    }
+  ],
+  "projectInference": "Stock denominator and short label are project design; no certification or prescribed dimensions.",
+  "compatibilityEnvironmentPerformancePaused": true
+}

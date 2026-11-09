@@ -1,3 +1,4 @@
+from cend10_stock_goal_inventory import prior_stock_goal_bytes
 from cend06_f02a_inventory import prior_f02a_bytes
 """Exact source-state display inverse; original writers and animation proof remain strict."""
 import hashlib,json,re
@@ -32,7 +33,7 @@ MANIFEST={'format': 'chenyuan-check-ui35-source-state',
  'sourceReferences': ['docs/decisions/0124-check-ui35-source-state-contract.md',
                       'goal-4/amendments/2026-11-06-check-uir35-03-04-cend06-input.md']}
 def prior_check_ui35_source_bytes(path,raw):
- raw=prior_f02a_bytes(path,raw)
+ raw=prior_stock_goal_bytes(path,prior_f02a_bytes(path,raw))
  if Path(path).name!=Path(MANIFEST['path']).name or '当前库存'.encode() not in raw:return raw
  assert len(raw)==MANIFEST['bytes']and hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'CHECK-UI35-SOURCE complete current source'
  text=raw.decode()
@@ -49,7 +50,7 @@ def validate_check_ui35_source(root):
   assert not(root/MANIFEST['path']).exists()or '当前库存'.encode()not in(root/MANIFEST['path']).read_bytes(),'CHECK-UI35-SOURCE missing ledger'
   return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'CHECK-UI35-SOURCE immutable scope and budgets'
- raw=local(MANIFEST['path']).read_bytes();old=local(MANIFEST['before']).read_bytes()
+ raw=prior_stock_goal_bytes(MANIFEST['path'],local(MANIFEST['path']).read_bytes());old=local(MANIFEST['before']).read_bytes()
  assert len(raw)==MANIFEST['bytes']and hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'CHECK-UI35-SOURCE current source'
  assert len(old)==MANIFEST['beforeBytes']and hashlib.sha256(old).hexdigest()==MANIFEST['beforeSha256'],'CHECK-UI35-SOURCE original source'
  assert prior_check_ui35_source_bytes(MANIFEST['path'],raw)==old,'CHECK-UI35-SOURCE complete inverse'

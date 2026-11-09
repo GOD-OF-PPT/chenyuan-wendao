@@ -1,0 +1,36 @@
+{
+  "format": "chenyuan-source-stock-goal-additions",
+  "version": 49,
+  "parentVersion": 48,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1040,
+    "signature": "c90555c76b49b58b2ec951c7afe7a567823094fd6c29c13512ab83c1d9f2ac06"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend10-source-goal.spec.ts",
+      "title": "CEND10-G1 a committed material goal stays adjacent to real stock through a different draft pause resume and its one formal dual yield",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend10-source-goal.spec.ts",
+      "title": "CEND10-G2 a failed original source tick keeps its real goal and stock until the same canonical retry is atomically saved",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend10-source-goal.spec.ts",
+      "title": "CEND10-G4 a confirmed school change retires the old target beside stock without converting the preserved draft into current authority",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend10-source-goal.spec.ts",
+      "title": "CEND10-G3 a saved stone target is shown beside actual stones while another source cycle-only plan and replacement life borrow no target",
+      "projectName": "chromium"
+    }
+  ]
+}

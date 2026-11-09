@@ -5,6 +5,7 @@ import type {Activity} from '../../src/full/activity';
 import type {ActionResult} from '../../src/full/contracts';
 import * as C from '../../src/full/content';
 import {sourceHoldings,sourcePeriodTotals,savedSourceYield} from './source-choreography';
+import SourceStockGoal from './SourceStockGoal.vue';
 import './ta08-source.css';
 const props=defineProps<{game:Game;sourceId:string;activity:Activity|null;result:ActionResult|null;sequence:number}>();
 const instance=useId(),paint=(material:string)=>`ta08-bag-${props.sourceId}-${instance}-${material}`;
@@ -36,7 +37,7 @@ onDeactivated(()=>opened.value=false);
     </svg>
     <span>{{opened?'合上':'检视'}}{{commission?'承办匣':'采集袋'}}<small>当前库存</small></span>
    </button>
-   <div class="ta08-held-rows"><div v-for="row in rows" :key="row.id" class="ta08-stock-row" :data-item="row.id"><span>{{row.name}}</span><b>{{row.quantity}}</b><small><template v-if="totals&&totals.cycles>0">本段已保存 +{{count(row.id)}}</template><template v-else>{{totals?'首轮尚无成果':'本次尚未安排'}}</template></small></div></div>
+   <div class="ta08-held-rows"><div v-for="row in rows" :key="row.id" class="ta08-stock-row" :data-item="row.id"><span>{{row.name}}</span><b>{{row.quantity}}</b><SourceStockGoal :game="game" :source-id="sourceId" :row-id="row.id" :activity="activity"/><small><template v-if="totals&&totals.cycles>0">本段已保存 +{{count(row.id)}}</template><template v-else>{{totals?'首轮尚无成果':'本次尚未安排'}}</template></small></div></div>
    <p v-if="totals" class="ta08-period-facts">本段 {{totals.cycles}} 轮 · 已用 {{totals.months}} 游戏月<template v-if="totals.xp"> · 实得修为 +{{totals.xp}}</template></p>
    <p v-if="saved" :key="sequence" class="ta08-satchel-result" data-testid="source-arrival" :data-sequence="sequence" role="status"><span data-testid="source-satchel-arrival" :data-sequence="sequence"><strong>已入囊 · 本轮已保存</strong><span>{{saved.items.map(row=>row.name+' +'+row.quantity).join(' · ')}}<template v-if="saved.xp>0"> · 修为 +{{saved.xp}}</template></span></span></p>
   </div>
