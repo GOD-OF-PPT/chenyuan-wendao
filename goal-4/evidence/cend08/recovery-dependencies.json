@@ -1,0 +1,8 @@
+{
+  "baseManifest": "goal-4/evidence/check-cend07-three/dependencies.json",
+  "baseSha256": "0a2b903f30fc01a3a2dfa169c05bfbafb54606cc5674f4948cc3a2c1249814b8",
+  "frozenActualPublishedFiles": 1981,
+  "allExact": true,
+  "fresh142OnThisFrozenInstance": true,
+  "oldMissingArtifactsNotNeededForThisProof": true
+}

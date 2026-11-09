@@ -1,0 +1,11 @@
+{
+  "task": "CEND08",
+  "rootHeadBefore": "0750303742baaea201d591825b1083d0bed4d909",
+  "previousTurn": "progress",
+  "productProducer": "e2a5a6682b9822b5b40eeef160c47b4e8e134bf3",
+  "currentReviewedConsumer": "2e24dd6debd417a282b5580d7123152b51c4adeb",
+  "runtime": "2473c9d382f23bcefe5e870dbdc60a75c6f409f709e4f89c6bbeea8294c135ac",
+  "productionMutationPlanned": false,
+  "existingPreview": "http://127.0.0.1:56926/",
+  "formalCandidate": false
+}

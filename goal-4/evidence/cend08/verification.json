@@ -1,0 +1,51 @@
+{
+  "task": "CEND08",
+  "outcome": "Local independent review plus bounded F01 implementation delivered; overall goal remains active",
+  "sourceCommit": "51413948a4c0a2d9c14697526c8fb435bff4c40e",
+  "runtimeDigest": "3b3f39de288f41606ccf873efa23d51d269903950e2e4c63da57e717ac0d05ca",
+  "currentUI": 158,
+  "currentUIExit": 0,
+  "sameNamedUnpackedSubset": 5,
+  "baselineUI": 142,
+  "actualViewedBaselineCurrentPackage": [
+    42,
+    11,
+    2
+  ],
+  "guards": 13,
+  "positiveResourceFiles": 879,
+  "currentRuntimeFiles": 343,
+  "unchangedRuntimeFiles": 341,
+  "actualDependencies": 1981,
+  "runtimeNetBytes": -26,
+  "runtimePayloadFiles": 112,
+  "runtimePayloadBytes": 11256334,
+  "previewURL": "http://127.0.0.1:56927/",
+  "archive": {
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/cend08-study-preview-5141394.zip",
+    "bytes": 10119655,
+    "sha256": "f326423ef08969231b512892e7cf095d0d2c443cab061245d882d0e24dc20249",
+    "files": 115,
+    "runtimeFiles": 112,
+    "runtime": "3b3f39de288f41606ccf873efa23d51d269903950e2e4c63da57e717ac0d05ca",
+    "formalCandidate": false,
+    "helperSHA256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565"
+  },
+  "original13Exact": true,
+  "originalPlayerDBReadOrMutated": false,
+  "fullMatrixRun": false,
+  "compatibilityEnvironmentPerformanceRun": false,
+  "overallArtOrHumanAcceptance": false,
+  "openFindings": [
+    "CEND08-F02",
+    "CEND08-F03"
+  ],
+  "nextMandatory": "CHECK-CEND07-F02B-F02C-CEND08",
+  "review": "review.md",
+  "checks": "checks.json",
+  "identity": "current-identity.json",
+  "httpArchive": "current-http-package.json",
+  "declarations": "declarations.json",
+  "formalGJOriginalRejections": 1,
+  "formalGJCurrentDecision": "Pass bounded task, no known uncorrected blocker; not overall acceptance"
+}

@@ -1,0 +1,23 @@
+{
+  "condition": "Previously observed ignored artifacts and owned services disappeared during this active turn; cause unknown.",
+  "currentHead": "86bbf6ebe7b8c9671b013d871539ae72d809cb8d",
+  "missingIgnored": [
+    "artifacts/goal-4/cend08",
+    "artifacts/goal-4/cend07-f02c/consumer",
+    "artifacts/goal-4/uir34-01/art-venv"
+  ],
+  "preserved": [
+    "rootGitCommits",
+    "untracked nonignored goal-4/evidence/cend08/observations.json",
+    "initial-terminal.json",
+    "observer-finding.json",
+    "identity-before.json",
+    "continuation-audit.json"
+  ],
+  "oldIgnoredPNGsAndTracesAvailable": false,
+  "oldPhaseAndBuildNotReusedAsCurrentExecution": true,
+  "recovery": "New distinct cend08-recovery ignored worktree; reexecute all142 current corrected cases on fixed1440x900/font1 singleChromium and recapture actual visuals. No cleanup/reset/prune or user save test.",
+  "previousLiveSession27146Terminal": "exit1 ECONNREFUSED4173 before browser launch",
+  "sameTaskContinues": true,
+  "compatibilityEnvironmentPerformance": "paused"
+}

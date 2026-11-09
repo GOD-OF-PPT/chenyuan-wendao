@@ -1,0 +1,31 @@
+{
+  "file": "web/e2e/art11-inventory-stage.spec.ts",
+  "case": "ART11-A7",
+  "status": "original-scope-premise-corrected-pending-full-file-rerun",
+  "cause": "Global item-artifact locator resolves inventory current healing_pill plus kept-alive GoalPanel foundation_pill. Original desired current-stage ownership check should be scoped to inventory-stage.",
+  "originalReport": "artifacts/goal-4/cend07-f02c/consumer/cend08-report.json",
+  "originalReportSha256": "9ebb7c173f6df4fb3407285c7d2c8c006a563e3a8a2ae2e156016dada3521630",
+  "initial142": {
+    "exit": 1,
+    "launchError": null,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "inputs": 5441,
+    "runtime": "2473c9d382f23bcefe5e870dbdc60a75c6f409f709e4f89c6bbeea8294c135ac",
+    "stats": {
+      "startTime": "2026-11-09T02:21:46.551Z",
+      "duration": 611617.887,
+      "expected": 141,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "errors": [],
+    "actualDeclarations": 142,
+    "retried": [],
+    "reportSha256": "9ebb7c173f6df4fb3407285c7d2c8c006a563e3a8a2ae2e156016dada3521630"
+  },
+  "noGameOrProductionFailure": true,
+  "correction": "Only scope the originaldata-owned=false assertion to actual inventory-stage, preserving original allGame/DB/readable label/new life/period geometry assertions and complete file execution."
+}

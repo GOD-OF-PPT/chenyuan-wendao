@@ -1,0 +1,34 @@
+{
+  "producer": "51413948a4c0a2d9c14697526c8fb435bff4c40e",
+  "runtime": "3b3f39de288f41606ccf873efa23d51d269903950e2e4c63da57e717ac0d05ca",
+  "actualViewed": 2,
+  "rows": [
+    {
+      "name": "manual-one-current-decision",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/package-results/cend08-study-intent-CEND08-5e8c2-plete-terms-remain-readonly-chromium/manual-one-current-decision.png",
+      "pngSHA256": "b322cc01b7355bd149b2b80f2d68269872ec1074eeb047ee55e30759d06fff3b",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/views/package-manual-one-current-decision.jpg",
+      "jpegSHA256": "1d647d12a65914911d063e98b6a79fa0e15aadc678c572bee5ff18c09a20e65c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "manual-paused-after-reload",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/package-results/cend08-study-intent-CEND08-ac5a3-d-fact-or-new-authorization-chromium/manual-paused-after-reload.png",
+      "pngSHA256": "3e97e9deacaa6103c4bdddf810e42641e8586db7b3c59e6725e42dddc02df4bc",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/views/package-manual-paused-after-reload.jpg",
+      "jpegSHA256": "768c89a6f7abbfe178b13bdba06077e68d39bc2692dc6a6e7de4402b985d729c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    }
+  ],
+  "subsetOfOriginalFiveNotNewCoverage": true
+}

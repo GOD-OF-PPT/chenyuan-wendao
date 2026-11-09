@@ -1,0 +1,136 @@
+{
+  "records": [
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-recovery/ui-report.json",
+      "bytes": 3299267,
+      "sha256": "adf5c68c9a8cd8834750681486903f36a0bbaeae456cce84129e92f7dd865233"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-recovery/ui.log",
+      "bytes": 26922,
+      "sha256": "68aedccb0c2bd77f40a5bc70685b938fbfe948417f917efde356b0f2a4dbe76d"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-recovery/ui-declared.json",
+      "bytes": 99385,
+      "sha256": "290f7a37a6a16bcef81b0ca58b65d59a3ac1a8625b7d74a6344d23934280099b"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-recovery/build-terminal.json",
+      "bytes": 176,
+      "sha256": "6f8d45ddea9d2239c87380f3a7be5b261ac746f72b8b3026ce5bef04af5d671f"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-recovery/red-study.log",
+      "bytes": 1042,
+      "sha256": "157c4f4e543a55b430aff59bc0cfbd228e2db4f2710adfa671c9695217af40e3"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-recovery/red-study-actual.log",
+      "bytes": 2334,
+      "sha256": "0b181d50d09410f44cc4e367bd2f306ac07bad4fedd1a7e4321206230339749b"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-recovery/red-study-report.json",
+      "bytes": 7442,
+      "sha256": "9e52a259836e2dae48493a428da29ae261019ad8b99e8d336d3d218788626dcb"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-recovery/study-guards-actual.log",
+      "bytes": 2006,
+      "sha256": "0ccfe9e91f5f80d7e6a39e513fa051f30c9d72087218e95368a5a6916561018f"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-recovery/study-guards-corrected.log",
+      "bytes": 113,
+      "sha256": "7e7c2ec5e5ce773877769edf88da394c9228224ad19acbec4c31a40108245bec"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/ui-report.json",
+      "bytes": 13050020,
+      "sha256": "562615e7d4354395bee8277773a94d2e400fb2618afb0b78dff093ba5902c2f8"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/ui.log",
+      "bytes": 30239,
+      "sha256": "508b957a39f7b91ebd149a6014090fdf1a68c56f779abc06f30dfc9db0e336c4"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/ui-declared.json",
+      "bytes": 110586,
+      "sha256": "7ec44df735adbe7881c872f9e20b5b95611362800d9d237de7459930a5f831ca"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/package-report.json",
+      "bytes": 20312,
+      "sha256": "16415f51ff005e24461ed2960f9ae3c6d51de6ce6947b714e8656038abcd4705"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/package.log",
+      "bytes": 1347,
+      "sha256": "f5adc87406a2b738bec48ff48ae8f8ff7f12afb9e848d537103144f46680f266"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/package-current-declared.json",
+      "bytes": 5887,
+      "sha256": "a43d5b174ac41475b4bae2daa1f5228b7380eab20c635a0659e3e51e7c0fe230"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/registered-idle-declared.json",
+      "bytes": 712117,
+      "sha256": "b0136419514a4a1020f157f730ca76953de85ca1f6167323da7b2a3a0b456acd"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/preview-archive.json",
+      "bytes": 452,
+      "sha256": "1906cfdd9ffb2400f8542bf15679007c1370bf39186216c217de694ac2f559ff"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/package-extraction.json",
+      "bytes": 19162,
+      "sha256": "33083c060dd19f065f2e43fe16ff74bad6dc6d3f0e85fbe8bded1a4f8193034d"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/install.log",
+      "bytes": 198,
+      "sha256": "9446d0975785e94ce3720f532151fd47bc4c23b78b02d875e16a1246e9e4b303"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/build.log",
+      "bytes": 1045,
+      "sha256": "0fe4889e414e8bd42f09062cc08ede110c0f10a727a01f3ded871fba9ad17dac"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/build-before.json",
+      "bytes": 641221,
+      "sha256": "4b26d6ce99385bf076f893e01e3f96ae6e9a3b86abb22e9875cf9a37b3c763ab"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/build-after.json",
+      "bytes": 641221,
+      "sha256": "4b26d6ce99385bf076f893e01e3f96ae6e9a3b86abb22e9875cf9a37b3c763ab"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/ui-before.json",
+      "bytes": 699484,
+      "sha256": "b4728ba8f6e8ce572c7ca63a5f240eb57882816a87d8861651384ec53123769f"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/ui-after.json",
+      "bytes": 699484,
+      "sha256": "b4728ba8f6e8ce572c7ca63a5f240eb57882816a87d8861651384ec53123769f"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/package-before.json",
+      "bytes": 699507,
+      "sha256": "d865f58c55e76cab83964ab4bd8fa1b0080aa730a86a6144d5a4c37da5eb330b"
+    },
+    {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/package-after.json",
+      "bytes": 699507,
+      "sha256": "d865f58c55e76cab83964ab4bd8fa1b0080aa730a86a6144d5a4c37da5eb330b"
+    }
+  ],
+  "oldIgnoredDirectoryLoss": "ignored-artifact-loss.json",
+  "sourceAndPhaseIdentitiesNotRelabeled": true
+}

@@ -1,0 +1,31 @@
+{
+  "formalGJDeliveryRejectionCount": 1,
+  "original142Result": "initial-terminal.json",
+  "oldIgnoredArtifactsUnknownLoss": "ignored-artifact-loss.json",
+  "freshBaseline142": "baseline-recovery-terminal.json",
+  "newDiagnosticRed": {
+    "servedRuntime": "2473c9d382f23bcefe5e870dbdc60a75c6f409f709e4f89c6bbeea8294c135ac",
+    "currentIdleStatusExpected": 0,
+    "oldActual": 1,
+    "notFrozenTestConsumer": true,
+    "notFinalProof": true,
+    "log": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-recovery/red-study-actual.log"
+  },
+  "newGuardFirstAttempt": {
+    "failedSubtests": 2,
+    "reason": "PF02 consumer expected parent attribution; SI08 correctly rejected the altered source but omitted PF02 prefix",
+    "log": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-recovery/study-guards-actual.log",
+    "repair": "current_power_bytes wraps original parent cause; old assertion/regex retained",
+    "corrected13Passed": true,
+    "passedMethodCases": 12,
+    "failedMethodCases": 1
+  },
+  "setupFailuresNotProductFailures": [
+    "Initial external Playwright config could not resolve bare @playwright/test; used explicit existing module path.",
+    "An initial guard command used a relative venv executable from art/tools; corrected to the known absolute venv.",
+    "Archive metadata named package.json changed outer config module interpretation; renamed preview-archive.json. Empty old declaration preserved, fresh declaration and full5 execution succeeded."
+  ],
+  "fresh158": "ui-terminal.json",
+  "unpacked5SameCasesSubset": "package-terminal.json",
+  "noRetriesOrBroadeningIntoPausedScopes": true
+}

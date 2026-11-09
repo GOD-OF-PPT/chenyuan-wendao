@@ -1,0 +1,44 @@
+{
+  "scope": {
+    "browser": "chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "fontScale": 1
+  },
+  "selectedWholeFiles": [
+    "cend03-review-observations.spec.ts",
+    "art18-mainline-usability.spec.ts",
+    "ux24-goal-guidance.spec.ts",
+    "stage-r1.spec.ts",
+    "stage-r4.spec.ts",
+    "art11-inventory-stage.spec.ts",
+    "cend07-f02a-power-focus.spec.ts",
+    "cend07-f02b-relic-focus.spec.ts",
+    "cend07-f02c-source-intent.spec.ts",
+    "cend07-f04-preparation-bench.spec.ts",
+    "cend06-f02b-travel-passage.spec.ts",
+    "art18-dialog-controls.spec.ts"
+  ],
+  "selectedCases": 142,
+  "wholeMixedCasesDeferredBeforeExecution": [
+    {
+      "file": "art11-inventory-stage.spec.ts",
+      "title": "ART11-A8 new item surfaces retain keyboard return full text and safe failed-art fallbacks in both reduced-effect modes and a tight real error",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-dialog-controls.spec.ts",
+      "title": "ART18-E9 system-reduction keeps readable consent real press focus and cancellation",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-dialog-controls.spec.ts",
+      "title": "ART18-E9 saved-reduction keeps readable consent real press focus and cancellation",
+      "project": "chromium"
+    }
+  ],
+  "assertionsPreserved": true,
+  "compatibilityEnvironmentPerformance": "paused"
+}
