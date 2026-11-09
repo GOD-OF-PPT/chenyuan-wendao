@@ -35,3 +35,15 @@
 ## 实施前真实门槛核定
 
 RelicAtelier.conflict在running/unresolved时禁用equip-relic比较，App.inspectConfiguration还经store.prepareConfiguration；这是既有写意图准备门槛，不能在测试中绕过原按钮或借新综合默认放宽。K1明确玩家暂停后比较，再主动继续原授权；K2待失败期间读原器物/资料与目录且核禁用原因，原retry结束后才比较。配装即时确认与原计划CAS按正式模型核，不把比较看作已装备，也不默许暂停/新授权。
+
+## 预检查与正式验证的先后
+
+核心lock/install/typecheck等实际越过依赖安装后，可在核心documents资源全量继续时，先对已验证且全载荷核同的414/0a02静态服务运行新增三例预检查；这是隔离fixture/新测试代码的先行排错，不算40文件正式执行或当前新构建通过。核心十门禁及新冻结构建实际结束0后，再运行完整40文件和同源包三例。若只修预检查消费代码，完整新文件复验，核心/运行仅在完整实际源/依赖证明后保原生产身份；不在活冻结源修改。
+
+核心全部Node中performance-budget/idle-performance-budget仅用合成样本验证证据校验器、预算与未完成门禁，不启动浏览器、节流/CPU/环境计时；full-compatibility为旧存档规则转换，不是页面兼容。实际文件已读核，保这些规则/存储/证据验真单元，但不冒性能或跨环境已验；原浏览器performance-tests及兼容矩阵仍暂停。
+
+## 首次三例预检查消费前提补正（仍本综合）
+
+a26三例预检查48.211555秒实际0过3红，5698输入同/0skip/retry，核心1061 Node已过但documents全套仍在运行，不冒全核心完成。K1/K2量了无直接正文的caption父p继承16，真实strong18/辅助span14；改量实际可见文字叶子，父空容器不充正文，原18/14/Range/几何门槛保。保存结果的父p同理，全部真实strong/span仍纳入。K3错误假设STATE_CHANGED后仍有原training-review栏，实际App明确由配置结果替代；从真实来源入口读仍保留的原目标草案，配合已持久化原Activity.plan/CAS/STATE_CHANGED全库proof，不冒草案已保存、不强行恢复旧栏或改产品。原截图/trace/报错与baseline构建设置错误保。
+
+仅新check-cend08-09文件的观察对象和实际入口补正，题名/矩阵签名/全部正式Game与原子proof不变，新冻结完整三例复验。当前第1次GJ打回（预检查观察前提错误，尚未交付本综合）；核心冻结/旧报告保身份，0生产变化，有全源证明后才沿用。
