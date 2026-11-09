@@ -1,0 +1,62 @@
+{
+  "rows": [
+    {
+      "path": "web/src/ConfigurationDialog.vue",
+      "actualBytes": 5628,
+      "before": "goal-4/evidence/cend08-f02/before/web/src/ConfigurationDialog.vue",
+      "beforeBytes": 5642,
+      "restoredSHA256": "74067880f132af079130acea336dfd559901cc088d09124f4a26b97d2504ee86",
+      "wholeExactInverse": true
+    },
+    {
+      "path": "web/src/SourceObject.vue",
+      "actualBytes": 5774,
+      "before": "goal-4/evidence/cend08-f03/before/web/src/SourceObject.vue",
+      "beforeBytes": 5404,
+      "restoredSHA256": "fd8b7bc3062c935e7fce82214ceb0aa09b5cc6df49e5bd38a3f710bc3e450752",
+      "wholeExactInverse": true
+    },
+    {
+      "path": "web/src/SourceCommission.vue",
+      "actualBytes": 9301,
+      "before": "goal-4/evidence/cend08-f03/before/web/src/SourceCommission.vue",
+      "beforeBytes": 10276,
+      "restoredSHA256": "9d385a237a24f51277fa8dae9dd4c7cb7e81c563923370066c89efeea0702314",
+      "wholeExactInverse": true
+    },
+    {
+      "path": "web/src/SourceField.vue",
+      "actualBytes": 6681,
+      "before": "goal-4/evidence/cend09-source/before/web/src/SourceField.vue",
+      "beforeBytes": 6683,
+      "restoredSHA256": "0f3a665944b28a27d52843c6bbe6e05925b3e9a5aaad8e859459fa69091c36be",
+      "wholeExactInverse": true
+    }
+  ],
+  "pureDisplays": [
+    {
+      "path": "web/src/ConfigArt.vue",
+      "actualBytes": 2530,
+      "sha256": "45588f657d2109ab5205cf7f4b7f8906593f69b9f929d0ac45fcd5de1786b59b"
+    },
+    {
+      "path": "web/src/SourceMaterials.vue",
+      "actualBytes": 3913,
+      "sha256": "18df045148e7d08a686c9388a1d838680517deb574438e74ac80dc20bc0d0884"
+    },
+    {
+      "path": "web/src/src-stage.css",
+      "actualBytes": 3907,
+      "sha256": "2f55d1156f00802daf6d14094bf6cf1380d6d60797fa72dae6a326977a34fed6"
+    }
+  ],
+  "caps": {
+    "ConfigArt": 4800,
+    "SourceMaterials": 6500,
+    "SourceStageCSS": 6800,
+    "originalPreparation": 60000,
+    "originalTA08": 42000,
+    "originalART02": 45000
+  },
+  "noGameClockControllerOrAtomicSourceChange": true
+}

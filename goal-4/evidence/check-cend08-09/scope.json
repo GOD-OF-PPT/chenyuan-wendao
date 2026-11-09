@@ -85,8 +85,11 @@
   "plannedWholeMixedDeferrals": [
     "ART03-A12 ",
     "ART14-A3 ",
+    "ART16-A7 ",
     "ART18-E9 saved-reduction ",
     "ART18-E9 system-reduction ",
+    "ART24-A4 ",
+    "ART26-A5 ",
     "ART27-A5 ",
     "TA08-A12 ",
     "TA09-A12 "
@@ -106,5 +109,31 @@
     "design-documents"
   ],
   "resourceFullSuiteOnlyWithinDocuments": true,
-  "testCountsNotYetAssumed": true
+  "testCountsNotYetAssumed": false,
+  "previouslyPlannedWholeMixedDeferrals": [
+    "ART03-A12 ",
+    "ART14-A3 ",
+    "ART18-E9 saved-reduction ",
+    "ART18-E9 system-reduction ",
+    "ART27-A5 ",
+    "TA08-A12 ",
+    "TA09-A12 "
+  ],
+  "additionalDeferralsFoundBeforeFormalUIExecution": [
+    "ART16-A7 ",
+    "ART24-A4 ",
+    "ART26-A5 "
+  ],
+  "reason": "Actual source read found reduction contexts/settings in three more whole cases; all original assertions and full final1483 obligations kept. No formal40 browser run began before this update.",
+  "actualRawWholeDeclarations": 259,
+  "actualEligibleDeclarations": 249,
+  "wholeCasesDeferredBeforeFormalRun": 10,
+  "currentMatrix": {
+    "version": 48,
+    "ui": 1036,
+    "native": 415,
+    "normal": 32,
+    "total": 1483,
+    "fullMatrixExecuted": false
+  }
 }

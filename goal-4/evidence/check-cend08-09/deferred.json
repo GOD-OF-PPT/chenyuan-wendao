@@ -1,0 +1,60 @@
+{
+  "rawWholeFileCount": 259,
+  "currentSelected": 249,
+  "wholeFiles": 40,
+  "deferredBeforeExecution": [
+    {
+      "file": "art14-relic-blueprint.spec.ts",
+      "title": "ART14-A3 missing relic art retains the blueprint verb and gates with keyboard and reduced effects",
+      "project": "chromium"
+    },
+    {
+      "file": "art16-school-objects.spec.ts",
+      "title": "ART16-A7 both effect-reduction modes keep keyboard object comparison and static actual school facts without a hidden layout transform",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-dialog-controls.spec.ts",
+      "title": "ART18-E9 system-reduction keeps readable consent real press focus and cancellation",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-dialog-controls.spec.ts",
+      "title": "ART18-E9 saved-reduction keeps readable consent real press focus and cancellation",
+      "project": "chromium"
+    },
+    {
+      "file": "art24-school-sanctum.spec.ts",
+      "title": "ART24-A4 mortal gates and all three starting arts stay readable when the scene or every bitmap fails",
+      "project": "chromium"
+    },
+    {
+      "file": "art26-loadout-stage.spec.ts",
+      "title": "ART26-A5 missing idle art falls back without claiming equipment and all-art failure retains readable keyboard actions in both reduced modes",
+      "project": "chromium"
+    },
+    {
+      "file": "art27-relic-workshop.spec.ts",
+      "title": "ART27-A5 failed workshop or all-art fallback preserves keyboard budgets and real facts under both reduced-effect choices",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A12 both reduced-effect modes and all four failed cold images retain complete readable objects budgets and first real retry results",
+      "project": "chromium"
+    },
+    {
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable",
+      "project": "chromium"
+    },
+    {
+      "file": "source-actors.spec.ts",
+      "title": "TA08-A12 both reduction settings missing natural art and natural or four commission error layouts retain complete usable objects and readonly facts",
+      "project": "chromium"
+    }
+  ],
+  "allOriginalAssertionsRetained": true,
+  "originalSevenWereIncomplete": true,
+  "full1483NotExecuted": true
+}

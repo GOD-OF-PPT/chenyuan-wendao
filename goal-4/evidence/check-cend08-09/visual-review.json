@@ -1,0 +1,564 @@
+{
+  "precheckNewThree": [
+    {
+      "name": "K3-actual-three-scrolls-all-four-slots",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-0109c-out-a-hidden-resumed-reward-chromium/K3-actual-three-scrolls-all-four-slots.png",
+      "pngSHA256": "7d1ce28382edb92498e4f4beedd7c1e5bc7d28d334fe65c9b9271963f457aed3",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/K3-actual-three-scrolls-all-four-slots.jpg",
+      "jpegSHA256": "ca48f1c3a8fc6ce0ff657da909ec7378cc3c9630a53844ed7566c2167ea23941",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true,
+      "review": "Actual complete four-slot source SCHOOL comparison; all slots and original effects/cost/cancel/confirm readable, no visible clipping in this frame. Overall aesthetic approval remains pending."
+    },
+    {
+      "name": "K3-actual-three-scrolls-painted-proposal",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-0109c-out-a-hidden-resumed-reward-chromium/K3-actual-three-scrolls-painted-proposal.png",
+      "pngSHA256": "cec91d551c5860a57ce04df3ccdf12b24f491424fdffff8c07537d385d734753",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/K3-actual-three-scrolls-painted-proposal.jpg",
+      "jpegSHA256": "9f950487d3de110a829415a73f61a556d3b03de2441507d231f66dfc274811b1",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K3-source-stopped-with-original-target",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-0109c-out-a-hidden-resumed-reward-chromium/K3-source-stopped-with-original-target.png",
+      "pngSHA256": "71a0f0ecb219af946941daf60bed845fe9872e88e79b502061e169ad264dfa32",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/K3-source-stopped-with-original-target.jpg",
+      "jpegSHA256": "a92504e58567c94a6af91109a767ceef292dbd8a42e77982e424cac485985854",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K2-after-retry-readonly-all-four-slots",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-673b5-d-later-readonly-comparison-chromium/K2-after-retry-readonly-all-four-slots.png",
+      "pngSHA256": "4990f1d479423cc932d1f35726b3c711c752d995134112d823ac12e188e479cc",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/K2-after-retry-readonly-all-four-slots.jpg",
+      "jpegSHA256": "17e09e4c2d34f9b878f958eb59df497378a85ec60aba64f8ee4e141462577bbb",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K2-after-retry-readonly-painted-proposal",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-673b5-d-later-readonly-comparison-chromium/K2-after-retry-readonly-painted-proposal.png",
+      "pngSHA256": "46a98fb0dc12c0b4a8b8b609db96b69f2a164dae76d4ef3f0a5918af88c7ce04",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/K2-after-retry-readonly-painted-proposal.jpg",
+      "jpegSHA256": "bcb7b95b7fa4d1f1bd3d5b84b2838dc64caf61f920e642b23f842bd47be13af3",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K2-quota-and-full-dual-stock",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-673b5-d-later-readonly-comparison-chromium/K2-quota-and-full-dual-stock.png",
+      "pngSHA256": "30960a65a791916a4fef7f38ff06f712c75a4c535247e988ef1c632a72ae2979",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/K2-quota-and-full-dual-stock.jpg",
+      "jpegSHA256": "66a84251683ff65e7025c7971960e2e15c5e6722dbf450d5720bd5a924306447",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K1-current-paused-and-next-draft",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-current-paused-and-next-draft.png",
+      "pngSHA256": "619b36aeb42fd879ddfbb66c4a40edff1aad8bae18f858294f825dae8ec394bf",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/K1-current-paused-and-next-draft.jpg",
+      "jpegSHA256": "453bec3c2076a816c761244108369876a9d5282d194a8044b6fbad0eb742b2b3",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K1-paused-relic-all-four-slots",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-paused-relic-all-four-slots.png",
+      "pngSHA256": "a37b9075a72c3ffad10855b998872b22f8b06800c59d9ba17de4b930a0b86b88",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/K1-paused-relic-all-four-slots.jpg",
+      "jpegSHA256": "a5b13521190775afff2064f821eaa7232810d7a4470da15f9d1484a0efee5175",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K1-paused-relic-painted-proposal",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-paused-relic-painted-proposal.png",
+      "pngSHA256": "55340b60176bdcb15a210a5e561c676e07d32a830e632a38f301e337312acb9a",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/K1-paused-relic-painted-proposal.jpg",
+      "jpegSHA256": "5ea3e9709ff01b4f17a034433381a3d4fe347ed7715201ee7b57ed84dd5fc7fe",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K1-real-dual-saved-result",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-real-dual-saved-result.png",
+      "pngSHA256": "969c0482c0319ca88900cfce68fbad1eef7dd40653c00d38ed083957802f5698",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/K1-real-dual-saved-result.jpg",
+      "jpegSHA256": "7fa55e6580c671c386307ad6a7bc61a3c614a6d56ab1590cbff2b5ff9c78ac03",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K1-real-running-and-original-goal",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-real-running-and-original-goal.png",
+      "pngSHA256": "bab53dc618581e8f851d2df16444ea7f3509cc4ceb5d2e04689981dba2d19d64",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/K1-real-running-and-original-goal.jpg",
+      "jpegSHA256": "1b182c7e5218f0a73fbc37e4030539d13f0dde5b46d9e355b713a699176aca82",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    }
+  ],
+  "currentRepresentative": [
+    {
+      "name": "source-natural-working",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/cend09-source-stage-CEND09-f18bb-mplete-atomic-source-result-chromium/herbs-actual-work.png",
+      "pngSHA256": "8c712ef19f39ca46a58e51ce98994f39f22592e75212586395a7ae0926a9e2ef",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-source-natural-working.jpg",
+      "jpegSHA256": "34d3bd9eb5f3bdc52fda0226dccd341fd58fc6fc117eacd37a314dc027a3ffea",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "source-dual-commission-working",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/cend09-source-stage-CEND09-f18bb-mplete-atomic-source-result-chromium/jade_task-actual-work.png",
+      "pngSHA256": "2be484a850ddb12e0153ffba5dde5b128e6cf11f3b2bfa599fb2e11206be386b",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-source-dual-commission-working.jpg",
+      "jpegSHA256": "83134bf924d03e92b5d8e2a3140e95ebfb7f43b7fbe10e65d34ce0882cb15c29",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "source-native-quota",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/cend09-source-stage-CEND09-c3d20-ty-and-original-quota-retry-chromium/jade_task-quota-failed.png",
+      "pngSHA256": "8688fcc3de92d662a6a3b21e2558923307af093d68033602a40198470c3f5590",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-source-native-quota.jpg",
+      "jpegSHA256": "7fd7c9207f8e381004115041731aff444439bbc9dd720cbfa4b6fabe500248ac",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "source-missing-fallback",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/cend09-source-stage-CEND09-c3d20-ty-and-original-quota-retry-chromium/jade_task-missing-or-idle.png",
+      "pngSHA256": "ef882e8f32d3703e5df2d43d4c7198cd55b5dfdb485793fb84c8624e0ff78993",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-source-missing-fallback.jpg",
+      "jpegSHA256": "70a4bf0de0faa2edaa9b7becfd2600f8a9edd542e454db41a6897de242d2c733",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true,
+      "interpretation": "Commission idle frame retains its SVG instrument and readable caption; this frame alone is not failed raster evidence."
+    },
+    {
+      "name": "dialog-restart",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/art18-dialog-controls-ART1-e2743--and-the-original-milestone-chromium/restart-material.png",
+      "pngSHA256": "bf4bd52084f91db8ddb9b24c7a5d1e752641b03fe277486b2b1950ccfc46b874",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-dialog-restart.jpg",
+      "jpegSHA256": "8758d8da9fc2ca1c367347b58b7cb21cf1efb2a3fb6f7e8f5eb9cc64f2ab3d21",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "dialog-import",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/art18-dialog-controls-ART1-10395-uthorizes-the-original-save-chromium/import-material.png",
+      "pngSHA256": "a83b6c9634dfbaa9ae33f4a42abe3f338f667d3b62c1d5260f57d6420608a642",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-dialog-import.jpg",
+      "jpegSHA256": "ab09e06e34eee31d63007d109a196e286a57024880c35c02aad4cfbf2e75e4bf",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "configuration-missing-relic",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/cend08-f02-config-art-CEND-dc910-ancellation-without-a-write-chromium/relic-jade_seal-failed-paint-readable-fallback.png",
+      "pngSHA256": "8bb5795a269b355770eb3f24dc1b8c32b9d3da079556d44f47e0fcff3909cc11",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-configuration-missing-relic.jpg",
+      "jpegSHA256": "0066d2ab8525f54ed339b387bf6ed342b770126f7d51afb76301b263b49b9a47",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "configuration-missing-school",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/cend08-f02-config-art-CEND-dc910-ancellation-without-a-write-chromium/school-talisman-failed-paint-readable-fallback.png",
+      "pngSHA256": "8f2cc6a82a7dcaca7efc8cca15cd02bcf7d001cbc4fa0d39a962b14ae5dad39c",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-configuration-missing-school.jpg",
+      "jpegSHA256": "aeefca55df3eef2f788c9d61e32eeb7e36b1e7785d300431c334935ec068dd70",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "real-compact-stage",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/real-compact-stage.png",
+      "pngSHA256": "dcca2446be1bce1615ae1edd65608c3847aee634eef18813cff0d0a0ac2b8bf6",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-real-compact-stage.jpg",
+      "jpegSHA256": "42109dd2604c59ee57386aae5caa9735391f1516813f788f9a8493a9807e26d9",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "entry-hub-relics",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-relics.png",
+      "pngSHA256": "acb73656fb9139a00ace92c85caee09f72d30791c49972b5ddb29133f28710f7",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-entry-hub-relics.jpg",
+      "jpegSHA256": "fc1379470395e883ef8dc922a53b25da9bd33e9f860dfbbd905d3b299252d81c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "entry-hub-life",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-life.png",
+      "pngSHA256": "c65da97af6d66a7f5888cc9458d1cc0a1c00a29c7850e5ef6bdc9946015489db",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-entry-hub-life.jpg",
+      "jpegSHA256": "580a995790210bcebd6081ddb5a60983b3e2f249c0e064a437ac92428d7957e2",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "entry-tab-2",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-2.png",
+      "pngSHA256": "dcc2e3ccd2e0ae6189d6c8d95a1cfeb705ec010093893d2cdccad8a0ee663a23",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-entry-tab-2.jpg",
+      "jpegSHA256": "2be034a4b742e5a5bc371352d16e32e309f3d9b2044777c65db88f93e4bff31c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "entry-tab-3",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-3.png",
+      "pngSHA256": "ec145156a426e36200eb93c31e0398a8ccda84edce397a099d65bfa6eac68d61",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-entry-tab-3.jpg",
+      "jpegSHA256": "047c15f41f49838944945ec244ead40c8d08ff0fd5d1555a28522276e87b1629",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "entry-tab-1",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-tab-1.png",
+      "pngSHA256": "2ceab1d0fbfb6782fb9a7c6807589914ca5ff39877ebd1e2bb93db52e1cb506a",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-entry-tab-1.jpg",
+      "jpegSHA256": "95542d27a53462de483fe5d8afb14709b63b06c0a327ac9be3973f54a4f46c0c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "entry-hub-forge",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-forge.png",
+      "pngSHA256": "af6afa3cd811173425238fe1385c2bb3fc9001f3b3d521437f1c973b8deeac67",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-entry-hub-forge.jpg",
+      "jpegSHA256": "c8c63cbcaac76672bcc7b4eb0aa61be02427a132dfb8599756cdd316a82e6633",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "entry-hub-skills",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/stage-r1-the-real-HUD-keep-2e0c2-thout-writing-on-navigation-chromium/entry-hub-skills.png",
+      "pngSHA256": "714b5a8a47b22fa9f29258e58d3314f66120e4ae3e5dca52337288c25bd62542",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-entry-hub-skills.jpg",
+      "jpegSHA256": "798445b83234d21ee1dfa82e7842d43617cac7843cc6a707b9858dd4149ed3ed",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "battle-stage-intent",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/stage-r2-the-battle-scene--8ff94-resolve-through-saved-turns-chromium/battle-stage-intent.png",
+      "pngSHA256": "d6ff1c4e3bf8fcdf280090712b13284456de438461aeadd699996c731a70d1e6",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-battle-stage-intent.jpg",
+      "jpegSHA256": "ede0bf0f49e8b31c0fce35cd6d99ba67f4e41ffa0e458797eaa1593f9291fc95",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "source-target-and-budget",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/stage-r2-resource-points-e-352f3-ect-and-category-inspection-chromium/source-target-and-budget.png",
+      "pngSHA256": "5ef30791277580d3e60c1e56ca5ef1735ff53d75434addf31fd2ce5cddd9a279",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/current-source-target-and-budget.jpg",
+      "jpegSHA256": "80302286c2824b051c002a8051a047d30062fa2042f55ba6f0e4eb290ff67789",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    }
+  ],
+  "currentNewThree": [
+    {
+      "name": "K3-actual-three-scrolls-all-four-slots",
+      "currentPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/check-cend08-09-CHECK-CEND-0109c-out-a-hidden-resumed-reward-chromium/K3-actual-three-scrolls-all-four-slots.png",
+      "currentSHA256": "a27342960e33cdc3f6c90197627d03c80159fe6c3b39dcab7aa505423c74843e",
+      "previousPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-0109c-out-a-hidden-resumed-reward-chromium/K3-actual-three-scrolls-all-four-slots.png",
+      "previousSHA256": "7d1ce28382edb92498e4f4beedd7c1e5bc7d28d334fe65c9b9271963f457aed3",
+      "sameBytes": false,
+      "previousActuallyViewed": true,
+      "inheritedPixelReview": false,
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/full-K3-actual-three-scrolls-all-four-slots.jpg",
+      "jpegSHA256": "39eeec76a48a13571230a272ee5d768b0d69e53111e50238d24e7bf8b0271f64",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K3-actual-three-scrolls-painted-proposal",
+      "currentPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/check-cend08-09-CHECK-CEND-0109c-out-a-hidden-resumed-reward-chromium/K3-actual-three-scrolls-painted-proposal.png",
+      "currentSHA256": "1286b6cdb87dd653c25f95df024fc3430b54c7ac74497926652f6af52adc7daa",
+      "previousPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-0109c-out-a-hidden-resumed-reward-chromium/K3-actual-three-scrolls-painted-proposal.png",
+      "previousSHA256": "cec91d551c5860a57ce04df3ccdf12b24f491424fdffff8c07537d385d734753",
+      "sameBytes": false,
+      "previousActuallyViewed": true,
+      "inheritedPixelReview": false,
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/full-K3-actual-three-scrolls-painted-proposal.jpg",
+      "jpegSHA256": "9f950487d3de110a829415a73f61a556d3b03de2441507d231f66dfc274811b1",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K3-source-stopped-with-original-target",
+      "currentPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/check-cend08-09-CHECK-CEND-0109c-out-a-hidden-resumed-reward-chromium/K3-source-stopped-with-original-target.png",
+      "currentSHA256": "71a0f0ecb219af946941daf60bed845fe9872e88e79b502061e169ad264dfa32",
+      "previousPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-0109c-out-a-hidden-resumed-reward-chromium/K3-source-stopped-with-original-target.png",
+      "previousSHA256": "71a0f0ecb219af946941daf60bed845fe9872e88e79b502061e169ad264dfa32",
+      "sameBytes": true,
+      "previousActuallyViewed": true,
+      "inheritedPixelReview": true
+    },
+    {
+      "name": "K2-after-retry-readonly-all-four-slots",
+      "currentPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/check-cend08-09-CHECK-CEND-673b5-d-later-readonly-comparison-chromium/K2-after-retry-readonly-all-four-slots.png",
+      "currentSHA256": "4990f1d479423cc932d1f35726b3c711c752d995134112d823ac12e188e479cc",
+      "previousPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-673b5-d-later-readonly-comparison-chromium/K2-after-retry-readonly-all-four-slots.png",
+      "previousSHA256": "4990f1d479423cc932d1f35726b3c711c752d995134112d823ac12e188e479cc",
+      "sameBytes": true,
+      "previousActuallyViewed": true,
+      "inheritedPixelReview": true
+    },
+    {
+      "name": "K2-after-retry-readonly-painted-proposal",
+      "currentPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/check-cend08-09-CHECK-CEND-673b5-d-later-readonly-comparison-chromium/K2-after-retry-readonly-painted-proposal.png",
+      "currentSHA256": "46a98fb0dc12c0b4a8b8b609db96b69f2a164dae76d4ef3f0a5918af88c7ce04",
+      "previousPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-673b5-d-later-readonly-comparison-chromium/K2-after-retry-readonly-painted-proposal.png",
+      "previousSHA256": "46a98fb0dc12c0b4a8b8b609db96b69f2a164dae76d4ef3f0a5918af88c7ce04",
+      "sameBytes": true,
+      "previousActuallyViewed": true,
+      "inheritedPixelReview": true
+    },
+    {
+      "name": "K2-quota-and-full-dual-stock",
+      "currentPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/check-cend08-09-CHECK-CEND-673b5-d-later-readonly-comparison-chromium/K2-quota-and-full-dual-stock.png",
+      "currentSHA256": "30960a65a791916a4fef7f38ff06f712c75a4c535247e988ef1c632a72ae2979",
+      "previousPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-673b5-d-later-readonly-comparison-chromium/K2-quota-and-full-dual-stock.png",
+      "previousSHA256": "30960a65a791916a4fef7f38ff06f712c75a4c535247e988ef1c632a72ae2979",
+      "sameBytes": true,
+      "previousActuallyViewed": true,
+      "inheritedPixelReview": true
+    },
+    {
+      "name": "K1-current-paused-and-next-draft",
+      "currentPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-current-paused-and-next-draft.png",
+      "currentSHA256": "619b36aeb42fd879ddfbb66c4a40edff1aad8bae18f858294f825dae8ec394bf",
+      "previousPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-current-paused-and-next-draft.png",
+      "previousSHA256": "619b36aeb42fd879ddfbb66c4a40edff1aad8bae18f858294f825dae8ec394bf",
+      "sameBytes": true,
+      "previousActuallyViewed": true,
+      "inheritedPixelReview": true
+    },
+    {
+      "name": "K1-paused-relic-all-four-slots",
+      "currentPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-paused-relic-all-four-slots.png",
+      "currentSHA256": "a37b9075a72c3ffad10855b998872b22f8b06800c59d9ba17de4b930a0b86b88",
+      "previousPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-paused-relic-all-four-slots.png",
+      "previousSHA256": "a37b9075a72c3ffad10855b998872b22f8b06800c59d9ba17de4b930a0b86b88",
+      "sameBytes": true,
+      "previousActuallyViewed": true,
+      "inheritedPixelReview": true
+    },
+    {
+      "name": "K1-paused-relic-painted-proposal",
+      "currentPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-paused-relic-painted-proposal.png",
+      "currentSHA256": "55340b60176bdcb15a210a5e561c676e07d32a830e632a38f301e337312acb9a",
+      "previousPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-paused-relic-painted-proposal.png",
+      "previousSHA256": "55340b60176bdcb15a210a5e561c676e07d32a830e632a38f301e337312acb9a",
+      "sameBytes": true,
+      "previousActuallyViewed": true,
+      "inheritedPixelReview": true
+    },
+    {
+      "name": "K1-real-dual-saved-result",
+      "currentPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-real-dual-saved-result.png",
+      "currentSHA256": "1a9c9dc22c6dc828977e0ef7eaf0d455fc4cf2e98a5d968650d6cebaa92e73a9",
+      "previousPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-real-dual-saved-result.png",
+      "previousSHA256": "969c0482c0319ca88900cfce68fbad1eef7dd40653c00d38ed083957802f5698",
+      "sameBytes": false,
+      "previousActuallyViewed": true,
+      "inheritedPixelReview": false,
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/full-K1-real-dual-saved-result.jpg",
+      "jpegSHA256": "8fb269a49416d3fcc6e210b24dd8dfabbf5c07fbf9d217f70a4dd6df0dc8de5c",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K1-real-running-and-original-goal",
+      "currentPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/ui-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-real-running-and-original-goal.png",
+      "currentSHA256": "bab53dc618581e8f851d2df16444ea7f3509cc4ceb5d2e04689981dba2d19d64",
+      "previousPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/three-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-real-running-and-original-goal.png",
+      "previousSHA256": "bab53dc618581e8f851d2df16444ea7f3509cc4ceb5d2e04689981dba2d19d64",
+      "sameBytes": true,
+      "previousActuallyViewed": true,
+      "inheritedPixelReview": true
+    }
+  ],
+  "unpackedRepresentative": [
+    {
+      "name": "K1-real-dual-saved-result",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/package-results/check-cend08-09-CHECK-CEND-bf0e6-n-and-a-separate-next-draft-chromium/K1-real-dual-saved-result.png",
+      "pngSHA256": "c378a69c693cd149147a73d84759a3683817edc0f6950ba33b273e8c711da270",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/package-K1-real-dual-saved-result.jpg",
+      "jpegSHA256": "4f3e0030c26a81b5bded249f0b5cee3c3fed5f3af5dea932b211e4b1367f4408",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "K2-quota-and-full-dual-stock",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/package-results/check-cend08-09-CHECK-CEND-673b5-d-later-readonly-comparison-chromium/K2-quota-and-full-dual-stock.png",
+      "pngSHA256": "fc09b60b9d26d216ad19614bdb31eda1a67760a9706a688e86698d59baf822c3",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend08-09/consumer/views/package-K2-quota-and-full-dual-stock.jpg",
+      "jpegSHA256": "7a5894a27d782a669872a10a06c76342a444c1175cdfd212382c2f8972183cd8",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    }
+  ],
+  "actualViewedFileCount": 34,
+  "exactPNGInheritanceCount": 8,
+  "allOriginalPNGsRetained": true,
+  "jpegQuality": 68,
+  "dimensions": [
+    1440,
+    900
+  ],
+  "unviewedRawScreenshotsDoNotCountAsPixelReview": true,
+  "observations": [
+    "Eight real entrances and source / combat / expanded budget / destructive confirmations / missing configuration art remain readable in these fixed frames; no new clipping or control intersection observed.",
+    "Commission missing-or-idle frame is an idle SVG instrument, not proof its drawing failed.",
+    "CEND10-SOURCE-GOAL remains open; committed goal stock threshold requires original-plan reading while next draft is prominent.",
+    "Author scoped pixel review is not overall art, long-term playability or real-user acceptance."
+  ]
+}
