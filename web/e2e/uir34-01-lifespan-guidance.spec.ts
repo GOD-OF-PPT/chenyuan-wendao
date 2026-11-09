@@ -9,6 +9,8 @@ import{snapshot,activitySnapshot as activity}from'./support';
 import{importRecoveryFixture,recoveryDatabase as database,stored,runRecoveryPlan,runRecoveryControl,recoveryMove}from'./idle-recovery-ui-support';
 import{selectPlan,decision}from'./idle-route-support';
 import{captureFixedPng}from'./png-capture';
+// Keep explicit PNGs and full API/source traces; avoid automatic whole-page filming across native aging setup.
+test.use({trace:{mode:'retain-on-failure',screenshots:false,snapshots:false,sources:true}});
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});test.setTimeout(60000);
 const faults=new WeakMap<Page,string[]>();test.beforeEach(({page})=>{const x:string[]=[];faults.set(page,x);page.on('pageerror',e=>x.push(e.message));});test.afterEach(({page})=>expect(faults.get(page)).toEqual([]));
 const card=(p:Page)=>p.getByTestId('lifespan-guidance');
@@ -31,9 +33,6 @@ test('UIR34-01-A2 a genuinely prepared last-month breakthrough keeps its origina
  const before=await importRecoveryFixture(page,atLocation(lifespanFixture(1,true),'cave'));await expect(card(page)).toHaveCount(0);await expect(page.getByTestId('hub-gap')).toContainText('仍可核对突破');await expect(page.getByTestId('breakthrough')).toBeEnabled();const a=await startBreakthrough(page),accepted=await database(page);await page.clock.fastForward(29999);expect(await database(page)).toEqual(accepted);await page.clock.fastForward(1);const done=await prove(page,a,before,accepted,info,'last-month-legal-breakthrough');expect(done.game.core.player.realm).toBe('foundation');expect(getLifeOverview(done.game).remainingMonths).toBeGreaterThan(12);await expect(page.getByTestId('hub-gap')).not.toContainText('余寿1月');await expect(card(page)).toHaveCount(0);await page.clock.fastForward(60000);expect(await database(page)).toEqual(done.raw);
 });
 
-// Keep all public one-month cycles and the original180s bound; avoid recording thousands of DOM snapshots during setup.
-test.describe(()=>{
- test.use({trace:{mode:'retain-on-failure',screenshots:false,snapshots:false,sources:true}});
 test('UIR34-01-A3 a real native checkpoint remains inspectable after finite public work periods reach the lifespan boundary without restoring or ending',async({page},info)=>{
  test.setTimeout(180000);const before=await importRecoveryFixture(page,feedbackExamples().actions.get('BREAKTHROUGH').before),a=await startBreakthrough(page),accepted=await database(page);await page.clock.fastForward(30000);const start=await prove(page,a,before,accepted,info,'native-checkpoint-origin');await page.getByTestId('hub-skills').click();await page.getByTestId('equipment-mode-school').click();await page.getByTestId('school-sword').click();await page.getByTestId('configuration-confirm').click();await expect.poll(async()=>(await snapshot(page)).school).toBe('sword');await runRecoveryPlan(page,{kind:'travel',location:'sect',maxCycles:1});let model=await snapshot(page),periods=0,batches=0;const agingSteps:any[]=[];
  while(getLifeOverview(model).remainingMonths>1){expect(batches++).toBeLessThan(30);const selected=await selectPlan(page,{kind:'source',sourceId:'work',maxCycles:50,until:'cycles',target:null,monthBudget:50,remainingMonthsReserve:1});await decision(page,selected.control);let observed:any;await expect.poll(async()=>{observed=await readWorkCycle(page);return observed.a?.status==='running'&&observed.ready;},{timeout:8000,intervals:[1,5,10,20]}).toBe(true);let current=observed.a;expect(current.plan).toEqual(selected.expectedPlan);
@@ -41,8 +40,6 @@ test('UIR34-01-A3 a real native checkpoint remains inspectable after finite publ
   expect(await snapshot(page)).toEqual(model);
  }
  await info.attach('native-aging-all-public-cycles',{body:JSON.stringify(agingSteps),contentType:'application/json'});expect(agingSteps).toHaveLength(periods);expect(getLifeOverview(model).remainingMonths).toBe(1);await runRecoveryPlan(page,{kind:'travel',location:'cave',maxCycles:1});await page.getByTestId('tab-0').click();const raw=await database(page);expect(stored(raw,'checkpoint')).toEqual(stored(start.raw,'checkpoint'));await expect(page.getByTestId('lifespan-inspect-checkpoint')).toBeVisible();await frame(page,info,'last-month-real-checkpoint-guide');await page.getByTestId('lifespan-inspect-checkpoint').click();await expect(page.getByTestId('restore-checkpoint')).toBeEnabled();expect(await database(page)).toEqual(raw);await page.getByRole('button',{name:'关闭设置',exact:true}).click();await noWriteLife(page,info,'native-checkpoint-readonly-life-options');await info.attach('lawful-native-aging-setup',{body:JSON.stringify({periods,batches,life:getLifeOverview(model),checkpointSource:stored(raw,'checkpoint').sourceRunId,scope:'Public finite online activities under virtual clocks; setup only, not real growth pace or added UI coverage.'}),contentType:'application/json'});
-});
-
 });
 
 test('UIR34-01-A4 viewing last-month options during a failed original trip cannot replace its command or spend the last month',async({page},info)=>{
