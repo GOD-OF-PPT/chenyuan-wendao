@@ -1,0 +1,35 @@
+{
+  "producer": "828eb82dea7854756d21510cab518c034624567e",
+  "runtime": "c8cb16364ec580ed48ed7d5f7da48c316e553f08a12fdcd417ab8f6bc91d6a67",
+  "actualViewed": 2,
+  "maximumPerResult": 2,
+  "rows": [
+    {
+      "name": "jade_task-cold-before-material-check",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-f03/final/package-results/cend08-f03-source-material-4d086-nct-locally-owned-materials-chromium/jade_task-cold-before-material-check.png",
+      "pngSHA256": "37e5e22327f841c00006b0a25485391a5dc8439035a57aaf045d468fc4399f2b",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-f03/final/views/package-jade_task-cold-before-material-check.jpg",
+      "jpegSHA256": "f50f2819b7f8070510b469edb89470591c75c1ddf5c9d6bb50159e8783adc2c2",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "quality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "name": "work-quota-failed",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-f03/final/package-results/cend08-f03-source-material-156aa-d-and-quota-retry-authority-chromium/work-quota-failed.png",
+      "pngSHA256": "9b97332c5c85be3595a6e8e51b7f96de17265a9c9326ae14f70538865012dff8",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-f03/final/views/package-work-quota-failed.jpg",
+      "jpegSHA256": "e57257f7789e0a413b6fa3607993ef8520105162200b666d21829b7f6e016315",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "quality": 68,
+      "actuallyViewed": true
+    }
+  ],
+  "notOverallArtOrHumanAcceptance": true
+}

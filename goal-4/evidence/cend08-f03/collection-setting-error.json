@@ -1,0 +1,10 @@
+{
+  "python": "/usr/local/opt/python@3.13/bin/python3.13",
+  "count": 763,
+  "unique": 763,
+  "failedImports": [
+    "unittest.loader._FailedTest.test_art36_inventory",
+    "unittest.loader._FailedTest.test_art37_inventory"
+  ],
+  "collectorOnlyNotExecuted": true
+}

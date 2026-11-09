@@ -1,0 +1,227 @@
+{
+  "producer": "828eb82dea7854756d21510cab518c034624567e",
+  "rows": [
+    {
+      "path": "artifacts/goal-4/cend08-f03/producer/build-terminal.json",
+      "bytes": 176,
+      "sha256": "a7e3f2621beb00fa34306abbc11de96da5a2b37037de125e984447ffd9c2bb13"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/producer/checks-terminal.json",
+      "bytes": 232,
+      "sha256": "0579b3844d2dfebcb6e3eaced9efbd7a9e3c5b8a80e28ab5d057065a09a67e1a"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/producer/early-report.json",
+      "bytes": 1068739,
+      "sha256": "650ef3120a83b9d40124226577f24c34c8e421b82c025a0eb4889552c895faba"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/producer/resources.log",
+      "bytes": 7271,
+      "sha256": "ad8c30280a5d5cd62838ce4e6a5f0ed21d700e61bc512dff17e8c0a912cc57bd"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/producer/rules.log",
+      "bytes": 48989,
+      "sha256": "f70611d1f84809bb3678fab77a7a11a518daab8cc5560b358d07040eefb68e9d"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/producer/positive.log",
+      "bytes": 3281,
+      "sha256": "eae223a92f9030699072c44c70efb9ef2d44a90c3a216ea51d596dd4ea6a731e"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/build-driver.py",
+      "bytes": 1373,
+      "sha256": "ce76b5851e961b5f9618d2d88a569ded2ebbc743a4d8fbb602451174de0050bf"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/run-checks.py",
+      "bytes": 1719,
+      "sha256": "fb4f152694ca4c4a90979255fcfc1e72e1bc430516bf2a012d1cbcbec1cb650a"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/run-ui.mjs",
+      "bytes": 4193,
+      "sha256": "39198ac7d361754f8f18bb4bbc7bde0c892c1a250d698b4bfc66d71abe1ffb02"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/run-four.mjs",
+      "bytes": 4215,
+      "sha256": "9ff3f80c95a41ec443596fd7af8707d3161e853321ca25ff8ef69941625a4611"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/run-package.mjs",
+      "bytes": 4253,
+      "sha256": "05fa3d9c24c6b17d94d3ff9a9250931c07d267010143f3c6b4cd90cd0715b3d1"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/ui.config.ts",
+      "bytes": 791,
+      "sha256": "c4296b53b564072c96810648de97d6d2160654c4381c02a8925abe56885ed4f7"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/four.config.ts",
+      "bytes": 432,
+      "sha256": "6ef4c550dec7db412a7e2fda8e71f393568dc5b0b0d764e021a5842642dff82c"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/package.config.ts",
+      "bytes": 439,
+      "sha256": "83245926348bec898b6ae5630cc67155476725646e185b2c3d8576cb8848a0c2"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/build-terminal.json",
+      "bytes": 176,
+      "sha256": "0cc26f40b1acf1b4727da9fb5d2a9ee04b3b168fa7325240763106a709f49e92"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/checks-terminal.json",
+      "bytes": 230,
+      "sha256": "705d62302512d79797d0cfbcb8f7df6c6874e66931036d3742d2079f0d0dffca"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/ui-terminal.json",
+      "bytes": 488,
+      "sha256": "b0f7eb37c3fef5a898926bd925e2aea0c0da82a623ecc4f9d0ebedf503259070"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/four-terminal.json",
+      "bytes": 486,
+      "sha256": "b67cfdb609a983b07bee0b9c5c49c19ada5b5d253e56b70ea1f4ec292d129324"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/package-terminal.json",
+      "bytes": 494,
+      "sha256": "da9c37cdcfed3e46f646c6a49aa1500394c41c607a2f10275895be8566d3ad6e"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/ui-report.json",
+      "bytes": 8485540,
+      "sha256": "b9801027b5f90739a12b24fdfba93fca4bb53644d096d4c359ca2d53fb3c225b"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/four-report.json",
+      "bytes": 1227843,
+      "sha256": "e3ef92c28d997681f0e336dbddc8c5b51958adf908775eaf053a3ed50984eb46"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/package-report.json",
+      "bytes": 1227860,
+      "sha256": "cbd8356aeb085353c008f2f1b157d46dd8c5cce3e5732d6441510da4f5a1d536"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/rules.log",
+      "bytes": 48985,
+      "sha256": "7f83aec8bf39f79e29200003900d53c5111fbf2bdb6595d6ea87221e5f5f425a"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/positive.log",
+      "bytes": 3281,
+      "sha256": "eae223a92f9030699072c44c70efb9ef2d44a90c3a216ea51d596dd4ea6a731e"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/resources.log",
+      "bytes": 887,
+      "sha256": "ac928cc117ce86393a9c7dd59b984d34af850f84d9504a643144619d4ef65557"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/ui-before.json",
+      "bytes": 717290,
+      "sha256": "d2107c4e6fe789ce6d52278a8210b57d68e48dd5f67f20b1b3b2c089e843e4fc"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/ui-after.json",
+      "bytes": 717290,
+      "sha256": "d2107c4e6fe789ce6d52278a8210b57d68e48dd5f67f20b1b3b2c089e843e4fc"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/four-before.json",
+      "bytes": 717296,
+      "sha256": "d77556157ffeb8314fbaf9187fb841d3dc5891540a2800eae4ed8eb6dbf08658"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/four-after.json",
+      "bytes": 717296,
+      "sha256": "d77556157ffeb8314fbaf9187fb841d3dc5891540a2800eae4ed8eb6dbf08658"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/package-before.json",
+      "bytes": 717305,
+      "sha256": "dcc44b416eff4341e1deff4aa7a2cf38041fe4349c13d73bfb781a0caf66c2a8"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/package-after.json",
+      "bytes": 717305,
+      "sha256": "dcc44b416eff4341e1deff4aa7a2cf38041fe4349c13d73bfb781a0caf66c2a8"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/build-before.json",
+      "bytes": 658176,
+      "sha256": "ed7ff8ac1022eecc10ccf42dc01d1e7fabb86cb85edbef0850c2e931a625003e"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/build-after.json",
+      "bytes": 658176,
+      "sha256": "ed7ff8ac1022eecc10ccf42dc01d1e7fabb86cb85edbef0850c2e931a625003e"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/checks-before.json",
+      "bytes": 658174,
+      "sha256": "b1124fe1ddf97a63219544de252ca1aa9ca6095251abcf43f1efc9afc5696516"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/checks-after.json",
+      "bytes": 658174,
+      "sha256": "b1124fe1ddf97a63219544de252ca1aa9ca6095251abcf43f1efc9afc5696516"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/ui-http.json",
+      "bytes": 56891,
+      "sha256": "d4ed55ab3c90be819e6913a71d6f7150eeae27655b5e849335518996477ba966"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/package-http.json",
+      "bytes": 57004,
+      "sha256": "1798a6a89b9af9dae7063ac5c19e9154ce4f0c63d1c28db6aa7af94dac9ef234"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/ui-declared.json",
+      "bytes": 70060,
+      "sha256": "2b490c393154f82c119b0a39779ab6cc367407c8919eb90085fafd22118daff2"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/ui-full-declared.json",
+      "bytes": 720454,
+      "sha256": "b5b252f56cab689b02b45b4cc41263c492f1487039ffd0e46fa67cb3969bb5a8"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/native-declared.json",
+      "bytes": 277854,
+      "sha256": "d5d665b20a7731ca9d6e847c4ec38d4706fb6ba7afc25f202d0944985e6ca0ed"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/normal-declared.json",
+      "bytes": 22345,
+      "sha256": "686649e97c6fdb031f7431139627f91f8f9f3054e7085905e6172bca2c80e6a8"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/recovery-ui-declared.json",
+      "bytes": 120801,
+      "sha256": "31aa20d136f9312c6b3b4e296257c67a77cd6ac9fc17b9741e89dd2fc4ae374e"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/preview-archive.json",
+      "bytes": 563,
+      "sha256": "ac523a382228b81e26ff7f0a4badb258e9a2851823637205735718fbf60e2be0"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f03/final/verify-declarations.mjs",
+      "bytes": 971,
+      "sha256": "48a8edb4ab4da1d5589fec5414bc451d6669eb38c373cbdddf701b2e42d748e8"
+    }
+  ],
+  "oldFailuresAndSupersededCancelledRunRetained": true,
+  "unviewedOtherGeneratedPNGsNotClaimedReviewed": true
+}

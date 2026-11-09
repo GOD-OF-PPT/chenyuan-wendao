@@ -1,0 +1,14 @@
+{
+  "currentSelected": 98,
+  "selectedCompleteFiles": 14,
+  "rawWholeFileCount": 99,
+  "deferredBeforeExecution": [
+    {
+      "file": "source-actors.spec.ts",
+      "title": "TA08-A12 both reduction settings missing natural art and natural or four commission error layouts retain complete usable objects and readonly facts",
+      "project": "chromium"
+    }
+  ],
+  "allOriginalAssertionsRetained": true,
+  "reason": "The entire TA08-A12 mixed reduction-preferences case remains paused; actual new fallback at default preferences is covered by new M4."
+}
