@@ -50,9 +50,17 @@ test('CEND08-F02-D2 both school choices show their three actual starter scrolls 
 });
 
 test('CEND08-F02-D3 missing real relic and jade artwork keeps named static fallbacks full effects safe controls and cancellation without a write',async({browser},info)=>{
- const d=lawful();for(const a of[{type:'EQUIP_RELIC',relic:'jade_seal'},{type:'EQUIP',skill:'sword_still'}]){
+ const d=lawful(),skills=Object.keys(C.skills).filter(id=>JADE_FORMS[id].variant==='base');expect(skills).toHaveLength(6);
+ const actions=[...Object.keys(C.relics).map(relic=>({type:'EQUIP_RELIC',relic})),...skills.map(skill=>({type:'EQUIP',skill})),{type:'SCHOOL',school:'sword'},{type:'SCHOOL',school:'talisman'}];
+ for(const a of actions){
+  if(a.type==='EQUIP'){const skill=C.skills[a.skill!];if(d.game.school!==skill.school)d.doAction({type:'SCHOOL',school:skill.school});const alternative=Object.keys(C.skills).find(id=>id!==a.skill&&C.skills[id].school===skill.school&&C.skills[id].slot===skill.slot)!;d.doAction({type:'EQUIP',skill:alternative});}
+  if(a.type==='SCHOOL')d.doAction({type:'SCHOOL',school:a.school==='sword'?'talisman':'sword'});
   const scope=await casePage(browser,info),page=scope.page;try{
-  const id='relic'in a?a.relic:a.skill,kind='relic'in a?'relic':'skill',path=kind==='relic'?'art/v2/equipment/'+id+'-v1.webp':'art/v2/study/'+JADE_FORMS[id].form+'-v1.webp';await page.route('**/'+path,r=>r.fulfill({status:200,contentType:'image/webp',body:'explicitly unavailable CEND08-F02 art'}));const before=await importRecoveryFixture(page,d.game),raw=await database(page);await open(page,a);await expect(art(page).locator('.asset-image')).toHaveAttribute('data-art-state','failed');await expect(art(page)).toContainText((kind==='relic'?C.relics[id]:C.skills[id]).name);await expect(art(page)).toContainText('绘图暂缺');await expect(modal(page)).toContainText((kind==='relic'?C.relics[id]:C.skills[id]).description);await expect(page.getByTestId('configuration-confirm')).toBeEnabled();await frame(page,info,kind+'-failed-paint-readable-fallback');await compare(page,before,a);await readonly(page,before,raw);await page.getByTestId('configuration-cancel').click();await readonly(page,before,raw);await page.unroute('**/'+path);
+   const relic=a.type==='EQUIP_RELIC',ids=a.type==='SCHOOL'?Object.values(C.startingLoadouts[a.school as 'sword'|'talisman']):[relic?a.relic!:a.skill!],paths=ids.map(id=>relic?'art/v2/equipment/'+id+'-v1.webp':'art/v2/study/'+JADE_FORMS[id].form+'-v1.webp');
+   for(const path of paths)await page.route('**/'+path,r=>r.fulfill({status:200,contentType:'image/webp',body:'explicitly unavailable CEND08-F02 art'}));
+   const before=await importRecoveryFixture(page,d.game),raw=await database(page);await open(page,a);await expect(art(page).locator('figure')).toHaveCount(ids.length);
+   for(const [i,id]of ids.entries()){const figure=art(page).locator('figure').nth(i),object=(relic?C.relics:C.skills)[id];await expect(figure.locator('.asset-image')).toHaveAttribute('data-art-state','failed');await expect(figure).toContainText(object.name);await expect(figure).toContainText('绘图暂缺');await expect(modal(page)).toContainText(object.description);}
+   await expect(page.getByTestId('configuration-confirm')).toBeEnabled();await frame(page,info,(a.type==='SCHOOL'?'school-'+a.school:relic?'relic-'+a.relic:'skill-'+a.skill)+'-failed-paint-readable-fallback');await compare(page,before,a);await readonly(page,before,raw);await page.getByTestId('configuration-cancel').click();await readonly(page,before,raw);
   }finally{await scope.close();}
  }
 });
