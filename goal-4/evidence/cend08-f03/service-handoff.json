@@ -1,0 +1,9 @@
+{
+  "oldOwnedPID": 64739,
+  "verifiedCommand": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python artifacts/goal-4/cend08-f02/final/source/scripts/candidate/serve.py --directory artifacts/goal-4/cend08-f02/final/source/web/dist --port 4173",
+  "oldIndexSHA256": "95bf81ab86a9cbc12c999ac83037fe09edcc4b05c14dd8895bb967b813b670a0",
+  "onlyCanonicalTestServiceStopped": true,
+  "original56884AndPreview56930NotReadOrChanged": true,
+  "runtime": "c4d17dd67df6dcf16015645b1c20d900737c6bab5d4dea871329b4c1adb656ef",
+  "newPreviewPort": 56932
+}
