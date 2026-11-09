@@ -73,8 +73,8 @@
   },
   "display": {
     "path": "web/src/ConfigArt.vue",
-    "bytes": 2294,
-    "sha256": "a797bf1c9ec26376b785a97b6456b0ee2e0b932bfdfbe81f693303519a1061b6"
+    "bytes": 2530,
+    "sha256": "45588f657d2109ab5205cf7f4b7f8906593f69b9f929d0ac45fcd5de1786b59b"
   },
   "groups": {
     "idle-preparation": {

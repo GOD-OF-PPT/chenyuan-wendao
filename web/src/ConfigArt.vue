@@ -14,14 +14,16 @@ const objects=computed(()=>props.ids.map(id=>{
  <div class="config-art" :class="{'config-art-group':ids.length>1}" data-testid="config-art" data-preview="true" :data-domain="relic?'relic':'skill'">
   <figure v-for="object in objects" :key="object.id" :data-object="object.id">
    <AssetImage :path="object.path" :asset-id="'config-proposed-'+object.id" fit="contain" eager aria-hidden="true"><GameIcon :kind="relic?'relic':'skill'" :id="object.id"/><small>{{object.name}} · 绘图暂缺</small></AssetImage>
-   <figcaption><small>拟配<span v-if="ids.length>1"> · {{object.name}}</span></small></figcaption>
+   <figcaption><small>{{ids.length>1?object.name:'拟配'}}</small></figcaption>
   </figure>
+  <small v-if="ids.length>1" class="config-art-proposal" data-testid="config-preview-label">拟配</small>
  </div>
 </template>
 <style scoped>
 :global(#app .configuration-dialog [data-testid=config-focus]>.changed){background:transparent!important}
 .config-art{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);align-items:center;flex:0 0 180px;width:180px;min-width:0;gap:6px;isolation:isolate}
-.config-art-group{flex-basis:300px;width:300px}
+.config-art-group{flex-basis:300px;width:300px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.config-art-group figure{grid-row:1}.config-art-proposal{grid-column:1/-1;grid-row:2;text-align:center}
 .config-art figure{position:relative;margin:0;min-width:0;text-align:center}
 .config-art figure:before{content:'';position:absolute;left:8%;right:8%;height:12px;bottom:28px;border-radius:50%;background:#071c2580;filter:blur(4px);z-index:-1}
 .config-art .asset-image{height:180px;overflow:visible;filter:drop-shadow(0 5px 3px #071c2566)}
