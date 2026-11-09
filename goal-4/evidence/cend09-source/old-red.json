@@ -1,0 +1,20 @@
+{
+  "baseline": "c81f1d312a61176f6a8f39c1bf7d417e5eede536",
+  "runtime": "c8cb16364ec580ed48ed7d5f7da48c316e553f08a12fdcd417ab8f6bc91d6a67",
+  "report": "artifacts/goal-4/cend09-source/old-report.json",
+  "reportSHA256": "71335fb495096839181fc8bb7551821cbfba531a85007511171508187e5dcea9",
+  "stats": {
+    "startTime": "2026-11-09T12:24:12.813Z",
+    "duration": 5884.584000000001,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failure": "After lawful source, default focus align-self remains auto rather than new start; original cold PNG retained. No product or Game failure claim.",
+  "setupErrors": [
+    "First CSS guard content regex also matched align-content; anchored CSS property name boundary.",
+    "First new unittest source had a quoting SyntaxError, corrected before any method could execute."
+  ],
+  "oldRuntimeNotModified": true
+}

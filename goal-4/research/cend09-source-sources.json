@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-09",
+  "actualReads": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "principle": "hierarchy, recognizable objects, avoid accumulated visual noise"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "principle": "context and operation predictable, related labels adjacent"
+    }
+  ],
+  "projectInference": "Keep one source object/decision, reduce equal-weight rectangular surfaces without hiding costs, finite authorization, failure or result. CSS dimensions and opacity not source mandates.",
+  "notCertification": true
+}

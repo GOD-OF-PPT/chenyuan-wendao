@@ -1,3 +1,4 @@
+from cend09_source_inventory import prior_source_stage_bytes
 from ux33_inventory import prior_ux33_bytes
 from art33_inventory import normalize_ux25_app
 """ART34 source-stage clarity: reversible readonly UI and original formal owners."""
@@ -18,12 +19,12 @@ def validate_art34(root):
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART34 actual local file';return p
  def digest(n):return hashlib.sha256(prior_ux33_bytes(n,local(n).read_bytes())).hexdigest()
  def identity(row):
-  assert type(row['bytes'])is int and local(row['path']).stat().st_size==row['bytes']and digest(row['path'])==row['sha256'],'ART34 actual identity';return local(row['path']).read_text()
+  raw=prior_source_stage_bytes(row['path'],local(row['path']).read_bytes());assert type(row['bytes'])is int and len(raw)==row['bytes']and digest(row['path'])==row['sha256'],'ART34 actual identity';return raw.decode()
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-source-stage-art34'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART34 scope not human acceptance'
  assert m['budgets']==CAPS and all(type(v)is int for v in m['budgets'].values()),'ART34 original typed caps'
  assert [r['path']for r in m['files']]==FILES and m['baselines']==BASELINES and m['sourceReferences']==REFS and m['unchanged']==UNCHANGED and m['patch']==PATCH,'ART34 exact scope'
  for r in m['files']+BASELINES:identity(r)
- patch=json.loads(identity(PATCH));original=identity(BASELINES[0]);actual=local(FILES[0]).read_text();restored=actual
+ patch=json.loads(identity(PATCH));original=identity(BASELINES[0]);actual=prior_source_stage_bytes(FILES[0],local(FILES[0]).read_bytes()).decode();restored=actual
  for step in reversed(patch['steps']):
   assert restored.count(step['new'])==1,'ART34 unique approved UI transform'
   restored=restored.replace(step['new'],step['old'],1)

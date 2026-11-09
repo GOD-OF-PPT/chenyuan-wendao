@@ -12,7 +12,7 @@ import SourceCommission from './SourceCommission.vue';
 import SourceSatchel from './SourceSatchel.vue';
 import {gameFocusKey} from './focus';
 import './art02-source.css';
-import './ta08-source.css';
+import './src-stage.css';
 const props=defineProps<{game:Game;plan:SourcePlan;rows:[string,C.Source][];catalogue:{page:number;pages:number;total:number};available:boolean}>();
 const emit=defineEmits<{select:[string];page:[number];locations:[];home:[];arrange:[]}>();
 const {store,activity,runtime,working,progress,phase,effect}=useActivityPresentation(a=>a.version===2&&a.plan.sourceId===props.plan.sourceId,()=>props.game.core.runId+':'+props.game.core.world.location+':'+props.plan.sourceId);

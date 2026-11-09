@@ -1,3 +1,4 @@
+from cend09_source_inventory import prior_source_stage_bytes
 from cend06_f02b_inventory import prior_f02b_bytes
 """Exact readonly response inverse; original writers and proof unchanged."""
 import hashlib,json,re
@@ -71,6 +72,7 @@ def f02a_parent(path,raw):
  try:return prior_f02b_bytes(path,raw)
  except AssertionError as error:raise AssertionError('F02A parent: '+str(error))from error
 def prior_f02a_bytes(path,raw):
+ raw=prior_source_stage_bytes(path,raw)
  raw=f02a_parent(path,raw)
  matches=[n for n in MANIFEST['files']if Path(n).name==Path(path).name]
  if not matches:return raw

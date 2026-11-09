@@ -1,0 +1,45 @@
+@import './ta08-source.css';
+/* CEND09: keep actual source facts, give the landscape and current object priority. */
+#app div.source-field.art34-source-field[data-source]{
+ --source-reading:#0b292feb;
+ gap:6px;
+ & .source-field-scene{gap:8px 18px;padding:12px 16px;background:transparent}
+ & .source-field-scene::before{background:linear-gradient(90deg,#09282c08 30%,#09262c55 68%,#09262cce 100%),linear-gradient(#09272c66,transparent 34%,#09272c44)}
+ & .source-field-location{border:0;min-height:76px;padding:4px 12px;align-content:center;background:linear-gradient(90deg,var(--source-reading),#0b292fc7 65%,#0b292f00);gap:2px 14px}
+ & .source-field-location>span{color:#c7d7bd;letter-spacing:1px}
+ & .source-field-location .source-chosen{gap:2px 14px}
+ & .source-chosen strong{font-size:26px;color:#eef0d4;text-shadow:0 2px 3px #061b22;letter-spacing:2px}
+ & .source-field-hint{color:#c1d1bc}
+ & .source-points{align-self:center}
+ & .art34-source-book{min-height:64px;height:auto;padding:8px 14px;gap:1px;border:0;border-left:2px solid #9eac7466;border-radius:0;background:linear-gradient(90deg,#173e3ad9,#173e3a00)!important;box-shadow:none!important}
+ & .art34-source-book strong{font-size:20px;letter-spacing:2px;color:#d5e2c4}
+ & .art34-source-book small{color:#bfd0b6}
+ & .art34-source-book:is(:hover,:focus-visible){background:linear-gradient(90deg,#2b5546f0,#173e3a22)!important;border-left-color:#d1d9a5}
+ & .art34-source-book:active{background:#315c4bcc!important}
+ & .source-focus{align-self:start;gap:6px;padding:8px 12px;border:0;background:linear-gradient(90deg,#0b292fe8,#0b292fbf);box-shadow:none}
+ & .source-cycle-state{padding:0 2px 4px;border-bottom:1px solid #8fa98a55;gap:4px 8px}
+ & .source-cycle-state strong{color:#d8e5bf}
+ & .ta08-satchel .ta08-bag-content{padding:0 2px 6px;gap:7px;border:0;border-radius:0;background:transparent;box-shadow:none}
+ & .ta08-bag-inspect{grid-template-columns:76px minmax(0,1fr);gap:4px;min-height:64px}
+ & .ta08-bag-vessel{width:76px;height:56px}
+ & .ta08-stock-row{border-top:1px solid #839b7e40;padding-top:6px}
+ & .ta08-stock-row>b{color:#e1edc1}
+ & .ta08-period-facts{padding-top:2px}
+ & .ta08-object-caption{justify-self:center;width:fit-content;max-width:100%;padding:4px 18px;background:linear-gradient(90deg,#0b292f00,#0b292fe6 18%,#0b292fe6 82%,#0b292f00);border:0;box-shadow:none}
+ & .ta08-object-caption>strong{color:#e1e8ca}
+ & .ta08-object-affordance{border:0;border-left:2px solid #9cbea0;padding:5px 10px;background:linear-gradient(90deg,#103b37ef,#0c2d31d9)}
+ & .source-arrangement{padding:8px 14px;gap:4px 16px;border:0;background:linear-gradient(0deg,#0b292ff2,#0b292fbd);box-shadow:none}
+ & .source-plan-summary{border:0!important;border-left:0!important;background:transparent!important;padding:4px 8px!important;box-shadow:none!important}
+ & .source-plan-summary>span{color:#d5e3be}
+ & .source-estimate{border-left:1px solid #8eaa8755;padding-left:16px}
+ & .source-start.primary{box-shadow:0 3px 7px #031c2499!important}
+ & .source-rule{color:#c5d4bf}
+ &[data-state=failed] .source-field-scene{padding:4px 14px;gap:4px 12px}
+ &[data-state=failed] .source-field-location{border:0;min-height:52px;padding:4px 256px 4px 12px}
+ &[data-state=failed] .art34-source-book{min-height:52px;padding:4px 8px}
+ &[data-state=failed] .source-focus{padding:4px 10px;gap:4px}
+ &[data-state=failed] .ta08-satchel .ta08-bag-content{padding:0 2px 4px;gap:4px}
+ &[data-state=failed] .ta08-bag-inspect{min-height:44px;grid-template-columns:68px minmax(0,1fr)}
+ &[data-state=failed] .ta08-bag-vessel{width:68px;height:46px}
+ &[data-state=failed] .source-arrangement{padding:4px 14px;gap:4px 12px}
+}

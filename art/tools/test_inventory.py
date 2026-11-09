@@ -6,9 +6,11 @@ ROOT=Path(__file__).resolve().parents[2]
 class InventoryTests(unittest.TestCase):
  def setUp(self):
   self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art-negative-');self.root=Path(self.temp.name);self.manifest=json.loads((ROOT/'art/asset-manifest.json').read_text())
+  from cend09_source_inventory import MANIFEST as source_stage
   from cend08_f03_inventory import MANIFEST as source_material
   files={ROOT/n for n in source_material['sourceReferences']+[r['before']for r in source_material['parents']]+list(source_material['authority'])}
 
+  files.update(ROOT/n for n in source_stage['sourceReferences']+[source_stage['parent']['before']]+list(source_stage['authority']))
   for scope in SCOPES:
    files.update(f for f in (ROOT/scope).rglob('*') if f.is_file() and '__pycache__' not in f.parts)
   for asset in self.manifest['assets']:

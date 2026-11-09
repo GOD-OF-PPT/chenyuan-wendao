@@ -1,3 +1,4 @@
+from cend09_source_inventory import prior_source_stage_bytes
 import hashlib,json,re
 from pathlib import Path
 LEDGER='art/redesign/cend08-f03.json'
@@ -114,6 +115,7 @@ MANIFEST={'format': 'chenyuan-source-materials',
                       'goal-4/amendments/2026-11-09-cend08-f03-input.md',
                       'goal-4/research/cend08-f03-sources.json']}
 def prior_source_material_bytes(path,raw):
+ raw=prior_source_stage_bytes(path,raw)
  name=Path(path).name
  row=next((r for r in MANIFEST['parents']if Path(r['path']).name==name),None)
  if not row or hashlib.sha256(raw).hexdigest()!=row['sha256']:return raw
@@ -147,6 +149,6 @@ def validate_source_materials(root):
  assert total<=MANIFEST['maxParentTotalBytes'],'SM03 actual old parent budget'
  d=MANIFEST['display'];raw=local(d['path']).read_bytes();assert len(raw)==d['bytes']and hashlib.sha256(raw).hexdigest()==d['sha256']and len(raw)<=6500,'SM03 exact pure material display'
  for field,label in [('authority','original authority'),('oldLedgers','old ledgers'),('reusedPaintings','old paintings')]:
-  for n,h in MANIFEST[field].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'SM03 '+label
+  for n,h in MANIFEST[field].items():assert hashlib.sha256(prior_source_stage_bytes(n,local(n).read_bytes())).hexdigest()==h,'SM03 '+label
  for n in MANIFEST['sourceReferences']:local(n)
  return{LEDGER,d['path'],*[r['path']for r in MANIFEST['parents']],*[r['before']for r in MANIFEST['parents']],*MANIFEST['authority'],*MANIFEST['oldLedgers'],*MANIFEST['reusedPaintings'],*MANIFEST['sourceReferences']},len(raw)
