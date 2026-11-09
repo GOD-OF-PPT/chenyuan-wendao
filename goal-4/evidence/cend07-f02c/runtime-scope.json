@@ -1,0 +1,37 @@
+{
+  "baselineProducer": {
+    "head": "c3843e7a6c4a5ee6f397643bb3c786eefc3e355b",
+    "source": "c3843e7a6c4a5ee6f397643bb3c786eefc3e355b",
+    "tree": "7e8355d0e1850c7a9637f0096231d2f095af661a",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "currentProducer": {
+    "head": "e2a5a6682b9822b5b40eeef160c47b4e8e134bf3",
+    "source": "e2a5a6682b9822b5b40eeef160c47b4e8e134bf3",
+    "tree": "3074caab8e26a5cf1e7af4d6bb8e6a3dfad469a7",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "8.11.0",
+    "npmOnPath": "8.11.0"
+  },
+  "baselineRuntime": "1188334128988c69c02b20000722ab85d0a5fe3b1cc5cc333f18748a71da54dc",
+  "currentRuntime": "2473c9d382f23bcefe5e870dbdc60a75c6f409f709e4f89c6bbeea8294c135ac",
+  "runtimeFiles": 343,
+  "changed": [
+    "web/src/SourcePlanner.vue"
+  ],
+  "unchangedRuntimeFiles": 342,
+  "unchangedAuthority": 58,
+  "newRasterAssets": 0,
+  "nativeBefore": 8460,
+  "nativeCurrent": 9726,
+  "nativeDelta": 1266,
+  "scopedCSSBytes": 142,
+  "fullCoreRerun": false,
+  "fullStorage415FreshRun": false,
+  "fullNormal32FreshRun": false,
+  "full1460Executed": false
+}

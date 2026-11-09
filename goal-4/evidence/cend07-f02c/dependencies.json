@@ -1,0 +1,18 @@
+{
+  "baseManifest": "goal-4/evidence/check-cend07-three/dependencies.json",
+  "baseSha256": "0a2b903f30fc01a3a2dfa169c05bfbafb54606cc5674f4948cc3a2c1249814b8",
+  "allExact": true,
+  "dependencyFiles": 1981,
+  "checks": [
+    {
+      "directory": "node_modules",
+      "files": 133,
+      "rootAndFrozenExact": true
+    },
+    {
+      "directory": "web/node_modules",
+      "files": 1848,
+      "rootAndFrozenExact": true
+    }
+  ]
+}
