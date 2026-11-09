@@ -127,7 +127,8 @@ def validate_config_art(root):
  def local(n):
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'CA02 local file';return p
  if not(root/LEDGER).exists():
-  assert not(root/MANIFEST['display']['path']).exists(),'CA02 missing ledger';return set(),0
+  parent=root/MANIFEST['parent']['path']
+  assert not(root/MANIFEST['display']['path']).exists()and(not parent.exists()or hashlib.sha256(parent.read_bytes()).hexdigest()==MANIFEST['parent']['beforeSha256']),'CA02 missing ledger';return set(),0
  m=json.loads(local(LEDGER).read_text());assert m==MANIFEST and all(type(m[k])is int for k in ['version','newRasterAssets','maxDisplayBytes','maxParentBytes','maxParentDeltaBytes'])and m['userAcceptance']is False,'CA02 immutable scope/caps'
  row=m['parent'];raw=local(row['path']).read_bytes();old=local(row['before']).read_bytes()
  assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'CA02 complete parent'

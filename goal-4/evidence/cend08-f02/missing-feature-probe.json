@@ -1,0 +1,17 @@
+{
+  "sameCowPositiveBeforeMutation": true,
+  "mutations": [
+    "remove new ledger",
+    "remove new ConfigArt module"
+  ],
+  "parentStillCurrentNewWiring": true,
+  "results": {
+    "specific": {
+      "accepted": true
+    },
+    "full": {
+      "accepted": true
+    }
+  },
+  "diagnosticOnlyNotPlayerOrRuntimeMutation": true
+}

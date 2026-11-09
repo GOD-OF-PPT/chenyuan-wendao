@@ -33,6 +33,10 @@ class ConfigArtTests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'CA02 original parent'):validate_config_art(self.root)
   self.write(p,(ROOT/p).read_text());(self.root/LEDGER).unlink()
   with self.assertRaisesRegex(AssertionError,'CA02 missing ledger'):validate_config_art(self.root)
+  (self.root/MANIFEST['display']['path']).unlink()
+  with self.assertRaisesRegex(AssertionError,'CA02 missing ledger'):validate_config_art(self.root)
+  self.write(MANIFEST['parent']['path'],(ROOT/MANIFEST['parent']['before']).read_text())
+  self.assertEqual(validate_config_art(self.root),(set(),0))
  def test_original_caps_and_acceptance_cannot_be_resigned(self):
   for key,value in [('maxDisplayBytes',4801),('maxParentBytes',6000),('newRasterAssets',1),('version',True),('userAcceptance',True)]:
    m=copy.deepcopy(MANIFEST);m[key]=value;self.write(LEDGER,m)
