@@ -1,3 +1,4 @@
+from cend11_mainline_inventory import prior_mainline_hud_bytes
 import hashlib,json
 from pathlib import Path
 LEDGER="art/redesign/cend10-source-goal.json"
@@ -41,6 +42,7 @@ MANIFEST={'format': 'chenyuan-source-stock-goal',
                       'goal-4/amendments/2026-11-09-cend10-source-goal-input.md',
                       'goal-4/research/cend10-source-goal-sources.json']}
 def prior_stock_goal_bytes(path,raw):
+ raw=prior_mainline_hud_bytes(path,raw)
  row=MANIFEST['parent']
  if Path(path).name!=Path(row['path']).name or hashlib.sha256(raw).hexdigest()!=row['sha256']:return raw
  for addition in row['additions']:

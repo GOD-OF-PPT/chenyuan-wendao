@@ -1,3 +1,4 @@
+from cend11_mainline_inventory import prior_mainline_hud_bytes
 from cend07_f03_inventory import prior_painted_travel_bytes
 from check_cend07_inventory import prior_forecast_bytes
 """Exact travel-only scene adapter and unchanged authority, with original caps."""
@@ -69,6 +70,7 @@ MANIFEST={'format': 'chenyuan-cend06-f02b-travel-passage',
                       'goal-4/amendments/2026-11-06-cend06-f02b-input.md',
                       'goal-4/research/cend06-f02b-sources.json']}
 def prior_f02b_bytes(path,raw):
+ raw=prior_mainline_hud_bytes(path,raw)
  raw=prior_forecast_bytes(path,raw)
  matches=[n for n in MANIFEST['files']if Path(n).name==Path(path).name]
  if not matches:return raw
@@ -92,7 +94,7 @@ def validate_f02b(root):
   return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'F02B immutable scope and original caps'
  for n,row in MANIFEST['files'].items():
-  raw=local(n).read_bytes();old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'F02B current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'F02B preserved original';assert prior_f02b_bytes(n,raw)==old,'F02B whole inverse'
+  raw=prior_mainline_hud_bytes(n,local(n).read_bytes());old=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'F02B current source';assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'F02B preserved original';assert prior_f02b_bytes(n,raw)==old,'F02B whole inverse'
   if n.endswith('App.vue'):assert raw.split(b'</script>')[0]==old.split(b'</script>')[0].replace(b"import {actionSeconds} from './action-timing';\n",b''),'F02B only unused pure import removed'
   else:assert raw.split(b'<style')[1]==old.split(b'<style')[1],'F02B original scene styles and media unchanged'
  total=0

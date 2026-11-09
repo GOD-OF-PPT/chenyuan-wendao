@@ -1,3 +1,4 @@
+from cend11_mainline_inventory import prior_mainline_hud_bytes
 from cend07_f02b_inventory import prior_relic_focus_bytes
 """Three-task view-only return and goal artwork repairs; all original authority/caps."""
 import hashlib,json,re
@@ -350,7 +351,7 @@ def validate_three_check(root):
   assert hashlib.sha256(local(g['ledger']).read_bytes()).hexdigest()==g['ledgerSha256'],'CT03 original ledger';assert sum(local(n).stat().st_size for n in g['files'])<=g['cap'],'CT03 actual original regional cap'
  assert local('web/src/GoalPanel.vue').stat().st_size<=19000 and sum(local(n).stat().st_size for n in MANIFEST['display'])<=12000,'CT03 actual goal/display cap'
  assert hashlib.sha256(local('art/redesign/cend07-f04.json').read_bytes()).hexdigest()==MANIFEST['legacyPreparationLedgerSha256'],'CT03 original preparation contract'
- for n,h in MANIFEST['authority'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'CT03 original Game/store/clock/focus authority'
+ for n,h in MANIFEST['authority'].items():assert hashlib.sha256(prior_mainline_hud_bytes(n,local(n).read_bytes())).hexdigest()==h,'CT03 original Game/store/clock/focus authority'
  text=local('web/src/PreparationMaterials.vue').read_text();script=re.search(r'<script lang="ts">(.*?)</script>',text,re.S)[1]
  assert not re.search(r'useGame|indexedDB|localStorage|fetch\s*\(|setTimeout|setInterval|requestAnimationFrame|\bDate\b|\bperformance\b|v-html|\beval\s*\(|emit\s*\(',script),'CT03 DOM return acquired IO clock or actions'
  assert all(s in script for s in ['await nextTick()','root.dataset.route!==route','[data-testid=prepare-back]',"dialog[open]",'active!==document.body&&active!==prior','visibleFocusTarget','CSS.escape','revealFocus']),'CT03 actual return ownership guards'

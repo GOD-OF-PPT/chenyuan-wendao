@@ -1,3 +1,4 @@
+from cend11_mainline_inventory import prior_mainline_hud_bytes
 """Exact painted travel presentation; original timing/authority/asset ledger intact."""
 import hashlib,json,re
 from pathlib import Path
@@ -156,7 +157,7 @@ def validate_painted_travel(root):
  assert total<=8500,'TP03 actual native cap'
  for row in MANIFEST['reused']:
   raw=local(row['path']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'TP03 original raster/provenance/widget'
- for n,h in MANIFEST['authority'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'TP03 original Game or controller'
+ for n,h in MANIFEST['authority'].items():assert hashlib.sha256(prior_mainline_hud_bytes(n,local(n).read_bytes())).hexdigest()==h,'TP03 original Game or controller'
  assert hashlib.sha256(local(MANIFEST['legacyLedger']).read_bytes()).hexdigest()==MANIFEST['legacyLedgerSha256'],'TP03 original ledger/caps'
  s=local('web/src/TravelPassage.vue').read_text();css=local('web/src/travel-passage.css').read_text()
  assert not re.search(r'\b(?:setTimeout|setInterval|requestAnimationFrame|Date|performance|fetch|indexedDB|localStorage|resolve|startPlannedActivity|pauseCultivation|resumeCultivation)\b|v-html|eval\s*\(',s),'TP03 acquired clock IO writing'

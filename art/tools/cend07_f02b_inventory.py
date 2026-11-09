@@ -1,3 +1,4 @@
+from cend11_mainline_inventory import prior_mainline_hud_bytes
 from cend07_f02c_inventory import prior_source_intent_bytes
 """Exact relic hierarchy, actual ownership and original forge/save authority."""
 import hashlib,json,re
@@ -171,7 +172,7 @@ def validate_relic_focus(root):
  for g in MANIFEST['groups'].values():
   assert hashlib.sha256(local(g['ledger']).read_bytes()).hexdigest()==g['ledgerSha256'],'RF02 original regional ledger'
   assert sum(local(n).stat().st_size for n in g['files'])<=g['cap'],'RF02 actual original regional cap'
- for n,h in MANIFEST['authority'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'RF02 original Game control or rendering source'
+ for n,h in MANIFEST['authority'].items():assert hashlib.sha256(prior_mainline_hud_bytes(n,local(n).read_bytes())).hexdigest()==h,'RF02 original Game control or rendering source'
  for n in MANIFEST['sourceReferences']:local(n)
  text=local('web/src/RelicAtelier.vue').read_text()
  for token in ['<div v-if="!owned" class="relic-material-slots"','<component :is="owned?\'details\':\'div\'">','<summary v-if="owned" style="min-height:44px;font-size:18px">铸造资料</summary>','<div v-if="!bound&&currentRelic"','v-if="state!==\'idle\'||!owned&&activity?.status===\'stopped\'"']:
