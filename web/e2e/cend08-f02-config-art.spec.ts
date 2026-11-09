@@ -54,7 +54,7 @@ test('CEND08-F02-D3 missing real relic and jade artwork keeps named static fallb
  const actions=[...Object.keys(C.relics).map(relic=>({type:'EQUIP_RELIC',relic})),...skills.map(skill=>({type:'EQUIP',skill})),{type:'SCHOOL',school:'sword'},{type:'SCHOOL',school:'talisman'}];
  for(const a of actions){
   if(a.type==='EQUIP'){const skill=C.skills[a.skill!];if(d.game.school!==skill.school)d.doAction({type:'SCHOOL',school:skill.school});const alternative=Object.keys(C.skills).find(id=>id!==a.skill&&C.skills[id].school===skill.school&&C.skills[id].slot===skill.slot)!;d.doAction({type:'EQUIP',skill:alternative});}
-  if(a.type==='SCHOOL')d.doAction({type:'SCHOOL',school:a.school==='sword'?'talisman':'sword'});
+  if(a.type==='SCHOOL'){const other=a.school==='sword'?'talisman':'sword';if(d.game.school!==other)d.doAction({type:'SCHOOL',school:other});}
   const scope=await casePage(browser,info),page=scope.page;try{
    const relic=a.type==='EQUIP_RELIC',ids=a.type==='SCHOOL'?Object.values(C.startingLoadouts[a.school as 'sword'|'talisman']):[relic?a.relic!:a.skill!],paths=ids.map(id=>relic?'art/v2/equipment/'+id+'-v1.webp':'art/v2/study/'+JADE_FORMS[id].form+'-v1.webp');
    for(const path of paths)await page.route('**/'+path,r=>r.fulfill({status:200,contentType:'image/webp',body:'explicitly unavailable CEND08-F02 art'}));
