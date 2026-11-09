@@ -1,0 +1,15 @@
+{
+  "servedRuntime": "3b3f39de288f41606ccf873efa23d51d269903950e2e4c63da57e717ac0d05ca",
+  "actualExit": 1,
+  "stats": {
+    "startTime": "2026-11-09T08:31:25.893Z",
+    "duration": 10482.902000000002,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "reason": "config-art is absent; original decision reached, captured and viewed before change",
+  "notFormalDeliveryRejection": true,
+  "rawReportSHA256": "961176285b40784932cf502fcef346a8dd51a52e4fc82940df17f37e3cf4f14b"
+}

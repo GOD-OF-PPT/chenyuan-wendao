@@ -1,3 +1,4 @@
+from cend08_f02_inventory import prior_config_art_bytes
 from uir34_05_inventory import prior_uir3405_bytes
 """Exact configuration display evolution under the original 60000B preparation cap."""
 import hashlib,json
@@ -190,7 +191,11 @@ MANIFEST={'format': 'chenyuan-configuration-focus-uir34-03',
                'web/src/art16-schools.css': 'af4798fd2ce2465fc14e9986f46877c071d9aaf1435f519a8b111e825402ae34'},
  'sourceReferences': ['docs/decisions/0109-configuration-focus-uir34-03-contract.md',
                       'goal-4/amendments/2026-11-05-uir34-03-input.md']}
+def current_config_bytes(path,raw):
+ try:return prior_config_art_bytes(path,raw)
+ except AssertionError as error:raise AssertionError("UIR34-03 parent: "+str(error))from error
 def prior_uir3403_bytes(path,raw):
+ raw=current_config_bytes(path,raw)
  if Path(path).name!='ConfigurationDialog.vue':return raw
  if hashlib.sha256(raw).hexdigest()==MANIFEST['beforeSHA256']:return raw
  assert len(raw)==MANIFEST['bytes']and hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'UIR34-03 exact complete source'
@@ -208,7 +213,7 @@ def validate_uir3403(root):
   assert b'config-focus'not in local(MANIFEST['path']).read_bytes(),'UIR34-03 unrecorded focus'
   return set(),0
  assert json.loads(local(LEDGER).read_text())==MANIFEST,'UIR34-03 immutable scope'
- raw=local(MANIFEST['path']).read_bytes();old=local(MANIFEST['before']).read_bytes();assert len(raw)==MANIFEST['bytes']and hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'UIR34-03 current source';assert hashlib.sha256(old).hexdigest()==MANIFEST['beforeSHA256'],'UIR34-03 original preserved';assert prior_uir3403_bytes(MANIFEST['path'],raw)==old,'UIR34-03 full inverse'
+ raw=current_config_bytes(MANIFEST['path'],local(MANIFEST['path']).read_bytes());old=local(MANIFEST['before']).read_bytes();assert len(raw)==MANIFEST['bytes']and hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'UIR34-03 current source';assert hashlib.sha256(old).hexdigest()==MANIFEST['beforeSHA256'],'UIR34-03 original preserved';assert prior_uir3403_bytes(MANIFEST['path'],raw)==old,'UIR34-03 full inverse'
  assert len(raw)<=5643 and sum(local(n).stat().st_size for n in MANIFEST['group'])<=60000,'UIR34-03 original actual cap'
  for n,h in MANIFEST['unchanged'].items():assert hashlib.sha256(prior_uir3405_bytes(n,local(n).read_bytes())).hexdigest()==h,'UIR34-03 original confirmation ownership and rules'
  for n in MANIFEST['sourceReferences']:local(n)

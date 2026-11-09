@@ -1,0 +1,147 @@
+"""Exact configuration-art display only; no new command, image or budget authority."""
+import json,hashlib,re
+from pathlib import Path
+LEDGER='art/redesign/cend08-f02.json'
+MANIFEST={'format': 'chenyuan-cend08-f02-config-art',
+ 'version': 1,
+ 'userAcceptance': False,
+ 'newRasterAssets': 0,
+ 'maxDisplayBytes': 4800,
+ 'maxParentBytes': 5643,
+ 'maxParentDeltaBytes': 0,
+ 'parent': {'path': 'web/src/ConfigurationDialog.vue',
+            'before': 'goal-4/evidence/cend08-f02/before/web/src/ConfigurationDialog.vue',
+            'beforeBytes': 5642,
+            'beforeSha256': '74067880f132af079130acea336dfd559901cc088d09124f4a26b97d2504ee86',
+            'bytes': 5628,
+            'sha256': 'a55efd8d7314de199a0179afed7f9004e911917e0410b20ba05293070b06fcd3',
+            'operations': [[379, 'GameIc', 'C'],
+                           [382, '', 'figArt'],
+                           [397, 'GameIc', 'C'],
+                           [400, '', 'figArt'],
+                           [3154, 'GameIc', 'C'],
+                           [3157, '', 'figArt'],
+                           [3165, 'k', 'rel'],
+                           [3169, 'nd', 'c'],
+                           [3186, "?'relic':'skill'", ''],
+                           [3191, '', 's'],
+                           [3197, '[0]', '']]},
+ 'display': {'path': 'web/src/ConfigArt.vue',
+             'bytes': 2294,
+             'sha256': 'a797bf1c9ec26376b785a97b6456b0ee2e0b932bfdfbe81f693303519a1061b6'},
+ 'groups': {'idle-preparation': {'ledger': 'art/redesign/idle-preparation.json',
+                                 'ledgerSha256': 'bad1cbd7a8e23cdf505f6e055c6cf75ab4886a009a500f8f041e6ef94c58cf51',
+                                 'cap': 60000,
+                                 'files': ['web/src/LearningPlanner.vue',
+                                           'web/src/MarketPlanner.vue',
+                                           'web/src/RecoveryPlanner.vue',
+                                           'web/src/ConfigurationDialog.vue',
+                                           'web/src/preparation-view.ts',
+                                           'web/src/idle-preparation.css']}},
+ 'reusedAssets': [{'path': 'web/public/art/v2/equipment/frost_sword-v1.webp',
+                   'bytes': 10960,
+                   'sha256': '0054af06284f62b516d5be2802dbd69fecb4cb31ee8d56f0a7d895568df79943'},
+                  {'path': 'web/public/art/v2/equipment/jade_seal-v1.webp',
+                   'bytes': 56116,
+                   'sha256': '81aad3db8a19ad6a39b0e54a96254d6fcc94164bdcbbbb87bd0e3f48ef43c49c'},
+                  {'path': 'web/public/art/v2/equipment/soul_lamp-v1.webp',
+                   'bytes': 42144,
+                   'sha256': 'd0345b92c5c191f50b831ffdeec27a591785b1948398948daee06df799dff1cc'},
+                  {'path': 'web/public/art/v2/equipment/cloud_mirror-v1.webp',
+                   'bytes': 27650,
+                   'sha256': '8a8066224ee8487a226dd63ae27f8fd1760a08214cdf93826d8e8d8d7d77a008'},
+                  {'path': 'web/public/art/v2/study/heart-v1.webp',
+                   'bytes': 70656,
+                   'sha256': '8ffb2310476341c75d598e97dee3084da8a076976922e002297d6baaae17e7bb'},
+                  {'path': 'web/public/art/v2/study/blade-v1.webp',
+                   'bytes': 55150,
+                   'sha256': 'f5bab2000a85d7ce3644bd50f4689a4a9c71388e7c39ba4f19aa3addcf456432'},
+                  {'path': 'web/public/art/v2/study/scroll-v1.webp',
+                   'bytes': 36206,
+                   'sha256': '1cb635a6b7b6adf76bf6242087b56fb1b12b1b0c185a079f04e252aa05bce3cb'},
+                  {'path': 'web/public/art/v2/study/knot-v1.webp',
+                   'bytes': 75746,
+                   'sha256': '1b6ae27e64b564e7d3177689adddc466546b3d902cc538b0c419176baad2b096'},
+                  {'path': 'web/public/art/v2/study/seal-v1.webp',
+                   'bytes': 23748,
+                   'sha256': '21962bbfcf8b5a6659cf67026e9234b7eb323e6076a71ab4afad24c00953b389'},
+                  {'path': 'web/public/art/v2/study/fan-v1.webp',
+                   'bytes': 45384,
+                   'sha256': '1d391be6c90e887592b30c914817c952eb27f1ef29a8633c389658c1da8fc273'}],
+ 'authority': {'src/full/preparation.ts': '3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a',
+               'src/full/story-context.ts': '9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950',
+               'src/full/mechanisms.ts': '5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221',
+               'src/full/economy-ledger.ts': '9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0',
+               'src/full/versions.ts': '10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64',
+               'src/full/errors.ts': 'ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4',
+               'src/full/queries.ts': 'eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48',
+               'src/full/contracts.ts': '24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa',
+               'src/full/costs.ts': '71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb',
+               'src/full/engine.ts': '864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73',
+               'src/full/content.ts': 'e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c',
+               'src/full/ascension.ts': '39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a',
+               'src/full/types.ts': 'be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064',
+               'src/full/growth.ts': '42076ba5b572e519d64c3d85b570b223d36af1dac8510f4dedc928e137beaf26',
+               'src/full/activity.ts': '2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815',
+               'src/full/adventure.ts': '8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015',
+               'src/full/events.ts': 'bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d',
+               'src/full/milestones.ts': 'e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492',
+               'src/full/life-record.ts': '02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7',
+               'src/full/goals.ts': '10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883',
+               'src/full/validate-content.ts': '72bd297d0f44036ba0b0b84d587f00a11d6b14b8fd2656f0381681d9fefb02d1',
+               'src/full/receipts.ts': '185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae',
+               'src/full/trial-rules.ts': '5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53',
+               'src/full/progression.ts': '8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406',
+               'src/full/configuration.ts': 'ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520',
+               'web/src/store.ts': 'cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7',
+               'web/src/full-persistence.ts': 'd2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21',
+               'web/src/activity-persistence.ts': 'a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf',
+               'web/src/configuration-persistence.ts': 'a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00',
+               'web/src/activity-clock.ts': '21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901',
+               'web/src/focus.ts': '8ae91e78a4db7a854c293fc4b1bc28f02dd0d542b3119cff383f9245b4944eea',
+               'web/src/ConfigurationOutlook.vue': '72768df4cb3d226c5efc029dfa73e68324cfb0fd5962ca6d9348964224619e20',
+               'web/src/equipment-choreography.ts': '871e41e7555f640fecbc8f26706fac34a5249225a6acb5f1db9c63789a8011bb',
+               'web/src/AssetImage.vue': 'ecfc476d074c16c14b181abbf62863ebc6d5c014d9473d3118e761433115a8da',
+               'web/src/GameIcon.vue': 'bb3f16dcb5952299de409a6666e55901e044bb4890cf8e2ddb720f0122d3d061',
+               'web/src/jade-paint.ts': 'd9eeb4ac87f3b2ef12e3c1d7c966ecb2af06bdf34b231eceee37432bb08ff1da',
+               'web/src/JadeEngraving.vue': '028859e4652c0af684e3d4b94ad73d7df0671003a1b17fa6993e05991931c141',
+               'web/src/RelicAtelier.vue': '237bb209544cf0e3c40e91fa84fddf307daa11e350c8be55a2b5165fd4134170',
+               'web/src/LearningPlanner.vue': '02cae4c97de4b054acb1208fe7801b370019a08a05d9a844d9c8f245f009a503',
+               'web/src/art16-schools.css': 'af4798fd2ce2465fc14e9986f46877c071d9aaf1435f519a8b111e825402ae34',
+               'web/src/idle-preparation.css': '9832321f25817d059c4a95e6bc16ac31e7476eac800afaa788575cd00278396a'},
+ 'sourceReferences': ['docs/decisions/0137-configuration-object-cend08-f02.md',
+                      'goal-4/amendments/2026-11-09-cend08-f02-input.md',
+                      'goal-4/research/cend08-f02-sources.json']}
+def prior_config_art_bytes(path,raw):
+ if Path(path).name!='ConfigurationDialog.vue':return raw
+ row=MANIFEST['parent']
+ if hashlib.sha256(raw).hexdigest()==row['beforeSha256']or b'import ConfigArt'not in raw:return raw
+ assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'CA02 complete current parent'
+ text=raw.decode()
+ for at,before,after in reversed(row['operations']):
+  assert text[at:at+len(after)]==after,'CA02 exact display span';text=text[:at]+before+text[at+len(after):]
+ assert hashlib.sha256(text.encode()).hexdigest()==row['beforeSha256'],'CA02 full original inverse'
+ return text.encode()
+def validate_config_art(root):
+ root=Path(root).resolve()
+ def local(n):
+  p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'CA02 local file';return p
+ if not(root/LEDGER).exists():
+  assert not(root/MANIFEST['display']['path']).exists(),'CA02 missing ledger';return set(),0
+ m=json.loads(local(LEDGER).read_text());assert m==MANIFEST and all(type(m[k])is int for k in ['version','newRasterAssets','maxDisplayBytes','maxParentBytes','maxParentDeltaBytes'])and m['userAcceptance']is False,'CA02 immutable scope/caps'
+ row=m['parent'];raw=local(row['path']).read_bytes();old=local(row['before']).read_bytes()
+ assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'CA02 complete parent'
+ assert len(old)==row['beforeBytes']and hashlib.sha256(old).hexdigest()==row['beforeSha256'],'CA02 original parent'
+ assert prior_config_art_bytes(row['path'],raw)==old,'CA02 full parent inverse'
+ assert raw.split(b'</script>')[0].replace(b"import ConfigArt from './ConfigArt.vue';",b"import GameIcon from './GameIcon.vue';",1)==old.split(b'</script>')[0],'CA02 original confirmation controller'
+ assert re.findall(rb'@[\w:.-]+="[^"]*"',raw)==re.findall(rb'@[\w:.-]+="[^"]*"',old),'CA02 original callbacks'
+ assert re.findall(rb':disabled="[^"]*"',raw)==re.findall(rb':disabled="[^"]*"',old),'CA02 original disabled gates'
+ assert len(raw)<=5643 and len(raw)-len(old)<=0,'CA02 actual parent caps'
+ d=m['display'];data=local(d['path']).read_bytes();assert len(data)==d['bytes']and hashlib.sha256(data).hexdigest()==d['sha256'],'CA02 exact pure display';assert len(data)<=4800,'CA02 display cap'
+ for n,h in m['authority'].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==h,'CA02 original ownership clock and writes'
+ for asset in m['reusedAssets']:
+  p=local(asset['path']);assert p.stat().st_size==asset['bytes']and hashlib.sha256(p.read_bytes()).hexdigest()==asset['sha256'],'CA02 exact original painting'
+ for g in m['groups'].values():
+  assert hashlib.sha256(local(g['ledger']).read_bytes()).hexdigest()==g['ledgerSha256'],'CA02 original regional ledger';assert sum(local(n).stat().st_size for n in g['files'])<=g['cap'],'CA02 actual old regional cap'
+ for n in m['sourceReferences']:local(n)
+ return {LEDGER,row['path'],row['before'],d['path'],*m['authority'],*[a['path']for a in m['reusedAssets']],*m['sourceReferences']},len(data)

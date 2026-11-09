@@ -1,3 +1,4 @@
+from cend08_f02_inventory import prior_config_art_bytes
 from uir35_02_inventory import prior_uir3502_bytes
 from uir35_01_inventory import prior_uir3501_bytes
 """Exact presentation-only evolution for the original trial and life confirmations."""
@@ -101,6 +102,8 @@ MANIFEST={'format': 'chenyuan-uir34-05-trial-life-focus',
                'web/src/idle-milestones.css': '496d9959423622607290aab8f8d8ce35f04c1361310a7a2f9545e17fcbf03054'},
  'sourceReferences': ['docs/decisions/0112-trial-life-confirmation-focus.md', 'goal-4/amendments/2026-11-06-uir34-05-input.md']}
 def prior_uir3405_bytes(path,raw):
+ try:raw=prior_config_art_bytes(path,raw)
+ except AssertionError as error:raise AssertionError("UIR34-05 parent: "+str(error))from error
  raw=prior_uir3501_bytes(path,raw)
  if Path(path).name!='App.vue' or b'closure-focus' not in raw:return raw
  assert len(raw)==MANIFEST['bytes'] and hashlib.sha256(raw).hexdigest()==MANIFEST['sha256'],'UIR34-01 UIR34-05 exact complete source'

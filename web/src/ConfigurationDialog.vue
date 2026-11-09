@@ -5,7 +5,7 @@ import type {ConfigurationIntent} from '../../src/full/configuration.ts';
 import {configurationPreview} from '../../src/full/configuration.ts';
 import * as C from '../../src/full/content.ts';
 import {gameFocusKey} from './focus';
-import GameIcon from './GameIcon.vue';
+import ConfigArt from './ConfigArt.vue';
 import ConfigurationOutlook from './ConfigurationOutlook.vue';
 const props=defineProps<{intent:ConfigurationIntent;snapshot:Game;stale:boolean;busy:boolean;error:string;retry:boolean;available:boolean}>();
 const emit=defineEmits<{confirm:[];retry:[];refresh:[];close:[]}>();
@@ -30,7 +30,7 @@ onMounted(()=>focus?.open(dialog.value));onScopeDispose(()=>focus?.release(dialo
 <h2 id="configuration-title" data-dialog-initial tabindex="-1">{{title}} · {{cmd.type==='SCHOOL'?school(cmd.school):name(slot,ids[0])}}</h2>
 <nav class="configuration-view-tabs" aria-label="配装核对分类"><button :aria-pressed="view==='effects'" data-testid="configuration-view-effects" @click="view='effects'">配装效果</button><button :aria-pressed="view==='full'" data-testid="config-full" @click="view='full'">完整比较</button><button :aria-pressed="view==='combat'" data-testid="configuration-view-combat" @click="view='combat'">本境历练预演</button></nav>
 <template v-if="view==='effects'">
-<div class="configuration-slots" data-testid="config-focus"><article class="changed"><GameIcon :kind="slot==='relic'?'relic':'skill'" :id="ids[0]"/><div><p v-for="id in ids" :key="id">{{cmd.type==='SCHOOL'?name(slot,id)+'：':''}}{{object(slot,id)?.description}}</p></div></article></div>
+<div class="configuration-slots" data-testid="config-focus"><article class="changed"><ConfigArt :relic="slot==='relic'" :ids="ids"/><div><p v-for="id in ids" :key="id">{{cmd.type==='SCHOOL'?name(slot,id)+'：':''}}{{object(slot,id)?.description}}</p></div></article></div>
 </template><template v-else-if="view==='full'">
 <p>{{cmd.type==='SCHOOL'?'择法将更换下列三项功法。已掌握的功法和本命法宝保留。':'此处只更换已掌握或已持有的配装，不研习、不炼制、不旅行。'}}</p>
 <p class="configuration-schools">{{school(q.before.school)}} → {{school(q.after.school)}}</p>
