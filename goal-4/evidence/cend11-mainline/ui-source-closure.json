@@ -1,0 +1,1780 @@
+{
+  "entries": [
+    "web/e2e/stage-r1.spec.ts",
+    "web/e2e/art18-mainline-usability.spec.ts",
+    "web/e2e/ux20-trial-guidance.spec.ts",
+    "web/e2e/uir34-01-lifespan-guidance.spec.ts",
+    "web/e2e/desktop-spirit-action.spec.ts",
+    "web/e2e/ux24-goal-guidance.spec.ts",
+    "web/e2e/uir35-01-goal-authority.spec.ts",
+    "web/e2e/check-matrix-guidance.spec.ts",
+    "web/e2e/idle-recovery-context.spec.ts",
+    "web/e2e/idle-recovery-ui.spec.ts",
+    "web/e2e/stage-u8-b.spec.ts",
+    "web/e2e/stage-r3-layout.spec.ts",
+    "web/e2e/cend10-source-goal.spec.ts",
+    "web/e2e/check-cend08-09.spec.ts",
+    "web/e2e/cend11-mainline.spec.ts"
+  ],
+  "files": 59,
+  "hashes": {
+    "scripts/economy/idle-scenarios.mjs": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407",
+    "scripts/economy/scenarios.mjs": "7b82f06c10749a9d81e6cb8c3486c26d886a5ca30dd198471f68f9e67891ca9e",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/adventure.ts": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015",
+    "src/full/ascension.ts": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a",
+    "src/full/configuration.ts": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520",
+    "src/full/content.ts": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c",
+    "src/full/contracts.ts": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa",
+    "src/full/costs.ts": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb",
+    "src/full/economy-ledger.ts": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/errors.ts": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4",
+    "src/full/events.ts": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d",
+    "src/full/goals.ts": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883",
+    "src/full/life-record.ts": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7",
+    "src/full/mechanisms.ts": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221",
+    "src/full/milestones.ts": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492",
+    "src/full/preparation.ts": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a",
+    "src/full/progression.ts": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406",
+    "src/full/queries.ts": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+    "src/full/receipts.ts": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae",
+    "src/full/story-context.ts": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950",
+    "src/full/trial-rules.ts": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53",
+    "src/full/types.ts": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064",
+    "src/full/versions.ts": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64",
+    "tests/action-feedback-fixtures.mjs": "caae2948278f71852bab474874b32d3a7b6e2bd4b0a3b70bbc346337b6dc0f34",
+    "tests/causal-route.mjs": "9987d0f04d5d0dddddf095d38dcabc30430cd77d63512fb18a09ed63c6bb584f",
+    "tests/full-route.mjs": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321",
+    "tests/lifespan-guidance-fixtures.mjs": "317ec5d685451ab53700b58faa5dd3fe799551c57e9b248fbacfc4241f647b25",
+    "tests/trial-journey-route.mjs": "f57cabb60d5eb296bf94a7142d065f560ac0b073f8ffd1b7607c1522ff67f95a",
+    "tests/trial-preparation-route.mjs": "08e44ef986c7bf69fa255c41bcb5247b5463a62269fe45dbf0755cefb98eb419",
+    "web/e2e/art18-mainline-usability.spec.ts": "53f4e5f46a7898381b42ce081dafd8a7e3431e39d88b47ad0dac5d995a318161",
+    "web/e2e/cend10-source-goal.spec.ts": "d1eb9e7023ca41487ed0a3791e051773068aa4ad359f64eddf245b4486e93c4b",
+    "web/e2e/cend11-mainline.spec.ts": "cc7860d3ad205b657b7c9f7823fb9261bc6263ed3b30257a1d5dea587f21b1e4",
+    "web/e2e/check-cend08-09.spec.ts": "16c7b9e38dd0c5e8c8adf283ef782dc55ee5772d9fde09898004856367a5af1b",
+    "web/e2e/check-matrix-guidance.spec.ts": "5875b244095a2feb722bfe8e42fcdad6e2c12fe3daa9559f514d8d2346ac2d48",
+    "web/e2e/desktop-spirit-action.spec.ts": "9cef67a8212b3b0ca96ac733bf4de3371cf75084b3803ffa991259111c76b195",
+    "web/e2e/game-confirmation-support.ts": "be4bbdeaebab740befaf52e37582098c6d9d87030c71d2cabbb756238017f3fd",
+    "web/e2e/idle-recovery-context.spec.ts": "caae1f777de903ad61857549d2b263aaca507c11566005b1f7785634521f59ac",
+    "web/e2e/idle-recovery-ui-support.ts": "2b2e9df03cf97cf582a03eb23d2bc2d3eb078a4cffc9c953f54972c047c6d04f",
+    "web/e2e/idle-recovery-ui.spec.ts": "9ff763d9c767872cb25dea28d16c162adbe5e6aaf29f7355120a2febaf2b320d",
+    "web/e2e/idle-route-support.ts": "5113456696aac00759ec7d007a52e0493e8545a39f2d6a14f0de2ce79106615d",
+    "web/e2e/png-capture.ts": "f50dc121db18150b8c4c4b48cc0fefc897b4d1e4edffc662c119c1c366cad85b",
+    "web/e2e/stage-r1.spec.ts": "8e656081aa27886456f2f186a3438dba1915b0eba87e5f1ad24cc0ea757753c4",
+    "web/e2e/stage-r3-layout.spec.ts": "badfa7cff3a623459038af09d0a820d51da1481837957c139aac99191981cc1f",
+    "web/e2e/stage-support.ts": "f31385408a68974e51b39ba5bdf08d76ece145ecd4a540c200419ffc6e5a6bb1",
+    "web/e2e/stage-u8-b.spec.ts": "03ce92f3c2c779dd59d5b26dab5b643d9291e9381031ef91126df7e4bc510abf",
+    "web/e2e/support.ts": "674387c658ed43bf56ceedb80b3df3baf63243e77ece9eeed87ec7e9396f8682",
+    "web/e2e/uir34-01-lifespan-guidance.spec.ts": "8b73beef7a98191f1482a97a064a1a4c26efc8e56cfb1384ef765962266c42cc",
+    "web/e2e/uir35-01-goal-authority.spec.ts": "9c661e0926600ece4057959132aeae2417cf5783ed76befba7dbf6f4e2d3e2ce",
+    "web/e2e/ux20-trial-guidance.spec.ts": "b1f8788300a126c702a04a5ad6e70dc419b0529a7ee546159714a7a9697d940b",
+    "web/e2e/ux24-goal-guidance.spec.ts": "dd55619afa826d33c6eaeb9dcc631d8ff7ba9ff3c8c02ddcaf50a1f2fbf6c4d6",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "web/src/configuration-persistence.ts": "a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00",
+    "web/src/guidance.ts": "7e26e7fff1b91b11fed94d5de284d5be126273f3533f66368248ea2184df990c",
+    "web/src/local-events.ts": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150",
+    "web/src/local-experience.ts": "65614c37cd5931b275208f78aa9bf06f40768ff402a908fb2d2cf28d16e3b9ed",
+    "web/src/presentation.ts": "afb0da3d1dbbb9c58095a1ef97bb04e1411c088c06ba2941685704bbc717eca0",
+    "web/src/trial-goal.ts": "0f28723f421937fad14896c24205eb1f02128e66df09cc3d05928ec2d91bc98a"
+  },
+  "edges": [
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "../../tests/lifespan-guidance-fixtures.mjs",
+      "to": "tests/lifespan-guidance-fixtures.mjs"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "../../tests/trial-journey-route.mjs",
+      "to": "tests/trial-journey-route.mjs"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "../../src/full/content",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "../../src/full/types",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "../../src/full/goals",
+      "to": "src/full/goals.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "../../src/full/engine",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "../../src/full/activity",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "../../src/full/receipts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "../src/activity-persistence",
+      "to": "web/src/activity-persistence.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "../src/trial-goal",
+      "to": "web/src/trial-goal.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "./idle-recovery-ui-support",
+      "to": "web/e2e/idle-recovery-ui-support.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "./game-confirmation-support",
+      "to": "web/e2e/game-confirmation-support.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "./idle-route-support",
+      "to": "web/e2e/idle-route-support.ts"
+    },
+    {
+      "from": "web/e2e/cend11-mainline.spec.ts",
+      "spec": "./png-capture",
+      "to": "web/e2e/png-capture.ts"
+    },
+    {
+      "from": "web/e2e/idle-route-support.ts",
+      "spec": "./stage-support",
+      "to": "web/e2e/stage-support.ts"
+    },
+    {
+      "from": "web/e2e/idle-route-support.ts",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/idle-route-support.ts",
+      "spec": "../../src/full/types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/e2e/idle-route-support.ts",
+      "spec": "../../src/full/activity.ts",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/e2e/idle-route-support.ts",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/e2e/idle-route-support.ts",
+      "spec": "../../scripts/economy/idle-scenarios.mjs",
+      "to": "scripts/economy/idle-scenarios.mjs"
+    },
+    {
+      "from": "web/e2e/idle-route-support.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/idle-route-support.ts",
+      "spec": "./stage-support",
+      "to": "web/e2e/stage-support.ts"
+    },
+    {
+      "from": "web/e2e/stage-support.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/support.ts",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/content.ts",
+      "spec": "./mechanisms.ts",
+      "to": "src/full/mechanisms.ts"
+    },
+    {
+      "from": "src/full/content.ts",
+      "spec": "./mechanisms.ts",
+      "to": "src/full/mechanisms.ts"
+    },
+    {
+      "from": "scripts/economy/idle-scenarios.mjs",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "scripts/economy/idle-scenarios.mjs",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "scripts/economy/idle-scenarios.mjs",
+      "spec": "../../src/full/economy-ledger.ts",
+      "to": "src/full/economy-ledger.ts"
+    },
+    {
+      "from": "scripts/economy/idle-scenarios.mjs",
+      "spec": "../../src/full/progression.ts",
+      "to": "src/full/progression.ts"
+    },
+    {
+      "from": "scripts/economy/idle-scenarios.mjs",
+      "spec": "../../src/full/adventure.ts",
+      "to": "src/full/adventure.ts"
+    },
+    {
+      "from": "src/full/adventure.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/adventure.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/adventure.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/adventure.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/adventure.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/adventure.ts",
+      "spec": "./costs.ts",
+      "to": "src/full/costs.ts"
+    },
+    {
+      "from": "src/full/adventure.ts",
+      "spec": "./engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "src/full/adventure.ts",
+      "spec": "./receipts.ts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "src/full/adventure.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/adventure.ts",
+      "spec": "./trial-rules.ts",
+      "to": "src/full/trial-rules.ts"
+    },
+    {
+      "from": "src/full/adventure.ts",
+      "spec": "./activity.ts",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./costs.ts",
+      "to": "src/full/costs.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./receipts.ts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./goals.ts",
+      "to": "src/full/goals.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./preparation.ts",
+      "to": "src/full/preparation.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./preparation.ts",
+      "to": "src/full/preparation.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./preparation.ts",
+      "to": "src/full/preparation.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./preparation.ts",
+      "to": "src/full/preparation.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./adventure.ts",
+      "to": "src/full/adventure.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./adventure.ts",
+      "to": "src/full/adventure.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./adventure.ts",
+      "to": "src/full/adventure.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./adventure.ts",
+      "to": "src/full/adventure.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./milestones.ts",
+      "to": "src/full/milestones.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./milestones.ts",
+      "to": "src/full/milestones.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./milestones.ts",
+      "to": "src/full/milestones.ts"
+    },
+    {
+      "from": "src/full/activity.ts",
+      "spec": "./milestones.ts",
+      "to": "src/full/milestones.ts"
+    },
+    {
+      "from": "src/full/milestones.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/milestones.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/milestones.ts",
+      "spec": "./activity.ts",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "src/full/milestones.ts",
+      "spec": "./engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "src/full/milestones.ts",
+      "spec": "./receipts.ts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "src/full/milestones.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/receipts.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/receipts.ts",
+      "spec": "./engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "src/full/receipts.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/receipts.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/receipts.ts",
+      "spec": "./versions.ts",
+      "to": "src/full/versions.ts"
+    },
+    {
+      "from": "src/full/receipts.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/receipts.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/types.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/types.ts",
+      "spec": "./versions.ts",
+      "to": "src/full/versions.ts"
+    },
+    {
+      "from": "src/full/versions.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/contracts.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/contracts.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/contracts.ts",
+      "spec": "./versions.ts",
+      "to": "src/full/versions.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./ascension.ts",
+      "to": "src/full/ascension.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./trial-rules.ts",
+      "to": "src/full/trial-rules.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./events.ts",
+      "to": "src/full/events.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./life-record.ts",
+      "to": "src/full/life-record.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./story-context.ts",
+      "to": "src/full/story-context.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./costs.ts",
+      "to": "src/full/costs.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./versions.ts",
+      "to": "src/full/versions.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/engine.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/costs.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/costs.ts",
+      "spec": "./events.ts",
+      "to": "src/full/events.ts"
+    },
+    {
+      "from": "src/full/costs.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/costs.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/costs.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/events.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/events.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/events.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/story-context.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/story-context.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/story-context.ts",
+      "spec": "./events.ts",
+      "to": "src/full/events.ts"
+    },
+    {
+      "from": "src/full/story-context.ts",
+      "spec": "./events.ts",
+      "to": "src/full/events.ts"
+    },
+    {
+      "from": "src/full/life-record.ts",
+      "spec": "./ascension.ts",
+      "to": "src/full/ascension.ts"
+    },
+    {
+      "from": "src/full/life-record.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/life-record.ts",
+      "spec": "./events.ts",
+      "to": "src/full/events.ts"
+    },
+    {
+      "from": "src/full/life-record.ts",
+      "spec": "./story-context.ts",
+      "to": "src/full/story-context.ts"
+    },
+    {
+      "from": "src/full/life-record.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/preparation.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/preparation.ts",
+      "spec": "./costs.ts",
+      "to": "src/full/costs.ts"
+    },
+    {
+      "from": "src/full/preparation.ts",
+      "spec": "./engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "src/full/preparation.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/preparation.ts",
+      "spec": "./receipts.ts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "src/full/preparation.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/preparation.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/preparation.ts",
+      "spec": "./activity.ts",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "src/full/goals.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/goals.ts",
+      "spec": "./events.ts",
+      "to": "src/full/events.ts"
+    },
+    {
+      "from": "src/full/goals.ts",
+      "spec": "./engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "src/full/goals.ts",
+      "spec": "./costs.ts",
+      "to": "src/full/costs.ts"
+    },
+    {
+      "from": "src/full/goals.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/goals.ts",
+      "spec": "./queries.ts",
+      "to": "src/full/queries.ts"
+    },
+    {
+      "from": "src/full/goals.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./ascension.ts",
+      "to": "src/full/ascension.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./events.ts",
+      "to": "src/full/events.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./life-record.ts",
+      "to": "src/full/life-record.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./story-context.ts",
+      "to": "src/full/story-context.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./costs.ts",
+      "to": "src/full/costs.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./costs.ts",
+      "to": "src/full/costs.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./trial-rules.ts",
+      "to": "src/full/trial-rules.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/queries.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./activity.ts",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./activity.ts",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./configuration.ts",
+      "to": "src/full/configuration.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./configuration.ts",
+      "to": "src/full/configuration.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./economy-ledger.ts",
+      "to": "src/full/economy-ledger.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./economy-ledger.ts",
+      "to": "src/full/economy-ledger.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/progression.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/economy-ledger.ts",
+      "spec": "./engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "src/full/economy-ledger.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "src/full/economy-ledger.ts",
+      "spec": "./receipts.ts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "src/full/economy-ledger.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/economy-ledger.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/configuration.ts",
+      "spec": "./types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "src/full/configuration.ts",
+      "spec": "./contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "src/full/configuration.ts",
+      "spec": "./engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "src/full/configuration.ts",
+      "spec": "./errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "web/e2e/game-confirmation-support.ts",
+      "spec": "../src/local-experience",
+      "to": "web/src/local-experience.ts"
+    },
+    {
+      "from": "web/src/local-experience.ts",
+      "spec": "./local-events",
+      "to": "web/src/local-events.ts"
+    },
+    {
+      "from": "web/src/local-events.ts",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/src/local-events.ts",
+      "spec": "../../src/full/events.ts",
+      "to": "src/full/events.ts"
+    },
+    {
+      "from": "web/src/local-events.ts",
+      "spec": "../../src/full/versions.ts",
+      "to": "src/full/versions.ts"
+    },
+    {
+      "from": "web/src/local-events.ts",
+      "spec": "../../src/full/queries.ts",
+      "to": "src/full/queries.ts"
+    },
+    {
+      "from": "web/src/local-events.ts",
+      "spec": "../../src/full/types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/src/local-events.ts",
+      "spec": "../../src/full/contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui-support.ts",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui-support.ts",
+      "spec": "../../src/full/activity.ts",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui-support.ts",
+      "spec": "../../src/full/adventure.ts",
+      "to": "src/full/adventure.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui-support.ts",
+      "spec": "../../src/full/receipts.ts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui-support.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui-support.ts",
+      "spec": "./idle-route-support",
+      "to": "web/e2e/idle-route-support.ts"
+    },
+    {
+      "from": "web/src/trial-goal.ts",
+      "spec": "../../src/full/types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/src/trial-goal.ts",
+      "spec": "../../src/full/queries.ts",
+      "to": "src/full/queries.ts"
+    },
+    {
+      "from": "web/src/activity-persistence.ts",
+      "spec": "../../src/full/activity.ts",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/src/activity-persistence.ts",
+      "spec": "../../src/full/receipts.ts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "web/src/activity-persistence.ts",
+      "spec": "../../src/full/errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "web/src/activity-persistence.ts",
+      "spec": "../../src/full/activity.ts",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/src/activity-persistence.ts",
+      "spec": "../../src/full/contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "web/src/activity-persistence.ts",
+      "spec": "../../src/full/types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/src/activity-persistence.ts",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/src/activity-persistence.ts",
+      "spec": "../../src/full/costs.ts",
+      "to": "src/full/costs.ts"
+    },
+    {
+      "from": "web/src/activity-persistence.ts",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "tests/trial-journey-route.mjs",
+      "spec": "../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "tests/trial-journey-route.mjs",
+      "spec": "./trial-preparation-route.mjs",
+      "to": "tests/trial-preparation-route.mjs"
+    },
+    {
+      "from": "tests/trial-preparation-route.mjs",
+      "spec": "../scripts/economy/scenarios.mjs",
+      "to": "scripts/economy/scenarios.mjs"
+    },
+    {
+      "from": "tests/trial-preparation-route.mjs",
+      "spec": "./causal-route.mjs",
+      "to": "tests/causal-route.mjs"
+    },
+    {
+      "from": "tests/causal-route.mjs",
+      "spec": "./full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "tests/full-route.mjs",
+      "spec": "../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "tests/full-route.mjs",
+      "spec": "../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "scripts/economy/scenarios.mjs",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "scripts/economy/scenarios.mjs",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "scripts/economy/scenarios.mjs",
+      "spec": "../../src/full/queries.ts",
+      "to": "src/full/queries.ts"
+    },
+    {
+      "from": "scripts/economy/scenarios.mjs",
+      "spec": "../../src/full/economy-ledger.ts",
+      "to": "src/full/economy-ledger.ts"
+    },
+    {
+      "from": "tests/lifespan-guidance-fixtures.mjs",
+      "spec": "./full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "tests/lifespan-guidance-fixtures.mjs",
+      "spec": "../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "tests/lifespan-guidance-fixtures.mjs",
+      "spec": "../src/full/queries.ts",
+      "to": "src/full/queries.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "../../src/full/content",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "../../src/full/types",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "../../src/full/engine",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "../../src/full/activity",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "../../src/full/configuration",
+      "to": "src/full/configuration.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "../../src/full/receipts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "../src/activity-persistence",
+      "to": "web/src/activity-persistence.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "../src/configuration-persistence",
+      "to": "web/src/configuration-persistence.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "./idle-recovery-ui-support",
+      "to": "web/e2e/idle-recovery-ui-support.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "./idle-route-support",
+      "to": "web/e2e/idle-route-support.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "./stage-support",
+      "to": "web/e2e/stage-support.ts"
+    },
+    {
+      "from": "web/e2e/check-cend08-09.spec.ts",
+      "spec": "./png-capture",
+      "to": "web/e2e/png-capture.ts"
+    },
+    {
+      "from": "web/src/configuration-persistence.ts",
+      "spec": "../../src/full/configuration.ts",
+      "to": "src/full/configuration.ts"
+    },
+    {
+      "from": "web/src/configuration-persistence.ts",
+      "spec": "../../src/full/configuration.ts",
+      "to": "src/full/configuration.ts"
+    },
+    {
+      "from": "web/src/configuration-persistence.ts",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/src/configuration-persistence.ts",
+      "spec": "../../src/full/receipts.ts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "web/src/configuration-persistence.ts",
+      "spec": "../../src/full/errors.ts",
+      "to": "src/full/errors.ts"
+    },
+    {
+      "from": "web/src/configuration-persistence.ts",
+      "spec": "../../src/full/contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "web/src/configuration-persistence.ts",
+      "spec": "../../src/full/types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "../../src/full/content",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "../../src/full/types",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "../../src/full/engine",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "../../src/full/activity",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "../../src/full/configuration",
+      "to": "src/full/configuration.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "../../src/full/receipts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "../src/activity-persistence",
+      "to": "web/src/activity-persistence.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "../src/configuration-persistence",
+      "to": "web/src/configuration-persistence.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "./game-confirmation-support",
+      "to": "web/e2e/game-confirmation-support.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "./idle-recovery-ui-support",
+      "to": "web/e2e/idle-recovery-ui-support.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "./idle-route-support",
+      "to": "web/e2e/idle-route-support.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "./stage-support",
+      "to": "web/e2e/stage-support.ts"
+    },
+    {
+      "from": "web/e2e/cend10-source-goal.spec.ts",
+      "spec": "./png-capture",
+      "to": "web/e2e/png-capture.ts"
+    },
+    {
+      "from": "web/e2e/stage-r3-layout.spec.ts",
+      "spec": "./png-capture",
+      "to": "web/e2e/png-capture.ts"
+    },
+    {
+      "from": "web/e2e/stage-r3-layout.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/stage-r3-layout.spec.ts",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/e2e/stage-r3-layout.spec.ts",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/stage-r3-layout.spec.ts",
+      "spec": "../../src/full/types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/e2e/stage-r3-layout.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/stage-r3-layout.spec.ts",
+      "spec": "./stage-support",
+      "to": "web/e2e/stage-support.ts"
+    },
+    {
+      "from": "web/e2e/stage-u8-b.spec.ts",
+      "spec": "./game-confirmation-support",
+      "to": "web/e2e/game-confirmation-support.ts"
+    },
+    {
+      "from": "web/e2e/stage-u8-b.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/stage-u8-b.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/stage-u8-b.spec.ts",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/e2e/stage-u8-b.spec.ts",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/stage-u8-b.spec.ts",
+      "spec": "../../src/full/economy-ledger.ts",
+      "to": "src/full/economy-ledger.ts"
+    },
+    {
+      "from": "web/e2e/stage-u8-b.spec.ts",
+      "spec": "../../src/full/progression.ts",
+      "to": "src/full/progression.ts"
+    },
+    {
+      "from": "web/e2e/stage-u8-b.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui.spec.ts",
+      "spec": "./stage-support",
+      "to": "web/e2e/stage-support.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui.spec.ts",
+      "spec": "./game-confirmation-support",
+      "to": "web/e2e/game-confirmation-support.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui.spec.ts",
+      "spec": "./idle-route-support",
+      "to": "web/e2e/idle-route-support.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-ui.spec.ts",
+      "spec": "./idle-recovery-ui-support",
+      "to": "web/e2e/idle-recovery-ui-support.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-context.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/idle-recovery-context.spec.ts",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-context.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-context.spec.ts",
+      "spec": "./idle-route-support",
+      "to": "web/e2e/idle-route-support.ts"
+    },
+    {
+      "from": "web/e2e/idle-recovery-context.spec.ts",
+      "spec": "./idle-recovery-ui-support",
+      "to": "web/e2e/idle-recovery-ui-support.ts"
+    },
+    {
+      "from": "web/e2e/check-matrix-guidance.spec.ts",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/check-matrix-guidance.spec.ts",
+      "spec": "../../src/full/types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/e2e/check-matrix-guidance.spec.ts",
+      "spec": "../../src/full/activity.ts",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/e2e/check-matrix-guidance.spec.ts",
+      "spec": "../../src/full/queries.ts",
+      "to": "src/full/queries.ts"
+    },
+    {
+      "from": "web/e2e/check-matrix-guidance.spec.ts",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/e2e/check-matrix-guidance.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/check-matrix-guidance.spec.ts",
+      "spec": "../src/guidance",
+      "to": "web/src/guidance.ts"
+    },
+    {
+      "from": "web/e2e/check-matrix-guidance.spec.ts",
+      "spec": "../src/presentation",
+      "to": "web/src/presentation.ts"
+    },
+    {
+      "from": "web/e2e/check-matrix-guidance.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/check-matrix-guidance.spec.ts",
+      "spec": "./stage-support",
+      "to": "web/e2e/stage-support.ts"
+    },
+    {
+      "from": "web/src/presentation.ts",
+      "spec": "../../src/full/types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/src/presentation.ts",
+      "spec": "./local-events.ts",
+      "to": "web/src/local-events.ts"
+    },
+    {
+      "from": "web/src/presentation.ts",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/src/presentation.ts",
+      "spec": "../../src/full/contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "web/src/presentation.ts",
+      "spec": "../../src/full/queries.ts",
+      "to": "src/full/queries.ts"
+    },
+    {
+      "from": "web/src/guidance.ts",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/src/guidance.ts",
+      "spec": "../../src/full/contracts.ts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "web/src/guidance.ts",
+      "spec": "../../src/full/types.ts",
+      "to": "src/full/types.ts"
+    },
+    {
+      "from": "web/e2e/uir35-01-goal-authority.spec.ts",
+      "spec": "../../src/full/engine",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/uir35-01-goal-authority.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/uir35-01-goal-authority.spec.ts",
+      "spec": "../../src/full/activity",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/e2e/uir35-01-goal-authority.spec.ts",
+      "spec": "../../src/full/receipts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "web/e2e/uir35-01-goal-authority.spec.ts",
+      "spec": "../src/activity-persistence",
+      "to": "web/src/activity-persistence.ts"
+    },
+    {
+      "from": "web/e2e/uir35-01-goal-authority.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/uir35-01-goal-authority.spec.ts",
+      "spec": "./idle-recovery-ui-support",
+      "to": "web/e2e/idle-recovery-ui-support.ts"
+    },
+    {
+      "from": "web/e2e/uir35-01-goal-authority.spec.ts",
+      "spec": "./stage-support",
+      "to": "web/e2e/stage-support.ts"
+    },
+    {
+      "from": "web/e2e/uir35-01-goal-authority.spec.ts",
+      "spec": "./png-capture",
+      "to": "web/e2e/png-capture.ts"
+    },
+    {
+      "from": "web/e2e/uir35-01-goal-authority.spec.ts",
+      "spec": "./idle-route-support",
+      "to": "web/e2e/idle-route-support.ts"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "../../tests/trial-preparation-route.mjs",
+      "to": "tests/trial-preparation-route.mjs"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "../../tests/trial-journey-route.mjs",
+      "to": "tests/trial-journey-route.mjs"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "../../src/full/engine",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "../../src/full/goals",
+      "to": "src/full/goals.ts"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "../../src/full/contracts",
+      "to": "src/full/contracts.ts"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "../../src/full/activity",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "../../src/full/receipts",
+      "to": "src/full/receipts.ts"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "../src/activity-persistence",
+      "to": "web/src/activity-persistence.ts"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "../../src/full/content",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/ux24-goal-guidance.spec.ts",
+      "spec": "./idle-recovery-ui-support",
+      "to": "web/e2e/idle-recovery-ui-support.ts"
+    },
+    {
+      "from": "web/e2e/desktop-spirit-action.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/desktop-spirit-action.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/uir34-01-lifespan-guidance.spec.ts",
+      "spec": "../../tests/lifespan-guidance-fixtures.mjs",
+      "to": "tests/lifespan-guidance-fixtures.mjs"
+    },
+    {
+      "from": "web/e2e/uir34-01-lifespan-guidance.spec.ts",
+      "spec": "../../tests/action-feedback-fixtures.mjs",
+      "to": "tests/action-feedback-fixtures.mjs"
+    },
+    {
+      "from": "web/e2e/uir34-01-lifespan-guidance.spec.ts",
+      "spec": "../../src/full/engine",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/uir34-01-lifespan-guidance.spec.ts",
+      "spec": "../../src/full/queries",
+      "to": "src/full/queries.ts"
+    },
+    {
+      "from": "web/e2e/uir34-01-lifespan-guidance.spec.ts",
+      "spec": "../../src/full/activity",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/e2e/uir34-01-lifespan-guidance.spec.ts",
+      "spec": "../src/activity-persistence",
+      "to": "web/src/activity-persistence.ts"
+    },
+    {
+      "from": "web/e2e/uir34-01-lifespan-guidance.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/uir34-01-lifespan-guidance.spec.ts",
+      "spec": "./idle-recovery-ui-support",
+      "to": "web/e2e/idle-recovery-ui-support.ts"
+    },
+    {
+      "from": "web/e2e/uir34-01-lifespan-guidance.spec.ts",
+      "spec": "./idle-route-support",
+      "to": "web/e2e/idle-route-support.ts"
+    },
+    {
+      "from": "web/e2e/uir34-01-lifespan-guidance.spec.ts",
+      "spec": "./png-capture",
+      "to": "web/e2e/png-capture.ts"
+    },
+    {
+      "from": "tests/action-feedback-fixtures.mjs",
+      "spec": "../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "tests/action-feedback-fixtures.mjs",
+      "spec": "../src/full/queries.ts",
+      "to": "src/full/queries.ts"
+    },
+    {
+      "from": "tests/action-feedback-fixtures.mjs",
+      "spec": "./full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/ux20-trial-guidance.spec.ts",
+      "spec": "../../src/full/content.ts",
+      "to": "src/full/content.ts"
+    },
+    {
+      "from": "web/e2e/ux20-trial-guidance.spec.ts",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/ux20-trial-guidance.spec.ts",
+      "spec": "../../src/full/activity.ts",
+      "to": "src/full/activity.ts"
+    },
+    {
+      "from": "web/e2e/ux20-trial-guidance.spec.ts",
+      "spec": "../../tests/trial-journey-route.mjs",
+      "to": "tests/trial-journey-route.mjs"
+    },
+    {
+      "from": "web/e2e/ux20-trial-guidance.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/ux20-trial-guidance.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    },
+    {
+      "from": "web/e2e/ux20-trial-guidance.spec.ts",
+      "spec": "./idle-recovery-ui-support",
+      "to": "web/e2e/idle-recovery-ui-support.ts"
+    },
+    {
+      "from": "web/e2e/art18-mainline-usability.spec.ts",
+      "spec": "../../src/full/engine.ts",
+      "to": "src/full/engine.ts"
+    },
+    {
+      "from": "web/e2e/art18-mainline-usability.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/art18-mainline-usability.spec.ts",
+      "spec": "../../tests/trial-journey-route.mjs",
+      "to": "tests/trial-journey-route.mjs"
+    },
+    {
+      "from": "web/e2e/art18-mainline-usability.spec.ts",
+      "spec": "../../tests/action-feedback-fixtures.mjs",
+      "to": "tests/action-feedback-fixtures.mjs"
+    },
+    {
+      "from": "web/e2e/art18-mainline-usability.spec.ts",
+      "spec": "./idle-recovery-ui-support",
+      "to": "web/e2e/idle-recovery-ui-support.ts"
+    },
+    {
+      "from": "web/e2e/stage-r1.spec.ts",
+      "spec": "./game-confirmation-support",
+      "to": "web/e2e/game-confirmation-support.ts"
+    },
+    {
+      "from": "web/e2e/stage-r1.spec.ts",
+      "spec": "./stage-support",
+      "to": "web/e2e/stage-support.ts"
+    },
+    {
+      "from": "web/e2e/stage-r1.spec.ts",
+      "spec": "./stage-support",
+      "to": "web/e2e/stage-support.ts"
+    },
+    {
+      "from": "web/e2e/stage-r1.spec.ts",
+      "spec": "./stage-support",
+      "to": "web/e2e/stage-support.ts"
+    },
+    {
+      "from": "web/e2e/stage-r1.spec.ts",
+      "spec": "../../tests/full-route.mjs",
+      "to": "tests/full-route.mjs"
+    },
+    {
+      "from": "web/e2e/stage-r1.spec.ts",
+      "spec": "./support",
+      "to": "web/e2e/support.ts"
+    }
+  ],
+  "external": [
+    "@playwright/test",
+    "node:crypto",
+    "node:fs/promises"
+  ],
+  "nonLiteralDynamicImports": [],
+  "unresolved": []
+}

@@ -1,0 +1,116 @@
+{
+  "parents": [
+    {
+      "path": "web/src/GameHud.vue",
+      "before": "goal-4/evidence/cend11-mainline/before/web/src/GameHud.vue",
+      "beforeBytes": 2332,
+      "beforeSHA256": "43cde88a2e545bce6d475735783bc6d66f487a7ffb8643220ac8297b63a529c5",
+      "bytes": 2328,
+      "sha256": "aa92a63df6bacaedde2217ce835f58455940628e8ef27d2b11cfe601023de732",
+      "operations": [
+        [
+          "import GameIcon from './GameIcon.vue';",
+          "import GameIcon from './GameIcon.vue';\nimport HudGoal from './HudGoal.vue';\nimport type {HudGoalContext} from './hud-goal.ts';"
+        ],
+        [
+          "demo?:boolean}>",
+          "demo?:boolean;context?:HudGoalContext|null}>"
+        ],
+        [
+          "<small>当前目标</small><strong data-testid=\"hub-target\">{{goal}}</strong><small data-testid=\"hub-gap\">{{gap}}</small><span data-testid=\"hub-goal-open\">查看缺口与来源 ›</span>",
+          "<HudGoal :game=\"game\" :goal=\"goal\" :gap=\"gap\" :context=\"context\"/>"
+        ]
+      ],
+      "indentLines": []
+    },
+    {
+      "path": "web/src/App.vue",
+      "before": "goal-4/evidence/cend11-mainline/before/web/src/App.vue",
+      "beforeBytes": 159629,
+      "beforeSHA256": "daeff1fbef8791ec6558150c189e41324c6f3db2ec1d3518b74899c605d8ff47",
+      "bytes": 159623,
+      "sha256": "e48a2a03faad3bb9e4061b4e7c088c122c8a29d12edfe007ebe3e5cb39f9730d",
+      "operations": [
+        [
+          "const hubGoalHint=computed",
+          "const hudGoalContext=computed(()=>{const g=game.value,o=hubGoal.value;return g&&o&&!lifeState.value?.hint?{runId:g.core.runId,revision:g.core.revision,goal:o}:null;});\nconst hubGoalHint=computed"
+        ],
+        [
+          ":goal=\"hubGoal?.title??'当前目标'\"",
+          ":goal=\"hubGoal?.title??'当前目标'\" :context=\"hudGoalContext\""
+        ]
+      ],
+      "indentLines": [
+        640,
+        641,
+        642,
+        643,
+        644,
+        645,
+        646,
+        647,
+        648,
+        649,
+        650,
+        651,
+        652,
+        653,
+        654,
+        655,
+        656,
+        657,
+        658,
+        659,
+        660,
+        661,
+        662,
+        663,
+        664,
+        665,
+        666,
+        667,
+        668,
+        669,
+        670,
+        671,
+        672,
+        673,
+        674,
+        675,
+        676,
+        677,
+        678,
+        679,
+        680,
+        681,
+        682,
+        683,
+        684,
+        685,
+        686,
+        687,
+        688,
+        689
+      ]
+    }
+  ],
+  "display": {
+    "path": "web/src/HudGoal.vue",
+    "bytes": 2160,
+    "sha256": "56364f91553a2a4e38096b67d2eb7a0cd735499ae7f6cbdd4303a510bc0fbf9b"
+  },
+  "projection": {
+    "path": "web/src/hud-goal.ts",
+    "bytes": 1259,
+    "sha256": "170e5341c25cfbc99419569785ab23f9376eb83b86219f4cc50821916a11c8c5"
+  },
+  "actualAppBytes": 159623,
+  "originalAppCap": 159635,
+  "actualR1GroupBytes": 17983,
+  "originalR1Cap": 18000,
+  "allOldLedgersHashesCapsKept": true,
+  "AppContext194BytesCompensatedBy50TemplateLinesOfFourSpaces": true,
+  "completeOriginalParentsRestoredExactly": true,
+  "noOriginalControllerStorageCommandsPeriodsOrFocusCallbackChanges": true,
+  "newRasterFontsDependenciesOrEngineChanges": 0
+}

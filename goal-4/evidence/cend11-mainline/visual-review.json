@@ -1,0 +1,292 @@
+{
+  "parts": {
+    "newHUD": [
+      {
+        "name": "H1-foundation-current-object",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-foundation-current-object.png",
+        "pngSHA256": "d6eff0cfbf29db0758d3200039850fe9a8fec8de6cb038b46e954fc419b4bbef",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H1-foundation-current-object.jpg",
+        "jpegSHA256": "52e4bb19f2a0d5e3d56526a43742017ec93b859af2d2ddfc775e27046d426f8b",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H1-golden-current-object",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-golden-current-object.png",
+        "pngSHA256": "8833c3f77b44f408c6d43f34b245386e99c997a6b9bd5dd619b723dcd8f54f4f",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H1-golden-current-object.jpg",
+        "jpegSHA256": "394795319a60a1fbd554b6dc5c9c2a485c7184d9173d497ab9749d2f0384eec2",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H1-nascent-current-object",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-nascent-current-object.png",
+        "pngSHA256": "b302547be597f7da61ae455f87165bdef6fb34b33b2b68acec749e9b79de69aa",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H1-nascent-current-object.jpg",
+        "jpegSHA256": "2bac362909bf8043a6c490ec639e5c86d78c25223c9a10bbdb549ad7efbef219",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H1-qi-current-object",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-qi-current-object.png",
+        "pngSHA256": "72b896461431b1254a323cbb084b0b16d22f676049f3ebaf5c073102eb242b89",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H1-qi-current-object.jpg",
+        "jpegSHA256": "754e03836571825e54ccbf0b0a851acc0920d692ccea6009ebada299e9b7470f",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H1-spirit-current-object",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-spirit-current-object.png",
+        "pngSHA256": "15611fe465363f40a574a4b898a108860d758f4455399b625c70fa489d1fe807",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H1-spirit-current-object.jpg",
+        "jpegSHA256": "239788d747148c4c1518adb374bb2096871e50ab33b5cce5976c37de870f0bb7",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H2-held-native-before-goal-change",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H2--e5dd2-tive-saving-and-quota-retry-chromium/H2-held-native-before-goal-change.png",
+        "pngSHA256": "10b64f49c684f162a3935ea7927d6ca8feae2a671a0fd79e7ffce9ecc9e999f2",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H2-held-native-before-goal-change.jpg",
+        "jpegSHA256": "0b9da8282c4bc8e80073435e4d3256df1a3dd0eb703981dd7b94f8ba08645f68",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H2-quota-goal-not-awarded",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H2--e5dd2-tive-saving-and-quota-retry-chromium/H2-quota-goal-not-awarded.png",
+        "pngSHA256": "61dcd09277dd5907d95d4ffdf69a5b1da810f2da9e32c29aafa64916c06305f5",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H2-quota-goal-not-awarded.jpg",
+        "jpegSHA256": "c834e84370ddb1ee9d32e4af843b48f31a542eb8ebeabb97bfe95d72fc354c91",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H2-saved-item-no-automatic-breakthrough",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H2--e5dd2-tive-saving-and-quota-retry-chromium/H2-saved-item-no-automatic-breakthrough.png",
+        "pngSHA256": "59ca81b9eef35aeae5d01a307aba8de6a90f1852a8d1dca303e6b304283afea8",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H2-saved-item-no-automatic-breakthrough.jpg",
+        "jpegSHA256": "568315bab5022806ac44346b3450cb781e0386c6a1eb44ec00f8989aff5e8964",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H3-actual-tracked-skill-kept",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-actual-tracked-skill-kept.png",
+        "pngSHA256": "194524e248889c100664a69e0d0b530de345b30dd0fbd15abc76eb3f595b3295",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H3-actual-tracked-skill-kept.jpg",
+        "jpegSHA256": "eae175484c7df93dd12fba880b87a88d8946a7df53784551a7a61ce0a058b2e9",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H3-battle-context",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-battle-context.png",
+        "pngSHA256": "0882d3797ea87aceec8032f674b6dec9bcb7122880422bd51b45e57a595bdf87",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H3-battle-context.jpg",
+        "jpegSHA256": "ede0bf0f49e8b31c0fce35cd6d99ba67f4e41ffa0e458797eaa1593f9291fc95",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H3-life-priority",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-life-priority.png",
+        "pngSHA256": "c3549f129f49e5e726e0a660fd5d86aa754f90c22245216db5fc946a228ae779",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H3-life-priority.jpg",
+        "jpegSHA256": "65fbaba93105f0975e9b9532a526dd1e5e7a95232eb5ee15133dcf36f37ffd60",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H3-question-context",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-question-context.png",
+        "pngSHA256": "dc3f5bee33ba5f8a5bd9aa5323533e744eabcf56697fbd7dbc7873019d81cc9e",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H3-question-context.jpg",
+        "jpegSHA256": "aa73e3e19cb32d47470fb0665898a913fa0d073f2132e96646114d01ccefe2c5",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H4-foundation-failed-paint-readable",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-foundation-failed-paint-readable.png",
+        "pngSHA256": "4f361633f78563368ef393cf2228ff17171c6af6a1e0968683744fa5889d2f71",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H4-foundation-failed-paint-readable.jpg",
+        "jpegSHA256": "86429cc679ffd52080a378f9e780938858fc2395cef7661934e891a1f39a98f8",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H4-golden-failed-paint-readable",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-golden-failed-paint-readable.png",
+        "pngSHA256": "d1e67c8c3a31e6f560b0a2b478df0c272ab27986c2c650bc063b214d4c9ecca9",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H4-golden-failed-paint-readable.jpg",
+        "jpegSHA256": "60266cada24ed558226f2d8d8e697da70a47c40581d6d5941d9f232634a859af",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H4-nascent-failed-paint-readable",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-nascent-failed-paint-readable.png",
+        "pngSHA256": "5194069af0155e211590ccb47ba84e414b80a7102ff1c6a4bd4d2a27a349b5b1",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H4-nascent-failed-paint-readable.jpg",
+        "jpegSHA256": "297702fa9a58a360f2deb5f766251b9e591178fb414e4aa7853ef742ab791c90",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H4-qi-failed-paint-readable",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-qi-failed-paint-readable.png",
+        "pngSHA256": "62a84b0a0b3cf3d5dace54cd2f1102fce228936358ed9edb3677e6b660e49e8f",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H4-qi-failed-paint-readable.jpg",
+        "jpegSHA256": "64e3afe83c81292c02602ece167cb4e8df0082985e0e6d551061d4e330f86834",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H4-spirit-failed-paint-readable",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-spirit-failed-paint-readable.png",
+        "pngSHA256": "40b068703377062f43519723ade5ad9d832a5bedc4ea1fc972459f81a876b889",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/views/H4-spirit-failed-paint-readable.jpg",
+        "jpegSHA256": "820aa86ebb97ef6a82cf1a5f2c8f69aa0be598abded639e8f3fa8867dba97d76",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      }
+    ],
+    "native": [
+      {
+        "name": "last-month-real-checkpoint-guide",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/verified-consumer/repair-results/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium/last-month-real-checkpoint-guide.png",
+        "pngSHA256": "967bcd2f24ebda4b04c36efcba7b2aa47617403f8926e7f41915a634996cde66",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/verified-consumer/views/last-month-real-checkpoint-guide.jpg",
+        "jpegSHA256": "1e5ba264a9eb976d04bee6d7b5e6fa42fa4072c62b58cdc8c7d1ce174b960122",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "native-checkpoint-readonly-life-options",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/verified-consumer/repair-results/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium/native-checkpoint-readonly-life-options.png",
+        "pngSHA256": "d1fa590ab12702d6f3070879494cd18045b5e8ca7c3b2024e3e7fafdcbb068f8",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/verified-consumer/views/native-checkpoint-readonly-life-options.jpg",
+        "jpegSHA256": "a06f7f41e87b5c0fff2b6e17e69783e7dab168f8243a5fcb1ff31503f86f3e74",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      }
+    ],
+    "unpacked": [
+      {
+        "name": "H1-spirit-current-object",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/verified-consumer/package-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-spirit-current-object.png",
+        "pngSHA256": "c58e81045bcecb39fab5112f5826c7a2fc8e5abc248f4449a39d1dab747e6bc5",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/verified-consumer/views/package-H1-spirit-current-object.jpg",
+        "jpegSHA256": "f1e27958196dae6c81d04c67a35e04cc23bf67102dac4fdac16c4af90ff1c9e0",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      },
+      {
+        "name": "H2-held-native-before-goal-change",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/verified-consumer/package-results/cend11-mainline-CEND11-H2--e5dd2-tive-saving-and-quota-retry-chromium/H2-held-native-before-goal-change.png",
+        "pngSHA256": "8581b4397af6225092509cb33cd4bdd4c51eb80999e8ae324ac738d888c6b8e9",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/verified-consumer/views/package-H2-held-native-before-goal-change.jpg",
+        "jpegSHA256": "c6962cf173129b316dd59671b5807d0ce0ee1a89ba767e50246bc072929c5799",
+        "dimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true
+      }
+    ]
+  },
+  "actuallyViewedFiles": 21,
+  "allPNGsRetained": true,
+  "jpegQuality": 68,
+  "dimensions": [
+    1440,
+    900
+  ],
+  "unviewedRawPicturesNotCounted": true,
+  "notOverallArtLongBalanceOrHumanAcceptance": true
+}

@@ -1,0 +1,15 @@
+{
+  "rows": [
+    {
+      "name": "install",
+      "exit": 0
+    },
+    {
+      "name": "build",
+      "exit": 0
+    }
+  ],
+  "inputs": 5784,
+  "allExact": true,
+  "exit": 0
+}

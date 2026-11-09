@@ -1,0 +1,659 @@
+{
+  "wholeFiles": [
+    "stage-r1.spec.ts",
+    "art18-mainline-usability.spec.ts",
+    "ux20-trial-guidance.spec.ts",
+    "uir34-01-lifespan-guidance.spec.ts",
+    "desktop-spirit-action.spec.ts",
+    "ux24-goal-guidance.spec.ts",
+    "uir35-01-goal-authority.spec.ts",
+    "check-matrix-guidance.spec.ts",
+    "idle-recovery-context.spec.ts",
+    "idle-recovery-ui.spec.ts",
+    "stage-u8-b.spec.ts",
+    "stage-r3-layout.spec.ts",
+    "cend10-source-goal.spec.ts",
+    "check-cend08-09.spec.ts",
+    "cend11-mainline.spec.ts"
+  ],
+  "wholeCasesDeferredBeforeRun": [
+    "enlarged desktop navigation keeps each functional caption on one readable line"
+  ],
+  "singleDesktopLegacySupplementOutsideCurrentProfile": "desktop-spirit-action.spec.ts first case only; one entire page compatibility case deferred, all old assertions kept",
+  "scope": "fixed1440x900/font1/Chromium",
+  "compatibilityEnvironmentPerformancePaused": true,
+  "actualEligibleCases": 126,
+  "declared": [
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN opening exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN first-cultivation exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN qi-school exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN foundation-preparation exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN foundation-growth exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN golden-growth exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN nascent-growth exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN needs-recovery exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN trial-ready exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN trial-question exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN trial-battle exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN trial-second-gate exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN trial-recovery exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN ending-ready exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "art18-mainline-usability.spec.ts",
+      "title": "ART18-MAIN sealed-life exposes actual goal gap next actions and readonly return for player review",
+      "project": "chromium"
+    },
+    {
+      "file": "cend10-source-goal.spec.ts",
+      "title": "CEND10-G1 a committed material goal stays adjacent to real stock through a different draft pause resume and its one formal dual yield",
+      "project": "chromium"
+    },
+    {
+      "file": "cend10-source-goal.spec.ts",
+      "title": "CEND10-G2 a failed original source tick keeps its real goal and stock until the same canonical retry is atomically saved",
+      "project": "chromium"
+    },
+    {
+      "file": "cend10-source-goal.spec.ts",
+      "title": "CEND10-G4 a confirmed school change retires the old target beside stock without converting the preserved draft into current authority",
+      "project": "chromium"
+    },
+    {
+      "file": "cend10-source-goal.spec.ts",
+      "title": "CEND10-G3 a saved stone target is shown beside actual stones while another source cycle-only plan and replacement life borrow no target",
+      "project": "chromium"
+    },
+    {
+      "file": "cend11-mainline.spec.ts",
+      "title": "CEND11-H1 all five lawful mainline objects expose the actual deficit and complete readonly recipe and purchase return without hiding cultivation status",
+      "project": "chromium"
+    },
+    {
+      "file": "cend11-mainline.spec.ts",
+      "title": "CEND11-H2 only the original atomically saved purchase retires the mainline item after its full cycle native saving and quota retry",
+      "project": "chromium"
+    },
+    {
+      "file": "cend11-mainline.spec.ts",
+      "title": "CEND11-H3 tracked goals life danger real battle question and sealed life retain their original context across replacement lives",
+      "project": "chromium"
+    },
+    {
+      "file": "cend11-mainline.spec.ts",
+      "title": "CEND11-H4 all five failed object paintings retain real words keyboard access and original readonly return without inventing ownership",
+      "project": "chromium"
+    },
+    {
+      "file": "check-cend08-09.spec.ts",
+      "title": "CHECK-CEND08-09-K1 a dual yield target keeps its exact resumed authorization through painted comparison cancellation catalogue return and a separate next draft",
+      "project": "chromium"
+    },
+    {
+      "file": "check-cend08-09.spec.ts",
+      "title": "CHECK-CEND08-09-K2 an unresolved dual yield tick stays authoritative across real relic reading and source browsing before its unique original retry and later readonly comparison",
+      "project": "chromium"
+    },
+    {
+      "file": "check-cend08-09.spec.ts",
+      "title": "CHECK-CEND08-09-K3 an explicitly chosen three scroll school commits once with the paused source CAS and leaves its original target stopped without a hidden resumed reward",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G1 opening keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G2 cultivation keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G3 breakthrough keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G4 equipment with qi and no chosen school keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G6 ordinary battle keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G7 recovery after actual attack and retreat keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G8 causality awaiting an actual decision keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G9 trial preparation keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G10 actually sealed ending keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G11 trial battle has battle priority keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G12 third gate won but END still undecided has trial priority keeps exact contextual identity and single-class skip through manual rereading and refresh without changing Game",
+      "project": "chromium"
+    },
+    {
+      "file": "check-matrix-guidance.spec.ts",
+      "title": "CHECK-G5 actual finite SOURCE results suppress only materials and refreshing or reading its old receipt never fabricates a new contextual outcome",
+      "project": "chromium"
+    },
+    {
+      "file": "desktop-spirit-action.spec.ts",
+      "title": "a full spirit realm promotes preparation viewing without spending the missing entry item",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-context.spec.ts",
+      "title": "M04-U12 pending opening refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-context.spec.ts",
+      "title": "M04-U12 pending event refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-context.spec.ts",
+      "title": "M04-U12 pending battle refreshes its exact context and permits actual inventory and people reading before one explicitly chosen full cycle",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-context.spec.ts",
+      "title": "M04-U13 a response cycle cannot steal a newer inventory selection or its focus when its complete Game is committed",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-context.spec.ts",
+      "title": "M04-U14 missing scene and portrait resources cannot block a normal opening or its explicit finite cultivation and first breakthrough",
+      "project": "chromium"
+    },
+    {
+      "file": "idle-recovery-ui.spec.ts",
+      "title": "M04-U7 an advertised ordinary checkpoint in trial preparation restores its complete earlier realm through a real confirmation",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "the real HUD keeps all eight gameplay entries and current saved values without writing on navigation",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "alchemy opens finite arrangement details explicitly and returns from a readonly goal with its draft intact",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "one activity rail retains its cycle identity across details and pages with readable pause and failure controls",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a confirmed replacement life cannot reuse the previous life alchemy draft or activity",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "a saved configuration keeps a readable result and its short feedback clear of the HUD and page controls",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r1.spec.ts",
+      "title": "expanded cultivation budgets keep every field below the method tabs and above confirmation controls",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "the actual jade object and status stay inside the stage and relic paging never overlaps its last object",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all twelve books and all fourteen bag objects retain real text, quantities and complete read-only uses",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "reading another slot and book cannot replace a multi-book draft or its edited cumulative limits",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "a fresh mortal has an explicit empty book catalogue without a phantom selected skill",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "missing catalogue paintings keep native jade and bag selection usable without inventing held objects",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "one selected book waits thirty real seconds and saves its actual cost before becoming learned",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "one selected relic waits its full real forge cycle and stays separate from equipment",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "same life realm growth keeps the selected bag item visible when newly unlocked materials move its page",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "changing school keeps the finite learning draft and selects a real book of the current school",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "manual context receives a school change then restores the old queue with a valid current-school selection",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all four relic objects expose their real costs and ingredients and equipment views remain read-only",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "all four relic objects compare owned effects without equipping and equipment views remain read-only",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-r3-layout.spec.ts",
+      "title": "a mastered book explains local comparison without asking for another learning trip",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "a chosen purchase preparation survives ordinary goal inspection without changing Game or authorising an activity",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current mortal cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current qi cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current foundation cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current golden cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current nascent cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "current spirit cultivation and preparation tradeoffs show full costs with no write or hidden travel",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "preparation comparison and original purchase choice return safely and actual import clears the old draft",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "sword/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/frost_sword configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/jade_seal configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/soul_lamp configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "talisman/cloud_mirror configuration outlook uses frozen real resources and cancel authorizes nothing",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "tradeoff controls stay usable with failed drawings and do not execute a projection",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "a life inspection nested inside a preparation goal returns through each original reading surface",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "purchase preparation keeps the currency name and source action readable in its actual card",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "qi preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "foundation preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "golden preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "nascent preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium"
+    },
+    {
+      "file": "stage-u8-b.spec.ts",
+      "title": "spirit preparation material cards keep full names, actions and pagination above navigation",
+      "project": "chromium"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A1 foreign last-month travel leads to an actionable readonly life guide without a zero-yield main action or a fictional checkpoint",
+      "project": "chromium"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A2 a genuinely prepared last-month breakthrough keeps its original full thirty-second atomic checkpoint and restores ordinary guidance",
+      "project": "chromium"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A3 a real native checkpoint remains inspectable after finite public work periods reach the lifespan boundary without restoring or ending",
+      "project": "chromium"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A4 viewing last-month options during a failed original trip cannot replace its command or spend the last month",
+      "project": "chromium"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A5 an original paused assisted budget resumes once and stops at the real lifespan limit before the new readonly guide appears",
+      "project": "chromium"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A6 a last-month battle keeps its actual action and context until an explicitly saved retreat returns to the cave guide",
+      "project": "chromium"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A7 a superseding navigation cancels a late life-management opening without a hidden dialog or Game write",
+      "project": "chromium"
+    },
+    {
+      "file": "uir34-01-lifespan-guidance.spec.ts",
+      "title": "UIR34-01-A8 a chosen material target persists through lifespan guidance life reading and refresh without accepting another activity",
+      "project": "chromium"
+    },
+    {
+      "file": "uir35-01-goal-authority.spec.ts",
+      "title": "UIR35-01-A1 natural cultivation shows actual growth instead of a fifty-cycle completion target and stops on the second original thirty-second period",
+      "project": "chromium"
+    },
+    {
+      "file": "uir35-01-goal-authority.spec.ts",
+      "title": "UIR35-01-A2 an explicit finite natural plan keeps its true target maximum and all original zero budget fields without a hidden write",
+      "project": "chromium"
+    },
+    {
+      "file": "uir35-01-goal-authority.spec.ts",
+      "title": "UIR35-01-A3 assisted actual spending stays prominent and a failed second save cannot advance the displayed count or replace the original authority",
+      "project": "chromium"
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "title": "UX20 stage4: the actual trial phase has one readonly destination and never asks for spent entry material",
+      "project": "chromium"
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "title": "UX20 stage0: the actual trial phase has one readonly destination and never asks for spent entry material",
+      "project": "chromium"
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "title": "UX20 stage1: the actual trial phase has one readonly destination and never asks for spent entry material",
+      "project": "chromium"
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "title": "UX20 stage2: the actual trial phase has one readonly destination and never asks for spent entry material",
+      "project": "chromium"
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "title": "UX20 stage3: the actual trial phase has one readonly destination and never asks for spent entry material",
+      "project": "chromium"
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "title": "UX20 another tracked item and its full source stack stay available during the ending phase",
+      "project": "chromium"
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "title": "UX20 ordinary full cultivation is explicitly labelled separately from its missing pill",
+      "project": "chromium"
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "title": "UX20 transmit: reading and cancelling stay readonly then only the selected twelve-second ending seals the life",
+      "project": "chromium"
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "title": "UX20 depart: reading and cancelling stay readonly then only the selected twelve-second ending seals the life",
+      "project": "chromium"
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "title": "UX20 an aborted ending outcome preserves all stores and retries the original selected command once",
+      "project": "chromium"
+    },
+    {
+      "file": "ux20-trial-guidance.spec.ts",
+      "title": "UX20 one ending follows the actual twelve-second online clock before its atomic saved outcome",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C1 actual retreat keeps one truthful location blocker and only explicit six-second travel makes trial preparation ready",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 opening keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 event keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 event-target keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 battle keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 xp keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 material keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 skill-realm keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 relic-realm keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C2 stones keeps the formal blocker complete and readable without a guessed encounter or ready claim",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C3 trial stage0 retains its actual exclusive question battle or ending guidance",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C3 trial stage1 retains its actual exclusive question battle or ending guidance",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C3 trial stage4 retains its actual exclusive question battle or ending guidance",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C4 retired remains a completed life with readonly return instead of new preparation",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C4 ascended remains a completed life with readonly return instead of new preparation",
+      "project": "chromium"
+    },
+    {
+      "file": "ux24-goal-guidance.spec.ts",
+      "title": "UX24-C5 completed item skill event and owned relic tracking keeps the factual completion through readonly target changes",
+      "project": "chromium"
+    }
+  ],
+  "fullMatrixDeclarationOnly": 1491
+}
