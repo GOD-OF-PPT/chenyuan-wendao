@@ -9,7 +9,8 @@ import{canonicalFingerprint}from'../../src/full/receipts';
 import{validateActivityReceipt}from'../src/activity-persistence';
 import{validateConfigurationReceipt}from'../src/configuration-persistence';
 import{snapshot,activitySnapshot as activity,openHubFeature}from'./support';
-import{importRecoveryFixture,recoveryDatabase as database,stored}from'./idle-recovery-ui-support';
+import{answerGameConfirmation}from'./game-confirmation-support';
+import{importRecoveryFixture,recoveryDatabase as database,stored,control600}from'./idle-recovery-ui-support';
 import{selectPlan}from'./idle-route-support';
 import{selectRelic,selectSource,openSourceSettings,closeSourceSettings,openSourceLibrary,closeSourceLibrary}from'./stage-support';
 import{captureFixedPng}from'./png-capture';
@@ -60,6 +61,6 @@ test('CEND10-G3 a saved stone target is shown beside actual stones while another
  const view=await selectPlan(page,plan),before=await database(page);await view.control.click();await expect.poll(async()=>(await activity(page))?.status).toBe('running');const started=await mutation(page,g,before,'START',info);await goal(page,target,false,'stones');await frame(page,info,'G3-stones-current-goal');
  await readonly(page,async()=>{await openSourceLibrary(page);await page.getByTestId('source-core').click();await expect(page.getByTestId('source-stock-goal')).toHaveCount(0);await frame(page,info,'G3-other-source-no-target');await selectSource(page,'work');await goal(page,target,false,'stones');});
  await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-source').click();await selectSource(page,'work');await goal(page,target,false,'stones');expect(await database(page)).toEqual(started.raw);await expect(page.getByTestId('source-local-countdown')).toHaveCount(0);
- const fresh=await importRecoveryFixture(page,lawful())as Game;expect(fresh.core.runId).not.toBe(g.core.runId);await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-source').click();await selectSource(page,'work');await expect(page.getByTestId('source-stock-goal')).toHaveCount(0);
+ const incoming=lawful();await page.getByTestId('game-settings').click();await page.getByTestId('import').setInputFiles({name:'cend10-lawful-new-life.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(incoming))});await answerGameConfirmation(page,'import');const importBefore=await database(page);await control600(page,importBefore);await expect(page.getByTestId('save-status')).toHaveText('已保存');const fresh=await snapshot(page)as Game;const expected=structuredClone(incoming);expected.core.runId=fresh.core.runId;expected.core.revision=0;expect(fresh).toEqual(expected);expect(await activity(page)).toBeNull();expect(fresh.core.runId).not.toBe(g.core.runId);await page.getByRole('button',{name:'关闭设置',exact:true}).click();await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-source').click();await selectSource(page,'work');await expect(page.getByTestId('source-stock-goal')).toHaveCount(0);
  const cycles={...plan,until:'cycles',target:null,maxCycles:1};const v=await selectPlan(page,cycles),raw=await database(page);await v.control.click();await expect.poll(async()=>(await activity(page))?.status).toBe('running');await mutation(page,fresh,raw,'START',info);await expect(page.getByTestId('source-stock-goal')).toHaveCount(0);await frame(page,info,'G3-cycle-only-no-target');
 });

@@ -1,0 +1,15 @@
+{
+  "product": "414fd4f06e613f12339692959025fd750e5c4f87",
+  "consumer": "b4508b4d58cda8f5e08f2b0719b1c6f9bf518fc1",
+  "stats": {
+    "startTime": "2026-11-09T16:15:55.972Z",
+    "duration": 71207.007,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  },
+  "sha256": "037bb06d21c78a27ca55c9bd3c217848ddecc524db7ba1811cb6282e871d0293",
+  "missingTargetThreeFailuresAndCorrectRetiredTargetOnePass": true,
+  "setupPlaywrightDuplicateModuleErrorNotProductFailure": true
+}

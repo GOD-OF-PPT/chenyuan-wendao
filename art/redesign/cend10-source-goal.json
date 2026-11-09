@@ -20,8 +20,8 @@
   },
   "display": {
     "path": "web/src/SourceStockGoal.vue",
-    "bytes": 1028,
-    "sha256": "0dc67289bf689e76f2045f4aae88672c273faa300269a5470857a7b6625a58ee"
+    "bytes": 1150,
+    "sha256": "679a554f55882e1fb417687fb4854665f699c1aa23c68c31ca91e559f0cb8583"
   },
   "projection": {
     "path": "web/src/source-stock-goal.ts",
