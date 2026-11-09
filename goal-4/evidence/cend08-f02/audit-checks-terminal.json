@@ -1,0 +1,19 @@
+{
+  "rows": [
+    {
+      "name": "rules",
+      "exit": 0
+    },
+    {
+      "name": "positive",
+      "exit": 0
+    },
+    {
+      "name": "resources",
+      "exit": 0
+    }
+  ],
+  "inputs": 5559,
+  "exact": true,
+  "exit": 0
+}

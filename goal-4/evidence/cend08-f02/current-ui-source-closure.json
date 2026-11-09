@@ -1,0 +1,30 @@
+{
+  "original": "artifacts/goal-4/cend08-f02/final/ui-source-closure.json",
+  "originalSHA256": "4c8c77e01aadc36987a5c60d18fb9baebbcec5b31f62d7e5379870c4ce98d0a5",
+  "entryFiles": 30,
+  "closureFiles": 71,
+  "unchangedFiles": 70,
+  "changed": [
+    {
+      "path": "web/e2e/cend08-f02-config-art.spec.ts",
+      "hashes": {
+        "product": "e21ea782df24f050262554acb1cbe7767e156d2360b9e06152c7a7446728877a",
+        "audit": "bcdbd513d2c4df2249b8e119b6eb6ee6c964a9217b60476a7ccc1b42c21e0ccb",
+        "consumer": "c3c58ad7c87ac2ba7c69b7ee653f7e82a130e8601e81fbf4816b1b28132ed1d8"
+      }
+    }
+  ],
+  "sameImports": true,
+  "nonLiteralDynamicImports": 0,
+  "unresolved": 0,
+  "preservedProducerIdentities": {
+    "product": "6f2a1f546382801c857ddc9416559e0dff06c431",
+    "audit": "148a4c150804cba3375d5e3aa1081c6cfb62cd39",
+    "consumer": "78d1dfa707f1210530ad9edd46421be63e1735dd"
+  },
+  "currentCollector": "artifacts/goal-4/cend08-f02/consumer2/collect-ui-closure.mjs",
+  "currentCollectorSHA256": "1966a2d3654f7c1ee0e6c7b636b1deff50c509e11be46ef81a8854b48f13d968",
+  "currentClosure": "artifacts/goal-4/cend08-f02/consumer2/ui-source-closure.json",
+  "currentClosureSHA256": "1e9e4a0ae56682f283705779285f22a912fce89254f18aa2de240fc035cafd0c",
+  "actualGraphEntriesEdgesExternalAndMissingExact": true
+}

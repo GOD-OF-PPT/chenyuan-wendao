@@ -1,0 +1,171 @@
+{
+  "rows": [
+    {
+      "path": "artifacts/goal-4/cend08-f02/final/ui-report.json",
+      "bytes": 21832947,
+      "sha256": "ef3b046c9827ab76616f7888b8fd7cb9d5a76f6657ca9715ee0421f1d742ad58"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/final/ui-before.json",
+      "bytes": 710862,
+      "sha256": "786dd917a14621749827640ce575f2c468fb09bca8ef38bea574f37ff1cc26b3"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/final/ui-after.json",
+      "bytes": 710862,
+      "sha256": "786dd917a14621749827640ce575f2c468fb09bca8ef38bea574f37ff1cc26b3"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/final/checks-before.json",
+      "bytes": 652053,
+      "sha256": "f792a38708f94c9bf2b791d6ad83f89bc1677166bf86f51e52d40ce112b415eb"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/final/checks-after.json",
+      "bytes": 652053,
+      "sha256": "f792a38708f94c9bf2b791d6ad83f89bc1677166bf86f51e52d40ce112b415eb"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/final/ui-source-closure.json",
+      "bytes": 68677,
+      "sha256": "4c8c77e01aadc36987a5c60d18fb9baebbcec5b31f62d7e5379870c4ce98d0a5"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/final/build-terminal.json",
+      "bytes": 176,
+      "sha256": "991a3db2aac95cd675ab1b9ba988b52f2698ba8ebcf9d0646d2f033c388f1276"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/final/ui-terminal.json",
+      "bytes": 490,
+      "sha256": "38a8d1d4da543881d9690d107abdd59acefa2cdd3d3311f5d4d8f14a4e6eac46"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/final/preview-archive.json",
+      "bytes": 563,
+      "sha256": "016f548dfa38231c21411f67b0a2e41c5ad11f05e441720f8407568645f5840c"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/audit/rules.log",
+      "bytes": 48307,
+      "sha256": "4f223083f805f1af351372f9db7a81607e98b3c8f0d843dc95a7289ff1695161"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/audit/positive.log",
+      "bytes": 3281,
+      "sha256": "b26c04fec3c97fed972db0bb1f95e20981f013043a1fc1fd7d4e1bd509001718"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/audit/resources.log",
+      "bytes": 880,
+      "sha256": "34c830906ea66584b413a7e25d5dd6a6637ec85a5dae549bc73368808771b5d6"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/audit/checks-before.json",
+      "bytes": 652321,
+      "sha256": "3876955ef1b3fb9d541ac894fcb9299413ce100243222eb0f416c20a0e6cf273"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/audit/checks-after.json",
+      "bytes": 652321,
+      "sha256": "3876955ef1b3fb9d541ac894fcb9299413ce100243222eb0f416c20a0e6cf273"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/audit/checks-terminal.json",
+      "bytes": 230,
+      "sha256": "03299780fcd4e36b7999ffef2462d4904f30e140d8a436977067673a7c18614d"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/audit/build-terminal.json",
+      "bytes": 176,
+      "sha256": "3ff6403a1565644efeab934159406f17ae9cd49f45c2a7ba21e89fa2a188f876"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer/ui-report.json",
+      "bytes": 156232,
+      "sha256": "a1989aca33e3eb907e5df2d6b2ce028d06787082bbadcd7c7d5108525abd85dd"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer/ui.log",
+      "bytes": 11210,
+      "sha256": "d4d5530b25916017f03da42b58f05feae9809d7b65de94a97cabfb9a0eb8cc1e"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer/ui-terminal.json",
+      "bytes": 486,
+      "sha256": "9b05829d97972bac8c823399be083e05f1d111edbd3352359c4d67bc6b9f0476"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/ui-report.json",
+      "bytes": 154759,
+      "sha256": "8ff44f284978f60282054f1a5cae853ac38dcc8e396b08f22455aaeba6700c2c"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/ui.log",
+      "bytes": 1262,
+      "sha256": "ca45f72a771b879bfaa246f9bf7931d9da5f0e5cbd9cb48c4e74da84e13a7438"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/ui-before.json",
+      "bytes": 711278,
+      "sha256": "46503199dbea0097dd9f4e3967f33d612e904f2dadbd424858837a328987012d"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/ui-after.json",
+      "bytes": 711278,
+      "sha256": "46503199dbea0097dd9f4e3967f33d612e904f2dadbd424858837a328987012d"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/ui-declared.json",
+      "bytes": 5354,
+      "sha256": "e7dec23cfc9e1d96d71a7449437b02f8e73ba773665993868542e490f830323d"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/ui-http.json",
+      "bytes": 56891,
+      "sha256": "5f09efc0cd525a9c88e74d9914e3e5a8d8798a987ad7d3c2269cad3d694bd6b9"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/package-report.json",
+      "bytes": 154774,
+      "sha256": "c01d11f649ca500d54920eca67786ae03076311ade5c64f4414c9b7502f7dd28"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/package.log",
+      "bytes": 1263,
+      "sha256": "9b53d7f9867eed06ae3a3820270144723a5de3423c5fe0f22ab79a65c0ff5af7"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/package-before.json",
+      "bytes": 711293,
+      "sha256": "0461cc82389bf775075ae324a0a43614112d686908a35450713f42af5911413f"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/package-after.json",
+      "bytes": 711293,
+      "sha256": "0461cc82389bf775075ae324a0a43614112d686908a35450713f42af5911413f"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/package-http.json",
+      "bytes": 57004,
+      "sha256": "8bd0a176fa8a2c70275e31d58046504400e559d3958ba29a292bfea627b5d930"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/build-terminal.json",
+      "bytes": 176,
+      "sha256": "47cb09a9c924c3b8ee6020213604c5cd4ffe7ee1117552e7267137dfda8d0164"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/ui-terminal.json",
+      "bytes": 486,
+      "sha256": "e8b1fd413aba44bc32f9888f1f9f2a90439215b762b7595c14355c7d54ad0a86"
+    },
+    {
+      "path": "artifacts/goal-4/cend08-f02/consumer2/package-terminal.json",
+      "bytes": 486,
+      "sha256": "97dcba56b69d8c999c5bba4f98ba10a8c1e175e45b59157fee08a0b35ae23479"
+    }
+  ],
+  "retainedIgnoredOriginalEvidence": true,
+  "oldFailuresNotReplaced": true
+}

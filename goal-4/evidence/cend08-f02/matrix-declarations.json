@@ -1,0 +1,13 @@
+{
+  "version": 45,
+  "runtime": "d47f048ecd994b1692591733ead0e04a01f2dfe220e89fbb2dc1b8c19a9ba016",
+  "total": 1472,
+  "totals": {
+    "ui": 1025,
+    "persistence": 415,
+    "journey": 32
+  },
+  "allPreviousVersionSignaturesIntact": true,
+  "actualSourceProfileDeclarations": true,
+  "actualFullMatrixExecution": false
+}
