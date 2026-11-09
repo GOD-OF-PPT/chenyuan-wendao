@@ -68,5 +68,7 @@
   "userSaveModified": false,
   "pushMergeDeployPermissionsChanged": false,
   "threeTaskCounter": 2,
-  "nextTask": "CEND08 current full gameplay UI and mainline operation review"
+  "nextTask": "CEND08 current full gameplay UI and mainline operation review",
+  "deliveryCommit": "701301481e8fcffddfdf1998561ebe8ac7ae5715",
+  "formalTaskRejectionsResolved": 1
 }
