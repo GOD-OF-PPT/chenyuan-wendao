@@ -1,0 +1,78 @@
+from pathlib import Path
+import copy,hashlib,json
+
+b=Path(__file__).resolve().parent
+old=b.parent/'cend12-normal32'
+read=lambda p:json.loads(Path(p).read_text())
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+prior=read(b/'normal-effective-prior.json')
+current=read(b/'normal-effective-current.json')
+rawOld=read(old/'normal-report.json')
+before=read(old/'normal-before.json')
+terminal=read(old/'normal-terminal.json')
+assert terminal['exit']==0 and terminal['exact'] and terminal['sameGit'] and terminal['exactDeclared']
+assert terminal['stats']['expected']==32 and not terminal['errors'] and not terminal['retried']
+assert sha(old/'normal.config.ts')==before['hashes']['../normal.config.ts']
+assert sha(old/'normal-report.json')==terminal['reportSha256']
+for n in ['web/playwright.config.ts','web/playwright.idle.config.ts','web/playwright.idle-journeys.config.ts','scripts/source-identity.mjs','scripts/assert-web-build.mjs']:
+    assert sha(old/'source'/n)==before['hashes'][n],n
+
+# JSONReporter omits use/expect and serializes RegExp to {}, so first prove every
+# field it did expose matches the same old effective loader input, then compare
+# the richer complete effective config/use/expect between old and current.
+def reporterValue(v):
+    if isinstance(v,dict):
+        if set(v)=={'regexpSource','regexpFlags'}:return {}
+        return {k:reporterValue(x) for k,x in v.items()}
+    if isinstance(v,list):return [reporterValue(x) for x in v]
+    return v
+projection={}
+for k,value in rawOld['config'].items():
+    if k=='projects':
+        projection[k]=[{name:p['__projectId'] if name=='id' else reporterValue(p[name]) for name in reportProject} for p,reportProject in zip(prior['config']['projects'],value,strict=True)]
+    else:projection[k]=reporterValue(prior['config'][k])
+assert rawOld['config']['metadata']['actualWorkers']==prior['config']['workers']==1
+assert current['config']['workers']==1
+# Installed runner/tasks.js:328 adds this after creating at least one test group;
+# it is execution metadata, absent from a config loaded without running tests.
+runner=b/'source/web/node_modules/playwright/lib/runner/tasks.js'
+assert 'testRun.config.config.metadata.actualWorkers = Math.min(testRun.config.config.workers, maxConcurrentTestGroups);' in runner.read_text()
+assert len(rawOld['suites'])>0
+projection['metadata']['actualWorkers']=1
+for project in projection['projects']:project['metadata']['actualWorkers']=1
+assert projection==rawOld['config'],'Old actual reporter fields differ from its source-identical loaded configuration'
+
+normalized=json.loads(json.dumps(prior).replace(str(old),str(b)))
+metadataPaths=[('config','metadata','chenyuan')]+[('config','projects',i,'metadata','chenyuan') for i in range(len(current['config']['projects']))]
+changes=[]
+for path in metadataPaths:
+    a=normalized;c=current
+    for key in path:a=a[key];c=c[key]
+    assert a['head']=='8f512bf511accbabf1c8993ec15996c2bacfcc43'
+    assert c['head']==read(b/'source/web/build-report/build.json')['source']['head']
+    assert not a['dirty'] and not c['dirty']
+    for key in ['node','npm','npmOnPath']:assert a[key]==c[key],key
+    for key in ['head','source','tree']:
+        changes.append({'path':list(path)+( [key]),'old':a[key],'current':c[key]})
+        a[key]=c[key]
+assert normalized==current,'An effective option outside the explicit provenance/path changes differs'
+
+def declarations(report):
+    rows=[]
+    def walk(s):
+        for spec in s.get('specs',[]):
+            for t in spec['tests']:rows.append((spec['file'],spec['title'],t['projectName']))
+        for child in s.get('suites',[]):walk(child)
+    for suite in report['suites']:walk(suite)
+    return sorted(rows)
+assert declarations(rawOld)==declarations(read(b/'normal-declared.json'))
+assert len(declarations(rawOld))==32
+structural=read(b.parent.parent.parent/'goal-4/evidence/check-cend10-12/normal-structural-proof.json')
+assert structural['all33OriginalEntryAndDriverBytesExact'] and structural['runtimeRootFrozenExact']
+dependency=read(b.parent.parent.parent/'goal-4/evidence/check-cend10-12/dependencies-proof.json')
+assert dependency['currentAndPriorFrozenFull1981SetsAndBytesExact']
+
+proof={'originalProducer':terminal['runtime'],'originalConsumer':'8f512bf511accbabf1c8993ec15996c2bacfcc43','currentConsumer':current['config']['metadata']['chenyuan'],'originalActual32Terminal':terminal,'originalActualReporterAllExposedConfigFieldsReproduced':True,'originalActualWorkersExecutionMetadata':{'value':1,'derivedFromConfigured1AndNonemptyOriginal32Suite':True,'installedRunnerSource':str(runner),'installedRunnerSHA256':sha(runner),'line':328,'notAnUnexplainedConfigDifference':True},'completeEffectiveConfigWithAllProjectUseExpectTimeoutGrepEqual':True,'onlyExplicitArtifactPathPrefixReplacement':{'old':str(old),'current':str(b)},'onlySourceProvenanceChanges':changes,'all33ClosureAnd350RuntimeExact':True,'frozenComplete1981DependenciesExact':True,'actual32CurrentDeclarationIdentitiesExact':True,'currentNormal32Rerun':False,'retainsOriginalProducerAndExecutionIdentity':True,'hashes':{n:sha(b/n) for n in ['normal-effective-prior.json','normal-effective-current.json','normal-declared.json']},'noWhole1493OrArtBalanceHumanAcceptance':True}
+target=b.parent.parent.parent/'goal-4/evidence/check-cend10-12/normal-inheritance-proof.json'
+assert not target.exists();target.write_text(json.dumps(proof,ensure_ascii=False,indent=2)+'\n')
+print(json.dumps({'sameFullEffectiveConfig':True,'sameOriginalActualReporterConfig':True,'currentDeclarations':32,'normalClosure':33,'runtimeFiles':350,'dependencies':1981,'old32ProperlyInheritedNotRelabeled':True}))

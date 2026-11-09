@@ -1,0 +1,633 @@
+{
+  "parts": {
+    "preflight6": [
+      {
+        "name": "C1-current-source-and-mainline",
+        "phase": "preflight2",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-current-source-and-mainline.png",
+        "pngSHA256": "9111c2641e726dfced16a124f566873436b263a862591c784b19acca1b344c1e",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/preflight-C1-current-source-and-mainline.jpg",
+        "jpegSHA256": "d792eab9ae2f5ef285d717f8594aa80cc9abf51e53f8f35371b24bece5fbae01",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true,
+        "review": "当前取材0/2、30秒/有限4轮与HUD尚缺筑基丹1相邻于各自对象，原生动作未保存不入囊，八入口/返回/暂停可辨。"
+      },
+      {
+        "name": "C1-only-local-source-goal-complete",
+        "phase": "preflight2",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-only-local-source-goal-complete.png",
+        "pngSHA256": "3ccc5ee8b0ad2c80447869da7ec9b472ba0d0ed3820ecc2db93d110a39aa6ed0",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/preflight-C1-only-local-source-goal-complete.jpg",
+        "jpegSHA256": "fe641ba73fc52ee0c760c665defca1554c1baad77c0b914130150ff253ed7085",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true,
+        "review": "实际本段凝气草2/2已达/+2已保存；HUD筑基丹仍缺1，未把局部目标当突破已齐；原下次5轮草案可另授权，无自动执行。"
+      },
+      {
+        "name": "C1-paused-return-preserves-next-draft",
+        "phase": "preflight2",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-paused-return-preserves-next-draft.png",
+        "pngSHA256": "5a05a8f33d995c3198bf7749ec88ff6f276972b42d377ff0bd01a96b5c896871",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/preflight-C1-paused-return-preserves-next-draft.jpg",
+        "jpegSHA256": "6e4e36be3e6bdd09ab089b3f0314fbb9cfd41f18ebc9917f825892dbea820e53",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true,
+        "review": "暂停保本段目标2/原4轮，上方继续仍原授权；下次草案5轮/17月/余寿9月清楚，HUD查看后返回焦点与真实主线物件保。"
+      },
+      {
+        "name": "C2-formal-dual-yield-mainline-still-missing",
+        "phase": "preflight2",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-formal-dual-yield-mainline-still-missing.png",
+        "pngSHA256": "4ac86cd87e86efe8a3484fe247edfca9159d3fe2e655b634a54713c151bb80ab",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/preflight-C2-formal-dual-yield-mainline-still-missing.jpg",
+        "jpegSHA256": "141f24db5a65e7229d63e9a6f9a86569a15c9f374da9662cabc9762ccd15fa07",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true,
+        "review": "正式保存灵玉1/1与灵石32(+12)同行，HUD仍缺凝金丹1；下方目标已达时大灰安排按钮仍是现有UI主次待改的一部分，不宣称游戏交互完成。"
+      },
+      {
+        "name": "C2-held-native-original-facts",
+        "phase": "preflight2",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-held-native-original-facts.png",
+        "pngSHA256": "f8a0ca88e950b8b86a5f7df553de052e9dd3cf017e9b7d53ea37326270f30242",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/preflight-C2-held-native-original-facts.jpg",
+        "jpegSHA256": "ba1f7503df1a20f8d956fcb9c3cd978c65bf3d0be5121c0dd17420e96e32062e",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true,
+        "review": "原生写锁中保存中、灵玉0/1/灵石20与HUD凝金丹1未变；未开嵌套DB读，保持只读原持有快照。"
+      },
+      {
+        "name": "C2-original-quota-and-mainline-not-awarded",
+        "phase": "preflight2",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-original-quota-and-mainline-not-awarded.png",
+        "pngSHA256": "bdb177ac329131c009bfb95fc416e9cc857ee5be57042fc2921c4bbec7d1805e",
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/preflight-C2-original-quota-and-mainline-not-awarded.jpg",
+        "jpegSHA256": "b386d74e29021bda8a9895ba5ba73381f9d4a2e44f6b089bf9b6ee9fff98f187",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "actuallyViewed": true,
+        "review": "原quota显示存档空间不足/同意图重试，地脉灵玉0/1/灵石20和凝金丹缺1均保；当前失败库存区未见裁切或越界。"
+      }
+    ],
+    "currentNewCombos6": [
+      {
+        "name": "C1-current-source-and-mainline",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-current-source-and-mainline.png",
+        "pngSHA256": "9111c2641e726dfced16a124f566873436b263a862591c784b19acca1b344c1e",
+        "matchesPreflightPNG": true,
+        "priorActualViewed": true,
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-current-source-and-mainline.png",
+        "priorPNGsha256": "9111c2641e726dfced16a124f566873436b263a862591c784b19acca1b344c1e",
+        "actuallyViewedDirectly": false,
+        "needsNewDirectView": false,
+        "reviewedByExactPNGInheritance": true,
+        "review": "与预检查已实际看过PNG字节完全相同，保完整源/hash链；不冒当前直接新看。"
+      },
+      {
+        "name": "C1-only-local-source-goal-complete",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-only-local-source-goal-complete.png",
+        "pngSHA256": "f15f72f4cf0d763e466d93659fae161fa0ef876ef810f8536f4deccb4859b1c6",
+        "matchesPreflightPNG": false,
+        "priorActualViewed": true,
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-only-local-source-goal-complete.png",
+        "priorPNGsha256": "3ccc5ee8b0ad2c80447869da7ec9b472ba0d0ed3820ecc2db93d110a39aa6ed0",
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-C1-only-local-source-goal-complete.jpg",
+        "jpegSHA256": "734cc5abc97f9ae58cbd7492d1cd5d2251a5596a07d8a3c51a5b4fb55c737110",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前PNG实际实看；源库存/本段目标与HUD主线缺口分域，原保存中/提交后事实与前已看同场景一致，未见本图新增越界。"
+      },
+      {
+        "name": "C1-paused-return-preserves-next-draft",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-paused-return-preserves-next-draft.png",
+        "pngSHA256": "5a05a8f33d995c3198bf7749ec88ff6f276972b42d377ff0bd01a96b5c896871",
+        "matchesPreflightPNG": true,
+        "priorActualViewed": true,
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-paused-return-preserves-next-draft.png",
+        "priorPNGsha256": "5a05a8f33d995c3198bf7749ec88ff6f276972b42d377ff0bd01a96b5c896871",
+        "actuallyViewedDirectly": false,
+        "needsNewDirectView": false,
+        "reviewedByExactPNGInheritance": true,
+        "review": "与预检查已实际看过PNG字节完全相同，保完整源/hash链；不冒当前直接新看。"
+      },
+      {
+        "name": "C2-formal-dual-yield-mainline-still-missing",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-formal-dual-yield-mainline-still-missing.png",
+        "pngSHA256": "d959a8a97e8c6555f0579e4faf7ea5d8a17c4712b58bdcebf4bcf29860005e9c",
+        "matchesPreflightPNG": false,
+        "priorActualViewed": true,
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-formal-dual-yield-mainline-still-missing.png",
+        "priorPNGsha256": "4ac86cd87e86efe8a3484fe247edfca9159d3fe2e655b634a54713c151bb80ab",
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-C2-formal-dual-yield-mainline-still-missing.jpg",
+        "jpegSHA256": "703e05e3f943a1172ae9ee4d7c694e780f024219f62d443b982d0150a0659cb4",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前PNG实际实看；源库存/本段目标与HUD主线缺口分域，原保存中/提交后事实与前已看同场景一致，未见本图新增越界。"
+      },
+      {
+        "name": "C2-held-native-original-facts",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-held-native-original-facts.png",
+        "pngSHA256": "e9b4667767331487a37b24161c383e2182977b16d9dcc72fe13bafe6010a7ca0",
+        "matchesPreflightPNG": false,
+        "priorActualViewed": true,
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-held-native-original-facts.png",
+        "priorPNGsha256": "f8a0ca88e950b8b86a5f7df553de052e9dd3cf017e9b7d53ea37326270f30242",
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-C2-held-native-original-facts.jpg",
+        "jpegSHA256": "ece581cc1fc74899a530bf1c7d2d40326f81fc573cd394c58e629b44745dad94",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前PNG实际实看；源库存/本段目标与HUD主线缺口分域，原保存中/提交后事实与前已看同场景一致，未见本图新增越界。"
+      },
+      {
+        "name": "C2-original-quota-and-mainline-not-awarded",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-original-quota-and-mainline-not-awarded.png",
+        "pngSHA256": "bdb177ac329131c009bfb95fc416e9cc857ee5be57042fc2921c4bbec7d1805e",
+        "matchesPreflightPNG": true,
+        "priorActualViewed": true,
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/preflight-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-original-quota-and-mainline-not-awarded.png",
+        "priorPNGsha256": "bdb177ac329131c009bfb95fc416e9cc857ee5be57042fc2921c4bbec7d1805e",
+        "actuallyViewedDirectly": false,
+        "needsNewDirectView": false,
+        "reviewedByExactPNGInheritance": true,
+        "review": "与预检查已实际看过PNG字节完全相同，保完整源/hash链；不冒当前直接新看。"
+      }
+    ],
+    "currentPriorRepresentatives19": [
+      {
+        "name": "H1-foundation-current-object",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-foundation-current-object.png",
+        "pngSHA256": "309203cbe3712a78093dcbbe80f404c95103cae4e02882cf3fc0ddb00984d2c1",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-foundation-current-object.png",
+        "priorPNGsha256": "d6eff0cfbf29db0758d3200039850fe9a8fec8de6cb038b46e954fc419b4bbef",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H1-foundation-current-object.jpg",
+        "jpegSHA256": "cc43e720e0a6f3c20dbbac8021937f5e25493af55194b17f5471562cd15bab31",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H1-golden-current-object",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-golden-current-object.png",
+        "pngSHA256": "c6a0af5cc4778569ec380962f3563a5502137a606e496899f3e0ecb1c0ac8af9",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-golden-current-object.png",
+        "priorPNGsha256": "8833c3f77b44f408c6d43f34b245386e99c997a6b9bd5dd619b723dcd8f54f4f",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H1-golden-current-object.jpg",
+        "jpegSHA256": "76f4cbf184df8afdddc258cce19790fab727390a164698093d9d7e54576278f6",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H1-nascent-current-object",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-nascent-current-object.png",
+        "pngSHA256": "ee6cc3604d9a5fbafb4f711cc76668fef3d98773976a5db03c24ad18b627d7a5",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-nascent-current-object.png",
+        "priorPNGsha256": "b302547be597f7da61ae455f87165bdef6fb34b33b2b68acec749e9b79de69aa",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H1-nascent-current-object.jpg",
+        "jpegSHA256": "f6a7965429dcf7286aaac6b04f7d5c11d5d338330ef3013f7dcb7c4a7995fcff",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H1-qi-current-object",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-qi-current-object.png",
+        "pngSHA256": "3730628bda4769941b395354a2a7982358c82c13b95889ecd5c3999f74399ba1",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-qi-current-object.png",
+        "priorPNGsha256": "72b896461431b1254a323cbb084b0b16d22f676049f3ebaf5c073102eb242b89",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H1-qi-current-object.jpg",
+        "jpegSHA256": "77a49a191bbb41897a536ca4334c578f89e58a15fda0752506afc41b22f3963d",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H1-spirit-current-object",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-spirit-current-object.png",
+        "pngSHA256": "11b74a88eab5f53787bba9c3770403a2a1280c58fb4859842e1a07ea9161ba68",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H1--1f2cf-t-hiding-cultivation-status-chromium/H1-spirit-current-object.png",
+        "priorPNGsha256": "15611fe465363f40a574a4b898a108860d758f4455399b625c70fa489d1fe807",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H1-spirit-current-object.jpg",
+        "jpegSHA256": "658a9853380de7e84136a09cceaf3b8860d42144974cd8c9efd418949e937ba3",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H2-held-native-before-goal-change",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H2--e5dd2-tive-saving-and-quota-retry-chromium/H2-held-native-before-goal-change.png",
+        "pngSHA256": "2df3e800e80565a4d58ec43352ec4610a65a3e81ca7405f64337d2632a7bd506",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H2--e5dd2-tive-saving-and-quota-retry-chromium/H2-held-native-before-goal-change.png",
+        "priorPNGsha256": "10b64f49c684f162a3935ea7927d6ca8feae2a671a0fd79e7ffce9ecc9e999f2",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H2-held-native-before-goal-change.jpg",
+        "jpegSHA256": "53ed751d266b963fb6bd3e35188b5df68f0963f7aef0c799a84e9702800c445b",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H2-quota-goal-not-awarded",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H2--e5dd2-tive-saving-and-quota-retry-chromium/H2-quota-goal-not-awarded.png",
+        "pngSHA256": "61dcd09277dd5907d95d4ffdf69a5b1da810f2da9e32c29aafa64916c06305f5",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H2--e5dd2-tive-saving-and-quota-retry-chromium/H2-quota-goal-not-awarded.png",
+        "priorPNGsha256": "61dcd09277dd5907d95d4ffdf69a5b1da810f2da9e32c29aafa64916c06305f5",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": true,
+        "actuallyViewedDirectly": false,
+        "needsNewDirectView": false,
+        "reviewedByExactPNGInheritance": true,
+        "review": "仅因当前PNG与原已实际看图PNG逐字节相同承接像素，完整源/hash链保；不冒新直接实看。"
+      },
+      {
+        "name": "H2-saved-item-no-automatic-breakthrough",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H2--e5dd2-tive-saving-and-quota-retry-chromium/H2-saved-item-no-automatic-breakthrough.png",
+        "pngSHA256": "56325991d83502ac4e05e4e33a1e45348d5286fd56d24836b09f4f1ebce8f593",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H2--e5dd2-tive-saving-and-quota-retry-chromium/H2-saved-item-no-automatic-breakthrough.png",
+        "priorPNGsha256": "59ca81b9eef35aeae5d01a307aba8de6a90f1852a8d1dca303e6b304283afea8",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H2-saved-item-no-automatic-breakthrough.jpg",
+        "jpegSHA256": "9f9bebdfd13f9e9f2362b3348847ff1fa7654e87737ca11f68687ca1c5de59ea",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H3-actual-tracked-skill-kept",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-actual-tracked-skill-kept.png",
+        "pngSHA256": "194524e248889c100664a69e0d0b530de345b30dd0fbd15abc76eb3f595b3295",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-actual-tracked-skill-kept.png",
+        "priorPNGsha256": "194524e248889c100664a69e0d0b530de345b30dd0fbd15abc76eb3f595b3295",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": true,
+        "actuallyViewedDirectly": false,
+        "needsNewDirectView": false,
+        "reviewedByExactPNGInheritance": true,
+        "review": "仅因当前PNG与原已实际看图PNG逐字节相同承接像素，完整源/hash链保；不冒新直接实看。"
+      },
+      {
+        "name": "H3-battle-context",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-battle-context.png",
+        "pngSHA256": "e8c97ea1b5ca8923f008d0503f1551e0bd0ac948796a4232660c5b4dc81436a2",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-battle-context.png",
+        "priorPNGsha256": "0882d3797ea87aceec8032f674b6dec9bcb7122880422bd51b45e57a595bdf87",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H3-battle-context.jpg",
+        "jpegSHA256": "ede0bf0f49e8b31c0fce35cd6d99ba67f4e41ffa0e458797eaa1593f9291fc95",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H3-life-priority",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-life-priority.png",
+        "pngSHA256": "c3549f129f49e5e726e0a660fd5d86aa754f90c22245216db5fc946a228ae779",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-life-priority.png",
+        "priorPNGsha256": "c3549f129f49e5e726e0a660fd5d86aa754f90c22245216db5fc946a228ae779",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": true,
+        "actuallyViewedDirectly": false,
+        "needsNewDirectView": false,
+        "reviewedByExactPNGInheritance": true,
+        "review": "仅因当前PNG与原已实际看图PNG逐字节相同承接像素，完整源/hash链保；不冒新直接实看。"
+      },
+      {
+        "name": "H3-question-context",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-question-context.png",
+        "pngSHA256": "dc3f5bee33ba5f8a5bd9aa5323533e744eabcf56697fbd7dbc7873019d81cc9e",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H3--ee755-xt-across-replacement-lives-chromium/H3-question-context.png",
+        "priorPNGsha256": "dc3f5bee33ba5f8a5bd9aa5323533e744eabcf56697fbd7dbc7873019d81cc9e",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": true,
+        "actuallyViewedDirectly": false,
+        "needsNewDirectView": false,
+        "reviewedByExactPNGInheritance": true,
+        "review": "仅因当前PNG与原已实际看图PNG逐字节相同承接像素，完整源/hash链保；不冒新直接实看。"
+      },
+      {
+        "name": "H4-foundation-failed-paint-readable",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-foundation-failed-paint-readable.png",
+        "pngSHA256": "81e48b28d8f69860c84b38560f51960a40d1cdb59cdc9ba4675bc3c1edc7480a",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-foundation-failed-paint-readable.png",
+        "priorPNGsha256": "4f361633f78563368ef393cf2228ff17171c6af6a1e0968683744fa5889d2f71",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H4-foundation-failed-paint-readable.jpg",
+        "jpegSHA256": "aaa6e674959221abd35b9bbc39fec8e2c810cf55faf210b79dd6bc8c97074966",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H4-golden-failed-paint-readable",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-golden-failed-paint-readable.png",
+        "pngSHA256": "f1435e71dbdd2084e6fba91f76d9077a908cf3d7a91977691d0d084467f32abd",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-golden-failed-paint-readable.png",
+        "priorPNGsha256": "d1e67c8c3a31e6f560b0a2b478df0c272ab27986c2c650bc063b214d4c9ecca9",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H4-golden-failed-paint-readable.jpg",
+        "jpegSHA256": "116ca7d165d067341e194d6a79fef780348198832ebf7543332f99ccbf631571",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H4-nascent-failed-paint-readable",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-nascent-failed-paint-readable.png",
+        "pngSHA256": "b8ea0a2d50d06fa4863d68b845c00a30cc302b7dbf5183fa12d469a953272a4b",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-nascent-failed-paint-readable.png",
+        "priorPNGsha256": "5194069af0155e211590ccb47ba84e414b80a7102ff1c6a4bd4d2a27a349b5b1",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H4-nascent-failed-paint-readable.jpg",
+        "jpegSHA256": "a26ef3bc8b7da203ab813177807624a3839cb858f520bdc93258983948dc6f0c",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H4-qi-failed-paint-readable",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-qi-failed-paint-readable.png",
+        "pngSHA256": "c26b401d0280a28079a68405e5b235abcd53e5ae6c8e8a88727e286dc8aac439",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-qi-failed-paint-readable.png",
+        "priorPNGsha256": "62a84b0a0b3cf3d5dace54cd2f1102fce228936358ed9edb3677e6b660e49e8f",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H4-qi-failed-paint-readable.jpg",
+        "jpegSHA256": "c53d8f3ea9b42ab39f84a1ff9c85ab962a124db0c4bdd1d6fa359df9161a9b56",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "H4-spirit-failed-paint-readable",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-spirit-failed-paint-readable.png",
+        "pngSHA256": "677f9c0b9e1be443c94d82c4ca5f6b51e2bcaef428de6c7b92bfcb907c826921",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/consumer/four-results/cend11-mainline-CEND11-H4--fe69d-without-inventing-ownership-chromium/H4-spirit-failed-paint-readable.png",
+        "priorPNGsha256": "40b068703377062f43519723ade5ad9d832a5bedc4ea1fc972459f81a876b889",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-H4-spirit-failed-paint-readable.jpg",
+        "jpegSHA256": "2f07aa4227b18299b43a4cb1230ef20b2da4fa92c2c25d606b3d3dce16c3661e",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      },
+      {
+        "name": "last-month-real-checkpoint-guide",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium/last-month-real-checkpoint-guide.png",
+        "pngSHA256": "967bcd2f24ebda4b04c36efcba7b2aa47617403f8926e7f41915a634996cde66",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/verified-consumer/repair-results/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium/last-month-real-checkpoint-guide.png",
+        "priorPNGsha256": "967bcd2f24ebda4b04c36efcba7b2aa47617403f8926e7f41915a634996cde66",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": true,
+        "actuallyViewedDirectly": false,
+        "needsNewDirectView": false,
+        "reviewedByExactPNGInheritance": true,
+        "review": "仅因当前PNG与原已实际看图PNG逐字节相同承接像素，完整源/hash链保；不冒新直接实看。"
+      },
+      {
+        "name": "native-checkpoint-readonly-life-options",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium/native-checkpoint-readonly-life-options.png",
+        "pngSHA256": "e79cd37ac1cb4dde06542ab3f3866d4d7b5e3958b3738c7df4795854a0d725da",
+        "priorPNG": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend11-mainline/verified-consumer/repair-results/uir34-01-lifespan-guidance-4bec8-without-restoring-or-ending-chromium/native-checkpoint-readonly-life-options.png",
+        "priorPNGsha256": "d1fa590ab12702d6f3070879494cd18045b5e8ca7c3b2024e3e7fafdcbb068f8",
+        "priorActuallyViewed": true,
+        "matchesPriorViewedPNG": false,
+        "actuallyViewedDirectly": true,
+        "needsNewDirectView": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/ui-native-checkpoint-readonly-life-options.jpg",
+        "jpegSHA256": "02b621c06407505fd8a720889d47b6ed07db7dbff5622919809d75f460b9a227",
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "lossyQuality": 68,
+        "review": "当前原生1440PNG的同尺寸JPEG68实际实看：真实主线/绘物或失图回退、原保存前后/战局或寿元只读上下文与原事实一致，未见本代表图新增裁切；整体艺术与运行主次仍待。"
+      }
+    ],
+    "package6": [
+      {
+        "name": "C1-current-source-and-mainline",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/package-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-current-source-and-mainline.png",
+        "pngSHA256": "9111c2641e726dfced16a124f566873436b263a862591c784b19acca1b344c1e",
+        "currentUIpng": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-current-source-and-mainline.png",
+        "currentUIpngSHA256": "9111c2641e726dfced16a124f566873436b263a862591c784b19acca1b344c1e",
+        "matchesAlreadyReviewedCurrentPNG": true,
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "actuallyViewedDirectly": false,
+        "reviewedByExactPNGInheritance": true
+      },
+      {
+        "name": "C1-only-local-source-goal-complete",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/package-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-only-local-source-goal-complete.png",
+        "pngSHA256": "12741b79ab763a7a40918d6294fdd2aac6089e5d062ad5484fe6def834f06c60",
+        "currentUIpng": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-only-local-source-goal-complete.png",
+        "currentUIpngSHA256": "f15f72f4cf0d763e466d93659fae161fa0ef876ef810f8536f4deccb4859b1c6",
+        "matchesAlreadyReviewedCurrentPNG": false,
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "actuallyViewedDirectly": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/package-C1-only-local-source-goal-complete.jpg",
+        "jpegSHA256": "488d8526048451eff23ff5f82c4ceadf5d4c79cf3ee703795f3d36742496c190",
+        "lossyQuality": 68,
+        "review": "实际解包56946同源原尺寸画面实看：仅本段目标完成，主线缺丹保；原生保存中库存不先变，成本/预算/返回与八入口可读。"
+      },
+      {
+        "name": "C1-paused-return-preserves-next-draft",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/package-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-paused-return-preserves-next-draft.png",
+        "pngSHA256": "5a05a8f33d995c3198bf7749ec88ff6f276972b42d377ff0bd01a96b5c896871",
+        "currentUIpng": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-a2748-return-and-a-separate-draft-chromium/C1-paused-return-preserves-next-draft.png",
+        "currentUIpngSHA256": "5a05a8f33d995c3198bf7749ec88ff6f276972b42d377ff0bd01a96b5c896871",
+        "matchesAlreadyReviewedCurrentPNG": true,
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "actuallyViewedDirectly": false,
+        "reviewedByExactPNGInheritance": true
+      },
+      {
+        "name": "C2-formal-dual-yield-mainline-still-missing",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/package-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-formal-dual-yield-mainline-still-missing.png",
+        "pngSHA256": "7af92132099578141f1f2674a1d32fe22caf56f75315d97b426b76506cf421d4",
+        "currentUIpng": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-formal-dual-yield-mainline-still-missing.png",
+        "currentUIpngSHA256": "d959a8a97e8c6555f0579e4faf7ea5d8a17c4712b58bdcebf4bcf29860005e9c",
+        "matchesAlreadyReviewedCurrentPNG": false,
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "actuallyViewedDirectly": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/package-C2-formal-dual-yield-mainline-still-missing.jpg",
+        "jpegSHA256": "567a500c7fd95fba77514312d4d3f414665e4fd430fe3c65ff940fc7a1e6b0e8",
+        "lossyQuality": 68,
+        "review": "实际解包56946同源原尺寸画面实看：仅本段目标完成，主线缺丹保；原生保存中库存不先变，成本/预算/返回与八入口可读。"
+      },
+      {
+        "name": "C2-held-native-original-facts",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/package-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-held-native-original-facts.png",
+        "pngSHA256": "10e234eaeff0bed85cf2ce3d40b79ea75b1e78e20161f24066205b3f1d8dce6d",
+        "currentUIpng": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-held-native-original-facts.png",
+        "currentUIpngSHA256": "e9b4667767331487a37b24161c383e2182977b16d9dcc72fe13bafe6010a7ca0",
+        "matchesAlreadyReviewedCurrentPNG": false,
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "actuallyViewedDirectly": true,
+        "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/views/package-C2-held-native-original-facts.jpg",
+        "jpegSHA256": "887e990a2c4eb35dd3372f95d6d72044caf97faaaee0d9aa982f4c654ef28342",
+        "lossyQuality": 68,
+        "review": "实际解包56946同源原尺寸画面实看：仅本段目标完成，主线缺丹保；原生保存中库存不先变，成本/预算/返回与八入口可读。"
+      },
+      {
+        "name": "C2-original-quota-and-mainline-not-awarded",
+        "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/package-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-original-quota-and-mainline-not-awarded.png",
+        "pngSHA256": "bdb177ac329131c009bfb95fc416e9cc857ee5be57042fc2921c4bbec7d1805e",
+        "currentUIpng": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/ui-results/check-cend10-12-CHECK-CEND-c0275-either-reward-after-refresh-chromium/C2-original-quota-and-mainline-not-awarded.png",
+        "currentUIpngSHA256": "bdb177ac329131c009bfb95fc416e9cc857ee5be57042fc2921c4bbec7d1805e",
+        "matchesAlreadyReviewedCurrentPNG": true,
+        "actualPixelDimensions": [
+          1440,
+          900
+        ],
+        "actuallyViewedDirectly": false,
+        "reviewedByExactPNGInheritance": true
+      }
+    ]
+  },
+  "directlyActuallyViewedFiles": 26,
+  "exactPNGPriorPixelInheritanceFiles": 11,
+  "totalReferencedFiles": 37,
+  "actualPixelDimensions": [
+    1440,
+    900
+  ],
+  "lossyViewQuality": 68,
+  "allNativePNGKept": true,
+  "atMostTwoImagesPerToolResult": true,
+  "notWholeArtOrHumanAcceptance": true
+}

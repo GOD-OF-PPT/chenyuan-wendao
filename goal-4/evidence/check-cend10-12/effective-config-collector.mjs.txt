@@ -1,0 +1,9 @@
+import fs from'node:fs';import path from'node:path';import{createRequire}from'node:module';import assert from'node:assert/strict';
+process.env.PATH=path.dirname(process.execPath)+':'+process.env.PATH;
+const[root,file,output]=process.argv.slice(2).map(p=>path.resolve(p));assert(root&&file&&output);
+const require=createRequire(path.join(root,'web/package.json'));
+const{loadConfig}=require(path.join(root,'web/node_modules/playwright/lib/common/configLoader.js'));
+const config=await loadConfig({configDir:path.dirname(file),resolvedConfigFile:file});
+const evidence={config:config.config,projectExpect:config.projects.map(p=>({name:p.project.name,expect:p.expect}))};
+const json=JSON.stringify(evidence,(key,value)=>{if(value instanceof RegExp)return{regexpSource:value.source,regexpFlags:value.flags};if(typeof value==='function')throw Error('Effective config contains a function at '+key);if(typeof value==='number'&&!Number.isFinite(value))throw Error('Nonfinite config at '+key);return value;},2)+'\n';
+fs.writeFileSync(output,json,{flag:'wx'});console.log(JSON.stringify({output,projects:config.projects.map(p=>({name:p.project.name,use:p.project.use,timeout:p.project.timeout,expect:p.expect}))}));

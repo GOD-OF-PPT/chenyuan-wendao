@@ -1,0 +1,130 @@
+{
+  "originalConsumer": "8f512bf511accbabf1c8993ec15996c2bacfcc43",
+  "currentConsumer": {
+    "head": "c446fe7f7f9cc4fc0d7ce609383ee3bb84a4990d",
+    "source": "c446fe7f7f9cc4fc0d7ce609383ee3bb84a4990d",
+    "tree": "762e93b2a4b412f6f2e4cb370522b6fb350d98a5",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "10.9.0",
+    "npmOnPath": "10.9.0"
+  },
+  "originalActual32Terminal": {
+    "exit": 0,
+    "exact": true,
+    "sameGit": true,
+    "exactDeclared": true,
+    "runtime": "6354e659261b612d92ef21668f1285dc3ecc9e64a3d142eeec32617eacf5375a",
+    "inputs": 5822,
+    "stats": {
+      "startTime": "2026-11-09T20:20:25.502Z",
+      "duration": 3954744.946,
+      "expected": 32,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "actualDeclarations": 32,
+    "errors": [],
+    "retried": [],
+    "reportSha256": "87f75fa79f3a18dd52284ff0079efad99d9798dbed515bb361def95abbbae9bb"
+  },
+  "originalActualReporterAllExposedConfigFieldsReproduced": true,
+  "originalActualWorkersExecutionMetadata": {
+    "value": 1,
+    "derivedFromConfigured1AndNonemptyOriginal32Suite": true,
+    "installedRunnerSource": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12/source/web/node_modules/playwright/lib/runner/tasks.js",
+    "installedRunnerSHA256": "4f12251be3262263041bf407b2fb20e74a26ac6feeb75d99c7308ccddb4fbdac",
+    "line": 328,
+    "notAnUnexplainedConfigDifference": true
+  },
+  "completeEffectiveConfigWithAllProjectUseExpectTimeoutGrepEqual": true,
+  "onlyExplicitArtifactPathPrefixReplacement": {
+    "old": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend12-normal32",
+    "current": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend10-12"
+  },
+  "onlySourceProvenanceChanges": [
+    {
+      "path": [
+        "config",
+        "metadata",
+        "chenyuan",
+        "head"
+      ],
+      "old": "8f512bf511accbabf1c8993ec15996c2bacfcc43",
+      "current": "c446fe7f7f9cc4fc0d7ce609383ee3bb84a4990d"
+    },
+    {
+      "path": [
+        "config",
+        "metadata",
+        "chenyuan",
+        "source"
+      ],
+      "old": "8f512bf511accbabf1c8993ec15996c2bacfcc43",
+      "current": "c446fe7f7f9cc4fc0d7ce609383ee3bb84a4990d"
+    },
+    {
+      "path": [
+        "config",
+        "metadata",
+        "chenyuan",
+        "tree"
+      ],
+      "old": "b021c19e7ba49ecb05c42a8b411833702cef0743",
+      "current": "762e93b2a4b412f6f2e4cb370522b6fb350d98a5"
+    },
+    {
+      "path": [
+        "config",
+        "projects",
+        0,
+        "metadata",
+        "chenyuan",
+        "head"
+      ],
+      "old": "8f512bf511accbabf1c8993ec15996c2bacfcc43",
+      "current": "c446fe7f7f9cc4fc0d7ce609383ee3bb84a4990d"
+    },
+    {
+      "path": [
+        "config",
+        "projects",
+        0,
+        "metadata",
+        "chenyuan",
+        "source"
+      ],
+      "old": "8f512bf511accbabf1c8993ec15996c2bacfcc43",
+      "current": "c446fe7f7f9cc4fc0d7ce609383ee3bb84a4990d"
+    },
+    {
+      "path": [
+        "config",
+        "projects",
+        0,
+        "metadata",
+        "chenyuan",
+        "tree"
+      ],
+      "old": "b021c19e7ba49ecb05c42a8b411833702cef0743",
+      "current": "762e93b2a4b412f6f2e4cb370522b6fb350d98a5"
+    }
+  ],
+  "all33ClosureAnd350RuntimeExact": true,
+  "frozenComplete1981DependenciesExact": true,
+  "actual32CurrentDeclarationIdentitiesExact": true,
+  "currentNormal32Rerun": false,
+  "retainsOriginalProducerAndExecutionIdentity": true,
+  "hashes": {
+    "normal-effective-prior.json": "caf2cecfa0ed9c03c6c15e679286db94a2b15265359f899f420850deefaaef39",
+    "normal-effective-current.json": "81854dfee949ab6eec4650d15e7aa27e56144bd6427da80ff4cc669ac60673e8",
+    "normal-declared.json": "07add8a24c8d4d92a09f96d1613e9c06702c6204a04bdd7b2ef4134d7ea3a166"
+  },
+  "noWhole1493OrArtBalanceHumanAcceptance": true,
+  "runtime": "6354e659261b612d92ef21668f1285dc3ecc9e64a3d142eeec32617eacf5375a",
+  "unchangedProduct": "411b51f4183ac711da91a9c20241fc8b1b275c28",
+  "priorAndCurrentAll112ActualPayloadFilesAnd224HTTPExact": true,
+  "payloadFiles": 112,
+  "payloadBytes": 11270102
+}
