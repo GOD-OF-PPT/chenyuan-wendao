@@ -61,7 +61,7 @@ def validate_source_stage(root):
   return p
  if not(root/LEDGER).exists():
   assert not(root/MANIFEST['display']['path']).exists(),'SH09 missing ledger'
-  p=root/MANIFEST['parent']['path'];assert not p.exists()or MANIFEST['parent']['newImport'].encode()not in p.read_bytes(),'SH09 missing ledger current parent'
+  p=root/MANIFEST['parent']['path'];assert not(p.exists()or p.is_symlink())or hashlib.sha256(local(MANIFEST['parent']['path']).read_bytes()).hexdigest()==MANIFEST['parent']['beforeSHA256'],'SH09 missing ledger current parent'
   return set(),0
  assert json.dumps(json.loads(local(LEDGER).read_text()),sort_keys=True)==json.dumps(MANIFEST,sort_keys=True),'SH09 immutable ledger and typed caps'
  row=MANIFEST['parent'];raw=local(row['path']).read_bytes();old=local(row['before']).read_bytes()

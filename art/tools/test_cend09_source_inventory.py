@@ -39,6 +39,8 @@ class SourceStageTests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'SH09 missing ledger'):validate_source_stage(self.root)
   (self.root/MANIFEST['display']['path']).unlink()
   with self.assertRaisesRegex(AssertionError,'SH09 missing ledger'):validate_source_stage(self.root)
+  self.write(row['path'],(ROOT/row['before']).read_bytes()+b' ')
+  with self.assertRaisesRegex(AssertionError,'SH09 missing ledger'):validate_source_stage(self.root)
   self.write(row['path'],(ROOT/row['before']).read_bytes());self.assertEqual(validate_source_stage(self.root),(set(),0))
  def test_typed_budgets_and_acceptance_cannot_be_resigned(self):
   for key,value in [('maxCSSBytes',6801),('maxParentBytes',6684),('version',True),('newRasterAssets',1),('userAcceptance',True)]:
