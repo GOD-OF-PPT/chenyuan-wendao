@@ -1,0 +1,4346 @@
+{
+  "coreProducer": "aa05fd04dc6293b2617b87894bfbf437662b6ef0",
+  "consumer": "600ae1dfba75e8d192d5d778c8a07d11ed1621e4",
+  "completeComparedFiles": 1084,
+  "allCoreRuleAssetsScriptsDesignsAndGameSourcesExact": true,
+  "hashes": [
+    {
+      "path": "src/demo.ts",
+      "sha256": "927e40ac1d792afd0e2f28c2cf7bdd55509af07713ef3db116a7a5019ac9307e"
+    },
+    {
+      "path": "src/full/preparation.ts",
+      "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a"
+    },
+    {
+      "path": "src/full/story-context.ts",
+      "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950"
+    },
+    {
+      "path": "src/full/mechanisms.ts",
+      "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221"
+    },
+    {
+      "path": "src/full/economy-ledger.ts",
+      "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0"
+    },
+    {
+      "path": "src/full/versions.ts",
+      "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64"
+    },
+    {
+      "path": "src/full/errors.ts",
+      "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4"
+    },
+    {
+      "path": "src/full/queries.ts",
+      "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48"
+    },
+    {
+      "path": "src/full/contracts.ts",
+      "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa"
+    },
+    {
+      "path": "src/full/costs.ts",
+      "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb"
+    },
+    {
+      "path": "src/full/engine.ts",
+      "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+    },
+    {
+      "path": "src/full/content.ts",
+      "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c"
+    },
+    {
+      "path": "src/full/ascension.ts",
+      "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a"
+    },
+    {
+      "path": "src/full/types.ts",
+      "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064"
+    },
+    {
+      "path": "src/full/growth.ts",
+      "sha256": "42076ba5b572e519d64c3d85b570b223d36af1dac8510f4dedc928e137beaf26"
+    },
+    {
+      "path": "src/full/activity.ts",
+      "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815"
+    },
+    {
+      "path": "src/full/adventure.ts",
+      "sha256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015"
+    },
+    {
+      "path": "src/full/events.ts",
+      "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d"
+    },
+    {
+      "path": "src/full/milestones.ts",
+      "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492"
+    },
+    {
+      "path": "src/full/life-record.ts",
+      "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7"
+    },
+    {
+      "path": "src/full/goals.ts",
+      "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883"
+    },
+    {
+      "path": "src/full/validate-content.ts",
+      "sha256": "72bd297d0f44036ba0b0b84d587f00a11d6b14b8fd2656f0381681d9fefb02d1"
+    },
+    {
+      "path": "src/full/receipts.ts",
+      "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae"
+    },
+    {
+      "path": "src/full/trial-rules.ts",
+      "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53"
+    },
+    {
+      "path": "src/full/progression.ts",
+      "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406"
+    },
+    {
+      "path": "src/full/configuration.ts",
+      "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520"
+    },
+    {
+      "path": "src/content/m1.ts",
+      "sha256": "59698c8ad88139e768b674084f24daf258715cd5dbfcc70b6b4f70c3b8492aa3"
+    },
+    {
+      "path": "src/game/engine.ts",
+      "sha256": "191fff654eb23d99aade8b7bc9ad04a9ba69e303430f164f4f2396c79ab93b7d"
+    },
+    {
+      "path": "src/game/types.ts",
+      "sha256": "b34e4fb9876ff51ddf00e00e76e74073301d33e51c06b6ee8d2f26fe0406efab"
+    },
+    {
+      "path": "src/game/session.ts",
+      "sha256": "62151d580bc453b47008dc5251e8b8207fdf67bf0a609ca9e5088f2632ab6b9a"
+    },
+    {
+      "path": "src/game/adventure.ts",
+      "sha256": "25097127132e6ddf8f121820b64b0ff40c68f5c746e4f8d11a74dbf6345f434c"
+    },
+    {
+      "path": "tests/idle-check-uir34-02-04-additions.json",
+      "sha256": "61ac6f0f7d86281258088294dd1933a65f4d6c0477c981a2d110b828e82b847b"
+    },
+    {
+      "path": "tests/idle-progression-route.test.mjs",
+      "sha256": "ca377dedf9441562837fcab1626c61d094fd3f74bb618c43bc72397de626cb29"
+    },
+    {
+      "path": "tests/full-trial-journey.test.mjs",
+      "sha256": "60ff27de1478a0b61ef8059f4f81c87b965dd060b24b282869fc32140f9a3cd2"
+    },
+    {
+      "path": "tests/trial-journey-route.mjs",
+      "sha256": "f57cabb60d5eb296bf94a7142d065f560ac0b073f8ffd1b7607c1522ff67f95a"
+    },
+    {
+      "path": "tests/full-preview-resolution.test.mjs",
+      "sha256": "30db2103683a804d26a00841e3b2f16c1b71f95cf69148d1ad7bef7115f3d5d8"
+    },
+    {
+      "path": "tests/idle-cend07-f04-additions.json",
+      "sha256": "3769828a3ab26da698faaf858fabb427159cd2b8173b2184bf7554a740338b2c"
+    },
+    {
+      "path": "tests/idle-ux33-additions.json",
+      "sha256": "90685bd6eb195340e5f19471dd2ff579da654f8c806f4e538eab3968962efa9b"
+    },
+    {
+      "path": "tests/full-compatibility.test.mjs",
+      "sha256": "796c5540fe15a08c21eae3044872ea22f894d33a90e20dda95adcb41c753539f"
+    },
+    {
+      "path": "tests/ui-desktop-art.test.mjs",
+      "sha256": "a74d8918b4704b50e402dcca24dc3c3a6ccd4ec07bd4e613d82235892a28a302"
+    },
+    {
+      "path": "tests/candidate_integrity_test.py",
+      "sha256": "e0208d633d75ffeae7f2e8cfd71042693cb2981490a1f812b93cfcd2eed21107"
+    },
+    {
+      "path": "tests/ui-character-battle-art.test.mjs",
+      "sha256": "df975e7218a38ec3eec2a7a32bb5adcce02c3d09c80a5eeda54eb5f12b34a75b"
+    },
+    {
+      "path": "tests/full.test.mjs",
+      "sha256": "bf291b0c7fee16c6c81f978c601b92f2114e9a3125b3f3ae45051caf30280fda"
+    },
+    {
+      "path": "tests/full-route.mjs",
+      "sha256": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321"
+    },
+    {
+      "path": "tests/journey-coverage.test.mjs",
+      "sha256": "92fc287d5dd04a543257d6dc05505238df7f27c2d9d9cb03b948c3601d48b68f"
+    },
+    {
+      "path": "tests/full-trial-preparation.test.mjs",
+      "sha256": "1b45e9fe355e9dc7f4d2df9fe1942617904611555bb3e1f2b0f244001e3f908a"
+    },
+    {
+      "path": "tests/idle-performance-budget.test.mjs",
+      "sha256": "d4e538f3dab009fb38c019d7e157a9ed2310a5ac112d1c89b6c1b9ac7aa93a5a"
+    },
+    {
+      "path": "tests/idle-cend07-f03-additions.json",
+      "sha256": "02b2b2e1a57b4dee35f9174aded168747390684c02139753271f35065b38e1eb"
+    },
+    {
+      "path": "tests/ui-art-effects.test.mjs",
+      "sha256": "42499bccf9a6d1f48fbb6155700c06d40d8926efbaf9f508b757d7b41d8d1812"
+    },
+    {
+      "path": "tests/idle-check-uir34-05-07-additions.json",
+      "sha256": "2869cb879d57bde697308d96c11f0a46dd84c63166b3d621f84004d373e4311d"
+    },
+    {
+      "path": "tests/idle-check-ui35-additions.json",
+      "sha256": "fbf9cdf9dbb77f30c0b1891b54bd4283bf43a34ba8cbedf5ec6c42cad8812177"
+    },
+    {
+      "path": "tests/full-equipment.test.mjs",
+      "sha256": "17241d38421f99fe18e0ab61c597b39e27b8b255495854996591a7ff49ed5de1"
+    },
+    {
+      "path": "tests/story-pages.test.mjs",
+      "sha256": "2a4140199c76492b36f95200fb93e1af3ce224b99758c4617bbc5f0bf6494e27"
+    },
+    {
+      "path": "tests/idle-comprehensive-additions.json",
+      "sha256": "891ca26a79ec6a4c19e903266e479316605b8a6ae22943e5db0330b7d73e3c12"
+    },
+    {
+      "path": "tests/idle-progression.test.mjs",
+      "sha256": "6ec0a727500b11754eee67c99059a008fdcb70de7b7f4c988f9d08ff101c6844"
+    },
+    {
+      "path": "tests/ui-forecast-context.test.mjs",
+      "sha256": "a12828a6c8c9f4e09288c1c26ee0259154789c4c7ff5c8fa795936cca78ebca4"
+    },
+    {
+      "path": "tests/core-validation.test.mjs",
+      "sha256": "aa5e99d2295a7400fc51fcbdba592fb6f4bb448fba4b07d1f0dae5ed30196240"
+    },
+    {
+      "path": "tests/idle-check-lifespan-alchemy-additions.json",
+      "sha256": "7048abfba0dfccdb6117e8dfa3e4796b462fda0ada0c970041ddb48d03c16bdb"
+    },
+    {
+      "path": "tests/idle-ux32-additions.json",
+      "sha256": "518beb2c343e7e1d339e78fa2a8f366d3d6f703fa8883f815958c919d29d913e"
+    },
+    {
+      "path": "tests/trial-preparation-route.mjs",
+      "sha256": "08e44ef986c7bf69fa255c41bcb5247b5463a62269fe45dbf0755cefb98eb419"
+    },
+    {
+      "path": "tests/ui-scene-presentation.test.mjs",
+      "sha256": "0107622e31ce0c0015864e2783e1a7989c28ced288984ef7462f1c75929767e3"
+    },
+    {
+      "path": "tests/activity.test.mjs",
+      "sha256": "619fa5344f54f1278dd946a9270cc2ba1fb51ee08a6092542e162710d3e56e2a"
+    },
+    {
+      "path": "tests/reading-memory.test.mjs",
+      "sha256": "10c2c63d7c52c61e1d91c82f7178467f26966b18c602ce92196c36b67afe59ee"
+    },
+    {
+      "path": "tests/idle-check-uir33-02-additions.json",
+      "sha256": "4c571c8cf9801c4e2a999c791940dd2e0bd93cae57211543358336b7bd111620"
+    },
+    {
+      "path": "tests/full-queries.test.mjs",
+      "sha256": "fe3ad8b95d5a3c2ee662e277d69737da30a0e143844d4127f6221fb520c52f3e"
+    },
+    {
+      "path": "tests/play-flow.test.mjs",
+      "sha256": "1d7e897ca283551bab7d53a80a4f83c4abb0f98d30b810a4eb8358f83fd5c8b9"
+    },
+    {
+      "path": "tests/idle-ux30-additions.json",
+      "sha256": "866c0ec2ba979480d7cbb28cedd46bbf0d0573bd959fd784c8ccaf31bdc0a7e1"
+    },
+    {
+      "path": "tests/idle-matrix-evidence.test.mjs",
+      "sha256": "eceb5937c49cc4ed490d2c0678f780a23f3d9b9805eee74aa15ba233c8a69a30"
+    },
+    {
+      "path": "tests/activity-effects.test.mjs",
+      "sha256": "3e6c38b1d6d756c40cbeef2aa506a2494a244c48be2bc96c07bb31f41ed4bfb5"
+    },
+    {
+      "path": "tests/build-identity.test.mjs",
+      "sha256": "2d467c80387d3bf73a600de960d77f4e35a6955094e478cb5eb901c4f142e79a"
+    },
+    {
+      "path": "tests/configuration.test.mjs",
+      "sha256": "46f19744a6ba6f4cfc0a69909d45842af2a250f2718861c57c53f13dd6c90ade"
+    },
+    {
+      "path": "tests/local-events.test.mjs",
+      "sha256": "acc130c0f9b6b45114f3b5750a95f6305b3b426867feb3557559f78ef61f09e1"
+    },
+    {
+      "path": "tests/candidate-policy.mjs",
+      "sha256": "7a722b30a3e18e3e13690d269d60a55465b7110186afba3dac6ca7bdc80b8541"
+    },
+    {
+      "path": "tests/visit-route.test.mjs",
+      "sha256": "e730571e8dc0d0bc7a1bb678f93b1fa08283c214dce5f275c896779f2f746faa"
+    },
+    {
+      "path": "tests/ui-battle-medicine-summary.test.mjs",
+      "sha256": "380db11ac1e2fc6fcd7f6081957ecd280125b2dfce7b345e188a0015ef7b2bf2"
+    },
+    {
+      "path": "tests/full-causal-compatibility.test.mjs",
+      "sha256": "0df6a16d7a8d22274700ea3c96a0b97d01d060451d7b8124f87077e489431b6e"
+    },
+    {
+      "path": "tests/full-extension.test.mjs",
+      "sha256": "c3f6d6505e86eb2afe0f12079f1cb3623a50e685436e4c5574909456643600d3"
+    },
+    {
+      "path": "tests/full-supporting-causal.test.mjs",
+      "sha256": "9a13d5ae59a0f5b8eada75029cbecbc43831d0d6a54bf665d204effa2b39b41f"
+    },
+    {
+      "path": "tests/full-ascension.test.mjs",
+      "sha256": "23fc87205712c98cce42d2b4683ee86a80a1113753337dfa7d9f3a5d7b4faf27"
+    },
+    {
+      "path": "tests/action-feedback.test.mjs",
+      "sha256": "bcbd3b23e629f914db1683ac354e23138740b9516cc926bf8937be050e9f3788"
+    },
+    {
+      "path": "tests/milestone-activity.test.mjs",
+      "sha256": "1bc035f2b089ab8f17736d86add640852604a27fda7901c4bdd85d53d9cb5057"
+    },
+    {
+      "path": "tests/ux20-trial-guidance.test.mjs",
+      "sha256": "ecf5585696f3d853a4a9366bd29551bd3f219b9e502a878758583b98e5e6715d"
+    },
+    {
+      "path": "tests/idle-check-cend07-three-additions.json",
+      "sha256": "e209d0d5004d74df06cf863e22b79477fd5ceb96eb29b90a6dc3951d8c907d20"
+    },
+    {
+      "path": "tests/ux21-trial-return.test.mjs",
+      "sha256": "8ac91683ecd5374bf2ae50929c9b03aeaf825b41f6a80a844665c865cf3cd21d"
+    },
+    {
+      "path": "tests/idle-check-uir33-01-additions.json",
+      "sha256": "efeedea242555f173d68ca87fd8381f4628fda3931d747f8008baeeccd166678"
+    },
+    {
+      "path": "tests/full-economy-costs.test.mjs",
+      "sha256": "1304e19480fd6b2deaa1c7da7b2dbe1e13505c442fef840680fc4bba5105c9dd"
+    },
+    {
+      "path": "tests/candidate-evidence.test.mjs",
+      "sha256": "bca89fab5ecdc5a56cb094bfae7e46df54941636ff17296e72829d10ae0e3e40"
+    },
+    {
+      "path": "tests/full-receipts.test.mjs",
+      "sha256": "3552f4120d8ac210d4feee2f6cde82ac14fac567c20ca675ceba7c90d495021e"
+    },
+    {
+      "path": "tests/equipment-effects.test.mjs",
+      "sha256": "7d67d645c39da68cf0bf0f1987d7ff092766f7f470433b38a23b0b614f5c1de1"
+    },
+    {
+      "path": "tests/causal-route.mjs",
+      "sha256": "9987d0f04d5d0dddddf095d38dcabc30430cd77d63512fb18a09ed63c6bb584f"
+    },
+    {
+      "path": "tests/candidate_documents_test.py",
+      "sha256": "a3d8deb5b33b74beb62315f0d0b162fc65f7c18742130a8d5d4cae4451ff82ac"
+    },
+    {
+      "path": "tests/idle-ux31-additions.json",
+      "sha256": "ba839dd29a4394d347a43a6b1797c00850560fd39f1f1aef8703bc9b699a66c9"
+    },
+    {
+      "path": "tests/idle-check-cend07-bc08-additions.json",
+      "sha256": "480bd4b2b4a071f651349850e305933a9098ab4d9c67a843ba8fae0d12318264"
+    },
+    {
+      "path": "tests/idle-uir34-05-additions.json",
+      "sha256": "2e5455042b73ab124ac03b1ed8dfb70efd217acf928639d237bb4588f35b6e79"
+    },
+    {
+      "path": "tests/recovery-matrix.mjs",
+      "sha256": "97fbee7ef952a250c34821ae9409625f5157595e85c96fb873d37fe09e0f5d32"
+    },
+    {
+      "path": "tests/ui-battle-choreography.test.mjs",
+      "sha256": "a9e69afde5e41838b752e668f82456c65186f62a663e83e899c0e4a2831361e5"
+    },
+    {
+      "path": "tests/full-adventure-activity.test.mjs",
+      "sha256": "8cd8dfe3d4fe1c4163af507e24e66ca626cf083cd60676ec3f133a677dcbae38"
+    },
+    {
+      "path": "tests/supply-effects.test.mjs",
+      "sha256": "687bfeac665fdcf96edae661327adc7444102bd14ac8259d16b5cf0589026b23"
+    },
+    {
+      "path": "tests/full-economy-ledger.test.mjs",
+      "sha256": "cedcc01b2a5062371da906178315307be9dd445ccba0b650f988580c45f24b0b"
+    },
+    {
+      "path": "tests/idle-uir35-03-additions.json",
+      "sha256": "87476557033eaf961df84eae6655053029ca48723f4d6b0ec95d7dc20f6e4e9e"
+    },
+    {
+      "path": "tests/idle-uir33-01-additions.json",
+      "sha256": "d191a2be1dec18656f74b6b5558606a9a96154cdb7e3ad9972acb442617eb680"
+    },
+    {
+      "path": "tests/lifespan-guidance-fixtures.mjs",
+      "sha256": "317ec5d685451ab53700b58faa5dd3fe799551c57e9b248fbacfc4241f647b25"
+    },
+    {
+      "path": "tests/idle-uir34-02-additions.json",
+      "sha256": "67ce1c02c9146fdaf355bdeae272e57813a1404822708d916a40aaf5f4f029e5"
+    },
+    {
+      "path": "tests/lifespan-guidance.test.mjs",
+      "sha256": "d0251bb67c17406250805a23119d2dbd5520445d932040d60cd345092fdbe8e3"
+    },
+    {
+      "path": "tests/adventure.test.mjs",
+      "sha256": "d749281b4080098cf5459ea2cdfb6d4614fe1fd4837475bc14d3d358039e9478"
+    },
+    {
+      "path": "tests/cultivation-effects.test.mjs",
+      "sha256": "293fbd4c06a4e9136cd604a54d1edd09dbaa2d9025f8466c6dafd4a03ace4361"
+    },
+    {
+      "path": "tests/activity-clock.test.mjs",
+      "sha256": "b6c980bf58c8fa406d9779cb3d4419bd4d5e2903eabd109acd14ed02ff2a11e9"
+    },
+    {
+      "path": "tests/cultivation-fallback.test.mjs",
+      "sha256": "7eb2add23de0d6b62f51c5375132f0097cc7bd9c93c2bfeba654b1560d5c7839"
+    },
+    {
+      "path": "tests/idle-cend08-study-additions.json",
+      "sha256": "66b4ec8f6e8fad8d20a75b126dd0b07f9aa4fed787e1b1627c6c1e8e473aead0"
+    },
+    {
+      "path": "tests/idle-uir35-04-additions.json",
+      "sha256": "79afeaabd448792ac8567f0d355c37bacd9d8c7f8f4778ac637a8d8ed3082266"
+    },
+    {
+      "path": "tests/economy-report-current.test.mjs",
+      "sha256": "2f54a6c3212aa5cb20b902178029c1a87ac1d2335bddec6ad95c1399fa370c84"
+    },
+    {
+      "path": "tests/idle-uir33-06-additions.json",
+      "sha256": "daf42f276cefa5f4e7f9ba703d60b56393a01de6691b1bc510c1b1c6ae9523f2"
+    },
+    {
+      "path": "tests/idle-check-cend07-additions.json",
+      "sha256": "6e572490eeb7e344347405c6c19ced144bad1ce957258b1e7ff733057e906701"
+    },
+    {
+      "path": "tests/full-consumption-preview.test.mjs",
+      "sha256": "16eb11ba86ae72ba8ceffdc254c5569cb6ee8d841784ea2a27f947953efe07db"
+    },
+    {
+      "path": "tests/idle-recovery-native-migration.mjs",
+      "sha256": "8102cb2e17490a2fc63e32f247485a4b0edb96e3398f6b89e7af1ef87cb487c7"
+    },
+    {
+      "path": "tests/candidate-documents.test.mjs",
+      "sha256": "f6a7696afa46ae712136872c4410ab2a8684d345085ad47d361e8750fd9eb7f5"
+    },
+    {
+      "path": "tests/demo-nodes.test.mjs",
+      "sha256": "907778909809bb952250be0148246116fcccb7f3beeace865e7bfc8129321fe7"
+    },
+    {
+      "path": "tests/idle-uir33-07-additions.json",
+      "sha256": "1075e2ab4c2f1ccc52cb089668aa3901f359af6b38d28add6fa4c47132de119e"
+    },
+    {
+      "path": "tests/idle-uir34-03-additions.json",
+      "sha256": "ead3e82e3c5f113c5149148b53530524107fbea4c51bed8edd714829d3e351a7"
+    },
+    {
+      "path": "tests/idle-uir35-02-additions.json",
+      "sha256": "ae9337ea0637afbcae42cec7876c42b5fb1f778c10e557ffe55315b95222089f"
+    },
+    {
+      "path": "tests/full-sword-manual.test.mjs",
+      "sha256": "78cf5087e6085fc43b867cba1e9a3155b428870bfd6fe815d8d926079bc1ee21"
+    },
+    {
+      "path": "tests/candidate-server.test.mjs",
+      "sha256": "086b5da62825c018ac1d86d7febb271c8b0dfe8bf6a5dbbfad33478be12cab04"
+    },
+    {
+      "path": "tests/idle-cend07-f02a-additions.json",
+      "sha256": "eea8914a04dde603d53f8cf3bf757a0a11c64632375dfac7262de384e78b590a"
+    },
+    {
+      "path": "tests/full-causality.test.mjs",
+      "sha256": "a67d1dbdc5c932897ee52e80c7933ea4af021066e17a5e641302d1fb7227d577"
+    },
+    {
+      "path": "tests/idle-uir34-04-additions.json",
+      "sha256": "50cba138d73ab2cb4ed3aabffb669383f9bd81e61959c39ab9a7c36c3da9c1cb"
+    },
+    {
+      "path": "tests/full-contracts.test.mjs",
+      "sha256": "85f6938370ff5f2136dac0cb7a40a758c21df23655241e9a5dc647c8a0849fda"
+    },
+    {
+      "path": "tests/full-life-record.test.mjs",
+      "sha256": "186f5489b98407fe7f75727abd3cd87d06ca48a5afd80b36b3b4849270cd7016"
+    },
+    {
+      "path": "tests/preparation-activity.test.mjs",
+      "sha256": "d013f766b5dba0819f58d35172b870ea04757521d3119c05790b615dc9098f7e"
+    },
+    {
+      "path": "tests/idle-uir33-08-additions.json",
+      "sha256": "7ae37fa9474b9416096cd7c543464cdb583e85e54ee1d514e211465f79f28c2b"
+    },
+    {
+      "path": "tests/action-feedback-fixtures.mjs",
+      "sha256": "caae2948278f71852bab474874b32d3a7b6e2bd4b0a3b70bbc346337b6dc0f34"
+    },
+    {
+      "path": "tests/idle-cend06-f02a-additions.json",
+      "sha256": "84d373413db48f138d09e7da53ee78fdc3c6c5e521c58207652be9601fc9f82d"
+    },
+    {
+      "path": "tests/full-goals.test.mjs",
+      "sha256": "2f15c2ea988ef446d1ceb1a579bc87ade54180bfa84779eb8fe1bc61532fa3b3"
+    },
+    {
+      "path": "tests/life-route.mjs",
+      "sha256": "028c01fdadeda74140f3e98da3e98bddf01ed8a89d645991566da78b8d1f0a1e"
+    },
+    {
+      "path": "tests/idle-cend07-f02c-additions.json",
+      "sha256": "607fcc3284ce5df49d97be2ab8df579119679e07f2f4fcb228b4a4a6cc10b61f"
+    },
+    {
+      "path": "tests/idle-uir33-02-additions.json",
+      "sha256": "bd6c197db6a9bded7ddd83cabc6aab91f92e1019c0fef01a0d40fe2e7e44ecf9"
+    },
+    {
+      "path": "tests/recovery-coverage.test.mjs",
+      "sha256": "25635fb93015c1af826d07d1996f38bf5f387bdc847509fc14ce85d64b734ead"
+    },
+    {
+      "path": "tests/idle-configuration-tradeoffs.test.mjs",
+      "sha256": "26cedde5f5a3cb34d67fc7d893e6c6013a65d7d4b232dc202d0f5907eb12aade"
+    },
+    {
+      "path": "tests/cave-threshold-view.test.mjs",
+      "sha256": "7c57d1cd3379d91a342490644eaee629529ded2097ee235ef870d2838ca39f02"
+    },
+    {
+      "path": "tests/narrative-effects.test.mjs",
+      "sha256": "6866aaf6478221dd21e38a99d2f8d9982428d40e6579b2aba08d551ac28fe438"
+    },
+    {
+      "path": "tests/outcome-focus.test.mjs",
+      "sha256": "6dccc9ca9014ecc9495fee77edacf956ad12d63f119394f75769d814de57ed7c"
+    },
+    {
+      "path": "tests/full-growth-stage.test.mjs",
+      "sha256": "9c9742cc1983d7d34f205b0c4eb462e35a6903b797361e439730010278e85bff"
+    },
+    {
+      "path": "tests/production-activity.test.mjs",
+      "sha256": "848e412ce6a07733ad39a3f8bcf517156a6111d9e06a70c9de474edad8b71e2b"
+    },
+    {
+      "path": "tests/engine.test.mjs",
+      "sha256": "3ea77319e4ef46ec47c764b4efaa34d36be1d69d6ef940e673de8dcb9f0f3d2b"
+    },
+    {
+      "path": "tests/idle-uir34-06-additions.json",
+      "sha256": "a5cab45d57078f0727ccb51d2526e5cd264cf42c0e677b15929484b93973d6df"
+    },
+    {
+      "path": "tests/idle-uir33-05-additions.json",
+      "sha256": "f46d5f46897d468fa184d5cafa75d766d933e14f8d3d63248cab4040bf030383"
+    },
+    {
+      "path": "tests/performance-budget.test.mjs",
+      "sha256": "01e5f2e11235b1d0ffd913122b48d59637e85c269161b8018010b763b3a6365b"
+    },
+    {
+      "path": "tests/idle-uir34-01-additions.json",
+      "sha256": "acbd57d5a6d4b47076cfa4d4482f628bd8f9dd18aae1a77789b468125b96ce80"
+    },
+    {
+      "path": "tests/alchemy-feedback.test.mjs",
+      "sha256": "44eb5415fb25a58343b9c52cee3f588ed8089b8a55824509fdb0799a4bf8f188"
+    },
+    {
+      "path": "tests/idle-check-ux31-33-additions.json",
+      "sha256": "58074feee9dfd3be6ca9f319b21e006a55645729df8f26a40d2f6ab885ce1264"
+    },
+    {
+      "path": "tests/historical-full-runtime.mjs",
+      "sha256": "d4cded1771545900f319a951786a2cc4f604544a127f3fe9e4ce57c4f0bd73ae"
+    },
+    {
+      "path": "tests/ux19-first-loop.test.mjs",
+      "sha256": "85c90abe71ca85e5b86ca118fe018070e508c6ca0052b5e8ba66b1f931c4b08f"
+    },
+    {
+      "path": "tests/idle-uir33-04-additions.json",
+      "sha256": "1353055715598dadd84452879ed5d1d8cc7c09efa266f4d7fbe1166841cffffe"
+    },
+    {
+      "path": "tests/journal-anchors.test.mjs",
+      "sha256": "9d0df5d21c0ae391a4681eb906674ba3212b5fce394c4c34643b89673fab30d4"
+    },
+    {
+      "path": "tests/full-content.test.mjs",
+      "sha256": "5d9308ab9f3f78fd7741bcbc68cccf255aff64dca5495b14388f709eb176b732"
+    },
+    {
+      "path": "tests/idle-check-ui35-source-additions.json",
+      "sha256": "3c48be5b2ced3c9d162c64afaf8f77aeed9bd078c3026b456a91141767eb48e9"
+    },
+    {
+      "path": "tests/idle-cend06-f02b-additions.json",
+      "sha256": "5c8655f5a86ff041c0c4a5ee14aef3496c416635123f4a8b10dae00b57cb9a02"
+    },
+    {
+      "path": "tests/idle-uir34-07-additions.json",
+      "sha256": "549f66092460ba1a00f6f8086cd65211da833c035fe618df61d53614e1fb3e59"
+    },
+    {
+      "path": "tests/guidance.test.mjs",
+      "sha256": "f55201db11543d247a6298d103cc241d7fa578674560edbc625dd7c45a8cb0ee"
+    },
+    {
+      "path": "tests/idle-recovery-matrix.mjs",
+      "sha256": "f67fc0aea78364f636e074da14b705d58884f5b8593289ebfbefa4c8568c2c2d"
+    },
+    {
+      "path": "tests/full-growth.test.mjs",
+      "sha256": "00b21d636754715fdde4d30510e0274262d354228ec15f273727d67c77f08eca"
+    },
+    {
+      "path": "tests/idle-cend07-f02b-additions.json",
+      "sha256": "adae2d615552772384529a609748336db5e0fc00b5dd06bf58df8d1c0ac0a651"
+    },
+    {
+      "path": "tests/source-activity.test.mjs",
+      "sha256": "59399d2d5679b9dacd3d98e51ec901150f634989df996759eef25fa8b3864845"
+    },
+    {
+      "path": "tests/idle-uir35-01-additions.json",
+      "sha256": "6f0a464db87965b80302fa68a306e7d063ddc5cffab3b54e675f29b588a509ee"
+    },
+    {
+      "path": "tests/ascension-matrix.mjs",
+      "sha256": "bb7ac8bbf57c3e56daf13e3ed7460e0a7a17cacf67108a7d5aa9ad4bf6711b7b"
+    },
+    {
+      "path": "scripts/performance-budget.mjs",
+      "sha256": "34e06f198ac94494c4bb0a2799dc6a274868dfce0b9198506136ab81d9ae54a9"
+    },
+    {
+      "path": "scripts/check-recovery-coverage.mjs",
+      "sha256": "d4cfd2012606494f73a157a3ded63d59209f9fc4e5a0faf815a72f58405b8bfa"
+    },
+    {
+      "path": "scripts/check-journey-coverage.mjs",
+      "sha256": "b0aa86a65b402db8c80e6ce83e572b3f316f2fea0329f87f733d83b7399e4265"
+    },
+    {
+      "path": "scripts/candidate-receipt.mjs",
+      "sha256": "05504718eec984bb9c7319d465314f313516549860eac966dcd82c343b0d0bf6"
+    },
+    {
+      "path": "scripts/source-identity.mjs",
+      "sha256": "a52e3e167b389aae6c4fa98d07b02a2ae52dbace1ec81d80a5e6f8254e6dcf24"
+    },
+    {
+      "path": "scripts/reproduce-candidate.py",
+      "sha256": "82668df0abdd7230e3b3909d056ce7ebf1dd5214583aeefd9befa20d1bdc8f13"
+    },
+    {
+      "path": "scripts/check_docs.py",
+      "sha256": "733db64824f5de3310ea362af1c285a80bf55ad2a1a44d85d16a5bdd8f2f30bb"
+    },
+    {
+      "path": "scripts/idle-performance-budget.mjs",
+      "sha256": "f8b24c7d7d72c493dc3472a62a049c1038a5bd10e2394c10078f00b2308e04c4"
+    },
+    {
+      "path": "scripts/candidate-evidence.mjs",
+      "sha256": "1a651e9628358e8517fc40c9b82faf512a77435f4eb65b1ea6539dce14d7a457"
+    },
+    {
+      "path": "scripts/dev-web.mjs",
+      "sha256": "29620dc250f281f3a37e029e49c66e49dc91a952c2e88b43c2294922ea23ae66"
+    },
+    {
+      "path": "scripts/build-web.mjs",
+      "sha256": "49b6abd19ac0a424b27ca86a69bc3601ea66cde2be720b232dae595ab31ec83e"
+    },
+    {
+      "path": "scripts/check_lock.mjs",
+      "sha256": "e36ee447b69b39306059e99cfd2c175cb0cf3e4b9b36ae3532397c661c66b763"
+    },
+    {
+      "path": "scripts/replay.mjs",
+      "sha256": "4c681206a37be0b73a976c7b9fdd077d04b6ea20233121bc29d22545cda69b87"
+    },
+    {
+      "path": "scripts/idle-matrix-evidence.mjs",
+      "sha256": "c2dc6797b779a267d3e2aec9f0020dde31d9978d8725de6b779ba3a670a17e25"
+    },
+    {
+      "path": "scripts/demo-nodes.mjs",
+      "sha256": "8523f135c748f9240fb0d706e126213872dae91c09c398504a55d57918c52c97"
+    },
+    {
+      "path": "scripts/package-candidate.py",
+      "sha256": "aaee334c931c588a971d922acd5efeded152f58ea1ed35bbd9b88e30a90f8e0a"
+    },
+    {
+      "path": "scripts/assert-web-build.mjs",
+      "sha256": "4d8b60c8aa870eeb892c6ad56d2f8c9ae03d97e6070f784744bb40fd01e55da9"
+    },
+    {
+      "path": "scripts/check-full-content.mjs",
+      "sha256": "563c0f8aa10013aeaab493600ab33b1e6276c8b7f5368237fcb1625af4f68259"
+    },
+    {
+      "path": "scripts/validate-core.mjs",
+      "sha256": "2485ce0220d1d04d38d5cc8946a9242be2523aa49f513684444584a1ec4a437b"
+    },
+    {
+      "path": "scripts/record-web-build.mjs",
+      "sha256": "d6f73b33df1feecf32172c3c012ce247242cf3622ae2503d55250af68b2f41db"
+    },
+    {
+      "path": "scripts/replay-economy.mjs",
+      "sha256": "2427684345ba83ff94ec563e364e3999cb9b5a340d4df242b856403bae8ce352"
+    },
+    {
+      "path": "scripts/replay-full.mjs",
+      "sha256": "bef9857ef008a4e45f96890a63d6f630c5e45db9da5de1fda22613570d12625e"
+    },
+    {
+      "path": "scripts/candidate/serve.py",
+      "sha256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565"
+    },
+    {
+      "path": "scripts/candidate/verify.py",
+      "sha256": "a218489ab98b3ab097ffca0a79404ebbed355369102bc0ba72ffeff1be214474"
+    },
+    {
+      "path": "scripts/economy/scenarios.mjs",
+      "sha256": "7b82f06c10749a9d81e6cb8c3486c26d886a5ca30dd198471f68f9e67891ca9e"
+    },
+    {
+      "path": "scripts/economy/analysis.mjs",
+      "sha256": "814fc2d7ec7a71ad5de72a41e054a599e945c2a63c5bf5aac993cf93c6fbc75b"
+    },
+    {
+      "path": "scripts/economy/idle-scenarios.mjs",
+      "sha256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407"
+    },
+    {
+      "path": "art/requirements.txt",
+      "sha256": "41b54a6fb2918667ca47a61d73b522629d84490f3d78f0f20b21135faba10d35"
+    },
+    {
+      "path": "art/PROVENANCE.md",
+      "sha256": "4d94cced577dc288ea1d56e13c38790f7d6a7ad280f00da4d2076a67dfbb1be2"
+    },
+    {
+      "path": "art/asset-manifest.json",
+      "sha256": "9825ba2ce3dcf1073c3eabd337bf9ea12e24cc81ec29179fc58c504366f180d5"
+    },
+    {
+      "path": "art/PRODUCTION_BRIEF.md",
+      "sha256": "6704498a379bea0c80bc5a214c20c9bf7b243097e3cc98e257ec0c2af0b32f23"
+    },
+    {
+      "path": "art/README.md",
+      "sha256": "32165610653f58129be10df67ef60d8d58407fc3bf1c85101222e76aedfa7487"
+    },
+    {
+      "path": "art/tools/export_art10_blanks.py",
+      "sha256": "c2325033831b0e9ecff5894c084774483b93864f1430bc31c8fec183a9ec7340"
+    },
+    {
+      "path": "art/tools/export_art26_actor.py",
+      "sha256": "a021811c4704843004c6871fe75da03fec95c1d8dd014aa5872b347de48f58e9"
+    },
+    {
+      "path": "art/tools/art29_inventory.py",
+      "sha256": "6ef5bde41b74ef01da640167d067378400ab8a65c12188b8b635835803150160"
+    },
+    {
+      "path": "art/tools/uir33_04_inventory.py",
+      "sha256": "4ee16bea23fcf45d0169aaf0e6455b97a8b8fceab1b2f2235c660d21da813d0f"
+    },
+    {
+      "path": "art/tools/cend07_f02b_inventory.py",
+      "sha256": "876c2871e35993caf6a655e9ed74a05cbee16e15f1ca47c34fcf4b2db7ffef9b"
+    },
+    {
+      "path": "art/tools/export_art24_scene.py",
+      "sha256": "55736ef97b49b28b93a8359f21eaa0bfdf3272570cde650840be7462233f9daf"
+    },
+    {
+      "path": "art/tools/test_art27_inventory.py",
+      "sha256": "5991bc0756f6b5ac8e6e9e49b19294bc8d20dcb5ae2bcb22c2a41d780b0ab08d"
+    },
+    {
+      "path": "art/tools/art18_inventory.py",
+      "sha256": "c1470ced4084e37c836cc0e51682941b9437f98f4588344a167473ae1262768a"
+    },
+    {
+      "path": "art/tools/catalogue_art_inventory.py",
+      "sha256": "71694f993494548e0afcf9d1f6f4228777bb924bc9635e1bd49dcd32ab0ed5d5"
+    },
+    {
+      "path": "art/tools/uir34_02_inventory.py",
+      "sha256": "469bb687deab2a822e10e26407bf47eeedf783bc86db33ff641cdd89dc13f14c"
+    },
+    {
+      "path": "art/tools/test_art35_inventory.py",
+      "sha256": "215dd4f42247691d9aa6efb1da324809127cabb7fd9be2d84e528493da58c2e8"
+    },
+    {
+      "path": "art/tools/test_ux29_inventory.py",
+      "sha256": "ad69e5b24acdab18804ea33c1ec57c4bb1ef326e7b5081b2f6c3c8ea1215d80a"
+    },
+    {
+      "path": "art/tools/test_uir33_07_inventory.py",
+      "sha256": "d313207494a27ad9cb10c3fed154aa4288a299d228fe332b3a031a9035e2d532"
+    },
+    {
+      "path": "art/tools/test_art32_inventory.py",
+      "sha256": "9a3998f8aa03d4363ffd84d2e62b08c7e0364daa554a453444eddc4c2721f850"
+    },
+    {
+      "path": "art/tools/uir34_05_inventory.py",
+      "sha256": "fe6aca77d4ca25ae0f83e9cd3cf62ab383fcd1e0bfc5126d39b54ef945a62bfa"
+    },
+    {
+      "path": "art/tools/uir33_05_inventory.py",
+      "sha256": "cf4b5ab721641a9be0e59c8386847ace837c2184e7a062b282d926f6d7e3e94c"
+    },
+    {
+      "path": "art/tools/uir33_02_inventory.py",
+      "sha256": "add053905dfe43caf6a7faf6feceecb547ebdbdb5732185851b669acc6e45eb4"
+    },
+    {
+      "path": "art/tools/supply_object_inventory.py",
+      "sha256": "a355c54232d38ed21d57d0eb6d36c805de36ac9492dcbe2d92ce542e47aab0b7"
+    },
+    {
+      "path": "art/tools/check_ui35_source_inventory.py",
+      "sha256": "3f715989d61cef88a7bfadc6d45c44679e4e577769ed2548a773b0c8f90f9bff"
+    },
+    {
+      "path": "art/tools/check_ux31_33_inventory.py",
+      "sha256": "950e754f8af787bed65a09d249b9b50e31f65d72b94c0238acdf077572a75971"
+    },
+    {
+      "path": "art/tools/art28_inventory.py",
+      "sha256": "d1a05be3281a4067c1055f625041ab6253076a76dce0b46eb7ae40cee3d2458c"
+    },
+    {
+      "path": "art/tools/cend06_f02b_inventory.py",
+      "sha256": "d56c613d79273da2f9227267118013bb1890c190d4a022971119f09001d7f9d6"
+    },
+    {
+      "path": "art/tools/test_uir33_06_inventory.py",
+      "sha256": "efbe0116ab04b2b6d53a9361325c5eeb8c115dabded98f126a027b06fc1507ad"
+    },
+    {
+      "path": "art/tools/test_ux28_inventory.py",
+      "sha256": "b33fe6236b0303ae66f6f9e6e7c0a69429036df6adf32d87129b3cfe81ce9540"
+    },
+    {
+      "path": "art/tools/test_art33_inventory.py",
+      "sha256": "0dd0a682fb5961656eb7aa178b2589397abba1129c341849c0f30dd57b4e306c"
+    },
+    {
+      "path": "art/tools/uir34_04_inventory.py",
+      "sha256": "bf0849e8c105988278cd927c3c3018ad60945fdc611ef0b7ddf540e03c89fb69"
+    },
+    {
+      "path": "art/tools/test_uir33_01_inventory.py",
+      "sha256": "ef118249a4cfb72f8c94210e53567660b095843450f9561779ad2d4b13aaf486"
+    },
+    {
+      "path": "art/tools/uir34_03_inventory.py",
+      "sha256": "261f1db791f60588ae7c3e6a7059923bd16dd0492729116a430377fd1ea63e19"
+    },
+    {
+      "path": "art/tools/test_art34_inventory.py",
+      "sha256": "12c1134feba8d37780aab38f6351967cf80f8d6e2abf5c14e3c13f9bef9955f9"
+    },
+    {
+      "path": "art/tools/cend07_f02c_inventory.py",
+      "sha256": "53fa880909098c081a8d374b53b2fd5e5bdffd8c804e1e190ebbb40e89914428"
+    },
+    {
+      "path": "art/tools/panel_materials_inventory.py",
+      "sha256": "cc3dec01c7ca047fd71a1b1709e06e0b3d65e47013dbb336c234af08d9c45eac"
+    },
+    {
+      "path": "art/tools/test_art26_inventory.py",
+      "sha256": "181f7c2aa598c3bfaa7e52acc04ffc08733ccbb639688e08cd1591f87638b51e"
+    },
+    {
+      "path": "art/tools/test_ux30_inventory.py",
+      "sha256": "5c129635041ba140018b32807fabab79ec20c384e96f8ea941f4b3aa03b95384"
+    },
+    {
+      "path": "art/tools/test_inventory.py",
+      "sha256": "f2e4da6c703429b5902b55ad1031da6f4346b24707b1465a77fbdee62a3345f3"
+    },
+    {
+      "path": "art/tools/export_character_battle.py",
+      "sha256": "bcda62084aa68dbf4a545c38f33f5deaefbe141f4436061fc334c8d3db0e610d"
+    },
+    {
+      "path": "art/tools/check_uir33_02_inventory.py",
+      "sha256": "fb57a825e49d21463975d1eac0742e59bdd979a3aaa2aaa3c3d6016caf04690d"
+    },
+    {
+      "path": "art/tools/uir35_04_inventory.py",
+      "sha256": "aa078724cc3ec83d57601319b8ca686b050286fb355621b75e233679f3868a2c"
+    },
+    {
+      "path": "art/tools/ux21_inventory.py",
+      "sha256": "11d8cd7dfadbd899f40a367cd2d69254bfa1917b904c1e03bd6f8c71ec1bec6f"
+    },
+    {
+      "path": "art/tools/uir35_03_inventory.py",
+      "sha256": "d6ba0c42baaa7e196962a2d5ca5f2d7666f85989d170e2db5c757636772f6763"
+    },
+    {
+      "path": "art/tools/check_uir33_inventory.py",
+      "sha256": "2717e72ab11bb3cfb9eed18fbb3fb8a384c20943736dc35f8f16526e12fed2a7"
+    },
+    {
+      "path": "art/tools/art25_inventory.py",
+      "sha256": "2e637b1590b801e20808c59cbf43a7b67a42f870a5d96bc836277645b93be4fa"
+    },
+    {
+      "path": "art/tools/ux33_inventory.py",
+      "sha256": "f4d0fe7ede742392652a4614ad41663f5451696dbea875f78a5feeaf6d5c5232"
+    },
+    {
+      "path": "art/tools/test_check_ux31_33_inventory.py",
+      "sha256": "546c03166bc4d46d10fd8bc13f9115e358e0d211c327daea5c8c074fe9d829cf"
+    },
+    {
+      "path": "art/tools/uir33_08_inventory.py",
+      "sha256": "c158e93d341ba5854c82d97d6d6e714b3c7ea01b3f1e69da1b8fef77bbc049a9"
+    },
+    {
+      "path": "art/tools/ta07_inventory.py",
+      "sha256": "d7f9fb1cc59200fafe0235fe08d1e8045bd269b3d33e602f08643b90826eb948"
+    },
+    {
+      "path": "art/tools/art30_inventory.py",
+      "sha256": "dbc25d86008609e9e9becfbb2e76443d76e4049c2b8636f4b6d6f94adf5f690c"
+    },
+    {
+      "path": "art/tools/cend08_study_inventory.py",
+      "sha256": "ddb382aef87139a75bfef17b006e21b3fdd77be615b45083de494189a11bee73"
+    },
+    {
+      "path": "art/tools/export_art32_stages.py",
+      "sha256": "56965e5cedfb4dd207350ae8f34b00fef9bdb20e02e033ae0364b4235db6c191"
+    },
+    {
+      "path": "art/tools/art37_inventory.py",
+      "sha256": "35759ea50def5dadb241e3512a9bdf0b904e7ce96ffa3b04cde1765b7465afb6"
+    },
+    {
+      "path": "art/tools/export_art37_ui.py",
+      "sha256": "857b1a337cddf60111745a726da42d680fce22fb6f8b6904f056f29389e10e99"
+    },
+    {
+      "path": "art/tools/test_ux23_inventory.py",
+      "sha256": "da92888038386238e456feb97b40542d04a0d624b882fb591e291ccff30b0ca1"
+    },
+    {
+      "path": "art/tools/art15_inventory.py",
+      "sha256": "19dc0f1784c23717e904591bc3af7b2674eb717ed51102df873d983f308a4a0e"
+    },
+    {
+      "path": "art/tools/export_art29_scene.py",
+      "sha256": "50b33c422214691c909475b55eb11b8a08f7ae51d57769cd45e2de5d2c0579e7"
+    },
+    {
+      "path": "art/tools/art12_inventory.py",
+      "sha256": "ba787fadd424e21f41c02127e7c357daf8fed0bea588d5ae74b29829e95ac613"
+    },
+    {
+      "path": "art/tools/redesign_inventory.py",
+      "sha256": "077669288ac63e72e812f925809caa7759285e3288e69f52ed9dd22113655d1c"
+    },
+    {
+      "path": "art/tools/export_art28_scene.py",
+      "sha256": "90ef993f43102b46c1db6f8c299f60e2e5e550fe0790a6284301a75d68e61917"
+    },
+    {
+      "path": "art/tools/test_ux31_inventory.py",
+      "sha256": "b4c2119ff1a28ff9740de71c5d321e392ba54aed5c44ba5d495c5855698bf23d"
+    },
+    {
+      "path": "art/tools/ux32_inventory.py",
+      "sha256": "605394b56b6423a53f5c16a8ce57da936ee926e1404b2b773ec961f9d0d3ef1f"
+    },
+    {
+      "path": "art/tools/art36_inventory.py",
+      "sha256": "7cb3bc81bca62ab873f38093ca147747078a0af190216824d0a773eb66104bf7"
+    },
+    {
+      "path": "art/tools/art31_inventory.py",
+      "sha256": "03a5fdc4b07388b82d40e67c672bda37854e79464e87de2a7da72e3601f7c342"
+    },
+    {
+      "path": "art/tools/uir35_02_inventory.py",
+      "sha256": "8aae6ad0f79f57c086a8d28ed2b256eb9df3705fd9cca6377acd7378556de74b"
+    },
+    {
+      "path": "art/tools/ux20_inventory.py",
+      "sha256": "149c1bdbd920733b24b3a4f46bcfe96e9bc2ada53b158e7d187b4b10f541d899"
+    },
+    {
+      "path": "art/tools/export_art33_opening.py",
+      "sha256": "e0d5d522e9380e6ec047bcd0a69367fc7edc4a496ec5283f5efb1dcd12efec4f"
+    },
+    {
+      "path": "art/tools/art24_inventory.py",
+      "sha256": "26e1f1d5c22570c335bd2ed42fb6d8f9efd6ad570d37a00b51fbddc2a0c06b40"
+    },
+    {
+      "path": "art/tools/build_native_ui.py",
+      "sha256": "7dda5344505c8a5f387873fddb523bc7760e1a3ff96c867bbc8229672394e337"
+    },
+    {
+      "path": "art/tools/art10_inventory.py",
+      "sha256": "5ef203cb2b863525a5a9ffb95d48385ca154b69a18922e7c8c0574a0223aa4fd"
+    },
+    {
+      "path": "art/tools/export_redesign.py",
+      "sha256": "1a55ca1a20a1712b179b29837892339286602416b85c668fb09d50ed2febfc0d"
+    },
+    {
+      "path": "art/tools/art17_inventory.py",
+      "sha256": "d7317c8ce9b31771a72a39a5173b0f0f6a0ce4d4840188906176c423b673de72"
+    },
+    {
+      "path": "art/tools/export_art11_items.py",
+      "sha256": "500b6c5476e65ad7d9a2374cb235587c5cc11a7532af89be208c4f842bb2955f"
+    },
+    {
+      "path": "art/tools/test_ux21_inventory.py",
+      "sha256": "8b1556798d33dcc91f8b77fb8d7b467dad62129d3c3e92fc4e4b7b014434a34e"
+    },
+    {
+      "path": "art/tools/export_art30_scene.py",
+      "sha256": "7daa650977e6d74f6c269b64db48ce9c56444f446bf20a43fac476382960089b"
+    },
+    {
+      "path": "art/tools/export_art31_scene.py",
+      "sha256": "c7df4b6a4cb40df04e13550977a7976670a91bf1b73b1d62ccdc682fa881d634"
+    },
+    {
+      "path": "art/tools/export_catalogue_art.py",
+      "sha256": "c2efe2ca6cd3bd5df043f31e39aed28118842281a378546eb0dde20878536d21"
+    },
+    {
+      "path": "art/tools/test_ux33_inventory.py",
+      "sha256": "2f6aa61e3e038718665c6f48f057f2b0dc182718c2dd6c826569cfeb33998cd5"
+    },
+    {
+      "path": "art/tools/test_art28_inventory.py",
+      "sha256": "45c8a02d8fbe31a3cc6e1aa6da751f6d083d9454ff5e7f9e2006d799deded744"
+    },
+    {
+      "path": "art/tools/test_check_uir33_inventory.py",
+      "sha256": "1ee27725cc41e2db9fd9e00538cca79aa69a3c52920b40062deafb7e58a7e338"
+    },
+    {
+      "path": "art/tools/art33_inventory.py",
+      "sha256": "bdb79077d9f7ba45fee50d2a4ccaa5a0fa49e8e0ad4f42de59e07286d7d079fa"
+    },
+    {
+      "path": "art/tools/narrative_object_inventory.py",
+      "sha256": "972a2412f62d777eda5c427aa46de6eba3eee2f484efa8a19d8f084b0b95269b"
+    },
+    {
+      "path": "art/tools/art34_inventory.py",
+      "sha256": "2bd505283f9554c35996d35e50d057cb50913a133e43766ded415bd22398554e"
+    },
+    {
+      "path": "art/tools/desktop_ui_inventory.py",
+      "sha256": "33b9af8a75b8807adce89677f41f68d830e9f89eebbd95ed5fa1a0f24f13255e"
+    },
+    {
+      "path": "art/tools/ux30_inventory.py",
+      "sha256": "586ca67d95d1ef91d59c96190a9f8ba8c71d32923be5b1747fce7093929d6e71"
+    },
+    {
+      "path": "art/tools/export_desktop_ui.py",
+      "sha256": "34402b5fe7ce753902747ed3c4e72bdd4280e4fcfe460df445611b6886b4671a"
+    },
+    {
+      "path": "art/tools/art26_inventory.py",
+      "sha256": "bf6fd61f6938439032a2dd0dc533e20ddcc3df80e69ecea9b853ed5995a69f88"
+    },
+    {
+      "path": "art/tools/check_cend07_inventory.py",
+      "sha256": "1ecc325b1a0196b48b11972b5b7716a232a3ecdfac79bd2a51610e60737e5d1f"
+    },
+    {
+      "path": "art/tools/test_ux32_inventory.py",
+      "sha256": "35c28fa1e39affd5f2e6e1c10183d9a3fd2c4ed88acee5a35778db305e217968"
+    },
+    {
+      "path": "art/tools/test_art29_inventory.py",
+      "sha256": "1b2bf87469f83abceac366b735973555c42fc92bc138b35c863eb4b1a7d919cb"
+    },
+    {
+      "path": "art/tools/export_art16_schools.py",
+      "sha256": "8654da8f100f516a8ef5692f37117a749f89298d4b272a36fd3adec1ec2d60aa"
+    },
+    {
+      "path": "art/tools/character_battle_inventory.py",
+      "sha256": "1f978b35ae1aac5333e3731ffe7cbd9edd758167cb3561ecbe1d19ed8778af4a"
+    },
+    {
+      "path": "art/tools/export_art27_scene.py",
+      "sha256": "e6b7215861b507e03a56fb431e5b34d0fc81b34efd67da5b2301d7721403a1ed"
+    },
+    {
+      "path": "art/tools/export_production.py",
+      "sha256": "588d426313a338f3222db0e9c0137a408858454d6af06ec1f9f77e7e535bd507"
+    },
+    {
+      "path": "art/tools/test_ux20_inventory.py",
+      "sha256": "fe8741353e2a0d5bcfb6e55dcb1c49482c3b91338577d1f232136b25de236279"
+    },
+    {
+      "path": "art/tools/art16_inventory.py",
+      "sha256": "3353b822405bd9e35d101ce7dc1f1a6f52901740a56a15fe5af61972217ad976"
+    },
+    {
+      "path": "art/tools/art11_inventory.py",
+      "sha256": "560478bf0ef4e270cd26788908a1f754789c290ac4b3404609ee18879dfc8de7"
+    },
+    {
+      "path": "art/tools/check_uir34_02_04_inventory.py",
+      "sha256": "b62ce00bd8ec72ceab07ce12c2b2aab49726b6611126bf726c63d649fc622c65"
+    },
+    {
+      "path": "art/tools/art27_inventory.py",
+      "sha256": "a5008c1b84dac487fa41e8a0a4704d62c67adc4cdf9f7cb4c4683adef59323b2"
+    },
+    {
+      "path": "art/tools/uir35_01_inventory.py",
+      "sha256": "81ac6e287f030c5f816abd0e7718ac118cd13543618b5f83c5ff8d2472a32ebd"
+    },
+    {
+      "path": "art/tools/ux23_inventory.py",
+      "sha256": "078c37013f9af3431dbf27d38be50e4caf55eadc6e8021c952ce8b12e251c01a"
+    },
+    {
+      "path": "art/tools/art35_inventory.py",
+      "sha256": "32b7a8ea3e2f17858cc5981be772d072121d0ea26719975ccfb778284b3f308a"
+    },
+    {
+      "path": "art/tools/art32_inventory.py",
+      "sha256": "6d5867135bcc61d67ab77f43e5482352177a0531ee4632851e43d1ad4098c417"
+    },
+    {
+      "path": "art/tools/check_cend07_three_inventory.py",
+      "sha256": "b152b6d4354fbfc01a9c8f6a2e33509f1a9ee1e7f8d94a7bbc10184084212006"
+    },
+    {
+      "path": "art/tools/test_check_uir33_02_inventory.py",
+      "sha256": "90d85f4b98e744bb2b49ce981ae1d213c7a7bf1abfd82f067cf8c5bc49635c26"
+    },
+    {
+      "path": "art/tools/ux31_inventory.py",
+      "sha256": "14493ce46adf7004cd0e17b1d32f0d307adbef1ce883c55535569e1d31d46094"
+    },
+    {
+      "path": "art/tools/cend07_f04_inventory.py",
+      "sha256": "577d9d1c0aacb22a3afc49f12836e98338181a820f80eeab214ea20ee41e0f31"
+    },
+    {
+      "path": "art/tools/cend07_f03_inventory.py",
+      "sha256": "f29d668055bb8fe84e6d13728ae6f194c71f58abce3b8d3df48e78d524b84ff8"
+    },
+    {
+      "path": "art/tools/ta08_inventory.py",
+      "sha256": "ab4b1154750997839f57d7cbf5da58accd5d85a225980c56347a54739d7ca621"
+    },
+    {
+      "path": "art/tools/uir33_07_inventory.py",
+      "sha256": "a66e2404c147ec6c5f0e40371609cdb13cca4392f9f8e72494fea6894611b9cc"
+    },
+    {
+      "path": "art/tools/ux29_inventory.py",
+      "sha256": "2d7a7824514c4089f7f8796b1ed74bf879ac698e7ee71ac813cc56f6f45003bb"
+    },
+    {
+      "path": "art/tools/test_cend07_f02b_inventory.py",
+      "sha256": "aa2e482574657f85c731f6c7fce689dd8ee421a66a267702616c9c6cc0bdd6ed"
+    },
+    {
+      "path": "art/tools/uir34_01_inventory.py",
+      "sha256": "1cbf31b16eaf8d5cf6e7d6dbb144b398316e5aeae67769de5176d1831ca2ef11"
+    },
+    {
+      "path": "art/tools/test_art36_inventory.py",
+      "sha256": "9d4c5260e24d0ab3cd960b4dd86f64883a22cfb38ad1ab4c372823b1d9f3797e"
+    },
+    {
+      "path": "art/tools/test_uir33_04_inventory.py",
+      "sha256": "1dde5e28aad981d2cdf326ad2d3f6d84b76832c251d7bea37c38d6802fa71fe5"
+    },
+    {
+      "path": "art/tools/test_art31_inventory.py",
+      "sha256": "dc981a1aa21a8fb5c8298a4cf33028707007b9a679dfc8699f28770b4fb7e2ce"
+    },
+    {
+      "path": "art/tools/uir34_06_inventory.py",
+      "sha256": "38350d8db6be604771d3d20f3b49f44206375c2f1dbbb96cafcc2548bb99dc15"
+    },
+    {
+      "path": "art/tools/check_inventory.py",
+      "sha256": "8905c5e0ddf6d3106b4a609d583d83436c4b7a66c4d83962cf9b53703612e101"
+    },
+    {
+      "path": "art/tools/test_art24_inventory.py",
+      "sha256": "c01079108c766b17fbad01d2d5043d4bf9836094e3b88e39c60799dc9bc68bbb"
+    },
+    {
+      "path": "art/tools/cend07_f02a_inventory.py",
+      "sha256": "cf8d2491633ae9b487c2f0ff546ba0ac0001979df8268fa48ca481152f2d6240"
+    },
+    {
+      "path": "art/tools/cultivation_object_inventory.py",
+      "sha256": "38c87256ac5d9d8e3f0807d3f9f35d750d5c69bfefb7835b8c7e461a7a9ac11b"
+    },
+    {
+      "path": "art/tools/test_cend07_f02c_inventory.py",
+      "sha256": "0ba9dea49a3e176a08c98aef3dd77523ee840320809022e96105430353ac0a2f"
+    },
+    {
+      "path": "art/tools/export_art18_ui.py",
+      "sha256": "c41d0685d3b246a650575cfc87f1a67860915326883641e8280bbf7512c0aa85"
+    },
+    {
+      "path": "art/tools/ux28_inventory.py",
+      "sha256": "3603f3d36b7a39ff67b567459d24d46da4d85d02e0e0311b4f5626b34e6f70d4"
+    },
+    {
+      "path": "art/tools/uir33_06_inventory.py",
+      "sha256": "e99db86b9f2c8c410b9b9ff07de86bc0408e8d7f6023c15ab5e2f0c64d211ab9"
+    },
+    {
+      "path": "art/tools/uir33_01_inventory.py",
+      "sha256": "4db2f630fa28d3cea33f10a60337da28c7693aad7387a33c723b7e358dcbb201"
+    },
+    {
+      "path": "art/tools/ta09_inventory.py",
+      "sha256": "99db3c9c999ac99c39a7981bb8838e8087b7b2d1f5e6d99583b484ca5a2e4176"
+    },
+    {
+      "path": "art/tools/test_cend08_study_inventory.py",
+      "sha256": "0b10500b3fcbcf4129d205205274fc627bc1a01b0a84c94a832a8ecd0d251a06"
+    },
+    {
+      "path": "art/tools/check_ui35_inventory.py",
+      "sha256": "50c274fd14fb099c308bfb4b52efe455ad31ffbbea947a98c2539311cf417f76"
+    },
+    {
+      "path": "art/tools/test_art25_inventory.py",
+      "sha256": "f2bb5aefb51b0a44f301e10ec1517bee3e7f67fd0073150ef9e00c9072787b25"
+    },
+    {
+      "path": "art/tools/test_uir33_05_inventory.py",
+      "sha256": "ef9160f78fbc7c7102ee3df89ce175fa10ad48be6c31cc58393029f8f15108e6"
+    },
+    {
+      "path": "art/tools/test_art30_inventory.py",
+      "sha256": "de65f1c9737cf4810a836e19b4e002143373f151b6d67e97e233f5183547829e"
+    },
+    {
+      "path": "art/tools/uir34_07_inventory.py",
+      "sha256": "6129eac5c69bd310713fca416d0f50ba5376ec85f74c265d52bbc86621848382"
+    },
+    {
+      "path": "art/tools/export_art35_props.py",
+      "sha256": "bf1976b64279443dc76fd86b78b20286fb0d8f7368bdd880d37a91d520776d4e"
+    },
+    {
+      "path": "art/tools/test_uir33_02_inventory.py",
+      "sha256": "460f5d4714f3cba66164f4599e45b77d6ba196d8006749826062b3362a79d1c7"
+    },
+    {
+      "path": "art/tools/test_art37_inventory.py",
+      "sha256": "4b64998d059f22fc2f312c6a871bf553c9ccfb6208234a0d7ba29d0b204aac24"
+    },
+    {
+      "path": "art/tools/cend06_f02a_inventory.py",
+      "sha256": "f4391b14e15d57e997b4e344cc68bd75cea7f17f90a439839814edf65de51040"
+    },
+    {
+      "path": "art/redesign/stage-r3.json",
+      "sha256": "dbe2e6eda8ecf27e12c1fec5d1826321835e38160d212767c2559cfee506a505"
+    },
+    {
+      "path": "art/redesign/uir34-07.json",
+      "sha256": "ea2203364289c423ebc2a20cace50700719ac623938ae566b3768f97d3a951ba"
+    },
+    {
+      "path": "art/redesign/cend06-f02a.json",
+      "sha256": "4f5fcb1b7dc78ee2239d1c0e853d310fbe663f4f74d194fd8bfd78a1a66c3dd7"
+    },
+    {
+      "path": "art/redesign/CHARACTER_BATTLE_REVIEW.md",
+      "sha256": "81a07a643d1398e30933413bde99d8a6f52b9ff2b822b7678456d736b1c433b2"
+    },
+    {
+      "path": "art/redesign/art32.json",
+      "sha256": "5582eb52404e5128f282fdf2e3da7bf26022abc764442e1034d87ae5ced01cf3"
+    },
+    {
+      "path": "art/redesign/cend07-f03.json",
+      "sha256": "d79c953cc296b0844948cf2342374d030e87e176b21d25b84e52ad5e7197962e"
+    },
+    {
+      "path": "art/redesign/sealed-life.json",
+      "sha256": "28ec0fd399356bd0fba9af5661daf6e3c97756bff6ad0643b8e2937ee6090fda"
+    },
+    {
+      "path": "art/redesign/art24.json",
+      "sha256": "8f101995f4f4fa0a0e86e9a2467acede8994fe97868f44deb99195d3ee7faea4"
+    },
+    {
+      "path": "art/redesign/art04.json",
+      "sha256": "3c974385497778839dce79472058baffbfec33a56f5610bcf7e1221fdb7e7953"
+    },
+    {
+      "path": "art/redesign/art12.json",
+      "sha256": "1b81697bbe0dbaa103aee96083f46b3d8990b3734920a91fb99784ae293651f0"
+    },
+    {
+      "path": "art/redesign/ux32.json",
+      "sha256": "f534de4875461925d3d8144755987e8170dd373831224c31dc8bcf7bd36e2159"
+    },
+    {
+      "path": "art/redesign/art28.json",
+      "sha256": "045f886871d5eb0dce3f27e0e339dc0388018e468f3fcd3f5a6cfadc8fa5212a"
+    },
+    {
+      "path": "art/redesign/art29.json",
+      "sha256": "277759c12255e221518657b862dea7995f26eda64d53b4ca9d5733fde8278d4b"
+    },
+    {
+      "path": "art/redesign/ux33.json",
+      "sha256": "ca0c3a052c3f9508957a38da9a8acada9821104c2461aa127bccd0743f27c3b8"
+    },
+    {
+      "path": "art/redesign/check-cend07.json",
+      "sha256": "547961fdc9c37ee7e79db209cd3e11f5826dab455cf8a0de2a6f21b75069b8cf"
+    },
+    {
+      "path": "art/redesign/idle-production.json",
+      "sha256": "c14fcd8b33061ef85369511ad7e765462c60ebb15f56b37f07bd2a307580b569"
+    },
+    {
+      "path": "art/redesign/narrative-objects.json",
+      "sha256": "0dc8cdfa6666fa9702d8b9845704075dc62b6f3b4e192013b406457fa68db3c2"
+    },
+    {
+      "path": "art/redesign/local-loading.json",
+      "sha256": "0be98f4f998418e8fa95f03ec03a8d9f856788a77309ba13f406a0d4090f9b22"
+    },
+    {
+      "path": "art/redesign/art25.json",
+      "sha256": "eed7b9541293faf11e3558a6e40fa63377ac9dc318243f6f434e81aa6dc883ae"
+    },
+    {
+      "path": "art/redesign/action-feedback.json",
+      "sha256": "9bef4b2288f3321a5da90870b778377afd3f407df9a0abf318034cdbc7704c75"
+    },
+    {
+      "path": "art/redesign/art33.json",
+      "sha256": "55e15319661f24fb3d2b2ea999d1916a93d29c4d34a8ab9d202c1df9e87a1907"
+    },
+    {
+      "path": "art/redesign/cultivation-objects.json",
+      "sha256": "280f616867bc0f01262e68cfc7df1b14d647b215c652e690fc96b42dc367abeb"
+    },
+    {
+      "path": "art/redesign/idle-milestones.json",
+      "sha256": "9a6dc85e2b36b7b3f66d3f659fb150e80972c3a44a1ceec7cfddb3866f924356"
+    },
+    {
+      "path": "art/redesign/story-journey.json",
+      "sha256": "da8d4de050fc8e2254a0ee2d64fc3e747122db5f0f06709dc6c61f728011c15d"
+    },
+    {
+      "path": "art/redesign/uir34-06.json",
+      "sha256": "5e5d8b0a96eb96e3794df5e68104625549f2b2cc6c1741616ad2ff5556328208"
+    },
+    {
+      "path": "art/redesign/stage-r2.json",
+      "sha256": "0dcfd47f2dd9943470fe5a4461b400e98b3e67b1291e522c22a9e6c697796701"
+    },
+    {
+      "path": "art/redesign/idle-adventure.json",
+      "sha256": "ce5cf186d5f11a9ec23f9762caf7310e2a367599b911c1376e27e6105f7a5ba9"
+    },
+    {
+      "path": "art/redesign/uir33-02.json",
+      "sha256": "7f04f23bab457a6525b4fdad5d3b18ccd828367238b68d11fbf95407d746987b"
+    },
+    {
+      "path": "art/redesign/art02.json",
+      "sha256": "697f41e90df96108c1e1d330d511bc91b019aa36f1e1124a152f91d1946a6e9c"
+    },
+    {
+      "path": "art/redesign/uir33-02-edits.json",
+      "sha256": "97f05d8791486d1da31ab4edfb0133e784036d2b8e95f0fb9f59ce94ef5224fe"
+    },
+    {
+      "path": "art/redesign/cend07-f02a.json",
+      "sha256": "1b6439c020085e772f5ba0ca715170dd8cd2a781688c57a5ab95273803379620"
+    },
+    {
+      "path": "art/redesign/uir33-05.json",
+      "sha256": "b1e82e783075732ae35d8485ca4d78dd159ae183d5d2bf43e68c904e343bf794"
+    },
+    {
+      "path": "art/redesign/ux33-display-edits.json",
+      "sha256": "be07fdcc51317c8a7ef4fa12fd1a52611f0edc756601a7653d603cafead4dd13"
+    },
+    {
+      "path": "art/redesign/uir34-01.json",
+      "sha256": "d3451952c6c2b5fa5d8fda8ae530368f6edc36c131de5d62fc4095b73e3e2b8b"
+    },
+    {
+      "path": "art/redesign/ta07.json",
+      "sha256": "e6e618677b7a7d9d3e3fe59f78ba2a6e1343e19b5e823c219accd880193e343c"
+    },
+    {
+      "path": "art/redesign/art18.json",
+      "sha256": "b9f4bddcb03ffec75b942e4198887f929408ea5eb2d1787b258aed10520a77e9"
+    },
+    {
+      "path": "art/redesign/art34.json",
+      "sha256": "aacbda4147649c7cde847ab464ef6495ca596ab754889dce041b7212a471d4e0"
+    },
+    {
+      "path": "art/redesign/cend08-study.json",
+      "sha256": "1b3d33d98666b84ef19390fb16ced4cac125825d715400c1b175a9c84410a863"
+    },
+    {
+      "path": "art/redesign/uir35-01.json",
+      "sha256": "4f8c7e7fa016ab45b7fdb5d12b2532d6171b12bdc4699578ca67b396920681ae"
+    },
+    {
+      "path": "art/redesign/feedback-skip.json",
+      "sha256": "00a1b1f00619b455a75c97786ba9e326686fb8b17c99eed8cd876fc6e7f3c670"
+    },
+    {
+      "path": "art/redesign/cend07-f04.json",
+      "sha256": "3bf1b1f89b68c97a22e53326d1c98f1b25138dec4c220d1b11f4450f9b7885db"
+    },
+    {
+      "path": "art/redesign/art35.json",
+      "sha256": "74dd630c39fd44587b102116365b3fb98615928807e47caccd58da5f102035b8"
+    },
+    {
+      "path": "art/redesign/check-ux31-33.json",
+      "sha256": "9b78c02d202e680dace1236fa788809b01ad3cae579c88473776b096375fd517"
+    },
+    {
+      "path": "art/redesign/ux30-display-edits.json",
+      "sha256": "360b47a2ac85da77639a71f1c8437760aaee873d980c08fde8dbaf7bfb767e06"
+    },
+    {
+      "path": "art/redesign/desktop-ui-manifest.json",
+      "sha256": "ab0d778d6d35fd695eb56b2edc9e24e92a93d2e2c6c02cb4cb378dc11be7e2e4"
+    },
+    {
+      "path": "art/redesign/immersive-ui.json",
+      "sha256": "4d5d345e49bcae5ecdaed419331caec85125d1592302db2760ef4b3b1866c763"
+    },
+    {
+      "path": "art/redesign/game-menu-matrix.json",
+      "sha256": "c6fa2229f7ad4d978fe59b6e47382c27f4655ac58bed1176adb581c2cfbba770"
+    },
+    {
+      "path": "art/redesign/stage-r4.json",
+      "sha256": "4ea13a399c1868e631d2f81bb5a6d18a8db7528c06c5786a625a72494f34b420"
+    },
+    {
+      "path": "art/redesign/uir33-04.json",
+      "sha256": "00e529b1518fa81d598541ba0cd8fba62d61ec0cb74e40a7437dd324ac240720"
+    },
+    {
+      "path": "art/redesign/art15.json",
+      "sha256": "f93c941d6f799a296b67c1ceec19831cf7c398d2193ba9f3241aa40c404c24ca"
+    },
+    {
+      "path": "art/redesign/check-uir33-02.json",
+      "sha256": "8c55e88aef16be15b68b1d70d5fbe04f3f9b28acb1fbcdb58fd627fbb1978013"
+    },
+    {
+      "path": "art/redesign/uir33-08.json",
+      "sha256": "0d4c6a0247d5bc8fbfc13100f23acb715dc12cd5f70ec4d5079a28defdc9a458"
+    },
+    {
+      "path": "art/redesign/art03.json",
+      "sha256": "a2a078e6ee338a17286a6c159767334f26a2698cd5848767932993ad7f124cef"
+    },
+    {
+      "path": "art/redesign/ux31-display-edits.json",
+      "sha256": "b882d2245171da3922fdb65ec91c5556a308267e3dafc02f178abdfc978f020a"
+    },
+    {
+      "path": "art/redesign/DESKTOP_UI_REVIEW.md",
+      "sha256": "afd86617f7e6fac7d373771d5de6d0dd150c95ba7905f13cb72f87d345b8fed2"
+    },
+    {
+      "path": "art/redesign/art16.json",
+      "sha256": "086e8b6d080c8f9d049daa64a427961f0a4912e132f0dc13b0747ba59df9f397"
+    },
+    {
+      "path": "art/redesign/trial-return.json",
+      "sha256": "29e8b5e5238d5be210460cffabbee2443eb22726aeae40dc467983745f96271a"
+    },
+    {
+      "path": "art/redesign/ta09.json",
+      "sha256": "b52562bd4fc17b77cf00a171beec5624361a7c0ba1bb13160220299b2cfca76d"
+    },
+    {
+      "path": "art/redesign/cend07-f02c.json",
+      "sha256": "f491005729a535c8b6d309768e50a11cb192a822ccca35d60742f0a8d478c816"
+    },
+    {
+      "path": "art/redesign/uir35-02.json",
+      "sha256": "97ca82872a9b0f513f26761915293a7f42649b960e2ba78fcc4150c0bcd54cda"
+    },
+    {
+      "path": "art/redesign/art36.json",
+      "sha256": "4d1dcaf81614367beb1e99e93c693ae9076440a7ade08642dda5b1f8b05c9363"
+    },
+    {
+      "path": "art/redesign/uir34-01-edits.json",
+      "sha256": "a162488855c8247b4415f66c11dd7ba049b23e8d7d4d10bd9d10757f0d444b99"
+    },
+    {
+      "path": "art/redesign/uir33-04-edits.json",
+      "sha256": "0e1e3ecc377af6a7dc6d36d896f19566b99202eb8a10c4c06233e16984775913"
+    },
+    {
+      "path": "art/redesign/uir34-03.json",
+      "sha256": "096a6ddf20afb03dcf8e4ec5ee8b7761d60448f851e406615c76df26fb0081d3"
+    },
+    {
+      "path": "art/redesign/check-ui35-source.json",
+      "sha256": "2ec411d8051fdab0247d6d06f9acfd2b7051cef0202792f85b025da36927c980"
+    },
+    {
+      "path": "art/redesign/idle-tradeoffs.json",
+      "sha256": "b6c624bb39a7d04090922911b81fe6340a389fc534eadfbd2d7a15198e7af866"
+    },
+    {
+      "path": "art/redesign/uir33-07.json",
+      "sha256": "76d579f28c337a10c05f27ab3c15d48c7539fd7cb430cc79f3a34fae569a72fa"
+    },
+    {
+      "path": "art/redesign/uir33-06.json",
+      "sha256": "5fcbaa7c75f58990bef98b6fd6748ef939a54c984578bd77f3bd384bf3c17ee4"
+    },
+    {
+      "path": "art/redesign/uir34-02.json",
+      "sha256": "fa79670ce6fb754b3cb9a9c2058d67ef7f0d2872f4a78115bd096febc13ac334"
+    },
+    {
+      "path": "art/redesign/art37.json",
+      "sha256": "0c4cb2f06251ba81ad210b062db8ad0be72a1428981882c612282a6cf7a12baf"
+    },
+    {
+      "path": "art/redesign/idle-sources.json",
+      "sha256": "8933162178a3c16c0af38cb50487a265b6d692d0bc1e53837b7a7032c1d76131"
+    },
+    {
+      "path": "art/redesign/uir35-03.json",
+      "sha256": "e13591832bcd8bb9accba4f36890c0693e0f67cb7654546508c3fcb223bb9156"
+    },
+    {
+      "path": "art/redesign/uir33-01-edits.json",
+      "sha256": "8bdc74a2bf01c7d4deabfc6a7aa143ad3b7ff13047887bab3aafdfa9865f3a2c"
+    },
+    {
+      "path": "art/redesign/manifest.json",
+      "sha256": "91f3b8d97b187d2e8d0ad8cb3f5494bf7d82994faa54b1afbeed27e0fe8944f7"
+    },
+    {
+      "path": "art/redesign/idle-preparation.json",
+      "sha256": "bad1cbd7a8e23cdf505f6e055c6cf75ab4886a009a500f8f041e6ef94c58cf51"
+    },
+    {
+      "path": "art/redesign/cend07-f02b.json",
+      "sha256": "1e7233241d523076e0e17be0b58136da207ee54aac6dbcb604acdcec3bc1bdc4"
+    },
+    {
+      "path": "art/redesign/ta08.json",
+      "sha256": "3dacde3abdbbc6f2476213ed353bd89b5c9ddaab6b9d656f0d4e316a5270db37"
+    },
+    {
+      "path": "art/redesign/check-uir34-02-04.json",
+      "sha256": "f29dd585b68ec418e2fce221c83ece72f14116783415ee306a689f25f6995126"
+    },
+    {
+      "path": "art/redesign/art17.json",
+      "sha256": "c411818ad1a8266e824371f033692d5911423235dc97f93b6dd7b5b3d2f855aa"
+    },
+    {
+      "path": "art/redesign/check-cend07-three.json",
+      "sha256": "4cc7f6af07da2be5dab380ab01417b763380e1bf7a0edc574595db83e63d7fb0"
+    },
+    {
+      "path": "art/redesign/ux32-display-edits.json",
+      "sha256": "3b4d52b0dfff1159b024d9105ea8be33801d24db60fdb3e518dd0b1f79171b0d"
+    },
+    {
+      "path": "art/redesign/activity-history.json",
+      "sha256": "660526cb24a425b7be7ff9ad77537e91ceb826a61e67b733f3329bc4da126e54"
+    },
+    {
+      "path": "art/redesign/uir35-04.json",
+      "sha256": "9af21cf750f6e5b0cf516a07c344b0da6cad23d18b69a7ca07e693406f99db75"
+    },
+    {
+      "path": "art/redesign/art26.json",
+      "sha256": "72d97e513c3390bf7794a6b886f91d789df5699e8e13d22e6db42c3fa3a380e7"
+    },
+    {
+      "path": "art/redesign/trial-guidance.json",
+      "sha256": "cad26c4e285f84784db727b4a72f469547f4e08cde0d05811bfc0a45dbf521e3"
+    },
+    {
+      "path": "art/redesign/art30.json",
+      "sha256": "2fe9decb1c7b59a98fdc77545464c97606f271a049a9a9656b7bb040ce00a6a9"
+    },
+    {
+      "path": "art/redesign/SINGLE_SCREEN_REVIEW.md",
+      "sha256": "37b9c69d7ad0718091a24efbce8a29e112565529b949f8fddb4db99d1f1c85b6"
+    },
+    {
+      "path": "art/redesign/single-screen-native.json",
+      "sha256": "e976325f50529077b70893316fdbc8a7990b0be4c15b5b47d1b80da39382f7d6"
+    },
+    {
+      "path": "art/redesign/panel-materials.json",
+      "sha256": "87f631ea9ef240bae4d6a38225fd30625c04716f6aa0a81a54131430611df34e"
+    },
+    {
+      "path": "art/redesign/character-battle-manifest.json",
+      "sha256": "1c9ed96b15b37a043b4db2cff7f3e50ecae35d102d28918a59611be202699af3"
+    },
+    {
+      "path": "art/redesign/uir34-05.json",
+      "sha256": "6356179f95b4516a8aa4d09e1a3e52cfa430210f305f3f45c69c1a2b4482a2c2"
+    },
+    {
+      "path": "art/redesign/check-ui35.json",
+      "sha256": "88ab000c29c0647c24941ce28203077589c09fbf4fd19839379df5881d2471e1"
+    },
+    {
+      "path": "art/redesign/stage-r1.json",
+      "sha256": "3ce30ea55cf43ef9f335df7a0cc744f0f0c9afc40cdef5997fdf7dcc5dedc967"
+    },
+    {
+      "path": "art/redesign/uir33-01.json",
+      "sha256": "eddba322cf0c406c946abe586acf5a1cdef40c2aec1cb4589ccb4e5300f97d86"
+    },
+    {
+      "path": "art/redesign/idle-cultivation.json",
+      "sha256": "b1443902e2ed89bcfd861b9704ec1a544ac1c3a0c7de7161e64d5553a3838f39"
+    },
+    {
+      "path": "art/redesign/alchemy-workshop.json",
+      "sha256": "bf770f33e405cea888c33c6f4485b014f8b29b11d83614745758f7240c29a12f"
+    },
+    {
+      "path": "art/redesign/REVIEW.md",
+      "sha256": "f3eedae7e2d27f944291a2086cb08d6a4fdcec8b9e938d9e961eec5a3450f9bb"
+    },
+    {
+      "path": "art/redesign/ux30.json",
+      "sha256": "5fe80d36912932453f2346e28faebb76617d515ce33c867e99c3a1ae7cd64cbf"
+    },
+    {
+      "path": "art/redesign/art10.json",
+      "sha256": "8cd48a189b340271c3c9321c48804c47a2d0c110573ddb8e25cdb7b74b06b121"
+    },
+    {
+      "path": "art/redesign/PANEL_MATERIALS_REVIEW.md",
+      "sha256": "137f0ca972fc99002309b27117f9ccccdf189b36c39ba3d2a41e657f5532fa7b"
+    },
+    {
+      "path": "art/redesign/playable-flow.json",
+      "sha256": "d516844473a772bc1fdd2225a05c23a083d5a1a3145291f0d13c9beb4479d3b8"
+    },
+    {
+      "path": "art/redesign/art11.json",
+      "sha256": "1c8386db34f346ba297648f2a229b07695e96c26dfd2b50593adc240836f6ed0"
+    },
+    {
+      "path": "art/redesign/ux31.json",
+      "sha256": "61f6865d976e39b263d543ca9bd395521f88feccdd5163afd3b2e726d245debe"
+    },
+    {
+      "path": "art/redesign/check-uir33-label.json",
+      "sha256": "c86656bbdeceb203632a6d6ca032263a2c09bc5c993c23a7b8ba8f937e268edf"
+    },
+    {
+      "path": "art/redesign/uir34-04.json",
+      "sha256": "9a81d62b41c7af33ad5d13e8c2fce468a526e2db1ebc3033aeff49c6b4fb7ba8"
+    },
+    {
+      "path": "art/redesign/check-ux31-33-edits.json",
+      "sha256": "e6ca387d0dedd7f510b6291d4a2f1e1fb84c269fd16f088edafd82275dd67a6c"
+    },
+    {
+      "path": "art/redesign/cend06-f02b.json",
+      "sha256": "03c3703d1febe042dff685bd0371f1eb23f7ce8431944e85af55856cc274b8f5"
+    },
+    {
+      "path": "art/redesign/art31.json",
+      "sha256": "188a145aa07a2289637ebd91ca679f0107b466410031b6a4750db74c6412aa84"
+    },
+    {
+      "path": "art/redesign/art27.json",
+      "sha256": "d3690e52b43b8171f3dbbc79fef9a0c90b69067d4235260bf6a94920cc78968a"
+    },
+    {
+      "path": "art/approved/style-preview.webp",
+      "sha256": "8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc"
+    },
+    {
+      "path": "art/production/README.md",
+      "sha256": "7ecdd54210cdff0894ff518a5bb533be72ac78306baedaa50408b88d0ea2f9e9"
+    },
+    {
+      "path": "art/production/verification.json",
+      "sha256": "9365b47ae78ecd6b9b1c1c2f3237506f103f88b35bcbeed49c21fe1fa8b93a08"
+    },
+    {
+      "path": "art/production/REVIEW.md",
+      "sha256": "82ab5c1248be30ec989484f32763df5b0d3dba41fff193ced8b9d451eae8b314"
+    },
+    {
+      "path": "art/production/receipts/lu.json",
+      "sha256": "a8e40eedb73c7e977ababe27627f9ec69ee27b3041edcf6f538500f18ed28930"
+    },
+    {
+      "path": "art/production/receipts/shen.json",
+      "sha256": "374dcc9be4cb6237ded976d650692584f72d842eb69736bf9975b79815f8482e"
+    },
+    {
+      "path": "art/production/receipts/pei.json",
+      "sha256": "c15396aa6042165423c7750d82f0aee36a10807ec2f092ca6d86bb07c6403f3f"
+    },
+    {
+      "path": "art/production/receipts/player.json",
+      "sha256": "7537ba80cc0d755bfe0cb4989899544b5d7a70d2db1aeaf7baa68888a3b065ed"
+    },
+    {
+      "path": "art/production/receipts/terrace.json",
+      "sha256": "43844a46021efa0b8e9ce1b7e0ec8cc5da6490229311936831d238058283ba16"
+    },
+    {
+      "path": "art/production/receipts/wilderness.json",
+      "sha256": "efb2e051c7185b7050f74fcfc8b72a781e8493b8c134f7712ca82407c7c7c140"
+    },
+    {
+      "path": "art/production/receipts/yan.json",
+      "sha256": "2dd174b91dd1b0547afe7b27dbf9c97bb80a0a72a2664ead085449d8b7c4275d"
+    },
+    {
+      "path": "art/production/receipts/prompts.json",
+      "sha256": "3bee7093329cfd761b87ff7779a58a7096a8ed7a578b0b0a53454c337f3d9de9"
+    },
+    {
+      "path": "art/production/receipts/secret.json",
+      "sha256": "a0f7ac877f6d4efe6def473b58e542bd2dbf08ecb76acb08d98637d7ed2f6a25"
+    },
+    {
+      "path": "art/production/receipts/settlement.json",
+      "sha256": "641a5c68ac46aa1b1049095baea7be04c708b07640642ad845ff9403568a26a5"
+    },
+    {
+      "path": "art/production/receipts/terrace-v2.json",
+      "sha256": "fc1251c8ef05bdd994a83c6f04ee23c226a79786169bf3b154779ad73b0834cb"
+    },
+    {
+      "path": "art/production/art37/dialog-ink-rim-source.png",
+      "sha256": "49c4a0bb99faa867f9e63e43a2b1bd104f984cbf3842e2f47752491aae1d3025"
+    },
+    {
+      "path": "art/production/art37/exports.json",
+      "sha256": "f4ed6cecdb8d9045b75b5abd9862bcea46c6047211bc873185f0ec752ecccdd3"
+    },
+    {
+      "path": "art/production/art37/prompts.json",
+      "sha256": "ea733b57c42ed62ed8fbf638d3a27aa510fbf917c9a7bbbd2697582a48b3bfc5"
+    },
+    {
+      "path": "art/production/art37/dialog-ink-rim-receipt.json",
+      "sha256": "f92bfd055ecefad65a4cc4f0dd3889afdd187041adc61334ad80e70517dd84dc"
+    },
+    {
+      "path": "art/production/art37/action-jade-plaque-source.png",
+      "sha256": "04eaf83cfb10c7bc52d20ebfa39df2a3d623158bde1e31063f1022353b7b39bf"
+    },
+    {
+      "path": "art/production/art37/action-jade-plaque-receipt.json",
+      "sha256": "ea5cc232eedba3e08889c7ace869936ddf4000b5636aa72846a76b105800302a"
+    },
+    {
+      "path": "art/production/art30/npc-parlour-v1.png",
+      "sha256": "740edf42832e8320e8f39efb30a11065afe40857c2dfd288bf33a535eb6b975a"
+    },
+    {
+      "path": "art/production/art30/export-facts.json",
+      "sha256": "34df960fd9fef3a811f50fe29045615a5af618099d01bf1a00f9d1306a59157e"
+    },
+    {
+      "path": "art/production/art30/npc-parlour-prompt.json",
+      "sha256": "b0b8a20b0f47c3ea431f324968926d797a5ea5be9f876a4825987af8cefb391d"
+    },
+    {
+      "path": "art/production/art30/npc-parlour-prompt.txt",
+      "sha256": "e64bea5b2e4f50f9151a15c8683fd445bad77818b85f2b57570aaa7d7ba3b5d2"
+    },
+    {
+      "path": "art/production/art30/npc-parlour-audit.json",
+      "sha256": "b1372a3fa604786995af356bad3710fc143a164e9582986160123a60dc1be7a9"
+    },
+    {
+      "path": "art/production/scenes/settlement.png",
+      "sha256": "5c3e4d9f1e713f7c22e7fddb66ba788737d7e75b53c521f182354caf0a866bc7"
+    },
+    {
+      "path": "art/production/scenes/wilderness.png",
+      "sha256": "b0334ce39ae5aa0b922908d182ce85e2c3b09097b4407d90de1542d7546de5f9"
+    },
+    {
+      "path": "art/production/scenes/terrace-closed.png",
+      "sha256": "115e3997cc4d6d69cb5e56f66c48a44ad7ec7d649bd7d0397c30670a200f521e"
+    },
+    {
+      "path": "art/production/scenes/secret.png",
+      "sha256": "c3921f48e2d87a9b3a6c1db7c1ccbee5aeb337f11a8ce030985786378be0c934"
+    },
+    {
+      "path": "art/production/scenes/terrace-v2.png",
+      "sha256": "7404105d35ece7a45ee080a1b37385d712c4066cd78729d907ae513e591d184d"
+    },
+    {
+      "path": "art/production/art31/life-desk-v1.png",
+      "sha256": "7eb3c74516376147bb8de74b827bff85975c5e549d2fd007519d398bafe353ae"
+    },
+    {
+      "path": "art/production/art31/export-facts.json",
+      "sha256": "ac58c582353bdc04819c7eb3007af2052e85983710ddb9feea9afa8873fe1ad7"
+    },
+    {
+      "path": "art/production/art31/life-desk-prompt.json",
+      "sha256": "04888a160bf05519fe32c42a32eb1e7091db7facad3b87e22ea5514b06bdc41c"
+    },
+    {
+      "path": "art/production/art31/life-desk-prompt.txt",
+      "sha256": "c2a3f37dfd1b1cfca7021a81d9ace221ff610703c308a74d5c5443653f773545"
+    },
+    {
+      "path": "art/production/art31/life-desk-audit.json",
+      "sha256": "34fff6d016331862fe27f533a2f68ea1f87523200886043e0e939b22991d4c37"
+    },
+    {
+      "path": "art/production/art24/sanctum-v1-prompt.json",
+      "sha256": "84b3c5568c0c89fc2c0499cd5b3ba6ddeb388a2331b0956b1d1b43654ec5ff6d"
+    },
+    {
+      "path": "art/production/art24/export-facts.json",
+      "sha256": "c86c54cc5ed93ca557a4a71cb1039e2c171c8dc40d44ccb8064dfae3f68572d7"
+    },
+    {
+      "path": "art/production/art24/sanctum-v1.png",
+      "sha256": "30e1744336c83ed684e9a51e5188c61518d1247576bbdcae233e6af3f75a9efd"
+    },
+    {
+      "path": "art/production/art24/sanctum-v1-audit.json",
+      "sha256": "0c19b4e217e4c2da34d03ae91f48b401e3546c3f38f8950fc47b0a11b1429bc6"
+    },
+    {
+      "path": "art/production/portraits/lu.png",
+      "sha256": "5e570cd3748273864263e52b01ee11144972cff7874c9ff845d7b81d94ae5a6a"
+    },
+    {
+      "path": "art/production/portraits/pei.png",
+      "sha256": "22583181d159d49dded331cf3af296b956172bdc9c89c28d96516c0892f2d98f"
+    },
+    {
+      "path": "art/production/portraits/yan.png",
+      "sha256": "1a62092be290d65e9b5faa1c674d90d7e50e92f1829a3a848e41f98689813dca"
+    },
+    {
+      "path": "art/production/portraits/shen.png",
+      "sha256": "d6a236262a00a2f2656a425a1b9aed7f36cf8cf9f11478ba7574f3c65795a641"
+    },
+    {
+      "path": "art/production/portraits/player.png",
+      "sha256": "daec5e6347a757ca9a52077bb1fb96b32c03eb4abebc6bb549176b78f3f83cf2"
+    },
+    {
+      "path": "art/production/art35/heart-prompt.json",
+      "sha256": "4badb55cf6be538b125b5939c4e54dc9f7466bb83efa8ca6547f780778ab8d47"
+    },
+    {
+      "path": "art/production/art35/heart-audit.json",
+      "sha256": "b283a3613719a92e56bb16c237a7b0b1ca606f3e98dec8f689802ee9a169d705"
+    },
+    {
+      "path": "art/production/art35/knot-prompt.json",
+      "sha256": "b06ea331d34281a6b56e78ef5c66f1addfa58350bd9ccc8e29e6434d41b809ae"
+    },
+    {
+      "path": "art/production/art35/manual-prompt.json",
+      "sha256": "e4842182450d6edf76060ba119a4a64d247dcc741e610646475773c6d47a97d9"
+    },
+    {
+      "path": "art/production/art35/blade-source-v2.png",
+      "sha256": "d178c4cf3f352a99740158cc60058bfc91f19473842b3f874b75ea82222abfa1"
+    },
+    {
+      "path": "art/production/art35/fan-prompt.json",
+      "sha256": "9f380cdaa1bc57c78d489182419d801ab7d9d3b6d4a3311837076d906b385eec"
+    },
+    {
+      "path": "art/production/art35/heart-clean-prompt.json",
+      "sha256": "193f8dea1aff5e68de409453ee29f112c5700a68ec7ee6b4da57c714e93c8884"
+    },
+    {
+      "path": "art/production/art35/leaf-audit.json",
+      "sha256": "92acfff55f971edefe9135c8ce6f9b977b3f8ed3c7a876bee03e54ce49e1ee56"
+    },
+    {
+      "path": "art/production/art35/export-facts.json",
+      "sha256": "e30fa1b35c4ed05c817cf18cef583abee5fcca45d91637f5b48b57b9ff5fa5e4"
+    },
+    {
+      "path": "art/production/art35/seal-audit.json",
+      "sha256": "1c2d8607916986e61041410ab7070da5ca83241d410b89fc0853860b55f7b416"
+    },
+    {
+      "path": "art/production/art35/heart-clean-audit.json",
+      "sha256": "e5726a84233454368b61d84d5e934973cdf048ce43159ae4d59944c45ec0dc7a"
+    },
+    {
+      "path": "art/production/art35/fan-source.png",
+      "sha256": "4f78ec19a23db1a230f4140f3d0eb5e0b91b878a9d0538ecb1f160431670cb62"
+    },
+    {
+      "path": "art/production/art35/scroll-audit.json",
+      "sha256": "604376aff506d435e393280d254c2d17264ed2ac35ab1cc238eaf7af3e15deb8"
+    },
+    {
+      "path": "art/production/art35/knot-audit.json",
+      "sha256": "495bcc20c1b6c763c37880df23f86d1fd27727085c8cd85794343966b9e658ba"
+    },
+    {
+      "path": "art/production/art35/seal-prompt.json",
+      "sha256": "0793e38fe78103282e06b6018050ea778d451c3874d186b861ff6dafc50f4180"
+    },
+    {
+      "path": "art/production/art35/manual-source.png",
+      "sha256": "3bab008f65388bf1fa35f3bfd49dd0a64bb1d8e1e9974b3d5b44b43a96478fdd"
+    },
+    {
+      "path": "art/production/art35/blade-audit.json",
+      "sha256": "ecd93a8ba97dcf46030be179006de4d2d8a55ddb2f5670478b0b34f16bd14e8c"
+    },
+    {
+      "path": "art/production/art35/scroll-prompt.json",
+      "sha256": "d85cbd4102655711c02711ea9d2e4e75a5c94bd784eb16d74fba0477473d8878"
+    },
+    {
+      "path": "art/production/art35/fan-audit.json",
+      "sha256": "e6e8d2de3ed49ccc75dc5337481b64181d7034b5a1bc03c91ebbd3034fe4df90"
+    },
+    {
+      "path": "art/production/art35/heart-source-v2.png",
+      "sha256": "e8806142c853da983f27ebbdfde4ccba28a94812faac3d889097a88b804a1e81"
+    },
+    {
+      "path": "art/production/art35/leaf-source.png",
+      "sha256": "ac9cdb030f0c48537691353c84012bfe47f4d17d9b6d12504f00fdd92ed3f8e8"
+    },
+    {
+      "path": "art/production/art35/blade-prompt.json",
+      "sha256": "6c05b53d0862f07f66945cd7cbb7fa0528666ad8c135f94c37cccdec25f08e99"
+    },
+    {
+      "path": "art/production/art35/seal-source.png",
+      "sha256": "3e76960d9b602166238f24a94e2540476a9fdd4fa1b8e36699f1969f459c53b1"
+    },
+    {
+      "path": "art/production/art35/knot-source.png",
+      "sha256": "a143a3a8ebfb11238897ce3dbd97a0ea91cece9de122260bb5b3571a7bb09e51"
+    },
+    {
+      "path": "art/production/art35/leaf-prompt.json",
+      "sha256": "c03a4c6c36df5cb3e6a73439abd8903e15df228c988b6f6248d944911560ae51"
+    },
+    {
+      "path": "art/production/art35/manual-audit.json",
+      "sha256": "6d19127df03ece4c7bdff1fa14ca3fa5080329504ce9d8d36d9953a51a3046c4"
+    },
+    {
+      "path": "art/production/art35/blade-source.png",
+      "sha256": "6b9f7842ba801546797ea5527d24f389dcab840310162bf33994e7a125d80566"
+    },
+    {
+      "path": "art/production/art35/scroll-source.png",
+      "sha256": "4a86f1e132362f43e549a0c3550f9a8feeec4d7513fb5e6281c33f0210e29cdd"
+    },
+    {
+      "path": "art/production/art35/blade-clean-audit.json",
+      "sha256": "a1a4f0c8cbe5069746f64b7917a6247530ca5532edf802e6ff6cca780037c286"
+    },
+    {
+      "path": "art/production/art35/heart-source.png",
+      "sha256": "bc1c7f279bc4dbcb01976e671b2edbdbb49d87f203bc30bac863ff49022e7dcb"
+    },
+    {
+      "path": "art/production/art35/blade-clean-prompt.json",
+      "sha256": "5b011b461e8aa702a35480e4e3ba11a59a81c0f7c87ae264e5cba6f936b6eecd"
+    },
+    {
+      "path": "art/production/art32/ending-prompt-pending.json",
+      "sha256": "fea133ab329335a0e642b110368d3cd02e8714b9ea471ed4419dd4253aacbea5"
+    },
+    {
+      "path": "art/production/art32/question-prompt.txt",
+      "sha256": "aabcdb7ab6dfb71eb907f454ef05c36cb0eda505052884c0114a650f3355ca18"
+    },
+    {
+      "path": "art/production/art32/question-audit.json",
+      "sha256": "46407ecb7e027ebc8432fc0975697a7d135d23bca01c4df9d447b0c12faf5c6f"
+    },
+    {
+      "path": "art/production/art32/export-facts.json",
+      "sha256": "93ffbe73567c28a7c8ffb9eaf0833d8e18b94bdd4c5a66f6c62d68919a20cf4b"
+    },
+    {
+      "path": "art/production/art32/question-v1.png",
+      "sha256": "3367dcaab9ed0bd74e072e6d66e5c1049969295ddd49d67386c39aa58b2e226c"
+    },
+    {
+      "path": "art/production/art32/question-prompt-pending.json",
+      "sha256": "bdc34f528d9f3a19ac432bfef479b2701ef7ddc8446415e28dd8a77fabfef717"
+    },
+    {
+      "path": "art/production/art32/question-prompt.json",
+      "sha256": "73ca3ad4f13078439d5dc58f5d7843ca00ece2cca0b398e2ce0f78db8806b965"
+    },
+    {
+      "path": "art/production/art32/ending-audit.json",
+      "sha256": "aac421bc16dc1580bd41ef27d0579891cd2c3ea5205edf5c7d7c7a126b1c04ad"
+    },
+    {
+      "path": "art/production/art32/ending-prompt.json",
+      "sha256": "c5c3584f75d3b33321fde6d49d6ad603e1bd3e184e066eaf0f53922cedfa417c"
+    },
+    {
+      "path": "art/production/art32/question-export-facts.json",
+      "sha256": "ef405947010e1839ffd4f10f0b13b38f093d429a9ea585670064063bcdb764d8"
+    },
+    {
+      "path": "art/production/art32/ending-v1.png",
+      "sha256": "37c4e5d5d92a1444f84facad37135ce69c325ee59604a7a01403fd496ea6dafc"
+    },
+    {
+      "path": "art/production/art32/ending-export-facts.json",
+      "sha256": "a7990756103ee211c191e9a4d15a8f5ad5369b85853ac184f316e68147699999"
+    },
+    {
+      "path": "art/production/art32/ending-prompt.txt",
+      "sha256": "f7fb6ad9b6c8b82782e2b551d4bf570900ccef501ff29e68f1e97ae9f0d72909"
+    },
+    {
+      "path": "art/production/art28/alchemy-scene-v1.png",
+      "sha256": "c1f22fa7d3327c19842e3774676762f056e4ace696ce401d89e5c566e2cdc069"
+    },
+    {
+      "path": "art/production/art28/alchemy-scene-audit.json",
+      "sha256": "03f43171084f96a205fd00a1fcf57fb783b3b194e8db255681be76157ee53342"
+    },
+    {
+      "path": "art/production/art28/export-facts.json",
+      "sha256": "130f5c156019db9ee2ce72f8580f42d02df493d44dde0a2a3dd78596538e4840"
+    },
+    {
+      "path": "art/production/art28/alchemy-scene-prompt.json",
+      "sha256": "636997f74846d38ac5821a0328adc4363a7a4a6d8baa960e609a8fa1af4562fe"
+    },
+    {
+      "path": "art/production/art26/player-loadout-idle-v1.png",
+      "sha256": "662372d16decd1e4286d4a0df9ab920f42074f3afc73f7723ea439df70ab3e2e"
+    },
+    {
+      "path": "art/production/art26/player-loadout-idle-v1-prompt.json",
+      "sha256": "b055edfaf06c4272fb3ec3e1e07e72f6409ad6ced97a9594498aa1a8a871ccb2"
+    },
+    {
+      "path": "art/production/art26/export-facts.json",
+      "sha256": "2a26898caddd6a513626a5e69fc56aa110344bb777c94e851be8cf3a67aeba33"
+    },
+    {
+      "path": "art/production/art26/player-loadout-idle-cutout-prompt.json",
+      "sha256": "ac95c0f827781846614b49da18891ba0d5a66ffc1e3486e7e1253f8146f46d23"
+    },
+    {
+      "path": "art/production/art26/player-loadout-idle-audit.json",
+      "sha256": "96dbe489167eeb322836d6c34b267ebac96a410ebb5e871bf5ae63c6c0e7afeb"
+    },
+    {
+      "path": "art/production/art27/relic-workshop-prompt.json",
+      "sha256": "ec0564bc13fcd3b34807027a0b631cb4e215653c873c6465804cdf90e10f74c8"
+    },
+    {
+      "path": "art/production/art27/export-facts.json",
+      "sha256": "aa3d264784923845be0b1ba03f36c90d1e5271fe6743d961395ef336d95bf852"
+    },
+    {
+      "path": "art/production/art27/relic-workshop-position-prompt.json",
+      "sha256": "cb1ee2094f08515b40a1a6e0e8c8dd1b722625f3d9ef106398fea0b540b3d0bc"
+    },
+    {
+      "path": "art/production/art27/relic-workshop-audit.json",
+      "sha256": "b82c8cc2581dac0229ac34d6ce42f7a932d30c3f86c040a9f89bb883b2cbe78e"
+    },
+    {
+      "path": "art/production/art27/relic-workshop-v1.png",
+      "sha256": "7de63c37eb5b8907482e8307db4fe14c3798c50e027b44aa22488ddbe558cc7a"
+    },
+    {
+      "path": "art/production/art18/action-jade-frame-source.png",
+      "sha256": "545f5cbc8d27e1472e312fa2e7102dc2896c335e3fc84153efbf98a48c6ca8dc"
+    },
+    {
+      "path": "art/production/art18/exports.json",
+      "sha256": "c16c412b00d9f8f77f27fdb62b4352e3ee39f66e807a5a8e8d897e616d9d4803"
+    },
+    {
+      "path": "art/production/art18/dialog-jade-frame-receipt.json",
+      "sha256": "bc70ee8710e33d82c7566bc6dd0bbe892d1b804c78386e6b2e54e5f93a098c52"
+    },
+    {
+      "path": "art/production/art18/prompts.json",
+      "sha256": "b3f91ca5a83f1070777e5efe132423a5c3f25d6106cc4823401bc9d97e6de5b3"
+    },
+    {
+      "path": "art/production/art18/action-jade-frame-receipt.json",
+      "sha256": "4af520398e05401152f03ac9b9cb3dd0f57a079648cb0f1762db2b076405e039"
+    },
+    {
+      "path": "art/production/art18/dialog-jade-frame-source.png",
+      "sha256": "12a7fcd3ba80a2171d77834ca11aee237cf05f71ae486e74a99d015ee1fb5df5"
+    },
+    {
+      "path": "art/production/art29/inventory-scene-v1.png",
+      "sha256": "c3e1186f96c0a8aa8dab7c8013eca1171ec8ef6ef40facfe5439480fe0472000"
+    },
+    {
+      "path": "art/production/art29/export-facts.json",
+      "sha256": "f9b28b05039b0361bd084634150f14780d4ea76ddbae2ab54dd8afa174e68e10"
+    },
+    {
+      "path": "art/production/art29/inventory-scene-prompt.json",
+      "sha256": "3c261e6811d3223daee092765beced5f7a15511f18dc47d8b67206e6c475c723"
+    },
+    {
+      "path": "art/production/art29/inventory-scene-position-prompt.json",
+      "sha256": "83b12280526c31bc83bdc06f3b21b495eea2eb00c8ffe152f8c281eaf4ac3ac5"
+    },
+    {
+      "path": "art/production/art29/inventory-scene-audit.json",
+      "sha256": "a3b347562e9445f93c826d6c2e05d78b488f1e59e421aa433c1179d30dea7077"
+    },
+    {
+      "path": "art/production/art29/candidates/nook-v1.png",
+      "sha256": "614b03a478ee99cca08e5d55cf1449ed2f52088cef5706989513a2adfbf73a7d"
+    },
+    {
+      "path": "art/production/art29/candidates/nook-v2.png",
+      "sha256": "c3e1186f96c0a8aa8dab7c8013eca1171ec8ef6ef40facfe5439480fe0472000"
+    },
+    {
+      "path": "art/production/art27/candidates/workshop-v2.png",
+      "sha256": "7de63c37eb5b8907482e8307db4fe14c3798c50e027b44aa22488ddbe558cc7a"
+    },
+    {
+      "path": "art/production/art27/candidates/workshop-v1.png",
+      "sha256": "3ef9b2c4c42f9929a521c13d5a566cc90b9bad36c8b340783504b4ee99eaea29"
+    },
+    {
+      "path": "art/production/art26/candidates/idle-v1.png",
+      "sha256": "39e5a7822fa15fc48e30afc4e36872f6e9f18dc958382c336959e881f18c4426"
+    },
+    {
+      "path": "art/production/art26/candidates/idle-v2-cutout.png",
+      "sha256": "662372d16decd1e4286d4a0df9ab920f42074f3afc73f7723ea439df70ab3e2e"
+    },
+    {
+      "path": "art/production/art28/candidates/chamber-v1.png",
+      "sha256": "c1f22fa7d3327c19842e3774676762f056e4ace696ce401d89e5c566e2cdc069"
+    },
+    {
+      "path": "art/production/art32/candidates/question-v1.png",
+      "sha256": "3367dcaab9ed0bd74e072e6d66e5c1049969295ddd49d67386c39aa58b2e226c"
+    },
+    {
+      "path": "art/production/art32/candidates/ending-v1.png",
+      "sha256": "37c4e5d5d92a1444f84facad37135ce69c325ee59604a7a01403fd496ea6dafc"
+    },
+    {
+      "path": "art/production/art31/candidates/desk-v1.png",
+      "sha256": "7eb3c74516376147bb8de74b827bff85975c5e549d2fd007519d398bafe353ae"
+    },
+    {
+      "path": "art/production/art30/candidates/parlour-v1.png",
+      "sha256": "740edf42832e8320e8f39efb30a11065afe40857c2dfd288bf33a535eb6b975a"
+    },
+    {
+      "path": "art/redesign/receipts/ta08-soul-cold-v1.json",
+      "sha256": "67d8d6c3114c2816f472235bb0a00a0c781231db521cc3ee2329658e89e304a4"
+    },
+    {
+      "path": "art/redesign/receipts/scene-prompts.json",
+      "sha256": "9844f4b8e1c565c0f1a4434eefa1bc9bcab837bf4febaba5707d95ceb7bc7c84"
+    },
+    {
+      "path": "art/redesign/receipts/panel-material-prompts.json",
+      "sha256": "e1928704e4f700b3681ae52015574525446cb504332ad6e2ccf84aeb03273793"
+    },
+    {
+      "path": "art/redesign/receipts/opening.json",
+      "sha256": "043a3d8b608a565c20bf6503d86c45ef6cba87a29cd9ab1371e33e4803afdddd"
+    },
+    {
+      "path": "art/redesign/receipts/ta08-jade-cold-v1.json",
+      "sha256": "170431eda74e62fe374838bb51c982cee22122ba6ac9187d11966b06f4642df6"
+    },
+    {
+      "path": "art/redesign/receipts/ta08-dao-cold-v1.json",
+      "sha256": "e774b032ca2c1405d0ae585394bfd4f695969e908f74eb8e1783bdc9f1a1c85c"
+    },
+    {
+      "path": "art/redesign/receipts/mountain-wash-v1.json",
+      "sha256": "9c8f94f489190d9ac623e24c60116dfc7329f58a560d4abdbfa70d60d5f7ffba"
+    },
+    {
+      "path": "art/redesign/receipts/cultivation-prompts.json",
+      "sha256": "ebb61836bd85ca7852a74fc76cd79d633bbaacb7143205a236ab60e8e312052a"
+    },
+    {
+      "path": "art/redesign/receipts/terrace-opened.json",
+      "sha256": "87ddad7ddd06e2bc7a56a230e5a9e1787bd19b2fd86744b8ae2a18c6817041ff"
+    },
+    {
+      "path": "art/redesign/receipts/character-prompts.json",
+      "sha256": "18bd777ad87382f50799cd5361bc9dad0517a142e3b510837f112a34ba6a0275"
+    },
+    {
+      "path": "art/redesign/receipts/ta08-dew-cold-v1.json",
+      "sha256": "096c887392dcd26212e0f71aaf0f19453d67571e4ea51ead54c616892a7872b4"
+    },
+    {
+      "path": "art/redesign/receipts/player-standing-cold-v1.json",
+      "sha256": "3c04603c3242571b73888d309104e0cb0f5f650180efc72f1b523d9936370672"
+    },
+    {
+      "path": "art/redesign/receipts/ta07-standing-prompt.json",
+      "sha256": "a2bc539b36e2d4e3b834cb0bc05fca08e6ccc9c1be686d6705e39ff4f4517927"
+    },
+    {
+      "path": "art/redesign/receipts/terrace-v1-input.json",
+      "sha256": "6a73b3410cf107a3014855c69beaed68a95bb930ee3660dfeac45d3be30809d7"
+    },
+    {
+      "path": "art/redesign/receipts/terrace-storm.json",
+      "sha256": "1dacdcab44252c9ea66b14ebbad23b3419ab54564cec23e9a51556c9ca8c1c69"
+    },
+    {
+      "path": "art/redesign/receipts/sect.json",
+      "sha256": "77ce59b006324bf8cd1c160e25d09326be27dfe5fccb32e037103a881467546e"
+    },
+    {
+      "path": "art/redesign/receipts/market.json",
+      "sha256": "ed8873603508b59b8081d1eda2b1fedda453b34248962b1efec5513a0041cdf4"
+    },
+    {
+      "path": "art/redesign/receipts/xuan-paper-v2.json",
+      "sha256": "c8cf7d29e04b8b01438bd66aec92d7fea4ec95ff008294d2acaf3646bc6585cf"
+    },
+    {
+      "path": "art/redesign/receipts/terrace.json",
+      "sha256": "2a4f2e8732511852105570e4aae2fc8f41d31373f19fbea0c7681b66b06b511b"
+    },
+    {
+      "path": "art/redesign/receipts/ta08-herbs-cold-v1.json",
+      "sha256": "71fb5cbae6c26313191795f8d355d637fdc78fa1bbf0764ed54d8a41a3d50459"
+    },
+    {
+      "path": "art/redesign/receipts/desktop-ui-prompts.json",
+      "sha256": "5c7409f514fca7298ea51001aea586f3f6525ea444e4e47a452d59c7772a909e"
+    },
+    {
+      "path": "art/redesign/receipts/panel-paper-v2-prompt.json",
+      "sha256": "f4445f5c34c97fb4f139fb72dc55b20bb180c319285188f95d6e851409f33630"
+    },
+    {
+      "path": "art/redesign/receipts/wilderness.json",
+      "sha256": "7844427ffbcb534df9b9290ee9972c5425c0945ce9611273569df1253502969d"
+    },
+    {
+      "path": "art/redesign/receipts/xuan-paper-v1.json",
+      "sha256": "3ff1d5c087ec67780f706ea5d1c61c21ff5d51799b5de7cefdd9ec4458abb968"
+    },
+    {
+      "path": "art/redesign/receipts/meditation-ink.json",
+      "sha256": "2ffc832d9d0891c20094c6ca98a3538951db383e8f5059b2e96ee61ba9e2a2bc"
+    },
+    {
+      "path": "art/redesign/receipts/cave.json",
+      "sha256": "d54412a6b6f23a24b817b64516a437a4d6ce3da2a25faf7f362e68819d8c3bc6"
+    },
+    {
+      "path": "art/redesign/receipts/panel-tool-output-hints.json",
+      "sha256": "23ca0ced1efc10cb83b185a73b6b267141521cd927ea864156e5d2f3567377ce"
+    },
+    {
+      "path": "art/redesign/receipts/enemy-prompts.json",
+      "sha256": "a45296898bddc99dc964e063c1628d4b582fb436a1c870e5e7e4843407f04b03"
+    },
+    {
+      "path": "art/redesign/receipts/ta08-lotus-cold-v1.json",
+      "sha256": "40e2245fe966fee431fbf871f29eba4141f1ee06cb28542e5dfa7ad5cb949941"
+    },
+    {
+      "path": "art/redesign/receipts/cave-meditation.json",
+      "sha256": "61b558fb88e98025a4ebda9af786bba272976130dbbdd92f6b8a2ba35d019477"
+    },
+    {
+      "path": "art/redesign/receipts/meditation-prompts.json",
+      "sha256": "98063b292188139b62bc33eebbbd2b76a82b9b7132caa0075cc9434de0977ae1"
+    },
+    {
+      "path": "art/redesign/receipts/secret.json",
+      "sha256": "70def230e7692c50ada1e4c952e729f129966deb0d0b088a38bf417d2bbaa6b8"
+    },
+    {
+      "path": "art/redesign/receipts/ta08-resource-prompts.json",
+      "sha256": "b8a939c8663aba88c1f24ddc8decdad4626d1427f379dfe87813363f17cdc671"
+    },
+    {
+      "path": "art/redesign/receipts/player-seated-cold.json",
+      "sha256": "e81505cd2db058e33f23feca476d4298958076f6ba201a34f832235e7b63f379"
+    },
+    {
+      "path": "art/redesign/scenes/wilderness-v1.png",
+      "sha256": "f0d5e60602fe6ed0afe8dd7909b821d5ffef7749320dbb85d6eca087ed4451c0"
+    },
+    {
+      "path": "art/redesign/scenes/opening-v1.png",
+      "sha256": "401ec7bb4503b0ce30c9910df3e5ff44ab8860a2ec2d160bdd0a24e4b92215d7"
+    },
+    {
+      "path": "art/redesign/scenes/terrace-storm-v1.png",
+      "sha256": "b036ee9a2d9ac4aa865daf0b74365a8e1f1bd8f5cd77e10a90411c44058d97b3"
+    },
+    {
+      "path": "art/redesign/scenes/secret-v1.png",
+      "sha256": "0fcc270cc69aa0a5ccad34b5932ac502dee8bd49917624f378f53f92bafb1b78"
+    },
+    {
+      "path": "art/redesign/scenes/cave-meditation-v1.png",
+      "sha256": "03de7ff446ac4462c575f4cef46051e143ca389d1394f54f606e39ddc2172ed7"
+    },
+    {
+      "path": "art/redesign/scenes/cave-v1.png",
+      "sha256": "bf78fcc8959efdf59806f07e090a63c90456ff11b00a2838a099b4a6c4c0b0a9"
+    },
+    {
+      "path": "art/redesign/scenes/terrace-opened-v1.png",
+      "sha256": "5fbb358c880bc200f565dea809723a46621c6afbe636c659aac2a635b6a9ca8f"
+    },
+    {
+      "path": "art/redesign/scenes/market-v1.png",
+      "sha256": "1403656635d725808d9c0a3c40e4b7c7850bc6cb396341f49fdfa7521ac868de"
+    },
+    {
+      "path": "art/redesign/scenes/sect-v1.png",
+      "sha256": "2748a54477772b2a3dea57c7a6f31b9b6a055bddf78c9a7696ce5b1fa83e3478"
+    },
+    {
+      "path": "art/redesign/scenes/terrace-v1.png",
+      "sha256": "830d361b7e77ec5b43b29b6574dabf8b293da59a39455a5d6aaf3c2557f2f08a"
+    },
+    {
+      "path": "art/redesign/scenes/terrace-v2.png",
+      "sha256": "b6c458d7940b530fc1eb605227ae415ebf6851738f12f7e27237ec11aa8e226a"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/soul_lamp-blank-v1.png",
+      "sha256": "fd534f0d5dffb08914564976b158b1ab343dcdfaa70afae023f7606b32208af2"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/soul_lamp-blank-v1-prompt.json",
+      "sha256": "0ba221b5c99b38ca608fb09eacd127f85fd3755e244e863f6ed62037899195fa"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/export-facts.json",
+      "sha256": "144716bdc986647209e2011535ba84b521b8156a23a1b8a5cfa66793c3d0e685"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/frost_sword-blank-v1.png",
+      "sha256": "f4dc96341831c965bf7fe4d98cf7ca28ed931fcd9a06bbb96dc2085ba6ec2b56"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/cloud_mirror-blank-v1.png",
+      "sha256": "cb13d9b5e37ce9c4bfe206b4b9ae20ae8212b2b5465b3a62db0d5dde9d7b3980"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/cloud_mirror-blank-v1-prompt.json",
+      "sha256": "44d9e9223c811d76831e53f93a064d0fb41c0e50629b2f788432b939134e5566"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/jade_seal-blank-v1.png",
+      "sha256": "6b766842fcaf622e01451e0662920ff3b40cbee16b9f0ace891e35c244589fa3"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/frost_sword-blank-v1-prompt.json",
+      "sha256": "5c5fe8aebf48ab4f9b28cfc723c849c78f104fd23ca3d1000f37aa5e80943f58"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/jade_seal-blank-v1-prompt.json",
+      "sha256": "178de92ad2a1a9817944745f6e0109383a0987b5e8dc0a30e83c42bec0ce19bd"
+    },
+    {
+      "path": "art/redesign/catalogue-art/alchemy-v1.png",
+      "sha256": "05d35197c80d770dcb4f5745ec683c4c7eca950b341ab54a50740bbdd23b1bfa"
+    },
+    {
+      "path": "art/redesign/catalogue-art/prompts.json",
+      "sha256": "c739809ac7ef8a72a2c946cbb6289d339024ffeb3d3a0d438358d85be1aaf6e1"
+    },
+    {
+      "path": "art/redesign/catalogue-art/supplies-v1.png",
+      "sha256": "75fc201312ef92b30bce08242da1f04bbd278fba12ed268856fc99259bb3bac6"
+    },
+    {
+      "path": "art/redesign/catalogue-art/manifest.json",
+      "sha256": "33e06718012b516e423ae0c10c55dbb5ca7b7abe150f49c0b9c9fe3ac7520952"
+    },
+    {
+      "path": "art/redesign/catalogue-art/study-v1.png",
+      "sha256": "20f2fcbdbc395c58e45ee306daefd31defb4f427cd3012ce524c8bf0f475ff32"
+    },
+    {
+      "path": "art/redesign/desktop/mountain-wash-v1.png",
+      "sha256": "a3ddcfabdee381e39281138407d87d49fcad565bb7a28a086353fe485bcd839e"
+    },
+    {
+      "path": "art/redesign/desktop/meditation-ink-v1.png",
+      "sha256": "f1cb70f5e69fe493da5fbe9ea705506e937a09b467d21c49ec4c14fd49c6b347"
+    },
+    {
+      "path": "art/redesign/desktop/xuan-paper-v2.png",
+      "sha256": "931c3842c1e7489fe0aad49a7fcca6020e00078aeaa45991a7f627cd0d419340"
+    },
+    {
+      "path": "art/redesign/desktop/xuan-paper-v1.png",
+      "sha256": "c6e3d6e64d309165e1dafc96be58cd07f5217b360f73c3fa680c4b29e8d1b3bb"
+    },
+    {
+      "path": "art/redesign/ta08-resources/herbs-cold-v1.png",
+      "sha256": "22e547c0b65458b66aebd78d49b7569e16f0aec73f230a92ea1fe33583aac311"
+    },
+    {
+      "path": "art/redesign/ta08-resources/dao-cold-v1.png",
+      "sha256": "f2e9a9b0662b3a97476df3c16b99e5f99f7498de96783171e5f161641871cc72"
+    },
+    {
+      "path": "art/redesign/ta08-resources/soul-cold-v1.png",
+      "sha256": "1d5eaf8d1db197c96141cd9fe3d448d515ea7c0686cfb7ecbb14929d67591f4f"
+    },
+    {
+      "path": "art/redesign/ta08-resources/dew-cold-v1.png",
+      "sha256": "cfd573494d13846c9394d1fbfad16644025aad8d419b69c797c84d981bbe81df"
+    },
+    {
+      "path": "art/redesign/ta08-resources/jade-cold-v1.png",
+      "sha256": "d8439189a2bc7fad4598252b8ce22f404d59744b7f042741d164284c037112ab"
+    },
+    {
+      "path": "art/redesign/ta08-resources/lotus-cold-v1.png",
+      "sha256": "238635054220ca90db51390bdc5ffd06051f84db9e33e68feede05384f8f7e9c"
+    },
+    {
+      "path": "art/redesign/alchemy-workshop/furnace-v1.png",
+      "sha256": "7297913c0228ed94a6310b8e29126990f6833892327068a9152ae5c3f0b276f9"
+    },
+    {
+      "path": "art/redesign/alchemy-workshop/prompts.json",
+      "sha256": "c4e15d382bc5f4fa24ed6dbb5f80f089e813e482a984e278992f1b454423b861"
+    },
+    {
+      "path": "art/redesign/alchemy-workshop/receipt.json",
+      "sha256": "1c23df409a0c740605eb276d7103b7a620d09c539b4d8a4e1009d5997d19a124"
+    },
+    {
+      "path": "art/redesign/art33/selected-sources.json",
+      "sha256": "cbe62217fa4baa5fbb165b11f563f67e15e7f57006673e693b39b891ee78c4d8"
+    },
+    {
+      "path": "art/redesign/art33/export-facts.json",
+      "sha256": "ace0f21c574869d6598bba7a2a50162582fabe1399f8ab9d4f4d232b3a8259a5"
+    },
+    {
+      "path": "art/redesign/art33/guide-view-patch.json",
+      "sha256": "b18b48a7571977fff68911881551903d477c6b03dc8b1968925e978b23dcf8b7"
+    },
+    {
+      "path": "art/redesign/art33/medicine-case-v1.png",
+      "sha256": "60c0683acf72c52e2c91b6c0ff417514a1b9347ef0b85d076a00418625728cde"
+    },
+    {
+      "path": "art/redesign/art33/prompts.json",
+      "sha256": "256801ee845d449f7a2a7020f1cc816b6c3bb084fa3cab5f734408b7b7c568a3"
+    },
+    {
+      "path": "art/redesign/art33/shen-offering-v1.png",
+      "sha256": "e0b8e7097947178f25249f34c410a5df46bff33f2ee98590d337a6b97376018e"
+    },
+    {
+      "path": "art/redesign/art33/parent-view-patch.json",
+      "sha256": "ec861406332cc2cc74336c2f7e36b6446168313d48093885a47fa2a3c8de45f5"
+    },
+    {
+      "path": "art/redesign/art33/tool-audit.json",
+      "sha256": "310cbd5340822fd9308afdabce8fbd04437db9d0a7aa653207f525dc0998a90f"
+    },
+    {
+      "path": "art/redesign/art34/source-view-patch.json",
+      "sha256": "2264923abe3c2e8d4d68a6dab7686ba318543f6958f9ac94ed5873d956a188e0"
+    },
+    {
+      "path": "art/redesign/art16-schools/talisman-station-v1.png",
+      "sha256": "d6b0b62acf8e28ad91efca56fe179b31ae2733ef5db7507e1ce0ec2de99f1615"
+    },
+    {
+      "path": "art/redesign/art16-schools/export-facts.json",
+      "sha256": "0a9eccebf459700311e650945e817d0b00dffd4705429e02240a4d0892d05982"
+    },
+    {
+      "path": "art/redesign/art16-schools/sword-station-v1-prompt.json",
+      "sha256": "4f982060f088a1c0e983af6da03afbefd4abf64faf131b1da99d01e65b8251e7"
+    },
+    {
+      "path": "art/redesign/art16-schools/talisman-station-v1-prompt.json",
+      "sha256": "3da3a4d8e7b92462824d85b8e22230e980326a0df97d7dd8dae0bb43cb82dc26"
+    },
+    {
+      "path": "art/redesign/art16-schools/sword-station-v1.png",
+      "sha256": "a5d8ccab08223c77e56bde86eebc5067125488431111a3216e1dcef08f1de4f8"
+    },
+    {
+      "path": "art/redesign/characters/shen-v1.png",
+      "sha256": "483d128d9e72dfa44cf3c902df0bab6721beafdb1032184502263f1d7e0cdf42"
+    },
+    {
+      "path": "art/redesign/characters/lu-v1.png",
+      "sha256": "67b7448c829ce827ce039ca73575740123abe7cd65353d5c0231074543910ed6"
+    },
+    {
+      "path": "art/redesign/characters/player-seated-cold-v1.png",
+      "sha256": "7e24b71c4a9854a00e2b53ec2b97f81e5cf7f0e1c7509be527506139e9c1f356"
+    },
+    {
+      "path": "art/redesign/characters/pei-v1.png",
+      "sha256": "3f0ed2c068100aad9e68623163de26d743b945b5f8f9252d58168d394c36c383"
+    },
+    {
+      "path": "art/redesign/characters/player-v1.png",
+      "sha256": "0abde0fe4d767fa6832df7b35e7ac6b87f4c318b3e0312cf0e3d984e2e9e23e2"
+    },
+    {
+      "path": "art/redesign/characters/player-standing-cold-v1.png",
+      "sha256": "6b1201d21c081fd6e15c60ae7093899d23e0375193cf046e9338bbd952620509"
+    },
+    {
+      "path": "art/redesign/characters/yan-v1.png",
+      "sha256": "b488ffa8cbc9104e0e9652bf38fb922f9328c513e5e68152b5e78b3ab3841154"
+    },
+    {
+      "path": "art/redesign/art11-items/spirit_pill-v1-prompt.json",
+      "sha256": "e093c5a425c947519a6531f8689dbe5e2bf52e97cdbe8be6283967dfa027ab99"
+    },
+    {
+      "path": "art/redesign/art11-items/lotus-v1.png",
+      "sha256": "4f117aaf584530881f31e2e94b3de8a41f045494f0a788706a7608e0782f1cde"
+    },
+    {
+      "path": "art/redesign/art11-items/dao-v1-prompt.json",
+      "sha256": "ccc9f880a8134d1d09fd3501a6f6f6218d30f4c80f0e2d6c34c1aab2de298198"
+    },
+    {
+      "path": "art/redesign/art11-items/ascension_seal-v1.png",
+      "sha256": "d4bda35f534675cf592e777bdc17aa08149b9b9eff89842577774c2e762e7f84"
+    },
+    {
+      "path": "art/redesign/art11-items/dew-v1.png",
+      "sha256": "65c89498b40cf4e54af8c343f3437fc4c77edebcca698bf63f2f8c1308d84864"
+    },
+    {
+      "path": "art/redesign/art11-items/soul-v1-prompt.json",
+      "sha256": "3a8ce4365cea20bc95381ed594d537a2f155b31d1e9b8dddd78d754c947172a6"
+    },
+    {
+      "path": "art/redesign/art11-items/dew-v1-prompt.json",
+      "sha256": "8bfd587cf1035dc7fc11498ecd51edee9b2c8ac94f2c0b6254f90e8789090107"
+    },
+    {
+      "path": "art/redesign/art11-items/ascension_seal-v1-prompt.json",
+      "sha256": "e04dc0dda1b5bfb2ef5a11b91336560a2e013b3153975c4375d67943e64d690e"
+    },
+    {
+      "path": "art/redesign/art11-items/spirit_seed-v1.png",
+      "sha256": "03b24d0f174382e0665ace6a7332452d764e9c46f5be780ec7bb131251b26b79"
+    },
+    {
+      "path": "art/redesign/art11-items/golden_pill-v1.png",
+      "sha256": "562f079f0258df75cb5acd4848bd0ad9f49f546483f8ba3d1abc183e2536371d"
+    },
+    {
+      "path": "art/redesign/art11-items/jade-v1.png",
+      "sha256": "54ce32e28be625a6e16dd99e055b7404a98b957fcd45ab7f7a8a10f74fd8bb25"
+    },
+    {
+      "path": "art/redesign/art11-items/export-facts.json",
+      "sha256": "0b21de7634948d0ec07965adb5eec2ab95619c561cf35057a90d6d25052dc1fc"
+    },
+    {
+      "path": "art/redesign/art11-items/foundation_pill-v1.png",
+      "sha256": "5379d522005f7e8b8a88f8c6ebf5bdd5d16726ca2843fd63b866966ce6117266"
+    },
+    {
+      "path": "art/redesign/art11-items/nascent_pill-v1.png",
+      "sha256": "44b79a1668ec83babe4770d2b6b3d713b6ac8e8ea6fd0bbcf0081232089973e3"
+    },
+    {
+      "path": "art/redesign/art11-items/nascent_pill-v1-prompt.json",
+      "sha256": "ad155595563c8a6afb89ca600cb6a008deb370438a6f553c4efc59dfd396ff1d"
+    },
+    {
+      "path": "art/redesign/art11-items/core-v1.png",
+      "sha256": "5406086cd1f61654eb4f83e9bf7a1329934b133640492676bbc96a824a7d08d9"
+    },
+    {
+      "path": "art/redesign/art11-items/herb-v1-prompt.json",
+      "sha256": "03ea93e7366b9b60d78608a878ec17dd1e26d64f244b21329b509f2f8ddec304"
+    },
+    {
+      "path": "art/redesign/art11-items/lotus-v1-prompt.json",
+      "sha256": "66a63f93e8efbc1275d315e1dece6d57ea89e2d1674907dd1d4dfd31fe554a5d"
+    },
+    {
+      "path": "art/redesign/art11-items/spirit_pill-v1.png",
+      "sha256": "b59618e1c4d438126ed9cb341b1e09cd7a9a9bd38700896ed943450f805a7c6d"
+    },
+    {
+      "path": "art/redesign/art11-items/herb-v1.png",
+      "sha256": "3f73147d9e592dcb185ca76dc21a00f714c87d478d54303fbe3ec399119ba519"
+    },
+    {
+      "path": "art/redesign/art11-items/golden_pill-v1-prompt.json",
+      "sha256": "b450261fe6e767b37cf13b5b1c35579d6b57890e1a9adb7fe035c9cf81283fc8"
+    },
+    {
+      "path": "art/redesign/art11-items/core-v1-prompt.json",
+      "sha256": "b7e0a81fbc86b7b81a6fa33f5c37c55738306bd8c2a2d110326d3d48502d3856"
+    },
+    {
+      "path": "art/redesign/art11-items/foundation_pill-v1-prompt.json",
+      "sha256": "e514b3a911e4c44abe49ce177f542a03e1e19b9c1123ab6fc4d8bfeee6720b70"
+    },
+    {
+      "path": "art/redesign/art11-items/jade-v1-prompt.json",
+      "sha256": "9ccabd32e1567bb6ea69b0ef382b811c9fea2f176f7af8caad92bd140c43ccc5"
+    },
+    {
+      "path": "art/redesign/art11-items/healing_pill-v1.png",
+      "sha256": "9b78f221371efe5305281fe8b91133676d69e975c49501b8f1d156f043de178e"
+    },
+    {
+      "path": "art/redesign/art11-items/spirit_seed-v1-prompt.json",
+      "sha256": "0999a541fb0c14b2c78f16da1edd9728bc1f70d8cfd862d31a3b94c6c634677a"
+    },
+    {
+      "path": "art/redesign/art11-items/soul-v1.png",
+      "sha256": "d141ad80f6c806529eb406d469f7c157ba7d62d876ffbeeb889cb92a05420281"
+    },
+    {
+      "path": "art/redesign/art11-items/healing_pill-v1-prompt.json",
+      "sha256": "e378b84116234493b107cd459cad52e8ffd54a236b5cc5d395a3b44472cc1ff4"
+    },
+    {
+      "path": "art/redesign/art11-items/dao-v1.png",
+      "sha256": "59d2e3ef4bc583bf6a298f41d4d697d8e48a9a09ba30152866a2c4ad76a3f0bd"
+    },
+    {
+      "path": "art/redesign/feedback-skip/source-candidate.vue",
+      "sha256": "dd62f6e1761b8c979b422135d14938ce7df41a4dcb212181a4c138cbd48bfdcd"
+    },
+    {
+      "path": "art/redesign/art03-objects/asset-facts.json",
+      "sha256": "f840e3e9df2ac45ff5d59ff8ae9411cdc8bff338f898face36bdee42928bc465"
+    },
+    {
+      "path": "art/redesign/art03-objects/jade_seal-prompt.json",
+      "sha256": "ba9bc533f15dd6cde3f418051d078e354bdcbca0ae21c971316f8888fbe08c8e"
+    },
+    {
+      "path": "art/redesign/art03-objects/soul_lamp-v1.png",
+      "sha256": "57029fb4cda9e57050640e6d338056d92768506d7d6299d9e95d8ca4dfaf17fd"
+    },
+    {
+      "path": "art/redesign/art03-objects/frost_sword-v2-prompt.json",
+      "sha256": "0e3c53e175b7032027f8653ef01b3e697a7180527210d837989ff256b4ddc161"
+    },
+    {
+      "path": "art/redesign/art03-objects/cloud_mirror-v1.png",
+      "sha256": "a7249e6ebd5e69f910b3191dd3cc8085a383f180a4d7fcf8027d401d9704eb50"
+    },
+    {
+      "path": "art/redesign/art03-objects/cloud_mirror-v1-prompt.json",
+      "sha256": "86c3a7659fd39ebb04920a09237e37d79a5c85dc2e4b1cd9f46aff667a1b5f60"
+    },
+    {
+      "path": "art/redesign/art03-objects/jade_seal-v1.png",
+      "sha256": "7253c56040d0e2c4fd8888896e85c0c1999735479f4672fdf0ccfb4e2fd04b5c"
+    },
+    {
+      "path": "art/redesign/art03-objects/prompts.json",
+      "sha256": "c45994346a5bc1d91579651220655df75161567a8c2c28f7440d10819fe0c07b"
+    },
+    {
+      "path": "art/redesign/art03-objects/frost_sword-v2.png",
+      "sha256": "cf7036014cf3bb96583ebfb83afd94ee8d0269dd82c72699336f203da8e31d85"
+    },
+    {
+      "path": "art/redesign/art03-objects/frost_sword-v1.png",
+      "sha256": "eaadb4bf71232035da768cbb36df252176007ca74dfe634cf18e58d43167af3e"
+    },
+    {
+      "path": "art/redesign/art03-objects/frost_sword-prompt.json",
+      "sha256": "9588f3b7a742ec2e2ce23474c3f1fd45a492e6e2c0c10ab54bfbf9382bc4d5f4"
+    },
+    {
+      "path": "art/redesign/art03-objects/soul_lamp-prompt.json",
+      "sha256": "cb54cd8de5b8b134c7ac3a9b867ee2e3938af32c9e4ef40420345df1f232b17a"
+    },
+    {
+      "path": "art/redesign/enemies/puppet-v1.png",
+      "sha256": "d950df6f54bc192e42c137850088f7d4f2f3795196a77f310c7313ddd8865d37"
+    },
+    {
+      "path": "art/redesign/enemies/warden-v1.png",
+      "sha256": "3c22963143eb7af7f1ace123923e89fddb47aec3c020a519e2848133660c0c58"
+    },
+    {
+      "path": "art/redesign/enemies/sentinel-v1.png",
+      "sha256": "b875773f3a7a3a06a7dd7ed31b359f57c32dfdd5e29fea69320caa39955d2544"
+    },
+    {
+      "path": "art/redesign/enemies/trial_thunder-v1.png",
+      "sha256": "523ac17532520a8feb1954c1ed12bff68dc039568dca6d9c44b10c4969e9f36e"
+    },
+    {
+      "path": "art/redesign/enemies/serpent-v1.png",
+      "sha256": "f626438ca50a420a40e9b313613372b65905f09ea5e794a20a581bd85ec59ad5"
+    },
+    {
+      "path": "art/redesign/enemies/shadow-v1.png",
+      "sha256": "f686a691010084d8a55348787c780bb2984162eab3905cb9c7cd75f4e0505cb6"
+    },
+    {
+      "path": "art/redesign/enemies/wolf-v1.png",
+      "sha256": "2e8360e708a212206428b794f811c1ea3a844a5f7b8cbc250c5e8ea2e819914a"
+    },
+    {
+      "path": "art/redesign/enemies/trial_gate-v1.png",
+      "sha256": "a49a8a217376ed8c5d1776e959e2a229907f434f8bde3deb919fb4c71962a250"
+    },
+    {
+      "path": "art/redesign/enemies/trial_heart-v1.png",
+      "sha256": "87fbc213dab33af4f8381828ceb7e1a12a9a772bd995d995e74c4bfb2805ed81"
+    },
+    {
+      "path": "art/redesign/art03-objects/receipts/frost_sword-v2.json",
+      "sha256": "bc355a2ea50f8fb0b361ce6fe0d0fd9ae3e2e07f937c76044fce5fd17fc564bd"
+    },
+    {
+      "path": "art/redesign/art03-objects/receipts/soul_lamp.json",
+      "sha256": "746b758177719de4cc46abe3c36ff00cb36c33a234c8de34b65dc257d9132136"
+    },
+    {
+      "path": "art/redesign/art03-objects/receipts/jade_seal.json",
+      "sha256": "8d9cb2ac0398ad776cf96e6b564ada974a9004098bda1b675aeb8c3e6969b34f"
+    },
+    {
+      "path": "art/redesign/art03-objects/receipts/cloud_mirror-v1.json",
+      "sha256": "ac8b6db0ca16f783f369b3a504ddf385a65dc441ba24354b7f66566a017a6dbc"
+    },
+    {
+      "path": "art/redesign/art03-objects/receipts/frost_sword.json",
+      "sha256": "1a5f4089a0f02fafac7219765e4fa58c0977f6c43d4a876679e6f5c144e5d4d2"
+    },
+    {
+      "path": "art/redesign/art03-objects/exports/jade_seal-repeat.webp",
+      "sha256": "81aad3db8a19ad6a39b0e54a96254d6fcc94164bdcbbbb87bd0e3f48ef43c49c"
+    },
+    {
+      "path": "art/redesign/art03-objects/exports/cloud_mirror-repeat.webp",
+      "sha256": "8a8066224ee8487a226dd63ae27f8fd1760a08214cdf93826d8e8d8d7d77a008"
+    },
+    {
+      "path": "art/redesign/art03-objects/exports/frost_sword-repeat.webp",
+      "sha256": "0054af06284f62b516d5be2802dbd69fecb4cb31ee8d56f0a7d895568df79943"
+    },
+    {
+      "path": "art/redesign/art03-objects/exports/soul_lamp-repeat.webp",
+      "sha256": "d0345b92c5c191f50b831ffdeec27a591785b1948398948daee06df799dff1cc"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/spirit_seed-v1.json",
+      "sha256": "a63bd5efb4fe034a4d30b8174710765edd3867ffc571438f1df6cb172a142f48"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/healing_pill-v1.json",
+      "sha256": "4e074b747234002d1b5c0aa9b98e249811af9f2d361f45c02f92d8e64c00eb68"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/spirit_pill-v1.json",
+      "sha256": "b3737fbecfc3ad3275c21c638f6adc44da296d45d712bc189edf32a2e51aa835"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/dew-v1.json",
+      "sha256": "e1ab2c3b132b5c1f6b4c8a85eeb72ab00219b92048baf25173bdb81b11bbdca9"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/dao-v1.json",
+      "sha256": "b3a14a2e8ee721ecc42eb265a55d89b86b7874964b7fd3dc8f556bf20458e18c"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/core-v1.json",
+      "sha256": "cc86cb0e15392a257dde17ed0333468873fca0d8379f3953fbdfbe700f057346"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/foundation_pill-v1.json",
+      "sha256": "8ab9bd5dceb5dc8361092f91fd6f777e83d552092d0a50b100558691383552dd"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/herb-v1.json",
+      "sha256": "2f7004ad5b2cfe6b6cb9e6dfcb51295e889d5962b95b97693bb59e8e854651fe"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/golden_pill-v1.json",
+      "sha256": "f7269fc8cb431b7c31b49f49a7510c2d81fdfe7f851072ba2daa4f40472ae9dc"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/jade-v1.json",
+      "sha256": "fbf5403e5b3f992e722aec28d9b9bc5cbb675ae7184c1dd125bdc2f73189c6cd"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/ascension_seal-v1.json",
+      "sha256": "6fd2b370e07dc448bbd63f49cbfe0a97400e1c3c691afe7a762be3736f2008e3"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/lotus-v1.json",
+      "sha256": "2f53f8a05d917c0d79bf7202aaaffe72e2e882bed94d5f2700b83c2b3734d77d"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/nascent_pill-v1.json",
+      "sha256": "0d505bac8727d2d86e3069a9b94d0316e3d4b6071bca700c3911390a337bde6d"
+    },
+    {
+      "path": "art/redesign/art11-items/receipts/soul-v1.json",
+      "sha256": "d3c73c518bd7ad6dca14ae46c805f22d1fed9a843f70e5a87be99e280d55ef9b"
+    },
+    {
+      "path": "art/redesign/art16-schools/receipts/sword-station-v1.json",
+      "sha256": "0ffc6e89235753e7b9e09473d2fe1adc395e4442675c7cdc0f59526f6be8d0b2"
+    },
+    {
+      "path": "art/redesign/art16-schools/receipts/talisman-station-v1.json",
+      "sha256": "ebbbcf5ee2d685eeb62c16eeb68bc8ce17955305d956fece78e9c46e5a665b21"
+    },
+    {
+      "path": "art/redesign/catalogue-art/receipts/study.json",
+      "sha256": "167e8eb79a6a7dc74904232d3ead3192392300945b84520333462856a428e0c8"
+    },
+    {
+      "path": "art/redesign/catalogue-art/receipts/alchemy.json",
+      "sha256": "5a1178a30879aa9be5965241aa8495d9340090b81a5745222d9f874fb12c2862"
+    },
+    {
+      "path": "art/redesign/catalogue-art/receipts/supplies.json",
+      "sha256": "738ea98c72cd54a73bc838ea9b9b02ecdbb24ca5b4557d063f1dca44d4440172"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/receipts/jade_seal-blank-v1.json",
+      "sha256": "7ef2962316aa1c5fc33967232b9cde4678466d01e33d3e2bd179f0e0877e4b2f"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/receipts/frost_sword-blank-v1.json",
+      "sha256": "b1591030c4bc2ef2f5bd2729d6ff264af3aba6ede76075e7ddba9a5cda524f68"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/receipts/soul_lamp-blank-v1.json",
+      "sha256": "1c6675349bdd60349dac540edf07e6ada6b0796c588472da58f6d83faf2867d8"
+    },
+    {
+      "path": "art/redesign/art10-relic-blanks/receipts/cloud_mirror-blank-v1.json",
+      "sha256": "30472798692e37b425d415458b49d91ff40a107066f90feffec170a3106db105"
+    },
+    {
+      "path": "art/redesign/receipts/characters/lu.json",
+      "sha256": "ab0b4dcca08999f1eeb793ba0e4262dcd0f57c981c358de879f197d9a67d2992"
+    },
+    {
+      "path": "art/redesign/receipts/characters/shen.json",
+      "sha256": "095d902a1877e446d313433aec5800ae11cd0cf4d0b5240bc5b755decb973858"
+    },
+    {
+      "path": "art/redesign/receipts/characters/pei.json",
+      "sha256": "27817dd4f390545a57ab496d292dd8f60447695c71576908cddd62abcbc6d382"
+    },
+    {
+      "path": "art/redesign/receipts/characters/player.json",
+      "sha256": "41134fab8cda62109f5ec2009b5df12157117fb7bb8c9c5518cf633e526245e7"
+    },
+    {
+      "path": "art/redesign/receipts/characters/yan.json",
+      "sha256": "9055f5fee5d824738cedc951c3ebae108d6cc30ec4cc6e6632870a8cf1a0ba17"
+    },
+    {
+      "path": "art/redesign/receipts/enemies/trial_gate.json",
+      "sha256": "d89f38424df8b8eb6071eac0bd851e3aac29372847675ec9cecd26a935160a13"
+    },
+    {
+      "path": "art/redesign/receipts/enemies/wolf.json",
+      "sha256": "a75ff017374f23e16046099f49418a0535531a616e161613261c1c6245b79a14"
+    },
+    {
+      "path": "art/redesign/receipts/enemies/puppet.json",
+      "sha256": "a03bcb839ec59c88bf8dc99fa13708f3f89984b2d3ec327cc796e6759b986426"
+    },
+    {
+      "path": "art/redesign/receipts/enemies/trial_thunder.json",
+      "sha256": "bc1eaf97dbec8c3ffce67aaf300ef1319c313c58f3afa347f1fc197ee99aeabd"
+    },
+    {
+      "path": "art/redesign/receipts/enemies/warden.json",
+      "sha256": "83e86f9f39f6dbc98ce490c528186d3bcc65584b4023b0635014a1358f6ac53e"
+    },
+    {
+      "path": "art/redesign/receipts/enemies/shadow.json",
+      "sha256": "04316eba82a2e8c0a988647a0fbb88216aa85172f392c1879c261eea512e6775"
+    },
+    {
+      "path": "art/redesign/receipts/enemies/serpent.json",
+      "sha256": "69f60058b118b77d9954bd94486af0f0045990e0a313892cfeb315f542a9945f"
+    },
+    {
+      "path": "art/redesign/receipts/enemies/sentinel.json",
+      "sha256": "e665aa70d131a9b1afaeef1969668f02a2a4d33168f8a4ddab592f610d7dbb69"
+    },
+    {
+      "path": "art/redesign/receipts/enemies/trial_heart.json",
+      "sha256": "30c8de11628c8a3ff21c7dfb8a2176cf85569d2b6775e9b563fa64fae6546a35"
+    },
+    {
+      "path": "docs/v0.3/05_\u6210\u957f\u4e0e\u6570\u503c\u7cfb\u7edf\u4fee\u8ba2.md",
+      "sha256": "54a9b48a40ccf3be0eb14e2620188dfe53808425cf4cc78ea1d4a3aa759af12b"
+    },
+    {
+      "path": "docs/v0.3/04_\u9a8c\u6536\u6e05\u5355.md",
+      "sha256": "d13c90a71b0ae108de42c0acac3a2478e2bda6b898b8afee56b8c399126a3cd6"
+    },
+    {
+      "path": "docs/v0.3/01_\u8bbe\u8ba1\u89c4\u683c.md",
+      "sha256": "636678be3e1e9e639a9ba27c4cbb11a295a11b31df2015e587d39d191809a9ec"
+    },
+    {
+      "path": "docs/v0.3/03_\u6570\u636e\u4e0e\u72b6\u6001\u5951\u7ea6.md",
+      "sha256": "d3063a89c1136abce1ea393e0f474935813e4a1354291071608e3cef1481754e"
+    },
+    {
+      "path": "docs/v0.3/README.md",
+      "sha256": "202f174ab31046241cb530e3432e3b9a47d6d0919a54fc5ac1589cb6909c27d3"
+    },
+    {
+      "path": "docs/v0.3/02_\u5b9e\u65bd\u8ba1\u5212.md",
+      "sha256": "280de3dec17a1769a3d993abc0e74456c71d30fd96f493d2259527723f6b6356"
+    },
+    {
+      "path": "docs/v0.3/examples/opening_event.json",
+      "sha256": "6c10f5a7109a8540754965402f4da140eab8cab1f1d00fab286cf803e2f3164b"
+    },
+    {
+      "path": "docs/v0.3/examples/growth_example.json",
+      "sha256": "ce81601326d264c6ba2150c1a6d34a29f6c228810b25f3759a02b4165a82a460"
+    },
+    {
+      "path": "docs/v0.3/examples/README.md",
+      "sha256": "a5aaf930967b3bf3bd7da28f86529b1acc8ea516385ae17a1ae804d639264bc1"
+    },
+    {
+      "path": "docs/v0.3/reference/approved_main_ui.webp",
+      "sha256": "8569f0463d3bdd3a5605e41059630bb0d5540c3a8c08effe48e176d0b7f7e030"
+    },
+    {
+      "path": "docs/v0.4/03-economy.md",
+      "sha256": "68af5d3b8966ef3252ee86eedf377c8d596803102b1a9bdde207e46c66b0a9ab"
+    },
+    {
+      "path": "docs/v0.4/06-validation.md",
+      "sha256": "564ea33d037846ca0af4cc27ee0a170ecc209fcc1ad5f472b0e05652167ecf8a"
+    },
+    {
+      "path": "docs/v0.4/05-art-ux.md",
+      "sha256": "0b2459525e9305a744408f92bb07987b1f3d1d9777a8ab947e870d87e111c6bd"
+    },
+    {
+      "path": "docs/v0.4/sources.md",
+      "sha256": "6bf0ef7fecd65d07bd356a02769b1ae4755341473f39ab6b7f5d7671815c0cf5"
+    },
+    {
+      "path": "docs/v0.4/07-repository-audit.md",
+      "sha256": "c91cc0c2baad6799cde2ba53fb17127250dd871fc253971cc0ef2e49289af418"
+    },
+    {
+      "path": "docs/v0.4/README.md",
+      "sha256": "8ca6a0858e9ffc120b5daab26c56c06995457dd6a5d2e28c5a5ad2bbb106ea7c"
+    },
+    {
+      "path": "docs/v0.4/01-competitors.md",
+      "sha256": "ddf6f8dc89fafab8478c6405a2bff3db749b8e75376416a0cf13834f39c75785"
+    },
+    {
+      "path": "docs/v0.4/02-gameplay.md",
+      "sha256": "fb093d598f353b302f25baaba2a740633803b33ca562a103405f9cfd74e25fde"
+    },
+    {
+      "path": "docs/v0.4/04-implementation.md",
+      "sha256": "d489399e80521a2fc7bbd57588c13e716e6516058fc8d1261ff9f96f505b2959"
+    },
+    {
+      "path": "docs/v0.4/tools/check_documents.py",
+      "sha256": "27b5e10c676e9a60606eecb15f691556382f04135a16d9a6243f105deb7069eb"
+    },
+    {
+      "path": "docs/v0.4/tools/audit_economy.py",
+      "sha256": "5cd64d38d582b23ac340ddc0d47180283bb48a2d962abc66072ae5ce5f6a8eb7"
+    },
+    {
+      "path": "docs/v0.4/data/economy-audit-results.json",
+      "sha256": "220f2e7de8f32de7c805132911e713767aca7adaa93524586ba31688119f7f37"
+    },
+    {
+      "path": "docs/v0.4/data/economy-snapshot.json",
+      "sha256": "bd514fd7c56d23348ef9bd1199075e19136a4d3b48850bbf7d4fad7bad4179d5"
+    },
+    {
+      "path": "web/src/focus.ts",
+      "sha256": "8ae91e78a4db7a854c293fc4b1bc28f02dd0d542b3119cff383f9245b4944eea"
+    },
+    {
+      "path": "web/src/game-menus.css",
+      "sha256": "45247c5604dddcb05972b4ff847731546e9f203c3569460510bf0b696a42ca13"
+    },
+    {
+      "path": "web/src/art18-ui.css",
+      "sha256": "2a536ea2393e233d0d610bb9feb1af1fd74d906592b3abd4e2b24340a639b947"
+    },
+    {
+      "path": "web/src/activity-effects.ts",
+      "sha256": "dd697069d134e4e9a935c0186758ebd243d26b29dd9856f4100d21596b4a0f8b"
+    },
+    {
+      "path": "web/src/supply-effects.ts",
+      "sha256": "6b11c6aab3e634831854d0c1723b76916bbb26fdbccf640e4adc6e043ee72a19"
+    },
+    {
+      "path": "web/src/GoalBoard.vue",
+      "sha256": "bc908d0ce123a15066f7950b77c1a09db67eda1592e3a50a1ff45cfbfd70a7fd"
+    },
+    {
+      "path": "web/src/local-events.ts",
+      "sha256": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150"
+    },
+    {
+      "path": "web/src/reading-memory.ts",
+      "sha256": "8e7a0718edb07113e30f817df5ea98180455e1ea4a7f481a10c72b3657357808"
+    },
+    {
+      "path": "web/src/App.vue",
+      "sha256": "daeff1fbef8791ec6558150c189e41324c6f3db2ec1d3518b74899c605d8ff47"
+    },
+    {
+      "path": "web/src/ta09-equipment.css",
+      "sha256": "de13ed9cc306774407d7ee97efcc122ba24ed3c2cf64a99580d1782ed557b607"
+    },
+    {
+      "path": "web/src/GoalPanel.vue",
+      "sha256": "3f0e30aa122c32d0f04ae49c11cecf528e74eb0a45f3760b9759c3516f0a4f34"
+    },
+    {
+      "path": "web/src/idle-sources.css",
+      "sha256": "e26dee84f2cdb8b47d6295d345fb390622c5b45b6db7e49273b6690a2d42815f"
+    },
+    {
+      "path": "web/src/TrialReturnChoices.vue",
+      "sha256": "5555c5c1302a32c0848a90e99e3f32084a4a629bf1c5104fb5dffe70d8998fd2"
+    },
+    {
+      "path": "web/src/LifeCatalogue.vue",
+      "sha256": "fcdf511cd55ed9cacd55cf37e6a8d07ddac48db5807d93895c36f2fbfa12fb70"
+    },
+    {
+      "path": "web/src/MarketPlanner.vue",
+      "sha256": "81b370592cd27d9351fd8a49e97f2d5157ae8ec3ae0155468e44780becbd851b"
+    },
+    {
+      "path": "web/src/panel-materials.css",
+      "sha256": "2e1505bb60b4e193f685577b00647b7537898edfecf967986437dd4adbf91183"
+    },
+    {
+      "path": "web/src/BattlePanel.vue",
+      "sha256": "a5e1f12d9c85ee0a3149101da9a0bbad07de03326499ddf4398ccdda767c111d"
+    },
+    {
+      "path": "web/src/use-local-experience.ts",
+      "sha256": "fb8b2bb0e6255948f5dae47f7d0c689c46ef1f7624400eb93c65d4ed0e6258c2"
+    },
+    {
+      "path": "web/src/JourneyMap.vue",
+      "sha256": "a598cfa4f6279a4a7f98aeec78fe018fa5a13ed2964531b53ded0727b880840e"
+    },
+    {
+      "path": "web/src/stage-r4.css",
+      "sha256": "cfaad5028dfdf091596a74d89507917aef9c7b655b05510209125220c4ffd50c"
+    },
+    {
+      "path": "web/src/guidance.ts",
+      "sha256": "7e26e7fff1b91b11fed94d5de284d5be126273f3533f66368248ea2184df990c"
+    },
+    {
+      "path": "web/src/milestone-view.ts",
+      "sha256": "af1a2045781e806806140092349b2ecde690524436b254a0c1f326a94e108efd"
+    },
+    {
+      "path": "web/src/ConfigurationOutlook.vue",
+      "sha256": "72768df4cb3d226c5efc029dfa73e68324cfb0fd5962ca6d9348964224619e20"
+    },
+    {
+      "path": "web/src/StageOutcome.vue",
+      "sha256": "93abd506844b685f992420045b122f3e0356ee1e0aefe8111b6eedaf30c4c1be"
+    },
+    {
+      "path": "web/src/StudyNotes.vue",
+      "sha256": "aa386bcdbe90d2d9b0b3acfaabb839f0d209b20dad4f0604d9ccda2953c8db5f"
+    },
+    {
+      "path": "web/src/CultivationStageHost.vue",
+      "sha256": "006210e41b1e542b948ac57d12775b93f836f4d158ca318b85f00bd440b51753"
+    },
+    {
+      "path": "web/src/demo.css",
+      "sha256": "77a68ee6af0a07f7098e40fdb92b003872d4766f2d87fb036afc20ebe0b3f6d9"
+    },
+    {
+      "path": "web/src/stage-r1.css",
+      "sha256": "1ed138017fb93db1156aea3db518ea7f930864a0503e3adb7363f4e4eb68112d"
+    },
+    {
+      "path": "web/src/main.ts",
+      "sha256": "ba7d484e521876911b756fee5e81c25be7ea86b8d92a9d46391d2f98454d25ee"
+    },
+    {
+      "path": "web/src/catalogue-art.css",
+      "sha256": "f6eb5db42fcae9eca3f74e8599183bef52176e2beb48a76e461dc739e181b960"
+    },
+    {
+      "path": "web/src/action-feedback.ts",
+      "sha256": "af4f938bd1dae6b00ed089e1fbc44eb0c3b2751cbe67786713b06d95030d88df"
+    },
+    {
+      "path": "web/src/battle-choreography.ts",
+      "sha256": "b043e02ddcfeb6f2796cfa8a5fe1123ee70af40ef8998067785636192687c179"
+    },
+    {
+      "path": "web/src/art03-equipment.css",
+      "sha256": "040f879e7b73de6df289373f8e68ddf698f12f22787c4200c356b3dbdbecbe17"
+    },
+    {
+      "path": "web/src/stage-r3.css",
+      "sha256": "6dd66ce7073806b33299b5b64f7c0607d8bdc232c412527fd4989cdf18b3c783"
+    },
+    {
+      "path": "web/src/ta07-cast.css",
+      "sha256": "05336c9c061713cfd8be1473bdc4b3c6e4a368036cc14ae9e81f420cefdd1ecd"
+    },
+    {
+      "path": "web/src/GameConfirmDialog.vue",
+      "sha256": "e607ab9f4eb60ee6725fb57f4d38a5c7f983ef82c6028539f7fe5e70b70a52cd"
+    },
+    {
+      "path": "web/src/JourneyLocalAction.vue",
+      "sha256": "640bf5362cb743162b64e7b9c3f07ae26329a8d6c5a12c8ffa643464fcb405db"
+    },
+    {
+      "path": "web/src/navigation.ts",
+      "sha256": "f97fb271e8928fe48d981b4bcbeba7d655ed2a1b9036693a202a8cc433b558fc"
+    },
+    {
+      "path": "web/src/stage-r2.css",
+      "sha256": "9560bb0913f89d28f97b789cfe49454d9110d0fd3d01ae6edefff61833dd2582"
+    },
+    {
+      "path": "web/src/activity-view.ts",
+      "sha256": "166671b5bc26461fcea557d41c12fd1ed89e900458702f298cb6507e92866b05"
+    },
+    {
+      "path": "web/src/art10-equipment.css",
+      "sha256": "d7dcafbfed487c825c607812a9a3d04be600f5d49e62c5add44f9464d83ce627"
+    },
+    {
+      "path": "web/src/NarrativeStageHost.vue",
+      "sha256": "e195b09b7485b48e88883a830ca2c0b352da396e62f6457e5ff30c0168d9630d"
+    },
+    {
+      "path": "web/src/art16-schools.css",
+      "sha256": "af4798fd2ce2465fc14e9986f46877c071d9aaf1435f519a8b111e825402ae34"
+    },
+    {
+      "path": "web/src/use-tracking.ts",
+      "sha256": "ef1ff1a6edd1f441441dfe6743696d8c7239e6b9f0be1c22e649049038501c86"
+    },
+    {
+      "path": "web/src/milestone-objects.css",
+      "sha256": "0531069bb3149b60c3fa408092e2e6544dbc6109b9a3840738ab293c1af440d1"
+    },
+    {
+      "path": "web/src/immersive-theme.css",
+      "sha256": "6f55f39540dd49a1708dd585cee61e91ae114441e20fb1d1731f024501288197"
+    },
+    {
+      "path": "web/src/narrative-objects.css",
+      "sha256": "44353d749c6ea41dc7bcae77f05f93ec554804b4c8dce79820b8db9511b72adb"
+    },
+    {
+      "path": "web/src/activity-persistence.ts",
+      "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf"
+    },
+    {
+      "path": "web/src/SealedLifeStage.vue",
+      "sha256": "6780e7a3f7689aedda0cf7b9be7bec76a617177bca120bdfd9d4383a68f4af4e"
+    },
+    {
+      "path": "web/src/ActivityHistory.vue",
+      "sha256": "9ed8e4f3410289a33184b38182c23d2f55f71ca629a1ff0d7f5edec8a0b6e178"
+    },
+    {
+      "path": "web/src/idle-activity.css",
+      "sha256": "17ef27c763e8c2e5a7d57f11b5f24f1604cc4df97562abf6f4e4a909a30c13e6"
+    },
+    {
+      "path": "web/src/configuration-persistence.ts",
+      "sha256": "a78887adcb6a622a9904a8db070aa9b9fea873ccab1282769660885079696c00"
+    },
+    {
+      "path": "web/src/TrainingActivity.vue",
+      "sha256": "601e58f6b9edc237031d77337e527e529ac4d619447980bf9e5cddb0b700e4d3"
+    },
+    {
+      "path": "web/src/SealedLifeHud.vue",
+      "sha256": "da1d8e420798ea7ccdebda6c0f91a39567c5ab9843036098f6eb2b0904319135"
+    },
+    {
+      "path": "web/src/CataloguePager.vue",
+      "sha256": "b5069cf0f229edb66c1e2779cd3542d98bc8a05e292a485c71c2627a652694c0"
+    },
+    {
+      "path": "web/src/CultivationFallback.vue",
+      "sha256": "8db348a488f4c70947a8974579f26816d25657f1fbabee632d049448cc369883"
+    },
+    {
+      "path": "web/src/AlchemyWorkshop.vue",
+      "sha256": "d221e898fd1463a233698233eb4fb6448be5c0387a42e16261e92e4d2758c84b"
+    },
+    {
+      "path": "web/src/CultivationOngoing.vue",
+      "sha256": "36ff8a84502f8031e6d4410f650e5aa264faf3346051ac932f5cc35715726253"
+    },
+    {
+      "path": "web/src/ProgressTrack.vue",
+      "sha256": "142f6f187ee7f2f326e4b63a1a080016139d5b18c9c90a05556c169b6dd2444e"
+    },
+    {
+      "path": "web/src/BattleDeck.vue",
+      "sha256": "cdab3a1aaa6eb40d0c8a943a5f2e466074b4e927844b7e2ac0191fa2e9da0ed9"
+    },
+    {
+      "path": "web/src/ta08-source.css",
+      "sha256": "0bcaa542dca4f1dc9bb862e63ead388dee2f996bf483507d77813710181f3522"
+    },
+    {
+      "path": "web/src/RelicAtelier.vue",
+      "sha256": "237bb209544cf0e3c40e91fa84fddf307daa11e350c8be55a2b5165fd4134170"
+    },
+    {
+      "path": "web/src/assets.ts",
+      "sha256": "de5fb6c189b144680149d50f456d34269b4c60e670d8893c6d197315778e07b7"
+    },
+    {
+      "path": "web/src/trial-goal.ts",
+      "sha256": "0f28723f421937fad14896c24205eb1f02128e66df09cc3d05928ec2d91bc98a"
+    },
+    {
+      "path": "web/src/ScenePanel.vue",
+      "sha256": "f2043fefced6a9eec9407cbe794e3abb331297c8574f5f257ea53897d532d4d2"
+    },
+    {
+      "path": "web/src/equipment-effects.ts",
+      "sha256": "0946c3b6b76e5ea39ebd80571175e2835ce49abe94fe6499f480b1635a934888"
+    },
+    {
+      "path": "web/src/art02-journey.css",
+      "sha256": "7f5e8d5faa518aa82dc876fe512aab7fc6689b75294c6fa992720fb71dacc8e1"
+    },
+    {
+      "path": "web/src/ActionFeedbackStage.vue",
+      "sha256": "4345000cda45d032154b1f7d8fdc0767082df46125d433e1815351f8a3b3447e"
+    },
+    {
+      "path": "web/src/RecoveryRitual.vue",
+      "sha256": "9cc10138931c8006053ea658022112ec2edd99f9b63078ab998e5ae3fd02c6f7"
+    },
+    {
+      "path": "web/src/use-activity-effect.ts",
+      "sha256": "e15a7b41b897e7d4f29e8be277703efd1f8c32d2dec11d278a41a37c89425163"
+    },
+    {
+      "path": "web/src/SourceSatchel.vue",
+      "sha256": "f28a144f928cd9358df91e600118fcb19aaef2667f9eb3cb198ccb15cc8521fd"
+    },
+    {
+      "path": "web/src/closure-focus.css",
+      "sha256": "06bad1b43bf9290050ebcd77bb51ef2572d78601410a9d8a7b4de1c84e0a38a0"
+    },
+    {
+      "path": "web/src/action-motion.css",
+      "sha256": "141dc6a9e8021b2eeec654d5c51f30036fea6699d0337e1b58e62b0a49e97f04"
+    },
+    {
+      "path": "web/src/opening-response.css",
+      "sha256": "baa00c4aeef67ffb36eba3062c538c7408513e06b3ab61cff841d932cd13d1c5"
+    },
+    {
+      "path": "web/src/idle-production.css",
+      "sha256": "50a2df6a433f250ba47dbbfb2692fe6416edfa39414828d1e0d85a267b31d47e"
+    },
+    {
+      "path": "web/src/use-game-confirmation.ts",
+      "sha256": "6835e6c1ae8dc8435aa57d18ea6529bef0808c3f326cae0adb10d235124df2e4"
+    },
+    {
+      "path": "web/src/lifespan-guidance.ts",
+      "sha256": "28e3c849d1782af018bc520fb4d0b19d0ac966ab08dd0e28359069306199ff4e"
+    },
+    {
+      "path": "web/src/PreparationMaterials.vue",
+      "sha256": "6dfcc98b007f571257b410d9db0c2bd70e1a38d7ab16877cd92e2c6198b58613"
+    },
+    {
+      "path": "web/src/ActionEffects.vue",
+      "sha256": "6dd8763cdf71de98870dd6954ed1a47566055a0ddfc1f01aa6ca6879e38b03a5"
+    },
+    {
+      "path": "web/src/SealedLifeNav.vue",
+      "sha256": "4879ebe19d0784264a4ca137b0a5a52721b2b618488f6ccc7b2c2cc4cd771c67"
+    },
+    {
+      "path": "web/src/battle-medicine-summary.ts",
+      "sha256": "62c47eea0df8f5c237574dd4b61ad5dee2c668d6e8c172c92643f1f74b1322ae"
+    },
+    {
+      "path": "web/src/trial-return.ts",
+      "sha256": "e1980a75d6d92a0d8ba4b73470e862aebbc2499cc52fef01e7fab47373e02fa9"
+    },
+    {
+      "path": "web/src/CultivationPanel.vue",
+      "sha256": "d88ad0d4562f5b2025b97131cbfa8d4e89e68f49e1a4e5d47ca78fd0bd2bc22d"
+    },
+    {
+      "path": "web/src/play-flow.ts",
+      "sha256": "ec31aeb151728b37a6de4f65f17df9020fed7407194cd02df1330a0e69ad0e76"
+    },
+    {
+      "path": "web/src/JadeStudyScene.vue",
+      "sha256": "e561a38bbdf4b4a5cb814263b541dbe1f129a8e82c140717abfc73fe145488ba"
+    },
+    {
+      "path": "web/src/RelationshipPanel.vue",
+      "sha256": "16adf055ec299b01cc7cc129bd0d2472c86e3dea78a2f4a0965079f9d25026cd"
+    },
+    {
+      "path": "web/src/CharacterPanel.vue",
+      "sha256": "e65b4a0b3584cd76615eb15c1c53454d182c0c171c8090be3d4a2297f0a4a04d"
+    },
+    {
+      "path": "web/src/local-loading.css",
+      "sha256": "8855c1307ac39a386fa7f173d9076ca6999b45a0d0f1e4de5457562b7123d833"
+    },
+    {
+      "path": "web/src/BattlePresence.vue",
+      "sha256": "70b1096daa0342836d12a6174ca41a63a87e5d34571cc7e96eb3c5c488d8f4e5"
+    },
+    {
+      "path": "web/src/presentation.ts",
+      "sha256": "afb0da3d1dbbb9c58095a1ef97bb04e1411c088c06ba2941685704bbc717eca0"
+    },
+    {
+      "path": "web/src/cultivation-fallback.ts",
+      "sha256": "579ff1b15aa9195c9d5d05e973118ae2e1cbafebd0415af3fb23fbbf0aedd9d1"
+    },
+    {
+      "path": "web/src/local-initialization.ts",
+      "sha256": "26e8355dd614be09111516ba714c65ae958b62a3a869720b23d1c4f246b69996"
+    },
+    {
+      "path": "web/src/ConfigurationDialog.vue",
+      "sha256": "74067880f132af079130acea336dfd559901cc088d09124f4a26b97d2504ee86"
+    },
+    {
+      "path": "web/src/opening-offering.css",
+      "sha256": "de2c9ed1d70de4f1b937f6d518e181c728f2fc28a0c80a9a3b3896ffea2f678a"
+    },
+    {
+      "path": "web/src/idle-tradeoffs.css",
+      "sha256": "002864b2d61185ffde38f39d4081926777588afc1395db502e6eace33176d8fc"
+    },
+    {
+      "path": "web/src/game-hub.css",
+      "sha256": "c6f739121622e43a2141f8df651ed0df5352765d3591d6147868b3f328696198"
+    },
+    {
+      "path": "web/src/activity-detail.css",
+      "sha256": "d96f9458dbd3ee7d64a437f0256b3d25dba0b6c0687f1aa96eebe0fd3d72a2f6"
+    },
+    {
+      "path": "web/src/shell.css",
+      "sha256": "9399e3821fdc8b8acb5b92eb9dd948085b1a90e67595552a9a362e8332dcadc9"
+    },
+    {
+      "path": "web/src/ProgressionChoices.vue",
+      "sha256": "ba5f5d95deea270f961d0460e196f2a2ef654dbf8d9f13b190de0a34ad4c3dee"
+    },
+    {
+      "path": "web/src/alchemy-feedback.ts",
+      "sha256": "dfe2886f81b73788fc406e89f8631618ee5dadbdc24bab80db4dc5a8e4759899"
+    },
+    {
+      "path": "web/src/BattleCommandConsole.vue",
+      "sha256": "1bfab29a4db45765d502c1cbec2d637a0486621f690a1625e34bbc343761f41f"
+    },
+    {
+      "path": "web/src/PreparationPanel.vue",
+      "sha256": "76945687903fd9c01a510f76c9e7d65b7cb9ef60bb4949bad0035103dda78d95"
+    },
+    {
+      "path": "web/src/JadeEngraving.vue",
+      "sha256": "028859e4652c0af684e3d4b94ad73d7df0671003a1b17fa6993e05991931c141"
+    },
+    {
+      "path": "web/src/LearningPlanner.vue",
+      "sha256": "02cae4c97de4b054acb1208fe7801b370019a08a05d9a844d9c8f245f009a503"
+    },
+    {
+      "path": "web/src/BattleStrategy.vue",
+      "sha256": "081a5cd941deb75115655b3181aba4593966a5793c085fc1044b8c22b312fbbc"
+    },
+    {
+      "path": "web/src/art17-cave.css",
+      "sha256": "bdbb8120cfdb79f7c192965c1448139f7dbda3406acb9d21abef9b0529a6a9d5"
+    },
+    {
+      "path": "web/src/BatchPreview.vue",
+      "sha256": "8bba4a7703a68b8eceb5441d4d0d1f8e738d53f41abb113b3a61f609a0a5022f"
+    },
+    {
+      "path": "web/src/art36-error-stage.css",
+      "sha256": "c664efb45ceba736570c31fc5cdd2dd029d7bbc4041ac1337a5289bac3dafc0b"
+    },
+    {
+      "path": "web/src/story-book.css",
+      "sha256": "f8895a2b4ff2ae96a9ad9865f077d9d655a743b86000c12b3914a28dc3ebbe95"
+    },
+    {
+      "path": "web/src/preparation-view.ts",
+      "sha256": "d46825242a9912510bbec9d726e2bef22f5621e5d84717c0cbd3be70916aa38f"
+    },
+    {
+      "path": "web/src/SourceField.vue",
+      "sha256": "0f3a665944b28a27d52843c6bbe6e05925b3e9a5aaad8e859459fa69091c36be"
+    },
+    {
+      "path": "web/src/full-persistence.ts",
+      "sha256": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21"
+    },
+    {
+      "path": "web/src/alchemy-workshop.css",
+      "sha256": "26362acf00d49c9fa8a29168cc36be231d4ba6db8aba6c6c0d815926d56e6db3"
+    },
+    {
+      "path": "web/src/adventure-view.ts",
+      "sha256": "3362f2731f7597a99810c263af143eff6468d87c2dc4f89f185c0add4a46d354"
+    },
+    {
+      "path": "web/src/idle-adventure.css",
+      "sha256": "dcc84501e16f4fc243ee0153438f150bd7dff97cfa744c726b0842616c67e08d"
+    },
+    {
+      "path": "web/src/PortraitImage.vue",
+      "sha256": "e7b4b55bdce38f13e38960327bf0d8d767e69058671dc7adf42ce1adf87d5208"
+    },
+    {
+      "path": "web/src/session.ts",
+      "sha256": "76c6968b53c1ca990c4ee4ac4a921e549585338c04b10e31636ed9821f5263c0"
+    },
+    {
+      "path": "web/src/ActionFeedback.vue",
+      "sha256": "6c17e5134c3e195342a4711492e1798eee26065b2806de55c4b726aaf52f7833"
+    },
+    {
+      "path": "web/src/NarrativePanel.vue",
+      "sha256": "e4166552f75d46d58cb6dd8f3968a030f0b0be80882390bf19b6b7e5001314a5"
+    },
+    {
+      "path": "web/src/art11-inventory.css",
+      "sha256": "fcc3dfcf1299e9f8b2a81822ac15f54899ef5f274a08f9359d34af3eb7b9ed44"
+    },
+    {
+      "path": "web/src/CatalogueArt.vue",
+      "sha256": "e1e8b7e6c5d2e18b90749b88c7d4d9dc1340f01b21cd41da012dbc931f326b54"
+    },
+    {
+      "path": "web/src/play-flow.css",
+      "sha256": "a77fc4532707b04a1f38409bee85f54bc1c68e51dc7698cae439903da98413ba"
+    },
+    {
+      "path": "web/src/SourceObject.vue",
+      "sha256": "fd8b7bc3062c935e7fce82214ceb0aa09b5cc6df49e5bd38a3f710bc3e450752"
+    },
+    {
+      "path": "web/src/SourceCommission.vue",
+      "sha256": "9d385a237a24f51277fa8dae9dd4c7cb7e81c563923370066c89efeea0702314"
+    },
+    {
+      "path": "web/src/RelicInscription.vue",
+      "sha256": "b85438dafb0f5a3139cefdb6586d7f224ba5f04fc32710958c3517966caae789"
+    },
+    {
+      "path": "web/src/OpeningOffering.vue",
+      "sha256": "fd775d201b0955c24469c3a7efa8e03656c358550b224b0bbb921e06aabbce9f"
+    },
+    {
+      "path": "web/src/DemoFailure.vue",
+      "sha256": "c75a67ee2bbc77b416735f55899ae1d433fd963dee36543885547ecad73597d5"
+    },
+    {
+      "path": "web/src/GameIcon.vue",
+      "sha256": "bb3f16dcb5952299de409a6666e55901e044bb4890cf8e2ddb720f0122d3d061"
+    },
+    {
+      "path": "web/src/CaveThresholdObject.vue",
+      "sha256": "efaee4afe778020f62f26c17461c186ddf2bc8f634e31adfeffee2bca93fbedd"
+    },
+    {
+      "path": "web/src/local-experience.ts",
+      "sha256": "65614c37cd5931b275208f78aa9bf06f40768ff402a908fb2d2cf28d16e3b9ed"
+    },
+    {
+      "path": "web/src/SourcePlanner.vue",
+      "sha256": "ea42a57110db234205d8ef8f1d46f4969802a7757ed16ede9d0ff3e33e3b9e72"
+    },
+    {
+      "path": "web/src/sealed-life.css",
+      "sha256": "5ac7de685756b28b8af3bf4b468b4914a5a5cb30399c6a183358d793671be27c"
+    },
+    {
+      "path": "web/src/LocalExperiencePanel.vue",
+      "sha256": "aff8d8faa157b7139e82d5a3b5ebfff257031b0f242560a1f384a9605165b3e0"
+    },
+    {
+      "path": "web/src/LoadoutConstellation.vue",
+      "sha256": "57988cafc499981c9bef0cb1f708eca59dfe61a5fd508195bf253a0df0045b95"
+    },
+    {
+      "path": "web/src/ta07-commands.css",
+      "sha256": "54fb77b417ceb0aa333b9ec5d56245059f959b5afc1169d2728ed01daf0e0788"
+    },
+    {
+      "path": "web/src/ReviewPages.vue",
+      "sha256": "174210329c8aa9af93839f2a54cac0d8d76c50362c862bbc79096ecfeb92e7e2"
+    },
+    {
+      "path": "web/src/art35-study-rest.css",
+      "sha256": "5229f7d5f301468db7a244dbe97b205bd333a5df39124f39a70f5885f562d6fb"
+    },
+    {
+      "path": "web/src/style.css",
+      "sha256": "9290ad9cb1e75c09222bcb4f6b5e1af427ca5ea77550e1d53e101e7658b15c27"
+    },
+    {
+      "path": "web/src/demo-loader.ts",
+      "sha256": "7e676c17d754b541c37a059846527c3090d72bb2baecbc3c4fae7ddc1474db8b"
+    },
+    {
+      "path": "web/src/CultivationNotes.vue",
+      "sha256": "737cad4a765449a05afc178f50b6f22201ae9fd4649ef550f71541e6d6692a32"
+    },
+    {
+      "path": "web/src/OpeningResponse.vue",
+      "sha256": "725a3f03b21310890c795509d1c008d9fb28ba408b5c2b2fd7e2a753b987a05a"
+    },
+    {
+      "path": "web/src/GoodsPanel.vue",
+      "sha256": "b7e1b89fd8b02333e2ee924c1572d5497aa1f1a7e8e4f77511ee4bf08503c00f"
+    },
+    {
+      "path": "web/src/cultivation-objects.css",
+      "sha256": "e72dbbaf48cda74d973d9878cfab6fd7bc4d28d02f1e68d5d24bdb4d8b61b78d"
+    },
+    {
+      "path": "web/src/ActionExecution.vue",
+      "sha256": "f01edb8a65e07fd91c0b90519f3e542e9261644564f63bc72f27bc4acafbe5f9"
+    },
+    {
+      "path": "web/src/EquipmentPanel.vue",
+      "sha256": "d831e2b08bd70f8ed9fd0480b14be62c0b66e04b6e446916f07dc82d838abedd"
+    },
+    {
+      "path": "web/src/GrowthPanel.vue",
+      "sha256": "930ba00cbeca41e2c2133c34b8021af966664a7a4835d47ebfd5665e96924363"
+    },
+    {
+      "path": "web/src/story-pages.ts",
+      "sha256": "cdeff2da61fc28199b529c3394c3e881570eb0fe0bcee69770af871e8a104c9c"
+    },
+    {
+      "path": "web/src/BattleCast.vue",
+      "sha256": "e777a72538088e29a5b648dcb3a98a02bee51185c143c4b9f0ae724c603bc69d"
+    },
+    {
+      "path": "web/src/TrainingPlanner.vue",
+      "sha256": "f86f5716ee8b2f3ed96dfbf31f5486b9903b82633f9ae52adf1aca124b942056"
+    },
+    {
+      "path": "web/src/GuidancePanel.vue",
+      "sha256": "d45ac08ffa4d5596db6ba8e441e17e2c6cc55781ff154dda00e9f100d7e71e81"
+    },
+    {
+      "path": "web/src/art02-battle.css",
+      "sha256": "bd45d576f400bda33d7164725644eca7be8d28c28541a10aba24801a6fe3ff99"
+    },
+    {
+      "path": "web/src/travel-passage.css",
+      "sha256": "cfa3426dc778aa81a910fe22daf05f9a979135fc257f831878d268869da0f173"
+    },
+    {
+      "path": "web/src/source-choreography.ts",
+      "sha256": "665cb8c1d7bf0537b992b628720ff3be2bf0206536b36f487799bf67fe1f96f2"
+    },
+    {
+      "path": "web/src/TravelPassage.vue",
+      "sha256": "a9e59c40a77e8c9ca51f90239726970c3bcfccb289a0c024db7c2225fb74832f"
+    },
+    {
+      "path": "web/src/narrative-effects.ts",
+      "sha256": "ca77c93e636c43fc5c57b1f7b7a3f85bef58aa00f135affe217919b64470b615"
+    },
+    {
+      "path": "web/src/cave-threshold-view.ts",
+      "sha256": "38e8196c1eed720d3baf1dfedff603bfc49b9df730bace5b7a17a573d5d4a773"
+    },
+    {
+      "path": "web/src/activity-clock.ts",
+      "sha256": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901"
+    },
+    {
+      "path": "web/src/art37-dialog-actions.css",
+      "sha256": "99bc89f415c18254463b6b4a0b23766b581bc8d2ca4623066531a02a6664c563"
+    },
+    {
+      "path": "web/src/scene-presentation.ts",
+      "sha256": "0c350de82085006096e104b206e0ce7cd3875ac453fb6a95950980ebe44b8f65"
+    },
+    {
+      "path": "web/src/FateCatalogue.vue",
+      "sha256": "308b57a3a1a606ae81972cf0babc9009cc729af0e955520994a8fa0181fe2017"
+    },
+    {
+      "path": "web/src/LifePanel.vue",
+      "sha256": "87b06384f033db43fb8f1be1b9d93d92ffdf74e13b412cabdd76699c43d4c268"
+    },
+    {
+      "path": "web/src/ui-icons.ts",
+      "sha256": "9691c0395014863388fd6c9c9d0529a66504a78cd95597c374cf387eaa7fdbf4"
+    },
+    {
+      "path": "web/src/GameHud.vue",
+      "sha256": "43cde88a2e545bce6d475735783bc6d66f487a7ffb8643220ac8297b63a529c5"
+    },
+    {
+      "path": "web/src/PrimaryNav.vue",
+      "sha256": "0a123cc765624ce9bc0fdb1bd934d2dfae65c2a10269034122862a22004ab6d2"
+    },
+    {
+      "path": "web/src/EncounterTable.vue",
+      "sha256": "6da716adb6fd242ec6c6f7e6d9741521cb77116e1f8f4358d55fb403b96aeb8b"
+    },
+    {
+      "path": "web/src/jade-paint.ts",
+      "sha256": "d9eeb4ac87f3b2ef12e3c1d7c966ecb2af06bdf34b231eceee37432bb08ff1da"
+    },
+    {
+      "path": "web/src/cultivation-effects.ts",
+      "sha256": "656c74686b1e1cee2f68c61074172d5c3c23f86cf12d5c3eed7205f215de409a"
+    },
+    {
+      "path": "web/src/journal-anchors.ts",
+      "sha256": "fde853e92c68dd10ad9c14994c41a3157646c5245022b1f8061e4dd0e5aa2605"
+    },
+    {
+      "path": "web/src/persistence.ts",
+      "sha256": "c3a0aa6dbabd58dd2278db20b8422fcc2d63d73a1da9ae435bb9ecff142ea415"
+    },
+    {
+      "path": "web/src/AssetImage.vue",
+      "sha256": "ecfc476d074c16c14b181abbf62863ebc6d5c014d9473d3118e761433115a8da"
+    },
+    {
+      "path": "web/src/TrialGoal.vue",
+      "sha256": "7b7c9090e372bf4cdf28c251cc66b6fef1d141b157ca29cfdb2828418d55338f"
+    },
+    {
+      "path": "web/src/AdventurePlanner.vue",
+      "sha256": "101d7ff094c31c600c8bab8b03601ebf11feffc03e260eab4064c2f6a80e9e1a"
+    },
+    {
+      "path": "web/src/ProductionPlanner.vue",
+      "sha256": "6ebbc6551f6c68605b4e634196579787bf50e91d71d8fa84938bcc8cb9f1306b"
+    },
+    {
+      "path": "web/src/art12-narrative.css",
+      "sha256": "29ebf434a630c31295448b4bd890668c77cf851260fd87878359567197d5d3a2"
+    },
+    {
+      "path": "web/src/LifespanGuide.vue",
+      "sha256": "1d70ff1c6a8b2ffe422056ccb0bfd3d427e9d5679416324dbfdbe4a20608cc4c"
+    },
+    {
+      "path": "web/src/action-timing.ts",
+      "sha256": "13868c2e6f7a0047cf8665179ffb34af654395c93e094c3eabbb2892c264d897"
+    },
+    {
+      "path": "web/src/TrialProgressPanel.vue",
+      "sha256": "b83d6b4d10d8ec42530d817342e99e30ba2cb268c83dad445f01bb593d7b7f06"
+    },
+    {
+      "path": "web/src/InventoryStage.vue",
+      "sha256": "ee9da66d0281f008da909090275b335e0c87031a3e43d314c291c48baf744300"
+    },
+    {
+      "path": "web/src/CultivationSite.vue",
+      "sha256": "b39966928306502220b66ebd3a4bd8f6eaae88243fbd306de80a08aa353072d5"
+    },
+    {
+      "path": "web/src/ResponseTable.vue",
+      "sha256": "8ef738214baf612dd4841080cd138aaf9043893f7679a1cf0f90dddddfacaa2a"
+    },
+    {
+      "path": "web/src/ChoiceCard.vue",
+      "sha256": "322961bb71234da9e284555aad7a568b14b2b4a88cff9736e43cc208d3103e64"
+    },
+    {
+      "path": "web/src/art02-source.css",
+      "sha256": "0baf30d5065609265e7ba9baf45a5bde25e2b4d3d31bb62cdbe7badfbe921188"
+    },
+    {
+      "path": "web/src/MarketCounter.vue",
+      "sha256": "0904ac5fdb5d0079e408deb4c2a898fe1bbc2286620f70023c49e8e85376ad66"
+    },
+    {
+      "path": "web/src/LifeScroll.vue",
+      "sha256": "b3e3f98f4ca731518a01f3d38050d5f471188a15ecca80552fca1b5aa08b3c3f"
+    },
+    {
+      "path": "web/src/FeedbackSkip.vue",
+      "sha256": "4a6ff806b165a34558574ee71139769e1c2ab0abe9d762fe48b5e3010e88ba20"
+    },
+    {
+      "path": "web/src/MilestoneGate.vue",
+      "sha256": "13f0335382f633755b3a8559adfde5821c97917df5aabfaa77829340f11ba1f1"
+    },
+    {
+      "path": "web/src/MilestoneReview.vue",
+      "sha256": "4b6481898c6401fa58ea9dd4c9d6bdd5a16e23ca6e75b7898c0a0265b63af46d"
+    },
+    {
+      "path": "web/src/preparation-bench.css",
+      "sha256": "a23ce1429d3ebde40d6bb78c7e57192e7ca1623cb4e45fa8d50605280c77fd22"
+    },
+    {
+      "path": "web/src/idle-preparation.css",
+      "sha256": "9832321f25817d059c4a95e6bc16ac31e7476eac800afaa788575cd00278396a"
+    },
+    {
+      "path": "web/src/ExplorePanel.vue",
+      "sha256": "a8cc8ed9be8c9a7f57bb919978b2e5566f069e057a6304901269a66b589f78d1"
+    },
+    {
+      "path": "web/src/TrialCatalogue.vue",
+      "sha256": "a721e499869fb198dd382db3ce7a03257ce80786cba49ba17fc666e8c08b1ab0"
+    },
+    {
+      "path": "web/src/ItemArtifact.vue",
+      "sha256": "b651e6b9bc5675ca1ccaecc08d62f5c45ef8d70ae6915bae8b75b507a17328b0"
+    },
+    {
+      "path": "web/src/effects.ts",
+      "sha256": "03b6daa4cde24a2127d4fd20c42367a32a162996456bb7c32c82d7f4af3bc981"
+    },
+    {
+      "path": "web/src/RecoveryPlanner.vue",
+      "sha256": "7cd9a35b71fc7d6ce48f9de1698c4adc39159873cb259ca448a9fb9e33542cab"
+    },
+    {
+      "path": "web/src/StudyQueueRail.vue",
+      "sha256": "2ee9119806fa68b31c97c28d754fe2589981ad58b832a8c1f43287e955c13997"
+    },
+    {
+      "path": "web/src/equipment-choreography.ts",
+      "sha256": "871e41e7555f640fecbc8f26706fac34a5249225a6acb5f1db9c63789a8011bb"
+    },
+    {
+      "path": "web/src/store.ts",
+      "sha256": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7"
+    },
+    {
+      "path": "web/src/idle-milestones.css",
+      "sha256": "496d9959423622607290aab8f8d8ce35f04c1361310a7a2f9545e17fcbf03054"
+    },
+    {
+      "path": "web/src/TrialPreparationPanel.vue",
+      "sha256": "15dfd8105c023481d4ea8dead0f20bcd7518abf3144c091a069daad8bf553b07"
+    },
+    {
+      "path": "web/src/AdventureHistory.vue",
+      "sha256": "40d8eb49cdee409fbcb048849158037dec9fc54c6f4483282869a3ab7dae5e12"
+    },
+    {
+      "path": "web/public/art/ui-kit.svg",
+      "sha256": "327d1cdc5a214653ce3146e129a660fc8c985d8a36c07b8e16e999528a6e39ee"
+    },
+    {
+      "path": "web/public/art/scene.webp",
+      "sha256": "8faa981152143910a591dc5d33ed08e90ebd634417eac8db4d0c4df1b701fbfc"
+    },
+    {
+      "path": "web/public/demo-nodes/battle-talisman.json",
+      "sha256": "8684b12944338c611a00e28100df9bc332ed0ce62a47a8f0fc7fc41521ce635b"
+    },
+    {
+      "path": "web/public/demo-nodes/trial-sword.json",
+      "sha256": "34e90055bb23bd9a74df327f89b62c08ff4e85f010f8001dc9270d1f98ba96a3"
+    },
+    {
+      "path": "web/public/demo-nodes/opening.json",
+      "sha256": "8063c472db7e16e13f5a18346c2cc0681083379dd739383f2aae4f750cd843cf"
+    },
+    {
+      "path": "web/public/demo-nodes/battle-sword.json",
+      "sha256": "f1c2b1810c2faa07ec72fb73d7a4d75b59e709fb19f27aa9a551a86d59300ab6"
+    },
+    {
+      "path": "web/public/demo-nodes/trial-talisman.json",
+      "sha256": "329909c8f0121bcf465e0c053396ed132813448fb9e8e486ef6f7f8a5818ba60"
+    },
+    {
+      "path": "web/public/demo-nodes/causal-help.json",
+      "sha256": "a623dab01f93e20e8e89e2cd0fb1f7bfcf3091b01e928ea1814f97f889f9bf9f"
+    },
+    {
+      "path": "web/public/demo-nodes/ending-talisman.json",
+      "sha256": "5e21b91b5e50b4621f0467a842dac2246fbbb30b34728cc91eb02e4edb126b2c"
+    },
+    {
+      "path": "web/public/demo-nodes/manifest.json",
+      "sha256": "205149fb3cf73be716de679b9dff50662b14dff5943308abc77d97e72df024a7"
+    },
+    {
+      "path": "web/public/demo-nodes/ending-sword.json",
+      "sha256": "f279f3b7005d5be90ece530e8317df8d43d731a1439d15ee1d89e57892585e85"
+    },
+    {
+      "path": "web/public/demo-nodes/causal-trade.json",
+      "sha256": "e449cc9347310e78c9a79734a88ceecdf914a8bc2ae0516cd16c348373be790c"
+    },
+    {
+      "path": "web/public/art/scenes/settlement.webp",
+      "sha256": "f317b1cee05a456eaf5c19d779aa446a9489cc90b78a937f5bbefa6c638328b2"
+    },
+    {
+      "path": "web/public/art/scenes/terrace-v2.webp",
+      "sha256": "76bbc4ecff4469cfa5e01f7ba182074e6fc70836d9fc9c0b4545afc7208ef45d"
+    },
+    {
+      "path": "web/public/art/scenes/secret.webp",
+      "sha256": "375d61a2b3701de62085ad8d8697c813bfcb5038420d5a864a65f3dc1fb550b9"
+    },
+    {
+      "path": "web/public/art/scenes/wilderness.webp",
+      "sha256": "3d07a4455e766b67c0eeae6b54b8373a3a64242e6ab952f16f6234bbfc0aae35"
+    },
+    {
+      "path": "web/public/art/portraits/yan.webp",
+      "sha256": "0f68e57915cfa22ef10a88699171ab5aca3889d9e66f1d6d0c8d087f7a04bc52"
+    },
+    {
+      "path": "web/public/art/portraits/player.webp",
+      "sha256": "0c2faca3fd95f303cc4ed0e22169f13be1806066a22f56880cc7bbd3e009f1e6"
+    },
+    {
+      "path": "web/public/art/portraits/lu.webp",
+      "sha256": "f3205ef5fc424896898efe8dca19e8871762636c7bb82c7136eea44fd638dff4"
+    },
+    {
+      "path": "web/public/art/portraits/shen.webp",
+      "sha256": "7fb1e08bec233fa3ba11f8f56dd645e3772738e80946990ddb0eb8f97b08ba52"
+    },
+    {
+      "path": "web/public/art/portraits/pei.webp",
+      "sha256": "0a1b64def5cd7200a291af8b98790d07048c190318bd4efbee1081bd6c284ad8"
+    },
+    {
+      "path": "web/public/art/v2/ui/xuan-paper-v1.webp",
+      "sha256": "c86afbc2f9a330aa61b1f110a9afab0db9bc4f213383ec78d19b4f7d95055f05"
+    },
+    {
+      "path": "web/public/art/v2/ui/meditation-ink.webp",
+      "sha256": "b680c9e9b53a70bcd5d3b594f3babf83c5e0c1d094cd9663edc91ee3338f180b"
+    },
+    {
+      "path": "web/public/art/v2/ui/dialog-ink-rim-art37-v1.webp",
+      "sha256": "c9910d40b4ede3a3af1cbf4bde76ded012c92afea20713d7ae99484c7136216b"
+    },
+    {
+      "path": "web/public/art/v2/ui/xuan-paper-v2.webp",
+      "sha256": "20ec5b471788120a3eda6bfd7486d9f85dc8e8eacdcf67b40a3c2c263f02d6a0"
+    },
+    {
+      "path": "web/public/art/v2/ui/mountain-wash-v1.webp",
+      "sha256": "2f30503f639d97ca657520cc8b762121a86bc5dc3971a9ce7b8afb65c0a82aa2"
+    },
+    {
+      "path": "web/public/art/v2/ui/action-jade-frame-v1.webp",
+      "sha256": "82fc5ee9ef6bda7c75aa728dc820e337213a2c8d91b88f7eec23a39633d9b20d"
+    },
+    {
+      "path": "web/public/art/v2/ui/dialog-jade-frame-v1.webp",
+      "sha256": "75d212a45b6d2aebc69756219a28404d3ebf326800572ec9f344d4374eff8336"
+    },
+    {
+      "path": "web/public/art/v2/ui/action-jade-plaque-art37-v1.webp",
+      "sha256": "4ef1450f5d44b86a42e4add7a0601908fa905f18cf927c1c0009bff88f0c3f17"
+    },
+    {
+      "path": "web/public/art/v2/workshop/furnace-v1.webp",
+      "sha256": "bd201f06af3c18342eb6dda9d5bb2abb96347b623fb32f1d213c4c2b86c25642"
+    },
+    {
+      "path": "web/public/art/v2/workshops/alchemy-v1.webp",
+      "sha256": "388948c205b6d3384ff4fa6047251312c2a45afe270d09d809545615e0fdce79"
+    },
+    {
+      "path": "web/public/art/v2/workshops/npc-parlour-v1.webp",
+      "sha256": "5682ea34bb0370a7f206f62070398ec24079837777368e7bb7bd64c3e3327620"
+    },
+    {
+      "path": "web/public/art/v2/workshops/relic-v1.webp",
+      "sha256": "8712d5e770eda38a0a4e7ce06dd5f137ed7ca9760f2a9fa7cada96db70bb1c86"
+    },
+    {
+      "path": "web/public/art/v2/workshops/inventory-v1.webp",
+      "sha256": "63aa9bd260ce7943bddd30355e330af0647a4076641a57f964bd0e81f8891be8"
+    },
+    {
+      "path": "web/public/art/v2/scenes/secret.webp",
+      "sha256": "bb9e1bda68dbd3ecd861446f7b19982051a9749c20b0cf82ec17f4e9586f997f"
+    },
+    {
+      "path": "web/public/art/v2/scenes/cave-meditation.webp",
+      "sha256": "cc59bccfd3a42cdf688acdfd606ebe92d6e8d812eb08202207aaac1b145eeb9e"
+    },
+    {
+      "path": "web/public/art/v2/scenes/terrace.webp",
+      "sha256": "70136fe15101205c01a3b09fb14c946e6571fe956330bcc7c308bd26e4ec0ce9"
+    },
+    {
+      "path": "web/public/art/v2/scenes/wilderness.webp",
+      "sha256": "508b6f8f96364b24a68a1bf22507534a68739fa819d7d277e08937334ca34e10"
+    },
+    {
+      "path": "web/public/art/v2/scenes/cave.webp",
+      "sha256": "35915ef03de2dacf722c9f6ac0e70b674e5b95030848949269ce7e339f3bbccd"
+    },
+    {
+      "path": "web/public/art/v2/scenes/terrace-storm.webp",
+      "sha256": "fb0ebfe38440167fd96c3462c05af10247ddedc59f051916fbaa10ae4fdcb8d1"
+    },
+    {
+      "path": "web/public/art/v2/scenes/market.webp",
+      "sha256": "4b94b5bc591c88a05cf35c8465f64f74c220a48463eb42cf5ab375794a92eb15"
+    },
+    {
+      "path": "web/public/art/v2/scenes/sect.webp",
+      "sha256": "d51a5950d87a7be6ca8e46ff9c44da0846c94473308db37fc86f6db164aa8dc6"
+    },
+    {
+      "path": "web/public/art/v2/scenes/terrace-opened.webp",
+      "sha256": "ee41103a04c05b09047588fd4b6ba362c7049e7ce0f08e98dd5892f8c02a1431"
+    },
+    {
+      "path": "web/public/art/v2/scenes/opening.webp",
+      "sha256": "1792037216391b8dd17dd280534d24dc7e2adc1620928c6fe6e2cc1a156e3c7a"
+    },
+    {
+      "path": "web/public/art/v2/study/fan-v1.webp",
+      "sha256": "1d391be6c90e887592b30c914817c952eb27f1ef29a8633c389658c1da8fc273"
+    },
+    {
+      "path": "web/public/art/v2/study/heart-v1.webp",
+      "sha256": "8ffb2310476341c75d598e97dee3084da8a076976922e002297d6baaae17e7bb"
+    },
+    {
+      "path": "web/public/art/v2/study/seal-v1.webp",
+      "sha256": "21962bbfcf8b5a6659cf67026e9234b7eb323e6076a71ab4afad24c00953b389"
+    },
+    {
+      "path": "web/public/art/v2/study/leaf-v1.webp",
+      "sha256": "f090d0bcc40acafc90828e883ba054fcffa8a58d8f26a6c475d125f2f0178bfc"
+    },
+    {
+      "path": "web/public/art/v2/study/manual-v1.webp",
+      "sha256": "d73b465c36b644313855e28b67e341e815aa8b0aec94c0d34648be0720f1d126"
+    },
+    {
+      "path": "web/public/art/v2/study/blade-v1.webp",
+      "sha256": "f5bab2000a85d7ce3644bd50f4689a4a9c71388e7c39ba4f19aa3addcf456432"
+    },
+    {
+      "path": "web/public/art/v2/study/knot-v1.webp",
+      "sha256": "1b6ae27e64b564e7d3177689adddc466546b3d902cc538b0c419176baad2b096"
+    },
+    {
+      "path": "web/public/art/v2/study/scroll-v1.webp",
+      "sha256": "1cb635a6b7b6adf76bf6242087b56fb1b12b1b0c185a079f04e252aa05bce3cb"
+    },
+    {
+      "path": "web/public/art/v2/opening/medicine-case-v1.webp",
+      "sha256": "fea370cbf9e87c716dc9a248fab9ba5aeb80e0a09de13fb46e066a1a5503b40f"
+    },
+    {
+      "path": "web/public/art/v2/opening/shen-offering-v1.webp",
+      "sha256": "31c2b4381cefd72f0de80baa5b3c30665039814f79660f86dec1a4b59bf46c91"
+    },
+    {
+      "path": "web/public/art/v2/life/archive-v1.webp",
+      "sha256": "4bbf44de73b950dfb0d915edeb1ef24e3f299017a3b4ea31e5041e197bdcdf47"
+    },
+    {
+      "path": "web/public/art/v2/actors/player-standing-cold-v1.webp",
+      "sha256": "ead57061820734bd53f89f600795310cb2040b478f5e2bf61da2b946571ca2ef"
+    },
+    {
+      "path": "web/public/art/v2/actors/player-loadout-idle-v1.webp",
+      "sha256": "8d07006f041943a73e9cd9e32fea87a921d0c508cff6fb0cc922a34c7a10ad90"
+    },
+    {
+      "path": "web/public/art/v2/milestones/heaven-gate-v1.webp",
+      "sha256": "bd2034f2641aed54747d749308c08cbaa537ace1b62c015eeccf6e6d2c62e665"
+    },
+    {
+      "path": "web/public/art/v2/milestones/heart-court-v1.webp",
+      "sha256": "97048fae773e77a915c251a80c2526482e4a5a94a8d5b6ff52a8377875d87582"
+    },
+    {
+      "path": "web/public/art/v2/sources/dao-cold-v1.webp",
+      "sha256": "62903f5b7056ba61b225d8294865fe9e8300334dec1b9ef5fca64946a6192edf"
+    },
+    {
+      "path": "web/public/art/v2/sources/dew-cold-v1.webp",
+      "sha256": "5272fa6dbb7d5fdc901c3c27634b9749b230831b133eeba455ea315fc9e0da0e"
+    },
+    {
+      "path": "web/public/art/v2/sources/soul-cold-v1.webp",
+      "sha256": "714a6bbbd0cbff9beae1a223f2e550d970f58482bdc05ffc91cc716734f18814"
+    },
+    {
+      "path": "web/public/art/v2/sources/jade-cold-v1.webp",
+      "sha256": "decbbda3867443a679744416cc05387e19bb7bbb8e124029982af6e233462fdd"
+    },
+    {
+      "path": "web/public/art/v2/sources/herbs-cold-v1.webp",
+      "sha256": "0d111845c05e076102a788c98ace1917a2c4e87a13a6f7021eea4851918aaa73"
+    },
+    {
+      "path": "web/public/art/v2/sources/lotus-cold-v1.webp",
+      "sha256": "45a77e2ad96c2af61ad6c474d3d0bad47dbf91a6a451e932e8ee867d8040e14b"
+    },
+    {
+      "path": "web/public/art/v2/items/ascension_seal-v1.webp",
+      "sha256": "e3d81134f7a6bf663fda8d653beb1553429a5f514a882cc2137a760fc60d1885"
+    },
+    {
+      "path": "web/public/art/v2/items/lotus-v1.webp",
+      "sha256": "e10f4caef6b351b6995523ec2a30e5bd615e3ffdb9859be773848a7282d796b6"
+    },
+    {
+      "path": "web/public/art/v2/items/soul-v1.webp",
+      "sha256": "ebdff7f234e55907683b058450c20f897b3091df710e1b6f9a3c3e9cf3677337"
+    },
+    {
+      "path": "web/public/art/v2/items/nascent_pill-v1.webp",
+      "sha256": "37a62d61299c641d9849a819494a4d54b9a0bc09bff249716fb4c9a115483e03"
+    },
+    {
+      "path": "web/public/art/v2/items/golden_pill-v1.webp",
+      "sha256": "eeedde783c0b5851146972c5cf13f87a33026f100e4a4c60128ce4d25bd13e62"
+    },
+    {
+      "path": "web/public/art/v2/items/jade-v1.webp",
+      "sha256": "fa6b37a3b23c402adc7d5a714e929bba55336baaaf056978831fb5c65694119b"
+    },
+    {
+      "path": "web/public/art/v2/items/foundation_pill-v1.webp",
+      "sha256": "db5c298534d4bd55fdc42b64bb16a330d07cd52ea08167b1a32f09bb5950de2e"
+    },
+    {
+      "path": "web/public/art/v2/items/herb-v1.webp",
+      "sha256": "4289eafba0f0d726051d47594dc6268a0bc493f9403799d59f70e76ad173a4b0"
+    },
+    {
+      "path": "web/public/art/v2/items/dew-v1.webp",
+      "sha256": "9fd9a56e6a407fd39587676313dec3562524dc767d14a026f5aadfa727938c25"
+    },
+    {
+      "path": "web/public/art/v2/items/dao-v1.webp",
+      "sha256": "a7bf3830b88190ee674685ee092106731f20e172a5b5b4eab8dfda94ef673e3a"
+    },
+    {
+      "path": "web/public/art/v2/items/core-v1.webp",
+      "sha256": "cac701143dda662cda3e218c53d5daf2ff043228e1afc0aea6dc83a503b9eedf"
+    },
+    {
+      "path": "web/public/art/v2/items/spirit_pill-v1.webp",
+      "sha256": "1ab2931f9c4202b283dbe95afa8b7fe61b5c33156faeb3d8ca9add2927b487b4"
+    },
+    {
+      "path": "web/public/art/v2/items/healing_pill-v1.webp",
+      "sha256": "f6114f224f6a136f020f179eb7995058f1cdee72dcac8a9ce9bdf57bb69059d9"
+    },
+    {
+      "path": "web/public/art/v2/items/spirit_seed-v1.webp",
+      "sha256": "d1934ce9d1f018d866b03671666541f3406d64a10aa8c2ea6950481e3afc5e4f"
+    },
+    {
+      "path": "web/public/art/v2/characters/player-seated-cold.webp",
+      "sha256": "66ff79c01b418faa5c0abb0b3490e54b9d30a8568abb796d410a9559d0a36ace"
+    },
+    {
+      "path": "web/public/art/v2/characters/yan.webp",
+      "sha256": "82cc6f98bded838b6b8a59d1d27ba123fdec70c1a0043dd4bf6ea236a65c2e2f"
+    },
+    {
+      "path": "web/public/art/v2/characters/player.webp",
+      "sha256": "b8080cda6d7a8f4019a55a0a67808e7e6a88834dbc3ad3ba12167517a6c988c4"
+    },
+    {
+      "path": "web/public/art/v2/characters/lu.webp",
+      "sha256": "632438e9da240cd8b362d785d8b4a581544b79e6fc3d14edd54cc43cf7410ad4"
+    },
+    {
+      "path": "web/public/art/v2/characters/shen.webp",
+      "sha256": "31ab868950058e5425e20e90508086f3e30c856554dd6b68efb012d082e1b6c1"
+    },
+    {
+      "path": "web/public/art/v2/characters/pei.webp",
+      "sha256": "925d7f303997aac05dd7a27ea2bd7a74cbb1796546ceb8f0e06a565d8d34166d"
+    },
+    {
+      "path": "web/public/art/v2/catalogue/alchemy-v1.webp",
+      "sha256": "f806772d13cd930dd80722c61d6ec53b5e5f882e9314f73c2ec5cb878f7e1528"
+    },
+    {
+      "path": "web/public/art/v2/catalogue/supplies-v1.webp",
+      "sha256": "eaff2eaf8338219503f40abc862374d701259efc3cdd602e99b27631543ab666"
+    },
+    {
+      "path": "web/public/art/v2/catalogue/study-v1.webp",
+      "sha256": "07c30a57cd627bb391f1bc76ea286bc3b88f584928eff7c5f6c603d91de75a4d"
+    },
+    {
+      "path": "web/public/art/v2/schools/talisman-station-v1.webp",
+      "sha256": "67eb84e24b55305af9ef9247c47f2d34f6b31ea8d619cc7eab73e3fe284b3ba3"
+    },
+    {
+      "path": "web/public/art/v2/schools/sanctum-v1.webp",
+      "sha256": "91e3b5d7eebcb36bd0a1cbe3791a119290d0badddb313ad948bd4a0ade968d53"
+    },
+    {
+      "path": "web/public/art/v2/schools/sword-station-v1.webp",
+      "sha256": "81e3328d26597b017f96b03e380e72d8d23b0fd5c7dfd77e5542b7f074f71a3f"
+    },
+    {
+      "path": "web/public/art/v2/equipment/frost_sword-v1.webp",
+      "sha256": "0054af06284f62b516d5be2802dbd69fecb4cb31ee8d56f0a7d895568df79943"
+    },
+    {
+      "path": "web/public/art/v2/equipment/cloud_mirror-blank-v1.webp",
+      "sha256": "8b94fa845c1384380d87f7ebb4ddbb5e5d1a21e09c55905f9051b46576418270"
+    },
+    {
+      "path": "web/public/art/v2/equipment/soul_lamp-v1.webp",
+      "sha256": "d0345b92c5c191f50b831ffdeec27a591785b1948398948daee06df799dff1cc"
+    },
+    {
+      "path": "web/public/art/v2/equipment/jade_seal-v1.webp",
+      "sha256": "81aad3db8a19ad6a39b0e54a96254d6fcc94164bdcbbbb87bd0e3f48ef43c49c"
+    },
+    {
+      "path": "web/public/art/v2/equipment/cloud_mirror-v1.webp",
+      "sha256": "8a8066224ee8487a226dd63ae27f8fd1760a08214cdf93826d8e8d8d7d77a008"
+    },
+    {
+      "path": "web/public/art/v2/equipment/frost_sword-blank-v1.webp",
+      "sha256": "e39779f05eddd3f5caa279deb2b2e80b97062b195c6d1e758ee82186121b098b"
+    },
+    {
+      "path": "web/public/art/v2/equipment/soul_lamp-blank-v1.webp",
+      "sha256": "b1b0b54c4747c3c05a16c3349f8a43e2187c642e3b78d76ad80f3517607041d0"
+    },
+    {
+      "path": "web/public/art/v2/equipment/jade_seal-blank-v1.webp",
+      "sha256": "cda83c60d3945d041a6848cf1bb298f3e04063ed721ac46194a25a8660e8cef8"
+    },
+    {
+      "path": "web/public/art/v2/enemies/sentinel.webp",
+      "sha256": "a832fcb94f72651d3ccf0c19e89240932850e04fb89200d427be859c2f938602"
+    },
+    {
+      "path": "web/public/art/v2/enemies/trial_heart.webp",
+      "sha256": "d649dc3e9593790fe6e772344ed1bb202e4e495eecb4859d3c15a8be2a418044"
+    },
+    {
+      "path": "web/public/art/v2/enemies/shadow.webp",
+      "sha256": "8b8223af8135263b02658e6d995c672f227693b603df8d593fbd9da7bac244e2"
+    },
+    {
+      "path": "web/public/art/v2/enemies/serpent.webp",
+      "sha256": "cd981a2a17c1c9399a1bd6efd0eeb4653e0ce7eeb268985803542defce4652a7"
+    },
+    {
+      "path": "web/public/art/v2/enemies/warden.webp",
+      "sha256": "6efee13b8ecd07ae9d3569645c9654b0d681e3fcc96fc52ed01d096d6813f351"
+    },
+    {
+      "path": "web/public/art/v2/enemies/trial_thunder.webp",
+      "sha256": "728b50ee566e7a7e92a2b729117c70330fd43b66faae6a0b23fa5c8862883686"
+    },
+    {
+      "path": "web/public/art/v2/enemies/puppet.webp",
+      "sha256": "8fabb419720ae44a19e9dedbda32861a0af42ba50dc11803b3bffc1135e6852b"
+    },
+    {
+      "path": "web/public/art/v2/enemies/wolf.webp",
+      "sha256": "95ed2843e926bbce543da559a6a282d3e13f4c5c5ff2630a4402aaec7db9de58"
+    },
+    {
+      "path": "web/public/art/v2/enemies/trial_gate.webp",
+      "sha256": "a588999c5f907885722d614796ce177911f880eda2cedf4dcd4f3ae263e184f5"
+    }
+  ],
+  "changedE2EOnlyOutsideTheseScopes": "web/e2e/ux33-activity-status.spec.ts",
+  "notARepeatCoreOnConsumer": true
+}

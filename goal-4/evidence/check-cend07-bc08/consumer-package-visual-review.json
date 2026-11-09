@@ -1,0 +1,65 @@
+{
+  "producer": "600ae1dfba75e8d192d5d778c8a07d11ed1621e4",
+  "runtime": "3b3f39de288f41606ccf873efa23d51d269903950e2e4c63da57e717ac0d05ca",
+  "actualViewed": 4,
+  "maximumImagesPerResult": 2,
+  "rows": [
+    {
+      "phase": "ui",
+      "name": "learn-budget-gate",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend07-bc08-consumer/ui-results/ux33-activity-status-UX33--b0143-ke-zero-completion-forecast-chromium/learn-budget-gate.png",
+      "pngSHA256": "6d521d24ce17273f7643a391261fbffda4bbc3ca5a2fb2a7b2092330f5ae09bd",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend07-bc08-consumer/views/ui-learn-budget-gate.jpg",
+      "jpegSHA256": "6ceb433785de6ca921dc17397cbdb28130242046b605cdbc38f35c2f70d07433",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "phase": "ui",
+      "name": "study-budget-gate",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend07-bc08-consumer/ui-results/ux33-activity-status-UX33--b0143-ke-zero-completion-forecast-chromium/study-budget-gate.png",
+      "pngSHA256": "f66f6649640f98405f013ca6e43425f200c360ba06b850d4b02fe457472a8474",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend07-bc08-consumer/views/ui-study-budget-gate.jpg",
+      "jpegSHA256": "9da012f1c465022cf309da3501c49d6cddf815b261c5e50a9fb9f4d4260a2f66",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "phase": "package",
+      "name": "study-draft-beside-original-commission",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend07-bc08-consumer/package-results/check-cend07-bc08-CHECK-BC-43473-sole-original-source-period-chromium/study-draft-beside-original-commission.png",
+      "pngSHA256": "95cf87962cfe4916e2d71ad205fb1e2896958d8b295825b3d3d8b15a63ed7beb",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend07-bc08-consumer/views/package-study-draft-beside-original-commission.jpg",
+      "jpegSHA256": "c2b225526ff07d149dd89eeb066b079f7269b4b6da9d8fb078d8a8327c8587df",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    },
+    {
+      "phase": "package",
+      "name": "study-budget-after-source-retry",
+      "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend07-bc08-consumer/package-results/check-cend07-bc08-CHECK-BC-f89c1-ries-only-one-source-reward-chromium/study-budget-after-source-retry.png",
+      "pngSHA256": "871791b0ef68e8d40ad426067358553f018484554e96b3014cb475a27cdf9d6e",
+      "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend07-bc08-consumer/views/package-study-budget-after-source-retry.jpg",
+      "jpegSHA256": "7061c00ac7aa5c3edcfb4d7e4e144eb0d7c615e870dc4737d03eec0ba3deaf39",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "lossyQuality": 68,
+      "actuallyViewed": true
+    }
+  ],
+  "unpackedSubsetDoesNotAddNewCoverage": true
+}

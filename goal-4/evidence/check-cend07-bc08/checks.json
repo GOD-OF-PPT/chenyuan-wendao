@@ -1,0 +1,106 @@
+{
+  "task": "CHECK-CEND07-F02B-F02C-CEND08",
+  "runtime": "3b3f39de288f41606ccf873efa23d51d269903950e2e4c63da57e717ac0d05ca",
+  "applicationChangesThisTask": 0,
+  "newRasterFontsCSSDependencies": 0,
+  "completeCoreFinal": {
+    "source": "aa05fd04dc6293b2617b87894bfbf437662b6ef0",
+    "gates": 10,
+    "node": 1049,
+    "resources": 772,
+    "resourceSeconds": 864.594,
+    "allPassed": true,
+    "snapshotInputs": 5525,
+    "allInputsExact": true
+  },
+  "previousCoreInThisTask": {
+    "source": "80698986bf6270885f2478e04d2f11ca7f4be149",
+    "gates": 10,
+    "node": 1043,
+    "resources": 772,
+    "resourceSeconds": 917.896,
+    "snapshotInputs": 5512,
+    "allPassed": true,
+    "notAddedToFinalCounts": true
+  },
+  "currentUI": {
+    "fullOriginalSource": "80698986bf6270885f2478e04d2f11ca7f4be149",
+    "fullOriginalPassed": 392,
+    "fullOriginalFailed": 1,
+    "fullOriginalSeconds": 2962.901172,
+    "fullOriginalCases": 393,
+    "fullOriginalInputCount": 5513,
+    "unaffected386Source": "80698986bf6270885f2478e04d2f11ca7f4be149",
+    "currentWholeFileConsumer": "600ae1dfba75e8d192d5d778c8a07d11ed1621e4",
+    "currentWholeFileCases": 7,
+    "currentWholeFileSeconds": 36.7528,
+    "currentWholeFileInputs": 5529,
+    "uniqueCurrentPassedComposite": 393,
+    "wholeFiles": 48,
+    "skippedRetriesFlaky": 0,
+    "mixedCasesDeferredBeforeRun": 10,
+    "sameCanonicalPrimarySecondaryOrigin": "http://127.0.0.1:4173/"
+  },
+  "package": {
+    "source": "51413948a4c0a2d9c14697526c8fb435bff4c40e",
+    "consumer": "600ae1dfba75e8d192d5d778c8a07d11ed1621e4",
+    "sameNamedSubsetCases": 3,
+    "seconds": 40.364407,
+    "allPassed": true,
+    "notAddedTo393": true,
+    "formalCandidate": false
+  },
+  "currentPositiveGuard": {
+    "source": "600ae1dfba75e8d192d5d778c8a07d11ed1621e4",
+    "recordedFiles": 879,
+    "actualReadInputs": 969,
+    "allSameAsCoreProducer": true
+  },
+  "matrix": {
+    "version": 44,
+    "ui": 1021,
+    "persistence": 415,
+    "journey": 32,
+    "total": 1468,
+    "declarationProofPassed": true,
+    "toolTests": 138,
+    "completeActualMatrixRun": false,
+    "oldVersion1Through42Intact": true,
+    "reviewedOneTitleRenamedOnlyForParentProof": true
+  },
+  "currentVisibleReview": {
+    "earlyImagesActuallyViewed": 2,
+    "canonicalPhaseActuallyViewed": 28,
+    "consumerWholeFileActuallyViewed": 2,
+    "unpackedActuallyViewed": 2,
+    "totalViewEvents": 34,
+    "notAllProducedPNGsViewed": true,
+    "maxPerResult": 2
+  },
+  "sourceProof": {
+    "gameRuntimeFiles": 343,
+    "uiClosureFiles": 96,
+    "changedClosureFiles": 1,
+    "otherClosureFilesExact": 95,
+    "publishedDependencyFilesExact": 1981,
+    "runtimePayloadFiles": 112,
+    "runtimePayloadBytes": 11256334,
+    "artifact": {
+      "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend08-study/cend08-study-preview-5141394.zip",
+      "bytes": 10119655,
+      "sha256": "f326423ef08969231b512892e7cf095d0d2c443cab061245d882d0e24dc20249",
+      "files": 115,
+      "runtimeFiles": 112,
+      "runtime": "3b3f39de288f41606ccf873efa23d51d269903950e2e4c63da57e717ac0d05ca",
+      "formalCandidate": false,
+      "helperSHA256": "1d84e4a5ee9b2215687d58f89b5312f084eb91a11f0459b17d9e4bab8535f565"
+    },
+    "noNewApplicationVersion": true
+  },
+  "formalGJRejections": 1,
+  "noKnownUncorrectedBoundedTaskBlocker": true,
+  "compatibilityEnvironmentPerformanceRun": false,
+  "originalPlayerDBReadOrChanged": false,
+  "overallArtHumanLongTermAcceptance": false,
+  "next": "CEND08-F02 configuration actual object art; then F03 source instruments"
+}

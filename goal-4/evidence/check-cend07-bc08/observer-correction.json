@@ -8,5 +8,10 @@
   "productChanged": false,
   "initialFull393": "initial-ui-terminal.json",
   "fullChangedFileRequired": true,
-  "old387NotYetInherited": true
+  "old387NotYetInherited": true,
+  "actualChangedWholeFileCases": 7,
+  "reasonPreviousSixWasWrong": "UX33-A2 has two explicit scenarios, so six named groups declare seven whole cases. The preflight rejected6 before starting a browser.",
+  "unaffectedCasesFromOriginal393": 386,
+  "correctComposite": 393,
+  "noAssertionsOrCasesReduced": true
 }
