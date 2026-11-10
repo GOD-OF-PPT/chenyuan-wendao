@@ -1,0 +1,30 @@
+{
+  "formalGJRejection": 2,
+  "actualCurrentEight": "3pass5fail 73.054618sec;6077inputs exact",
+  "originalRaw": "artifacts/goal-4/check-cend13-abc/consumer2/new-report.json",
+  "failureDetails": "artifacts/goal-4/check-cend13-abc/consumer2/five-failures.json",
+  "path": "web/e2e/check-cend13-abc-support.ts",
+  "before": "goal-4/evidence/check-cend13-abc/second-review-before/web/e2e/check-cend13-abc-support.ts",
+  "beforeSHA256": "bd1ad6619361d81023c6db06a968606466ce74ea0e1693222a197bffca780093",
+  "currentSHA256": "ee9192640572e3e9f9f67280bc167a693d67573d55914b7d8d6fc68a535d9162",
+  "operations": [
+    {
+      "at": 9539,
+      "old": "",
+      "new": "("
+    },
+    {
+      "at": 9615,
+      "old": "",
+      "new": ",.story-footer"
+    },
+    {
+      "at": 9630,
+      "old": "",
+      "new": ")||button.matches('[data-testid=trial-review-entry],.choice-peek')"
+    }
+  ],
+  "classification": "same original secondary story-footer navigation, current readonly entry-review opener and ChoiceCard .choice-peek. Actual confirmation .trial-confirm-entry and choice-act remain18; all44,Range/full-parent/hit and fullGame/period/cost stay unchanged",
+  "noProductChange": true,
+  "wholeEightMustRerun": true
+}

@@ -1,0 +1,13 @@
+{
+  "originalCurrentUICases": 1080,
+  "old54CurrentUI": 1072,
+  "new8ActualNamed": 8,
+  "all59SelectedFilesMatchCurrentProfile": true,
+  "pausedWholeMixedCases": 12,
+  "eligibleCurrentUI": 462,
+  "onlyCanonicalLegacyExplicitOrigin": "http://127.0.0.1:4173",
+  "noOtherHardcodedOriginInSelectedSources": true,
+  "everyScopeFilePhysicallyReadBeforeExecution": true,
+  "normal32ActualDeclared": true,
+  "notYetExecuted": true
+}
