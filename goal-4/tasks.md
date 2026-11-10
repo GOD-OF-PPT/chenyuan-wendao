@@ -1,5 +1,7 @@
 ## CEND13-A开工（2026-11-10，唯一修炼舞台实装，当前0/3）
 
+[杠精审查] 打回（第2次，21ff完整五4过1红31.551451秒，原START quota未提交后重试会按原仓库生成新activity UUID，测试误比临时未提交回执全等）。仅修跨尝试身份前提：原input/fingerprint/plan/owner/初代一致，唯一回执/正式createActivity完整Activity/全Game/全部stores原证明不减；已受理活动暂停/恢复仍同id。0生产改动，原4/1/图trace保，待完整五重验；未交付。
+
 [杠精审查] 打回（第1次，新五例3过2红35.720069秒，两个失败均为frame把原自然预算辅助p14px当正文18；A1实际新舞台/焦点与TICK阅读、A2/A4/A5已执行到相应阶段）。仅新测试精确辅助class按原14归类，所有实际正文18/44/Range/时限/Game/原子断言与App原源保持，完整五另冻结复验；旧真实基线红/所有原图trace/终态保，未交付。
 
 - [ ] 按0145先完整本次raw用户接续原文/旧直接原话来源/实际App与现有CultivationSite/Ongoing/所有原cap/验收回滚/13hash；上一6c57bd2已真实交付progress，Goal active，不新Goal/聊天。实际缺口是完整安排页START受理后未接回已存在的运行舞台，复用原场景/人物/动效与唯一时钟，不另造表单或迁Store控制。
