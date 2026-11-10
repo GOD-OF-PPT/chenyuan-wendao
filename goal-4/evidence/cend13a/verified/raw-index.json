@@ -1,0 +1,236 @@
+[
+  {
+    "label": "core-validation",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repaired/core-report/validation.json",
+    "sha256": "d3939dd1c3b2568f6a3d0f71c156d8e52c589b64b1157a5c686654c48c1c56c5",
+    "bytes": 9796
+  },
+  {
+    "label": "core-terminal",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repaired/core-build-terminal.json",
+    "sha256": "53518ed6f34e6dc1cc2052557d1feb9d62d5e0f788acc559b8d1e882cb40e0c3",
+    "bytes": 170
+  },
+  {
+    "label": "resource-unique",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repaired/resource-collection.json",
+    "sha256": "3ae5965c8c6fb48300d52b1d43d1e131ba0178b3d4decd861bdb2a4b3668c55a",
+    "bytes": 79577
+  },
+  {
+    "label": "preflight-terminal",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/preflight-terminal.json",
+    "sha256": "32bd594d1ad329bf381a7ba3971b7b05ee9a0bffbd86f32636b22b0eab46693e",
+    "bytes": 488
+  },
+  {
+    "label": "raw-ui-terminal",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/ui-terminal.json",
+    "sha256": "161ce5897d2dfa0d71576a96310e3c39ad7a9ac64aa55adc4167dc70015dcebb",
+    "bytes": 491
+  },
+  {
+    "label": "corrected-matrix-terminal",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/matrix-consumer/matrix-terminal.json",
+    "sha256": "50f517997fff1c814b503b292245e6569255abc2c501c932b8ede4fa76f44917",
+    "bytes": 485
+  },
+  {
+    "label": "matrix-same-production",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/matrix-consumer/same-production-proof.json",
+    "sha256": "f47b9a78d5d07ac1a152e464c16ad3cf1522023c997d03080e80773c02f81a84",
+    "bytes": 805
+  },
+  {
+    "label": "ui-complete-union",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/ui-complete-union.json",
+    "sha256": "49f23586e438d2d3bd307853815f633c67c1c19076505227be4b4f5f0ae9bea4",
+    "bytes": 73665
+  },
+  {
+    "label": "normal-terminal",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/normal-terminal.json",
+    "sha256": "b0e905ff1f3b729e22291214bfe699fd430c8a3654fb823ad9422a7426ace167",
+    "bytes": 489
+  },
+  {
+    "label": "normal32-proof",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/normal32-complete-proof.json",
+    "sha256": "5f855d1fd7bc5194f11238661876f4d8620975f9cf00b2b5d16f14058697aa39",
+    "bytes": 12449
+  },
+  {
+    "label": "package-terminal",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/package-terminal.json",
+    "sha256": "f847b6906b623715d55b86da9bc5a777f8ad9b78d3fffc313a9d5d189dc1198c",
+    "bytes": 494
+  },
+  {
+    "label": "package-assembly",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/package-assembly.json",
+    "sha256": "d7f8948028ce974e094cd38d1986dfe79029c75567539841b735b46c18a1d229",
+    "bytes": 749
+  },
+  {
+    "label": "final-identity",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/final-identity-after-all.json",
+    "sha256": "13755e6035697a0085df3a08953e818fa280a604991734d0559492b7a67bc09a",
+    "bytes": 1865
+  },
+  {
+    "label": "source-dependencies",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/source-and-dependencies.json",
+    "sha256": "dba6d347107b1a8529a1cc4187b7caecda6d0074cc9ac0e54c7a4db74f1f6c97",
+    "bytes": 3507
+  },
+  {
+    "label": "effective-configs",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/effective-config-proof.json",
+    "sha256": "4ade9a123bff55ed0394a7ba4b98b170a499619b38f5b841b370f9a1ac2a40e3",
+    "bytes": 787
+  },
+  {
+    "label": "profiles-declaration",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/matrix-consumer/current-profiles-declaration-terminal.json",
+    "sha256": "7c938cee99d13475e0882579debfbb2b56188d2d7233943545015f579d59bbeb",
+    "bytes": 428
+  },
+  {
+    "label": "preflight-visuals",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/preflight-visuals.json",
+    "sha256": "22a5186fe98c5a33be73ba19f775ea9d9db1cb08af053b8425c598d7720aa23f",
+    "bytes": 9837
+  },
+  {
+    "label": "normal-visuals",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/normal-visuals.json",
+    "sha256": "703d8aaaa36bdb1ff5cc25db42642a32a41a9b17dfbd7c67804cc7ddf307f25d",
+    "bytes": 3575
+  },
+  {
+    "label": "package-visuals",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/package-visuals.json",
+    "sha256": "4c721e6f8825a89e475a07b3540c51510da807a2559c448a32bc220679a1817e",
+    "bytes": 5389
+  },
+  {
+    "label": "declaration-scope",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/declaration-terminal.json",
+    "sha256": "325ba429c248acf1de520045932b458f859ec39a96e97f293dd9bd00c386ed80",
+    "bytes": 1326
+  },
+  {
+    "label": "producer/core-before.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repaired/core-before.json",
+    "sha256": "edf110713e8f5cf1d8bce1bdbbd59c94437a20c38e54ece0023a4ee20a9cb8b6",
+    "bytes": 697080
+  },
+  {
+    "label": "producer/core-after.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repaired/core-after.json",
+    "sha256": "edf110713e8f5cf1d8bce1bdbbd59c94437a20c38e54ece0023a4ee20a9cb8b6",
+    "bytes": 697080
+  },
+  {
+    "label": "producer/core-stage-core.log",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repaired/core-stage-core.log",
+    "sha256": "a5592235bb2bb6ea5f5b8fb7cd951ee1b60b8e27f7fb3794cb1c436cdf12013d",
+    "bytes": 281739
+  },
+  {
+    "label": "producer/core-stage-build.log",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repaired/core-stage-build.log",
+    "sha256": "996892dc5403d4a742043fe4f4eebd3b7b263840d4b18d075c8c3aedf6e97cb1",
+    "bytes": 1046
+  },
+  {
+    "label": "producer/core-report/documents.log",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repaired/core-report/documents.log",
+    "sha256": "78bbf89406e45ac263f3aca28c3ec8c0b537a35fa7fe1f5558f7756c0e5b1a55",
+    "bytes": 4556
+  },
+  {
+    "label": "consumer/preflight-report.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/preflight-report.json",
+    "sha256": "07379fd0d354ee7d67a20e07aaaa48c776946032271edb3ed218d2f35ee79635",
+    "bytes": 937321
+  },
+  {
+    "label": "consumer/ui-report.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/ui-report.json",
+    "sha256": "1a6ad8a91ddbbd4fe97f5326b3eef34e4aa2f93b39e1df969e7fc40b088cc7f0",
+    "bytes": 16280192
+  },
+  {
+    "label": "consumer/normal-report.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/normal-report.json",
+    "sha256": "af46106cc21fa6ade6e8a9db7d03434586978271445c77235c6a0c85dd2d9387",
+    "bytes": 1028915
+  },
+  {
+    "label": "consumer/package-report.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/package-report.json",
+    "sha256": "404f6a49f2ea636361473a416e4b3296b50d4f8f3fefd5251d80e01d9bc6ed98",
+    "bytes": 325848
+  },
+  {
+    "label": "consumer/normal-before.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/normal-before.json",
+    "sha256": "6a697bba673fb62b37ef4d5af25dd52336c99c6636b347480bb3383fe197de09",
+    "bytes": 757950
+  },
+  {
+    "label": "consumer/normal-after.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/normal-after.json",
+    "sha256": "6a697bba673fb62b37ef4d5af25dd52336c99c6636b347480bb3383fe197de09",
+    "bytes": 757950
+  },
+  {
+    "label": "consumer/package-http.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/package-http.json",
+    "sha256": "6a591589cd40e8f88450157497d4358ac1b304b2d09e1d070facd1828757d979",
+    "bytes": 85316
+  },
+  {
+    "label": "matrix/matrix-report.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/matrix-consumer/matrix-report.json",
+    "sha256": "2d04751dfa6e0418f24b68a680428b5154365f2824c40477990eae84129c811d",
+    "bytes": 340986
+  },
+  {
+    "label": "matrix/matrix-before.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/matrix-consumer/matrix-before.json",
+    "sha256": "bf572165eff53747356292fd979d52d4c88c3ed041ea01773588580b53faa0c2",
+    "bytes": 758232
+  },
+  {
+    "label": "matrix/matrix-after.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/matrix-consumer/matrix-after.json",
+    "sha256": "bf572165eff53747356292fd979d52d4c88c3ed041ea01773588580b53faa0c2",
+    "bytes": 758232
+  },
+  {
+    "label": "actual-effective/normal-base-effective.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/normal-base-effective.json",
+    "sha256": "c02b0a2cefdd1147be45c29f525a3819f715f21c123cb4de977dfb03aba59df3",
+    "bytes": 3328
+  },
+  {
+    "label": "actual-effective/normal-current-effective.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/normal-current-effective.json",
+    "sha256": "e020c94298a94ea4aa0cc2b505d06813a4109fa989396582f9a0f8fe3d6e69f6",
+    "bytes": 3205
+  },
+  {
+    "label": "actual-effective/ui-current-effective.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/ui-current-effective.json",
+    "sha256": "22937d037f6c2ddb2edac5808154c8c62b23d507bbf346f1897234fcf647d50b",
+    "bytes": 4614
+  },
+  {
+    "label": "actual-effective/preflight-current-effective.json",
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/preflight-current-effective.json",
+    "sha256": "31a6443b7bdc84f2eafb86af59603db6093015e23340f2daad0d9f343b8fd40b",
+    "bytes": 3288
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "source": "/Users/gordon/.codex/sessions/2026/10/21/rollout-2026-10-21T14-39-18-01a15d2f-866c-7250-a7fb-76602283d254.jsonl",
+  "offset": 2048214613,
+  "actualUserRawSHA256": "b3cc999ef4cc3cef4dafbea8357193c1ae8297959ac336666461e5005eee15d1",
+  "bytes": 519,
+  "directStructuredAnswer": "继续修复当前项（推荐）",
+  "savedExact": true,
+  "initialManuallyCopiedWasAlreadyExact": false,
+  "boundedTailBytes": 25165824,
+  "originalGoalInputsUntouched": true
+}

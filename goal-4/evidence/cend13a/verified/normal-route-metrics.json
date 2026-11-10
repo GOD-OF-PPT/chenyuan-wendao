@@ -1,0 +1,556 @@
+{
+  "actualCurrentAttachments": [
+    {
+      "title": "guided idle foundation help/sword/craft",
+      "attachment": "visible-normal-idle-prefix",
+      "cycles": 25,
+      "onlineMs": 1302000,
+      "steps": 6,
+      "options": {
+        "choice": "help",
+        "school": "sword",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "87135bc7d8b726538f64fc80ebf07333cde7cccb4387dc8cfbc594102b1b456a"
+    },
+    {
+      "title": "guided idle foundation trade/sword/purchase",
+      "attachment": "visible-normal-idle-prefix",
+      "cycles": 25,
+      "onlineMs": 1302000,
+      "steps": 6,
+      "options": {
+        "choice": "trade",
+        "school": "sword",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "ba83e309416315e7465b79e2270fef83da6ebada871f24c49f85b928517c00e1"
+    },
+    {
+      "title": "guided idle foundation leave/sword/craft",
+      "attachment": "visible-normal-idle-prefix",
+      "cycles": 25,
+      "onlineMs": 1302000,
+      "steps": 6,
+      "options": {
+        "choice": "leave",
+        "school": "sword",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "2c399017b5552c82b002b52ce25f801729b5d0657971536161f23eeb745f5ebe"
+    },
+    {
+      "title": "guided idle foundation help/talisman/purchase",
+      "attachment": "visible-normal-idle-prefix",
+      "cycles": 25,
+      "onlineMs": 1302000,
+      "steps": 6,
+      "options": {
+        "choice": "help",
+        "school": "talisman",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "a9d38691d497e277ba9ed6a19a6618f162004b2e1744738a9e9dab7e58eeb09e"
+    },
+    {
+      "title": "guided idle foundation trade/talisman/craft",
+      "attachment": "visible-normal-idle-prefix",
+      "cycles": 25,
+      "onlineMs": 1302000,
+      "steps": 6,
+      "options": {
+        "choice": "trade",
+        "school": "talisman",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "2abb19888241edcd0833802e74524e6ddabe7d0886b34686340dbb8d38f21d86"
+    },
+    {
+      "title": "guided idle foundation leave/talisman/purchase",
+      "attachment": "visible-normal-idle-prefix",
+      "cycles": 25,
+      "onlineMs": 1302000,
+      "steps": 6,
+      "options": {
+        "choice": "leave",
+        "school": "talisman",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "1391347f7feb50dd8162a6b7f7008bc8ba4a99f0d287eb9d4ee155652ca0e7fc"
+    },
+    {
+      "title": "normal idle help/sword/craft/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 272,
+      "onlineMs": 27243000,
+      "steps": 74,
+      "options": {
+        "choice": "help",
+        "school": "sword",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "f964a8d14342afdf1bae2274496b62b227f2bdf3c0bca8b2c823bf7a953da23b"
+    },
+    {
+      "title": "normal idle help/sword/craft/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 272,
+      "onlineMs": 27243000,
+      "steps": 74,
+      "options": {
+        "choice": "help",
+        "school": "sword",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "672f9175556cf735286cc1025261e7329d8e27f5cb88961f2b833c8b83d48ce1"
+    },
+    {
+      "title": "normal idle help/sword/purchase/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 245,
+      "onlineMs": 25962000,
+      "steps": 52,
+      "options": {
+        "choice": "help",
+        "school": "sword",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "8dcbc8625f6e86218c875c59511aead23285c0ae3b2b35309ae456edbe4948ef"
+    },
+    {
+      "title": "normal idle help/sword/purchase/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 245,
+      "onlineMs": 25962000,
+      "steps": 52,
+      "options": {
+        "choice": "help",
+        "school": "sword",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "4bdb37bdb03d6066e1dcc385aa12eaa00f377f51edf834933ea14bb969c1af42"
+    },
+    {
+      "title": "normal idle help/talisman/craft/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 292,
+      "onlineMs": 27303000,
+      "steps": 74,
+      "options": {
+        "choice": "help",
+        "school": "talisman",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "b931053197bbe8ce5a35a3d539a8df4cb64cecb7e290be8e5176c5f9276a194f"
+    },
+    {
+      "title": "normal idle help/talisman/craft/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 292,
+      "onlineMs": 27303000,
+      "steps": 74,
+      "options": {
+        "choice": "help",
+        "school": "talisman",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "e673d581591378461db5c53dc1970108ed290c9839bbc18ce3c9ee63132ef01e"
+    },
+    {
+      "title": "normal idle help/talisman/purchase/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 265,
+      "onlineMs": 26022000,
+      "steps": 52,
+      "options": {
+        "choice": "help",
+        "school": "talisman",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "b1bd160946dd2d708ec81252fcf7f0d2d64d0ceef17e7ec57c0fb473cf1ac23d"
+    },
+    {
+      "title": "normal idle help/talisman/purchase/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 265,
+      "onlineMs": 26022000,
+      "steps": 52,
+      "options": {
+        "choice": "help",
+        "school": "talisman",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "9d882982a541a3a9d0ef43dc4bd1e3bb3627daf35a6bdeb40ba5712e6746eddc"
+    },
+    {
+      "title": "normal idle trade/sword/craft/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 272,
+      "onlineMs": 27243000,
+      "steps": 74,
+      "options": {
+        "choice": "trade",
+        "school": "sword",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "b6e528d0c8b7ce8b91c4edbc38f536503d12723cbd0e605e6dcd58099ff49f21"
+    },
+    {
+      "title": "normal idle trade/sword/craft/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 272,
+      "onlineMs": 27243000,
+      "steps": 74,
+      "options": {
+        "choice": "trade",
+        "school": "sword",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "ad39f24246fa8a186d8046096c65208c3e506a3338bc438102fc68ef37fbdda2"
+    },
+    {
+      "title": "normal idle trade/sword/purchase/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 245,
+      "onlineMs": 25962000,
+      "steps": 52,
+      "options": {
+        "choice": "trade",
+        "school": "sword",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "3242861ad50e51389a5f193458ce5f1b0fda14d04fd8893d9013a18e639cc500"
+    },
+    {
+      "title": "normal idle trade/sword/purchase/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 245,
+      "onlineMs": 25962000,
+      "steps": 52,
+      "options": {
+        "choice": "trade",
+        "school": "sword",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "05763b7ebf4fbeb1ecc5851072ad7c95491c5a395bd2deae0b5131b4a2711c72"
+    },
+    {
+      "title": "normal idle trade/talisman/craft/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 292,
+      "onlineMs": 27303000,
+      "steps": 74,
+      "options": {
+        "choice": "trade",
+        "school": "talisman",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "b364c196a7e36407755fc4e83b3d932fe1ea81373c447052f296fcee7dc251b1"
+    },
+    {
+      "title": "normal idle trade/talisman/craft/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 292,
+      "onlineMs": 27303000,
+      "steps": 74,
+      "options": {
+        "choice": "trade",
+        "school": "talisman",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "994bcfad7965b99bd8abb5a3d5a883c4f05274e1971489e250444066ef5e697d"
+    },
+    {
+      "title": "normal idle trade/talisman/purchase/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 265,
+      "onlineMs": 26022000,
+      "steps": 52,
+      "options": {
+        "choice": "trade",
+        "school": "talisman",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "9b35ac7152b53327e14ebc1d4bb6949741a56c927104ed0c5164b1d9e9a3a72b"
+    },
+    {
+      "title": "normal idle trade/talisman/purchase/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 265,
+      "onlineMs": 26022000,
+      "steps": 52,
+      "options": {
+        "choice": "trade",
+        "school": "talisman",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "ec7ad0d501c2c91c2d766b2de872cd57a8326dc8ae4e54a248dccc3227de250f"
+    },
+    {
+      "title": "normal idle leave/sword/craft/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 272,
+      "onlineMs": 27234000,
+      "steps": 75,
+      "options": {
+        "choice": "leave",
+        "school": "sword",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "307713c05049e832312e205093da1c5f0b19c583f8950220cc922e1839302d0b"
+    },
+    {
+      "title": "normal idle leave/sword/craft/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 272,
+      "onlineMs": 27234000,
+      "steps": 75,
+      "options": {
+        "choice": "leave",
+        "school": "sword",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "52105c67a2c8c4a90f94e65d12306240cf52e5408ab64165fe6934c21204bf65"
+    },
+    {
+      "title": "normal idle leave/sword/purchase/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 244,
+      "onlineMs": 25947000,
+      "steps": 52,
+      "options": {
+        "choice": "leave",
+        "school": "sword",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "78d829e5e1ea3f3aa65699c8d0953be70ff7262ec7471ca8e06543aa5a553cc6"
+    },
+    {
+      "title": "normal idle leave/sword/purchase/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 244,
+      "onlineMs": 25947000,
+      "steps": 52,
+      "options": {
+        "choice": "leave",
+        "school": "sword",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "59733e7c08889d77338c31084fd1e6dc54ac3262f0b008a2115db23287d46b2a"
+    },
+    {
+      "title": "normal idle leave/talisman/craft/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 292,
+      "onlineMs": 27294000,
+      "steps": 75,
+      "options": {
+        "choice": "leave",
+        "school": "talisman",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "45ad876eac486f06ad870126b981864d1c44e210ba7d478f3c378288cb303565"
+    },
+    {
+      "title": "normal idle leave/talisman/craft/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 292,
+      "onlineMs": 27294000,
+      "steps": 75,
+      "options": {
+        "choice": "leave",
+        "school": "talisman",
+        "preparation": "gather",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "b46a75b04d9d601287946af15fb48def052c8718ce722a6bd28f8c8643927e8a"
+    },
+    {
+      "title": "normal idle leave/talisman/purchase/transmit",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 264,
+      "onlineMs": 26007000,
+      "steps": 52,
+      "options": {
+        "choice": "leave",
+        "school": "talisman",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "266af9842ece8e632fd30ac3947e02c45b1390f8c878d2b7374735e01a6f1b04"
+    },
+    {
+      "title": "normal idle leave/talisman/purchase/depart",
+      "attachment": "visible-normal-idle-route",
+      "cycles": 264,
+      "onlineMs": 26007000,
+      "steps": 52,
+      "options": {
+        "choice": "leave",
+        "school": "talisman",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "depart",
+        "advanced": false
+      },
+      "sha256": "2e7f2e6d6e454fdec530223e80c0a40c0bf607bebfee791c36e2d465ab7c970b"
+    },
+    {
+      "title": "current normal sword reopens its actual question and every saved battle round without reroll or an automatic next gate",
+      "attachment": "visible-normal-idle-prefix",
+      "cycles": 225,
+      "onlineMs": 25866000,
+      "steps": 46,
+      "options": {
+        "choice": "leave",
+        "school": "sword",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "accept",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "551ec36c92bf9a1981bfec3bf39117f33bd478cee00dfd5b8a19c61605d0475f"
+    },
+    {
+      "title": "current normal talisman reopens its actual question and every saved battle round without reroll or an automatic next gate",
+      "attachment": "visible-normal-idle-prefix",
+      "cycles": 225,
+      "onlineMs": 25866000,
+      "steps": 46,
+      "options": {
+        "choice": "leave",
+        "school": "talisman",
+        "preparation": "purchase",
+        "cultivation": "natural",
+        "answer": "release",
+        "ending": "transmit",
+        "advanced": false
+      },
+      "sha256": "65919672826aeac7cbca0052575c656ae88a2e3e33010b7f0a333088697297cc"
+    }
+  ],
+  "normalFull24": {
+    "count": 24,
+    "minCycles": 244,
+    "maxCycles": 292,
+    "minDeclaredOnlineMs": 25947000,
+    "maxDeclaredOnlineMs": 27303000
+  },
+  "scope": "Declared authorized activity periods from current complete UI routes; accelerated clocks do not prove actual player pacing, balance or content sufficiency."
+}

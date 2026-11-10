@@ -1,0 +1,23 @@
+{
+  "exit": 0,
+  "version": 52,
+  "actual": [
+    {
+      "name": "current-ui",
+      "unique": 1051,
+      "declarationOnlyNotAnExecution": true
+    },
+    {
+      "name": "current-native",
+      "unique": 415,
+      "declarationOnlyNotAnExecution": true
+    },
+    {
+      "name": "current-normal",
+      "unique": 32,
+      "declarationOnlyNotAnExecution": true
+    }
+  ],
+  "total": 1498,
+  "wholeMatrixNotExecuted": true
+}

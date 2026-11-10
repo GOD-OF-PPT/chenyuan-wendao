@@ -1,0 +1,50 @@
+{
+  "task": "CEND13-A",
+  "productionCommit": "8be105c29e248f8a8169620ab1308e29b087bc2c",
+  "mainConsumer": "bc2497fbbb1c936d92ab17ba93cfcb551019eea0",
+  "readonlyMatrixConsumer": "40843742382084e791bda792941d42caf1e02faa",
+  "runtime": "9ca9fa243b78f87c9d410a119aa86fda9d3c598a6670bfe0dae60231e71cf99d",
+  "runtimeFiles": 350,
+  "payloadFiles": 112,
+  "appActualBytes": 159635,
+  "newFunctionLogicBytes": 1104,
+  "newNativeStyleBytes": 72,
+  "allOriginalCapsUnchanged": true,
+  "coreGates": 10,
+  "nodeTests": 1075,
+  "uniqueResourceMethods": 807,
+  "resourceSeconds": 1638.816,
+  "relatedUI": {
+    "wholeFiles": 31,
+    "effectiveDistinctCases": 256,
+    "parts": "23 +230 +3",
+    "notSingle256Run": true,
+    "raw230Passed3FailedPreserved": true,
+    "sameRuntimeAndOriginalWholeCaseIDsProved": true
+  },
+  "normal32": {
+    "allFirstAttempt": true,
+    "seconds": 3888.799133,
+    "wholeFiles": 3,
+    "noOld32Inheritance": true,
+    "actualWorkers": 1,
+    "allCaseTimeouts": 240000,
+    "skip": 0,
+    "retry": 0,
+    "flaky": 0
+  },
+  "package5": {
+    "allFirstAttempt": true,
+    "seconds": 30.19957,
+    "subsetOfRelatedScope": true
+  },
+  "HTTPFilesAfterAll": 336,
+  "directCurrentNativePNGFilesViewed": 24,
+  "noMoreThanTwoImagesPerToolResult": true,
+  "originalPNGsRetained": true,
+  "scope": "one fixed1440x900/font1 Chromium functional and rule/storage/real-cycle checks",
+  "compatibilityEnvironmentPerformanceSpecialtiesPaused": true,
+  "protected13AndV03AndFourInputsExact": true,
+  "goalWhole1498ArtLongTermHumanStillOpen": true,
+  "GJHistory": "original three rejections → explicit user continuation → one legacy consumer viewing rejection → full three-case correction pass; all failures and interrupted/unrun records retained"
+}

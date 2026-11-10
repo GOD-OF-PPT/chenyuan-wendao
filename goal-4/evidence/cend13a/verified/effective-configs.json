@@ -1,0 +1,16 @@
+{
+  "effectiveLoaderSucceededForAllFourConfigs": true,
+  "originalComparatorExit": 1,
+  "originalComparatorFailure": "Expected raw use objects to be textually identical; baseURL includes an explicit trailing slash in current wrapper. Raw values preserved; no test/config changed to hide difference.",
+  "normalOtherUseAndExpectExact": true,
+  "normalTimeoutRetryRepeatMatchAndDirExact": true,
+  "originalBaseURL": "http://127.0.0.1:4173",
+  "currentBaseURL": "http://127.0.0.1:4173/",
+  "sameRootOriginAndPath": true,
+  "originalConfiguredWorkers": 2,
+  "currentConfiguredWorkers": 1,
+  "oneWorkerIsExplicitTaskScope": true,
+  "actualWorkersPendingCompletedRunnerMetadata": true,
+  "normalPerCase240000And8000ComeFromUnchangedActualSource": true,
+  "allRawRegExpFieldsPreserved": true
+}
