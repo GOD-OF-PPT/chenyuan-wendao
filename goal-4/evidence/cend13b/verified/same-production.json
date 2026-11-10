@@ -1,0 +1,21 @@
+{
+  "runtime": "126d379e2548ad15a79ad49ac8361acf87036d9c351a154bf8fdb9951244b252",
+  "exact351RuntimeAnd112Payload": true,
+  "actualCounts": {
+    "new": 7,
+    "ui": 118,
+    "ui-all": 123
+  },
+  "differentExistingSourceFiles": [
+    "docs/decisions/0146-response-state-cend13b-contract.md",
+    "goal-4/tasks.md",
+    "web/e2e/cend13b-response-state.spec.ts"
+  ],
+  "otherAllTrackedExact": true,
+  "newEvidenceOnly": [
+    "goal-4/evidence/cend13b/consumer1-before/web/e2e/cend13b-response-state.spec.ts",
+    "goal-4/evidence/cend13b/consumer1-correction.json"
+  ],
+  "noNewProductChange": true,
+  "fullCoreRetainsActualCd722Identity": true
+}
