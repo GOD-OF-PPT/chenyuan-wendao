@@ -11,9 +11,9 @@
     "beforeBytes": 159623,
     "beforeSHA256": "e48a2a03faad3bb9e4061b4e7c088c122c8a29d12edfe007ebe3e5cb39f9730d",
     "bytes": 159635,
-    "sha256": "5daa01ca768540176a7d04b36db4510d7e373543256ea6454429f30d5a69bbc5",
+    "sha256": "15ba7e3d7d35e3fd549bd3165cfe794b44bcc602cdf7a20be7f422ac88ccf903",
     "functionBefore": "function startTraining(plan:CultivationPlan=defaultTraining){if(pendingStoryError.value)return;resumeVisible.value=false;trainingInspectionPlan.value=null;return store.startCultivation(plan);}",
-    "functionAfter": "async function startTraining(plan:CultivationPlan=defaultTraining){\n if(pendingStoryError.value)return;\n resumeVisible.value=false;trainingInspectionPlan.value=null;\n const from=singleScreen.value&&hubView.value==='cultivation',owner=navigationRevision,owns=inspectionOwner(),previous=store.activity?.id,signature=JSON.stringify(plan),anchor=focus.capture();\n await store.startCultivation(plan);\n const a=store.activity,r=store.activityRuntime,g=game.value;\n if(!from||!owns(owner)||document.hidden||store.error||!store.saved||!store.available||store.busy||store.activityPausing||a?.version!==1||a.status!=='running'||a.id===previous||!store.activityOwned||a.runId!==g?.core.runId||a.gameRevision!==g?.core.revision||r?.id!==a.id||r.generation!==a.generation||JSON.stringify(a.plan)!==signature)return;\n const current=inspectionOwner(a.id),next=selectTab('修行');await nextTick();\n if(current(next)&&!document.hidden&&!store.error&&!store.activityPausing&&store.activity?.status==='running'&&store.activity.generation===a.generation&&store.activityRuntime?.id===a.id&&store.activityRuntime.generation===a.generation&&store.activityOwned&&focusStillOwned(anchor))focus.target(document.querySelector<HTMLElement>('[data-testid=cultivation-active-pause]'));\n}",
+    "functionAfter": "async function startTraining(plan:CultivationPlan=defaultTraining){\n if(pendingStoryError.value)return;\n resumeVisible.value=false;trainingInspectionPlan.value=null;\n const from=singleScreen.value&&hubView.value==='cultivation',owner=navigationRevision,owns=inspectionOwner(),previous=store.activity?.id,signature=JSON.stringify(plan),anchor=focus.capture();\n await store.startCultivation(plan);\n const a=store.activity,r=store.activityRuntime,g=game.value;\n if(!from||!owns(owner)||document.hidden||store.error||!store.saved||!store.available||store.busy||store.activityPausing||a?.version!==1||a.status!=='running'||a.id===previous||!store.activityOwned||a.runId!==g?.core.runId||a.gameRevision!==g?.core.revision||r?.id!==a.id||r.generation!==a.generation||JSON.stringify(a.plan)!==signature)return;\n hubTrainingMethod.value=a.plan.method;const current=inspectionOwner(a.id),next=selectTab('修行');await nextTick();\n if(current(next)&&!document.hidden&&!store.error&&!store.activityPausing&&store.activity?.status==='running'&&store.activity.generation===a.generation&&store.activityRuntime?.id===a.id&&store.activityRuntime.generation===a.generation&&store.activityOwned&&focusStillOwned(anchor))focus.target(document.querySelector<HTMLElement>('[data-testid=cultivation-active-pause]'));\n}",
     "indentEdits": [
       [
         648,
@@ -477,15 +477,55 @@
       ],
       [
         793,
+        10
+      ],
+      [
+        794,
+        12
+      ],
+      [
+        795,
+        12
+      ],
+      [
+        796,
+        12
+      ],
+      [
+        797,
+        10
+      ],
+      [
+        798,
+        10
+      ],
+      [
+        799,
+        12
+      ],
+      [
+        800,
+        12
+      ],
+      [
+        801,
+        10
+      ],
+      [
+        802,
+        10
+      ],
+      [
+        803,
         8
       ]
     ],
-    "uiLogicDelta": 1066
+    "uiLogicDelta": 1104
   },
   "renderProof": {
     "path": "goal-4/evidence/cend13a/render-equivalence.json",
-    "bytes": 671,
-    "sha256": "48a30ce26244bfc0971cef05f2100bb3027780bd72768c835bd456e380302d47"
+    "bytes": 790,
+    "sha256": "89666ed6be0df03c4e15aeb64b402cfd56e297b50a6c36aee5094a8aaa2b0296"
   },
   "authority": {
     "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
@@ -514,5 +554,11 @@
     "docs/decisions/0145-cultivation-start-stage-cend13a-contract.md",
     "goal-4/amendments/2026-11-10-cend13a-input.md",
     "goal-4/research/cend13a-sources.json"
-  ]
+  ],
+  "nativeStyle": {
+    "text": "<style>.art06-progress:has(>.art06-harvest){padding-bottom:4px}</style>\n",
+    "bytes": 72,
+    "sha256": "ea88dca6c3e727d2add7d6d42fad79b5cdb72103b0096709522b712a5bbfe91d",
+    "maxBytes": 128
+  }
 }

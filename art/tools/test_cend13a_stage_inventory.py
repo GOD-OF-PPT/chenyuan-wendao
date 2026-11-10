@@ -14,10 +14,10 @@ class CultivationHandoffTests(unittest.TestCase):
   inventory.InventoryTests.setUp(self)
   validate_stage_handoff(self.root)
  def test_full_app_inverse_and_actual_original_cap(self):
-  p=MANIFEST['parent'];self.assertEqual(prior_stage_handoff_bytes(p['path'],(ROOT/p['path']).read_bytes()),(ROOT/p['before']).read_bytes());self.assertLessEqual((ROOT/p['path']).stat().st_size,159635);self.assertEqual(validate_stage_handoff(self.root)[1],1066)
+  p=MANIFEST['parent'];self.assertEqual(prior_stage_handoff_bytes(p['path'],(ROOT/p['path']).read_bytes()),(ROOT/p['before']).read_bytes());self.assertLessEqual((ROOT/p['path']).stat().st_size,159635);self.assertEqual(validate_stage_handoff(self.root)[1],1104)
  def test_current_navigation_run_sync_clock_and_plan_guards_cannot_change(self):
   p=MANIFEST['parent']['path'];raw=(ROOT/p).read_text()
-  for old,new in [('!owns(owner)','false'),('document.hidden','false'),("a.status!=='running'","false"),('a.id===previous','false'),('!store.activityOwned','false'),('a.gameRevision!==g?.core.revision','false'),('r.generation!==a.generation','false'),('JSON.stringify(a.plan)!==signature','false'),('focusStillOwned(anchor)','true')]:
+  for old,new in [('!owns(owner)','false'),('document.hidden','false'),("a.status!=='running'","false"),('a.id===previous','false'),('!store.activityOwned','false'),('a.gameRevision!==g?.core.revision','false'),('r.generation!==a.generation','false'),('JSON.stringify(a.plan)!==signature','false'),('focusStillOwned(anchor)','true'),('hubTrainingMethod.value=a.plan.method;',''),('padding-bottom:4px','padding-bottom:0')]:
    self.assertIn(old,raw);self.write(p,raw.replace(old,new,1))
    with self.subTest(guard=old),self.assertRaisesRegex(AssertionError,'C13 exact current App'):validate_stage_handoff(self.root)
    self.write(p,raw.encode())

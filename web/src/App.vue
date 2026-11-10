@@ -396,7 +396,7 @@ async function startTraining(plan:CultivationPlan=defaultTraining){
  await store.startCultivation(plan);
  const a=store.activity,r=store.activityRuntime,g=game.value;
  if(!from||!owns(owner)||document.hidden||store.error||!store.saved||!store.available||store.busy||store.activityPausing||a?.version!==1||a.status!=='running'||a.id===previous||!store.activityOwned||a.runId!==g?.core.runId||a.gameRevision!==g?.core.revision||r?.id!==a.id||r.generation!==a.generation||JSON.stringify(a.plan)!==signature)return;
- const current=inspectionOwner(a.id),next=selectTab('修行');await nextTick();
+ hubTrainingMethod.value=a.plan.method;const current=inspectionOwner(a.id),next=selectTab('修行');await nextTick();
  if(current(next)&&!document.hidden&&!store.error&&!store.activityPausing&&store.activity?.status==='running'&&store.activity.generation===a.generation&&store.activityRuntime?.id===a.id&&store.activityRuntime.generation===a.generation&&store.activityOwned&&focusStillOwned(anchor))focus.target(document.querySelector<HTMLElement>('[data-testid=cultivation-active-pause]'));
 }
 function startSource(plan:SourcePlan){resumeVisible.value=false;sourceInspectionPlan.value=null;return store.startPlannedActivity(plan);}
@@ -791,17 +791,17 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
 </div>
 <details class="opening-details"><summary>三种选择与剑简说明</summary><p class="small">三种选择均可入道，剧情不会直接赋予境界。惊鸿剑简用于剑修终结术法，伤害 +{{C.swordManual.damageBonus}}；三种开场均可在筑基后到青云宗付费研读同简。</p></details></MilestoneGate>
 </template>
-  <template v-else-if="phase === 'trial-question' && journey && !inspectingInventory">
-            <div class="section-label">渡劫 · 问心</div><h2>你愿如何面对来路？</h2><p class="story" data-testid="trial-question-memory">{{journey.openingMemory}}</p><p class="story">接纳旧我，稳住心神；或放下旧念，以进攻开路。两条道路皆可向前，不另判善恶成败。</p>
-            <details class="trial-memories"><summary>回望已记录的选择</summary><p v-for="memory in journey.memories" :key="memory.id" class="small">{{memory.person}} · {{memory.title}}：{{memory.text}}</p></details>
-            <div class="choices two" tabindex="-1" data-primary-region role="group" aria-label="问心选择"><ChoiceCard v-for="answer in journey.answers" :key="answer.id" :choice-id="`answer-${answer.id}`" :label="answer.label" :disabled="!can({type:'ANSWER_TRIAL',answer:answer.id})" :identity="core.runId+core.revision" :details="choiceDetails({type:'ANSWER_TRIAL',answer:answer.id},answer.record)" @choose="act({type:'ANSWER_TRIAL',answer:answer.id})"><strong>{{answer.label}} · {{answer.id==='accept'?'承受更稳':'进攻更强'}}</strong><small>{{answer.record}}</small><small>{{answer.preview.failure?.message}}</small></ChoiceCard></div>
-          </template>
-          <template v-else-if="activeStory && !inspectingInventory">
-            <div class="section-label">当前遭遇 · {{activeStory.npc}}</div><div class="encounter-speaker"><PortraitImage class="speaker-portrait" :id="NPC_PORTRAITS[activeStory.npc]??''" :fallback="activeStory.npc.slice(0,1)"/><span>{{activeStory.npc}}</span></div><h2 data-testid="event-title">{{activeStory.name}}</h2><p class="story" data-testid="event-body">{{activeStory.body}}</p>
-            <div class="choices" tabindex="-1" data-primary-region role="group" aria-label="当前遭遇选择"><ChoiceCard v-for="option in activeStory.options" :key="option.id" :choice-id="`decide-${option.id}`" :label="option.label" :disabled="!can({type:'DECIDE',option:option.id})" :identity="core.runId+core.revision" :details="choiceDetails({type:'DECIDE',option:option.id},option.detail)" @choose="act({type:'DECIDE',option:option.id})"><strong>{{option.label}}</strong><small>{{option.detail}}</small><small>{{cost({type:'DECIDE',option:option.id})}}</small><small>{{why({type:'DECIDE',option:option.id})}}</small><small>{{consumption({type:'DECIDE',option:option.id})}}</small></ChoiceCard></div>
-          </template>
-          <template v-else-if="game.battle && !inspectingInventory">
-            <BattlePanel :game="game" :can="can" :cost="cost" :why="why" @move="battle" @start="startAdventure" @takeover="store.pauseCultivation" :activity="store.activity" :running="store.activityRunning" :busy="store.busy" :available="store.available" :saved-adventure-plan="adventureInspectionPlan" :plan-saved="adventureInspectionSaved"><template #activity><TrainingActivity v-if="!immersive&&store.activity?.version===6&&store.activity.status!=='stopped'" :store="store" compact @settings="viewActivityPlan" @details="viewReceipt"/></template></BattlePanel>
+<template v-else-if="phase === 'trial-question' && journey && !inspectingInventory">
+<div class="section-label">渡劫 · 问心</div><h2>你愿如何面对来路？</h2><p class="story" data-testid="trial-question-memory">{{journey.openingMemory}}</p><p class="story">接纳旧我，稳住心神；或放下旧念，以进攻开路。两条道路皆可向前，不另判善恶成败。</p>
+<details class="trial-memories"><summary>回望已记录的选择</summary><p v-for="memory in journey.memories" :key="memory.id" class="small">{{memory.person}} · {{memory.title}}：{{memory.text}}</p></details>
+<div class="choices two" tabindex="-1" data-primary-region role="group" aria-label="问心选择"><ChoiceCard v-for="answer in journey.answers" :key="answer.id" :choice-id="`answer-${answer.id}`" :label="answer.label" :disabled="!can({type:'ANSWER_TRIAL',answer:answer.id})" :identity="core.runId+core.revision" :details="choiceDetails({type:'ANSWER_TRIAL',answer:answer.id},answer.record)" @choose="act({type:'ANSWER_TRIAL',answer:answer.id})"><strong>{{answer.label}} · {{answer.id==='accept'?'承受更稳':'进攻更强'}}</strong><small>{{answer.record}}</small><small>{{answer.preview.failure?.message}}</small></ChoiceCard></div>
+</template>
+<template v-else-if="activeStory && !inspectingInventory">
+<div class="section-label">当前遭遇 · {{activeStory.npc}}</div><div class="encounter-speaker"><PortraitImage class="speaker-portrait" :id="NPC_PORTRAITS[activeStory.npc]??''" :fallback="activeStory.npc.slice(0,1)"/><span>{{activeStory.npc}}</span></div><h2 data-testid="event-title">{{activeStory.name}}</h2><p class="story" data-testid="event-body">{{activeStory.body}}</p>
+<div class="choices" tabindex="-1" data-primary-region role="group" aria-label="当前遭遇选择"><ChoiceCard v-for="option in activeStory.options" :key="option.id" :choice-id="`decide-${option.id}`" :label="option.label" :disabled="!can({type:'DECIDE',option:option.id})" :identity="core.runId+core.revision" :details="choiceDetails({type:'DECIDE',option:option.id},option.detail)" @choose="act({type:'DECIDE',option:option.id})"><strong>{{option.label}}</strong><small>{{option.detail}}</small><small>{{cost({type:'DECIDE',option:option.id})}}</small><small>{{why({type:'DECIDE',option:option.id})}}</small><small>{{consumption({type:'DECIDE',option:option.id})}}</small></ChoiceCard></div>
+</template>
+<template v-else-if="game.battle && !inspectingInventory">
+    <BattlePanel :game="game" :can="can" :cost="cost" :why="why" @move="battle" @start="startAdventure" @takeover="store.pauseCultivation" :activity="store.activity" :running="store.activityRunning" :busy="store.busy" :available="store.available" :saved-adventure-plan="adventureInspectionPlan" :plan-saved="adventureInspectionSaved"><template #activity><TrainingActivity v-if="!immersive&&store.activity?.version===6&&store.activity.status!=='stopped'" :store="store" compact @settings="viewActivityPlan" @details="viewReceipt"/></template></BattlePanel>
           </template>
           <template v-else-if="phase === 'trial-ending' && ascension && !inspectingInventory">
             <div class="section-label">天门已开 <span>三关已过，等待你的收束</span></div><h2>此生，留下些什么？</h2><p class="story">{{ascension.record.opening.text}} {{ascension.record.training.school}}的来路已经留在记录中。两种选择都以飞升成功收卷，没有善恶高低。</p>
@@ -962,3 +962,4 @@ onMounted(async() => {await experience.init();if(appActive)await initialiseGame(
   </div>
 </template>
 <style src="./closure-focus.css"></style>
+<style>.art06-progress:has(>.art06-harvest){padding-bottom:4px}</style>
