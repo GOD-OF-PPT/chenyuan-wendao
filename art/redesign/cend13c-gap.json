@@ -317,7 +317,6 @@
   "authority": {
     "web/src/PreparationMaterials.vue": "6dfcc98b007f571257b410d9db0c2bd70e1a38d7ab16877cd92e2c6198b58613",
     "web/src/GoalBoard.vue": "bc908d0ce123a15066f7950b77c1a09db67eda1592e3a50a1ff45cfbfd70a7fd",
-    "web/src/preparation-bench.css": "a23ce1429d3ebde40d6bb78c7e57192e7ca1623cb4e45fa8d50605280c77fd22",
     "web/src/ItemArtifact.vue": "b651e6b9bc5675ca1ccaecc08d62f5c45ef8d70ae6915bae8b75b507a17328b0",
     "web/src/play-flow.ts": "ec31aeb151728b37a6de4f65f17df9020fed7407194cd02df1330a0e69ad0e76",
     "web/src/App.vue": "15ba7e3d7d35e3fd549bd3165cfe794b44bcc602cdf7a20be7f422ac88ccf903",
@@ -366,5 +365,30 @@
         }
       ]
     }
-  ]
+  ],
+  "extraParents": [
+    {
+      "path": "web/src/preparation-bench.css",
+      "before": "goal-4/evidence/cend13c/before/web/src/preparation-bench.css",
+      "beforeBytes": 4829,
+      "beforeSHA256": "a23ce1429d3ebde40d6bb78c7e57192e7ca1623cb4e45fa8d50605280c77fd22",
+      "bytes": 5267,
+      "sha256": "1a0738e712f7ec28eb7ff043f6432eb51ec5e28ec1dab4e9e219ce68f679a8b9",
+      "operations": [
+        {
+          "at": 4829,
+          "old": "",
+          "new": "#app:has([data-testid=error]) .preparation-catalogue>header{flex-shrink:0}\n#app:has([data-testid=error]) .preparation-catalogue .goal-board-work{gap:4px}\n#app:has([data-testid=error]) .preparation-catalogue .preparation-materials{margin-top:4px;padding:4px 0}\n#app:has([data-testid=error]) .preparation-catalogue .preparation-material-art{height:64px}\n#app:has([data-testid=error]) .preparation-catalogue .preparation-stones{height:64px}\n"
+        }
+      ]
+    }
+  ],
+  "displayBudget": {
+    "cap": 12000,
+    "paths": [
+      "web/src/PreparationMaterials.vue",
+      "web/src/preparation-bench.css"
+    ],
+    "legacyLedger": "art/redesign/cend07-f04.json"
+  }
 }

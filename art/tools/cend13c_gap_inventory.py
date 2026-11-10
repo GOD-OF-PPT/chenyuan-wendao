@@ -320,7 +320,6 @@ MANIFEST=json.loads(r'''{
   "authority": {
     "web/src/PreparationMaterials.vue": "6dfcc98b007f571257b410d9db0c2bd70e1a38d7ab16877cd92e2c6198b58613",
     "web/src/GoalBoard.vue": "bc908d0ce123a15066f7950b77c1a09db67eda1592e3a50a1ff45cfbfd70a7fd",
-    "web/src/preparation-bench.css": "a23ce1429d3ebde40d6bb78c7e57192e7ca1623cb4e45fa8d50605280c77fd22",
     "web/src/ItemArtifact.vue": "b651e6b9bc5675ca1ccaecc08d62f5c45ef8d70ae6915bae8b75b507a17328b0",
     "web/src/play-flow.ts": "ec31aeb151728b37a6de4f65f17df9020fed7407194cd02df1330a0e69ad0e76",
     "web/src/App.vue": "15ba7e3d7d35e3fd549bd3165cfe794b44bcc602cdf7a20be7f422ac88ccf903",
@@ -369,12 +368,37 @@ MANIFEST=json.loads(r'''{
         }
       ]
     }
-  ]
+  ],
+  "extraParents": [
+    {
+      "path": "web/src/preparation-bench.css",
+      "before": "goal-4/evidence/cend13c/before/web/src/preparation-bench.css",
+      "beforeBytes": 4829,
+      "beforeSHA256": "a23ce1429d3ebde40d6bb78c7e57192e7ca1623cb4e45fa8d50605280c77fd22",
+      "bytes": 5267,
+      "sha256": "1a0738e712f7ec28eb7ff043f6432eb51ec5e28ec1dab4e9e219ce68f679a8b9",
+      "operations": [
+        {
+          "at": 4829,
+          "old": "",
+          "new": "#app:has([data-testid=error]) .preparation-catalogue>header{flex-shrink:0}\n#app:has([data-testid=error]) .preparation-catalogue .goal-board-work{gap:4px}\n#app:has([data-testid=error]) .preparation-catalogue .preparation-materials{margin-top:4px;padding:4px 0}\n#app:has([data-testid=error]) .preparation-catalogue .preparation-material-art{height:64px}\n#app:has([data-testid=error]) .preparation-catalogue .preparation-stones{height:64px}\n"
+        }
+      ]
+    }
+  ],
+  "displayBudget": {
+    "cap": 12000,
+    "paths": [
+      "web/src/PreparationMaterials.vue",
+      "web/src/preparation-bench.css"
+    ],
+    "legacyLedger": "art/redesign/cend07-f04.json"
+  }
 }''')
 
 def prior_preparation_gap_bytes(path,raw):
- r=MANIFEST['parent']
- if Path(path).name!=Path(r['path']).name or hashlib.sha256(raw).hexdigest()!=r['sha256']:return raw
+ r=next((x for x in [MANIFEST['parent'],*MANIFEST['extraParents']]if Path(path).name==Path(x['path']).name),None)
+ if not r or hashlib.sha256(raw).hexdigest()!=r['sha256']:return raw
  text=raw.decode()
  for op in reversed(r['operations']):
   at,old,new=op['at'],op['old'],op['new'];assert text[at:at+len(new)]==new,'C13C approved exact display span'
@@ -389,8 +413,9 @@ def validate_preparation_gap(root):
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'C13C actual local file';return p
  r=MANIFEST['parent']
  if not(root/LEDGER).exists():
-  p=root/r['path'];assert not p.is_symlink(),'C13C missing ledger parent symlink'
-  if p.exists():assert hashlib.sha256(local(r['path']).read_bytes()).hexdigest()==r['beforeSHA256'],'C13C missing ledger exact original parent'
+  for row in [r,*MANIFEST['extraParents']]:
+   p=root/row['path'];assert not p.is_symlink(),'C13C missing ledger parent symlink'
+   if p.exists():assert hashlib.sha256(local(row['path']).read_bytes()).hexdigest()==row['beforeSHA256'],'C13C missing ledger exact original parent'
   return set(),{}
  assert json.dumps(json.loads(local(LEDGER).read_text()),sort_keys=True)==json.dumps(MANIFEST,sort_keys=True),'C13C immutable typed ledger'
  raw=local(r['path']).read_bytes();old=local(r['before']).read_bytes()
@@ -399,6 +424,12 @@ def validate_preparation_gap(root):
  assert prior_preparation_gap_bytes(r['path'],raw)==old,'C13C original controller and complete data'
  delta=len(raw)-len(old);assert delta<=1000==MANIFEST['maxDisplayDelta'],'C13C actual display delta'
  records={LEDGER,r['path'],r['before']}
+ for row in MANIFEST['extraParents']:
+  data=local(row['path']).read_bytes();original=local(row['before']).read_bytes();assert len(data)==row['bytes']and hashlib.sha256(data).hexdigest()==row['sha256'],'C13C exact native error layout'
+  assert len(original)==row['beforeBytes']and hashlib.sha256(original).hexdigest()==row['beforeSHA256']and prior_preparation_gap_bytes(row['path'],data)==original,'C13C complete original native layout'
+  delta+=max(0,len(data)-len(original));records.update([row['path'],row['before']])
+ assert delta<=1000,'C13C total display and native layout budget'
+ displayBudget=MANIFEST['displayBudget'];displayTotal=sum(local(n).stat().st_size for n in displayBudget['paths']);assert displayBudget['cap']==12000 and displayTotal<=12000,'C13C actual original display budget'
  for key in ['functional','compressionProof']:
   f=MANIFEST[key];b=local(f['path']).read_bytes();assert len(b)==f['bytes']and hashlib.sha256(b).hexdigest()==f['sha256'],'C13C exact compiler input/proof';records.add(f['path'])
  f=MANIFEST['functional'];proof=json.loads(local(MANIFEST['compressionProof']['path']).read_text());functional=local(f['path']).read_bytes()
@@ -421,4 +452,4 @@ def validate_preparation_gap(root):
  for key in ['authority','oldLedgers']:
   for n,digest in MANIFEST[key].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==digest,'C13C unchanged '+key;records.add(n)
  for n in MANIFEST['sourceReferences']:local(n);records.add(n)
- return records,{'parentBytes':len(raw),'displayDeltaBytes':delta,'actualGroups':totals,'newRasterCSSFontDependencies':0}
+ return records,{'parentBytes':len(raw),'displayDeltaBytes':delta,'parentDeltaBytes':len(raw)-len(old),'nativeErrorLayoutBytes':len(MANIFEST['extraParents'][0]['operations'][0]['new'].encode()),'actualOriginalDisplayBytes':displayTotal,'actualGroups':totals,'newRasterFontDependencies':0}
