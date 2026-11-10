@@ -51,3 +51,11 @@ App当前159623B，原159635帽不涨，新增UI逻辑至多1800B；允许对明
 第二消费者21ff完整五实际4过1红31.551451秒/5898输入同，A1已完整通过。A3在原START事务quota回滚后重试，测试错误要求成功回执等于未提交的临时回执；实际原仓库full-persistence.ts:585在每次首次创建时生成activity UUID，因此合法重试的activity.id及其首cycle命令ID可不同。只把该跨尝试临时ID比较改为原完整input/fingerprint/plan/owner和初代generation相等；原mutation函数仍核唯一回执、正式createActivity生成的完整Activity、完整Game和全部stores，不能放宽已受理活动的暂停/恢复同id合同。原保存/重试/读秒/导航和时限均保，原4/1报告及原件保；当前第2次消费前提打回，0生产改变，完整五再验后才交付。
 
 第三消费者41055完整五例实际全过29.181543秒，5898输入/Git/声明同、0skip/retry/flaky。相关旧消费者四文件五处原本在START成功后直接点击预算页返回；新界面已在舞台，因此只在原返回前通过现有`cultivation-active-plan`明确只读打开已保存参数。完整原语句/断言/时限/题名和逐字逆回保，原件及精确替换见legacy-consumers.json，不为旧测试恢复工作台常驻。当前生产仍46acea/3e829，四文件消费适配须整文件当前验证。
+
+## 第三次审查打回与暂停
+
+扩展31文件256已执行81过3红，1中断171未跑；完整32为10过1中断21未跑。ART06-A5真实辅助周期的成果对象未在舞台显示，A8旧方式选择入口已不在当前表面，A9原意图重试成果容器inside=false。原完整Game/回执/几何及原时限不放宽；实际图与原trace保。新完整五已通过不能关闭这些缺口。依GJ.md三次规则，停止后续修复并请求用户指导，当前0/3未交付，Goal active；细节见goal-4/evidence/cend13a/review-pending-guidance.md。
+
+## 用户明确指导后继续当前项
+
+用户已答“继续修复当前项（推荐）”，见2026-11-10-cend13a-resume-input.md，解除本项暂停。保原三次审查及所有中断/红，不新任务。最小修复限定App：成功START全归属核后同步hubTrainingMethod为实际plan.method，避免辅助停止时表现对象被旧natural草案切换；只给原harvest父留实际入场translateY(4px)所需4px下空间，动画/时点/全文/几何门槛保。原A8只读查看路径适配，完整A5真实60秒、A9原子quota与全文件重验。更新当前新C13严格ledger/实际159635帽/旧完整逆回与新编译证明，保前版原件；先完整新5＋旧cultivation对象整文件，再其余已列完整验证/正常32/包，不能改原效果身份守卫或奖励时钟。

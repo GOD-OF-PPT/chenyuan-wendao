@@ -1,0 +1,6 @@
+{
+  "browserCasesStarted": false,
+  "originalWrappersPreserved": true,
+  "cause": "Reused runner identity input retained ../run-new.mjs. Both failed at file snapshot before HTTP/browser launch. Corrected only own runner filename, all original scope and assertion guards retained.",
+  "declarationCollectorOriginalFailure": "Unestablished; separate postcollection count/filter/file guards all true; raw outputs preserved."
+}

@@ -1,0 +1,9 @@
+{
+  "command": "python3 scripts/check_docs.py",
+  "exit": 1,
+  "error": "ModuleNotFoundError: No module named PIL at art/tools/art18_inventory.py:4",
+  "sourceChanged": false,
+  "requiredRuntime": "artifacts/goal-4/cend08-recovery/pil-venv/bin/python3 12.3.0 Pillow",
+  "rerunWithRequiredExistingEnvironment": true,
+  "notAProductOrBrowserRed": true
+}

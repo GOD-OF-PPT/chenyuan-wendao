@@ -1,0 +1,23 @@
+{
+  "scope": "CEND13-A only; no goal-state change or user preview save touched",
+  "events": [
+    {
+      "pid": 31792,
+      "command": "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node artifacts/goal-4/cend13a/final/run-ui.mjs",
+      "signal": "SIGINT",
+      "reason": "GJ third formal review rejection; preserve reports and stop further cases, no product failure inferred for interrupted cases."
+    },
+    {
+      "pid": 31791,
+      "command": "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node artifacts/goal-4/cend13a/final/run-normal.mjs",
+      "signal": "SIGINT",
+      "reason": "GJ third formal review rejection; preserve reports and stop further cases, no product failure inferred for interrupted cases."
+    },
+    {
+      "pid": 33231,
+      "command": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m unittest discover -s /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/final/source/art/tools -p test_*.py",
+      "signal": "SIGINT",
+      "reason": "Owned verification interrupted for mandatory GJ pause; partial run is not a pass."
+    }
+  ]
+}

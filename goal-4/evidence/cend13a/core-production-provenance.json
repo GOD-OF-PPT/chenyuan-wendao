@@ -1,0 +1,24 @@
+{
+  "from": "41055d57ca0d52287c6d2a6821ae0ad64c1b95a4",
+  "to": "a8fca6da348821b8c5e1dfaa1e9e1bd8603ee9b9",
+  "differentExistingFiles": [
+    "docs/decisions/0145-cultivation-start-stage-cend13a-contract.md",
+    "goal-4/tasks.md",
+    "web/e2e/check-uir33-01.spec.ts",
+    "web/e2e/idle-cultivation.spec.ts",
+    "web/e2e/idle-integration.spec.ts",
+    "web/e2e/uir35-01-goal-authority.spec.ts"
+  ],
+  "addedFiles": [
+    "goal-4/evidence/cend13a/legacy-consumers-before/web/e2e/check-uir33-01.spec.ts",
+    "goal-4/evidence/cend13a/legacy-consumers-before/web/e2e/idle-cultivation.spec.ts",
+    "goal-4/evidence/cend13a/legacy-consumers-before/web/e2e/idle-integration.spec.ts",
+    "goal-4/evidence/cend13a/legacy-consumers-before/web/e2e/uir35-01-goal-authority.spec.ts",
+    "goal-4/evidence/cend13a/legacy-consumers.json"
+  ],
+  "removedFiles": [],
+  "allProductionRuntimeExact": true,
+  "allPayloadExact": true,
+  "coreEvidenceRetainsActual41055Identity": true,
+  "consumerAdaptationExactInverse": "goal-4/evidence/cend13a/legacy-consumers.json"
+}
