@@ -1,0 +1,120 @@
+{
+  "at": "2026-11-10T10:52:54.463250+00:00",
+  "nativeGoalRemainsActive": true,
+  "records": [
+    {
+      "label": "producer2",
+      "root": {
+        "pid": 5393,
+        "ppid": 5392,
+        "pgid": 5388,
+        "command": "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/validate-core.mjs /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/producer2/core-report"
+      },
+      "confirmedOwnedGroup": [
+        {
+          "pid": 5388,
+          "ppid": 71590,
+          "pgid": 5388,
+          "command": "rtk proxy python3 artifacts/goal-4/check-cend13-abc/producer2/run-core-build.py"
+        },
+        {
+          "pid": 5389,
+          "ppid": 5388,
+          "pgid": 5388,
+          "command": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python artifacts/goal-4/check-cend13-abc/producer2/run-core-build.py"
+        },
+        {
+          "pid": 5392,
+          "ppid": 5389,
+          "pgid": 5388,
+          "command": "rtk proxy /Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/validate-core.mjs /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/producer2/core-report"
+        },
+        {
+          "pid": 5393,
+          "ppid": 5392,
+          "pgid": 5388,
+          "command": "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/validate-core.mjs /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/producer2/core-report"
+        },
+        {
+          "pid": 14367,
+          "ppid": 5393,
+          "pgid": 5388,
+          "command": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python scripts/check_docs.py"
+        },
+        {
+          "pid": 14375,
+          "ppid": 14367,
+          "pgid": 5388,
+          "command": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -m unittest discover -s /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/producer2/source/art/tools -p test_*.py"
+        }
+      ],
+      "signal": "SIGINT",
+      "reason": "same comprehensive task third GJ rejection; stop further engineer validation pending required user guidance, preserve partial and interrupted results",
+      "completedPassNotClaimed": true
+    },
+    {
+      "label": "producer3",
+      "root": {
+        "pid": 15459,
+        "ppid": 15458,
+        "pgid": 15283,
+        "command": "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/validate-core.mjs /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/producer3/core-report"
+      },
+      "confirmedOwnedGroup": [
+        {
+          "pid": 15283,
+          "ppid": 71590,
+          "pgid": 15283,
+          "command": "rtk proxy python3 artifacts/goal-4/check-cend13-abc/producer3/run-core-build.py"
+        },
+        {
+          "pid": 15284,
+          "ppid": 15283,
+          "pgid": 15283,
+          "command": "/usr/local/Cellar/python@3.13/3.13.1/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python artifacts/goal-4/check-cend13-abc/producer3/run-core-build.py"
+        },
+        {
+          "pid": 15458,
+          "ppid": 15284,
+          "pgid": 15283,
+          "command": "rtk proxy /Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/validate-core.mjs /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/producer3/core-report"
+        },
+        {
+          "pid": 15459,
+          "ppid": 15458,
+          "pgid": 15283,
+          "command": "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node scripts/validate-core.mjs /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/producer3/core-report"
+        },
+        {
+          "pid": 15741,
+          "ppid": 15459,
+          "pgid": 15283,
+          "command": "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node --experimental-strip-types --test --test-reporter=tap tests/action-feedback.test.mjs tests/activity-clock.test.mjs tests/activity-effects.test.mjs tests/activity.test.mjs tests/adventure.test.mjs tests/alchemy-feedback.test.mjs tests/build-identity.test.mjs tests/candidate-documents.test.mjs tests/candidate-evidence.test.mjs tests/candidate-server.test.mjs tests/cave-threshold-view.test.mjs tests/configuration.test.mjs tests/core-validation.test.mjs tests/cultivation-effects.test.mjs tests/cultivation-fallback.test.mjs tests/demo-nodes.test.mjs tests/economy-report-current.test.mjs tests/engine.test.mjs tests/equipment-effects.test.mjs tests/full-adventure-activity.test.mjs tests/full-ascension.test.mjs tests/full-causal-compatibility.test.mjs tests/full-causality.test.mjs tests/full-compatibility.test.mjs tests/full-consumption-preview.test.mjs tests/full-content.test.mjs tests/full-contracts.test.mjs tests/full-economy-costs.test.mjs tests/full-economy-ledger.test.mjs tests/full-equipment.test.mjs tests/full-extension.test.mjs tests/full-goals.test.mjs tests/full-growth-stage.test.mjs tests/full-growth.test.mjs tests/full-life-record.test.mjs tests/full-preview-resolution.test.mjs tests/full-queries.test.mjs tests/full-receipts.test.mjs tests/full-supporting-causal.test.mjs tests/full-sword-manual.test.mjs tests/full-trial-journey.test.mjs tests/full-trial-preparation.test.mjs tests/full.test.mjs tests/guidance.test.mjs tests/hud-goal.test.mjs tests/idle-configuration-tradeoffs.test.mjs tests/idle-matrix-evidence.test.mjs tests/idle-performance-budget.test.mjs tests/idle-progression-route.test.mjs tests/idle-progression.test.mjs tests/idle-trial-ui-replacements.test.mjs tests/journal-anchors.test.mjs tests/journey-coverage.test.mjs tests/lifespan-guidance.test.mjs tests/local-events.test.mjs tests/milestone-activity.test.mjs tests/narrative-effects.test.mjs tests/outcome-focus.test.mjs tests/performance-budget.test.mjs tests/play-flow.test.mjs tests/preparation-activity.test.mjs tests/production-activity.test.mjs tests/reading-memory.test.mjs tests/recovery-coverage.test.mjs tests/response-context.test.mjs tests/source-activity.test.mjs tests/source-stock-goal.test.mjs tests/story-pages.test.mjs tests/supply-effects.test.mjs tests/ui-art-effects.test.mjs tests/ui-battle-choreography.test.mjs tests/ui-battle-medicine-summary.test.mjs tests/ui-character-battle-art.test.mjs tests/ui-desktop-art.test.mjs tests/ui-forecast-context.test.mjs tests/ui-scene-presentation.test.mjs tests/ux19-first-loop.test.mjs tests/ux20-trial-guidance.test.mjs tests/ux21-trial-return.test.mjs tests/visit-route.test.mjs"
+        },
+        {
+          "pid": 15973,
+          "ppid": 15741,
+          "pgid": 15283,
+          "command": "/Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node --test-concurrency=0 --heap-prof-interval=524288 --stack-trace-limit=10 --report-signal=SIGUSR2 --heapsnapshot-near-heap-limit=0 --tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA --watch-kill-signal=SIGTERM --inspect-publish-uid=stderr,http --test-isolation=process --test-coverage-lines=0 --cpu-prof-interval=1000 --test-coverage-functions=0 --max-http-header-size=16384 --test-timeout=0 --inspect-port=127.0.0.1:9229 --use-largepages=off --experimental-addon-modules --test-coverage-branches=0 --network-family-autoselection-attempt-timeout=250 --secure-heap-min=2 --v8-pool-size=4 --secure-heap=0 --node-snapshot --trace-event-file-pattern=node_trace.${rotation}.log --experimental-strip-types tests/idle-progression-route.test.mjs"
+        }
+      ],
+      "signal": "SIGINT",
+      "reason": "same comprehensive task third GJ rejection; stop further engineer validation pending required user guidance, preserve partial and interrupted results",
+      "completedPassNotClaimed": true
+    }
+  ],
+  "normal32AndRelated462NeverLaunched": true,
+  "onlyOwnCoreProcessGroupsInterrupted": true,
+  "allPlayerAndPreviewProcessesUntouched": true,
+  "actualHandlesTerminal": [
+    {
+      "handle": 20747,
+      "exit": 130
+    },
+    {
+      "handle": 39171,
+      "exit": 130
+    }
+  ],
+  "allStoppedNotReportedAsPass": true
+}
