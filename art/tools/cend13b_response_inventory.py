@@ -1,3 +1,4 @@
+from cend13c_gap_inventory import prior_preparation_gap_bytes
 import hashlib,json,re
 from pathlib import Path
 LEDGER="art/redesign/cend13b-response.json"
@@ -139,6 +140,7 @@ MANIFEST=json.loads(r'''{
   }
 }''')
 def prior_response_bytes(path,raw):
+ raw=prior_preparation_gap_bytes(path,raw)
  name=Path(path).name
  row=next((r for r in MANIFEST['parents']if Path(r['path']).name==name),None)
  if not row or hashlib.sha256(raw).hexdigest()!=row['sha256']:return raw

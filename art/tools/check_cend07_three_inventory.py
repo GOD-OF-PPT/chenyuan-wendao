@@ -1,3 +1,4 @@
+from cend13c_gap_inventory import prior_preparation_gap_bytes
 from cend11_mainline_inventory import prior_mainline_hud_bytes
 from cend07_f02b_inventory import prior_relic_focus_bytes
 """Three-task view-only return and goal artwork repairs; all original authority/caps."""
@@ -325,6 +326,7 @@ MANIFEST={'format': 'chenyuan-check-cend07-three',
                       'goal-4/research/check-cend07-three-sources.json']}
 MARKERS={'PreparationPanel.vue':b'restoreMaterialFocus','PreparationMaterials.vue':b'restoreMaterialFocus','GoalPanel.vue':b'const painted=','preparation-bench.css':b'article:focus-visible'}
 def prior_three_check_bytes(path,raw):
+ raw=prior_preparation_gap_bytes(path,raw)
  raw=prior_relic_focus_bytes(path,raw)
  name=Path(path).name;rows=[v for n,v in MANIFEST['files'].items()if Path(n).name==name]
  if not rows:return raw
@@ -346,7 +348,7 @@ def validate_three_check(root):
  m=json.loads(local(LEDGER).read_text());assert m==MANIFEST and all(type(m[k])is int for k in ['version','newRasterAssets','goalPanelCap','displayCap'])and m['userAcceptance']is False,'CT03 immutable scope/caps'
  delta=0
  for n,row in MANIFEST['files'].items():
-  raw=local(n).read_bytes();before=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'CT03 current source';assert len(before)==row['beforeBytes']and hashlib.sha256(before).hexdigest()==row['beforeSha256'],'CT03 preserved original';assert prior_three_check_bytes(n,raw)==before,'CT03 whole inverse';delta+=len(raw)-len(before)
+  raw=prior_preparation_gap_bytes(n,local(n).read_bytes());before=local(row['before']).read_bytes();assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'CT03 current source';assert len(before)==row['beforeBytes']and hashlib.sha256(before).hexdigest()==row['beforeSha256'],'CT03 preserved original';assert prior_three_check_bytes(n,raw)==before,'CT03 whole inverse';delta+=len(raw)-len(before)
  for g in MANIFEST['groups'].values():
   assert hashlib.sha256(local(g['ledger']).read_bytes()).hexdigest()==g['ledgerSha256'],'CT03 original ledger';assert sum(local(n).stat().st_size for n in g['files'])<=g['cap'],'CT03 actual original regional cap'
  assert local('web/src/GoalPanel.vue').stat().st_size<=19000 and sum(local(n).stat().st_size for n in MANIFEST['display'])<=12000,'CT03 actual goal/display cap'
@@ -357,7 +359,7 @@ def validate_three_check(root):
  assert all(s in script for s in ['await nextTick()','root.dataset.route!==route','[data-testid=prepare-back]',"dialog[open]",'active!==document.body&&active!==prior','visibleFocusTarget','CSS.escape','revealFocus']),'CT03 actual return ownership guards'
  assert all(s in text for s in ['new WeakMap<HTMLElement','materialOrigins.delete(root)',"rememberMaterialOrigin(e,id);emit('inspect',id,q);",'need.have<need.required&&inspect($event,need.id,need.required)']),'CT03 actual original material intent and origin'
  original=local(MANIFEST['files']['web/src/PreparationMaterials.vue']['before']).read_text();assert re.search(r'<script setup lang="ts">(.*?)</script>',text,re.S)[1].replace("function inspect(e:Event,id:string|null,q:number){rememberMaterialOrigin(e,id);emit('inspect',id,q);}\n",'')==re.search(r'<script setup lang="ts">(.*?)</script>',original,re.S)[1],'CT03 original material-view authority'
- p=local('web/src/PreparationPanel.vue').read_text();old=local(MANIFEST['files']['web/src/PreparationPanel.vue']['before']).read_text()
+ p=prior_preparation_gap_bytes('web/src/PreparationPanel.vue',local('web/src/PreparationPanel.vue').read_bytes()).decode();old=local(MANIFEST['files']['web/src/PreparationPanel.vue']['before']).read_text()
  for name in ['go','earn']:
   rule=r'function '+name+r'\([^\n]*';assert re.search(rule,p)[0]==re.search(rule,old)[0],'CT03 original navigation/earn callback'
  assert '(!props.running||!source.navigation)'in p and 'focus.value?.page??page.value'in p and 'page.value=f.page'in p,'CT03 local-only view and return page'

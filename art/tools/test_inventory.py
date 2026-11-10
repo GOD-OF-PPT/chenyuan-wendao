@@ -17,6 +17,8 @@ class InventoryTests(unittest.TestCase):
   from cend08_f03_inventory import MANIFEST as source_material
   files={ROOT/n for n in source_material['sourceReferences']+[r['before']for r in source_material['parents']]+list(source_material['authority'])}
 
+  from cend13c_gap_inventory import validate_preparation_gap
+  files.update(ROOT/n for n in validate_preparation_gap(ROOT)[0])
   files.update(ROOT/n for n in validate_response_context(ROOT)[0])
   files.update(ROOT/n for n in handoff_paths)
   files.update(ROOT/n for n in mainline_paths)

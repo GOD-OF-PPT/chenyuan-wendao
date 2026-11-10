@@ -1,0 +1,424 @@
+import hashlib,json
+from pathlib import Path
+LEDGER="art/redesign/cend13c-gap.json"
+MANIFEST=json.loads(r'''{
+  "format": "chenyuan-preparation-single-gap-cend13c",
+  "version": 1,
+  "userAcceptance": false,
+  "newRasterAssets": 0,
+  "maxDisplayDelta": 1000,
+  "caps": {
+    "playable-flow": 60000,
+    "idle-preparation": 60000
+  },
+  "parent": {
+    "path": "web/src/PreparationPanel.vue",
+    "bytes": 8433,
+    "sha256": "8ef54ecdc5204b419f34ba633c38dbb24be1b0ec7f7111aa636e54bdcaa09cee",
+    "before": "goal-4/evidence/cend13c/before/web/src/PreparationPanel.vue",
+    "beforeBytes": 8431,
+    "beforeSHA256": "76945687903fd9c01a510f76c9e7d65b7cb9ef60bb4949bad0035103dda78d95",
+    "operations": [
+      {
+        "at": 86,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 140,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 186,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 255,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 295,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 378,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 427,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 476,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 515,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 560,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 643,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 882,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 1008,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 1739,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 1920,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 1986,
+        "old": ").map(n=>n.label+' ×'+(n.required-n.have)).join('、'",
+        "new": ""
+      },
+      {
+        "at": 2355,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 2434,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 2554,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 2683,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 3151,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 3284,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 3293,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 3303,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 3433,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 3738,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 4230,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 4438,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 4460,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 4576,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 4836,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 4865,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 5351,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 5403,
+        "old": "收齐",
+        "new": ""
+      },
+      {
+        "at": 5405,
+        "old": "",
+        "new": "齐"
+      },
+      {
+        "at": 5413,
+        "old": "材料有多条",
+        "new": ""
+      },
+      {
+        "at": 5415,
+        "old": "",
+        "new": "可选"
+      },
+      {
+        "at": 5421,
+        "old": "积",
+        "new": ""
+      },
+      {
+        "at": 5428,
+        "old": "买成",
+        "new": ""
+      },
+      {
+        "at": 5498,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 5563,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 5685,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 5696,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 5707,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 5751,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 6626,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 6752,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 6841,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 6852,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 6899,
+        "old": "\n",
+        "new": ""
+      },
+      {
+        "at": 6939,
+        "old": "",
+        "new": " v-if=\"missing.length!==1||!needPage.rows.includes(missing[0])\""
+      },
+      {
+        "at": 7012,
+        "old": "",
+        "new": ".length"
+      },
+      {
+        "at": 7033,
+        "old": "",
+        "new": ".map(n=>n.label+' ×'+(n.required-n.have)).join('、')"
+      },
+      {
+        "at": 7822,
+        "old": "\n",
+        "new": "</template></GoalBoard></section>"
+      },
+      {
+        "at": 7867,
+        "old": "</GoalBoard>\n</section>\n</template>\n",
+        "new": ""
+      }
+    ]
+  },
+  "hook": {
+    "path": "art/tools/cend13b_response_inventory.py",
+    "bytes": 12071,
+    "sha256": "f73c59dc2810132a8da275e75cea1f67dbad8fa0b0e7c92dba74cf31fa5b8707",
+    "before": "goal-4/evidence/cend13c/before/art/tools/cend13b_response_inventory.py",
+    "beforeBytes": 11966,
+    "beforeSHA256": "f81990b1d5e394fc3c4fcc723080764cadab4f415861ef9f7e940f395109d346",
+    "prefix": "from cend13c_gap_inventory import prior_preparation_gap_bytes\n",
+    "anchor": "def prior_response_bytes(path,raw):\n",
+    "insertion": " raw=prior_preparation_gap_bytes(path,raw)\n"
+  },
+  "functional": {
+    "path": "goal-4/evidence/cend13c/compression/functional.vue",
+    "bytes": 8480,
+    "sha256": "3c8f414822585d4027f46313fa755ebce1d2b0256daf606c0fe2cf1b126d17c7"
+  },
+  "compressionProof": {
+    "path": "goal-4/evidence/cend13c/compression/proof.json",
+    "bytes": 1191,
+    "sha256": "89109fc85f839270c12226b0f2930f7bc571148af26e0aa833ed0442b624818a"
+  },
+  "authority": {
+    "web/src/PreparationMaterials.vue": "6dfcc98b007f571257b410d9db0c2bd70e1a38d7ab16877cd92e2c6198b58613",
+    "web/src/GoalBoard.vue": "bc908d0ce123a15066f7950b77c1a09db67eda1592e3a50a1ff45cfbfd70a7fd",
+    "web/src/preparation-bench.css": "a23ce1429d3ebde40d6bb78c7e57192e7ca1623cb4e45fa8d50605280c77fd22",
+    "web/src/ItemArtifact.vue": "b651e6b9bc5675ca1ccaecc08d62f5c45ef8d70ae6915bae8b75b507a17328b0",
+    "web/src/play-flow.ts": "ec31aeb151728b37a6de4f65f17df9020fed7407194cd02df1330a0e69ad0e76",
+    "web/src/App.vue": "15ba7e3d7d35e3fd549bd3165cfe794b44bcc602cdf7a20be7f422ac88ccf903",
+    "web/src/store.ts": "cc3a373bbe09df49410de3ef9bf3233a5b9481ee187b6dfef71faf38030890b7",
+    "web/src/activity-clock.ts": "21fc98e4a430464a6dc3554091c022c53b17714938ae6e05491d27e1ab3f0901",
+    "web/src/activity-persistence.ts": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf",
+    "web/src/full-persistence.ts": "d2a66b5ec397b1f0a358760afa278948c113d0eccad7826a88a9b1964a0daf21",
+    "src/full/engine.ts": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73",
+    "src/full/activity.ts": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815",
+    "src/full/queries.ts": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48",
+    "src/full/preparation.ts": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a"
+  },
+  "oldLedgers": {
+    "art/redesign/playable-flow.json": "d516844473a772bc1fdd2225a05c23a083d5a1a3145291f0d13c9beb4479d3b8",
+    "art/redesign/idle-preparation.json": "bad1cbd7a8e23cdf505f6e055c6cf75ab4886a009a500f8f041e6ef94c58cf51",
+    "art/redesign/cend07-f04.json": "3bf1b1f89b68c97a22e53326d1c98f1b25138dec4c220d1b11f4450f9b7885db",
+    "art/redesign/cend13b-response.json": "db84ddc6d0076cd05ce86413cc53507fcd122ae573a592fb9bac0de0eb2b125e",
+    "art/redesign/cend13a-stage.json": "64b9a9bfdd10d795c6455ea216e18b9e2f071a2b98b21cfcee0d52587c0a4dbb"
+  },
+  "sourceReferences": [
+    "docs/decisions/0147-preparation-gap-cend13c-contract.md",
+    "goal-4/amendments/2026-11-10-cend13c-input.md",
+    "goal-4/research/cend13c-sources.json"
+  ],
+  "legacyAdapters": [
+    {
+      "path": "art/tools/check_cend07_three_inventory.py",
+      "before": "goal-4/evidence/cend13c/before/art/tools/check_cend07_three_inventory.py",
+      "beforeBytes": 32611,
+      "beforeSHA256": "cbd349ada4c3f1c74e8a5e6bdbb70c4936281fc277c8d3781d49ccb0d2133e6d",
+      "bytes": 32817,
+      "sha256": "bec5b942bdd4ffbd512672f77f9e4dc0592d943bb25c14b1acdfdea394daf7f9",
+      "prefix": "from cend13c_gap_inventory import prior_preparation_gap_bytes\n",
+      "operations": [
+        {
+          "old": "raw=local(n).read_bytes();before=local(row['before']).read_bytes();assert len(raw)==row['bytes']",
+          "new": "raw=prior_preparation_gap_bytes(n,local(n).read_bytes());before=local(row['before']).read_bytes();assert len(raw)==row['bytes']"
+        },
+        {
+          "old": "p=local('web/src/PreparationPanel.vue').read_text();old=local(MANIFEST['files']['web/src/PreparationPanel.vue']['before']).read_text()",
+          "new": "p=prior_preparation_gap_bytes('web/src/PreparationPanel.vue',local('web/src/PreparationPanel.vue').read_bytes()).decode();old=local(MANIFEST['files']['web/src/PreparationPanel.vue']['before']).read_text()"
+        },
+        {
+          "old": "def prior_three_check_bytes(path,raw):\n",
+          "new": "def prior_three_check_bytes(path,raw):\n raw=prior_preparation_gap_bytes(path,raw)\n"
+        }
+      ]
+    }
+  ]
+}''')
+
+def prior_preparation_gap_bytes(path,raw):
+ r=MANIFEST['parent']
+ if Path(path).name!=Path(r['path']).name or hashlib.sha256(raw).hexdigest()!=r['sha256']:return raw
+ text=raw.decode()
+ for op in reversed(r['operations']):
+  at,old,new=op['at'],op['old'],op['new'];assert text[at:at+len(new)]==new,'C13C approved exact display span'
+  text=text[:at]+old+text[at+len(new):]
+ restored=text.encode();assert len(restored)==r['beforeBytes']and hashlib.sha256(restored).hexdigest()==r['beforeSHA256'],'C13C whole original inverse'
+ return restored
+
+def validate_preparation_gap(root):
+ root=Path(root).resolve()
+ def local(n):
+  assert type(n)is str and n and not Path(n).is_absolute()and '..'not in Path(n).parts and chr(92)not in n,'C13C local path'
+  p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'C13C actual local file';return p
+ r=MANIFEST['parent']
+ if not(root/LEDGER).exists():
+  p=root/r['path'];assert not p.is_symlink(),'C13C missing ledger parent symlink'
+  if p.exists():assert hashlib.sha256(local(r['path']).read_bytes()).hexdigest()==r['beforeSHA256'],'C13C missing ledger exact original parent'
+  return set(),{}
+ assert json.dumps(json.loads(local(LEDGER).read_text()),sort_keys=True)==json.dumps(MANIFEST,sort_keys=True),'C13C immutable typed ledger'
+ raw=local(r['path']).read_bytes();old=local(r['before']).read_bytes()
+ assert len(raw)==r['bytes']and hashlib.sha256(raw).hexdigest()==r['sha256'],'C13C exact display parent'
+ assert len(old)==r['beforeBytes']and hashlib.sha256(old).hexdigest()==r['beforeSHA256'],'C13C exact full original parent'
+ assert prior_preparation_gap_bytes(r['path'],raw)==old,'C13C original controller and complete data'
+ delta=len(raw)-len(old);assert delta<=1000==MANIFEST['maxDisplayDelta'],'C13C actual display delta'
+ records={LEDGER,r['path'],r['before']}
+ for key in ['functional','compressionProof']:
+  f=MANIFEST[key];b=local(f['path']).read_bytes();assert len(b)==f['bytes']and hashlib.sha256(b).hexdigest()==f['sha256'],'C13C exact compiler input/proof';records.add(f['path'])
+ f=MANIFEST['functional'];proof=json.loads(local(MANIFEST['compressionProof']['path']).read_text());functional=local(f['path']).read_bytes()
+ assert proof['functionalBeforeSHA256']==f['sha256']and proof['currentSHA256']==r['sha256']and proof['sameVueRender']is True and proof['sameTypeScriptCompiledScript']is True,'C13C actual compiler equivalence'
+ text=raw.decode();indices=proof['removedNewlineOffsetsDescending'];assert all(type(i)is int for i in indices)and indices==sorted(set(indices),reverse=True),'C13C exact newline offsets'
+ for i in reversed(indices):assert 0<=i<=len(text),'C13C newline range';text=text[:i]+chr(10)+text[i:]
+ assert text.encode()==functional,'C13C complete precompression inverse'
+ h=MANIFEST['hook'];code=local(h['path']).read_bytes();original=local(h['before']).read_bytes();assert len(code)==h['bytes']and hashlib.sha256(code).hexdigest()==h['sha256'],'C13C exact prior hook'
+ text=code.decode();assert text.startswith(h['prefix'])and text.count(h['anchor']+h['insertion'])==1,'C13C unique prior hook';text=text[len(h['prefix']):].replace(h['anchor']+h['insertion'],h['anchor'],1)
+ assert text.encode()==original and len(original)==h['beforeBytes']and hashlib.sha256(original).hexdigest()==h['beforeSHA256'],'C13C original complete C13B validator';records.update([h['path'],h['before']])
+ for h in MANIFEST['legacyAdapters']:
+  rawhook=local(h['path']).read_bytes();original=local(h['before']).read_bytes();assert len(rawhook)==h['bytes']and hashlib.sha256(rawhook).hexdigest()==h['sha256'],'C13C exact legacy identity adapter'
+  text=rawhook.decode();assert text.startswith(h['prefix']),'C13C legacy unique prefix';text=text[len(h['prefix']):]
+  for op in reversed(h['operations']):assert text.count(op['new'])==1,'C13C exact legacy display adapter';text=text.replace(op['new'],op['old'],1)
+  assert text.encode()==original and len(original)==h['beforeBytes']and hashlib.sha256(original).hexdigest()==h['beforeSHA256'],'C13C complete original legacy validator';records.update([h['path'],h['before']])
+ totals={}
+ for name,cap in MANIFEST['caps'].items():
+  d=json.loads(local('art/redesign/'+name+'.json').read_text());assert d['maxNewBytes'if name=='playable-flow'else'maxNativeBytes']==cap,'C13C unchanged original cap'
+  total=sum(local(x['path']if isinstance(x,dict)else x).stat().st_size for x in d['files']);assert total<=cap,'C13C actual complete regional budget';totals[name]=total
+ for key in ['authority','oldLedgers']:
+  for n,digest in MANIFEST[key].items():assert hashlib.sha256(local(n).read_bytes()).hexdigest()==digest,'C13C unchanged '+key;records.add(n)
+ for n in MANIFEST['sourceReferences']:local(n);records.add(n)
+ return records,{'parentBytes':len(raw),'displayDeltaBytes':delta,'actualGroups':totals,'newRasterCSSFontDependencies':0}
