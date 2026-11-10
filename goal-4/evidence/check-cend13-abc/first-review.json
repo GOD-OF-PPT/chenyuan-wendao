@@ -1,0 +1,16 @@
+{
+  "formalGJRejection": 1,
+  "source": "d41f5b639383541408d17c6b6f964f2e91092e57",
+  "runtime": "e46818155946588b85d66c06fb89aed0d88929803e0d790c343023f9268e44b1",
+  "actualEight": {
+    "passed": 0,
+    "failed": 8,
+    "seconds": 83.528784,
+    "inputsExact": 6073
+  },
+  "rawReport": "artifacts/goal-4/check-cend13-abc/consumer/new-report.json",
+  "rawFailureDetails": "artifacts/goal-4/check-cend13-abc/consumer/eight-failures.json",
+  "fixScope": "new test entrances/semantic auxiliary font classification/official qi gain/restore its own deliberate DOM modification; no product, clock, cost or geometry change",
+  "allOriginalFailuresRetained": true,
+  "wholeEightMustRerun": true
+}
