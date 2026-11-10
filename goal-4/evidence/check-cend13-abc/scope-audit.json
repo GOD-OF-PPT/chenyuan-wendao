@@ -1,0 +1,26 @@
+{
+  "all59SourcesReadBeforeExecution": true,
+  "all12WholeVisualMediaDimensionMixedCasesDeferred": true,
+  "fixedScope": {
+    "browser": "chromium",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "fontScale": 1
+  },
+  "retainedFunctionalPreferenceStorageCases": [
+    {
+      "file": "demo.spec.ts",
+      "title": "demo menu, actions, settings and return preserve every normal Game, record and tracking value",
+      "reason": "preference data isolation between normal and demo; font stays1; no media/viewport/font variation or motion-output assertions"
+    },
+    {
+      "file": "matrix-ui-local-recovery.spec.ts",
+      "title": "M03-L6 clear cancellation confirmation and cross-page preference epoch changes invalidate previews without changing either complete Game",
+      "reason": "same fixed desktop local storage consent/epoch behavior; no media emulation or output comparison"
+    }
+  ],
+  "doesNotClaimReducedMotionOrCompatibilityCoverage": true,
+  "executionMemberInventory": "scope-planned.json"
+}
