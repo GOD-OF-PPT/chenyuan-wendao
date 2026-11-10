@@ -523,5 +523,15 @@
     "exactInverse": true
   },
   "allOriginalClockResultGameGeometryAssertionsPreserved": true,
-  "preflightDraftNotes": "An initial helper-name assertion stopped after candidate App/ledger write and before the old test edit. Existing local database() proof is used; no test or browser run used that incomplete authoring draft. Final added App CSS is plain native unscoped CSS, without an unsupported unscoped :global pseudo."
+  "preflightDraftNotes": "An initial helper-name assertion stopped after candidate App/ledger write and before the old test edit. Existing local database() proof is used; no test or browser run used that incomplete authoring draft. Final added App CSS is plain native unscoped CSS, without an unsupported unscoped :global pseudo.",
+  "secondReadonlyTestAdaptation": {
+    "path": "web/e2e/cultivation-objects.spec.ts",
+    "case": "ART06-A18",
+    "before": "const completedTraining=await activity(page);expect(completedTraining.status).toBe('stopped');const footer=",
+    "after": "const completedTraining=await activity(page);expect(completedTraining.status).toBe('stopped');const preparationRead=await database(page);await openHubFeature(page,'cultivation-details');expect(await database(page)).toEqual(preparationRead);const footer=",
+    "count": 1,
+    "allOriginalStatementsPreserved": true,
+    "reason": "XP cap naturally moves the main stage to breakthrough; the historical test explicitly checks the original training footer, so open that same full readonly plan first."
+  },
+  "combinedTestExactInverse": true
 }
