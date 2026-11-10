@@ -1,0 +1,20 @@
+{
+  "task": "CEND13-A",
+  "localDeliveryCommit": "ea44e66d163c634817c322a973493cc1a3417c26",
+  "runtime": "9ca9fa243b78f87c9d410a119aa86fda9d3c598a6670bfe0dae60231e71cf99d",
+  "productionCommit": "8be105c29e248f8a8169620ab1308e29b087bc2c",
+  "mainConsumer": "bc2497fbbb1c936d92ab17ba93cfcb551019eea0",
+  "readonlyMatrixConsumer": "40843742382084e791bda792941d42caf1e02faa",
+  "engineeringPreview": "http://127.0.0.1:56949/",
+  "unpackedPreview": "http://127.0.0.1:56950/",
+  "packageArchive": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13a/repair-ready/cend13a-cultivation-preview-bc2497f.zip",
+  "packageSHA256": "362b8fe898e6172f2960622af170b865a65fc6c6ca3818bf466c2602a3d6cefe",
+  "packageBrowserChecksPassed": true,
+  "assemblyPendingFlagIsHistoricalSnapshot": true,
+  "allRequiredCurrentTaskChecksComplete": true,
+  "wholeGoalArtBalanceAndHumanAcceptance": false,
+  "goalRemainsActive": true,
+  "counter": "1/3",
+  "nextTask": "CEND13-B",
+  "noPushMergeDeployPermissionOrAutomationChanges": true
+}
