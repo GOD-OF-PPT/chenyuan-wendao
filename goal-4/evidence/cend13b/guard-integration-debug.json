@@ -1,0 +1,8 @@
+{
+  "actualFirstPositiveExit": 1,
+  "error": "ART32 actual identity at art/tools/art32_inventory.py:41",
+  "cause": "Historical current stat size compared to frozen pre-display-change bytes; old digest already precisely inverted.",
+  "resolution": "Only approved full-source inverse before historical byte/expand equality; old cap/hash untouched and current actual groups counted separately.",
+  "sourceCopy": "goal-4/evidence/cend13b/before/art/tools/art32_inventory.py",
+  "notAProductOrAcceptancePass": true
+}

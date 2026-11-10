@@ -1,3 +1,4 @@
+from cend13b_response_inventory import prior_response_bytes
 import hashlib,json
 from pathlib import Path
 LEDGER="art/redesign/cend13a-stage.json"
@@ -567,6 +568,7 @@ MANIFEST=json.loads(r'''{
 }''')
 
 def prior_stage_handoff_bytes(path,raw):
+ raw=prior_response_bytes(path,raw)
  row=MANIFEST['parent']
  if Path(path).name!='App.vue' or hashlib.sha256(raw).hexdigest()!=row['sha256']:return raw
  style=MANIFEST['nativeStyle']['text'];text=raw.decode()

@@ -1,3 +1,4 @@
+from cend13b_response_inventory import prior_response_bytes
 from uir34_07_inventory import prior_uir3407_bytes
 from uir33_07_inventory import prior_uir3307_bytes
 from uir33_06_inventory import prior_uir3306_bytes
@@ -38,7 +39,7 @@ def validate_art32(root,image_reader):
   p=root/n;assert p.is_file()and not p.is_symlink()and p.resolve().is_relative_to(root),'ART32 missing input';return p
  def digest(n):return hashlib.sha256(prior_uir3306_bytes(n,prior_uir3307_bytes(n,local(n).read_bytes()))).hexdigest()
  def identity(r):
-  assert type(r['bytes'])is int and local(r['path']).stat().st_size==r['bytes']and digest(r['path'])==r['sha256'],'ART32 actual identity';return local(r['path']).read_bytes()
+  assert type(r['bytes'])is int and len(prior_response_bytes(r['path'],local(r['path']).read_bytes()))==r['bytes']and digest(r['path'])==r['sha256'],'ART32 actual identity';return prior_response_bytes(r['path'],local(r['path']).read_bytes())
  m=json.loads(local(LEDGER).read_text());assert m['format']=='chenyuan-milestone-stage-art32'and type(m['version'])is int and m['version']==1 and m['userAcceptance']is False,'ART32 header'
  assert m['budgets']==BUDGETS and all(type(v)is int for v in m['budgets'].values()),'ART32 original typed caps'
  assert [r['path']for r in m['files']]==FILES and m['sourceReferences']==REFS and m['baselines']==BASELINES and m['unchanged']==UNCHANGED,'ART32 exact scope and sources'
@@ -49,7 +50,7 @@ def validate_art32(root,image_reader):
   d=json.loads(local('art/redesign/'+key+'.json').read_text());assert d[field]==cap and sum(local(r['path']).stat().st_size for r in d['files'])<=cap,'ART32 old group cap'
  assert local('web/src/art12-narrative.css').stat().st_size<=14000,'ART32 old ART12 cap'
  for i,n in enumerate(FILES[:2]):
-  original=identity(BASELINES[i]).decode();actual=local(n).read_text();assert expand_art32_view(n,original)==actual and normalize_art32_view(n,actual)==original,'ART32 exact phase view/original full script'
+  original=identity(BASELINES[i]).decode();actual=prior_response_bytes(n,local(n).read_bytes()).decode();assert expand_art32_view(n,original)==actual and normalize_art32_view(n,actual)==original,'ART32 exact phase view/original full script'
  css=local(FILES[-1]).read_text();old=identity(BASELINES[-1]).decode();assert css.startswith(old),'ART32 original style domains'
  extra=css[len(old):];assert all(n in extra for n in ['art32-narrative','art32-threshold','grid-template-columns:150px','grid-template-columns:280px','[data-working=true]','flex:none!important','white-space:break-spaces']),'ART32 actual decision consumers'
  assert not re.search(r'@import|@font-face|https?://|file://|@media|setTimeout|setInterval',extra),'ART32 external IO/font/compatibility/timer'

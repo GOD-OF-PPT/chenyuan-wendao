@@ -1,0 +1,9 @@
+{
+  "actualInitialExit": 1,
+  "actualTestMethods": 8,
+  "allSetUpErrors": true,
+  "noNegativeProbeExecuted": true,
+  "error": "UnboundLocalError files used before initialization at test_inventory.py:10",
+  "resolution": "Keep the new import, move dependency update after the existing files set initialization. Same COW inputs and original methods unchanged.",
+  "rawErroneousSourcePreserved": "artifacts/goal-4/cend13b/cow-setup-before-fix.py"
+}

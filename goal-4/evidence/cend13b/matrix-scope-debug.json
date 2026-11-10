@@ -1,0 +1,22 @@
+{
+  "initialPrecheck": {
+    "tests": 159,
+    "pass": 157,
+    "fail": 2,
+    "seconds": 12.444034619,
+    "originalOutput": "tool result, truncated stdout; not reconstructed as an original raw TAP"
+  },
+  "explicitSameSourceRedReproduction": {
+    "exit": 1,
+    "path": "artifacts/goal-4/cend13b/matrix-scope-red-reproduction.tap",
+    "sourceSHA256": "a21dc4a4bc3f292518867c2a7e431643ebe3b4744f13ea4ba3cec7cbb5d81bc0",
+    "sha256": "22f79fb13fbef770b76036b451a675942e864db8057c17e107fd715533bae297",
+    "notTheOriginalExecution": true
+  },
+  "cause": "Outer manifest accepted-version expression used out-of-scope version for newly added 53; must use manifest.version.",
+  "fix": {
+    "before": "manifest.version===52||version===53",
+    "after": "manifest.version===52||manifest.version===53"
+  },
+  "oldAllSignaturesAndNegativeAssertionsUnchanged": true
+}

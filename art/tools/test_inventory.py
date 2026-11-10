@@ -6,6 +6,7 @@ ROOT=Path(__file__).resolve().parents[2]
 class InventoryTests(unittest.TestCase):
  def setUp(self):
   self.temp=tempfile.TemporaryDirectory(prefix='chenyuan-art-negative-');self.root=Path(self.temp.name);self.manifest=json.loads((ROOT/'art/asset-manifest.json').read_text())
+  from cend13b_response_inventory import validate_response_context
   from cend13a_stage_inventory import MANIFEST as cultivation_handoff
   handoff_paths=[cultivation_handoff['parent']['before'],cultivation_handoff['renderProof']['path'],*cultivation_handoff['authority'],*cultivation_handoff['oldLedgers'],*cultivation_handoff['sourceReferences']]
   from cend11_mainline_inventory import MANIFEST as mainline_hud
@@ -16,6 +17,7 @@ class InventoryTests(unittest.TestCase):
   from cend08_f03_inventory import MANIFEST as source_material
   files={ROOT/n for n in source_material['sourceReferences']+[r['before']for r in source_material['parents']]+list(source_material['authority'])}
 
+  files.update(ROOT/n for n in validate_response_context(ROOT)[0])
   files.update(ROOT/n for n in handoff_paths)
   files.update(ROOT/n for n in mainline_paths)
   files.update(ROOT/n for n in stock_goal_paths)

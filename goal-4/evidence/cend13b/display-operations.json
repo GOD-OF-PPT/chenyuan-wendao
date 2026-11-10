@@ -1,0 +1,52 @@
+{
+  "web/src/ResponseTable.vue": {
+    "before": "goal-4/evidence/cend13b/before/web/src/ResponseTable.vue",
+    "beforeBytes": 5253,
+    "beforeSHA256": "8ef738214baf612dd4841080cd138aaf9043893f7679a1cf0f90dddddfacaa2a",
+    "bytes": 5609,
+    "sha256": "81e123a8aa5f417f7e7fd102a009b6cdd93d79f96113dded1d87e3c4fe4dd38f",
+    "operations": [
+      {
+        "at": 312,
+        "old": "import {scenePresentation} from './scene-presentation';",
+        "new": "import {scenePresentation} from './scene-presentation';\nimport {responseContext} from './response-context';"
+      },
+      {
+        "at": 1452,
+        "old": "const state=computed(()=>store?.error?'failed':phase.value);",
+        "new": "const state=computed(()=>store?.error?'failed':phase.value);\nconst context=computed(()=>responseContext({game:props.game,identity:props.identity,mode:props.mode,action:props.action,activity:store?.activity??null,runtime:runtime.value,owned:!!store?.activityOwned,busy:!!store?.busy,blocked:!!(store?.error||store?.syncIssue||!store?.available),pausing:!!store?.activityPausing}));"
+      },
+      {
+        "at": 3435,
+        "old": "<small>{{mode==='choices'?'先择一签 · 预选不作回应':'先读来由，再决定如何回应'}}</small>",
+        "new": "<small data-testid=\"response-context\" :data-context=\"context.state\">{{context.caption}}</small>"
+      }
+    ],
+    "actualDelta": 356
+  },
+  "web/src/NarrativePanel.vue": {
+    "before": "goal-4/evidence/cend13b/before/web/src/NarrativePanel.vue",
+    "beforeBytes": 6603,
+    "beforeSHA256": "e4166552f75d46d58cb6dd8f3968a030f0b0be80882390bf19b6b7e5001314a5",
+    "bytes": 6509,
+    "sha256": "e1e415cc4515075d4392939206afc206c0ab67a89b27d23e57554768a34fd07a",
+    "operations": [
+      {
+        "at": 2781,
+        "old": "<small>{{running?'当前安排进行中，可继续阅读':'等你决定'}}</small>",
+        "new": ""
+      },
+      {
+        "at": 5776,
+        "old": "<small v-if=\"journey\" data-testid=\"trial-stage-summary\">{{journey.title}} · 已过 {{journey.completed}} / 3 关</small>",
+        "new": "<small v-if=\"journey\" data-testid=\"trial-stage-summary\">已存进度 · 已过 {{journey.completed}} / 3 关</small>"
+      },
+      {
+        "at": 5890,
+        "old": "<small v-else>只读预选，确认后才安排。</small>",
+        "new": "<small v-else>查看不更改已存安排。</small>"
+      }
+    ],
+    "actualDelta": -94
+  }
+}

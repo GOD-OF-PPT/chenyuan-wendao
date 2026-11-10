@@ -4,7 +4,7 @@ import {resolve} from '../../src/full/engine';
 import type {Game,Action} from '../../src/full/types';
 import {createActivity,completeActivity,pauseActivity,resumeActivity} from '../../src/full/activity';
 import {canonicalFingerprint} from '../../src/full/receipts';
-import {previewAction} from '../../src/full/queries';
+import {previewAction,getTrialJourney} from '../../src/full/queries';
 import {narrativeFor} from '../src/story-pages';
 import {formatCosts} from '../src/presentation';
 import {validateActivityReceipt} from '../src/activity-persistence';
@@ -173,7 +173,7 @@ test('CEND13-B5 a genuinely committed but delayed start reply and another pages 
 test('CEND13-B6 both real question answers and both endings identify their own accepted action without choosing the next battle or a new life',async({browser},info)=>{
  const f=responseStageFixtures();for(const action of [{type:'ANSWER_TRIAL',answer:'accept'},{type:'ANSWER_TRIAL',answer:'release'},{type:'END',ending:'transmit'},{type:'END',ending:'depart'}]as const){
   const{context,page}=await fresh(browser,info);try{
-   const t=await prepare(page,action.type==='END'?f.ending:f.question,action),noun=action.type==='END'?'收卷':'作答';await expect(caption(page)).toContainText('预选');const accepted=await start(page,t,info);expect(accepted.a.cycleMs).toBe(action.type==='END'?12000:6000);await expect(caption(page)).toHaveText('本次'+noun+'已安排');await frame(page,info,'B6-'+action.type+'-'+Object.values(action)[1]+'-accepted');const done=await tick(page,{g:t.g,...accepted},info);expect(done.a.status).toBe('stopped');expect(done.a.completedCycles).toBe(1);
+   const t=await prepare(page,action.type==='END'?f.ending:f.question,action),noun=action.type==='END'?'收卷':'作答';await expect(caption(page)).toContainText('预选');const accepted=await start(page,t,info);expect(accepted.a.cycleMs).toBe(action.type==='END'?12000:6000);await expect(caption(page)).toHaveText('本次'+noun+'已安排');await expect(page.getByTestId('narrative-catalogue').getByTestId('trial-stage-summary')).not.toContainText(/待答|待择/);await readonly(page,async()=>{await page.getByRole('button',{name:'渡劫行程',exact:true}).click();await expect(page.getByTestId('trial-progress')).toContainText(getTrialJourney(t.g)!.title);await page.getByTestId('hub-close').click();});await expect(caption(page)).toHaveText('本次'+noun+'已安排');await frame(page,info,'B6-'+action.type+'-'+Object.values(action)[1]+'-accepted');const done=await tick(page,{g:t.g,...accepted},info);expect(done.a.status).toBe('stopped');expect(done.a.completedCycles).toBe(1);
    if(action.type==='END'){expect(done.g.status).toBe('ascended');expect(done.g.ending).toBe(action.ending);expect(done.g.core.runId).toBe(t.g.core.runId);}else{expect(done.g.trial?.answer).toBe(action.answer);expect(done.g.battle).not.toBeNull();expect(done.g.core.revision).toBe(t.g.core.revision+1);expect(done.a.nextCommand).toBeNull();}
    expect(faults.get(page)).toEqual([]);
   }finally{await context.close();}
