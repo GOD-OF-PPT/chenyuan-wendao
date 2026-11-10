@@ -1,0 +1,28 @@
+{
+  "source": {
+    "head": "569c4ce12fde0c11a6535a538181086ad0ba94d6",
+    "source": "569c4ce12fde0c11a6535a538181086ad0ba94d6",
+    "tree": "2cbe762a7963655d202707aa7e96596532b9db3b",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "10.9.0",
+    "npmOnPath": "10.9.0"
+  },
+  "runtime": "e46818155946588b85d66c06fb89aed0d88929803e0d790c343023f9268e44b1",
+  "versions": {
+    "format": "chenyuan-full",
+    "version": 2,
+    "schemaVersion": 2,
+    "contentVersion": "full-demo.3",
+    "balanceVersion": "full-unbalanced.3"
+  },
+  "archive": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13c/consumer2/cend13c-preparation-preview-569c4ce.zip",
+  "bytes": 10124476,
+  "sha256": "c570ad083c2c05ef13b37d152e9029bd5233328133676c6d76bf8d17a4e34091",
+  "payloads": 112,
+  "members": 115,
+  "fixedInputReproduced": true,
+  "allUnpackedBytesExact": true,
+  "packageBrowserChecksPending": true,
+  "notFormalCandidate": true
+}

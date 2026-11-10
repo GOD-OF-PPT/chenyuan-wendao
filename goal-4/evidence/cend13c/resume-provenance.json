@@ -1,0 +1,10 @@
+{
+  "source": "/Users/gordon/.codex/sessions/2026/10/21/rollout-2026-10-21T14-39-18-01a15d2f-866c-7250-a7fb-76602283d254.jsonl",
+  "timestamp": "2026-11-10T07:20:49.233Z",
+  "ordinal": 246822,
+  "messageId": "msg_01a1c454-b951-77d3-a0e7-5b14e9d29227",
+  "bytes": 7019,
+  "sha256": "7063e7cc9a4e962316cace9a7b44773ffa2f7d23f6a061ac00754a925cffc1aa",
+  "exactSameTaskResumePayload": true,
+  "doesNotReplaceOriginalTaskInputOrCreateGoal": true
+}

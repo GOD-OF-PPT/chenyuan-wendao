@@ -1,0 +1,41 @@
+[
+  {
+    "kind": "package",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13c/consumer2/package-results/cend13c-preparation-gap-CE-48d2a-s-without-repeating-its-gap-chromium/qi-single-visible-gap.png",
+    "pngSHA256": "74295d5260d02890ad05ee3f2627c1a79d71d6b555ede146289743c8bdda5515",
+    "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13c/consumer2/views/package-qi-single-visible-gap.jpg",
+    "jpegSHA256": "470d17da6841b69da7f0f2a1b576b50bdf177d92ee648c5f2b7df23e072763ba",
+    "size": [
+      1440,
+      900
+    ],
+    "directlyViewed": true,
+    "viewMode": "native1440x900 same-sizeJPEG68, at most2images per call"
+  },
+  {
+    "kind": "package",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13c/consumer2/package-results/cend13c-preparation-gap-CE-d4bc7-ithout-repeated-acquisition-chromium/quota-original-stock-not-yet-owned.png",
+    "pngSHA256": "64908252788be1b5cf003788146bc7f36eab4b8cdf62013290958130126bfdf8",
+    "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13c/consumer2/views/package-quota-original-stock-not-yet-owned.jpg",
+    "jpegSHA256": "8daf3764e48589d72af712f2cb102e71452014e712963d35e9a9986940ec52a2",
+    "size": [
+      1440,
+      900
+    ],
+    "directlyViewed": true,
+    "viewMode": "native1440x900 same-sizeJPEG68, at most2images per call"
+  },
+  {
+    "kind": "probe",
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13c/consumer2/probe-results/probe-CEND13-C6-original-f-d7c46-ithout-repeated-acquisition-chromium/quota-foundation-four-missing-materials.png",
+    "pngSHA256": "6bee86c5eeda2c0318f8ec0aaccb86b31eb044c39de054dd14525bb6c4d3374e",
+    "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13c/consumer2/views/probe-quota-foundation-four-missing-materials.jpg",
+    "jpegSHA256": "5f53b3e90a33a30911ad98742ef8ffaf20211929f8264314124d60e9932abaa8",
+    "size": [
+      1440,
+      900
+    ],
+    "directlyViewed": true,
+    "viewMode": "native1440x900 same-sizeJPEG68, at most2images per call"
+  }
+]

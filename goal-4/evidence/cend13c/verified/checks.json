@@ -1,0 +1,98 @@
+{
+  "task": "CEND13-C",
+  "actualSource": "569c4ce12fde0c11a6535a538181086ad0ba94d6",
+  "actualRuntime": "e46818155946588b85d66c06fb89aed0d88929803e0d790c343023f9268e44b1",
+  "productionScope": [
+    "web/src/PreparationPanel.vue",
+    "web/src/preparation-bench.css"
+  ],
+  "primaryBytes": 8433,
+  "primaryDelta": 2,
+  "addedNativeErrorCSS": 438,
+  "fullNewLayerBytes": 440,
+  "newLayerCap": 1000,
+  "actualPlayableFlow": 60000,
+  "playableCap": 60000,
+  "actualIdlePreparation": 59895,
+  "idleCap": 60000,
+  "actualF04Display": 8499,
+  "displayCap": 12000,
+  "typeScriptAndVueCompressionEquivalent": true,
+  "newRasterFontDependencies": 0,
+  "core10Passed": true,
+  "nodeTests": 1087,
+  "uniqueResourceMethods": 824,
+  "resourceSeconds": 1092.593,
+  "coreThenBuildExit": 0,
+  "inputsExact": 6020,
+  "currentUI": {
+    "new14Seconds": 43.22237,
+    "relatedCurrent113FromRaw121Seconds": 999.926641,
+    "followup22Seconds": 125.410875,
+    "distinctCurrentPassed": 149,
+    "files": 18,
+    "separatePhases": true
+  },
+  "raw121": {
+    "passed": 113,
+    "failed": 8,
+    "notRewrittenAsGreen": true
+  },
+  "legacy8BeforeC": {
+    "failed": 8,
+    "seconds": 136.726302,
+    "sameIDsAndFailureCause": true,
+    "notRetiredOrPassed": true,
+    "maintenanceStillOpen": true
+  },
+  "package14": {
+    "seconds": 39.178761,
+    "passed": 14,
+    "subsetNotNewCoverage": true
+  },
+  "additionalCraftErrorProbe": {
+    "seconds": 7.711031,
+    "passed": 1,
+    "notAnAddedRegisteredCase": true
+  },
+  "actualParentGeometryFrames": 20,
+  "directCurrentNativePNGFilesViewed": 23,
+  "imageCallMaximum": 2,
+  "sameDependencyPackageFiles": 1981,
+  "runtimeSourcesExact": 351,
+  "HTTPAfterAllExact": 336,
+  "full1519OnlyDeclared": true,
+  "currentNormal32NotExecuted": "next mandatoryCHECK-CEND13-ABC; originalA9ca only historical",
+  "wholeGoalArtLongTermHumanNotComplete": true,
+  "compatibilityEnvironmentPerformancePaused": true,
+  "protected13InputsV03AndPlayersPreserved": true,
+  "noPushMergePublicDeployPermissionAutomationChange": true,
+  "archive": {
+    "source": {
+      "head": "569c4ce12fde0c11a6535a538181086ad0ba94d6",
+      "source": "569c4ce12fde0c11a6535a538181086ad0ba94d6",
+      "tree": "2cbe762a7963655d202707aa7e96596532b9db3b",
+      "dirty": false,
+      "node": "v24.22.1",
+      "npm": "10.9.0",
+      "npmOnPath": "10.9.0"
+    },
+    "runtime": "e46818155946588b85d66c06fb89aed0d88929803e0d790c343023f9268e44b1",
+    "versions": {
+      "format": "chenyuan-full",
+      "version": 2,
+      "schemaVersion": 2,
+      "contentVersion": "full-demo.3",
+      "balanceVersion": "full-unbalanced.3"
+    },
+    "archive": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend13c/consumer2/cend13c-preparation-preview-569c4ce.zip",
+    "bytes": 10124476,
+    "sha256": "c570ad083c2c05ef13b37d152e9029bd5233328133676c6d76bf8d17a4e34091",
+    "payloads": 112,
+    "members": 115,
+    "fixedInputReproduced": true,
+    "allUnpackedBytesExact": true,
+    "packageBrowserChecksPending": true,
+    "notFormalCandidate": true
+  }
+}

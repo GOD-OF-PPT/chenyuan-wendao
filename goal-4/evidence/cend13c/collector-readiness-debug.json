@@ -1,0 +1,7 @@
+{
+  "collectionBeforeBuildTerminal": "first consumer new declaration refused because web/build-report/build.json was not yet present",
+  "executedTests": 0,
+  "originalStdoutAndStderr": "artifacts/goal-4/cend13c/consumer/new-list-before-build.*",
+  "correction": "awaited actual build terminal0 and all exact before collecting same frozen config; raw original refusal retained",
+  "noTimeoutChangeOrGuardBypass": true
+}

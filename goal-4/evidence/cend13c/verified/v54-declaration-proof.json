@@ -1,0 +1,14 @@
+{
+  "version": 54,
+  "counts": {
+    "ui": 1072,
+    "persistence": 415,
+    "journey": 32
+  },
+  "uniqueRequired": 1519,
+  "oldRecoveryUI": 171,
+  "allOld1Through53IdentitiesRetained": true,
+  "declarationsOnlyNotFullExecution": true,
+  "runtime": "e46818155946588b85d66c06fb89aed0d88929803e0d790c343023f9268e44b1",
+  "currentVersionsAndArchiveMatch": true
+}

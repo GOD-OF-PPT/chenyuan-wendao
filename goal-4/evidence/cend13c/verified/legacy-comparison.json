@@ -1,0 +1,306 @@
+{
+  "before": {
+    "source": "b9793ac",
+    "runtime": "126d379e2548ad15a79ad49ac8361acf87036d9c351a154bf8fdb9951244b252",
+    "cases": 8,
+    "passed": 0,
+    "failed": 8,
+    "seconds": 136.726302,
+    "inputsExact": 6010
+  },
+  "after": {
+    "source": "569c4ce",
+    "runtime": "e46818155946588b85d66c06fb89aed0d88929803e0d790c343023f9268e44b1",
+    "rawCases": 121,
+    "passed": 113,
+    "failed": 8,
+    "inputsExact": 6022
+  },
+  "cases": [
+    {
+      "file": "trial-preparation.spec.ts",
+      "title": "sword/purchase: normal new game enters the actual question with one full preparation checkpoint",
+      "project": "chromium",
+      "before": {
+        "status": "failed",
+        "tokens": [
+          "getByLabel('吐纳行动次数')",
+          "getByRole('button',{name:'踏入仙途'})",
+          "getByRole('button',{name:/^(继续当前遭遇|查看问心选择|查看收卷选择)",
+          "getByTestId('error')",
+          "getByTestId('goal-panel')",
+          "getByTestId('hub-close')",
+          "getByTestId('inspect-'+id)",
+          "getByTestId('realm')",
+          "getByTestId('release')",
+          "getByTestId('save-status')",
+          "getByTestId('tab-0')",
+          "getByTestId('tab-1')",
+          "getByTestId('technique')",
+          "getByTestId('xp')",
+          "getByTestId(id)"
+        ],
+        "primaryError": "TimeoutError: locator.selectOption: Timeout 8000ms exceeded.",
+        "errorCount": 1
+      },
+      "after": {
+        "status": "failed",
+        "tokens": [
+          "getByLabel('吐纳行动次数')",
+          "getByRole('button',{name:'踏入仙途'})",
+          "getByRole('button',{name:/^(继续当前遭遇|查看问心选择|查看收卷选择)",
+          "getByTestId('error')",
+          "getByTestId('goal-panel')",
+          "getByTestId('hub-close')",
+          "getByTestId('inspect-'+id)",
+          "getByTestId('realm')",
+          "getByTestId('release')",
+          "getByTestId('save-status')",
+          "getByTestId('tab-0')",
+          "getByTestId('tab-1')",
+          "getByTestId('technique')",
+          "getByTestId('xp')",
+          "getByTestId(id)"
+        ],
+        "primaryError": "TimeoutError: locator.selectOption: Timeout 8000ms exceeded.",
+        "errorCount": 1
+      },
+      "sameFailingLocatorOrPrimaryError": true,
+      "notCurrentPassedOrRetired": true
+    },
+    {
+      "file": "trial-preparation.spec.ts",
+      "title": "talisman/craft: normal new game enters the actual question with one full preparation checkpoint",
+      "project": "chromium",
+      "before": {
+        "status": "failed",
+        "tokens": [
+          "getByLabel('吐纳行动次数')",
+          "getByRole('button',{name:'踏入仙途'})",
+          "getByRole('button',{name:/^(继续当前遭遇|查看问心选择|查看收卷选择)",
+          "getByTestId('error')",
+          "getByTestId('goal-panel')",
+          "getByTestId('hub-close')",
+          "getByTestId('inspect-'+id)",
+          "getByTestId('realm')",
+          "getByTestId('release')",
+          "getByTestId('save-status')",
+          "getByTestId('tab-0')",
+          "getByTestId('tab-1')",
+          "getByTestId('technique')",
+          "getByTestId('xp')",
+          "getByTestId(id)"
+        ],
+        "primaryError": "TimeoutError: locator.selectOption: Timeout 8000ms exceeded.",
+        "errorCount": 1
+      },
+      "after": {
+        "status": "failed",
+        "tokens": [
+          "getByLabel('吐纳行动次数')",
+          "getByRole('button',{name:'踏入仙途'})",
+          "getByRole('button',{name:/^(继续当前遭遇|查看问心选择|查看收卷选择)",
+          "getByTestId('error')",
+          "getByTestId('goal-panel')",
+          "getByTestId('hub-close')",
+          "getByTestId('inspect-'+id)",
+          "getByTestId('realm')",
+          "getByTestId('release')",
+          "getByTestId('save-status')",
+          "getByTestId('tab-0')",
+          "getByTestId('tab-1')",
+          "getByTestId('technique')",
+          "getByTestId('xp')",
+          "getByTestId(id)"
+        ],
+        "primaryError": "TimeoutError: locator.selectOption: Timeout 8000ms exceeded.",
+        "errorCount": 1
+      },
+      "sameFailingLocatorOrPrimaryError": true,
+      "notCurrentPassedOrRetired": true
+    },
+    {
+      "file": "trial-preparation.spec.ts",
+      "title": "an incomplete real preparation remains inspectable and navigation does not acquire or consume materials",
+      "project": "chromium",
+      "before": {
+        "status": "failed",
+        "tokens": [
+          "getByTestId('breakthrough')",
+          "getByTestId('buy-healing_pill')",
+          "getByTestId('trial-go-medicine')",
+          "getByTestId('trial-required-item-ascension_seal')",
+          "getByTestId('trial-required-xp')",
+          "getByTestId('trial-review-entry')",
+          "getByTestId('trial-track-ascension_seal')"
+        ],
+        "primaryError": "Error: expect(locator).toBeEnabled() failed",
+        "errorCount": 1
+      },
+      "after": {
+        "status": "failed",
+        "tokens": [
+          "getByTestId('breakthrough')",
+          "getByTestId('buy-healing_pill')",
+          "getByTestId('trial-go-medicine')",
+          "getByTestId('trial-required-item-ascension_seal')",
+          "getByTestId('trial-required-xp')",
+          "getByTestId('trial-review-entry')",
+          "getByTestId('trial-track-ascension_seal')"
+        ],
+        "primaryError": "Error: expect(locator).toBeEnabled() failed",
+        "errorCount": 1
+      },
+      "sameFailingLocatorOrPrimaryError": true,
+      "notCurrentPassedOrRetired": true
+    },
+    {
+      "file": "trial-preparation.spec.ts",
+      "title": "real zero-mana no-potion no-ally no-relic preparation can enter without optional gates",
+      "project": "chromium",
+      "before": {
+        "status": "failed",
+        "tokens": [
+          "getByTestId('trial-aid')",
+          "getByTestId('trial-mana')",
+          "getByTestId('trial-medicine')",
+          "getByTestId('trial-review-entry')"
+        ],
+        "primaryError": "Error: expect(locator).toContainText(expected) failed",
+        "errorCount": 1
+      },
+      "after": {
+        "status": "failed",
+        "tokens": [
+          "getByTestId('trial-aid')",
+          "getByTestId('trial-mana')",
+          "getByTestId('trial-medicine')",
+          "getByTestId('trial-review-entry')"
+        ],
+        "primaryError": "Error: expect(locator).toContainText(expected) failed",
+        "errorCount": 1
+      },
+      "sameFailingLocatorOrPrimaryError": true,
+      "notCurrentPassedOrRetired": true
+    },
+    {
+      "file": "trial-preparation.spec.ts",
+      "title": "checkpoint quota failure stays in preparation, cancellation discards retry, and a fresh confirmed retry charges once",
+      "project": "chromium",
+      "before": {
+        "status": "failed",
+        "tokens": [
+          "getByTestId('retry')",
+          "getByTestId('trial-confirm-entry')",
+          "getByTestId('trial-entry-cancel')",
+          "getByTestId('trial-entry-error')",
+          "getByTestId('trial-no-checkpoint')"
+        ],
+        "primaryError": "Error: expect(locator).toBeVisible() failed",
+        "errorCount": 1
+      },
+      "after": {
+        "status": "failed",
+        "tokens": [
+          "getByTestId('retry')",
+          "getByTestId('trial-confirm-entry')",
+          "getByTestId('trial-entry-cancel')",
+          "getByTestId('trial-entry-error')",
+          "getByTestId('trial-no-checkpoint')"
+        ],
+        "primaryError": "Error: expect(locator).toBeVisible() failed",
+        "errorCount": 1
+      },
+      "sameFailingLocatorOrPrimaryError": true,
+      "notCurrentPassedOrRetired": true
+    },
+    {
+      "file": "trial-preparation.spec.ts",
+      "title": "a changed or replaced cross-tab progress invalidates the fixed entry review",
+      "project": "chromium",
+      "before": {
+        "status": "failed",
+        "tokens": [
+          "getByLabel('导入已有存档',{exact:true})",
+          "getByRole('heading',{name:'你愿如何面对来路？',exact:true})",
+          "getByTestId('realm')",
+          "getByTestId('trial-entry-confirmation')",
+          "getByTestId('trial-review-entry')"
+        ],
+        "primaryError": "TimeoutError: locator.click: Timeout 8000ms exceeded.",
+        "errorCount": 1
+      },
+      "after": {
+        "status": "failed",
+        "tokens": [
+          "getByLabel('导入已有存档',{exact:true})",
+          "getByRole('heading',{name:'你愿如何面对来路？',exact:true})",
+          "getByTestId('realm')",
+          "getByTestId('trial-entry-confirmation')",
+          "getByTestId('trial-review-entry')"
+        ],
+        "primaryError": "TimeoutError: locator.click: Timeout 8000ms exceeded.",
+        "errorCount": 1
+      },
+      "sameFailingLocatorOrPrimaryError": true,
+      "notCurrentPassedOrRetired": true
+    },
+    {
+      "file": "trial-preparation.spec.ts",
+      "title": "an imported question never claims a preparation checkpoint that the import did not contain",
+      "project": "chromium",
+      "before": {
+        "status": "failed",
+        "tokens": [
+          "getByRole('heading', { name: '你愿如何面对来路？', exact: true })",
+          "getByTestId('trial-checkpoint-committed')",
+          "getByTestId('trial-checkpoint-unavailable')"
+        ],
+        "primaryError": "Error: expect(locator).toBeVisible() failed",
+        "errorCount": 1
+      },
+      "after": {
+        "status": "failed",
+        "tokens": [
+          "getByRole('heading', { name: '你愿如何面对来路？', exact: true })",
+          "getByTestId('trial-checkpoint-committed')",
+          "getByTestId('trial-checkpoint-unavailable')"
+        ],
+        "primaryError": "Error: expect(locator).toBeVisible() failed",
+        "errorCount": 1
+      },
+      "sameFailingLocatorOrPrimaryError": true,
+      "notCurrentPassedOrRetired": true
+    },
+    {
+      "file": "trial-preparation.spec.ts",
+      "title": "an earlier failed navigation cannot be retried as the reviewed trial entry or discarded by cancelling it",
+      "project": "chromium",
+      "before": {
+        "status": "failed",
+        "tokens": [
+          "getByTestId('retry')",
+          "getByTestId('trial-entry-cancel')",
+          "getByTestId('trial-entry-retry')",
+          "getByTestId('trial-go-rest')"
+        ],
+        "primaryError": "TimeoutError: locator.click: Timeout 8000ms exceeded.",
+        "errorCount": 1
+      },
+      "after": {
+        "status": "failed",
+        "tokens": [
+          "getByTestId('retry')",
+          "getByTestId('trial-entry-cancel')",
+          "getByTestId('trial-entry-retry')",
+          "getByTestId('trial-go-rest')"
+        ],
+        "primaryError": "TimeoutError: locator.click: Timeout 8000ms exceeded.",
+        "errorCount": 1
+      },
+      "sameFailingLocatorOrPrimaryError": true,
+      "notCurrentPassedOrRetired": true
+    }
+  ],
+  "scope": "actual before/after diagnostic proving the same8 failures predate C; neither phase is relabelled as passing; formal legacy UI maintenance remains open"
+}
