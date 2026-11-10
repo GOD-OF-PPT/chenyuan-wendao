@@ -1,0 +1,44 @@
+# CEND13-B 回应签的真实安排状态
+
+2026-11-10。承接2216c63/ea44e66的真实交付，上一轮为progress；同一Goal4的第二个独立任务，当前1/3，不新建Goal或聊天。完整本次原话见2026-11-10-cend13b-input.md，不能把原生objective中旧next R1当作当前待办。原13在途、v0.3、四Goal输入、玩家档和所有旧原件保。
+
+## 问题和准则
+
+ResponseTable在已受理的DECIDE、ANSWER_TRIAL或END期间仍显示“预选不作回应”；NarrativePanel又常驻“只读预选，确认后才安排”，暂停时其标题还回到“等你决定”。这些静态提示与真实安排矛盾。只把文字统改为已安排也会误导尚未确认、其它签或其它人生。
+
+本轮实际回读[Riot清晰度](https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/)的层级和降噪、[XAG114](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114)的UI上下文/可预知行为/就近标签。应用为：当前签的真实状态在原人物旁表达一次，次要页脚不重复或反驳；阅读与真正安排保持明确区别。具体词语、状态映射、预算和布局是本项目推导，不是来源规定数值或认证。沿game-ui-frontend/game-playtest既有Vue/DOM/原画和Playwright流程；用户暂停兼容与环境性能优先于Skill默认。
+
+## 显示合同
+
+原ResponseTable唯一useNarrativeObject、真实墨迹/1400ms认领、原runtime/engaged/working/结果及6/12秒均不改。新增纯只读response-context.ts（至多3000B），只返回当前状态与短提示，不含IO/时钟/watch/写命令或独立成果认领；它不是新的存档或授权。ResponseTable用既有可见hook runtime及Store当前事实消费，原action/phase相关属性不替换。NarrativePanel只撤下重复泛化标题状态，页脚改为查看不更改已存安排；全部正文/140码点分页/选择/成本/资格/原回调/确认/取消/原意图与读页记忆保。
+
+1. 未确认时继续明示只读预选。单纯换签/来由/手记/翻页不写Game、不开始周期、不默认选择未知回应。
+2. 已保存安排必须同时是同run、同gameRevision的v7 milestone，原originGame与正式narrativeTarget对应当前真实模型；活动中的NPC还核同一会面instance，问心核同一阶段和trial-question，收卷核trial-ending。不能仅凭running或相同answer字面借前一问心、其它人物或另一次会面。
+3. 选中签等于已存action时提示本次已安排。原可见runtime还须id/generation和本页归属匹配，运行/保存中由既有读秒/落笔反馈表达；无钟只称已安排/接续见上方，不推断其它页是否停手。暂停/正在停手明确，沿原安排继续，不冒新START。
+4. 看另一签时说明仅查看、原回应未改变，不借原签的钟/墨迹或称该签已受理。仍保全选项目录和完整详情；暂停后新的替换必须沿原独立确认。
+5. START尚在保存、失败待核对或连接不可写时不给“已受理/已完成”假事实；已受理TICK失败也不退回预选。只提示进度待核对，原重试/取消/重新读取入口不改。
+6. 完成提示只依据当前正式完整活动结果/阶段，STATE_CHANGED或旧人生/旧修订不得冒成果；原短演出不因这个状态投影重播。问心用作答、结尾用收卷，不误称NPC会面；现OpeningResponse已经有自己的三选状态，本轮不改它。
+
+## 原预算与严格证据
+
+初始ResponseTable5253B、NarrativePanel6603B；实际story组47972/48000，narrative组37663/45000。新helper须计入实际narrative45000；新状态层总量至多5000B，不以移旧controller或新表单逃帽。0新位图、CSS、字体、依赖、App、Store、正式规则/费用/周期/DB变化。
+
+新C13B ledger精确绑定两父源before/current hash、完整逆回操作、新helper、唯一消费路径、原所有权源码和旧ledgers。通过现有共同prior链最前端接一次精确逆回，旧帽/hash/签名不重签；该守卫接线也绑定完整before/after，原C13A逻辑/预算必须可逐字恢复。新COW输入进入原复制列表，同一副本正向后才验缺ledger/父源改动、helper篡改、错状态/拒绝边界及预算/类型负例。无ledger即使删新模块/标记也只认精确旧父，不能假未启用。实际当前组字节与历史归一化证明分开记录。
+
+## 验证路径
+
+先保存合法已受理旧界面的真实红/PNG及完整Game/全部库只读身份，再实施。新完整文件计划七类具名场景：未确认/四NPC完整选择及取消、原生真实6秒受理与完整原子成果、暂停/另一签/原意续行、TICK quota和原生保存中/同命令重试、迟到START/外页代际及刷新、问心两答案与两结尾原6/12秒、键盘/失图/一屏正文与提示边界。实际数量以完整CLI声明为准；新增纯模型测试以合法正式活动和深冻结输入验证阶段/实例/人生/修订/其它签/无钟/失效，不能仅镜像字符串。原末1ms/完整正式Game/Activity/全部store/唯一回执/原命令与无重复奖保。
+
+当前固定旧完整文件并集来自真实源：ux20-trial-guidance、idle-milestones、art32-milestone-stage、narrative-objects、art30-npc-meeting、ux20-trial-reading、check-uir34-05-07、idle-review、art12-narrative-stage、stage-r4、check-art03-feedback-art、uir34-07-fate-clarity、matrix-ui-milestone-feedback、check-art30-32、idle-recovery-choices、idle-recovery-flow；加本轮新文件。开测前延期四个混合前缀ART32-A3/ART05-A13/ART30-A3/ART12-A8，实际整例数由CLI差集核。旧story-journey/immersive-ui含1280/字号/多尺寸/媒体与旧路径，整文件保为历史专项，不以挑其中1440参数冒本轮兼容检查。原断言不删；如新真实布局使旧查看前提过期，先保原红和原件，再仅修明确查看路径并整文件核。
+
+全当前核心十门禁、类型/构建、新旧资源正负和实际唯一ID收集，相关完整UI/原6和12秒、逐张像素及新包/解包与HTTP同源。每次最多两图，原PNG保，JPEG68仅同原尺寸查看副本；正文18/辅助14/控件44与原几何/计时门槛不降。0兼容/媒体变体/移动/字号或环境性能专项。新矩阵沿v52精确加本轮实际题名，原1498签名保；旧未知版本负例移下一未知并保outer真实未执行拒绝。
+
+上一A的正常32仅保9ca原身份，本轮不贴成新运行通过。本项不改导航/正式动作/存储/周期，针对实际叙事端到端与相关完整文件验证；当前新源正常32将在三任务CHECK-CEND13-ABC重新完整执行，最终完整UI/存储/正常/恢复/后段专项义务不缩。若本轮实际修缮越过这些只读状态/两显示父或涉及正常路线控制，先扩大当前验证到受影响完整正常路线，不能仍按只读投影声称风险不变。
+
+## 交付、回滚和后续
+
+新生产冻结后独立同版本工程试玩和ZIP，解包真实新例/资源HTTP核同，不更新56884/56945/56949玩家原页或迁用户档。核心/界面/像素/作者C端代码安全有界审查后本地提交，再更新tasks/GJ计数2/3，结束本轮。下一C缺量去重，再强制ABC综合；入劫运行舞台、其它交互/艺术、全矩阵、长期平衡和真人仍未完成，Goal active。无push/PR/合并/公开部署/权限或automation改动。
+
+只revert本状态投影/两显示接线/严格新守卫和配套测试，保DB9可读与原件，不降库、重置或清理历史。复用现有冻结/原子/绘画/试玩流程，不建重复Skill/agent/自动化。上项三次暂停已有明确继续指导，仅属已完成A历史；本B从自己的审查记录开始，不借旧绿或原指导冒本B通过。
+
+[杠精计划审查] 通过待实际执行：完整区分查看、受理、暂停、无钟、保存失败与真实结果，不是把全部“预选”粗暴改成“已安排”。完整文字、未知选择、6/12秒、预算与原子权属保，相关完整范围/原32身份和后段义务明列；实现和验收尚未完成。

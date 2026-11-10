@@ -1,0 +1,9 @@
+{
+  "source": "/Users/gordon/.codex/sessions/2026/10/21/rollout-2026-10-21T14-39-18-01a15d2f-866c-7250-a7fb-76602283d254.jsonl",
+  "offset": 2055716027,
+  "bytes": 7019,
+  "sha256": "eecebf6a535f841f19a047e22ad6d4e9a7a78bc3de1b0e951b65b3fe218649eb",
+  "completeActualUserInput": true,
+  "previousGoalTurn": "progress: ea44e66 delivery plus 2216c63 task record, current native goal active",
+  "notOnlyStaleObjectiveNextR1": true
+}
