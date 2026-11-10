@@ -1,3 +1,4 @@
+import {assertSavedTrialEntry} from '../e2e/idle-route-support';
 import {test,expect} from '@playwright/test';
 import * as C from '../../src/full/content.ts';
 import {createIdleRoute} from '../../scripts/economy/idle-scenarios.mjs';
@@ -13,7 +14,8 @@ function prepare(o:any,identity:any){
 }
 for(const school of ['sword','talisman']as const)test(`current normal ${school} reopens its actual question and every saved battle round without reroll or an automatic next gate`,async({page},info)=>{
  const o={choice:'leave',school,preparation:'purchase',cultivation:'natural',answer:school==='sword'?'accept':'release',ending:'transmit',advanced:false};await runVisibleIdleRoute(page,info,o,prepare,{terminalRealm:'spirit'});
- await runRecoveryPlan(page,{kind:'milestone',action:{type:'START_TRIAL'},maxCycles:1});
+ const savedEntry=await runRecoveryPlan(page,{kind:'milestone',action:{type:'START_TRIAL'},maxCycles:1});
+ await assertSavedTrialEntry(page,savedEntry.before,savedEntry.a,info);
  const question=await recoveryDatabase(page);await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');expect(await recoveryDatabase(page)).toEqual(question);expect((await snapshot(page)).trial.stage).toBe(0);
  await runRecoveryPlan(page,{kind:'milestone',action:{type:'ANSWER_TRIAL',answer:o.answer},maxCycles:1});let rounds=0,reopens=0;const stages=new Set<number>();
  for(let gate=1;gate<=3;gate++){

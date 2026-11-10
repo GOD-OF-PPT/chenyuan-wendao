@@ -1,0 +1,853 @@
+{
+  "format": "chenyuan-current-trial-ui-obligations",
+  "version": 1,
+  "definitionOnlyUntilActualReportsPass": true,
+  "contract": "docs/decisions/0148-check-cend13-abc-contract.md",
+  "legacySource": {
+    "path": "web/e2e/trial-preparation.spec.ts",
+    "before": "goal-4/evidence/check-cend13-abc/before/web/e2e/trial-preparation.spec.ts",
+    "sha256": "37c7e49ff6d3508fc3be0f018df51196c4e8180accd5730e97ca64ec30fcf503"
+  },
+  "legacyInventory": [
+    {
+      "suite": "ui",
+      "file": "trial-preparation.spec.ts",
+      "title": "sword/purchase: normal new game enters the actual question with one full preparation checkpoint",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "trial-preparation.spec.ts",
+      "title": "talisman/craft: normal new game enters the actual question with one full preparation checkpoint",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "trial-preparation.spec.ts",
+      "title": "an incomplete real preparation remains inspectable and navigation does not acquire or consume materials",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "trial-preparation.spec.ts",
+      "title": "real zero-mana no-potion no-ally no-relic preparation can enter without optional gates",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "trial-preparation.spec.ts",
+      "title": "checkpoint quota failure stays in preparation, cancellation discards retry, and a fresh confirmed retry charges once",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "trial-preparation.spec.ts",
+      "title": "a changed or replaced cross-tab progress invalidates the fixed entry review",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "trial-preparation.spec.ts",
+      "title": "an imported question never claims a preparation checkpoint that the import did not contain",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "trial-preparation.spec.ts",
+      "title": "an earlier failed navigation cannot be retried as the reviewed trial entry or discarded by cancelling it",
+      "projectName": "chromium"
+    }
+  ],
+  "pausedLegacyMobile": {
+    "suite": "ui",
+    "file": "trial-preparation.spec.ts",
+    "title": "two successful entries and complete preparation restores preserve the same assets and facts on mobile",
+    "projectName": "chromium"
+  },
+  "requiredUIInventory": [
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L1 current incomplete entry pages keep every mandatory fact and explicit source or medicine navigation readonly until its original travel completes",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L2 zero mana no medicine no ally and no relic remain optional while one full fifteen-second entry atomically preserves the complete real preparation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L3 cancelling an unaccepted failed entry discards only that intent while quota and put-success abort of an accepted checkpoint retain the original full-period retry",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L4 a frozen entry review cannot acquire a foreign activity or replacement life even if its disabled DOM control is forced on",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L5 importing an actual question preserves its complete reading without inventing an entry checkpoint or consumption proof",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L6 an unrelated failed six-second trip cannot be claimed or cancelled by entry review and its original retry only changes the actual location",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-K1 actual cultivation returns to its stage then preserves the original paused plan and current material gap through readonly preparation and an atomic retry",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-K2 another signature stays readonly while the paid response retry commits once and only its actual new currency changes the preparation gap",
+      "projectName": "chromium"
+    }
+  ],
+  "requiredJourneyInventory": [
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation help/sword/craft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation trade/sword/purchase",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation leave/sword/craft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation help/talisman/purchase",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation trade/talisman/craft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation leave/talisman/purchase",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-trial-reopen.spec.ts",
+      "title": "current normal sword reopens its actual question and every saved battle round without reroll or an automatic next gate",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-trial-reopen.spec.ts",
+      "title": "current normal talisman reopens its actual question and every saved battle round without reroll or an automatic next gate",
+      "projectName": "chromium"
+    }
+  ],
+  "rows": [
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "sword/purchase: normal new game enters the actual question with one full preparation checkpoint",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "journey",
+          "file": "idle-normal-matrix.spec.ts",
+          "title": "normal idle leave/sword/purchase/transmit",
+          "projectName": "chromium"
+        },
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L2 zero mana no medicine no ally and no relic remain optional while one full fifteen-second entry atomically preserves the complete real preparation",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "normal new life",
+        "explicit ordinary preparation and independent travel",
+        "frozen entry cancel",
+        "full fifteen-second entry checkpoint and owner",
+        "one actual seal cost",
+        "question and reopen"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "talisman/craft: normal new game enters the actual question with one full preparation checkpoint",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "journey",
+          "file": "idle-normal-matrix.spec.ts",
+          "title": "normal idle help/talisman/craft/transmit",
+          "projectName": "chromium"
+        },
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L2 zero mana no medicine no ally and no relic remain optional while one full fifteen-second entry atomically preserves the complete real preparation",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "normal new life",
+        "explicit ordinary preparation and independent travel",
+        "frozen entry cancel",
+        "full fifteen-second entry checkpoint and owner",
+        "one actual seal cost",
+        "question and reopen"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "an incomplete real preparation remains inspectable and navigation does not acquire or consume materials",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L1 current incomplete entry pages keep every mandatory fact and explicit source or medicine navigation readonly until its original travel completes",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "complete mandatory and seal facts",
+        "readonly tracking/source stack",
+        "optional medicine navigation",
+        "original six-second explicit travel",
+        "no hidden acquisition"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "real zero-mana no-potion no-ally no-relic preparation can enter without optional gates",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L2 zero mana no medicine no ally and no relic remain optional while one full fifteen-second entry atomically preserves the complete real preparation",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "MP0 and no medicine/ally/relic stay optional",
+        "explicit current reading",
+        "cancel before acceptance readonly",
+        "fifteen-second entry",
+        "complete checkpoint/owner/receipt and MP0 preserved"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "checkpoint quota failure stays in preparation, cancellation discards retry, and a fresh confirmed retry charges once",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L3 cancelling an unaccepted failed entry discards only that intent while quota and put-success abort of an accepted checkpoint retain the original full-period retry",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "unaccepted START failure and cancellation",
+        "new explicit authorization after cancellation",
+        "accepted TICK checkpoint quota rollback",
+        "request-success native abort rollback",
+        "same original completed-period retry",
+        "one actual seal and full checkpoint"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "a changed or replaced cross-tab progress invalidates the fixed entry review",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L4 a frozen entry review cannot acquire a foreign activity or replacement life even if its disabled DOM control is forced on",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "frozen full original review identity",
+        "foreign activity CAS invalidates before any Game result",
+        "foreign revision stale",
+        "replacement life invalidates",
+        "forced disabled DOM confirmation cannot write",
+        "cancel cannot end replacement"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "an imported question never claims a preparation checkpoint that the import did not contain",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L5 importing an actual question preserves its complete reading without inventing an entry checkpoint or consumption proof",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "actual question readable",
+        "import has no invented checkpoint or owner",
+        "no false consumption/success or restore controls",
+        "all stores readonly"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "an earlier failed navigation cannot be retried as the reviewed trial entry or discarded by cancelling it",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L6 an unrelated failed six-second trip cannot be claimed or cancelled by entry review and its original retry only changes the actual location",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "original unrelated travel pending",
+        "current running/pending protection blocks new entry confirmation",
+        "no foreign entry retry or discard",
+        "leaving reading keeps original global retry",
+        "same original six-second result only changes real location"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    }
+  ],
+  "sourceBindings": {
+    "ui": [
+      {
+        "path": "scripts/economy/idle-scenarios.mjs",
+        "sha256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407"
+      },
+      {
+        "path": "scripts/economy/scenarios.mjs",
+        "sha256": "7b82f06c10749a9d81e6cb8c3486c26d886a5ca30dd198471f68f9e67891ca9e"
+      },
+      {
+        "path": "src/full/activity.ts",
+        "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815"
+      },
+      {
+        "path": "src/full/adventure.ts",
+        "sha256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015"
+      },
+      {
+        "path": "src/full/ascension.ts",
+        "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a"
+      },
+      {
+        "path": "src/full/configuration.ts",
+        "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520"
+      },
+      {
+        "path": "src/full/content.ts",
+        "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c"
+      },
+      {
+        "path": "src/full/contracts.ts",
+        "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa"
+      },
+      {
+        "path": "src/full/costs.ts",
+        "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb"
+      },
+      {
+        "path": "src/full/economy-ledger.ts",
+        "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0"
+      },
+      {
+        "path": "src/full/engine.ts",
+        "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+      },
+      {
+        "path": "src/full/errors.ts",
+        "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4"
+      },
+      {
+        "path": "src/full/events.ts",
+        "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d"
+      },
+      {
+        "path": "src/full/goals.ts",
+        "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883"
+      },
+      {
+        "path": "src/full/life-record.ts",
+        "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7"
+      },
+      {
+        "path": "src/full/mechanisms.ts",
+        "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221"
+      },
+      {
+        "path": "src/full/milestones.ts",
+        "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492"
+      },
+      {
+        "path": "src/full/preparation.ts",
+        "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a"
+      },
+      {
+        "path": "src/full/progression.ts",
+        "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406"
+      },
+      {
+        "path": "src/full/queries.ts",
+        "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48"
+      },
+      {
+        "path": "src/full/receipts.ts",
+        "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae"
+      },
+      {
+        "path": "src/full/story-context.ts",
+        "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950"
+      },
+      {
+        "path": "src/full/trial-rules.ts",
+        "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53"
+      },
+      {
+        "path": "src/full/types.ts",
+        "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064"
+      },
+      {
+        "path": "src/full/versions.ts",
+        "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64"
+      },
+      {
+        "path": "tests/action-feedback-fixtures.mjs",
+        "sha256": "caae2948278f71852bab474874b32d3a7b6e2bd4b0a3b70bbc346337b6dc0f34"
+      },
+      {
+        "path": "tests/causal-route.mjs",
+        "sha256": "9987d0f04d5d0dddddf095d38dcabc30430cd77d63512fb18a09ed63c6bb584f"
+      },
+      {
+        "path": "tests/full-route.mjs",
+        "sha256": "ef171c48f99654512443ce7ba410d220851bc85777fc718d9710c6a6282cf321"
+      },
+      {
+        "path": "tests/response-context-fixtures.mjs",
+        "sha256": "1dbd8917305a60be9fcaf99a1c06ff6cd829467536581f86de3e7e51af3ec840"
+      },
+      {
+        "path": "tests/trial-preparation-route.mjs",
+        "sha256": "08e44ef986c7bf69fa255c41bcb5247b5463a62269fe45dbf0755cefb98eb419"
+      },
+      {
+        "path": "web/e2e/check-cend13-abc-support.ts",
+        "sha256": "d7b25213a33810c0a3b4d7575bc55d65d3154accc65dc18ad0c6ae8a45b2536b"
+      },
+      {
+        "path": "web/e2e/check-cend13-abc.spec.ts",
+        "sha256": "c32ab2993049dc010738f3687a26bc46052e2d8b20ea5ff627c2f1cc7bada240"
+      },
+      {
+        "path": "web/e2e/game-confirmation-support.ts",
+        "sha256": "be4bbdeaebab740befaf52e37582098c6d9d87030c71d2cabbb756238017f3fd"
+      },
+      {
+        "path": "web/e2e/idle-recovery-ui-support.ts",
+        "sha256": "2b2e9df03cf97cf582a03eb23d2bc2d3eb078a4cffc9c953f54972c047c6d04f"
+      },
+      {
+        "path": "web/e2e/idle-route-support.ts",
+        "sha256": "da2744c1703f3e21f186ae6fa72c6225a54f9d299c7a5022f3e2b9dfac3cc7d6"
+      },
+      {
+        "path": "web/e2e/png-capture.ts",
+        "sha256": "f50dc121db18150b8c4c4b48cc0fefc897b4d1e4edffc662c119c1c366cad85b"
+      },
+      {
+        "path": "web/e2e/stage-support.ts",
+        "sha256": "f31385408a68974e51b39ba5bdf08d76ece145ecd4a540c200419ffc6e5a6bb1"
+      },
+      {
+        "path": "web/e2e/support.ts",
+        "sha256": "674387c658ed43bf56ceedb80b3df3baf63243e77ece9eeed87ec7e9396f8682"
+      },
+      {
+        "path": "web/src/activity-persistence.ts",
+        "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf"
+      },
+      {
+        "path": "web/src/local-events.ts",
+        "sha256": "70af5e47ab28d9afde7612988f13dd2f67925a6f9ec3ffbd3c52bf03d1c95150"
+      },
+      {
+        "path": "web/src/local-experience.ts",
+        "sha256": "65614c37cd5931b275208f78aa9bf06f40768ff402a908fb2d2cf28d16e3b9ed"
+      },
+      {
+        "path": "web/src/navigation.ts",
+        "sha256": "f97fb271e8928fe48d981b4bcbeba7d655ed2a1b9036693a202a8cc433b558fc"
+      },
+      {
+        "path": "web/src/play-flow.ts",
+        "sha256": "ec31aeb151728b37a6de4f65f17df9020fed7407194cd02df1330a0e69ad0e76"
+      },
+      {
+        "path": "web/src/presentation.ts",
+        "sha256": "afb0da3d1dbbb9c58095a1ef97bb04e1411c088c06ba2941685704bbc717eca0"
+      },
+      {
+        "path": "web/src/story-pages.ts",
+        "sha256": "cdeff2da61fc28199b529c3394c3e881570eb0fe0bcee69770af871e8a104c9c"
+      }
+    ],
+    "journey": [
+      {
+        "path": "scripts/economy/idle-scenarios.mjs",
+        "sha256": "fdc81d5446cb504cb36eddfb0809267a687fa984200c7318e41d8eaf6c87f407"
+      },
+      {
+        "path": "src/full/activity.ts",
+        "sha256": "2630150966d2d6a441c36b013448ce4ccb604dd700b329df4a65997d0b7d8815"
+      },
+      {
+        "path": "src/full/adventure.ts",
+        "sha256": "8693c958f984b4b03043df5b83518323358fd7e033779f4711f4d766046b8015"
+      },
+      {
+        "path": "src/full/ascension.ts",
+        "sha256": "39654a2a6f19a43cf99f3429a5cb62ba950296d5a02485eb41e1d3a7ace9132a"
+      },
+      {
+        "path": "src/full/configuration.ts",
+        "sha256": "ca9880f727c5798a55d4a8590c57c1fbe5ba71ef0e6cfb0c59fdebfb86205520"
+      },
+      {
+        "path": "src/full/content.ts",
+        "sha256": "e5602fa6c0ccac95372d5f668a3234d7d6054ea5f3a4b36d72798f1b9e40878c"
+      },
+      {
+        "path": "src/full/contracts.ts",
+        "sha256": "24ce86f2158312db2c9bf46d9479f67ebefcd435296c945807b7e356128541aa"
+      },
+      {
+        "path": "src/full/costs.ts",
+        "sha256": "71075aa81f7b27cc3d0bbcfe4a3a3b681532d0cdad98e4ebfc105fceb0aaf8bb"
+      },
+      {
+        "path": "src/full/economy-ledger.ts",
+        "sha256": "9c6bb6c70c0958a78eac8293d0f793754486c6be74c1aa9a39ff8c5f922816b0"
+      },
+      {
+        "path": "src/full/engine.ts",
+        "sha256": "864cdae0c480f36e8ba305de5ff5dec04ac0607c2c9f362db34c21111ce82a73"
+      },
+      {
+        "path": "src/full/errors.ts",
+        "sha256": "ce2c7107d702a1b2e477edaa7d01d93c1a22e53d2859b5da31335bf67a961bd4"
+      },
+      {
+        "path": "src/full/events.ts",
+        "sha256": "bc4d14b95708bd9cbd4c6154484f1537490ce3dd9adfd580fd6cf65cca87a41d"
+      },
+      {
+        "path": "src/full/goals.ts",
+        "sha256": "10dc1cc0f88889fad39afff762811502f004af3e478a331e1ed4908b6c73e883"
+      },
+      {
+        "path": "src/full/life-record.ts",
+        "sha256": "02c8acc2908257ee01b73b3c5b715600491364fb40c2bb9bd919d6b6c1b61ba7"
+      },
+      {
+        "path": "src/full/mechanisms.ts",
+        "sha256": "5a256eb552f25ce726b1107f29cd5010e3eb87bd060e06ab95ecd6cf6369b221"
+      },
+      {
+        "path": "src/full/milestones.ts",
+        "sha256": "e91f58cf0002945f679649964b5a70e7226e0890b623719b24df2c02bac09492"
+      },
+      {
+        "path": "src/full/preparation.ts",
+        "sha256": "3f62889885fa24b74d3c06c2c906462697d1072d846ae2959b427b7c512fa25a"
+      },
+      {
+        "path": "src/full/progression.ts",
+        "sha256": "8c81eecb1e406a7c004d308bf0e9be2e2e32fddeecafa8b5913e459c61e34406"
+      },
+      {
+        "path": "src/full/queries.ts",
+        "sha256": "eab721ecd066440d8babe11f36664300d21df2d1cf15f10d1160c7cb2a880d48"
+      },
+      {
+        "path": "src/full/receipts.ts",
+        "sha256": "185597443e21bf88949232a97afa426410b0dcc8ce8e07cf240a08af0f2dd0ae"
+      },
+      {
+        "path": "src/full/story-context.ts",
+        "sha256": "9a4106925e7b798e7549b1062a21a74c6c08ba050971a33f95ba315ee0f79950"
+      },
+      {
+        "path": "src/full/trial-rules.ts",
+        "sha256": "5db194881d1a98cf5582ed84af4f46ffa2b7802fed2f437febbbf8e26f745c53"
+      },
+      {
+        "path": "src/full/types.ts",
+        "sha256": "be3db5f0a91ac3ced01315643400ab23de14fbe19ca003f6126f0c834397a064"
+      },
+      {
+        "path": "src/full/versions.ts",
+        "sha256": "10fb7ed2b9930bd064e876a87c3b3c0c6bdd6a5c4e8f2d3e3270ff3037584e64"
+      },
+      {
+        "path": "tests/ascension-matrix.mjs",
+        "sha256": "bb7ac8bbf57c3e56daf13e3ed7460e0a7a17cacf67108a7d5aa9ad4bf6711b7b"
+      },
+      {
+        "path": "web/e2e/idle-matrix-scenarios.ts",
+        "sha256": "0dd9881badbfa1d66a9b89c4452c97ebd8de658975974125200b4870f5415a3a"
+      },
+      {
+        "path": "web/e2e/idle-recovery-ui-support.ts",
+        "sha256": "2b2e9df03cf97cf582a03eb23d2bc2d3eb078a4cffc9c953f54972c047c6d04f"
+      },
+      {
+        "path": "web/e2e/idle-route-support.ts",
+        "sha256": "da2744c1703f3e21f186ae6fa72c6225a54f9d299c7a5022f3e2b9dfac3cc7d6"
+      },
+      {
+        "path": "web/e2e/png-capture.ts",
+        "sha256": "f50dc121db18150b8c4c4b48cc0fefc897b4d1e4edffc662c119c1c366cad85b"
+      },
+      {
+        "path": "web/e2e/stage-support.ts",
+        "sha256": "f31385408a68974e51b39ba5bdf08d76ece145ecd4a540c200419ffc6e5a6bb1"
+      },
+      {
+        "path": "web/e2e/support.ts",
+        "sha256": "674387c658ed43bf56ceedb80b3df3baf63243e77ece9eeed87ec7e9396f8682"
+      },
+      {
+        "path": "web/journey-tests/idle-foundation-guide.spec.ts",
+        "sha256": "75b24e6d629137176c78ad737ac40642be3b2e7cf6adb5356dece54aac13d77e"
+      },
+      {
+        "path": "web/journey-tests/idle-normal-matrix.spec.ts",
+        "sha256": "ae85bed2754c55d108dd0c286df30e40fd4c265f986ffdaae206d5306d27ed87"
+      },
+      {
+        "path": "web/journey-tests/idle-trial-reopen.spec.ts",
+        "sha256": "c8f3c1dc18d0bd9f4a17fb789a575c780ce950ad283bfdd45d8f4f914c5d011e"
+      },
+      {
+        "path": "web/src/activity-persistence.ts",
+        "sha256": "a5100e6f2d84b627ef17800bfc8f17f3f533566db47f35faab3833da66bab4cf"
+      }
+    ]
+  },
+  "normalInsertionProofs": [
+    "goal-4/evidence/check-cend13-abc/normal-helper-insertion.json",
+    "goal-4/evidence/check-cend13-abc/normal-trial-insertion.json"
+  ],
+  "legacySourceAndAllHistoricalRedReportsRetained": true,
+  "native22IsNotThisUIReview": true,
+  "newAcceptedCycleFailureCannotBeReauthorizedAsAnUnacceptedInstantCommand": true
+}

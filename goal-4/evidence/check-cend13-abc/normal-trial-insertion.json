@@ -1,0 +1,25 @@
+{
+  "path": "web/journey-tests/idle-trial-reopen.spec.ts",
+  "before": "goal-4/evidence/check-cend13-abc/before/web/journey-tests/idle-trial-reopen.spec.ts",
+  "beforeSHA256": "bd64aa32344754a45867dbbcf222af342cf3fadf1f4719830a854d9efb07ab8b",
+  "currentSHA256": "c8f3c1dc18d0bd9f4a17fb789a575c780ce950ad283bfdd45d8f4f914c5d011e",
+  "onlyInsertions": true,
+  "allOriginalStatementsPreserved": true,
+  "operations": [
+    {
+      "at": 0,
+      "old": "",
+      "new": "import {assertSavedTrialEntry} from '../e2e/idle-route-support';\n"
+    },
+    {
+      "at": 1799,
+      "old": "",
+      "new": "const savedEntry="
+    },
+    {
+      "at": 1901,
+      "old": "",
+      "new": ");\n await assertSavedTrialEntry(page,savedEntry.before,savedEntry.a,info"
+    }
+  ]
+}

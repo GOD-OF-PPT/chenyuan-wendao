@@ -1,0 +1,396 @@
+{
+  "wholeCurrentUIFiles": [
+    "art12-narrative-stage.spec.ts",
+    "art15-cultivation-notes.spec.ts",
+    "art17-cave-threshold.spec.ts",
+    "art30-npc-meeting.spec.ts",
+    "art32-milestone-stage.spec.ts",
+    "cend03-review-observations.spec.ts",
+    "cend07-f04-preparation-bench.spec.ts",
+    "cend10-source-goal.spec.ts",
+    "cend11-mainline.spec.ts",
+    "cend13a-cultivation-stage.spec.ts",
+    "cend13b-response-state.spec.ts",
+    "cend13c-preparation-gap.spec.ts",
+    "check-art03-feedback-art.spec.ts",
+    "check-art16-m45.spec.ts",
+    "check-art18-ux.spec.ts",
+    "check-art30-32.spec.ts",
+    "check-cend10-12.spec.ts",
+    "check-cend13-abc.spec.ts",
+    "check-u8.spec.ts",
+    "check-ui35-source-state.spec.ts",
+    "check-uir33-01.spec.ts",
+    "check-uir34-05-07.spec.ts",
+    "cultivation-objects.spec.ts",
+    "demo.spec.ts",
+    "equipment-actors.spec.ts",
+    "equipment-objects.spec.ts",
+    "idle-cultivation.spec.ts",
+    "idle-integration.spec.ts",
+    "idle-milestones.spec.ts",
+    "idle-preparation-active.spec.ts",
+    "idle-preparation-drafts.spec.ts",
+    "idle-preparation.spec.ts",
+    "idle-recovery-choices.spec.ts",
+    "idle-recovery-context.spec.ts",
+    "idle-recovery-flow.spec.ts",
+    "idle-recovery-ui.spec.ts",
+    "idle-review.spec.ts",
+    "idle-sources.spec.ts",
+    "matrix-ui-intent.spec.ts",
+    "matrix-ui-local-recovery.spec.ts",
+    "matrix-ui-milestone-feedback.spec.ts",
+    "narrative-objects.spec.ts",
+    "source-actors.spec.ts",
+    "stage-check.spec.ts",
+    "stage-r1.spec.ts",
+    "stage-r4.spec.ts",
+    "stage-u8-b.spec.ts",
+    "uir33-01-cultivation-active.spec.ts",
+    "uir34-04-resume-wording.spec.ts",
+    "uir34-07-fate-clarity.spec.ts",
+    "uir35-01-goal-authority.spec.ts",
+    "uir35-02-cultivation-fallback.spec.ts",
+    "uir35-03-progress-hierarchy.spec.ts",
+    "ux19-first-loop.spec.ts",
+    "ux20-trial-guidance.spec.ts",
+    "ux20-trial-reading.spec.ts",
+    "ux21-trial-return.spec.ts",
+    "ux25-period-notices.spec.ts",
+    "ux30-primary-copy.spec.ts"
+  ],
+  "rawCurrentSourceCases": 474,
+  "eligibleCurrentCases": 462,
+  "deferredWholeCasesBeforeExecution": [
+    {
+      "suite": "ui",
+      "file": "art12-narrative-stage.spec.ts",
+      "title": "ART12-A8 new surfaces retain real keyboard focus tight-error readability failed portraits and both reduced-motion static results without stamp collisions",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art15-cultivation-notes.spec.ts",
+      "title": "ART15-A6 keyboard missing-image and both reduced-effect modes keep the complete gate book and return without a write",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art17-cave-threshold.spec.ts",
+      "title": "ART17-A11 failed paintings and both reduced-effect choices keep real inventory clocks and source controls",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art30-npc-meeting.spec.ts",
+      "title": "ART30-A3 failed scene and all portrait art keep four actual people facts keyboard returns and readable static reduced-effect stages",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art32-milestone-stage.spec.ts",
+      "title": "ART32-A3 ANSWER_TRIAL keeps full pages original keyboard return and static actual execution when paintings fail in both reduced-effect modes",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "art32-milestone-stage.spec.ts",
+      "title": "ART32-A3 END keeps full pages original keyboard return and static actual execution when paintings fail in both reduced-effect modes",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cultivation-objects.spec.ts",
+      "title": "ART06-A15 missing practitioner art and both reduced-motion modes retain complete readable objects original gates and exact static saved cultivation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "demo.spec.ts",
+      "title": "demo menus and four viewport screenshots retain a visible scope and playable controls at 150 percent",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "equipment-actors.spec.ts",
+      "title": "TA09-A12 both reduced-effect modes and all four failed cold images retain complete readable objects budgets and first real retry results",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "equipment-objects.spec.ts",
+      "title": "ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "narrative-objects.spec.ts",
+      "title": "ART05-A13 missing portraits and scene art plus both reduced-effect modes preserve complete objects real clocks and a static saved life result",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "source-actors.spec.ts",
+      "title": "TA08-A12 both reduction settings missing natural art and natural or four commission error layouts retain complete usable objects and readonly facts",
+      "projectName": "chromium"
+    }
+  ],
+  "outsideActiveRawIdentityAndDeferred": [
+    {
+      "suite": "ui",
+      "file": "demo.spec.ts",
+      "title": "demo menus and four viewport screenshots retain a visible scope and playable controls at 150 percent",
+      "projectName": "chromium"
+    }
+  ],
+  "newWhole8": [
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L1 current incomplete entry pages keep every mandatory fact and explicit source or medicine navigation readonly until its original travel completes",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L2 zero mana no medicine no ally and no relic remain optional while one full fifteen-second entry atomically preserves the complete real preparation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L3 cancelling an unaccepted failed entry discards only that intent while quota and put-success abort of an accepted checkpoint retain the original full-period retry",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L4 a frozen entry review cannot acquire a foreign activity or replacement life even if its disabled DOM control is forced on",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L5 importing an actual question preserves its complete reading without inventing an entry checkpoint or consumption proof",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L6 an unrelated failed six-second trip cannot be claimed or cancelled by entry review and its original retry only changes the actual location",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-K1 actual cultivation returns to its stage then preserves the original paused plan and current material gap through readonly preparation and an atomic retry",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-K2 another signature stays readonly while the paid response retry commits once and only its actual new currency changes the preparation gap",
+      "projectName": "chromium"
+    }
+  ],
+  "normalComplete32": [
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation help/sword/craft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation trade/sword/purchase",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation leave/sword/craft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation help/talisman/purchase",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation trade/talisman/craft",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-foundation-guide.spec.ts",
+      "title": "guided idle foundation leave/talisman/purchase",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/sword/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle help/talisman/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/sword/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle trade/talisman/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/sword/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/craft/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/craft/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/purchase/transmit",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-normal-matrix.spec.ts",
+      "title": "normal idle leave/talisman/purchase/depart",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-trial-reopen.spec.ts",
+      "title": "current normal sword reopens its actual question and every saved battle round without reroll or an automatic next gate",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "journey",
+      "file": "idle-trial-reopen.spec.ts",
+      "title": "current normal talisman reopens its actual question and every saved battle round without reroll or an automatic next gate",
+      "projectName": "chromium"
+    }
+  ],
+  "all1527OnlyDeclarations": true,
+  "allEligibleSelectedKeysInFullCurrentProfile": true,
+  "originalBaseGrepPreservedForActualFullProfile": true,
+  "oldLegacy8NotMixedIntoCurrentExecution": true,
+  "scope": "1440x900 font1 singleChromium; compatibility/environment/performance paused"
+}

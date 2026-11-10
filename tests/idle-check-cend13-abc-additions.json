@@ -1,0 +1,60 @@
+{
+  "format": "chenyuan-check-cend13-abc-additions",
+  "version": 55,
+  "parentVersion": 54,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1080,
+    "signature": "d9948a282f98881d7ba6f2ec478aa1d885a5979e422ee4a42ad1a41735f78588"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L1 current incomplete entry pages keep every mandatory fact and explicit source or medicine navigation readonly until its original travel completes",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L2 zero mana no medicine no ally and no relic remain optional while one full fifteen-second entry atomically preserves the complete real preparation",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L3 cancelling an unaccepted failed entry discards only that intent while quota and put-success abort of an accepted checkpoint retain the original full-period retry",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L4 a frozen entry review cannot acquire a foreign activity or replacement life even if its disabled DOM control is forced on",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L5 importing an actual question preserves its complete reading without inventing an entry checkpoint or consumption proof",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-L6 an unrelated failed six-second trip cannot be claimed or cancelled by entry review and its original retry only changes the actual location",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-K1 actual cultivation returns to its stage then preserves the original paused plan and current material gap through readonly preparation and an atomic retry",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "check-cend13-abc.spec.ts",
+      "title": "CHECK-CEND13-ABC-K2 another signature stays readonly while the paid response retry commits once and only its actual new currency changes the preparation gap",
+      "projectName": "chromium"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "beforeAllPlus": 1081,
+  "reason": "temporary all-plus wrapper mistakenly set grepInvert undefined and exposed the original excluded demo150percent declaration",
+  "executedCases": 0,
+  "originalRawFilesPreserved": "artifacts/goal-4/check-cend13-abc/author/all-plus-*",
+  "afterOriginalBaseGrepInherited": 1080,
+  "actualNew": 8,
+  "normal": 32,
+  "oldProfileSignaturesNotChanged": true
+}
