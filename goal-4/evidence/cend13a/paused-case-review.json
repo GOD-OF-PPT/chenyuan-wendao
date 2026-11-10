@@ -1,0 +1,44 @@
+[
+  {
+    "file": "art15-cultivation-notes.spec.ts",
+    "line": 31,
+    "title": "ART15-A6 keyboard missing-image and both reduced-effect modes keep the complete gate book and return without a write",
+    "source": "test('ART15-A6 keyboard missing-image and both reduced-effect modes keep the complete gate book and return without a write',async({browser},info)=>{for(const mode of ['system','preference']){const context=await browser.newContext({baseURL:'"
+  },
+  {
+    "file": "art17-cave-threshold.spec.ts",
+    "line": 48,
+    "title": "ART17-A11 failed paintings and both reduced-effect choices keep real inventory clocks and source controls",
+    "source": " for(const mode of ['normal','system','preference']){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage();try{await page.emulateMedia({reducedMotion:mode==='"
+  },
+  {
+    "file": "cultivation-objects.spec.ts",
+    "line": 93,
+    "title": "ART06-A15 missing practitioner art and both reduced-motion modes retain complete readable objects original gates and exact static saved cultivation",
+    "source": " for(const mode of ['system','setting']as const){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900},reducedMotion:mode==='system'?'reduce':'no-preference'}),page=await context.newPage();"
+  },
+  {
+    "file": "demo.spec.ts",
+    "line": 68,
+    "title": "demo menus and four viewport screenshots retain a visible scope and playable controls at 150 percent",
+    "source": "test('demo menus and four viewport screenshots retain a visible scope and playable controls at 150 percent',async({page},info)=>{"
+  },
+  {
+    "file": "demo.spec.ts",
+    "line": 69,
+    "title": "demo menus and four viewport screenshots retain a visible scope and playable controls at 150 percent",
+    "source": " for(const [width,height,id,target]of [[1280,720,'opening','leave'],[1440,900,'trial-sword','trial-review-entry'],[1920,1080,'ending-talisman','ending-depart'],[390,844,'battle-sword','attack']]as const){await page.setViewportSize({width,he"
+  },
+  {
+    "file": "equipment-actors.spec.ts",
+    "line": 186,
+    "title": "TA09-A12 both reduced-effect modes and all four failed cold images retain complete readable objects budgets and first real retry results",
+    "source": " for(const mode of ['system','preference'] as const){const context=mode==='system'?null:await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),p=context?await context.newPage():page;try{await p.emulateM"
+  },
+  {
+    "file": "equipment-objects.spec.ts",
+    "line": 156,
+    "title": "ART03-A12 image failure and both reduced-effect settings keep game objects, real cycles and complete fallback controls usable",
+    "source": " for(const mode of ['system','preference']as const){const context=mode==='preference'?await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}):null,p=context?await context.newPage():page,localErrors:strin"
+  }
+]

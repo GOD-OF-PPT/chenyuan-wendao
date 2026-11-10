@@ -1,0 +1,11 @@
+{
+  "format": "cend13a-actual-template-render-equivalence",
+  "beforeAppSHA256": "e48a2a03faad3bb9e4061b4e7c088c122c8a29d12edfe007ebe3e5cb39f9730d",
+  "currentAppSHA256": "5daa01ca768540176a7d04b36db4510d7e373543256ea6454429f30d5a69bbc5",
+  "beforeTemplateSHA256": "9bd858de5ce91de8a8490ccea9d9adb1721f0a619e7a4489aa1ef85bcbaf887c",
+  "currentTemplateSHA256": "cb55d7b73b60d2acc2e10b25f57527b9b1a820674cd6595ae8523077dfc4df64",
+  "actualNodeVueCompilerSHA256": "1589330944895ed00e541fdea16fd8e36aedbf9475334a7c259f049d62f17af6",
+  "renderCodeSHA256": "306590e0d7a84ff7bc960890fb4de4eec1e8f35d1a81341e3204799b8753deee",
+  "renderBytes": 272821,
+  "sameRenderCode": true
+}

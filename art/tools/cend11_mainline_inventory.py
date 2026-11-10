@@ -1,3 +1,4 @@
+from cend13a_stage_inventory import prior_stage_handoff_bytes
 import hashlib,json
 from pathlib import Path
 LEDGER="art/redesign/cend11-mainline.json"
@@ -118,6 +119,7 @@ MANIFEST={'format': 'chenyuan-mainline-hud-object',
                       'goal-4/amendments/2026-11-10-cend11-mainline-input.md',
                       'goal-4/research/cend11-mainline-sources.json']}
 def prior_mainline_hud_bytes(path,raw):
+ raw=prior_stage_handoff_bytes(path,raw)
  row=next((r for r in MANIFEST['parents']if Path(r['path']).name==Path(path).name),None)
  if not row or hashlib.sha256(raw).hexdigest()!=row['sha256']:return raw
  if row.get('indentLines'):
@@ -144,7 +146,7 @@ def validate_mainline_hud(root):
  assert json.dumps(json.loads(local(LEDGER).read_text()),sort_keys=True)==json.dumps(MANIFEST,sort_keys=True),'MH11 immutable typed scope'
  total=0
  for row in MANIFEST['parents']:
-  raw=local(row['path']).read_bytes();before=local(row['before']).read_bytes()
+  raw=prior_stage_handoff_bytes(row['path'],local(row['path']).read_bytes());before=local(row['before']).read_bytes()
   assert len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'MH11 exact current parent'
   assert len(before)==row['beforeBytes']and hashlib.sha256(before).hexdigest()==row['beforeSHA256'],'MH11 original retained'
   assert prior_mainline_hud_bytes(row['path'],raw)==before,'MH11 complete parent inverse'

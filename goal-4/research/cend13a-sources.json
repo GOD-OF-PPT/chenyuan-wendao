@@ -1,0 +1,15 @@
+{
+  "readAtUTC": "2026-11-10T00:41:42.762657+00:00",
+  "sources": [
+    {
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "applied": "将已受理的当前行动作为视觉主位，减少预算表单对执行场景的争抢；复用人物轮廓与实际修炼效果。"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
+      "applied": "开始进入玩法是玩家主动选择；普通周期、同步、失败重试和迟到旧回复不擅自改变阅读上下文。"
+    }
+  ],
+  "specificNumbersAreProjectDerivedNotSourceCertification": true,
+  "engineOrResponsiveMigration": false
+}

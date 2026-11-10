@@ -1,0 +1,231 @@
+[
+  {
+    "file": "art15-cultivation-notes.spec.ts",
+    "bytes": 16317,
+    "sha256": "a0c997dcc48390342419945ded9fb94327158afc03bd8b89de9772ae08917ed1",
+    "pausedScopeCandidates": [
+      {
+        "line": 31,
+        "source": "test('ART15-A6 keyboard missing-image and both reduced-effect modes keep the complete gate book and return without a write',async({browser},info)=>{for(const mode of ['system','preference']){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900},redu"
+      }
+    ]
+  },
+  {
+    "file": "art17-cave-threshold.spec.ts",
+    "bytes": 17153,
+    "sha256": "0290f4b5c3bd5995be7c88dd16b71f05130eeaa418cb0e9ab63b08fd14b9b8ef",
+    "pausedScopeCandidates": [
+      {
+        "line": 48,
+        "source": " for(const mode of ['normal','system','preference']){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),page=await context.newPage();try{await page.emulateMedia({reducedMotion:mode==='system'?'reduce':'no-preference'});await page.route('**/art/"
+      }
+    ]
+  },
+  {
+    "file": "cend03-review-observations.spec.ts",
+    "bytes": 12232,
+    "sha256": "0784172014af8d68715bdce8cd417cfc183f32cc81b87f6f398fa1ba5b038d11",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "cend13a-cultivation-stage.spec.ts",
+    "bytes": 20442,
+    "sha256": "f273483060696a551ea6f0a14765abdd91c0938ee37621bdf089b70ca674b617",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "check-art03-feedback-art.spec.ts",
+    "bytes": 44039,
+    "sha256": "7d508cd469c80642c572c82d46ca936dc78371ec41067beda0522b633a8f8f89",
+    "pausedScopeCandidates": [
+      {
+        "line": 24,
+        "source": " listen(page);validateGame(source);if(!replaceExisting)await useJourneyClock(page);await page.goto('/');await expect(page.locator('.app-shell')).toHaveAttribute('data-font-scale','1');await expect(page.getByTestId('save-status')).toHaveText(replaceExisting?'已保存':'尚无存档');let input=page.getByLabel('导入"
+      }
+    ]
+  },
+  {
+    "file": "check-art16-m45.spec.ts",
+    "bytes": 13553,
+    "sha256": "cbcca242074cb29da745512de33751591fc84235d519d47bbd98777179a24140",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "check-art18-ux.spec.ts",
+    "bytes": 9507,
+    "sha256": "bf27ffdb85a017dc8a53353e548ca47288a3de7021665d016bb74c291b0196e2",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "check-u8.spec.ts",
+    "bytes": 26662,
+    "sha256": "822230ddf4273de5ff45e84de6dc235af52cf75df2c7e2e05306fe53e312dcfc",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "check-uir33-01.spec.ts",
+    "bytes": 13056,
+    "sha256": "6bc767c322b779607d2902f8248020dd1195b81c95a4669ccce8cd1b1e855c14",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "cultivation-objects.spec.ts",
+    "bytes": 61683,
+    "sha256": "d6440354646a91667c6c45e9e87b53837a6c0b90c163ad9112fbcce5f0e1c932",
+    "pausedScopeCandidates": [
+      {
+        "line": 93,
+        "source": " for(const mode of ['system','setting']as const){const context=await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900},reducedMotion:mode==='system'?'reduce':'no-preference'}),page=await context.newPage();listen(page);try{await page.route(/\\.(webp|png)(\\?|$)/,r=>r."
+      }
+    ]
+  },
+  {
+    "file": "demo.spec.ts",
+    "bytes": 31138,
+    "sha256": "1ae73485fba1399f9481f07032cb625a4da3fb30fd0d37055eec230ae68718b6",
+    "pausedScopeCandidates": [
+      {
+        "line": 68,
+        "source": "test('demo menus and four viewport screenshots retain a visible scope and playable controls at 150 percent',async({page},info)=>{"
+      },
+      {
+        "line": 69,
+        "source": " for(const [width,height,id,target]of [[1280,720,'opening','leave'],[1440,900,'trial-sword','trial-review-entry'],[1920,1080,'ending-talisman','ending-depart'],[390,844,'battle-sword','attack']]as const){await page.setViewportSize({width,height});await loaded(page,id);const before=await demoGame(pag"
+      }
+    ]
+  },
+  {
+    "file": "equipment-actors.spec.ts",
+    "bytes": 89489,
+    "sha256": "0e2ebe85a6912a95e82abf02817e8399dddc370f2bc925f6e1d9b5672a2b9a1e",
+    "pausedScopeCandidates": [
+      {
+        "line": 30,
+        "source": " listen(page);if(virtual)await useJourneyClock(page);await page.goto('/');await expect(page.locator('.app-shell')).toHaveAttribute('data-font-scale','1');let input=page.getByLabel('导入已有存档',{exact:true});let confirmation:string|null=null;"
+      },
+      {
+        "line": 186,
+        "source": " for(const mode of ['system','preference'] as const){const context=mode==='system'?null:await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}),p=context?await context.newPage():page;try{await p.emulateMedia({reducedMotion:mode==='system'?'reduce':'no-preference'"
+      }
+    ]
+  },
+  {
+    "file": "equipment-objects.spec.ts",
+    "bytes": 70788,
+    "sha256": "5233d421cc6d06bf39d497a18b54854d8a1ec69a0e664c98da2acba4d0f96021",
+    "pausedScopeCandidates": [
+      {
+        "line": 156,
+        "source": " for(const mode of ['system','preference']as const){const context=mode==='preference'?await browser.newContext({baseURL:'http://127.0.0.1:4173',viewport:{width:1440,height:900}}):null,p=context?await context.newPage():page,localErrors:string[]=[];if(context)p.on('pageerror',e=>localErrors.push(e.mes"
+      }
+    ]
+  },
+  {
+    "file": "idle-cultivation.spec.ts",
+    "bytes": 12654,
+    "sha256": "18384ff998451f8760805e5f8bd5f3f8b427e0052e68332bda580e8d9005c4ba",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "idle-integration.spec.ts",
+    "bytes": 15738,
+    "sha256": "44dbe436208686c3eaf9c88f071d761c327531a50e6f0c78a23c46a281ec337f",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "idle-preparation.spec.ts",
+    "bytes": 15300,
+    "sha256": "8566aaed00d07ff4a05e91b622a469fdf5236d7a105cb7811148b6149f012354",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "idle-recovery-ui.spec.ts",
+    "bytes": 2854,
+    "sha256": "9ff763d9c767872cb25dea28d16c162adbe5e6aaf29f7355120a2febaf2b320d",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "matrix-ui-intent.spec.ts",
+    "bytes": 16442,
+    "sha256": "db49e1874330c587992b1bbf752a176a21860d2d1e6e41e395523e980240f3ee",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "matrix-ui-local-recovery.spec.ts",
+    "bytes": 28230,
+    "sha256": "30b2a4d63de9c91f4afc61e2d7fea6bddd0a7fe962701ff67150c119344599fd",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "stage-check.spec.ts",
+    "bytes": 28031,
+    "sha256": "fa4dddaea3bbf257a25b757695545c123f9db85e580255126d640c240904ea2e",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "stage-r1.spec.ts",
+    "bytes": 14070,
+    "sha256": "8e656081aa27886456f2f186a3438dba1915b0eba87e5f1ad24cc0ea757753c4",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "stage-u8-b.spec.ts",
+    "bytes": 15124,
+    "sha256": "03ce92f3c2c779dd59d5b26dab5b643d9291e9381031ef91126df7e4bc510abf",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "uir33-01-cultivation-active.spec.ts",
+    "bytes": 14298,
+    "sha256": "ae9452b8a8a2d502fc6823d8190b45e73505c503c3d34a8361b0d52afc1c48b3",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "uir34-04-resume-wording.spec.ts",
+    "bytes": 13677,
+    "sha256": "951eef19ef232f041c37c00fdbe5479941e9dcfd131335cfeecebe51461ed199",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "uir35-01-goal-authority.spec.ts",
+    "bytes": 11321,
+    "sha256": "9c661e0926600ece4057959132aeae2417cf5783ed76befba7dbf6f4e2d3e2ce",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "uir35-02-cultivation-fallback.spec.ts",
+    "bytes": 13986,
+    "sha256": "0b038ffe8e11d1fad5360ff4883add1e7589b166a4a3f0b73f9ed0f45c492987",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "uir35-03-progress-hierarchy.spec.ts",
+    "bytes": 15271,
+    "sha256": "22882b8bcd987a34085e98ccc355f4ff16d8443005be14b6311cf44d91366346",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "ux19-first-loop.spec.ts",
+    "bytes": 8867,
+    "sha256": "70764069d38f1aa8f15d432081fa4d02159b177539140791dcf44a5ee8ee62ec",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "ux21-trial-return.spec.ts",
+    "bytes": 11644,
+    "sha256": "d9124ad3fd5cfce9ad1e88867e78c3679e4697190d1593ecdfb20a6e44a5c36e",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "ux25-period-notices.spec.ts",
+    "bytes": 13797,
+    "sha256": "caabd21797d13b082e499c9eae7373d1273ecc6d7e3a6d8294547f56d9f1dc47",
+    "pausedScopeCandidates": []
+  },
+  {
+    "file": "ux30-primary-copy.spec.ts",
+    "bytes": 16479,
+    "sha256": "f631a6ed4c84d9f9348af23997f092f769877c50eba7cd5f61af120e61773814",
+    "pausedScopeCandidates": []
+  }
+]

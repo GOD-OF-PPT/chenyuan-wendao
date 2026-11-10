@@ -1,0 +1,42 @@
+{
+  "format": "chenyuan-cultivation-start-stage-additions",
+  "version": 52,
+  "parentVersion": 51,
+  "profile": {
+    "configuration": "playwright.idle.config.ts",
+    "count": 1051,
+    "signature": "d95c142d063d449c372ddc42457aaa6c0b2a0841e54524fb9137b311addd4f90"
+  },
+  "additions": [
+    {
+      "suite": "ui",
+      "file": "cend13a-cultivation-stage.spec.ts",
+      "title": "CEND13-A1 an accepted finite natural start enters its real cultivation stage while later readonly parameter edits survive ordinary ticks",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13a-cultivation-stage.spec.ts",
+      "title": "CEND13-A2 assisted cultivation returns to its actual saved budget stage and refresh resumes only the same explicit authorization",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13a-cultivation-stage.spec.ts",
+      "title": "CEND13-A3 failed and native saving START keep the original planner and canonical retry without a premature stage handoff",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13a-cultivation-stage.spec.ts",
+      "title": "CEND13-A4 navigation during a native pending cultivation START cannot be replaced by its later successful acknowledgement",
+      "projectName": "chromium"
+    },
+    {
+      "suite": "ui",
+      "file": "cend13a-cultivation-stage.spec.ts",
+      "title": "CEND13-A5 a delayed native START reply cannot borrow an externally resumed generation to close the original planner or take its clock",
+      "projectName": "chromium"
+    }
+  ]
+}
