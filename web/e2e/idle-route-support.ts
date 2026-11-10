@@ -1,3 +1,9 @@
+import {resolve} from '../../src/full/engine.ts';
+import {completeActivity} from '../../src/full/activity.ts';
+import {currentVersions} from '../../src/full/versions.ts';
+import {canonicalFingerprint} from '../../src/full/receipts.ts';
+import {validateActivityReceipt} from '../src/activity-persistence.ts';
+import {captureFixedPng} from './png-capture';
 import {selectSource as inspectSourceLibrary} from './stage-support';
 import { test, expect, type Page, type Locator, type TestInfo } from '@playwright/test';
 import { newGame, advance } from '../../src/full/engine.ts';
@@ -213,6 +219,27 @@ export async function readJourneyState(page:Page):Promise<{game:any;activity:any
  }));
 }
 
+/** Coherent read-only proof of the actual entry, never a replacement write or reward clock. */
+export async function assertSavedTrialEntry(page:Page,game:Game,a:any,info:TestInfo){
+ const raw=await page.evaluate(({runId,commandId})=>new Promise<any>((ok,no)=>{
+  const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();no(Error('Entry observer cannot create storage'));};q.onerror=()=>no(q.error);
+  q.onsuccess=()=>{const db=q.result,tx=db.transaction(['full-state','full-receipts'],'readonly'),values:any={version:db.version};
+   for(const key of ['current','previous','activity','checkpoint','checkpoint-owner']){const r=tx.objectStore('full-state').get(key);r.onsuccess=()=>values[key]=r.result;}
+   const receipt=tx.objectStore('full-receipts').get(runId+':'+commandId);receipt.onsuccess=()=>values.receipt=receipt.result;
+   tx.oncomplete=()=>{db.close();ok(values);};tx.onabort=()=>{db.close();no(tx.error);};
+  };
+ }),{runId:a.runId,commandId:a.nextCommand.commandId});
+ const formal=resolve(game,a.nextCommand),r=raw.receipt;
+ expect(raw.version).toBe(9);expect(a.version).toBe(7);expect(a.plan).toEqual({kind:'milestone',action:{type:'START_TRIAL'},maxCycles:1});expect(a.cycleMs).toBe(15000);
+ expect(raw.current).toEqual(formal.nextState);expect(raw.previous).toEqual(game);expect(raw.checkpoint).toEqual({format:'chenyuan-checkpoint',version:1,kind:'trial',sourceRunId:game.core.runId,sourceRevision:game.core.revision,versions:currentVersions,snapshot:game});
+ expect(raw['checkpoint-owner']).toEqual({format:'chenyuan-checkpoint-scope',version:1,runId:game.core.runId,sourceRunId:game.core.runId,sourceRevision:game.core.revision,kind:'trial'});
+ const input={kind:'TICK',tick:{commandId:a.nextCommand.commandId,runId:a.runId,expectedRevision:a.gameRevision,activityId:a.id,expectedActivityRevision:a.revision,ownerId:a.ownerId,generation:a.generation}};
+ expect(r.version).toBe(2);expect(r.input).toEqual(input);expect(r.command).toEqual(a.nextCommand);expect(r.result).toEqual(formal.result);expect(r.fingerprint).toBe(canonicalFingerprint(input));expect(()=>validateActivityReceipt(r,raw.current)).not.toThrow();expect(r.proof.activityBefore).toEqual(a);expect(r.proof.stateAfter).toEqual(raw.current);expect(r.proof.resolvedAt).toBeGreaterThanOrEqual(a.dueAt);
+ expect(raw.activity).toEqual(completeActivity(raw.current,a,formal.result,{commandId:a.nextCommand.commandId,now:r.proof.resolvedAt}));expect(r.activity).toEqual(raw.activity);expect(raw.current.trial).toEqual({stage:0,answer:null});expect(raw.current.battle).toBeNull();
+ await info.attach('actual-entry-full-checkpoint-owner-receipt',{body:JSON.stringify({game,a,raw,formal}),contentType:'application/json'});
+ return raw;
+}
+
 export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,scenario=runIdleScenario,settings:{terminalRealm?:string;reopenStages?:boolean}={}) {
   test.setTimeout(240_000);
   // This Playwright version consumes interval arrays; each observation receives a fresh list.
@@ -228,6 +255,7 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
   const expected = scenario(options, { runId: initial.core.runId, name: initial.core.player.name });
   expect(expected.failure).toBeNull(); expect(expected.success).toBe(true);
   const summary: any[] = []; let onlineMs = 0, cycles = 0; const reopened=new Set<number>();
+  const currentPixels=new Set<string>(),representative=(options.choice==='leave'&&options.school==='sword'&&options.preparation==='purchase'||options.choice==='help'&&options.school==='talisman'&&options.preparation==='gather')&&options.ending==='transmit';
   for (const [index, step] of expected.steps.entries()) {
     await test.step(`${index + 1}. ${step.label}`, async () => {
       if (step.kind === 'configuration') { await configure(page, step.action, index); summary.push({ kind: step.kind, action: step.action }); return; }
@@ -240,6 +268,8 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
       await expect.poll(async () => { const a = await activitySnapshot(page); return a?.id !== oldActivity?.id && a?.status === 'running'; }, { intervals: [10, 20, 50, 100] }).toBe(true);
       const accepted=await readJourneyState(page);let current=accepted.activity;
       expect(current.plan).toEqual(selected.expectedPlan); expect(accepted.game).toEqual(before);
+      const pixelKind=current.plan.kind==='cultivation'?'cultivation':current.plan.kind==='milestone'&&current.plan.action.type==='ANSWER_TRIAL'?'answer':null;
+      if(representative&&pixelKind&&!currentPixels.has(pixelKind)){await expect.poll(()=>page.locator('[data-art-state=loading]').evaluateAll(ns=>ns.filter(n=>n.checkVisibility()).length)).toBe(0);const held=await readJourneyState(page);await captureFixedPng(page,info.outputPath('normal-accepted-'+pixelKind+'.png'));expect(await readJourneyState(page)).toEqual(held);currentPixels.add(pixelKind);}
       const activityId = current.id; let completed = 0, stepMs = 0;
       while (current.status === 'running') {
         expect(completed, 'the finite arrangement cannot exceed the expected completed cycles').toBeLessThan(step.cycles);
@@ -252,6 +282,7 @@ export async function runVisibleIdleRoute(page:Page,info:TestInfo,options:any,sc
         await expect(page.getByTestId('save-status')).toHaveText('已保存');
         const committed=await readJourneyState(page);
         expect(committed.game).toEqual(advance(game, command));
+        if(current.plan.kind==='milestone'&&current.plan.action.type==='START_TRIAL')await assertSavedTrialEntry(page,game,current,info);
         await expect(page.getByTestId('error')).toHaveCount(0);
         current = committed.activity; completed++; cycles++; stepMs += ms; onlineMs += ms;
         if(settings.reopenStages&&current.plan.kind==='battle'&&current.status==='running'&&!reopened.has(current.plan.trialStage)){

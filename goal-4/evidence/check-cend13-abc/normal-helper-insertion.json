@@ -1,0 +1,37 @@
+{
+  "path": "web/e2e/idle-route-support.ts",
+  "before": "goal-4/evidence/check-cend13-abc/before/web/e2e/idle-route-support.ts",
+  "beforeSHA256": "5113456696aac00759ec7d007a52e0493e8545a39f2d6a14f0de2ce79106615d",
+  "currentSHA256": "da2744c1703f3e21f186ae6fa72c6225a54f9d299c7a5022f3e2b9dfac3cc7d6",
+  "allOriginalStatementsPreserved": true,
+  "onlyInsertions": true,
+  "operations": [
+    {
+      "at": 0,
+      "old": "",
+      "new": "import {resolve} from '../../src/full/engine.ts';\nimport {completeActivity} from '../../src/full/activity.ts';\nimport {currentVersions} from '../../src/full/versions.ts';\nimport {canonicalFingerprint} from '../../src/full/receipts.ts';\nimport {validateActivityReceipt} from '../src/activity-persistence.ts';\nimport {captureFixedPng} from './png-capture';\n"
+    },
+    {
+      "at": 16858,
+      "old": "",
+      "new": "/** Coherent read-only proof of the actual entry, never a replacement write or reward clock. */\nexport async function assertSavedTrialEntry(page:Page,game:Game,a:any,info:TestInfo){\n const raw=await page.evaluate(({runId,commandId})=>new Promise<any>((ok,no)=>{\n  const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();no(Error('Entry observer cannot create storage'));};q.onerror=()=>no(q.error);\n  q.onsuccess=()=>{const db=q.result,tx=db.transaction(['full-state','full-receipts'],'readonly'),values:any={version:db.version};\n   for(const key of ['current','previous','activity','checkpoint','checkpoint-owner']){const r=tx.objectStore('full-state').get(key);r.onsuccess=()=>values[key]=r.result;}\n   const receipt=tx.objectStore('full-receipts').get(runId+':'+commandId);receipt.onsuccess=()=>values.receipt=receipt.result;\n   tx.oncomplete=()=>{db.close();ok(values);};tx.onabort=()=>{db.close();no(tx.error);};\n  };\n }),{runId:a.runId,commandId:a.nextCommand.commandId});\n const formal=resolve(game,a.nextCommand),r=raw.receipt;\n expect(raw.version).toBe(9);expect(a.version).toBe(7);expect(a.plan).toEqual({kind:'milestone',action:{type:'START_TRIAL'},maxCycles:1});expect(a.cycleMs).toBe(15000);\n expect(raw.current).toEqual(formal.nextState);expect(raw.previous).toEqual(game);expect(raw.checkpoint).toEqual({format:'chenyuan-checkpoint',version:1,kind:'trial',sourceRunId:game.core.runId,sourceRevision:game.core.revision,versions:currentVersions,snapshot:game});\n expect(raw['checkpoint-owner']).toEqual({format:'chenyuan-checkpoint-scope',version:1,runId:game.core.runId,sourceRunId:game.core.runId,sourceRevision:game.core.revision,kind:'trial'});\n const input={kind:'TICK',tick:{commandId:a.nextCommand.commandId,runId:a.runId,expectedRevision:a.gameRevision,activityId:a.id,expectedActivityRevision:a.revision,ownerId:a.ownerId,generation:a.generation}};\n expect(r.version).toBe(2);expect(r.input).toEqual(input);expect(r.command).toEqual(a.nextCommand);expect(r.result).toEqual(formal.result);expect(r.fingerprint).toBe(canonicalFingerprint(input));expect(()=>validateActivityReceipt(r,raw.current)).not.toThrow();expect(r.proof.activityBefore).toEqual(a);expect(r.proof.stateAfter).toEqual(raw.current);expect(r.proof.resolvedAt).toBeGreaterThanOrEqual(a.dueAt);\n expect(raw.activity).toEqual(completeActivity(raw.current,a,formal.result,{commandId:a.nextCommand.commandId,now:r.proof.resolvedAt}));expect(r.activity).toEqual(raw.activity);expect(raw.current.trial).toEqual({stage:0,answer:null});expect(raw.current.battle).toBeNull();\n await info.attach('actual-entry-full-checkpoint-owner-receipt',{body:JSON.stringify({game,a,raw,formal}),contentType:'application/json'});\n return raw;\n}\n\n"
+    },
+    {
+      "at": 20814,
+      "old": "",
+      "new": "const currentPixels=new Set<string>(),representative=(options.choice==='leave'&&options.school==='sword'&&options.preparation==='purchase'||options.choice==='help'&&options.school==='talisman'&&options.preparation==='gather')&&options.ending==='transmit';\n  "
+    },
+    {
+      "at": 22156,
+      "old": "",
+      "new": "pixelKind=current.plan.kind==='cultivation'?'cultivation':current.plan.kind==='milestone'&&current.plan.action.type==='ANSWER_TRIAL'?'answer':null;\n      if(representative&&pixelKind&&!currentPixels.has(pixelKind)){await expect.poll(()=>page.locator('[data-art-state=loading]').evaluateAll(ns=>ns.filter(n=>n.checkVisibility()).length)).toBe(0);const held=await readJourneyState(page);await captureFixedPng(page,info.outputPath('normal-accepted-'+pixelKind+'.png'));expect(await readJourneyState(page)).toEqual(held);currentPixels.add(pixelKind);}\n      const "
+    },
+    {
+      "at": 23754,
+      "old": "",
+      "new": ");\n        if(current.plan.kind==='milestone'&&current.plan.action.type==='START_TRIAL')await assertSavedTrialEntry(page,game,current,info"
+    }
+  ],
+  "noNewClockOrGameWrite": true,
+  "original240000AndOriginalCycleArgumentsPreserved": true
+}
