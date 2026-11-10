@@ -100,6 +100,12 @@ async function running(page: Page) {
   return a;
 }
 
+async function inspectAcceptedPlan(page: Page) {
+  const before = await state(page);
+  await click(page.getByTestId('cultivation-active-plan'));
+  expect((await state(page)).raw).toEqual(before.raw);
+}
+
 async function pausedAssisted(page: Page) {
   const before = await seed(page);
   await openHubFeature(page, 'cultivation-details');
@@ -110,7 +116,7 @@ async function pausedAssisted(page: Page) {
   expect((await state(page)).raw).toEqual(before.raw);
   await click(page.getByTestId('training-start')); const started = await running(page);
   expect(started.plan).toEqual(assistedPlan); expect(started.cycleMs).toBe(60000);
-  await page.getByTestId('hub-close').click(); await page.clock.fastForward(30000);
+  await inspectAcceptedPlan(page); await page.getByTestId('hub-close').click(); await page.clock.fastForward(30000);
   expect((await state(page)).game).toEqual(before.game);
   await click(page.getByTestId('training-pause'));
   await expect.poll(async () => (await activitySnapshot(page))?.status).toBe('paused');
@@ -194,7 +200,7 @@ test('M03-I2 an edited paused plan remains a draft through reading and return un
   const replacement = await running(page), beforeCycle = await state(page);
   expect(replacement.id).not.toBe(paused.activity!.id);
   expect(replacement.plan).toEqual({ ...assistedPlan, maxCycles: 1, stoneBudget: 20 });
-  expect(beforeCycle.game).toEqual(paused.game); await click(page.getByTestId('hub-close'));
+  expect(beforeCycle.game).toEqual(paused.game); await inspectAcceptedPlan(page); await click(page.getByTestId('hub-close'));
   const completed = await oneCycle(page, replacement, beforeCycle);
   expect(completed.after.activity!.status).toBe('stopped'); expect(completed.after.activity!.completedCycles).toBe(1);
   expect(completed.after.activity!.spentStones).toBe(20); expect(completed.expected.result.costs.stones).toBe(20);
@@ -211,7 +217,7 @@ test('M03-I3 idle and naturally stopped cultivation retain the original start en
   await expect(page.getByTestId('training-start')).toBeEnabled(); await expect(page.getByTestId('training-start')).not.toHaveText(/替换暂停安排/);
   await click(page.getByTestId('training-start')); const natural = await running(page), beforeCycle = await state(page);
   expect(natural.plan).toEqual({ kind: 'cultivation', method: 'natural', maxCycles: 1, until: 'cycles', stoneBudget: 0, stoneReserve: 0 });
-  expect(natural.cycleMs).toBe(60000); await click(page.getByTestId('hub-close'));
+  expect(natural.cycleMs).toBe(60000); await inspectAcceptedPlan(page); await click(page.getByTestId('hub-close'));
   const completed = await oneCycle(page, natural, beforeCycle);
   expect(completed.after.activity!.status).toBe('stopped'); expect(completed.expected.result.costs.stones).toBe(0);
   await expect(page.getByTestId('cultivation-active-resume')).toHaveCount(0); await expect(page.getByTestId('cultivate')).toBeEnabled();
