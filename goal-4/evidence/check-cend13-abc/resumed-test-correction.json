@@ -1,0 +1,78 @@
+{
+  "findings": "redundant secondary install changes context-wide primary clock and fires pending timers; exact read-stall not reproduced",
+  "originalTimeoutsGameCostsPeriodsAndAllL4AssertionsPreserved": true,
+  "oneRedundantSecondaryClockCallRemoved": true,
+  "primaryClockAndRawDBEqualityAdded": true,
+  "boundedPassiveMetadataNoValuesOrWrites": true,
+  "wrappersRestoredOnSuccessAndFinally": true,
+  "onlyTwoNewTestSourcesChanged": [
+    {
+      "path": "web/e2e/check-cend13-abc.spec.ts",
+      "before": "goal-4/evidence/check-cend13-abc/resume-before/web/e2e/check-cend13-abc.spec.ts",
+      "beforeSHA256": "0bc43bf05374aa2493d4df8078c5bbe4edea132f94f00ed6895f969e4769949e",
+      "currentSHA256": "3125029330398f020ca0c850cb4bcb2101d3bc1a1d1e1a0fef677749531eacd0",
+      "operations": [
+        {
+          "at": 938,
+          "old": "",
+          "new": "observeStartup,startupEvidence,"
+        },
+        {
+          "at": 10637,
+          "old": "",
+          "new": "riginalClock=await page.evaluate(()=>({wall:Date.now(),monotonic:performance.now()}));const o"
+        },
+        {
+          "at": 10818,
+          "old": "\n try{",
+          "new": ""
+        },
+        {
+          "at": 10824,
+          "old": "u",
+          "new": "ob"
+        },
+        {
+          "at": 10828,
+          "old": "Jo",
+          "new": "rveStart"
+        },
+        {
+          "at": 10837,
+          "old": "rneyClock",
+          "new": "p"
+        },
+        {
+          "at": 10846,
+          "old": "",
+          "new": "\n try{"
+        },
+        {
+          "at": 10937,
+          "old": "",
+          "new": ");await startupEvidence(other,info);expect(await page.evaluate(()=>({wall:Date.now(),monotonic:performance.now()}))).toEqual(originalClock);expect(await database(other)).toEqual(raw"
+        },
+        {
+          "at": 13364,
+          "old": "",
+          "new": "await startupEvidence(other,info);"
+        }
+      ]
+    },
+    {
+      "path": "web/e2e/check-cend13-abc-support.ts",
+      "before": "goal-4/evidence/check-cend13-abc/resume-before/web/e2e/check-cend13-abc-support.ts",
+      "beforeSHA256": "ee9192640572e3e9f9f67280bc167a693d67573d55914b7d8d6fc68a535d9162",
+      "currentSHA256": "25b012eda28760f3169abf39b8aec3a7d6937687ef2a4c64b6226938c484e155",
+      "operations": [
+        {
+          "at": 10812,
+          "old": "",
+          "new": "\n/** Passive isolated-test startup metadata; restore wrappers before assertions continue. */\nexport async function observeStartup(page:Page){await page.addInitScript(()=>{\n const w=window as any,events:any[]=[],factory=IDBFactory.prototype,db=IDBDatabase.prototype,store=IDBObjectStore.prototype,open=factory.open,transaction=db.transaction,get=store.get;\n const note=(event:string,fields:Record<string,unknown>)=>{if(events.length<80)events.push({sequence:events.length,event,...fields});};\n const opening=function(this:IDBFactory,...args:any[]){const request=Reflect.apply(open,this,args);note('open',{database:args[0],version:args[1]??null});for(const event of ['success','error','blocked','upgradeneeded'])request.addEventListener(event,()=>note('open.'+event,{database:args[0],errorName:event==='error'?request.error?.name??null:null}));return request;};\n const transacting=function(this:IDBDatabase,...args:any[]){const tx=Reflect.apply(transaction,this,args);note('transaction',{database:this.name,mode:tx.mode});for(const event of ['complete','abort','error'])tx.addEventListener(event,()=>note('transaction.'+event,{database:this.name,mode:tx.mode,errorName:tx.error?.name??null}));return tx;};\n const getting=function(this:IDBObjectStore,...args:any[]){const request=Reflect.apply(get,this,args),database=this.transaction.db.name,name=this.name;note('read',{database,store:name});for(const event of ['success','error'])request.addEventListener(event,()=>note('read.'+event,{database,store:name,errorName:event==='error'?request.error?.name??null:null}));return request;};\n factory.open=opening;db.transaction=transacting;store.get=getting;\n w.__abcStartup={events,stop(){if(factory.open===opening)factory.open=open;if(db.transaction===transacting)db.transaction=transaction;if(store.get===getting)store.get=get;}};\n});}\nexport async function startupEvidence(page:Page,info:TestInfo){if(page.isClosed())return;const observed=await page.evaluate(()=>{const w=window as any;w.__abcStartup?.stop();return{save:document.querySelector('[data-testid=save-status]')?.textContent,local:document.querySelector('[data-testid=local-data-status]')?.textContent,events:w.__abcStartup?.events??[]};});await attach(info,'second-page-native-startup-metadata',observed);}\n"
+        }
+      ]
+    }
+  ],
+  "allDebugProbesRetainedOnlyUnderIgnoredArtifacts": true,
+  "noProductNormalHelperOrLegacySourceChanges": true
+}

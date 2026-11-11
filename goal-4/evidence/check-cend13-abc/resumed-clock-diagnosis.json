@@ -1,0 +1,147 @@
+{
+  "resumedTask": "CHECK-CEND13-ABC",
+  "sameCallSiteClockInterferenceReproduced": true,
+  "preciseFinding": "reinstall of context-wide clock via second page changes primary wall/monotonic clocks and fires existing timer; remove only redundant reinstall, keep already installed shared clock",
+  "originalReadinessStallReproducedInTwoUnmodifiedReplays": false,
+  "doesNotClaimConfirmedOriginalIDBRootCause": true,
+  "newRegression": "assert primary clock unchanged before second page creation through its ready state; bounded passive IDB metadata on failure; preserve original8s and fullL4 behavior",
+  "currentProductStateUnchanged": true,
+  "records": [
+    {
+      "label": "observed-original",
+      "stats": {
+        "startTime": "2026-11-11T01:39:41.596Z",
+        "duration": 13343.609999999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "clock": {
+        "beforeOtherClock": {
+          "wall": 1893459600600,
+          "mono": 604,
+          "save": "已保存",
+          "local": "显示设置已保存；试玩记录仅在本机，不上传。"
+        },
+        "afterOtherClock": {
+          "wall": 1893459600000,
+          "mono": 3600604,
+          "save": "已保存",
+          "local": "显示设置已保存；试玩记录仅在本机，不上传。"
+        }
+      },
+      "report": "artifacts/goal-4/check-cend13-abc/diagnosis/observed-original/report.json",
+      "reportSHA256": "282c80c043241cdcda5c028238a31210d495aa59f9ef3b6b30e0398913bd7612",
+      "probeSHA256": "f2b3638ca29d174ecab8c1ba0aa95c0144361eb3a08f356050ffa206c7fc95a3",
+      "onlyFunctionalDifference": "redundant useJourneyClock(other) present or absent",
+      "allOriginalTimeoutsPreserved": true
+    },
+    {
+      "label": "observed-shared-clock",
+      "stats": {
+        "startTime": "2026-11-11T01:41:02.890Z",
+        "duration": 12408.34,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "clock": {
+        "beforeOtherClock": {
+          "wall": 1893459600600,
+          "mono": 604,
+          "save": "已保存",
+          "local": "显示设置已保存；试玩记录仅在本机，不上传。"
+        },
+        "afterOtherClock": {
+          "wall": 1893459600600,
+          "mono": 604,
+          "save": "已保存",
+          "local": "显示设置已保存；试玩记录仅在本机，不上传。"
+        }
+      },
+      "report": "artifacts/goal-4/check-cend13-abc/diagnosis/observed-shared-clock/report.json",
+      "reportSHA256": "5d27a1e84021df8f6e5666b11784998b305f96cc8a5744e3f9784fb9cf7b577b",
+      "probeSHA256": "152d474b14c5ede0a12e0b8c4db6d2b268abd62497a32e10a220c4af2dee5008",
+      "onlyFunctionalDifference": "redundant useJourneyClock(other) present or absent",
+      "allOriginalTimeoutsPreserved": true
+    },
+    {
+      "label": "clock-red",
+      "stats": {
+        "startTime": "2026-11-11T01:43:07.706Z",
+        "duration": 7651.063999999999,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "clock": {
+        "beforeOtherClock": {
+          "wall": 1893459600600,
+          "mono": 605,
+          "save": "已保存",
+          "local": "显示设置已保存；试玩记录仅在本机，不上传。"
+        },
+        "afterOtherClock": {
+          "wall": 1893459600000,
+          "mono": 3600605,
+          "save": "已保存",
+          "local": "显示设置已保存；试玩记录仅在本机，不上传。"
+        },
+        "pendingTimerFired": 1
+      },
+      "report": "artifacts/goal-4/check-cend13-abc/diagnosis/clock-red/report.json",
+      "reportSHA256": "03e784c53deb49be70c8c3c650874818c3b58597efb5c12ddacd902523071cd7",
+      "probeSHA256": "53ff14942a05beaa31043371453d937af95a1f22f8b910f00230ccfab3cbe191",
+      "onlyFunctionalDifference": "redundant useJourneyClock(other) present or absent",
+      "allOriginalTimeoutsPreserved": true
+    },
+    {
+      "label": "clock-fixed",
+      "stats": {
+        "startTime": "2026-11-11T01:43:17.675Z",
+        "duration": 12129.447,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "clock": {
+        "beforeOtherClock": {
+          "wall": 1893459600600,
+          "mono": 604,
+          "save": "已保存",
+          "local": "显示设置已保存；试玩记录仅在本机，不上传。"
+        },
+        "afterOtherClock": {
+          "wall": 1893459600600,
+          "mono": 604,
+          "save": "已保存",
+          "local": "显示设置已保存；试玩记录仅在本机，不上传。"
+        },
+        "pendingTimerFired": 0
+      },
+      "report": "artifacts/goal-4/check-cend13-abc/diagnosis/clock-fixed/report.json",
+      "reportSHA256": "fd635c4bd53d55aadabd8f3636e5e680f488017948ab8f015e114d9f1dd972ae",
+      "probeSHA256": "e4ff773dfb9d1f411bc61b2adf8ce946947e469abe1869f415cac1becd86e18b",
+      "onlyFunctionalDifference": "redundant useJourneyClock(other) present or absent",
+      "allOriginalTimeoutsPreserved": true
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://playwright.dev/docs/api/class-clock",
+      "readAt": "2026-11-11",
+      "scope": "shared BrowserContext and startup installation order"
+    },
+    {
+      "installedVersion": "1.56.1",
+      "localClockSource": "web/node_modules/playwright-core/lib/server/clock.js",
+      "sha256": "cab36df101d3f651ee917842fccba9c62568a09587e18f0b0d932fb99bf6edf4"
+    }
+  ],
+  "temporaryInstrumentedProbesKeptOnlyInIgnoredArtifacts": true,
+  "humanAcceptanceNotClaimed": true
+}
