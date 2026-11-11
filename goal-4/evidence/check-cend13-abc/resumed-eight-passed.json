@@ -1,0 +1,19 @@
+{
+  "source": "1cf4024d94c3a246cfe8d61756b9c162ed674366",
+  "runtime": "e46818155946588b85d66c06fb89aed0d88929803e0d790c343023f9268e44b1",
+  "actualWhole8Passed": 8,
+  "seconds": 57.394962,
+  "inputsExact": 6089,
+  "zeroSkippedRetryFlaky": true,
+  "originalPreGuidanceThreeFailuresRetained": true,
+  "originalReadStallRootCauseStillNotClaimed": true,
+  "confirmedSharedClockInterferenceRemovedAndPrimaryClockEqualityPassed": true,
+  "normal32Handle": 93543,
+  "related462Handle": 51746,
+  "coreHandle": 68442,
+  "normal32And462NowActuallyLaunched": true,
+  "notYetComplete": true,
+  "terminal": "artifacts/goal-4/check-cend13-abc/consumer4/new-terminal.json",
+  "terminalSHA256": "7d44415e37d411f9e1e2b37e8100ac756fd31d2449090bf46c22a89bade6b03c",
+  "nativeGoalStillBlockedToolNoResumeEndpoint": true
+}
