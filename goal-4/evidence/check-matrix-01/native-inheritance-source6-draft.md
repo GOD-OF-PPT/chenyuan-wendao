@@ -1,7 +1,0 @@
-# source6原生继承待验草案
-
-source6只将Stage的target条件限于BATTLE；单表达式反向替换后，文件sha逐字节回到source5 Stage3c24db47，大小10874B不变，imports及其他逻辑未漂移。App007bfc19、Store/DB/Clock/正式规则保持。
-
-298声明的83份未变闭包重新逐hash相同，M03原始来源与idle-scenarios补充窗口保留。source6须由根实际重跑App相关34；source5的34通过此时只是历史来源，绝不转贴source6。最终332合成等待新的raw/post输入，旧native-verification/source5文件均不改。
-
-当前构建身份状态见JSON（若根构建尚未刷新则明确pending）；没有新测试执行/675输入修改/兼容/用户档操作。

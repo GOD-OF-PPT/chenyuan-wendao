@@ -1,6 +1,0 @@
-{
-  "clock": "real Chromium monotonic and wall clock; no Playwright clock",
-  "monotonicElapsedMs": 30663.69999998808,
-  "wallBeyondDueMs": 222,
-  "minimumMs": 30000
-}

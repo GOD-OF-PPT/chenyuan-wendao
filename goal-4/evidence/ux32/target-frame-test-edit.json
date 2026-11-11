@@ -1,9 +1,0 @@
-{
-  "file": "web/e2e/ux32-market-copy.spec.ts",
-  "beforeSHA256": "db893fa32caf5a56f064227f0a6a63d1ac68310dc91ed46d5e3a9c08ac9ef73c",
-  "afterSHA256": "c761ff2fe52875ad00bf6a2c71f69bb6844100809a32469df037e0bf10e24076",
-  "before": "await page.getByLabel('采购灵石保留量').fill('3');await stage.closeSupplySettings(page);});",
-  "after": "await page.getByLabel('采购灵石保留量').fill('3');await frame(page,info,'complete-target-inventory-fields',page.getByTestId('market-plan-dialog'));await stage.closeSupplySettings(page);});",
-  "reason": "Apply existing full font/control/viewport/PNG check while inventory-target controls are expanded; all original actions and assertions retained",
-  "productChanged": false
-}

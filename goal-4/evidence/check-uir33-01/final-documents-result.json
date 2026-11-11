@@ -1,7 +1,0 @@
-{
-  "command": [
-    "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cbase-doc-02/ci-runner/chenyuan-art-venv/bin/python3",
-    "scripts/check_docs.py"
-  ],
-  "exit": 0
-}

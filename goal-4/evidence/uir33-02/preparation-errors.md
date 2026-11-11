@@ -1,1 +1,0 @@
-First baseline config lost a closing object brace in config generation (33603 terminal1 BABEL_PARSE_ERROR); no browser case executed. Invalid configs retained; corrected brace only. First asset positive10387 failed because playable-flow direct hashing did not yet apply the new exact inverse; no old ledger resigned.

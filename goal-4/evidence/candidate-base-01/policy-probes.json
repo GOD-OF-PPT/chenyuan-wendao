@@ -1,8 +1,0 @@
-{
-  "actualSmokeBasicIdleReportAccepted": true,
-  "actualSmokeCases": 11,
-  "originalCandidateInventoryRejectsOneBrowser": true,
-  "denial": "Missing declared firefox/ui",
-  "scope": "Original unmodified functions only; basic report acceptance is not full matrix verification. Declaration coverage rejection does not claim all other gates were executed.",
-  "packageAndDeliveryNotInvoked": true
-}

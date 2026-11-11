@@ -1,7 +1,0 @@
-{
-  "web/src/App.vue": "8d1b128ef7e927f2df9c869d827030908fbef620962333a06a2969f2b39978fc",
-  "web/src/CultivationSite.vue": "e142a23b35f435c73ca10a99332d41fdbb0baf5bfae4fbd46b2775841a2ac851",
-  "art/tools/ux33_inventory.py": "a9548fffee0b8d3bb82f7edd275c78c9affea038971ae33f3ffb48e46aeb96f8",
-  "art/tools/check_inventory.py": "fa53385d4ce569172adb750387e47359e7d2e6b29c8e2d50bc923d6d83eb44f5",
-  "art/tools/test_inventory.py": "9d0af7e24172b7f6003c8d066a630e521fdc601143caa16056a25ddf13cdfb21"
-}

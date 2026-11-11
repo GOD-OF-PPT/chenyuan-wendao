@@ -1,8 +1,0 @@
-{
-  "source": "artifacts/goal-4/matrix-m04/native-legacy-baseline-declared.json",
-  "bytes": 56445,
-  "sha256": "37e7f2a319ebc4bf776224bee3060ec2e2cbfcd6af917e20bd18f2cf6ed00bb6",
-  "originalCount": 82,
-  "copiedByteExact": true,
-  "legacyInventoryOnlyNotExecution": true
-}

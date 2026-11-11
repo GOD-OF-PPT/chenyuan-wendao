@@ -1,7 +1,0 @@
-# source5原生依赖继承草案
-
-仅更新当前身份，不改source3草案及原报告。source5 2ef1fcd1532f6815bdd5402cff363d9a8f24dedd6da115c65dbdd3c348c4b05d 的236运行文件现场逐hash匹配；App为007bfc19736edcc707371abc918a61aca8d95d4664bc97cd0c4eadd14b52278d。
-
-原M03 source11的332具名声明/原356 before-after/idle-scenarios补充快照原件不变。source5重新核24文件298声明的83份完整仓库依赖、全部26spec与支撑/配置/锁文件、关键30份Game/Store/DB/Clock hash均未变。只有local-startup30及online-recovery4沿fault-app消费改动App/Stage/CSS，应在source5实际运行；当前仍pending，不称332当前重跑。
-
-K13旧source4实红及root source5 showMotion目标存在性修缮是UI证据，不能当作34原生已过。实际归并待root当前34终态；旧源34通过不能转贴source5标签。无新测试执行、兼容/性能或用户档操作。

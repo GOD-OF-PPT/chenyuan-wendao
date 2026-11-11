@@ -1,2 +1,0 @@
-import base from '../../../web/playwright.idle.config';
-export default {...base,testDir:'/Users/gordon/githome/chenyuan-wendao/web/e2e',testMatch:['art18-mainline-usability.spec.ts','cend03-review-observations.spec.ts'],webServer:{...base.webServer,cwd:'/Users/gordon/githome/chenyuan-wendao/web'},outputDir:'/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/review-c-end-03/capture-v3-results',reporter:[['json',{outputFile:'/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/review-c-end-03/capture-v3-report.json'}]]};

@@ -1,8 +1,0 @@
-{
-  "source": "1cf4024 current L2",
-  "singleAdditionalInput": "same actual trial confirm dblclick instead of single decision",
-  "extraAssertions": "exact1START/1TICK plus reload fullDB/checkpoint/question no autoanswer",
-  "original15sLast1msFullGameAllStoresAndZeroOptionalPreparationAssertionsPreserved": true,
-  "notAnAddedRegisteredCase": true,
-  "noProductOrNormalSourceChanged": true
-}

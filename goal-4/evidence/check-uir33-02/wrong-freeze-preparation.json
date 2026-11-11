@@ -1,6 +1,0 @@
-{
-  "reason": "Commit still running when worktree captured prior HEAD; identity assertion correctly rejected frozen d42e9f9 instead of d6b4577. Core was erroneously launched despite rejection; stop this old-source preparation, do not count tests or reuse as current.",
-  "pid": 17468,
-  "command": "node scripts/validate-core.mjs /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-02/final/core",
-  "cwd": "p17468\nfcwd\nn/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-uir33-02/final/source\n"
-}

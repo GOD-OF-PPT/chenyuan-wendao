@@ -1,8 +1,0 @@
-{
-  "port": 4174,
-  "pid": 12562,
-  "cwdObserved": "p12562\nfcwd\nn/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web\n",
-  "commandObserved": "  PID  PPID COMMAND\n12562 12546 /Users/gordon/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node /Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check90-after-ux30/source/web/node_modules/vite/bin/vite.js --host 127.0.0.1 --port 4174 --strictPort\n",
-  "sourceHead": "436f274",
-  "scope": "Actual native test server ownership during the live frozen native-copy phase; no user browser or save operated"
-}

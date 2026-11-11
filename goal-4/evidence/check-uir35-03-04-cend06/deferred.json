@@ -1,5 +1,0 @@
-{
-  "scope": "1440x900 font1 single Chromium only",
-  "wholeCaseRegex": "ART37 (system|saved) reduced effects|TA08-A12 both reduction settings",
-  "reason": "System/saved motion media preference mixed cases deferred before execution; complete original assertions preserved. No compatibility/environment/performance matrix executed."
-}

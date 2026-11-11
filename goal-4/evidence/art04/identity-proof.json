@@ -1,8 +1,0 @@
-{
-  "implementationCommit": "92aa57c9f99a5b7bc71eae2efebb959c27fde8b0",
-  "archive": "artifacts/goal-4/art04/runtime-92aa57c.tar",
-  "archiveSHA256": "1889f01082bee40eb2e2c28c9e0fb1fd078a88b2a51f578ac5a2eb6961b35fc7",
-  "runtimeSources": 220,
-  "sourceDigest": "e5560974989cbb3dde7cb6b3d87226a5a43801676f7ba273e101f3fa8d6b8791",
-  "runtimeAllEqual": true
-}

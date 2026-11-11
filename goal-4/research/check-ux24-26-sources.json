@@ -1,9 +1,0 @@
-{
-  "read": "2026-10-31",
-  "source": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/114",
-  "principles": [
-    "Differentiate current context and expected action.",
-    "Use meaningful distinct labels for groups."
-  ],
-  "projectInference": "Audit the true gate, actual period before action, current saved activity versus unconfirmed draft as one chain; no prescribed numbers or certification."
-}

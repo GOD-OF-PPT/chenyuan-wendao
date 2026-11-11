@@ -1,8 +1,0 @@
-{
-  "sameCOWPositiveFirst": true,
-  "ledgerRemovedAndPrimaryFullyOriginalButNewCSSStillRejected": true,
-  "rejection": "C13C missing ledger exact original parent",
-  "allParentsOriginalAccepted": true,
-  "rootCSSPreserved": true,
-  "scope": "additional real strict negative probe, not an added unittest method or UI case"
-}

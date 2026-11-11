@@ -1,6 +1,0 @@
-{
-  "reason": "Actual saved-awaiting-owner pixels revealed incorrect pause guidance; source corrected in da75c15. Preserve original incomplete f855 core; validate corrected source next.",
-  "terminatedOwnedResourcePids": [
-    76017
-  ]
-}

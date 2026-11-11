@@ -1,7 +1,0 @@
-# source7原生继承待验草案
-
-当前构建1451a50fd963676adba12396c67985f81ae74bb71d648f1841443182d39e5815/236源逐hash匹配。新增GoalPanel仍仅被App消费，原24文件298声明的83份完整依赖重新核同；全部26native spec、正式Game/Store/DB/Clock与原来源不变。
-
-根当前正确--project=chromium的34运行中，corrected-before675已关联；此前variadic project选择错误是0测试，原log保留，不能当产品失败或通过。当前34终态前不生成source7最终332。旧source5最终及所有草案保原身份。相对M03现在五旧UI文件＋一新FeedbackSkip，不再复用四旧标签。
-
-无新测试/构建执行、675修改、兼容/性能或用户档操作；待根raw/post再逐声明合并34当前＋298历史。

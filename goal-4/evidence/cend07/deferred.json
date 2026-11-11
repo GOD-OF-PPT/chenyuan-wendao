@@ -1,8 +1,0 @@
-{
-  "scope": "Compatibility/environment/performance remain paused. Fixed1440x900 font1 Chromium actual UI only.",
-  "wholeMixedCasesExcludedBeforeExecution": "ART37 (system|saved) reduced effects",
-  "wholeCases": 2,
-  "assertionsPreserved": true,
-  "noBrowserMobileResolutionFontPerformanceMatrix": true,
-  "fullMatrixAndFinalObligationsRemain": true
-}

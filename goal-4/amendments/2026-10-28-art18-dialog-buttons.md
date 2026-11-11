@@ -1,1 +1,0 @@
-把页面中的弹窗和按钮根据游戏风格重新设计实现 [$imagegen](/Users/gordon/.codex/skills/.system/imagegen/SKILL.md) [$game-studio:game-studio](/Users/gordon/.codex/plugins/cache/openai-curated-remote/game-studio/0.1.2/skills/game-studio/SKILL.md) 

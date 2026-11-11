@@ -1,7 +1,0 @@
-{
-  "commit": "2b302bff62a84c1048103154cadeaefa77daae2e",
-  "tree": "d0791838f7a3d2ba2bc9f14e704b0b6a2c3fcdbd",
-  "branch": "codex/goal-4-online-recovery",
-  "runtimeBaseline": "goal-4/evidence/ux29/identity-proof.json",
-  "inputSHA256": "c887d1f09de10780a1615920f5181e61eab65663d9f3ae7015d3c6947adae7c7"
-}

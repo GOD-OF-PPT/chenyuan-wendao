@@ -1,8 +1,0 @@
-{
-  "originalExecutedScript": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/cend05/resumed-opening/observe.mjs",
-  "originalExecutedSha256": "f5f76f591f5026a31f50cad24ea36296aad2602021c8213a76cd39eb429b9194",
-  "guardedReproducer": "opening-observer.mjs",
-  "guardedSha256": "1b70468fc2067eda9bfb570c648b816970ae7541529c4aaa55f04ff96f5cdf18",
-  "change": "Require a brand new ignored artifact output directory and verify all112 actual resources before launching; never output Game DB to tracked evidence or overwrite the original run",
-  "formalCoverageAdded": 0
-}

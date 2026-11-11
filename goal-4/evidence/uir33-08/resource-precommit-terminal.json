@@ -1,8 +1,0 @@
-{
-  "session": 93814,
-  "exit": 0,
-  "methods": 681,
-  "durationSeconds": 427.575,
-  "scope": "all art/tools test_*.py on implemented source; original same resource inputs as product683fe2e; no before/after whole-input snapshot for this preliminary run",
-  "notProofOf": "pixels, compatibility, runtime balance or full game acceptance"
-}

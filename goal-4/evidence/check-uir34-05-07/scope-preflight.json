@@ -1,8 +1,0 @@
-{
-  "authorizedCases": 297,
-  "files": 33,
-  "exclusionPattern": "ART32-A3 |ART12-A8 |ART18-E9 system-reduction|ART31-A5 |ART05-A13 |ART06-A15 |CHECK-K10 |UX23-S6 |ART30-A3 ",
-  "allSpecialSourceLinesReviewed": true,
-  "onlyFixed1440x900Font1Chromium": true,
-  "deferredOriginalStatementsUnchanged": true
-}

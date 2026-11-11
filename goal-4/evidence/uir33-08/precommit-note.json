@@ -1,7 +1,0 @@
-{
-  "scope": "one UIR33-08 task; verification pending",
-  "baseline": "3 expected UI failures, full4194 inputs unchanged; source aaabcb43",
-  "preliminary": "57 matrix methods pass after recorded scope fix, two new resource methods pass; full resource running",
-  "nativeBytes": 21952,
-  "runtimeChange": "AlchemyWorkshop template only; original script and CSS intact"
-}

@@ -1,7 +1,0 @@
-{
-  "url": "http://127.0.0.1:56887/",
-  "runtime": "e9bfa70dd8cfd4d4a0317d6e64e8b1b00c8af4c57e07e9555a13aee3749d1469",
-  "files": 112,
-  "allMatch": true,
-  "method": "readonly HTTP payload hashes only; no browser state or save reads/writes"
-}

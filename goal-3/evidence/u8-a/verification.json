@@ -1,9 +1,0 @@
-{
-  "task": "Goal3 U8-A historical in-progress baseline",
-  "status": "not independently delivered or accepted; implementation continued in U8-A-R1",
-  "historicalSourceDigest": "2e6e1672471f83ad25b93559d1db53e16c67aba365b934c384ba34fcc45eb2dd",
-  "baselineBuild": "artifacts/goal-3/u8-a/tested-build.json",
-  "pixelCoverage": "artifacts/goal-3/u8-a/visual-coverage-current-complete.json",
-  "successor": "goal-4/evidence/r1/verification.json",
-  "parentU8AComplete": false
-}

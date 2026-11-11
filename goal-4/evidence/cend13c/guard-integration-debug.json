@@ -1,8 +1,0 @@
-{
-  "syntaxGenerationFailure": "missing raw-literal call terminator; original drafts/guard-before-syntax-fix.py retained",
-  "firstCompletePositiveFailure": "CT03 current source at legacy exact current-identity comparison",
-  "fix": "both actual CT03 prior entry and its direct validation/read-only callback reads apply the full approved new source inverse; complete original guard remains byte reversible",
-  "oldCapsAndLedgersUnchanged": true,
-  "notAUIValidationOrPass": true,
-  "secondCompletePositiveFailure": "PB04 current source: CT03 complete current source; PB04 calls the distinct CT03 prior entry"
-}

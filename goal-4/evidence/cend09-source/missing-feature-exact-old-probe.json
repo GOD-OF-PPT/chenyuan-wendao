@@ -1,9 +1,0 @@
-{
-  "actualSameCOWPositiveFirst": true,
-  "ledgerAndCSSRemoved": true,
-  "parentWithoutNewImportButModifiedOriginal": true,
-  "dedicatedUnexpectedlyAcceptedBeforeRepair": true,
-  "globalOriginalWholeSourceStillGuards": true,
-  "change": "Require complete exact original parent for disabled feature; unknown legacy source cannot be silently accepted by dedicated guard.",
-  "scope": "Same in-progress second guard review, no new delivery attempt or Game change"
-}

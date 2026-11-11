@@ -1,7 +1,0 @@
-# 独立静态复核
-
-2026-10-23，既有art02_battle子agent只读复核当前0024生产差异。Alchemy已真实消费sharedhook；删去的onMounted/activated arm及deactivate clear由immediate runtime及visible同步watch覆盖。paused布尔归属只在进入/离开paused清理，正常周期/末轮stopped不因revision或completedCycles变化吞成果。错误优先于暂停文案。Global tracker先consume再按暂停抑制，sync失效沿原generation取消nextTick/rAF，原完整proof/私有bridge/旧敌方/重放/终态保持。
-
-该复核未执行测试/像素，不作为独立用户验收。随后主控逐图发现独立ProgressTrack旧数字残留，原静态无回归意见不能推翻真实红；更强A5已实际红绿，修复另行复核。
-
-最终ProgressTrack精确diff另由art02_battle只读复核：可选store不存在时getter稳定undefined，sync仅清timer/change，不改value/max/Game，不关dialog或夺焦点；普通/末轮id/gen/owner/pausing不变保留原1400ms。静态复核未发现具体新增回归，不代替主控当前245及真实像素。

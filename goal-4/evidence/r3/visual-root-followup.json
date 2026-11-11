@@ -1,8 +1,0 @@
-{
-  "sourceDigest": "5dd781c31a53a501b9dbf46801b166ee5275cb77ea1dc64c254d75a2e9a3f815",
-  "image": "goal-4/evidence/r3/book-region-contained.jpg",
-  "finding": "Mastered and equipped book still displays LEARN location failure at cave, misleading players who can compare/equip locally. Preserve first-learning cost metadata but distinguish mastery and local configuration.",
-  "scope": "User-facing selected-object guidance; underlying formal LEARN and EQUIP rules unchanged",
-  "action": "Cancel obsolete complete UI run (84 passed,1 interrupted,45 not run), retain all records; add visible regression and fix presentation before final source verification.",
-  "humanAcceptance": false
-}
