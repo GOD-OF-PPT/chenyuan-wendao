@@ -1,0 +1,226 @@
+{
+  "format": "chenyuan-trial-ui-current-coverage",
+  "version": 1,
+  "runtime": "e46818155946588b85d66c06fb89aed0d88929803e0d790c343023f9268e44b1",
+  "legacyObligations": 8,
+  "currentUI": 8,
+  "completeNormalRoutes": 32,
+  "actualFullEntryProofs": 26,
+  "exactCounterparts": [
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "sword/purchase: normal new game enters the actual question with one full preparation checkpoint",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "journey",
+          "file": "idle-normal-matrix.spec.ts",
+          "title": "normal idle leave/sword/purchase/transmit",
+          "projectName": "chromium"
+        },
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L2 zero mana no medicine no ally and no relic remain optional while one full fifteen-second entry atomically preserves the complete real preparation",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "normal new life",
+        "explicit ordinary preparation and independent travel",
+        "frozen entry cancel",
+        "full fifteen-second entry checkpoint and owner",
+        "one actual seal cost",
+        "question and reopen"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "talisman/craft: normal new game enters the actual question with one full preparation checkpoint",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "journey",
+          "file": "idle-normal-matrix.spec.ts",
+          "title": "normal idle help/talisman/craft/transmit",
+          "projectName": "chromium"
+        },
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L2 zero mana no medicine no ally and no relic remain optional while one full fifteen-second entry atomically preserves the complete real preparation",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "normal new life",
+        "explicit ordinary preparation and independent travel",
+        "frozen entry cancel",
+        "full fifteen-second entry checkpoint and owner",
+        "one actual seal cost",
+        "question and reopen"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "an incomplete real preparation remains inspectable and navigation does not acquire or consume materials",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L1 current incomplete entry pages keep every mandatory fact and explicit source or medicine navigation readonly until its original travel completes",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "complete mandatory and seal facts",
+        "readonly tracking/source stack",
+        "optional medicine navigation",
+        "original six-second explicit travel",
+        "no hidden acquisition"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "real zero-mana no-potion no-ally no-relic preparation can enter without optional gates",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L2 zero mana no medicine no ally and no relic remain optional while one full fifteen-second entry atomically preserves the complete real preparation",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "MP0 and no medicine/ally/relic stay optional",
+        "explicit current reading",
+        "cancel before acceptance readonly",
+        "fifteen-second entry",
+        "complete checkpoint/owner/receipt and MP0 preserved"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "checkpoint quota failure stays in preparation, cancellation discards retry, and a fresh confirmed retry charges once",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L3 cancelling an unaccepted failed entry discards only that intent while quota and put-success abort of an accepted checkpoint retain the original full-period retry",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "unaccepted START failure and cancellation",
+        "new explicit authorization after cancellation",
+        "accepted TICK checkpoint quota rollback",
+        "request-success native abort rollback",
+        "same original completed-period retry",
+        "one actual seal and full checkpoint"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "a changed or replaced cross-tab progress invalidates the fixed entry review",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L4 a frozen entry review cannot acquire a foreign activity or replacement life even if its disabled DOM control is forced on",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "frozen full original review identity",
+        "foreign activity CAS invalidates before any Game result",
+        "foreign revision stale",
+        "replacement life invalidates",
+        "forced disabled DOM confirmation cannot write",
+        "cancel cannot end replacement"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "an imported question never claims a preparation checkpoint that the import did not contain",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L5 importing an actual question preserves its complete reading without inventing an entry checkpoint or consumption proof",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "actual question readable",
+        "import has no invented checkpoint or owner",
+        "no false consumption/success or restore controls",
+        "all stores readonly"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    },
+    {
+      "legacy": {
+        "suite": "ui",
+        "file": "trial-preparation.spec.ts",
+        "title": "an earlier failed navigation cannot be retried as the reviewed trial entry or discarded by cancelling it",
+        "projectName": "chromium"
+      },
+      "current": [
+        {
+          "suite": "ui",
+          "file": "check-cend13-abc.spec.ts",
+          "title": "CHECK-CEND13-ABC-L6 an unrelated failed six-second trip cannot be claimed or cancelled by entry review and its original retry only changes the actual location",
+          "projectName": "chromium"
+        }
+      ],
+      "obligations": [
+        "original unrelated travel pending",
+        "current running/pending protection blocks new entry confirmation",
+        "no foreign entry retry or discard",
+        "leaving reading keeps original global retry",
+        "same original six-second result only changes real location"
+      ],
+      "currentContract": "docs/decisions/0009-milestone-idle-contract.md"
+    }
+  ],
+  "sourceClosures": {
+    "ui": 45,
+    "journey": 35
+  },
+  "history": [],
+  "legacyRawFailuresStillRetained": true,
+  "oldMobileAndNative22RemainSeparate": true,
+  "humanOrCompatibilityAccepted": false
+}

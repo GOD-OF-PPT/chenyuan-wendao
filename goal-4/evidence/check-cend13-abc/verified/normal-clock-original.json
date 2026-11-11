@@ -1,0 +1,11 @@
+{
+  "actualCurrentTestSource": "1cf4024",
+  "everyOriginalNormalHelperAndEveryRoundStatementRetained": true,
+  "onlyReadOnlyEntryProofAndTwoRepresentativePixelInsertions": true,
+  "noInsertedClockAdvanceOrTimeoutChange": true,
+  "fullSourceInverseProofs": [
+    "goal-4/evidence/check-cend13-abc/normal-helper-insertion.json",
+    "goal-4/evidence/check-cend13-abc/normal-trial-insertion.json"
+  ],
+  "current32StillRunningNotYetClaimedPassed": true
+}

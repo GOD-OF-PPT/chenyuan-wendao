@@ -1,0 +1,61 @@
+{
+  "derivedOnlyFromActualSameCallMeasurements": true,
+  "scope": "current8 complete UI; not new cases or visual acceptance",
+  "facts": [
+    {
+      "name": "L1-incomplete-real-seal-and-gates-geometry",
+      "actualRows": 17,
+      "fontRangeParentNavAndActualHitAllPassed": true
+    },
+    {
+      "name": "L2-zero-mana-explicit-finite-review-geometry",
+      "actualRows": 5,
+      "fontRangeParentNavAndActualHitAllPassed": true
+    },
+    {
+      "name": "L2-real-question-without-free-resources-geometry",
+      "actualRows": 14,
+      "fontRangeParentNavAndActualHitAllPassed": true
+    },
+    {
+      "name": "L3-quota-has-no-false-preparation-checkpoint-geometry",
+      "actualRows": 15,
+      "fontRangeParentNavAndActualHitAllPassed": true
+    },
+    {
+      "name": "L4-frozen-original-review-after-foreign-progress-geometry",
+      "actualRows": 12,
+      "fontRangeParentNavAndActualHitAllPassed": true
+    },
+    {
+      "name": "L5-imported-question-no-invented-checkpoint-geometry",
+      "actualRows": 15,
+      "fontRangeParentNavAndActualHitAllPassed": true
+    },
+    {
+      "name": "L6-unrelated-travel-stays-the-only-pending-intent-geometry",
+      "actualRows": 18,
+      "fontRangeParentNavAndActualHitAllPassed": true
+    },
+    {
+      "name": "K1-real-running-cultivation-stage-geometry",
+      "actualRows": 10,
+      "fontRangeParentNavAndActualHitAllPassed": true
+    },
+    {
+      "name": "K1-cultivation-failed-but-material-stock-unchanged-geometry",
+      "actualRows": 20,
+      "fontRangeParentNavAndActualHitAllPassed": true
+    },
+    {
+      "name": "K2-response-accepted-but-paid-result-not-saved-geometry",
+      "actualRows": 18,
+      "fontRangeParentNavAndActualHitAllPassed": true
+    },
+    {
+      "name": "K2-only-saved-response-cost-changes-current-gap-geometry",
+      "actualRows": 20,
+      "fontRangeParentNavAndActualHitAllPassed": true
+    }
+  ]
+}

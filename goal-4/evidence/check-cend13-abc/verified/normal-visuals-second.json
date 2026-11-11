@@ -1,0 +1,30 @@
+[
+  {
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/consumer4/normal-results/idle-normal-matrix-normal-idle-leave-sword-purchase-transmit-chromium/normal-accepted-answer.png",
+    "pngSHA256": "feb29277d22f6c2aa7f871b1566326ea0a2201efb9eb438b007ac63d546b02de",
+    "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/consumer4/views/normal-last-normal-accepted-answer.jpg",
+    "jpegSHA256": "39a2d00a87767f8617c26cfd7868376e24eb556065f044786096d8a5f88d51a1",
+    "size": [
+      1440,
+      900
+    ],
+    "directlyViewed": true,
+    "observedWhileOriginalNormal32StillRunning": true,
+    "notAdditionalCases": true,
+    "viewMode": "same1440x900JPEG68,2percall"
+  },
+  {
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/consumer4/normal-results/idle-normal-matrix-normal-idle-leave-sword-purchase-transmit-chromium/normal-accepted-cultivation.png",
+    "pngSHA256": "2eb24ab40d1fb5d0d5d9ba83a976ad0d635ae94a7dc5652c06a4ed8376598768",
+    "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/consumer4/views/normal-last-normal-accepted-cultivation.jpg",
+    "jpegSHA256": "006ed0f9b14d44c3492631806369b34d23f2132f21aa4d366683eb8c0b326acb",
+    "size": [
+      1440,
+      900
+    ],
+    "directlyViewed": true,
+    "observedWhileOriginalNormal32StillRunning": true,
+    "notAdditionalCases": true,
+    "viewMode": "same1440x900JPEG68,2percall"
+  }
+]

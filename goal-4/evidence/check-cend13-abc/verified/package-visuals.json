@@ -1,0 +1,30 @@
+[
+  {
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/consumer4/package-results/check-cend13-abc-CHECK-CEN-eb48e-ed-DOM-control-is-forced-on-chromium/L4-frozen-original-review-after-foreign-progress.png",
+    "pngSHA256": "fc84955efc73f9599bee843bc76e80913ee9f7e435dfd0950dd3509ca61c0651",
+    "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/consumer4/views/package-L4-frozen-original-review-after-foreign-progress.jpg",
+    "jpegSHA256": "b0db12014d4b35a50ccb97e516e7142e3016574ef64bcabddcc9a7cef5948100",
+    "size": [
+      1440,
+      900
+    ],
+    "directlyViewed": true,
+    "actualArchiveSource": "569c4ce",
+    "actualTestSource": "1cf4024",
+    "viewMode": "same1440x900JPEG68, at most2per call"
+  },
+  {
+    "png": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/consumer4/package-results/check-cend13-abc-CHECK-CEN-de573-aration-and-an-atomic-retry-chromium/K1-cultivation-failed-but-material-stock-unchanged.png",
+    "pngSHA256": "cf23b397fc44d9ee8d756479ae8adf980f9e4c493a416670eb91aa1af23de2ab",
+    "jpeg": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/consumer4/views/package-K1-cultivation-failed-but-material-stock-unchanged.jpg",
+    "jpegSHA256": "56434a6a96c73bebd6f2ef66c92517227006b7696bd1ed5ba3d4b14824995ef9",
+    "size": [
+      1440,
+      900
+    ],
+    "directlyViewed": true,
+    "actualArchiveSource": "569c4ce",
+    "actualTestSource": "1cf4024",
+    "viewMode": "same1440x900JPEG68, at most2per call"
+  }
+]

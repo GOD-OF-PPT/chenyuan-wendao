@@ -1,0 +1,15 @@
+{
+  "rows": [
+    {
+      "name": "core",
+      "exit": 0
+    },
+    {
+      "name": "build",
+      "exit": 0
+    }
+  ],
+  "inputs": 6087,
+  "exact": true,
+  "exit": 0
+}

@@ -1,0 +1,15 @@
+{
+  "actualWholeL2DerivedSequencePassed": true,
+  "oneStartOneTickAfterActualDoubleClick": true,
+  "reloadKeepsCompleteNativeStore": true,
+  "fullTrialPreparationCheckpointPreserved": true,
+  "same15sAndLast1msAndMP0OptionalAssertionsPreserved": true,
+  "originalReportSHA256": "6918f316eb0e761a2ba5b5495870cdf2ec4633079042ef5a21361a6dd680c857",
+  "sourceDerivationSHA256": "e0adf22047bd02a242fa7597f666543a7b0e557737cbc19a2753554053b81e4f",
+  "notNewUniqueCoverage": true,
+  "completeProof": {
+    "path": "/Users/gordon/githome/chenyuan-wendao/artifacts/goal-4/check-cend13-abc/consumer4/actual-duplicate-entry-proof.json",
+    "bytes": 330426,
+    "sha256": "e5e37805602e27aa7b84be91f10c6400731981bf307d9a32e659162cae5c13d3"
+  }
+}

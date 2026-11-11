@@ -1,0 +1,593 @@
+{
+  "fullCurrentL4Passed": true,
+  "boundedOriginalMetadata": [
+    {
+      "test": "CHECK-CEND13-ABC-L4 a frozen entry review cannot acquire a foreign activity or replacement life even if its disabled DOM control is forced on",
+      "save": "已保存",
+      "local": "显示设置已保存；试玩记录仅在本机，不上传。",
+      "events": [
+        {
+          "sequence": 0,
+          "event": "open",
+          "database": "chenyuan-local-experience-v1",
+          "version": 1
+        },
+        {
+          "sequence": 1,
+          "event": "open.success",
+          "database": "chenyuan-local-experience-v1",
+          "errorName": null
+        },
+        {
+          "sequence": 2,
+          "event": "transaction",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readonly"
+        },
+        {
+          "sequence": 3,
+          "event": "transaction",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readonly"
+        },
+        {
+          "sequence": 4,
+          "event": "read",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta"
+        },
+        {
+          "sequence": 5,
+          "event": "read.success",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta",
+          "errorName": null
+        },
+        {
+          "sequence": 6,
+          "event": "transaction.complete",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readonly",
+          "errorName": null
+        },
+        {
+          "sequence": 7,
+          "event": "transaction.complete",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readonly",
+          "errorName": null
+        },
+        {
+          "sequence": 8,
+          "event": "transaction",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readwrite"
+        },
+        {
+          "sequence": 9,
+          "event": "read",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta"
+        },
+        {
+          "sequence": 10,
+          "event": "open",
+          "database": "chenyuan-playable-v1",
+          "version": 9
+        },
+        {
+          "sequence": 11,
+          "event": "read.success",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta",
+          "errorName": null
+        },
+        {
+          "sequence": 12,
+          "event": "open.success",
+          "database": "chenyuan-playable-v1",
+          "errorName": null
+        },
+        {
+          "sequence": 13,
+          "event": "transaction",
+          "database": "chenyuan-playable-v1",
+          "mode": "readwrite"
+        },
+        {
+          "sequence": 14,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 15,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 16,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 17,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 18,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 19,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 20,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 21,
+          "event": "transaction.complete",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readwrite",
+          "errorName": null
+        },
+        {
+          "sequence": 22,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 23,
+          "event": "transaction.complete",
+          "database": "chenyuan-playable-v1",
+          "mode": "readwrite",
+          "errorName": null
+        },
+        {
+          "sequence": 24,
+          "event": "transaction",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly"
+        },
+        {
+          "sequence": 25,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 26,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 27,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 28,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 29,
+          "event": "transaction.complete",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly",
+          "errorName": null
+        },
+        {
+          "sequence": 30,
+          "event": "transaction",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly"
+        },
+        {
+          "sequence": 31,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 32,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 33,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 34,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 35,
+          "event": "transaction.complete",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly",
+          "errorName": null
+        },
+        {
+          "sequence": 36,
+          "event": "transaction",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly"
+        },
+        {
+          "sequence": 37,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 38,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 39,
+          "event": "transaction.complete",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly",
+          "errorName": null
+        },
+        {
+          "sequence": 40,
+          "event": "transaction",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readwrite"
+        },
+        {
+          "sequence": 41,
+          "event": "read",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta"
+        },
+        {
+          "sequence": 42,
+          "event": "read.success",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta",
+          "errorName": null
+        },
+        {
+          "sequence": 43,
+          "event": "transaction.complete",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readwrite",
+          "errorName": null
+        }
+      ],
+      "failures": []
+    },
+    {
+      "test": "CHECK-CEND13-ABC-L4 a frozen entry review cannot acquire a foreign activity or replacement life even if its disabled DOM control is forced on",
+      "save": "已保存",
+      "local": "显示设置已保存；试玩记录仅在本机，不上传。",
+      "events": [
+        {
+          "sequence": 0,
+          "event": "open",
+          "database": "chenyuan-local-experience-v1",
+          "version": 1
+        },
+        {
+          "sequence": 1,
+          "event": "open.success",
+          "database": "chenyuan-local-experience-v1",
+          "errorName": null
+        },
+        {
+          "sequence": 2,
+          "event": "transaction",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readonly"
+        },
+        {
+          "sequence": 3,
+          "event": "transaction",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readonly"
+        },
+        {
+          "sequence": 4,
+          "event": "read",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta"
+        },
+        {
+          "sequence": 5,
+          "event": "read.success",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta",
+          "errorName": null
+        },
+        {
+          "sequence": 6,
+          "event": "transaction.complete",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readonly",
+          "errorName": null
+        },
+        {
+          "sequence": 7,
+          "event": "transaction.complete",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readonly",
+          "errorName": null
+        },
+        {
+          "sequence": 8,
+          "event": "transaction",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readwrite"
+        },
+        {
+          "sequence": 9,
+          "event": "read",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta"
+        },
+        {
+          "sequence": 10,
+          "event": "open",
+          "database": "chenyuan-playable-v1",
+          "version": 9
+        },
+        {
+          "sequence": 11,
+          "event": "read.success",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta",
+          "errorName": null
+        },
+        {
+          "sequence": 12,
+          "event": "open.success",
+          "database": "chenyuan-playable-v1",
+          "errorName": null
+        },
+        {
+          "sequence": 13,
+          "event": "transaction",
+          "database": "chenyuan-playable-v1",
+          "mode": "readwrite"
+        },
+        {
+          "sequence": 14,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 15,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 16,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 17,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 18,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 19,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 20,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 21,
+          "event": "transaction.complete",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readwrite",
+          "errorName": null
+        },
+        {
+          "sequence": 22,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 23,
+          "event": "transaction.complete",
+          "database": "chenyuan-playable-v1",
+          "mode": "readwrite",
+          "errorName": null
+        },
+        {
+          "sequence": 24,
+          "event": "transaction",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly"
+        },
+        {
+          "sequence": 25,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 26,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 27,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 28,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 29,
+          "event": "transaction.complete",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly",
+          "errorName": null
+        },
+        {
+          "sequence": 30,
+          "event": "transaction",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly"
+        },
+        {
+          "sequence": 31,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 32,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 33,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 34,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 35,
+          "event": "transaction.complete",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly",
+          "errorName": null
+        },
+        {
+          "sequence": 36,
+          "event": "transaction",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly"
+        },
+        {
+          "sequence": 37,
+          "event": "read",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state"
+        },
+        {
+          "sequence": 38,
+          "event": "read.success",
+          "database": "chenyuan-playable-v1",
+          "store": "full-state",
+          "errorName": null
+        },
+        {
+          "sequence": 39,
+          "event": "transaction.complete",
+          "database": "chenyuan-playable-v1",
+          "mode": "readonly",
+          "errorName": null
+        },
+        {
+          "sequence": 40,
+          "event": "transaction",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readwrite"
+        },
+        {
+          "sequence": 41,
+          "event": "read",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta"
+        },
+        {
+          "sequence": 42,
+          "event": "read.success",
+          "database": "chenyuan-local-experience-v1",
+          "store": "meta",
+          "errorName": null
+        },
+        {
+          "sequence": 43,
+          "event": "transaction.complete",
+          "database": "chenyuan-local-experience-v1",
+          "mode": "readwrite",
+          "errorName": null
+        }
+      ],
+      "failures": []
+    }
+  ],
+  "noStoredValuesCapturedByProbe": true,
+  "notAClaimOfReproducedOriginalReadingStall": true,
+  "original8000Expect": true,
+  "primaryClockAndFullDBEqualityPassed": true
+}

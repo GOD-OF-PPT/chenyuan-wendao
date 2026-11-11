@@ -1,0 +1,120 @@
+{
+  "actualFullCoreAndThenBuildExit": 0,
+  "core10AllPassed": true,
+  "nodeTests": 1093,
+  "uniqueResourceMethods": 824,
+  "actualResourceSeconds": 2388.09,
+  "coreInputsExact": 6087,
+  "all1981PackageFilesAndLinkTargetsExact": true,
+  "packageManifestSHA256": "67ddafb9e989d91cbd72886f5459b917a0466274d441680f23ae30d296060378",
+  "checks": [
+    {
+      "root": "root",
+      "directory": "node_modules",
+      "packageFiles": 133,
+      "allPackageBytesAndLinkTargetsExact": true,
+      "additionalGeneratedFilesPreserved": [
+        {
+          "path": ".vite/deps/_metadata.json",
+          "bytes": 146,
+          "sha256": "0b1e9fbcf9ac3b13a22b6f424a8d94a32d96b4b06ff34a8106286ed2d2d4d842"
+        },
+        {
+          "path": ".vite/deps/package.json",
+          "bytes": 23,
+          "sha256": "3ca9d4afd21425087cf31893b8f9f63c81b0b8408db5e343ca76e5f8aa26ab9a"
+        }
+      ]
+    },
+    {
+      "root": "producer4",
+      "directory": "node_modules",
+      "packageFiles": 133,
+      "allPackageBytesAndLinkTargetsExact": true,
+      "additionalGeneratedFilesPreserved": []
+    },
+    {
+      "root": "consumer4",
+      "directory": "node_modules",
+      "packageFiles": 133,
+      "allPackageBytesAndLinkTargetsExact": true,
+      "additionalGeneratedFilesPreserved": []
+    },
+    {
+      "root": "root",
+      "directory": "web/node_modules",
+      "packageFiles": 1848,
+      "allPackageBytesAndLinkTargetsExact": true,
+      "additionalGeneratedFilesPreserved": [
+        {
+          "path": ".vite/deps/_metadata.json",
+          "bytes": 524,
+          "sha256": "dda060c987d5e138902f0bb63852eba7a3f90e463c8dc234ca7ec9996e809a28"
+        },
+        {
+          "path": ".vite/deps/chunk-POBAEZZK.js",
+          "bytes": 401856,
+          "sha256": "1e065a66f49f7c2dfff8cf64815f98199a4aaea5d9a27b50b71abf8edc2eabab"
+        },
+        {
+          "path": ".vite/deps/chunk-POBAEZZK.js.map",
+          "bytes": 709970,
+          "sha256": "fc14d261efdddd68f857b3d6a55f35f89bdb35bc0540e9cf35b32681dbf2e6fc"
+        },
+        {
+          "path": ".vite/deps/package.json",
+          "bytes": 23,
+          "sha256": "3ca9d4afd21425087cf31893b8f9f63c81b0b8408db5e343ca76e5f8aa26ab9a"
+        },
+        {
+          "path": ".vite/deps/pinia.js",
+          "bytes": 176368,
+          "sha256": "f84301aa97147bcdccb0a8e4279046fc632d395a2359e014dab698976f7fa594"
+        },
+        {
+          "path": ".vite/deps/pinia.js.map",
+          "bytes": 451952,
+          "sha256": "b0527294f172469d7a7ee5892f37368bbdadf0f1c305c72971e8cf01c8a05add"
+        },
+        {
+          "path": ".vite/deps/vue.js",
+          "bytes": 5579,
+          "sha256": "af9904aca87543b058fdeb7b356ce45c09316819848f178bc08d72c6723df7e0"
+        },
+        {
+          "path": ".vite/deps/vue.js.map",
+          "bytes": 93,
+          "sha256": "ed562b0bba7ee7214e56ac7f728054b3496bec4597c94a4eb7b4179e6f5cb1c9"
+        }
+      ]
+    },
+    {
+      "root": "producer4",
+      "directory": "web/node_modules",
+      "packageFiles": 1848,
+      "allPackageBytesAndLinkTargetsExact": true,
+      "additionalGeneratedFilesPreserved": []
+    },
+    {
+      "root": "consumer4",
+      "directory": "web/node_modules",
+      "packageFiles": 1848,
+      "allPackageBytesAndLinkTargetsExact": true,
+      "additionalGeneratedFilesPreserved": []
+    }
+  ],
+  "runtime351RootProducerConsumerExact": true,
+  "all112PayloadsProducerConsumerExact": true,
+  "actualTestSource": {
+    "head": "1cf4024d94c3a246cfe8d61756b9c162ed674366",
+    "source": "1cf4024d94c3a246cfe8d61756b9c162ed674366",
+    "tree": "eb3414e95f1f992612dee00ecb593a735cd00349",
+    "dirty": false,
+    "node": "v24.22.1",
+    "npm": "10.9.0",
+    "npmOnPath": "10.9.0"
+  },
+  "runtime": "e46818155946588b85d66c06fb89aed0d88929803e0d790c343023f9268e44b1",
+  "originalRoot10ViteCacheFilesPreserved": true,
+  "earlierMidRun1847CountIsNotFinalDependencyMismatch": true
+}
