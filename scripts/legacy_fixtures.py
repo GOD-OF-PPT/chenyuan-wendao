@@ -8,7 +8,9 @@ import argparse
 import hashlib
 import io
 import json
+import os
 from pathlib import Path, PurePosixPath
+import tempfile
 import zipfile
 
 FIXTURES = Path(__file__).resolve().parents[1] / 'tests/fixtures/legacy-goals'
@@ -52,12 +54,18 @@ def prepare(root, fixtures=FIXTURES):
     # Validate the complete archive and existing files before creating any inputs.
     for target, payload in pending:
         target.parent.mkdir(parents=True, exist_ok=True)
+        # Publish a complete file exclusively. Another starting test process must
+        # never observe an empty/partial target and mistake it for local work.
+        with tempfile.NamedTemporaryFile(dir=target.parent, prefix='.legacy-input-', delete=False) as staging:
+            temporary = Path(staging.name)
+            staging.write(payload)
         try:
-            with target.open('xb') as output:
-                output.write(payload)
+            os.link(temporary, target)
         except FileExistsError:
             if target.is_symlink() or target.read_bytes() != payload:
                 raise ValueError('Concurrent historical fixture conflict: ' + str(target))
+        finally:
+            temporary.unlink()
     return len(pending)
 
 

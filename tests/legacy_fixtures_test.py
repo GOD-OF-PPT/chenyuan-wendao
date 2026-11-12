@@ -5,7 +5,9 @@ import json
 import os
 import subprocess
 import tempfile
+import threading
 import unittest
+from unittest.mock import patch
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -80,6 +82,38 @@ class LegacyFixtures(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'link'):
             module.prepare(self.root, self.fixtures)
         self.assertEqual(list(outside.iterdir()), [])
+
+    def test_parallel_start_never_observes_a_partially_written_target(self):
+        self.archive({'goal-4/input.txt': b'complete payload' * 1000})
+        ready, release = threading.Event(), threading.Event()
+        original_link = module.os.link
+        failures = []
+
+        def delayed_link(source, target):
+            if threading.current_thread().name == 'first-fixture-start':
+                ready.set()
+                if not release.wait(5):
+                    raise TimeoutError('Second fixture start did not finish')
+            return original_link(source, target)
+
+        def first_start():
+            try:
+                module.prepare(self.root, self.fixtures)
+            except Exception as error:
+                failures.append(error)
+
+        with patch.object(module.os, 'link', delayed_link):
+            first = threading.Thread(target=first_start, name='first-fixture-start')
+            first.start()
+            try:
+                self.assertTrue(ready.wait(5))
+                module.prepare(self.root, self.fixtures)
+            finally:
+                release.set()
+                first.join(5)
+        self.assertFalse(first.is_alive())
+        self.assertEqual(failures, [])
+        self.assertEqual((self.root / 'goal-4/input.txt').read_bytes(), b'complete payload' * 1000)
 
 
 if __name__ == '__main__':
