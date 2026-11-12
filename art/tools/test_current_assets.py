@@ -129,14 +129,16 @@ class CurrentAssetTests(unittest.TestCase):
 
     def test_resigned_svg_cannot_introduce_scripts_or_external_references(self):
         (self.root / 'web/public/art/object.png').unlink()
-        for content in ['<script/>', '<path onload="alert(1)"/>', '<use href="https://example.test/object.svg"/>', '<style>@import url("https://example.test/style.css");</style>', '<path fill="url(file:///outside.svg#paint)"/>']:
+        for content in ['<script/>', '<path onload="alert(1)"/>', '<use href="https://example.test/object.svg"/>', '<style>@import url("https://example.test/style.css");</style>', '<path fill="url(file:///outside.svg#paint)"/>',
+                        '<style>@im\\70ort "https://example.test/style.css";</style>', '<path fill="u\\72l(https://example.test/paint.svg#x)"/>',
+                        '<?xml-stylesheet href="https://example.test/style.css"?>', '<animate attributeName="href" to="https://example.test/image.svg"/>']:
             raw = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8">' + content + '</svg>').encode()
             (self.root / 'web/public/art/object.svg').write_bytes(raw)
             values = {'path': 'web/public/art/object.svg', 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(), 'dimensions': {'width': 8, 'height': 8}, 'alpha': True}
             self.manifest['assets'][0].update(values, exportedPath=values['path'])
             self.export['assets'][0]['runtime'] = values
             self.save()
-            with self.subTest(content=content), self.assertRaisesRegex(AssertionError, 'Executable SVG|External SVG|Invalid SVG'):
+            with self.subTest(content=content), self.assertRaisesRegex(AssertionError, 'Executable SVG|External SVG|Invalid SVG|processing instructions'):
                 self.check(updated_contract=True)
 
     def test_reference_status_and_missing_provenance_cannot_claim_production(self):

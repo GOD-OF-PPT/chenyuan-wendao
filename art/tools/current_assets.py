@@ -18,6 +18,13 @@ from image_contract import contract, original_contract
 IMAGES = {'.png', '.jpg', '.jpeg', '.webp', '.svg'}
 FORBIDDEN = {'.ttf', '.otf', '.woff', '.woff2', '.eot', '.mp3', '.ogg', '.wav', '.m4a', '.flac'}
 IMAGE_ROOTS = ('art/', 'web/public/art/', 'docs/v0.3/reference/')
+SVG_TAGS = {'svg', 'defs', 'symbol', 'g', 'path', 'rect', 'circle', 'ellipse', 'line', 'polyline', 'polygon',
+            'linearGradient', 'radialGradient', 'stop', 'clipPath', 'mask', 'pattern', 'use', 'title', 'desc'}
+
+
+class StaticSvgTree(ET.TreeBuilder):
+    def pi(self, target, text):
+        raise AssertionError('SVG processing instructions are not static asset content')
 
 
 def validate(root, expected_contract=None):
@@ -64,21 +71,20 @@ def validate(root, expected_contract=None):
             raw = data(name)
             decoded = {}
             if Path(name).suffix.lower() == '.svg':
-                svg = ET.fromstring(raw)
-                assert svg.tag.split('}')[-1] == 'svg', 'Invalid SVG root: ' + name
+                svg = ET.fromstring(raw, parser=ET.XMLParser(target=StaticSvgTree()))
+                assert svg.tag == '{http://www.w3.org/2000/svg}svg', 'Invalid SVG root: ' + name
                 def safe_css(value):
-                    assert not re.search(r'@import|javascript:', value, re.I), 'External SVG style: ' + name
+                    assert '\\' not in value and not re.search(r'@import|javascript:', value, re.I), 'External SVG style: ' + name
                     for target in re.findall(r'url\(([^)]*)\)', value, re.I):
                         assert target.strip().strip('\'"').startswith('#'), 'External SVG reference: ' + name
                 for node in svg.iter():
-                    assert node.tag.split('}')[-1] not in {'script', 'foreignObject'}, 'Executable SVG: ' + name
+                    assert node.tag.split('}')[-1] in SVG_TAGS, 'Executable SVG or unsupported dynamic content: ' + name
                     for key, value in node.attrib.items():
                         assert not key.lower().startswith('on'), 'Executable SVG attribute: ' + name
+                        assert key != 'style', 'External SVG style: ' + name
                         if key.split('}')[-1] == 'href':
                             assert value.startswith('#'), 'External SVG reference: ' + name
                         safe_css(value)
-                    if node.tag.split('}')[-1] == 'style':
-                        safe_css(node.text or '')
                 box = svg.get('viewBox', '').split()
                 if svg.get('viewBox') is not None:
                     assert len(box) == 4 and all(math.isfinite(float(n)) for n in box), 'Invalid SVG viewBox: ' + name
