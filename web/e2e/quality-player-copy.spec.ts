@@ -53,6 +53,9 @@ test('save identity stays in readonly management details rather than a life chap
   await expect(page.locator('.life-reading[data-page-key=identity]')).toHaveCount(0);
   await page.getByTestId('life-manage-open').click();
   const details=page.getByTestId('life-manage-dialog').locator('details').filter({has:page.getByText('存档识别信息',{exact:true})});
-  await details.locator('summary').click();await expect(details).toContainText(g.core.runId);
+  const control=details.locator('summary');
+  await control.click();await expect(details).toContainText(g.core.runId);
+  const hit=await control.evaluate(node=>{const r=node.getBoundingClientRect(),h=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return{width:r.width,height:r.height,hit:!!h&&(h===node||node.contains(h)),font:parseFloat(getComputedStyle(node).fontSize)};});
+  expect(hit.width).toBeGreaterThanOrEqual(44);expect(hit.height).toBeGreaterThanOrEqual(44);expect(hit.hit).toBe(true);expect(hit.font).toBeGreaterThanOrEqual(18);
   expect(await recoveryDatabase(page)).toEqual(raw);await page.screenshot({path:info.outputPath('copy-life-identity-details.png')});
 });
