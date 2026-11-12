@@ -9,6 +9,7 @@ import AssetImage from './AssetImage.vue';
 import PortraitImage from './PortraitImage.vue';
 import './narrative-objects.css';
 const props=defineProps<{game:Game;mode:string;personId?:string;name?:string;seal?:string;eventId?:string;pending:boolean}>();
+const emit=defineEmits<{browse:[]}>();
 const portrait=computed(()=>NPC_PORTRAITS[props.personId??'']??props.personId??'');
 const scene=computed(()=>scenePresentation(props.game));
 const {store,phase,working,progress,effect,engaged,runtime,action}=useNarrativeObject(()=> 'fate',()=>props.mode==='events'?(props.eventId?'event:'+props.eventId:''):portrait.value,()=>props.mode!=='journal');
@@ -16,7 +17,7 @@ const state=computed(()=>store?.error?'failed':phase.value);
 const verb=computed(()=>action.value?.type==='DECIDE'?'回应':'拜访');
 const focus=inject(gameFocusKey),people=ref<HTMLDialogElement>(),route=ref<HTMLDialogElement>(),instance=useId();
 function close(){people.value?.close();route.value?.close();}
-function open(dialog:HTMLDialogElement|undefined,event:Event){close();if(focus)focus.open(dialog,event.currentTarget as HTMLElement);else dialog?.showModal();}
+function open(dialog:HTMLDialogElement|undefined,event:Event){emit('browse');close();if(focus)focus.open(dialog,event.currentTarget as HTMLElement);else dialog?.showModal();}
 function openRoute(event:Event){open(route.value,event);}
 watch([()=>props.game.core.runId,()=>props.mode],close);
 watch(()=>props.personId,()=>route.value?.close());
