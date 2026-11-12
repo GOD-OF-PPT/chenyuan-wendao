@@ -25,6 +25,6 @@ const current=computed(()=>props.view&&['home','explore','forge','skills','relic
 
 <style scoped>
 .bottom-nav.stage-nav .nav-name{display:flex;align-items:baseline;justify-content:center;gap:4px}
-.bottom-nav.stage-nav .nav-gate{font-size:14px;line-height:1.4;color:var(--game-muted)}
-.bottom-nav button:disabled{opacity:1;color:var(--game-muted);cursor:default}
+.bottom-nav.stage-nav .nav-gate{font-size:14px;line-height:1.4;color:var(--game-muted,var(--teal))}
+.bottom-nav button:disabled{opacity:1;color:var(--game-muted,var(--teal));cursor:default}
 </style>

@@ -55,7 +55,7 @@ function compactV6(){return props.compact&&a.value?.version===6;}
 
 <style scoped>
 .activity-summary-badge{display:flex;align-items:center;gap:12px;padding:4px 0;text-align:left}
-.activity-summary-badge button{min-height:44px;font-size:18px;color:var(--game-jade)}
+.activity-summary-badge button{min-height:44px;font-size:18px;color:var(--game-jade,var(--teal))}
 .activity-summary-badge button small{display:block;text-align:left}
-.activity-summary-badge small{font-size:14px;line-height:1.5;color:var(--game-muted)}
+.activity-summary-badge small{font-size:14px;line-height:1.5;color:var(--game-muted,var(--teal))}
 </style>
