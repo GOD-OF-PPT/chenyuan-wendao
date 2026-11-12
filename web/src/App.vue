@@ -323,7 +323,7 @@ async function startJourney(){
 async function showEquipment(event?:Event){rememberHubOrigin(event);const opener=hubOpener,owner=selectTab('修行');if(singleScreen.value)hubView.value='skills';equipmentOpen.value=true;await nextTick();if(owner===navigationRevision&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focus.target(document.querySelector<HTMLElement>('[data-testid="equipment-panel"]'));}
 async function showBreakthroughGoal(){captureStageReturn('goal');const opener=focus.capture();selectTracking({kind:'breakthrough'});if(singleScreen.value)hubView.value='goal';const owner=navigationRevision;await nextTick();if(owner===navigationRevision&&!document.querySelector('dialog[open]')&&(document.activeElement===opener||document.activeElement===document.body))focusRegion('goal-panel');}
 const inspectingInventory=computed(()=>game.value?.status==='active'&&phase.value!=='idle'&&tab.value==='行囊');
-async function resumeEncounter(){selectTab('修行');await nextTick();focusContent();}
+async function resumeEncounter(){if(game.value&&narrativeFor(game.value)){await openHub('current');return;}selectTab('修行');await nextTick();focusContent();}
 const catalogueGuide=ref<HTMLDialogElement>();
 function showCatalogueGuide(event:Event){focus.open(catalogueGuide.value,event.currentTarget instanceof HTMLElement?event.currentTarget:focus.capture());}
 async function skipCatalogueGuide(){catalogueGuide.value?.close();await skipGuidance();}
