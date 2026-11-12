@@ -3,7 +3,7 @@ import * as C from '../../src/full/content.ts';
 import {createIdleRoute} from '../../scripts/economy/idle-scenarios.mjs';
 import {snapshot,activitySnapshot,useJourneyClock,revealPaged} from '../e2e/support';
 import {runVisibleIdleRoute,selectPlan,decision,settleVisibleActivity,home} from '../e2e/idle-route-support';
-import {openSourceSettings,closeSourceSettings} from '../e2e/stage-support';
+import {openSourceSettings,closeSourceSettings,openProductionIntent,closeProductionSettings} from '../e2e/stage-support';
 
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
 const routes=[['help','sword','craft'],['trade','sword','purchase'],['leave','sword','craft'],['help','talisman','purchase'],['trade','talisman','craft'],['leave','talisman','purchase']] as const;
@@ -28,7 +28,7 @@ async function sourceFromGuide(page:Page,id:string|null,quantity:number,route:st
  await readonly(page,async()=>{
   await openSourceSettings(page,true);await page.getByLabel('取材次数',{exact:true}).selectOption('target');
   await page.getByLabel('目标资源',{exact:true}).selectOption(id??'stones');await page.getByLabel('目标库存',{exact:true}).fill(String(quantity));
-  await page.getByLabel('目标最多轮数',{exact:true}).fill('50');await page.getByLabel('累计游戏月预算',{exact:true}).fill(String(50*source.months));
+  await page.getByLabel('取材目标另设轮数上限',{exact:true}).check();await page.getByLabel('目标最多轮数',{exact:true}).fill('50');await page.getByLabel('累计游戏月预算',{exact:true}).fill(String(50*source.months));
   await page.getByLabel('余寿保留量',{exact:true}).fill('1');await closeSourceSettings(page);
  });
  const before=await snapshot(page),have=id?before.core.inventory[id]:before.core.player.stones;
@@ -55,6 +55,7 @@ for(const[choice,school,route]of routes)test(`guided idle foundation ${choice}/$
  if(before.core.world.location!==finish)await tripFromGuide(page,page.getByTestId('prepare-go-finish'),finish);
  await readonly(page,()=>prepare(page,route));await readonly(page,()=>decision(page,page.getByTestId(route==='craft'?'prepare-confirm-craft':'prepare-confirm-buy')));
  const open=page.getByTestId(route==='craft'?'production-start':'preparation-start');
+ if(route==='craft')await readonly(page,async()=>{await openProductionIntent(page);await page.getByLabel('炼丹目标另设炉次上限',{exact:true}).check();await page.getByLabel('目标最多炉次',{exact:true}).fill('50');await closeProductionSettings(page);});
  await decision(page,open);await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');
  const a=await activitySnapshot(page);expect(a.plan.kind).toBe(route==='craft'?'craft':'buy');expect(route==='craft'?a.plan.recipeId:a.plan.item).toBe(route==='craft'?'foundation':'foundation_pill');if(route==='craft')expect(a.plan).toEqual({kind:'craft',recipeId:'foundation',maxCycles:50,until:'target',targetQuantity:1,stoneBudget:C.recipes.foundation.stones,stoneReserve:0,monthBudget:C.recipes.foundation.months,remainingMonthsReserve:1,itemReserves:{}});else expect(a.plan.maxCycles).toBe(1);
  const stocked=await settleVisibleActivity(page);expect(stocked.game.core.inventory.foundation_pill).toBe(1);

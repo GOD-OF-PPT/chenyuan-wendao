@@ -1,3 +1,4 @@
+import {motionClearance} from './npc-response-visual-support';
 import {test,expect,type Page,type Browser,type TestInfo} from '@playwright/test';
 import {paidResponseFixture,npcResponseFixtures,responseStageFixtures} from '../../tests/response-context-fixtures.mjs';
 import {resolve} from '../../src/full/engine';
@@ -13,7 +14,9 @@ import {decision,home} from './idle-route-support';
 import {importRecoveryFixture,recoveryDatabase as database,recoveryReadonly as readonly,stored} from './idle-recovery-ui-support';
 import {captureFixedPng} from './png-capture';
 
-test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
+// Explicit old Store START compatibility uses the same frozen source through
+// Vite. Current immediate choices also have separate production UI coverage.
+test.use({baseURL:'http://127.0.0.1:4177',viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
 test.setTimeout(120000);
 const faults=new WeakMap<Page,string[]>();
 function listen(page:Page){if(faults.has(page))return;const list:string[]=[];faults.set(page,list);page.on('pageerror',e=>list.push(e.message));}
@@ -28,7 +31,7 @@ const choiceId=(a:Action)=>a.type==='DECIDE'?'decide-'+a.option:a.type==='ANSWER
 const confirmId=(a:Action)=>a.type==='END'?'ascension-confirm':'milestone-confirm';
 const attach=(info:TestInfo,name:string,value:unknown)=>info.attach(name,{body:JSON.stringify(value),contentType:'application/json'});
 async function fresh(browser:Browser,info:TestInfo){
- const context=await browser.newContext({baseURL:info.project.use.baseURL,viewport:{width:1440,height:900}}),page=await context.newPage();
+ const context=await browser.newContext({baseURL:'http://127.0.0.1:4177',viewport:{width:1440,height:900}}),page=await context.newPage();
  page.setDefaultTimeout(8000);page.setDefaultNavigationTimeout(15000);listen(page);return{context,page};
 }
 async function nativeHooks(page:Page){await page.addInitScript(()=>{
@@ -56,6 +59,11 @@ async function openStory(page:Page){
  }await expect(page.getByTestId('narrative-catalogue')).toBeVisible();
 }
 async function select(page:Page,a:Action){
+ if(a.type==='DECIDE'){
+  await page.getByTestId('story-mode-choices').click();
+  await readonly(page,async()=>{const g=await snapshot(page),choice=narrativeFor(g)!.choices.find(c=>c.id===choiceId(a))!;await page.getByRole('button',{name:'查看'+choice.label+'的代价与结果',exact:true}).click();await expect(page.locator('dialog[open].choice-inspection')).toContainText(choice.detail);await page.getByRole('button',{name:'关闭选择详情',exact:true}).click();});
+  return;
+ }
  await page.getByTestId('story-mode-choices').click();await readonly(page,async()=>{
   await page.getByTestId('response-choices-open').click();await expect(page.getByTestId('response-choices-dialog')).toBeVisible();
   await page.getByTestId('story-select-'+choiceId(a)).click();await expect(page.getByTestId('response-choices-dialog')).not.toBeVisible();
@@ -76,9 +84,22 @@ async function mutation(page:Page,g:Game,before:any,kind:'START'|'PAUSE'|'RESUME
  await attach(info,kind+'-complete-formal-and-all-stores',{g,before,raw,receipt:r,formal});return{a:r.activity,raw,receipt:r};
 }
 async function start(page:Page,t:{g:Game;action:Action;raw:any},info:TestInfo){
+ if(t.action.type==='DECIDE'){
+  await beginLegacyResponse(page,t.action);
+  await expect.poll(async()=>(await activity(page))?.status).toBe('running');await expect(page.getByTestId('save-status')).toHaveText('已保存');
+  const accepted=await mutation(page,t.g,t.raw,'START',info);expect(accepted.a.plan).toEqual({kind:'milestone',action:t.action,maxCycles:1});return{...t,...accepted};
+ }
  await decision(page,page.getByTestId(choiceId(t.action)));expect(await database(page)).toEqual(t.raw);
  await decision(page,page.getByTestId(confirmId(t.action)));await expect.poll(async()=>(await activity(page))?.status).toBe('running');await expect(page.getByTestId('save-status')).toHaveText('已保存');
  const accepted=await mutation(page,t.g,t.raw,'START',info);expect(accepted.a.plan).toEqual({kind:'milestone',action:t.action,maxCycles:1});return{...t,...accepted};
+}
+async function beginLegacyResponse(page:Page,action:Action,hold=false){
+ await page.evaluate(async({action,hold})=>{
+  const {useGame}=await import('/src/store.ts'),store=useGame(),intent=store.prepareMilestone(action as any);
+  if(!intent)throw Error('Explicit legacy Store setup was not accepted');
+  const pending=store.startPreparedMilestone(intent);
+  if(hold)(window as any).__legacyResponseStart=pending;else await pending;
+ },{action,hold});
 }
 async function committedTick(page:Page,g:Game,a:any,before:any,info:TestInfo){
  const raw=await database(page),formal=resolve(g,a.nextCommand),key=a.runId+':'+a.nextCommand.commandId,rows=raw.rows['full-receipts'].filter((r:any)=>r.key===key);expect(rows).toHaveLength(1);
@@ -125,7 +146,7 @@ test('CEND13-B1 four actual pending NPC meetings keep all original choice detail
   const g=await load(page,f.game),before=await database(page),model=narrativeFor(g)!;await openStory(page);
   for(const choice of model.choices){await select(page,choice.action);await expect(caption(page)).toContainText('预选');await expect(caption(page)).not.toContainText('已安排');
    const card=page.getByTestId('narrative-catalogue').getByTestId(choice.id);await expect(card).toContainText(choice.label);await expect(card).toContainText(choice.detail);await readonly(page,async()=>{await page.getByRole('button',{name:'查看'+choice.label+'的代价与结果',exact:true}).click();const details=page.locator('dialog[open].choice-inspection');await expect(details).toBeVisible();await expect(details.locator('dl')).toContainText(formatCosts(previewAction(g,choice.action).actualCosts??previewAction(g,choice.action).costs));await expect(details.locator('dl')).toContainText(choice.detail);await page.getByRole('button',{name:'关闭选择详情',exact:true}).click();});
-   if(previewAction(g,choice.action).allowed){await decision(page,card);expect(await database(page)).toEqual(before);await page.keyboard.press('Escape');}
+   if(previewAction(g,choice.action).allowed){await card.click();await expect(page.getByTestId('game-confirmation')).toBeVisible();expect(await database(page)).toEqual(before);await page.keyboard.press('Escape');}
    expect(await database(page)).toEqual(before);expect(await snapshot(page)).toEqual(g);
   }await frame(page,info,'B1-'+f.person+'-unaccepted-complete-response');expect(faults.get(page)).toEqual([]);
  }finally{await context.close();}}
@@ -143,7 +164,7 @@ test('CEND13-B2 a genuinely accepted native six-second paid response replaces th
 
 test('CEND13-B3 another response is only a readonly signature while pause and explicit continuation preserve the original six-second authority',async({page},info)=>{
  const t=await prepare(page,paidResponseFixture(),{type:'DECIDE',option:'bargain'}),accepted=await start(page,t,info);await page.clock.fastForward(2000);const raw=await database(page);
- await select(page,{type:'DECIDE',option:'decline'});await expect(caption(page)).toHaveText('此签仅查看 · 原安排不变');await expect(page.getByTestId('response-clock')).toHaveCount(0);await expect(page.getByTestId('response-table')).toHaveAttribute('data-engaged','false');expect(await database(page)).toEqual(raw);expect((await activity(page)).plan).toEqual(accepted.a.plan);
+ await select(page,{type:'DECIDE',option:'decline'});await expect(caption(page)).toHaveText('本次回应已安排');await expect(page.getByTestId('decide-decline').locator('..')).not.toHaveAttribute('data-current-response','true');await expect(page.getByTestId('decide-bargain').locator('..')).toHaveAttribute('data-current-response','true');await expect(page.getByTestId('response-clock')).toHaveText('4 / 6 秒');await expect(page.getByTestId('response-table')).toHaveAttribute('data-engaged','true');expect(await database(page)).toEqual(raw);expect((await activity(page)).plan).toEqual(accepted.a.plan);
  await select(page,t.action);await expect(caption(page)).toHaveText('本次回应已安排');await expect(page.getByTestId('response-clock')).toHaveText('4 / 6 秒');
  await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page)).status).toBe('paused');const paused=await mutation(page,t.g,raw,'PAUSE',info);await expect(caption(page)).toHaveText('回应已暂停 · 沿用原安排');await frame(page,info,'B3-paused-original-response');
  await readonly(page,async()=>{await page.getByTestId('story-mode-story').click();await page.getByTestId('story-mode-memory').click();await page.getByTestId('story-mode-choices').click();});await expect(caption(page)).toHaveText('回应已暂停 · 沿用原安排');
@@ -158,10 +179,11 @@ test('CEND13-B4 a native tick quota and held retry keep the accepted response di
  try{await page.getByTestId('retry').click();await expect(page.getByTestId('save-status')).toHaveText('保存中');await expect(caption(page)).not.toContainText('预选');await expect(caption(page)).not.toContainText('已保存');expect(await page.evaluate(()=>(window as any).__c13bHeldDB)).toEqual(accepted.raw);await frame(page,info,'B4-native-retry-before-atomic-save');}
  finally{await page.evaluate(()=>(window as any).__c13bRelease());}
  await expect.poll(async()=>(await activity(page)).completedCycles).toBe(1);await expect(page.getByTestId('save-status')).toHaveText('已保存');const done=await committedTick(page,t.g,accepted.a,accepted.raw,info);const r=done.raw.rows['full-receipts'].find((x:any)=>x.key===accepted.a.runId+':'+accepted.a.nextCommand.commandId).value;expect(r.input).toEqual(rejected);
+ await expect(page.getByTestId('encounter-table')).toHaveAttribute('data-person','shen');await expect.poll(async()=>{await page.clock.runFor(16);return page.getByTestId('encounter-result').isVisible();}).toBe(true);await expect(page.getByTestId('response-result')).toHaveCount(0);await motionClearance(page,info);await page.screenshot({path:info.outputPath('B4-legacy-saved-response-original-stamp.png')});await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');expect(await database(page)).toEqual(done.raw);await expect(page.locator('[data-testid=encounter-result],[data-testid=response-result]')).toHaveCount(0);
 });
 
 test('CEND13-B5 a genuinely committed but delayed start reply and another pages generation never create a local borrowed response clock or duplicate reward',async({page,context},info)=>{
- const t=await prepare(page,paidResponseFixture(),{type:'DECIDE',option:'bargain'});await decision(page,page.getByTestId(choiceId(t.action)));await holdStartReply(page);await decision(page,page.getByTestId('milestone-confirm'));await expect.poll(()=>page.evaluate(()=>(window as any).__c13bAck.held)).toBe(true);
+ const t=await prepare(page,paidResponseFixture(),{type:'DECIDE',option:'bargain'});await holdStartReply(page);await beginLegacyResponse(page,t.action,true);await expect.poll(()=>page.evaluate(()=>(window as any).__c13bAck.held)).toBe(true);
  await expect(caption(page)).not.toContainText('已安排');await expect(page.getByTestId('response-clock')).toHaveCount(0);const committed=await database(page),a=stored(committed,'activity');expect(a.version).toBe(7);expect(a.status).toBe('running');expect(stored(committed,'current')).toEqual(t.g);
  const peer=await context.newPage();listen(peer);try{
   await peer.goto('/');await expect(peer.getByTestId('save-status')).toHaveText('已保存');await openStory(peer);await select(peer,t.action);await expect(caption(peer)).toHaveText('回应已安排 · 接续见上方');await expect(peer.getByTestId('response-clock')).toHaveCount(0);
@@ -182,9 +204,9 @@ test('CEND13-B6 both real question answers and both endings identify their own a
 });
 
 test('CEND13-B7 failed art and actual keyboard signature viewing retain full readable text the original choices and one visible authorized response',async({page},info)=>{
- let missing=0;await page.route('**/art/**',route=>{missing++;return route.abort();});const g=await load(page,paidResponseFixture()),model=narrativeFor(g)!;await openStory(page);const raw=await database(page);let text='';
+ let missing=0;await page.route('**/art/**',route=>{missing++;return route.abort();});const g=await load(page,paidResponseFixture()),model=narrativeFor(g)!;await openStory(page);await page.getByTestId('story-mode-story').click();const raw=await database(page);let text='';
  for(let n=0;n<40;n++){
   const p=page.getByTestId('narrative-catalogue').locator('.reading-text p');text+=(await p.textContent())??'';await frame(page,info,'B7-full-reading-'+n);const next=page.getByTestId('narrative-catalogue').getByTestId('catalogue-next');if(await next.isDisabled())break;await next.click();
- }expect(text).toBe(model.body);expect(await database(page)).toEqual(raw);await page.getByTestId('story-mode-choices').click();await page.getByTestId('response-choices-open').focus();await page.keyboard.press('Enter');await expect(page.getByTestId('response-choices-dialog')).toBeVisible();await page.getByTestId('story-select-decide-bargain').focus();await page.keyboard.press('Enter');await expect(page.getByTestId('response-choices-dialog')).not.toBeVisible();await expect(page.getByTestId('response-choices-open')).toBeFocused();expect(await database(page)).toEqual(raw);
+ }expect(text).toBe(model.body);expect(await database(page)).toEqual(raw);await page.getByTestId('story-mode-choices').click();const choice=model.choices.find(c=>c.id==='decide-bargain')!,peek=page.getByRole('button',{name:'查看'+choice.label+'的代价与结果',exact:true});await peek.focus();await page.keyboard.press('Enter');await expect(page.locator('dialog[open].choice-inspection')).toBeVisible();await page.keyboard.press('Escape');await expect(peek).toBeFocused();expect(await database(page)).toEqual(raw);
  const accepted=await start(page,{g,action:{type:'DECIDE',option:'bargain'},raw},info);await expect(caption(page)).toHaveText('本次回应已安排');expect(missing).toBeGreaterThan(0);await frame(page,info,'B7-paint-fallback-accepted-response');await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page)).status).toBe('paused');const kept=await database(page);await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');await openStory(page);await select(page,{type:'DECIDE',option:'bargain'});await expect(caption(page)).toHaveText('回应已暂停 · 沿用原安排');expect((await activity(page)).plan).toEqual(accepted.a.plan);expect(await database(page)).toEqual(kept);await frame(page,info,'B7-refresh-keeps-original-paused-response');
 });

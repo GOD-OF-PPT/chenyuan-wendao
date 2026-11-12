@@ -1,4 +1,6 @@
 import type {ConfigurationAction,ConfigurationIntent} from '../../src/full/configuration.ts';
+import type {DirectAction,DirectIntent} from '../../src/full/direct-actions.ts';
+import {validateDirectIntent} from '../../src/full/direct-actions.ts';
 import { defineStore } from 'pinia';
 import { computed, onScopeDispose, ref, shallowRef } from 'vue';
 import { getTrialRecovery } from '../../src/full/queries.ts';
@@ -311,6 +313,16 @@ export const useGame = defineStore('game', () => {
     const command = prepareAction(action);
     if (command) await actPrepared(command);
   }
+  function prepareDirect(action:DirectAction):DirectIntent|null{
+    if(disposed||!game.value||!repository||!available.value||busy.value||unresolved.value||activityRunning.value)return null;
+    const intent:DirectIntent={command:{...action,commandId:crypto.randomUUID(),runId:game.value.core.runId,expectedRevision:game.value.core.revision},expectedActivityId:activity.value?.id??null,expectedActivityRevision:activity.value?.revision??null};
+    validateDirectIntent(intent);return structuredClone(intent);
+  }
+  async function executeDirect(input:DirectIntent){
+    if(disposed||busy.value||!repository||!available.value||unresolved.value||activityRunning.value)return;
+    const intent=structuredClone(input);validateDirectIntent(intent);
+    await write(()=>repository!.executeDirect(intent),intent.command.commandId,{kind:'action',command:intent.command},true);
+  }
   function prepareConfiguration(action:ConfigurationAction):ConfigurationIntent|null{
     if(disposed||!game.value||!repository||!available.value||busy.value)return null;
     if(activityRunning.value){activityNotice.value='请先暂停当前活动，再核对配装。';return null;}
@@ -413,5 +425,5 @@ export const useGame = defineStore('game', () => {
   onScopeDispose(() => { disposed = true;connectionEpoch++;readEpoch++;refreshQueued=false;stopActivityRuntime();actionClock.cancel();execution.value=null; repository?.close(); channel?.close();repository=undefined;channel=undefined;ready.value=false;available.value=false;busy.value=false;observers.clear(); });
   return { game, busy, ready, available, error, warning, saved, syncIssue,unresolved,hasCheckpoint, checkpointSummary, trialRecovery, canRetry, lastResult, lastReplayed, saveLabel,execution,
     activity,activityRuntime,activityRunning,activityLocal,activityOwned,activityPausing,activityNotice,lastFromActivity,syncEpoch,loadActivityHistory,startPlannedActivity,prepareMilestone,startPreparedMilestone,startCultivation,pauseCultivation,resumeCultivation,
-    init, refresh, start, act, prepareAction, actPrepared, prepareConfiguration, applyConfiguration, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, wasConfirmedFor, rawText, validationError,observe };
+    init, refresh, start, act, prepareAction, actPrepared,prepareDirect,executeDirect, prepareConfiguration, applyConfiguration, discardRetryFor, importText, prepareImport, importPrepared, restart, checkpoint, prepareCheckpoint, restorePrepared, retry, canRetryFor, retryFor, wasConfirmedFor, rawText, validationError,observe };
 });

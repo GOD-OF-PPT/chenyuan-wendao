@@ -19,6 +19,12 @@ async function begin(page: Page, plan: any) {
   if (plan.kind === 'encounter') {
     await page.getByTestId('tab-1').click(); await page.getByTestId('explore-mode-battle').click();
     await page.getByTestId('encounter-' + plan.enemy).click();
+    await page.getByTestId('adventure-page-limits').click();
+    await page.getByLabel('持续历练直到目标或手动停下',{exact:true}).uncheck();
+    await page.getByLabel('历练最多场次',{exact:true}).fill(String(plan.maxEncounters));
+    await page.getByLabel('历练游戏月预算',{exact:true}).fill(String(plan.monthBudget));
+    await page.getByLabel('历练累计灵力预算',{exact:true}).fill(String(plan.mpBudget));
+    await page.getByTestId('adventure-page-object').click();
     selected = {control: page.getByTestId('adventure-start')};
   } else selected = await selectPlan(page, plan);
   await selected.control.click();

@@ -10,6 +10,9 @@ import type { Activity, ActivityMutation, ActivityOutcome, ActivityPlan, Activit
 import { activityReceipt, validateActivityReceipt, type ActivityReceiptInput } from './activity-persistence';
 import { validateConfigurationIntent, type ConfigurationIntent } from '../../src/full/configuration.ts';
 import { configurationReceipt, validateConfigurationReceipt } from './configuration-persistence';
+import type {DirectIntent} from '../../src/full/direct-actions.ts';
+import {validateDirectIntent} from '../../src/full/direct-actions.ts';
+import {directReceipt,validateDirectReceipt} from './direct-persistence';
 export type { ActivityMutation, ActivityOutcome, ActivityPlan, ActivityTick } from '../../src/full/activity.ts';
 
 export const FULL_DB_NAME = 'chenyuan-playable-v1';
@@ -560,6 +563,7 @@ export class FullSaveRepository {
             readReceipt(receipts, intent.runId + ':' + intent.commandId, stored => {
               try {
                 if (stored !== undefined) {
+                  if (stored && typeof stored === 'object' && 'format' in stored && stored.format === 'chenyuan-direct-receipt') { validateDirectReceipt(stored,current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于轻量行动'); }
                   if (stored && typeof stored === 'object' && 'format' in stored && stored.format === 'chenyuan-receipt') {
                     validateCommandReceipt(stored, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令');
                   }
@@ -630,6 +634,7 @@ export class FullSaveRepository {
             readReceipt(receipts, command.runId + ':' + command.commandId, stored => {
               try {
                 if (stored !== undefined) {
+                  if (stored && typeof stored === 'object' && 'format' in stored && stored.format === 'chenyuan-direct-receipt') { validateDirectReceipt(stored,current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于轻量行动'); }
                   if (stored && typeof stored === 'object' && 'format' in stored && stored.format === 'chenyuan-receipt') {
                     validateCommandReceipt(stored, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令');
                   }
@@ -657,6 +662,30 @@ export class FullSaveRepository {
           }, abort);
         } catch (error) { abort(error); }
       };
+    });
+  }
+  async executeDirect(input:DirectIntent):Promise<ActivityOutcome> {
+    validateDirectIntent(input);const intent=structuredClone(input),command=intent.command,print=fingerprint(intent);
+    return this.transaction('readwrite',(tx,complete,abort)=>{
+      const state=tx.objectStore(FULL_STATE_STORE),receipts=tx.objectStore(FULL_RECEIPT_STORE),read=state.get('current');
+      read.onsuccess=()=>{try{
+        const current=read.result;validateGame(current);
+        if(current.core.runId!==command.runId)throw new RuleError('RUN_MISMATCH','当前人生已变化，请重新查看');
+        readStoredActivity(tx,current,activity=>readReceipt(receipts,command.runId+':'+command.commandId,stored=>{try{
+          if(stored!==undefined){
+            if(!stored||typeof stored!=='object'||!('format'in stored)||stored.format!=='chenyuan-direct-receipt')throw new RuleError('COMMAND_ID_REUSED','同一编号已用于其他行动');
+            validateDirectReceipt(stored,current);if(stored.fingerprint!==print)throw new RuleError('COMMAND_ID_REUSED','同一编号对应不同轻量行动');
+            complete({state:current,activity,result:stored.result,replayed:true});return;
+          }
+          if(current.core.revision!==command.expectedRevision)throw new RuleError('STALE_REVISION','进度已变化，请重新查看本次行动');
+          if((activity?.id??null)!==intent.expectedActivityId||(activity?.revision??null)!==intent.expectedActivityRevision)throw new RuleError('ACTIVITY_STALE','活动已变化，本次行动未执行');
+          if(activity?.status==='running')throw new RuleError('ACTIVITY_RUNNING','请先暂停当前活动，再确认本次行动');
+          const outcome=resolve(current,command),nextActivity=activity?invalidateActivity(activity,outcome.nextState):null;
+          state.put(current,'previous');state.put(outcome.nextState,'current');if(nextActivity)state.put(nextActivity,'activity');
+          receipts.put(directReceipt(intent,current,outcome.nextState,outcome.result),command.runId+':'+command.commandId);
+          complete({state:outcome.nextState,activity:nextActivity,result:outcome.result,replayed:false});
+        }catch(error){abort(error);}},abort),abort);
+      }catch(error){abort(error);}};
     });
   }
   loadCheckpoint(): Promise<SaveCheckpoint | null> {
@@ -716,7 +745,8 @@ export class FullSaveRepository {
           readReceipt(receipts, mutation.runId + ':' + mutation.commandId, (storedReceipt) => {
             try {
               if (storedReceipt !== undefined) {
-                if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-receipt') { validateCommandReceipt(storedReceipt, existing!); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令'); }
+                if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-direct-receipt') { validateDirectReceipt(storedReceipt,existing!); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于轻量行动'); }
+                  if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-receipt') { validateCommandReceipt(storedReceipt, existing!); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令'); }
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-activity-receipt') { validateActivityReceipt(storedReceipt, existing!); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于活动安排'); }
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-configuration-receipt') { validateConfigurationReceipt(storedReceipt, existing!); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于配装确认'); }
                 validateControlReceipt(storedReceipt);
@@ -755,7 +785,8 @@ export class FullSaveRepository {
           readReceipt(receipts, mutation.runId + ':' + mutation.commandId, (storedReceipt) => {
             try {
               if (storedReceipt !== undefined) {
-                if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-receipt') { validateCommandReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令'); }
+                if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-direct-receipt') { validateDirectReceipt(storedReceipt,current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于轻量行动'); }
+                  if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-receipt') { validateCommandReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于游戏指令'); }
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-activity-receipt') { validateActivityReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于活动安排'); }
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-configuration-receipt') { validateConfigurationReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于配装确认'); }
                 validateControlReceipt(storedReceipt);
@@ -809,6 +840,7 @@ export class FullSaveRepository {
           readReceipt(receipts, command.runId + ':' + command.commandId, (storedReceipt) => {
             try {
               if (storedReceipt !== undefined) {
+                if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-direct-receipt') { validateDirectReceipt(storedReceipt,current); throw new RuleError('COMMAND_ID_REUSED','同一编号已用于轻量行动'); }
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-control-receipt') { validateControlReceipt(storedReceipt); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于存档操作'); }
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-activity-receipt') { validateActivityReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于活动周期或安排'); }
                 if (storedReceipt && typeof storedReceipt === 'object' && 'format' in storedReceipt && storedReceipt.format === 'chenyuan-configuration-receipt') { validateConfigurationReceipt(storedReceipt, current); throw new RuleError('COMMAND_ID_REUSED', '同一编号已用于配装确认'); }

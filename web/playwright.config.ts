@@ -10,5 +10,8 @@ export default defineConfig({
   reporter: [['list'], ['json',{outputFile:'recovery-report/ui.json'}], ['html', { open: 'never' }]],
   projects: ['chromium', 'firefox', 'webkit'].map(name => ({ name, use: { browserName: name as 'chromium' | 'firefox' | 'webkit', ...(name === 'firefox' ? { launchOptions: { firefoxUserPrefs: { 'network.proxy.type': 0 } } } : {}) } })),
   use: { baseURL: 'http://127.0.0.1:4173', viewport: { width: 1440, height: 1000 }, trace: 'retain-on-failure', screenshot: 'only-on-failure' },
-  webServer: { command: 'npm run preview -- --port 4173 --strictPort', url: 'http://127.0.0.1:4173', reuseExistingServer: false },
+  webServer: [
+    { command: 'npm run preview -- --port 4173 --strictPort', url: 'http://127.0.0.1:4173', reuseExistingServer: false },
+    { command: 'npm run dev -- --port 4177 --strictPort', url: 'http://127.0.0.1:4177/persistence-tests/harness.html', reuseExistingServer: false },
+  ],
 });
