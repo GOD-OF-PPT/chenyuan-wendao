@@ -7,12 +7,13 @@ import {items,recipes,relics,skills,sources} from '../../src/full/content.ts';
 import {activityView,stopMessage} from './activity-view';
 import {formatCosts,formatDelta} from './presentation';
 import CataloguePager from './CataloguePager.vue';
+import {repeats} from '../../src/full/repetition';
 
 const props=defineProps<{store:ReturnType<typeof useGame>}>();
 const history=shallowRef<ActivityHistoryPage|null>(null),error=ref(''),loading=ref(false),requestedPage=ref(0);
 const activity=computed(()=>{const a=props.store.activity;return a&&a.version<=5&&a.runId===props.store.game?.core.runId?a:null;});
 const view=computed(()=>activity.value?activityView(activity.value,props.store.game):null);
-const totals=computed(()=>activity.value&&view.value?[`已完成 ${activity.value.completedCycles} / ${activity.value.plan.maxCycles} ${view.value.unit}`,...view.value.summary]:[]);
+const totals=computed(()=>activity.value&&view.value?[`已完成 ${activity.value.completedCycles}${repeats(activity.value.plan)?' · 持续至目标或触线':' / '+activity.value.plan.maxCycles} ${view.value.unit}`,...view.value.summary]:[]);
 const stopped=computed(()=>activity.value?.stopReason?stopMessage(activity.value.plan,activity.value.stopReason):'');
 const incomplete='本段收获未能完整核对，请重新读取；没有改变游戏进度。';
 let request=0,disposed=false;

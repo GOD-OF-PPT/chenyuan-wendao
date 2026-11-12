@@ -1,6 +1,7 @@
 import {canonicalFingerprint as proof} from '../../src/full/receipts.ts';
 import type {Activity,ActivityPlan,PreparationActivity} from '../../src/full/activity.ts';
 import {items,skills} from '../../src/full/content.ts';
+import {repeats} from '../../src/full/repetition';
 export function preparationView(a:PreparationActivity){
  const p=a.plan,names={learn:'研习玉简',study:'参悟惊鸿剑简',buy:'坊市采购',sell:'坊市寄售',use:'药匣调息',rest:'洞府疗养'};
  const material=(x:Record<string,number>)=>Object.entries(x).map(([id,n])=>`${items[id].name} ×${n}`).join(' · ');
@@ -14,5 +15,5 @@ export function preparationView(a:PreparationActivity){
 export function pausedPlanView(a:Activity|null|undefined,run:string,plan:ActivityPlan){
  const paused=a?.status==='paused'&&a.runId===run,same=!!paused&&proof(a.plan)===proof(plan);
  const completed=same&&a?a.completedCycles:0,maxCycles=same&&a?a.plan.maxCycles:0;
- return{same,label:same?'已保存打算未变 · 上方继续':paused?'结束原活动后开始 · ':'',completed,maxCycles,summary:same?`原段已暂停 · 已完成 ${completed} / ${maxCycles}`:'',note:'stoneBudget'in plan?'继续沿用原累计预算与保留线。':'继续沿用原次数、目标与保留线。'};
+ return{same,label:same?'已保存打算未变 · 上方继续':paused?'结束原活动后开始 · ':'',completed,maxCycles,summary:same?`原段已暂停 · 已完成 ${completed}${repeats(plan)?' · 持续至目标或触线': ' / '+maxCycles}`:'',note:'stoneBudget'in plan?'继续沿用原累计预算与保留线。':'继续沿用原次数、目标与保留线。'};
 }
