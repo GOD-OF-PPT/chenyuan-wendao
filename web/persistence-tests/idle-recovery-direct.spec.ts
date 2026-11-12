@@ -40,3 +40,19 @@ test('an activity-only CAS race rejects a direct choice, while a committed respo
   expect(r.stale.code).toBe('ACTIVITY_STALE');expect(r.after).toEqual(r.before);expect(r.opened.activity.status).toBe('stopped');expect(r.opened.activity.stopReason.code).toBe('STATE_CHANGED');
   expect(r.saved.state.core.player.stones).toBe(r.opened.state.core.player.stones-18);expect(r.replay.replayed).toBe(true);expect(r.replay.state).toEqual(r.later.state);expect(r.replay.activity).toEqual(r.later.activity);expect(r.replay.result).toEqual(r.saved.result);expect(r.persisted).toEqual({state:r.later.state,activity:r.later.activity});
 });
+
+test('a lost direct reply survives refresh and shares no command namespace with activity or configuration writes',async({page})=>{
+  await setupPersistence(page);
+  const r=await page.evaluate(async()=>{
+    const h=(globalThis as any).h,d=h.routes.driver();d.buy('healing_pill',3);d.go('wilderness');d.doAction({type:'ENCOUNTER',enemy:'wolf'});d.doAction({type:'BATTLE',move:'flee'});d.go('cave');
+    const name='direct-lost',repo=await h.FullSaveRepository.open(name);let reopened:any;
+    try{
+      await repo.importText(JSON.stringify(d.game),h.mutation());const before=await repo.loadActivitySnapshot();
+      const command={type:'USE',item:'healing_pill',commandId:crypto.randomUUID(),runId:before.state.core.runId,expectedRevision:before.state.core.revision},intent={command,expectedActivityId:null,expectedActivityRevision:null};
+      await repo.executeDirect(intent);const committed=await h.inspect(name);repo.close();reopened=await h.FullSaveRepository.open(name);
+      const replay=await reopened.executeDirect(intent),after=await h.inspect(name),bad=await h.attempt(()=>reopened.executeDirect({...intent,command:{...command,item:'spirit_pill'}}));
+      const cross=await h.attempt(()=>reopened.execute(command));return{committed,after,replay,bad,cross};
+    }finally{repo.close();reopened?.close();}
+  });
+  expect(r.replay.replayed).toBe(true);expect(r.after).toEqual(r.committed);expect(r.bad.code).toBe('COMMAND_ID_REUSED');expect(r.cross.code).toBe('COMMAND_ID_REUSED');
+});

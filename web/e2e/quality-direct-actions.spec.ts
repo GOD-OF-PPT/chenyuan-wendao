@@ -33,6 +33,20 @@ test('a chosen medicine can be used once directly from the inventory without ano
   await expect(page.getByTestId('recovery-planner')).toHaveCount(0);await expect(page.getByTestId('game-confirmation')).toHaveCount(0);expect(await activitySnapshot(page)).toBeNull();
 });
 
+test('a visit opens its choices after one confirmation, and direct selling is limited to one item at the actual market',async({page})=>{
+  const d=driver('trade','sword');d.realm();d.funds(100);d.go('sect');const before=await importRecoveryFixture(page,d.game);
+  await page.getByTestId('tab-3').click();await page.getByTestId('fate-mode-events').click();
+  await page.getByTestId('event-shen_return').click();await page.getByTestId('game-confirmation-confirm').click();
+  await expect(page.getByTestId('decide-bargain')).toBeVisible();expect((await snapshot(page)).core.activeEvent?.id).toBe('shen_return');expect((await snapshot(page)).core.revision).toBe(before.core.revision+1);
+  expect(await activitySnapshot(page)).toBeNull();
+});
+
+test('one direct sale changes inventory and stones only once and does not open another plan',async({page})=>{
+  const d=driver();d.buy('healing_pill',3);const before=await importRecoveryFixture(page,d.game);await page.getByTestId('tab-2').click();await selectInventoryItem(page,'healing_pill');
+  await page.getByTestId('quick-sell-healing_pill').dblclick();await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(before.core.revision+1);
+  expect(await snapshot(page)).toEqual(resolve(before,{type:'SELL',item:'healing_pill',quantity:1,commandId:'proof',runId:before.core.runId,expectedRevision:before.core.revision}).nextState);await expect(page.getByTestId('game-confirmation')).toHaveCount(0);expect(await activitySnapshot(page)).toBeNull();
+});
+
 for(const {person,game} of npcResponseFixtures())test(`all ${person} response options and full costs remain readable before a readonly cancelled confirmation`,async({page},info)=>{
   const g=await importRecoveryFixture(page,game);await page.getByTestId('tab-3').click();await page.getByTestId('resume-encounter').click();
   const raw=await recoveryDatabase(page),choices=narrativeFor(g)!.choices;
