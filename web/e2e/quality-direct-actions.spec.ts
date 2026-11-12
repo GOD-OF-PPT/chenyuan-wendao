@@ -73,6 +73,20 @@ test('browsing elsewhere after a failed visit prevents its original retry from s
   await page.getByTestId('fate-mode-journal').click();await page.getByTestId('retry').click();await expect(page.getByTestId('error')).toHaveCount(0);await expect(page.getByTestId('fate-mode-journal')).toHaveAttribute('aria-pressed','true');await expect(page.getByTestId('narrative-catalogue')).toHaveCount(0);expect((await snapshot(page)).core.activeEvent?.id).toBe('shen_return');
 });
 
+for(const view of ['route','people'])test(`opening a readonly ${view} book during a pending visit preserves that later reading after commit`,async({page})=>{
+  const d=driver('trade','sword');d.realm();d.funds(100);d.go('sect');const before=await importRecoveryFixture(page,d.game);
+  await page.getByTestId('tab-3').click();
+  await page.evaluate(()=>new Promise<void>((ok,no)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onerror=()=>no(q.error);q.onsuccess=()=>{const db=q.result,t=db.transaction('full-state','readwrite'),s=t.objectStore('full-state');let hold=true;(window as any).__releaseVisitRead=()=>hold=false;const pulse=()=>{s.get('current').onsuccess=()=>{if(hold)pulse();};};pulse();t.oncomplete=()=>db.close();ok();};}));
+  try{
+    await page.getByTestId('event-shen_return').click();await page.getByTestId('game-confirmation-confirm').click();
+    await expect(page.getByTestId('save-status')).toHaveText('保存中');await page.getByTestId('fate-'+view+'-open').click();await expect(page.getByTestId('fate-'+view+'-dialog')).toBeVisible();
+  }finally{await page.evaluate(()=>(window as any).__releaseVisitRead());}
+  await expect(page.getByTestId('save-status')).toHaveText('已保存');
+  await expect(page.getByTestId('fate-'+view+'-dialog')).toBeVisible();await expect(page.getByTestId('narrative-catalogue')).toHaveCount(0);
+  expect(await snapshot(page)).toEqual(resolve(before,{type:'EVENT',event:'shen_return',commandId:'proof',runId:before.core.runId,expectedRevision:before.core.revision}).nextState);
+  expect(await activitySnapshot(page)).toBeNull();
+});
+
 test('a keyboard sale of the final item returns focus to the stable inventory source entry',async({page})=>{
   const d=driver();d.buy('spirit_pill',1);const before=await importRecoveryFixture(page,d.game);await page.getByTestId('tab-2').click();await selectInventoryItem(page,'spirit_pill');
   await page.getByTestId('quick-sell-spirit_pill').focus();await page.keyboard.press('Enter');await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(before.core.revision+1);await expect(page.getByTestId('inventory-main-source')).toBeFocused();expect((await snapshot(page)).core.inventory.spirit_pill).toBe(0);
