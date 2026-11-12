@@ -76,3 +76,7 @@
 #app .art31-scroll .life-scroll-tools>.catalogue-pager{display:flex;align-items:center;gap:12px;min-height:44px;margin:0;padding:0;width:auto;border:0}#app .art31-scroll .catalogue-pager button{min-width:92px;min-height:44px;padding:8px 14px;font-size:18px}#app .art31-scroll .catalogue-pager>span{min-width:176px;font-size:14px}
 #app .art05-story .art31-scroll>.life-scroll-canvas::before{content:none}#app .art05-story .art31-scroll .reading-text p{white-space:break-spaces}
 #app .art31-scroll .art30{display:grid;place-items:center}#app .art31-scroll .art31-imprint{display:grid;place-items:center;box-sizing:border-box;width:88px;height:104px;padding:8px;border:4px double #b3bb92;color:#d7dec0;background:#123a3466;font-size:24px;line-height:1.5;text-align:center;letter-spacing:.1em;rotate:-6deg;animation:art31-stamp .35s ease-out}@keyframes art31-stamp{from{filter:brightness(1.2)}to{filter:none}}
+
+/* Q02: captions occupy their own solid text area below the painted person. */
+#app .art05-story .art30-meeting>:is(.encounter-presence,.response-presence){gap:12px}
+#app .art05-story .art30-meeting>:is(.encounter-presence,.response-presence)>small{flex:0 0 auto;position:relative;padding:6px 8px;background:#0b2e33f5;line-height:1.5}

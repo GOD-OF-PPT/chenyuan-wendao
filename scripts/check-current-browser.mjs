@@ -7,7 +7,7 @@ import {newValidationOutput} from './validation-output.mjs';
 import {assessCurrentBrowserRun} from './current-browser-report.mjs';
 
 export function checkCurrentBrowser(suite = 'ui', requested) {
-  const config = {ui: 'playwright.quality.config.ts', native: 'playwright.idle-recovery.config.ts'}[suite];
+  const config = {ui: 'playwright.quality.config.ts', native: 'playwright.idle-recovery.config.ts', q02: 'playwright.q02.config.ts'}[suite];
   if (!config) throw new Error('Current browser suite must be ui or native');
   const snapshot = () => ({...sourceIdentity(), runtime: sha(JSON.stringify(runtimeSources()))});
   const before = snapshot();

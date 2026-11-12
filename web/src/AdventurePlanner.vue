@@ -8,6 +8,7 @@ import {previewActivity} from '../../src/full/activity.ts';
 import {stopMessage} from './activity-view';
 import {defaultBattleStrategy,defaultEncounterPlan,type AdventurePlan,type TravelPlan,type EncounterPlan} from '../../src/full/adventure.ts';
 import type {TrackingTarget} from '../../src/full/goals.ts';
+import {canonicalFingerprint} from '../../src/full/receipts';
 import {pageSlice} from './play-flow';
 import {SCENE_ASSETS,ENEMY_ASSETS} from './assets';
 import AssetImage from './AssetImage.vue';
@@ -35,6 +36,23 @@ const location=computed(()=>props.mode==='travel'?trip.value.location:props.game
 const here=computed(()=>props.mode==='travel'&&trip.value.location===props.game.core.world.location);
 const conflict=computed(()=>scene?.unresolved?scene.syncIssue?'存档待核对，请先重新读取':'请先重试或取消原操作':!props.available?'存档未就绪':props.busy?'当前行动保存中，请稍候':props.running?'已有活动进行中，请先暂停后确认新安排':'');
 const sameSaved=computed(()=>!!props.savedPlan&&JSON.stringify(props.savedPlan)===JSON.stringify(plan.value));
+const selectedActivity=computed(()=>{
+ const a=props.activity;
+ if(a?.version!==6||a.runId!==props.game.core.runId||a.gameRevision!==props.game.core.revision)return null;
+ return props.mode==='travel'?a.plan.kind==='travel'&&a.plan.location===trip.value.location?a:null:
+  a.plan.kind==='encounter'&&canonicalFingerprint(a.plan)===canonicalFingerprint(plan.value)?a:null;
+});
+const planState=computed(()=>{
+ const a=selectedActivity.value,r=scene?.activityRuntime;
+ if(a){
+  const clock=r?.id===a.id&&r.generation===a.generation?r:null;
+  if(scene?.error||scene?.syncIssue)return'行程存档待核对 · 请沿原操作处理';
+  if(a.status==='paused')return props.mode==='travel'?'行旅已暂停 · 原行程保留':'历练已暂停 · 原战策保留';
+  if(a.status==='running')return clock?clock.phase==='saving'?'本次结果保存中 · 尚未确认':props.mode==='travel'?'行路中 · 前往'+C.locations[trip.value.location].name:'历练进行中 · '+(enemy.value?.name??'当前对手'):'原行程已安排 · 本页待接续';
+  if(a.completedCycles>0)return props.mode==='travel'&&here.value?'已抵达 · 此程已结束':'本段已结束 · 可查看原安排';
+ }
+ return sameSaved.value&&props.planSaved?'已保存安排；修改后须另行确认':here.value?'当前所在 · 可查看本地活动或点选异地':'待确认的新安排；选择不会旅行或开战';
+});
 const targetItem=computed({get:()=>encounter.value.target?.item??'',set:(item:string)=>{encounter.value={...encounter.value,target:item?{item,quantity:props.game.core.inventory[item]+1}:null};}});
 const strategy=computed({get:()=>encounter.value.strategy,set:(value:EncounterPlan['strategy'])=>{encounter.value={...encounter.value,strategy:{...value,priority:[...value.priority]}};}});
 const danger=computed(()=>props.activity?.version===6&&props.activity.status==='paused'&&['ADVENTURE_DANGER','ADVENTURE_RISK'].includes(props.activity.stopReason?.code??'')?props.activity.stopReason?.message:null);
@@ -53,7 +71,7 @@ locate();restore();
 </script>
 <template>
  <section class="adventure-planner" :class="{'paper':!embedded}" data-testid="adventure-planner" :data-mode="mode" :data-section="section" aria-label="行旅与历练安排">
-  <header class="adventure-heading"><div><strong>{{mode==='travel'?(here?'此地 · ':'行旅 · ')+C.locations[trip.location].name:'历练 · '+(enemy?.name??'选择对手')}}</strong><small data-testid="adventure-plan-state">{{sameSaved&&planSaved?'已保存安排；修改后须另行确认':here?'当前所在 · 可查看本地活动或点选异地':'待确认的新安排；选择不会旅行或开战'}}</small></div><nav v-if="mode==='encounter'&&rows.length" aria-label="历练安排分页"><button v-for="[id,label] in [['object','对手与目标'],['strategy','战策'],['limits','目标与限额']] as const" :key="id" :data-testid="'adventure-page-'+id" :aria-pressed="section===id" @click="section=id">{{label}}</button></nav></header>
+  <header class="adventure-heading"><div><strong>{{mode==='travel'?(here?'此地 · ':'行旅 · ')+C.locations[trip.location].name:'历练 · '+(enemy?.name??'选择对手')}}</strong><small data-testid="adventure-plan-state">{{planState}}</small></div><nav v-if="mode==='encounter'&&rows.length" aria-label="历练安排分页"><button v-for="[id,label] in [['object','对手与目标'],['strategy','战策'],['limits','目标与限额']] as const" :key="id" :data-testid="'adventure-page-'+id" :aria-pressed="section===id" @click="section=id">{{label}}</button></nav></header>
   <p v-if="danger" class="adventure-danger">战局仍保留：{{danger}}。暂停不是撤退，不扣撤退气血。</p>
   <div v-if="!rows.length" class="adventure-empty"><strong>此地没有普通对手</strong><p>选择可前往的地点，实际抵达后再安排历练。不会自动行路或开战。</p><button data-testid="adventure-locations" @click="emit('locations','travel')">查看可前往的地点</button></div>
   <template v-else>
