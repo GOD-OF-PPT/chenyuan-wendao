@@ -1,5 +1,6 @@
 import {test,expect,type Page} from '@playwright/test';
 import {newGame,resolve} from '../../src/full/engine';
+import {previewAction} from '../../src/full/queries';
 import {driver} from '../../tests/full-route.mjs';
 import * as C from '../../src/full/content';
 import {importRecoveryFixture,recoveryDatabase} from './idle-recovery-ui-support';
@@ -56,4 +57,14 @@ test('Q06-5 current skills and later sword manuals use their actual realm condit
 
 test('Q06-6 an actual foundation life opens the sword manual without changing its committed facts',async({page})=>{
  const d=driver();d.realm();const g=await importRecoveryFixture(page,d.game),raw=await recoveryDatabase(page);await page.getByTestId('hub-skills').click();await expect(page.getByTestId('equipment-mode-manual')).toBeEnabled();await page.getByTestId('equipment-mode-manual').click();await expect(page.getByTestId('sword-manual')).toBeVisible();expect(await snapshot(page)).toEqual(g);expect(await recoveryDatabase(page)).toEqual(raw);
+});
+
+for(const stage of ['mortal','qi'])test(`Q06-7 the genuinely learned trade-opening manual remains readable at ${stage} without another study`,async({page})=>{
+ const initial=newGame('已悟旧卷','owned-manual'),fixture=stage==='mortal'?resolve(initial,{type:'CHOOSE',choice:'trade',commandId:'lawful-trade',runId:initial.core.runId,expectedRevision:0}).nextState:driver('trade','sword').game;
+ const g=await importRecoveryFixture(page,fixture),raw=await recoveryDatabase(page);expect(g.core.learnedSkills).toContain(C.swordManual.id);await expect(page.getByTestId('hub-skills')).toBeEnabled();await page.getByTestId('hub-skills').click();await expect(page.getByTestId('equipment-mode-manual')).toBeEnabled();await page.getByTestId('equipment-mode-manual').click();await expect(page.getByTestId('sword-manual')).toBeVisible();await expect(page.getByTestId('jade-study-status')).toContainText('剑简已悟');expect(previewAction(g,{type:'STUDY',manual:'jinghong'}).allowed).toBe(false);expect(await snapshot(page)).toEqual(g);expect(await recoveryDatabase(page)).toEqual(raw);
+});
+
+test('Q06-8 reading the original encounter strategy retains exactly one live clock and pause',async({page})=>{
+ const d=driver();d.go('wilderness');const g=await importRecoveryFixture(page,d.game);await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-battle').click();await page.getByTestId('encounter-wolf').click();await page.getByTestId('adventure-page-limits').click();await page.getByLabel('持续历练直到目标或手动停下',{exact:true}).uncheck();await page.getByLabel('历练游戏月预算',{exact:true}).fill('1');await page.getByLabel('历练累计灵力预算',{exact:true}).fill('480');await page.getByTestId('adventure-page-object').click();await page.getByTestId('adventure-start').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');const a=await activitySnapshot(page),raw=await recoveryDatabase(page);
+ await page.getByTestId('activity-inspect').click();await page.getByTestId('activity-original-plan').click();await expect(page.getByTestId('activity-plan-review')).toBeVisible();expect(await clocks(page)).toHaveLength(1);await expect(page.getByTestId('training-pause')).toBeVisible();expect(await recoveryDatabase(page)).toEqual(raw);expect(await snapshot(page)).toEqual(g);await page.clock.fastForward(a.cycleMs-1);expect(await recoveryDatabase(page)).toEqual(raw);await page.clock.fastForward(1);await expect.poll(async()=>(await activitySnapshot(page))?.completedCycles).toBe(1);expect(await snapshot(page)).toEqual(resolve(g,a.nextCommand).nextState);expect(await clocks(page)).toHaveLength(1);await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('paused');
 });
