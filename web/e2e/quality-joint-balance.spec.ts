@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import * as old from '../../src/legacy/rules-v3/index.ts';
 import * as current from '../../src/full/engine.ts';
 import {importRecoveryFixture,recoveryDatabase} from './idle-recovery-ui-support';
-import {openHubFeature,snapshot,activitySnapshot} from './support';
+import {snapshot,activitySnapshot} from './support';
 import {selectMarketItem,selectSource} from './stage-support';
 import {home,selectPlan} from './idle-route-support';
 import {lifespanFixture,atLocation} from '../../tests/lifespan-guidance-fixtures.mjs';
@@ -17,7 +17,7 @@ function prepared(engine=current){
 for(const legacy of [false,true])test(`Q07 read-only ${legacy?'old v3':'new v4'} surfaces retain their own prices periods and calendar`,async({page},info)=>{
  const game=prepared(legacy?old.engine:current),before=await importRecoveryFixture(page,game),raw=await recoveryDatabase(page);
  await expect(page.getByTestId('legacy-rules')).toHaveCount(legacy?1:0);
- await openHubFeature(page,'market');await selectMarketItem(page,'foundation_pill');
+ await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-purchase').click();await selectMarketItem(page,'foundation_pill');
  await expect(page.locator('.market-price')).toContainText(`每件 ${legacy?160:195} 灵石`);
  await page.screenshot({path:info.outputPath('own-profile-price.png')});
  await home(page);await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-source').click();await selectSource(page,'core');
