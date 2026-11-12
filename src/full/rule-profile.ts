@@ -12,6 +12,7 @@ export function isLegacyRules(value:unknown):boolean{
  return object(value)&&object(value.core)&&value.core.contentVersion==='full-demo.3'&&value.core.balanceVersion==='full-unbalanced.3';
 }
 export function rulesVersion(game:Game):string{
+ if(!object(game)||!object(game.core))throw new RuleError('SAVE_VERSION','内容或数值版本不匹配，请保留原存档');
  if(isLegacyRules(game))return LEGACY_RULES_VERSION;
  if(game.core.contentVersion===VERSION&&game.core.balanceVersion===BALANCE)return CURRENT_RULES_VERSION;
  throw new RuleError('SAVE_VERSION','内容或数值版本不匹配，请保留原存档');
@@ -30,7 +31,11 @@ export function assertActivityRules(value:unknown,game?:Game):void{
  const id=activityRulesVersion(value);
  if(game&&id!==rulesVersion(game))throw new RuleError('ACTIVITY_INVALID','活动规则与所属人生不一致，原记录保留');
  if(object(value))for(const field of ['originGame','decisionGame','outcomeGame']){
-  const snapshot=value[field];if(snapshot!==undefined&&snapshot!==null&&rulesVersion(snapshot as Game)!==id)throw new RuleError('ACTIVITY_INVALID','活动证明状态的规则不一致，原记录保留');
+  const snapshot=value[field];
+  if(snapshot!==undefined&&snapshot!==null){
+   let profile:string;try{profile=rulesVersion(snapshot as Game);}catch{throw new RuleError('ACTIVITY_INVALID','活动证明状态的规则无效，原记录保留');}
+   if(profile!==id)throw new RuleError('ACTIVITY_INVALID','活动证明状态的规则不一致，原记录保留');
+  }
  }
 }
 export function legacyCall<T>(read:()=>T):T{

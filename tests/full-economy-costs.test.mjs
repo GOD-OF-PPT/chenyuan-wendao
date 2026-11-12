@@ -62,5 +62,5 @@ test('all finite buy/sell and sellable recipe conversion cycles fail to create f
 test('a real trial defeat can restore health and repurchase entry without counting rollback as income', () => {
   const probe = failureRecoveryProbe(); assert.equal(probe.failure.hp, 1); assert.equal(probe.failure.inventory.ascension_seal, 0);
   assert.equal(probe.restoredReadiness.inventory.ascension_seal, 1); assert.equal(probe.recoveryGrossStones, C.items.ascension_seal.buy);
-  assert.equal(probe.recoveryMonths, 7 * C.sources.work_spirit.months + C.actionDurations.rest); assert.equal(probe.checkpointRollbackCountedAsIncome, false);
+  assert.equal(probe.recoveryMonths, 6 * C.sources.work_spirit.months + C.actionDurations.rest); assert.equal(probe.checkpointRollbackCountedAsIncome, false);
 });

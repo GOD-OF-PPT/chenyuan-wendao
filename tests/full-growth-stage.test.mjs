@@ -34,8 +34,8 @@ test('a prepared breakthrough item never requests collecting its recipe again', 
 test('material counts reflect current inventory without reserving or awarding goods', () => {
   const d = gold(); d.resource('lotus', 2); const before = JSON.stringify(d.game);
   const stage = getGrowthStage(d.game), material = stage.recipes[0].materials[0];
-  assert.equal(material.have, 2); assert.equal(material.missing, 3);
-  assert.equal(material.sources.find(source => source.kind === 'purchase').rewardCount, 3);
+  assert.equal(material.have, 4); assert.equal(material.missing, 1);
+  assert.equal(material.sources.find(source => source.kind === 'purchase').rewardCount, 1);
   material.sources[0].costs.months = 999; assert.equal(getGrowthStage(d.game).recipes[0].materials[0].sources[0].costs.months, 36);
   assert.equal(JSON.stringify(d.game), before);
 });

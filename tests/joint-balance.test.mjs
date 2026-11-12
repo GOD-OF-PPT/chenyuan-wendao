@@ -57,3 +57,16 @@ test('every source and furnace retains the entire published online schedule inde
   assert.equal(recipePeriodMs(g,id),r.months*30000,id);
  }
 });
+
+
+test('a capped normal chemical preparation has an actual gathering advantage over income-funded finished medicine',async()=>{
+ const {createIdleRoute}=await import('../scripts/economy/idle-scenarios.mjs');
+ const {projectProgression}=await import('../src/full/progression.ts');
+ const r=createIdleRoute({choice:'leave',school:'sword',preparation:'gather',cultivation:'natural',answer:'accept',ending:'transmit',advanced:false});r.begin();r.grow('spirit');r.project('natural');
+ const before=structuredClone(r.game),gather=projectProgression(r.game,'gather'),purchase=projectProgression(r.game,'purchase');
+ assert.equal(gather.complete,true);assert.equal(purchase.complete,true);assert.equal(gather.closing.location,'cave');assert.equal(purchase.closing.location,'cave');
+ assert.equal(gather.closing.inventory.ascension_seal,purchase.closing.inventory.ascension_seal);assert.equal(gather.closing.xp,purchase.closing.xp);
+ assert.ok(gather.totals.costs.months<purchase.totals.costs.months,'self-sourced furnace must offer an actual lifespan advantage at this reported common checkpoint');
+ assert.ok(gather.onlineMs<purchase.onlineMs,'self-sourced furnace must beat the reported income-purchase path when cash has to be earned');
+ assert.deepEqual(r.game,before);
+});

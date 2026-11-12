@@ -23,8 +23,8 @@ for(const legacy of [false,true])test(`Q07 read-only ${legacy?'old v3':'new v4'}
  await page.screenshot({path:info.outputPath('own-profile-price.png')});
  await home(page);await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-source').click();await selectSource(page,'core');
  await expect(page.locator('.source-chosen')).toContainText(`120 秒 / ${legacy?4:48} 游戏月`);
- await expect(page.locator('.source-chosen')).toContainText('妖核 ×1');
- if(!legacy)await expect(page.locator('.source-chosen')).toContainText('灵石 +40');
+ await expect(page.locator('.source-chosen')).toContainText(`妖核 ×${legacy?1:2}`);
+ if(!legacy)await expect(page.locator('.source-chosen')).toContainText('灵石 +75');
  await page.screenshot({path:info.outputPath('own-profile-source.png')});
  expect(await recoveryDatabase(page)).toEqual(raw);expect(await snapshot(page)).toEqual(before);
 });

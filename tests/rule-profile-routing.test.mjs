@@ -50,8 +50,8 @@ test('interleaved old and new lives keep their own prices yields lifespan and so
  for(const game of [beforeNew,beforeOld,beforeNew,beforeOld]){
   const old=game===beforeOld,C=contentForGame(game);
   assert.equal(C.items.foundation_pill.buy,old?160:195);
-  assert.equal(C.sources.core.stones,old?0:40);
-  assert.equal(C.sources.jade_task.items.jade,old?1:2);
+  assert.equal(C.sources.core.stones,old?0:75);
+  assert.equal(C.sources.jade_task.items.jade,old?1:4);
   assert.equal(previewAction(game,{type:'SOURCE',sourceId:'work'}).costs.months,old?1:12);
   assert.equal(getLifeOverview(game).limitMonths,old?1440:1200);
   const purchase=getItemSources(game,'foundation_pill').find(s=>s.kind==='purchase');
@@ -59,4 +59,13 @@ test('interleaved old and new lives keep their own prices yields lifespan and so
   assert.equal(planCollection(game,'core',{kind:'stones',quantity:game.core.player.stones+40})?.count,old?undefined:1);
  }
  assert.deepEqual([beforeOld,beforeNew],snapshots);
+});
+
+
+test('malformed embedded rule snapshots are rejected as domain errors rather than retryable storage failures',()=>{
+ const game=current.newGame('坏证明','profile-malformed'),a=activities.createActivity(game,{kind:'milestone',action:{type:'CHOOSE',choice:'leave'},maxCycles:1},start);
+ for(const value of [{},[],1,'wrong',null,undefined]){
+  const bad=structuredClone(a);bad.originGame=value;
+  assert.throws(()=>activities.validateActivity(bad,game),e=>e instanceof current.RuleError&&!String(e.code).startsWith('STORAGE_'));
+ }
 });

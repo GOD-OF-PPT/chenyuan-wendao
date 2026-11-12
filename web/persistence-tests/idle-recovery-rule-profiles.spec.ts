@@ -102,3 +102,20 @@ test('an old checkpoint cannot attach to a new-rule life through open load resto
  },repositoryFsRoot);
  for(const r of rows){for(const result of [r.loaded,r.restored,r.opened])expect(result.code,'owner='+r.owner).toBe('CHECKPOINT_OWNERSHIP');expect(r.after).toEqual(r.raw);}
 });
+
+
+test('malformed embedded rule snapshots reject as activity errors with unchanged native records',async({page})=>{
+ await setupPersistence(page);
+ const rows=await page.evaluate(async()=>{
+  const h=(globalThis as any).h,rows=[];
+  for(const [index,value]of [{},[],1,'not-a-game'].entries()){
+   const name='malformed-profile-'+index,repo=await h.FullSaveRepository.open(name);
+   try{
+    const created=await repo.create('坏证明拒绝',h.mutation()),s=await repo.loadActivitySnapshot(),a=await repo.startActivity({kind:'milestone',action:{type:'CHOOSE',choice:'leave'},maxCycles:1},{commandId:crypto.randomUUID(),runId:created.state.core.runId,expectedRevision:0,expectedActivityId:null,expectedActivityRevision:null,ownerId:'one'});
+    const damaged=structuredClone(a.activity);damaged.originGame=value;await h.put(name,h.FULL_STATE_STORE,'activity',damaged);
+    const before=await h.inspect(name),result=await h.attempt(()=>repo.loadActivitySnapshot());rows.push({before,result,after:await h.inspect(name)});
+   }finally{repo.close();}
+  }return rows;
+ });
+ for(const r of rows){expect(r.result.code).toBe('ACTIVITY_INVALID');expect(r.after).toEqual(r.before);}
+});
