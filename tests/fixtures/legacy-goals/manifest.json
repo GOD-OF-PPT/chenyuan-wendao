@@ -2,7 +2,7 @@
   "format": "chenyuan-legacy-test-inputs",
   "version": 1,
   "sourceCommit": "c7190e67a265fe7c8bff63a1db222a434d7dcffd",
-  "archiveSHA256": "9345ecc1e8ac0263c438b01209bcbc1d4e580b5c5d7e26fbe3f1235af0f5a1f9",
+  "archiveSHA256": "6908ebd2a511c6738aae26a8090584259f8f6827b7106f397a249c53a44dc168",
   "files": [
     {
       "path": "goal-1/input.md",
@@ -1547,10 +1547,34 @@
       "sha256": "5dca76ca35a7516bd1b596722b3d5a0f572d81214d844636106bcbea1bf1ee87"
     },
     {
+      "path": "goal-4/evidence/ux27/App.vue.before.txt",
+      "gitBlob": "92f9ea8ee998013eed954eab5f2bb74dee03852d",
+      "bytes": 158735,
+      "sha256": "a0fe13157651faee105643b121108a102566a6b5aad50b4c37789e1ecc360fb6"
+    },
+    {
+      "path": "goal-4/evidence/ux27/EquipmentPanel.vue.before.txt",
+      "gitBlob": "b80f9937c5731badc2bb29d6ea542c8c3c3460ca",
+      "bytes": 4464,
+      "sha256": "31e8c9c3562fd53c1669601d6be90ab6fc3ace637513233fa75b5a92be06fc91"
+    },
+    {
       "path": "goal-4/evidence/ux28/RecoveryPlanner.vue.before.txt",
       "gitBlob": "b877354d7625d6a4b4932a437cfc751e8547a308",
       "bytes": 8573,
       "sha256": "478733b74bf51b209901a7e7328ea92269a77a30ab41c56c400ddd8b40ef78a9"
+    },
+    {
+      "path": "goal-4/evidence/ux29/RecoveryPlanner.vue.before.txt",
+      "gitBlob": "3bbd275920dd97ed87a6e46656cb9fbe57a91a10",
+      "bytes": 8567,
+      "sha256": "5de293edd038887f4f3fd5b8b0f88b71b9bf77af06c744d0731e61f9591183f2"
+    },
+    {
+      "path": "goal-4/evidence/ux29/RecoveryRitual.vue.before.txt",
+      "gitBlob": "0af5d1dffe7661db0f317a4baac46ec32fd91b20",
+      "bytes": 9452,
+      "sha256": "59f0187aa56a6ef240bc231df72a8851482c9f05c9c9d823618cbd34b1e96020"
     },
     {
       "path": "goal-4/evidence/ux30/AlchemyWorkshop.vue.before.txt",

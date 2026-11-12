@@ -1,3 +1,4 @@
+from fixture_links import external_file_link
 import copy,hashlib,json,unittest
 import test_inventory as inventory
 from cend13c_gap_inventory import MANIFEST,LEDGER,prior_preparation_gap_bytes,validate_preparation_gap
@@ -62,7 +63,8 @@ class PreparationGapTests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'C13C exact native error layout'):validate_preparation_gap(self.root)
  def test_real_cow_dependencies_include_every_original_reference_and_reject_symlink_parent(self):
   for n in MANIFEST['sourceReferences']+[MANIFEST['parent']['before'],MANIFEST['functional']['path'],MANIFEST['compressionProof']['path'],MANIFEST['extraParents'][0]['before']]:self.assertTrue((self.root/n).is_file(),n)
-  p=self.root/MANIFEST['parent']['path'];p.unlink();p.symlink_to(ROOT/MANIFEST['parent']['path'])
-  with self.assertRaisesRegex(AssertionError,'C13C actual local file'):validate_preparation_gap(self.root)
+  p=self.root/MANIFEST['parent']['path'];p.unlink()
+  with external_file_link(p,ROOT/MANIFEST['parent']['path'],self.root):
+   with self.assertRaisesRegex(AssertionError,'C13C actual local file'):validate_preparation_gap(self.root)
 
 if __name__=='__main__':unittest.main()

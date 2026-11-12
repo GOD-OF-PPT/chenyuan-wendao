@@ -1,6 +1,6 @@
 # Transitional historical test inputs
 
-`inputs.zip` contains only the 344-file transitive input closure still read by
+`inputs.zip` contains only the 348-file input closure still read by
 the legacy inventory/art/evidence checks, extracted byte for byte from commit
 `c7190e6` (the complete identity is in manifest.json). The manifest records each
 Git blob, byte length and SHA-256; it also binds the archive. No test result has
@@ -15,3 +15,7 @@ The archive is test data, not a runtime or production asset.
 This is a bridge for Q01, not the intended permanent guard design. Q14 replaces
 byte/ledger checks with behavior coverage and removes their now-unused inputs.
 Do not add new process evidence or new validators to this archive.
+
+The initial literal-reference scan found 344 files. A complete resource run also
+reached four dynamically constructed UX27/UX29 before-source paths; these four
+original inputs are included, with the same byte-for-byte Git provenance.

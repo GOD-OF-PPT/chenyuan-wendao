@@ -1,3 +1,4 @@
+from fixture_links import external_file_link
 import copy,hashlib,json,os,shutil,tempfile,unittest
 from pathlib import Path
 from check_inventory import validate,validate_alchemy_workshop,validate_adventure_objects,validate_equipment_objects,ART02_NATIVE,ART03_NATIVE,SCOPES
@@ -906,8 +907,9 @@ class NarrativeObjectTests(unittest.TestCase):
   for path in [self.root/self.data()['files'][0]['path'],self.root/'art/redesign/narrative-objects.json']:
    original=path.read_bytes()
    with tempfile.TemporaryDirectory(prefix='chenyuan-narrative-outside-') as folder:
-    outside=Path(folder)/path.name;outside.write_bytes(original);path.unlink();path.symlink_to(outside)
-    with self.subTest(path=path.name),self.assertRaises(AssertionError):self.check()
+    outside=Path(folder)/path.name;outside.write_bytes(original);path.unlink()
+    with external_file_link(path,outside,self.root):
+     with self.subTest(path=path.name),self.assertRaises(AssertionError):self.check()
     path.unlink();path.write_bytes(original)
  def test_narrative_actual_budget_enforced_after_identity_update(self):
   m=self.data();self.changed_source(m['files'][0]['path'],'x'*45001,m)
@@ -1000,8 +1002,9 @@ class CultivationObjectTests(unittest.TestCase):
   for path in [self.root/original['files'][0]['path'],self.root/'art/redesign/cultivation-objects.json']:
    raw=path.read_bytes()
    with tempfile.TemporaryDirectory(prefix='chenyuan-cultivation-external-')as folder:
-    other=Path(folder)/path.name;other.write_bytes(raw);path.unlink();path.symlink_to(other)
-    with self.assertRaises(AssertionError):self.check()
+    other=Path(folder)/path.name;other.write_bytes(raw);path.unlink()
+    with external_file_link(path,other,self.root):
+     with self.assertRaises(AssertionError):self.check()
     path.unlink();path.write_bytes(raw)
  def test_cultivation_actual_native_budget_checked_after_rehash(self):
   m=self.data();self.changed_source(m['files'][0]['path'],'x'*45001,m)
@@ -1128,8 +1131,9 @@ class FeedbackSkipTests(unittest.TestCase):
   for name in ['art/redesign/feedback-skip.json','web/src/FeedbackSkip.vue']:
    path=self.root/name;raw=path.read_bytes()
    with tempfile.TemporaryDirectory(prefix='chenyuan-feedback-skip-outside-') as folder:
-    external=Path(folder)/path.name;external.write_bytes(raw);path.unlink();path.symlink_to(external)
-    with self.subTest(path=name),self.assertRaises(AssertionError):self.check()
+    external=Path(folder)/path.name;external.write_bytes(raw);path.unlink()
+    with external_file_link(path,external,self.root):
+     with self.subTest(path=name),self.assertRaises(AssertionError):self.check()
     path.unlink();path.write_bytes(raw)
  def test_feedback_skip_actual_budget_enforced_after_identity_update(self):
   m=self.data();path='web/src/FeedbackSkip.vue';text=(self.root/path).read_text()+'\n'*4001;self.changed_source(path,text,m)
@@ -1247,8 +1251,9 @@ class TA07InventoryTests(unittest.TestCase):
   for name in ['art/redesign/ta07.json','web/src/BattleCast.vue','web/public/art/v2/actors/player-standing-cold-v1.webp']:
    self.restore();path=self.root/name;raw=path.read_bytes()
    with tempfile.TemporaryDirectory(prefix='chenyuan-ta07-external-')as folder:
-    outside=Path(folder)/path.name;outside.write_bytes(raw);path.unlink();path.symlink_to(outside)
-    with self.subTest(name=name),self.assertRaises(AssertionError):self.check()
+    outside=Path(folder)/path.name;outside.write_bytes(raw);path.unlink()
+    with external_file_link(path,outside,self.root):
+     with self.subTest(name=name),self.assertRaises(AssertionError):self.check()
  def test_ta07_missing_actual_source_is_not_satisfied_by_its_identity_row(self):
   (self.root/'web/src/BattleCast.vue').unlink()
   with self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
@@ -1403,8 +1408,9 @@ class TA08InventoryTests(unittest.TestCase):
   for name in ['art/redesign/ta08.json','web/src/SourceObject.vue','art/redesign/receipts/ta08-resource-prompts.json','web/public/art/v2/sources/herbs-cold-v1.webp']:
    self.restore();p=self.root/name;raw=p.read_bytes()
    with tempfile.TemporaryDirectory(prefix='chenyuan-ta08-outside-')as folder:
-    outside=Path(folder)/p.name;outside.write_bytes(raw);p.unlink();p.symlink_to(outside)
-    with self.subTest(name=name),self.assertRaises(AssertionError):self.check()
+    outside=Path(folder)/p.name;outside.write_bytes(raw);p.unlink()
+    with external_file_link(p,outside,self.root):
+     with self.subTest(name=name),self.assertRaises(AssertionError):self.check()
  def test_ta08_required_actual_files_and_contract_cannot_be_missing(self):
   from ta08_inventory import NATIVE,REFS,PROMPTS
   for name in [NATIVE[0],REFS[0],PROMPTS]:
@@ -1581,8 +1587,9 @@ class TA09InventoryTests(unittest.TestCase):
  def test_ta09_external_path_and_symlink_cannot_escape(self):
   m=self.data();m['files'][0]['path']='../escape.vue';self.reject(m);self.restore();name=m['files'][0]['path']='web/src/JadeEngraving.vue'
   with tempfile.TemporaryDirectory(prefix='ta09-outside-')as outer:
-   target=Path(outer)/'actor.vue';target.write_bytes(self.original[name]);(self.root/name).unlink();(self.root/name).symlink_to(target)
-   with self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
+   target=Path(outer)/'actor.vue';target.write_bytes(self.original[name]);(self.root/name).unlink()
+   with external_file_link(self.root/name,target,self.root):
+    with self.assertRaisesRegex(AssertionError,'Missing or external'):self.check()
  def test_ta09_aggregate_native_cap_survives_rehash(self):
   m=self.data();path=m['files'][-1]['path'];total=sum(x['bytes']for x in m['files']);self.changed_source(path,(self.root/path).read_text()+'\n'*(30001-total))
   with self.assertRaisesRegex(AssertionError,'native code exceeds fixed budget'):self.check()
@@ -1778,8 +1785,9 @@ class ART10InventoryTests(unittest.TestCase):
  def test_art10_relative_paths_and_symlinks_cannot_escape(self):
   m=self.data();m['provenance']['facts']['path']='../outside.json';self.reject(m);self.restore()
   with tempfile.TemporaryDirectory(prefix='art10-outside-') as folder:
-   p=self.root/self.data()['assets'][0]['source']['path'];external=Path(folder)/'source.png';external.write_bytes(p.read_bytes());p.unlink();p.symlink_to(external)
-   with self.assertRaises(AssertionError):self.check()
+   p=self.root/self.data()['assets'][0]['source']['path'];external=Path(folder)/'source.png';external.write_bytes(p.read_bytes());p.unlink()
+   with external_file_link(p,external,self.root):
+    with self.assertRaises(AssertionError):self.check()
  def test_art10_original_and_runtime_hashes_are_actual(self):
   for field in ['source','runtime']:
    self.restore();p=self.root/self.data()['assets'][0][field]['path'];p.write_bytes(p.read_bytes()+b'changed')
@@ -1924,8 +1932,9 @@ class ART11InventoryTests(unittest.TestCase):
    self.restore();m=self.data();m['sourceReferences'][0]=name;self.reject(m)
   self.restore()
   with tempfile.TemporaryDirectory(prefix='art11-outside-') as folder:
-   target=self.root/self.data()['assets'][0]['source']['path'];external=Path(folder)/'raw.png';external.write_bytes(target.read_bytes());target.unlink();target.symlink_to(external)
-   with self.assertRaisesRegex(AssertionError,'external'):self.check()
+   target=self.root/self.data()['assets'][0]['source']['path'];external=Path(folder)/'raw.png';external.write_bytes(target.read_bytes());target.unlink()
+   with external_file_link(target,external,self.root):
+    with self.assertRaisesRegex(AssertionError,'external'):self.check()
  def test_art11_transparency_requires_real_webp_header_not_fact_alias(self):
   f=self.facts();raw=bytearray((self.root/f['assets'][0]['runtime']['path']).read_bytes());self.assertEqual(raw[12:16],b'VP8X');raw[20]&=~16;self.change_runtime(f,bytes(raw))
   with self.assertRaisesRegex(AssertionError,'not transparent'):self.check()
@@ -2055,8 +2064,9 @@ class ART12InventoryTests(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'missing or external'):self.check()
   self.restore()
   with tempfile.TemporaryDirectory(prefix='art12-outside-') as folder:
-   target=self.root/self.data()['files'][0]['path'];external=Path(folder)/'style.css';external.write_bytes(target.read_bytes());target.unlink();target.symlink_to(external)
-   with self.assertRaisesRegex(AssertionError,'external'):self.check()
+   target=self.root/self.data()['files'][0]['path'];external=Path(folder)/'style.css';external.write_bytes(target.read_bytes());target.unlink()
+   with external_file_link(target,external,self.root):
+    with self.assertRaisesRegex(AssertionError,'external'):self.check()
  def test_art12_zero_bitmap_boundary_cannot_alias_or_add_asset(self):
   for key,value in [('newBitmapAssets',True),('newBitmapAssets',1),('assets',[{'path':'new.png'}])]:
    self.restore();m=self.data();m[key]=value;self.reject(m)
