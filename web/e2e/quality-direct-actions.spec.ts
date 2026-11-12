@@ -47,6 +47,15 @@ test('one direct sale changes inventory and stones only once and does not open a
   expect(await snapshot(page)).toEqual(resolve(before,{type:'SELL',item:'healing_pill',quantity:1,commandId:'proof',runId:before.core.runId,expectedRevision:before.core.revision}).nextState);await expect(page.getByTestId('game-confirmation')).toHaveCount(0);expect(await activitySnapshot(page)).toBeNull();
 });
 
+test('an inventory quota failure keeps its original single-dose retry and does not consume a second pill',async({page})=>{
+  const d=driver();d.buy('healing_pill',3);d.go('wilderness');d.doAction({type:'ENCOUNTER',enemy:'wolf'});d.doAction({type:'BATTLE',move:'attack'});d.doAction({type:'BATTLE',move:'flee'});d.go('cave');const before=await importRecoveryFixture(page,d.game);
+  await page.getByTestId('tab-2').click();await selectInventoryItem(page,'healing_pill');const raw=await recoveryDatabase(page);
+  await page.evaluate(()=>{const put=IDBObjectStore.prototype.put;(window as any).__restoreQuick=()=>IDBObjectStore.prototype.put=put;IDBObjectStore.prototype.put=function(value:any,key?:IDBValidKey){if(this.name==='full-receipts'&&value?.format==='chenyuan-direct-receipt')throw new DOMException('direct UI quota','QuotaExceededError');return put.call(this,value,key!);};});
+  try{await page.getByTestId('quick-use-healing_pill').click();await expect(page.getByTestId('error')).toBeVisible();expect(await recoveryDatabase(page)).toEqual(raw);await expect(page.getByTestId('quick-use-healing_pill')).toBeDisabled();}
+  finally{await page.evaluate(()=>(window as any).__restoreQuick());}
+  await page.getByTestId('retry').click();await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(before.core.revision+1);expect((await snapshot(page)).core.inventory.healing_pill).toBe(before.core.inventory.healing_pill-1);await expect(page.getByTestId('error')).toHaveCount(0);
+});
+
 for(const {person,game} of npcResponseFixtures())test(`all ${person} response options and full costs remain readable before a readonly cancelled confirmation`,async({page},info)=>{
   const g=await importRecoveryFixture(page,game);await page.getByTestId('tab-3').click();await page.getByTestId('resume-encounter').click();
   const raw=await recoveryDatabase(page),choices=narrativeFor(g)!.choices;
