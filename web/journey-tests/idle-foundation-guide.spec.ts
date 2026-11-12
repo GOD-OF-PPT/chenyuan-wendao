@@ -1,3 +1,4 @@
+import {currentPageTool} from '../e2e/readonly-navigation-support';
 import {test,expect,type Page,type Locator} from '@playwright/test';
 import * as C from '../../src/full/content.ts';
 import {createIdleRoute} from '../../scripts/economy/idle-scenarios.mjs';
@@ -9,7 +10,7 @@ test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:
 const routes=[['help','sword','craft'],['trade','sword','purchase'],['leave','sword','craft'],['help','talisman','purchase'],['trade','talisman','craft'],['leave','talisman','purchase']] as const;
 async function database(page:Page){return page.evaluate(()=>new Promise<any>((ok,no)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onupgradeneeded=()=>{q.transaction!.abort();no(Error('Readonly guide cannot create storage'));};q.onerror=()=>no(q.error);q.onsuccess=()=>{const db=q.result,tx=db.transaction([...db.objectStoreNames],'readonly'),rows:any={};for(const n of db.objectStoreNames){rows[n]=[];const c=tx.objectStore(n).openCursor();c.onsuccess=()=>{if(c.result){rows[n].push({key:c.result.key,value:c.result.value});c.result.continue();}};}tx.oncomplete=()=>{db.close();ok({version:db.version,rows});};tx.onabort=()=>{db.close();no(tx.error);};};}));}
 async function readonly(page:Page,work:()=>Promise<void>){const before=await database(page);await work();expect(await database(page)).toEqual(before);}
-async function prepare(page:Page,route:string){await home(page);await page.getByTestId('tab-1').click();await page.getByTestId('feature-prepare').click();await expect(page.getByTestId('preparation-catalogue')).toBeVisible();if(await page.getByTestId('prepare-back').isVisible())await decision(page,page.getByTestId('prepare-back'));await page.getByTestId('prepare-'+route+'-route').click();await expect(page.getByTestId('prepare-'+route+'-route')).toHaveAttribute('aria-pressed','true');}
+async function prepare(page:Page,route:string){await home(page);await page.getByTestId('tab-1').click();await(await currentPageTool(page,'feature-prepare')).click();await expect(page.getByTestId('preparation-catalogue')).toBeVisible();if(await page.getByTestId('prepare-back').isVisible())await decision(page,page.getByTestId('prepare-back'));await page.getByTestId('prepare-'+route+'-route').click();await expect(page.getByTestId('prepare-'+route+'-route')).toHaveAttribute('aria-pressed','true');}
 async function tripFromGuide(page:Page,button:Locator,location:string){
  const before=await snapshot(page),old=await activitySnapshot(page);
  if(before.core.world.location===location){await readonly(page,()=>decision(page,button));expect(await activitySnapshot(page)).toEqual(old);return;}

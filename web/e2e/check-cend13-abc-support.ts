@@ -1,3 +1,4 @@
+import {currentPageTool} from './readonly-navigation-support';
 import{expect,type Page,type Locator,type TestInfo}from'@playwright/test';
 import type{Game}from'../../src/full/types';
 import{resolve}from'../../src/full/engine';
@@ -14,11 +15,11 @@ export{snapshot,activity,database,stored,home,decision};
 export async function attach(info:TestInfo,name:string,value:unknown){await info.attach(name,{body:JSON.stringify(value),contentType:'application/json'});}
 export async function readonly(page:Page,work:()=>Promise<void>){const g=await snapshot(page),raw=await database(page);await work();expect(await snapshot(page)).toEqual(g);expect(await database(page)).toEqual(raw);}
 export async function openTrial(page:Page){if(await page.getByTestId('trial-preparation').isVisible())return;await home(page);await page.getByTestId('tab-0').click();if(!await page.getByTestId('breakthrough').isVisible())await openHubFeature(page,'cultivation-details');await decision(page,page.getByTestId('breakthrough'));await expect(page.getByTestId('trial-preparation')).toBeVisible();}
-export async function openPreparation(page:Page){if(await page.getByTestId('preparation-catalogue').isVisible())return;if(await page.getByTestId('feature-prepare').isVisible())await decision(page,page.getByTestId('feature-prepare'));else{await home(page);await page.getByTestId('hub-goal').click();await decision(page,page.getByTestId('feature-prepare'));}await expect(page.getByTestId('preparation-catalogue')).toBeVisible();}
+export async function openPreparation(page:Page){if(await page.getByTestId('preparation-catalogue').isVisible())return;if(!await page.getByTestId('feature-menu-open').isVisible()){await home(page);await page.getByTestId('hub-goal').click();}await decision(page,await currentPageTool(page,'feature-prepare'));await expect(page.getByTestId('preparation-catalogue')).toBeVisible();}
 export async function readPages(root:Locator,label:string){
  const pager=root.getByRole('navigation',{name:label+'翻页',exact:true}),previous=pager.getByRole('button',{name:'上一页',exact:true}),next=pager.getByRole('button',{name:'下一页',exact:true});
- while(await previous.isEnabled())await previous.click();const rows=new Map<string,string>();
- for(let i=0;i<120;i++){const r=root.locator('.reading-text').first(),key=await r.getAttribute('data-page-key'),text=await r.locator('p').innerText();expect(key).toBeTruthy();rows.set(key!,(rows.get(key!)??'')+text);if(await next.isDisabled()){while(await previous.isEnabled())await previous.click();return rows;}await next.click();}
+ while(await previous.count()&&await previous.isEnabled())await previous.click();const rows=new Map<string,string>();
+ for(let i=0;i<120;i++){const r=root.locator('.reading-text').first(),key=await r.getAttribute('data-page-key'),text=await r.locator('p').innerText();expect(key).toBeTruthy();rows.set(key!,(rows.get(key!)??'')+text);if(!await next.count()||await next.isDisabled()){while(await previous.count()&&await previous.isEnabled())await previous.click();return rows;}await next.click();}
  throw Error('Finite current reading did not terminate');
 }
 export async function readTrial(page:Page,mode:string){const root=page.getByTestId('trial-preparation');await root.getByTestId('trial-mode-'+mode).click();return readPages(root,'渡劫');}

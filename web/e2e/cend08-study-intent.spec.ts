@@ -92,7 +92,7 @@ test('CEND08-F01-A5 admitted manual work keeps its real countdown and pause surv
  await page.clock.install({time:new Date('2032-06-01T00:00:00Z')});const before=await load(page,'STUDY');
  await page.getByTestId('preparation-start').click();await expect.poll(async()=>(await activity(page))?.status).toBe('running');
  const a=await activity(page);expect(a.cycleMs).toBe(60000);expect(a.plan).toMatchObject({kind:'study',manual:'jinghong',maxCycles:1,stoneBudget:80,stoneReserve:0});
- await page.clock.fastForward(1000);await expect(page.getByTestId('jade-study-status')).toContainText('循剑意参悟');await expect(page.getByTestId('jade-study-status')).toContainText('/ 60 秒');
+ await page.clock.fastForward(1000);await expect(page.getByTestId('jade-study-status')).toContainText('循剑意参悟');await expect(page.getByTestId('training-countdown')).toHaveText('59.0 秒');expect((await activity(page)).cycleMs).toBe(60000);
  expect(await snapshot(page)).toEqual(before);await frame(page,info,'manual-running-real-countdown');
  await page.getByTestId('training-pause').click();await expect.poll(async()=>(await activity(page))?.status).toBe('paused');const paused=await activity(page),raw=await database(page);
  await expect(page.getByTestId('jade-study-status')).toContainText('此段研习已暂停');await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');await openHubFeature(page,'skills');await page.getByTestId('equipment-mode-manual').click();

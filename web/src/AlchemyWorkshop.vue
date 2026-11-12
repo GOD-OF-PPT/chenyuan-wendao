@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {useLocalActivityControls} from './activity-controls';
 import{stopMessage}from './activity-view';
 import{computed,inject,ref,watch,onActivated,onDeactivated,onScopeDispose}from 'vue';
 import type{Game}from '../../src/full/types';
@@ -42,6 +43,7 @@ watch([()=>props.game.core.runId,()=>props.plan.recipeId],close,{flush:'sync'});
 onActivated(()=>visible.value=true);
 onDeactivated(()=>{visible.value=false;close();});
 onScopeDispose(()=>focus?.release(library.value));
+const localControls=useLocalActivityControls();
 </script>
 <template>
  <div class="alchemy-workshop" data-testid="alchemy-workshop" data-copy30="alchemy" :data-state="state" :data-recipe="plan.recipeId">
@@ -59,7 +61,7 @@ onScopeDispose(()=>focus?.release(library.value));
     <div v-if="arrival" class="alchemy-arrival" data-testid="alchemy-arrival" :data-sequence="arrival.sequence" aria-hidden="true"><GameIcon kind="item" :id="arrival.item"/><b>+{{arrival.quantity}}</b></div>
    </div>
 
-   <div class="alchemy-cycle"><strong data-testid="production-fire">{{status}}</strong><span v-if="runtime">{{Math.ceil(runtime.remainingMs/1000)}} 秒 / {{runtime.totalMs/1000}} 秒</span><span v-else-if="current?.status==='running'&&!feedbackStore?.activityPausing&&!feedbackStore?.error">等待主动续接，不补离线</span><span v-else>每炉 {{recipe.months*30}} 秒 · {{recipe.months}} 游戏月</span></div>
+   <div class="alchemy-cycle"><strong data-testid="production-fire">{{status}}</strong><span v-if="runtime&&localControls">{{Math.ceil(runtime.remainingMs/1000)}} 秒 / {{runtime.totalMs/1000}} 秒</span><span v-else-if="!runtime&&current?.status==='running'&&!feedbackStore?.activityPausing&&!feedbackStore?.error">等待主动续接，不补离线</span><span v-else>每炉 {{recipe.months*30}} 秒 · {{recipe.months}} 游戏月</span></div>
    <button class="primary production-start" :data-testid="settingsOpen?undefined:atCave?'production-start':'production-return-cave'" :disabled="blocked||atCave&&!quote.allowed" @click="start">{{buttonLabel}}</button>
 
   </div>

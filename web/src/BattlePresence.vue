@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {useLocalActivityControls} from './activity-controls';
 import {computed,onActivated,onDeactivated,onMounted,onScopeDispose,ref} from 'vue';
 import type {Game} from '../../src/full/types';
 import * as C from '../../src/full/content';
@@ -27,6 +28,7 @@ function visibility(){hidden.value=document.hidden;}
 onMounted(()=>document.addEventListener('visibilitychange',visibility));
 onActivated(()=>{mounted.value=true;hidden.value=document.hidden;});onDeactivated(()=>mounted.value=false);
 onScopeDispose(()=>document.removeEventListener('visibilitychange',visibility));
+const localControls=useLocalActivityControls();
 </script>
 <template>
  <div class="battle-hero battle-presence" data-testid="battle-presence" :data-state="state" :data-school="game.school" :data-active="visible" :data-move="move" :data-run="game.core.runId" :data-enemy="battle.enemy" :data-stage="game.trial?.stage??'ordinary'" :data-revision="game.core.revision" :style="{'--battle-charge':charge+'%','--cast-progress':charge/100,'--prep-approach':(12-charge*.12)+'px','--prep-unfold':(60-charge*.6)+'%','--prep-advance':charge*.06+'px'}">
@@ -40,6 +42,6 @@ onScopeDispose(()=>document.removeEventListener('visibilitychange',visibility));
   <div class="enemy-status"><div class="enemy-row"><h2>{{enemy.name}}</h2><b data-testid="enemy-hp">{{battle.hp}} / {{enemy.hp}} 气血</b></div><ProgressTrack :active="active" :value="battle.hp" :max="enemy.hp" label="敌方气血" tone="health" :identity="identity" hint="只有实际战斗行动才改变气血；先辨敌方意图，再选择攻守。"/>
    <div class="intent" data-testid="intent" :data-intent="forecast.kind"><span>敌方意图</span><strong>{{forecast.name}}</strong><b>敌方原始伤害 {{forecast.damage}}</b></div>
   </div>
-  <div class="battle-exchange" data-testid="battle-charge"><i class="battle-charge-ring" aria-hidden="true"/><strong>{{state==='charging'&&runtime?Math.ceil(runtime.remainingMs/1000)+' 秒':state==='saving'?'保存中':'交锋'}}</strong><small v-if="runtime">本周期 {{runtime.totalMs/1000}} 秒</small><span>{{caption}}</span></div>
+  <div class="battle-exchange" data-testid="battle-charge"><i class="battle-charge-ring" aria-hidden="true"/><strong>{{state==='charging'&&runtime?(localControls?Math.ceil(runtime.remainingMs/1000)+' 秒':'蓄势'):state==='saving'?'保存中':'交锋'}}</strong><small v-if="runtime">本周期 {{runtime.totalMs/1000}} 秒</small><span>{{caption}}</span></div>
  </div>
 </template>

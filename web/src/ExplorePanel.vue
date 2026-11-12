@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {computed,ref,watch,onMounted,onScopeDispose} from 'vue';
+import {navigationGate} from './navigation-gates';
 import type {Action,Game} from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
 import {planCollection,type CollectionTarget,type TrackingTarget} from '../../src/full/goals.ts';
@@ -44,7 +45,7 @@ function description(id:string){return mode.value==='travel'?C.locations[id as C
 <template>
  <section class="paper play-catalogue explore-catalogue" data-testid="explore-catalogue" tabindex="-1">
   <header v-if="!['source','purchase','travel','battle'].includes(mode)"><div><small>历练 · 当前地点</small><h2>{{C.locations[game.core.world.location].name}}</h2></div><span>前往地点 → 采集 / 挑战 → 回府筹备</span></header>
-  <nav class="catalogue-tabs" aria-label="历练分类"><button v-for="[id,label] in modes" :key="id" :data-testid="'explore-mode-'+id" :aria-pressed="mode===id" @click="selectMode(id)">{{label}}</button></nav>
+  <nav class="catalogue-tabs" aria-label="历练分类"><button v-for="[id,label] in modes" :key="id" :data-testid="'explore-mode-'+id" :aria-pressed="mode===id" :disabled="navigationGate(game,id).locked" @click="selectMode(id)">{{label}}<small v-if="navigationGate(game,id).locked"> · {{navigationGate(game,id).reason}}</small></button></nav>
   <KeepAlive :max="2"><SourcePlanner :key="game.core.runId" v-if="mode==='source'" :game="game" :busy="busy" :available="available" :running="running" :highlight="highlight" :collection="collection" :saved-plan="savedSourcePlan" :activity="activity" :runtime="runtime" @start="emit('start',$event)" @locations="selectMode('travel')" @home="emit('home')"/></KeepAlive>
   <KeepAlive :max="2"><MarketPlanner :key="game.core.runId" v-if="mode==='purchase'" embedded :game="game" :busy="busy" :available="available" :running="running" :highlight="highlight" :saved-plan="savedMarket" :plan-saved="preparationSaved" :inspection-exact="preparationExact" :consumption="consumption" @start="emit('start',$event)" @act="emit('act',$event)" @track="emit('track',$event)" @travel="emit('travelPlan',$event)"/></KeepAlive>
   <KeepAlive :max="2"><AdventurePlanner :key="game.core.runId+mode" v-if="mode==='travel'||mode==='battle'" embedded :mode="mode==='travel'?'travel':'encounter'" :game="game" :busy="busy" :available="available" :running="running" :highlight="highlight" :activity="activity" :saved-plan="savedAdventurePlan" :plan-saved="planSaved" @start="emit('start',$event)" @track="emit('track',$event)" @locations="selectMode"/></KeepAlive>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {useLocalActivityControls} from './activity-controls';
 import {computed} from 'vue';
 import {useGame} from './store';
 import {activityStop} from '../../src/full/activity';
@@ -11,6 +12,7 @@ const blocked=computed(()=>a.value&&store.game?activityStop(store.game,a.value):
 const check=computed(()=>!store.available||store.canRetry||store.unresolved);
 const takeover=computed(()=>a.value?.status==='running'&&!store.activityOwned&&!store.activityRuntime);
 const phase=computed(()=>check.value?'进度待核对':store.activityPausing?'正在暂停':store.activityRuntime?.phase==='saving'?'本轮保存中':store.activityRuntime?'正在'+(a.value?.version===1?'潜修':view.value?.noun):takeover.value?'待继续 · 本轮重计':a.value?.status==='paused'?'已暂停':'待继续');
+const localControls=useLocalActivityControls();
 </script>
 
 <template>
@@ -25,8 +27,8 @@ const phase=computed(()=>check.value?'进度待核对':store.activityPausing?'�
   <p v-if="check" role="status">请先处理上方存档提示，再继续本段。</p>
   <template v-else>
    <p v-if="store.activityPausing" role="status">核对本轮后停手，不再开始下一轮。</p>
-   <button v-else-if="a.status==='running'&&store.activityOwned" class="primary" data-testid="cultivation-active-pause" @click="store.pauseCultivation">暂停{{view.noun}}</button>
-   <button v-else-if="!store.activityRuntime" class="primary" data-testid="cultivation-active-resume" :disabled="store.busy||!!blocked" @click="store.resumeCultivation">{{'继续'+view.noun}}</button>
+   <button v-else-if="localControls&&a.status==='running'&&store.activityOwned" class="primary" data-testid="cultivation-active-pause" @click="store.pauseCultivation">暂停{{view.noun}}</button>
+   <button v-else-if="localControls&&!store.activityRuntime" class="primary" data-testid="cultivation-active-resume" :disabled="store.busy||!!blocked" @click="store.resumeCultivation">{{'继续'+view.noun}}</button>
    <small v-if="!store.activityRuntime&&!store.activityPausing">沿用原额度，本轮重新计时；离线无收益，继续后其他页停手。</small>
    <p v-if="blocked&&!store.activityRuntime" role="status">{{stopMessage(a.plan,blocked)}}</p>
   </template>

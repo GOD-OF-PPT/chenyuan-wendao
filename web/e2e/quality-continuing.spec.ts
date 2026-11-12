@@ -1,3 +1,4 @@
+import {currentReceiptControl} from './readonly-navigation-support';
 import {test,expect} from '@playwright/test';
 import {driver} from '../../tests/full-route.mjs';
 import {resolve} from '../../src/full/engine';
@@ -30,7 +31,7 @@ test('new source defaults continue beyond five cycles and pause refresh retains 
   for(let i=7;i<=8;i++){const a=await activitySnapshot(page);await expect(page.getByTestId('training-countdown')).toContainText('30.0');await page.clock.fastForward(a.cycleMs);await expect.poll(async()=>(await activitySnapshot(page))?.completedCycles).toBe(i);}
   const done=await activitySnapshot(page);expect(done.status).toBe('stopped');expect(done.stopReason.code).toBe('ACTIVITY_BUDGET');expect(done.spentMonths).toBe(8);expect(done.plan).toEqual(initial.plan);
   const complete=await recoveryDatabase(page);
-  await page.getByTestId('hub-receipt').first().click();await page.getByTestId('activity-history-open').click();
+  await (await currentReceiptControl(page)).click();await page.getByTestId('activity-history-open').click();
   await expect(page.getByTestId('activity-history')).not.toContainText('1000000000');expect(await recoveryDatabase(page)).toEqual(complete);
   await page.screenshot({path:info.outputPath('continuing-source-budget-stop.png')});
 });

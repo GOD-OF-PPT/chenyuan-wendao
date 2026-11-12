@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {useLocalActivityControls} from './activity-controls';
 import {computed} from 'vue';
 import type {Game} from '../../src/full/types';
 import * as C from '../../src/full/content';
@@ -16,6 +17,7 @@ const tradable=computed(()=>!!item.value&&(props.mode==='buy'||item.value.sell!=
 const signed=(n:number)=>n>0?'+'+n:String(n);
 const result=computed(()=>{const r=effect.value?.result;if(!r||r.type!==(props.mode==='buy'?'BUY':'SELL'))return null;return{quantity:r.delta.inventory[props.itemId]??0,stones:r.delta.stones,sequence:effect.value!.sequence};});
 const totals=computed(()=>{const a=activity.value;if(a?.version!==5||a.plan.kind!==props.mode)return null;return{count:a.completedCycles,stones:props.mode==='buy'?a.spentStones:a.gainedStones};});
+const localControls=useLocalActivityControls();
 </script>
 <template>
  <section class="market-counter art11-market" data-testid="market-counter" :data-state="phase" :data-status="state" :data-mode="mode" :data-item="itemId" :data-working="working" :data-engaged="engaged" :data-tradable="tradable">
@@ -24,7 +26,7 @@ const totals=computed(()=>{const a=activity.value;if(a?.version!==5||a.plan.kind
    <div class="counter-goods" aria-label="所选物资与实际库存"><div class="counter-item-rest"><ItemArtifact :item-id="itemId" :owned="stock>0"/><i aria-hidden="true"/></div><strong data-testid="market-counter-stock">行囊实存 {{stock}} 件</strong><small v-if="!stock">图谱 · 尚未持有</small></div>
    <div class="counter-exchange"><strong>{{mode==='buy'?'购入\n灵石换物':tradable?'售出\n物资换石':'突破物\n不可出售'}}</strong><p v-if="effect&&result" class="counter-result" data-testid="market-result" :data-sequence="effect.sequence" role="status"><b>成交</b><span>{{item.name}} {{signed(result.quantity)}}</span><span>灵石 {{signed(result.stones)}}</span></p><template v-else><span class="counter-direction" aria-hidden="true">{{tradable?mode==='buy'?'←':'→':'─'}}</span><small>{{mode==='buy'?'支付灵石\n物资入囊':tradable?'交出物资\n收取灵石':'保留此物\n用于突破筹备'}}</small></template><i class="counter-trade-progress" aria-hidden="true"/></div>
    <div class="counter-purse" aria-label="随身灵石"><div class="counter-stones" aria-hidden="true"><i/><i/><i/></div><strong data-testid="market-counter-stones">{{game.core.player.stones}} 灵石</strong></div>
-   <div v-if="state!=='idle'||totals" class="counter-cycle" data-testid="market-cycle-status"><strong>{{status}}</strong><span v-if="engaged&&runtime" data-testid="market-cycle-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span><small v-else>15 秒 / 件</small><small v-if="totals&&totals.count" class="counter-committed" data-testid="market-committed">本段已成交 {{totals.count}} 件 · 灵石累计{{mode==='buy'?'支出':'收入'}} {{totals.stones}}</small></div>
+   <div v-if="state!=='idle'||totals" class="counter-cycle" data-testid="market-cycle-status"><strong>{{status}}</strong><span v-if="(engaged&&runtime)&&localControls" data-testid="market-cycle-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span><small v-else>15 秒 / 件</small><small v-if="totals&&totals.count" class="counter-committed" data-testid="market-committed">本段已成交 {{totals.count}} 件 · 灵石累计{{mode==='buy'?'支出':'收入'}} {{totals.stones}}</small></div>
   </div>
   <article v-if="item" class="counter-description market-object" data-testid="market-object"><h3>{{item.name}}<small v-if="mode==='buy'" class="counter-realm">需{{C.realms[item.min].name}}</small></h3><p>{{item.description}}</p><button @click="emit('source')">查看来源与筹备</button></article>
   <div class="counter-decision"><slot name="decision"/></div>

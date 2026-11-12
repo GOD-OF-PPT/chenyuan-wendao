@@ -18,6 +18,7 @@ import { openTrainingBudget, openSourceSettings, closeSourceSettings, openLearni
 
 test.use({ viewport: { width: 1440, height: 900 }, actionTimeout: 8000, navigationTimeout: 15000 });
 export async function home(page: Page) {
+  if(await page.getByTestId('feature-menu-dialog').isVisible())await page.keyboard.press('Escape');
   await closeSourceSettings(page); await closeLearningSettings(page); await closeSupplySettings(page);
   const readingClose = page.getByTestId('milestone-cancel');
   if (await readingClose.isVisible()) await readingClose.click();

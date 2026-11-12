@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {useLocalActivityControls} from './activity-controls';
 import {computed,inject,onDeactivated,onScopeDispose,ref,useId,watch} from 'vue';
 import {gameFocusKey} from './focus';
 import type {Game} from '../../src/full/types';
@@ -17,6 +18,7 @@ const scene=computed(()=>scenePresentation(props.game));
 const {store,phase,working,progress,effect,engaged,runtime}=useNarrativeObject(()=> 'life',()=>props.game.core.runId);
 const state=computed(()=>store?.error?'failed':phase.value);
 const seal=computed(()=>props.game.status==='active'?'此卷未封':props.game.status==='ascended'?'飞升封卷':props.game.ending==='retired'?'归隐收卷':props.game.ending==='lifespan'?'寿尽收卷':'此生已收卷');
+const localControls=useLocalActivityControls();
 </script>
 <template>
  <div class="life-scroll narrative-object art31-scroll" data-testid="life-scroll" :data-mode="mode" :data-life="game.status" :data-sealed="game.status!=='active'" :data-state="phase" :data-status="state" :data-engaged="engaged" :data-working="working&&!store?.error">
@@ -24,7 +26,7 @@ const seal=computed(()=>props.game.status==='active'?'此卷未封':props.game.s
   <div class="life-scroll-title"><slot name="heading"/><div class="life-scroll-binding"><i class="life-scroll-cord" aria-hidden="true"/><strong>{{seal}}</strong></div></div>
   <nav class="life-scroll-bookmarks" aria-label="命卷篇章书签"><slot name="chapters"/></nav>
   <div class="life-scroll-canvas book-canvas book-landscape" :data-gate="scene.gate"><AssetImage class="book-scenery" :path="sceneAssetPath(scene)" :asset-id="'reading-scene-'+scene.artKey"/><i class="life-scroll-rod rod-top" aria-hidden="true"/><i class="life-scroll-rod rod-bottom" aria-hidden="true"/>
-   <div class="life-scroll-copy narrative-object-paper" :class="{'narrative-object-saved':!!effect&&!store?.error}"><div v-if="engaged" class="narrative-object-cycle" role="status"><strong>{{phase==='saving'?'封卷保存中 · 尚未落定':'已安排收卷一次'}}</strong><span v-if="runtime&&phase==='running'" data-testid="life-scroll-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span></div><slot/><i class="narrative-object-ink" :style="{'--ink-progress':(working&&!store?.error?progress:0)*100+'%'}" aria-hidden="true"/><small v-if="effect&&!store?.error" class="narrative-object-result" data-testid="life-scroll-result" :data-sequence="effect.sequence">本次已保存 · {{effect.notice.label}}</small></div>
+   <div class="life-scroll-copy narrative-object-paper" :class="{'narrative-object-saved':!!effect&&!store?.error}"><div v-if="engaged" class="narrative-object-cycle" role="status"><strong>{{phase==='saving'?'封卷保存中 · 尚未落定':'已安排收卷一次'}}</strong><span v-if="(runtime&&phase==='running')&&localControls" data-testid="life-scroll-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span></div><slot/><i class="narrative-object-ink" :style="{'--ink-progress':(working&&!store?.error?progress:0)*100+'%'}" aria-hidden="true"/><small v-if="effect&&!store?.error" class="narrative-object-result" data-testid="life-scroll-result" :data-sequence="effect.sequence">本次已保存 · {{effect.notice.label}}</small></div>
    <div class="narrative-seal-space art30" aria-hidden="true"><strong v-if="effect&&!store?.error" class="art31-imprint" data-testid="art31-imprint" :data-sequence="effect.sequence">{{seal}}</strong></div>
   </div>
   <div class="life-scroll-tools"><small>翻卷只阅读，不推进年月。</small><slot name="pagination"/><button ref="opener" data-testid="life-manage-open" @click="open">{{game.status==='active'?'卷尾处理 · 导出与收卷':'卷尾留存 · 导出与恢复'}}</button></div>
