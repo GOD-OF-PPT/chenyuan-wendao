@@ -45,3 +45,14 @@ test('source harvest and complete history use readable names without advancing t
   await page.screenshot({path:info.outputPath('copy-source-history.png')});
   await home(page);
 });
+
+
+test('save identity stays in readonly management details rather than a life chapter',async({page},info)=>{
+  const d=driver();d.go('cave');const g=await importRecoveryFixture(page,d.game),raw=await recoveryDatabase(page);
+  await page.getByTestId('hub-life').click();await page.getByTestId('life-mode-seal').click();
+  await expect(page.locator('.life-reading[data-page-key=identity]')).toHaveCount(0);
+  await page.getByTestId('life-manage-open').click();
+  const details=page.getByTestId('life-manage-dialog').locator('details').filter({has:page.getByText('存档识别信息',{exact:true})});
+  await details.locator('summary').click();await expect(details).toContainText(g.core.runId);
+  expect(await recoveryDatabase(page)).toEqual(raw);await page.screenshot({path:info.outputPath('copy-life-identity-details.png')});
+});

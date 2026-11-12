@@ -2,6 +2,6 @@ import base from './playwright.q02.config';
 export default {
   ...base,
   testMatch:[...base.testMatch,'quality-player-copy.spec.ts','idle-recovery-ui.spec.ts','art28-alchemy-scene.spec.ts',
-    'cend08-study-intent.spec.ts','cend07-f02b-relic-focus.spec.ts','uir35-04-battle-medicine.spec.ts'],
-  grepInvert:/ART27-A5|ART29-A4|ART30-A3|ART28-A4/,
+    'cend08-study-intent.spec.ts','cend07-f02b-relic-focus.spec.ts','uir35-04-battle-medicine.spec.ts','art31-life-scroll.spec.ts'],
+  grepInvert:/ART27-A5|ART29-A4|ART30-A3|ART28-A4|ART31-A5/,
 };
