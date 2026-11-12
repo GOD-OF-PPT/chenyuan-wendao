@@ -8,6 +8,7 @@ import {previewActivity} from '../../src/full/activity.ts';
 import {stopMessage} from './activity-view';
 import {defaultBattleStrategy,defaultEncounterPlan,type AdventurePlan,type TravelPlan,type EncounterPlan} from '../../src/full/adventure.ts';
 import type {TrackingTarget} from '../../src/full/goals.ts';
+import {canonicalFingerprint} from '../../src/full/receipts';
 import {pageSlice} from './play-flow';
 import {SCENE_ASSETS,ENEMY_ASSETS} from './assets';
 import AssetImage from './AssetImage.vue';
@@ -39,7 +40,7 @@ const selectedActivity=computed(()=>{
  const a=props.activity;
  if(a?.version!==6||a.runId!==props.game.core.runId||a.gameRevision!==props.game.core.revision)return null;
  return props.mode==='travel'?a.plan.kind==='travel'&&a.plan.location===trip.value.location?a:null:
-  a.plan.kind==='encounter'&&a.plan.enemy===encounter.value.enemy?a:null;
+  a.plan.kind==='encounter'&&canonicalFingerprint(a.plan)===canonicalFingerprint(plan.value)?a:null;
 });
 const planState=computed(()=>{
  const a=selectedActivity.value,r=scene?.activityRuntime;

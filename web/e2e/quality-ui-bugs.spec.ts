@@ -57,6 +57,21 @@ test('Q02-3 reached realms hide obsolete location gates and keep real locked gat
   await expect(page.getByTestId('travel-secret')).toContainText('需筑基');
 });
 
+test('Q02-2b editing the same opponent budget is a new readonly draft rather than the accepted paused strategy', async ({page}) => {
+  const d = driver(); d.go('wilderness');
+  const g = await importRecoveryFixture(page, d.game);
+  await begin(page, defaultEncounterPlan(g, 'wolf'));
+  await page.getByTestId('training-pause').click(); await expect.poll(async () => (await activity(page))?.status).toBe('paused');
+  await page.getByTestId('training-settings').first().click();
+  const raw = await database(page);
+  await expect(page.getByTestId('adventure-plan-state')).toContainText('已暂停');
+  await page.getByTestId('adventure-page-limits').click();
+  await page.getByLabel('历练最多场次', {exact: true}).fill('2');
+  await expect(page.getByTestId('adventure-plan-state')).toContainText('待确认');
+  await expect(page.getByTestId('adventure-plan-state')).not.toContainText('原战策保留');
+  expect(await database(page)).toEqual(raw);
+});
+
 test('Q02-4 current story and battle highlight their actual navigation surface without advancing Game', async ({page}) => {
   const g = await importRecoveryFixture(page, meeting()), raw = await database(page);
   await page.getByTestId('tab-3').click(); await page.getByTestId('resume-encounter').click();
@@ -129,4 +144,18 @@ test('Q02-8 medicine states the paused craft consequence before accepting any re
   await expect(planner).toContainText('结束原炼丹');
   await expect(planner).toContainText('已完成成果保留');
   expect(await activity(page)).toEqual(paused); expect(await database(page)).toEqual(raw);
+});
+
+test('Q02-8b rest outside the cave says the trip replaces the paused plan before any travel is accepted', async ({page}) => {
+  const d = driver(); d.go('wilderness'); d.doAction({type: 'ENCOUNTER', enemy: 'wolf'});
+  d.doAction({type: 'BATTLE', move: 'attack'}); d.doAction({type: 'BATTLE', move: 'attack'}); d.doAction({type: 'BATTLE', move: 'flee'}); d.go('wilderness');
+  await importRecoveryFixture(page, d.game);
+  await begin(page, {kind: 'source', sourceId: 'herbs', maxCycles: 5, until: 'cycles', target: null, monthBudget: 5, remainingMonthsReserve: 1});
+  await page.getByTestId('training-pause').click(); await expect.poll(async () => (await activity(page))?.status).toBe('paused');
+  const raw = await database(page);
+  await openHubFeature(page, 'recovery'); await page.getByTestId('recovery-options-open').click(); await page.getByTestId('recovery-rest').click();
+  await expect(page.getByTestId('recovery-replacement-note')).toContainText('启程将结束原');
+  await expect(page.getByTestId('recovery-replacement-note')).toContainText('抵达后另行确认疗养');
+  await expect(page.getByTestId('preparation-travel')).toBeVisible();
+  expect(await database(page)).toEqual(raw);
 });
