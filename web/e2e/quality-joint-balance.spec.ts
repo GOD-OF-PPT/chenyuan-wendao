@@ -15,7 +15,7 @@ function prepared(engine=current){
  return game;
 }
 for(const legacy of [false,true])test(`Q07 read-only ${legacy?'old v3':'new v4'} surfaces retain their own prices periods and calendar`,async({page},info)=>{
- const game=prepared(legacy?old.engine:current),before=await importRecoveryFixture(page,game),raw=await recoveryDatabase(page);
+ const game=prepared(legacy?old.engine:current);game.core.world.location='sect';const before=await importRecoveryFixture(page,game),raw=await recoveryDatabase(page);
  await expect(page.getByTestId('legacy-rules')).toHaveCount(legacy?1:0);
  await page.getByTestId('tab-1').click();await page.getByTestId('explore-mode-purchase').click();await selectMarketItem(page,'foundation_pill');
  await expect(page.locator('.market-price')).toContainText(`每件 ${legacy?160:195} 灵石`);
