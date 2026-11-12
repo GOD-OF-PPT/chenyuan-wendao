@@ -1,6 +1,8 @@
 import {assertWebBuild} from '../scripts/assert-web-build.mjs';
 import {sourceIdentity} from '../scripts/source-identity.mjs';
 import { defineConfig } from '@playwright/test';
+import {prepareLegacyFixtures} from '../scripts/prepare-legacy-fixtures.mjs';
+prepareLegacyFixtures();
 assertWebBuild();
 export default defineConfig({
   forbidOnly:!!process.env.CI,

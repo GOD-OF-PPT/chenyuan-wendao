@@ -32,9 +32,9 @@ class Notes(unittest.TestCase):
             frozen = json.dumps([source, versions], sort_keys=True)
             PACKAGER.write_candidate_notes(stage, source, versions)
             self.assertEqual({p.name for p in stage.iterdir()}, NOTE_FILES)
-            first = {p.name: p.read_text() for p in stage.iterdir()}
+            first = {p.name: p.read_text(encoding='utf-8') for p in stage.iterdir()}
             PACKAGER.write_candidate_notes(stage, source, versions)
-            self.assertEqual(first, {p.name: p.read_text() for p in stage.iterdir()})
+            self.assertEqual(first, {p.name: p.read_text(encoding='utf-8') for p in stage.iterdir()})
             self.assertEqual(json.dumps([source, versions], sort_keys=True), frozen)
             return first
 
@@ -46,7 +46,7 @@ class Notes(unittest.TestCase):
 
     def test_database_notes_match_formal_db_and_keep_original_retry_ownership(self):
         note = self.notes()['SAVE_COMPATIBILITY.md']
-        db = re.search(r'export const FULL_DB_VERSION = (\d+);', (ROOT / 'web/src/full-persistence.ts').read_text()).group(1)
+        db = re.search(r'export const FULL_DB_VERSION = (\d+);', (ROOT / 'web/src/full-persistence.ts').read_text(encoding='utf-8')).group(1)
         self.assertIn('数据库v' + db, note)
         self.assertNotIn('数据库v3', note)
         for phrase in ['不降级', '原件', 'commandId/runId/expectedRevision', '原意图', '离线', '原子']:
@@ -78,7 +78,7 @@ class Notes(unittest.TestCase):
     def test_every_actual_core_consumer_installs_resource_dependency_before_running(self):
         expected = {'.github/workflows/core.yml': 1, '.github/workflows/playable.yml': 2}
         for file, count in expected.items():
-            text = (ROOT / file).read_text()
+            text = (ROOT / file).read_text(encoding='utf-8')
             self.assertEqual(text.count(DEPENDENCY_STEP), count, file)
             for job in re.split(r'^  [a-z]+:\n', text, flags=re.M)[1:]:
                 if 'npm run validate:core' in job:
@@ -88,11 +88,11 @@ class Notes(unittest.TestCase):
     def test_workflows_retain_all_original_gates_permissions_triggers_and_timeouts(self):
         before = {'core.yml': '5ca0428f2a595b9724bc04cb213e713ade6fad302ec740d06491ea93f8702b22', 'playable.yml': 'eb37740f0233850449f9c3973dce65777525b860b536d609bc237cfb12912815'}
         for file, digest in before.items():
-            text = (ROOT / '.github/workflows' / file).read_text().replace(DEPENDENCY_STEP, '')
+            text = (ROOT / '.github/workflows' / file).read_text(encoding='utf-8').replace(DEPENDENCY_STEP, '')
             self.assertEqual(hashlib.sha256(text.encode()).hexdigest(), digest, file)
 
     def test_actual_assembly_calls_renderer_and_keeps_all_non_document_operations(self):
-        tree = ast.parse((ROOT / 'scripts/package-candidate.py').read_text())
+        tree = ast.parse((ROOT / 'scripts/package-candidate.py').read_text(encoding='utf-8'))
         class RemoveNotes(ast.NodeTransformer):
             def visit_Expr(self, node):
                 call = node.value
@@ -111,9 +111,30 @@ class Notes(unittest.TestCase):
                     'archive_tree': 'b77b7708de0eee6f77d102b1dd73e493c3ef57b9b064bc47c0cd2165b3d727a2',
                     'package': 'ee8e726a514205e3fa2f01e5eaf9ef6d1ba08ea99073a9908723685625a086b4'}
         strip = RemoveNotes()
+        class PlatformTextIO(ast.NodeTransformer):
+            """Retain the old assembly AST after the narrowly approved IO fix."""
+            def visit_Call(self, node):
+                node = self.generic_visit(node)
+                if isinstance(node.func, ast.Attribute) and node.func.attr in {'read_text', 'write_text'}:
+                    for keyword in node.keywords:
+                        if keyword.arg == 'encoding':
+                            self.assert_constant(keyword.value, 'utf-8')
+                        if keyword.arg == 'newline':
+                            self.assert_constant(keyword.value, '\n')
+                    node.keywords = [k for k in node.keywords if k.arg not in {'encoding', 'newline'}]
+                approved = ast.parse('objects.resolve().as_posix()', mode='eval').body
+                if ast.dump(node) == ast.dump(approved):
+                    return ast.parse('str(objects.resolve())', mode='eval').body
+                return node
+
+            @staticmethod
+            def assert_constant(value, expected):
+                assert isinstance(value, ast.Constant) and value.value == expected
+
         for node in tree.body:
             if isinstance(node, ast.FunctionDef) and node.name in expected:
-                self.assertEqual(hashlib.sha256(ast.dump(strip.visit(node), include_attributes=False).encode()).hexdigest(), expected[node.name], node.name)
+                normalized = PlatformTextIO().visit(strip.visit(node))
+                self.assertEqual(hashlib.sha256(ast.dump(normalized, include_attributes=False).encode()).hexdigest(), expected[node.name], node.name)
         self.assertTrue(getattr(strip, 'asserted_call', False), 'actual package must call the tested renderer')
 
 

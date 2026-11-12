@@ -31,7 +31,8 @@ export function writeNodes(output=defaultOutput){
   if(fs.lstatSync(output).isSymbolicLink())throw new Error('Refusing a symlink output');const prior=JSON.parse(fs.readFileSync(path.join(output,'manifest.json'),'utf8'));if(prior.format!=='chenyuan-demo-catalog'||!Array.isArray(prior.nodes))throw new Error('Refusing to overwrite an unowned demo directory');
   const owned=new Set(['manifest.json',...prior.nodes.map(n=>n.id+'.json')]);for(const name of fs.readdirSync(output))if(!owned.has(name)||!fs.lstatSync(path.join(output,name)).isFile())throw new Error('Unknown generated demo file: '+name);
  }
- const staging=fs.mkdtempSync(path.join(root,'web/.generated-demo-'));let keepStaging=false;
+ fs.mkdirSync(path.dirname(output),{recursive:true});
+ const staging=fs.mkdtempSync(path.join(path.dirname(output),'.generated-demo-'));let keepStaging=false;
  try{
   for(const [name,value]of Object.entries(files))fs.writeFileSync(path.join(staging,name),value.text);fs.writeFileSync(path.join(staging,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
   fs.mkdirSync(path.dirname(output),{recursive:true});const old=path.join(staging,'previous');const fresh=path.join(staging,'fresh');fs.mkdirSync(fresh);for(const name of fs.readdirSync(staging))if(name!=='fresh')fs.renameSync(path.join(staging,name),path.join(fresh,name));

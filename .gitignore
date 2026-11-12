@@ -35,6 +35,11 @@ web/build-report/
 web/candidate-report/
 web/candidate-results/
 artifacts/
+# Transitional, generated historical test inputs; canonical data lives in tests/fixtures.
+/goal-1/
+/goal-2/
+/goal-3/
+/goal-4/
 web/idle-report/
 web/idle-results/
 web/idle-persistence-results/

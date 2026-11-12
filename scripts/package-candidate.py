@@ -37,7 +37,7 @@ def source_bundle(destination, source):
         objects = Path(run('git', 'rev-parse', '--git-path', 'objects'))
         if not objects.is_absolute():
             objects = ROOT / objects
-        (repo / 'objects/info/alternates').write_text(str(objects.resolve()) + '\n')
+        (repo / 'objects/info/alternates').write_text(objects.resolve().as_posix() + '\n', encoding='utf-8', newline='\n')
         run('git', '--git-dir=' + str(repo), 'update-ref', 'refs/heads/candidate', source['source'])
         if source['head'] != source['source']:
             run('git', '--git-dir=' + str(repo), 'update-ref', 'refs/tags/build-checkout', source['head'])
@@ -107,7 +107,7 @@ Game/schema/content/balance：{json.dumps(versions, ensure_ascii=False)}。锁/�
 ENGINEERING_REVIEW.md是原Goal1 T24历史评审，不是当前放置版最终评审。它保留来源和原范围，机器回执也不替代新一轮最大C端/代码/安全评审。当前全部页面兼容与环境性能专项暂停；原正式候选仍要求完整三浏览器/布局/字号/正常路线/恢复/性能/解包门槛，未被删除或降低。当前暂停范围不能因运行本机包而自动恢复，后续须用户明确恢复后另行执行。
 
 完整同源最终矩阵、正式候选、最大评审及真人/整体美术/长期平衡仍有独立责任；具体未完成项见KNOWN_ISSUES.md。已有局部测试、历史CI或演示节点不能代替它们。
-''')
+''', encoding='utf-8', newline='\n')
     (stage / 'SAVE_COMPATIBILITY.md').write_text('''# 存档与隔离边界
 
 正式full Game外层2/schema2、content full-demo.3、balance full-unbalanced.3，当前数据库v9。DB9的活动/检查点/回执同行原子保存；新指令严格核commandId/runId/expectedRevision及实际活动CAS。先原子提交再展示成功；原意图重试读取原回执，不能扩大授权、重复扣费或发奖。普通读页不改变Game或重建时钟。
@@ -117,7 +117,7 @@ ENGINEERING_REVIEW.md是原Goal1 T24历史评审，不是当前放置版最终�
 正常Game导出不包含独立准备检查点，导入后不伪造CP。演示经正式回放，载入隔离库时生成新人生身份；渡劫入场仍须确认，之后才有真正完整准备检查点。演示导出为chenyuan-demo-save封装，仅当前候选版本/节点可用，正常导入拒绝。手改/去封装不获得合法来源证明。
 
 活动、暂停、恢复、失败和接管均按真实已保存身份处理；离线不自动补发收益或消耗寿元，旧回执不演成新奖励。具体周期来自实际安排，阅读不催促，突破/未知关键分支仍待玩家明确决定。事务检查不承诺所有硬件断电情形永久落盘。
-''')
+''', encoding='utf-8', newline='\n')
     (stage / 'KNOWN_ISSUES.md').write_text('''# 已知限制与后续责任
 
 数值未平衡。真人理解观察、整体美术与长期平衡仍待验收；历史“交互不清晰、画面效果不佳”的负面反馈不能由局部工程绿灯推翻。当前正式候选须逐项核完整同源UI/存储/正常路线/恢复/性能矩阵与解包运行，局部预览包/基线重建不是完整候选。原门槛保留，机器回执不代表发布许可；不自动合并、公开部署、改变权限或发Release。
@@ -127,7 +127,7 @@ ENGINEERING_REVIEW.md是原Goal1 T24历史评审，不是当前放置版最终�
 保留J01 unknown、ART17原性能四红、ART28-OBS-01、COMPAT-OBS-1200-01、原始输入补录限制及所有历史失败/unknown；不能凭旧报告或一次绿色覆盖。原T22 Firefox第8页中断及旧本地高负载失败保留，各自证据和根因未知不改标签。最大C端/代码/安全评审仍待当前版本实际执行；ENGINEERING_REVIEW.md是历史来源，不是假定当前最终完成。
 
 历史两组高清原件仍有缺失，当前素材按source.bundle内art/production、art/redesign与实际manifest.runtime逐项核；旧附表不代表当前全部美术覆盖，不分发字体、不新增发行许可。WebKit自动化不等于Safari真机，模拟网络/CPU不等于公网/所有设备，自动化不是真人复验。
-''')
+''', encoding='utf-8', newline='\n')
     (stage / 'CHANGELOG.md').write_text('''# 当前放置版与历史边界
 
 当前按长期积累、低频决定、阶段筹备组织25类行动。每段有限授权、真实逐周期读秒、保存后才展示成果；预算按累计实际支出，暂停/恢复/失败/接管及原意图重试保留。择法与功法/法宝配装采用即时原子确认，不强加周期或假读秒。突破仍须修为、物资和明确确认，流程可达不等于快速通关。查看、阅读和配置比较不暗中旅行/采购/开战，离线不凭经过时间补奖。
@@ -137,7 +137,7 @@ ENGINEERING_REVIEW.md是原Goal1 T24历史评审，不是当前放置版最终�
 T23的9个正式回放演示节点、正常/演示隔离、完整选定历史bundle、固定输入装配、干净锁定重建和解包回执仍保。当前源依赖Vue3.5.44/Vite7.3.7及既有锁未因说明修改改变；Pillow12.3.0是已存在资源校验前置，非新增游戏依赖。
 
 历史Goal1/Goal2美术、兼容和性能报告只证明各自原提交/范围，ENGINEERING_REVIEW.md是原T24记录。当前兼容与环境性能暂停；正式候选的原门槛/最终完整同源矩阵、最大评审和真人/整体美术/长期平衡责任不缩。实际源码/载荷/原始证据见manifest，未执行范围见KNOWN_ISSUES.md。
-''')
+''', encoding='utf-8', newline='\n')
     (stage / 'PLAYTEST_FORM.md').write_text(f'''# 真人观察表 · 空白模板，尚未执行
 
 源码提交 `{source['source']}`。没有参与者、观察数据或结论。建议约30分钟观察基本玩法理解，不规定到达任何境界，不按现实分钟发奖励。先征得记录同意，只用匿名编号，不收姓名、聊天全文或无关个人数据。
@@ -160,7 +160,7 @@ T23的9个正式回放演示节点、正常/演示隔离、完整选定历史bun
 | | | | | |
 
 此空表、自动化日志、可达回放和生成截图都不是真人反馈或美术认可。真实用户复验与长期平衡另行完成，不能预填成功结论。
-''')
+''', encoding='utf-8', newline='\n')
 
 
 def package(browser_evidence, journeys, output):
@@ -170,7 +170,7 @@ def package(browser_evidence, journeys, output):
         temp = Path(temp)
         inputs_file = temp / 'inputs.json'
         print(run('node', '--experimental-strip-types', 'scripts/candidate-evidence.mjs', str(Path(browser_evidence).resolve()), str(Path(journeys).resolve()), str(inputs_file)), flush=True)
-        inputs = json.loads(inputs_file.read_text())
+        inputs = json.loads(inputs_file.read_text(encoding='utf-8'))
         source = inputs['source']
         stage = temp / 'payload'
         stage.mkdir()
@@ -240,7 +240,7 @@ def package(browser_evidence, journeys, output):
 若本包附有catalogue-art.json，则物资、丹炉、功法法宝及筹备的三份透明主题绘画、持续结果与状态舞台的代码范围和真实验证见该表及CATALOGUE_ART_REVIEW.md；数量、成本、读秒和结算仍由原Game与原子命令决定，不代表完整美术或游戏验收。
 
 不分发本机字体；界面使用用户系统可用字体。无已授权音乐则不加入音乐。截图中字体像素不是字体文件；本候选不附个人存档/密钥/node_modules。发行许可与最终展示决定仍需用户依据现有权利确认，本包与CI不擅自授予新许可。
-''')
+''', encoding='utf-8', newline='\n')
         review_path = ROOT / 'docs/implementation/goal-1-final-review.md'
         shutil.copy2(review_path, stage / 'ENGINEERING_REVIEW.md')
         inventory = [file_info(file, file.relative_to(stage).as_posix()) for file in sorted(stage.rglob('*')) if file.is_file()]
@@ -251,7 +251,7 @@ def package(browser_evidence, journeys, output):
         (stage / 'manifest.json').write_bytes(manifest_bytes)
         checks = {item['path']: item['sha256'] for item in inventory}
         checks['manifest.json'] = hashlib.sha256(manifest_bytes).hexdigest()
-        (stage / 'checksums.sha256').write_text(''.join(checks[name] + '  ' + name + '\n' for name in sorted(checks)))
+        (stage / 'checksums.sha256').write_text(''.join(checks[name] + '  ' + name + '\n' for name in sorted(checks)), encoding='utf-8', newline='\n')
         first, second = temp / 'candidate.zip', temp / 'repeat.zip'
         archive_tree(stage, first)
         archive_tree(stage, second)
@@ -269,7 +269,7 @@ def package(browser_evidence, journeys, output):
             integrity.verify_archive(dest / 'candidate.zip', dest / 'runtime')
         integrity.verify_directory(dest / 'runtime', dest / 'candidate.zip')
         record = {'format': 'chenyuan-candidate-assembly', 'version': 1, 'id': candidate_id, 'archive': 'candidate.zip', 'archiveSha256': proof['archiveSha256'], 'manifestSha256': checks['manifest.json'], 'source': manifest['source'], 'runtime': 'runtime', 'fixedInputArchiveReproduced': True, 'sourceBundleReproduced': True, 'ready': False, 'requires': ['clean-source-rebuild', 'packaged-browser-smoke']}
-        (dest / 'candidate.json').write_text(json.dumps(record, ensure_ascii=False, indent=2) + '\n')
+        (dest / 'candidate.json').write_text(json.dumps(record, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
         if os.environ.get('GITHUB_ENV'):
             with open(os.environ['GITHUB_ENV'], 'a') as env:
                 env.write('CANDIDATE_DIRECTORY=' + str(dest / 'runtime') + '\nCANDIDATE_ARCHIVE=' + str(dest / 'candidate.zip') + '\nCANDIDATE_OUTPUT=' + str(dest) + '\n')

@@ -19,7 +19,7 @@ test('current instant120 audit checks actual engine provenance while the entire 
  assert.equal(historicalReport.sha256,digest(historical));assert.equal(current.passed,120);
  assert.notEqual(digest(JSON.stringify(currentSources)),digest(JSON.stringify(oldSources)));
  const result=run(root);assert.equal(result.status,0,result.stderr);
- const summary=JSON.parse(result.stdout.trim());assert.equal(summary.passed,120);assert.equal(summary.check,true);assert.ok(summary.report.endsWith('/docs/economy/current-engine-report.json'));
+ const summary=JSON.parse(result.stdout.trim());assert.equal(summary.passed,120);assert.equal(summary.check,true);assert.equal(path.normalize(summary.report),path.join(root,'docs/economy/current-engine-report.json'));
  assert.deepEqual(fs.readFileSync(path.join(root,'docs/economy/current-report.json')),historical);
 });
 
