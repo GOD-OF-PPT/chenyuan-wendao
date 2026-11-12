@@ -26,7 +26,7 @@ watch([domain,()=>all.value.length],()=>{if(pages.value[domain.value]!==page.val
  <section class="ta09-queue" data-testid="study-queue-rail" :data-domain="domain" :data-run="game.core.runId" :data-actual-count="actualCount" :data-draft-count="draft.length" aria-label="原研习安排与待确认卷串">
   <header class="ta09-queue-modes">
    <button type="button" data-testid="queue-mode-saved" :aria-pressed="domain==='saved'" :disabled="!hasSaved" @click="choose('saved')">原安排 {{actualCount}} 卷</button>
-   <button type="button" data-testid="queue-mode-draft" :aria-pressed="domain==='draft'" @click="choose('draft')">下次草案 {{draft.length}} 卷</button>
+   <button type="button" data-testid="queue-mode-draft" :aria-pressed="domain==='draft'" @click="choose('draft')">下次选择 {{draft.length}} 卷</button>
    <button type="button" data-testid="queue-mode-slots" :aria-pressed="domain==='slots'" @click="choose('slots')">当前三槽</button>
    <button type="button" class="ta09-queue-limits" data-testid="learning-plan-open" @click="emit('limits')">定卷 · 完整安排</button>
   </header>

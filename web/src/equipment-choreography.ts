@@ -30,5 +30,5 @@ export function projectStudyQueue(game:Game,draft:string[],activity:Activity|nul
  const saved=activity?.version===5&&activity.plan.kind==='learn'&&activity.runId===game.core.runId?activity:null;
  const ids=domain==='saved'&&saved?saved.plan.kind==='learn'?saved.plan.skills:[]:domain==='draft'?draft:[];
  const current=domain==='saved'&&saved&&command?.type==='LEARN'&&command.runId===game.core.runId&&ids.includes(command.skill)?command.skill:null;
- return ids.filter(id=>Object.hasOwn(C.skills,id)).map(id=>({id,name:C.skills[id].name,school:C.skills[id].school,form:JADE_FORMS[id].form,known:game.learned.includes(id),current:current===id&&!game.learned.includes(id),status:game.learned.includes(id)?'已掌握':domain==='draft'?'草案待确认':current===id?'本轮研习':'原安排待研'}));
+ return ids.filter(id=>Object.hasOwn(C.skills,id)).map(id=>({id,name:C.skills[id].name,school:C.skills[id].school,form:JADE_FORMS[id].form,known:game.learned.includes(id),current:current===id&&!game.learned.includes(id),status:game.learned.includes(id)?'已掌握':domain==='draft'?'选择待确认':current===id?'本轮研习':'原安排待研'}));
 }

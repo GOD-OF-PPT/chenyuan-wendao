@@ -5,6 +5,7 @@ import {adventureView} from './adventure-view';
 import {milestoneView} from './milestone-view';
 import type {Game} from '../../src/full/types.ts';
 import {items,recipes,relics,sources} from '../../src/full/content.ts';
+import {playerMessage} from './player-copy';
 const gains=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=>items[id].name+' +'+n).join(' · ');
 const quantities=(values:Record<string,number>)=>Object.entries(values).map(([id,n])=>items[id].name+' ×'+n).join(' · ');
 // Keep persisted v6 reasons and their exact receipt proofs unchanged.
@@ -24,7 +25,7 @@ export function stopMessage(plan:ActivityPlan,reason:RuleFailure|null|undefined,
   if(plan.kind==='encounter')return'已完成本段历练动作上限，后续由你另行安排';
   if(plan.kind==='battle')return'已完成本段斗法动作上限，不再自动出招';
  }
- return reason?.message??'';
+ return playerMessage(reason?.message??'');
 }
 const recoveryCauses=new Map([
  ['存储空间不足，本次操作未提交，原进度保留','存储空间不足'],

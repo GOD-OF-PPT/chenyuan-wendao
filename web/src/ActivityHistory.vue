@@ -14,7 +14,7 @@ const activity=computed(()=>{const a=props.store.activity;return a&&a.version<=5
 const view=computed(()=>activity.value?activityView(activity.value,props.store.game):null);
 const totals=computed(()=>activity.value&&view.value?[`已完成 ${activity.value.completedCycles} / ${activity.value.plan.maxCycles} ${view.value.unit}`,...view.value.summary]:[]);
 const stopped=computed(()=>activity.value?.stopReason?stopMessage(activity.value.plan,activity.value.stopReason):'');
-const incomplete='本段回执未能完整核对，请重新读取；没有改变游戏进度。';
+const incomplete='本段收获未能完整核对，请重新读取；没有改变游戏进度。';
 let request=0,disposed=false;
 function scope(){return{run:props.store.game?.core.runId,id:activity.value?.id,version:activity.value?.version,sync:props.store.syncEpoch,ready:props.store.ready};}
 function sameContext(c:ReturnType<typeof scope>){const now=scope();return !disposed&&now.run===c.run&&now.id===c.id&&now.version===c.version&&now.sync===c.sync&&now.ready===c.ready;}
@@ -57,13 +57,13 @@ function commandName(command:Command){
 }
 </script>
 <template>
- <section class="activity-history" data-testid="activity-history" aria-label="本段活动逐次回执" :aria-busy="loading">
-  <header><h2>{{view?.name??'本段活动'}} · 已保存回执</h2><span v-if="loading" class="history-note" role="status">正在读取第 {{requestedPage+1}} 页…</span></header>
+ <section class="activity-history" data-testid="activity-history" aria-label="本段活动逐次记录" :aria-busy="loading">
+  <header><h2>{{view?.name??'本段活动'}} · 收获记录</h2><span v-if="loading" class="history-note" role="status">正在读取第 {{requestedPage+1}} 页…</span></header>
   <p class="history-note">只读回看实际周期，不会再次执行、消耗或发放奖励。</p>
   <div v-if="activity" class="history-totals" data-testid="activity-history-totals"><strong>本段累计</strong><span v-for="row in totals" :key="row">{{row}}</span><span v-if="stopped" class="history-stop" data-testid="activity-history-stop">停止：{{stopped}}</span><span v-else class="history-stop" data-testid="activity-history-stop">{{activity.status==='paused'?'活动已暂停；未完成的周期没有计入成果。':activity.status==='running'?'活动仍在安排中；这里只记已保存周期。':'此段活动已停止；停止说明未能核对。'}}</span></div>
   <p v-if="error" class="history-error" role="alert" data-testid="activity-history-error">{{error}} <button type="button" data-testid="activity-history-reload" @click="load()">重新读取</button></p>
-  <template v-else-if="history"><div class="history-grid"><article v-for="row in history.rows" :key="row.command.commandId" data-testid="activity-history-row" :data-command-id="row.command.commandId"><h3>第 {{row.activity.completedCycles}} 次 · {{commandName(row.command)}}</h3><p class="history-note">单周期 {{row.activity.cycleMs/1000}} 秒 · 已执行 {{row.result.executedSteps}} / {{row.result.requestedSteps}} 次</p><p><span class="history-label">实际投入 </span><span data-testid="activity-history-costs">{{formatCosts(row.result.costs)}}</span></p><p><span class="history-label">净变化 </span><span data-testid="activity-history-delta">{{formatDelta(row.result.delta)}}</span></p></article></div><p v-if="history.total===0" class="history-note">尚无已保存周期。</p><CataloguePager :page="history.page" :pages="history.pages" :total="history.total" label="逐次回执" @change="load($event)"/></template>
-  <p v-else-if="!loading&&!store.ready" class="history-note" role="status">正在核对本机进度，回执尚未读取。</p>
+  <template v-else-if="history"><div class="history-grid"><article v-for="row in history.rows" :key="row.command.commandId" data-testid="activity-history-row" :data-command-id="row.command.commandId"><h3>第 {{row.activity.completedCycles}} 次 · {{commandName(row.command)}}</h3><p class="history-note">单周期 {{row.activity.cycleMs/1000}} 秒 · 已执行 {{row.result.executedSteps}} / {{row.result.requestedSteps}} 次</p><p><span class="history-label">实际投入 </span><span data-testid="activity-history-costs">{{formatCosts(row.result.costs)}}</span></p><p><span class="history-label">净变化 </span><span data-testid="activity-history-delta">{{formatDelta(row.result.delta)}}</span></p></article></div><p v-if="history.total===0" class="history-note">尚无已保存周期。</p><CataloguePager :page="history.page" :pages="history.pages" :total="history.total" label="逐次记录" @change="load($event)"/></template>
+  <p v-else-if="!loading&&!store.ready" class="history-note" role="status">正在核对本机进度，记录尚未读取。</p>
   <p v-else-if="!loading&&!activity" class="history-note">当前没有可核对的普通活动，请返回查看当前安排。</p>
  </section>
 </template>

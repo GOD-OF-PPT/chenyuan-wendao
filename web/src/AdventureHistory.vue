@@ -4,9 +4,10 @@ import type {useGame} from './store';
 import {formatCosts,formatDelta} from './presentation';
 import CataloguePager from './CataloguePager.vue';
 import {activityView} from './activity-view';
+import {playerCopy} from './player-copy';
 const props=defineProps<{store:ReturnType<typeof useGame>}>();
 const history=shallowRef<Awaited<ReturnType<ReturnType<typeof useGame>['loadActivityHistory']>>|null>(null),error=ref(''),loading=ref(false);
-const totals=computed(()=>{const a=props.store.activity;return a?.version===6?[`入场 ${a.encountersStarted} · 完成 ${a.completedCycles} 次动作 · 岁月 +${a.spentMonths} 月`,...activityView(a,props.store.game).summary]:[];});
+const totals=computed(()=>{const a=props.store.activity;return a?.version===6?[`入场 ${a.encountersStarted} · 完成 ${a.completedCycles} 次动作 · 耗时 ${a.spentMonths} 游戏月`,...activityView(a,props.store.game).summary]:[];});
 let token=0,requestedPage=0;
 async function load(page=requestedPage){requestedPage=page;const id=props.store.activity?.id,run=props.store.game?.core.runId,owner=++token;error.value='';if(!id){history.value=null;return;}loading.value=true;
  try{const result=await props.store.loadActivityHistory(id,page);if(owner===token&&run===props.store.game?.core.runId){history.value=result;requestedPage=result.page;}}
@@ -19,11 +20,11 @@ watch([()=>props.store.activity?.id,()=>props.store.activity?.completedCycles,()
 const moveName:Record<string,string>={attack:'普通攻击',guard:'凝神护体',technique:'起手术法',release:'终结术法',heal:'回春丹',restore:'回灵丹',flee:'撤退'};
 </script>
 <template>
- <section class="adventure-history" data-testid="adventure-history" aria-label="本安排逐次回执">
-  <h2>此段行程 · 已保存回执 <span v-if="loading" class="small" role="status">读取回执…</span></h2><p class="small">原子提交后逐次记载；查看历史不会出招或再次发放奖励。</p>
+ <section class="adventure-history" data-testid="adventure-history" aria-label="本安排逐次记录">
+  <h2>{{playerCopy.battleHistory}} <span v-if="loading" class="small" role="status">读取记录…</span></h2><p class="small">每次交锋的投入与所得都记在这里。</p>
   <p class="history-totals small" data-testid="adventure-history-totals"><strong>本段累计</strong><span v-for="row in totals" :key="row">{{row}}</span></p>
   <p v-if="error" role="alert">{{error}} <button @click="load()">重新读取</button></p>
-  <template v-if="history"><div class="adventure-history-grid"><article v-for="row in history.rows" :key="row.command.commandId"><strong>第 {{row.activity.completedCycles}} 次 · {{row.command.type==='BATTLE'?moveName[row.command.move]:row.command.type==='TRAVEL'?'抵达目的地':'遭遇入场'}}</strong><p>{{formatDelta(row.result.delta)}}</p><small>实际投入：{{formatCosts(row.result.costs)}}</small><p v-if="row.activity.version===6&&row.command.type==='BATTLE'" class="small">{{row.activity.decisionGame.battle?'敌方气血 '+row.activity.decisionGame.battle.hp+' · 已交锋 '+row.activity.decisionGame.battle.round+' 回合':'此场交锋已结束'}} · {{row.activity.stopReason?.message??'按已授权战策继续'}}</p></article></div><p v-if="!history.total">尚无已保存周期。</p><CataloguePager :page="history.page" :pages="history.pages" :total="history.total" label="逐次回执" @change="load($event)"/></template>
+  <template v-if="history"><div class="adventure-history-grid"><article v-for="row in history.rows" :key="row.command.commandId"><strong>第 {{row.activity.completedCycles}} 次 · {{row.command.type==='BATTLE'?moveName[row.command.move]:row.command.type==='TRAVEL'?'抵达目的地':'遭遇入场'}}</strong><p>{{formatDelta(row.result.delta)}}</p><small>实际投入：{{formatCosts(row.result.costs)}}</small><p v-if="row.activity.version===6&&row.command.type==='BATTLE'" class="small">{{row.activity.decisionGame.battle?'敌方气血 '+row.activity.decisionGame.battle.hp+' · 已交锋 '+row.activity.decisionGame.battle.round+' 回合':'此场交锋已结束'}} · {{row.activity.stopReason?.message??'按已定战策继续'}}</p></article></div><p v-if="!history.total">尚无已保存周期。</p><CataloguePager :page="history.page" :pages="history.pages" :total="history.total" label="逐次记录" @change="load($event)"/></template>
  </section>
 </template>
 <style scoped>

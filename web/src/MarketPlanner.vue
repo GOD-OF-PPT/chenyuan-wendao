@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {playerCopy} from './player-copy';
 import{computed,inject,onDeactivated,onUnmounted,ref,useId,watch}from 'vue';
 import{gameFocusKey}from './focus';
 import type{Action,Game}from '../../src/full/types.ts';
@@ -48,7 +49,7 @@ watch(()=>props.game.core.runId,()=>{drafts.clear();lastReadIntents.clear();sele
  <section class="idle-preparation market-planner" :class="{'paper':!embedded,'play-catalogue':!embedded}" data-testid="market-planner" aria-label="坊市购售安排">
   <MarketCounter :game="game" :mode="mode" :item-id="selected" @source="emit('track',{kind:'item',id:selected,quantity:mode==='buy'&&until==='target'?target:Math.max(1,itemReserve)})">
    <template #shelves><button data-testid="market-library-open" @click="openLibrary">翻看货架</button></template>
-   <template #decision><div v-if="item" class="preparation-decision market-decision"><small data-testid="preparation-plan-state">{{running&&!(sameSaved&&planSaved)?'下次草案 · 原活动不变':sameSaved&&planSaved||restart.same?'已保存安排':'待确认'}}</small>
+   <template #decision><div v-if="item" class="preparation-decision market-decision"><small data-testid="preparation-plan-state">{{running&&!(sameSaved&&planSaved)?playerCopy.nextPlan:sameSaved&&planSaved||restart.same?'已保存安排':'待确认'}}</small>
     <strong v-if="mode==='buy'||item.sell!==null" class="market-price">每件 {{mode==='buy'?item.buy:item.sell}} 灵石 · 15 秒</strong>
     <button class="supply-plan-open" data-testid="market-plan-open" @click="openSettings">{{mode==='buy'&&until==='target'?'库存目标 '+target+' · ':''}}最多 {{count}} 件 · {{mode==='buy'?'灵石上限 '+budget+' · 保留 '+reserve:'库存保留 '+itemReserve}}<small>调整 ›</small></button>
     <div class="preparation-estimate" data-testid="preparation-estimate"><strong>{{conflict||(mode==='sell'&&item.sell===null?'突破物不可出售':restart.same?'':stopMessage(plan,quote?.failure))}}</strong><small v-if="consumptionWarning" data-testid="market-consumption">整段出售：{{consumptionWarning}}</small></div>
