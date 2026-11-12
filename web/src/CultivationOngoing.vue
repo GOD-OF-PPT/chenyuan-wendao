@@ -14,7 +14,7 @@ const phase=computed(()=>check.value?'进度待核对':store.activityPausing?'�
 </script>
 
 <template>
- <section v-if="a&&view" class="cultivation-ongoing art06-main-decision" data-testid="cultivation-ongoing" :data-status="a.status" aria-label="本段已保存安排">
+ <section v-if="a&&view" class="cultivation-ongoing art06-main-decision" data-testid="cultivation-ongoing" :data-status="a.status" aria-label="本次活动">
   <header><small>{{phase}}</small><h2>{{view.name}}</h2></header>
   <p class="ongoing-progress">已完成 <strong>{{a.completedCycles}}</strong> {{view.unit}}<template v-if="a.version!==1"> · 上限 {{a.plan.maxCycles}} {{view.unit}}</template><span>每{{view.unit}} {{a.cycleMs/1000}} 秒</span></p>
   <template v-if="a.version===1">

@@ -5,6 +5,7 @@ import type {ActionResult} from '../../src/full/contracts.ts';
 import type {Execution} from './action-timing';
 import {ACTION_MOTIONS} from './action-feedback';
 import {formatDelta,outcome} from './presentation';
+import {playerMessage} from './player-copy';
 import GameIcon from './GameIcon.vue';
 import {items,realms} from '../../src/full/content.ts';
 const props=withDefaults(defineProps<{game:Game;result:ActionResult|null;busy:boolean;saved:boolean;available:boolean;error:string;replayed:boolean;execution:Execution|null;next:string;followup?:boolean;compact?:boolean;syncIssue?:boolean}>(),{followup:true,syncIssue:false});
@@ -29,7 +30,7 @@ const changes=computed(()=>{
    <template v-if="execution"><strong>{{execution.label}}</strong><output data-testid="stage-time">{{execution.phase==='saving'?'保存中':(execution.remainingMs/1000).toFixed(1)+' 秒'}}</output><progress :value="execution.totalMs-execution.remainingMs" :max="execution.totalMs" :aria-label="execution.label+'阶段进度'"/><small>{{execution.phase==='saving'?'保存后显示本次结果':'正在行动，结束后核对结果'}}</small></template>
    <template v-else-if="syncIssue"><strong class="stage-failure">进度同步待核对</strong><p>已确认成果保留；请重新读取。</p></template>
    <template v-else-if="error"><strong class="stage-failure">结果待核对</strong><p>请先查看上方处理提示。</p></template>
-   <template v-else-if="receipt"><strong class="stage-success"><GameIcon :kind="ACTION_MOTIONS[receipt.type].icon.kind" :id="ACTION_MOTIONS[receipt.type].icon.id"/>{{ACTION_MOTIONS[receipt.type].label}}</strong><p data-testid="stage-delta"><span v-for="row in changes.visible" :key="row">{{row}}</span></p><small v-if="changes.extra" data-testid="stage-more">另{{changes.extra}}项 · 结算详情</small><small v-if="receipt.stopReason">{{receipt.stopReason.message}}</small></template>
+   <template v-else-if="receipt"><strong class="stage-success"><GameIcon :kind="ACTION_MOTIONS[receipt.type].icon.kind" :id="ACTION_MOTIONS[receipt.type].icon.id"/>{{ACTION_MOTIONS[receipt.type].label}}</strong><p data-testid="stage-delta"><span v-for="row in changes.visible" :key="row">{{row}}</span></p><small v-if="changes.extra" data-testid="stage-more">另{{changes.extra}}项 · 收获明细</small><small v-if="receipt.stopReason">{{playerMessage(receipt.stopReason.message)}}</small></template>
    <template v-else-if="followup"><strong>下一步</strong><p>{{next}}</p></template><template v-else><p>此处保留已保存的行动结果。</p></template>
   </div>
   <footer v-if="!busy&&(followup||result)" class="stage-outcome-actions"><button v-if="followup" class="stage-next" data-testid="stage-next" @click="$emit('next')">下一步 →</button><button v-if="result" class="stage-details" data-testid="hub-receipt" @click="$emit('details')">结算详情</button></footer>

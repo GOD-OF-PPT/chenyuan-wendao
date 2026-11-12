@@ -48,7 +48,7 @@ test('Q02-2 selected accepted travel is running rather than a new draft and rema
   await expect(page.getByTestId('adventure-plan-state')).not.toContainText('待确认');
   expect(await activity(page)).toEqual(a); expect(await snapshot(page)).toEqual(g);
   await page.getByTestId('travel-market').click();
-  await expect(page.getByTestId('adventure-plan-state')).toContainText('待确认');
+  await expect(page.getByTestId('adventure-plan-state')).toContainText('行前查看');
   expect(await database(page)).toEqual(raw);
 });
 

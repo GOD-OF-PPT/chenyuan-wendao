@@ -38,7 +38,7 @@ const lifespan = computed(() => previewAction(props.game, { type: 'END_LIFE' }))
       </template>
       <template v-else><button data-testid="life-restore" @click="emit('restore')" :disabled="!enabled || busy || !hasCheckpoint">恢复完整准备检查点</button><button data-testid="life-restart" @click="emit('restart')" :disabled="!enabled || busy">新的人生</button></template>
     </div>
-    <p v-if="game.status!=='active'" class="small" data-testid="life-recovery-note">{{hasCheckpoint?'恢复会回退完整准备状态，包括物品、年月与人物记录；不保留此后所得。':'此档没有检查点，不能补造准备快照。可先导出存档和生平，再决定是否开始新的人生。'}}</p>
+    <p v-if="game.status!=='active'" class="small" data-testid="life-recovery-note">{{hasCheckpoint?'恢复会回退完整准备状态，包括物品、年月与人物记录；不保留此后所得。':'此档没有检查点，不能补造准备记录。可先导出存档和生平，再决定是否开始新的人生。'}}</p>
     <p class="small">生平文本不含完整进度；需要恢复时，请另行导出存档。</p>
   </section>
 </template>

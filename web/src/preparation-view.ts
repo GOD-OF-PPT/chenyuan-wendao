@@ -14,5 +14,5 @@ export function preparationView(a:PreparationActivity){
 export function pausedPlanView(a:Activity|null|undefined,run:string,plan:ActivityPlan){
  const paused=a?.status==='paused'&&a.runId===run,same=!!paused&&proof(a.plan)===proof(plan);
  const completed=same&&a?a.completedCycles:0,maxCycles=same&&a?a.plan.maxCycles:0;
- return{same,label:same?'已保存原安排未变 · 请在上方继续':paused?'替换暂停安排 · ':'',completed,maxCycles,summary:same?`原段已暂停 · 已完成 ${completed} / ${maxCycles}`:'',note:'stoneBudget'in plan?'继续沿用原累计预算与保留线。':'继续沿用原次数、目标与保留线。'};
+ return{same,label:same?'已保存打算未变 · 上方继续':paused?'另行开始 · ':'',completed,maxCycles,summary:same?`原段已暂停 · 已完成 ${completed} / ${maxCycles}`:'',note:'stoneBudget'in plan?'继续沿用原累计预算与保留线。':'继续沿用原次数、目标与保留线。'};
 }
