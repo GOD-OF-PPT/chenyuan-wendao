@@ -360,6 +360,14 @@ function cost(action: Action) {
   return preview && preview.requestedSteps > 1 ? '每次 ' + text : text;
 }
 function act(action: Action) { resumeVisible.value=false;if(action.type==='TRAVEL')return travel(action.location);if(action.type==='BATTLE')return battle(action.move);if(action.type==='ENCOUNTER')return inspectAdventure(action.enemy);if(action.type==='CULTIVATE'){const n=action.count??1;return startTraining({kind:'cultivation',method:action.method,maxCycles:n,until:'cycles',stoneBudget:action.method==='natural'?0:Math.min(core.value?.player.stones??0,(quote({...action,count:1})?.costs?.stones??0)*n),stoneReserve:0});}if(action.type==='SOURCE'){const n=action.count??1,source=C.sources[action.sourceId],target=action.target?{kind:'item' as const,id:action.target.item,quantity:action.target.quantity}:batch.value==='target'?collectionTarget.value:null;return startSource({kind:'source',sourceId:action.sourceId,maxCycles:n,until:target?'target':'cycles',target,monthBudget:n*source.months,remainingMonthsReserve:1});}if(action.type==='CRAFT'||action.type==='FORGE')return inspectProduction(action);if(['BUY','SELL','USE','REST','LEARN','STUDY'].includes(action.type))return inspectPreparation(action);if(action.type==='SCHOOL'||action.type==='EQUIP'||action.type==='EQUIP_RELIC')return inspectConfiguration(action);if(store.activityRunning){store.activityNotice='当前活动进行中，请先暂停再行动。';return;}if (action.type === 'START_TRIAL') return showTrialPreparation(); if (action.type === 'END') return reviewAscension(action.ending); if(isMilestoneAction(action))return selectMilestone(action); const owner=navigationRevision; return focus.afterAction(async()=>{await store.act(action);},()=>owner===navigationRevision); }
+let directVisit:{command:string;run:string;event:string;navigation:number;sync:number}|null=null;
+async function finishDirectVisit(){
+ const p=directVisit;if(!p)return;
+ if(!appActive||navigationRevision!==p.navigation||store.syncEpoch!==p.sync||game.value?.core.runId!==p.run){directVisit=null;return;}
+ if(store.busy||store.error||!store.wasConfirmedFor(p.command,p.run)||game.value.core.activeEvent?.id!==p.event)return;
+ directVisit=null;await openHub('current');
+}
+watch(()=>[store.busy,store.error,store.game,store.syncEpoch],()=>{void finishDirectVisit();},{flush:'post'});
 async function lightAction(action:DirectAction,confirm=true){
  if(!game.value||pendingStoryError.value||store.busy||store.activityRunning)return;
  const before=game.value,intent=store.prepareDirect(action);if(!intent)return;
@@ -370,8 +378,11 @@ async function lightAction(action:DirectAction,confirm=true){
  const label=action.type==='EVENT'?'拜访 · '+event?.name:action.type==='DECIDE'?event?.options.find(o=>o.id===action.option)?.label:action.type==='USE'?'服用1枚'+C.items[action.item].name:'售出1件'+C.items[action.item].name;
  if(confirm&&!await confirmation.ask({kind:'light-action',title:label??'确认本次行动',message:[detail,'本次投入：'+formatCosts(quote.actualCosts??quote.costs),'预计变化：'+(quote.delta?formatDelta(quote.delta):'无'),consequence].filter(Boolean).join('\n'),action:label??'确认行动',cancel:'再想想',current:source.current,blocked:confirmationBlocked,mayReturn:source.mayReturn}))return;
  if(!source.current()||confirmationBlocked())return;
- const owner=navigationRevision;await store.executeDirect(intent);
- if(action.type==='EVENT'&&owner===navigationRevision&&store.wasConfirmedFor(intent.command.commandId,intent.command.runId)&&!store.error&&game.value?.core.activeEvent?.id===action.event)await openHub('current');
+ const owner=navigationRevision,anchor=focus.capture();
+ if(action.type==='EVENT')directVisit={command:intent.command.commandId,run:intent.command.runId,event:action.event,navigation:owner,sync:store.syncEpoch};
+ await store.executeDirect(intent);
+ await finishDirectVisit();
+ if(!confirm&&owner===navigationRevision&&!store.error){await nextTick();if(anchor&&!anchor.isConnected&&document.activeElement===document.body)focus.target(document.querySelector<HTMLElement>('[data-testid=inventory-main-source],[data-testid=inventory-main-uses],[data-testid=inventory-library-open]'));}
 }
 function storyAct(action:Action){if(!pendingStoryError.value)return isDirectAction(action)&&['EVENT','DECIDE'].includes(action.type)?lightAction(action):act(action);}
 function quickInventory(action:Action){if(isDirectAction(action)&&['USE','SELL'].includes(action.type))return lightAction(action,false);}

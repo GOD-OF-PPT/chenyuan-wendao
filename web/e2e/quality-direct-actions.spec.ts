@@ -6,6 +6,8 @@ import {snapshot,activitySnapshot} from './support';
 import {selectInventoryItem} from './stage-support';
 import {paidResponseFixture,npcResponseFixtures} from '../../tests/response-context-fixtures.mjs';
 import {narrativeFor} from '../src/story-pages';
+import {createActivity,pauseActivity} from '../../src/full/activity';
+import {selectPlan,home} from './idle-route-support';
 
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});
 
@@ -54,6 +56,26 @@ test('an inventory quota failure keeps its original single-dose retry and does n
   try{await page.getByTestId('quick-use-healing_pill').click();await expect(page.getByTestId('error')).toBeVisible();expect(await recoveryDatabase(page)).toEqual(raw);await expect(page.getByTestId('quick-use-healing_pill')).toBeDisabled();}
   finally{await page.evaluate(()=>(window as any).__restoreQuick());}
   await page.getByTestId('retry').click();await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(before.core.revision+1);expect((await snapshot(page)).core.inventory.healing_pill).toBe(before.core.inventory.healing_pill-1);await expect(page.getByTestId('error')).toHaveCount(0);
+});
+
+test('a failed visit retries its original intent and presents the same current dialogue without another click',async({page})=>{
+  const d=driver('trade','sword');d.realm();d.funds(100);d.go('sect');const before=await importRecoveryFixture(page,d.game);await page.getByTestId('tab-3').click();await page.getByTestId('fate-mode-events').click();
+  const raw=await recoveryDatabase(page);await page.evaluate(()=>{const put=IDBObjectStore.prototype.put;(window as any).__restoreVisit=()=>IDBObjectStore.prototype.put=put;IDBObjectStore.prototype.put=function(value:any,key?:IDBValidKey){if(this.name==='full-receipts'&&value?.format==='chenyuan-direct-receipt')throw new DOMException('visit quota','QuotaExceededError');return put.call(this,value,key!);};});
+  try{await page.getByTestId('event-shen_return').click();await page.getByTestId('game-confirmation-confirm').click();await expect(page.getByTestId('error')).toBeVisible();expect(await recoveryDatabase(page)).toEqual(raw);}
+  finally{await page.evaluate(()=>(window as any).__restoreVisit());}
+  await page.getByTestId('retry').click();await expect(page.getByTestId('decide-bargain')).toBeVisible();expect((await snapshot(page)).core.revision).toBe(before.core.revision+1);expect(await activitySnapshot(page)).toBeNull();
+});
+
+test('a keyboard sale of the final item returns focus to the stable inventory source entry',async({page})=>{
+  const d=driver();d.buy('spirit_pill',1);const before=await importRecoveryFixture(page,d.game);await page.getByTestId('tab-2').click();await selectInventoryItem(page,'spirit_pill');
+  await page.getByTestId('quick-sell-spirit_pill').focus();await page.keyboard.press('Enter');await expect.poll(async()=>(await snapshot(page)).core.revision).toBe(before.core.revision+1);await expect(page.getByTestId('inventory-main-source')).toBeFocused();expect((await snapshot(page)).core.inventory.spirit_pill).toBe(0);
+});
+
+test('an old nonfirst paused six-second response keeps its exact selected option and original plan on the parallel surface',async({page})=>{
+  const before=await importRecoveryFixture(page,paidResponseFixture()),a=pauseActivity(createActivity(before,{kind:'milestone',action:{type:'DECIDE',option:'decline'},maxCycles:1},{id:'legacy-response',ownerId:'old-page',commandId:'old-start',now:10000}));
+  await page.evaluate(record=>new Promise<void>((ok,no)=>{const q=indexedDB.open('chenyuan-playable-v1');q.onsuccess=()=>{const db=q.result,t=db.transaction('full-state','readwrite');t.objectStore('full-state').put(record,'activity');t.oncomplete=()=>{db.close();ok();};t.onabort=()=>no(t.error);};}),a);
+  await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');await page.getByTestId('tab-3').click();await page.getByTestId('fate-resume-dialogue').click();
+  const raw=await recoveryDatabase(page);await expect(page.getByTestId('response-context')).toContainText('已暂停');await expect(page.locator('[data-current-response=true]')).toContainText('原已安排的回应');expect(await activitySnapshot(page)).toEqual(a);expect(await recoveryDatabase(page)).toEqual(raw);
 });
 
 for(const {person,game} of npcResponseFixtures())test(`all ${person} response options and full costs remain readable before a readonly cancelled confirmation`,async({page},info)=>{
