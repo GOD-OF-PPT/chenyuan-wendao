@@ -153,7 +153,8 @@ test('Q02-8b rest outside the cave says the trip replaces the paused plan before
   await begin(page, {kind: 'source', sourceId: 'herbs', maxCycles: 5, until: 'cycles', target: null, monthBudget: 5, remainingMonthsReserve: 1});
   await page.getByTestId('training-pause').click(); await expect.poll(async () => (await activity(page))?.status).toBe('paused');
   const raw = await database(page);
-  await openHubFeature(page, 'recovery'); await page.getByTestId('recovery-options-open').click(); await page.getByTestId('recovery-rest').click();
+  await home(page); await page.getByTestId('tab-2').click(); await inspectInventorySupply(page, 'healing_pill', 'use');
+  await page.getByTestId('recovery-options-open').click(); await page.getByTestId('recovery-rest').click();
   await expect(page.getByTestId('recovery-replacement-note')).toContainText('启程将结束原');
   await expect(page.getByTestId('recovery-replacement-note')).toContainText('抵达后另行确认疗养');
   await expect(page.getByTestId('preparation-travel')).toBeVisible();
