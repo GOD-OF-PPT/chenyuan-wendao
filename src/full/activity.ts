@@ -7,6 +7,7 @@ import { canonicalFingerprint, validateCommandReceipt } from './receipts.ts';
 import type { ActionResult, RuleFailure } from './contracts.ts';
 import type { Command, Game } from './types.ts';
 import type { CollectionTarget } from './goals.ts';
+import {REPEAT_CYCLE_LIMIT,repeats,type RepeatingPlan} from './repetition.ts';
 import { PREPARATION_CYCLE_MS, isPreparationPlan, validatePreparationPlan, preparationCycleAction,
   preparationSnapshot, emptyPreparationTotals, validatePreparationTotals, validatePreparationSnapshot,
   preparationStop, validatePreparationResult } from './preparation.ts';
@@ -36,7 +37,7 @@ export interface CultivationPlan {
   stoneBudget: number;
   stoneReserve: number;
 }
-export interface SourcePlan {
+export interface SourcePlan extends RepeatingPlan {
   kind: 'source'; sourceId: string; maxCycles: number; until: 'cycles' | 'target';
   target: CollectionTarget | null; monthBudget: number; remainingMonthsReserve: number;
 }
@@ -44,7 +45,7 @@ interface ProductionLimits {
   stoneBudget: number; stoneReserve: number; monthBudget: number;
   remainingMonthsReserve: number; itemReserves: Record<string, number>;
 }
-export interface CraftPlan extends ProductionLimits {
+export interface CraftPlan extends ProductionLimits,RepeatingPlan {
   kind: 'craft'; recipeId: string; maxCycles: number; until: 'cycles' | 'target'; targetQuantity: number | null;
 }
 export interface ForgePlan extends ProductionLimits { kind: 'forge'; relicId: string; maxCycles: 1; }
@@ -83,6 +84,7 @@ export interface ActivityStartOptions { id: string; ownerId: string; commandId: 
 export interface ActivityResumeOptions { ownerId: string; commandId: string; now: number; }
 export interface ActivityCompleteOptions { commandId: string; now: number; }
 export interface ActivityPreview {
+  truncated?: boolean;
   allowed: boolean; failure: RuleFailure | null; cycles: number; xp: number; stones: number;
   months: number; stopReason: RuleFailure | null; cycleMs: number;
   items: Record<string, number>; earnedStones: number; spentItems: Record<string, number>; relics: string[];
@@ -152,9 +154,10 @@ export function validateActivityPlan(value: unknown): asserts value is ActivityP
   if (object(value) && (value.kind === 'craft' || value.kind === 'forge')) {
     const craft = value.kind === 'craft';
     shape(value, ['kind', craft ? 'recipeId' : 'relicId', 'maxCycles', 'stoneBudget', 'stoneReserve', 'monthBudget',
-      'remainingMonthsReserve', 'itemReserves', ...(craft ? ['until', 'targetQuantity'] : [])]);
+      'remainingMonthsReserve', 'itemReserves', ...(craft ? ['until', 'targetQuantity',...(Object.hasOwn(value,'repeat')?['repeat']:[])] : [])]);
     const id = craft ? value.recipeId : value.relicId, table = craft ? C.recipes : C.relics;
-    if (!identity(id) || !Object.hasOwn(table, id) || !integer(value.maxCycles, 1, craft ? C.maxBatch : 1) ||
+    if (Object.hasOwn(value,'repeat')&&(value.repeat!==true||value.maxCycles!==REPEAT_CYCLE_LIMIT)) invalid('持续生产标识或安全轮界无效');
+    if (!identity(id) || !Object.hasOwn(table, id) || !integer(value.maxCycles, 1, craft ? repeats(value)?REPEAT_CYCLE_LIMIT:C.maxBatch : 1) ||
         !integer(value.stoneBudget) || !integer(value.stoneReserve) || !integer(value.monthBudget) ||
         !integer(value.remainingMonthsReserve)) invalid('生产安排须有正式配方或法宝、有限次数、累计预算与保留线');
     const inputs = table[id].inputs;
@@ -166,8 +169,9 @@ export function validateActivityPlan(value: unknown): asserts value is ActivityP
     return;
   }
   if (object(value) && value.kind === 'source') {
-    shape(value, ['kind', 'sourceId', 'maxCycles', 'until', 'target', 'monthBudget', 'remainingMonthsReserve']);
-    if (!identity(value.sourceId) || !Object.hasOwn(C.sources, value.sourceId) || !integer(value.maxCycles, 1, C.maxBatch) ||
+    shape(value, ['kind', 'sourceId', 'maxCycles', 'until', 'target', 'monthBudget', 'remainingMonthsReserve',...(Object.hasOwn(value,'repeat')?['repeat']:[])]);
+    if (Object.hasOwn(value,'repeat')&&(value.repeat!==true||value.maxCycles!==REPEAT_CYCLE_LIMIT)) invalid('持续取材标识或安全轮界无效');
+    if (!identity(value.sourceId) || !Object.hasOwn(C.sources, value.sourceId) || !integer(value.maxCycles, 1, repeats(value)?REPEAT_CYCLE_LIMIT:C.maxBatch) ||
         value.until !== 'cycles' && value.until !== 'target' || !integer(value.monthBudget) || !integer(value.remainingMonthsReserve))
       invalid('取材安排须有来源、1至50轮、累计游戏月预算与余寿保留线');
     if (value.until === 'cycles') { if (value.target !== null) invalid('按轮数安排不得携带隐含库存目标'); }
@@ -620,7 +624,7 @@ export function previewActivity(game: Game, plan: ActivityPlan): ActivityPreview
     let activity = createActivity(game, plan, { id: 'preview-activity', ownerId: 'preview-owner', commandId: 'preview-start', now: 0 });
     const initialAdventure = activity.version === 6 ? adventureDecision(activity) : null;
     let current = game;
-    const limit = activity.version === 6 ? activity.plan.maxCycles : C.maxBatch;
+    const limit = repeats(plan)?C.maxBatch:activity.version === 6 ? activity.plan.maxCycles : C.maxBatch;
     for (let i = 0; i < limit && activity.status === 'running'; i++) {
       const command = activity.nextCommand!;
       const resolution = resolve(current, command);
@@ -628,8 +632,9 @@ export function previewActivity(game: Game, plan: ActivityPlan): ActivityPreview
         { commandId: command.commandId, now: activity.dueAt! });
       current = resolution.nextState;
     }
-    if (activity.status !== 'stopped' && !(activity.version === 6 && activity.status === 'paused' && activity.stopReason)) invalid('活动预览未达到安全停止边界');
-    return { allowed: true, failure: null, cycles: activity.completedCycles, xp: activity.gainedXp,
+    const truncated=repeats(plan)&&activity.status==='running';
+    if (!truncated&&activity.status !== 'stopped' && !(activity.version === 6 && activity.status === 'paused' && activity.stopReason)) invalid('活动预览未达到安全停止边界');
+    return { allowed: true, failure: null,...(repeats(plan)?{truncated}:{}), cycles: activity.completedCycles, xp: activity.gainedXp,
       stones: activity.spentStones, months: activity.spentMonths, stopReason: activity.stopReason, cycleMs: activity.cycleMs,
       items: activity.version !== 1 ? { ...activity.gainedItems } : {}, earnedStones: activity.version === 2 || activity.version === 5 || activity.version === 6 || activity.version === 7 ? activity.gainedStones : 0,
       spentItems: activity.version >= 3 ? { ...(activity as CraftActivity | ForgeActivity | PreparationActivity | AdventureActivity | MilestoneActivity).spentItems } : {},

@@ -9,6 +9,7 @@ import { canonicalFingerprint as fingerprint } from './receipts.ts';
 import { RuleError } from './errors.ts';
 import { TRIAL_STAGES } from './trial-rules.ts';
 import type { ActivityBase } from './activity.ts';
+import {REPEAT_CYCLE_LIMIT,repeats,type RepeatingPlan} from './repetition.ts';
 
 export type PriorityMove = 'attack' | 'guard' | 'technique' | 'release';
 export interface BattleStrategy {
@@ -18,7 +19,7 @@ export interface BattleStrategy {
   retreatBelowPercent: number; riskMode: 'pause' | 'flee';
 }
 export interface TravelPlan { kind: 'travel'; location: LocationId; maxCycles: 1; }
-export interface EncounterPlan {
+export interface EncounterPlan extends RepeatingPlan {
   kind: 'encounter'; enemy: string; maxEncounters: number; maxCycles: number;
   target: { item: string; quantity: number } | null; monthBudget: number; remainingMonthsReserve: number;
   mpBudget: number; strategy: BattleStrategy;
@@ -80,9 +81,10 @@ export function validateAdventurePlan(v: unknown): asserts v is AdventurePlan {
     return;
   }
   if (v.kind === 'encounter') {
-    shape(v, ['kind', 'enemy', 'maxEncounters', 'maxCycles', 'target', 'monthBudget', 'remainingMonthsReserve', 'mpBudget', 'strategy']);
-    if (!id(v.enemy, C.enemies) || C.enemies[v.enemy].trial || !integer(v.maxEncounters, 1, 50) ||
-        !integer(v.maxCycles, 1, 2050) || !integer(v.monthBudget) || !integer(v.remainingMonthsReserve, 1) || !integer(v.mpBudget)) invalid('历练须指定普通敌人、有限场次/动作、累计月数与灵力预算');
+    shape(v, ['kind', 'enemy', 'maxEncounters', 'maxCycles', 'target', 'monthBudget', 'remainingMonthsReserve', 'mpBudget', 'strategy',...(Object.hasOwn(v,'repeat')?['repeat']:[])]);
+    if(Object.hasOwn(v,'repeat')&&(v.repeat!==true||v.maxCycles!==REPEAT_CYCLE_LIMIT||v.maxEncounters!==REPEAT_CYCLE_LIMIT))invalid('持续历练标识或安全边界无效');
+    if (!id(v.enemy, C.enemies) || C.enemies[v.enemy].trial || !integer(v.maxEncounters, 1, repeats(v)?REPEAT_CYCLE_LIMIT:50) ||
+        !integer(v.maxCycles, 1, repeats(v)?REPEAT_CYCLE_LIMIT:2050) || !integer(v.monthBudget) || !integer(v.remainingMonthsReserve, 1) || !integer(v.mpBudget)) invalid('历练须指定普通敌人、场次/动作边界、累计月数与灵力预算');
     if (v.target !== null) {
       shape(v.target, ['item', 'quantity']);
       if (!id(v.target.item, C.enemies[v.enemy].loot) || !integer(v.target.quantity, 1, C.maxQuantity)) invalid('此敌人不产该库存目标');
@@ -245,8 +247,8 @@ export function validateAdventureTotals(a: AdventureActivity): boolean {
       a.cycleMs !== adventureCycleMs(plan, current) || !itemMap(a.spentItems) || !itemMap(a.gainedItems)) invalid('战策身份、当前决定或配置证据不一致');
   shape(a.moves, [...ADVENTURE_MOVES]);
   if (ADVENTURE_MOVES.some(move => !integer(a.moves[move], 0, plan.maxCycles)) ||
-      !integer(a.encountersStarted, 0, 50) || !integer(a.battleTurns, 0, plan.maxCycles) ||
-      !integer(a.victories, 0, 50) || !integer(a.defeats, 0, 1) || !integer(a.retreats, 0, 1) || a.defeats + a.retreats > 1 ||
+      !integer(a.encountersStarted, 0, repeats(plan)?REPEAT_CYCLE_LIMIT:50) || !integer(a.battleTurns, 0, plan.maxCycles) ||
+      !integer(a.victories, 0, repeats(plan)?REPEAT_CYCLE_LIMIT:50) || !integer(a.defeats, 0, 1) || !integer(a.retreats, 0, 1) || a.defeats + a.retreats > 1 ||
       ADVENTURE_MOVES.reduce((total, move) => total + a.moves[move], 0) !== a.battleTurns || a.moves.flee !== a.retreats)
     invalid('行旅或战策累计场次、回合或动作计数无效');
   const enemy = plan.kind === 'travel' ? null : C.enemies[plan.enemy], victories = a.victories;
