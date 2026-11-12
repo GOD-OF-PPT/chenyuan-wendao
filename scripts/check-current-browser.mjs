@@ -7,8 +7,8 @@ import {newValidationOutput} from './validation-output.mjs';
 import {assessCurrentBrowserRun} from './current-browser-report.mjs';
 
 export function checkCurrentBrowser(suite = 'ui', requested) {
-  const config = {ui: 'playwright.quality.config.ts', native: 'playwright.idle-recovery.config.ts', q02: 'playwright.q02.config.ts', q03:'playwright.q03.config.ts',q04:'playwright.q04.config.ts',q05:'playwright.q05.config.ts'}[suite];
-  if (!config) throw new Error('Current browser suite must be ui, native, q02, q03, q04 or q05');
+  const config = {ui: 'playwright.quality.config.ts', native: 'playwright.idle-recovery.config.ts', q02: 'playwright.q02.config.ts', q03:'playwright.q03.config.ts',q04:'playwright.q04.config.ts',q05:'playwright.q05.config.ts',group:'playwright.quality-group.config.ts'}[suite];
+  if (!config) throw new Error('Current browser suite must be ui, native, q02, q03, q04, q05 or group');
   const snapshot = () => ({...sourceIdentity(), runtime: sha(JSON.stringify(runtimeSources()))});
   const before = snapshot();
   if (before.dirty) throw new Error('Current behavior requires clean frozen source');
@@ -31,6 +31,6 @@ export function checkCurrentBrowser(suite = 'ui', requested) {
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  if (process.argv.length > 4) throw new Error('Use: check-current-browser.mjs [ui|native|q02|q03|q04|q05] [new artifacts directory]');
+  if (process.argv.length > 4) throw new Error('Use: check-current-browser.mjs [ui|native|q02|q03|q04|q05|group] [new artifacts directory]');
   console.log(JSON.stringify(checkCurrentBrowser(process.argv[2], process.argv[3])));
 }
