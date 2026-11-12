@@ -159,7 +159,7 @@ function one(g:Game,a:Action){
   if(g.battle||g.trial||g.core.mode==='event')fail('PENDING','先处理当前事件或退出战斗');
   if(a.type==='END_LIFE'){
    const remaining=remainingMonths(g);
-   if(remaining!==costs.months)fail('LIFESPAN_REMAINING','寿元尚有余量，可继续修行或选择主动归隐');
+   if(remaining<1||remaining>C.actionDurations.endLife||remaining!==costs.months)fail('LIFESPAN_REMAINING','寿元尚有余量，可继续修行或选择主动归隐');
    g.core.world.elapsedMonths+=costs.months;
   }
   g.status='ended';g.ending=a.type==='RETIRE'?'retired':'lifespan';

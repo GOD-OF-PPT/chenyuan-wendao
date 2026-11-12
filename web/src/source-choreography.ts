@@ -1,3 +1,4 @@
+import {contentForGame} from '../../src/full/rule-content.ts';
 import * as C from '../../src/full/content.ts';
 import type {Game} from '../../src/full/types.ts';
 import type {Activity} from '../../src/full/activity.ts';
@@ -20,7 +21,9 @@ export function projectSourceWork(state:string,value:number){
 }
 export const sourceItemName=(id:string)=>id==='stones'?'灵石':C.items[id]?.name??id;
 export function sourceHoldings(game:Game,id:string){
- const source=C.sources[id];return source?[...Object.keys(source.items),...(source.stones?['stones']:[])].map(item=>({id:item,name:sourceItemName(item),quantity:item==='stones'?game.core.player.stones:game.core.inventory[item]})):[];
+ const ruleContent=contentForGame(game);
+
+ const source=ruleContent.sources[id];return source?[...Object.keys(source.items),...(source.stones?['stones']:[])].map(item=>({id:item,name:sourceItemName(item),quantity:item==='stones'?game.core.player.stones:game.core.inventory[item]})):[];
 }
 export function sourcePeriodTotals(game:Game,id:string,activity:Activity|null){
  if(activity?.version!==2||activity.runId!==game.core.runId||activity.plan.sourceId!==id)return null;
@@ -28,7 +31,9 @@ export function sourcePeriodTotals(game:Game,id:string,activity:Activity|null){
 }
 /** The parent owns complete proof and lifetime; this projection rejects a mismatched display target. */
 export function savedSourceYield(game:Game,id:string,activity:Activity|null,result:ActionResult|null){
- if(!C.sources[id]||!result||result.type!=='SOURCE'||result.executedSteps!==1||result.requestedSteps!==1||result.runId!==game.core.runId||result.revisionAfter!==game.core.revision||activity?.version!==2||activity.plan.sourceId!==id||activity.runId!==game.core.runId||activity.gameRevision!==result.revisionAfter||result.commandId!==`cycle:${activity.id}:${activity.generation}:${activity.completedCycles}`)return null;
+ const ruleContent=contentForGame(game);
+
+ if(!ruleContent.sources[id]||!result||result.type!=='SOURCE'||result.executedSteps!==1||result.requestedSteps!==1||result.runId!==game.core.runId||result.revisionAfter!==game.core.revision||activity?.version!==2||activity.plan.sourceId!==id||activity.runId!==game.core.runId||activity.gameRevision!==result.revisionAfter||result.commandId!==`cycle:${activity.id}:${activity.generation}:${activity.completedCycles}`)return null;
  const items=Object.entries(result.delta.inventory).filter(([,n])=>n>0).map(([item,n])=>({id:item,name:sourceItemName(item),quantity:n}));
  if(result.delta.stones>0)items.push({id:'stones',name:'灵石',quantity:result.delta.stones});
  return{items,xp:result.delta.xp,months:result.costs.months,key:result.commandId};

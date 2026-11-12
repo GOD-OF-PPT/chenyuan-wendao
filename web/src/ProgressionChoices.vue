@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import {computed,ref,watch} from 'vue';
 import type {Game} from '../../src/full/types.ts';
 import * as C from '../../src/full/content.ts';
@@ -8,6 +10,7 @@ import {formatCosts} from './presentation';
 import {readingPages,type Reading} from './story-pages';
 import CatalogueArt from './CatalogueArt.vue';
 import CataloguePager from './CataloguePager.vue';
+const ruleContent=useRuleContent(()=>props.game);
 const props=defineProps<{game:Game;kind:ProgressionKind;seed:ProgressionVariant;entry:number;busy:boolean;available:boolean}>();
 const emit=defineEmits<{navigate:[NavigationRequest];inspect:[string]}>();
 const selected=ref<ProgressionVariant>(props.seed),page=ref(0);
@@ -16,12 +19,12 @@ const labels:Record<ProgressionVariant,string>={natural:'自然潜修',assisted:
 watch(()=>[props.kind,props.seed,props.entry,props.game.core.runId,props.game.core.player.realm],()=>{selected.value=options.value.includes(props.seed)?props.seed:options.value[0]??props.seed;page.value=0;},{immediate:true});
 const model=computed(()=>projectProgression(props.game,selected.value));
 const seconds=(ms:number)=>{const n=Math.ceil(ms/1000),h=Math.floor(n/3600),m=Math.floor(n%3600/60),s=n%60;return(h?h+'小时':'')+(m?m+'分':'')+(s||!n?s+'秒':'');};
-const items=(rows:Record<string,number>)=>Object.entries(rows).map(([id,n])=>(C.items[id]?.name??id)+' ×'+n).join('、')||'无';
+const items=(rows:Record<string,number>)=>Object.entries(rows).map(([id,n])=>(ruleContent.value.items[id]?.name??id)+' ×'+n).join('、')||'无';
 const rows=computed<Reading[]>(()=>{const m=model.value,a=m.initial,b=m.closing;return[
  {key:'scope',title:m.complete?'本次筹备可达':'本次推演未完成',text:`${m.name}；目标：${m.target}。预计在线周期合计${seconds(m.onlineMs)}，需分段安排${m.arrangements}段。只比较当前准备，不突破、不入劫；分段数不是点击次数。${m.failure?'停止：'+m.failure.message:''}`},
  {key:'costs',title:'完整投入与获得',text:`毛投入：${formatCosts(m.totals.costs)}。毛收入：灵石${m.totals.received.stones}、灵力${m.totals.received.mp}、${items(m.totals.received.items)}。新增修为${m.totals.xpGained}，境界重置${m.totals.xpReset}；收入不抵消累计预算。`},
  {key:'closing',title:'当前 → 预计期末',text:`灵石${a.stones} → ${b.stones}；修为${a.xp} → ${b.xp}；气血${a.hp} → ${b.hp}；灵力${a.mp} → ${b.mp}。游戏年月${a.months} → ${b.months}，地点${C.locations[b.location].name}。已有库存也会消耗，不是免费永续。`},
- {key:'inventory',title:'行囊与余料',text:Object.keys(C.items).filter(id=>a.inventory[id]||b.inventory[id]).map(id=>`${C.items[id].name} ${a.inventory[id]} → ${b.inventory[id]}`).join('；')||'当前与预计期末均无物资。'},
+ {key:'inventory',title:'行囊与余料',text:Object.keys(ruleContent.value.items).filter(id=>a.inventory[id]||b.inventory[id]).map(id=>`${ruleContent.value.items[id].name} ${a.inventory[id]} → ${b.inventory[id]}`).join('；')||'当前与预计期末均无物资。'},
  ...m.steps.map((s,i)=>({key:'step-'+i,title:`第${i+1}段 · ${s.label}`,text:`${C.locations[s.location].name}；${s.kind==='configuration'?'比较后即时确认，不设假等待':`${s.cycles}周期，每周期${seconds(s.cycleMs)}，合计${seconds(s.onlineMs)}`}。投入：${formatCosts(s.costs)}。新增修为${s.gainedXp}；获得灵石${s.gainedStones}、${items(s.gainedItems)}。仅为准备推演，查看本段不会执行。`})),
  ...m.notes.map((text,i)=>({key:'note-'+i,title:'路线说明',text}))];});
 const pages=computed(()=>readingPages(rows.value)),current=computed(()=>pages.value[Math.min(page.value,pages.value.length-1)]);

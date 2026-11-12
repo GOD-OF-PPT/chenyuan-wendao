@@ -1,13 +1,16 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import {useLocalActivityControls} from './activity-controls';
 import {computed} from 'vue';
 import type {Game} from '../../src/full/types';
 import * as C from '../../src/full/content';
 import {useSupplyCycle} from './supply-effects';
 import ItemArtifact from './ItemArtifact.vue';
+const ruleContent=useRuleContent(()=>props.game);
 const props=defineProps<{game:Game;mode:'buy'|'sell';itemId:string}>();
 const emit=defineEmits<{source:[]}>();
-const item=computed(()=>C.items[props.itemId]);
+const item=computed(()=>ruleContent.value.items[props.itemId]);
 const stock=computed(()=>props.game.core.inventory[props.itemId]??0);
 const {store,activity,runtime,phase,progress,engaged,effect}=useSupplyCycle(()=>props.mode,()=>props.itemId);
 const working=computed(()=>engaged.value&&phase.value==='running'&&!!store?.available&&!store.error&&!store.activityPausing);
@@ -28,7 +31,7 @@ const localControls=useLocalActivityControls();
    <div class="counter-purse" aria-label="随身灵石"><div class="counter-stones" aria-hidden="true"><i/><i/><i/></div><strong data-testid="market-counter-stones">{{game.core.player.stones}} 灵石</strong></div>
    <div v-if="state!=='idle'||totals" class="counter-cycle" data-testid="market-cycle-status"><strong>{{status}}</strong><span v-if="(engaged&&runtime)&&localControls" data-testid="market-cycle-clock">{{Math.ceil(runtime.remainingMs/1000)}} / {{runtime.totalMs/1000}} 秒</span><small v-else>15 秒 / 件</small><small v-if="totals&&totals.count" class="counter-committed" data-testid="market-committed">本段已成交 {{totals.count}} 件 · 灵石累计{{mode==='buy'?'支出':'收入'}} {{totals.stones}}</small></div>
   </div>
-  <article v-if="item" class="counter-description market-object" data-testid="market-object"><h3>{{item.name}}<small v-if="mode==='buy'" class="counter-realm">需{{C.realms[item.min].name}}</small></h3><p>{{item.description}}</p><button @click="emit('source')">查看来源与筹备</button></article>
+  <article v-if="item" class="counter-description market-object" data-testid="market-object"><h3>{{item.name}}<small v-if="mode==='buy'" class="counter-realm">需{{ruleContent.realms[item.min].name}}</small></h3><p>{{item.description}}</p><button @click="emit('source')">查看来源与筹备</button></article>
   <div class="counter-decision"><slot name="decision"/></div>
  </section>
 </template>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import {computed,ref,watch} from 'vue';
 import type {Game,Action} from '../../src/full/types.ts';
 import type {getTrialRecovery} from '../../src/full/queries.ts';
@@ -15,6 +17,7 @@ import CataloguePager from './CataloguePager.vue';
 import AssetImage from './AssetImage.vue';
 import {sceneAssetPath} from './assets';
 import {scenePresentation} from './scene-presentation';
+const ruleContent=useRuleContent(()=>props.game);
 const props=defineProps<{game:Game;kind:'preparation'|'progress';initialMode?:'required'|'checkpoint';block?:string|null;enabled:boolean;busy:boolean;running:boolean;checkpoint:CheckpointSummary|null;recovery:ReturnType<typeof getTrialRecovery>}>(),emit=defineEmits<{review:[];restore:[];export:[];prepare:[];resume:[];navigate:[NavigationRequest];track:[TrackingTarget];inspectEquipment:[]}>();
 const mode=ref<string>(props.initialMode??'required'),page=ref(0),prep=computed(()=>getTrialPreparation(props.game)),journey=computed(()=>getTrialJourney(props.game));
 const scene=computed(()=>scenePresentation(props.game));
@@ -29,7 +32,7 @@ const rows=computed<Reading[]>(()=>{
  }
  if(mode.value==='battle'){
   const rows:Reading[]=[];
-  for(const slot of ['builder','finisher']as const){const id=g.loadout[slot];if(id)rows.push({key:slot,title:C.skills[id].name,text:C.skills[id].description});}
+  for(const slot of ['builder','finisher']as const){const id=g.loadout[slot];if(id)rows.push({key:slot,title:ruleContent.value.skills[id].name,text:ruleContent.value.skills[id].description});}
   if(g.battle){const forecast=intent(g.battle);rows.unshift({key:'intent',title:'当前意图',text:forecast.name+' · 敌方原始伤害 '+forecast.damage});g.battle.log.forEach((text,i)=>rows.push({key:'battle-log-'+i,title:'最近交锋记录 · '+(i+1),text}));}
   if(!g.battle?.log.length)rows.push({key:'no-log',title:'战报',text:'本场尚未行动，实际回合结果会在保存后记录。'});return rows;
  }

@@ -9,12 +9,12 @@ export type LocationId = 'wilderness'|'cave'|'sect'|'market'|'secret'|'terrace';
 export interface Realm { name:string; xpCap:number; baseYield:number; maxHp:number; maxMp:number; lifespanMonths:number; power:number; next:RealmId|null; pill:string|null; }
 export const realms:Record<RealmId,Realm> = {
  mortal:{name:'凡人',xpCap:10,baseYield:5,maxHp:60,maxMp:20,lifespanMonths:1080,power:0,next:'qi',pill:null},
- qi:{name:'炼气',xpCap:1000,baseYield:50,maxHp:100,maxMp:60,lifespanMonths:1440,power:0,next:'foundation',pill:'foundation_pill'},
- foundation:{name:'筑基',xpCap:3000,baseYield:120,maxHp:170,maxMp:100,lifespanMonths:2880,power:6,next:'golden',pill:'golden_pill'},
- golden:{name:'金丹',xpCap:7200,baseYield:240,maxHp:270,maxMp:150,lifespanMonths:6000,power:16,next:'nascent',pill:'nascent_pill'},
- nascent:{name:'元婴',xpCap:15000,baseYield:420,maxHp:410,maxMp:210,lifespanMonths:12000,power:32,next:'spirit',pill:'spirit_seed'},
- spirit:{name:'化神',xpCap:28000,baseYield:700,maxHp:600,maxMp:290,lifespanMonths:24000,power:52,next:null,pill:'ascension_seal'},
- ascended:{name:'飞升',xpCap:0,baseYield:0,maxHp:600,maxMp:290,lifespanMonths:24000,power:52,next:null,pill:null}
+ qi:{name:'炼气',xpCap:1000,baseYield:50,maxHp:100,maxMp:60,lifespanMonths:1200,power:0,next:'foundation',pill:'foundation_pill'},
+ foundation:{name:'筑基',xpCap:3000,baseYield:120,maxHp:170,maxMp:100,lifespanMonths:1800,power:6,next:'golden',pill:'golden_pill'},
+ golden:{name:'金丹',xpCap:7200,baseYield:240,maxHp:270,maxMp:150,lifespanMonths:3000,power:16,next:'nascent',pill:'nascent_pill'},
+ nascent:{name:'元婴',xpCap:15000,baseYield:420,maxHp:410,maxMp:210,lifespanMonths:4800,power:32,next:'spirit',pill:'spirit_seed'},
+ spirit:{name:'化神',xpCap:28000,baseYield:700,maxHp:600,maxMp:290,lifespanMonths:7200,power:52,next:null,pill:'ascension_seal'},
+ ascended:{name:'飞升',xpCap:0,baseYield:0,maxHp:600,maxMp:290,lifespanMonths:7200,power:52,next:null,pill:null}
 };
 export const rank=(realm:RealmId)=>realmIds.indexOf(realm);
 export const locations:Record<LocationId,{name:string;min:RealmId;subtitle:string;description:string;art:string}>= {
@@ -36,40 +36,40 @@ export const items:Record<string,Item>={
  dao:{name:'道蕴砂',min:'spirit',buy:120,sell:32,kind:'material',description:'化神时可收集，用于炼制渡劫引。'},
  healing_pill:{name:'回春丹',min:'mortal',buy:18,sell:5,kind:'medicine',description:'恢复气血；高境界按自身上限恢复一定比例。战中服用占一回合。',hp:35},
  spirit_pill:{name:'回灵丹',min:'qi',buy:18,sell:5,kind:'medicine',description:'恢复灵力；高境界按自身上限恢复一定比例。战中服用占一回合。',mp:25},
- foundation_pill:{name:'筑基丹',min:'qi',buy:160,sell:null,kind:'breakthrough',description:'炼气圆满后消耗一枚筑基，不能误卖。'},
- golden_pill:{name:'凝金丹',min:'foundation',buy:380,sell:null,kind:'breakthrough',description:'筑基圆满后结丹；可炼制，也可购买。'},
- nascent_pill:{name:'结婴丹',min:'golden',buy:700,sell:null,kind:'breakthrough',description:'金丹圆满后结婴；不依赖稀有随机掉落。'},
- spirit_seed:{name:'化神丹',min:'nascent',buy:1100,sell:null,kind:'breakthrough',description:'元婴圆满后化神的消耗物。'},
- ascension_seal:{name:'渡劫引',min:'spirit',buy:1500,sell:null,kind:'breakthrough',description:'化神圆满时引来天劫。启动前自动建立可恢复检查点。'}
+ foundation_pill:{name:'筑基丹',min:'qi',buy:195,sell:null,kind:'breakthrough',description:'炼气圆满后消耗一枚筑基，不能误卖。'},
+ golden_pill:{name:'凝金丹',min:'foundation',buy:600,sell:null,kind:'breakthrough',description:'筑基圆满后结丹；可炼制，也可购买。'},
+ nascent_pill:{name:'结婴丹',min:'golden',buy:910,sell:null,kind:'breakthrough',description:'金丹圆满后结婴；不依赖稀有随机掉落。'},
+ spirit_seed:{name:'化神丹',min:'nascent',buy:1465,sell:null,kind:'breakthrough',description:'元婴圆满后化神的消耗物。'},
+ ascension_seal:{name:'渡劫引',min:'spirit',buy:2205,sell:null,kind:'breakthrough',description:'化神圆满时引来天劫。启动前自动建立可恢复检查点。'}
 };
 export interface Source {name:string;location:LocationId;min:RealmId;months:number;stones:number;xp:number;items:Record<string,number>;}
 export const sources:Record<string,Source>={
- herbs:{name:'山野采药',location:'wilderness',min:'qi',months:1,stones:0,xp:5,items:{herb:2}},
- dew:{name:'晨间凝露',location:'wilderness',min:'qi',months:1,stones:0,xp:5,items:{dew:1}},
- work:{name:'宗门杂务',location:'sect',min:'qi',months:1,stones:20,xp:0,items:{}},
- core:{name:'护送委托',location:'sect',min:'qi',months:4,stones:0,xp:20,items:{core:1}},
- jade:{name:'古境采玉',location:'secret',min:'foundation',months:2,stones:0,xp:30,items:{jade:2}},
- jade_task:{name:'勘脉委托',location:'sect',min:'foundation',months:3,stones:12,xp:10,items:{jade:1}},
- work_foundation:{name:'护持法阵',location:'sect',min:'foundation',months:2,stones:60,xp:20,items:{}},
- lotus:{name:'寒池采莲',location:'secret',min:'golden',months:3,stones:0,xp:60,items:{lotus:2}},
- lotus_task:{name:'药圃看护',location:'sect',min:'golden',months:4,stones:18,xp:20,items:{lotus:1}},
- work_golden:{name:'传法授业',location:'sect',min:'golden',months:3,stones:130,xp:40,items:{}},
- soul:{name:'静潭凝魂',location:'secret',min:'nascent',months:4,stones:0,xp:100,items:{soul:2}},
- soul_task:{name:'山村安魂',location:'sect',min:'nascent',months:5,stones:25,xp:30,items:{soul:1}},
- work_nascent:{name:'镇守灵脉',location:'sect',min:'nascent',months:4,stones:230,xp:70,items:{}},
- dao:{name:'云台参道',location:'terrace',min:'spirit',months:5,stones:0,xp:180,items:{dao:2}},
- dao_task:{name:'修补道碑',location:'sect',min:'spirit',months:6,stones:35,xp:50,items:{dao:1}},
- work_spirit:{name:'护佑一州',location:'sect',min:'spirit',months:5,stones:360,xp:100,items:{}}
+ herbs:{name:'山野采药',location:'wilderness',min:'qi',months:12,stones:0,xp:5,items:{herb:2}},
+ dew:{name:'晨间凝露',location:'wilderness',min:'qi',months:12,stones:0,xp:5,items:{dew:1}},
+ work:{name:'宗门杂务',location:'sect',min:'qi',months:12,stones:20,xp:0,items:{}},
+ core:{name:'护送委托',location:'sect',min:'qi',months:48,stones:40,xp:20,items:{core:1}},
+ jade:{name:'古境采玉',location:'secret',min:'foundation',months:24,stones:0,xp:30,items:{jade:2}},
+ jade_task:{name:'勘脉委托',location:'sect',min:'foundation',months:36,stones:50,xp:20,items:{jade:2}},
+ work_foundation:{name:'护持法阵',location:'sect',min:'foundation',months:24,stones:60,xp:20,items:{}},
+ lotus:{name:'寒池采莲',location:'secret',min:'golden',months:36,stones:0,xp:60,items:{lotus:2}},
+ lotus_task:{name:'药圃看护',location:'sect',min:'golden',months:48,stones:60,xp:40,items:{lotus:2}},
+ work_golden:{name:'传法授业',location:'sect',min:'golden',months:36,stones:130,xp:40,items:{}},
+ soul:{name:'静潭凝魂',location:'secret',min:'nascent',months:48,stones:0,xp:100,items:{soul:2}},
+ soul_task:{name:'山村安魂',location:'sect',min:'nascent',months:60,stones:65,xp:60,items:{soul:2}},
+ work_nascent:{name:'镇守灵脉',location:'sect',min:'nascent',months:48,stones:230,xp:70,items:{}},
+ dao:{name:'云台参道',location:'terrace',min:'spirit',months:60,stones:0,xp:180,items:{dao:2}},
+ dao_task:{name:'修补道碑',location:'sect',min:'spirit',months:72,stones:80,xp:100,items:{dao:2}},
+ work_spirit:{name:'护佑一州',location:'sect',min:'spirit',months:60,stones:360,xp:100,items:{}}
 };
 export interface Recipe {name:string;min:RealmId;inputs:Record<string,number>;stones:number;months:number;output:string;}
 export const recipes:Record<string,Recipe>={
- healing:{name:'炼制回春丹',min:'qi',inputs:{herb:2},stones:2,months:1,output:'healing_pill'},
- spirit:{name:'炼制回灵丹',min:'qi',inputs:{herb:1,dew:1},stones:3,months:1,output:'spirit_pill'},
- foundation:{name:'炼制筑基丹',min:'qi',inputs:{herb:8,dew:2,core:1},stones:20,months:1,output:'foundation_pill'},
- golden:{name:'炼制凝金丹',min:'foundation',inputs:{herb:6,dew:3,core:2,jade:4},stones:60,months:2,output:'golden_pill'},
- nascent:{name:'炼制结婴丹',min:'golden',inputs:{herb:8,dew:4,jade:2,lotus:5},stones:110,months:3,output:'nascent_pill'},
- spirit_seed:{name:'炼制化神丹',min:'nascent',inputs:{dew:6,lotus:3,soul:6},stones:180,months:4,output:'spirit_seed'},
- ascension:{name:'炼制渡劫引',min:'spirit',inputs:{core:3,soul:4,dao:6},stones:240,months:5,output:'ascension_seal'}
+ healing:{name:'炼制回春丹',min:'qi',inputs:{herb:2},stones:2,months:12,output:'healing_pill'},
+ spirit:{name:'炼制回灵丹',min:'qi',inputs:{herb:1,dew:1},stones:3,months:12,output:'spirit_pill'},
+ foundation:{name:'炼制筑基丹',min:'qi',inputs:{herb:8,dew:2,core:1},stones:20,months:12,output:'foundation_pill'},
+ golden:{name:'炼制凝金丹',min:'foundation',inputs:{herb:6,dew:3,core:2,jade:4},stones:60,months:24,output:'golden_pill'},
+ nascent:{name:'炼制结婴丹',min:'golden',inputs:{herb:8,dew:4,jade:2,lotus:5},stones:110,months:36,output:'nascent_pill'},
+ spirit_seed:{name:'炼制化神丹',min:'nascent',inputs:{dew:6,lotus:3,soul:6},stones:180,months:48,output:'spirit_seed'},
+ ascension:{name:'炼制渡劫引',min:'spirit',inputs:{core:3,soul:4,dao:6},stones:240,months:60,output:'ascension_seal'}
 };
 export interface Skill {name:string;school:School;slot:SkillSlot;min:RealmId;price:number;description:string;effect:SkillEffect;}
 export const skills:Record<string,Skill>={
@@ -95,12 +95,12 @@ export const relics:Record<string,Relic>={
 };
 export interface Enemy {name:string;min:RealmId;location:LocationId;hp:number;attack:number;heavy:number;xp:number;stones:number;loot:Record<string,number>;trial?:boolean;}
 export const enemies:Record<string,Enemy>={
- wolf:{name:'雾隐妖狼',min:'qi',location:'wilderness',hp:76,attack:13,heavy:32,xp:35,stones:10,loot:{core:1}},
- warden:{name:'守山石卫',min:'qi',location:'wilderness',hp:112,attack:17,heavy:40,xp:55,stones:18,loot:{core:1}},
- serpent:{name:'寒潭玄蛇',min:'foundation',location:'secret',hp:145,attack:20,heavy:49,xp:100,stones:24,loot:{jade:2,core:1}},
- puppet:{name:'古境剑傀',min:'golden',location:'secret',hp:220,attack:31,heavy:74,xp:160,stones:40,loot:{lotus:2}},
- shadow:{name:'照影心魇',min:'nascent',location:'secret',hp:330,attack:49,heavy:117,xp:240,stones:65,loot:{soul:2}},
- sentinel:{name:'云台守灵',min:'spirit',location:'terrace',hp:450,attack:70,heavy:165,xp:360,stones:90,loot:{dao:2}},
+ wolf:{name:'雾隐妖狼',min:'qi',location:'wilderness',hp:76,attack:13,heavy:32,xp:0,stones:10,loot:{core:1}},
+ warden:{name:'守山石卫',min:'qi',location:'wilderness',hp:112,attack:17,heavy:40,xp:0,stones:18,loot:{core:1}},
+ serpent:{name:'寒潭玄蛇',min:'foundation',location:'secret',hp:145,attack:20,heavy:49,xp:0,stones:24,loot:{jade:2,core:1}},
+ puppet:{name:'古境剑傀',min:'golden',location:'secret',hp:220,attack:31,heavy:74,xp:0,stones:40,loot:{lotus:2}},
+ shadow:{name:'照影心魇',min:'nascent',location:'secret',hp:330,attack:49,heavy:117,xp:0,stones:65,loot:{soul:2}},
+ sentinel:{name:'云台守灵',min:'spirit',location:'terrace',hp:450,attack:70,heavy:165,xp:0,stones:90,loot:{dao:2}},
  trial_heart:{name:'往昔心魔',min:'spirit',location:'terrace',hp:300,attack:37,heavy:95,xp:0,stones:0,loot:{},trial:true},
  trial_thunder:{name:'九霄雷劫',min:'spirit',location:'terrace',hp:390,attack:62,heavy:185,xp:0,stones:0,loot:{},trial:true},
  trial_gate:{name:'天门道影',min:'spirit',location:'terrace',hp:460,attack:68,heavy:195,xp:0,stones:0,loot:{},trial:true}
@@ -109,10 +109,10 @@ export const enemies:Record<string,Enemy>={
 export const swordManual:{id:string;name:string;min:RealmId;price:number;damageBonus:number}={id:'skill_jinghong_slash',name:'惊鸿剑简',min:'foundation',price:80,damageBonus:4};
 export const maxBatch=50;
 export const maxQuantity=1_000_000;
-export const cultivation={natural:{months:1,stones:0,bonus:0},assisted:{months:1,stones:20,bonus:100}};
+export const cultivation={natural:{months:12,stones:0,bonus:0},assisted:{months:12,stones:20,bonus:100}};
 /** One stable-income game month per assisted step (rounded up), still unbalanced. */
 export const assistedCosts:Record<RealmId,number>={mortal:20,qi:20,foundation:30,golden:44,nascent:58,spirit:72,ascended:72};
-export const actionDurations={rest:1,forge:2,encounter:1,endLife:1};
+export const actionDurations={rest:12,forge:24,encounter:12,endLife:12};
 export const startingLoadouts={
  sword:{mind:'sword_mind',builder:'sword_build',finisher:'sword_release'},
  talisman:{mind:'talisman_mind',builder:'talisman_build',finisher:'talisman_release'}

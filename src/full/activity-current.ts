@@ -1,3 +1,4 @@
+import {currentSourcePeriodMs,currentRecipePeriodMs,ONLINE_FORGE_MS} from './online-periods.ts';
 import {CURRENT_RULES_VERSION,assertActivityRules} from './rule-profile.ts';
 import * as C from './content.ts';
 import type { RealmId } from './content.ts';
@@ -258,7 +259,7 @@ export function validateActivity(value: unknown, game?: Game): asserts value is 
   } else if (value.plan.kind === 'source') {
     const plan = value.plan, source = C.sources[plan.sourceId], completed = value.completedCycles;
     const expectedItems = completed === 0 ? {} : Object.fromEntries(Object.entries(source.items).map(([id, count]) => [id, count * completed]));
-    if (C.rank(realm) < C.rank(source.min) || value.cycleMs !== source.months * 30_000 || value.cycleMs > 180_000 ||
+    if (C.rank(realm) < C.rank(source.min) || value.cycleMs !== currentSourcePeriodMs(plan.sourceId) || value.cycleMs > 180_000 ||
         value.spentStones !== 0 || !integer(value.spentMonths, 0, plan.monthBudget) ||
         value.spentMonths !== value.completedCycles * source.months ||
         !integer(value.gainedStones) || value.gainedStones !== value.completedCycles * source.stones ||
@@ -274,7 +275,7 @@ export function validateActivity(value: unknown, game?: Game): asserts value is 
     const expectedSpent = completed ? scaledItems(unit.inputs, completed) : {};
     const expectedGained = recipe && completed ? { [recipe.output]: completed } : {};
     const expectedRelics = plan.kind === 'forge' && completed ? [plan.relicId] : [];
-    if (C.rank(realm) < C.rank(recipe?.min ?? 'golden') || value.cycleMs !== unitMonths * 30_000 ||
+    if (C.rank(realm) < C.rank(recipe?.min ?? 'golden') || value.cycleMs !== (plan.kind==='craft'?currentRecipePeriodMs(plan.recipeId):ONLINE_FORGE_MS) ||
         value.gainedXp !== 0 || !integer(value.spentStones, 0, plan.stoneBudget) ||
         value.spentStones !== completed * unit.stones || !integer(value.spentMonths, 0, plan.monthBudget) ||
         value.spentMonths !== completed * unitMonths || !plainRecord(value.spentItems) || !plainRecord(value.gainedItems) ||
@@ -425,8 +426,8 @@ export function createActivity(game: Game, plan: ActivityPlan, options: Activity
   }
   const base: ActivityBase = { rulesVersion:CURRENT_RULES_VERSION, format: 'chenyuan-activity', id: options.id, revision: 0, generation: 0,
     ownerId: options.ownerId, runId: game.core.runId, realm: realm as Activity['realm'], gameRevision: game.core.revision,
-    cycleMs: plan.kind === 'source' ? C.sources[plan.sourceId].months * 30_000 : plan.kind === 'craft' ? C.recipes[plan.recipeId].months * 30_000 :
-      plan.kind === 'forge' ? C.actionDurations.forge * 30_000 : isMilestonePlan(plan) ? MILESTONE_CYCLE_MS[plan.action.type] : isAdventurePlan(plan) ? adventureCycleMs(plan, game) : isPreparationPlan(plan) ? PREPARATION_CYCLE_MS[plan.kind] :
+    cycleMs: plan.kind === 'source' ? currentSourcePeriodMs(plan.sourceId) : plan.kind === 'craft' ? currentRecipePeriodMs(plan.recipeId) :
+      plan.kind === 'forge' ? ONLINE_FORGE_MS : isMilestonePlan(plan) ? MILESTONE_CYCLE_MS[plan.action.type] : isAdventurePlan(plan) ? adventureCycleMs(plan, game) : isPreparationPlan(plan) ? PREPARATION_CYCLE_MS[plan.kind] :
         CULTIVATION_CYCLE_MS[realm as Activity['realm']], completedCycles: 0, spentStones: 0,
     gainedXp: 0, spentMonths: 0, status: 'paused', stopReason: null, nextCommand: null, startedAt: null, dueAt: null };
   const activity: Activity = plan.kind === 'source' ? { ...base, version: 2, plan: structuredClone(plan), gainedItems: {}, gainedStones: 0 } :

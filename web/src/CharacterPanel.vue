@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import { computed, ref } from 'vue';
 import * as C from '../../src/full/content.ts';
 import { getLifeOverview } from '../../src/full/queries.ts';
@@ -6,9 +8,10 @@ import type { Game } from '../../src/full/types.ts';
 import PortraitImage from './PortraitImage.vue';
 import ProgressTrack from './ProgressTrack.vue';
 import GameIcon from './GameIcon.vue';
+const ruleContent=useRuleContent(()=>props.game);
 const props = defineProps<{game:Game;compact?:boolean;detailsOnly?:boolean}>();
 const emit=defineEmits<{inspect:[event:MouseEvent]}>();
-const player = computed(() => props.game.core.player), realm = computed(() => C.realms[player.value.realm]);
+const player = computed(() => props.game.core.player), realm = computed(() => ruleContent.value.realms[player.value.realm]);
 const life = computed(() => getLifeOverview(props.game));
 const sealed = computed(() => props.game.status==='ascended');
 const school = computed(() => props.game.school==='sword'?'剑修':props.game.school==='talisman'?'符修':'尚未择法');
@@ -32,7 +35,7 @@ const expanded = ref(false);
         <figure v-if="detailsOnly" class="folio-person" data-testid="character-folio-person"><PortraitImage id="player" fallback="道" aria-hidden="true"/><h2 data-testid="character-folio-name">{{player.name}}</h2><span class="realm-badge" data-testid="character-folio-realm">{{realm.name}}</span></figure>
         <div class="character-pair"><span>{{sealed?'封卷年龄':'年龄 / 寿限'}}</span><b data-testid="age-limit">{{life.ageLabel}}<template v-if="!sealed"> / {{life.limitLabel}}</template></b><small v-if="detailsOnly" data-testid="character-life-context">{{game.status==='active'&&life.remainingMonths!==null?'余寿 '+life.remainingMonths+' 游戏月':'此生已收卷'}}</small></div>
         <h3>当前修法 · {{school}}</h3>
-        <dl class="character-loadout"><div :data-testid="detailsOnly?'character-slot-mind':undefined" :data-empty="!game.loadout.mind"><dt><GameIcon v-if="detailsOnly&&game.loadout.mind" kind="skill" :id="game.loadout.mind!"/>心法</dt><dd>{{game.loadout.mind?C.skills[game.loadout.mind].name:'引气入体后选择'}}</dd></div><div :data-testid="detailsOnly?'character-slot-builder':undefined" :data-empty="!game.loadout.builder"><dt><GameIcon v-if="detailsOnly&&game.loadout.builder" kind="skill" :id="game.loadout.builder!"/>起手</dt><dd>{{game.loadout.builder?C.skills[game.loadout.builder].name:'尚未装备'}}</dd></div><div :data-testid="detailsOnly?'character-slot-finisher':undefined" :data-empty="!game.loadout.finisher"><dt><GameIcon v-if="detailsOnly&&game.loadout.finisher" kind="skill" :id="game.loadout.finisher!"/>终结</dt><dd>{{game.loadout.finisher?C.skills[game.loadout.finisher].name:'尚未装备'}}</dd></div><div :data-testid="detailsOnly?'character-slot-relic':undefined" :data-empty="!game.loadout.relic"><dt><GameIcon v-if="detailsOnly&&game.loadout.relic" kind="relic" :id="game.loadout.relic!"/>本命法宝</dt><dd>{{game.loadout.relic?C.relics[game.loadout.relic].name:'金丹后可炼制装备'}}</dd></div></dl>
+        <dl class="character-loadout"><div :data-testid="detailsOnly?'character-slot-mind':undefined" :data-empty="!game.loadout.mind"><dt><GameIcon v-if="detailsOnly&&game.loadout.mind" kind="skill" :id="game.loadout.mind!"/>心法</dt><dd>{{game.loadout.mind?ruleContent.skills[game.loadout.mind].name:'引气入体后选择'}}</dd></div><div :data-testid="detailsOnly?'character-slot-builder':undefined" :data-empty="!game.loadout.builder"><dt><GameIcon v-if="detailsOnly&&game.loadout.builder" kind="skill" :id="game.loadout.builder!"/>起手</dt><dd>{{game.loadout.builder?ruleContent.skills[game.loadout.builder].name:'尚未装备'}}</dd></div><div :data-testid="detailsOnly?'character-slot-finisher':undefined" :data-empty="!game.loadout.finisher"><dt><GameIcon v-if="detailsOnly&&game.loadout.finisher" kind="skill" :id="game.loadout.finisher!"/>终结</dt><dd>{{game.loadout.finisher?ruleContent.skills[game.loadout.finisher].name:'尚未装备'}}</dd></div><div :data-testid="detailsOnly?'character-slot-relic':undefined" :data-empty="!game.loadout.relic"><dt><GameIcon v-if="detailsOnly&&game.loadout.relic" kind="relic" :id="game.loadout.relic!"/>本命法宝</dt><dd>{{game.loadout.relic?ruleContent.relics[game.loadout.relic].name:'金丹后可炼制装备'}}</dd></div></dl>
       </div>
     </component>
   </aside>

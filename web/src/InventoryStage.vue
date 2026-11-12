@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import {computed,inject,onDeactivated,onScopeDispose,ref,useId,watch} from 'vue';
 import type {useGame} from './store';
 import {formatDelta} from './presentation';
@@ -11,6 +13,7 @@ import {gameFocusKey} from './focus';
 import CataloguePager from './CataloguePager.vue';
 import ItemArtifact from './ItemArtifact.vue';
 import AssetImage from './AssetImage.vue';
+const ruleContent=useRuleContent(()=>props.game);
 const props=defineProps<{game:Game;itemId:string;available:boolean;reason:string;consumption:(a:Action)=>string}>();
 const emit=defineEmits<{act:[Action];quick:[Action];track:[TrackingTarget]}>();
 const scene=inject<ReturnType<typeof useGame>>('game-scene');
@@ -19,8 +22,8 @@ const useQuote=computed(()=>item.value&&(item.value.hp||item.value.mp)?previewAc
 const replacement=computed(()=>scene?.activity?.status==='paused'?'本次行动将结束已暂停活动；已完成成果保留，未完成部分不再续行。':'');
 function quick(kind:'use'|'sell',event:MouseEvent){if(quickBlock.value||event.detail>1)return;emit('quick',kind==='use'?{type:'USE',item:props.itemId}:{type:'SELL',item:props.itemId,quantity:1});}
 const focus=inject(gameFocusKey),library=ref<HTMLDialogElement>(),purposes=ref<HTMLDialogElement>(),instance=useId(),page=ref(0);
-const item=computed(()=>C.items[props.itemId]),stock=computed(()=>props.game.core.inventory[props.itemId]??0);
-const uses=computed(()=>[...Object.entries(C.recipes).filter(([,r])=>r.inputs[props.itemId]>0).map(([id,r])=>({key:'recipe-'+id,name:r.name,kind:'丹方',amount:r.inputs[props.itemId]})),...Object.entries(C.relics).filter(([,r])=>r.inputs[props.itemId]>0).map(([id,r])=>({key:'relic-'+id,name:r.name,kind:'器物',amount:r.inputs[props.itemId]}))]);
+const item=computed(()=>ruleContent.value.items[props.itemId]),stock=computed(()=>props.game.core.inventory[props.itemId]??0);
+const uses=computed(()=>[...Object.entries(ruleContent.value.recipes).filter(([,r])=>r.inputs[props.itemId]>0).map(([id,r])=>({key:'recipe-'+id,name:r.name,kind:'丹方',amount:r.inputs[props.itemId]})),...Object.entries(ruleContent.value.relics).filter(([,r])=>r.inputs[props.itemId]>0).map(([id,r])=>({key:'relic-'+id,name:r.name,kind:'器物',amount:r.inputs[props.itemId]}))]);
 const shown=computed(()=>pageSlice(uses.value,page.value,4));
 const sellReason=computed(()=>item.value&&item.value.sell!==null?previewAction(props.game,{type:'SELL',item:props.itemId,quantity:1}).failure?.message??'':'');
 function close(){library.value?.close();purposes.value?.close();}

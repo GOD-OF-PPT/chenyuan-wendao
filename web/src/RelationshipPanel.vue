@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import { computed } from 'vue';
 import * as C from '../../src/full/content.ts';
 import { getRelationships, previewAction } from '../../src/full/queries.ts';
@@ -6,6 +8,7 @@ import { gamePhase } from '../../src/full/contracts.ts';
 import type { Game } from '../../src/full/types.ts';
 import PortraitImage from './PortraitImage.vue';
 import type { NavigationRequest } from './navigation';
+const ruleContent=useRuleContent(()=>props.game);
 const props = defineProps<{ game: Game; enabled: boolean }>();
 const emit = defineEmits<{ navigate: [request: NavigationRequest] }>();
 const relationships = computed(() => getRelationships(props.game));
@@ -27,14 +30,14 @@ function canGo(location: C.LocationId) {
           <ol class="relationship-facts"><li v-for="fact in person.facts" :key="fact.id" :data-testid="`relationship-fact-${fact.id}`"><strong>{{ fact.title }}</strong><p>{{ fact.text }}</p></li></ol>
         </details>
         <div v-if="person.next" class="relationship-next" :data-testid="`relationship-next-${person.id}`">
-          <p><strong>下一次来往：{{ person.next.name }}</strong><small>{{ C.locations[person.next.location].name }} · {{ C.realms[person.next.min].name }}起</small></p>
+          <p><strong>下一次来往：{{ person.next.name }}</strong><small>{{ C.locations[person.next.location].name }} · {{ ruleContent.realms[person.next.min].name }}起</small></p>
           <template v-if="person.next.unlocked">
             <p class="small">{{ person.next.view?.body }}</p>
             <ul class="relationship-options"><li v-for="option in person.next.view?.options" :key="option.id">{{ option.label }}：{{ option.detail }}</li></ul>
             <button :data-testid="`relationship-go-${person.next.id}`" :disabled="!canGo(person.next.location)" @click="emit('navigate', { location: person.next.location, tab: '仙缘', focusId: `event-${person.next.id}` })">前往{{ C.locations[person.next.location].name }}查看</button>
             <small v-if="!idle">{{ game.status==='active' ? '先处理当前事件或战斗；查看记录不会推进时间。' : '此生已经收卷，可继续查看记录。' }}</small>
           </template>
-          <small v-else>待{{ C.realms[person.next.min].name }}后再访；不会自动触发或补发物资。</small>
+          <small v-else>待{{ ruleContent.realms[person.next.min].name }}后再访；不会自动触发或补发物资。</small>
         </div>
         <small v-else>{{ game.status==='active' ? '这段来往已收束，选择记录仍保留。' : '此生已收卷，只呈现实际发生的记录。' }}</small>
       </div>

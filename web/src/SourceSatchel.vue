@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {useRuleContent} from './rule-content';
+
 import {computed,onDeactivated,ref,useId,watch} from 'vue';
 import type {Game} from '../../src/full/types';
 import type {Activity} from '../../src/full/activity';
@@ -7,11 +9,12 @@ import * as C from '../../src/full/content';
 import {sourceHoldings,sourcePeriodTotals,savedSourceYield} from './source-choreography';
 import SourceStockGoal from './SourceStockGoal.vue';
 import './ta08-source.css';
+const ruleContent=useRuleContent(()=>props.game);
 const props=defineProps<{game:Game;sourceId:string;activity:Activity|null;result:ActionResult|null;sequence:number}>();
 const instance=useId(),paint=(material:string)=>`ta08-bag-${props.sourceId}-${instance}-${material}`;
 const materials=computed(()=>Object.fromEntries(['bag','lid','clasp'].map(name=>['--ta08-'+name+'-fill',`url(#${paint(name)})`])));
 const opened=ref(false);
-const commission=computed(()=>C.sources[props.sourceId]?.location==='sect');
+const commission=computed(()=>ruleContent.value.sources[props.sourceId]?.location==='sect');
 const rows=computed(()=>sourceHoldings(props.game,props.sourceId));
 const totals=computed(()=>sourcePeriodTotals(props.game,props.sourceId,props.activity));
 const saved=computed(()=>props.sequence>0?savedSourceYield(props.game,props.sourceId,props.activity,props.result):null);

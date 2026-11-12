@@ -1,3 +1,4 @@
+import {contentForGame} from '../../src/full/rule-content.ts';
 import type {Action,Game,Move} from '../../src/full/types.ts';
 import {gamePhase,type ActionResult} from '../../src/full/contracts.ts';
 import type {Observation} from './local-events.ts';
@@ -37,22 +38,24 @@ export const MOVE_MOTIONS:Record<Move,{label:string;variant:string}>={attack:{la
 export interface ActionNotice extends Motion{key:string;operation:Action['type']|'CREATE'|'IMPORT'|'RESTORE';delta:string;summary:string;major:boolean;terminal:boolean;numbers:{target:'player'|'enemy';value:number;label:string}[]}
 function validVersions(result:ActionResult,game:Game){const v=result.versions;return v.format===game.format&&v.version===game.version&&v.schemaVersion===game.core.schemaVersion&&v.contentVersion===game.core.contentVersion&&v.balanceVersion===game.core.balanceVersion;}
 export function describeAction(result:ActionResult,game:Game,observation:Observation,before:Game|null):ActionNotice|null{
+ const ruleContent=contentForGame(game);
+
  const definition=ACTION_MOTIONS[result.type];if(!definition)return null;
  const row={...definition,icon:{...definition.icon}},action=observation.action;
  if(result.type==='TRAVEL')row.label='抵达'+C.locations[game.core.world.location].name;
- if(result.type==='BREAKTHROUGH')row.label=(result.delta.realm.before==='mortal'?'引气入体 · ':'突破 · ')+C.realms[game.core.player.realm].name;
+ if(result.type==='BREAKTHROUGH')row.label=(result.delta.realm.before==='mortal'?'引气入体 · ':'突破 · ')+ruleContent.realms[game.core.player.realm].name;
  if(result.type==='SCHOOL'){row.label=game.school==='talisman'?'符道初成':'剑道初成';row.icon={kind:'skill',id:game.school==='talisman'?'talisman_mind':'sword_mind'};}
- if(result.type==='SOURCE'&&typeof action?.sourceId==='string'&&C.sources[action.sourceId]){const source=C.sources[action.sourceId],item=Object.keys(source.items)[0];row.icon={kind:'item',id:item??'core'};}
- if(result.type==='CRAFT'&&typeof action?.recipeId==='string'&&C.recipes[action.recipeId]){const item=C.recipes[action.recipeId].output;row.label='丹成 · '+C.items[item].name;row.icon={kind:'item',id:item};}
- if(result.type==='ENCOUNTER'&&game.battle&&C.enemies[game.battle.enemy])row.label='迎战 · '+C.enemies[game.battle.enemy].name;
- if(result.type==='LEARN'&&typeof action?.skill==='string'&&C.skills[action.skill]){row.label='领悟 · '+C.skills[action.skill].name;row.icon={kind:'skill',id:action.skill};}
- if(result.type==='EQUIP'&&typeof action?.skill==='string'&&C.skills[action.skill]){row.label='配装 · '+C.skills[action.skill].name;row.icon={kind:'skill',id:action.skill};}
- if(['FORGE','EQUIP_RELIC'].includes(result.type)&&typeof action?.relic==='string'&&C.relics[action.relic]){row.label=(result.type==='FORGE'?'炼成 · ':'本命 · ')+C.relics[action.relic].name;row.icon={kind:'relic',id:action.relic};}
- if(['BUY','SELL','USE'].includes(result.type)&&typeof action?.item==='string'&&C.items[action.item]){row.label=(result.type==='BUY'?'购入 · ':result.type==='SELL'?'售出 · ':'服用 · ')+C.items[action.item].name;row.icon={kind:'item',id:action.item};}
+ if(result.type==='SOURCE'&&typeof action?.sourceId==='string'&&ruleContent.sources[action.sourceId]){const source=ruleContent.sources[action.sourceId],item=Object.keys(source.items)[0];row.icon={kind:'item',id:item??'core'};}
+ if(result.type==='CRAFT'&&typeof action?.recipeId==='string'&&ruleContent.recipes[action.recipeId]){const item=ruleContent.recipes[action.recipeId].output;row.label='丹成 · '+ruleContent.items[item].name;row.icon={kind:'item',id:item};}
+ if(result.type==='ENCOUNTER'&&game.battle&&ruleContent.enemies[game.battle.enemy])row.label='迎战 · '+ruleContent.enemies[game.battle.enemy].name;
+ if(result.type==='LEARN'&&typeof action?.skill==='string'&&ruleContent.skills[action.skill]){row.label='领悟 · '+ruleContent.skills[action.skill].name;row.icon={kind:'skill',id:action.skill};}
+ if(result.type==='EQUIP'&&typeof action?.skill==='string'&&ruleContent.skills[action.skill]){row.label='配装 · '+ruleContent.skills[action.skill].name;row.icon={kind:'skill',id:action.skill};}
+ if(['FORGE','EQUIP_RELIC'].includes(result.type)&&typeof action?.relic==='string'&&ruleContent.relics[action.relic]){row.label=(result.type==='FORGE'?'炼成 · ':'本命 · ')+ruleContent.relics[action.relic].name;row.icon={kind:'relic',id:action.relic};}
+ if(['BUY','SELL','USE'].includes(result.type)&&typeof action?.item==='string'&&ruleContent.items[action.item]){row.label=(result.type==='BUY'?'购入 · ':result.type==='SELL'?'售出 · ':'服用 · ')+ruleContent.items[action.item].name;row.icon={kind:'item',id:action.item};}
  if(result.type==='BATTLE'&&typeof action?.move==='string'&&Object.hasOwn(MOVE_MOTIONS,action.move)){
   Object.assign(row,MOVE_MOTIONS[action.move as Move]);
   row.variant=(game.school==='talisman'?'talisman-':'sword-')+row.variant;
-  const key=action.move==='release'?'finisher':action.move==='technique'?'builder':null,skill=key&&before?.loadout[key];if(skill&&C.skills[skill])row.label=C.skills[skill].name;
+  const key=action.move==='release'?'finisher':action.move==='technique'?'builder':null,skill=key&&before?.loadout[key];if(skill&&ruleContent.skills[skill])row.label=ruleContent.skills[skill].name;
   row.icon=action.move==='heal'?{kind:'item',id:'healing_pill'}:action.move==='restore'?{kind:'item',id:'spirit_pill'}:{kind:'skill',id:game.school==='talisman'?'talisman_build':'sword_build'};
  }
  const terminal=result.type==='BATTLE'&&['battle_won','battle_lost','battle_withdrawn'].some(flag=>observation.flags.includes(flag as Observation['flags'][number]));

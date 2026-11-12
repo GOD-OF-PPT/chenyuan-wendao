@@ -1,3 +1,4 @@
+import {contentForGame} from '../../src/full/rule-content.ts';
 import * as C from '../../src/full/content.ts';
 import {gamePhase,type ActionResult} from '../../src/full/contracts.ts';
 import type {Game} from '../../src/full/types.ts';
@@ -24,6 +25,8 @@ const mortalCultivation=Object.freeze({...guide('cultivation'),hint:'先到洞�
 
 /** Read committed facts only; guidance never grants resources or changes Game. */
 export function guidanceFor(game:Game|null,result:ActionResult|null=null):Guide{
+ const ruleContent=contentForGame(game);
+
   if(!game)return guide('welcome');
   const phase=gamePhase(game),current=result?.runId===game.core.runId&&result.revisionAfter===game.core.revision&&result.phaseAfter===phase?result:null;
   if(game.status!=='active')return guide('ending');
@@ -33,8 +36,8 @@ export function guidanceFor(game:Game|null,result:ActionResult|null=null):Guide{
   if(phase==='event')return guide('causality');
   if(current&&['SCHOOL','LEARN','EQUIP','FORGE','EQUIP_RELIC'].includes(current.type))return guide('equipment');
   const cycle=current&&['SOURCE','BUY','CRAFT'].includes(current.type);
-  if(current&&!cycle&&Object.entries(current.delta.inventory).some(([id,n])=>n>0&&C.items[id]?.kind==='material'))return guide('materials');
-  const realm=C.realms[game.core.player.realm];
+  if(current&&!cycle&&Object.entries(current.delta.inventory).some(([id,n])=>n>0&&ruleContent.items[id]?.kind==='material'))return guide('materials');
+  const realm=ruleContent.realms[game.core.player.realm];
   if(game.core.player.hp<realm.maxHp||game.core.player.mp<realm.maxMp)return guide('recovery');
   if(game.core.player.xp===realm.xpCap)return guide(game.core.player.realm==='spirit'?'trial':'breakthrough');
   if(cycle)return guide('materials');

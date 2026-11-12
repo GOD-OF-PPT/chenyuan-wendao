@@ -46,7 +46,7 @@ export function costsForAction(game: Game, action: Action): ActionCosts {
     }
     case 'USE': cost.items[action.item] = 1; break;
     case 'REST': cost.months = C.actionDurations.rest; break;
-    case 'END_LIFE': cost.months = C.actionDurations.endLife; break;
+    case 'END_LIFE': cost.months = remainingMonths(game); break;
     case 'BREAKTHROUGH': {
       const pill = C.realms[game.core.player.realm].pill;
       if (pill) cost.items[pill] = 1;
