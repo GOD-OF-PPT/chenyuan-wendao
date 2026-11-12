@@ -32,7 +32,7 @@ function locate(){if(!rows.value.length){selectedId.value='';page.value=0;return
 watch([()=>props.game.core.runId,()=>props.game.core.world.location,()=>props.highlight],(now,before)=>{if(now[0]!==before?.[0]||now[1]!==before?.[1]){selectedId.value='';reserve.value=1;}locate();},{immediate:true});
 watch(()=>props.collection,applyCollection);
 function updateCycleBudget(){targetRepeats.value=true;if(source.value)monthBudget.value=cycles.value==='continuous'||cycles.value==='target'? continuingSource(props.game,selectedId.value).monthBudget:cycles.value*source.value.months;}
-function loadSaved(){const p=props.savedPlan;if(!p||p.sourceId!==selectedId.value)return;targetRepeats.value=!!p.repeat;cycles.value=p.until==='target'?'target':p.repeat?'continuous':p.maxCycles;targetCycleLimit.value=p.maxCycles;targetId.value=p.target?.kind==='item'?p.target.id:p.target?'stones':resources.value[0]??'';targetQuantity.value=p.target?.quantity??targetQuantity.value;monthBudget.value=p.monthBudget;reserve.value=p.remainingMonthsReserve;}
+function loadSaved(){const p=props.savedPlan;if(!p||p.sourceId!==selectedId.value)return;targetRepeats.value=!!p.repeat;cycles.value=p.until==='target'?'target':p.repeat?'continuous':p.maxCycles;targetCycleLimit.value=p.repeat?50:p.maxCycles;targetId.value=p.target?.kind==='item'?p.target.id:p.target?'stones':resources.value[0]??'';targetQuantity.value=p.target?.quantity??targetQuantity.value;monthBudget.value=p.monthBudget;reserve.value=p.remainingMonthsReserve;}
 watch(()=>props.savedPlan,loadSaved,{immediate:true});
 const settings=ref<HTMLDialogElement>();onDeactivated(()=>settings.value?.close());
 const perCycle=computed(()=>source.value?previewAction(props.game,{type:'SOURCE',sourceId:selectedId.value,count:1}):null);
