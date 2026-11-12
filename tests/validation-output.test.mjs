@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
-import {newValidationOutput} from '../scripts/validation-output.mjs';
+import {newValidationOutput, assertValidationPath} from '../scripts/validation-output.mjs';
 
 test('validation evidence uses a new owned directory and refuses overwrite or outside paths', () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'chenyuan-output-'));
@@ -18,6 +18,7 @@ test('validation evidence uses a new owned directory and refuses overwrite or ou
     const alias = path.join(root, 'artifacts', 'alias');
     fs.symlinkSync(external, alias, process.platform === 'win32' ? 'junction' : 'dir');
     assert.throws(() => newValidationOutput(path.join(alias, 'report'), 'test', root), /link/);
+    assert.throws(() => assertValidationPath(path.join(alias, 'frozen-checkout'), root), /link/);
     assert.deepEqual(fs.readdirSync(external), []);
   } finally { fs.rmSync(root, {recursive: true, force: true}); }
 });

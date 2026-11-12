@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {root} from './source-identity.mjs';
+import {root, sourceIdentity, runtimeSources, sha} from './source-identity.mjs';
 import {runCommand} from './process-command.mjs';
 import {newValidationOutput} from './validation-output.mjs';
 import {assessCurrentBrowserRun} from './current-browser-report.mjs';
@@ -9,6 +9,9 @@ import {assessCurrentBrowserRun} from './current-browser-report.mjs';
 export function checkCurrentBrowser(suite = 'ui', requested) {
   const config = {ui: 'playwright.quality.config.ts', native: 'playwright.idle-persistence.config.ts'}[suite];
   if (!config) throw new Error('Current browser suite must be ui or native');
+  const snapshot = () => ({...sourceIdentity(), runtime: sha(JSON.stringify(runtimeSources()))});
+  const before = snapshot();
+  if (before.dirty) throw new Error('Current behavior requires clean frozen source');
   const output = newValidationOutput(requested, 'current-' + suite);
   const cli = path.join(root, 'web/node_modules/@playwright/test/cli.js');
   for (const declaration of [true, false]) {
@@ -20,7 +23,9 @@ export function checkCurrentBrowser(suite = 'ui', requested) {
     fs.writeFileSync(path.join(output, name + '.log'), (result.stdout ?? '') + (result.stderr ?? ''));
     if (result.error || result.status !== 0) throw result.error ?? new Error('Current browser ' + name + ' failed; see ' + output);
   }
-  const report = assessCurrentBrowserRun(...['declarations', 'execution'].map(name => JSON.parse(fs.readFileSync(path.join(output, name + '.json'), 'utf8'))));
+  const after = snapshot();
+  if (JSON.stringify(before) !== JSON.stringify(after)) throw new Error('Source changed during browser verification; original reports retained at ' + output);
+  const report = assessCurrentBrowserRun(...['declarations', 'execution'].map(name => JSON.parse(fs.readFileSync(path.join(output, name + '.json'), 'utf8'))), after);
   fs.writeFileSync(path.join(output, 'behavior.json'), JSON.stringify(report, null, 2) + '\n');
   return report;
 }

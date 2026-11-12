@@ -7,20 +7,25 @@ import argparse
 import hashlib
 import io
 import json
+import math
 from pathlib import Path, PurePosixPath
 import re
 import xml.etree.ElementTree as ET
 import zipfile
 from PIL import Image
+from image_contract import contract, original_contract
 
 IMAGES = {'.png', '.jpg', '.jpeg', '.webp', '.svg'}
 FORBIDDEN = {'.ttf', '.otf', '.woff', '.woff2', '.eot', '.mp3', '.ogg', '.wav', '.m4a', '.flac'}
 IMAGE_ROOTS = ('art/', 'web/public/art/', 'docs/v0.3/reference/')
 
 
-def validate(root):
+def validate(root, expected_contract=None):
     root = Path(root).resolve()
     files, pictures, historical, runtime, references = {}, {}, None, set(), set()
+    documents = {path.relative_to(root).as_posix(): json.loads(path.read_text(encoding='utf-8')) for path in sorted((root / 'art').rglob('*.json'))}
+    expected = original_contract() if expected_contract is None else expected_contract
+    assert json.dumps(contract(documents), sort_keys=True) == json.dumps(expected, sort_keys=True), 'Image/provenance contract changed; original image facts and budgets must be preserved'
 
     def local(name):
         assert type(name) is str and name and '\\' not in name and ':' not in name, 'Invalid asset path'
@@ -60,15 +65,25 @@ def validate(root):
             decoded = {}
             if Path(name).suffix.lower() == '.svg':
                 svg = ET.fromstring(raw)
+                assert svg.tag.split('}')[-1] == 'svg', 'Invalid SVG root: ' + name
+                def safe_css(value):
+                    assert not re.search(r'@import|javascript:', value, re.I), 'External SVG style: ' + name
+                    for target in re.findall(r'url\(([^)]*)\)', value, re.I):
+                        assert target.strip().strip('\'"').startswith('#'), 'External SVG reference: ' + name
                 for node in svg.iter():
                     assert node.tag.split('}')[-1] not in {'script', 'foreignObject'}, 'Executable SVG: ' + name
                     for key, value in node.attrib.items():
                         assert not key.lower().startswith('on'), 'Executable SVG attribute: ' + name
                         if key.split('}')[-1] == 'href':
                             assert value.startswith('#'), 'External SVG reference: ' + name
-                        assert not re.search(r'(?:javascript:|url\(\s*[\'"]?(?:https?:|data:))', value, re.I), 'External SVG content: ' + name
+                        safe_css(value)
+                    if node.tag.split('}')[-1] == 'style':
+                        safe_css(node.text or '')
                 box = svg.get('viewBox', '').split()
+                if svg.get('viewBox') is not None:
+                    assert len(box) == 4 and all(math.isfinite(float(n)) for n in box), 'Invalid SVG viewBox: ' + name
                 size = (float(box[2]), float(box[3])) if len(box) == 4 else (float(svg.get('width', '0')), float(svg.get('height', '0')))
+                assert all(n > 0 and n < float('inf') for n in size), 'Invalid SVG dimensions: ' + name
                 alpha = True
             else:
                 with Image.open(io.BytesIO(raw)) as image:
@@ -88,8 +103,9 @@ def validate(root):
     def fact(row):
         name = row['path']
         assert name.startswith(IMAGE_ROOTS), 'Image outside asset roots: ' + name
-        actual = picture(name)
         assert type(row.get('sha256')) is str and re.fullmatch('[0-9a-f]{64}', row['sha256']), 'Invalid image checksum'
+        assert hashlib.sha256(data(name)).hexdigest() == row['sha256'], 'Image checksum changed: ' + name
+        actual = picture(name)
         assert actual['sha256'] == row['sha256'], 'Image checksum changed: ' + name
         if 'bytes' in row:
             assert type(row['bytes']) is int and row['bytes'] > 0 and actual['bytes'] == row['bytes'], 'Image byte fact changed: ' + name
@@ -145,8 +161,8 @@ def validate(root):
         limits = document.get('budgets', document.get('budget', document))
         if not isinstance(limits, dict):
             return
-        each = limits.get('maxRuntimeBytesEach', limits.get('maxRuntimeBytes'))
-        total = limits.get('maxTotalRuntimeBytes', limits.get('maxRuntimeBytesTotal'))
+        each = limits.get('maxRuntimeBytesEach', limits.get('maxRuntimeBytesPerAsset', limits.get('maxItemBytes', limits.get('maxRuntimeBytes'))))
+        total = limits.get('maxTotalRuntimeBytes', limits.get('maxRuntimeBytesTotal', limits.get('maxTotalBytes')))
         if total is None and 'maxRuntimeBytesEach' not in limits:
             total = limits.get('maxRuntimeBytes')
         if each is not None:
@@ -154,6 +170,13 @@ def validate(root):
         if total is not None:
             assert sum(picture(name)['bytes'] for name in found) <= integer(total), 'Total runtime image budget exceeded'
         for name, label in found.items():
+            for axis in ('width', 'height'):
+                maximum = limits.get('maxRuntime' + axis.title())
+                exact = limits.get('runtime' + axis.title())
+                if maximum is not None:
+                    assert picture(name)['dimensions'][axis] <= integer(maximum), 'Runtime image dimension budget exceeded'
+                if exact is not None:
+                    assert picture(name)['dimensions'][axis] == integer(exact), 'Runtime image dimension budget changed'
             for role in ('cover', 'leaf'):
                 key = 'max' + role.title() + 'Bytes'
                 if key in limits and role in (label + name).lower():
@@ -191,8 +214,8 @@ def validate(root):
             maximum = row.get('targetSpec', {}).get('runtime', row.get('targetSpec', {})).get('candidateMaxBytes')
             if maximum is not None and name.startswith('web/public/art/'):
                 assert picture(name)['bytes'] <= integer(maximum), 'Runtime candidate budget exceeded'
-    for path in sorted((root / 'art').rglob('*.json')):
-        document = json.loads(data(path.relative_to(root).as_posix()))
+    for relative, document in documents.items():
+        path = root / relative
         found = {}
         collect(document, found)
         if isinstance(document, dict):

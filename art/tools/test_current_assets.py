@@ -6,6 +6,7 @@ import tempfile
 import unittest
 from PIL import Image
 from current_assets import validate
+from image_contract import contract
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -30,6 +31,13 @@ class CurrentAssetTests(unittest.TestCase):
         self.manifest = {'format': 'chenyuan-art-inventory', 'version': 1, 'assets': [{**runtime, 'exportedPath': runtime['path'], 'id': 'object', 'category': 'item', 'status': 'production', 'sourceReference': ['art/prompt.txt'], 'rights': {'productionUseApproved': True, 'evidenceReferences': ['art/receipt.json']}}]}
         self.export = {'assets': [{'source': {**row('art/original.png'), 'dimensions': {'width': 8, 'height': 8}}, 'runtime': runtime, 'receipt': row('art/receipt.json'), 'prompt': row('art/prompt.txt')}], 'budgets': {'maxRuntimeBytes': 2000}, 'files': [{'path': 'web/src/App.vue', 'sha256': 'f' * 64, 'bytes': 1}]}
         self.save()
+        self.contract = self.current_contract()
+
+    def current_contract(self):
+        return contract({p.relative_to(self.root).as_posix(): json.loads(p.read_text(encoding='utf-8')) for p in (self.root / 'art').rglob('*.json')})
+
+    def check(self, updated_contract=False):
+        return validate(self.root, self.current_contract() if updated_contract else self.contract)
 
     def tearDown(self):
         self.temp.cleanup()
@@ -45,18 +53,18 @@ class CurrentAssetTests(unittest.TestCase):
         self.assertFalse(result['uiSourcePinned'])
 
     def test_source_whitespace_does_not_change_asset_facts_or_require_a_new_hash(self):
-        before = validate(self.root)
+        before = self.check()
         source = self.root / 'web/src/App.vue'
         source.write_text(source.read_text(encoding='utf-8') + '\n' * 2000, encoding='utf-8')
-        self.assertEqual(validate(self.root), before)
+        self.assertEqual(self.check(), before)
 
     def test_modified_image_bytes_and_provenance_are_refused(self):
         for name, expected in [('web/public/art/object.png', 'Image checksum'), ('art/receipt.json', 'Provenance checksum'), ('art/prompt.txt', 'Provenance checksum')]:
             path = self.root / name
             original = path.read_bytes()
-            path.write_bytes(original + b'changed')
+            path.write_bytes(b'{"fixture":false}' if path.suffix == '.json' else original + b'changed')
             with self.subTest(name=name), self.assertRaisesRegex(AssertionError, expected):
-                validate(self.root)
+                self.check()
             path.write_bytes(original)
 
     def test_resigned_wrong_geometry_alpha_and_pixel_facts_are_refused(self):
@@ -66,22 +74,22 @@ class CurrentAssetTests(unittest.TestCase):
             self.export['assets'][0]['runtime'][field] = value
             self.save()
             with self.subTest(field=field), self.assertRaisesRegex(AssertionError, 'Image dimensions|Image alpha|Decoded image'):
-                validate(self.root)
+                self.check(updated_contract=True)
 
     def test_unregistered_image_missing_export_and_forbidden_font_are_refused(self):
         image = self.root / 'web/public/art/unknown.png'
         image.write_bytes((self.root / 'web/public/art/object.png').read_bytes())
         with self.assertRaisesRegex(AssertionError, 'Unregistered'):
-            validate(self.root)
+            self.check()
         image.unlink()
         font = self.root / 'web/public/art/private.woff2'
         font.write_bytes(b'not a font, still forbidden')
         with self.assertRaisesRegex(AssertionError, 'Forbidden'):
-            validate(self.root)
+            self.check()
         font.unlink()
         (self.root / 'web/public/art/object.png').unlink()
         with self.assertRaisesRegex(AssertionError, 'Missing or external'):
-            validate(self.root)
+            self.check()
 
     def test_absolute_traversing_and_windows_drive_paths_are_refused(self):
         original = copy.deepcopy(self.export)
@@ -90,22 +98,22 @@ class CurrentAssetTests(unittest.TestCase):
             self.export['assets'][0]['source']['path'] = name
             self.save()
             with self.subTest(name=name), self.assertRaisesRegex(AssertionError, 'Invalid asset path|outside asset roots'):
-                validate(self.root)
+                self.check(updated_contract=True)
 
     def test_image_budgets_and_json_integer_types_stay_real(self):
         self.export['budgets']['maxRuntimeBytes'] = 1
         self.save()
         with self.assertRaisesRegex(AssertionError, 'budget exceeded'):
-            validate(self.root)
+            self.check(updated_contract=True)
         self.export['budgets']['maxRuntimeBytes'] = True
         self.save()
         with self.assertRaisesRegex(AssertionError, 'Invalid image budget'):
-            validate(self.root)
+            self.check(updated_contract=True)
         self.export['budgets']['maxRuntimeBytes'] = 2000
         self.manifest['version'] = True
         self.save()
         with self.assertRaisesRegex(AssertionError, 'Invalid asset inventory'):
-            validate(self.root)
+            self.check()
 
     def test_reused_images_keep_integrity_without_consuming_the_new_asset_budget(self):
         path = self.root / 'web/public/art/shared.png'
@@ -113,33 +121,67 @@ class CurrentAssetTests(unittest.TestCase):
         self.export['reusedAssets'] = [{**self.export['assets'][0]['runtime'], 'path': 'web/public/art/shared.png'}]
         self.export['budgets']['maxRuntimeBytes'] = path.stat().st_size
         self.save()
-        self.assertEqual(validate(self.root)['runtimeImages'], 2)
+        self.contract = self.current_contract()
+        self.assertEqual(self.check()['runtimeImages'], 2)
         path.write_bytes(path.read_bytes() + b'changed')
         with self.assertRaisesRegex(AssertionError, 'Image checksum'):
-            validate(self.root)
+            self.check()
 
     def test_resigned_svg_cannot_introduce_scripts_or_external_references(self):
         (self.root / 'web/public/art/object.png').unlink()
-        for content in ['<script/>', '<path onload="alert(1)"/>', '<use href="https://example.test/object.svg"/>']:
+        for content in ['<script/>', '<path onload="alert(1)"/>', '<use href="https://example.test/object.svg"/>', '<style>@import url("https://example.test/style.css");</style>', '<path fill="url(file:///outside.svg#paint)"/>']:
             raw = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8">' + content + '</svg>').encode()
             (self.root / 'web/public/art/object.svg').write_bytes(raw)
             values = {'path': 'web/public/art/object.svg', 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(), 'dimensions': {'width': 8, 'height': 8}, 'alpha': True}
             self.manifest['assets'][0].update(values, exportedPath=values['path'])
             self.export['assets'][0]['runtime'] = values
             self.save()
-            with self.subTest(content=content), self.assertRaisesRegex(AssertionError, 'Executable SVG|External SVG'):
-                validate(self.root)
+            with self.subTest(content=content), self.assertRaisesRegex(AssertionError, 'Executable SVG|External SVG|Invalid SVG'):
+                self.check(updated_contract=True)
 
     def test_reference_status_and_missing_provenance_cannot_claim_production(self):
         self.manifest['assets'][0]['rights']['productionUseApproved'] = False
         self.save()
         with self.assertRaisesRegex(AssertionError, 'Reference is not production'):
-            validate(self.root)
+            self.check(updated_contract=True)
+
         self.manifest['assets'][0]['rights']['productionUseApproved'] = True
         self.manifest['assets'][0]['category'] = 'reference'
         self.save()
         with self.assertRaisesRegex(AssertionError, 'Reference is not production'):
-            validate(self.root)
+            self.check(updated_contract=True)
+
+    def test_original_sources_receipts_prompts_and_caps_cannot_be_deleted_or_raised(self):
+        original_export, original_manifest = copy.deepcopy(self.export), copy.deepcopy(self.manifest)
+        changes = [lambda: self.export['assets'][0].pop('source'), lambda: self.export['assets'][0].pop('receipt'),
+                   lambda: self.export['assets'][0].pop('prompt'), lambda: self.manifest['assets'][0].pop('sourceReference'),
+                   lambda: self.manifest['assets'][0]['rights'].pop('evidenceReferences'),
+                   lambda: self.export['budgets'].pop('maxRuntimeBytes'),
+                   lambda: self.export['budgets'].update(maxRuntimeBytes=999999)]
+        for change in changes:
+            self.export, self.manifest = copy.deepcopy(original_export), copy.deepcopy(original_manifest)
+            change()
+            self.save()
+            with self.assertRaisesRegex(AssertionError, 'contract changed'):
+                self.check()
+
+    def test_existing_per_asset_total_and_dimension_budget_names_are_enforced(self):
+        for name in ['maxRuntimeBytesPerAsset', 'maxItemBytes', 'maxTotalBytes', 'maxRuntimeWidth', 'maxRuntimeHeight']:
+            self.export['budgets'] = {name: 1}
+            self.save()
+            with self.subTest(name=name), self.assertRaisesRegex(AssertionError, 'budget exceeded'):
+                self.check(updated_contract=True)
+
+    def test_svg_requires_an_actual_root_and_finite_positive_viewbox(self):
+        (self.root / 'web/public/art/object.png').unlink()
+        for raw in [b'<g viewBox="0 0 8 8"/>', b'<svg viewBox="0 0 0 8"/>', b'<svg viewBox="0 0 NaN 8"/>']:
+            (self.root / 'web/public/art/object.svg').write_bytes(raw)
+            values = {'path': 'web/public/art/object.svg', 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(), 'dimensions': {'width': 8, 'height': 8}, 'alpha': True}
+            self.manifest['assets'][0].update(values, exportedPath=values['path'])
+            self.export['assets'][0]['runtime'] = values
+            self.save()
+            with self.assertRaisesRegex(AssertionError, 'Invalid SVG'):
+                self.check(updated_contract=True)
 
 
 if __name__ == '__main__':

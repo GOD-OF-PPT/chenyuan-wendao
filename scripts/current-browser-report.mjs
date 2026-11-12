@@ -17,7 +17,7 @@ export function currentBrowserCases(report) {
   return rows;
 }
 
-export function assessCurrentBrowserRun(declarations, execution) {
+export function assessCurrentBrowserRun(declarations, execution, endSource) {
   const source = report => {
     const value = report.config?.metadata?.chenyuan;
     assert.match(value?.head ?? '', /^[a-f0-9]{40}$/);
@@ -27,6 +27,8 @@ export function assessCurrentBrowserRun(declarations, execution) {
     return {head: value.head, tree: value.tree, runtime: report.config.metadata.runtimeDigest};
   };
   assert.deepEqual(source(execution), source(declarations), 'Declaration and execution sources differ');
+  assert.equal(endSource?.dirty, false, 'Browser source changed during execution');
+  assert.deepEqual({head: endSource.head, tree: endSource.tree, runtime: endSource.runtime}, source(execution), 'Browser source changed after startup');
   const expected = currentBrowserCases(declarations), actual = currentBrowserCases(execution);
   assert.deepEqual(actual.map(row => row.id).sort(), expected.map(row => row.id).sort(), 'Declared browser cases missing or substituted');
   for (const {test, spec} of actual) {

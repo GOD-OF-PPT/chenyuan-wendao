@@ -5,7 +5,7 @@ import {execFileSync} from 'node:child_process';
 import {root} from './source-identity.mjs';
 import {runCommand} from './process-command.mjs';
 import {parseTap} from './validate-core.mjs';
-import {newValidationOutput} from './validation-output.mjs';
+import {newValidationOutput, assertValidationPath} from './validation-output.mjs';
 
 export const historicalGuardCommit = '691648a357e6ffb5cd431a029782cc366dd442b2';
 const git = (cwd, ...args) => execFileSync('git', args, {cwd, encoding: 'utf8'}).trim();
@@ -16,7 +16,7 @@ export function checkHistoricalGuards(output, full = false) {
     throw new Error('Historical artifacts must be a local directory');
   }
   const report = newValidationOutput(output, 'historical-guards/report');
-  const checkout = path.join(artifacts, 'historical-guards', historicalGuardCommit);
+  const checkout = assertValidationPath(path.join(artifacts, 'historical-guards', historicalGuardCommit));
   fs.mkdirSync(path.dirname(checkout), {recursive: true});
   if (!fs.existsSync(checkout)) git(root, 'worktree', 'add', '--detach', checkout, historicalGuardCommit);
   if (git(checkout, 'rev-parse', '--show-toplevel') !== checkout.replaceAll('\\', '/') ||
