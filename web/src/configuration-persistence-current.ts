@@ -5,6 +5,7 @@ import { canonicalFingerprint as fingerprint, validateCommandReceipt } from '../
 import { RuleError } from '../../src/full/errors.ts';
 import type { ActionResult } from '../../src/full/contracts.ts';
 import type { Game } from '../../src/full/types.ts';
+import {rulesVersion} from '../../src/full/rule-profile.ts';
 
 export interface ConfigurationReceipt {
   format: 'chenyuan-configuration-receipt'; version: 1; intent: ConfigurationIntent; fingerprint: string;
@@ -19,6 +20,7 @@ export function validateConfigurationReceipt(value: unknown, current: Game): ass
     const receipt = value as ConfigurationReceipt;
     if (receipt.format !== 'chenyuan-configuration-receipt' || receipt.version !== 1) invalid();
     validateConfigurationIntent(receipt.intent); validateGame(receipt.before); validateGame(receipt.after); validateGame(current);
+    if(rulesVersion(receipt.before)!==rulesVersion(current)||rulesVersion(receipt.after)!==rulesVersion(current))invalid();
     if (receipt.fingerprint !== fingerprint(receipt.intent) || receipt.intent.command.runId !== current.core.runId ||
         receipt.after.core.runId !== current.core.runId || receipt.after.core.revision > current.core.revision) invalid();
     validateCommandReceipt({ format: 'chenyuan-receipt', version: 1, command: receipt.intent.command,

@@ -61,3 +61,44 @@ test('genuine old configuration and direct replies replay after later progress w
   expect(replay.replayed).toBe(true);expect(replay.result).toEqual(saved.result);expect(replay.state).toEqual(r.snapshot.state);expect(replay.activity).toEqual(r.snapshot.activity);
  }
 });
+
+test('same-run old direct and configuration proofs cannot become replies for a new-rule life and every store stays unchanged',async({page})=>{
+ await setupPersistence(page);
+ const rows=await page.evaluate(async root=>{
+  const h=(globalThis as any).h,old=await import(`/@fs${root}src/legacy/rules-v3/index.ts`),rows=[];
+  const prepare=(engine:any,run:string)=>{let g=engine.newGame('规则边界',run);for(const action of [{type:'CHOOSE',choice:'leave'},{type:'TRAVEL',location:'cave'},{type:'CULTIVATE',method:'natural',count:2},{type:'BREAKTHROUGH'},{type:'SCHOOL',school:'sword'},{type:'TRAVEL',location:'sect'}])g=engine.advance(g,h.command(g,action));return g;};
+  for(const kind of ['direct','configuration']){
+   const name='mixed-receipt-'+kind,repo=await h.FullSaveRepository.open(name);
+   try{
+    const created=await repo.create('混合拒绝',h.mutation()),run=created.state.core.runId,before=prepare(old.engine,run),fresh=prepare(h.engine,run);
+    const command=h.command(before,kind==='direct'?{type:'EVENT',event:'lu_intro'}:{type:'SCHOOL',school:'talisman'}),intent={command,expectedActivityId:null,expectedActivityRevision:null};
+    const legacy=old.engine.resolve(before,command),current=h.engine.resolve(fresh,command),receipt=kind==='direct'?old.directReceipt.directReceipt(intent,before,legacy.nextState,legacy.result):old.configurationReceipt.configurationReceipt(intent,before,legacy.nextState,legacy.result);
+    await h.put(name,h.FULL_STATE_STORE,'current',current.nextState);await h.put(name,h.FULL_RECEIPT_STORE,run+':'+command.commandId,receipt);
+    const raw=await h.inspect(name),result=await h.attempt(()=>kind==='direct'?repo.executeDirect(intent):repo.configure(intent));rows.push({kind,result,raw,after:await h.inspect(name)});
+   }finally{repo.close();}
+  }
+  return rows;
+ },repositoryFsRoot);
+ for(const r of rows){expect(r.result.code,r.kind).toBe('RECEIPT_INVALID');expect(r.after,r.kind).toEqual(r.raw);}
+});
+
+test('an old checkpoint cannot attach to a new-rule life through open load restore or missing-owner adoption',async({page})=>{
+ await setupPersistence(page);
+ const rows=await page.evaluate(async root=>{
+  const h=(globalThis as any).h,old=await import(`/@fs${root}src/legacy/rules-v3/index.ts`),rows=[];
+  const ready=(engine:any,run:string)=>{let g=engine.newGame('检查点边界',run);for(const action of [{type:'CHOOSE',choice:'leave'},{type:'TRAVEL',location:'cave'},{type:'CULTIVATE',method:'natural',count:2}])g=engine.advance(g,h.command(g,action));return g;};
+  for(const owner of [true,false]){
+   const name='mixed-checkpoint-'+owner,repo=await h.FullSaveRepository.open(name);let reopened:any;
+   try{
+    const created=await repo.create('检查点混合拒绝',h.mutation()),run=created.state.core.runId,before=ready(old.engine,run),fresh=ready(h.engine,run),command=h.command(fresh,{type:'BREAKTHROUGH'}),current=h.engine.resolve(fresh,command).nextState;
+    const cp={format:'chenyuan-checkpoint',version:1,kind:'breakthrough',sourceRunId:run,sourceRevision:before.core.revision,versions:{format:before.format,version:before.version,schemaVersion:before.core.schemaVersion,contentVersion:before.core.contentVersion,balanceVersion:before.core.balanceVersion},snapshot:before};
+    await h.put(name,h.FULL_STATE_STORE,'current',current);await h.put(name,h.FULL_STATE_STORE,'checkpoint',cp);
+    if(owner)await h.put(name,h.FULL_STATE_STORE,'checkpoint-owner',{format:'chenyuan-checkpoint-scope',version:1,runId:run,sourceRunId:run,sourceRevision:cp.sourceRevision,kind:cp.kind});
+    const raw=await h.inspect(name),loaded=await h.attempt(()=>repo.loadCheckpoint()),restored=await h.attempt(()=>repo.restoreCheckpoint(h.mutation(current)));
+    const opened=await h.attempt(async()=>{reopened=await h.FullSaveRepository.open(name);return true;});rows.push({owner,raw,loaded,restored,opened,after:await h.inspect(name)});
+   }finally{reopened?.close();repo.close();}
+  }
+  return rows;
+ },repositoryFsRoot);
+ for(const r of rows){for(const result of [r.loaded,r.restored,r.opened])expect(result.code,'owner='+r.owner).toBe('CHECKPOINT_OWNERSHIP');expect(r.after).toEqual(r.raw);}
+});

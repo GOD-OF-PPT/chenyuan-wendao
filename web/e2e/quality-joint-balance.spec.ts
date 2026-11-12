@@ -1,9 +1,10 @@
 import {test,expect} from '@playwright/test';
 import * as old from '../../src/legacy/rules-v3/index.ts';
 import * as current from '../../src/full/engine.ts';
+import {contentForGame} from '../../src/full/rule-content.ts';
 import {importRecoveryFixture,recoveryDatabase} from './idle-recovery-ui-support';
-import {snapshot,activitySnapshot} from './support';
-import {selectMarketItem,selectSource} from './stage-support';
+import {snapshot,activitySnapshot,openHubFeature} from './support';
+import {selectMarketItem,selectSource,selectRelic} from './stage-support';
 import {home,selectPlan} from './idle-route-support';
 import {lifespanFixture,atLocation} from '../../tests/lifespan-guidance-fixtures.mjs';
 
@@ -51,4 +52,19 @@ test('Q07 a new source charges twelve months only after its original thirty-seco
  const after=await snapshot(page);expect(after.core.world.elapsedMonths-before.core.world.elapsedMonths).toBe(12);expect(after.core.player.stones-before.core.player.stones).toBe(20);expect(after.core.revision-before.core.revision).toBe(1);
  const saved=await recoveryDatabase(page),ticks=saved.rows['full-receipts'].filter((r:any)=>r.value.input?.kind==='TICK');expect(ticks).toHaveLength(1);expect(ticks[0].value.command).toEqual(a.nextCommand);
  await page.screenshot({path:info.outputPath('new-source-original-retry.png')});await page.reload();await expect(page.getByTestId('save-status')).toHaveText('已保存');expect(await recoveryDatabase(page)).toEqual(saved);
+});
+
+for(const legacy of [false,true])test(`Q07 ${legacy?'old v3':'new v4'} forging notes keep sixty seconds separate from calendar months`,async({page},info)=>{
+ const engine=legacy?old.engine:current;let game=prepared(engine);
+ const act=(action:any)=>{game=engine.advance(game,{...action,commandId:'golden-'+game.core.revision,runId:game.core.runId,expectedRevision:game.core.revision});};
+ const go=(location:string)=>{if(game.core.world.location!==location)act({type:'TRAVEL',location});};
+ while(game.core.player.realm!=='golden'){
+  const C=contentForGame(game),pill=C.realms[game.core.player.realm].pill!,price=C.items[pill].buy;
+  if(game.core.player.stones<price){const [id,source]=Object.entries(C.sources).filter(([,s])=>s.stones>0&&!Object.keys(s.items).length&&C.rank(s.min)<=C.rank(game.core.player.realm)).at(-1)!;go(source.location);act({type:'SOURCE',sourceId:id,count:Math.ceil((price-game.core.player.stones)/source.stones)});}
+  go('market');act({type:'BUY',item:pill,quantity:1});go('cave');act({type:'CULTIVATE',method:'natural',count:50});act({type:'BREAKTHROUGH'});
+ }
+ await importRecoveryFixture(page,game);const before=await recoveryDatabase(page);
+ await openHubFeature(page,'relics');await selectRelic(page,'jade_seal');
+ await expect(page.locator('.production-unit')).toContainText(`${legacy?2:24} 游戏月 · 60 秒`);
+ expect(await recoveryDatabase(page)).toEqual(before);await page.screenshot({path:info.outputPath('forge-profile-period.png')});
 });

@@ -1,4 +1,4 @@
-import {versionsForGame} from '../../src/full/rule-profile.ts';
+import {versionsForGame,rulesVersion} from '../../src/full/rule-profile.ts';
 import { newGame, parseGame, resolve, validateCommand, validateGame } from '../../src/full/engine.ts';
 import { RuleError } from '../../src/full/errors.ts';
 import { canonicalFingerprint as fingerprint, validateCommandReceipt } from '../../src/full/receipts.ts';
@@ -97,7 +97,7 @@ function checkpointScope(cp: SaveCheckpoint, runId: string): CheckpointScope {
     sourceRunId: cp.sourceRunId, sourceRevision: cp.sourceRevision, kind: cp.kind };
 }
 function validateScope(value: unknown, cp: SaveCheckpoint, current: Game): void {
-  if (fingerprint(value) !== fingerprint(checkpointScope(cp, current.core.runId))) {
+  if (rulesVersion(cp.snapshot)!==rulesVersion(current)||fingerprint(value) !== fingerprint(checkpointScope(cp, current.core.runId))) {
     throw new RuleError('CHECKPOINT_OWNERSHIP', '检查点与当前人生的归属不一致，原件保留');
   }
 }
@@ -106,7 +106,10 @@ function ensureCheckpointScope(tx: IDBTransaction, current: Game, done: () => vo
   read.onsuccess = () => {
     try {
       const cp = read.result;
-      if (cp !== undefined) validateCheckpoint(cp);
+      if (cp !== undefined) {
+        validateCheckpoint(cp);
+        if(rulesVersion(cp.snapshot)!==rulesVersion(current))throw new RuleError('CHECKPOINT_OWNERSHIP','检查点与当前人生的规则不一致，原件保留');
+      }
       const owner = state.get('checkpoint-owner');
       owner.onsuccess = () => {
         try {
