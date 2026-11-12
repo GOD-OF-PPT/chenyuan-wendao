@@ -1,9 +1,10 @@
+import { proveCycle } from './scheduled-proof-support';
 import {currentPageTool} from './readonly-navigation-support';
 import {test,expect,type Page,type TestInfo} from '@playwright/test';
-import {resolve} from '../../src/full/engine';
-import {completeActivity} from '../../src/full/activity';
-import {canonicalFingerprint} from '../../src/full/receipts';
-import {validateActivityReceipt} from '../src/activity-persistence';
+
+
+
+
 import {stored} from './idle-recovery-ui-support';
 import * as C from '../../src/full/content';
 import {answerGameConfirmation} from './game-confirmation-support';
@@ -13,7 +14,9 @@ import {snapshot,activitySnapshot as activity,openHubFeature} from './support';
 import {importRecoveryFixture,recoveryDatabase as database,recoveryReadonly as readonly} from './idle-recovery-ui-support';
 import {selectLearningSkill,openLearningSettings,closeLearningSettings} from './stage-support';
 test.use({viewport:{width:1440,height:900},actionTimeout:8000,navigationTimeout:15000});test.setTimeout(60000);
-async function oneSaved(page:Page,a:any,before:any,accepted:any){await expect.poll(async()=>(await activity(page)).completedCycles).toBe(a.completedCycles+1);await expect(page.getByTestId('save-status')).toHaveText('已保存');const raw=await database(page),formal=resolve(before,a.nextCommand),key=a.runId+':'+a.nextCommand.commandId,rows=raw.rows['full-receipts'].filter((r:any)=>r.key===key);expect(raw.version).toBe(9);expect(rows).toHaveLength(1);expect(await snapshot(page)).toEqual(formal.nextState);expect(stored(raw,'current')).toEqual(formal.nextState);expect(stored(raw,'previous')).toEqual(before);const r=rows[0].value,input={kind:'TICK',tick:{commandId:a.nextCommand.commandId,runId:a.runId,expectedRevision:a.gameRevision,activityId:a.id,expectedActivityRevision:a.revision,ownerId:a.ownerId,generation:a.generation}};expect(r.input).toEqual(input);expect(r.fingerprint).toBe(canonicalFingerprint(input));expect(r.command).toEqual(a.nextCommand);expect(r.result).toEqual(formal.result);let now=a.dueAt;if(a.version>=5){expect(r.version).toBe(2);expect(r.proof.activityBefore).toEqual(a);expect(r.proof.stateAfter).toEqual(formal.nextState);expect(r.proof.resolvedAt).toBeGreaterThanOrEqual(a.dueAt);now=r.proof.resolvedAt;}else{expect(r.version).toBe(1);expect(r).not.toHaveProperty('proof');}expect(r.activity).toEqual(completeActivity(formal.nextState,a,formal.result,{commandId:a.nextCommand.commandId,now}));expect(stored(raw,'activity')).toEqual(r.activity);expect(()=>validateActivityReceipt(r,formal.nextState)).not.toThrow();expect(raw.rows['full-receipts'].filter((r:any)=>r.key!==key)).toEqual(accepted.rows['full-receipts']);expect(raw.rows['full-state'].filter((r:any)=>!['current','previous','activity'].includes(r.key))).toEqual(accepted.rows['full-state'].filter((r:any)=>!['current','previous','activity'].includes(r.key)));for(const n of Object.keys(raw.rows).filter(n=>!['full-state','full-receipts'].includes(n)))expect(raw.rows[n],n).toEqual(accepted.rows[n]);return{game:formal.nextState,raw,receipt:r};}
+async function oneSaved(page:Page,a:any,before:any,accepted:any){
+ await expect.poll(async()=>(await activity(page))?.completedCycles).toBe(a.completedCycles+1);await expect(page.getByTestId('save-status')).toHaveText('已保存');const raw=await database(page),proof=proveCycle(raw,accepted,before,a);expect(await snapshot(page)).toEqual(proof.after);expect(await activity(page)).toEqual(proof.done);return{game:proof.after,raw,receipt:proof.receipt};
+}
 const modes=['school','skills','relics','manual','summary'] as const;
 async function selectCategory(page:Page,mode:typeof modes[number]){if(mode==='relics')await openHubFeature(page,'relics');else await page.getByTestId('equipment-mode-'+mode).click();}
 const titles={school:'修法 · 剑符择道',skills:'功法 · 研习与配装',relics:'法宝 · 炼制与装备',manual:'剑简 · 参悟与研习',summary:'配装 · 三法一器'};

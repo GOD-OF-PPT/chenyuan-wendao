@@ -1,3 +1,4 @@
+import * as C from '../../src/full/content';
 import {currentReceiptControl} from './readonly-navigation-support';
 import {test, expect, type Page} from '@playwright/test';
 import {driver} from '../../tests/full-route.mjs';
@@ -134,10 +135,10 @@ test('Q02-6b the ordinary opening result does not paint a toast ellipse over its
 test('Q02-7 a receipt states elapsed months as a cost rather than positive inventory gain', async ({page}) => {
   const d = driver(); d.go('wilderness');
   await importRecoveryFixture(page, d.game);
-  await begin(page, {kind: 'source', sourceId: 'herbs', maxCycles: 1, until: 'cycles', target: null, monthBudget: 1, remainingMonthsReserve: 1});
+  await begin(page, {kind: 'source', sourceId: 'herbs', maxCycles: 1, until: 'cycles', target: null, monthBudget: C.sources.herbs.months, remainingMonthsReserve: 1});
   await settleVisibleActivity(page); await (await currentReceiptControl(page)).click();
   await expect(page.getByTestId('game-content').or(page.locator('.catalogue-view'))).not.toContainText('游戏月 +1');
-  await expect(page.getByText('耗时 1 游戏月', {exact: false}).first()).toBeVisible();
+  await expect(page.getByText('耗时 '+C.sources.herbs.months+' 游戏月', {exact: false}).first()).toBeVisible();
 });
 
 test('Q02-8 medicine states the paused craft consequence before accepting any replacement', async ({page}) => {
@@ -145,7 +146,7 @@ test('Q02-8 medicine states the paused craft consequence before accepting any re
   d.doAction({type: 'BATTLE', move: 'attack'}); d.doAction({type: 'BATTLE', move: 'attack'}); d.doAction({type: 'BATTLE', move: 'flee'});
   d.resource('herb', 8); d.funds(100); d.go('cave');
   await importRecoveryFixture(page, d.game);
-  await begin(page, {kind: 'craft', recipeId: 'healing', maxCycles: 5, until: 'cycles', targetQuantity: null, stoneBudget: 25, stoneReserve: 0, monthBudget: 5, remainingMonthsReserve: 1, itemReserves: {herb: 0}});
+  await begin(page, {kind: 'craft', recipeId: 'healing', maxCycles: 5, until: 'cycles', targetQuantity: null, stoneBudget: 25, stoneReserve: 0, monthBudget: 5*C.recipes.healing.months, remainingMonthsReserve: 1, itemReserves: {herb: 0}});
   await page.getByTestId('training-pause').click(); await expect.poll(async () => (await activity(page))?.status).toBe('paused');
   const paused = await activity(page), raw = await database(page);
   await home(page); await page.getByTestId('tab-2').click(); await inspectInventorySupply(page, 'healing_pill', 'use');
@@ -160,7 +161,7 @@ test('Q02-8b rest outside the cave says the trip replaces the paused plan before
   const d = driver(); d.go('wilderness'); d.doAction({type: 'ENCOUNTER', enemy: 'wolf'});
   d.doAction({type: 'BATTLE', move: 'attack'}); d.doAction({type: 'BATTLE', move: 'attack'}); d.doAction({type: 'BATTLE', move: 'flee'}); d.go('wilderness');
   await importRecoveryFixture(page, d.game);
-  await begin(page, {kind: 'source', sourceId: 'herbs', maxCycles: 5, until: 'cycles', target: null, monthBudget: 5, remainingMonthsReserve: 1});
+  await begin(page, {kind: 'source', sourceId: 'herbs', maxCycles: 5, until: 'cycles', target: null, monthBudget: 5*C.sources.herbs.months, remainingMonthsReserve: 1});
   await page.getByTestId('training-pause').click(); await expect.poll(async () => (await activity(page))?.status).toBe('paused');
   const raw = await database(page);
   await home(page); await page.getByTestId('tab-2').click(); await inspectInventorySupply(page, 'healing_pill', 'use');

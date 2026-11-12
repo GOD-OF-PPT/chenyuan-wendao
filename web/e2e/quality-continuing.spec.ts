@@ -1,3 +1,4 @@
+import * as C from '../../src/full/content';
 import {currentReceiptControl} from './readonly-navigation-support';
 import {test,expect} from '@playwright/test';
 import {driver} from '../../tests/full-route.mjs';
@@ -14,9 +15,9 @@ test('new source defaults continue beyond five cycles and pause refresh retains 
   await expect(page.getByTestId('source-plan-summary')).toContainText('持续');
   await expect(page.getByTestId('source-estimate')).toContainText('前50轮预估');
   await openSourceSettings(page,true);await expect(page.getByLabel('取材次数',{exact:true})).toHaveValue('continuous');
-  await page.getByLabel('累计游戏月预算',{exact:true}).fill('8');await closeSourceSettings(page);
+  await page.getByLabel('累计游戏月预算',{exact:true}).fill(String(8*C.sources.herbs.months));await closeSourceSettings(page);
   await page.getByTestId('source-start').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');
-  const initial=await activitySnapshot(page);expect(initial.plan.repeat).toBe(true);expect(initial.plan.monthBudget).toBe(8);
+  const initial=await activitySnapshot(page);expect(initial.plan.repeat).toBe(true);expect(initial.plan.monthBudget).toBe(8*C.sources.herbs.months);
   let g=await snapshot(page);
   for(let i=1;i<=6;i++){
     const a=await activitySnapshot(page),formal=resolve(g,a.nextCommand);
@@ -29,7 +30,7 @@ test('new source defaults continue beyond five cycles and pause refresh retains 
   expect(await recoveryDatabase(page)).toEqual(raw);expect(await activitySnapshot(page)).toEqual(paused);
   await page.getByTestId('training-resume').click();await expect.poll(async()=>(await activitySnapshot(page))?.generation).toBe(paused.generation+1);
   for(let i=7;i<=8;i++){const a=await activitySnapshot(page);await expect(page.getByTestId('training-countdown')).toContainText('30.0');await page.clock.fastForward(a.cycleMs);await expect.poll(async()=>(await activitySnapshot(page))?.completedCycles).toBe(i);}
-  const done=await activitySnapshot(page);expect(done.status).toBe('stopped');expect(done.stopReason.code).toBe('ACTIVITY_BUDGET');expect(done.spentMonths).toBe(8);expect(done.plan).toEqual(initial.plan);
+  const done=await activitySnapshot(page);expect(done.status).toBe('stopped');expect(done.stopReason.code).toBe('ACTIVITY_BUDGET');expect(done.spentMonths).toBe(8*C.sources.herbs.months);expect(done.plan).toEqual(initial.plan);
   const complete=await recoveryDatabase(page);
   await (await currentReceiptControl(page)).click();await page.getByTestId('activity-history-open').click();
   await expect(page.getByTestId('activity-history')).not.toContainText('1000000000');expect(await recoveryDatabase(page)).toEqual(complete);
@@ -74,7 +75,7 @@ test('supplies gathered after a zero-material furnace preview can be explicitly 
   const d=driver();d.go('cave');await importRecoveryFixture(page,d.game);
   await page.getByTestId('hub-forge').click();await selectAlchemyRecipe(page,'healing');
   await expect(page.getByTestId('production-start')).toBeDisabled();await closeProductionSettings(page);
-  for(const plan of [{kind:'travel',location:'wilderness',maxCycles:1},{kind:'source',sourceId:'herbs',maxCycles:1,until:'cycles',target:null,monthBudget:1,remainingMonthsReserve:1},{kind:'travel',location:'cave',maxCycles:1}]){
+  for(const plan of [{kind:'travel',location:'wilderness',maxCycles:1},{kind:'source',sourceId:'herbs',maxCycles:1,until:'cycles',target:null,monthBudget:C.sources.herbs.months,remainingMonthsReserve:1},{kind:'travel',location:'cave',maxCycles:1}]){
     await home(page);const selected=await selectPlan(page,plan);await selected.control.click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');await settleVisibleActivity(page);
   }
   await home(page);await page.getByTestId('hub-forge').click();await selectAlchemyRecipe(page,'healing');await openProductionIntent(page);

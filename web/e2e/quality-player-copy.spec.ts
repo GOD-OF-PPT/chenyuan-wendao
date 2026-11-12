@@ -1,3 +1,4 @@
+import * as C from '../../src/full/content';
 import {currentReceiptControl,openCurrentSavedPlan} from './readonly-navigation-support';
 import {test,expect} from '@playwright/test';
 import {newGame} from '../../src/full/engine';
@@ -33,14 +34,14 @@ test('player choice and real result use game language while keeping the formal c
 
 test('source harvest and complete history use readable names without advancing the saved activity',async({page},info)=>{
   const d=driver();d.go('wilderness');await importRecoveryFixture(page,d.game);
-  const selected=await selectPlan(page,{kind:'source',sourceId:'herbs',maxCycles:1,until:'cycles',target:null,monthBudget:1,remainingMonthsReserve:1});
+  const selected=await selectPlan(page,{kind:'source',sourceId:'herbs',maxCycles:1,until:'cycles',target:null,monthBudget:C.sources.herbs.months,remainingMonthsReserve:1});
   await selected.control.click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');
   await settleVisibleActivity(page);const raw=await recoveryDatabase(page);
   await expect((await currentReceiptControl(page))).toHaveText('收获明细');
   await (await currentReceiptControl(page)).click();
   await page.getByTestId('activity-history-open').click();
   await expect(page.getByTestId('activity-history')).toContainText('收获记录');
-  await expect(page.getByTestId('activity-history-costs')).toContainText('1 游戏月');
+  await expect(page.getByTestId('activity-history-costs')).toContainText(C.sources.herbs.months+' 游戏月');
   await expect(page.getByTestId('activity-history-delta')).toContainText('凝气草 +2');
   expect(await recoveryDatabase(page)).toEqual(raw);
   await page.screenshot({path:info.outputPath('copy-source-history.png')});
