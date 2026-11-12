@@ -12,7 +12,12 @@ test.setTimeout(60000);
 function base() { const d = driver(); d.go('cave'); return d.game; }
 function meeting() { const d = driver('trade', 'sword'); d.realm(); d.funds(300); d.go('sect'); d.doAction({type: 'EVENT', event: 'shen_return'}); return d.game; }
 async function begin(page: Page, plan: any) {
-  const selected = await selectPlan(page, plan);
+  let selected;
+  if (plan.kind === 'encounter') {
+    await page.getByTestId('tab-1').click(); await page.getByTestId('explore-mode-battle').click();
+    await page.getByTestId('encounter-' + plan.enemy).click();
+    selected = {control: page.getByTestId('adventure-start')};
+  } else selected = await selectPlan(page, plan);
   await selected.control.click();
   await expect.poll(async () => (await activity(page))?.status).toBe('running');
   return activity(page);
@@ -90,6 +95,7 @@ test('Q02-6b the ordinary opening result does not paint a toast ellipse over its
   await page.getByTestId('leave').click(); await page.getByTestId('milestone-confirm').click();
   await expect.poll(async () => (await activity(page))?.status).toBe('running');
   await settleVisibleActivity(page);
+  await page.clock.runFor(32);
   const toast = page.locator('.action-feedback-toast');
   await expect(toast).toBeVisible();
   expect(await toast.evaluate(node => getComputedStyle(node, '::before').display)).toBe('none');
@@ -111,7 +117,7 @@ test('Q02-8 medicine states the paused craft consequence before accepting any re
   d.doAction({type: 'BATTLE', move: 'attack'}); d.doAction({type: 'BATTLE', move: 'attack'}); d.doAction({type: 'BATTLE', move: 'flee'});
   d.resource('herb', 8); d.funds(100); d.go('cave');
   await importRecoveryFixture(page, d.game);
-  await begin(page, {kind: 'craft', recipeId: 'healing', maxCycles: 2, until: 'cycles', targetQuantity: null, stoneBudget: 10, stoneReserve: 0, monthBudget: 2, remainingMonthsReserve: 1, itemReserves: {herb: 0}});
+  await begin(page, {kind: 'craft', recipeId: 'healing', maxCycles: 5, until: 'cycles', targetQuantity: null, stoneBudget: 25, stoneReserve: 0, monthBudget: 5, remainingMonthsReserve: 1, itemReserves: {herb: 0}});
   await page.getByTestId('training-pause').click(); await expect.poll(async () => (await activity(page))?.status).toBe('paused');
   const paused = await activity(page), raw = await database(page);
   await home(page); await page.getByTestId('tab-2').click(); await inspectInventorySupply(page, 'healing_pill', 'use');
