@@ -18,3 +18,7 @@ test('unknown errors and specific cost failures stay complete rather than being 
   assert.equal(playerCopy.receipt,'收获明细');
   assert.equal(Object.isFrozen(playerCopy),true);
 });
+
+test('a shared EVENT completion never invents a person or an existing friendship',()=>{
+  assert.equal(playerMessage('拜访已保存，当前机缘等待玩家选择回应；未自动旅行或代选'),'机缘已展开，接下来如何回应？');
+});

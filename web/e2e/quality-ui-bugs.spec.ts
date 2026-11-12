@@ -45,7 +45,7 @@ test('Q02-2 selected accepted travel is running rather than a new draft and rema
   await page.getByTestId('training-settings').first().click();
   const raw = await database(page);
   await expect(page.getByTestId('adventure-plan-state')).toContainText('行路中');
-  await expect(page.getByTestId('adventure-plan-state')).not.toContainText('待确认');
+  await expect(page.getByTestId('adventure-plan-state')).not.toContainText('行前查看');
   expect(await activity(page)).toEqual(a); expect(await snapshot(page)).toEqual(g);
   await page.getByTestId('travel-market').click();
   await expect(page.getByTestId('adventure-plan-state')).toContainText('行前查看');
@@ -70,7 +70,7 @@ test('Q02-2b editing the same opponent budget is a new readonly draft rather tha
   await expect(page.getByTestId('adventure-plan-state')).toContainText('已暂停');
   await page.getByTestId('adventure-page-limits').click();
   await page.getByLabel('历练最多场次', {exact: true}).fill('2');
-  await expect(page.getByTestId('adventure-plan-state')).toContainText('待确认');
+  await expect(page.getByTestId('adventure-plan-state')).toContainText('行前查看');
   await expect(page.getByTestId('adventure-plan-state')).not.toContainText('原战策保留');
   expect(await database(page)).toEqual(raw);
 });
