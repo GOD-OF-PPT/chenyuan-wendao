@@ -66,7 +66,8 @@ async function arrangeOpening(page: Page, mode: Fault) {
   expect(created.ui.activity).toBeNull();
   expect(created.persisted.state).toEqual(created.ui.game);
   await page.getByTestId('leave').click();
-  await expect(page.getByTestId('milestone-period')).toContainText('在线 6 秒');
+  await expect(page.getByTestId('milestone-period')).toContainText('6 秒');
+  await expect(page.getByTestId('milestone-period')).toContainText('仅本次');
   expect((await state(page)).raw).toEqual(created.raw);
 
   await page.evaluate(mode => {
