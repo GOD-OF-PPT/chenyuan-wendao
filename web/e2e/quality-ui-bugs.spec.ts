@@ -9,6 +9,9 @@ import {inspectInventorySupply} from './stage-support';
 
 test.use({viewport: {width: 1440, height: 900}, actionTimeout: 8000, navigationTimeout: 15000});
 test.setTimeout(60000);
+test.afterEach(async ({page}, info) => {
+  if (!page.isClosed()) await page.screenshot({path: info.outputPath('Q02-current-surface.png')});
+});
 function base() { const d = driver(); d.go('cave'); return d.game; }
 function meeting() { const d = driver('trade', 'sword'); d.realm(); d.funds(300); d.go('sect'); d.doAction({type: 'EVENT', event: 'shen_return'}); return d.game; }
 async function begin(page: Page, plan: any) {
