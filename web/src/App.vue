@@ -164,6 +164,8 @@ const navigationView=computed(()=>{
  const view=detailViews.has(hubView.value)?detailParent.value?.view??hubView.value:hubView.value;
  if(view==='current')return game.value?.battle||game.value?.trial?'explore':'fate';
  if(view==='home'&&(game.value?.battle||game.value?.trial))return'explore';
+ const activity=store.activity;
+ if(view==='home'&&activity?.version===6&&activity.runId===game.value?.core.runId&&activity.gameRevision===game.value?.core.revision&&activity.plan.kind!=='travel')return'explore';
  if(view==='home'&&phase.value==='event')return'fate';
  return ['skills','relics'].includes(view)?equipmentSection.value==='relics'?'relics':'skills':view;
 });
