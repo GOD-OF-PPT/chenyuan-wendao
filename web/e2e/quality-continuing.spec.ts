@@ -54,7 +54,7 @@ test('restoring continuing alchemy keeps the saved budget while a finite target 
   const raw=await recoveryDatabase(page),a=await activitySnapshot(page);expect(a.plan.repeat).toBe(true);
   await page.getByTestId('training-settings').click();await expect(page.getByTestId('alchemy-workshop')).not.toContainText('1000000000');
   await openProductionIntent(page);await page.getByLabel('炼丹炉次',{exact:true}).selectOption('target');await page.getByLabel('炼丹目标另设炉次上限',{exact:true}).check();await expect(page.getByLabel('目标最多炉次',{exact:true})).toHaveValue('50');
-  await page.getByLabel('目标最多炉次',{exact:true}).fill('2');await page.getByLabel('成品目标库存',{exact:true}).click();await expect(page.getByLabel('炼丹目标另设炉次上限',{exact:true})).toBeChecked();await expect(page.getByLabel('目标最多炉次',{exact:true})).toHaveValue('2');
+  await page.getByLabel('目标最多炉次',{exact:true}).fill('2');await page.getByLabel('成品目标库存',{exact:true}).click();await expect(page.getByLabel('炼丹目标另设炉次上限',{exact:true})).toBeChecked();await expect(page.getByLabel('目标最多炉次',{exact:true})).toHaveValue('2');await page.getByLabel('成品目标库存',{exact:true}).fill('3');await page.getByLabel('目标最多炉次',{exact:true}).click();await expect(page.getByLabel('炼丹目标另设炉次上限',{exact:true})).toBeChecked();
   expect(await recoveryDatabase(page)).toEqual(raw);expect(await activitySnapshot(page)).toEqual(a);await page.screenshot({path:info.outputPath('continuing-craft-finite-target-draft.png')});await closeProductionSettings(page);await page.getByTestId('production-start').click();await expect.poll(async()=>(await activitySnapshot(page))?.status).toBe('running');const finite=await activitySnapshot(page);expect(finite.plan.maxCycles).toBe(2);expect(finite.plan.repeat).toBeUndefined();
 });
 
