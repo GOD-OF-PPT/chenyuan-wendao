@@ -4,11 +4,10 @@ import hashlib
 import json
 import subprocess
 import sys
+import unittest
 from pathlib import Path
-from legacy_fixtures import prepare
 
 root = Path(__file__).resolve().parents[1]
-prepare(root)
 required = ["01_设计规格.md", "02_实施计划.md", "03_数据与状态契约.md", "04_验收清单.md", "05_成长与数值系统修订.md"]
 for name in required:
     p = root / 'docs/v0.3' / name
@@ -25,6 +24,9 @@ for name, sha in expected.items():
 print('PASS: 5 core documents, 2 JSON examples, 2 preview checksums.')
 print('NOT CHECKED: historical concept PNG originals, full v0.2 archive, game code, gameplay or balance.')
 
-subprocess.run([sys.executable, str(root / "art/tools/check_inventory.py"), "--root", str(root)], check=True)
+subprocess.run([sys.executable, str(root / "art/tools/current_assets.py"), "--root", str(root)], check=True)
 
-subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", str(root / "art/tools"), "-p", "test_*.py"], check=True)
+suite = unittest.TestLoader().discover(str(root / 'art/tools'), pattern='test_current_assets.py')
+assert suite.countTestCases() > 0, 'Current asset behavior tests are missing'
+result = unittest.TextTestRunner().run(suite)
+assert result.wasSuccessful() and not result.skipped and not result.expectedFailures, 'Current asset tests must all execute successfully'

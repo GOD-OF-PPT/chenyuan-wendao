@@ -3,7 +3,9 @@
 当前完整实施清单见 [质量评审目标](docs/quality-20261112/plan.md)，冲突合同按 [0149](docs/decisions/0149-quality-review-implementation.md) 衔接。
 
 本地验证使用 Node ≥22.16、npm、Python 与 art/requirements.txt 锁定的 Pillow。
-根测试同时包含 Vue 集成模型；干净检出先运行 `npm run test:setup` 安装根与 web 两份锁，随后 `npm test`。完整核心检查用 `npm run validate:core`，会先安装两份依赖，不与构建/浏览器测试并发运行。历史测试输入由 fixtures 自动生成到忽略的 goal-* 路径，勿将其当作新过程文档编辑。
+根测试同时包含 Vue 集成模型；干净检出先运行 `npm run test:setup` 安装根与 web 两份锁，随后 `npm test`。完整核心检查用 `npm run validate:core`，会先安装两份依赖，不与同一检出的构建/浏览器测试并发运行。当前资源检查不钉UI源码字节；`npm run test:behavior -- ui`/`-- native`执行当前固定桌面行为与完整native套件，并对照本次实际声明。
+
+历史字节/逆变换/版本台账用 `npm run test:historical` 在691648a独立冻结树验证；加`-- --full`另跑原Python负例。它只证明历史输入和旧检查仍有效，不表示当前游戏通过。当前Playwright几何输入在tests/fixtures/ui-bounds，不自动生成goal-*过程目录。
 
 Windows 可使用独立的 Node/Python 环境，无需全局升级。UTF-8 仓库在旧版 Python 的本地编码模式下运行资源守卫时，使用 `python -X utf8 scripts/check_docs.py`；Windows 过长 PATH 可在当前 shell 去重，勿覆盖系统配置。Git 按 .gitattributes 检出 LF，原稿图片与fixture包保二进制字节。
 
